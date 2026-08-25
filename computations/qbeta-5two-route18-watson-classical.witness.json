@@ -5,7 +5,7 @@
     "qou-abel",
     "qou-0yqu"
   ],
-  "dps": 40,
+  "dps": 70,
   "sources": [
     "Kirillov, Dilogarithm identities, hep-th/9408113, SS1.2.2 (Watson 1937)",
     "Zagier, The Dilogarithm Function, Ch. I SS3 and Ch. II 'The Rogers dilogarithm'"
@@ -40,7 +40,7 @@
           "matches": "0.44504186791262880858"
         }
       ],
-      "worst": "1.7219156e-41",
+      "worst": "9.0556791e-72",
       "pass": true
     },
     {
@@ -51,22 +51,22 @@
           "lhs": "L(a)-L(a^2)",
           "value_over_L1": "0.14285714285714285714",
           "target": "0.14285714285714285714",
-          "resid": "2.2958874e-41"
+          "resid": "1.3583519e-71"
         },
         {
           "lhs": "2L(b)+L(b^2)",
           "value_over_L1": "1.4285714285714285714",
           "target": "1.4285714285714285714",
-          "resid": "4.5917748e-41"
+          "resid": "0.0"
         },
         {
           "lhs": "2L(g)+L(g^2)",
           "value_over_L1": "1.1428571428571428571",
           "target": "1.1428571428571428571",
-          "resid": "-4.5917748e-41"
+          "resid": "3.6222716e-71"
         }
       ],
-      "worst": "4.5917748e-41",
+      "worst": "3.6222716e-71",
       "pass": true
     },
     {
@@ -77,34 +77,34 @@
           "lhs": "2L1+2L(w2)-L(q)",
           "value_over_L1": "2.4285714285714285714",
           "m_over_7": "17/7",
-          "resid": "0.0"
+          "resid": "3.6222716e-71"
         },
         {
           "lhs": "2L(w2)-L(r)",
           "value_over_L1": "0.71428571428571428571",
           "m_over_7": "5/7",
-          "resid": "2.2958874e-41"
+          "resid": "0.0"
         },
         {
           "lhs": "-2L1+2L(w2)+L(s)",
           "value_over_L1": "-0.14285714285714285714",
           "m_over_7": "-1/7",
-          "resid": "6.8876622e-41"
+          "resid": "4.0750556e-71"
         }
       ],
-      "worst": "6.8876622e-41",
+      "worst": "4.0750556e-71",
       "pass": true
     },
     {
       "gate": "G5",
       "claim": "Zagier's extension (L(x)=2L(1)-L(1/x) for x>1, -L(x/(x-1)) for x<0) is exactly FiveTwoRogersExtend.extend -- inversion and Landen hold by definition",
-      "worst": "4.5917748e-41",
+      "worst": "0.0",
       "pass": true
     },
     {
       "gate": "G6",
       "claim": "Zagier's L'(x) = -log(1-x)/(2x) - log(x)/(2(1-x)) is hasDerivAt_rogersL, verbatim -- and he names it as the route to all the functional equations",
-      "worst_vs_finite_difference": "4.833261e-24",
+      "worst_vs_finite_difference": "2.6518001e-36",
       "pass": true
     }
   ],

@@ -1203,6 +1203,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.627Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "The closing sentence 'The content of this identification is not tautological: ...' does carry the denial form, but the primary defect in that sentence is narration of the step's own significance; it is recorded once, under trap-meta-commentary, and the proposed fix there removes the denial with it."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1222,6 +1237,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.327Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1241,6 +1271,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 120 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.365Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1260,6 +1305,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 120 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.402Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1279,6 +1339,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.439Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1298,6 +1373,23 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.665Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "severity": "major",
+        "evidence": "Block-final sentence narrates the significance of the author's own step instead of placing it: 'The content of this identification is not tautological: it says that the unique measure on the finite eigenbasis that satisfies the Markov property (and hence gives topological link invariants) is the one that replaces the Feynman path measure.' A proof does not get to rule on whether its own step has content.",
+        "notes": "STRUCTURAL - not fixed inline, because the sentence is also the block's only answer to a real objection and deleting it silently would hide that. Proposed: move the observation to a follow-on remark, stated positively and without the self-assessment - e.g. 'The Markov property singles out this measure uniquely among measures on the eigenbasis, which is what makes the closure a link invariant.' RIGOR (reported, not fixed): the objection the sentence is fending off is live in the block's own text. Two lines above, the amplitude is DEFINED by ':=' as the Markov-weighted sum and then said to equal tr_M 'by construction' - so as written the lemma's content really is definitional, and the substance (that the Markov property pins the weights uniquely) is carried by the CITED uniqueness theorem, not by this lemma. Proposed: state the lemma as 'the weights w_lambda determined by the Markov property are dim_q(V_lambda).dim(S_lambda)/dim_q(V^{(x)n})', which is a checkable claim. VERIFIED CORRECT: that weight formula does sum to 1 over lambda, consistent with tr_M(1) = 1, and the Markov property is written in the SS7a generator sigma_n."
       }
     ],
     "trap-thesis-restatement": [
@@ -1317,6 +1409,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.479Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1336,6 +1443,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.517Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1355,6 +1477,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.556Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -1374,6 +1511,21 @@
         "reviewed_at": "2026-08-15T10:31:00.548Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2ef3cfab5059",
+          "ts": "58eddd134eb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:56:14.591Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of prf:feynman-markov-identification (uniqueness of the Markov trace, Wedderburn-Artin character expansion, weight formula, the definitional identification, closing significance sentence). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1396,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:56:14.665Z"
 }

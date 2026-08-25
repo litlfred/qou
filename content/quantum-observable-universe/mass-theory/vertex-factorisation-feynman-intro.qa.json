@@ -1385,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.157Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.199Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.241Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1487,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.283Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "The roadmap lists five items, matching the sub-section's blocks."
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1521,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.326Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Ends on a forward reference to the Kashaev volume bridge."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1555,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.370Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Roadmap prose is this block's declared job (kind: prose)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1589,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.412Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Two short paragraphs, no restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1623,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.452Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1657,21 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.493Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1691,23 @@
         "reviewed_at": "2026-08-15T10:31:00.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5f64fbe2c8ff",
+          "ts": "336b10541827"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.533Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "The second paragraph is written in pipeline register rather than prose: \"This output yields the Feynman eigenbasis decomposition with explicit categorical-trace evaluations. The subsequent sub-section consumes this trace collapse as its substrate-level input for the Kashaev volume bridge.\" \"This output\", \"yields\", \"consumes ... as its substrate-level input\" describe data moving between stages of a build, not an argument moving between sections, and the first sentence's subject (\"This output\") has no referent in the text.",
+        "notes": "Structural (two sentences, but the referent needs supplying). Proposed: \"The Feynman eigenbasis decomposition established here carries explicit categorical-trace evaluations; the next sub-section takes the trace collapse as its substrate-level input for the Kashaev volume bridge.\""
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1730,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:30:27.533Z"
 }

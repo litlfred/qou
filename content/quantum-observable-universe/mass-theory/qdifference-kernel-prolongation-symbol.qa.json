@@ -1483,6 +1483,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "3 negation-contrast construction(s): \", not fitted.\"; \", not tuned to reproduce the terms.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.515Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'R is structurally fixed, not fitted' and 'to be *derived* from the prolonged connection's local monodromy, not fitted numerically' are the corpus's anti-fit discipline stated where it binds; the denied alternative is the live failure mode, so this is substantive."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1502,6 +1517,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.580Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1521,6 +1551,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 369 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.628Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1540,6 +1585,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 369 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.671Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'the residue form, the body-order = jet-degree coincidence, and the recurrence machinery are all proved' enumerates three genuinely distinct established results, each named elsewhere in the corpus."
       }
     ],
     "trap-closing-aphorism": [
@@ -1559,6 +1619,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.716Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1578,6 +1653,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.785Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1597,6 +1687,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.876Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1616,6 +1721,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.940Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1635,6 +1755,23 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:10.993Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'This conjecture is therefore the **single remaining input** to the binding closure' and 'It closes the binding program'. Both are contradicted by the block's own .ts authorNotes (2026-07-20): 'the confluent-limit narrowing ... proves the stated bounded-depth kernel on the raw OGF cannot exist: R(1,x)=1 is forced and the first-order relation fails against the proved Gevrey-1/2 growth. The surviving well-posed form places the kernel on the q-Borel (Gevrey-normalized) transform; the prolongation-symbol identification itself remains open there.' A conjecture whose stated carrier is proved not to exist is not the single remaining input to anything.",
+        "notes": "Proposed (structural, meaning at stake): the .md was updated for the GGM clause (the Scope note) but not for the confluent narrowing. Restate the kernel on the q-Borel / Gevrey-normalised transform per the authorNote, and replace 'the single remaining input ... It closes the binding program' with the accurate scope - the raw-OGF form is refuted, the q-Borel form is open, and the closure is contingent on the latter."
       }
     ],
     "trap-nonspeakable": [
@@ -1654,6 +1791,21 @@
         "reviewed_at": "2026-08-15T10:31:00.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fca313f3203f",
+          "ts": "4de4a2de0362"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:23:11.047Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the conjecture including the Scope note and both consequences. VERIFIED the algebra: with x = q^m, sigma: x -> qx and [n]_q = (q^n-1)/(q-1), the recurrence [m+2]_q b_{m+2} = b_{m+1} + b_m rearranges to exactly (q^2 x - 1)sigma^2 - (q-1)sigma - (q-1) = L_K as stated. Note the block silently uses the NON-symmetric quantum integer here, while AGENTS.md 7a's convention is [n]_q = (q^n - q^-n)/(q - q^-1); L_K is only correct under the former. The Newton-polygon slope multisets {1/2,1/2} vs {-1,+1} are consistent with the two operators' x-degrees, and the module-non-isomorphism is properly scope-(b) with the invariant named and cited (rsz2013 Thm 2.2.1(i), 2.2.4) - exemplary refutation hygiene. Recorded separately: the .md's central identification is stated on an object the .ts authorNotes record as proved non-existent. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1677,5 +1829,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:23:11.047Z"
 }

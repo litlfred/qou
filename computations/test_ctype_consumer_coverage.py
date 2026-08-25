@@ -28,6 +28,7 @@ Run: `python3 computations/test_ctype_consumer_coverage.py`
 """
 from __future__ import annotations
 
+import ast
 import re
 from collections import Counter
 import sys
@@ -361,20 +362,51 @@ EQUALITY_TEST_BASELINE: dict[str, str] = {
     # layer, not in the labels." Its equality test is correct by design, and
     # "fixing" it would break a deliberate convention in the file AGENTS.md
     # names as the p/n asymmetry mechanism.
-    "closed_form_tau_M.py:181": "own InterfaceKind vocabulary; label/value split is documented",
+    "closed_form_tau_M.py::interface_factor": "own InterfaceKind vocabulary; label/value split is documented",
     # Same vocabulary, same reason: this dispatches on the InterfaceKind
     # returned by `canonical_interface_kinds(...)` (positive/negative/
     # averaged), not on a ctype. Its `averaged` is the InterfaceKind label,
     # whose δ-aware factor is applied at the value layer.
-    "_habiro_coefficient_extract.py:166": "InterfaceKind vocabulary, not ctype",
+    "_habiro_coefficient_extract.py::_interface_product_symbolic": "InterfaceKind vocabulary, not ctype",
     # Same file, SECOND site — a tally over the InterfaceKind values returned
     # by `canonical_interface_kinds`, not over ctypes. It stayed invisible
     # until the per-file `break` was removed, which is precisely why that
     # break was wrong: one baselined site was silently standing in for two.
-    "closed_form_tau_M.py:445": "InterfaceKind tally, not ctype",
+    "closed_form_tau_M.py::interface_census": "InterfaceKind tally, not ctype",
 }
 
 _EQ_AVERAGED = re.compile(r"""[!=]=\s*['"]averaged['"]""")
+
+
+def _enclosing_function(src: str, lineno: int) -> str:
+    """Innermost `def` containing 1-indexed `lineno`, or `<module>`.
+
+    The baseline is keyed on `file.py::function` rather than `file.py:line`
+    BECAUSE LINE NUMBERS MOVE AND THE REASONS DO NOT. All three Part E entries
+    went stale at once when unrelated edits shifted `closed_form_tau_M.py`
+    (181 -> 238, 445 -> 502) and `_habiro_coefficient_extract.py` (166 -> 171):
+    the test then reported three NEW family-blind sites and three baseline
+    entries "no longer needed", when nothing had changed but the line numbers.
+    A reviewer seeing three fresh failures has to re-derive three adjudications
+    that were already made and written down — and the cheapest way through that
+    is to re-baseline, which is how a considered exemption decays into a
+    silencing list. Bean `qou-odkf`.
+
+    Falls back to `<module>` for a top-level site, which is stable for the same
+    reason.
+    """
+    try:
+        tree = ast.parse(src)
+    except SyntaxError:
+        return "<unparsed>"
+    best = None
+    for node in ast.walk(tree):
+        if isinstance(node, (ast.FunctionDef, ast.AsyncFunctionDef)):
+            end = getattr(node, "end_lineno", None) or node.lineno
+            if node.lineno <= lineno <= end:
+                if best is None or node.lineno > best.lineno:
+                    best = node
+    return best.name if best is not None else "<module>"
 
 
 def part_e() -> None:
@@ -411,7 +443,7 @@ def part_e() -> None:
             near = "\n".join(lines[max(0, i - WINDOW):i + WINDOW + 1])
             if "averaged_weighted" in near or ".startswith(" in near:
                 continue  # this SITE handles the family
-            found.append(f"{rel}:{i + 1}")
+            found.append(f"{rel}::{_enclosing_function(src, i + 1)}")
             # NO `break`. An earlier cut stopped at the first match per file,
             # which silently re-introduced file-level granularity into a check
             # whose whole point is per-site precision: later `== 'averaged'`
@@ -528,6 +560,126 @@ def part_d() -> None:
         notes.append(f"  ok   {label}: {dict(sorted(truth.items()))}")
 
 
+# ── Part F: call sites requesting a non-canonical pn_convention ────────────
+# The class PART E STRUCTURALLY CANNOT SEE, and the larger of the two.
+#
+# Part E greps for `== 'averaged'`, so it catches a colour-blind collapse that
+# KEEPS the word `averaged`. It is blind to one that RENAMES the p-n bond —
+# and under `chi_lambda_braid` the bond is labelled `positive`, so no literal
+# match will ever fire. Measured at the proton-pinned q_0, per p-n bond:
+#
+#     chi_lambda_braid -> canonical :  -17.0492 %
+#     strict_averaged  -> canonical :   +0.0141 %
+#
+# 1210x apart. Part E was tuned to catch the 0.014% family and blind to the 17%
+# one, which is exactly backwards. Owner ruling R3 (2026-08-15) makes
+# `bring_color_weighted` canonical; this asks the AST which convention a call
+# site actually REQUESTED, which is a question about the kwarg, not the string.
+#
+# Ratchet, per AGENTS.md: entries drain, never grow. A reason is required, and
+# "not yet adjudicated" is an honest reason for a site nobody has read — it is
+# recorded as provisional rather than dressed as approved. Do NOT add a site
+# here to make this pass; route it to `bring_color_weighted` or label it a
+# deliberate comparison.
+PN_CONVENTION_BASELINE: dict[str, str] = {
+    # Deliberate comparisons — a labelled measurement against a non-canonical
+    # convention is legitimate under R3.
+    "binding_bring_enhancement_compare.py::build_witness":
+        "named comparison; measures the bring-enhancement delta against strict_averaged",
+    "binding_combiner_markov_peel_fallback.py::<module>":
+        "named fallback; PN_CONVENTION const, non-canonical by design",
+    # Deliberate, and its reason is in-file: the closed-form fast path is set to
+    # strict_averaged so it agrees with THIS MODULE'S legacy symbolic path
+    # (`_factor_from` in build_atom_symbolic). That is an internal-consistency
+    # choice, not a claim about which convention is right — so moving it to
+    # canonical means moving both halves together, or they diverge by 1.4e-4.
+    "binding_canonical.py::binding_canonical":
+        "matches this module's own symbolic path; move both halves together (qou-cds4)",
+    # Phase 5q validates the closed form against the empirical slow path TO
+    # 1e-49 *under* chi_lambda_braid. That is a self-consistency check within
+    # the legacy frame — it is not evidence FOR the frame, and it will need
+    # re-running rather than re-reading once S4 lands.
+    "closed_form_tau_M_verification_phase5q.py::main":
+        "self-consistency check within the legacy frame; re-run, do not re-read (qou-cds4)",
+    # Declares chi_lambda_braid in its own docstring ("the production
+    # chi_lambda_braid convention") and owns 27 committed
+    # habiro-coefficients-*.witness.json. Not an accident — a file that was
+    # correct pre-migration and never revisited. S4 owns the decision.
+    "_habiro_coefficient_extract.py::_interface_product_symbolic":
+        "declared in-file; 27 committed witnesses; S4 tranche owns it (qou-cds4)",
+    "_habiro_coefficient_extract.py::analyse_atom":
+        "same file, same declared convention (qou-cds4)",
+    "atomic_tr_m_helium4_canonical.py::main":
+        "declared in-file; S4 tranche owns it (qou-cds4)",
+    # NOT YET ADJUDICATED. Listed so the ratchet can hold, flagged so nobody
+    # mistakes silence for approval. Neither has been read.
+    # ADJUDICATED 2026-08-21: deliberate AND COUPLED. Its in-file comment says
+    # the four oracle witnesses it checks against "used the strict_averaged pn
+    # convention, so we compare on the MATCHING word". Correct today — and the
+    # same file already runs a colour-WEIGHTED check at n=6, so it is explicitly
+    # two-framed, not blind. But the oracles are
+    # chi-{deuteron-h6,tritium-h9,helium-3-h9,helium-4-h12}-at-q0-50dps, i.e. the
+    # colour-blind chi family from 45789ddfa0 that also lacks provenance. When
+    # those are regenerated weighted, THIS MUST FLIP TOO or the self-test starts
+    # comparing across frames and still passes.
+    "chi_monotone_transfer.py::_self_test":
+        "matches its oracle witnesses' frame; flip when the chi oracles are regenerated (qou-cds4)",
+}
+
+CANONICAL_PN = "bring_color_weighted"
+
+
+def part_f() -> None:
+    print("\nPart F -- call sites requesting a non-canonical pn_convention")
+    found: dict[str, str] = {}
+    for path in sorted(HERE.rglob("*.py")):
+        rel = path.relative_to(HERE).as_posix()
+        if "_deprecated/" in rel or rel == Path(__file__).name:
+            continue
+        try:
+            src = path.read_text(encoding="utf-8", errors="replace")
+            tree = ast.parse(src)
+        except (OSError, SyntaxError):
+            continue
+        for node in ast.walk(tree):
+            vals: list[tuple[int, str]] = []
+            if isinstance(node, ast.Call):
+                for kw in node.keywords:
+                    if (kw.arg == "pn_convention"
+                            and isinstance(kw.value, ast.Constant)
+                            and isinstance(kw.value.value, str)):
+                        vals.append((node.lineno, kw.value.value))
+            elif isinstance(node, ast.Assign):
+                for t in node.targets:
+                    if (isinstance(t, ast.Name) and t.id.upper() == "PN_CONVENTION"
+                            and isinstance(node.value, ast.Constant)
+                            and isinstance(node.value.value, str)):
+                        vals.append((node.lineno, node.value.value))
+            for lineno, val in vals:
+                if val == CANONICAL_PN:
+                    continue
+                found[f"{rel}::{_enclosing_function(src, lineno)}"] = val
+
+    new = [k for k in found if k not in PN_CONVENTION_BASELINE]
+    stale = [k for k in PN_CONVENTION_BASELINE if k not in found]
+    for k in sorted(new):
+        failures.append(
+            f"{k} requests pn_convention={found[k]!r}, not the canonical "
+            f"{CANONICAL_PN!r} (owner ruling R3, 2026-08-15). Route it to "
+            f"canonical, or baseline it WITH A REASON if it is a deliberate "
+            f"comparison"
+        )
+    for k in sorted(stale):
+        notes.append(f"  note Part F baseline entry no longer needed: {k}")
+    if not new:
+        unadj = sum(1 for v in PN_CONVENTION_BASELINE.values()
+                    if v.startswith("UNADJUDICATED"))
+        notes.append(
+            f"  ok   no new off-canon pn_convention sites "
+            f"({len(found)} baselined, {unadj} unadjudicated)"
+        )
+
+
 def main() -> int:
     part_a()
     part_a2()
@@ -535,6 +687,7 @@ def main() -> int:
     part_c()
     part_d()
     part_e()
+    part_f()
     print("\n".join(notes))
     if failures:
         print(f"\nFAIL ({len(failures)}):")

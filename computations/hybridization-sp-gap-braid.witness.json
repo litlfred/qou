@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:36.722486+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:51:08.743271+00:00",
+  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
   "assertions": [
     {
       "name": "s-electron trefoil is a palindrome (self-dual ⇒ ℓ=0, symmetric block)",
@@ -24,7 +24,7 @@
   "computation": "hybridization-sp-gap-braid",
   "scriptFile": "hybridization_sp_gap_braid.py",
   "scriptHash": "e9a206159c00",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,18 +34,20 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Shell-braid derivation of the sp³↔pure-p bond-angle base flip. (A) palindromicity-orbital-type: s (ℓ=0) is palindromic/self-dual ⇒ symmetric-block (trivial) character; the s trefoil e⁻=σ₀σ₁σ₀ is a palindrome; p is chiral ⇒ standard block. s,p sit in different Wedderburn blocks; hybridisation mixes them at the s–p promotion gap. (B) electron-shell-braid-capacity: ns Hopf-links the (n−1) inner shells ⇒ Δ(n) ∝ (n−1) = central-atom size; integer ⇒ DISCRETE flip; window closes at n=2→3. (C) group-16 O 104.5°→S/Se/Te ~90° flat confirms. Derives the mechanism + direction + discreteness; the exact Δ-vs-bonding numbers (atomic Φ₁ penetration model) remain open.",
   "contentBlock": "prop:symmetric-block-domain-weight",
   "parameters": {
-    "q": 1.1099785955573347
+    "q": 1.1099785827513808
   },
   "data": {
     "s_word_palindrome_self_dual": true,
     "p_word_palindrome": false,
-    "s_on_symmetric_block_q3": 1.3675518842842074,
+    "s_on_symmetric_block_q3": 1.3675518369513862,
     "penetration_flip_by_shell": {
       "n2": {
         "inner_shells": 1,
@@ -80,6 +82,6 @@
     },
     "finding": "The sp³↔pure-p base flip is DERIVED from the framework: (A) s-orbitals are self-dual (palindromic Hecke NF, the e⁻ trefoil is a palindrome) ⇒ symmetric-block character = the q² block; p-orbitals are chiral ⇒ standard block; hybridisation mixes the blocks at the s–p promotion gap. (B) the ns penetrates the (n−1) inner shells (each a Hopf-linked trefoil), so the gap Δ(n) ∝ (n−1) = the central-atom SIZE — the owner's size-amplification, now structural. Δ integer ⇒ DISCRETE flip; window closes at n=2→3 (O sp³ vs S pure-p), group-16 saturation confirms. Open: the exact Φ₁ penetration numbers pinning the threshold value."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

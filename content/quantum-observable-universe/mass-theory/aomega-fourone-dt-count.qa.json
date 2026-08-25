@@ -1306,6 +1306,22 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.903Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Four: 'the bridge class asserts no value of $A_\\omega$'; 'the theorem derives ... - it does not assume it'; 'is not carried downstream'; 'does not reproduce {3,4}'.",
+        "notes": "All four are epistemic-status or mathematical-fact negatives required by the repo's anti-laundering discipline (derived vs assumed; what does and does not depend on a conjecture). False-positive class 'substantive mathematical contrast'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1325,6 +1341,21 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:28.961Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on the Stokes-DT-BPS bridge), A_omega(4_1) = 3); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1344,6 +1375,22 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 240 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.008Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Two appending dashes: 'equals $3$ - it does not assume it (...)' and 'This is a theorem for $4_1$ - Garoufalidis-Gu-Marino proved peacock Conjecture 3 for the figure-eight'.",
+        "notes": "Both could be colons, but each introduces a genuine justification and the density is 2 in 2.4 kB. Kept."
       }
     ],
     "trap-triples": [
@@ -1363,6 +1410,21 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 240 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.053Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on the Stokes-DT-BPS bridge), A_omega(4_1) = 3); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1382,6 +1444,21 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.104Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on the Stokes-DT-BPS bridge), A_omega(4_1) = 3); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1401,6 +1478,21 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.163Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on the Stokes-DT-BPS bridge), A_omega(4_1) = 3); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1420,6 +1512,22 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.210Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'So the theorem derives that the figure-eight observable $A_\\omega$ is the BPS degeneracy of $T[4_1]$ and equals $3$ - it does not assume it.'",
+        "notes": "Restates the theorem's conclusion, but for a new purpose: to record WHERE the value 3 enters (the certified Stokes datum, not the bridge class). That is the anti-laundering point, not a closer - and it is mid-block, followed by the Scope section."
       }
     ],
     "trap-performed-warmth": [
@@ -1439,6 +1547,21 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.260Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on the Stokes-DT-BPS bridge), A_omega(4_1) = 3); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1458,6 +1581,21 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.308Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (theorem (conditional on the Stokes-DT-BPS bridge), A_omega(4_1) = 3); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1477,6 +1615,23 @@
         "reviewed_at": "2026-08-15T10:31:00.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4203ac9a4647",
+          "ts": "b6a462afc5a3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:29:29.364Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'Specialise to $K = 4_1$ and feed the bridge-independent, certified Stokes datum: the Garoufalidis--Gu--Marino eq-(60) $q \\to 0$ off-diagonal of the $4_1$ Stokes matrix is $\\mathfrak{S}(4_1) = S^+(0)_{01} = 3$, proved unconditionally by decidable integer-matrix algebra from the certified GGM/DGG $q$-series $W_{-1}(0)$ in [...].' Five stacked pre-modifiers on one head noun ('off-diagonal'), then a colon, an equation chain and a trailing participial clause - 60 words in one breath.",
+        "notes": "NOT fixed - the sentence carries a Lean module reference and an equation chain, so it is math-adjacent. proposed: post-modify and split - 'Specialise to $K = 4_1$ and feed in the certified, bridge-independent Stokes datum. The off-diagonal entry of the $4_1$ Stokes matrix at $q \\to 0$ is $\\mathfrak{S}(4_1) = S^+(0)_{01} = 3$ (Garoufalidis--Gu--Marino, eq. 60), proved unconditionally by decidable integer-matrix algebra from the certified GGM/DGG $q$-series $W_{-1}(0)$ in [...].'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1506,5 +1661,5 @@
     "lean": "859019747108",
     "lean_statement": "4c0d67b5ff1e"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:29:29.364Z"
 }

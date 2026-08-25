@@ -1177,6 +1177,22 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.633Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the $1/z$ factor is **not a calibration knob** - it is the normalization required to map the eigenfunction observable onto MeV'; 'Form B is **not a separate observable** from the NF-counit form'.",
+        "notes": "Both are anti-laundering statements the repo's fit-vs-derivation discipline requires (no hidden knob; not a second independent observable). False-positive class 'substantive mathematical contrast'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1212,21 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.682Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1246,22 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 208 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.723Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One appending dash: '**not a calibration knob** - it is the normalization required ...'.",
+        "notes": "Single instance in 2.7 kB, carrying the justification for the preceding denial. Kept."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1281,21 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 208 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.769Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1315,22 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.826Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Form B is the natural basis for $N \\geq 1$ brane-tower truncation analysis ...; Form A is canonical at $N = 0$ free neutron ...'",
+        "notes": "A factual division of labour between two established forms, each with its stated reason. Not a manufactured closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1350,21 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.890Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1384,21 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.956Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1418,21 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:33.999Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1452,21 @@
         "reviewed_at": "2026-08-15T10:31:00.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.052Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof, Delta_beta = (h/2) I plus the two Q_beta forms); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1349,6 +1487,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "2 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "ea4ed3bc4e15",
+          "ts": "ee1b27f2daad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.097Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The $\\mathfrak{Q}_\\beta^{B}$ paragraph runs one sentence across the sum range, the definition of $z$, and the normalisation caveat.",
+        "notes": "Long, but comma-delimited and verb-linked rather than a noun pile. Borderline; kept. NOTE (not a language trap): the $z$ defined here is convention C - recorded as anomaly 1 in the batch report."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1371,5 +1525,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:39:34.097Z"
 }

@@ -77,7 +77,8 @@ from pathlib import Path
 
 from mpmath import mp, mpf, sqrt
 
-mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 HERE = Path(__file__).parent
 ROOT = HERE.parent.parent

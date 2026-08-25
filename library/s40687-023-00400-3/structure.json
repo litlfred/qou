@@ -1,0 +1,290 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "s40687-023-00400-3",
+ "source": {
+  "file": "s40687-023-00400-3.pdf",
+  "sha256": "fd7638a8cf512a9986d02292f111bbbd92ca6c46dddfedef6ece56fc145ca4ee",
+  "bytes": 649115,
+  "pages": 23
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1007/s40687-023-00400-3",
+  "title": "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37 RESEARCH Twisted Neumann–Zagier matrices StavrosGaroufalidis1,2* andSeokbeomYoon 1 *Correspondence: stavros@mpim-bonn.mpg.de; bonn.mpg.de/stavros",
+  "authors_raw": null,
+  "abstract": "TheNeumann–Zagiermatricesofanidealtriangulationareintegermatriceswith symplecticpropertieswhoseentriesencodethenumberoftetrahedrathatwind aroundeachedgeofthetriangulation.Theycanbeusedasinputdataforthe constructionofanumberofquantuminvariantsthatincludetheloopinvariants,the 3D-indexandstate-integrals.WedeﬁneatwistedversionofNeumann–Zagiermatrices, describetheirsymplecticproperties,andshowhowtocomputethemfromthe combinatoricsofanidealtriangulation.Asasampleapplication,weusethemtodeﬁne atwistedversionofthe1-loopinvariant(atopologicalinvariant)whichdeterminesthe 1-loopinvariantofthecycliccoversofahyperbolicknotcomplement,and conjecturallyisequaltotheadjointtwistedAlexanderpolynomial.",
+  "docinfo": {
+   "Author": "Stavros Garoufalidis ",
+   "CreationDate": "D:20230901131032+05'30'",
+   "Creator": "Springer",
+   "Producer": "Acrobat Distiller 10.1.8 (Windows)",
+   "Title": "Twisted Neumann–Zagier matrices"
+  },
+  "title_lines": [
+   "S. Garoufalidis, S. Yoon Res Math Sci (2023) 10:37",
+   "RESEARCH",
+   "Twisted Neumann–Zagier matrices",
+   "StavrosGaroufalidis1,2* andSeokbeomYoon 1",
+   "*Correspondence:",
+   "stavros@mpim-bonn.mpg.de;",
+   "bonn.mpg.de/stavros"
+  ],
+  "title_prev": "bonn.mpg.de/stavros 2MaxPlanckInstitutefor Mathematics,Bonn,Germany Fulllistofauthorinformationis availableattheendofthearticle DedicatedtoWalterNeumann andDonZagier,withadmiration"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Twisted Neumann–Zagier matrices",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "Motivation",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 3,
+   "title": "Torsion and its twisted version",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 3,
+   "title": "Neumann–Zagier matrices and their twisted version",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 3,
+   "title": "The 1-loop invariant and its twisted version",
+   "page": 7,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Proofs: twisted NZ matrices",
+   "page": 9,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Examples",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "The knot 41",
+   "page": 12,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 3,
+   "title": "The knot 63",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Proofs: twisted 1-loop invariant",
+   "page": 16,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Examples, continued",
+   "page": 21,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "The knot 41",
+   "page": 21,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 3,
+   "title": "The knot 63",
+   "page": 21,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-twisted-neumannzagier-matrices",
+   "number": null,
+   "title": "Twisted Neumann–Zagier matrices",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 285,
+   "n_words": 13
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 931,
+   "n_words": 15
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-11-motivation",
+   "number": "1.1",
+   "title": "Motivation",
+   "level": 3,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5936,
+   "n_words": 700
+  },
+  {
+   "id": "sec-004-12-torsion-and-its-twisted-version",
+   "number": "1.2",
+   "title": "Torsion and its twisted version",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2693,
+   "n_words": 368
+  },
+  {
+   "id": "sec-005-13-neumannzagier-matrices-and-their-twisted-vers",
+   "number": "1.3",
+   "title": "Neumann–Zagier matrices and their twisted version",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 7687,
+   "n_words": 1179
+  },
+  {
+   "id": "sec-006-14-the-1-loop-invariant-and-its-twisted-version",
+   "number": "1.4",
+   "title": "The 1-loop invariant and its twisted version",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4228,
+   "n_words": 664
+  },
+  {
+   "id": "sec-007-2-proofs-twisted-nz-matrices",
+   "number": "2",
+   "title": "Proofs: twisted NZ matrices",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 6366,
+   "n_words": 1184
+  },
+  {
+   "id": "sec-008-3-examples",
+   "number": "3",
+   "title": "Examples",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 237,
+   "n_words": 42
+  },
+  {
+   "id": "sec-009-31-the-knot-41",
+   "number": "3.1",
+   "title": "The knot 41",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 5850,
+   "n_words": 1167
+  },
+  {
+   "id": "sec-010-4-proofs-twisted-1-loop-invariant",
+   "number": "4",
+   "title": "Proofs: twisted 1-loop invariant",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 21,
+   "n_chars": 8409,
+   "n_words": 1625
+  },
+  {
+   "id": "sec-011-5-examples-continued",
+   "number": "5",
+   "title": "Examples, continued",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 3468,
+   "n_words": 541
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 3635,
+   "n_words": 229
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 16,
+  "sections": 13,
+  "chars_total": 49725
+ },
+ "duplicate_of": "arxiv-2109.00379v1",
+ "duplicate_note": "Same work as library/arxiv-2109.00379v1/, which was chosen as canonical because it carries an arXiv id. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

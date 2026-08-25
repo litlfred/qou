@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.557Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of the three-part remark (scorecard, p-n splitting, binding under-prediction). 'requires a new derived term rather than phenomenological patches' is the corpus's load-bearing derived-vs-fitted distinction (AGENTS.md anti-fit discipline), i.e. the false-positive class 'the distinction is the claim'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.592Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'The under-binding pattern reveals a structural omission: the formula misses an intra-shell binding mechanism present in nature' is a colon-expansion that names the omission, not a second clause that reframes the first."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.628Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.663Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No prose enumeration; the three bolded parts (scorecard / splitting / under-prediction) are the remark's three actual sections."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1080,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.701Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "The closer states a methodological requirement (a derived term, not a patch) that constrains future work; it names an object rather than supplying cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1114,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.736Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1148,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.770Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "The closing pair introduces the diagnosis and the required remedy, neither stated earlier in the block."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.803Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1216,23 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.838Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "severity": "minor",
+        "evidence": "'The same formula systematically under-predicts nuclear binding energies by 30% to 76% across light isotopes' is a maximum-strength universal that the block's own Table 2 contradicts: the deuteron row is B_pred +3.14 vs AME +2.22, i.e. OVER-predicted by +41%. Only 5 of the 6 tabulated isotopes are under-predicted (T -38, 3He -32, 4He -76, 6Li -71, 7Li -42), and their magnitudes run 32-76%, not 30-76%. Verified against tbl:derived-mass-formula-light-isotopes-table2-data and re-derived from Table 1 (baseline Z*m_p + N*m_n + Z*m_e minus M_pred reproduces every B_pred to the quoted 2 dp).",
+        "notes": "Proposed (structural — corrects a factual claim, so not applied inline): 'The same formula under-predicts nuclear binding energies by 32% to 76% for A >= 3, and over-predicts the deuteron by 41%.' The same over-claim recurs in the sibling proof block as 'The systematic binding under-prediction is the formula's principal limitation'; fix both together. Note the deuteron sign flip is information, not noise — it is the one isotope with no same-flavour pair, so Delta_{T=1} vanishes there."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1252,21 @@
         "reviewed_at": "2026-08-15T10:31:00.702Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8f5511b93c61",
+          "ts": "1949d081dc4f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:47:15.872Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'preserved by inter-gen direct convention' is the densest phrase and is a named convention; the rest reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1293,5 @@
     "md": "8f5511b93c61",
     "ts": "1949d081dc4f"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:47:15.872Z"
 }

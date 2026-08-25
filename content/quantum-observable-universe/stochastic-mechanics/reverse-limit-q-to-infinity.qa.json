@@ -1545,6 +1545,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.634Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1564,6 +1580,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.671Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1583,6 +1615,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 203 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.709Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
       }
     ],
     "trap-triples": [
@@ -1602,6 +1650,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 203 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.747Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1621,6 +1685,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.786Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "block does not end on a manufactured quotable line"
       }
     ],
     "trap-meta-commentary": [
@@ -1640,6 +1720,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.825Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "emphasis is placed, not announced"
       }
     ],
     "trap-thesis-restatement": [
@@ -1659,6 +1755,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.863Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "no block-final restatement of what the text established"
       }
     ],
     "trap-performed-warmth": [
@@ -1678,6 +1790,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.904Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "institutional register throughout"
       }
     ],
     "trap-superlative": [
@@ -1697,6 +1825,23 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.944Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "major",
+        "evidence": "'Together, the pair (q -> 0, q -> infinity) + the classical limit q = 1 + the substrate q = q_0 form the complete picture of limit dualities on H_n(q).' The root-of-unity specialisation q = e^{2 pi i / N} is a distinct limit regime treated two blocks away in this same chapter (phi-q-aj-machinery-identification, the Phi_q root-of-unity saddle), and Table 4 of notation-register lists zeta_r truncation as its own register entry.",
+        "notes": "PROPOSED (structural - not applied): 'form the four limits treated here' or add the root-of-unity row."
       }
     ],
     "trap-nonspeakable": [
@@ -1716,6 +1861,22 @@
         "reviewed_at": "2026-08-15T10:30:59.552Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "12fd6459c6ed",
+          "ts": "9835f45791a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:18.985Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: conjecture statement, four-limit table, structural content, significance, diagnostics. The bar pairing of each limit is correct; 'complete picture' omits the root-of-unity regime (reported).",
+        "notes": "noun chains parse aloud"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1739,5 +1900,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:18.985Z"
 }

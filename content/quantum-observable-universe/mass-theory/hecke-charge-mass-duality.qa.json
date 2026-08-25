@@ -1494,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:40.773Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "\"they depend on the braiding pattern, not on the depth of the tower\" is substantive mathematical contrast: horizontal-vs-vertical independence IS the remark's content and matches the table's two Markov-move rows."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1513,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:40.808Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "No setup-then-reframe; each bolded section states its claim directly."
       }
     ],
     "trap-em-dash": [
@@ -1533,6 +1563,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 299 words (2.01/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:40.845Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "severity": "minor",
+        "evidence": "Six em-dashes in 425 words (~1 per 70). Two are legitimate parenthetical pairs (\"brane tower -- crossings within V^{otimes n} ... -- the Hecke element\"; \"On the mixture -- when ... -- the result\"). Two were load-bearing: an appositive appended to the mass display, and the block-final \"single Hecke algebra element -- connected by exactly the Frobenius-comultiplication map\".",
+        "notes": "FIXED inline (punctuation only, no math touched): \"\\rvert$ / — a **vertical** invariant\" -> \"\\rvert$, / a **vertical** invariant\"; \"single Hecke algebra element — connected by exactly the\" -> \"single Hecke algebra element, connected by exactly the\". Count 6 -> 4, both survivors being true parenthetical pairs. $$ delimiters re-verified balanced."
       }
     ],
     "trap-triples": [
@@ -1552,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 299 words)"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:40.880Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Horizontal / Vertical / Mixed is forced by the mathematics (two Markov moves plus their mixture), not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1571,6 +1633,21 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:40.915Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Final sentence names a specific map rather than offering a quotable maxim."
       }
     ],
     "trap-meta-commentary": [
@@ -1590,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:40.952Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1609,6 +1701,23 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:40.989Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "severity": "major",
+        "evidence": "The closing section \"**The Frobenius pairing as mediator.**\" duplicates paragraph 2 nearly verbatim, including the SAME display equation: para 2 already gives \"langle a,b rangle_F = int_A mu(a otimes b) mediates the duality: it pairs mu (horizontal) with int_A (vertical)\", and the closing section re-derives exactly that (\"which pairs multiplication mu (horizontal: composing crossings) with the Frobenius form int_A (vertical: integrating along the tower)\").",
+        "notes": "NOT fixed (math-adjacent, >2 sentences). Proposed fix: delete the paragraph-2 preview sentence (\"The Frobenius pairing $\\langle a,b\\rangle_F = \\int_A \\mu(a\\otimes b)$ mediates the duality: it pairs $\\mu$ (horizontal) with $\\int_A$ (vertical).\") and let the closing section carry the mediation claim once, with its display; or conversely keep the preview and cut the closing section's re-display."
       }
     ],
     "trap-performed-warmth": [
@@ -1628,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.026Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1647,6 +1771,22 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.062Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "severity": "minor",
+        "evidence": "Only intensifier is \"connected by exactly the Frobenius-comultiplication map\"; \"exactly\" here picks out a specific map rather than inflating a claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1666,6 +1806,22 @@
         "reviewed_at": "2026-08-15T10:31:00.617Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "03d1328c00e1",
+          "ts": "3e3a66372927"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:41.097Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "The Frobenius-comultiplication sentence carries two parenthetical glosses but reads aloud.",
+        "notes": "Separate (non-trap) finding: uses[] declares only def:crossing-energy, prop:hecke-mass-trace, def:frobenius-pairing, but the prose links three further blocks that all exist and are immediate neighbours — def:coulomb-charge, def:hecke-mass-element, def:vertex-operator. Proposed fix: add the three to uses[]."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1688,5 +1844,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:10:41.097Z"
 }

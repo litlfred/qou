@@ -37,7 +37,9 @@ import _path_bridge  # noqa: F401,E402
 
 from mpmath import mp, mpf, log, sqrt  # noqa: E402
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 from _li_2_q_util import flavor_split_leading, li_2_q  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
@@ -47,11 +49,28 @@ CODATA = mpf("1.29333236") / ((mpf("938.27208816") + mpf("939.56542194")) / 2)
 
 
 def _muon_q0():
+    """The documented muon anchor, imported — never retyped.
+
+    The fallback here was ``mpf("1.1099785955541810")``, a hand-typed copy of
+    what ``q_muon_at()`` derived *at the time it was typed*. That copy is now
+    the CODATA-2018 value while ``q_muon_at()`` reads the live NIST ratio, so
+    the two branches of this function returned different numbers — silently,
+    and only when the import failed. Raising beats guessing: if the substrate
+    is not importable this probe cannot know the anchor, and saying so is more
+    useful than quietly answering with a pin that was retired.
+
+    Same fix, same reason, as the sibling
+    ``flavor_split_alpha_dilog_expansion_probe`` (bean qou-khac).
+    """
     try:
         from qou_substrate.constants import q_muon_at
         return mpf(str(q_muon_at()))
-    except Exception:
-        return mpf("1.1099785955541810")
+    except Exception as exc:  # noqa: BLE001 — re-raised with the reason
+        raise RuntimeError(
+            "muon q0 unavailable: qou_substrate.constants.q_muon_at could not "
+            "be imported, and this probe will not substitute a hand-typed pin "
+            "(qou-khac). Put tools/qou-substrate/python on PYTHONPATH."
+        ) from exc
 
 
 def analyze(q, label):

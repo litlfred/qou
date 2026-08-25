@@ -893,9 +893,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.195Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.239Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.281Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Two spaced em-dashes in the 'source of closed form' column (k=4 'Jones x Kashiwara multiplicative mixing — Rules 1+3+4 (...)'; k=5 'Kashiwara b^2 + Hopf-half offset (mixed intra/inter) — the form originally attributed to k = 4').",
+        "notes": "Table-cell appositives attaching the rule-provenance to the mechanism; kept."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.323Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.365Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.408Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.450Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.490Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.529Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "Table asserts a k=4/k=5 re-assignment its own Lean definition does not implement, and contradicts itself one row later.",
+        "notes": "STRUCTURAL FINDING (do not fix inline - this is a math/Lean disagreement). Three checkable defects. (1) k=4: table says c_4 = c_3 b^4 = -2 b^4 and annotates '(the old b^2 + 1/2 value belongs at k = 5 with a sign flip; superseded)'. The Lean it documents still has '| 4 => (hoefsmitB_local q)^2 + 1/2' (ck-extraction-from-algebraic-rules.lean:153) AND a proved theorem ckFromReduction_eq_c4 : ckFromReduction q 4 = (hoefsmitB_local q)^2 + 1/2 := rfl (line 185) whose docstring reads 'c_4 = b^2 + 1/2'. Position AND sign both differ from the table. (2) k=5: table says -(b^2 + 1/2); Lean's catch-all is '| _ => 0', so ckFromReduction q 5 = 0. (3) The table contradicts ITSELF: row 'k = 5' gives -(b^2+1/2) while the very next row 'k >= 5' gives 0. Verified-correct rows: k=0 -> 0, k=1 -> b, k=2 -> b^2, k=3 -> -2 (jonesHopfLocal := -2, line 54) all match the Lean exactly. Note the parent narrative content/quantum-observable-universe/mass-theory/ck-extraction-from-algebraic-rules.md:9 also prints c_4 = c_3 b^4 = -2 b^4, so the narrative and the Lean disagree corpus-wide, not just in this table. Proposed: either re-derive the Lean to the superseded assignment or re-scope the table+parent .md back to the Lean's values; and change 'k >= 5' to 'k >= 6'. Per AGENTS.md's c_k banner this must be reported TIERED, and note the whole ladder is convention-C-frame pending the bean qou-cds1 re-derivation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ae7c5b1e3fc7",
+          "ts": "80a409bb3cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:22:05.570Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 7-row data table (ckFromReduction closed forms per k), no prose sentences: none of the ten constructions can occur."
+      }
     ]
   },
   "label": "tbl:ck-extraction-from-algebraic-rules-table2-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:22:05.570Z"
 }

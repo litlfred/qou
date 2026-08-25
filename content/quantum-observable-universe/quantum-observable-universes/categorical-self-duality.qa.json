@@ -1493,7 +1493,8 @@
         "reviewed_at": "2026-07-07T14:26:55.837937Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Categorical self-duality' as verified, but the sibling Lean file fails to compile."
+        "notes": "The prose presents 'Categorical self-duality' as verified, but the sibling Lean file fails to compile.",
+        "evidence": "The prose presents 'Categorical self-duality' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1597,7 +1598,8 @@
         "reviewed_at": "2026-07-07T14:26:55.837937Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1808,7 +1810,8 @@
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-self-duality.lean:39:7: error: Function expected at"
       },
       {
         "result": "pass",
@@ -2115,6 +2118,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.577Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2134,6 +2153,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.617Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-em-dash": [
@@ -2153,6 +2188,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 23 words)"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.656Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-triples": [
@@ -2172,6 +2223,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 23 words)"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.696Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-closing-aphorism": [
@@ -2191,6 +2258,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.734Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-meta-commentary": [
@@ -2210,6 +2293,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.772Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-thesis-restatement": [
@@ -2229,6 +2328,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.812Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-performed-warmth": [
@@ -2248,6 +2363,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.850Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-superlative": [
@@ -2267,6 +2398,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.895Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "trap-nonspeakable": [
@@ -2286,6 +2433,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "71290b977e16",
+          "ts": "083a2efb476b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.934Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the 3-sentence proposition (categorical Yang-Mills critical point => instanton). No negation-contrast, no rhetorical pivot, no em-dash, no triple, no closing aphorism, no meta-commentary, no thesis restatement, no warmth, no superlative; syntax speakable.",
+        "notes": "Separate flag (not a trap): AGENTS.md section 7 says write (C,A) when the fibre functor is not needed; tau does not appear in the statement, so (C,A,tau) is over-specified."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2309,5 +2472,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:50:54.934Z"
 }

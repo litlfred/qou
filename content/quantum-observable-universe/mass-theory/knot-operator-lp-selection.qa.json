@@ -1792,6 +1792,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.426Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1811,6 +1826,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.539Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-em-dash": [
@@ -1830,6 +1860,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 108 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.585Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-triples": [
@@ -1849,6 +1894,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 108 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.627Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1868,6 +1928,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.671Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-meta-commentary": [
@@ -1887,6 +1962,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.714Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1906,6 +1996,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.846Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-performed-warmth": [
@@ -1925,6 +2030,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:54.957Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-superlative": [
@@ -1944,6 +2064,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:55.068Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "trap-nonspeakable": [
@@ -1963,6 +2098,21 @@
         "reviewed_at": "2026-08-15T10:31:00.353Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7e676c0137d2",
+          "ts": "04bb82ed1f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:55.184Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Proposition statement (one LP display + duality sentence) plus two prose lines; all ten categories clean. The three-item dual list (shadow price of the net-multiplicity constraint / Frobenius positivity shadow prices / active set) is the canonical LP-dual field triple required by AGENTS.md §LP-SDP duals, i.e. a substantive enumeration, not a reflex triple; I confirmed the wired witness computations/wedderburn-pair-volumes.witness.json carries y0_star, y_star, active_set, primal_obj, dual_obj and duality_gap. Separately flagged: uses[] names conj:weak-spectral-completeness directly with no conditional banner (§3b)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1986,5 +2136,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:07:55.184Z"
 }

@@ -1413,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:15.757Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; no negation-contrast construction present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:15.791Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; sentences assert directly.",
+        "notes": "No fix needed."
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:15.828Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 0 in the block. Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
       }
     ],
     "trap-triples": [
@@ -1470,6 +1518,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:15.865Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; three sentences, but they are three distinct assertions (base-ring independence, adjoint pair, Reeb generator), not a reflex enumeration.",
+        "notes": "No fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1553,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:15.902Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; the closer is mathematical content.",
+        "notes": "No fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1588,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:15.938Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; none present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1623,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:15.973Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; it does not.",
+        "notes": "No fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1658,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:16.008Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; register is institutional throughout.",
+        "notes": "No fix needed."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1693,22 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:16.045Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for unqualified maximum-strength claims. Block is 3-sentence remark on base-ring independence, the adjoint pair and Reeb holonomy; no superlative inflation.",
+        "notes": "No fix needed."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1728,23 @@
         "reviewed_at": "2026-08-15T10:30:59.903Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "abcf61884c9f",
+          "ts": "6659fab3ea5a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:16.079Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "severity": "minor",
+        "evidence": "'It measures the cosmological displacement in Hopf-algebraic units as the infinitesimal generator of the Reeb-flow holonomy.' Three stacked prepositional noun phrases with no verb between them after 'measures', and the subject 'It' has two available antecedents in the previous sentence (the adjoint pair, or log_q alone). The sentence parses on the page and stalls aloud.",
+        "notes": "NOT FIXED (the referent must be settled by the author before the sentence can be split). PROPOSED: '$\\log_q$ is the infinitesimal generator of the Reeb-flow holonomy; it measures cosmological displacement in Hopf-algebraic units.' Separately: the .ts title promises four items ('base ring, three contexts, Habiro ring, and Reeb-flow rapidity') but the body has no 'three contexts' (F_p / Q_p / C_p, which are in uses[]) and no 'rapidity' - a title/body mismatch worth the author's eye."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1767,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:41:16.079Z"
 }

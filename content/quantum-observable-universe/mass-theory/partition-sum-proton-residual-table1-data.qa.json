@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:03.988Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.051Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.103Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.181Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.241Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.288Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.350Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.406Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.457Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8aa63dd2cf83",
+          "ts": "2095d63221a8"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.520Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows. RECOMPUTED at the proton pin: [2]_q = q+1/q = 2.01089686671, so m_e(2+1/[2]_q) = 0.51099895069*2.497290546 = 1.2761128 MeV -> printed 1.2761 CORRECT; (5/2)m_e = 1.2774974 -> printed 1.2775 CORRECT. Percentages against Delta m_p = 1.278 MeV: q-form -0.1477% and classical -0.03933%, printed -0.14% and -0.03% (both truncated rather than rounded; rounding would give -0.15% and -0.04%). PIN DISCRIMINATION: at this precision the table cannot separate ANY of the three candidate pins -- proton, muon and even the erroneous 1.1097 all give 1.2761 MeV, because 1/[2]_q is stationary to first order near q=1.",
+        "notes": "FINDING (the block's own table refutes its parent). prop:partition-sum-proton-residual states of the boxed q-deformed identity Delta m_p = m_e(2 + 1/[2]_q): 'This matches the observed proton residual to within 0.1%.' The recomputed agreement is 0.1477%, and THIS TABLE'S OWN FIRST ROW PRINTS -0.14%. The parent's 'within 0.1%' is true only of the CLASSICAL q->1 form (0.039%), which is the row the boxed equation does not assert. Proposed fix: change the parent's claim to 'to within 0.15%', or state the two forms separately as the table already does."
+      }
     ]
   },
   "source_hashes": {
     "md": "8aa63dd2cf83",
     "ts": "2095d63221a8"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:04.520Z"
 }

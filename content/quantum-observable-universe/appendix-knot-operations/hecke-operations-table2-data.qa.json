@@ -893,9 +893,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.174Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.213Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.255Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.297Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.339Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.381Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.424Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.467Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.508Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9d6d7ae05620",
+          "ts": "ec73ef58884a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.550Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table2-data. VERIFIED all three rows symbolically: g = sigma_0 sigma_1^-1 = L+ - h sigma_0 (2 terms, net 1-h = 0.790940 -> +0.791); g^2 = L- - h^2 L+ - h sigma_1 + h^3 sigma_0 + h^2 gamma (5 terms as stated, net 1 - h + h^3 = 0.800077 -> +0.800); g^3 = 5 terms, net = (1-h)(1+h+h^2+h^3+h^4) = 1 - h^5 = 0.999600646. The '5 terms' counts and the arrow 0.791 -> 0.800 -> 1.000 are all correct.",
+        "notes": "Cat.2: 'squaring and then cubing it drives net from ... so the cubed operation is the ... fixed point' is a causal claim carried by the numbers, not a setup-then-reframe pivot - pass. NOT A TRAP, reported separately: net((sigma_0 sigma_1^-1)^3) = 1 - h^5 = 0.99960065, not 1. Printing +1.000 is correct at the table's 3-dp precision, but 'confinement fixed point' beside an exact-looking +1.000 reads as an identity that does not hold; the closed form 1 - h^5 would say it exactly. Separately, the g^2 row is what excludes the erroneous pin 1.1097 (0.80052 -> 0.801, not 0.800)."
+      }
     ]
   },
   "label": "tbl:hecke-operations-table2-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:14:29.550Z"
 }

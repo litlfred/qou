@@ -1,0 +1,265 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T10:10:13.913404+00:00",
+  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
+  "assertions": [
+    {
+      "name": "closed_form_binding_moves_under_D",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "the production closed-form binding changes for every isotope under D: z enters the per-interface factors directly, so the convention is not a common scale that cancels in delta_tr"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "binding-closed-form-c-vs-d",
+  "scriptFile": "binding_closed_form_C_vs_D_probe.py",
+  "scriptHash": "71ff072617d3",
+  "scriptCommitSha": "57c2ef2eabf25c04a84400387960b4224e73ba4e",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_closed_form_C_vs_D_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_closed_form_C_vs_D_probe.py"
+  },
+  "description": "Production closed-form binding chain (binding_canonical use_closed_form path: delta_tr = tau_p^Z tau_n^N (1 - prod_i f_i), B = E_0 delta_tr) under the binding channel's current convention C vs the mass channel's settled convention D, A = 2..7, at the EXPERIMENTAL (proton) q_0. Both convention entry points are swapped: the H_3 nucleon weights AND the per-interface Markov factors, which are built literally from z. Measurement only.",
+  "contentBlock": "prop:interface-knot-markov-z",
+  "parameters": {
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR)",
+    "uses_muon_built_cache": false,
+    "uses_experimental_target_values_as_input": false,
+    "E_0_MeV": "0.7823334093099085",
+    "z_C": "0.499320334183694452413442680258",
+    "z_D": "0.612688037146465251595829863946",
+    "pn_convention": "bring_color_weighted (production default; interface LABELS only)"
+  },
+  "data": {
+    "tau_H3_C": {
+      "p": "1.065306144254449975666633",
+      "n": "0.9232332299116371779702699"
+    },
+    "tau_H3_D": {
+      "p": "1.145759692457300869689082",
+      "n": "0.9877436881158095716340202"
+    },
+    "interface_factors_C": {
+      "positive": "0.4993203341836944524134427",
+      "negative": "0.2902600353880551369825965",
+      "averaged": "0.3947901847858747946980196"
+    },
+    "interface_factors_D": {
+      "positive": "0.6126880371464652515958299",
+      "negative": "0.4036277383508259361649837",
+      "averaged": "0.5081578877486455938804068"
+    },
+    "per_isotope": [
+      {
+        "atom": "2H",
+        "Z": 1,
+        "N": 1,
+        "A": 2,
+        "n_strands": 6,
+        "interface_kinds": [
+          "averaged"
+        ],
+        "B_AME2020_MeV": "2.224566",
+        "prod_f_C": "0.3947901847858747947",
+        "tr_M_free_C": "0.98352603240474833568",
+        "tr_M_atom_C": "0.38828642407478887671",
+        "delta_tr_C": "0.59523960832995945896",
+        "B_MeV_C": "0.465675832141072",
+        "rel_err_C": "-0.7906666594",
+        "prod_f_D": "0.50815788774864559388",
+        "tr_M_free_D": "1.1317169043222100827",
+        "tr_M_atom_D": "0.57509087162981031675",
+        "delta_tr_D": "0.55662603269239976598",
+        "B_MeV_D": "0.435467141866894",
+        "rel_err_D": "-0.8042462476",
+        "B_D_over_B_C": "0.93512935783"
+      },
+      {
+        "atom": "3H",
+        "Z": 1,
+        "N": 2,
+        "A": 3,
+        "n_strands": 9,
+        "interface_kinds": [
+          "averaged",
+          "negative"
+        ],
+        "B_AME2020_MeV": "8.481821",
+        "prod_f_C": "0.11459181300680484465",
+        "tr_M_free_C": "0.90802391559921333752",
+        "tr_M_atom_C": "0.10405210674205179941",
+        "delta_tr_C": "0.80397180885716153812",
+        "B_MeV_C": "0.628974006212277",
+        "rel_err_C": "-0.9258444612",
+        "prod_f_D": "0.20510661895711870031",
+        "tr_M_free_D": "1.1178462289782265773",
+        "tr_M_atom_D": "0.22927766053968917874",
+        "delta_tr_D": "0.88856856843853739859",
+        "B_MeV_D": "0.695156877552146",
+        "rel_err_D": "-0.9180415529",
+        "B_D_over_B_C": "1.10522353974"
+      },
+      {
+        "atom": "3He",
+        "Z": 2,
+        "N": 1,
+        "A": 3,
+        "n_strands": 9,
+        "interface_kinds": [
+          "positive",
+          "averaged"
+        ],
+        "B_AME2020_MeV": "7.718043",
+        "prod_f_C": "0.19712676699972548778",
+        "tr_M_free_C": "1.0477563253549796718",
+        "tr_M_atom_C": "0.20654081702073964814",
+        "delta_tr_C": "0.84121550833424002364",
+        "B_MeV_C": "0.658110996599494",
+        "rel_err_C": "-0.9147308461",
+        "prod_f_D": "0.3113422588052114912",
+        "tr_M_free_D": "1.2966756122449440177",
+        "tr_M_atom_D": "0.40370991405397142291",
+        "delta_tr_D": "0.89296569819097259483",
+        "B_MeV_D": "0.698596899062546",
+        "rel_err_D": "-0.9094852284",
+        "B_D_over_B_C": "1.06151834975"
+      },
+      {
+        "atom": "4He",
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "interface_kinds": [
+          "positive",
+          "averaged",
+          "negative"
+        ],
+        "B_AME2020_MeV": "28.295673",
+        "prod_f_C": "0.057218022365273219645",
+        "tr_M_free_C": "0.96732345641782607326",
+        "tr_M_atom_C": "0.055348335163768566816",
+        "delta_tr_C": "0.91197512125405750644",
+        "B_MeV_C": "0.713468605816504",
+        "rel_err_C": "-0.9747852399",
+        "prod_f_D": "0.12566637177458503622",
+        "tr_M_free_D": "1.2807831515286464106",
+        "tr_M_atom_D": "0.16095137168262356078",
+        "delta_tr_D": "1.1198317798460228499",
+        "B_MeV_D": "0.876081814180522",
+        "rel_err_D": "-0.9690383115",
+        "B_D_over_B_C": "1.22791922032"
+      },
+      {
+        "atom": "6Li",
+        "Z": 3,
+        "N": 3,
+        "A": 6,
+        "n_strands": 18,
+        "interface_kinds": [
+          "positive",
+          "positive",
+          "averaged",
+          "negative",
+          "negative"
+        ],
+        "B_AME2020_MeV": "31.994566",
+        "prod_f_C": "0.00829276463691364642",
+        "tr_M_free_C": "0.95138780114267197094",
+        "tr_M_atom_C": "0.0078896351133069825697",
+        "delta_tr_C": "0.94349816602936498837",
+        "B_MeV_C": "0.738130136907399",
+        "rel_err_C": "-0.9769295156",
+        "prod_f_D": "0.031077028175147741928",
+        "tr_M_free_D": "1.4494839433560438284",
+        "tr_M_atom_D": "0.045045653347100027663",
+        "delta_tr_D": "1.4044382900089438007",
+        "B_MeV_D": "1.09873899558808",
+        "rel_err_D": "-0.9656585748",
+        "B_D_over_B_C": "1.48854374134"
+      },
+      {
+        "atom": "7Li",
+        "Z": 3,
+        "N": 4,
+        "A": 7,
+        "n_strands": 21,
+        "interface_kinds": [
+          "positive",
+          "positive",
+          "averaged",
+          "negative",
+          "negative",
+          "negative"
+        ],
+        "B_AME2020_MeV": "39.244538",
+        "prod_f_C": "0.002407058156975367219",
+        "tr_M_free_C": "0.87835283254747942361",
+        "tr_M_atom_C": "0.0021142463502858291634",
+        "delta_tr_C": "0.87623858619719359445",
+        "B_MeV_C": "0.685510720508545",
+        "rel_err_C": "-0.9825323279",
+        "prod_f_D": "0.012543550596999778393",
+        "tr_M_free_D": "1.4317186160751459427",
+        "tr_M_atom_D": "0.017958834901405093407",
+        "delta_tr_D": "1.4137597811737408493",
+        "B_MeV_D": "1.10603150955088",
+        "rel_err_D": "-0.9718169313",
+        "B_D_over_B_C": "1.61344159393"
+      },
+      {
+        "atom": "7Be",
+        "Z": 4,
+        "N": 3,
+        "A": 7,
+        "n_strands": 21,
+        "interface_kinds": [
+          "positive",
+          "positive",
+          "positive",
+          "averaged",
+          "negative",
+          "negative"
+        ],
+        "B_AME2020_MeV": "37.600411",
+        "prod_f_C": "0.0041407460098104455186",
+        "tr_M_free_C": "1.0135192701260192741",
+        "tr_M_atom_C": "0.0041967258736403093866",
+        "delta_tr_C": "1.0093225442523789647",
+        "B_MeV_C": "0.789626747138315",
+        "rel_err_C": "-0.9789995182",
+        "prod_f_D": "0.019040523392976666937",
+        "tr_M_free_D": "1.660760277161416491",
+        "tr_M_atom_D": "0.031621744907418363711",
+        "delta_tr_D": "1.6291385322539981273",
+        "B_MeV_D": "1.27452950217641",
+        "rel_err_D": "-0.9661033093",
+        "B_D_over_B_C": "1.61409109658"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

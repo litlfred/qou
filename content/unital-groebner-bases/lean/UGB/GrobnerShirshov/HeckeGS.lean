@@ -32,6 +32,16 @@ falsehood, which is why it had to go rather than stay as an assumption.
 Everything downstream that used it — `heckeCost_well_defined`,
 `threading_cost_unique` — now takes the GS property as an explicit hypothesis.
 
+**The completion exists and is proved** (2026-08-24, bean `qou-auq3`).
+`HeckeCompletion.lean` adjoins the Bokut–Shiao family to this system and proves
+`heckeCompleted_isGrobnerShirshovBasis` for every `n` and every `HeckeParams`,
+with no hypothesis and no `sorry`. So the two theorems below are not merely
+conditional-and-parked: their completed-system counterparts,
+`heckeCompleted_normalForm_unique` and `heckeCompleted_threading_cost_unique`
+(§4bx there), hold outright — modulo the two Diamond-Lemma axioms
+`local_confluence` and `reduction_well_founded`, which `normal_form_unique`
+carries and which are not this file's to discharge.
+
 ## Axiom budget
 
 | Item | Status | Justification |
@@ -251,7 +261,47 @@ theorem farCommRelation_lm {n : ℕ} (i j : Fin n) (hij : j.val < i.val) :
     · exact heckeOrder_lt_of_lex (by simp)
         (List.Lex.rel (by simpa [HeckeGen.rank] using hij))
 
-/-! ## §4b  Classification of the system's leading monomials -/
+/-! ## §4b  Classification of the system's rules, and of their leading monomials
+
+Membership in `heckeRewritingSystem` is three list operations deep: a `map` for
+the quadratic family, and for each of the other two a `flatMap` over a
+`filterMap` whose `if` carries that family's side condition. Every proof that
+begins from `r ∈ rules` has to unpick that, and until now each one did it inline.
+
+`mem_heckeRewritingSystem_rules` does it once, and inverts to the **rule** —
+`r = heckeRelation i hp`, not merely `r.lm = [σᵢ, σᵢ]`. The distinction is not
+cosmetic. `OverlapComposition.spoly` is computed from `rule.relation` and
+`rule.lc`, so an inversion that stops at the leading monomial cannot reach it;
+and the *completed* system carries two distinct rules on one leading monomial
+(`HeckeCompletion` §4j puts `yangBaxterRelation i' i` and
+`bokutShiaoRelation i' i i'` on the same word), so there the lm does not
+determine the rule at all. The leading-monomial classification is recovered
+below as a corollary. -/
+
+/-- **Every rule of `heckeRewritingSystem` is one of the three relations**, with
+its indices and its side condition. This is the inversion of the three `_mem`
+lemmas, and unlike `heckeRewritingSystem_lm_cases` it lands on the rule itself,
+which is what any statement about `spoly` needs. -/
+theorem mem_heckeRewritingSystem_rules {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
+    {r : ReductionRule (HeckeGen n) ℝ}
+    (hr : r ∈ (heckeRewritingSystem n hn hp).rules) :
+    (∃ i : Fin n, r = heckeRelation i hp)
+    ∨ (∃ i j : Fin n, j.val = i.val + 1 ∧ r = yangBaxterRelation i j)
+    ∨ (∃ i j : Fin n, j.val + 1 < i.val ∧ r = farCommRelation i j) := by
+  simp only [heckeRewritingSystem, List.mem_append, List.mem_map,
+    List.mem_flatMap, List.mem_filterMap, List.mem_finRange, true_and] at hr
+  rcases hr with (⟨i, hi⟩ | ⟨i, j, hj⟩) | ⟨i, j, hj⟩
+  · exact Or.inl ⟨i, hi.symm⟩
+  · by_cases hc : j.val = i.val + 1
+    · simp only [hc] at hj
+      exact Or.inr (Or.inl ⟨i, j, hc, (Option.some.injEq _ _ ▸ hj).symm⟩)
+    · simp only [if_neg hc] at hj
+      exact Option.noConfusion hj
+  · by_cases hc : i.val > j.val + 1
+    · simp only [if_pos hc] at hj
+      exact Or.inr (Or.inr ⟨i, j, hc, (Option.some.injEq _ _ ▸ hj).symm⟩)
+    · simp only [if_neg hc] at hj
+      exact Option.noConfusion hj
 
 /-- Every rule of `heckeRewritingSystem` is one of the three families, and its
     leading monomial is the explicit word listed here. -/
@@ -261,27 +311,11 @@ theorem heckeRewritingSystem_lm_cases {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
     (∃ i : Fin n, r.lm (heckeOrder n) = [⟨i⟩, ⟨i⟩]) ∨
     (∃ i j : Fin n, j.val = i.val + 1 ∧ r.lm (heckeOrder n) = [⟨j⟩, ⟨i⟩, ⟨j⟩]) ∨
     (∃ i j : Fin n, j.val + 1 < i.val ∧ r.lm (heckeOrder n) = [⟨i⟩, ⟨j⟩]) := by
-  rcases List.mem_append.mp hr with hr' | hr'
-  · rcases List.mem_append.mp hr' with hr'' | hr''
-    · -- Hecke relations
-      obtain ⟨i, -, rfl⟩ := List.mem_map.mp hr''
-      exact Or.inl ⟨i, heckeRelation_lm i hp⟩
-    · -- Yang–Baxter relations
-      obtain ⟨i, -, hi⟩ := List.mem_flatMap.mp hr''
-      obtain ⟨j, -, hj⟩ := List.mem_filterMap.mp hi
-      by_cases hc : j.val = i.val + 1
-      · rw [if_pos hc] at hj
-        cases hj
-        exact Or.inr (Or.inl ⟨i, j, hc, yangBaxterRelation_lm i j (by omega)⟩)
-      · rw [if_neg hc] at hj; exact absurd hj (by simp)
-  · -- far commutation
-    obtain ⟨i, -, hi⟩ := List.mem_flatMap.mp hr'
-    obtain ⟨j, -, hj⟩ := List.mem_filterMap.mp hi
-    by_cases hc : i.val > j.val + 1
-    · rw [if_pos hc] at hj
-      cases hj
-      exact Or.inr (Or.inr ⟨i, j, hc, farCommRelation_lm i j (by omega)⟩)
-    · rw [if_neg hc] at hj; exact absurd hj (by simp)
+  rcases mem_heckeRewritingSystem_rules hn hp hr with
+    ⟨i, rfl⟩ | ⟨i, j, hj, rfl⟩ | ⟨i, j, hj, rfl⟩
+  · exact Or.inl ⟨i, heckeRelation_lm i hp⟩
+  · exact Or.inr (Or.inl ⟨i, j, hj, yangBaxterRelation_lm i j (by omega)⟩)
+  · exact Or.inr (Or.inr ⟨i, j, hj, farCommRelation_lm i j (by omega)⟩)
 
 /-- No rule of the Hecke system has an empty leading monomial. -/
 theorem heckeRewritingSystem_lm_ne_nil {n : ℕ} (hn : 0 < n) (hp : HeckeParams)
@@ -745,7 +779,14 @@ theorem heckeCost_nonneg {n : ℕ} (f : AlgElement (HeckeGen n) ℝ) :
     the system being a GS basis**, which is now an explicit hypothesis rather
     than the deleted axiom. `NotAGSBasis.hecke_not_gs_basis_four` shows the
     hypothesis is unsatisfiable at `n = 4` for `heckeRewritingSystem` as it
-    stands; it becomes usable once the Bokut–Shiao completion is added. -/
+    stands, so this statement is vacuous as it applies to *this* system.
+
+    The Bokut–Shiao completion has since been added and proved:
+    `HeckeCompletion.heckeCompleted_normalForm_unique` is this statement against
+    `heckeCompletedRewritingSystem`, with the hypothesis discharged. Use that
+    one; this stays because it is stated at the level the abstract framework
+    works at, and because deleting it would erase the record of why the
+    uncompleted system cannot support it. -/
 theorem heckeCost_well_defined (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
     (hgs : IsGrobnerShirshovBasis (HeckeGen n) ℝ (heckeOrder n)
       (heckeRewritingSystem n hn hp))
@@ -760,9 +801,11 @@ theorem heckeCost_well_defined (n : ℕ) (hn : 0 < n) (hp : HeckeParams)
 
 /-- Threading cost uniqueness: two reductions of the same augmented braid
     yield identical normal forms — again **conditionally** on `hgs`, for the
-    same reason as `heckeCost_well_defined`. The "no quasi-zeros" hypothesis
-    is discharged here: `HeckeGen (n+1)` has a generator, so the free algebra
-    on it has none. -/
+    same reason as `heckeCost_well_defined`, and again vacuous for this system.
+    The unconditional form is
+    `HeckeCompletion.heckeCompleted_threading_cost_unique`. The "no quasi-zeros"
+    hypothesis is discharged here: `HeckeGen (n+1)` has a generator, so the free
+    algebra on it has none. -/
 theorem threading_cost_unique (n : ℕ) (hp : HeckeParams)
     (hgs : IsGrobnerShirshovBasis (HeckeGen (n + 1)) ℝ (heckeOrder (n + 1))
       (heckeRewritingSystem (n + 1) (Nat.succ_pos n) hp))

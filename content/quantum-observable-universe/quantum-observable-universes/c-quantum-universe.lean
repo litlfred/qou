@@ -51,19 +51,32 @@ structure CRManifoldData where
   [topM : TopologicalSpace M]
   /-- CR dimension `n ≥ 1`; real dimension of `M` is `2n + 1`. -/
   n : ℕ
-  -- n_pos : 0 < n  -- (archimedean; not meaningful over R_q)
+  /-- `n ≥ 1`, as the docstring above already claimed.
+
+      Restored (bean `qou-u87j`). This field had been commented out as
+      "`-- n_pos : 0 < n  -- (archimedean; not meaningful over R_q)`", and that
+      justification is simply wrong: `n` is a **natural number**, the CR
+      dimension, and `0 < n` says nothing about `R_q` either way. A §7c sweep
+      removed an anti-vacuity condition it had misread. Without it a
+      "CR manifold" of dimension `0` satisfies the structure. -/
+  n_pos : 0 < n
   /-- Levi form signature `(r, s)` with `r + s = n`. -/
   r : ℕ
   s : ℕ
   rs_sum : r + s = n
-  /-- The contact form `θ` as an `R_q`-valued function on `M`.
-      Full type: a section of `T*M` (1-form), here modelled as a map
-      `M → R_q` (the ground ring `R_q` carries no canonical topology, so
-      continuity is not imposed at this level of detail).
+  /-- The contact form `θ` as a real-valued function on `M`.
+      Full type: a section of `T*M` (1-form), here modelled as a map `M → ℝ`.
       The contact condition `θ ∧ (dθ)^n ≠ 0` is a non-degeneracy axiom
       that requires differential forms; we record θ as a function
-      and state the non-degeneracy separately. -/
-  contactForm : M → R_q
+      and state the non-degeneracy separately.
+
+      Was `M → R_q`, with a note that "the ground ring `R_q` carries no
+      canonical topology". True, and the reason not to put a contact form
+      there: a contact form is a real 1-form, and `ι_ξ dθ = 0`, `θ(ξ) = 1` and
+      `θ ∧ (dθ)^n ≠ 0` all need the real structure. §7c reserves `ℝ` for
+      archimedean constructs and this is one; the library copy always had `ℝ`
+      (bean `qou-u87j`). -/
+  contactForm : M → ℝ
   /-- The contact form is non-degenerate: there exists a point where θ ≠ 0. -/
   contact_nondeg : ∃ p : M, contactForm p ≠ 0
   /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`.

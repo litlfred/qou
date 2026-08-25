@@ -136,7 +136,187 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.251Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.289Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.329Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.372Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.415Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.452Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.489Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.528Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.567Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "521a30ed3619",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.605Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of both paragraphs. Section-intro listing four deliverables; no negation-contrast, pivot, em-dash, aphorism, meta-narration, warmth or superlative. 'Breit-Wheeler' is the correct name for the gamma-gamma -> e+ e- vertex the block describes.",
+        "notes": "Clean on all ten. STRUCTURAL FLAG (not a trap): the .ts is a bare 'export default prose();' with NO label, unlike its sibling section intros (e.g. sec:garside-gram-intro, sec:descent-mirror); an unlabelled block cannot be cross-referenced."
+      }
+    ]
   },
-  "updated_at": "2026-07-07T14:26:57.391025Z"
+  "updated_at": "2026-08-22T03:01:32.605Z"
 }

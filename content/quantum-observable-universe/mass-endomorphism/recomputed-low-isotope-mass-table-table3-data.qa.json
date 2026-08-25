@@ -883,7 +883,188 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.111Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.146Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.181Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.219Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.255Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.292Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.329Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.367Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Extracted data table (kind: table), no prose beyond the caption; category has no surface to attach to.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.856Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure table.",
+        "notes": "n/a"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6bbc8f2f8131",
+          "ts": "51275fd8c7ed"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:12:30.895Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "The **Net** row prints Delta_i*E_0 = **+0.7836**.",
+        "notes": "REPORT ONLY, not fixed (math). SIGN ERROR internal to the table: the same row's Delta_i is h(h-2)/2 = -0.18722, and E_0 = m_e/(q_0(q_0-1)) = 4.1859814 MeV, so the product is -0.7836, not +0.7836; the column's own three preceding entries (+0.0915, -0.4376, -0.4376) sum to -0.7837. The physical Q-value is positive because the parent block's closed form takes |q_0^2-2q_0-1|, but this column is a signed product and every other row respects the sign. EVERYTHING ELSE VERIFIED EXACT at q_0 = 1.1099785827513808: h = q_0 - 1/q_0 = 0.2090603; h^2/2 = 0.0218531 (table +0.02185); -h/2 = -0.1045301 (table -0.10453); h(h-2)/2 = -0.1872072 (table -0.18722); products 0.0218531*4.1859814 = +0.091477 (table +0.0915) and -0.1045301*4.1859814 = -0.437573 (table -0.4376); |net| = 0.7836458 (table 0.7836). The l >= 2 single-wrap cancellation row is a structural claim, not checkable here. PIN: 0.7836 is identical to 8 digits at the proton, muon and old-muon pins, so this table discriminates none of them."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:12:30.895Z"
 }

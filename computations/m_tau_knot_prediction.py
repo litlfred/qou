@@ -54,14 +54,8 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import Q_50_DIGIT_STR, MASS_RATIO_MU_E_STR  # type: ignore
 
-try:
-    from _precision import set_compute_dps, fmt  # type: ignore
-    set_compute_dps(50)
-except ImportError:
-    mp.mp.dps = 50
-
-    def fmt(x: mp.mpf, dps: int = 15) -> str:  # type: ignore
-        return mp.nstr(x, n=dps, strip_zeros=False)
+from _precision import set_compute_dps, fmt  # type: ignore
+set_compute_dps(50)
 
 
 # ── targets ────────────────────────────────────────────────────────────────

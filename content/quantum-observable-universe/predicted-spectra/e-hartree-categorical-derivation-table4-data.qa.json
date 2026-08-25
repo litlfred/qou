@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.070Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.110Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.150Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.190Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.230Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.269Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.310Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.349Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.389Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e1d02530988b",
+          "ts": "0699fb215d9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.427Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 2-row basis/delta_q table. No prose sentences; none of the ten constructions present.",
+        "notes": "Table-only block. VERIFIED symbolically: [2]_q^2 = (q + q^-1)^2 = q^2 + 2 + q^-2 (stated, correct) and q^2 [2]_q = q^2(q + q^-1) = q^3 + q (stated, correct)."
+      }
     ]
   },
   "source_hashes": {
     "md": "e1d02530988b",
     "ts": "0699fb215d9e"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:03.427Z"
 }

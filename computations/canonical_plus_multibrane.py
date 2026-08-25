@@ -81,6 +81,7 @@ from canonical_tower import (per_irrep_V_hat, eigen_multiplicities,
 
 
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 E_0_BETA_DECAY_MEV = Q_NEUTRON_MEV  # prop:categorical-mass-markov E_0
                                      # = 0.78233341 MeV (CODATA-derived)
 
@@ -106,10 +107,10 @@ def per_gen_V_hat_aggregated(Z: int, N: int, *,
         return []
     n_strands = 3 * A
     n_gens = n_strands - 1
-    nfac = qfac(n_strands)
+    nfac = qfac(n_strands, Q0_PROTON)
     V_hat = [0.0] * n_gens
     for shape in partitions_of(n_strands):
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         if dq == 0:
             continue
         w_lam = (dq * dq) / nfac

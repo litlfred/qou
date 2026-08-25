@@ -1192,6 +1192,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.662Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1211,6 +1228,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.700Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1230,6 +1264,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 165 words)"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.737Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (3 paragraphs) + .ts.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1249,6 +1300,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 165 words)"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.774Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'the *how* ... the *what* ... the *observed*'; 'nucleon structure, nuclear binding, magic numbers, beta decay ..., and the Wedderburn mass formula' (five).",
+        "notes": "The five-item list is substantive. The how/what/observed triple is rhetorical but each term maps to a real chapter division."
       }
     ],
     "trap-closing-aphorism": [
@@ -1268,6 +1336,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.813Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1287,6 +1372,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.851Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'This chapter isolates the *how* of particle interactions from the *what* of particle definitions'; 'We develop molecular extensions in Chapter 12.'",
+        "notes": "Chapter-intro roadmap, the legitimate register for it. Minor: the hardcoded 'Chapter 12' is a fragile cross-reference where a label would survive reordering."
       }
     ],
     "trap-thesis-restatement": [
@@ -1306,6 +1408,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.912Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (3 paragraphs) + .ts.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1325,6 +1444,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.956Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (3 paragraphs) + .ts.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1344,6 +1480,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:03.997Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'Strong duality yields the Borromean link $\\mathcal{B}_3$ as the **unique optimum**.'",
+        "notes": "SCOPE QUALIFIER LOST. prf:nucleon-ordering-factorization states the same result correctly as 'the unique braid-realizable minimum of the Markov trace among length <= 6 braid words'; this summary drops 'braid-realizable' and 'among length <= 6', turning a bounded search result into an unrestricted optimality claim. PROPOSED: restore 'among braid words of length at most 6'."
       }
     ],
     "trap-nonspeakable": [
@@ -1363,6 +1516,23 @@
         "reviewed_at": "2026-08-15T10:31:01.301Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "02693ce72942",
+          "ts": "ffd2dbb8a594"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:04.037Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Was: 'every nucleus $\\mathcal{N}(Z,N)$ forms a braid word in $B_A$'.",
+        "notes": "FIX APPLIED (sweep-damage verb): 'forms a braid word' -> 'corresponds to a braid word', matching the wording of prop:nuclear-groebner-reduction, which this sentence summarises. 'Forms' asserted identity where the proposition asserts correspondence."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1385,5 +1555,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:04.037Z"
 }

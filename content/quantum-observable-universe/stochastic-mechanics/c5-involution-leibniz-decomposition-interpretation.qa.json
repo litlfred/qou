@@ -1227,6 +1227,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not a quantum-deformation artifact.\"; \", not a first-principles derivation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.032Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'This decomposition is a structural identification, not a first-principles derivation.' and 'not a quantum-deformation artifact'.",
+        "notes": "False-positive classes: the first is a temporal/scope status statement, the second a substantive mathematical contrast that IS the blockquote's claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1246,6 +1262,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.073Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "trap-em-dash": [
@@ -1265,6 +1296,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 381 words)"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.112Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "trap-triples": [
@@ -1284,6 +1330,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 381 words)"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.152Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "trap-closing-aphorism": [
@@ -1303,6 +1364,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.192Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "trap-meta-commentary": [
@@ -1322,6 +1398,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.233Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "trap-thesis-restatement": [
@@ -1341,6 +1432,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.273Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "trap-performed-warmth": [
@@ -1360,6 +1466,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.313Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "trap-superlative": [
@@ -1379,6 +1500,23 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.359Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "'Both reproduce $\\mathfrak{Q}_\\beta$ exactly via the precision ladder.'",
+        "notes": "Unearned maximum-strength claim. The ladder is a truncated series of near-matches (AGENTS.md records c_3 = -2 as a 3.47% near-match, and Q_beta currently misses its L2 100x target by ~164x), and this block's own Discussion says the order-by-order expansion proving the c_5 form has 'not yet [been] executed'. Proposed: 'Both contribute to the precision ladder' or state the rung and the residual. STRUCTURAL, do not fix inline. Two further findings in this block, both checkable on the page: (a) the crossing census 'The proton braid has 11 typed crossings: 7 pure sigma_0, 4 pure sigma_1, 1 averaged sigma_0, 1 averaged sigma_1, 3 inverted sigma_1^{-1}' sums to 16, not 11 - and the 11 is the load-bearing number, since the .ts refined-framing note derives the rung as k = floor(n_total/2) = floor(11/2) = 5; it also contradicts the proof sibling's Step 2, which gives the proton ONE averaged crossing. (b) The 'Falsifiable prediction' offers k = 8 as an untested check ('This is testable by extending SDP-T_beta extraction to k >= 8 and checking whether c_8 has a 1/2 fingerprint'), but the Lean sibling already records the test as done - 'Tested k=5, 8, 10 all show 1/2 fingerprints; k=9 is clean Pell-Lucas' - and its def averagingResonanceRungs := [5, 8, 10, 11, 13, 14] contradicts this block's 'k = 8, 11, ... (every 3 rungs)'. Also 'those k for which C(2,2) x (combinatorial weight) peaks' is vacuous as written: C(2,2) = 1."
       }
     ],
     "trap-nonspeakable": [
@@ -1398,6 +1536,21 @@
         "reviewed_at": "2026-08-15T10:30:59.546Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "66c6c8198c19",
+          "ts": "3104a61685ec"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:25:15.405Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full read (blockquotes, Categorical interpretation, Falsifiable prediction, Discussion; 402 words, zero em-dashes). The Discussion is an honest self-scoping paragraph ('a structural identification, not a first-principles derivation ... Both are concrete computations not yet executed') and is credited as such. Cited scripts all exist: computations/pentagon_reduction_li2q.py, computations/qbeta/qbeta_decay_sdp_extended_ck.py, and the .ts's qbeta_silver_ratio_pell_lucas_ck.py + its witness."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1420,5 +1573,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:25:15.405Z"
 }

@@ -1773,6 +1773,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.790Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1808,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.830Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1843,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 279 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.870Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
       }
     ],
     "trap-triples": [
@@ -1830,6 +1878,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 279 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.910Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1913,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.949Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "block does not end on a manufactured quotable line"
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1948,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:11.989Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "emphasis is placed, not announced"
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1983,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:12.030Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "no block-final restatement of what the text established"
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2018,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:12.070Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "institutional register throughout"
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2053,23 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:12.108Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "'This is the canonical non-trivial bar-involution in QOU' plus the unqualified 'the bar-symmetric subring is exactly $R[X^2]$' stated for an arbitrary commutative ring. The Lean proves only the inclusion (even powers are bar-symmetric); the reverse fails whenever 2 is a zero divisor.",
+        "notes": "PROPOSED (structural, math - not applied): qualify to 'a canonical non-trivial bar-involution' and add the hypothesis that 2 is a non-zero-divisor in R to the 'exactly' claim (also in the .ts title)."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2089,22 @@
         "reviewed_at": "2026-08-15T10:30:59.564Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "eb9d2f12ae1e",
+          "ts": "54e1ec2f5399"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:12.148Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: statement, categorical role, three-reason justification, three-layer connection. Bar map p(X)->p(-X) is an involution; 'bar-symmetric subring is exactly R[X^2]' needs 2 a non-zero-divisor (reported).",
+        "notes": "noun chains parse aloud"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2128,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:12.148Z"
 }

@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.456Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.496Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.537Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.577Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1080,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.618Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1114,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.658Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1148,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.698Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1182,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.737Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1216,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.776Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1250,21 @@
         "reviewed_at": "2026-08-15T10:31:01.155Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7a5b31e015c4",
+          "ts": "91b50a9582fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.815Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 short sections, ~0.77kB). Recomputed hbar_q/ln q at the proton pin: 0.0990817/0.1043418 = 0.94958 -> '0.9496' correct (the same to 4 dp at every candidate pin, so it does not discriminate). Both sections are verbatim duplicates of the tail of the orphaned spectral-decomposition-qvalue-interpretation.md (colon vs semicolon in the last sentence is the only difference)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1291,5 @@
     "md": "7a5b31e015c4",
     "ts": "91b50a9582fd"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:26.815Z"
 }

@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.269Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.337Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.388Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.450Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.494Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.562Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.610Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.664Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.716Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "96bbc2d33335",
+          "ts": "9ca2e20adcdf"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:43.770Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED, all seven rows. B_obs is correct against AME2020 in every row (2.22457, 28.29567, 39.2446, 92.1618, 127.6193, 342.052 round to the printed values). The 'Mass error' column reproduces EXACTLY as (B_obs - B_pred)/M_atom with M_atom = Z m_p + N m_n - B_obs: computed -0.144, +0.2385, -0.04591, +0.08295, +0.07049, +0.06629 against printed -0.144, +0.238, -0.046, +0.083, +0.070, +0.066. The table is internally consistent. HEADLINE FLAG for the report: that column makes a badly-missing binding prediction look like a sub-0.25 pct success. The BINDING errors (B_pred - B_obs)/B_obs are +121.6 pct for 2D, -31.4 pct for 4He, +7.6 pct for 7Li, -10.1 pct for 12C, -8.2 pct for 16O and -7.2 pct for 40Ca - the small percentages come entirely from dividing by a mass dominated by Z m_p + N m_n, which is the calibration, not the prediction. Reporting the mass error rather than the binding error is the double-counting the 2026-08-11 absolute-mass excision exists to remove. SECONDARY FLAGS: no q_0 pin, no witness path and no producer are recorded anywhere in the block."
+      }
     ]
   },
   "source_hashes": {
     "md": "96bbc2d33335",
     "ts": "9ca2e20adcdf"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:32:43.770Z"
 }

@@ -895,7 +895,188 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.105Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.147Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.190Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.233Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.274Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.316Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.358Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.400Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.441Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "'Exact computation cost ... with no approximation or truncation' plus a 'Wall-clock time (modern hardware) | < 1 ms' row. The same table states a max polynomial degree of 44,099 over 21,945 matrix multiplications; schoolbook or FFT polynomial arithmetic at that size is ~1e10 coefficient operations, so <1 ms is unreachable unless the product is evaluated numerically at q0, which the degree row contradicts.",
+        "notes": "PROPOSED (structural, math-adjacent - not applied): either drop the wall-clock row or state which arithmetic it times (numeric evaluation at q0 vs symbolic polynomial)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d8f7a6ebf6aa",
+          "ts": "8d95335a03e1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:00.482Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: caption + 4-row cost table. C(210,2)=21945 and deg<=A^2-1=44099 recomputed correct; the '<1 ms' row is not reproducible for degree-44k polynomial arithmetic.",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:00.482Z"
 }

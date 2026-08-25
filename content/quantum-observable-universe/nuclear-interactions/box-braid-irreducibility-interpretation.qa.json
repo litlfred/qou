@@ -1233,6 +1233,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:22.957Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1269,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:22.997Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1305,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 143 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.038Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1341,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 143 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.078Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "The three numbered arguments (no constituents / suppressed scattering channel / uniqueness of the T_{3,5} mediator) are three distinct arguments, not a reflex list, despite their shaped 'No X.' headers."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1377,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.115Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1413,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.151Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1449,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.191Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1485,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.230Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1521,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.266Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "Unqualified maximum-strength claims that the block's own arguments do not support: 'The neutrino is strictly stable. It cannot decay via any process.' and 'T_{3,5} is the unique cross-family mediator.' Argument 2 supplies only 'strongly suppressing the channel' and the closing line only 'energetic inaccessibility' - suppression and inaccessibility are not impossibility, so the block contradicts itself within eight lines. This is also the AGENTS.md refuted/ruled-out scope rule: 'cannot' is a scope-(b) structural exclusion and needs a named proved invariant. NOT applied - weakening the claim changes the physics assertion. Proposed: 'The neutrino has no accessible decay channel' plus scope-(a) phrasing on item 2, or cite the invariant that forbids the channel outright."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1557,23 @@
         "reviewed_at": "2026-08-15T10:31:01.300Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a775ae1ec10f",
+          "ts": "492e931acd0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:57:23.320Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:box-braid-irreducibility-interpretation (box topology, vertex structure, neutrino-stability corollary with three numbered arguments, closing line). All ten categories judged. Internal-consistency check performed on the corollary: the heading claims strict impossibility while its own supporting argument claims only suppression (see notes).",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1596,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:57:23.320Z"
 }

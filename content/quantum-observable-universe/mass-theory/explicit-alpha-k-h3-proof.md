@@ -71,19 +71,7 @@ $\square$
 canonical evaluation at $q_0 \approx 1.110$ matches the symbolic
 forms above to $\sim 10^{-16}$; values are tabulated in the witness
 file
-([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/alpha-k-jones-markov-h3.witness.json)).
-
-## Alternative derivation via Wenzl-bridge
-
-By [Wenzl-bridge closed form](#prop:y-lambda-closed-form-wenzl-bridge),
-$y_\lambda(q)$ at $H_3$ admits the closed form
-$y_\lambda = s_{\lambda, r}(Q) / \sum_\mu d_\mu s_{\mu, r}(Q)$ with
-$Q = q^2$ and $X = Q^r = q^{3/2}/(1 + q - q^2 - q^3 + q^{3/2})$. The
-Markov pairings $\alpha_k = \langle \mathrm{tr}_M, r_k \rangle$ on the
-four $E_\infty$ classes inherit this $q$-rational structure
-automatically; the per-class derivations below can be replaced by a
-uniform application of the bridge formula (see also
-[recipe](#prop:y-lambda-recipe-from-partition)).
+([`alpha-k-jones-markov-h3.witness.json`](https://github.com/litlfred/qou/blob/main/computations/alpha/alpha-k-jones-markov-h3.witness.json)).
 
 ## Alternative derivation via Wenzl-bridge
 

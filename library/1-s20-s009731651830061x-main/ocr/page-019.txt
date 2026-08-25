@@ -1,0 +1,48 @@
+578 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+(m,n, kt, kp)-Gog pentagons as defined here correspond to their (m+n, kr, kp, n)-Gog
+pentagons. Also, as we reflected their pentagons along a horizontal axis, the bottom
+entry in their pentagons is the top entry of the pentagons as defined here.
+
+3.4. Inversion numbers
+
+We observe that (m,n,kz,kr)-Gog pentagons with bottom row bp—kp+1,0n—kp+2>
+
+...,bp,, correspond to (s, t)-trees of order n, where s = (n—kp—1,n—kpe—2,...,0) and
+t = (0,1,...,n—kz, — 1). This implies that the number of (m,n, kz, kr)-Gog pentagons
+with bottom row b;—xp41,---, 0%, is equal to
+a Moke kb n ;
+(-1)( eR) Il (L4a,)iat bet Il (14a,;)% art! Il (Ltaj)mthetl gontinke
+i=l i=n—kpt1 i=kp +1
+x Il (aj — aj )(1+ 2; + a4a;).
+1<i<j<n
+
+If we define the inversion numbers for Gog pentagons in the obvious way, it fol-
+lows that the generating function of (m,n,kz,kp)-Gog pentagons with bottom row
+
+bn—kp+i>+++> 0k, and w.r.t. the two inversion numbers are
+ey Mh kp
+(-1y2"") Il (L+ai)(1+ (1 — v)aj) Pht tg lke Il (1t+aj)%a5"*?
+i=l i=n—kptl
+
+n
+x Il (Lta)™* 1 (14ua het te Il (a; —x;)(14+(1—v)a;+u(2;+a;2;)).
+i=kp +1 1<i<j<n
+
+In order to obtain the generating function of (m,n, kz, ke)-Gog pentagons with top
+row a, one has to multiply the expression with Py.amin,max(X), Where min < a < max
+and min < 1 and max > m+n.
+
+8.5. Minima and maxima
+
+A bottom-minimum is an entry in the leftmost SE-diagonal that is equal to the lower
+bound of its SE-diagonal, while a bottom-mazimum is an entry in the rightmost NE-
+diagonal that is equal to the upper bound of its NE-diagonal. A top-minimum is an entry
+equal to 1 and such entries can only be in the leftmost NE-diagonal. A top-mazimum is
+an entry equal to m+n and such entries can only be in the rightmost SE-diagonal. Ob-
+serve that minima (resp. maxima) as defined for Gog trapezoids are top-minima (resp.
+bottom-maxima) as defined for Gog pentagons.
+
+Also in this case, it is not possible to include both, the inversions numbers, and the
+numbers of maxima and minima because for the numbers of minima and maxima we need
+to apply Corollary 6 in instances where 6;,..., bn is not necessarily strictly increasing.

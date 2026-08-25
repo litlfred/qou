@@ -1079,6 +1079,22 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.105Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'does not reproduce the GGM resurgent-Stokes spectrum {3,4} and does not license A_omega = 3' and the closing 'It is not the open-HOMFLY bridge.'",
+        "notes": "False-positive class: load-bearing disambiguation. The block exists to separate two published bridges that identify different BPS spaces, and the exclusion is the non-degeneracy result itself, stated directly rather than narrated."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1098,6 +1114,21 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.157Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
       }
     ],
     "trap-em-dash": [
@@ -1118,6 +1149,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 344 words (1.74/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.202Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "6 spaced em-dashes in 452 words; two append rather than punctuate and the appended content repeats: '... BPS degeneracies\" - proved by Garoufalidis-Gu-Marino for the figure-eight'; '... conditional on it downstream (thm:aomega-fourone-dt-count) - a theorem for 4_1, conjectural in general'; and 'the general statement is open - it is a theorem for 4_1' says the same thing again eight lines later.",
+        "notes": "STRUCTURAL. Proposed: comma for the attribution dash; keep 'a theorem for 4_1, conjectural in general' once (in the adoption sentence) and drop the repeat in the Lean section."
       }
     ],
     "trap-triples": [
@@ -1137,6 +1185,21 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 344 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.260Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
       }
     ],
     "trap-closing-aphorism": [
@@ -1156,6 +1219,21 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.342Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
       }
     ],
     "trap-meta-commentary": [
@@ -1175,6 +1253,21 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.395Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
       }
     ],
     "trap-thesis-restatement": [
@@ -1194,6 +1287,22 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.452Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Section closes on the adoption decision, which is new content rather than a restatement.",
+        "notes": "NOTE: 'a theorem for 4_1, conjectural in general' is stated twice (adoption paragraph and Lean section) - see trap-em-dash notes."
       }
     ],
     "trap-performed-warmth": [
@@ -1213,6 +1322,21 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.505Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
       }
     ],
     "trap-superlative": [
@@ -1232,6 +1356,21 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.551Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (452w, conj). det(4_1)=5 and det(3_1)=3 recomputed and correct; 5 not in {3,4} holds."
       }
     ],
     "trap-nonspeakable": [
@@ -1251,6 +1390,23 @@
         "reviewed_at": "2026-08-15T10:31:00.589Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9c248b537d80",
+          "ts": "0f827d0fbef1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:36.601Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Duplicated citation token made the sentence ungrammatical: 'The first equality is [garoufalidis-gu-marino2023peacock] peacock Conjecture 3(d)'. The key legitimately ends in 'peacock' (references.ts:5572); the bare repeat was a copy artifact.",
+        "notes": "FIXED: removed the stray word - '...2023peacock`] peacock Conjecture 3(d)' -> '...2023peacock`] Conjecture 3(d)'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1280,5 +1436,5 @@
     "lean": "859019747108",
     "lean_statement": "4c0d67b5ff1e"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:20:36.601Z"
 }

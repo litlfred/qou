@@ -1233,6 +1233,23 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.227Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "major",
+        "evidence": "Two instances. (1) \"**This is not an ad hoc correction.** We evaluate precisely the same Skein polynomial on the complete outgoing link rather than truncating at the weak vertex.\" (2) \"These are **not** small perturbative corrections. They change decay rates by factors of 1.4 to 5.\" In both, the following sentence states the positive claim.",
+        "notes": "FIXED: (1) bolded denial deleted, positive sentence kept verbatim. (2) -> \"These enhancements change decay rates by factors of 1.4 to 5.\" (also repairs the dangling \"They\"). Table 1 checked: the factors do run 1.4 to 5.0."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1269,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.266Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for setup-then-reframe constructions in which a second clause carries the claim; the block states its claims directly.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1304,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 356 words)"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.305Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): spaced em-dash count 0; uses are ranges or true appositives, not substitutes for sentence structure.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1290,6 +1339,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 356 words)"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.344Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): every enumeration checked for reflex-of-three padding; those present enumerate distinct named objects tied to the block's content.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1374,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.386Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): final sentence checked: it carries content (a cross-reference, a technical statement, or a scope note) rather than a quotable flourish placed for cadence.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1409,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.425Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): checked for narrated emphasis ('the key point', 'we emphasize', 'note the framing', 'the takeaway'); none present.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1444,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.465Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): block-final sentence compared against the body; it adds content rather than restating what the text already established.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1479,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.503Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): institutional register throughout; no personal or affective language.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1514,23 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.543Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "severity": "minor",
+        "evidence": "The $\\sim 10$--$17\\%$ residual in the verification table stems **entirely** from discrete nuclear structure effects. (no residual decomposition is given anywhere in the block) and \"This unifies the electromagnetic and weak interactions through the single deformation parameter $q$.\"",
+        "notes": "proposed: \"is consistent with discrete nuclear structure effects\" and \"couples the electromagnetic and weak sectors through the same deformation parameter\". Not edited (claims, not constructions)."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1550,22 @@
         "reviewed_at": "2026-08-15T10:31:01.201Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "175b24c9a400",
+          "ts": "8be2ec6757f2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:01:34.585Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-block read (batch agent:n00): read aloud for noun-chain stalls; sentence length and verb placement are conventional for the register.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1588,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:01:34.585Z"
 }

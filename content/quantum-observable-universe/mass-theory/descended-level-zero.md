@@ -8,4 +8,4 @@ $$
 
 *The descended term enters the tower sum exclusively at level 0. All higher levels contribute strictly transient divisor modes.*
 
-The descent involution is idempotent and factors recursively through lower levels. Iterating the trace reduction consistently recovers the base-level cycle mass. Summing the descended component at each subsequent jet level constitutes an invalid double-count of the foundational holonomy.
+The descent involution is idempotent and factors recursively through lower levels. Iterating the trace reduction consistently recovers the base-level cycle mass. Summing the descended component at each subsequent jet level would double-count the base-level holonomy.

@@ -1190,6 +1190,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.374Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1224,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.427Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1258,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.469Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1292,22 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 163 words)"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.509Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "'The limit collapses the quantum gap hbar_q -> 0, smooths the Jackson q-derivative into the ordinary derivative, and degrades the braided tensor category into a symmetric one.'",
+        "notes": "Substantive: three structurally distinct collapses, matching the three numbered clauses of def:classical-limit-functor one-for-one."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1327,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.549Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1361,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.588Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1395,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.630Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.671Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1463,23 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.712Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "'The Riemann hypothesis is exactly the statement that the macroscopic continuum inherits the stability of the q-scale.'",
+        "notes": "STRUCTURAL, do not fix inline. 'is exactly' asserts an equivalence the corpus does not hold: RH is a statement about the zeros of zeta, and its identification with the q-scale persistence statement is the framework's conjecture. The block's own downstream sibling conj:classical-riemann-hypothesis hedges it correctly - 'The Riemann hypothesis ASSERTS that this alignment survives the adelic assembly' - so the two blocks disagree in strength. Proposed: 'On this reading the Riemann hypothesis becomes the statement that ...'. Related, milder: 'the algebraic substrate is unconditionally stable at the q-scale' and 'the OPTIMAL square-root error term' are both unqualified; the Hasse-Weil half of that is a genuine theorem and checks out (|alpha| = q^{1/2} puts the local zeros on Re(s) = 1/2)."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1499,21 @@
         "reviewed_at": "2026-08-15T10:30:59.551Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "40511d6b68c0",
+          "ts": "aab7f2a94e67"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.753Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read of the section preamble (three paragraphs + two displays). Zero em-dashes. Surreal orders recomputed for consistency: Delta_q ~ eps^3 (infinitesimal) and Omega_q ~ eps^{-1} (transfinite), so delta^2 Omega_q > Delta_q for every standard real delta > 0 - matches the delta^2 eps^{-1} > eps^3 form used in rem:adelic-tate-squeeze and the Lean adelic_reeb_squeeze_local_to_global. hbar_q = 1 - q^{-1} -> 0 as q -> 1 is AGENTS.md-consistent."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1536,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:28:44.753Z"
 }

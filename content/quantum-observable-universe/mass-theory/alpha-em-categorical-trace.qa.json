@@ -1426,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.326Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.368Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 54 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.424Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 54 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.486Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.533Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.590Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.635Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1664,21 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.675Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark (deprecated), legacy empirical alpha_EM forms); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1698,23 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.715Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "Intensifier cluster in a five-sentence block: 'relies exclusively on the robust, pre-archimedean evaluation'; 'lack theoretical backing'; 'They exist purely as historical diagnostic markers and are completely replaced by the exact Hopf 2-strand operation model.' Three unquantified maximum-strength markers ('robust', 'purely', 'completely') in the space of two sentences.",
+        "notes": "fix applied (two edits): 'relies exclusively on the robust, pre-archimedean evaluation' -> 'relies exclusively on the pre-archimedean evaluation'; 'They exist purely as historical diagnostic markers and are completely replaced by the exact Hopf 2-strand operation model.' -> 'They exist only as historical diagnostic markers and are replaced by the exact Hopf 2-strand operation model.' 'exclusively' and 'exact' were KEPT: the first carries the deprecation's content (no other form is used), the second is the exact-vs-PSLQ-fit contrast the block exists to make."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1734,23 @@
         "reviewed_at": "2026-08-15T10:31:00.351Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bcbbf393b363",
+          "ts": "94f05ee4664f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.761Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'These residual artifacts fail exact representation limits and smooth $q$ continuity.' - the verb 'fail' takes two heterogeneous objects ('representation limits', 'continuity') with no preposition, so the sentence does not parse aloud and its intended claim is ambiguous (fail to admit an exact representation? fail a limit test? fail to be smooth in $q$?).",
+        "notes": "NOT fixed - the repair requires guessing the intended claim, which is a meaning change. proposed (author to confirm): 'These residual artifacts admit no exact representation and are not smooth in $q$.' Also recorded as a suspected prose-sweep garble in the batch anomaly list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1773,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:26:02.761Z"
 }

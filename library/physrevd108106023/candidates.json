@@ -1,0 +1,53 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "physrevd108106023",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "50c7980e88cd21a07f420b53a6dc0d9397e6334cad2c6c39eb27b5745817e209",
+  "file": "PhysRevD.108.106023.pdf"
+ },
+ "provenance": {
+  "title": "I. INTRODUCTION Knot-quiver correspondence (KQC) conjectured by Kucharski-Reineke-Stosic-Sulkowski [1] provides a new encoding of HOMFL Y -PT invariants of knots in terms of the representation theory of quivers. Such a correspondence",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.1103/PhysRevD.108.106023"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "proposition": 1,
+   "conjecture": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": null,
+   "name": null,
+   "statement": "The r-colored Jones polynomial for double",
+   "section_file": "sections/sec-001-ii-double-twist-knots.md",
+   "section_title": "DOUBLE TWIST KNOTS",
+   "pages": "2-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": null,
+   "name": null,
+   "statement": "The generic structure of the quiver matrix",
+   "section_file": "sections/sec-001-ii-double-twist-knots.md",
+   "section_title": "DOUBLE TWIST KNOTS",
+   "pages": "2-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

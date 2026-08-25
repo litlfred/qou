@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-10T02:20:19Z
-updated_at: 2026-08-10T02:21:04Z
+updated_at: 2026-08-21T21:54:11Z
 ---
 
 
@@ -151,3 +151,82 @@ regardless of what either real stem was declared as.
 `physical_proton` membership cannot change a value — `q_parameter` tests only
 `ideal_muon` membership and treats everything else as proton — so those two are
 stamping-only declarations, safe to make on evidence without a re-run.
+
+
+## Sub-finding (2026-08-16, from qou-cwin): the vocabulary has NO label for a
+## deliberate cross-anchor comparison, so such probes land in ANCHOR_MISSING
+
+The count in this bean's title moved 1887 -> 1891 on my branch, and all four
+new entries are mine.  They are not forgetful producers -- they are probes that
+read BOTH anchors ON PURPOSE (a c_3 cross-anchor swing measurement, the h-frame
+rungs at both pins, the h-vs-u stability comparison, the required-phase probe).
+
+Reading the vocabulary in tools/qou-substrate/python/qou_substrate/witness.py:56-80,
+none of the four values fits:
+
+  muon / proton   wrong -- there is no single pin; the comparison IS the point
+  independent     wrong -- and would be a FALSE claim of layer-freedom; the
+                  compute reads q0 twice
+  ambiguous       descriptively true (both signatures present) but the docstring
+                  defines it as 'the pin is UNDETERMINED ... a queue for a manual
+                  ruling'.  A deliberate comparison is not undetermined, and
+                  filing it into a manual-ruling queue mislabels it for whoever
+                  drains that queue.
+
+So I did NOT stamp one.  Improvising a label here would either mint a false
+independence claim or pollute the ruling queue -- both worse than the honest
+ANCHOR_MISSING the audit already reports (which its own docstring calls
+'pre-backfill; not a failure').
+
+Suggested fix, for whoever takes this bean: add a fifth producer-declared value,
+e.g. 'comparison' -- the compute reads MORE THAN ONE anchor deliberately, and
+records each value under its own key.  It is distinguishable from 'ambiguous'
+by being producer-asserted rather than manifest-inferred, exactly as
+'independent' already is.  That also gives the audit a way to separate 'this
+witness straddles two layers by accident' (a real defect, per the AGENTS.md
+straddling hazard) from 'this witness compares two layers on purpose'.
+
+
+---
+
+## 2026-08-21 — the `comparison` sub-finding is IMPLEMENTED (PR #5430), and it immediately found a blocker
+
+Took the "Suggested fix, for whoever takes this bean" at the end of this bean.
+
+**Done.** `comparison` is now a fifth, producer-declared `q0Anchor` value:
+carries `q0Values` ({anchor: value}, one entry per pin read), no bare
+`q0Value`, requires a reason. `q0_comparison()` helper in
+`qou_substrate.witness`; `Q0_COMPARISON` / `_NO_REASON` / `_NO_VALUES` plus
+three Q0_FLIP paths in `q0_anchor_consistency_audit`. All 7 new branches
+self-tested; 3 regression cases unchanged. Additive.
+
+Design point worth keeping: it is the ONE anchor label the audit can VERIFY
+rather than take on trust. `independent` asserts something about an import cone;
+`comparison` NAMES its pins and each either matches its canonical value or does
+not. So the helper requires the value the producer ACTUALLY COMPUTED WITH —
+stamping the canonical constant would make the check a tautology.
+
+**NOT done, and why:** the four probes this bean names are NOT stamped. I
+stamped them, and all four came back Q0_FLIP — because `q_muon_at()` is not the
+canonical muon pin. Three values are in play (probe:
+`computations/audits/muon_pin_three_values_probe.py`, 5/5):
+
+  A canonical q-pinning   1.1099785955573347...  FROZEN
+  B in the 4 witnesses    1.1099785955541805...  the REVERTED derivation's value
+  C q_muon_at() today     1.1099785956427390...  live, drifts with CODATA
+
+  B-A = -0.0028 ppb   C-A = 0.0769 ppb   C-B = 0.0798 ppb
+
+All inside the 11.5 ppb mu-p gap, so none is a mislabelled proton value — a
+muon-vs-muon discrepancy. B is verbatim the number
+`_q0_value_for_anchor`'s docstring calls the wrong side of the 2026-08-15
+revert: that revert fixed the code and left the data.
+
+Stamping honestly => 4 new CI-failing flips; stamping the constant => the check
+becomes a tautology and hides this. So: reverted the stamps, recorded the
+finding. Needs a ruling on which of A and C a "muon-anchored" quantity uses.
+
+**Also measured:** ~110 producers read both pins, not 4. NOT mass-stamped —
+part of that population is the genuine straddle defect, and blanket-labelling
+it "deliberate" would launder real findings. Intent needs per-producer
+verification.

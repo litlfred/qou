@@ -158,5 +158,8 @@
       "detail": "the 224x undetermined band collapses to |kappa| MeV per single-magic mirror pair, at every shell"
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080000000000000000000000000000000000000000000",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route42_extended_bloch_anchor",
   "bean": "qou-0yqu",
-  "dps": 50,
+  "dps": 70,
   "follows": [
     "Route 40 (distribution factors)",
     "Route 41 (ladder rank)"
@@ -28,7 +28,7 @@
       "claim": "the sum rule reproduces with branch integers b = (-1, +1, +1) -- note the REAL root carries +1, not 0. The second half is the negative control and the correction: b = (+1, -1, 0), assuming the real root's branch is trivial, MISSES by more than 16. It is recorded because that is what this session asserted first",
       "Re_sum_with_(-1,+1,+1)": "-14.8044066016340379282517364998",
       "target_-3pi^2/2": "-14.8044066016340379282517364998",
-      "residual": "2.13821176807e-50",
+      "residual": "2.89781730522e-70",
       "Re_sum_with_the_WRONG_(+1,-1,0)": "-30.82201549534345025367374",
       "how_far_the_wrong_one_misses": "16.0176088937",
       "pass": true

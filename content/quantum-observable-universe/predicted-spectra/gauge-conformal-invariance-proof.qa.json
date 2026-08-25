@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:38.874Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:38.961Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 119 words)"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.034Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 119 words)"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.090Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,21 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.141Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1346,21 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.201Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.291Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The post-QED paragraph restates the proof's own conclusion. The proof ends 'This preserves the exactness of the eigenspace ratio.'; the commentary then says 'The relative ratios of the eigenspaces remain strictly preserved.' - same claim, one intensifier added - and thm:gauge-conformal-invariance has already stated it a third time ('the relative ratio of their eigenspaces is invariant'). Three statements of one claim across a block and its parent.",
+        "notes": "Structural, not edited. Proposed fix: delete 'The relative ratios of the eigenspaces remain strictly preserved.' from the commentary; the sentence on either side of it ('the poles do not slide independently' and 'The mathematical distance ... is structurally locked') already carry the consequence, which is what the commentary is for."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1416,21 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.246Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (a three-sentence proof plus a six-sentence commentary paragraph). 'the poles do not slide independently' is a substantive dynamical claim, not emphasis-by-denial. No pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence states the locked Balmer/Cemetery separation, which is the block's content), no narrated emphasis, no warm register."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1450,22 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.338Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'strictly bound', 'strictly preserved', 'structurally locked' are intensifiers rather than superlatives; no maximum-strength ranking claim is made.",
+        "notes": "Reported to the batch as an intensifier cluster (the de-hedging sweep pattern): 'strictly' twice and 'structurally' once here, plus 'structurally required' in the sibling rem:gauge-conformal-invariance-interpretation. Each adverb is doing rhetorical rather than mathematical work - 'preserved' and 'locked' are already absolute."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1485,23 @@
         "reviewed_at": "2026-08-15T10:31:01.192Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "430799fdda19",
+          "ts": "001b44751078"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:39.398Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Three nominalised, agentless sentences, two of them opaque: 'Direct algebraic verification on the Hecke eigenvalues isolates the conformal scaling as a global factor.' (four-word nominal subject), 'For eigenvalues structured as words in $q$, the relative quotient factors through the fundamental algebra relations.' ('the relative quotient' is never defined and the sentence has no recoverable referent), and 'The mathematical distance between a primary Balmer transition and a higher-order Cemetery group spike is structurally locked.' (two long noun phrases bracketing a copula).",
+        "notes": "Structural, not edited. Two content defects reported to the batch alongside it: (1) 'All eigenvalues remain strictly bound to words of the generators $q$ and $q^{-1}$' calls q and q^-1 GENERATORS - per 7a the generators are sigma_i and q is the deformation parameter; the intended claim is presumably that eigenvalues are Laurent monomials in q. (2) The proof proper is three assertions and a QED box with no argument: 'direct algebraic verification' names a method without performing it, and 'factors through the fundamental algebra relations' names no relation. Also, the block invokes the Cemetery group without a uses[] edge to def:cemetery-group (which does exist, in knots-particles-confinement/)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1524,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:44:39.398Z"
 }

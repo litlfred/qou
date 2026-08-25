@@ -75,6 +75,7 @@ The computed quotient digits are recorded for future adjudication.
 """
 
 import json
+import pathlib
 import sys
 
 P5 = 5
@@ -297,8 +298,16 @@ def cmp_digits(val, printed, cap):
 # over C, sum_j log(1 - z e^{-(j+1/2)t}) minus [Li2(z)/h + a1*h + a3*h^3]
 # (h = -t) must scale as h^5 — validates -1/24 and 7/5760 incl. signs.
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 zc = mp.e ** (2j * mp.pi / 24)
 
 
@@ -362,7 +371,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_psi_section_division_probe",
     "beans": ["qou-9p9y"],
-    "source": "GSWZ arXiv:2412.04241v2 Def 3.9, Thm 10, §4.6 eqns (282)/(287); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 Def 3.9, Thm 10, §4.6 eqns (282)/(287); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field), p = 5, m = 1 fibre",
     "checks": checks,
     "open_reproduction_of_printed_287": open_reproduction,
@@ -380,7 +389,7 @@ witness = {
         "CGZ [10] data)"
     ),
 }
-with open("computations/probes/gswz_psi_section_division.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_psi_section_division.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

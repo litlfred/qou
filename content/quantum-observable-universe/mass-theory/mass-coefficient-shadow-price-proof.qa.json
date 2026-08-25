@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.487Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of proof. No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.538Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 325 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.587Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One em-dash, appending '— independent of any nuclear datum' to the C_lambda definition; 1 in 494 words, and it marks a genuine qualification."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 325 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.641Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The c(lambda) > 0 / = 0 / < 0 trichotomy is exhaustive by sign, and the branching/budget corollaries are two, not three. No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.714Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends at the QED box after the branching corollary."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.775Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Emphasis placed, not narrated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.834Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The final corollary adds the level-to-level propagation rule rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.885Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,22 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:09.949Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The factorisation is unique' and 'without fitting' are framework claims discharged (or attempted) by the surrounding argument, not rhetorical inflation.",
+        "notes": "Out-of-criterion, the uniqueness step is a non sequitur as written: 'The factorisation is unique because the Wedderburn blocks are orthogonal under the Frobenius pairing: different partitions contribute to linearly independent scaling functions.' Orthogonality of the blocks in H_k does not by itself give linear independence of the functions S_lambda(Z,N,A) on the nuclear data, which is what uniqueness of the (C, S) split needs. Suggest either a separate independence argument or a scope hedge."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,22 @@
         "reviewed_at": "2026-08-15T10:31:00.613Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a0f3a5ac17e3",
+          "ts": "65b2458d34ef"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:10.016Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "Two checked-and-clean / one minor technical note. CHECKED: the level budget identity [k+1]_q! - [k]_q! = [k]_q!([k+1]_q - 1) is correct, since [k+1]_q! = [k+1]_q [k]_q!. CHECKED: the normalisation sum_lambda d_lambda y_lambda(q) = 1 reproduces at n = 3 under convention D with y = ([4]_q/[2]_q^3, 1/[2]_q^2, 0): 1*[4]/[2]^3 + 2/[2]^2 + 0 = 1 exactly (symbolic). MINOR: the stated dual has an inequality constraint, but the primal writes x free (only 1^T x = n_target and Gx >= 0), for which the dual constraint is an equality u_0 + (G^T u)_i = t_i; '<=' presupposes an unstated x >= 0. The RHS w_lambda/d_lambda is consistent with t_i = tr_M(b_i) only because the b_i are idempotents (tr_M(b) = tr_M(b^2)); worth saying so explicitly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1703,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:36:10.016Z"
 }

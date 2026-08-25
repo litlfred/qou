@@ -1414,6 +1414,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the absolute M scale.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.033Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1433,6 +1448,21 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.118Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1452,6 +1482,21 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 255 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.206Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
       }
     ],
     "trap-triples": [
@@ -1471,6 +1516,38 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 255 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.301Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.843Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The lead sentence says 'The Hecke-algebraic formulation of the Bohr radius possesses THREE structural properties' and is followed by FOUR level-4 sections: Additive decomposition, Shell ratios and the Bohr 1/n^2 scaling, Curvature rank and covalent bonds, Transport dependence. This is the reflex-triple pathology in its checkable form - the count was written before the content.",
+        "notes": "proposed: 'four structural properties', or drop the count entirely ('The Hecke-algebraic formulation has the following structural properties.'). Not fixed inline because the correct repair depends on whether 'Transport dependence' was meant as a fourth property or as a closing scope note, which is an authorial call."
       }
     ],
     "trap-closing-aphorism": [
@@ -1490,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.382Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1509,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.434Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1528,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.518Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1547,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.597Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
       }
     ],
     "trap-superlative": [
@@ -1566,6 +1703,38 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.682Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.922Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "major",
+        "evidence": "'Identifying $n = 2k+1$ EXACTLY reproduces the Bohr $1/n^2$ energy-level spacing.' - it does not. Recomputed: k in {0,1,2,3} gives (2k+1)^{-2} in {1, 1/9, 1/25, 1/49}, which is the displayed set and which is the ODD-n subseries only. The Bohr spectrum needs every n >= 1, including 1/4 and 1/16; those levels have no k. The block's own display shows the gap, and the word 'exactly' asserts over it.",
+        "notes": "proposed: 'Identifying n = 2k+1 reproduces the odd-n subseries of the Bohr 1/n^2 spacing; the even levels are not produced by this indexing.' Not fixed inline - whether the even levels come from a second family or the identification is wrong is a mathematical question, not a prose one."
       }
     ],
     "trap-nonspeakable": [
@@ -1585,6 +1754,37 @@
         "reviewed_at": "2026-08-15T10:31:01.234Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:48.777Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the round-8 findings remark: additive decomposition, shell ratios, curvature rank, transport dependence. All ten categories judged; the shell-ratio arithmetic and the Markov parameter recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "a03e738dbd79",
+          "ts": "a5448968d9f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:49.005Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Prose is short-sentence and reads cleanly aloud. CONVENTION FINDING recorded here (see notes).",
+        "notes": "CONVENTION-C FINDING, report only, never fix math inline: 'The Markov parameter is z = sqrt(q)/(q+1).' That is convention C, recomputed as 0.4993203342 at q_0, which the owner ruling of 2026-08-15 EXCISED in favour of convention D, z = q^3/(q^2+1) = 0.6126880371. This is a live convention-C site in content/, i.e. one of the survivors AGENTS.md warns the 2026-08-10 drain left behind. DEPENDENCE: the three displayed forms (V_H = z + h_b - h_d, V[1] = 1 + 2 z h_b - z h_d, V[2] = z - h_b) carry z symbolically, so the block's headline claim - that the h_b h_d cross-terms cancel and the kinetic/Coulomb parts decouple linearly - does NOT depend on which convention z denotes. What does depend on it is any numerical evaluation of V_H, V[1], V[2], and the claim that the optimal ordering [p_1, e_2, e_1, p_2] is optimal. Proposed fix: substitute z = q^3/(q^2+1) and re-verify the ordering. Checked and correct in the same block: h_b = q - q^{-1}, h_d = q^5 - q^{-5}, and Delta_kin/Delta_Coul = (4k+2)/2 = 2k+1."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1607,5 +1807,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:38:49.005Z"
 }

@@ -1359,6 +1359,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an identity.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.708Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two instances, both substantive: 'which is a Cauchy-Schwarz bound, not an identity' (a real mathematical distinction and the reason the old formula was wrong) and 'the alternating-block projection used in the 3H and 3He formulas - not a fitted ansatz' (the corpus's central derived-vs-fitted distinction)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.755Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof block (kind proof) - proof, worked 4_1 example with character table, and a historical-formulation note. Category absent."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 197 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.807Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two spaced em-dashes ('- i.e. 4_1 is Markov-amphicheiral', '- not a fitted ansatz'), both genuine appositives in a long block."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 197 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.866Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof block (kind proof) - proof, worked 4_1 example with character table, and a historical-formulation note. Category absent."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.933Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof block (kind proof) - proof, worked 4_1 example with character table, and a historical-formulation note. Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:11.987Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof block (kind proof) - proof, worked 4_1 example with character table, and a historical-formulation note. Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1563,22 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:12.040Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the historical note, not a restatement.",
+        "notes": "SEPARATE (non-trap) MATH finding - the worked example's numbers are the CLASSICAL q = 1 values, not the substrate-q_0 values it says they are. The block states 'Direct computation of the Hoefsmit characters on the three partitions lambda |- 3 AT THE SUBSTRATE q_0 gives' and tabulates chi_(3) = +1, chi_(2,1) = -1, chi_(1^3) = +1, then a_{4_1} = w_(3).1 + w_(2,1).(1/4) + w_(1^3).1. Recomputed from the block's OWN braid word beta_{4_1} = sigma_1 sigma_2^-1 sigma_1 sigma_2^-1 in the 2-dimensional [2,1] rep of H_3: chi_(2,1)(beta) = q^4 - 2q^2 + 1 - 2q^-2 + q^-4, which at q_0 = 1.1099785827513808 equals -0.910677350271, NOT -1. The normalisation is chi_(2,1)(1) = [2]_q = q_0 + 1/q_0 = 2.01089686671, not 2, so chi^2/chi(1)^2 = 0.205092356746, NOT 1/4 - the quoted 1/4 is 21.90% HIGH. The values -1 and 1/4 are exactly what the formulas give at q = 1 (S_3 standard character at a 3-cycle = -1, classical dim = 2). chi_(3) and chi_(1^3) are +1 at every q, so (2,1) is the only q-dependent entry and it is the one that is wrong. FIX: either relabel the table 'classical limit q = 1' or replace the entries with the q_0 values / the exact Laurent polynomial. THIRD VALUE IN THE SAME CHAPTER: tbl:figure-eight-branching-rule-table1-data gives chi(4_1, [2,1]) = -1 - h^2 = -1.0437 at q_0. So this one quantity appears as -1 (here), -1.0437 (branching table) and -0.9107 (true) - and only THIS block uses the correct braid word for 4_1. SWEEP DAMAGE: the closing sentence 'See the computational verification in the canonical formalism.' has the script name replaced; the .ts names computations/probes/knot_factor_amphicheiral_BD_probe.py."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:12.092Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof block (kind proof) - proof, worked 4_1 example with character table, and a historical-formulation note. Category absent."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:12.141Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflation; the 'Note on the historical formulation' is an exemplary self-correction, naming the earlier defect ('The sign-flip claim is empirically false on 4_1') and its cause rather than quietly dropping it.",
+        "notes": "VERIFIED CORRECT: the writhe argument. The alternating 1-dimensional character factors through writhe, and writhe(sigma_1 sigma_2^-1 sigma_1 sigma_2^-1) = 1-1+1-1 = 0 for both the braid and its mirror, so both give +1 - confirmed symbolically, chi_(3) and chi_(1^3) are identically +1 in q. Also confirmed: chi_(2,1)(beta*) = chi_(2,1)(beta) exactly as polynomials in q, so the 'match? yes' column and the Markov-amphicheirality conclusion are right."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.441Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e4ede1a1f057",
+          "ts": "99b57c3cbec3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:29:12.190Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proof block (kind proof) - proof, worked 4_1 example with character table, and a historical-formulation note. Category absent."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:29:12.190Z"
 }

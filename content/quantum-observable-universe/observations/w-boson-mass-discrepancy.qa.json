@@ -1380,6 +1380,21 @@
         "reviewed_at": "2026-08-15T11:36:07.892Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no negation-contrast construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:33.439Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "The only denials are physical facts ('protons lack valence antiquarks', 'no signal')."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1414,6 +1429,21 @@
         "reviewed_at": "2026-08-15T11:36:07.932Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no rhetorical-pivot construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:33.497Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Formula, per-channel predictions, CDF-vs-LHC, Higgs, inferred delta q, correlations, tests; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1448,6 +1478,21 @@
         "reviewed_at": "2026-08-15T11:36:07.966Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no em-dash construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:33.589Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Zero em-dashes in 394 words."
       }
     ],
     "trap-triples": [
@@ -1482,6 +1527,21 @@
         "reviewed_at": "2026-08-15T11:36:08.002Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no triples construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:33.659Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Enumerations are two ingredients, four correlation patterns and three experimental tests -- all matched to their content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1516,6 +1576,21 @@
         "reviewed_at": "2026-08-15T11:36:08.042Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no closing-aphorism construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:33.712Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Ends on a numbered list of proposed measurements."
       }
     ],
     "trap-meta-commentary": [
@@ -1550,6 +1625,21 @@
         "reviewed_at": "2026-08-15T11:36:08.083Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no meta-commentary construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:33.815Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'We test four patterns against the forward prediction' states what is done, not what to notice."
       }
     ],
     "trap-thesis-restatement": [
@@ -1584,6 +1674,21 @@
         "reviewed_at": "2026-08-15T11:36:08.127Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no thesis-restatement construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:33.925Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "The Summary section is a table pointer, not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1618,6 +1723,21 @@
         "reviewed_at": "2026-08-15T11:36:08.172Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no performed-warmth construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:34.097Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1653,6 +1773,22 @@
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "'strongest signal' / 'cleanest test' are comparative rankings among the four tested patterns / three proposed tests, backed by the correlation analysis",
         "notes": "pass-with-note: substantive comparatives, not inflation"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:34.186Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'zero-free-parameter formula', 'strongest signal' and 'cleanest test' are the strength claims; the first is defensible as written (q_0 calibrated, alpha measured, |chi| = 6 derived) and the other two are comparatives inside a four-way comparison.",
+        "notes": "Forward-evaluated the boxed formula at q_0 = 1.1099785827513808: delta q = (q_0-1)(alpha/2pi)/6 gives 3.44e-4 for alpha_s = 0.118, matching the quoted delta q(gg -> H) = 3.4e-4 exactly. With the same formula and the quoted sensitivity 9.62 the W shift is 14.8 MeV at alpha_EM and 68.7 MeV at alpha_W = 0.0338, against the quoted CDF excess of 77 MeV -- so which alpha the boxed formula takes per channel is load-bearing and is not stated. Reported separately, with the physical objection that a pole mass should not depend on production channel."
       }
     ],
     "trap-nonspeakable": [
@@ -1687,6 +1823,21 @@
         "reviewed_at": "2026-08-15T11:36:08.269Z",
         "reviewed_sha": "d0ffecf6293224ab8a63c0c15fee05819a98aa97",
         "evidence": "full-text agent review: no nonspeakable construction found"
+      },
+      {
+        "field_hash": {
+          "md": "38bdcb588f59",
+          "ts": "63ad209f5286"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:51:34.281Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Short sections and bolded verdict labels read aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1710,5 +1861,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:51:34.281Z"
 }

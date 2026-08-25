@@ -75,8 +75,9 @@ from closed_form_tau_M import markov_z, hecke_h, closed_form_ratio  # noqa: E402
 from _li_2_q_util import flavor_split_leading  # noqa: E402
 from atom_orbit_reduction import interface_multiset  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 HERE = Path(__file__).resolve().parent

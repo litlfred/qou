@@ -146,6 +146,9 @@
         "rationale": "character ratio with the CAL-2 exponent"
       }
     ],
-    "verdict": "No pre-declared candidate reaches 1% of the target; the best is (chi7/chi5)/hbar_q at 12.338416% . The muon-anchored Hecke route does NOT close m_tau with the corpus's existing factor vocabulary — an honest negative. Closing it requires a new structural ingredient (e.g. a genuine Markov trace of the tau braid in a higher-strand algebra, or the lepton-sector analogue of the nucleon's -6*m_e binding subtraction), not another combination of these factors."
-  }
+    "verdict": "No pre-declared candidate reaches 1% of the target; the best is (chi7/chi5)/hbar_q at 12.338416% . The muon-anchored Hecke route does NOT close m_tau with the corpus's existing factor vocabulary \u2014 an honest negative. Closing it requires a new structural ingredient (e.g. a genuine Markov trace of the tau braid in a higher-strand algebra, or the lepton-sector analogue of the nucleon's -6*m_e binding subtraction), not another combination of these factors."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808076",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.target.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

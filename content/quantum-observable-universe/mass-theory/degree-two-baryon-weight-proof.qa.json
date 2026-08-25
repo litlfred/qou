@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.032Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of the proof sketch (colour cubic, sigma_2 pair count, two-source sign/factor argument, numeric close). 'The sign is negative because ...' is a causal claim, not assertion-by-denial; no 'not X but Y' anywhere."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.069Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Linear argument: pair count -> q-deformation -> two sources of the -2 -> numeric evaluation. No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.105Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Zero em-dashes; the two parentheticals use round brackets."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.142Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "The only three-counts are mathematical (three colour channels = three roots of the colour-tube cubic; binom(3,2)=3). The enumerated list has exactly two items, matching the two stated sources of the factor."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,22 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.178Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Closes on 'consistent with the strong-force binding energy scale' after a numeric evaluation (6.09 x 3.74 approx 22.8 MeV) — a substantive scale comparison carrying the number, not a quotable line placed for cadence.",
+        "notes": "Verified arithmetic: [3]_q(q0)=3.0437 at both pins, so beta_2=-6.0874 (block says approx -6.087, approx 3.044) and 6.087*3.74=22.77 (block says approx 22.8). All three reproduce."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.215Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No narration of emphasis. 'The factor -2 arises from two sources' announces structure of the argument, which is ordinary proof signposting, not emphasis-narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.252Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Final sentence supplies new content (the 22.8 MeV degree-2 binding scale); it does not restate the proposition."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.286Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No personal or affective register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.322Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No intensifiers; 'consistent with' is appropriately weak for a two-significant-figure scale match."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,21 @@
         "reviewed_at": "2026-08-15T10:31:00.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "709482c8c996",
+          "ts": "7433d0e1a289"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:38.357Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'the pn crossing doubling convention' is a four-word noun chain but is a named convention and reads aloud; no stalling chains elsewhere."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:40:38.357Z"
 }

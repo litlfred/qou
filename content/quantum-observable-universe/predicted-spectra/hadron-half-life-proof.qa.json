@@ -891,6 +891,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a physical parameter.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:01.186Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "'It represents a choice of units, not a physical parameter' (of mu_0) is the substantive CAL-1 scale point, and 'This replaces classical energy conservation' names a real difference. Both are claims, not emphasis-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -910,6 +925,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:00.824Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "trap-em-dash": [
@@ -929,6 +959,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 296 words)"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:00.868Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "trap-triples": [
@@ -948,6 +993,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 296 words)"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:00.912Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "trap-closing-aphorism": [
@@ -967,6 +1027,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:00.959Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "trap-meta-commentary": [
@@ -986,6 +1061,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:01.003Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1005,6 +1095,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:01.050Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "trap-performed-warmth": [
@@ -1024,6 +1129,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:01.093Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "trap-superlative": [
@@ -1043,6 +1163,22 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:01.230Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "No unqualified maximum-strength claims; the quantitative statements carry explicit values.",
+        "notes": "FOUR CONTENT ITEMS REPORTED, one of them a straightforward error. (1) *** 'In the classical limit q -> 1, W(1) = 0 and beta decay vanishes' IS FALSE. *** I computed W(q) = tr_Markov((sigma_0 sigma_1)^5) in H_3(q) symbolically: W = z^2 + 4hz + 2h^2 + 8h^2 z^2 + 12h^3 z + h^4 + 14h^4 z^2 + 7h^5 z + 7h^6 z^2 + h^7 z + h^8 z^2, with h = q - q^{-1}. At q = 1 (h = 0) this reduces to exactly z^2, which is 1/4 since z(1) = 1/2 under BOTH the excised convention C and the canonical convention D. The underlying reason: at q = 1 the Hecke algebra is C[S_3] and (s_0 s_1)^5 = (s_0 s_1)^2 = s_1 s_0, whose Markov trace is z^2. Beta decay does vanish at q = 1, but by the route the sibling rem:hadron-half-life-fermi gives (crossing asymmetry vanishes, so Q = 0), not this one. (2) CONVENTION-C VALUE PRESENT: the pair Skein mass formula is written S_ab(q) = (q mu_a + q^{-1} mu_b)/(q^{1/2}+q^{-1/2}), and 1/(q^{1/2}+q^{-1/2}) evaluates to 0.4993203 at q_0, which is exactly z_C - one of the detector-blind spellings the convention-C taxonomy lists. Whether the argument DEPENDS on it I cannot tell from this block: it may be an independent symmetrising normalisation rather than the Markov parameter. Flagged for the producer to adjudicate under R1. (3) The sensitivity formula is presented as 'the sensitivity of the decay rate to q' but accounts for only two of the four q-channels the block itself enumerates - it omits |W(q)|^2 (item 1) and |M_q|^2 (item 3), both of which the block says depend on q. (4) SYMBOL COLLISION: s = q^{1/2} - q^{-1/2} here, while prop:golden-skew-dual-node and its proof use s = sqrt(q); the two differ at every q and both appear in this chapter."
       }
     ],
     "trap-nonspeakable": [
@@ -1062,6 +1198,21 @@
         "reviewed_at": "2026-08-15T10:31:01.127Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "90b0a236d0d4",
+          "ts": "e1ff2b1a6eb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:03:01.141Z",
+        "reviewed_sha": "e53d3acfb962e469075cc531f777683c3946dd70",
+        "evidence": "Full read (a five-item enumerated derivation plus a sensitivity display). No pivot, no spaced em-dash, no reflex triple (the five items are five distinct factors of the rate; the 3+0+7 crossing partition sums correctly to 10), no aphoristic closer, no narrated emphasis, no restatement closer, no warm register, no noun-pile. THE SENSITIVITY FORMULA VERIFIES: at q_0, (q^2-1)/(q^2+1) = 0.10397 and 5(q^2+1)/(q^2-1) = 48.092, summing to 48.196, matching the quoted 48; and 48.2 x 1% = 48%, matching 'approximately 50%'. Both terms are also derivable from the block's own factors: d ln[2]_q/d ln q = (q^2-1)/(q^2+1) exactly, and d ln Q^5/d ln q = 5(q^2+1)/(q^2-1) for Q proportional to q - q^{-1}. The braid word (sigma_1 sigma_2)^5 is the correct 3-braid for T(3,5)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1088,5 +1239,5 @@
     "md": "90b0a236d0d4",
     "ts": "e1ff2b1a6eb2"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:03:01.230Z"
 }

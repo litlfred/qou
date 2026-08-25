@@ -1775,6 +1775,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.669Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1794,6 +1809,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.707Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1813,6 +1843,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.743Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1832,6 +1877,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 22 words)"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.780Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1851,6 +1911,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.819Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Ends on a one-line gloss of the formula (recorded under thesis-restatement)."
       }
     ],
     "trap-meta-commentary": [
@@ -1870,6 +1945,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.856Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1889,6 +1979,23 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.894Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "\"The sum organizes the individual stratum contributions via q-deformed Wedderburn block weights.\" restates in words what the displayed formula already shows, and is the whole of the block's prose. Recorded pass because a one-line gloss under a bare formula is a legitimate reading aid.",
+        "notes": "A trailing space follows this sentence."
       }
     ],
     "trap-performed-warmth": [
@@ -1908,6 +2015,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.930Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1927,6 +2049,23 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:45.968Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "\"The categorical mass decomposes **perfectly** over discrete GB-filtration depths $k$\" - \"perfectly\" adds emphasis to a claim that is either true or false, and the block does not support it. Concretely: the coefficients alpha_k appear in the displayed sum and are never defined, here or in the proof block, which derives the m^(k) functionals but says nothing about alpha_k; so the strength of \"decomposes perfectly\" depends on an undefined symbol. The AGENTS render-QA expository rule requires every symbol to be introduced before first use.",
+        "notes": "Reported, not edited. Route: define alpha_k (or drop it if the intended statement is m = sum_k m^(k)); replace \"perfectly\" with the actual property claimed - that the strata are disjoint and exhaust the centre - which is also what the companion table needs to be true (see the overlap finding recorded on the table-data block)."
       }
     ],
     "trap-nonspeakable": [
@@ -1946,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:31:00.348Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "78e79cbbdb19",
+          "ts": "1541d22ca708"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:46.005Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1969,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:46.005Z"
 }

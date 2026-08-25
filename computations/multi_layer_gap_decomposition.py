@@ -53,8 +53,9 @@ from pathlib import Path
 
 import mpmath as mp
 from mpmath import mpf
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 LOW_ISO_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)

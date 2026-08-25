@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.740Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.781Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.821Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.862Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.903Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.943Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:45.983Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.023Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.064Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4143ab6cebda",
+          "ts": "aa4502bfe3fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:29:46.103Z",
+        "reviewed_sha": "98c6c31acd57aa8deface6a66e71443f0fda8fe8",
+        "evidence": "Full read (extracted table, 9 rows, no prose). No sentence-level construction to trap in any of the ten categories; verdicts recorded as pass on that basis. Every categorical-column pointer resolves (def:q-yang-mills-levi, prop:vacuum-state). Cosmetic: 'Frobenius--Hopf' and 'Yang--Mills' use LaTeX double-hyphens inside a markdown table where the rest of the chapter uses real en-dashes."
+      }
     ]
   },
   "source_hashes": {
     "md": "4143ab6cebda",
     "ts": "aa4502bfe3fd"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:29:46.103Z"
 }

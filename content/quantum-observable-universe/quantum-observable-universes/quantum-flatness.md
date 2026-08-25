@@ -1,1 +1,1 @@
-Let $B \in \Omega^2(A) \otimes \mathrm{Ad}(A)$ be the $2$-form datum of the inner-automorphism $2$-group $\mathrm{INN}(G_q)$. The connection $\nabla$ is :defterm[quantum flat]{#quantum-flatness} when its curvature equates to the $2$-form datum: $F_\nabla = B$.
+Let $B \in \Omega^2(A) \otimes \mathrm{Ad}(A)$ be the $2$-form datum of the inner-automorphism $2$-group $\mathrm{INN}(G_q)$. The connection $\nabla$ is :defterm[quantum flat]{#quantum-flatness} when its curvature equals the $2$-form datum: $F_\nabla = B$.

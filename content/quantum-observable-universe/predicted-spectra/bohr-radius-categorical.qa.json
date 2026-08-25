@@ -1732,6 +1732,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.372Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1751,6 +1766,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.424Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1770,6 +1800,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 274 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.502Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-triples": [
@@ -1789,6 +1834,37 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 274 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.549Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.934Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'Five algebraic strategies exist' followed by exactly five numbered items - the count matches, unlike the sibling round-8 remark. Strategy 2's gaps recomputed and correct: (4k+2)log q and 2 log q. NUMERIC AND KIND FINDINGS in notes.",
+        "notes": "STANDING-TRAP FINDINGS, report only. (1) CALIBRATION PASS-THROUGH: 'Evaluating a_0^cat at q_0 approx 1.11 yields 5.29 x 10^{-11} m.' That is the CODATA Bohr radius (5.29177210903e-11), not the framework's evaluation. a_0 = hbar/(m_e c alpha_EM) with the block's OWN alpha_EM = 1/(q [9]_q [10]_q) = 7.30870156e-3 (proton pin) gives 5.2835550e-11 m, i.e. 5.28 x 10^{-11}, because the framework alpha is 0.155% LARGER than CODATA and a_0 scales as 1/alpha. The quoted figure therefore comes from the experimental input, not from q_0 - and the sensitivity to q_0 is exactly the 0.155% the block inherits from prop:em-coupling-projection. Proposed fix: quote 5.28 x 10^{-11} m and state the 0.16% deviation from CODATA. (2) BLOCK-KIND MISMATCH: the .ts declares kind conjecture with label conj:bohr-radius-categorical, but the .md opens '**Proposition.**'. Per the type-system table the prose banner must match the kind. Proposed fix: '**Conjecture.**'"
       }
     ],
     "trap-closing-aphorism": [
@@ -1808,6 +1884,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.610Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1827,6 +1918,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.650Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1846,6 +1952,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.728Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1865,6 +1986,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.778Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-superlative": [
@@ -1884,6 +2020,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.827Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "trap-nonspeakable": [
@@ -1903,6 +2054,21 @@
         "reviewed_at": "2026-08-15T10:31:01.224Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ad880a06c2af",
+          "ts": "0f5bea7691a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.874Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the conjecture block: dressed transfer matrix, candidate length scale, virial condition, five algebraic strategies. All ten categories judged; the numerics recomputed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1926,5 +2092,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:38:47.934Z"
 }

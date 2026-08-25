@@ -1778,6 +1778,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not from the operator expansion.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.390Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'The observables are extracted from the constraint, not from the operator expansion.'",
+        "notes": "False-positive class: substantive mathematical contrast - the separation is the corollary's content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1797,6 +1813,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.452Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (218w, prop)."
       }
     ],
     "trap-em-dash": [
@@ -1816,6 +1847,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 161 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.546Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (218w, prop)."
       }
     ],
     "trap-triples": [
@@ -1835,6 +1881,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 161 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.610Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (218w, prop)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1854,6 +1915,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.671Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (218w, prop)."
       }
     ],
     "trap-meta-commentary": [
@@ -1873,6 +1949,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.724Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (218w, prop)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1892,6 +1983,22 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.776Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'The Markov-Frobenius minimum-norm solution is the canonical choice' designates rather than restates.",
+        "notes": "NOTE for the report: 'The Euclidean norm's six-channel spread' quotes a channel count (6 = dim H_3) with no witness or citation, and the c_k invariance claim is unlabelled as to convention frame - same point as the general sibling."
       }
     ],
     "trap-performed-warmth": [
@@ -1911,6 +2018,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.827Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (218w, prop)."
       }
     ],
     "trap-superlative": [
@@ -1930,6 +2052,22 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.882Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No inflated claims; 'canonical choice' is the corpus term of art.",
+        "notes": "REGISTER NOTE (clarity-grad-style, not a trap): 'There is no multi-channel SHAPE distributed across the normal-form basis' sets a word in all caps in a proposition block; italics would carry the emphasis."
       }
     ],
     "trap-nonspeakable": [
@@ -1949,6 +2087,21 @@
         "reviewed_at": "2026-08-15T10:31:00.466Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4812606ab9e7",
+          "ts": "e2c09a8f38c2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:39.927Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (218w, prop)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1972,5 +2125,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:20:39.927Z"
 }

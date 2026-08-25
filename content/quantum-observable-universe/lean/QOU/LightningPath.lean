@@ -66,7 +66,7 @@ lake exe graph QOU.LightningPath   -- renders the full dependency DAG
 ```
 
 The resulting graph shows the critical path from `FrobeniusHopfData` through
-`SubstrateParameter`, `TopologicalMassDecomposition`, `ArchimedeanMassFormula`,
+`ArchimedeanSubstrateField`, `TopologicalMassDecomposition`, `ArchimedeanMassFormula`,
 and `HadronicMass` to `terminal_resolution_hadronic_mass`.
 -/
 

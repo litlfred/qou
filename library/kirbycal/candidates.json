@@ -1,0 +1,104 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "kirbycal",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8dae9487ed32a3bdbfb8cb00b72b0a6e4f38b301089b45c8fdd32eb45a12311b",
+  "file": "kirbycal.pdf"
+ },
+ "provenance": {
+  "title": "Inventiones math. 45, 35- 56 (1978) mathematicae \u000e9 by Springer-Verlag 197 A Calculus for Framed Links in S 3 Robion Kirby*",
+  "authors": "University of California, Department of Mathematics, Berkeley, Ca. 94720, USA",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "remark": 6
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2",
+   "name": null,
+   "statement": "Looking back over the proof of the theorem, we see that we can perform",
+   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
+   "section_title": "A and 1 B, we can change the left end of A to",
+   "pages": "15-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "3",
+   "name": null,
+   "statement": "A framed link L is called even if all the framings are even integers, or",
+   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
+   "section_title": "A and 1 B, we can change the left end of A to",
+   "pages": "15-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "4",
+   "name": null,
+   "statement": "What happens to the calculus if we consider links in an arbitrary 3-",
+   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
+   "section_title": "A and 1 B, we can change the left end of A to",
+   "pages": "15-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "5",
+   "name": null,
+   "statement": "The greatest value of the theorem is not in its corollaries (of which I know",
+   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
+   "section_title": "A and 1 B, we can change the left end of A to",
+   "pages": "15-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "6",
+   "name": null,
+   "statement": "There is a description in [Rolfsen], Chapter 10, of a related calculus for",
+   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
+   "section_title": "A and 1 B, we can change the left end of A to",
+   "pages": "15-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "7",
+   "name": null,
+   "statement": "R.A. Fenn and C.P. Rourke have shown [F-R] that the operation in",
+   "section_file": "sections/sec-000-1-a-and-1-b-we-can-change-the-left-end-of-a-to.md",
+   "section_title": "A and 1 B, we can change the left end of A to",
+   "pages": "15-20",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

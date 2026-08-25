@@ -10,7 +10,7 @@ $$
   \Phi(\mathsf P)\,\Phi(\mathsf Q) = \Phi(\mathsf Q)\,\Phi(\mathsf P+\mathsf Q)\,\Phi(\mathsf P)
 $$
 
-on a Weyl pair $\mathsf P\mathsf Q = \mathsf Q\mathsf P + 1$ is the same coherence read as a fusion move. The pentagon has to be solved by something, and the something is $\Phi$.
+on a Weyl pair $\mathsf P\mathsf Q = \mathsf Q\mathsf P + 1$ is the same coherence read as a fusion move.
 
 Two links in that reading are not formalised, and the scope boundary of [`prop:dilog-pentagon-is-associator`](dilog-pentagon-is-associator.md) records both. What is proved there is the *scalar* equivalence: a potential on $\mathcal{H}_q$ satisfies the five-term relation exactly when it is a $q$-dilogarithm datum. The descent from the morphism-level Mac Lane pentagon on $\alpha_{X,Y,Z}$ to that scalar equation is the classical shuffle--associator identification of Faddeev--Kashaev, cited rather than machine-checked; and the analytic five-term relation at $q \neq 1$ remains a conjecture class. So the pentagon *names* $\mathrm{Li}_2^q$ within the scalar layer, and the passage from the categorical axiom to that layer rests on the cited identification.
 

@@ -1413,6 +1413,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:27.768Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1447,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:27.808Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:27.847Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-triples": [
@@ -1470,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:27.886Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1549,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:27.926Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1583,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:27.966Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1617,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:28.003Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1651,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:28.042Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1685,21 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:28.093Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of both short remarks (classical limit; physical interpretation). No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (it ends on the factual 'This increases 1/alpha from the bare value'), no narrated emphasis, no restatement closer, no warm register, no superlative. Numerics recomputed and correct: at q->1, [n]_q->n so 1/alpha->9*10=90; alpha=1/137<1/90 so 'weaker than 1/90' is right; delta_CS>0 so 'the correction is positive' and 'increases 1/alpha' are consistent."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1719,22 @@
         "reviewed_at": "2026-08-15T10:31:01.220Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aa2a201ae6d5",
+          "ts": "224906812727"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:28.135Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "One mild verb swap ('They possess crossing degeneracies' for 'have'), isolated in a 90-word block, so concentration - the tell for this category - is absent. Noted as a sweep-damage candidate in the batch summary rather than failed here.",
+        "notes": "Chapter-level observation reported to the batch: this block is written almost entirely in four-to-twelve-word declaratives ('The correction is positive.'), consistent with a comma-splitting sweep across predicted-spectra; that is a register pattern, not a trap category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1757,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:27:28.135Z"
 }

@@ -891,6 +891,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not in algebraic structure.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.877Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -910,6 +925,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.917Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-em-dash": [
@@ -929,6 +959,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 531 words)"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.956Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-triples": [
@@ -948,6 +993,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 531 words)"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.995Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-closing-aphorism": [
@@ -967,6 +1027,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.038Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-meta-commentary": [
@@ -986,6 +1061,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.081Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1005,6 +1095,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.121Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-performed-warmth": [
@@ -1024,6 +1129,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.159Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-superlative": [
@@ -1043,6 +1163,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.197Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -1062,6 +1197,21 @@
         "reviewed_at": "2026-08-15T10:31:01.225Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "37ea4bb1082f",
+          "ts": "c23203e86c69"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.236Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~4.3kB, five steps plus an inductive summary). DeltaE ratio 14.8 re-verified. Step (iv) carries an explicit, well-scoped open-problem statement - a model of the honest-negative discipline. Step (iii)'s prose names exactly two degree-2 knots (T_{2,9}, T_{3,4}), contradicting its own Table 2, which marks three; reported as an anomaly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1088,5 +1238,5 @@
     "md": "37ea4bb1082f",
     "ts": "c23203e86c69"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:40.236Z"
 }

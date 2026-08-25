@@ -40,6 +40,9 @@ from q_parameter import Q_MP  # noqa: E402
 
 from mpmath import mpf  # noqa: E402
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 
 def morgan_voyce_B(n: int, X):
     """F_0=0, F_1=1, F_{n+1} = X*F_n + F_{n-1} (Fibonacci polynomial = the
@@ -134,7 +137,7 @@ def main() -> None:
                  "does NOT exclude the complex-mass functional (Im/CS part "
                  "untested here).",
     }
-    with open("computations/charm-mass-tower.witness.json", "w") as f:
+    with open(_HERE_W / "charm-mass-tower.witness.json", "w") as f:
         json.dump(witness, f, indent=2)
     print("\nwrote computations/charm-mass-tower.witness.json")
 

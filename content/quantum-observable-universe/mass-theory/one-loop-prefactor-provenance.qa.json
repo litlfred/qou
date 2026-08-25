@@ -1301,6 +1301,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "3 negation-contrast construction(s): \", not calibrated.\"; \", not a fit:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.057Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Eight X-not-Y constructions counted ('the exponent does, the prefactor does not'; 'it is not an assumption of this corpus; it is a cited result'; 'What it is not is a theorem'; 'derived, not calibrated'; 'a prediction, not a fit'; 'and not merely fitted'; 'a property of one summation variable, not of 4_1'; 'arithmetic, not analytic'; 'in the exponent bookkeeping, not in the constant'). Density is high, but this proposition's subject IS the partition of a formula's factors into literature / measured / derived, so each contrast separates two provenance classes the block has to keep apart. Substantive-mathematical-contrast false-positive class throughout."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1320,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.129Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The constant cannot be lifted from DGLZ — but it need not be' and 'It does not have to be: it is now derived directly from the colored Jones' have the setup-then-reframe SHAPE, but both halves are separately verifiable claims (DGLZ's three convention offsets; the saddle derivation of k^2 = 1/2), and the second does not silently carry the first. Not a pivot in the trap sense."
       }
     ],
     "trap-em-dash": [
@@ -1340,6 +1370,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "18 stylistic spaced dashes in 1372 words (1.31/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.179Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "18 em-dashes in 1532 words (11.7 per 1000). Several are true paired parentheticals ('The analytic input — the Euler-Maclaurin expansion of s_k and Laplace's method — is now formalised'; 'det(Hess) — which is what tau_DG is — is an algebraic number'), but a substantial share append afterthoughts where a full stop or comma belongs: 'a value independent of c and d, hence of the number of components' follows one; 'so in k := ... the Hessian cancels' follows another; the 25-framings sentence runs three dash-joined clauses in a row; and '(normalisation_step_trivial_of_k_agree) — which excludes every candidate with g(1) != g(2)' tacks a consequence onto a citation.",
+        "notes": "Proposed (structural, not applied — the block is dense and several dashes are load-bearing): split the three longest dash-chained sentences (the tau^2 framing sentence, the a-dependence sentence, and the residual-risk closer) into full stops, which alone would bring the density to roughly 8 per 1000."
       }
     ],
     "trap-triples": [
@@ -1359,6 +1406,23 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (2 in 1372 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.248Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Four triads: the proposition title 'what is literature, what is measured, what is derived'; DGLZ's 'at least three distinct additive offsets' (enumerated and real); Laplace's method 'produces three quantities' (saddle condition, Stirling factor, Hessian — real); and 'No trace field, no cusp number, no choice of manifold enters.' The last is the only reflex one: it is a rhetorical tricolon of negations rather than an enumeration of three things.",
+        "notes": "If tightened: 'Nothing about the manifold enters.' carries the same claim without the tricolon."
       }
     ],
     "trap-closing-aphorism": [
@@ -1378,6 +1442,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.295Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The block-final sentence is 'The tension lives in the exponent bookkeeping, not in the constant, at the cusp numbers tested.' — a scope-qualified technical claim (the qualifier is what disqualifies it as a composed closer). NOTE the pattern one level down: four paragraphs end on quotable lines ('The 4_1 calibration was never carrying information.'; 'The 4_1 calibration on which the whole c_sigma arc rested is thereby retired.'; 'The obstruction to extending the method is arithmetic, not analytic.'; 'neither of which was put in.'). Each states a real result, so none is a fail on its own; the regularity is worth noting."
       }
     ],
     "trap-meta-commentary": [
@@ -1397,6 +1476,23 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.352Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "'Then the two factors have different provenance, and conflating them is the error this block exists to prevent.' narrates the document's own purpose rather than stating the mathematics — the textbook shape of the category. (Two further self-references were judged and PASSED as bookkeeping rather than emphasis-narration: 'and it is the one to state when citing this proposition', which tells a citing author which gap to name, and 'The distinction the proposition draws also fixes the shape of the residual risk', which introduces a derivation.)",
+        "notes": "FIXED INLINE (prose only, one sentence, no math and no meaning change): 'Then the two factors have different provenance, and conflating them is the error this block exists to prevent.' -> 'Then the two factors have different provenance.' The five bullets that follow already do the separating, so nothing is lost. Delimiter balance re-checked after the edit: 6 occurrences of the display delimiter, even."
       }
     ],
     "trap-thesis-restatement": [
@@ -1416,6 +1512,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.411Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The two closing paragraphs state what remains open and analyse the residual risk — new content, not a restatement of the provenance split."
       }
     ],
     "trap-performed-warmth": [
@@ -1435,6 +1546,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.487Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register anywhere."
       }
     ],
     "trap-superlative": [
@@ -1454,6 +1580,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.551Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The a-dependence is the sharpest part of this' is the only superlative and it is defended in the following clause (a enters only through a phase, so the whole dependence is interference). 'a far stronger test than the corpus previously had' is comparative and immediately qualified by 'and is still not a proof' — the opposite of inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1473,6 +1614,23 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5349d9b67ebe",
+          "ts": "41c0864f78a0"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:45:16.599Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two sentences exceed 60 words with three or more dash- or comma-joined clauses (the 'framing by mu - a*lambda ... 25 framings' sentence; the residual-risk closer). They parse, but stall aloud.",
+        "notes": "Same fix as the em-dash entry: splitting those two sentences resolves both categories."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1496,5 +1654,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:45:16.599Z"
 }

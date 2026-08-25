@@ -34,10 +34,13 @@ export default proposition({
   //    (S₄ has no orbit of size ≤ 2 on P², via absolute irreducibility of its
   //    3-dimensional representation) — that argument is verified in exact
   //    arithmetic by `s4_marked_pair_obstruction.py`, not in Lean;
-  //  - the rest of QOU.Eightfold.Sym2Gate is vacuous — `su3_sym2_irreducible`
-  //    is an `axiom … : True`, and the two gate "theorems" conclude
-  //    arithmetic tautologies. Drain tracked as bean qou-8fl1 item 3; the
-  //    module docstring records it at the point of use.
+  //  - QOU.Eightfold.Sym2Gate carries dimension SHADOWS, not the SU(3)
+  //    representation-theoretic core: `sym2_dim_3` (Sym²(𝟑) = 6) and the two
+  //    gate applications (`corpus_T1_fails_sym2_gate` / `octonion_3_passes_
+  //    sym2_gate`) stating the singlet count that decides the gate (fail iff
+  //    ≥ 1). The content-free `su3_sym2_irreducible : True` stub was removed
+  //    2026-08-23. The SU(3)-irreducibility that makes the octonion singlet
+  //    count 0 is a Mathlib gap, tracked as bean qou-8fl1 (T2).
   //
   // The parity criterion that actually decides the Sym² gate is formalised
   // (sorry-free, real content) in QOU.Eightfold.Sym2GateParity. It is not

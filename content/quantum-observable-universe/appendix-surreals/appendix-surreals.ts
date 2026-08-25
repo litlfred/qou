@@ -107,6 +107,8 @@ export default chapter({
         "classical-limit-stpart",
         "archimedean-stpart",
         "archimedean-stpart-strategy",
+        "hyperreal-limit-transfer",
+        "birthday-axioms-do-not-pin-the-birthday",
       ],
     },
     {
@@ -161,7 +163,7 @@ export default chapter({
         "spectral-normal-form",
         "kashaev-surreal",
         // ε^ω = the perpetual obstruction as a single surreal grade
-        // (narrowing of conj:motivic-perpetual-obstruction).
+        // (narrowing of thm:motivic-perpetual-obstruction).
         "perpetual-obstruction-depth-omega",
       ],
     },

@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not calibrated.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.659Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of the proof (baseline, Wedderburn 3-term, Delta_W / Delta_{T=1}, evaluation, Witness, Scope, structural extension). The Scope paragraph carries three denials — 'no continuous parameters are fitted', 'no choices were made by selecting from a menu of variants', 'is predictive, not calibrated' — but each is a distinct anti-fit disclosure the corpus requires (continuous-parameter fitting / model selection / calibration are three different objections), so this is the substantive-distinction false-positive class rather than assertion-by-denial.",
+        "notes": "Density noted: four negation forms in one 60-word paragraph. If a later editor tightens it, the redundant member is 'not calibrated', already implied by the two preceding denials."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.694Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Linear: term-by-term justification, then evaluation, then scope, then the open extension. No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 291 words)"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.729Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Three spaced dashes: one true paired parenthetical ('across A = 1 to 7 — including the unfitted extension to 6Li and 7Li — is predictive') and one appended consequence ('several algebraically-natural variants — hence is technically fitted'). The second could be a comma, but two constructions across ~250 words is below the density that makes this the tell."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 291 words)"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.764Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The isotope list '(D, T, 3He, 4He)' has four members; no reflex three-item list anywhere."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.799Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Ends 'the specific shadow-price form is open research' — an honest open-item statement naming what is missing, the opposite of a placed quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.833Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No emphasis narration; bolded 'predictive' and the bold section labels place emphasis directly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1564,22 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.868Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The Scope paragraph restates the sub-percent headline but adds the epistemic classification (unfitted, predictive) that is its actual payload, so it is not a bare restatement.",
+        "notes": "Borderline: if the over-claim flagged under trap-superlative is fixed, check whether the remaining sentence still earns its place or collapses into a restatement of the proposition."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.902Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1633,23 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.936Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "minor",
+        "evidence": "Two unqualified maximum-strength claims. (1) 'The systematic binding under-prediction is the formula's principal limitation' — contradicted by the block's own sibling table (tbl:derived-mass-formula-light-isotopes-table2-data): the deuteron is OVER-predicted, B_pred +3.14 vs AME +2.22 (+41%). Under-prediction holds for 5 of 6 tabulated isotopes, not systematically. (2) 'The atomic mass agreement to sub-percent across A = 1 to 7 ... is **predictive**, not calibrated' — the quantity scored is dominated by the CODATA baseline Z*m_p + N*m_n + Z*m_e, which the same proof calls 'CODATA inputs'; recomputing from Table 1, the 4He 'sub-percent' error 0.576% IS the 21.5 MeV binding shortfall divided by 3728.40 MeV, so sub-percent-on-the-total is arithmetically equivalent to 'binding is under 1% of the mass' and carries no predictive content of its own.",
+        "notes": "Proposed (structural, not applied — both are factual corrections): (1) 'The binding under-prediction for A >= 3 (32% to 76%) is the formula's principal limitation; the deuteron is over-predicted by 41%.' (2) Scope the predictive claim to what is actually scoreable: the binding energies and the p-n splitting, not the absolute atomic mass in MeV — per the absolute-mass excision (AGENTS.md 2026-08-11) and the calibration-input correction (2026-08-18). As written the paragraph scores a calibration pass-through."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1669,22 @@
         "reviewed_at": "2026-08-15T10:31:00.611Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "91d0ede993af",
+          "ts": "d6b272a0edb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:48:39.971Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Prose parses aloud EXCEPT where sweep damage has destroyed it — see notes.",
+        "notes": "SWEEP DAMAGE (token substitution, reported not fixed — I cannot recover the original script names): (a) '(see witnesses the formal derivation, the formal derivation, the formal derivation)' — three distinct producer/witness names replaced by the same filler; the sentence is now ungrammatical. (b) 'canonical evaluation at q_0 = ...' — sentence-initial lowercase 'canonical' where 'Numerical' was substituted (the canonical<-numerical class named in AGENTS.md). (c) 'uses the formal derivation (witness derived-only-formula.witness.json)' — a script name replaced by filler; the witness name survived beside it, so the producer is recoverable from that witness's provenance."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1707,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:48:39.971Z"
 }

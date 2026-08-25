@@ -1774,6 +1774,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.378Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No negation-contrast construction anywhere in the block.",
+        "notes": "pass. THREE FINDINGS, none fixed inline (all math-adjacent). (1) sigma IS NOT AN INVOLUTION, and the block's own first line calls it one: 'The two natural involutions on the substrate moduli line C^x, sigma: q |-> iq ... tau: q |-> q^{-1}'. sigma^2(q) = -q, not q; sigma has order 4, which the block itself asserts two displays later with sigma^4 = 1. Proposed: 'The two natural symmetries', or 'a rotation sigma of order 4 and the bar involution tau'. (2) The two-coset table calls them 'sigma<1>-orbit', which is not notation for anything — they are the two cosets of the cyclic subgroup <sigma>, and the header sentence 'The eight elements partition by stabilizer into two cosets' misattributes the partition to the stabilizer, which is trivial here (order 8 group acting freely on 8 points, as the proof block correctly derives). Proposed: '<sigma>-orbit through phi' and 'partition into the two <sigma>-cosets'. (3) 'the eight roots of P_C(z) ... over Q(i)' — z^8 - 7z^4 + 1 has rational coefficients, so the natural field of definition is Q; Q(i) is where the ROOTS live, not where the polynomial is defined. Not false, but it states the weaker thing. Notation note: tau is the bar involution here and the fibre functor in the notation register — the same collision I recorded on prop:knot-operator-selection and rem:lepton-tower-witness. The Lean sibling moduli-symmetry-d4.lean is substantive (sigma_pow_four, tau_pow_two, sigma_tau_involution, moduli_symmetry_d4), not a shadow stub."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1793,6 +1809,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:28.993Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1812,6 +1844,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.034Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1831,6 +1879,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 89 words)"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.078Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1850,6 +1914,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.123Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1869,6 +1949,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.166Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1888,6 +1984,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.212Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1907,6 +2019,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.254Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1926,6 +2054,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.294Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1945,6 +2089,22 @@
         "reviewed_at": "2026-08-15T10:31:01.264Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "976a237dd7c6",
+          "ts": "b854d2bc9a1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:23:29.335Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proposition. Verified the mathematics symbolically. The presentation sigma^4 = tau^2 = (sigma tau)^2 = 1 is the standard one for the dihedral group of order 8, and the block says 'order 8' explicitly so the D_4-vs-D_8 naming is unambiguous. The tau sigma tau computation is correct: tau(sigma(q^{-1})) = (i q^{-1})^{-1} = -i q = sigma^{-1}(q). The golden octet is a genuine free orbit of size 8. The polynomial claim is CORRECT and I checked all of it: P(z/i) = P(-iz) = z^4 + 3z^2 + 1; the product is (z^4+1)^2 - 9z^4 = z^8 - 7z^4 + 1; and the eight roots of z^8 - 7z^4 + 1 computed exactly are {+-phi, +-1/phi, +-i phi, +-i/phi} = G_8. Both intersection claims are right: G_8 cap R = Q and G_8 cap iR = iQ. No em-dash, no pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1968,5 +2128,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:23:29.378Z"
 }

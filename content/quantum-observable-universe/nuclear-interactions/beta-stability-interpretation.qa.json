@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:54.877Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:54.919Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:54.960Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:55.002Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:55.042Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "Block-final quotable 'The entire nuclear chart follows from the single parameter q.' placed as a closer. NOT applied - it is a substantive claim, and it is also false as written: the formula it closes takes a_A = 23.29 MeV and lambda_C = 3.334 as inputs alongside q. Proposed: 'The A-dependence of the stability line enters only through q, via a_C = (q - q^{-1}) lambda_C.' or delete."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:55.082Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:55.120Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:55.158Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:55.201Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "Same sentence - 'The entire nuclear chart' from 'the single parameter q' is a maximum-strength claim with no qualification, and two dimensionful constants (a_A = 23.29 MeV, lambda_C = 3.334) are unaccounted inputs to the very formula being summarised. NOT applied, same reason as the aphorism entry."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.345Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "600cfbb9aaf7",
+          "ts": "ff6bfcd63a8a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:56:55.241Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-stability-interpretation (derivation, verification, 3-row limiting table). Re-derived the whole thing: the FINAL formula p = A/(2 + a_C A^{2/3}/(2 a_A)) is the standard SEMF valley-of-stability result and is correct, but the two intermediate displays drop the factor 4 that d/dZ of the asymmetry term -a_A (A-2Z)^2/A supplies - with the 4 restored they yield the stated p, without it they yield A/(2 + 2 a_C A^{2/3}/a_A), four times the wrong correction (reported). Recomputed a_C = (q0 - 1/q0) * 3.334 = 0.697007 (matches 0.697). Evaluated the formula over a 30-nuclide stable sample (C-12 to Bi-209): mean |delta n| = 0.62, max 1.92, so the quoted 1.4 is if anything pessimistic; n*/p runs 1.08 (A=12) to 1.53 (A=208), 1.57 at A=238, matching the table's 1.0-1.6. The q->1 and q->infinity rows follow correctly from a_C = (q-1/q) lambda_C.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:56:55.241Z"
 }

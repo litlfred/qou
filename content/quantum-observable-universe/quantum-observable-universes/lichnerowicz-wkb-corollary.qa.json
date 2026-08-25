@@ -1233,6 +1233,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.888Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1268,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.929Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1303,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 35 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.974Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1338,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 35 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:09.018Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1373,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:09.061Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1408,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:09.104Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1443,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:09.149Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1478,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:09.192Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1513,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:09.235Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1548,22 @@
         "reviewed_at": "2026-08-15T10:30:59.975Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f917861f5df8",
+          "ts": "9b4fe14f8280"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:09.278Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 3-sentence remark on prop:categorical-lichnerowicz. Register is clean -- three declaratives, no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no absolute claim. The determinant chain was checked arithmetically and is reported in the returned anomaly list, not as a trap.",
+        "notes": "No trap. Structural math flag, NOT fixed: the chain -1/2 log det Delta^q = -log det |D| = -1/2 log det D is inconsistent under the parent proposition's own single-space reading (Delta^q = D^2 gives -1/2 log det Delta^q = -log |det D|, so the last term should be -log det D, not -1/2 log det D). See the returned anomaly list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1586,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:09.278Z"
 }

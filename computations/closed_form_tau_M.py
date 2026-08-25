@@ -171,6 +171,56 @@ def hecke_h(q: mp.mpf) -> mp.mpf:
     return q - 1 / q
 
 
+def trM_sigma1_sq(q: mp.mpf) -> mp.mpf:
+    """tr_M(sigma_1^2) = h*z + 1, for any n >= 2.
+
+    Follows from the Hecke quadratic sigma^2 = h*sigma + 1 and tr_M(sigma) = z;
+    it holds for ANY Markov parameter, which is exactly why it belongs here in
+    terms of `markov_z` rather than being written out.
+
+    ## Why this function exists
+
+    This identity was copy-pasted, specialised to convention C, into at least
+    five places:
+
+        knot_operator_census_group_actions.trM_sigma1_sq   1 + (q-1)/sqrt(q)
+        c_3_categorical_derivation_attempt.trM_hopf        1 + (q-1)/sqrt(q)
+        lepton_t2n_torus_tower.trM_hopf_census_form        1 + (q-1)/sqrt(q)
+        inter_nucleon_linked_channel.census_hopf           1 + (Q0-1)/sqrt(Q0)
+        tools/sage-examples/.../hecke_surface.trace_weights (via a local z)
+
+    `1 + (q-1)/q^{1/2}` IS `h*z + 1` evaluated at z_C -- the square root is
+    z_C's, not the identity's. So when z moved to D every copy silently went on
+    describing the excised convention, and the sage example's guard
+    (`assert abs(TR_M[1] - z) < 1e-9`) started failing while the rest just
+    returned wrong numbers quietly.
+
+    A local copy of a library value is the whole defect class. One definition,
+    gated by R11 in the trace-convention registry, is the fix.
+    """
+    q = mp.mpf(q)
+    return hecke_h(q) * markov_z(q) + 1
+
+
+def wenzl_weights_h2(q: mp.mpf) -> tuple:
+    """H_2(q) Wedderburn weights (y_(2), y_(1,1)), solved from the axioms.
+
+    tr_M(1) = y_(2) + y_(1,1) = 1 and tr_M(sigma_1) = y_(2)*q - y_(1,1)/q = z
+    give y_(2) = (q*z + 1)/(q^2 + 1) and y_(1,1) = 1 - y_(2), for any z.
+
+    The convention-C specialisation of this is
+    `(q^{3/2} + q + 1)/(q^3 + q^2 + q + 1)`, which is what
+    `lepton_t2n_torus_tower.wenzl_weights` hardcoded (twice -- once numerically
+    and once in sympy, and the two were migrated separately, so for one commit
+    they disagreed and the file's own symbolic-vs-numeric assertion caught it).
+    The q^{3/2} is z_C's square root showing through a formula that has none of
+    its own.
+    """
+    q = mp.mpf(q)
+    y2 = (q * markov_z(q) + 1) / (q ** 2 + 1)
+    return y2, 1 - y2
+
+
 def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
     """Per-interface Markov-axiom factor.
 

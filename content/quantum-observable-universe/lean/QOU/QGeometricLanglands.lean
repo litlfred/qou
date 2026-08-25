@@ -75,7 +75,7 @@ universe u v w x
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QLocalSystem (M : Type u) where
   /-- The underlying substrate parameter family. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The representation type at each point (fibre of the local system). -/
   fibreAt : M → Type v
   /-- The monodromy endomorphism acting on the fibre at each point. -/
@@ -107,7 +107,7 @@ structure QLocalSystem (M : Type u) where
 -- Ref: [frenkel2007] Frenkel, "Lectures on the Langlands Program and Conformal Field Theory," arXiv:hep-th/0512172
 structure QFlatConnection (M : Type u) where
   /-- The substrate parameter. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The intrinsic q-curvature `F_q` at each point, determined by the
       Yekutieli class: `F_q = HKR⁻¹(κ₀)`.  This is the *minimal*
       curvature compatible with `d_q² ≠ 0`. -/
@@ -142,7 +142,7 @@ structure QFlatConnection (M : Type u) where
 -- Ref: [aganagic2018] Aganagic, Frenkel, Okounkov, "Quantum q-Langlands Correspondence," arXiv:1701.03146
 structure QHeckeOperator (M : Type u) where
   /-- The substrate parameter. -/
-  sp : SubstrateParameter M
+  sp : ArchimedeanSubstrateField M
   /-- The Hecke algebra governing the operators. -/
   hecke : QOU.PathIntegrals.HeckeAlgebra
   /-- Consistency: the Hecke parameter matches the substrate at
@@ -207,7 +207,7 @@ structure QLanglandsDual (M : Type u) where
   /-- The original quantum gauge group. -/
   gaugeGroup : QuantumGaugeGroup.{u, w} M
   /-- The dual substrate: `q ↦ q⁻¹`. -/
-  dualSubstrate : SubstrateParameter M
+  dualSubstrate : ArchimedeanSubstrateField M
   /-- The substrate inversion: dual parameter is `q⁻¹`. -/
   substrate_inverted : ∀ (p : M),
     dualSubstrate.field p = (gaugeGroup.field p)⁻¹

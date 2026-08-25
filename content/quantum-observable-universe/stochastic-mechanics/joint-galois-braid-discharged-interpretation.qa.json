@@ -1234,6 +1234,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not content;\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.541Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Title: 'Remark (the conjecture was open in form, not content; its discharge).'",
+        "notes": "Substantive mathematical contrast rather than manufactured emphasis: 'open in form, not content' is precisely the block's claim, that the conjecture followed from the structure without new input."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1253,6 +1269,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.582Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (76 words, zero em-dashes, two paragraphs). No warmth, no pivot, no triple."
       }
     ],
     "trap-em-dash": [
@@ -1272,6 +1303,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.624Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (76 words, zero em-dashes, two paragraphs). No warmth, no pivot, no triple."
       }
     ],
     "trap-triples": [
@@ -1291,6 +1337,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.667Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (76 words, zero em-dashes, two paragraphs). No warmth, no pivot, no triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1310,6 +1371,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.708Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (76 words, zero em-dashes, two paragraphs). No warmth, no pivot, no triple."
       }
     ],
     "trap-meta-commentary": [
@@ -1329,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.749Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (76 words, zero em-dashes, two paragraphs). No warmth, no pivot, no triple."
       }
     ],
     "trap-thesis-restatement": [
@@ -1348,6 +1439,23 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.792Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "severity": "minor",
+        "evidence": "Closing paragraph opens 'The joint-action conjecture is now fully discharged.', restating the block's first sentence 'The conjecture was structurally automatic.' and the parent proposition's 'We discharge the conjecture in general.'",
+        "notes": "STRUCTURAL, not fixed inline because the same sentence carries the over-claim below and the two should be rewritten together. Proposed: drop the restating sentence and keep only the scoped consequence."
       }
     ],
     "trap-performed-warmth": [
@@ -1367,6 +1475,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.831Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (76 words, zero em-dashes, two paragraphs). No warmth, no pivot, no triple."
       }
     ],
     "trap-superlative": [
@@ -1386,6 +1509,23 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.873Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "severity": "major",
+        "evidence": "'The joint-action conjecture is now FULLY discharged. Combined with the small-cases bridge verification, the graded-Mikusinski bi-filtration framework's structural theorems are COMPLETE.'",
+        "notes": "Two unqualified maximum-strength claims that the block's own formalisation contradicts. The Lean sibling records the concrete-cell instance as the open categorical input, deliberately unbuilt - so nothing is 'fully' discharged - and the sibling block rem:joint-galois-braid-figure-8-verified-interpretation still lists 'Remaining (open): chiral-pair cases'. Reported, not resolved: either the general argument supersedes the figure-8 block's open list, in which case that block is stale, or it does not, in which case 'complete' is wrong; the two blocks disagree as they stand. Proposed: 'discharged modulo the disjoint-decomposition instance for the concrete cell'."
       }
     ],
     "trap-nonspeakable": [
@@ -1405,6 +1545,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9b9bedb0f8e5",
+          "ts": "52c5e8370661"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:35:58.912Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (76 words, zero em-dashes, two paragraphs). No warmth, no pivot, no triple."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1427,5 +1582,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:35:58.912Z"
 }

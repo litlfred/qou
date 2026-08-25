@@ -1777,6 +1777,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.030Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). no assertion-by-denial; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1812,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.067Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). no setup-then-reframe construction; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1847,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.103Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). em-dash count 0 in the block; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1834,6 +1882,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 138 words)"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.139Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). no reflex three-item list; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1917,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.175Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). final sentence is substantive, not a quotable placed for closure; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1952,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.211Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). no narration of the author's own emphasis; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1987,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.248Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). no block-final restatement of what the text established; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2022,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.286Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). no personal or institutional-warmth register; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2057,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.325Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). no unqualified maximum-strength claim; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2092,22 @@
         "reviewed_at": "2026-08-15T10:30:59.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "72373748e8c0",
+          "ts": "584b80145264"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:42.364Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, three numbered conditions + two closing sentences). reads aloud without stalling; definition, three numbered conditions + two closing sentences.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2131,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:42.364Z"
 }

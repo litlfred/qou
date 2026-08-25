@@ -1,8 +1,8 @@
 {
   "engine": "mpmath+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T17:01:57.220553+00:00",
-  "commitSha": "1d3cf627866bfc2c7363f4b9445396e7a611e7f4",
+  "computedAt": "2026-08-24T21:06:44.967242+00:00",
+  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
   "assertions": [
     {
       "name": "symbolic_tr_T121_eq_z_plus_h_z2",
@@ -30,7 +30,7 @@
     },
     {
       "name": "numeric_z_series_depth_le2",
-      "computed": 2.0375277927360103e-71,
+      "computed": 6.203140168996298e-70,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -38,7 +38,7 @@
     },
     {
       "name": "numeric_tr_T121_closed_form",
-      "computed": 5.4334074472960274e-71,
+      "computed": 9.689576614344582e-70,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-40,
@@ -46,9 +46,9 @@
     },
     {
       "name": "alpha3_value_not_derived_near_match_10pc",
-      "computed": 0.10438806981200371,
+      "computed": 0.12808874411435378,
       "expected": 0.104,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.01,
       "source": "collapsed depth-3/depth-1 weight 1+q^{1/2}−q^{-1/2} deviates from the assigned α_3 = 1 by ≈10.4% at q₀ (exact only at q→1) — the BREAK is derived, the VALUE 1 is a near-match"
     },
@@ -69,12 +69,12 @@
       "source": "every N_k reading gives an A-dependent tail sum; the α_{k≥4} plateau is A-independent, so the shape mismatch is structural (still scope-(a): other weightings untested)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 17,
+  "allPassed": false,
+  "durationMs": 22,
   "computation": "probe-9b-alphak-structure",
   "scriptFile": "probe_9b_alphak_structure.py",
-  "scriptHash": "6b2e7dfd70bc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ade7fe590b72",
+  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -84,8 +84,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_9b_alphak_structure.py"
+    ],
+    "reproduce": "python3 -u computations/probe_9b_alphak_structure.py"
   },
   "description": "PROBE 2 (bean nf8d) on the step-9b depth-stratified α_k assignment rule. (2a) α_3 centrality: exact character computation on H_3 — χ^{(2,1)}(Δ)=0 (Δ=σ1σ2σ1 Garside; Δ² central + det ρ_{(2,1)}(Δ)=−1 force tracelessness), so the Markov-marker series z^k breaks at k=3 STRUCTURALLY: tr_M(T_Δ) = z+h·z² = z(1+q^{1/2}−q^{-1/2}) ≠ z³ (derived, exact); the depth-3/depth-1 relative weight 1+q^{1/2}−q^{-1/2} ≈ 1.1044 near-matches the assigned α_3/α_1 = 1 at 10.4% (exact as q→1); Δ itself is NOT central (off-diag ≠ 0). (2b) plateau resummation Σ_{k≥4} z^k N_k vs m_e·8G under 4 layer-count readings × 4 atoms: no IDENTITY; the sum is strongly atom-dependent, refuting (scope-(a)) the universal-plateau-as-geometric-resummation shape. No fit constants.",
   "auditOnly": "docs/audits/2026-07-02-9b-probes-alphak-perlambda-tower.md",
@@ -103,30 +113,30 @@
       "delta_squared_scalar_on_21": true,
       "delta_not_scalar_on_21": true,
       "rel_weight_depth3_over_depth1": "sqrt(q) + 1 - 1/sqrt(q)",
-      "rel_weight_identity_ok": true,
+      "rel_weight_identity_ok": false,
       "y_solved": {
-        "y3": "(q**(17/2) + 3*q**(15/2) + 6*q**(13/2) + 10*q**(11/2) + 11*q**(9/2) + 9*q**(7/2) + 6*q**(5/2) + 2*q**(3/2) + q**9 + 2*q**8 + 3*q**7 + 5*q**6 + 7*q**5 + 9*q**4 + 9*q**3 + 7*q**2 + 4*q + 1)/(q**12 + 4*q**11 + 9*q**10 + 16*q**9 + 23*q**8 + 28*q**7 + 30*q**6 + 28*q**5 + 23*q**4 + 16*q**3 + 9*q**2 + 4*q + 1)",
-        "y21": "(q**(21/2) + 3*q**(19/2) + 4*q**(17/2) + 4*q**(15/2) + 2*q**(13/2) - 2*q**(11/2) - 4*q**(9/2) - 4*q**(7/2) - 3*q**(5/2) - q**(3/2) + q**10 + 3*q**9 + 6*q**8 + 9*q**7 + 10*q**6 + 9*q**5 + 6*q**4 + 3*q**3 + q**2)/(q**12 + 4*q**11 + 9*q**10 + 16*q**9 + 23*q**8 + 28*q**7 + 30*q**6 + 28*q**5 + 23*q**4 + 16*q**3 + 9*q**2 + 4*q + 1)",
-        "y111": "(-2*q**(15/2) - 4*q**(13/2) - 3*q**(11/2) - 2*q**(9/2) - q**(7/2) + q**9 + 3*q**8 + 3*q**7 + 2*q**6 + q**5 + q**4 + q**3)/(q**9 + 3*q**8 + 5*q**7 + 7*q**6 + 8*q**5 + 8*q**4 + 7*q**3 + 5*q**2 + 3*q + 1)"
+        "y3": "(q**4 + 1)/(q**4 + 2*q**2 + 1)",
+        "y21": "q**2/(q**4 + 2*q**2 + 1)",
+        "y111": "0"
       }
     },
     "part_2a_numeric": {
       "trM_by_word": {
         "e": "1.0",
-        "T1": "0.499320334033561271768966386276",
-        "T2": "0.499320334033561271768966386276",
-        "T12": "0.249320795979387206859416492623",
-        "T21": "0.249320795979387206859416492623",
-        "T121": "0.551443419921209679134093895626"
+        "T1": "0.612688037146465251595829863946",
+        "T2": "0.612688037146465251595829863946",
+        "T12": "0.375386630862388383999372303379",
+        "T21": "0.375386630862388383999372303379",
+        "T121": "0.691166478358444526147719530979"
       },
-      "max_dev_z_series_depth_le2": "2.0375e-71",
-      "dev_tr_T121_vs_z_plus_hz2": "5.4334e-71",
-      "dev_chi21_T121_vs_zero": "2.2639e-71",
+      "max_dev_z_series_depth_le2": "6.2031e-70",
+      "dev_tr_T121_vs_z_plus_hz2": "9.6896e-70",
+      "dev_chi21_T121_vs_zero": "2.7167e-71",
       "alpha3_candidates": {
-        "series_z3": "0.12449094312994100024",
-        "tr_M_T121": "0.55144341992120967913",
-        "rel_depth3_over_depth1": "1.1043880698120037126",
-        "rel_dev_from_assigned_1": "0.1043880698",
+        "series_z3": "0.22999489803410145346",
+        "tr_M_T121": "0.69116647835844452615",
+        "rel_depth3_over_depth1": "1.1280887441143537856",
+        "rel_dev_from_assigned_1": "0.1280887441",
         "classical_limit_q_to_1": "1 (exact: 1 + q^{1/2} − q^{-1/2} → 1)"
       }
     },
@@ -162,106 +172,106 @@
         },
         "D(H_6)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "8.0908444050801809492",
-            "rel_dev_vs_me8G": "1.16075",
-            "rel_dev_vs_8G": "0.104141",
+            "sum_k_ge4_zk_Nk": "25.033532239043607075",
+            "rel_dev_vs_me8G": "5.68549",
+            "rel_dev_vs_8G": "2.41628",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "0.093199040341176735566",
-            "rel_dev_vs_me8G": "0.97511",
-            "rel_dev_vs_8G": "0.987281",
+            "sum_k_ge4_zk_Nk": "0.22725213251877493732",
+            "rel_dev_vs_me8G": "0.93931",
+            "rel_dev_vs_8G": "0.968987",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "0.34184247757235761562",
-            "rel_dev_vs_me8G": "0.908707",
-            "rel_dev_vs_8G": "0.953349",
+            "sum_k_ge4_zk_Nk": "0.79091262303963509406",
+            "rel_dev_vs_me8G": "0.788778",
+            "rel_dev_vs_8G": "0.892066",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "1.5850596637282620159",
-            "rel_dev_vs_me8G": "0.576692",
-            "rel_dev_vs_8G": "0.78369",
-            "verdict_vs_me8G": "REFUTED-scope-(a)"
+            "sum_k_ge4_zk_Nk": "3.6092150756439358778",
+            "rel_dev_vs_me8G": "0.0361186",
+            "rel_dev_vs_8G": "0.507458",
+            "verdict_vs_me8G": "NEAR-MATCH (3.61%)"
           }
         },
         "T/3He(H_9)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "119.35101059140183734",
-            "rel_dev_vs_me8G": "30.874",
-            "rel_dev_vs_8G": "15.2876",
+            "sum_k_ge4_zk_Nk": "616.88717746336879643",
+            "rel_dev_vs_me8G": "163.747",
+            "rel_dev_vs_8G": "83.1854",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "0.44651726591276356544",
-            "rel_dev_vs_me8G": "0.880753",
-            "rel_dev_vs_8G": "0.939065",
+            "sum_k_ge4_zk_Nk": "1.1216487801068760924",
+            "rel_dev_vs_me8G": "0.700451",
+            "rel_dev_vs_8G": "0.846931",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "43.644922217535214755",
-            "rel_dev_vs_me8G": "10.6559",
-            "rel_dev_vs_8G": "4.95614",
+            "sum_k_ge4_zk_Nk": "103.38645762769108863",
+            "rel_dev_vs_me8G": "26.6105",
+            "rel_dev_vs_8G": "13.1089",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "5696.1452301661008146",
-            "rel_dev_vs_me8G": "1520.22",
-            "rel_dev_vs_8G": "776.342",
+            "sum_k_ge4_zk_Nk": "13203.708815516897654",
+            "rel_dev_vs_me8G": "3525.2",
+            "rel_dev_vs_8G": "1800.88",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           }
         },
         "4He(H_12)": {
           "cox": {
-            "sum_k_ge4_zk_Nk": "1111.5637316692867488",
-            "rel_dev_vs_me8G": "295.856",
-            "rel_dev_vs_8G": "150.693",
+            "sum_k_ge4_zk_Nk": "11121.522320596642566",
+            "rel_dev_vs_me8G": "2969.13",
+            "rel_dev_vs_8G": "1516.73",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "parts": {
-            "sum_k_ge4_zk_Nk": "1.3135844823754925537",
-            "rel_dev_vs_me8G": "0.649193",
-            "rel_dev_vs_8G": "0.820738",
-            "verdict_vs_me8G": "REFUTED-scope-(a)"
+            "sum_k_ge4_zk_Nk": "3.4098607716297267109",
+            "rel_dev_vs_me8G": "0.0893584",
+            "rel_dev_vs_8G": "0.534663",
+            "verdict_vs_me8G": "NEAR-MATCH (8.94%)"
           },
           "dim": {
-            "sum_k_ge4_zk_Nk": "3690.2045224996368366",
-            "rel_dev_vs_me8G": "984.511",
-            "rel_dev_vs_8G": "502.595",
+            "sum_k_ge4_zk_Nk": "9017.923338799831163",
+            "rel_dev_vs_me8G": "2407.34",
+            "rel_dev_vs_8G": "1229.66",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           },
           "dimsq": {
-            "sum_k_ge4_zk_Nk": "14976715.014315736374",
-            "rel_dev_vs_me8G": "3.9997e+6",
-            "rel_dev_vs_8G": "2.04384e+6",
+            "sum_k_ge4_zk_Nk": "35714794.251346962619",
+            "rel_dev_vs_me8G": "9.53804e+6",
+            "rel_dev_vs_8G": "4.87393e+6",
             "verdict_vs_me8G": "REFUTED-scope-(a)"
           }
         }
       },
       "atom_independence": {
         "cox": {
-          "min": "8.09084440508",
-          "max": "1111.56373167",
-          "max_over_min": "137.38538",
+          "min": "25.033532239",
+          "max": "11121.5223206",
+          "max_over_min": "444.265",
           "atom_independent": false
         },
         "parts": {
-          "min": "0.0931990403412",
-          "max": "1.31358448238",
-          "max_over_min": "14.094399",
+          "min": "0.227252132519",
+          "max": "3.40986077163",
+          "max_over_min": "15.004747",
           "atom_independent": false
         },
         "dim": {
-          "min": "0.341842477572",
-          "max": "3690.2045225",
-          "max_over_min": "10795.044",
+          "min": "0.79091262304",
+          "max": "9017.9233388",
+          "max_over_min": "11401.921",
           "atom_independent": false
         },
         "dimsq": {
-          "min": "1.58505966373",
-          "max": "14976715.0143",
-          "max_over_min": "9448675.9",
+          "min": "3.60921507564",
+          "max": "35714794.2513",
+          "max_over_min": "9895446.4",
           "atom_independent": false
         }
       }

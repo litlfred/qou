@@ -1385,6 +1385,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.977Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1420,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.015Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1455,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.054Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: spaced-dash count = 0; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1442,6 +1490,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.095Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1525,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.136Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: final prose sentence is: \"The same $\\Phi_1$ minimisation that produced linear $CO_2$ now selects the tetrahedral geometry of $CH_4$.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1560,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.174Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1595,23 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.213Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "'The S_4-symmetric strand ordering minimises Phi_1 for CH_4.' is verbatim the title of prop:ch4-lp-dual-binding, immediately paraphrased by 'Among all ways of arranging the four bond strands, the LP cost is minimised by configurations invariant under S_4.'",
+        "notes": "FIXED: merged into one sentence keeping the quantifier -> 'Among all ways of arranging the four bond strands, the LP cost is minimised by the S_4-symmetric strand orderings.' | Pattern note: all five *-computation-intro blocks echo a proposition title and then paraphrase it."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1631,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.252Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1666,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.291Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: no unqualified maximum-strength claim; comparative and bounding claims carry their conditions.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1701,22 @@
         "reviewed_at": "2026-08-15T10:31:01.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7493db5473b6",
+          "ts": "62440f225061"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:11.329Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the prose block (section intro: S_4 ordering, 109.5 deg, continuity with CO2). Judged on the whole text: read aloud end to end (5 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1739,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:11.329Z"
 }

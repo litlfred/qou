@@ -1546,6 +1546,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.523Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (lepton-tower closure factor xi_m), one display and two prose paragraphs; xi_1..xi_4 recomputed at both q_0 pins. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1565,6 +1580,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.558Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (lepton-tower closure factor xi_m), one display and two prose paragraphs; xi_1..xi_4 recomputed at both q_0 pins. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1584,6 +1614,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.591Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (lepton-tower closure factor xi_m), one display and two prose paragraphs; xi_1..xi_4 recomputed at both q_0 pins. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1603,6 +1648,22 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.625Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The three-sentence parity gloss tracks the three brackets in the formula.",
+        "notes": "Reported: the block indexes the electron at m=1 but never evaluates xi_1 = 1/[2]_q ~ 0.4973, which is not 1; since m_e is the CAL-1 anchor the factor's role at m=1 is left unstated."
       }
     ],
     "trap-closing-aphorism": [
@@ -1622,6 +1683,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.662Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (lepton-tower closure factor xi_m), one display and two prose paragraphs; xi_1..xi_4 recomputed at both q_0 pins. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1641,6 +1717,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.695Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (lepton-tower closure factor xi_m), one display and two prose paragraphs; xi_1..xi_4 recomputed at both q_0 pins. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1660,6 +1751,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.741Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (lepton-tower closure factor xi_m), one display and two prose paragraphs; xi_1..xi_4 recomputed at both q_0 pins. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1679,6 +1785,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.775Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (lepton-tower closure factor xi_m), one display and two prose paragraphs; xi_1..xi_4 recomputed at both q_0 pins. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1698,6 +1819,23 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.825Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'The factor $(2m-1, m, 2m)$ exhibits strict symmetry in $h = q - q^{-1}$' -- no symmetry is stated or checkable, and the two sentences that follow describe a parity split, not a symmetry.",
+        "notes": "proposed: state the actual parity claim ('the odd index $2m-1$ contributes a bar-odd bracket and the even index $2m$ a bar-even one') and drop 'strict'."
       }
     ],
     "trap-nonspeakable": [
@@ -1717,6 +1855,23 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4659efa79c1a",
+          "ts": "14ee3539c632"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:55.861Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'This precise amphichiral reflection reflects the knot-operator equivalence structural directive.' -- 'reflection reflects', and 'the knot-operator equivalence structural directive' is a four-noun chain naming nothing in the corpus. The sentence has no recoverable claim.",
+        "notes": "proposed: delete. Not applied because the intended content cannot be reconstructed, so removal is a meaning change rather than a construction fix."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1740,5 +1895,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:55.861Z"
 }

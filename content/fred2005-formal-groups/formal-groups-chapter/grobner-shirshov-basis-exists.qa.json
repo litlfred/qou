@@ -1242,6 +1242,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.415Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1261,6 +1277,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.454Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-em-dash": [
@@ -1280,6 +1312,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.494Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-triples": [
@@ -1299,6 +1347,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.532Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-closing-aphorism": [
@@ -1318,6 +1382,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.572Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-meta-commentary": [
@@ -1337,6 +1417,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.611Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-thesis-restatement": [
@@ -1356,6 +1452,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.649Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-performed-warmth": [
@@ -1375,6 +1487,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.688Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-superlative": [
@@ -1394,6 +1522,22 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.726Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ],
     "trap-nonspeakable": [
@@ -1413,8 +1557,24 @@
         "reviewed_at": "2026-08-15T10:31:01.647Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "25b70f318130",
+          "ts": "6d0cd896527d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.766Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:grobner-shirshov-basis-exists. Two sentences plus a reference line; no constructions from the ten categories.",
+        "notes": "NOT A TRAP, reported separately: the .md asserts flatly that 'the q-Serre relations form a Groebner-Shirshov system whose composition lemma (confluence) holds', but the resolved Lean grobner_shirshov_basis_exists is a cited 'sorry' (with the required -- Ref:) whose conclusion has been deliberately weakened to 'exists a b, a != b and reduce a = reduce b'. The q-Serre/confluence content is cited, not derived; the .md carries no such caveat."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.647Z"
+  "updated_at": "2026-08-22T04:07:41.766Z"
 }

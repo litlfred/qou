@@ -61,6 +61,7 @@ wrong reduction would break the member rows).
 """
 
 import json
+import pathlib
 import sys
 from fractions import Fraction
 
@@ -250,7 +251,7 @@ witness = {
         "corpus c_3 candidates (computations/c3_hopf_habiro_analysis.py; "
         "docs/coordination/1ppq-qbeta.md); alpha_EM element PR #1511; "
         "binding tails (habiro_tail_membership_gate_probe.py); GSWZ "
-        "gates (uploads/2412.04241v2.pdf); CGZ (uploads/1712.04887v3.pdf)"
+        "gates (library/arxiv-2412.04241v2/2412.04241v2.pdf); CGZ (library/arxiv-1712.04887v3/1712.04887v3.pdf)"
     ),
     "checks": checks,
     "gate_table": table,
@@ -270,7 +271,7 @@ witness = {
         "untouched: this is element-level arithmetic only."
     ),
 }
-with open("computations/probes/ck_membership_payoff_run.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "ck_membership_payoff_run.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

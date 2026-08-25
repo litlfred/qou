@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.574Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.610Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 109 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.643Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1279,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 109 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.676Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1313,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.709Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1347,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.743Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1381,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.775Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.810Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1449,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.842Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1483,21 @@
         "reviewed_at": "2026-08-15T10:31:00.465Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1137e84029fd",
+          "ts": "965641e458ea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:51.875Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proof (one-dimensional weight equality, symmetric-crossing cancellation, standard-channel volume, telescoping jet product); the cancellation chi_sym + chi_alt = q - q^{-1} - h = 0 verified. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1520,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:51.875Z"
 }

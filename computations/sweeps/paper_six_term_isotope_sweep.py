@@ -143,6 +143,7 @@ _T1_CACHE_B: dict | None = None
 
 # Default T1 source.  Set to "model-a" via environment to revert.
 import os as _os  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 _T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
 
 
@@ -153,7 +154,7 @@ def _load_canonical_t1() -> dict:
     global _T1_CACHE
     if _T1_CACHE is not None:
         return _T1_CACHE
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(f"missing canonical T1 witness: {path}")
     d = json.loads(path.read_text())
@@ -356,7 +357,7 @@ def term4_frobenius_codim(A):
     from schur_weyl_symbolic import partitions_of
     from hecke_characters import young_hooks, qfac
     n = 3 * A
-    nfac_val = mp.mpf(qfac(n))
+    nfac_val = mp.mpf(qfac(n, Q0_PROTON))
     q = Q0
     q_inv = 1 / q
     denom = q - q_inv

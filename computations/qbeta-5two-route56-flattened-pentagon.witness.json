@@ -4,7 +4,7 @@
     "qou-xblo",
     "qou-0yqu"
   ],
-  "dps": 40,
+  "dps": 70,
   "follows": "Route 54 (the unconditional one-variable pentagon)",
   "lean": "QOU/QBeta/FiveTwoFlattenedPentagon.lean -- hasDerivAt_flatPentagonSum, flatPentagonSum_eq_pi_sq_div_two_of_region",
   "gates": [
@@ -16,34 +16,34 @@
           "x": "(2.0 + 0.5j)",
           "y": "(1.5 - 0.9j)",
           "unflattened_dev_over_pi_sq": "(-0.077979130377369 + 0.23028430838781j)",
-          "flattened_abs_dev": "2.7550649e-40"
+          "flattened_abs_dev": "3.6222716e-71"
         },
         {
           "x": "(-1.0 + 0.3j)",
           "y": "(3.0 + 2.0j)",
           "unflattened_dev_over_pi_sq": "(-0.074714528064925 + 0.49460912317053j)",
-          "flattened_abs_dev": "4.5917748e-41"
+          "flattened_abs_dev": "7.2445433e-71"
         },
         {
           "x": "(0.5 + 3.0j)",
           "y": "(0.5 - 3.0j)",
           "unflattened_dev_over_pi_sq": "(-0.44743154328875 + 0.35405983474375j)",
-          "flattened_abs_dev": "2.0535041e-40"
+          "flattened_abs_dev": "2.3193855e-70"
         },
         {
           "x": "(2.0 + 0.1j)",
           "y": "(2.0 - 0.1j)",
           "unflattened_dev_over_pi_sq": "(-0.015902251256176 + 0.22103299097857j)",
-          "flattened_abs_dev": "1.3775324e-40"
+          "flattened_abs_dev": "1.6199291e-70"
         }
       ],
-      "max_flattened_abs_deviation": "2.7550649e-40",
+      "max_flattened_abs_deviation": "2.3193855e-70",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "the defects are INTEGERS, measured not assumed: each (log z - expansion)/(2 pi i) is computed and its distance to the nearest rational integer reported. Every value lands in {0,+-1}. Writing d = 2 pi i p and d' = 2 pi i q, flatRogers is Neumann's R(z;p,q) up to normalisation, so this is the pentagon in Bhat(C)",
-      "max_distance_to_integer": "1.1515727e-41",
+      "max_distance_to_integer": "1.8539964e-71",
       "integers_seen": [
         -1,
         0,
@@ -160,7 +160,7 @@
     {
       "gate": "G3",
       "claim": "flattening changes nothing where the branch conditions already hold -- the real square and Route 54's one-variable region. So the flattened statement extends the earlier one rather than replacing it (FiveTwoFlattenedPentagon.flatPentagonSum_eq_pentagonSum)",
-      "max_abs_difference": "9.2238187e-41",
+      "max_abs_difference": "7.4158493e-71",
       "pass": true
     },
     {
@@ -172,7 +172,7 @@
     {
       "gate": "G5",
       "claim": "the target is unmoved. The flattened identity does hold at the 5_2 pair (y_1, conj y_1) that Vol(5_2) needs -- but Lean reaches it only through a connected regular region joining it to the real square, and NO such region is exhibited. This is evidence, not a proof, and A = sum Li2(y_j) still has none",
-      "flattened_abs_dev_at_conjugate_pair": "3.6805875e-40",
+      "flattened_abs_dev_at_conjugate_pair": "8.0996456e-71",
       "A": "0.971730681468648259127774169939",
       "region_exhibited": false,
       "pass": true

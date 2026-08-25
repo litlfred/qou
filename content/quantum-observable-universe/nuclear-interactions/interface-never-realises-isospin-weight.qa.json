@@ -1180,6 +1180,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.405Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%. 'it is not that the interface reproduces an isospin weight badly, it is that the interface never reproduces one at all' and 'not an unmotivated choice; it is an unavailable one' are both substantive: the sharpening from 'inaccurate' to 'impossible' is precisely what a corollary of a strict-betweenness proposition asserts, and the second contrasts two genuinely different verdicts on the same construction.",
+        "notes": "Kept - substantive mathematical contrast, the documented false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1199,6 +1215,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.445Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1218,6 +1250,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 337 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.486Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "Two '---' instances, both true parentheticals introducing a quantitative aside."
       }
     ],
     "trap-triples": [
@@ -1237,6 +1285,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 337 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.528Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "No reflex triple; the repair discussion lists two candidates and says so."
       }
     ],
     "trap-closing-aphorism": [
@@ -1256,6 +1320,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.572Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "Ends on a concrete risk statement about undetermined parameters, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1275,6 +1355,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.615Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1294,6 +1390,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.655Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "'The corollary settles that they are not' is a cross-reference to what the statement does, which the false-positive list allows."
       }
     ],
     "trap-performed-warmth": [
@@ -1313,6 +1425,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.694Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1332,6 +1460,22 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.734Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "'the sharpest form of the obstruction' is a scoped comparison against the earlier dimension-count form, and is justified in the same block."
       }
     ],
     "trap-nonspeakable": [
@@ -1351,6 +1495,38 @@
         "reviewed_at": "2026-08-15T10:31:01.333Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.774Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Full read of the corollary statement and its three sections. Ten trap categories judged in context. The block inherits its numbers from prop:interface-band-between-isospin-weights, whose figures I verified exactly at 40 dps in this same batch: the two misses 63.22% and 22.85% recompute to 63.2152% and 22.8524%.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "c409c804bb8a",
+          "ts": "8e28ad553b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:09.824Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Refutation-scope and inherited-numerics check beyond the ten categories.",
+        "notes": "CREDIT PLUS ONE INHERITED CORRECTION (report, not fixed). CREDIT: this block does what AGENTS.md asks of a durable negative and is worth recording as a model. It states the obstruction as an impossibility rather than a bad fit, it names what is NOT excluded ('a rule that reads the state of the pair rather than its content is untouched'), it enumerates the repairs that cannot work and why (tuning d, choosing a crossing sign, choosing a different q - all moves inside or of the same interval), it names the two arenas that remain open, and it flags the anti-fit risk in the first of them ('three extra parameters that are not themselves derived would convert a clean impossibility into a fit with room to hide'). The .ts authorNotes also record why two component conditionals are deliberately unreferenced, so their absence from the content graph reads as a decision. INHERITED CORRECTION: the quantitative figures 63.22% and 22.85% are correct (verified to 40 dps), but this block rests on prop:interface-band-between-isospin-weights, whose upper-separation reduction and threshold are wrong - the criterion is q^5 - q^4 + q^3 - q^2 - 1 < 0 with threshold 1.249852, not q^5 < q^2+1 with 1.193859, and the margin is 12.60% rather than 7.56%. The corollary's conclusion is unaffected (the corrected margin is larger), but the parent's numbers should be fixed before either is cited."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1374,5 +1550,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:20:09.824Z"
 }

@@ -15,7 +15,7 @@ Tests three Subgoal-1 hypotheses:
 
   H3 (per-atom Vol + per-atom tr_M, the canonical Subgoal-1 path):
       m(K) = m_e · Vol(K_atom)/ℏ_q² · |tr_M(β_atom)|
-           = m_e · vol_density_per_block(Vol(K_atom), |tr_M|, q)
+           = m_e · per_knot_density_per_block(Vol(K_atom), |tr_M|, q)
 
 Compares each to CODATA for A=1 (p, n) and A≥2 (D, T, ³He, ⁴He).
 Documents which mechanism (if any) closes the +2.89% gap with the

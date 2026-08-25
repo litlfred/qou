@@ -1359,6 +1359,21 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.244Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of prose block: two sentences, no math beyond inline $q$."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.630Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The block's second sentence was a setup-then-colon-reframe in which the framing clause carried nothing and the content sat after the colon. Fixed: the sentence now states the question directly.",
+        "notes": "fix applied: 'A dynamically shifting $q$ raises a critical vulnerability: whether higher-order emission poles distort relative to the hydrogen baseline.' -> 'A dynamically shifting $q$ raises the question whether higher-order emission poles distort relative to the hydrogen baseline.' Same edit removes the 'critical' intensifier (see trap-superlative). Math delimiters re-checked, balanced."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.299Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of prose block: two sentences, no math beyond inline $q$."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.369Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of prose block: two sentences, no math beyond inline $q$."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.431Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of prose block: two sentences, no math beyond inline $q$."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.478Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of prose block: two sentences, no math beyond inline $q$."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.534Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of prose block: two sentences, no math beyond inline $q$."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.581Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of prose block: two sentences, no math beyond inline $q$."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.677Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'a critical vulnerability' was an unearned intensifier applied to what is in fact an open question, in a two-sentence prose intro. Removed by the same edit recorded under trap-rhetorical-pivot; the block now carries no intensifier.",
+        "notes": "fix applied: 'raises a critical vulnerability:' -> 'raises the question whether'."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1667,22 @@
         "reviewed_at": "2026-08-15T10:31:01.147Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "401f903d254f",
+          "ts": "1c25e62da456"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:43:03.738Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'Intrinsic variance in the local Reeb flow geometrically broadens the transition pathways.' is noun-heavy but has a plain subject-verb-object spine and reads aloud. Below the threshold.",
+        "notes": "Outside the trap axis, reported separately: the block asserts '1,000-4,000 km/s H-alpha linewidths' with no citation, witness or derivation, and the block title ('Eigenspace invariance and observable spectra') does not describe its content (aeon-initiation line broadening)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:43:03.738Z"
 }

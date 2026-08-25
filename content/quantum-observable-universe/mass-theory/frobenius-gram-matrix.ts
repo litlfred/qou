@@ -18,7 +18,36 @@ export default proposition({
     engine: "sympy",
     script: "computations/probes/frobenius_gram_matrix_probe.py",
     witness: "computations/probes/frobenius-gram-matrix-probe.witness.json",
-    status: "verified",
+    status: "failed",
+    // "verified" -> "failed" on 2026-08-23. The cited witness's own `allPassed`
+    // is false: `gram_matrix_nondegenerate` computes 1 (one degenerate
+    // direction) against an expected 0. This block came in from main during the
+    // merge and is the 13th instance of the qou-bm4i class.
+    //
+    // The failure is CORRECT and should not be cleared by re-running anything.
+    // Its `source` reads "Frobenius self-duality A ≅ A^∨ implies the
+    // Markov-trace pairing is non-degenerate at generic q" — true of GENERIC q,
+    // and the canonical Markov weight is not generic. Over ℚ(q,z),
+    //
+    //     det G(q,z) = −(z−q)⁵(qz+1)⁵((q²+1)z − q³)(q³z + qz + 1)/q⁸
+    //
+    // and the third factor vanishes identically at z = q³/(q²+1), which IS
+    // convention D. So the canonical Gram is singular for every q, with a
+    // one-dimensional radical — proved sorry-free this session as
+    // `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero` and
+    // `gramMatrixD_mulVec_radical`. Generic-q non-degeneracy simply does not
+    // survive the specialisation.
+    //
+    // Two independent producers agree, which is worth recording: this probe
+    // finds exactly ONE degenerate direction and an INDEFINITE signature; the
+    // Lean exhibits the radical explicitly as the three-strand
+    // q-antisymmetriser (-q³, q², q², -q, -q, 1) and proves
+    // `gramMatrixD_not_posDef`. They were arrived at separately — this probe on
+    // main at 09:23, the Lean on this branch — and describe the same object.
+    //
+    // Note the block's own statement already flags that the `z³ ↦ hz² + z`
+    // correction "has still to be propagated", so its entries are pre-correction
+    // in places. Repairing that is authoring, not a status fix.
   },
   authorNotes: [
     {

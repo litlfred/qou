@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.191Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.228Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.266Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.304Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.344Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.383Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.420Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.461Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.499Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8062fb86f61d",
+          "ts": "395b71105003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.539Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row polynomial table). Every coefficient recomputed from the closed form a_p(u) = sum_j C(2g-j, j) u^{g-j} with g = (p-1)/2, and all six rows match exactly, including the two 'overflow' rows (p=11: 1,9,28,35,15,1 and p=13: 1,11,45,84,70,21,1). Degrees and genus column consistent throughout. No prose trap constructions."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:01.539Z"
 }

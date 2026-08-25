@@ -1194,6 +1194,21 @@
         "reviewed_at": "2026-08-15T12:02:07.825Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.610Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No denial constructions."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1228,6 +1243,21 @@
         "reviewed_at": "2026-08-15T12:02:07.862Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.686Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Equations, genus computation, minimality, coordinates; no pivot."
       }
     ],
     "trap-em-dash": [
@@ -1262,6 +1292,21 @@
         "reviewed_at": "2026-08-15T12:02:07.896Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.756Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 220 words."
       }
     ],
     "trap-triples": [
@@ -1296,6 +1341,21 @@
         "reviewed_at": "2026-08-15T12:02:07.929Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.829Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'defined by three equations' is the actual defining system (power sums 1, 2, 3), each displayed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1330,6 +1390,21 @@
         "reviewed_at": "2026-08-15T12:02:07.963Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:10.908Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on an explicit point of the curve, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1364,6 +1439,21 @@
         "reviewed_at": "2026-08-15T12:02:07.997Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:11.001Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1398,6 +1488,21 @@
         "reviewed_at": "2026-08-15T12:02:08.100Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "'This establishes the Descartes theorem' is a cross-reference closer pointing at another result (bookkeeping class)"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:11.053Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1432,6 +1537,21 @@
         "reviewed_at": "2026-08-15T12:02:08.031Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:11.135Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1466,6 +1586,22 @@
         "reviewed_at": "2026-08-15T12:02:08.134Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "'largest automorphism group' / 'terminal object' are the mathematical maximality claims themselves, qualified by |S5|=120"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:11.196Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'largest automorphism group (S_5 has order 120)' is correct for genus 4, so it is a fact rather than inflation.",
+        "notes": "Rigor flag (not a trap, reported separately): the neighbouring 'Among all genus-4 curves, Bring's surface is the terminal object ... any other genus-4 QOU maps to it. This establishes the Descartes theorem.' quantifies over CURVES but justifies over QOUs, and in the category of curves with non-constant morphisms it is false by Riemann--Hurwitz (a non-constant map between curves of equal genus is an isomorphism)."
       }
     ],
     "trap-nonspeakable": [
@@ -1500,6 +1636,21 @@
         "reviewed_at": "2026-08-15T12:02:08.065Z",
         "reviewed_sha": "d4ce06fd0061165588c4dcba2e9a2f33d938d30f",
         "evidence": "worked example; declarative"
+      },
+      {
+        "field_hash": {
+          "md": "a56d4e80e0a2",
+          "ts": "e34a5eba3545"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:34:11.321Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Short declarative sentences."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1522,5 +1673,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T22:56:06.905Z"
+  "updated_at": "2026-08-19T21:34:11.321Z"
 }

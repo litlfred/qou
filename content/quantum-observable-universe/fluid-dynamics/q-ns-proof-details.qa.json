@@ -1485,6 +1485,21 @@
         "reviewed_at": "2026-08-15T11:10:27.332Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no negation-contrast constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.078Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'no finite-time blowup' and 'The bound gives no information' are factual statements of what the estimate does and does not give — the second is an honest scope limit at q = 1."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1519,6 +1534,21 @@
         "reviewed_at": "2026-08-15T11:10:27.377Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no rhetorical-pivot constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.128Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three proof parts (a)(b)(c); no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1553,6 +1583,21 @@
         "reviewed_at": "2026-08-15T11:10:27.412Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no em-dash constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.176Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One em-dash appending the conclusion of the Gronwall step; 204 words."
       }
     ],
     "trap-triples": [
@@ -1587,6 +1632,21 @@
         "reviewed_at": "2026-08-15T11:10:27.460Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no triples constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.225Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Parts (a)(b)(c) are the proposition's three clauses."
       }
     ],
     "trap-closing-aphorism": [
@@ -1621,6 +1681,21 @@
         "reviewed_at": "2026-08-15T11:10:27.508Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no closing-aphorism constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.283Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on 'Gronwall with w(0) = 0 gives w(t) = 0'."
       }
     ],
     "trap-meta-commentary": [
@@ -1655,6 +1730,21 @@
         "reviewed_at": "2026-08-15T11:10:27.551Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no meta-commentary constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.367Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1689,6 +1779,21 @@
         "reviewed_at": "2026-08-15T11:10:27.590Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no thesis-restatement constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.438Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1723,6 +1828,21 @@
         "reviewed_at": "2026-08-15T11:10:27.637Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no performed-warmth constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.493Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1757,6 +1877,21 @@
         "reviewed_at": "2026-08-15T11:10:27.676Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no superlative constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.625Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No intensifiers; the q = 1 degeneration is stated as a loss of information rather than argued around."
       }
     ],
     "trap-nonspeakable": [
@@ -1791,6 +1926,21 @@
         "reviewed_at": "2026-08-15T11:10:27.719Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no nonspeakable constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "db3a67a74fe9",
+          "ts": "b5b7956cb635"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.674Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Reads as spoken mathematics."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1813,5 +1963,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:38:03.674Z"
 }

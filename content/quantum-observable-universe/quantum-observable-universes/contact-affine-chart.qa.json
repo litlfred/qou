@@ -1779,6 +1779,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.660Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1798,6 +1814,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.696Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-em-dash": [
@@ -1817,6 +1849,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.732Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-triples": [
@@ -1836,6 +1884,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.771Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-closing-aphorism": [
@@ -1855,6 +1919,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.808Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-meta-commentary": [
@@ -1874,6 +1954,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.844Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-thesis-restatement": [
@@ -1893,6 +1989,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.882Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-performed-warmth": [
@@ -1912,6 +2024,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.920Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-superlative": [
@@ -1931,6 +2059,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.958Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "trap-nonspeakable": [
@@ -1950,6 +2094,22 @@
         "reviewed_at": "2026-08-15T10:31:00.000Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e8a0a388c0b7",
+          "ts": "f1edde8f6c4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:52:12.997Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the definition: Reeb splitting alpha = alpha_H + Theta wedge iota_xi alpha, the open set U_xi where iota_xi alpha != 0 (scale-invariant, so well defined on P(V)), the affine coordinate Z, and a tikzcd. Closer 'supply the stereographic projection intrinsically, without external coordinates' reads as standard mathematical usage (the appositive fixes what 'intrinsically' means) rather than manufactured negation-contrast; left unedited.",
+        "notes": "Separate flag (not a trap): the tikzcd right-hand vertical arrow asserts P(V) is isomorphic to Omega^1_H(A); a projective line object being isomorphic to the full module of horizontal 1-forms looks wrong - worth checking whether the intended target is P(Omega^1_H(A))."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1973,5 +2133,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:52:12.997Z"
 }

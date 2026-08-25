@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/lifting-and-descent/brane-tower-terminology.md"
   },
   "source_hashes": {
-    "md": "f5df242f6618",
+    "md": "d0b8c1d5ce3f",
     "ts": "bd80df7ac426"
   },
   "criteria": {
@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.101Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "'control structural assembly rather than the Kaehler-differential jet object itself' -- substantive scope distinction (which results the Yekutieli qualifier covers); false-positive class, kept."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.143Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no rhetorical setup-then-reframe pivot present."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.186Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no load-bearing em-dash overuse present."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 84 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.226Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no compulsive three-item list present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.266Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no closing aphorism present."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.307Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no meta-commentary narrating emphasis present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.348Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no block-final thesis restatement present."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.389Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no performed-warmth register present."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.432Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "'The mathematics here strictly traces' -- padding adverb, removed.",
+        "notes": "fix applied: 'strictly traces the iterated jet prolongation' -> 'traces the iterated jet prolongation'"
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1540,21 @@
         "reviewed_at": "2026-08-15T10:31:00.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q14",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:31:14.475Z",
+        "reviewed_sha": "d2f71737eb00163e064480f0ba1a82d4a2cf9191",
+        "evidence": "Read block in full; no non-speakable noun-chain syntax present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,7 +1575,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "d0b8c1d5ce3f",
+          "ts": "bd80df7ac426"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:13.211Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:13.211Z"
 }

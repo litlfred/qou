@@ -1216,7 +1216,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.388Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.424Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.462Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.500Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.539Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.576Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.612Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.648Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.683Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "01ba4719c80b",
+          "ts": "f1c431c76a8c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:51:11.722Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Simulator-kind block whose .md is empty (one newline, 1 byte); the .ts is a stub with tag todo-html and html: folio-assistant/simulators/descent_rate_probe.html deferred. No prose exists to carry any of the ten constructions.",
+        "notes": "Not a trap finding: the block has no narrative content at all. Separate (non-trap) observation for the coordinating session — sim:descent-rate-probe points at an unwritten HTML page, so the empirical beta(d) = 1 evidence that rem:mass-tower-syt-cells cites through it is not actually reachable from the paper."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:51:11.722Z"
 }

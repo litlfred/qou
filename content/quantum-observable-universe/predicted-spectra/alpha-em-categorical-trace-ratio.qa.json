@@ -1603,7 +1603,8 @@
         "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Algebraic identity: $\\\\alpha_{EM} = h^2 / [q \\\\cdot \\\\delta_q(T_{2,9}) \\\\cdot \\\\delta_q(T_{3,5})]$' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1707,7 +1708,8 @@
         "reviewed_at": "2026-07-07T14:26:56.327862Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1918,7 +1920,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean contains compilation errors: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean fails compilation: content/quantum-observable-universe/predicted-spectra/alpha-em-categorical-trace-ratio.lean:10:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
       },
       {
         "result": "pass",
@@ -2199,6 +2202,21 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.675Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2218,6 +2236,21 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.713Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
       }
     ],
     "trap-em-dash": [
@@ -2237,6 +2270,21 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.751Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
       }
     ],
     "trap-triples": [
@@ -2256,6 +2304,36 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 177 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.791Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:10.068Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "'V_(3), V_(2,1), V_(1,1,1)' is the complete set of H_3(q) irreducibles - substantive enumeration, not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -2275,6 +2353,37 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.831Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:10.110Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Block previously ended on a quotable pair of lines; removed.",
+        "notes": "fix applied: 'Expressing the relationship as a trace ratio on the q-dimension layer reformulates existing projection identities. This closes the categorical framework. The empirical electromagnetic coupling reduces to a structural trace-algebraic constraint.' -> 'Expressing the relationship as a trace ratio on the q-dimension layer reformulates existing projection identities.'"
       }
     ],
     "trap-meta-commentary": [
@@ -2294,6 +2403,21 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.870Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
       }
     ],
     "trap-thesis-restatement": [
@@ -2313,6 +2437,38 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.910Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:10.186Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "severity": "minor",
+        "evidence": "Surviving final sentence 'Expressing the relationship as a trace ratio on the q-dimension layer reformulates existing projection identities.' restates the boxed identity in words, and sits under the '### Numerical verification' heading while saying nothing about verification.",
+        "notes": "proposed: delete the sentence (the .ts docstring already carries the significance note), or move it under a '### Significance' heading; not fixed inline because it is the section's only remaining prose and removal changes the section structure."
       }
     ],
     "trap-performed-warmth": [
@@ -2332,6 +2488,21 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.950Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
       }
     ],
     "trap-superlative": [
@@ -2351,6 +2522,37 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:09.988Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:10.148Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "'This closes the categorical framework' was an unqualified maximal claim (and false: the block establishes one algebraic identity); removed with the aphoristic closer.",
+        "notes": "fix applied: deleted 'This closes the categorical framework.'"
       }
     ],
     "trap-nonspeakable": [
@@ -2370,6 +2572,21 @@
         "reviewed_at": "2026-08-15T10:31:01.113Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2cef026298b2",
+          "ts": "d29c393dfb39"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:10.028Z",
+        "reviewed_sha": "8f2e694d9c5ebe5a0f3fb3747240919c4c9210b3",
+        "evidence": "Full read of proposition .md (statement, Derivation, Numerical verification). Checked all ten categories over the whole text."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2393,5 +2610,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:23:10.186Z"
 }

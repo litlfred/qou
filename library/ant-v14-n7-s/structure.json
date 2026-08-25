@@ -1,0 +1,3304 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ant-v14-n7-s",
+ "source": {
+  "file": "ant-v14-n7-s.pdf",
+  "sha256": "ab695eddd565addf3210fd18d3d5b29acc1e05059ab588d06b3f0a832da81678",
+  "bytes": 6524895,
+  "pages": 336
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Algebra & Number Theory Volume 14 No. 7 msp",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Creator": "EditFlow, from Mathematical Sciences Publishers",
+   "CreationDate": "D:20210901185935-07'00'",
+   "Producer": "EditFlow, from Mathematical Sciences Publishers",
+   "Author": "Mathematical Sciences Publishers",
+   "Title": "Algebra & Number Theory vol. 14 (2020), no. 7"
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "vol. 14, no. 7, 2020",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Masthead and Copyright",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "David Loeffler and Chris Williams",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "1A. Background",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1B. Statement of the main theorem",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1C. Outline of the construction",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries and notation",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "2A. Basic notation",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2B. Locally symmetric spaces",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2C. Hecke correspondences",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2D. Bianchi modular forms",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2E. The Asai L-function",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2F. The primitive Asai L-function",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2G. The Coates\u2013Perrin-Riou conjecture",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2H. The modular symbol attached to Psi",
+   "page": 14,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Siegel units and weight 2 Asai\u2013Eisenstein elements",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "3A. Modular units",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3B. Eisenstein series",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3C. Siegel units",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3D. Asai\u2013Eisenstein elements in weight 2",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Proving the norm relations (Theorem 3.13)",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "4A. Rephrasing using the spaces YF*(m, mn)",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "4B. A norm relation for zeta elements",
+   "page": 23,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Asai\u2013Eisenstein elements in higher weights",
+   "page": 26,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "5A. Coefficients and moment maps",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "5B. Relation to the weight 2k Eisenstein class",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The p-adic Asai L-function",
+   "page": 29,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 3,
+   "title": "6A. Constructing the measure",
+   "page": 29,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "6B. Getting rid of c",
+   "page": 31,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Interpolation of critical L-values",
+   "page": 32,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 3,
+   "title": "7A. Automorphic forms for G*",
+   "page": 32,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "7B. An integral formula for the Asai L-function",
+   "page": 33,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "7C. Interpolation of critical values",
+   "page": 34,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix: An integral formula for the Asai L-function",
+   "page": 36,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 43,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "David Jarossay",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 45,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 3,
+   "title": "0A. p-adic cyclotomic multiple zeta values, computation and iteration of the Frobenius",
+   "page": 45,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "0B. Principles of the study",
+   "page": 46,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "0C. A few definitions",
+   "page": 47,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "0D. Results",
+   "page": 48,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 50,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "1A. The pro-unipotent fundamental groupoid of P1 {0,N,}",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1A1. The de Rham realization",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1A2. Motivic Galois action and byproducts",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1A3. The crystalline realization",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1A4. Around the adjoint action `39`42`\"613A``45`47`\"603AAd(e1)",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1B. An ultrametric structure on the K-points of the de Rham pro-unipotent fundamental groupoid",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1B1. From affine schemes to ultrametric normed algebras over K",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1B2. Compatibility between the ultrametric structure and the usual algebraic operations",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1B3. The weighted Ihara action and contraction mappings",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1B4. Application to the Frobenius",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1C. Prime weighted cyclotomic multiple harmonic sums",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1C1. The three frameworks of computation",
+   "page": 55,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1C2. The generalization to negative numbers of iterations of the Frobenius",
+   "page": 56,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1C3. The noncommutative generating series",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1D. The pro-unipotent harmonic actions and the harmonic Frobenius",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1D1. In the framework of integrals",
+   "page": 57,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1D2. In the framework of series",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Iteration of the harmonic Frobenius of integrals at (1,0)",
+   "page": 58,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "2A. The fixed point equation of the harmonic Frobenius of integrals at (1,0)",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "2A1. The fixed point equation for the Frobenius of integrals",
+   "page": 58,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "2A2. Pro-unipotent harmonic action and harmonic Frobenius of integrals at (1,0)",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "2A3. Fixed point equation for the harmonic Frobenius",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2B. Iteration equation of the harmonic Frobenius of integrals at (1,0)",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "2B1. Iteration on the Frobenius at (1,0)",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "2B2. The iteration of the harmonic Frobenius",
+   "page": 64,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Iteration of the harmonic Frobenius of series",
+   "page": 65,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "3A. Prime weighted multiple harmonic sums as functions of the number of iterations of the Frobenius",
+   "page": 65,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3B. The relation of iteration of the harmonic Frobenius of series",
+   "page": 69,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3C. Interpretation in terms of cyclotomic multiple harmonic sums viewed as functions of the upper bound of their domain of summation",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Comparison between equations on integrals and equations on series",
+   "page": 73,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "4A. Uniqueness of the expansion of `39`42`\"613A``45`47`\"603Aharq as a function of  and q",
+   "page": 73,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "4B. The map of comparison for all number of iterations",
+   "page": 74,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Iteration of the Frobenius on P1  B(,1)",
+   "page": 75,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 3,
+   "title": "5A. Fixed point equation",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "5B. Iteration equation",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "5C. Another iteration equation via regularized iterated integrals",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix: A Poisson bracket corresponding to pro-unipotent harmonic action",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.1. The Ihara bracket and the adjoint analogue",
+   "page": 78,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.2. Harmonic analogue of the Ihara bracket",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Joseph Ayoub",
+   "page": 81,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 81,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Motifs alg\u00e9briques et motifs rigides",
+   "page": 88,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "2A. Rappels sur les motifs alg\u00e9briques et leurs cohomologies",
+   "page": 88,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2B. Rappels sur les motifs rigides et leurs cohomologies",
+   "page": 95,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2C. Foncteurs entre motifs alg\u00e9briques et motifs rigides",
+   "page": 99,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2D. Une \u00e9quivalence remarquable",
+   "page": 102,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2E. Constructions principales",
+   "page": 104,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Calcul du complexe des p\u00e9riodes abstraites AK et applications",
+   "page": 109,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "3A. Un mod\u00e8le explicite du foncteur R(K\"0362K,Rig*(@-@))",
+   "page": 109,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3B. Calcul du complexe AK et du morphisme",
+   "page": 111,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3C. Constructions des nouvelles r\u00e9alisations",
+   "page": 115,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3D. Quelques conjectures",
+   "page": 117,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Action du groupe de Galois motivique",
+   "page": 118,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "4A. Rappels et compl\u00e9ments sur from-mot-to-comod",
+   "page": 118,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "4B. Le cas de la nouvelle r\u00e9alisation de type Betti",
+   "page": 121,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "4C. Quelques conjectures",
+   "page": 122,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Bibliographie",
+   "page": 123,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Maarten Derickx and Filip Najman and Samir Siksek",
+   "page": 125,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 125,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Images 6mu mod4mu3, 5, 7 and modularity",
+   "page": 126,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Modular curves",
+   "page": 127,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Modularity of elliptic curves over Q(7)+",
+   "page": 128,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=thm.111=Theorem 6",
+   "page": 128,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "The modular curve X(b5,ns7)",
+   "page": 129,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=thm.121=Theorem 7",
+   "page": 132,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 133,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Marc Levine and Arpon Raksit",
+   "page": 135,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 135,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Duality and Euler characteristics",
+   "page": 138,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "2A. Preliminaries",
+   "page": 139,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2B. Duality for smooth projective schemes",
+   "page": 143,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "SL-oriented motivic spectra",
+   "page": 147,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Projective pushforward in twisted cohomology",
+   "page": 155,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Motivic Gauss\u2013Bonnet",
+   "page": 160,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "SL-oriented cohomology theories",
+   "page": 161,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Comparison isomorphisms",
+   "page": 165,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Applications",
+   "page": 170,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 3,
+   "title": "8A. Motivic cohomology and cohomology of the Milnor K-theory sheaves",
+   "page": 170,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "8B. Algebraic K-theory",
+   "page": 171,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "8C. Milnor\u2013Witt cohomology and Chow\u2013Witt groups",
+   "page": 173,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "8D. Hermitian K-theory and Witt theory",
+   "page": 175,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "8E. Descent for the motivic Euler characteristic",
+   "page": 181,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 184,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 184,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Hung M. Bui and Alexandra Florea and Jonathan P. Keating and Edva Roditty-Gershon",
+   "page": 187,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction and statement of results",
+   "page": 187,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Some useful lemmas",
+   "page": 192,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "2A. Outline of the proof",
+   "page": 196,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Main proposition",
+   "page": 197,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "3A. The term TE1,E2(N,X,Y,Z;,)",
+   "page": 197,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3B. The term SE1,E2(N,X,Y,Z;,)",
+   "page": 199,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3C. The V=0 terms",
+   "page": 200,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3D. The V=0 terms",
+   "page": 203,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Upper bounds for moments",
+   "page": 207,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=theorem.51=Theorem 1.1",
+   "page": 215,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=theorem.61=Theorem 1.2",
+   "page": 219,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=theorem.71=1.3",
+   "page": 219,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=theorem.81=1.4",
+   "page": 220,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=theorem.91=Theorem 1.5",
+   "page": 222,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=theorem.101=1.6",
+   "page": 223,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 2,
+   "title": "Proof of 0=theorem.111=1.7",
+   "page": 225,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 225,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 226,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Jordan S. Ellenberg and Wanlin Li and Mark Shusterman",
+   "page": 229,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 229,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Main theorem and proof",
+   "page": 232,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "2A. Setup and notations",
+   "page": 232,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2B. Rational points on twisted Hurwitz spaces over finite fields",
+   "page": 232,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Application to nonvanishing of L-functions",
+   "page": 238,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 242,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 242,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Lillian B. Pierce and Junyan Xu",
+   "page": 245,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 245,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 3,
+   "title": "1A. Statement of the main theorem",
+   "page": 246,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1B. The strength of Theorem 1.1: quantifications",
+   "page": 247,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1C. Overview of previous literature",
+   "page": 249,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1C1. The classical Burgess bound",
+   "page": 249,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1C2. Previous literature on special cases of S(F; N,H)",
+   "page": 250,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "1C3. Further related literature",
+   "page": 250,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1D. Outline of the paper",
+   "page": 251,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "1E. Notation",
+   "page": 251,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Method of proof: an overview",
+   "page": 252,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 255,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "3A. Power-free conditions",
+   "page": 255,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3B. Translation invariance conditions",
+   "page": 256,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3C. All but finitely many primes",
+   "page": 258,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3D. Permutations of variables",
+   "page": 258,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The stratification of complete character sums",
+   "page": 259,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 3,
+   "title": "4A. The stratification obtained by Xu",
+   "page": 259,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "4B. The stratification in our setting",
+   "page": 261,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "4C. Deduction of the corollaries",
+   "page": 263,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "4D. Proof of Theorem 4.1",
+   "page": 263,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Initiation of the Burgess argument",
+   "page": 265,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Stratification and a Menshov\u2013Rademacher argument",
+   "page": 269,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 3,
+   "title": "6A. Application of the stratification for character sums",
+   "page": 269,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "6B. A Menshov\u2013Rademacher argument with permutations",
+   "page": 269,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "6C. A dyadic decomposition",
+   "page": 270,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "6D. Application of the nonmaximal upper bound",
+   "page": 271,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "6E. Proof of Lemma 6.3: rearrangement",
+   "page": 272,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Conclusion of the Burgess argument",
+   "page": 275,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 3,
+   "title": "7A. Proof of Corollaries 1.3 and 1.4",
+   "page": 276,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "7B. Proofs of technical lemmas",
+   "page": 278,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix",
+   "page": 280,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.1. The role of the stratification",
+   "page": 280,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.2. Conditional results: assuming a stronger stratification result",
+   "page": 281,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "A.3. Fourier methods for incomplete sums that are not short",
+   "page": 282,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 283,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 283,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Noelia Rizo and A. A. Schaeffer Fry and Carolina Vallejo",
+   "page": 287,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 287,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Blocks with normal defect group",
+   "page": 289,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Reducing to simple groups",
+   "page": 294,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "2A. Preliminaries",
+   "page": 294,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "2B. The reduction",
+   "page": 296,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Simple groups",
+   "page": 297,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "3A. Some generalities on groups of Lie type",
+   "page": 297,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "3A1. A general set-up",
+   "page": 298,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3B. The case p=2",
+   "page": 298,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "3C. The case p=3",
+   "page": 300,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "3C1. Lie type in cross-characteristic for p=3",
+   "page": 302,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 4,
+   "title": "3C2. Lie type in defining characteristic for p=3",
+   "page": 308,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 311,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 311,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Jesse Andrews and Clayton Petsche",
+   "page": 315,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 315,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Some algebraic lemmas",
+   "page": 318,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Ramification and postcritically infinite quadratic maps",
+   "page": 319,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Heights and Bogomolov constants",
+   "page": 322,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Powering maps and Chebyshev maps",
+   "page": 323,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Maps with small Arakelov\u2013Zhang pairing",
+   "page": 325,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "The map x2-1",
+   "page": 327,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Numerical approximation of Archimedean Arakelov\u2013Zhang integrals",
+   "page": 329,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 331,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 332,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Guidelines for Authors",
+   "page": 335,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Table of Contents",
+   "page": 336,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-1a-background",
+   "number": null,
+   "title": "1A. Background",
+   "level": 3,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3343,
+   "n_words": 511
+  },
+  {
+   "id": "sec-002-1b-statement-of-the-main-theorem",
+   "number": null,
+   "title": "1B. Statement of the main theorem",
+   "level": 3,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2713,
+   "n_words": 481
+  },
+  {
+   "id": "sec-003-1c-outline-of-the-construction",
+   "number": null,
+   "title": "1C. Outline of the construction",
+   "level": 3,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 4204,
+   "n_words": 709
+  },
+  {
+   "id": "sec-004-2-preliminaries-and-notation",
+   "number": "2",
+   "title": "Preliminaries and notation",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-2a-basic-notation",
+   "number": null,
+   "title": "2A. Basic notation",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1747,
+   "n_words": 349
+  },
+  {
+   "id": "sec-006-2b-locally-symmetric-spaces",
+   "number": null,
+   "title": "2B. Locally symmetric spaces",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 4349,
+   "n_words": 821
+  },
+  {
+   "id": "sec-007-2c-hecke-correspondences",
+   "number": null,
+   "title": "2C. Hecke correspondences",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1753,
+   "n_words": 305
+  },
+  {
+   "id": "sec-008-2d-bianchi-modular-forms",
+   "number": null,
+   "title": "2D. Bianchi modular forms",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1890,
+   "n_words": 327
+  },
+  {
+   "id": "sec-009-2e-the-asai-l-function",
+   "number": null,
+   "title": "2E. The Asai L-function",
+   "level": 3,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1924,
+   "n_words": 340
+  },
+  {
+   "id": "sec-010-2f-the-primitive-asai-l-function",
+   "number": null,
+   "title": "2F. The primitive Asai L-function",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 5482,
+   "n_words": 939
+  },
+  {
+   "id": "sec-011-2g-the-coatesperrin-riou-conjecture",
+   "number": null,
+   "title": "2G. The Coates\u2013Perrin-Riou conjecture",
+   "level": 3,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 7157,
+   "n_words": 1195
+  },
+  {
+   "id": "sec-012-3-siegel-units-and-weight-2-asaieisenstein-eleme",
+   "number": "3",
+   "title": "Siegel units and weight 2 Asai\u2013Eisenstein elements",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-013-3a-modular-units",
+   "number": null,
+   "title": "3A. Modular units",
+   "level": 3,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2062,
+   "n_words": 359
+  },
+  {
+   "id": "sec-014-3b-eisenstein-series",
+   "number": null,
+   "title": "3B. Eisenstein series",
+   "level": 3,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1186,
+   "n_words": 224
+  },
+  {
+   "id": "sec-015-3c-siegel-units",
+   "number": null,
+   "title": "3C. Siegel units",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2294,
+   "n_words": 416
+  },
+  {
+   "id": "sec-016-3d-asaieisenstein-elements-in-weight-2",
+   "number": null,
+   "title": "3D. Asai\u2013Eisenstein elements in weight 2",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 4420,
+   "n_words": 799
+  },
+  {
+   "id": "sec-017-4-proving-the-norm-relations-theorem-313",
+   "number": "4",
+   "title": "Proving the norm relations (Theorem 3.13)",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 3709,
+   "n_words": 733
+  },
+  {
+   "id": "sec-018-4b-a-norm-relation-for-zeta-elements",
+   "number": null,
+   "title": "4B. A norm relation for zeta elements",
+   "level": 3,
+   "page_start": 23,
+   "page_end": 26,
+   "n_chars": 5392,
+   "n_words": 996
+  },
+  {
+   "id": "sec-019-5-asaieisenstein-elements-in-higher-weights",
+   "number": "5",
+   "title": "Asai\u2013Eisenstein elements in higher weights",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 2571,
+   "n_words": 455
+  },
+  {
+   "id": "sec-020-5b-relation-to-the-weight-2k-eisenstein-class",
+   "number": null,
+   "title": "5B. Relation to the weight 2k Eisenstein class",
+   "level": 3,
+   "page_start": 26,
+   "page_end": 29,
+   "n_chars": 5367,
+   "n_words": 927
+  },
+  {
+   "id": "sec-021-6-the-p-adic-asai-l-function",
+   "number": "6",
+   "title": "The p-adic Asai L-function",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 437,
+   "n_words": 80
+  },
+  {
+   "id": "sec-022-6a-constructing-the-measure",
+   "number": null,
+   "title": "6A. Constructing the measure",
+   "level": 3,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 4966,
+   "n_words": 944
+  },
+  {
+   "id": "sec-023-6b-getting-rid-of-c",
+   "number": null,
+   "title": "6B. Getting rid of c",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 1736,
+   "n_words": 315
+  },
+  {
+   "id": "sec-024-7-interpolation-of-critical-l-values",
+   "number": "7",
+   "title": "Interpolation of critical L-values",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 2711,
+   "n_words": 473
+  },
+  {
+   "id": "sec-025-7b-an-integral-formula-for-the-asai-l-function",
+   "number": null,
+   "title": "7B. An integral formula for the Asai L-function",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 2084,
+   "n_words": 399
+  },
+  {
+   "id": "sec-026-7c-interpolation-of-critical-values",
+   "number": null,
+   "title": "7C. Interpolation of critical values",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 4542,
+   "n_words": 849
+  },
+  {
+   "id": "sec-027-appendix-an-integral-formula-for-the-asai-l-func",
+   "number": null,
+   "title": "Appendix: An integral formula for the Asai L-function",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 43,
+   "n_chars": 11973,
+   "n_words": 2409
+  },
+  {
+   "id": "sec-028-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 200,
+   "n_words": 33
+  },
+  {
+   "id": "sec-029-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 4768,
+   "n_words": 721
+  },
+  {
+   "id": "sec-030-david-jarossay",
+   "number": null,
+   "title": "David Jarossay",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 487,
+   "n_words": 76
+  },
+  {
+   "id": "sec-031-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 402,
+   "n_words": 62
+  },
+  {
+   "id": "sec-032-0a-p-adic-cyclotomic-multiple-zeta-values-comput",
+   "number": null,
+   "title": "0A. p-adic cyclotomic multiple zeta values, computation and iteration of the Frobenius",
+   "level": 3,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 2754,
+   "n_words": 447
+  },
+  {
+   "id": "sec-033-0b-principles-of-the-study",
+   "number": null,
+   "title": "0B. Principles of the study",
+   "level": 3,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 5875,
+   "n_words": 961
+  },
+  {
+   "id": "sec-034-0d-results",
+   "number": null,
+   "title": "0D. Results",
+   "level": 3,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 4932,
+   "n_words": 797
+  },
+  {
+   "id": "sec-035-1-preliminaries",
+   "number": "1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 354,
+   "n_words": 57
+  },
+  {
+   "id": "sec-036-1a-the-pro-unipotent-fundamental-groupoid-of-p1",
+   "number": null,
+   "title": "1A. The pro-unipotent fundamental groupoid of P1 {0,N,}",
+   "level": 3,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-037-1a1-the-de-rham-realization",
+   "number": null,
+   "title": "1A1. The de Rham realization",
+   "level": 4,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 1621,
+   "n_words": 278
+  },
+  {
+   "id": "sec-038-1a2-motivic-galois-action-and-byproducts",
+   "number": null,
+   "title": "1A2. Motivic Galois action and byproducts",
+   "level": 4,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 1442,
+   "n_words": 247
+  },
+  {
+   "id": "sec-039-1a3-the-crystalline-realization",
+   "number": null,
+   "title": "1A3. The crystalline realization",
+   "level": 4,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 3058,
+   "n_words": 499
+  },
+  {
+   "id": "sec-040-1b-an-ultrametric-structure-on-the-k-points-of-t",
+   "number": null,
+   "title": "1B. An ultrametric structure on the K-points of the de Rham pro-unipotent fundamental groupoid",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 1470,
+   "n_words": 242
+  },
+  {
+   "id": "sec-041-1b2-compatibility-between-the-ultrametric-struct",
+   "number": null,
+   "title": "1B2. Compatibility between the ultrametric structure and the usual algebraic operations",
+   "level": 4,
+   "page_start": 53,
+   "page_end": 53,
+   "n_chars": 999,
+   "n_words": 164
+  },
+  {
+   "id": "sec-042-1b3-the-weighted-ihara-action-and-contraction-ma",
+   "number": null,
+   "title": "1B3. The weighted Ihara action and contraction mappings",
+   "level": 4,
+   "page_start": 53,
+   "page_end": 55,
+   "n_chars": 3281,
+   "n_words": 517
+  },
+  {
+   "id": "sec-043-1b4-application-to-the-frobenius",
+   "number": null,
+   "title": "1B4. Application to the Frobenius",
+   "level": 4,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 681,
+   "n_words": 108
+  },
+  {
+   "id": "sec-044-1c-prime-weighted-cyclotomic-multiple-harmonic-s",
+   "number": null,
+   "title": "1C. Prime weighted cyclotomic multiple harmonic sums",
+   "level": 3,
+   "page_start": 55,
+   "page_end": 55,
+   "n_chars": 60,
+   "n_words": 11
+  },
+  {
+   "id": "sec-045-1c1-the-three-frameworks-of-computation",
+   "number": null,
+   "title": "1C1. The three frameworks of computation",
+   "level": 4,
+   "page_start": 55,
+   "page_end": 56,
+   "n_chars": 1788,
+   "n_words": 286
+  },
+  {
+   "id": "sec-046-1c2-the-generalization-to-negative-numbers-of-it",
+   "number": null,
+   "title": "1C2. The generalization to negative numbers of iterations of the Frobenius",
+   "level": 4,
+   "page_start": 56,
+   "page_end": 57,
+   "n_chars": 1312,
+   "n_words": 216
+  },
+  {
+   "id": "sec-047-1c3-the-noncommutative-generating-series",
+   "number": null,
+   "title": "1C3. The noncommutative generating series",
+   "level": 4,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 1361,
+   "n_words": 219
+  },
+  {
+   "id": "sec-048-1d-the-pro-unipotent-harmonic-actions-and-the-ha",
+   "number": null,
+   "title": "1D. The pro-unipotent harmonic actions and the harmonic Frobenius",
+   "level": 3,
+   "page_start": 57,
+   "page_end": 57,
+   "n_chars": 453,
+   "n_words": 67
+  },
+  {
+   "id": "sec-049-1d1-in-the-framework-of-integrals",
+   "number": null,
+   "title": "1D1. In the framework of integrals",
+   "level": 4,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 771,
+   "n_words": 113
+  },
+  {
+   "id": "sec-050-1d2-in-the-framework-of-series",
+   "number": null,
+   "title": "1D2. In the framework of series",
+   "level": 4,
+   "page_start": 58,
+   "page_end": 58,
+   "n_chars": 1142,
+   "n_words": 185
+  },
+  {
+   "id": "sec-051-2-iteration-of-the-harmonic-frobenius-of-integra",
+   "number": "2",
+   "title": "Iteration of the harmonic Frobenius of integrals at (1,0)",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 59,
+   "n_chars": 1757,
+   "n_words": 269
+  },
+  {
+   "id": "sec-052-2a2-pro-unipotent-harmonic-action-and-harmonic-f",
+   "number": null,
+   "title": "2A2. Pro-unipotent harmonic action and harmonic Frobenius of integrals at (1,0)",
+   "level": 4,
+   "page_start": 59,
+   "page_end": 62,
+   "n_chars": 5354,
+   "n_words": 958
+  },
+  {
+   "id": "sec-053-2a3-fixed-point-equation-for-the-harmonic-froben",
+   "number": null,
+   "title": "2A3. Fixed point equation for the harmonic Frobenius",
+   "level": 4,
+   "page_start": 62,
+   "page_end": 62,
+   "n_chars": 1431,
+   "n_words": 215
+  },
+  {
+   "id": "sec-054-2b-iteration-equation-of-the-harmonic-frobenius",
+   "number": null,
+   "title": "2B. Iteration equation of the harmonic Frobenius of integrals at (1,0)",
+   "level": 3,
+   "page_start": 62,
+   "page_end": 64,
+   "n_chars": 3229,
+   "n_words": 516
+  },
+  {
+   "id": "sec-055-2b2-the-iteration-of-the-harmonic-frobenius",
+   "number": null,
+   "title": "2B2. The iteration of the harmonic Frobenius",
+   "level": 4,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 3563,
+   "n_words": 645
+  },
+  {
+   "id": "sec-056-3-iteration-of-the-harmonic-frobenius-of-series",
+   "number": "3",
+   "title": "Iteration of the harmonic Frobenius of series",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 65,
+   "n_chars": 59,
+   "n_words": 11
+  },
+  {
+   "id": "sec-057-3a-prime-weighted-multiple-harmonic-sums-as-func",
+   "number": null,
+   "title": "3A. Prime weighted multiple harmonic sums as functions of the number of iterations of the Frobenius",
+   "level": 3,
+   "page_start": 65,
+   "page_end": 69,
+   "n_chars": 8304,
+   "n_words": 1470
+  },
+  {
+   "id": "sec-058-3b-the-relation-of-iteration-of-the-harmonic-fro",
+   "number": null,
+   "title": "3B. The relation of iteration of the harmonic Frobenius of series",
+   "level": 3,
+   "page_start": 69,
+   "page_end": 71,
+   "n_chars": 4178,
+   "n_words": 741
+  },
+  {
+   "id": "sec-059-3c-interpretation-in-terms-of-cyclotomic-multipl",
+   "number": null,
+   "title": "3C. Interpretation in terms of cyclotomic multiple harmonic sums viewed as functions of the upper bound of their domain of summation",
+   "level": 3,
+   "page_start": 71,
+   "page_end": 73,
+   "n_chars": 4169,
+   "n_words": 779
+  },
+  {
+   "id": "sec-060-4-comparison-between-equations-on-integrals-and",
+   "number": "4",
+   "title": "Comparison between equations on integrals and equations on series",
+   "level": 2,
+   "page_start": 73,
+   "page_end": 74,
+   "n_chars": 2500,
+   "n_words": 460
+  },
+  {
+   "id": "sec-061-4b-the-map-of-comparison-for-all-number-of-itera",
+   "number": null,
+   "title": "4B. The map of comparison for all number of iterations",
+   "level": 3,
+   "page_start": 74,
+   "page_end": 75,
+   "n_chars": 1918,
+   "n_words": 333
+  },
+  {
+   "id": "sec-062-5a-fixed-point-equation",
+   "number": null,
+   "title": "5A. Fixed point equation",
+   "level": 3,
+   "page_start": 75,
+   "page_end": 77,
+   "n_chars": 4320,
+   "n_words": 756
+  },
+  {
+   "id": "sec-063-5b-iteration-equation",
+   "number": null,
+   "title": "5B. Iteration equation",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 77,
+   "n_chars": 804,
+   "n_words": 128
+  },
+  {
+   "id": "sec-064-5c-another-iteration-equation-via-regularized-it",
+   "number": null,
+   "title": "5C. Another iteration equation via regularized iterated integrals",
+   "level": 3,
+   "page_start": 77,
+   "page_end": 78,
+   "n_chars": 1995,
+   "n_words": 338
+  },
+  {
+   "id": "sec-065-appendix-a-poisson-bracket-corresponding-to-pro",
+   "number": null,
+   "title": "Appendix: A Poisson bracket corresponding to pro-unipotent harmonic action",
+   "level": 2,
+   "page_start": 78,
+   "page_end": 78,
+   "n_chars": 485,
+   "n_words": 78
+  },
+  {
+   "id": "sec-066-a1-the-ihara-bracket-and-the-adjoint-analogue",
+   "number": null,
+   "title": "A.1. The Ihara bracket and the adjoint analogue",
+   "level": 3,
+   "page_start": 78,
+   "page_end": 79,
+   "n_chars": 2159,
+   "n_words": 377
+  },
+  {
+   "id": "sec-067-a2-harmonic-analogue-of-the-ihara-bracket",
+   "number": null,
+   "title": "A.2. Harmonic analogue of the Ihara bracket",
+   "level": 3,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 1591,
+   "n_words": 279
+  },
+  {
+   "id": "sec-068-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 80,
+   "n_chars": 489,
+   "n_words": 78
+  },
+  {
+   "id": "sec-069-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 80,
+   "page_end": 81,
+   "n_chars": 3355,
+   "n_words": 482
+  },
+  {
+   "id": "sec-070-joseph-ayoub",
+   "number": null,
+   "title": "Joseph Ayoub",
+   "level": 1,
+   "page_start": 81,
+   "page_end": 81,
+   "n_chars": 1277,
+   "n_words": 200
+  },
+  {
+   "id": "sec-071-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 81,
+   "page_end": 88,
+   "n_chars": 17983,
+   "n_words": 2908
+  },
+  {
+   "id": "sec-072-2-motifs-alg\u00e9briques-et-motifs-rigides",
+   "number": "2",
+   "title": "Motifs alg\u00e9briques et motifs rigides",
+   "level": 2,
+   "page_start": 88,
+   "page_end": 88,
+   "n_chars": 399,
+   "n_words": 67
+  },
+  {
+   "id": "sec-073-2a-rappels-sur-les-motifs-alg\u00e9briques-et-leurs-c",
+   "number": null,
+   "title": "2A. Rappels sur les motifs alg\u00e9briques et leurs cohomologies",
+   "level": 3,
+   "page_start": 88,
+   "page_end": 95,
+   "n_chars": 18544,
+   "n_words": 2928
+  },
+  {
+   "id": "sec-074-2b-rappels-sur-les-motifs-rigides-et-leurs-cohom",
+   "number": null,
+   "title": "2B. Rappels sur les motifs rigides et leurs cohomologies",
+   "level": 3,
+   "page_start": 95,
+   "page_end": 99,
+   "n_chars": 10718,
+   "n_words": 1610
+  },
+  {
+   "id": "sec-075-2c-foncteurs-entre-motifs-alg\u00e9briques-et-motifs",
+   "number": null,
+   "title": "2C. Foncteurs entre motifs alg\u00e9briques et motifs rigides",
+   "level": 3,
+   "page_start": 99,
+   "page_end": 102,
+   "n_chars": 5039,
+   "n_words": 743
+  },
+  {
+   "id": "sec-076-2d-une-\u00e9quivalence-remarquable",
+   "number": null,
+   "title": "2D. Une \u00e9quivalence remarquable",
+   "level": 3,
+   "page_start": 102,
+   "page_end": 104,
+   "n_chars": 5325,
+   "n_words": 846
+  },
+  {
+   "id": "sec-077-2e-constructions-principales",
+   "number": null,
+   "title": "2E. Constructions principales",
+   "level": 3,
+   "page_start": 104,
+   "page_end": 109,
+   "n_chars": 9823,
+   "n_words": 1542
+  },
+  {
+   "id": "sec-078-3-calcul-du-complexe-des-p\u00e9riodes-abstraites-ak",
+   "number": "3",
+   "title": "Calcul du complexe des p\u00e9riodes abstraites AK et applications",
+   "level": 2,
+   "page_start": 109,
+   "page_end": 111,
+   "n_chars": 5785,
+   "n_words": 920
+  },
+  {
+   "id": "sec-079-3b-calcul-du-complexe-ak-et-du-morphisme",
+   "number": null,
+   "title": "3B. Calcul du complexe AK et du morphisme",
+   "level": 3,
+   "page_start": 111,
+   "page_end": 115,
+   "n_chars": 7428,
+   "n_words": 1243
+  },
+  {
+   "id": "sec-080-3c-constructions-des-nouvelles-r\u00e9alisations",
+   "number": null,
+   "title": "3C. Constructions des nouvelles r\u00e9alisations",
+   "level": 3,
+   "page_start": 115,
+   "page_end": 117,
+   "n_chars": 3516,
+   "n_words": 589
+  },
+  {
+   "id": "sec-081-3d-quelques-conjectures",
+   "number": null,
+   "title": "3D. Quelques conjectures",
+   "level": 3,
+   "page_start": 117,
+   "page_end": 118,
+   "n_chars": 2645,
+   "n_words": 438
+  },
+  {
+   "id": "sec-082-4-action-du-groupe-de-galois-motivique",
+   "number": "4",
+   "title": "Action du groupe de Galois motivique",
+   "level": 2,
+   "page_start": 118,
+   "page_end": 121,
+   "n_chars": 8981,
+   "n_words": 1357
+  },
+  {
+   "id": "sec-083-4b-le-cas-de-la-nouvelle-r\u00e9alisation-de-type-bet",
+   "number": null,
+   "title": "4B. Le cas de la nouvelle r\u00e9alisation de type Betti",
+   "level": 3,
+   "page_start": 121,
+   "page_end": 122,
+   "n_chars": 1362,
+   "n_words": 206
+  },
+  {
+   "id": "sec-084-4c-quelques-conjectures",
+   "number": null,
+   "title": "4C. Quelques conjectures",
+   "level": 3,
+   "page_start": 122,
+   "page_end": 123,
+   "n_chars": 1777,
+   "n_words": 289
+  },
+  {
+   "id": "sec-085-bibliographie",
+   "number": null,
+   "title": "Bibliographie",
+   "level": 2,
+   "page_start": 123,
+   "page_end": 125,
+   "n_chars": 5816,
+   "n_words": 882
+  },
+  {
+   "id": "sec-086-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 125,
+   "page_end": 127,
+   "n_chars": 5071,
+   "n_words": 876
+  },
+  {
+   "id": "sec-087-3-modular-curves",
+   "number": "3",
+   "title": "Modular curves",
+   "level": 2,
+   "page_start": 127,
+   "page_end": 133,
+   "n_chars": 16447,
+   "n_words": 3026
+  },
+  {
+   "id": "sec-088-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 133,
+   "page_end": 135,
+   "n_chars": 4584,
+   "n_words": 671
+  },
+  {
+   "id": "sec-089-marc-levine-and-arpon-raksit",
+   "number": null,
+   "title": "Marc Levine and Arpon Raksit",
+   "level": 1,
+   "page_start": 135,
+   "page_end": 135,
+   "n_chars": 673,
+   "n_words": 97
+  },
+  {
+   "id": "sec-090-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 135,
+   "page_end": 138,
+   "n_chars": 9961,
+   "n_words": 1603
+  },
+  {
+   "id": "sec-091-2-duality-and-euler-characteristics",
+   "number": "2",
+   "title": "Duality and Euler characteristics",
+   "level": 2,
+   "page_start": 138,
+   "page_end": 139,
+   "n_chars": 351,
+   "n_words": 51
+  },
+  {
+   "id": "sec-092-2a-preliminaries",
+   "number": null,
+   "title": "2A. Preliminaries",
+   "level": 3,
+   "page_start": 139,
+   "page_end": 143,
+   "n_chars": 9469,
+   "n_words": 1653
+  },
+  {
+   "id": "sec-093-2b-duality-for-smooth-projective-schemes",
+   "number": null,
+   "title": "2B. Duality for smooth projective schemes",
+   "level": 3,
+   "page_start": 143,
+   "page_end": 147,
+   "n_chars": 7483,
+   "n_words": 1220
+  },
+  {
+   "id": "sec-094-3-sl-oriented-motivic-spectra",
+   "number": "3",
+   "title": "SL-oriented motivic spectra",
+   "level": 2,
+   "page_start": 147,
+   "page_end": 155,
+   "n_chars": 14509,
+   "n_words": 2482
+  },
+  {
+   "id": "sec-095-4-projective-pushforward-in-twisted-cohomology",
+   "number": "4",
+   "title": "Projective pushforward in twisted cohomology",
+   "level": 2,
+   "page_start": 155,
+   "page_end": 159,
+   "n_chars": 6108,
+   "n_words": 1032
+  },
+  {
+   "id": "sec-096-5-motivic-gaussbonnet",
+   "number": "5",
+   "title": "Motivic Gauss\u2013Bonnet",
+   "level": 2,
+   "page_start": 159,
+   "page_end": 161,
+   "n_chars": 3800,
+   "n_words": 627
+  },
+  {
+   "id": "sec-097-6-sl-oriented-cohomology-theories",
+   "number": "6",
+   "title": "SL-oriented cohomology theories",
+   "level": 2,
+   "page_start": 161,
+   "page_end": 165,
+   "n_chars": 7109,
+   "n_words": 1351
+  },
+  {
+   "id": "sec-098-7-comparison-isomorphisms",
+   "number": "7",
+   "title": "Comparison isomorphisms",
+   "level": 2,
+   "page_start": 165,
+   "page_end": 170,
+   "n_chars": 10834,
+   "n_words": 1999
+  },
+  {
+   "id": "sec-099-8-applications",
+   "number": "8",
+   "title": "Applications",
+   "level": 2,
+   "page_start": 170,
+   "page_end": 170,
+   "n_chars": 259,
+   "n_words": 38
+  },
+  {
+   "id": "sec-100-8a-motivic-cohomology-and-cohomology-of-the-miln",
+   "number": null,
+   "title": "8A. Motivic cohomology and cohomology of the Milnor K-theory sheaves",
+   "level": 3,
+   "page_start": 170,
+   "page_end": 171,
+   "n_chars": 3695,
+   "n_words": 638
+  },
+  {
+   "id": "sec-101-8b-algebraic-k-theory",
+   "number": null,
+   "title": "8B. Algebraic K-theory",
+   "level": 3,
+   "page_start": 171,
+   "page_end": 173,
+   "n_chars": 3040,
+   "n_words": 512
+  },
+  {
+   "id": "sec-102-8c-milnorwitt-cohomology-and-chowwitt-groups",
+   "number": null,
+   "title": "8C. Milnor\u2013Witt cohomology and Chow\u2013Witt groups",
+   "level": 3,
+   "page_start": 173,
+   "page_end": 175,
+   "n_chars": 6023,
+   "n_words": 1085
+  },
+  {
+   "id": "sec-103-8d-hermitian-k-theory-and-witt-theory",
+   "number": null,
+   "title": "8D. Hermitian K-theory and Witt theory",
+   "level": 3,
+   "page_start": 175,
+   "page_end": 181,
+   "n_chars": 11111,
+   "n_words": 1920
+  },
+  {
+   "id": "sec-104-8e-descent-for-the-motivic-euler-characteristic",
+   "number": null,
+   "title": "8E. Descent for the motivic Euler characteristic",
+   "level": 3,
+   "page_start": 181,
+   "page_end": 184,
+   "n_chars": 6549,
+   "n_words": 1127
+  },
+  {
+   "id": "sec-105-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 184,
+   "page_end": 184,
+   "n_chars": 1083,
+   "n_words": 177
+  },
+  {
+   "id": "sec-106-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 184,
+   "page_end": 187,
+   "n_chars": 7046,
+   "n_words": 1056
+  },
+  {
+   "id": "sec-107-1-introduction-and-statement-of-results",
+   "number": "1",
+   "title": "Introduction and statement of results",
+   "level": 2,
+   "page_start": 187,
+   "page_end": 192,
+   "n_chars": 13638,
+   "n_words": 2343
+  },
+  {
+   "id": "sec-108-2-some-useful-lemmas",
+   "number": "2",
+   "title": "Some useful lemmas",
+   "level": 2,
+   "page_start": 192,
+   "page_end": 196,
+   "n_chars": 5937,
+   "n_words": 1135
+  },
+  {
+   "id": "sec-109-2a-outline-of-the-proof",
+   "number": null,
+   "title": "2A. Outline of the proof",
+   "level": 3,
+   "page_start": 196,
+   "page_end": 197,
+   "n_chars": 603,
+   "n_words": 99
+  },
+  {
+   "id": "sec-110-3-main-proposition",
+   "number": "3",
+   "title": "Main proposition",
+   "level": 2,
+   "page_start": 197,
+   "page_end": 206,
+   "n_chars": 15459,
+   "n_words": 2969
+  },
+  {
+   "id": "sec-111-4-upper-bounds-for-moments",
+   "number": "4",
+   "title": "Upper bounds for moments",
+   "level": 2,
+   "page_start": 206,
+   "page_end": 225,
+   "n_chars": 26519,
+   "n_words": 5061
+  },
+  {
+   "id": "sec-112-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 225,
+   "page_end": 226,
+   "n_chars": 547,
+   "n_words": 85
+  },
+  {
+   "id": "sec-113-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 226,
+   "page_end": 229,
+   "n_chars": 7027,
+   "n_words": 1110
+  },
+  {
+   "id": "sec-114-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 229,
+   "page_end": 232,
+   "n_chars": 7515,
+   "n_words": 1400
+  },
+  {
+   "id": "sec-115-2-main-theorem-and-proof",
+   "number": "2",
+   "title": "Main theorem and proof",
+   "level": 2,
+   "page_start": 232,
+   "page_end": 232,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-116-2a-setup-and-notations",
+   "number": null,
+   "title": "2A. Setup and notations",
+   "level": 3,
+   "page_start": 232,
+   "page_end": 232,
+   "n_chars": 1031,
+   "n_words": 193
+  },
+  {
+   "id": "sec-117-2b-rational-points-on-twisted-hurwitz-spaces-ove",
+   "number": null,
+   "title": "2B. Rational points on twisted Hurwitz spaces over finite fields",
+   "level": 3,
+   "page_start": 232,
+   "page_end": 238,
+   "n_chars": 16997,
+   "n_words": 3198
+  },
+  {
+   "id": "sec-118-3-application-to-nonvanishing-of-l-functions",
+   "number": "3",
+   "title": "Application to nonvanishing of L-functions",
+   "level": 2,
+   "page_start": 238,
+   "page_end": 242,
+   "n_chars": 10763,
+   "n_words": 2009
+  },
+  {
+   "id": "sec-119-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 242,
+   "page_end": 242,
+   "n_chars": 303,
+   "n_words": 45
+  },
+  {
+   "id": "sec-120-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 242,
+   "page_end": 245,
+   "n_chars": 4061,
+   "n_words": 604
+  },
+  {
+   "id": "sec-121-lillian-b-pierce-and-junyan-xu",
+   "number": null,
+   "title": "Lillian B. Pierce and Junyan Xu",
+   "level": 1,
+   "page_start": 245,
+   "page_end": 245,
+   "n_chars": 591,
+   "n_words": 92
+  },
+  {
+   "id": "sec-122-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 245,
+   "page_end": 246,
+   "n_chars": 1748,
+   "n_words": 318
+  },
+  {
+   "id": "sec-123-1a-statement-of-the-main-theorem",
+   "number": null,
+   "title": "1A. Statement of the main theorem",
+   "level": 3,
+   "page_start": 246,
+   "page_end": 249,
+   "n_chars": 7310,
+   "n_words": 1294
+  },
+  {
+   "id": "sec-124-1c-overview-of-previous-literature",
+   "number": null,
+   "title": "1C. Overview of previous literature",
+   "level": 3,
+   "page_start": 249,
+   "page_end": 249,
+   "n_chars": 49,
+   "n_words": 10
+  },
+  {
+   "id": "sec-125-1c1-the-classical-burgess-bound",
+   "number": null,
+   "title": "1C1. The classical Burgess bound",
+   "level": 4,
+   "page_start": 249,
+   "page_end": 250,
+   "n_chars": 3958,
+   "n_words": 647
+  },
+  {
+   "id": "sec-126-1c2-previous-literature-on-special-cases-of-sf-n",
+   "number": null,
+   "title": "1C2. Previous literature on special cases of S(F; N,H)",
+   "level": 4,
+   "page_start": 250,
+   "page_end": 250,
+   "n_chars": 1921,
+   "n_words": 337
+  },
+  {
+   "id": "sec-127-1c3-further-related-literature",
+   "number": null,
+   "title": "1C3. Further related literature",
+   "level": 4,
+   "page_start": 250,
+   "page_end": 251,
+   "n_chars": 1937,
+   "n_words": 343
+  },
+  {
+   "id": "sec-128-1d-outline-of-the-paper",
+   "number": null,
+   "title": "1D. Outline of the paper",
+   "level": 3,
+   "page_start": 251,
+   "page_end": 251,
+   "n_chars": 950,
+   "n_words": 146
+  },
+  {
+   "id": "sec-129-1e-notation",
+   "number": null,
+   "title": "1E. Notation",
+   "level": 3,
+   "page_start": 251,
+   "page_end": 252,
+   "n_chars": 680,
+   "n_words": 138
+  },
+  {
+   "id": "sec-130-2-method-of-proof-an-overview",
+   "number": "2",
+   "title": "Method of proof: an overview",
+   "level": 2,
+   "page_start": 252,
+   "page_end": 255,
+   "n_chars": 8184,
+   "n_words": 1464
+  },
+  {
+   "id": "sec-131-3-preliminaries",
+   "number": "3",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 255,
+   "page_end": 255,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-132-3a-power-free-conditions",
+   "number": null,
+   "title": "3A. Power-free conditions",
+   "level": 3,
+   "page_start": 255,
+   "page_end": 256,
+   "n_chars": 2510,
+   "n_words": 489
+  },
+  {
+   "id": "sec-133-3b-translation-invariance-conditions",
+   "number": null,
+   "title": "3B. Translation invariance conditions",
+   "level": 3,
+   "page_start": 256,
+   "page_end": 258,
+   "n_chars": 7390,
+   "n_words": 1371
+  },
+  {
+   "id": "sec-134-3d-permutations-of-variables",
+   "number": null,
+   "title": "3D. Permutations of variables",
+   "level": 3,
+   "page_start": 258,
+   "page_end": 263,
+   "n_chars": 11351,
+   "n_words": 2098
+  },
+  {
+   "id": "sec-135-4c-deduction-of-the-corollaries",
+   "number": null,
+   "title": "4C. Deduction of the corollaries",
+   "level": 3,
+   "page_start": 263,
+   "page_end": 263,
+   "n_chars": 857,
+   "n_words": 165
+  },
+  {
+   "id": "sec-136-4d-proof-of-theorem-41",
+   "number": null,
+   "title": "4D. Proof of Theorem 4.1",
+   "level": 3,
+   "page_start": 263,
+   "page_end": 265,
+   "n_chars": 6317,
+   "n_words": 1081
+  },
+  {
+   "id": "sec-137-5-initiation-of-the-burgess-argument",
+   "number": "5",
+   "title": "Initiation of the Burgess argument",
+   "level": 2,
+   "page_start": 265,
+   "page_end": 269,
+   "n_chars": 7765,
+   "n_words": 1505
+  },
+  {
+   "id": "sec-138-6b-a-menshovrademacher-argument-with-permutation",
+   "number": null,
+   "title": "6B. A Menshov\u2013Rademacher argument with permutations",
+   "level": 3,
+   "page_start": 269,
+   "page_end": 270,
+   "n_chars": 1834,
+   "n_words": 329
+  },
+  {
+   "id": "sec-139-6c-a-dyadic-decomposition",
+   "number": null,
+   "title": "6C. A dyadic decomposition",
+   "level": 3,
+   "page_start": 270,
+   "page_end": 271,
+   "n_chars": 1573,
+   "n_words": 293
+  },
+  {
+   "id": "sec-140-6d-application-of-the-nonmaximal-upper-bound",
+   "number": null,
+   "title": "6D. Application of the nonmaximal upper bound",
+   "level": 3,
+   "page_start": 271,
+   "page_end": 272,
+   "n_chars": 2653,
+   "n_words": 477
+  },
+  {
+   "id": "sec-141-6e-proof-of-lemma-63-rearrangement",
+   "number": null,
+   "title": "6E. Proof of Lemma 6.3: rearrangement",
+   "level": 3,
+   "page_start": 272,
+   "page_end": 275,
+   "n_chars": 4021,
+   "n_words": 724
+  },
+  {
+   "id": "sec-142-7-conclusion-of-the-burgess-argument",
+   "number": "7",
+   "title": "Conclusion of the Burgess argument",
+   "level": 2,
+   "page_start": 275,
+   "page_end": 276,
+   "n_chars": 2155,
+   "n_words": 396
+  },
+  {
+   "id": "sec-143-7a-proof-of-corollaries-13-and-14",
+   "number": null,
+   "title": "7A. Proof of Corollaries 1.3 and 1.4",
+   "level": 3,
+   "page_start": 276,
+   "page_end": 278,
+   "n_chars": 2791,
+   "n_words": 542
+  },
+  {
+   "id": "sec-144-7b-proofs-of-technical-lemmas",
+   "number": null,
+   "title": "7B. Proofs of technical lemmas",
+   "level": 3,
+   "page_start": 278,
+   "page_end": 280,
+   "n_chars": 4877,
+   "n_words": 997
+  },
+  {
+   "id": "sec-145-appendix",
+   "number": null,
+   "title": "Appendix",
+   "level": 2,
+   "page_start": 280,
+   "page_end": 281,
+   "n_chars": 1460,
+   "n_words": 249
+  },
+  {
+   "id": "sec-146-a2-conditional-results-assuming-a-stronger-strat",
+   "number": null,
+   "title": "A.2. Conditional results: assuming a stronger stratification result",
+   "level": 3,
+   "page_start": 281,
+   "page_end": 282,
+   "n_chars": 3001,
+   "n_words": 585
+  },
+  {
+   "id": "sec-147-a3-fourier-methods-for-incomplete-sums-that-are",
+   "number": null,
+   "title": "A.3. Fourier methods for incomplete sums that are not short",
+   "level": 3,
+   "page_start": 282,
+   "page_end": 283,
+   "n_chars": 1486,
+   "n_words": 266
+  },
+  {
+   "id": "sec-148-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 283,
+   "page_end": 283,
+   "n_chars": 335,
+   "n_words": 53
+  },
+  {
+   "id": "sec-149-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 283,
+   "page_end": 287,
+   "n_chars": 9129,
+   "n_words": 1423
+  },
+  {
+   "id": "sec-150-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 287,
+   "page_end": 289,
+   "n_chars": 5776,
+   "n_words": 976
+  },
+  {
+   "id": "sec-151-1-blocks-with-normal-defect-group",
+   "number": "1",
+   "title": "Blocks with normal defect group",
+   "level": 2,
+   "page_start": 289,
+   "page_end": 294,
+   "n_chars": 12910,
+   "n_words": 2377
+  },
+  {
+   "id": "sec-152-2-reducing-to-simple-groups",
+   "number": "2",
+   "title": "Reducing to simple groups",
+   "level": 2,
+   "page_start": 294,
+   "page_end": 294,
+   "n_chars": 126,
+   "n_words": 26
+  },
+  {
+   "id": "sec-153-2a-preliminaries",
+   "number": null,
+   "title": "2A. Preliminaries",
+   "level": 3,
+   "page_start": 294,
+   "page_end": 296,
+   "n_chars": 3904,
+   "n_words": 671
+  },
+  {
+   "id": "sec-154-2b-the-reduction",
+   "number": null,
+   "title": "2B. The reduction",
+   "level": 3,
+   "page_start": 296,
+   "page_end": 297,
+   "n_chars": 4012,
+   "n_words": 714
+  },
+  {
+   "id": "sec-155-3a-some-generalities-on-groups-of-lie-type",
+   "number": null,
+   "title": "3A. Some generalities on groups of Lie type",
+   "level": 3,
+   "page_start": 297,
+   "page_end": 298,
+   "n_chars": 1946,
+   "n_words": 347
+  },
+  {
+   "id": "sec-156-3a1-a-general-set-up",
+   "number": null,
+   "title": "3A1. A general set-up",
+   "level": 4,
+   "page_start": 298,
+   "page_end": 302,
+   "n_chars": 13832,
+   "n_words": 2510
+  },
+  {
+   "id": "sec-157-3c1-lie-type-in-cross-characteristic-for-p3",
+   "number": null,
+   "title": "3C1. Lie type in cross-characteristic for p=3",
+   "level": 4,
+   "page_start": 302,
+   "page_end": 311,
+   "n_chars": 22231,
+   "n_words": 3998
+  },
+  {
+   "id": "sec-158-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 311,
+   "page_end": 311,
+   "n_chars": 950,
+   "n_words": 154
+  },
+  {
+   "id": "sec-159-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 311,
+   "page_end": 315,
+   "n_chars": 6523,
+   "n_words": 1006
+  },
+  {
+   "id": "sec-160-jesse-andrews-and-clayton-petsche",
+   "number": null,
+   "title": "Jesse Andrews and Clayton Petsche",
+   "level": 1,
+   "page_start": 315,
+   "page_end": 315,
+   "n_chars": 551,
+   "n_words": 83
+  },
+  {
+   "id": "sec-161-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 315,
+   "page_end": 318,
+   "n_chars": 9815,
+   "n_words": 1695
+  },
+  {
+   "id": "sec-162-2-some-algebraic-lemmas",
+   "number": "2",
+   "title": "Some algebraic lemmas",
+   "level": 2,
+   "page_start": 318,
+   "page_end": 322,
+   "n_chars": 9224,
+   "n_words": 1723
+  },
+  {
+   "id": "sec-163-4-heights-and-bogomolov-constants",
+   "number": "4",
+   "title": "Heights and Bogomolov constants",
+   "level": 2,
+   "page_start": 322,
+   "page_end": 323,
+   "n_chars": 4104,
+   "n_words": 746
+  },
+  {
+   "id": "sec-164-5-powering-maps-and-chebyshev-maps",
+   "number": "5",
+   "title": "Powering maps and Chebyshev maps",
+   "level": 2,
+   "page_start": 323,
+   "page_end": 325,
+   "n_chars": 5174,
+   "n_words": 957
+  },
+  {
+   "id": "sec-165-6-maps-with-small-arakelovzhang-pairing",
+   "number": "6",
+   "title": "Maps with small Arakelov\u2013Zhang pairing",
+   "level": 2,
+   "page_start": 325,
+   "page_end": 329,
+   "n_chars": 8750,
+   "n_words": 1571
+  },
+  {
+   "id": "sec-166-8-numerical-approximation-of-archimedean-arakelo",
+   "number": "8",
+   "title": "Numerical approximation of Archimedean Arakelov\u2013Zhang integrals",
+   "level": 2,
+   "page_start": 329,
+   "page_end": 331,
+   "n_chars": 5180,
+   "n_words": 901
+  },
+  {
+   "id": "sec-167-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 331,
+   "page_end": 332,
+   "n_chars": 91,
+   "n_words": 14
+  },
+  {
+   "id": "sec-168-references",
+   "number": null,
+   "title": "References",
+   "level": 2,
+   "page_start": 332,
+   "page_end": 335,
+   "n_chars": 5381,
+   "n_words": 797
+  },
+  {
+   "id": "sec-169-guidelines-for-authors",
+   "number": null,
+   "title": "Guidelines for Authors",
+   "level": 1,
+   "page_start": 335,
+   "page_end": 336,
+   "n_chars": 4181,
+   "n_words": 669
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 6,
+  "likely_scanned": false,
+  "toc_entries": 222,
+  "sections": 170,
+  "chars_total": 756400
+ },
+ "container": true,
+ "container_children": [
+  "ant-v14-n7-s-p01",
+  "ant-v14-n7-s-p02",
+  "ant-v14-n7-s-p03",
+  "ant-v14-n7-s-p04",
+  "ant-v14-n7-s-p05",
+  "ant-v14-n7-s-p06",
+  "ant-v14-n7-s-p07",
+  "ant-v14-n7-s-p08",
+  "ant-v14-n7-s-p09",
+  "ant-v14-n7-s-p10"
+ ],
+ "container_note": "Bound journal issue. The per-paper documents listed in `container_children` carry the content; this directory keeps the issue as published and is skipped by ranking so the same pages are not counted twice."
+}

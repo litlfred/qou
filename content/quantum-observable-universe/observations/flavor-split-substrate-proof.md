@@ -118,7 +118,7 @@ $$
 
 *Step 7 (Empirical evaluation).*
 
-At $q = q_0 = 1.109978595554181\ldots$ (50 dps):
+At $q = q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps):
 
 $$
   (q_0 - 1)^2 \cdot (1 - q_0^{-4}) / 3

@@ -850,6 +850,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.903Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -869,6 +885,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.941Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-em-dash": [
@@ -888,6 +920,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:34.981Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-triples": [
@@ -907,6 +955,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:35.020Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-closing-aphorism": [
@@ -926,6 +990,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:35.059Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-meta-commentary": [
@@ -945,6 +1025,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:35.099Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-thesis-restatement": [
@@ -964,6 +1060,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:35.138Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-performed-warmth": [
@@ -983,6 +1095,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:35.178Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-superlative": [
@@ -1002,6 +1130,22 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:35.217Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ],
     "trap-nonspeakable": [
@@ -1021,8 +1165,24 @@
         "reviewed_at": "2026-08-15T10:31:01.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d1b78624f35a",
+          "ts": "4dca73f26b75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:03:35.253Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of rem:bach-slit-parameters (geometry table plus one closing sentence on the piezo-actuated mask). No constructions from the ten categories; table-plus-caption register.",
+        "notes": "Cat.4: 'one slit, both slits, or neither slit' is the three physical mask states. NOT A TRAP, reported separately: the table row 'Mask height | 10 um' contradicts fig:bach-setup, which gives the mask as 5 um wide x 20 um tall; 10 um is the collimation-slit height quoted in rem:bach-apparatus, so this looks like a row-copy error."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.643Z"
+  "updated_at": "2026-08-22T04:03:35.253Z"
 }

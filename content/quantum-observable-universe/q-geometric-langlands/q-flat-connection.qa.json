@@ -1867,6 +1867,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.005Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1886,6 +1902,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.048Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1905,6 +1937,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.093Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "One appositive dash ('the **connection-dependent curvature** - the contribution from the connection form itself'). Single instance, load-bearing gloss."
       }
     ],
     "trap-triples": [
@@ -1924,6 +1972,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.137Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1943,6 +2007,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.177Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1962,6 +2042,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.217Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1981,6 +2077,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.257Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "trap-performed-warmth": [
@@ -2000,6 +2112,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.295Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -2019,6 +2147,23 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.333Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'it is precisely the q-deformation (q != 1) that forces the residual, unavoidable curvature' - a cleft plus two intensifiers ('precisely', 'unavoidable') on a claim the preceding clause already makes.",
+        "notes": "fix applied: '; it is precisely the q-deformation (q != 1) that forces the residual, unavoidable curvature.' -> '; the residual curvature is present only when q != 1.' Separately: the Lean sibling structure QFlatConnection does not encode this definition - reported as ANOMALY 5."
       }
     ],
     "trap-nonspeakable": [
@@ -2038,6 +2183,22 @@
         "reviewed_at": "2026-08-15T10:31:00.921Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "62ea1b8ebee0",
+          "ts": "b00b440b5e2c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:44.373Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (definition + intrinsic/connection-dependent curvature split + LocSys equivalence); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2061,5 +2222,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:44.373Z"
 }

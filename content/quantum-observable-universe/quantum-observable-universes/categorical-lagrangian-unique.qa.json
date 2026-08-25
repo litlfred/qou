@@ -2024,6 +2024,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.917Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2043,6 +2058,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.952Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-em-dash": [
@@ -2062,6 +2092,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 24 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:37.988Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-triples": [
@@ -2081,6 +2126,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 24 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.023Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-closing-aphorism": [
@@ -2100,6 +2160,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.058Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-meta-commentary": [
@@ -2119,6 +2194,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.094Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-thesis-restatement": [
@@ -2138,6 +2228,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.129Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-performed-warmth": [
@@ -2157,6 +2262,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.165Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-superlative": [
@@ -2176,6 +2296,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.200Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "trap-nonspeakable": [
@@ -2195,6 +2330,21 @@
         "reviewed_at": "2026-08-15T10:30:59.958Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6d7bdda0deef",
+          "ts": "35e9fb23b3ac"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:53:38.234Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proposition block, two sentences, no display math. All ten categories checked. The second sentence reads as a closer but is the block's uniqueness clause (mathematical content, not a rhetorical restatement), so trap-thesis-restatement passes under the substantive-content false-positive class. OUT-OF-SCOPE observation reported to the caller: as written that clause is vacuous -- 'Any endomorphism of A equal to \\mathcal{D}_\\nabla^2+\\psi^*\\otimes\\mathcal{D}_\\nabla\\psi coincides with \\mathcal{L}_q' is true by substitution and asserts nothing about uniqueness; a non-vacuous statement would characterise \\mathcal{L}_q by a property (e.g. the variational/action characterisation the unique-proof preamble alludes to) rather than by its own formula."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2218,5 +2368,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:53:38.234Z"
 }

@@ -80,7 +80,7 @@ def _chi21_hform(q):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     print("Independent Borromean χ^λ cross-check "
           "(seminormal engine vs content q-forms)")
     print("=" * 72)

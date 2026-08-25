@@ -1400,6 +1400,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.266Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1434,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.309Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1468,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.345Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1502,36 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.381Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.671Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Three-row table is the bridge itself (atomic denominator / torus knot / alpha_EM), substantive; the closing enumeration is four items, not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1551,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.416Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1585,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.452Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1619,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.488Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1653,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.523Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1687,21 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.561Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1721,38 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.598Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the significance remark (three-row bridge table plus the torus-braid-limit paragraph). All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "3c6e1e81f537",
+          "ts": "57f75cce353a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.635Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Closing paragraph is four consecutive 'It <verb>s ...' sentences ('It restricts ... It eliminates ... It prevents ... It precludes ...'), a flattened bullet list read aloud as staccato. Each clause has real content, so the defect is form, not substance.",
+        "notes": "proposed: restore as a bulleted list under 'The torus-braid case is the clean limit of the atomic-braid shift framework:' with the four items as bullets; not fixed inline because it changes block structure rather than prose. CONVENTION NOTE (no defect): the atomic denominator row D(u) = 2^{2A+1} u^shift (1+u^2)^{3A-1} carries the (1+u^2) factor, which is the convention-D signature (z = q^3/(q^2+1)); no convention-C form (sqrt q/(q+1), 1/[2]_v) appears anywhere in this block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1775,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:29:15.671Z"
 }

@@ -38,9 +38,11 @@ This file provides, per the **formalize-first** discipline:
 namespace QOU.QBeta.DLadderTwoAdicGrading
 
 /-- The exact `√3`-component `b_k` of the bar-odd D-ladder `d_k = a_k + b_k√3`,
-    tabulated from the exact ℚ(√3) compute (first five computed values; the full
-    sequence is the `ser_sqrt`/`ser_div` build, not yet in Lean). Documentation of
-    the exact values behind `bDen` below; indices `0` and `> 5` pad with `0`. -/
+    tabulated from the exact ℚ(√3) compute. This is an **illustrative sample** —
+    the first five values, kept in full so a reader can check `bDen` against real
+    fractions; `bDen` itself carries all 21 committed orders. The full sequence is
+    the `ser_sqrt`/`ser_div` build, not yet in Lean. Indices `0` and `> 5` pad
+    with `0`. -/
 def bComp : ℕ → ℚ
   | 1 => -1
   | 2 => 5 / 288
@@ -49,17 +51,43 @@ def bComp : ℕ → ℚ
   | 5 => -252241 / 243
   | _ => 0
 
-/-- The **reduced denominators** `den(b_k)` of the exact coefficients above, as
-    ℕ data from the compute (`b₁` den 1; `b₂=5/288` den `288=2⁵·3²`;
-    `b₃=-676/27` den 27; `b₄=15055/1741824` den `1741824=2¹⁰·3⁴·… `; `b₅=-252241/243`
-    den `243=3⁵`). Kept as explicit ℕ so the grading is a pure decidable ℕ fact
-    (ℚ-division does not kernel-reduce under `decide`). -/
+/-- The **reduced denominators** `den(b_k)` of the exact D-ladder coefficients,
+    `k = 1 … 21`, as ℕ data from the compute. Kept as explicit ℕ so the grading is
+    a pure decidable ℕ fact (ℚ-division does not kernel-reduce under `decide`).
+
+    **Provenance.** Each entry is `Fraction(b_k).denominator` for the exact
+    `b_k ∈ ℚ` recorded in
+    `computations/qbeta/qbeta-dladder-generating-function-structure.witness.json`,
+    field `data.b_k_sqrt3_coeff` (21 orders, `ORD = 43`). The denominators were
+    recomputed from those exact fractions rather than copied from the witness's
+    own `v2_den_b` field, so the two are an independent cross-check of each other
+    and they agree at every order.
+
+    Sample, matching `bComp`: `b₁` den 1; `b₂ = 5/288` den `288 = 2⁵·3²`;
+    `b₃ = -676/27` den 27; `b₄ = 15055/1741824` den `1741824 = 2¹⁰·3⁴·…`;
+    `b₅ = -252241/243` den `243 = 3⁵`. -/
 def bDen : ℕ → ℕ
   | 1 => 1
   | 2 => 288
   | 3 => 27
   | 4 => 1741824
   | 5 => 243
+  | 6 => 827714764800
+  | 7 => 32805
+  | 8 => 3286780084224000
+  | 9 => 2657205
+  | 10 => 24215354899944387379200
+  | 11 => 167403915
+  | 12 => 213767192353964450088222720000
+  | 13 => 4519905705
+  | 14 => 62426860717512946288163857367040000
+  | 15 => 122037454035
+  | 16 => 42428041325493368867072836676364533760000000
+  | 17 => 12081707949465
+  | 18 => 1919403858645647533912262741315522197349990400000000
+  | 19 => 12722038470786645
+  | 20 => 5051932376878820969978160727550176520135489932492800000000
+  | 21 => 343495038711239415
   | _ => 0
 
 /-- **2-adic parity grading predicate.** The reduced denominator is odd
@@ -67,12 +95,25 @@ def bDen : ℕ → ℕ
 def TwoAdicParityGraded (den : ℕ → ℕ) (K : ℕ) : Prop :=
   ∀ k, 1 ≤ k → k ≤ K → (Odd (den k) ↔ Odd k)
 
-/-- **Verified anchor (sorry-free).** The 2-adic parity grading holds for the
-    first five exact D-ladder coefficients: `den(b_k)` is odd iff `k` is odd.
-    Matches Result 2 of the audit exactly (compute extends this to `k=21`). -/
-theorem bDen_two_adic_graded : TwoAdicParityGraded bDen 5 := by
-  intro k hk1 hk5
+/-- **Verified anchor (sorry-free).** The 2-adic parity grading holds for **all
+    21 committed exact D-ladder coefficients**: `den(b_k)` is odd iff `k` is odd.
+
+    Extended from `K = 5` to `K = 21` on 2026-08-19. The `k = 21` data was already
+    committed and the previous docstring already said "compute extends this to
+    `k=21`" — the formalized window simply had not caught up with it. Nothing new
+    was computed; the denominators were re-derived from the committed exact
+    fractions and cross-checked against the witness's own valuation field.
+
+    This is evidence, not a proof: `DLadderGradingConjecture` below remains the
+    open target, and 21 orders of `decide` do not establish a law for all `k`. -/
+theorem bDen_two_adic_graded : TwoAdicParityGraded bDen 21 := by
+  intro k hk1 hk21
   interval_cases k <;> decide
+
+/-- The `K = 5` window, as a corollary of the extended anchor. Retained because
+    the audit and the surrounding prose cite the five-term result by name. -/
+theorem bDen_two_adic_graded_five : TwoAdicParityGraded bDen 5 :=
+  fun k hk1 hk5 => bDen_two_adic_graded k hk1 (hk5.trans (by norm_num))
 
 /-- **Contrast: p = 3 is NOT graded (sorry-free).** `3` divides `den(b_k)` at
     both an **even** index (`k=2`, den `288 = 2⁵·3²`) and an **odd** index
@@ -91,7 +132,8 @@ theorem three_not_parity_graded : 3 ∣ bDen 2 ∧ 3 ∣ bDen 3 := by decide
     axiomatizing this class is **not** a proof of the law (anti-laundering). -/
 class DLadderGradingConjecture where
   b : ℕ → ℚ
-  /-- The 2-adic parity grading, for all `k ≥ 1` (verified exactly to `k=21`). -/
+  /-- The 2-adic parity grading, for all `k ≥ 1`. Machine-verified for
+      `k ≤ 21` by `bDen_two_adic_graded`; open beyond. -/
   graded : ∀ k, 1 ≤ k → (Odd (b k).den ↔ Odd k)
 
 /-- Conditional consequence (§3b-cond): *given* the grading class, the finite

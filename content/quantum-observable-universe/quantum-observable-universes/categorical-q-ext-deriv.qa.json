@@ -1779,6 +1779,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:08.927Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1798,6 +1813,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:08.963Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-em-dash": [
@@ -1817,6 +1847,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.000Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-triples": [
@@ -1836,6 +1881,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.038Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-closing-aphorism": [
@@ -1855,6 +1915,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.073Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-meta-commentary": [
@@ -1874,6 +1949,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.109Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-thesis-restatement": [
@@ -1893,6 +1983,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.144Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-performed-warmth": [
@@ -1912,6 +2017,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.179Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-superlative": [
@@ -1931,6 +2051,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.215Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "trap-nonspeakable": [
@@ -1950,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:30:59.980Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cbe625bac09f",
+          "ts": "cba5dd34a9b3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:00:09.254Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, one display for d_q, three gloss sentences. Bold \\mathbf{C}, correct (\\mathbf{C}, A, \\tau). All ten categories checked; nothing fires (the final 'These operators exist and are unique.' is a forward pointer to the sibling propositions, not a restatement of anything the block established, so trap-thesis-restatement passes). OUT-OF-SCOPE math observations reported to the caller: (i) the stated action 'q^{-1}d on horizontal forms and d on vertical forms' does not follow from the displayed formula -- with d_q = q^{-1}d + (1-q^{-1})\\pi_V \\circ d the projector acts on the OUTPUT, so for horizontal \\omega one gets q^{-1}d\\omega only if \\pi_V d\\omega = 0, and for vertical \\omega one gets d\\omega only if d\\omega is vertical; both need d to preserve the H/V splitting, which is precisely what the d_q^2 != 0 anomaly denies elsewhere in the chapter. (ii) \\delta_q is introduced and asserted to exist and be unique, but no sibling proposition covers \\delta_q -- only d_q has exists/unique blocks."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1973,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:00:09.254Z"
 }

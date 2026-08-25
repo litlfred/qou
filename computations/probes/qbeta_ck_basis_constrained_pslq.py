@@ -310,7 +310,7 @@ def main():
             "arithmetic_basis_not_run": {
                 "1": "1", "sqrt3": mp.nstr(mp.sqrt(3), 30),
                 "pi^2": mp.nstr(mp.pi ** 2, 30),
-                "Vol(4_1)=2*Lambda(pi/3)": mp.nstr(vol41, 30),
+                "Vol(4_1)=2*Cl_2(pi/3)=6*Lambda(pi/3)": mp.nstr(vol41, 30),
                 "zeta(3)": mp.nstr(mp.zeta(3), 30),
             },
         },

@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.525Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.605Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.686Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.761Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.833Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.905Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:07.997Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.064Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.137Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1688e81e1857",
+          "ts": "c7bdddd1510d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.205Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (Z,N,shift closed form, shift markov_peel). RECOMPUTED AND FULLY CONFIRMED: every row satisfies the exact linear law shift = 1 + 18Z + 21N -- (1,1)->40, (1,2)->61, (2,1)->58, (2,2)->79, (3,2)->97, (3,3)->118, all six exact integers with no residual. This is not merely consistent with the sibling table 2, it is DERIVED from it: table 2's Delta-shift of +18 per proton and +21 per neutron reproduces every step of the chain D->T, D->3He, T->4He, 3He->4He (both paths agree at 79, an independent consistency check on the additivity claim the parent asserts), 4He->5Li and 5Li->6Li. The closed-form and markov_peel columns agree in all six rows as marked.",
+        "notes": "Clean. Note that 5Li (Z=3,N=2) is particle-unbound in nature, so the table's coverage is of the braid-combinatorial shift rather than of bound nuclei -- not an error, but the parent should not be read as an assertion about physical binding for that row."
+      }
     ]
   },
   "source_hashes": {
     "md": "1688e81e1857",
     "ts": "c7bdddd1510d"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:08.205Z"
 }

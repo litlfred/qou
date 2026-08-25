@@ -895,7 +895,177 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.163Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.205Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.245Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.286Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.326Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.364Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.420Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.465Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.505Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a10950b80657",
+          "ts": "45d9e6ba4bb6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:04.544Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 5-row data table (bar action per geometric level), no prose sentences. Consistent with def:bar-involution's 'reflecting the braid diagram (swapping positive and negative crossings)': the knot-diagram row is mirror reflection, the contact row alpha -> -alpha with R -> -R is the matching Reeb-flow reversal."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:04.544Z"
 }

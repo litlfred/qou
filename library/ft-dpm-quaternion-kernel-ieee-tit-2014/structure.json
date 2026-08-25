@@ -1,0 +1,192 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ft-dpm-quaternion-kernel-ieee-tit-2014",
+ "source": {
+  "file": "FT_DPM_Quaternion_Kernel_IEEE_TIT_2014.pdf",
+  "sha256": "aa2f1eb73610a81b0c8ae9e25dec4824ade6661ae3598f907289d9161ecded35",
+  "bytes": 1565267,
+  "pages": 14
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.1109/TIT.2014.2333734",
+  "title": "Quaternion Reproducing Kernel Hilbert Spaces: Existence and Uniqueness Conditions",
+  "authors_raw": "Existence and Uniqueness Conditions",
+  "abstract": "The existence and uniqueness conditions of quater- nion reproducing kernel Hilbert spaces (QRKHS) are established in order to provide a mathematical foundation for the develop- ment of quaternion-valued kernel learning algorithms. This is achieved through a rigorous account of left quaternion Hilbert spaces, which makes it possible to generalise standard RKHS to quaternion RKHS. Quaternion versions of the Riesz repre- sentation and Moore–Aronszajn theorems are next introduced, thus underpinning kernel estimation algorithms operating on quaternion-valued feature spaces. The difference between the proposed quaternion kernel concept and the existing real and vector approaches is also established in terms of both theoretical advantages and computational complexity. The enhanced estima- tion ability of the so-introduced quaternion-valued kernels over their real- and vector-valued counterparts is validated through kernel ridge regression applications. Simulations on real world 3D inertial body sensor data and nonlinear channel equalisation using novel quaternion cubic and Gaussian kernels support the approach. Index Terms— Quaternion RKHS, support vector regression, quaternion kernel ridge regression, high-dimensional kernels, vector kernels, multikernel. I. I NTRODUCTION S INCE their introduction in the early 1980s [1], support vector machines (SVM) have become a de facto standard for classiﬁcation and regression with application in areas including semantic analysis [2], gene selection [3], and ﬁnancial prediction [4]. An extension of the original SVM algorithm to nonlinear classiﬁca tion [5] employs the so-called kernel trick [6], which enables operation in higher dimensional spaces through the evaluation of a kernel function. The kernel trick has also made it possible to efﬁciently implement support vector regression (SVR) algorithms [7], whereby the output of a system is modelled as an inner product between a nonlinear transformation of the input and an optimal (ﬁxed)",
+  "docinfo": {
+   "CreationDate": "D:20140808152734+05'30'",
+   "Title": "untitled",
+   "Producer": "Acrobat Distiller 7.0 (Windows)"
+  },
+  "title_lines": [
+   "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014",
+   "Quaternion Reproducing Kernel Hilbert Spaces:"
+  ],
+  "title_prev": "5736 IEEE TRANSACTIONS ON INFORMATION THEORY , VOL. 60, NO. 9, SEPTEMBER 2014 Quaternion Reproducing Kernel Hilbert Spaces:"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Quaternion Kernels",
+   "page": 5,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "(x)φ1(y) + φH",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(x)φ2(y),",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(x)φ T",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(x)]T we arrive at",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Quaternion-Valued Gaussian Kernel",
+   "page": 8,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Nonlinear Channel Equalisation: Real and Quaternion",
+   "page": 10,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Model Comparison for Nonlinear Channel Equalisation",
+   "page": 13,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 13,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-c-quaternion-kernels",
+   "number": "C",
+   "title": "Quaternion Kernels",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 8618,
+   "n_words": 1671
+  },
+  {
+   "id": "sec-001-1-xφ1y-φh",
+   "number": "1",
+   "title": "(x)φ1(y) + φH",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-2-xφ2y",
+   "number": "2",
+   "title": "(x)φ2(y),",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 84,
+   "n_words": 24
+  },
+  {
+   "id": "sec-003-1-xφ-t",
+   "number": "1",
+   "title": "(x)φ T",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-2-xt-we-arrive-at",
+   "number": "2",
+   "title": "(x)]T we arrive at",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2778,
+   "n_words": 536
+  },
+  {
+   "id": "sec-005-c-quaternion-valued-gaussian-kernel",
+   "number": "C",
+   "title": "Quaternion-Valued Gaussian Kernel",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 9996,
+   "n_words": 1772
+  },
+  {
+   "id": "sec-006-c-nonlinear-channel-equalisation-real-and-quater",
+   "number": "C",
+   "title": "Nonlinear Channel Equalisation: Real and Quaternion",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 10324,
+   "n_words": 1735
+  },
+  {
+   "id": "sec-007-c-model-comparison-for-nonlinear-channel-equalis",
+   "number": "C",
+   "title": "Model Comparison for Nonlinear Channel Equalisation",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 961,
+   "n_words": 189
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 10588,
+   "n_words": 1678
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 43349
+ }
+}

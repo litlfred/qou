@@ -1,8 +1,8 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-08-15T23:08:45.838022+00:00",
-  "commitSha": "a047e3938b3d10ba38b75479ae32c0a73c84f753",
+  "computedAt": "2026-08-23T13:21:03.832642+00:00",
+  "commitSha": "9f11db11d8c188b2d92fff2a756325c3594f8220",
   "assertions": [
     {
       "name": "Vol(0_1) — unknot (neutrino)",
@@ -78,16 +78,16 @@
     },
     {
       "name": "m_μ/m_e (CODATA 2022)",
-      "computed": 206.768283,
-      "expected": 206.768283,
+      "computed": 206.7682827,
+      "expected": 206.7682827,
       "passed": true,
       "tolerance": 1e-07,
       "unit": "dimensionless",
-      "source": "CODATA 2022"
+      "source": "CODATA 2022 (NIST allascii.txt, muon-electron mass ratio)"
     },
     {
       "name": "substrate q from Vol(4_1) and m_μ/m_e",
-      "computed": 1.1099785955541805,
+      "computed": 1.109978595642739,
       "expected": 1.10997,
       "passed": true,
       "tolerance": 0.001,
@@ -96,7 +96,7 @@
     },
     {
       "name": "ℏ_q = 1 - 1/q",
-      "computed": 0.0990817264356989,
+      "computed": 0.09908172650757774,
       "expected": 0.09905,
       "passed": true,
       "tolerance": 0.001,
@@ -108,8 +108,8 @@
   "durationMs": 0,
   "computation": "knot-volumes",
   "scriptFile": "knot-volumes.py",
-  "scriptHash": "54201a9fe7aa",
-  "scriptCommitSha": "934db778ba8dcc0d76519bf9ef862abfa46d326c",
+  "scriptHash": "1cee1afa0c89",
+  "scriptCommitSha": "484f1a86105ace5a153505a1a392e5969f88d1cd",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -121,6 +121,15 @@
     "numpy": "2.4.6",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
-  }
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/knot-volumes.py"
+    ],
+    "reproduce": "python3 -u computations/knot-volumes.py"
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate q₀: no q_parameter.Q / Q_MP / q_at import and no q₀ literal; the only registry value consumed is the CODATA muon-electron mass ratio. The 1.10997… in assertions[9] is an OUTPUT — q derived forward from Vol(4₁) and m_μ/m_e, i.e. the CAL-2 definition run as that assertion's subject, checked against its own expected 1.10997 ± 1e-3. It is therefore in the muon basin BY CONSTRUCTION and cannot track the proton pin: there is nothing here for a re-pin to change. Distinguish from the z2bn-tau-derivation-probe case (bean qou-bdkx), where an `independent` declaration was FALSE because the producer hardcoded a q₀ and consumed it five times — the check is whether q₀ is an input, not whether a q₀-shaped number appears."
 }

@@ -1773,6 +1773,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.310Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.355Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 132 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.402Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 132 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.453Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.518Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.577Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.629Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.689Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.747Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (189w, prop). Statement hypotheses (normalised trace, positivity on squares, non-degeneracy for the equality case) match what the proof actually uses."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2079,22 @@
         "reviewed_at": "2026-08-15T10:31:00.362Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9bc4d3db8aaa",
+          "ts": "5c0e47b803ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:20:38.797Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'the canonical SDP-min-Frobenius-norm operator' is a compound but is standard technical naming.",
+        "notes": "NOTE for the report: the closing claims 'The L^2-Euclidean coordinate-norm operator and the Markov-Frobenius operator both reproduce the SDP constraint. The observable c_k Taylor coefficients remain invariant.' carry no witness or citation, and per the AGENTS.md c_k banner every c_k result in the corpus is convention-C-frame and awaits re-derivation under the canonical convention D. The block does not say which frame it is in."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2118,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:20:38.797Z"
 }

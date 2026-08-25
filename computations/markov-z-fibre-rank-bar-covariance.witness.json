@@ -174,5 +174,8 @@
   "caveats": [
     "Scope (b) applies only to the family z = q^N/[N]_q, i.e. to fibre readings via the Wenzl bridge's X = Q^N. A Markov parameter arising some other way is not covered.",
     "N is treated as a real variable when inverting z -> N. The non-integrality of N_from_C is therefore a statement about that continuation, matching #4766's N_eff = 2.5995155364."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759167",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.rank_table_at_q0[].z_at_q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -80,14 +80,14 @@ theorem markovParameter_pos (s : ℝ) (hs : s > 0) :
 
 /-- Brane fluid: viscosity determined by substrate parameter. -/
 structure BraneFluidData (M : Type*) where
-  substrate : SubstrateParameter M
+  substrate : ArchimedeanSubstrateField M
   viscosity : M → ℝ
   viscosity_nonneg : ∀ p, 0 ≤ viscosity p
   viscosity_monotone : ∀ p₁ p₂,
     substrate.field p₁ ≤ substrate.field p₂ → viscosity p₂ ≤ viscosity p₁
 
 /-- ℏ_q > 0 when q > 1. -/
-theorem quantumPlanckConstant_pos {M : Type*} (sp : SubstrateParameter M)
+theorem quantumPlanckConstant_pos {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     quantumPlanckConstant sp p > 0 := by
   unfold quantumPlanckConstant
@@ -100,11 +100,11 @@ theorem quantumPlanckConstant_pos {M : Type*} (sp : SubstrateParameter M)
 
 /-- Re_q = 2/(q-1). -/
 noncomputable def planckReynoldsNumber {M : Type*}
-    (sp : SubstrateParameter M) (p : M) : ℝ :=
+    (sp : ArchimedeanSubstrateField M) (p : M) : ℝ :=
   2 / (sp.field p - 1)
 
 /-- Re_q > 0 when q > 1. -/
-theorem planckReynolds_pos {M : Type*} (sp : SubstrateParameter M)
+theorem planckReynolds_pos {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     planckReynoldsNumber sp p > 0 := by
   unfold planckReynoldsNumber
@@ -112,7 +112,7 @@ theorem planckReynolds_pos {M : Type*} (sp : SubstrateParameter M)
 
 /-- Re_q → ∞ as q → 1: the denominator vanishes. -/
 theorem planckReynolds_denom_zero {M : Type*}
-    (sp : SubstrateParameter M) (p : M) (hq : sp.field p = 1) :
+    (sp : ArchimedeanSubstrateField M) (p : M) (hq : sp.field p = 1) :
     sp.field p - 1 = 0 := by linarith
 
 -- ════════════════════════════════════════════════════════════════
@@ -458,7 +458,7 @@ theorem quantum_peter_weyl_completeness :
 
 /-- q-BKM is trivial for q > 1: ℏ_q > 0 gives finite vorticity.
     Ref: [beale-kato-majda1984] https://doi.org/10.1007/BF01212349 -/
-theorem q_bkm_trivial {M : Type*} (sp : SubstrateParameter M)
+theorem q_bkm_trivial {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     quantumPlanckConstant sp p > 0 :=
   quantumPlanckConstant_pos sp p hq
@@ -629,7 +629,16 @@ structure NSSingularityDescartes (C : Type*) where
     The angular part is fixed by SU_q(2) matrix coefficients;
     only the 5 radial functions R_j(r) are free.
 
-    LaTeX: `\label{prop:leray-profile}` -/
+    This is the *data* the proposition is stated over, not the
+    proposition. The LaTeX label for `prop:leray-profile` was carried
+    here — written out in full, it would register this docstring as a
+    second owner, so it is named indirectly — and has been moved to
+    `QOU.FluidDynamics.leray_profile`
+    (`QOU/FluidDynamics/leray_profile.lean`) — the declaration
+    `fluid-dynamics/leray-profile.ts` actually references, and whose own
+    docstring already named the block in prose. Bean `qou-szd6`: the
+    label sat on a superseded carrier while the block pointed elsewhere,
+    so nothing connected the block to its real formalisation. -/
 structure TruncatedLerayProfile where
   /-- Number of active spins (j = 0, 1/2, 1, 3/2, 2). -/
   num_spins : ℕ := 5

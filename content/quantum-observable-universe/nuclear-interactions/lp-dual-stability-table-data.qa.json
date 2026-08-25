@@ -883,7 +883,196 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.508Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.547Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.591Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.633Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.673Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.713Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.753Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.794Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 6-row table; every Min(Gx) is internally consistent with its own row. Recomputed G*x from the cited witness's own Gram matrix (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.835Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Row 5: '$B_3$ sub-unit $\\sigma_0\\sigma_1^{-1}$ | $(+0.14, \\mathbf{-0.11}, +0.50, +1.10, +0.16, +0.55)$ | **No** | $-0.11$'.",
+        "notes": "THE SINGLE NEGATIVE NUMBER IN THIS TABLE -- the entire evidential basis for confinement in prop:lp-dual-stability clause 3 and rem:lp-dual-stability-confinement-reading -- DOES NOT RECOMPUTE. Taking G from the cited witness and x = sigma_0 sigma_1 - h*sigma_0 in the NF basis (1, s0, s1, s0s1, s1s0, s0s1s0), Gx = (+0.1449, +0.3206, +0.4993, +0.2493, +1.1044, +0.5514): STRICTLY POSITIVE, min +0.1449. The claimed -0.11 sits at the sigma_0 slot, where the true value is +0.3206. Under def:lp-stable (LP-stable iff Gx >= 0 componentwise) sigma_0 sigma_1^{-1} is LP-STABLE, inverting the table's 'No'. The basis order is corroborated, not assumed: 'Up quark sigma_0' recomputes to exactly G's sigma_0 column, and 4-5 of 6 entries in every other row reproduce to 2 dp under this ordering. The rows are partly-correct copies of the true Gx vectors with one to two entries per row perturbed DOWNWARD, and each perturbation is the entry that sets Min(Gx): up quark min +0.2493 (table +0.12), down quark +0.1449 (table +0.07), Hopf +0.3646 (table +0.18). Every stated minimum is understated 2-3x."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8769b8f5aaf0",
+          "ts": "d831ff635325"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:53.873Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Table only; no prose."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:53.873Z"
 }

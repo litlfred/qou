@@ -1120,7 +1120,8 @@
         "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Spatial realization functor' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Spatial realization functor' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1224,7 +1225,8 @@
         "reviewed_at": "2026-07-07T14:26:55.436943Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1435,7 +1437,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation: content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean fails compilation: content/quantum-observable-universe/models-of-qous/spatial-realization-functor.lean:44:13: error: Function expected at"
       },
       {
         "result": "pass",
@@ -1873,6 +1876,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.010Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1892,6 +1910,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.046Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-em-dash": [
@@ -1911,6 +1944,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 223 words)"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.083Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-triples": [
@@ -1930,6 +1978,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 223 words)"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.121Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-closing-aphorism": [
@@ -1949,6 +2012,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.158Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -1968,6 +2046,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.195Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-thesis-restatement": [
@@ -1987,6 +2080,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.233Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2006,6 +2114,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.271Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-superlative": [
@@ -2025,6 +2148,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.308Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "trap-nonspeakable": [
@@ -2044,6 +2182,21 @@
         "reviewed_at": "2026-08-15T10:31:01.074Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "deb58835a172",
+          "ts": "8c8d21d04ff1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:26:12.345Z",
+        "reviewed_sha": "a831a88108172d187612ccadd041c89a21353f70",
+        "evidence": "Full read (definition, ~2.5kB). The four numbered structures are standard and correctly stated: m_p/m_p^2 dual to T_pM, A/m_p^2 = 1 + m_p/m_p^2, and the Cartan relations iota_xi Theta_A = id_1, iota_xi dTheta_A = 0 matching ex:reeb-decomposition. Two tikzcd diagrams share one equation environment inside a single tex fence, which is legal (equation is an outer env). All ten categories clean; the closing paragraph re-reads the diagram but adds the non-degeneracy consequence, so it is not a bare restatement."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2067,5 +2220,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:26:12.345Z"
 }

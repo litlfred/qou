@@ -63,13 +63,13 @@ def main():
     for i, N in enumerate(Ns):
         lj, loss = log_jones_deformed_progress(N, u_p)
         if loss > mp.mp.dps - 40:
-            print(f"    N={N} loss={loss:.1f}d exceeds headroom — truncating",
+            print(f"    N={N} loss={float(loss):.1f}d exceeds headroom — truncating",
                   flush=True)
             break
         kept.append(N)
         logJs.append(lj)
         losses.append(loss)
-        print(f"    [{i + 1}/{len(Ns)}] N={N:7d} loss={loss:7.1f}d "
+        print(f"    [{i + 1}/{len(Ns)}] N={N:7d} loss={float(loss):7.1f}d "
               f"elapsed={time.time() - t0:8.1f}s", flush=True)
     Nk = kept
 
@@ -159,7 +159,7 @@ def main():
         "result": {
             "u_substrate": mp.nstr(u_p, 25),
             "Ns_kept": Nk,
-            "max_loss_digits": max(losses),
+            "max_loss_digits": mp.nstr(max(losses), 25),
             "predicted_arg_kappa5": mp.nstr(pred_arg_k5, 20),
             "measured_arg_kappa5": mp.nstr(arg5, 20),
             "residual": mp.nstr(resid, 10),

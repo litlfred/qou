@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.337Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.372Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.408Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.444Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.479Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.515Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.552Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.587Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.625Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "782ca2ea566f",
+          "ts": "8c052588a8b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:07.659Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Extracted data table (kind=table, 5 rows: n=0,1,2, vdots, n=c); read in full. No trap construction of this category present. The two em-dashes are appositive glosses inside table cells, not sentence connectors. Accents intact (Groebner-Shirshov carries its umlaut). Note for the caption: title and caption both say 'first three orders' while the rendered table also carries the vdots and terminal n=c rows."
+      }
     ]
   },
   "source_hashes": {
     "md": "782ca2ea566f",
     "ts": "8c052588a8b1"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:08:07.659Z"
 }

@@ -1189,7 +1189,8 @@
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Quantum computational universality via descent to roots of unity' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Quantum computational universality via descent to roots of unity' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       },
       {
         "field_hash": {
@@ -1257,7 +1258,8 @@
         "reviewed_at": "2026-07-07T14:26:55.600922Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
-        "notes": "The exact mapping from generic SU(2^n) approximations to 'information content' c^2 - 1 seems to assume optimal braiding compilers which hide substantial complexity."
+        "notes": "The exact mapping from generic SU(2^n) approximations to 'information content' c^2 - 1 seems to assume optimal braiding compilers which hide substantial complexity.",
+        "evidence": "The exact mapping from generic SU(2^n) approximations to 'information content' c^2 - 1 seems to assume optimal braiding compilers which hide substantial complexity."
       },
       {
         "result": "pass",
@@ -1633,7 +1635,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic or physical relations in 'Quantum computational universality via descent to roots of unity' remain unproven and are represented as sorry stubs in the formalization."
+        "referee_argument": "The conjectured algebraic or physical relations in 'Quantum computational universality via descent to roots of unity' remain unproven and are represented as sorry stubs in the formalization.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       },
       {
         "field_hash": {

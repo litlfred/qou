@@ -1,0 +1,152 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2304.07001v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b6c0d7f50b6407f1159cf3b6b97dc2180b39100ef7e2c5a64454cdc6d05af324",
+  "file": "2304.07001v3.pdf"
+ },
+ "provenance": {
+  "title": "RESURGENCE, HABIRO ELEMENTS AND STRANGE IDENTITIES",
+  "authors": "SAMUEL CREW, VERONICA F ANTINI, ANKUSH GOSW AMI, ROBERT OSBU RN",
+  "arxiv": {
+   "id": "2304.07001",
+   "version": "3",
+   "primary_class": "math.NT",
+   "stamp_date": "10 Apr 2025"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "conjecture": 1,
+   "theorem": 1,
+   "corollary": 3,
+   "lemma": 2,
+   "proposition": 2
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "1.1",
+   "name": null,
+   "statement": "for our cases of interest (see Corollary 1.5).",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.4",
+   "name": null,
+   "statement": "Let s and t be coprime positive integers and (n, m)\u2208 D(s, t). For 0\u2044= \u03b1\u2208 Q,",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.5",
+   "name": null,
+   "statement": "Let u, k\u2208 Z\u22651. Conjecture 1.1 is true for the families of torus knots T (2, 2u+1)",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.5",
+   "name": null,
+   "statement": "generalizes Theorems 2.5 and 3.1 in [ 13] and upon taking either u = 1 or k = 1",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1.5",
+   "name": null,
+   "statement": "In Section 4, we make some concluding remarks.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "For all k\u2208 Z, 1\u2264 m\u2264 t\u2212 1 and 1\u2264 n\u2264 s\u2212 1, we have",
+   "section_file": "sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+   "section_title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "Let s and t be coprime positive integers and D(s, t) be the set given by ( 1.21).",
+   "section_file": "sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+   "section_title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.3",
+   "name": null,
+   "statement": "For all k\u2208 Z, and (n, m)\u2208 D(s, t), we have",
+   "section_file": "sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+   "section_title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "claim",
+   "number": null,
+   "name": null,
+   "statement": "s (1) and (2) of Conjecture 1.1 follow from Theorem 1.2 parts (1) and (2), namely the",
+   "section_file": "sections/sec-002-3-proof-of-theorem-14-and-corollary-15.md",
+   "section_title": "Proof of Theorem 1.4 and Corollary 1.5",
+   "pages": "13-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

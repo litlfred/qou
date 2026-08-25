@@ -1365,6 +1365,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.459Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1384,6 +1399,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.494Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-em-dash": [
@@ -1403,6 +1433,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 45 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.529Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-triples": [
@@ -1422,6 +1467,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 45 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.564Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-closing-aphorism": [
@@ -1441,6 +1501,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.598Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-meta-commentary": [
@@ -1460,6 +1535,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.633Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-thesis-restatement": [
@@ -1479,6 +1569,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.669Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1498,6 +1603,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.704Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-superlative": [
@@ -1517,6 +1637,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.741Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "trap-nonspeakable": [
@@ -1536,6 +1671,21 @@
         "reviewed_at": "2026-08-15T10:30:59.911Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d485694b25de",
+          "ts": "6687007f3131"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:54:16.777Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, two sentences, no templated preamble. All ten categories checked; nothing fires. The closer 'hence \\mathcal{L} \\cong \\mathcal{L}'' is the proof's conclusion, exempt from trap-thesis-restatement."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1558,5 +1708,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:54:16.777Z"
 }

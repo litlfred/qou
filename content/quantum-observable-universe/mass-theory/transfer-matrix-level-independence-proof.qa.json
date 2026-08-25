@@ -1203,6 +1203,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.955Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "\"does not matter: all that matters is the isotopy class\" is the path-independence claim itself."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1222,6 +1237,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:24.996Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1241,6 +1271,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 220 words)"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.035Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "One \"---\" remaining after the fix below."
       }
     ],
     "trap-triples": [
@@ -1260,6 +1305,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 220 words)"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.075Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "The three parts (1)(2)(3) mirror the three clauses of the proposition."
       }
     ],
     "trap-closing-aphorism": [
@@ -1279,6 +1339,23 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.115Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "severity": "major",
+        "evidence": "Section (2) closed on a quip: 'This is the content of \"what happens in the exceptional divisor stays in the exceptional divisor\" --- the blow-down map pi collapses S_p to p, erasing the internal history.' The quoted line carries no mathematical content and is an informal register break in a proof block (also a clarity-grad-style violation).",
+        "notes": "FIXED inline: 'This is the content of \"what happens in the exceptional divisor stays in the exceptional divisor\" --- the blow-down map $\\pi$ collapses $\\mathcal{S}_p$ to $p$, erasing the internal history.' -> 'The blow-down map $\\pi$ collapses $\\mathcal{S}_p$ to $p$, erasing the internal history.' The substantive clause is kept verbatim. Math delimiters rechecked (no $$ in this file; inline $ balanced)."
       }
     ],
     "trap-meta-commentary": [
@@ -1298,6 +1375,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.155Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1317,6 +1409,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.194Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Ends on the QED box after the third part."
       }
     ],
     "trap-performed-warmth": [
@@ -1336,6 +1443,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.234Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "The Vegas-formula quip was an informal-register break rather than personal warmth; recorded under closing-aphorism above and fixed there."
       }
     ],
     "trap-superlative": [
@@ -1355,6 +1477,22 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.274Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Argument structure checks out, with two notation findings reported rather than edited. (a) The proposition states the composite trace as $J_{K_H}(q)$ but the proof writes it $P_{K_H}(q)$ - the same object under two symbols, and AGENTS 7a is STRICT that the Jones polynomial is $J_K(q)$. (b) \"equals the composite Markov trace ... as exact elements of $H_N(q)$\" misplaces the object: the Markov trace of an element of $H_N(q)$ is a scalar in the base ring, not an element of the algebra.",
+        "notes": "Route: rename $P_{K_H}$ to $J_{K_H}$ for agreement with the statement and with 7a; restate (b) as \"as exact elements of the base ring\"."
       }
     ],
     "trap-nonspeakable": [
@@ -1374,6 +1512,21 @@
         "reviewed_at": "2026-08-15T10:31:00.643Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "49b6e7c0fa0c",
+          "ts": "bd1c09b5124b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:25.315Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1396,5 +1549,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:11:25.315Z"
 }

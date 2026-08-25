@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "Boolean check: math.isfinite(trM_wenzl) AND |trM| > 1e-12 — guards against silent NaN/Inf or zero returns from the common-infra evaluator. Robust against the 'tolerance wider than |computed − expected|' vacuous-pass pitfall."
+      "source": "Boolean check: math.isfinite(trM_wenzl) AND |trM| > 1e-12 \u2014 guards against silent NaN/Inf or zero returns from the common-infra evaluator. Robust against the 'tolerance wider than |computed \u2212 expected|' vacuous-pass pitfall."
     }
   ],
   "allPassed": true,
@@ -33,7 +33,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Phase B-4 c_αα probe (EXPLORATORY — NEGATIVE result). Tests whether the substrate-canonical Markov-trace value m_e·|tr_M(T_w(7²_1), q_0)| could replace the literature c_αα = m_e·Vol(7²_1) ≈ 2.43 MeV in alpha_cluster_recursion.py. Result: bare Markov-trace value is ~22.7× smaller than the literature; the substitution does NOT work. Mirrors the proton-mass case (|tr_M(𝓑₃)| << m_p) — bare |tr_M| is not the substrate-pure binding-scale derivation; VolDensity chain (Vol/ℏ_q² × linking_weight) is. This probe does NOT propose changing alpha_cluster_recursion.py.",
+  "description": "Phase B-4 c_\u03b1\u03b1 probe (EXPLORATORY \u2014 NEGATIVE result). Tests whether the substrate-canonical Markov-trace value m_e\u00b7|tr_M(T_w(7\u00b2_1), q_0)| could replace the literature c_\u03b1\u03b1 = m_e\u00b7Vol(7\u00b2_1) \u2248 2.43 MeV in alpha_cluster_recursion.py. Result: bare Markov-trace value is ~22.7\u00d7 smaller than the literature; the substitution does NOT work. Mirrors the proton-mass case (|tr_M(\ud835\udcd1\u2083)| << m_p) \u2014 bare |tr_M| is not the substrate-pure binding-scale derivation; VolDensity chain (Vol/\u210f_q\u00b2 \u00d7 linking_weight) is. This probe does NOT propose changing alpha_cluster_recursion.py.",
   "auditOnly": "docs/audits/2026-05-25-track-b-r5-full-sdp-extension-design.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -73,7 +73,7 @@
         2
       ]
     ],
-    "evaluator_precision": "mp.mpf at 50 dps (L1 floor) via markov_trace_for_knot mpf default; mpf used throughout c_αα arithmetic"
+    "evaluator_precision": "mp.mpf at 50 dps (L1 floor) via markov_trace_for_knot mpf default; mpf used throughout c_\u03b1\u03b1 arithmetic"
   },
   "data": {
     "tr_M_wenzl": "0.3395503606441175557982435",
@@ -96,5 +96,8 @@
       "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

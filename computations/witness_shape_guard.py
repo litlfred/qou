@@ -73,6 +73,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -88,6 +89,9 @@ DEFAULT_TOLERANCE = 0.30
 # durationMs is the single most diagnostic field for a partial write: a run that
 # was interrupted records the elapsed time *so far*. rho-k showed 2,552,837 -> 519.
 DURATION_COLLAPSE = 0.90
+# Below this, durationMs is rounding noise rather than evidence of a partial
+# write, so the collapse rule does not apply.
+DURATION_FLOOR_MS = 1000.0
 
 
 # Self-describing audit outputs: their payload IS a list of the corpus's
@@ -107,6 +111,11 @@ SELF_DESCRIBING = {
     "no-free-parameter-certificate.witness.json",
     "q0-anchor-consistency-audit.witness.json",
     "mpf-float-source-audit.witness.json",
+    # Same class as its sibling above: this audit's witness LISTS its own
+    # candidate rows, so draining the corpus shrinks it by design. The
+    # qou-65qv drain took it 28 -> 3 rows, a 75% payload drop, which the
+    # guard correctly flagged as a collapse under its 30% tolerance.
+    "mpf-mixed-arithmetic-audit.witness.json",
     "compute-audit-scan.witness.json",
     "derivation-chain-audit.witness.json",
 }
@@ -160,7 +169,15 @@ def compare(before: dict, after: dict, tolerance: float) -> list[str]:
             reasons.append(f"{field} dropped: {b} -> {a}")
 
     b, a = before["durationMs"], after["durationMs"]
-    if isinstance(b, float) and isinstance(a, float) and b > 0:
+    # Floor the rule at DURATION_FLOOR_MS. Below it the field carries no signal:
+    # a witness whose producer ran in 1 ms re-runs at 0 ms purely from rounding,
+    # which trips a relative-drop test every time. The failure mode this rule
+    # exists for is a long run cut off mid-write -- the docstring's own example
+    # is 2,552,837 -> 519 -- so a sub-second `before` cannot be an instance of
+    # it. Measured false positive: habiro-coefficients-oxygen-14 flagged
+    # COLLAPSED on 1 -> 0 while GAINING content (34 -> 35 coefficients, no key
+    # removed), which is the opposite of what the guard reports (qou-0ndb).
+    if isinstance(b, float) and isinstance(a, float) and b > DURATION_FLOOR_MS:
         if a < b * (1.0 - DURATION_COLLAPSE):
             reasons.append(
                 f"durationMs collapsed: {b:,.0f} -> {a:,.0f} "
@@ -181,6 +198,30 @@ def _git(*args) -> str | None:
 def modified_witnesses() -> list[str]:
     out = _git("diff", "--name-only", "HEAD", "--", "*.witness.json") or ""
     return [p for p in out.split("\n") if p.strip()]
+
+
+_UNICODE_ESCAPE = re.compile(r"\\u[0-9a-fA-F]{4}")
+
+
+def _escape_regression(before_raw: str, after_raw: str) -> list[str]:
+    """Flag a witness that gained \\uXXXX escapes.
+
+    Not a value change — json.loads is identical either way — but it turns
+    the paper's own notation into noise: tau_M written as a codepoint, sigma_1
+    and the isotope superscripts likewise. It happens when a maintenance
+    script re-serializes with json.dumps' DEFAULT ensure_ascii=True while the
+    producers (WitnessBuilder) write UTF-8. Measured cost when it slipped
+    through: 177 witnesses in one pass, 0 of them value-affected and all of
+    them less readable.
+
+    Fix at the writer -- json.dumps(..., ensure_ascii=False) -- never by
+    accepting the escaped form.
+    """
+    b, a = len(_UNICODE_ESCAPE.findall(before_raw)), len(_UNICODE_ESCAPE.findall(after_raw))
+    if a > b:
+        return [f"gained unicode escapes: {b} -> {a} \\uXXXX sequences "
+                f"(re-serialized with ensure_ascii=True; the producers write UTF-8)"]
+    return []
 
 
 def check(tolerance: float) -> tuple[list[dict], list[str]]:
@@ -205,6 +246,7 @@ def check(tolerance: float) -> tuple[list[dict], list[str]]:
             findings.append({"path": rel, "reasons": [f"unparseable JSON: {exc}"]})
             continue
         reasons = compare(shape_of(before), shape_of(after), tolerance)
+        reasons += _escape_regression(head_raw, path.read_text())
         if reasons:
             findings.append({"path": rel, "reasons": reasons,
                              "before": shape_of(before), "after": shape_of(after)})

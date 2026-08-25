@@ -895,7 +895,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.074Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.115Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.157Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.197Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.236Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.277Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.317Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.357Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.399Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2854eaae346c",
+          "ts": "c85318cbbb92"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:59.441Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table1-data (legend, notation paragraph, 31-row multiplication table). VERIFIED EXHAUSTIVELY: recomputed all 36 products b_i b_j in H_3(q) symbolically in h and compared cell by cell - every one of the 25 non-identity rows matches, including the subtle ones (L+ L- = gamma + h sigma_0 + h e-, L- L+ = gamma + h sigma_1 + h e-, e- e- = gamma + h sigma_0 + h sigma_1 + h^2 L+ + h^2 L- + (h^3+h) e-). This table is correct.",
+        "notes": "Cat.3: the two spaced dashes form a single true parenthetical - pass. Cat.6: 'Reading the row b_i against the column b_j gives ...' is table-reading instruction, not narrated emphasis - pass. NOT A TRAP, reported separately: the notation paragraph calls e- = sigma_0 sigma_1 sigma_0 'the trefoil', but that word closes in B_3 to the 2-component Hopf link; the trefoil T(2,3) is the 2-strand word sigma_0^3, whose H_3 normal form is h gamma + (h^2+1) sigma_0 and is NOT a basis element."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:14:59.441Z"
 }

@@ -5,16 +5,36 @@
 """Per-interface operator extract + linearity verification (item 1 of
 the symmetry-reduction sweep).
 
-Extracts A^λ_{μν}(I) for the three canonical interface types
-  pp:  σ                       (c, d) = (1, 0)
-  nn:  σ⁻¹  = σ - h            (c, d) = (1, -h)
-  pn:  (σ + σ⁻¹)/2 = σ - h/2   (c, d) = (1, -h/2)
+Extracts A^λ_{μν}(I) for three COLOUR-BLIND crossing types, named by
+their `canonical_braid_crossings` ctype rather than by a nucleon pair:
+
+  sigma:      σ                     (c, d) = (1, 0)
+  sigma_inv:  σ⁻¹  = σ - h          (c, d) = (1, -h)
+  averaged:   (σ + σ⁻¹)/2 = σ - h/2 (c, d) = (1, -h/2)
 
 at A=3 (split 3+6 → 9), and verifies the linearity identity
 
     A^λ_{μν}((σ + σ⁻¹)/2) = (1/2)(A^λ_{μν}(σ) + A^λ_{μν}(σ⁻¹))
 
 across all 22 rank-determined partitions λ ⊢ 9.
+
+NAMING (corrected 2026-08-23). The third row was called `"pn"` and the
+first two `"pp"` / `"nn"`, described as "the three canonical interface
+types". They are not: the canonical p-n boundary is `averaged_weighted`,
+`d = -h(1/2 - δ/4)`, which sits 7.190163e-05 from `averaged`. Calling the
+colour-blind midpoint `"pn"` made this probe read as a statement about the
+p-n interface, which it never was.
+
+`averaged_weighted` is deliberately NOT extracted here, and adding it would
+not fix the identity this probe tests. The identity is a LINEARITY claim
+about the arithmetic midpoint of σ and σ⁻¹, and `averaged` IS that midpoint
+by construction; the colour-weighted d is not, so it satisfies no such
+two-point identity. This probe is about linearity of A in I, not about
+which interface a proton and a neutron actually meet at.
+
+Nothing the probe reported was wrong — it extracts and tests at the same
+`d` throughout, so its residuals and linearity verdicts stand unchanged.
+Only the names change. See bean `qou-cds4`.
 
 Output: `A-operator-per-interface.witness.json` with per-(λ, I)
 operator residuals + per-λ linearity-identity errors.
@@ -52,10 +72,17 @@ from lr_coefficients import get_lr_table, partitions_of  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
+# Built from `d_for_ctype`, not from an inline `{0, -h, -h/2}` table.
+# That function's docstring names such private lookups as the mechanism by
+# which the colour-weighted interface got lost ("a private lookup cannot know
+# about a label it predates"), and this probe was one of the surviving ones.
+# Deriving the shifts means a new crossing type is a one-line change here and
+# cannot silently disagree with the centralised vocabulary.
+from canonical_braid_crossings import d_for_ctype  # noqa: E402
+
 INTERFACES = {
-    "pp":  (1.0, 0.0),
-    "nn":  (1.0, -H),
-    "pn":  (1.0, -H / 2),
+    ctype: (1.0, d_for_ctype(ctype, H))
+    for ctype in ("sigma", "sigma_inv", "averaged")
 }
 
 
@@ -141,10 +168,10 @@ def extract_per_interface(n1: int, n2: int) -> dict:
             residuals[iface] = max_rel
             n_resolved[iface] += 1
 
-        # Linearity identity:  A_pn = (A_pp + A_nn) / 2
-        predicted_pn = (sols["pp"] + sols["nn"]) / 2.0
-        actual_pn = sols["pn"]
-        linearity_diff = predicted_pn - actual_pn
+        # Linearity identity:  A_averaged = (A_sigma + A_sigma_inv) / 2
+        predicted_avg = (sols["sigma"] + sols["sigma_inv"]) / 2.0
+        actual_avg = sols["averaged"]
+        linearity_diff = predicted_avg - actual_avg
         # Compare in the rank subspace (M-projection):
         # ||M (predicted - actual)|| should be small for consistent solns.
         diff_in_chi = np.abs(M @ linearity_diff)
@@ -173,37 +200,46 @@ def main() -> int:
     n1, n2 = 3, 6
     print("=" * 92)
     print(f"  Per-interface A^λ_{{μν}}(I) extraction at A=3 (split {n1}+{n2})")
-    print(f"  Interfaces: pp=σ, nn=σ⁻¹, pn=(σ+σ⁻¹)/2")
-    print(f"  Linearity identity: A_pn = (A_pp + A_nn) / 2")
+    print(f"  Crossing types (COLOUR-BLIND): sigma=σ, sigma_inv=σ⁻¹, "
+          f"averaged=(σ+σ⁻¹)/2.  The canonical p-n boundary is "
+          f"averaged_weighted and is not among these.")
+    print(f"  Linearity identity: A_averaged = (A_sigma + A_sigma_inv) / 2")
     print("=" * 92)
 
     results, n_resolved, n_linearity_ok, n_linearity_total = extract_per_interface(n1, n2)
 
     print()
-    print(f"  λ resolved per interface: pp={n_resolved['pp']}, "
-          f"nn={n_resolved['nn']}, pn={n_resolved['pn']} (each of 30 total)")
+    print(f"  λ resolved per crossing type: sigma={n_resolved['sigma']}, "
+          f"sigma_inv={n_resolved['sigma_inv']}, "
+          f"averaged={n_resolved['averaged']} (each of 30 total)")
     print(f"  Linearity identity OK at χ-level: {n_linearity_ok} / {n_linearity_total}")
     print()
     # Print per-λ linearity status.
-    print(f"  {'λ':<22}{'rank':>6}{'res pp':>14}{'res nn':>14}{'res pn':>14}{'lin (χ)':>14}")
+    print(f"  {'λ':<22}{'rank':>6}{'res sigma':>14}{'res sig_inv':>14}"
+          f"{'res averaged':>14}{'lin (χ)':>14}")
     print("  " + "-" * 90)
     for k, r in results.items():
         if r.get("status") != "extracted":
             continue
         rs = r["residuals_per_interface"]
         ld = r["linearity_max_chi_diff"]
-        print(f"  {k:<22}{r['rank']:>6}{rs['pp']:>14.3e}{rs['nn']:>14.3e}"
-              f"{rs['pn']:>14.3e}{ld:>14.3e}")
+        print(f"  {k:<22}{r['rank']:>6}{rs['sigma']:>14.3e}"
+              f"{rs['sigma_inv']:>14.3e}"
+              f"{rs['averaged']:>14.3e}{ld:>14.3e}")
 
     w = WitnessBuilder("A-operator-per-interface", engine="numpy")
     w.set_description(
         "Per-interface A^λ_{μν}(I) extraction at A=3 (split 3+6) for "
-        "the three canonical interfaces pp, nn, pn.  Verifies the "
-        "linearity identity A_pn = (A_pp + A_nn) / 2 (which follows "
+        "the three COLOUR-BLIND crossing types sigma, sigma_inv, "
+        "averaged -- NOT the canonical p-n boundary, which is "
+        "averaged_weighted and satisfies no two-point linearity "
+        "identity.  Verifies the "
+        "linearity identity A_averaged = (A_sigma + A_sigma_inv) / 2 (which follows "
         "from the linearity of the LR projection in I per refined "
         "Sub-lemma 2.1).  Identity is checked at the χ-level: "
-        "M·(predicted_pn - actual_pn) should be zero, since both "
-        "sides of the identity reproduce the same χ^λ(β_1·I_pn·β_2)."
+        "M·(predicted_avg - actual_avg) should be zero, since both "
+        "sides of the identity reproduce the same "
+        "χ^λ(β_1·I_averaged·β_2)."
     )
     w.set_audit_only("docs/audits/2026-05-09-A-operator-rank-structure.md")
     w.set_content_block("operator-valued sub-lemma 2.1 (A-operator extraction probe; no formal block yet)")

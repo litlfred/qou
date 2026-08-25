@@ -1546,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.936Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1565,6 +1581,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.977Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-em-dash": [
@@ -1584,6 +1616,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.016Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-triples": [
@@ -1603,6 +1651,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.057Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-closing-aphorism": [
@@ -1622,6 +1686,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.098Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-meta-commentary": [
@@ -1641,6 +1721,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.139Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-thesis-restatement": [
@@ -1660,6 +1756,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.181Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-performed-warmth": [
@@ -1679,6 +1791,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.222Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-superlative": [
@@ -1698,6 +1826,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.264Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "trap-nonspeakable": [
@@ -1717,6 +1861,22 @@
         "reviewed_at": "2026-08-15T10:31:01.265Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c2757e7490ee",
+          "ts": "8aa8c185882d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:31.303Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: a single definition paragraph with one display. Judged all ten categories; at two sentences there is no room for, and no instance of, any of the ten constructions.",
+        "notes": "NOTATION NOTE reported, not fixed: the display writes the crossing element as c_{n_s} sigma + d_{n_s} with a BARE sigma. Per AGENTS.md sec7a the Hecke/braid generator is sigma_i with an index, and the corpus also uses an unindexed sigma for the bar-involution q -> q^-1 (and, in the sibling knot-formula-table-table1-data, for the skein crossing change). An unindexed sigma in a Hecke-algebra display is ambiguous against two other live meanings. Structure verified: Phi: H_A(q) -> H_{A+1}(q) is the right arity for adding one nucleon, and (c_{n_s}, d_{n_s}) as Chebyshev coefficients of T(2, n_s) matches the cited def:chebyshev-torus-coefficients."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1740,5 +1900,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:41:31.303Z"
 }

@@ -944,6 +944,22 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:46.641Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Five instances, all on the same axis: 'is therefore not an external import'; 'not a $\\pi$-import outside $R$'; 'The additive correction is therefore *not* outside $R$ - it is the canonical $\\tau_{arch}$-image of $R$-internal pentagon data'; 'no other transcendental shape is admissible'; 'constants from substrate, not $q$-dependent coincidences'.",
+        "notes": "The block's entire thesis is that no transcendental enters from outside $R$, so each denial names a specific excluded alternative and is the claim itself. False-positive class 'substantive mathematical contrast'. Verified the arithmetic they hang on: $2g/(4\\pi(g-1))$ at $g=4$ is exactly $2/(3\\pi) = 0.2122066$."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:46.734Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, pre-archimedean/archimedean separation, corollaries and open problems (~7.4 kB)); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1013,23 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 877 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:46.782Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "Three dashes, one of them UNSPACED and inconsistent with the rest of the file: 'This domain is categorical and discrete-devoid of $\\pi$, $\\zeta(3)$, or real-analytic transcendentals.' (em-dash with no surrounding spaces, appending a gloss where a colon belongs). The other two are a genuine paired parenthetical ('QOU observables - masses, binding energies, the fine-structure constant - are real numbers') and a substantive correction.",
+        "notes": "fix applied: 'categorical and discrete-devoid of' -> 'categorical and discrete: devoid of'. Content unchanged; the colon carries the gloss and the typography now matches the rest of the block."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1049,21 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 877 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:46.827Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, pre-archimedean/archimedean separation, corollaries and open problems (~7.4 kB)); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1083,21 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:46.873Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, pre-archimedean/archimedean separation, corollaries and open problems (~7.4 kB)); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1117,21 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:46.931Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, pre-archimedean/archimedean separation, corollaries and open problems (~7.4 kB)); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1151,22 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.018Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'The algebraic / archimedean dichotomy establishes a clean separation between categorical structure and continuum measurement.'",
+        "notes": "Paragraph-OPENING topic sentence, not a closer; the paragraph then develops the Frobenius self-duality and the descent involution. The block itself ends on the witness discussion (a falsifiability criterion), which is new content."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1186,21 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.084Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, pre-archimedean/archimedean separation, corollaries and open problems (~7.4 kB)); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1220,23 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.140Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'On the pre-archimedean side it has a completely rigorous motivic / algebraic representation' - 'completely' modifies 'rigorous', which is not a scalar property.",
+        "notes": "fix applied: 'a completely rigorous motivic / algebraic representation' -> 'a rigorous motivic / algebraic representation'. Other strong quantifiers were weighed and KEPT because each is a load-bearing claim: 'Transcendental numbers enter the framework exclusively at the boundary of observation' and 'The observable particle spectrum consists entirely of knots that embed within this genus-4 handlebody' are the block's assertions, not emphasis."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1256,21 @@
         "reviewed_at": "2026-08-15T10:31:00.582Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aeaac807ce28",
+          "ts": "b27ee4ba3202"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.191Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, pre-archimedean/archimedean separation, corollaries and open problems (~7.4 kB)); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1297,5 @@
     "md": "e37a0a1f5dbc",
     "ts": "b27ee4ba3202"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:32:47.191Z"
 }

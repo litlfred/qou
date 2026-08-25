@@ -58,6 +58,7 @@ from syt_prefix_cache import (
     BlockCache,
     build_seminormal_matrices_cached,
 )
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 # Shared BlockCache for P21 compute-audit compliance — avoids
 # rebuilding Hoefsmit content-distance tables per shape at large n.
@@ -109,7 +110,7 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
     and per-level breakdown by height."""
     A = Z + N
     k = 3 * A
-    nfac = qfac(k)
+    nfac = qfac(k, Q0_PROTON)
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
 
     descended = 0.0
@@ -121,7 +122,7 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
         chi, d = chi_lambda_atom(shape, crossings)
         if d == 0:
             continue
-        d_q_val = float(dim_q(shape))
+        d_q_val = float(dim_q(shape, Q0_PROTON))
         w_lambda = d_q_val ** 2 / float(nfac)
         # Markov contribution
         mc = w_lambda * chi / d
@@ -233,6 +234,31 @@ if __name__ == "__main__":
         "parameters": {
             "q_0": float(Q0_FLOAT),
             "level_heuristic": "len(λ) - 1 (diagram height - 1)",
+        },
+        # Owner ruling 2026-08-15: "mpmath on anything in production; if not
+        # production, deprecate it with precision_tier = float64."
+        #
+        # This producer is NOT production. Walked against the decision tree in
+        # `local/production-vs-exploratory-discipline`: it reaches none of the
+        # named production locations, and it is a LEAF — the only reader of
+        # `atom-level-wedderburn-tower.witness.json` is this file, and its only
+        # importer is `test_ctype_consumer_coverage.py`, a vocabulary guard.
+        #
+        # Its numerical core is float64 by choice, not necessity: numpy matrix
+        # products and a `BlockCache(float(Q0_FLOAT), …)`, while a 50-dps source
+        # for q₀ and h exists in `q_parameter`. That is why it does NOT claim
+        # `float64-integrator` — that tier is for output with no
+        # higher-precision source (an ODE integrator IS the source), and
+        # claiming it here would be the "ordinary f64 sloppiness" that
+        # carve-out's own comment says it must be designed against.
+        "precision_tier": "float64",
+        "deprecated": {
+            "reason": ("exploratory f64 shape-probe; retired rather than "
+                       "rewritten in mpmath, which would be a rewrite of the "
+                       "numpy matrix core for a leaf nobody reads"),
+            "not_production": ("reaches no production location; sole witness "
+                               "reader is itself, sole importer is a test"),
+            "ruling": "owner 2026-08-15",
         },
         "results": results,
     }

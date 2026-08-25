@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.723Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.764Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "Closing setup-then-reframe: 'The SDP retains its role as a numerical certificate at a given q. However, its existence is guaranteed by the categorical volume constraint and follows from the eigenvalue structure alone.' The first sentence concedes a lesser role so the second can carry everything. It also breaks twice: 'its' has no clear referent (the certificate? the feasible cone?), and 'guaranteed by the categorical volume constraint AND follows from the eigenvalue structure alone' offers two justifications while asserting one suffices alone. NOT applied - fixing it requires the author to name the referent and choose the justification. Proposed: state directly which object exists and by which of the two arguments."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.808Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.849Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.890Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.931Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:55.972Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "major",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:56.013Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:56.053Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.488Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0e8b782acd31",
+          "ts": "13f330684da5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:56.095Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:confinement-sdp-spectral-gap (feasibility display + deconfinement para). Verified the mathematics: the Hecke generator's eigenvalues q and -q^-1 coincide exactly when q^2 = -1, i.e. q = +/- i, and q + q^-1 = 0 at exactly the same points - so Delta_sigma(q) = |q + q^-1| is the correct non-degeneracy gap and the 'q -> +/- i' deconfinement claim is right. The eigenvalue assignment to S^2 V and Lambda^2 V is standard. Note that Delta_sigma is |[2]_q|, which the block does not say.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:12:56.095Z"
 }

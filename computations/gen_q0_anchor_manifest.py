@@ -36,10 +36,29 @@ def _committed_witnesses() -> list[str]:
 
 
 def _producer_stem(witness_rel: str) -> str | None:
+    """The producing script's stem, looked up beside the witness THEN at root.
+
+    The witness-directory lookup is not cosmetic. `computations/` has held
+    subdirectories (`probes/`, `qbeta/`, `substrate/`, ...) since long before
+    this generator, and a root-only lookup returns None for every one of them —
+    so the witness is never even read and the producer cannot appear in the
+    manifest under any classification. Measured on `main` at the time this was
+    fixed: **700 live witnesses** (plus 153 under `_deprecated/`) had their
+    producer in a subdirectory only — 309 in `probes/`, 197 in `qbeta/`, 52 in
+    `substrate/` — against 891 resolved at root. Roughly half the corpus.
+
+    The consequence was bounded but one-directional, because `q_parameter`
+    resolves an unlisted stem to **proton** (the standing default, owner
+    directive 2026-08-07): a subdirectory producer that wanted proton got it by
+    accident, while one that wanted muon was silently given proton, and
+    `ideal_muon` was simply **unreachable** outside the root directory.
+    """
     stem = Path(witness_rel).name[: -len(".witness.json")]
-    for cand in (stem.replace("-", "_"), stem):
-        if (HERE / f"{cand}.py").exists():
-            return cand
+    wdir = (ROOT / witness_rel).parent
+    for base in (wdir, HERE):
+        for cand in (stem.replace("-", "_"), stem):
+            if (base / f"{cand}.py").exists():
+                return cand
     return None
 
 

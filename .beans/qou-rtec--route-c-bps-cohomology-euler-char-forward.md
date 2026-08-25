@@ -50,3 +50,13 @@ A_ω still imported). Honest rungs:
 - **D4 — chirality = bar-involution link** [small-medium]. Formalize the
   rtec audit's lever ({S⁺,S⁻} split IS q↦q⁻¹) as conditional Lean tying the
   DT set to the corpus bar-parity machinery.
+
+## 2026-08-19 — M3 rung reframed by a sibling (qou-m3ad)
+
+This programme's M3 rung is recorded here as "build a CoHA". A sibling has
+reframed it to **"derive the index set Ω"**, on M2's abelian-spectrum finding,
+and landed `QOU/QBeta/AdjointIndexSetM3.lean` (sorry-free) with H_Ad (the sl₂
+adjoint) as the knot-independent core. The reframing is materially sharper than
+the CoHA framing — deriving an index set is a smaller, better-posed target than
+constructing a cohomological Hall algebra — and it is now owned by `qou-m3ad`
+(in-progress, high). Treat that bean, not this text, as M3's live statement.

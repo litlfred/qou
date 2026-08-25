@@ -205,6 +205,49 @@ def scan_file(path: Path) -> list[dict]:
         return [{"file": rel, "line": 0, "kind": "unparseable",
                  "text": f"{type(e).__name__}: {e}"}]
     out: list[dict] = []
+    # `if __name__ == "__main__":` bodies are scanned with their OWN raise
+    # state, not the module's. Two reasons, and the second is the stronger:
+    #
+    #   1. Position still matters inside the block, so a constant built after
+    #      an in-block `mp.dps = 50` is built at 50 dps and is correct. The
+    #      outer loop only tested `_raises_dps` on TOP-LEVEL statements, so the
+    #      whole guard was one opaque `ast.If` and an in-block raise was
+    #      invisible -- while the `mpf(...)` calls inside it were still
+    #      collected by `ast.walk`. 17 of the 21 in-guard findings in
+    #      witness-emitting files were of exactly that shape.
+    #   2. This audit is about IMPORT time -- its first line says so. A
+    #      `__main__` body does not run on import at all.
+    #
+    # It is deliberately NOT a blanket skip of the guard. A `__main__` block
+    # that builds constants BEFORE raising precision is a real precision defect,
+    # just not an import-time one, and 4 such findings survive this change
+    # (borromean_binding_recompute.py:172 x3, gram_matrix_seminormal_n.py:231);
+    # both files are already baselined at exactly those counts, so nothing new
+    # goes red. Skipping the guard outright would have hidden all four.
+    def _collect(stmt, out_):
+        for node in ast.walk(stmt):
+            if not (isinstance(node, ast.Call) and _is_mpf(node)):
+                continue
+            lit = _literal_of(node)
+            if lit is None:
+                out_.append({"file": rel, "line": node.lineno,
+                             "literal": None, "kind": "expr"})
+                continue
+            if loses_precision(lit):
+                out_.append({"file": rel, "line": node.lineno,
+                             "literal": lit, "kind": "literal"})
+
+    def _walk_block(stmts, rel_out):
+        for st in stmts:
+            if isinstance(st, (ast.FunctionDef, ast.AsyncFunctionDef,
+                               ast.ClassDef)):
+                continue
+            if _raises_dps(st):
+                return                          # everything after is fine
+            if isinstance(st, ast.With) and "workdps" in ast.dump(st):
+                continue
+            _collect(st, rel_out)
+
     for stmt in tree.body:                      # module scope only, in order
         if isinstance(stmt, (ast.FunctionDef, ast.AsyncFunctionDef, ast.ClassDef)):
             continue
@@ -213,24 +256,16 @@ def scan_file(path: Path) -> list[dict]:
         # `with mp.workdps(...)` at module scope is the correct pattern
         if isinstance(stmt, ast.With) and "workdps" in ast.dump(stmt):
             continue
-        for node in ast.walk(stmt):
-            if not (isinstance(node, ast.Call) and _is_mpf(node)):
-                continue
-            lit = _literal_of(node)
-            if lit is None:
-                # mpf(<expression>) — e.g. mpf(str(G_A_PDG_ERR)). Lossiness
-                # cannot be proved statically because the value is not in the
-                # source, but the POSITION carries the same risk: built here it
-                # is built at dps=15. Reported as `expr`, not as proven.
-                # Skipping these was a real miss — gt_matrix_pslq_probe's
-                # `PDG_G_A_ERR = mp.mpf(str(G_A_PDG_ERR))` emits
-                # 0.00129999999999999994032551242639… for a datum of 0.0013.
-                out.append({"file": rel, "line": node.lineno,
-                            "literal": None, "kind": "expr"})
-                continue
-            if loses_precision(lit):
-                out.append({"file": rel, "line": node.lineno,
-                            "literal": lit, "kind": "literal"})
+        if isinstance(stmt, ast.If) and "__main__" in ast.dump(stmt.test):
+            _walk_block(stmt.body, out)
+            continue
+        # mpf(<expression>) — e.g. mpf(str(G_A_PDG_ERR)) — is reported as
+        # `expr`, not as proven: lossiness cannot be shown statically because
+        # the value is not in the source, but the POSITION carries the same
+        # risk. Skipping those was a real miss — gt_matrix_pslq_probe's
+        # `PDG_G_A_ERR = mp.mpf(str(G_A_PDG_ERR))` emits
+        # 0.00129999999999999994032551242639… for a datum of 0.0013.
+        _collect(stmt, out)
     return out
 
 
@@ -280,6 +315,39 @@ def self_test() -> int:
         if got != want:
             print(f"  FAIL {lit}: expected {want}, got {got}")
             bad += 1
+
+    # `__main__`-guard scoping. The guard used to be one opaque module-level
+    # `ast.If`: an in-block `mp.dps = 50` was invisible while the `mpf(...)`
+    # calls after it were still collected, so a correct main block read as 5
+    # findings. These four cases pin BOTH halves — the false positive must stay
+    # dead, and the real defect must stay visible, or the fix has become a way
+    # to silence the guard.
+    import tempfile as _tf
+    scan_cases = [
+        ("raise-then-build inside __main__ is CLEAN",
+         'import mpmath as mp\nif __name__ == "__main__":\n'
+         '    mp.mp.dps = 50\n    x = mp.mpf("2.22456607")\n', 0),
+        ("build-then-raise inside __main__ is still FLAGGED",
+         'import mpmath as mp\nif __name__ == "__main__":\n'
+         '    x = mp.mpf("2.22456607")\n    mp.mp.dps = 50\n', 1),
+        ("no raise at all inside __main__ is still FLAGGED",
+         'import mpmath as mp\nif __name__ == "__main__":\n'
+         '    x = mp.mpf("2.22456607")\n', 1),
+        ("a module-scope build before any raise is still FLAGGED",
+         'import mpmath as mp\nx = mp.mpf("2.22456607")\n'
+         'if __name__ == "__main__":\n    mp.mp.dps = 50\n', 1),
+    ]
+    for label, src, want in scan_cases:
+        with _tf.NamedTemporaryFile("w", suffix=".py", delete=False) as fh:
+            fh.write(src)
+            tmp = Path(fh.name)
+        got = len(scan_file(tmp))
+        tmp.unlink(missing_ok=True)
+        if got != want:
+            print(f"  FAIL {label}: expected {want} finding(s), got {got}")
+            bad += 1
+    cases = list(cases) + scan_cases
+
     if bad:
         print(f"SELF-TEST FAILED — {bad}/{len(cases)}")
         return 1

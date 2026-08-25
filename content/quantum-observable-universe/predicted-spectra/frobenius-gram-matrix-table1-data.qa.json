@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:00.794Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:00.842Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:00.886Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:00.933Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.134Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.195Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.244Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.308Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.359Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f71f231c90b8",
+          "ts": "0cde43c42f89"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.420Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every row RECOMPUTED symbolically (sympy, Hecke relation sigma_i^2 = h sigma_i + 1 with h = q - q^-1, Markov property tr(x sigma_n) = z tr(x)). tr_M(1)=1, tr_M(sigma_0)=tr_M(sigma_1)=z, tr_M(sigma_0 sigma_1)=tr_M(sigma_1 sigma_0)=z^2, and tr_M(sigma_0 sigma_1 sigma_0) = z*tr(sigma_0^2) = z(hz+1) = h z^2 + z. ALL SIX ROWS CORRECT.",
+        "notes": "Convention-clean: the table carries z symbolically, so it is neither convention C nor D and needs no re-derivation under the 2026-08-15 ruling. Generator naming follows 7a (sigma_i, never T). One naming note for the author: the six-element basis names the identity 'gamma = 1' (the photon) and sigma_0 sigma_1 sigma_0 'e^-', which is a physics labelling of an algebra basis; it is used consistently across tbl:frobenius-gram-matrix-table2-data and prop:gamma-gamma-generates-particles, so no action."
+      }
     ]
   },
   "source_hashes": {
     "md": "f71f231c90b8",
     "ts": "0cde43c42f89"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:41:01.420Z"
 }

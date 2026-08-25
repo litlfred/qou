@@ -1231,6 +1231,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.466Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1267,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.519Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1303,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 28 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.564Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1339,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 28 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.609Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1375,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.649Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "Block-final generalisation 'Each functional isolates an orthogonal dimension of the underlying Hecke algebra element.' - nothing in the table establishes orthogonality, and the sentence adds no information the four rows do not already carry. NOT applied: 'orthogonal' is a substantive claim, so deleting it removes an assertion rather than a construction. Proposed: delete, or replace with what the table actually shows (each observable reads a different functional of the same element)."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1411,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.690Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1447,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.735Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.777Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1519,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.819Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1555,23 @@
         "reviewed_at": "2026-08-15T10:31:01.328Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b665210d301f",
+          "ts": "d69f9a744a58"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:03:34.858Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:categorical-quantity-map (lead sentence + 4-row table + closing line). Checked the table against the notation register: fraktur m for mass, fraktur D for the decay width, and the rho (density) / varrho (vortex) split in the density row all follow section 7aa correctly. Four observables against four rows is self-consistent. Checked 'rigidly' for the de-hedging-intensifier class: 22 occurrences corpus-wide, 2 in this chapter - normal authorial vocabulary, not a flood.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1594,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:03:34.858Z"
 }

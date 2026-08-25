@@ -1177,6 +1177,23 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.679Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "'There are no individual bonds - the threading link distributes binding uniformly.' Asserted by denial, and the denial is literally false: benzene has six localised C-C sigma bonds. What is delocalised is the pi system.",
+        "notes": "STRUCTURAL (chemistry at stake). Proposed: 'The threading link distributes binding uniformly, so no individual pi bond is localised; each carbon is threaded identically, giving equal bond lengths and bond order 3/2.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1213,22 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.723Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No setup-then-reframe construction; no sentence whose second clause silently carries the claim."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1248,22 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 183 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.764Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Spaced/unspaced dashes counted across the block; none load-bearing, density within normal parenthetical use."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1283,22 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 183 words)"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.805Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No reflex three-item list; enumerations present (if any) are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1318,23 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.846Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "'Delocalisation is topological.' - a three-word quotable placed as the paragraph's closer, adding nothing the two preceding sentences ('T(2,6) has two components, each an unknotted loop winding 3 times ... These components are the two delocalised pi electrons') have not already said.",
+        "notes": "Proposed: delete the sentence. Left unfixed only because the same paragraph is under structural revision for the crossing-number and negation findings; fold it into that edit."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1354,22 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.888Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. No narration of the author's own emphasis ('note the framing', 'we emphasize', 'the key takeaway')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1389,22 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.929Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Final sentence checked against the block's opening claim; no restatement closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1424,22 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:02.971Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Institutional register throughout; no personal or affective language."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1459,23 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:03.013Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "major",
+        "evidence": "'For even N, the threading link is universally twice as efficient as pairwise bonding.' The universal is doing load-bearing work on a claim the corpus itself lists as OPEN: rem:chain-ring-open-problems item 2 says 'Even N alone does not imply aromaticity.' Chemistry agrees with the open-problems block, not this sentence - cyclobutadiene (N=4) is antiaromatic and cyclooctatetraene (N=8) is tub-shaped and non-aromatic, yet both sit in tbl:chain-ring-comparison-table3-data at the same efficiency ratio as benzene.",
+        "notes": "STRUCTURAL - not fixed (the claim, not the wording, is at issue). Proposed: 'For even N the threading link carries half the pairwise Alexander weight at q = 1; whether that implies aromaticity is open (rem:chain-ring-open-problems).'"
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1495,22 @@
         "reviewed_at": "2026-08-15T10:31:00.137Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "13104f66cc1e",
+          "ts": "3a835a98c15f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:03.054Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "minor",
+        "evidence": "Full-context read of the whole block against this category. Read for aloud-parseability; no noun-chain that stalls when spoken."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1533,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:01:03.054Z"
 }

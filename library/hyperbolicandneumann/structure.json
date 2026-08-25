@@ -1,0 +1,161 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "hyperbolicandneumann",
+ "source": {
+  "file": "HyperbolicAndNeumann.pdf",
+  "sha256": "3d66fe4c64bdc62b68748987311a0a57ea3f68cb257ba9c9e7b57866287bb7b1",
+  "bytes": 383318,
+  "pages": 19
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP",
+  "authors_raw": "AND THE WORK OF WALTER NEUMANN",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pdfTeX-1.40.21",
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref",
+   "CreationDate": "D:20230323105459+01'00'"
+  },
+  "title_prev": "HYPERBOLIC3-MANIFOLDS, THE BLOCH GROUP",
+  "title_lines": [
+   "HYPERBOLIC 3-MANIFOLDS, THE BLOCH GROUP"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Ideal triangulations and the gluing equations",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Volumes and Dehn surgeries",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Bloch group and the extended Bloch group",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Symplectic properties",
+   "page": 9,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Quantization",
+   "page": 10,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Connections to number theory",
+   "page": 12,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
+   "number": "1",
+   "title": "Ideal triangulations and the gluing equations",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 8510,
+   "n_words": 1496
+  },
+  {
+   "id": "sec-001-2-volumes-and-dehn-surgeries",
+   "number": "2",
+   "title": "Volumes and Dehn surgeries",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 10642,
+   "n_words": 2042
+  },
+  {
+   "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
+   "number": "3",
+   "title": "The Bloch group and the extended Bloch group",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 7317,
+   "n_words": 1330
+  },
+  {
+   "id": "sec-003-4-symplectic-properties",
+   "number": "4",
+   "title": "Symplectic properties",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 274,
+   "n_words": 48
+  },
+  {
+   "id": "sec-004-5-quantization",
+   "number": "5",
+   "title": "Quantization",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 11653,
+   "n_words": 1954
+  },
+  {
+   "id": "sec-005-6-connections-to-number-theory",
+   "number": "6",
+   "title": "Connections to number theory",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 17,
+   "n_chars": 16553,
+   "n_words": 2920
+  },
+  {
+   "id": "sec-006-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 6458,
+   "n_words": 892
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 7,
+  "sections": 7,
+  "chars_total": 61407
+ },
+ "duplicate_of": "arxiv-2304.12545v1",
+ "duplicate_note": "Same work as library/arxiv-2304.12545v1/, which was chosen as canonical because it carries an arXiv id. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

@@ -1,0 +1,137 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "0309214v3",
+ "source_sha256": "53967ef30b0aedb9",
+ "brief": "The colored Jones function is q-holonomic — A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear",
+ "extended": "**The colored Jones function is q-holonomic**\n\n*School of Mathematics, Georgia Institute of Technology*\n\n41 pp, 23 sections.\n\n**Abstract.** A function of several variables is called holonomic if, roug hly speaking, it is determined from ﬁnitely many of its values via ﬁnitely many l inear recursion relations with polynomial coeﬃcients. Zeilberger was the ﬁ rst to notice that the abstract notion of holonomicity can be applied to verify , in a systematic and computerized way, combinatorial identities among spec ial functions. Using a general state sum deﬁnition of the colored Jones function o f a link in 3–space, we prove from ﬁrst principles that the colored Jones functio n is a multisum of a q –proper-hypergeometric function, and thus it is q –holonomic. We demonstrate our results by computer calculations.\n\n**Outline.** 1 Introduction; 1.1 Zeilberger meets Jones; 1.2 Synonymous notions to holonomicity; 1.3 Plan of the proof; 1.4 Acknowledgements; 3 The colored Jones function for sl2; 3.2 A multisum formula for the colored Jones f; 5 Complexity; 5.1 Finding a recursion relation for multisums; 5.2 Upper bounds for initial conditions; 6 In computer talk; 6.1 Recursion relations for the cyclotomic fun; 6.2 Recursion relations for the colored Jones ; 7 The colored Jones function for a simple Lie ; 7.1 Preliminaries; 7.1.1 The quantum group U; 7.1.3 Quantum braid group action; 7.1.4 Ordering of the roots\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: The colored Jones function of every knot is q –holonomic.\n- Theorem 1: and its companion Theorem 2 are eﬀective, as their pr oof reveals.\n- Theorem 2: (a) The E –order of the colored Jones function of a knot is bounded abov e by\n- Theorem 1: follows from the fact that the colored Jones functi on can be built\n- Theorem 3: The colored Jones function JL is q –holonomic.\n- Theorem 4: The cyclotomic function CK : N → Z[q±] of every knot K is",
+ "tokens": {
+  "brief": 48,
+  "extended": 480
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-001-11-zeilberger-meets-jones",
+   "title": "Zeilberger meets Jones",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-002-12-synonymous-notions-to-holonomicity",
+   "title": "Synonymous notions to holonomicity",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-13-plan-of-the-proof",
+   "title": "Plan of the proof",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-004-14-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "5-10"
+  },
+  {
+   "id": "sec-005-3-the-colored-jones-function-for-sl2",
+   "title": "The colored Jones function for sl2",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-006-32-a-multisum-formula-for-the-colored-jones-func",
+   "title": "A multisum formula for the colored Jones function of a knot",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-007-5-complexity",
+   "title": "Complexity",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-008-51-finding-a-recursion-relation-for-multisums",
+   "title": "Finding a recursion relation for multisums",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-009-52-upper-bounds-for-initial-conditions",
+   "title": "Upper bounds for initial conditions",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-010-6-in-computer-talk",
+   "title": "In computer talk",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-011-61-recursion-relations-for-the-cyclotomic-functi",
+   "title": "Recursion relations for the cyclotomic function of twist knots",
+   "pages": "20-22"
+  },
+  {
+   "id": "sec-012-62-recursion-relations-for-the-colored-jones-fun",
+   "title": "Recursion relations for the colored Jones function of the figure 8 knot",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-013-7-the-colored-jones-function-for-a-simple-lie-al",
+   "title": "The colored Jones function for a simple Lie algebra",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-014-71-preliminaries",
+   "title": "Preliminaries",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-015-711-the-quantum-group-u",
+   "title": "The quantum group U",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-016-713-quantum-braid-group-action",
+   "title": "Quantum braid group action",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-017-714-ordering-of-the-roots",
+   "title": "Ordering of the roots",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-018-716-a-commutation-rule",
+   "title": "A commutation rule",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-019-722-structure-constants",
+   "title": "Structure constants",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-020-73-quantum-knot-invariants",
+   "title": "Quantum knot invariants",
+   "pages": "29-37"
+  },
+  {
+   "id": "sec-021-a1-the-case-of-a2",
+   "title": "A.1 The case of A2",
+   "pages": "37-38"
+  },
+  {
+   "id": "sec-022-a2-the-case-of-b2",
+   "title": "A.2 The case of B2",
+   "pages": "38-41"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

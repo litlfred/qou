@@ -3,24 +3,24 @@
   "producer": "computations/deltalambda/borromean_3body_cluster_sign_probe.py",
   "computation": "borromean-3body-cluster-sign",
   "description": "The DERIVED Borromean (Brunnian, irreducible) 3-body cluster c\u2083^Borr = E\u2080\u00b7(\u03c4_free \u2212 \u03c4_Borr) with \u03c4_free = \u03c4(h=0) = 1 (3-unlink) and \u03c4_Borr the GAP-A-4 H\u2083 Markov-trace closed form (4+h\u00b2\u22123h\u2074\u2212h\u2076)/(h\u00b2+4). Being Brunnian (all 2-sub-links trivial) the pairwise binding vanishes and the whole content is the irreducible 3-body cluster. Closed form 1\u2212\u03c4_Borr = h\u2074(3+h\u00b2)/(h\u00b2+4) \u2265 0 \u2200 real h \u21d2 c\u2083^Borr > 0 for q \u2260 1. This POSITIVE sign is the one \u03bc\u2083 = +0.4708 needs and the one the MULTIPLICATIVE pairwise route provably CANNOT supply (#4354 productModel_3body_nonpos + markovParam_le_half, z \u2264 \u00bd < 1). The Brunnian object is non-multiplicative so its sign is NOT bounded by the z\u2264\u00bd wall. VERDICT: DERIVED POSITIVE-SIGN LEAD (scope-(a)); 0 free params. NOT a closure \u2014 bare-H\u2083 magnitude ~0.006 MeV \u226a +0.4708/~1.5 MeV target; any tuned level-lift/enhancement would be a FIT, not claimed, not wired. \u0394_\u03bb remains open.",
-  "timestamp": "2026-08-10T15:14:17.875426+00:00",
+  "timestamp": "2026-08-23T09:01:08.136144+00:00",
   "parameters": {
     "free_parameters": 0,
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "h": "0.20906029879563931543084621312967494385975749526302",
-    "z": "0.61268803714646525159582986394589924802630839154506",
-    "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "h": "0.2090602987956393154308462131296749438597574952630225625334090614760916",
+    "z": "0.6126880371464652515958298639458992480263083915450636084720514388801595",
+    "E0_MeV": "4.185981363294475896945062158759008410143486890879650999772224232747828",
     "braid": "\u03b2_Bor = (\u03c3\u2081\u03c3\u2082\u207b\u00b9)\u00b3 on H\u2083 (Borromean, Brunnian)",
     "note": "\u03bc\u2083 = +0.4708 enters only as target sign/scale; \u03c4_Borr is q\u2080-only, 0 fit."
   },
   "results": {
-    "tau_borromean": "0.99856216383678726595121313514665020209402588005941",
+    "tau_borromean": "0.9985621638367872659512131351466502020940258800594111341275349249784135",
     "tau_free_unlink": "1.0",
-    "trace_deficit_1_minus_tau": "0.0014378361632127340487868648533497979059741199405901",
-    "trace_deficit_closed_form": "0.0014378361632127340487868648533497979059741199405889",
-    "trace_deficit_factored": "0.0014378361632127340487868648533497979059741199405889",
-    "c3_borromean_raw_MeV": "0.0060187553826793390263194656812957982884586829545551",
-    "c3_borromean_gchannel_MeV": "0.0015681986510011866214871273686972710333143167721951",
+    "trace_deficit_1_minus_tau": "0.001437836163212734048786864853349797905974119940588865872465075021586539",
+    "trace_deficit_closed_form": "0.001437836163212734048786864853349797905974119940588865872465075021586534",
+    "trace_deficit_factored": "0.001437836163212734048786864853349797905974119940588865872465075021586534",
+    "c3_borromean_raw_MeV": "0.006018755382679339026319465681295798288458682954549728404407884113962724",
+    "c3_borromean_gchannel_MeV": "0.001568198651001186621487127368697271033314316772198795107482999858566679",
     "c3_borromean_sign": "positive",
     "sign_gate": {
       "mu3_sign": "+",
@@ -32,9 +32,9 @@
       "lean_wall_pairwise": "productModel_3body_nonpos + markovParam_le_half (z\u22641/2<1)"
     },
     "magnitude_honest": {
-      "c3_raw_over_mu3": "0.012784102342139632596260547326456665863336199988435",
-      "shortfall_factor_vs_mu3": "78.222152266706066846184199209263595265466297975159",
-      "shortfall_factor_vs_rhoF_scale": "263.67577665093994920325897227081844878142526526461",
+      "c3_raw_over_mu3": "0.01278410234213963259626054732645666586333619998842338233731496200926662",
+      "shortfall_factor_vs_mu3": "78.2221522667060668461841992092635952654662979752292147106376963254382",
+      "shortfall_factor_vs_rhoF_scale": "263.67577665093994920325897227081844878142526526484444296045459657704",
       "note": "\u03bc\u2083 dimensionless, c\u2083 in MeV \u2014 scale comparison is indicative, NOT the gate; the honest gate is the SIGN."
     },
     "positivity_all_q": true,
@@ -50,5 +50,8 @@
       "anti_fit": "no enhancement/level-lift tuned to \u03bc\u2083; \u03c4_Borr q\u2080-only, 0 fit."
     }
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "uncommitted",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

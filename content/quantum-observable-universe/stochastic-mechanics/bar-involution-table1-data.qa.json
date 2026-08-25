@@ -895,7 +895,177 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.144Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.184Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.227Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.269Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.308Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.349Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.390Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.431Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.471Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "bf8104ccb20d",
+          "ts": "2330dc99758f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:19:02.514Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Pure 2-row data table (bar projections), no prose sentences: none of the ten constructions can occur. Math checked: P_avg=(1+bar)/2 and P_skew=(1-bar)/2 are idempotent given bar^2=id (P_avg^2=(1+2bar+bar^2)/4=(1+bar)/2), and the stated images (bar x = x / bar x = -x) are correct."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:19:02.514Z"
 }

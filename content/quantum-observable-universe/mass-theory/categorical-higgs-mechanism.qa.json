@@ -1752,6 +1752,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.369Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1771,6 +1786,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.404Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1790,6 +1820,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.439Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1809,6 +1854,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.474Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1828,6 +1888,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.509Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1847,6 +1922,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.550Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1866,6 +1956,23 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.587Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Block-final sentence 'Categorical linking supplies the precise operation that differentiates massive force-links from massless matter-knots.' restates what paragraphs 2-3 already established (three bosons become 2-component links, the photon stays a 1-component knot, mass = Markov trace of the link).",
+        "notes": "proposed (not applied, since a reader may read it as the conjecture's significance claim rather than a restatement): delete the sentence, or move it to a follow-on remark with `interprets: conj:categorical-higgs-mechanism`."
       }
     ],
     "trap-performed-warmth": [
@@ -1885,6 +1992,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.623Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1904,6 +2026,22 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.661Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "One unqualified intensifier found and removed; remainder is plain assertion appropriate to a conjecture statement.",
+        "notes": "fix applied: 'The mass of each post-breaking boson evaluates strictly as the Markov trace' -> 'evaluates as the Markov trace' (the adverb carried no content and is part of the chapter-wide intensifier-flood pattern)."
       }
     ],
     "trap-nonspeakable": [
@@ -1923,6 +2061,21 @@
         "reviewed_at": "2026-08-15T10:31:00.499Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8801f40a4236",
+          "ts": "f41fe4a8e212"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:42.695Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the conjecture (categorical Higgs mechanism: Goldstone-eating as topological linking), 5 short paragraphs, no display math. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1946,5 +2099,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:42.695Z"
 }

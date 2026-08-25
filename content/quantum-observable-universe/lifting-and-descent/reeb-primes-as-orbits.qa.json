@@ -1232,6 +1232,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not a scalar weight but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.391Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "'not a scalar weight but a holonomy matrix' and 'ceases to be a discrete point; it forms a closed orbit' are substantive mathematical contrasts (abelian vs nonabelian counting; discrete point vs closed orbit) — the distinction IS the remark's content. False-positive class: substantive mathematical contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1251,6 +1266,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.433Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no setup-then-reframe pivot construction."
       }
     ],
     "trap-em-dash": [
@@ -1270,6 +1300,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 241 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.478Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no load-bearing spaced dashes; any dashes are ranges or true parentheticals."
       }
     ],
     "trap-triples": [
@@ -1289,6 +1334,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 241 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.519Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "The three bolded consequences (spectral counting / holonomy weight / RH-as-unitarity) are three genuinely distinct substantive claims, though the parallel aphoristic headers give a listicle flavour. Substantive enumeration passes per skill."
       }
     ],
     "trap-closing-aphorism": [
@@ -1308,6 +1368,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.561Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Final sentence ('The machinery of lifting and descent provides the algebraic infrastructure required to execute this mechanism.') functions as a forward link into the chapter, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1327,6 +1402,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.604Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no narration of emphasis (no 'we emphasize'/'note the framing')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1346,6 +1436,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.647Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no block-final restatement of already-established content."
       }
     ],
     "trap-performed-warmth": [
@@ -1365,6 +1470,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.696Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no personal register in institutional prose."
       }
     ],
     "trap-superlative": [
@@ -1384,6 +1504,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.739Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1403,6 +1538,21 @@
         "reviewed_at": "2026-08-15T10:31:00.227Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "11a2b81f5f74",
+          "ts": "3a3f6dc180c7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q15",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:42:48.790Z",
+        "reviewed_sha": "34c9a233637cf2fe4120081bfce029f7116c81d6",
+        "evidence": "Full-block read in context (agent:q15): prose parses aloud; no stalling noun chains."
       }
     ],
     "wall-base-ring-minimal": [

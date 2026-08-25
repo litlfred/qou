@@ -33,15 +33,19 @@ Two index changes, both already available:
 
 ## Honest scope
 
-`n ≤ 12` only. The general case is exactly `RSKBurnsideHolds n` for general `n`, which is the
-RSK correspondence and is the subject of the separate multi-session Schensted programme
-(`QOU/Mathlib/SchenstedInsertion.lean` and siblings). Nothing here proves it, and
-`SnWedderburnPartitionBridge.sn_isotypic_specht_split` — stated for all `n` — remains open, as do
-the two keystones that inherit `sorryAx` from it.
+`n ≤ 12` only **in this file**. The general case is exactly `RSKBurnsideHolds n` for general `n`,
+which is the RSK correspondence — and the Schensted programme this paragraph pointed at has since
+landed it (`QOU.Mathlib.rskBurnsideHolds`). The unconditional split is
+`SpechtWedderburnGeneral.spechtEquiv`; this file is retained as the small-`n` route, which needs no
+RSK at all.
 
-Note also that `RSKBridge.RSK_substrate_axiom` is an `axiom` asserting the general identity.
-**Nothing in this file uses it**; the `n ≤ 12` result is proved, not assumed. Check with
-`#print axioms` rather than by reading imports.
+**Corrected 2026-08-23.** This paragraph used to continue: *"Nothing here proves it, and
+`sn_isotypic_specht_split` — stated for all `n` — remains open, as do the two keystones that
+inherit `sorryAx` from it."* That is no longer the state of the world:
+`sn_isotypic_specht_split`'s `sorry` became the class `SnIsotypicSpechtSplit`, which is now
+**inhabited** (`SnIsotypicSpechtSplitInstance`). Likewise `RSKBridge.RSK_substrate_axiom` is no
+longer an `axiom` — it is a theorem, proved from the same result. Check with `#print axioms` rather
+than by reading imports, as before.
 
 ## Base ring (§7c)
 

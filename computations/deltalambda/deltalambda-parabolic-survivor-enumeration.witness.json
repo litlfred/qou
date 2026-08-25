@@ -218,5 +218,8 @@
   },
   "caveats": [
     "rho_strong(3) and rho_strong(4) are DERIVED-ELSEWHERE comparison constants used only as bounds; they are never inverted to define any quantity here. No composition was selected on the anchors."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

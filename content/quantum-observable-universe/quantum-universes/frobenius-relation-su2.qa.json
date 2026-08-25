@@ -1177,6 +1177,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.370Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). L9 'Note that $\\Delta_\\mu$ is **not** the Hopf group-comultiplication $f \\mapsto f(xy)$; that map is a bialgebra structure, not the Frobenius comultiplication dual to $\\mu$.' - load-bearing disambiguation preventing a real misreading of two distinct comultiplications on the same algebra, stated directly rather than narrated. Plain 'note that' passes per category 6.",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1213,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.407Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1249,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 164 words)"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.445Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). Two em-dashes (L9, L18), both genuine appositives; no dash dodging a comma-vs-full-stop choice.",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1234,6 +1285,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 164 words)"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.485Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1321,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.524Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). final sentence is \"Multiplying two functions and then duplicating along the diagonal gives the same diagonal-supported element as duplicating one factor first and then multiplying — the compatibility of $\\mu$ with the pairing-dual $\\Delta_\" - a substantive statement, not a placed quotable closer",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1357,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.563Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1393,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.600Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). final sentence is \"Multiplying two functions and then duplicating along the diagonal gives the same diagonal-supported element as duplicating one factor first and then multiplying — the compatibility of $\\mu$ with the pairing-dual $\\Delta_\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1429,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.637Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1465,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.677Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). no unqualified maximum-strength claim; technical absolutes present ('non-degenerate', 'unique', 'simple') are definitional, not rhetorical inflation",
+        "notes": "no fix needed"
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1501,23 @@
         "reviewed_at": "2026-08-15T10:31:00.176Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "affa500105f3",
+          "ts": "c136818b8cc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:04.716Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/frobenius-relation-su2.md (18 lines, kind=example, title=\"The Frobenius relation in SU(2)\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1540,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:04.716Z"
 }

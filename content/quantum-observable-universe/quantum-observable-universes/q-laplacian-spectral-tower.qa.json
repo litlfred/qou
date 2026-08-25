@@ -2025,6 +2025,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.306Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every clause for assertion-by-denial ('not X but Y', 'X, not Y'). Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; no negation-contrast construction present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2044,6 +2060,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.341Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for setup-then-reframe where a second clause carries the claim. Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; sentences assert directly.",
+        "notes": "No fix needed."
       }
     ],
     "trap-em-dash": [
@@ -2063,6 +2095,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 56 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.377Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Counted true em/en dashes: 0 in the block. Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; no dash substituting for sentence structure.",
+        "notes": "No fix needed."
       }
     ],
     "trap-triples": [
@@ -2082,6 +2130,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 56 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.415Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked every enumeration for reflex three-item shape. Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; no three-item enumeration present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -2101,6 +2165,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.453Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the final sentence for a quotable-sounding closer. Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; the closer is mathematical content.",
+        "notes": "No fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -2120,6 +2200,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.491Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked for narrated emphasis ('note the framing', 'we emphasize', 'the key takeaway'). Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; none present.",
+        "notes": "No fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -2139,6 +2235,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.529Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked whether the final sentence restates what the block already established. Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; it does not.",
+        "notes": "No fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -2158,6 +2270,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.563Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Checked register for personal/institutional warmth ('thank you', 'excited', 'journey'). Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; register is institutional throughout.",
+        "notes": "No fix needed."
       }
     ],
     "trap-superlative": [
@@ -2177,6 +2305,23 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.599Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "severity": "minor",
+        "evidence": "'The surviving quantum dimensions are exact algebraic numbers in the cyclotomic field $\\mathbb{Q}(\\zeta_r)$.' The maximum-strength 'exact ... in $\\mathbb{Q}(\\zeta_r)$' attaches to a claim that is false: at r=4, q = e^{i pi/4} = zeta_8 and [2]_q = sqrt(2) (sympy: minimal polynomial x^2 - 2), while Q(zeta_4) = Q(i) meets the reals only in Q, so sqrt(2) is not in Q(zeta_r). The correct field is Q(zeta_{2r}), or its maximal real subfield Q(zeta_{2r} + zeta_{2r}^{-1}). The cited witness (status 'verified') contains two assertions - [kappa]_q = 0 at q = e^{i pi/kappa} for kappa in 2..8, and [3]_q = phi at kappa=5 - and neither tests field membership, so the 'verified' status does not cover this sentence.",
+        "notes": "NOT FIXED (math). PROPOSED: '... are exact algebraic numbers in the real cyclotomic field $\\mathbb{Q}(\\zeta_{2r} + \\zeta_{2r}^{-1})$', and add a field-membership assertion to computations/q_spectral_truncation_tower.py so the 'verified' status covers it. The vanishing claim itself is correct and reproduces: [r]_q numerator q^r - q^{-r} = (-1) - (-1) = 0 at q = e^{i pi/r}."
       }
     ],
     "trap-nonspeakable": [
@@ -2196,6 +2341,22 @@
         "reviewed_at": "2026-08-15T10:30:59.849Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9dcebbbe04e9",
+          "ts": "78c48edd1d06"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:m00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:41:14.636Z",
+        "reviewed_sha": "b361aaa45382d8054712719f1e2a1290c382a216",
+        "evidence": "Read the block aloud-style for noun-heavy chains that stall. Block is proposition on the [k]_q^2 tower and its root-of-unity truncation; sentences are speakable.",
+        "notes": "No fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2219,5 +2380,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:41:14.636Z"
 }

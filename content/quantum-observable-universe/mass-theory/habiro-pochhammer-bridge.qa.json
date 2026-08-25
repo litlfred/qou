@@ -1754,6 +1754,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.109Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1773,6 +1788,23 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.153Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "major",
+        "evidence": "Block-final sentence: 'The identity relies on the elementary algebraic factorization 1-q^k = (1-u^k)(1+u^k); its framework-specific content lies in the application to the Habiro-weighted-average ratio, linking standard q-series identities to the physical structure.' Textbook setup-then-reframe — the first clause concedes the identity is elementary purely so the second can carry the significance claim, and the second clause is what the reader is left with.",
+        "notes": "proposed (structural, not applied): delete the sentence, or migrate it to authorNotes per AGENTS.md 4d. This is the softened form of the novelty-closer template the campaign flags; the honest residue ('the factorisation is elementary') is already implied by the proof."
       }
     ],
     "trap-em-dash": [
@@ -1792,6 +1824,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 124 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.265Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "trap-triples": [
@@ -1811,6 +1858,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 124 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.323Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1830,6 +1892,23 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.364Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "major",
+        "evidence": "Same sentence as the rhetorical-pivot finding — its tail, 'linking standard q-series identities to the physical structure', is a quotable significance closer that nothing in the block derives. One fix discharges both criteria.",
+        "notes": "proposed (structural, not applied): as above — drop or migrate to authorNotes."
       }
     ],
     "trap-meta-commentary": [
@@ -1849,6 +1928,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.405Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1868,6 +1962,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.440Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "trap-performed-warmth": [
@@ -1887,6 +1996,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.475Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "trap-superlative": [
@@ -1906,6 +2030,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.511Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "trap-nonspeakable": [
@@ -1925,6 +2064,21 @@
         "reviewed_at": "2026-08-15T10:31:00.330Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d323617329d7",
+          "ts": "9891a18a24fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.568Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 44 lines). VERIFIED (not traps): 136.071/24.227 = 5.6165, matching the stated 5.616; u_0 = sqrt(q_0) = 1.0535552, matching 1.0536. Reported separately: the section heading '## canonical structural verification' is sweep damage (lowercase 'canonical' at heading start, substituted for 'Numerical'); the 'cannot be expressed as a closed-form rational function' claim is a scope-(b) structural exclusion resting on an unproven transcendence of Vol(4_1); and 'proton, n = 9' conflicts with the chapter's n = 3A convention (proton n = 3)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1948,5 +2102,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:22:02.568Z"
 }

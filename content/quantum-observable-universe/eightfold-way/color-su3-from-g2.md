@@ -130,7 +130,7 @@ a proved invariant rather than by a numerical near-miss, and unlike the two
 earlier failures it bears on the conjecture rather than on an argument
 for it.
 
-The escapes are worth naming precisely, since they are what remains.  A
+What remains are the escapes, named precisely.  A
 *hyperelliptic* genus-3 normalization is not excluded: its canonical map
 is $2$-to-$1$ onto a conic, so its automorphisms do not act through
 $\mathrm{PGL}_3$ in the manner above, and such curves admitting $S_4$ do
@@ -149,7 +149,7 @@ kind described cannot deliver a non-hyperelliptic genus-3 normalization, and
 the Klein quartic is non-hyperelliptic.  Rescuing the colour route therefore
 requires giving up one of the three premises explicitly --- a hyperelliptic
 target, a multi-node or separating pinch, or a non-faithful $S_4$ --- and
-saying which.  Repairing the *argument* is no longer enough.
+saying which.
 
 **$\mathrm{PSL}(2,7)$ representation theory.**
 Computationally verified (`psl27_irrep_verification.py`):

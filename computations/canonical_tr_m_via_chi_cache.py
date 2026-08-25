@@ -282,8 +282,40 @@ def main() -> int:
 
     print()
 
+    # PER-ANCHOR OUTPUT. This cache is read by 7 consumers, and they do not
+    # want the same pin: `cross_check_trM_1ppb` is declared `ideal_muon` and
+    # carries an explicit guard refusing a proton-pinned cache, while the
+    # producer itself and the other five readers are proton (declared or by
+    # default). One file cannot serve both -- writing the muon value into the
+    # single canonical name would break five readers to satisfy one, and
+    # leaving it proton-only leaves the muon reader unable to run at all.
+    #
+    # That is not hypothetical: the 2026-08-19 q0 migration re-pinned this
+    # cache to proton (`1fead8dd49`, `4326460a44`), and `cross_check_trM_1ppb`
+    # has been unable to run since -- its guard correctly refuses rather than
+    # mixing pins ("else peel/chi-cache color-weighting is mixed-pin", audit
+    # 2026-07-18-avg-color-delta-q0-pin-mismatch.md). Bean qou-wn6d.
+    #
+    # PROTON KEEPS THE CANONICAL NAME, so every existing consumer is untouched
+    # and no committed reference has to change; the muon run writes a suffixed
+    # companion. Same shape as `tr_m_wenzl_bridge_mpfr._Y_LAMBDA_BY_ANCHOR`.
+    #
+    # The anchor is DERIVED from the q0 actually in force, not read from the
+    # environment variable that set it -- a value cannot disagree with itself,
+    # whereas an env read can be out of step with what `q_parameter` bound at
+    # import.
+    _q = str(Q_50_DIGIT_STR)
+    if _q.startswith("1.10997859555"):
+        _witness_name = "canonical-tr-m-via-chi-cache-muon"
+    elif _q.startswith("1.10997858275"):
+        _witness_name = "canonical-tr-m-via-chi-cache"
+    else:
+        raise SystemExit(
+            f"q_0 = {_q[:24]}… is neither the muon nor the proton pin; "
+            "refusing to guess which cache name this run belongs under.")
+
     builder = WitnessBuilder.wrap_legacy(
-        "canonical-tr-m-via-chi-cache",
+        _witness_name,
         {
             "description": (
                 "Canonical |tr_M(β_atomic(Z, N))| at q_0 computed as "

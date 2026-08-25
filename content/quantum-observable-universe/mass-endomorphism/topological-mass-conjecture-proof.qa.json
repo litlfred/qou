@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.256Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.297Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Three numbered obligations.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.338Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Zero.",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 94 words)"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.378Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Three proof obligations, each naming a distinct thing to show (holonomy-trace identification, finiteness of the blow-up locus, dilogarithm evaluation).",
+        "notes": "Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.419Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Ends on the third obligation.",
+        "notes": "n/a"
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.461Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "'Show that ...' / 'Prove that ...' -- imperative obligation register, appropriate here.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.505Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No recapitulation.",
+        "notes": "FLAGGED: a block of kind 'proof' whose content is a to-do list is honest for a conjecture but sits oddly under a parent declared 'proposition'; see the parent's trap-superlative note."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.546Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.589Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "No maximum-strength claim; the block is entirely in the obligation mood.",
+        "notes": "n/a"
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1673,23 @@
         "reviewed_at": "2026-08-15T10:31:01.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "04768c199be3",
+          "ts": "5946b18a5069"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:18:34.631Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "Obligation 2 reads: 'Prove that the brane boundary partial-A has only finitely many exceptional divisors {D_i} contributing **non-by definition** to m(rho).' The phrase 'non-by definition' is not English and cannot be read aloud.",
+        "notes": "PROPOSED (not applied -- reported): 'contributing non-trivially to m(rho)'. This is a CONFIRMED instance of the 'non-by definition' garble that the audit brief names as a known sweep-damage class (a de-hedging pass rewrote 'trivially' -> 'by definition' inside the word 'non-trivially'). Worth a corpus-wide fixed-string grep for 'non-by definition' while the coordinating session is in here."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:18:34.631Z"
 }

@@ -878,7 +878,7 @@
           "ts": "f20be12c0acb"
         },
         "result": "pass",
-        "notes": "Every external figure traced to a locator rather than recalled: B_d=2.22, B_t=8.48, B_alpha=29.5 (26.9 on the alternative two-body input) and the Coulomb-corrected 29.0+/-0.1 from [platter2005tjon] p.5; B_4/B_3~5 verbatim from [hammer2007fourbody] Sect.III.B; the 4N-force scale from [jurgenson2009srg]. Corpus figures are computed, not asserted: AME 3.42 from uploads/mass_1.mas20.txt (sha256 recorded), mu_4=9.81 from the probe and cross-checked by Lean universal_ratio_forces_mu4.",
+        "notes": "Every external figure traced to a locator rather than recalled: B_d=2.22, B_t=8.48, B_alpha=29.5 (26.9 on the alternative two-body input) and the Coulomb-corrected 29.0+/-0.1 from [platter2005tjon] p.5; B_4/B_3~5 verbatim from [hammer2007fourbody] Sect.III.B; the 4N-force scale from [jurgenson2009srg]. Corpus figures are computed, not asserted: AME 3.42 from library/mass_1.mas20.txt (sha256 recorded), mu_4=9.81 from the probe and cross-checked by Lean universal_ratio_forces_mu4.",
         "reviewed_at": "2026-08-15T21:59:44.333499Z",
         "reviewed_sha": "d5a5891b80819aff529bbddd3bbb8df1dd6c32a8",
         "reviewer": {
@@ -1104,7 +1104,188 @@
           "version": "v1"
         }
       }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.615Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "severity": "minor",
+        "evidence": "Block-final argument opens 'There is a blunter way to see the same thing, and it should be stated because the name invites the opposite reading.' The 'it should be stated because' clause narrates why the author is including the argument rather than simply making it - the construction category 6 targets.",
+        "notes": "PROPOSED, NOT APPLIED (the because-clause carries the specific hazard being guarded against, so removing it is a meaning judgement rather than a register fix): 'There is a blunter way to see the same thing, and it should be stated because the name invites the opposite reading.' -> 'There is a blunter way to see the same thing, and the name invites exactly the opposite reading.' Borderline: unlike a bare 'we emphasize', this clause names a real misreading risk, which is the documented load-bearing-disambiguation carve-out; it fails only because the risk is narrated rather than stated."
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.658Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.696Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.734Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.773Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.811Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.851Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.890Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.929Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e141f915e6f4",
+          "ts": "f20be12c0acb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:09.968Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of rem:tjon-universality-external, judged on all ten categories; only the meta-commentary item fails and is recorded separately. VERIFIED EVERY NUMBER. mu4 = M(4) - 4M(3) + 6M(2) is the correct inverse binomial transform when M(0) = M(1) = 0. On mu4 = 0 the gap M(4) - 4M(3) is exactly -6*mu2, so M(4) < 4M(3) strictly for mu2 > 0 and the universal ratio 5 is unreachable. Feeding M(4) = 5M(3) gives mu4 = 9*mu2 + mu3 (checked symbolically). With the probe's normalisation M(2) = 1 and r3 = 3.8128, that is 9.8128 -> 9.81 as stated, and mu4(nature) = 13.0316 - 6 - 4(0.8128) = 3.7804, so the ratio is 2.596 -> 2.6 as stated. Lean QOU.MassTheory.TjonSimplexForm carries all three named theorems.",
+        "notes": "Cat.1/2 all pass as substantive: 'is not', 'small, not absent' and 'a constraint on citation, not a new result' ARE the block's content - the whole section exists to separate two claims. Cat.3: 9 spaced dashes in 945 words is in line with this appendix's own register (step10 runs 6 in 304). ALSO VERIFIED, and I retract a doubt I raised while reading: the 'factor of 5' attributed to hammer2007fourbody is the source's own wording - library/arxiv-nucl-th-0610105v2 sec-006 reads 'the binding energies of the ground and excited four-body states are related to the deepest three-body state by factors of 5 and 1.01' - so my recollection of 4.6 was wrong and the citation is faithful. NOT A TRAP, reported separately: two spurious inline-code spans (TeX-style double-backtick quotes), one swallowing three lines including the inline math $M(4)$. Also the M(2) = 1 normalisation behind 9.81 is never stated in the .md."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:59:44.333499Z"
+  "updated_at": "2026-08-22T04:26:09.968Z"
 }

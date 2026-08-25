@@ -1164,6 +1164,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not assumed:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "The proof closes on an assert-by-denial: \"The trace is *forced*, not assumed: every step is dictated by the QOU substrate axioms plus the Chlouveraki HDR uniqueness theorem.\" Steps 1-4 have already established uniqueness; the sentence adds emphasis, not content, and italicises the denial.",
+        "notes": "proposed: state the positive claim, e.g. \"Every step is dictated by the QOU substrate axioms together with the Chlouveraki HDR uniqueness theorem.\" (structural rather than mechanical because the sentence sits immediately before the QED box and the author may intend it as the scope line)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1183,6 +1200,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-em-dash": [
@@ -1202,6 +1234,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 270 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-triples": [
@@ -1221,6 +1268,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 270 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1240,6 +1302,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-meta-commentary": [
@@ -1259,6 +1336,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1278,6 +1370,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-performed-warmth": [
@@ -1297,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-superlative": [
@@ -1316,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "trap-nonspeakable": [
@@ -1335,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:31:00.757Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1ed95720d827",
+          "ts": "ce64e5870b85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.752Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (4 steps + hypothesis-satisfaction table)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1357,5 +1509,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.752Z"
 }

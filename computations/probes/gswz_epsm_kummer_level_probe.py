@@ -67,6 +67,7 @@ computation of the CGZ map on this class.
 """
 
 import json
+import pathlib
 import math
 import sys
 
@@ -412,8 +413,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf); GSWZ "
-        "arXiv:2412.04241v2 eqn (275) (uploads/2412.04241v2.pdf); "
+        "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ "
+        "arXiv:2412.04241v2 eqn (275) (library/arxiv-2412.04241v2/2412.04241v2.pdf); "
         "base place: gswz_epsm_5adic_cyclic_qdilog_probe.py (this branch)"
     ),
     "fields": detail,
@@ -427,7 +428,7 @@ witness = {
         "eps_m(xi) data for the harness"
     ),
 }
-with open("computations/probes/gswz_epsm_kummer_level.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_epsm_kummer_level.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

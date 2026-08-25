@@ -25,7 +25,7 @@ the `canonical_mass` facade — so the production leading term now tracks CODATA
 to ppb and the residual below is the q-CLT approximation itself.
 
 Until 2026-08-08 they were **+2.89 % high** (m_p 965.38, m_n 966.71): that
-table's nucleon rows were read from the deprecated `m_e · vol_density_borromean`
+table's nucleon rows were read from the deprecated `m_e · per_knot_density_borromean`
 form via `canonical_mass_table_extended`, which the 2026-06-24 ruling had
 removed for absolute mass. Fixed under bean `qou-7loj`.
 
@@ -96,6 +96,7 @@ import mpmath as mp  # noqa: E402
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from _li_2_q_util import spectral_correction_borromean  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 SOURCE_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
@@ -105,7 +106,7 @@ SOURCE_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 BOND_WITNESS = _pb.witness_path(
     "binding-single-pipeline-comparison.witness.json", HERE)
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def _q0():

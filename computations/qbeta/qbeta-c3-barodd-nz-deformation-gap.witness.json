@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-15T15:52:28.788294+00:00",
-  "commitSha": "4f1cea622359983a10951aa2f1a145ea45d9944e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:44:54.598799+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "vol_4_1_eq_2_lambda_pi3",
-      "computed": 0.0,
+      "computed": 3.622271631530685e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -14,7 +14,7 @@
     },
     {
       "name": "cs_4_1_complete_zero",
-      "computed": 0.0,
+      "computed": 9.055679078826712e-72,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-30,
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 12,
   "computation": "qbeta-c3-barodd-nz-deformation-gap",
   "scriptFile": "qbeta_c3_barodd_nz_deformation_probe.py",
-  "scriptHash": "e8561b756878",
-  "scriptCommitSha": "0be9e06bde6fbdad4841480a0f61da6c202441af",
+  "scriptHash": "77957136ea9b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,8 +43,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_barodd_nz_deformation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_barodd_nz_deformation_probe.py"
   },
   "description": "Sharpens the z(q₀) gap for the c₃ bar-ODD S via the Neumann–Zagier complex-volume deformation of 4₁. Computes Vol(4₁)=2·Cl₂(π/3), notes CS(4₁)=0 (amphichiral ⇒ S is a deformation phase, not the knot's own CS), and shows a SMOOTH real-scaling deformation u(q₀) cannot produce the measured S(proton)/S(muon)=−4.08 (anchors differ at ~1e-8) — so u(q₀) is a phase-channel / root-of-unity-accumulation quantity, the open z→c_k evaluation map. Scope-(a); C14 anti-fitting; no c_k wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -55,7 +66,7 @@
       "role": "bar-EVEN part = −Vol(4₁), SOLVED"
     },
     "cs_4_1_complete": {
-      "value": "0.0",
+      "value": "-9.0556791e-72",
       "is_zero": true,
       "note": "amphichiral ⇒ S is a deformation phase"
     },

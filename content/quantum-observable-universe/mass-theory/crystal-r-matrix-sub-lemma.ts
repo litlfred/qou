@@ -26,8 +26,7 @@ import { proposition } from "../../schema/builders";
 export default proposition({
   label: "prop:crystal-r-matrix-sub-lemma",
   title:
-    "Crystal R-matrix Sub-lemma 2.1 (operator-valued): " +
-    "$\\mathrm{pole}(A^\\lambda_{\\mu\\nu}(\\sigma_i), T) = \\mathbf{1}[\\rho_T(i) \\le -1]$",
+    "Crystal R-matrix Sub-lemma 2.1 (operator-valued)",
   uses: [
     "conj:crystal-graph-realization",
     "prop:alpha-shift-torus-knot",

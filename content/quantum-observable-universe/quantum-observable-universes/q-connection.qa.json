@@ -1264,6 +1264,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:04.811Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1283,6 +1299,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:04.855Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-em-dash": [
@@ -1302,6 +1334,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 29 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:04.900Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-triples": [
@@ -1321,6 +1369,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 29 words)"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:04.946Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-closing-aphorism": [
@@ -1340,6 +1404,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:04.990Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-meta-commentary": [
@@ -1359,6 +1439,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.040Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-thesis-restatement": [
@@ -1378,6 +1474,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.086Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-performed-warmth": [
@@ -1397,6 +1509,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.132Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-superlative": [
@@ -1416,6 +1544,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.179Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "trap-nonspeakable": [
@@ -1435,6 +1579,22 @@
         "reviewed_at": "2026-08-15T10:30:59.861Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "87f06032e082",
+          "ts": "a6cddf9b812a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.221Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: 3-sentence example. Both limits verified against the displayed A_q = q^{-1} A + (1-q^{-1}) iota_xi A Theta: at q = 1 the coefficients are (1, 0) so A_q = A, and as q -> infinity they are (0, 1) so A_q = iota_xi A Theta -- both as stated. The formula also matches the uniform pattern q^{-1}(classical) + (1-q^{-1})(Reeb correction) that sec:q-deformed-operators-intro announces and that d_q and delta_q follow. No trap construction of any of the ten kinds.",
+        "notes": "No trap."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1458,5 +1618,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:45:05.221Z"
 }

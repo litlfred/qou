@@ -18,7 +18,7 @@ It drove a staged work plan. Every *number* in it is right. The **reading** is n
 
 ## What RSZ actually says
 
-Read from `uploads/0903.0853v3.pdf` (no `pdftotext` in this sandbox; text pulled
+Read from `library/arxiv-0903.0853v3/0903.0853v3.pdf` (no `pdftotext` in this sandbox; text pulled
 directly from the FlateDecode streams).
 
 **1. §3.3 is restricted to integral slopes — by its title.**

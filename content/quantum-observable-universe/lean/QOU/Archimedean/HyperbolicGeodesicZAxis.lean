@@ -58,10 +58,10 @@ noncomputable def heightProfile (a b t : ℝ) : ℝ := Real.exp (logInterp a b t
 
 theorem heightProfile_pos (a b t : ℝ) : 0 < heightProfile a b t := Real.exp_pos _
 
-@[simp] theorem heightProfile_zero {a : ℝ} (ha : 0 < a) : heightProfile a b 0 = a := by
+@[simp] theorem heightProfile_zero {a b : ℝ} (ha : 0 < a) : heightProfile a b 0 = a := by
   simp only [heightProfile, logInterp, zero_mul, add_zero]; exact Real.exp_log ha
 
-@[simp] theorem heightProfile_one {b : ℝ} (hb : 0 < b) : heightProfile a b 1 = b := by
+@[simp] theorem heightProfile_one {a b : ℝ} (hb : 0 < b) : heightProfile a b 1 = b := by
   simp only [heightProfile, logInterp, one_mul]
   rw [add_sub_cancel]; exact Real.exp_log hb
 
@@ -86,10 +86,10 @@ theorem hasDerivAt_heightProfile (a b t : ℝ) :
 `(0,0,b)`. -/
 noncomputable def vseg (a b t : ℝ) : E := EuclideanSpace.single 2 (heightProfile a b t)
 
-@[simp] theorem vseg_zero {a : ℝ} (ha : 0 < a) : vseg a b 0 = zpt a := by
+@[simp] theorem vseg_zero {a b : ℝ} (ha : 0 < a) : vseg a b 0 = zpt a := by
   simp [vseg, zpt, heightProfile_zero ha]
 
-@[simp] theorem vseg_one {b : ℝ} (hb : 0 < b) : vseg a b 1 = zpt b := by
+@[simp] theorem vseg_one {a b : ℝ} (hb : 0 < b) : vseg a b 1 = zpt b := by
   simp [vseg, zpt, heightProfile_one hb]
 
 @[simp] theorem vseg_height (a b t : ℝ) : (vseg a b t) 2 = heightProfile a b t := by
@@ -155,6 +155,31 @@ theorem dH_zpt_le {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
   have hle := dH_le_pathLenH (admissiblePath_vseg ha hb)
   rw [pathLenH_vseg] at hle
   rwa [Real.log_div (ne_of_gt hb) (ne_of_gt ha)]
+
+/-- **WALL-3 (lower bound).** Every admissible path between two z-axis points has
+hyperbolic length at least `|log(b/a)|`, so the distance is bounded below by it.
+DERIVED by specialising the unconditional vertical log-drop bound
+`dH_ge_logHeight` to the z-axis points, whose heights are exactly `a` and `b`. -/
+theorem dH_zpt_ge {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    ENNReal.ofReal |Real.log (b / a)| ≤ dH (zpt a) (zpt b) := by
+  have h := dH_ge_logHeight (zpt a) (zpt b)
+  rw [zpt_height, zpt_height] at h
+  rwa [Real.log_div (ne_of_gt hb) (ne_of_gt ha)]
+
+/-- **WALL-3 (exact z-axis distance).** `dH (0,0,a) (0,0,b) = |log(b/a)|`, from the
+upper bound (`dH_zpt_le`, the vertical segment realises it) and the lower bound
+(`dH_zpt_ge`, the FTC vertical log-drop).  The 1-D core of geodesic uniqueness:
+the vertical segment is a genuine length-minimiser between z-axis points. -/
+theorem dH_zpt {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    dH (zpt a) (zpt b) = ENNReal.ofReal |Real.log (b / a)| :=
+  le_antisymm (dH_zpt_le ha hb) (dH_zpt_ge ha hb)
+
+/-- **The vertical segment is a length-minimiser** between two z-axis points: its
+hyperbolic length equals `dH (zpt a) (zpt b)`.  (Existence of a minimiser on the
+z-axis, DERIVED — the length equality is `pathLenH_vseg` matched to `dH_zpt`.) -/
+theorem pathLenH_vseg_eq_dH {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
+    pathLenH (vseg a b) 0 1 = dH (zpt a) (zpt b) := by
+  rw [pathLenH_vseg, dH_zpt ha hb, Real.log_div (ne_of_gt hb) (ne_of_gt ha)]
 
 /-! ### WALL-2 (partial) — one-point normalization to the z-axis
 

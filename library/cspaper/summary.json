@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "cspaper",
+ "source_sha256": "1910c380cf79bf42",
+ "brief": "Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds — 18 sections: Introduction; Q2n:; Denote Sol0 = fc 2 Z2n : U c = dg",
+ "extended": "**Combinatorics of triangulations and the Chern-Simons invariant for hyperbolic 3-manifolds**\n\n29 pp, 18 sections.\n\n**Outline.** 1 Introduction; 2 Q2n:; 2 Denote Sol0 = fc 2 Z2n : U c = dg and Sol = ; 3 Our formula has been implemented in Jeff Wee; 4 Note that R(z) is a multivalued function of ; 5 We believe there should be a topological int; 2 Consistency and cusp conditions, and the con; 0 In; 3 The formula for the Chern-Simons invariant; 2 Re; 2 Im; 2 (c0; 4 Combinatorics of 3-cycles; 5 Cohomological computation of H3(J); 2 The desired element \u0014(a) 2 H2(J) = H1(K) is ; 6 Proof of Theorem 2.4; 10 The J\u0001 of \u0010 has coefﬁcient sum 0 for each 3; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: Given any solution c 2 C2n to ( \u0003 ), there exists a constant\n- Theorem 2: There exist solutions c to ( \u0003 ) in Z2n satisfying the parity condition. For\n- Theorem 2: it should be associated with some kind of extra structure on M . Remark 4\n- Theorem 2.4: (i) There exists c 2 Z2n satisfying the above conditions C1, C2, and C3.\n- Theorem 4.2: The homology groups Hi(J) are\n- Theorem 5.1: The following diagram is a pullback diagram:",
+ "tokens": {
+  "brief": 39,
+  "extended": 288
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-q2n",
+   "title": "Q2n:",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-2-denote-sol0-fc-2-z2n-u-c-dg-and-sol-fc-2-sol0",
+   "title": "Denote Sol0 = fc 2 Z2n : U c = dg and Sol = fc 2 Sol0 : c satisﬁes",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-003-3-our-formula-has-been-implemented-in-jeff-weeks",
+   "title": "Our formula has been implemented in Jeff Weeks’program “snap pea” by R. Mey-",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-004-4-note-that-rz-is-a-multivalued-function-of-z-it",
+   "title": "Note that R(z) is a multivalued function of z. It has singularities at 0 and",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-005-5-we-believe-there-should-be-a-topological-inter",
+   "title": "We believe there should be a topological interpretation of an integer vector c as in",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-006-2-consistency-and-cusp-conditions-and-the-condit",
+   "title": "Consistency and cusp conditions, and the conditions on c",
+   "pages": "4-7"
+  },
+  {
+   "id": "sec-007-0-in",
+   "title": "In",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-3-the-formula-for-the-chern-simons-invariant",
+   "title": "The formula for the Chern-Simons invariant",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-009-2-re",
+   "title": "Re",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-010-2-im",
+   "title": "Im",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-011-2-c0",
+   "title": "(c0",
+   "pages": "12-15"
+  },
+  {
+   "id": "sec-012-4-combinatorics-of-3-cycles",
+   "title": "Combinatorics of 3-cycles",
+   "pages": "15-22"
+  },
+  {
+   "id": "sec-013-5-cohomological-computation-of-h3j",
+   "title": "Cohomological computation of H3(J)",
+   "pages": "22-25"
+  },
+  {
+   "id": "sec-014-2-the-desired-element-a-2-h2j-h1k-is-represented",
+   "title": "The desired element \u0014(a) 2 H2(J) = H1(K) is represented by (1=2)",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-015-6-proof-of-theorem-24",
+   "title": "Proof of Theorem 2.4",
+   "pages": "27-29"
+  },
+  {
+   "id": "sec-016-10-the-j-of-has-coefﬁcient-sum-0-for-each-3-simp",
+   "title": "The J\u0001 of \u0010 has coefﬁcient sum 0 for each 3-simplex \u0001,",
+   "pages": "29-29"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "29-29"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,46 @@
+---
+doc_id: candetgl
+doc_title: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics"
+section_id: sec-002-8-fuller9-bauer-crick-and
+section_title: "Fuller,9 Bauer, Crick, and"
+section_number: 8
+pages: 4-5
+source_pdf: candetgl.pdf
+source_sha256: d788af715428b8b2
+doc_brief: "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and"
+---
+White,10 Wang,11 Sumners,12–14 and Cantarella, Kusner, and Sullivan. 15
+For an overview of the connection between knot theory and electrodynamics, see
+Lomonaco.16
+Woltjer’s formula for the helicity of a vector ﬁeld arose from his interest in force-free mag-
+netic ﬁelds. These are magnetic ﬁelds which are everywhere parallel to the current ﬂows which
+give rise to them, so that the Lorentz force on the ﬂowing charged particles is zero. Because the
+gross magnetic ﬁeld in the Crab Nebula appeared to be steady over a number of years, Woltjer
+believed it to be force-free, and studied
+17 it in great detail. Two early papers on force-free mag-
+netic ﬁelds are Lundquist 18 and Chandrasekhar–Kendall. 19 Two more recent papers are Laurence
+and Avellaneda20 and Tsuji.21 Marsh’s book22 has an extensive and up-to-date bibliography on this
+subject.
+For a study of the connection between writhing and helicity, see Berger and Field 23 and
+Moffatt and Ricca. 24,25
+For the connection between helicity and the ordinary and asymptotic Hopf invariants, see
+Whitehead26 and Arnold.27
+For an introduction to the spectral theory of the Biot–Savart operator and its use in determin-
+ing upper bounds for writhing and helicity, see Ref. 28. For explicit computation of extreme
+eigenﬁelds, see Refs. 29 and 30. For an analysis of isoperimetric problems connected with the
+Biot–Savart operator, see Ref. 31. For application to the qualitative study of stable plasma ﬂows,
+see Cantarella.
+32 For an overview of our work, see our survey paper. 33
+For further information on related spectral problems for the curl operator, see Yoshida and
+Giga.34
+878 J. Math. Phys., Vol. 42, No. 2, February 2001 Cantarella, DeTurck, and Gluck
+ This article is copyrighted as indicated in the article. Reuse of AIP content is subject to the terms at: http://scitation.aip.org/termsconditions. Downloaded to  IP:
+129.215.149.98 On: Sat, 10 May 2014 06:24:42
+For the connection between this spectral theory and plasma physics, see Yoshida. 35
+For a study of magnetic ﬁeld generation in electrically conducting ﬂuids, see the book by
+Moffatt.36
+For connections with dynamo theory, see the survey article by Childress. 37
+For many papers on the connections with the dynamics of ﬂuids and plasmas, see the books
+by Moffatt and Tsinober 38 and by Moffatt, Zaslavsky, Comte, and Tabor. 39
+For the connections between force-free ﬁelds, contact topology and ﬂuid dynamics, see Etnyre
+and Ghrist.40

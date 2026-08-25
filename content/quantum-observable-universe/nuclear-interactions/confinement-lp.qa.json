@@ -1768,6 +1768,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not on the full NF span.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.274Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "'posed on the quotient, not on the full NF span' is the substantive convention-D distinction the sentence exists to make."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1787,6 +1804,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.318Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1806,6 +1840,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 387 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.363Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1825,6 +1876,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 387 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.406Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1844,6 +1912,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.447Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1863,6 +1948,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.490Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1882,6 +1984,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.535Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1901,6 +2020,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.581Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1920,6 +2056,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.624Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "'providing a rigorous proof of uniqueness' in the opening sentence is an unqualified maximum-strength claim that the block itself refutes four sections later ('The Borromean solution B_3 is a local minimum', global minimum at tr_M = 0), and no uniqueness argument appears anywhere in the block. NOT applied - correcting it requires deciding what the LP actually establishes. Proposed: 'providing an LP-duality characterisation of the selected operator', with the uniqueness claim dropped or scoped to the active-set vertex."
       }
     ],
     "trap-nonspeakable": [
@@ -1939,6 +2092,23 @@
         "reviewed_at": "2026-08-15T10:31:01.399Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aef87cf722e0",
+          "ts": "c7919bd9ed8d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:35.666Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Full-context read of prop:confinement-lp (primal, dual, B_3 vertex, caveat, quadratic extension). Verified the LP duality by hand: for min c^T x s.t. 1^T x = n, Gx >= 0 the dual is max n*y_0 s.t. y_0 + (G^T y)_j <= t_j, y >= 0 - exactly the displayed dual (the boundedness constraint x >= -M contributes no dual term as written, a minor omission). The signature (5,0,1) for the star pairing is consistent with the one-dimensional radical I verified independently for H_3 under convention D. TWO SELF-CONTRADICTIONS reported: (i) the Caveat section still says 'the Gram matrix acquires a negative eigenvalue' while the Quadratic-extension section, updated 2026-08-09, withdraws exactly that indefinite reading and states the form is positive SEMIdefinite, (5,0,1); (ii) the opening claims the LP recasting provides 'a rigorous proof of uniqueness', which the Caveat then denies by making B_3 only a local minimum with the global minimum elsewhere at tr_M = 0.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1962,5 +2132,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:07:35.666Z"
 }

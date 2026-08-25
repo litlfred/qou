@@ -1413,6 +1413,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.586Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1447,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.652Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 32 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.710Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-triples": [
@@ -1470,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 32 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.753Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1549,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.798Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1583,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.846Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1617,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.898Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1651,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:14.955Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1685,21 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:15.010Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a three-sentence remark. No negation-contrast, no pivot, no spaced em-dash, no three-item list, no aphoristic closer (the final sentence is a substantive observational claim, not a flourish), no narrated emphasis, no restatement, no warm register, no superlative."
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1719,23 @@
         "reviewed_at": "2026-08-15T10:31:01.156Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3f7206e9dce0",
+          "ts": "14257507ece3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:15.058Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Two of the three sentences are noun piles. 'Observers misidentify the structurally required higher-order topological poles as massive dead star metallicities.' stacks four pre-modifiers on the object ('structurally required higher-order topological') and then a three-noun compound on the complement ('massive dead star metallicities', where 'dead star' is itself an unhyphenated compound modifier). 'A coherent conformal shift occurs.' is a bare nominalisation with no agent, sandwiched between two long sentences. The block does not survive being read aloud.",
+        "notes": "Structural (three sentences, and the second half of the long sentence is a physics claim), not edited. Proposed fix: 'Emitted photons cross the domain interface into the relaxed $q_{baseline}$ intergalactic medium, where they undergo a coherent conformal shift. An observer who does not model that shift reads the resulting higher-order topological poles as metallicity lines from massive dead stars.' Separate item reported to the batch: this remark asserts an observational misidentification (a JWST-tagged empirical claim) with no citation, no witness and no quantitative shift, which is a strong claim for a remark to carry."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1758,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:44:15.058Z"
 }

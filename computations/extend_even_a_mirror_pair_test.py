@@ -45,7 +45,8 @@ from _precision import set_compute_dps  # noqa: E402
 
 set_compute_dps()  # idempotent; before any mpf is built from a decimal string
 from witness_base import WitnessBuilder  # noqa: E402
-from habiro_coefficients_atomic import load_a_m as _load_a_m  # noqa: E402 — shared loader; refuses a self-failed witness (qou-s41x)
+from habiro_coefficients_atomic import load_a_m as _load_a_m  # noqa: E402
+from habiro_coefficients_atomic import mirror_trace_diff_numerator as _mirror_trace_diff  # noqa: E402 — shared loader; refuses a self-failed witness (qou-s41x)
 
 
 EVEN_A_OPEN = [
@@ -161,10 +162,15 @@ def main() -> int:
             ay = load_a_m(Y_slug)
             M_max = min(max(ax), max(ay))
             print(f"\n--- {X_lab} − {Y_lab} (A={A})  M_max={M_max} ---")
-            total = sp.Integer(0)
-            for m in range(M_max + 1):
-                delta = ax.get(m, sp.Integer(0)) - ay.get(m, sp.Integer(0))
-                total += delta * q_poch(m)
+            # Difference the TRACES, not the a_m. Subtracting coefficients
+            # builds d_X·t_X − d_Y·t_Y, which is proportional to t_X − t_Y only
+            # where the denominators agree. Measured: under convention C they
+            # agreed at q=1 on every canonical pair (so the old form was
+            # accidentally right and the published C numbers stand); under D
+            # they differ by a factor of 4 and every multiplicity collapses to
+            # 0. Proved in QOU/Habiro/MirrorPairNormalisation.lean
+            # (coeffDiff_at_coincidence, sorry-free). Bean qou-0ndb.
+            total = _mirror_trace_diff(X_slug, Y_slug, u, witness_dir=HERE)
             print(f"  total degree: {sp.degree(total, u)}")
             mult_8 = cyc_mult(total, cyc_8)
             mult_1 = cyc_mult(total, cyc_1)

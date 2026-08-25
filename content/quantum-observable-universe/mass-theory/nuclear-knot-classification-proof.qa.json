@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.212Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.283Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Case A = 3, case A >= 4, then the scale argument; each paragraph opens on its own claim."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.346Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One em-dash, appositive ('small Hopf corrections — the signature of the Borromean link'). Density 1 across five paragraphs."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 160 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.414Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'(pp, nn, pn)' is the complete set of unordered nucleon-pair types, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,23 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.478Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final line before the QED box — 'So A = 3 nuclei bind at the scale set by the substrate itself.' — has the cadence of a composed closer ('the substrate itself'), but it states the proof's actual conclusion about the A = 3 scale, so it is not placed merely to end well.",
+        "notes": "No fix applied. If tightened: 'So A = 3 nuclei bind at the substrate scale.' removes the flourish without touching content."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.534Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis. 'the SAME volume' places emphasis typographically rather than announcing it, which is the permitted side of the rule; all-caps is nonetheless off-register for the corpus and reads as shouting."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.590Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closing sentence draws a consequence (binding scale = substrate scale) rather than restating the classification claim."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.638Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.712Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'verified by comparing eigenvalue structure' and 'confirmed by the Frobenius positivity' are appeals to specific checks, not inflation — though see the note: the first of those verifications is against the wrong braid."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,37 @@
         "reviewed_at": "2026-08-15T10:31:00.446Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:26.770Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short sentences; speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "6d4417fa2707",
+          "ts": "03b5f30cd055"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:41:51.499Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short sentences; speakable throughout. (Re-recorded to carry the rigor note found on the same read.)",
+        "notes": "RIGOR (reported, not fixed — MAJOR, mathematical). THE BRAID WORD GIVEN FOR THE FIGURE-EIGHT CLOSES TO THE UNKNOT. The proof writes 'the figure-eight knot 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, verified by comparing eigenvalue structure'. That word is the commutator [sigma_0, sigma_1^{-1}]. Settled exactly with content/pipeline/braid-alexander.ts on 3 strands: Alexander(sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1) = 1, i.e. 'matches: unknot'; whereas Alexander(sigma_0 sigma_1^{-1} sigma_0 sigma_1^{-1}) = t^2 - 3t + 1, i.e. 'matches: 4_1'. The closure has one component either way, so a component-count check passes it — only the Alexander polynomial separates them. Correct word (0-indexed, as this block indexes): sigma_0 sigma_1^{-1} sigma_0 sigma_1^{-1} = (sigma_0 sigma_1^{-1})^2; 1-indexed: (sigma_1 sigma_2^{-1})^2. This is a SECOND LIVE SITE of a defect already adjudicated on the sibling block figure-eight-branching-rule.md (see its .qa.json, which additionally shows the tabulated chi_{[2,1]} there matches the commutator, not 4_1) and which is the case named in braid-alexander.ts's own module docstring; the sibling was flagged, this block was not. Everything downstream in this proof that reads 'A = 3 nuclei are figure-eight' inherits it, including the closing identification of Vol(4_1) = 2.030 with the binding scale. VERIFIED CORRECT in the same block: Vol(4_1) = 2*Cl_2(pi/3) = 2.02988321 -> '2.030'; and hbar_q^2 = Vol(4_1)/(m_mu/m_e) is the CAL-2 identity — 2.02988321/206.7682827 = 0.0098171885, against hbar_mu^2 = (1 - 1/1.10997859555733471)^2 = 0.0098171885 (exact to 9 digits at the muon pin; 2.1e-7 relative off the proton pin, i.e. the mu-p tension, so the identity is stated on the ideal CAL-2 layer, correctly)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1719,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:41:51.499Z"
 }

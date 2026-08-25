@@ -4,8 +4,8 @@
 uploads from the SM batch (`5d1385d1`), each targeted at the
 appendix-standard-model gap ledger. Reads performed by four parallel
 agents (pypdf extraction); per-paper section references below are to
-the PDFs in `uploads/`. Registry:
-[`uploads/sm-uploads-intake.json`](../../uploads/sm-uploads-intake.json).
+the PDFs in `library/`. Registry:
+[`library/sm-uploads-intake.json`](../../library/sm-uploads-intake.json).
 Prior round: `docs/audits/2026-07-31-sm-lit-analysis-bean-workplan.md`.
 
 ## 1. Bilson-Thompson–Markopoulou–Smolin, `0603022v2` [bilsonthompson2007]

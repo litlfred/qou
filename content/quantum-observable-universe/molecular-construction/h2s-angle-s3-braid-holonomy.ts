@@ -9,7 +9,49 @@ export default conjecture({
   },
   computation: {
     engine: "python",
-    status: "verified",
+    status: "failed",
+    // STAYS "failed" — correct terminal state, like binding-qbeta-complex-volume
+    // and for a related reason. Two of the three cited witnesses are green; the
+    // third is red and should be.
+    //
+    // The red assertion offered a bracket as the parity evidence:
+    // h·z³ (1.49°) < 2.1° < h·z² (2.99°). Those two numbers are CONVENTION C.
+    // The producer has computed z in convention D since the 2026-08-09
+    // excision, where the same expressions are 2.755° and 4.496° — and the
+    // observed 2.1° is BELOW the whole window, not inside it. Measured:
+    //
+    //     C (excised):    1.491° < 2.1° < 2.986°   bracketed
+    //     D (canonical):  2.755° < 2.1° < 4.496°   NOT bracketed
+    //
+    // Two separate defects, and only one is about arithmetic:
+    //
+    // 1. THE PREMISE FAILS UNDER D, which is the serious one. "h·z^k is odd in
+    //    h" is a bar-PARITY statement, so it needs z bar-even — otherwise z
+    //    contributes its own parity and the product has none. Exactly:
+    //    z_C(1/q)/z_C(q) = 1 (bar-even), z_D(1/q)/z_D(q) = q⁻⁴ (not). Under the
+    //    canonical convention h·z^k has no clean bar-parity at all, so the
+    //    classification the identification rests on is UNAVAILABLE rather than
+    //    merely unfavourable. The producer's own comment called z "the
+    //    bar-symmetric Markov param" — a convention-C fact left attached to a
+    //    convention-D value.
+    //
+    // 2. THE BRACKET WAS WEAK EVIDENCE EVEN UNDER C. [h·z³, h·z²] spans 1.495°
+    //    about a 2.1° target — 71% of the value. Any residual in [1.49°, 2.99°]
+    //    passes it. Per AGENTS.md §"Defined residual ≠ derived decomposition"
+    //    item 2, a window that wide gets reported with its width, not presented
+    //    as confirmation; "right parity, right scale" does no work if nearly
+    //    any scale would have fit. The witness now records both widths.
+    //
+    // SCOPE. (b) structural, invariant cited: the bar-parity argument for h·z^k
+    // does not exist under D, because z_D is exactly not bar-even. (a) scope-
+    // limited: this bracket does not contain 2.1° under D. NEITHER excludes the
+    // +2.1° being chiral by some other route, and neither touches the H₂O-clean
+    // / H₂S-residual dichotomy itself, which is a structural reading. What is
+    // retracted is the quantitative argument offered for it.
+    //
+    // Noted, not fixed: the producer binds via set_content_block to
+    // prop:symmetric-block-domain-weight, a different block from the one citing
+    // it here.,
     script:
       "computations/h2s_chirality_residue_s3_holonomy.py",
     witness: [

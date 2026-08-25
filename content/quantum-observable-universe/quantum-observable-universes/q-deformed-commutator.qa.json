@@ -1564,6 +1564,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.271Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1583,6 +1599,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.320Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-em-dash": [
@@ -1602,6 +1634,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.368Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-triples": [
@@ -1621,6 +1669,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.421Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-closing-aphorism": [
@@ -1640,6 +1704,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.467Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-meta-commentary": [
@@ -1659,6 +1739,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.512Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-thesis-restatement": [
@@ -1678,6 +1774,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.556Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-performed-warmth": [
@@ -1697,6 +1809,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.598Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-superlative": [
@@ -1716,6 +1844,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.643Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "trap-nonspeakable": [
@@ -1735,6 +1879,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7862ba458d9f",
+          "ts": "d0f43388000c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:45:05.689Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read: definition block. Content cross-checked: [X, P]_q := J hbar_q(p) with hbar_q = 1 - q(p)^{-1} matches prop:heisenberg-commutator-prop and rem:heisenberg-commutator in the same chapter, including both limiting values (0 at q -> 1, J at q -> infinity). Defined term is bolded at its canonical site. Register: no negation-contrast, no pivot, no dash, no triple, no closer, no announced emphasis, no superlative.",
+        "notes": "No trap. Two minor notes, neither fixed: q is introduced as an element of End(1) but then written q(p), a function on M; and the Lean sibling types J as a bare ring element, so the J^2 = -Id constraint stated in this .md is not carried."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1758,5 +1918,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:45:05.689Z"
 }

@@ -1,7 +1,7 @@
 The previous chapter established the knot-particle dictionary: each
 observable particle corresponds to a specific braid configuration in the
 Iwahori--Hecke algebra $H_n(q)$, and the confinement hierarchy organises
-these configurations into shells.  The question this chapter settles is:
+these configurations into shells.  The question this chapter takes up is:
 *why do these particles fall into octets and decuplets?*
 
 The candidate answer lies in the representation theory of three-strand

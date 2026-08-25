@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.296Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.336Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.375Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.417Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.455Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.494Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1437,23 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.534Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "severity": "minor",
+        "evidence": "Closing paragraph: 'The joint-action conjecture is verified at the figure-8 row.' restates the block's own opening ('The verification works because ...') and the parent proposition's first sentence.",
+        "notes": "STRUCTURAL, not fixed inline: the sentence sits with the over-claim in the entry above and the pair should be rewritten together. Proposed: keep only the scoped second sentence, corrected."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.575Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1507,23 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.614Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "severity": "minor",
+        "evidence": "Closing line: 'The figure-8 row of the bi-filtration carries the FULL graded-Mikusinski structure as a THEOREM.'",
+        "notes": "Two strength claims at once. The .ts records validation 'not_checked', and the Lean sibling's operator-level residual kappa_commutes_bar is an open sorry (and, as stated, refutable - see the proof block's entry), so 'as a theorem' is not supported. Proposed: 'is verified for the self-conjugate cell, modulo the operator-level bar-invariance of the Hoefsmit coupling'. Second item, reported not resolved: 'By extension, any self-conjugate cell with a polylog argument in F^x has commuting bar x braid action' is a general claim asserted with no argument; and this block's 'Remaining (open): chiral-pair cases' contradicts the sibling rem:joint-galois-braid-discharged-interpretation's 'The joint-action conjecture is now fully discharged'. One of the two is stale."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1543,21 @@
         "reviewed_at": "2026-08-15T10:30:59.563Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f2bec9cc3696",
+          "ts": "f4dfdacde1a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:36:31.655Z",
+        "reviewed_sha": "81f84c1d7fa6ae89dc1ae145a0be97469b140801",
+        "evidence": "Full read (136 words, 1 em-dash used as an appositive in the Verified line). No warmth, no pivot, no meta-narration. The block is unusually well-scoped in one respect - it names the case it verified as 'the easiest case' and lists the chiral-pair cases as remaining open."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1580,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:36:31.655Z"
 }

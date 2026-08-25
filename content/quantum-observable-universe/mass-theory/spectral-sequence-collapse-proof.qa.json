@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.226Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'Not claimed: that this block's conclusion is false - only that the step it rests on is unestablished' in the 2026-08-16 Gap note.",
+        "notes": "False-positive class: scope/temporal status statement, not manufactured emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.266Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (438w, prf). Ten categories judged in context."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 215 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.314Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "2 spaced em-dashes in 438 words (0.5 pct); both true parentheticals."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 215 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.358Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "'ideal-power reading / Coxeter-length reading / rewrite-depth reading' enumerates the three filtrations actually present in the corpus.",
+        "notes": "Substantive enumeration."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.406Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (438w, prf). Ten categories judged in context."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.447Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (438w, prf). Ten categories judged in context."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.494Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (438w, prf). Ten categories judged in context."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.534Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (438w, prf). Ten categories judged in context."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.590Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (438w, prf). Ten categories judged in context."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,23 @@
         "reviewed_at": "2026-08-15T10:31:00.326Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bb1494a5ea39",
+          "ts": "a953096f75ad"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:39.641Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Verbless fragment opening the corollary gloss: 'q-deformed Wedderburn weights w_lambda(q), bounded but sum != 1 at q != 1 in general (cf. ...)'. No finite verb; stalls aloud.",
+        "notes": "FIXED: 'q-deformed Wedderburn weights $w_\\lambda(q)$, bounded but' -> 'The $q$-deformed Wedderburn weights $w_\\lambda(q)$ are bounded, but'. ALSO FLAGGED (not fixed, unknown original): 'Practical consequence. categorical derivation steps need only enumerate central idempotents' - lowercase sentence-initial 'categorical' is sweep token-substitution over a script/step name."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:16:39.641Z"
 }

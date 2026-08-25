@@ -7,10 +7,16 @@ The Chern--Simons level $k$ is not an independent input. The existence proof for
 
 $$
   \frac{1}{\alpha_{\mathrm{EM}}}
-  = q \cdot [9]_q \cdot [10]_q
-    \cdot \bigl(1 + \delta_{\mathrm{CS}}
-                 + \delta_{\mathrm{CS}}^2 \cdot \kappa\bigr)
+  = q \cdot [9]_q \cdot [10]_q \cdot
+    \Bigl(1 + \frac{\delta_{\mathrm{CS}}}{1 - \delta_{\mathrm{CS}}\kappa}\Bigr)
 $$
+
+*The correction tower $\sum_{j\ge1}\delta_{\mathrm{CS}}^{\,j}\kappa^{\,j-1}$ is
+geometric with ratio $\delta_{\mathrm{CS}}\kappa \approx 2.7\times10^{-3}$, so it
+sums in closed form and has no truncation order to choose. The
+order-$\delta_{\mathrm{CS}}^2$ form $1 + \delta_{\mathrm{CS}} +
+\delta_{\mathrm{CS}}^2\kappa$, which this proposition previously displayed, is its
+second-order truncation and costs $11.06$ ppb.*
 
 *where:*
 
@@ -23,7 +29,11 @@ $$
 
 *and $\kappa = \det G_{\mathrm{CS}}^{\mathrm{cl}} / \det G_{\mathrm{CS}}^{q}$ is the Gram determinant ratio of the classical and $q$-deformed Chern–Simons pairing on Bring's surface.*
 
-*At $q_0 \approx 1.110$ with the Witten-1988 value $\kappa \approx 1.722$, $1/\alpha$ evaluates to $137.035944$. The CODATA value is $137.035999$. The residual is $399$ ppb. The value $\kappa = 1.722$ derives from the sketched Gram-determinant computation but was admitted as `sorry` in the Lean formalisation (`em-coupling-chern-simons.lean`). It was never closed. Exact CODATA matching requires $\kappa \approx 1.8878$. This differs from the Witten value by $\sim 10\%$. Either the Gram-determinant identification of $\kappa$ is wrong, or the order-$\delta_{CS}^2$ truncation omits higher-order contributions.*
+*At the proton-pinned $q_0$ with the Witten-1988 value $\kappa \approx 1.722$, $1/\alpha$ evaluates to $137.0359351$ with the tower summed to all orders. The CODATA-2022 value is $137.035999177(21)$, so the residual is $-468$ ppb. The value $\kappa = 1.722$ derives from the sketched Gram-determinant computation but was admitted as `sorry` in the Lean formalisation (`em-coupling-chern-simons.lean`). It was never closed. Exact matching at this pin requires $\kappa \approx 1.9153$, which differs from the Witten value by $11.2\%$.*
+
+*Of the two candidate causes — a wrong Gram-determinant identification of $\kappa$, or an order-$\delta_{CS}^2$ truncation omitting higher-order contributions — the second is now excluded. The tower is geometric with ratio $\delta_{CS}\kappa \approx 2.7\times10^{-3}$, so it sums in closed form as $1 + \delta_{CS}/(1-\delta_{CS}\kappa)$, and the omitted orders are worth $11.06$ ppb against a $468$ ppb gap — roughly one part in forty. Summing them makes the residual smaller but leaves it the same size. The defect is therefore $\kappa$, the quantity still carried as a `sorry`.*
+
+*Superseded figures, recorded so the change is legible: this paragraph read $137.035944$ / $399$ ppb against CODATA-2018, which is the order-$\delta_{CS}^2$ truncation at the muon pin. Resummation accounts for $11.06$ ppb of the difference and the pin change for $79.17$ ppb; each is invariant across the other. Reproduce with [`alpha_em_form_comparison_probe.py`](computations/alpha/alpha_em_form_comparison_probe.py).*
 
 *Proof sketch (does not close $\kappa$).*
 The bare coupling $\alpha = q^{-1}/([9]_q \cdot [10]_q)$ arises from the antisymmetric braiding eigenvalue. This is Layer 2 of [EM coupling projection](#prop:em-coupling-projection). It is normalized by the force-carrier $q$-dimensions from Layer 3.

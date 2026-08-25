@@ -948,6 +948,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.516Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "Full read. Two negation constructions, both substantive: the heading '## Genuine derivation, not projection' uses the corpus's own technical distinction (AGENTS.md 3b-cond item 5, self-assuming projection vs derivation), and 'No fabricated instance attempts to close the primary conjecture' is a factual status statement about an uninhabited class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -967,6 +982,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.554Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "No setup-then-reframe construction anywhere; the four sections are declarative status prose."
       }
     ],
     "trap-em-dash": [
@@ -986,6 +1016,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 266 words)"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.591Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "No spaced em-dashes in the block."
       }
     ],
     "trap-triples": [
@@ -1005,6 +1050,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 266 words)"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.629Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "The single triple is the numbered list of three actual terms in the fixed-point equation (tree term, zero-mode shift, O(alpha^2) normalization), each with a distinct Lean reference. Substantive enumeration."
       }
     ],
     "trap-closing-aphorism": [
@@ -1024,6 +1084,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.666Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "Block ends 'The class remains uninhabited. No fabricated instance attempts to close the primary conjecture.' - status facts about the Lean state, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1043,6 +1118,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.705Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1062,6 +1152,23 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.744Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "severity": "minor",
+        "evidence": "Section '## Genuine derivation, not projection' ends with 'The proof is a genuine derivation.' - a section-final sentence restating the section heading verbatim after the two preceding sentences have already shown the composition (lemma establishes the equivalence; theorem composes it with the b3_normalization field).",
+        "notes": "Structural, NOT edited: in an epistemic-status block this sentence is an auditable status claim, so deleting it is a meaning change rather than a pure register fix. Proposed fix (author call): delete 'The proof is a genuine derivation.' and let the heading plus the composition sentence carry it; or, if the verdict sentence is wanted, replace the heading with a neutral noun phrase such as '## Derivation status of the main theorem' so the claim is stated once."
       }
     ],
     "trap-performed-warmth": [
@@ -1081,6 +1188,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.785Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "Institutional register; no personal or warm register."
       }
     ],
     "trap-superlative": [
@@ -1100,6 +1222,21 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.823Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "evidence": "'the single open input' and 'The sole open element' are factual counts (exactly one open item is enumerated), not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1119,6 +1256,23 @@
         "reviewed_at": "2026-08-15T10:31:01.198Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "24a8d26bbcab",
+          "ts": "3f5b7ed01096"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:23:50.861Z",
+        "reviewed_sha": "18cf1a4db3e9b8c4ae25b746cc9764163e45913c",
+        "severity": "minor",
+        "evidence": "Two abstract-noun-subject sentences that stall aloud in a short block: 'The conjectural $B_3(\\mathbb{C})$ Bloch-class content supplies its exact form.' (five-word noun pile as subject) and 'CODATA-consistency provides the empirical foundation of the conjecture.' (nominalised subject and object, no agent). Adjacent in the same paragraph, so concentration is the tell.",
+        "notes": "Structural (the second sentence also carries an epistemic claim - see notes flagged to the batch summary). Proposed fix: 'The exact form of that correction is conjectured to be a Bloch class in $B_3(\\mathbb{C})$.' and 'The conjecture is supported empirically by consistency with CODATA, not derived from it.' The second rewrite also states the fit/derivation status the current nominalisation leaves ambiguous."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1145,5 +1299,5 @@
     "md": "24a8d26bbcab",
     "ts": "3f5b7ed01096"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:23:50.861Z"
 }

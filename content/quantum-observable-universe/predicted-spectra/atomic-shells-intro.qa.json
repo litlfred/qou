@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.274Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.312Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 145 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.355Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,37 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 145 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.391Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.657Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Enumerations are substantive: the four-step torus-knot hierarchy T_{2,3} -> T_{2,5} -> T_{2,7} -> T_{2,9}, and the noble-gas/metallic-character pair. NAMING FINDING recorded here (see notes).",
+        "notes": "STANDING-TRAP FINDING, report only: 'The Rumer-Jones canonical inner product selects physical states' - grepped the whole content tree, 'Rumer' occurs exactly once in the corpus, in this sentence, with no defining block, no uses[] entry and no citation. The literature has a Rumer basis (Rumer-Teller-Weyl) and, separately, the Jones/Markov trace; 'Rumer-Jones inner product' is not a standard name and looks like a conflation of the two. Proposed fix: name the intended object (the Markov-trace Gram pairing on the normal-form basis, prop:frobenius-gram-matrix, if that is what is meant) and add the uses[] edge, or cite the source."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1510,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.430Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1544,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.470Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1578,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.508Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1612,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.545Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1646,37 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.582Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.694Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "'the universal Euler-characteristic condition on Bring's surface' - 'universal' reads as part of a named condition carried forward to the next section rather than as inflation; cleared. No other maximal claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1696,21 @@
         "reviewed_at": "2026-08-15T10:31:01.209Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2212d905812f",
+          "ts": "9fa0fd597ec6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:55.620Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-paragraph chapter intro. All ten categories judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1733,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:30:55.694Z"
 }

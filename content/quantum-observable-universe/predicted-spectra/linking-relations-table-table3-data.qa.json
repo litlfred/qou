@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.284Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.326Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.369Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.412Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.455Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.499Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.543Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.586Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.630Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1d65d334f7c5",
+          "ts": "cdd3b04bdfff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:49.672Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (8 baryon rows); no prose. Checked every row's quark content against PDG and against the corpus dictionary u=T_{2,3}, d=T_{2,3}^sigma, s=T_{2,5}^sigma: p(uud), n(udd), Lambda(uds), Sigma^+(uus), Sigma^-(dds), Xi^0(ssu), Xi^-(ssd), Omega^-(sss) — all eight correct, and the three knot columns of each row map onto the stated content correctly in all eight cases. This is the cleanest table in the group.",
+        "notes": "no trap of this class; full-context read"
+      }
     ]
   },
   "source_hashes": {
     "md": "1d65d334f7c5",
     "ts": "cdd3b04bdfff"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:13:49.672Z"
 }

@@ -68,19 +68,19 @@ literature *is* needed for is making the writhe side well-posed at all, and the
 four papers uploaded in `2988eb82` are exactly the right set:
 
 - **Kauffman 1987**, *State models and the Jones polynomial*, Topology 26 395
-  (`uploads/1-s2.0-0040938387900097-main.pdf`). The load-bearing point: the
+  (`library/1-s20-0040938387900097-main/1-s2.0-0040938387900097-main.pdf`). The load-bearing point: the
   **writhe is not an ambient-isotopy invariant** — it shifts by `±1` under
   Reidemeister I. It is a *regular-isotopy* / framed quantity. So "`Y` is a
   function of the writhe" is not even well-posed until a framing convention is
   fixed; and once fixed, `w` is part of framed data, not knot data.
 - **Moffatt & Ricca 1992**, Proc. R. Soc. A 439 411
-  (`uploads/procrsoclondona92.pdf`). Călugăreanu–White–Fuller `Lk = Tw + Wr`:
+  (`library/procrsoclondona92/procrsoclondona92.pdf`). Călugăreanu–White–Fuller `Lk = Tw + Wr`:
   the framed invariant of which the writhe is one summand. This is what decides
   whether "independent of the writhe" is even a stable notion — under a *fixed*
   framing, `Tw` and `Wr` are not independent.
-- **Kirby 1978**, Invent. Math. 45 35 (`uploads/kirbycal.pdf`). Framed links,
+- **Kirby 1978**, Invent. Math. 45 35 (`library/kirbycal/kirbycal.pdf`). Framed links,
   where framing `+n` and `−n` are distinguished on an amphichiral knot.
-- **Reshetikhin & Turaev 1990**, CMP 127 1 (`uploads/Reshetikhin_Turaev.pdf`).
+- **Reshetikhin & Turaev 1990**, CMP 127 1 (`library/reshetikhin-turaev/Reshetikhin_Turaev.pdf`).
   The ribbon twist `θ` — the categorical form of the same datum.
 
 The sharpest consequence of the Kauffman point, and it is not yet recorded in

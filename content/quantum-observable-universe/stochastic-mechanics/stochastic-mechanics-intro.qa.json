@@ -1190,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.026Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1225,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.065Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "no setup-then-reframe construction"
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1260,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.105Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
       }
     ],
     "trap-triples": [
@@ -1247,6 +1295,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 80 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.146Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1330,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.185Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "block does not end on a manufactured quotable line"
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1365,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.227Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "emphasis is placed, not announced"
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.270Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "no block-final restatement of what the text established"
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.310Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "institutional register throughout"
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.350Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "no unqualified maximum-strength claim"
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:30:59.543Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d2f11582a9f4",
+          "ts": "a0d0943990a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:19.392Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: two-paragraph chapter opening; Markov trace as transition kernel, Brownian limit at q->1, Nelson mechanics at q0.",
+        "notes": "noun chains parse aloud"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1543,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:19.392Z"
 }

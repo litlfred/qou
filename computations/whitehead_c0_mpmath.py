@@ -34,8 +34,15 @@ from whitehead_colored_jones import (  # noqa: E402
 )
 
 mp.mp.dps = 60
-VOL_WHITEHEAD = mp.mpf("3.663862376708876060218414")   # 4G
-VOL_4_1 = mp.mpf("2.029883212819307250011597804990")
+# Both of these have closed forms and neither needs a literal. dps is
+# raised above, so these evaluate exactly (bean qou-ckbv).
+#   VOL_WHITEHEAD: the old literal said "# 4G" in a comment while
+#     writing 25 digits by hand -- correct, but transcribed.
+#   VOL_4_1: the old literal printed 31 digits and was correct to 20:
+#       was    2.02988321281930725001 1597804990
+#       exact  2.02988321281930725004 2405108549040571883378615...
+VOL_WHITEHEAD = 4 * mp.catalan            # = 8*Lambda(pi/4), one ideal octahedron
+VOL_4_1 = 2 * mp.clsin(2, mp.pi / 3)      # = 2*Cl_2(pi/3) = 6*Lambda(pi/3)
 WHITEHEAD = [1, -2, 1, -2, 1]
 EXTEND_N12 = "--n12" in sys.argv
 

@@ -1386,6 +1386,22 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.404Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'not on the total strand count 3A or the flavor content of the other blocks' is the conjecture's actual assertion."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1405,6 +1421,22 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.438Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 364-word conjecture (block-multiplicativity of V-hat^free, empirical table, q->1 sketch, open q-Schur step); the v_p/v_n products recomputed."
       }
     ],
     "trap-em-dash": [
@@ -1424,6 +1456,23 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 257 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.474Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "One unspaced dash ('the constituent vacuum--the disjoint Hecke product'); isolated, not a density signal.",
+        "notes": "note: the unspaced form is inconsistent with the spaced dashes used elsewhere in the chapter."
       }
     ],
     "trap-triples": [
@@ -1443,6 +1492,22 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 257 words)"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.508Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 364-word conjecture (block-multiplicativity of V-hat^free, empirical table, q->1 sketch, open q-Schur step); the v_p/v_n products recomputed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1462,6 +1527,22 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.544Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 364-word conjecture (block-multiplicativity of V-hat^free, empirical table, q->1 sketch, open q-Schur step); the v_p/v_n products recomputed."
       }
     ],
     "trap-meta-commentary": [
@@ -1481,6 +1562,22 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.579Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 364-word conjecture (block-multiplicativity of V-hat^free, empirical table, q->1 sketch, open q-Schur step); the v_p/v_n products recomputed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1500,6 +1597,22 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.615Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 364-word conjecture (block-multiplicativity of V-hat^free, empirical table, q->1 sketch, open q-Schur step); the v_p/v_n products recomputed."
       }
     ],
     "trap-performed-warmth": [
@@ -1519,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.649Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 364-word conjecture (block-multiplicativity of V-hat^free, empirical table, q->1 sketch, open q-Schur step); the v_p/v_n products recomputed."
       }
     ],
     "trap-superlative": [
@@ -1538,6 +1667,23 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.684Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "'Block-multiplicativity holds exactly to 4 digits' is self-contradictory (exact vs 4 digits) and violates the standing rule against reporting limited-precision agreement as exact -- especially since the same paragraph claims 50 dps. The Significance section closes on 'a closed-form formula computable in microseconds for any (Z,N)', a marketing-register speed claim.",
+        "notes": "proposed (structural): 'agrees to the 4 digits reported' or quote the actual residual at 50 dps; drop 'in microseconds' or replace with the measured complexity claim already given (O(1) exponentiation)."
       }
     ],
     "trap-nonspeakable": [
@@ -1557,6 +1703,23 @@
         "reviewed_at": "2026-08-15T10:31:00.424Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "63c4d0ddeb8e",
+          "ts": "cd33a0526cd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:31.722Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Prose parses.",
+        "notes": "RIGOR (not a trap): VERIFIED -- v_p = 0.6714*1.0551 = 0.70839 (quoted 0.7084) and v_n = 0.5517*1.0884 = 0.60047 (quoted 0.6005), so the table is internally consistent. SWEEP DAMAGE: 'Computed via the canonical formalism on D, T, 3He at H_6, H_9, H_9 respectively (50 dps)' -- 'the canonical formalism' is token-substitution damage standing in for a script name; the file entered git already damaged (single squashed commit 230cdd113), so the original name is not recoverable from history. 34 further instances of this substitution exist in mass-theory/*.md."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1580,5 +1743,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:31.722Z"
 }

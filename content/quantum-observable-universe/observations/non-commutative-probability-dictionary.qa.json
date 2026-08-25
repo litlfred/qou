@@ -1436,6 +1436,21 @@
         "reviewed_at": "2026-08-15T11:26:25.051Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Full-block read; no manufactured negation-contrast; positive-claim phrasing throughout"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.164Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No denial constructions in 127 words."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1470,6 +1485,21 @@
         "reviewed_at": "2026-08-15T11:26:25.091Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "No setup-then-reframe pivot construction"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.228Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Table pointer, three consequences, equivalence, tools; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1504,6 +1534,21 @@
         "reviewed_at": "2026-08-15T11:26:25.148Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "No spaced em-dashes; only LaTeX -- in compound names"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.310Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1539,6 +1584,21 @@
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "'Three structural consequences' numbered items carry distinct technical content (moments, idempotents, JM elements)",
         "notes": "pass-with-note"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.363Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'Three structural consequences' heads three genuinely distinct claims (invariants as moments, idempotents as events, Jucys--Murphy elements as random variables)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1573,6 +1633,21 @@
         "reviewed_at": "2026-08-15T11:26:25.182Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Final line factual/technical, not a quotable closer"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.428Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Ends on a list of imported tools."
       }
     ],
     "trap-meta-commentary": [
@@ -1607,6 +1682,21 @@
         "reviewed_at": "2026-08-15T11:26:25.216Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "No narrated emphasis; no 'we emphasize'/'note the framing'"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.502Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1641,6 +1731,22 @@
         "reviewed_at": "2026-08-15T11:26:25.254Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "No block-final restatement of already-established content"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.554Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'The Hecke algebra under the Markov trace operates as a (W*, tr) probability space' restates the opening sentence, but adds the W*-algebra qualifier.",
+        "notes": "Minor: the 'Formal equivalence' line could be merged into the opening."
       }
     ],
     "trap-performed-warmth": [
@@ -1675,6 +1781,21 @@
         "reviewed_at": "2026-08-15T11:26:25.335Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Institutional register throughout; no personal warmth"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.609Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'We utilize ...' is institutional."
       }
     ],
     "trap-superlative": [
@@ -1709,6 +1830,22 @@
         "reviewed_at": "2026-08-15T11:26:25.375Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "No unqualified maximum-strength claims"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.660Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No unqualified maxima.",
+        "notes": "Citation flags reported separately: the sentence attributing the q-deformed result to Feray--Meliot carries the key marsh2006, which is Marsh--Fuentes--Moyano--Tsallis, 'Influence of global correlations on central limit theorems and entropic extensivity' (Physica A) -- not Feray--Meliot; and the .ts cites [biane1998, blitvic2012] does not list marsh2006 while the .md never cites blitvic2012."
       }
     ],
     "trap-nonspeakable": [
@@ -1743,6 +1880,22 @@
         "reviewed_at": "2026-08-15T11:26:25.424Z",
         "reviewed_sha": "0f9e02182b25b9691476d4545c85c32a243eb5cb",
         "evidence": "Sentences short and speakable; no noun-chain pileups"
+      },
+      {
+        "field_hash": {
+          "md": "a8b57773b4a9",
+          "ts": "aefbabf760a6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:48:47.720Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Short entries parse aloud.",
+        "notes": "Register note: 'operates as' is used twice where 'is' would serve ('The Kashaev volume conjecture operates as a free-entropy log-asymptotic'; 'The Hecke algebra ... operates as a (W*, tr) probability space') -- the mild end of the verb-substitution pattern seen in ns-kummer-specialisation."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1765,5 +1918,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:48:47.720Z"
 }

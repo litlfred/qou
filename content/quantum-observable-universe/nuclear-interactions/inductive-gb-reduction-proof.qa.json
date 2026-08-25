@@ -1599,6 +1599,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.061Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "Clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1618,6 +1634,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.105Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "Clean."
       }
     ],
     "trap-em-dash": [
@@ -1637,6 +1669,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 140 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.151Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1656,6 +1704,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 140 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.190Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "The three square rules are three distinct crossing types."
       }
     ],
     "trap-closing-aphorism": [
@@ -1675,6 +1739,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.232Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "Ends on a QED-terminated summary of the table."
       }
     ],
     "trap-meta-commentary": [
@@ -1694,6 +1774,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.271Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1713,6 +1809,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.312Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "The final sentence quotes the table's own endpoints (10^10 -> 128 for oxygen-16), which is a numerical conclusion, not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1732,6 +1844,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.359Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1751,6 +1879,22 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.402Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1770,6 +1914,38 @@
         "reviewed_at": "2026-08-15T10:31:01.493Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.441Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the proof: the counting argument, the three typed-crossing square rules, the complexity table, and the closing sentence. Ten trap categories are clean - no em-dashes, no aphorism (it ends on a QED box), no meta-narration, no warmth, no superlative, and the parenthetical is a genuine aside.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "cdbe62ac9442",
+          "ts": "d1f9c31ce13c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:09:54.494Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Recomputed the three typed-crossing square rules by Cayley-Hamilton against tbl:ground-state-ordering-table1-data (audited earlier in this batch and verified self-consistent), and checked the complexity table against the bound the parent proposition states.",
+        "notes": "MATH FINDINGS (report, not fixed), three items. (1) C_nn IS WRONG. Table 1 gives T_nn eigenvalues {+q^-1, -q}, hence tr = -h and det = -1, so Cayley-Hamilton forces C_nn^2 = -h_A C_nn + 1, i.e. 1 - h_A C_nn. This block prints C_nn^2 = h_A C_nn + 1, the SAME sign as C_pp. Two independent sources in this chapter agree with the table and against this block: prop:demand-stability prints 'C_nn C_nn = 1 - h_A C_nn', and ex:helium4-derived-nf describes the n-n crossing as 'shifted -h_A'. (2) C_pn IS WRONG IN TWO PLACES. Table 1 gives T_pn eigenvalues +-sqrt(1 + h^2/4), hence tr = 0 and det = -(1 + h^2/4), so C_pn^2 = (1 + h_A^2/4) * 1 - no linear term at all, and the h_A^2/4 enters with a PLUS. This block prints C_pn^2 = h_A C_pn + 1 - (1/4)h_A^2, which carries a spurious linear term and the wrong sign on the quadratic. The following sentence, 'The extra constant -(1/4)h_A^2 provides the mixed-crossing correction', inherits the sign error. (3) THE TABLE VIOLATES THE PROPOSITION IT PROVES. prop:inductive-gb-reduction bounds the NF at C(A-1, floor((A-1)/2)) = 1, 3, 35, 6435 for A = 2, 4, 8, 16. This proof's table gives 2, 8, 32, 128 - exactly A^2/2 - which EXCEEDS the binomial bound at A=2 (2 > 1) and A=4 (8 > 3), and is far below it at A=16. A quadratic table cannot establish a central-binomial bound; and a third growth rate is asserted a fourth time in prop:demand-stability, which says 'linear growth in the number of nucleons'. Linear vs quadratic vs central-binomial: at most one of the three is the intended claim."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1792,5 +1968,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:09:54.494Z"
 }

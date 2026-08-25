@@ -1050,6 +1050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.387Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1069,6 +1084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.428Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1088,6 +1118,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 42 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.468Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1107,6 +1152,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 42 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.509Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1126,6 +1186,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.549Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Ends on a cross-reference to the Wenzl weight."
       }
     ],
     "trap-meta-commentary": [
@@ -1145,6 +1220,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.590Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1164,6 +1254,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.632Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1183,6 +1288,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.674Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1202,6 +1322,22 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.716Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "severity": "minor",
+        "evidence": "The definition is clean and the trace splitting is correct - the two braces partition the Wedderburn sum by ell(lambda) <= 2 and ell(lambda) > 2 and reassemble to tr_M = sum_lambda y_lambda chi^lambda. One type nit, outside the trap axes: pi_2-row is given codomain the two-row summand, so the stated idempotence pi^2 = pi only type-checks under the usual identification of that summand with a subalgebra of H_n(q); the codomain would be H_n(q) if the equation is to be read literally."
       }
     ],
     "trap-nonspeakable": [
@@ -1221,6 +1357,21 @@
         "reviewed_at": "2026-08-15T10:31:00.637Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7e8e9c291dec",
+          "ts": "b015f3fb7a88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:15:03.757Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1243,7 +1394,7 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T05:15:03.757Z",
   "paths": {
     "ts": "content/quantum-observable-universe/mass-theory/two-row-projection.ts",
     "md": "content/quantum-observable-universe/mass-theory/two-row-projection.md",

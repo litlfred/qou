@@ -1385,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:14.518Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two-paragraph section preamble (prose block, no title). No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:14.619Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Roadmap sentences only; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 59 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:14.719Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1487,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 59 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:14.888Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'amphicheiral knots, Borromean composites, and shell-closed configurations' enumerates the three knot classes the section actually treats; substantive, not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1521,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:15.019Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on 'stratify the mass-tower coefficients', a scope item, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1555,22 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:15.097Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Register is roadmap-narration ('We now identify...', 'We previously established...', 'We now apply...', 'Finally, we formulate...'), which is conventional for a section preamble and does not narrate emphasis. 'This closes the mass-tower arc' is the closest to meta, but states the section's place in the chapter rather than directing the reader's attention."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1590,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:15.230Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Preamble states what follows; nothing to restate yet."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1624,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:15.287Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1658,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:15.344Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No intensifiers."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1692,21 @@
         "reviewed_at": "2026-08-15T10:31:00.770Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d0b5d56375fd",
+          "ts": "d493d44aa868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:15.422Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Short declarative sentences; reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1729,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:01:15.422Z"
 }

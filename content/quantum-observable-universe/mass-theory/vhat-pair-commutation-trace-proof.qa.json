@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 434 words)"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1279,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 434 words)"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1313,23 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Block-final maxim restating the sentence immediately above it: \"The level-internal pair commutation is trivial; the inter-level pentagon governs the ascension.\" The preceding sentence already says the pentagon is a feature of the operator lift and not of the scalar V-hats.",
+        "notes": "FIX APPLIED: \"...not of the scalar $\\hat V_i$'s within a single jet\\nlevel. The level-internal pair commutation is trivial; the\\ninter-level pentagon governs the ascension.\" -> \"...not of the scalar $\\hat V_i$'s within a single jet\\nlevel.\""
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1349,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1383,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1417,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1451,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1485,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "011d6b9f0e16",
+          "ts": "c6d3f8fe0383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.738Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (proof + two discussion sections). Em-dashes are genuine parentheticals; \"not derived from the operator pentagon\" is the section's substantive finding."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1522,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.738Z"
 }

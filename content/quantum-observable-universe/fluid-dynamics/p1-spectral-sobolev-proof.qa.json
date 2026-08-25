@@ -1375,6 +1375,21 @@
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "'not only compact but trace-class' - strengthening construction, the skill's listed false-positive class.",
         "notes": "Substantive strengthening; kept."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.354Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'not only compact but trace-class' is a strengthening, the explicit false-positive class in the protocol."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1409,6 +1424,21 @@
         "reviewed_at": "2026-08-15T11:10:20.827Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no rhetorical-pivot constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.441Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Five numbered steps then part (c); no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1443,6 +1473,21 @@
         "reviewed_at": "2026-08-15T11:10:20.878Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no em-dash constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.525Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 260 words."
       }
     ],
     "trap-triples": [
@@ -1477,6 +1522,21 @@
         "reviewed_at": "2026-08-15T11:10:20.913Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no triples constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.574Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Five steps, not a triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1511,6 +1571,21 @@
         "reviewed_at": "2026-08-15T11:10:20.948Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no closing-aphorism constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.633Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends by identifying the two Cauchy--Schwarz factors."
       }
     ],
     "trap-meta-commentary": [
@@ -1545,6 +1620,21 @@
         "reviewed_at": "2026-08-15T11:10:20.990Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no meta-commentary constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.684Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1579,6 +1669,22 @@
         "reviewed_at": "2026-08-15T11:10:21.031Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no thesis-restatement constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.766Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement.",
+        "notes": "Local redundancy (reported, not fixed): Step 1 cites the Hodge--Laplacian relation, displays the identity, then repeats 'This follows from the Hodge--Laplacian relation.' — the same citation twice in three lines, which reads as a partial-edit artefact."
       }
     ],
     "trap-performed-warmth": [
@@ -1613,6 +1719,21 @@
         "reviewed_at": "2026-08-15T11:10:21.067Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no performed-warmth constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.833Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1647,6 +1768,23 @@
         "reviewed_at": "2026-08-15T11:10:21.117Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no superlative constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.933Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'the eigenvalues (lambda + [k]_q^2)^{-1} -> 0 super-exponentially' overstates the decay: [k]_q^2 grows like q^{2k}, so the resolvent eigenvalues decay exponentially, not super-exponentially.",
+        "notes": "Proposed: 'decay exponentially'. Reported alongside the separate, verified failure of the trace-class constant on the same step."
       }
     ],
     "trap-nonspeakable": [
@@ -1681,6 +1819,21 @@
         "reviewed_at": "2026-08-15T11:10:21.195Z",
         "reviewed_sha": "60df2f21f07b45919bd13cf8bea4b36772ad8b57",
         "evidence": "Full block read in context; no nonspeakable constructions found."
+      },
+      {
+        "field_hash": {
+          "md": "4910e58fb59d",
+          "ts": "7ffc3914ea13"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:03.009Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Proof prose parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1703,5 +1856,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:38:03.009Z"
 }

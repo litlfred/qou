@@ -891,11 +891,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.772Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.815Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.857Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.900Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.951Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.993Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:51:00.036Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:51:00.077Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:51:00.119Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5cab58345210",
+          "ts": "091c64baf36d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:51:00.160Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge. Recomputation recorded in notes.",
+        "notes": "RECOMPUTED EVERY ROW. err% = (pred - AME)/AME x 100 gives p 0.0000, n 0.0000, D -0.0044, T +0.1538, 3He +0.0613, 4He +0.5251, 5Li +0.2505, 6Li +0.2356, 7Li +0.2407, 7Be +0.1624, 8Be +0.3201, 9Be +0.2547 — ALL TWELVE MATCH the printed values to the last digit. The AME column is also correct and is ATOMIC mass, consistent with the proof's Z m_p + N m_n + Z m_e baseline: 938.7831 = m_p + m_e = 938.27208816 + 0.51099895 = 938.78308711, and 1876.1239 = m_d + m_e = 1876.12394152. Mean |err| over all twelve = 0.18406%, matching the proof's Mean = 0.184%, and max 0.525% at 4He, matching. TWO ITEMS: (1) THIS TABLE AND tbl:six-term-per-derivation-weights-table3-data ARE THE SAME TABLE — identical twelve rows, identical numbers, captions differing by a few words — and the proof text cites Table 3 only, so one is redundant. (2) The 0.184% mean averages in the p and n rows, which are 0.000 BY CONSTRUCTION as the free-particle baseline the binding energy is measured against; over the ten genuinely predicted rows the mean is 0.2209%. This is the class AGENTS.md documents for the L2 dashboard, where calibration inputs were scored alongside predictions. The excision-compliant caption (absolute mass in MeV is not a framework prediction) is correct practice and present on both copies."
+      }
     ]
   },
   "source_hashes": {
     "md": "5cab58345210",
     "ts": "091c64baf36d"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:51:00.160Z"
 }

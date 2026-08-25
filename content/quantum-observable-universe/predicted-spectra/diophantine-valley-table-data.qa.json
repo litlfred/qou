@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.597Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.640Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.688Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.730Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.772Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.845Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.889Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.929Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:37.970Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1a3999b43f09",
+          "ts": "07a95bd3e521"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:38.010Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Read in full: 7-row numeric table (n/p crossing value / element / p / n). No prose at all; all ten categories vacuously clean.",
+        "notes": "Table-only block. NUMERIC ANOMALY reported separately (not a trap): recomputed n/p from the table's own p and n columns gives Ca 20/20=1.0000 (stated 1.00, ok), Br 44/35=1.2571 (stated 1.10), Zr 50/40=1.2500 (stated 1.20), Sn 70/50=1.4000 (stated 1.30), W 110/74=1.4865 (stated 1.40), Pb 126/82=1.5366 (stated 1.54, ok), U 146/92=1.5870 (stated 1.59, ok). Four of seven rows disagree with their own p,n, and the recomputed sequence is non-monotonic (Br 1.2571 > Zr 1.2500) although the table is ordered as a monotone crossing ladder."
+      }
     ]
   },
   "source_hashes": {
     "md": "1a3999b43f09",
     "ts": "07a95bd3e521"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:38.010Z"
 }

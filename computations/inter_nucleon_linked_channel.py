@@ -55,7 +55,24 @@ START = time.monotonic()
 mp.mp.dps = 60
 
 # Substrate q0 (proton-anchored). FALSIFICATION reference only -- not tuned.
-Q0_STR = "1.10997859561220225731080831999100762523924148"
+#
+# IMPORTED, not typed. This was the hand-written literal
+#
+#     Q0_STR = "1.10997859561220225731080831999100762523924148"
+#
+# under this same "proton-anchored" comment -- and it is not the proton pin.
+# Measured: 1.286e-8 from the registry's proton q0 and 5.487e-11 from the
+# muon-canonical, i.e. ~230x closer to the muon family than to the pin its own
+# comment named, while equalling neither. It arrived in e5dcd8f54, an unrelated
+# Lean commit, so it was copied rather than derived.
+#
+# Owner ruling 2026-08-15: this module IS proton-anchored, per the comment and
+# the AGENTS.md directive of 2026-08-07 that new compute defaults to the
+# experimental (proton) pin. Taking the constant by import closes the class --
+# a literal cannot drift from a source it does not have.
+from q_parameter import Q_50_DIGIT_STR as _Q0_PROTON_STR  # noqa: E402
+
+Q0_STR = _Q0_PROTON_STR
 Q0 = mp.mpf(Q0_STR)
 
 # PDG / CODATA falsification references (NOT fit targets).
@@ -112,209 +129,237 @@ def writhe(word):
 
 
 def z_factor(qv):
-    """Markov stabilization factor z = 1/(q^{1/2}+q^{-1/2})."""
-    return qv ** 3 / (qv ** 2 + 1)   # convention D (was C: 1/(sqrt q + 1/sqrt q))
+    """Markov stabilization factor z = q^3/(q^2+1) (convention D)."""
+    return qv**3 / (qv**2 + 1)
 
 
 # ---------------------------------------------------------------------------
-w = WitnessBuilder("inter-nucleon-linked-channel", engine="mpmath+sympy",
-                   start_time=START)
-w.set_description(
-    "EXPLORATORY test of the knot-operator census DERIVED lead (PR #1677): "
-    "the inter-nucleon LINKED channel = Hopf link T(2,+-2). Braid word "
-    "(provenance: fermion-boson-knot-link.md 2-component link sector + "
-    "inter-nucleon-channel-color-tube.md), Markov trace (symbolic + 60 dps, "
-    "Wedderburn blocks), writhe (pp=+2/nn=-2) + linking number (+-1), Markov "
-    "destabilizability of the 5<->3 bridge, U(1)_framing q^{w.c}. RAW; no fit."
-)
-w.set_audit_only("docs/audits/2026-06-01-inter-nucleon-linked-channel.md")
-w.add_parameter("q0", Q0_STR)
-w.add_parameter("dps", mp.mp.dps)
-w.add_parameter("m_n_minus_m_p_MeV_PDG_falsification_ref", str(M_N_MINUS_M_P_MEV))
 
-# --- 1. The DERIVED braid words ---------------------------------------------
-# word format: signed generators, +1 = sigma_1, -1 = sigma_1^-1, in B_2.
-WORDS = {
-    "pp_T(2,2)_positive_Hopf": {"word": [1, 1], "k": 2,  "B_n": 2,
-        "note": "positive Hopf link; matter-matter; lk +1"},
-    "nn_T(2,-2)_negative_Hopf": {"word": [-1, -1], "k": -2, "B_n": 2,
-        "note": "negative (mirror) Hopf link; matter-antimatter; lk -1"},
-    "pn_T(2,0)_unlink": {"word": [], "k": 0, "B_n": 2,
-        "note": "2-component unlink; mixed flavor; lk 0"},
-}
-braid_summary = {}
-for name, d in WORDS.items():
-    braid_summary[name] = {
-        "braid_word_signed_gens": d["word"],
-        "torus_T(2,k)": d["k"],
-        "braid_group_B_n": d["B_n"],
-        "generators_used": sorted({abs(g) for g in d["word"]}) or [],
-        "writhe": writhe(d["word"]),
-        "linking_number": d["k"] // 2,   # lk(T(2,k)) = k/2 for even k
-        "note": d["note"],
+def main() -> int:
+    """Run the producer and write its witness.
+
+    This body used to sit at MODULE LEVEL, so `import inter_nucleon_linked_channel`
+    ran the whole computation and rewrote the witness as a side effect of
+    the import. Any tool that imports the module -- a validator, a doc
+    generator, a test collector -- would silently regenerate a witness.
+    That also made the module impossible to gate numerically: R11 in the
+    trace-convention registry has to import what it checks.
+
+    Only the side-effecting tail moved. The constants and pure functions
+    above stay at module level, so they remain importable, which is what
+    the gate needs.
+    """
+    w = WitnessBuilder("inter-nucleon-linked-channel", engine="mpmath+sympy",
+                       start_time=START)
+    w.set_description(
+        "EXPLORATORY test of the knot-operator census DERIVED lead (PR #1677): "
+        "the inter-nucleon LINKED channel = Hopf link T(2,+-2). Braid word "
+        "(provenance: fermion-boson-knot-link.md 2-component link sector + "
+        "inter-nucleon-channel-color-tube.md), Markov trace (symbolic + 60 dps, "
+        "Wedderburn blocks), writhe (pp=+2/nn=-2) + linking number (+-1), Markov "
+        "destabilizability of the 5<->3 bridge, U(1)_framing q^{w.c}. RAW; no fit."
+    )
+    w.set_audit_only("docs/audits/2026-06-01-inter-nucleon-linked-channel.md")
+    w.add_parameter("q0", Q0_STR)
+    w.add_parameter("dps", mp.mp.dps)
+    w.add_parameter("m_n_minus_m_p_MeV_PDG_falsification_ref", str(M_N_MINUS_M_P_MEV))
+
+    # --- 1. The DERIVED braid words ---------------------------------------------
+    # word format: signed generators, +1 = sigma_1, -1 = sigma_1^-1, in B_2.
+    WORDS = {
+        "pp_T(2,2)_positive_Hopf": {"word": [1, 1], "k": 2,  "B_n": 2,
+            "note": "positive Hopf link; matter-matter; lk +1"},
+        "nn_T(2,-2)_negative_Hopf": {"word": [-1, -1], "k": -2, "B_n": 2,
+            "note": "negative (mirror) Hopf link; matter-antimatter; lk -1"},
+        "pn_T(2,0)_unlink": {"word": [], "k": 0, "B_n": 2,
+            "note": "2-component unlink; mixed flavor; lk 0"},
     }
-w.add_data("derived_braid_words", braid_summary)
-w.add_data("strand_count", 2)
-w.add_data("braid_group", "B_2 = Z (single generator sigma_1)")
-w.add_data("hecke_algebra", "H_2(q), Wedderburn blocks (2) and (1,1)")
-w.add_data("wenzl_markov_weights_symbolic", {
-    "W_(2)": str(W_2), "W_(1,1)": str(W_11),
-    "W_(2)_at_q0": mp.nstr(eval_at_q0(W_2), 60),
-    "W_(1,1)_at_q0": mp.nstr(eval_at_q0(W_11), 60),
-    "convention": "Wenzl/Jones-Markov: fixed by tr_M(1)=1 and tr_M(sigma_1)=z",
-})
-w.add_data("braid_word_provenance",
-    "Hopf link T(2,+-2) = sigma_1^{+-2}. DERIVED from fermion-boson-knot-link.md "
-    "(the 2-component LINK sector = T(2,n)-even, components winding +1/-1 around "
-    "the Reeb direction) composed with the inter-nucleon arc of "
-    "inter-nucleon-channel-color-tube.md. NOT chosen to hit any target.")
+    braid_summary = {}
+    for name, d in WORDS.items():
+        braid_summary[name] = {
+            "braid_word_signed_gens": d["word"],
+            "torus_T(2,k)": d["k"],
+            "braid_group_B_n": d["B_n"],
+            "generators_used": sorted({abs(g) for g in d["word"]}) or [],
+            "writhe": writhe(d["word"]),
+            "linking_number": d["k"] // 2,   # lk(T(2,k)) = k/2 for even k
+            "note": d["note"],
+        }
+    w.add_data("derived_braid_words", braid_summary)
+    w.add_data("strand_count", 2)
+    w.add_data("braid_group", "B_2 = Z (single generator sigma_1)")
+    w.add_data("hecke_algebra", "H_2(q), Wedderburn blocks (2) and (1,1)")
+    w.add_data("wenzl_markov_weights_symbolic", {
+        "W_(2)": str(W_2), "W_(1,1)": str(W_11),
+        "W_(2)_at_q0": mp.nstr(eval_at_q0(W_2), 60),
+        "W_(1,1)_at_q0": mp.nstr(eval_at_q0(W_11), 60),
+        "convention": "Wenzl/Jones-Markov: fixed by tr_M(1)=1 and tr_M(sigma_1)=z",
+    })
+    w.add_data("braid_word_provenance",
+        "Hopf link T(2,+-2) = sigma_1^{+-2}. DERIVED from fermion-boson-knot-link.md "
+        "(the 2-component LINK sector = T(2,n)-even, components winding +1/-1 around "
+        "the Reeb direction) composed with the inter-nucleon arc of "
+        "inter-nucleon-channel-color-tube.md. NOT chosen to hit any target.")
 
-# writhe + linking-number assertions (structural, from the word)
-w.add_assertion("writhe_pp_eq_+2", braid_summary["pp_T(2,2)_positive_Hopf"]["writhe"], 2)
-w.add_assertion("writhe_nn_eq_-2", braid_summary["nn_T(2,-2)_negative_Hopf"]["writhe"], -2)
-w.add_assertion("writhe_pn_eq_0", braid_summary["pn_T(2,0)_unlink"]["writhe"], 0)
-w.add_assertion("linking_number_pp_eq_+1", braid_summary["pp_T(2,2)_positive_Hopf"]["linking_number"], 1)
-w.add_assertion("linking_number_nn_eq_-1", braid_summary["nn_T(2,-2)_negative_Hopf"]["linking_number"], -1)
+    # writhe + linking-number assertions (structural, from the word)
+    w.add_assertion("writhe_pp_eq_+2", braid_summary["pp_T(2,2)_positive_Hopf"]["writhe"], 2)
+    w.add_assertion("writhe_nn_eq_-2", braid_summary["nn_T(2,-2)_negative_Hopf"]["writhe"], -2)
+    w.add_assertion("writhe_pn_eq_0", braid_summary["pn_T(2,0)_unlink"]["writhe"], 0)
+    w.add_assertion("linking_number_pp_eq_+1", braid_summary["pp_T(2,2)_positive_Hopf"]["linking_number"], 1)
+    w.add_assertion("linking_number_nn_eq_-1", braid_summary["nn_T(2,-2)_negative_Hopf"]["linking_number"], -1)
 
-# --- 2. Markov trace tr_M(rho(B)) = J_B(q), symbolic + at q0 -----------------
-trace_data = {}
-for name, d in WORDS.items():
-    k = d["k"]
-    full, blocks = trM_T2k_symbolic(k)
-    val = eval_at_q0(full)
-    block_vals = {b: mp.nstr(eval_at_q0(e), 60) for b, e in blocks.items()}
-    trace_data[name] = {
-        "trM_symbolic_in_q": str(full),
-        "trM_at_q0_60dps": mp.nstr(val, 60),
-        "wedderburn_block_values_at_q0": block_vals,
-        "block_symbolic": {b: str(sp.simplify(e)) for b, e in blocks.items()},
-    }
-w.add_data("markov_trace_J_B_of_q", trace_data)
+    # --- 2. Markov trace tr_M(rho(B)) = J_B(q), symbolic + at q0 -----------------
+    trace_data = {}
+    for name, d in WORDS.items():
+        k = d["k"]
+        full, blocks = trM_T2k_symbolic(k)
+        val = eval_at_q0(full)
+        block_vals = {b: mp.nstr(eval_at_q0(e), 60) for b, e in blocks.items()}
+        trace_data[name] = {
+            "trM_symbolic_in_q": str(full),
+            "trM_at_q0_60dps": mp.nstr(val, 60),
+            "wedderburn_block_values_at_q0": block_vals,
+            "block_symbolic": {b: str(sp.simplify(e)) for b, e in blocks.items()},
+        }
+    w.add_data("markov_trace_J_B_of_q", trace_data)
 
-# Cross-check: the (2)+(1,1) block decomposition sums to the full trace.
-for name, d in WORDS.items():
-    k = d["k"]
-    full, blocks = trM_T2k_symbolic(k)
-    block_sum = eval_at_q0(blocks["(2)"]) + eval_at_q0(blocks["(1,1)"])
-    w.add_assertion(f"trM_block_sum_eq_full_{name}",
-                    mp.nstr(block_sum, 55), mp.nstr(eval_at_q0(full), 55),
+    # Cross-check: the (2)+(1,1) block decomposition sums to the full trace.
+    for name, d in WORDS.items():
+        k = d["k"]
+        full, blocks = trM_T2k_symbolic(k)
+        block_sum = eval_at_q0(blocks["(2)"]) + eval_at_q0(blocks["(1,1)"])
+        w.add_assertion(f"trM_block_sum_eq_full_{name}",
+                        mp.nstr(block_sum, 55), mp.nstr(eval_at_q0(full), 55),
+                        tolerance=1e-50)
+
+    # Cross-check pp vs nn: T(2,2) and T(2,-2) are mirror images. The Wenzl
+    # Jones-Markov trace is NOT bar-symmetric (it carries the framing/writhe),
+    # so tr_M(pp) != tr_M(nn): the asymmetry IS the framing datum.
+    tr_pp = eval_at_q0(trM_T2k_symbolic(2)[0])
+    tr_nn = eval_at_q0(trM_T2k_symbolic(-2)[0])
+    w.add_data("trM_pp_minus_trM_nn_at_q0", mp.nstr(tr_pp - tr_nn, 60))
+    w.add_data("trM_pp_nn_asymmetry_note",
+        "tr_M(sigma_1^+2) != tr_M(sigma_1^-2): the Wenzl Jones-Markov trace is "
+        "NOT bar-symmetric and carries the framing/writhe. tr_M(pp)=%s, "
+        "tr_M(nn)=%s. This trace asymmetry between matter-matter and "
+        "matter-antimatter linking is the RAW pp/nn distinction the channel "
+        "supplies; it is reported, not tuned to any split."
+        % (mp.nstr(tr_pp, 30), mp.nstr(tr_nn, 30)))
+    # Cross-check: tr_M(sigma_1^2) here vs the census Hopf closed form
+    # 1+(q-1)/sqrt(q).  That "DIFFERENT normalisation" the comment used to name
+    # vaguely is CONVENTION C -- 1+(q-1)/q^{1/2} is exactly h*z+1 evaluated at
+    # z_C = 1/(q^{1/2}+q^{-1/2}), which is why the square root is there at all.
+    # Naming it is the registry rule: convention-silent trace values are not
+    # comparable.  Kept as a labelled C-vs-D comparison and still NOT an
+    # assertion; the D value of the same quantity is recorded beside it so the
+    # gap reads as a convention difference rather than an unexplained residual.
+    census_hopf_C = 1 + (Q0 - 1) / mp.sqrt(Q0)
+    from closed_form_tau_M import trM_sigma1_sq as _trM_sq  # canonical, R11-gated
+    hopf_D = _trM_sq(Q0)
+    w.add_data("census_hopf_closed_form_C_1+(q-1)/sqrt(q)_at_q0", mp.nstr(census_hopf_C, 60))
+    w.add_data("hopf_closed_form_D_h_z_plus_1_at_q0", mp.nstr(hopf_D, 60))
+    w.add_data("trM_pp_vs_census_hopf_C_gap", mp.nstr(abs(tr_pp - census_hopf_C), 60))
+    w.add_data("trM_pp_vs_hopf_D_gap", mp.nstr(abs(tr_pp - hopf_D), 60))
+    # unlink T(2,0): tr_M(1) in H_2 with q-Schur weights = w_(2)+w_(1,1) = 1.
+    tr_pn = eval_at_q0(trM_T2k_symbolic(0)[0])
+    w.add_assertion("trM_unlink_pn_eq_1", mp.nstr(tr_pn, 55), mp.nstr(mp.mpf(1), 55),
                     tolerance=1e-50)
 
-# Cross-check pp vs nn: T(2,2) and T(2,-2) are mirror images. The Wenzl
-# Jones-Markov trace is NOT bar-symmetric (it carries the framing/writhe),
-# so tr_M(pp) != tr_M(nn): the asymmetry IS the framing datum.
-tr_pp = eval_at_q0(trM_T2k_symbolic(2)[0])
-tr_nn = eval_at_q0(trM_T2k_symbolic(-2)[0])
-w.add_data("trM_pp_minus_trM_nn_at_q0", mp.nstr(tr_pp - tr_nn, 60))
-w.add_data("trM_pp_nn_asymmetry_note",
-    "tr_M(sigma_1^+2) != tr_M(sigma_1^-2): the Wenzl Jones-Markov trace is "
-    "NOT bar-symmetric and carries the framing/writhe. tr_M(pp)=%s, "
-    "tr_M(nn)=%s. This trace asymmetry between matter-matter and "
-    "matter-antimatter linking is the RAW pp/nn distinction the channel "
-    "supplies; it is reported, not tuned to any split."
-    % (mp.nstr(tr_pp, 30), mp.nstr(tr_nn, 30)))
-# Cross-check: tr_M(sigma_1^2) here vs the census Hopf closed form
-# 1+(q-1)/sqrt(q) (which is the n-independent Hopf value under a DIFFERENT
-# normalisation); record the raw gap (NOT an assertion -- different conventions).
-census_hopf = 1 + (Q0 - 1) / mp.sqrt(Q0)
-w.add_data("census_hopf_closed_form_1+(q-1)/sqrt(q)_at_q0", mp.nstr(census_hopf, 60))
-w.add_data("trM_pp_vs_census_hopf_gap", mp.nstr(abs(tr_pp - census_hopf), 60))
-# unlink T(2,0): tr_M(1) in H_2 with q-Schur weights = w_(2)+w_(1,1) = 1.
-tr_pn = eval_at_q0(trM_T2k_symbolic(0)[0])
-w.add_assertion("trM_unlink_pn_eq_1", mp.nstr(tr_pn, 55), mp.nstr(mp.mpf(1), 55),
-                tolerance=1e-50)
+    # --- 3. Non-Brunnian check ---------------------------------------------------
+    w.add_data("non_brunnian", {
+        "is_brunnian": False,
+        "linking_number_nonzero": True,
+        "reason": "Hopf link T(2,+-2) has linking number +-1 != 0: the two "
+                  "components are genuinely linked. Brunnianness (every proper "
+                  "sublink trivial) requires >=3 components AND lk=0 on each "
+                  "2-sublink (as the Borromean has). The Hopf link fails both: "
+                  "it is a 2-component link with nonzero linking number. So it "
+                  "ESCAPES the Borromean Brunnian obstruction.",
+    })
 
-# --- 3. Non-Brunnian check ---------------------------------------------------
-w.add_data("non_brunnian", {
-    "is_brunnian": False,
-    "linking_number_nonzero": True,
-    "reason": "Hopf link T(2,+-2) has linking number +-1 != 0: the two "
-              "components are genuinely linked. Brunnianness (every proper "
-              "sublink trivial) requires >=3 components AND lk=0 on each "
-              "2-sublink (as the Borromean has). The Hopf link fails both: "
-              "it is a 2-component link with nonzero linking number. So it "
-              "ESCAPES the Borromean Brunnian obstruction.",
-})
+    # --- 4. CLAIM 1: Markov destabilization (the 5<->3 / here 2<->1 bridge) ------
+    z0 = z_factor(Q0)
+    # (a) single sigma_1 destabilizes: tr_M(sigma_1) = z * tr_M(1 in B_1) = z
+    tr_single_sigma1 = eval_at_q0(trM_T2k_symbolic(1)[0])  # tr_M(sigma_1) in H_2
+    w.add_data("trM_single_sigma1_at_q0", mp.nstr(tr_single_sigma1, 60))
+    w.add_data("z_factor_at_q0", mp.nstr(z0, 60))
+    w.add_assertion("markov_destab_single_sigma1_eq_z",
+                    mp.nstr(tr_single_sigma1, 50), mp.nstr(z0, 50), tolerance=1e-45)
+    # (b) sigma_1^2 (the Hopf) does NOT destabilize in one move
+    tr_sigma1_sq = eval_at_q0(trM_T2k_symbolic(2)[0])
+    destab_pred = z0 * tr_single_sigma1   # what one destab of the LAST sigma_1 would give
+    w.add_data("trM_sigma1_sq_at_q0", mp.nstr(tr_sigma1_sq, 60))
+    w.add_data("z_times_trM_sigma1_destab_prediction", mp.nstr(destab_pred, 60))
+    w.add_data("hopf_destab_residual_NOT_clean",
+               mp.nstr(abs(tr_sigma1_sq - destab_pred), 60))
+    w.add_data("markov_destabilization_finding", {
+        "single_crossing_sigma1_destabilizes_cleanly": True,
+        "single_crossing_trace_invariant_factor_z": mp.nstr(z0, 60),
+        "hopf_sigma1_sq_destabilizes_in_one_move": False,
+        "reason_hopf_not_one_move": "sigma_1^2 is two crossings on the same strand "
+            "pair (Reidemeister-II / second-order), not beta.sigma_{n-1}^{+-1} with "
+            "beta disjoint. It reduces by RII/conjugation within H_2, not by a "
+            "single destabilization to H_1.",
+        "contrast_with_borromean": "The Borromean (s1^-1 s2)^3 in B_3 uses BOTH "
+            "generators and is Brunnian: NO trailing single sigma_2^{+-1} is "
+            "disjoint, so it admits NO clean destabilization at all (census audit). "
+            "The linked channel's word sigma_1^k DOES contain destabilizable single "
+            "crossings (each sigma_1 alone destabilizes with factor z), so the "
+            "linked channel ESCAPES the Brunnian destabilization block -- but its "
+            "destabilization is the 2->1 strand move within the m=2 torus tower, "
+            "NOT a derived 5->3 functor onto the Borromean H_3 trace.",
+    })
 
-# --- 4. CLAIM 1: Markov destabilization (the 5<->3 / here 2<->1 bridge) ------
-z0 = z_factor(Q0)
-# (a) single sigma_1 destabilizes: tr_M(sigma_1) = z * tr_M(1 in B_1) = z
-tr_single_sigma1 = eval_at_q0(trM_T2k_symbolic(1)[0])  # tr_M(sigma_1) in H_2
-w.add_data("trM_single_sigma1_at_q0", mp.nstr(tr_single_sigma1, 60))
-w.add_data("z_factor_at_q0", mp.nstr(z0, 60))
-w.add_assertion("markov_destab_single_sigma1_eq_z",
-                mp.nstr(tr_single_sigma1, 50), mp.nstr(z0, 50), tolerance=1e-45)
-# (b) sigma_1^2 (the Hopf) does NOT destabilize in one move
-tr_sigma1_sq = eval_at_q0(trM_T2k_symbolic(2)[0])
-destab_pred = z0 * tr_single_sigma1   # what one destab of the LAST sigma_1 would give
-w.add_data("trM_sigma1_sq_at_q0", mp.nstr(tr_sigma1_sq, 60))
-w.add_data("z_times_trM_sigma1_destab_prediction", mp.nstr(destab_pred, 60))
-w.add_data("hopf_destab_residual_NOT_clean",
-           mp.nstr(abs(tr_sigma1_sq - destab_pred), 60))
-w.add_data("markov_destabilization_finding", {
-    "single_crossing_sigma1_destabilizes_cleanly": True,
-    "single_crossing_trace_invariant_factor_z": mp.nstr(z0, 60),
-    "hopf_sigma1_sq_destabilizes_in_one_move": False,
-    "reason_hopf_not_one_move": "sigma_1^2 is two crossings on the same strand "
-        "pair (Reidemeister-II / second-order), not beta.sigma_{n-1}^{+-1} with "
-        "beta disjoint. It reduces by RII/conjugation within H_2, not by a "
-        "single destabilization to H_1.",
-    "contrast_with_borromean": "The Borromean (s1^-1 s2)^3 in B_3 uses BOTH "
-        "generators and is Brunnian: NO trailing single sigma_2^{+-1} is "
-        "disjoint, so it admits NO clean destabilization at all (census audit). "
-        "The linked channel's word sigma_1^k DOES contain destabilizable single "
-        "crossings (each sigma_1 alone destabilizes with factor z), so the "
-        "linked channel ESCAPES the Brunnian destabilization block -- but its "
-        "destabilization is the 2->1 strand move within the m=2 torus tower, "
-        "NOT a derived 5->3 functor onto the Borromean H_3 trace.",
-})
+    # --- 5. CLAIM 2: U(1)_framing q^{w.c} on nonzero writhe ----------------------
+    c = mp.mpf(1)   # per-crossing framing coupling, SET to 1 (NOT fitted)
+    framing = {}
+    for name, d in WORDS.items():
+        wr = writhe(d["word"])
+        framing[name] = {
+            "writhe": wr,
+            "framing_factor_q^{w.c}_at_q0_c=1": mp.nstr(Q0 ** (wr * c), 60),
+        }
+    w.add_data("u1_framing_factor", framing)
+    f_pp = Q0 ** (2 * c)
+    f_nn = Q0 ** (-2 * c)
+    w.add_data("framing_factor_pp_over_nn_at_q0", mp.nstr(f_pp / f_nn, 60))
+    w.add_data("framing_factor_pp_minus_nn_at_q0", mp.nstr(f_pp - f_nn, 60))
+    w.add_data("PDG_m_n_minus_m_p_over_m_p_falsification_ref",
+               mp.nstr(M_N_MINUS_M_P_MEV / M_P_MEV, 60))
+    w.add_caveat(
+        "U(1)_framing -> hypercharge is NOT derived. q^{w.c} is a real framing "
+        "FACTOR (Im(q0)=0 at observable level). A framing factor EXISTING is not a "
+        "hypercharge assignment: writhe w is an integer braid invariant, Y is a "
+        "continuous charge, and NO canonical map writhe->Y is supplied. The "
+        "per-crossing coupling c is SET to 1 (not fitted); choosing c to make "
+        "(f_pp - f_nn) reproduce m_n-m_p would be exactly the fit the discipline "
+        "review catches. The PDG m_n-m_p is reported ONLY as a falsification "
+        "reference. The framing U(1) is LIVE on the linked channel (writhe +-2 != "
+        "0), unlike the writhe-0 Borromean baryon -- so the channel DOES carry a "
+        "nontrivial U(1), but its identification with hypercharge remains UNDEFINED."
+    )
+    w.add_caveat(
+        "Provenance discipline: the braid word sigma_1^{+-2} is the Hopf link "
+        "T(2,+-2), DERIVED as the minimal non-Brunnian 2-component link of the "
+        "fermion-boson-knot-link.md boson/link sector, with the +-sign fixed by "
+        "matter/antimatter chirality. It is NOT chosen to make tr_M or the framing "
+        "factor hit m_n-m_p, B_AME, hypercharge, or any h^k. The s5-so3 audit's "
+        "production writhe pp=+1/nn=-1 is the LINKING NUMBER of this Hopf link "
+        "(lk = +-1); the full-diagram writhe is +-2. Both reported raw."
+    )
 
-# --- 5. CLAIM 2: U(1)_framing q^{w.c} on nonzero writhe ----------------------
-c = mp.mpf(1)   # per-crossing framing coupling, SET to 1 (NOT fitted)
-framing = {}
-for name, d in WORDS.items():
-    wr = writhe(d["word"])
-    framing[name] = {
-        "writhe": wr,
-        "framing_factor_q^{w.c}_at_q0_c=1": mp.nstr(Q0 ** (wr * c), 60),
-    }
-w.add_data("u1_framing_factor", framing)
-f_pp = Q0 ** (2 * c)
-f_nn = Q0 ** (-2 * c)
-w.add_data("framing_factor_pp_over_nn_at_q0", mp.nstr(f_pp / f_nn, 60))
-w.add_data("framing_factor_pp_minus_nn_at_q0", mp.nstr(f_pp - f_nn, 60))
-w.add_data("PDG_m_n_minus_m_p_over_m_p_falsification_ref",
-           mp.nstr(M_N_MINUS_M_P_MEV / M_P_MEV, 60))
-w.add_caveat(
-    "U(1)_framing -> hypercharge is NOT derived. q^{w.c} is a real framing "
-    "FACTOR (Im(q0)=0 at observable level). A framing factor EXISTING is not a "
-    "hypercharge assignment: writhe w is an integer braid invariant, Y is a "
-    "continuous charge, and NO canonical map writhe->Y is supplied. The "
-    "per-crossing coupling c is SET to 1 (not fitted); choosing c to make "
-    "(f_pp - f_nn) reproduce m_n-m_p would be exactly the fit the discipline "
-    "review catches. The PDG m_n-m_p is reported ONLY as a falsification "
-    "reference. The framing U(1) is LIVE on the linked channel (writhe +-2 != "
-    "0), unlike the writhe-0 Borromean baryon -- so the channel DOES carry a "
-    "nontrivial U(1), but its identification with hypercharge remains UNDEFINED."
-)
-w.add_caveat(
-    "Provenance discipline: the braid word sigma_1^{+-2} is the Hopf link "
-    "T(2,+-2), DERIVED as the minimal non-Brunnian 2-component link of the "
-    "fermion-boson-knot-link.md boson/link sector, with the +-sign fixed by "
-    "matter/antimatter chirality. It is NOT chosen to make tr_M or the framing "
-    "factor hit m_n-m_p, B_AME, hypercharge, or any h^k. The s5-so3 audit's "
-    "production writhe pp=+1/nn=-1 is the LINKING NUMBER of this Hopf link "
-    "(lk = +-1); the full-diagram writhe is +-2. Both reported raw."
-)
+    path = w.save()
+    elapsed = time.monotonic() - START
+    print(f"[inter-nucleon-linked-channel] wrote {path} in {elapsed:.2f}s")
+    print(f"  braid words: pp=sigma_1^2 (T(2,2)), nn=sigma_1^-2 (T(2,-2)), pn=unlink")
+    print(f"  writhe pp/nn/pn = +2 / -2 / 0   (linking number +1 / -1 / 0)")
+    print(f"  tr_M(pp) at q0  = {mp.nstr(tr_pp, 40)}")
+    print(f"  tr_M(nn) at q0  = {mp.nstr(tr_nn, 40)}")
+    print(f"  tr_M(pn=unlink) = {mp.nstr(tr_pn, 40)}")
+    print(f"  z(q0)           = {mp.nstr(z0, 40)}")
+    print(f"  tr_M(single sigma_1) = {mp.nstr(tr_single_sigma1, 40)} (= z: destab OK)")
+    print(f"  framing q^{{+2}} / q^{{-2}} = {mp.nstr(f_pp,30)} / {mp.nstr(f_nn,30)}")
 
-path = w.save()
-elapsed = time.monotonic() - START
-print(f"[inter-nucleon-linked-channel] wrote {path} in {elapsed:.2f}s")
-print(f"  braid words: pp=sigma_1^2 (T(2,2)), nn=sigma_1^-2 (T(2,-2)), pn=unlink")
-print(f"  writhe pp/nn/pn = +2 / -2 / 0   (linking number +1 / -1 / 0)")
-print(f"  tr_M(pp) at q0  = {mp.nstr(tr_pp, 40)}")
-print(f"  tr_M(nn) at q0  = {mp.nstr(tr_nn, 40)}")
-print(f"  tr_M(pn=unlink) = {mp.nstr(tr_pn, 40)}")
-print(f"  z(q0)           = {mp.nstr(z0, 40)}")
-print(f"  tr_M(single sigma_1) = {mp.nstr(tr_single_sigma1, 40)} (= z: destab OK)")
-print(f"  framing q^{{+2}} / q^{{-2}} = {mp.nstr(f_pp,30)} / {mp.nstr(f_nn,30)}")
+
+if __name__ == "__main__":
+    raise SystemExit(main())

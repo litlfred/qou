@@ -1362,6 +1362,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:58.757Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'It does **not** identify gamma with the gauge boson of any physical theory' is a scope disclaimer of exactly the kind the corpus asks for, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1381,6 +1396,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:58.793Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 267 w: read in full (three-step vanishing argument plus explicit Scope, Exclusion, and Relation sections). The two closure computations are correct: the closure of 1 in B_n is the n-component unlink, and the closure of a single sigma_i is an (n-1)-component unlink, both non-hyperbolic."
       }
     ],
     "trap-em-dash": [
@@ -1400,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 250 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:58.845Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 267 w: read in full (three-step vanishing argument plus explicit Scope, Exclusion, and Relation sections). The two closure computations are correct: the closure of 1 in B_n is the n-component unlink, and the closure of a single sigma_i is an (n-1)-component unlink, both non-hyperbolic."
       }
     ],
     "trap-triples": [
@@ -1419,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 250 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:58.880Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 267 w: read in full (three-step vanishing argument plus explicit Scope, Exclusion, and Relation sections). The two closure computations are correct: the closure of 1 in B_n is the n-component unlink, and the closure of a single sigma_i is an (n-1)-component unlink, both non-hyperbolic."
       }
     ],
     "trap-closing-aphorism": [
@@ -1438,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:58.914Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 267 w: read in full (three-step vanishing argument plus explicit Scope, Exclusion, and Relation sections). The two closure computations are correct: the closure of 1 in B_n is the n-component unlink, and the closure of a single sigma_i is an (n-1)-component unlink, both non-hyperbolic."
       }
     ],
     "trap-meta-commentary": [
@@ -1457,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:58.949Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 267 w: read in full (three-step vanishing argument plus explicit Scope, Exclusion, and Relation sections). The two closure computations are correct: the closure of 1 in B_n is the n-component unlink, and the closure of a single sigma_i is an (n-1)-component unlink, both non-hyperbolic."
       }
     ],
     "trap-thesis-restatement": [
@@ -1476,6 +1566,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:58.983Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'This proves the claim.' is the skill's explicit carve-out (equivalent to 'This completes the proof')."
       }
     ],
     "trap-performed-warmth": [
@@ -1495,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:59.018Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 267 w: read in full (three-step vanishing argument plus explicit Scope, Exclusion, and Relation sections). The two closure computations are correct: the closure of 1 in B_n is the n-component unlink, and the closure of a single sigma_i is an (n-1)-component unlink, both non-hyperbolic."
       }
     ],
     "trap-superlative": [
@@ -1514,6 +1634,22 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:59.053Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'is *automatically* volume-trivial' is precise, and the Exclusion paragraph scopes itself to 'through the tau_arch o Vol_q pipeline' rather than claiming a general impossibility - the correct (a)/(b) discipline.",
+        "notes": "Reported to the coordinator: Step 3 asserts 'The trace and volume map are linear on the Hecke algebra'. Vol is defined on links; its linear extension to H_n has to be defined before Vol(gamma-bar) can be distributed over 1 + sum phi_i sigma_i. Also the QED marker here is $\\blacksquare$ where sibling proofs use $\\square$."
       }
     ],
     "trap-nonspeakable": [
@@ -1533,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:00.571Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9ada2ff2979c",
+          "ts": "a6ea6a7bf368"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:58:59.087Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 267 w: read in full (three-step vanishing argument plus explicit Scope, Exclusion, and Relation sections). The two closure computations are correct: the closure of 1 in B_n is the n-component unlink, and the closure of a single sigma_i is an (n-1)-component unlink, both non-hyperbolic."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1555,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:58:59.087Z"
 }

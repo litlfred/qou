@@ -2140,6 +2140,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:49.889Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Full read of statement, matrices, eigenphase and boxed decomposition; no assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2159,6 +2174,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:49.929Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -2178,6 +2208,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 175 words)"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:49.969Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2197,6 +2242,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 175 words)"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:50.005Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No reflex list; d_1, d_2, b=c are the three actual matrix entries."
       }
     ],
     "trap-closing-aphorism": [
@@ -2216,6 +2276,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:50.057Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Final sentence reports a numerical result, not a maxim."
       }
     ],
     "trap-meta-commentary": [
@@ -2235,6 +2310,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:50.110Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2254,6 +2344,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:50.197Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2273,6 +2378,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:50.334Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2292,6 +2412,21 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:50.405Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No unqualified maximum-strength claims in the prose."
       }
     ],
     "trap-nonspeakable": [
@@ -2311,6 +2446,22 @@
         "reviewed_at": "2026-08-15T10:31:00.625Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "126b08643768",
+          "ts": "4183ed659f09"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:50.495Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Sentences are short and math-anchored.",
+        "notes": "Separate (non-trap) findings, all recomputed at 30 dps. (A) CONVENTION C, AND LOAD-BEARING. The block sets z = 1/(sqrt q + 1/sqrt q), which AGENTS.md names verbatim as an excised convention-C spelling; at the proton pin q_0 = 1.1099785827513808 it equals 0.4993203342, against canonical convention D z = q^3/(q^2+1) = 0.6126880371. The eigenphase alpha = (z-1)h/2 therefore moves from -0.05233612 to -0.04048578 (h = 0.2090602988) and the cos factor from 0.9986307778 to 0.9991805629 — a shift of 550.5 ppm. The block's headline is \"matching CODATA to 305 ppm at the cos-resummation level\", so the convention swap moves the prediction by 1.8x the agreement it claims: this is NOT a cosmetic z-substitution, and per the AGENTS.md convention-D ruling the result must be re-derived, not re-spelled. (B) The Hoefsmit algebra CHECKS OUT: d_1 + d_2 = (q^3 - q^{-1})/(q^2+1) = q - q^{-1} = h and d_1 d_2 - b c = -1, so Cayley-Hamilton gives M^2 = hM + I exactly as claimed; the .ts note's b^2 = (h^2+3)/(h^2+4) is also identical to d_1 d_2 + 1 = (q^4+q^2+1)/(q^2+1)^2. (C) Same conditional-banner defect as prop:hecke-1d-irrep-closed-form-character: the banner claims conditionality on conj:borromean-quark while uses[] lists only prop:hecke-1d-irrep-closed-form-character. (D) The .ts authorNotes claim the decomposition is \"verified bit-exact at 50 dps\" via computations/probe_q_beta_three_irrep_closed_form.py and computations/probe_q_beta_1d_irrep_universal.py; NEITHER FILE EXISTS in the tree, and both links use the ../../computations/ prefix, which from mass-theory resolves to content/computations (also nonexistent)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2334,5 +2485,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:21:50.495Z"
 }

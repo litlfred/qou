@@ -945,6 +945,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the scale.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.686Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, A>=3 binding-extension context: candidate table, Lean structure, open math (~6.5 kB)); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -964,6 +979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.736Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, A>=3 binding-extension context: candidate table, Lean structure, open math (~6.5 kB)); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -984,6 +1014,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "17 stylistic spaced dashes in 668 words (2.54/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.794Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Seven spaced dashes in 6.5 kB: two genuine paired parentheticals ('**distinct quantities** - one is the substrate-universal coupling, the other the per-deuteron phase-weighted aggregation - bridged by ...'; 'Closing it - proving why specifically T(2,5) carries A=3 mirror binding etc. - requires ...') and five appositive glosses ('$k(p-1)$ - the **pole order of sigma**'; 'the trefoil - the minimum-pole-order column-rich irrep'; '$\\approx 1.451$ - a dimensionless ratio'; '$\\approx 18.5$ MeV/rad - ~25 % rise from the deuteron').",
+        "notes": "Density 1.1/kB, the same rate passed in alpha-cluster-activation-gate.md, and every dash carries a definition or a measurement. Kept for consistency; flagged so a later pass can re-weigh if the block grows."
       }
     ],
     "trap-triples": [
@@ -1003,6 +1049,22 @@
         "reviewed_at": "2026-08-15T10:31:00.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 668 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.837Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three separate three-item lists: the deuteron-candidate rationale (1-3), the 'This is the $A\\ge3$ analogue of:' list, and the 'informed by:' list under Remaining open math.",
+        "notes": "Each list's length is set by its content (three independent rationales; three named sibling propositions; three calibration inputs), and the items are not parallel filler. The recurrence of the count is noted here in case a later pass finds it templated."
       }
     ],
     "trap-closing-aphorism": [
@@ -1022,6 +1084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.882Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, A>=3 binding-extension context: candidate table, Lean structure, open math (~6.5 kB)); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1041,6 +1118,21 @@
         "reviewed_at": "2026-08-15T10:31:00.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:34.946Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, A>=3 binding-extension context: candidate table, Lean structure, open math (~6.5 kB)); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1060,6 +1152,21 @@
         "reviewed_at": "2026-08-15T10:31:00.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.007Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, A>=3 binding-extension context: candidate table, Lean structure, open math (~6.5 kB)); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1079,6 +1186,21 @@
         "reviewed_at": "2026-08-15T10:31:00.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.109Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, A>=3 binding-extension context: candidate table, Lean structure, open math (~6.5 kB)); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1098,6 +1220,22 @@
         "reviewed_at": "2026-08-15T10:31:00.515Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.171Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the minimum-pole-order column-rich irrep'; 'the **same boundary holonomy**'.",
+        "notes": "Both are specific technical identifications, not strength markers. Verified the block's arithmetic instead: alpha_shift = k(p-1) reproduces all four table rows (3, 5, 5, 8), and rho_0 = B(D)/(m_e . 3) = 2.22457/(0.51100 . 3) = 1.4511 as stated."
       }
     ],
     "trap-nonspeakable": [
@@ -1118,6 +1256,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "3 sentence(s) over 60 words — written for the eye, not the ear; split"
+      },
+      {
+        "field_hash": {
+          "md": "d4c1d587784d",
+          "ts": "a0c3dd7c1c81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:39:35.241Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the extensive observable lives in the **per-rep q-Reeb rotation phase** on the column-rich irrep of a substrate-fixed force-carrier torus knot.'",
+        "notes": "Five stacked modifiers, but each is a defined term of the block and the sentence has a plain subject-verb spine. Borderline; kept."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1144,5 +1298,5 @@
     "md": "d4c1d587784d",
     "ts": "a0c3dd7c1c81"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:39:35.241Z"
 }

@@ -32,8 +32,9 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from witness_base import WitnessBuilder
 from codata_constants import AME_B_HE4_MEV_VALIDATION  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def main() -> int:

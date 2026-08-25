@@ -19,7 +19,7 @@ landed separately; this file closes the chain:
 | 3 Plancherel restriction | `top_mixedMoment_eq_hookShapes_sum`, `six_mul_omega3_hookShape` |
 | 4 moment sums | `BinomialSquareSums` (zeroth/first/second `C(m,k)²` moments) |
 | 5 collapse | `BinomialSquareSums.bracket_sum_collapse` |
-| mean-zero | `tiltedMean_zero_of_le_twenty` (discharged, `3 ≤ k ≤ 20`) |
+| mean-zero | `SecondMomentKernelVanishes.tiltedMean_zero` (discharged, **every** `k`; was `3 ≤ k ≤ 20` via `tiltedMean_zero_of_le_twenty`) |
 
 **The sign needs no normalisation.** `ν_n ≥ 0` follows from the numerator's closed form together
 with `tiltNorm > 0`; the Plancherel normalisation `Σ_λ (f^λ)² = k!` enters only in the *exact value*.
@@ -138,7 +138,11 @@ theorem six_mul_top_numerator (r : ℕ) :
 discharged (`3 ≤ k ≤ 20`). The numerator's closed form `2k·(k−2)(k−3)·C(2k−4,k−2)/6` is
 nonnegative for `k ≥ 3` and the normalisation is positive, so the quotient is nonnegative. The
 `(k−3)` factor is the exact source of the vanishing at `k = 3`, reproducing the observed ν-pattern
-`-+0` at `n = 3`. -/
+`-+0` at `n = 3`.
+
+**Cap lifted 2026-08-23.** `hk'` is used only to discharge mean-zero, which now holds for every `k`
+(`SecondMomentKernelVanishes.secondMomentKernel_eq_zero`); the uncapped restatement is
+`SecondMomentKernelVanishes.nuV_top_nonneg`. -/
 theorem nuV_top_nonneg (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 20) : 0 ≤ nuV k k := by
   obtain ⟨r, rfl⟩ : ∃ r, k = r + 2 := ⟨k - 2, by omega⟩
   have hr : 1 ≤ r := by omega
@@ -167,7 +171,11 @@ for the single missing brick):
 
 `ν_n = n(n−2)(n−3)·C(2n−4, n−2) / (3·n!)`,  `n = r + 2`.
 
-Every other input is proved. -/
+Every other input is proved.
+
+**Cap lifted 2026-08-23.** As with `nuV_top_nonneg`, `hk'` only discharges mean-zero; the uncapped
+restatement (which also discharges `hnorm`) is
+`SecondMomentKernelVanishes.nuV_top_closed_form`. -/
 theorem nuV_top_closed_form (r : ℕ) (hr : 1 ≤ r) (hk' : r + 2 ≤ 20)
     (hnorm : tiltNorm (r + 2) 0 = (Nat.factorial (r + 2) : ℝ)) :
     nuV (r + 2) (r + 2)

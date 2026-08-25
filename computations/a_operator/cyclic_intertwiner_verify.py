@@ -64,7 +64,11 @@ def _idcheck(lam, n_inner, n_block, q_str, h, rho_in, rho_bl, p_in, p_bl,
     mats, dim = aoa.exact_seminormal_matrices(lam, q_str, dps)
     if dim == 0:
         return None, 0
-    I_if = mats[n_inner - 1] - (h / 2) * mp.eye(dim)
+    # Colour-weighted p-n interface, the SAME shift the combiner on the RHS
+    # uses (a_operator_gauge_align._d_pn).  Was the colour-blind -h/2 here,
+    # which 3dcf933c5d moved on the RHS but missed on this side: the two legs
+    # of a gauge-invariant identity were then built with different interfaces.
+    I_if = mats[n_inner - 1] + g._d_pn(h) * mp.eye(dim)
 
     def fac(br):
         return [(mp.mpf(1), mp.mpf(0) if s > 0 else -h, gg) for (s, gg) in br]

@@ -895,7 +895,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.299Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.337Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.375Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.415Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.454Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.494Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.533Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.572Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.610Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "fd857a9e4cd5",
+          "ts": "89174f5d8835"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:15:00.650Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-operator-basis-table-table4-data (legend paragraph plus 5-row table). VERIFIED EVERY NUMBER by brute force over all 36 basis pairs in H_3(q): T_{1,0} 19/36, T_{2,1} 24/36, T_{2,2} 24/36, T_{2,3} 36/36, T_{2,5} 36/36, and the gamma-conjugate e- coefficients 0, 0, 0, 1, h^2 - all five rows and both columns are correct, and they match the cited witness assertions exactly. The Hecke relation quoted in the legend, sigma_0^2 = h sigma_0 + gamma, is also correct.",
+        "notes": "No constructions from the ten categories. NOT A TRAP, reported separately: the braid-word column mixes two strand conventions inside one T(2,q) family. T_{2,1} = sigma_0 and T_{2,2} = sigma_0^2 are correct 2-strand words, but T_{2,3} = sigma_0 sigma_1 sigma_0 and T_{2,5} = (sigma_0 sigma_1)^2 sigma_0 are 3-strand words whose closures have 2 components each, whereas T(2,3) (trefoil) and T(2,5) (cinquefoil) are knots; the 2-strand words are sigma_0^3 and sigma_0^5. Crossing counts (3 and 5) are right, which is what makes the strand-count error visible."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:15:00.650Z"
 }

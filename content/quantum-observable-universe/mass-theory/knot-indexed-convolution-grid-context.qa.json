@@ -946,6 +946,21 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:47.837Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-paragraph remark read in full; eight of ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -965,6 +980,21 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:47.882Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-paragraph remark read in full; eight of ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -984,6 +1014,21 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:47.929Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-paragraph remark read in full; eight of ten categories clean."
       }
     ],
     "trap-triples": [
@@ -1003,6 +1048,22 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 90 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:47.974Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "The closer 'This grid systematizes existing convolutions, predicts compositions between depths, and identifies open falsifiability targets like high-$n$ chiral entries' is a three-item list, but the three items are genuinely distinct functions of the grid (catalogue / prediction / falsification), so it passes the substantive-enumeration carve-out.",
+        "notes": "note: register slip 'targets like high-$n$ chiral entries' should be 'such as'."
       }
     ],
     "trap-closing-aphorism": [
@@ -1022,6 +1083,21 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.019Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-paragraph remark read in full; eight of ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1041,6 +1117,21 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.068Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-paragraph remark read in full; eight of ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1060,6 +1151,21 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.115Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-paragraph remark read in full; eight of ten categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -1079,6 +1185,21 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.161Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Three-paragraph remark read in full; eight of ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -1098,6 +1219,23 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.213Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "Three unqualified intensifiers stacked across three short paragraphs: 'shift the knot-index axis STRICTLY', 'The bi-filtration CLEANLY separates', 'a STRICT depth-0 convolution'. Density, not any one instance, is the tell; none of the three is doing work a plain statement would not.",
+        "notes": "proposed: drop 'strictly'/'cleanly'/'strict'. Not fixed inline because 'strict depth-0' may be intended as the technical (as opposed to filtered) sense, which I cannot settle from this block."
       }
     ],
     "trap-nonspeakable": [
@@ -1117,6 +1255,23 @@
         "reviewed_at": "2026-08-15T10:31:00.448Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1897a4099153",
+          "ts": "2f2b413e1b61"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.263Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "Noun-chain sentences that stall aloud: 'The archimedean image emerges at higher depths only post-realization via $\\tau_{arch}$' and 'The interface coupling $\\bowtie_K$ exemplifies this as a strict depth-0 convolution in the Hecke algebra, manipulating elements algebraically without generating higher-order transcendental terms.' Also 'They shift the knot-index axis strictly through structural translation', where 'structural translation' names no operation defined in the block.",
+        "notes": "proposed: '...emerges only after realisation through $\\tau_{arch}$, and only at higher depths'; split the $\\bowtie_K$ sentence at the comma. Left unfixed: >2 sentences and the rewording touches which operation is being named."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1143,5 +1298,5 @@
     "md": "1897a4099153",
     "ts": "2f2b413e1b61"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:03:48.263Z"
 }

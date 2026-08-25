@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.434Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "'Unlike the 3-cycle global vortex, the Garside flow is piecewise' is a real comparison with a named alternative; 'does not admit a full Seifert fibration' is a factual topological claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.476Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.526Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.566Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Every triple is forced by the object: Delta_3 has three letters, hence three sub-intervals, three stages, three concatenated ODEs."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.609Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Ends on a topological claim (JSJ hyperbolic piece), not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.652Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.692Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "The last paragraph introduces the JSJ consequence rather than restating the flow description."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.732Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "'while the third spectates' is a light personification inside a technical description, not institutional warmth."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1503,22 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.771Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "No maximum-strength claims.",
+        "notes": "PERMUTATION ALGEBRA VERIFIED: (rg) then (gb) then (rg) sends r->g->b->b = b, b->b->g->r, g->r->r->g, i.e. exactly the non-adjacent transposition (rb) as claimed; the dual word (gb),(rg),(gb) gives the same (rb) with the green sector taking g->b->b->g instead of g->r->r->g, so 'distinct intermediate trajectories, same boundary permutation' is correct."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1538,22 @@
         "reviewed_at": "2026-08-15T10:31:00.371Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "755c5459a095",
+          "ts": "f5160d41b0d9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:01:55.810Z",
+        "reviewed_sha": "d2e873754174c312f1208f5b5fd99072b50c3cdd",
+        "evidence": "Short declaratives throughout.",
+        "notes": "RIGOR FLAG (braid-closure duty, and the recurrent failure mode AGENTS.md names): the block ends 'the knot complement does not admit a full Seifert fibration. Its JSJ decomposition contains a hyperbolic piece, yielding a positive Bloch-Wigner sum.' Delta_3 = sigma_1 sigma_2 sigma_1 closes to the HOPF LINK — cyclic-permute to sigma_1^2 sigma_2 and destabilise to sigma_1^2 in B_2; equivalently the permutation s1 s2 s1 = (1 3) has two cycles, so two components. The Hopf-link complement is T^2 x I: Seifert fibred, hyperbolic volume 0, Bloch-Wigner D(z) = 0. So if 'the knot complement' means the complement of the closure of Delta_3, all three clauses are false, and this is the dilogarithm-on-a-non-hyperbolic-link pattern AGENTS.md section 7b records as recurrent. If a different manifold is meant (the R_p Heegaard picture rather than the braid closure), the block must say which — as written the inference runs from the braid word to 'the knot complement' with nothing in between."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1576,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:01:55.810Z"
 }

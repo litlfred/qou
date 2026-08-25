@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.057Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.103Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 14 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.149Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 14 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.195Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.240Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.286Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.332Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.378Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.423Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:30:59.867Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c39132329cee",
+          "ts": "0bc13bb83528"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:48:17.467Z",
+        "reviewed_sha": "5f8687b962c5df8b439432586fecc452d7d102cc",
+        "evidence": "Full read: single sentence. No trap construction of any of the ten kinds is possible at this length; the sentence is a plain declarative with no dash, no denial and no intensifier.",
+        "notes": "No trap. Flag, not fixed: the .ts title promises 'Bethe-ansatz generating function' and the body says only that Li_2^q controls the one-loop correction to the Reeb-flow entropy -- the Bethe ansatz is never mentioned, so title and body do not match."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1584,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:48:17.467Z"
 }

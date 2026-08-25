@@ -1226,6 +1226,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.538Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read (71 words). 'is not summed iteratively over jet levels' is a substantive scope statement about the descended term."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1245,6 +1260,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.582Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1264,6 +1294,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.627Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1283,6 +1328,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.679Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1302,6 +1362,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.727Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the descended-term scope statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1321,6 +1396,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.775Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1340,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.825Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1359,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.875Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1378,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.922Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'intrinsically quadratic' is a structural claim about the Hecke relation and the Phi_q pentagon, both genuinely quadratic.",
+        "notes": "Hedge note, out of criterion: 'ensuring they are captured appropriately by the level-(n+1) contribution' discharges the higher-interaction case with an unquantified 'appropriately'. Since this is the remark's load-bearing step (why truncating at quadratic loses nothing), it should say in what sense — e.g. that the ascent is a bijection onto level-(n+1) singletons and pairs."
       }
     ],
     "trap-nonspeakable": [
@@ -1397,6 +1533,21 @@
         "reviewed_at": "2026-08-15T10:31:00.675Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e17730bc3344",
+          "ts": "87217e2047f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:38:04.979Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable, though 'The tower formula limits explicitly to quadratic V_i V_j coordinates per jet level' is an awkward use of 'limits to'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1419,5 +1570,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:38:04.979Z"
 }

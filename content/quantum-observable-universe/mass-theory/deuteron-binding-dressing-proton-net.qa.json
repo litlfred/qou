@@ -1772,6 +1772,21 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.014Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of the conditional proposition (statement + display, context, exact-in-the-field derivation, scope). 'It accurately models the deuteron (+0.12%), but does not extend to A >= 3 because the extensive deficit acts as a separate mechanism' is a factual scope limitation with its reason attached — substantive, not assertion-by-denial. 'without fitted constants' is a required anti-fit disclosure."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1806,21 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.048Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Four labelled movements, each paying off its own setup; the derivation runs identity -> sign resolution -> Q-value ansatz -> division by h. No second-clause reframe."
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1840,21 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 247 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.083Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1829,6 +1874,21 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 247 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.116Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No enumerations; the three quoted percentages (+11.99%, +0.12%, and the AME comparison) are measurements, not a rhetorical list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1908,21 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.149Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Closes on 'The Delta_lambda gate remains the general binding law' — a scope guard that subordinates this block's result to the standing gate, the opposite move from a self-congratulatory closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1942,23 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.185Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "major",
+        "evidence": "Three performative section-announcing sentences narrate the block's own structure instead of labelling it: 'We state the context.', 'We establish the derivation exactly in the field.', 'We limit the scope.' Each is a standalone sentence whose entire content is an announcement of what the following sentences do. The sibling proof block (prf:derived-mass-formula-light-isotopes) shows the house form for exactly this: a bold inline label ('**Scope.**').",
+        "notes": "Proposed (structural — three separate sentence-to-label conversions, above the two-sentence inline threshold): 'We state the context.' -> '**Context.**'; 'We establish the derivation exactly in the field.' -> '**Derivation (exact in the field).**' (keep the 'exact in the field' qualifier — it distinguishes the symbolic chain from the numerical magnitude claim and is load-bearing against the observation-tier caveat in the .ts authorNotes); 'We limit the scope.' -> '**Scope.**'. No sentence content is lost."
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1978,23 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.222Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "severity": "major",
+        "evidence": "'This isolates the origin of (1-h/2) to the proton normal-form net coefficient, linking it to the beta-decay sector.' restates, for the third time, what the block has already established twice: the italic statement says 'dresses the energy scale E_0 by the proton net coefficient net(p) ... the bar-even partner of the beta-decay Q-value', and the derivation says 'The bar-even binding dressing net(p) and the bar-odd Q-value differ by the factor h'. The .ts title states it a fourth time. Placed one sentence from the end, in closer position.",
+        "notes": "Proposed (structural — the sentence is math-adjacent, naming (1-h/2), net(p) and the beta-decay sector, so not deleted inline): drop the sentence and let the scope paragraph end on 'The Delta_lambda gate remains the general binding law.' Nothing is lost; if a summary line is wanted, it belongs in .ts authorNotes rather than as a third statement of the claim."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2014,21 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.258Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2048,22 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.292Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Accuracy claims carry explicit magnitudes (+11.99%, +0.12%) and the strongest epistemic word, 'remains an observation', is a downgrade rather than an inflation; the block is unusually careful about tiering.",
+        "notes": "VERIFIED NUMERIC DEFECT (not a trap category — reported to the coordinating session). 'Dressing it by (1-h/2) corrects it to +0.12% of AME2020' attributes the +0.12% to the wrong route. The block's own witness computations/probes/probe-d-dressing-is-proton-net.witness.json records B_cand_E0_netp_dtr_MeV = 2.23094304 with B_cand_err_vs_AME_pct = 0.28666 — i.e. the E_0*net(p)*Dtr route the prose describes lands at +0.29%, not +0.12%. The +0.12% is the witness's OTHER route, B_via_kashiwara_qbeta_MeV = 2.22721 (B_via_qbeta_err_vs_AME_pct = 0.11882), which substitutes the Kashiwara Q_beta (0.78233 MeV) for the ansatz Q_beta (0.78365 MeV). Independently reproduced: h = 0.20906030, net(p) = 0.89546985, and 1.1199 * 0.89546985 = 1.002866, so a +11.99% over-bind dressed by net(p) can only give +0.29%. The same +0.12% appears in the .ts authorNotes ('The physical identification B_D approx AME (+0.12%)'); both need the same correction, and the corrected claim is 2.4x weaker than the one now stated."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2083,21 @@
         "reviewed_at": "2026-08-15T10:31:00.492Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2680f937ffbc",
+          "ts": "b4915b583a4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:52:02.326Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Sentences are short and declarative throughout; the densest phrase, 'the single-wrap normal-form net coefficients of the proton [u,u,d] and neutron [u,d,d] in H_3(q)', is a definition and reads aloud in one breath group."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1966,5 +2121,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:52:02.326Z"
 }

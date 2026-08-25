@@ -38,12 +38,33 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0, Q_INV as qi0, HA as HA_val
+from q_parameter import Q_MP as _Q_MP, Q_INV_MP as _QI_MP
 from witness_base import WitnessBuilder
 
 Q0 = q0  # alias for mass_from_tower
 HA = HA_val
 z_mark = q0**3 / (q0**2 + 1)
 hbar_q = (q0 - 1) / q0
+
+# ── mpmath parallel, mirroring q_parameter's own Q / Q_MP split ──────
+#
+# `q0` above is f64 BY DESIGN and must stay that way: it is what 18 importers
+# read, and `q_parameter` keeps the same split deliberately ("Don't change
+# them — downstream f64 callers depend on stability"). Flipping it to mpf is
+# not a precision fix, it is two regressions — `json.dumps` raises TypeError on
+# mpf, and a numpy array of mpf gets `dtype=object`, silently leaving BLAS
+# (measured: that is the same dtype leak that cost a 4000x slowdown in
+# hoefsmit_numpy, bean qou-5qwb).
+#
+# So the exact values live BESIDE the f64 ones. A producer that writes a
+# witness should read these; a producer doing bulk f64 linear algebra keeps
+# the ones above. `Q_MP` is `q_at(50)` and is bit-identical to
+# `Q_50_DIGIT_STR` at 50 digits (checked, not assumed).
+q0_mp = _Q_MP
+qi0_mp = _QI_MP
+HA_mp = q0_mp - qi0_mp
+z_mark_mp = q0_mp ** 3 / (q0_mp ** 2 + 1)
+hbar_q_mp = (q0_mp - 1) / q0_mp
 
 def qint(k):
     return (q0**k - qi0**k) / (q0 - qi0) if k else 0.0

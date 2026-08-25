@@ -1429,6 +1429,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not algebraic derivation steps.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.136Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Three bullets state prohibitions ('cannot use post-tau values as inputs', 'cannot claim algebraic-side identities') - these are the discipline rules themselves, and 'They describe the functor, not algebraic derivation steps' marks a real category distinction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1448,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.186Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table, three rules, one shorthand paragraph; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1467,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.243Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes (the Grobner--Shirshov / Bloch--Wigner marks are en-dash name joins)."
       }
     ],
     "trap-triples": [
@@ -1486,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.291Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three bullets, each a distinct direction of the wall rule (pre->post, post->pre, bridging); substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1505,6 +1566,23 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.367Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final sentence 'Any violation of the wall boundary breaks the formal derivation' is a quotable-sounding closer that adds nothing to the three rules above it, and 'the formal derivation' is a bare definite description with no antecedent in the block. NOTE: 'the formal derivation' is one of the known token-substitution strings in this chapter (a script name replaced by boilerplate); I could not recover an original from git history on this branch, so I have not guessed at one.",
+        "notes": "PROPOSED (not applied - if this is sweep damage the fix is to restore the substituted name, not to reword): either delete the sentence, or restore the original object. If it is genuinely prose, 'A step that crosses the wall without tau_arch is not a derivation step' says it without the flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1524,6 +1602,21 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.415Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1543,6 +1636,22 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.486Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The closer restates the wall discipline; recorded under trap-closing-aphorism to avoid double-counting one sentence."
       }
     ],
     "trap-performed-warmth": [
@@ -1562,6 +1671,21 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.543Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1581,6 +1705,22 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.599Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'cleanly houses algebraic encounter data' carries one unearned adverb, but 'the only legal bridge' is the discipline rule itself and is earned."
       }
     ],
     "trap-nonspeakable": [
@@ -1600,6 +1740,21 @@
         "reviewed_at": "2026-08-15T10:31:00.385Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2ea361c352bf",
+          "ts": "23d283b76cf7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:34.651Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Table plus short rule sentences; reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1622,5 +1777,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:08:34.651Z"
 }

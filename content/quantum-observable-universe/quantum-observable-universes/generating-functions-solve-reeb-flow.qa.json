@@ -1251,6 +1251,23 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:13.921Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "severity": "major",
+        "evidence": "Block closed on 'These functions are not combinatorial conveniences; they are the unique algebraic objects in the Habiro completion satisfying the categorical evolution equations.' The denied alternative ('combinatorial conveniences') is a straw reading the block never raised, and the positive half was already asserted in the opening sentence ('constitute the exact algebraic solutions'); only the word 'unique' was new. Fixed inline; this verdict certifies the fixed state.",
+        "notes": "FIX APPLIED: 'These functions are not combinatorial conveniences; they are the unique algebraic objects in the Habiro completion satisfying the categorical evolution equations.' -> 'These three functions are the unique algebraic objects in the Habiro completion satisfying the categorical evolution equations.' ('These three functions' rather than a bare 'They', so the subject cannot be misread as item 3 of the preceding list.) Math delimiters re-checked (balanced)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1270,6 +1287,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:13.962Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "trap-em-dash": [
@@ -1289,6 +1321,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.003Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "trap-triples": [
@@ -1308,6 +1355,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.045Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "trap-closing-aphorism": [
@@ -1327,6 +1389,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.086Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "trap-meta-commentary": [
@@ -1346,6 +1423,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.125Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "trap-thesis-restatement": [
@@ -1365,6 +1457,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.165Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "trap-performed-warmth": [
@@ -1384,6 +1491,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.205Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "trap-superlative": [
@@ -1403,6 +1525,23 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.288Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "severity": "minor",
+        "evidence": "'the exact algebraic solutions' and 'the unique algebraic objects in the Habiro completion' are strong uniqueness claims stated in a remark with no proof and no Lean reference. Recorded as pass because they are specific and falsifiable rather than rhetorical inflation, but they are the strongest claims in the block and rest on nothing cited here.",
+        "notes": "TWO SEPARATE FLAGS (not traps, reported not fixed): (1) NOTATION - item 1 writes 'L_{xi_q} Z = J hbar_q Z' with a BARE J. notation-collisions.md is explicit: 'We never write bare J' (J is reserved for the Jones polynomial J_K(q) and the Hahn-Exton / ordinary Bessel functions, always with argument). If the complex structure is meant, use a distinct symbol. Item 1 also writes L for the Lie derivative where the rest of the chapter writes mathcal{L}. (2) SECTION 3a - this remark asserts uniqueness of solutions, i.e. it makes a mathematical claim; it does carry interprets: prop:vertex-is-exceptional-divisor, so it is not formally dangling, but the uniqueness claim is not the content of that proposition."
       }
     ],
     "trap-nonspeakable": [
@@ -1422,6 +1561,21 @@
         "reviewed_at": "2026-08-15T10:30:59.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c25ae56806a0",
+          "ts": "06986a9c33da"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:10:14.248Z",
+        "reviewed_sha": "58590784080b316daaa70305115585de0f456ed3",
+        "evidence": "Full read of the remark after the negation-contrast fix. The triple (exp_q, Li_2^q, categorical Fourier transform) is substantive - it is matched item-for-item by the numbered list, each item naming a different equation solved. No pivot, no dash, no meta-commentary, no warmth, no non-speakable chain; the closer is now a plain uniqueness claim."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1444,5 +1598,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:10:14.288Z"
 }

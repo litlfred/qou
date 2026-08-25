@@ -1429,6 +1429,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not an external mathematical coincidence, but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.000Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "severity": "major",
+        "evidence": "Second sentence of the block: 'It is not an external mathematical coincidence, but the canonical action of R_top on the brane substrate.' Textbook not-X-but-Y, and NOT the substantive-contrast class - 'external mathematical coincidence' is not a technical alternative being ruled out, it is a rhetorical foil.",
+        "notes": "fix applied: 'It is not an external mathematical coincidence, but the canonical action of $\\mathcal{R}_{\\mathrm{top}}$ on the brane substrate.' -> 'It is the canonical action of $\\mathcal{R}_{\\mathrm{top}}$ on the brane substrate.' $$ delimiters balance (2)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1448,6 +1465,21 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.052Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the remark (kind remark, interprets def:archimedean-realization-functor). Category absent."
       }
     ],
     "trap-em-dash": [
@@ -1467,6 +1499,21 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 116 words)"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.158Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the remark (kind remark, interprets def:archimedean-realization-functor). Category absent."
       }
     ],
     "trap-triples": [
@@ -1486,6 +1533,21 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 116 words)"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.278Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the remark (kind remark, interprets def:archimedean-realization-functor). Category absent."
       }
     ],
     "trap-closing-aphorism": [
@@ -1505,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.337Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the remark (kind remark, interprets def:archimedean-realization-functor). Category absent."
       }
     ],
     "trap-meta-commentary": [
@@ -1524,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.387Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the remark (kind remark, interprets def:archimedean-realization-functor). Category absent."
       }
     ],
     "trap-thesis-restatement": [
@@ -1543,6 +1635,23 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.438Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "severity": "major",
+        "evidence": "The block closed on 'The Kashaev limit is the realization functor of the QOU.' - a verbatim restatement of both the block title ('Kashaev limit as the archimedean realization functor') and its opening sentence, placed as a capstone.",
+        "notes": "fix applied: deleted the final sentence 'The Kashaev limit is the realization functor of the QOU.' The block now ends on the preceding (distinct) claim. $$ delimiters balance (2)."
       }
     ],
     "trap-performed-warmth": [
@@ -1562,6 +1671,21 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.486Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Full read of the remark (kind remark, interprets def:archimedean-realization-functor). Category absent."
       }
     ],
     "trap-superlative": [
@@ -1581,6 +1705,23 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.533Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "severity": "minor",
+        "evidence": "'The fibre functor tau is the EXCLUSIVE archimedean route.' An unqualified uniqueness claim with nothing in the block establishing exclusivity.",
+        "notes": "proposed (structural - uniqueness is a claim, not a construction): 'The fibre functor tau is the archimedean route used here,' or supply the argument for exclusivity."
       }
     ],
     "trap-nonspeakable": [
@@ -1600,6 +1741,22 @@
         "reviewed_at": "2026-08-15T10:31:00.819Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "90ad78e4b0af",
+          "ts": "abd7e6ec6680"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:24:31.602Z",
+        "reviewed_sha": "591dfb96608d9ec61f57c5e86bf8a173071f105b",
+        "evidence": "Prose reads aloud.",
+        "notes": "SEPARATE (non-trap) EPISTEMIC finding, and the most consequential thing in this block. 'The Kashaev-Murakami-Murakami theorem confirms this limit equals the hyperbolic volume:' followed by a displayed equality asserted as fact. There is no such theorem: Kashaev (1997) CONJECTURED it and Murakami-Murakami (2001) REFORMULATED the conjecture in terms of the coloured Jones polynomial. This directly contradicts the sibling block conj:kashaev-volume-conjecture.md in the same chapter, which correctly says the statement 'is OPEN in general (proved only for specific families ...)' - and this remark sits inside that conjecture's own uses[] cone, so a conjecture block is citing a remark that asserts the conjecture as proved. FIX: 'The Kashaev-Murakami-Murakami conjecture asserts that this limit equals the hyperbolic volume:' and mark the display as conjectural. Minor second point: calling the coloured Jones at a root of unity 'a purely p-adic/cyclotomic discrete algebraic trace' is loose - it is a cyclotomic integer; nothing p-adic has been introduced."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1622,5 +1779,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:24:31.602Z"
 }

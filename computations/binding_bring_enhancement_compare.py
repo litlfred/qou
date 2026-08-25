@@ -44,6 +44,7 @@ from _li_2_q_util import flavor_split_leading  # noqa: E402
 from closed_form_tau_M import closed_form_ratio  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # AME2020 binding energies (MeV)
@@ -56,7 +57,7 @@ AME = {
 
 
 def build_witness() -> dict:
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     delta = flavor_split_leading(q)
 

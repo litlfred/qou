@@ -367,7 +367,9 @@ fn compute(engine: &HeckeEngine, z: usize, n: usize) -> NucleusResult {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let engine = HeckeEngine::new(1.10998);
+    // Substrate anchor from the crate constant (PROTON pin); the previous
+    // truncated 5-digit muon `1.10998` was 1277 ppb off.
+    let engine = HeckeEngine::new(hecke_engine::gram::Q_0);
 
     if args.len() < 2 {
         eprintln!("Usage: hecke-engine [nucleus|table|pauli|shellfactor|qvalues|qvalues-cat|qvalues-l1] ...");

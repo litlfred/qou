@@ -1425,6 +1425,23 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.187Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "\"The Volume Conjecture is therefore not a coincidence: hyperbolic volumes appear at depth 2 because that is structurally where the Bloch-Wigner regulator lives.\" asserts by denying, and \"not a coincidence\" is a stronger claim than the paragraph supports - the depth reading is offered as a structural explanation, and the block itself says two paragraphs later that it does not prove the conjecture. Recorded pass because the positive half of the sentence carries the content.",
+        "notes": "If trimmed: \"Hyperbolic volumes appear at depth 2 because that is structurally where the Bloch-Wigner regulator lives.\""
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1444,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.231Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "\"The framework thus does not eliminate the open problem - it places it in its correct depth-graded category\" is a setup-then-reframe in shape, but the reframe is the block's substantive claim and the two reductions that follow are concrete."
       }
     ],
     "trap-em-dash": [
@@ -1463,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 348 words)"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.270Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Three spaced em-dashes in 3.6k, each appositive."
       }
     ],
     "trap-triples": [
@@ -1482,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 348 words)"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.313Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "The three bullets under \"In graded-Mikusinski terms\" track the three stages of the asymptotic; the closing attribution names three literatures."
       }
     ],
     "trap-closing-aphorism": [
@@ -1501,6 +1563,22 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.353Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "\"is the Bloch regulator class incarnated as a hyperbolic volume\" is a quotable closing line, but it names a specific identification the block has argued for rather than a summary flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1520,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.394Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Section labels only."
       }
     ],
     "trap-thesis-restatement": [
@@ -1539,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.435Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "The Implications section adds two reductions rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1558,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.476Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1577,6 +1700,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.515Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "The block is carefully scoped - it states in bold that the depth correspondence does NOT prove the Volume Conjecture, and reduces it to two named open claims rather than closing it. The one numeric is witnessed correctly: the :val reference vol_4_1_decimal_50 resolves against computations/hyperbolic-volumes.witness.json, whose assertions are non-empty and all pass, including vol_4_1_matches_5dps_literature = 2.0299. The prose names the constant as 2 Cl_2(pi/3), which is the correct function with the correct coefficient - the Lambda-vs-Cl_2 trap AGENTS warns about is NOT present here."
       }
     ],
     "trap-nonspeakable": [
@@ -1596,6 +1734,21 @@
         "reviewed_at": "2026-08-15T10:31:00.772Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "332d135ff9f3",
+          "ts": "8a6bc02565fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:29:30.556Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1618,5 +1771,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:29:30.556Z"
 }

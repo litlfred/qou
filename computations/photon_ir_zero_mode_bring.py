@@ -49,7 +49,8 @@ from witness_base import WitnessBuilder
 
 import mpmath as mp
 
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # Canonical substrate q_0 (50-digit, proton-pinned) — imported, never hardcoded.
 # q_parameter re-exports qou_substrate.constants; Q_50_DIGIT_STR == q_at() to 50 dps

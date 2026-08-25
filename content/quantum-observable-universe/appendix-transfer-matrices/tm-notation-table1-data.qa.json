@@ -895,7 +895,188 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.221Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.262Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.303Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.347Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.390Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.432Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.473Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.515Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.556Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "major",
+        "evidence": "The q row glosses it as 'the single free parameter of the theory'. AGENTS.md's canonical derivation chain has three calibration inputs (m_e / D_beta / D_pi); q0 is pinned by CAL-2 and is not the theory's only free input.",
+        "notes": "PROPOSED (structural - not applied): '(the substrate modulus; pinned by CAL-2 in the three-calibration discipline)'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1a2fe170606e",
+          "ts": "0d6d579aa42f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:04.596Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 7-row symbol table. Hecke relation and skein amplitude match AGENTS.md 7a; z is correctly labelled convention D and C correctly identified as 1/(q^1/2+q^-1/2); the printed 20-digit z has an unbacked tail (reported).",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:04.596Z"
 }

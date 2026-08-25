@@ -1773,6 +1773,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.651Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.699Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.749Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.800Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.847Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.897Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1977,22 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.942Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Block-final sentence is the operational gate criterion (|u0-u_sub|/u_sub > 1e-6), not a restatement. Noted but passed: 'This provides the anchor-stable formalize-first gate. The simple-pole location is anchor-stable.' repeats 'anchor-stable' in consecutive sentences (mid-block redundancy, not a block-final thesis restatement).",
+        "notes": "Optional tightening (not recorded as a fail): merge to 'This is the formalize-first gate: the simple-pole location is anchor-stable across the muon and proton pins (spread 2.1e-7, inside the 1e-6 tolerance).'"
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:36.991Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2046,23 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:37.043Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'structurally REFUTED' (all-caps, in both the .md statement and the .ts title) is an unqualified maximum-strength exclusion. Per AGENTS.md 'Before declaring refuted/ruled out (STRICT)' a scope-(b) structural exclusion requires a cited PROVED invariant; here the authorNotes state the Lean is conditional over RadiusOfConvergenceGateClass with 'the forward direction (the cross-anchor asymptotic-pole test) is a class hypothesis'. The premise the exclusion rests on is assumed, not proved.",
+        "notes": "Proposed (structural, not applied): replace 'is structurally REFUTED' with 'is excluded by the gate, conditional on the simple-pole invariant (a class hypothesis in the Lean, not yet derived)'. Also drop the all-caps. Same edit needed in the .ts title."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2082,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "11cfcc27536b",
+          "ts": "0dbc2feef137"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:37.087Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the 2-paragraph proposition (statement + gate criterion). Recomputed u_substrate: proton pin q0=1.1099785827513808 gives hbar_q^2=0.00981718645, and the probe's U_SUBSTRATE_PROTON=0.008517234550156142 => b=0.867584067; the quoted 0.00852 rounds correctly. Anchor spread |u_p-u_mu|/u = 2.10e-7 < the block's own 1e-6 gate, so 'anchor-stable' is self-consistent. No trap of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2120,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:08:37.087Z"
 }

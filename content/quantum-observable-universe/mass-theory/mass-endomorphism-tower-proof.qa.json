@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:10.577Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read. Both denials are substantive: 'their combined weight is z^2, not 2z^2' (the point of the adjacent-pair argument) and 'subsumed — not into level-n singletons and pairs, but into the level-(n+1) jet contribution' (a real distinction between two absorption mechanisms)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:10.670Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 364 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:10.723Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two em-dashes in 454 words, both marking genuine appositives."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 364 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:10.774Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:10.838Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends at the QED box after the Yang-Baxter subsumption argument."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,23 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:10.892Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "A whole paragraph narrates the document's own revision history in scholarly prose: 'Earlier versions of this proof identified the integral with the compact quantum dilogarithm Phi_q(V) = prod (1 - q^{-k}V)^{-1}, whose logarithm uses asymmetric q-integers ... so Li_2^q is the correct identification.' The mathematical content (symmetric [n]_q vs asymmetric (q^n - 1), and why the Hecke setting forces the symmetric form) is worth keeping; the 'earlier versions of this proof' framing is not.",
+        "notes": "Proposed (structural — the paragraph is 4 sentences): keep the mathematics as a scope remark ('The compact quantum dilogarithm log Phi_q is a q-deformation of the same classical dilogarithm but uses the asymmetric q-integers (q^n - 1); the Hecke setting requires the symmetric [n]_q, hence Li_2^q.') and migrate the 'earlier versions' provenance to authorNotes in the .ts. Same defect and same fix as markov-trace-product-proof.md."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:10.947Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing paragraph adds the Yang-Baxter degeneracy argument rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:11.018Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:11.085Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,23 @@
         "reviewed_at": "2026-08-15T10:31:00.344Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a5110e378fce",
+          "ts": "de5b256a6d7a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:40:11.159Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'canonical structural verification: the integration value matches -Li_2^q(-V) to all displayed digits at q_0 ~ 1.110 for V in {0.1, ..., 0.989}' does not parse: the sentence opens on a bare lowercase 'canonical' used as an adjective for a numerical spot-check, which is the known 'canonical' <- 'numerical(ly)' sweep substitution. Two further sweep artefacts in the same block: the escaped-bracket citation '(\\\\[definition of q-log])' and a stray escaped asterisk at the end of 'Termwise differentiation of Li_2^q gives\\\\*'.",
+        "notes": "Proposed: restore 'Numerical structural verification:' (or 'Numerically:'), repair the citation to a real reference key, and delete the stray '\\\\*'. Not applied inline because the first is a token recovery, not a prose choice. MATH VERIFIED CORRECT independently: d/dz Li_2^q(z) = sum z^{n-1}/[n]_q = -ln_q(1-z)/z follows from ln_q(1-z) = -sum z^n/[n]_q, and the substitution u = -t carries Li_2^q(-V) = -int_0^{-V} ln_q(1-u)/u du to -int_0^V ln_q(1+t)/t dt, giving the stated int_0^V ln_q(1+t)/t dt = -Li_2^q(-V). The subproof is sound as written."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:40:11.159Z"
 }

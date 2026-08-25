@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.670Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.725Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 275 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.798Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 275 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.854Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.901Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Closes on a worked example, not a maxim."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.937Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:17.981Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Each section adds content (classical limit, R-matrix, worked example)."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.038Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,21 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.097Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1664,22 @@
         "reviewed_at": "2026-08-15T10:31:00.784Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fc98032bf26b",
+          "ts": "7a8fc1bc1aee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:28:18.156Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Reads aloud.",
+        "notes": "VERIFIED IN DETAIL. Correct: (a) the q -> 1 limit a_rho -> 1/rho checks by l'Hopital (with q = e^t, h ~ 2t and 1 - q^{-2rho} ~ 2 rho t); (b) the 1x1 special cases are exact — a_{+1} = h/(1-q^{-2}) = q and a_{-1} = h/(1-q^2) = -q^{-1}, confirmed to 40 dps; (c) the identity 2 - [3]_q = -1 - h^2 holds exactly for [3]_q = q^2 + 1 + q^{-2}; (d) I recomputed tr(rho_{[2,1]}(sigma_1 sigma_2^{-1} sigma_1^{-1} sigma_2)) both numerically (40 dps: -1.043706208532522) and SYMBOLICALLY, and it equals 2 - [3]_q exactly. Separate (non-trap) findings: (1) BRAID WORD vs LABEL. The word given, sigma_1 sigma_2^{-1} sigma_1^{-1} sigma_2, is the commutator, not the standard figure-eight 3-braid (sigma_1 sigma_2^{-1})^2. I computed the [2,1] character of the standard word symbolically: q^4 - 2q^2 + 1 - 2q^{-2} + q^{-4}, which is NOT 2 - [3]_q. Since chi_lambda is a class function the two words are not conjugate in B_3, and both have exponent sum 0 with no destabilising generator, so the closures are different knots — the label \"chi_{4_1}([2,1])\" is attached to the wrong word (or the intended word was mistyped). The arithmetic is right; only the knot label is in question. (2) \"lands on a q-integer expression BECAUSE each matrix entry is a rational function of q, and the trace is a Laurent polynomial in q\" is a non-sequitur — rational entries give a rational trace, and Laurent-polynomiality is the thing to be shown, not the reason."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:28:18.156Z"
 }

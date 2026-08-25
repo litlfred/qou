@@ -1190,6 +1190,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.796Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1224,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.835Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1258,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.875Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1292,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 95 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.915Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1326,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.955Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1360,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:44.996Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:45.036Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:45.078Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "'We now harvest the consequences.'",
+        "notes": "Colourful verb but not personal register - no thanks, excitement, or journey framing. Kept."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:45.120Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Full read: two-paragraph section preamble. Zero em-dashes, no closer, no warmth, no negation-contrast, no pivot. Structural signposting ('The previous sub-section established ...', 'The sub-section ends with the chapter outro') is the conventional job of a preamble and is not meta-commentary about the author's own emphasis."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1497,22 @@
         "reviewed_at": "2026-08-15T10:30:59.562Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8c60e1fd729d",
+          "ts": "9c21ced85c49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:28:45.162Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "'The adelic Tate squeeze closes the chapter as the surreal-bound infrastructure consumed by the appendix-surreal Millennium bounds.'",
+        "notes": "Noun-heavy (four stacked modifiers before 'bounds') and the weakest sentence in the block, but each term is a named object and it does parse aloud; below the threshold for a fail. Proposed if revisited: '... as the surreal-bound infrastructure that the Millennium bounds in the surreals appendix consume.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1535,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:28:45.162Z"
 }

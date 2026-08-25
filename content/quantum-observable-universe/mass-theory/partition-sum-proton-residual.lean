@@ -55,8 +55,8 @@ def protonTowerMass : ℝ := 938.7228
     reproduce (to 0.14 %). -/
 def protonTowerResidualMeV : ℝ := 1.2779
 
-/-- The CODATA proton mass, in MeV.  CODATA 2022: 938.27208816 MeV. -/
-def protonCodata : ℝ := 938.27208816  -- :leanval[m_p_MeV]{precision=11}
+/-- The CODATA proton mass, in MeV.  CODATA 2022: 938.27208943 MeV. -/
+def protonCodata : ℝ := 938.27208943  -- :leanval[m_p_MeV]{precision=11}
 
 /-- The electron rest-mass, in MeV.  Pinned to the CODATA 2022 value
     `0.51099895069 MeV` (truncated; full uncertainty ≤ 1 keV).  The
@@ -159,9 +159,9 @@ computable terms must invalidate these axioms first. -/
 theorem electronMass_witness :
     (0.510998 : ℝ) ≤ electronMass ∧ electronMass ≤ (0.511000 : ℝ) := by
   refine ⟨?_, ?_⟩
-  · show (0.510998 : ℝ) ≤ 0.51099895
+  · show (0.510998 : ℝ) ≤ 0.51099895  -- :leanval[m_e_MeV]{precision=8}
     norm_num
-  · show (0.51099895 : ℝ) ≤ 0.511000
+  · show (0.51099895 : ℝ) ≤ 0.511000  -- :leanval[m_e_MeV]{precision=8}
     norm_num
 
 /-- Witness theorem (formerly axiom).  CODATA 2022 neutron mass

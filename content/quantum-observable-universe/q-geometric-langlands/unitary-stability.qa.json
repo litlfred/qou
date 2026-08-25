@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.396Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'**No collapse:** Defects do not cluster, which would require Re(rho) > 1/2' and '**No rarefaction:** ...' name the two excluded regimes and are the block's substantive content, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.436Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting cor:spectral-half-line; display + 3 numbered outcomes + closer); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.476Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting cor:spectral-half-line; display + 3 numbered outcomes + closer); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.572Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'This forces three physical outcomes' maps onto three genuinely distinct items (no collapse / no rarefaction / square-root fluctuations)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1540,23 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.618Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Block-final: 'This provides the algebraic foundation for the stability of the quantum observable universe at the q-scale.' - a grand quotable closer restating the block's opening sentence.",
+        "notes": "fix applied: sentence deleted. The two preceding sentences carry the content."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1576,22 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.662Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting cor:spectral-half-line; display + 3 numbered outcomes + closer); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1611,23 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.711Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Same sentence: the block opens 'The confinement of all Reeb eigenvalues to the critical line implies that the observer drift is unitarily stable', which the closer restates at higher volume.",
+        "notes": "fix applied - sentence deleted."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1647,22 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.789Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting cor:spectral-half-line; display + 3 numbered outcomes + closer); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1682,23 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.888Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'balanced **perfectly** between order and disorder'; 'preserves the q-volume form **exactly**'; 'the **minimal** fluctuation consistent with the uncertainty principle'.",
+        "notes": "fix applied: 'balanced perfectly between' -> 'balanced between'; 'preserves the q-volume form exactly' -> 'preserves the q-volume form'. The third left in place and reported instead as ANOMALY 32 - the uncertainty principle does not bound defect-density fluctuations by O(X^{1/2}); that bound is the square-root cancellation of the explicit formula, so the attribution is unsupported."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1718,22 @@
         "reviewed_at": "2026-08-15T10:31:00.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "79ddaced60a0",
+          "ts": "84f4c96c5275"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.938Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting cor:spectral-half-line; display + 3 numbered outcomes + closer); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1756,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:57.938Z"
 }

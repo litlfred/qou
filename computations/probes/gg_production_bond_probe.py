@@ -53,6 +53,12 @@ from q_parameter import Q as Q0  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 EXPERIMENTAL_CSB_BOUND = 0.01
+
+# Floor below which the gg charge asymmetry is indistinguishable from
+# float64 roundoff. `x/y - 1.0` with x == y leaves ~1.5 ulp ~ 3.3e-16; the
+# production asymmetry is ~0.30, so this sits 12 orders below any physical
+# signal and 4 orders above the noise.
+ASYM_FLOOR = 1e-12
 MIRROR_PAIRS = [("3H", 1, 2, "3He", 2, 1), ("7Li", 3, 4, "7Be", 4, 3),
                 ("13C", 6, 7, "13N", 7, 6)]
 
@@ -141,7 +147,20 @@ def run():
         "L_prod": Lprod, "L_gg": Lgg,
         "asym_prod": asym_prod, "asym_gg": asym_gg,
         "asym_gg_over_delta": (abs(asym_gg) / delta_lead) if delta_lead else None,
-        "collapse_factor": (abs(asym_prod) / abs(asym_gg)) if asym_gg else None,
+        # Guard on the ARITHMETIC FLOOR, not on truthiness. `asym_gg` is
+        # `Lgg["nn"]/Lgg["pp"] - 1.0`; when the two are equal in float64 the
+        # subtraction leaves ~1.5 ulp, measured -3.3306690738754696e-16. That
+        # is nonzero, so `if asym_gg` passed and this divided by roundoff:
+        # 0.30111914668514483 / 3.33e-16 = 9.0408e14, reported as a physical
+        # "collapse factor". It is the reciprocal of machine epsilon.
+        #
+        # AGENTS.md NO-FLOAT64 rule 4: agreement at 1e-16 in float64 is the
+        # FLOOR of the arithmetic, not evidence about the mathematics. The
+        # honest report when the gg asymmetry is at that floor is that the
+        # collapse is complete to the limit of the arithmetic used -- which is
+        # exactly what the print branch below already says for the None case.
+        "collapse_factor": ((abs(asym_prod) / abs(asym_gg))
+                            if abs(asym_gg) > ASYM_FLOOR else None),
         "mirror_pairs": pairs,
         "experimental_csb_bound": EXPERIMENTAL_CSB_BOUND,
     }
@@ -161,7 +180,7 @@ def report(res):
     print(f"|---|--:|--:|")
     print(f"| | **{res['asym_prod'] * 100:.1f}%** | **{res['asym_gg'] * 100:.3f}%** |")
     cf = (f"{res['collapse_factor']:.0f}× smaller" if res["collapse_factor"]
-          else "complete — exactly charge-symmetric at leading order")
+          else "complete to the limit of the arithmetic — float64 cannot distinguish the gg channel from charge-symmetric here")
     print(f"\nCollapse: production {res['asym_prod'] * 100:.1f}% → gg "
           f"{res['asym_gg'] * 100:.3f}%  (**{cf}**).")
     print(f"The leading flavor-blind gg bond is EXACTLY charge-symmetric (L_pp=L_pn=L_nn); the "

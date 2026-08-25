@@ -1359,6 +1359,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the Plancherel measure;\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.392Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Several 'X, not Y' constructions, all substantive: 'the absolute-convergence constant is ... , not 1 as for the classical Plancherel measure'; 'as the q-deformed Wedderburn-block weight, not the Plancherel measure'; 'assumed, not established'; and the Gap note's 'Not claimed: that this block's conclusion is false'. Each marks a real scope or identification boundary the proof depends on."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.438Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe; the named sections (Logarithmic control of scale, Comparison with the deprecated bare hook product, Naming note, Gap) each carry independent content."
       }
     ],
     "trap-em-dash": [
@@ -1398,6 +1429,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "5 stylistic spaced dashes in 372 words (1.34/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.529Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Four spaced em-dashes in a ~600-word proof: 'depth(lambda) -- assumed, not established ...--', 'knot ideal -- empirically k_* = 4', 'it deviates from 1 -- categorically ...', 'at generic q -- the Hecke algebra is a flat deformation'. All are genuine appositive or caveat insertions carrying content; density is at but not over the threshold."
       }
     ],
     "trap-triples": [
@@ -1417,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 372 words)"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.630Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No rhetorical triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1436,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.705Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Block ends on a dated Gap note with an explicit 'Not claimed' scope line - the opposite of a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1455,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.797Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Naming note', 'Scope', 'Not claimed' are structural labels on real content, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1474,6 +1566,21 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.880Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1493,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:53.958Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1512,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:54.025Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'equals 1 exactly at q = 1' is exact and checks out; no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1531,6 +1668,22 @@
         "reviewed_at": "2026-08-15T10:31:00.838Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "50c4396b0b1e",
+          "ts": "aa0934be3006"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:01:54.121Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Dense but speakable; 'logarithmic unbounding of bounded characters' is a coined phrase that reads as a label rather than a stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1553,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:01:54.121Z"
 }

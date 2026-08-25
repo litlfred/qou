@@ -48,7 +48,7 @@ IS a regulator evaluation, per
 [`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period).  The two
 normalisations differ by both an argument doubling and a factor $2$;
 keeping one function's coefficient while writing the other's name is
-the recurring slip this block previously carried.
+a recurring slip.
 
 ## The Borromean Bloch-group element
 
@@ -165,7 +165,7 @@ class BorromeanBlochGroupElement
 
 ## What remains open
 
-1. **Compute prototype**: at $q = q_0$, canonical evaluate both
+1. **Compute prototype**: at $q = q_0$, numerically evaluate both
    sides of the conjectural identity
    $r_2^{(2)}[\mathcal{B}_3] = -6G$.  The left side requires
    extending the Bloch-Wigner regulator to order $h^2$ via the

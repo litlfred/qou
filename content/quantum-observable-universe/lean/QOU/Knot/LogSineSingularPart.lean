@@ -32,6 +32,27 @@ This file proves the exact telescope, sorry-free.  It is genuinely exact —
 no asymptotics, no hypothesis on `n`, valid for every grid spacing `h > 0`.
 -/
 
+/-
+**REDUNDANT (2026-08-19) — L4-1's target was already proved on `main`, stronger,
+before this file was written.**
+
+`QOU.Knot.FigureEightVolume.kashaev_log_sum_asymptotic`
+(`QOU/Knot/KashaevAsymptotic.lean`, on main since 2026-08-10, sorry-free) gives
+
+    | ∑_{j=1}^{k} log(2 sin(jπ/N))
+        − ( −(N/π)·Lob(kπ/N) + ½·log(2N·sin(kπ/N)) + (π/(12N))·cot(kπ/N) ) |
+      ≤ 1/(144k²) + (7/12)(π/N)² + (π/N)²/(12·sin²(kπ/N))
+
+— strictly stronger than the L4-1 target this file serves: it identifies the
+`O(1/N)` term and its error is effective.  The decomposition L4-1 was organised
+around is `KashaevEndpointSplit.sum_log_two_sin_split`, exact algebra with no
+cell integrals and no telescope.
+
+Kept, not deleted: the proofs here are correct and sorry-free.  **New
+downstream work should cite `kashaev_log_sum_asymptotic`, not this file.**
+Audit: `docs/audits/2026-08-19-l41-was-already-proved-on-main.md`.
+-/
+
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 import QOU.Knot.LogFactorialStirling
 

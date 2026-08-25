@@ -430,7 +430,7 @@ from weights at all. That — not the weight vector — is the wall.
    experimental `Q_β`.
 3. The published treatment of Markov-trace weights as a function of the
    trace parameter is Orellana, *Weights of Markov Traces on Hecke
-   Algebras* (arXiv:math/9806163, `uploads/9806163v1.pdf`). **Glyph-collision
+   Algebras* (arXiv:math/9806163, `library/arxiv-math-9806163v1/9806163v1.pdf`). **Glyph-collision
    warning:** that paper's "type D" is the Coxeter type `D_n`, which is
    **not** this repo's "convention D". The two are unrelated; the paper's
    type-A reduction is the relevant part.
@@ -595,7 +595,7 @@ D-frame result.
 > *Next honest step:* start from S2's D-frame weights (above) and ask
 > whether the ladder ansatz's phase `α = (z−1)h/2` can be derived from them
 > at all — via Orellana's type-A weight formula (arXiv:math/9806163,
-> `uploads/9806163v1.pdf`), noting its "type D" is the Coxeter type `D_n`
+> `library/arxiv-math-9806163v1/9806163v1.pdf`), noting its "type D" is the Coxeter type `D_n`
 > and unrelated to convention D. If no such derivation exists, the honest
 > conclusion is that the ansatz's `z`-dependence is not weight-derived in
 > *either* frame — which would also explain why `z*` matches neither `z_C`

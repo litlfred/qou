@@ -46,6 +46,14 @@ import sys
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 # canonical computations-layer q0 (muon-pinned 50-digit string); the A=2/A=4
 # det signs and the ~5.85x deficit are invariant to the ~11.5 ppb proton-pin
@@ -56,7 +64,7 @@ Q0_STR = "1.10997859555733471"
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.
 # Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
-mp.mp.dps = 50
+set_compute_dps()
 
 ME_MEV = mp.mpf("0.51099895069")        # CODATA electron mass
 B_AME_2H = mp.mpf("2.2245662")          # AME2020 deuteron binding (diagnostic only)
@@ -70,7 +78,7 @@ def q_int(n: int, q: mp.mpf) -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q0_STR)
     v = mp.sqrt(q0)
     two_v = v + 1 / v

@@ -1236,6 +1236,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a symmetry of the universe.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.201Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). no assertion-by-denial; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "PASS as substantive contrast: 'a redundancy of the description, not a symmetry of the universe' and 'SU(2) and not something larger' - gauge redundancy vs physical symmetry, and SL(2) vs GL(2), are the block's actual content (false-positive class 1)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1271,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.242Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). no setup-then-reframe construction; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1306,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 369 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.282Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). em-dash count 0 in the block; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1293,6 +1341,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 369 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.322Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). no reflex three-item list; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "'Evaluation annihilates ..., coevaluation creates ..., and the snake identities say ...' is a substantive three-element enumeration (ev/coev/snake), not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1376,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.363Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). final sentence is substantive, not a quotable placed for closure; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "'A braided universe has interactions. A rigid one has particles that can be counted.' is epigrammatic but sits mid-block and states the braiding/rigidity split directly; passes. Final sentence flagged separately as a mathematical over-claim (anomaly 6), not as a trap."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1411,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.404Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). no narration of the author's own emphasis; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1446,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.445Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). no block-final restatement of what the text established; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1481,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.487Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). no personal or institutional-warmth register; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1516,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.529Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). no unqualified maximum-strength claim; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1551,22 @@
         "reviewed_at": "2026-08-15T10:30:59.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ed54dd40ba26",
+          "ts": "20b8a566e462"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:30.572Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, five bolded paragraphs reading the five QOU conditions physically). reads aloud without stalling; remark, five bolded paragraphs reading the five QOU conditions physically.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1589,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:30.572Z"
 }

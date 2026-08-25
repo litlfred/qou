@@ -51,8 +51,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 45
+set_compute_dps()
 
 # --- the algebraic face: bar-odd(J_{5₂})(q) --------------------------------
 # J_{5₂}(q) = q⁻¹ − q⁻² + 2q⁻³ − q⁻⁴ + q⁻⁵ − q⁻⁶ ; bar-odd = ½(J(q) − J(q⁻¹)).

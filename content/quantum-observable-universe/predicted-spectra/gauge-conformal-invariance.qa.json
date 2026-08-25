@@ -1778,6 +1778,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.330Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1797,6 +1812,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.409Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-em-dash": [
@@ -1816,6 +1846,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 99 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.490Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-triples": [
@@ -1835,6 +1880,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 99 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.569Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-closing-aphorism": [
@@ -1854,6 +1914,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.658Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-meta-commentary": [
@@ -1873,6 +1948,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:59.009Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'We move to the archimedean side of the substrate wall. We invoke real- or complex-analytic constructs...' is the ordinary mathematical 'we' describing a change of setting, not narration of the author's own emphasis; the skill's carve-out for standard mathematical prose applies.",
+        "notes": "Three content defects reported to the batch rather than failed here. (1) SYMBOL COLLISION: the theorem introduces 'a global conformal scaling factor $\\alpha(q,q')$' in a chapter where $\\alpha$ / $\\alpha_{EM}$ is the fine-structure constant throughout (prop:em-coupling-projection, prop:em-coupling-fixed-point, rem:em-coupling-chern-simons all use it) - a 7aa-class collision; rename to $c(q,q')$ or $\\varsigma(q,q')$. (2) The statement says the ratio 'is invariant ... up to a global conformal scaling factor', which is projective invariance, not invariance; and it says 'the relative ratio of their EIGENSPACES', where a ratio of subspaces is undefined - the intended object is presumably the ratio of eigenvalues. (3) The archimedean-specialisation paragraph is boilerplate that appears verbatim in exactly one block in the corpus (this one) and names no archimedean construct this theorem actually uses; the statement as written is purely algebraic in q, so the banner may be gratuitous."
       }
     ],
     "trap-thesis-restatement": [
@@ -1892,6 +1983,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.737Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-performed-warmth": [
@@ -1911,6 +2017,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.814Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-superlative": [
@@ -1930,6 +2051,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.865Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "trap-nonspeakable": [
@@ -1949,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b5a2a4a3917f",
+          "ts": "e92822081216"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:44:58.938Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read (theorem statement plus an 'Archimedean specialisation' paragraph). No negation-contrast, no pivot, no spaced em-dash, no reflex triple (the archimedean paragraph lists four items, and they are generic alternatives rather than a padded three), no aphoristic closer, no restatement, no warm register, no superlative, no noun-pile. uses[] names prop:spectrahedral-phase-collapse, which is a proposition and not a conjecture, so 3b propagation does not apply."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1972,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:44:59.009Z"
 }

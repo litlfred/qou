@@ -154,5 +154,8 @@
       "detail": "identification (2,2) and cross-check (2,1)/(1,2) are all A_magic = 2; shells 8, 20, 28, 50, 82, 126 are declared by the parent block and never evaluated"
     }
   ],
-  "allPassed": true
+  "allPassed": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

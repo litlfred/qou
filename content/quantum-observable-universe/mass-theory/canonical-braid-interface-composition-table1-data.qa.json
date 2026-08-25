@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.643Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.678Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.713Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.746Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.780Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.815Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.849Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.885Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.920Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "53c0fd1aa675",
+          "ts": "b949a29b4c65"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.955Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 data rows); read in full. No trap construction of this category present. VERIFIED (not a trap): the contents (c,d) are consistent with the section-7a Hecke convention — sigma^{-1} = sigma - h follows from sigma - sigma^{-1} = q - q^{-1} = h, giving (1,-h); the interface generator sigma - h/2 is the midpoint, (1,-h/2). Generator symbol is sigma throughout, never T."
+      }
     ]
   },
   "source_hashes": {
     "md": "53c0fd1aa675",
     "ts": "b949a29b4c65"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:21.955Z"
 }

@@ -113,10 +113,13 @@ theorem obstruction_trace_gap [ctx : QouObstructionReductionContext] :
 
 /-- **Derived (conclusion (c)).**  Kummer level-`n` vanishing ⟺ `n ∣ χ(A)`.
     Composes the *definitional* `kappa_vanishes_def` (over `κ₀`) with the
-    residual identification `κ₀ = χ(A)` (`obstruction_trace_gap`); it
-    therefore inherits that lemma's single honest `sorry`.  This is **not**
-    a class field — the χ(A)-form of vanishing is *derived*, never assumed
-    (that assumption was the self-projection this file removed). -/
+    residual identification `κ₀ = χ(A)` (`obstruction_trace_gap`).  Both are
+    sorry-free; the derivation is §3b-conditional on
+    `QouObstructionReductionContext`, whose fields (`hattori_stallings`,
+    `trace_pairing_cast`, `chern_character`) carry the domain gap as explicit
+    *hypotheses* rather than as a `sorry`.  This is **not** a class field —
+    the χ(A)-form of vanishing is *derived*, never assumed (that assumption
+    was the self-projection this file removed). -/
 theorem kappa_vanishes_iff_chi [ctx : QouObstructionReductionContext] (n : ℕ) :
     ctx.kappa_vanishes n ↔ (n : ℤ) ∣ ctx.chi_A := by
   rw [ctx.kappa_vanishes_def, obstruction_trace_gap.1]

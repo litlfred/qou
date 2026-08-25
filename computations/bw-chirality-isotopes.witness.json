@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-30T23:17:23.629361+00:00",
-  "commitSha": "434f71ec38716a4d7fd54b47eb84b428bb579dde",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:56:56.924056+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "bw-chirality-isotopes",
   "scriptFile": "bw_chirality_isotopes.py",
-  "scriptHash": "b9dd0901b307",
-  "scriptCommitSha": "f6ddd9350192668fe1fb6c2498f8d5b91bb70331",
+  "scriptHash": "c0b9bb7e6f02",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,25 +19,35 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/bw_chirality_isotopes.py"
+    ],
+    "reproduce": "python3 -u computations/bw_chirality_isotopes.py"
   },
   "description": "Paper's full BW formula with chirality factors (derived in six-term-mass-formula-complete.md) applied to light isotopes. Coefficients from q-integer-mass-formula.md.  Verifies quoted errors for T (~0.5%), ³He (~0.9%), and extends to A≥5 where chirality limit → 1.",
-  "timestamp": "2026-06-30T23:17:22.817135+00:00",
-  "q_0": 1.1099785955573347,
+  "timestamp": "2026-08-23T08:56:56.913463+00:00",
+  "q_0": 1.1099785827513808,
   "coefficients_MeV": {
-    "lambda_V": 15.671087621497872,
-    "lambda_S": 17.261023051098093,
-    "lambda_C": 0.6824367777742724,
-    "a_asym": 23.50663143224681,
-    "delta_P": 11.859928664795504,
-    "lambda_ex": 0.7734512433782806,
-    "delta_S": 6.289300357189803
+    "lambda_V": 15.67108731129087,
+    "lambda_S": 17.261022845833242,
+    "lambda_C": 0.682436692706363,
+    "a_asym": 23.506630966936306,
+    "delta_P": 11.859928406457223,
+    "lambda_ex": 0.7734512418409788,
+    "delta_S": 6.289300322058325
   },
   "chirality_factors": {
-    "D_chiral_plus": 1.2090603219955938,
-    "T_3He_amphi": 0.9562937817670987,
-    "4He_Borromean": 0.9144977970464194
+    "D_chiral_plus": 1.2090602987956394,
+    "T_3He_amphi": 0.9562937914674781,
+    "4He_Borromean": 0.9144978155992444
   },
   "rows": [
     {
@@ -45,132 +55,132 @@
       "Z": 1,
       "N": 1,
       "A": 2,
-      "B_bulk": -4.444226889630323,
-      "B_Zdep": -0.6138886586923973,
+      "B_bulk": -4.444227001533938,
+      "B_Zdep": -0.6138886574722401,
       "B_shell": 0.0,
-      "chirality_factor": 1.2090603219955938,
-      "B_pred_MeV": -5.631416417083904,
+      "chirality_factor": 1.2090602987956394,
+      "B_pred_MeV": -5.631416419814186,
       "B_AME_MeV": 2.2245662,
-      "err_pct": -353.146722137732
+      "err_pct": -353.14672226046525
     },
     {
       "isotope": "T",
       "Z": 1,
       "N": 2,
       "A": 3,
-      "B_bulk": 9.150002093891223,
-      "B_Zdep": -0.5362811397568475,
+      "B_bulk": 9.150001629014186,
+      "B_Zdep": -0.5362811386909421,
       "B_shell": 0.0,
-      "chirality_factor": 0.9562937817670987,
-      "B_pred_MeV": 8.524638186373142,
+      "chirality_factor": 0.9562937914674781,
+      "B_pred_MeV": 8.5246378563101,
       "B_AME_MeV": 8.4817962,
-      "err_pct": 0.5051051140929608
+      "err_pct": 0.5051012226643764
     },
     {
       "isotope": "3He",
       "Z": 2,
       "N": 1,
       "A": 3,
-      "B_bulk": 9.150002093891223,
-      "B_Zdep": -2.297694261085154,
+      "B_bulk": 9.150001629014186,
+      "B_Zdep": -2.297694140433652,
       "B_shell": 0.0,
-      "chirality_factor": 0.9562937817670987,
-      "B_pred_MeV": 7.784142317291403,
+      "chirality_factor": 0.9562937914674781,
+      "B_pred_MeV": 7.784142120564879,
       "B_AME_MeV": 7.71804132,
-      "err_pct": 0.8564478285457384
+      "err_pct": 0.8564452796280039
     },
     {
       "isotope": "4He",
       "Z": 2,
       "N": 2,
       "A": 4,
-      "B_bulk": 25.119262248791014,
-      "B_Zdep": -2.08759377892503,
-      "B_shell": 5.050038973413042,
-      "chirality_factor": 0.9144977970464194,
-      "B_pred_MeV": 27.143927154546386,
+      "B_bulk": 25.119261396028875,
+      "B_Zdep": -2.087593669305866,
+      "B_shell": 5.0500389445823,
+      "chirality_factor": 0.9144978155992444,
+      "B_pred_MeV": 27.143926956428135,
       "B_AME_MeV": 28.2956624,
-      "err_pct": -4.070359722179945
+      "err_pct": -4.070360422351752
     },
     {
       "isotope": "6Li",
       "Z": 3,
       "N": 3,
       "A": 6,
-      "B_bulk": 32.190087770342046,
-      "B_Zdep": -4.0950225682579084,
-      "B_shell": 3.539519184851382,
+      "B_bulk": 32.1900866923358,
+      "B_Zdep": -4.095022283709389,
+      "B_shell": 3.539519162797585,
       "chirality_factor": 1.0,
-      "B_pred_MeV": 34.00806459873322,
+      "B_pred_MeV": 34.00806381140581,
       "B_AME_MeV": 31.993987199999996,
-      "err_pct": 6.295174734373917
+      "err_pct": 6.295172273513369
     },
     {
       "isotope": "7Li",
       "Z": 3,
       "N": 4,
       "A": 7,
-      "B_bulk": 45.69473058761206,
-      "B_Zdep": -3.889920298183142,
-      "B_shell": 2.8827069702123715,
+      "B_bulk": 45.69472918390811,
+      "B_Zdep": -3.8899200278864474,
+      "B_shell": 2.882706950708514,
       "chirality_factor": 1.0,
-      "B_pred_MeV": 46.94211993870188,
+      "B_pred_MeV": 46.94211881256327,
       "B_AME_MeV": 39.24452,
-      "err_pct": 19.61445811721452
+      "err_pct": 19.614455247670936
     },
     {
       "isotope": "9Be",
       "Z": 4,
       "N": 5,
       "A": 9,
-      "B_bulk": 65.7027173737143,
-      "B_Zdep": -6.297991675936203,
-      "B_shell": 2.0428089552793147,
+      "B_bulk": 65.70271548290599,
+      "B_Zdep": -6.297991180486856,
+      "B_shell": 2.042808939312197,
       "chirality_factor": 1.0,
-      "B_pred_MeV": 65.09785852007833,
+      "B_pred_MeV": 65.0978571185833,
       "B_AME_MeV": 58.16505,
-      "err_pct": 11.919199794512911
+      "err_pct": 11.919197384998904
     },
     {
       "isotope": "11B",
       "Z": 5,
       "N": 6,
       "A": 11,
-      "B_bulk": 86.4731928423538,
-      "B_Zdep": -9.110535994420209,
-      "B_shell": 1.7870126874055505,
+      "B_bulk": 86.4731904559099,
+      "B_Zdep": -9.110535223504165,
+      "B_shell": 1.7870126734378018,
       "chirality_factor": 1.0,
-      "B_pred_MeV": 84.43014761358965,
+      "B_pred_MeV": 84.4301459668953,
       "B_AME_MeV": 76.20546,
-      "err_pct": 10.792779957747976
+      "err_pct": 10.792777796886591
     },
     {
       "isotope": "12C",
       "Z": 6,
       "N": 6,
       "A": 12,
-      "B_bulk": 101.00336272875576,
-      "B_Zdep": -12.62578351437225,
-      "B_shell": 1.795327331717122,
+      "B_bulk": 101.00336000758807,
+      "B_Zdep": -12.62578239234635,
+      "B_shell": 1.7953273183771716,
       "chirality_factor": 1.0,
-      "B_pred_MeV": 97.49082649166826,
+      "B_pred_MeV": 97.49082482425241,
       "B_AME_MeV": 92.16175,
-      "err_pct": 5.782308269611049
+      "err_pct": 5.7823064603834196
     },
     {
       "isotope": "16O",
       "Z": 8,
       "N": 8,
       "A": 16,
-      "B_bulk": 144.10171951272304,
-      "B_Zdep": -20.077321294708533,
-      "B_shell": 2.0041093313694023,
+      "B_bulk": 144.101715788177,
+      "B_Zdep": -20.07731939443083,
+      "B_shell": 2.0041093199279127,
       "chirality_factor": 1.0,
-      "B_pred_MeV": 137.6653481295245,
+      "B_pred_MeV": 137.66534613919666,
       "B_AME_MeV": 127.61931,
-      "err_pct": 7.871879364905272
+      "err_pct": 7.871877805323237
     }
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

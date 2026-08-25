@@ -1777,6 +1777,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.086Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1812,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.133Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1847,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 148 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.178Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1882,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 148 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.247Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1917,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.298Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1952,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.351Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1987,23 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.409Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "The block-final sentence 'Its normalization is not $S = \\mathfrak{Q}_\\beta/E_0$.' restates, in the negative, what the third paragraph already established positively ('The $c_k$ ladder normalization is $\\mathfrak{Q}_\\beta/[Q_A \\cdot \\cos(\\alpha_{\\text{eff}})]$'), and reproduces the .ts title's clause verbatim. It arrives after a two-sentence digression about the two witnesses and the 0.168 percent, so it functions as a placed closer rather than as a step in the argument.",
+        "notes": "NOT FIXED INLINE -- the sentence carries inline math and states the proposition's headline claim, so removing it is a meaning-adjacent edit rather than a mechanical one. PROPOSED FIX: fold it into the paragraph where the positive statement already lives, e.g. end paragraph 3 with 'The $c_k$ ladder normalization is $\\mathfrak{Q}_\\beta/[Q_A\\cdot\\cos(\\alpha_{\\text{eff}})]$, not $S$.' and end the block on the substantive 0.168 percent sentence. That keeps the contrast (which is the proposition's actual content and therefore a legitimate mathematical contrast) while removing the terminal restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2023,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.462Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2058,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.506Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2093,22 @@
         "reviewed_at": "2026-08-15T10:31:00.798Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6fddfb68ae57",
+          "ts": "a43926751641"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:39:16.568Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Proposition, read in full. Nine of ten categories clean. RIGOR PASS on the algebra: I verified the stated simplification symbolically -- Q_beta/E_0 = [m_e(2q+1-q^2)(q+1)/(2q^3)] * [q(q-1)/m_e] = (2q+1-q^2)(q^2-1)/(2q^2), exactly as displayed, and S(1) = 0 follows from the (q^2-1) factor over any commutative ring as claimed. Also confirmed 2q+1-q^2 = -(q^2-2q-1), so this block's Q_beta closed form and the precision ladder's Q_A = m_e|q^2-2q-1|(q+1)/(2q^3) are the same function on q > 1+sqrt(2)... more precisely they agree at q_0 where q^2-2q-1 < 0. The 0.168 percent claim is CORRECT: Q_A(q_0)/Q_beta^CODATA - 1 = 0.167738 percent at the proton pin, matching the ladder table's N=0 row of +1677.4 ppm.",
+        "notes": "TWO FINDINGS. (1) THE QUOTED S(q_0) IS NOT S(q_0). The block says the SDP-constraint scalar matches 'the affine target n_target = S(q_0) approx 0.18689'. Evaluating the block's OWN displayed formula at the proton pin gives S(q_0) = (2q+1-q^2)(q^2-1)/(2q^2) = 0.18720719, not 0.18689. The printed 0.18689 is instead Q_beta^CODATA/E_0(q_0) = 0.78233356/4.1859814 = 0.186893 -- i.e. the CODATA value divided by the substrate E_0, not the substrate ratio. The two differ by 0.168 percent, which is EXACTLY the Q_A-versus-CODATA gap this same block quotes two sentences later. So the block silently mixes its closed form with the experimental value in the one place it prints a number. Proposed fix: print S(q_0) = 0.18721 and, if the CODATA-over-E_0 quantity is what the SDP target actually is, name it separately. (2) 'PROVED' IS THE SUPERSEDED WORD. The block says 'The proved c_2 = -1 cannot be recovered this way.' The 2026-08-16 correction in AGENTS.md rules that 'PROVED' is wrong for c_2 -- the Lean is a one-line ring re-reading of the N=2 factor, with no theorem deriving it -- and that 'structural' is the defensible word. The sibling prop:q-beta-q-eq-one-shadow-gate already uses the corrected wording ('Taylor-exact for the explicit-factor product ... so the series must be named'), so this block is simply out of date. Proposed fix: 'The structural c_2 = -1 cannot be recovered this way.' Not fixed inline: it is a one-word epistemic-tier change and the tier vocabulary is registry-governed. Minor: 'the SDP-constraint scalar (canonical at q_0, ...)' is a low-confidence sweep-damage candidate where 'numerical at q_0' is the natural reading."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2132,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:39:16.568Z"
 }

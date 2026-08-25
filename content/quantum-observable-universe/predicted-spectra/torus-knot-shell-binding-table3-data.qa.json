@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.073Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.112Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.152Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.191Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.230Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.269Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.309Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.348Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.388Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "158696aad926",
+          "ts": "7ac821807df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:39.429Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: cumulative shell occupancies vs magic numbers. Cumulative sums verified: 2, 8, 20, 28, 50, 82, 126 all reproduce from the Shell-size column, and the occupancies 2/6/12/8/22/32/44 are the correct shell-model capacities (the spectroscopic labels are not, a minor anomaly)."
+      }
     ]
   },
   "source_hashes": {
     "md": "158696aad926",
     "ts": "7ac821807df0"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:39.429Z"
 }

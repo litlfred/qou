@@ -3,12 +3,12 @@
  "probe": "ck_membership_payoff_run_probe",
  "engine": "python3-sympy-exact",
  "scriptFile": "ck_membership_payoff_run_probe.py",
- "commitSha": "d3286cec9be9551b983808b317ac4376dc118fe2",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
  "beans": [
   "qou-9p9y",
   "qou-1hlh"
  ],
- "source": "corpus c_3 candidates (computations/c3_hopf_habiro_analysis.py; docs/coordination/1ppq-qbeta.md); alpha_EM element PR #1511; binding tails (habiro_tail_membership_gate_probe.py); GSWZ gates (uploads/2412.04241v2.pdf); CGZ (uploads/1712.04887v3.pdf)",
+ "source": "corpus c_3 candidates (computations/c3_hopf_habiro_analysis.py; docs/coordination/1ppq-qbeta.md); alpha_EM element PR #1511; binding tails (habiro_tail_membership_gate_probe.py); GSWZ gates (library/arxiv-2412.04241v2/2412.04241v2.pdf); CGZ (library/arxiv-1712.04887v3/1712.04887v3.pdf)",
  "checks": {
   "c3_two_forms_identical": true,
   "J_hopf_c3_candidate_signature_as_predicted": true,

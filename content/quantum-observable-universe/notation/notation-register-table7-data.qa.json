@@ -890,7 +890,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.392Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.433Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.474Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.515Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.555Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.594Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.632Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.673Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.715Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "0710aad25cc6",
+          "ts": "a96f3acf67df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:25.758Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 8-row particle-interactions register. E_0^{(N=0)} = m_e/(q0(q0-1)) = 4.186 MeV recomputed correct; the complex-volume row writes bare E_0 against the chapter's own E rule (reported).",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:25.758Z"
 }

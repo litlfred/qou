@@ -1176,6 +1176,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.804Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of all four proof parts. VERIFIED the algebra: H_3(q) Wedderburn dims 1/2/1 correct; the 2x2 standard-rep matrix has the right trace c(q-q^{-1})+2d and det cd(q-q^{-1})+d^2-c^2, matching eigenvalues cq+d and -cq^{-1}+d; and all three inter-nucleon (c,d) pairs are right (sigma^{-1}=sigma-h gives d=-h; (sigma+sigma^{-1})/2 gives d=-h/2).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1212,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.846Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of all four proof parts. VERIFIED the algebra: H_3(q) Wedderburn dims 1/2/1 correct; the 2x2 standard-rep matrix has the right trace c(q-q^{-1})+2d and det cd(q-q^{-1})+d^2-c^2, matching eigenvalues cq+d and -cq^{-1}+d; and all three inter-nucleon (c,d) pairs are right (sigma^{-1}=sigma-h gives d=-h; (sigma+sigma^{-1})/2 gives d=-h/2).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1248,22 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 226 words)"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.885Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Two spaced dashes in part (iii), both true parentheticals."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1283,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 226 words)"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.924Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'symmetric (dim=1), standard (dim=2), and alternating (dim=1)'; the descended/transient/mixed partition.",
+        "notes": "Substantive -- H_3(q) has exactly three irreps and the partition genuinely has three cases."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1319,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.969Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of all four proof parts. VERIFIED the algebra: H_3(q) Wedderburn dims 1/2/1 correct; the 2x2 standard-rep matrix has the right trace c(q-q^{-1})+2d and det cd(q-q^{-1})+d^2-c^2, matching eigenvalues cq+d and -cq^{-1}+d; and all three inter-nucleon (c,d) pairs are right (sigma^{-1}=sigma-h gives d=-h; (sigma+sigma^{-1})/2 gives d=-h/2).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1355,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.014Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of all four proof parts. VERIFIED the algebra: H_3(q) Wedderburn dims 1/2/1 correct; the 2x2 standard-rep matrix has the right trace c(q-q^{-1})+2d and det cd(q-q^{-1})+d^2-c^2, matching eigenvalues cq+d and -cq^{-1}+d; and all three inter-nucleon (c,d) pairs are right (sigma^{-1}=sigma-h gives d=-h; (sigma+sigma^{-1})/2 gives d=-h/2).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1391,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.057Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of all four proof parts. VERIFIED the algebra: H_3(q) Wedderburn dims 1/2/1 correct; the 2x2 standard-rep matrix has the right trace c(q-q^{-1})+2d and det cd(q-q^{-1})+d^2-c^2, matching eigenvalues cq+d and -cq^{-1}+d; and all three inter-nucleon (c,d) pairs are right (sigma^{-1}=sigma-h gives d=-h; (sigma+sigma^{-1})/2 gives d=-h/2).",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1427,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.096Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of all four proof parts. VERIFIED the algebra: H_3(q) Wedderburn dims 1/2/1 correct; the 2x2 standard-rep matrix has the right trace c(q-q^{-1})+2d and det cd(q-q^{-1})+d^2-c^2, matching eigenvalues cq+d and -cq^{-1}+d; and all three inter-nucleon (c,d) pairs are right (sigma^{-1}=sigma-h gives d=-h; (sigma+sigma^{-1})/2 gives d=-h/2).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1463,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.134Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Part (ii): 'the Hecke relation $T^2 = (q - q^{-1})T + 1$ restricted to the $2$-dimensional standard representation, where $T$ has eigenvalues $q$ and $-q^{-1}$'. Part (iii): '$\\mathcal{B}_3$ ... is the **unique** braid-realizable minimum of the Markov trace among length $\\leq 6$ braid words.'",
+        "notes": "(1) SEC.7A VIOLATION PLUS AN IN-PARAGRAPH SYMBOL COLLISION: AGENTS.md Sec.7a states 'The Hecke algebra generator is sigma_i (never T)', and here T denotes the generator in the very same paragraph that uses T^std(c,d) for the 2x2 transfer matrix -- two different objects under one letter, three lines apart. PROPOSED: write the relation with sigma. (2) 'the unique ... minimum among length <= 6 braid words' is correctly scoped HERE, but sec:particle-interactions-intro drops the length bound and says 'Strong duality yields the Borromean link B_3 as the unique optimum' -- the qualifier that makes the claim checkable is lost in the summary. VERIFIED SOUND otherwise: I checked the 2x2 matrix (trace c(q-q^{-1})+2d, det cd(q-q^{-1})+d^2-c^2) against the eigenvalues cq+d, -cq^{-1}+d, and all three inter-nucleon (c,d) pairs -- sigma^{-1} = sigma - h gives d = -h and (sigma+sigma^{-1})/2 gives d = -h/2, both as stated."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1499,23 @@
         "reviewed_at": "2026-08-15T10:31:01.307Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "50a330379e22",
+          "ts": "7f5663c8b3f7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.176Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of all four proof parts. VERIFIED the algebra: H_3(q) Wedderburn dims 1/2/1 correct; the 2x2 standard-rep matrix has the right trace c(q-q^{-1})+2d and det cd(q-q^{-1})+d^2-c^2, matching eigenvalues cq+d and -cq^{-1}+d; and all three inter-nucleon (c,d) pairs are right (sigma^{-1}=sigma-h gives d=-h; (sigma+sigma^{-1})/2 gives d=-h/2).",
+        "notes": "Sentences parse aloud; no noun-chain stall."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1538,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:01.176Z"
 }

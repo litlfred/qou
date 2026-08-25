@@ -1425,6 +1425,21 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.658Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "Two candidates, both substantive: 'what selects the figure-8 as a MASS invariant rather than a chirality invariant' (the amphichirality really does separate the two roles), and 'no pi, no zeta-values, no real-analytic transcendentals appear' (the substrate/archimedean separation is the block's entire subject, and the denials name the specific objects excluded)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1444,6 +1459,21 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.692Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "'The transcendence of Cl_2(pi/3) is conjectural in number theory but the FORM of the answer is forced by Bloch-Suslin pentagon-uniqueness' has the concede-then-pivot shape, but both halves are true mathematical statements and the concession is a real open problem honestly flagged, not a setup."
       }
     ],
     "trap-em-dash": [
@@ -1463,6 +1493,21 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 384 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.726Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "Two em-dash uses: one correctly paired parenthetical around 'equivalently, invariance under the bar involution', one appended ('share a single provenance - the unique archimedean shadow ...'). Not the density pattern."
       }
     ],
     "trap-triples": [
@@ -1482,6 +1527,21 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 384 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.513Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "Full read of rem:figure-8-archimedean-illustration (dual-existence framing, Bring embedding, substrate representation, archimedean image with boxed Vol(4_1), dichotomy table, alpha_EM cross-reference). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1501,6 +1561,22 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.762Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "No quotable closer.",
+        "notes": "NOTE for a different criterion (clarity-rhetorical-header): the section header '**The dichotomy in one line.**' is a rhetorical header of the kind the academic-register rule excludes, and it is inaccurate - what follows is two sentences plus a four-column table, not one line. Proposed noun-phrase header: '**Substrate and archimedean sides compared.**'"
       }
     ],
     "trap-meta-commentary": [
@@ -1520,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.548Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "Full read of rem:figure-8-archimedean-illustration (dual-existence framing, Bring embedding, substrate representation, archimedean image with boxed Vol(4_1), dichotomy table, alpha_EM cross-reference). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1539,6 +1630,23 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.798Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "severity": "major",
+        "evidence": "The block's final sentence restates the boxed identity under an unrelated heading: it sits inside '**Cross-reference: alpha_EM**' yet says 'The exact algebraic values :val[Vol_4_1] = 2 Cl_2(pi/3) matches the standard hyperbolic 2-tetrahedra triangulation', repeating the display given three paragraphs earlier and contributing nothing to the alpha_EM cross-reference it is attached to.",
+        "notes": "STRUCTURAL - not fixed inline; the sentence also carries two independent defects (below), so it needs an author pass, not a trim. Proposed: delete it, or move the Thurston corroboration up beside the boxed value. DEFECTS IN THE SAME SENTENCE: (a) 'The exact algebraic valueS ... matcheS' - number-agreement fault, reads as sweep damage; (b) it calls 2 Cl_2(pi/3) an 'exact algebraic value' two paragraphs after the block itself says the number is (conjecturally) TRANSCENDENTAL and lives in the archimedean column - the block contradicts its own central dichotomy in its last line."
       }
     ],
     "trap-performed-warmth": [
@@ -1558,6 +1666,21 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.586Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "Full read of rem:figure-8-archimedean-illustration (dual-existence framing, Bring embedding, substrate representation, archimedean image with boxed Vol(4_1), dichotomy table, alpha_EM cross-reference). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1577,6 +1700,23 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.837Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "severity": "minor",
+        "evidence": "Cluster of unqualified maximal characterisations: 'serves as the CLEANEST illustration of', '4_1 has a COMPLETELY rigorous motivic representation', 'lives STRICTLY in the substrate ring R', 'no other archimedean image is admissible'. None is measured; 'completely rigorous' in particular de-hedges a claim the block does not demonstrate.",
+        "notes": "PARTIAL FIX APPLIED INLINE (1 sentence, pure prose, no math or meaning change): 'has a completely rigorous motivic representation' -> 'has a rigorous motivic representation'. Delimiter balance re-verified after edit. NOT fixed (comparative/claim content, structural): 'the cleanest illustration' (proposed: 'a clean illustration' or simply 'illustrates'), 'lives strictly in' (proposed: 'lives in'), and 'no other archimedean image is admissible' (keep only if prop:archimedean-functor-uniqueness actually proves uniqueness; otherwise scope it). RIGOR (reported, not fixed - two hard errors). (1) BRAID WORD IS ON 3 STRANDS, NOT 4. The block says: 'Its braid word sigma_1 sigma_2^{-1} sigma_1 sigma_2^{-1} realises ON 4 STRANDS', and repeats it as 'the four-strand braid word above'. The word uses only sigma_1 and sigma_2, which generate B_3; the figure-eight knot is the closure of (sigma_1 sigma_2^{-1})^2 in B_3. Component count confirms it: the permutation is ((12)(23))^2 = a 3-cycle, one cycle, so the closure is a KNOT. Read in B_4 the same word leaves strand 4 free, and the closure would be a 2-COMPONENT LINK, not 4_1. Proposed: 'realises on 3 strands'. (2) THE TRIANGULATION COUNT CONTRADICTS ITSELF. Mid-block: 'the figure-8's THREE ideal-tetrahedron triangulation pins down the specific shape parameter z = e^{i pi/3}'. Last line: 'matches the standard hyperbolic 2-TETRAHEDRA triangulation'. The figure-eight complement decomposes into TWO regular ideal tetrahedra - which is exactly the 2 in the block's own boxed Vol(4_1) = 2 Cl_2(pi/3). Proposed: 'two ideal-tetrahedron triangulation'. (3) VERIFIED CORRECT: Vol(4_1) = 2 D(e^{i pi/3}) = 2 Cl_2(pi/3) = 2.02988321282 at 20 dps - the right value under the right name (the corpus's recurring 2 Lambda(pi/3) mislabel is NOT present here); the witnessed-value directive :val[Vol_4_1]{precision=6} is used rather than a hardcoded numeral; 4_1 is the smallest-volume hyperbolic knot; 4_1 is amphichiral; and 2/(3 pi) = 2g/(4 pi (g-1)) at g = 4 is exact (both 0.2122065908). (4) MINOR: citations are backticked '[thurston1978]' rather than \\\\cite{}."
       }
     ],
     "trap-nonspeakable": [
@@ -1596,6 +1736,21 @@
         "reviewed_at": "2026-08-15T10:31:00.347Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bf4e5feee38e",
+          "ts": "4e3e50696e5b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:59:32.623Z",
+        "reviewed_sha": "bceca18a473619d4a8d115c8d96a88805d6c80b1",
+        "evidence": "Full read of rem:figure-8-archimedean-illustration (dual-existence framing, Bring embedding, substrate representation, archimedean image with boxed Vol(4_1), dichotomy table, alpha_EM cross-reference). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1618,5 +1773,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:59:32.837Z"
 }

@@ -1771,6 +1771,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1790,6 +1805,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-em-dash": [
@@ -1809,6 +1839,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-triples": [
@@ -1828,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1847,6 +1907,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-meta-commentary": [
@@ -1866,6 +1941,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1885,6 +1975,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-performed-warmth": [
@@ -1904,6 +2009,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "trap-superlative": [
@@ -1923,6 +2043,23 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "The proposition asserts that the character expansion \"operates identically to the inverse non-commutative Fourier transform\". \"operates identically to\" is an intensifier standing where a copula belongs, and as written the statement is not falsifiable - it claims a resemblance, not an identity.",
+        "notes": "proposed (not applied - changing it changes the claim strength, which is the author's call): either \"is the inverse non-commutative Fourier transform on $H_n(q)$\" (if that is the intended claim) or a stated isomorphism."
       }
     ],
     "trap-nonspeakable": [
@@ -1942,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:00.748Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "922ca3eadfd8",
+          "ts": "d2e79844d7f5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.746Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (statement + cross-reference). Cross-reference closer is bookkeeping, not restatement (false-positive class)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1965,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.746Z"
 }

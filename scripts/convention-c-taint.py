@@ -90,7 +90,11 @@ def build_graph(root: pathlib.Path):
     modsrc = _module_sources(root)
     reads = {}
     for prod in writes:
-        src = _read_source(root, prod)
+        # Resolve the producer beside a witness it OWNS. Producers emit next to
+        # themselves, so an owned witness's directory is the correct tie-break
+        # for a duplicated basename — see _read_source. Bean qou-kcii.
+        hints = [docs[w][0].parent for w in sorted(writes[prod]) if w in docs]
+        src = _read_source(root, prod, hints)
         refs = set(WITNESS_REF.findall(src))
         # Follow local imports: the filename literal often lives one module
         # away from the producer. See _imported_witnesses.
@@ -99,13 +103,39 @@ def build_graph(root: pathlib.Path):
     return owner, writes, reads, docs
 
 
-def _read_source(root: pathlib.Path, prod: str) -> str:
-    for cand in (root / prod, root / pathlib.Path(prod).name):
+def _read_source(root: pathlib.Path, prod: str,
+                 hint_dirs: "list[pathlib.Path] | None" = None) -> str:
+    """Source text of producer `prod`, resolved deterministically.
+
+    `hint_dirs` are directories of witnesses this producer OWNS, tried first:
+    producers emit beside themselves, so that is the copy whose source
+    actually generated those witnesses.
+
+    This matters because the source text is what the edges are read out of —
+    `build_graph` greps it for witness names — so resolving the wrong copy
+    gives the taint fixpoint wrong edges, and convention-C taint is exactly
+    the propagation this script exists to compute. Two producer basenames
+    under computations/ are duplicated AND named by a witness scriptFile:
+    qbeta_phib_2loop_bdictionary_probe.py (probes/ + qbeta/) and
+    witness_provenance_audit.py (root + audits/, two different audits per bean
+    qou-2r42). The old fallback returned the first `rglob` hit — os.scandir
+    order, not sorted — so which one it read was filesystem-dependent and not
+    reproducible from the source. Bean qou-kcii.
+    """
+    name = pathlib.Path(prod).name
+    for d in (hint_dirs or []):
+        try:
+            return (d / name).read_text()
+        except OSError:
+            continue
+    for cand in (root / prod, root / name):
         try:
             return cand.read_text()
         except OSError:
             continue
-    for hit in root.rglob(pathlib.Path(prod).name):
+    for hit in sorted(root.rglob(name)):
+        if "_deprecated" in hit.parts:
+            continue
         try:
             return hit.read_text()
         except OSError:
@@ -116,7 +146,11 @@ def _read_source(root: pathlib.Path, prod: str) -> str:
 def _module_sources(root: pathlib.Path) -> dict:
     """module stem -> source text, for every .py under computations/."""
     out = {}
-    for p in root.rglob("*.py"):
+    # sorted: `setdefault` is first-wins, and rglob yields in os.scandir order,
+    # so for a duplicated module stem the surviving source was whichever copy
+    # the filesystem happened to hand over first — stable on one tree, but not
+    # across machines. Bean qou-kcii.
+    for p in sorted(root.rglob("*.py")):
         if "_deprecated" in str(p):
             continue
         try:

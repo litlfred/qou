@@ -1416,6 +1416,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "3 negation-contrast construction(s): \", not the knot type.\"; \", not a derivation:\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:34.857Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1435,6 +1451,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:34.899Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1454,6 +1486,23 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 931 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:35.226Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "Five spaced dashes in one block (line 52 '--', lines 59, 74, 85, 95 '---'), and three of them are doing sentence structure rather than parenthesis. L52 'It is also what the corpus already does -- `AntiparticleCrossingReversalContext` takes the mirror to be ...' joins two independent clauses where a colon is the mark. L74 'so L jumps from 0 to 1 on the baryon --- violating conservation clause 3 above' appends a participial afterthought. L85 'no function of the state can give them +1 and -1 --- quite apart from sign(0) = 0 != +1' appends a second, independent argument as a trailing clause, which buries it. (L59 and L95 are genuine appositives and would pass on their own; it is the concentration that is the tell.) The block also mixes the two spellings, one '--' against four '---', so they do not even render alike.",
+        "notes": "flagged, not fixed — the block is a live refutation record citing four Lean files and two beans, and repunctuating an argument whose clause boundaries carry the logic is not a mechanical edit. Proposed: L52 '... what the corpus already does: `AntiparticleCrossingReversalContext` takes ...'; L74 '... on the baryon, violating conservation clause 3 above'; L85 split into its own sentence, 'Quite apart from that, sign(0) = 0 != +1.' — which promotes the second obstruction from an afterthought to a stated one. Leave L59 and L95, and normalise the L52 '--' to '---' if any dash survives. TWO MATH FINDINGS on the same block, not fixed inline. (1) The bullet list under 'Each smoothing L_0^{pm} contributes:' says the neutral component is 'One neutrino or antineutrino (K_{0_1} or K_{0_1}^{sigma}) with lepton number -1' — flatly -1. That contradicts the assignment table further down, which gives nu_e L = +1 and nu_e^{sigma} L = -1, and contradicts the sentence immediately after the table, 'The charged lepton carries L = pm 1. The neutrino carries L = mp 1.' It also contradicts the Lean sibling's docstring ('Neutrinos (unknot components): L = -1 or +1'). The bullet is right only for beta^-; the table is the correct general statement. Proposed: 'One neutrino or antineutrino ... carrying the opposite sign, so the pair sums to zero.' (2) Line 59: 'the antiparticles are sigma_1^{-1}, sigma_1^{-3} --- distinct braid words that both close to the unknot'. sigma_1^{-3} closes to the MIRROR TREFOIL, not the unknot; 3_1 is chiral, so sigma_1^3 and sigma_1^{-3} close to different knots. The 'mirror acts freely on words while fixing the knot type' point holds only for the amphichiral unknot pair sigma_1 / sigma_1^{-1}, and as written the sentence extends it to the trefoil pair, where it is false. Proposed: restrict the claim to the neutrino pair and state separately that for e^- the mirror moves the knot type as well. THIRD, non-trap: the paragraph 'An earlier version of this section asserted ... That is false' narrates the document's own revision history in scholarly prose; per AGENTS.md 4d that belongs in authorNotes with kind 'refined-framing', not in the .md body."
       }
     ],
     "trap-triples": [
@@ -1473,6 +1522,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 931 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:34.942Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1492,6 +1557,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:34.981Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1511,6 +1592,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:35.021Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1530,6 +1627,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:35.061Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1549,6 +1662,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:35.104Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1568,6 +1697,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:35.145Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1587,6 +1732,22 @@
         "reviewed_at": "2026-08-15T10:31:01.210Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8d9f8ab42d41",
+          "ts": "c6ad3f606d37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:10:35.186Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the whole remark (conservation clauses, the proved Z-grading obstruction, the braid-word carrier argument, the writhe-candidate refutation under Markov II and at minimal level, the assignment table, the chi = -6 constraint, and the structural-origin paragraph). Verified chi(Bring) = 2 - 2g = -6 for genus 4 — correct. Verified every Lean citation resolves: QOU/StandardModel/{LeptonNumberGradingObstruction,LeptonNumberCarrierChirality,ChiralFermionBraidWords,WritheLevelParity}.lean all exist, and both named theorems resolve (leptonNumber_not_markov_invariant at ChiralFermionBraidWords.lean:211, leptonNumber_collapses_at_minimal_level at WritheLevelParity.lean:371). The refutation carries its scope-(a)/(b) classification and its invariant, per the AGENTS.md refutation discipline. The SM-vs-here contrast ('an accidental symmetry ... Here, it is a structural invariant') and 'the framing or the smoothing history, not the crossing sum' are substantive mathematical contrasts; the three conservation clauses are three genuinely distinct move classes, not a reflex triple; the block ends on a claim, not an aphorism.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1609,5 +1770,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:10:35.226Z"
 }

@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.476Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.536Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.599Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.670Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.811Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.902Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:01.967Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:02.022Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:02.093Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "27baff20146b",
+          "ts": "c1ec3328a5ff"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:02.155Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and RECOMPUTED symbolically. Per def:frobenius-dual-h3, <b_k^vee, T> is the coefficient of the basis element b_k in NF(T), so every column should be the Hecke normal form of that torus knot's braid word. Columns T_{1,0}, T_{2,1} and T_{2,2} are EXACTLY that and are CORRECT: NF(1)=1 (gamma->1); NF(sigma_0)=sigma_0 (sigma_0->1); NF(sigma_0^2)= h sigma_0 + 1 (gamma->1, sigma_0->h). Columns T_{2,3} and T_{2,5} are NOT - see notes.",
+        "notes": "TWO COLUMNS DO NOT MATCH ANY NORMAL FORM I COULD RECONSTRUCT. Recomputed with sympy in H_3(q): NF(sigma_0^3) = (h^2+1) sigma_0 + h, so the T_{2,3} column should read gamma->h, sigma_0->h^2+1; the table instead gives all zeros except e^- -> 1. NF(sigma_0^5) = (h^4+3h^2+1) sigma_0 + (h^3+2h), so the T_{2,5} column should read gamma->h^3+2h, sigma_0->h^4+3h^2+1; the table instead gives L_+ -> h and e^- -> h^2. Alternative braid words do not rescue either column: as a 3-braid the trefoil is (sigma_0 sigma_1)^2, whose NF is h*e^- + L_- (e^- -> h, L_- -> 1, not e^- -> 1, L_- -> 0), and the stabilised sigma_0^5 sigma_1 gives L_+ -> h^4+3h^2+1, sigma_1 -> h^3+2h. Structural consistency check: the sigma_1 and L_- rows are identically zero, which is exactly what the sigma_0^n convention predicts - and the e^- row then breaks that same convention by carrying the only two entries in those two columns. So the first three columns and the last two are on different rules. Proposed fix: state the braid word used for each T_{m,n} in the table caption or the parent proposition, then recompute the last two columns; if sigma_0^n is intended, T_{2,3} = (gamma:h, sigma_0:h^2+1) and T_{2,5} = (gamma:h^3+2h, sigma_0:h^4+3h^2+1). Related: rem:em-coupling-chern-simons already records that this Gram matrix is singular under the production trace convention, and def:frobenius-dual-h3 states det G = 0 on H_3 under convention D, so the dual K^vee used by this table may not exist on all of H_3."
+      }
     ]
   },
   "source_hashes": {
     "md": "27baff20146b",
     "ts": "c1ec3328a5ff"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:41:02.155Z"
 }

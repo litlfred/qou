@@ -12,7 +12,7 @@ updated_at: 2026-08-11T10:50:00Z
 parent: qou-rtec
 ---
 
-Read GGM 2012.00062v3 (uploads/, pymupdf). The convention gap of qou-m1nz is PINNED:
+Read GGM 2012.00062v3 (library/, pymupdf). The convention gap of qou-m1nz is PINNED:
 
   eq (18):  Ind^rot_K(m, zeta; q) = sum_{e in Z} I_K(m,e)(q) * zeta^e     [fugacity basis, DGG13/BDP14]
   eq (21):  S+_{sigma1 sigma1}(x; q) = Ind^rot_K(0, x; q)                 [exact; holds for 4_1 and 5_2]
@@ -27,7 +27,7 @@ magnetic/electric FLUX basis. Different objects. That is why sum_e gave [1,-2,-3
 
 NEXT ACTION (now fully specified, no lit needed — we have every paper):
  1. Implement I_K(m,e) in the DGG flux basis for 4_1 from the tetrahedron-index gluing
-    (uploads/1112.5179v1.pdf DGG; uploads/1604.02688v1.pdf GHHR; uploads/1208.1663v2.pdf).
+    (library/arxiv-1112.5179v1/1112.5179v1.pdf DGG; library/arxiv-1604.02688v1/1604.02688v1.pdf GHHR; library/arxiv-1208.1663v2/1208.1663v2.pdf).
  2. Form Ind^rot(0,x;q) = sum_e I(0,e) x^e and verify against eq (200) COEFFICIENT-WISE
     in BOTH x and q (a 2-variable check — much stronger than the x=1 tower alone).
  3. Then the dictionary S+_11 = Ind^rot is confirmed in-corpus and Route C M2 unblocks.

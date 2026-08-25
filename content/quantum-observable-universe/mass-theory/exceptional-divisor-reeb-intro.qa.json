@@ -1405,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.009Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'The Lagrange resolvents diagonalise the C_5-action ..., but do not provide an operator algebra acting along the resolvent eigenlines' - substantive: the missing operator algebra is precisely the gap the blow-up construction fills, so the negative half carries content rather than manufacturing emphasis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1424,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:06.754Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of sec:exceptional-divisor-reeb-intro (six-paragraph section roadmap: blow-up, static geometry, q-Reeb dynamics, six knot operators, boundary fusion, JSJ-graded complement). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1443,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:06.789Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of sec:exceptional-divisor-reeb-intro (six-paragraph section roadmap: blow-up, static geometry, q-Reeb dynamics, six knot operators, boundary fusion, JSJ-graded complement). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1462,6 +1507,22 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 245 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.085Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Lists are content-sized, not reflex threes: a four-item geometry list, a six-element operator list (identity, sigma_1, sigma_2, Garside, two 3-cycles = |S_3| = 6, count verified), and three colour tubes matching the triple ramification.",
+        "notes": "RIGOR (reported, not fixed): (1) BRAID-CLOSURE CHECK FAILS for the Garside claim. Final paragraph: 'Garside and Borromean trajectories cross Heegaard tori, producing a hyperbolic complement with strictly positive volume.' The Garside element of B_3 is Delta = sigma_1 sigma_2 sigma_1; its permutation is (13), so its closure has 2 components, and by conjugation + one destabilisation (Delta ~ sigma_1^2 sigma_2, sigma_2 appearing once with exponent +1) the closure is the HOPF LINK, whose complement is T^2 x I - Seifert-fibered, V_hyp = 0. The alternative reading Delta^2 = (sigma_1 sigma_2)^3 (full twist, generator of the centre) closes to the torus link T(3,3), also Seifert-fibered with V_hyp = 0. Under either reading the Garside trajectory belongs with the 'V_hyp = 0' class the preceding sentence assigns to torus knots, not with Borromean. Borromean itself is correct: the closure of (sigma_1 sigma_2^{-1})^3 is the Borromean rings, hyperbolic, Vol = 7.32772. Proposed: move 'Garside' to the Seifert-fibered sentence, or state which curve 'Garside trajectory' denotes if it is not the closure of Delta. (2) VERIFIED CORRECT: R_p = S^3 --pi_H--> S_p = P^1(C) is the Hopf fibration; the six S_3 words enumerate correctly."
       }
     ],
     "trap-closing-aphorism": [
@@ -1481,6 +1542,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:06.827Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of sec:exceptional-divisor-reeb-intro (six-paragraph section roadmap: blow-up, static geometry, q-Reeb dynamics, six knot operators, boundary fusion, JSJ-graded complement). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1500,6 +1576,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.049Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'We fix the static geometry', 'We introduce dynamics', 'We define six canonical knot operators', 'We supply explicit trajectory ODEs' are section-roadmap sentences (standard for a sec: block), not narration of the author's own emphasis; no 'note the framing' / 'we emphasize' pattern."
       }
     ],
     "trap-thesis-restatement": [
@@ -1519,6 +1610,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:06.862Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of sec:exceptional-divisor-reeb-intro (six-paragraph section roadmap: blow-up, static geometry, q-Reeb dynamics, six knot operators, boundary fusion, JSJ-graded complement). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1538,6 +1644,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:06.898Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of sec:exceptional-divisor-reeb-intro (six-paragraph section roadmap: blow-up, static geometry, q-Reeb dynamics, six knot operators, boundary fusion, JSJ-graded complement). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1557,6 +1678,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:06.934Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of sec:exceptional-divisor-reeb-intro (six-paragraph section roadmap: blow-up, static geometry, q-Reeb dynamics, six knot operators, boundary fusion, JSJ-graded complement). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -1576,6 +1712,21 @@
         "reviewed_at": "2026-08-15T10:31:00.830Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a5109781beb6",
+          "ts": "232f355898ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:06.973Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of sec:exceptional-divisor-reeb-intro (six-paragraph section roadmap: blow-up, static geometry, q-Reeb dynamics, six knot operators, boundary fusion, JSJ-graded complement). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1598,5 +1749,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:46:07.085Z"
 }

@@ -142,7 +142,8 @@ def main():
         # Genuine (non-tautological) check: build the series from the ACTUAL framed
         # difference characters χ_λ(𝓑_n·Δ^{2m}) − χ_λ(𝓑_p·Δ^{2m}) — appending m full
         # twists Δ²=(σ₀σ₁)³ — and confirm it equals the closed 1-pole rational whose
-        # pole sits at the proved ribbon eigenvalue θ_λ=q^{2c(λ)}. This verifies that
+        # pole sits at the full-twist eigenvalue θ_λ=q^{2c(λ)} — AXIOMATIZED,
+        # not proved (class RibbonTwistEigenvalue, zero instances). This verifies that
         # framing multiplies χ_λ by θ_λ (the lemma's content), rather than assuming it.
         theta = Q ** (2 * content(lam))
         closed = chi[lam] / (1 - t * theta)
@@ -185,6 +186,11 @@ def _emit_witness(assertions, signs):
         script_hash = hashlib.sha256(f.read()).hexdigest()[:12]
 
     out = {
+        # Anchor-INDEPENDENT: every quantity is a sympy expression in the SYMBOL q
+        # (`Q` from hoefsmit_symbolic is a Symbol, not the numeric pin); nothing is
+        # evaluated at any q0. Without this the builder stamps the default proton
+        # pin plus a q0Value, claiming a numeric anchor the computation never used.
+        "q0Anchor": "independent",
         "name": "eigenbasis-structural-lemmas",
         "description": "Three structural lemmas the content/twist eigenbasis closes "
                        "(verified exact-symbolic; Lean formalization is the follow-up): "
@@ -197,8 +203,15 @@ def _emit_witness(assertions, signs):
                        "gate (content-statistic ansätze refuted; out of scope).",
         "auditOnly": True,
         "probe": True,
-        "anchored_on_proved": "θ_λ=q^{2c(λ)} (ribbon eigenvalue, "
-                              "QOU/BraidKnot/ChiralityWritheRibbon.lean, Lean sorry-free)",
+        "anchored_on_axiom_class": "θ_λ=q^{2c(λ)} — the FULL-twist eigenvalue. "
+                              "AXIOMATIZED as class RibbonTwistEigenvalue in "
+                              "QOU/BraidKnot/ChiralityWritheRibbon.lean, which has "
+                              "ZERO instances; every consumer takes it as a "
+                              "hypothesis. sorry-free is true but not evidence of "
+                              "provenness — a class declaration has no sorry because "
+                              "it asserts rather than proves. Cited to Kassel Ch. XIV "
+                              "/ Mathas 3. NOTE it is the SQUARE of the Lean ribbon "
+                              "twist Keystone.theta = q^{c(λ)}, since Δ² = θ².",
         "lemmas": {
             "L1_order_parity": "χ_λ(β) Laurent exponents ≡ (word length) mod 2; "
                                "proof: Hoefsmit crossing factors are odd Laurent degree.",

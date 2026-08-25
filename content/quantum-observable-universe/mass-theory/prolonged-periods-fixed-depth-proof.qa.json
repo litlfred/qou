@@ -1202,6 +1202,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:09.808Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Proof block, three labelled steps (Cayley-Hamilton, operator recurrence, period recurrence). No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1221,6 +1236,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:09.863Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Linear argument; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1240,6 +1270,22 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 166 words)"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:09.937Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two spaced em-dashes, both true appositives introducing the definition of V ('over Bring's surface -- the de Rham cohomology of the family, a finitely generated free R-module of rank r ...'). Much lighter than the proposition block it proves."
       }
     ],
     "trap-triples": [
@@ -1259,6 +1305,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 166 words)"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:10.007Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Three proof steps matching the three claims; substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1278,6 +1339,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:10.054Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends by naming the remaining identification half and the QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1297,6 +1373,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:10.135Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Naming the Mathlib lemmas used ('mul_smul_comm', 'map_sum', 'map_smul') is proof bookkeeping, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1316,6 +1407,22 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:10.198Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'Hence a fixed-depth recurrence on the prolonged periods exists, with depth bounded by rank V' restates the proposition, which is the correct close for a proof."
       }
     ],
     "trap-performed-warmth": [
@@ -1335,6 +1442,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:10.257Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1354,6 +1476,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:10.316Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflation. Checked: 2g = 8 for the genus-4 Bring curve; the M^{n+d} manipulation is valid as written."
       }
     ],
     "trap-nonspeakable": [
@@ -1373,6 +1510,21 @@
         "reviewed_at": "2026-08-15T10:31:00.387Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "623b4cc94b78",
+          "ts": "011a16ee2ecb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:09:10.382Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1395,5 +1547,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:09:10.382Z"
 }

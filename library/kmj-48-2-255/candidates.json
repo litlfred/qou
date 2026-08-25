@@ -1,0 +1,120 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "kmj-48-2-255",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "720279042c6d762b98e252c2e19ad62426c8716b734b8284d8aeff7b79e388d8",
+  "file": "KMJ-48-2-255.pdf"
+ },
+ "provenance": {
+  "title": "A Formula for the Colored Jones Polynomial of 2-Bridge Knots Toshie Takata",
+  "authors": "Department of Mathematics, Faculty of Science, Niigata University, Niigata 950-",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "theorem": 2,
+   "lemma": 3,
+   "corollary": 1,
+   "remark": 1
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "A formula for the n-colored Jones polynomial of the 2-bridge knot",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": "[5]",
+   "statement": "A formula for the n-colored Jones polynomial of a 0-framed knot",
+   "section_file": "sections/sec-003-2-proof-of-theorem-1.md",
+   "section_title": "Proof of Theorem 1",
+   "pages": "3-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "(1) \u03c3jc = \u03c3ja = (\u22121)[(2j\u22121)t/p], and \u03c3jd = \u03c3jb = (\u22121)[2jt/p].",
+   "section_file": "sections/sec-004-5-the-corresponding-enhanced-gauss-diagram-witho.md",
+   "section_title": "The corresponding enhanced Gauss diagram without blobs and chords can be",
+   "pages": "5-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": null,
+   "statement": "(1) \u03c3ik + \u03c3ip\u2032+1\u2212k = 0. (2) \u03c3j+1 + \u03c3p\u2032+1\u2212j = (\u22122)j.",
+   "section_file": "sections/sec-012-3-results-for-a-twist-knot.md",
+   "section_title": "Results for a twist knot",
+   "pages": "19-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "8",
+   "name": null,
+   "statement": "It follows that (1) \u03c3j = (\u22121)j\u22121, and",
+   "section_file": "sections/sec-012-3-results-for-a-twist-knot.md",
+   "section_title": "Results for a twist knot",
+   "pages": "19-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "10",
+   "name": null,
+   "statement": "For K = S(4p1 + 1, 2p1 + 1),",
+   "section_file": "sections/sec-014-2-kb12j.md",
+   "section_title": "(k+b+1\u22122j)),",
+   "pages": "24-25",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "11",
+   "name": null,
+   "statement": "Recently, Le proved that the equality (31) holds for any non-trivial",
+   "section_file": "sections/sec-015-2-2n-1-m2p11m2p11-1.md",
+   "section_title": "(2n \u2212 1 \u2212 m2p1+1)m2p1+1 \u2265 \u2212 1",
+   "pages": "25-26",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

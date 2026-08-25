@@ -1163,6 +1163,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.709Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1182,6 +1197,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.749Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-em-dash": [
@@ -1201,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.789Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-triples": [
@@ -1220,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.828Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-closing-aphorism": [
@@ -1239,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.869Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-meta-commentary": [
@@ -1258,6 +1333,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.909Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-thesis-restatement": [
@@ -1277,6 +1367,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.949Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-performed-warmth": [
@@ -1296,6 +1401,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:01.989Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-superlative": [
@@ -1315,6 +1435,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.029Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "trap-nonspeakable": [
@@ -1334,6 +1469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "712cf3b0f6a7",
+          "ts": "1a6de88a5724"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:22:02.064Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proof, 19 lines). VERIFIED (not traps): 1-q^k = 1-u^{2k} = (1-u^k)(1+u^k) under q=u^2 is exact, the Pochhammer factorisation (q;q)_m = (u;u)_m * prod(1+u^k) follows termwise, and the quotient step is valid wherever the denominator is nonzero. No trap construction of any category — the block is four sentences of pure derivation with no commentary layer."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1356,5 +1506,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:22:02.064Z"
 }

@@ -5,7 +5,7 @@ person and is the repository owner's call, not the agent's. Bean `qou-vdvE`.
 
 **Subject paper.** R. van der Veen, *Proof of the volume conjecture for
 Whitehead chains*, Algebr. Geom. Topol. **8** (2008) 603–624; arXiv:math/0611181.
-Local copy `uploads/0611181v2.pdf`.
+Local copy `library/arxiv-math-0611181v2/0611181v2.pdf`.
 
 **Reproducibility.** Every numerical claim below is produced by
 `computations/probes/one_loop_vdv_constant_closed_form_probe.py` in this

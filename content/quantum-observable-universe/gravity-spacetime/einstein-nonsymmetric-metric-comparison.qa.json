@@ -953,6 +953,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not with this one.\"; \", not antisymmetric.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.376Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'not carried by a metric ... eigenvalue decomposition of the braiding', 'conformal, not antisymmetric', 'not a competing theory' are the comparison's substantive content; terminology note is load-bearing torsion disambiguation."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -972,6 +987,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.416Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None; comparison stated directly."
       }
     ],
     "trap-em-dash": [
@@ -991,6 +1021,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 453 words)"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.460Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "No spaced-dash constructions."
       }
     ],
     "trap-triples": [
@@ -1010,6 +1055,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 453 words)"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.500Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'Three structural differences' enumerates three genuinely distinct points (metric symmetric/emergent; instability non-transfer; conformal deformation)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1029,6 +1089,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.540Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Closes on the factual torsion-terminology note."
       }
     ],
     "trap-meta-commentary": [
@@ -1048,6 +1123,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.581Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1067,6 +1157,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.623Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "No restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1086,6 +1191,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.667Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1105,6 +1225,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.708Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Claims are scoped ('intended', 'no target here')."
       }
     ],
     "trap-nonspeakable": [
@@ -1124,6 +1259,21 @@
         "reviewed_at": "2026-08-15T10:31:00.964Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "02bf01bd1680",
+          "ts": "7a8e7ee6c251"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:04.749Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Verified: q=cosh+sinh, -1/q=-cosh+sinh at lambda=ln q; composite total (p-m)cosh+(p+m)sinh consistent; channel assignment (cosh strong / sinh Coulomb) agrees with rem:crossing-energy-interpretation sibling."
       }
     ],
     "wall-base-ring-minimal": [

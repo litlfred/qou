@@ -1,5 +1,5 @@
 {
-  "description": "Habiro-WRT(S³/2I) push: the Lawrence-Zagier false theta of the Poincaré sphere Σ(2,3,5), evaluated at the bar image 1/q_0 (the substrate q_0>1 is outside the |q|<1 disk where the WRT series converges; 1/q_0<1 is inside). Residual keystone frontier (bean s5bb). NOT a fit; bare-invariant=W_λ equality is a type mismatch and is not claimed.",
+  "description": "Habiro-WRT(S\u00b3/2I) push: the Lawrence-Zagier false theta of the Poincar\u00e9 sphere \u03a3(2,3,5), evaluated at the bar image 1/q_0 (the substrate q_0>1 is outside the |q|<1 disk where the WRT series converges; 1/q_0<1 is inside). Residual keystone frontier (bean s5bb). NOT a fit; bare-invariant=W_\u03bb equality is a type mismatch and is not claimed.",
   "computation": "docs/audits/scripts/keystone_habiro_wrt_s3_2i_probe.py",
   "q0": "1.1099785955541805",
   "bar_image_inv_q0": "0.900918273564",
@@ -7,11 +7,25 @@
   "formula": {
     "source": "Lawrence-Zagier 1999; Hikami (Quantum Invariant, Modular Form, and Lattice Points); arXiv:1811.05376, arXiv:2205.01282",
     "false_theta": "Psi(q) = sum_{n>=0} chi(n) q^{n^2/120}",
-    "character_mod_60": {"+1": [1, 11, 19, 29], "-1": [31, 41, 49, 59], "else": 0},
+    "character_mod_60": {
+      "+1": [
+        1,
+        11,
+        19,
+        29
+      ],
+      "-1": [
+        31,
+        41,
+        49,
+        59
+      ],
+      "else": 0
+    },
     "P": 30,
     "P_is_coxeter_number_E8": true,
     "support_is_icosahedral_E8_data": true,
-    "normalization_note": "n^2/120 vs (n^2-1)/120 is an overall q^{±1/120} prefactor (~0.09% at substrate); does not affect structure"
+    "normalization_note": "n^2/120 vs (n^2-1)/120 is an overall q^{\u00b11/120} prefactor (~0.09% at substrate); does not affect structure"
   },
   "results": {
     "Psi_at_inv_q0": "2.32957704683293",
@@ -27,6 +41,6 @@
     "d_q_3_1_1_electron": "6.2204413246646",
     "d_q_3_2_muon": "5.2204413246646"
   },
-  "verdict": "Psi(1/q_0)=2.3296 is ONE closed-manifold invariant; W_λ is a λ-family. Direct equality is a type mismatch, NOT claimed; no numerology match sought. Link is STRUCTURAL: support {1,11,19,29 mod 60} = icosahedral/E_8 data (P=30=h), the same input the A_5 fibre map and W_λ blocks carry. Regime bridge: WRT series |q|<1, substrate q_0>1, joined by q->q^-1 bar involution (Habiro ring unifies). Sharpened frontier: the λ-family needs the WRT TQFT with λ-COLORED insertions (colored Σ(2,3,5) invariants / S-matrix), not the bare closed-manifold number.",
+  "verdict": "Psi(1/q_0)=2.3296 is ONE closed-manifold invariant; W_\u03bb is a \u03bb-family. Direct equality is a type mismatch, NOT claimed; no numerology match sought. Link is STRUCTURAL: support {1,11,19,29 mod 60} = icosahedral/E_8 data (P=30=h), the same input the A_5 fibre map and W_\u03bb blocks carry. Regime bridge: WRT series |q|<1, substrate q_0>1, joined by q->q^-1 bar involution (Habiro ring unifies). Sharpened frontier: the \u03bb-family needs the WRT TQFT with \u03bb-COLORED insertions (colored \u03a3(2,3,5) invariants / S-matrix), not the bare closed-manifold number.",
   "discipline": "No fit; nothing wired; c_k/Delta_lambda cal-anchored. Owner closes bean s5bb (section 4a)."
 }

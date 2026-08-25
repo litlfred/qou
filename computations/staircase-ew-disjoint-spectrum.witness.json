@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
-  "engineVersion": "numpy 2.4.4",
-  "computedAt": "2026-05-09T00:53:02.825715+00:00",
-  "commitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
+  "engineVersion": "numpy 2.4.6",
+  "computedAt": "2026-08-23T21:17:44.885229+00:00",
+  "commitSha": "39b752b56ed1aa1309444e13055c237a6d52c975",
   "assertions": [
     {
       "name": "rho_3 dimension",
@@ -24,9 +24,9 @@
     },
     {
       "name": "rho_4 exact 8-bucket spectrum",
-      "computed": true,
+      "computed": false,
       "expected": true,
-      "passed": true
+      "passed": false
     },
     {
       "name": "rho_5 total SYT count",
@@ -41,16 +41,38 @@
       "passed": true
     }
   ],
-  "allPassed": true,
-  "durationMs": 212,
+  "allPassed": false,
+  "durationMs": 325,
   "computation": "staircase-ew-disjoint-spectrum",
   "scriptFile": "staircase_ew_disjoint_spectrum.py",
-  "scriptHash": "896720d5bfb4",
-  "scriptCommitSha": "1d068aa544b72ce722545243741cc1e5b2ee9b5e",
+  "scriptHash": "905bf765e3a7",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/staircase_ew_disjoint_spectrum.py"
+    ],
+    "reproduce": "python3 -u computations/staircase_ew_disjoint_spectrum.py"
+  },
   "description": "Restored staircase EW probe for the disjoint braid β_EW = σ₁⁴σ₃⁶σ₅⁸ on ρ₃, ρ₄, and the diagonal sector of ρ₅.",
   "auditOnly": "docs/audits/2026-05-07-staircase-ew-disjoint-spectrum.md",
   "parameters": {
-    "q": 1.1099785955541805,
+    "q": 1.1099785827513808,
     "betaEWWord": "σ₁^4 · σ₃^6 · σ₅^8"
   },
   "data": {
@@ -62,21 +84,21 @@
       ],
       "dimension": 16,
       "bucketCounts": {
-        "6.5412820173": 2,
-        "0.352252398713": 2,
-        "1.870198156177": 2,
-        "1.232052482588": 2,
-        "0.534702698052": 2,
-        "2.838873499951": 2,
-        "0.152875231087": 2,
-        "0.811653735642": 2
+        "6.541280659219": 2,
+        "0.352252439343": 2,
+        "1.870198026749": 2,
+        "1.232052454167": 2,
+        "0.534702735056": 2,
+        "2.838873172508": 2,
+        "0.152875262827": 2,
+        "0.811653754366": 2
       },
       "bestResidualScan": {
-        "relativeError": 0.02065191334381632,
-        "ratio": 1.0000000000000033,
-        "target": 1.0210874086805357,
-        "numeratorIndex": 6,
-        "denominatorIndex": 7
+        "relativeError": 0.02065191108460176,
+        "ratio": 1.0000000000000038,
+        "target": 1.021087406325035,
+        "numeratorIndex": 8,
+        "denominatorIndex": 9
       }
     },
     "rho4": {
@@ -88,19 +110,20 @@
       ],
       "dimension": 768,
       "bucketCounts": {
-        "0.152875231087": 96,
-        "0.811653735642": 96,
-        "0.534702698052": 96,
-        "2.838873499951": 96,
-        "6.5412820173": 96,
-        "1.232052482588": 96,
-        "1.870198156177": 96,
-        "0.352252398713": 96
+        "2.838873172508": 96,
+        "0.152875262827": 96,
+        "0.534702735056": 96,
+        "0.811653754366": 96,
+        "1.232052454167": 96,
+        "0.352252439343": 96,
+        "1.870198026749": 96,
+        "6.541280659219": 88,
+        "6.541280659218": 8
       },
       "bestResidualScan": {
-        "relativeError": 0.014795277038867845,
-        "ratio": 1.0000000000000269,
-        "target": 1.015017464587894,
+        "relativeError": 0.014795275415497253,
+        "ratio": 1.0000000000000224,
+        "target": 1.015017462915395,
         "numeratorIndex": 672,
         "denominatorIndex": 767
       }
@@ -126,14 +149,14 @@
         "-18": 9600
       },
       "bucketCounts": {
-        "6.5412820173": 9600,
-        "2.838873499951": 3456,
-        "1.870198156177": 3456,
-        "1.232052482588": 9600,
-        "0.811653735642": 9600,
-        "0.534702698052": 3456,
-        "0.352252398713": 3456,
-        "0.152875231087": 9600
+        "6.541280659219": 9600,
+        "2.838873172508": 3456,
+        "1.870198026749": 3456,
+        "1.232052454167": 9600,
+        "0.811653754366": 9600,
+        "0.534702735056": 3456,
+        "0.352252439343": 3456,
+        "0.152875262827": 9600
       },
       "note": "Only the diagonal pure sector is counted at k=5; the exact disjoint β_EW buckets remain q^{±18}, q^{±10}, q^{±6}, q^{±2}."
     }

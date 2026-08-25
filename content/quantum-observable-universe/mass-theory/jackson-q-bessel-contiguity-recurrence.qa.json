@@ -2144,6 +2144,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.261Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Five-sentence proposition read in full. 'fixes the radial coefficient algebra without fixing the binding scale' is a scope statement delimiting what the identity determines (false-positive class: substantive mathematical scope), not assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2163,6 +2178,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.305Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -2182,6 +2212,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.366Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -2201,6 +2246,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.424Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -2220,6 +2280,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.466Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Closer is a scope statement, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -2239,6 +2314,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.509Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2258,6 +2348,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.550Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Closer adds the binding-scale scope guard, which no earlier sentence states."
       }
     ],
     "trap-performed-warmth": [
@@ -2277,6 +2382,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.597Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2296,6 +2416,22 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.656Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "'purely algebraic' is a technical contrast (algebraic vs analytic/transcendental in q), not inflation.",
+        "notes": "Notation watch: the block writes $SU_q(1,1)$ un-upright, where the corpus convention elsewhere is \\mathrm{SU}_q(...); not a trap, flagged for the notation register."
       }
     ],
     "trap-nonspeakable": [
@@ -2315,6 +2451,21 @@
         "reviewed_at": "2026-08-15T10:31:00.370Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "915f14c7fe09",
+          "ts": "b8a7ac443298"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:38:21.743Z",
+        "reviewed_sha": "68031f32c0586642741cfebfcaec38d457fedf93",
+        "evidence": "Four short declaratives; 'the radial coefficient algebra' is the densest chain and reads aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2338,5 +2489,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:38:21.743Z"
 }

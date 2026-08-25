@@ -1797,6 +1797,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no negation-contrast construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:22.622Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No denial constructions in the statement block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1832,6 +1847,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no rhetorical-pivot construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:22.677Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Definition, five numbered properties, stability condition; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1867,6 +1897,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no em-dash construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:22.733Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 362 words."
       }
     ],
     "trap-triples": [
@@ -1902,6 +1947,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no triples construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:22.779Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'three Planck steps' and 'five properties' are counts, not reflex lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1937,6 +1997,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no closing-aphorism construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:22.835Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on the stability check at the substrate value."
       }
     ],
     "trap-meta-commentary": [
@@ -1972,6 +2047,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no meta-commentary construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:22.934Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2007,6 +2097,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "major",
         "evidence": "read full block in context; no thesis-restatement construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.014Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2042,6 +2147,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no performed-warmth construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.083Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -2077,6 +2197,22 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "'lies safely inside the stable regime' conveys margin from the threshold; kept"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.165Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'lies safely inside the stable regime' is the only intensifier and it is correct: q_0 = 1.10998 rounds to the quoted 1.110 and Phi(q_0) = +0.0495 > 0.",
+        "notes": "Rigor flags reported separately: (i) the stability threshold here (q > 1) and in the proof block (q > 1/phi^2) disagree, and the proof's region is wrong -- Phi vanishes at q = 0.46557 and is negative on (0.46557, 1); (ii) the bandwidth budget '3 |L| Planck steps per generation' does not match property 3, which applies one Toffoli per neighbour PAIR plus an O(|N(i)|) ripple-carry adder; (iii) Phi(q) is written '... / 2(q+1)^2', which renders as a division by 2 followed by multiplication."
       }
     ],
     "trap-nonspeakable": [
@@ -2112,6 +2248,21 @@
         "reviewed_sha": "7b4352e6f233f2c02d70ac7698086c0d9855d71c",
         "severity": "minor",
         "evidence": "read full block in context; no nonspeakable construction present"
+      },
+      {
+        "field_hash": {
+          "md": "22def26e2a98",
+          "ts": "ff64be64383e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:41:23.232Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Numbered properties read aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2135,5 +2286,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:41:23.232Z"
 }

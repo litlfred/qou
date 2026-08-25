@@ -13,7 +13,7 @@ Record the q-convention check: which of the paper's two q-ranges (convergence of
 - Prop. 2.3 (Sec. 2.3) — The Mallows measure is a reversible stationary measure of any random walk on a Hecke algebra of a Coxeter group.
   Use here: Sources the 'targets the Mallows measure' assertion in the probability picture of rem:hecke-markov-interpretation.
 
-Source: `uploads/bufetov2020.pdf` (`bufetov2020`)
+Source: `library/bufetov2020.pdf` (`bufetov2020`)
 Relevance: **core** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

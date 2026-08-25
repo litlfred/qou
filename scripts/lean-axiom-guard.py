@@ -20,6 +20,7 @@ Usage
     scripts/lean-axiom-guard.py                 # check every entry
     scripts/lean-axiom-guard.py --filter TAIL   # substring filter on decl name
     scripts/lean-axiom-guard.py --registry F    # alternate registry file
+    scripts/lean-axiom-guard.py --print-modules # the modules that must be built
 
 Exit codes: 0 = all as recorded; 1 = regression; 2 = environment/setup problem.
 A promotion alone exits 0 (it is good news) but prints a LOUD notice.
@@ -32,6 +33,23 @@ The Lean root is `content/quantum-observable-universe/lean`; `LEAN_PATH` must
 already be set for lean-direct use (see `.claude/skills/local/lean-environment-setup.md`
 — restore the olean cache first, and note that a declaration's own module olean
 must exist).
+
+WHAT MUST BE BUILT FIRST — only the registry's own modules
+----------------------------------------------------------
+The probe file imports exactly the modules named in the registry and nothing
+else, so this gate does **not** need the `QOU` root or a whole-tree build.
+`--print-modules` emits that list, so a caller builds precisely the
+prerequisites without duplicating the registry here:
+
+    lake build $(scripts/lean-axiom-guard.py --print-modules)
+
+This is recorded because the opposite was believed, and the belief is what kept
+the gate unrun: bean `qou-agrd` asserted "the guard imports the **`QOU` root**,
+which transitively needs the whole tree built". It does not, and never did.
+Measured 2026-08-15: four of the five registry oleans were already present and
+exactly one — `QOU.BraidsAndKnots.PlancherelNormalisation` — was missing.
+Building that single module took 329 s and made the gate run clean on all seven
+declarations. The diagnosis, not the difficulty, was the blocker.
 """
 
 from __future__ import annotations
@@ -109,6 +127,70 @@ def _qou_imports(src: Path) -> list[str]:
     return out
 
 
+def _dirty_paths() -> set[str]:
+    """Repo-relative paths with uncommitted content changes (staged or not)."""
+    try:
+        proc = subprocess.run(
+            ["git", "status", "--porcelain", "--", str(LEAN_ROOT)],
+            capture_output=True, text=True, timeout=120,
+        )
+    except (FileNotFoundError, subprocess.SubprocessError):
+        return set()          # no git → fall back to mtime for everything
+    out: set[str] = set()
+    for line in proc.stdout.splitlines():
+        # "XY path" or "XY old -> new"; take the final path.
+        path = line[3:].strip()
+        if "->" in path:
+            path = path.split("->")[-1].strip()
+        out.add(path.strip('"'))
+    return out
+
+
+def _commit_time(src: Path) -> float | None:
+    """Unix time of the commit that last touched `src`, or None if unavailable."""
+    try:
+        proc = subprocess.run(
+            ["git", "log", "-1", "--format=%ct", "--", str(src)],
+            capture_output=True, text=True, timeout=120,
+        )
+    except (FileNotFoundError, subprocess.SubprocessError):
+        return None
+    val = proc.stdout.strip()
+    return float(val) if val else None
+
+
+def _effective_source_time(src: Path, dirty: set[str]) -> float:
+    """Source timestamp that survives a fresh clone.
+
+    ⚠ A plain `src.stat().st_mtime` is WRONG here, and wrong in the direction that
+    disables the gate. A clone or checkout stamps every file with the checkout time,
+    which is later than any olean restored from a build cache — so an mtime comparison
+    reports the entire import cone stale in exactly the environment this gate is meant
+    to run in (fresh container or CI runner + `lean-cache-restore.sh`).
+
+    Measured 2026-08-15: mtime flagged 15 modules stale — `Specht` source 10:08, olean
+    03:33 — while `lake build`, which hashes content, replayed all 3285 jobs as already
+    up to date. The sources had not changed since a commit that PREDATED the oleans; only
+    the checkout timestamp was newer. Left as-is this would have made the gate refuse to
+    report on every CI run, which is the same "protects nothing" outcome as never running
+    it, reached from the opposite direction.
+
+    So: for a file with no uncommitted changes, use the time of the commit that last
+    touched it — stable across clones. For a DIRTY file, fall back to mtime, because a
+    local edit is precisely the case the staleness check exists for and there is no
+    commit to trust.
+    """
+    try:
+        rel = str(src.relative_to(Path.cwd()))
+    except ValueError:
+        rel = str(src)
+    if rel not in dirty:
+        ct = _commit_time(src)
+        if ct is not None:
+            return ct
+    return src.stat().st_mtime
+
+
 def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
     """Return human-readable staleness complaints.
 
@@ -119,9 +201,13 @@ def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
     while five of the underlying sorries had been closed upstream and three declarations
     had moved files.) So walk the transitive QOU import cone of every registry module and
     flag any olean older than its own source.
+
+    "Older than its own source" is measured by `_effective_source_time`, not raw mtime —
+    see there for why raw mtime disables the gate on a fresh clone.
     """
     problems: list[str] = []
     seen: set[str] = set()
+    dirty = _dirty_paths()
     stack = [m for m, _, _ in entries]
     while stack:
         mod = stack.pop()
@@ -135,7 +221,7 @@ def check_freshness(entries: list[tuple[str, str, str]]) -> list[str]:
         if not ole.exists():
             problems.append(f"{mod}: olean MISSING")
             continue
-        if ole.stat().st_mtime < src.stat().st_mtime:
+        if ole.stat().st_mtime < _effective_source_time(src, dirty):
             problems.append(f"{mod}: olean STALE (source is newer)")
     return problems
 
@@ -196,6 +282,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--registry", type=Path, default=None)
     ap.add_argument("--filter", default=None, help="substring filter on declaration name")
+    ap.add_argument(
+        "--print-modules",
+        action="store_true",
+        help="print the modules this gate needs built (space-separated) and exit; "
+             "feed to `lake build` — the gate does NOT need the QOU root",
+    )
     args = ap.parse_args()
 
     if not LEAN_ROOT.is_dir():
@@ -208,6 +300,15 @@ def main() -> int:
         entries = [e for e in entries if args.filter in e[1]]
     if not entries:
         print("axiom-guard: nothing to check")
+        return 0
+
+    # `--print-modules` answers BEFORE the freshness gate, deliberately: it is a pure
+    # query over the registry that touches no olean, and its whole purpose is to tell a
+    # caller what to build. Gating it on a fresh build would make the flag unusable in
+    # exactly the situation it exists for — a cold or stale tree.
+    if args.print_modules:
+        # Deliberately bare stdout: this is consumed by `lake build $(...)`.
+        print(" ".join(sorted({m for m, _, _ in entries})))
         return 0
 
     stale = check_freshness(entries)

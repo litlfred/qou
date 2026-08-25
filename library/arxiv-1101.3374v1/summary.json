@@ -1,0 +1,37 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1101.3374v1",
+ "source_sha256": "01d76c1d259c1d51",
+ "brief": "PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER — To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus",
+ "extended": "**PONTRYAGIN INVARIANTS AND INTEGRAL FORMULAS FOR MILNOR’S TRIPLE LINKING NUMBER**\n\n*DENNIS DETURCK, HERMAN GLUCK, RAFAL KOMENDARCZYK*\n\n60 pp, 3 sections.\n\n**Abstract.** To each three-component link in the 3-sphere, we associate a geometrically natural characteristic map from the 3-torus to the 2-sphere, and show that the pairwise linking numbers and Milnor triple linking number that classify the link up to link ho- motopy correspond to the Pontryagin invariants that classify its characteristic map up to homotopy. This can be viewed as a natural extension of the familiar fact that the linking number of a two-component link in 3-space is the degree of its associated Gauss map from the 2-torus to the 2-sphere. When the pairwise linking numbers are all zero, we give an integral formula for the triple linking number analogous to the Gauss integral for the pairwise linking numbers.\n\n**Outline.** 1 Introduction; 4 Explicit formulas for the characteristic map; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A. Let L be a 3-component link in S3. Then the pairwise linking\n- Theorem: A, and that, just as for gL, depends a priori on the choice of a projection to the\n- Theorem: B. If the pairwise linking numbers of a three-component link L inS3\n- Theorem: A asserts, among other things, that L and L′ are link homotopic if and only\n- Theorem: A it will be more convenient, for the most part, to use an alternative form of\n- Theorem: A asserts that the degrees of gL on the coordinate 2-tori of T 3 are equal to the",
+ "tokens": {
+  "brief": 49,
+  "extended": 386
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-20"
+  },
+  {
+   "id": "sec-001-4-explicit-formulas-for-the-characteristic-map",
+   "title": "Explicit formulas for the characteristic map",
+   "pages": "20-57"
+  },
+  {
+   "id": "sec-002-references",
+   "title": "References",
+   "pages": "57-60"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

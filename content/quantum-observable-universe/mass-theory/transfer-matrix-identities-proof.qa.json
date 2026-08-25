@@ -1415,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.469Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1434,6 +1449,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.510Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1453,6 +1483,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 59 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.552Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1472,6 +1517,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 59 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.593Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1491,6 +1551,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.633Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Ends on the QED box after the algebra."
       }
     ],
     "trap-meta-commentary": [
@@ -1510,6 +1585,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.674Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1529,6 +1619,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.714Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1548,6 +1653,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.755Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1567,6 +1687,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.795Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Pure computation, and every step reproduces. The (i) product is I; the reverse product T_nn*T_pp I checked separately rather than accepting \"identical by the same computation\" - it is a different multiplication but also gives I. The (ii) square is (1 + h^2/4) I with both off-diagonals (h/2)(1) + 1(-h/2) = 0, and the final chain 1 + (q-q^-1)^2/4 = (4 + q^2 - 2 + q^-2)/4 = (q+q^-1)^2/4 = [2]_q^2/4 is correct term by term. Sole nit, outside the trap axes: the prose says \"The (0,1) entry vanishes\" (0-indexed) about a matrix the display presents in the usual 1-indexed way."
       }
     ],
     "trap-nonspeakable": [
@@ -1586,6 +1721,21 @@
         "reviewed_at": "2026-08-15T10:31:00.789Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b01e4f5172b8",
+          "ts": "2862515e5ada"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:08:51.836Z",
+        "reviewed_sha": "24741788314fe0d2c9a9682abffd89ad2873442b",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1608,5 +1758,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:08:51.836Z"
 }

@@ -12,13 +12,25 @@ The gap (if any) is reported honestly.
 """
 
 from __future__ import annotations
-import math
+
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401
+from mpmath import mp, mpf
+from q_parameter import Q_50_DIGIT_STR
+
+mp.dps = 50
+# Was a bare float64 literal 1.109978033355325x — a value that is NEITHER pin,
+# 495 ppb from proton and 506 ppb from muon, i.e. ~44x the ~11.5 ppb mu-p
+# substrate tension. It was also float64 in a computations/ script, which
+# AGENTS.md forbids outright. Both are fixed by reading the declared pin.
 
 # QOU inputs
-Q0 = 1.1099780333553254
-h = Q0 - 1.0 / Q0
+Q0 = mpf(Q_50_DIGIT_STR)
+h = Q0 - 1 / Q0
 h2 = h * h
-dim_q = Q0 + 1.0 / Q0  # [2]_q
+dim_q = Q0 + 1 / Q0  # [2]_q
 
 # Constants
 R_gas = 8.314462618  # J / (mol K)

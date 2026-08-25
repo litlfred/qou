@@ -1769,6 +1769,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.423Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1788,6 +1803,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.477Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1807,6 +1837,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.529Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1826,6 +1871,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.588Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1845,6 +1905,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.636Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1864,6 +1939,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.700Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1883,6 +1973,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.779Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1902,6 +2007,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.857Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED all three closed forms exactly with b^2 = 7/8 and c_3 = -2: c_8 = c_3^2 b^4 = 4.(49/64) = 49/16 correct; c_9 = c_3^3 b^2 = -8.(7/8) = -7 correct; c_10 = c_3^2 b^6 = 4.(343/512) = 343/128 correct. Also checked the pattern it says it extends: c_4 = c_3 b^4 = -49/32 and c_6 = c_3^2 b^2 = 7/2, both consistent with the sibling block, and c_7 = c_3^3 = -8. Verified b^2 = 1 - 1/[2]_q^2 = 7/8 at q = 1+sqrt2. The block correctly labels these fibre-level and does not wire them to production. Recorded separately: no convention-C scoping. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1921,6 +2041,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.934Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Pell-Lucas-clean', 'pure sigma-action rung', 'no averaging-resonance 1/2 fingerprint' are all specific technical predicates rather than inflation, and the block explicitly bounds its own reach ('They remain fibre-level Laurent rationals')."
       }
     ],
     "trap-nonspeakable": [
@@ -1940,6 +2075,21 @@
         "reviewed_at": "2026-08-15T10:31:00.645Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9668e6198c63",
+          "ts": "55a48e3e2d46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:27.013Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The Pell-Lucas-clean classification at the silver ratio signals the structure of the Q_beta c_k precision ladder' is the densest sentence and still parses aloud. Noted: 'signals the structure of' is vague where the rest of the block is exact, but that is imprecision, not eye-only syntax."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1963,5 +2113,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:20:27.013Z"
 }

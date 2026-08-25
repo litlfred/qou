@@ -1345,6 +1345,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.306Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1364,6 +1380,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.343Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-em-dash": [
@@ -1383,6 +1415,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 129 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.381Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-triples": [
@@ -1402,6 +1450,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 129 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.420Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1421,6 +1485,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.457Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-meta-commentary": [
@@ -1440,6 +1520,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.494Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'We know tr(kappa_0) = chi(A)' is standard mathematical register, not narrated emphasis - though what it asserts is an assumption (see ANOMALY 8)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1459,6 +1555,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.531Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-performed-warmth": [
@@ -1478,6 +1590,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.568Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-superlative": [
@@ -1497,6 +1625,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.605Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "trap-nonspeakable": [
@@ -1516,6 +1660,22 @@
         "reviewed_at": "2026-08-15T10:31:00.900Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7d7d760e90d7",
+          "ts": "0c85b2041988"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:48.643Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (proof of prop:q-gl-obstruction-calc, 4 items); all ten judged. Item (4) verified: {n : n | chi(A)} has d(chi(A)) elements and is finite, so its complement in Z_{>0} has density 1 - correct. Two content defects reported as ANOMALIES 8 and 10 ('We know tr(kappa_0) = chi(A)' is carried in the Lean as an explicit class HYPOTHESIS kappa_kummer_bridge, not a known fact; and delta_n in 'kappa_n = kappa_0 + delta_n' is defined nowhere in the chapter)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1538,5 +1698,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:48.643Z"
 }

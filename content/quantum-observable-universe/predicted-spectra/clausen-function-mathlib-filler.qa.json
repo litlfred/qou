@@ -1400,6 +1400,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.520Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: lead + two display-math groups, a long Lean-provenance paragraph, a cross-reference, and three headed sections (Mathlib gaps / Pattern / closer)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1434,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.557Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: lead + two display-math groups, a long Lean-provenance paragraph, a cross-reference, and three headed sections (Mathlib gaps / Pattern / closer)."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1468,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 252 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.709Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "One spaced em-dash pair, enclosing the Kashaev limit inside the figure-eight sentence. A true parenthetical around a display-worthy formula, not a dodged comma/full-stop; no density elsewhere in the block."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1502,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 252 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.749Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Three-item lists examined: the Cl_2 / Vol(4_1) / Vol(B_3) carrier list (three actual carriers, matched to four named consumers) and the 'Pattern' section's three sentences (one tsum definition, two boundary lemmas, four sketched extensions). Both are counted enumerations, not reflex triples; the neighbouring lists are of size two, four and six."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1536,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.786Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Closer 'This file isolates the Cl_2 filler to support the alpha_EM and figure-8 chains.' names the two downstream consumers, i.e. a cross-reference closer (documented false-positive class), not a placed quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1570,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.594Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: lead + two display-math groups, a long Lean-provenance paragraph, a cross-reference, and three headed sections (Mathlib gaps / Pattern / closer)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1604,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.823Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Candidates examined: 'Explicit Lean carriers replace opaque references.' (echoes Table 1's 'no longer opaque') and the block-final purpose sentence. Both carry cross-reference/scope content rather than re-asserting an established claim; judged bookkeeping."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1638,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.632Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: lead + two display-math groups, a long Lean-provenance paragraph, a cross-reference, and three headed sections (Mathlib gaps / Pattern / closer)."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1672,21 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.671Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: lead + two display-math groups, a long Lean-provenance paragraph, a cross-reference, and three headed sections (Mathlib gaps / Pattern / closer)."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1706,23 @@
         "reviewed_at": "2026-08-15T10:31:01.117Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d58963d4afdf",
+          "ts": "9a56f66e2d63"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:08.862Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The Lean-provenance paragraph is two ~55-word sentences that parse only on the page. Sentence 2 separates subject from verb by a 15-word em-dash parenthetical ('the figure-eight case of the Kashaev volume conjecture - the limit $(2\\pi/N)\\log\\langle 4_1\\rangle_N \\to 2\\,\\mathrm{Cl}_2(\\pi/3) = \\mathrm{Vol}(4_1)$ - is itself machine-proved, sorry-free, in ... by a Riemann-sum squeeze ... with the exact transcendental target $\\mathrm{Vol}(4_1) = 2\\,\\mathrm{Cl}_2(\\pi/3)$'), then states the SAME identity a second time in its trailing clause. Sentence 1 semicolon-joins two independent clauses carrying a 3-item list and two parentheticals. Register also breaks with the rest of the block, which is uniformly short declaratives.",
+        "notes": "Structural - splitting spans two sentences and touches inline math, so not fixed inline. Proposed: 'The Lean library file ClausenFunctionMathlibFiller.lean provides the Cl_2 series definition and the boundary/volume carriers. The integral-side definition, the derivative Cl_2 prime(theta) = -log(2 sin(theta/2)), and the series-integral bridge (the classical Zagier identity) are machine-proved in QOU/Knot/Clausen.lean. Building on that, FigureEightVolumeSqueeze.lean proves the figure-eight case of the Kashaev volume conjecture sorry-free, by a Riemann-sum squeeze of the Kashaev log-sum against the Clausen primitive: (2 pi/N) log <4_1>_N -> 2 Cl_2(pi/3) = Vol(4_1).' Drop the duplicated trailing identity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1745,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:30:08.862Z"
 }

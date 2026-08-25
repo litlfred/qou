@@ -7,7 +7,7 @@
   definition, the facts that pin it down, and nothing else.
 
   MILNOR'S NORMALIZATION, followed exactly (Appendix of [milnor1982], now in
-  `uploads/`):
+  `library/`):
 
     "We will use the Beltrami upper half-space model, with metric
      ds² = (dx² + dy² + dz²)/z² and associated volume element dx dy dz/z³,

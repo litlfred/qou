@@ -1761,6 +1761,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.235Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1780,6 +1795,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.273Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-em-dash": [
@@ -1799,6 +1829,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 18 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.310Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-triples": [
@@ -1818,6 +1863,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 18 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.349Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1837,6 +1897,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.387Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-meta-commentary": [
@@ -1856,6 +1931,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.424Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1875,6 +1965,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.461Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-performed-warmth": [
@@ -1894,6 +1999,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.497Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-superlative": [
@@ -1913,6 +2033,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.534Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "trap-nonspeakable": [
@@ -1932,6 +2067,21 @@
         "reviewed_at": "2026-08-15T10:30:59.941Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ae6e7495e486",
+          "ts": "4a4b0b122bce"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:51:24.571Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, 2 short sentences plus one display equation defining F[f](xi)=tr_M(exp_q(i xi .) f) on End_C(A). Conventions checked: categories bold \\mathbf{C} (correct), no fibre-functor symbol used, no q0 numerics, no braid words. No trap construction of any kind present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1955,5 +2105,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:51:24.571Z"
 }

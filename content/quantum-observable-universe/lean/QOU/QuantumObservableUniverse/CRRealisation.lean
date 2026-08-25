@@ -37,8 +37,22 @@ structure CRManifoldData where
   rs_sum : r + s = n
   /-- The contact form `θ` represented abstractly as a continuous 1-form. -/
   contactForm : M → ℝ
-  /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`. -/
-  reebField : M → M
+  /-- **Non-degeneracy**: `θ` does not vanish identically.
+
+      Taken from the two co-located siblings, which had it where this copy did
+      not (bean `qou-u87j`). Without it a "CR manifold" with `θ ≡ 0` satisfies
+      the structure, and `contactForm` is a contact form in name only. -/
+  contact_nondeg : ∃ p : M, contactForm p ≠ 0
+  /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`.
+
+      Continuous, as `C(M, M)` — also from the siblings. This copy had the bare
+      function `M → M`, weaker than a vector field on a manifold should be, and
+      the `TopologicalSpace M` instance above was already present to support it.
+      Nothing in the tree reads this field, so the strengthening breaks no
+      caller. -/
+  reebField : C(M, M)
+  /-- The Reeb field preserves the contact form: `θ(ξ(p)) = θ(p)`. -/
+  reeb_preserves_contact : ∀ p : M, contactForm (reebField p) = contactForm p
 
 /-- **ℂ quantum observable universe**: CR manifold data satisfying the
     vanishing conditions `H⁰(M, Ad(P)) = 0` and `Γ_c(M, E) = 0`.

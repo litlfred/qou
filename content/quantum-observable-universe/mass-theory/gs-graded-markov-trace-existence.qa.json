@@ -1547,6 +1547,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.012Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1566,6 +1581,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.048Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-em-dash": [
@@ -1585,6 +1615,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 186 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.086Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-triples": [
@@ -1604,6 +1649,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 186 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.125Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Two three-item lists, both substantive: 'the proton, neutron, and deuteron atoms' is the actual instance set, and 'formalising ConfinementLevel, constructing gr^l H_n(R,q), and proving that tr_M preserves the filtration' enumerates three distinct outstanding tasks."
       }
     ],
     "trap-closing-aphorism": [
@@ -1623,6 +1683,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.164Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-meta-commentary": [
@@ -1642,6 +1717,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.202Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-thesis-restatement": [
@@ -1661,6 +1751,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.240Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-performed-warmth": [
@@ -1680,6 +1785,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.281Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-superlative": [
@@ -1699,6 +1819,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.319Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "trap-nonspeakable": [
@@ -1718,6 +1853,21 @@
         "reviewed_at": "2026-08-15T10:31:00.449Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8109c5d87fcd",
+          "ts": "dfeae3611ea2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:14:45.356Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Read in full (16 lines). No trap construction of this category present. Two non-trap defects reported separately: the .md opens '**Theorem (existence of the graded Markov trace).**' while the .ts declares kind=conjecture and the block's own Conjectural-status section says promoting it to a theorem is still outstanding; and 'The formal derivation emits exact algebraic values' is the known sweep substitution standing in for the script the .ts names, computations/markov/markov_pipeline_cross_validator.py."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1741,5 +1891,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:14:45.356Z"
 }

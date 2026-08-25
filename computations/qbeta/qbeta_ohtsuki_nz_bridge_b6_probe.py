@@ -167,7 +167,16 @@ def main() -> int:
     # Via save(extra=...) and NOT add_data(), which nests under `data` where
     # the audit reading body["q0Anchor"] cannot see it. No q0Value — one here
     # is a Q0_FLIP.
-    wb.save({"q0Anchor": "independent"})
+    wb.save({
+        "q0AnchorReason": (
+            "Same free-parameter-u construction as the b4 sibling: proved "
+            "constants only, no substrate value read. Verified here by its "
+            "own 4-module import cone rather than inherited from b4 — the "
+            "expectation that b6 matches b4 was not the evidence for it "
+            "(bean qou-kx04)."
+        ),
+        "q0Anchor": "independent",
+    })
 
     ok = e2 < mp.mpf("1e-8") and e4 < mp.mpf("1e-8")
     print(f"\n  RESULT: {'method validated; verdict recorded' if ok else 'VALIDATION FAILED'}")

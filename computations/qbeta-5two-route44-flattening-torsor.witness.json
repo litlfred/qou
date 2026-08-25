@@ -4,7 +4,7 @@
     "qou-xblo",
     "qou-0yqu"
   ],
-  "dps": 45,
+  "dps": 70,
   "follows": "Route 43 (the flattened Rogers reformulation)",
   "narrows": "Route 43's 'the flattening the extended Bloch group needs is already a theorem in the corpus'. The y-level identity is unchanged; the claim that the branch data IS the flattening does not generalise -- the placement differs at w and fails at c.",
   "gates": [
@@ -28,7 +28,7 @@
           0
         ]
       },
-      "worst_deviation_from_integer": "3.50601813482e-46",
+      "worst_deviation_from_integer": "3.62513778548e-71",
       "pass": true
     },
     {
@@ -60,13 +60,13 @@
     {
       "gate": "G4",
       "claim": "THE STRUCTURE. The branch relation is a NULL direction of the flattening correction: 3*log(1-y_3) - 2*log(y_3) = 0 at the real root, so shifting (p_3,q_3) by (3,-2) changes the total by nothing. Flattenings are a TORSOR modulo the branch relation, not distinguished tuples -- which is why three different (p_3,q_3) give the identical sum, and why 'is eps THE flattening' was the wrong question to ask of it",
-      "null_direction_value": "-1.7516230804060213387e-46",
+      "null_direction_value": "0.0",
       "totals_over_the_three_variants": [
-        "(-1.644934066848226436472415 - 2.751443100630940171818645e-46j)",
         "(-1.644934066848226436472415 + 0.0j)",
-        "(-1.644934066848226436472415 + 2.751443100630940171818645e-46j)"
+        "(-1.644934066848226436472415 + 0.0j)",
+        "(-1.644934066848226436472415 + 0.0j)"
       ],
-      "spread": "5.50288620126e-46",
+      "spread": "0.0",
       "pass": true
     },
     {

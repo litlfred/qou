@@ -63,14 +63,24 @@ the leading exponent *unchanged*, which is a statement about differences and
 never pins an absolute value. So the class genuinely adds content, and an
 instance cannot be produced by fixing up `Ow` on a whim.
 
-**No non-emptiness witness is supplied, and that is a real gap rather than an
-oversight.** It would need an `OmegaOrder` instance, and **this tree contains
-none** — `Asymptotics.lean` says so in its own header ("Mathlib does not yet
-expose Conway normal form on `𝐍𝐨`, so neither class is populated here").
-`HyperrealLimitTransfer.lean` has a `SurrealField ℝ*` model, but no `Ow` for it.
-Until some carrier is populated, the satisfiability of this class is untested in
-either direction; recorded here rather than papered over with a degenerate
-instance.
+**No non-emptiness witness is supplied, and what blocks it has narrowed.**
+When this carrier was written, `OmegaOrder` had no instance anywhere, so the
+missing piece was the valuation itself. That half is now closed: bean `qou-x20w`
+generalised `OmegaOrder` to carry its exponent group separately and populated it
+from Mathlib's Hahn series (`HahnOmegaOrder.lean`), so the valuation axioms are
+demonstrably consistent.
+
+What remains is the **other** hypothesis. This class also needs
+`IsInfinitesimal` and `IsFinite`, hence `[SurrealField K]` — and `SurrealField`
+requires `omegaSurreal` exceeding every natural, so no archimedean carrier can
+serve and the Hahn model does not qualify either.
+`HyperrealLimitTransfer.lean` has a `SurrealField ℝ*` model, but as a `def`
+rather than an instance, and with no `Ow` for it.
+
+So satisfiability is still untested in either direction, but the gap is now one
+construction — a non-archimedean ordered field carrying both a birthday function
+and a leading-exponent valuation — rather than two. Recorded rather than papered
+over with a degenerate instance.
 
 ## Base ring (§7c)
 
@@ -85,7 +95,7 @@ namespace QOU.AppendixSurreals
 
 open SurrealField OmegaOrder
 
-universe u
+universe u w
 
 /-- **Spectral normal form**: the surreal order and the ω-adic valuation agree
 about smallness and largeness.
@@ -99,7 +109,8 @@ read directly off leading exponents, with no analytic limit.
 **is** the conjecture, for that carrier. None is provided — and see the header:
 no `OmegaOrder` instance exists anywhere in this tree, so the class has not been
 exhibited satisfiable either. -/
-class SpectralNormalForm (K : Type u) [SurrealField K] [OmegaOrder K] : Prop where
+class SpectralNormalForm (K : Type u) [SurrealField K]
+    (Γ : Type w) [AddCommMonoid Γ] [LinearOrder Γ] [OmegaOrder K ℝ Γ] : Prop where
   /-- **Part 1 — gap closure.** A non-zero value is infinitesimal exactly when
       its leading exponent is negative. Applied to `Δ = λ₂ − λ₁`, this is
       "the gap closes in the classical limit iff `Ow(Δ) < 0`".
@@ -107,7 +118,7 @@ class SpectralNormalForm (K : Type u) [SurrealField K] [OmegaOrder K] : Prop whe
       The hypothesis `x ≠ 0` is load-bearing: `0` is infinitesimal but has
       `Ow 0 = ⊤`, so the biconditional is false there. -/
   infinitesimal_iff_Ow_neg :
-    ∀ x : K, x ≠ 0 → (IsInfinitesimal x ↔ Ow x < (0 : WithTop K))
+    ∀ x : K, x ≠ 0 → (IsInfinitesimal x ↔ Ow (S := ℝ) (Γ := Γ) x < (0 : WithTop Γ))
   /-- **Part 3 — singularity formation.** A non-zero value fails to be finite
       exactly when its leading exponent is positive. Applied to an eigenvalue,
       this is "a divergence has `Ow(λ) > 0`", and the exponent is what
@@ -115,7 +126,7 @@ class SpectralNormalForm (K : Type u) [SurrealField K] [OmegaOrder K] : Prop whe
 
       The hypothesis `x ≠ 0` is load-bearing for the same reason. -/
   not_finite_iff_Ow_pos :
-    ∀ x : K, x ≠ 0 → (¬ IsFinite x ↔ (0 : WithTop K) < Ow x)
+    ∀ x : K, x ≠ 0 → (¬ IsFinite x ↔ (0 : WithTop Γ) < Ow (S := ℝ) (Γ := Γ) x)
 
 -- **No instance is provided — that is the honest open state** (AGENTS.md
 -- §3b-tax).  History: this file previously carried
@@ -133,7 +144,8 @@ class SpectralNormalForm (K : Type u) [SurrealField K] [OmegaOrder K] : Prop whe
 
 namespace SpectralNormalForm
 
-variable {K : Type u} [SurrealField K] [OmegaOrder K]
+variable {K : Type u} [SurrealField K]
+  {Γ : Type w} [AddCommMonoid Γ] [LinearOrder Γ] [OmegaOrder K ℝ Γ]
 
 /-- **The class pins `Ow` on the embedded reals** — anti-vacuity.
 
@@ -145,8 +157,8 @@ differences and never fixes an absolute value.
 So the two fields are not inert decoration — they have a consequence that
 constrains `Ow` on a set the caller does not choose, and an instance cannot be
 manufactured by adjusting `Ow` freely. -/
-theorem Ow_normalises_on_ofReal [h : SpectralNormalForm K] (r : ℝ) (hr : r ≠ 0) :
-    Ow (ofReal r : K) = (0 : WithTop K) := by
+theorem Ow_normalises_on_ofReal [h : SpectralNormalForm K Γ] (r : ℝ) (hr : r ≠ 0) :
+    Ow (S := ℝ) (Γ := Γ) (ofReal r : K) = (0 : WithTop Γ) := by
   have hne : (ofReal r : K) ≠ 0 := fun hz =>
     hr ((map_eq_zero_iff _ (ofReal_strictMono (K := K)).injective).mp hz)
   have hnotinf : ¬ IsInfinitesimal (ofReal r : K) := fun hinf =>
@@ -154,8 +166,8 @@ theorem Ow_normalises_on_ofReal [h : SpectralNormalForm K] (r : ℝ) (hr : r ≠
   have hfin : IsFinite (ofReal r : K) := ofReal_isFinite r
   have h1 := (h.infinitesimal_iff_Ow_neg _ hne)
   have h3 := (h.not_finite_iff_Ow_pos _ hne)
-  have hlt : ¬ (Ow (ofReal r : K) < (0 : WithTop K)) := fun hc => hnotinf (h1.mpr hc)
-  have hgt : ¬ ((0 : WithTop K) < Ow (ofReal r : K)) := fun hc => (h3.mpr hc) hfin
+  have hlt : ¬ (Ow (S := ℝ) (Γ := Γ) (ofReal r : K) < (0 : WithTop Γ)) := fun hc => hnotinf (h1.mpr hc)
+  have hgt : ¬ ((0 : WithTop Γ) < Ow (S := ℝ) (Γ := Γ) (ofReal r : K)) := fun hc => (h3.mpr hc) hfin
   exact le_antisymm (not_lt.mp hgt) (not_lt.mp hlt)
 
 /-- **The two parts are about the same value at most one way.**
@@ -164,11 +176,11 @@ A non-zero value cannot be both infinitesimal and non-finite: parts 1 and 3
 would put its leading exponent strictly below and strictly above `0`. Exercises
 both fields together, and is the statement that the conjecture is internally
 coherent rather than describing two unrelated regimes. -/
-theorem not_infinitesimal_and_not_finite [h : SpectralNormalForm K]
+theorem not_infinitesimal_and_not_finite [h : SpectralNormalForm K Γ]
     (x : K) (hx : x ≠ 0) : ¬ (IsInfinitesimal x ∧ ¬ IsFinite x) := by
   rintro ⟨hinf, hnfin⟩
-  have hneg : Ow x < (0 : WithTop K) := (h.infinitesimal_iff_Ow_neg x hx).mp hinf
-  have hpos : (0 : WithTop K) < Ow x := (h.not_finite_iff_Ow_pos x hx).mp hnfin
+  have hneg : Ow (S := ℝ) (Γ := Γ) x < (0 : WithTop Γ) := (h.infinitesimal_iff_Ow_neg x hx).mp hinf
+  have hpos : (0 : WithTop Γ) < Ow (S := ℝ) (Γ := Γ) x := (h.not_finite_iff_Ow_pos x hx).mp hnfin
   exact absurd (hneg.trans hpos) (lt_irrefl _)
 
 end SpectralNormalForm

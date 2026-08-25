@@ -1176,6 +1176,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.414Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1211,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.479Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1246,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.534Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1281,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.590Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1316,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.642Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1351,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.695Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1386,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.745Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1421,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.802Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1456,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.855Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1491,22 @@
         "reviewed_at": "2026-08-15T10:31:01.122Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "03d368e0be58",
+          "ts": "65148b6330a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:34.905Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a single four-sentence proof paragraph. None of the ten constructions is present; this is a genuine proof with a stated argument (factor through the singlet summand; completeness gives exactly one; compute the scalar), unlike the assertion-only prf:gauge-conformal-invariance elsewhere in this chapter. Ends on the QED box.",
+        "notes": "Two content items reported to the batch, not failed here. (1) UNSTATED INVERTIBILITY STEP: the proof concludes 'with $\\lambda = \\phi(e_-)/\\mathrm{tr}_\\tau(e_-) \\in R$' - for lambda to lie in R = Z[q^{+-1/2},(q-q^{-1})^{-1}] the trace must be a UNIT of R, not merely nonzero, and that is never checked. The block's own witness (computations/probes/gauge-coupling-uniqueness-probe.witness.json, assertion 'tr_M_e_minus_nonzero_at_q_0') verifies only NON-VANISHING, which is strictly weaker. (2) NOTATION: the proof introduces $\\phi \\colon E \\to R$, but E is defined nowhere in the block and notation-collisions states that bare $E$ is NOT USED in this paper (use $\\mathcal{S}_p$, $\\mathfrak{E}$, $\\mathcal{E}_q$ or $E_{\\mathfrak{H}}$). The corollary it proves writes the domain as $A \\otimes A$; use that."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1529,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:46:34.905Z"
 }

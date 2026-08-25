@@ -18,4 +18,13 @@ export default proposition({
     "prop:schur-weyl-eightfold",
     "def:borromean-baryon",
   ],
+  // Lean backs the DIMENSION claim the block states: the fully-symmetric
+  // Schur-Weyl channel at N = 3 has dimension C(5,3) = 10 (the decuplet).
+  // `eightfold_channels_at_three` proves sorry-free that weylDimSym 3 = 10
+  // (= (3+2).choose 3), alongside the octet (8) and singlet (1) and the
+  // 10 + 2·8 + 1 = 27 = 3³ channel arithmetic. It does NOT formalise the
+  // topological realisation by the Borromean baryon (that is def:borromean-
+  // baryon + the weight table) nor quantum Schur-Weyl duality itself
+  // (chapter open problem, bean qou-8pl3); this backs the dimension shadow.
+  lean: { ref: "qou:QOU.Eightfold.RowCapObstruction.eightfold_channels_at_three" },
 });

@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.370Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.441Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.503Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.567Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.622Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.671Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.726Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.778Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.826Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8c78353467e2",
+          "ts": "79ec4ba5860f"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.893Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell RECOMPUTED at 30 dps. 1/phi^2 = 0.3819660113 (table: 0.382 CORRECT); phi^2 = 2.6180339887 (table: 2.618 CORRECT); q_0 - 1/phi^2 = 0.7280125843 (table: 0.728 CORRECT); phi^2 - q_0 = 1.5080553930 (table: 1.508 CORRECT). All four values correct.",
+        "notes": "PIN NOTE, and it cuts the other way from most of this chapter: the table CANNOT distinguish the pins and does not need to. The old-muon value 1.109978595554181 used by the sibling proof and the current muon pin 1.10997859555733471 give IDENTICAL distances to 10 significant figures (0.7280125843 / 1.5080553930), and the owner-default proton pin 1.1099785827513808 first differs in the 8th decimal (0.7280125715). At the three-decimal precision shown, even the caption's rounded q_0 approx 1.110 reproduces both entries. So the pin-currency defect recorded against prf:golden-skew-dual-node is a labelling issue here, not a numerical one. Caption and table are mutually consistent."
+      }
     ]
   },
   "source_hashes": {
     "md": "8c78353467e2",
     "ts": "79ec4ba5860f"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:51:34.893Z"
 }

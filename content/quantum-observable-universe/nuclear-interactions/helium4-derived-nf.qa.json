@@ -1182,6 +1182,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.035Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "Clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1201,6 +1217,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.076Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "Clean."
       }
     ],
     "trap-em-dash": [
@@ -1220,6 +1252,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 193 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.118Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1239,6 +1287,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 193 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.159Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "The p-p / p-n / n-n crossing list enumerates the three physical crossing types."
       }
     ],
     "trap-closing-aphorism": [
@@ -1258,6 +1322,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.201Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "After the fix below the block ends on 'The binding tightens despite the residual deficit.', a substantive statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1277,6 +1357,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.245Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1296,6 +1392,23 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.287Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here. The block-final sentence read 'This gives the categorical expression of doubly-magic $N=Z=2$ stability.' The same claim already closes the Stability-analysis section three paragraphs earlier ('reflecting doubly-magic enhanced binding'), so the closer restated an established conclusion and added nothing.",
+        "notes": "FIX APPLIED (mechanical, duplicate removed, no meaning change): deleted the final sentence ' This gives the categorical expression of doubly-magic $N=Z=2$ stability.' The section now ends on 'The binding tightens despite the residual deficit.' Math delimiters re-checked and balanced."
       }
     ],
     "trap-performed-warmth": [
@@ -1315,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.327Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1334,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.367Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "'The alpha particle minimizes the categorical action among A=4 configurations' is a scoped extremal claim, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1353,6 +1498,38 @@
         "reviewed_at": "2026-08-15T10:31:01.322Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.411Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of the example: derivation, nucleus NF, atom NF, stability analysis and the He-3/He-4 comparison. Recomputed both NF sums: the nucleus coefficients 0.041 - 0.133 + 0.169 - 0.071 - 0.297 + 1.040 sum to exactly 0.749, matching net(N(2,2)) approx +0.749. The atom coefficients 0.236 - 0.061 + 0.176 + 0.384 - 0.037 + 1.190 sum to 1.888, while the block prints net(A(2,2)) approx +1.889 - a 0.001 gap, within the rounding of six 3-decimal coefficients but worth checking against the producer. Verified the deficit claim: sigma_0 = -0.061 and L_- = -0.037 are exactly the two negative coefficients in the atom NF. The nucleon budget is consistent with its sibling ex:hydrogen-derived-nf: 3 gamma-gamma per nucleon there, 12 for four nucleons here.",
+        "notes": "Speakable throughout."
+      },
+      {
+        "field_hash": {
+          "md": "f656d466277e",
+          "ts": "bc7f63e961e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:10:31.463Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Numeric provenance check beyond the ten categories.",
+        "notes": "NOTES (report, not fixed). (1) The atom NF's six printed coefficients sum to 1.888, not the printed net(A(2,2)) approx +1.889. Rounding of six 3-decimal values covers it, but the sibling ex:hydrogen-derived-nf sums to its printed net EXACTLY (1.489), so the discrepancy is worth confirming against the producer. (2) The Markov traces quoted in the stability analysis, '1.037 versus 1.230' for He-4 versus He-3, appear nowhere else in the block and cannot be derived from either displayed NF; no witness is cited for them. The He-3 claim 'all normal form coefficients are positive' is likewise made without showing the He-3 NF. (3) POSITIVE CROSS-CHECK: this block's 'shifted -h_A for n-n' independently corroborates prop:demand-stability's C_nn^2 = 1 - h_A C_nn and confirms that prf:inductive-gb-reduction's C_nn^2 = h_A C_nn + 1 carries the wrong sign."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1375,5 +1552,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:10:31.463Z"
 }

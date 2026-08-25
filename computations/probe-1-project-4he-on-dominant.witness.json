@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:24:34.143568+00:00",
-  "commitSha": "fb72229722880c0f565da3105e2f5a0dae46f3c6",
+  "computedAt": "2026-08-23T09:17:31.177253+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "psd_dominant_pair_contributes_under_1pct_of_trace",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "probe-1-project-4he-on-dominant",
   "scriptFile": "probe_1_project_4he_on_dominant.py",
-  "scriptHash": "f52fc08083b1",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "1c7c16311669",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,10 +29,17 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probe_1_project_4he_on_dominant.py"
+    ],
+    "reproduce": "python3 -u computations/probe_1_project_4he_on_dominant.py"
   },
   "description": "Projects the Frobenius Markov-trace mass formula tr_M(T_w_⁴He) onto the PSD-dominant Wedderburn block (4,4,4) and its conjugate (3,3,3,3), and compares to the partial-sum trace over all evaluated blocks (26/77). Tests whether PSD-dominance and trace-dominance coincide — they appear to be ORTHOGONAL structural axes.",
   "contentBlock": "conj:atom-braid-exterior-algebra",

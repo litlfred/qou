@@ -1,0 +1,522 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2109.04664v4",
+ "source": {
+  "file": "2109.04664v4.pdf",
+  "sha256": "639cd40a29752e3f76ae170339f35410ffb8488915d901caf79967d029a0b2c0",
+  "bytes": 306232,
+  "pages": 27
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2109.04664",
+   "version": "4",
+   "primary_class": "math.GT",
+   "stamp_date": "16 Aug 2022"
+  },
+  "doi": null,
+  "title": "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER",
+  "authors_raw": "HITOSHI MURAKAMI AND ANH T. TRAN",
+  "abstract": "W e study the asymptotic behavior of the N -dimensional colored Jones polynomial evaluated at exp( ξ/N ) for a real number ξ greater than a certain constant. W e prove that, from the asymptotic behavi or, we can extract the SL(2; C) Chern–Simons invariant and the Reidemeister torsion twis ted by the adjoint action both associated with a representation de termined by ξ.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220816205916-04'00'",
+   "Creator": "dvips(k) 2020.1 Copyright 2020 Radical Eye Software",
+   "Title": "arXiv:2109.04664v4  [math.GT]  16 Aug 2022"
+  },
+  "title_prev": "ON THE ASYMPTOTIC BEHA VIOR OF THE COLORED JONES POL YNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIA TED WITH A REAL NUMBER",
+  "title_lines": [
+   "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES",
+   "POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED",
+   "WITH A REAL NUMBER"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Summation",
+   "page": 7,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Integration",
+   "page": 10,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(1 −ϕ (ξ)/ξ ) sinθ. Deﬁne",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Topological interpretations",
+   "page": 14,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Representations. Let X be the complement of the open tubular neighbor-",
+   "page": 14,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Adjoint Reidemeister torsion. For a representation ρ : π1(X) →",
+   "page": 15,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Chern–Simons invariant. LetM be a three-manifold with boundary a torus",
+   "page": 15,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Proofs of lemmas",
+   "page": 16,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "(1 −e−2 cosθ) Re",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Re",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1 −e−2 cosθ )",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(z ∈ R), that is, when Im z ≥ 0 (Recall that we assume 0 < Re(ze",
+   "page": 21,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 26,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-hitoshi-murakami-and-anh-t-tran",
+   "number": "2",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 422,
+   "n_words": 72
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6263,
+   "n_words": 1254
+  },
+  {
+   "id": "sec-002-4-hitoshi-murakami-and-anh-t-tran",
+   "number": "4",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1232,
+   "n_words": 276
+  },
+  {
+   "id": "sec-003-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2789,
+   "n_words": 607
+  },
+  {
+   "id": "sec-004-6-hitoshi-murakami-and-anh-t-tran",
+   "number": "6",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1654,
+   "n_words": 366
+  },
+  {
+   "id": "sec-005-3-summation",
+   "number": "3",
+   "title": "Summation",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1411,
+   "n_words": 408
+  },
+  {
+   "id": "sec-006-8-hitoshi-murakami-and-anh-t-tran",
+   "number": "8",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3237,
+   "n_words": 830
+  },
+  {
+   "id": "sec-007-10-hitoshi-murakami-and-anh-t-tran",
+   "number": "10",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 680,
+   "n_words": 188
+  },
+  {
+   "id": "sec-008-4-integration",
+   "number": "4",
+   "title": "Integration",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2319,
+   "n_words": 553
+  },
+  {
+   "id": "sec-009-2-1-ϕ-ξξ-sinθ-deﬁne",
+   "number": "2",
+   "title": "(1 −ϕ (ξ)/ξ ) sinθ. Deﬁne",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 732,
+   "n_words": 173
+  },
+  {
+   "id": "sec-010-12-hitoshi-murakami-and-anh-t-tran",
+   "number": "12",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 4131,
+   "n_words": 962
+  },
+  {
+   "id": "sec-011-14-hitoshi-murakami-and-anh-t-tran",
+   "number": "14",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 1161,
+   "n_words": 291
+  },
+  {
+   "id": "sec-012-5-topological-interpretations",
+   "number": "5",
+   "title": "Topological interpretations",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 71,
+   "n_words": 12
+  },
+  {
+   "id": "sec-013-51-representations-let-x-be-the-complement-of-th",
+   "number": "5.1",
+   "title": "Representations. Let X be the complement of the open tubular neighbor-",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 568,
+   "n_words": 133
+  },
+  {
+   "id": "sec-014-52-adjoint-reidemeister-torsion-for-a-representa",
+   "number": "5.2",
+   "title": "Adjoint Reidemeister torsion. For a representation ρ : π1(X) →",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 609,
+   "n_words": 121
+  },
+  {
+   "id": "sec-015-53-chernsimons-invariant-letm-be-a-three-manifol",
+   "number": "5.3",
+   "title": "Chern–Simons invariant. LetM be a three-manifold with boundary a torus",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1122,
+   "n_words": 239
+  },
+  {
+   "id": "sec-016-16-hitoshi-murakami-and-anh-t-tran",
+   "number": "16",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 191,
+   "n_words": 48
+  },
+  {
+   "id": "sec-017-6-proofs-of-lemmas",
+   "number": "6",
+   "title": "Proofs of lemmas",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 2410,
+   "n_words": 587
+  },
+  {
+   "id": "sec-018-18-hitoshi-murakami-and-anh-t-tran",
+   "number": "18",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1448,
+   "n_words": 364
+  },
+  {
+   "id": "sec-019-2-re",
+   "number": "2",
+   "title": "Re",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1887,
+   "n_words": 468
+  },
+  {
+   "id": "sec-020-20-hitoshi-murakami-and-anh-t-tran",
+   "number": "20",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 897,
+   "n_words": 267
+  },
+  {
+   "id": "sec-021-2-1-e2-cosθ-re",
+   "number": "2",
+   "title": "(1 −e−2 cosθ) Re",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 73,
+   "n_words": 25
+  },
+  {
+   "id": "sec-022-2-1-e2-cosθ",
+   "number": "2",
+   "title": "(1 −e−2 cosθ )",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1483,
+   "n_words": 381
+  },
+  {
+   "id": "sec-023-1-z-r-that-is-when-im-z-0-recall-that-we-assume",
+   "number": "1",
+   "title": "(z ∈ R), that is, when Im z ≥ 0 (Recall that we assume 0 < Re(ze",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1064,
+   "n_words": 249
+  },
+  {
+   "id": "sec-024-22-hitoshi-murakami-and-anh-t-tran",
+   "number": "22",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 3126,
+   "n_words": 825
+  },
+  {
+   "id": "sec-025-24-hitoshi-murakami-and-anh-t-tran",
+   "number": "24",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 2669,
+   "n_words": 676
+  },
+  {
+   "id": "sec-026-26-hitoshi-murakami-and-anh-t-tran",
+   "number": "26",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 450,
+   "n_words": 137
+  },
+  {
+   "id": "sec-027-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 5532,
+   "n_words": 909
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 28,
+  "chars_total": 49631
+ }
+}

@@ -1,0 +1,199 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-9909088v1",
+ "source": {
+  "file": "9909088v1.pdf",
+  "sha256": "52cfb568951f195f96ca14a0048063be4fbe3af24a99164b053a7d5883010f2e",
+  "bytes": 154168,
+  "pages": 9
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/9909088",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "15 Sep 1999"
+  },
+  "doi": null,
+  "title": "THE GAUSS MAP AND A NONCOMPACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEAVES ON SEMIABELIAN VARIETIES",
+  "authors_raw": "J. Franecki, M. Kapranov",
+  "abstract": "For an irreducible subvariety Z in an algebraic group G we deﬁne an integer gdeg( Z)≥ 0 as the degree, in a certain sense, of the Gauss map of Z. It can be regarded as a substitution for the intersection index of the conormal bundle to Z with the zero section of T ∗G, even though G may not be compact. For G a semiabelian variety (in particular, an algebraic torus ( C∗)n), we prove a Riemann- Roch type formula for constructible sheaves on G which involves our substitutions for the intersection indicies. As a corollary, we get that a p erverse sheaf on such a G has nonnegative Euler characteristic, generalizing a theo rem of Loeser-Sabbah.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180820111024-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/9909088v1  [math.AG]  15 Sep 1999"
+  },
+  "title_prev": "THE GAUSS MAP AND A NONCOMP ACT RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE SHEA VES ON SEMIABELIAN VARIETIES",
+  "title_lines": [
+   "THE GAUSS MAP AND A NONCOMPACT",
+   "RIEMANN-ROCH FORMULA FOR CONSTRUCTIBLE",
+   "SHEAVES ON SEMIABELIAN VARIETIES"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and statement of results",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The Gauss map and the Gaussian degree",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Characteristic cycle of an open embedding",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.3 for G = ( C∗)n",
+   "page": 5,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-j-franecki-m-kapranov",
+   "number": "2",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 655,
+   "n_words": 118
+  },
+  {
+   "id": "sec-001-1-introduction-and-statement-of-results",
+   "number": "1",
+   "title": "Introduction and statement of results",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5447,
+   "n_words": 996
+  },
+  {
+   "id": "sec-002-2-the-gauss-map-and-the-gaussian-degree",
+   "number": "2",
+   "title": "The Gauss map and the Gaussian degree",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1606,
+   "n_words": 354
+  },
+  {
+   "id": "sec-003-4-j-franecki-m-kapranov",
+   "number": "4",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 614,
+   "n_words": 129
+  },
+  {
+   "id": "sec-004-3-characteristic-cycle-of-an-open-embedding",
+   "number": "3",
+   "title": "Characteristic cycle of an open embedding",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 4771,
+   "n_words": 970
+  },
+  {
+   "id": "sec-005-4-proof-of-theorem-13-for-g-cn",
+   "number": "4",
+   "title": "Proof of Theorem 1.3 for G = ( C∗)n",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 276,
+   "n_words": 63
+  },
+  {
+   "id": "sec-006-6-j-franecki-m-kapranov",
+   "number": "6",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5174,
+   "n_words": 1123
+  },
+  {
+   "id": "sec-007-8-j-franecki-m-kapranov",
+   "number": "8",
+   "title": "J. FRANECKI, M. KAPRANOV",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1676,
+   "n_words": 343
+  },
+  {
+   "id": "sec-008-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2572,
+   "n_words": 379
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 9,
+  "chars_total": 22791
+ }
+}

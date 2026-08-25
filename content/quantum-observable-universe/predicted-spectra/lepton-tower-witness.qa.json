@@ -1400,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.923Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two denial constructions, both load-bearing disambiguation rather than manufactured emphasis. 'These values are not the physical mass ratios m_mu/m_e approx 206.8 and m_tau/m_e approx 3477' guards the reader against reading net-coefficient ratios of 1.245 and 1.545 as mass predictions — exactly the numerology misreading the corpus's anti-fit discipline exists to prevent, and it names the true values so the gap is visible. 'The even-n entries do not represent torus knots' is likewise precise: T(2,n) for even n is a 2-component torus LINK, not a knot.",
+        "notes": "pass. TWO NON-TRAP FINDINGS on this block, not fixed inline. (1) BROKEN CROSS-REFERENCE: the 'Full normal form table' section reads only 'See Table.' with no link, where every sibling extracted-table parent in this chapter writes 'See [Table N](#tbl:...)' (cf. knot-formula-table.md, five such links). The target tbl:lepton-tower-witness-table-data exists and is not reachable from the prose. Proposed: 'See [Table](#tbl:lepton-tower-witness-table-data).' (2) The block is titled and tagged a numerical WITNESS and asserts 'Their recurrence residuals are strictly bounded by 10^{-12}', but the .ts carries no computation/witness field and I found no computations/*.witness.json backing that residual bound, so the number is unverifiable from the corpus as it stands. The tower values themselves I did recompute and they are correct; it is only the residual claim that has no producer. Minor notation note: this block writes tau^- for the tau lepton while tau is the fibre functor in the notation register — the same collision recorded on prop:knot-operator-selection."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.548Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 141 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.589Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1457,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 141 words)"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.630Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.673Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1575,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.715Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1610,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.756Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1645,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.797Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1680,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.838Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1715,22 @@
         "reviewed_at": "2026-08-15T10:31:01.228Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "11be9766ad12",
+          "ts": "f6403e2fe849"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:11:04.879Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the witness remark (NF tower framing, decay differences, mass-ratio indicators). Recomputed every quoted numeric: 1.936 - 1.253 = 0.683 and 1.936 - 1.560 = 0.376 both exact as printed; 0.683/0.376 = 1.8165, so 'approx 1.816' is right; 1.560/1.253 = 1.24501 -> 1.245 and 1.936/1.253 = 1.54509 -> 1.545, both right. Crossing counts: 7-3 = 4 for tau->e and 7-5 = 2 for tau->mu, as stated. Experimental comparators check out: m_mu/m_e = 206.77 and m_tau/m_e = 1776.86/0.5110 = 3477. Pin: 'q_0 approx 1.1100' is reproduced by the proton pin 1.1099785827513808, the muon pin 1.10997859555733471 and the old muon 1.109978595554181 alike, and excludes only the erroneous 1.1097. No pivot, no triple, no aphorism, no meta-commentary, no warmth, no superlative, no dash.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1753,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:11:04.923Z"
 }

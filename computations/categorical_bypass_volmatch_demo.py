@@ -132,7 +132,13 @@ def load_y_lambda():
         n = int(n_str)
         for w in table["weights"]:
             partition = tuple(w["partition"])
-            out[(n, partition)] = float(w["y_lambda_numeric"])
+            # `mp.mpf`, not `float`: the witness stores this as a 50-digit
+            # DECIMAL STRING, so `float(...)` discarded 34 of them at the door.
+            # The χ_λ cap below floors the products regardless, but flooring an
+            # exact input on the way in is a defect on its own terms -- and it
+            # made the `_F64_SIG_DIGITS` note untrue as written, since y_λ was
+            # a second float64 source it does not mention.
+            out[(n, partition)] = mp.mpf(w["y_lambda_numeric"])
     return out
 
 
@@ -174,7 +180,11 @@ def chi_lambda_from_block(block):
     eigenvalues by linearity. The witness records eigenvalues of the
     symmetric part (M+M^T)/2; their sum equals tr(M) regardless.
     """
-    return sum(block["matrix_at_q_0_sym_eigvals"])
+    # Lifted to mpf before summing.  This adds no precision -- the witness
+    # stores these as JSON floats and that cap is real (see `_F64_SIG_DIGITS`)
+    # -- but it keeps the accumulation out of binary64 and lets everything
+    # downstream be one type.
+    return mp.fsum(mp.mpf(str(v)) for v in block["matrix_at_q_0_sym_eigvals"])
 
 
 def native_strand_n(cert):
@@ -203,13 +213,14 @@ def main():
         wb = cert.get("wedderburn_blocks", [])
         # Compute tr_M(T_w) = Σ_λ y_λ(q_0) · χ_λ(T_w)
         terms = []
-        tr_M = 0.0
+        tr_M = mp.mpf(0)
         for block in wb:
             partition = tuple(block["partition"])
             chi = chi_lambda_from_block(block)
             y = y_lambda.get((n_native, partition))
             if y is None:
-                terms.append({"partition": list(partition), "chi": chi,
+                terms.append({"partition": list(partition),
+                              "chi": mp.nstr(chi, _F64_SIG_DIGITS),
                               "y_lambda": None, "skipped": True})
                 continue
             contribution = y * chi
@@ -217,12 +228,17 @@ def main():
             terms.append({
                 "partition": list(partition),
                 "d_lambda": block["d_lambda"],
-                "chi_lambda": chi,
-                "y_lambda": y,
-                "contribution": contribution,
+                # χ_λ and everything built from it are floored by the
+                # float64 SDP eigenvalues, so they are emitted at that
+                # precision.  y_λ is exact to its full 50 digits and is
+                # emitted as such -- the two are no longer the same width
+                # because they no longer carry the same amount of truth.
+                "chi_lambda": mp.nstr(chi, _F64_SIG_DIGITS),
+                "y_lambda": str(y),
+                "contribution": mp.nstr(contribution, _F64_SIG_DIGITS),
             })
         # B_pred from direct chain
-        B_pred_direct = M_E_MEV * rho * tr_M
+        B_pred_direct = M_E_MEV * mp.mpf(rho) * tr_M
         # B_pred from volume-match (mass-table-ppb)
         #
         # `mp.mpf(...)` on the way in: `mass_table_ppb.py` was ported to mpmath
@@ -252,14 +268,14 @@ def main():
             "knot":         knot,
             "n_native":     n_native,
             "rho":          rho,
-            "tr_M_direct":  tr_M,
+            "tr_M_direct":  mp.nstr(tr_M, _F64_SIG_DIGITS),
             # `str(...)` on the mpf-valued fields: they are mpmath now (see the
             # lift above) and `json.dump` cannot serialize an mpf — the failure
             # `alpha_cluster_recursion.py` hit for the same reason. The ratios
             # are computed in mpmath and stringified only at this sink, so the
             # precision survives the division and only the JSON encoding is
             # narrowed.
-            "B_pred_direct_MeV": B_pred_direct,
+            "B_pred_direct_MeV": mp.nstr(B_pred_direct, _F64_SIG_DIGITS),
             # `B_volmatch` and `B_AME` are exact to their full length -- the
             # first a 44-digit decimal from the qou-3wqg port, the second an mpf
             # constant -- so `str()` claims only digits that exist.
@@ -303,7 +319,8 @@ def main():
         # `__format__`, and `:>10.4f` raises. Console-only; the record keeps the
         # mpf-derived value.
         print(f"{r['sym']:<6} {r['n_native']:>2} {r['rho']:>2} "
-              f"{r['tr_M_direct']:>9.4f} {float(r['B_pred_direct_MeV']):>10.4f} "
+              f"{float(r['tr_M_direct']):>9.4f} "
+              f"{float(r['B_pred_direct_MeV']):>10.4f} "
               f"{bv} {ba} {rd_str}")
 
     print("\n" + "=" * 78)
@@ -340,7 +357,7 @@ This is a real gap in the canonical chain (PR #442). Step 1 of the
             "resolution before sub-percent accuracy is possible."
         )
         .set_content_block("prop:atom-knot-mass-derivation")
-        .add_parameter("q_0", Q_0)
+        .add_parameter("q_0", str(Q_0))
         .add_parameter("m_e_MeV", M_E_MEV)
         .add_data("rows", rows)
         .add_data("sources", {

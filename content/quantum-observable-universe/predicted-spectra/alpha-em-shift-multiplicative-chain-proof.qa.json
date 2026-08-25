@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:14.777Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:14.812Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 175 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:14.846Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 175 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:14.882Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,37 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:14.917Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.141Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Block previously closed on a circular quotable line; removed. It now ends on the witness-assertion count, which is the proof's actual last fact.",
+        "notes": "fix applied: deleted 'Expressing the shift as a unified multiplicative chain demonstrates that electromagnetic shifts follow an intrinsically multiplicative algebraic chain.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1362,21 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:14.955Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1396,37 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:14.991Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.184Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Same deleted sentence was also a verbatim restatement of the boxed identity ('multiplicative chain' ... 'intrinsically multiplicative algebraic chain'). Nothing else restates the thesis. NUMERIC AUDIT in notes.",
+        "notes": "fix applied: see trap-closing-aphorism. NUMERIC CHECK, all clean: alpha_shift(T_{2,9}) = k(p-1) = 9*1 = 9 and alpha_shift(T_{3,5}) = 5*2 = 10, gcd(2,9)=gcd(3,5)=1, so the specialisation is right and it independently CORRECTS the sibling block rem:alpha-em-categorical-trace-ratio-interpretation, which states a general rule delta_q(T_{p,q}) = q^q - q^{-q} that would give exponent 5 for T_{3,5} rather than 10. |chain - CODATA| recomputed: 137.035999084 - 136.823219657 = 0.212779 at the muon pin and 0.212790 at the proton pin, both 'approx 0.213' as stated; relative 1.553e-3, matching the quoted O(10^-3). 'approx 136.823' does not distinguish the pins."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1446,21 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.030Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1480,37 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.068Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.226Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'intrinsically multiplicative' removed with the closing sentence; nothing else overstates. 'holds exactly at the symbolic level' is accurate - the identity is a substitution.",
+        "notes": "fix applied: see trap-closing-aphorism."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:01.216Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e7c7b807e397",
+          "ts": "3dd44d39b60f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:29:15.105Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the proof block (two-step composition, specialisation, numerical verification). All ten categories judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1567,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:29:15.226Z"
 }

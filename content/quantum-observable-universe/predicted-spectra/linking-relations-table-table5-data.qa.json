@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.123Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.169Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.210Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.253Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.294Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.334Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.374Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.413Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.453Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "3296670734cd",
+          "ts": "8e8f2dfd1d23"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:13:50.493Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Pure extracted data table (3 smoothing rows); no prose. Checked the physics of each row. Row 1, d->u in the neutron under L_0^-, products T_{2,3} + T_{1,0}^sigma = e^- + antineutrino: correct beta^- (n -> p e^- nubar_e). Row 2, u->d in the proton under L_0^+, products T_{2,3}^sigma + T_{1,0} = e^+ + nu_e: correct beta^+. Row 3, s->u in Lambda under L_0^-, e^- + antineutrino: correct for the semileptonic Lambda -> p e^- nubar_e. The charged-lepton/neutrino sign pattern in all three rows matches the assignment table of rem:lepton-number-categorical-properties (nu_e = +1, nu_e^sigma = -1) and therefore CONTRADICTS that block's bullet list, which flatly assigns -1 to the neutral component — further evidence that the bullet is the defect there, not the table.",
+        "notes": "no trap of this class; full-context read"
+      }
     ]
   },
   "source_hashes": {
     "md": "3296670734cd",
     "ts": "8e8f2dfd1d23"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:13:50.493Z"
 }

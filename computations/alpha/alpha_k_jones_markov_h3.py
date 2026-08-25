@@ -36,8 +36,10 @@ warnings.filterwarnings("ignore")
 sys.path.insert(0, str(Path(__file__).parent))
 
 import mpmath as mp
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 import numpy as np
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from hecke_characters import build_seminormal_matrices, dim_q, qfac, q_int
@@ -66,7 +68,7 @@ for shape in shapes:
     else:
         sigmas_dense = list(sigmas)
     data[shape] = {"sigmas": sigmas_dense, "dim": d_lam,
-                   "dim_q": float(dim_q(shape))}
+                   "dim_q": float(dim_q(shape, Q0_PROTON))}
 
 
 def chi_lambda(shape, words_with_coeffs):

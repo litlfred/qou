@@ -1242,6 +1242,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.804Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1261,6 +1277,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.845Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-em-dash": [
@@ -1280,6 +1312,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.884Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-triples": [
@@ -1299,6 +1347,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.924Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-closing-aphorism": [
@@ -1318,6 +1382,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:41.963Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-meta-commentary": [
@@ -1337,6 +1417,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.002Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-thesis-restatement": [
@@ -1356,6 +1452,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.042Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-performed-warmth": [
@@ -1375,6 +1487,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.080Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-superlative": [
@@ -1394,6 +1522,22 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.117Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ],
     "trap-nonspeakable": [
@@ -1413,8 +1557,24 @@
         "reviewed_at": "2026-08-15T10:31:01.650Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "abbd2fd8165f",
+          "ts": "ac8370a31e1c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:42.154Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of thm:skew-poisson-integrates (statement plus the three-part construction sentence). All ten categories judged clean; the three construction components are substantive, not a reflex triple.",
+        "notes": "Verified the .md construction against the Lean witness: distAlgebra := H.coordRing, mul := F(x, bracket x y), comul := diagonal - the .md describes it accurately. NOT A TRAP, reported separately: the Lean carries an author-facing honest-disposition note that this existence witness does NOT capture the dissertation content (the diagonal comultiplication makes comul_hom hold by rfl); the .md presents the construction with no corresponding caveat."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:01.650Z"
+  "updated_at": "2026-08-22T04:07:42.154Z"
 }

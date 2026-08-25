@@ -937,6 +937,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not as a covalent LP term.\"; \", not derived.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.412Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The heading 'Orthogonal channels, not one chain' and 'A multiple bond is not one braid chain made tighter' are the block's declared subject (its opening sentence promises 'why a single-chain model fails'), so substantive contrast, not manufactured emphasis.",
+        "notes": "Passes. Three spaced em-dashes, all true appositives, also pass."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -956,6 +972,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.453Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (four-section derivation: orthogonal channels, single-chain failure, active-set=bond-order, two limitations; opened co-bond-order-active-set.witness.json and checked every quoted quantity). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -975,6 +1007,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (5 in 496 words)"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.495Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (four-section derivation: orthogonal channels, single-chain failure, active-set=bond-order, two limitations; opened co-bond-order-active-set.witness.json and checked every quoted quantity). Judged on the whole text: spaced-dash count = 3; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -994,6 +1042,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 496 words)"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.537Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (four-section derivation: orthogonal channels, single-chain failure, active-set=bond-order, two limitations; opened co-bond-order-active-set.witness.json and checked every quoted quantity). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1013,6 +1077,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.579Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (four-section derivation: orthogonal channels, single-chain failure, active-set=bond-order, two limitations; opened co-bond-order-active-set.witness.json and checked every quoted quantity). Judged on the whole text: final prose sentence is: \"Both carry three shared orthogonal channels with the same Hecke-algebra structure.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1032,6 +1112,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.620Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (four-section derivation: orthogonal channels, single-chain failure, active-set=bond-order, two limitations; opened co-bond-order-active-set.witness.json and checked every quoted quantity). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1051,6 +1147,23 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.662Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "The closing paragraph restates paragraph 4: 'CO is isoelectronic with N_2. Both carry three shared orthogonal channels with the same Hecke-algebra structure.' The isoelectronic claim appears twice in this block and again in prop:co-lp-dual-binding.",
+        "notes": "PROPOSED (not applied - math-adjacent): drop the final two sentences, or fold the D_0 sentence into paragraph 4. | NOT FIXED, flagged: the same closing sentence asserts D_0(CO)=11.09 eV 'is consistent with three occupied channels' while the block's cited witness gives sigma_channel_eV=0.8645, so 3*b_sigma=2.59 eV - a 4.3x UNDERbind, and the block's own limitation (ii) says the equal-channel model OVERbinds. See the trap-superlative entry."
       }
     ],
     "trap-performed-warmth": [
@@ -1070,6 +1183,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.703Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (four-section derivation: orthogonal channels, single-chain failure, active-set=bond-order, two limitations; opened co-bond-order-active-set.witness.json and checked every quoted quantity). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1089,6 +1218,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.748Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'computationally refuted' / 'falsified' are scoped to a named model (the interleaved single-chain topology) with the mechanism given, so they read as scope-(a) negatives rather than structural exclusions; borderline under AGENTS.md 'Before declaring refuted' but not a language trap.",
+        "notes": "CARRIED FINDING (numeric, cited witness contradicts the block): the block says 'The single sigma channel binds at :val[sigma_channel_eV] (the H_2-scale covalent channel)'. co-bond-order-active-set.witness.json currently gives sigma_channel_eV = 0.8645364577143441 eV. That is 5.2x below the H_2 scale (d0_h2_ev = 4.478), and limitation (ii)'s claim that the equal-channel model 'overbinds the total energy (3 b_sigma versus the observed D_0)' inverts: 3 x 0.8645 = 2.594 eV against D_0(CO) = 11.09 eV is a 4.3x UNDERbind. The sibling embeddable-cardinality-vs-energy uses b_sigma = 4.6231 eV for the same quantity. Reported, not resolved. Verified separately: V_A = 10 - Z_A gives C=4/N=3/O=2 and active sets (O2,N2,CO) = (2,3,2), matching the witness exactly."
       }
     ],
     "trap-nonspeakable": [
@@ -1108,6 +1253,22 @@
         "reviewed_at": "2026-08-15T10:31:01.556Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "170380af7c47",
+          "ts": "fd53a6b5ef68"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:13.796Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (four-section derivation: orthogonal channels, single-chain failure, active-set=bond-order, two limitations; opened co-bond-order-active-set.witness.json and checked every quoted quantity). Judged on the whole text: read aloud end to end (34 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1130,5 +1291,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:13.796Z"
 }

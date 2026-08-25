@@ -44,6 +44,7 @@ falsifiable against any independent computation of the CGZ map on the
 """
 
 import json
+import pathlib
 import sys
 
 P5 = 5
@@ -515,7 +516,7 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-y3xv", "qou-9p9y"],
     "source": (
-        "CGZ arXiv:1712.04887v3 §2-3 descent (uploads/1712.04887v3.pdf); "
+        "CGZ arXiv:1712.04887v3 §2-3 descent (library/arxiv-1712.04887v3/1712.04887v3.pdf); "
         "GSWZ arXiv:2412.04241v2 eqn (270); Lean backbone "
         "QOU.Machinery.CyclicQuantumDilog (merged #4964)"
     ),
@@ -530,7 +531,7 @@ witness = {
         "under the stated pinning; no printed target exists"
     ),
 }
-with open("computations/probes/gswz_epsm_descent_m3.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_epsm_descent_m3.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

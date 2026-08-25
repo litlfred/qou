@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.709Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.751Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.793Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.835Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.877Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.919Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:06.962Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:07.003Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:07.046Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b8732c9d670e",
+          "ts": "3cd9da96ac37"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:07.086Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row bare-vs-dressed weight table. Judged all ten; the single annotation is a row pointer.",
+        "notes": "Table-only block. The '<- **unzeroed**' annotation on the (2,2) row is load-bearing disambiguation (it marks the one row whose value changes from exactly 0 under dressing), which is the skill's stated false-positive class, so trap-meta-commentary passes. The 'Bare' column reproduces table9's weights exactly (+0.018, -0.136, 0, +0.111, -0.010). Dressed column not independently verifiable without the dressing operator; not guessed."
+      }
     ]
   },
   "source_hashes": {
     "md": "b8732c9d670e",
     "ts": "3cd9da96ac37"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:07.086Z"
 }

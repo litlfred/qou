@@ -66,6 +66,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
     y_lambda_wenzl_bridge_symbolic,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 q = sp.Symbol("q", positive=True)
 h = sp.Symbol("h")  # h = q − q⁻¹
@@ -356,7 +357,7 @@ def main():
     # exact 50-dps value from the at-q0 cache (no symbolic y_λ slowdown) and
     # reconstruct the bare-Borromean closed form for the order-by-order test.
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(json.load(open(_pb.witness_path("chi-proton-h3-at-q0-50dps.witness.json", HERE)))
                 ["q_0_50dps"])
     trM = {}

@@ -95,3 +95,38 @@ delta_q_value_at_q0 moves 114-148 ppb and 1/alpha_EM moves -78.96 ppb). The
 a deliberate per-producer assignment and this producer is on the alpha_EM path.
 
 This bean now tracks defect 1 only.
+
+## 2026-08-22 — RESOLVED (measured, not assumed)
+The straddle this bean describes no longer exists; the manifest was re-tagged in the interim and
+all three layers now agree on PROTON, verified on main:
+  * q0_anchor_manifest.json  -> `physical_proton` (406 members); NOT in `ideal_muon` (3 members)
+  * alpha_k_per_force_assembly.py -> imports q_at() == the proton pin
+  * committed witness -> q0_anchor "proton", and its q0 matches the 50-digit proton pin to 1.9e-50
+    while differing from the muon pin by 1.16e-8 (the mu-p tension) — so the VALUE agrees with the
+    label, not merely the tag.
+
+What WAS still broken, and is fixed here: the producer's own documentation had not been updated with
+the re-tag, so it asserted the opposite of the truth in two places — a source comment claiming the
+manifest says `ideal_muon` with the decision "deliberately NOT decided here", and, worse, a
+HARDCODED witness field `q0_manifest_tag: "ideal_muon"` shipped in every witness it emitted. That
+false comment is what sent this session chasing an already-resolved defect.
+
+Fix: the tag is now READ from q0_anchor_manifest.json at run time (`_manifest_tag()`), so it cannot
+go stale against a future re-tag; a lookup failure returns an explicit "unknown"/"untagged"/
+"AMBIGUOUS" string rather than guessing. Comment and caveat rewritten to the measured state.
+Witness regenerated: 4/4 assertions pass, ZERO mathematical values moved (only invocation metadata),
+and the environment block is a strict SUPERSET of the committed one (numpy/sympy/mpmath/
+pyhecke_native all matched after installing them, plus a new pyhecke_native_build fingerprint) — so
+this avoids the provenance-degradation trap recorded in bean qou-5380. Blocking precision gates green.
+
+## 2026-08-22 — CORRECTION to the note above: this bean stays OPEN
+My "RESOLVED" note over-claimed. This bean makes TWO claims and only one is resolved:
+ (a) "manifest says ideal_muon" — FALSE now (says physical_proton); the straddle is gone. RESOLVED.
+ (b) "code imports q_at directly rather than routing through q_parameter" — STILL TRUE, verified:
+     alpha_k_per_force_assembly.py:139 imports `qou_substrate.constants.q_at`, while it is
+     q_parameter.py (~L95-104) that reads q0_anchor_manifest.json and honours an `ideal_muon` tag.
+So the bypass remains; it is merely LATENT instead of active, because the tag currently says
+physical_proton and the direct import yields the same pin. If this producer is ever re-tagged to
+ideal_muon, the tag will silently fail to fire and the code will keep using proton — the original
+defect re-armed. Any such re-tag MUST also switch the import to q_parameter. Recorded in the
+producer's own comment. Bean stays OPEN for (b).

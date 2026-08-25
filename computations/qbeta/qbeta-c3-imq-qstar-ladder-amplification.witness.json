@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T10:33:50.028348+00:00",
-  "commitSha": "27cbb6e2ec5168729205970a4aba0a9e1973803b",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T17:06:53.734477+00:00",
+  "commitSha": "001d51ceb8dde704a8f921b55372331b963e687f",
   "assertions": [
     {
       "name": "hypersensitivity_is_ladder_1_over_u3_amplification",
@@ -14,9 +14,9 @@
     },
     {
       "name": "anchors_reproduced_exactly",
-      "computed": 1.0,
+      "computed": 0.0,
       "expected": 1.0,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.5,
       "source": "S(proton)/S(muon) from c3_target_at match the committed anchor-blind witness"
     },
@@ -29,12 +29,12 @@
       "source": "q* at 80% muon-ward != precision-weighted mass reconciliation ~0% (proton); q* is an independent decay-sector determination of q0"
     }
   ],
-  "allPassed": true,
-  "durationMs": 12,
+  "allPassed": false,
+  "durationMs": 5,
   "computation": "qbeta-c3-imq-qstar-ladder-amplification",
   "scriptFile": "qbeta_c3_imq_qstar_ladder_amplification_probe.py",
   "scriptHash": "7a57865bed59",
-  "scriptCommitSha": "27cbb6e2ec5168729205970a4aba0a9e1973803b",
+  "scriptCommitSha": "e54ffbca0a1b5171dcbdaf5873075129af9b12ba",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,18 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
   },
   "description": "ε(q₀) decay-projection: evaluate the c₃ extractor c3_target_at as a deterministic function of q₀ (dissolving the 2-anchor framing), root-find the S=0 point q*=1.10997859303152… (pure bar-even, ~80.3% muon-ward), and decompose the hypersensitivity. KEY: S'(q*)=3.84e6=2.37×(1/u³), u=b·ℏ_q²≈0.00852 — the dc₃/dq≈4.66e6 swing is the 1/u³ ladder-inversion amplification of a SMOOTH O(1) numerator zero, NOT a physical near-singularity (scope-(a) recalibration of prior 'near-singular map' framings; numbers stand). Precision limit is the experimental Q_β (dq*/dQ_β≈−0.54), not the anchor count — a better neutron Q_β sharpens q*. Refines the earlier ratio-entropy probe. The underlying decay projection is smooth; the physical model (Im 𝔙 / Φ_b, #3596) stays open. No c_k wired; no fit; C14.",
   "contentBlock": "conj:im-q-physical-role",
   "data": {
     "q_star": {
       "value": "1.109978593031523288402328",
-      "frac_muon_ward_pct": "80.29605",
+      "frac_muon_ward_pct": "79.744448",
       "meaning": "S=0: c3 = -Vol(4_1) exactly (pure bar-even, eps=0)",
-      "anchors_reproduced": true
+      "anchors_reproduced": false
     },
     "hypersensitivity_decomp": {
       "S_prime_qstar": "3838404.458",
@@ -70,7 +70,7 @@
       "lever": "more precise neutron Q_beta sharpens q*; more anchors do not"
     },
     "decay_sector_determination": {
-      "q_star_frac_muon_ward_pct": "80.296",
+      "q_star_frac_muon_ward_pct": "79.7444",
       "mass_weighted_reconciliation_pct": "0.000743796",
       "proton_over_muon_precision": "366.7",
       "verdict": "q* is an independent decay-sector (bar-odd Q_beta) determination of q0, NOT the mass-sector statistical mean (which sits ~0% muon-ward = proton); the mu-p tension becomes a mu-p-Q_beta three-way picture"

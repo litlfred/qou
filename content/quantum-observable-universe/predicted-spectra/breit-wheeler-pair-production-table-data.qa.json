@@ -891,11 +891,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.112Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      },
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.778Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block. ALGEBRA AUDIT recorded here.",
+        "notes": "ALGEBRA CHECK, ALL NINE ROWS CORRECT: the product (1 + phi_0 sigma_0 + phi_1 sigma_1)(1 + psi_0 sigma_0 + psi_1 sigma_1) expands to exactly these nine terms; sigma_i^2 = h sigma_i + 1 is applied correctly in the two square rows; and summing the table's reductions reproduces the parent block's net formula (1 + phi_0 + phi_1)(1 + psi_0 + psi_1) + (phi_0 psi_0 + phi_1 psi_1)h, verified symbolically. NOTE: rows 6 and 8 label sigma_0 sigma_1 as L_+ and sigma_1 sigma_0 as L_-; under AGENTS.md 7a, L_+/L_-/L_0 are the three crossing STATES of the skein relation, not names for braid monomials, so the label is an overload rather than an error in the reduction."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.198Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.288Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.345Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.410Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.493Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.538Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.606Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.701Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9e29436c89f9",
+          "ts": "f44c6520fdd3"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:41:03.741Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 9-row Hecke product expansion, no prose. Prose trap categories not applicable. Every row recomputed - see notes on trap-negation-contrast."
+      }
     ]
   },
   "source_hashes": {
     "md": "9e29436c89f9",
     "ts": "f44c6520fdd3"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:41:03.778Z"
 }

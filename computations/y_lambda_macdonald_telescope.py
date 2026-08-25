@@ -68,6 +68,7 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def n_lambda(p):
@@ -176,7 +177,16 @@ def emit_closed_forms(ns) -> dict:
     """Emit closed forms (♣) for every partition of every n in `ns`.
 
     Output is symbolic in q (with Q = q², X expanded via Wenzl bridge
-    X = q · z / (1 − Q + q · z) and z = 1/(q^{1/2} + q^{-1/2})).
+    X = q · z / (1 − Q + q · z) and z = q³/(q² + 1), the SU(2) /
+    Temperley–Lieb form — convention D).
+
+    This docstring read `z = 1/(q^{1/2} + q^{-1/2})` — convention C — until
+    2026-08-15, while the line below it computed `q**3/(q**2 + 1)`. The
+    emitted numbers were therefore always D and are unaffected; only the
+    prose was stale. It is recorded here rather than silently corrected
+    because this file was one of the last three entries on the
+    convention-C front, and a reader (or a grep-based detector) had no way
+    to tell a stale comment from a stale computation.
     """
     q = sp.Symbol("q", positive=True)
     Q = q ** 2
@@ -204,7 +214,7 @@ def emit_closed_forms(ns) -> dict:
 def cross_check_mpfr(witness_path: Path) -> dict:
     """Numerical spot-check (♣) at q_0 against the MPFR witness."""
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
 
     if not witness_path.exists():
         return {"available": False, "reason": f"{witness_path} not found"}

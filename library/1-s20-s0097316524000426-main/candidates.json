@@ -1,0 +1,66 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "1-s20-s0097316524000426-main",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "76a8ab857163aa09806870d295d28c492be865cf5c1aae6a8f0d0dd9632efdcf",
+  "file": "1-s2.0-S0097316524000426-main.pdf"
+ },
+ "provenance": {
+  "title": "Journal of Combinatorial Theory, Series A 206 (2024) 105903 Contents lists available at ScienceDirect Journal of Combinatorial Theory, Series A journal homepage: www.elsevier.com/locate/jcta",
+  "authors": null,
+  "arxiv": null,
+  "doi": "10.1016/j.jcta.2024.105903"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 3,
+  "by_kind": {
+   "lemma": 2,
+   "theorem": 1
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.1",
+   "name": null,
+   "statement": "Let m0 \u2265 1, k \u2265 1 and n \u2265 6(m0 \u2212 1)2 +6 k(m0 \u2212 1) + 11(m0 \u2212 1) +5 k +5",
+   "section_file": "sections/sec-002-2-proofs-of-theorem-13-and-corollary-14.md",
+   "section_title": "Proofs of Theorem 1.3 and Corollary 1.4",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let k \u2265 1 and n \u2265 0 be integers and de\ufb01ne",
+   "section_file": "sections/sec-002-2-proofs-of-theorem-13-and-corollary-14.md",
+   "section_title": "Proofs of Theorem 1.3 and Corollary 1.4",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.3",
+   "name": null,
+   "statement": "follows from (2.7)a n d (2.9). This completes the proof. /Box",
+   "section_file": "sections/sec-002-2-proofs-of-theorem-13-and-corollary-14.md",
+   "section_title": "Proofs of Theorem 1.3 and Corollary 1.4",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -2,7 +2,7 @@
   "probe": "qbeta_5two_route33_extend_identification",
   "bean": "qou-rstq",
   "cross_ref": "qou-trns",
-  "dps": 50,
+  "dps": 70,
   "pairs_with_lean": [
     "QOU/MathlibExt/ComplexDilogarithmLanden.lean",
     "QOU/MathlibExt/AlternatingZetaTwo.lean",
@@ -51,7 +51,7 @@
           "regime": "0<=x<=1"
         }
       ],
-      "worst_difference": "5.34552942e-51",
+      "worst_difference": "3.622271632e-71",
       "pass": true
     },
     {
@@ -65,13 +65,13 @@
         },
         {
           "regime": "x > 1",
-          "worst": "1.069105884e-50",
-          "at_x": "1.718"
+          "worst": "7.244543263e-71",
+          "at_x": "1.369"
         },
         {
           "regime": "x < 0",
-          "worst": "1.069105884e-50",
-          "at_x": "-7.601"
+          "worst": "3.622271632e-71",
+          "at_x": "-7.70075"
         }
       ],
       "pass": true
@@ -80,15 +80,15 @@
       "gate": "G3",
       "claim": "d/dz [Li2(z) + Li2(z/(z-1)) + (1/2) log(1-z)^2] = 0 -- the analytic core of the Landen leg, and exactly what Lean's `hasDerivAt_landenCombo` proves. Sampled OFF the real axis as well, since the Lean statement is complex",
       "n_points": 39,
-      "worst_abs_derivative": "4.978412222e-60",
+      "worst_abs_derivative": "3.399756682e-80",
       "pass": true
     },
     {
       "gate": "G4",
       "claim": "the constant that zero derivative leaves undetermined is 0 -- i.e. Landen holds outright. Pinning it needs one special value, Li2(-1) = -pi^2/12 at the base point z = -1. AN EARLIER DRAFT OF THIS GATE SAID LEAN DID NOT HAVE IT; that is now false and is corrected: `QOU.Archimedean.LiTwo_neg_one` and `cLiTwo_neg_one` prove it, from `hasSum_alternating_zeta_two` -- a Mathlib gap filled here, since Mathlib has hasSum_zeta_two (pi^2/6) but no alternating analogue. What remains for Landen is only the connectedness step from zero derivative to the identity",
       "n_points": 39,
-      "worst_abs_value": "1.0774259e-50",
-      "value_at_z_eq_minus_1": "0.0",
+      "worst_abs_value": "3.733752135e-71",
+      "value_at_z_eq_minus_1": "4.527839539e-72",
       "LiTwo_minus_one": "-0.82246703342411321824",
       "minus_pi_sq_over_12": "-0.82246703342411321824",
       "pass": true

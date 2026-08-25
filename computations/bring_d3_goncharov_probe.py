@@ -5,7 +5,9 @@ import json
 from mpmath import mp, mpf, mpc, pi, polylog, re, im
 import itertools
 
-mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # Target definition
 HERE = Path('.').resolve()

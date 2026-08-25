@@ -33,7 +33,7 @@ and $(\Xi^0, \Xi^-)$.  Second, the electromagnetic self-energy is a U-spin
 scalar, hence constant on a U-spin multiplet.
 
 The octet's U-spin multiplets are exactly the pairs the relation uses, each at
-fixed charge --- which is why the pairing is the one it is:
+fixed charge, which is why the relation pairs the states it does:
 
 | U-spin multiplet | Quark content | $Q$ | EM shift |
 |---|---|---|---|
@@ -52,7 +52,7 @@ without electromagnetism rather than being a statement about the strong sector.
 
 Gell-Mann--Okubo and [the decuplet equal-spacing
 rule](#rem:decuplet-equal-spacing) each follow from a single premise.
-Coleman--Glashow rests on a **conjunction**, and that is a real difference.
+Coleman--Glashow rests on a **conjunction**.
 Dropping the U-spin premise --- letting the electromagnetic shift differ
 between the two members of a multiplet --- makes the combination equal the
 difference of those two shifts rather than zero

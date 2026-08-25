@@ -33,7 +33,7 @@ Setting $n = 3$ and $d = 6$ recovers the
 | Basis $\{b_1, \ldots, b_d\}$ | $\{\gamma, \sigma_0, \sigma_1, L_+, L_-, e^-\}$ |
 | Gram matrix $G \in \mathbb{R}^{d \times d}$ | $6 \times 6$ Gram matrix of $H_3(q)$ |
 | Target $n_{\mathrm{target}}$ | $\approx 1.000$ (proton), $\approx 0.811$ (neutron) |
-| Optimal $x^*$ | $\mathrm{NF}(\mathcal{B}_3) \approx (+0.998, -0.010, +0.009, +0.046, -0.044, 0)$ |
+| Optimal $x^*$ | not determined by the program — the minimisers form a face at objective $0$. $\mathrm{NF}(\mathcal{B}_3) \approx (+0.998, -0.010, +0.009, +0.046, -0.044, 0)$ is **feasible but not optimal** ($\mathrm{tr}_M \approx 0.9986$). |
 | Active set $\mathcal{A}$ | $\{\sigma_0, L_-\}$ (two active demand channels) |
 
 The confinement LP is the $n = 3$ instantiation: three strands
@@ -64,7 +64,7 @@ that is where the LP is well-posed.
 > the LP is degenerate rather than well-posed. Its rank is the surviving
 > $\sum \dim^2 = C_n$:
 >
-> | $n$ | $d = n!$ (as tabled) | $\operatorname{rank} G = C_n$ | corank |
+> | $n$ | $d = n!$ (as tabled) | $\mathrm{rank} G = C_n$ | corank |
 > |:---:|:---:|:---:|:---:|
 > | $2$ | $2$   | $2$  | $0$ |
 > | $3$ | $6$   | $5$  | $1$ |
@@ -74,7 +74,7 @@ that is where the LP is well-posed.
 > So the pentaquark row is a $42$-dimensional program, not a $120$-dimensional
 > one, and the tetraquark row is $14$, not $24$. The optimal vertex $x^*$ and the
 > active set $\mathcal{A}$ are well defined on the quotient; on $H_n$ the LP has
-> a $\operatorname{corank} G$-dimensional space of optima differing by radical
+> a $\mathrm{corank} G$-dimensional space of optima differing by radical
 > directions the trace cannot see. Proved in
 > [`MarkovGramDegenerate.lean`](../lean/QOU/QBeta/MarkovGramDegenerate.lean)
 > (`gram_det_eq_zero_of_radical_combination`, `RankAccounting`).

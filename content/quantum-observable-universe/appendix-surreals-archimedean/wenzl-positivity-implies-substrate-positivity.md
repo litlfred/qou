@@ -1,4 +1,4 @@
-The companion conjecture [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single substrate axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$. It is not an independent posit, but a consequence of existing unitarity.
+The companion conjecture [`conj:os-reflection-positivity-from-reeb`](#conj:os-reflection-positivity-from-reeb) reduces the Wightman-axiom portion of the Yang–Mills millennium statement to a single substrate axiom: $C^*$-Frobenius positivity of the QOU Frobenius–Hopf substrate at $q = q_0$. This conjecture takes the natural next step. The axiom should be **derivable** from Wenzl's positivity criterion for $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$ at $q_0 \in \mathbb{R}_{>1}$, as a consequence of existing unitarity.
 
 **Conjecture (Wenzl positivity at $q_0$ implies substrate
 $C^*$-Frobenius positivity).** *Wenzl's positivity criterion for the
@@ -37,7 +37,7 @@ The Müger norm has properties (2) and (3) *by construction* for
 (Müger 2003, Bischoff–Kawahigashi–Longo–Rehren). The only open
 question is therefore whether $\mathrm{Rep}(U_q(\mathfrak{sl}_2))$
 at $q_0 \in \mathbb{R}_{>1}$ is unitary as a $C^*$-tensor category.
-And that is exactly the content of Wenzl's positivity criterion.
+That is exactly the content of Wenzl's positivity criterion.
 
 ## Wenzl's criterion (recall)
 
@@ -101,7 +101,7 @@ upgrades the QOU framework to a complete derivation of Yang–Mills
 mass gap + Wightman compliance from the categorical substrate +
 Bring's surface constraint.
 
-This is the natural endgame programme. It also explains why the
+This also explains why the
 QOU substrate has $q = q_0 \in \mathbb{R}_{>1}$ specifically: the
 real positive range is precisely Wenzl's unitarity range. The
 choice of $q_0$ is not free — it's locked by the unitarity

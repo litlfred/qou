@@ -609,7 +609,7 @@
           "in_degree": 0,
           "cone_size": 196,
           "depth": 54,
-          "pagerank": 0.000074,
+          "pagerank": 7.4e-05,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -948,6 +948,22 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.258Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 sub-sections + cross-refs); all ten categories judged in context. Numerics recomputed at 60 dps with mpmath."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -967,6 +983,22 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.297Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 sub-sections + cross-refs); all ten categories judged in context. Numerics recomputed at 60 dps with mpmath."
       }
     ],
     "trap-em-dash": [
@@ -986,7 +1018,23 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
-        "evidence": "4 stylistic spaced dashes in 243 words (1.65/100w) — restructure into sentences"
+        "evidence": "4 stylistic spaced dashes in 243 words (1.65/100w) \u2014 restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.337Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Two spaced dashes in ~40 lines, both genuine appositives ('= G - Catalan's constant'; '(4-1)/2 - but K=4 is not prime'). Density is not a tell here."
       }
     ],
     "trap-triples": [
@@ -1006,6 +1054,22 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 243 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.378Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'Three consequences follow:' announces the count, but the three items (L-value identities as corollaries; the converse direction; Beilinson at Q(zeta_K)) are substantive and distinct - not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1025,6 +1089,22 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.418Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 sub-sections + cross-refs); all ten categories judged in context. Numerics recomputed at 60 dps with mpmath."
       }
     ],
     "trap-meta-commentary": [
@@ -1044,6 +1124,23 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.457Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'### Significance - Bridge to analytic number theory': the leading label announces the passage's importance rather than placing it. ('## Significance' alone is a 30-file corpus template and is NOT flagged; only the dash-appended meta-label is.)",
+        "notes": "fix applied: '### Significance - Bridge to analytic number theory' -> '### Bridge to analytic number theory'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1063,6 +1160,22 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.496Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 sub-sections + cross-refs); all ten categories judged in context. Numerics recomputed at 60 dps with mpmath."
       }
     ],
     "trap-performed-warmth": [
@@ -1082,6 +1195,22 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.536Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark, 4 sub-sections + cross-refs); all ten categories judged in context. Numerics recomputed at 60 dps with mpmath."
       }
     ],
     "trap-superlative": [
@@ -1101,6 +1230,23 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.578Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'Classical L-value identities are theorems of our framework' and the bolded 'depth-n cyclotomic content **IS** the Dirichlet L-value content' are unqualified maximum-strength claims. Chased per the campaign brief: the parent block's inversion formula evaluates to 2.1e-61 (i.e. 0) at the very (K,n)=(4,3) instance cited, so the superlative sits on a claim the corpus does not support.",
+        "notes": "proposed (NOT applied - math-adjacent): scope to 'is Q(zeta_K)-linearly equivalent to' and drop the bold IS. Numeric defects reported as ANOMALIES 37 and 38."
       }
     ],
     "trap-nonspeakable": [
@@ -1120,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:31:00.936Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b491cbbe5e42",
+          "ts": "923f5dda1591"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:38.618Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark, 4 sub-sections + cross-refs); all ten categories judged in context. Numerics recomputed at 60 dps with mpmath."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1142,5 +1304,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:38.618Z"
 }

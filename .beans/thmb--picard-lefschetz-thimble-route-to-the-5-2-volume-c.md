@@ -72,7 +72,7 @@ reproduce *no exponential growth* for `3₁`; if it hands the trefoil a volume, 
 ---
 **2026-08-09 — Task 1 SETTLED, and the identification is better than expected.**
 
-The paper was uploaded to `main` (`uploads/10.4171-qt-83.pdf`, blob `632e54ac`,
+The paper was uploaded to `main` (`library/104171-qt-83/10.4171-qt-83.pdf`, blob `632e54ac`,
 commit `21e1e81`) and read here, 67 pages. **Ohtsuki 2016 is confirmed**:
 *On the asymptotic expansion of the Kashaev invariant of the 5₂ knot*, Quantum
 Topol. **7** (2016) 669–735, DOI 10.4171/QT/83. The 5₂ volume conjecture is a

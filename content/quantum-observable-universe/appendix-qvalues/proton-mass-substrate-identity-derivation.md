@@ -4,7 +4,7 @@ The predictive content throughout is the dimensionless ratio $m_p/m_e$ (equivale
 
 ## Numerical verification
 
-At $q_0 = 1.10977859555\ldots$ (50 dps):
+At $q_0 = 1.10997859555\ldots$ (muon pin, 12 dps):
 
 | Quantity | Value |
 |---|---|

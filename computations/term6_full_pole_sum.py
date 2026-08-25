@@ -85,7 +85,7 @@ import math
 import mpmath
 import sympy as sp
 
-from _precision import json_safe_float  # noqa: E402
+from _precision import json_safe_float, set_compute_dps, fmt  # noqa: E402
 
 
 def _json_safe(o):
@@ -103,6 +103,7 @@ def _json_safe(o):
 
 from experimental_constants import M_E_MEV
 from q_parameter import Q as Q_0
+from q_parameter import Q_50_DIGIT_STR as Q_0_STR
 from witness_base import WitnessBuilder
 from witness_polynomial import expose_polynomial
 
@@ -181,6 +182,23 @@ def cyclotomic_residue(tr_M_expr, zeta, n: int):
         return result
     except Exception:
         return None
+
+
+
+def _eval_poly_mpf(expr_in_u, u_sym, x):
+    """Horner-evaluate a polynomial in `u_sym` at the `mpf` `x`, exactly.
+
+    Coefficients come from a sympy Poly, so they are exact `Integer` or
+    `Rational`; only the arithmetic at `mp.dps` is inexact, and sympy is kept
+    out of the numeric path. Added 2026-08-23 (bean `qou-bm4i`) — see
+    `tr_M_at_q0_polynomial` below.
+    """
+    poly = sp.Poly(sp.expand(expr_in_u), u_sym)
+    acc = mpmath.mp.mpf(0)
+    for c in poly.all_coeffs():
+        r = sp.Rational(c)
+        acc = acc * x + mpmath.mp.mpf(int(r.p)) / mpmath.mp.mpf(int(r.q))
+    return acc
 
 
 def mittag_leffler_term6(
@@ -337,9 +355,28 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     p_in_q = p_in_u.subs(u, sqrt_q)
     denom_in_q = denom_in_u.subs(u, sqrt_q)
     tr_M_expr = p_in_q / denom_in_q
-    # Sanity check at q_0
-    tr_M_at_q0_check = float(complex(sp.N(tr_M_expr.subs(q, Q_0))).real)
-    print(f"    tr_M(T_w, q_0) [from polynomial] = {tr_M_at_q0_check:.6f}")
+    # tr_M at q_0, exactly.
+    #
+    # PRECISION (2026-08-23, bean `qou-bm4i`). This was
+    #     float(complex(sp.N(tr_M_expr.subs(q, Q_0))).real)
+    # on a `Q_0` that is `q_parameter.Q`, itself a float64 — so a witness
+    # advertising `output_dps: 60` stored 16 digits, and the cross-validation
+    # against markov_substrate_realizer ran an `rtol = 1e-9` comparison on
+    # values truncated seven orders inside its own tolerance. `sp.N` also
+    # defaults to 15 digits, so the sympy step lost precision independently of
+    # the `float()`.
+    #
+    # Now: full-precision q_0 from `Q_50_DIGIT_STR`, Horner over the exact
+    # polynomial coefficients at `mp.dps`, `fmt` on output.
+    q0_mpf = mpmath.mp.mpf(Q_0_STR)
+    u_0_mpf = mpmath.sqrt(q0_mpf)
+    _p_val = _eval_poly_mpf(p_in_u, u, u_0_mpf)
+    _d_val = _eval_poly_mpf(denom_in_u, u, u_0_mpf)
+    if _d_val == 0:
+        print("    SKIP: denominator vanishes at q_0")
+        return None
+    tr_M_at_q0_check = _p_val / _d_val
+    print(f"    tr_M(T_w, q_0) [from polynomial] = {float(tr_M_at_q0_check):.6f}")
     print(f"    tr_M_at_q0 [from witness]        = {atom_data.get('tr_M_at_q0', 'N/A')}")
 
     # Compute Term-6 sum
@@ -403,7 +440,7 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     return {
         "atom": atom_label,
         "n_max": n_max,
-        "tr_M_at_q0_polynomial": tr_M_at_q0_check,
+        "tr_M_at_q0_polynomial": fmt(tr_M_at_q0_check),
         "tr_M_polynomial": tr_M_polynomial,
         # `_json_safe` over the whole tree: the divergence shows up in
         # per_n_breakdown roots too (residue_complex, contribution_real), and
@@ -420,6 +457,10 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
 
 
 def main():
+    # `_precision` does not raise mp.dps on import; without this the mpf
+    # evaluation below runs at mpmath's default 15 and `fmt` pads a
+    # float64-grade value out to full width (bean `qou-bm4i`).
+    set_compute_dps()
     print("=" * 78)
     print("Term 6 — Mittag-Leffler full pole sum")
     print("=" * 78)

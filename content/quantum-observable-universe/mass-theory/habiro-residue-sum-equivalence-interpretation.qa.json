@@ -1481,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.029Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'constructive ... while the residue path is analytic' is a genuine two-way mathematical contrast between named constructions, the substantive-contrast false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1500,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.089Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "trap-em-dash": [
@@ -1519,6 +1549,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 69 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.129Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "trap-triples": [
@@ -1538,6 +1583,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 69 words)"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.172Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "trap-closing-aphorism": [
@@ -1557,6 +1617,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.218Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The closer, 'lets later proofs use whichever is more tractable without losing rigour', is a practical consequence for downstream proofs rather than a quotable line; it says what the equivalence buys."
       }
     ],
     "trap-meta-commentary": [
@@ -1576,6 +1651,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.261Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "trap-thesis-restatement": [
@@ -1595,6 +1685,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.329Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1614,6 +1719,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.405Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "trap-superlative": [
@@ -1633,6 +1753,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.452Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1652,6 +1787,21 @@
         "reviewed_at": "2026-08-15T10:31:00.327Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "09cee1e23478",
+          "ts": "3427c01d9995"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:57.512Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 9 lines). Numbers: none. Minor issue reported separately: 'The equivalence shows the two viewpoints are two computational handles on the same underlying object' states the identification as established, while the block it interprets says 'The analytic identification of the residue contributions with the cyclotomic tail remains open.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1674,5 +1824,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:24:57.512Z"
 }

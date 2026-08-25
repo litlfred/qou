@@ -1236,6 +1236,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.356Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1255,6 +1272,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.394Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "The 'Open finding' paragraph (both forms move further from calibration; the closure is a resummation identity the conjecture seeks) is a scope-(a) negative result with its follow-on, not a setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1274,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 298 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.430Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1293,6 +1344,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 298 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.466Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1312,6 +1380,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.505Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1331,6 +1416,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.545Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1350,6 +1452,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.584Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "major",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1369,6 +1488,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.622Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1388,6 +1524,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.660Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1407,6 +1560,23 @@
         "reviewed_at": "2026-08-15T10:31:01.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8926c7183ffe",
+          "ts": "7660f12ded36"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:54:51.698Z",
+        "reviewed_sha": "d67fcec46732c0c7b25dd9ec34a686cd50ac69fa",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:beta-decay-energy-scale (7 sections, 3 displays). Recomputed every quoted numeric with mpmath at the proton pin: E_0^(N=0) = m_e/(q0(q0-1)) = 4.185981 (matches 4.186); E_0^(cal) = Q_beta/|Delta net| = 4.154917 (matches 4.155); 1/(1-hbar_q^2) = 1.0099145 (matches 1.0099); Q_beta = m_n - m_p - m_e = 0.78233 (matches). Internal consistency confirmed: the N=0 form predicts +0.75% and the tower form +1.75%, so 'the geometric tower form moves the prediction further from the calibrated value' is correct, and 0.877 > Q_beta as the block says. Two numeric defects reported separately: E_0^full is stated 4.228 but is 4.227483 (the block appears to have multiplied the ROUNDED 4.186 by 1.0099145, giving 4.22751); and 'From the witness: Delta(net) = -0.188291' appears in NO witness - neither of the two cited files, nor anywhere else in computations/.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1429,5 +1599,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:54:51.698Z"
 }

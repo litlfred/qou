@@ -136,7 +136,178 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:02.829Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "Two-paragraph prose roadmap read in full; no 'not X but Y' or assert-by-denial construction anywhere."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:02.901Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "No setup-then-reframe; both paragraphs are flat declarative roadmap sentences."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:02.944Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "Zero em-dashes in the block; only the en-dash inside 'Schur-Weyl' (a name, not punctuation)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:02.997Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "'establishes / proves / extracts' then 'It then identifies' then 'Finally, it tabulates' is a five-item roadmap over real downstream blocks, not a reflex triple."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:03.050Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "Final line 'These values serve as the combinatorial inputs for the downstream binding-energy formulas' is a forward pointer to consumers, not a quotable closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:03.090Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "'This section introduces the phi_q resummation' is standard roadmap prose; no narration of the author's own emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:03.133Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "Block-final sentence points downstream (binding-energy formulas), it does not restate the paragraph's own claim."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:03.189Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "Institutional register throughout; no personal or affective language."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:03.245Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "No unqualified maximum-strength claims; 'explicit closed form' is a technical descriptor."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "63ed47a5f2e2",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:03.302Z",
+        "reviewed_sha": "5446d7638b2e098614497759a01b55a5b347c369",
+        "evidence": "Noun chains are short and pronounceable; 'the Hecke-chi-closed forms' is the densest and still parses aloud.",
+        "notes": "Watch item only: 'Hecke-$\\chi$-closed forms' is a triple-hyphenated attributive; no fix applied."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.751405Z"
+  "updated_at": "2026-08-21T16:32:03.302Z"
 }

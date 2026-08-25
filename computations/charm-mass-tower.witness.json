@@ -29,5 +29,8 @@
     }
   },
   "verdict": "scope-(a) REFUTED as sole hierarchy mechanism: contRatio(5) ~ 5.845 at substrate X=[2]_q~2.011 gives a nearly geometric per-generation ladder that matches neither scheme (current mc/mu~577 needs X~24, off ~100x; constituent mc/mlight~4.46 is overshot by ~30%). The observed hierarchy is not a constant continuant ratio. Missing steepness must come from the complex-volume / Chern-Simons (Im) part or a non-continuant contRatio - both OPEN; no charm mass is predicted.",
-  "scope": "(a) scope-limited negative: continuant-ratio contRatio alone; does NOT exclude the complex-mass functional (Im/CS part untested here)."
+  "scope": "(a) scope-limited negative: continuant-ratio contRatio alone; does NOT exclude the complex-mass functional (Im/CS part untested here).",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): inputs.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

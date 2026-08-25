@@ -1190,6 +1190,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:52.803Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of section intro. No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1224,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:52.850Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Each sentence states its content directly."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1258,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:52.906Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two unspaced em-dashes forming one true bracketing parenthetical ('previous sections—Wedderburn decomposition, Frobenius pairing, Hecke characters—now evaluates'); 2 in 127 words, and they enclose rather than append."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1292,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 125 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:52.959Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Wedderburn decomposition, Frobenius pairing, Hecke characters' names the three machines the previous sections actually built; the other list has four items."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1326,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:53.015Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes by naming the section output (consolidated algebraic-mass closed form plus substrate-flow data), not with a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1360,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:53.064Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Structural description is the function of a section intro; no narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1394,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:53.113Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No terminal restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1428,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:53.167Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:53.219Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated claims; 'the observed m_n > m_p ordering' is a splitting claim, not an absolute-mass prediction (compliant with the 2026-08-11 excision)."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.733Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6df67ebe41e9",
+          "ts": "d942833648ad"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:53.275Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1533,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:34:53.275Z"
 }

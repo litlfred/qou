@@ -895,7 +895,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.231Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.271Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.310Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.349Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.390Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.431Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.471Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.511Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.553Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "350e4e16a4cf",
+          "ts": "a70006f3e98f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:56.594Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:knot-centric-table-table1-data. The block is a bare 7-row table with no prose, so none of the ten categories has any text to act on - all pass vacuously. VERIFIED the data: magic Z = 2,8,20,28,50,82,126 are the standard nuclear magic numbers; the HO-closure/spin-orbit split at 28 is standard; and every element range is exactly right (H-He = Z1-2, Li-Ne = 3-10, Na-Ca = 11-20, Sc-Ni = 21-28, Cu-Sn = 29-50, Sb-Pb = 51-82, Bi-U+ = 83-92).",
+        "notes": "The row spans also agree cell-for-cell with the row Totals in the sibling table 2 (2, 8, 10, 8, 22, 32, 10)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:16:56.594Z"
 }

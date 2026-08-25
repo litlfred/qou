@@ -1620,7 +1620,8 @@
         "reviewed_at": "2026-07-07T14:26:56.309408Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1831,7 +1832,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, indicating that the claims cannot be formally verified in Lean."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation, indicating that the claims cannot be formally verified in Lean.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/tilting-module-rigidity.lean fails compilation."
       },
       {
         "result": "pass",
@@ -2118,6 +2120,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.374Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2137,6 +2154,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.414Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-em-dash": [
@@ -2156,6 +2188,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 54 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.453Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-triples": [
@@ -2175,6 +2222,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 54 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.491Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-closing-aphorism": [
@@ -2194,6 +2256,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.531Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-meta-commentary": [
@@ -2213,6 +2290,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.571Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-thesis-restatement": [
@@ -2232,6 +2324,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.611Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-performed-warmth": [
@@ -2251,6 +2358,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.651Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-superlative": [
@@ -2270,6 +2392,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.691Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "trap-nonspeakable": [
@@ -2289,6 +2426,21 @@
         "reviewed_at": "2026-08-15T10:31:01.245Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fc1f34be356d",
+          "ts": "dc014b856387"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:33.731Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (lemma statement, ~0.36kB, three sentences). Lean ref qou:QOU.Archimedean.tilting_module_rigidity resolves to the sibling tilting-module-rigidity.lean. 'generated exclusively by words in q and q^{-1}' is a strong claim but it is the lemma's content, not decoration."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2312,5 +2464,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:33.731Z"
 }

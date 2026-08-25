@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-ph-0105039v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "850e6a00721e38d0eadbdc9a3ce14b2e0d732742c8d9bfea0d4621d621c2e71c",
+  "file": "0105039v1.pdf"
+ },
+ "provenance": {
+  "title": "December 23, 2000 (Revised Edition) Hyperbolic Structure Arising from a Knot Invariant Kazuhiro HIKAMI \u2020",
+  "authors": "Department of Physics, Graduate School of Science",
+  "arxiv": {
+   "id": "math-ph/0105039",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "28 May 2001"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

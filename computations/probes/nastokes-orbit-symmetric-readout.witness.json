@@ -1,8 +1,8 @@
 {
   "engine": "numpy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T08:47:57.201550+00:00",
-  "commitSha": "f471f7f46ff5e351c2bb9eceb392e2bee0852f60",
+  "computedAt": "2026-08-23T09:26:01.885400+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "same_species_orbit_of_strings_is_a_point",
@@ -108,11 +108,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 10,
   "computation": "nastokes-orbit-symmetric-readout",
   "scriptFile": "nastokes_orbit_symmetric_readout_probe.py",
-  "scriptHash": "ff76a8253a1f",
-  "scriptCommitSha": "30835c30e73372a6be797072a0472d3770d01d94",
+  "scriptHash": "1f152afaaa38",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -124,7 +124,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/nastokes_orbit_symmetric_readout_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/nastokes_orbit_symmetric_readout_probe.py"
   },
   "description": "Bean qou-prjo, principle (i) from PR #4849: is a nucleon-symmetric readout FORCED by the corpus's treatment of an atom, and does the super-pairwise transverse residual survive it? Part A anatomises the corpus orbit identity tr_M(beta) = tr_M(rep): it is over S_Z x S_N only, and its Lemma 1 establishes it by showing such a permutation leaves the braid WORD unchanged -- the orbit of ordering strings is a SINGLE POINT for every atom while |S_Z x S_N| = Z!N! > 1. So symmetrization over the forced group is the IDENTITY MAP and R survives trivially, by derivation rather than by choosing a symmetrization. Part B is the decisive control: the corpus's OWN canonical scalar observable tr_M (Frobenius pairing sum_lambda y_lambda chi^lambda, certified by tr_M(1)=1, Markov M1 cyclic invariance and constant M2 stabilisation ratio) is itself CROSS-SPECIES ORDERING-DEPENDENT, so #4849's disqualifier -- a nuclear observable cannot be a function of the braid word -- applies verbatim to the canonical mass/binding trace and does not single out the transverse pairing. Part C reports the non-derived S_A operator average as a labelled counterfactual only; it selects nothing and does not cancel either. Blocker (i) is DISSOLVED, not solved; blocker (ii) (which germ observer pair + the representation gauge) is untouched and still binding. Nothing wired, no AME input, free_parameters = 0.",
   "auditOnly": true,
@@ -401,7 +410,7 @@
     },
     "precision_control": {
       "f64_vs_mpmath_max_rel": "3.860488875690158e-15",
-      "mpmath_D_null_control_rel_dev": "0.0",
+      "mpmath_D_null_control_rel_dev": "7.872145409124902e-71",
       "T_rel_dev_over_noise_floor": "67130037600139.484"
     }
   },
@@ -410,5 +419,8 @@
     "Blocker (ii) is UNTOUCHED: the transverse pairing still varies 16.4x with the germ observer pair and carries #4849 s2.3's unpinned connection gauge. This probe does NOT revive the transverse route.",
     "SEPARATE FINDING (not a transverse-route matter): the corpus's canonical cross-species ordering p...pn...n is a CHOICE. The orbit identity does not license it (it covers only S_Z x S_N, under which the word is fixed), 'interface-minimal' is stated as a cost property rather than a physical selection rule, and Part B measures that the canonical trace DEPENDS on the choice. Filed as its own bean.",
     "Arithmetic: float64 for the sweep with an independent mpmath 40-dps re-run of Part B at n = 6 as the control; the measured ordering dependence exceeds the float64 noise floor by many orders. The verdict is an equal-vs-unequal question, not a 1-ppQ question."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

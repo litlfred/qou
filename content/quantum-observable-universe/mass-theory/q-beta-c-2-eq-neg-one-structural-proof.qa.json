@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.543Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Six-line algebraic proof; no assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.602Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.662Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 52 words)"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.711Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.766Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the QED box."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.835Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.894Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'forces c_2 = -1' is the proof's conclusion, correctly placed."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1596,21 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:36.950Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1630,22 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:37.007Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "No inflation. The algebra is correct as written: 1 - b^2 hbar_q^4 = 1 - (b hbar_q^2)^2 = 1 - u^2, so matching against 1 + c_2 u^2 gives c_2 = -1 in any commutative ring, and this is z-free (independent of the Markov convention)."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,40 @@
         "reviewed_at": "2026-08-15T10:31:00.785Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:15:37.070Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The proof's first sentence names its source as boilerplate rather than an object: 'The operator-valued N=2 correction to Q_beta (per the brane-tower truncation of the canonical formalism) is the factor (1 - b^2 hbar_q^4).' 'the canonical formalism' is one of this chapter's confirmed token substitutions for a script or block name (26 further occurrences of 'the canonical formalism' / 'the formal derivation' across mass-theory/*.md), so the parenthesis resolves to nothing.",
+        "notes": "PROPOSED (not applied - the fix is to restore the substituted reference, and I will not guess at it): restore the object the parenthesis originally named. This matters more here than elsewhere: that the N=2 factor IS (1 - b^2 hbar_q^4) is the single unproved premise the whole proposition rests on (AGENTS.md, 2026-08-16: 'N2_factor is a bare def with no theorem deriving it'), so the erased citation is the one pointer a reader would follow to check it."
+      },
+      {
+        "field_hash": {
+          "md": "fe4cff856df4",
+          "ts": "42d7cc56e35d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:16:03.148Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "CORRECTION to my own earlier entry on this criterion (same batch, agent:v04): I wrote '26 further occurrences' of the token-substitution boilerplate across mass-theory/*.md. That figure was an estimate and it was low. Measured: 'the canonical formalism' or 'the formal derivation' occurs 86 times across 54 .md files in content/quantum-observable-universe/mass-theory alone (grep -c over *.md). The finding and the proposed fix are unchanged; only the scale was understated.",
+        "notes": "Command used: grep -c 'the canonical formalism\\|the formal derivation' *.md | grep -v ':0' | awk -F: '{s+=$2; n++} END {print n, s}'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1721,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:16:03.148Z"
 }

@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.160Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). no assertion-by-denial; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.196Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). no setup-then-reframe construction; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.235Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). em-dash count 0 in the block; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.277Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). no reflex three-item list; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.314Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). final sentence is substantive, not a quotable placed for closure; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.353Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). no narration of the author's own emphasis; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.392Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). no block-final restatement of what the text established; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.430Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). no personal or institutional-warmth register; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.467Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). no unqualified maximum-strength claim; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:30:59.832Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "67a7dde12d2c",
+          "ts": "0225067ead24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:43.504Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (remark, one display + four sentences). reads aloud without stalling; remark, one display + four sentences.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1584,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:43.504Z"
 }

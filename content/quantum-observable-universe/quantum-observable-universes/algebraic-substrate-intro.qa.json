@@ -1192,6 +1192,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.573Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Prose opening for the algebraic-substrate section. Only near-miss is 'a functor that fails to be an equivalence', which is the substantive mathematical claim (non-equivalence is the content), not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1211,6 +1226,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.619Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Roadmap then three content sentences; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1230,6 +1260,23 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 118 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.661Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "One unspaced em-dash: 'the Reeb derivation—the differential operator forced by the categorical volume constraint'.",
+        "notes": "Single true appositive, so density is not the issue, but it does stand in for a relative clause. Proposed (not applied, since the section opening is author-voice roadmap prose): 'the Reeb derivation, the differential operator forced by the categorical volume constraint'."
       }
     ],
     "trap-triples": [
@@ -1249,6 +1296,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 118 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.698Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "The programme list has five items (substrate/Reeb, unit particle, spectral trace/Tannaka-Krein, Hasse-Weil stability, classical limit), matching the section's actual subsections; not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1268,6 +1330,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.740Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Closes on the q->1 obstruction claim, substantive content rather than a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1287,6 +1364,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.776Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'We develop the algebraic programme' announces structure, which is standard for a section opening, and no emphasis is narrated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1306,6 +1398,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.812Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Second paragraph advances new specifics rather than restating the first."
       }
     ],
     "trap-performed-warmth": [
@@ -1325,6 +1432,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.855Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No personal or affective register."
       }
     ],
     "trap-superlative": [
@@ -1344,6 +1466,21 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.893Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1363,6 +1500,23 @@
         "reviewed_at": "2026-08-15T10:30:59.884Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7f1544a6ec61",
+          "ts": "3946c0f72769"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:50:54.933Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "minor",
+        "evidence": "Final clause is a noun-heavy absolute: 'with the obstruction to classicality acting as a non-trivial categorical invariant'.",
+        "notes": "Proposed: '...fails to be an equivalence; the obstruction to classicality is itself a non-trivial categorical invariant.' Not applied: it is the closing claim of a section opening and rewording risks the intended emphasis."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1385,5 +1539,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:50:54.933Z"
 }

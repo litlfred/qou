@@ -435,6 +435,9 @@ print(f"{npass}/{len(checks)} checks pass")
 
 import subprocess
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 _sha = subprocess.run(
     ["git", "rev-parse", "HEAD"], capture_output=True, text=True
 ).stdout.strip()
@@ -446,8 +449,8 @@ witness = {
     "commitSha": _sha,
     "beans": ["qou-y3xv", "qou-9p9y"],
     "source": (
-        "GSWZ arXiv:2412.04241v2 eqn (270) (uploads/2412.04241v2.pdf); "
-        "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf)"
+        "GSWZ arXiv:2412.04241v2 eqn (270) (library/arxiv-2412.04241v2/2412.04241v2.pdf); "
+        "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf)"
     ),
     "place": "Q_25 place; unramified fields containing mu_{624m}",
     "checks": checks,
@@ -469,7 +472,7 @@ witness = {
     ),
 }
 with open(
-    "computations/probes/gswz_epsm_global_symbols.witness.json", "w"
+    _HERE_W / "gswz_epsm_global_symbols.witness.json", "w"
 ) as f:
     json.dump(witness, f, indent=1)
 

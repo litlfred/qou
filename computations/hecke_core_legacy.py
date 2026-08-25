@@ -1118,6 +1118,16 @@ def _identity(dim):
 def _crossing_in_partition(c, d, gen_index, sigmas, dim):
     """Matrix of c·σ_{gen} + d·I  in YSN representation of a partition."""
     sig = sigmas[gen_index]
+    # Densify a scipy sparse sigma FIRST.  `np.asarray(csr_matrix)` does NOT
+    # densify -- it returns a 0-d object array wrapping the matrix -- so the
+    # old `np.asarray(sig)` produced an object scalar, `c * sig_np` stayed
+    # object, and `+ d * np.eye(dim)` dispatched back into scipy and raised
+    # "no supported conversion for types: (dtype('float64'), dtype('O'))".
+    # The `dim < 8` branch below is worse: `sig[i][j]` is not valid indexing
+    # on a csr_matrix at all.  Latent until an exact (mpf) chain routed a
+    # sparse-sigma state down this path.
+    if hasattr(sig, "toarray"):
+        sig = sig.toarray()
     if dim >= 8:
         # Work in numpy for large dims
         sig_np = sig if isinstance(sig, np.ndarray) else np.asarray(sig)
@@ -1421,18 +1431,64 @@ def unified_iterative_correction(Z, N, return_per_step=False,
             sigmas = entry['ysn']
             n_gens = entry['n_gens']
             chain = _step_chain_generic(nuc, prev_types, n_gens)
-            if s['sparse']:
+            # The sparse path dispatches to scipy's compiled kernels, which
+            # are float64-only: `sig_sparse.dot(M)` raises "no supported
+            # conversion for types: (dtype('float64'), dtype('O'))" the moment
+            # M carries mpf.  scipy is RIGHT to refuse -- the only way to
+            # satisfy it is to throw the exact coefficients away.  numpy's `@`
+            # (the dense path below) DOES support object dtype, since it falls
+            # back to elementwise Python arithmetic rather than BLAS, so an
+            # exact chain routes there and keeps its precision.
+            #
+            # Decided BEFORE the loop, deliberately: M starts float64 and only
+            # becomes object after the first crossing multiplies it by an mpf
+            # coefficient, so a per-iteration dtype test would take the sparse
+            # path once and then crash on the second crossing.
+            exact_chain = any(not isinstance(c, float) or not isinstance(d, float)
+                              for c, d, _g in chain)
+            if s['sparse'] and not exact_chain:
                 # For each crossing (c, d, gen), apply M ← M @ (c·σ_gen + d·I)
                 # = c · (M @ σ_gen_sparse) + d · M.  Avoids materialising
                 # the dense (c·σ + d·I) matrix at every crossing.
                 # Cost: dense × sparse = O(dim · nnz) = O(dim²) vs
                 # dense × dense = O(dim³).
                 M_run = s['M']
+                _sig_coo = {}   # gen -> (row, col, data) of σ, for the object path
                 for c, d, gen in chain:
                     sig_sparse = sigmas[gen]
-                    # scipy sparse: dense @ sparse returns dense ndarray,
-                    # computed as a sparse BLAS operation in O(dim·nnz).
-                    Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
+                    # The scipy path is a FLOAT64 optimisation. `_PROTON_G1` /
+                    # `_NEUTRON_G1` carry `d = -h` as an `mpf` (correctly — it
+                    # is ℏ_q), so the first such crossing promotes `M_run` to
+                    # dtype object and scipy then raises
+                    #   TypeError: no supported conversion for types:
+                    #              (dtype('float64'), dtype('O'))
+                    # which is why this producer had been dead: its witness is
+                    # from 2026-06-17 and the script has changed since.
+                    # Densify and multiply with object arithmetic rather than
+                    # coercing c/d to float — that would silently discard the
+                    # precision the mpf exists to carry (AGENTS.md: never
+                    # compute in float). The densified σ is cached per
+                    # generator, so the COO decomposition is done once per generator.
+                    if isinstance(M_run, np.ndarray) and M_run.dtype == object:
+                        # Keep the SPARSITY, lose only the BLAS. Densifying σ
+                        # and doing `M_run @ sig_d` is O(dim³) in object
+                        # arithmetic and does not finish — measured, >10 min on
+                        # the A=2 atom alone. Accumulating over σ's nonzeros is
+                        # O(dim·nnz), the same complexity the float64 branch
+                        # gets from sparse BLAS.
+                        coo = _sig_coo.get(gen)
+                        if coo is None:
+                            m = sig_sparse.tocoo()
+                            coo = (m.row, m.col, m.data)
+                            _sig_coo[gen] = coo
+                        rows_i, cols_j, vals = coo
+                        Msig = np.zeros_like(M_run)
+                        for i, j, v in zip(rows_i, cols_j, vals):
+                            Msig[:, j] += M_run[:, i] * v
+                    else:
+                        # scipy sparse: dense @ sparse returns dense ndarray,
+                        # computed as a sparse BLAS operation in O(dim·nnz).
+                        Msig = sig_sparse.T.dot(M_run.T).T  # = M_run @ sig_sparse
                     M_run = c * Msig + d * M_run
                 s['M'] = M_run
             else:

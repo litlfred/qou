@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.110Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.146Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.185Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.223Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.258Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.294Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.333Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.370Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.406Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ec33e741f681",
+          "ts": "fbd4b0e05c46"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.445Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 7 prime rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 recomputed for every listed prime — 5:1, 7:2, 11:4, 13:5, 17:7, 19:8, 23:10 — all correct, and the untested rows are marked as such rather than claimed."
+      }
     ]
   },
   "source_hashes": {
     "md": "ec33e741f681",
     "ts": "fbd4b0e05c46"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:35.445Z"
 }

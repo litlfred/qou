@@ -1426,6 +1426,23 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:40.682Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Opening asserted by denying the opposite, with the positive claim supplied only by the following sentence: 'Isospin is not exclusive to nucleons. It is the Z/2 grading attached to any Frobenius algebra equipped with a spin involution.'",
+        "notes": "FIXED: merged to the positive form - 'Isospin is the $\\mathbb{Z}/2$ grading attached to any Frobenius algebra equipped with a spin involution; nucleons are one instance.' Separately PASS: 'The proof does not invoke Lie theory or SU(2) symmetries' is a substantive scope statement about the proof and was kept."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1462,21 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:40.732Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (143w pre-fix, rem)."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,21 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 142 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:40.779Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (143w pre-fix, rem)."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 142 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:40.830Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (143w pre-fix, rem)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1564,23 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:40.887Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "Quotable-sounding final line: 'The Wigner-energy phenomenology is the LP-dual shadow of the categorical Z/2 grading.'",
+        "notes": "FIXED: sentence removed. Its content is already carried by the earlier 'The Wigner energy term ~|Z-N|/A in the BW formula is the T_3-projection of this grading.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:40.939Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (143w pre-fix, rem)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1634,23 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:40.986Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "severity": "minor",
+        "evidence": "The same removed final line restated the block's thesis, already established two sentences earlier.",
+        "notes": "FIXED with the closing-aphorism removal above - one sentence, both categories fired on it."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1670,21 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.046Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (143w pre-fix, rem)."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1704,21 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.088Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Full read (143w pre-fix, rem)."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1738,22 @@
         "reviewed_at": "2026-08-15T10:31:00.872Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4e9e914a4c47",
+          "ts": "87147febd687"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:41.138Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Prose is speakable throughout.",
+        "notes": "FLAGGED for report, not a trap: 'the spin-singlet sector and spin-doublet sector decompose canonically under the LP-dual' - 'canonically' here may be sweep substitution for 'numerically'; cannot be settled from the block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1776,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:16:41.138Z"
 }

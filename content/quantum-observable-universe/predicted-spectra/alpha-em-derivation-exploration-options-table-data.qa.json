@@ -891,11 +891,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.622Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      },
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:04.046Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block - no prose. NUMERIC AUDIT recorded here (see notes).",
+        "notes": "NUMERIC CHECK, no defect found in this table: row 4 asserts g=4 in 2g/(4pi(g-1)); recomputed with mpmath dps=40, 2*4/(4*pi*3) = 0.212206590789194 = 2/(3pi) exactly, and Vol(S2)/(3 Vol(S3)) = 4pi/(6pi^2) = 0.212206590789194 also exactly. All three forms agree. The table is a qualitative source map with no numerics of its own; every block reference resolves to a real label in the corpus."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.661Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.699Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.742Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.780Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.819Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.859Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.902Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.939Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1e2235893be7",
+          "ts": "8eab48a36e2b"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:25:03.992Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 7-row ingredient/source/reference map, no prose sentences. Prose trap categories not applicable."
+      }
     ]
   },
   "source_hashes": {
     "md": "1e2235893be7",
     "ts": "8eab48a36e2b"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:25:04.046Z"
 }

@@ -166,9 +166,12 @@ import QOU.Knot.FigureEightSelfDuality
 import QOU.Knot.FigureEightVolume
 import QOU.Knot.FigureEightVolumeLiterature
 import QOU.Knot.NeumannZagierParity
+import QOU.Knot.MortonFranksWilliams
+import QOU.Knot.HomflySkeinReference
 import QOU.Knot.FigureEightQuarticCoefficient
 import QOU.Knot.PerNeutronLadder
 import QOU.MathlibExt.IdealTriangulation
+import QOU.MathlibExt.BraidGroup
 import QOU.Knot.FiveTwoVolumeConstant
 import QOU.Knot.FigureEightTriangulation
 import QOU.Knot.AngleStructureUniqueness
@@ -200,6 +203,7 @@ import QOU.Knot.KashaevFullSum
 import QOU.Knot.KashaevAsymptoticBounds
 import QOU.Knot.KashaevCSigma
 import QOU.Knot.WhiteheadSaddleClausen
+import QOU.Knot.WhiteheadLowerRate
 import QOU.KnotTheory
 import QOU.KnotTheory.Brunnian
 import QOU.KnotRegistry
@@ -320,6 +324,10 @@ import QOU.QuantumObservableUniverses.QExpEntire
 import QOU.QuantumObservableUniverses.QIntegralTransforms
 import QOU.QuantumObservableUniverses.QSchurWeyl
 import QOU.SchurWeyl.BurnsideSpan
+import QOU.SchurWeyl.PiBlockSeparation
+import QOU.SchurWeyl.HeckeProductSurjective
+import QOU.SchurWeyl.HeckeWedderburnGeneral
+import QOU.SchurWeyl.HeckeWedderburnDataGeneral
 import QOU.SchurWeyl.HeckeAlgebra
 import QOU.SchurWeyl.HeckeCoset
 import QOU.SchurWeyl.HeckeDim3
@@ -329,8 +337,22 @@ import QOU.SchurWeyl.HeckeInclusion
 import QOU.SchurWeyl.HeckeMarkov3
 import QOU.SchurWeyl.HeckeWedderburn3
 import QOU.SchurWeyl.HoefsmitRep
+import QOU.SchurWeyl.HoefsmitRepGeneral
 import QOU.SchurWeyl.QJucysMurphy
+import QOU.SchurWeyl.QJucysMurphyEigen
+import QOU.SchurWeyl.AxialDistanceBound
+import QOU.SchurWeyl.SeminormalInequivalence
+import QOU.SchurWeyl.OffDiagNonvanishing
+import QOU.SchurWeyl.SeminormalRangeTop
 import QOU.SchurWeyl.Irreducibility
+import QOU.SchurWeyl.SytAdmissible
+-- Umbrella gap found by the sibling PR #5282 (`claude/hoefsmit-finish-2026-08-18`):
+-- the general-lambda tree sat OUTSIDE the umbrella's import closure, so nothing
+-- type-checked it here.  HoefsmitRepGeneral pulls SeminormalRep -> TableauCells ->
+-- SeminormalParam transitively; these three are not in that cone and need naming.
+import QOU.SchurWeyl.Orbit3Braid
+import QOU.SchurWeyl.Orbit6Braid
+import QOU.SchurWeyl.HeckeWedderburnData3
 import QOU.SchurWeyl.YoungTableaux
 import QOU.QuantumObservableUniverses.VirtualProjection
 import QOU.QuantumObservableUniverses.QDifferentialGeometry
@@ -456,6 +478,15 @@ import QOU.BraidKnot.SpechtWedderburnCriterion
 -- W1+W3 brick 6: the split UNCONDITIONALLY for n <= 12, via the corpus's own
 -- decide-verified RSK/Burnside count. No RSK correspondence, no axiom.
 import QOU.BraidKnot.SpechtWedderburnLe12
+import QOU.BraidKnot.SpechtWedderburnGeneral
+import QOU.BraidKnot.CentralC2Transport
+import QOU.BraidKnot.SpechtCentralC2Scalar
+import QOU.BraidKnot.SnIsotypicSpechtSplitInstance
+import QOU.BraidKnot.WedderburnUnconditional
+import QOU.BraidKnot.ContentSqSumBridge
+import QOU.BraidKnot.PlancherelSnDataGeneral
+import QOU.BraidKnot.KeystoneDefectGeneral
+import QOU.BraidsAndKnots.SecondMomentKernelVanishes
 import QOU.FlavorDressing
 import QOU.ArchimedeanMassFormula
 import QOU.CODATAChain
@@ -680,6 +711,9 @@ import QOU.QBeta.QBesselQuadraticActionTerm
 import QOU.QBeta.QCasoratianAbel
 import QOU.QBeta.QCasoratianBarParity
 import QOU.QBeta.ZBarParity
+import QOU.QBeta.LadderPhaseMirrorCovariance
+import QOU.QBeta.RadicalPairingIsSignRep
+import QOU.QBeta.LadderRungAmplification
 import QOU.QBeta.QBetaZeta4ResidueRefutation
 import QOU.QBeta.BarParityZeta4Swap
 import QOU.QBeta.CuspShapeBarParity
@@ -757,6 +791,20 @@ import QOU.QBeta.BirkhoffAmplitudeWellPosed
 -- (not a bare entry — gauge-movable, ill-posed); cross-ratio elliptic because the exponent
 -- multipliers cancel; the WALL is χ(P)'s VALUE (0-exp determined, ∞-exp/closed-form open).
 import QOU.QBeta.BirkhoffAmplitudeE
+-- A=3 amplitude bar-odd/unit-modulus Pythagorean bridge: the carrier E=χ(P) is √−1
+-- (bar-odd σE=−E + unit-modulus E·σE=1 ⇒ E²=−1), so the affine lift's modulus is a
+-- quadrature fs²+s²; resolves the "real E vs unit phase" type tension, relocates the
+-- magnitude datum to the transverse slope s (qou-prjo). Conditional §3b, no instance.
+import QOU.QBeta.BirkhoffBarOddPythagorasBridge
+-- A=3 branching ↔ modulus-bridge composition: the branching reduction 1−x², the transverse
+-- leg 2x, and the lift 1+x² form a Pythagorean triple (lift = 2 − factor_sa); the branching's
+-- own x is too small to supply r*=1.585 (scope-(a) negative — s is genuinely transverse).
+import QOU.QBeta.A3BranchingModulusReflection
+-- qou-prjo: canonical discretization of the Yekutieli surface 2-form on the trefoil (genus-1)
+-- Seifert surface — ∑ V_ij ⁅A_i,A_j⁆; only the skew (intersection) part of the Seifert form
+-- survives, so the trefoil term = a single germ q-curvature ⁅A_a,A_b⁆, zero iff the handles
+-- commute (abelian H₂ ⇒ 0; nonzero only at the non-commutative germ/interface level).
+import QOU.QBeta.YekutieliTrefoilDiscretization
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
@@ -887,6 +935,8 @@ import QOU.Mathlib.SchenstedStandardGeneric
 import QOU.Mathlib.SchenstedPairingMap
 -- RSK inverse, brick 1: reverse row insertion and the inversion law.
 import QOU.Mathlib.SchenstedReverseRow
+-- RSK inverse, brick 9: the row-level RIGHT inverse (redoing an undoing).
+import QOU.Mathlib.SchenstedRowRightInverse
 -- RSK inverse, brick 2: the reverse cascade and its inversion law.
 import QOU.Mathlib.SchenstedReverseCascade
 -- RSK inverse, brick 3: word recovery from the tableau plus the row-index record.
@@ -901,6 +951,39 @@ import QOU.Mathlib.SchenstedReadbackFold
 import QOU.Mathlib.SchenstedRSKInjective
 -- RSK inverse, brick 8: RSK separates permutations.
 import QOU.Mathlib.SchenstedPermInjective
+-- RSK inverse, brick 10: the cascade-level RIGHT inverse (non-deleting branch).
+import QOU.Mathlib.SchenstedCascadeRightInverse
+-- RSK inverse, brick 11: what the reverse cascade preserves (and what needs a corner).
+import QOU.Mathlib.SchenstedUninsertInvariants
+-- RSK inverse, brick 12a: where reverse row insertion writes (the reverse of rowInsert_bump_eq_set).
+import QOU.Mathlib.SchenstedReverseRowIndex
+-- RSK inverse, brick 13: the reverse cascade keeps columns strict, at a corner.
+import QOU.Mathlib.SchenstedCascadeColStrict
+-- RSK inverse, brick 14: the recovered word rebuilds the tableau (word-level surjectivity).
+import QOU.Mathlib.SchenstedWordSurjectivity
+-- RSK inverse, brick 15: insertion always creates a corner; brick 14's hypotheses are satisfiable.
+import QOU.Mathlib.SchenstedCornersAlong
+-- RSK inverse, brick 16: a row holding a maximum entry is a corner (the Q-side keystone).
+import QOU.Mathlib.SchenstedMaxCorner
+-- RSK inverse, brick 18: CornersAlong reduces to a condition on shapes alone.
+import QOU.Mathlib.SchenstedShapeRun
+-- RSK inverse, brick 20: addable-cell sequences peel back as corners.
+import QOU.Mathlib.SchenstedAddable
+-- RSK inverse, brick 23: the counting bridge from column-strictness.
+import QOU.Mathlib.SchenstedStandardCount
+import QOU.Mathlib.SchenstedReinsertRow
+import QOU.Mathlib.SchenstedRecordingTrunc
+import QOU.Mathlib.SchenstedRSKSurjective
+import QOU.Mathlib.SchenstedListOfSYT
+import QOU.Mathlib.SchenstedRecordingOfSYT
+import QOU.Mathlib.SchenstedSYTRoundTrip
+import QOU.Mathlib.SchenstedWordOfPermSurj
+import QOU.Mathlib.SchenstedShapeOfPositions
+import QOU.Mathlib.SchenstedRSKPairSurjective
+import QOU.Mathlib.SchenstedRSKPairInjective
+import QOU.Mathlib.SchenstedRSKEquiv
+import QOU.Mathlib.SchenstedPartitionShape
+import QOU.Mathlib.SchenstedRSKBurnside
 import QOU.Mathlib.SYTEnumeration
 import QOU.Mathlib.SYTEnumerationBridge
 import QOU.Mathlib.SYTEnumerationFintype
@@ -913,6 +996,10 @@ import QOU.Mathlib.SYTHookFormulaRows
 -- Pulls in QOU.Mathlib.YoungDiagramCorner (IsCornerCell / eraseCorner), which
 -- the SYT cluster also uses.
 import QOU.Mathlib.YoungDiagramThreeRowCorner
+-- Bean qou-wtny (SW-3): addable cells, and #addable = #removable + 1 -- the
+-- diagonal of DU - UD = I on the Young lattice. One input to the remaining
+-- `hup` hypothesis of QOU.Mathlib.BurnsideViaBranching.
+import QOU.Mathlib.YoungDiagramAddable
 -- Ballot numbers m_j(n) = C(n,j) - C(n,j-1): the Mathlib-gap engine shared by
 -- the q-Clebsch-Gordan normalisation (qou-0cyu G2) and the Catalan sum (G5).
 import QOU.Mathlib.BallotNumbers
@@ -999,6 +1086,29 @@ import QOU.MassTheory.GermConnectionGaugeCovariance
 -- here, so nothing built them. Both verify lean-direct exit 0.
 import QOU.MassTheory.GermRootVectorGaugeFixing
 import QOU.MassTheory.TransversePairingClusterDecomposition
+
+-- ═══ qou-glnl / qou-glhi / qou-fr7j — the gluing-equation lane ═══
+-- Every module of this lane was ORPHANED until now: nothing imported them, so
+-- `lake build` (whose default target is `QOU` plus its transitive import closure)
+-- never compiled them and no gate would have noticed them breaking.  Caught by
+-- `lean-orphan-audit.ts --diff`, which exits 1 on all eleven.  Each was verified
+-- per-module by name during development, which is exactly the check that hides
+-- this defect: naming a module builds it whether or not anything imports it.
+import QOU.Knot.GluingBridge
+import QOU.Knot.SixOneCertified
+import QOU.Knot.GeneratedCusp
+import QOU.Knot.GeneratedCertified
+import QOU.Knot.GeneratedGluingHigh
+import QOU.Knot.GeneratedCertifiedHigh
+-- ═══ qou-hypr / qou-bday — the surreal birthday lane ═══
+-- Same defect, same cause.  DiophantineBirthday itself was already in the tree and
+-- also orphaned, so registering it here is a fix to pre-existing state rather than
+-- to this arc's additions.
+import QOU.AppendixSurreals.BirthdayFaithful
+import QOU.AppendixSurreals.DiophantineBirthday
+import QOU.AppendixSurreals.DiophantineBirthdayScope
+import QOU.AppendixSurreals.DiophantineBirthdayTrajectory
+import QOU.AppendixSurreals.GonshorConvergence
 -- qou-oc4v (§7c split, PR #5113): the depth-stratified FR module was split into
 -- an algebraic half ({R : Type*} [Field R]) and an archimedean sibling holding
 -- the empirical decimal variance records. Registering the sibling puts BOTH
@@ -1015,3 +1125,112 @@ import QOU.AlgebraicSubstrate.QChebyshevFunction
 -- (the generic [Field A] theorem split out of it), since the roadmap imports
 -- that module. Both verify lean-direct ok=1.
 import QOU.MassComputationChainRoadmap
+-- qou-br3w — staged for upstream Mathlib: the index of a multivariate polynomial at a
+-- point, the first missing Thue-Siegel-Roth prerequisite.  Depends on nothing from QOU
+-- (Mathlib imports only), so it lifts out verbatim when a Mathlib PR is possible; it is
+-- registered here so the orphan gate covers it in the meantime.
+import QOU.Mathlib.RothIndex
+-- qou-br3w — staged for upstream Mathlib: generalized (m x m) Wronskians.  Mathlib has the
+-- two-polynomial case only; genWronskian_two pins the generalisation to it.
+import QOU.Mathlib.GenWronskian
+-- qou-br3w — staged for upstream Mathlib: the same in SEVERAL variables, which is what
+-- Roth's lemma actually consumes (its auxiliary polynomial is multivariate).  The operator
+-- family is an explicit parameter because in several variables there is no canonical row.
+import QOU.Mathlib.MvGenWronskian
+-- qou-sq3h -- staged for upstream Mathlib: restriction of a multivariate polynomial to a
+-- line, with the chain rule d/dt f(a+tc) = (D^c f)(a+tc).  The bridge for the generic-line
+-- route to BOUNDED-ORDER generalized Wronskians, which MvGenWronskian's converse cannot
+-- reach (it argues from the origin, and bounded-order Wronskians can vanish there).
+import QOU.Mathlib.LineRestriction
+-- qou-sq3h -- staged for upstream Mathlib: the directional generalized Wronskian
+-- det((D^c)^i f_j), whose rows carry order 0..m-1 by construction, and its equivalence with
+-- independence of line restrictions.  Reduces the bounded-order problem to a question about
+-- the DIRECTION alone; the base point drops out.
+import QOU.Mathlib.DirectionalWronskian
+-- qou-sq3h -- staged for upstream Mathlib: the BOUNDED-ORDER generalized Wronskian
+-- criterion, the form Roth's lemma consumes, proved at m = 2 (operator family (id, d_k),
+-- orders 0 and 1).  Mirrors the univariate m = 2 converse, with totalDegree for natDegree
+-- and IsRelPrime for Bezout coprimality.
+import QOU.Mathlib.BoundedOrderWronskian
+-- qou-4lbh -- staged for upstream Mathlib: Wronskians of SEPARATED polynomials.  For
+-- P = sum_k phi_k(x) psi_k(y) with the variable groups disjoint, the mixed generalized
+-- Wronskian factors into an x-Wronskian times a y-Wronskian -- the engine of Roth's lemma's
+-- induction on the number of variables.
+import QOU.Mathlib.SeparatedWronskian
+-- qou-4lbh -- staged for upstream Mathlib: the m = 1 height bound for Roth's lemma.
+-- Elementary: lead((qX-p)^k) = q^k and a divisor's leading coefficient divides, so
+-- q^k <= |lead P|.  Corrects the recorded assessment that the base case needed Mahler
+-- measure -- that is required for bounding heights of FACTORS in the induction step, which
+-- goes the other way.
+import QOU.Mathlib.RothHeightBound
+-- qou-4lbh -- staged for upstream Mathlib: M(X - a) = max(1, |a|), Jensen's formula for a
+-- single root, connecting Mathlib's circleAverage_log_norm_sub_const_eq_posLog to
+-- mahlerMeasure.  Cornerstone of the Jensen form, and the measurement that reversed this
+-- arc's recommendation from "bare-hands Gelfond" to "fill the bridge upstream".
+import QOU.Mathlib.MahlerJensen
+-- Heights of a disjoint-variable product.  For separated variables the coefficients of a
+-- product ARE the products of the coefficients, so the height is exactly multiplicative —
+-- which makes the height half of Roth's induction step elementary rather than a Gelfond
+-- application, correcting bean qou-4lbh's third prediction of where the cost sits.
+import QOU.Mathlib.SeparatedHeight
+-- Heights of products and determinants of multivariate polynomials over ℤ.  A product
+-- costs a factor of the SUPPORT SIZE, not only the heights, and the determinant bound
+-- m!·(S·B)^m is what turns a height bound on an auxiliary polynomial into one on its
+-- generalized Wronskian.  All of it is the easy direction; Gelfond is the other one.
+import QOU.Mathlib.MvPolynomialHeight
+-- The height of a generalized Wronskian, composed end to end:
+--   H(mvGenWronskian D f) ≤ m!·(S·(d^L·B))^m.
+-- Not Mathlib-only: it needs mvGenWronskian.  Its two dependencies are, so the three
+-- lift together.
+import QOU.Mathlib.WronskianHeight
+-- The index across a disjoint-variable product: index (U(x)·V(y)) = index U + index V,
+-- exactly.  The index analogue of SeparatedHeight, and what Roth's induction on the
+-- number of variables splits on.  The ≤ direction is the half that needs IsDomain.
+import QOU.Mathlib.SeparatedIndex
+-- The m = 1 case of Roth's lemma stated against `index`, which is what the induction
+-- consumes.  RothHeightBound proved the corresponding statement about Taylor
+-- coefficients; nothing connected the two, because index lives on MvPolynomial and the
+-- height bound on Polynomial.  This module is that connection.
+import QOU.Mathlib.RothBaseCase
+-- The index of a generalized Wronskian, composed end to end:
+--   ∑ᵢ index (f i) ≤ index (mvGenWronskian D f) + m·C.
+-- The index counterpart of WronskianHeight.  index_det_ge alone does NOT give this —
+-- it bounds a determinant by its entries, not by the f.
+import QOU.Mathlib.WronskianIndex
+-- The interface of Roth's induction step, composed and CHECKED in Lean rather than
+-- asserted in prose: the separated Wronskian's index splits exactly, and each factor's
+-- height is bounded by the whole's.  Both compositions are one-liners — which is the
+-- point: if the claimed interface were wrong they would not typecheck.
+import QOU.Mathlib.RothInductionStep
+-- The STATEMENT of Roth's lemma (a def, not a theorem — only m = 1 is proved), plus the
+-- m = 1 case.  Settles the indexing question: keep the variable type general and carry
+-- the ordering as an Equiv σ (Fin m), so the base case lands at Unit with no transport.
+import QOU.Mathlib.RothLemmaStatement
+-- Separated representations: every polynomial in two variable groups is a finite sum
+-- ∑ₖ φₖ(x)·ψₖ(y).  The audit against the statement found this missing — every piece of
+-- the separated machinery TAKES such a representation and nothing produced one.
+import QOU.Mathlib.SeparatedRepresentation
+-- The arithmetic core of Roth's-lemma recursion: Mahler §13's case split, isolated from
+-- the polynomial content.  The induction step is NOT linear — it extracts a square-root
+-- bound — which is what the arc's linear form was missing.
+import QOU.Mathlib.RothRecursionArith
+-- §13's operator family, CONSTRUCTED: row μ contributes a fixed list, column ν contributes
+-- ν copies of the distinguished variable, so the cost is uniform in the row and grows in the
+-- column — exactly what sum_max_le_index_det's permutation step needs.  This closes the COST
+-- half of the recursion's missing input; the determinant's non-vanishing is still open.
+import QOU.Mathlib.RothOperatorFamily
+-- The variable split σ ≃ Fin n ⊕ Unit induced by an ordering σ ≃ Fin (n+1), and the transport
+-- of index, RothGrowth and degreeOf across it.  Connects Roth's lemma's STATEMENT (one degree
+-- vector, one ordering) to the split form every operator-family result is written for.
+import QOU.Mathlib.RothVariableSplit
+import QOU.Mathlib.RothRealLadder
+-- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
+-- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
+-- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated
+-- representation (which lives over ℚ, because shortening divides by a coefficient).
+import QOU.Mathlib.SeparatedGauss
+-- Applying the induction hypothesis to the x-factor: §6's Gauss makes the rational Wronskian
+-- integral, RothLemmaUniform at m−1 applies to THAT, and index_C_mul carries the bound back
+-- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
+-- `hres`.
+import QOU.Mathlib.RothInductionHypothesis

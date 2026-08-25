@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.454Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no negation-contrast construction found in context."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.491Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no rhetorical-pivot construction found in context."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.530Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no em-dash construction found in context."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1279,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.569Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no triples construction found in context."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1313,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.608Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no closing-aphorism construction found in context."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1347,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.645Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no meta-commentary construction found in context."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1381,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.682Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no thesis-restatement construction found in context."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.721Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no performed-warmth construction found in context."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1449,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.757Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no superlative construction found in context."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1483,21 @@
         "reviewed_at": "2026-08-15T10:30:58.916Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e7c86bb4c94c",
+          "ts": "5c4ace5e511b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:bs-b5",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:13:19.794Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full-text read; no nonspeakable construction found in context."
       }
     ],
     "wall-base-ring-minimal": [

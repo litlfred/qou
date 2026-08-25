@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.800Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.835Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.870Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.903Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.938Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.972Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:52.006Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:52.040Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:52.075Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1dcefcd0736b",
+          "ts": "bb57b4377ca0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:52.109Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 6 term-provenance rows); read in full. No trap construction of this category present. The six rows are a substantive enumeration of distinct derivation sources with cross-references, not a reflex list."
+      }
     ]
   },
   "source_hashes": {
     "md": "1dcefcd0736b",
     "ts": "bb57b4377ca0"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:52.109Z"
 }

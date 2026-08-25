@@ -1395,6 +1395,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.450Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1414,6 +1430,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.488Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1433,6 +1465,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 176 words)"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.526Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1452,6 +1500,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 176 words)"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.564Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'We interpret G_q-bundles as field configurations, q-D-modules as quantum states, and q-Hecke operators as particle insertions' is a substantive three-entry dictionary, each entry used later."
       }
     ],
     "trap-closing-aphorism": [
@@ -1471,6 +1535,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.608Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1490,6 +1570,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.645Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1509,6 +1605,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.690Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-performed-warmth": [
@@ -1528,6 +1640,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.728Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1547,6 +1675,22 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.767Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark, 4 paragraphs of physical dictionary); all ten judged."
       }
     ],
     "trap-nonspeakable": [
@@ -1566,6 +1710,23 @@
         "reviewed_at": "2026-08-15T10:31:00.912Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "280ca4c0bd4f",
+          "ts": "8b6f70e8a91f"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:49.806Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'A q-Hecke eigensheaf is a quantum state that responds to gauge field modifications by scalar multiplication by a q-local system.' Two stacked 'by' phrases, and the noun chain hides a type error - a local system is not a scalar.",
+        "notes": "proposed (NOT applied - math-adjacent): 'A q-Hecke eigensheaf is a quantum state on which the Hecke operators act by tensoring with the fibres of a q-local system.' Also noted: 'The functor L_q asserts categorically that...' - a functor does not assert."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1588,5 +1749,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:49.806Z"
 }

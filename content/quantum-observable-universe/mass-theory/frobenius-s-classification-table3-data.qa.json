@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.214Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.296Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.370Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.449Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.510Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.562Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.674Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.779Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.837Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9edd9796f9da",
+          "ts": "3abc2595b168"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:16:30.901Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows of primitives (c,d), their S-images and det T. RECOMPUTED: the three rows are mutually consistent with, and jointly determine, det T(1,d) = d^2 + h_A d - 1 -- d=0 gives -1 (row uu), d=-h_A gives -1 (row dd), d=-h_A/2 gives -(h_A^2/4+1) (row ud); all three printed dets match. INDEPENDENT INVARIANT: the tabulated S acts as d -> -h_A - d, which is an involution (S(1,0)=(1,-h_A), S(1,-h_A)=(1,0), S(1,-h_A/2) fixed -- all as printed) and leaves d^2+h_A d invariant, so det T(S(c,d)) = det T(c,d) identically. That is why the fourth and fifth columns agree in every row, and it is a genuine derivation rather than a coincidence of the three sampled points. No numerics, no q_0, no braid words.",
+        "notes": "Clean. Note only that the ud row's fixed point d=-h_A/2 is the unique S-fixed primitive, which is the structural reason chirality (the S-odd direction) cannot be seen from it -- consistent with the parent's conclusion."
+      }
     ]
   },
   "source_hashes": {
     "md": "9edd9796f9da",
     "ts": "3abc2595b168"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:16:30.901Z"
 }

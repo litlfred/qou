@@ -1,0 +1,113 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0409565v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "236704063f12c05e34426a59d228f8be807d7804dee54123f6de36eaeea93928",
+  "file": "0409565v2.pdf"
+ },
+ "provenance": {
+  "title": "Unital Gr\u00a8 obner Bases over Aribtrary Commutative Ground Rings",
+  "authors": "Frederick Leitner, Robert Pawloski \u2217",
+  "arxiv": {
+   "id": "math/0409565",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "14 Oct 2004"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 6,
+  "by_kind": {
+   "example": 1,
+   "theorem": 2,
+   "lemma": 1,
+   "proposition": 1,
+   "corollary": 1
+  },
+  "formalization_candidates": 5
+ },
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "1",
+   "name": null,
+   "statement": "1.1. Let A be the polynomial algebra k[x1, \u00b7 \u00b7 \u00b7 , xn] and consider the ideal",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "Let R be a commutative algebra with unity. Let A be an R-",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": "[4]",
+   "statement": "Let R be a commutative ring with unity, A an R-algebra which",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "7",
+   "name": null,
+   "statement": "Let R be a commutative ring with unity, A an R-algebra which",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "8",
+   "name": "Buchberger",
+   "statement": "Let R be a commutative ring with unity, A an",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "9",
+   "name": "PBW",
+   "statement": "Let g be a lie algebra over R, a commutative ring with",
+   "section_file": "sections/sec-000-introduction.md",
+   "section_title": "Introduction.",
+   "pages": "1-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

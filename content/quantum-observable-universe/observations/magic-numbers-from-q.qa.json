@@ -1075,7 +1075,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Contains borderline interpretive prose."
+        "notes": "Contains borderline interpretive prose.",
+        "evidence": "Contains borderline interpretive prose."
       }
     ],
     "fit-section-chapter": [
@@ -1463,7 +1464,8 @@
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Magic numbers emerge from per-partition nuclear character at $q_0$' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Magic numbers emerge from per-partition nuclear character at $q_0$' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1567,7 +1569,8 @@
         "reviewed_at": "2026-07-07T14:26:56.691100Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1778,7 +1781,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation: content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean contains compilation errors: content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/magic-numbers-from-q.lean fails compilation: content/quantum-observable-universe/observations/magic-numbers-from-q.lean:27:8: error: `QOU.AtomicMass.magic_numbers_from_q` has already been declared"
       },
       {
         "result": "pass",
@@ -1845,7 +1849,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

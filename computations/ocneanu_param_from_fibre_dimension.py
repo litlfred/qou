@@ -52,8 +52,10 @@ from fractions import Fraction
 from pathlib import Path
 
 from mpmath import mp, mpf, log, sqrt
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # --- q_0: experimental (proton) pin, per AGENTS 2026-08-07 owner directive ---
 Q0_PROTON_STR = "1.1099785827513808"
@@ -165,8 +167,15 @@ def check_jones_vector(q) -> dict:
 
 
 def check_convention_c(q) -> dict:
-    """`z_C = 1/(q^(1/2)+q^(-1/2))` reproduces the corpus's C weights."""
-    z_c = 1 / (sqrt(q) + 1 / sqrt(q))
+    """`z_C = 1/(q^(1/2)+q^(-1/2))` reproduces the corpus's C weights.
+
+    Convention C is EXCISED (owner ruling 2026-08-09, re-affirmed 2026-08-15).
+    This check is an audit *of* C, not a use of it: it confirms that the C
+    weights the corpus once quoted are the ones z_C actually produces, which is
+    what makes the C-era numbers identifiable wherever they survive. Deleting it
+    would remove the ability to recognise them.
+    """
+    z_c = 1 / (sqrt(q) + 1 / sqrt(q))   # EXCISED — audited here, not used
     y = markov_weights(q, z_c)
     # The C vector as quoted in bean qou-n1dj / h3-markov-wenzl-weights-context.
     quoted = (mpf("0.415396"), mpf("0.280930"), mpf("0.022745"))

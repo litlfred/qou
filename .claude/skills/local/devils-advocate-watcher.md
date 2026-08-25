@@ -209,6 +209,47 @@ criterion that fired; the `da-referee-verdict` is the rollup.
 | `da-reproducibility` | The compute/witness backing a number is irreproducible, stale (`scriptHash` drift — **not** `scriptCommitSha`, which rebase-merge rewrites; bean `qou-wsha`), or its value contradicts the prose `≈`. |
 | `da-referee-verdict` | Rollup: `clean` / `survivable-objection` / `open-objection` + the strongest objection's one-line referee argument. |
 
+### "The Lean sibling does not compile" is a claim about YOUR MACHINE until proved otherwise (STRICT, 2026-08-23)
+
+**Never record a compile failure as the ground of an objection without first
+building the import cone.** A bare `lean <file>` in a fresh container fails on
+*every* block whose Lean imports anything, and that failure says nothing about
+the block.
+
+This has now happened twice, on the two axes this watcher family covers:
+
+| batch | axis | scale | outcome |
+|---|---|---|---|
+| 2026-06-22 `qa-agent-drain` | `proof-*` | ~76–86 % false-positive | drained in PR #2775 ([audit](../../../docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md)) |
+| 2026-07-07 `qa-agent-drain` | `da-*` + `wall-side-*` | 887 entries / 258 blocks; **225 of 255 siblings compile clean (88 %)** | drained by [`scripts/reaudit-da-compile-claims.py`](../../../scripts/reaudit-da-compile-claims.py), bean `qou-zkia` |
+
+The second batch's own error text says what went wrong: 83 entries recorded
+`object file '/Users/litlfred/space_cats/qou/…' does not exist` — a missing
+olean naming another machine's checkout — and 83 recorded
+`unexpected token 'section'; expected 'lemma'`, which is a **statement-extractor
+parse error**, not a compile of the file at all.
+
+**Before asserting a sibling fails:**
+
+1. Set `LEAN_PATH` to the built olean dirs and build the file's dependency cone
+   — see [`local/lean-environment-setup`](lean-environment-setup.md)
+   §"VERIFY a single file with lean-direct". Restore
+   `lake-cache/qou-<toolchain-slug>` rather than rebuilding Mathlib.
+2. Read the error before believing it. `object file … does not exist` and
+   `unexpected token …; expected 'lemma'` are **your** environment; an
+   `unknownIdentifier`, a type mismatch, or a failed tactic is the file's.
+3. If you cannot build the cone, the criterion is **`n/a`**, not `fail`. "I could
+   not check" and "it is broken" are different verdicts and only one of them is
+   honest.
+
+**A false ground does not disprove the objection — it makes it unreviewable.**
+When correcting such a verdict, set `n/a` pending re-review, never `pass`.
+
+Enforced by [`scripts/qa-evidence-provenance-gate.py`](../../../scripts/qa-evidence-provenance-gate.py)
+(`--strict`), which flags any live verdict whose evidence carries a foreign
+absolute path, a missing-olean error, or an extractor parse error. It compiles
+nothing; it only reads what the verdict itself recorded.
+
 ### `da-arity-conflation` — the four questions
 
 Before any "X ⟺ Y" / "X is equivalent to Y" / "a P-witness **is** a Q-witness" /

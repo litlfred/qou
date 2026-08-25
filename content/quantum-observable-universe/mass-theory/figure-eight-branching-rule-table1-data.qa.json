@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.734Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.796Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.845Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.893Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:05.955Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:06.005Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:06.058Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:06.105Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:06.159Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a8f15e9f9243",
+          "ts": "f411828dad86"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:15:06.210Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "table( pure-data block, 3 rows chi(4_1,mu), mu |- 3. RECOMPUTED against parent prop:figure-eight-branching-rule. The table faithfully instantiates the parent formula (mu=[3]: a=1,b=0; mu=[1^3]: a=1,b=0; mu=[2,1]: a=-1,b=-1 => -1-h^2), and I confirmed -1-h^2 IS the exact 2-dim Hoefsmit trace of the parent's braid word sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1 (sympy, eigenvalues q,-q^{-1}: trace = -q^2+1-q^{-2}). BUT that braid word is not the figure-eight knot -- see notes.",
+        "notes": "ANOMALY (structural, parent-level, NOT fixed here). prop:figure-eight-branching-rule defines 4_1 = sigma_0 sigma_1^{-1} sigma_0^{-1} sigma_1, a commutator. Its closure is a 1-component knot with reduced-Burau Alexander polynomial det(I-Burau)(1-t)/(1-t^3) = 1/t ~ 1, i.e. the UNKNOT. The genuine figure-eight braid (sigma_0 sigma_1^{-1})^2 gives -(t^2-3t+1)/t^2 ~ t-3+t^{-1}, the 4_1 polynomial (control: same route reproduces it exactly, and correctly returns 0 for the 2-component closure of sigma_1^3). In [2,1] the true 4_1 character is q^4-2q^2+1-2q^{-2}+q^{-4}, NOT -1-h^2; the two coincide only at q=1 (both -1, the S_3 3-cycle character), so the classical part a_lambda survives while every q-deformation term -f^{lambda/[2,1]}h^2 is computed on the wrong knot. Proposed fix: correct the word to (sigma_0 sigma_1^{-1})^2 in figure-eight-branching-rule.md/.lean and re-derive the h^2 coefficient, or rename the object if the commutator is what is intended."
+      }
     ]
   },
   "source_hashes": {
     "md": "a8f15e9f9243",
     "ts": "f411828dad86"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:15:06.210Z"
 }

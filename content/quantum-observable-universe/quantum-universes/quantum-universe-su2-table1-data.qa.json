@@ -890,6 +890,196 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.160Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Extracted data table (6 rows: Operation / Formula / Meaning) with no prose sentences; nothing for this category to act on.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.200Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only, no prose sentences.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.239Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only; the only dashes are the markdown header rule.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.278Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only; six rows, one per Hopf/Frobenius operation.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.315Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only, no closing sentence.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.355Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only, no prose.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.393Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only, no prose.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.430Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only, no prose.",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.468Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only; cell text is formulaic ('pointwise product of functions', 'evaluation at the identity').",
+        "notes": "no fix needed"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8b11ebef3d25",
+          "ts": "c5a166833580"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:13.510Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-su2-table1-data.md (8 lines, kind=table, title=\"Table 1 from ex:quantum-universe-su2\"). Table only; each Meaning cell is a readable noun phrase.",
+        "notes": "no fix needed"
+      }
     ]
   },
   "label": "tbl:quantum-universe-su2-table1-data",
@@ -897,5 +1087,5 @@
     "md": "8b11ebef3d25",
     "ts": "c5a166833580"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:13.510Z"
 }

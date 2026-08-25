@@ -17,12 +17,45 @@ pytestmark = pytest.mark.skipif(
 )
 
 
+def _canonical_q0() -> float:
+    """The repo's q_0, read from the source of truth rather than pinned here.
+
+    These tests compare the Rust kernels against the Python ones. Both derive
+    from q_0, so a q_0 hardcoded in the test compares the two implementations
+    at DIFFERENT points and reports the difference as a kernel mismatch.
+
+    That is what happened: the literal `1.1099785955541805` had drifted from
+    the canonical `1.1099785827513808` at the 9th significant digit
+    (dq ~ 1.3e-8), and `test_native_gram_matches_python` reported
+    `max|native - python| = 6.64e-08` against a 1e-14 tolerance. At the
+    canonical q_0 the two agree to exactly 0.0 — the kernels were never wrong.
+    Sourcing the value is what keeps this a test of the kernels rather than of
+    a stale constant. Bean `qou/ftuv`.
+    """
+    from pyhecke import gram as _pg
+    return float(_pg.q0)
+
+
+def _cargo_version() -> str:
+    """`version = "..."` from `pyhecke-native/Cargo.toml`."""
+    import re
+    from pathlib import Path
+    toml = (Path(__file__).resolve().parents[2]
+            / "pyhecke-native" / "Cargo.toml").read_text()
+    m = re.search(r'(?m)^version\s*=\s*"([^"]+)"', toml)
+    assert m, "no version in pyhecke-native/Cargo.toml"
+    return m.group(1)
+
+
 def test_native_version():
     import pyhecke_native
     # Version is wired from Cargo.toml via env!("CARGO_PKG_VERSION") in
-    # lib.rs. If Cargo.toml bumps, update the expected here in the same
-    # commit.
-    assert pyhecke_native.__version__ == "0.4.0"
+    # lib.rs. Compare against Cargo.toml rather than a literal: the literal
+    # was pinned at "0.4.0" while the crate reached "0.9.0", so this asserted
+    # a stale fact through five bumps despite its own comment saying to update
+    # it in the same commit. Reading the source of truth checks the WIRING,
+    # which is what the test is for, and cannot drift.
+    assert pyhecke_native.__version__ == _cargo_version()
 
 
 def test_native_markov_z_matches_python():
@@ -30,7 +63,7 @@ def test_native_markov_z_matches_python():
 
     from pyhecke import gram as pg
 
-    q = 1.1099785955541805
+    q = _canonical_q0()
     assert abs(pyhecke_native.markov_z(q) - pg.z) < 1e-14
 
 
@@ -39,7 +72,7 @@ def test_native_trace_weights_match_python():
 
     from pyhecke import gram as pg
 
-    q = 1.1099785955541805
+    q = _canonical_q0()
     tr = pyhecke_native.trace_weights(q)
     assert len(tr) == 6
     for a, b in zip(tr, pg.TR_M.tolist()):
@@ -52,7 +85,7 @@ def test_native_gram_matches_python():
 
     from pyhecke import gram as pg
 
-    G_native = np.array(pyhecke_native.gram_matrix(1.1099785955541805))
+    G_native = np.array(pyhecke_native.gram_matrix(_canonical_q0()))
     assert G_native.shape == (6, 6)
     assert np.max(np.abs(G_native - pg.G)) < 1e-14
 
@@ -63,7 +96,7 @@ def test_native_det_matches_python():
 
     from pyhecke import gram as pg
 
-    d_native = pyhecke_native.gram_determinant(1.1099785955541805)
+    d_native = pyhecke_native.gram_determinant(_canonical_q0())
     d_py = np.linalg.det(pg.G)
     assert abs(d_native - d_py) < 1e-10
 
@@ -78,8 +111,42 @@ def test_bridge_dispatches_to_native():
 
 
 def test_bridge_det_uses_native():
+    """The bridge reaches the Rust determinant, and that determinant is ZERO.
+
+    This pinned `-0.3608011166161873` to within 1e-10. The Gram's determinant
+    is not that number and has not been for as long as anyone can measure — it
+    is **zero**, confirmed four independent ways:
+
+        numpy.linalg.det(pg.G)              3.998399968397726e-17
+        pyhecke_native.gram_determinant     0.0
+        bridge.gram_det_from_rust()         3.5985600328525204e-16
+        mpmath det of the 50-dps strings   -2.00868433511e-57
+
+    and the MPFR determinant tracks the working precision rather than
+    converging (-2.0e-57 at 60 dps, +5.7e-117 at 120 dps, sign flip included),
+    which is what an exactly-zero determinant looks like in floating point. The
+    H_3 Gram has a one-dimensional kernel; see `qou/ftuv`.
+
+    So this was the one test in the repo that would have caught the Gram going
+    singular, and it has been failing invisibly — `test_native.py` skips
+    entirely when the `pyhecke_native` wheel is absent, which it usually is.
+    A check that cannot run cannot fail.
+
+    Asserting the property instead of a literal: the bridge must return the
+    same value the native kernel does (that is what "uses native" means), and
+    that value must be zero to f64 resolution.
+    """
+    import pyhecke_native
+    from pyhecke import gram as pg
+
     det = bridge.gram_det_from_rust()
-    assert abs(det - (-0.3608011166161873)) < 1e-10
+    assert det == pytest.approx(
+        pyhecke_native.gram_determinant(float(pg.q0)), abs=1e-12
+    ), "bridge is not returning the native determinant"
+    assert abs(det) < 1e-12, (
+        f"det(G) = {det!r}; the H_3 Gram is singular, so a nonzero determinant "
+        "means the basis or q_0 changed — do not re-pin, investigate"
+    )
 
 
 def test_native_has_no_gram_inverse_and_quotient_inverse_kills_the_radical():
@@ -100,7 +167,7 @@ def test_native_has_no_gram_inverse_and_quotient_inverse_kills_the_radical():
         "wrong number keeps circulating under a trusted label"
     )
 
-    q = 1.1099785955541805
+    q = _canonical_q0()
     G = np.array(pyhecke_native.gram_matrix(q))
     GP = np.array(pyhecke_native.gram_quotient_inverse(q))
     rad = np.array(pyhecke_native.gram_radical(q))
@@ -176,11 +243,21 @@ def test_native_nf_net_matches_python():
 
 
 def test_native_version_bumped():
+    # The installed wheel, Cargo.toml and pyproject.toml must agree — a wheel
+    # built from a different tree than the one under test is exactly the
+    # confusion this catches.
     import pyhecke_native
-    # The version pin is sourced from Cargo.toml at compile time
-    # (env!("CARGO_PKG_VERSION")). Bump together with Cargo.toml +
-    # pyproject.toml when adding new kernels.
-    assert pyhecke_native.__version__ == "0.4.0"
+    import re
+    from pathlib import Path
+
+    assert pyhecke_native.__version__ == _cargo_version()
+    pyproject = (Path(__file__).resolve().parents[2]
+                 / "pyhecke-native" / "pyproject.toml")
+    if pyproject.exists():
+        m = re.search(r'(?m)^version\s*=\s*"([^"]+)"', pyproject.read_text())
+        if m:
+            assert m.group(1) == _cargo_version(), (
+                f"pyproject.toml {m.group(1)} != Cargo.toml {_cargo_version()}")
 
 
 # ── M3d++: build_atom_nf ───────────────────────────────────────────────

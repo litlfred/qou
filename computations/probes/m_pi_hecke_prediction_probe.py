@@ -177,7 +177,8 @@ def markov_trace_basis(q):
     """Canonical Wenzl Markov trace of the basis elements at q.
 
     Convention A (matches lepton_tower_probe_1):
-      z := 1 / (q^½ + q^-½)
+      z := q^3/(q^2+1) = q^2/[2]_q      (convention D, canonical 2026-08-15;
+                                        convention C, 1/(q^½ + q^-½), is excised)
       tr_M(1)            = 1
       tr_M(σ_i)          = z
       tr_M(σ_i σ_j)      = z²    for i ≠ j (Hopf link)
@@ -197,7 +198,12 @@ def markov_trace_basis(q):
     normalization. The meson NF lives in H_3(q), so we use the H_3
     trace.)
     """
-    z = mpf(1) / (sqrt(q) + 1 / sqrt(q))
+    # Convention D (canonical, 2026-08-15 owner ruling). The tr_M identities
+    # below (tr(sigma)=z, tr(sigma_i sigma_j)=z^2, tr(sigma_0 sigma_1 sigma_0)
+    # = h z^2 + z) follow from the Markov property plus the Hecke relation and
+    # hold for ANY z, so they are convention-independent and this is a pure
+    # definition migration.
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     tr_sig = z
     tr_Lplus = z ** 2          # Hopf link L_+

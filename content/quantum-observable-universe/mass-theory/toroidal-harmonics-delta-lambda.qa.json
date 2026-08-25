@@ -1356,6 +1356,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not a M closure.\"; \", not as a result.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.192Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1375,6 +1390,21 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.251Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-em-dash": [
@@ -1394,6 +1424,21 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 317 words)"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.309Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-triples": [
@@ -1413,6 +1458,21 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 317 words)"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.384Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-closing-aphorism": [
@@ -1432,6 +1492,21 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.458Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-meta-commentary": [
@@ -1451,6 +1526,21 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.517Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-thesis-restatement": [
@@ -1470,6 +1560,21 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.610Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-performed-warmth": [
@@ -1489,6 +1594,21 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.689Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (405w, prop) with the central derivation recomputed independently. The Legendre equation for degree n-1/2 is correct: nu(nu+1) = (n-1/2)(n+1/2) = n^2 - 1/4. I carried out the change of variables by hand - with x = 1/(2w) - 1, 1 - x^2 = (4w-1)/(4w^2), y' = -2w^2 f' and y'' = 8w^3 f' + 4w^4 f'' - and it reduces EXACTLY to w^2(4w-1)f'' + 4w^2 f' + (n^2-1/4)f = 0, which times 4 is the block's 4w^2(4w-1)f'' + 16w^2 f' + (4n^2-1)f = 0. The ODE reduction is correct. cosh eta = sqrt(5)/2 = 1.1180340 at q_0 = 1/phi checks out, and P_{-1/2}(sqrt5/2)/P_{1/2}(sqrt5/2) = 0.9446492234 reproduces the printed 0.944649 to all six digits, 0.121 pct from the quoted 0.943503."
       }
     ],
     "trap-superlative": [
@@ -1508,6 +1628,22 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.749Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'reduces exactly' is literally true - I verified the reduction - and the golden-ratio section is fenced by an explicit blockquote disclaiming it as an exploratory coincidence rather than a derivation.",
+        "notes": "EXEMPLARY DISCIPLINE NOTE: this block is the batch's best example of the anti-fit rule applied to the author's own result - it names the wrong anchor, says the six ansatze failed, and refuses to call the near-match a closure."
       }
     ],
     "trap-nonspeakable": [
@@ -1527,6 +1663,22 @@
         "reviewed_at": "2026-08-15T10:31:00.862Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "47337a2ebbf2",
+          "ts": "3fd86d47e6e4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.809Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Prose is speakable.",
+        "notes": "CONVENTION FLAG for the report, and the dependence IS determinable here. The block writes the Markov parameter as z(q) = sqrt(q)/(1+q), the EXCISED convention C, and its whole bridge turns on the identity w = z^2 = 1/(2(cosh eta + 1)). I verified that identity holds for C to 1e-31 and FAILS for the canonical convention D (z = q^3/(q^2+1)): z_D^2 = 0.3753866 against 1/(2(cosh eta+1)) = 0.2493208, a 51 pct gap. So the toroidal-harmonic change of variables, the JSJ reading, and the c_lambda evaluation all depend on convention C and do not survive a substitution of z_D. SYMBOL COLLISION: 'The Markov parameter recursion c_k' collides with the Q_beta precision-ladder c_k, and c_lambda is a third c in the same block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1550,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:32:41.809Z"
 }

@@ -1,4 +1,10 @@
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic.FieldSimp
+import Mathlib.Tactic.Linarith
+import Mathlib.Tactic.Positivity
 import Mathlib.Algebra.Algebra.Basic
+import Mathlib.Data.Real.Basic
+import Mathlib.Tactic
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.RepresentationTheory.FDRep
 
@@ -34,20 +40,20 @@ namespace QOU.BraidKnot
 class SemisimpleFrobeniusAlgebra (Λ : Type*) where
   /-- Quantum dimension on blocks. -/
   dim_q : Λ → ℝ
-  dim_q_ne_zero : ∀ λ, dim_q λ ≠ 0
+  dim_q_ne_zero : ∀ μ, dim_q μ ≠ 0
   /-- Trace of block idempotent τ(p_λ). -/
   tau_idem : Λ → ℝ
-  tau_idem_ne_zero : ∀ λ, tau_idem λ ≠ 0
+  tau_idem_ne_zero : ∀ μ, tau_idem μ ≠ 0
 
 /-- The trace values τ(p_λ) of central idempotents in a Frobenius
     algebra form the bilinear-form weights; for the universal
     co-Casimir we need only know these values, not the full
     algebraic structure. -/
-abbrev frobTauIdem {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ] (λ : Λ) : ℝ :=
-  SemisimpleFrobeniusAlgebra.tau_idem λ
+abbrev frobTauIdem {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ] (μ : Λ) : ℝ :=
+  SemisimpleFrobeniusAlgebra.tau_idem μ
 
-abbrev frobDimQ {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ] (λ : Λ) : ℝ :=
-  SemisimpleFrobeniusAlgebra.dim_q λ
+abbrev frobDimQ {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ] (μ : Λ) : ℝ :=
+  SemisimpleFrobeniusAlgebra.dim_q μ
 
 /-- Direct construction: the Frobenius co-Casimir coefficient at block `λ`
     is `1 / (dim_q(λ) · τ(p_λ))`.  Its contribution to τ(C) is:
@@ -56,13 +62,13 @@ abbrev frobDimQ {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ] (λ : Λ) : ℝ :=
 
     Summing over all blocks gives τ(C) = Σ 1/dim_q(λ). -/
 theorem codim_block_contribution {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ]
-    (λ : Λ) :
-    (1 / (frobDimQ λ * frobTauIdem λ)) * frobTauIdem λ = 1 / frobDimQ λ := by
+    (μ : Λ) :
+    (1 / (frobDimQ μ * frobTauIdem μ)) * frobTauIdem μ = 1 / frobDimQ μ := by
   unfold frobDimQ frobTauIdem
-  have h1 : SemisimpleFrobeniusAlgebra.dim_q λ ≠ 0 :=
-    SemisimpleFrobeniusAlgebra.dim_q_ne_zero λ
-  have h2 : SemisimpleFrobeniusAlgebra.tau_idem λ ≠ 0 :=
-    SemisimpleFrobeniusAlgebra.tau_idem_ne_zero λ
+  have h1 : SemisimpleFrobeniusAlgebra.dim_q μ ≠ 0 :=
+    SemisimpleFrobeniusAlgebra.dim_q_ne_zero μ
+  have h2 : SemisimpleFrobeniusAlgebra.tau_idem μ ≠ 0 :=
+    SemisimpleFrobeniusAlgebra.tau_idem_ne_zero μ
   field_simp
 
 /-- **Frobenius quantum-co-dimension trace identity.**
@@ -77,13 +83,24 @@ theorem codim_block_contribution {Λ : Type*} [SemisimpleFrobeniusAlgebra Λ]
     Ref: [manuscript] `thm:frobenius-codim-universal`. -/
 theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
     [SemisimpleFrobeniusAlgebra Λ] :
-    ∑ λ, (1 / (frobDimQ λ * frobTauIdem λ)) * frobTauIdem λ
-      = ∑ λ, 1 / frobDimQ λ := by
+    ∑ μ : Λ, (1 / (frobDimQ μ * frobTauIdem μ)) * frobTauIdem μ
+      = ∑ μ : Λ, 1 / frobDimQ μ := by
   apply Finset.sum_congr rfl
-  intro λ _
-  exact codim_block_contribution λ
+  intro μ _
+  exact codim_block_contribution μ
 
-/-- **τ-invariance of the Frobenius co-Casimir trace.**
+/-- Helper: `(1 / (a * b)) * b = 1 / a` when both are non-zero.
+    Used in `frobenius_codim_tau_invariant` to show the per-block
+    contribution telescopes to `1 / dim_q` independent of τ. -/
+private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (ha : a ≠ 0) (hb : b ≠ 0) :
+    (1 / (a * b)) * b = 1 / a := by
+  -- The old `rw` chain reached `mul_div_assoc` with the goal at
+  -- `b / (a * b)`, where the product is in the DENOMINATOR, so the lemma
+  -- had nothing to fire on. Both hypotheses are genuinely needed to clear
+  -- the denominators, so `_ha` is no longer an unused binder.
+  field_simp
+
+/-! **τ-invariance of the Frobenius co-Casimir trace.**
 
     The Markov-trace identity `τ(C_{dim_q}) = Σ_λ 1/dim_q(λ)` does
     NOT depend on the specific Frobenius pairing τ used to construct
@@ -106,31 +123,26 @@ theorem frobenius_codim_universal {Λ : Type*} [Fintype Λ]
 
     Ref: [manuscript] `thm:frobenius-codim-universal`,
     `audit:plancherel-vs-wenzl-schur-markov-trace`. -/
-/-- Helper: `(1 / (a * b)) * b = 1 / a` when both are non-zero.
-    Used in `frobenius_codim_tau_invariant` to show the per-block
-    contribution telescopes to `1 / dim_q` independent of τ. -/
-private lemma one_div_mul_eq_div_of_ne {a b : ℝ} (_ha : a ≠ 0) (hb : b ≠ 0) :
-    (1 / (a * b)) * b = 1 / a := by
-  rw [div_mul_eq_mul_div, one_mul, mul_div_assoc, div_self hb, mul_one]
-
 theorem frobenius_codim_tau_invariant {Λ : Type*} [Fintype Λ]
-    (dim_q : Λ → ℝ) (h_dim : ∀ λ, dim_q λ ≠ 0)
-    (τ₁ τ₂ : Λ → ℝ) (hτ₁ : ∀ λ, τ₁ λ ≠ 0) (hτ₂ : ∀ λ, τ₂ λ ≠ 0) :
+    (dim_q : Λ → ℝ) (h_dim : ∀ μ, dim_q μ ≠ 0)
+    (τ₁ τ₂ : Λ → ℝ) (hτ₁ : ∀ μ, τ₁ μ ≠ 0) (hτ₂ : ∀ μ, τ₂ μ ≠ 0) :
     -- Both Frobenius pairings give the same C_{dim_q} trace value.
-    ∑ λ, (1 / (dim_q λ * τ₁ λ)) * τ₁ λ
-      = ∑ λ, (1 / (dim_q λ * τ₂ λ)) * τ₂ λ := by
+    ∑ μ : Λ, (1 / (dim_q μ * τ₁ μ)) * τ₁ μ
+      = ∑ μ : Λ, (1 / (dim_q μ * τ₂ μ)) * τ₂ μ := by
   -- Per-block contribution telescopes to 1 / dim_q λ for both τ₁
   -- and τ₂, independent of the τ choice.  Proved via explicit
   -- lemma `one_div_mul_eq_div_of_ne` instead of `field_simp`
   -- (which is fragile across Mathlib bumps).
   apply Finset.sum_congr rfl
-  intro λ _
-  rw [one_div_mul_eq_div_of_ne (h_dim λ) (hτ₁ λ),
-      one_div_mul_eq_div_of_ne (h_dim λ) (hτ₂ λ)]
+  intro μ _
+  rw [one_div_mul_eq_div_of_ne (h_dim μ) (hτ₁ μ),
+      one_div_mul_eq_div_of_ne (h_dim μ) (hτ₂ μ)]
 
-/-- Specialisation to H_n(q): `Λ = partitions of n`, `A = H_n(q)`,
-    `dim_q` = q-hook-length dimension, `τ` = Markov trace.
-    The trace of the Frobenius co-dim element is `Σ_{λ⊢n} 1/dim_q(λ)`.
+/-! ## Specialisation to `H_n(q)`
+
+    `Λ = partitions of n`, `A = H_n(q)`, `dim_q` = q-hook-length
+    dimension, `τ` = Markov trace.  The trace of the Frobenius co-dim
+    element is `Σ_{λ⊢n} 1/dim_q(λ)`.
 
     For `n = 3` this equals `2 + 1/[2]_q`, matching the observed
     proton tower residual to 0.14% at `q_0 ≈ 1.11`.
@@ -217,7 +229,7 @@ noncomputable def heckeH2DimQ (_q : ℝ) (_i : Fin 2) : ℝ := 1
 theorem hecke_n2_frobenius_codim (q : ℝ) :
     ∑ i : Fin 2, 1 / heckeH2DimQ q i = 2 := by
   rw [Fin.sum_univ_two]
-  simp
+  norm_num [heckeH2DimQ]
 
 /-- The q-hook-length dimensions of the five partitions of n=4.
     Indexed by `Fin 5`:
@@ -463,7 +475,7 @@ theorem hecke_n6_frobenius_codim (q : ℝ) :
         + 2 / (q ^ 6 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 6)⁻¹)
         + 1 / ((q ^ 3 + (q ^ 3)⁻¹) * (q ^ 3 + q + q⁻¹ + (q ^ 3)⁻¹) * (q + q⁻¹)) := by
   rw [Fin_sum_univ_eleven]
-  simp
+  simp [div_eq_mul_inv]
   ring
 
 /-- The q-hook-length dimensions of the fifteen partitions of n=7.
@@ -598,7 +610,7 @@ theorem hecke_n7_frobenius_codim (q : ℝ) :
         + 2 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹)
                 * (q ^ 4 + 1 + (q ^ 4)⁻¹)) := by
   rw [Fin_sum_univ_fifteen]
-  simp
+  simp [div_eq_mul_inv]
   ring
 
 /-! ## n=8 Frobenius co-Casimir closure
@@ -613,6 +625,13 @@ theorem hecke_n7_frobenius_codim (q : ℝ) :
     block decomposes through n=8 Wedderburn factors. Generated by
     `phase5_n8_dim_q_table.py` and hand-merged here. -/
 
+-- The 22-way match on `Fin 22` with degree-7 Laurent expressions in each
+-- branch exceeds the default heartbeat budget during elaboration. This is
+-- the size of an honest computation, not a proof gap: without the raise the
+-- definition never elaborates, and every `heckeH8DimQ_*` simp lemma below
+-- then fails with "Function expected at heckeH8DimQ" -- fifteen errors from
+-- this one timeout.
+set_option maxHeartbeats 1000000 in
 /-- The q-hook-length dimensions of the 22 partitions of n=8.
     Indexed by `Fin 22` with conjugate-symmetric ordering (idx i ↔
     idx 21-i conjugates):
@@ -730,6 +749,12 @@ private lemma Fin_sum_univ_twentytwo {M : Type*} [AddCommMonoid M]
       Fin.sum_univ_castSucc, Fin.sum_univ_castSucc, Fin.sum_univ_eight]
   rfl
 
+-- The n=8 sum has 22 branches of degree-7 Laurent expressions; `simp`
+-- exhausts the default heartbeat budget partway through. Deterministic
+-- timeout, not a failed proof. `set_option ... in` must precede the
+-- docstring: placed after it, the docstring is orphaned and the file
+-- fails to parse.
+set_option maxHeartbeats 1000000 in
 /-- **H_8 specialisation: τ(C_dim_q) = Σ_{λ⊢8} 1/dim_q(λ).**
 
     Closes the n=8 case of the Frobenius co-Casimir trace by Fin-22
@@ -769,7 +794,7 @@ theorem hecke_n8_frobenius_codim (q : ℝ) :
         1 / ((q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹) * (q ^ 2 + 1 + (q ^ 2)⁻¹) * (q ^ 4 + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)) +
         1 / ((q ^ 6 + q ^ 4 + q ^ 2 + 1 + (q ^ 2)⁻¹ + (q ^ 4)⁻¹ + (q ^ 6)⁻¹) * (q ^ 4 + (q ^ 4)⁻¹) * (q ^ 4 + 1 + (q ^ 4)⁻¹)) := by
   rw [Fin_sum_univ_twentytwo]
-  simp
+  simp [div_eq_mul_inv]
   ring
 
 /-- **Self-dual lower bound on the Frobenius co-Casimir trace.**
@@ -784,32 +809,32 @@ theorem hecke_n8_frobenius_codim (q : ℝ) :
     contribute exactly 1 (since 1/1 = 1), and all other 1/dim_q(λ)
     terms are positive. -/
 theorem gb_filtration_self_dual_bound
-    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    {Λ : Type*} [Fintype Λ] [DecidableEq Λ] [SemisimpleFrobeniusAlgebra Λ]
     (s a : Λ) (hsa : s ≠ a)
     (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
-    (h_pos : ∀ λ, 0 < frobDimQ λ) :
-    (2 : ℝ) ≤ ∑ λ, 1 / frobDimQ λ := by
+    (h_pos : ∀ μ : Λ, 0 < frobDimQ μ) :
+    (2 : ℝ) ≤ ∑ μ : Λ, 1 / frobDimQ μ := by
   -- Split the sum over the universe finset into {s, a} and the rest.
   -- The two flagged blocks contribute 1 each; the remaining terms are positive.
   have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
     rw [h_dim_s, h_dim_a]; norm_num
   -- Rewrite the sum: 1/frobDimQ s + 1/frobDimQ a + (rest)
   have hSplit :
-      ∑ λ, 1 / frobDimQ λ
+      ∑ μ : Λ, 1 / frobDimQ μ
         = 1 / frobDimQ s + 1 / frobDimQ a
-          + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ := by
-    rw [show ∑ λ, 1 / frobDimQ λ
-          = 1 / frobDimQ s + ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ from
-        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
-    rw [show ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ
-          = 1 / frobDimQ a + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ from
-        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+          + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ := by
+    rw [show ∑ μ : Λ, 1 / frobDimQ μ
+          = 1 / frobDimQ s + ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ from
+        (Finset.add_sum_erase _ _ (Finset.mem_univ s)).symm]
+    rw [show ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ
+          = 1 / frobDimQ a + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ from
+        (Finset.add_sum_erase _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
     ring
   rw [hSplit, h_two]
   -- 2 ≤ 2 + (sum of positives)
   have h_rest_nn : (0 : ℝ) ≤
-      ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
-    Finset.sum_nonneg (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+      ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ :=
+    Finset.sum_nonneg (fun μ _ => le_of_lt (one_div_pos.mpr (h_pos μ)))
   linarith
 
 /-- **Strict lower bound on the Frobenius co-Casimir trace** (general).
@@ -836,33 +861,93 @@ theorem gb_filtration_self_dual_bound
     Ref: [manuscript] `prop:partition-sum-proton-residual` (general
     n ≥ 3 strict bound). -/
 theorem gb_filtration_strict_self_dual_bound
-    {Λ : Type*} [Fintype Λ] [SemisimpleFrobeniusAlgebra Λ]
+    {Λ : Type*} [Fintype Λ] [DecidableEq Λ] [SemisimpleFrobeniusAlgebra Λ]
     (s a t : Λ) (hsa : s ≠ a) (hst : s ≠ t) (hat : a ≠ t)
     (h_dim_s : frobDimQ s = 1) (h_dim_a : frobDimQ a = 1)
-    (h_pos : ∀ λ, 0 < frobDimQ λ) :
-    (2 : ℝ) < ∑ λ, 1 / frobDimQ λ := by
+    (h_pos : ∀ μ : Λ, 0 < frobDimQ μ) :
+    (2 : ℝ) < ∑ μ : Λ, 1 / frobDimQ μ := by
   have h_two : (1 : ℝ) / frobDimQ s + 1 / frobDimQ a = 2 := by
     rw [h_dim_s, h_dim_a]; norm_num
   have ht_mem : t ∈ (Finset.univ.erase s).erase a :=
     Finset.mem_erase.mpr ⟨hat.symm,
       Finset.mem_erase.mpr ⟨hst.symm, Finset.mem_univ t⟩⟩
   have hSplit :
-      ∑ λ, 1 / frobDimQ λ
+      ∑ μ : Λ, 1 / frobDimQ μ
         = 1 / frobDimQ s + 1 / frobDimQ a
-          + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ := by
-    rw [show ∑ λ, 1 / frobDimQ λ
-          = 1 / frobDimQ s + ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ from
-        (Finset.sum_erase_add _ _ (Finset.mem_univ s)).symm]
-    rw [show ∑ λ ∈ Finset.univ.erase s, 1 / frobDimQ λ
-          = 1 / frobDimQ a + ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ from
-        (Finset.sum_erase_add _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
+          + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ := by
+    rw [show ∑ μ : Λ, 1 / frobDimQ μ
+          = 1 / frobDimQ s + ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ from
+        (Finset.add_sum_erase _ _ (Finset.mem_univ s)).symm]
+    rw [show ∑ μ ∈ Finset.univ.erase s, 1 / frobDimQ μ
+          = 1 / frobDimQ a + ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ from
+        (Finset.add_sum_erase _ _ (Finset.mem_erase.mpr ⟨hsa.symm, Finset.mem_univ a⟩)).symm]
     ring
   rw [hSplit, h_two]
   -- Residual sum is strictly positive: it contains 1/frobDimQ t > 0.
   have h_rest_pos : (0 : ℝ) <
-      ∑ λ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ λ :=
-    Finset.sum_pos' (fun λ _ => le_of_lt (one_div_pos.mpr (h_pos λ)))
+      ∑ μ ∈ (Finset.univ.erase s).erase a, 1 / frobDimQ μ :=
+    Finset.sum_pos' (fun μ _ => le_of_lt (one_div_pos.mpr (h_pos μ)))
       ⟨t, ht_mem, one_div_pos.mpr (h_pos t)⟩
   linarith
 
 end QOU.BraidKnot
+
+/-! ## The same identity over an arbitrary commutative ring
+
+The `1/x` above is **notation for "inverse of"**, not arithmetic: the content of
+`codim_block_contribution` is that if `c` is inverse to `d * t`, then `c * t` is
+inverse to `d`.  That is associativity, and it needs no field, no `≠ 0`, and no
+`field_simp`.
+
+This matters because it is the only place the co-Casimir identity appeared to
+force a field on the ground ring.  Stated denominator-free it does not, so the
+ambient ring can stay generic — which keeps `ℤ[q,q⁻¹]` and reduction mod `p` in
+scope.  The `ℝ` section above is the specialisation, kept for its consumers.
+
+Note what is NOT dodged: `C_dim_q` is *defined* by its coefficients, so "the
+element exists" is exactly "each `d λ * t λ` is a unit".  That hypothesis is
+carried where the object is built, rather than imposed on the whole ground ring.
+-/
+
+section GenericBase
+
+variable {R : Type*} [CommRing R]
+
+/-- Inverses are unique, so the two ways of naming `d`'s inverse agree. -/
+-- Ref: [manuscript] `thm:frobenius-codim-universal`
+theorem codim_inv_unique {d x y : R} (hx : d * x = 1) (hy : d * y = 1) :
+    x = y := by
+  calc x = x * (d * y) := by rw [hy, mul_one]
+    _ = (x * d) * y := by ring
+    _ = y := by rw [mul_comm x d, hx, one_mul]
+
+/-- **Per-block contribution, denominator-free.**
+
+    If `c` is inverse to `d * t`, then `c * t` is inverse to `d`.  This is the
+    whole content of `codim_block_contribution`, with no division and over an
+    arbitrary commutative ring. -/
+-- Ref: [manuscript] `thm:frobenius-codim-universal`
+theorem codim_block_contribution_ring (d t c : R) (h : c * (d * t) = 1) :
+    d * (c * t) = 1 := by
+  calc d * (c * t) = c * (d * t) := by ring
+    _ = 1 := h
+
+/-- **Frobenius quantum-co-dimension trace identity over a commutative ring.**
+
+    `∑ c λ * t λ = ∑ u λ`, where `c λ` is the co-Casimir coefficient at block
+    `λ` (inverse to `dim_q(λ) · τ(p_λ)`) and `u λ` is any inverse of
+    `dim_q(λ)`.  Over a field with the `≠ 0` hypotheses this specialises to
+    `τ(C_dim_q) = Σ_λ 1/dim_q(λ)`.
+
+    The invertibility is a hypothesis on the blocks, not a constraint on `R`. -/
+-- Ref: [manuscript] `thm:frobenius-codim-universal`
+theorem frobenius_codim_universal_ring {Λ : Type*} [Fintype Λ]
+    (d t c u : Λ → R)
+    (hc : ∀ lam, c lam * (d lam * t lam) = 1)
+    (hu : ∀ lam, d lam * u lam = 1) :
+    ∑ lam, c lam * t lam = ∑ lam, u lam := by
+  refine Finset.sum_congr rfl ?_
+  intro lam _
+  exact codim_inv_unique (codim_block_contribution_ring _ _ _ (hc lam)) (hu lam)
+
+end GenericBase

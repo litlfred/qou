@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.594Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.637Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.713Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.773Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.841Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.907Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:04.957Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.054Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.138Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "09c0b2bdf3af",
+          "ts": "71c8a77ba901"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:05.218Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 3 rows (level, partition, conjugate, contribution). VERIFIED every entry: (3)' = (1,1,1) and (1,1,1)' = (3) confirm the two conjugate-pair rows; (2,1)' = (2,1) confirms self-conjugacy. Contributions are 1/dim_q: dim_q((3)) = dim_q((1^3)) = 1 and dim_q((2,1)) = [2]_q by the q-hook-length formula ([3]_q!/([3]_q[1]_q[1]_q) = [2]_q), so the printed 1, 1/[2]_q, 1 are right. INDEPENDENT CROSS-CHECK: the column sums to 2 + 1/[2]_q, which is exactly the Frobenius expression in sibling table 1 and in the parent's boxed identity -- the two tables are consistent. The level column l = 0,1,2 equals (number of rows) - 1, matching the producing witness's stated 'GB filtration levels (= height of Young diagram - 1)'.",
+        "notes": "Clean. No numerics, no q_0, no braid words, no convention-C z."
+      }
     ]
   },
   "source_hashes": {
     "md": "09c0b2bdf3af",
     "ts": "71c8a77ba901"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:05.218Z"
 }

@@ -66,7 +66,9 @@ import mpmath as mp
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from mpmath import mpf
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # CAL-1 from the registry, not re-typed: the literal here was
 # "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).

@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:34.754Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:34.790Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:34.824Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:34.861Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:34.898Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:34.933Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:34.971Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.005Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.040Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5c0ff1db4b29",
+          "ts": "ebb2f02973bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:35.074Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Pure extracted data table (kind=table, 2 rows); read in full. No trap construction of this category present. VERIFIED (not a trap): (K-3)/2 gives 1 at K=5 and 2 at K=7, matching both rows."
+      }
     ]
   },
   "source_hashes": {
     "md": "5c0ff1db4b29",
     "ts": "ebb2f02973bb"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:35.074Z"
 }

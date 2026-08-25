@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.652Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Two assert-by-denial forms examined: 'The chirality assignment is conventional. The physical content resides in their mirror relationship.' and item 3's 'a continuous rotation rather than a discrete flip'. Both are substantive mathematical contrast - which trefoil is labelled electron genuinely is a convention, and continuous-vs-discrete is the claim itself. False-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.361Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: opening chirality paragraph, two named subsections, and a 4-item 'Open questions' list."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 306 words)"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.403Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: opening chirality paragraph, two named subsections, and a 4-item 'Open questions' list."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 306 words)"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.693Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Only three-item list is '(charge conjugation $\\sigma$, parity reflection, Reeb flow reversal)', which enumerates the three factors of CPT. Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.448Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: opening chirality paragraph, two named subsections, and a 4-item 'Open questions' list."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.489Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: opening chirality paragraph, two named subsections, and a 4-item 'Open questions' list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.533Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: opening chirality paragraph, two named subsections, and a 4-item 'Open questions' list."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.573Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: opening chirality paragraph, two named subsections, and a 4-item 'Open questions' list."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1505,23 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.733Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "The section headed '**Open questions.**' states its items as settled results in the unqualified indicative: item 3 'The full theory models chirality reversal as a continuous rotation rather than a discrete flip.'; item 4 'The fiber adjoint involution and the Frobenius structure derive the combined CPT operation ...' and the block's final sentence 'The QOU involutive axiom implies the CPT theorem.' These are maximum-strength claims with no qualification, and they contradict the heading that frames them as open. Item 1 by contrast keeps a task framing ('requires translating ...'), so the de-hedging is uneven within the same list.",
+        "notes": "Structural - not fixed inline (four numbered items, meaning at stake). Proposed: restore the interrogative/conditional register the heading promises, e.g. item 4 -> 'Whether the fibre adjoint involution together with the Frobenius structure suffices to derive the combined CPT operation (charge conjugation $\\sigma$, parity reflection, Reeb-flow reversal) is open; the conjecture is that the QOU involutive axiom implies the CPT theorem.' and item 3 -> '... would model chirality reversal as a continuous rotation rather than a discrete flip.' Same treatment for item 2's 'This returns the system to its original state.' Cross-check against AGENTS 'Axiomatization is NOT a Proof': as written, item 4 asserts a CPT theorem derived from an axiom."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "358d4c25a430",
+          "ts": "e9f5efab57b1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:27:15.613Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of remark block: opening chirality paragraph, two named subsections, and a 4-item 'Open questions' list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:27:15.733Z"
 }

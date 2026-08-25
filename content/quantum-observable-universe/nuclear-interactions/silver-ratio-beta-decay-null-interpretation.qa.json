@@ -1238,6 +1238,23 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.863Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "severity": "major",
+        "evidence": "Block-final 'The c_5 Pell-Lucas outlier is not a sign of categorical incompleteness - it is the fingerprint of the typed-B_3 averaged-crossing recipe.' - assert-by-denying-the-opposite; the positive claim stands on its own.",
+        "notes": "FIXED: 'is not a sign of categorical incompleteness - it is the fingerprint of the typed-B_3 averaged-crossing recipe. The categorical chain IS complete; c_5 just lives in the involution-fixed-point sector.' -> 'is the fingerprint of the typed-B_3 averaged-crossing recipe: c_5 lives in the involution-fixed-point sector.' The dropped clause 'The categorical chain IS complete' was an unsupported overclaim contradicting this block's own .ts authorNotes ('This is a structural identification, not a derivation of c_k from first principles ... c_4..c_7 remain empirical conjectures'); removal is a correction, flagged for the owner."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1257,6 +1274,21 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.615Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (remark, ~2.1kB). Block-final sentence carried a stacked negation-contrast + load-bearing em-dash + capitalised emphasis + aphoristic closer, and its claim contradicted the block's own .ts authorNotes; fixed inline (see notes on the individual criteria). Residual em-dash count is 2 (one in a heading, one appositive) - acceptable density."
       }
     ],
     "trap-em-dash": [
@@ -1276,6 +1308,23 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 275 words)"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.906Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "severity": "minor",
+        "evidence": "Three spaced em-dashes before the fix, one of them load-bearing in the block-final sentence. Two remain: a section heading and one appositive after 'trace degeneracy point'.",
+        "notes": "FIXED: the block-final ' - it is' construction replaced by a colon; remaining density is normal."
       }
     ],
     "trap-triples": [
@@ -1295,6 +1344,21 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 275 words)"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.655Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (remark, ~2.1kB). Block-final sentence carried a stacked negation-contrast + load-bearing em-dash + capitalised emphasis + aphoristic closer, and its claim contradicted the block's own .ts authorNotes; fixed inline (see notes on the individual criteria). Residual em-dash count is 2 (one in a heading, one appositive) - acceptable density."
       }
     ],
     "trap-closing-aphorism": [
@@ -1314,6 +1378,23 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.952Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "severity": "major",
+        "evidence": "Block ended on a quotable two-clause line ('The categorical chain IS complete; c_5 just lives in the involution-fixed-point sector') that asserted more than the block had shown.",
+        "notes": "FIXED: replaced by a single declarative sentence naming what c_5 is; see the trap-negation-contrast note for the before/after."
       }
     ],
     "trap-meta-commentary": [
@@ -1333,6 +1414,21 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.695Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (remark, ~2.1kB). Block-final sentence carried a stacked negation-contrast + load-bearing em-dash + capitalised emphasis + aphoristic closer, and its claim contradicted the block's own .ts authorNotes; fixed inline (see notes on the individual criteria). Residual em-dash count is 2 (one in a heading, one appositive) - acceptable density."
       }
     ],
     "trap-thesis-restatement": [
@@ -1352,6 +1448,21 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.737Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (remark, ~2.1kB). Block-final sentence carried a stacked negation-contrast + load-bearing em-dash + capitalised emphasis + aphoristic closer, and its claim contradicted the block's own .ts authorNotes; fixed inline (see notes on the individual criteria). Residual em-dash count is 2 (one in a heading, one appositive) - acceptable density."
       }
     ],
     "trap-performed-warmth": [
@@ -1371,6 +1482,21 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.778Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (remark, ~2.1kB). Block-final sentence carried a stacked negation-contrast + load-bearing em-dash + capitalised emphasis + aphoristic closer, and its claim contradicted the block's own .ts authorNotes; fixed inline (see notes on the individual criteria). Residual em-dash count is 2 (one in a heading, one appositive) - acceptable density."
       }
     ],
     "trap-superlative": [
@@ -1390,6 +1516,23 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.996Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "severity": "minor",
+        "evidence": "'c_5 is uniquely sensitive to the averaged-crossing structure because the cross-term combinatorics amplify the h/2 contribution' - a maximal-strength uniqueness claim with no supporting computation in the block or in its witness (computations/qbeta/qbeta-silver-ratio-pell-lucas-ck.witness.json asserts only c_3, c_4, c_7; c_5 and c_6 are not asserted at all). 'The framework's true c_5 likely has a Pell-Lucas-clean silver-ratio value waiting to be identified' is a second, softer instance.",
+        "notes": "PROPOSED (not applied - substantive, math-adjacent): downgrade 'is uniquely sensitive' to 'is the c_k most sensitive' only if a computation supports the ranking; otherwise state the mechanism without the ranking ('c_5 is sensitive to the averaged-crossing structure: the cross-term combinatorics amplify the h/2 contribution at this order')."
       }
     ],
     "trap-nonspeakable": [
@@ -1409,6 +1552,21 @@
         "reviewed_at": "2026-08-15T10:31:01.489Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "73fb3236031a",
+          "ts": "7f04124d1df0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:06:45.819Z",
+        "reviewed_sha": "58948c1379e292e74a94b9a240d906211f3812e9",
+        "evidence": "Full read (remark, ~2.1kB). Block-final sentence carried a stacked negation-contrast + load-bearing em-dash + capitalised emphasis + aphoristic closer, and its claim contradicted the block's own .ts authorNotes; fixed inline (see notes on the individual criteria). Residual em-dash count is 2 (one in a heading, one appositive) - acceptable density."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1431,5 +1589,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:06:45.996Z"
 }

@@ -207,5 +207,8 @@
   },
   "caveats": [
     "Scope-(b) covers H_2(q)-linear readouts with no node in the generation window (including the canonical Markov trace). Readouts with a node are NOT excluded; they are unconstrained (3 parameters, 2 observations). Nothing here touches non-linear or non-H_2 bridges -- an additive interface term, or a route where the generation index enters through linking with the hyperbolic Higgs knot 4_1 -- which remain open (bean qou-htk4)."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.readouts.sigma_only.A_growing_amplitude, parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

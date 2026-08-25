@@ -85,7 +85,8 @@ mathematics.
       18 display-only. See "Round 1" below, and its CORRECTIONS section.
 - [ ] rewire `global_wedderburn_sum_q_hecke_seminormal` onto
       `_build_seminormal_matrices_mpf`
-- [ ] `y_lambda_at`: read `Q_MP`, and reconsider the 30-digit `sp.Float` cap
+- [x] `y_lambda_at`: read `Q_MP`, and reconsider the 30-digit `sp.Float` cap
+      — DONE 2026-08-24 (PR #5641). See "Round 2" below.
 - [ ] `mass_at_3A_proper.py:164` BlockCache f64 seeding
 - [ ] correct "1e-50" claims that are actually about tr_M
 
@@ -339,3 +340,85 @@ path. Note the module is f64 below `atom_braid_word_3A` regardless: L71
 * Leave the χ^λ claims alone (`docs/audits/2026-06-29-…:25`,
   `2026-07-13-…:74`) — they are about characters, which genuinely reach 50 dps;
   the cap is introduced by the y_λ weighting, downstream of them.
+
+
+---
+
+## Round 2 (2026-08-24, PR #5641, branch `claude/stalled-agent-prs-ir8t3p`) — item 4 closed
+
+### Item 4 — DONE, and the cap was worse than this bean estimated
+
+**The `Q_MP` half needed nothing.** Correction 2 in Round 1 already established
+the `computations/` copy was fixed on 2026-08-07 and only the packaged twin
+carried `float(Q_0_FLOAT)`. Re-verified: `sync-qou-mass-vendor.py --apply`
+regenerates the twin from the fixed source, so the sync IS the fix. Do not
+hand-patch `_internal/`.
+
+**The 30-digit cap half is closed, at a NEW line.** Round 1 pointed at
+`wedderburn_jones_markov.py:191`. That line is now inside
+`_y_lambda_at_convention_C_HISTORICAL`, which is DEAD — the convention-C
+excision of 2026-08-09 moved the live code. **The cap survived the excision
+unchanged on the live convention-D path**, at what is now L160:
+
+    return {sh: sp.Float(_mp.nstr(v, 30), 30) for sh, v in _y.items()}
+
+i.e. anyone following Round 1's line reference would have edited dead code and
+believed the item closed. Raised to 50/50 there.
+
+### The measurement Round 1 predicted, now actually run
+
+Round 1 said "expect every ~1e-31 residual to drop by ~20 orders". Measured on
+the Markov normalisation `Σ y_λ f^λ = 1` at the proton q₀ — it holds:
+
+| n | raw from `y_lambda_su_n` | capped at 30 | after |
+|---|---|---|---|
+| 3 | 0.0 | 0.0 | 1.069e-50 |
+| 4 | 1.336e-51 | **1.0e-30** | 2.673e-51 |
+| 5 | 0.0 | **5.0e-31** | 1.069e-50 |
+| 6 | — | **1.0e-31** | 1.336e-51 |
+
+The truncation artefact is visible directly in the returned weights — every
+one was zero-padded past digit 30:
+
+    (2,1) before  0.2472978867480345984062206483799999999999999999999999
+    (2,1) after   0.2472978867480345984062206483797638621698244011250899
+
+Two cautions for anyone re-measuring: n=3's before-residual of exactly `0.0`
+is an ARTEFACT (both weights truncated to values that happen to sum exactly),
+not evidence the cap was harmless there; and `1e-50` after is round-off at 50
+digits, not a regression from `0.0`.
+
+### Item 6's PREMISE HAS INVERTED — re-check before editing
+
+Item 6 was "correct the corpus's 1e-50 claims that are really about tr_M,
+because the cap makes them false". As of this round **the cap is gone and
+those claims are true as written.** The listed targets (`mba-step03-markov-
+trace.md:92-95`, `wedderburn_jones_markov.py` docstring, the audit doc) should
+be RE-CHECKED, not edited to say 1e-30. Editing them now would introduce the
+error item 6 was written to remove.
+
+### Not done — witness refresh
+
+The change moves returned values for ~155 consumers, so committed witnesses
+downstream are stale in their last ~20 digits. Tracked separately as
+**`qou-jjge`**, deliberately NOT run inside #5641: a two-token precision fix
+must not carry a ~155-producer regeneration as a side effect, and in this
+corpus a producer IS its side effect (it writes sibling witnesses).
+
+### Item 2's inventory, re-cut by fixability
+
+Of the 116 F64_CAST files, **49 use no f64 engine** (numpy / BlockCache /
+scipy / pyhecke.gram / solvers) and are the genuinely fixable set. The other
+67 are f64 by construction — `atom_level_wedderburn_tower.py` carries a
+comment saying exactly that and explicitly declining to claim high precision.
+**The drain target is 49, not 116.** Round 1's "one nuance the tier
+deliberately does not hide" paragraph now also prints when the audit runs, so
+the next agent does not re-derive it from the detector (I did, having read the
+detector and the print block but not the header).
+
+### Items 3, 5, 6 remain open
+
+Item 3 (rewire `global_wedderburn_sum_q_hecke_seminormal` onto
+`_build_seminormal_matrices_mpf`) is the next-largest precision win and its
+Round 1 edit notes are still accurate — but VERIFY THE LINE NUMBERS FIRST.
+Round 1's item-4 references had drifted by a whole function in two weeks.

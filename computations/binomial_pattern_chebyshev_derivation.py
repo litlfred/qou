@@ -55,6 +55,7 @@ from math import comb
 from pathlib import Path
 
 import sympy as sp
+from _precision import set_compute_dps  # noqa: E402
 
 
 def chebyshev_T(n: int, x):
@@ -157,7 +158,7 @@ def main():
     print("=" * 80)
     import mpmath as mp
     from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-    mp.mp.dps = 50
+    set_compute_dps()
     q_0 = mp.mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
     h_0 = q_0 - 1 / q_0
     print(f"h_0 = {float(h_0):.10f}, h_0² = {float(h_0**2):.10f}")

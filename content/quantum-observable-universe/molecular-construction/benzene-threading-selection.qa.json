@@ -938,6 +938,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.150Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -957,6 +973,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.192Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -976,6 +1008,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.234Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: spaced-dash count = 1; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -995,6 +1043,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.274Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1014,6 +1078,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.314Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: final prose sentence is: \"The $\\Phi_1$ comparison:    The LP dual shadow price for the threading link is the resonance stabilisation energy of benzene:    The observed reson...\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1033,6 +1113,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.355Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1052,6 +1148,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.396Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: final sentence checked against the body: \"The $\\Phi_1$ comparison:    The LP dual shadow price for the threading link is the resonance stabilisation energy of benzene:    The observed reson...\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1071,6 +1183,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.436Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1090,6 +1218,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.479Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "'More shared crossings' and the Phi_1 chain are comparative claims with figures attached.",
+        "notes": "CARRIED FINDING (the selection argument's headline number is a unit mismatch): the candidate table counts Kekule as '3 localised pi pairs -> 3 x 2 = 6' (2 crossings per PAIR, the chapter's 2k rule from rem:covalent-bond-order-and-lp-selection) but the threading link as '6 x 2 = 12' (2 crossings per ELECTRON, per def:covalent-bond-shared-trefoil: 'each shared electron contributes two attractive crossings'). Both configurations hold the same 6 pi electrons = 3 pairs, so under either rule applied consistently the two rows are equal (6 and 6, or 12 and 12). Reason 1 for selecting T(2,6) is produced entirely by counting the two rows differently. Reasons 2 (D_6) and 3 (Alexander weight) are unaffected. Verified clean: Delta_{T(2,6)} = (q^3-q^-3)/(q-q^-1) = [3]_{q^2} = 3.0437 at q0, and 36 kcal/mol = 1.5610 eV matches the quoted 1.56 eV and benzene_resonance_kcal = 36.0."
       }
     ],
     "trap-nonspeakable": [
@@ -1109,6 +1253,22 @@
         "reviewed_at": "2026-08-15T10:31:01.572Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "107a1babf2d9",
+          "ts": "c93a63e16732"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:10.519Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (candidate table + three selection reasons + resonance energy; recomputed 36 kcal/mol = 1.561 eV and Delta_{T(2,6)}=[3]_{q^2}). Judged on the whole text: read aloud end to end (10 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1131,5 +1291,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:10.519Z"
 }

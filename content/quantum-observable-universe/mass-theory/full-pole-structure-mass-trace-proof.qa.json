@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.476Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "'does not converge uniformly', 'is no longer claimed to define a global C-meromorphic function' — factual scope statements, the substantive-contrast class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.512Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "Two numbered failures, each argued; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 293 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.547Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "Zero em-dashes in 319 words."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 293 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.586Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "'Two specific failures' is a pair, both developed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.630Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "Closes on a scope statement about what the residue spectral sum is still claimed to do."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,22 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.670Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "The revision discussion carries real mathematics (density of roots of unity on S^1, non-uniform convergence), so it is argument rather than narration.",
+        "notes": "REGISTER + AUTHORNOTES FLAG: the header '## Inadequacy of the previous wording' and the sentence 'This proposition replaces the earlier \"meromorphic with poles at all primitive roots of unity\" wording with the algebraically correct Habiro-ring statement' are document-revision history inside a proof. Propose: retitle to '## Why the Habiro ring rather than meromorphic continuation' (keeps both arguments), and move the replaces-the-earlier-wording sentence to authorNotes kind 'refined-framing'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.705Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "No closing restatement; the final paragraph states what is retained, which the proof had not said."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.740Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,22 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.776Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "'the algebraically correct Habiro-ring statement' is the one strong phrase and it is argued for immediately above.",
+        "notes": "CITES VERIFIED: \\cite{habiro2004} and \\cite{jones1987} both resolve in content/schema/references.ts (ids present at lines 2376 and 1344) and both appear in the .ts cites array."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,22 @@
         "reviewed_at": "2026-08-15T10:31:00.730Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0f2865f54e22",
+          "ts": "de944917d644"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:00:29.811Z",
+        "reviewed_sha": "c7b8abea695b3a18edd8ac98fb7b3b09cd5bc0ee",
+        "evidence": "Numbered structure with short sentences; the one long sentence (the integrality argument) is broken by its parentheticals.",
+        "notes": "RIGOR FLAGS. (1) DANGLING PROPERTY REFERENCES: the proof discharges 'Property (1)', 'Property (2)' and 'Property (3)', but prop:full-pole-structure-mass-trace contains no numbered properties — its statement is two displays and a prose paragraph. The proof cannot be checked against the statement as written. (2) MATH SPOT-CHECKS, all correct: Habiro ring as lim Z[q]/((q;q)_n); Property (1) does follow from (q;q)_m(zeta_n^{(j)}) = 0 for n <= m; the primitive roots are dense in S^1; a meromorphic function on a connected open set has isolated poles, so S^1 is a natural boundary; and w_lambda = dim_q(lambda)^2/[n]_q! is the right Plancherel-type weight (it sums to 1 at q=1)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:00:29.811Z"
 }

@@ -1,0 +1,48 @@
+Meromorphic Solutions of Some Difference Equations 313
+
+two values , and », such that 4,(4,)={y,} and A,(y.)= {1}, then (y,, 4») is called a
+maximally fixed pair for R(w).
+
+Theorem 3. Let y(x) be a meromorphic solution of (1.3). Then
+
+(i) if there are neither a maximally fixed value nor a maximally fixed pair, then
+y(x) takes every value w (|w|<oo) infinitely often;
+
+(ii) if there is only one maximally fixed value p, then y(x) does not take p, but
+takes every other value w(|w|<co) infinitely often;
+
+(ii) if there are two maximally fixed values y, and p,, then y(x) takes none of p,
+and p,
+
+(iv) if there is a maximally fixed pair (y1,, p,), then y(x) takes none of y, and pp.
+
+Proof. (i) In this case, we can show in the same way as in [8, p. 76] that, for
+any a, A(z) contains at least three distinct values. If y(x) takes a value a only a
+finite number of times, then there would three distinct values which y(x) takes only
+finite times, contradicting the theorem of Picard.
+
+(ii) By a linear transformation, we can assume that »=0o. Then the equation
+(1.3) becomes
+
+(2.15) y(x+ D=P()) (P(w) is a polynomial of w).
+
+The statement in this case is proved by Shimomura [10].
+(iii) and (iv). By a linear transformation, we can assume that y,=—0, y,=00.
+Then the equation (1.3) becomes
+
+(2.16) yet D=((r))? in the case (iii)
+and
+(2.17) y(x+ 1)=1/())" in the case (iv),
+
+respectively. The proofs of our statements are the same as in the case (ii), noting
+that y(x+2)=(9(x))® in (2.17). Q.E.D.
+
+Remark. When q=1 in the equation (2.17), ie.,
+(2.18) yoe-+ 1)=1/y(2),
+
+the equation (2.18) has entire solutions, but also solutions which are not entire. That
+is, 0 and co are not exceptional for some solutions. The order of not-entire solution
+may be finite, the order of entire solutions is co. For, if an entire solution y(x) is
+of finite order, then y(x)=exp [K(x)] with a polynomial K(x). If this is a solution
+of (2.18), we would have K(x+1)=—K(x)+2kai (k=an integer), which is impos-
+sible for the polynomial K(x).

@@ -7,7 +7,8 @@ size for H_3). This module provides **arbitrary-n versions** of:
 
   - `trace_weights_n(n, q)` — Jones-Markov y_λ on H_n(q) for any n
   - `gram_matrix_n(n, q)` — Gram matrix via Schur orthogonality
-  - `gram_inverse_n(n, q)` — inverse via numpy linear-system
+  - `gram_inverse_n(n, q)` — REFUSES under convention D (the form is
+    singular); see its docstring and bean `qou-cds2`
   - `markov_pairing_n(n, word_a, word_b, q)` — ⟨word_a | word_b⟩ via tr_M
 
 Implementation: routes through `pyhecke_native.chi_lambda_braid` +
@@ -24,13 +25,17 @@ Production scripts currently using the n=3-locked ABI:
 import pyhecke_native as pn
 y = pn.trace_weights(q)               # length-6 only
 G = pn.gram_matrix(q)                 # 6×6 only
-Ginv = pn.gram_inverse(q)             # 6×6 only
+Ginv = pn.gram_inverse(q)             # 6×6 only — now REMOVED, it raises
 
 # NEW (arbitrary n — fixes the legacy H_3 hardcode)
 from pyhecke_n_generic import trace_weights_n, gram_matrix_n, gram_inverse_n
 y = trace_weights_n(n=12, q=q_0)      # length 77 (partitions of 12 for 4He)
 G = gram_matrix_n(n=12, q=q_0)        # 77×77
-Ginv = gram_inverse_n(n=12, q=q_0)    # 77×77
+# Ginv: there is NO inverse to migrate to. Under convention D the form is
+# singular at every n (rank = partitions with <=2 rows, the TL/Catalan
+# structure of qou-8iru), so gram_inverse_n RAISES rather than returning
+# the 1e16-entry garbage numpy hands back without complaint. The inverse
+# lives on the TL_n quotient — tracked under qou-8iru.
 ```
 
 ## Basis choice
@@ -164,8 +169,47 @@ def gram_matrix_n(n: int, q: float = Q0_F64, basis: str = "partition") -> np.nda
 
 
 def gram_inverse_n(n: int, q: float = Q0_F64, basis: str = "partition") -> np.ndarray:
-    """Gram inverse on H_n(q) — replaces 6×6 hardcoded `pn.gram_inverse`."""
+    """Gram inverse on H_n(q) — REFUSES under convention D, where G is singular.
+
+    🛑 This is the general-n successor to `pyhecke.gram.gram_inverse`, which was
+    DELETED for exactly this reason (bean `qou-cds2`); the guard did not come
+    with it. It previously did a bare ``np.linalg.inv(G)``.
+
+    Under convention D the Markov–Gram form is identically singular: its radical
+    is the Temperley–Lieb ideal, so the rank is the number of partitions of `n`
+    with at most two rows, not `p(n)` (bean `qou-8iru`). Measured here:
+
+        n=3   dim 3   rank 2   corank 1   cond 2.5e16   max|G^-1| 5.03e16
+        n=4   dim 5   rank 3   corank 2   cond 1.8e16   max|G^-1| 3.27e16
+
+    and the corank grows fast — 10 at n=4 and 78 at n=5 in the NF basis
+    (`qou-cds2`).
+
+    ⚠️ THE OBVIOUS SANITY CHECK DOES NOT CATCH THIS. ``numpy`` raises nothing,
+    and the returned matrix satisfies ``‖G·G⁻¹ − I‖ = 1.11e-16`` at n=3 and
+    **exactly 0** at n=4 — the entries are so large that the product rounds to
+    the identity in float64. A consumer that validates the residual is handed a
+    clean bill of health on a meaningless inverse. That is why this raises
+    rather than warning: there is no downstream check that would notice.
+
+    The inverse exists on the QUOTIENT `H_n(q)/rad = TL_n(q)`, where the form is
+    non-singular for every real q > 0 — proved exactly over ℚ(q) in
+    `computations/qbeta/tl3_gram_nonsingular_probe.py`. Building the form there
+    is tracked under `qou-8iru`; this function does not do it.
+    """
     G = gram_matrix_n(n, q, basis=basis)
+    rank = int(np.linalg.matrix_rank(G))
+    if rank < G.shape[0]:
+        raise NotImplementedError(
+            f"gram_inverse_n(n={n}): the convention-D Markov-Gram form is "
+            f"SINGULAR — rank {rank} of {G.shape[0]} (corank "
+            f"{G.shape[0] - rank}), cond {np.linalg.cond(G):.2e}. numpy would "
+            f"return entries of order 1e16 WITHOUT raising, and ||G.G^-1 - I|| "
+            f"rounds to ~0, so the residual check does not catch it. The "
+            f"inverse exists on the TL_n quotient (bean qou-8iru); use that, or "
+            f"a rank-guarded pseudo-inverse if a least-squares solution is what "
+            f"you actually want."
+        )
     return np.linalg.inv(G)
 
 
@@ -229,6 +273,8 @@ if __name__ == "__main__":
     print(f"         : gram_matrix_n(n=24, q) would return (1575, 1575) (H_24 for 8Be)")
     print()
     print("§5. Migration recipe")
-    print("  Replace: from pyhecke_native import trace_weights, gram_matrix, gram_inverse")
-    print("    With: from pyhecke_n_generic import trace_weights_n, gram_matrix_n, gram_inverse_n")
+    print("  Replace: from pyhecke_native import trace_weights, gram_matrix")
+    print("    With: from pyhecke_n_generic import trace_weights_n, gram_matrix_n")
+    print("  gram_inverse has NO migration target: the convention-D form is")
+    print("  singular at every n, so gram_inverse_n refuses. See qou-cds2.")
     print("  Pass n_strands explicitly (3A for atom A).")

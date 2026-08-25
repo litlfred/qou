@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.405Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "No 'not X but Y' construction in the block.",
+        "notes": "n/a"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.450Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Linear structure: define A_scalar, state the Pythagoras identity, table the aggregate, draw the conclusion.",
+        "notes": "n/a"
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1496,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.495Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Zero em-dashes in the .md (one appears only in the .ts docstring).",
+        "notes": "n/a"
       }
     ],
     "trap-triples": [
@@ -1483,6 +1531,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 133 words)"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.537Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Three-row table is a data table (scalar total / operator total / non-scalar count), not a rhetorical list.",
+        "notes": "Observation for the coordinating session: the third row 'Non-scalar blocks 19/35' is a COUNT sitting under a column headed 'Frobenius'; header should read 'Value' or the row should move out of the table."
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.581Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Final line 'We construct these residuals to be operator-valued at the per-Wedderburn-block level.' is a claim, not a quotable closer.",
+        "notes": "See trap-nonspeakable for the verb defect in that same sentence."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1601,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.625Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "No narration of the author's own emphasis. Bolded '**exceeds**' places emphasis without announcing it.",
+        "notes": "n/a"
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1636,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.670Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "Closing paragraph draws a NEW consequence (Z<->N-asymmetric residuals) rather than restating the magnitude budget.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1671,22 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.709Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1706,23 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.749Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "severity": "minor",
+        "evidence": "'This quantitative magnitude budget **forces** the structural conclusion. The symmetric scalar substrate **cannot** account for the empirical Z<->N-asymmetric mass-formula residuals.' Unqualified maximum-strength framing on a claim the arithmetic supports only weakly: recomputed from the cited witness (root-sum-square over 35 blocks) scalar 3.5169, operator 3.6034, total 5.0352 -- the operator part exceeds the scalar part by only 2.5%, and the scalar share is 48.79% of the SQUARED norm but 69.85% of the norm itself.",
+        "notes": "PROPOSED (not applied -- meaning is at stake, math-adjacent): 'forces the structural conclusion' -> 'motivates the structural conclusion'; 'The symmetric scalar substrate cannot account for' -> 'A symmetric scalar substrate alone does not account for'. Rationale: AGENTS.md STRICT 'Before declaring refuted/ruled out' -- a numerical magnitude budget yields a scope-(a) negative ('this construction, alone, does not reproduce the numbers'), never scope-(b) ('cannot appear in any closure'), which requires a cited proved invariant. No invariant is cited here. Also flag: 'recover less than half of the structural Frobenius content' is true only under the squared-norm reading (48.79%) and false under the norm reading (69.85%) -- margin is 1.2 points; recommend stating which."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1742,23 @@
         "reviewed_at": "2026-08-15T10:31:01.028Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "db59197c378e",
+          "ts": "0d31d1ef2c91"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:50:51.789Z",
+        "reviewed_sha": "f0b674c64eedf56d42cf3b7a08102d4ee01c4990",
+        "severity": "minor",
+        "evidence": "Two verb substitutions leave sentences that do not parse: 'the operator-valued residual **holds** Frobenius norm:' (should be 'has'); and the block-final 'We **construct** these residuals to be operator-valued at the per-Wedderburn-block level' (the preceding sentence says the budget FORCES a conclusion, so the intended sense is 'these residuals must be operator-valued' -- 'we construct' inverts a derivation into a construction).",
+        "notes": "PROPOSED (not applied -- the second changes epistemic meaning): 'the operator-valued residual holds Frobenius norm' -> 'has Frobenius norm'; 'We construct these residuals to be operator-valued...' -> 'These residuals must therefore be operator-valued...'. Looks like the same de-hedging/verb-substitution sweep artifact seen elsewhere in this chapter."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1781,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:50:51.789Z"
 }

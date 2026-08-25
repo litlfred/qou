@@ -1,11 +1,11 @@
 ---
 # qou-9br4
 title: 'GAP: rho-k-co-casimir-extended witness is stale on main — needs a ~45min re-run'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T20:24:06Z
-updated_at: 2026-08-15T23:57:50Z
+updated_at: 2026-08-16T03:15:55Z
 ---
 
 `computations/rho-k-co-casimir-extended.witness.json` on `main` carries 4 raw
@@ -248,3 +248,43 @@ mixed a fresh five-atom computation with a stale helium-4 while looking complete
 and nearly-drained. The reliable gate is `witness_shape_guard.py` plus a
 zero-raw-float count *and* confirmation the producer exited — never the atom
 count alone.
+
+
+---
+
+## ⚠ CORRECTION + claimed 2026-08-16 (`claude/anchor-followups-2026-08-08`, PR #5124)
+
+**"The payload numbers cannot change" is wrong, and it is the load-bearing
+sentence of this bean.** This is not a telemetry-only refresh. It is a
+**convention C → D regeneration with real physics movement**, already measured
+in [`docs/audits/2026-08-15-rho-k-co-casimir-stale-convention-c-needs-d-refresh.md`](../docs/audits/2026-08-15-rho-k-co-casimir-stale-convention-c-needs-d-refresh.md):
+
+| atom | committed (C) | fresh run (D) |
+|---|---|---|
+| deuteron `\|tr_M\|` | 0.3883 | **0.5751** |
+| tritium `\|tr_M\|` | 0.1041 | **0.2293** |
+| deuteron `ρ_K^pred` | `9464.879…` | **`6390.441…`** |
+
+The witness was computed 2026-08-10 on the convention-C `tr_M` table; on
+2026-08-14 `canonical-mass-table-extended` rebuilt that table **C → D**. The
+four raw-float64 fields are the *symptom*; the stale convention is the disease.
+Anyone running this on the bean's own wording would see the physics move and
+either stop, or — worse — commit it as "telemetry only".
+
+**Why it is mine:** this is an excise-convention-C item that was filed as a
+raw-float64 gate item, so it never reached the campaign. Also resolves a crossed
+wire — [#5124 (comment)](https://github.com/litlfred/qou/pull/5124#issuecomment-5305295130)
+and my 22:37 reply each recorded the *other* party as taking it, so nobody was.
+
+**Run conditions.** Launched in background from this branch. `gmpy2` installed
+first — the audit found mpmath was on its pure-Python backend, and
+`mpmath.libmp.BACKEND` is now `gmpy`. **No explicit `--workers`**, deliberately:
+passing it sets `_explicit_workers` and *disables* the `_mem_cap` clamp, so
+auto-detect is the safer setting on this 14 GiB / 4-core box even though
+`--workers 1` is the proven-safe one.
+
+The five-atom-clobber hazard this bean documents is **closed** by `aa4eb8832`
+(`_carry_forward`): a did-not-compute result can no longer displace a computed
+one. Commit gate unchanged and unrelaxed — six atoms, zero raw floats,
+`scriptHash` matching the producer, and confirmation the process exited — or the
+witness gets restored and nothing is committed.

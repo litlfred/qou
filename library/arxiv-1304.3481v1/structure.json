@@ -1,0 +1,164 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1304.3481v1",
+ "source": {
+  "file": "1304.3481v1.pdf",
+  "sha256": "d0840f2775c0f761c2e03dc01af6a4879456eccf53f70cd0e3e8da76b3b6d00d",
+  "bytes": 886486,
+  "pages": 78
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1304.3481",
+   "version": "1",
+   "primary_class": "math.QA",
+   "stamp_date": "11 Apr 2013"
+  },
+  "doi": null,
+  "title": "Quadruply-graded colored homology of knots",
+  "authors_raw": "Eugene Gorsky, Sergei Gukov, and Marko Stoˇ sić",
+  "abstract": "W e conjecture the existence of four independent gradings in the colored HOMFLY homology. W e describe these gradings explic itly for the rectangular colored homology of torus knots and make qualit ative predictions of various interesting structures and symmetries in the col ored homology of general knots. W e also give a simple representation-theore tic model for the HOMFLY homology of the unknot colored by any representation . While some of these structures have a natural interpretation in the phy sical realization of knot homologies based on counting supersymmetric conﬁgu rations (BPS states, instantons, and vortices), others are completely n ew. They suggest new geometric and physical realizations of colored HOMFLY h omology as the Hochschild homology of the category of branes in a Landau-Gi nzburg B-model or, equivalently, in the mirror A-model. Supergroups and su permanifolds are surprisingly ubiquitous in all aspects of this work. CALT-68-2903",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241127010604-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Quadruply-graded colored homology of knots"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Bosonic and Fermionic generators",
+   "page": 7,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Gradings, Differentials, Mirror Symmetry",
+   "page": 19,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Examples",
+   "page": 35,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Colored HOMFLY homology for torus knots",
+   "page": 47,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "HOMFLY homology from A-model and B-model",
+   "page": 55,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "``Bottom row'' of the colored HOMFLY homology",
+   "page": 61,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. Unreduced colored HOMFLY homology",
+   "page": 69,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 75,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 8,
+   "n_chars": 21564,
+   "n_words": 3687
+  },
+  {
+   "id": "sec-001-2-bosonic-and-fermionic-generators",
+   "number": "2",
+   "title": "Bosonic and Fermionic generators",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 35,
+   "n_chars": 65639,
+   "n_words": 12303
+  },
+  {
+   "id": "sec-002-4-examples",
+   "number": "4",
+   "title": "Examples",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 68,
+   "n_chars": 75374,
+   "n_words": 14608
+  },
+  {
+   "id": "sec-003-appendix-a-rectangle-colored-invariants-of-2m-to",
+   "number": null,
+   "title": "Appendix A. Rectangle-colored invariants of (2,m) torus knots",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 75,
+   "n_chars": 14753,
+   "n_words": 2931
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 75,
+   "page_end": 78,
+   "n_chars": 12103,
+   "n_words": 1757
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 5,
+  "chars_total": 189433
+ }
+}

@@ -1778,6 +1778,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.590Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1797,6 +1812,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.625Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1816,6 +1846,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.662Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. em-dash use is ranges/true parentheticals only, not load-bearing."
       }
     ],
     "trap-triples": [
@@ -1835,6 +1880,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 58 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.695Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. no reflex three-item list; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1854,6 +1914,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.729Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1873,6 +1948,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.763Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1892,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.798Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1911,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.830Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1930,6 +2050,22 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.864Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Both content-free intensifiers removed; the remaining claims ('Only central elements survive', 'Colored non-central elements vanish cohomologically') are exact.",
+        "notes": "fix applied (2 edits): 'The Frobenius integral factors flawlessly through the center' -> 'factors through the center'; 'every physical observable cleanly partitions into a sum of discrete Wedderburn residues' -> 'every physical observable partitions into ...'. A map either factors or does not."
       }
     ],
     "trap-nonspeakable": [
@@ -1949,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:31:00.496Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ce99357449a5",
+          "ts": "ad1a01533cf3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:52.899Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement = spectral-sequence collapse), italic statement plus one prose paragraph. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1972,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:52.899Z"
 }

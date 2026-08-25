@@ -1,0 +1,143 @@
+name: lp-dual-gate
+
+# Fails a PR whose content-wired LP/SDP witnesses do not report their duals.
+#
+# WHY THIS EXISTS
+# `computations/lp_dual_witness_validator.py` has existed since 2026-05 and was
+# run by nothing — `scripts/check-sidecars.sh` mentions it as advice, and no
+# workflow invoked it. Its own docstring names the failure mode it is for:
+# "scripts that solve the primal LP but never extract / report the dual,
+# losing the principled binding-energy interpretation."
+#
+# Measured 2026-08-22 (bean qou/augu), it was catching **1 of 6** live cases,
+# for three independent reasons — each a check narrower than its stated
+# purpose, and silent about it:
+#
+#   1. It gated on the WITNESS NAME before consulting the script. A witness had
+#      to contain one of ten literal hints before its sibling was looked at, so
+#      `nucleus-operator-selection-sdp` missed (the hint is
+#      `operator-selection-lp`, and that one ends `-sdp`) and three others
+#      carried no hint substring at all. Whether a script solves an LP is a
+#      property of the SCRIPT.
+#   2. Its walk was NOT RECURSIVE. The Phase 6 subdirectory refactor
+#      (2026-06-02) moved compute scripts into cluster directories and the walk
+#      was never updated: it saw 1410 of 2697 live witnesses, leaving 1287
+#      invisible — 516 `probes/`, 362 `qbeta/`, 169 `deltalambda/`.
+#   3. `--strict-wired` computed `repo_root` one level ABOVE the repo, so it
+#      globbed a `content/` that does not exist, found zero wired witnesses,
+#      and reported "OK — all 0 flagged wired witnesses include LP dual". A
+#      gate passing because it found nothing to check.
+#
+# All three are fixed; the validator now scans 2697, flags 27 and finds 1
+# unreported (`benzene-assembly-spine`, a cardinality knapsack whose duals are
+# genuinely not `y0_star`/`y_star` — a scope question, tracked in qou/augu).
+#
+# WHAT THIS GATES
+# `--strict-wired`, not `--strict`: it fails only for witnesses a content block
+# actually cites via `computation.witness`. 140 witnesses are wired, 3 of them
+# LP/SDP, and all 3 report their duals today — so this is green now and blocks
+# NEW drift. A whole-corpus `--strict` would fail on the one known survivor and
+# block every unrelated PR, the same reason `probe-float64-gate` and
+# `lean-orphan-gate` are scoped rather than absolute.
+#
+# The unscoped run is kept as an informational step that never fails, so the
+# backlog stays visible rather than silently excused.
+#
+# NO FLOAT64 IN CI
+# Two mechanisms, because either alone leaves a hole.
+#
+#   1. The MPFR solver is BUILT here, and `QOU_REQUIRE_CLARABEL=1` makes a
+#      missing binary an ERROR rather than a silent downgrade to scipy f64.
+#      Without this, CI ran every solve at ~16 digits while a developer box
+#      with the binary built ran at ~46 — a residual difference of ~28 orders
+#      (1.07e-10 vs 3.6e-44 on H_3) with nothing in the log to say so.
+#
+#   2. The validator FAILS on any flagged witness whose recorded `backend` is
+#      a float64 solver. That catches an f64 witness produced anywhere and
+#      committed, not only one produced in this job. It is a ratchet: a
+#      witness with no `backend` field is reported and not failed, because
+#      the field is new and blocking on that backlog would block every
+#      unrelated PR. The backlog is being drained rather than tolerated:
+#      26 of 27 flagged witnesses were unannotated when this gate shipped,
+#      11 as of 2026-08-23. Do not quote that number without re-running —
+#      it moves with the corpus.
+#
+#   3. An f64 solve with a MEASURED reason is exempted BY NAME, with the
+#      reason, in `F64_BACKEND_EXEMPT`. Without that list the gate rewards
+#      laundering: a producer that legitimately needs the f64 backend fails,
+#      and the cheapest way to pass is to stop recording `backend` at all,
+#      dropping into the unannotated bucket above. An exemption you must
+#      name and justify beats a blind spot that costs nothing to enter.
+#
+# The cargo build is cached on the lockfile; a cold build is ~3.5 min.
+
+on:
+  # CI auto-triggers disabled (owner directive 2026-06-30: Actions billing).
+  # Runnable on demand, and locally:
+  #   PYTHONPATH=computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate \
+  #     python3 computations/lp_dual_witness_validator.py --strict-wired
+  workflow_dispatch:
+
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    env:
+      # `lp_dual_solver` imports `pyhecke`, which needs its siblings on the
+      # path. Without this the validator dies on import before scanning
+      # anything — which is how it went unrun locally too.
+      PYTHONPATH: computations:tools/pyhecke/python:tools/qou-substrate/python:computations/substrate
+      # A missing MPFR binary must fail, not downgrade. See "NO FLOAT64 IN CI".
+      QOU_REQUIRE_CLARABEL: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install numeric stack
+        run: python3 -m pip install --quiet numpy scipy mpmath
+      - name: MPFR/GMP headers (rug -> gmp-mpfr-sys builds against these)
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq libgmp-dev libmpfr-dev
+      - uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/registry
+            ~/.cargo/git
+            tools/hecke-engine/target
+          key: hecke-mpfr-${{ runner.os }}-${{ hashFiles('tools/hecke-engine/Cargo.lock') }}
+          restore-keys: hecke-mpfr-${{ runner.os }}-
+      - name: Build the MPFR operator-selection LP
+        working-directory: tools/hecke-engine
+        run: |
+          cargo build --release --features clarabel-mpfr \
+            --bin clarabel-operator-selection-lp
+      - name: Confirm CI solves at 50 dps, not float64
+        run: |
+          python3 - <<'EOF'
+          import numpy as np
+          from pyhecke import gram
+          from pyhecke.lp_dual_solver import solve_operator_selection_lp
+          t = np.array(gram.TR_M, dtype=float)
+          G = np.array(gram.gram_matrix(), dtype=float)
+          d = solve_operator_selection_lp(t, G, 1.0).to_dict()
+          print(f"backend={d.get('backend')!r} precision_bits={d.get('precision_bits')}")
+          print(f"primal_obj={d['primal_obj']:.4e}")
+          assert d.get("backend") == "clarabel-mpfr", (
+              f"CI solved with {d.get('backend')!r} — the MPFR binary did not "
+              "take effect, so every witness this job could produce would be f64")
+          assert "y0_star_str" in d, "no full-precision companions in the result"
+          EOF
+      - name: Unit tests — provenance, the rescue, and every backend site
+        # These guard the gate itself. `test_lp_dual_provenance.py` covers the
+        # holes found on 2026-08-23: producers dropping `backend` and the
+        # `*_str` companions at the last step, clarabel's false `infeasible`
+        # on large costs, and `solve_frobenius_dual_lp`'s SUCCESS branch
+        # recording nothing while only its FAILURE branch did — so a
+        # successful f64 solve was invisible to the very check below.
+        run: python3 -m pytest tools/pyhecke/tests -q
+
+      - name: Gate — content-wired LP/SDP witnesses must report their duals
+        run: python3 computations/lp_dual_witness_validator.py --strict-wired
+      - name: Survey (informational, never fails)
+        run: python3 computations/lp_dual_witness_validator.py || true

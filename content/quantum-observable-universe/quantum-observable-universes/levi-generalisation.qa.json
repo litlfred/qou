@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.013Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: remark on def:q-harmonic-form. 'relies on Levi non-degeneracy over strict pseudoconvexity' is substantive mathematical contrast -- weakening the hypothesis IS the block's content (title: 'Generalisation beyond strict pseudoconvexity'), not assertion-by-denial.",
+        "notes": "Pass by the substantive-contrast carve-out."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.099Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.141Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.055Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "The three numbered conditions (Kohn-Rossi finite-dimensionality / Levi non-degeneracy / QOU vanishing) are mathematically distinct hypotheses, each with its own formula; the count is set by the content.",
+        "notes": "Pass by the substantive-enumeration carve-out."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.183Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.227Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.270Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.315Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.356Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1546,22 @@
         "reviewed_at": "2026-08-15T10:30:59.885Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c0c52a0733f5",
+          "ts": "64ab16b1f8d1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:08.400Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 4-line remark; no instance of this construction. Ad(P) in item 3 is a licensed use of the otherwise-deprecated P (gauge structure discussed directly).",
+        "notes": "No trap. Two notes, not fixed: (a) item 1's 'securing analytic control' is one of 24 corpus-wide 'secur*' token substitutions -- see the returned anomaly list; (b) item 2 asserts Levi NON-degeneracy but records q(p) = 1 + |<L,F^+>| >= 1, where non-degeneracy should give the strict q > 1 the substrate convention wants."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1584,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:08.400Z"
 }

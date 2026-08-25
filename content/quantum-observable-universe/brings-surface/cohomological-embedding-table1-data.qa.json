@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.850Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.890Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.929Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.971Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.009Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.050Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.089Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.128Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.167Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a56aa073fbaf",
+          "ts": "d816e62fab45"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:59.205Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (6-row data table, no prose). Every entry recomputed: g(T_{r,s}) = (r-1)(s-1)/2 gives 1,2,3,4,3,4 for (2,3),(2,5),(2,7),(2,9),(3,4),(3,5), matching both the 'Seifert rank' and 'Genus needed' columns; the 'Degree k' column matches the prime-power exponent of s in every row. All correct."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:59.205Z"
 }

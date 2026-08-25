@@ -91,7 +91,11 @@ def hook_lengths(lam):
 
 # ── DEPRECATED 2026-08-08: B_gate / B_vol / E_gate / c_λ ─────────────────────
 #
-# Removed from the dashboard. They have no basis in the derivation chain.
+# Deprecated: they have no basis in the derivation chain. NOTE (2026-08-22):
+# they were NEVER actually removed from the code below — the columns are still
+# computed and printed. Until that cleanup lands they are RETAINED FOR THE RECORD
+# but flagged NON-DERIVED in the legend (see the B_vol / B_gate rows). Do not read
+# them as derived. Red-team: docs/audits/2026-08-22-avol-binding-redteam.md.
 #
 # The chain is
 #     q0 -> categorical action -> Yekutieli non-abelian Stokes -> H_n(q)
@@ -381,6 +385,45 @@ def _bond_type_L():
         return {k: float(-_mp.log(zx + v) - de[k] / 2 * lw) for k, v in d.items()}
 
 
+def _chain_writhe_shift(Z, N, alpha):
+    """Total writhe normalisation carried by the closed-form chain for (Z, N).
+
+    `_bond_type_L` returns writhe-NORMALISED per-bond suppressions
+    `L_XY - (delta_e/2)*ln(1-h)`; `tr_m_atom_zn` returns the UN-normalised trace.
+    This is the difference between them, summed over the chain's bonds, so that
+    the two can be compared on the same footing:
+
+        shift = -alpha * ln(1-h)/2 * [ (Z-1)*de_pp + de_pn + (N-1)*de_nn ]
+
+    with `de_pp = +1`, `de_nn = -1`, and `de_pn = 2t-1 ~ -6.9e-4` for the p-n
+    colour superposition. The pp and nn terms cancel whenever `#pp = #nn`, i.e.
+    on the `N = Z` line; off it the shift is ~0.4909 MeV per unit of `d = N-Z`.
+
+    Returns the SIGNED amount to ADD to the un-normalised exact trace to make it
+    commensurable with the normalised chain (the sign is already carried by
+    `n_de`, so the caller adds it rather than choosing a direction). Sign
+    convention checked against 3H/3He, where it must cancel a residual of
+    -0.491214/+0.490539 exactly; getting it backwards DOUBLES the residual
+    instead of clearing it, which is the diagnostic to watch for.
+
+    Derived, not fitted -- every factor
+    comes from `WritheNormalisation.lean` (`writhe_factor_sq`,
+    `writhe_factor_unique_up_to_sign`), which fixes it up to sign with no freedom.
+    """
+    import mpmath as _mp
+    from q_parameter import Q_50_DIGIT_STR as _Q50
+    from _li_2_q_util import flavor_split_leading
+    with _mp.workdps(max(_mp.mp.dps, 60)):
+        q0x = _mp.mpf(str(_Q50))
+        hx = q0x - 1 / q0x
+        dx = flavor_split_leading(q0x)
+        de_pn = 2 * (_mp.mpf(1) / 2 - dx / 4) - 1
+        n_de = (max(Z - 1, 0) * _mp.mpf(1)
+                + (de_pn if (Z >= 1 and N >= 1) else _mp.mpf(0))
+                + max(N - 1, 0) * _mp.mpf(-1))
+        return float(-_mp.mpf(str(alpha)) * _mp.log(1 - hx) / 2 * n_de)
+
+
 def _nucleon_msym(alpha):
     """Per-nucleon Kashaev mass m_sym(W) = −α·ln tr_M(W) for the free proton and
     neutron (A=1 sub-braids; cheap). The free atom word factorizes
@@ -507,12 +550,14 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
     #   Entanglement is a property of EVERY knot/particle, not one selected partition
     #   (the single-partition E_gate is ⁴He-local and breaks for A≳24). Summing the
     #   per-knot occupancy surprisal over all A nucleon knots gives a_V·A with the
-    #   coefficient DERIVED parameter-free: a_V = E₀·ln(1/W_free), W_free = the free
+    #   coefficient DEPRECATED 2026-08-08 (postdiction near-match, NOT derived — no
+    #   basis in the derivation chain; see banner + avol red-team):
+    #   a_V = E₀·ln(1/W_free), W_free = the free
     #   nucleon's (1,1,1) Plancherel weight. a_V ≈ 7.584 MeV/nucleon ≈ empirical net
     #   B/A. Valid for ALL A (no W_λ≥1 breakdown); tracks ¹²C/¹⁶O to ~1–5%. The
     #   residual (light over-binding, magic dips) is the surface/Coulomb/shell
     #   structure — the open part. Probe: probes/su4_occupancy_binding_probe.py.
-    a_V = alpha * math.log(1.0 / W_lambda_float(q0, (1, 1, 1)))   # parameter-free volume coeff
+    a_V = alpha * math.log(1.0 / W_lambda_float(q0, (1, 1, 1)))   # DEPRECATED postdiction coeff (not derived — see banner)
     B_vol = A * a_V
     # ---- E_C: the EM-sector Coulomb energy (bean 754x). Standard uniform-sphere
     #   E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3); the strong B-forms above carry NO EM
@@ -530,7 +575,23 @@ def _row(name, Z, N, alpha, me, Lbond, nucleon_msym, ame, max_strands):
         ta, tf, _, _ = tr_m_atom_zn(Z, N, dps=50)
         ta, tf = float(ta), float(tf)
         B_sym_exact = alpha * math.log(tf / ta)
-        chain_resid = abs(B_sym - B_sym_exact)
+        # WRITHE-COMMENSURABILITY (fixed 2026-08-15). `_bond_type_L` applies the
+        # Lean-proved writhe normalisation L_XY -> L_XY - (delta_e/2)*ln(1-h)
+        # (owner directive 2026-08-09, QOU/QBeta/WritheNormalisation.lean), and
+        # `tr_m_atom_zn` does NOT. Differencing them directly therefore measures
+        # the writhe factor, not the factorisation: the shift is
+        # alpha*|ln(1-h)|/2 = 0.4908765 MeV per PURE crossing, equal-and-opposite
+        # on pp (delta_e=+1) vs nn (delta_e=-1). It cancels exactly when
+        # #pp = #nn -- i.e. on the N = Z line -- and is +/-0.4909 per unit of the
+        # imbalance d = N-Z otherwise. That is why 2H and 4He agreed to 3.4e-04
+        # while 3H and 3He were off by -/+0.4909: not noise, and not an A-growing
+        # error either. The footnote used to call this "float64 dashboard noise",
+        # which is wrong by ~12 orders of magnitude and made the ONLY
+        # non-circular check on the production chain unable to pass off N = Z.
+        # Add the same normalisation to the trace side so the residual tests the
+        # per-bond factorisation, which is what this check is for.
+        _writhe = _chain_writhe_shift(Z, N, alpha)
+        chain_resid = abs(B_sym - (B_sym_exact + _writhe))
         # entanglement (sibling d5f247b40d/23a0019e7f): bar-involution (q↦q⁻¹)
         # split — bar-even (cosh) = RETAINED binding/volume; bar-odd (sinh) =
         # EMITTED/radiated (Chern–Simons / γγ̄). E_multilink = bar-odd of the
@@ -721,7 +782,7 @@ def _print_legend() -> None:
 | `B_sym` | EXACT log-ratio binding α·ln(tr_free/tr_atom) = α[(Z−1)L_pp + L_pn + (N−1)L_nn] — the archimedean realization, already bond-type (p↔n) resolved (no separate `_fac` needed) |
 | `B_qCLT_fac` | p↔n colour-weighted q-CLT α·(A−1)·⟨bond-type L⟩ (the q-CLT approximation to the colour weighting B_sym does exactly; replaces the uniform `B_qCLT` in the headline — the uniform/isospin-symmetric baseline α·(A−1)·ℓ̄(D) is shown in the Colour-weighting table) |
 | `B_gate` | SU(4) occupancy (entanglement-surprisal) binding E₀·ln(1/W_λ) — the "energy lost to vacuum/entanglement" when the operator-selection SDP collapses the full Hecke q-Plancherel distribution onto the bound cluster's partition λ. Parameter-free (E₀ × Plancherel weight, no fit). DOMINANT at the magic/closed-shell config — fixes ⁴He (err 2.36→0.94, the worst B_sym failure) — but OVER-binds the loosely-bound light nuclei (²H err 0.24); on aggregate worse than B_sym. Cluster surprisal ≈ A·free surprisal ⇒ B_gate ≈ A·E₀·ln(1/W_free) = 7.58 MeV/nucleon, the parameter-free nuclear SATURATION scale (cf. empirical ~8 MeV/A). c_λ = B_AME/E_gate is the shell-filling fraction (the open Δ_λ residual). Probe: `probes/su4_occupancy_binding_probe.py`. |
-| `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon DERIVED parameter-free** (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
+| `B_vol` | ALL-KNOTS entanglement binding = the liquid-drop **volume term** `a_V·A`, with `a_V = E₀·ln(1/W_free)` ≈ **7.584 MeV/nucleon — DEPRECATED 2026-08-08 postdiction near-match, NOT derived** (no basis in the derivation chain; the surprisal form was chosen because it lands near 8 and `W_free` is unnormalised so `ln(1/W)` is not a probability — red-team `docs/audits/2026-08-22-avol-binding-redteam.md`) (W_free = the free nucleon's (1,1,1) Plancherel weight; ≈ empirical net B/A). Entanglement is a property of EVERY knot, not one selected partition — so the per-knot occupancy energy is summed over all A nucleons. Valid for ALL A (no W_λ≥1 breakdown, unlike `B_gate`); tracks ¹²C/¹⁶O to ~1–5% where B_sym misses by 2.1×. Over-binds the lightest (²H, ⁶Li) — the residual is the **surface/Coulomb/shell** structure (the SEMF corrections, open). Probe + audit: `probes/su4_occupancy_binding_probe.py`. |
 | `E_C` | EM-sector **Coulomb energy** `E_C = (3/5)Z(Z−1)·α_EM·ℏc/(r₀·A^1/3)` MeV (standard uniform-sphere; r₀=1.2 fm, α_EM·ℏc=1.43996 MeV·fm — not fit). The strong B-forms carry NO EM term; E_C is the repulsion that REDUCES net binding for proton-rich nuclei. Reported additively, **not** subtracted from the B-columns (they are calibrated against Coulomb-inclusive AME, so a global subtraction would double-count). E_C is cleanly separable only in the mirror-pair DIFFERENCE, where the strong core cancels: CS-core + E_C reproduces the ³H/³He, ⁷Li/⁷Be, ¹³C/¹³N splits to ~20–40% vs the production σ/σ⁻¹ bond's ~200–350% (bean 754x). Module: `coulomb_energy.py`; probe: `probes/coulomb_mirror_killswitch_probe.py`. |
 | `err sym` / `err qCLT_fac` / `err gate` / `err vol` | B_AME / B_model for the production + occupancy + volume forms (1.00 = perfect, >1 under-binds, <1 over-binds) |
 
@@ -977,9 +1038,13 @@ def main(argv=None) -> int:
         mx = max(v[1] for v in val)
         print(f"\n  B_sym closed-form chain ≡ exact p(3A) trace: max|Δ| = "
               f"{mx:.1e} MeV over {{{', '.join(v[0] for v in val)}}} "
-              f"(n=3A ≤ {args.max_strands}; float64 dashboard noise — the chain "
-              f"≡ trace to the 50-dps floor through ¹²C, audit "
-              f"2026-06-16-b-sym-linear-chain-closed-form.md). Chain used for all A.")
+              f"(n=3A ≤ {args.max_strands}; writhe-normalised on BOTH sides — the "
+              f"chain carries the Lean-proved (1−h)^(δe/2) factor and the raw "
+              f"trace does not, so comparing them un-normalised measures that "
+              f"factor (±0.4909 MeV per unit of d = N−Z) rather than the "
+              f"factorisation. Audit 2026-06-16-b-sym-linear-chain-closed-form.md "
+              f"predates both the writhe normalisation and convention D). "
+              f"Chain used for all A.")
 
     # 3b. ENTANGLEMENT  (bar-involution q↦q⁻¹ split of the atom trace, via the
     #     q-parameterised core): bar-even (cosh) = retained binding/volume;

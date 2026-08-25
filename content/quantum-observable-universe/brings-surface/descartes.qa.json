@@ -1441,7 +1441,8 @@
         "reviewed_at": "2026-07-07T14:26:55.055219Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles."
       },
       {
         "result": "pass",
@@ -1507,7 +1508,8 @@
         "reviewed_at": "2026-07-07T14:26:55.055219Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block overclaims the physical/mathematical scope and the level of Lean formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The block overclaims the physical/mathematical scope and the level of Lean formalization."
       },
       {
         "result": "pass",
@@ -1673,7 +1675,8 @@
         "reviewed_at": "2026-07-07T14:26:55.055219Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key categorical or topological terms are defined heuristically rather than rigorously.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Key categorical or topological terms are defined heuristically rather than rigorously."
       },
       {
         "result": "pass",
@@ -1808,7 +1811,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes.lean:40:3: error: unknown tactic",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes.lean:40:3: error: unknown tactic",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/descartes.lean:40:3: error: unknown tactic"
       },
       {
         "result": "pass",

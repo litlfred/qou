@@ -5,8 +5,8 @@
   "tier": "error propagation on committed values (no fit)",
   "q0Anchor": "proton",
   "q0Value": "1.109978582751380807591669",
-  "computedAt": "2026-08-15T12:16:31.181278+00:00",
-  "commitSha": "5e7ef6a043aa9efe1a9eb22c71b944f9d28ee6c2",
+  "computedAt": "2026-08-24T13:34:20.611165+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_c3_measurement_proposal_budget.py",
@@ -57,8 +57,8 @@
     "budget": [
       {
         "target": "zero-location test resolves at mu-p scale",
-        "required_sigma_Qbeta_eV": "0.0237544",
-        "improvement_factor": "25.6794"
+        "required_sigma_Qbeta_eV": "0.0239187",
+        "improvement_factor": "25.503"
       },
       {
         "target": "c_3 ~ -Vol(4_1) at 1 sigma (proton)",
@@ -67,17 +67,17 @@
       },
       {
         "target": "c_3 ~ -Vol(4_1) at 1 sigma (muon)",
-        "required_sigma_Qbeta_eV": "0.00468055",
-        "improvement_factor": "130.326"
+        "required_sigma_Qbeta_eV": "0.00484487",
+        "improvement_factor": "125.906"
       }
     ],
     "per_measurement_requirement": [
       {
         "target": "zero-location test resolves at mu-p scale",
-        "required_sigma_eV": "0.0237544",
-        "factor_direct_Qbeta": "25.6794",
-        "factor_m_n": "20.2068",
-        "factor_m_p": "12.2083",
+        "required_sigma_eV": "0.0239187",
+        "factor_direct_Qbeta": "25.503",
+        "factor_m_n": "20.068",
+        "factor_m_p": "12.1244",
         "massdiff_route_needs_both": true
       },
       {
@@ -90,10 +90,10 @@
       },
       {
         "target": "c_3 ~ -Vol(4_1) at 1 sigma (muon)",
-        "required_sigma_eV": "0.00468055",
-        "factor_direct_Qbeta": "130.326",
-        "factor_m_n": "102.552",
-        "factor_m_p": "61.9585",
+        "required_sigma_eV": "0.00484487",
+        "factor_direct_Qbeta": "125.906",
+        "factor_m_n": "99.074",
+        "factor_m_p": "59.8572",
         "massdiff_route_needs_both": true
       }
     ],

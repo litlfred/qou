@@ -945,6 +945,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not a truncated series.\"; \", not a high-precision prediction.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.464Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'The archimedean realisation is not an arbitrary map — it is the unique evaluation that ...' is the assert-by-denying template, but the uniqueness claim it introduces is the section's actual content and is then spelled out in three conditions. 'What this does not give is experiment-grade agreement with data' and 'not a high-precision prediction' are honest scope statements, the temporal/scope false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -964,6 +979,23 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.517Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "major",
+        "evidence": "The block's opening, before any heading, is a single ~57-word sentence built on the concede-then-reframe template: 'While the existence of the Habiro expansion for quantum invariants with integer coefficients is a standard result in quantum topology, its application here uses the strictly finite nature of this algebraic ladder to eliminate arbitrary truncation choices ..., anchoring the observable spectrum directly to the exact cyclotomic integrality of the trace.' The concession exists only to launch the second clause, which carries the whole significance claim; this is the softened form of the novelty-closer template, moved to the front.",
+        "notes": "proposed (structural, not applied): migrate the sentence to authorNotes per AGENTS.md 4d, or replace with the plain positive statement the block already supports — 'The Habiro expansion of the atomic Markov trace terminates at finite M, so no truncation order has to be chosen.' Note the block's own later scope section makes the honest version of this point already."
       }
     ],
     "trap-em-dash": [
@@ -983,6 +1015,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 288 words)"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.553Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Three spaced dashes in 55 lines; two join independent clauses ('not an arbitrary map — it is the unique evaluation'; 'beyond (m_e, q_0) — the Habiro evaluation ... is determined') and one is a licensed appositive. Below the density this criterion is looking for."
       }
     ],
     "trap-triples": [
@@ -1002,6 +1049,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 288 words)"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.618Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 55 lines). VERIFIED (not traps) — I summed the block's own 9-row proton coefficient table at u_0 = sqrt(q_0) at 30 dps: with (u;u)_m = prod(1-u^k) it gives 24.227084910, and with prod(1-u^{2k}) = (q;q)_m it gives 136.071152703. Both reproduce, to every digit quoted, the two sums in prop:habiro-pochhammer-bridge (24.227 and 136.071, ratio 5.616), so this table is independently corroborated. Its implied u-degree is max_m(deg a_m + m(m+1)/2) = 40. Reported separately: that degree and M = 8 are the proof block's NEUTRON parameters, not its proton ones (deg 48, m_max 9)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1021,6 +1083,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.661Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 55 lines). VERIFIED (not traps) — I summed the block's own 9-row proton coefficient table at u_0 = sqrt(q_0) at 30 dps: with (u;u)_m = prod(1-u^k) it gives 24.227084910, and with prod(1-u^{2k}) = (q;q)_m it gives 136.071152703. Both reproduce, to every digit quoted, the two sums in prop:habiro-pochhammer-bridge (24.227 and 136.071, ratio 5.616), so this table is independently corroborated. Its implied u-degree is max_m(deg a_m + m(m+1)/2) = 40. Reported separately: that degree and M = 8 are the proof block's NEUTRON parameters, not its proton ones (deg 48, m_max 9)."
       }
     ],
     "trap-meta-commentary": [
@@ -1040,6 +1117,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.701Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 55 lines). VERIFIED (not traps) — I summed the block's own 9-row proton coefficient table at u_0 = sqrt(q_0) at 30 dps: with (u;u)_m = prod(1-u^k) it gives 24.227084910, and with prod(1-u^{2k}) = (q;q)_m it gives 136.071152703. Both reproduce, to every digit quoted, the two sums in prop:habiro-pochhammer-bridge (24.227 and 136.071, ratio 5.616), so this table is independently corroborated. Its implied u-degree is max_m(deg a_m + m(m+1)/2) = 40. Reported separately: that degree and M = 8 are the proof block's NEUTRON parameters, not its proton ones (deg 48, m_max 9)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1059,6 +1151,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.754Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 55 lines). VERIFIED (not traps) — I summed the block's own 9-row proton coefficient table at u_0 = sqrt(q_0) at 30 dps: with (u;u)_m = prod(1-u^k) it gives 24.227084910, and with prod(1-u^{2k}) = (q;q)_m it gives 136.071152703. Both reproduce, to every digit quoted, the two sums in prop:habiro-pochhammer-bridge (24.227 and 136.071, ratio 5.616), so this table is independently corroborated. Its implied u-degree is max_m(deg a_m + m(m+1)/2) = 40. Reported separately: that degree and M = 8 are the proof block's NEUTRON parameters, not its proton ones (deg 48, m_max 9)."
       }
     ],
     "trap-performed-warmth": [
@@ -1078,6 +1185,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.814Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 55 lines). VERIFIED (not traps) — I summed the block's own 9-row proton coefficient table at u_0 = sqrt(q_0) at 30 dps: with (u;u)_m = prod(1-u^k) it gives 24.227084910, and with prod(1-u^{2k}) = (q;q)_m it gives 136.071152703. Both reproduce, to every digit quoted, the two sums in prop:habiro-pochhammer-bridge (24.227 and 136.071, ratio 5.616), so this table is independently corroborated. Its implied u-degree is max_m(deg a_m + m(m+1)/2) = 40. Reported separately: that degree and M = 8 are the proof block's NEUTRON parameters, not its proton ones (deg 48, m_max 9)."
       }
     ],
     "trap-superlative": [
@@ -1097,6 +1219,21 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.863Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (remark, 55 lines). VERIFIED (not traps) — I summed the block's own 9-row proton coefficient table at u_0 = sqrt(q_0) at 30 dps: with (u;u)_m = prod(1-u^k) it gives 24.227084910, and with prod(1-u^{2k}) = (q;q)_m it gives 136.071152703. Both reproduce, to every digit quoted, the two sums in prop:habiro-pochhammer-bridge (24.227 and 136.071, ratio 5.616), so this table is independently corroborated. Its implied u-degree is max_m(deg a_m + m(m+1)/2) = 40. Reported separately: that degree and M = 8 are the proof block's NEUTRON parameters, not its proton ones (deg 48, m_max 9)."
       }
     ],
     "trap-nonspeakable": [
@@ -1116,6 +1253,23 @@
         "reviewed_at": "2026-08-15T10:31:00.670Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "efcd95a050ea",
+          "ts": "9d3c8ff17cbc"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:34.900Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "Same opening sentence: three stacked prepositional layers ('the existence of the Habiro expansion for quantum invariants with integer coefficients'), an abstract-noun subject for the main clause ('its application here'), and a dangling participial tail ('anchoring the observable spectrum directly to the exact cyclotomic integrality of the trace') whose subject is not the clause's subject. It parses on the page and stalls aloud.",
+        "notes": "proposed (structural, not applied): same fix as the rhetorical-pivot finding — one rewrite discharges both."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1142,5 +1296,5 @@
     "md": "efcd95a050ea",
     "ts": "9d3c8ff17cbc"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:24:34.900Z"
 }

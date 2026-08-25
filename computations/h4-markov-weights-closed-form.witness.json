@@ -33,7 +33,9 @@
   },
   "compute": "h4_markov_weights_closed_form",
   "cross_check_alpha_k_jones_markov_h4": {
+    "cross_check_passed": true,
     "markov_z": "0.49932033403359827",
+    "max_relative_difference_allowed": "1e-12",
     "note": "The published values are floats from an independent numerical constraint system (status: exploratory). Agreement at this level confirms the closed forms and fixes the partition labelling, which the spectral computation alone does not determine.",
     "published_q0_source": "computations/alpha-k-jones-markov-h4.witness.json:substrate.q_0 (read at run time, not transcribed -- it is a muon-era value stale against both documented pins, quoted here only as the input those published floats were computed at)",
     "sum_w_times_dim": "1.000000000000000000000000",

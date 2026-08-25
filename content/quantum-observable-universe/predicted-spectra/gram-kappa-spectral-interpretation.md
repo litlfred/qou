@@ -1,4 +1,4 @@
-**Numerical check at $q_0 = 1.109978595554181\ldots$ (50 dps).**
+**Numerical check at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps).**
 
 The Hoefsmit pipeline ([Hoefsmit](#conj:hoefsmit-scattering-pipeline)) computes $\chi_\lambda(\beta_s)$ and $\chi_\lambda(\beta_w)$ in seminormal form. At strand count $n = 9$, the hook partitions $(8,1)$ and $(7,1,1)$ and the rectangular partition $(5,4)$ are the dominant blocks. Substituting the Plancherel weights $w_\lambda = \dim_q^2(V_\lambda)/[n]_q!$ and character values yields
 
@@ -23,4 +23,4 @@ The formula evaluates symbolically over $R$ to a $q$-rational expression for $\k
 
 **Sensitivity.**
 
-The logarithmic derivative $\partial \ln \kappa / \partial \ln q$ at $q_0$ measures the shift of Wedderburn block weights with the substrate parameter. The $q$-deformed weights do **not** sum to $1$ away from $q = 1$ ($\sum_\lambda w_\lambda(q) = 0.987$ at $n = 3$, $1.051$ at $n = 8$); the sum is finite because $\lambda$ ranges over the partitions of $n$, not because it is normalised. The sensitivity bounds by $\max_\lambda |c_\lambda^{(s)} c_\lambda^{(w)}| \cdot |\partial \ln(\dim_q V_\lambda)/\partial \ln q|$. This bound is finite and computable.
+The logarithmic derivative $\partial \ln \kappa / \partial \ln q$ at $q_0$ measures the shift of Wedderburn block weights with the substrate parameter. The $q$-deformed weights do **not** sum to $1$ away from $q = 1$ ($\sum_\lambda w_\lambda(q) = 0.987$ at $n = 3$, $1.051$ at $n = 8$); the sum is finite because $\lambda$ ranges over the partitions of $n$, not because it is normalised. The sensitivity is bounded by $\max_\lambda |c_\lambda^{(s)} c_\lambda^{(w)}| \cdot |\partial \ln(\dim_q V_\lambda)/\partial \ln q|$. This bound is finite and computable.

@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.095Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.138Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.181Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.224Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.267Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.311Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1441,23 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.053Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "severity": "major",
+        "evidence": "Full read: remark on def:observation. The block's last two sentences are 'Two observers acting on the same fermion interfere because their rotations in the colour fibre do not commute. The geometric non-commutativity of G = SU_2(R) forces this uncertainty.' The second is the first with subject and predicate swapped -- 'X because Y' followed by 'Y forces X' -- placed block-final, with 'uncertainty' relabelling 'interfere'. The only new token is the identification of the colour fibre group.",
+        "notes": "NOT fixed -- structural. The sentence also carries the block's only naming of G and its only use of the word 'uncertainty' (a block tag), so deleting it is a meaning change I should not make unilaterally. Proposed: fold the group into the causal sentence and drop the restatement -- 'Two observers acting on the same fermion interfere because their rotations in the colour fibre G = SU_2(R) do not commute.' -- or rewrite so the closing sentence does new work (e.g. connect it to prop:observation-energy, which the block already uses)."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1477,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.354Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1512,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.398Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1547,22 @@
         "reviewed_at": "2026-08-15T10:30:59.979Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8ce550c773c1",
+          "ts": "409e1717a0bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.442Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the remark; no instance of this construction. Section 7a convention verified: the eigenvalue labelling Sym^2 <-> q and Lambda^2 <-> -q^{-1} is exactly the Hecke relation (sigma - q)(sigma + q^{-1}) = 0, and the generator is written sigma, not T.",
+        "notes": "No trap under this category. See trap-thesis-restatement on this block, and the returned anomaly list for a notation note (G is written SU_2(R) here, against the corpus's SU_q(2) / SU(2))."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1585,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:02.442Z"
 }

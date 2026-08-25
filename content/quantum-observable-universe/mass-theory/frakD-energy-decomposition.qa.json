@@ -1347,6 +1347,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.711Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "This keeps E_unit inside the three calibrations (the width frakD is the CAL-2 datum), RATHER THAN a fourth calibration - substantive and exactly the three-calibration discipline: the alternative named is a real and forbidden one, and the sentence says which calibration absorbs the unit."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1366,6 +1381,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.464Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of prop:frakD-energy-decomposition (bar-involution split, the frakD reinterpretation section, the open-parity caveat, the light-nuclei split). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1385,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 243 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.500Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of prop:frakD-energy-decomposition (bar-involution split, the frakD reinterpretation section, the open-parity caveat, the light-nuclei split). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1404,6 +1449,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 243 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.533Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of prop:frakD-energy-decomposition (bar-involution split, the frakD reinterpretation section, the open-parity caveat, the light-nuclei split). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1423,6 +1483,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.566Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of prop:frakD-energy-decomposition (bar-involution split, the frakD reinterpretation section, the open-parity caveat, the light-nuclei split). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1442,6 +1517,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.747Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The proposition formalizes the DECOMPOSITION ITSELF, which holds regardless; the parity assignment of the physical E_unit is the open input - this is the load-bearing-disambiguation false positive and is exactly the defined-residual-is-not-a-derived-decomposition discipline stated correctly. Keep verbatim."
       }
     ],
     "trap-thesis-restatement": [
@@ -1461,6 +1551,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.603Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of prop:frakD-energy-decomposition (bar-involution split, the frakD reinterpretation section, the open-parity caveat, the light-nuclei split). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1480,6 +1585,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.640Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of prop:frakD-energy-decomposition (bar-involution split, the frakD reinterpretation section, the open-parity caveat, the light-nuclei split). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1499,6 +1619,23 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.783Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "minor",
+        "evidence": "The split has been computed for EVERY LIGHT NUCLEUS - a maximal quantifier over an unstated range, with only two points then exhibited (deuteron and 6Li). Compounded by the deuteron being called THE LEAST SATURATED, MOST DECAY-LIKE light binding in the same sentence.",
+        "notes": "STRUCTURAL (the fix is to state the range and the witness, not to trim a word). Proposed: The split has been computed for the light nuclei 2H through 6Li, with the emitted/retained ratio rising from 0.96 to 1.00 - and cite the witness. RIGOR: (1) VERIFIED CORRECT - E = (E + sigma E)/2 + (E - sigma E)/2 is the standard char != 2 eigendecomposition of an order-2 involution, the bar-even/bar-odd assignment is right, and the vanishing criterion is immediate. (2) CAL LABELLING IS CORRECT: the width frakD is named as the CAL-2 datum, matching the decay-width ruling (CAL-2 = frakD_beta); this block does NOT commit the recurring Q_beta-as-CAL-3 error. (3) QUESTIONABLE PHYSICS: the deuteron is described as most decay-like ... matching its beta-threshold character. The deuteron is stable - it has no beta decay channel - so beta-threshold character needs support or removal. (4) UNVERIFIABLE HERE: B(2H) = 5g E_unit and the 0.96 -> 1.00 emitted/retained ratios carry no witness reference; g is not defined in the block."
       }
     ],
     "trap-nonspeakable": [
@@ -1518,6 +1655,21 @@
         "reviewed_at": "2026-08-15T10:31:00.398Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0c236b316c1f",
+          "ts": "bebae6295e30"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:59.677Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of prop:frakD-energy-decomposition (bar-involution split, the frakD reinterpretation section, the open-parity caveat, the light-nuclei split). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1541,5 +1693,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:13:59.783Z"
 }

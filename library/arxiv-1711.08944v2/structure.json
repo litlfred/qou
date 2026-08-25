@@ -1,0 +1,86 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1711.08944v2",
+ "source": {
+  "file": "1711.08944v2.pdf",
+  "sha256": "ad7a020e7e92b788c3344cb1910ded6fda534908c9d08c1c44096e796d737234",
+  "bytes": 162253,
+  "pages": 12
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1711.08944",
+   "version": "2",
+   "primary_class": "math.CO",
+   "stamp_date": "12 Dec 2018"
+  },
+  "doi": null,
+  "title": "The second largest eigenvalues of some Cayley graphs on alternating groups ∗",
+  "authors_raw": "Xueyi Huang, Qiongxiang Huang †",
+  "abstract": "Let An denote the alternating group of degree n with n ≥ 3. The al- ternating group graph AGn, extended alternating group graph EAGn and complete alternating group graph CAG n are the Cayley graphs Cay( An, T1), Cay( An, T2) and Cay( An, T3), respectively, where T1 = {(1, 2, i), (1, i, 2) | 3 ≤ i ≤ n}, T2 = {(1, i, j), (1, j, i) | 2 ≤ i < j ≤ n} and T3 = {(i, j, k), (i, k, j) | 1 ≤ i < j < k ≤ n}. In this paper, we determine the second largest eigenvalues of AGn, EAGn and CAG n.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181212223024-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "The second largest eigenvalues of some Cayley",
+   "graphs on alternating groups ∗"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The second largest eigenvalue of AGn",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The second largest eigenvalues of EAGn and CAGn",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 5836,
+   "n_words": 1204
+  },
+  {
+   "id": "sec-001-2-the-second-largest-eigenvalue-of-agn",
+   "number": "2",
+   "title": "The second largest eigenvalue of AGn",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 12,
+   "n_chars": 20220,
+   "n_words": 4950
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 3,
+  "sections": 2,
+  "chars_total": 26056
+ }
+}

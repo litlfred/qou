@@ -1330,7 +1330,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.435Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.474Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.515Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.555Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.595Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.635Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.675Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.716Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.756Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "37ceb9381ab1",
+          "ts": "6767dc670787"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.799Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-atom-diagrams (intro, six-item legend, cross-reference closer). No constructions from the ten categories; the six bullets enumerate six distinct rendering conventions, substantive rather than a reflex list. Closer is a cross-reference to rem:knot-atom-diagrams, the documented false-positive class.",
+        "notes": "NOT A TRAP, reported separately: this block and its sibling sim:knot-periodic-table give three mutually contradictory particle-to-knot assignments. Here protons are 'solid left trefoils T_{2,3}', neutrons are 'unknots K_{0_1}', and Borromean structure is 'present for Z >= 3'; there protons are Borromean baryons B_3(uud), neutrons are B_3(udd), and the unknot 0_1 is the NEUTRINO. Under the sibling's reading every nucleon is already Borromean, so Borromean structure would be present from Z = 1. Also minor: 'left trefoils T_{2,3}' assigns left-handedness to the standard positive T(2,3), and the mirror is written T_{2,3}^{sigma} here but 'mirror 3_1' in the knot-operations appendix."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:16:57.799Z"
 }

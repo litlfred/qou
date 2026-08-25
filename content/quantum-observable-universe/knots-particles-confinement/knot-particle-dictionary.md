@@ -21,6 +21,6 @@ Each quark is an **unknot** ($0_1$) within the Borromean braid $\mathcal{B}_3$. 
 
 See [Table 4](#tbl:knot-particle-dictionary-table4-data).
 
-**Precision data.** All torus knots have zero hyperbolic volume ($\mathrm{Vol} = 0$), so their bare mass vanishes. Mass arises entirely from crossing energy $\mathfrak{E}_{\times}(q) = \tfrac{1}{2}(q - q^{-1})$ at each self-crossing and from Hopf linking. The figure-eight knot ($4_1$) is the unique amphichiral knot driving the mass mechanism, with $\mathrm{Vol}(4_1) = 2.0299$. Jones polynomial values at $q = q_0 = 1.109978595554181\ldots$ (50 dps) are listed for the building-block knots.
+**Precision data.** All torus knots have zero hyperbolic volume ($\mathrm{Vol} = 0$), so their bare mass vanishes. Mass arises entirely from crossing energy $\mathfrak{E}_{\times}(q) = \tfrac{1}{2}(q - q^{-1})$ at each self-crossing and from Hopf linking. The figure-eight knot ($4_1$) is the unique amphichiral knot driving the mass mechanism, with $\mathrm{Vol}(4_1) = 2.0299$. Jones polynomial values at $q = q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) are listed for the building-block knots.
 
 In a bundle initial condition $\mathcal{S}_0$, each entry $(p_i, K_i)$ is one row of this dictionary placed at a specific point on $\mathbb{P}(V)$.

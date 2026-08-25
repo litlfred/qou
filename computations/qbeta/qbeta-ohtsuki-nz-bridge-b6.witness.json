@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-16T00:17:49.491251+00:00",
-  "commitSha": "99e383a2d037dee34e428dc530b9c6abec2b6aee",
+  "computedAt": "2026-08-16T02:32:48.507427+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
   "assertions": [
     {
       "name": "a2_matches_proved",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 817,
+  "durationMs": 815,
   "computation": "qbeta-ohtsuki-nz-bridge-b6",
   "scriptFile": "qbeta_ohtsuki_nz_bridge_b6_probe.py",
-  "scriptHash": "db25cca4f546",
-  "scriptCommitSha": "4bb53f4b9252e05832b775510b21ef8ca811aea5",
+  "scriptHash": "9a4a854ae5bb",
+  "scriptCommitSha": "0ed8abc241495a7467276f97ef5de98e38e6fb5c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,6 +35,7 @@
   },
   "environment": {
     "python": "3.11.15",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0"
   },
@@ -84,5 +85,6 @@
       "text": "2-TERM ODD BRIDGE REFUTED at b6 (scope-(a)): residuals N=1: 0.9114, N=2: 0.9097 — neither within 5%"
     }
   },
+  "q0AnchorReason": "Same free-parameter-u construction as the b4 sibling: proved constants only, no substrate value read. Verified here by its own 4-module import cone rather than inherited from b4 — the expectation that b6 matches b4 was not the evidence for it (bean qou-kx04).",
   "q0Anchor": "independent"
 }

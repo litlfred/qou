@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.474Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.554Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.607Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.661Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.712Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.758Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.806Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.867Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.918Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e8c9d6307d17",
+          "ts": "6c8203037285"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:10.976Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, the 3-calibration table. CHECKED ROW BY ROW against the canonical derivation chain: CAL-1 m_e as the leptonic mass scale at h^0 with proxy m_e, setting the unit and the SCALE of H^1 -- correct; CAL-2 as the neutron beta-decay width D_beta at h^2 with proxy m_mu/m_e and Q_beta = hbar/D_beta, fixing q_0 as the MODULUS -- correct, and importantly it states the 2026-06-26 decay-width canon rather than the superseded 'three measured masses' framing, and correctly presents Q_beta as the CAL-2 proxy rather than as a derived cross-check; CAL-3 as the pion decay width D_pi at h^3 with proxy m_pi fixing the orthogonal meson scale -- correct. The count is 3, matching the three real degrees of freedom of H^1(Bring) = 2W (scale + modulus + one orthogonal class), so there is no CAL-4 leak.",
+        "notes": "Clean -- this is the table other blocks in the chapter should be checked against. No numerics to recompute, no q_0 value printed, no absolute-mass claim."
+      }
     ]
   },
   "source_hashes": {
     "md": "e8c9d6307d17",
     "ts": "6c8203037285"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:10.976Z"
 }

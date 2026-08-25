@@ -1,0 +1,445 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ant-v14-n7-s-p06",
+ "source": {
+  "file": "ant-v14-n7-s-p06.pdf",
+  "sha256": "4881141ef679dd5ab6248c3442f2b263858c24c2940f761ef48eca236cca905f",
+  "bytes": 496659,
+  "pages": 42
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/ant.2020.14.1853",
+  "title": "Moments of quadratic twists of elliptic curve L-functions over function fields",
+  "authors_raw": "Hung M. Bui , Alexandra Florea , Jonathan P. Keating and Edva Roditty-Gershon",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pypdf"
+  },
+  "title_prev": "Moments of quadratic twists of elliptic curve L-functions over function ﬁelds",
+  "title_lines": [
+   "Moments of quadratic twists of",
+   "elliptic curve L-functions over function fields"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and statement of results",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L′(",
+   "page": 5,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Some useful lemmas",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Main proposition",
+   "page": 11,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "A and h= N′′",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "B, with N′",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A)λ2(N′′",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "B)|≪ε qεg,",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Upper bounds for moments",
+   "page": 21,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "V(u,v, m)",
+   "page": 21,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Taking real parts",
+   "page": 22,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.1",
+   "page": 29,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.2",
+   "page": 33,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.3",
+   "page": 33,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.4",
+   "page": 34,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.5",
+   "page": 36,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "M1,E1(X)L′(",
+   "page": 36,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 1.6",
+   "page": 37,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "M2,E1(X,[n1/2])L′(",
+   "page": 37,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "L′(",
+   "page": 37,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Corollary 1.7",
+   "page": 39,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "L(E1⊗χD,1/2)L′(E2⊗χD,1/2)⁄=0",
+   "page": 39,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 39,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 40,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-statement-of-results",
+   "number": "1",
+   "title": "Introduction and statement of results",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7758,
+   "n_words": 1298
+  },
+  {
+   "id": "sec-001-2-l",
+   "number": "2",
+   "title": "L′(",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 5873,
+   "n_words": 1044
+  },
+  {
+   "id": "sec-002-2-some-useful-lemmas",
+   "number": "2",
+   "title": "Some useful lemmas",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 6645,
+   "n_words": 1250
+  },
+  {
+   "id": "sec-003-3-main-proposition",
+   "number": "3",
+   "title": "Main proposition",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 14,
+   "n_chars": 5943,
+   "n_words": 1149
+  },
+  {
+   "id": "sec-004-2-a-and-h-n",
+   "number": "2",
+   "title": "A and h= N′′",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-2-b-with-n",
+   "number": "2",
+   "title": "B, with N′",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 222,
+   "n_words": 40
+  },
+  {
+   "id": "sec-006-2-aλ2n",
+   "number": "2",
+   "title": "A)λ2(N′′",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-007-2-bε-qεg",
+   "number": "2",
+   "title": "B)|≪ε qεg,",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 20,
+   "n_chars": 9240,
+   "n_words": 1766
+  },
+  {
+   "id": "sec-008-4-upper-bounds-for-moments",
+   "number": "4",
+   "title": "Upper bounds for moments",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 746,
+   "n_words": 130
+  },
+  {
+   "id": "sec-009-2-vuv-m",
+   "number": "2",
+   "title": "V(u,v, m)",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 1043,
+   "n_words": 212
+  },
+  {
+   "id": "sec-010-2-taking-real-parts",
+   "number": "2",
+   "title": "Taking real parts",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 29,
+   "n_chars": 10690,
+   "n_words": 2213
+  },
+  {
+   "id": "sec-011-5-proof-of-theorem-11",
+   "number": "5",
+   "title": "Proof of Theorem 1.1",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 33,
+   "n_chars": 4380,
+   "n_words": 871
+  },
+  {
+   "id": "sec-012-6-proof-of-theorem-12",
+   "number": "6",
+   "title": "Proof of Theorem 1.2",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 823,
+   "n_words": 146
+  },
+  {
+   "id": "sec-013-7-proof-of-theorem-13",
+   "number": "7",
+   "title": "Proof of Theorem 1.3",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 1256,
+   "n_words": 220
+  },
+  {
+   "id": "sec-014-8-proof-of-theorem-14",
+   "number": "8",
+   "title": "Proof of Theorem 1.4",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 1761,
+   "n_words": 278
+  },
+  {
+   "id": "sec-015-9-proof-of-theorem-15",
+   "number": "9",
+   "title": "Proof of Theorem 1.5",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 51,
+   "n_words": 13
+  },
+  {
+   "id": "sec-016-1-l",
+   "number": "1",
+   "title": "L′(",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 36,
+   "n_chars": 16,
+   "n_words": 5
+  },
+  {
+   "id": "sec-017-2-m1e1xl",
+   "number": "2",
+   "title": "M1,E1(X)L′(",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 1889,
+   "n_words": 295
+  },
+  {
+   "id": "sec-018-10-proof-of-theorem-16",
+   "number": "10",
+   "title": "Proof of Theorem 1.6",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 112,
+   "n_words": 28
+  },
+  {
+   "id": "sec-019-2-m2e1xn12l",
+   "number": "2",
+   "title": "M2,E1(X,[n1/2])L′(",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 39,
+   "n_chars": 2345,
+   "n_words": 373
+  },
+  {
+   "id": "sec-020-11-proof-of-corollary-17",
+   "number": "11",
+   "title": "Proof of Corollary 1.7",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 839,
+   "n_words": 163
+  },
+  {
+   "id": "sec-021-2-le1χd12le2χd120",
+   "number": "2",
+   "title": "L(E1⊗χD,1/2)L′(E2⊗χD,1/2)⁄=0",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 280,
+   "n_words": 65
+  },
+  {
+   "id": "sec-022-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 547,
+   "n_words": 85
+  },
+  {
+   "id": "sec-023-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 6508,
+   "n_words": 1020
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 1,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 24,
+  "chars_total": 68967
+ }
+}

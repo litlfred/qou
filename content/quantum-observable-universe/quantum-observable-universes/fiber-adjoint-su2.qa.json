@@ -1264,6 +1264,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.183Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1283,6 +1299,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.222Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-em-dash": [
@@ -1302,6 +1334,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.261Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-triples": [
@@ -1321,6 +1369,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.301Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1340,6 +1404,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.340Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-meta-commentary": [
@@ -1359,6 +1439,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.381Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1378,6 +1474,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.418Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-performed-warmth": [
@@ -1397,6 +1509,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.458Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-superlative": [
@@ -1416,6 +1544,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.497Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "trap-nonspeakable": [
@@ -1435,6 +1579,22 @@
         "reviewed_at": "2026-08-15T10:31:00.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a6ebee74cb77",
+          "ts": "2723956be3df"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:02:43.538Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the SU(2) example. Recomputed: v v-dagger / ||v||^2 is a rank-1 Hermitian projector of trace 1, so subtracting id_V/2 gives a traceless matrix; with v = e_1 the image is diag(1/2, -1/2), and under the standard identification su(2) = R^3 by (n . Pauli)/2 -> n the image sphere is indeed the unit S^2, so 'unit 2-sphere' checks out. The Schur argument at the end is correct: a G-fixed point of the adjoint representation commutes with all of SU(2), hence is scalar, hence zero once traceless. 'but the only traceless scalar is zero' is substantive mathematical contrast, not a trap; no other construction present.",
+        "notes": "MATH FLAG (not a trap): the block mixes the Hermitian and anti-Hermitian conventions for su(2) by a factor of i. sigma([l]) = v v-dagger/||v||^2 - id_V/2 is traceless HERMITIAN, while the orbit representative named two lines later, (1/2) diag(i, -i), is traceless ANTI-Hermitian (genuinely in su(2)). Both readings are common, but not in one paragraph. PROPOSED: either state the identification used ('we identify su(2) with the traceless Hermitian matrices via X -> iX') or write the orbit representative as (1/2) diag(1, -1)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1458,5 +1618,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:02:43.538Z"
 }

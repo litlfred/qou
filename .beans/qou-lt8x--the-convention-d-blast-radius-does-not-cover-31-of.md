@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-11T01:13:43Z
-updated_at: 2026-08-11T01:14:12Z
+updated_at: 2026-08-16T13:48:41Z
 ---
 
 
@@ -265,3 +265,91 @@ smaller scale.
 **Coordinate before editing.** PR #4928's merge message states both sides had
 already run convention-C campaigns in parallel and converged on the same three
 defects. Check for an in-flight sibling on these five before starting.
+
+---
+
+## A fourth class the complement also does not cover: library-level convention change (2026-08-16, qou-47sx)
+
+Branch `claude/conv-d-atom-callers-sweep-wt`. This bean records that the
+read-set queue (blast radius) misses producers that are C on their own. Fixing
+`pyhecke/atom.py::z_mark` (qou-jm5i, b846d3767) exposes a class that **neither**
+this bean's complement **nor** the blast radius covers: a producer whose numbers
+move because a *library function it calls* changed convention. It reads no moved
+witness, and its own witness carries no √q fingerprint, so it satisfies neither
+predicate.
+
+Measured against the 12 witness-owning callers of `atom_per_generator_volumes`
+(AST taint, not grep — see qou-47sx for why the circulating "31" is wrong; the
+true live figure is 20 modules, 15 producers, 12 with witnesses):
+
+| | |
+|---|---|
+| in `.work/convention-d-blast-radius.json` | **2 / 12** |
+| in `.work/convention-c-complement.json` | **0 / 12** |
+| **in neither** | **10 / 12** |
+
+So the union proposed in "To close" item 3 — (reads a moved witness) ∪ (fails a
+content test) — is still not enough. It needs a third term: **(calls a function
+whose convention moved)**, which is a source-graph property, not a witness
+property. `scripts/convention-c-taint.py` already computes the witness-graph
+fixpoint; the source-graph analogue does not exist yet.
+
+### Regenerated (4 of 12), convention delta isolated by A/B
+
+Each producer was run twice in one environment — `atom.py` at origin/main (C) and
+at HEAD (D) — because a plain diff against the committed witness also picks up
+python 3.13.12→3.11.15, mpmath 1.3.0→1.4.1 and a CODATA `m_p` update.
+
+| witness | s | fields moved | headline C → D |
+|---|---|---|---|
+| `entanglement-orders` | 19.3 | 46 | `particles[4].orders.5.contribution` 186.403 → **3641.807** |
+| `rho-k-graded-atomic-mass` | 0.8 | 55 | `table[2].err_pct` 0.04572 % → **0.17374 %** |
+| `per-atom-hyperbolic-volume` | 10.4 | 7 | `Vol_p` **sign flip** −0.0404102 → **+0.0226378** |
+| `multi-level-jet-sum` | 0.5 | 4 | `results[0].B_pred_MeV` −0.0236284 → **−0.0563776** |
+
+### Ordered queue — what remains, with measured cost
+
+**1. `catalan-binding.witness.json` — BLOCKED on a raw-float64 conflict.** 0.5 s to
+run; convention delta is the largest measured anywhere (**73 fields**;
+`formula_2_tower_per_block[2].err_pct` 4.4298 % → 16.8864 %). Regenerating moves the
+ratchet **35 → 47** on this file: 12 new raw-f64 `B_AME` fields the producer gained
+after the witness was written. Not baselineable, and not shadow-fixable —
+`_is_full_precision_shadow` demands a companion with **more than f64 digits** and
+`B_AME` are experimental AME values with ~7. Needs `B_AME` sourced from the AME
+registry as mpf first. Cheapest real win once unblocked.
+
+**2. `brane-tower-isospin-diagnosis.witness.json` (+2 duplicate copies under
+`qou-mass/`) — BLOCKED, producer is broken.** Fails in 0.3 s at
+`brane_tower_isospin_diagnosis.py:179`, `TypeError: unhashable type: 'dict'`
+(`phi_vals = [float(Phi_q(v)) for v in vols]` — `atom_per_generator_volumes`
+returns dicts). **Verified pre-existing**: fails identically with `atom.py` reverted
+to convention C, so it is not fallout from b846d3767. Cheap to fix, cheap to run.
+
+**3–5. The three expensive producers** — costs measured under `timeout 900`, see
+qou-47sx for the final numbers. `pyhecke_h3_vs_h3a_impact_comparison.py`,
+`sweeps/paper_six_term_isotope_sweep.py`, `probes/adjacent_vs_full_probe.py`
+(4 witnesses) all exceed 200 s. `paper_six_term_isotope_sweep` is one of only two
+callers the blast radius already knew about.
+
+**6. `mass-table-comprehensive.witness.json` — DO NOT TOUCH.** Owner decision
+pending on qou-53p1.
+
+**Not queued (measured invariant, do not re-run):** `li2q-fbor-expansion-probe`
+and `r5-full-canonical-knot-solver` call the function but produce **identical**
+output under C and D. See qou-47sx for the two refutations in full — in
+particular `li2q`'s regeneration flips `allPassed` true→false for a reason that is
+**entirely** CODATA `m_p` drift (1.3536 ppb predicted, 1.3503 ppb observed) and
+nothing to do with convention.
+
+Gates after the four regenerations: `bash scripts/precision-gates.sh` RED on the
+raw-float64 ratchet with exactly one regressed entry,
+`rho-k-co-casimir-extended` 3 → 4 — the known pre-existing qou-mnrd failure, not
+mine. Zero NEW dirty witnesses attributable to this work.
+
+
+**Costs measured (2026-08-16, qou-47sx):** the three expensive callers all
+**timeout at 900.1 s** — `pyhecke_h3_vs_h3a_impact_comparison.py`,
+`sweeps/paper_six_term_isotope_sweep.py`, `probes/adjacent_vs_full_probe.py` (4
+witnesses). Each needs 2× that for an isolated C-vs-D delta. All restored cleanly.
+Regenerating `multi-level-jet-sum` also drained a STALE q0 anchor
+(`q0-value-drift-audit`: STALE 314→313, proton-pin 801→802).

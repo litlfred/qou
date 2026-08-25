@@ -1580,6 +1580,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.577Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1599,6 +1614,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.620Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -1618,6 +1648,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 195 words)"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.664Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -1637,6 +1682,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 195 words)"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.706Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "No reflex triples; the paragraphs follow the sub-section's block order."
       }
     ],
     "trap-closing-aphorism": [
@@ -1656,6 +1716,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.747Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Ends on the classical limit, the last block of the sub-section."
       }
     ],
     "trap-meta-commentary": [
@@ -1675,6 +1750,22 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.790Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "\"The Feynman block provides the core correspondence\" uses \"block\" in the content-object sense inside scholarly prose - the build vocabulary leaking into the page. Recorded pass on the trap axis and flagged for one-voice."
       }
     ],
     "trap-thesis-restatement": [
@@ -1694,6 +1785,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.832Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "Each paragraph covers different blocks."
       }
     ],
     "trap-performed-warmth": [
@@ -1713,6 +1819,21 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.873Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -1732,6 +1853,22 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.918Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "\"this local structure uniquely sources all operator content\" is a maximum-strength claim, but it is the content of the proposition the section introduces (every vertex operator factors through the exceptional divisor), and the block is a roadmap pointing at it. \"uniquely sources\" is an odd verb for \"is the unique source of\"."
       }
     ],
     "trap-nonspeakable": [
@@ -1751,6 +1888,23 @@
         "reviewed_at": "2026-08-15T10:31:00.715Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "566644526a8f",
+          "ts": "3705dbc65bea"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:30:27.961Z",
+        "reviewed_sha": "e8e0f7afb04ef6a42439ea72fdbde5a8407ba33e",
+        "severity": "minor",
+        "evidence": "Block titles are used as bare noun subjects throughout the second and third paragraphs, so each sentence's head noun arrives only at the end of a long adjunct chain: \"The structural pivot asserts that ...\", \"The literature alignment ties this picture to ...\", \"The product factorization theorem splits ...\", \"The transition-operator proposition interprets ...\", \"The trace-collapse lemma identifies ...\". Eight sentences in a row share the same subject-verb-object shape and the same length, which is the flattened cadence rather than the syntax, but the title-as-subject construction is what makes them stall aloud.",
+        "notes": "Structural (two whole paragraphs of cross-references). Proposed: link the titles rather than inlining them as subjects - \"The proposition on vertex-operator factorisation asserts ...\", \"The lemma on trace collapse identifies ...\" - which puts the head noun first and breaks the cadence."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1773,5 +1927,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:30:27.961Z"
 }

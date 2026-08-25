@@ -2027,6 +2027,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.392Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2046,6 +2062,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.429Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-em-dash": [
@@ -2065,6 +2097,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.466Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-triples": [
@@ -2084,6 +2132,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 37 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.504Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-closing-aphorism": [
@@ -2103,6 +2167,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.543Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-meta-commentary": [
@@ -2122,6 +2202,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.585Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-thesis-restatement": [
@@ -2141,6 +2237,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.629Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-performed-warmth": [
@@ -2160,6 +2272,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.669Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-superlative": [
@@ -2179,6 +2307,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.709Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "trap-nonspeakable": [
@@ -2198,6 +2342,22 @@
         "reviewed_at": "2026-08-15T10:30:59.865Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e491fccbf126",
+          "ts": "184771f36b4d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:11:41.746Z",
+        "reviewed_sha": "7e0f3d9ecdd199376a0171deefa8e0c2173b0072",
+        "evidence": "Full read of the proposition. Recomputed both limits from hbar_q = 1 - q^{-1}: as q -> 1, hbar_q -> 0 so the commutator -> 0; as q -> infinity, q^{-1} -> 0 so hbar_q -> 1 and the commutator -> J. Both stated limits are correct. Two numbered items, not a triple; no negation-contrast, pivot, dash, aphorism, meta-commentary, restatement, warmth, superlative, or non-speakable chain.",
+        "notes": "Separate flag (not a trap): BARE J again ('[X,P]_q = J hbar_q(p)'). notation-collisions.md states 'We never write bare J' - J is reserved for the Jones polynomial J_K(q) and the Bessel families, always with an argument. Same defect as rem:generating-functions-solve-reeb-flow in this chapter, so it is a chapter-level notation issue rather than a one-off. Also: hbar_q is written with a point argument, hbar_q(p), while def:quantum-planck-constant gives hbar_q = 1 - q^{-1} as a function of q alone; if the local-q programme is intended, say q(p)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2221,5 +2381,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:11:41.746Z"
 }

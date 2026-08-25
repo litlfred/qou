@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:18:55.640266+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:44:40.480385+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "syt_evacuation_involution_corroborating_check",
@@ -70,7 +70,7 @@
   "computation": "crystal-keystone-selector",
   "scriptFile": "crystal_keystone_selector.py",
   "scriptHash": "eabef2cff984",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -80,13 +80,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Crystal (Kashiwara / Option-E) selector test of the keystone (2,1)-multiplicity SECTION: does the Kashiwara / lower-global canonical basis SELECT a distinguished line in V = Hom_{S3}((2,1), Res^{A5}_{S3}(H)) ~= C^2 (equivalently the (2,1)-mult space in Res^{H5}_{H3}, GT/OV basis = the (2,0)/(0,2) symmetric pair #1687), or does it -- like spin #1687 and geometry #1699 -- only SEPARATE (give a canonical basis) without SELECTING a line? THE TEST: does the BAR INVOLUTION (Schuetzenberger evacuation / q->q^{-1} content reversal) FIX each copy (distinguished -> SELECTS) or SWAP the two copies (bar-conjugate -> SEPARATES)? Reuses validated crystal_basis.py Kashiwara primitives + a self-contained SYT-evacuation (validated as an involution) + #1687's SYT chains. h^4=-3/4 is a FALSIFICATION reference, NOT a target; NO crystal convention chosen to produce it. engine=python+mpmath; exact SYT combinatorics + RAW q-contents @ compute_dps.",
   "auditOnly": "docs/audits/2026-06-02-crystal-keystone-selector.md",
   "parameters": {
-    "q0_falsification_ref": "1.10997859555733471989976322048322502665620840878015405145269053872699",
+    "q0_falsification_ref": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "q0_source": "q_parameter.Q_MP (proton-pinned)",
     "dps": 70,
     "h4_borromean_falsification_ref": "-3/4"
@@ -116,7 +118,7 @@
               2,
               0
             ],
-            "q_content_c4_RAW": "2.0108968691190757608176638045",
+            "q_content_c4_RAW": "2.01089686670712229975249197809",
             "q_content_c5_RAW": "0.0",
             "syt_rows": [
               [
@@ -137,7 +139,7 @@
               2
             ],
             "q_content_c4_RAW": "0.0",
-            "q_content_c5_RAW": "2.0108968691190757608176638045",
+            "q_content_c5_RAW": "2.01089686670712229975249197809",
             "syt_rows": [
               [
                 1,
@@ -161,8 +163,8 @@
               2,
               -2
             ],
-            "q_content_c4_RAW": "2.0108968691190757608176638045",
-            "q_content_c5_RAW": "-2.0108968691190757608176638045",
+            "q_content_c4_RAW": "2.01089686670712229975249197809",
+            "q_content_c5_RAW": "-2.01089686670712229975249197809",
             "syt_rows": [
               [
                 1,
@@ -183,8 +185,8 @@
               -2,
               2
             ],
-            "q_content_c4_RAW": "-2.0108968691190757608176638045",
-            "q_content_c5_RAW": "2.0108968691190757608176638045",
+            "q_content_c4_RAW": "-2.01089686670712229975249197809",
+            "q_content_c5_RAW": "2.01089686670712229975249197809",
             "syt_rows": [
               [
                 1,
@@ -211,7 +213,7 @@
               -2
             ],
             "q_content_c4_RAW": "0.0",
-            "q_content_c5_RAW": "-2.0108968691190757608176638045",
+            "q_content_c5_RAW": "-2.01089686670712229975249197809",
             "syt_rows": [
               [
                 1,
@@ -232,7 +234,7 @@
               -2,
               0
             ],
-            "q_content_c4_RAW": "-2.0108968691190757608176638045",
+            "q_content_c4_RAW": "-2.01089686670712229975249197809",
             "q_content_c5_RAW": "0.0",
             "syt_rows": [
               [
@@ -412,6 +414,6 @@
   "caveats": [
     "EXPLORATORY / audit-only, HIGHEST re-pitch risk probe. The crystal / canonical basis is a rigorous canonical basis -- the Kashiwara f_i/e_i (crystal_basis.py, validated vs the Weyl dimension formula) are NOT fits. METHOD NOTE (a first-pass error was corrected -- see the audit doc): the LOAD-BEARING selection test acts on the (2,1)-MULTIPLICITY SPACE V_lam, NOT the full S^{lam5}. The Lusztig bar (q->q^{-1}, JM content c->-c) maps V_lam to V_{lam^T} (verified RAW: negate(contents)==contents of transpose), so it is an endomorphism of V_lam only when lam is self-conjugate; the only self-conjugate m=2 case (3,1,1) has its bar SWAP the two copies with no bar-fixed OV vector. This content/transpose computation is EXACT and convention-free; the SYT Schuetzenberger evacuation is validated as an involution only as a corroborating sanity check. h^4 = -3/4 is the Borromean (2,1)-BLOCK invariant used ONLY as a falsification reference; NO crystal convention / orientation / Demazure window is chosen to reproduce it (that would be the §7b / 2026-05-30 re-pitch trap). The lambda_scale mass-formula and Bloch-Wigner / dilog-on-trefoil re-pitches (2026-05-30 KLR-dialog assessment) are NOT re-derived. Changes no production value; emits no LP/SDP solve (no dual required)."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

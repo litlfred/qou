@@ -1,0 +1,142 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1911.04486v4",
+ "source": {
+  "file": "1911.04486v4.pdf",
+  "sha256": "53a34938c0e63bad6df81120d02fdf2e66716b71c608f25c3ddf8ce0419db5ba",
+  "bytes": 363775,
+  "pages": 26
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1911.04486",
+   "version": "4",
+   "primary_class": "physics.class-ph",
+   "stamp_date": "14 Apr 2020"
+  },
+  "doi": null,
+  "title": "Knots and the Maxwell Equations",
+  "authors_raw": "Seropédica - Rio de Janeiro, Brazil",
+  "abstract": "In this chapter, we review the Ra˜ nada ﬁeld line solutions of Maxwell’s equations in the vacuum, which describe a topologically non-trivial electro- magnetic ﬁeld, as well as their relation with the knot theory. Also, we present a generalization of these solutions to the non-linear electrodynamics recently published in the literature.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20200415001313Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.17",
+   "Title": ""
+  },
+  "title_lines": [
+   "Knots and the Maxwell Equations",
+   "Ion V. Vancea",
+   "Grupo de F´ ısica Teórica e Matemática F´ ısica",
+   "Departamento de F´ ısica",
+   "Universidade Federal Rural do Rio de Janeiro"
+  ],
+  "title_prev": "Knots and the Maxwell Equations Ion V. Vancea Grupo de F´ ısica Teórica e Matemática F´ ısica Departamento de F´ ısica Universidade Federal Rural do Rio de Janeiro"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Maxwell's equations",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Maxwell's equations in the three-dimensional formulation",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Maxwell equations in covariant formulation",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 1,
+   "title": "Knots in Maxwell's electrodynamics",
+   "page": 9,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Ranãda solutions",
+   "page": 10,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Electromagnetic knot fields",
+   "page": 12,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Electric and magnetic knots in Bateman parametrization",
+   "page": 16,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Knots in nonlinear electrodynamics",
+   "page": 19,
+   "source": "outline",
+   "number": "5"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 7,
+   "n_chars": 10457,
+   "n_words": 1763
+  },
+  {
+   "id": "sec-001-22-maxwell-equations-in-covariant-formulation",
+   "number": "2.2",
+   "title": "Maxwell equations in covariant formulation",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 19,
+   "n_chars": 21266,
+   "n_words": 3728
+  },
+  {
+   "id": "sec-002-5-knots-in-nonlinear-electrodynamics",
+   "number": "5",
+   "title": "Knots in nonlinear electrodynamics",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 26,
+   "n_chars": 11834,
+   "n_words": 2029
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 3,
+  "chars_total": 43557
+ }
+}

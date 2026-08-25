@@ -1096,7 +1096,8 @@
         "reviewed_at": "2026-07-07T14:26:56.543280Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1271,7 +1272,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/color-superconductivity-borromean.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 — content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
+        "evidence": "content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:1 \u2014 content/quantum-observable-universe/observations/color-superconductivity-borromean.lean:18:42: error: Function expected at"
+      },
+      {
+        "field_hash": {
+          "md": "1143d1e7af7c",
+          "ts": "fb9cbebfb22c",
+          "lean": "286799263f71"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'color-superconductivity-borromean.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1294,7 +1310,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Color superconductivity as Borromean-to-Hopf topological reconfiguration' remain unproven and are represented as sorry stubs in the formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       }
     ],
     "bib-cite-resolves": [
@@ -1550,7 +1567,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

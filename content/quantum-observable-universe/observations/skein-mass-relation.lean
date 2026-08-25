@@ -70,7 +70,7 @@ structure LeptonMassRatio where
   /-- Volume is positive. -/
   vol_pos : 0 < vol_figure_eight
   /-- CODATA muon-electron mass ratio. -/
-  codata_ratio : ℝ := 206.7682830
+  codata_ratio : ℝ := 206.7682827
   /-- The quantum Planck constant. -/
   hbar_q : ℝ := 1 - q⁻¹
   /-- The theoretical prediction: `m_μ/m_e = Vol(4₁)/ℏ_q²`. -/

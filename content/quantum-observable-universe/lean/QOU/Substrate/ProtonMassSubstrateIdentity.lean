@@ -10,7 +10,7 @@ This module encodes the identity:
 
 ## Numerical verification
 This file verifies the concrete empirical residual of the formula
-against CODATA 2018 values, showing the match is within 0.25 ppm.
+against CODATA 2022 values, showing the match is within 0.25 ppm.
 
 See: `content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.md`
 -/
@@ -22,14 +22,14 @@ namespace QOU.Substrate.ProtonMassSubstrateIdentity
     awaits the full categorical derivation. -/
 opaque F_Bor (q : ℝ) : ℝ
 
-/-- The CODATA 2018 electron mass in MeV. -/
+/-- The CODATA 2022 electron mass in MeV. -/
 def m_e_codata : ℝ := 0.51099895069
 
-/-- The CODATA 2018 muon mass in MeV. -/
+/-- The CODATA 2022 muon mass in MeV. -/
 def m_mu_codata : ℝ := 105.6583755
 
-/-- The CODATA 2018 proton mass in MeV. -/
-def m_p_codata : ℝ := 938.27208816
+/-- The CODATA 2022 proton mass in MeV. -/
+def m_p_codata : ℝ := 938.27208943
 
 /-- The predicted proton mass from the canonical identity. -/
 def m_p_predicted (q_0 : ℝ) : ℝ :=

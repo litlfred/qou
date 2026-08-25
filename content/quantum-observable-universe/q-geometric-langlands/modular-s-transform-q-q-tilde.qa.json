@@ -1179,7 +1179,8 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs."
+        "notes": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs.",
+        "evidence": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
@@ -1283,7 +1284,8 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1457,7 +1459,8 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification."
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1493,7 +1496,8 @@
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -1741,7 +1745,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -1864,6 +1869,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not the Hecke-element level.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.938Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'The substrate enters this picture through its bar image q_0^{-1}, not through q_0' and 'The modular tau here is **not** the period tau of the Descartes/color curve' are substantive mathematical disambiguations - the distinction IS the content, and the second prevents a real symbol collision."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1883,6 +1904,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:41.978Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 5 sections + Open R&D + cross-refs + Archimedean banner); all ten judged. tau_0 and -1/tau_0 recomputed: log(1/q_0)/(2*pi*i) = 0.016606341i and -1/tau_0 = 60.21796i, matching the block's +0.0166i and +60.2i under BOTH the proton and muon pins (they agree to 8 digits). 1/q_0 = 0.90091828 matches '0.901'. The ~312x nome mismatch reproduces as 310.7 from the quoted 0.90/0.0029."
       }
     ],
     "trap-em-dash": [
@@ -1902,6 +1939,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 628 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.018Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 5 sections + Open R&D + cross-refs + Archimedean banner); all ten judged. tau_0 and -1/tau_0 recomputed: log(1/q_0)/(2*pi*i) = 0.016606341i and -1/tau_0 = 60.21796i, matching the block's +0.0166i and +60.2i under BOTH the proton and muon pins (they agree to 8 digits). 1/q_0 = 0.90091828 matches '0.901'. The ~312x nome mismatch reproduces as 310.7 from the quoted 0.90/0.0029."
       }
     ],
     "trap-triples": [
@@ -1921,6 +1974,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 628 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.059Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 5 sections + Open R&D + cross-refs + Archimedean banner); all ten judged. tau_0 and -1/tau_0 recomputed: log(1/q_0)/(2*pi*i) = 0.016606341i and -1/tau_0 = 60.21796i, matching the block's +0.0166i and +60.2i under BOTH the proton and muon pins (they agree to 8 digits). 1/q_0 = 0.90091828 matches '0.901'. The ~312x nome mismatch reproduces as 310.7 from the quoted 0.90/0.0029."
       }
     ],
     "trap-closing-aphorism": [
@@ -1940,6 +2009,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.100Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Terminal line is the 'Archimedean specialisation' banner, which appears in 132 files and is a template, not damage (withdrawn as a finding earlier in this campaign)."
       }
     ],
     "trap-meta-commentary": [
@@ -1959,6 +2044,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.144Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 5 sections + Open R&D + cross-refs + Archimedean banner); all ten judged. tau_0 and -1/tau_0 recomputed: log(1/q_0)/(2*pi*i) = 0.016606341i and -1/tau_0 = 60.21796i, matching the block's +0.0166i and +60.2i under BOTH the proton and muon pins (they agree to 8 digits). 1/q_0 = 0.90091828 matches '0.901'. The ~312x nome mismatch reproduces as 310.7 from the quoted 0.90/0.0029."
       }
     ],
     "trap-thesis-restatement": [
@@ -1978,6 +2079,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.186Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 5 sections + Open R&D + cross-refs + Archimedean banner); all ten judged. tau_0 and -1/tau_0 recomputed: log(1/q_0)/(2*pi*i) = 0.016606341i and -1/tau_0 = 60.21796i, matching the block's +0.0166i and +60.2i under BOTH the proton and muon pins (they agree to 8 digits). 1/q_0 = 0.90091828 matches '0.901'. The ~312x nome mismatch reproduces as 310.7 from the quoted 0.90/0.0029."
       }
     ],
     "trap-performed-warmth": [
@@ -1997,6 +2114,22 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.226Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 5 sections + Open R&D + cross-refs + Archimedean banner); all ten judged. tau_0 and -1/tau_0 recomputed: log(1/q_0)/(2*pi*i) = 0.016606341i and -1/tau_0 = 60.21796i, matching the block's +0.0166i and +60.2i under BOTH the proton and muon pins (they agree to 8 digits). 1/q_0 = 0.90091828 matches '0.901'. The ~312x nome mismatch reproduces as 310.7 from the quoted 0.90/0.0029."
       }
     ],
     "trap-superlative": [
@@ -2016,6 +2149,23 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.267Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'The analytic continuation of every Hecke quantity to the modular parameter is well-defined.' asserted flatly in the body, while Open R&D item 1 of the same block asks to 'verify every framework quantity ... has well-defined modular continuation'. The block states as established exactly what it lists as unverified.",
+        "notes": "proposed (NOT applied - math claim): change to 'is conjectured to be well-defined' or delete, since the following sentence already carries the S-transform claim. Reported as ANOMALY 14."
       }
     ],
     "trap-nonspeakable": [
@@ -2035,6 +2185,23 @@
         "reviewed_at": "2026-08-15T10:31:00.922Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3adc4316900a",
+          "ts": "c094c1531c8b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:42.309Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Two sweep-damage artefacts made the prose unreadable: the section heading '## Relationship to 's complex-q lift' (possessive with the noun stripped) and, under '## Cross-references', an orphaned indented line '  blocks `prop:q-zero-complex-extension` + `prop:lusztig-vs-hermitian-bar`' with no bullet and no lead-in.",
+        "notes": "fixes applied: (1) '## Relationship to 's complex-q lift' -> '## Relationship to the complex-$q$ lift'; (2) the orphaned line -> '- The complex-$q$ lift: blocks `prop:q-zero-complex-extension` + `prop:lusztig-vs-hermitian-bar`'. The stripped proper noun in (1) could not be recovered from the tree; the replacement is meaning-preserving, not a restoration. Reported as ANOMALY 16."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2058,5 +2225,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:42.309Z"
 }

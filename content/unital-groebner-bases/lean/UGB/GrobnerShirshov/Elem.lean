@@ -303,6 +303,20 @@ theorem contextMul_shape [DecidableEq G] {a b m : Monomial G}
     show (if a ++ excise a m b ++ b = m then f.coeff (excise a m b) else 0) = 0
     exact if_neg hs
 
+/-- `contextMul` sends a coefficientwise negation to a coefficientwise negation.
+
+The transfer lemma of §6 runs on this: a rule and its negative give
+S-polynomials that are negatives of each other, and the two halves of an
+S-polynomial are context-multiplications. -/
+theorem contextMul_coeff_neg [DecidableEq G] (a b : Monomial G)
+    {f g : AlgElement G k} (h : ∀ w, f.coeff w = -(g.coeff w)) (m : Monomial G) :
+    (contextMul a f b).coeff m = -((contextMul a g b).coeff m) := by
+  show (if a ++ excise a m b ++ b = m then f.coeff (excise a m b) else 0)
+     = -(if a ++ excise a m b ++ b = m then g.coeff (excise a m b) else 0)
+  split_ifs
+  · exact h _
+  · rw [neg_zero]
+
 /-- **Sliding a single generator across an element that commutes with it.**
 
 If every monomial of `f` commutes with `x` *as a word* — `w ++ [x] = [x] ++ w` —

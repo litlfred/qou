@@ -1231,6 +1231,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.327Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This strictly differs from the structural GB-depth' is the block's disambiguating claim, stated positively as a difference between two named invariants."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1265,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.375Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two short paragraphs, five sentences; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1299,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.425Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1333,23 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.505Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "The title promises 'the THREE depth invariants' and the body distinguishes only TWO: the witness k_max (Coxeter-length filtration) and the structural GB-depth k_star(T_w). The only other symbol in the block, n_0, appears once as a bound (k_star <= n_0) and is never defined, so it does not supply a third invariant. Either the third was lost or the count is a reflex triple in the title.",
+        "notes": "Proposed (structural — the fix requires knowing what the third invariant is): name and define the third depth invariant, or retitle to 'the two depth invariants'. Candidate for the missing third, from the sibling proof block: the empirical truncation level k = 2 (the 'subtractive sweet spot'), which is a third and genuinely distinct notion of depth."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.576Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a technical requirement, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.646Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.761Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Paragraph 2 adds the bound and the Habiro requirement."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:31.839Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.026Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'strictly differs' and 'rigid upper bound' are mild; both attach to specific claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1539,23 @@
         "reviewed_at": "2026-08-15T10:31:00.616Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "433002a253d0",
+          "ts": "7dda708ce5d8"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:00:32.079Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final sentence: 'The canonical real-valued mass requires the uniform z-Habiro bound to achieve canonical closed-form agreement, as truncation depths diverge empirically if left unregularized.' It uses 'canonical' twice as two different modifiers inside one sentence and ends on a subordinate clause; it stalls aloud.",
+        "notes": "SUSPECTED SWEEP DAMAGE, reported for the coordinator rather than fixed (I could not confirm it from history — the file has a single commit, 230cdd113, so no earlier wording survives to diff against). The doubled 'canonical' fits the token-substitution class in which 'canonical' replaced 'numerical(ly)': read as 'The NUMERICAL real-valued mass requires the uniform z-Habiro bound to achieve NUMERICAL closed-form agreement', the sentence becomes coherent and matches the sibling proof block's framing ('its real-valued canonical evaluation at |V-hat| approx 1', 'the canonical mass formula at q = q_0'), where the same word sits where 'numerical' would be expected. Flagged at moderate confidence only: 'canonical' is also a live technical term in this corpus, so a reader who knows the intended sense should adjudicate before any sweep. Also unresolved: n_0 is used undefined."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:00:32.079Z"
 }

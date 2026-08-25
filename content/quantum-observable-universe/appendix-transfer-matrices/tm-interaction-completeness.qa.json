@@ -1392,6 +1392,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a fresh interaction.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:35.731Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Double beta decay is not a fresh operator: it is the quadratic composite ...' and 'The Toffoli transfer matrix is a gate construction on three strands, not a fresh interaction' are the exclusions that make the count seven — the denial is the content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1411,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:35.784Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Claim, exclusions, three-constraint derivation, total. No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1430,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 143 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:35.881Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 155 words."
       }
     ],
     "trap-triples": [
@@ -1449,6 +1494,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 143 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:35.938Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'follows from three constraints. First ... Second ... Third ...' matches the arithmetic 1 + 4 + 2 = 7.",
+        "notes": "Loose seam: the 'four crossing types' of the first constraint and the 'four operators' of the second are different fours, and only the second enters the sum."
       }
     ],
     "trap-closing-aphorism": [
@@ -1468,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:35.996Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on the exhaustiveness claim, which is the block's assertion, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1487,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.052Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1506,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.145Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Total: 1 + 4 + 2 = 7' is the derivation's arithmetic conclusion, not a restatement for closure."
       }
     ],
     "trap-performed-warmth": [
@@ -1525,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.198Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1544,6 +1665,22 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.296Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'exactly seven' and 'exhaustive' are the completeness claim itself, carried by the stated constraints.",
+        "notes": "Rigor note (not a trap): the exhaustiveness sentence 'any Sigma_4-admissible single-crossing change reduces to one of these seven' carries no proof or Lean pointer, only the section cross-reference used for the 2-beta exclusion."
       }
     ],
     "trap-nonspeakable": [
@@ -1563,6 +1700,21 @@
         "reviewed_at": "2026-08-15T10:30:59.816Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ba9caef0a7a0",
+          "ts": "15f26f8f4ce7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:36.370Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Short declarative sentences."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1585,5 +1737,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:32:36.370Z"
 }

@@ -1461,7 +1461,8 @@
         "reviewed_at": "2026-06-28T11:04:36.980Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Strangelet interactions descend from the degree-2 fiber via double beta decay' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Strangelet interactions descend from the degree-2 fiber via double beta decay' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1546,7 +1547,23 @@
         "reviewed_at": "2026-07-07T14:26:56.568353Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative."
+      },
+      {
+        "field_hash": {
+          "md": "8a83cdfe5305",
+          "ts": "165784d3fbf8",
+          "lean": "5132f69f0e52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'strangelet-double-beta.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-citation-misuse": [
@@ -1674,7 +1691,22 @@
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, indicating a reproducibility failure.",
         "severity": "minor",
-        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1 — content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
+        "evidence": "content/quantum-observable-universe/observations/strangelet-double-beta.lean:1 \u2014 content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "8a83cdfe5305",
+          "ts": "165784d3fbf8",
+          "lean": "5132f69f0e52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'strangelet-double-beta.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "da-referee-verdict": [
@@ -1697,7 +1729,23 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean contains compilation errors: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
+      },
+      {
+        "field_hash": {
+          "md": "8a83cdfe5305",
+          "ts": "165784d3fbf8",
+          "lean": "5132f69f0e52"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/reaudit-da-compile-claims"
+        },
+        "reviewed_at": "2026-08-23T12:26:28.879671+00:00",
+        "reviewed_sha": "3b295c8270f3fc7f674a71605bda83bdf0feca0a",
+        "notes": "Invalidated: the prior 'fail' verdict is grounded on 'strangelet-double-beta.lean fails to compile', and it does. Compiled lean-direct against a built import cone: exit 0. The prior entry is from the 2026-07-07 qa-agent-drain batch, which recorded missing-olean and statement-extractor parse errors as compile failures. A false ground leaves this criterion unsupported rather than disproven, so this is n/a pending re-review, not pass. Recurrence of the batch drained in PR #2775 on the proof-* axis; see bean qou-zkia."
       }
     ],
     "milnor-amalgamated-flow": [

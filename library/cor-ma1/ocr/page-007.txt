@@ -1,0 +1,55 @@
+6 SYLVIE CORTEEL AND OLIVIER MALLET
+
+This decomposition shows that the generating function for overpartitions with generalized Durfee square
+of size N where the exponent of g counts the weight and the exponent of a counts the number of overlined
+parts is
+
+aN OH)
+
+(=1/a)w
+(an(@)n ,
+
+Definition 2.4. The successive Durfee squares of an overpartition are its generalized Durfee square and the
+successive Durfee squares of the partition below the generalized Durfee square, if we represent the partition
+as in Figure Bh with the overlined parts above the non-overlined ones. We can also define similarly the
+successive Durfee rectangles by dissecting the overpartition with d x (d+ 1)-rectangles instead of squares (see
+Figure i). In this case, we also impose the condition that the partition on the right of a d x (d+ 1)-rectangle
+cannot have more than d parts.
+
+FIGURE 4. Successive Durfee squares and successive Durfee rectangles of (6, 5,5, 4, 4, 3, 2, 2,2, 1).
+These definitions imply that the generating function for overpartitions with i—1 successive Durfee squares
+followed by k — i successive Durfee rectangles (the first one being a generalized Durfee square/rectangle) is
+
+y ge emer . +1 (1 /a)nya"t
+(na
+
+ny>..>np-1>0
+
+ey fol) te
+
+where )
+Alorom
+
+is the generating function of partitions into at most k parts less or equal to n — k.
+3. PATHS AND GENERATING FUNCTION
+
+In this section we will define the paths, compute their generating function and therefore prove Theorem
+This part is an extension of papers of Andrews and Bressoud & based on ideas of Burge (16, fq. We
+study paths in the first quadrant, that start on the y-axis, end on the z-axis, and use four kinds of unitary
+steps:
+
+e North-East NE: (x,y) > («+ 1l,y+ 1),
+
+e South-East SE: (x,y) > (a+1,y-1),
+
+e South S: (x,y) > (x,y — 1),
+
+e East E: («,0) — (a + 1,0).
+The height corresponds to the y-coordinate. A South step can only appear after a North-East step and an
+East step can only appear at height 0. The paths are either empty or end with a South-East step or a South
+step. A peak is a vertex preceded by a North-East step and followed by a South step (in which case it will be
+called a NES peak) or by a South-East step (in which case it will be called a NESE peak). The major index
+of a path is the sum of the x-coordinates of its peaks (see Figure h] for an example). Let k and i be positive
+integers with 7 < k. We say that a path satisfies the special (k,7i)-conditions if it starts at height k — i and
+its height is less than k. When the path has no South steps, this is the definition of the paths in |
+

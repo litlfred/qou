@@ -15,7 +15,7 @@ If the cross-check lands, cite the specific locator (Thm 2.9 / 2.11 / 3.1) in th
 - Thm 3.1 — Determinant-type Murnaghan-Nakayama rule for Hecke characters (dual/vertex-operator derivation), reproving Ram's combinatorial MN formula.
   Use here: The precise literature statement separating chi^lambda_q from the classical chi^lambda_MN - the distinction the block's .md says was previously mis-implemented.
 
-Source: `uploads/2104.06067v1.pdf` (`jing-liu-2021`)
+Source: `library/arxiv-2104.06067v1/2104.06067v1.pdf` (`jing-liu-2021`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

@@ -1,10 +1,11 @@
 ---
 # qou-jr8y
 title: 'PR #4600 carries a duplicate qou-mpq5 bean — headerless mojibake fragment orphaning the R2 scope assessment'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-10T15:19:40Z
-updated_at: 2026-08-10T15:19:40Z
+updated_at: 2026-08-11T10:59:49Z
 ---
 
 
@@ -29,3 +30,14 @@ finding is invisible to the tracker while looking like it was recorded.
 
 Fix: append the fragment's body to the real `qou-mpq5`, delete the fragment.
 Blocked on the owner's call about pushing to #4600's branch.
+
+## Closed 2026-08-11 — landed with #4600
+
+Verified on `main`: `.beans/` now holds exactly **one** `dim-v` file (4069 B,
+was 3475 B), and it carries the fragment's body — `## 🔥 Scope assessment
+(2026-08-02)` is present in the real bean. The headerless 593-byte mojibake
+file is gone, so the Mathlib-has-no-Schur–Weyl finding is visible to the
+tracker again.
+
+The owner-call this was blocked on became moot: #4600 was rebased and landed,
+carrying the fix, so no push to its branch was needed.

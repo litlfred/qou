@@ -893,9 +893,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.764Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.803Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.844Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.884Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.925Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.966Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.006Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.048Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.090Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "eca9932f5eed",
+          "ts": "051612803b96"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:29.131Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hecke-operations-table1-data (legend, 12-row table, notation paragraph). VERIFIED EVERY ROW symbolically in H_3(q) with h = q - 1/q: sigma_0^2 = 1 + h sigma_0; sigma_0 sigma_1^2 = sigma_0 + h L+; sigma_1 sigma_0^2 = sigma_1 + h L-; sigma_0^2 sigma_1 = sigma_1 + h L+; sigma_0 sigma_1 sigma_0 sigma_1 = L- + h e- (via the braid relation); sigma_1 sigma_0 sigma_1 sigma_0 = L+ + h e-; sigma_0^-1 = sigma_0 - h gamma; sigma_0^-1 sigma_1^-1 = L+ - h sigma_0 - h sigma_1 + h^2 gamma. All twelve normal forms and all twelve net(q_0) values are correct (nets 1+h = 1.209, 1-h = 0.791, 1-2h+h^2 = 0.6256 -> 0.626, and 0.451).",
+        "notes": "Cat.3: the two spaced dashes are a true apposition naming the net(q_0) column, single instance - pass. Cat.1: 'are numeric coefficients in the Hecke normal form, not separate symbols' is load-bearing disambiguation preventing a real misreading of 0.044/0.209 as symbols, stated directly rather than narrated - the documented false-positive class."
+      }
     ]
   },
   "label": "tbl:hecke-operations-table1-data",
   "kind": "table",
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:14:29.131Z"
 }

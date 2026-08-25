@@ -1,0 +1,232 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1803.04009v2",
+ "source": {
+  "file": "1803.04009v2.pdf",
+  "sha256": "8b34299b739cd2b0c5b91d5d0a684865020c3a5936671ef4ed089611a39645d0",
+  "bytes": 1594639,
+  "pages": 59
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1803.04009",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "22 Mar 2018"
+  },
+  "doi": null,
+  "title": "Symmetry enhancement and closing of knots in 3d/3d correspondence",
+  "authors_raw": "Dongmin Ganga and Kazuya Yonekurab",
+  "abstract": "We revisit Dimofte-Gaiotto-Gukov’s construction of 3d gauge theories asso- ciated to 3-manifolds with a torus boundary. After clarifying their construction from a viewpoint of compactiﬁcation of a 6dN = (2, 0) theory of A1-type on a 3-manifold, we propose a topological criterion forSU (2)/SO(3) ﬂavor symmetry enhancement for theu(1) symmetry in the theory associated to a torus boundary, which is expected from the 6d view- point. Base on the understanding of symmetry enhancement, we generalize the construction to closed 3-manifolds by identifying the gauge theory counterpart of Dehn ﬁlling operation. The generalized construction predicts inﬁnitely many 3d dualities from surgery calculus in knot theory. Moreover, by using the symmetry enhancement criterion, we show that theo- ries associated to all hyperboilc twist knots have surprisingSU (3) symmetry enhancement which is unexpected from the 6d viewpoint. arXiv:1803.04009v2 [hep-th] 22 Mar 2018",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20180323002230Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_prev": "Prepared for submission to JHEP IPMU-18-0045",
+  "title_lines": [
+   "Symmetry enhancement and closing of knots in",
+   "3d/3d correspondence"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and Summary",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "3d N=2 Superconformal field theories labelled by 3-manifolds",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "6d A1 (2,0) theory on 3-manifolds : T6d and T6dirred",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Dimofte-Gaiotto-Gukov's construction : TDGG",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Relation between the two constructions",
+   "page": 21,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Symmetry enhancement",
+   "page": 27,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "SO(3)/SU(2) enhancement",
+   "page": 27,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "SU(3) enhancement",
+   "page": 33,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Dehn filling in 3d/3d correspondence",
+   "page": 38,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Dehn filling on T6dirred[N]",
+   "page": 39,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Small hyperbolic manifolds",
+   "page": 41,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "3d N=2 Dualities from Surgery calculus",
+   "page": 43,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A 3d index IN(A,B)(m,e;x) and INpA+q B (x)",
+   "page": 44,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B T[SU(2)] and SU(2)/SO(3) types",
+   "page": 49,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1 Brief review of T[SU(2)]",
+   "page": 50,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.2 The global structure of the symmetries and 't Hooft anomaly",
+   "page": 51,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.3 S-transformation of 3d SCFT",
+   "page": 52,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.4 SU(2)/SO(3) symmetry types of knots from six dimensions",
+   "page": 53,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-summary",
+   "number": "1",
+   "title": "Introduction and Summary",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 21,
+   "n_chars": 43916,
+   "n_words": 7601
+  },
+  {
+   "id": "sec-001-23-relation-between-the-two-constructions",
+   "number": "2.3",
+   "title": "Relation between the two constructions",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 27,
+   "n_chars": 14470,
+   "n_words": 2443
+  },
+  {
+   "id": "sec-002-3-symmetry-enhancement",
+   "number": "3",
+   "title": "Symmetry enhancement",
+   "level": 1,
+   "page_start": 27,
+   "page_end": 41,
+   "n_chars": 29733,
+   "n_words": 4999
+  },
+  {
+   "id": "sec-003-42-small-hyperbolic-manifolds",
+   "number": "4.2",
+   "title": "Small hyperbolic manifolds",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 51,
+   "n_chars": 19219,
+   "n_words": 3374
+  },
+  {
+   "id": "sec-004-b2-the-global-structure-of-the-symmetries-and-t",
+   "number": null,
+   "title": "B.2 The global structure of the symmetries and 't Hooft anomaly",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 4363,
+   "n_words": 714
+  },
+  {
+   "id": "sec-005-b3-s-transformation-of-3d-scft",
+   "number": null,
+   "title": "B.3 S-transformation of 3d SCFT",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 59,
+   "n_chars": 17913,
+   "n_words": 2742
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 6,
+  "chars_total": 129614
+ }
+}

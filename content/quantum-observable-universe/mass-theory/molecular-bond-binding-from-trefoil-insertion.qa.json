@@ -1773,6 +1773,37 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.553Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No negation-contrast construction; every claim stated positively."
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:42:18.239Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No negation-contrast construction. (Re-recorded to carry the rigor note found on the same read.)",
+        "notes": "RIGOR (reported, not fixed — the defect is numeric/nomenclature). (1) 'E_mol = m_e alpha^2 / 2 supplies the Hartree energy scale' names the wrong atomic unit. The Hartree is E_h = alpha^2 m_e c^2 = 27.2113862 eV; the quantity written, alpha^2 m_e c^2 / 2 = 13.6056931 eV, is the RYDBERG (recomputed at m_e c^2 = 0.51099895069 MeV, alpha^{-1} = 137.035999177). Either drop the factor 1/2 to make the name right, or call it the Rydberg. The factor of two propagates into every E_bond the proposition predicts, so this is not cosmetic. (2) The closing claim that multiple inverse trefoils drive 'the 1 : 2 : 3 bond-energy scaling' does not match measured bond energies: C-C 348, C=C 614, C≡C 839 kJ/mol is 1 : 1.76 : 2.41, and N-N/N=N/N≡N (163/418/941) is 1 : 2.56 : 5.77. No common bond family scales 1 : 2 : 3, so the claim needs either a citation for where 1 : 2 : 3 is observed or restatement as the bare multiplier count."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1823,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.610Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot; block is a statement plus a display equation plus a scaling claim."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1857,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.679Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1891,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 53 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.741Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The triple (W_sym, W_std, W_alt) is the three Wedderburn channels of H_3 (S_3 has exactly three irreps); substantive enumeration, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1925,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.822Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Final sentence asserts the 1:2:3 multiple-trefoil scaling — a falsifiable claim, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1959,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.877Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No self-narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1993,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.927Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No block-final restatement; the last sentence extends to multiple bonds."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2027,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:51.987Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2061,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:52.058Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'directly from the categorical multiplier' is a mild intensifier attached to a specific mechanism, not superlative inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2095,21 @@
         "reviewed_at": "2026-08-15T10:31:00.505Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2f4c5f1eab0d",
+          "ts": "e32c4517cadb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:34:52.126Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Prose reads aloud cleanly; 'per-channel volume shifts' is the densest chain."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2133,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:42:18.239Z"
 }

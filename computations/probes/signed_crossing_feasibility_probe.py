@@ -38,17 +38,37 @@ from math import comb
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
+from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
 
-mp.mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 # ── Substrate constants (q0, m_e → E_0; derived f_bond) ──────────────
-Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+# Proton pin per the standing 2026-08-07 directive: any probe that is
+# WRITTEN OR MODIFIED defaults to the experimental layer.  This was a
+# hardcoded MUON literal (…9555573347…), i.e. the ideal/CAL-2 layer.
+Q0 = Q_MP
 M_E_MEV = mp.mpf("0.51099895069")          # CAL-1
 E0 = M_E_MEV / (Q0 * (Q0 - 1))             # ≈ 4.186 MeV (calibration-fixed)
 
 h = Q0 - 1 / Q0
-z = mp.sqrt(Q0) / (Q0 + 1)                 # Markov parameter z = √q/(q+1)
+# Convention D via the canonical helper.  This was `mp.sqrt(Q0)/(Q0+1)`
+# — convention C, excised by the 2026-08-09 ruling.  Note the witness
+# `_provenance` already CLAIMED `z=q^3/(q^2+1)`, so the file documented D
+# while computing C.  Calling `markov_z` rather than re-spelling z inline
+# is deliberate: every convention detector keys on how z is WRITTEN, and
+# an inline spelling is how a site goes blind (this one was missed by two
+# independent detectors).
+z = markov_z(Q0)
 delta = mp.mpf("0.00137705")               # color split
 
 # Derived per-bond kernels (fibre-level, no fit) — see prearchimedean_bond_factor.py

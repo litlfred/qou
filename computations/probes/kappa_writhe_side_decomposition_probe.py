@@ -61,7 +61,9 @@ def main() -> int:
     set_compute_dps()
     q = mp.mpf(str(Q0)); h = q - 1 / q
     lnq = mp.log(q)
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(1 / q))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q ** 3 / (q ** 2 + 1)
     swap_exponent = mp.log(z / (z - h)) / lnq  # per nn→pp interface swap
 
     rows = []

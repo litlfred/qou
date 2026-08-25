@@ -1,8 +1,8 @@
 {
   "engine": "python+canonical-binding",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T17:47:55.818548+00:00",
-  "commitSha": "a134dbff0ae459a4f09548a0232571d007db6c32",
+  "computedAt": "2026-08-21T15:51:40.994427+00:00",
+  "commitSha": "1e5d7568d07e46298511ea337ec2aa16069d11d5",
   "assertions": [
     {
       "name": "quadratic_c_nonzero",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 681122,
+  "durationMs": 1998655,
   "computation": "delta-lambda-imme-triplet",
   "scriptFile": "delta_lambda_imme_triplet.py",
   "scriptHash": "8dfb701566b6",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,8 +42,8 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
   "description": "Isobaric-triplet (IMME) decomposition of the canonical residual log_q0 Δ_λ = a + b·T₃ + c·T₃². Mirror PAIRS (PR #3089) measure only the bar-odd b; the bar-even QUADRATIC c is invisible to them (it cancels in the mirror difference, Lean mirror_baseline_cancels) and needs a TRIPLET. A=6 (⁶He/⁶Li/⁶Be): a=36.12, b=−1.73 (consistent with the mirror b's −1.34@A3,−1.77@A7), c=−1.24 NONZERO. Askey: body-order b-ladder is continuous q-Hermite (3-term recurrence); IMME is the degree-2 T₃ truncation (Wigner rank-≤2 isotensor = Askey–Racah cutoff). SAME-T RESOLUTION: correcting the T₃=0 member to its T=1 isobaric analog state (IAS: ⁶Li 3.563, ⁸Be 16.626 MeV) COLLAPSES the quadratic c: A=6 −1.24→−0.11, A=8 −3.44→−0.10 — small and A-independent. The raw growth was T=0/T=1 structure (Wigner energy), NOT the IMME quadratic; the genuine same-T c≈−0.1 is small vs the linear b, so the cleaned residual is linear(writhe)-dominated. Not wired; near-match; no fit.",
@@ -57,22 +57,22 @@
             "atom": "6He",
             "Z": 2,
             "N": 4,
-            "B_pred": 0.9575717692235084,
-            "log_q0": 32.77683624315355
+            "B_pred": 0.9575713522148754,
+            "log_q0": 32.7768404168415
           },
           "0": {
             "atom": "6Li",
             "Z": 3,
             "N": 3,
-            "B_pred": 1.0987344965186983,
-            "log_q0": 32.311527737455734
+            "B_pred": 1.0987340092145652,
+            "log_q0": 32.311531988088646
           },
           "1": {
             "atom": "6Be",
             "Z": 4,
             "N": 2,
-            "B_pred": 1.2533303427936655,
-            "log_q0": 29.396169628169403
+            "B_pred": 1.2533297785073425,
+            "log_q0": 29.39617394316381
           }
         },
         "imme_a": 32.312,
@@ -91,22 +91,22 @@
             "atom": "8Li",
             "Z": 3,
             "N": 5,
-            "B_pred": 1.100751705534585,
-            "log_q0": 34.73535660797703
+            "B_pred": 1.1007510642649063,
+            "log_q0": 34.73536219136279
           },
           "0": {
             "atom": "8Be",
             "Z": 4,
             "N": 4,
-            "B_pred": 1.273480507862029,
-            "log_q0": 36.34705671553966
+            "B_pred": 1.2734797548162524,
+            "log_q0": 36.34706238282883
           },
           "1": {
             "atom": "8B",
             "Z": 5,
             "N": 3,
-            "B_pred": 1.4712811814229614,
-            "log_q0": 31.09544108857216
+            "B_pred": 1.4712802989801343,
+            "log_q0": 31.09544683684266
           }
         },
         "imme_a": 36.347,
@@ -125,22 +125,22 @@
             "atom": "10Be",
             "Z": 4,
             "N": 6,
-            "B_pred": 1.2505116895835147,
-            "log_q0": 37.86136485172292
+            "B_pred": 1.2505107764451626,
+            "log_q0": 37.86137185006482
           },
           "0": {
             "atom": "10B",
             "Z": 5,
             "N": 5,
-            "B_pred": 1.4496224631001813,
-            "log_q0": 36.4119351003471
+            "B_pred": 1.449621391629605,
+            "log_q0": 36.411942184234825
           },
           "1": {
             "atom": "10C",
             "Z": 6,
             "N": 4,
-            "B_pred": 1.6798696572476361,
-            "log_q0": 34.31990967104775
+            "B_pred": 1.679868400722051,
+            "log_q0": 34.319916839775416
           }
         },
         "imme_a": 36.412,
@@ -159,22 +159,22 @@
             "atom": "12B",
             "Z": 5,
             "N": 7,
-            "B_pred": 1.4165610268792321,
-            "log_q0": 38.608731201862895
+            "B_pred": 1.4165597831549646,
+            "log_q0": 38.6087396164959
           },
           "0": {
             "atom": "12C",
             "Z": 6,
             "N": 6,
-            "B_pred": 1.6429141998939407,
-            "log_q0": 38.5954218026656
+            "B_pred": 1.642912742702313,
+            "log_q0": 38.59543030323752
           },
           "1": {
             "atom": "12N",
             "Z": 7,
             "N": 5,
-            "B_pred": 1.905278039691891,
-            "log_q0": 35.077302821911466
+            "B_pred": 1.9052763327449778,
+            "log_q0": 35.07731140825018
           }
         },
         "imme_a": 38.595,
@@ -226,6 +226,6 @@
       "finding": "raw c (−1.24,−3.44, growing) was mostly T=0/T=1 Wigner-energy structure; the clean same-T c≈−0.1 is SMALL and A-INDEPENDENT — the residual is linear(writhe)-dominated once same-T"
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -945,6 +945,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not a derivation.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.701Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"identifying these algebraic actions with physical carriers is an interpretive alignment, not a derivation\" is exactly the substantive-epistemic contrast the corpus wants kept; the other near-contrasts (\"treats W, Z, H as independent\" vs the corrected braid) are content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -964,6 +979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.747Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "The disjoint-product-then-interface-knot sequence is a genuine refinement, not a manufactured setup."
       }
     ],
     "trap-em-dash": [
@@ -983,6 +1013,21 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 235 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.796Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1002,6 +1047,21 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 235 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.848Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No reflex triple; the one list is four items."
       }
     ],
     "trap-closing-aphorism": [
@@ -1021,6 +1081,21 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.906Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Closes on an honest scope statement (\"an interpretive alignment, not a derivation\") — the opposite of a manufactured closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1040,6 +1115,21 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.949Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1059,6 +1149,22 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:11.988Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "The \"Plancherel weight is a degenerate special case\" and \"Implication for N_v derivation\" sections make overlapping points, but the second adds the PSLQ-basis consequence, so it is not pure restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1078,6 +1184,21 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.029Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1097,6 +1218,21 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.086Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "\"preserves bar-self-duality automatically\" is the only intensifier and is a structural claim about the disjoint-pair construction."
       }
     ],
     "trap-nonspeakable": [
@@ -1116,6 +1252,23 @@
         "reviewed_at": "2026-08-15T10:31:00.753Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5b3728c969c2",
+          "ts": "184b7f050cb3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:24:12.129Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "severity": "minor",
+        "evidence": "\"This modifies pattern multiplicities, impacts bar-self-duality, gives the Higgs-vev automorphism a concrete form, and twists the 8 pure patterns\" is a four-verb compression with no agent detail, but it reads aloud.",
+        "notes": "Separate (non-trap) findings: (1) \"parallels Morita's quaternionic formulation of the electroweak sector\" attributes a named result with NO citation — the .ts carries no cites[] at all. (2) The projector bookkeeping is internally consistent and checks against the table I independently reproduced: six EW projectors of rank 1 to 3 (multiplicities 2,1,3,3,1,2) plus two non-EW (vacuum 4, fully-broken 4) = eight, summing to the 20 pure tableaux. (3) \"The earlier Plancherel-weighted multiplier framing is incorrect\" retracts an earlier framing without naming the block that carried it, so a reader cannot find and cross-check the superseded claim."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1142,5 +1295,5 @@
     "md": "5b3728c969c2",
     "ts": "184b7f050cb3"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:24:12.129Z"
 }

@@ -90,5 +90,8 @@
     "distinct_angle": "A=3 beyond-Hecke MAGNITUDE (weight<=Hecke bound); siblings own the exact-order mu-bar_A coefficient (#4480) and the A=4 magnitude (#4472)",
     "no_fit": true
   },
-  "auditOnly": true
+  "auditOnly": true,
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.q0_muon). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

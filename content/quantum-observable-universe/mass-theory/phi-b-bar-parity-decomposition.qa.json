@@ -1338,6 +1338,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:37.744Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial; 'fixed by sigma' vs 'negated' is the even/odd definition itself."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1357,6 +1372,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:37.798Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement, display, two-clause gloss."
       }
     ],
     "trap-em-dash": [
@@ -1376,6 +1406,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:37.855Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One em-dash, appositive glossing 'a ring involution' as 'the bar q -> q^{-1}'."
       }
     ],
     "trap-triples": [
@@ -1395,6 +1440,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:37.915Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1414,6 +1474,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:37.968Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on a scope statement about generality."
       }
     ],
     "trap-meta-commentary": [
@@ -1433,6 +1508,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.032Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1452,6 +1542,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.102Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The gloss names which part is which; it does not restate the display's content."
       }
     ],
     "trap-performed-warmth": [
@@ -1471,6 +1576,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.159Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1490,6 +1610,21 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.233Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No inflated claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1509,6 +1644,22 @@
         "reviewed_at": "2026-08-15T10:31:00.413Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f132ae9041ee",
+          "ts": "34d7c1e504e9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:38.293Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two short sentences.",
+        "notes": "RIGOR. VERIFIED CORRECT: sigma(f + sigma f) = sigma f + sigma^2 f = f + sigma f and sigma(f - sigma f) = sigma f - f = -(f - sigma f), using sigma^2 = id, so the displayed identity and both parity claims hold over any commutative ring exactly as stated. ONE MINOR OVERCLAIM: 'The decomposition is unique and holds over any commutative ring.' EXISTENCE holds over any commutative ring; UNIQUENESS needs 2 to be a non-zero-divisor. Counterexample: R = Z/2 with sigma = id. There every element is simultaneously bar-even and bar-odd (since -1 = 1), and 0 = 2f decomposes both as (0, 0) and as (1, 1) with 1 even and 1 odd — two distinct (even, odd) pairs. In general the difference of two decompositions is killed only by 2, so uniqueness is exactly the statement that 2 is a non-zero-divisor. Proposed: 'The decomposition holds over any commutative ring, and is unique whenever 2 is a non-zero-divisor.' Worth stating because the block explicitly advertises maximal generality, and the Lean carrier (QOU.QBeta.bar_parity_decomposition) will need the same hypothesis if it claims uniqueness."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1532,5 +1683,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:57:38.293Z"
 }

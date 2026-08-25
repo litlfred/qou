@@ -939,6 +939,23 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.456Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "major",
+        "evidence": "Single-sentence remark built on 'does not depend on the choice of basis or the specific representative of the functor, but is an intrinsic ... invariant'. Basis-independence is genuinely what a uniqueness-up-to-isomorphism statement says, so the not-X-but-Y here carries the mathematics; substantive-contrast false-positive class.",
+        "notes": "It could still be stated positively - 'Uniqueness makes the harmonic decomposition independent of the basis and of the chosen representative of the functor: it is an intrinsic invariant of the category.' - which also fixes the over-claim flagged below. Not applied because the same sentence needs the word 'topological' removed, which is a content decision."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -958,6 +975,22 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.496Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "major",
+        "evidence": "One sentence; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -977,6 +1010,21 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.534Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -996,6 +1044,21 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 38 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.570Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1015,6 +1078,21 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.608Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "The block is a single sentence stating the invariance."
       }
     ],
     "trap-meta-commentary": [
@@ -1034,6 +1112,22 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.645Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "major",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1053,6 +1147,22 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.684Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "major",
+        "evidence": "Nothing to restate."
       }
     ],
     "trap-performed-warmth": [
@@ -1072,6 +1182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.721Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1091,6 +1216,23 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.760Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "minor",
+        "evidence": "'but is an intrinsic topological invariant of the category'. The proposition it interprets (prop:categorical-fourier-unique) gives uniqueness up to natural monoidal isomorphism - a categorical invariant. Nothing topological is in play: no space, no homotopy, no topological invariance is claimed or proved anywhere in the Fourier cluster. 'topological' is unearned strength on a claim that is already sound without it.",
+        "notes": "Proposed: 'intrinsic invariant of the category' (drop 'topological'). Not applied because deleting a word from a claim is a content edit, not a construction removal - but this is the single most concrete fix in the batch."
       }
     ],
     "trap-nonspeakable": [
@@ -1110,6 +1252,23 @@
         "reviewed_at": "2026-08-15T10:31:00.052Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a7b5bdbbd929",
+          "ts": "b7ed34deae7c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:53.796Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "minor",
+        "evidence": "One 40-word sentence carrying two negated dependencies and a positive characterisation; it holds together but is at the limit of a single breath.",
+        "notes": "Splitting it as proposed under negation-contrast fixes this too."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1136,5 +1295,5 @@
     "md": "a7b5bdbbd929",
     "ts": "b7ed34deae7c"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:05:53.796Z"
 }

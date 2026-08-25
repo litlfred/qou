@@ -1773,6 +1773,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.774Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1808,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.838Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1843,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.910Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1878,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:33.959Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1913,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.005Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1948,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.059Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1983,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.124Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2018,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.187Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2053,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.246Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2088,22 @@
         "reviewed_at": "2026-08-15T10:31:01.118Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1b2233a21fd7",
+          "ts": "e52574c35af6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:51:34.306Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present. EVERY CLAIM RECOMPUTED AND CORRECT: phi^2 = (3+sqrt5)/2 = 2.618034; the minimal polynomial of 1/phi over Q is s^2+s-1 and of phi is s^2-s-1; applying s -> 1/s to s^2+s-1 and clearing denominators gives -s^2+s+1, i.e. the phi polynomial up to sign, exactly as the block says ('exchanges these quadratics up to sign'); the positive roots are {1/phi, phi} as stated (the negative roots -phi and -1/phi are correctly excluded by the 'on the positive real axis' qualifier); q = s^2 makes 1/phi^2 <-> phi^2 the induced action; and the Hecke eigenvalue pair {q, -q^{-1}} matches 7a.",
+        "notes": "Graph-hygiene note reported to the batch: this is a proposition whose uses[] names rem:golden-ratio-degeneration, a remark. Per 3a a remark makes no logical claims, so a proposition should not depend on one; the underlying node result should live in a provable-kind block."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2127,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:51:34.306Z"
 }

@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.724Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.761Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.800Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.840Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.880Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.920Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.959Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:02.998Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.038Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d25d3c9d1052",
+          "ts": "9b988c5253fc"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:03.078Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row Hecke-product table). Recomputed: term (10) sigma_1 sigma_0 = L_-; term (11) sigma_1^2 = gamma + h sigma_1; term (12) sigma_1 sigma_0 sigma_1 = e^- (braid relation). All correct. The cell claim 'one of three mechanisms by which 1 opens the electron channel' checks against table 5, whose e^- row has exactly three contributing terms (12), (14), (16)."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:03.078Z"
 }

@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.275Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.315Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.357Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.399Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.440Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.481Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.522Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.563Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.602Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "96b74edccef7",
+          "ts": "2be1acd07f18"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:40.641Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Content: the Lean declarations backing the content-cancellation theorem. All ten names exist in lean/QOU/Archimedean/TypeBFoldedCrystalCombinatorics.lean."
+      }
     ]
   },
   "source_hashes": {
     "md": "96b74edccef7",
     "ts": "2be1acd07f18"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:40.641Z"
 }

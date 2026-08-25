@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.553Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 495 w: read in full (Steps 1-4, an explicit Gap blockquote, a corollary, and a Witness paragraph)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.588Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 495 w: read in full (Steps 1-4, an explicit Gap blockquote, a corollary, and a Witness paragraph)."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 356 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.624Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Six spaced dashes, but the density sits in the Gap blockquote where each one introduces a genuine consequence ('so pi(I) = 0 and therefore pi(I^l) = 0 for every l >= 1 - the ideal-power filtration is identically zero above degree 0')."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 356 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.657Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 495 w: read in full (Steps 1-4, an explicit Gap blockquote, a corollary, and a Witness paragraph)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.694Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 495 w: read in full (Steps 1-4, an explicit Gap blockquote, a corollary, and a Witness paragraph)."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.730Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The Gap blockquote states what is false and which step refutes it - substantive self-correction, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1562,22 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.764Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The closing Witness paragraph makes a new interpretive claim rather than restating the four steps.",
+        "notes": "That paragraph is nonetheless broken by token substitution ('the formal derivation and / the formal derivation / identify hyperbolic-knot ideals...'), reported to the coordinator; the .ts carries no computation field, so the two producer names are not recoverable from the block."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.797Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 495 w: read in full (Steps 1-4, an explicit Gap blockquote, a corollary, and a Witness paragraph)."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,23 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.830Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Unhedged definite-article maximal claim as the block's last sentence - 'This residue is the algebraic origin of the proton-neutron mass splitting at the Hochschild-cohomology level' - in a proof that four paragraphs earlier declares 'Step 3 is incomplete as it stands'.",
+        "notes": "Proposed: 'is a candidate algebraic origin of' or an explicit conditional on the Step-3 gap. Not applied: rescoping a physical-origin claim is the author's call."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1667,21 @@
         "reviewed_at": "2026-08-15T10:31:00.833Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f65acda1bf13",
+          "ts": "95bcd6d56f88"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:25.864Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "proof, 495 w: read in full (Steps 1-4, an explicit Gap blockquote, a corollary, and a Witness paragraph)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:25.864Z"
 }

@@ -1774,6 +1774,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.872Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1793,6 +1808,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.913Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1812,6 +1842,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.948Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-triples": [
@@ -1831,6 +1876,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.229Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Closing sentence enumerates FOUR terms (pn crossing count, pp-vs-nn excess, linear isospin correction, quadratic isospin term), matching the four summands of the displayed expansion; not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1850,6 +1910,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:01.987Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-meta-commentary": [
@@ -1869,6 +1944,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.033Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-thesis-restatement": [
@@ -1888,6 +1978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.069Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-performed-warmth": [
@@ -1907,6 +2012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.108Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-superlative": [
@@ -1926,6 +2046,21 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.149Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:eigenvalue-product-expansion (two displays plus one closing prose paragraph). No construction of this category present in the statement or the closing paragraph."
       }
     ],
     "trap-nonspeakable": [
@@ -1945,6 +2080,22 @@
         "reviewed_at": "2026-08-15T10:31:00.378Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7b8cdf0b3d65",
+          "ts": "850baeabc0b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:39:02.275Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Two short declarative sentences close the block; both read aloud cleanly.",
+        "notes": "RIGOR (reported, not fixed): T-DEFINITION DEFECT. The block defines the isospin variable as T = |Z - N|/2 (absolute value) but the first display carries q^{(Z-N)(A-1)/2} and the second carries +l.T.A - l.T. With T = |Z-N|/2 the two displays disagree for every neutron-rich nucleus (N > Z), where (Z-N)(A-1)/2 = -|T|(A-1). The sibling proof prf:eigenvalue-product-expansion states T = (Z-N)/2 and labels it 'signed isospin'. Proposed fix: change the statement to T = (Z-N)/2 (signed). Algebra otherwise verified exact: n_pp-n_nn = (Z-N)(A-1)/2, ZN = A^2/4 - T^2, so ln|Lambda_sym| = l.T(A-1) + l_2(A^2/4 - T^2) expands to exactly the four displayed terms."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1968,5 +2119,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:39:02.275Z"
 }

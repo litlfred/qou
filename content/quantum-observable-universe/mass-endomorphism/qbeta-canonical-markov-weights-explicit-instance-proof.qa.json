@@ -1361,6 +1361,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not the size of the M block.\"; \"not the canonical instance, but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:53.859Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "'It does not establish:' list; 'not the canonical Wenzl-Markov weights'; 'the sharpest evidence is the vanishing of the (1^3) block, not the size of the (3) block'.",
+        "notes": "All substantive: the honest-scope list is exactly the AGENTS.md discipline (an instance is not the canonical inhabitant), and the last is a real mathematical discrimination claim -- verified: y_(1,1,1) is IDENTICALLY 0 under convention D, so it is a categorical discriminator, whereas the (3) gap is only 1.2%."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1380,6 +1396,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:53.903Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "'The mismatch ... survives the convention change, but it moves.' followed by 'What now decides it outright is the rest of the vector'.",
+        "notes": "Setup-then-reframe SHAPE, but the second clause carries genuine mathematical content (which coordinate discriminates, and why), so it is not a manufactured pivot. Recorded as pass with the shape noted."
       }
     ],
     "trap-em-dash": [
@@ -1399,6 +1431,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 440 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:53.944Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "Two: 'y_(1^3) = 0 exactly -- **convention D**, the production trace' (appositive gloss) and one in the correction paragraph.",
+        "notes": "Both true parentheticals; density low."
       }
     ],
     "trap-triples": [
@@ -1418,6 +1466,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 440 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:53.985Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "'It establishes that:' = 3 items, 'It does not establish:' = 3 items.",
+        "notes": "Both are substantive scope enumerations, not reflex lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1437,6 +1501,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:54.024Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "'The class admits infinitely many inhabitants, and this construction merely identifies one.'",
+        "notes": "Quotable cadence but a true and load-bearing scope claim -- y_(2,1) = 1/2 - z for arbitrary z is a genuine one-parameter family, so 'infinitely many' is correct, and the sentence is the point of the block."
       }
     ],
     "trap-meta-commentary": [
@@ -1456,6 +1536,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:54.068Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "'Check the convention of any markov_weights_symbolic call against the trace-convention registry before quoting it again.' and 'The values (0.4154, 0.2809, 0.0227) **previously called canonical here** ... were a truncation artefact of that same excised route.'",
+        "notes": "PASS on the criterion as defined (neither narrates the author's own emphasis). FLAGGED SEPARATELY for the coordinating session: both are author/maintenance register in scholarly prose -- an instruction addressed to future agents, and a narration of this block's own edit history -- which AGENTS.md sec 4d routes to the .ts authorNotes field (kind 'note' / 'refined-framing'), and which one-voice Category H treats as a status leak. Proposed: migrate both to authorNotes, keeping in prose only the mathematical statement that the C vector is not canonical."
       }
     ],
     "trap-thesis-restatement": [
@@ -1475,6 +1571,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:54.113Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "Final paragraph adds new discrimination (which block decides it), not a recapitulation.",
+        "notes": "n/a"
       }
     ],
     "trap-performed-warmth": [
@@ -1494,6 +1606,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:54.160Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "None.",
+        "notes": "n/a"
       }
     ],
     "trap-superlative": [
@@ -1513,6 +1641,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:54.208Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "'the sharpest evidence', 'decides it outright', 'exactly'.",
+        "notes": "Each is earned and checkable, and I checked all of them. INDEPENDENTLY VERIFIED, so a later pass need not re-derive: solving the Markov system tr_M(1)=1, tr_M(sigma)=z, tr_M(sigma_1 sigma_2)=z^2 against the H_3(q) characters under convention D (z = q^3/(q^2+1)) gives EXACTLY y = ((q^4+1)/(q^2+1)^2, q^2/(q^2+1)^2, 0), which is precisely the block's [4]_q/[2]_q^3, 1/[2]_q^2, 0 (the two forms are algebraically identical via [2]_q = (q^2+1)/q, [4]_q = (q^4+1)(q^2+1)/q^3) -- and numerically 0.5054042, 0.2472979, 0. The block's C vector (0.4154, 0.2809, 0.0227) is also exactly what convention C yields. z(q_0) = 0.499320, 1.2% below 0.5054042 (computed 1.204%); ~20% against 0.4154 (computed 20.2%); sqrt(q_0) = 1.05356 vs (1+q_0)/2 = 1.05499. All correct. ONE MINOR internal inconsistency: y_(2,1)(q_0) is given as '~0.001' in the sanity-check paragraph and '~0.0007' two paragraphs later; the true value is 0.000680."
       }
     ],
     "trap-nonspeakable": [
@@ -1532,6 +1676,22 @@
         "reviewed_at": "2026-08-15T10:31:00.999Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0f777a354102",
+          "ts": "41b5b741400a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:00:54.252Z",
+        "reviewed_sha": "84ee58551435cec8e279691068a69ef40e887be9",
+        "evidence": "Prose is unusually clean for this chapter; longest chain is 'derived from the Hecke algebra's Bratteli diagram and quantum dimensions'.",
+        "notes": "n/a. Minor: the .ts title 'Proof of qbeta canonical markov weights explicit instance' is unpunctuated lowercase auto-generated text, off-register for the corpus."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1554,5 +1714,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:00:54.252Z"
 }

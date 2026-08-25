@@ -11,6 +11,14 @@ BINDING LINKS (from binding-k-solver.witness.json SDP registry):
 
 RESULTS (SnapPy, verified solution types):
   Vol(Hopf)  = 0            (degenerate — Seifert-fibred)
+                            Now backed in Lean, not just by SnapPy:
+                            QOU.Knot.FlatTet.BlochWigner_lob_ofReal gives
+                            zero volume for EVERY real shape parameter, with
+                            no hypotheses, and the trefoil case is worked in
+                            QOU/Knot/FlatTetrahedra.lean.  A degenerate link
+                            has real (flat) shapes, so its Bloch–Wigner
+                            volume vanishes identically rather than
+                            numerically.
   Vol(8₁₁)   = 8.2863168    (all tetrahedra positively oriented)
   Vol(L6a4)  = 7.3277248    = 8G = Vol(Borromean) — L6a4 IS the
                               Borromean link (Thistlethwaite name).
@@ -23,16 +31,41 @@ KEY FINDINGS:
    not a fit.
 
 2. **The single-link endomorphism does NOT extend to A ≥ 3.**
-   B = m_e × Vol(K_bind) × Δtr matches the deuteron at +0.2% (via the
-   Hopf → Vol(𝓑₃) substitution, since Vol(Hopf) = 0), but gives
-   −60% for both ³H and ³He. The trace difference Δtr ≈ 0.6–0.9 is
+   B = m_e × Vol(K_bind) × Δtr gives −6.3% for the deuteron (via the
+   Hopf → Vol(𝓑₃) substitution, since Vol(Hopf) = 0) and about −56%
+   for both ³H and ³He. The trace difference Δtr ≈ 0.6–0.9 is
    nearly A-independent while the binding energy grows ~13×, so the
    A-dependence cannot live in a single binding-link volume.
 
-   This is an HONEST NEGATIVE: the deuteron success is special, and
-   closing A ≥ 3 needs additional structure (per-pair sum over the
-   JSJ decomposition, or a different trace object) — NOT a rescaling
-   of Δtr by hand-chosen factors (cf. retracted PR #1383).
+   This is an HONEST NEGATIVE, and closing A ≥ 3 needs additional
+   structure (per-pair sum over the JSJ decomposition, or a different
+   trace object) — NOT a rescaling of Δtr by hand-chosen factors
+   (cf. retracted PR #1383).
+
+   ⚠ CORRECTED 2026-08-15 (bean `qou-bind`). This paragraph read
+   "matches the deuteron at +0.2%" and called that a success. The
+   committed witness has never agreed: `binding-link-volumes.witness.json`
+   records `deuteron_endomorphism_holds` with `"passed": false` and
+   `err_pct = −6.306958776805962`, against a stated tolerance of 1%.
+   So the deuteron is NOT a special success here — it is a near-miss
+   that fails its own assertion. The result is a cleaner negative than
+   the prose claimed, not a dirtier one: no A is matched, so there is
+   no special case to explain away.
+
+   WHERE +0.2% CAME FROM, traced (bean `qou-btdr` tracks the fix, which
+   is not local to this file). "+0.2%" is precisely the claim that
+   Δtr(²H) = 0.5952:
+
+       Δtr needed for +0.2%                     = 0.5952835748896166…
+       hardcoded in binding_per_bond_decomposition.py:126 = 0.5952
+       binding_canonical(1,1, use_closed_form=True) TODAY = 0.5566260326923999
+
+   i.e. the figure matches that hardcoded constant to four digits, and
+   the function it is attributed to no longer returns it. Whether
+   `binding_canonical` drifted or the constant was always copied from a
+   different trace convention is NOT settled here — deciding that is a
+   physics judgement about which Δtr is correct, and it changes numbers
+   in at least seven files. Do not "fix" the −6.3% by reinstating 0.5952.
 """
 from __future__ import annotations
 
@@ -105,8 +138,16 @@ def main():
     results = {}
     for iso in ["2H", "3H", "3He"]:
         v = vols[iso]["vol"]
-        # Hopf (Vol=0) → Vol(𝓑₃) substitution (deuteron special case)
-        v_eff = v if v > mpf("0.01") else VOL_B3
+        # Hopf (Vol=0) → Vol(𝓑₃) substitution (deuteron special case).
+        # Branch on the SEMANTIC FLAG, not on the volume.  The older form
+        # `v if v > mpf("0.01") else VOL_B3` tested a magic threshold while
+        # `"hyperbolic"` sat in the same dict, and was safe only by a theorem the
+        # file never cited: Cao–Meyerhoff put the minimum volume of a cusped
+        # orientable hyperbolic 3-manifold at 2.0298832…, so nothing genuinely
+        # hyperbolic can fall under 0.01.  That margin is real but it evaporates
+        # if the registry ever gains a closed or non-cusped manifold, or if
+        # someone tunes the threshold.  The flag has neither failure mode.
+        v_eff = v if vols[iso]["hyperbolic"] else VOL_B3
         B = m_e * v_eff * dtr[iso]
         err = float((B - AME[iso]) / AME[iso] * 100)
         results[iso] = {
@@ -118,7 +159,7 @@ def main():
             "err_pct": err,
         }
         print(f"  {iso:4s} [{vols[iso]['link']:11s}]: Vol = {float(v):.7f}"
-              f"{'  → 8G (Hopf=0)' if v <= mpf('0.01') else ''}")
+              f"{'' if vols[iso]['hyperbolic'] else '  → 8G (Hopf=0)'}")
         print(f"        B = m_e·Vol·Δtr = {float(B):.3f} vs AME {float(AME[iso]):.3f}"
               f"  err = {err:+.1f}%")
 

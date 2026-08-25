@@ -101,7 +101,7 @@ noncomputable def alphaEmInvCorrected (q : ℝ) (hq : q > 1) : ℝ :=
     the instance itself is the unproved conjectural input. -/
 class AlphaEmGluonOctetConjecture (q : ℝ) (hq : q > 1) : Prop where
   matches_codata :
-    |alphaEmInvCorrected q hq - 137.035999084| < 1e-6
+    |alphaEmInvCorrected q hq - 137.035999177| < 1e-6
 
 /-- The **Chern-Simons-form** conjecture (distinct from the
     PSLQ gluon-octet form above). States the algebraic identity

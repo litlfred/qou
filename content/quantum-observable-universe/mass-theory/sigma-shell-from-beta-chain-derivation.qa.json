@@ -1773,6 +1773,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.033Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "'entirely independent of Q_beta and the AME chain manifold' asserts a positive independence property; its problem is that it is false against the block's own title and validation, recorded under trap-superlative, not that it is an assert-by-denying construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.110Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Statement then one explanatory paragraph; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.157Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 112 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.201Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "The seven magic numbers are the physical list; no reflex triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.247Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "Ends on 'Extending to A_magic >= 8 requires identifying the correct self-conjugate partition for each higher shell', an honest statement of what is missing."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.290Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "'We verify the structure explicitly at A_magic = 2' reports what was done; no narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.333Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "The explanatory paragraph adds scope rather than echoing the statement."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.374Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2045,23 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.417Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "'The shell magnitude emerges as a PURELY categorical observable, ENTIRELY INDEPENDENT of Q_beta and the AME chain manifold' — contradicted by the block's own title ('derivation of sigma_shell magnitude FROM compound beta-decay chain Q-values'), by uses[] = prop:compound-beta-shell-calibration, and by the sibling table, which validates against B(D)/(2 m_p), an AME benchmark.",
+        "notes": "PROPOSED: either drop the independence claim or reconcile it with the title; as written the two cannot both hold. SEPARATE STRUCTURAL FINDING, THE HYPOTHESIS IS UNSATISFIABLE FOR MOST OF ITS OWN RANGE: 'Let A_magic in {2, 8, 20, 28, 50, 82, 126}, n = 3 A_magic, and let lambda_shell |- n be THE staircase partition of n'. A staircase partition (k, k-1, ..., 1) exists only for triangular n. Computed: n = 6, 24, 60, 84, 150, 246, 378, of which only 6 = T_3 and 378 = T_27 are triangular — so for A_magic = 8, 20, 28, 50 and 82 (five of the seven) no staircase partition of n exists and the definite article is ill-defined. The block's closing sentence half-concedes this, but the statement above it quantifies over all seven. ALSO: the benchmark divides by 2 m_p, an absolute proton mass (excised 2026-08-11); and uses[] includes prop:rho-k-h3a-refinement, itself a proposition sitting on conj:hoefsmit-scattering-pipeline with no conditional banner, so this block is transitively conjecture-dependent without a banner of its own. The sibling table is stale in 4 of 6 rows — see the verdict recorded there."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2081,21 @@
         "reviewed_at": "2026-08-15T10:31:00.791Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f8b0e1b68445",
+          "ts": "c56311b2e585"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:40:04.462Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "evidence": "The statement is long but is a standard let-clause; the prose paragraph is short."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2119,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:40:04.462Z"
 }

@@ -891,11 +891,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.540Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.584Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.627Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.671Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.715Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.760Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.805Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.848Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.888Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "29658ddba7cc",
+          "ts": "c9db8e3a12cd"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:45:23.929Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "evidence": "table( pure-data block: no prose to judge. Recomputation recorded in notes.",
+        "notes": "RECOMPUTED. The table is a one-to-one dictionary restating the six knot-operator rows; its boundary permutations (rg), (gb), (rb), (rgb), (rbg) and identity are CORRECT and match computations/reeb-flow-garside-closed-form-verification.witness.json's expected_boundary_perm entries. ONE ROW-PAIR IS WRONG, inherited from the source table: '3-cycle_+ row - global vortex with k = +1 uniformly' and '3-cycle_- row - opposite-chirality global vortex'. The witness gives predicted_twists_in_q_pi_units = (0.5, 0, -0.5) for BOTH 3-cycles, and separately asserts (passing) that the sum of the three sector twists is 0 for all six operators; a uniform k = +1 on all three sectors sums to 3, not 0. The two 3-cycles also do not differ by an overall sign — the witness gives them the SAME twist vector and distinguishes them only by boundary permutation ([1,2,0] vs [2,0,1]). Concatenating the letters reproduces the witness exactly: sigma_1 then sigma_2 is (+q,-q,0) then (0,+q,-q), averaging over the witness's recorded 2 sub-intervals to (0.5, 0, -0.5). SEPARATELY, the Garside row points at a claim that is false in the parent remark: the closure of sigma_1 sigma_2 sigma_1 destabilises (via sigma_1 sigma_1 sigma_2 = sigma_1^2 sigma_2) to closure_{B_2}(sigma_1^2) = the Hopf link, a TORUS link of hyperbolic volume ZERO, not the positive-volume hyperbolic JSJ piece the parent asserts; the induced permutation (13) has cycle type (2,1), confirming 2 components."
+      }
     ]
   },
   "source_hashes": {
     "md": "29658ddba7cc",
     "ts": "c9db8e3a12cd"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:45:23.929Z"
 }

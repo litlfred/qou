@@ -2,7 +2,7 @@
   "auditOnly": "docs/audits/2026-05-08-crystal-r-matrix-sublemma-2-1.md",
   "computation": "e0-calibration-audit",
   "description": "Audit of E_0 / Q_β(n) calibration constants across computations. Reports value-precision drift, anchor-of-pinning violations vs CAL-3, and the PDG-derived uncertainty floor on every E_0-dependent quantity.",
-  "computedAt": "2026-08-10T17:38:45.010139+00:00",
+  "computedAt": "2026-08-23T08:54:17.556111+00:00",
   "reference_blocks": [
     "prop:three-calibration-inputs",
     "rem:calibration-inputs"
@@ -13,13 +13,13 @@
     "m_p_MeV": "938.27208943",
     "m_p_err_MeV": "0.00000029",
     "m_e_MeV": "0.51099895069",
-    "m_e_err_MeV": "1.6e-10"
+    "m_e_err_MeV": "0.00000000016"
   },
   "Q_beta_n": {
     "value_MeV": "0.78233341",
-    "abs_err_MeV": "0.000000560803018536812085872042136961",
-    "rel_err": "0.00000071683378386820024198128281005",
-    "rel_err_ppb": "716.83378386820024198128281005"
+    "abs_err_MeV": "0.0000005608030185368120858720421369609206157480484465280138060762687939472488",
+    "rel_err": "0.0000007168337838682002419812828100501557459345222729628967348796580142822339",
+    "rel_err_ppb": "716.8337838682002419812828100501557459345222729628967348796580142822339"
   },
   "precision_floor": "Every E_0-dependent quantity inherits a relative uncertainty floor of 7.17e-7 (~717.0 ppb). 1 ppb is NOT physically achievable on these quantities without a tighter Q_β(n) measurement.",
   "findings_by_pattern": {
@@ -30,7 +30,7 @@
     "Q_BETA_MEV": [
       {
         "file": "computations/audits/hardcoded_literal_audit.py",
-        "line": 192,
+        "line": 193,
         "pattern": "Q_BETA_MEV",
         "match": "Q_BETA_MEV",
         "context": "# matches like `1e-3` ~ `Q_BETA_MEV_ERR`.  Tightened",
@@ -40,5 +40,5 @@
     "proton_mass_anchor": []
   },
   "inconsistencies": [],
-  "achievable_precision_floor_ppb": "716.83378386820024198128281005"
+  "achievable_precision_floor_ppb": "716.8337838682002419812828100501557459345222729628967348796580142822339"
 }

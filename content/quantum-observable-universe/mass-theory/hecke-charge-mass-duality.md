@@ -36,8 +36,8 @@ through the Frobenius form (collapsing tower data) and
 comultiplies (probing the tower depth).
 Its Markov trace
 ([mass via Markov trace](#prop:hecke-mass-trace)) gives the
-categorical mass $\mathfrak{m} = \lvert \mathrm{tr}_M(\Phi_{\mathrm{mass}}(\beta)) \rvert$
-— a **vertical** invariant measuring resistance to
+categorical mass $\mathfrak{m} = \lvert \mathrm{tr}_M(\Phi_{\mathrm{mass}}(\beta)) \rvert$,
+a **vertical** invariant measuring resistance to
 transport through the comultiplication.
 
 **Mixed: the vertex operator as generating function.**
@@ -72,5 +72,5 @@ with the Frobenius form $\int_A$ (vertical: integrating along the
 tower).  This pairing identifies the particle element
 $\rho(\beta)$ (charge carrier) with the mass element
 $\Phi_{\mathrm{mass}}(\beta)$ (mass carrier) as dual aspects of a
-single Hecke algebra element — connected by exactly the
+single Hecke algebra element, connected by exactly the
 Frobenius--comultiplication map that defines the categorical mass.

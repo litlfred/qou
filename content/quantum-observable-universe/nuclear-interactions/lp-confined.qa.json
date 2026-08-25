@@ -1552,6 +1552,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.581Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1571,6 +1588,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.623Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1590,6 +1624,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.666Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1609,6 +1660,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 57 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.709Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1628,6 +1696,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.757Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1647,6 +1732,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.799Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall.'",
+        "notes": "Narrating the text's own structure to a reader for whom there is no 'what follows'. Structural (shared across three blocks) so flagged, not fixed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1666,6 +1768,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.841Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1685,6 +1804,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.882Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1704,6 +1840,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.926Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (2 short paragraphs) + .ts. Definition is tight and the defined term is bolded.",
+        "notes": "No unqualified maximum-strength claim; quantitative assertions checked against the block's own arithmetic and cited sources where present."
       }
     ],
     "trap-nonspeakable": [
@@ -1723,6 +1876,23 @@
         "reviewed_at": "2026-08-15T10:31:01.402Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dd0604981ee6",
+          "ts": "6a1172678d3b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.986Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "The whole second paragraph: 'Archimedean specialisation. What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs...'",
+        "notes": "ORPHANED BANNER: the block ENDS at that paragraph, so 'what follows' follows nothing. The definition above it is purely algebraic (LP-stability of an element of H_3(q) plus a sub-braid quantifier) and invokes no archimedean construct at all, so the banner is wrong on both counts. Same defect in lp-stable.md and n-equals-1-vacuous-magic.md. PROPOSED: delete the banner from all three, or move it to the block that actually specialises."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1746,5 +1916,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:52.986Z"
 }

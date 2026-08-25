@@ -895,7 +895,188 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:12.994Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "no assertion-by-denial beyond substantive mathematical contrast"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.034Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.072Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.112Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.153Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.193Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "emphasis is placed, not announced"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.232Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.271Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.312Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "major",
+        "evidence": "Row 4 annotates '**+3.64 ppb** (beats 1 ppb)'. 3.64 ppb does not beat 1 ppb. The 1 ppb target was also superseded by 1 ppQ (10^-15) on 2026-05-26 per AGENTS.md 'Precision goals', on the ground that the old target was noise.",
+        "notes": "PROPOSED (structural, math - not applied): drop the annotation, or state the live L2 target for Q_beta (7.8 ppb) and the live measured residual."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ee23208ddff2",
+          "ts": "ca73848dcce3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:10:13.352Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: 6-row eps_Q / eps_DeltaS table; the sensitivity ratio is a constant 0.605 across rows. N=5 row carries a c_5 attribution contradicting tables 1 and 2, and row 4 annotates 3.64 ppb as 'beats 1 ppb' (reported).",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:10:13.352Z"
 }

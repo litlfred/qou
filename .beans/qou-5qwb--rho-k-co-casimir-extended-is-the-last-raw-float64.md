@@ -1,10 +1,11 @@
 ---
 # qou-5qwb
 title: rho-k-co-casimir-extended is the last raw-float64 REGRESSED red; only a full re-run clears it
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T05:25:46Z
-updated_at: 2026-08-15T05:25:46Z
+updated_at: 2026-08-19T21:03:33Z
 ---
 
 
@@ -189,3 +190,34 @@ dtype leak (real, and worth 4000x, but not the whole story), and now memory
 (the actual blocker for this atom). Each earlier diagnosis was stated with
 more confidence than the evidence supported. The lesson is the same one the
 600x600-matmul check taught: measure the specific resource before naming it.
+
+## CLOSED — verified on main 2026-08-19
+
+The witness is clean and the ratchet is green:
+
+    atoms: 6      raw float64: 0
+    NEW dirty: 0  REGRESSED: 0   (48 files / +4,264 fields drained since baseline)
+
+The run that finished it was `qou-9br4`'s (their item, now completed). What
+made it finishable is recorded here for the causal chain, because the timings
+are the evidence that the two fixes in this bean mattered:
+
+| atom | committed (pre-fix) | after the fixes | ratio |
+|---|---|---|---|
+| #3 | 0.34 s | 0.08 s | 4x |
+| tritium | 9.28 s | 0.43 s | **21x** |
+| He-3 | 9.45 s | 0.19 s | **50x** |
+| **He-4** | 2533 s | **734 s** | **3.5x** |
+
+He-4 went from ~42 min to ~12 min, and its per-worker footprint from 5.22 GB
+of dense generators to ~1 GB. Two prior attempts had been killed at that atom.
+
+Contributing fixes, all merged: the `mpf` -> `dtype=object` leak in
+`chi_numpy` (#5089), the `--workers` cap (#5104), and the P22 structured
+auto-switch above dim 1200 (#5152).
+
+Three wrong diagnoses preceded the right one — "the sandbox is slow" (it was
+a dtype leak), "~14 minutes left" (it was hung), "flop count implies speedup"
+(it was bandwidth-bound, and then the crossover reversed even that). All are
+kept above rather than deleted; the shared failure was naming a mechanism
+without measuring the resource it implicates.

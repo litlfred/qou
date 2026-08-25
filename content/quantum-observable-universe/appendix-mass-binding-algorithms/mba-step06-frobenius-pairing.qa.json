@@ -885,13 +885,193 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.487Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.528Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.569Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.610Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.650Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.694Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.733Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.773Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.814Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "68143619cfc6",
+          "ts": "3da1135ef937"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:23.854Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of alg:frobenius-pairing. No constructions from the ten categories; zero spaced em-dashes. VERIFIED: <a,b>_F = tr_M(ab) is symmetric exactly by the cyclicity axiom the step-3 block states, so the block's 'making it symmetric' is sound.",
+        "notes": "NOT A TRAP, reported separately, two items. (1) The Python API entry point does not expose the algorithm the block specifies. The block's Output is the scalar <a,b>_F plus a boolean S^2 = id; the cited pyhecke.check_frobenius does neither - I read it (tools/pyhecke/python/pyhecke/atom.py:170), and it checks Frobenius POSITIVITY G.x >= 0 and returns (stable, Gx, violations). This appendix is a maintenance contract between proposition and Python API, so the mismatch is exactly what it exists to catch. (2) Same codomain point as step 3: <a,b>_F is given as R[q, q^-1] but the Markov parameter is rational in q."
+      }
     ]
   },
   "source_hashes": {
     "md": "68143619cfc6",
     "ts": "3da1135ef937"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z",
+  "updated_at": "2026-08-22T04:27:23.854Z",
   "$schema": "block-qa/v1",
   "label": "alg:frobenius-pairing",
   "kind": "algorithm",

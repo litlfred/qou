@@ -2075,6 +2075,23 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.800Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "severity": "major",
+        "evidence": "Closing claim asserts by disparaging the alternative: Sums over flavors in hadronic mass formulas become natural transformations of functors RATHER THAN AD-HOC WEIGHTED SUMS. The rhetorical work is done by the pejorative ad-hoc, and the positive half is the weaker of the two - Flavor is a DISCRETE category, so a functor out of it is just a function on six objects and a family of morphisms into R_{>0} is not obviously a natural transformation of anything. Not the substantive-contrast false positive: no mathematical alternative is being distinguished.",
+        "notes": "STRUCTURAL - not fixed inline; the sentence makes a categorical claim that needs checking, not trimming. Proposed: state what the framing buys, or delete. If the natural-transformation claim is meant seriously it needs the two functors and the naturality square written out; as printed it is an assertion about a discrete category where naturality is vacuous."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2094,6 +2111,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.555Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of def:flavor-dressing-functor (functor definition, doublet restriction, two-layer bridge, tikzcd square, closing framing claim, trailing archimedean banner). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -2113,6 +2145,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 203 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.590Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of def:flavor-dressing-functor (functor definition, doublet restriction, two-layer bridge, tikzcd square, closing framing claim, trailing archimedean banner). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -2132,6 +2179,22 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 203 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.873Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "The substrate factors hbar_q, h_q and [2]_q are the three factors actually used in the bound theorem; the bridge list has TWO items, matching two categorical layers. No reflex three.",
+        "notes": "RIGOR (reported, not fixed - MAJOR notation collision). (1) THE FLAVOR INDEX IS NAMED q. The display reads q in {u,d,s,c,b,t} |-> mu_q, so q ranges over quark flavors - while q is the substrate parameter everywhere else in this chapter, INCLUDING three lines later in this same block (hbar_q, h_q, [2]_q, where the subscript q IS the substrate parameter). mu_q is therefore ambiguous on its face. Proposed: index flavors by f (mu_f), reserving q for the substrate. (2) The tikzcd square is drawn but never asserted to commute, and the right-vertical arrow is labelled P_bare |-> P_dressed while the prose calls the same map a lift of a bare hadron MASS (m_bare on the horizontal arrow) - P vs m mismatch. (3) STRUCTURAL: the trailing Archimedean specialisation banner is the LAST paragraph and nothing follows it - fourth occurrence of this pattern in this batch (also prop:explicit-alpha-k-h4, prop:feynman-classical-limit, prop:figure-eight-branching-rule). (4) SS7 notation is otherwise correct: bold Flavor/Hadron for categories, fraktur u/d/s/c/b/t for the flavors."
       }
     ],
     "trap-closing-aphorism": [
@@ -2151,6 +2214,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.625Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of def:flavor-dressing-functor (functor definition, doublet restriction, two-layer bridge, tikzcd square, closing framing claim, trailing archimedean banner). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -2170,6 +2248,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.837Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "We restrict our focus to the doublet and We include heavy flavors for forward compatibility are scope statements, not narration of emphasis. The discrete-category framing ensures compatibility with other categorical constructions is close to the line but asserts a property rather than directing attention; the substantive problem with it is recorded under trap-negation-contrast."
       }
     ],
     "trap-thesis-restatement": [
@@ -2189,6 +2282,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.660Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of def:flavor-dressing-functor (functor definition, doublet restriction, two-layer bridge, tikzcd square, closing framing claim, trailing archimedean banner). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -2208,6 +2316,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.696Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of def:flavor-dressing-functor (functor definition, doublet restriction, two-layer bridge, tikzcd square, closing framing claim, trailing archimedean banner). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -2227,6 +2350,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.730Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of def:flavor-dressing-functor (functor definition, doublet restriction, two-layer bridge, tikzcd square, closing framing claim, trailing archimedean banner). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -2246,6 +2384,21 @@
         "reviewed_at": "2026-08-15T10:31:00.866Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2d0e674cf45f",
+          "ts": "ba0a5deea3ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:10:46.766Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Full read of def:flavor-dressing-functor (functor definition, doublet restriction, two-layer bridge, tikzcd square, closing framing claim, trailing archimedean banner). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2269,5 +2422,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:10:46.873Z"
 }

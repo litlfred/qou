@@ -1772,6 +1772,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:12.653Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1806,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:12.694Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1840,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:12.767Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1829,6 +1874,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 61 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:12.809Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Three closing sentences map the two-term split onto its Strutinsky counterpart; substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1908,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:12.849Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Ends by naming which piece plays the shell-correction role — content, not a closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1942,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.025Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1976,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.071Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "The analogy paragraph adds the physical reading rather than restating the display."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2010,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.109Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2044,21 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.155Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "'mirrors' is appropriately hedged for an analogy, and the Strutinsky macroscopic-plus-shell decomposition is correctly described."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2078,22 @@
         "reviewed_at": "2026-08-15T10:31:00.648Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3fede0864cf6",
+          "ts": "64e96444c23d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:21:13.242Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Short sentences; the split is displayed.",
+        "notes": "Note: 'decomposes canonically' is a genuine claim of canonicity for the split and is not backed in this block; the sibling proof block for the graded trace leaves the descent at sketch level, so the canonicity rests on that. Not a trap, but worth a pointer."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1966,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:21:13.242Z"
 }

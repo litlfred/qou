@@ -15,7 +15,9 @@ Emits computations/alphaem-dilog-bloch-probe.witness.json.
 """
 import json
 from mpmath import mp, mpf, pi, polylog, im, arg, log, sqrt, e, mpc, expjpi, fabs
-mp.dps = 40
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 def D(z):
     z = mpc(z)

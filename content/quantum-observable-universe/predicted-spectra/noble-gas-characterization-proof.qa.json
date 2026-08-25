@@ -924,6 +924,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.141Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "'If the electron cloud is not a union of closed sub-links, then at least one trefoil contains an available linking site' is a contrapositive step in an iff proof, not an assert-by-denying construction.",
+        "notes": "pass on all ten trap criteria. THREE FINDINGS, none fixed inline. (1) A PROPOSITION PROVED FROM A CONJECTURE, invisible to the manifest. The reverse direction says in so many words 'follows from the shell conjecture'. The natural referent in the corpus is conj:electron-shell-2n2-capacity. Neither this proof's uses[] (['prop:noble-gas-characterization']) nor the proposition's uses[] (['rem:helium-hopf-diagram']) declares any conj: label, so the conjectural-propagation audit of AGENTS.md 3b cannot see the dependency — and 3b requires a block downstream of a conjecture to be a conjecture, or to satisfy the 3b-cond conditional-class exception with the conjecture named in uses[] and carried as an explicit instance hypothesis. Neither holds here. Proposed: name the conjecture with a link, add it to uses[], and either demote the proposition or state it conditionally. (2) UNRESOLVED CITATION: 'the Hopf stability proposition' is given without a label. The only Hopf-stability result in the corpus is prop:torus-hopf-stability, 'Torus knot composites on Bring's surface are stable hadrons' — a statement about HADRONS, not about electron sub-Hopf links, so either the citation points somewhere else or the domains do not match. (3) THE REVERSE DIRECTION'S PHYSICAL STEP IS FALSE AS STATED: 'The atom lowers its energy by capturing an additional electron, contradicting chemical inertness.' An open linking site does not imply a favourable electron capture — nitrogen, magnesium and manganese all have unfilled shells and non-positive electron affinity, and alkali metals react by donating rather than capturing. The argument needs 'gains or loses an electron', or a restriction to atoms with positive electron affinity."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -943,6 +959,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.770Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -962,6 +994,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.810Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -981,6 +1029,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 85 words)"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.862Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1000,6 +1064,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.904Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1019,6 +1099,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.946Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1038,6 +1134,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:24.985Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -1057,6 +1169,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.024Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1076,6 +1204,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.060Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1095,6 +1239,22 @@
         "reviewed_at": "2026-08-15T10:31:01.196Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "26949cb99ed7",
+          "ts": "efe5d2a97c8b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:27:25.103Z",
+        "reviewed_sha": "a8de00447e4ade7c6d4ed165ad8e9725dce281a3",
+        "evidence": "Full read of the two-paragraph proof sketch. Both paragraphs are plain argument prose: no negation-contrast, no pivot, no dash, no triple, no closing aphorism, no meta-commentary, no performed warmth, no superlative inflation, no non-speakable chain. The block is short enough that the ten categories are exhaustively checkable by inspection.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1117,5 +1277,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:27:25.141Z"
 }

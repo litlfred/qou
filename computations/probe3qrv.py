@@ -1,5 +1,6 @@
 import _path_bridge, sympy as sp, mpmath as mp
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 from q_parameter import Q_MP as Q
 from markov.markov_peel import word_to_element
 from markov.markov_trace_canonical import tr_M_element

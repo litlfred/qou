@@ -1,7 +1,7 @@
 ---
 # glnl
 title: 'Lean-prove the gluing equations for every identified shape field (generator with exact certificates)'
-status: in-progress
+status: completed
 type: task
 priority: high
 tags:
@@ -83,3 +83,40 @@ the valuable part, not the code.
 ⚠ **Unchanged scope.** None of this says any triangulation is a triangulation *of* a knot
 complement. That is Thurston hyperbolisation plus Mostow rigidity, needing hyperbolic
 3-manifolds that neither Mathlib nor QOU has.
+
+---
+**2026-08-10 — DONE for degree ≤ 6; the remainder is re-scoped, not abandoned.**
+
+Delivered in #4891 (merged as `0942cd1e30`): `QOU/Knot/GeneratedGluing.lean`, **312
+theorems across 19 manifolds** — 4₁ 5₂ 6₁ 7₂ 6₂ 6₃ 7₃ 7₄ 7₇ 8₁ 8₂₀ 8₂₁ 9₃₅ 9₄₂ 12n242
+s776 m371 v3227 o9_00000 — shape field degrees 2 through 6, all sorry-free on standard
+axioms. Generator committed as `scripts/gen-gluing-lean.py`.
+
+The bean's design held up exactly as written: stating each identity for an **arbitrary
+root** of the minimal polynomial removed root selection entirely, and every proof is one
+`linear_combination` with a cofactor from exact polynomial division, plus Bézout
+certificates for non-vanishing. Nothing was guessed. The bean's warning **not** to reach
+for `field_simp` was correct — the cleared form is deterministic and code-generable where
+`field_simp`'s normal form is not.
+
+Independent cross-check that landed for free: generated `K41.minpoly = x²−x+1` and
+`K52.minpoly = x³−2x²+3x−1` match the corpus's hand-proved `w_sq_sub` and
+`FiveTwoVolumeConstant`.
+
+### What remains, stated so it is not mistaken for finished
+
+- **Degrees 7–14.** 9₂ (deg 7), 10₁ 7₅ 8₂ 8₃ (deg 8), 7₆ (deg 9), t12000 (deg 13),
+  10₁₀₀ (deg 14) are verified exactly by Route 75 in Python but have **no Lean proofs**.
+  The generator handles them in principle; the cofactors grow and the emitted file would
+  be large. Not attempted — a deliberate stopping point, not an oversight.
+- **Cusp equations.** Edge equations only. Cusp equations carry negative exponents and
+  need inverses as explicit polynomials plus `zpow` handling. Route 75 verifies them in
+  Python; Lean does not.
+- **Wiring to `SatisfiesEdgeEquations`.** The bean asked for the generated theorems to
+  land as instances of `QOU/MathlibExt/IdealTriangulation.lean`'s `GluingData` /
+  `SatisfiesEdgeEquations`, so this becomes *certification* of the existing triangulation
+  objects rather than a parallel structure. They are currently standalone. Worth doing.
+
+Status set to **completed** for the delivered scope. The three items above should be a
+new bean rather than keeping this one open indefinitely — they are a different size of
+job from what this bean described.

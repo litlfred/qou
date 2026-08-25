@@ -1,5 +1,34 @@
 # D-ladder ⟺ Φ_b: Écalle acceleration setup + the exact remaining gap
 
+> **🛑 PREMISE CORRECTED 2026-08-09 — the "exact remaining gap" does not exist.**
+> This document sets up an Écalle acceleration of the bar-odd D-ladder and pins
+> its deliverable as the non-perturbative Stokes constant
+> `A_ω = Δ_ω log Φ_b`. `D(ũ)` is **convergent** (radius
+> `ρ = ũ(q*_ρ) = 0.142799996644689…`, the image of a **`Q_b` zero** at
+> `q*_ρ ≈ 1.48989`; `κ = 0`), so there is no instanton action, no alien
+> derivative to take, and no Stokes constant for this object to supply. See
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md)
+> and registry row **KC22**; the "non-holonomic ⇒ resurgent" step this document
+> inherits is separately invalid
+> ([`2026-08-14`](2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md)).
+>
+> **The c₃ consequence is the opposite of a hand-off.** Rather than waiting on a
+> Stokes datum, c₃/`S` is now known to be intrinsically the *anchor-dependent*
+> quantum `𝔙_q` at `q₀`, and no **anchor-invariant** datum — classical CS/Stokes
+> included — can realise its 2.44 % cross-anchor swing
+> (`QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing`, sorry-free). c₃ is
+> precision-limited by the **experimental** neutron `Q_β` (`dq*/dQ_β ≈ −0.54`),
+> not by this compute.
+>
+> **What survives.** The Borel–Leroy composition-collapse lemmas
+> (`borelLeroyWeight_add`, `_iterate`, `no_new_critical_time`) are true as
+> stated — iterating one fixed-order transform reaches only ℤ-multiples of its
+> order — but are moot for this object. The measurements stand as data.
+>
+> **Stale header figure.** "L2 count unchanged 2/7" is superseded: L2 is
+> **1/5 scoreable** (`m_K/m_π` alone) as of the 2026-08-18 correction — `m_e` is
+> the CAL-1 input whose error is *defined* zero, hence not scoreable.
+
 **Date:** 2026-07-17 · **Axis:** Q_β odd channel (c₃, bar-odd `S`) ·
 **Branch:** `claude/dladder-ecalle-phib-resummation-2026-07-17` ·
 **Tier:** formalize-first acceleration setup + measurement (scope-(a)

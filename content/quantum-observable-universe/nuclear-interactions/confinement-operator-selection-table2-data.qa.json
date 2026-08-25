@@ -883,7 +883,197 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.456Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.499Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.540Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.582Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.624Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.665Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.707Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "major",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.749Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.790Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9495f3235bf4",
+          "ts": "7c0c3aaa205e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:11:30.831Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "severity": "minor",
+        "evidence": "Pure extracted data table (kind=table, 3 rows, no prose); read in full, all ten categories judged and none has any construction to fire on. Cross-checked: all six numbers agree exactly with the corresponding rows of Table 1 (B_3 0.000/0.420, identity 0.010/0.415, sigma_0 sigma_1^-1 0.010/0.507), and the ranking survives the FULL nine-candidate witness set - the next-best |Delta net| among the three candidates Table 1 omits is L_- at 0.031, so the top three are correct. Two notes reported: the .ts carries no computation field although it re-presents Table 1's witnessed data, and the tie at rank 2/3 is broken by the tr_M column that has no witness source.",
+        "notes": "No trap of this category; pure table, no prose."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:11:30.831Z"
 }

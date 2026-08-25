@@ -936,6 +936,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.431Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -955,6 +972,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.470Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -974,6 +1008,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 69 words)"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.510Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -993,6 +1044,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 69 words)"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.550Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "The single triple (pp, nn, pn) enumerates the three distinct nucleon crossing types - substantive, and the fonts follow the notation register (frak p / frak n)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1012,6 +1080,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.593Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1031,6 +1116,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.632Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1050,6 +1152,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.672Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "major",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1069,6 +1188,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.712Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1088,6 +1224,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.751Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1107,6 +1260,23 @@
         "reviewed_at": "2026-08-15T10:31:01.309Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "160f43068f94",
+          "ts": "5c2cb016cbc1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:48:08.790Z",
+        "reviewed_sha": "0a62cc606a6a93290b81256b9a296edba896b25c",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:atomic-lp-stability-dressing (2 short paras). Independently verified with sympy that (sigma_1 sigma_2)^3 = I exactly in the 2-dimensional irrep of H_3(q) with eigenvalues {q,-q^-1} (braid + Hecke relations checked first) - the block's central claim holds. Recomputed q^-10 = 0.352252 at both the proton and muon pins (matches '0.352'; the erroneous 1.1097 pin would give 0.3531, so the printed value discriminates correctly). The bare ratio 0.537 does NOT reproduce (see notes / anomaly report).",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1129,5 +1299,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:48:08.790Z"
 }

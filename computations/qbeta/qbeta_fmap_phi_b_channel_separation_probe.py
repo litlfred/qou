@@ -3,7 +3,7 @@
 
 Fibre-side spec for the z→c_k f-map keystone (handed to PR #3458). NOT a c_3
 construction — a structural confirmation, on the VALIDATED Faddeev Φ_b
-(phi_b_evaluator.py, literature-verified against uploads/0604094v1.pdf, Hikami
+(phi_b_evaluator.py, literature-verified against library/arxiv-math-0604094v1/0604094v1.pdf, Hikami
 math/0604094), that the fibre-saddle object separates cleanly into a FLAT
 magnitude channel and a VARYING phase channel.
 

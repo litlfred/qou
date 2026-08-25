@@ -18,7 +18,8 @@ import json, os, sys
 import sympy as sp
 import mpmath as mp
 
-sys.path.insert(0, os.path.join(os.getcwd(), "tools", "qou-substrate", "python"))
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import _path_bridge  # noqa: F401,E402 — wires tools/qou-substrate + tools/pyhecke
 from qou_substrate import constants as C
 
 q = sp.Symbol("q", positive=True)

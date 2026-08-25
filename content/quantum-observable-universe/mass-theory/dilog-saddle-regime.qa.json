@@ -978,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.942Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Full read of the remark (potential, critical point, saddle value, Vol(4_1), scope closer). No assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -997,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:47.980Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Straight derivation: potential -> critical points -> value at the root -> two-tetrahedron gluing. No reframe."
       }
     ],
     "trap-em-dash": [
@@ -1016,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.020Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "One paired parenthetical em-dash enclosing the three cross-referenced blocks; a true parenthetical, and no other dashes."
       }
     ],
     "trap-triples": [
@@ -1035,6 +1080,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.058Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The three named blocks (continuum c_3 geometry, Phi_q/AJ machinery identification, q_0 Stokes-region identification) are the actual consumers of this derivation, two of them linked by label."
       }
     ],
     "trap-closing-aphorism": [
@@ -1054,6 +1114,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.096Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Closes 'reference this derivation rather than repeating it' — a consolidation-home bookkeeping statement (the .ts carries tag consolidation-home), the explicit cross-reference-closer false-positive class."
       }
     ],
     "trap-meta-commentary": [
@@ -1073,6 +1148,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.130Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No emphasis narration; the block states the derivation and stops."
       }
     ],
     "trap-thesis-restatement": [
@@ -1092,6 +1182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.169Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "The closer says which blocks depend on the derivation — new information, not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1111,6 +1216,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.207Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1130,6 +1250,21 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.271Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "No intensifiers; every numeric carries 'approx' per AGENTS.md §7ab."
       }
     ],
     "trap-nonspeakable": [
@@ -1149,6 +1284,22 @@
         "reviewed_at": "2026-08-15T10:31:00.628Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "54c80523426d",
+          "ts": "06d47499a66a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:53:48.360Z",
+        "reviewed_sha": "c1391f37ca0217a692533b9d000e3a5ff00bff4c",
+        "evidence": "Sentences are short and each display is introduced by a finite clause; reads aloud cleanly.",
+        "notes": "RIGOR CHECK PASSED (recorded because this is the corpus's most-corrupted identity): Vol(4_1) = 2*Cl_2(pi/3) is stated with the CORRECT function AND the correct coefficient, and both decimals reproduce — Cl_2(pi/3) = 1.014941606 (block: approx 1.01494) and 2*Cl_2(pi/3) = 2.029883213 (block: approx 2.02988). No Lambda-vs-Cl_2 coefficient swap here. The derivative -log|2 sin(theta/2)| and the root theta = pi/3 are also correct."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1171,5 +1322,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:53:48.360Z"
 }

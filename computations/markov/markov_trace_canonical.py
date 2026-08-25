@@ -429,6 +429,20 @@ if __name__ == "__main__":
         ("σ₀² = hσ₀ + 1",        (0, 0),           h_num * z_num + 1),
     ]
 
+    # The witness. This script is cited BY NAME in prf:categorical-mass-markov
+    # as the way to reproduce its table, and it emitted nothing -- so the
+    # block had nothing to put in `computation.witness`, and its nine quoted
+    # values were traceable only by coincidence. A script cited as
+    # authoritative while emitting no witness is unfalsifiable by the
+    # pipeline: the 1e-40 gate below was real inside this file and invisible
+    # outside it. Bean qou-ft3p.
+    from witness_base import WitnessBuilder
+    w = WitnessBuilder("markov-trace-canonical", engine="sympy")
+    w.add_data("q0_50dps", _mp.nstr(q0_num, 50))
+    w.add_data("z_convention_D", _mp.nstr(z_num, 50))
+    w.add_data("h", _mp.nstr(h_num, 50))
+    failures = 0
+
     print(f"\n  {'Word':>24} {'Computed':>14} {'Expected':>14} "
           f"{'Match':>6}")
     print("  " + "-" * 68)
@@ -438,9 +452,13 @@ if __name__ == "__main__":
         expected = _mp.mpf(str(expected))
         # 1e-40, not 1e-9: at 50 dps a 1e-9 gate would pass a convention flip
         # (C vs D differ by 0.11 on z) AND an f64 regression.
-        match = "✓" if abs(computed - expected) < _mp.mpf("1e-40") else "✗"
+        _ok = abs(computed - expected) < _mp.mpf("1e-40")
+        failures += not _ok
+        match = "✓" if _ok else "✗"
         print(f"  {name:>24} {float(computed):>+14.6f} "
               f"{float(expected):>+14.6f} {match:>6}")
+        w.add_assertion("trM_" + name.split()[0], _mp.nstr(computed, 50),
+                        _mp.nstr(expected, 50), tolerance=_mp.mpf("1e-40"))
 
     # Additional: figure-8 (σ₀σ₁⁻¹)². σ₁⁻¹ = σ₁ - h in our convention.
     print("\nFigure-8 (σ₀σ₁⁻¹)² via tr_M_element (symbolic q, eval at q₀):")
@@ -457,4 +475,17 @@ if __name__ == "__main__":
     tr_num = complex(tr_sym.subs(q_sym, q0_num))
     tr_num_re = tr_num.real if abs(tr_num.imag) < 1e-9 else tr_num
     print(f"  tr_M (symbolic) = {sp.simplify(tr_sym)}")
-    print(f"  tr_M at q₀      = {tr_num_re}   (prop says ≈ 0.182)")
+    # "prop says ~ 0.182" was the CONVENTION C column of that same table.
+    # Under D the figure-8 value is 0.280195642273 -- the table's other
+    # column. The annotation stayed on C when the computation above moved to
+    # D: the exact stale-annotation failure the table itself documents.
+    print(f"  tr_M at q₀      = {tr_num_re}   (prop table, convention D: 0.280195642273)")
+    w.add_data("figure8_trM_at_q0_convention_D", str(tr_num_re))
+    w.add_data("figure8_trM_symbolic", str(sp.simplify(tr_sym)))
+    path = w.save()
+    print(f"\n  Witness: {path}")
+    if failures:
+        print(f"  FAILED {failures} of {len(TESTS)} prop-table assertions at 1e-40.")
+    # The table printed a tick column and exited 0 regardless, so a convention
+    # flip would have shown as a row of crosses that nothing acted on.
+    raise SystemExit(1 if failures else 0)

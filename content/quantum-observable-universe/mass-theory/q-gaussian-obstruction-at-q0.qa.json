@@ -1582,7 +1582,8 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
       },
       {
         "field_hash": {
@@ -1698,7 +1699,8 @@
         "reviewed_at": "2026-07-07T14:26:56.766756Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -1749,7 +1751,8 @@
         "reviewed_at": "2026-07-07T14:26:56.766756Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -1829,7 +1832,8 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean proof contains a sorry, representing a divergence from the fully claimed narrative."
       },
       {
         "field_hash": {
@@ -1995,7 +1999,8 @@
         "reviewed_at": "2026-07-07T14:26:56.766756Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -2046,7 +2051,8 @@
         "reviewed_at": "2026-07-07T14:26:56.766756Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -2128,7 +2134,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
+        "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
       },
       {
         "field_hash": {
@@ -2147,7 +2154,8 @@
         "reviewed_at": "2026-07-07T14:26:56.766756Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       },
       {
         "result": "pass",
@@ -2461,6 +2469,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.904Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2480,6 +2503,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:25.954Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -2499,6 +2537,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.006Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -2518,6 +2571,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.058Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -2537,6 +2605,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.102Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -2556,6 +2639,22 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.150Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall.' narrates the text's own epistemic placement, but it is the corpus's sanctioned substrate-wall banner (104 blocks carry it), not manufactured emphasis. Its defect is placement, not existence - see the note.",
+        "notes": "Reported separately (not a trap fix): in 103 of the 104 blocks carrying this banner, including this one, it is the FINAL paragraph, so 'What follows' points at nothing. Corpus-wide fix: move the banner above the material it scopes, or reword to 'The statement above sits on the archimedean side of the substrate wall.'"
       }
     ],
     "trap-thesis-restatement": [
@@ -2575,6 +2674,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.204Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -2594,6 +2708,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.256Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -2613,6 +2742,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.304Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The valid substitutes are the inner Perron-Frobenius dominant eigenvalue and the outer Feray-Meliot q-Plancherel CLT' uses a definite article that implies exhaustiveness, but both named substitutes are real corpus objects and the sentence is a scope statement rather than rhetorical inflation. Noted, not failed."
       }
     ],
     "trap-nonspeakable": [
@@ -2632,6 +2776,21 @@
         "reviewed_at": "2026-08-15T10:31:00.587Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "371418be5cb0",
+          "ts": "6ef1c6db70d5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:13:26.369Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition statement plus the two closing paragraphs. q0 ~ 1.10998 agrees with both live pins (proton 1.1099785827513808, muon 1.10997859555733471) at the stated precision, so no pin-currency issue. Bozejko-Speicher condition -1<=q<=1 correctly implies failure at q0>1. Recorded separately: the trailing '**Archimedean specialisation.** What follows sits on the archimedean side...' paragraph is the block's LAST paragraph, so its cataphoric 'What follows' has no referent. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2655,5 +2814,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:13:26.369Z"
 }

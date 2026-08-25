@@ -1176,6 +1176,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.448Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "'The factorization is exact — no approximation is involved.' The second clause asserts nothing the first did not; it restates 'exact' by denying its opposite. FIXED -> 'The factorization is exact.'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1212,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.488Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1248,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.534Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "Same sentence - the spaced em-dash appended the redundant gloss rather than joining two clauses that needed joining. FIXED by the same edit; the block now contains no spaced dash."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1284,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 65 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.573Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1320,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.613Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1356,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.653Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1392,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.691Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "major",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1428,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.729Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1464,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.767Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1500,23 @@
         "reviewed_at": "2026-08-15T10:31:01.422Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2511db4c5059",
+          "ts": "f1fe8cf9689b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.804Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "severity": "minor",
+        "evidence": "Full-context read of prf:branching-qvalue-factorization (two displays + closing sentence). Re-derived the factorisation independently: with a = sum_c G_P(c), b = sum_c G_N(c), the parent sum is a^Z b^N and the daughter (one N -> P) is a^{Z+1} b^{N-1}, whose difference is exactly a^Z b^{N-1}(a-b) - matching the displayed result, and the spectator counts (Z protons, N-1 neutrons) are right. 'Eight per-nucleon channel values' is consistent with 2 nucleon types x 4 channels and with the 4^A configuration count.",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1539,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:01:32.804Z"
 }

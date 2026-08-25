@@ -67,6 +67,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # canonical 3-braids (generators 1,2 ↦ σ₁,σ₂; negatives = inverses)
 # CORRECTED 2026-08-11 (bean qou-9mum).  This file previously used
@@ -136,7 +137,13 @@ def ocneanu_weights():
     t = sp.symbols("t", positive=True)
     q = t ** 2
     h = q - 1 / q
-    z = q ** 3 / (q ** 2 + 1)   # convention D (was C: 1/(t + 1/t), t = sqrt q)
+    # Convention D (was C: `1/(t + 1/t)`, with t = sqrt q). That C spelling
+    # was invisible to BOTH z-detectors -- no sqrt and no 0.5 for the shape
+    # matcher, and not the t/(t^2+1) form the half-argument matcher looks
+    # for. It is character-for-character 1/[2]_q, the Temperley-Lieb loop
+    # reciprocal, differing only in that the variable is sqrt(q); the file
+    # saying `q = t ** 2` is what makes it decidable at all. Taxonomy row 5.
+    z = q ** 3 / (q ** 2 + 1)
 
     c3 = lambda w: q ** e_sum(w)
     c111 = lambda w: (-1 / q) ** e_sum(w)
@@ -187,7 +194,7 @@ def main() -> int:
 
     # ---- FINDING 3: anchor SHAPE of the 5₂ bar-odd datum ----
     odd_fn = sp.lambdify(_q, odd["5_2"], "mpmath")
-    mp.mp.dps = 50
+    set_compute_dps()
     qp, qm = q_at(50), q_muon_at(50)
     op, om = odd_fn(qp), odd_fn(qm)
     dln = (mp.log(abs(om)) - mp.log(abs(op))) / (qm - qp)

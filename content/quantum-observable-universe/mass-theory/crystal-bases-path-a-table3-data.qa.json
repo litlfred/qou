@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.708Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.744Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.777Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.810Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.845Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.878Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.913Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.946Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.980Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f1d05ece69bc",
+          "ts": "d014e3f4d1ed"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:01.013Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 5 timing rows); read in full. No trap construction of this category present. NUMERIC caveat reported separately: the 4He speedup '> 200x (lower bound)' does not follow from the measured '> 600 s' timeout, which gives only 600/13.7 = 43.8x; >200x needs the 'projected >> 1 h' figure (3600/13.7 = 263x), which the same cell marks as a projection. The tritium and 3He rows recompute correctly (441/0.20 = 2205x ~ 2200x; 441/0.18 = 2450x ~ 2400x)."
+      }
     ]
   },
   "source_hashes": {
     "md": "f1d05ece69bc",
     "ts": "d014e3f4d1ed"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:01.013Z"
 }

@@ -222,7 +222,30 @@ def main() -> int:
             "commitSha": src.get("commitSha"),
         })
     )
-    out = builder.save()
+    # Declare the q0 pin, INHERITED from the witness this projects.
+    #
+    # `builder.save()` was called bare, so the emitted witness carried
+    # `q0Anchor: null` and `q0Value: null` — it could not say which anchor
+    # layer its numbers belonged to. AGENTS.md: "Say which pin you used."
+    #
+    # That is not a cosmetic gap. A witness that does not declare its layer is
+    # the enabling condition for comparing across layers and reading the
+    # difference as a defect — which is exactly the mistake retracted in bean
+    # `qou-4e5k` on this arc (a ~7.8e-08 "second discrepancy" between this
+    # table and a MUON-anchored one, where the gap was the layer separation
+    # itself, not an error).
+    #
+    # Inherited rather than re-derived: this producer computes nothing. It is a
+    # thin projection of `canonical-mass-table-extended.witness.json` restricted
+    # to A <= LOW_ISOTOPE_A_MAX, so its rows are that witness's rows and its
+    # layer is that witness's layer by construction. Reading `q_parameter`
+    # directly here would be worse — it would declare the pin this process
+    # happens to import rather than the pin the numbers were computed at, and
+    # the two can differ precisely when the source witness is stale.
+    out = builder.save({
+        "q0Anchor": src.get("q0Anchor"),
+        "q0Value": src.get("q0Value"),
+    })
     print()
     print(f"  Wrote {out.name} ({projected['n_atoms']} atoms)")
     return 0

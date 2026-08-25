@@ -1467,7 +1467,8 @@
         "reviewed_at": "2026-07-07T14:26:55.089392Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block exhibits post-hoc fitting of parameters and representations to match physical data.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The block exhibits post-hoc fitting of parameters and representations to match physical data."
       },
       {
         "result": "pass",
@@ -1732,7 +1733,8 @@
         "reviewed_at": "2026-07-07T14:26:55.089392Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative."
       },
       {
         "result": "pass",
@@ -1801,7 +1803,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains 'sorry' placeholders, rendering the formalization and proof incomplete."
       },
       {
         "result": "pass",

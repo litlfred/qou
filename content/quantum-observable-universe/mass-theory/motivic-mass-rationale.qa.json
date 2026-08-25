@@ -949,6 +949,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not yet a real number.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.825Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two constructions examined. (i) 'there is no smooth volume form to integrate, no measure-theoretic Lebesgue construction that survives the blow-up' states the actual obstruction that motivates a motivic measure — substantive. (ii) 'a motive, not yet a real number' is the temporal/scope false-positive class and is load-bearing disambiguation against reading m_mot as MeV."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -968,6 +983,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:34.915Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot: paragraph 1 states the obstruction and the resolution, paragraph 2 states what remains (archimedean realization). Each opening clause carries its own content."
       }
     ],
     "trap-em-dash": [
@@ -987,6 +1017,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.015Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two em-dashes, one per paragraph, both true appositives ('a motive, not yet a real number' glossing 'a class in \\widehat{M}'). Below the density threshold and neither substitutes for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1006,6 +1051,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 134 words)"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.111Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1025,6 +1085,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.205Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Final clause is a forward cross-reference ('constructed later in this chapter once the adelic substrate it projects from is in place') — bookkeeping, in the cross-reference-closer false-positive class."
       }
     ],
     "trap-meta-commentary": [
@@ -1044,6 +1119,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.264Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No self-narration; the block's title poses 'Why a motivic measure' but the prose answers it directly rather than announcing that it will."
       }
     ],
     "trap-thesis-restatement": [
@@ -1063,6 +1153,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.350Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Second paragraph advances (realization functor still owed), not restates."
       }
     ],
     "trap-performed-warmth": [
@@ -1082,6 +1187,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.510Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1101,6 +1221,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.660Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'purely algebraically' and 'is exactly the contribution' are precise mathematical qualifiers (algebraic vs analytic; equality of a term), not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1120,6 +1255,21 @@
         "reviewed_at": "2026-08-15T10:31:00.870Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "974843dd9c32",
+          "ts": "3818988f1657"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:36:35.740Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud; the one long sentence is broken by a colon into speakable halves."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1146,5 +1296,5 @@
     "md": "974843dd9c32",
     "ts": "3818988f1657"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:36:35.740Z"
 }

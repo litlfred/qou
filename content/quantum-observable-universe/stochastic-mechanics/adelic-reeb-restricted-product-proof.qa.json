@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:34.711Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "'The hypothesis ... is not free: it is the requirement that ...' and 'Without it the sum does not even typecheck.'",
+        "notes": "False-positive class: substantive mathematical scope claim - the positive content follows the colon and the typecheck remark is a real consequence of dropping the shared-Gamma hypothesis."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:34.754Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Full read of proof block (Lean-appeal proof, Tate's-thesis paragraph, extra-structure paragraph, downstream paragraph). Lean sibling adelic-reeb-restricted-product.lean read: both theorems substantive (adelic_reeb_order_additive via Finset.sum_add_distrib; adelic_reeb_squeeze_local_to_global via Finset.sum_lt_sum) and every hypothesis (hle, v0, hv0, hlt) is consumed - no unused-hypothesis vacuity. \\ordw macro is defined (main.tex:837)."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1428,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "8 stylistic spaced dashes in 369 words (2.17/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:34.798Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "severity": "minor",
+        "evidence": "8 spaced em-dashes in 377 words (21/1000): L14 and L31/33 are true paired parentheticals, L23 a run-in heading, L25 an appositive gloss of 'commensurable'; two were dash-for-colon substitutions.",
+        "notes": "FIXED (2 of 8): 'linearly ordered abelian group — AddCommGroup + LinearOrder + IsOrderedCancelAddMonoid' -> '...abelian group: AddCommGroup...'; 'purely structural — it takes the per-place inequalities' -> 'purely structural: it takes...'. Remaining 6 are parentheticals/heading and were kept."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 369 words)"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:34.838Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Full read of proof block (Lean-appeal proof, Tate's-thesis paragraph, extra-structure paragraph, downstream paragraph). Lean sibling adelic-reeb-restricted-product.lean read: both theorems substantive (adelic_reeb_order_additive via Finset.sum_add_distrib; adelic_reeb_squeeze_local_to_global via Finset.sum_lt_sum) and every hypothesis (hle, v0, hv0, hlt) is consumed - no unused-hypothesis vacuity. \\ordw macro is defined (main.tex:837)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:34.880Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Full read of proof block (Lean-appeal proof, Tate's-thesis paragraph, extra-structure paragraph, downstream paragraph). Lean sibling adelic-reeb-restricted-product.lean read: both theorems substantive (adelic_reeb_order_additive via Finset.sum_add_distrib; adelic_reeb_squeeze_local_to_global via Finset.sum_lt_sum) and every hypothesis (hle, v0, hv0, hlt) is consumed - no unused-hypothesis vacuity. \\ordw macro is defined (main.tex:837)."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:34.921Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Full read of proof block (Lean-appeal proof, Tate's-thesis paragraph, extra-structure paragraph, downstream paragraph). Lean sibling adelic-reeb-restricted-product.lean read: both theorems substantive (adelic_reeb_order_additive via Finset.sum_add_distrib; adelic_reeb_squeeze_local_to_global via Finset.sum_lt_sum) and every hypothesis (hle, v0, hv0, hlt) is consumed - no unused-hypothesis vacuity. \\ordw macro is defined (main.tex:837)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1566,22 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:34.962Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Block-final 'Downstream.' paragraph naming rem:adelic-tate-squeeze and rem:bsd-surreal-bound.",
+        "notes": "False-positive class: cross-reference bookkeeping pointing at other blocks, not restatement of what this block established."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:35.003Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Full read of proof block (Lean-appeal proof, Tate's-thesis paragraph, extra-structure paragraph, downstream paragraph). Lean sibling adelic-reeb-restricted-product.lean read: both theorems substantive (adelic_reeb_order_additive via Finset.sum_add_distrib; adelic_reeb_squeeze_local_to_global via Finset.sum_lt_sum) and every hypothesis (hle, v0, hv0, hlt) is consumed - no unused-hypothesis vacuity. \\ordw macro is defined (main.tex:837)."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1635,22 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:35.046Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "'the genuine additional structure the adelic lift exposes'; 'purely structural'; 'the natural place to look for further exploitable rigidity'.",
+        "notes": "Earned/hedged: the block argues the shared-Gamma commensurability point and hedges the outlook ('natural place to look'), no unqualified maximum-strength claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1670,21 @@
         "reviewed_at": "2026-08-15T10:30:59.576Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "64e84eedab0c",
+          "ts": "4f8820d9f773"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:35.088Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Full read of proof block (Lean-appeal proof, Tate's-thesis paragraph, extra-structure paragraph, downstream paragraph). Lean sibling adelic-reeb-restricted-product.lean read: both theorems substantive (adelic_reeb_order_additive via Finset.sum_add_distrib; adelic_reeb_squeeze_local_to_global via Finset.sum_lt_sum) and every hypothesis (hle, v0, hv0, hlt) is consumed - no unused-hypothesis vacuity. \\ordw macro is defined (main.tex:837)."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1707,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:14:35.088Z"
 }

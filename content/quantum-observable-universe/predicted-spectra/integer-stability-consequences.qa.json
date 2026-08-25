@@ -944,6 +944,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.620Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +979,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.662Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1014,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 87 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.705Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1049,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 87 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.746Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1084,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.786Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1119,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.829Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1154,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.871Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1189,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.914Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1224,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:29.965Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1259,22 @@
         "reviewed_at": "2026-08-15T10:31:01.284Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d1b9297a3608",
+          "ts": "de155e0e343c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:30.025Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Read in full: two short noun-phrase-headed sections (even-odd selection; regime transitions) with one display. Judged all ten categories; the prose is plain and carries no rhetorical construction.",
+        "notes": "TWO NUMERIC DEFECTS reported, not fixed. (1) 'of the 254 stable nuclides, 166 have even p and even n' -- 166 matches no published tally; the standard figure is 148 (of 251) or 150 (of 253-254) even-even nuclides, i.e. about 59 percent, whereas 166/254 = 65.4 percent. Needs a cited source or correction. (2) The stated beta-decay threshold A_k = (a_C(2k+1)/(2a_A))^(3/2) does not follow from the parent proposition's own p*(A) = a_A A / (2(a_A + a_C A^(2/3))). Solved p*(A) = k + 1/2 numerically at standard liquid-drop coefficients (a_C = 0.71 MeV, a_A = 4 a_sym = 92.8 MeV, the normalisation the parent's E(p,A) implies): exact A_20 = 44.97, A_50 = 119.78, A_91 = 236.55 -- the last correctly landing on uranium, and the model itself checks out (p*(238) = 91.98 vs Z = 92; p*(208) = 81.98 vs Z = 82). The stated formula gives 0.062, 0.240, 0.586 for the same k. Coefficient-free argument that the SHAPE is wrong: a_C > 0 forces p*(A) < A/2, so p* = k + 1/2 requires A_k > 2k+1 for every k, while (a_C(2k+1)/(2a_A))^(3/2) falls below 2k+1 for any a_C/(2a_A) < (2k+1)^(-1/3). RETRACTION of my own first pass: I initially proposed exponent 3 (the large-A limit A_k = ((2k+1)a_C/a_A)^3); that also fails numerically (0.031, 0.46, 2.74), because a_A and a_C A^(2/3) are comparable across the whole physical range (93 vs 27 at A = 238), so NEITHER asymptotic limit is available and no closed form of this shape is correct. The remaining sentences check out: at p* = k + 1/2 the parabola is symmetric about the half-integer, so (k, A-k) and (k+1, A-k-1) do have equal binding."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1301,5 @@
     "md": "d1b9297a3608",
     "ts": "de155e0e343c"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:41:30.025Z"
 }

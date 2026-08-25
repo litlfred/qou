@@ -1,3 +1,4 @@
+---
 # s8ho
 title: 'HANDOVER: ledger §8 authorNotes drain — agent died mid-A3, WIP preserved on branch'
 status: completed

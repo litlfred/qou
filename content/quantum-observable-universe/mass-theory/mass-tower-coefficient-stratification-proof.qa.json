@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.448Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of proof. No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.515Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 175 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.568Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 175 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.631Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The witness field list has six items, all real record fields."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1494,23 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.691Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The block closes on 'Combined with (Plancherel boundedness) the fitting interpretation is replaced by structural derivation.' — a quotable terminal claim that its own Table 2, referenced two paragraphs earlier, contradicts: four of the seven coefficients (lambda_V, lambda_S, lambda_pair, lambda_Wigner) are marked 'open' in the Empirical verification column, and the paragraph's own opening sentence says the 4He test 'is still under independent numerical verification'. So the block states within four sentences that the verification is pending and that the fitting interpretation has been replaced.",
+        "notes": "Proposed: 'Plancherel boundedness supplies the forcing structure — each Bethe--Weizsaecker coefficient is a specific Plancherel-weighted projection. Whether that projection reproduces the empirical coefficients is open for four of the seven (Table 2).' Structural: it changes the claim, so it needs the author's call."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1530,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.749Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1564,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.816Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The closing overclaims rather than restates; recorded under trap-closing-aphorism."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1598,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.870Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1632,21 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.922Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'guarantees the sum is convergent' cites a named boundedness proposition rather than asserting bare."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1666,23 @@
         "reviewed_at": "2026-08-15T10:31:00.423Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bc92056b31d9",
+          "ts": "2d1da70635fe"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:46:39.987Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two sweep artefacts and a pin defect. (1) SCRIPT-NAME SUBSTITUTION: 'The stratum-weight tables for n in {3,4,5,6,9,12} are generated by / the formal derivation / and serialised to computations/wedderburn-strata-witness.json' — 'the formal derivation' stands where a producer script name belongs, and the sentence does not parse with it. (2) STRIPPED CROSS-REFERENCE: 'By the Wedderburn-enumeration completeness (enumeration), every lambda enters exactly one stratum' — every other citation in this block has the form ([name](#prop:label)); this one has been reduced to a bare parenthesised word with no target. (3) PIN: 'dim_q V_lambda at q_0 = 1.109978595554181... (50 dps ...)' labels SIXTEEN significant digits as 50 dps, and the value itself is the OLD muon pin (current CAL-2 muon pin is 1.10997859555733471, and the 2026-08-07 compute default is the proton pin 1.1099785827513808). This is the exact 16-digits-labelled-50-dps presentation the trap-audit brief names.",
+        "notes": "Proposed: recover the producer name and the cross-reference target from git history; re-pin or re-label the q_0 string. All three are recoveries rather than prose edits, so none applied inline."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:46:39.987Z"
 }

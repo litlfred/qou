@@ -26,6 +26,22 @@ The split is:
   identity coefficient `Σ_{k<n} k = binom(n,2)` (arithmetic core `jm_identity_coeff_two`,
   proved); axiomatised cleared of `1/n!` as `PlancherelSnData.two_sum_dim_sq_content`.
 
+**Superseded 2026-08-23 — the class is inhabited at every `n`, by a proof.** The paragraph above
+describes the state of the world when this file was written. The corpus now has the Specht modules,
+the Jucys–Murphy elements and the Okounkov–Vershik content theorem it calls absent (the OV tower,
+`OVTopAssembly.snSpectralData`), and
+`PlancherelSnDataGeneral.plancherelSnDataGeneral n : PlancherelSnData n` builds the datum for
+**every** `n` from them: field (i) from the Robinson–Schensted correspondence
+(`QOU.Mathlib.rskBurnsideHolds`), field (ii) from `identityB_general`. So the two fields are no
+longer *unproved* inputs — they are proved, in this file's own list model.
+
+What has **not** changed: the fields are still class fields, every signature below still carries
+`[PlancherelSnData n]`, and the per-`n` `decide` instances are still the ones instance resolution
+picks (the general datum is deliberately a `def`, since the class carries data). The
+hypothesis-free restatements of the two payoffs are
+`PlancherelSnDataGeneral.two_sum_dim_sq_hooks_general` and
+`twoM_eq_plancherel_hook_sum_general`.
+
 Given (A), (i), (ii), Identity I is pure algebra: `Σ_λ dim² Σ_c h_c² = Σ_λ dim² (Σc² + n²) =
 binom(n,2)·n! + n²·n! = (binom(n,2)+n²)·n! = n(3n−1)/2 · n!`.  The result is the cleared form
 `2·Σ_λ dim²·Σ_c h_c² = n(3n−1)·n!`, which `twoM_eq_plancherel_hook_sum` identifies with
@@ -145,7 +161,12 @@ constant).  Both standard axioms then check against real partition combinatorics
 So the conditional Identity I (`two_sum_dim_sq_hooks`, `twoM_eq_plancherel_hook_sum`) is
 non-degenerate over a model where the dimensions are the genuine `dimHLF` values and the two
 axioms are not vacuously `dim ≡ 1` arithmetic — it is the same `dimHLF`/`sumSqContents`
-combinatorics that `idB_verified_le12` / `dim_validated_le12` verify across all `n ≤ 12`. -/
+combinatorics that `idB_verified_le12` / `dim_validated_le12` verify across all `n ≤ 12`.
+
+(Both non-vacuity witnesses are subsumed as of 2026-08-23: `plancherelSnDataGeneral` is a model at
+every `n`, so conditional-on-`False` is ruled out without exhibiting a small case. They are kept —
+they are cheap, and a `decide` against the actual partition combinatorics is an independent check
+on the general construction rather than a consequence of it.) -/
 instance plancherelSnData_four : PlancherelSnData 4 where
   parts := {[4], [3, 1], [2, 2], [2, 1, 1], [1, 1, 1, 1]}
   parts_sorted := by decide

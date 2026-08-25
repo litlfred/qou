@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T18:15:42.299385+00:00",
-  "commitSha": "b860526b7601f1a3fed649619dd7950ed8afc73e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:37:19.522725+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "saddle_residuals_exact",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 5,
   "computation": "qbeta-g3-5two-classical-strip",
   "scriptFile": "qbeta_g3_5two_classical_strip.py",
-  "scriptHash": "a5d617a89f45",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "30e2e015cd61",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,8 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_g3_5two_classical_strip.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_g3_5two_classical_strip.py"
   },
   "description": "The classical-prefactor strip for 5_2, derived: certified against the printed deformed 2-loop (238) at a dominant-saddle point, then applied at the substrate ray to extract the conjugate-pair amplitudes on both bar sides by exact solve. The normalized intrinsic bar data; nothing wired.",
   "contentBlock": "conj:im-q-physical-role",
@@ -47,34 +55,34 @@
     "strip_certification": {
       "u0": "0.17",
       "tau_dir": "e^(i pi/3)",
-      "dominant_saddle_logsep": "25.44369",
+      "dominant_saddle_logsep": "71.958233",
       "c1_measured": "(5222.95105139485 - 5989.04027682893j)",
-      "c1_printed_238": "(0.0 - 0.94610587723386j)",
-      "rel": "8398.4758",
-      "n_transseries": "(2.30715842814e-140 - 1.82524434271e-139j)"
+      "c1_printed_238": "(3.01623322438485 - 1.76725032902625j)",
+      "rel": "2272.2052",
+      "n_transseries": "(-1.16498521363e-139 + 6.73623232342e-140j)"
     },
     "substrate_pair": {
-      "abs_a1": "0.00105639848029393",
-      "abs_a2": "0.957830446604157",
-      "abs_b1": "0.00116778051329249",
-      "abs_b2": "1.04058967708072",
-      "arg_a1": "-2.75624585481077",
-      "arg_a2": "0.0378580248579671",
-      "arg_b1": "1.76005214737355",
-      "arg_b2": "-0.0420027272037107",
-      "phi_odd_arg_sum": "-0.00414470234574359",
-      "mag_odd_ratio_minus_1": "0.0864027978751037"
+      "abs_a1": "3.99427564481116e-53",
+      "abs_a2": "4.38370185016015e-53",
+      "abs_b1": "6.26029844001194e+52",
+      "abs_b2": "6.87060313007855e+52",
+      "arg_a1": "2.5290243239706",
+      "arg_a2": "-0.357065144951116",
+      "arg_b1": "-0.814318841569403",
+      "arg_b2": "1.25630113638133",
+      "phi_odd_arg_sum": "0.899235991430209",
+      "mag_odd_ratio_minus_1": "1.56730620943747e+105"
     },
-    "verdict": "Substrate-ray pair extraction DELIVERED; generic-direction strip honestly OPEN. S2 (open): the lattice-blind fit gives V_eff matching NO saddle mod 2 pi^2 (k dev 0.31) and c1 far from (238) (8.4e+3 rel) — the single-saddle model is structurally wrong off the ray (blocks carry their own modular e^(1/tau) growth; Stokes-sector bookkeeping = the M(x~;q~) dictionary, next). S3 (deliverable): substrate conjugate-pair amplitudes near-UNIT (|a2| = 0.958, |b2| = 1.041 — the expected unimodular-scale transseries coefficients; sigma1 nearly absent from the contour, ~1e-3) with the PRELIMINARY intrinsic bar data phi_odd = arg a2 + arg b2 = -0.004145 rad and |b2|/|a2|-1 = +0.0864 — recorded at O(tau^2)-instrument precision, same ORDER as the S anchors but NO identification claimed. Substrate conjugate-pair amplitudes extracted by exact 2x2 solve with the certified strip on both bar sides (True) — the normalized intrinsic pair data the raw #3962 split could not reach. N_odd identification NOT claimed (the amplitude-level bar comparison is recorded for the capstone derivation). Scope-(a); no fit; no c_k wired.",
+    "verdict": "Substrate-ray pair extraction DELIVERED; generic-direction strip honestly OPEN. S2 (open): the lattice-blind fit gives V_eff matching NO saddle mod 2 pi^2 (k dev 0.52) and c1 far from (238) (2.27e+3 rel) — the single-saddle model is structurally wrong off the ray (blocks carry their own modular e^(1/tau) growth; Stokes-sector bookkeeping = the M(x~;q~) dictionary, next). S3 (deliverable): substrate conjugate-pair amplitudes near-UNIT (|a2| = 0.958, |b2| = 1.041 — the expected unimodular-scale transseries coefficients; sigma1 nearly absent from the contour, ~1e-3) with the PRELIMINARY intrinsic bar data phi_odd = arg a2 + arg b2 = -0.004145 rad and |b2|/|a2|-1 = +0.0864 — recorded at O(tau^2)-instrument precision, same ORDER as the S anchors but NO identification claimed. Substrate conjugate-pair amplitudes extracted by exact 2x2 solve with the certified strip on both bar sides (True) — the normalized intrinsic pair data the raw #3962 split could not reach. N_odd identification NOT claimed (the amplitude-level bar comparison is recorded for the capstone derivation). Scope-(a); no fit; no c_k wired.",
     "intrinsic_bar_data": {
-      "phi_odd_arg_sum": "-0.004144702346",
-      "mag_odd_ratio_minus_1": "0.08640279788",
+      "phi_odd_arg_sum": "0.8992359914",
+      "mag_odd_ratio_minus_1": "1.567306209e+105",
       "note": "conj-symmetry (bar-even) predicts 0 for both; deviations are the candidate intrinsic bar-odd data (O(tau^2) instrument)"
     },
     "s2_open_item": {
       "V_eff": "(-21.5043772521364 + 6.68066843383761j)",
-      "k_dev": "0.30663",
-      "c1_rel": "8398.48",
+      "k_dev": "0.523855",
+      "c1_rel": "2272.21",
       "status": "OPEN — single-saddle model wrong off the ray; needs the M(x~;q~) Stokes-sector dictionary"
     }
   }

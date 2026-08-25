@@ -7,10 +7,12 @@ import Mathlib.Tactic
 
 A minimal `MotivicGaloisCharacter ℤ ℤ trivialTarget (motiveA := 1)`
 instance with `frobenius_at p := (p : ℤ)`.  The instance witnesses
-**inhabitability** and shows `motivic_perpetual_obstruction` is
-discharged non-vacuously — for any prime `p ≥ 2`, `(p : ℤ)` is not
-a unit in `ℤ` (the only units are `±1`), so the
-`almost_everywhere_nontrivial` hypothesis holds with `N := 2`.
+**inhabitability** — for any prime `p ≥ 2`, `(p : ℤ)` is not
+a unit in `ℤ` (the only units are `±1`).
+
+The perpetual obstruction (non-unitality at almost every prime) is
+now a standalone theorem in `MotivicPerpetualObstructionFromTrace.lean`,
+not a class field obligation.
 
 This is **not** the QOU motivic Galois character at `q₀`.  The
 principal open item is GAP 6a in the
@@ -32,11 +34,11 @@ open QOU.AlgebraicSubstrate
 instance trivial_motivic_galois_character :
     MotivicGaloisCharacter ℤ ℤ trivialTarget (motiveA := 1) where
   frobenius_at := fun p => (p.val : ℤ)
-  almost_everywhere_nontrivial := by
-    refine ⟨2, fun p hp hu => ?_⟩
-    -- `(p.val : ℤ)` is a unit in `ℤ` only when `p.val = 1` or
-    -- `p.val = -1` (impossible since `p.val ≥ 2`).
-    have hp_int : (p.val : ℤ) ≥ 2 := by exact_mod_cast hp
-    rcases Int.isUnit_iff.mp hu with h | h <;> omega
+  frobenius_realize_ne_zero := by
+    -- `trivialTarget v = ℤ` and `realize v = RingHom.id ℤ`, so the goal is
+    -- definitionally `((p : ℕ) : ℤ) ≠ 0`, and a prime is positive.
+    intro p _
+    show ((p : ℕ) : ℤ) ≠ 0
+    exact_mod_cast p.property.pos.ne'
 
 end QOU.LiftingDescent

@@ -2140,6 +2140,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:38.779Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2159,6 +2174,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:38.819Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -2178,6 +2208,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 155 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:38.858Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -2197,6 +2242,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 155 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:38.897Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -2216,6 +2276,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:38.936Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Ends on a cross-reference list."
       }
     ],
     "trap-meta-commentary": [
@@ -2235,6 +2310,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:38.974Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2254,6 +2344,23 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:39.015Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "severity": "major",
+        "evidence": "The first entry under \"Corollaries\" - \"**Generalisation**: the small-cases bridge verification at $n \\leq 4$ extends to all $n$ via the bar-eigenspace argument\" - is the proposition restated, word for word in substance: the block opens with \"This proposition extends the verification to all partitions of any $n$ via a structural bar-eigenspace argument\". A corollary that repeats its own theorem draws nothing.",
+        "notes": "Structural (a labelled corollary; removing it changes the block's structure). Proposed: delete the \"Generalisation\" entry and keep the two corollaries that do say something new (the depth-2/depth-3 epistemic split, and the cyclotomic count)."
       }
     ],
     "trap-performed-warmth": [
@@ -2273,6 +2380,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:39.058Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -2292,6 +2414,23 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:39.098Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "severity": "minor",
+        "evidence": "\"extends the verification to **all** partitions of any $n$\" is a strong claim but is what the boxed two-case formula asserts, and both cross-referenced blocks exist (prop:two-filtration-bridge-small-cases and the chirality remark are defined in the stochastic-mechanics chapter). NOTE, outside the trap axes: the statement text explicitly depends on conj:two-filtration-bridge, but the .ts uses[] lists only prop:cyclotomic-cl3-orbit-sum-general, so the conjectural dependency is invisible to the AGENTS 3b propagation audit.",
+        "notes": "Route for the note: add conj:two-filtration-bridge to uses[], or restate what the proposition proves independently of the conjecture."
       }
     ],
     "trap-nonspeakable": [
@@ -2311,6 +2450,21 @@
         "reviewed_at": "2026-08-15T10:31:00.716Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f2e2739d7da7",
+          "ts": "54b505bedec5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:14:39.138Z",
+        "reviewed_sha": "4f9f3128a854261524a0cabf9d01577cb8d4d9e9",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2334,5 +2488,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:14:39.138Z"
 }

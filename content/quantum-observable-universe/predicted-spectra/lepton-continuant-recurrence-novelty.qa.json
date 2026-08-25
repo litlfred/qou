@@ -1413,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.413Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.452Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.491Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1470,6 +1518,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 33 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.529Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1553,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.569Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1588,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.605Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1623,23 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.711Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "major",
+        "evidence": "The block is two sentences and the second one, 'This provides an algebraic framework that captures the combinatorial constraints of the lepton sector.', adds no fact to the first. It names no constraint, no framework component and no consequence; it upgrades the single preceding claim into a grander unfalsifiable one. This is the closing-restatement construction in a block short enough that it is half the text.",
+        "notes": "flagged, not fixed — the remaining sentence's factual premise is itself in question (see below), so a rewrite is meaning-bearing, not mechanical. Proposed: delete the second sentence and state the concrete consequence instead, e.g. what the positive sign buys — the b_n are the continuant/Fibonacci polynomials in h, hence positive-coefficient and monotone in n, which is what makes the tower discrete and the inter-generation spacing h-controlled (the fact prf:lepton-continuant-recurrence's 'Structural content' section actually derives). MATH FINDING on the surviving sentence, not fixed inline: the claimed novelty does not survive checking. (a) The block calls the family a 'positive-sign Morgan--Voyce continuant', but Morgan--Voyce B_n, b_n satisfy the MINUS-sign recurrence B_n = (x+2)B_{n-1} - B_{n-2}, i.e. B_n(x) = U_n(1 + x/2) — Morgan--Voyce IS a rescaled Chebyshev U, so 'Morgan--Voyce, as distinguished from Chebyshev U_n' is self-undermining. The block's actual sequence b_{n+1} = h b_n + b_{n-1}, b_0=0, b_1=1 is the Fibonacci-polynomial / continuant family. (b) Even the plus-vs-minus contrast is a change of variable rather than a structural distinction: verified symbolically for n=1..7 that F_n(x) = (-i)^{n-1} U_{n-1}(i x / 2), so the positive-sign family is Chebyshev U at imaginary argument. What is genuinely notable is that the argument is h = q - q^{-1}, real and positive for q>1 — i.e. the tower sits on the hyperbolic branch — and that is a claim about the substrate, not about the recurrence being a new family."
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1659,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.641Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1694,22 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.676Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the two-sentence novelty remark. No negation-contrast (the Chebyshev comparison is named positively), no pivot, no em-dash, no triple, no aphorism, no meta-commentary, no warmth, no superlative.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1729,23 @@
         "reviewed_at": "2026-08-15T10:31:01.222Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d54bdb1aa642",
+          "ts": "e1accf4f19d7"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:07:24.747Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "severity": "minor",
+        "evidence": "The opening sentence puts a 14-word abstract noun phrase in front of its verb: 'The structural identification of the lepton-tower sequence as a positive-sign Morgan--Voyce continuant distinguishes it from ...'. Read aloud, the listener has to hold 'identification ... of ... as ...' open across three nested prepositional links before the predicate arrives. With the second sentence also headed by a bare 'This provides an algebraic framework that ...', both sentences of the block are eye-syntax.",
+        "notes": "flagged, not fixed (same reason as the restatement entry: the sentence's premise is under question, so recasting it is a content decision). Proposed: 'The lepton-tower sequence {b_n} is the continuant b_{n+1} = h b_n + b_{n-1}, whose plus sign puts it at imaginary Chebyshev argument: F_n(h) = (-i)^{n-1} U_{n-1}(i h / 2).' — subject-verb-object, and it states the relation instead of asserting a distinction."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1768,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:07:24.747Z"
 }

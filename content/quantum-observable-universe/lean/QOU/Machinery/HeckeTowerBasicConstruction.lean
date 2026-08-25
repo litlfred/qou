@@ -45,7 +45,7 @@ Base ring (§7c): generic `[Field R]` (needs `q⁻¹`, `(q+q⁻¹)⁻¹`), never
 
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01239526
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
--- Ref: [geck2000] https://doi.org/10.1093/oso/9780198502500.001.0001
+-- Ref: [geckpfeiffer2000] https://doi.org/10.1093/oso/9780198502500.001.0001
 -/
 import QOU.Machinery.HeckeBraidedCategoryScaffold
 import Mathlib.RingTheory.SimpleModule.Basic

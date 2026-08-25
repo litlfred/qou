@@ -15,9 +15,9 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from mpmath import mp, mpf
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-def set_compute_dps():
-    mp.dps = 50
 
 def fmt(x):
     return f"{float(x):.6f}"

@@ -402,8 +402,11 @@ theorem optimal_nf_from_transfer_matrix (Z N : ℕ)
 
     This follows from `volume_eq_markov_trace` applied to each chain. -/
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-theorem skein_from_markov_traces (config : NuclearConfig)
-    (h_len : config.length ≥ 2) :
+-- Dropped the unused hypothesis `h_len : config.length ≥ 2` (2026-08-22;
+-- vacuity ledger, `proof-no-unused-hypothesis-rfl`).  The factorisation is the
+-- definitional unfolding of `skeinPolynomialCleared`, which holds for every
+-- config length; `h_len` was never consumed by the `rfl` proof.
+theorem skein_from_markov_traces (config : NuclearConfig) :
     skeinPolynomialCleared config =
     (buildChains config).foldl (fun acc M => acc * tracedVolCleared M) 1 := by
   -- This is definitionally true by unfolding `skeinPolynomialCleared`

@@ -118,6 +118,50 @@ theorem seminormalParam_add_neg (d : ℤ) (hq : q ≠ 0) (h : q ^ (-2 * d) ≠ 1
   rw [seminormalParam, seminormalParam, hpow]
   exact add_inv_aux hx0 h
 
+/-- **At a scalar distance the block degenerates: `a(1)·a(-1) = -1`.**
+
+The two size-`1` eigenvalues `q` and `-q⁻¹` multiply to `-1`, so `1 + a(d)a(-d)` — the
+off-diagonal factor of `seminormalBlock`, and the `d < 0` branch of
+`SeminormalRep.offDiag` — **vanishes** exactly at `d = ±1`.
+
+This is what makes the smaller orbits consistent.  A size-`1` orbit is a `1 × 1` block
+sitting inside the same uniform entry rule as every other; the rule would supply an
+off-diagonal entry `1 + a(d)a(-d)` for it, and the whole construction only coheres because
+that entry is zero.  Equivalently: `seminormalBlock` at `a = q` has determinant `-1` and
+trace `q - q⁻¹`, and is already diagonal. -/
+theorem seminormalParam_mul_neg_one (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
+    seminormalParam q 1 * seminormalParam q (-1) = -1 := by
+  rw [seminormalParam_one q hq hq2, seminormalParam_neg_one q hq hq2]
+  field_simp
+
+/-- **The three parameters of a `⟨s_k, s_{k+1}⟩`-orbit satisfy one relation.**
+
+At distances `p`, `r` and their sum — the only distances that occur across such an orbit
+(`TableauCells.axialDist_succ_swapTableau`, `axialDist_swapTableau_word_left`) — the three
+values are not independent:
+
+  `a(p+r)·(a(p) + a(r) - (q - q⁻¹)) = a(p)·a(r)`
+
+This is `Orbit6.seminormalParam_mul_rel` stated directly on `seminormalParam` rather than on
+the multiplicative coordinates `x = q^{-2p}`, `y = q^{-2r}`, so it can be used where the
+distances are read off tableaux rather than chosen.  It is the sole algebraic input the
+braid relation needs beyond `seminormalParam_add_neg`. -/
+theorem seminormalParam_rel (p r : ℤ) (hq : q ≠ 0) (hp : q ^ (-2 * p) ≠ 1)
+    (hr : q ^ (-2 * r) ≠ 1) (hpr : q ^ (-2 * (p + r)) ≠ 1) :
+    seminormalParam q (p + r) * (seminormalParam q p + seminormalParam q r - (q - q⁻¹))
+      = seminormalParam q p * seminormalParam q r := by
+  have hsplit : q ^ (-2 * (p + r)) = q ^ (-2 * p) * q ^ (-2 * r) := by
+    rw [← zpow_add₀ hq]
+    congr 1
+    ring
+  have h1 : (1 : ℝ) - q ^ (-2 * p) ≠ 0 := sub_ne_zero.mpr (Ne.symm hp)
+  have h2 : (1 : ℝ) - q ^ (-2 * r) ≠ 0 := sub_ne_zero.mpr (Ne.symm hr)
+  have h3 : (1 : ℝ) - q ^ (-2 * p) * q ^ (-2 * r) ≠ 0 := by
+    rw [← hsplit]; exact sub_ne_zero.mpr (Ne.symm hpr)
+  rw [seminormalParam, seminormalParam, seminormalParam, hsplit]
+  field_simp
+  ring
+
 /-- **Anchor.**  The hand-built `(2,1)` matrix `S1` — constructed in `HoefsmitRep.lean` to
 satisfy the braid relation with `S0`, independently of any axial-distance formula — is the
 generic block at the parameter this file predicts.  In `[[1,2],[3]]` the entry `2` has

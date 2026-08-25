@@ -1,11 +1,11 @@
 ---
 # qou-cu0a
 title: 65 lean.refs resolve to QOU.lean (the import aggregator) — checkers audit an import list and pass vacuously
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T20:32:39Z
-updated_at: 2026-08-16T02:27:50Z
+updated_at: 2026-08-21T17:00:43Z
 ---
 
 Found while adjudicating `def:yekutieli-triple` (session `qou-xz6t`, branch `claude/mtcx-7c-verify-close-2026-08-15`).
@@ -164,3 +164,41 @@ The four:
 - *Also does not stand:* "63 blocks name declarations that exist nowhere" as a statement about *vacuous passing*. Those 57–63 refs are still genuinely unformalised (`qou-2u26` is unaffected — it is about refs naming absent declarations, which is true regardless of how they resolved), but most of them have sibling `.lean` files, so they were being audited against a real file, not an import list.
 
 **Lesson worth keeping:** when measuring a pipeline's behaviour, drive the pipeline's own entry point (`walkBlocks`), not the helper it happens to call. Calling the helper in isolation silently dropped candidate 1 and inflated every number by the 880 blocks that own a sibling.
+
+## Summary of Changes — closed 2026-08-21 (owner instruction)
+
+Closed on explicit owner instruction; AGENTS.md §4a reserves closure for a human
+and this records that it was one.
+
+**The cause is fixed upstream.** folio-assistant PR **#121** (merged 2026-08-16)
+narrowed `resolveCanonicalLean`'s final fallback so it no longer returns an
+import-only aggregator. A ref naming a declaration that exists nowhere now
+resolves to `undefined` — an honest `n/a` — instead of to the 954-line `QOU.lean`
+root, where every checker audited a list of `import` lines and **passed
+vacuously**. A false green is indistinguishable from a real one; `undefined` is
+not.
+
+**The measured impact, corrected.** An earlier revision of this bean and of
+#121 claimed ~304 affected blocks. **That was my own error and is retracted.**
+Those scans called `resolveCanonicalLean` directly, which checks candidates 2–3
+and never looks for a co-located sibling `.lean`; the pipeline resolves siblings
+*first*, so 880 sibling-owning blocks were miscounted as affected.
+
+Measured the way `walkBlocks` actually resolves:
+
+| | count |
+|---|---:|
+| blocks carrying a `qou:` ref | 1220 |
+| resolved by sibling (candidate 1) — untouched | 880 |
+| resolved via library tree (candidates 2/3) | 336 |
+| **truly unresolved after the fix** | **4** |
+| sidecar verdicts flipping `pass` → `n/a` | **12** |
+
+The four: `figure-eight-reeb-theta-value`, `crossing-energy-pair-cancellation`,
+`channel-rotation-askey-lit`, `complex-volume-character-variety-path`.
+
+**What this bean surfaced that outlived it.** Because the fallback is gone,
+dangling refs are now *visible*. `thm:su2-emergence` was one — it named
+`qou:QOU.RankOneGaugeData`, which exists nowhere, and had been passing vacuously
+for exactly this reason. Repointed in PR #5222. The rest of that population is
+`qou-2u26`'s 57-block backlog, which is where the remaining work lives.

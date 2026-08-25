@@ -65,6 +65,14 @@ import pathlib
 
 import sympy as sp
 from mpmath import fabs, log, mp, mpf, nstr, pi, polylog, polyroots, quad
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 X = sp.symbols('X')
 
@@ -163,7 +171,7 @@ def as_expr(coeffs):
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
     gates = []
 
     # ---- G1: the generating-polynomial convention, and that reversing FAILS --
@@ -272,7 +280,7 @@ def main() -> int:
         C1, C2, C3 = galois_sum_li2(R1), galois_sum_li2(Q), galois_sum_li2(P)
         D, E = galois_sum_li2(R2), galois_sum_li2(R6)
         res[dps] = (fabs(C3 - 3 * (C1 + E)), fabs(C2 - 2 * (C1 + D)))
-    mp.dps = 50
+    set_compute_dps()
     conv = bool(res[60][0] < res[40][0] * mpf(10) ** -10
                 and res[60][1] <= res[40][1] * mpf(10) ** -10 + mpf(10) ** -55)
     gates.append({

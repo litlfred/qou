@@ -1,11 +1,11 @@
 ---
 # qou-uoal
 title: 'SW-7-gen: general dim H_n(q) ≤ n! (spanning, T_w basis) — Coxeter/Matsumoto infra'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-11T00:33:45Z
-updated_at: 2026-08-11T11:21:52Z
+updated_at: 2026-08-18T16:06:15Z
 parent: qou-59vq
 ---
 
@@ -39,3 +39,9 @@ MISSING: (a) the symmetric group Equiv.Perm (Fin n) wired as a CoxeterSystem ins
 2. **Coset-spanning lemma** span_K (⋃_r range(heckeIncl)·r) = ⊤ — the crux. Right-mult-closure of the H_{n-1}-module span of {r_k} under each σ_i, via the quadratic + braid 'bubble' argument (moving σ_{n-1} rightward). General form of HeckeDim3.gen_mul_mem.
 3. finrank recursion: finrank H_n ≤ (n+1)·finrank H_{n-1} (spanning set = {incl(b)·r_k : b∈basis H_{n-1}, k}) ⇒ finrank H_n(q) ≤ (n+1)! by induction (base n=0: H_0 = K, finrank 1).
 Note (n+1)! because Hecke ... n = classical H_{n+1} (n generators, n+1 strands). Lower bound dim≥(n+1)! needs general Hoefsmit (qou-im9l).
+
+
+
+## CLOSED (verified 2026-08-18 by the originating session)
+finrank_le_factorial : Module.finrank K (Hecke K q qi n) ≤ (n+1)! is SORRY-FREE on main (HeckeCoset.lean, 441 lines). Verified lean-direct exit 0 + #print axioms -> [propext, Classical.choice, Quot.sound] (no sorryAx) for finrank_le_factorial, span_cosetFam_eq_top, span_mul_gen_mem.
+KEY: the closure came via RIGHT-multiplication (span_mul_gen_mem + descProd_mul_σ_of_{add_lt,add_eq,add_eq_succ,le_add}) rather than the left-mult framing this bean originally scoped — r_j·σ_i reductions are tractable where σ_i·r_j was not. Child gap qou-j6f9 also completed. The general spanning half of the Iwahori-Hecke basis theorem is DONE.

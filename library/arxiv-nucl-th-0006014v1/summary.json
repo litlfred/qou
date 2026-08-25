@@ -1,0 +1,195 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-nucl-th-0006014v1",
+ "source_sha256": "208c7a6aaf628b30",
+ "brief": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn) — 35 sections: Scattering equation . . . . . . . ; R-matrix and partial wave decompos; Phase shifts . . . . . . . . . . .",
+ "extended": "**The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)**\n\n*Department of Physics, University of Idaho, Moscow, Idaho 8 3844, U. S. A*\n\n69 pp, 35 sections.\n\n**Outline.** 1 Scattering equation . . . . . . . . . . . . ; 2 R-matrix and partial wave decomposition . . ; 3 Phase shifts . . . . . . . . . . . . . . . .; 4 Eﬀective range expansion . . . . . . . . . .; 1 OBE amplitudes . . . . . . . . . . . . . . .; 3 Final potential expressions . . . . . . . . ; Abstract; I INTRODUCTION; II THE MODEL; III CHARGE DEPENDENCE; IV NUCLEON-NUCLEON SCA TTERING; V THE DEUTERON; VI CONCLUSIONS; Acknowledgments; 1 Scattering equation; 2 R-matrix and partial wave decomposition; 1 (q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩; 2 (q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+ "tokens": {
+  "brief": 49,
+  "extended": 190
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-scattering-equation-15",
+   "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-2-r-matrix-and-partial-wave-decomposition-18",
+   "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-002-3-phase-shifts-21",
+   "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-003-4-eﬀective-range-expansion-2-4",
+   "title": "Eﬀective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-004-1-obe-amplitudes-25",
+   "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-005-3-final-potential-expressions-28",
+   "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-006-abstract",
+   "title": "Abstract",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-007-i-introduction",
+   "title": "INTRODUCTION",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-008-ii-the-model",
+   "title": "THE MODEL",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-009-iii-charge-dependence",
+   "title": "CHARGE DEPENDENCE",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-010-iv-nucleon-nucleon-sca-ttering",
+   "title": "NUCLEON-NUCLEON SCA TTERING",
+   "pages": "10-13"
+  },
+  {
+   "id": "sec-011-v-the-deuteron",
+   "title": "THE DEUTERON",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-012-vi-conclusions",
+   "title": "CONCLUSIONS",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-013-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-014-1-scattering-equation",
+   "title": "Scattering equation",
+   "pages": "15-18"
+  },
+  {
+   "id": "sec-015-2-r-matrix-and-partial-wave-decomposition",
+   "title": "R-matrix and partial wave decomposition",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-016-1-qq-rjqq",
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-017-2-qq-rjqq",
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-018-3-qq-rj-qq",
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + −⟩",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-019-4-qq-rj-qq-a22",
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| − +⟩ (A22)",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-020-5-qq-rjqq",
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + −⟩",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-021-6-qq-rj-qq",
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + +⟩",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-022-5-qq-rj",
+   "title": "(q′,q ) = RJ",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-023-6-qq-a23",
+   "title": "(q,q ′). (A23)",
+   "pages": "19-21"
+  },
+  {
+   "id": "sec-024-3-phase-shifts",
+   "title": "Phase shifts",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
+   "title": "The asymptotic wave function associated with VS and δS",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-026-4-eﬀective-range-expansion",
+   "title": "Eﬀective range expansion",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-027-0-ηq-cotδc",
+   "title": "(η′)q cot(δC",
+   "pages": "24-24"
+  },
+  {
+   "id": "sec-028-0-η-2πη",
+   "title": "(η′) = 2πη ′",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-029-1-obe-amplitudes",
+   "title": "OBE amplitudes",
+   "pages": "25-26"
+  },
+  {
+   "id": "sec-030-2-partial-wave-decomposition",
+   "title": "Partial wave decomposition",
+   "pages": "26-28"
+  },
+  {
+   "id": "sec-031-3-final-potential-expressions",
+   "title": "Final potential expressions",
+   "pages": "28-33"
+  },
+  {
+   "id": "sec-032-01-ˆk-ψ2ky-1m",
+   "title": "(ˆk) +ψ2(k)Y 1M",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-033-0-q-2π1-2",
+   "title": "(q) = (2/π)1/ 2",
+   "pages": "35-37"
+  },
+  {
+   "id": "sec-034-references",
+   "title": "References",
+   "pages": "37-69"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

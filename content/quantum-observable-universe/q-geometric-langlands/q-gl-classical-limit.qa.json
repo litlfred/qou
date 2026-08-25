@@ -1806,6 +1806,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.616Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1825,6 +1841,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.652Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1844,6 +1876,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 120 words)"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.688Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1863,6 +1911,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 120 words)"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.726Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'three compatible limits of its defining data (differential, Hecke, and dual-group)' maps onto three substantive numbered items."
       }
     ],
     "trap-closing-aphorism": [
@@ -1882,6 +1946,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.764Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1901,6 +1981,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.803Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1920,6 +2016,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.842Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "trap-performed-warmth": [
@@ -1939,6 +2051,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.882Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1958,6 +2086,23 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.923Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'the q-correspondence **passes** this consistency check' - a conjecture block asserting its own verification as fact. The Lean carrier QOU.QGeometricLanglands.q_gl_classical_limit deliberately supplies NO instance ('that is the honest open state'), so the corpus's own formalisation contradicts the prose.",
+        "notes": "proposed (NOT applied - math claim): 'the q-correspondence is conjectured to pass this consistency check'. Separately: this block writes the Hecke relation as (T-q)(T+q^{-1}) = 0, violating AGENTS.md section 7a (generator is sigma_i, never T) - reported as ANOMALY 7."
       }
     ],
     "trap-nonspeakable": [
@@ -1977,6 +2122,22 @@
         "reviewed_at": "2026-08-15T10:31:00.932Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "88fe4a065d82",
+          "ts": "22bbacce6d00"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:45.962Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (conjecture + 3 numbered limits); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2000,5 +2161,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:45.962Z"
 }

@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.366Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.426Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.490Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.547Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.602Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.656Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.706Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.758Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.809Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "881dbdfd195c",
+          "ts": "6145a43b0d85"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:33.870Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 rows (atom, n strands, p(n), l(K,q_0), speedup). RECOMPUTED: p(3)=3, p(6)=11, p(9)=30, p(12)=77 -- all four partition counts correct. Strand counts consistent at 3 per nucleon (p/n 3, deuteron 6, triton/3He 9, 4He 12). The l column is exactly n-1 in every row (2,5,8,11), and Speedup = p(n)/l reproduces 3/2=1.5, 11/5=2.2, 77/11=7.0 exactly.",
+        "notes": "ANOMALY (minor, arithmetic): the two 9-strand rows print Speedup 3.7x but 30/8 = 3.75, which rounds to 3.8 at one decimal -- the value is truncated, not rounded, and the neighbouring 7.0 row is exact, so the table is internally inconsistent about its rounding rule. Proposed fix: print 3.8x (or give 3.75x). Second note: the column is headed l(K,q_0), i.e. q_0-dependent, but every entry equals n-1 with no q_0 sensitivity shown and no witness cited; the parent prop:graded-hecke-energy-truncation-bound defines l as 'the confinement level at q_0' without supplying its value, so the column is unprovenanced as printed."
+      }
     ]
   },
   "source_hashes": {
     "md": "881dbdfd195c",
     "ts": "6145a43b0d85"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:23:33.870Z"
 }

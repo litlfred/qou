@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.219Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Algebraic proof plus a two-row confirmation table; no assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.278Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.347Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "One em-dash, opening the residual-size gloss ('-- both within the O(u_0^2) residual predicted by this proposition'). Carries content."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.413Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.478Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the residual comparison, a numeric check."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.555Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.635Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.715Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,23 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.788Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "Two defects in the confirmation section, both verified against the block's own witness (computations/qbeta/qbeta-ck-truncation-bias-correction-probe.witness.json). (1) STALE VALUE UNDER A WRONG PIN LABEL. The table gives c_3-hat = -2.0097 'at the proton-pinned q_0'. AGENTS.md records -2.0097 as the SUPERSEDED MUON value ('a superseded muon c_3 = -2.0097 (pre-#1422; today's is -2.02020024)'), and the witness carries no q0Anchor and no q0Value at all, so nothing in the chain supports the proton attribution. (2) TWO NORMALISATIONS IN ONE SENTENCE. 'recovers the canonical c_2 = -1 to 7 ppm and the empirical near-match c_3 = -2 to 3 ppm': the witness reports c_2_residual_ppm = -6.796 (relative, and equal to the absolute deviation only because |c_2| = 1) and c_3_residual_pct = -0.00015862, i.e. 1.586 ppm relative. The quoted '3 ppm' is the ABSOLUTE deviation 3.17e-06 scaled by 1e6, not a relative ppm. So one number in the pair is relative and the other is not.",
+        "notes": "PROPOSED (not applied - both are numeric): (1) either re-run under the proton pin and quote today's c_3-hat, or label the row 'muon pin (superseded)'; and record q0Anchor/q0Value in the witness per AGENTS.md rule 4. (2) quote both residuals in the same normalisation - relative: 6.80 ppm and 1.59 ppm; or absolute: 6.8e-06 and 3.2e-06. Both are still comfortably inside the predicted O(u_0^2) = 7.3e-05 either way, so the verdict is unaffected; only the reported numbers are."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1667,23 @@
         "reviewed_at": "2026-08-15T10:31:00.343Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0f253f6ff456",
+          "ts": "71ce73eb3ad4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:19:16.844Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "major",
+        "evidence": "The confirmation section's heading and first sentence are both sweep-damaged, and the sentence does not parse: '## canonical confirmation at $q_0$' followed by 'The canonical evaluation the canonical formalism applies this identity to the SDP-extracted c_k-hat ...'. Two substitutions have collided in one clause ('the canonical evaluation' + 'the canonical formalism' where a script name belongs), leaving a sentence with two subjects and no object. This is the clearest instance of the chapter's 'canonical'-for-'numerical' plus 'the canonical formalism'-for-a-script-name damage that I found in this batch.",
+        "notes": "PROPOSED (not applied - the repair is to restore an erased script name, which I will not guess): restore the producer. The section is otherwise coherent, so the intended reading is almost certainly 'Numerical confirmation at q_0' / 'The numerical evaluation <producer> applies this identity to the SDP-extracted c_k-hat at ...'. The block's own .ts names computations/qbeta/qbeta_ck_truncation_bias_correction_probe.py, which is the natural candidate but is a guess and should be confirmed against the pre-sweep text."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1706,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:19:16.844Z"
 }

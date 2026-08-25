@@ -1778,6 +1778,22 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.853Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Bold heading 'The minimal-strand condition is not cosmetic.' followed by the reason.",
+        "notes": "False-positive class: load-bearing disambiguation, and the block proves the point immediately - without the condition the same knot gets two delta_q values."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1797,6 +1813,21 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:41.925Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (219w, prop) with every claim recomputed. Writhe of T_{m,p} as the closure of (sigma_1...sigma_{m-1})^p is (m-1)p: trefoil as T_{2,3} gives 3 and as T_{3,2} gives 4; 10_124 = T_{3,5} gives 10 and as T_{5,3} gives 12 - both quoted pairs correct. (m-1)p - (p-1)m = m - p, so the asymmetry claim is exactly right. The identity h[w]_q = q^w - q^-w telescopes correctly. Braid index of T_{m,p} with m < p is m (Morton-Williams), so the minimal-strand condition is correctly stated."
       }
     ],
     "trap-em-dash": [
@@ -1817,6 +1848,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 stylistic spaced dashes in 187 words (2.14/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.016Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "4 spaced em-dashes in 219 words (1.8 pct, the highest density in the batch), but they form two properly nested parenthetical pairs rather than appended afterthoughts.",
+        "notes": "Density noted; construction is sound."
       }
     ],
     "trap-triples": [
@@ -1836,6 +1883,21 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 187 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.081Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (219w, prop) with every claim recomputed. Writhe of T_{m,p} as the closure of (sigma_1...sigma_{m-1})^p is (m-1)p: trefoil as T_{2,3} gives 3 and as T_{3,2} gives 4; 10_124 = T_{3,5} gives 10 and as T_{5,3} gives 12 - both quoted pairs correct. (m-1)p - (p-1)m = m - p, so the asymmetry claim is exactly right. The identity h[w]_q = q^w - q^-w telescopes correctly. Braid index of T_{m,p} with m < p is m (Morton-Williams), so the minimal-strand condition is correctly stated."
       }
     ],
     "trap-closing-aphorism": [
@@ -1855,6 +1917,21 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.144Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (219w, prop) with every claim recomputed. Writhe of T_{m,p} as the closure of (sigma_1...sigma_{m-1})^p is (m-1)p: trefoil as T_{2,3} gives 3 and as T_{3,2} gives 4; 10_124 = T_{3,5} gives 10 and as T_{5,3} gives 12 - both quoted pairs correct. (m-1)p - (p-1)m = m - p, so the asymmetry claim is exactly right. The identity h[w]_q = q^w - q^-w telescopes correctly. Braid index of T_{m,p} with m < p is m (Morton-Williams), so the minimal-strand condition is correctly stated."
       }
     ],
     "trap-meta-commentary": [
@@ -1874,6 +1951,21 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.206Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (219w, prop) with every claim recomputed. Writhe of T_{m,p} as the closure of (sigma_1...sigma_{m-1})^p is (m-1)p: trefoil as T_{2,3} gives 3 and as T_{3,2} gives 4; 10_124 = T_{3,5} gives 10 and as T_{5,3} gives 12 - both quoted pairs correct. (m-1)p - (p-1)m = m - p, so the asymmetry claim is exactly right. The identity h[w]_q = q^w - q^-w telescopes correctly. Braid index of T_{m,p} with m < p is m (Morton-Williams), so the minimal-strand condition is correctly stated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1893,6 +1985,21 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.278Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (219w, prop) with every claim recomputed. Writhe of T_{m,p} as the closure of (sigma_1...sigma_{m-1})^p is (m-1)p: trefoil as T_{2,3} gives 3 and as T_{3,2} gives 4; 10_124 = T_{3,5} gives 10 and as T_{5,3} gives 12 - both quoted pairs correct. (m-1)p - (p-1)m = m - p, so the asymmetry claim is exactly right. The identity h[w]_q = q^w - q^-w telescopes correctly. Braid index of T_{m,p} with m < p is m (Morton-Williams), so the minimal-strand condition is correctly stated."
       }
     ],
     "trap-performed-warmth": [
@@ -1912,6 +2019,21 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.358Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (219w, prop) with every claim recomputed. Writhe of T_{m,p} as the closure of (sigma_1...sigma_{m-1})^p is (m-1)p: trefoil as T_{2,3} gives 3 and as T_{3,2} gives 4; 10_124 = T_{3,5} gives 10 and as T_{5,3} gives 12 - both quoted pairs correct. (m-1)p - (p-1)m = m - p, so the asymmetry claim is exactly right. The identity h[w]_q = q^w - q^-w telescopes correctly. Braid index of T_{m,p} with m < p is m (Morton-Williams), so the minimal-strand condition is correctly stated."
       }
     ],
     "trap-superlative": [
@@ -1931,6 +2053,22 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.409Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'cleanly matching' is the only intensifier and the matches are exhibited.",
+        "notes": "STRENGTHENING NOTE for the report, in the block's favour: the consistency check says '(w - m) mod 2 agrees across both presentations'. It is stronger than that - (m-1)p - m and (p-1)m - p are IDENTICALLY equal for all m, p (difference zero), so w - m itself is presentation-independent, not merely its parity. Trefoil: 1 and 1. 10_124: 7 and 7."
       }
     ],
     "trap-nonspeakable": [
@@ -1950,6 +2088,21 @@
         "reviewed_at": "2026-08-15T10:31:00.443Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e20c1bece76f",
+          "ts": "6b6d1d8c2174"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:32:42.485Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (219w, prop) with every claim recomputed. Writhe of T_{m,p} as the closure of (sigma_1...sigma_{m-1})^p is (m-1)p: trefoil as T_{2,3} gives 3 and as T_{3,2} gives 4; 10_124 = T_{3,5} gives 10 and as T_{5,3} gives 12 - both quoted pairs correct. (m-1)p - (p-1)m = m - p, so the asymmetry claim is exactly right. The identity h[w]_q = q^w - q^-w telescopes correctly. Braid index of T_{m,p} with m < p is m (Morton-Williams), so the minimal-strand condition is correctly stated."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1973,5 +2126,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:32:42.485Z"
 }

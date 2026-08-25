@@ -1763,3 +1763,32 @@ gets reviewed as science.
 
 No carve-out is proposed: `F64_INTEGRATOR_TIER` would be wrong here, since
 these are wall-clock diagnostics rather than integrator output.
+
+---
+
+## Cross-check from another session: the stated RED condition no longer holds
+
+Not changing this bean's status — it is not mine — but the headline is stale
+enough to mislead a reader deciding whether to act.
+
+Measured on `main` @ `7a781b494b7`, 2026-08-19:
+
+    witnesses carrying raw float64 : 1539
+    baseline files / fields        : 1572 / 536,570
+    drained since baseline         : 48 file(s), +4,264 field(s)
+    NEW dirty witnesses            : 0
+    REGRESSED (count increased)    : 0
+
+So `--strict` is green: the "18 NEW + 2 REGRESSED" in the title is no longer
+the state of the tree. The three witnesses named in §"The finding"
+(`qborel-growth-budget-probe`, `cauchymul-order-cancellation-witness`,
+`c3-w2-c1-pole-divisor`) are no longer reported.
+
+Two gates that did not exist when this was opened now cover adjacent holes and
+are worth knowing about before re-opening it: `witness_shape_guard.py`
+(blocking — a gutted witness scores zero raw floats and reads as a perfect
+drain, which this ratchet cannot distinguish) and
+`numpy_mpmath_dtype_leak_audit.py` (blocking, green).
+
+Still genuinely uncovered: `docs/audits/scripts/`, where the ratchet runs
+ADVISORY only and carries 6 dirty witnesses — tracked as `qou-irzg`.

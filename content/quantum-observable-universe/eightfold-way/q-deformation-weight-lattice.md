@@ -91,6 +91,5 @@ on $q_0$ through the Hecke algebra representations, while the
 classification pattern itself --- which states go where on the
 hexagon --- is $q$-independent.
 
-This separation is a feature: the classification is universal (it holds
-for any $q$), while the quantitative predictions (mass ratios, decay
-rates) are specific to $q = q_0$.
+The classification thus holds for any $q$, while the quantitative
+predictions (mass ratios, decay rates) are specific to $q = q_0$.

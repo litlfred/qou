@@ -1778,6 +1778,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.747Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1797,6 +1812,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.780Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-em-dash": [
@@ -1816,6 +1846,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.814Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-triples": [
@@ -1835,6 +1880,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.851Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-closing-aphorism": [
@@ -1854,6 +1914,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.887Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-meta-commentary": [
@@ -1873,6 +1948,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.920Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1892,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.954Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-performed-warmth": [
@@ -1911,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:23.987Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-superlative": [
@@ -1930,6 +2050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:24.022Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "trap-nonspeakable": [
@@ -1949,6 +2084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.002Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "712e2a5249be",
+          "ts": "4df62ba0dafe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:56:24.056Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, four sentences. Defined term bolded; the QOU triple written (\\mathbf{C}, A, \\tau) with bold category and fibre functor tau; 'p' used for a categorical point, consistent with the collision rule reserving \\mathfrak{p} for the proton. No trap construction. OUT-OF-SCOPE observation reported to the caller: this definition's last two sentences (augmentation ideal \\mathfrak{m}_p = \\ker(p^*) and germ A/\\mathfrak{m}_p^2) are repeated near-verbatim by sec:categorical-point-explication, which additionally supplies p^* = \\int_A \\circ \\mu(p \\otimes -); the definition states \\ker(p^*) without ever defining p^*, so the two blocks should be reconciled rather than left duplicated."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1972,5 +2122,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:56:24.056Z"
 }

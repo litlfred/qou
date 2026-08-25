@@ -51,6 +51,7 @@ from pyhecke.gram import (
 )
 from hecke_characters import partitions_of, dim_q, qfac
 from witness_base import WitnessBuilder
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 tr_basis = [1, z, z, z**2, z**2, z**3]
 
@@ -131,11 +132,11 @@ def jet_knot_invariants(Z, N, max_k=8):
     chars = {(3,): sp, (2, 1): V_std, (1, 1, 1): ap}
     results = []
     for k in range(3, max_k + 1):
-        nfac_k = qfac(k)
+        nfac_k = qfac(k, Q0_PROTON)
         total_chi = 0.0
         total_dim = 0.0
         for lam in partitions_of(k):
-            d_q_val = dim_q(lam)
+            d_q_val = dim_q(lam, Q0_PROTON)
             w_lam = d_q_val ** 2 / nfac_k
             chi_beta = 0.0
             dim_rest = 0.0

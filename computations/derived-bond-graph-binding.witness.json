@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T13:00:17.500815+00:00",
-  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
+  "computedAt": "2026-08-24T14:04:26.875590+00:00",
+  "commitSha": "37f5207783245f80abba7df69833f6f88a6ac923",
   "assertions": [
     {
       "name": "f_bond_derivation_matches_measured_trace_ratio",
-      "computed": 2.72e-07,
+      "computed": 5.53e-16,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.005,
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1786192918224,
+  "durationMs": 42,
   "computation": "derived-bond-graph-binding",
   "scriptFile": "derived_bond_graph_binding.py",
-  "scriptHash": "7f4af3d8cf38",
-  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
+  "scriptHash": "fa768c8d25bc",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,26 +32,33 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
-  "description": "DERIVED per-bond binding. f_bond = c·z + d (Markov conditional expectation of the inter-nucleon bridge crossing): f_pp=z, f_nn=z−h, f_pn=z−h(½−δ/4) — closed q₀ expressions, NO fit, NO |·|. Validated: ∏_chain f_bond reproduces the measured tr_atom/tr_free to 3e-07. Binding B = E_0·log(tr_free/tr_atom) = E_0·Σ_bonds log(1/f_bond) (extensive, positive — no modulus). FIX: the braid wires only A−1 CHAIN bonds; the complete graph (C(Z,2) pp + Z·N pn + C(N,2) nn) is the all-pairs topology. Per-bond energies E_0·log(1/f): pp=2.907, pn=3.890, nn=5.178 MeV (substrate-fixed).",
+  "invocation": {
+    "argv": [
+      "computations/derived_bond_graph_binding.py"
+    ],
+    "reproduce": "python3 -u computations/derived_bond_graph_binding.py"
+  },
+  "description": "DERIVED per-bond binding. f_bond = c·z + d (Markov conditional expectation of the inter-nucleon bridge crossing): f_pp=z, f_nn=z−h, f_pn=z−h(½−δ/4) — closed q₀ expressions, NO fit, NO |·|. Validated: ∏_chain f_bond reproduces the measured tr_atom/tr_free to 6e-16. Binding B = E_0·log(tr_free/tr_atom) = E_0·Σ_bonds log(1/f_bond) (extensive, positive — no modulus). FIX: the braid wires only A−1 CHAIN bonds; the complete graph (C(Z,2) pp + Z·N pn + C(N,2) nn) is the all-pairs topology. Per-bond energies E_0·log(1/f): pp=2.051, pn=2.833, nn=3.798 MeV (substrate-fixed).",
   "parameters": {
     "q0": 1.10997858,
-    "z_markov": 0.49932033,
+    "z_markov": 0.61268804,
     "h": 0.2090603,
     "color_delta": 0.00137571,
     "E_0_MeV": 4.186
   },
   "data": {
     "derived_f_bond": {
-      "pp": 0.49932,
-      "nn": 0.29026,
-      "pn": 0.394862
+      "pp": 0.612688,
+      "nn": 0.403628,
+      "pn": 0.50823
     },
     "derived_bond_energy_MeV": {
-      "pp": 2.9072,
-      "nn": 5.178,
-      "pn": 3.8897
+      "pp": 2.0507,
+      "nn": 3.7978,
+      "pn": 2.8332
     },
     "rows": [
       {
@@ -60,27 +67,27 @@
         "N": 1,
         "A": 2,
         "B_AME_MeV": 2.2246,
-        "tr_atom_meas": 0.38836,
-        "tr_free_meas": 0.98353,
-        "measured_ratio_atom_over_free": 0.394862,
+        "tr_atom_meas": 0.57517,
+        "tr_free_meas": 1.13172,
+        "measured_ratio_atom_over_free": 0.50823,
         "chain_bonds": [
           "pn"
         ],
-        "prod_f_chain_DERIVED": 0.394862,
-        "derivation_rel_err": 2.97e-08,
-        "B_chain_derived_MeV": 3.8897,
-        "miss_chain_x": 0.572,
+        "prod_f_chain_DERIVED": 0.50823,
+        "derivation_rel_err": 0.0,
+        "B_chain_derived_MeV": 2.8332,
+        "miss_chain_x": 0.785,
         "complete_bonds_count": {
           "pp": 0,
           "pn": 1,
           "nn": 0
         },
-        "B_complete_derived_MeV": 3.8897,
-        "miss_complete_x": 0.572,
-        "B_chain_bar_MeV": 3.0009,
-        "miss_chain_bar_x": 0.741,
-        "B_complete_bar_MeV": 3.0009,
-        "miss_complete_bar_x": 0.741
+        "B_complete_derived_MeV": 2.8332,
+        "miss_complete_x": 0.785,
+        "B_chain_bar_MeV": 2.8338,
+        "miss_chain_bar_x": 0.785,
+        "B_complete_bar_MeV": 2.8338,
+        "miss_complete_bar_x": 0.785
       },
       {
         "atom": "T",
@@ -88,28 +95,28 @@
         "N": 2,
         "A": 3,
         "B_AME_MeV": 8.4818,
-        "tr_atom_meas": 0.10407,
-        "tr_free_meas": 0.90802,
-        "measured_ratio_atom_over_free": 0.114613,
+        "tr_atom_meas": 0.22931,
+        "tr_free_meas": 1.11785,
+        "measured_ratio_atom_over_free": 0.205136,
         "chain_bonds": [
           "pn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.114613,
-        "derivation_rel_err": 1.1e-07,
-        "B_chain_derived_MeV": 9.0677,
-        "miss_chain_x": 0.935,
+        "prod_f_chain_DERIVED": 0.205136,
+        "derivation_rel_err": 4.06e-16,
+        "B_chain_derived_MeV": 6.6309,
+        "miss_chain_x": 1.279,
         "complete_bonds_count": {
           "pp": 0,
           "pn": 2,
           "nn": 1
         },
-        "B_complete_derived_MeV": 12.9574,
-        "miss_complete_x": 0.655,
-        "B_chain_bar_MeV": 6.3115,
-        "miss_chain_bar_x": 1.344,
-        "B_complete_bar_MeV": 9.3123,
-        "miss_complete_bar_x": 0.911
+        "B_complete_derived_MeV": 9.4641,
+        "miss_complete_x": 0.896,
+        "B_chain_bar_MeV": 5.758,
+        "miss_chain_bar_x": 1.473,
+        "B_complete_bar_MeV": 8.5918,
+        "miss_complete_bar_x": 0.987
       },
       {
         "atom": "3He",
@@ -117,28 +124,28 @@
         "N": 1,
         "A": 3,
         "B_AME_MeV": 7.718,
-        "tr_atom_meas": 0.20658,
-        "tr_free_meas": 1.04776,
-        "measured_ratio_atom_over_free": 0.197163,
+        "tr_atom_meas": 0.40377,
+        "tr_free_meas": 1.29668,
+        "measured_ratio_atom_over_free": 0.311386,
         "chain_bonds": [
           "pp",
           "pn"
         ],
-        "prod_f_chain_DERIVED": 0.197163,
-        "derivation_rel_err": 3e-08,
-        "B_chain_derived_MeV": 6.7969,
-        "miss_chain_x": 1.136,
+        "prod_f_chain_DERIVED": 0.311386,
+        "derivation_rel_err": 1.78e-16,
+        "B_chain_derived_MeV": 4.8839,
+        "miss_chain_x": 1.58,
         "complete_bonds_count": {
           "pp": 1,
           "pn": 2,
           "nn": 0
         },
-        "B_complete_derived_MeV": 10.6866,
-        "miss_complete_x": 0.722,
-        "B_chain_bar_MeV": 5.9081,
-        "miss_chain_bar_x": 1.306,
-        "B_complete_bar_MeV": 8.9089,
-        "miss_complete_bar_x": 0.866
+        "B_complete_derived_MeV": 7.717,
+        "miss_complete_x": 1.0,
+        "B_chain_bar_MeV": 5.758,
+        "miss_chain_bar_x": 1.34,
+        "B_complete_bar_MeV": 8.5918,
+        "miss_complete_bar_x": 0.898
       },
       {
         "atom": "4He",
@@ -146,29 +153,29 @@
         "N": 2,
         "A": 4,
         "B_AME_MeV": 28.2957,
-        "tr_atom_meas": 0.05536,
-        "tr_free_meas": 0.96732,
-        "measured_ratio_atom_over_free": 0.057228,
+        "tr_atom_meas": 0.16097,
+        "tr_free_meas": 1.28078,
+        "measured_ratio_atom_over_free": 0.125684,
         "chain_bonds": [
           "pp",
           "pn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.057228,
-        "derivation_rel_err": 1.1e-07,
-        "B_chain_derived_MeV": 11.9749,
-        "miss_chain_x": 2.363,
+        "prod_f_chain_DERIVED": 0.125684,
+        "derivation_rel_err": 4.42e-16,
+        "B_chain_derived_MeV": 8.6817,
+        "miss_chain_x": 3.259,
         "complete_bonds_count": {
           "pp": 1,
           "pn": 4,
           "nn": 1
         },
-        "B_complete_derived_MeV": 23.6439,
-        "miss_complete_x": 1.197,
-        "B_chain_bar_MeV": 9.2186,
-        "miss_chain_bar_x": 3.069,
-        "B_complete_bar_MeV": 18.2212,
-        "miss_complete_bar_x": 1.553
+        "B_complete_derived_MeV": 17.1811,
+        "miss_complete_x": 1.647,
+        "B_chain_bar_MeV": 8.6822,
+        "miss_chain_bar_x": 3.259,
+        "B_complete_bar_MeV": 17.1835,
+        "miss_complete_bar_x": 1.647
       },
       {
         "atom": "6Li",
@@ -176,9 +183,9 @@
         "N": 3,
         "A": 6,
         "B_AME_MeV": 31.9945,
-        "tr_atom_meas": 0.00789,
-        "tr_free_meas": 0.95139,
-        "measured_ratio_atom_over_free": 0.008294,
+        "tr_atom_meas": 0.04505,
+        "tr_free_meas": 1.44948,
+        "measured_ratio_atom_over_free": 0.031081,
         "chain_bonds": [
           "pp",
           "pp",
@@ -186,21 +193,21 @@
           "nn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.008294,
-        "derivation_rel_err": 1.91e-07,
-        "B_chain_derived_MeV": 20.06,
-        "miss_chain_x": 1.595,
+        "prod_f_chain_DERIVED": 0.031081,
+        "derivation_rel_err": 4.46e-16,
+        "B_chain_derived_MeV": 14.5301,
+        "miss_chain_x": 2.202,
         "complete_bonds_count": {
           "pp": 3,
           "pn": 9,
           "nn": 3
         },
-        "B_complete_derived_MeV": 59.2627,
-        "miss_complete_x": 0.54,
-        "B_chain_bar_MeV": 15.4364,
-        "miss_chain_bar_x": 2.073,
-        "B_complete_bar_MeV": 45.6611,
-        "miss_complete_bar_x": 0.701
+        "B_complete_derived_MeV": 43.0439,
+        "miss_complete_x": 0.743,
+        "B_chain_bar_MeV": 14.5307,
+        "miss_chain_bar_x": 2.202,
+        "B_complete_bar_MeV": 43.0493,
+        "miss_complete_bar_x": 0.743
       },
       {
         "atom": "7Li",
@@ -208,9 +215,9 @@
         "N": 4,
         "A": 7,
         "B_AME_MeV": 39.2445,
-        "tr_atom_meas": 0.00211,
-        "tr_free_meas": 0.87835,
-        "measured_ratio_atom_over_free": 0.002407,
+        "tr_atom_meas": 0.01796,
+        "tr_free_meas": 1.43172,
+        "measured_ratio_atom_over_free": 0.012545,
         "chain_bonds": [
           "pp",
           "pp",
@@ -219,21 +226,21 @@
           "nn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.002407,
-        "derivation_rel_err": 2.72e-07,
-        "B_chain_derived_MeV": 25.238,
-        "miss_chain_x": 1.555,
+        "prod_f_chain_DERIVED": 0.012545,
+        "derivation_rel_err": 5.53e-16,
+        "B_chain_derived_MeV": 18.3279,
+        "miss_chain_x": 2.141,
         "complete_bonds_count": {
           "pp": 3,
           "pn": 12,
           "nn": 6
         },
-        "B_complete_derived_MeV": 86.4657,
-        "miss_complete_x": 0.454,
-        "B_chain_bar_MeV": 18.747,
-        "miss_chain_bar_x": 2.093,
-        "B_complete_bar_MeV": 64.5955,
-        "miss_complete_bar_x": 0.608
+        "B_complete_derived_MeV": 62.9368,
+        "miss_complete_x": 0.624,
+        "B_chain_bar_MeV": 17.455,
+        "miss_chain_bar_x": 2.248,
+        "B_complete_bar_MeV": 60.3233,
+        "miss_complete_bar_x": 0.651
       },
       {
         "atom": "7Be",
@@ -241,9 +248,9 @@
         "N": 3,
         "A": 7,
         "B_AME_MeV": 37.6003,
-        "tr_atom_meas": 0.0042,
-        "tr_free_meas": 1.01352,
-        "measured_ratio_atom_over_free": 0.004141,
+        "tr_atom_meas": 0.03163,
+        "tr_free_meas": 1.66076,
+        "measured_ratio_atom_over_free": 0.019043,
         "chain_bonds": [
           "pp",
           "pp",
@@ -252,37 +259,37 @@
           "nn",
           "nn"
         ],
-        "prod_f_chain_DERIVED": 0.004142,
-        "derivation_rel_err": 1.91e-07,
-        "B_chain_derived_MeV": 22.9672,
-        "miss_chain_x": 1.637,
+        "prod_f_chain_DERIVED": 0.019043,
+        "derivation_rel_err": 3.64e-16,
+        "B_chain_derived_MeV": 16.5809,
+        "miss_chain_x": 2.268,
         "complete_bonds_count": {
           "pp": 6,
           "pn": 12,
           "nn": 3
         },
-        "B_complete_derived_MeV": 79.6534,
-        "miss_complete_x": 0.472,
-        "B_chain_bar_MeV": 18.3436,
-        "miss_chain_bar_x": 2.05,
-        "B_complete_bar_MeV": 63.3853,
-        "miss_complete_bar_x": 0.593
+        "B_complete_derived_MeV": 57.6956,
+        "miss_complete_x": 0.652,
+        "B_chain_bar_MeV": 17.455,
+        "miss_chain_bar_x": 2.154,
+        "B_complete_bar_MeV": 60.3233,
+        "miss_complete_bar_x": 0.623
       }
     ],
     "headline": {
-      "derivation": "f_bond = c·z + d (EXACT: max rel err vs measured tr_atom/tr_free = 2.7e-07 over D/T/³He/⁴He)",
-      "chain_miss_range": "0.57–2.36×",
-      "complete_miss_range": "0.45–1.20×",
+      "derivation": "f_bond = c·z + d (EXACT: max rel err vs measured tr_atom/tr_free = 5.5e-16 over D/T/³He/⁴He)",
+      "chain_miss_range": "0.79–3.26×",
+      "complete_miss_range": "0.62–1.65×",
       "verdict": "f is DERIVED (Markov factor of the bridge), not fitted. Chain (A−1 bonds, as-wired) under-binds (esp ⁴He); complete graph (C(A,2)) over-binds the light nuclei — the true bond graph is between (saturation/Pauli/shell), the remaining structural question. The per-bond ENERGIES are fixed substrate quantities; only the edge SET is open."
     },
     "upstream_witness_hashes": [
       {
         "path": "binding-canonical.witness.json",
-        "sha256": "3950fb614c34db7fbe3764ce44b0b25c51e8b3e16dd730e8387df0e21e77e497",
-        "size_bytes": 6231,
-        "commitSha": "a47a1e7a1abca511f5b43c9d930709397d648845",
-        "scriptCommitSha": "b2d94df75a85abb27b1790defaaa7ec7dccb5820",
-        "computedAt": "2026-06-29T17:13:41.851813+00:00"
+        "sha256": "141cd06d2a6b9a36fc8cb0c922025d29785651eb00331e67f0444cb3ff55fe39",
+        "size_bytes": 6536,
+        "commitSha": "ed819c29934a44bf7d752a800291f5a01ea1742d",
+        "scriptCommitSha": "77e4e68b75e65453004511c059a6613daee5ee0d",
+        "computedAt": "2026-08-22T19:30:53.367121+00:00"
       }
     ]
   }

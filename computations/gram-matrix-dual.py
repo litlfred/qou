@@ -202,7 +202,19 @@ _rad_hat = _RADICAL / np.linalg.norm(_RADICAL)
 # nothing and is exact, so the witness carries the exact value rather than a
 # 16-digit shadow of it. `_rad_hat` above stays f64 -- it only ever feeds the
 # numpy overlap printout below.
-_radical_exact = [_fmt((-1 / mp.mpf(str(q0))) ** len(w)) for w in NF_BASIS]
+# The comment above says this line makes the witness carry "the exact value
+# rather than a 16-digit shadow of it". It did NOT: `q0` is the f64 constant,
+# so `mp.mpf(str(q0))` laundered ~16 significant digits into a value that only
+# LOOKS 50-digit. Read the high-precision name; fall back visibly rather than
+# silently if the package is unavailable.
+try:
+    from q_parameter import Q_MP as _q0_exact  # noqa: E402
+except Exception:  # pragma: no cover - degraded path, and it says so
+    # No str() round-trip here: on THIS branch `q0` was built with mpmath
+    # above, so it is already an mpf and re-parsing it would launder nothing
+    # while looking exactly like the defect this line replaced.
+    _q0_exact = q0
+_radical_exact = [_fmt((-1 / _q0_exact) ** len(w)) for w in NF_BASIS]
 
 hdr = f"  {'G⁻¹':6s}"
 for name in NF_NAMES:

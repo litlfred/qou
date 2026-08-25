@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.239Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.279Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.319Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.359Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.400Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.440Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.480Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.518Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.558Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "6171eac3b114",
+          "ts": "3f1eaf7dbadf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.600Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 7-row symbol/meaning legend. No prose sentences; all ten categories clean.",
+        "notes": "Table-only block. NOTATION NOTE reported: this legend binds sigma to 'Skein crossing change (transmutation)' and K^sigma to the mirror, while AGENTS.md sec7a binds sigma_i to the braid/Hecke generator and the corpus elsewhere uses sigma for the bar-involution q -> q^-1. The legend is locally self-consistent and the superscript form K^sigma is unambiguous; recording the three live meanings so a reader of a sibling block does not carry the wrong one. Also noted: the legend uses T_{m,n} (subscript) for the generator and T(2,n) (parenthesis) for the link in adjacent rows."
+      }
     ]
   },
   "source_hashes": {
     "md": "6171eac3b114",
     "ts": "3f1eaf7dbadf"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:42:16.600Z"
 }

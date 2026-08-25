@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.792Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.837Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.876Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.918Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.958Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.997Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.036Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.075Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.114Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "7e2f09227fe4",
+          "ts": "a25f079d94e7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:01.152Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (4-row genus-filtration table). Counts recomputed by enumerating torus knots with (r-1)(s-1)/2 <= g: g=2 gives 2, g=3 gives 4, g=4 gives 6, g=5 gives 7 (adding T_{2,11}; T_{3,7} and T_{4,5} both need g=6). All four counts correct. No prose trap constructions."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:01.152Z"
 }

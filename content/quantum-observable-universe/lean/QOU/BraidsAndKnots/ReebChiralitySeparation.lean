@@ -24,7 +24,7 @@
 
   Unconditional, sorry-free; does not depend on `BringFiberAction`.
 
-  -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron
+  -- Ref: [klein1888] Klein, Lectures on the Icosahedron
 -/
 import QOU.BraidsAndKnots.S5SO3FiberAction
 

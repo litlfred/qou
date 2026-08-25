@@ -17,7 +17,40 @@ For the Borromean braid (writhe 0, maps to identity in S₃):
 
 So: tr_M = y_(3) + y_(2,1) · χ^(2,1)(β_Bor) + y_(1,1,1)
 
-The q-Schur weights have Lean-proved content-sum structure:
+CORRECTION (2026-08-19, bean qou-24w9 / PR #5294).  Two claims below need
+scoping, and the file is kept as-is otherwise because its algebra is right.
+
+  1. "Lean-proved content-sum structure" OVERSTATES what the Lean says.
+     `QOU/BraidsAndKnots/QSchurYLambdaClosedForm.lean` DEFINES
+     `ySchurClosedForm lam q = q^{c(lam)}/[n]_q!` (sorry-free), but the
+     identification of that closed form with the categorical weight is a
+     CONJECTURE CLASS, `QSchurYLambdaClosedFormClaim` -- axiomatised, not
+     proved.  Per AGENTS.md "Axiomatization is NOT a Proof", the definition is
+     Lean-typed; the identification is open.
+
+  2. The weights below are the q-SCHUR PLANCHEREL family.  They are NOT the
+     weights that decompose the `tr_M` this file feeds into `F_Bor`.  Measured
+     at the proton pin in
+     `computations/qbeta/fbor_q3_is_qschur_plancherel_weight_probe.py` (8/8):
+
+       sum_lam y^Wenzl_lam . chi^lam(beta_Bor) = the Lean tr_M   (residual 2e-71)
+       sum_lam y^Schur_lam . chi^lam(beta_Bor) = 0.6687          (tr_M = 0.9986)
+       sum_lam dim_lam . y^Wenzl_lam = 1 exactly (the Markov normalisation)
+       sum_lam dim_lam . y^Schur_lam = 0.6697
+
+     So `F_Bor = |tr_M| / y_(3)` is an identity for the q-Schur `y_(3)` and a
+     cross-family import for the Markov `tr_M` -- which is the conflation
+     AGENTS.md's notation register forbids ("three partition-weight families
+     y_lam / w_lam / w~_lam are distinct at q != 1 -- never conflate").
+     With the Wenzl weight, `1/y_(3) = 1.9786`, not `4.4756`.
+
+     What survives: `/q^3` is not arbitrary -- `3 = c((3)) = 0+1+2` is the
+     content sum of the trivial partition, and the bar-asymmetry PR #5294
+     isolates is exactly `bar: lam -> lam'` negating `c`.  That is the
+     provenance of the factor.  What does not survive is reading this line as
+     a DERIVATION of it from the trace `F_Bor` actually uses.
+
+The q-Schur weights have content-sum structure:
   y_(3) = q³/[3]_q!    (content sum c = 3)
   y_(2,1) = 1/[3]_q!   (content sum c = 0, self-conjugate)
   y_(1,1,1) = q⁻³/[3]_q!  (content sum c = −3)
@@ -75,6 +108,29 @@ sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from qou_substrate.witness import resolve_q0_anchor  # noqa: E402
+
+# q₀ pin, declared by the producer rather than inferred.
+#
+# `WitnessBuilder.build()` stamps `q0Anchor` only when `q0_anchor_is_declared()`
+# is true, i.e. only when this stem is already in `q0_anchor_manifest.json`. The
+# manifest is generated from the q₀ value SERIALIZED in a witness. A producer
+# that reads q₀ without recording it therefore cannot bootstrap in: no stamp =>
+# no manifest entry => no stamp. Declaring it here breaks that loop, and an
+# explicit payload declaration wins over the resolver by design.
+#
+# The value comes from the SAME resolver the runtime uses, and is asserted
+# against the pin this script actually computes with -- a stamp that disagrees
+# with the compute is the defect `_q0_value_for_anchor`'s docstring records
+# (the 2026-08-15 derive-the-muon-branch change, reverted the same day).
+_Q0_ANCHOR, _Q0_VALUE = resolve_q0_anchor(__file__)
+assert _Q0_VALUE is not None and str(Q_50_DIGIT_STR)[:14] == _Q0_VALUE[:14], (
+    "q0 stamp/compute straddle: computing with "
+    + str(Q_50_DIGIT_STR)[:16] + " but resolver says "
+    + str(_Q0_ANCHOR) + " = " + _Q0_VALUE[:16]
+)
+_Q0_STAMP = {"q0Anchor": _Q0_ANCHOR, "q0Value": _Q0_VALUE}
+
 
 q = Symbol("q", positive=True)
 h = q - 1/q
@@ -83,7 +139,7 @@ h = q - 1/q
 def main():
     set_compute_dps()
     t0 = time.time()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     print("=" * 70)
     print("  Phase 2b: dim V_(2,1) bridge — WHY 2 enters linearly")
@@ -215,7 +271,7 @@ def main():
         tolerance=0,
         source="2·(m_μ·F_Bor − 6·m_e) = 2·m_μ·F_Bor − 12·m_e exactly"
     )
-    out = w.save()
+    out = w.save(_Q0_STAMP)
     print(f"\n  Witness: {out}")
 
 

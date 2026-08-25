@@ -3,8 +3,9 @@
 title: Remark interpreting 0810.1064v1.pdf at rem:transcendental-accounting
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:57Z
-updated_at: 2026-08-08T16:12:57Z
+updated_at: 2026-08-21T17:05:11Z
 ---
 
 The transcendental-accounting ledger indexes periods by Goncharov depth but records no dimension bound on the span at a given weight/level. A remark recording D(w,N) as the available upper bound — and Zhao's warning that the standard relations do not exhaust the relations at level 4 — makes the ledger's independence claims auditable rather than asserted.
@@ -15,7 +16,14 @@ The transcendental-accounting ledger indexes periods by Goncharov depth but reco
 - eq. (2) + §1 'Fact (*)', level 4 weight 3 — There is an explicit Q-linear relation among weight-3, level-4 MPVs (5*Li_{1,2}(-1,-i) = ... , nine terms) that does NOT follow from the standard relations; it is derived instead from the octahedral symmetry of P^1 - ({0, infinity} U mu_4).
   Use here: A concrete counterexample to 'the standard relation set is complete' at exactly the level (4) where the corpus's Catalan/Lambda(pi/4) values live. It supports the ledger's own distinction between relations forced by structure and relations that appear only after archimedean realization — here a genuine extra relation arises from a SYMMETRY (octahedral), not an accident, which is the ledger's Fact-2 mechanism in a different guise.
 
-Source: `uploads/0810.1064v1.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-0810.1064v1/0810.1064v1.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-0810.1064v1/  ->  [zhao2008-mpl-roots-of-unity]
+  Multiple polylogarithm values at roots of unity
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [zhao2008-mpl-roots-of-unity] as the citation key when you do it.

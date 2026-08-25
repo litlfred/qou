@@ -5,7 +5,7 @@
   "description": "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight y_\u03bb (PR #4543, \u03a3 y_\u03bb f^\u03bb = 1 verified). Master-formula conventions (binding_energy_categorical_deuteron): B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u03c7^\u03bb(\u03b2_K) sgn f^\u03bb|, \u03c7^\u03bb from the interface-inclusive Rust Hoefsmit caches. Result: C_knot = 6.0678734/6.7060686/4.9054474/290.00684 for D/T/\u00b3He/\u2074He \u2192 spread 59.119\u00d7, NON-UNIVERSAL. f^\u03bb (hook SYT) is the tightest dim convention (59.119\u00d7 vs dim_q 219.83\u00d7, none 73.981\u00d7); no global/A-power scale fixes it (log C/log A non-constant); a deuteron-pinned 0-fit scale mispredicts T/\u00b3He/\u2074He by -9.517%/23.7%/-97.91% (\u226b isospin \u00b18%). Mirror pair T & \u00b3He at the SAME H\u2089 need C_knot differing by a factor 1.3671 (robust across dim conventions: 1.3671/1.3216/1.3119) \u21d2 C_knot is NOT a function of (n,q\u2080); it is per-knot \u0394_\u03bb. scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale g(n,q\u2080) excluded by the mirror inequality (Lean no_level_only_closure). \u0394_\u03bb magnitude stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41\u00d7 was right-vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing wired; exact mpmath. NOTE: every figure in this description is INTERPOLATED from the values computed in this run \u2014 it cannot go stale against its own payload.",
   "audit_only": true,
   "tier": "scope-(a) refutation of single-universal-C_knot + scope-(b) level-only exclusion; no fit",
-  "scriptHash": "3899526a0efb3242",
+  "scriptHash": "26715c3d65c6c591",
   "result": {
     "master_formula": "B(K) = m_e\u00b7|\u03a3_\u03bb y_\u03bb \u00b7 \u03c7^\u03bb(\u03b2_K) \u00b7 sgn(w_0^{S_{\u03bb'}}) \u00b7 f^\u03bb|,  \u03a3_\u03bb y_\u03bb f^\u03bb = 1",
     "weight": "Wenzl Schur-principal y_\u03bb (pinned, PR #4543) \u2014 recomputed, \u03a3 y_\u03bb f^\u03bb = 1 asserted",
@@ -163,5 +163,5 @@
     "builds_on": "PR #4491 (C_knot gate), PR #4543 (weight pinned), docs/audits/2026-06-01-e0-lambda-substrate-derivation-options.md",
     "no_fit": true
   },
-  "scriptCommitSha": "bb31acf806944878ddefffb1cb94920da3b6ed78"
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2"
 }

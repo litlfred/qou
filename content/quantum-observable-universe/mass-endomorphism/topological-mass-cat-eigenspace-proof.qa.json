@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.379Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.418Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.456Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.494Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.536Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.577Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.617Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.658Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.698Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1673,22 @@
         "reviewed_at": "2026-08-15T10:31:00.992Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8eed38a79bd3",
+          "ts": "db13a97d0f17"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:19:36.736Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the proof. The chain is sound and, unusually, guards its own weak point: the algebra splits as A^desc + A^trans under the idempotent tau_n; *-compatibility of the Frobenius pairing makes the splitting orthogonal; linearity carries it through the trace; and the block then states explicitly 'Orthogonal vectors add in **quadrature**, not linearly (additivity would require alignment, not orthogonality)' before concluding the Pythagorean identity. That parenthetical is correct and is load-bearing disambiguation rather than a negation-contrast trap. Every cited block resolves (def:mass-identity, def:descent-involution, prop:descent-eigenspaces, def:frobenius-pairing). No pivot, em-dash, triple, closing aphorism (it ends '$\\square$'), meta-commentary, warmth, superlative, or non-speakable chain. Recorded as verified so a later pass does not re-flag it -- and note that its three consumers did NOT absorb this correction.",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1711,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:19:36.736Z"
 }

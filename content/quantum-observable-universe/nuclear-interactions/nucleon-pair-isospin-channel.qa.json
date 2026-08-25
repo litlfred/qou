@@ -952,6 +952,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.649Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Four: 'a named physical assumption, not a theorem'; 'a *consequence* of the rule rather than a constraint imposed on it'; 'it is not an independent coincidence'; 'groups with the like-nucleon pairs rather than with the deuteron'.",
+        "notes": "Density 4 is high, but every one is a substantive technical distinction that is the point of its paragraph -- particularly the third, which is the block's own honest deflation of the charge-symmetry result. False-positive class throughout."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -971,6 +988,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.688Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (definition + 4 discussion paragraphs) + .ts. VERIFIED the representation theory: Sym^2 of a 3-dim rep is 6-dim and Alt^2 is 3-dim (6+3=9=3x3); A+H=6 with dim A=1, dim H=5; the T_1 normalised weights 0/(1/6) sum to 1 over the 6 ordered different-colour pairs; and the select map does give overall exchange antisymmetry in both branches.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -990,6 +1024,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 391 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.729Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (definition + 4 discussion paragraphs) + .ts. VERIFIED the representation theory: Sym^2 of a 3-dim rep is 6-dim and Alt^2 is 3-dim (6+3=9=3x3); A+H=6 with dim A=1, dim H=5; the T_1 normalised weights 0/(1/6) sum to 1 over the 6 ordered different-colour pairs; and the select map does give overall exchange antisymmetry in both branches.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1009,6 +1060,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 391 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.770Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'Three consequences follow immediately' then a fourth.",
+        "notes": "The count is driven by the content (the .ts authorNote of rem:isospin-selection-class-inhabited names exactly these four downstream theorems)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1028,6 +1096,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.809Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (definition + 4 discussion paragraphs) + .ts. VERIFIED the representation theory: Sym^2 of a 3-dim rep is 6-dim and Alt^2 is 3-dim (6+3=9=3x3); A+H=6 with dim A=1, dim H=5; the T_1 normalised weights 0/(1/6) sum to 1 over the 6 ordered different-colour pairs; and the select map does give overall exchange antisymmetry in both branches.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1047,6 +1132,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.850Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Was: 'The charge-symmetry consequence deserves one caveat stated here rather than discovered later.' Also 'A fourth consequence is less obvious'.",
+        "notes": "FIX APPLIED: '...deserves one caveat stated here rather than discovered later.' -> '...carries one caveat.' The remaining 'A fourth consequence is less obvious' orders the material rather than narrating emphasis, and passes."
       }
     ],
     "trap-thesis-restatement": [
@@ -1066,6 +1168,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.899Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (definition + 4 discussion paragraphs) + .ts. VERIFIED the representation theory: Sym^2 of a 3-dim rep is 6-dim and Alt^2 is 3-dim (6+3=9=3x3); A+H=6 with dim A=1, dim H=5; the T_1 normalised weights 0/(1/6) sum to 1 over the 6 ordered different-colour pairs; and the select map does give overall exchange antisymmetry in both branches.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1085,6 +1204,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.937Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (definition + 4 discussion paragraphs) + .ts. VERIFIED the representation theory: Sym^2 of a 3-dim rep is 6-dim and Alt^2 is 3-dim (6+3=9=3x3); A+H=6 with dim A=1, dim H=5; the T_1 normalised weights 0/(1/6) sum to 1 over the 6 ordered different-colour pairs; and the select map does give overall exchange antisymmetry in both branches.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1104,6 +1240,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:01.975Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'the decomposition $I = \\tfrac12 \\otimes I = \\tfrac12 \\;=\\; (I{=}1) \\oplus (I{=}0)$ of dimensions $3 + 1 = 2 \\times 2$'.",
+        "notes": "MALFORMED FORMULA, not a superlative but caught on this read. The intended statement is the isospin tensor decomposition 1/2 (x) 1/2 = 1 (+) 0; what is written reads as two equations 'I = 1/2' spliced with a tensor sign, and '2 x 2' should be '2 x 2 = 4' to match '3 + 1'. VERIFIED SOUND around it: Sym^2 of a 3-dim rep is 6-dim, Alt^2 is 3-dim, 6+3=9, A+H=6 with dim A=1 and dim H=5, and the 1/6 weights sum to 1 over the 6 ordered different-colour pairs -- the representation theory is right, only this line is garbled. Also minor: $p$ is used for a nucleon PAIR while $pp$/$pn$ use $p$ for the proton, and AGENTS.md reserves $p$ for a brane point."
       }
     ],
     "trap-nonspeakable": [
@@ -1123,6 +1276,23 @@
         "reviewed_at": "2026-08-15T10:31:01.415Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8bded21734b2",
+          "ts": "0bbc104520e5"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:02.016Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The hypothesis that the physical interface realises it is a named physical assumption, not a theorem --- nucleon-level Fermi statistics constrains the full wavefunction, space $\\otimes$ spin $\\otimes$ isospin $\\otimes$ colour, and not this sub-sector in isolation --- and it is carried as a conjecture class with no registered instance, so every consequence drawn from it stays conditional.'",
+        "notes": "61-word sentence with a mid-sentence em-dash pair, a four-fold tensor list inside it, and the main clause resuming with 'and it is carried'. Stalls aloud. PROPOSED: split into two sentences at the second dash. Math-adjacent, so flagged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1146,5 +1316,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:02.016Z"
 }

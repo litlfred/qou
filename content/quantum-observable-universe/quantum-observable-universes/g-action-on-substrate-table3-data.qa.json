@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.160Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.205Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.248Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.292Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.339Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.384Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.431Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.475Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.519Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "92625bd63786",
+          "ts": "d3a989a7f5bf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:29:32.564Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 6-row status table (flag / current / post-discharge). No connected prose, so no trap construction is possible. Column entries are terse status tokens ('retraction','premise','sketch','wrong direction'), not rhetorical constructions.",
+        "notes": "No trap under the ten categories. Flagged separately (not a trap): the table is author-tracking status content of the kind AGENTS.md 4d routes to authorNotes, and row 6 cites an unversioned internal draft marker (\"3.A v4 calibration\")."
+      }
     ]
   },
   "source_hashes": {
     "md": "92625bd63786",
     "ts": "d3a989a7f5bf"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:29:32.564Z"
 }

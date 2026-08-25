@@ -1177,6 +1177,22 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.923Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'No single quark can be extracted without dissolving the entire structure' / 'Removing any single component unlinks the remaining two' state the Borromean property itself — the contrast IS the mathematical content.",
+        "notes": "false-positive class: substantive mathematical contrast"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1212,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.611Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (example block, structured proton walkthrough); no trap-rhetorical-pivot constructions present."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1246,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 289 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.658Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (example block, structured proton walkthrough); no trap-em-dash constructions present."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1280,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 289 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.966Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "The three 'Remove X:' bullets enumerate the three link components — the count is forced by the mathematics."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1314,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.706Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (example block, structured proton walkthrough); no trap-closing-aphorism constructions present."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1348,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.752Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (example block, structured proton walkthrough); no trap-meta-commentary constructions present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1382,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.795Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (example block, structured proton walkthrough); no trap-thesis-restatement constructions present."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1416,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.837Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (example block, structured proton walkthrough); no trap-performed-warmth constructions present."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1450,22 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:57.009Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'arises overwhelmingly from topological complexity' is quantitatively accurate (binding dominates constituent masses, mirroring the ~99% QCD mass fact); 'simplest non-trivial three-component link' is a defensible technical claim.",
+        "notes": "structural math flags for this block (braid word, absolute mass display) recorded in batch summary, outside trap criteria"
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1485,21 @@
         "reviewed_at": "2026-08-15T10:30:59.172Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ceeafaa66731",
+          "ts": "26e900730e4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:56.879Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (example block, structured proton walkthrough); no trap-nonspeakable-syntax constructions present."
       }
     ],
     "wall-base-ring-minimal": [

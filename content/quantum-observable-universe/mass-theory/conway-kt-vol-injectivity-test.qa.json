@@ -1430,6 +1430,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.076Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1449,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.118Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-em-dash": [
@@ -1468,6 +1498,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 107 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.185Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-triples": [
@@ -1487,6 +1532,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 107 words)"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.226Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-closing-aphorism": [
@@ -1506,6 +1566,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.261Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-meta-commentary": [
@@ -1525,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.309Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-thesis-restatement": [
@@ -1544,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.362Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-performed-warmth": [
@@ -1563,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.399Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "trap-superlative": [
@@ -1582,6 +1702,22 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.434Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "'preserves ... universally', 'strictly falsify', 'No such pairs are currently known' all read as precise quantifier/scope statements rather than inflation.",
+        "notes": "Reported separately: 'Conway-Kinoshita-Terasaka' uses hyphens where en-dashes are wanted; two lines carry trailing whitespace."
       }
     ],
     "trap-nonspeakable": [
@@ -1601,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:00.408Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "9ececeb758ce",
+          "ts": "23d1ae743052"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:55:33.470Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "remark, 107 w: read in full. Honest block - it states that the mutant test is vacuous (Ruberman: mutation preserves volume) and names the non-mutant pair that would actually falsify Vol-injectivity. No trap construction."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1623,5 +1774,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:55:33.470Z"
 }

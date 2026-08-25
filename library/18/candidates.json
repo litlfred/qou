@@ -1,0 +1,210 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "18",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "0b7bf055085cb04b2eaefba8cfe88575a60e1f3db4a68c657331832d8130ba0f",
+  "file": "18.pdf"
+ },
+ "provenance": {
+  "title": "Mathematical Research Letters3, 51\u201360 (1996) COMBINATORIAL SCALAR CURVATURE",
+  "authors": "AND RIGIDITY OF BALL PACKINGS",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "lemma": 4,
+   "theorem": 9,
+   "remark": 1
+  },
+  "formalization_candidates": 13
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1.2",
+   "name": null,
+   "statement": "The HessianH ofS is negative semi-de\ufb01nite \u2013 its null-space",
+   "section_file": "sections/sec-004-3-denote-the-vertices-of-t-by-v1v-4-and.md",
+   "section_title": "Denote the vertices of T by v1,...,v 4, and",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.3",
+   "name": null,
+   "statement": "Fix the scale of the simplices under consideration, byset-",
+   "section_file": "sections/sec-004-3-denote-the-vertices-of-t-by-v1v-4-and.md",
+   "section_title": "Denote the vertices of T by v1,...,v 4, and",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.4",
+   "name": null,
+   "statement": "A conformal simplex cannot be deformed while keeping the",
+   "section_file": "sections/sec-004-3-denote-the-vertices-of-t-by-v1v-4-and.md",
+   "section_title": "Denote the vertices of T by v1,...,v 4, and",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "The Hessian H of S with respect to \u03ba is negative semi-",
+   "section_file": "sections/sec-005-2-another-coordinate-system.md",
+   "section_title": "Another coordinate system",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "The HessianHh of Sh is negative de\ufb01nite.",
+   "section_file": "sections/sec-006-3-hyperbolic-conformal-simplices.md",
+   "section_title": "Hyperbolic conformal simplices",
+   "pages": "5-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "A simplexT is conformal if and onlyif there exists a unique",
+   "section_file": "sections/sec-007-4-the-space-ofconf-ormal-simplices.md",
+   "section_title": "The space ofconf ormal simplices",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": null,
+   "statement": "The space ofisometry classes of Euclidean conformal sim-",
+   "section_file": "sections/sec-007-4-the-space-ofconf-ormal-simplices.md",
+   "section_title": "The space ofconf ormal simplices",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "LetSi,i =1,...,n +2, ben +2 pairwise tangent distinct",
+   "section_file": "sections/sec-007-4-the-space-ofconf-ormal-simplices.md",
+   "section_title": "The space ofconf ormal simplices",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.4",
+   "name": null,
+   "statement": "The space CT \u2282 R4 is not convex.",
+   "section_file": "sections/sec-007-4-the-space-ofconf-ormal-simplices.md",
+   "section_title": "The space ofconf ormal simplices",
+   "pages": "5-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "was already known to Coxeter in the thirties.",
+   "section_file": "sections/sec-008-5-conformal-deformation-space-of-singular-euclid.md",
+   "section_title": "Conformal deformation space of singular Euclidean metrics",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": null,
+   "statement": "A conformal structure on(M 3, T ) cannot be deformed (ex-",
+   "section_file": "sections/sec-008-5-conformal-deformation-space-of-singular-euclid.md",
+   "section_title": "Conformal deformation space of singular Euclidean metrics",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "5.2",
+   "name": null,
+   "statement": "By the results in section 3 everything in this section, with the",
+   "section_file": "sections/sec-008-5-conformal-deformation-space-of-singular-euclid.md",
+   "section_title": "Conformal deformation space of singular Euclidean metrics",
+   "pages": "7-8",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.1",
+   "name": null,
+   "statement": "Let M 3 be a Euclidean (hyperbolic) 3-manifold with poly-",
+   "section_file": "sections/sec-010-6-applications-to-ball-packing.md",
+   "section_title": "Applications to ball packing",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.2",
+   "name": null,
+   "statement": "The geometryof ball-packing of the sphereS3 whose nerve",
+   "section_file": "sections/sec-010-6-applications-to-ball-packing.md",
+   "section_title": "Applications to ball packing",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

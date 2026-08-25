@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-02T08:35:20.789019+00:00",
-  "commitSha": "e86f55985b32b5292bfb4defbb5c7a66a0f9f87e",
+  "computedAt": "2026-08-23T09:23:47.641650+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "amplitude_character_reproduces_value_map_targets_level7",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "keystone-lr-amplitude-level7",
   "scriptFile": "keystone_lr_amplitude_level7.py",
-  "scriptHash": "944475d81505",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f28a2a6c5c1d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,7 +43,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/keystone_lr_amplitude_level7.py"
+    ],
+    "reproduce": "python3 -u computations/probes/keystone_lr_amplitude_level7.py"
   },
   "description": "Level-7 LR/WRT amplitude: extends KeystoneLRAmplitudeReal (#4365) exact zeta_5 identity A_m(alpha)^2*D^2(zeta^m)=4*[alpha]^2 to the level-7 fibre roots 2cos(k*pi/7), k=1..6 (the bwsc computation, #4550 targets). Verifies (i) the LR amplitude character sin(alpha*m*pi/7)/sin(m*pi/7) reproduces the n=5 value-map polynomial targets d_zeta(lambda) at all six level-7 roots (max err < 1e-40); (ii) the #4365 amplitude identity holds at N=7 across all flat connections m and marks alpha; (iii) the level-5 exact anchor sin^2(pi/5)=(10-2sqrt5)/16 reproduces #4365. So bwS0=d_zeta/D is corroborated at the level-7 roots -- the finite slice that (two_roots_insufficient + KeystoneN5ValueMapRigidity) pins the degree-<=4 value map, which the zeta_5 2-point slice cannot. Scope-(a): does NOT independently close bwsc -- by the Verlinde structural identity S_{0lambda}=d/D (KeystoneVerlindeSMatrixBridge.S0_eq), the row equals d/D at every root once the BW-localization category is identified with the Hecke MTC (bean bwse, owner-gated RT=WRT); the per-level agreements corroborate that one identification, not separate closures. No fit; nothing wired; L2 unchanged (2/7).",
   "data": {
@@ -92,22 +104,22 @@
           "k=1 (t=+1.801938)": {
             "d_char_sin_ratio": 2.246979603717467,
             "d_poly_target": 2.246979603717467,
-            "abs_err": 5.345529420184391e-51
+            "abs_err": 7.24454326306137e-71
           },
           "k=2 (t=+1.246980)": {
             "d_char_sin_ratio": -0.5549581320873712,
             "d_poly_target": -0.5549581320873712,
-            "abs_err": 4.0091470651382935e-51
+            "abs_err": 0.0
           },
           "k=3 (t=+0.445042)": {
             "d_char_sin_ratio": -0.8019377358048383,
             "d_poly_target": -0.8019377358048383,
-            "abs_err": 0.0
+            "abs_err": 9.055679078826712e-72
           },
           "k=4 (t=-0.445042)": {
             "d_char_sin_ratio": 0.8019377358048383,
             "d_poly_target": 0.8019377358048383,
-            "abs_err": 1.3363823550460978e-51
+            "abs_err": 9.055679078826712e-72
           },
           "k=5 (t=-1.246980)": {
             "d_char_sin_ratio": 0.5549581320873712,
@@ -117,7 +129,7 @@
           "k=6 (t=-1.801938)": {
             "d_char_sin_ratio": -2.246979603717467,
             "d_poly_target": -2.246979603717467,
-            "abs_err": 1.0691058840368783e-50
+            "abs_err": 0.0
           }
         }
       },
@@ -127,32 +139,32 @@
           "k=1 (t=+1.801938)": {
             "d_char_sin_ratio": 1.8019377358048383,
             "d_poly_target": 1.8019377358048383,
-            "abs_err": 5.345529420184391e-51
+            "abs_err": 1.8111358157653425e-71
           },
           "k=2 (t=+1.246980)": {
             "d_char_sin_ratio": -1.246979603717467,
             "d_poly_target": -1.246979603717467,
-            "abs_err": 8.018294130276587e-51
+            "abs_err": 3.622271631530685e-71
           },
           "k=3 (t=+0.445042)": {
             "d_char_sin_ratio": 0.4450418679126288,
             "d_poly_target": 0.4450418679126288,
-            "abs_err": 2.6727647100921956e-51
+            "abs_err": 2.7167037236480137e-71
           },
           "k=4 (t=-0.445042)": {
             "d_char_sin_ratio": 0.4450418679126288,
             "d_poly_target": 0.4450418679126288,
-            "abs_err": 7.350102952753538e-51
+            "abs_err": 0.0
           },
           "k=5 (t=-1.246980)": {
             "d_char_sin_ratio": -1.246979603717467,
             "d_poly_target": -1.246979603717467,
-            "abs_err": 2.6727647100921956e-51
+            "abs_err": 0.0
           },
           "k=6 (t=-1.801938)": {
             "d_char_sin_ratio": 1.8019377358048383,
             "d_poly_target": 1.8019377358048383,
-            "abs_err": 1.0691058840368783e-50
+            "abs_err": 1.8111358157653425e-71
           }
         }
       },
@@ -162,40 +174,40 @@
           "k=1 (t=+1.801938)": {
             "d_char_sin_ratio": 2.801937735804838,
             "d_poly_target": 2.801937735804838,
-            "abs_err": 5.345529420184391e-51
+            "abs_err": 0.0
           },
           "k=2 (t=+1.246980)": {
             "d_char_sin_ratio": -0.24697960371746705,
             "d_poly_target": -0.24697960371746705,
-            "abs_err": 8.018294130276587e-51
+            "abs_err": 3.622271631530685e-71
           },
           "k=3 (t=+0.445042)": {
             "d_char_sin_ratio": 1.445041867912629,
             "d_poly_target": 1.445041867912629,
-            "abs_err": 2.6727647100921956e-51
+            "abs_err": 1.8111358157653425e-71
           },
           "k=4 (t=-0.445042)": {
             "d_char_sin_ratio": 1.445041867912629,
             "d_poly_target": 1.445041867912629,
-            "abs_err": 5.345529420184391e-51
+            "abs_err": 0.0
           },
           "k=5 (t=-1.246980)": {
             "d_char_sin_ratio": -0.24697960371746705,
             "d_poly_target": -0.24697960371746705,
-            "abs_err": 2.6727647100921956e-51
+            "abs_err": 0.0
           },
           "k=6 (t=-1.801938)": {
             "d_char_sin_ratio": 2.801937735804838,
             "d_poly_target": 2.801937735804838,
-            "abs_err": 1.0691058840368783e-50
+            "abs_err": 0.0
           }
         }
       }
     ],
-    "max_char_vs_poly_err": 1.0691058840368783e-50,
+    "max_char_vs_poly_err": 7.24454326306137e-71,
     "amplitude_identity_checks": 36,
-    "max_amplitude_identity_err": 4.276423536147513e-50,
-    "level5_anchor_first_err": 6.681911775230489e-52,
+    "max_amplitude_identity_err": 2.897817305224548e-70,
+    "level5_anchor_first_err": 4.527839539413356e-72,
     "level5_anchor_second_err": 0.0,
     "verdict": "PASS (scope-(a) corroboration). The level-7 LR amplitude character reproduces the value-map targets at all six level-7 roots and the #4365 amplitude identity extends to N=7, so bwS0=d_zeta/D is corroborated at the finite slice that pins the n=5 value map. Does NOT close bwsc: by the Verlinde S_{0lambda}=d/D structural identity the row equals d/D at every root once the BW-localization=Hecke-MTC identification (bwse) is granted; the per-level agreement corroborates that single owner-gated identification. The genuine wall is bwse (RT=WRT), not a number-crunch."
   }

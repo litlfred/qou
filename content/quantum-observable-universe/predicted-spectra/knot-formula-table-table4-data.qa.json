@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.040Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.079Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.117Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.157Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.196Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.236Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.273Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.311Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.351Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d1b20e15e03f",
+          "ts": "b120144a5865"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:58:39.391Z",
+        "reviewed_sha": "f327aa676ca6fe1e7721a902e2ea643cabbb284b",
+        "evidence": "Pure extracted data table (7 hadron rows); no prose. Formulas cross-checked against the parent remark's nucleon shorthand (p=[u,u,d]_p+L_H, n=[u,d,d]_p+L_H) — consistent.",
+        "notes": "no trap of this class; full-context read"
+      }
     ]
   },
   "source_hashes": {
     "md": "d1b20e15e03f",
     "ts": "b120144a5865"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:58:39.391Z"
 }

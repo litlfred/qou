@@ -164,3 +164,192 @@ if __name__ == "__main__":
     for nm in sys.argv[1:]:
         d = build(nm)
         print(emit(d) if d else f"-- {nm}: skipped")
+
+
+# ─── certification emission (bean qou-glhi) ──────────────────────────────────
+#
+# Emits the `SixOneCertified` template, which is VALIDATED in-repo: the generated
+# cleared identities are assembled into `ShapedTriangulation.SatisfiesEdgeEquations`.
+#
+# ⚠ TWO TRAPS BAKED INTO THIS TEMPLATE, both invisible from the statements.
+#
+# 1. One `cleared_k` lemma PER LITERAL EDGE INDEX, never one tactic block under
+#    `fin_cases`.  Under `fin_cases k` the index becomes `⟨0, ⋯⟩`, on which
+#    `Matrix.cons_val_zero` and friends do NOT fire — the exponent matrix stays
+#    unreduced and `linear_combination` fails with a bare "ring expressions not equal",
+#    which reads like a wrong cofactor rather than a stuck `simp`.  `Fin.isValue` and
+#    `Fin.mk_zero` do not help.
+# 2. `Shape.ne_one` is derived from the generated `one_sub_zⱼ_ne_zero`, not proved
+#    separately — `1 - z ≠ 0` and `z = 1` are contradictory.
+#
+# ⚠ THE n ≤ 8 CEILING IS GONE (2026-08-15, bean `qou-fr7j`).
+#
+# This block used to read: "Limited to n ≤ 8: `Fin.prod_univ_{two..eight}` is what Mathlib
+# provides, and the template unfolds the product with it.  Larger triangulations need
+# iterated `Fin.prod_univ_succ` and are NOT emitted rather than emitted broken."
+#
+# They do need it, and `simp` iterates it unaided:
+#
+#     simp [Fin.prod_univ_succ, triangulation, gluing]
+#
+# handles ANY n, including the n = 9 and n = 14 manifolds this generator used to refuse.
+# Measured: `9_35` (n = 9, one past the old ceiling) certifies in 95 s, sorry-free on
+# standard axioms, FIRST TRY — no variant of the `Matrix`-index trap below appeared.
+#
+# The named-lemma table is NOT kept as a fast path for n ≤ 8.  A second unfolding rule is
+# a second thing to get wrong, and the `ring` normalisation dominates the cost, not the
+# unfolding — so one rule for every n is both simpler and no slower.
+
+_PROD_UNIV = None   # retained only so a stale reference fails loudly rather than silently
+
+# Index reduction for `![...] k` at a LITERAL k.  Mathlib names only cons_val_zero /
+# one / two / three; beyond index 3 there is no `cons_val_four`, so `cons_val_succ`
+# (plus `cons_val'` and `Matrix.cons_val_fin_one`) is what carries n = 5..8.  Omitting
+# it makes every n >= 5 manifold fail with a bare "ring expressions not equal", which
+# looks like a wrong cofactor rather than an unreduced matrix application.
+_MATRIX_SIMP = ("Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, "
+                "Matrix.cons_val_two, Matrix.cons_val_three, Matrix.tail_cons, "
+                "Matrix.cons_val_succ, Matrix.cons_val_fin_one")
+
+
+def emit_certification(d):
+    """Emit the SatisfiesEdgeEquations certification for one manifold."""
+    nm = d["name"]
+    ident = nm.replace("_", "").replace("-", "")
+    n = d["n"]
+    # No n guard: `Fin.prod_univ_succ` unfolds any n.  See the note above `_PROD_UNIV`.
+    L, A = [], lambda s: L.append(s)
+    A(f"/-! ### `{nm}` certified -/\n")
+    A(f"namespace Cert{ident}")
+    A(f"open QOU.Knot.GeneratedGluing.K{ident}\n")
+    shapes = ",\n     ".join(
+        f"⟨z{j} t, z{j}_ne_zero ht, fun h => one_sub_z{j}_ne_zero ht (by rw [h]; ring)⟩"
+        for j in range(n))
+    A(f"/-- The {n} `{nm}` shapes, at an arbitrary root of the minimal polynomial. -/")
+    A(f"noncomputable def triangulation {{t : ℂ}} (ht : minpoly t = 0) :")
+    A(f"    ShapedTriangulation {n} :=")
+    A(f"  ⟨![{shapes}]⟩\n")
+    edge_rows = [e[0] for e in d["eqs"]]   # build() stores (row, lp, rp, cofactor)
+    rows = []
+    for row in edge_rows:
+        trip = ", ".join(f"![{row[3*j]},{row[3*j+1]},{row[3*j+2]}]" for j in range(n))
+        rows.append(f"![{trip}]")
+    A(f"/-- `{nm}`'s edge exponents, from SnapPy's integer matrix. -/")
+    A(f"def gluing : GluingData {n} {len(edge_rows)} where")
+    A("  exp := ![" + ",\n           ".join(rows) + "]\n")
+    for k in range(len(edge_rows)):
+        A(f"private theorem cleared_{k} {{t : ℂ}} (ht : minpoly t = 0) :")
+        A(f"    (∏ i, (((triangulation ht).tet i).z ^ gluing.exp {k} i 0")
+        A(f"            * (((triangulation ht).tet i).z - 1) ^ gluing.exp {k} i 2))")
+        A(f"      = (∏ i, ((1 - ((triangulation ht).tet i).z) ^ gluing.exp {k} i 1")
+        A(f"            * ((triangulation ht).tet i).z ^ gluing.exp {k} i 2)) := by")
+        # FULL `simp`, not `simp only`.  A curated `simp only` list works up to n = 4 and
+        # then silently stops: there is no `Matrix.cons_val_four`, and `cons_val_succ`
+        # does not fire on a literal `4 : Fin 5` because it is not syntactically a
+        # `Fin.succ`.  The matrix application survives into the goal and the proof fails
+        # with a bare "ring expressions not equal" — which reads as a wrong cofactor
+        # rather than an unreduced index.  Measured: n <= 4 passes either way, n >= 5
+        # needs full simp.
+        A("  simp [Fin.prod_univ_succ, triangulation, gluing]")
+        A(f"  linear_combination edge_{k} ht\n")
+    A(f"/-- **`{nm}` satisfies its edge gluing equations**, at every root of the shape")
+    A("field's minimal polynomial. -/")
+    A("theorem satisfiesEdgeEquations {t : ℂ} (ht : minpoly t = 0) :")
+    A("    (triangulation ht).SatisfiesEdgeEquations gluing := by")
+    A("  refine satisfiesEdgeEquations_of_cleared _ _ ?_")
+    A("  intro k")
+    A("  fin_cases k")
+    A("  exacts [" + ", ".join(f"cleared_{k} ht" for k in range(len(edge_rows))) + "]\n")
+    A(f"end Cert{ident}\n")
+    return "\n".join(L)
+
+
+# ─── cusp equations (bean qou-glhi) ──────────────────────────────────────────
+#
+# Cusp rows carry NEGATIVE exponents, e.g. 5_2's `[2,0,-3, 1,0,-2, 0,0,1]`, so they are
+# not directly a product of natural powers.  The obvious route is `zpow`, which drags
+# `Int` exponents and invertibility through every statement.
+#
+# THE CHEAPER ROUTE, used here: split by sign.  Since every edge parameter is a unit,
+#
+#     prod param^e = 1     <=>     prod_{e>0} param^e  =  prod_{e<0} param^{-e}
+#
+# and both sides now have NATURAL exponents.  Clearing denominators on each side turns
+# the whole thing into one polynomial identity, exactly like the edge case, so the same
+# exact-division cofactor works and no zpow appears anywhere.
+#
+# Verified before emission: the residual mod the minimal polynomial is asserted zero, so
+# a wrong split fails here rather than producing Lean that will not compile.
+
+def _cusp_parts(row, n, j_expr):
+    """Return (numL, denL, numR, denR) as lists of (factor_string, exponent)."""
+    numL, denL, numR, denR = [], [], [], []
+    for j in range(n):
+        z = j_expr(j)
+        for t in range(3):
+            e = row[3 * j + t]
+            if e == 0:
+                continue
+            num_t = {0: f"{z}", 1: None, 2: f"({z} - 1)"}[t]
+            den_t = {0: None, 1: f"(1 - {z})", 2: f"{z}"}[t]
+            tgt_n, tgt_d = (numL, denL) if e > 0 else (numR, denR)
+            m = abs(e)
+            if num_t: tgt_n.append((num_t, m))
+            if den_t: tgt_d.append((den_t, m))
+    return numL, denL, numR, denR
+
+
+def emit_cusp(d):
+    """Emit the cusp equations for one manifold, sign-split and denominator-cleared."""
+    import snappy
+    nm = d["name"]
+    ident = nm.replace("_", "").replace("-", "")
+    n = d["n"]
+    P, Z = d["P"], d["Z"]
+    rows = [[int(v) for v in r] for r in snappy.Manifold(nm).gluing_equations()][n:]
+    if not rows:
+        return f"-- {nm}: no cusp equations\n"
+    L, A = [], lambda s: L.append(s)
+    A(f"/-! ### `{nm}` cusp equations -/\n")
+    A(f"namespace Cusp{ident}")
+    A(f"open QOU.Knot.GeneratedGluing.K{ident}\n")
+    for k, row in enumerate(rows):
+        # symbolic cofactor, asserted exact
+        NumL = NumR = DenL = DenR = sp.Integer(1)
+        for j in range(n):
+            z = Z[j]
+            for t, (num, den) in enumerate([(z, sp.Integer(1)),
+                                            (sp.Integer(1), 1 - z),
+                                            (z - 1, z)]):
+                e = row[3 * j + t]
+                if e > 0:
+                    NumL *= num ** e; DenL *= den ** e
+                elif e < 0:
+                    NumR *= num ** (-e); DenR *= den ** (-e)
+        diff = sp.expand(sp.together(NumL * DenR - NumR * DenL))
+        q, r = sp.div(sp.Poly(diff, x), sp.Poly(P, x))
+        assert sp.expand(r.as_expr()) == 0, f"{nm} cusp {k}: RESIDUAL NONZERO"
+        nl, dl, nr, dr = _cusp_parts(row, n, lambda j: f"z{j} t")
+        def fmt(parts):
+            return " * ".join(f"{s} ^ {e}" for s, e in parts) or "1"
+        lhs = f"({fmt(nl)}) * ({fmt(dr)})"
+        rhs = f"({fmt(nr)}) * ({fmt(dl)})"
+        used = sorted({j for j in range(n) if any(row[3 * j + t] for t in range(3))})
+        A(f"/-- **Cusp {k}** of `{nm}`, exponents `{row}`.")
+        A("")
+        A("Negative exponents are removed by moving those factors to the other side —")
+        A("legitimate because every edge parameter is a unit — and then denominators are")
+        A("cleared, leaving a polynomial identity. -/")
+        A(f"theorem cusp_{k} {{t : ℂ}} (ht : minpoly t = 0) :")
+        A(f"    {lhs} = {rhs} := by")
+        A(f"  simp only [minpoly] at ht")
+        if used:
+            A(f"  simp only [{', '.join(f'z{j}' for j in used)}]")
+        # `all_goals`, not a bare call: when the cofactor is 0 the identity is a plain
+        # ring identity and the preceding `simp only` closes the goal outright, so a bare
+        # `linear_combination` errors with "No goals to be solved".  Measured: 3 of 42
+        # cusp equations are in that case.  `all_goals` succeeds on zero goals, so one
+        # emission shape covers both.
+        A(f"  all_goals linear_combination ({lean_expr(sp.expand(q.as_expr()))}) * ht\n")
+    A(f"end Cusp{ident}\n")
+    return "\n".join(L)

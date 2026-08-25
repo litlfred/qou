@@ -1777,6 +1777,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:15.770Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "'It avoids complex-analytic limits entirely' states the positive property; no assert-by-denying."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1811,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:15.815Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Statement + two explanatory paragraphs; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1845,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 121 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:15.869Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "One dash, an appositive naming the conjecture ('the existence of the cyclotomic projection - the content of conj:gs-residue-at-root-existence')."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1879,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 121 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:15.957Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No three-item lists."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1913,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:16.050Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Ends on the technical content of the conditional derivation."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1947,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:16.145Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1981,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:16.229Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "The final paragraph restates the displayed statement almost verbatim under the class hypothesis, but that is the 3b-cond bookkeeping the convention requires (naming the class, its fields, and what is derived from an instance). Consolidation candidate, not a trap."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2015,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:16.297Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2049,23 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:16.349Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "Three intensifiers in three consecutive sentences — 'defined **purely** algebraically', 'avoids complex-analytic limits **entirely**', 'keeps the algebraic sector **strictly** within Q-coefficients' — and the last carries an unsupported consequence, 'fulfilling the three-calibration discipline'.",
+        "notes": "PROPOSED: drop 'entirely' and 'strictly' (the claims are exact without them) and DELETE the clause 'fulfilling the three-calibration discipline' — it is a non-sequitur: the three-calibration discipline counts calibration INPUTS (m_e, D_beta, D_pi) and is unaffected by whether the coefficient ring is Q. NON-TRAP FINDING, not fixed inline: index/ring inconsistency. The projection is pi_{n_l} into Z[q]/Phi_{n_l}(q), and the proof introduces n_l as 'the distinguished order for stratum l' (so n_l != l), yet both blocks write zeta_l rather than zeta_{n_l}; and this .md calls the target 'the residue FIELD Q(zeta_l)' while the proof identifies the same object as the RING Z[zeta_l]. Z[q]/Phi_n(q) = Z[zeta_n] is the correct identification."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:31:00.722Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8cd6e98bda69",
+          "ts": "f39c34d6ea3c"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:29:16.446Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "FIX APPLIED: 'The cyclotomic residue defines purely algebraically within the Habiro completion' -> 'The cyclotomic residue is defined purely algebraically within the Habiro completion'. The intransitive 'defines' is the sweep-damage shape ('The categorical structure defines over the commutative ring') and stalled the sentence. Remainder reads cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:29:16.446Z"
 }

@@ -1775,6 +1775,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.208Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Single-sentence proposition; positive throughout."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1794,6 +1809,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.246Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No reframe."
       }
     ],
     "trap-em-dash": [
@@ -1813,6 +1843,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.284Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1832,6 +1877,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 47 words)"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.323Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1851,6 +1911,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.361Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "The sentence is the claim."
       }
     ],
     "trap-meta-commentary": [
@@ -1870,6 +1945,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.401Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1889,6 +1979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.437Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "Stated once."
       }
     ],
     "trap-performed-warmth": [
@@ -1908,6 +2013,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.473Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1927,6 +2047,21 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.512Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "evidence": "'unique up to natural monoidal isomorphism' is precisely qualified - and is the correctly-scoped version of the over-claim flagged on rem:categorical-fourier-unique-invariance."
       }
     ],
     "trap-nonspeakable": [
@@ -1946,6 +2081,23 @@
         "reviewed_at": "2026-08-15T10:31:00.050Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "133f3d6ba8a4",
+          "ts": "9d2cfd1935c9"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:54.549Z",
+        "reviewed_sha": "a61b94c71eb4804ed9dcb4941ffa4b686f517969",
+        "severity": "minor",
+        "evidence": "One 50-word sentence in which the subject and verb of the second clause are separated by about thirty words: 'any two functors F and F' that intertwine the q-convolution over the algebra A with the pointwise product on the spectrum of irreducible representations and preserve the Peter--Weyl projections are equivalent'. It parses on the page and stalls aloud.",
+        "notes": "Proposed (not applied - it is the statement of a proposition, so the rewrite is the author's): '... is unique up to natural monoidal isomorphism: if two functors F and F' both intertwine the q-convolution with the pointwise product on the spectrum of irreducibles, and both preserve the Peter--Weyl projections, then they are equivalent.' NOTATION FINDING to report: this block writes the algebra as \\\\mathcal{A}, while every other block in the chapter (def:categorical-action, def:categorical-dirac-operator, ex:c-quantum-universe, the whole (C, A, tau) triple) writes the Frobenius--Hopf algebra as plain A. Per the notation register, calligraphic is reserved for sheaves/bundles/curves; this looks like drift rather than a distinct object."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1969,5 +2121,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:05:54.549Z"
 }

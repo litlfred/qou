@@ -1238,6 +1238,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.652Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1257,6 +1273,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.690Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-em-dash": [
@@ -1276,6 +1308,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.729Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-triples": [
@@ -1295,6 +1343,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 101 words)"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.766Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-closing-aphorism": [
@@ -1314,6 +1378,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.804Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-meta-commentary": [
@@ -1333,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.843Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-thesis-restatement": [
@@ -1352,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.885Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-performed-warmth": [
@@ -1371,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.924Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-superlative": [
@@ -1390,6 +1518,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:32.966Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "trap-nonspeakable": [
@@ -1409,6 +1553,22 @@
         "reviewed_at": "2026-08-15T10:31:01.401Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "65c90ef64141",
+          "ts": "ac37da583cda"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:01:33.009Z",
+        "reviewed_sha": "72a07b273e1e01098a995b5a7b90a3858574c561",
+        "evidence": "Full read of the 3-item remark. The triple is substantive (it mirrors the .ts title's three named points). Item 3's 'It does not require this Z_5 to be a Sylow subgroup' is load-bearing disambiguation - the non-inheritance IS the claim - so it falls in the substantive-mathematical-contrast false-positive class.",
+        "notes": "Clean on all ten. MATH FINDING (report, not fixed): item 2's genus set is wrong. A faithful Z_5 on the hyperelliptic curve descends to an order-5 automorphism of P^1 with exactly two fixed points, so the branch divisor has n = 5a + e points with e in {0,1,2}, and n = 2g+2 must be even. Solving gives attainable genera {2, 4, 5, 7, 9, 10, 12, ...}: g=4 needs n=10 (a=2,e=0), g=5 needs n=12 (a=2,e=2), g=7 needs n=16 (a=3,e=1). g=6 would need n=14, and 14, 13, 12 are none of them divisible by 5, so g=6 is NOT attainable (nor is g=8, n=18). The text's 'yielding genera g in {4,5,6,...}' should read {4,5,7,...}. The block's own g=4 'two size-5 orbits' example is correct."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1431,5 +1591,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:01:33.009Z"
 }

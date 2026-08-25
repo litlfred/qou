@@ -1524,6 +1524,21 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.208Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Remark interpreting prop:phi-q-tower-algebraic-stratification. No assert-by-denial; the algebraic/geometric contrast it draws is the block's mathematical content (two pipelines computing one archimedean target)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1543,6 +1558,21 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.281Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No setup-then-reframe; each prose sentence states its claim directly."
       }
     ],
     "trap-em-dash": [
@@ -1562,6 +1592,21 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 106 words)"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.336Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No spaced em-dashes."
       }
     ],
     "trap-triples": [
@@ -1581,6 +1626,21 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 106 words)"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.392Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No rhetorical triple; the closing paragraph is three sentences but each carries distinct content (alignment claim, two-pipeline claim, regulator claim)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1600,6 +1660,22 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.444Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final sentence ('It formalizes the quantum Bloch group regulator mapping the algebraic strata directly onto the JSJ decomposition') is substantive rather than quotable, but see trap-nonspeakable."
       }
     ],
     "trap-meta-commentary": [
@@ -1619,6 +1695,21 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.555Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1638,6 +1729,21 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.607Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closing sentence names the regulator mechanism rather than restating the displayed identity."
       }
     ],
     "trap-performed-warmth": [
@@ -1657,6 +1763,21 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.665Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1676,6 +1797,23 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.717Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two unqualified intensifiers in the conjecture statement and its gloss: 'Summing over all subsets perfectly reconstructs...' and '...compute the identical archimedean target through entirely different convergence regimes.'",
+        "notes": "FIXED inline (adverb deletion only, no math and no meaning change): 'perfectly reconstructs' -> 'reconstructs'; 'through entirely different convergence regimes' -> 'through different convergence regimes'. Delimiters re-checked: $$ count even."
       }
     ],
     "trap-nonspeakable": [
@@ -1695,6 +1833,23 @@
         "reviewed_at": "2026-08-15T10:31:00.498Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "16951584f76e",
+          "ts": "a7cad06e72ff"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:57:33.772Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Closing sentence is a five-noun premodifier chain that stalls read aloud: 'It formalizes the quantum Bloch group regulator mapping the algebraic strata directly onto the JSJ decomposition.'",
+        "notes": "PROPOSED (not applied - rewrite exceeds the mechanical-fix bar and touches the remark's mathematical claim): 'The quantum Bloch group regulator maps the algebraic strata onto the JSJ decomposition; this conjecture is that formalization.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1718,5 +1873,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:57:33.772Z"
 }

@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.436Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.472Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.509Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.544Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.580Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.620Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.656Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.691Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.729Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No superlative-inflation construction. The parenthetical '(best)' recurs unqualified in all three result cells and is not defined in the parent prop:chirality-dual-space-derivation (grepped: 'best' absent there); it reads as a data selection marker rather than rhetorical inflation, so pass, but the undefined marker is worth a caption."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "79c4f579d391",
+          "ts": "4e8b26f1ef71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:51.762Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 3 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): recomputed h=q-1/q at the proton pin 1.1099785827513808 -> h=0.2090602988, so 1+h=1.20906 (table 1.209), 1-h^2=0.9562938 (table 0.956), (1-h^2)^2=0.9144978 (table 0.914) — all three reproduce a current pin, not the 1.1097 rounding (which would give 0.9149 -> 0.915)."
+      }
     ]
   },
   "source_hashes": {
     "md": "79c4f579d391",
     "ts": "4e8b26f1ef71"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:51.762Z"
 }

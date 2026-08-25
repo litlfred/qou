@@ -30,7 +30,11 @@ set_compute_dps()
 def main():
     q0 = mp.mpf(str(Q0))
     ceiling = mp.mpf(1) / mp.sqrt(mp.mpf(5))
-    z_naive = mp.mpf(1) / (mp.sqrt(q0) + mp.mpf(1)/mp.sqrt(q0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    # 'naive' here contrasts with the Reeb-CORRECTED g below, not with a
+    # different convention -- so the baseline must be the canonical z.
+    z_naive = q0 ** 3 / (q0 ** 2 + 1)
     
     # The true magnitude derived from the Reeb-flow helicity
     # We define it structurally via the Reeb phase: 

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:28.507967+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:21:43.244632+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "exists_classical_ok_candidate_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 8,
   "computation": "casimir-q-factorial-probe",
   "scriptFile": "casimir_q_factorial_probe.py",
-  "scriptHash": "e59f6b6eb4ef",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "c2e63bcfb60d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,115 +29,125 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/casimir_q_factorial_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/casimir_q_factorial_probe.py"
   },
   "description": "Empirical q-factorial probe enforcing classical-limit constraint.  After 5 prior sweeps found near-matches that vanish at q → 1 (incompatible with standard Casimir), this probe restricts to q-deformations C_q(q) that satisfy C_q(q→1) = π²/720.  Tests natural candidates of form π²/(6·5!_q) for the two main q-factorial conventions (symmetric and Pochhammer), and a few related forms.  Reports the best substrate residue among candidates with verified classical limit.",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785955573347,
+    "substrate_q": 1.1099785827513808,
     "target_pi_sq_720": 0.013707783890401887
   },
   "data": {
     "q_factorials_at_substrate_and_q1": {
       "2": {
-        "[n]_q!_sym_at_substrate": 2.0108968691190756,
+        "[n]_q!_sym_at_substrate": 2.0108968667071223,
         "[n]_q!_sym_at_q→1": 2.000000000001,
         "classical_n_factorial": 2.0,
-        "{n}!_q_poch_at_substrate": 2.109978595557335,
+        "{n}!_q_poch_at_substrate": 2.109978582751381,
         "{n}!_q_poch_at_q→1": 2.000001
       },
       "3": {
-        "[n]_q!_sym_at_substrate": 6.120579304762804,
+        "[n]_q!_sym_at_substrate": 6.120579277915064,
         "[n]_q!_sym_at_q→1": 6.000000000011,
         "classical_n_factorial": 6.0,
-        "{n}!_q_poch_at_substrate": 7.051614040589742,
+        "{n}!_q_poch_at_substrate": 7.051613910787675,
         "{n}!_q_poch_at_q→1": 6.000009000005
       },
       "4": {
-        "[n]_q!_sym_at_substrate": 25.15363726474819,
+        "[n]_q!_sym_at_substrate": 25.153637004851337,
         "[n]_q!_sym_at_q→1": 24.000000000104,
         "classical_n_factorial": 24.0,
-        "{n}!_q_poch_at_substrate": 33.2101613432428,
+        "{n}!_q_poch_at_substrate": 33.210160107385775,
         "{n}!_q_poch_at_q→1": 24.000072000098
       },
       "5": {
-        "[n]_q!_sym_at_substrate": 131.31308744281998,
+        "[n]_q!_sym_at_substrate": 131.31308484471597,
         "[n]_q!_sym_at_q→1": 120.000000001,
         "classical_n_factorial": 120.0,
-        "{n}!_q_poch_at_substrate": 206.81748470629879,
+        "{n}!_q_poch_at_substrate": 206.81747174220294,
         "{n}!_q_poch_at_q→1": 120.00060000145
       },
       "6": {
-        "[n]_q!_sym_at_substrate": 838.839384746498,
+        "[n]_q!_sym_at_substrate": 838.8393566737277,
         "[n]_q!_sym_at_q→1": 720.0000000102,
         "classical_n_factorial": 720.0,
-        "{n}!_q_poch_at_substrate": 1636.429279272245,
+        "{n}!_q_poch_at_substrate": 1636.429123788148,
         "{n}!_q_poch_at_q→1": 720.0054000201001
       },
       "7": {
-        "[n]_q!_sym_at_substrate": 6396.437341854266,
+        "[n]_q!_sym_at_substrate": 6396.437008845357,
         "[n]_q!_sym_at_q→1": 5040.00000011172,
         "classical_n_factorial": 5040.0,
-        "{n}!_q_poch_at_substrate": 16008.582377320516,
+        "{n}!_q_poch_at_substrate": 16008.580225805077,
         "{n}!_q_poch_at_q→1": 5040.052920279301
       }
     },
     "candidates_with_classical_limit_check": [
       {
         "form": "π²/(6·[5]_q!_sym)",
-        "value_at_substrate": 0.012526809771071064,
+        "value_at_substrate": 0.012526810018921114,
         "value_at_q→1": 0.013707783890287656,
-        "rel_residue_substrate": 0.08615354084752774,
+        "rel_residue_substrate": 0.08615352276655634,
         "rel_residue_classical": 8.333324999967506e-12,
         "classical_limit_ok": true
       },
       {
         "form": "π²/(6·{5}!_q_poch)",
-        "value_at_substrate": 0.007953554164843436,
+        "value_at_substrate": 0.007953554663402081,
         "value_at_q→1": 0.013707715351659494,
-        "rel_residue_substrate": 0.4197782640553248,
+        "rel_residue_substrate": 0.41977822768484735,
         "rel_residue_classical": 4.999987083355834e-06,
         "classical_limit_ok": true
       },
       {
         "form": "π²/(6·[4]_q!·[2]_q)",
-        "value_at_substrate": 0.03252055160039697,
+        "value_at_substrate": 0.03252055197541807,
         "value_at_q→1": 0.03426945972583908,
-        "rel_residue_substrate": 1.372414962214839,
+        "rel_residue_substrate": 1.3724149895730975,
         "rel_residue_classical": 1.4999999999879168,
         "classical_limit_ok": false
       },
       {
         "form": "π²/([6]_q·[5]_q!)",
-        "value_at_substrate": 0.011765785656418611,
+        "value_at_substrate": 0.01176578605017481,
         "value_at_q→1": 0.013707783890207693,
-        "rel_residue_substrate": 0.14167120298293087,
+        "rel_residue_substrate": 0.14167117425792305,
         "rel_residue_classical": 1.4166652499900033e-11,
         "classical_limit_ok": true
       },
       {
         "form": "π²/(6·([5]_q!+[5]_{q⁻¹}!)/2)",
-        "value_at_substrate": 0.012526809771071064,
+        "value_at_substrate": 0.012526810018921114,
         "value_at_q→1": 0.013707783890287656,
-        "rel_residue_substrate": 0.08615354084752774,
+        "rel_residue_substrate": 0.08615352276655634,
         "rel_residue_classical": 8.333324999967506e-12,
         "classical_limit_ok": true
       },
       {
         "form": "π²/(6·(1-q²)·(1-q³)·(1-q⁴)·(1-q⁵)/(1-q)⁴)",
-        "value_at_substrate": 0.007953554164843436,
+        "value_at_substrate": 0.007953554663402081,
         "value_at_q→1": 0.013707715351659494,
-        "rel_residue_substrate": 0.4197782640553248,
+        "rel_residue_substrate": 0.41977822768484735,
         "rel_residue_classical": 4.999987083355834e-06,
         "classical_limit_ok": true
       }
     ],
     "best_classical_ok": {
       "form": "π²/(6·[5]_q!_sym)",
-      "value_at_substrate": 0.012526809771071064,
+      "value_at_substrate": 0.012526810018921114,
       "value_at_q→1": 0.013707783890287656,
-      "rel_residue_substrate": 0.08615354084752774,
+      "rel_residue_substrate": 0.08615352276655634,
       "rel_residue_classical": 8.333324999967506e-12,
       "classical_limit_ok": true
     }

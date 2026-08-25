@@ -1195,6 +1195,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.418Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1230,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.458Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.500Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 102 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.541Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.585Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.626Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1405,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.667Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1440,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.707Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1475,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.749Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:31:01.338Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b591e138af16",
+          "ts": "9c62e55b1774"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:55.789Z",
+        "reviewed_sha": "5091efb24ca7abeadc98e1c82bc16ef8522d824c",
+        "evidence": "Full read of both paragraphs. Counted the enumeration against the claim: 'five concrete light nuclei' and exactly five are named (H, D, He-4, Li-6, O-16). No negation-contrast, pivot, aphorism, meta-narration, warmth, or superlative; em-dash count zero.",
+        "notes": "Clean on all ten. Cosmetic only: trailing whitespace after 'no internucleon crossings.' at the paragraph break."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:58:55.789Z"
 }

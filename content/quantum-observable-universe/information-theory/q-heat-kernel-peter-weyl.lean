@@ -90,6 +90,59 @@ theorem muLambda_single (q : ℝ) (hq : q ≠ 0) :
   unfold muLambda contentSumQCasimir singleCellDiagram
   simp [jacksonInt]
 
+/-- **Jackson-integer shift identity**: `[k]_q · [k+1]_q = q · [k]_q² + [k]_q`.
+
+    The q-deformation of `k(k+1) = k² + k`.  Uses the Jackson recurrence
+    `[k+1]_q = 1 + q·[k]_q`, which gives
+    `[k]_q · [k+1]_q = [k]_q · (1 + q·[k]_q) = [k]_q + q·[k]_q²`.
+
+    At `q = 1`, the extra factor `q` disappears and this reduces to `k(k+1) = k² + k`.
+    The q-weighted form is the correct bridge between `contentSumQCasimir`
+    (which sums `[c]_q[c+1]_q`) and the squared-bracket form `[c]_q²`
+    from the bar-symmetrised JM cosh sum. -/
+-- Ref: [manuscript] §9
+theorem jacksonInt_mul_succ (q : ℝ) (k : ℤ) (hq : q ≠ 1) (hq0 : q ≠ 0) :
+    jacksonInt q k * jacksonInt q (k + 1) =
+    q * jacksonInt q k ^ 2 + jacksonInt q k := by
+  unfold jacksonInt
+  simp only [hq, ↓reduceIte]
+  have hq1 : (1 : ℝ) - q ≠ 0 := sub_ne_zero.mpr (Ne.symm hq)
+  -- Normalize q^(k+1) = q^k * q BEFORE field_simp, so ring sees products
+  have hpow : q ^ (k + 1) = q ^ k * q := by rw [zpow_add₀ hq0, zpow_one]
+  simp only [hpow]
+  field_simp
+  ring
+
+/-- **μ_λ decomposition via Jackson shift**: the content-Casimir formula
+    `μ_λ(q) = ℏ_q² · Σ [c]_q[c+1]_q` decomposes via `jacksonInt_mul_succ` as
+
+      `μ_λ(q) = ℏ_q² · (q · Σ [c]_q² + Σ [c]_q)`
+
+    The `q · Σ [c]_q²` term connects to the JM cosh eigenvalue via
+    `cosh_eq_sq_bracket_add_two` (in `QJucysMurphy.lean`):
+
+      `Σ_{□∈λ} (q^{2c} + q^{-2c}) = Σ_{□∈λ} ((q^c - q^{-c})² + 2)`
+
+    Note: `(q^c - q^{-c})` is NOT `(q - q⁻¹)·[c]_q` in general — the
+    cosh-to-bracket bridge goes through `(q^c - q^{-c})²`, not `[c]_q²`.
+    The two are related by `(q^c - q^{-c})² = (q - q⁻¹)²·[c]_{q²}²` where
+    `[c]_{q²}` is the `q²`-integer, not the `q`-integer.  The decomposition
+    here uses `[c]_q` (the `q`-integer from `contentSumQCasimir`) directly.
+
+    Both `Σ [c]_q²` and `Σ [c]_q` are determined by the shape λ;
+    no free parameter remains. -/
+-- Ref: [manuscript] §9; QJucysMurphy.lean barSymJMSum eigenvalue
+theorem muLambda_from_sq_bracket (q : ℝ) (lam : YoungDiagram)
+    (hq : q ≠ 1) (hq0 : q ≠ 0) :
+    muLambda q lam =
+    (hbar_q q) ^ 2 * ∑ cell ∈ lam.cells,
+      (q * jacksonInt q (cell.2 - cell.1) ^ 2 + jacksonInt q (cell.2 - cell.1)) := by
+  unfold muLambda contentSumQCasimir
+  congr 1
+  apply Finset.sum_congr rfl
+  intro cell _
+  exact jacksonInt_mul_succ q (cell.2 - cell.1) hq hq0
+
 /-- **Peter-Weyl heat-kernel convergence** (conjecture, archimedean).
 
     The named statement of `prop:q-heat-kernel-peter-weyl`: for `0 < q`,

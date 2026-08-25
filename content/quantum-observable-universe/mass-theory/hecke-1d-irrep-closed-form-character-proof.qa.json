@@ -1177,6 +1177,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.847Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "\"they come from the Hecke quadratic relation, not from any n-specific representation combinatorics\" is the substantive-mathematical-contrast false-positive class: the source of the eigenvalues IS the reason for n-independence, which is the paragraph's claim."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1196,6 +1211,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.883Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,22 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 278 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.916Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "severity": "minor",
+        "evidence": "Two spaced em-dashes in ~700 words (\"substrate-derived -- they come from\"; \"the same closed forms -- only the y_lambda weights ... change with n\"). Both appositive/explanatory; density well below the flood threshold."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1280,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 278 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.948Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "The three crossing types are the actual generators of the typed-braid alphabet; the atom list {p,n,D,T,3He} is five items."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1314,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:34.981Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "After the fix recorded under trap-meta-commentary the final sentence is a section conclusion for \"Recursion to higher n\", not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1348,23 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:35.014Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "severity": "major",
+        "evidence": "Block-final sentence narrated the significance of its own result: \"This is a substantive **substrate-derivability result**: the entire 1-d slice ...\". Announcing that one's own result is substantive is emphasis-narration, and \"substantive\" is an author self-assessment.",
+        "notes": "FIXED inline: \"This is a substantive **substrate-derivability result**: the entire 1-d slice ... is a finite closed-form expression\" -> \"The entire 1-d slice ... is therefore a finite closed-form expression\". Content preserved verbatim; only the self-assessment frame removed. $$ delimiters re-verified balanced."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1384,23 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:35.046Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "severity": "major",
+        "evidence": "The same block-final sentence restated what the text had already established twice (the boxed formula, and \"the 1-d backbone is fully closed-form substrate-derivable for any n\"), namely n-independence of the closed form.",
+        "notes": "Addressed by the same inline edit: the sentence now reads as the conclusion of the \"Recursion to higher n\" section (\"...is therefore a finite closed-form expression...\") rather than as a significance-announcing closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1420,21 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:35.080Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1454,22 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:35.113Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "severity": "minor",
+        "evidence": "\"fully closed-form\", \"bit-exact\" and \"no n-dependence\" are all bounded by adjacent qualifications in the text. Reported separately as an epistemic finding: \"Bit-exact at 50 dps\" overstates a residue-vs-tolerance check."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1489,22 @@
         "reviewed_at": "2026-08-15T10:31:00.760Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1476a2ba07c4",
+          "ts": "a5d5be78cfc3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:08:35.146Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Proof reads aloud cleanly; the tau_M decomposition paragraph is display-math-anchored rather than noun-chained.",
+        "notes": "Separate (non-trap) findings reported: dead witness link in the Verification section, stale verification scope, and an old-muon q0 pin in the live witness."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1370,5 +1527,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:08:35.146Z"
 }

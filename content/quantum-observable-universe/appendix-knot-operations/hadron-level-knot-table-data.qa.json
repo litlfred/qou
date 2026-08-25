@@ -895,7 +895,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.366Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.405Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.445Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.485Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.525Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.564Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.605Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.645Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.685Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "e69c25def44c",
+          "ts": "956793142b24"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.725Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:hadron-level-knot-table-data (one legend sentence plus a 15-row per-atom table). No constructions from the ten categories; the legend summarises the two columns it names, which is a caption function rather than thesis restatement.",
+        "notes": "Cat.9: 'grows by many orders of magnitude' is literally true (0.31 to 9.09e8, nine orders) - pass. NOT A TRAP, reported separately: the row count does not match the .ts metadata. The table has 15 rows = 2 nucleons + 13 atoms; the title says 'nucleons + 14 atoms' and the caption says 'proton + neutron + 13 representative atoms' (correct) but then 'All 19 atoms pass the Frobenius positivity check' - 19 matches neither 15 nor 13."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:14:28.725Z"
 }

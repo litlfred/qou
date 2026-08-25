@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-26T11:37:13.289292+00:00",
-  "commitSha": "649769e272e1611aadfe4c123901265b7ae78f13",
+  "computedAt": "2026-08-23T09:05:32.353704+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "ideal_tet_product_minus_1",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "trefoil-octahedral-shape-from-rep",
   "scriptFile": "trefoil_octahedral_shape_from_rep_probe.py",
-  "scriptHash": "2fb82c452e7b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "5beea7e3a63a",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/trefoil_octahedral_shape_from_rep_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/trefoil_octahedral_shape_from_rep_probe.py"
   },
   "description": "The trefoil crossing octahedral tetrahedron shape, computed rigorously from the pinned boundary rep (cross-ratios of the fixed points of ρ(u),ρ(v)): the shape triple (z, z'=1/(1−z), z''), product −1 (genuine ideal tet), with z'=−(m−1/m)²=c+1=−h² EXACTLY. So the octahedral geometry and the bar-even coloring are the SAME object, proven from the rep (cracks the #4315 'need the shapes' wall). Quaternion steer: the octahedron's 2O⊂SU(2) symmetry is the structure to combine the 4 tetrahedra, but the meridian trace 2.011 is a parabolic deformation (not a clean 2O element) and a log|z| proxy e₂ is not g₂ — the real e₂→r needs the geometric quantum-dilog amplitude (2509.02354 §5.2). DERIVED: shape z'=−h²; NOT derived: r. scope-(a), audit-only, nothing wired.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

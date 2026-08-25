@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.895Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.933Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:02.970Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.010Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.049Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.088Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.125Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.163Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.199Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f61a70d83800",
+          "ts": "4292081d08f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.239Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 6-row nuclide table (nucleus / (p,n) / A / l_net / delta q / delta q over q_0). No prose; all ten categories clean.",
+        "notes": "Table-only block. FULLY RECOMPUTED and every cell checks out. l_net = C(p,2) - C(n,2): 3H 0-1 = -1; 14C 15-28 = -13; 60Co 351-528 = -177; 90Sr 703-1326 = -623; 137Cs 1485-3321 = -1836; 210Bi 3403-8001 = -4598 -- all six match. delta q = l_net A^-2 hbar_q^2 with hbar_q = 1 - 1/q_0 = 0.09908158 and hbar_q^2 = 0.00981716 at the proton pin: -0.0010908, -0.00065114, -0.00048266, -0.00075500, -0.00096018, -0.00102346, matching the stated -0.0011, -0.0007, -0.0005, -0.0008, -0.0010, -0.0010. delta q / q_0: -0.098, -0.059, -0.043, -0.068, -0.087, -0.092 percent, matching -0.10, -0.06, -0.04, -0.07, -0.09, -0.09. A = p + n in all six rows. This block checks out."
+      }
     ]
   },
   "source_hashes": {
     "md": "f61a70d83800",
     "ts": "4292081d08f6"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:03.239Z"
 }

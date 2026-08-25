@@ -1385,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.230Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.269Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.309Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1487,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.350Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1521,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.392Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1555,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.433Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1589,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.471Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1623,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.511Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1657,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.549Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1691,21 @@
         "reviewed_at": "2026-08-15T10:31:01.097Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "df18a339b72c",
+          "ts": "6a8d2e134ab0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:15.586Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section intro, ~0.7kB). 'The symmetric point deletes no spectrum, but loses resolution' is the section's thesis stated as a genuine technical contrast (what survives vs what degenerates), which is the substantive-contrast false-positive class. The em-dash pair encloses a real three-item parenthetical. All ten categories clean. A symbol collision (h = q - 1 here vs h = q - q^-1 throughout nuclear-interactions) is reported as an anomaly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1728,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:20:15.586Z"
 }

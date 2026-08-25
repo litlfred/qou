@@ -1,0 +1,665 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0811.1338v1",
+ "source": {
+  "file": "0811.1338v1.pdf",
+  "sha256": "9a57cb6e014d3ead46a259490c046a5a76877c1e3f4dcc0c18c0df748c4adcc2",
+  "bytes": 1378358,
+  "pages": 52
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0811.1338",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "9 Nov 2008"
+  },
+  "doi": null,
+  "title": "Modern theory of nuclear forces",
+  "authors_raw": "Forschungszentrum Jülich, Institut für Kernphysik (IKP-3) and Jülich Center for Hadron Physics, D-52425 Jülich",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126173701-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Modern Theory of Nuclear Forces",
+   "E. Epelbaum∗"
+  ],
+  "title_prev": "Modern Theory of Nuclear Forces E. Epelbaum∗"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "QCD and Nuclear F orces 1",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "Conventional approaches to the nuclear force problem 4",
+   "page": 1,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "EFT for F ew-Nucleon Systems: F oundations and",
+   "page": 1,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "Chiral EFT for few nucleons: applications 21",
+   "page": 1,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "EFT for halo nuclei 42",
+   "page": 1,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "Summary and perspectives 45",
+   "page": 1,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "QCD AND NUCLEAR FORCES",
+   "page": 1,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "(¯uu + ¯dd) + mu −md",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(¯uu − ¯dd) ,",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Conventional approaches to the nuclear force problem",
+   "page": 4,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "EFT FOR FEW-NUCLEON SYSTEMS:",
+   "page": 8,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "(Cs",
+   "page": 9,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(⃗ σ1 +⃗ σ2) ·⃗ q×⃗k +C6⃗ q·⃗ σ1⃗ q·⃗ σ2",
+   "page": 15,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "( ¯NN )( ¯NS ·uN ), (2.17)",
+   "page": 16,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "( ¯NN )( ¯N τ N ) · ( ¯N τN ). (2.21)",
+   "page": 16,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(ann +app) −anp = 5.64 ± 0.40 fm ,",
+   "page": 18,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(rnn +rpp) −rnp = 0.03 ± 0.06 fm .(2.26)",
+   "page": 18,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(charge-",
+   "page": 20,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Chiral EFT for few nucleons: applications",
+   "page": 21,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 2,
+   "title": "MeV. These numbers are similar to the ones ob-",
+   "page": 23,
+   "source": "inferred",
+   "number": "28.30"
+  },
+  {
+   "level": 1,
+   "title": "(χ+ − ⟨χ+⟩) δijgµνTν",
+   "page": 29,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "MeV and m∆ 0 = 1233.45 ± 0.35 MeV (324) together",
+   "page": 29,
+   "source": "inferred",
+   "number": "0.30"
+  },
+  {
+   "level": 1,
+   "title": "MeV and |δm2",
+   "page": 29,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(4α − 1)f,",
+   "page": 32,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(1 + 2α)f, f ΞΞ π = −(1 − 2α)f,",
+   "page": 32,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(1 + 2α)f, f ΞΛ K = 1√",
+   "page": 32,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(1 −α)f, f ΣΣ η8 = 2√",
+   "page": 32,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(1 −α)f,",
+   "page": 32,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "TOWARDS A MANY-BODY EFT FOR NUCLEI",
+   "page": 39,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "A]−1|(x,y)(⁄p +m)n(p)",
+   "page": 39,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "A]−1|(x,x′) (⁄q +m)n(q)",
+   "page": 39,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "A]−1|(y′,y)(⁄p +m)n(p)",
+   "page": 39,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "A)−1 that",
+   "page": 40,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "EFT for halo nuclei",
+   "page": 42,
+   "source": "inferred",
+   "number": "C"
+  },
+  {
+   "level": 1,
+   "title": "SUMMARY AND PERSPECTIVES",
+   "page": 45,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 45,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 46,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-i-qcd-and-nuclear-f-orces-1",
+   "number": "I",
+   "title": "QCD and Nuclear F orces 1",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 51,
+   "n_words": 10
+  },
+  {
+   "id": "sec-001-c-conventional-approaches-to-the-nuclear-force-p",
+   "number": "C",
+   "title": "Conventional approaches to the nuclear force problem 4",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 133,
+   "n_words": 22
+  },
+  {
+   "id": "sec-002-ii-eft-for-f-ew-nucleon-systems-f-oundations-and",
+   "number": "II",
+   "title": "EFT for F ew-Nucleon Systems: F oundations and",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 118,
+   "n_words": 19
+  },
+  {
+   "id": "sec-003-c-chiral-eft-for-few-nucleons-applications-21",
+   "number": "C",
+   "title": "Chiral EFT for few nucleons: applications 21",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 363,
+   "n_words": 59
+  },
+  {
+   "id": "sec-004-c-eft-for-halo-nuclei-42",
+   "number": "C",
+   "title": "EFT for halo nuclei 42",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 104,
+   "n_words": 15
+  },
+  {
+   "id": "sec-005-iv-summary-and-perspectives-45",
+   "number": "IV",
+   "title": "Summary and perspectives 45",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 170,
+   "n_words": 13
+  },
+  {
+   "id": "sec-006-i-qcd-and-nuclear-forces",
+   "number": "I",
+   "title": "QCD AND NUCLEAR FORCES",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 10839,
+   "n_words": 1871
+  },
+  {
+   "id": "sec-007-2-uu-dd-mu-md",
+   "number": "2",
+   "title": "(¯uu + ¯dd) + mu −md",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-2-uu-dd",
+   "number": "2",
+   "title": "(¯uu − ¯dd) ,",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 5371,
+   "n_words": 923
+  },
+  {
+   "id": "sec-009-c-conventional-approaches-to-the-nuclear-force-p",
+   "number": "C",
+   "title": "Conventional approaches to the nuclear force problem",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 22332,
+   "n_words": 3687
+  },
+  {
+   "id": "sec-010-ii-eft-for-few-nucleon-systems",
+   "number": "II",
+   "title": "EFT FOR FEW-NUCLEON SYSTEMS:",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2225,
+   "n_words": 380
+  },
+  {
+   "id": "sec-011-0-cs",
+   "number": "0",
+   "title": "(Cs",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 15,
+   "n_chars": 30435,
+   "n_words": 5170
+  },
+  {
+   "id": "sec-012-2-σ1-σ2-qk-c6-q-σ1-q-σ2",
+   "number": "2",
+   "title": "(⃗ σ1 +⃗ σ2) ·⃗ q×⃗k +C6⃗ q·⃗ σ1⃗ q·⃗ σ2",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2817,
+   "n_words": 481
+  },
+  {
+   "id": "sec-013-2-nn-ns-un-217",
+   "number": "2",
+   "title": "( ¯NN )( ¯NS ·uN ), (2.17)",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 3554,
+   "n_words": 621
+  },
+  {
+   "id": "sec-014-2-nn-n-τ-n-n-τn-221",
+   "number": "2",
+   "title": "( ¯NN )( ¯N τ N ) · ( ¯N τN ). (2.21)",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 10317,
+   "n_words": 1818
+  },
+  {
+   "id": "sec-015-2-ann-app-anp-564-040-fm",
+   "number": "2",
+   "title": "(ann +app) −anp = 5.64 ± 0.40 fm ,",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 8,
+   "n_words": 3
+  },
+  {
+   "id": "sec-016-2-rnn-rpp-rnp-003-006-fm-226",
+   "number": "2",
+   "title": "(rnn +rpp) −rnp = 0.03 ± 0.06 fm .(2.26)",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 20,
+   "n_chars": 6503,
+   "n_words": 1176
+  },
+  {
+   "id": "sec-017-2-charge",
+   "number": "2",
+   "title": "(charge-",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 10186,
+   "n_words": 1746
+  },
+  {
+   "id": "sec-018-c-chiral-eft-for-few-nucleons-applications",
+   "number": "C",
+   "title": "Chiral EFT for few nucleons: applications",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 10849,
+   "n_words": 1829
+  },
+  {
+   "id": "sec-019-2830-mev-these-numbers-are-similar-to-the-ones-o",
+   "number": "28.30",
+   "title": "MeV. These numbers are similar to the ones ob-",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 29,
+   "n_chars": 23751,
+   "n_words": 4366
+  },
+  {
+   "id": "sec-020-5-χ-χ-δijgµνtν",
+   "number": "5",
+   "title": "(χ+ − ⟨χ+⟩) δijgµνTν",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1151,
+   "n_words": 248
+  },
+  {
+   "id": "sec-021-030-mev-and-m-0-123345-035-mev-324-together",
+   "number": "0.30",
+   "title": "MeV and m∆ 0 = 1233.45 ± 0.35 MeV (324) together",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 513,
+   "n_words": 114
+  },
+  {
+   "id": "sec-022-8-mev-and-δm2",
+   "number": "8",
+   "title": "MeV and |δm2",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 32,
+   "n_chars": 14295,
+   "n_words": 2449
+  },
+  {
+   "id": "sec-023-3-4α-1f",
+   "number": "3",
+   "title": "(4α − 1)f,",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 12,
+   "n_words": 5
+  },
+  {
+   "id": "sec-024-3-1-2αf-f-ξξ-π-1-2αf",
+   "number": "3",
+   "title": "(1 + 2α)f, f ΞΞ π = −(1 − 2α)f,",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 13,
+   "n_words": 5
+  },
+  {
+   "id": "sec-025-3-1-2αf-f-ξλ-k-1",
+   "number": "3",
+   "title": "(1 + 2α)f, f ΞΛ K = 1√",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 23,
+   "n_words": 8
+  },
+  {
+   "id": "sec-026-3-1-αf-f-σς-η8-2",
+   "number": "3",
+   "title": "(1 −α)f, f ΣΣ η8 = 2√",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 39,
+   "n_chars": 37182,
+   "n_words": 6802
+  },
+  {
+   "id": "sec-027-iii-towards-a-many-body-eft-for-nuclei",
+   "number": "III",
+   "title": "TOWARDS A MANY-BODY EFT FOR NUCLEI",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 2118,
+   "n_words": 352
+  },
+  {
+   "id": "sec-028-0-a1xyp-mnp",
+   "number": "0",
+   "title": "A]−1|(x,y)(⁄p +m)n(p)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 92,
+   "n_words": 19
+  },
+  {
+   "id": "sec-029-0-a1xx-q-mnq",
+   "number": "0",
+   "title": "A]−1|(x,x′) (⁄q +m)n(q)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 10,
+   "n_words": 2
+  },
+  {
+   "id": "sec-030-0-a1yyp-mnp",
+   "number": "0",
+   "title": "A]−1|(y′,y)(⁄p +m)n(p)",
+   "level": 1,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 1233,
+   "n_words": 224
+  },
+  {
+   "id": "sec-031-0-a1-that",
+   "number": "0",
+   "title": "A)−1 that",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 42,
+   "n_chars": 10664,
+   "n_words": 1891
+  },
+  {
+   "id": "sec-032-c-eft-for-halo-nuclei",
+   "number": "C",
+   "title": "EFT for halo nuclei",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 45,
+   "n_chars": 17136,
+   "n_words": 2896
+  },
+  {
+   "id": "sec-033-iv-summary-and-perspectives",
+   "number": "IV",
+   "title": "SUMMARY AND PERSPECTIVES",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 45,
+   "n_chars": 1213,
+   "n_words": 184
+  },
+  {
+   "id": "sec-034-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 654,
+   "n_words": 101
+  },
+  {
+   "id": "sec-035-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 52,
+   "n_chars": 35657,
+   "n_words": 6640
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 37,
+  "sections": 36,
+  "chars_total": 262092
+ }
+}

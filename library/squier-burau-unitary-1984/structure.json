@@ -1,0 +1,125 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "squier-burau-unitary-1984",
+ "source": {
+  "file": "squier-burau-unitary-1984.pdf",
+  "sha256": "5087ee3cb48679d1b4a879274d17d3eae09d0dcc90e4cfd5af18c6152a873796",
+  "bytes": 323713,
+  "pages": 4
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "The Burau representation is unitary",
+  "authors_raw": "Volume 90. Number 2, February 1984",
+  "abstract": "A slight modification of the Burau representation of the braid group is shown to be unitary relative to an explicitly defined Hermitian form. This gives a partial answer to the problem of identifying the image of the Burau representation and provides a tool for attacking the question of whether or not the Burau representation is faithful. In [2, problem 14, p. 217], Birman asked for a characterization of the image of the Burau representation /J:5„-GL„_,(Z[M-']) of the braid group Bn. We contribute the following partial answer to Birman's question, where, for M a matrix over Z[t, t~l], M* denotes the conjugate-transpose of M and the conjugate of p(t) in Z[t, i\"1] is defined to bep(r_l). Theorem. There exists a nonsingular (n — 1) X (w — 1) matrix J0 over Z[t, t']] such that for each w in Bn it follows that ß(w)*J0ß(w) — J0. (See §§1 and 2 below for notation.) View Z[t, r'] as a subring of Z[s, s_1] where s2 — t. Over Z[s, s~l], a change-of-basis replaces J0 by a matrix / which is Hermi- tian: J = J*. Thus, in the new basis, the Burau representation is unitary relative to the Hermitian form /. (Below, we actually deal with / first and derive the theorem as stated as a corollary.) Finally, we note that for each of the standard generators a, of Bn, ß(ot) is a unitary reflection. (See §3 for details.) An important open question is whether or not the Burau representation is faithful. This is known for n < 3 [4] (also see [2]). It seems likely that the results presented here will help answer this question for n > 4. In §1 we establish some conventions about matrices and in §2 we describe the Burau representation. In §3 we prove the theorem and justify the remarks following its statement above. Finally, in §4 we offer two conjectures which, taken together, would imply that the Burau representation is faithful. 1. Preliminaries. Let Z denote the ring of (rational) integers, let t be an inde- terminate and let Z[t, /\"'] denote the ring of Laurent polynomials with coefficients",
+  "docinfo": {
+   "CreationDate": "D:20100123130429+05'30'",
+   "Producer": "iTextSharp 4.1.6 by 1T3XT",
+   "Creator": ""
+  },
+  "title_prev": "THE BURAU REPRESENTATION IS UNITARY CRAIG C. SQUIEr'",
+  "title_lines": [
+   "AMERICAN MATHEMATICAL SOCIETY",
+   "THE BURAU REPRESENTATION IS UNITARY",
+   "CRAIG C. SQUIEr'"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Preliminaries. Let Z denote the ring of (rational) integers, let t be an inde-",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Burau representation of B„. We view the braid group abstractly as having",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Proof of the theorem. We are ready to prove that each ß, is unitary, relative to a",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Two conjectures. A more conventional unitary representation of Bn may be",
+   "page": 3,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 4,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-preliminaries-let-z-denote-the-ring-of-rationa",
+   "number": "1",
+   "title": "Preliminaries. Let Z denote the ring of (rational) integers, let t be an inde-",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 1447,
+   "n_words": 269
+  },
+  {
+   "id": "sec-001-2-the-burau-representation-of-b-we-view-the-brai",
+   "number": "2",
+   "title": "The Burau representation of B„. We view the braid group abstractly as having",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1493,
+   "n_words": 299
+  },
+  {
+   "id": "sec-002-3-proof-of-the-theorem-we-are-ready-to-prove-tha",
+   "number": "3",
+   "title": "Proof of the theorem. We are ready to prove that each ß, is unitary, relative to a",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1040,
+   "n_words": 219
+  },
+  {
+   "id": "sec-003-4-two-conjectures-a-more-conventional-unitary-re",
+   "number": "4",
+   "title": "Two conjectures. A more conventional unitary representation of Bn may be",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 644,
+   "n_words": 116
+  },
+  {
+   "id": "sec-004-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 640,
+   "n_words": 106
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 5264
+ }
+}

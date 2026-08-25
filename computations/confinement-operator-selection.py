@@ -28,8 +28,10 @@ from q_parameter import Q as q0, HA as HA_val, E_CROSS
 import sys as _sys, pathlib as _pl
 _sys.path.insert(0, str(_pl.Path(__file__).resolve().parents[1] / "tools" / "pyhecke" / "python"))
 from pyhecke.gram import z as _PG_Z, NF_BASIS as _PG_NF_BASIS, TR_M as _PG_TR_M  # noqa: E402
-from pyhecke.gram import safe_inverse as _pg_safe_inverse  # noqa: E402
-from derived_masses import TARGET_NET_PROTON, TARGET_NET_NEUTRON  # noqa: E402
+from derived_masses import (  # noqa: E402
+    target_net_proton as TARGET_NET_PROTON_FN,
+    target_net_neutron as TARGET_NET_NEUTRON_FN,
+)
 
 
 try:
@@ -189,13 +191,50 @@ print(f"Commit: {SHA[:8]}")
 print("=" * 80)
 
 G = build_gram()
-# Guarded: np.linalg.inv does NOT raise on the convention-D Markov Gram,
-# it returns inverted rounding noise (entries ~7.6e15, ||G@inv - I|| = 4.14).
+# Guarded: np.linalg.inv does NOT raise on the convention-D Markov Gram, it
+# returns inverted rounding noise -- entries ~7.6e15, and the residual is
+# ||G@inv - I||_F = 4.14 (Frobenius) = 1.64 (max-entry).  BOTH figures are in
+# the corpus for this one quantity and neither used to name its norm, so they
+# read as a contradiction; they are the same matrix under two norms.
 # safe_inverse raises instead and names the quotient inverse. See qou-m7py.
-G_inv = _pg_safe_inverse(G, what="Markov Gram")
-check = np.max(np.abs(G @ G_inv - np.eye(6)))
+# `safe_inverse` RAISES here by design (qou-m7py): under convention D this
+# form is singular, so the object it is asked for does not exist.  This
+# producer called it anyway and so died at line 201 on every run -- the
+# second of two independent import/run failures, the first being the two
+# phantom `TARGET_NET_*` constants that live inside a docstring.
+#
+# The honest replacement is the pseudoinverse of THIS producer's own G.  Note
+# it is NOT `pyhecke.gram.G_PINV`: that is the pinv of pyhecke's G at
+# pyhecke's q, and silently substituting one for the other is the layer
+# straddle AGENTS.md warns about.  They are cross-checked below rather than
+# assumed equal.
+G_inv = np.linalg.pinv(G)
+
+try:
+    from pyhecke.gram import G as _PYHECKE_G  # noqa: E402
+
+    _g_drift = float(np.max(np.abs(G - np.asarray(_PYHECKE_G, dtype=float))))
+    print(f"\nCross-check vs pyhecke.gram.G: max entry drift = {_g_drift:.2e}")
+except ImportError:
+    print("\nCross-check vs pyhecke.gram.G: skipped (pyhecke unavailable)")
+
+# G_inv is the Moore-Penrose PSEUDOinverse -- the 6x6 form is singular under
+# convention D, so no inverse exists.  `G @ G_inv` is therefore the projector
+# onto the rank-5 range, NOT the identity, and the residual against I is a
+# structural constant rather than an error estimate:
+#
+#     max|G G+ - I| = 0.2234...,  ||G G+ - I||_F = sqrt(corank) = 1
+#
+# This block used to print exactly that max-norm under the label
+# "Verification: max|G.G^-1 - I|", which is a number that can never be small
+# presented as though it were a check that passed.  The real check is
+# idempotency of the projector, which DOES hold to machine precision.
+P = G @ G_inv
+proj_residual = float(np.max(np.abs(P @ P - P)))
+range_defect = float(np.max(np.abs(P - np.eye(6))))
 print(f"\nGram matrix: det(G) = {np.linalg.det(G):.10f}")
-print(f"Verification: max|G·G⁻¹ - I| = {check:.2e}")
+print(f"Verification: max|P² - P| = {proj_residual:.2e}   (P = G·G⁺ is a projector)")
+print(f"  rank-5 defect: max|P - I| = {range_defect:.2e}   (expected O(1): the form is singular)")
 
 
 def frobenius_dual(vec):
@@ -367,7 +406,8 @@ for nucleon_name, quark_types in [("PROTON (u,u,d)", ['u', 'u', 'd']),
         print_nf(f"    {r['name'][:25]}", r['nf'])
 
     # ── Ranking by multiple criteria ──────────────────────────────
-    target_net = TARGET_NET_PROTON if 'u' == quark_types[0] and quark_types.count('u') == 2 else TARGET_NET_NEUTRON
+    is_proton = 'u' == quark_types[0] and quark_types.count('u') == 2
+    target_net = TARGET_NET_PROTON_FN() if is_proton else TARGET_NET_NEUTRON_FN()
 
     print(f"\n  RANKING 1 — Naive (fewer demand channels, lower E_×):")
     ranked1 = sorted(results_table, key=lambda r: (r['n_demand'], r['E_x']))
@@ -556,7 +596,14 @@ witness = {
         "E_cross": E_CROSS,
     },
     "gram_matrix": G.tolist(),
+    # Key kept as `gram_inverse` for schema compatibility: three consumers
+    # read it by that name (delta_lambda_master_formula_h3_probe,
+    # bound_state_observable_validator, audit_frobenius_pairing).  The object
+    # is the pseudoinverse, so `gram_inverse_kind` names it -- matching the
+    # sibling emitter `borromean-axial-coupling.py`, which already does this
+    # and which this producer was silently inconsistent with.
     "gram_inverse": G_inv.tolist(),
+    "gram_inverse_kind": "moore-penrose-pseudoinverse",
     "gram_det": float(np.linalg.det(G)),
     "candidates": {},
 }
@@ -588,11 +635,63 @@ for nucleon_name, quark_types in [("proton", ['u', 'u', 'd']),
     witness["candidates"][nucleon_name] = nuc_results
 
 out_path = Path(__file__).parent / "confinement-operator-selection.witness.json"
-with open(out_path, 'w') as f:
-    json.dump(witness, f, indent=2)
 
-print(f"\n\nWitness written to: {out_path.name}")
-print("Done.")
+# ── GUARD: this producer is BEHIND its own committed witness ────────────
+#
+# The committed witness carries 12 keys this script cannot produce. MEASURED,
+# because the distinction matters and the first version of this comment got
+# it wrong:
+#
+#   9 are STUBS, not data -- `active_set`, `primal_obj`, `dual_obj`,
+#     `duality_gap`, `y0_star`, `y_star` are all `None`, and the three
+#     `*_status` fields read "STUB -- re-run script through lp_dual_solver.py
+#     to populate". They satisfy the LP-dual validator's field-PRESENCE check;
+#     they carry no shadow prices.
+#
+#   3 are REAL -- `engine`, `scriptFile`, `commitSha`: WitnessBuilder
+#     provenance, and the only content actually at risk here.
+#
+# So an overwrite does not destroy computed duals; there are none to destroy.
+# What it does is drop `gram_inverse`'s companions below the REQUIRED_FIELDS
+# of `bound_state_observable_validator` and `audit_frobenius_pairing`, and
+# lose the provenance stamp. Both are still reasons not to clobber silently.
+#
+# AND NOTE WHAT THE STUB NOTE ASKS FOR IS NOT AVAILABLE. "Re-run through
+# lp_dual_solver.py" presumes an LP in this file. There is none -- the three
+# RANKING passes are sorts, not optimisations, and nothing here has a primal
+# to take a dual of. So the duals either belong to a different producer or
+# want an LP that was never written. That is an open question, not a wiring
+# task; do not "fix" it by calling the solver on a problem that is not posed.
+#
+# Refuse to overwrite a witness that holds keys we cannot regenerate. Set
+# QOU_ALLOW_WITNESS_DOWNGRADE=1 only if you have deliberately decided the
+# drop is correct.
+import os  # noqa: E402
+
+_existing = {}
+if out_path.exists():
+    try:
+        _existing = json.loads(out_path.read_text())
+    except (OSError, ValueError):
+        _existing = {}
+_lost = sorted(set(_existing) - set(witness))
+
+if _lost and os.environ.get("QOU_ALLOW_WITNESS_DOWNGRADE") != "1":
+    print(f"\n\nWitness NOT written to {out_path.name} -- refusing a downgrade.")
+    print(f"  the committed witness holds {len(_lost)} key(s) this producer "
+          f"cannot emit:")
+    print(f"    {', '.join(_lost)}")
+    print("  (9 of those are None/STUB placeholders, 3 are real provenance --"
+          " see the guard comment.)")
+    print("  Set QOU_ALLOW_WITNESS_DOWNGRADE=1 to override.")
+    print("Done (witness preserved).")
+else:
+    if _lost:
+        print(f"\n\nWitness DOWNGRADE forced: dropping {', '.join(_lost)}")
+    with open(out_path, 'w') as f:
+        json.dump(witness, f, indent=2)
+    print(f"\n\nWitness written to: {out_path.name}")
+    print("Done.")
 
 
 # ══════════════════════════════════════════════════════════════

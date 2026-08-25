@@ -1,7 +1,7 @@
 import { proposition } from "../../schema/builders";
 
 export default proposition({
-  label: "audit:delta-max-numerical-scale",
+  label: "prop:delta-max-numerical-scale",
   title: "Numerical scale of the uniform bound",
   tags: ["binding-energy", "numerical-scale", "probe"],
   lean: {

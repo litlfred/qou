@@ -206,7 +206,7 @@ and does NOT give us.
 
   bilsonthompson2007, "Quantum gravity and the standard model"
       Braid states in background-independent QG. Vendored PDF at
-      uploads/0603022v2.pdf. Directly on-theme (braids -> particles).
+      library/0603022v2/0603022v2.pdf. Directly on-theme (braids -> particles).
       STATUS: no metric construction.
 
   thooft2016, Planck-scale cellular automaton

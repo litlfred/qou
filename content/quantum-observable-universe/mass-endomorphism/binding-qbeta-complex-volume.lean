@@ -2,6 +2,11 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.LinearCombination
+-- `evenStep` / `oddStep` / `rotation_step` and `AWDeformationPath` were relocated
+-- to the Lake tree so the content-block resolver finds them; `evenStep_map` and
+-- `AWDeformationPath.channel_ladders` below still use them.
+import QOU.MassEndomorphism.rotation_step
+import QOU.MassEndomorphism.AWDeformationPath
 
 /-!
 # QOU.MassEndomorphism.ComplexVolumeUnification
@@ -174,17 +179,6 @@ Ref: [ismail-masson1994] DOI 10.1090/S0002-9947-1994-1264148-6 — the
 section ChannelRecurrences
 variable {R : Type*} [CommRing R]
 
-/-- Even-channel (compact / binding / continuous q-Hermite) three-term step:
-    `H_{n+2} = 2x·H_{n+1} − (1 − q^{n+1})·H_n`. -/
-def evenStep (q x : R) (n : ℕ) (H0 H1 H2 : R) : Prop :=
-  H2 = 2 * x * H1 - (1 - q ^ (n + 1)) * H0
-
-/-- Odd-channel (non-compact / `𝔔_β` / `q⁻¹`-Hermite) three-term step,
-    division-free (multiplied through by `q^{n+1}`):
-    `h_{n+2} = 2x·h_{n+1} + (1 − q^{-(n+1)})·h_n`. -/
-def oddStep (q x : R) (n : ℕ) (h0 h1 h2 : R) : Prop :=
-  q ^ (n + 1) * h2 = 2 * x * (q ^ (n + 1) * h1) + (q ^ (n + 1) - 1) * h0
-
 /-- The bar involution transports an even step to an even step at the
     conjugated data (`σ` a ring hom: coefficients map through). -/
 theorem evenStep_map (σ : R →+* R) {q x : R} {n : ℕ} {H0 H1 H2 : R}
@@ -193,44 +187,6 @@ theorem evenStep_map (σ : R →+* R) {q x : R} {n : ℕ} {H0 H1 H2 : R}
   unfold evenStep at h ⊢
   have := congrArg σ h
   simpa [map_sub, map_mul, map_add, map_pow, map_one, map_ofNat] using this
-
-/-- **The channel rotation, categorical (the `x ↦ ιx`, `q ↦ q̄` rotation).**
-    A sequence `h` satisfies the odd-channel (non-compact, `𝔔_β`) step at
-    `(q, x)` **iff** its `ι`-rotation `n ↦ ι^n·h_n` satisfies the
-    even-channel (compact, binding) step at the bar-conjugated data
-    `(σq, ιx)` — where `ι` is a formal square root of `−1` in the fibre
-    ring and `σ q * q = 1` is the division-free bar involution.
-
-    This is the generic form of Askey (1989) / Ismail–Masson
-    `h_n(x|q) = i^{-n}·H_n(ix|q^{-1})`: **same eigenfunctions, rotated**;
-    the two channels of `𝔙` are one recurrence read through the rotation.
-    No `ℂ`: the archimedean instance `ι = Complex.I` is downstream of τ. -/
-theorem rotation_step (σ : R →+* R) {ι q x h0 h1 h2 : R}
-    (hι : ι * ι = -1) (hq : σ q * q = 1) (n : ℕ) :
-    evenStep (σ q) (ι * x) n (ι ^ n * h0) (ι ^ (n + 1) * h1) (ι ^ (n + 2) * h2)
-      ↔ oddStep q x n h0 h1 h2 := by
-  unfold evenStep oddStep
-  have hιu : IsUnit (ι ^ n) :=
-    (isUnit_of_mul_eq_one ι (-ι) (by rw [mul_neg, hι, neg_neg])).pow n
-  have hqu : IsUnit (q ^ (n + 1)) :=
-    (isUnit_of_mul_eq_one q (σ q) (by rw [mul_comm]; exact hq)).pow (n + 1)
-  have hqn : (σ q) ^ (n + 1) * q ^ (n + 1) = 1 := by
-    rw [← mul_pow, hq, one_pow]
-  constructor
-  · intro h
-    -- cancel the unit ι^n to un-rotate, then multiply through by q^(n+1)
-    have hh : ι ^ n * h2
-        = ι ^ n * (2 * x * h1 + (1 - (σ q) ^ (n + 1)) * h0) := by
-      linear_combination (-1 : R) * h + (ι ^ n * (h2 - 2 * x * h1)) * hι
-    have hD := hιu.mul_left_cancel hh
-    linear_combination (q ^ (n + 1)) * hD - h0 * hqn
-  · intro h
-    -- cancel the unit q^(n+1), then rotate by ι^n
-    have hh : q ^ (n + 1) * h2
-        = q ^ (n + 1) * (2 * x * h1 + (1 - (σ q) ^ (n + 1)) * h0) := by
-      linear_combination h + h0 * hqn
-    have hE := hqu.mul_left_cancel hh
-    linear_combination (-(ι ^ n)) * hE + (ι ^ n * (h2 - 2 * x * h1)) * hι
 
 end ChannelRecurrences
 
@@ -390,45 +346,6 @@ class is non-degenerate per §3b-cond rule 5.
 Ref: [neumann-zagier1985] https://doi.org/10.1016/0040-9383(85)90004-7 -/
 section AWDeformation
 variable {R : Type*} [CommRing R]
-
-/-- **AW deformation-path conjecture (§3b class; conjecture — no instance
-    is provided).**  One AW tridiagonal family `(a t, b t, c t)` joins the
-    free endpoint (`t = 0`, q-Hermite bottom: diagonal off) to the bound
-    endpoint (`t = 1`); a potential `Φ` on the path has the complex-volume
-    defect `𝔙` as its endpoint difference (the categorical Neumann–Zagier
-    path integral); and the `𝔙`-ladder satisfies ONE three-term recurrence
-    whose multiplier is **bar-even**.  All fields are inputs; the
-    two-channel (binding + `𝔔_β`) descent is derived below. -/
-class AWDeformationPath (σ : R →+* R) where
-  /-- deformation family: super-diagonal at parameter `t` (units, matching
-      `overlapColumn`/`IsEigencolumn`, so each `t`-slice plugs into the
-      overlap machinery without extra plumbing). -/
-  a : R → ℕ → Rˣ
-  /-- deformation family: diagonal at parameter `t`. -/
-  b : R → ℕ → R
-  /-- deformation family: sub-diagonal at parameter `t`. -/
-  c : R → ℕ → R
-  /-- the free endpoint is the q-Hermite bottom of the scheme:
-      the diagonal term vanishes at `t = 0`. -/
-  free_qHermite_bottom : ∀ n, b 0 n = 0
-  /-- Neumann–Zagier-type potential on the deformation path. -/
-  potential : R → R
-  /-- the complex-volume defect `𝔙` (the fibre object of this block). -/
-  defect : R
-  /-- `𝔙` is the potential's endpoint difference: bound (`t=1`) − free
-      (`t=0`) — the categorical path integral over the character-variety
-      path (abelian → discrete faithful). -/
-  path_integral : defect = potential 1 - potential 0
-  /-- the ladder of defects along body order, headed by `𝔙`. -/
-  ladder : ℕ → R
-  ladder_head : ladder 0 = defect
-  /-- the shared three-term multiplier (the `2cosh`-type coefficient). -/
-  multiplier : R
-  /-- the multiplier is bar-even — the load-bearing hypothesis. -/
-  multiplier_bar_even : σ multiplier = multiplier
-  /-- ONE recurrence on the full complex ladder. -/
-  ladder_recurrence : ∀ n,
-    ladder (n + 2) = multiplier * ladder (n + 1) - ladder n
 
 /-- Derived (proved, conditional on the class): the σ-even (binding) and
     σ-odd (`𝔔_β`) ladders each satisfy the SAME three-term recurrence —

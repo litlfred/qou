@@ -1,0 +1,81 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T13:34:24.901677+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
+  "assertions": [
+    {
+      "name": "h_frame_swing_equals_u_frame_swing",
+      "computed": "0.0239124320741847869389266172712165047213097933730374934166705",
+      "expected": "0.0239120703301551374532742740502525118660268175256994217859027",
+      "passed": true,
+      "tolerance": "0.000001",
+      "source": "Matched magnification, so the comparison is fair. The two frames swing identically — changing the expansion variable does not change the anchor-instability at all."
+    },
+    {
+      "name": "both_swings_equal_the_residual_swing",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "u-frame 0.02391207, h-frame 0.023912432, residual 0.023911451. The coefficient swing IS the residual swing; the divisors contribute ~1e-6. So the instability is a property of the model's q-dependence, not of the coordinate."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "qbeta-h-vs-u-frame-stability",
+  "scriptFile": "qbeta_h_vs_u_frame_stability_probe.py",
+  "scriptHash": "611a9bd55071",
+  "scriptCommitSha": "4f542c4d449221d7483e79adb818336b42cc4a96",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_h_vs_u_frame_stability_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_h_vs_u_frame_stability_probe.py"
+  },
+  "description": "Tests whether re-expressing the Q_β ladder in h = q − 1/q instead of u = b·ℏ_q² fixes the cross-anchor instability of the extracted coefficients. Extracts the same residual in both frames at MATCHED magnification (h^k chosen so h^k ≈ u³) so neither frame is flattered by a smaller divisor. Result: both swing identically to five significant figures, and both equal the swing of the residual itself — the instability is in the residual, not the coordinate. Refutes the leakage hypothesis as the explanation of this drift (scope-(a)). The h-reframe keeps its other justifications (analyticity, odd-rung expressiveness, Ohtsuki/Habiro alignment, α_EM consistency) but buys nothing numerical at ~3× the rungs. No fit; nothing wired.",
+  "data": {
+    "matched_exponent_k": 9,
+    "anchors": {
+      "proton": {
+        "q": "1.10997858275138080759166909561076887987449912187357873607281",
+        "u": "0.00851723455015614218925557360330920296919422161162716337301758",
+        "h": "0.209060298795639315430846213129674943859757495263024555381696",
+        "residual": "-0.00000127858090734180930147639839479347629474122047719323419015792",
+        "coeff_u3": "-2.06934257711516783787971951724962858902203099810343886691284",
+        "coeff_h9": "-1.67603897674746780294610480700494116221913802763438533233859"
+      },
+      "muon": {
+        "q": "1.10997859564273904668179512938000175270006556102901155697405",
+        "u": "0.00851723635242482310735822116750811832077898606325755114370897",
+        "h": "0.209060322150316746630800261501919885980137169225879113703739",
+        "residual": "-0.00000124800818300752259624729993161395931589835654261228539598292",
+        "coeff_u3": "-2.01986031187400546349321995587646029747377592135260349078716",
+        "coeff_h9": "-1.63596080856230780354461919428690438778560140324908198566106"
+      }
+    },
+    "relative_swings": {
+      "u_frame": "0.0239120703301551374532742740502525118660268175256994217859027",
+      "h_frame": "0.0239124320741847869389266172712165047213097933730374934166705",
+      "residual": "0.0239114507018941031061374230963864413952853285510383353396906",
+      "u3_itself": "0.000000634807830523969498725396446863289594157145018008407624406721",
+      "h9_itself": "0.00000100541418918924211378189831979128515533821537196275785222371"
+    }
+  }
+}

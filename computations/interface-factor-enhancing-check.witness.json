@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T01:58:56.340758+00:00",
-  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
+  "computedAt": "2026-08-23T09:23:44.206075+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 101,
+  "durationMs": 121,
   "computation": "interface-factor-enhancing-check",
   "scriptFile": "interface_factor_enhancing_check_probe.py",
-  "scriptHash": "fe0be64835ff",
-  "scriptCommitSha": "6a946de00635e5f6ed3e3011a29ae394661802b0",
+  "scriptHash": "334e74b581b0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,11 +23,18 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/interface_factor_enhancing_check_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/interface_factor_enhancing_check_probe.py"
   },
   "description": "Checks whether any canonical pairwise interface factor exceeds 1 (would escape productModel_3body_nonpos). None does at q0; z<=1/2 for all q (AM-GM, Lean markovParam_le_half). Enhancing escape foreclosed.",
   "parameters": {
-    "q_0": "1.109978582751380807591669095610768879874",
+    "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
     "free_parameters": 0
   },
   "data": {

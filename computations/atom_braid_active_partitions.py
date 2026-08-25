@@ -35,6 +35,7 @@ from hecke_characters import chi_lambda_braid
 from mass_at_3A_proper import atom_braid_word_3A
 from q_parameter import Q
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 
 HA = 0.20906032198987945  # h = q − q⁻¹ at q_0
@@ -130,7 +131,7 @@ def chi_lambda_atom_braid(lambda_shape, atom_word, q_value, tol=1e-12):
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     q = float(Q)
 
     w = WitnessBuilder("atom-braid-active-partitions", engine="mpmath")

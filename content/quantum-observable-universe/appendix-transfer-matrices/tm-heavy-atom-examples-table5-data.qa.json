@@ -895,7 +895,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.252Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "Caption closed '...; it is supporting data, not a free-standing argument' - assertion by denying the opposite, and redundant after the sentence already said it is the input to the shell-correction step.",
+        "notes": "FIXED: '...input to the shell-correction step; it is supporting data, not a free-standing argument.' -> '...input to the shell-correction step.'"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.292Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "no setup-then-reframe construction"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.333Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "em-dashes are glossary glosses / true parentheticals, not sentence-structure substitutes"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.384Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "no reflex three-item list; enumerations present are substantive"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.427Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "block does not end on a manufactured quotable line"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.469Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "severity": "minor",
+        "evidence": "Same clause narrated the block's own status within the document rather than stating content.",
+        "notes": "FIXED by the same deletion as trap-negation-contrast."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.513Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "no block-final restatement of what the text established"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.556Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "institutional register throughout"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.601Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "no unqualified maximum-strength claim"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f9dda25b6ca5",
+          "ts": "c146bded0fd0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:09:59.644Z",
+        "reviewed_sha": "82b146b27bc262e44d68e3a3853f84ab74a5b341",
+        "evidence": "Full read: prose caption + 4-row tau(n)/log_q tau(n) table. All four logs reproduce at q0~1.10998; the differences feed the parent's Delta_shell=+5.04 exactly.",
+        "notes": "noun chains parse aloud"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T07:09:59.644Z"
 }

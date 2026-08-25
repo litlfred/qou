@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:28:49.017476+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "computedAt": "2026-08-24T10:54:06.618754+00:00",
+  "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 22,
   "computation": "hh-trefoil-corrected",
   "scriptFile": "hh-trefoil-corrected.py",
-  "scriptHash": "2b1449c83351",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "5465667a4159",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,61 +19,69 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "e114ae83ee1a611f"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hh-trefoil-corrected.py"
+    ],
+    "reproduce": "python3 -u computations/hh-trefoil-corrected.py"
   },
   "description": "H x trefoil x H with corrected formulas from gluon branch. Proton: corrected quark order + 2 sigma_0 gluon. Neutron: L+L- gluon. dim_std = [2]_q.",
   "contentBlock": "def:h2-molecular-braid",
   "parameters": {
-    "q": 1.1099785955573347,
-    "w_sym": 0.16546138476803507,
-    "w_std": 0.6690772304639299,
-    "w_alt": 0.16546138476803507,
-    "E_mol_eV": 6.729337493415771
+    "q": 1.1099785827513808,
+    "w_sym": 0.1654613850336069,
+    "w_std": 0.6690772299327862,
+    "w_alt": 0.1654613850336069,
+    "E_mol_eV": 6.729338426152079
   },
   "data": {
     "Inverse trefoil s0i.s1i.s0i (w": {
       "writhe": -3,
-      "binding": 1.0819645890872869,
-      "E_eV": 7.280904875893267
+      "binding": 0.8776264544384091,
+      "E_eV": 5.9058454236599935
     },
     "Inverse trefoil s1i.s0i.s1i (w": {
       "writhe": -3,
-      "binding": 1.081964589087286,
-      "E_eV": 7.2809048758932615
+      "binding": 0.8776264544384091,
+      "E_eV": 5.9058454236599935
     },
     "Positive trefoil s0.s1.s0 (w=+": {
       "writhe": 3,
-      "binding": -0.8901600910540759,
-      "E_eV": -5.99018767587259
+      "binding": -0.5511522107110668,
+      "E_eV": -3.7088897501966493
     },
     "(s1i)^2 Hopf link (w=-2)": {
       "writhe": -2,
-      "binding": 1.381376857669048,
-      "E_eV": 9.295751080849184
+      "binding": 0.6375816339850648,
+      "E_eV": 4.290502589384527
     },
     "(s1i)^3 (w=-3, NOT trefoil)": {
       "writhe": -3,
-      "binding": -1.2610325742650392,
-      "E_eV": -8.485913782420335
+      "binding": -0.7629048241352249,
+      "E_eV": -5.133844748549963
     },
     "Figure-8: s0.s1i.s0.s1i (w=0)": {
       "writhe": 0,
-      "binding": -1.8138242715885697,
-      "E_eV": -12.205835677268512
+      "binding": -1.2127286690547758,
+      "E_eV": -8.16086163316657
     },
     "T(2,5) = s0.s1.s0.s1.s0 (w=+5)": {
       "writhe": 5,
-      "binding": -1.80384874439283,
-      "E_eV": -12.138706988093631
+      "binding": -1.3458559145358275,
+      "E_eV": -9.056719921749993
     },
     "T(2,5)^-1 (w=-5)": {
       "writhe": -5,
-      "binding": -0.6917567816070944,
-      "E_eV": -4.655064846793246
+      "binding": -0.30298821785345775,
+      "E_eV": -2.0389102570726108
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

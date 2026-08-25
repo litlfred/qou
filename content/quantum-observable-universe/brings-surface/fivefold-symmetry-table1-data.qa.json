@@ -883,7 +883,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.013Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.051Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.092Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.131Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.169Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.208Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.246Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.284Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.324Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "1fd66b6a6faa",
+          "ts": "74367c3aab2f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:36:00.362Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (5-row crystallographic table). Checked against the crystallographic restriction theorem: orders 2,3,4,6 are lattice-compatible and 5 is not - the table's Yes/Yes/Yes/**No**/Yes column is correct. chi = -6 is consistent with genus 4 (chi = 2 - 2g). No prose trap constructions."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:36:00.362Z"
 }

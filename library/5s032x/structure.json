@@ -1,0 +1,257 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "5s032x",
+ "source": {
+  "file": "5S032X.pdf",
+  "sha256": "17761383781f7bdc4da9f3aba337cc913bb4b438134d413ae1d8f6b22cbf75dd",
+  "bytes": 895942,
+  "pages": 20
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.32388/5S032X",
+  "title": "The standard model symmetry and qubit entanglement",
+  "authors_raw": "Research at the intersection of quantum gravity and quantum information theory has seen sig-",
+  "abstract": "quantum description. Indeed, the links appear so deep that Susskind has proposed to generalize ER =EPR , the conjecture that quantum entanglement is equivalent to wormholes in spacetime [6], to GR = QM, proposing that ‘where there is quantum mechanics, there is also gravity’ [7]. Hence, a quantum system does not merely come equipped with a geometry, but that geometry is dynamical, approximating general relativistic spacetimes in a classical limit. The origin of this idea can be traced to work of Jacobson, who has shown that Einstein’s equations can be recovered from thermodynamics in the presence of black hole horizons [8] (see also [9, 10]). These arguments rely essentially on the area law-scaling of the Bekenstein-Hawking entropy of black holes [11]. This scaling is also observed, in many cases, for the entanglement entropy of quantum systems—indeed, it has been proposed to explain black hole entropy as the entanglement entropy of degrees of freedom across the horizon [12, 13]. Along a different thread, van Raamsdonk has suggested that entanglement may be responsible for spacetime connec- tivity [14, 15]. In the AdS/CFT correspondence, the Ryu-Takayanagi formula [16] relates the entanglement between different patches of the conformal field theory on the boundary of Anti-de Sitter space with the area of a surface partitioning the AdS-space; if the entanglement between both goes to zero, the space partitions into two disconnected regions. Combining these perspectives, the linearized Einstein equations follow from ‘entanglement thermodynamics’ for perturbations of the AdS-spacetime [17, 18]. While the bulk of this work assumes the AdS/CFT-correspondence, Jacobson has shown that a derivation of the full Einstein equations is possible without assuming an AdS-background, given a condition of entanglement equilibrium [19]. A way to think about this is in terms of a graph, each node of which is itself an abstract element of quantum information—a qubit, or perhaps more gen",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20230605023211Z",
+   "Creator": "LaTeX with hyperref",
+   "Title": "",
+   "Producer": "3-Heights™ PDF Toolbox API 6.12.0.6 (http://www.pdf-tools.com)"
+  },
+  "title_lines": [
+   "The Standard Model Symmetry and Qubit Entanglement",
+   "Jochen Szangolies∗"
+  ],
+  "title_prev": "The Standard Model Symmetry and Qubit Entanglement Jochen Szangolies∗"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "The Standard Model Symmetry and Qubit Entanglement",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Abstract",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Introduction: The `Quantum First'-Program",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Complex Case: Single Qubits",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "SL(2,C) and 3+1-Dimensional Spacetime",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "The Bloch Sphere and the Complex Hopf Fibration",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Spin(3) and the Complex Hopf Fibration",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Quaternionic Case: Two Qubits",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "SL(2,H) and 5+1-Dimensional Spacetime",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Two Qubits and the Quaternionic Hopf Fibration",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Spin(5) and SU(2)U(1)/Z2",
+   "page": 9,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The Octonionic Case: Three Qubits",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "`SL(2,O)' and 9+1-Dimensional Spacetime",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Three Qubits and the Octonionic Hopf Fibration",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Spin(9) and SU(3)SU(2)U(1)/Z6",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Entanglement and Massive Particles",
+   "page": 13,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Conclusion",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "References",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-the-standard-model-symmetry-and-qubit-entangleme",
+   "number": null,
+   "title": "The Standard Model Symmetry and Qubit Entanglement",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 2607,
+   "n_words": 398
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 5,
+   "n_chars": 14699,
+   "n_words": 2316
+  },
+  {
+   "id": "sec-002-the-complex-case-single-qubits",
+   "number": null,
+   "title": "The Complex Case: Single Qubits",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 3874,
+   "n_words": 719
+  },
+  {
+   "id": "sec-003-the-bloch-sphere-and-the-complex-hopf-fibration",
+   "number": null,
+   "title": "The Bloch Sphere and the Complex Hopf Fibration",
+   "level": 3,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1918,
+   "n_words": 342
+  },
+  {
+   "id": "sec-004-spin3-and-the-complex-hopf-fibration",
+   "number": null,
+   "title": "Spin(3) and the Complex Hopf Fibration",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5271,
+   "n_words": 958
+  },
+  {
+   "id": "sec-005-two-qubits-and-the-quaternionic-hopf-fibration",
+   "number": null,
+   "title": "Two Qubits and the Quaternionic Hopf Fibration",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 4828,
+   "n_words": 895
+  },
+  {
+   "id": "sec-006-the-octonionic-case-three-qubits",
+   "number": null,
+   "title": "The Octonionic Case: Three Qubits",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 3635,
+   "n_words": 627
+  },
+  {
+   "id": "sec-007-three-qubits-and-the-octonionic-hopf-fibration",
+   "number": null,
+   "title": "Three Qubits and the Octonionic Hopf Fibration",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 12125,
+   "n_words": 2227
+  },
+  {
+   "id": "sec-008-conclusion",
+   "number": null,
+   "title": "Conclusion",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 20,
+   "n_chars": 18215,
+   "n_words": 2691
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 9,
+  "chars_total": 67172
+ }
+}

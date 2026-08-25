@@ -1,0 +1,86 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "1172-4",
+ "source_sha256": "ffc47732ce0138e9",
+ "brief": "Hikami, Notes on construction of the knot invariant from the quantum dilogarithm function (RIMS Kôkyûroku) — knot invariants built from Faddeev's quantum dilogarithm.",
+ "extended": "**Notes on Construction of the Knot Invariant from Quantum Dilogarithm Function** — Kazuhiro Hikami. RIMS Kôkyûroku proceedings.\n\nConstruction of knot invariants from the quantum dilogarithm, following the line from the Jones polynomial through the quantum-group invariants (HOMFLY, colored Jones, Kauffman) to the dilogarithmic ones.\n\n**Why it may bear here.** The quantum dilogarithm is the object this corpus's Φ_q / Li₂^q material is written in, and Kashaev's original link invariant (kashaev1995) is the paper this one builds on.\n\n**Extraction caveat.** The held scan is a RIMS volume with a broken text encoding — Japanese runs render as mojibake and TeX escapes appear literally, so the body is not reliably machine-readable and grep over its sections will miss things.",
+ "tokens": {
+  "brief": 41,
+  "extended": 194
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-dilogarithm-function",
+   "title": "Dilogarithm Function",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-6"
+  },
+  {
+   "id": "sec-002-4-quantum-dilogarithm-function-ii",
+   "title": "Quantum Dilogarithm Function II",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-003-5-representation",
+   "title": "Representation",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-51-momentum-space",
+   "title": "Momentum Space",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-005-52-asymptotic-behavior",
+   "title": "Asymptotic Behavior",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-006-6-knot-invariant",
+   "title": "Knot Invariant",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-007-61-braid-group",
+   "title": "Braid $G$roup",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-008-62-three-dlmenslonal-picture",
+   "title": "Three Dlmenslonal Picture",
+   "pages": "14-19"
+  },
+  {
+   "id": "sec-009-7-simple-examples",
+   "title": "Simple Examples",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-010-71-figure-eight-knot",
+   "title": "Figure-Eight Knot",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-011-8-concluding-remarks",
+   "title": "Concluding Remarks",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-012-references",
+   "title": "References",
+   "pages": "22-26"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

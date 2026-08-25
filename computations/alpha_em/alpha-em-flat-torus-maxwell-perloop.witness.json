@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T08:27:19.375126+00:00",
-  "commitSha": "43989a5968643859e3901aaf094b07005ba149bb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:49:16.097921+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "control_zeta_delta1_zero_equals_minus_b1",
@@ -46,11 +46,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 5,
   "computation": "alpha-em-flat-torus-maxwell-perloop",
   "scriptFile": "alpha_em_flat_torus_maxwell_perloop_probe.py",
-  "scriptHash": "64b4d1323809",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "174ac2201384",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,8 +60,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em/alpha_em_flat_torus_maxwell_perloop_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em/alpha_em_flat_torus_maxwell_perloop_probe.py"
   },
   "description": "Flat-torus Maxwell (free U(1) gauge) 1-loop partition-function probe of the residual α_EM per-loop-measure wall. Computes Z_Maxwell(T^d) = Vol(J(M))·(2π)^{½ζ_Δ₁(0)}·(det'Δ₁)^{−1/2}·(det'Δ₀)^{+1} INDEPENDENTLY of any α data (reusing the #3834 Epstein-zeta machinery: ζ_Δ₁(0)=d·E_Λ(0)=−b₁, exact/area-free), and MEASURES the π-power, b₁-dependence and covolume-dependence, then COMPARES (never fits) to the data-selected target 1/(π b₁)=1/(8π). EXTRACTED: (a) the per-mode Gaussian bookkeeping forces the oscillator measure (2π)^{½ζ_Δ₁(0)}=(2π)^{−b₁/2}, so π enters to power −b₁/2 (LINEAR in b₁, magnitude 4 at b₁=8) with a companion 2^{−b₁/2} (2π, not π); (b) b₁ sits in the EXPONENT, not a reciprocal 1/b₁; (c) the zero-mode Jacobian volume Vol(J(T^d)) scales as L^{d(d−2)/2} under Λ→LΛ (exponent 24 at d=8, verified numerically at L=1,2), so covolume dependence SURVIVES. COMPARISON to 1/(π b₁)=π^{−1}b₁^{−1} (area-free): π-power −1 vs −b₁/2 ✗; bare π vs 2π ✗; reciprocal b₁ vs exponential ✗; area-free vs Vol(J) covolume ✗. VERDICT scope-(a) NEGATIVE (the stub's pre-stated likely outcome): the flat-torus Maxwell 1-loop partition function is NOT the per-loop measure 1/(π b₁). Named failing factors: (i) π-power b₁/2≠1 from the 2π-per-mode bookkeeping, (ii) b₁ exponential not reciprocal, (iii) Vol(J) covolume dependence (removable only by a normalization CHOICE — the forbidden fitting trap). Redirects the search: the reciprocal-in-b₁, single-π, area-free structure must come from a DIFFERENT normalization object than Z_Maxwell(T^{b₁}). The #3834 area-free numerator count ζ_Δ₁(0)=−b₁ is untouched; only the MEASURE claim fails. Anti-laundering respected: no CODATA read, no convention tuned to land on 8π. No α_k wired; no fit; no tier change; 1/(8π) stays a phase-4 identification.",
   "contentBlock": "prop:alpha-em-categorical-trace",

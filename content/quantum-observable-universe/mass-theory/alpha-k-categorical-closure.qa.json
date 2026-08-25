@@ -1752,6 +1752,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.810Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1771,6 +1786,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.863Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1790,6 +1820,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.905Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1809,6 +1854,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 77 words)"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.951Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1828,6 +1888,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:02.991Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1847,6 +1922,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:03.030Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1866,6 +1956,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:03.069Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1885,6 +1990,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:03.109Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1904,6 +2024,22 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:03.149Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the rigorously bounded analog derived from the brane tower'; 'Both forms evaluate to identical significant figures'.",
+        "notes": "'rigorously bounded' names a specific property (a proved bound) rather than asserting maximum strength; 'identical significant figures' is a measurement statement, and the block closes by leaving the direction OPEN rather than over-claiming. Weighed and passed."
       }
     ],
     "trap-nonspeakable": [
@@ -1923,6 +2059,21 @@
         "reviewed_at": "2026-08-15T10:31:00.603Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "1c21f097d925",
+          "ts": "b4e40bc9a890"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:26:03.198Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, two candidate closed forms for the categorical resummation); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1946,5 +2097,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:26:03.198Z"
 }

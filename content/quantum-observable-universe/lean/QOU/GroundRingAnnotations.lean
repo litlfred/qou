@@ -33,7 +33,7 @@ to numerical computations but are NOT part of the formal chain.
 | **HadronicMass** | `ℝ` | — | Terminal resolution (numerical) |
 | **MathConstants** | `ℝ` | — | Derived physical constants |
 | **Elaboration** | `ℝ` | — | d_q² computation (numerical) |
-| **SubstrateParameter** | `ℝ` | — | q(p) field (numerical) |
+| **ArchimedeanSubstrateField** | `ℝ` | — | q(p) field (numerical) |
 | **FormalGroups** | generic `k` | ✓ | Skewed-Poisson, Witt vectors |
 | **RepresentationTheory** | generic `k` | ✓ | Categorical hadrons |
 | **PhotonThreading** | `ℤ[q, q⁻¹]` | ✓ | Hecke cost = mass |

@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:21.991Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.024Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.059Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.093Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.127Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.161Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.197Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.232Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.270Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a03c59a99dec",
+          "ts": "ec50489c860e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:22.305Z",
+        "reviewed_sha": "e7f396904e732abc6dab2ad1cc02a21d57f916eb",
+        "evidence": "Pure extracted data table (kind=table, 9 isotope rows); read in full. No trap construction of this category present. VERIFIED (not a trap): every row recomputed against the parent definition's closed forms n_pp=max(0,Z-1), n_nn=max(0,N-1), n_pn=1, total=A-1 — all 9 rows agree, including 16O (7,1,7,15)."
+      }
     ]
   },
   "source_hashes": {
     "md": "a03c59a99dec",
     "ts": "ec50489c860e"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:22.305Z"
 }

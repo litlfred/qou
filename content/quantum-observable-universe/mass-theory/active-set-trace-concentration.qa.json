@@ -1018,6 +1018,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not by the fusion bound alone.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:21.922Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Two-row dominance is compatible but not implied'; 'The support bound explains which blocks vanish; the quantitative concentration ... requires the Wenzl-weight and character factors'; 'justified per isotope by the fingerprint data, not by the fusion bound alone'.",
+        "notes": "All three are substantive scope separations that are the block's actual epistemic content (what the conjecture does and does not bound). False-positive class 'substantive mathematical contrast'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1037,6 +1053,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.040Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, fusion bound on the tr_M active set); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1056,6 +1087,22 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (4 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.089Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Three spaced dashes, all true parentheticals ('dominated by two-row partitions - (9,3) carries ~29.0% ... - while many of the 77 partitions'; 'The remaining 43 partitions of 12 - exactly those with five or more rows - have Kostka multiplicity 0').",
+        "notes": "Each encloses a genuine aside; density 3 in ~3.8 kB is not a structural substitute."
       }
     ],
     "trap-triples": [
@@ -1075,6 +1122,22 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 452 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.154Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Numbered three-item list (support exclusion / two-row dominance / the (4,4,4) block).",
+        "notes": "Substantive: three distinct comparisons between the fusion support and the observed fingerprint, of different logical types."
       }
     ],
     "trap-closing-aphorism": [
@@ -1094,6 +1157,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.226Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, fusion bound on the tr_M active set); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1113,6 +1191,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.289Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, fusion bound on the tr_M active set); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1132,6 +1225,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.365Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, fusion bound on the tr_M active set); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1151,6 +1259,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.502Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, fusion bound on the tr_M active set); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1170,6 +1293,21 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.649Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (conjecture, fusion bound on the tr_M active set); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1189,6 +1327,22 @@
         "reviewed_at": "2026-08-15T10:31:00.667Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c978f8c917d6",
+          "ts": "6116388db32d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:22:22.766Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'the empirically dominant two-row-plus-rectangular blocks', 'the unique minimal-length rectangular component'.",
+        "notes": "Noun-heavy but each chain is a technical term of art with no shorter form; parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1211,5 +1365,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:22:22.766Z"
 }

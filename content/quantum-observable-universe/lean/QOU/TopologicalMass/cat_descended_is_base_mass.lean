@@ -66,27 +66,29 @@ opaque baseTrace : ℝ
 /-- The base-level mass `𝔪(ϱ₀)`. -/
 opaque baseMass : ℝ
 
+class CatDescendedInputs : Prop where
+  /-- Open input 1 -/
+  trace_compat : trFrob (tauHat alpha) = baseTrace
+  /-- Open input 2 -/
+  base_norm : mnorm baseTrace = baseMass
+
 /-- **Open input 1 — descent compatibility of the trace.**  The
     Frobenius trace of the descended integrand equals the base-level
     trace of the descent: `tr(τ̂ₙ(α)) = tr₀(α₀)`.  Needs the
     level-`(n+1)` → base descent / Frobenius-trace infrastructure (not
     formalised); body is `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
-theorem descended_trace_is_base_trace :
-    trFrob (tauHat alpha) = baseTrace := by
-  -- Needs: descent of the closed cycle ϱ to ϱ₀ intertwines the
-  -- level-(n+1) Frobenius trace with the base-level trace.
-  sorry
+theorem descended_trace_is_base_trace [ctx : CatDescendedInputs] :
+    trFrob (tauHat alpha) = baseTrace :=
+  ctx.trace_compat
 
 /-- **Open input 2 — the base mass is the norm of the base trace.**
     `‖tr₀(α₀)‖ = 𝔪(ϱ₀)`.  Needs the `*`-norm / mass infrastructure of
     the base level (not formalised); body is `sorry`. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-descended.md
-theorem base_mass_is_norm_of_base_trace :
-    mnorm baseTrace = baseMass := by
-  -- Needs: the base-level mass 𝔪(ϱ₀) is recovered as the mass norm of
-  -- the base-level Frobenius trace.
-  sorry
+theorem base_mass_is_norm_of_base_trace [ctx : CatDescendedInputs] :
+    mnorm baseTrace = baseMass :=
+  ctx.base_norm
 
 end CatDescended
 
@@ -97,7 +99,7 @@ open CatDescended in
 `‖tr(τ̂ₙ(α))‖ = 𝔪(ϱ₀)`.  *Derived* (not assumed): rewrite the trace of
 the descended integrand to the base-level trace (open input 1), then
 identify its mass norm with the base-level mass (open input 2). -/
-theorem cat_descended_is_base_mass :
+theorem cat_descended_is_base_mass [CatDescendedInputs] :
     mnorm (trFrob (tauHat alpha)) = baseMass := by
   rw [descended_trace_is_base_trace]
   exact base_mass_is_norm_of_base_trace

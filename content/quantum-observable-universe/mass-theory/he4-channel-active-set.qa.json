@@ -1773,6 +1773,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:57.702Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:57.740Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:57.781Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "No spaced em-dashes anywhere in the block; the prose uses full stops and colons throughout."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:57.831Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:57.885Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:57.930Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:57.963Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:58.009Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Six first-person constructions ('We load the empirical anchors', 'We apply', 'We have y_0* = 20.380', 'We make this connection explicit'), but mathematical 'we' is standard scholarly register, not personal warmth. Noted for a different audit: 'We have X = ...' as a way of reporting a computed value is filler — the value can simply be stated."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:58.069Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "'the most binding-receptive sub-braid' is licensed — y_DD is in fact the largest shadow price. Two numeric overstatements are reported separately rather than as inflation: 'This is five times the effect of the 3He+n channel' recomputes as 3.778/0.796 = 4.746, and 'Sub-braid corrections are sub-percent' is asserted with no witness."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:00.727Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6dd782e3cb9e",
+          "ts": "4cde38696d57"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:27:58.108Z",
+        "reviewed_sha": "fd127d5c9fdc3c6ab61e41d75d0e7a04af26d61b",
+        "evidence": "Read in full (proposition, 53 lines). VERIFIED (not traps) — the LP is exemplary against the AGENTS.md dual requirement and every dual number checks out against computations/he4-sdp-compositional-probe.witness.json: y0_star = 20.37973857 (block 20.380), y_star[0] = 3.7787825 (block 3.778), primal_obj = dual_obj = 268.94883815 (block 268.949), duality_gap = 0.0, and the shadow prices are exactly the reduced costs t_i - y_0 (24.16-20.38 = 3.78; 21.18-20.38 = 0.80). The block reports binding, not absolute mass, so it is on the right side of the 2026-08-11 excision. Three defects reported separately: a dead witness link, a sweep-damaged filename, and an n_target that does not recompute from the block's own table."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:27:58.108Z"
 }

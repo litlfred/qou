@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.069Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.124Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.177Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.231Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.284Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.354Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.405Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.461Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.554Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "74eff426da8a",
+          "ts": "a87578f81e44"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:11.625Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 7-row 2-categorical <-> finite-slice dictionary. CHECKED: the Hecke quadratic relation is written sigma_i^2 = (q-q^{-1})sigma_i + 1, which is exactly the SS7a normalisation (equivalently (sigma_i-q)(sigma_i+q^{-1}) = 0), and the generator is sigma_i throughout, never T; the Markov trace is tr_M(T_w). 'GB filtration grade l(w) (Coxeter length)' is the correct identification of the slicing depth and matches the level convention used by the frobenius-partition-sum producer in the sibling partition-sum tables. No numerics, no q_0, no braid words, no convention-C z.",
+        "notes": "Clean. One note: T_w is used for the Hecke BASIS element indexed by a Coxeter word w, which is standard, but SS7a forbids T as a name for the GENERATOR -- the table observes that distinction correctly (generators are sigma_i, basis elements T_w). Worth stating because a scanner keying on the bare token T would flag this row as a violation and it is not one."
+      }
     ]
   },
   "source_hashes": {
     "md": "74eff426da8a",
     "ts": "a87578f81e44"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:11.625Z"
 }

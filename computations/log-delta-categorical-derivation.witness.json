@@ -35,7 +35,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Categorical-derivation test for the log-Δ form (PR #787 Phase 2 5.22× residual). Applies prop:unified-curvature-rank-mass-formula with structural α_k and tests three Wedderburn-weighting forms (y_λ, w_λ, identity) on D, T, ³He, ⁴He.",
+  "description": "Categorical-derivation test for the log-\u0394 form (PR #787 Phase 2 5.22\u00d7 residual). Applies prop:unified-curvature-rank-mass-formula with structural \u03b1_k and tests three Wedderburn-weighting forms (y_\u03bb, w_\u03bb, identity) on D, T, \u00b3He, \u2074He.",
   "parameters": {
     "q0": "1.1099785827513808",
     "hbar_q": "0.09908171604425853",
@@ -138,6 +138,9 @@
     "canonical_status": "canonical-with-empirical-assignment",
     "best_weight_form": "w_lambda",
     "best_max_over_min": 1.5565477590013963,
-    "verdict": "PROMISING — w_lambda gives max/min = 1.56 (close to constant)"
-  }
+    "verdict": "PROMISING \u2014 w_lambda gives max/min = 1.56 (close to constant)"
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1190,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.827Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1225,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.868Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1260,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.909Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1295,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.951Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "'extreme Balmer breaks, broad H-alpha emission, and high-metallicity spikes without X-ray bremsstrahlung' -- three independent observational signatures, each measurable separately and each doing distinct work in identifying the object class. Substantive enumeration, not a reflex three.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1330,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.993Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1365,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.036Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.078Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.118Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.159Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "'extremely compact, luminous objects' and 'These objects exhibit extreme Balmer breaks' put extreme/extremely in consecutive sentences, which is the surface shape of category 9. Judged in context and passing: 'extreme Balmer break' is a term of art in the Little-Red-Dot literature for exactly this class, and compactness is the defining observational property, so both are technical descriptors rather than manufactured emphasis.",
+        "notes": "No change; recording the pass explicitly so a keyword pass does not re-flag it."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:31:01.160Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cedf221fc1ce",
+          "ts": "95a56e2853f9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.199Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: a single six-sentence introductory paragraph on JWST compact objects. Judged all ten categories in context.",
+        "notes": "TWO ITEMS reported, not fixed. (1) UNVERIFIABLE CITATION: the block names a specific object, 'GLIMPSE-17775', and the .ts carries no cites[] field at all. I could not verify the designation offline and did not guess; the GLIMPSE survey's widely reported extreme-Balmer-break object is catalogued under a different number in the literature I can recall, so this needs a reference before it is treated as a fact. (2) 'high-metallicity spikes' is the one item of the three-signature list I could not match to the standard Little-Red-Dot phenomenology (compactness, broad H-alpha, strong Balmer break, X-ray weakness are the usual four); flagged as needing a source rather than asserted wrong."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1543,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:42:16.199Z"
 }

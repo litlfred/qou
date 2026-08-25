@@ -1,8 +1,8 @@
 {
-  "commitSha": "b386238661ac83490512ac522aa257d82bd0b7ce",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "vol_density_borromean_q_locality_probe",
-  "computedAt": "2026-08-11T01:03:49.953410+00:00",
-  "description": "q-locality discipline test applied to canonical `vol_density_borromean(q)` near q_0. Tests whether the linking weight inside VolDensity has the same local q-derivative as the CODATA-implied target.",
+  "computedAt": "2026-08-23T09:41:07.685113+00:00",
+  "description": "q-locality discipline test applied to canonical `per_knot_density_borromean(q)` near q_0. Tests whether the linking weight inside VolDensity has the same local q-derivative as the CODATA-implied target.",
   "durationMs": 0,
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
@@ -16,8 +16,8 @@
     "yekutieli_purged_5_2_plus_3_4_minus_G_h2": "-1.69e7 ppm/q (PR #951)"
   },
   "parameters": {
-    "M_E_MEV": "0.51099895069",
-    "M_P_CODATA_MEV": "938.27208943",
+    "M_E_MEV": "0.5109989506900000000000000000000000000000000000000005654434719000544678",
+    "M_P_CODATA_MEV": "938.2720894299999999999999999999999999999999999999994592249096324098442",
     "Q_0": "1.1099785827513808075916690956107688798744991218736",
     "dps": 50,
     "precision": "mpfr",
@@ -61,9 +61,9 @@
     ],
     "vol_density_at_q0": 1890.5123448142976
   },
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "vol_density_borromean_q_locality_probe.py",
-  "scriptHash": "6027becaf6d8",
+  "scriptHash": "066902eb3f3e",
   "status": "exploratory",
   "tags": [
     "q-locality",

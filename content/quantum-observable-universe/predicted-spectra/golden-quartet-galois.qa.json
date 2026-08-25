@@ -1773,6 +1773,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:15.434Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:15.548Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.090Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 46 words)"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.166Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.224Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.291Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.354Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.406Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.463Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:01.231Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "348c5113a4f3",
+          "ts": "10fc3bd14ce1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:49:17.520Z",
+        "reviewed_sha": "7fb0d4b505e597022cf0f976c8cc57da741c732e",
+        "evidence": "Full read of the proposition statement. None of the ten constructions is present; the block is displays plus connective prose and ends on the transitivity/faithfulness claim. EVERY ALGEBRAIC CLAIM RECOMPUTED AND CORRECT (sympy): x^4-3x^2+1 factors as (x^2-x-1)(x^2+x-1); roots of x^2-x-1 are {phi, -1/phi} = Q_+ and roots of x^2+x-1 are {1/phi, -phi} = Q_-, exactly as assigned; tau(phi) = (1-sqrt5)/2 = -1/phi and tau(1/phi) = -phi, so Q_+ and Q_- are the two Galois orbits; iota(x)=1/x sends Q_+ to Q_- and back; the four images of phi under Z/2 x Z/2 are distinct and exhaust Q, so the action is transitive and (being regular) faithful. uses[] names prop:golden-skew-dual-node, a proposition, so 3b does not apply."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:49:17.520Z"
 }

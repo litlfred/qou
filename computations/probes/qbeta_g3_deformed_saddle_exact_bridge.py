@@ -3,7 +3,7 @@
 the deformed Borel singularity in CLOSED FORM vs the corpus's measured
 deformed-meridian Borel data (#3819).
 
-Exact side (GGM §5.1, uploads/2012.00062v3.pdf, glyph-extracted with the
+Exact side (GGM §5.1, library/arxiv-2012.00062v3/2012.00062v3.pdf, glyph-extracted with the
 lost minus sign re-derived from (115) and self-certified):
 
   * saddle equation (115):  2u + v = log(1+e^v) + log(1+e^{u+v})
@@ -238,7 +238,7 @@ def main() -> int:
         "compared against the corpus's measured deformed-meridian "
         "Borel-Pade pole and resummed Im V_b (#3819 witness, loaded).")
     wb.set_content_block("conj:im-q-physical-role")
-    wb.add_data("source", "uploads/2012.00062v3.pdf (GGM) eqs 113-121 + "
+    wb.add_data("source", "library/arxiv-2012.00062v3/2012.00062v3.pdf (GGM) eqs 113-121 + "
                           "corpus witness qbeta-c3-borel-pade-deformed-meridian")
     wb.add_data("curve", "x*y^2 + (x^2-x-1)*y + 1 = 0  [(115)-derived; "
                          "minus sign restored vs the (116) glyph]")

@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.546Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.605Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.656Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.706Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.769Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.840Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.931Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:39.988Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.050Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "33e42e0b6729",
+          "ts": "c78fa44e2e3a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:40.102Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block: 8-row Lean declaration/content map, no prose. Prose trap categories not applicable; contents cross-checked against the parent proposition and consistent."
+      }
     ]
   },
   "source_hashes": {
     "md": "33e42e0b6729",
     "ts": "c78fa44e2e3a"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:36:40.102Z"
 }

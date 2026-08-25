@@ -3,7 +3,7 @@
 **Date:** 2026-07-02
 **Bean:** [`s013`](../../.beans/s013--keystone-value-map-colored-lawrence-rozansky-s-mat.md)
 **Follows:** [`2026-07-02-keystone-valuemap-qbessel-gate.md`](2026-07-02-keystone-valuemap-qbessel-gate.md) (round 2: derived residue character, channel + Bessel-row prunes)
-**Primary source (owner-uploaded, commit `ece271823`):** `uploads/0405028v2.pdf` — Hikami, *On the quantum invariant for the Brieskorn homology spheres* (math-ph/0405028; J. Math. Phys. 46 (2005)); also `uploads/1811.05376v4.pdf` (Andersen–Mistegård), `uploads/2205.01282v2.pdf` (Murakami, GPPV proof for plumbed homology spheres), `uploads/zagier-the-dilogarithm-function.pdf` (Lawrence–Zagier 1999). The 5th source (Lawrence–Rozansky CMP 205) is paywalled and turned out not to be needed.
+**Primary source (owner-uploaded, commit `ece271823`):** `library/arxiv-math-ph-0405028v2/0405028v2.pdf` — Hikami, *On the quantum invariant for the Brieskorn homology spheres* (math-ph/0405028; J. Math. Phys. 46 (2005)); also `library/arxiv-1811.05376v4/1811.05376v4.pdf` (Andersen–Mistegård), `library/arxiv-2205.01282v2/2205.01282v2.pdf` (Murakami, GPPV proof for plumbed homology spheres), `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf` (Lawrence–Zagier 1999). The 5th source (Lawrence–Rozansky CMP 205) is paywalled and turned out not to be needed.
 **Script:** [`computations/probes/keystone_valuemap_genuine_smatrix_s013.py`](../../computations/probes/keystone_valuemap_genuine_smatrix_s013.py)
 **Witness:** [`computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json`](../../computations/probes/keystone-valuemap-genuine-smatrix-s013.witness.json)
 **Status:** the s013 value step is **settled at the false-theta S-matrix level — negative**, with every transcribed formula machine-validated against exact finite-N identities. Scope (a) with the tested object named. No fit; nothing wired.
@@ -66,7 +66,7 @@ or a non-geometric realization of `BWVacuumRowIsHecke`.
 - Productive redirects consistent with everything verified: (i) Seifert manifolds with
   larger D whose S-matrix row could host 4 classes — but then the manifold is no longer
   S³/2I and the keystone conjecture changes shape; (ii) the Ẑ/GPPV side (Murakami
-  2205.01282, now in uploads/) with colored/decorated blocks; (iii) accept the
+  2205.01282, now in library/) with colored/decorated blocks; (iii) accept the
   representation-theoretic (non-geometric) status of `BWVacuumRowIsHecke`.
 
 ## Validation discipline

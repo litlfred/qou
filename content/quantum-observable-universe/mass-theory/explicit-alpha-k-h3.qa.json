@@ -1777,6 +1777,22 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.820Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'These values are fully q-algebraic. No transcendental constants or empirical fits appear.' The negative sentence is a required anti-fit disclosure under the repository's derive-not-fit discipline, not emphasis-by-denial; it adds 'no empirical fits', which the positive sentence does not say. Kept, though 'fully q-algebraic' and 'no transcendental constants' overlap and one could be dropped.",
+        "notes": "RIGOR (reported, not fixed): VERIFIED EXACT - with z = q^3/(q^2+1) (convention D) and h = q - q^{-1}, alpha_3 = h z^2 + z = q^3(q^4+1)/(q^2+1)^2 is an exact identity (residual 1e-31 at 30 dps; symbolically q^5(q^2-1) + q^3(q^2+1) = q^3(q^4+1)). The convention-D declaration here is correct and current. NOTE the proof sibling prf:explicit-alpha-k-h3 contradicts it with a convention-C 'Equivalently' form that is 2.1% off - recorded on that block."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1796,6 +1812,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.490Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-em-dash": [
@@ -1815,6 +1846,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.528Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-triples": [
@@ -1834,6 +1880,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.565Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1853,6 +1914,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.602Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1872,6 +1948,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.637Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1891,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.672Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1910,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.708Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1929,6 +2050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.745Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -1948,6 +2084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.595Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "463c9b1b2c25",
+          "ts": "58d35e3d5364"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:46:07.783Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of prop:explicit-alpha-k-h3 (convention-D declaration, boxed alpha_0..alpha_3, three closing sentences). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1971,5 +2122,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:46:07.820Z"
 }

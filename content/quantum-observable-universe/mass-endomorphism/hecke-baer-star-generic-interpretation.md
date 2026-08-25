@@ -7,7 +7,7 @@ The Kashaev–Murakami–Murakami volume conjecture ([`conj:kashaev-volume-conje
 
 Therefore, the Volume Conjecture's archimedean asymptotic regime exactly traces the trajectory through the Baer-*-failure locus. The loss of Baer-* projection-generation supplies the structural mechanism of the wall-crossing transition.
 
-This co-location is not coincidental. It forms the Hecke-algebra face of the phenomenon that forces hyperbolic $3$-manifold volumes to appear at depth $2$ in the period filtration. The radical at the failure locus produces the period-class-non-trivial elements upon archimedean specialisation. See [`rem:vc-as-depth-2-instance`](#rem:vc-as-depth-2-instance) for the depth-$2$ reading.
+This co-location is the Hecke-algebra face of the phenomenon that forces hyperbolic $3$-manifold volumes to appear at depth $2$ in the period filtration. The radical at the failure locus produces the period-class-non-trivial elements upon archimedean specialisation. See [`rem:vc-as-depth-2-instance`](#rem:vc-as-depth-2-instance) for the depth-$2$ reading.
 
 ### Significance for the depth correspondence
 

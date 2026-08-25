@@ -1205,6 +1205,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.095Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). no assertion-by-denial; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1224,6 +1240,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.135Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). no setup-then-reframe construction; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1243,6 +1275,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.176Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). em-dash count 0 in the block; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1262,6 +1310,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 97 words)"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.217Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). no reflex three-item list; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1281,6 +1345,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.259Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). final sentence is substantive, not a quotable placed for closure; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1300,6 +1380,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.299Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). no narration of the author's own emphasis; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1319,6 +1415,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.339Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). no block-final restatement of what the text established; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1338,6 +1450,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.380Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). no personal or institutional-warmth register; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1357,6 +1485,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.422Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). no unqualified maximum-strength claim; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1376,6 +1520,22 @@
         "reviewed_at": "2026-08-15T10:31:00.045Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "64ee3691885a",
+          "ts": "1ccaad9101fb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:33.464Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, two paragraphs, cites reshetikhin1991). reads aloud without stalling; proof, two paragraphs, cites reshetikhin1991.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1398,5 +1558,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:33.464Z"
 }

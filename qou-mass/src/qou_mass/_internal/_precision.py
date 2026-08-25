@@ -8,6 +8,24 @@ once ``qou-substrate`` is on PyPI.
 
 See ``docs/workplans/2026-05-24-library-reuse-production-readiness.md``
 Tier-2 item 2a for the promotion rationale.
+
+
+    IMPORTING THIS MODULE DOES NOT SET `mp.dps`
+    -------------------------------------------
+    Measured: `import _precision` leaves `mpmath.mp.dps` at mpmath's default
+    **15**, i.e. float64-grade.  `set_compute_dps()` must be called explicitly
+    before any `mpf` arithmetic you intend to be high-precision.
+
+    This matters because `fmt()` will happily render a 53-bit value out to the
+    full serialization width, so the number *reads* as measured while carrying
+    ~15 significant digits.  The float64-padding ratchet is what catches it
+    (worked case: `nonet_mixing_purity.py`, PR #5023).
+
+    Note the mirror hazard in the other direction: some modules raise global
+    `mp.dps` as an import side effect (e.g. `y_lambda_su_n` sets 50 at module
+    scope, correctly — see `wedderburn_jones_markov.y_lambda_at`).  So an
+    unset dps can be silently too low, and a set one silently too high.  Both
+    present as "the number looks fine, at the wrong precision".
 """
 
 from __future__ import annotations
@@ -29,11 +47,23 @@ from pathlib import Path
 try:
     import qou_substrate.precision as _qs_precision  # noqa: F401
 except ImportError:
-    _QOU_SUBSTRATE_PYTHON = (
-        Path(__file__).resolve().parent.parent.parent.parent  # was: ...parent.parent.parent (pre-Phase-6 — substrate moved into substrate/, added one more .parent to reach repo root)
-        / "tools" / "qou-substrate" / "python"
-    )
-    if _QOU_SUBSTRATE_PYTHON.is_dir() and str(_QOU_SUBSTRATE_PYTHON) not in sys.path:
+    # SEARCH upward for the substrate checkout rather than counting `.parent`s.
+    # A fixed count cannot be right for both layouts this file lives in:
+    #   computations/substrate/_precision.py            -> repo root is 3 up
+    #   qou-mass/src/qou_mass/_internal/_precision.py   -> repo root is 5 up
+    # (the vendor sync copies this file verbatim into a flatter tree). The
+    # hardcoded 4 was wrong in BOTH: it resolved to the parent of the repo in
+    # the source layout and to `qou-mass/tools/...` in the vendored one, so the
+    # fallback never fired anywhere. It only stayed invisible because
+    # `import _path_bridge` normally puts the substrate on sys.path first --
+    # and the vendor sync STRIPS that import, which is exactly where it bit.
+    _QOU_SUBSTRATE_PYTHON = None
+    for _anc in Path(__file__).resolve().parents:
+        _cand = _anc / "tools" / "qou-substrate" / "python"
+        if _cand.is_dir():
+            _QOU_SUBSTRATE_PYTHON = _cand
+            break
+    if _QOU_SUBSTRATE_PYTHON is not None and str(_QOU_SUBSTRATE_PYTHON) not in sys.path:
         sys.path.insert(0, str(_QOU_SUBSTRATE_PYTHON))
 
 from qou_substrate.precision import *  # noqa: F401,F403,E402

@@ -890,6 +890,192 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.143Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      },
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.427Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block. NUMERIC AUDIT recorded here.",
+        "notes": "NUMERIC CHECK, ALL CORRECT, recomputed at mpmath dps=30. Cl_2(pi/3) = 1.014941606 (table 1.0149) and D(e^{i pi/3}) computed from the block's own definition Im Li_2(z) + log|z| arg(1-z) returns 1.014941606, agreeing. Cl_2(pi/2) = 0.9159655942 = Catalan G, so 4G = 3.663862377, which is the volume of the regular ideal octahedron (table 3.664), and D(i) = 0.9159655942 confirms the shape-i identification. This table is one of the corpus sites that gets Vol(4_1) RIGHT under the RIGHT name: 2 Cl_2(pi/3) = 2.029883213, the AGENTS.md canonical value, with no 2 Lambda(pi/3) or 3 Cl_2(pi/3) mislabel anywhere in the Bloch cluster."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.204Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.255Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.307Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.360Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.414Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.485Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.538Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.622Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ac3cd30eba7f",
+          "ts": "2147491b1eb1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:41.694Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "table() pure-data block, no prose sentences. Prose trap categories not applicable. Every numeric entry recomputed - see the notes on trap-negation-contrast."
+      }
     ]
   },
   "label": "tbl:bloch-wigner-mathlib-filler-table1-data",
@@ -897,5 +1083,5 @@
     "md": "ac3cd30eba7f",
     "ts": "2147491b1eb1"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:36:43.427Z"
 }

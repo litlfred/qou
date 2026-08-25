@@ -1371,6 +1371,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.183Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1390,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.220Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-em-dash": [
@@ -1409,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 24 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.255Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-triples": [
@@ -1428,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 24 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.289Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-closing-aphorism": [
@@ -1447,6 +1507,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.324Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-meta-commentary": [
@@ -1466,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.358Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-thesis-restatement": [
@@ -1485,6 +1575,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.393Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-performed-warmth": [
@@ -1504,6 +1609,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.430Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-superlative": [
@@ -1523,6 +1643,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.466Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "trap-nonspeakable": [
@@ -1542,6 +1677,21 @@
         "reviewed_at": "2026-08-15T10:30:59.909Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d6a48a950dc6",
+          "ts": "2f94716b8383"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.501Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, a single sentence. All ten categories checked; nothing fires (no preamble, no closer, no construction). OUT-OF-SCOPE observation reported to the caller: this one sentence is offered as the proof of an existence-AND-uniqueness theorem, and it verifies neither stated constraint -- the vertical-generator identity \\pi_V\\circ d = \\iota_\\xi d\\varTheta_A is never touched, and 'uniquely determined by the normalisation condition' is asserted, not derived."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1564,5 +1714,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:01:58.501Z"
 }

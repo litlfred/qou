@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:42:34.600836+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-21T14:48:45.310343+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "inverse solve reproduces the observed angle",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 498,
+  "durationMs": 430,
   "computation": "h2o-angle-gb-truncation-inverse",
   "scriptFile": "h2o_angle_gb_truncation_inverse.py",
   "scriptHash": "f457395e39e9",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,262 +35,262 @@
   "description": "Inverse probe for the GB-truncation fraction in the H₂O angle (owner: explore the exact fraction landing on 104.5°). Solves θ_VSEPR(f*)=104.5° for the fraction f* of the L₊ quadratic on the lone-pair weight (w_L = tr_M(e⁻)+f·tr_M(L₊), w_H=tr_M(σ)) and the equivalent ratio r*, then compares both against derived q-integer / Markov / Wedderburn candidates with tiered deviations. COMPARISON ONLY — nothing wired; a near-match is a selection hypothesis requiring a derivation + cross-anchor stability before any wiring.",
   "contentBlock": "prop:h2o-bond-angle-shift",
   "parameters": {
-    "q": 1.1099785955573347,
-    "z": 0.49932033403356124,
-    "h": 0.20906032199559366
+    "q": 1.1099785827513808,
+    "z": 0.6126880371464652,
+    "h": 0.20906029879563937
   },
   "data": {
     "theta_observed_deg": 104.5,
-    "f_star": 0.2800410669150546,
-    "r_star": 1.2442182688871435,
+    "f_star": 0.18954110332203444,
+    "r_star": 1.2442183106673064,
     "r_star_direct": 1.2442182153463364,
     "f_candidates_ranked": [
       {
-        "candidate": "z^2",
-        "value": 0.24932079597938717,
-        "deviation_pct": -10.969916403363035,
+        "candidate": "h",
+        "value": 0.20906029879563937,
+        "deviation_pct": 10.298133297473417,
+        "tier": "no"
+      },
+      {
+        "candidate": "W_SYM",
+        "value": 0.16546138503360688,
+        "deviation_pct": -12.7042197530715,
+        "tier": "no"
+      },
+      {
+        "candidate": "(q-1)*2",
+        "value": 0.21995716550276168,
+        "deviation_pct": 16.047211738052237,
         "tier": "no"
       },
       {
         "candidate": "1/[2]_q^2",
-        "value": 0.2472978861547959,
-        "deviation_pct": -11.69227825081482,
+        "value": 0.2472978867480346,
+        "deviation_pct": 30.47190420110098,
+        "tier": "no"
+      },
+      {
+        "candidate": "h*z",
+        "value": 0.1280887441143538,
+        "deviation_pct": -32.42165320905183,
+        "tier": "no"
+      },
+      {
+        "candidate": "2*h*z",
+        "value": 0.2561774882287076,
+        "deviation_pct": 35.15669358189633,
+        "tier": "no"
+      },
+      {
+        "candidate": "q-1",
+        "value": 0.10997858275138084,
+        "deviation_pct": -41.97639413097388,
         "tier": "no"
       },
       {
         "candidate": "1/[3]_q",
-        "value": 0.328546820323735,
-        "deviation_pct": 17.320942939913078,
+        "value": 0.32854682137082314,
+        "deviation_pct": 73.33803360457122,
         "tier": "no"
       },
       {
         "candidate": "1/3",
         "value": 0.3333333333333333,
-        "deviation_pct": 19.030161185053608,
+        "deviation_pct": 75.86334968568414,
         "tier": "no"
       },
       {
-        "candidate": "(q-1)*2",
-        "value": 0.21995719111466938,
-        "deviation_pct": -21.45538026342778,
+        "candidate": "z^2",
+        "value": 0.3753866308623884,
+        "deviation_pct": 98.05025099204911,
         "tier": "no"
       },
       {
-        "candidate": "h",
-        "value": 0.20906032199559366,
-        "deviation_pct": -25.346548526395832,
-        "tier": "no"
-      },
-      {
-        "candidate": "2*h*z",
-        "value": 0.2087761396240074,
-        "deviation_pct": -25.44802734688342,
-        "tier": "no"
-      },
-      {
-        "candidate": "W_SYM",
-        "value": 0.16546138476803504,
-        "deviation_pct": -40.91531410347584,
+        "candidate": "1-z",
+        "value": 0.38731196285353475,
+        "deviation_pct": 104.34193748227968,
         "tier": "no"
       },
       {
         "candidate": "h*[2]_q",
-        "value": 0.4203987469579651,
-        "deviation_pct": 50.120391837203464,
-        "tier": "no"
-      },
-      {
-        "candidate": "q-1",
-        "value": 0.10997859555733469,
-        "deviation_pct": -60.727690131713885,
-        "tier": "no"
-      },
-      {
-        "candidate": "h*z",
-        "value": 0.1043880698120037,
-        "deviation_pct": -62.7240136734417,
+        "value": 0.42039869980100597,
+        "deviation_pct": 121.79817065153381,
         "tier": "no"
       },
       {
         "candidate": "1/[2]_q",
-        "value": 0.4972905450084446,
-        "deviation_pct": 77.57772118447495,
-        "tier": "no"
-      },
-      {
-        "candidate": "z",
-        "value": 0.49932033403356124,
-        "deviation_pct": 78.30253952896882,
+        "value": 0.49729054560491553,
+        "deviation_pct": 162.36554335130577,
         "tier": "no"
       },
       {
         "candidate": "1/2",
         "value": 0.5,
-        "deviation_pct": 78.54524177758043,
+        "deviation_pct": 163.79502452852623,
         "tier": "no"
       },
       {
-        "candidate": "1-z",
-        "value": 0.5006796659664388,
-        "deviation_pct": 78.78794402619202,
+        "candidate": "z",
+        "value": 0.6126880371464652,
+        "deviation_pct": 223.2481115747728,
         "tier": "no"
       },
       {
         "candidate": "2/[3]_q",
-        "value": 0.65709364064747,
-        "deviation_pct": 134.64188587982616,
+        "value": 0.6570936427416463,
+        "deviation_pct": 246.67606720914247,
         "tier": "no"
       },
       {
         "candidate": "W_STD",
-        "value": 0.66907723046393,
-        "deviation_pct": 138.92111176211256,
+        "value": 0.6690772299327864,
+        "deviation_pct": 252.99848856319556,
         "tier": "no"
       }
     ],
     "r_candidates_ranked": [
       {
-        "candidate": "1+z/2",
-        "value": 1.2496601670167806,
-        "deviation_pct": 0.4373748775208461,
+        "candidate": "1+2hz",
+        "value": 1.2561774882287076,
+        "deviation_pct": 0.9611800002354229,
         "tier": "near-match"
       },
       {
         "candidate": "q^2",
-        "value": 1.232052482595433,
-        "deviation_pct": -0.977785537789261,
+        "value": 1.232052454166764,
+        "deviation_pct": -0.9777911477622933,
         "tier": "near-match"
       },
       {
-        "candidate": "1+hz+z^3",
-        "value": 1.2288790129419447,
-        "deviation_pct": -1.2328428482985205,
-        "tier": "weak"
-      },
-      {
-        "candidate": "1+h+h*z^2",
-        "value": 1.2611834078832422,
-        "deviation_pct": 1.3635179148488752,
-        "tier": "weak"
-      },
-      {
         "candidate": "(1+hz)^2",
-        "value": 1.2196730087430832,
-        "deviation_pct": -1.9727455188400471,
+        "value": 1.2725842145975002,
+        "deviation_pct": 2.279817270570501,
         "tier": "weak"
       },
       {
         "candidate": "1+h",
-        "value": 1.2090603219955938,
-        "deviation_pct": -2.825705727902209,
+        "value": 1.2090602987956394,
+        "deviation_pct": -2.825710855582157,
         "tier": "weak"
       },
       {
-        "candidate": "1+2hz",
-        "value": 1.2087761396240073,
-        "deviation_pct": -2.8485459625051477,
+        "candidate": "1+h+h*z^2",
+        "value": 1.2875387400076186,
+        "deviation_pct": 3.4817386120188467,
+        "tier": "weak"
+      },
+      {
+        "candidate": "1+z/2",
+        "value": 1.3063440185732327,
+        "deviation_pct": 4.9931517140755375,
         "tier": "weak"
       },
       {
         "candidate": "[2]_q^2/[3]_q",
-        "value": 1.3285468203237347,
-        "deviation_pct": 6.777633277480853,
+        "value": 1.3285468213708231,
+        "deviation_pct": 6.777629776103296,
         "tier": "no"
       },
       {
-        "candidate": "1+hz+z^2",
-        "value": 1.3537088657913907,
-        "deviation_pct": 8.799950912324897,
-        "tier": "no"
-      },
-      {
-        "candidate": "(q^2+1)/[2]_q",
-        "value": 1.109978595557335,
-        "deviation_pct": -10.78907750244461,
-        "tier": "no"
-      },
-      {
-        "candidate": "q",
-        "value": 1.1099785955573347,
-        "deviation_pct": -10.789077502444627,
+        "candidate": "1+hz+z^3",
+        "value": 1.3580836421484554,
+        "deviation_pct": 9.15155567997389,
         "tier": "no"
       },
       {
         "candidate": "1+h*z (leading)",
-        "value": 1.1043880698120037,
-        "deviation_pct": -11.238397841578639,
+        "value": 1.128088744114354,
+        "deviation_pct": -9.33353620962781,
+        "tier": "no"
+      },
+      {
+        "candidate": "q",
+        "value": 1.1099785827513808,
+        "deviation_pct": -10.789081527334966,
+        "tier": "no"
+      },
+      {
+        "candidate": "(q^2+1)/[2]_q",
+        "value": 1.1099785827513808,
+        "deviation_pct": -10.789081527334966,
         "tier": "no"
       },
       {
         "candidate": "sqrt(q)",
-        "value": 1.0535552171373528,
-        "deviation_pct": -15.323923182732559,
+        "value": 1.0535552110598574,
+        "deviation_pct": -15.323926514567324,
+        "tier": "no"
+      },
+      {
+        "candidate": "1+hz+z^2",
+        "value": 1.5034753749767422,
+        "deviation_pct": 20.83694333114175,
         "tier": "no"
       },
       {
         "candidate": "[3]_q/[2]_q",
-        "value": 1.5136063241106312,
-        "deviation_pct": 21.651189502661328,
+        "value": 1.5136063211022068,
+        "deviation_pct": 21.651185175889328,
         "tier": "no"
       }
     ],
     "forward_checks": {
       "f=1/3": {
         "fraction": 0.3333333333333333,
-        "theta_deg": 104.02880033052442,
-        "miss_deg": -0.4711996694755811
+        "theta_deg": 102.98385940976763,
+        "miss_deg": -1.516140590232368
       },
       "f=1/[3]_q": {
-        "fraction": 0.328546820323735,
-        "theta_deg": 104.07063643364503,
-        "miss_deg": -0.4293635663549651
+        "fraction": 0.32854682137082314,
+        "theta_deg": 103.03236382506408,
+        "miss_deg": -1.4676361749359188
       },
       "f=z^2": {
-        "fraction": 0.24932079597938717,
-        "theta_deg": 104.7771285243594,
-        "miss_deg": 0.27712852435939794
+        "fraction": 0.3753866308623884,
+        "theta_deg": 102.5631871010261,
+        "miss_deg": -1.9368128989738977
       },
       "f=h": {
-        "fraction": 0.20906032199559366,
-        "theta_deg": 105.14662352564416,
-        "miss_deg": 0.6466235256441593
+        "fraction": 0.20906029879563937,
+        "theta_deg": 104.28675509544993,
+        "miss_deg": -0.2132449045500664
       },
       "f=1/2": {
         "fraction": 0.5,
-        "theta_deg": 102.6284300630127,
-        "miss_deg": -1.8715699369872993
+        "theta_deg": 101.37155017860475,
+        "miss_deg": -3.1284498213952503
       }
     },
     "kernel_robustness_scan": {
       "n=1": {
         "r_star": 1.2442182752785058,
-        "dev_q2_pct": -0.977786046451498,
-        "dev_1_plus_z_half_pct": 0.43737436158914267
+        "dev_q2_pct": -0.9777883313133877,
+        "dev_1_plus_z_half_pct": 4.993154700353572
       },
       "n=2": {
         "r_star": 1.283580482006073,
-        "dev_q2_pct": -4.014395679350639,
-        "dev_1_plus_z_half_pct": -2.642632500634416
+        "dev_q2_pct": -4.014397894145083,
+        "dev_1_plus_z_half_pct": 1.7734405349934248
       },
       "n=3": {
         "r_star": 1.3241878747940063,
-        "dev_q2_pct": -6.957879161437423,
-        "dev_1_plus_z_half_pct": -5.628182314297314
+        "dev_q2_pct": -6.957881308313236,
+        "dev_1_plus_z_half_pct": -1.347532065534847
       },
       "n=6": {
         "r_star": 1.4538819789886475,
-        "dev_q2_pct": -15.257737532968383,
-        "dev_1_plus_z_half_pct": -14.04665680731032
+        "dev_q2_pct": -15.257739488331309,
+        "dev_1_plus_z_half_pct": -10.147863619442168
       }
     },
     "best_f_candidate": {
-      "candidate": "z^2",
-      "value": 0.24932079597938717,
-      "deviation_pct": -10.969916403363035,
+      "candidate": "h",
+      "value": 0.20906029879563937,
+      "deviation_pct": 10.298133297473417,
       "tier": "no"
     },
-    "finding": "f* = 0.280041 (fraction of the L₊ quadratic on the lone pair that lands exactly on 104.5°); best derived candidate: z^2 = 0.249321 (-10.970%, no). r* = 1.244218. Tiered comparison only — no wiring; promoting a candidate requires a structural derivation (e.g. sharing of the L₊ pair between domains, or a quantum-dimension normalisation) plus stability checks. KERNEL SCAN (demotion): the q² and 1+z/2 near-matches hold ONLY at the Coulomb kernel (n=1; at n=2/3/6 r* drifts to ≈1.28/1.32/1.45) — kernel-conditional near-matches. Coulomb is the physically canonical kernel for charged-domain repulsion, but the identification inherits that assumption."
+    "finding": "f* = 0.189541 (fraction of the L₊ quadratic on the lone pair that lands exactly on 104.5°); best derived candidate: h = 0.209060 (+10.298%, no). r* = 1.244218. Tiered comparison only — no wiring; promoting a candidate requires a structural derivation (e.g. sharing of the L₊ pair between domains, or a quantum-dimension normalisation) plus stability checks. KERNEL SCAN (demotion): the q² and 1+z/2 near-matches hold ONLY at the Coulomb kernel (n=1; at n=2/3/6 r* drifts to ≈1.28/1.32/1.45) — kernel-conditional near-matches. Coulomb is the physically canonical kernel for charged-domain repulsion, but the identification inherits that assumption."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

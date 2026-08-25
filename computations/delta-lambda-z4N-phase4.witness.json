@@ -1,17 +1,17 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T01:56:03.735441+00:00",
-  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
+  "computedAt": "2026-08-23T09:01:03.397193+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "alpha_cosh_h_z_step_correction_rel_err",
-      "computed": 0.0002826219105727489,
+      "computed": 0.0002828827514141016,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.001,
       "unit": "rel_err",
-      "source": "Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0. Empirical α = 9.470012; [3]_q² · cosh(h) = 9.467336; rel.err = 0.0283% (conj:alpha-cosh-h-z-step-correction)."
+      "source": "Phase 5b refinement: α ≈ [3]_q² · cosh(h) at q_0. Empirical α = 9.470014; [3]_q² · cosh(h) = 9.467336; rel.err = 0.0283% (conj:alpha-cosh-h-z-step-correction)."
     },
     {
       "name": "per_N_factor_matches_inv_z_to_4",
@@ -24,7 +24,7 @@
     },
     {
       "name": "two_factor_rel_std_below_phase3_baseline",
-      "computed": 0.006625202438877862,
+      "computed": 0.006625079349731892,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.1,
@@ -33,7 +33,7 @@
     },
     {
       "name": "zero_param_closure_max_rel_err",
-      "computed": 0.02505684677568331,
+      "computed": 0.025056910170182283,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.03,
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 9,
+  "durationMs": 10,
   "computation": "delta-lambda-z4N-phase4",
   "scriptFile": "delta_lambda_z4N_phase4.py",
-  "scriptHash": "d99f71d48c57",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "0ea571679ea7",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -60,21 +60,28 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/delta_lambda_z4N_phase4.py"
+    ],
+    "reproduce": "python3 -u computations/delta_lambda_z4N_phase4.py"
   },
   "description": "Phase 4 of the closed-forms-first-principles workplan: tests V(K) = Vol_hyp(K) · α^(Z-1) · (q^{1/2}+q^{-1/2})^(4N) as the Δ_λ closure factor. Identifies the per-N step factor as (q^{1/2}+q^{-1/2})^4 = z^(-4) — the 4th power of the quantum dim of spin-½. Empirical T/D = 15.955, ⁴He/³He = 16.358 vs predicted 16.087 (≤ 2% rel. err.). The per-Z step factor α remains empirical-fit at this phase.",
   "parameters": {
-    "q0": "1.1099785827513808075916690956107688798744991218736",
-    "z": "0.61268803714646525159582986394589924802630839154509",
-    "1_over_z": "2.0027223638605332905078202379916317625341050850907",
-    "inv_z_to_4": "16.08729367536101118841198724804483957332517695465"
+    "q0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "z": "0.612688037146465251595829863945899248026308391545063608472050175148323",
+    "1_over_z": "2.00272236386053329050782023799163176253410508509069632187091364704129",
+    "inv_z_to_4": "16.08729367536101118841198724804483957332517695465003611410515606032311"
   },
   "data": {
     "vol_hyp": {
-      "D": 12.776095278687214,
+      "D": 12.776095504236459,
       "T": 12.776095552543637,
-      "3He": 12.554085624045491,
-      "4He": 12.554075323566847
+      "3He": 12.554080052250034,
+      "4He": 12.554074507253288
     },
     "empirical_best_abs_delta": {
       "D": 22.956407323087852,
@@ -90,125 +97,125 @@
       "rel_err_He4_over_He3": 0.016983993028839586
     },
     "per_Z_step_empirical": {
-      "He3_over_D_corrected": 9.351366268777095,
-      "He4_over_T_corrected": 9.588657687351423,
-      "alpha_avg": 9.47001197806426
+      "He3_over_D_corrected": 9.351370584222122,
+      "He4_over_T_corrected": 9.588658310842328,
+      "alpha_avg": 9.470014447532225
     },
     "test_pure_N": {
       "V_values": {
-        "D": 205.5327967726345,
+        "D": 205.53280040111144,
         "T": 3306.466532473984,
-        "3He": 201.9612622596476,
-        "4He": 3249.007471243199
+        "3He": 201.9611726245378,
+        "4He": 3249.007259980419
       },
       "ratios": {
-        "D": 0.11169218579009949,
+        "D": 0.11169218381828515,
         "T": 0.11077825417661376,
-        "3He": 1.0444745386835208,
-        "4He": 1.0622147585019575
+        "3He": 1.044475002245842,
+        "4He": 1.0622148275711913
       },
-      "rel_std": 0.8090412563831397
+      "rel_std": 0.8090412983727958
     },
     "test_two_factor": {
-      "alpha_used": 9.47001197806426,
+      "alpha_used": 9.470014447532225,
       "V_values": {
-        "D": 205.5327967726345,
+        "D": 205.53280040111144,
         "T": 3306.466532473984,
-        "3He": 1912.5755727038402,
-        "4He": 30768.13966949336
+        "3He": 1912.575222594923,
+        "4He": 30768.14569215166
       },
       "ratios": {
-        "D": 0.11169218579009949,
+        "D": 0.11169218381828515,
         "T": 0.11077825417661376,
-        "3He": 0.11029284240641679,
-        "4He": 0.11216614730397437
+        "3He": 0.11029286259621493,
+        "4He": 0.11216612534820283
       },
-      "rel_std": 0.006625202438877862,
-      "constant_c": 0.1112323574192761
+      "rel_std": 0.006625079349731892,
+      "constant_c": 0.11123235648482917
     },
     "alpha_categorical_candidates": [
       {
         "expr": "[3]_q^2",
         "value": 9.26414748385942,
-        "rel_err": 0.021738567457115388
+        "rel_err": 0.021738822555487484
       },
       {
         "expr": "[8]_q",
         "value": 8.945689817864391,
-        "rel_err": 0.055366578354322675
+        "rel_err": 0.055366824683616735
       },
       {
         "expr": "[9]_q",
         "value": 10.363517588144814,
-        "rel_err": 0.09435105384768408
+        "rel_err": 0.09435076847696104
       },
       {
         "expr": "[2]_q · [4]_q",
         "value": 8.26414748385942,
-        "rel_err": 0.12733505480225676
+        "rel_err": 0.12733528236454175
       },
       {
         "expr": "(1/z)^3",
         "value": 8.032712854092495,
-        "rel_err": 0.15177373875566735
+        "rel_err": 0.15177395994514822
       },
       {
         "expr": "[7]_q",
         "value": 7.625342037132497,
-        "rel_err": 0.19479066607356366
+        "rel_err": 0.1947908760456462
       },
       {
         "expr": "[10]_q",
         "value": 11.89427522820017,
-        "rel_err": 0.25599368361426794
+        "rel_err": 0.2559933560924692
       },
       {
         "expr": "[6]_q",
         "value": 6.388086592175452,
-        "rel_err": 0.3254404950096775
+        "rel_err": 0.3254406709125864
       },
       {
         "expr": "[3]_q · [2]_q",
         "value": 6.120579277915064,
-        "rel_err": 0.3536883277347074
+        "rel_err": 0.35368849627151155
       },
       {
         "expr": "[11]_q",
         "value": 13.554643199995049,
-        "rel_err": 0.43132270913618387
+        "rel_err": 0.43132233589434804
       }
     ],
     "zero_param_closure": {
       "formula": "|Δ_λ*(K)| ≈ (Vol_hyp(K) / [8]_q) · [3]_q^(2(Z-1)) · (q^{1/2}+q^{-1/2})^(4N)",
       "predicted": {
-        "D": 22.975623004744584,
+        "D": 22.975623410356338,
         "T": 369.6156025744405,
-        "3He": 209.15088245776573,
-        "4He": 3364.6689078857144
+        "3He": 209.1507896317351,
+        "4He": 3364.6686891021895
       },
       "rel_err_per_atom": {
-        "D": 0.000837050910723643,
+        "D": 0.0008370685795055577,
         "T": 0.009094056110650622,
-        "3He": 0.008497605541829009,
-        "4He": 0.02505684677568331
+        "3He": 0.008498045593673682,
+        "4He": 0.025056910170182283
       },
-      "max_rel_err": 0.02505684677568331
+      "max_rel_err": 0.025056910170182283
     },
     "alpha_cosh_h_refinement": {
-      "alpha_empirical": 9.47001197806426,
+      "alpha_empirical": 9.470014447532225,
       "qint_3_sq": 9.26414748385942,
       "cosh_h": 1.0219328133414665,
       "alpha_qint3sq_cosh_h": 9.467336301390725,
-      "rel_err": 0.0002826219105727489
+      "rel_err": 0.0002828827514141016
     },
     "upstream_witness_hashes": [
       {
         "path": "delta-lambda-jsj-phase3.witness.json",
-        "sha256": "4e5edb53c053a9b7da20ece9f6227aa37edf01eb7a4fd55c4c0fe8f18829a51e",
-        "size_bytes": 2970,
-        "commitSha": "c930a8b42d278b6eb36bf8b4f6fc092711124a5a",
-        "scriptCommitSha": "unknown",
-        "computedAt": "2026-05-19T03:19:36.526375+00:00"
+        "sha256": "44d7fb1c6d82929edeee65516e5dd8832e1646ce87fd9a2dbe09368986ea7f08",
+        "size_bytes": 3755,
+        "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+        "scriptCommitSha": "561fe967761dfbf4d4f5644dd60078508dfd23c8",
+        "computedAt": "2026-08-15T20:41:56.678257+00:00"
       },
       {
         "path": "delta-lambda-empirical-tabulation.witness.json",

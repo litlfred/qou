@@ -1426,6 +1426,23 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.604Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "severity": "major",
+        "evidence": "\"This co-location is not coincidental. It forms the Hecke-algebra face of the phenomenon that forces hyperbolic 3-manifold volumes to appear at depth 2 ...\" - the paragraph opened by denying the opposite, with the positive claim following in the next sentence.",
+        "notes": "FIXED (mechanical, 2 sentences merged, no math touched). Before: \"This co-location is not coincidental. It forms the Hecke-algebra face of the phenomenon that forces ...\" After: \"This co-location is the Hecke-algebra face of the phenomenon that forces ...\". The claim is preserved; only the denial-then-assert construction is removed, and the merge also repairs the \"It forms\" copular substitution."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1462,22 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.645Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "The \"However, as N -> infinity ...\" clause in bullet 2 qualifies its own first half with a real mathematical caveat (the Hecke order grows with the coloured-Jones level); that is a scope correction, not a reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1464,6 +1497,22 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 210 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.688Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1483,6 +1532,23 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 210 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.730Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "severity": "minor",
+        "evidence": "Bullet 1: \"Baer-* fails, Wedderburn fails, and the asymptotic-N regime activates.\" The first two clauses are the same fact - the parent block states that Baer-* fails exactly where H_n(q) ceases to be semisimple, i.e. exactly where Wedderburn fails - and the third is not a failure at all but a change of regime, so the parallel structure is doing work the content does not support.",
+        "notes": "STRUCTURAL (rewriting the bullet is a meaning judgement about which two facts are distinct), not edited. Proposed: \"Baer-* fails, since semisimplicity does; this is the regime the asymptotic-N limit runs into.\""
       }
     ],
     "trap-closing-aphorism": [
@@ -1502,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.773Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Closes on \"The figure-8 instance evaluates as e_{(2,2)} . Li_2^q(zeta_6)\", a worked instance. Checked and consistent: 4_1 has dominant cell (2,2) ",
+        "notes": "- 4, which is self-conjugate as the sibling corollary requires, and zeta_6 = e^{i pi/3} is the regular ideal tetrahedron shape parameter of the figure-eight complement.|No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1521,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.814Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "None; \"See [rem:vc-as-depth-2-instance] for the depth-2 reading\" is a cross-reference.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1540,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.855Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "The two subsection-final sentences each add content (the mechanism claim, the figure-eight instance).",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1559,6 +1673,22 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.897Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1578,6 +1708,23 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.938Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "severity": "major",
+        "evidence": "\"Therefore, the Volume Conjecture's archimedean asymptotic regime exactly traces the trajectory through the Baer-*-failure locus.\" The unqualified \"exactly traces\" is refuted by the two bullets it claims to follow from: bullet 2 says q = zeta_N \"MAY fall outside the failure locus\" for N >> n and that the Hecke order \"EVENTUALLY\" enters it. Those support \"eventually enters\", not \"exactly traces the trajectory\". The next sentence compounds it: \"The loss of Baer-* projection-generation supplies the structural mechanism of the wall-crossing transition\" asserts a mechanism, definite article and all, that nothing in the block derives.",
+        "notes": "STRUCTURAL / math-adjacent, not edited. Proposed: \"Therefore the Volume Conjecture's asymptotic regime eventually enters the Baer-*-failure locus\" and \"... offers a candidate structural mechanism for the wall-crossing transition\"."
       }
     ],
     "trap-nonspeakable": [
@@ -1597,6 +1744,23 @@
         "reviewed_at": "2026-08-15T10:31:01.057Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a9ef0f46a694",
+          "ts": "6d97507b0506"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:19:11.980Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "severity": "minor",
+        "evidence": "\"The radical at the failure locus produces the period-class-non-trivial elements upon archimedean specialisation\" is the one hyphen-chain in the block (\"period-class-non-trivial\").",
+        "notes": "Below the density threshold for a fail; single instance. Proposed if touched later: \"produces elements with non-trivial period class\"."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1619,5 +1783,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:19:11.980Z"
 }

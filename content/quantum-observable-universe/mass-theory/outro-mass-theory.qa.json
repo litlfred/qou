@@ -41,6 +41,21 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.030Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -60,6 +75,21 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.085Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two short paragraphs of forward-pointing chapter close; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -79,6 +109,21 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.138Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -98,6 +143,23 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (2 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.225Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two triples inside one 27-word sentence: 'per-particle, per-isotope, and per-shell predictions' and 'against PDG, CODATA, and SnapPy benchmarks'. Each list is individually real (three prediction granularities; three named data sources), but stacking two tricolons in one sentence is the density signature.",
+        "notes": "Proposed: keep one list and compress the other ('predictions at particle, isotope and shell level, tabulated against PDG, CODATA and SnapPy')."
       }
     ],
     "trap-closing-aphorism": [
@@ -117,6 +179,23 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "warn",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.314Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Final line: 'The substrate-flow apparatus factorises across sub-sections, permitting modular reading of the proofs.' It has a composed cadence and its subject, 'the substrate-flow apparatus', appears nowhere else in the block or in its title, so the sentence introduces a term only to end on it.",
+        "notes": "Proposed: name what factorises (which apparatus, which sub-sections), or cut the sentence — the preceding sentence already tells the reader they can enter at the closed forms."
       }
     ],
     "trap-meta-commentary": [
@@ -136,6 +215,21 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.394Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This closes the mass-theory chapter' is a structural signpost, standard in a chapter outro."
       }
     ],
     "trap-thesis-restatement": [
@@ -155,6 +249,21 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.478Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "A chapter outro restating its chapter is the genre; the final sentence points forward rather than back."
       }
     ],
     "trap-performed-warmth": [
@@ -174,6 +283,21 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.539Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Readers focused on the structural consequences can ...' addresses the reader without performed warmth."
       }
     ],
     "trap-superlative": [
@@ -193,6 +317,23 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.622Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The substrate-level mass machinery has been assembled in full.' — an unqualified completeness claim closing a chapter whose own corpus status has open items (per AGENTS.md the Delta_lambda many-body MAGNITUDE is open, the c_k ladder is un-re-derived under the canonical convention D, and 1 of 5 scoreable L2 targets is met). 'In full' is the strongest word available and the least supported.",
+        "notes": "FIXED INLINE (prose only, one sentence, no math): 'The substrate-level mass machinery has been assembled in full.' -> 'The substrate-level mass machinery has been assembled.' A trailing space at that line end was removed with it. The claim that remains is what the chapter supports. Delimiter balance re-checked: 0 display delimiters, even."
       }
     ],
     "trap-nonspeakable": [
@@ -212,8 +353,23 @@
         "reviewed_at": "2026-08-15T10:31:00.380Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7672224a7fbf",
+          "ts": "b39834247f44"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:49:10.710Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Reads aloud, though 'the substrate-flow apparatus factorises across sub-sections' is the one abstract chain (see the closing-aphorism entry)."
       }
     ]
   },
-  "updated_at": "2026-08-15T10:31:00.380Z"
+  "updated_at": "2026-08-21T21:49:10.710Z"
 }

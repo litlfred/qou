@@ -1402,6 +1402,22 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.441Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'Instead of summing scalar weights 1/ln t, one computes a path-ordered product of matrices' is the block's substantive abelian/nonabelian contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1421,6 +1437,22 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.486Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting def:q-von-mangoldt-function; classical/quantum comparison table + nonabelian Stokes); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1440,6 +1472,22 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 247 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.532Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-von-mangoldt-function; classical/quantum comparison table + nonabelian Stokes); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1459,6 +1507,22 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 247 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.576Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-von-mangoldt-function; classical/quantum comparison table + nonabelian Stokes); all ten judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1478,6 +1542,23 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.616Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Block-final: 'This multiplicative integral provides the precise formulation of the quantum Li(x).' - a quotable closer restating the block's opening sentence.",
+        "notes": "fix applied: sentence deleted."
       }
     ],
     "trap-meta-commentary": [
@@ -1497,6 +1578,22 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.655Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting def:q-von-mangoldt-function; classical/quantum comparison table + nonabelian Stokes); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1516,6 +1613,23 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.696Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Same sentence: the block opens 'The spectral trace over Reeb eigenvalues acts as a matrix-valued promotion of the classical logarithmic integral Li(x)', which the closer restates.",
+        "notes": "fix applied - sentence deleted."
       }
     ],
     "trap-performed-warmth": [
@@ -1535,6 +1649,22 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.735Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-von-mangoldt-function; classical/quantum comparison table + nonabelian Stokes); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1554,6 +1684,23 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.772Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'purely abelian', 'the **precise** formulation', 'the **full** nonabelian transport'.",
+        "notes": "fix applied: 'It captures the full nonabelian transport' -> 'It captures the nonabelian transport'; the 'precise formulation' sentence deleted with the closer. 'purely abelian' kept - it is technically accurate. Separately: 'The q-integer is the trace of the holonomy matrix in the fundamental representation' is false as stated - reported as ANOMALY 33."
       }
     ],
     "trap-nonspeakable": [
@@ -1573,6 +1720,22 @@
         "reviewed_at": "2026-08-15T10:31:00.901Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c4c3e4dbb04a",
+          "ts": "8f99a37b7050"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:58.812Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-von-mangoldt-function; classical/quantum comparison table + nonabelian Stokes); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1595,5 +1758,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:58.812Z"
 }

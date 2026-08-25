@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:45.794Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Short proof, no assertion-by-denial.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:45.837Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "No pivot.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:45.877Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:45.916Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "\"Each pair of exchanged degrees (0,20), (2,18), and (8,12)\" is three because the degree-20 anti-reciprocal polynomial has exactly three coefficient pairs; independently verified against p(q) = q^20 + q^18 + 2q^12 - 2q^8 - q^2 - 1, whose coefficients are (deg0,deg20) = (-1,+1), (deg2,deg18) = (-1,+1), (deg8,deg12) = (-2,+2) - equal magnitudes, opposite signs, exactly as claimed.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:45.958Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Closes on the coefficient-pair observation plus the QED mark.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:45.999Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "\"We prove this by direct expansion\" and \"We compare this term by term\" are proof moves.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.041Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Final sentence adds the coefficient-pair detail rather than restating.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.082Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.125Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "No inflation. The whole computation was re-run in sympy: q^20 * p(1/q) expands to -q^20 - q^18 - 2q^12 + 2q^8 + q^2 + 1, identical to -p(q); simplify(q^20*p(1/q) + p(q)) = 0. Both displayed intermediate expansions in the block are correct as printed.",
+        "notes": "No change. The identity this proof establishes is sound; the problem is in what the parent block claims p(q) IS - see the entry on markov-trace-antipode-polynomial-symmetry.md."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1673,22 @@
         "reviewed_at": "2026-08-15T10:31:01.056Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b00c80d1ece3",
+          "ts": "2477328102cf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:46.167Z",
+        "reviewed_sha": "92ada1fdc9c61323a49e7b45a1182e6c2fe85b45",
+        "evidence": "Prose is plain.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1711,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:24:46.167Z"
 }

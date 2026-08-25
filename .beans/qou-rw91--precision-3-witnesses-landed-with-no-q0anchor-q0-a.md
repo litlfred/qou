@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-15T10:57:22Z
-updated_at: 2026-08-15T22:38:52Z
+updated_at: 2026-08-19T15:51:48Z
 parent: qou-pq8k
 ---
 
@@ -91,3 +91,42 @@ Commits: `b4b293fc` (audit vocabulary) · `e6cc6ac5` (witness.py + 3 tests) ·
 witness is still unstamped — it is now expressible as `independent`. The four
 witnesses `7377d6624` added remain missing; `qbeta-ohtsuki-nz-bridge-b6` is the
 b4 sibling and the obvious next one.
+
+## Closed 2026-08-19 — resolved, partly by others (PR #5312)
+
+All three named witnesses now read `q0Anchor: "independent"` on main.
+
+**The bean's premise did not hold for these three.** It said "Fix at each
+producer by recording the anchor" — but tracing all three producers shows
+none of them reads a q₀ at all:
+
+- `qns-phase-scramble-probe` / `qns-phase-decorrelation-probe` — Sabra
+  shell-model turbulence integrators. Imports are `cmath`, `math`, `sys`,
+  `time`, `WitnessBuilder`, `_precision.fmt`. No substrate parameter
+  anywhere.
+- `qbeta-ohtsuki-nz-bridge-b4` — extracts Taylor coefficients in a free
+  small parameter `u` against the proved constant `A2 = i√3/4`, via
+  `sdeformed_channel_signflip_probe.V41_integrated`, which is itself
+  q₀-free. Never evaluated at a pin.
+
+Stamping `"proton"` on any of them would have asserted a pin the compute
+never used — false provenance, which is the opposite of what the rule
+protects. The right answer was a third token, and the audit has since
+grown exactly that (`Q0_INDEPENDENT`, requiring a `q0AnchorReason`).
+I reached this independently before finding it already built; recording
+the reasoning because the bean text still points the wrong way.
+
+**Residue I did fix** (PR #5312): two witnesses claimed `independent`
+with no reason — `markov-identity-symbolic` (reason in the producer, but
+the committed witness predated it) and `qbeta-d-frame-markov-weights`
+(reason present only as a source comment — the `qou-mw1p` shape, missed
+by its drain). `Q0_INDEPENDENT_NO_REASON` 2 → 0.
+
+Also corrected `markov-identity-symbolic`'s reason, which opened "No q0
+is read" while its own producer hardcodes both pins as sample points.
+Verdict right, justification wrong; found by exactly the grep the reason
+was supposed to make unnecessary.
+
+**Not closed by this:** `Q0_ANCHOR_MISSING` is 1904 and rising. That is
+the pre-backfill population, not a failure (the strict gate fires only on
+`Q0_FLIP`, which is 0), and draining it is a separate, much larger job.

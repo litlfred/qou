@@ -1776,6 +1776,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.961Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. no assert-by-denying-the-opposite construction."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1795,6 +1810,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:53.995Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -1814,6 +1844,22 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.031Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "No prose dashes outside the truncated archimedean note.",
+        "notes": "Reported: this block carries the 3-sentence truncated archimedean-wall boilerplate rather than the canonical full text."
       }
     ],
     "trap-triples": [
@@ -1833,6 +1879,22 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 130 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.065Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "The three numbered constraints are the program's actual constraint set, not a reflex list. (Their mathematical redundancy is reported separately.)",
+        "notes": "Reported: constraints 1 and 2 are implied by $\\Phi \\succeq 0$ -- $\\langle \\pi_\\lambda, \\Phi\\rangle \\geq 0$ holds for any two PSD matrices, and a principal $2\\times2$ submatrix of a PSD matrix is PSD."
       }
     ],
     "trap-closing-aphorism": [
@@ -1852,6 +1914,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.100Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. final line is technical/cross-reference, not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1871,6 +1948,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.133Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. no narrating of own emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1890,6 +1982,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.167Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. no block-final restatement of what the text established."
       }
     ],
     "trap-performed-warmth": [
@@ -1909,6 +2016,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.200Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. institutional register; no personal warmth vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1928,6 +2050,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.233Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. claims are qualified; no maximum-strength inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1947,6 +2084,21 @@
         "reviewed_at": "2026-08-15T10:31:00.394Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ce9bc8507ea6",
+          "ts": "e42c9aedd8b7"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T14:57:54.266Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "evidence": "Full read of the proposition (confinement as an SDP), the primal, its three constraints, and the dual with shadow prices. prose parses aloud; noun chains stay within technical necessity."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1970,5 +2122,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T14:57:54.266Z"
 }

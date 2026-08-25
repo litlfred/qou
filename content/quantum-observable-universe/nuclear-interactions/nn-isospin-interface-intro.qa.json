@@ -782,6 +782,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.004Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Was: 'this section keeps them apart because they are not the same object.' Also 'No multiplicity is counted and no parameter is tuned.'",
+        "notes": "FIX APPLIED: '...because they are not the same object.' -> '...because they are distinct objects.' The remaining 'No multiplicity is counted and no parameter is tuned' is the corpus's anti-fit statement of fact and passes."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -801,6 +818,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.045Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "'Any account of nuclear binding in this framework has to reproduce that pattern before it reproduces a number.'",
+        "notes": "Setup-then-reframe closing the opening paragraph: the factual channel data is the setup and this sentence carries the whole rhetorical load, in the aphoristic 'X before Y' shape. PROPOSED: 'The framework must reproduce that pattern, not only the binding value.' -- but the sentence sits on a section-scope claim, so flagged rather than fixed."
       }
     ],
     "trap-em-dash": [
@@ -820,6 +854,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 271 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.086Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "3 spaced '---' occurrences: the 'Three --- pp, nn, and the symmetric pn state ---' pair, and one opening a long final aside.",
+        "notes": "The first is a true parenthetical. The final one is load-bearing but paired; density is within norms for a 5-paragraph section intro."
       }
     ],
     "trap-triples": [
@@ -839,6 +890,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 271 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.125Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (5 paragraphs) + .ts. Deuteron binding 2.224566 MeV correct; the T=1/T=0 four-channel assignment is correct and agrees with prop:isospin-singlet-binds-more.",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
       }
     ],
     "trap-closing-aphorism": [
@@ -858,6 +926,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.168Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (5 paragraphs) + .ts. Deuteron binding 2.224566 MeV correct; the T=1/T=0 four-channel assignment is correct and agrees with prop:isospin-singlet-binds-more.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -877,6 +962,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.213Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (5 paragraphs) + .ts. Deuteron binding 2.224566 MeV correct; the T=1/T=0 four-channel assignment is correct and agrees with prop:isospin-singlet-binds-more.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -896,6 +998,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.254Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read (5 paragraphs) + .ts. Deuteron binding 2.224566 MeV correct; the T=1/T=0 four-channel assignment is correct and agrees with prop:isospin-singlet-binds-more.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -915,6 +1034,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.298Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read (5 paragraphs) + .ts. Deuteron binding 2.224566 MeV correct; the T=1/T=0 four-channel assignment is correct and agrees with prop:isospin-singlet-binds-more.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -934,6 +1070,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.338Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'binds exactly one of them'; 'the ordering ... holds identically in $q$'; 'the singlet is always the more strongly bound channel'.",
+        "notes": "EARNED. The four-channel/one-bound pattern is correct physics, the deuteron binding 2.224566 MeV is the accepted value, and 'always'/'identically' are backed by the proved identity in prop:isospin-singlet-binds-more, which I recomputed."
       }
     ],
     "trap-nonspeakable": [
@@ -953,6 +1106,23 @@
         "reviewed_at": "2026-08-15T10:31:01.497Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5e7c7c50bc9e",
+          "ts": "e8258cb12250"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:57.380Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The answer to the last question is negative and sharp --- the band lies strictly between $\\mu_-$ and $\\mu_+$, so no admissible interface element realises either --- which is why the two mechanisms must be described as computing on disjoint sets rather than as two views of one computation.'",
+        "notes": "62-word single sentence with a mid-sentence em-dash pair and a trailing 'which is why' clause; it stalls aloud and the referent of 'the last question' is four clauses back. PROPOSED: split at the first dash into two sentences. Math-adjacent (the strict-betweenness claim), so flagged not fixed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -975,5 +1145,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:57.380Z"
 }

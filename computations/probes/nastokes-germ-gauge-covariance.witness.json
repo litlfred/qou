@@ -235,5 +235,8 @@
     "sorry-free != derived.  Nothing here derives a Delta_lambda, a binding energy, or a magnitude.  The bean's >= 3-body magnitude gate is untouched and OPEN.  This closes a route by showing its observable does not exist, which is a narrower and more fundamental statement than 'the value was not selected'.",
     "The A >= 3 germ is q-DEPENDENT (#4849 sec 2.2), so the q0 pin is material and is recorded.  q0 = experimental proton anchor per the owner directive of 2026-08-07; no muon-serving cache is touched anywhere in this probe.",
     "Arithmetic: exact sympy over Q(q) in part A; float64 in part B, where the verdict is a 0-vs-O(1) question (covariance defect) and a relative-difference-of-invariants question at the 1e-1..1e0 level, not a 1-ppQ question.  Representation certification residuals are reported."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_experimental_proton_anchor, parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1273,6 +1273,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.464Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1292,6 +1307,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.505Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-em-dash": [
@@ -1311,6 +1341,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.545Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-triples": [
@@ -1330,6 +1375,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 73 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.586Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-closing-aphorism": [
@@ -1349,6 +1409,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.625Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-meta-commentary": [
@@ -1368,6 +1443,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.664Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-thesis-restatement": [
@@ -1387,6 +1477,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.702Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-performed-warmth": [
@@ -1406,6 +1511,21 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.744Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (88w, rem) against its two extracted data tables."
       }
     ],
     "trap-superlative": [
@@ -1425,6 +1545,23 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.786Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "De-hedged closing claim: 'The decomposition structure strictly derives from the spectral sequence and Hecke factorization, isolating the empirical inputs exclusively to the calibration scalars and operator-level magic-shell enhancements' - 'strictly', 'exclusively', plus 'intrinsic' and 'proper' earlier, all unqualified.",
+        "notes": "STRUCTURAL (the claim is the sentence). Proposed: 'The decomposition follows from the spectral sequence and the Hecke factorisation; the empirical inputs are alpha, beta and the magic-shell corrections.' NOTE the sentence is also self-undercutting - it concedes empirical inputs beyond CAL-1/2/3, which rem:three-calibration-inputs-context explicitly forbids ('Coefficient fits to AME ... must be derived to symbolic Q(q_0) form, not retained as fits')."
       }
     ],
     "trap-nonspeakable": [
@@ -1444,6 +1581,23 @@
         "reviewed_at": "2026-08-15T10:31:00.365Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7fcbd7e98325",
+          "ts": "10b52aac98ee"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:17.828Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "'isolating the empirical inputs exclusively to the calibration scalars and operator-level magic-shell enhancements' is a noun chain that stalls aloud; 'Dividing by A^3 constructs the proper intensive density' uses 'constructs' where 'gives' is meant.",
+        "notes": "STRUCTURAL. RECOMPUTED CONTRADICTION for the report: the prose says 'T_6 enumerates ordered triples of nucleons, generating an intrinsic ~A^3 scaling', but the block's own table tbl:term6-binding-density-table1-data gives UNORDERED counts C(Z,3), C(Z,2)N, Z C(N,2), C(N,3), whose sum is C(A,3) = A^3/6, not A(A-1)(A-2). Prose and table differ by a factor of 6, which the fitted alpha absorbs silently."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1466,5 +1620,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:26:17.828Z"
 }

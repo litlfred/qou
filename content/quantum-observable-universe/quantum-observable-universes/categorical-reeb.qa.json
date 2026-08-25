@@ -1779,6 +1779,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.026Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1798,6 +1813,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.063Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-em-dash": [
@@ -1817,6 +1847,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.098Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-triples": [
@@ -1836,6 +1881,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.133Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-closing-aphorism": [
@@ -1855,6 +1915,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.170Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-meta-commentary": [
@@ -1874,6 +1949,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.206Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-thesis-restatement": [
@@ -1893,6 +1983,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.240Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-performed-warmth": [
@@ -1912,6 +2017,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.274Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-superlative": [
@@ -1931,6 +2051,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.310Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "trap-nonspeakable": [
@@ -1950,6 +2085,21 @@
         "reviewed_at": "2026-08-15T10:30:59.969Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d4218efdd7a1",
+          "ts": "8456e1d80918"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:57.344Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: definition block, defined term bolded, an announced three-condition list (First/Second/Third) and a fenced tikzcd decomposition square. trap-triples PASSES -- the three items are the defining axioms of the Reeb derivation, a substantive enumeration. No other category fires. OUT-OF-SCOPE observations reported to the caller: (i) DUPLICATE DEFINED TERM -- this block bolds 'categorical Reeb derivation' for \\xi : A -> A with axioms (\\pi_V \\circ d = \\iota_\\xi d\\varTheta_A, \\varTheta_A(\\xi)=\\mathrm{id}, \\Omega^k_H = \\ker\\iota_\\xi), while def:categorical-reeb-derivation bolds the SAME term for a different morphism \\xi_q : A -> A with different axioms (\\xi_q\\circ\\varTheta=\\varTheta, Leibniz); two definition blocks, one term, two objects. (ii) the axiom \\pi_V \\circ d = \\iota_\\xi d\\varTheta_A conflicts with ex:categorical-reeb-brings, which computes \\iota_\\xi d\\varTheta_A = 0 on the worked SU_q(2) model -- see that block's entry. (iii) 'normalized' here vs 'normalisation' in prf:categorical-reeb-unique, within one block group."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1973,5 +2123,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:01:57.344Z"
 }

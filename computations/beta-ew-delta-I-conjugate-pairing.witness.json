@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-15T21:46:15.807211+00:00",
-  "commitSha": "03710c31fe98d1d524d04e12f0e52a45b7e177ab",
+  "computedAt": "2026-08-19T21:21:45.343679+00:00",
+  "commitSha": "2b6d6ca84fc59cc400dc65f2aecdf5c43e775adc",
   "assertions": [
     {
       "name": "abs_det_product_eq_1[6_x_1_1_1_1_1_1]",
@@ -81,11 +81,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 53817,
+  "durationMs": 44641,
   "computation": "beta-ew-delta-I-conjugate-pairing",
   "scriptFile": "beta_ew_delta_I_conjugate_pairing.py",
   "scriptHash": "a2d36230be87",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptCommitSha": "0455a5ef4520911b1f01403027f0ad081e2f6282",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -97,15 +97,14 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "β_EW(Δ_I^minimal) conjugate-partition pairing at n=6 + staircase recursion (k=2,3,4 ↔ n=3,6,10).  Verifies the structural det law det(M_λ)·det(M_λ′) = ±1 across every conjugate pair, and tests the staircase ρ_k = (k,…,1) extension of the (3,2,1) bar-pair finding from 2d19e475.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
-    "q_0_numeric": 1.1099785955573347
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_numeric": 1.1099785827513808
   },
   "data": {
     "conjugate_pair_results_n6": [
@@ -124,10 +123,10 @@
         "self_conjugate": false,
         "dim_lambda": 1,
         "dim_lambda_prime": 1,
-        "det_lambda": 16.729937181150852,
-        "det_lambda_prime": -0.05977308755986673,
-        "det_product": -0.9999999999999999,
-        "abs_det_product_minus_1": 1.1102230246251565e-16
+        "det_lambda": 16.72993196973968,
+        "det_lambda_prime": -0.059773106179317005,
+        "det_product": -1.0,
+        "abs_det_product_minus_1": 0.0
       },
       {
         "lambda": [
@@ -144,10 +143,10 @@
         "self_conjugate": false,
         "dim_lambda": 5,
         "dim_lambda_prime": 5,
-        "det_lambda": -4682.555469548477,
-        "det_lambda_prime": 0.00021355860202899575,
-        "det_product": -1.0000000000000004,
-        "abs_det_product_minus_1": 4.440892098500626e-16
+        "det_lambda": -4682.551093671743,
+        "det_lambda_prime": 0.00021355880160100224,
+        "det_product": -0.9999999999999998,
+        "abs_det_product_minus_1": 2.220446049250313e-16
       },
       {
         "lambda": [
@@ -163,10 +162,10 @@
         "self_conjugate": false,
         "dim_lambda": 9,
         "dim_lambda_prime": 9,
-        "det_lambda": -4682.555469548456,
-        "det_lambda_prime": 0.0002135586020289947,
-        "det_product": -0.9999999999999911,
-        "abs_det_product_minus_1": 8.881784197001252e-15
+        "det_lambda": -4682.551093671732,
+        "det_lambda_prime": 0.00021355880160100205,
+        "det_product": -0.9999999999999966,
+        "abs_det_product_minus_1": 3.4416913763379853e-15
       },
       {
         "lambda": [
@@ -183,10 +182,10 @@
         "self_conjugate": false,
         "dim_lambda": 10,
         "dim_lambda_prime": 10,
-        "det_lambda": 279.89079808525304,
-        "det_lambda_prime": 0.0035728219964395085,
-        "det_product": 1.000000000000001,
-        "abs_det_product_minus_1": 1.1102230246251565e-15
+        "det_lambda": 279.8906237121182,
+        "det_lambda_prime": 0.00357282422232388,
+        "det_product": 0.9999999999999944,
+        "abs_det_product_minus_1": 5.551115123125783e-15
       },
       {
         "lambda": [
@@ -201,10 +200,10 @@
         "self_conjugate": false,
         "dim_lambda": 5,
         "dim_lambda_prime": 5,
-        "det_lambda": 16.72993718115084,
-        "det_lambda_prime": -0.05977308755986681,
-        "det_product": -1.0000000000000004,
-        "abs_det_product_minus_1": 4.440892098500626e-16
+        "det_lambda": 16.729931969739635,
+        "det_lambda_prime": -0.05977310617931726,
+        "det_product": -1.0000000000000016,
+        "abs_det_product_minus_1": 1.5543122344752192e-15
       },
       {
         "lambda": [
@@ -219,9 +218,9 @@
         ],
         "self_conjugate": true,
         "dim": 16,
-        "det_lambda": 1.0000000000000133,
-        "det_product": 1.0000000000000266,
-        "abs_det_product_minus_1": 2.6645352591003757e-14
+        "det_lambda": 1.0000000000000127,
+        "det_product": 1.0000000000000253,
+        "abs_det_product_minus_1": 2.531308496145357e-14
       }
     ],
     "staircase_results": [
@@ -235,11 +234,11 @@
         "dim": 2,
         "eigenvalues": [
           1.0,
-          -1.0
+          -1.0000000000000004
         ],
         "bar_pairs": 1,
         "unpaired": 0,
-        "det": -1.0,
+        "det": -1.0000000000000004,
         "det_expected": -1,
         "computed_kind": "full_spectrum"
       },
@@ -271,43 +270,43 @@
         "gen_determinants": [
           {
             "generator": 1,
-            "det": 0.999999999999987
+            "det": 1.000000000000004
           },
           {
             "generator": 2,
-            "det": 1.0000000000001028
+            "det": 0.9999999999999412
           },
           {
             "generator": 3,
-            "det": 1.0000000000000029
+            "det": 1.0000000000000062
           },
           {
             "generator": 4,
-            "det": 1.0000000000000957
+            "det": 0.9999999999999634
           },
           {
             "generator": 5,
-            "det": 1.0000000000000442
+            "det": 0.999999999999941
           },
           {
             "generator": 6,
-            "det": 0.999999999999993
+            "det": 0.999999999999979
           },
           {
             "generator": 7,
-            "det": 1.0000000000000469
+            "det": 0.9999999999999948
           },
           {
             "generator": 8,
-            "det": 1.0000000000001048
+            "det": 0.9999999999999756
           },
           {
             "generator": 9,
-            "det": 1.0000000000001197
+            "det": 1.0000000000000082
           }
         ],
         "all_gen_dets_unit_modulus": true,
-        "det_reconstructed_from_gens": 1.0000000000025853,
+        "det_reconstructed_from_gens": 0.9999999999988116,
         "computed_kind": "per_generator_only"
       }
     ],
@@ -346,6 +345,6 @@
     "All values derived from q_0 (50-digit) via canonical Hoefsmit seminormal construction.  No fit constants introduced.  The det-product law and bar-pair count are categorical consequences of bar-involution compatibility (Tier-A1 Property 5, 40eefd6d); this probe reports them as derived (not fitted) at q = q_0.",
     "(4,3,2,1) full β_EW eigendecomposition skipped (dim=768).  Per-generator det computation suffices because det is multiplicative on the braid word and the word contains no inverse generators."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

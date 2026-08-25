@@ -1358,6 +1358,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.494Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Proof read in full; no assertion-by-denial.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1393,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.537Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.581Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 139 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.620Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No list.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.659Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Closes \"This yields the claimed identity.\" plus the QED mark - the false-positive class.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.698Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "\"We choose the branching isomorphism that respects the Hoefsmit seminormal basis\" is a proof move, not narration of emphasis.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.739Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "Final sentence discharges the proposition.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.779Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1638,23 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.820Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "severity": "minor",
+        "evidence": "No superlative wording, but one claim is vacuous as stated and worth reporting: \"it holds throughout the Wenzl positivity regime q^{1/2} + q^{-1/2} > 2 (which includes the substrate value q_0 approx 1.11)\". For any real q > 0, AM-GM gives q^{1/2} + q^{-1/2} >= 2 with equality only at q = 1, so this \"regime\" is every positive q except 1 - it excludes nothing. At q_0 = 1.1099785827513808 the value is 2.0027223639 (mpmath, 30 dps), i.e. it clears the bound by 0.0027, and the muon pin gives 2.0027223645, so the inequality also cannot discriminate the two q0 pins.",
+        "notes": "Flagged, not edited (math). Proposed: state the actual Wenzl hypothesis being used, or drop the inequality and keep \"q_0 is real, positive and not 1, hence generic\". Separate note: 1/(q^{1/2} + q^{-1/2}) = sqrt(q)/(q+1) is exactly the convention-C Markov parameter z_C = 0.4993203342, so the expression coincides with 1/z_C - but here it is used as a positivity inequality, not as a Markov parameter, so I do NOT read this block as carrying a convention-C dependency. Recording the coincidence so a later sweep does not mistake it for one."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1674,22 @@
         "reviewed_at": "2026-08-15T10:31:00.984Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b90a08f1f34c",
+          "ts": "067546d12e6b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:20:20.860Z",
+        "reviewed_sha": "1774741be4c788e6a86af5617241bf69622832b0",
+        "evidence": "\"Restricting to the (mu,nu)-isotypic component and writing the resulting endomorphism in the LR-multiplied basis defines the operator-valued matrix coefficient\" is long but reads aloud as one clause chain.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1712,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:20:20.860Z"
 }

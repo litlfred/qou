@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.354Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.391Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.427Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.463Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.497Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.532Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.567Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.604Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.637Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9a221dea285d",
+          "ts": "db6a659e1dee"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.671Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 7 atom rows); read in full. No trap construction of this category present. VERIFIED (not a trap): n=3A holds on all 7 rows, and every 'predicted shift' fits the single closed form 21A-3Z+1 exactly (19,40,61,58,79,97,118), so the two open rows are extrapolations of a consistent rule."
+      }
     ]
   },
   "source_hashes": {
     "md": "9a221dea285d",
     "ts": "db6a659e1dee"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:00.671Z"
 }

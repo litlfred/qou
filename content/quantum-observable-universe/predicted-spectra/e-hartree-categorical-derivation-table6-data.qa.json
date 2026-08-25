@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.871Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.911Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.949Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:03.988Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.030Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.068Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.105Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.145Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.185Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "5fc834891557",
+          "ts": "f653cdffb877"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.225Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 3-row partition/force-carrier table. Judged all ten; the cells are short technical glosses.",
+        "notes": "Table-only block. The row 'other | no obvious force-carrier alignment' is a scope statement about what the analysis found, i.e. the temporal/scope false-positive class, not manufactured contrast. Two gloss em-dashes are absent; the arrow in row 1 is a mapping symbol."
+      }
     ]
   },
   "source_hashes": {
     "md": "5fc834891557",
     "ts": "f653cdffb877"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:04.225Z"
 }

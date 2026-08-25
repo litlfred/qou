@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-14T16:22:56.812419+00:00",
-  "commitSha": "291914b5f50526848cfa56459814f4bc250666a4",
+  "computedAt": "2026-08-23T08:58:07.236728+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 82,
   "computation": "chi-via-rust-lossless-general",
   "scriptFile": "chi_via_rust_lossless.py",
-  "scriptHash": "fa6f74b15644",
-  "scriptCommitSha": "1294c72ccfa3fcbd9e15774278c9c64e88486b71",
+  "scriptHash": "be5f3c748759",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,8 +21,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chi_via_rust_lossless.py"
+    ],
+    "reproduce": "python3 -u computations/chi_via_rust_lossless.py"
   },
   "description": "Lossless per-λ χ(q₀) caches via Rust chi_q_via_gp for arbitrary nuclides (generalizes chi_4he_via_rust_lossless.py). χ_λ is dim-independent (~20 ms/λ) so any H_n is seconds; consumes the closed-form y_λ tower for n>12. Produces the canonical chi-{atom}-h{n}-...-matrix-m.witness.json the active-set / binding consumers read. Sign-only convention; matches the matrix-M backend to the 50-dps floor (#2062 §8).",
   "data": {
@@ -37,9 +45,9 @@
         "Z": 3,
         "N": 2,
         "n_partitions": 176,
-        "tr_M_at_q0": "0.72219067572428003906546700725859846608796048795124",
-        "compute_time_sec": 66,
-        "cache_path": "/home/user/qou/computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
+        "tr_M_at_q0": "3.3475747047309799092663319701603297775468352888815",
+        "compute_time_sec": 69,
+        "cache_path": "/tmp/qou-mine/computations/chi-lithium-5-h15-at-q0-50dps-matrix-m.witness.json",
         "reused": true
       },
       {
@@ -48,9 +56,9 @@
         "Z": 3,
         "N": 3,
         "n_partitions": 385,
-        "tr_M_at_q0": "0.58892244002696787134345006247120330799639569324758",
-        "compute_time_sec": 1381,
-        "cache_path": "/home/user/qou/computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
+        "tr_M_at_q0": "3.8647749823824600176514999632797517349965146699502",
+        "compute_time_sec": 1451,
+        "cache_path": "/tmp/qou-mine/computations/chi-lithium-6-h18-at-q0-50dps-matrix-m.witness.json",
         "reused": true
       }
     ],

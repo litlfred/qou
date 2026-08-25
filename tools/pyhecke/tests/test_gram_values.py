@@ -337,3 +337,83 @@ def test_safe_inverse_message_names_the_replacement():
 def test_safe_inverse_passes_through_invertible_matrices():
     M = numpy.array([[2.0, 1.0], [1.0, 3.0]])
     assert numpy.allclose(pyhecke_gram.safe_inverse(M) @ M, numpy.eye(2))
+
+
+# ══════════════════════════════════════════════════════════════════
+# mpmath mirror — convention lockstep with the float64 originals
+# ══════════════════════════════════════════════════════════════════
+# WHY THESE EXIST (bean qou-h4ab). The 2026-08-15 migration moved the f64
+# `z` to convention D and this file pinned it — `test_z_value` even asserts
+# it is NOT the C value. But nothing here touched `z_mp`, `tr_m_mp` or
+# `gram_matrix_mp`, so the 50-dps mirror silently stayed on C for two days:
+#
+#     z        = 0.6126880371464652   (D)
+#     z_mp()   = 0.4993203341836945   (C)      18.5 % apart
+#
+# and `gram_matrix_mp` — which inlines its own weights rather than calling
+# `tr_m_mp`, despite a docstring saying otherwise — disagreed with the f64
+# `G` by 3.36e-01 where its own docstring promised ~1e-15.
+#
+# The mirror is the path the NO-FLOAT64 precision discipline steers careful
+# callers onto, so the superseded convention was reaching exactly the code
+# that had tried hardest to be right. Pinning the f64 original while leaving
+# its high-precision twin unguarded is the hole; these close it.
+#
+# Written as LOCKSTEP invariants, not as value pins: a future convention
+# migration should have to change one number in this file, not four, and
+# should fail loudly here if it forgets the mirror again.
+
+def test_z_mp_is_in_lockstep_with_float64_z():
+    """z_mp() must equal the f64 `z` to mpmath precision, not 18 % off."""
+    import mpmath as mp
+    from pyhecke import gram as pyhecke_gram
+    with mp.workdps(50):
+        zf = mp.mpf(repr(pyhecke_gram.z))
+        zm = pyhecke_gram.z_mp()
+        rel = abs(zm - zf) / zf
+        assert rel < mp.mpf("1e-15"), (
+            f"z_mp() is not in lockstep with z: rel={mp.nstr(rel, 6)}. "
+            f"z={mp.nstr(zf, 20)}  z_mp={mp.nstr(zm, 20)}. "
+            f"A convention migration probably moved one and not the other."
+        )
+        # and it is D, not C
+        assert abs(zm - mp.mpf("0.4993203341836945")) > mp.mpf("0.1"), \
+            "z_mp() is back on convention C"
+
+
+def test_tr_m_mp_is_in_lockstep_with_float64_TR_M():
+    import mpmath as mp
+    from pyhecke import gram as pyhecke_gram
+    with mp.workdps(50):
+        for i, (a, b) in enumerate(zip(pyhecke_gram.TR_M,
+                                       pyhecke_gram.tr_m_mp())):
+            af = mp.mpf(repr(float(a)))
+            rel = abs(b - af) / max(abs(af), mp.mpf("1e-30"))
+            assert rel < mp.mpf("1e-14"), (
+                f"tr_m_mp()[{i}] diverges from TR_M[{i}]: "
+                f"rel={mp.nstr(rel, 6)} ({mp.nstr(af, 18)} vs {mp.nstr(b, 18)})"
+            )
+
+
+def test_gram_matrix_mp_agrees_with_float64_G():
+    """The ~1e-15 agreement `gram_matrix_mp`'s docstring promises.
+
+    This is the assertion that was false: it read 3.36e-01. Note that fixing
+    `z_mp` and `tr_m_mp` alone does NOT fix it — `gram_matrix_mp` inlines its
+    own Markov weights — so this test is not redundant with the two above.
+    """
+    import mpmath as mp
+    from pyhecke import gram as pyhecke_gram
+    with mp.workdps(50):
+        Gm = pyhecke_gram.gram_matrix_mp()
+        G = pyhecke_gram.G
+        worst = mp.mpf(0)
+        for i in range(6):
+            for j in range(6):
+                af = mp.mpf(repr(float(G[i][j])))
+                rel = abs(Gm[i][j] - af) / max(abs(af), mp.mpf("1e-30"))
+                worst = max(worst, rel)
+        assert worst < mp.mpf("1e-14"), (
+            f"gram_matrix_mp disagrees with G by {mp.nstr(worst, 6)}; its "
+            f"docstring promises ~1e-15"
+        )

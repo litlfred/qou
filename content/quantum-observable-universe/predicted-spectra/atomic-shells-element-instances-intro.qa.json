@@ -1359,6 +1359,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.480Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.519Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1427,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.557Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1461,36 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.595Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.852Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "'assign ... compare ... identify' is a three-verb sentence, but the four-item list before it (helium Hopf diagram, noble-gas characterisation, metallic character knot, francium extremal-metal block) shows the enumeration tracks real downstream blocks rather than a reflex rhythm."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1510,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.632Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1544,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.668Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1578,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.705Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1612,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.741Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1646,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.778Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1680,21 @@
         "reviewed_at": "2026-08-15T10:31:01.267Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b50012a7cafe",
+          "ts": "5877da498dcf"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:30:54.814Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence section preamble. All ten categories judged; nothing found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1717,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:30:54.852Z"
 }

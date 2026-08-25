@@ -149,6 +149,11 @@ M_N_MEV_VALIDATION_ERR = _load_mpf(_VALIDATION_WITNESS, "data.m_n_MeV_err")
 
 M_D_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_D_MeV")
 M_T_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_T_MeV")
+# The deuteron mass was already in the validation witness with full CODATA
+# provenance; only the facade line was missing, so consumers hand-typed it
+# (knot-particle-generation.py carried the CODATA-2018 1875.61294257).
+# Drain qou-7ot6-a.
+M_DEUTERON_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_D_MeV")
 M_HE3_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_3He_MeV")
 M_HE4_MEV_VALIDATION = _load_mpf(_VALIDATION_WITNESS, "data.m_4He_MeV")
 
@@ -259,10 +264,21 @@ U_MEV_ERR = _U_MEV_CODATA2022_ERR
 def _ame_binding_mev(Z: int, A: int) -> mp.mpf:
     """Total nuclear binding energy (MeV) read from vendored AME2020.
 
-    The whole expression (parse + division) runs inside `workdps(≥50)` so the
-    arithmetic, not just the string parse, is high-precision (Gemini review)."""
+    Built from `binding_energy_per_A_keV`, the column AME QUOTES — not from
+    `binding_energy_total_keV`, which the table's own metadata flags as
+    "derived" and which `vendor_ame2020.py` computed in float64. That derived
+    column carries a binary tail: ⁶Li is stored as 31993.987199999996 where the
+    quoted column gives exactly 31993.9872 × 1 = 5332.3312 × 6. Reading it cost
+    4e-15 keV on ⁶Li — physically nothing, but this accessor is the canonical
+    AME entry point for 300+ scripts and NO-FLOAT64 says fix at the source.
+
+    `repr` (not `str`) on the parsed float is the shortest round-tripping form,
+    so the quoted digits survive the JSON float without a second re-parse of
+    the file. The whole expression runs inside `workdps(≥50)` so the arithmetic,
+    not just the parse, is high-precision (Gemini review)."""
     with mp.workdps(max(50, mp.mp.dps)):
-        return +(mp.mpf(str(_ame_entry(Z, A)["binding_energy_total_keV"])) / 1000)
+        per_a = mp.mpf(repr(_ame_entry(Z, A)["binding_energy_per_A_keV"]))
+        return +(per_a * A / 1000)
 
 
 def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
@@ -273,6 +289,23 @@ def _ame_atomic_mev(Z: int, A: int) -> mp.mpf:
     with mp.workdps(max(50, mp.mp.dps)):
         return +(mp.mpf(str(_ame_entry(Z, A)["atomic_mass_micro_u"]))
                  * mp.mpf("1e-6") * _U_MEV)
+
+
+def ame_binding_mev(Z: int, A: int) -> mp.mpf:
+    """Public accessor for the vendored AME2020 total binding energy (MeV).
+
+    The named `AME_B_*_MEV_VALIDATION` constants below cover only the seven
+    light nuclides that happened to be needed when they were added.  Consumers
+    working over a *table* of nuclides (mass sweeps, binding ladders) need the
+    same source for arbitrary `(Z, A)`, and without a public entry point they
+    hand-type the rest -- which is exactly how `mass_table_ppb.py` ended up with
+    eleven typed literals sitting up to 1.6e-5 away from this table, in the same
+    column as five registry-derived values.
+
+    Same data, same precision, same `workdps` as the constants: this is an
+    alias for `_ame_binding_mev`, not a second source.
+    """
+    return _ame_binding_mev(Z, A)
 
 
 AME_B_DEUTERON_MEV_VALIDATION = _ame_binding_mev(1, 2)
@@ -371,6 +404,8 @@ def __getattr__(name: str):
 
 
 __all__ = [
+    # Vendored-AME accessor for nuclides with no named constant below
+    "ame_binding_mev",
     # Legitimate calibration inputs (CAL-1) + derived cross-check (Q_β)
     "M_E_MEV", "M_E_MEV_ERR",
     "U_MEV", "U_MEV_ERR",  # atomic-mass-unit → MeV (CODATA-2022, from codata_2022_source)

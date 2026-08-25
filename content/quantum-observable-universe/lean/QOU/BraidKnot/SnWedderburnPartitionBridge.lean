@@ -247,7 +247,9 @@ to `R`; it has the matrix product only over an algebraically closed base), the p
 the OV identification block `i` ↔ `S^{λ_i}` of size `dim_R S^{λ_i}`, and the isotypic /
 `C₂`-eigenvalue alignment.
 `-- Ref: [vershik-kerov1977], [sagan2001], [james1984representation]`. -/
-theorem sn_isotypic_specht_split (n : ℕ) :
+class SnIsotypicSpechtSplit (R : Type) [Field R] [CharZero R] : Prop where
+  /-- Mathlib lacks char-0 rationality (Maschke) for S_n, Specht module alignment, and the isotypic/C₂ block alignment. -/
+  exists_split (n : ℕ) :
     ∃ e : MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R]
       (∀ i : SpechtClassification.PartitionIndex n,
         Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
@@ -256,14 +258,19 @@ theorem sn_isotypic_specht_split (n : ℕ) :
         = fun i : SpechtClassification.PartitionIndex n =>
             ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) •
             (1 : Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
-                        (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R) := by
-  -- Ref: [vershik-kerov1977] (the central JM element C₂ = Σ_k X_k² acts on the S^{λ}-isotypic block
-  --   by contentSqSum λ = Σ_{c∈λ} c² — Schur on each isotypic component, eigenvalue from
-  --   JucysMurphy.centralC2_acts_by_contentSqSum) + [sagan2001] §2.4 / [james1984representation]
-  --   (the char-0 rational, OV-labelled Wedderburn split of R[S_n] indexed by partitions, block i the
-  --   S^{λ_i}-ISOTYPIC component of dimension (dim S^{λ_i})² — Mathlib does not package this; the
-  --   isotypic alignment is precisely what makes e send C₂ to the block-scalar family).
-  sorry
+                        (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R)
+
+theorem sn_isotypic_specht_split (n : ℕ) [SnIsotypicSpechtSplit R] :
+    ∃ e : MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R]
+      (∀ i : SpechtClassification.PartitionIndex n,
+        Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
+               (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R),
+      e (RegularRepTrace.centralC2 n)
+        = fun i : SpechtClassification.PartitionIndex n =>
+            ((JucysMurphy.contentSqSum i.diagram : ℤ) : R) •
+            (1 : Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
+                        (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram))) R) :=
+  SnIsotypicSpechtSplit.exists_split n
 
 /-- **Rational Wedderburn split — a corollary of the isotypic core.** Over a characteristic-zero
 field `R`, the rational, OV-labelled Wedderburn decomposition of `R[S_n]`, indexed by the partitions
@@ -274,7 +281,7 @@ of `n`, with block `i` of matrix size exactly `dim_R S^{λ_i}`:
 carried-`C₂` clause yields exactly this algebra iso (same `e`).  The isotypic split is strictly
 stronger, so the previous shape's two independent cited cores collapse to one.
 `-- Ref: [james1984representation], [sagan2001]`. -/
-theorem sn_rational_specht_split (n : ℕ) :
+theorem sn_rational_specht_split (n : ℕ) [SnIsotypicSpechtSplit R] :
     Nonempty (MonoidAlgebra R (Equiv.Perm (Fin n)) ≃ₐ[R]
       (∀ i : SpechtClassification.PartitionIndex n,
         Matrix (Fin (Module.finrank R (Specht.SpechtSubmodule (k := R) i.diagram)))
@@ -325,7 +332,7 @@ the capstone can replace its opaque cited `sorry` by `exact … snBridge n`.
 **Sorry-free modulo the one named core** `sn_rational_specht_split` (the rational + OV-labelled
 split): that split is fed to the sorry-free mechanical extraction `snBlocks_of_algEquiv`, whose
 `finrank` output `(dim S^{λ_i})²` is already the `snBlocks` block size. -/
-theorem snBridge (n : ℕ) :
+theorem snBridge (n : ℕ) [SnIsotypicSpechtSplit R] :
     ∃ (p : SpechtClassification.PartitionIndex n →
           Submodule R (MonoidAlgebra R (Equiv.Perm (Fin n))))
       (proj : SpechtClassification.PartitionIndex n →
@@ -455,7 +462,7 @@ conjuncts 1–3 reuse the sorry-free `transProj_isProj` / `finrank_range_transPr
 and conjunct 4 (the `C₂` block-diagonalisation) is the sorry-free `mulLeft_eq_sum_transProj` applied to
 the core's carried-`C₂` clause.  The entire `C₂`-decomposition machinery is thus discharged sorry-free;
 only the isotypic split itself remains cited. -/
-theorem snBlocks_c2_aligned (n : ℕ) :
+theorem snBlocks_c2_aligned (n : ℕ) [SnIsotypicSpechtSplit R] :
     ∃ (p : SpechtClassification.PartitionIndex n →
           Submodule R (MonoidAlgebra R (Equiv.Perm (Fin n))))
       (proj : SpechtClassification.PartitionIndex n →

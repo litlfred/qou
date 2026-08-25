@@ -1043,6 +1043,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.351Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'not evidence for the framework', 'a dimension rather than a mass splitting', 'not a competing prediction' are substantive corrections withdrawing a category error — the block's content."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1062,6 +1077,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.393Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Header 'cannot test this, and the question was mis-posed' is a direct claim proved in the Lean, not a reframe device."
       }
     ],
     "trap-em-dash": [
@@ -1081,6 +1111,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 530 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.439Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Spaced dashes are appositive parentheticals (octet state positions, parameter b gloss); moderate density."
       }
     ],
     "trap-triples": [
@@ -1100,6 +1145,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 530 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.480Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'three q-dependent ingredients' is a substantive enumeration (dim_q, crossing energy, Markov trace)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1119,6 +1179,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.520Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Final paragraph is a conditional dependency statement (Y open, EM splitting derived)."
       }
     ],
     "trap-meta-commentary": [
@@ -1138,6 +1213,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.561Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'Two consequences. First... Second...' is enumeration, not emphasis narration."
       }
     ],
     "trap-thesis-restatement": [
@@ -1157,6 +1247,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.602Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Opening italic line is an abstract-style lead, not a block-final restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1176,6 +1281,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.641Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1195,6 +1315,21 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.681Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "'the entire hypercharge dependence' is literal (b is the sole Y-term); 'automatically and exactly' backed by ring identity."
       }
     ],
     "trap-nonspeakable": [
@@ -1214,6 +1349,22 @@
         "reviewed_at": "2026-08-15T10:31:00.204Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c0fa423bedef",
+          "ts": "2691311b72e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:12:59.722Z",
+        "reviewed_sha": "583e9bf4d0441614972b356694a9e39755cc3147",
+        "evidence": "Readable; GMO experimental deviation ~6-7 pct re-verified against PDG masses.",
+        "notes": "NOTE (not edited, math-adjacent): .md states GMO combination vanishes 'for all a,b,c' with K at (1/2,+-1) but omits the kaon hypercharge AVERAGING clause present in GellMannOkuboIdentity.lean; without averaging the combination equals 4b. Propose adding 'with the two kaon hypercharges averaged as usual'."
       }
     ],
     "wall-base-ring-minimal": [

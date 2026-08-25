@@ -92,15 +92,59 @@ if _QS.is_dir() and str(_QS) not in sys.path:
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 
 
-def load_ck_from_witness() -> dict[int, mp.mpf]:
-    """Load c_2..c_10 (q_proton-canonical-pinned extraction)."""
+def load_ck_from_witness() -> tuple[dict[int, mp.mpf], dict, dict]:
+    """Load the resolved c_k, plus the extraction's resolution block.
+
+    Returns ``(resolved, resolution, raw_quotient)`` where ``resolved`` holds ONLY the rungs
+    the upstream extractor certified as resolved.  A rung the extractor could
+    not resolve is emitted as ``null`` (see qou-8ofm / qou-frch, 2026-08-10)
+    and is omitted here rather than coerced -- ``mp.mpf(str(None))`` raises,
+    which is how this probe crashed on main.
+    """
     src = HERE / "qbeta-decay-sdp-extended-ck.witness.json"
     if not src.exists():
         src = HERE.parent / "qbeta-decay-sdp-extended-ck.witness.json"
     with src.open() as f:
         d = json.load(f)
     raw = d["data"]["c_k_extracted_50dps"]
-    return {int(k.split("_")[1]): mp.mpf(str(v)) for k, v in raw.items()}
+    resolved = {int(k.split("_")[1]): mp.mpf(str(v))
+                for k, v in raw.items() if v is not None}
+    return (resolved, d["data"]["c_k_resolution"],
+            d["data"]["c_k_unresolved_raw_quotient"])
+
+
+def floor_identity_diagnostic(resolution: dict, raw_quotient: dict) -> dict:
+    """Show that the unresolved rungs reproduce the simple-pole signature exactly.
+
+    When rung k is unresolved, ``R_k - 1`` has stalled at the model's accuracy
+    floor ``f`` and the extractor's quotient is ``c_k := (R_k - 1)/u^k = f/u^k``.
+    Two consequences are then ARITHMETIC, not evidence about F(u):
+
+        |c_k * u^k| = f          (flat asymptote, zero spread)
+        c_{k+1}/c_k = 1/u        (ratio test hits the pole location exactly)
+
+    Both are the signature PR #1727 read as "simple pole at u_substrate with
+    residue A = f * u".  A residual floor produces them identically, so the
+    signature cannot distinguish the two.  This function measures how exactly.
+    """
+    u = mp.mpf(resolution["ladder_variable_u"])
+    per = resolution["per_rung"]
+    # The extractor's ACTUAL emitted quotients, not a re-derivation of them:
+    # checking f/u^k against f would be a tautology of our own division.
+    raw = {int(k.split("_")[1]): mp.mpf(v) for k, v in raw_quotient.items()}
+    rows = []
+    for k in sorted(raw):
+        r = per.get(f"c_{k}")
+        if r is None or r.get("resolved"):
+            continue
+        floor = mp.mpf(r["residual_abs_R_minus_1"])
+        flat_rel = abs(abs(raw[k] * u ** k) - floor) / floor
+        row = {"k": k, "floor": floor, "flat_rel": flat_rel, "ratio_rel": None}
+        nxt = per.get(f"c_{k + 1}")
+        if k + 1 in raw and nxt is not None and not nxt.get("resolved"):
+            row["ratio_rel"] = abs((raw[k + 1] / raw[k]) * u - 1)
+        rows.append(row)
+    return {"u": u, "rows": rows}
 
 
 def main() -> int:
@@ -130,25 +174,56 @@ def main() -> int:
     print(f"  1/u_muon    = {mp.nstr(1 / u_m, 12)}")
     print()
 
-    # Step 1 verdict at q_proton: c_k · u_p^k → 2.118e-13 at k=8,9,10
-    ck = load_ck_from_witness()
-    print("--- (a) Re-evaluate c_k_proton · u^k AT each anchor's u ---")
-    print(f"  (c_k_proton = canonical-pinned extraction at q_proton)")
-    print(f"  {'k':>3s} {'c_k':>20s} {'c_k·u_p^k':>18s} {'c_k·u_m^k':>18s} {'ratio':>14s}")
-    for k in sorted(ck.keys()):
-        if k < 6:
-            continue
-        cp = ck[k] * u_p ** k
-        cm = ck[k] * u_m ** k
-        ratio = cm / cp if cp != 0 else mp.mpf(0)
-        print(f"  {k:>3d} {mp.nstr(ck[k], 10):>20s} {mp.nstr(cp, 10):>18s} {mp.nstr(cm, 10):>18s} {mp.nstr(ratio, 10):>14s}")
+    # --- (a) Step 1's premise, re-checked against the current extraction ---
+    #
+    # Step 1 (PR #1727) read a SIMPLE POLE off c_k * u^k -> 2.118e-13 at
+    # k = 8, 9, 10.  Since then qou-8ofm / qou-frch (2026-08-10) established
+    # that this extraction determines AT MOST ONE rung -- R(q0) is a single
+    # scalar -- and that every higher rung is the model's accuracy floor
+    # divided by u^k.  Rungs 8-10 are in that stalled range.
+    resolved, resolution, raw_quotient = load_ck_from_witness()
+    n_unresolved = resolution.get("n_unresolved")
+    last_resolved = resolution.get("last_resolved_rung")
+
+    print("--- (a) Is Step 1's premise still supported by the extraction? ---")
+    print(f"  resolved rungs           : "
+          f"{sorted(resolved) if resolved else 'none'}")
+    print(f"  last_resolved_rung       : {last_resolved}")
+    print(f"  unresolved rungs         : {n_unresolved}")
+
+    diag = floor_identity_diagnostic(resolution, raw_quotient)
+    u_lad = diag["u"]
+    premise_supported = all(k in resolved for k in (8, 9, 10))
+
+    if diag["rows"]:
+        print()
+        print("  In the stalled range the pole signature is an IDENTITY, not")
+        print("  evidence: with c_k := (R_k - 1)/u^k and R_k - 1 pinned at the")
+        print("  floor f, both |c_k u^k| = f and c_{k+1}/c_k = 1/u hold exactly.")
+        print()
+        print(f"  {'k':>3s} {'floor f':>22s} {'|c_k u^k|/f - 1':>18s}"
+              f" {'(c_k+1/c_k)*u - 1':>20s}")
+        for r in diag["rows"]:
+            rr = ("" if r["ratio_rel"] is None
+                  else mp.nstr(r["ratio_rel"], 6))
+            print(f"  {r['k']:>3d} {mp.nstr(r['floor'], 16):>22s}"
+                  f" {mp.nstr(r['flat_rel'], 6):>18s} {rr:>20s}")
+        print()
+        print(f"  1/u_ladder = {mp.nstr(1 / u_lad, 14)}"
+              f"   (the 'pole location' the ratio test returns)")
+
+    if premise_supported:
+        print("\n  Rungs 8-10 ARE resolved -- Step 1's premise stands; "
+              "cross-anchor test below is meaningful.")
+    else:
+        print("\n  Rungs 8-10 are NOT resolved. Step 1's premise -- the flat")
+        print("  asymptote at k = 8, 9, 10 -- is the floor identity above, so")
+        print("  this probe's subject (cross-anchor validation of that pole")
+        print("  TYPE and its residue) has nothing left to validate.")
+        print("  Not substituted: c_k_unresolved_raw_quotient. Those ARE the")
+        print("  floor quotients; using them would re-derive the artifact.")
     print()
 
-    # The ratio cp/cm = (u_p/u_m)^k. At large k, the ratio amplifies the
-    # Δu = 11.5 ppb difference: ratio^k ≈ (1 + k·Δu/u). At k=10, ratio
-    # should be ~115 ppb scaled — not the structural anchor-independence.
-    # WHAT MATTERS for fibre-level interpretation: does u_subst (the
-    # singularity location) shift WITH q_0, or stay FIXED in the fibre?
     print("--- (b) Fibre-level test: is u_subst anchor-independent? ---")
     # If F(u) is a fibre-level object with a FIXED singularity at some
     # u* (independent of q), then both anchors should have the SAME
@@ -165,7 +240,11 @@ def main() -> int:
     print()
 
     # Verdict logic
-    if fibre_level:
+    if not premise_supported:
+        verdict = ("PREMISE_WITHDRAWN — rungs 8-10 unresolved, so Step 1's "
+                   "simple-pole signature is the residual-floor identity; the "
+                   "pole TYPE and residue A are unanswered, not confirmed")
+    elif fibre_level:
         verdict = "FIBRE_LEVEL_CONFIRMED — singularity at same u across anchors"
     else:
         delta_ppb = float(delta_u_rel * mp.mpf("1e9"))
@@ -195,6 +274,24 @@ def main() -> int:
     w.add_data("u_muon", mp.nstr(u_m, 30))
     w.add_data("delta_u_relative_ppb", mp.nstr(delta_u_rel * mp.mpf("1e9"), 12))
     w.add_data("fibre_level_within_1ppm", str(fibre_level))
+    w.add_data("step1_premise_supported", str(premise_supported))
+    w.add_data("last_resolved_rung", str(last_resolved))
+    w.add_data("n_unresolved_rungs", str(n_unresolved))
+    w.add_data("floor_identity", {
+        "note": ("In the unresolved range c_k := f/u^k identically, so "
+                 "|c_k*u^k| = f and c_{k+1}/c_k = 1/u hold by arithmetic. "
+                 "Both are the simple-pole signature PR #1727 read as "
+                 "evidence, so that signature does not discriminate a pole "
+                 "from a residual floor."),
+        "per_rung": [
+            {"k": r["k"],
+             "floor": mp.nstr(r["floor"], 20),
+             "flat_asymptote_rel_error": mp.nstr(r["flat_rel"], 6),
+             "ratio_test_rel_error": (None if r["ratio_rel"] is None
+                                      else mp.nstr(r["ratio_rel"], 6))}
+            for r in diag["rows"]
+        ],
+    })
     w.add_data("verdict", verdict)
     w.add_assertion(
         name="cross_anchor_u_subst_compared",
@@ -202,6 +299,16 @@ def main() -> int:
         expected=True,
         tolerance=0,
         source="Step 2 of Q_β 1ppQ closure",
+    )
+    w.add_assertion(
+        name="step1_premise_supported",
+        computed=premise_supported,
+        expected=premise_supported,
+        tolerance=0,
+        source=("whether rungs 8-10 -- the ones Step 1's flat asymptote was "
+                "read off -- are certified resolved by the upstream extractor "
+                "(qou-8ofm / qou-frch). Recorded, not gated: this probe "
+                "reports the premise's status, it does not assert it."),
     )
     out = w.save()
     print(f"\n  Witness: {out.name}")

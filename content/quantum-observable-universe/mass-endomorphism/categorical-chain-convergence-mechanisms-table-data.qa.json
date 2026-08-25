@@ -883,7 +883,189 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:29.846Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Six-row data table; no assertion-by-denial anywhere.",
+        "notes": "No change."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:29.885Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "No setup-then-reframe; each cell is a single datum or a one-clause gloss.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:29.924Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Two spaced em-dashes, both inside the \"physical interpretation\" column: \"Hopf-Jones rung — clears 1 ppb on Q_beta\" and \"mixed rung — sub-ppb on n-p split\".",
+        "notes": "Judged load-bearing apposition (label then consequence) inside a table cell rather than prose punctuation dodging a comma/full-stop choice; 2 of 6 rows is not a density tell. No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:29.962Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Rows are indexed N = 0..5 by the truncation depth; no reflex three-item list.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:30.003Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "File ends on the N=5 data row.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:30.041Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "No narration of emphasis.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:30.080Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Table-data block; no prose sentences to restate.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:30.118Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "No personal register.",
+        "notes": "No change."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:30.157Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "severity": "minor",
+        "evidence": "Row N=3 carries the bolded unqualified claim \"clears 1 ppb on Q_beta\" and is refuted by its own cell: 0.0094 ppm = 9.4 ppb, i.e. 9.4x ABOVE 1 ppb. Recomputed from the parent block's own bound ",
+        "notes": "R_N| <= hbar_q^{2(N+1)}/(1-hbar_q^2) with hbar_q=(q-1)/q at q0=1.1099785827513808 (mpmath, 40 dps): N=3 -> 9.38065 ppb; the first rung that clears 1 ppb is N=4 -> 0.0921 ppb. Every printed value in the column reproduces the bound exactly, so the numbers are right and only the annotation is wrong.|STRUCTURAL / math-adjacent, not edited. Proposed: move the bold to the N=4 row and restate N=3 as \"Hopf-Jones rung - clears 10 ppb on Q_beta\" (or \"9.4 ppb\"). The same error is in the parent prose, content/quantum-observable-universe/mass-endomorphism/categorical-chain-convergence-mechanisms.md: \"truncation at N = 3 suffices for 1 ppb precision\" should read N = 4. Note also that this table cannot discriminate the q0 pins: proton 1.1099785827513808 and muon 1.10997859555733471 give identical values to all printed digits (both 9914.52 ppm at N=0)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "34c2c13919c4",
+          "ts": "b31ddc8c5af4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:12:30.196Z",
+        "reviewed_sha": "8549f09e8a6a9f5b1cad47ed2cc807574e9da765",
+        "evidence": "Cells are short; \"bare Form A (NF counit)\" and \"Kashiwara b rung\" are terse but speakable technical labels.",
+        "notes": "No change."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:12:30.196Z"
 }

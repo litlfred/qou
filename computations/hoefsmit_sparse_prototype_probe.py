@@ -67,6 +67,7 @@ from canonical_braid_crossings import (  # noqa: E402
 )
 from hoefsmit_numpy import chi_numpy, hoefsmit_matrices_numpy  # noqa: E402
 from rho_k_h3a_refinement import standard_young_tableaux  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def hoefsmit_structured(shape, q_value):
@@ -152,7 +153,7 @@ def chi_structured(shape, crossings, q_value):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q = float(mp.mpf(Q_50_DIGIT_STR))
     crossings = atom_canonical_crossings(1, 2)     # tritium, n=9, 35 crossings
 

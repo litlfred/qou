@@ -1205,6 +1205,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.273Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no assertion-by-denial; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1224,6 +1240,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.315Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no setup-then-reframe construction; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1243,6 +1275,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.354Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). em-dash count 0 in the block; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1262,6 +1310,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 62 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.395Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no reflex three-item list; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1281,6 +1345,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.436Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). final sentence is substantive, not a quotable placed for closure; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1300,6 +1380,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.477Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no narration of the author's own emphasis; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1319,6 +1415,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.518Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no block-final restatement of what the text established; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1338,6 +1450,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.558Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no personal or institutional-warmth register; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1357,6 +1485,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.599Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). no unqualified maximum-strength claim; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1376,6 +1520,22 @@
         "reviewed_at": "2026-08-15T10:31:00.044Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e9787d382bce",
+          "ts": "7f2c2809e4b8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:32.641Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (proof, Peter-Weyl decomposition + one display). reads aloud without stalling; proof, Peter-Weyl decomposition + one display.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1398,5 +1558,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:32.641Z"
 }

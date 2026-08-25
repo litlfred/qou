@@ -48,6 +48,7 @@ from pyhecke.gram import (
 )
 from hecke_engine import HeckeEngine, HeckeRational
 from witness_base import WitnessBuilder
+from _precision import set_compute_dps  # noqa: E402
 
 # Markov parameter z = 1/(q^{1/2} + q^{-1/2}) for cross-channel weight
 _z = Q**3 / (Q**2 + 1)
@@ -60,8 +61,9 @@ _Z2 = _z * _z
 # HeckeRational.V_full at q0 — verified vs the rational engine to ~2e-4 (the
 # genuine q-gap). _HE is retained ONLY for the q-independent ground-state
 # ordering. See docs/audits/2026-06-16-gram-q-approximation-audit.md.
-mp.dps = 50
-_Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+set_compute_dps()
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+_Q0 = mp.mpf(Q_50_DIGIT_STR)
 _QI0 = 1 / _Q0
 _HA0 = _Q0 - _QI0
 _z_q0 = _Q0**3 / (_Q0**2 + 1)

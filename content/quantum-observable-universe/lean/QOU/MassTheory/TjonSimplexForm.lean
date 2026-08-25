@@ -240,7 +240,7 @@ provably inequivalent, and the external result may be cited as motivation for
 the baseline but never as a derivation of it.
 
 Companion probe: `computations/deltalambda/tjon_external_cross_check_probe.py`,
-which also re-derives the AME2020 inputs from `uploads/mass_1.mas20.txt` rather
+which also re-derives the AME2020 inputs from `library/mass_1.mas20.txt` rather
 than from transcribed literals.
 -/
 

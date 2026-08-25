@@ -1234,6 +1234,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.342Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1253,6 +1268,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.384Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-em-dash": [
@@ -1272,6 +1302,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.425Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-triples": [
@@ -1291,6 +1336,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 146 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.465Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-closing-aphorism": [
@@ -1310,6 +1370,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.505Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-meta-commentary": [
@@ -1329,6 +1404,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.546Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-thesis-restatement": [
@@ -1348,6 +1438,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.587Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-performed-warmth": [
@@ -1367,6 +1472,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.627Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "trap-superlative": [
@@ -1386,6 +1506,22 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.667Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "'verified at sympy precision' and 'exactly' checked",
+        "notes": "Earned: the identity is symbolic/algebraic (sqrt3 exact), not a float64 agreement; no inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1405,6 +1541,21 @@
         "reviewed_at": "2026-08-15T10:30:59.549Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6953da8ee993",
+          "ts": "b26e86fe9bc6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:11:17.708Z",
+        "reviewed_sha": "e3012ac62d21edf6e1f51ff1bef07691cf7e6ce1",
+        "evidence": "Full read of remark (statement/proof/significance). Arithmetic recomputed: b=sqrt(q^4+q^2+1)/(q^2+1); b(1)^2=3/4, b(1)=sqrt3/2, b^3=3sqrt3/8, -2b^3=-3sqrt3/4=-1.2990381057; hbar_q=1-1/q at q=1+eps gives eps-eps^2+..., so hbar_q^6 leading is eps^6 and the eps^6 coefficient of F_3-1=-2b^3 hbar_q^6 is -2b^3(1). All values confirm. No trap constructions in any of the ten categories."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1427,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:11:17.708Z"
 }

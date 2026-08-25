@@ -226,8 +226,8 @@ witness = {
     "beans": ["qou-xx9f", "qou-9p9y"],
     "source": (
         "GSWZ arXiv:2412.04241v2 eqns (270), (281), (287) "
-        "(uploads/2412.04241v2.pdf); GZ SIGMA 20 (2024) 055 §8.1-8.2 "
-        "eqns (8.7)-(8.8) (uploads/2111.06645v3.pdf)"
+        "(library/arxiv-2412.04241v2/2412.04241v2.pdf); GZ SIGMA 20 (2024) 055 §8.1-8.2 "
+        "eqns (8.7)-(8.8) (library/arxiv-2111.06645v3/2111.06645v3.pdf)"
     ),
     "checks": checks,
     "result": detail,

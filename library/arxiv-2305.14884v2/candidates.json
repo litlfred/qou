@@ -1,0 +1,215 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-2305.14884v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ebc8e64d901c9e4f397ece6170c92d5d65045ef7fbb15d251a268327acf7e1fb",
+  "file": "2305.14884v2.pdf"
+ },
+ "provenance": {
+  "title": "PERTURBATIVE INV ARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS",
+  "authors": "STA VROS GAROUF ALIDIS, MATTHIAS STORZER, AND CAMPBELL WHEELER",
+  "arxiv": {
+   "id": "2305.14884",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "12 Jul 2023"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "theorem": 5,
+   "lemma": 6,
+   "proposition": 3
+  },
+  "formalization_candidates": 14
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "\u03a6 \u039e (\u210f) is a topological invariant of a cusped hyperbolic 3-manifol d.",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": null,
+   "statement": "It was clear from [ 11] that a NZ-datum \u039e = ( A,B,\u03bd,z,f,f \u2032\u2032) depends on",
+   "section_file": "sections/sec-001-21-the-faddeev-quantum-dilogarithm.md",
+   "section_title": "The Faddeev quantum dilogarithm",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "(a) For all invertible matrices \u039b and P over",
+   "section_file": "sections/sec-006-31-basics-on-formal-gaussian-integration.md",
+   "section_title": "Basics on formal Gaussian integration",
+   "pages": "9-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "For all invertible matrices \u039b( z) over /C9 (z) and all integrable functions f\u210f, we",
+   "section_file": "sections/sec-006-31-basics-on-formal-gaussian-integration.md",
+   "section_title": "Basics on formal Gaussian integration",
+   "pages": "9-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "3.4",
+   "name": null,
+   "statement": "implies the following identity relating \u03c8\u210f(\u2022,z ) and \u03c8\u210f(\u2022,z \u2032\u2032).",
+   "section_file": "sections/sec-006-31-basics-on-formal-gaussian-integration.md",
+   "section_title": "Basics on formal Gaussian integration",
+   "pages": "9-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.1",
+   "name": null,
+   "statement": "The series \u03a6 \u039e (\u210f) is independent of the choice of a nondegenerate quad.",
+   "section_file": "sections/sec-008-5-invariance-under-the-choice-of-quad.md",
+   "section_title": "Invariance under the choice of quad",
+   "pages": "19-23",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.2",
+   "name": null,
+   "statement": "With the notation as in the proof of Theorem 5.1, we have the following",
+   "section_file": "sections/sec-008-5-invariance-under-the-choice-of-quad.md",
+   "section_title": "Invariance under the choice of quad",
+   "pages": "19-23",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6.1",
+   "name": null,
+   "statement": "The series \u03a6 \u039e (\u210f) is invariant under 2\u20133 Pachner moves.",
+   "section_file": "sections/sec-009-6-invariance-under-pachner-moves.md",
+   "section_title": "Invariance under Pachner moves",
+   "pages": "23-25",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.2",
+   "name": null,
+   "statement": "If B has full rank, then \u03a6 \u039e (\u210f) is invariant under the 2\u20133 Pachner move",
+   "section_file": "sections/sec-010-61-the-case-of-b-with-full-rank.md",
+   "section_title": "The case of B with full rank",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.3",
+   "name": null,
+   "statement": "With the notation used in the proof of the previous Proposition 6.2,",
+   "section_file": "sections/sec-010-61-the-case-of-b-with-full-rank.md",
+   "section_title": "The case of B with full rank",
+   "pages": "25-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.4",
+   "name": null,
+   "statement": "IfB has rank N + 1 then \u03a6 \u039e (\u210f) is invariant under the 2\u20133 Pachner move",
+   "section_file": "sections/sec-011-62-the-case-of-b-with-nullity-one.md",
+   "section_title": "The case of B with nullity one",
+   "pages": "27-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.5",
+   "name": null,
+   "statement": "With the notation used in the previous proof of Proposition 6.4 we have",
+   "section_file": "sections/sec-011-62-the-case-of-b-with-nullity-one.md",
+   "section_title": "The case of B with nullity one",
+   "pages": "27-33",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.6",
+   "name": null,
+   "statement": "If B has rank N then \u03a6 \u039e (\u210f) is invariant under the 2\u20133 Pachner move",
+   "section_file": "sections/sec-012-63-the-case-of-b-with-nullity-two.md",
+   "section_title": "The case of B with nullity two",
+   "pages": "33-41",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6.7",
+   "name": null,
+   "statement": "With the notation used in the proof of the previous Proposition",
+   "section_file": "sections/sec-012-63-the-case-of-b-with-nullity-two.md",
+   "section_title": "The case of B with nullity two",
+   "pages": "33-41",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

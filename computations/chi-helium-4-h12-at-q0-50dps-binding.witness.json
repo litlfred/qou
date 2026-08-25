@@ -1,6 +1,6 @@
 {
   "computation": "chi-helium-4-h12-at-q0-50dps-binding",
-  "description": "Lossless per-λ χ^λ(β_atomic(2,2))=⁴He in the BINDING (color-weighted averaged-crossing) convention at q_0, all 77 λ⊢12, via the dim-independent Rust binding character (mpfr-50dps-rust-binding-atomic). No dim×dim seminormal (matrix-M is infeasible at n=12). Resolves the partial binding cache (bean b0vf, was 27/77). Gated against the f64 Rust binding character on the same word/δ (the MPFR path must extend f64 to the f64 floor); the legacy matrix-M 50-dps witness predates the 2026-06-29 δ de-wire and is a wrong-δ reference (~2.6e-6 off).",
+  "description": "Lossless per-\u03bb \u03c7^\u03bb(\u03b2_atomic(2,2))=\u2074He in the BINDING (color-weighted averaged-crossing) convention at q_0, all 77 \u03bb\u22a212, via the dim-independent Rust binding character (mpfr-50dps-rust-binding-atomic). No dim\u00d7dim seminormal (matrix-M is infeasible at n=12). Resolves the partial binding cache (bean b0vf, was 27/77). Gated against the f64 Rust binding character on the same word/\u03b4 (the MPFR path must extend f64 to the f64 floor); the legacy matrix-M 50-dps witness predates the 2026-06-29 \u03b4 de-wire and is a wrong-\u03b4 reference (~2.6e-6 off).",
   "producer": "chi-q-atomic-binding-lossless",
   "convention": "bring_color_weighted-averaged-crossings",
   "precision": "mpfr-50dps-rust-binding-atomic",
@@ -959,5 +959,8 @@
       "y_lambda": "0.0",
       "contribution": "0.0"
     }
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1323,6 +1323,21 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.146Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read (76 words). No denials."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1342,6 +1357,21 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.197Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1361,6 +1391,21 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.273Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1380,6 +1425,22 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.374Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The stated count is five and the text delivers five (height-6 finite-type enumeration, Demazure sub-crystal predicate, Kazhdan-Lusztig functor, Bloch group formal quotient, 5-term pentagon identity) — I counted them against the claim.",
+        "notes": "Cosmetic: trailing whitespace after '...5-term pentagon identity. '."
       }
     ],
     "trap-closing-aphorism": [
@@ -1399,6 +1460,21 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.474Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on an honest conditional ('allowing the mass-tower derivation to proceed conditionally')."
       }
     ],
     "trap-meta-commentary": [
@@ -1418,6 +1494,21 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.570Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1437,6 +1528,21 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.666Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1456,6 +1562,21 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.752Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1475,6 +1596,23 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.851Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The current scaffolding SUCCESSFULLY isolates them' — 'successfully' adds nothing a reader can check and upgrades a structural statement into an achievement claim. This is the de-hedging intensifier pattern; the sentence is strictly stronger without it, because isolation either holds or does not.",
+        "notes": "Proposed: 'The current scaffolding isolates them, allowing the mass-tower derivation to proceed conditionally.' Not applied inline only because the same paragraph's 'demand substantial upstream formalisation' may also be a substituted intensifier; suggest one pass over both."
       }
     ],
     "trap-nonspeakable": [
@@ -1494,6 +1632,22 @@
         "reviewed_at": "2026-08-15T10:31:00.651Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "56fe36547391",
+          "ts": "019da012ae3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:47:35.935Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "Anti-laundering check: the block is honest that these are REQUIRED Mathlib extensions not yet available and that the derivation proceeds CONDITIONALLY, which is the correct disposition under the 'Axiomatization is NOT a Proof' rule."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1517,5 +1671,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:47:35.935Z"
 }

@@ -1807,6 +1807,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:26.762Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1826,6 +1842,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:26.803Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-em-dash": [
@@ -1845,6 +1877,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:26.842Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-triples": [
@@ -1864,6 +1912,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:26.882Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-closing-aphorism": [
@@ -1883,6 +1947,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:26.922Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-meta-commentary": [
@@ -1902,6 +1982,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:26.960Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1921,6 +2017,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.005Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-performed-warmth": [
@@ -1940,6 +2052,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.050Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-superlative": [
@@ -1959,6 +2087,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.093Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "trap-nonspeakable": [
@@ -1978,6 +2122,22 @@
         "reviewed_at": "2026-08-15T10:31:00.614Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "133e6de6d161",
+          "ts": "1ae3c0911ba0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:44:27.135Z",
+        "reviewed_sha": "87cd96a28f1d926a05587924c599c0b1f74ead01",
+        "evidence": "Definition block, read in full. All ten categories clean: the closing sentence is a cross-reference to the follow-on remark (documented false-positive class), and its em-dash pair is a true parenthetical whose three-item content enumerates the actual sections of that remark rather than a reflex triple. RIGOR CHECK: the pentagon as displayed, Phi_q(u)Phi_q(v) = Phi_q(v)Phi_q(uv)Phi_q(u) under uv = qvu, is the standard Faddeev-Volkov form with the factors in the correct order -- correct as written.",
+        "notes": "One precision note, not fixed (it is a mathematical characterisation, and it recurs in the follow-on remark so a fix belongs in both). 'This identity is the Yang-Baxter equation in exponential form' overstates a real but looser relationship: the quantum-dilogarithm pentagon is the 2-3 Pachner / associativity consistency condition, whereas the Yang-Baxter equation is the braiding consistency condition. They are connected but not the same equation, and the definite article plus 'is' asserts identity. Proposed softening: 'is the exponential-form counterpart of the Yang-Baxter consistency condition'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2001,5 +2161,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:44:27.135Z"
 }

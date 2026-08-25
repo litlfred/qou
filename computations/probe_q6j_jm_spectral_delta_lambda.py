@@ -25,6 +25,12 @@ refutation (expected-negative ⇒ CI-safe). Touches no production. Δ_λ open.
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import json
 import sys
 from pathlib import Path
@@ -33,8 +39,9 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 HERE = Path(__file__).parent
 
 M_E_MEV = mp.mpf("0.51099895069")

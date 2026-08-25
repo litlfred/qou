@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 68 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 68 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1080,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1114,23 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "The block narrates its own claim status instead of stating it: \"This proposition asserts no new physics. It clarifies the underlying mechanism: ...\" - and misnames its own kind (this is a rem: block, not a proposition).",
+        "notes": "FIX APPLIED: \"This proposition asserts no new physics. It clarifies the underlying mechanism: the mass formula\" -> \"The identification introduces no new physics. The mechanism is that the mass formula\"."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1150,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1184,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1218,21 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "evidence": "Full read (2 paragraphs)."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1252,23 @@
         "reviewed_at": "2026-08-15T10:31:00.642Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b0f81b534f1c",
+          "ts": "7f68b156e91a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:38:29.745Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Block-final noun chain: \"The identification governs the Pieri-shift dynamics of the Hecke photon and the spectral distribution of the archimedean remainder.\" Four stacked technical genitives, no verb between them.",
+        "notes": "proposed (not applied - the terms are load-bearing): split into two clauses naming what governs what."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1295,5 @@
     "md": "662263bcd302",
     "ts": "7f68b156e91a"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:38:29.745Z"
 }

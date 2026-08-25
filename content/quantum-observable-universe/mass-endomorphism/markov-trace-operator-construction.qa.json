@@ -1540,6 +1540,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.108Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Two paragraphs plus banner; no assertion-by-denial.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1559,6 +1575,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.153Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No pivot.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1578,6 +1610,23 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 176 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.197Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "\"The operator-algebra steps-the GNS state and the bicommutant closure-supply the per-n instances.\" An UNSPACED em-dash pair, which is why the spaced-dash scan missed it. The dashes are carrying an apposition that a comma pair would carry, and the sentence is the block's weakest: it says the open steps \"supply\" the instances, which is the opposite of the .ts author-note, where the GNS state and bicommutant closure are named as \"the substantive open R&D\".",
+        "notes": "STRUCTURAL - the sentence needs its claim reversed, not just its punctuation, so a punctuation-only fix would certify a wrong sentence. Proposed: \"The two operator-algebra steps, the GNS state and the bicommutant closure, are what remain open; they are what would supply the per-n instances.\""
       }
     ],
     "trap-triples": [
@@ -1597,6 +1646,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 176 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.241Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"in five stages: a per-n Hilbert representation, an inductive embedding, the inductive limit, the trace state, and the bicommutant closure\" - five announced, five listed, count verified.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1616,6 +1681,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.283Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Ends on the boilerplate archimedean banner.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1635,6 +1716,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.328Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"We realise it as a single operator ...\" is an ordinary construction move.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1654,6 +1751,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.371Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No closing restatement.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1673,6 +1786,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.416Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -1692,6 +1821,22 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.459Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No inflation; \"the unique faithful normal trace up to scaling\" is the standard II_1-factor fact, correctly qualified by \"up to scaling\".",
+        "notes": "Two items flagged for the coordinating session: (1) the block ends with the boilerplate \"**Archimedean specialisation.** What follows sits on the archimedean side ...\" and nothing follows - the third occurrence of this in the batch (also hecke-algebra-type-scaffold.md and hecke-branching-trace-decomposition.md), and here the wording differs slightly (\"we specialise only their archimedean realisation here\"), so the three copies have already drifted. (2) The block says tr_M is \"uniquely characterised by the M1-M4 axioms\", four axioms, while the sibling prop:markov-trace-axiomatic-closed-form states three (normalisation, Markov, cyclicity); the two blocks should agree on the count or say which fourth axiom is meant."
       }
     ],
     "trap-nonspeakable": [
@@ -1711,6 +1856,23 @@
         "reviewed_at": "2026-08-15T10:31:00.987Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bef7849ddb54",
+          "ts": "fc517e12135d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:28:56.502Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "\"the von Neumann inductive-limit hyperfinite II_1 factor\" stacks four modifiers before the head noun.",
+        "notes": "Single instance; below the fail threshold. Proposed if touched later: \"the hyperfinite II_1 factor arising as the von Neumann inductive limit\"."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1734,5 +1896,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:28:56.502Z"
 }

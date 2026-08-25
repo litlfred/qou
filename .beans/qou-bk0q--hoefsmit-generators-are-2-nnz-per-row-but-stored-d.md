@@ -1,10 +1,11 @@
 ---
 # qou-bk0q
 title: Hoefsmit generators are 2-nnz-per-row but stored DENSE — 5.2GB and O(dim^3) where O(dim^2) suffices
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-15T12:17:14Z
-updated_at: 2026-08-15T12:17:14Z
+updated_at: 2026-08-19T21:04:09Z
 ---
 
 
@@ -191,3 +192,20 @@ Two retractions on one claim, in opposite directions:
 The stable lesson is not about flops or bandwidth. It is that a performance
 claim is only valid over the range measured, and the range must bracket the
 case you actually care about. Both errors here came from reporting outside it.
+
+## CLOSED — the switch is live on main (verified 2026-08-19)
+
+`hoefsmit_numpy.py:82` carries `_STRUCTURED_DIM_THRESHOLD = 1200`, and
+`chi_numpy` routes above it. Merged in #5152.
+
+Measured payoff on the case that motivated the bean — He-4's dim-7700
+partition — via the completed `qou-9br4` run: He-4 fell 2533 s -> 734 s
+(3.5x) and the per-worker footprint 5.22 GB -> ~1 GB.
+
+Correctness as merged: rel_diff **exactly 0.0** below the threshold (the dense
+path is untouched) and **1.26e-16** at dim 1485, against the pre-switch dense
+reference across nine partitions.
+
+Left deliberately undone, and still true: the accumulator `M` remains dense
+(dim x dim). Computing the trace column-by-column would drop it to O(dim), but
+that is a larger change and nothing currently needs it.

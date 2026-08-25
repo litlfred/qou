@@ -70,8 +70,9 @@ import mpmath as mp  # noqa: E402
 mp.mp.dps = 65
 
 from witness_base import WitnessBuilder  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
-Q0_MP_PIN = "1.1099785955573347198997632204832250266562084087802"
+Q0_MP_PIN = Q_50_DIGIT_STR
 Q_BETA_CODATA_MEV = mp.mpf("0.78233")
 M_E_MEV = mp.mpf("0.51099895069")
 

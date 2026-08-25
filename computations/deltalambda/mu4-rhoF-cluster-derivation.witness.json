@@ -3,13 +3,13 @@
   "producer": "computations/deltalambda/mu4_rhoF_cluster_derivation_probe.py",
   "computation": "mu4-rhoF-cluster-derivation",
   "description": "\u0394_\u03bb residual simplex moments \u03bc\u2083=+0.4708, \u03bc\u2084=\u22124.591 tested against the DERIVED (0-fit, q\u2080-only) \u03c1_F cluster integrals. Decomposition \u03bc_k = s_k \u2212 g_k with g_k the DERIVED graded (q-factorial) simplex coeffs (g\u2082=1,g\u2083=0.342,g\u2084=8.371) and s_k the AME strong-binding simplex (targets). Derived \u03c1_F connected 3-body cluster c\u2083<0 (T \u22121.769, \u00b3He \u22121.405 MeV, H_9 joint trace); derived 4-body product-model beyond-pairwise content c\u2084<0. SIGN GATE: \u03bc\u2083>0 \u2260 c\u2083<0 (WALL, Lean-proved by productModel_3body_nonpos + markovParam_le_half: no pairwise interface product gives a positive 3-body cluster for any q>0); \u03bc\u2084<0 sign-consistent with c\u2084<0 but its magnitude is dominated by the DERIVED graded g\u2084=+8.37 subtraction, not an \u03c1_F cluster. FREE PARAMS: a single N>0 cannot map same-sign (c\u2083,c\u2084) to opposite-sign (\u03bc\u2083,\u03bc\u2084); no 0\u20131-param derivation lands both moments. VERDICT: WALL (split) \u2014 scope-(b) proved sign exclusion of the pairwise-product route for \u03bc\u2083; scope-(a) sign-consistent-but-not-derived for \u03bc\u2084. NOT infra-gated. Nothing wired.",
-  "timestamp": "2026-08-15T22:24:40.269556+00:00",
+  "timestamp": "2026-08-23T09:05:24.220449+00:00",
   "parameters": {
     "free_parameters": 0,
-    "q0": "1.109978582751380807591669095610768879874",
-    "z": "0.6126880371464652515958298639458992480263",
-    "h": "0.2090602987956393154308462131296749438597",
-    "E0_MeV": "4.185981363294475896945062158759008410144",
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "z": "0.6126880371464652515958298639458992480263083915450636084720514388801595",
+    "h": "0.2090602987956393154308462131296749438597574952630225625334090614760916",
+    "E0_MeV": "4.185981363294475896945062158759008410143486890879650999772224232747828",
     "note": "AME \u03c1_strong enters only as the \u03bc_k target; \u03c1_F clusters use q\u2080 + derived factors."
   },
   "results": {
@@ -33,16 +33,16 @@
       "note": "\u03bc\u2084<0 dominated by DERIVED graded g\u2084=+8.37 subtraction, not an \u03c1_F cluster."
     },
     "derived_rhoF_3body_cluster": {
-      "c3_T_MeV": "-1.7687755115760302",
-      "c3_3He_MeV": "-1.405424582279211",
-      "c3_mean_MeV": "-1.5871000469276206",
+      "c3_T_MeV": "-1.3723314283506187",
+      "c3_3He_MeV": "-1.0338362638975414",
+      "c3_mean_MeV": "-1.20308384612408005",
       "source": "three-body-joint-trace-a3.witness.json (H_9 joint trace, 0 fit)",
       "sign": "negative"
     },
     "derived_rhoF_4body_beyond_pairwise": {
-      "deficit_1_minus_prod_f": "0.9835102113267296512305534043375846414568",
-      "onebond_sum": "2.951052673508126436717559455713629343421",
-      "beyond_pairwise_c4": "-1.967542462181396785487006051376044701965",
+      "deficit_1_minus_prod_f": "0.983510211326729651230553404337584641456779973143778319591205322153678",
+      "onebond_sum": "2.951052673508126436717559455713629343421422136518686036767918551147318",
+      "beyond_pairwise_c4": "-1.96754246218139678548700605137604470196464216337490771717671322899364",
       "sign": "negative",
       "bonds": "K4 tetrahedron: pp, nn, pn\u00d74"
     },
@@ -65,5 +65,8 @@
       "anti_fit": "no normalization wired; \u03bc_k targets AME-side only; \u03c1_F clusters q\u2080-only, 0 fit."
     }
   },
-  "scriptCommitSha": "uncommitted"
+  "scriptCommitSha": "uncommitted",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

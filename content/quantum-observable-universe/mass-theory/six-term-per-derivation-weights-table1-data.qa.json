@@ -891,11 +891,182 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.336Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.380Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.422Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.465Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.509Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.553Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.597Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.640Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.684Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "faffe3545cb3",
+          "ts": "d1f718583619"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:50:59.727Z",
+        "reviewed_sha": "569eec5b979b3c1744344c5855d9a0fc34609009",
+        "evidence": "table( pure-data block: no prose to judge. Recomputation recorded in notes.",
+        "notes": "READ AND CHECKED. The six weight assignments are internally consistent with the parent formula and the proof's per-term reading: T_1 weighted by E_0,beta approx 0.7823 MeV (the free-neutron beta-decay Q, i.e. the CAL-2 proxy); T_2 and T_3 by alpha = m_e x 8G approx 3.7445 MeV; T_4 by m_e approx 0.5110 MeV; T_5 multiplicative on T_1 with E_0,beta; T_6 weight 1, already MeV. CATALAN IS CORRECT HERE: alpha = m_e x 8G with 8G = Vol(B_3) = 7.327724753, and the sibling proof states G approx 0.9160 = Catalan — in contrast to s4-s3-half-symmetric-projection-proof.md in this same batch, which calls Lambda(pi/4) = G/2 Catalan. RECOMPUTED alpha = m_e x 8G at 25 dps with CODATA m_e = 0.51099895069: 3.744459660, against the proof's hardcoded 3.74446989, high by 1.02e-5 or 2.73 ppm — the printed 3.7445 here rounds correctly either way. TWO ITEMS: (1) row T_3 carries a factor z^2 with z undefined anywhere in this block family and its convention unstated; convention D (z = q^3/(q^2+1) = 0.6126880371) is canonical and C (z = sqrt q/(q+1) = 0.4993203342) is excised, and z^2 differs by a factor 1.506 between them (0.37536 vs 0.24932). I cannot tell from the block which is meant and am reporting it as unstated rather than guessing. (2) Rows T_4 and T_6 assign weights to terms the sibling proof reports as inert — T_4's bound-free differential 'vanishes ... identically' and T_6 'currently returns 0 for A >= 5 atoms' — which the table does not indicate."
+      }
     ]
   },
   "source_hashes": {
     "md": "faffe3545cb3",
     "ts": "d1f718583619"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:50:59.727Z"
 }

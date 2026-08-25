@@ -13,7 +13,7 @@ Soften 'proved' to match the source's own hedge (p. 5), and re-mark the Table 3 
 - p. 8, Discussion — The second-order Weber–Fechner law is stated as a conjecture requiring further validation, not as a finding.
   Use here: The Table 3 '✓' in the Empirical status column must become 'conjectured by' / 'consistent with'.
 
-Source: `uploads/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf` (`bujack2022`)
+Source: `library/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-co/bujack-et-al-2022-the-non-riemannian-nature-of-perceptual-color-space.pdf` (`bujack2022`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

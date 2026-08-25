@@ -1558,6 +1558,21 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.338Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Full read of the two-sentence definition plus cases display; no assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1577,6 +1592,21 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.373Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1596,6 +1626,21 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.406Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1615,6 +1660,22 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 50 words)"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.440Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "The three cases (i=j, ",
+        "notes": "i-j|=1, |i-j|>=2) are an exhaustive partition of generator pairs, forced by the braid relations.|"
       }
     ],
     "trap-closing-aphorism": [
@@ -1634,6 +1695,21 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.475Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Final sentence states what F measures; not a quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1653,6 +1729,21 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.510Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1672,6 +1763,21 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.546Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Definition block; the closing sentence adds the extension rule rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1691,6 +1797,21 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.580Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1710,6 +1831,23 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.615Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "minor",
+        "evidence": "\"It **explicitly** measures the failure of commutativity and normal-form flatness\" — \"explicitly\" carries no content here (the map is defined by an explicit formula two lines above, and the verb is already \"measures\"); it is a bare intensifier of the de-hedging class.",
+        "notes": "FIXED inline: \"It explicitly measures the failure of commutativity\" -> \"It measures the failure of commutativity\". One word, pure prose, no meaning change. $$ delimiters re-verified balanced."
       }
     ],
     "trap-nonspeakable": [
@@ -1729,6 +1867,23 @@
         "reviewed_at": "2026-08-15T10:31:00.638Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "367bec9d57d6",
+          "ts": "7e29c8a38db4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:13:39.649Z",
+        "reviewed_sha": "46a559af0035410e71ef14d8b2ee0cb454bfb92a",
+        "severity": "minor",
+        "evidence": "\"the 2-form-valued bilinear map F in C^2(H_n(R,q), H_n(R,q)) defined on generator pairs by the deviation from Hecke and Yang-Baxter flat relations\" is noun-heavy but parses aloud in one breath group.",
+        "notes": "Separate (non-trap) findings: (1) taken literally the definition is identically zero — F is declared on H_n(R,q) itself, where the braid far-commutation relation makes [sigma_i, sigma_j] = 0 for |i-j| >= 2 and the Hecke quadratic relation makes any \"deviation from the Hecke relation\" R_H(i) = 0. A non-vanishing curvature needs F defined on the free/tensor algebra before the relations are imposed; the block should say so. (2) R_H(i) and R_YB(i) are used but never defined here and uses[] is empty. (3) The name asserts a Hochschild 2-COCYCLE but no cocycle condition (dF = 0) is stated or cited."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1752,5 +1907,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:13:39.649Z"
 }

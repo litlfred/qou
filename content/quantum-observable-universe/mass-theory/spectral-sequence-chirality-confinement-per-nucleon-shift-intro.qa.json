@@ -1385,6 +1385,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.532Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No assert-by-denying constructions in the four-sentence preamble."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1419,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.576Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "A roadmap; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1453,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 44 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.619Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1487,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 44 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.668Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Four items, not a padded three, and each names a distinct sub-part."
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1521,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.710Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "'Finally, it outlines ...' is the last roadmap item, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1555,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.751Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "All four sentences take the document as subject (This sub-section consolidates / The sequence validates / It empirically verifies / Finally, it outlines). Signposting what a section will do is legitimate in a preamble and is not the narrated-emphasis trap, but the register is uniformly self-referential and a reader gets no content until the sub-section itself."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1589,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.795Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "Four distinct items, no echo."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1623,21 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.837Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1657,23 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.878Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "'It EMPIRICALLY VERIFIES the LP-duality hypothesis class on compound braids.' LP duality is a theorem, not a hypothesis class awaiting empirical verification, and the preamble cites no compute, no witness and no block for the claim. 'strict confinement-NF structural rules' and 'the EXACT NF-structure forcing rules' likewise assert strictness and exactness with nothing behind them at this point in the text.",
+        "notes": "PROPOSED: name the block or witness each clause refers to, or soften to what the sub-section actually contains."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1693,23 @@
         "reviewed_at": "2026-08-15T10:31:00.682Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5cc5a77fe68e",
+          "ts": "5dcbdade0d9d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:58:04.923Z",
+        "reviewed_sha": "9de063b2d63b23fc1fb37b1bc1ce9d7c07a9fed0",
+        "severity": "minor",
+        "evidence": "Two stacked noun chains in four sentences: 'strict confinement-NF structural rules', and 'the exact NF-structure forcing rules required for downstream normal-form evaluations' — nine words of stacked modifiers that abbreviates normal form to NF and then spells it out in the same sentence.",
+        "notes": "NOT FIXED INLINE: repairing this requires knowing what 'NF-structure forcing rules' names, which the preamble does not say. PROPOSED: 'the rules that force the normal-form structure, which the downstream evaluations require', and use one spelling of normal form throughout."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1732,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:58:04.923Z"
 }

@@ -1963,6 +1963,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.371Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1982,6 +1997,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.408Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-em-dash": [
@@ -2001,6 +2031,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.444Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No em-dashes."
       }
     ],
     "trap-triples": [
@@ -2020,6 +2065,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 86 words)"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.480Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "No triples."
       }
     ],
     "trap-closing-aphorism": [
@@ -2039,6 +2099,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.516Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Ends on a claim about generality (recorded under trap-superlative)."
       }
     ],
     "trap-meta-commentary": [
@@ -2058,6 +2133,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.555Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -2077,6 +2167,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.596Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "The closing paragraph adds the no-branching and per-step claims."
       }
     ],
     "trap-performed-warmth": [
@@ -2096,6 +2201,21 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.632Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "None."
       }
     ],
     "trap-superlative": [
@@ -2115,6 +2235,23 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.669Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "major",
+        "evidence": "Four absolutes in three sentences - \"bypasses special-case branching **entirely**\", \"an **independent** energy increment\", \"extracts the **precise** binding energy\", \"**identical** algebraic mechanisms across **all** values of A\" - and the companion table refutes the precision claim outright. From tbl:unified-iterative-correction-table-data: the deuteron comes out at B_unif = -16.45 MeV against B_AME = +2.224, i.e. the unified path returns a NEGATIVE binding for the one nucleus whose experimental value is best known; He-4 gives 16.67 against 28.30 (-41%); Pb-208 gives 2592 against 1636 (+58%). I checked the reference column independently and it is correct - 2.224, 28.30, 105.7, 160.7, 236.5, 342.1 and 1636 MeV are the AME binding energies - and the dedicated path in the same table reproduces them to better than 0.5%. So it is specifically the unified path that misses, and \"extracts the precise binding energy ... across all values of A\" is the block's own table's counterexample. SEPARATE DEFECT: the displayed formula weights by u_lambda, \"its Frobenius positivity LP shadow price\", but the algorithm in the proof block computes DeltaB_lambda with y_lambda, defined there as w_lambda/d_lambda - 1/[k]_q!. The AGENTS notation register is explicit that y_lambda, w_lambda and the shadow price are distinct objects at q != 1, so the statement and the algorithm are not weighting by the same quantity.",
+        "notes": "Reported, not edited. Route: state the accuracy the unified path actually achieves rather than \"precise\", and say which nuclei it is claimed for; reconcile u_lambda against the algorithm's y_lambda."
       }
     ],
     "trap-nonspeakable": [
@@ -2134,6 +2271,22 @@
         "reviewed_at": "2026-08-15T10:31:00.533Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "12cc063d6d58",
+          "ts": "eac9bc5cd5cb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:07.707Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "\"The total unified correction sums these strictly over all $\\lambda$\" - \"strictly\" modifies nothing here."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2157,5 +2310,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:07.707Z"
 }

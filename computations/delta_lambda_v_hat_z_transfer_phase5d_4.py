@@ -50,6 +50,8 @@ import mpmath as mp
 
 from witness_base import WitnessBuilder
 from mass_at_3A_proper import per_generator_V_hat_3A
+from _precision import set_compute_dps  # noqa: E402
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
 
 
 # (Z, N, label, expected_interface_generators) — interface gens are at
@@ -63,7 +65,7 @@ ATOMS = [
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     builder = WitnessBuilder("v-hat-z-transfer-phase5d-4")
     builder.set_description(
         "Phase 5d.4: probe whether the Phase 5c.1 z-exactness finding "
@@ -88,10 +90,19 @@ def main() -> int:
     # 2026-08-08): two layers meeting inside one quantity, invisible because
     # each half is individually reasonable. Take q_0 from the same place the
     # V̂ side takes it, so the pair is single-layer by construction.
-    from q_parameter import Q as _Q_RUNTIME  # noqa: E402
-    q = mp.mpf(str(_Q_RUNTIME))
+    from q_parameter import Q_MP as _Q_RUNTIME  # noqa: E402
+    # Q_MP, not mpf(str(Q)): the f64 constant carries ~16 significant digits,
+    # so mpf(str(...)) LAUNDERS it — the value looks 50-digit and is accurate
+    # to 16. Read the high-precision name instead.
+    q = _Q_RUNTIME
     q_inv = mp.mpf(1) / q
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(q_inv))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + sqrt(1/q)), excised.
+    # Routed through the canonical helper rather than respelled inline: an
+    # inline copy is a second definition that a future convention audit has to
+    # find by its SHAPE, and shape-keyed detectors are exactly what missed the
+    # value-literal and return-form C sites on this branch.
+    z = markov_z(q)
     h = q - q_inv
     builder.add_parameter("q_0", str(q))
     builder.add_parameter("h", str(h))
@@ -174,9 +185,14 @@ def main() -> int:
 
     builder.add_assertion(
         "interface_v_hat_flavor_selective_rule",
-        computed=float(flavor_rule_passes),
-        expected=float(flavor_rule_total),
-        tolerance=0.0,
+        # Counts, so they are int -- not float64. `float()` here was
+        # gratuitous and put three raw float64 fields into the witness
+        # (.computed/.expected/.tolerance) that the raw-float64 gate flags.
+        # Fixed at the producer; this file was never in raw-float64-baseline.json
+        # and is not being added to it.
+        computed=flavor_rule_passes,
+        expected=flavor_rule_total,
+        tolerance=0,
         unit="count",
         source=(
             "Interface generator V̂_FULL ∈ {0, +h/2, -h/2}. "

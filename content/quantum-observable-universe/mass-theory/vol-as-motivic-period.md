@@ -21,4 +21,4 @@ $$
 The volume $\mathrm{Vol}(K)$ is the $K$-theoretic image of an algebraic class under a transcendental regulator.
 
 **QOU placement.**
-The archimedean realization functor factorizes identically across three pictures: adelic projection ($\pi_\infty \circ \tau$), Euler-characteristic integration ($\pi_\infty \circ \chi_{\mathrm{top}}$), and Bloch-Wigner regulation ($r_\infty$). These pictures agree entirely on the algebraic quantum volume domain. Each formalizes a distinct aspect: adelic ensures categorical compatibility, Euler-characteristic handles blow-up calculus, and Bloch-Wigner bridges to quantum topology literature.
+The archimedean realization functor factorizes across three pictures: adelic projection ($\pi_\infty \circ \tau$), Euler-characteristic integration ($\pi_\infty \circ \chi_{\mathrm{top}}$), and Bloch-Wigner regulation ($r_\infty$). These pictures agree on the algebraic quantum volume domain. Each formalizes a distinct aspect: adelic ensures categorical compatibility, Euler-characteristic handles blow-up calculus, and Bloch-Wigner bridges to quantum topology literature.

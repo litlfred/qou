@@ -1193,6 +1193,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not equality.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:50.630Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Two contrast constructions, both substantive: 'a *containment* of supports, not equality' (a real scope limitation, matching the displayed $\\subseteq$) and 'it tracks how $\\gamma$ moves the Wedderburn support without itself contributing to the archimedean volume' (the actual relation to lem:degree-one-braid-trivial-volume)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1212,6 +1228,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:50.730Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Four numbered proof steps plus Scope and Relation notes; every paragraph advances the argument, none is a setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1231,6 +1262,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 533 words)"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:50.815Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "One spaced em-dash pair, a true parenthetical apposition: 'The quantum Clebsch-Gordan rule for SU_q(2) at generic q -- the one-box case of the Pieri rule -- decomposes'. Not load-bearing, and density is one pair in a ~700-word proof."
       }
     ],
     "trap-triples": [
@@ -1250,6 +1296,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 533 words)"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:50.870Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No rhetorical triple. 'Combining Steps 1-3' is a reference to the actual step count."
       }
     ],
     "trap-closing-aphorism": [
@@ -1269,6 +1330,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:50.920Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on a technical comparison with the volume-vanishing lemma, not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1288,6 +1364,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:50.967Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'we do not compute them here' is a factual scope statement about the 6j-symbols, not narrated emphasis. 'Support convention.' and 'Scope.' are structural headers."
       }
     ],
     "trap-thesis-restatement": [
@@ -1307,6 +1398,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:51.102Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'which is the claimed containment' before the QED box is standard proof bookkeeping; the two sections after it add scope and cross-reference rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1326,6 +1432,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:51.179Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1345,6 +1466,21 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:51.236Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'exactly one crossing', 'multiplicity one', 'a fortiori' all have definite technical referents; no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1364,6 +1500,22 @@
         "reviewed_at": "2026-08-15T10:31:00.719Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "833d44184533",
+          "ts": "d8736bdae3bd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:58:51.318Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Dense but speakable; the longest nominal chain ('matrix elements of the basis change between the seminormal basis and the inclusion basis') is a parenthetical gloss of 6j-symbols and is standard usage."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1386,5 +1538,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:58:51.318Z"
 }

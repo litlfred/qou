@@ -22,7 +22,7 @@ The $q$-deformed phase difference is
 $$
   \Delta\Phi_q(y)
   =  \Phi_q^{(1)}(y) - \Phi_q^{(2)}(y)
-  =  q^{-1}\frac{2\pid\sin\theta}{\lambda}
+  =  q^{-1}\frac{2\pi d\sin\theta}{\lambda}
         +  (1 - q^{-1})\Delta\phi_\xi(y).
 $$
 

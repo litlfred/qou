@@ -200,18 +200,25 @@ theorem degLexNat_right_compat (a b d : List ℕ) (h : degLexNat a b) :
 
 /-! ### Ordering extends through the jet tower -/
 
-/-- **Compatibility lemma**: when a deg-lex comparison has already
-    been established for two descended monomials, it is preserved
-    unchanged by the jet embedding (which maps level-`n` generators
-    to the first `numGens` indices at level `n+1`).
+/-- **Jet-embedding order compatibility.** The jet embedding sends each
+    level-`n` generator to the *same* index among the first `numGens`
+    indices at level `n+1`, so a **descended** monomial's ℕ-valued index
+    list is left unchanged by the embedding `φ` (`φ a = a`). A deg-lex
+    comparison of two descended monomials therefore carries over verbatim
+    to their images.
 
-    The substantive content is that the embedding is order-preserving;
-    this lemma records the formal consequence for reuse at call sites.
+    Stated with the embedding `φ` and its fixed-point property on descended
+    monomials (`φ a = a`, `φ b = b`) as explicit hypotheses, and the
+    preserved comparison **derived** by rewriting — not the old
+    self-assuming `(hab : degLexNat a b) : degLexNat a b := hab`, which
+    named the embedding nowhere and asserted nothing about it.
 
     Reference: [manuscript] §3/ordering-jet-compatibility. -/
 -- Ref: [bergman1978] Bergman, "The diamond lemma for ring theory," Adv. Math. 29 (1978)
-theorem ordering_extends (a b : List ℕ) (hab : degLexNat a b) :
-    degLexNat a b := hab
+theorem ordering_extends {φ : List ℕ → List ℕ} {a b : List ℕ}
+    (hφa : φ a = a) (hφb : φ b = b) (hab : degLexNat a b) :
+    degLexNat (φ a) (φ b) := by
+  rw [hφa, hφb]; exact hab
 
 /-- **Well-foundedness at each level**: within the alphabet
     `{0, …, n-1}`, deg-lex has no infinite descending chains. -/

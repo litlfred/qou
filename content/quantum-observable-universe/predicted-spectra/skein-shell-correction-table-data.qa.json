@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:24.915Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:24.953Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:24.993Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.031Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.069Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.109Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.149Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.188Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.226Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "675412294705",
+          "ts": "6ff759360bf9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.266Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Extracted data table; no prose sentences, so the ten constructions have no surface to appear on. Judged on the cell text and column headers. Every alpha-cluster decomposition checks: 4x(2,2)=16O, 10x=40Ca, 10x+8n=48Ca, 14x=56Ni, 25x=100Sn, 25x+32n=132Sn, 41x+44n=208Pb (82+126=208). All eight rows arithmetically correct."
+      }
     ]
   },
   "source_hashes": {
     "md": "675412294705",
     "ts": "6ff759360bf9"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:25.266Z"
 }

@@ -92,6 +92,52 @@ theorem barEven_fullBar_forces_classical (q qi z zbar : R) (hqi : q * qi = 1)
     (heven : zbar = z) (hfull : zbar = z - (q - qi)) : q ^ 2 = 1 := by
   linear_combination hqi + q * hfull - q * heven
 
+/-! ## §1b. The ladder eigenphase inherits the parameter's bar parity
+
+The Q_β precision ladder's `N = 1` factor is `cos(α − b·ℏ_q²/2)` with the
+single-wrap eigenphase `α = (z − 1)·h/2`
+(`QOU.BraidKnot.QBetaCategoricalPrecisionLadder.alpha`).  Every bar-parity
+statement in the `c_k` record — (H1) `c₃^even = −Vol(4₁)`, the `S_leak`
+program, `q*_S`, the KC13 prune — rests downstream of
+`eigenphase_bar_involution`, i.e. on `α` being bar-ODD.
+
+The two results below say that bar-oddness of `α` is *exactly* bar-evenness of
+`z`, and compute the defect when it fails.  They are stated in the doubled
+variable `2α = (z − 1)·h` so they stay division-free over any `CommRing`.
+
+Consequence for the convention ruling (bean `qou-cds1`).  `z_C` is bar-even
+(`ZBarParity.z_bar_invariant`), so `α` is bar-odd and
+`eigenphase_bar_involution` holds — **as a convention-C statement**.  `z_D`
+satisfies the full-bar condition instead (`zD_full_bar_covariant`), so under
+convention D the eigenphase is *not* bar-odd: its defect is exactly `h²`, i.e.
+`h²/2` on the undoubled `α`.  This is a structural reason the C→D move cannot
+be a z-substitution: swapping `z` into the C-frame `α` keeps the formula while
+breaking the bar parity the formula's downstream consumers assume. -/
+
+/-- **Bar-even parameter ⟹ bar-ODD eigenphase.**  With `bar(h) = −h` (immediate
+from `h = q − q⁻¹`), a bar-even `z` makes `2α = (z−1)h` bar-odd:
+`bar(2α) + 2α = 0`.  This is the convention-C case, and it is the hypothesis
+`eigenphase_bar_involution` encodes. -/
+theorem eigenphase_barOdd_of_barEven (hk z zbar hbar : R)
+    (heven : zbar = z) (hh : hbar = -hk) :
+    (zbar - 1) * hbar + (z - 1) * hk = 0 := by
+  subst heven; subst hh; ring
+
+/-- **Full-bar parameter ⟹ eigenphase bar defect exactly `h²`.**  If instead
+`bar(z) = z − h` (the full-bar condition, which `z_D` satisfies and a bar-even
+`z` cannot away from `q² = 1` — `barEven_fullBar_forces_classical`), then
+`bar(2α) + 2α = h²` rather than `0`.
+
+So the failure is not a perturbation to be estimated: it is an exact,
+`z`-independent remainder.  Every parameter satisfying the full-bar condition
+has the SAME defect, so no choice within that family restores bar-oddness. The
+bar-odd projection of the D-frame eigenphase is therefore `α − h²/4`
+(undoubled), which is a derived correction carrying no free parameter. -/
+theorem eigenphase_bar_defect_of_fullBar (hk z zbar hbar : R)
+    (hfull : zbar = z - hk) (hh : hbar = -hk) :
+    (zbar - 1) * hbar + (z - 1) * hk = hk ^ 2 := by
+  subst hfull; subst hh; ring
+
 section Ordered
 
 variable {F : Type*} [Field F] [LinearOrder F] [IsStrictOrderedRing F]

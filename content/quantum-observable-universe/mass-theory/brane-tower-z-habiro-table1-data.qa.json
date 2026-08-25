@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:52.762Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:52.798Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:52.835Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:52.870Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:52.905Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:52.940Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:52.974Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.007Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.041Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d0b1864fdead",
+          "ts": "f9b341b8f153"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:06:53.077Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Pure extracted data table (kind=table, 4 data rows, no prose sentences); read in full. No trap construction of this category present. Em-dashes are empty-cell placeholders, not sentence connectors."
+      }
     ]
   },
   "source_hashes": {
     "md": "d0b1864fdead",
     "ts": "f9b341b8f153"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:06:53.077Z"
 }

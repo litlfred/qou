@@ -1563,6 +1563,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.119Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). no assertion-by-denial; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1582,6 +1598,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.156Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). no setup-then-reframe construction; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-em-dash": [
@@ -1601,6 +1633,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.193Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). em-dash count 0 in the block; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-triples": [
@@ -1620,6 +1668,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.230Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). no reflex three-item list; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-closing-aphorism": [
@@ -1639,6 +1703,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.268Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). final sentence is substantive, not a quotable placed for closure; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-meta-commentary": [
@@ -1658,6 +1738,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.306Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). no narration of the author's own emphasis; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-thesis-restatement": [
@@ -1677,6 +1773,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.345Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). no block-final restatement of what the text established; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-performed-warmth": [
@@ -1696,6 +1808,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.383Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). no personal or institutional-warmth register; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-superlative": [
@@ -1715,6 +1843,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.423Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). no unqualified maximum-strength claim; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "trap-nonspeakable": [
@@ -1734,6 +1878,22 @@
         "reviewed_at": "2026-08-15T10:30:59.854Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "eb17cf114837",
+          "ts": "b041b9ade3b6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:n01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:02:35.463Z",
+        "reviewed_sha": "e6d36f212c78a12543a1351d1db4ce025309166b",
+        "evidence": "Full-context read of the block (definition, one sentence with :defterm). reads aloud without stalling; definition, one sentence with :defterm.",
+        "notes": "clean"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1757,5 +1917,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:02:35.463Z"
 }

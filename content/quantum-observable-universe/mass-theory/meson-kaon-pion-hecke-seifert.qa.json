@@ -1772,6 +1772,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.397Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read (60 words). No denials."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1791,6 +1806,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.491Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No pivot."
       }
     ],
     "trap-em-dash": [
@@ -1810,6 +1840,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.583Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-triples": [
@@ -1829,6 +1874,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.658Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'exactly three inputs' is delivered as three named items, but see trap-superlative on what the third one is."
       }
     ],
     "trap-closing-aphorism": [
@@ -1848,6 +1908,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.755Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on the ppm figure."
       }
     ],
     "trap-meta-commentary": [
@@ -1867,6 +1942,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.843Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-thesis-restatement": [
@@ -1886,6 +1976,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.922Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "None."
       }
     ],
     "trap-performed-warmth": [
@@ -1905,6 +2010,21 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:41.999Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1924,6 +2044,23 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:42.075Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'The EXACT ALGEBRAIC EVALUATION matches the experimental ratio to 290 ppm' misuses 'exact': the evaluation is exact, the MATCH is not — a 290 ppm residual. As phrased a reader takes away exactness. Compounding it, 'The ratio requires exactly three inputs' counts among those inputs 'the two-body composition exponent 2', which the block's own proof sibling states plainly is NOT derived from the substrate and was selected by scanning exponents 1, 2, 3 against the PDG residual. An empirically selected exponent is a fitted parameter, not an input on a par with a character value and a volume ratio.",
+        "notes": "Proposed: 'The algebraic evaluation reproduces the experimental ratio to 290 ppm' and either drop the exponent from the input count or label it 'one empirically selected exponent'. Structural because it changes what the proposition claims to require."
       }
     ],
     "trap-nonspeakable": [
@@ -1943,6 +2080,22 @@
         "reviewed_at": "2026-08-15T10:31:00.689Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "55d3aeadcc27",
+          "ts": "63f5f494967d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:51:42.143Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Speakable.",
+        "notes": "NUMERICS VERIFIED EXACT (30 dps, proton pin q0 = 1.1099785827513808). chi^{(2,1)}(sigma_1^5) = q^5 - q^{-5} = 1.091387013 (block: 1.0914); (9/5)^2 = 3.24; product = 3.536093922 (block: 3.536, 3.5361); PDG m_K+-/m_pi+- = 493.677/139.57039 = 3.537118439; residual -289.65 ppm (block: 290 ppm). Every figure reproduces. L2 CROSS-CHECK, the finding worth escalating: m_K/m_pi is the framework's ONE scoreable observable meeting the L2 100x target, and computations/per-observable-100x-status.witness.json records that row at err_ppb = 23.45 against sigma_exp_ppb = 2.636e4 (= 26.36 ppm, which matches my own PDG-uncertainty estimate of 26.3 ppm). But THIS block's derivation lands at 289.65 ppm = 289,650 ppb — about 12,350x larger than the error the dashboard scores, and about 11x LARGER than the experimental uncertainty rather than 100x smaller. So the paper's published m_K/m_pi derivation is not the one that passes L2. Either a different route supplies the 23.45 ppb number and this chapter should say so, or the dashboard row and this block disagree. Given this is the single L2 success in the corpus, the provenance should be explicit."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1966,5 +2119,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:51:42.143Z"
 }

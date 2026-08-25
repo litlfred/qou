@@ -1345,6 +1345,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:14.912Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1364,6 +1379,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:14.952Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-em-dash": [
@@ -1383,6 +1413,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:14.992Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-triples": [
@@ -1402,6 +1447,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 75 words)"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:15.036Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-closing-aphorism": [
@@ -1421,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:15.075Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-meta-commentary": [
@@ -1440,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:15.116Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-thesis-restatement": [
@@ -1459,6 +1549,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:15.156Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-performed-warmth": [
@@ -1478,6 +1583,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:15.195Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-superlative": [
@@ -1497,6 +1617,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:15.234Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "trap-nonspeakable": [
@@ -1516,6 +1651,21 @@
         "reviewed_at": "2026-08-15T10:31:01.286Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "43556d6b2c6f",
+          "ts": "ed54886103d0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:21:15.273Z",
+        "reviewed_sha": "a8cbc58579f08771f7e9101d10bd125cd2437f9d",
+        "evidence": "Full read: single-paragraph proof. Sentences are stepwise ('is a concrete element', 'reduces via Groebner-Shirshov', 'LP-dual feasibility verifies'), closing 'Consequently ... exists as a well-defined, LP-stable element' is the QED conclusion, not a thesis restatement. No dashes beyond the Groebner--Shirshov name en-dash."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1538,5 +1688,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:21:15.273Z"
 }

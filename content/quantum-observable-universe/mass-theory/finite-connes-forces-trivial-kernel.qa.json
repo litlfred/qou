@@ -1180,6 +1180,23 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.427Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "severity": "major",
+        "evidence": "Finiteness of the distance is NOT SOMETHING ONE MAY HOPE FOR AND THEN CHECK; it is equivalent to the seminorm having no separating kernel. The mathematical content is the equivalence in the second clause; the first asserts it by denying a straw alternative that nobody proposed. Not the substantive-contrast false positive - hoping-and-checking is not a mathematical alternative to an equivalence.",
+        "notes": "STRUCTURAL - not fixed inline; the sentence carries the paragraph. Proposed: Finiteness of the distance is equivalent to the seminorm having no separating kernel, so a construction that wants a finite distance must arrange the kernel away first (absorbing the following sentence). Two other negations in the block are FALSE POSITIVES and should be kept: established by the branching identity RATHER THAN assumed here (epistemic scoping), and the distance one recovers is NOT a Reeb step count at finite q (scope statement with cross-reference)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1199,6 +1216,21 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.461Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "The setup-then-reframe shape occurs only in the not-something-one-may-hope-for sentence, recorded once under trap-negation-contrast; elsewhere the block argues rather than reframes."
       }
     ],
     "trap-em-dash": [
@@ -1218,6 +1250,21 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 294 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.494Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Three em-dash uses, all paired parentheticals or appositives (the statement gloss for every k with L(k)=0, and no trace value moves because the deleted block already contributed zero). Heavy but not substituting for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1237,6 +1284,22 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 294 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.565Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Two qualifications travel with the repair is accurate: exactly two follow. No reflex three anywhere.",
+        "notes": "RIGOR: VERIFIED CORRECT. The kernel is the radical of the PAIRING is the right reading - H_n(q) is semisimple at generic q so its Jacobson radical is zero and only the Markov-Gram form radical can be meant - and the quotient by that radical is indeed TL_n(q): the surviving blocks are exactly the lambda with y_lambda > 0, i.e. at most two rows, which is the Temperley-Lieb quotient with its Catalan dimension. The positivity claim on the quotient follows. No numeral, no q0 pin, no absolute-mass claim in the block."
       }
     ],
     "trap-closing-aphorism": [
@@ -1256,6 +1319,21 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.251Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Full read of cor:finite-connes-forces-trivial-kernel (contrapositive statement, the instruction framing, Markov-Gram radical as TL ideal, positivity on the quotient, two qualifications). No construction of this category present."
       }
     ],
     "trap-meta-commentary": [
@@ -1275,6 +1353,23 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.529Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "severity": "major",
+        "evidence": "This is the contrapositive of the obstruction, and IT IS WORTH STATING SEPARATELY BECAUSE it converts a negative result into an instruction. The author narrates why the block exists instead of letting the corollary stand. Same move in: What makes this a restatement rather than an amputation is the identification of the quotient.",
+        "notes": "STRUCTURAL. Proposed: open with the mathematics - The contrapositive converts the obstruction into a construction requirement: a construction that wants a finite distance must arrange the kernel away first. And for the second: The quotient is not an amputation - the radical is the Temperley-Lieb ideal, and H_n(q)/rad is TL_n(q) - stating the identification rather than narrating its significance."
       }
     ],
     "trap-thesis-restatement": [
@@ -1294,6 +1389,21 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.288Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Full read of cor:finite-connes-forces-trivial-kernel (contrapositive statement, the instruction framing, Markov-Gram radical as TL ideal, positivity on the quotient, two qualifications). No construction of this category present."
       }
     ],
     "trap-performed-warmth": [
@@ -1313,6 +1423,21 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.326Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Full read of cor:finite-connes-forces-trivial-kernel (contrapositive statement, the instruction framing, Markov-Gram radical as TL ideal, positivity on the quotient, two qualifications). No construction of this category present."
       }
     ],
     "trap-superlative": [
@@ -1332,6 +1457,21 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.359Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Full read of cor:finite-connes-forces-trivial-kernel (contrapositive statement, the instruction framing, Markov-Gram radical as TL ideal, positivity on the quotient, two qualifications). No construction of this category present."
       }
     ],
     "trap-nonspeakable": [
@@ -1351,6 +1491,21 @@
         "reviewed_at": "2026-08-15T10:31:00.750Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8e7543fbc24a",
+          "ts": "a9ffec60960b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:07:12.393Z",
+        "reviewed_sha": "e41d7e8c33537b30d03a1466313c7f48439c96dd",
+        "evidence": "Full read of cor:finite-connes-forces-trivial-kernel (contrapositive statement, the instruction framing, Markov-Gram radical as TL ideal, positivity on the quotient, two qualifications). No construction of this category present."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1374,5 +1529,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:07:12.565Z"
 }

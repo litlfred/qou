@@ -1195,6 +1195,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.262Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1230,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.302Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 13 words)"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.341Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 13 words)"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.380Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.420Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.460Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1405,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.502Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1440,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.566Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1475,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.615Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:30:59.848Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "41293cc7a0b7",
+          "ts": "051f4946f610"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:05:17.658Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read of the one-sentence section prose. None of the ten constructions present.",
+        "notes": "Separate flags (not traps): (1) the .ts title is 'Integral notation and the Frobenius form' but the block introduces no integral notation at all - it states only the isomorphism A -> A-dual. (2) 'directly provides' is an intensifier doing no work; 'provides' suffices."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:05:17.658Z"
 }

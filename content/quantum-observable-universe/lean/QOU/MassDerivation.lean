@@ -161,7 +161,7 @@ lemma sqrt_substrate_q_bracket :
 
 /-- The muon-electron mass ratio is approximately 206.7683. -/
 lemma mu_e_ratio_approx :
-    |experimental_mu_e_ratio - 206.7683| < 1e-4 := by
+    |experimental_mu_e_ratio - 206.7683| < 1e-4 := by  -- noqa: P31 - deliberate 7-digit round; the 1e-4 tolerance is 300x the edition delta
   -- Ref: [codata2022] https://physics.nist.gov/cgi-bin/cuu/Value?mmusme — NIST muon-electron mass ratio
   unfold experimental_mu_e_ratio
   norm_num

@@ -1203,6 +1203,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.129Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 188-word proof (q-holonomic -> P-recursive, confluent tau limit); all ten categories judged in context."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1222,6 +1238,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.164Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 188-word proof (q-holonomic -> P-recursive, confluent tau limit); all ten categories judged in context."
       }
     ],
     "trap-em-dash": [
@@ -1241,6 +1273,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 187 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.199Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Two spaced dashes, both true appositives ('it fixes every term -- and hence the growth law -- from the first d terms'; 'on the realised G-hat -- the Dirac-type equation'). No dash substitutes for sentence structure."
       }
     ],
     "trap-triples": [
@@ -1260,6 +1308,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 187 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.234Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 188-word proof (q-holonomic -> P-recursive, confluent tau limit); all ten categories judged in context."
       }
     ],
     "trap-closing-aphorism": [
@@ -1279,6 +1343,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.270Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Closes on the Lean-witness bookkeeping sentence plus QED box; no quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1298,6 +1378,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.303Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 188-word proof (q-holonomic -> P-recursive, confluent tau limit); all ten categories judged in context."
       }
     ],
     "trap-thesis-restatement": [
@@ -1317,6 +1413,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.340Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 188-word proof (q-holonomic -> P-recursive, confluent tau limit); all ten categories judged in context."
       }
     ],
     "trap-performed-warmth": [
@@ -1336,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.375Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 188-word proof (q-holonomic -> P-recursive, confluent tau limit); all ten categories judged in context."
       }
     ],
     "trap-superlative": [
@@ -1355,6 +1483,22 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.411Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 188-word proof (q-holonomic -> P-recursive, confluent tau limit); all ten categories judged in context."
       }
     ],
     "trap-nonspeakable": [
@@ -1374,6 +1518,23 @@
         "reviewed_at": "2026-08-15T10:31:00.824Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c1bd28607994",
+          "ts": "0856cc657fa6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:28.444Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Dense but ordinary mathematical prose; no noun-chain stall.",
+        "notes": "RIGOR (not a trap): no numerics to recheck; conjectural input for R is stated honestly as the structure hypothesis."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1396,5 +1557,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:28.444Z"
 }

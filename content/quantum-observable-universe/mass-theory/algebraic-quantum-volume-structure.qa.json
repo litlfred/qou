@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.216Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'while the trivial partition $(n)$ acts as a scalar background field' is a comparison, not an assert-by-denying; no 'not X but Y' anywhere."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.257Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 128 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.312Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 128 words)"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.366Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no compulsive three-item cadence found."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1080,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.407Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1114,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.447Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1148,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.486Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.534Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1216,23 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (1)"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.573Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "Block-final 'The convergence of the $z$-Habiro expansion depends crucially on the algebraic properties of this un-evaluated polynomial.' - 'crucially' is an unquantified strength marker on a convergence claim the block does not support.",
+        "notes": "fix applied: 'depends crucially on the algebraic properties' -> 'depends on the algebraic properties'. Claim and content unchanged; only the intensifier removed."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1252,21 @@
         "reviewed_at": "2026-08-15T10:31:00.895Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "52f231b5e1ed",
+          "ts": "4c35e0c86584"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:25:59.762Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (remark, three short paragraphs on the algebraic-volume sum structure); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1293,5 @@
     "md": "b4d48f393020",
     "ts": "4c35e0c86584"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:25:59.762Z"
 }

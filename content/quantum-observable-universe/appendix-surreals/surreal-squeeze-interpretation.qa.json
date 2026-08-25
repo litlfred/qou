@@ -1437,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.112Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'No passage to the limit is needed' is a factual scope statement about the ordered-field argument."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1456,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.169Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Definition of cost and budget, then the lemma's statement; no pivot."
       }
     ],
     "trap-em-dash": [
@@ -1475,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.229Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One matched em-dash pair enclosing the three example deviations — a true parenthetical."
       }
     ],
     "trap-triples": [
@@ -1494,6 +1539,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 100 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.280Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "The three examples (critical-line zero, velocity-gradient spike, non-trivial Collatz orbit) are three of the named downstream instances, not a reflex triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1513,6 +1573,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.349Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on a bulleted cross-reference list."
       }
     ],
     "trap-meta-commentary": [
@@ -1532,6 +1607,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.416Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'**Downstream.**' is a structural label for the cross-reference list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1551,6 +1641,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.464Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1570,6 +1675,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.520Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1589,6 +1709,23 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.580Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "severity": "minor",
+        "evidence": "'Every millennium-problem remark in this chapter and Chapter 7 ... reduces to this lemma' is an unqualified universal that the corpus now contradicts: rem:millennium-unification states the Navier--Stokes row 'is a different inference, not a sixth instance of the same one' and carries no delta, yet rem:ns-surreal-bound is listed here as one of the five reductions.",
+        "notes": "STRUCTURAL (cross-block currency) — proposed: 'Every millennium-problem remark ... except the Navier--Stokes bound reduces to this lemma; the Navier--Stokes row compares a production rate to an absorption rate in the same notation (see rem:millennium-unification).' Verified against ns-surreal-bound.md, whose inequality Z_q > Delta_q is stated as 'automatic' with no delta."
       }
     ],
     "trap-nonspeakable": [
@@ -1608,6 +1745,21 @@
         "reviewed_at": "2026-08-15T10:30:59.454Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a87ad70f29bd",
+          "ts": "f3c0023f524a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:27:12.634Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Reads aloud cleanly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1630,5 +1782,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:27:12.634Z"
 }

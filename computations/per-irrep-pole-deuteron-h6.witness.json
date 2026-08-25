@@ -1,12 +1,12 @@
 {
   "engine": "sympy",
-  "engineVersion": "sympy 1.12",
-  "computedAt": "2026-08-10T16:57:55.990173+00:00",
-  "commitSha": "3627e611d7be8fe197fbcdd1359fb50f8ec401a7",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-19T11:48:57.759127+00:00",
+  "commitSha": "67ccee2d220f8dcf8444871ce94c28dd653922f0",
   "assertions": [
     {
       "name": "deuteron_full_tr_M_u_pole_eq_shift_NF",
-      "computed": 38,
+      "computed": 46,
       "expected": 40,
       "passed": false
     },
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 54,
+  "durationMs": 94,
   "computation": "per-irrep-pole-deuteron-h6",
   "scriptFile": "per_irrep_pole_atom.py",
-  "scriptHash": "e1b63069c0fd",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "12a690fe9df3",
+  "scriptCommitSha": "01b79b383f2173a74c0adc71a9b067151a1fd317",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -33,10 +33,9 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Path A: per-term symbolic u-pole-order analysis of the deuteron's tr_M = Σ_λ y_λ(q) · χ^λ_q(β_{1,1}) at q = u² (per the D(u) convention).  Loads cached symbolic y_λ from y-lambda-wenzl-bridge-symbolic-witness.json and cached chi_λ from chi-deuteron-h6.witness.json (auto-emit on first run, multiprocessing).  Per-term ord_{u=0}(y_λ · χ^λ) avoids the sp.together bottleneck.  Verifies shift_NF(β_deuteron) = 40 = 18·1 + 21·1 + 1, matching prop:per-nucleon-shift-additive-linearity.",
   "auditOnly": "docs/audits/2026-05-08-per-irrep-pole-18-21-research-note.md",
@@ -47,27 +46,27 @@
           4,
           2
         ],
-        "ord_u_eq_0_y_lambda_times_chi": 38
+        "ord_u_eq_0_y_lambda_times_chi": 46
       },
       {
         "partition": [
           3,
           3
         ],
-        "ord_u_eq_0_y_lambda_times_chi": 34
+        "ord_u_eq_0_y_lambda_times_chi": 42
       },
       {
         "partition": [
           5,
           1
         ],
-        "ord_u_eq_0_y_lambda_times_chi": 22
+        "ord_u_eq_0_y_lambda_times_chi": 30
       },
       {
         "partition": [
           6
         ],
-        "ord_u_eq_0_y_lambda_times_chi": 2
+        "ord_u_eq_0_y_lambda_times_chi": 10
       },
       {
         "partition": [
@@ -138,12 +137,12 @@
         4,
         2
       ],
-      "ord_u_eq_0": 38,
+      "ord_u_eq_0": 46,
       "unique_max": true,
-      "next_highest": 34
+      "next_highest": 42
     },
     "full_tr_M_u_pole_inferred": {
-      "value": 38,
+      "value": 46,
       "rigorous": true,
       "expected": 40,
       "Z": 1,
@@ -162,6 +161,7 @@
           "sigma": 6,
           "sigma_inv": 0,
           "averaged": 1,
+          "averaged_weighted": 0,
           "total": 7
         },
         {
@@ -169,13 +169,15 @@
           "sigma": 0,
           "sigma_inv": 3,
           "averaged": 1,
+          "averaged_weighted": 0,
           "total": 4
         },
         {
           "gen_idx": 2,
           "sigma": 0,
           "sigma_inv": 0,
-          "averaged": 1,
+          "averaged": 0,
+          "averaged_weighted": 1,
           "total": 1
         },
         {
@@ -183,6 +185,7 @@
           "sigma": 5,
           "sigma_inv": 0,
           "averaged": 2,
+          "averaged_weighted": 0,
           "total": 7
         },
         {
@@ -190,6 +193,7 @@
           "sigma": 0,
           "sigma_inv": 4,
           "averaged": 0,
+          "averaged_weighted": 0,
           "total": 4
         }
       ],
@@ -198,6 +202,8 @@
           "gen_idx": 0,
           "net_signed_power": 6,
           "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
           "cemetery_class_signed_power_projection": "σ_0^6",
           "is_pure_power_in_cemetery": false
         },
@@ -205,6 +211,8 @@
           "gen_idx": 1,
           "net_signed_power": -3,
           "averaged_count": 1,
+          "averaged_blind_count": 1,
+          "averaged_weighted_count": 0,
           "cemetery_class_signed_power_projection": "σ_1^-3",
           "is_pure_power_in_cemetery": false
         },
@@ -212,6 +220,8 @@
           "gen_idx": 2,
           "net_signed_power": 0,
           "averaged_count": 1,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 1,
           "cemetery_class_signed_power_projection": "identity",
           "is_pure_power_in_cemetery": false
         },
@@ -219,6 +229,8 @@
           "gen_idx": 3,
           "net_signed_power": 5,
           "averaged_count": 2,
+          "averaged_blind_count": 2,
+          "averaged_weighted_count": 0,
           "cemetery_class_signed_power_projection": "σ_3^5",
           "is_pure_power_in_cemetery": false
         },
@@ -226,6 +238,8 @@
           "gen_idx": 4,
           "net_signed_power": -4,
           "averaged_count": 0,
+          "averaged_blind_count": 0,
+          "averaged_weighted_count": 0,
           "cemetery_class_signed_power_projection": "σ_4^-4",
           "is_pure_power_in_cemetery": true
         }
@@ -246,7 +260,7 @@
             1,
             1
           ],
-          -0.67692509
+          -0.67687668
         ],
         [
           [
@@ -256,7 +270,7 @@
             1,
             1
           ],
-          2.15541571
+          2.15525534
         ],
         [
           [
@@ -265,7 +279,7 @@
             1,
             1
           ],
-          -0.48998777
+          -0.49012565
         ],
         [
           [
@@ -274,7 +288,7 @@
             1,
             1
           ],
-          -0.81971565
+          -0.81965495
         ],
         [
           [
@@ -282,7 +296,7 @@
             1,
             1
           ],
-          -0.47019171
+          -0.46980589
         ],
         [
           [
@@ -290,7 +304,7 @@
             2,
             1
           ],
-          -1.97282074
+          -1.97227245
         ],
         [
           [
@@ -298,34 +312,34 @@
             2,
             2
           ],
-          -3.49756389
+          -3.49729441
         ],
         [
           [
             5,
             1
           ],
-          3.21589088
+          3.21631734
         ],
         [
           [
             4,
             2
           ],
-          1.67374772
+          1.67439526
         ],
         [
           [
             3,
             3
           ],
-          4.24906941
+          4.24940202
         ],
         [
           [
             6
           ],
-          1.55975866
+          1.5598702
         ]
       ],
       "note": "Per-partition χ^λ(β_atom; q_0) tuple — heuristic comparison hash for braid/Markov-equivalence at q_0.  It is a NECESSARY but NOT SUFFICIENT condition for canonical-basis (KL) equivalence: identical fingerprints are evidence of equivalence, but two distinct canonical-basis classes can collide at the rounded-trace level (no iff guarantee).  Trace-only form because per-block matrices are not currently materialised at H_n>3 in Path A — full equivalence requires the per-block matrix entries (cf. r5_full_canonical_knot_solver.chi_fingerprint at H_3). Per Copilot review #r3213426336."

@@ -2100,6 +2100,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.391Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Two sentences; no assertion-by-denial.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2119,6 +2135,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.431Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No pivot.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -2138,6 +2170,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 35 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.475Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -2157,6 +2205,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 35 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.517Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "The setup names three data (instanton connection A, Levi form L, self-dual curvature F^+) because the integrand of the sibling proof uses exactly those; a genuine enumeration.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -2176,6 +2240,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.559Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Closes on the realisation statement, which is the corollary's content.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -2195,6 +2275,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.600Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"We realise the categorical mass ... as Yekutieli's nonabelian multiplicative integral\" is the claim, not narration.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -2214,6 +2310,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.641Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Two sentences, no restatement.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -2233,6 +2345,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.682Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No personal register.",
+        "notes": "No change."
       }
     ],
     "trap-superlative": [
@@ -2252,6 +2380,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.722Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No inflation. Notation checked against AGENTS.md section 7: the archimedean tuple is written (C, Theta, G, S) in the current bold-C four-tuple form, not the deprecated five-tuple, and the citation uses the correct \\cite{yekutieli2015} form.",
+        "notes": "No change. Contrast noted for the coordinating session: the sibling proof block mass-identity-C-proof.md writes the SAME citation as the escaped-bracket form \\[yekutieli2015], twice - see that block's entry."
       }
     ],
     "trap-nonspeakable": [
@@ -2271,6 +2415,22 @@
         "reviewed_at": "2026-08-15T10:31:01.043Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8676943ca3d2",
+          "ts": "b2a2095094eb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:26.764Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Both sentences read aloud.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2294,5 +2454,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:26.764Z"
 }

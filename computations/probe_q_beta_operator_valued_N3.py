@@ -51,9 +51,65 @@ set_compute_dps()
 
 
 def _q_0_50dps() -> mp.mpf:
-    with (_pb.witness_path("q-pinning-50-digit.witness.json", HERE)).open() as fh:
-        d = json.load(fh)
-    return mp.mpf(d["derived_50_digit"]["q"])
+    """The PROTON 50-digit pin.
+
+    This read `derived_50_digit.q` out of `q-pinning-50-digit.witness.json`,
+    which is the MUON value -- that producer is listed `ideal_muon`, so its
+    Newton solve never runs and the field holds the muon literal. Nothing in
+    this probe said so, and the witness it emits declares no `q0Anchor` at
+    all, so the muon-ness was invisible to every consumer downstream.
+
+    It surfaced when `probes/qbeta_habiro_residual_probe.py` was repinned to
+    proton (owner ruling 2026-08-21) and started comparing its live
+    single-wrap against the `Q_A` stored here: the agreement went from 1.1e-42
+    to 29.96 ppb. The former figure was not a validation -- it was both sides
+    being muon. 29.96 ppb is ~2.6x the 11.54 ppb pin separation, i.e. Q_beta
+    amplifies the anchor.
+
+    Now takes the proton pin by name, the same way `alpha_k_jones_markov_h12`
+    and the habiro probe do. The witness still records the pin file as an
+    upstream, but for provenance rather than for the value. Bean `qou-m9xp`.
+    """
+    from q_parameter import Q_50_DIGIT_STR
+
+    return mp.mpf(Q_50_DIGIT_STR)
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# ⚠ THE LADDER BELOW IS A CONVENTION-C FRAME WITH z_D SUBSTITUTED IN.
+#
+# Commit archaeology, 2026-08-21. The committed witness dated 2026-06-22
+# (Q_N2 = 0.78233438651817188) reproduces EXACTLY from this producer at
+# scriptHash 8ce74e846c64 = commit c51e43fa21ce, whose only formula
+# difference from today is one line:
+#
+#     -    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))     # convention C
+#     +    z = q**3 / (q**2 + 1)                     # convention D
+#
+# Verified at 60 dps: muon + C reproduces the committed value byte for byte;
+# muon + D and proton + D both give 0.782804..., 6.0e-4 away. So the entire
+# 1248 -> 602,433 ppb move in the downstream residual is that substitution,
+# NOT the anchor (the mu-p pin shift contributes 3.0e-8, four orders less).
+#
+# AGENTS.md §"CONVENTION LABEL (2026-08-15 ruling)" forbids this move in
+# terms:
+#
+#   "The ladder must be RE-DERIVED under D, and that is not a z-swap --
+#    QOU.QBeta.decayLadder_zC_threeRow_ne_zero (MarkovZFullBarCondition.lean,
+#    sorry-free) makes the C-frame ladder and the mass channel's three-row
+#    forcing mutually exclusive, so substituting z_D into the existing ladder
+#    is not a valid move."
+#
+# So `residual_N2 = 602,433 ppb` is NOT a Q_beta result. It is a C-frame
+# ladder evaluated at a D parameter, which the corpus holds to be incoherent.
+# The 1248 ppb figure was the coherent C-frame number -- and C is excised.
+# Neither is currently a valid statement about Q_beta.
+#
+# NOT fixed here, deliberately: re-deriving the ladder under D is tranche S1
+# of bean `qou-cds1`, it is research rather than repair, and it is much larger
+# than this anchor fix. This banner exists so the number is not quoted as a
+# physics result in the meantime.
+# ─────────────────────────────────────────────────────────────────────────
 
 
 def main() -> int:

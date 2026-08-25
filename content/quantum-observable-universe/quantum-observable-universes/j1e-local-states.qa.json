@@ -1231,6 +1231,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.279Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1250,6 +1266,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.320Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-em-dash": [
@@ -1269,6 +1301,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 28 words)"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.361Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-triples": [
@@ -1288,6 +1336,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 28 words)"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.402Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1307,6 +1371,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.444Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-meta-commentary": [
@@ -1326,6 +1406,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.487Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1345,6 +1441,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.527Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-performed-warmth": [
@@ -1364,6 +1476,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.567Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-superlative": [
@@ -1383,6 +1511,22 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.611Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence remark; no instance of this construction.",
+        "notes": "No trap under this category. See trap-nonspeakable on this block, and the returned anomaly list for a title-vs-body notation currency finding (title says J^1E, body says J^1 S; E is deprecated per the QOU-tuple convention)."
       }
     ],
     "trap-nonspeakable": [
@@ -1402,6 +1546,23 @@
         "reviewed_at": "2026-08-15T10:30:59.985Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "487bed6d87b1",
+          "ts": "6b949f441c80"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:32:53.237Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "Full read: 2-sentence remark. Sentence 2 -- 'The substrate parameter q weights the classical gauge dynamics on the instanton connection to constitute the quantum field algebra SU_q(2).' -- stacks four noun phrases joined by 'weights ... on ... to constitute', a chain that parses on the page but has no grip when read aloud, and whose intended relation is not recoverable from the sentence (does q weight the dynamics, or deform the algebra?). Sentence 1's verb 'accommodates' is likewise doing the work of a plain 'is the space of'.",
+        "notes": "NOT fixed -- structural: the rewrite needs the intended mathematical relation, which the sentence does not determine. Proposed: 'The jet bundle J^1 S is the space of local states. Deforming the classical gauge dynamics on the instanton connection by the substrate parameter q yields the quantum gauge group SU_q(2).' Note that def:quantum-gauge-group (this block's interprets target) calls SU_q(2) a gauge group, not a 'quantum field algebra'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1424,5 +1585,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:32:53.611Z"
 }

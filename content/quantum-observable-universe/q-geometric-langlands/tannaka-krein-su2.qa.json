@@ -1346,6 +1346,22 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:56.999Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (worked example, 4 steps + Result + Bring specialisation); all ten judged. The O_q(SU(2)) presentation was checked relation-by-relation against the standard one and does not close - reported as ANOMALY 2."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1365,6 +1381,22 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.037Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (worked example, 4 steps + Result + Bring specialisation); all ten judged. The O_q(SU(2)) presentation was checked relation-by-relation against the standard one and does not close - reported as ANOMALY 2."
       }
     ],
     "trap-em-dash": [
@@ -1384,6 +1416,22 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.078Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (worked example, 4 steps + Result + Bring specialisation); all ten judged. The O_q(SU(2)) presentation was checked relation-by-relation against the standard one and does not close - reported as ANOMALY 2."
       }
     ],
     "trap-triples": [
@@ -1403,6 +1451,22 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 190 words)"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.118Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (worked example, 4 steps + Result + Bring specialisation); all ten judged. The O_q(SU(2)) presentation was checked relation-by-relation against the standard one and does not close - reported as ANOMALY 2."
       }
     ],
     "trap-closing-aphorism": [
@@ -1422,6 +1486,23 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.159Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Block-final: 'The weight spaces of H **automatically** encode the Reeb spectrum.' A quotable one-liner asserting a connection to the chapter's Reeb machinery that nothing in the four reconstruction steps establishes.",
+        "notes": "proposed (NOT applied - structural, unsupported math claim): either drop the sentence or give it a cross-reference to whatever block establishes the weight-space/Reeb-spectrum correspondence."
       }
     ],
     "trap-meta-commentary": [
@@ -1441,6 +1522,22 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.197Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (worked example, 4 steps + Result + Bring specialisation); all ten judged. The O_q(SU(2)) presentation was checked relation-by-relation against the standard one and does not close - reported as ANOMALY 2."
       }
     ],
     "trap-thesis-restatement": [
@@ -1460,6 +1557,23 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.235Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'**Result.** The algorithm outputs H = O_q(SU(2)). We recover the quantum coordinate ring entirely from the monoidal structure of its representation category.' The second sentence restates the first AND repeats the tannaka-krein-isomorphism over-claim - Step 1 of this very block introduces the fibre functor tau, without which the monoidal structure alone does not determine H.",
+        "notes": "proposed (NOT applied - math claim): 'We recover the quantum coordinate ring from the monoidal structure of its representation category together with the fibre functor tau.' Part of ANOMALY 31."
       }
     ],
     "trap-performed-warmth": [
@@ -1479,6 +1593,22 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.274Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (worked example, 4 steps + Result + Bring specialisation); all ten judged. The O_q(SU(2)) presentation was checked relation-by-relation against the standard one and does not close - reported as ANOMALY 2."
       }
     ],
     "trap-superlative": [
@@ -1498,6 +1628,23 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.314Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'entirely from the monoidal structure' and 'automatically encode the Reeb spectrum' - two unqualified maximum-strength claims, and chasing them found ANOMALY 2 (wrong relation list) and ANOMALY 31 (dropped fibre functor) sitting under them.",
+        "notes": "proposed jointly. Also noted: this block writes \\mathrm{Rep}(SU_q(2)) where AGENTS.md section 7 requires \\mathbf{Rep} - the rest of the chapter uses the bold form."
       }
     ],
     "trap-nonspeakable": [
@@ -1517,6 +1664,22 @@
         "reviewed_at": "2026-08-15T10:31:00.908Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "421a68981e2f",
+          "ts": "b42c7c229a01"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:57.356Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (worked example, 4 steps + Result + Bring specialisation); all ten judged. The O_q(SU(2)) presentation was checked relation-by-relation against the standard one and does not close - reported as ANOMALY 2."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1539,5 +1702,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:57.356Z"
 }

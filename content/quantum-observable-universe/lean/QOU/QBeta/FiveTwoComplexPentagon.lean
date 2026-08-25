@@ -43,8 +43,8 @@ The 5₂ **volume** conjecture is untouched. `Vol(5₂) = 3·D(y₁)` involves t
 Bloch–Wigner `D`, which cancels on Galois sums (see the bean) — nothing here
 speaks to it.
 
--- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5 and §2
--- Ref: [neumann2004] uploads/0307092v2.pdf, Prop 2.5
+-- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5 and §2
+-- Ref: [neumann2004] library/0307092v2/0307092v2.pdf, Prop 2.5
 -/
 import QOU.MathlibExt.ComplexRogersDilog
 import QOU.QBeta.FiveTwoSaddleSumRule

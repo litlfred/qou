@@ -1123,7 +1123,8 @@
         },
         "reviewed_at": "2026-06-22T02:56:54.010Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Contains borderline interpretive prose."
+        "notes": "Contains borderline interpretive prose.",
+        "evidence": "Contains borderline interpretive prose."
       },
       {
         "field_hash": {
@@ -1562,7 +1563,8 @@
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \\\\in \\\\mathfrak{M}$' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Proposition (diagrammatic double-magic): LR-fusion rigidity at $Z, N \\\\in \\\\mathfrak{M}$' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1675,7 +1677,8 @@
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1904,7 +1907,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean fails compilation: content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean:86:29: error: failed to synthesize",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean contains compilation errors: content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean:86:29: error: failed to synthesize, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean fails compilation: content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean:86:29: error: failed to synthesize"
       },
       {
         "field_hash": {
@@ -2037,7 +2041,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

@@ -34,6 +34,7 @@ import _path_bridge as _pb  # noqa: E402, F401
 import json  # noqa: E402
 import sympy as sp  # noqa: E402
 import mpmath as mp  # noqa: E402
+from _precision import fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 mp.mp.dps = 60
@@ -193,14 +194,64 @@ def main() -> int:
         "net. c_2=-1 gate; residual test for constant-c_k consistency."
     )
     wb.add_data("delta_net_q_symbolic", str(dnet))
-    wb.add_data("validate_delta_net_at_q0", float(dn_mine))
-    wb.add_data("validate_Qbeta_at_q0_MeV", float(Qb_q0))
-    wb.add_data("R_at_q1", float(R1))
+    # `fmt`, not `float()` — these are mpf end to end and the float64 downcast
+    # is what the raw-float64 ratchet flags. It matters more than usual here:
+    # the c_k extraction amplifies input error by ~7e5 (see below), so digits
+    # thrown away at the input are not cosmetic.
+    wb.add_data("validate_delta_net_at_q0", fmt(dn_mine))
+    wb.add_data("validate_Qbeta_at_q0_MeV", fmt(Qb_q0))
+    wb.add_data("R_at_q1", fmt(R1))
     wb.add_data("c2_gate_pass", bool(gate_ok))
-    wb.add_data("c_k", {str(k): float(v) for k, v in c.items()})
-    wb.add_data("max_odd_order_logR", float(odd_mag))
-    wb.add_data("residual_next_even", None if resid_next is None else float(resid_next))
-    wb.add_data("constant_ck_exact", None if consistent is None else bool(consistent))
+    # ── Why this gate is red, and why it must STAY red ───────────────────
+    #
+    # The gate asks whether a scalar s-series in s = q-1 reproduces c_2 = -1.
+    # It does not, and that IS the finding rather than a defect: u = b*hbar_q^2
+    # is QUADRATIC in t = q-1 near q = 1 (u ~ (sqrt3/2) t^2), so the
+    # u-reversion is singular, R(q) is not analytic in u, and the c_k are not
+    # scalar-q Taylor coefficients at all. Blocker 2 of
+    # docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md.
+    # Relaxing this gate would delete a recorded refutation.
+    #
+    # ── The extracted quadratic is INPUT-SENSITIVE, and violently so ──────
+    #
+    # Do NOT read the extracted value as any named c_2 variant. The witness
+    # committed on 2026-06-16 carried -8.006410058709255, which matches the
+    # registry's c_2^even = -1049/144 - 5*sqrt(3)/12 to fifteen digits, and
+    # that coincidence is tempting. It does not survive a re-run.
+    #
+    # Re-run 2026-08-23 on a byte-identical producer: -7.45876032789888. The
+    # cause is import-cone drift, not this file — free-neutron-decay.witness.json
+    # was regenerated in 52c68267f2, moving Delta(net) from -0.18829060147138277
+    # to -0.1882906200111204. That is a 9.8e-8 RELATIVE change in the input; it
+    # moved the extracted quadratic by 6.8%, an amplification of roughly 7e5.
+    #
+    # Which is itself the audit's blocker 3 measured rather than argued:
+    # sigma(c_k) = sigma_R / u^k, so at u ~ 0.0085 the k = 2 rung divides input
+    # error by ~1.4e4 and the k = 3 rung by ~1.6e6. An extraction that amplifies
+    # its input error by five orders of magnitude cannot identify a constant, and
+    # the 15-digit agreement above is what such an extraction's coincidences look
+    # like. Record the value; do not name it.
+    wb.add_data("extracted_quadratic_is_a_named_c2_variant", False)
+    wb.add_data(
+        "why_c2_gate_is_red",
+        "NOT a defect and NOT a number to be fixed. The scalar u-reversion is "
+        "singular (u is quadratic in q-1), so R(q) is not analytic in u and the "
+        "c_k are not scalar-q Taylor coefficients. See "
+        "docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md blocker 2. "
+        "Making this gate green would delete a recorded refutation.",
+    )
+    wb.add_data(
+        "extracted_quadratic_input_sensitivity",
+        "The 2026-06-16 witness carried -8.006410058709255, matching the "
+        "registry's c_2^even = -1049/144 - 5*sqrt(3)/12 to 15 digits. The "
+        "coincidence did NOT survive: a byte-identical producer now yields "
+        "-7.45876032789888, because free-neutron-decay.witness.json was "
+        "regenerated in 52c68267f2 (Delta(net) -0.18829060147138277 -> "
+        "-0.1882906200111204). A 9.8e-8 relative input change moved the output "
+        "6.8% -- ~7e5 amplification, which is the audit's blocker-3 "
+        "sigma(c_k) = sigma_R/u^k measured rather than argued. Do not identify "
+        "the extracted quadratic with c_2, c_2-tilde or c_2^even.",
+    )
     wb.add_assertion(
         "validate_object_at_q0",
         computed=1 if val_ok else 0, expected=1, tolerance=0,
@@ -209,7 +260,18 @@ def main() -> int:
     wb.add_assertion(
         "c2_gate",
         computed=1 if gate_ok else 0, expected=1, tolerance=0,
-        source="operator s-series match reproduces proved c_2 = -1",
+        source=(
+            "Does the operator s-series reproduce c_2 = -1? EXPECTED RED, and "
+            "red is the result. The scalar u-reversion is singular, so the c_k "
+            "are not scalar-q Taylor coefficients -- "
+            "docs/audits/2026-06-16-hoefsmit-stage-b-attempt-verdict.md "
+            "blocker 2. Do NOT relax this gate to make the witness green: it "
+            "records a refutation, and the extracted quadratic is input-"
+            "sensitive at ~7e5 amplification (see the data fields). "
+            "('proved c_2 = -1' until 2026-08-23: c_2 = -1 is STRUCTURAL, not "
+            "proved -- N2_factor is a bare def with no theorem deriving it, per "
+            "the AGENTS.md correction of 2026-08-16.)"
+        ),
     )
     wb.save()
     print("\n  Witness: qbeta-ck-sseries-operator-match.witness.json")

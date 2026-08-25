@@ -944,6 +944,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.519Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 440-word remark (Lean class scaffold, two closure routes, downstream table); the three downstream formulas evaluated at q_0."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +979,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.555Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 440-word remark (Lean class scaffold, two closure routes, downstream table); the three downstream formulas evaluated at q_0."
       }
     ],
     "trap-em-dash": [
@@ -983,6 +1015,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "7 stylistic spaced dashes in 346 words (2.02/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.592Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Bullet glosses only."
       }
     ],
     "trap-triples": [
@@ -1002,6 +1050,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 346 words)"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.629Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "The three specialisations (pole orders 9, 10, 3&4) are the block's actual content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1021,6 +1085,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.665Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 440-word remark (Lean class scaffold, two closure routes, downstream table); the three downstream formulas evaluated at q_0."
       }
     ],
     "trap-meta-commentary": [
@@ -1040,6 +1120,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.701Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 440-word remark (Lean class scaffold, two closure routes, downstream table); the three downstream formulas evaluated at q_0."
       }
     ],
     "trap-thesis-restatement": [
@@ -1059,6 +1155,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.738Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 440-word remark (Lean class scaffold, two closure routes, downstream table); the three downstream formulas evaluated at q_0."
       }
     ],
     "trap-performed-warmth": [
@@ -1078,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.774Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 440-word remark (Lean class scaffold, two closure routes, downstream table); the three downstream formulas evaluated at q_0."
       }
     ],
     "trap-superlative": [
@@ -1097,6 +1225,22 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.813Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 440-word remark (Lean class scaffold, two closure routes, downstream table); the three downstream formulas evaluated at q_0."
       }
     ],
     "trap-nonspeakable": [
@@ -1116,6 +1260,23 @@
         "reviewed_at": "2026-08-15T10:31:00.701Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "aa8f573eb471",
+          "ts": "3167683d13fe"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:37.847Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Parses.",
+        "notes": "RIGOR (not a trap): downstream formulas evaluated at the proton-pinned q_0 with balanced brackets -- q*[9]_q*[10]_q + 2/(3pi) = 137.035415 vs CODATA 137.035999 (4.3 ppm), and [3]_q*[4]_q = 12.50867 vs (m_K/m_pi)^2 = 12.51121 (0.02%). Both are near-matches, not identities; the block presents them as 'downstream form' without an accuracy figure, which is fine but worth a residual column. STATUS LEAK: the '## Lean formalization' closing paragraph ('This proposition is **proved conditional on** ... Closing the class is the Mathlib-import follow-up') is author-tracking status in scholarly prose -- an AGENTS.md 4d authorNotes candidate."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1142,5 +1303,5 @@
     "md": "aa8f573eb471",
     "ts": "3167683d13fe"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:37.847Z"
 }

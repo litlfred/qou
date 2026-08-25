@@ -180,6 +180,27 @@ def q_pochhammer(u: sp.Symbol, m: int) -> sp.Expr:
     return sp.prod(1 - u ** k for k in range(1, m + 1))
 
 
+
+# ── qou-lnog preflight ─────────────────────────────────────────────────────
+# This script forms its pair difference by SUBTRACTING the two witnesses' a_m.
+# That is valid only when their denominators agree, because a witness's a_m
+# expand its own denominator-cleared numerator p = d*t (proved sorry-free in
+# QOU/Habiro/MirrorPairNormalisation.lean). Whether it holds is a property of
+# the CONVENTION, not of this file:
+#
+#     convention C   d_p = d_n = 4u^19(u^2+1)           IDENTICAL -> valid
+#     convention D   d_p = 4u^18(u^4+1)^2, d_n = 4u^18   DIFFER   -> invalid
+#
+# So this script was CORRECT when its committed witness was produced (C) and is
+# wrong under D with no edit in between. The preflight raises rather than let it
+# emit a plausible polynomial that is not the pair's; porting to D means
+# expanding trace_diff_numerator(tr_x, tr_y, sym) instead of differencing two
+# expansions, which is a restructure this file has not had.
+def _qou_lnog_preflight(tr_x, tr_y, label):
+    from habiro_coefficients_atomic import require_am_differenceable
+    require_am_differenceable(tr_x, tr_y, label=label)
+
+
 def main() -> int:
     t0 = time.time()
     q = sp.Symbol("q", positive=True, real=True)
@@ -213,6 +234,10 @@ def main() -> int:
 
     p_tr_str = w["results"]["p (proton, A=1)"]["tr_M_in_q"]
     n_tr_str = w["results"]["n (neutron, A=1)"]["tr_M_in_q"]
+    # D - n, not n - p: the deuteron denominator differs from the nucleon one
+    # under BOTH conventions, so this pair was never a_m-differenceable.
+    _qou_lnog_preflight(w["results"]["D (deuteron, A=2)"]["tr_M_in_q"],
+                        n_tr_str, "D - n")
     d_tr_str_witness = w["results"]["D (deuteron, A=2)"]["tr_M_in_q"]
 
     p_tr = parse_tr_M_in_q(p_tr_str, q)

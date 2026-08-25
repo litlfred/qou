@@ -33,6 +33,14 @@ import json
 import pathlib
 
 from mpmath import cos, exp, fabs, findroot, im, mp, mpf, nstr, pi, polyroots, re, sin, sqrt
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 
 def unit_cubic(c, t):
@@ -52,7 +60,7 @@ def real_root_in_unit(c):
 
 
 def main() -> int:
-    mp.dps = 40
+    set_compute_dps()
     tol = mpf(10) ** -25
     N = 700
     gates = []

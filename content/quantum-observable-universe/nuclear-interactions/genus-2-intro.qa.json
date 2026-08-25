@@ -1195,6 +1195,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.354Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "Clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1230,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.425Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "Clean."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1265,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 196 words)"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.534Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1300,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 196 words)"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.587Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "The lists have two and four items respectively."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1335,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.635Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "Ends on a technical weight-identification statement."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1370,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.737Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1405,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.786Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "No restating closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1440,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.828Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1475,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.871Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense.",
+        "notes": "'canonically equates' is a precise claim about isotypical components, not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1510,22 @@
         "reviewed_at": "2026-08-15T10:31:01.430Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "421727d09ff2",
+          "ts": "a7372539d4e0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:07:24.913Z",
+        "reviewed_sha": "a383457aa353e067908574df707e546b4e4b30dd",
+        "evidence": "Full read of all three paragraphs. Verified the mathematics: for X_5: y^2 = x^5 - 1 the branch points of the degree-2 map to P^1 are the five fifth roots of unity together with infinity, so 'Among the branch points ... are the five fifth roots of unity' is correct; Bring's curve has genus 4, matching 'the genus-4 base'. The long enumerating sentence in paragraph 2 is a genuine four-item contents list, each item a well-formed technical noun phrase, so it is long but not a noun-chain in the category-10 sense. Considered the ~50-word four-object sentence in paragraph 2 and the closing weight-identification sentence; both are long but grammatical and speakable.",
+        "notes": "Borderline, passed. CROSS-BLOCK TENSION for the coordinator: this intro lists 'the descent of this Z_5 from the base surface's Sylow-5 subgroup' as a settled deliverable, while its sibling rem:hyperelliptic-z5-classification-interpretation item 3 states the opposite scope - 'Identifying this abstract Z_5 with the Sylow-5 residue of Bring's S_5 is a distinct structural assertion.' The intro should carry that qualification. Cosmetic: double space after the bold lead-in 'Shared geometric anchor: the five fifth roots of unity.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:07:24.913Z"
 }

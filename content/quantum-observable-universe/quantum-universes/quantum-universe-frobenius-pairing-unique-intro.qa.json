@@ -1190,6 +1190,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.378Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). searched for assert-by-denying constructions ('not X but Y', 'X, not Y', 'rather than'); none present beyond substantive mathematical contrast that is itself the block's claim",
+        "notes": "no fix needed"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1226,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.418Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). searched for setup-then-reframe sentences whose second clause carries the claim; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1262,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.456Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). 0 spaced em-dash construction(s); LaTeX '--' occurrences are name-internal (Maurer--Cartan, Frobenius--Hopf, Tannaka--Krein), not sentence punctuation",
+        "notes": "no fix needed"
       }
     ],
     "trap-triples": [
@@ -1247,6 +1298,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 82 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.494Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). no reflex three-item list; enumerations present are content-determined",
+        "notes": "no fix needed"
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1334,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.535Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). final sentence is \"The higher-forms identification.\" - a substantive statement, not a placed quotable closer",
+        "notes": "no fix needed"
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1370,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.574Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). searched for 'we emphasize' / 'note the framing' / 'the key takeaway' / self-narration of emphasis; none present",
+        "notes": "no fix needed"
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1406,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.613Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "major",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). final sentence is \"The higher-forms identification.\" - it advances or points forward rather than restating what the block already established",
+        "notes": "no fix needed"
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1442,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.653Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). no personal register, gratitude, 'journey' or excitement language; institutional mathematical prose throughout",
+        "notes": "no fix needed"
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1478,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.692Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). Three unqualified maxima in three sentences, two of them substantively wrong: (i) 'Pinning the Frobenius pairing on the fundamental object $A$' - $A$ is the Frobenius-Hopf object; the *fundamental object* is $V$ per def:fundamental-object, so the term is applied to the wrong object; (ii) 'The pairing is unique, forcing its explicit SU(2) form' - prop:frobenius-pairing-unique gives uniqueness only up to an invertible scalar and only for simple $A$, and the up-to-scalar qualifier is dropped here; (iii) 'Every downstream construction inherits this fixed choice.'",
+        "notes": "PROPOSED (not applied - two of the three are factual corrections, not register): 'the fundamental object $A$' -> 'the Frobenius-Hopf object $A$'; 'The pairing is unique' -> 'The pairing is unique up to an invertible scalar (for simple $A$)'."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1514,23 @@
         "reviewed_at": "2026-08-15T10:31:00.182Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5ab66c2d4dcb",
+          "ts": "160a501666c0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:08:12.732Z",
+        "reviewed_sha": "fc654627819ad87febd8b0c0743fc6cb3475d8d4",
+        "severity": "minor",
+        "evidence": "Full-context read of content/quantum-observable-universe/quantum-universes/quantum-universe-frobenius-pairing-unique-intro.md (9 lines, kind=prose, title=\"Frobenius-pairing-uniqueness sub-section preamble\"). prose reads aloud without stalling; no noun-chain built for the eye only",
+        "notes": "no fix needed"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1553,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:08:12.732Z"
 }

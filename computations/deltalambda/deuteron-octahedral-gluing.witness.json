@@ -1,8 +1,8 @@
 {
   "engine": "snappy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-25T20:40:21.874121+00:00",
-  "commitSha": "7c490683732e66f9b9faaefccaf3691cdcf3a8da",
+  "computedAt": "2026-08-23T09:02:02.792473+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "reciprocal_pairing_exact",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "deuteron-octahedral-gluing",
   "scriptFile": "deuteron_octahedral_gluing_probe.py",
-  "scriptHash": "836ee979e109",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a7e9c6186f68",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/deuteron_octahedral_gluing_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/deuteron_octahedral_gluing_probe.py"
   },
   "description": "Deuteron octahedral gluing setup (owner task): the deuteron σ₁³ closure is the trefoil T(2,3) — a TORUS knot (SnapPy: Vol=0, flat tetrahedra, shapes {1/2,2}, π₁=⟨a,b|a²b³⟩). The edge gluing equation forces z₀·z₁=1 IDENTICALLY along the whole deformation, so the two flat tetrahedra are EXACT bar-reciprocals (reciprocity never broken) — REVISING the 'r=χ-coloring asymmetry' first pass. The frame is the single shape modulus z₀ via the meridian-holonomy map H(z₀)=z₀/(z₀−1) (flat H=−1⟹z₀=1/2); r is a BAR-EVEN function of the substrate deformation of z₀. The H(q₀) coloring map is the OPEN derivation — r is never fitted. Forward, scope-(a), audit-only, nothing wired.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

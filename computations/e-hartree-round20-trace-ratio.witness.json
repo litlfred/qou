@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:01.175146+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:48:19.475024+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "chi_(2,2)(dressed, m=5) = h(q^2+q^-2)^2 (round-19 K-shell value)",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 573,
+  "durationMs": 521,
   "computation": "e-hartree-round20-trace-ratio",
   "scriptFile": "e_hartree_round20_trace_ratio.py",
-  "scriptHash": "d99a23fcaad0",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "007c0c130077",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,24 +48,26 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "conj:e-hartree round 20 (item 1): the archimedean trace-ratio on the round-19 activated scalar (2,2) block.  Parallel to prop:em-coupling-projection (coupling = projector trace / force-carrier complexity), define rho_(2,2) := chi_(2,2)(sigma_1 sigma_2^(5) sigma_3) / (q[9]_q[10]_q)^2 (two shared electrons -> complexity squared).  EXACT result in R: rho_(2,2) = C(q) alpha_EM^2 with C(q) = h([4]_q/[2]_q)^2 = h(q^2+q^-2)^2 an O(1) element of R (the round-18-anticipated combinatorial coefficient).  The alpha_EM^2 SCALING emerges exactly; at q_0, C ~ 0.92 (order 1) and rho ~ 4.9e-5 is alpha^2-scale (vs the O(1) bare character).  CLOSED: the algebraic/character side (alpha^2 shape + derived O(1) coefficient).  OPEN (unchanged gate): whether the LP/SDP dual y_cov actually normalises by the squared force-carrier complexity (mechanism B, smooth-facet-vs-kink) — not established; and the m_e c^2 unit transport.  Conjecture remains OPEN, now reduced to the single structural question 'is the LP-dual normaliser the squared complexity?'.  No experimental O(1)-coefficient comparison (fishing gate).",
   "contentBlock": "conj:e-hartree-categorical-derivation",
   "data": {
-    "q0": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+    "q0": "1.109978582751380807591669095610768879874499121873578736072814240181799",
     "chi22_K_shell_m5": "(q**2 - 1)*(q**8 - 1)**2/(q**5*(q**4 - 1)**2)",
     "force_carrier_complexity": "(q**18 - 1)*(q**20 - 1)/(q**16*(q**2 - 1)**2)",
     "trace_ratio_rho22": "q**27*(q**2 - 1)**5*(q**8 - 1)**2/((q**4 - 1)**2*(q**18 - 1)**2*(q**20 - 1)**2)",
     "O1_coefficient_C": "(q**2 - 1)*(q**8 - 1)**2/(q**5*(q**4 - 1)**2)",
     "values_at_q0": {
-      "C": "0.87318958624344676114220965127346080404109925020387",
-      "alpha_em_sq": "0.000053417110058267936634436436634781132904843887185225",
-      "rho22": "0.000046643264230099637900160064485668921000269978201935"
+      "C": "0.87318948105425683399145342656057593404371019146772",
+      "alpha_em_sq": "0.000053417118493959992818300870879694587757261056496992",
+      "rho22": "0.000046643265977154671494204448752141226497660850985304"
     },
     "finding": "Round 20 closes the algebraic side of the e-hartree closure path exactly: the trace-ratio rho_(2,2) = chi_(2,2)/(force-carrier complexity)^2 = h([4]/[2])^2 * alpha_EM^2, so the alpha^2 scaling emerges with a DERIVED O(1) coefficient C(q) = h(q^2+q^-2)^2 in R (no fit).  The conjecture remains OPEN but is now reduced to a SINGLE structural question: does the LP/SDP dual y_cov normalise by the squared force-carrier complexity (mechanism B, smooth facet vs kink)?  The m_e c^2 unit transport is the only other open input.  No experimental comparison of C(q_0) (gated)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

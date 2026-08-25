@@ -110,6 +110,7 @@ from chi_monotone_transfer import (  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
@@ -330,7 +331,7 @@ def main() -> int:
                  "z-score to 0 and pass the 3-sigma gate trivially (a false "
                  "validation). Use --no-hutchinson to skip the cross-check.")
 
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q_50_DIGIT_STR)
     qi0 = 1 / q0
     isotopes = list(ISOTOPES) + ([ISO_5HE] if args.with_5he else [])

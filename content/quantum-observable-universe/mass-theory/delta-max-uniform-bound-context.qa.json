@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.397Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Full read of the two-paragraph interpretive remark. 'The active framework instead uses JSJ decomposition' is a factual legacy-vs-active scope statement (the .ts carries tag legacy-phi-q-tower), i.e. substantive contrast, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.434Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Semicolon clause 'the result here is retained as the analogous tail bound ... and remains mathematically correct' completes the legacy statement rather than reframing it; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 81 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.472Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 81 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.509Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No enumerations."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1080,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.547Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Closes on 'closing the open hypothesis in the archimedean (SDP rank-1) regime' — a scope statement naming which hypothesis is discharged, not a quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1114,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.592Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No narration of emphasis; the italic *conditional* marks a technical term rather than announcing importance."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1148,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.627Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Final sentence is the remark's payload (what the proposition supplies) and is not a restatement of paragraph 1."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.676Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Institutional register; no affective vocabulary."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1216,21 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.713Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'tightly coupled' is a mild descriptor, not a maximum-strength claim; 'remains mathematically correct' is a bounded factual assertion about a retained result."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1250,22 @@
         "reviewed_at": "2026-08-15T10:31:00.672Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7446b695fc48",
+          "ts": "a53e896a8cb2"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:42:40.749Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'the Phi_q-tower binding pipeline' is the longest noun chain and is a named object; both paragraphs read aloud without stalling.",
+        "notes": "Adjacent (non-trap) observation: paragraph 1 is a deprecation/status banner in prose (legacy tag, 'is retained as', 'remains mathematically correct'). Per AGENTS.md 4d this belongs in .ts authorNotes (kind: status or deprecated). Flagged, not fixed — structural."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1292,5 @@
     "md": "7446b695fc48",
     "ts": "a53e896a8cb2"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:42:40.749Z"
 }

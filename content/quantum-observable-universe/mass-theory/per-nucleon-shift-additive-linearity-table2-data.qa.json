@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.297Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.419Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.502Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.573Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.641Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.717Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.781Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.860Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:08.928Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "601bc260343e",
+          "ts": "9aea0d4a5c5d"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:28:09.013Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 rows x 5 columns. RECOMPUTED: Delta-total = Delta-sigma + Delta-sigma^{-1} + Delta-avg holds in both rows (7+3+2 = 12 for +proton, 5+5+2 = 12 for +neutron), so the fourth column is exactly the sum of the first three. The fifth column is confirmed against sibling table 1: +18 and +21 per nucleon reproduce all six of that table's shifts via shift = 1 + 18Z + 21N.",
+        "notes": "STRUCTURAL NOTE worth flagging to a reader (not an error): the two rows have IDENTICAL Delta-avg (2) and IDENTICAL Delta-total (12) but DIFFERENT Delta-shift (18 vs 21). So Delta-shift is not a function of the four columns that precede it -- the proton/neutron distinction enters only through the sigma vs sigma^{-1} split (7/3 against 5/5), which Delta-total averages away. A reader scanning left to right will expect the last column to be derived from the others and it is not; the parent block should say what supplies the extra 6 and 9."
+      }
     ]
   },
   "source_hashes": {
     "md": "601bc260343e",
     "ts": "9aea0d4a5c5d"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:28:09.013Z"
 }

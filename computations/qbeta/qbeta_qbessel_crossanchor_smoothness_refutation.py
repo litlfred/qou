@@ -1,9 +1,18 @@
 #!/usr/bin/env python3
-# ANCHOR NOTE (2026-06-22): q0 = 1.10997858275… occurrences below are the
-# RETIRED pre-2026-05-28 proton anchor (old re-pin #1422), kept as this
-# probe's historical / cross-anchor / pinned comparison value. The CURRENT
-# canonical proton q0 is q_at() ≈ 1.1099785955573347…; the muon anchor is
-# q_muon_at() ≈ 1.10997859555418…. This probe is preserved as-is by design.
+# ANCHOR NOTE — CORRECTED 2026-08-23. The 2026-06-22 boilerplate that stood
+# here had the two anchors INVERTED, in all 13 files carrying it. Measured:
+#   • 1.10997858275… is NOT "the RETIRED pre-2026-05-28 proton anchor" — it is
+#     the CURRENT proton pin. q_at() returns 1.10997858275138…
+#   • "the CURRENT canonical proton q0 is ≈ 1.1099785955573347" named the MUON
+#     value; q_at() never returns it.
+#   • "q_muon_at() ≈ 1.10997859555418" named the SUPERSEDED (CODATA-2018) muon
+#     value; q_muon_at() returns 1.10997859564274… See
+#     computations/audits/muon_pin_three_values_probe.py for the three values.
+# An agent trusting it would read the two-layer discipline backwards.
+#
+# What is true: the 1.10997858275… occurrences below ARE the current proton
+# pin, and this probe is preserved as-is by design — its cross-anchor
+# comparison is the point, so it must NOT be migrated.
 """qbeta_qbessel_crossanchor_smoothness_refutation.py
 ====================================================
 
@@ -83,7 +92,12 @@ import pathlib
 
 from mpmath import mp, mpf, log, sinh, cosh, coth, findroot
 
-mp.dps = 50
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # ── Anchors + CAL-anchored c_3 (sources cited inline) ────────────────────────
 # q₀ values: qbeta_chain4_kashiwara_step3_cross_anchor.py (Q_PROTON / Q_MUON).

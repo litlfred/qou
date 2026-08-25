@@ -23,9 +23,15 @@ side and the W_λ (Hecke/S_n) side are Schur–Weyl DUAL, not equal.
 DISCIPLINE: exact q-integer arithmetic; no fit; the finding is a (deflationary)
 structural clarification, not a closure.
 """
+import sys
+from pathlib import Path
+
 from mpmath import mp, mpf, nstr
 
-mp.dps = 30
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 
 

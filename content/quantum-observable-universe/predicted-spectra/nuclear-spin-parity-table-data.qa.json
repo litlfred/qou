@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.313Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.352Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.389Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.427Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.464Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.502Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.545Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.586Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.627Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d696a083c274",
+          "ts": "3860b64a23ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:30:44.671Z",
+        "reviewed_sha": "bd4965cd4b4489d605a110447fea92664e9c9cff",
+        "evidence": "Pure extracted data table (7 nuclide rows); no prose, so no trap construction can occur. Checked every observed ground-state J against the nuclear data: 1H 1/2, 2H 1, 3H 1/2, 4He 0, 6Li 1, 14N 1, 60Co 5 — all seven correct, and all seven consistent with the proposition's A mod 2 rule (odd A half-integral, even A integral), so the 'Consistent' column is honest in every row.",
+        "notes": "no trap of this class; full-context read"
+      }
     ]
   },
   "source_hashes": {
     "md": "d696a083c274",
     "ts": "3860b64a23ae"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:30:44.671Z"
 }

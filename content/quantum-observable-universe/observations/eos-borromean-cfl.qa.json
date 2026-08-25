@@ -1558,7 +1558,8 @@
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Equation of state: Borromean hadronic matter vs CFL quark matter' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Equation of state: Borromean hadronic matter vs CFL quark matter' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1671,7 +1672,8 @@
         "reviewed_at": "2026-06-28T11:04:37.262Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/eos-borromean-cfl.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/eos-borromean-cfl.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1900,7 +1902,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/eos-borromean-cfl.lean fails compilation: content/quantum-observable-universe/observations/eos-borromean-cfl.lean:53:33: error: failed to synthesize",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/eos-borromean-cfl.lean contains compilation errors: content/quantum-observable-universe/observations/eos-borromean-cfl.lean:53:33: error: failed to synthesize, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/eos-borromean-cfl.lean fails compilation: content/quantum-observable-universe/observations/eos-borromean-cfl.lean:53:33: error: failed to synthesize"
       },
       {
         "field_hash": {

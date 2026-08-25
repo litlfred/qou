@@ -1228,6 +1228,22 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.684Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word remark; the conjugate-partition claim checked by hand."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1247,6 +1263,22 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.721Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word remark; the conjugate-partition claim checked by hand."
       }
     ],
     "trap-em-dash": [
@@ -1266,6 +1298,22 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.756Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 118-word remark; the conjugate-partition claim checked by hand."
       }
     ],
     "trap-triples": [
@@ -1285,6 +1333,22 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 104 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.793Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 118-word remark; the conjugate-partition claim checked by hand."
       }
     ],
     "trap-closing-aphorism": [
@@ -1304,6 +1368,22 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.827Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word remark; the conjugate-partition claim checked by hand."
       }
     ],
     "trap-meta-commentary": [
@@ -1323,6 +1403,22 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.867Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 118-word remark; the conjugate-partition claim checked by hand."
       }
     ],
     "trap-thesis-restatement": [
@@ -1342,6 +1438,23 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.907Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "The final two sentences restate the opening claim without adding content: the block asserts the transpose relation, then closes 'The Frobenius self-dual structure stems fundamentally from the genus-4 Bring requirement ... It forces exactly two permissible channels that happen to be exact transpose pairs.'",
+        "notes": "proposed: keep one sentence naming the genus-4 origin of the two-channel restriction and delete the restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1361,6 +1474,22 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.943Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 118-word remark; the conjugate-partition claim checked by hand."
       }
     ],
     "trap-superlative": [
@@ -1380,6 +1509,23 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:35.980Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Six unqualified intensifiers in 118 words: 'match identically', 'remains completely invariant', 'evaluates cleanly', 'precisely mapping', 'stems fundamentally', 'forces exactly two ... exact transpose pairs'. The density is the de-hedging pattern rather than any single claim.",
+        "notes": "proposed (structural, NOT applied): re-hedge to what is actually established -- dimensions and tableau counts do match; see the RIGOR note for the weights claim, which is not merely over-stated but appears false at q != 1."
       }
     ],
     "trap-nonspeakable": [
@@ -1399,6 +1545,23 @@
         "reviewed_at": "2026-08-15T10:31:00.812Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a4b5e6f33eb4",
+          "ts": "d005db0536a1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:36.018Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Short sentences.",
+        "notes": "RIGOR (not a trap): (3,1)^T = (2,1,1) is CORRECT (conjugate of (3,1) is (2,1,1)); dim = 3 for both S_4 irreps and the SYT counts agree, so 'dimensions ... and tableau counts match identically' is right. But 'weights ... match identically' is not: conjugate partitions carry Wenzl/Markov weights related by q -> q^{-1}, so they agree only at q = 1 -- the block gives no argument and no q-restriction. Also '0^+ zero-charge physical ground state' is an odd label for the H_2 electronic ground state, conventionally 1-Sigma-g^+."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1421,5 +1584,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:36.018Z"
 }

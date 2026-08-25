@@ -136,7 +136,178 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.158Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.198Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.239Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.278Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.317Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.358Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.400Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.442Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.482Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "Full read of the section preamble (151 words, three paragraphs, zero em-dashes). No warmth, no pivot, no closer, no negation-contrast, no meta-narration about the author's emphasis. Markov's theorem is stated correctly (two braid words have isotopic closures iff they differ by conjugation and stabilisation)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "ccefe6891fe1",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:38:26.523Z",
+        "reviewed_sha": "774ea6e7ad9243adb91ceccf0a2fbee0bf6a5d29",
+        "evidence": "'The output is the categorical braid-link enumeration with explicit substrate-trace evaluations. This is the combinatorial engine.'",
+        "notes": "Noun-heavy but short and readable; 'This is the combinatorial engine' is a plain metaphor rather than an eye-only noun chain."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.062022Z"
+  "updated_at": "2026-08-22T05:38:26.523Z"
 }

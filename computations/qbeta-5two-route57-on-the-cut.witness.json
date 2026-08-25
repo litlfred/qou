@@ -4,7 +4,7 @@
     "qou-xblo",
     "qou-0yqu"
   ],
-  "dps": 40,
+  "dps": 70,
   "follows": "Route 56 (the flattened pentagon)",
   "lean": "QOU/QBeta/FiveTwoFlattenedPentagon.lean -- one_sub_mul_of_prod_eq_one, not_pentagonRegular_of_prod_eq_one",
   "gates": [
@@ -13,9 +13,9 @@
       "claim": "THE ANSWER TO ROUTE 56'S OPEN ITEM, and it is a negative. From y1*y2*y3 = 1, y3*(1 - y1*y2) = y3 - 1, so 1 - y1*conj(y1) = (y3-1)/y3 -- and y3 = 0.43016 in (0,1) makes that a NEGATIVE REAL, namely minus the plastic number. A negative real is off slitPlane, so log(1-xy) sits exactly on its branch cut and PentagonRegular fails at the pair Vol(5_2) needs. No region reaches it because the configuration is on the boundary of the domain",
       "one_minus_y1_y2": "(-1.324717957244746025960909 + 0.0j)",
       "predicted_(y3-1)/y3": "-1.324717957244746025960909",
-      "residual_vs_prediction": "2.2958874e-41",
+      "residual_vs_prediction": "1.8111358e-71",
       "minus_plastic_rho": "-1.324717957244746025960909",
-      "residual_vs_minus_rho": "0.0",
+      "residual_vs_minus_rho": "1.8111358e-71",
       "imaginary_part": "0.0",
       "is_negative_real": true,
       "pass": true
@@ -106,9 +106,9 @@
       "claim": "the exceptional structure at the pair, all equivalent to the cubic itself: (1-a)(1-b) = (1-ab)^2 for any two roots, so a5 = 1/a3; here additionally a5 = conj(a3), hence |a3| = 1 -- the two composite arguments sit on the UNIT CIRCLE. Verified symbolically by Groebner reduction against a+b+c=2, ab+ac+bc=3, abc=1 before being measured",
       "a3": "(-0.1623589786223730129805 + 0.9867317579062203382326j)",
       "a5": "(-0.1623589786223730129805 - 0.9867317579062203382326j)",
-      "a5_minus_inv_a3": "0.0",
+      "a5_minus_inv_a3": "1.8252305e-71",
       "a5_minus_conj_a3": "0.0",
-      "abs_a3_minus_one": "0.0",
+      "abs_a3_minus_one": "9.0556791e-72",
       "pass": true
     },
     {

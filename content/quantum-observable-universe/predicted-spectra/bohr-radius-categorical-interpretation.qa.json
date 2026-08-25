@@ -1413,6 +1413,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:46.651Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1432,6 +1447,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:46.727Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "trap-em-dash": [
@@ -1451,6 +1481,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 29 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:46.810Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "trap-triples": [
@@ -1470,6 +1515,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 29 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:46.893Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1489,6 +1549,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:46.950Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1508,6 +1583,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.002Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1527,6 +1617,38 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.046Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.246Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "Three sentences, of which the third ('This provides a categorical recovery of this quantum result.') restates the first and adds nothing; 'this ... this' in one clause. CONTRADICTION FINDING in notes.",
+        "notes": "proposed: delete the third sentence. NOT fixed inline because the first sentence needs fixing in the same edit and that is a meaning change: it says the formulation 'derives the Bohr 1/n^2 dependency PURELY from the Hecke-algebraic gap', but the parent conjecture says the Hecke-algebraic gap is what OBSTRUCTS closure ('The absence of a per-generator additive decomposition into kinetic and Coulomb components constitutes a Hecke-algebraic gap. This obstructs immediate categorical closure.'). The remark asserts as a derivation what its parent states as the obstruction, and its parent is a conjecture block, so 'derives' overclaims twice over. The sibling rem:bohr-radius-round8-findings is the accurate one: 'This determines only ratios, not the absolute alpha_EM^2 scale.'"
       }
     ],
     "trap-performed-warmth": [
@@ -1546,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.109Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "trap-superlative": [
@@ -1565,6 +1702,38 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.150Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.308Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "severity": "minor",
+        "evidence": "'derives the Bohr 1/n^2 dependency PURELY from the Hecke-algebraic gap' - an unqualified maximal claim about an open conjecture, in a three-sentence remark that offers no support.",
+        "notes": "proposed: 'The formulation recovers the relative 1/n^2 shell spacing from the Hecke spectral gap, without the additive kinetic/Coulomb split; the absolute scale is not determined.'"
       }
     ],
     "trap-nonspeakable": [
@@ -1584,6 +1753,21 @@
         "reviewed_at": "2026-08-15T10:31:01.177Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3ad0c9dd60ae",
+          "ts": "2565406b2f3d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:38:47.189Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the three-sentence interpretation remark. All ten categories judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1606,5 +1790,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:38:47.308Z"
 }

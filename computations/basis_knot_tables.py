@@ -23,13 +23,26 @@ Usage:
 Content block: rem:hecke-operations
 """
 
+import mpmath as mp
+
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q as q0, Q_INV as qi0, HA
+from _precision import fmt, set_compute_dps  # noqa: E402
+from q_parameter import Q_MP as q0, Q_INV_MP as qi0, HA_MP as HA
+
+# NO-FLOAT64: same shape as photon_operator_table (shared NF engine) --
+# `Q` the float seeded `z`, `TR_M` opened with `1.0`, the reduction passes
+# pruned on 1e-15 and `to_nf` serialized `round(..., 12)`.  Coefficients are
+# O(1) polynomials in q at q0, so 1e-15 was killing float64 NOISE; 1e-50 is
+# strictly weaker, so every term the float64 version kept is still kept.
+set_compute_dps()
+_ZERO = mp.mpf(0)
+_ONE = mp.mpf(1)
+_EPS = mp.mpf(10) ** -50
 from witness_base import WitnessBuilder
 
 # ── H₃(q) NF engine ─────────────────────────────────────────────
@@ -38,7 +51,7 @@ NF_BASIS = [(), (0,), (1,), (0, 1), (1, 0), (0, 1, 0)]
 NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 
 z = q0**3 / (q0**2 + 1)
-TR_M = [1.0, z, z, z**2, z**2, z**3]
+TR_M = [_ONE, z, z, z**2, z**2, z**3]
 
 
 def hecke_mul(t1, t2):
@@ -46,8 +59,8 @@ def hecke_mul(t1, t2):
     for w1, c1 in t1.items():
         for w2, c2 in t2.items():
             w = w1 + w2
-            r[w] = r.get(w, 0.0) + c1 * c2
-    return {w: c for w, c in r.items() if abs(c) > 1e-15}
+            r[w] = r.get(w, _ZERO) + c1 * c2
+    return {w: c for w, c in r.items() if abs(c) > _EPS}
 
 
 def reduce_nf(terms):
@@ -56,7 +69,7 @@ def reduce_nf(terms):
         changed = False
         new = {}
         for word, coeff in terms.items():
-            if abs(coeff) < 1e-15:
+            if abs(coeff) < _EPS:
                 continue
             done = False
             for p in range(len(word) - 1):
@@ -80,16 +93,17 @@ def reduce_nf(terms):
                         break
             if not done:
                 new[word] = new.get(word, 0) + coeff
-        terms = {w: c for w, c in new.items() if abs(c) > 1e-15}
+        terms = {w: c for w, c in new.items() if abs(c) > _EPS}
     return terms
 
 
 def to_nf(terms):
-    return [round(terms.get(b, 0.0), 12) for b in NF_BASIS]
+    # Was `round(..., 12)` -- a float64 exit that also capped the table.
+    return [terms.get(b, _ZERO) for b in NF_BASIS]
 
 
 def basis_elem(i):
-    return {NF_BASIS[i]: 1.0}
+    return {NF_BASIS[i]: _ONE}
 
 
 # ── Basis knots as operators ─────────────────────────────────────
@@ -107,7 +121,7 @@ BASIS_KNOTS = [
 # ── Compute ──────────────────────────────────────────────────────
 
 print(f"Basis knot multiplication tables for H₃(q)")
-print(f"q₀ = {q0:.10f}, h = {HA:.10f}")
+print(f"q₀ = {mp.nstr(q0, 11)}, h = {mp.nstr(HA, 11)}")  # display only
 print()
 
 all_tables = {}
@@ -120,7 +134,7 @@ for op_name, op_word, op_phys in BASIS_KNOTS:
         row = []
         for j in range(6):
             elem1 = basis_elem(i)
-            op = {op_word: 1.0} if op_word else {(): 1.0}
+            op = {op_word: _ONE} if op_word else {(): _ONE}
             elem2 = basis_elem(j)
             product = hecke_mul(hecke_mul(elem1, op), elem2)
             nf = to_nf(reduce_nf(product))

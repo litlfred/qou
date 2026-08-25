@@ -33,7 +33,7 @@ Gal(F/Q_25) = <phi_25> on P (sigma(P)/P is an m-th power for every
 sigma; Hilbert-90-style splice), then a = P/b^m, then class of a in
 Q_25^x/(Q_25^x)^m (Teichmuller dlog mod gcd(m,624) — nontrivial
 there). Requires a careful read of the CGZ §2-3 proofs (cgz.txt in
-scratchpad, or re-extract uploads/1712.04887v3.pdf).
+scratchpad, or re-extract library/arxiv-1712.04887v3/1712.04887v3.pdf).
 
 ## Also queued (xx9f item 2): Nahm-argument E-test
 

@@ -1456,6 +1456,21 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:37.924Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "No assert-by-denial (the closing 'there is no other choice' is a uniqueness assertion, adjudicated under trap-closing-aphorism)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1475,6 +1490,21 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:37.964Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1494,6 +1524,21 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 56 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.002Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1513,6 +1558,21 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 56 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.041Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1532,6 +1592,23 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.079Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "severity": "major",
+        "evidence": "Block-final clause 'there is no other choice.' — a five-word emphatic closer appended by semicolon to an already-complete claim, with no argument in this 54-word remark to support the uniqueness it asserts.",
+        "notes": "PROPOSED (not applied — deleting it removes an assertion, so it is a meaning change): either drop the clause, or make it carry its weight by pointing at where it is proved: '; by prop:frobenius-self-duality-forces-lp-dual-extraction this is the only form a tau-extracted observable can take.'"
       }
     ],
     "trap-meta-commentary": [
@@ -1551,6 +1628,21 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.116Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1570,6 +1662,21 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.154Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Both sentences add content (categorical self-duality, then the K-theoretic reading of the LP primal/dual split)."
       }
     ],
     "trap-performed-warmth": [
@@ -1589,6 +1696,21 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.190Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1608,6 +1730,22 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.226Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "'precisely the categorical trace' is a precise identification, not inflation.",
+        "notes": "The one inflated phrase, 'there is no other choice', is recorded under trap-closing-aphorism; not double-counted."
       }
     ],
     "trap-nonspeakable": [
@@ -1627,6 +1765,22 @@
         "reviewed_at": "2026-08-15T10:31:00.569Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0bc0f3754c6d",
+          "ts": "8b6c180eea7e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:57:38.263Z",
+        "reviewed_sha": "6e7eb3687c7ee9746c3cf07b79eb7e079c7f267e",
+        "evidence": "Reads aloud cleanly. Category notation is bold per AGENTS.md section 7 (Rep(H_n(R,q))).",
+        "notes": "RIGOR FLAG: the remark asserts Rep(H_n(R,q)) 'is self-dual under the tau-pairing'. Under the canonical convention D the tau-pairing is DEGENERATE on H_3 (y_{(1^3)} = 0, det G = 0 — see rem:frobenius-gram-matrix-context and prop:frobenius-gram-matrix in this same chapter), so the self-duality holds on H_n/rad tr_M, not on H_n. Same defect as the sibling proof block; see its trap-nonspeakable note."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1649,5 +1803,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:57:38.263Z"
 }

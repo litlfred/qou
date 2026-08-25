@@ -119,6 +119,12 @@ def cellContent (c : ℕ × ℕ) : ℤ := (c.2 : ℤ) - (c.1 : ℤ)
 block of the generator `σ_i`. -/
 def axialDistance (c d : ℕ × ℕ) : ℤ := cellContent d - cellContent c
 
+/-- **Axial distance is antisymmetric.**  Exchanging the two cells negates it — which is
+what makes a seminormal pair carry the two parameters `a(d)` and `a(-d)`. -/
+theorem axialDistance_antisymm (c d : ℕ × ℕ) :
+    axialDistance c d = -axialDistance d c := by
+  simp only [axialDistance]; ring
+
 /-- Cells in the same row have axial distance equal to their column gap. -/
 theorem axialDistance_same_row (i j₁ j₂ : ℕ) :
     axialDistance (i, j₁) (i, j₂) = (j₂ : ℤ) - (j₁ : ℤ) := by
@@ -373,48 +379,19 @@ end Seminormal22
 
 /-! ## General `λ` seminormal representation — GAP -/
 
-/-- **Hoefsmit seminormal representation, general shape `λ` — GAP.**
+/-! ## General `λ` seminormal representation — PROVED, and it moved
 
-For every partition `λ ⊢ N`, there is a `d_λ`-dimensional representation
-`ρ_λ : H_N(q) →ₐ[ℝ] M_{d_λ}(ℝ)` (Young's seminormal / Hoefsmit form, built from the axial distances
-`axialDistance` between the cells of consecutive entries in each SYT of shape `λ`).  The statement
-records the **non-degeneracy** that distinguishes this representation from the trivial `q·1` matrix
-rep: for `d_λ ≥ 2` at least one generator is sent to a **non-scalar** matrix.  (A scalar-only rep
-`σ_i ↦ q·1` is reducible for `d_λ ≥ 2`; the seminormal rep affords the *irreducible* Specht module
-`S^λ`, hence is non-scalar.)
+`hoefsmit_seminormal_rep` used to be stated here with a `-- Ref:`-cited `sorry`.  It is now
+**proved**, in `QOU.SchurWeyl.HoefsmitRepGeneral`, and has been removed from this file rather than
+left standing beside a proved twin.
 
-The `1`-dimensional shapes (`d_λ = 1`) are realised concretely and sorry-free above (`rhoTriv`,
-`rhoSign`); the smallest genuinely-`2×2` case `λ = (2,1)` (`N = 3`) is `seminormalRep21`; and the
-first 4-strand case `λ = (2,2)` (`N = 4`, `d_λ = 2`, non-vacuous far-commutation) is
-`seminormalRep22`, with `seminormalRep22_nonScalar` a concrete witness of the non-degeneracy
-conclusion below.  The `2×2` building block of the general matrices — with its quadratic relation and
-non-scalarity — is `seminormalBlock` / `seminormalBlock_quadratic` / `seminormalBlock_ne_scalar`.
+It could not stay: the proof consumes `SeminormalRep.seminormalRepFin`, and `SeminormalRep` imports
+`TableauCells`, which imports this file — so stating it here and proving it there would be circular.
+The move is an import-order consequence, not a reorganisation.
 
-**What is now scaffolded sorry-free (see above):** the reusable size-`2` orbit block and its
-quadratic + non-scalarity, and two fully-worked instances (`(2,1)`, `(2,2)`) exercising the braid and
-far-commutation relations.  **What remains for the general `∀ λ` statement** is: (i) enumerate the
-`s_i`-orbits of `SYT λ` (each of size `1` — scalar `q` / `-q⁻¹` — or `2` — a `seminormalBlock`);
-(ii) assemble the block-diagonal generator matrices from those orbits; (iii) prove the **braid
-relation for arbitrary `λ`** — the Yang–Baxter / axial-distance identity across the `S₃`-orbit of
-three consecutive entries `i, i+1, i+2`, whose generic (size-`6`) case is a genuine `6`-dimensional
-identity, not reducible to the `2×2` blocks above.  Step (iii) is Hoefsmit's thesis theorem and is
-not yet formalised.  Tracked as bean `qou-im9l` (SW-4-gen) and its child GAP bean; irreducibility (the
-`∃ i, non-scalar` witness in full strength) is bean SW-5. -/
-theorem hoefsmit_seminormal_rep {N : ℕ} (q : ℝ) (hq : q ≠ 0) (lam : Partition N) :
-    ∃ ρ : Hecke ℝ q q⁻¹ (N - 1) →ₐ[ℝ] Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ,
-      2 ≤ dLambda lam →
-        ∃ i : Fin (N - 1), ∀ s : ℝ,
-          ρ (Hecke.σ ℝ q q⁻¹ (N - 1) i) ≠ s • (1 : Matrix (Fin (dLambda lam)) (Fin (dLambda lam)) ℝ) := by
-  -- Ref: [hoefsmit1974] (PhD thesis, UBC 1974 — the seminormal form); [ram1997] axial-distance
-  --   formulas.  Both keys resolve in `content/schema/references.ts`.
-  -- GAP (bean qou-im9l / SW-4-gen residual): the general seminormal construction indexes a basis by
-  --   `SYT lam` and, for each generator `σ_i`, forms the block-diagonal matrix over the `s_i`-orbits
-  --   of SYT — size-1 orbits scalar (`q` or `-q⁻¹`), size-2 orbits a `seminormalBlock` (proved
-  --   quadratic + non-scalar above).  The residual is the BRAID relation for arbitrary `λ`: the
-  --   Yang–Baxter / axial-distance identity across the S₃-orbit of `i, i+1, i+2`, whose generic
-  --   size-6 case is a genuine 6-dim identity (the size-1/2 cases reduce to `S0_S1_braid`, as in
-  --   `seminormalRep22`).  This is Hoefsmit's thesis theorem; not yet formalised.  Irreducibility in
-  --   full strength is bean SW-5.
-  sorry
+The concrete cases above are unchanged and remain the small-`λ` witnesses of the general statement:
+`rhoTriv` / `rhoSign` (`d_λ = 1`), `seminormalRep21` (`λ = (2,1)`, the smallest genuine `2×2`), and
+`seminormalRep22` (`λ = (2,2)`, the first 4-strand case) with `seminormalRep22_nonScalar`.
+-/
 
 end QOU.SchurWeyl

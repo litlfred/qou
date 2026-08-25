@@ -75,7 +75,7 @@ denominator**:
 The bijection between the rows is the content of
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
 Under that bijection, the algebraic state sum and the hyperbolic
-volume are not two competing engines: they are the same regulator
+volume are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
 schemes.
 

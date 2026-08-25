@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:19.959Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (270w, prf). Precision figures checked against the live CODATA table: m_e at 2.9e-10 and m_mu/m_e at 2.2e-8 are current."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:19.998Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (270w, prf). Precision figures checked against the live CODATA table: m_e at 2.9e-10 and m_mu/m_e at 2.2e-8 are current."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 252 words)"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.039Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "2 spaced em-dashes in 270 words, both true parentheticals."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1460,22 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 252 words)"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.081Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "The three-item argument (Dimensional analysis / Precision / Naturality), and within Naturality three parallel 'simplest' claims.",
+        "notes": "Substantive: the three items are independent constraints, and the parallel is the argument's shape."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.121Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (270w, prf). Precision figures checked against the live CODATA table: m_e at 2.9e-10 and m_mu/m_e at 2.2e-8 are current."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1529,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.159Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (270w, prf). Precision figures checked against the live CODATA table: m_e at 2.9e-10 and m_mu/m_e at 2.2e-8 are current."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1563,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.201Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (270w, prf). Precision figures checked against the live CODATA table: m_e at 2.9e-10 and m_mu/m_e at 2.2e-8 are current."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1597,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.243Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (270w, prf). Precision figures checked against the live CODATA table: m_e at 2.9e-10 and m_mu/m_e at 2.2e-8 are current."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1631,21 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.282Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (270w, prf). Precision figures checked against the live CODATA table: m_e at 2.9e-10 and m_mu/m_e at 2.2e-8 are current."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1665,23 @@
         "reviewed_at": "2026-08-15T10:31:00.891Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "808e0c867ddd",
+          "ts": "8a90e67cc566"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.322Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "severity": "minor",
+        "evidence": "'The modulus q_0 is pinned canonical by the dimensionless ratio m_mu/m_e' - 'pinned canonical by' is not grammatical; it is the documented sweep substitution of 'canonical' for 'numerical(ly)'. The same construction recurs in the sibling statement block ('pinned canonical through its proxy m_mu/m_e').",
+        "notes": "NOT FIXED (the word is semantically loaded in this corpus and I did not want to guess). Proposed: 'pinned numerically by the dimensionless ratio m_mu/m_e', and the matching repair in prop:three-calibration-inputs. STALE-FIGURE FLAG for the report: 'the proton ratio m_p/m_e (6 x 10^-11)' quotes the superseded 0.06 ppb precision; the live figure is 0.017 ppb = 1.7e-11 (AGENTS.md re-pin note, corrected 2026-08-21). Also 'the m_mu/m_e ratio dimensionalises to Vol(4_1)' - the ratio is dimensionless."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1704,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:26:20.322Z"
 }

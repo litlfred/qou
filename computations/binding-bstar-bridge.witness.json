@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-10T01:18:06.567239+00:00",
-  "commitSha": "159149ee41b669610b3c8c7d76509fbc4b56a7b4",
+  "computedAt": "2026-08-23T08:55:19.013134+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "connected_equals_centered_gram_norm",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "binding-bstar-bridge",
   "scriptFile": "binding_bstar_bridge.py",
-  "scriptHash": "41d1855d4c2d",
-  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "scriptHash": "d0dafa19e5d4",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,14 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/binding_bstar_bridge.py"
+    ],
+    "reproduce": "python3 -u computations/binding_bstar_bridge.py"
   },
   "description": "EXPLORATORY: proves #3548's connected tr_M part (tr(w²)−tr(w)²) is bit-identical to #3545's centered/ghost Gram-quadratic norm tr_M((w−⟨w⟩)²), via tr_M(1)=1. The two binding lenses are one object; the connected part IS the Gram norm of the centered (traceless) fluctuation. So #3548's deuteron connected 0.193 = #3545's per-bond b*; one H₆ build serves both. Ties main a44296db (decay=binding-quadratic). Verified on the H_2 (2,k) torus bond. No fit.",
   "data": {

@@ -7,7 +7,7 @@
     "md": "content/quantum-observable-universe/knots-particles-confinement/ew-slot-far-commutation-obstruction-constraints.md"
   },
   "source_hashes": {
-    "md": "6f4de58000c2",
+    "md": "ee1da9c34642",
     "ts": "fe4c5c4322a4"
   },
   "criteria": {
@@ -939,6 +939,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "4 negation-contrast construction(s): \", not a numerical near-miss.\"; \", not by the individual slots.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.637Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "'an impossibility, not a numerical near-miss' — the (a)/(b) refutation-scope classification; 'inter-slot linking, not the slots' is the block's claim.",
+        "notes": "pass-with-note: substantive/load-bearing contrast per repo refutation-scope discipline."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -958,6 +974,21 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.675Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no setup-then-reframe pivot."
       }
     ],
     "trap-em-dash": [
@@ -977,6 +1008,21 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 113 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.713Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; em-dash use absent or true parenthetical/range only, low density."
       }
     ],
     "trap-triples": [
@@ -996,6 +1042,21 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 113 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.753Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no reflex three-item lists; enumerations are substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1015,6 +1076,22 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.792Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Former closer 'The label lives where the non-abelianness lives: in the linking, not the slots.' was a quotable chiasmus restating the prior sentence.",
+        "notes": "fixed: removed the closing sentence; preceding sentence carries the identical content."
       }
     ],
     "trap-meta-commentary": [
@@ -1034,6 +1111,21 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.827Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no narrated emphasis (no 'we emphasize'/'note the framing')."
       }
     ],
     "trap-thesis-restatement": [
@@ -1053,6 +1145,22 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.864Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "The removed aphorism also restated the immediately preceding sentence; post-fix the block ends on the substantive claim.",
+        "notes": "pass-with-note: restatement removed together with the aphorism closer (see trap-closing-aphorism)."
       }
     ],
     "trap-performed-warmth": [
@@ -1072,6 +1180,21 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.901Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; institutional register throughout, no personal warmth."
       }
     ],
     "trap-superlative": [
@@ -1091,6 +1214,21 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.937Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; no unqualified maximum-strength claims."
       }
     ],
     "trap-nonspeakable": [
@@ -1110,6 +1248,21 @@
         "reviewed_at": "2026-08-15T10:30:59.025Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:kp-b2",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T12:14:09.972Z",
+        "reviewed_sha": "10306c29732d9fda968177a50dc3b55046f4a32b",
+        "evidence": "Full read; prose parses aloud; no stalling noun chains."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1130,7 +1283,25 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "render-math-mode-envelope": [
+      {
+        "field_hash": {
+          "md": "ee1da9c34642",
+          "ts": "fe4c5c4322a4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/qa-checkers-render.ts",
+          "version": "v1",
+          "script_hash": "cd29c8f7fc72",
+          "script_commit_sha": "ca4c19048e3d242854735c23bb25c43938d035e7"
+        },
+        "reviewed_at": "2026-08-19T12:58:09.805Z",
+        "reviewed_sha": "98acdf5024da09352ca36428922fa1046f83d309"
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T12:58:09.805Z"
 }

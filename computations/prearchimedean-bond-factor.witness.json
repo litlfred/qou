@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-14T18:52:15.857806+00:00",
-  "commitSha": "c4fba6847603db87f2b6cf7391e0cf953b421ffb",
+  "computedAt": "2026-08-21T14:57:41.067463+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "symbolic_f_bond_matches_numeric_at_q0",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 342,
+  "durationMs": 307,
   "computation": "prearchimedean-bond-factor",
   "scriptFile": "prearchimedean_bond_factor.py",
   "scriptHash": "5d3033e1420a",
-  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -31,7 +31,7 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "clarabel": "0.11.1"
+    "pyhecke_native": "0.9.0"
   },
   "description": "Pre-archimedean (fibre / formal-q) derivation of the per-bond trace factor f_bond(q) = c·z + d — the Markov conditional expectation of the inter-nucleon bridge crossing (a Hecke fact, NOT archimedean). f_pp=z=√q/(q+1), f_nn=z−h, f_pn=z−h(½−δ/4). tr_M is the Z_q Wedderburn heat trace (cf. peaceful-brown §3-bis); binding = E_0·log(tr_free/tr_atom) = E_0·Σ_bonds log(1/f_bond) is the q-heat free-energy difference (positive, no |·|). The only archimedean step is q→q₀ at the end.",
   "data": {
@@ -43,11 +43,11 @@
       "f_pn_delta0": "(q**(3/2) - (q + 1)*(q**2 - 1)/2)/(q*(q + 1))"
     },
     "archimedean_eval": {
-      "q0": 1.1099785955573347,
+      "q0": 1.1099785827513808,
       "E_0_MeV": 4.186,
-      "f_pp_at_q0": 0.4993203340335612,
-      "f_nn_at_q0": 0.2902600120379678,
-      "f_pn_at_q0": 0.3948620746949877
+      "f_pp_at_q0": 0.4993203341836944,
+      "f_nn_at_q0": 0.29026003538805495,
+      "f_pn_at_q0": 0.3948620864139682
     },
     "per_bond_energy_MeV": {
       "pp": 2.9072,
@@ -57,6 +57,6 @@
     "z_closed_form": "sqrt(q)/(q + 1)",
     "peaceful_brown_link": "tr_M = Σ_λ y_λ χ_λ is the Z_q heat trace; f_bond is the depth-1 bridge multiplier on the Wedderburn eigenbasis; binding is the q-heat free energy. See claude/peaceful-brown-hrt19q §3-bis + QBetaPreArchHeatDepthOneKernel.lean."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

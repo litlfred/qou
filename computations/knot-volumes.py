@@ -25,6 +25,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
+from codata_table import codata  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 try:
@@ -145,10 +146,23 @@ LINK_REGISTRY = [
 
 MASS_ASSERTIONS = [
     {
+        # READ from the NIST table (`qou_substrate/data/allascii.txt`), never
+        # transcribed — the same row `qou_substrate.constants` reads for
+        # `MASS_RATIO_MU_E`, so this assertion checks that the production
+        # registry still agrees with the authoritative table.
+        #
+        # It was the hand-typed literal `206.7682830` until 2026-08-23. That is
+        # the CODATA-**2018** value; the registry moved to the table lookup and
+        # picked up the 2022 value `206.7682827`, 3.0e-7 away — three times the
+        # 1e-7 tolerance below. So this producer had been FAILING (exit 1) on
+        # `main` since that switch, while its committed witness still recorded
+        # `allPassed: true` from the last run under the old literal. The same
+        # edition straddle `codata_table_vintage_audit.py` was written to catch,
+        # one file over. Bean qou-bdkx.
         "name": "m_μ/m_e (CODATA 2022)",
-        "expected": 206.7682830,  # noqa: P31 — test-expected value (CAL-2 anchor cross-check, not a prediction input)
+        "expected": float(codata("muon-electron mass ratio").value),
         "tolerance": 0.0000001,
-        "source": "CODATA 2022",
+        "source": "CODATA 2022 (NIST allascii.txt, muon-electron mass ratio)",
         "unit": "dimensionless",
     },
     {
@@ -258,6 +272,27 @@ def main():
         "assertions": assertions,
         "allPassed": all_passed,
         "durationMs": duration_ms,
+        # This producer reads NO substrate q₀ — no `q_parameter.Q` / `Q_MP` /
+        # `q_at`, no q₀ literal. Its one registry import is the CODATA
+        # `MASS_RATIO_MU_E`. The q₀-shaped number in `assertions[9].computed`
+        # is an OUTPUT, not a pin that was read: q derived forward from
+        # SnapPy's Vol(4₁) and m_μ/m_e, which is the CAL-2 ideal-layer
+        # definition, evaluated as that assertion's own subject.
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Reads no substrate q₀: no q_parameter.Q / Q_MP / q_at import and "
+            "no q₀ literal; the only registry value consumed is the CODATA "
+            "muon-electron mass ratio. The 1.10997… in assertions[9] is an "
+            "OUTPUT — q derived forward from Vol(4₁) and m_μ/m_e, i.e. the "
+            "CAL-2 definition run as that assertion's subject, checked against "
+            "its own expected 1.10997 ± 1e-3. It is therefore in the muon "
+            "basin BY CONSTRUCTION and cannot track the proton pin: there is "
+            "nothing here for a re-pin to change. Distinguish from the "
+            "z2bn-tau-derivation-probe case (bean qou-bdkx), where an "
+            "`independent` declaration was FALSE because the producer "
+            "hardcoded a q₀ and consumed it five times — the check is whether "
+            "q₀ is an input, not whether a q₀-shaped number appears."
+        ),
     }
 
     # Per Copilot review (#581): preserve the SnapPy engine metadata

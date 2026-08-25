@@ -21,8 +21,8 @@ The c_q² (= 1/ℏ_q²) factor is applied ONCE, in the muon anchor m_μ, then
 dressed by the *dimensionless* Borromean factor F_Bor.
 
 DO NOT use the Borromean-volume forms for absolute nucleon/atom mass:
-    m_e · Vol(𝓑₃) · λ_A / ℏ_q²       (vol_density_borromean)  → 966  (+2.96%, a FIT)
-    m_e · Vol(𝓑₃) · tr_M / ℏ_q²      (vol_density_per_block)  → 406  (−57%)
+    m_e · Vol(𝓑₃) · λ_A / ℏ_q²       (per_knot_density_borromean)  → 966  (+2.96%, a FIT)
+    m_e · Vol(𝓑₃) · tr_M / ℏ_q²      (per_knot_density_per_block)  → 406  (−57%)
 Both apply 1/ℏ_q² to the wrong (Borromean) volume. They are DEPRECATED for
 absolute mass (mass_vol_density emits a DeprecationWarning). Route every
 absolute-mass consumer through THIS module instead.

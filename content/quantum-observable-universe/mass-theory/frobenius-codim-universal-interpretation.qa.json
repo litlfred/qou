@@ -1429,6 +1429,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \", not an independent constraint.\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.702Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Three negation-contrasts ('a consequence of semisimplicity, not an independent constraint'; 'does not record a discovery about A'; 'sits in the hypothesis rather than the conclusion') — but the block's whole content IS that separation, so all three are the substantive-mathematical-contrast false-positive class.",
+        "notes": "Density noted (3 in 204 words) but each carries the claim; no fix."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1448,6 +1464,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.741Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No setup-then-reframe. 'The content therefore sits in the hypothesis rather than the conclusion' is the derived conclusion of the preceding argument, and the circularity caveat is a substantive logical point."
       }
     ],
     "trap-em-dash": [
@@ -1467,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 194 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.782Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Three em-dashes: one true parenthetical pair ('— as though the numerical identity constrained the algebra —') plus one contrast dash joining two clauses. Below the density threshold; the parenthetical is legitimate.",
+        "notes": "Marginal: '...semisimple Frobenius algebra with a trace — it does not record a discovery about A' would read as well with a semicolon. Not worth an edit."
       }
     ],
     "trap-triples": [
@@ -1486,6 +1533,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 194 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.819Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'the finite block set, the non-vanishing Frobenius weights, and the invertible quantum dimensions' enumerates three genuinely distinct data supplied by the Wedderburn axiom, each used in the argument."
       }
     ],
     "trap-closing-aphorism": [
@@ -1505,6 +1567,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.858Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Final line 'Read the other way round ... it would be circular' is a substantive logical warning about direction of inference, not a manufactured quotable closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1524,6 +1601,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.896Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "'The word *universal* in the title records that ...' disambiguates a term that could be misread as a discovery claim — the load-bearing-disambiguation false-positive class, stated directly rather than narrated. Bold lead-in 'What the theorem does and does not supply' names the remark's actual scope."
       }
     ],
     "trap-thesis-restatement": [
@@ -1543,6 +1635,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.935Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Block does not end by restating its opening; the closing sentence adds the circularity constraint."
       }
     ],
     "trap-performed-warmth": [
@@ -1562,6 +1669,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:51.974Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1581,6 +1703,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:52.014Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "No unqualified maximum-strength claims; 'universal' is explicitly scoped in the text."
       }
     ],
     "trap-nonspeakable": [
@@ -1600,6 +1737,21 @@
         "reviewed_at": "2026-08-15T10:31:00.601Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0ca7982360c0",
+          "ts": "d0c8ed2a3f81"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r08",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:40:52.052Z",
+        "reviewed_sha": "40546977cc6971e6bf214b8f2e101dc143bbee8a",
+        "evidence": "Longest chain, 'the trace of the quantum-co-dimension element scaled by the electron mass', parses aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1622,5 +1774,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:40:52.052Z"
 }

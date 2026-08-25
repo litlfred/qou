@@ -1138,7 +1138,8 @@
         "reviewed_at": "2026-07-07T14:26:55.432778Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents '$q$-Weighted Yang--Mills--Levi functional' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents '$q$-Weighted Yang--Mills--Levi functional' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1242,7 +1243,8 @@
         "reviewed_at": "2026-07-07T14:26:55.432778Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1453,7 +1455,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean fails compilation: content/quantum-observable-universe/models-of-qous/q-yang-mills-levi.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
       },
       {
         "result": "pass",
@@ -1870,6 +1873,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.032Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1889,6 +1907,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.072Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-em-dash": [
@@ -1908,6 +1941,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 54 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.113Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-triples": [
@@ -1927,6 +1975,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 54 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.157Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-closing-aphorism": [
@@ -1946,6 +2009,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.199Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-meta-commentary": [
@@ -1965,6 +2043,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.238Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-thesis-restatement": [
@@ -1984,6 +2077,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.276Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-performed-warmth": [
@@ -2003,6 +2111,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.315Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-superlative": [
@@ -2022,6 +2145,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.355Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "trap-nonspeakable": [
@@ -2041,6 +2179,21 @@
         "reviewed_at": "2026-08-15T10:31:01.062Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b1b2578aca7e",
+          "ts": "fd5a281d25fd"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:23:44.397Z",
+        "reviewed_sha": "2b3b2d4ab5ef16efe321f2016e546303fc413fa1",
+        "evidence": "Full read (definition, ~0.6kB). The tuple (C, Theta, G, S) is the current QOU 4-tuple per sec 7 (the deprecated 5-tuple is not used). q(p) = 1 + |<L_Theta, F_A^+>|(p) matches rem:c-substrate-via-levi exactly, and the contact volume Theta wedge (dTheta)^n is written with the Theta factor. All ten categories clean."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2064,5 +2217,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:23:44.397Z"
 }

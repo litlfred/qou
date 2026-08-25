@@ -1226,6 +1226,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.834Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "'No two are linked, but all three together are inseparable' is the defining property of the Borromean link -- substantive mathematical contrast."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1245,6 +1261,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.872Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 78-word remark; cross-checked against the sibling conjecture borromean-baryon-mass-formula.md."
       }
     ],
     "trap-em-dash": [
@@ -1264,6 +1296,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.908Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 78-word remark; cross-checked against the sibling conjecture borromean-baryon-mass-formula.md."
       }
     ],
     "trap-triples": [
@@ -1283,6 +1331,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 74 words)"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.942Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 78-word remark; cross-checked against the sibling conjecture borromean-baryon-mass-formula.md."
       }
     ],
     "trap-closing-aphorism": [
@@ -1302,6 +1366,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:32.976Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 78-word remark; cross-checked against the sibling conjecture borromean-baryon-mass-formula.md."
       }
     ],
     "trap-meta-commentary": [
@@ -1321,6 +1401,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.014Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 78-word remark; cross-checked against the sibling conjecture borromean-baryon-mass-formula.md."
       }
     ],
     "trap-thesis-restatement": [
@@ -1340,6 +1436,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.050Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "The block is four short declaratives; the last is an over-claim (recorded above), not a restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1359,6 +1471,22 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.086Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 78-word remark; cross-checked against the sibling conjecture borromean-baryon-mass-formula.md."
       }
     ],
     "trap-superlative": [
@@ -1378,6 +1506,23 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.121Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Closing sentence 'The entire baryon mass originates directly from the Borromean linking.' is an unqualified absolute ('entire', 'directly') and it contradicts the sibling conjecture in the same chapter, which gives m(B) = m_{B_3}(q_0) + m_e*S(B) -- i.e. an orientation-dependent Skein term also contributes.",
+        "notes": "proposed (structural, NOT applied -- meaning is at stake): 'The Borromean linking carries the common baryon mass scale; the orientation dependence sits in the Skein term S(B) (see conj:borromean-baryon-mass-formula).'"
       }
     ],
     "trap-nonspeakable": [
@@ -1397,6 +1542,23 @@
         "reviewed_at": "2026-08-15T10:31:00.474Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "bc3d6c64b0dd",
+          "ts": "d5587fbdc675"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:33.155Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Short, speakable sentences.",
+        "notes": "RIGOR (not a trap): Vol ~ 7.327 for the Borromean complement is correct (8G = 7.3277248). Terminology: 'contributing to the Skein polynomial' -- AGENTS.md 7a fixes the Jones polynomial as J_K(q); 'Skein polynomial' conventionally names HOMFLY. Proposed: say 'to the Jones polynomial J_K(q)' or 'to the skein resolution'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1419,5 +1581,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:33.155Z"
 }

@@ -159,15 +159,30 @@ def resolve(ref: str) -> Path | None:
         if cand.is_file():
             return cand
     name = Path(ref).name
-    hits = [p for p in HERE.rglob(name) if p.is_file()]
+    # A `_deprecated/` copy is by definition NOT the producer, but it counts
+    # toward the uniqueness test below, so a live producer with a retired twin
+    # resolved to None. Measured: `rho_k_markov_multiplicativity_probe.py`
+    # exists at BOTH computations/probes/ and computations/_deprecated/, and
+    # the witness sitting next to the live one was reported producerless --
+    # which is how a content block citing it as PROVED came to look like it
+    # rested on nothing. Every other scan in this repo already skips
+    # `_deprecated`; this one did not.
+    hits = [p for p in HERE.rglob(name)
+            if p.is_file() and "_deprecated" not in p.parts]
     if len(hits) == 1:
         return hits[0]
     if not hits:
         # Widen to the repo for non-Python producers, skipping build output.
+        # `.claude/worktrees/<agent>/` holds checkouts of OTHER branches, so a
+        # repo-wide rglob returns the real producer PLUS one copy per stale
+        # worktree. The `len(wide) == 1` guard below then rejects the match as
+        # ambiguous and the producer resolves to None -- i.e. a producer that
+        # plainly exists is reported missing. Measured: `joint_tower_sdp.rs`
+        # returned 6 hits, 1 real and 5 from worktrees.
         wide = [p for p in ROOT.rglob(name)
                 if p.is_file() and not any(
-                    part in (".git", ".lake", "node_modules", "target",
-                             "__pycache__")
+                    part in (".git", ".claude", ".lake", "node_modules",
+                             "target", "__pycache__", "_deprecated")
                     for part in p.parts)]
         if len(wide) == 1:
             return wide[0]

@@ -62,6 +62,13 @@ class VolumeConjecture (q : ℝ) where
       of `sorry` for KVC. -/
   kvc_holds : ∀ β, hypVolume β = kashaevLimit β
 
+/-- **CONJECTURE.** A combinatorial constructor for subLink and its hyperbolic volume. -/
+class PieceVolumeConjecture (q : ℝ) [VolumeConjecture q] where
+  /-- The piece volume function. -/
+  pieceVolume : Braid → ∀ {n}, Finset (Fin (n - 1)) → ℝ
+  /-- The piece volume is non-negative. -/
+  pieceVolume_nonneg : ∀ β {n} (S : Finset (Fin (n - 1))), 0 ≤ pieceVolume β S
+
 /-- The hyperbolic volume of a Φ_q-piece `K_S`, lifted from the
     typeclass.  This is the canonical bridge between the abstract
     `SubLink.hypVolume` field on the geometry side and the typeclass
@@ -69,7 +76,7 @@ class VolumeConjecture (q : ℝ) where
     instance of `VolumeConjecture` populates a real value. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
 --                   kashaev-volume-conjecture
-noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
+noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q] [hi : PieceVolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
   -- The Φ_q-piece K_S is the closure of the sub-braid obtained by
   -- replacing each crossing outside `S` with the identity strand.
@@ -82,9 +89,9 @@ noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
   -- CONJECTURE: A combinatorial constructor for subLink and its hyperbolic volume is deferred to the SnapPy bridge layer.
-  sorry
+  hi.pieceVolume β S
 
-theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
+theorem pieceVolume_nonneg (q : ℝ) [VolumeConjecture q] [inst : PieceVolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
     0 ≤ pieceVolume q β S := by
   -- Once `pieceVolume` is given a concrete combinatorial definition,
@@ -93,7 +100,7 @@ theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
   -- CONJECTURE: Becomes a non-trivial fact derived from hypVolume_nonneg applied to the sub-braid subLink β S once pieceVolume is concrete.
-  sorry
+  exact inst.pieceVolume_nonneg β S
 
 end QOU.Kashaev
 

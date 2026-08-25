@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.097Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "'The Descartes elliptic curve does not acquire a node at $q = \\varphi^2$ ... Instead, the bar-dual node signifies the degeneration of the dual curve' is substantive mathematical contrast: the denial is verified (s^2+s-1 = 1+sqrt5 at s = phi, non-zero) and it is exactly the distinction the section exists to draw. 'It has no closed form in $\\varphi$ alone' is a factual scope statement."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.154Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "No setup-then-reframe; the sections are declarative."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 285 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.660Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 285 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.743Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.805Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1346,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:08.883Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1380,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.269Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "The proof ends on its QED box and each commentary section introduces new content (the margin numbers, the dual-curve distinction, the Moebius connection, the falsifiability claim). No section merely restates a prior one."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1414,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.005Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "Full read (five-sentence proof plus four commentary sections). No spaced em-dash (only the Iwahori--Hecke name en-dash), no reflex triple, no aphoristic closer, no narrated emphasis ('We predict that...' is a falsifiability statement, not narration of emphasis), no warm register. THE MATHEMATICS IS ALL CORRECT, recomputed: multiplying s^2+s-1 by -s_0^{-2} does give -1-s_0^{-1}+s_0^{-2}, and u = s_0^{-1} gives u^2-u-1 exactly; the arithmetic midpoint is exact, 1/phi^2 + phi^2 = 3 so the midpoint is 3/2; the ratio (phi^2-q_0)/(q_0-1/phi^2) = 2.07147 matches the quoted 2.07; s^2+s-1 evaluates to 1+sqrt5 = 3.236 (non-zero) at s = phi and to 0 at s = 1/phi, so the 'does not acquire a node at q = phi^2' claim is right; and the Moebius map f(q) = (4-q)/(4q+3) has fixed points exactly {(sqrt5-1)/2, -(1+sqrt5)/2} = {1/phi, -phi}, as stated."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1448,22 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.350Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "No maximum-strength claims; the quantitative statements carry explicit numbers and the prediction is stated as a prediction.",
+        "notes": "Two content items reported to the batch. (1) UNSUPPORTED EMPIRICAL APPEAL, the strongest item in this block: 'This aligns with the empirical observation that nuclear physics is more robust against substrate compression than rarefaction.' There is no empirical observation of substrate compression - the substrate parameter q is framework-internal - and no citation, witness or measurement is given. The supporting arithmetic is also not stated: q_0 sits 0.728 from the sub-classical node and 1.508 from the super-classical one, so which margin counts as 'compression' depends on a sign convention the block never fixes. (2) PIN CURRENCY: 'The physical parameter $q_0 = 1.109978595554181\\ldots$ (muon pin, 16 dps)'. That string is the OLD muon value; the current muon pin is 1.10997859555733471 and the owner-default compute pin (2026-08-07) is the proton 1.1099785827513808. The '16 dps' label is honest about the digit count, which is better than the usual '(50 dps)' mislabel - and the defect is cosmetic here, because all three pins give the same margins to 8 significant figures (see the verdict on tbl:golden-skew-dual-node-table-data)."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1483,21 @@
         "reviewed_at": "2026-08-15T10:31:01.171Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2d9409648e0c",
+          "ts": "3060de45b925"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:52:09.505Z",
+        "reviewed_sha": "3e55c8e35819889a3c059e625f952aa0799f5c74",
+        "evidence": "The prose is clause-based and readable throughout; no noun-pile subjects and no agentless nominalisation chains, in contrast with the other proof blocks in this batch."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1520,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:52:09.505Z"
 }

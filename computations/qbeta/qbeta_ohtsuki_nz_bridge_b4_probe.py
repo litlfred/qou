@@ -174,7 +174,19 @@ def main() -> int:
     # to prevent. Via save(extra=...) and NOT add_data(), which nests under
     # `data` where the audit reading body["q0Anchor"] cannot see it. No
     # q0Value — there is no value, and one here is a Q0_FLIP.
-    wb.save({"q0Anchor": "independent"})
+    wb.save({
+        "q0Anchor": "independent",
+        "q0AnchorReason": (
+            "Taylor coefficients in a FREE parameter u against proved "
+            "constants: pi, sqrt(3), the exact Ohtsuki rungs "
+            "k1 = 11*sqrt(3)*pi/108 and k2 = 2*pi^2/27, and 4_1 geometry via "
+            "t2.V41_integrated. No substrate value is read. The one "
+            "non-trivial import, probes/sdeformed_channel_signflip_probe.py, "
+            "imports only json/subprocess/datetime/pathlib/mpmath, so "
+            "wedderburn_jones_markov.y_lambda_at — and its muon-cache "
+            "straddle — is unreachable from here."
+        ),
+    })
 
     ok = a2_err < mp.mpf("1e-8")
     print(f"\n  RESULT: {'method validated; verdict recorded' if ok else 'a2 VALIDATION FAILED'}")

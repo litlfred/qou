@@ -6,7 +6,7 @@ import Mathlib.Tactic.NormNum
 
 The 6-crossing continuation of `CubicSaddleDiscriminant` (5₂, three saddles → −23).
 The GGM state-integral saddle curve is worked explicitly only for 4₁ and 5₂
-(`uploads/2012.00062v3.pdf` §§5–6); the 6-crossing knots appear there only as
+(`library/arxiv-2012.00062v3/2012.00062v3.pdf` §§5–6); the 6-crossing knots appear there only as
 q-series. So the faithful 6-crossing datum is taken from the **hyperbolic
 geometry** instead of GGM: the shape parameter `z` of the Stevedore knot 6₁
 (4-tetrahedron triangulation) generates a degree-4 field with minimal polynomial

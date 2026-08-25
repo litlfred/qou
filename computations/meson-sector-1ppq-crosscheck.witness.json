@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T17:01:05.818718+00:00",
-  "commitSha": "77f2b68af2c9d52ae3d55c1cea746e8e9977db80",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:15:31.445377+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "all_l1_pass",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 4,
   "computation": "meson-sector-1ppq-crosscheck",
   "scriptFile": "meson_sector_1ppq_crosscheck.py",
-  "scriptHash": "2e0a293e576b",
-  "scriptCommitSha": "5a44813463430491fdc8cd8cd5a97a404b5e7e9d",
+  "scriptHash": "b4d801a95209",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,11 +26,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.12.3",
+    "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/meson_sector_1ppq_crosscheck.py"
+    ],
+    "reproduce": "python3 -u computations/meson_sector_1ppq_crosscheck.py"
   },
   "description": "L1 (1 ppQ) cross-checks for the meson sector. Verifies 4 algebraic identities at 50 dps: q⁵−q⁻⁵=h·[5]_q, b²=[3]_q/[2]_q², 1-b²=1/[2]_q², and the pion discriminant.",
   "contentBlock": "prop:pion-half-figure-eight",

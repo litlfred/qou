@@ -100,7 +100,7 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 _UPSTREAM_RECORDS: list = []
 
 import numpy as np  # noqa: E402
-from mpmath import mp, mpf, sqrt, cot, sin, pi, fabs  # noqa: E402
+from mpmath import mp, mpf, sqrt, cot, sin, pi, fabs, clsin  # noqa: E402
 
 HERE = pathlib.Path(__file__).resolve().parent
 COMP = HERE.parent
@@ -114,9 +114,14 @@ DISSOLUTION = COMP / "one-loop-c-sigma-percusp-dissolution.witness.json"
 # with the call in main() rather than replacing it.
 set_compute_dps()
 
-# Vol(4_1) = 4 Lambda(pi/6) = 6 Lambda(pi/3); the standard 60-digit value.
-VOL_41 = mpf("2.0298832128193072500424051085486440883603983786944"
-             "38195202545")
+# Vol(4_1) = 2*Cl_2(pi/3) = 6*Lambda(pi/3) = 4*Lambda(pi/6). All three forms
+# agree (verified to 35 digits); the comment's identity was correct. What was
+# wrong is the literal it labelled "the standard 60-digit value": it printed 60
+# and was correct to 30 --
+#   was    2.0298832128193072500424051085 48644088360398378694438195202545
+#   exact  2.0298832128193072500424051085 4904057188337861506...
+# Computed now, so there is nothing to transcribe (bean qou-ckbv).
+VOL_41 = 2 * clsin(2, pi / 3)
 
 
 def kashaev_log(N: int) -> float:

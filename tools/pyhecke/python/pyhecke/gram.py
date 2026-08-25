@@ -43,6 +43,22 @@ except ImportError:
         Q as q0, Q_INV as qi, HA as h,
     )
 
+# ⚠ `q0`, `qi`, `h` above are the **float64** path. They are deliberately
+# bit-stable — `constants.py` says "Don't change them — downstream f64
+# callers depend on stability" — so they are correct for existing witness
+# scripts and must not be converted.
+#
+# They are ALSO an entry point into float64 for anything doing exact work:
+# `h` differs from q₀ − q₀⁻¹ by 5.0e-17, and a caller who writes
+# `float(G.h)` or drops `G.h` into mpmath arithmetic silently pins the
+# whole computation to double precision with no signal.
+#
+# **The mpf counterparts already exist in this module** — use them:
+#     h_mp(dps=50)   z_mp(dps=50)   tr_m_mp(dps=50)   gram_matrix_mp(dps=50)
+# `h_mp()` agrees with q₀ − q₀⁻¹ to the last bit (1.3e-51 at 50 dps).
+#
+# Bean qou-jtbo; AGENTS.md "PROBES ARE NOT EXEMPT" (2026-08-18).
+
 
 # ══════════════════════════════════════════════════════════════
 # Scalar constants
@@ -90,13 +106,19 @@ except ImportError:
 # note below for why the pseudoinverse is the honest object here and why
 # `G_INV` is left UNDEFINED rather than rebound.
 #
-# STILL DIVERGENT — the Rust mirror. tools/hecke-engine/src/gram.rs ends
-# `trace_weights` with `z*z*z` where `TR_M` below ends `h*z^2 + z` (the
-# 2026-05-19 fix). That bug is load-bearing there for exactly the reason it was
-# here: with the CORRECT TR_M[5] the form is singular, with `z^3` it is not
-# (proved on the same probe, three q). So the Rust side needs TR_M[5] AND the
-# quotient in ONE change — fixing the trace alone drops a singular Gram into
-# the native path. Tracked as qou-m7py.
+# CONVERGED — the Rust mirror, as of 2026-08-15 (qou-m7py RESOLVED, PR #5088).
+# This banner previously read "STILL DIVERGENT", describing a state that no
+# longer exists, while `_native_ok()` below already reported the path as
+# enabled: the file contradicted itself, and the banner is what a reader hits
+# first. tools/hecke-engine/src/gram.rs now ends `trace_weights` with
+# `h*z^2 + z`, matching `TR_M` below, and it took the trace fix AND the
+# quotient in ONE change exactly as the old note required — `gram_inverse` was
+# REMOVED in favour of `gram_quotient_inverse` + `gram_radical`, so the
+# singular Gram never reaches a caller expecting a 6x6 inverse. Verified
+# native == Python-D at q0: trace_weights and gram_matrix delta = 0,
+# gram_quotient_inverse vs G_PINV 4.4e-16, gram_determinant = 0. The dispatch
+# is ENABLED by default and guards an out-of-date wheel with the runtime
+# self-check in `_native_ok()`; `QOU_DISABLE_NATIVE=1` is the opt-out.
 #
 # ── historical record: what convention C measured here ───────────────
 #
@@ -123,7 +145,9 @@ except ImportError:
 # either way, because y_(1^3) = 0.0227 != 0.
 #
 # And numpy does not protect you: `np.linalg.inv` on the D matrix RAISES
-# NOTHING. It returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+# NOTHING. It returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64
+# in the MAX-ENTRY norm (4.14 Frobenius -- both figures are in the corpus
+# for this same matrix, so always say which norm).
 # A silently wrong `G_INV`, exported at import into constants.py, atom.py,
 # molecular.py, sdp.py and nine corpus consumers, is far worse than the
 # stale convention.
@@ -137,7 +161,7 @@ except ImportError:
 # 50-dps figure (det = 2.89e-51, GramSignature.lean) comes from an exact NF,
 # not from here. So the degeneracy is INVISIBLE to this module's own
 # precision, and `np.linalg.inv` is inverting rounding noise -- which is
-# exactly the observed cond 4.9e16 and ||G G_INV - I|| = 1.64.
+# exactly the observed cond 4.9e16 and ||G G_INV - I||_max = 1.64.
 #
 # The exactness itself does not rest on any determinant: under D,
 # y_(1^3) = 0 SYMBOLICALLY (verified three independent ways -- the sympy
@@ -392,7 +416,8 @@ RADICAL = np.array([(-1.0 / q0) ** len(w) for w in NF_BASIS])
 #:
 #: `G` is SINGULAR under convention D — that is what the radical above says —
 #: so a 6x6 inverse does not exist and `np.linalg.inv(G)` does not say so: it
-#: raises nothing and returns entries up to 7.6e15 with ||G @ G_INV - I|| = 1.64.
+#: raises nothing and returns entries up to 7.6e15 with
+#: ||G @ G_INV - I||_max = 1.64 (= 4.14 Frobenius).
 #: The Moore-Penrose pseudoinverse of a symmetric matrix with a one-dimensional
 #: kernel IS the inverse on the orthogonal complement of that kernel, which is
 #: the quotient. So this is the honest object, not an approximation to a
@@ -496,6 +521,7 @@ __all__ = [
     "gram_quotient_inverse",
     # 50-dps mpmath Gram / trace (NO float64)
     "z_mp", "h_mp", "tr_m_mp", "hm_mp", "gram_matrix_mp",
+    "radical_mp", "gram_inverse_mp", "gram_quotient_solve_mp",
     "gram_matrix_mp_strings", "tr_m_mp_strings",
     # Native-dispatched atom kernels
     "build_atom_nf", "atom_per_generator_volumes", "has_native",
@@ -620,34 +646,42 @@ def _q0_50dps_str() -> str:
 
 
 def z_mp(dps: int = _GRAM_MP_DPS) -> "_mp.mpf":
-    """z = 1/(q^½ + q^−½) at 50-dps mpmath (irrational; no float64).
+    """z = q³/(q² + 1) at 50-dps mpmath — **convention D**, no float64.
 
-    **Convention C.** Held here deliberately, in lockstep with the module's
-    float64 `z` — see the blocking note at that definition. Splitting the
-    mpmath mirror from the f64 original would be strictly worse than the
-    stale convention. Under D this would be q³/(q²+1), and rational, so the
-    "irrational" note would no longer apply.
+    MIGRATED 2026-08-16 (bean qou-cds2). This returned convention C's
+    1/(q^½ + q^−½) = 0.4993203…, and its docstring justified that by being
+    "in lockstep with the module's float64 `z`". That stopped being true on
+    2026-08-15, when the float64 `z` moved to D (commit 6086572c4): the
+    justification outlived the fact it rested on. The mpmath mirror then sat
+    18.5 % from the float64 original behind one import — and note which way
+    that ran, because it is the opposite of the usual worry: the NO-FLOAT64
+    path was the WRONG-convention one, so the more precise answer was the
+    incorrect answer.
+
+    Now rational, so the former "irrational" caveat no longer applies.
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
-        qi_ = 1 / q
-        return +(1 / (_mp.sqrt(q) + _mp.sqrt(qi_)))  # unary + pins precision
+        return +(q ** 3 / (q ** 2 + 1))  # unary + pins precision
 
 
 def tr_m_mp(dps: int = _GRAM_MP_DPS) -> list:
     """Markov trace TR_M on the NF basis at 50-dps mpmath (NO float64).
 
     Mirrors the float64 `TR_M` exactly: [1, z, z, z², z², h·z²+z] with
-    h = q − q⁻¹ and z the irrational Markov weight at 50 dps.
+    h = q − q⁻¹ and z the Markov weight at 50 dps.
 
-    **Convention C**, in lockstep with the module's `z` — see the blocking
-    note at that definition (bean qou-wgta item 11).
+    **Convention D**, genuinely in lockstep with the module's `z` as of
+    2026-08-16 (bean qou-cds2) — the claim this docstring already made, now
+    true. It was written when both were C, and survived the float64 side
+    moving to D, which is how a module came to export two conventions while
+    every docstring in it said otherwise.
     """
     with _mp.workdps(dps):
         q = _mp.mpf(_q0_50dps_str())
         qi_ = 1 / q
         hh = q - qi_
-        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        z_ = q ** 3 / (q ** 2 + 1)
         return [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
                 +(hh * z_ ** 2 + z_)]
 
@@ -743,7 +777,15 @@ def gram_matrix_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
         q = _mp.mpf(_q0_50dps_str()) if q is None else _mp.mpf(q)
         qi_ = 1 / q
         h_mp = q - qi_
-        z_ = 1 / (_mp.sqrt(q) + _mp.sqrt(qi_))
+        # Convention D (migrated 2026-08-16, qou-cds2; was C's
+        # 1/(q^½ + q^−½)). Under D this Gram is SINGULAR on the full NF
+        # basis — that is the fact which forced `G_INV`'s deletion on the
+        # float64 side. It does not block anything here: this accessor only
+        # BUILDS G and never inverts it, so a corank-1 form is a correct
+        # return value rather than a hazard. The plan called this the
+        # highest-risk item by carrying the float64 inverse's problem across
+        # to a path that has no inverse.
+        z_ = q ** 3 / (q ** 2 + 1)
         trm = [_mp.mpf(1), +z_, +z_, +(z_ ** 2), +(z_ ** 2),
                +(h_mp * z_ ** 2 + z_)]
         Gm = [[_mp.mpf(0)] * 6 for _ in range(6)]
@@ -752,6 +794,87 @@ def gram_matrix_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
                 nf = _nf_of_word_mp(NF_BASIS[i] + NF_BASIS[j], h_mp)
                 Gm[i][j] = +_mp.fsum(nf[k] * trm[k] for k in range(6))
         return Gm
+
+
+def radical_mp(dps: int = _GRAM_MP_DPS, q=None) -> list:
+    """The Gram radical at 50-dps mpmath — NO float64.
+
+    The three-strand q-antisymmetriser `v_i = (-1/q)^len(w_i)` over
+    `NF_BASIS`, i.e. the float64-free twin of the module constant `RADICAL`.
+    Established exactly over Q at three independent rational q in
+    `computations/probes/gram_radical_exact_probe.py` (det G = 0 EXACTLY,
+    rank 5 of 6, nullspace dimension exactly 1), so this is the PROVED null
+    direction, not one extracted numerically.
+
+    Carried in mpmath because the numerical check that it *is* the null
+    direction is precision-bound: `||G . v||` is 4.5e-62 at 60 dps and
+    4.3e-121 at 120 dps — it tracks the working precision, which is what
+    "exactly zero" looks like in floating point. At float64 it would be
+    indistinguishable from noise.
+    """
+    with _mp.workdps(dps):
+        qq = _mp.mpf(_q0_50dps_str()) if q is None else _mp.mpf(q)
+        return [+((-1 / qq) ** len(w)) for w in NF_BASIS]
+
+
+def gram_inverse_mp(dps: int = _GRAM_MP_DPS):
+    """REMOVED under convention D — the mp Gram is singular, so `G^-1` does
+    not exist. The mpmath twin of `gram_inverse()`.
+
+    Raises rather than returning a quotient solve, for the same reason the
+    float64 version does: the caller asked for an inverse, and under
+    convention D there isn't one. Substituting the quotient silently would
+    answer a different question.
+    """
+    raise NotImplementedError(
+        "gram_inverse_mp() is removed: under convention D the H_3(q) trace "
+        "form is SINGULAR (rank 5 of 6; the radical is the q-antisymmetriser, "
+        "`radical_mp()`), so G^-1 does not exist. Note that `mp.lu_solve` "
+        "does NOT raise on this matrix either — it returns entries of order "
+        "1e50 with a visibly nonzero residual — so a caller who reached for "
+        "lu_solve instead has the same bug without the error message. Use "
+        "`gram_quotient_solve_mp` and check that the quotient is what you "
+        "actually want."
+    )
+
+
+def gram_quotient_solve_mp(rhs, dps: int = _GRAM_MP_DPS, q=None):
+    """Solve `G x = rhs` on the quotient `H_3(q)/rad` at mpmath precision.
+
+    Returns `(x, radical_component)`:
+
+      x                  the minimum-norm solution, orthogonal to the radical
+      radical_component  the part of `rhs` ALONG the radical
+
+    `G` is symmetric with a one-dimensional kernel spanned by the
+    q-antisymmetriser `v`, so its range is exactly `v`-perp. An exact
+    solution therefore exists **iff** `radical_component` is zero (to working
+    precision); when it is not, the returned `x` solves the projected system
+    and `radical_component` is the part that no `x` can reach. It is returned
+    rather than discarded so a caller cannot mistake an unsolvable system for
+    a solved one — which is precisely what `mp.lu_solve` does here, returning
+    ~1e50 garbage without raising.
+
+    Method: with `P` the projector off `v`, solve `(G + P_v) x = P rhs`. That
+    matrix is invertible (it acts as `G` on `v`-perp, which is a bijection
+    there, and as the identity on `v`), and its solution already lies in
+    `v`-perp, so this is the exact minimum-norm solution — not a regularised
+    approximation to one. This is the mpmath analogue of `G_PINV`, which is
+    the Moore-Penrose pseudoinverse for exactly the same reason.
+    """
+    with _mp.workdps(dps):
+        Gm = _mp.matrix(gram_matrix_mp(dps, q))
+        v = _mp.matrix(radical_mp(dps, q))
+        vv = _mp.fsum(v[i] * v[i] for i in range(6))
+        b = _mp.matrix([_mp.mpf(x) for x in rhs])
+        coeff = _mp.fsum(v[i] * b[i] for i in range(6)) / vv
+        b_perp = _mp.matrix([b[i] - coeff * v[i] for i in range(6)])
+        A = _mp.matrix(6, 6)
+        for i in range(6):
+            for j in range(6):
+                A[i, j] = Gm[i, j] + v[i] * v[j] / vv
+        x = _mp.lu_solve(A, b_perp)
+        return [+x[i] for i in range(6)], +(coeff * _mp.sqrt(vv))
 
 
 def gram_matrix_mp_strings(dps: int = _GRAM_MP_DPS) -> list:

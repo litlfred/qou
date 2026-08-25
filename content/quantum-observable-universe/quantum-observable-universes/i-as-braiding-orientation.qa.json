@@ -1233,6 +1233,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.204Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "No negative construction; the c_{V,V} versus c_{V,V}^{-1} pairing is the subject matter."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1267,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.240Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Lead sentence plus three parallel instances; no setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1301,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.276Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "No dashes."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1335,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 70 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.315Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Three numbered items (Wick rotation, CR complex structure, arrow of time). Substantive: each names a different structure in which the sign of i is the orientation datum, so the count is set by the content."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1369,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.352Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Ends on 'Negating i equates to flipping the crossing orientation' - a technical claim inside item 3, not a placed closer."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1403,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.391Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1437,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.429Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Item 3's last sentence restates the lead sentence in crossing language, but it is the conclusion of the arrow-of-time item rather than a block-final flourish."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1471,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.468Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1505,21 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.505Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "evidence": "No maximum-strength claim."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1539,23 @@
         "reviewed_at": "2026-08-15T10:30:59.874Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e9a8cb0a642b",
+          "ts": "536c37a45ff8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:12:53.554Z",
+        "reviewed_sha": "8ed5a9fa95609583b6639261e2cf6b3d543796f1",
+        "severity": "minor",
+        "evidence": "Item 1 stalls aloud: 'The rotation $t \\mapsto it$ converting the Laplace half-plane to the Fourier half-plane flips upon $i \\mapsto -i$.' The subject 'The rotation' is separated from its verb 'flips' by a nine-word participial, and 'flips upon' leaves it ambiguous whether the rotation, the correspondence, or the half-plane is what flips. Items 2 and 3 also carry substituted verbs that read as written-for-the-eye ('secures the CR orientation', 'equates to flipping').",
+        "notes": "NOT FIXED (the ambiguity in 'flips upon' means any rewrite risks choosing a meaning the author did not intend). PROPOSED, if the intended reading is that the correspondence reverses: 'The Wick rotation t -> it carries the Laplace half-plane to the Fourier half-plane; replacing i by -i reverses that correspondence.' Also suggest 'fixes the CR orientation' for 'secures' and 'amounts to' for 'equates to'. SEPARATE FLAG: item 2 writes a BARE J ('The operator J : H -> H'), the third bare-J site I have hit in this chapter (with rem:generating-functions-solve-reeb-flow and prop:heisenberg-commutator); notation-collisions.md says 'We never write bare J'."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1578,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:12:53.554Z"
 }

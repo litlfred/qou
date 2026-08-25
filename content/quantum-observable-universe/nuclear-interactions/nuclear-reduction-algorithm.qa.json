@@ -1233,6 +1233,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:59.969Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Complexity claims check: C(A,2)=O(A^2) crossings, and the naive 2^{Z*N} bound follows from resolving each of the Z*N mixed crossings as (sigma+sigma^{-1})/2. Bib key leitnerpawloski2004 present.",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1252,6 +1269,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.008Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Complexity claims check: C(A,2)=O(A^2) crossings, and the naive 2^{Z*N} bound follows from resolving each of the Z*N mixed crossings as (sigma+sigma^{-1})/2. Bib key leitnerpawloski2004 present.",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
       }
     ],
     "trap-em-dash": [
@@ -1271,6 +1305,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.048Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Complexity claims check: C(A,2)=O(A^2) crossings, and the naive 2^{Z*N} bound follows from resolving each of the Z*N mixed crossings as (sigma+sigma^{-1})/2. Bib key leitnerpawloski2004 present.",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
       }
     ],
     "trap-triples": [
@@ -1290,6 +1341,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 136 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.087Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'($pp$, $nn$, or mixed)' and the four-step algorithm.",
+        "notes": "Substantive."
       }
     ],
     "trap-closing-aphorism": [
@@ -1309,6 +1377,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.127Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Complexity claims check: C(A,2)=O(A^2) crossings, and the naive 2^{Z*N} bound follows from resolving each of the Z*N mixed crossings as (sigma+sigma^{-1})/2. Bib key leitnerpawloski2004 present.",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
       }
     ],
     "trap-meta-commentary": [
@@ -1328,6 +1413,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.170Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Complexity claims check: C(A,2)=O(A^2) crossings, and the naive 2^{Z*N} bound follows from resolving each of the Z*N mixed crossings as (sigma+sigma^{-1})/2. Bib key leitnerpawloski2004 present.",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
       }
     ],
     "trap-thesis-restatement": [
@@ -1347,6 +1449,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.213Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read + .ts. Complexity claims check: C(A,2)=O(A^2) crossings, and the naive 2^{Z*N} bound follows from resolving each of the Z*N mixed crossings as (sigma+sigma^{-1})/2. Bib key leitnerpawloski2004 present.",
+        "notes": "No block-final sentence restating what the text already established."
       }
     ],
     "trap-performed-warmth": [
@@ -1366,6 +1485,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.255Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read + .ts. Complexity claims check: C(A,2)=O(A^2) crossings, and the naive 2^{Z*N} bound follows from resolving each of the Z*N mixed crossings as (sigma+sigma^{-1})/2. Bib key leitnerpawloski2004 present.",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
       }
     ],
     "trap-superlative": [
@@ -1385,6 +1521,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.299Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'The output is independent of the choice of $g \\in G$ because $G$ is a Gröbner--Shirshov basis.'",
+        "notes": "EARNED -- that is exactly what confluence gives. Complexity claims also check: C(A,2) = O(A^2) crossings, and 2^{Z*N} follows from resolving each of the Z*N mixed crossings as (sigma + sigma^{-1})/2."
       }
     ],
     "trap-nonspeakable": [
@@ -1404,6 +1557,23 @@
         "reviewed_at": "2026-08-15T10:31:01.500Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6223e0f615ce",
+          "ts": "9ab98d343868"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:56:00.340Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "'**Complexity.** The inductive strategy requires $O(A^2)$ multiplications and $O(A^3)$ Hecke reduction steps.'",
+        "notes": "Not a register problem but a cross-block conflict this sentence creates: ex:o16-derived-nf states that A=16 needs '<= 480 Hecke steps', whereas O(A^3) here is 4096, and states the unreduced word has '~10^10 terms' where this block's own 2^{Z*N} bound gives 2^64 = 1.8x10^19 -- nine orders of magnitude apart. One of the two blocks is wrong; reported, not resolved."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1426,5 +1596,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:56:00.340Z"
 }

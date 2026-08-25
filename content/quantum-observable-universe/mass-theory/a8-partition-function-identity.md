@@ -55,4 +55,4 @@ Table 1; Andrews, *The Theory of Partitions*, §1.1).
   [`cyclotomic-strand-doubling.md`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.md)
 - categorical source: the canonical formalism
 
-This result records the canonical coincidence that the $a_8$ coefficients $(1,2,3,5,7)$ match the partition numbers $p(1..5)$: a categorical Habiro-shell observation rather than a new deductive argument.
+The coincidence recorded here is a categorical Habiro-shell observation rather than a new deductive argument.

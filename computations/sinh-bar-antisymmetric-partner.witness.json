@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 0.0,
       "unit": "dimensionless (binary)",
-      "source": "Symbolic verification (sympy) that P_m bar-symmetric + Q_m bar-anti-symmetric + P_m ± Q_m = q^{±(2m+1)}/[2]_q across m=1..9 (54 sympy cells).  Numerical verification (50-dps mpmath) that sinh((2m+1) η_0) / (2 cosh η_0) matches (q_0^{2m+1} - q_0^{-(2m+1)}) / (2 [2]_q_0) for m=0..6 (7 cells; agreement < 1e-30)."
+      "source": "Symbolic verification (sympy) that P_m bar-symmetric + Q_m bar-anti-symmetric + P_m \u00b1 Q_m = q^{\u00b1(2m+1)}/[2]_q across m=1..9 (54 sympy cells).  Numerical verification (50-dps mpmath) that sinh((2m+1) \u03b7_0) / (2 cosh \u03b7_0) matches (q_0^{2m+1} - q_0^{-(2m+1)}) / (2 [2]_q_0) for m=0..6 (7 cells; agreement < 1e-30)."
     }
   ],
   "allPassed": true,
@@ -34,7 +34,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Bar-ANTI-symmetric partner Q_m(h) = (q^{2m+1} - q^{-(2m+1)}) / (2 [2]_q) of the bar-symmetric P_m from PR #1125/#1129.  At substrate Q_m(h_0) = sinh((2m+1) η_0) / (2 cosh η_0).  Verified symbolically (sympy-exact across m=1..9) that P_m is bar-symmetric, Q_m is bar-anti-symmetric, and P_m ± Q_m = q^{±(2m+1)}/[2]_q.  Verified numerically (50-dps mpmath) that the sinh form matches the direct evaluation at substrate.  Documents the role of Q as the Coulomb / EM / charge-distinguishing channel that the canonical P_avg projection discards (per bar-involution.md + crossing-energy-interpretation.md).  EXPLORATORY: structural characterization, NOT a derivation of Δm_{n-p}.",
+  "description": "Bar-ANTI-symmetric partner Q_m(h) = (q^{2m+1} - q^{-(2m+1)}) / (2 [2]_q) of the bar-symmetric P_m from PR #1125/#1129.  At substrate Q_m(h_0) = sinh((2m+1) \u03b7_0) / (2 cosh \u03b7_0).  Verified symbolically (sympy-exact across m=1..9) that P_m is bar-symmetric, Q_m is bar-anti-symmetric, and P_m \u00b1 Q_m = q^{\u00b1(2m+1)}/[2]_q.  Verified numerically (50-dps mpmath) that the sinh form matches the direct evaluation at substrate.  Documents the role of Q as the Coulomb / EM / charge-distinguishing channel that the canonical P_avg projection discards (per bar-involution.md + crossing-energy-interpretation.md).  EXPLORATORY: structural characterization, NOT a derivation of \u0394m_{n-p}.",
   "auditOnly": "docs/audits/2026-05-24-sinh-bar-antisymmetric-partner-probe.md",
   "parameters": {
     "dps": 70,
@@ -304,7 +304,7 @@
     ],
     "ew_triplet_Q_values": [
       {
-        "particle": "W± (T(2,4))",
+        "particle": "W\u00b1 (T(2,4))",
         "m": 2,
         "two_m_plus_1": 5,
         "P_m_at_q0": 0.5665144291309271,
@@ -339,5 +339,8 @@
       "comparison_SM_cos_theta_W": 0.8814646664034742
     },
     "verdict": "Q-as-sinh-partner-verified"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

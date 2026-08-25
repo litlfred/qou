@@ -1822,7 +1822,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
-        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+        "evidence": "The C1 'sorry-while-labelled-sorry-free' flag is a FALSE POSITIVE (4th of 4): the sorry is comment-only, the lemma is genuinely sorry-free, and 'sorry-free' in the prose refers to the real 0-sorry SpectralProjector. The genuine residual is a lean–narrative divergence: the .ts lean.ref attaches a substantive-sounding name borromean_h4_numeric_factorisation to the trivial identity (-3)·(1/4)=-3/4 := by norm_num, which does not formalize the stated categorical proposition (that is the deferred := sorry composition theorem). PARTIAL not surviving: the .lean docstring (33-35,70-72) and .md Scope note (244-250) openly disclose the deferral, the underlying math is correct + witness-reproduced, and -3/4 is a topological invariant (no mass-path/hidden-DOF). ≥1 partial, none surviving ⇒ survivable-objection."
       },
       {
         "field_hash": {
@@ -2175,7 +2176,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [
@@ -2423,6 +2425,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.599Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 142-word proposition plus its Archimedean-specialisation note."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2442,6 +2460,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.634Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 142-word proposition plus its Archimedean-specialisation note."
       }
     ],
     "trap-em-dash": [
@@ -2461,6 +2495,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.669Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "No spaced dashes."
       }
     ],
     "trap-triples": [
@@ -2480,6 +2530,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 98 words)"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.705Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 142-word proposition plus its Archimedean-specialisation note."
       }
     ],
     "trap-closing-aphorism": [
@@ -2499,6 +2565,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.740Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 142-word proposition plus its Archimedean-specialisation note."
       }
     ],
     "trap-meta-commentary": [
@@ -2518,6 +2600,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.776Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Full read of the 142-word proposition plus its Archimedean-specialisation note."
       }
     ],
     "trap-thesis-restatement": [
@@ -2537,6 +2635,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.811Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "major",
+        "evidence": "Closes by delegating framing to the context remark -- a cross-reference closer."
       }
     ],
     "trap-performed-warmth": [
@@ -2556,6 +2670,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.845Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 142-word proposition plus its Archimedean-specialisation note."
       }
     ],
     "trap-superlative": [
@@ -2575,6 +2705,22 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.879Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Full read of the 142-word proposition plus its Archimedean-specialisation note."
       }
     ],
     "trap-nonspeakable": [
@@ -2594,6 +2740,23 @@
         "reviewed_at": "2026-08-15T10:31:00.490Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "89f116ce8e68",
+          "ts": "ee1167836df1"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:01:34.915Z",
+        "reviewed_sha": "ad7dc61dc75fd994ce7ffb8d6747212496335a17",
+        "severity": "minor",
+        "evidence": "Clean.",
+        "notes": "RIGOR (not a trap): the boxed factorisation (-3)*(1/4) = -3/4 is consistent with the independently verified R-matrix trace (see the proof sibling). The Archimedean-specialisation note here is contentful (it scopes the q=1 evaluation), unlike the dangling instances in bond-order-eq-jet-degree.md and brane-tower-z-habiro.md."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2617,5 +2780,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:01:34.915Z"
 }

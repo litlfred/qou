@@ -1,7 +1,10 @@
 **Proof of [partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).**
 
 *Step 1 (Frobenius dual decomposition of $Z(A)$).* By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+— **together with the partition-vs-word identification this proof itself
+flags as unestablished at Step 3 below, and which is not supplied by that
+proposition** —
 the centre $Z(A) = \bigoplus_{\lambda \vdash n} R \cdot e_\lambda$
 admits the GB-depth grading
 $Z(A) = \bigoplus_{k \geq 0} Z^{(k)}(A)$. The Frobenius pairing
@@ -157,7 +160,10 @@ identification (a)–(f) reduces the cyclotomic-factor / depth-stratum
 correspondence to the standard $q$-content / hook-length formula plus
 [curvature-rank stratification §Step 3](#prop:curvature-rank-gb-stratification)
 (GB-depth = max hook length), so the structural identification is now
-explicit. The remaining open piece in Step 3 is **(d)'s product
+explicit — **but "explicit" here means *written down*, not *established*.
+The citation does not supply the identification; the passage above, at
+"not a consequence of [curvature-rank stratification] … which … mentions no
+partition", states the position of this proof.** The remaining open piece in Step 3 is **(d)'s product
 expansion** $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$:
 the existence of such an expansion follows from finiteness of
 $\dim_q^{-1}$ as a Laurent polynomial and unique factorisation in

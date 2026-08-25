@@ -891,11 +891,192 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.266Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.306Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.349Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.388Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.427Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.467Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.507Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.546Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.588Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "severity": "minor",
+        "evidence": "The 'Hypothesised?' column used ALL-CAPS 'DOMINANT' and bolded 'ZERO!' with an exclamation mark -- reflex maximum-strength presentation inside a numeric data table. Checked what the superlative asserts before judging it style: -0.1363 IS the largest magnitude in the column and the (2,2) entry IS exactly zero, so the content is accurate; only the presentation was inflated.",
+        "notes": "FIX APPLIED: 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. Content preserved."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cafe6994cd0c",
+          "ts": "640c19af84af"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:38:04.630Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Read in full: 5-row partition/character/weight/hypothesis table. The 'Hypothesised?' column carried two reflex-emphasis cells; fixed inline (see notes). Re-read after the fix: the column now reads as data.",
+        "notes": "FIX APPLIED (pure table-cell prose, no math, no meaning change): 'no - DOMINANT' -> 'no - dominant'; 'yes - **ZERO!**' -> 'yes - zero'. The claims themselves are accurate and stay: |-0.1363| IS the largest magnitude in the column, and the (2,2) entry IS zero. VERIFIED the whole table at q_0 = 1.1099785827513808 against table12 of the same parent: chi_(4) = q^3 = 1.36769 (stated 1.368), chi_(3,1) = -q = -1.10998 (stated -1.110), chi_(2,2) = 0 (stated 0.000), chi_(2,1,1) = q^-1 = 0.900918 (stated 0.901), chi_(1^4) = -q^-3 = -0.731177 (stated -0.731). Back-solving w_lambda = (value)(f^lambda)/chi_lambda with f = 1,3,2,3,1 gives w_(4) = w_(1^4) = 0.01325 and w_(3,1) = w_(2,1,1) = 0.3683, i.e. the weights respect conjugation symmetry -- an independent consistency check that the row values are not transcribed noise."
+      }
     ]
   },
   "source_hashes": {
     "md": "0af84a9c93de",
     "ts": "640c19af84af"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:38:04.630Z"
 }

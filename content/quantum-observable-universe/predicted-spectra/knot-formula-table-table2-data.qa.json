@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.641Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.681Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.721Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.761Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.801Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.841Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.882Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.922Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:16.963Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "923240f239a8",
+          "ts": "ee12eff21ba4"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:17.004Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: 11-row particle/knot/genus/crossing table. Judged all ten categories on the cell text.",
+        "notes": "Table-only block, and EVERY ENTRY CHECKS OUT -- recomputed from the torus-knot formulas g = (p-1)(q-1)/2 and c = min(p(q-1), q(p-1)): T(2,3) g=1 c=3; T(2,5) g=2 c=5; T(2,7) g=3 c=7; T(3,4) g=(2)(3)/2=3 c=min(9,8)=8. All eight genus/crossing pairs in the table match, including the two mirrored quark rows (mirroring preserves both). T(1,0) = 0_1 with g=0, c=0 is correct, and the photon row's '4-strand id; closure = 4 . 0_1' is the correct closure of the identity braid in B_4 (a four-component unlink), g=0, c=0. Charm is written as fraktur c per the notation register's charm/colour collision rule. NOTE reported (not a trap): the last row carries an inline italic status annotation, '(force carrier sector H^{0,1}; \"top quark\" label deprecated)', inside a data cell -- the AGENTS.md sec4d authorNotes class rather than any of the ten categories."
+      }
     ]
   },
   "source_hashes": {
     "md": "923240f239a8",
     "ts": "ee12eff21ba4"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:42:17.004Z"
 }

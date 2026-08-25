@@ -23,13 +23,31 @@ Usage:
 Content block: rem:knot-operator-basis-table
 """
 
+import mpmath as mp
+
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
-from q_parameter import Q as q0, Q_INV as qi0, HA
+from _precision import fmt, set_compute_dps  # noqa: E402
+from q_parameter import Q_MP as q0, Q_INV_MP as qi0, HA_MP as HA
+
+# NO-FLOAT64: this table was float64 end to end -- `Q` (the float) seeded
+# `z`, `TR_M` opened with the literal `1.0`, both reduction passes pruned on
+# a hard-coded 1e-15, and `to_nf` serialized `round(..., 12)`. 1113 raw
+# float64 fields reached the witness. The coefficients here are polynomials
+# in q evaluated at q0, i.e. O(1), so the 1e-15 prunes were killing float64
+# NOISE, not small real terms -- at 65 dps the noise floor is ~1e-65 and the
+# threshold moves with it.
+set_compute_dps()
+_ZERO = mp.mpf(0)
+_ONE = mp.mpf(1)
+# Prune threshold: far below any genuine coefficient, far above the 65-dps
+# noise floor. Strictly weaker than the old 1e-15, so every term the float64
+# version kept is still kept.
+_EPS = mp.mpf(10) ** -50
 from witness_base import WitnessBuilder
 
 # ── H₃(q) NF engine (same as hecke_core, self-contained) ────────
@@ -39,7 +57,7 @@ NF_NAMES = ["γ", "σ₀", "σ₁", "L₊", "L₋", "e⁻"]
 NF_LATEX = [r"\gamma", r"\sigma_0", r"\sigma_1", r"L_+", r"L_-", r"e^-"]
 
 z = q0**3 / (q0**2 + 1)
-TR_M = [1.0, z, z, z**2, z**2, z**3]
+TR_M = [_ONE, z, z, z**2, z**2, z**3]
 
 
 def hecke_mul(t1, t2):
@@ -47,8 +65,8 @@ def hecke_mul(t1, t2):
     for w1, c1 in t1.items():
         for w2, c2 in t2.items():
             w = w1 + w2
-            r[w] = r.get(w, 0.0) + c1 * c2
-    return {w: c for w, c in r.items() if abs(c) > 1e-15}
+            r[w] = r.get(w, _ZERO) + c1 * c2
+    return {w: c for w, c in r.items() if abs(c) > _EPS}
 
 
 def reduce_nf(terms):
@@ -57,7 +75,7 @@ def reduce_nf(terms):
         changed = False
         new = {}
         for word, coeff in terms.items():
-            if abs(coeff) < 1e-15:
+            if abs(coeff) < _EPS:
                 continue
             done = False
             for p in range(len(word) - 1):
@@ -81,7 +99,7 @@ def reduce_nf(terms):
                         break
             if not done:
                 new[word] = new.get(word, 0) + coeff
-        terms = {w: c for w, c in new.items() if abs(c) > 1e-15}
+        terms = {w: c for w, c in new.items() if abs(c) > _EPS}
     return terms
 
 
@@ -90,7 +108,7 @@ def to_nf(terms):
 
 
 def basis_elem(i):
-    return {NF_BASIS[i]: 1.0}
+    return {NF_BASIS[i]: _ONE}
 
 
 def nf_tr(vec):
@@ -111,7 +129,7 @@ OPERATORS = {
 # ── Compute ──────────────────────────────────────────────────────
 
 print(f"Photon operator table (compact H₃(q) representation)")
-print(f"q₀ = {q0:.10f}, h = {HA:.10f}, z = {z:.10f}")
+print(f"q₀ = {mp.nstr(q0, 11)}, h = {mp.nstr(HA, 11)}, z = {mp.nstr(z, 11)}")  # display only
 print()
 
 results = {}
@@ -145,8 +163,9 @@ for op_name, op_info in OPERATORS.items():
 
     results[op_name] = {
         "phys": op_info["phys"],
-        "operator_nf": op_nf,
-        "matrix": matrix,
+        "operator_nf": [fmt(v) for v in op_nf],
+        "matrix": [[[fmt(v) for v in cell] for cell in row]
+                   for row in matrix],
         "e_minus_pairs": e_minus_count,
         "demand_pairs": demand_count,
     }
@@ -154,7 +173,7 @@ for op_name, op_info in OPERATORS.items():
     print(f"  {op_name:8s} ({op_info['phys']:25s}): "
           f"e⁻ in {e_minus_count}/36 pairs, "
           f"demand in {demand_count}/36, "
-          f"op NF = [{', '.join(f'{v:.3f}' for v in op_nf)}]")
+          f"op NF = [{', '.join(mp.nstr(v, 4) for v in op_nf)}]")
 
 # ── Key table: photon-photon channel ─────────────────────────────
 
@@ -162,8 +181,8 @@ print(f"\nPhoton-photon channel (γ·T·γ = b₀·T·b₀):")
 print(f"  {'Op':8s} {'γ':>8s} {'σ₀':>8s} {'σ₁':>8s} {'L₊':>8s} {'L₋':>8s} {'e⁻':>8s}")
 for op_name, data in results.items():
     nf = data["matrix"][0][0]
-    print(f"  {op_name:8s} {nf[0]:>8.4f} {nf[1]:>8.4f} {nf[2]:>8.4f} "
-          f"{nf[3]:>8.4f} {nf[4]:>8.4f} {nf[5]:>8.4f}")
+    print("  " + f"{op_name:8s} " +
+          " ".join(f"{v:>8s}" for v in nf))  # nf entries are fmt strings
 
 # ── Witness ──────────────────────────────────────────────────────
 

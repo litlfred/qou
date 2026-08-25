@@ -890,6 +890,186 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.356Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.418Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.492Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.545Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.629Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.702Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.790Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.873Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:39.974Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "89736b6a7601",
+          "ts": "8824f6660de1"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:56:40.058Z",
+        "reviewed_sha": "83f2b9b8835909d67cdaf39c5a0dd898873c874f",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read in full. Nuclear physics CORRECT: He-4 (Z=2,N=2) and O-16 (Z=8,N=8) are the two doubly-magic entries and the only two so marked; every A value matches its nuclide. F_Pauli is not independently recomputable from the block, so the values are read as reported. Three internal problems, all reported in the notes.",
+        "notes": "(1) UNEXPLAINED OUTLIER: the column runs 0.812, 0.638, 0.472, 0.438, 0.368, **0.843**, 0.295, 0.296, 0.129, 0.059 - Be-9 at 0.843 is not merely off-trend, it is the LARGEST value in the table, above doubly-magic He-4, and it sits between B-8 at 0.368 and B-10 at 0.295. The parent rem:groebner-nf-computation discusses even-even vs odd-odd weight but says nothing about this. Either it is a real effect that deserves a sentence or it is a transcription error; as printed a reader cannot tell.\n(2) THE 'Magic?' COLUMN IS ANTI-CORRELATED WITH ITS OWN DATA: the two doubly-magic nuclei carry the highest (He-4, 0.812) and the lowest (O-16, 0.059) F_Pauli in the table, so pairing the columns implies a relation the data refutes. If no relation is claimed, say so; if one is, it needs stating.\n(3) FLOAT CONTAMINATION, and the table says so: O-16 is '$\\approx 0.059$' tagged '(float)'. The parent block states the symbolic witnesses are exact Laurent polynomials only for A <= 12, so the A=16 row is outside the exact regime. Honest labelling, but per the NO-FLOAT64 discipline a float-derived value in a results table should carry the arithmetic used, and the '$\\approx$' plus '(float)' is doing that work in a parenthesis rather than a provenance field.\n(4) Cross-block tension: the parent says 'The $H_3(q)$ Pauli factor is $F_{Pauli} = 0.6382$' and then that 'The $A$-strand values differ because they capture the full multi-generator interaction, not the 3-strand projection' - but the He-5 row is 0.638, agreeing with the H_3 value to every digit shown. Either the agreement is a coincidence worth noting or one of the two numbers is the other."
+      }
     ]
   },
   "label": "tbl:groebner-nf-computation-table3-data",
@@ -897,5 +1077,5 @@
     "md": "89736b6a7601",
     "ts": "8824f6660de1"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:56:40.058Z"
 }

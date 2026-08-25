@@ -1717,6 +1717,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:52.926Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1736,6 +1751,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:52.980Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-em-dash": [
@@ -1755,6 +1785,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.036Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-triples": [
@@ -1774,6 +1819,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 30 words)"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.092Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-closing-aphorism": [
@@ -1793,6 +1853,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.148Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-meta-commentary": [
@@ -1812,6 +1887,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.204Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-thesis-restatement": [
@@ -1831,6 +1921,22 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.423Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "The second sentence looks like a restatement of the first but is not: sentence 1 gives the form of any such coupling (a multiple of tr_tau(e_-) e_-) and sentence 2 gives the count up to normalisation (exactly one non-trivial). Existence-and-form plus uniqueness-up-to-scale are the two halves of the corollary.",
+        "notes": "Two content items reported to the batch. (1) TYPE MISMATCH: 'Any R-linear, braid-invariant, scalar coupling $A \\otimes A \\to \\mathbf{1}$ is a multiple of $\\mathrm{tr}_\\tau(e_-)\\cdot e_-$' - e_- is an idempotent ENDOmorphism of A tensor A, so it is not itself a map to the unit object; the coupling is the composite of e_- with the counit/evaluation. (2) PRODUCER/PROSE TRACE MISMATCH: the .ts wires computations/probes/gauge_coupling_uniqueness_probe.py with status 'verified', but that witness's fourth assertion is about tr_M(e_-) ('tr_M(e_-) is the scalar multiplier in the corollary's uniqueness statement') while the corollary is stated with tr_tau(e_-). The Markov trace and the fibre-functor trace are different objects; either the prose or the producer is naming the wrong one."
       }
     ],
     "trap-performed-warmth": [
@@ -1850,6 +1956,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.264Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-superlative": [
@@ -1869,6 +1990,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.322Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "trap-nonspeakable": [
@@ -1888,6 +2024,21 @@
         "reviewed_at": "2026-08-15T10:31:01.165Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "66d83ef86523",
+          "ts": "aa86211513ca"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:46:53.374Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of the two-sentence corollary statement. None of these constructions is present; 'exactly one non-trivial scalar coupling exists' is an exact uniqueness claim, not inflation. uses[] names thm:em-spectral-completeness, a theorem, so 3b propagation does not apply."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1910,5 +2061,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:46:53.423Z"
 }

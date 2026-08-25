@@ -1400,6 +1400,23 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.593Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "'curvature that is not chosen but forced, arising solely from the perpetual d_q^2 obstruction rather than from any connection form.' The 'not X but Y' is pure assertion-by-denial AND is redundant: the very next clause states the positive content ('arising solely from ... rather than from any connection form').",
+        "notes": "fix applied: 'curvature that is not chosen but forced, arising solely from' -> 'curvature arising solely from'"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1419,6 +1436,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.633Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting def:q-flat-connection; 3 paragraphs + 2 bolded sub-sections); all ten judged."
       }
     ],
     "trap-em-dash": [
@@ -1438,6 +1471,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 230 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.674Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-flat-connection; 3 paragraphs + 2 bolded sub-sections); all ten judged."
       }
     ],
     "trap-triples": [
@@ -1457,6 +1506,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 230 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.714Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-flat-connection; 3 paragraphs + 2 bolded sub-sections); all ten judged."
       }
     ],
     "trap-closing-aphorism": [
@@ -1476,6 +1541,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.753Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting def:q-flat-connection; 3 paragraphs + 2 bolded sub-sections); all ten judged."
       }
     ],
     "trap-meta-commentary": [
@@ -1495,6 +1576,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.795Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "Full read (remark interpreting def:q-flat-connection; 3 paragraphs + 2 bolded sub-sections); all ten judged."
       }
     ],
     "trap-thesis-restatement": [
@@ -1514,6 +1611,23 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.837Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "major",
+        "evidence": "The HKR identification is stated twice, near-verbatim: paragraph 2 ('The Hochschild-Kostant-Rosenberg comparison ... identifies the q-curvature F_q^intr with the gerbe-theoretic obstruction class kappa_0 = e(xi) in H^2(S, G_m). The Kummer filtration pulls back to a filtration on HH^2 that measures the n-divisibility of the q-curvature.') and the bolded '**The HKR identification.**' paragraph, which says the same two things again.",
+        "notes": "proposed (NOT applied - structural, deletes a whole paragraph): delete the duplicated sentences from paragraph 2 and keep the bolded sub-section, OR vice versa. Note the two copies also disagree on notation - one writes F_q^intr, the other F_q, for the same object (reported as ANOMALY 20)."
       }
     ],
     "trap-performed-warmth": [
@@ -1533,6 +1647,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.879Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-flat-connection; 3 paragraphs + 2 bolded sub-sections); all ten judged."
       }
     ],
     "trap-superlative": [
@@ -1552,6 +1682,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.921Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "'*minimal possible curvature*' is the block's technical claim (minimal compatible with the deformation), not inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1571,6 +1717,22 @@
         "reviewed_at": "2026-08-15T10:31:00.917Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5f54ea0feff9",
+          "ts": "b7e36952b78d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_07",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:35:43.962Z",
+        "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
+        "severity": "minor",
+        "evidence": "Full read (remark interpreting def:q-flat-connection; 3 paragraphs + 2 bolded sub-sections); all ten judged."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1593,5 +1755,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:35:43.962Z"
 }

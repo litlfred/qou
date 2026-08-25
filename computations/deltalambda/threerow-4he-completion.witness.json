@@ -48,13 +48,13 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "UNIT 1 of bean qou-prjo follow-up to #4829: completes the ⁴He (n=12) leg of F_K(q)=Σ_{λ⊢3A,ℓ(λ)≥3} y_λ(q)·χ^λ(β_K;q)·Δ_λ, which #4829 had recorded as a sandbox compute limit. No native kernel and no truncation were needed — the limit was an implementation artifact (a dense np.eye densifying the sparse CSR Hoefsmit operator, forcing O(dim³) per word letter). The sparse kernel (threerow_chi_sparse.py) is an EXACT reorganisation of the same f64 arithmetic, gated bit-level against the #4829 dense path. FULL ℓ≥3 sum over all 70 partitions of 12. Δ_λ=(−1)^{n(λ)}·dim (PROVED value-only); y_λ via live schur_principal_mpmath (EXPERIMENTAL PROTON ANCHOR, not the muon cache); layer-pure. 0 free parameters; AME not used.",
+  "description": "UNIT 1 of bean qou-prjo follow-up to #4829: completes the \u2074He (n=12) leg of F_K(q)=\u03a3_{\u03bb\u22a23A,\u2113(\u03bb)\u22653} y_\u03bb(q)\u00b7\u03c7^\u03bb(\u03b2_K;q)\u00b7\u0394_\u03bb, which #4829 had recorded as a sandbox compute limit. No native kernel and no truncation were needed \u2014 the limit was an implementation artifact (a dense np.eye densifying the sparse CSR Hoefsmit operator, forcing O(dim\u00b3) per word letter). The sparse kernel (threerow_chi_sparse.py) is an EXACT reorganisation of the same f64 arithmetic, gated bit-level against the #4829 dense path. FULL \u2113\u22653 sum over all 70 partitions of 12. \u0394_\u03bb=(\u22121)^{n(\u03bb)}\u00b7dim (PROVED value-only); y_\u03bb via live schur_principal_mpmath (EXPERIMENTAL PROTON ANCHOR, not the muon cache); layer-pure. 0 free parameters; AME not used.",
   "parameters": {
     "q0_experimental_proton_anchor": "1.10997858275138080759166909561",
-    "q0_pin": "experimental/proton (q_parameter.Q); live closed-form y_λ",
+    "q0_pin": "experimental/proton (q_parameter.Q); live closed-form y_\u03bb",
     "free_parameters": 0,
     "n_partitions_l_ge_3": 70,
-    "truncation": "none — full ℓ≥3 sum over all 70 partitions of 12",
+    "truncation": "none \u2014 full \u2113\u22653 sum over all 70 partitions of 12",
     "chi_kernel": "sparse CSR Hoefsmit seminormal + batched-column trace (exact reorganisation of the #4829 dense path)",
     "chi_precision": "f64 (no mpfr Rust kernel; precision class unchanged by the reorganisation)"
   },
@@ -151,7 +151,7 @@
       ],
       "n_sign_changes": 4,
       "bisected": false,
-      "why_not_bisected": "The ray crossing LOCATIONS are not load-bearing — only which side of q₀ the first sign change falls on matters. Bisecting them at n=12 (~32 s per F evaluation) cost >60 min of wall clock on the first run for digits the f64 character path cannot support anyway. Brackets are reported instead: cheaper, and honest about the available resolution.",
+      "why_not_bisected": "The ray crossing LOCATIONS are not load-bearing \u2014 only which side of q\u2080 the first sign change falls on matters. Bisecting them at n=12 (~32 s per F evaluation) cost >60 min of wall clock on the first run for digits the f64 character path cannot support anyway. Brackets are reported instead: cheaper, and honest about the available resolution.",
       "ray_max_q": "4.0"
     },
     "per_partition_at_q0_top8": [
@@ -235,9 +235,12 @@
     "leading_over_total_ratio_at_q0": "0.33602914967349582"
   },
   "caveats": [
-    "BEYOND-SUBSTRATE DIAGNOSTIC. The 'diagnostic_ray_above_q0' block reports F at q > q₀ ≈ 1.10998 (experimental proton anchor). That is NOT a physical regime and no value on the ray is a prediction; the ray exists only to locate the zero of the analytic object so ⁴He can be placed on the same A-ladder as n=6 and n=9.",
-    "NO TRUNCATION was applied: all 70 ℓ≥3 partitions of 12 are summed. A dominant-|Δ_λ| truncation was considered and REJECTED — no rigorous bound on the neglected remainder is available, and an unbounded truncation would not be a result.",
-    "χ^λ is f64 (pure-Python Hoefsmit seminormal; no mpfr kernel in this sandbox). The sparse reorganisation changes the COST, not the precision class; it is gated bit-level against the #4829 dense path (max rel diff ~1e-15). Sign conclusions are reported together with the leading/total cancellation ratio so the reader can see how far the total sits above the f64 noise floor.",
-    "value_only object: F_K is NOT a binding energy (Δ_λ is value-only). Only the SIGN structure of the ≥3-row trace weighting is tested here. The extensive super-pairwise magnitude term remains OPEN (bean qou-prjo)."
-  ]
+    "BEYOND-SUBSTRATE DIAGNOSTIC. The 'diagnostic_ray_above_q0' block reports F at q > q\u2080 \u2248 1.10998 (experimental proton anchor). That is NOT a physical regime and no value on the ray is a prediction; the ray exists only to locate the zero of the analytic object so \u2074He can be placed on the same A-ladder as n=6 and n=9.",
+    "NO TRUNCATION was applied: all 70 \u2113\u22653 partitions of 12 are summed. A dominant-|\u0394_\u03bb| truncation was considered and REJECTED \u2014 no rigorous bound on the neglected remainder is available, and an unbounded truncation would not be a result.",
+    "\u03c7^\u03bb is f64 (pure-Python Hoefsmit seminormal; no mpfr kernel in this sandbox). The sparse reorganisation changes the COST, not the precision class; it is gated bit-level against the #4829 dense path (max rel diff ~1e-15). Sign conclusions are reported together with the leading/total cancellation ratio so the reader can see how far the total sits above the f64 noise floor.",
+    "value_only object: F_K is NOT a binding energy (\u0394_\u03bb is value-only). Only the SIGN structure of the \u22653-row trace weighting is tested here. The extensive super-pairwise magnitude term remains OPEN (bean qou-prjo)."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.physical_interval.q_grid[], parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

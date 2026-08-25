@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.321Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.366Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.412Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.460Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.513Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.562Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.607Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.653Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.697Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2d457afab8ac",
+          "ts": "3823f5d6c9bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:03:48.742Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "table( pure-data block, read in full but exempt from trap verdicts per the batch protocol: the file is a bare markdown table with no prose sentences to adjudicate."
+      }
     ]
   },
   "source_hashes": {
     "md": "2d457afab8ac",
     "ts": "3823f5d6c9bb"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:03:48.742Z"
 }

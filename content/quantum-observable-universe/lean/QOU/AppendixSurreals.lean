@@ -1,3 +1,5 @@
+import QOU.AppendixSurreals.QouInfraDischargesGoncharovZeta5
+import QOU.AppendixSurreals.HahnOmegaOrder
 import QOU.AppendixSurreals.MobiusLeadingCancellation
 import QOU.AppendixSurreals.BorelPartialResolution
 import QOU.AppendixSurreals.Depth2IdentificationBlochSuslin

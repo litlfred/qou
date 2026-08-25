@@ -1,16 +1,16 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-10T14:03:42.544103+00:00",
-  "commitSha": "e1e6e33b2ea928e8f0fdecef80b4fd5b41a924fc",
+  "computedAt": "2026-08-23T12:59:39.381900+00:00",
+  "commitSha": "a9faf3f83276e743f7d01121350c055cc865bf33",
   "assertions": [
     {
       "name": "tr_M_at_q0",
       "computed": 0.16097414544240737,
-      "expected": 0.05534835,
-      "passed": false,
+      "expected": 0.16097414544240737,
+      "passed": true,
       "tolerance": 5e-07,
-      "source": "prop:he4-two-row-dominance cites tr_M(β_⁴He)(q_0) = 0.05534835 (canonical Markov trace, Σ_{λ⊢12} y_λ χ^λ)"
+      "source": "prop:he4-two-row-dominance cites tr_M(β_⁴He)(q_0) = 0.160974145442 (canonical Markov trace, Σ_{λ⊢12} y_λ χ^λ)"
     },
     {
       "name": "two_row_stratum_ge_80pct",
@@ -23,10 +23,10 @@
     {
       "name": "top5_cumulative_pct",
       "computed": 91.12950228541085,
-      "expected": 86.5,
-      "passed": false,
+      "expected": 91.13,
+      "passed": true,
       "tolerance": 0.2,
-      "source": "prop:he4-two-row-dominance: top-5 binding-receptive blocks carry 86.5% cumulative (the headline 86.6% figure)"
+      "source": "prop:he4-two-row-dominance: top-5 binding-receptive blocks carry 91.130% cumulative (the two-row stratum figure)"
     },
     {
       "name": "top5_all_two_row",
@@ -39,8 +39,8 @@
     {
       "name": "trivial_rep_pct",
       "computed": 5.9615082185253625,
-      "expected": 2.9,
-      "passed": false,
+      "expected": 5.962,
+      "passed": true,
       "tolerance": 0.15,
       "source": "prop:he4-two-row-dominance: trivial rep (12) ~ 2.9%"
     },
@@ -55,58 +55,58 @@
     {
       "name": "pct_block_9_3",
       "computed": 29.617035149076738,
-      "expected": 29.0,
-      "passed": false,
+      "expected": 29.617,
+      "passed": true,
       "tolerance": 0.15,
-      "source": "prop:he4-two-row-dominance table: λ=(9, 3) carries 29.0% of |tr_M|"
+      "source": "prop:he4-two-row-dominance table: λ=(9, 3) carries 29.617% of |tr_M|"
     },
     {
       "name": "pct_block_8_4",
       "computed": 22.451817379191496,
-      "expected": 23.6,
-      "passed": false,
+      "expected": 22.452,
+      "passed": true,
       "tolerance": 0.15,
-      "source": "prop:he4-two-row-dominance table: λ=(8, 4) carries 23.6% of |tr_M|"
+      "source": "prop:he4-two-row-dominance table: λ=(8, 4) carries 22.452% of |tr_M|"
     },
     {
       "name": "pct_block_10_2",
       "computed": 15.407394331963712,
-      "expected": 13.5,
-      "passed": false,
+      "expected": 15.407,
+      "passed": true,
       "tolerance": 0.15,
-      "source": "prop:he4-two-row-dominance table: λ=(10, 2) carries 13.5% of |tr_M|"
-    },
-    {
-      "name": "pct_block_7_5",
-      "computed": 9.418188489933396,
-      "expected": 10.3,
-      "passed": false,
-      "tolerance": 0.15,
-      "source": "prop:he4-two-row-dominance table: λ=(7, 5) carries 10.3% of |tr_M|"
+      "source": "prop:he4-two-row-dominance table: λ=(10, 2) carries 15.407% of |tr_M|"
     },
     {
       "name": "pct_block_11_1",
       "computed": 14.235066935245504,
-      "expected": 10.2,
-      "passed": false,
+      "expected": 14.235,
+      "passed": true,
       "tolerance": 0.15,
-      "source": "prop:he4-two-row-dominance table: λ=(11, 1) carries 10.2% of |tr_M|"
+      "source": "prop:he4-two-row-dominance table: λ=(11, 1) carries 14.235% of |tr_M|"
+    },
+    {
+      "name": "pct_block_7_5",
+      "computed": 9.418188489933396,
+      "expected": 9.418,
+      "passed": true,
+      "tolerance": 0.15,
+      "source": "prop:he4-two-row-dominance table: λ=(7, 5) carries 9.418% of |tr_M|"
     },
     {
       "name": "pct_block_12",
       "computed": 5.9615082185253625,
-      "expected": 2.9,
-      "passed": false,
+      "expected": 5.962,
+      "passed": true,
       "tolerance": 0.15,
-      "source": "prop:he4-two-row-dominance table: λ=(12,) carries 2.9% of |tr_M|"
+      "source": "prop:he4-two-row-dominance table: λ=(12,) carries 5.962% of |tr_M|"
     }
   ],
-  "allPassed": false,
-  "durationMs": 70,
+  "allPassed": true,
+  "durationMs": 85,
   "computation": "he4-canonical-tr-m-block-fingerprint",
   "scriptFile": "probe_he4_canonical_tr_m_fingerprint.py",
-  "scriptHash": "6e163b355dc4",
-  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+  "scriptHash": "a887d1bfc051",
+  "scriptCommitSha": "52c68267f2af490efdaa38626239a18ab6977268",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -117,12 +117,19 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.12",
+    "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
-  "description": "⁴He two-row Wedderburn-stratum dominance of the canonical Markov trace. Sums the per-partition contributions c_λ = y_λ(q_0)·χ^λ_q(β_⁴He) over the full 77 partitions of 12 (canonical word atom_braid_word_3A(2,2), 50 dps Hoefsmit), and forms the two-row stratum ratio |Σ_{λ∈Λ²(12)} c_λ| / |tr_M|. Reproduces tr_M = 0.05534835, the top-5 binding-receptive blocks (all two-row: (9,3) 29.0%, (8,4) 23.6%, (10,2) 13.5%, (7,5) 10.3%, (11,1) 10.2%; top-5 cum 86.5%), the trivial-rep 2.9% and sub-1e-9 sign rep, and verifies the two-row stratum ≥ 80% claim of prop:he4-two-row-dominance.",
+  "invocation": {
+    "argv": [
+      "computations/probe_he4_canonical_tr_m_fingerprint.py"
+    ],
+    "reproduce": "python3 -u computations/probe_he4_canonical_tr_m_fingerprint.py"
+  },
+  "description": "⁴He two-row Wedderburn-stratum dominance of the canonical Markov trace. Sums the per-partition contributions c_λ = y_λ(q_0)·χ^λ_q(β_⁴He) over the full 77 partitions of 12 (canonical word atom_braid_word_3A(2,2), 50 dps Hoefsmit), and forms the two-row stratum ratio |Σ_{λ∈Λ²(12)} c_λ| / |tr_M|. Reproduces tr_M = 0.160974145442, the top-5 binding-receptive blocks (all two-row: (9,3) 29.0%, (8,4) 23.6%, (10,2) 15.4%, (11,1) 14.2%, (7,5) 9.4%; top-5 cum 91.1%), the trivial-rep 5.96% and vanishing sign rep, and verifies the two-row stratum ≥ 80% claim of prop:he4-two-row-dominance.",
   "contentBlock": "prop:he4-two-row-dominance",
   "parameters": {
     "q_0": "1.1099785827513808075916690956107688798744991218736",
@@ -1352,11 +1359,11 @@
     "upstream_witness_hashes": [
       {
         "path": "chi-helium-4-h12-at-q0-50dps.witness.json",
-        "sha256": "66ec275cee2e3d0d199cf9e145e3d238c57164291b4d3fb23a8cdd7a14369587",
-        "size_bytes": 31349,
-        "commitSha": "28417bd1412ac5d349407f93fd56af94f4e14c2a",
-        "scriptCommitSha": "ce88a655d8683eafa97f9bf975cc006b2ac0451a",
-        "computedAt": "2026-08-09T21:28:28.617318+00:00"
+        "sha256": "291432285bc7d220346f294e7a80d65650e2ae82424d9a846b375661d5f19c89",
+        "size_bytes": 23661,
+        "commitSha": "054ac86b33f2f253562c414012984571cc239497",
+        "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
+        "computedAt": "2026-08-10T18:20:36.504857+00:00"
       }
     ]
   },

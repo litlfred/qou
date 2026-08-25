@@ -5,7 +5,7 @@ and the corpus ladder scored against the field's own dimensionless target.
 Closes three QA beans raised by `local/paper-relevance-triage` against
 `gap10_tjon_correlation_probe.py`:
 
-  qou-3o9x  re-derive the AME-transcribed literals from uploads/mass_1.mas20.txt
+  qou-3o9x  re-derive the AME-transcribed literals from library/mass_1.mas20.txt
   qou-f3ec  cross-check against the universal Tjon curve  [hammer2007fourbody]
   qou-l4cm  cross-check against the LO-EFT B_alpha        [platter2005tjon]
 
@@ -123,7 +123,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps(30)
 
-AME_PATH = REPO / "uploads" / "mass_1.mas20.txt"
+AME_PATH = REPO / "library" / "mass_1.mas20.txt"
 GAP10_WITNESS = HERE / "gap10-tjon-correlation.witness.json"
 
 # The literals gap10_tjon_correlation_probe.py carries, re-derived below.
@@ -161,7 +161,7 @@ def read_ame_binding(path: Path):
 
     DO NOT refactor this onto `computations/vendor_ame2020.parse_line`.
     That module parses the same table — and `computations/data/ame2020.mas20.txt`
-    is byte-identical to `uploads/mass_1.mas20.txt`, same sha256, so the two
+    is byte-identical to `library/mass_1.mas20.txt`, same sha256, so the two
     copies are not a divergence risk. The blocker is precision: its
     `_parse_value` returns `float(s)`, i.e. **float64**. Routing a binding
     energy through float64 before it reaches a witness is exactly what the
@@ -338,7 +338,7 @@ def main() -> int:
     wb = WitnessBuilder("tjon-external-cross-check", engine="mpmath")
     wb.set_description(
         "Closes QA beans qou-3o9x (re-derive the AME2020 literals of "
-        "gap10_tjon_correlation_probe.py from uploads/mass_1.mas20.txt so a re-upload is "
+        "gap10_tjon_correlation_probe.py from library/mass_1.mas20.txt so a re-upload is "
         "caught by source_sha), qou-f3ec and qou-l4cm (cross-check the corpus Tjon ladder "
         "against the external sources, mismatch informative either way, no back-fitting). "
         "Part A derives B(2H), B(3H), B(4He) from the AME2020 mass table and shows "

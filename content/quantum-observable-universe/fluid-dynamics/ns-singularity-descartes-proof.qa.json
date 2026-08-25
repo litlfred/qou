@@ -1373,6 +1373,21 @@
         "reviewed_at": "2026-08-15T11:11:57.708Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read; no manufactured not-X-but-Y constructions"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:01.462Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "One denial, and it is the step's content: 'the topological term kappa_0|Sigma != 0 cannot be cancelled by the analytic term delta_n|Sigma', which is the complementary-subgroups argument."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1407,6 +1422,21 @@
         "reviewed_at": "2026-08-15T11:11:57.755Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "full read; no setup-then-reframe pivots"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:01.544Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Four labelled steps (arithmetic, algebra, geometry, dynamics); no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1441,6 +1471,21 @@
         "reviewed_at": "2026-08-15T11:11:57.791Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "no load-bearing spaced dashes; punctuation carries structure"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:01.657Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Zero em-dashes in 161 words."
       }
     ],
     "trap-triples": [
@@ -1475,6 +1520,21 @@
         "reviewed_at": "2026-08-15T11:11:57.834Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "no reflex three-item lists"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:01.831Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Four steps, not a triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -1509,6 +1569,21 @@
         "reviewed_at": "2026-08-15T11:11:57.870Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "final line substantive, not quotable-sounding"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:01.893Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Ends on the BKM divergence integral."
       }
     ],
     "trap-meta-commentary": [
@@ -1543,6 +1618,21 @@
         "reviewed_at": "2026-08-15T11:11:57.905Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "no self-narrated emphasis"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:01.960Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1577,6 +1667,21 @@
         "reviewed_at": "2026-08-15T11:11:57.940Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "no block-final restatement of established content"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.021Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1611,6 +1716,21 @@
         "reviewed_at": "2026-08-15T11:11:57.976Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "no personal register in institutional prose"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.096Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1645,6 +1765,22 @@
         "reviewed_at": "2026-08-15T11:11:58.012Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "no unqualified maximum-strength claims"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.189Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "No intensifiers; the arithmetic is stated plainly (2 kappa >= 8 > 6).",
+        "notes": "Rigor note: 'for all kappa >= 4' omits kappa = 2 (2 kappa = 4 does not divide 6), so the persistence set stated is narrower than the one proved; same omission as prop:ns-kummer-specialisation."
       }
     ],
     "trap-nonspeakable": [
@@ -1679,6 +1815,21 @@
         "reviewed_at": "2026-08-15T11:11:58.052Z",
         "reviewed_sha": "5d0aae5f75137bc77614dc6c65d43cddd2a0304e",
         "evidence": "prose parses aloud; no stalled noun chains"
+      },
+      {
+        "field_hash": {
+          "md": "241e0430635d",
+          "ts": "279110715d71"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:38:02.268Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Short step-wise sentences."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1701,5 +1852,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-16T01:57:07.452Z"
+  "updated_at": "2026-08-19T21:38:02.268Z"
 }

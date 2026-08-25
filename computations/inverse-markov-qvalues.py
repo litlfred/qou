@@ -54,6 +54,19 @@ from experimental_constants import (
     Q_TRITIUM_MEV as _Q_TRITIUM_MEV, Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
 )
 
+# THE dps RULE APPLIES HERE TOO, and this block was on the wrong side of it.
+# The rule is stated 100 lines below ("Precision must be raised BEFORE the
+# module-scope constants") but `set_compute_dps()` was called there, while
+# these five constants are built up here -- at mpmath's default dps=15. An
+# `mpf` created at dps 15 holds ~53 bits, so printing it later at dps 50
+# reveals the binary64 expansion rather than the value: `Q_TRITIUM_MEV` went
+# into the witness as
+#     0.01861000000000000154098955817971727810800075531005859375
+# instead of 0.01861 -- 40 fabricated digits, flagged by
+# `witness_float64_padding_audit` as NEW fake precision. Raising dps
+# afterwards cannot recover what was never stored. Bean `qou-xt5l`.
+set_compute_dps()
+
 M_E_MEV = mp.mpf(repr(_M_E_MEV))
 M_P_MEV = mp.mpf(repr(_M_P_MEV))
 M_N_MEV = mp.mpf(repr(_M_N_MEV))

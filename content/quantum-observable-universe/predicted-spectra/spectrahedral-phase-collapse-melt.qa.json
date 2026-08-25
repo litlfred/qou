@@ -944,6 +944,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.682Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +978,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.718Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1012,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 224 words)"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.754Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1046,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 224 words)"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.790Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1080,23 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.825Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "Final line 'Heated past the Supergolden threshold, the universe melts into a pure continuum of leptons and gauge connections.' is an inverted-participial flourish whose content is already carried by the preceding sentence ('These structures survive indefinitely across the entire q > 0 regime').",
+        "notes": "proposed: delete the sentence, or restate plainly as 'Above the Supergolden threshold only leptons and gauge connections remain.' Not applied - it also carries the block's title framing, so deletion is an author call."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1116,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.860Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1150,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.896Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1184,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.932Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1218,23 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:25.968Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "Seven unhedged intensifiers in four paragraphs: 'collapses completely', 'rely strictly on', 'at exactly the Supergolden Ratio', 'scale strictly as q^n', 'remain unconditionally positive-definite', 'survive indefinitely across the entire q>0 regime', 'projects purely into', 'a pure continuum'. The density (not any single one) is the tell and matches the de-hedging intensifier-flood sweep signature.",
+        "notes": "proposed: drop 'completely', 'strictly' (x2), 'unconditionally', 'indefinitely', 'entire', 'purely'; keep 'exactly' at the psi threshold where it is load-bearing. Structural (touches every paragraph), so not applied."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1254,21 @@
         "reviewed_at": "2026-08-15T10:31:01.111Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "686a78f30c87",
+          "ts": "a3eb0203e452"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:26.005Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 4 paragraphs, ~1.7kB). Supergolden root psi of x^3-x^2-1 = 1.4655712 correct. Thresholds q~1.045 / q~1.17 for the H2 bond and k=7 crossings carry no witness citation and could not be checked."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1295,5 @@
     "md": "686a78f30c87",
     "ts": "a3eb0203e452"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:26.005Z"
 }

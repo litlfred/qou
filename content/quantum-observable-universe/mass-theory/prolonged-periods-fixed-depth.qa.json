@@ -2131,6 +2131,22 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.202Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'so the kernel is the prolongation symbol, not a generic recurrence' is the substantive distinction between the two halves of conj:qdifference-kernel-prolongation-symbol; the existence half is proved here, the identification half is not."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2150,6 +2166,21 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.250Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two paragraphs: the Cayley-Hamilton argument, then an honest existence-vs-identification scope split. No manufactured reframe."
       }
     ],
     "trap-em-dash": [
@@ -2170,6 +2201,23 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 173 words (3.47/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.300Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Four spaced em-dash pairs/insertions in two paragraphs: 'finite-rank -- it is the de Rham cohomology ... -- the operator M'; 'the operator powers -- and hence the periods -- satisfy'; 'the identification half -- that d and the kernel c are exactly the Bring Picard-Fuchs operator'; and a trailing 'residue weights a_D^(n) -- a consistency test that requires the per-knot weights at n = 2, 3'. The first three are true parentheticals; the last appends an afterthought and is the load-bearing one.",
+        "notes": "PROPOSED (not applied - the last clause carries a real scope condition, so it needs a sentence rather than deletion): end the sentence at 'matching it against the residue weights a_D^(n).' and start a new one: 'That consistency test requires the per-knot weights at n = 2, 3.'"
       }
     ],
     "trap-triples": [
@@ -2189,6 +2237,21 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 173 words)"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.350Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No rhetorical triple."
       }
     ],
     "trap-closing-aphorism": [
@@ -2208,6 +2271,21 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.403Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Ends on the concrete requirement (per-knot weights at n = 2, 3), not a flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -2227,6 +2305,22 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.460Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "'This proves the existence half ... What remains is the identification half' names what the proposition does and does not establish - exactly the scope discipline the corpus asks for, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2246,6 +2340,21 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.522Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2265,6 +2374,21 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.571Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2284,6 +2408,21 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.628Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'necessarily exists' and 'exactly the Bring Picard-Fuchs operator' are precise. Numerics check: Bring's curve has genus 4, so 2g = 8 and the stated bound dim V <= 8 is right; Cayley-Hamilton gives M^d = sum_{j<d} c_j M^j with d <= rank V as claimed."
       }
     ],
     "trap-nonspeakable": [
@@ -2303,6 +2442,22 @@
         "reviewed_at": "2026-08-15T10:31:00.406Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "c6f91b7ba541",
+          "ts": "9940887f0b9e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v04",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:08:54.675Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "severity": "minor",
+        "evidence": "Long sentences with nested dashes (see trap-em-dash) but the noun phrases themselves are ordinary."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2326,5 +2481,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:08:54.675Z"
 }

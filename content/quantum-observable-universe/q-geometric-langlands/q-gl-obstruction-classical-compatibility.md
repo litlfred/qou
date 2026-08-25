@@ -8,4 +8,4 @@ Let $q \in \mathbb{G}_m^{\mathrm{nt}}$ and $\chi(A) \neq 0$. The obstruction cla
 2. As $q \to 1$, the $(q-1)$-factor in the $q$-flatness equation $\nabla_q^2 = (q-1)\mathcal{F}_q$ forces $\nabla_q^2 \to 0$, even though $\mathcal{F}_q$ remains non-zero. The vanishing prefactor screens the curvature.
 3. The Kummer constraint (property (4) of the [$q$-GL conjecture](#conj:q-geometric-langlands)) encodes this singular behaviour. The equivalence degenerates precisely at roots of unity. The classical limit is the universal degeneration.
 
-We recover the classical theory not by continuity, but by specialisation to a singular point.
+The classical theory is recovered by specialisation to this singular point.

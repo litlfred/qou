@@ -944,6 +944,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.003Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +979,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.040Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1014,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 157 words)"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.080Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -1001,6 +1049,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 157 words)"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.297Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Two enumerations examined. The bullet list has FOUR items (polarisation change, gluon exchange, e-pair, mu-pair), so no reflex triple. The sentence 'contribute to radiative corrections, vacuum polarisation, and the running of coupling constants' is a genuine three-item list of technically distinct QED effects, each independently named in the literature.",
+        "notes": "pass (substantive enumeration)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1084,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.116Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1119,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.153Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1154,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.329Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "The block-final sentence ('The elastic channel (T_{1,0}) is always present: photon--photon scattering without pair creation is the leading process, and pair creation is a threshold-activated subdominant channel.') adds two facts not already stated — the elastic channel's unconditional presence and the existence of a threshold — so it is not a restatement of the established thesis.",
+        "notes": "pass on the trap criterion. SEPARATE MATH/PHYSICS FINDING, not fixed inline: that same closing sentence asserts unconditionally that elastic photon--photon scattering 'is the leading process'. (a) It contradicts the proposition this remark interprets: prf:knot-operator-selection (iv) selects T_{2,3} (trefoil, e^-) as the dominant channel at q_0, i.e. lambda_* is the trefoil irrep, not the trivial one. (b) Physically the claim holds only BELOW the pair-production threshold; above it Breit--Wheeler is O(alpha^2) while light-by-light scattering is O(alpha^4), so the elastic channel is not leading. Proposed: qualify to 'below the pair-production threshold the elastic channel is the leading process', which also removes the clash with (iv). Two lesser notes on the same block: the channel sum runs over partitions of DIFFERENT sizes (Box |- 1, BoxBox |- 2, yng(2,1) |- 3) while prop clause (i) writes sum_{lambda |- r} at fixed r; and \\yng is not a KaTeX primitive — it survives the PDF only because main.tex:241 stubs it as \\newcommand{\\yng}[1]{{\\scriptsize[#1]}}, so the web/KaTeX render of this display degrades."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1189,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.188Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1224,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.224Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1259,22 @@
         "reviewed_at": "2026-08-15T10:31:01.163Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "562ebc23cb73",
+          "ts": "3fbea563b423"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:02:33.262Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of the remark (Breit--Wheeler channel expansion, 4-item bullet list, closing paragraph on dominant/subdominant channels). No negation-contrast, no pivot, no aphorism, no meta-commentary, no warmth, no superlative inflation. Both double-hyphens are compounds (Breit--Wheeler, photon--photon), not load-bearing dashes.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1301,5 @@
     "md": "562ebc23cb73",
     "ts": "3fbea563b423"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:02:33.329Z"
 }

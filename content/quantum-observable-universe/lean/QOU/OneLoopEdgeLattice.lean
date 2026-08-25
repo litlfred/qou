@@ -42,7 +42,7 @@
   equation is imposed.  What is formalised is the algebra those arguments run
   on, and in particular that steps 2 and 4 are cusp-number-free.
 
-  -- Ref: [dimofte-garoufalidis2013] arXiv:1202.6268, Defn 1.2, Defn 2.1, Sec 1.9
+  -- Ref: [dimofte-garoufalidis-2013] arXiv:1202.6268, Defn 1.2, Defn 2.1, Sec 1.9
   -- Ref: [neumann-zagier1985] Volumes of hyperbolic three-manifolds, Topology 24
 -/
 import Mathlib.Analysis.SpecialFunctions.Pow.Real

@@ -1176,6 +1176,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "2 negation-contrast construction(s): \", not a generic cohomological-Hall computation.\"; \"not a number but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.632Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Full read of the ~450-word proposition (statement + grading display, negative-to-positive conversion, M2 scoping paragraph, Lean structure). The block is dense in denials — 'the DT count is not a number but a Z/2-graded object', 'not a generic cohomological-Hall computation', '**not** a construction of it', 'does not build ... does not compute ... does not derive', 'has no literature support and is not derivable' — and every one is load-bearing: the first is the block's actual thesis (scalar vs graded), and the rest are anti-laundering scope disclaimers naming exactly what M2 does NOT establish. This is the substantive-contrast false-positive class, and the disclaimer density is the corpus discipline working, not a trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.671Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'The scalar exclusion ... is a *negative* statement. The bar-eigenspace decomposition converts it into a *positive* one:' is the paradigm shape of a rhetorical pivot but is here the mathematical content — the block immediately discharges it with the equivalence 'No scalar serves the datum' is exactly 'the bar-odd part is nonzero', verified arithmetically in the block (5_2: odd = 4 - 3 = 1 nonzero; 4_1: odd = 0). The second clause is proved, not merely asserted."
       }
     ],
     "trap-em-dash": [
@@ -1215,6 +1245,21 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "6 stylistic spaced dashes in 465 words (1.29/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.717Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Four spaced dashes: one true paired parenthetical around the definition of tau, and two appending a consequence ('— **not** a construction of it', '— the spectrum would be *abelian*'). Two appending dashes across ~450 words is below the density that makes this the tell, though both could be full stops; see trap-nonspeakable for the sentence-length problem they contribute to."
       }
     ],
     "trap-triples": [
@@ -1234,6 +1279,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 465 words)"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.754Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "'does not build ..., does not compute ..., and does not derive A_omega' is a three-item list of three distinct unmet milestones (M1, the categorical cohomology, the derivation of A_omega), each independently checkable; the scalar-exclusion list has four members."
       }
     ],
     "trap-closing-aphorism": [
@@ -1253,6 +1313,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.791Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "Ends 'it is not carried here' — a scope exclusion pointing at the audit doc that refuted the A_omega-to-S bridge. The opposite of a placed quotable line."
       }
     ],
     "trap-meta-commentary": [
@@ -1272,6 +1347,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.827Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No emphasis narration; the bolded '**not**' places emphasis directly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1291,6 +1381,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.863Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "The closing sentences narrow scope (M3 stays open; the S-bridge is not carried) rather than restating the grading result."
       }
     ],
     "trap-performed-warmth": [
@@ -1310,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.897Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1329,6 +1449,21 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.934Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "evidence": "The strongest claims are negative and sourced: 'has no literature support and is not derivable' cites docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md. Arithmetic checked: d+ = 4, d- = 3 gives even = 7, odd = 1, and the faithful reconstruction 2d+- = even +- odd holds (8 = 7+1, 6 = 7-1)."
       }
     ],
     "trap-nonspeakable": [
@@ -1348,6 +1483,23 @@
         "reviewed_at": "2026-08-15T10:31:00.315Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "18d395d7257b",
+          "ts": "0436cba1611d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T15:55:59.980Z",
+        "reviewed_sha": "b6f0bef2378759eea7d316be4b4e2a7d68c4b3a7",
+        "severity": "minor",
+        "evidence": "The M2 paragraph is written for the eye. Its central sentence runs ~85 words through two parentheticals, two dashes and a colon: 'Milestone M2 supplies a *structural characterization* ... — **not** a construction of it: taking the certified eq-(98) constants as Donaldson-Thomas invariants (conditional on the DT/BPS bridge ...), every Borel ray is distinct, so the Davison-Meinhardt plethystic log is trivial and dim BPS_d = |Omega_d| with no superpotential and no motivic q-correction — the spectrum would be *abelian*, which is why A_omega and the whole Stokes tower are integers rather than Poincare polynomials (...).' The participle 'taking ...' dangles: its implied subject is not 'every Borel ray', the clause that follows it. The next sentence is ~70 words. Earlier, 'the chirality-refined, set-valued count the exclusion forces' stacks two hyphenated premodifiers in front of a reduced relative clause.",
+        "notes": "Proposed (structural — a multi-sentence rewrite of a paragraph carrying conditional claims, so not edited inline): split at the colon and give the participle a subject, e.g. 'Milestone M2 supplies a structural characterization of the putative closed-sector BPS spectrum, not a construction of it. Take the certified eq-(98) constants as Donaldson-Thomas invariants (conditional on conj:stokes-dt-bps-bridge). Then every Borel ray is distinct, so the Davison-Meinhardt plethystic log is trivial and dim BPS_d = |Omega_d|, with no superpotential and no motivic q-correction. The spectrum would be abelian — which is why A_omega and the whole Stokes tower are integers rather than Poincare polynomials.' No claim changes. SEPARATE manifest observation: the .ts has uses: [] while the .md cross-references conj:stokes-dt-bps-bridge twice; the italic STATEMENT is unconditional integer arithmetic so AGENTS.md §3b propagation is not breached, but the discussion's conditional dependency is invisible to the dependency graph."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1371,5 +1523,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T15:55:59.980Z"
 }

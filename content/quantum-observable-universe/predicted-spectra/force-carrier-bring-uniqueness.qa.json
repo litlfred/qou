@@ -2130,6 +2130,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.057Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2149,6 +2165,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.124Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-em-dash": [
@@ -2168,6 +2200,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 40 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.212Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-triples": [
@@ -2187,6 +2235,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 40 words)"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.261Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-closing-aphorism": [
@@ -2206,6 +2270,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.334Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-meta-commentary": [
@@ -2225,6 +2305,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.414Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-thesis-restatement": [
@@ -2244,6 +2340,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.485Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-performed-warmth": [
@@ -2263,6 +2375,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.561Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-superlative": [
@@ -2282,6 +2410,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.625Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "trap-nonspeakable": [
@@ -2301,6 +2445,22 @@
         "reviewed_at": "2026-08-15T10:31:01.223Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "3c56fdeeb181",
+          "ts": "75359030d51b"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:33:00.709Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Full read of a two-sentence proposition statement. None of the ten constructions is present. Math verified: H_1(Sigma_4,Z) = Z^{2g} = Z^8 is correct for genus 4; the genus-4 torus-knot classification does give exactly {T_2,9, T_3,5} (recomputed: (m-1)(n-1)=8 with gcd(m,n)=1 and m<=n has only (2,9),(3,5)); uses[] names only prop:torus-knot-genus-four-unique, so no conjectural propagation applies.",
+        "notes": "Terminology defect reported to the batch, not failed here: 'the symplectic homology H_1(Sigma_4, Z)' - symplectic homology is a Floer-theoretic invariant of Liouville domains and is not H_1. The intended object is the first homology with its intersection pairing, i.e. a symplectic LATTICE. Same wording appears in rem:force-carrier-bring-uniqueness-novelty, so it is a two-block cluster."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2324,5 +2484,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:33:00.709Z"
 }

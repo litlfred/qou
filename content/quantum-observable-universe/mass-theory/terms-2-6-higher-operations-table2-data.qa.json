@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.749Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.789Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.830Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.869Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.906Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.946Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:18.988Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:19.027Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:19.066Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "a2c0c47ba900",
+          "ts": "cbfd7be57745"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:19.106Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Pure-data table; ten trap categories n/a. FULLY RECOMPUTED at 40 dps. Recursion sigma^k = A_k sigma + B_k with A_{k+1} = h A_k + B_k, B_{k+1} = A_k, h = q - 1/q, tr_M = A_k z + B_k. With the EXCISED convention C (z = sqrt(q)/(q+1) = 0.4993203) the five entries come out 0.49932, 1.10439, 0.730204, 1.25704, 0.993002 - matching all five printed values 0.499 / 1.104 / 0.730 / 1.257 / 0.993 exactly. Under the canonical convention D (z = q^3/(q^2+1) = 0.6126880) they would be 0.612688, 1.12809, 0.848527, 1.30548, 1.12145 - ALL FIVE would differ in the first printed digit. The table is therefore definitively convention-C and needs re-derivation under D. Column 3 also verified: 1/(q;q)_k = -9.09268, 39.18372, -106.6073, 205.8243, -300.5192 against the printed -9.09, +39.18, -106.61, +205.82, -300.52, all correct; and the ratio column reproduces column2/column3 in every row. Pin: proton and muon q_0 agree to the 7th significant figure here, so the table CANNOT distinguish the two pins at the printed precision; 1.1097 would show at k=3 onward and is excluded."
+      }
     ]
   },
   "source_hashes": {
     "md": "a2c0c47ba900",
     "ts": "cbfd7be57745"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:26:19.106Z"
 }

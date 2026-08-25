@@ -43,7 +43,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
-from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
+from _precision import set_compute_dps, str_at_true_precision  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -284,10 +284,15 @@ def main() -> int:
             per_lambda.append({
                 "partition": p["partition"],
                 "k_lambda": k_lambda,
-                "y_lambda": str(p["y"]),
-                "chi_lambda": str(p["chi"]),
-                "delta_lambda": str(delta_l),
-                "contribution": str(term),
+                # str_at_true_precision, not str: delta_l is mp.mpf(<float>) —
+                # 53 bits promoted — and str() renders it at the live mp.dps,
+                # emitting 50 digits of binary64 tail that read as measured.
+                # A no-op on the values that DID carry more than 53 bits, since
+                # the short form is then exact.
+                "y_lambda": str_at_true_precision(p["y"]),
+                "chi_lambda": str_at_true_precision(p["chi"]),
+                "delta_lambda": str_at_true_precision(delta_l),
+                "contribution": str_at_true_precision(term),
             })
         B_D_pred *= M_E_MEV
         err_abs = abs(B_D_pred - B_D_AME_MEV)

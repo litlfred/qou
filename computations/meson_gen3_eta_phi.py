@@ -62,7 +62,7 @@ def meson_ratio(q0: mp.mpf, n: int, n_q: int = 2) -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(str(Q0))
     print(f"\n  GEN-3 MESON (T(2,7)) via χ^(2,1)·Seifert²   q₀ = {float(q0):.10f}\n")
 

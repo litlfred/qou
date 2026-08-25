@@ -97,8 +97,9 @@ del _Path, _bridge
 import sys
 
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 I = mp.mpc(0, 1)
 
 

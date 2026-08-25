@@ -30,11 +30,43 @@ it depends on the specific Hecke-NF reduction (varies between T and
 Output: `d-u-closed-form-proof.witness.json`.
 
 Reference: docs/audits/2026-05-03-w3-habiro-unblocked.md
+
+🛑 CONVENTION-C SCOPE (labelled 2026-08-21, bean `qou-iayk`)
+------------------------------------------------------------
+Everything above is **convention C** and is correct FOR C. It needs this
+scope label, not a correction — do not "fix" any number here.
+
+The `(1 + u²)` factor IS the denominator of `z_C = q^(1/2)/(q+1)` (at
+q = u²). Under the owner ruling of 2026-08-15 making convention D canonical
+(`z_D = q³/(q²+1)`, recorded at `pyhecke/gram.py:15`), the same
+Markov-Ocneanu argument gives `(1 + u⁴)^(3A−1) = (1 + q²)^(3A−1)` instead.
+The DERIVED exponent `3A − 1 = n_strands − 1` survives the convention change
+unaltered; only the base moves. Measured on all four atoms in
+`computations/habiro/habiro_witness_convention_adjudication_probe.py`.
+
+Two further cautions for anyone citing this module as a check on a witness:
+
+1. **`u^shift` is FITTED, not derived** — as the CLAIM note above already
+   says ("the only piece this script does NOT close"). `EMPIRICAL_D_U` below
+   is, by its own comment, extracted from
+   `habiro-coefficients-extended.witness.json`, and `18Z + 21N + 1`
+   reproduces that table on all six atoms *because it was fitted to it*.
+   `PER_CROSSING_SHIFT_INTRA` is an integer LP solved to land on the targets
+   18 and 21 after the fact. An exact match against that witness on this
+   exponent is therefore CIRCULAR and carries no evidential weight.
+
+2. **This law is not a test of witness correctness.** The committed
+   `habiro-coefficients-extended.witness.json` matches every factor of this
+   law exactly and nonetheless FAILS the outer identity
+   `p(u)/(u^shift·D(u)) == tr_M_atomic(u²)` on all four atoms (exact rational
+   evaluation, adjudication probe above). A witness disagreeing with this law
+   is evidence of a convention difference, not of corruption.
 """
 from __future__ import annotations
 
 import json
 import sys
+import time as _time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -43,6 +75,13 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
+
+sys.path.insert(
+    0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
+from qou_substrate.witness import WitnessBuilder  # noqa: E402
+
+#: Captured at import so ``durationMs`` measures the run, not the build.
+_T0 = _time.monotonic()
 
 
 def count_averaged_crossings(Z: int, N: int) -> dict:
@@ -315,8 +354,22 @@ def main() -> int:
             "u^shift requires deeper Hecke-NF reduction analysis."
         ),
     }
-    out_path = HERE / "d-u-closed-form-proof.witness.json"
-    out_path.write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
+    # Routed through WitnessBuilder.wrap_legacy rather than a raw json.dump.
+    # The raw dump emitted no provenance at all, so the committed witness's
+    # scriptHash / scriptCommitSha / commitSha / engine / durationMs /
+    # scriptFile (added by a later enrichment pass) were DELETED by any
+    # re-run -- silently regressing this witness into the PROV_MISSING class.
+    # wrap_legacy preserves every original top-level key verbatim and adds
+    # the provenance fields back. Bean qou-iayk.
+    b = WitnessBuilder.wrap_legacy(
+        "d-u-closed-form-proof",
+        out,
+        script_path=__file__,
+        engine="python",
+        output_dir=HERE,
+        start_time=_T0,
+    )
+    out_path = b.save()
     print(f"\nWitness: {out_path}")
     return 0
 

@@ -1775,6 +1775,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.204Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No assert-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1794,6 +1809,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.287Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Statement, display, two-sentence gloss; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1813,6 +1843,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.374Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1832,6 +1877,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 36 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.431Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1851,6 +1911,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.526Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Closes on what the sum collects; technical."
       }
     ],
     "trap-meta-commentary": [
@@ -1870,6 +1945,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.621Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1889,6 +1979,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.707Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "The two closing sentences partition the display into its level-0 and higher-level parts; they gloss rather than restate."
       }
     ],
     "trap-performed-warmth": [
@@ -1908,6 +2013,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.778Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1927,6 +2047,21 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.876Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'exclusively' is a scope word on a structural claim (the descended term appears at one level only)."
       }
     ],
     "trap-nonspeakable": [
@@ -1946,6 +2081,22 @@
         "reviewed_at": "2026-08-15T10:31:00.332Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0b9502fc78de",
+          "ts": "871db67efc5a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v03",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:53:21.969Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Two short sentences of prose.",
+        "notes": "RIGOR (reported, not fixed — two defects, both visible by comparison with the same formula in the sibling prop:pentagon-uv-commutation, which this block's uses[] cites). (1) SYMBOL COLLISION, MAJOR. The block opens 'Let W in B_{3A} be the atomic braid of a nucleus (Z, N)', binding N to the NEUTRON NUMBER, and the display then sums n = 0 to N over JET LEVELS. In the sibling block the same sum runs to N as the truncation order, with a tail R_N — there N is unambiguous because no nucleus (Z,N) is in scope. As written here the tower is claimed to terminate at the neutron number, which is not what the construction means, and AGENTS.md's notation register forbids exactly this reuse of one symbol for two meanings in a block. Proposed: sum to L (or N_lev) and say what bounds it. (2) MISSING TAIL TERM, MAJOR. The sibling prints the identical formula as '... + R_N' and cites prop:jet-tower-convergence for the geometric bound on R_N; this block drops R_N and states the finite sum as an EQUALITY for the mass functional. Either the sum is infinite (then say so and the tail is unnecessary) or it is truncated (then the tail must appear, as it does in the sibling). MINOR: the gloss says 'transient SINGLET and pair corrections' where the sibling and the formula's own S_1 call them SINGLETONS; 'singlet' is a distinct physics term and should not be substituted."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1969,5 +2120,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T21:53:21.969Z"
 }

@@ -1264,6 +1264,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.170Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1283,6 +1299,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.216Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-em-dash": [
@@ -1302,6 +1334,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 29 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.261Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-triples": [
@@ -1321,6 +1369,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 29 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.306Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-closing-aphorism": [
@@ -1340,6 +1404,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.351Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-meta-commentary": [
@@ -1359,6 +1439,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.397Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-thesis-restatement": [
@@ -1378,6 +1474,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.442Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-performed-warmth": [
@@ -1397,6 +1509,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.490Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-superlative": [
@@ -1416,6 +1544,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.534Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "trap-nonspeakable": [
@@ -1435,6 +1579,22 @@
         "reviewed_at": "2026-08-15T10:30:59.835Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4343695f295d",
+          "ts": "77eef5287a91"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:43:33.578Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Full read: 3-sentence example on def:projective-line-object. First two sentences verified: SU(2)/U(1) = P^1(C) is correct, and a point of P^1(C) is a line in C^2. Register clean on all ten categories.",
+        "notes": "No trap. Structural math flag, NOT fixed: sentence 3 calls C[z] 'the corresponding function algebra' of P^1(C). P^1 is complete, so its ring of global regular functions is C; C[z] is the coordinate ring of the affine chart P^1 minus a point, which matters because the parent definition uses the function algebra to REALISE the object. The Lean sibling repeats it more strongly ('The coordinate ring O(P^1) = C[z]'). See the returned anomaly list, which also records two self-assuming projections in that sibling."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1458,5 +1618,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:43:33.578Z"
 }

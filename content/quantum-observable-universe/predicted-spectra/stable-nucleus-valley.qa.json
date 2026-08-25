@@ -944,6 +944,23 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.236Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "'This is not an additional axiom. It is a strict consequence of the Skein binding Lagrangian.' is the negate-then-assert shape, but the axiom-vs-consequence distinction is a genuine epistemic claim in this corpus (anti-laundering discipline), so it falls in the substantive-contrast false-positive class.",
+        "notes": "note: the two sentences were plainly one before a split; a single clause would read better but the content is real."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -963,6 +980,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.278Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "trap-em-dash": [
@@ -982,6 +1014,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 99 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.317Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "trap-triples": [
@@ -1001,6 +1048,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 99 words)"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.358Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "trap-closing-aphorism": [
@@ -1020,6 +1082,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.400Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "trap-meta-commentary": [
@@ -1039,6 +1116,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.440Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "trap-thesis-restatement": [
@@ -1058,6 +1150,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.482Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "trap-performed-warmth": [
@@ -1077,6 +1184,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.520Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "trap-superlative": [
@@ -1096,6 +1218,23 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.576Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "'Their balance selects the unique stable (Z, N) for each mass number A.' Uniqueness is asserted without qualification and is false as physics: roughly 150 mass numbers carry two or three stable isobars (A=40 has both 40Ar and 40Ca). 'a strict consequence' adds an intensifier the sentence does not need.",
+        "notes": "proposed: 'selects the stable (Z, N) for each mass number A' or 'selects a stable (Z, N)...'; drop 'strict'. Not applied - the uniqueness claim is substantive and needs the author."
       }
     ],
     "trap-nonspeakable": [
@@ -1115,6 +1254,21 @@
         "reviewed_at": "2026-08-15T10:31:01.129Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "8b58dfb8aa59",
+          "ts": "3e5fe4868a85"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:29.627Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (remark, 2 paragraphs, ~0.9kB). Strong/Coulomb split (q+q^-1)/2 = 1.005448 and (q-q^-1)/2 = 0.104531 at the proton pin."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1141,5 +1295,5 @@
     "md": "8b58dfb8aa59",
     "ts": "3e5fe4868a85"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:29.627Z"
 }

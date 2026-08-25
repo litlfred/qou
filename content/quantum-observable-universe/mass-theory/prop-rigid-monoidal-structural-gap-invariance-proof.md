@@ -97,8 +97,8 @@ $\square$
    (per-eigenvalue), via `markov_peel` (recursive symbolic), and via
    `tr_M_via_wenzl_bridge_mpfr` (50 dps Wenzl bridge).  All three
    should give the same $|\tau|$ to 50 dps; the resulting
-   $\Delta_{\mathrm{cat}}$ should be ATOM-DEPENDENT but
-   CONVENTION-INDEPENDENT.
+   $\Delta_{\mathrm{cat}}$ should be atom-dependent but
+   convention-independent.
 
 2. **Convention-dependent regularizer dominates the brane-tower
    variation.**  The non-categorical brane-tower regularization

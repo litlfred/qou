@@ -53,6 +53,7 @@ from canonical_braid_crossings import (  # noqa: E402
 )
 from hoefsmit_numpy import chi_numpy, hoefsmit_matrices_numpy  # noqa: E402
 from rho_k_h3a_refinement import chi_numeric  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # Tritium: n=9, 35 crossings, the atom the regression was measured on. Its
 # first 'averaged_weighted' crossing is at index 11 of 35.
@@ -84,7 +85,7 @@ def chi_numpy_prefix(shape, crossings, q_value):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q_mp = mp.mpf(Q_50_DIGIT_STR)
     q_f64 = float(q_mp)
     crossings = atom_canonical_crossings(ATOM[0], ATOM[1])
@@ -121,6 +122,8 @@ def main() -> int:
             "partition": str(lam),
             "t_fixed_sec": fmt(t_fast),
             "t_prefix_sec": fmt(t_slow),
+            # float64-intentional: a wall-clock ratio. The timings ARE
+            # doubles; there is no exact route to a benchmark measurement.
             "speedup": fmt(speedup),
             "t_mpmath_reference_sec": fmt(t_ref),
             "rel_diff_vs_mpmath": mp.nstr(rel, 6),
@@ -159,7 +162,15 @@ def main() -> int:
         "Measures fixed vs pre-fix vs mpmath reference on tritium partitions, "
         "caller-vs-caller in one process. Value is unchanged; only speed moves."
     )
-    w.save()
+    # q0 anchor: this benchmark DOES read q₀ — `Q_50_DIGIT_STR` comes straight
+    # from `q_parameter` in this file. The pin is the experimental/proton one:
+    # `q_parameter` is not unconditionally muon, it is manifest-driven
+    # (`QOU_Q0_ANCHOR` override, else the producer's stem under `ideal_muon`,
+    # else proton), and this stem is absent from
+    # `computations/q0_anchor_manifest.json`, so it takes the standing proton
+    # default of the 2026-08-07 owner directive. Confirmed via
+    # `resolve_q0_anchor`, not inferred from the layer (bean qou-kx04).
+    w.save({"q0Anchor": "proton", "q0Value": Q_50_DIGIT_STR})
     print(f"\n  cross-check within 1e-14 on all partitions: {all_ok}")
     print("Saved witness: chi-numpy-dtype-fix-benchmark.witness.json")
     return 0 if all_ok else 1

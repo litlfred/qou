@@ -1359,6 +1359,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.355Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1378,6 +1393,23 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.393Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "The block opened with the pose-then-answer device (a claim, then 'prompt two questions', then two rhetorical questions the same paragraph proceeds to answer). Repaired to a declarative statement of the same scope.",
+        "notes": "fix applied: 'The topological mass formula and its volume-tower transcendence shadow prompt two questions. What structure does the Galois action on this transcendence reveal? How does the bar-self-dual confinement band package the baryon-sector periods?' -> 'This section examines the Galois action on the volume-tower transcendence shadow of the topological mass formula, and how the bar-self-dual confinement band packages the baryon-sector periods.'"
       }
     ],
     "trap-em-dash": [
@@ -1397,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.431Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "trap-triples": [
@@ -1416,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 78 words)"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.470Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "trap-closing-aphorism": [
@@ -1435,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.508Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "trap-meta-commentary": [
@@ -1454,6 +1531,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.546Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "trap-thesis-restatement": [
@@ -1473,6 +1565,22 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.585Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "major",
+        "evidence": "'This completes the baryon-sector description and prepares the algebro-geometric PL-SW duality sequence.' points forward to the next section, so it is the cross-reference-closer false-positive class, not restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1492,6 +1600,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.624Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "trap-superlative": [
@@ -1511,6 +1634,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.664Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "trap-nonspeakable": [
@@ -1530,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:01.186Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "47002996781d",
+          "ts": "059c398a4b4a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:34.703Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (prose preamble, ~0.6kB). Navigational."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1552,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:34.703Z"
 }

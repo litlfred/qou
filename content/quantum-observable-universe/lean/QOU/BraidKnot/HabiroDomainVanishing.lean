@@ -60,8 +60,8 @@ published results, verified numerically in
 reproduces the closed form to 1.1e-19 by independent quadrature). Formalizing
 them is not a bean — they are literature, cited with `-- Ref:` where used.
 
--- Ref: [beliakova2011] https://arxiv.org/abs/1106.6298
--- Ref: [garoufalidis2015stateintegrals] https://arxiv.org/abs/1411.6062
+-- Ref: [beliakova-le2011] https://arxiv.org/abs/1106.6298
+-- Ref: [garoufalidis-kashaev2015] https://arxiv.org/abs/1411.6062
 -/
 
 namespace QOU.BraidKnot

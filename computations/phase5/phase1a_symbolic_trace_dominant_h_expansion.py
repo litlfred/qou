@@ -184,7 +184,10 @@ def main():
             mp.mp.dps = 80
 
             y_val = y_lambda_wenzl_bridge_numeric(list(shape), qi, dps=80)
-            chi_val = chi_lambda_at_q(shape, qi_f)
+            # NO FLOAT64 (bean qou-65qv): y_val above is taken at the exact qi
+            # while chi was taken at the float64 qi_f -- a layer straddle
+            # inside a single product. Both now use qi.
+            chi_val = chi_lambda_at_q(shape, qi)
 
             product = mp.mpf(y_val) * mp.mpf(chi_val)
             f_vals.append(product)

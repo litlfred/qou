@@ -48,6 +48,9 @@ from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
 import snappy  # noqa: E402
 from mpmath import mpf  # noqa: E402
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 # SnapPy's volume is computed at a requested bit precision; 230 bits ~ 69 dps,
 # which covers the repo's 65-dps compute default with margin.
 BITS_PREC = 230
@@ -145,7 +148,7 @@ def main():
         "scope": "(a) scope-limited negative under mass~Vol; SnapPy now available "
                  "for principled follow-up (variable-density / projection).",
     }
-    with open("computations/charm-composite-volume.witness.json", "w") as f:
+    with open(_HERE_W / "charm-composite-volume.witness.json", "w") as f:
         json.dump(witness, f, indent=2)
     print("\nwrote computations/charm-composite-volume.witness.json")
 

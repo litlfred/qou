@@ -55,19 +55,33 @@ R_CHARGE_FM = 1.885
 TARGET = R_STRONG_FM / R_CHARGE_FM        # ≈ 3.2149 (audit cites 3.213)
 GATE = 0.01                                # <1% = a real match; else no-fit negative
 
-# ── Baked SnapPy 3.3.2 cusp geometry (2026-07-04; --live reproduces) ──
+# ── Baked SnapPy 3.3.2 cusp geometry ─────────────────────────────────────
 #   L6a4 = Borromean (³He binding link), 8_11 (³H binding link).
+#
+# CORRECTED 2026-08-22 (bean qou-nok3). The previous table was rounded to
+# 6 significant digits ("vol": 7.32772) while its own header claimed
+# "--live reproduces". It does not, and did not: running the probe both ways
+# gave
+#     vol(8_11)/vol(L6a4)   baked 1.130818317293783
+#                           live  1.1308171494762735
+# and the SnapPy census settles it — live agrees to 1.2e-16, the baked value
+# was wrong by 1.03e-6. The committed witness carried the baked figure, so
+# the `--live` path that would have caught it had apparently never been run.
+#
+# These values are now emitted by `run_live()` itself, at full float
+# precision, so the header's claim is true and re-checkable.
 CUSP = {
     "L6a4": {  # 3He — fully S3-symmetric: 3 identical cusps
-        "vol": 7.32772, "n_cusps": 3,
-        "cusp_shapes": [complex(0, 2.0)] * 3,   # all identical => symmetry
-        "meridian": 1.41421, "longitude": 2.82843,   # √2, 2√2
-        "shape_mod": 2.0,
+        "vol": 7.327724753417752, "n_cusps": 3,
+        "cusp_shapes": [(-3.3306690738754706e-16+1.999999999999999j), (2.2204460492503086e-16+2.0000000000000004j), (-9.992007221626405e-16+2j)],
+        "meridian": 1.414213562373095, "longitude": 2.8284271247461885,
+        "shape_mod": 1.999999999999999,
     },
     "8_11": {  # 3H — 1 cusp
-        "vol": 8.28632, "n_cusps": 1,
-        "cusp_shapes": [complex(4.1756, 6.1488)],
-        "longitude": 9.485, "shape_mod": 7.4326,
+        "vol": 8.286316817806592, "n_cusps": 1,
+        "cusp_shapes": [(4.175600179439673+6.148812917045749j)],
+        "meridian": 1.276111204983299, "longitude": 9.484823660339165,
+        "shape_mod": 7.432599622431258,
     },
 }
 

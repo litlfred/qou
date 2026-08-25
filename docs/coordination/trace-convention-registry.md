@@ -63,15 +63,23 @@ $h = q - q^{-1}$.
 > `markov_trace_canonical::tr_M_element`, `closed_form_tau_M::markov_z` +
 > `y_lambda_wenzl_bridge_numeric`, `binding_canonical.py`, and
 > `wedderburn_jones_markov::y_lambda_at` — are **all convention D** now
-> (bean `qou-wgta`). C survives in exactly three places, and each is
-> deliberate: two explicitly-named historical functions in
-> `schur_principal_mpmath` that keep the excised convention *quotable* for the
-> D-vs-C comparison in `y_lambda_su_n.main()`, and one **blocked migration**,
-> `pyhecke/gram.py::z` (see `blocked_migrations` in the JSON twin — switching
-> it silently destroys `G_INV`, because the Markov–Gram form is degenerate
-> under D). R9 asserts all three are *still C*; the preserved reference
-> stopping being C without anyone noticing is precisely what happened to its
-> predecessor.
+> (bean `qou-wgta`). C survives in exactly **two** places, both deliberate:
+> the explicitly-named historical functions in `schur_principal_mpmath` that
+> keep the excised convention *quotable* for the D-vs-C comparison in
+> `y_lambda_su_n.main()`. R9 asserts both are *still C*; the preserved
+> reference stopping being C without anyone noticing is precisely what
+> happened to its predecessor.
+>
+> The third place — `pyhecke/gram.py::z`, the one **blocked migration** —
+> moved to D on 2026-08-15 (bean `qou-w8zz`), once `G` was inverted on the
+> quotient `H_3/rad` rather than the full NF basis, which removes the
+> degeneracy that blocked it. See `resolved_migrations` in the JSON twin.
+> The registry row was not updated when the migration landed, so R9 — which
+> is written to *assert* the exception — went red on main with *"registry
+> says convention C but the CODE returns 0.6126880371464652"*. That is the
+> gate working as designed: a numeric evaluator caught a stale record, where
+> R4/R5 compare a docstring to a registry field and stay green whenever both
+> sides go stale together.
 
 > **Registry gap closed 2026-08-09.**
 > `computations/wedderburn_jones_markov.py::y_lambda_at` is convention **C** and
@@ -114,26 +122,69 @@ because those can differ, and the mass channel is the case where they do.
 | `mass` | **D** — owner ruling 2026-08-09 (the row cap $\ell(\lambda)\le 2$ forces it) | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | agreed |
 | `binding` | D | **D** — `binding_canonical.py` → `closed_form_tau_M` → `markov_z`, and `y_lambda_wenzl_bridge_numeric` | agreed |
 | `borromean-binding-single-pipeline` | D | **D** — `borromean_binding_recompute.py` | agreed |
-| `qbeta-decay` | **null (contradictory)** — the decay blocks write the excised-C value while naming it "the Markov–Jones parameter", whose referent has been D since 2026-08-09; no decay-specific derivation of either exists | **C** — `qbeta_utils.markov_parameter` (`α=(z−1)h/2` feeds every committed $c_k$ extraction), `qbeta_ck_sseries_exact_rational` core, `ZBarParity.lean` | **disputed** (bean `qou-b3nk`) |
+| `qbeta-decay` | **D** — owner ruling 2026-08-15 ("convention D is convention. excise convention C"); and **C is now structurally excluded**, see below | **C** — `qbeta_utils.markov_parameter` (`α=(z−1)h/2` feeds every committed $c_k$ extraction), `qbeta_ck_sseries_exact_rational` core, `ZBarParity.lean` | **agreed-migration-pending** (bean `qou-cds1`) |
 
-> **The `qbeta-decay` dispute (registered 2026-08-15, bean `qou-b3nk`) is a
-> derivation gap, not a def-vs-code mismatch of the mass kind.** Neither
-> convention is *derived* for the decay channel. **C** is a stipulation whose
-> cited referent now reads D, and it fails two structural conditions each of
-> which would exclude it *if demanded* — the full-bar condition
-> $\overline{z} = z - h$ (Lean `QOU.QBeta.zD_full_bar_covariant` /
+> **`qbeta-decay` — C is excluded; D is not thereby derived. Updated
+> 2026-08-23 (bean `qou-b3nk`, closed).** This note previously read
+> *"null (contradictory) / disputed / neither convention is derived"*. Two
+> things have since superseded that, and the markdown twin had absorbed
+> neither while the JSON had absorbed only the first.
+>
+> **1. The status was settled by owner ruling (2026-08-15)** — *"convention D
+> is convention. excise convention C"*
+> ([`2026-08-15-owner-ruling-convention-d-proton-color.md`](../audits/2026-08-15-owner-ruling-convention-d-proton-color.md)).
+> The definitional side is **D**; production is still C, and migrating it is
+> `qou-cds1`, which is open. A $z$-swap is **not** that migration (measured:
+> $c_3 \to \approx -974$, rung convergence collapses) — the ladder must be
+> **re-derived**, not re-evaluated.
+>
+> **2. C is no longer merely "not derived" — it is a scope-(b) structural
+> exclusion, identically in $q$.** The level family is
+> $z_r = q^{2r-1}(1-q^2)/(1-q^{2r}) = q^r/[r]_q$, which lies in $\mathbb{Q}(q)$
+> for **every** $r$. But $z_C = \sqrt q/(q+1) \notin \mathbb{Q}(q)$: $x^2 - q$
+> is Eisenstein at the prime $q$ of $\mathbb{Q}[q]$, hence irreducible over
+> $\mathbb{Q}(q)$, so $\sqrt q \notin \mathbb{Q}(q)$ — and $z_C \in
+> \mathbb{Q}(q)$ would give $\sqrt q = z_C\,(q+1) \in \mathbb{Q}(q)$. For
+> non-integer real $r$ the same conclusion follows from non-constancy of the
+> formal level: $r_C(1.05) = 2.2267$ vs $r_C(1.15) = 2.9553$. So $z_C$ is
+> **not $z_r$ for any $r$, at any $q$** — the named invariant is field
+> membership, which is what makes this (b) rather than (a).
+> [`wenzl_level_family.py`](../../computations/probes/wenzl_level_family.py)
+> W4/W9, 10/10, sympy-exact over $\mathbb{Q}(q)$;
+> [`2026-08-16-wenzl-level-family.md`](../audits/2026-08-16-wenzl-level-family.md).
+>
+> **This subsumes one of the two conditions the old note listed, and shows they
+> were never independent.** The old wording gave *"fixed-rank fibre membership
+> ($N_{\mathrm{eff}}(z_C) = 2.5995$ **pointwise**, $q$-dependent)"* as a
+> condition that *would* exclude C **if demanded**. W3 proves $N_{\mathrm{eff}}$
+> and the Wenzl level are the **same map**, so that pointwise number was a
+> shadow of a $q$-identical structural fact. The full-bar condition
+> $\overline z = z - h$ (`QOU.QBeta.zD_full_bar_covariant` /
 > `barEven_fullBar_forces_classical`, sorry-free; premise: trace
-> bar-compatibility $\mathrm{tr}\circ\mathrm{bar} = \mathrm{bar}\circ\mathrm{tr}$)
-> and fixed-rank fibre membership ($N_{\mathrm{eff}}(z_C) = 2.5995$ pointwise,
-> $q$-dependent; premise: categorical fibre trace). **D** is conditionally
-> forced only on named unproved premises (`conj:binding-qbeta-complex-volume`
-> same-object identification, or trace bar-compatibility). **Mutual
-> exclusivity is proved** (`decayLadder_zC_threeRow_ne_zero`, sorry-free): any
-> faithful normalised Markov trace at the ladder's $z_C$ carries
-> $y_{(1^3)} \neq 0$, so the mass channel's two-row forcing cannot transfer
-> while the ladder keeps $z_C$ — and a $z$-swap is **not** a migration
-> (measured: $c_3 \to \approx -974$, rung convergence collapses). Until
-> settled, every $c_3$ / $S$ / $q^*_S$ quote names its convention. Audit:
+> bar-compatibility) remains a **separate** and still-premised route.
+>
+> **What is unconditional, and what is not.** $z_C \neq z_r$ for all $r$ is a
+> theorem about rational-function fields and carries no premise. The inference
+> *"therefore C is not an admissible convention for this channel"* is
+> conditional on the channel's $z$ being a **fibre-level parameter at all** —
+> the categorical-fibre premise, which is the framework's own but is not proved
+> here.
+>
+> **Excluding C does not derive D.** The exclusion says $z_C$ is *no* level; it
+> does not say *which* level the decay channel occupies. $r = 2$ for this
+> channel still requires the decay fibre's rank, which is exactly `qou-cds1`
+> and is **open**. W10 records that every channel that is in the family at all
+> sits at $r = 2$ and none at $r \ge 3$ — suggestive, not a derivation.
+>
+> **The mutual-exclusivity theorem changes role.**
+> `decayLadder_zC_threeRow_ne_zero` (sorry-free) shows any faithful normalised
+> Markov trace at $z_C$ carries $y_{(1^3)} \neq 0$, so the mass channel's
+> two-row forcing cannot transfer *while the ladder keeps $z_C$*. That
+> antecedent is now itself excluded, so the theorem no longer stands as an
+> obstruction to D — it is an argument for abandoning $z_C$.
+>
+> Until the migration lands, every $c_3$ / $S$ / $q^*_S$ quote still names its
+> convention. Prior audit:
 > [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md);
 > numeric shadow: `computations/qbeta/qbeta-decay-channel-convention-status.witness.json` (18/18).
 

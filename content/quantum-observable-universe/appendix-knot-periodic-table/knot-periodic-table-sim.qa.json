@@ -1329,7 +1329,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.847Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.887Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.930Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:57.973Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.015Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.056Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.097Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.138Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.193Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9fe1f22247ac",
+          "ts": "dd3df2f14443"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:16:58.233Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of sim:knot-periodic-table (two descriptive paragraphs plus a six-item view list). No constructions from the ten categories. VERIFIED the classification sentence: T(2,n) has gcd(2,n) components, so odd n gives a one-component knot and even n a two-component link - 'fermions are single-component odd-n torus knots, bosons are even-n 2-component links' is correct as stated. Also note with approval that this block writes the trefoil correctly as 'closure of sigma_1^3 in B_2', the 2-strand word.",
+        "notes": "NOT A TRAP, reported separately, three items. (1) That correct B_2 trefoil word is the direct counterexample to the knot-operations appendix, which writes T(2,3) as the 3-strand sigma_0 sigma_1 sigma_0 - the two chapters disagree. (2) The classification is said to classify 'all entries', but protons and neutrons are given as 3-component Borromean links while being fermions, which the single-component rule excludes. (3) The .md cites def:confined-particle, prop:fermion-boson-knot-link and rem:building-block-knots, none of which appear in the .ts uses[] (which lists prop:shell-structure-eigenvalues and prop:knot-particle-correspondence). Minor pin note: every view in the .ts pins q = 1.11, which is a 3-digit truncation matching no documented pin; defensible as a slider default, worth saying so."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:16:58.233Z"
 }

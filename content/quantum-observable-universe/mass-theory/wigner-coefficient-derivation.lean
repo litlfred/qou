@@ -38,12 +38,12 @@ noncomputable def wignerCoefficient (k : ℕ) (q m_e : ℝ) : ℝ :=
 -- Ref: [manuscript] Ch. mass-theory, prop:wigner-coefficient-derivation ([5]_q!·m_e near-match to 68.9 MeV at q_0)
 axiom wigner_coefficient_axiom (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
-    (hme : m_e = 0.51099895) :
+    (hme : m_e = 0.51099895069) :
     |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03
 
 theorem wigner_coefficient (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
-    (hme : m_e = 0.51099895) :
+    (hme : m_e = 0.51099895069) :
     |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03 :=
   wigner_coefficient_axiom q₀ m_e hq hme
 

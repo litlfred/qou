@@ -1779,6 +1779,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.003Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1798,6 +1814,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.043Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-em-dash": [
@@ -1817,6 +1849,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.084Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-triples": [
@@ -1836,6 +1884,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 71 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.126Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1855,6 +1919,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.167Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-meta-commentary": [
@@ -1874,6 +1954,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.206Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-thesis-restatement": [
@@ -1893,6 +1989,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.245Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-performed-warmth": [
@@ -1912,6 +2024,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.284Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-superlative": [
@@ -1931,6 +2059,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.326Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "trap-nonspeakable": [
@@ -1950,6 +2094,22 @@
         "reviewed_at": "2026-08-15T10:31:00.015Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e567f0423814",
+          "ts": "76464c65fe6a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:36:54.368Z",
+        "reviewed_sha": "22f44d745633f19d0e478438674fb8dc983e998a",
+        "evidence": "Full read: definition block with a tikzcd diagram. Register clean: three declaratives plus an 'Equivalently, ...' restatement, which is a standard mathematical equivalent-characterisation sentence rather than category-7 thesis restatement (it states a different, non-obvious characterisation: T is the largest subgroup under which every object of <V> splits into lines). No dash, no triple, no closer, no announced emphasis, no superlative used for emphasis ('largest subgroup' is a precise extremal claim).",
+        "notes": "No trap. Two structural flags, neither fixed: (1) the displayed T = Aut^(x)(tau|_<V>) is asserted as a SUBgroup of G, but restricting a fibre functor to a full subcategory yields a group receiving a homomorphism FROM G (a quotient in the Tannakian dictionary); the block's own diagram draws T hook-> G from the different 'acts diagonally' characterisation. I could not adjudicate whether the two coincide for this particular <V>. (2) lean.ref qou:QOU.MaximalTorus resolves to nothing, and a definition block requires a Lean sibling. Both in the returned anomaly list."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1973,5 +2133,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:36:54.368Z"
 }

@@ -32,10 +32,6 @@ $T = 0$ one while leaving the species content identical. That variable is alread
 supplied by [the isospin ordering](#prop:isospin-singlet-binds-more), which assigns
 $\mu_+$ to the triplet and $\mu_-$ to the singlet and orders them without a fit.
 
-The order of presentation is deliberate. The working variable is introduced before
-the refuted one, so that the refutation reads as a statement about what content
-cannot do rather than as a gap the reader is left holding.
-
 **Archimedean specialisation.** What follows sits on the archimedean side of the
 substrate wall: it invokes real- or complex-analytic constructs --- real-valued
 physical observables, real-analytic bounds, transcendental constants, or numerical

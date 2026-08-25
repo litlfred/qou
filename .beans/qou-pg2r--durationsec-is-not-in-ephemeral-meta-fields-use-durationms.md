@@ -1,11 +1,11 @@
 ---
 # qou-pg2r
-title: 'durationSec is NOT in _EPHEMERAL_META_FIELDS — serializing seconds makes wall-clock substantive witness content'
+title: durationSec is NOT in _EPHEMERAL_META_FIELDS — serializing seconds makes wall-clock substantive witness content
 status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T21:11:00Z
-updated_at: 2026-08-15T23:30:00Z
+updated_at: 2026-08-16T11:41:27Z
 ---
 
 ## The trap
@@ -143,3 +143,51 @@ Routing the three plain-`json.dump` probes through `WitnessBuilder` so they
 gain the preserve-if-unchanged path. That is the fix that would actually end
 their churn, and it is a different (larger) change than this bean's title
 suggests.
+
+
+--------
+
+## 2026-08-16 — the "Still open" item, restated so it is findable
+
+A backlog item arrived phrased as a fresh task — *"Route the three
+plain-json.dump probes through WitnessBuilder"* — and it is **already this
+bean's `## Still open` paragraph**, so it is recorded here rather than
+filed as a second bean. Restating it under its own heading because a work
+item buried at the bottom of a bean titled about `durationSec` masking is
+not findable by anyone grepping for `json.dump` or `WitnessBuilder`.
+
+### The item
+
+    computations/probes/qbeta_nz_even_series_fourone_probe.py
+    computations/probes/qbeta_sdeformed_leading_bound_probe.py
+    computations/probes/sdeformed_channel_signflip_probe.py
+
+(all three confirmed present under `computations/probes/` at merge
+`36080a4e21`)
+
+write with plain `json.dump` / `Path.write_text` and never call
+`WitnessBuilder.save()`. They therefore never reach
+`_witnesses_substantively_equal` and **overwrite unconditionally**. Routing
+them through `WitnessBuilder` — so they gain the preserve-if-unchanged path
+— is the fix that actually ends their re-run churn.
+
+### What the mask fix did and did not do
+
+Settled above and restated so it is not re-litigated: adding
+`durationSeconds` / `duration_sec` to `_EPHEMERAL_META_FIELDS` was
+**future-proofing** for producers that *do* use `WitnessBuilder`. It changes
+the behaviour of **zero** existing witnesses, because these three bypass the
+mask entirely. Worth having; not a repair of these probes.
+
+### Cross-reference — `qou-pin5` is the general case
+
+`qou-pin5` measured **436 producers** writing witnesses via raw `json.dump`,
+of which **14 pinned witnesses are one rerun away** from losing their
+`q0Anchor`. These three probes are three of those 436, seen from the
+churn side rather than the pin-loss side. **Same root cause, one fix.**
+
+Do not work this item and `qou-pin5` independently — whoever routes these
+three through `WitnessBuilder` should say whether the same move generalises
+to the other 433, and `qou-pin5` now carries a pointer back here.
+
+*(Routed 2026-08-16 by an agent that could not reach the `beans` CLI.)*

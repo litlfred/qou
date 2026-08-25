@@ -1415,6 +1415,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.270Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no assert-by-denying / 'not X but Y' found."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1434,6 +1449,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.327Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no setup-then-reframe pivot found."
       }
     ],
     "trap-em-dash": [
@@ -1453,6 +1483,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 155 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.378Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no load-bearing spaced em-dash found."
       }
     ],
     "trap-triples": [
@@ -1472,6 +1517,22 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 155 words)"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.423Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "'Three ingredients close the conditional statement.' + three numbered items (pentagon-coherence / Bloch-Suslin uniqueness / archimedean matching).",
+        "notes": "Substantive: the three are exactly the hypotheses (C1), (C2) and the normalisation step, each doing distinct work in the proof."
       }
     ],
     "trap-closing-aphorism": [
@@ -1491,6 +1552,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.550Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no quotable closing line found."
       }
     ],
     "trap-meta-commentary": [
@@ -1510,6 +1586,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.619Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no narration of own emphasis found."
       }
     ],
     "trap-thesis-restatement": [
@@ -1529,6 +1620,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.722Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no block-final restatement of what is already established found."
       }
     ],
     "trap-performed-warmth": [
@@ -1548,6 +1654,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.765Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no personal / warm register in institutional prose found."
       }
     ],
     "trap-superlative": [
@@ -1567,6 +1688,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.810Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no unqualified maximum-strength claim found."
       }
     ],
     "trap-nonspeakable": [
@@ -1586,6 +1722,21 @@
         "reviewed_at": "2026-08-15T10:31:00.825Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "b88395afe8f1",
+          "ts": "f0ebbfeccc8e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:32:47.861Z",
+        "reviewed_sha": "709be2802806b4a016d95c8c58652e43ce9a073d",
+        "evidence": "Read in full (proof sketch, three numbered ingredients); no noun-chain syntax that stalls when read aloud found."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1608,5 +1759,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:32:47.861Z"
 }

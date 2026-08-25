@@ -1190,6 +1190,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.700Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1224,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.781Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1258,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 252 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.841Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1292,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 252 words)"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.888Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'Four gates prune the candidates' followed by exactly four gate sentences, each a distinct proposition with its own cross-reference; a genuine enumeration, and notably four rather than the reflex three."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1326,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:43.948Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1360,22 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.024Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'This section determines the structural constraints...' and 'we prove the invariants that prune the hypothesis class, then search the survivors' are roadmap sentences standard in a section intro, not narrated emphasis. SWEEP DAMAGE found and repaired here instead.",
+        "notes": "FIXED inline (pure prose, no math): 'Any future $F$ failing a gate is excluded without a canonical search.' -> '... without a numerical search.' This is the documented 'canonical' substituted for 'numerical(ly)' sweep pattern - 'a canonical search' is not a thing, and the sentence's sense (the gate excludes on structure, so no search need be run) requires 'numerical'. Delimiters re-checked."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1395,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.081Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1429,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.133Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1463,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.194Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1497,21 @@
         "reviewed_at": "2026-08-15T10:31:00.875Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "f696c82bf9ea",
+          "ts": "5172c85b7d90"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:44.246Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the four-paragraph section intro. Checked its c_k epistemics against the 2026-08-16 AGENTS.md correction and they are CURRENT and correctly stated: 'The seed c_2=-1 is Taylor-exact *for the explicit-factor product* (the normalised series has tilde-c_2 = -9/8)' names the series, which is exactly the fix that correction demanded; 'c_3 approx -2 is a near-match'; 'c_k for k>=4 fit to the CODATA residual ... remain cal-anchored' - tiered, not binary. J_Hopf(1) = -2 is correct. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1534,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:20:44.246Z"
 }

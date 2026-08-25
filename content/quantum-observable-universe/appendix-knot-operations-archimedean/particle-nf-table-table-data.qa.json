@@ -895,7 +895,187 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:27.973Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.013Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.052Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.092Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.133Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.173Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.212Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.252Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.289Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "c169e8626800",
+          "ts": "3ed5ce792c0a"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:14:28.326Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of tbl:particle-nf-table-table-data (legend paragraph plus a 10-row H_3(q) normal-form table). No constructions from the ten categories. VERIFIED THE ALGEBRA independently in sympy: with h = q - 1/q, the e+ row sigma_0^-1 sigma_1^-1 sigma_0^-1 expands to e- + h^2(sigma_0+sigma_1) - h(L+ + L-) - (h^3+h)gamma, i.e. exactly the tabulated -0.218 / +0.044 / +0.044 / -0.209 / -0.209 / +1, and its net 1 - h^3 + 2h^2 - 3h = 0.451094 reproduces the tabulated +0.451 (the naive sum of the ROUNDED cells gives 0.452, so the table is right and a spot-check by adding the printed cells is not).",
+        "notes": "PIN NOTE: at 3 dp these entries cannot discriminate the proton pin 1.1099785827513808 (net 0.451094288) from the muon pin 1.10997859555733471 (0.451094234) - they differ at the 8th decimal - nor from the 6-digit truncation 1.10997 (0.451130). They DO exclude the erroneous 1.1097, which gives net 0.452253. NOT A TRAP, reported separately: the Knot column labels do not survive a closure computation - sigma_0 sigma_1 is labelled 'Hopf T(2,2)' but closes in B_3 to the unknot, and sigma_0 sigma_1 sigma_0 is labelled 'trefoil 3_1' but closes to the 2-component Hopf link; T(2,q) is a 2-strand symbol, so the words should be sigma_0^2 and sigma_0^3. This is the documented 'torus words written with p generators instead of p-1' family; braid-word-closure-check.ts cannot see these rows because the column is headed 'Hecke word' rather than 'braid word'."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:14:28.326Z"
 }

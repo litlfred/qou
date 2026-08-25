@@ -45,6 +45,7 @@ import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 from typing import Iterable
 
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
 
 def hooks_and_contents(lam: tuple[int, ...]) -> tuple[list[int], list[int]]:
@@ -247,7 +248,7 @@ def main() -> int:
     if str(HERE) not in sys.path:
         sys.path.insert(0, str(HERE))
 
-    mp.mp.dps = 50
+    set_compute_dps()
     from q_parameter import Q_MP  # noqa: E402
 
     print("=" * 80)

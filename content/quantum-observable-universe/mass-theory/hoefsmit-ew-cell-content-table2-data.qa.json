@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.069Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.127Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.187Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.249Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.305Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.357Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.412Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.470Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.523Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "afee98bbc315",
+          "ts": "c5e543c2a2bb"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.579Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 2 numeric rows at q_0. ROW 1 RECOMPUTED FROM SCRATCH AND CONFIRMED: using my independent enumeration of the 20 pure tableaux (multiplicities 4,2,1,3,3,1,2,4 -- see the table1 verdict), tr_pure(sigma_1^4 sigma_3^6 sigma_5^8) = sum over patterns of mult * q^{+-4 +-6 +-8} = 41.6948943 at the proton pin, i.e. the printed 41.69 is correct. PIN DISCRIMINATION as requested: proton 1.1099785827513808 gives 41.6948943 and muon 1.10997859555733471 gives 41.6949003 -- the two are INDISTINGUISHABLE at the printed 4 significant figures; the erroneous 1.1097 gives 41.5646, which WOULD print as 41.56, so the table does exclude 1.1097 but says nothing about which of the two live pins produced it.",
+        "notes": "ROW 2 IS UNPROVENANCED (finding). 'Plancherel-weighted (degenerate) N_sym approx 1.90' carries no definition, no witness field and no derivation anywhere I could reach: the parent thm:hoefsmit-ew-cell-content does not define N_sym, and the context block rem:hoefsmit-ew-cell-content-context only says the Plancherel framing 'is incorrect' and is 'demoted to a degenerate special case'. So a number is printed that (a) cannot be recomputed from the corpus and (b) the corpus elsewhere describes as the superseded framing. Proposed fix: either cite the producing witness for 1.90 or drop the row, since its own parent has retired the quantity."
+      }
     ]
   },
   "source_hashes": {
     "md": "afee98bbc315",
     "ts": "c5e543c2a2bb"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:23:35.579Z"
 }

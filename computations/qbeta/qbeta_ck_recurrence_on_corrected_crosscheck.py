@@ -33,8 +33,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 # Reuse the Step-2 (#1823) Hankel + over-determination helpers.
 from qbeta_ck_recurrence_first_cut import hankel_det, fit_recurrence  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # Bias-corrected c_k from #1824 probe 6.a (commit on
 # claude/qbeta-ck-keystone-attack-2026-06-04). Pinned for reproducibility.

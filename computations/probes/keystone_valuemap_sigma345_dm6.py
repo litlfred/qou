@@ -52,16 +52,22 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_MP  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 PVEC = (3, 4, 5)
 P = PVEC[0] * PVEC[1] * PVEC[2]          # 60
 TWO_P = 2 * P                            # 120
-Q0 = mpf("1.1099785955541805")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP
 
 # bwS0 target: d_q(λ)/D at n=5, the 4 conjugation-class representatives
 #   (5)      → [1]_q            = 1

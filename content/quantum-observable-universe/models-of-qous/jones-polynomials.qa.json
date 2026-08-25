@@ -1387,6 +1387,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.168Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1406,6 +1421,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.206Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-em-dash": [
@@ -1425,6 +1455,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.245Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-triples": [
@@ -1444,6 +1489,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 168 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.283Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-closing-aphorism": [
@@ -1463,6 +1523,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.322Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-meta-commentary": [
@@ -1482,6 +1557,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.361Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1501,6 +1591,23 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.529Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "severity": "minor",
+        "evidence": "Block-final 'The finite-field and archimedean models thus produce identical knot-theoretic output' restates the sentence immediately before it ('The modular Jones invariant agrees with the characteristic-zero invariant where both are defined') and, in restating it, drops that sentence's qualifier: 'agrees where both are defined' becomes 'identical output' unconditionally. A restatement that loses a hedge is worse than a redundant one.",
+        "notes": "PROPOSED (not applied - the dropped qualifier makes this a claim edit, not a prose edit): delete the final sentence; the preceding sentence already states the agreement with its correct scope."
       }
     ],
     "trap-performed-warmth": [
@@ -1520,6 +1627,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.399Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-superlative": [
@@ -1539,6 +1661,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.439Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "trap-nonspeakable": [
@@ -1558,6 +1695,21 @@
         "reviewed_at": "2026-08-15T10:31:01.099Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4c21a9da9b35",
+          "ts": "0e7ae37cc6f6"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:20:17.483Z",
+        "reviewed_sha": "7d96aea0b53afe6b5264a2df531cde7d94f4cbc1",
+        "evidence": "Full read (prose section, ~1.3kB). Sec 7a respected throughout: J_K(q) in Z[q^{+-1/2}], Markov trace, no V_K(t). Reshetikhin-Turaev normalisation is named rather than assumed. Nine categories clean; trap-thesis-restatement recorded separately. One soft overclaim ('Thus J_K(q) is a polynomial of degree bounded by the crossing number' - the crossing-number bound on the Jones polynomial is the Kauffman-Murasugi-Thistlethwaite span theorem, not a consequence of counting R-matrix applications in a braid word, whose length is the word length rather than the knot's crossing number) is reported as an anomaly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1580,5 +1732,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:20:17.529Z"
 }

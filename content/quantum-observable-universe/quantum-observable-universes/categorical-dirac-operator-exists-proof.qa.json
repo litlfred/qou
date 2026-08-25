@@ -1371,6 +1371,21 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.421Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Proof block; all steps affirmative."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1390,6 +1405,21 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.460Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Preamble then construction; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1409,6 +1439,21 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.499Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes."
       }
     ],
     "trap-triples": [
@@ -1428,6 +1473,21 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 83 words)"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.535Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No three-item list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1447,6 +1507,21 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.571Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on 'The composite D_nabla is therefore a morphism', i.e. the claim."
       }
     ],
     "trap-meta-commentary": [
@@ -1466,6 +1541,23 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.608Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "Third instance in this batch of the same construction: the block opens 'The proof strategy is constructive. We explicitly define the operator D_q = q^{-1} nabla + (1-q^{-1}) iota_xi nabla and verify that it satisfies the defining properties of the categorical Dirac operator.' - two sentences narrating a five-line proof that then does exactly that.",
+        "notes": "NOT applied here, unlike prf:categorical-action-exists and prf:categorical-action-unique where the identical preamble was pure prose and was deleted: this one carries a displayed formula and introduces the symbol D_q, which appears nowhere else - the proposition and the proof body both write \\\\mathcal{D}_\\\\nabla. Removing it is therefore math-adjacent (rule 4). Proposed: delete the paragraph outright (the formula is already in prop:categorical-dirac-operator-exists), or if a lead-in is wanted, 'The operator is constructed directly from the connection data.' with no formula and no new symbol."
       }
     ],
     "trap-thesis-restatement": [
@@ -1485,6 +1577,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.644Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "severity": "major",
+        "evidence": "The closing sentence draws the conclusion rather than restating."
       }
     ],
     "trap-performed-warmth": [
@@ -1504,6 +1612,21 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.679Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1523,6 +1646,21 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.718Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'explicitly' is the only intensifier and sits in the flagged preamble."
       }
     ],
     "trap-nonspeakable": [
@@ -1542,6 +1680,22 @@
         "reviewed_at": "2026-08-15T10:30:59.842Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "2b9c542c01e0",
+          "ts": "715381e147ae"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:53.755Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Short declaratives.",
+        "notes": "MATH FINDING to report (not edited): the proof declares iota_xi : Omega^1(A) -> A, so iota_xi o nabla maps A -> A, not A -> Omega^1(A) as the next sentence claims - and then D_nabla = q^{-1} nabla + (1-q^{-1}) iota_xi nabla would add a map A -> Omega^1(A) to a map A -> A. The sentence 'Composing nabla o iota_xi with nabla gives the vertical component iota_xi nabla : A -> Omega^1(A)' is internally garbled too (it names the composite nabla o iota_xi, then labels the result iota_xi nabla). For the proposition's sum to typecheck, iota_xi must be the Reeb projection Omega^1(A) -> Omega^1(A), or the vertical term must be nabla o iota_xi o nabla. The proposition and sec:categorical-action-notation are consistent with each other; the defect is local to this proof. Minor: D_nabla is a sum, not a composite, so 'The composite D_nabla' mislabels it."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1564,5 +1718,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:01:53.755Z"
 }

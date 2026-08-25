@@ -1190,6 +1190,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.827Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1209,6 +1225,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.748Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read: 2-sentence section intro. 'selects on-shell solutions, but requires a formal definition of a particle' is not a setup-then-reframe: both clauses carry content, and the second states the actual gap the section fills. No second clause silently carrying everything.",
+        "notes": "Pass -- genuine adversative, not a pivot."
       }
     ],
     "trap-em-dash": [
@@ -1228,6 +1260,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 44 words)"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.864Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "trap-triples": [
@@ -1247,6 +1295,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 44 words)"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.786Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "The three roadmap items (define a particle as a q-harmonic form / read off the fermion-boson decomposition / treat observation as a structural operation) match the three block groups the section actually contains.",
+        "notes": "Pass by the substantive-enumeration carve-out."
       }
     ],
     "trap-closing-aphorism": [
@@ -1266,6 +1330,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.906Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "trap-meta-commentary": [
@@ -1285,6 +1365,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.943Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "trap-thesis-restatement": [
@@ -1304,6 +1400,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:03.985Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "trap-performed-warmth": [
@@ -1323,6 +1435,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.027Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "trap-superlative": [
@@ -1342,6 +1470,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.067Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "trap-nonspeakable": [
@@ -1361,6 +1505,22 @@
         "reviewed_at": "2026-08-15T10:30:59.996Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "27b8fb47794c",
+          "ts": "e61832eaa2bb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:39:04.108Z",
+        "reviewed_sha": "71b8794383743e6be7a8fc1f79708c70968fdda5",
+        "evidence": "Full read of the 2-sentence section intro; no instance of this construction. D_nabla psi = 0 as the transport/on-shell equation matches def:categorical-lagrangian and rem:instanton-on-shell in the same chapter.",
+        "notes": "No trap."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1383,5 +1543,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:39:04.108Z"
 }

@@ -2,12 +2,12 @@
   "probe": "qbeta_5two_route19_transport_repaired",
   "bean": "qou-trns",
   "parent_bean": "qou-0yqu",
-  "dps": 40,
+  "dps": 70,
   "gates": [
     {
       "gate": "G1",
       "claim": "the two Vieta products hold on the arc: prod(1-x*y_j) = x and prod(1-y_j/x) = 1/x -- both already Lean-proved, both nonvanishing on |x|=1",
-      "worst": "3.6301167e-41",
+      "worst": "3.2650715e-71",
       "pass": true
     },
     {
@@ -17,28 +17,28 @@
       "window": "phi_0 +- 0.05",
       "max_step": "2.5e-5",
       "a_2pi_jump_would_be": "6.2831853",
-      "max_dev_from_log_x": "9.4401222e-41",
+      "max_dev_from_log_x": "7.5896599e-71",
       "pass": true
     },
     {
       "gate": "G3",
       "claim": "Sum_j log(1 - y_j/x) likewise equals -log x, continuously through the branch point",
       "max_step": "2.5e-5",
-      "max_dev_from_minus_log_x": "9.6263533e-41",
+      "max_dev_from_minus_log_x": "7.6362566e-71",
       "pass": true
     },
     {
       "gate": "G4",
       "claim": "the reason: AT the collision the two colliding roots are equal, so the two log-terms being permuted are IDENTICAL -- a sum cannot notice a relabelling of equal terms",
-      "min_root_separation_at_phi0": "7.6322756e-21",
-      "min_term_separation_at_phi0": "7.6322756e-21",
+      "min_root_separation_at_phi0": "5.2026565e-36",
+      "min_term_separation_at_phi0": "5.2026565e-36",
       "note": "this is a SQUARE-ROOT branch point, so separation ~ sqrt|delta phi|; even with phi_0 at working precision the residual separation is ~1e-19, not ~1e-38. That is the expected behaviour, not a failure to resolve the collision.",
       "pass": true
     },
     {
       "gate": "G5",
       "claim": "with both sums pinned, Sum_j dV/dx = -2 log(x)/x, and integrating along x = e^{i phi} gives S - S(1) = phi^2 -- checked directly on the arc",
-      "worst": "3.2142424e-40",
+      "worst": "2.8978173e-70",
       "pass": true
     }
   ],

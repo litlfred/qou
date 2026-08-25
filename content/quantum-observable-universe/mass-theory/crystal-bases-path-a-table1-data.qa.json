@@ -891,11 +891,181 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.010Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.045Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.079Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.114Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.147Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.180Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.216Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.250Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.283Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "2831681199a1",
+          "ts": "2d8418f7fb75"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:11:00.319Z",
+        "reviewed_sha": "772aff5906fa8b62a09bd028ef9293cdcb9f95e0",
+        "evidence": "Pure extracted data table (kind=table, 3 letter rows); read in full. No trap construction of this category present. The one parenthetical is a technical gloss on the leading u^{-2} term, not narration."
+      }
     ]
   },
   "source_hashes": {
     "md": "2831681199a1",
     "ts": "2d8418f7fb75"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:11:00.319Z"
 }

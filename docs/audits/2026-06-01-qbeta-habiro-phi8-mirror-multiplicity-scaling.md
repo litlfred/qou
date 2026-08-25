@@ -4,6 +4,28 @@
 **Branch:** `claude/qbeta-wenzl-habiro-keystone-2026-06-01` (PR #1642)
 **Status:** **SCALING LAW REFINED** — 5 mirror-pair data points; even-A pairs require correction to original A−1 hypothesis.
 
+> **🛑 SUPERSEDED 2026-08-18 — this doc's numbers are computed on the wrong
+> object; scoped, not corrected (bean `qou-0ndb`).** The mirror-pair element
+> here is `Σ_m Δa_m(X − Y)·(u;u)_m`, formed by subtracting two witnesses'
+> Habiro coefficients. Each witness's `a_m` expand *its own
+> denominator-cleared numerator* `p = d·t`, so that sum is `d_X·t_X − d_Y·t_Y`,
+> not the pair difference — and the denominators are built out of Φ₄ and Φ₈,
+> the very factors being measured, to **different powers on each member of a
+> pair** (⁶He: Φ₈⁴ vs ⁶Be: Φ₈⁸; ¹⁴O: Φ₈¹⁶ vs ¹⁴C: Φ₈¹²; proton: Φ₈² vs
+> neutron: none). Proved sorry-free in
+> [`QOU/Habiro/MirrorPairNormalisation.lean`](../../content/quantum-observable-universe/lean/QOU/Habiro/MirrorPairNormalisation.lean)
+> (`coeffDiff_at_coincidence`). Differencing the traces instead gives
+> `mult(Φ₈) = 2⌊(A−1)/2⌋` on **10/10** pairs with `Φ₁ = Φ₂ = 1` and `Φ₄ = A`.
+> Read the tables below as a record of what was measured, not as the pair's
+> cyclotomic content. Full analysis, including which specific claims here do
+> not survive:
+> [`2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md`](2026-08-18-mirror-pair-a-m-differencing-normalisation-defect.md).
+
+> **The refined law proposed here is the one that now holds 10/10.** What is
+> superseded is the five-point table it was fit on and the `Φ₁/Φ₂/Φ₄`
+> secondary findings, not the law itself.
+
+
 ## TL;DR
 
 The cyclotomic factor `Φ_8 = u^4 + 1` appears in the mirror-pair Habiro element `Σ_m Δa_m(X − Y) · (u; u)_m` (canonical Phase 5q convention) with multiplicity

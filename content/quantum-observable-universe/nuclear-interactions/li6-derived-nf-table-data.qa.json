@@ -883,7 +883,196 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.724Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "No assertion-by-denial construction found; contrasts present (if any) are substantive mathematical distinctions per the false-positive class."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.766Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "No setup-then-reframe construction; no sentence whose second clause carries the paragraph."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.806Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "Spaced em-dashes absent or used only for true parentheticals/ranges; density within norms."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.849Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "No reflex three-item list; enumerations present are driven by the underlying content."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.889Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "Final line is substantive (a result, a scope statement, or a cross-reference), not a quotable placed for cadence."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.932Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "No narration of the text's own emphasis; any 'note that' is standard mathematical prose."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:51.971Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "major",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "No block-final sentence restating what the text already established."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.011Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Full read of the 6-row extracted table. Row 1 |dem|=0.143 reproduces the cited-witness proton demand_magnitude 0.14286545146019286. Braid-word labels recomputed (see trap-superlative).",
+        "notes": "No personal or institutional-warmth register; prose is impersonal throughout."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.053Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Row 2 labels the A=2 operator '$T_{2,5}$ (cinquefoil)'; rows 3-5 label $L_+$/$L_-$ '(Hopf link)'/'(mirror Hopf)'.",
+        "notes": "BRAID CLOSURES COMPUTED, ALL THREE LABELS WRONG (inherited, do not fix locally). (sigma_0 sigma_1)^2 sigma_0 -- the word prop:nuclear-operator-regimes gives for T_{2,5} -- has closure permutation (1)(2 3), i.e. 2 components, so it cannot be the cinquefoil (a KNOT); it destabilises to sigma_0^4 = T(2,4). sigma_0 sigma_1 has a 3-cycle permutation = 1 component, so it is not the Hopf link (2 components); sigma_0^2 is. And sigma_1 sigma_0 is CONJUGATE to sigma_0 sigma_1 in B_3, so 'mirror Hopf' is wrong twice over -- a mirror needs inverses, and conjugates share a closure. The witness itself carries these labels, so this is a compute-level convention issue."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b7cc4fc32a08",
+          "ts": "649f51073f52"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:55:52.092Z",
+        "reviewed_sha": "7766b3315499253a18ab86e191ebf0cb6a42498e",
+        "severity": "minor",
+        "evidence": "Table only; no prose."
+      }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:55:52.092Z"
 }

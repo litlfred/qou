@@ -1195,6 +1195,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:19.745Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Notation list; every entry is a definition."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1214,6 +1229,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:19.782Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Stem plus bulleted definitions; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1233,6 +1263,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:19.821Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Zero em-dashes ('Frobenius--Ricci' is an en-dash compound)."
       }
     ],
     "trap-triples": [
@@ -1252,6 +1297,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 51 words)"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:19.900Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Five items, each defining a distinct symbol."
       }
     ],
     "trap-closing-aphorism": [
@@ -1271,6 +1331,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:19.938Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Ends on the definition of D_nabla."
       }
     ],
     "trap-meta-commentary": [
@@ -1290,6 +1365,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:19.981Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "'The following notation applies' is a structural lead-in, not narrated emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -1309,6 +1399,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.018Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1328,6 +1433,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.056Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No affective register."
       }
     ],
     "trap-superlative": [
@@ -1347,6 +1467,21 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.092Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "No inflation."
       }
     ],
     "trap-nonspeakable": [
@@ -1366,6 +1501,22 @@
         "reviewed_at": "2026-08-15T10:31:00.010Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "7c4c12ca6f0c",
+          "ts": "ed7d88d32183"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T00:59:20.132Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Definitional entries; the R_int entry is dense but is a formula gloss.",
+        "notes": "Cross-checked for consistency: D_nabla = q^{-1} nabla + (1 - q^{-1}) iota_xi nabla here matches the shape of d_q = q^{-1} d + (1 - q^{-1}) pi_V o d in prop:braiding-eigenvalue-extraction, and psi^* = int_A o S(psi) matches the SU(2) instance in ex:categorical-action-notation-su2 with the antipode playing the role of conjugation."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1388,5 +1539,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T00:59:20.132Z"
 }

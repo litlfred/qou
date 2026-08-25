@@ -95,7 +95,7 @@ $\mathrm{tr}_M$ is captured by exactly the same closed forms — only the
 $y_\lambda$ weights and the Hoefsmit matrices of the $\dim \geq 2$
 blocks change with $n$.
 
-This is a substantive **substrate-derivability result**: the entire
-1-d slice of the Wedderburn decomposition of $\mathrm{tr}_M$ is a finite
+The entire
+1-d slice of the Wedderburn decomposition of $\mathrm{tr}_M$ is therefore a finite
 closed-form expression in $(q, w, m)$, with **no $n$-dependence in
 the formula** beyond the choice of trivial-vs-sign irrep.

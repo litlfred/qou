@@ -85,5 +85,4 @@ and the pentagon collapses to a tautology.
 The apparent tension is therefore resolved as follows: the pentagon
 identity is a feature of the **operator lift** (between adjacent
 jet levels), not of the scalar $\hat V_i$'s within a single jet
-level. The level-internal pair commutation is trivial; the
-inter-level pentagon governs the ascension.
+level.

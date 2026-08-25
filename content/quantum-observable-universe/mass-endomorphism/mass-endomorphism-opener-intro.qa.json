@@ -1385,6 +1385,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.563Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"We do not use them as archimedean fitting targets; they determine the algebraic framework from which we derive all remaining parameters\" is the framework's actual anti-fit discipline stated as content, not manufactured emphasis.",
+        "notes": "No change."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1404,6 +1420,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.606Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "No setup-then-reframe.",
+        "notes": "No change."
       }
     ],
     "trap-em-dash": [
@@ -1423,6 +1455,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.650Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Two spaced em-dashes, both true appositives closing a definition (\"the endomorphism of the knot object X_K - a genuine morphism X_K -> X_K\"; \"yields the categorical mass functional ... - a scalar\"). Two in four paragraphs is not a density tell.",
+        "notes": "No change."
       }
     ],
     "trap-triples": [
@@ -1442,6 +1490,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (1 in 251 words)"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.692Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"Three objects share this spine and must be kept distinct\" is followed by exactly three, each named, typed and cross-referenced to the notation-collisions ruling; and the \"three calibration inputs (m_e, m_mu/m_e, m_pi)\" match the CAL-1/2/3 proxies. Both counts verified.",
+        "notes": "No change."
       }
     ],
     "trap-closing-aphorism": [
@@ -1461,6 +1525,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.732Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Paragraph 1 closes on \"Every observable mass factors through these\", which is a claim rather than a flourish, and the block closes on a reader-guidance sentence.",
+        "notes": "No change."
       }
     ],
     "trap-meta-commentary": [
@@ -1480,6 +1560,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.774Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"We state the mass endomorphism conjecture before developing its foundational structure\" describes the section order, which is an opener's job.",
+        "notes": "No change."
       }
     ],
     "trap-thesis-restatement": [
@@ -1499,6 +1595,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.815Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"This section supplies the substrate-level mass identity used throughout the chapter\" opens the final paragraph as a forward pointer, not a closing restatement.",
+        "notes": "No change."
       }
     ],
     "trap-performed-warmth": [
@@ -1518,6 +1630,23 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.856Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "severity": "minor",
+        "evidence": "\"Readers focused on a specific channel may treat the identity as a black box, while those focused on structural content should examine the existence and uniqueness proofs.\" Reader-address, the same register note as intro-hecke-chi-closed-forms.md - not warmth in the category-8 sense, so not a fail.",
+        "notes": "Recorded for the clarity-grad-style axis rather than fixed."
       }
     ],
     "trap-superlative": [
@@ -1537,6 +1666,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.898Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"the structural spine of our physical predictions\" and \"factorises through each specialisation without modification\" are strong but are the block's actual structural claims.",
+        "notes": "Two items flagged for the coordinating session, not a trap and not edited: (1) The categorical mass functional is written m(rho) = |tr_M(rho(beta))| . VolDensity(K, q_0). That opaque wrapper is the shape the Geom_full purge removed - AGENTS.md directs that the per-knot factor be written explicitly as Vol(K).rho(K)/hbar_q^2 rather than behind a named wrapper, in paper, audit doc and compute alike. Worth checking whether VolDensity here is the same object under a new name. (2) \"they determine the algebraic framework from which we derive all remaining parameters\" - \"all remaining\" is unqualified; the corpus's own L2 status is 1 of 5 scoreable predictions meeting the 100x target, so \"derive\" here has to mean structurally-determined rather than numerically-closed, which the sentence does not say."
       }
     ],
     "trap-nonspeakable": [
@@ -1556,6 +1701,22 @@
         "reviewed_at": "2026-08-15T10:31:01.022Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "dda8f4b8bae0",
+          "ts": "0cff7563b021"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:35:25.939Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "\"an *element* of the Hecke algebra, which is itself an endomorphism of V^{tensor n} under q-Schur-Weyl\" is dense but the italic and the relative clause carry it aloud.",
+        "notes": "No change."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1578,5 +1739,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:35:25.939Z"
 }

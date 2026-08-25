@@ -1427,6 +1427,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "major",
         "evidence": "1 negation-contrast construction(s): \"not an axiom of molecular orbital theory but\" — state the positive claim directly"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.147Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1446,6 +1462,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.188Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1465,6 +1497,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 171 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.226Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: spaced-dash count = 1; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1484,6 +1532,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 171 words)"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.266Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1503,6 +1567,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.305Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: final prose sentence is: \"The threading link $T(2, N)$ generalises accordingly to $N$-membered rings, with Alexander polynomial $\\Delta_{T(2,N)}(q) = (q^{N/2} - q^{-N/2})/(q...\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1522,6 +1602,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.344Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1541,6 +1637,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.384Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: final sentence checked against the body: \"The threading link $T(2, N)$ generalises accordingly to $N$-membered rings, with Alexander polynomial $\\Delta_{T(2,N)}(q) = (q^{N/2} - q^{-N/2})/(q...\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1560,6 +1672,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.422Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1579,6 +1707,23 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.464Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "Two unqualified maximum-strength claims in one paragraph: 'The construction PROVES that bond equalization is ... a theorem of the LP dual' and 'The threading link's D_6 symmetry is the UNIQUE Phi_1 minimum for 6 pi electrons on a 6-membered ring.' The construction rests on prop:benzene-threading-emergence, which is stated 'conditional on conj:q-integer-mass-formula', so 'proves' overstates a conditional result (AGENTS.md 'conditional-proved != premise-established'); no uniqueness argument appears in this block or its siblings.",
+        "notes": "PROPOSED (not applied - math-adjacent): 'The construction derives bond equalization from the LP dual, conditional on conj:q-integer-mass-formula' and 'is the Phi_1 minimum found by the LP dual among the candidates of rem:benzene-threading-selection'. Also 'We extend this to larger aromatics (naphthalene, anthracene)' is written in the present tense for work no cited witness performs."
       }
     ],
     "trap-nonspeakable": [
@@ -1598,6 +1743,22 @@
         "reviewed_at": "2026-08-15T10:31:01.596Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "0433c921aea7",
+          "ts": "8a774734f707"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:08.505Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (D_6 bond equalisation, 1+1/2=3/2; :val bond lengths 1.40/1.54/1.34 A confirmed in molecular-experimental-refs.witness.json; Delta_{T(2,N)} formula consistent with the sibling at N=6). Judged on the whole text: read aloud end to end (8 prose sentences); no noun-chain that stalls.",
+        "notes": "clean on this criterion"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1620,5 +1781,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:08.505Z"
 }

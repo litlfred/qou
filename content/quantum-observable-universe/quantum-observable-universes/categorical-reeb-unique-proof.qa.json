@@ -1205,6 +1205,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.955Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1224,6 +1239,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:58.990Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-em-dash": [
@@ -1243,6 +1273,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.025Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-triples": [
@@ -1262,6 +1307,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 76 words)"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.061Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-closing-aphorism": [
@@ -1281,6 +1341,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.098Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-meta-commentary": [
@@ -1300,6 +1375,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.136Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-thesis-restatement": [
@@ -1319,6 +1409,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.172Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-performed-warmth": [
@@ -1338,6 +1443,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.209Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-superlative": [
@@ -1357,6 +1477,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.244Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "trap-nonspeakable": [
@@ -1376,6 +1511,21 @@
         "reviewed_at": "2026-08-15T10:30:59.817Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "123543375b93",
+          "ts": "b33e52f8b37f"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:d01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:01:59.278Z",
+        "reviewed_sha": "58c0f40da5c008d9f53a3fb63025859ec45f88e5",
+        "evidence": "Full read: proof block, four sentences with indexed data (\\xi_i, \\varTheta_A^{(i)}). All ten checked; the single spaced em-dash ('an endomorphism of A -- unique up to the Lie-algebra action of T') is a true apposition at density 1, so trap-em-dash passes. Nothing else fires. OUT-OF-SCOPE math observation reported to the caller: the opening step writes \\xi_i = \\iota_{\\xi_i} d\\varTheta_A^{(i)} \\circ (\\pi_V \\circ d)^{-1}, inverting \\pi_V \\circ d, which is a projector-composite and is not invertible on \\Omega^k(A) as a whole; the step needs restriction to a summand on which it is an isomorphism, stated explicitly."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1398,5 +1548,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:01:59.278Z"
 }

@@ -1358,6 +1358,21 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:36.573Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'The convention-C column has no producer by design' is a provenance statement, not assert-by-denying."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1377,6 +1392,21 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:36.660Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Three proof steps, explicit values, role in the mass formula; no reframe."
       }
     ],
     "trap-em-dash": [
@@ -1396,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (1 in 287 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:36.740Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "2 em-dashes in 567 words.",
+        "notes": "Style note: 'the Frobenius integral int_A : A -> R—the Jones--Markov trace' uses an unspaced em-dash, against the spaced convention used elsewhere."
       }
     ],
     "trap-triples": [
@@ -1415,6 +1461,21 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 287 words)"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:36.822Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "'The chain has three steps' matches the three labelled steps."
       }
     ],
     "trap-closing-aphorism": [
@@ -1434,6 +1495,21 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:36.909Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Ends on the full mass formula and the k = 0 scoping."
       }
     ],
     "trap-meta-commentary": [
@@ -1453,6 +1529,23 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:36.967Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "severity": "major",
+        "evidence": "A dated maintenance banner sits in the scholarly prose: '> **Convention change, 2026-08-09 (owner ruling; bean qou-wgta item 19).** This table published convention C ..., which has been excised ...', including a bean id, a reproducer invocation, a gate-tolerance changelog ('now gates at 10^-40 rather than 10^-9'), and an HTML provenance comment. This is document history narrated in the block.",
+        "notes": "STRUCTURAL, and the C-vs-D comparison table inside it may be worth keeping. AGENTS.md 4d: move the narrative banner to .ts authorNotes (kind 'refined-framing', date '2026-08-09', see: the trace-convention registry); keep in the .md only what a reader of the mathematics needs -- that the table is convention D, with the registry link that is already in the caption line."
       }
     ],
     "trap-thesis-restatement": [
@@ -1472,6 +1565,21 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:37.031Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -1491,6 +1599,21 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:37.096Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No personal register."
       }
     ],
     "trap-superlative": [
@@ -1510,6 +1633,22 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:37.146Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "No unqualified maxima; the MeV statement is correctly scoped ('dimensionless ratios relative to the photon; physical masses in MeV require a calibration constant E_0'), consistent with the absolute-mass excision.",
+        "notes": "Numerics re-verified at the proton pin q_0 = 1.1099785827513808 to 40 dps: z = 0.612688037146, z^2 = 0.375386630862, h = 0.209060298796, hz^2+z = 0.691166478358, and the 4_1 closed form (q^8-q^6+q^4-q^2+1)/(q^6+2q^4+q^2) = 0.280195642273. All five match the table to the 12 figures quoted. Convention-C values also reproduce (z_C = 0.499320334184)."
       }
     ],
     "trap-nonspeakable": [
@@ -1529,6 +1668,21 @@
         "reviewed_at": "2026-08-15T10:31:01.036Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "ed7303ff836c",
+          "ts": "0ddb42e56310"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:r01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-19T21:47:37.215Z",
+        "reviewed_sha": "e8b1ffa45a759b4016dde4f73b89525367f3a66a",
+        "evidence": "Proof steps and table captions read aloud."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1551,5 +1705,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-19T21:47:37.215Z"
 }

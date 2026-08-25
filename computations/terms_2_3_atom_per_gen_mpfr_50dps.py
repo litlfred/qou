@@ -70,13 +70,46 @@ ATOMS = [
 ]
 
 
-def _load_q0_50dps() -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
-    """Read q_0, q_inv, h, z at 50 dps from the canonical pinning
-    witness."""
-    path = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-    with path.open() as fh:
-        d = json.load(fh)
-    q0 = mp.mpf(d["derived_50_digit"]["q"])
+def _load_q0_50dps(pin: str = "experimental",
+                   ) -> tuple[mp.mpf, mp.mpf, mp.mpf, mp.mpf]:
+    """Read q_0, q_inv, h, z at 50 dps for the requested substrate layer.
+
+    `pin` names WHICH q_0 -- the two are 11.5 ppb apart and are not
+    interchangeable (AGENTS.md §"q0 anchor convention"):
+
+      "experimental" (DEFAULT)  proton pin, `q_parameter.Q_50_DIGIT_STR`,
+                                q0 = 1.1099785827513808...  The standing
+                                2026-08-07 owner directive: all new and
+                                touched compute defaults here.
+      "ideal"                   muon pin, read from
+                                `q-pinning-50-digit.witness.json`,
+                                q0 = 1.1099785955573347...  The canonical
+                                3-CAL derivation layer; keep it only where
+                                an existing muon-canonical witness depends
+                                on it.
+
+    This took no argument and always returned the MUON value, which made
+    the function a silent layer boundary: `atom_per_generator_volumes_mpfr`
+    is documented as a "50-dps mpmath analog of
+    `hecke_core.atom_per_generator_volumes`", but `hecke_core` (really
+    `pyhecke.atom`) evaluates at the PROTON pin. Measured, that alone put
+    the two "analogous" implementations 9.44e-08 apart on a single nucleon
+    -- eight orders above the float64 floor, and nothing to do with
+    precision. Re-pointed at the proton pin they agree to 3.67e-16.
+
+    Say which layer you are on; never mix two in one quantity.
+    """
+    if pin == "experimental":
+        from q_parameter import Q_50_DIGIT_STR
+        q0 = mp.mpf(Q_50_DIGIT_STR)
+    elif pin == "ideal":
+        path = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
+        with path.open() as fh:
+            d = json.load(fh)
+        q0 = mp.mpf(d["derived_50_digit"]["q"])
+    else:
+        raise ValueError(
+            f"pin must be 'experimental' or 'ideal', got {pin!r}")
     qi = 1 / q0
     h = q0 - qi
     z = q0**3 / (q0**2 + 1)
@@ -154,13 +187,28 @@ def atom_per_generator_volumes_mpfr(
     m_pp: int | None = None,
     m_pn: int | None = None,
     m_nn: int | None = None,
+    pin: str = "experimental",
 ) -> list[dict[str, mp.mpf]]:
     """50-dps mpmath analog of `hecke_core.atom_per_generator_volumes`.
 
     Walks the atom braid step-for-step in mpmath, returning per-
     generator dicts ``{std, sym, alt, full}`` of `mpf` values.
+
+    `pin` selects the substrate layer; see `_load_q0_50dps`. Defaults to
+    the proton/experimental pin, which is what `hecke_core` uses, so the
+    two agree to 3.67e-16 on a single nucleon out of the box.
+
+    HOW THIS DIFFERS FROM `hecke_core` (read before treating it as a
+    drop-in). At the proton pin the two still disagree by **2.11e-04** on
+    any atom carrying a p-n boundary, and that gap is NOT precision: this
+    implementation uses the canonical colour-WEIGHTED interface
+    `d = -h(1/2 - δ/4)` (`averaged_weighted`, canonical per AGENTS.md R3),
+    while `hecke_core` uses the colour-BLIND `-h/2`. Neither
+    implementation is canonical on both axes today -- `hecke_core` has the
+    pin right and the interface wrong; this one had the interface right
+    and the pin wrong until the `pin` parameter above. Bean `qou-cds4`.
     """
-    q0, qi, h, z_mark = _load_q0_50dps()
+    q0, qi, h, z_mark = _load_q0_50dps(pin)
     A = Z + N
     if A < 1:
         return []
@@ -270,7 +318,13 @@ def _stringify(vols: Iterable[dict[str, mp.mpf]]) -> list[dict[str, str]]:
 
 def main() -> int:
     start_time = time.monotonic()
-    q0, qi, h, z_mark = _load_q0_50dps()
+    # This producer's committed witness is muon-canonical and is one of the
+    # ~870 tracked by the `qou-1c4y` migration, which needs scoped sign-off.
+    # Naming the pin explicitly keeps that witness byte-stable while the
+    # DEFAULT for every new caller is the proton pin per the standing
+    # directive. Do not drop the argument to "tidy up" -- that would flip a
+    # committed witness as a side effect.
+    q0, qi, h, z_mark = _load_q0_50dps("ideal")
     print("=" * 78)
     print("MPFR-NATIVE PER-GENERATOR WEDDERBURN VOLUMES (50 dps)")
     print("=" * 78)
@@ -285,7 +339,8 @@ def main() -> int:
         A = Z + N
         n_strands = 3 * A
         n_gens = n_strands - 1
-        vols = atom_per_generator_volumes_mpfr(Z, N, include_inter=True)
+        vols = atom_per_generator_volumes_mpfr(Z, N, include_inter=True,
+                                               pin="ideal")
         print(f"  {label:>9} (Z={Z}, N={N}, A={A}, n_gens={n_gens}):")
         for i, entry in enumerate(vols):
             mag = abs(entry["full"])

@@ -56,7 +56,7 @@ export default proposition({
   ],
   cites: [
     "adams1985hyperbolic",
-    "milnor1982hyperbolic",
+    "milnor1982",
   ],
   tags: [
     "mass-formula",

@@ -123,8 +123,17 @@ def substrate_length_check():
     candidate scales. Answer: r0 ~ the pion Compton wavelength hbar c / m_pi, NOT a
     length built from E0 — i.e. the textbook 'nuclear size ~ pion range'. Since
     m_pi is CAL-3, this is consistent with the calibration, not a new derivation."""
-    hbarc = 197.3269804  # MeV.fm
-    me, m_pi, q0, alpha = M_E_MEV, 139.57039, 1.1097, 1.0 / 137.035999
+    from q_parameter import Q as _Q0  # noqa: PLC0415
+    from experimental_constants import ALPHA_EM_INV as _ALPHA_INV  # noqa: PLC0415
+
+    hbarc = 197.3269804  # MeV.fm (exact in SI since 2019)
+    # alpha and q0 were re-typed here (1.0 / 137.035999, and q0 rounded to
+    # 1.1097) in a file that already imports M_E_MEV from the registry.
+    # Read both. This is an order-of-magnitude check, so neither shift
+    # moves the answer -- which is the reason to fix it now rather than
+    # when it does.
+    me, m_pi = M_E_MEV, 139.57039
+    q0, alpha = float(_Q0), 1.0 / _ALPHA_INV
     E0 = me / (q0 * (q0 - 1.0))
     print("\n[substrate-length] is r0 ~ 1.5 fm a framework length?")
     for name, v in (("hbar c / E0", hbarc / E0),

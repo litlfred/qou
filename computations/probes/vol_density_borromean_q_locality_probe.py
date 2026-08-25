@@ -63,11 +63,13 @@ import mpmath as mp
 from mpmath import mpf
 
 # 50-dps compute discipline (AGENTS.md §Precision goals L1 floor)
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 # Import canonical infrastructure
 sys.path.insert(0, str(Path(__file__).parent))
-from _li_2_q_util import vol_density_borromean  # noqa: E402
+from _li_2_q_util import per_knot_density_borromean  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 # Constants — anchored on the registry / CODATA values
@@ -95,13 +97,13 @@ def lambda_p_codata(q: mpf) -> mpf:
 
 
 def vol_density_linking_weight(q: mpf) -> mpf:
-    """The linking weight inside `vol_density_borromean(q)` — extract
+    """The linking weight inside `per_knot_density_borromean(q)` — extract
     by dividing out Geom_leading = Vol(𝓑₃) / ℏ_q².
     """
     hbar_q = (q - 1) / q
     vol_b3 = 8 * mp.catalan
     geom_leading = vol_b3 / hbar_q ** 2
-    return vol_density_borromean(q) / geom_leading
+    return per_knot_density_borromean(q) / geom_leading
 
 
 def slope_ppm_per_q(f, q_center: mpf, delta: mpf) -> mpf:
@@ -136,7 +138,7 @@ def run_probe() -> dict:
     gap_ppm = mpf("1e6") * gap_at_q0 / target_q0
 
     # Production prediction
-    gf_q0 = vol_density_borromean(Q_0)
+    gf_q0 = per_knot_density_borromean(Q_0)
     m_p_pred = M_E_MEV * gf_q0
     relative_err = (m_p_pred - M_P_CODATA_MEV) / M_P_CODATA_MEV
 
@@ -174,7 +176,7 @@ def run_probe() -> dict:
         "compute": "vol_density_borromean_q_locality_probe",
         "description": (
             "q-locality discipline test applied to canonical "
-            "`vol_density_borromean(q)` near q_0. Tests whether the "
+            "`per_knot_density_borromean(q)` near q_0. Tests whether the "
             "linking weight inside VolDensity has the same local "
             "q-derivative as the CODATA-implied target."
         ),
@@ -217,7 +219,7 @@ def run_probe() -> dict:
 
 
 def main() -> None:
-    print(f"q-locality probe for vol_density_borromean(q) near q_0 = {Q_0}")
+    print(f"q-locality probe for per_knot_density_borromean(q) near q_0 = {Q_0}")
     print(f"50-dps compute discipline; tolerance = {TOLERANCE_PPM_PER_Q} ppm/q")
     print("---")
 

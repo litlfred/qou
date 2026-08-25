@@ -1780,6 +1780,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.344Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1799,6 +1815,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.390Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-em-dash": [
@@ -1818,6 +1850,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.434Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-triples": [
@@ -1837,6 +1885,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 110 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.480Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-closing-aphorism": [
@@ -1856,6 +1920,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.524Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-meta-commentary": [
@@ -1875,6 +1955,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.569Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-thesis-restatement": [
@@ -1894,6 +1990,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.612Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-performed-warmth": [
@@ -1913,6 +2025,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.655Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "trap-superlative": [
@@ -1932,6 +2060,23 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.299Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "severity": "minor",
+        "evidence": "Full read: proposition block. Considered 'strictly orthogonal': 'orthogonal' admits no degrees, so 'strictly' is an empty intensifier. Judged NOT category-9, which targets maximum-strength claims made for emphasis ('most importantly', 'single most'); this is the corpus's de-hedging intensifier / token-substitution signature instead, and is reported there rather than fired here so the verdict is not mis-filed.",
+        "notes": "Pass under category 9; reported under sweep damage in the returned anomaly list. Same call as the 'secur*' sites elsewhere in this batch."
       }
     ],
     "trap-nonspeakable": [
@@ -1951,6 +2096,22 @@
         "reviewed_at": "2026-08-15T10:30:59.864Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a0f373acabae",
+          "ts": "ea81fb46ccc9"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:41:48.698Z",
+        "reviewed_sha": "4e0d6fac74533407a33c019d7013a2dbd2d364c1",
+        "evidence": "Full read of the proposition; no instance of this construction. The 'First ... Second ...' pair is a two-item consequence list, not a reflex triple, and the closing sentences state consequences (Frobenius restriction, archimedean specialisation) rather than restating the orthogonality claim.",
+        "notes": "No trap. Two structural flags in the returned anomaly list: the basis is indexed {T_lambda} with delta_{lambda mu} although the proposition it uses fixes lambda uniquely from (n, j) and indexes by TABLEAUX of that one shape; and the tikzcd types phi-dagger-psi as landing in A when it is an endomorphism of V_j."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1974,5 +2135,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:41:48.698Z"
 }

@@ -2131,6 +2131,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.268Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2150,6 +2166,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.312Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-em-dash": [
@@ -2169,6 +2201,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.358Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-triples": [
@@ -2188,6 +2236,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 123 words)"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.680Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Closure, exhaustion and monotone nesting are three logically independent conditions — none follows from the others — and the Lean sibling and the data table both engage them separately. Substantive enumeration.",
+        "notes": "pass. THREE FINDINGS, none fixed inline. (1) THE ATTACHED DATA TABLE VIOLATES CONDITIONS 1 AND 3 OF THIS VERY PROPOSITION. Condition 1 requires each S_i = 2 n_i^2 . T_{2,3} and condition 3 requires n_1 < ... < n_k strictly. The table's partitions are Ar = 2+8+8 (n = 1,2,2), Kr = 2+8+18+8 (1,2,3,2), Xe = 2+8+18+18+8 (1,2,3,3,2), Rn = 2+8+18+32+18+8 (1,2,3,4,3,2) — repeated and non-monotone n_i in every case past Ne. Only He and Ne satisfy the stated conditions. The arithmetic of the table itself is correct (all six sums give 2, 10, 18, 36, 54, 86); it is the conditions the rows do not meet. The .ts authorNotes caveat already says exactly this, so the corpus knows — but the proposition's own statement does not carry the restriction, and the block presents the table as characterising all six. INDEPENDENT CORROBORATION from elsewhere in this batch: I found the same 2n^2 breakdown separately in rem:metallic-character-knot-interpretation, whose classification table has '|R| = 2n^2 -> noble gas' failing for Ar (closes at 8 in n=3, not 18) and '|R| = 2n^2 - 1 -> halogen' failing for Cl (7 valence electrons, not 17). Same root cause, two blocks. (2) NOTATION-REGISTER VIOLATION (STRICT): 'An atom A(p,n)' and 'electron cloud p . T_{2,3}' use p as the proton/electron COUNT, which AGENTS.md reserves for a brane point (proton count is Z). Same defect as prop:metallic-character-knot, which this block is uses[]-upstream of. The Lean sibling gets it right — its AtomLike class has fields Z and N. n is also overloaded, the neutron count in A(p,n) against the shell index n_i in condition 1. (3) SELF-ASSUMING LEAN PROJECTION: lean/QOU/Archimedean/noble_gas_characterization.lean declares 'class AtomLike' carrying the block's conclusion as the field claim_noble_iff_curls, with IsNobleGas and IsFullOfCurls both opaque Props, and the theorem projects it. Same AGENTS.md 3b-cond item-5 shape as metallic_character_knot — but unlike that one, this file's docstring says so plainly ('Concretising IsFullOfCurls ... is downstream work'), so it is an honest placeholder rather than a disguised one. Its '-- Ref:' path, quantum-observable-universe/archimedean-universe/noble-gas-characterization.md, is dead: there is no archimedean-universe/ directory."
       }
     ],
     "trap-closing-aphorism": [
@@ -2207,6 +2271,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.402Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-meta-commentary": [
@@ -2226,6 +2306,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.442Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-thesis-restatement": [
@@ -2245,6 +2341,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.486Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-performed-warmth": [
@@ -2264,6 +2376,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.530Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-superlative": [
@@ -2283,6 +2411,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.574Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "trap-nonspeakable": [
@@ -2302,6 +2446,22 @@
         "reviewed_at": "2026-08-15T10:31:01.145Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "790e246a0e63",
+          "ts": "050cc4522a49"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:26:54.618Z",
+        "reviewed_sha": "f9bfa098459624d57c01386a97962597cca22335",
+        "evidence": "Full read of the proposition, its three iff conditions and its .ts. The .ts carries a well-formed authorNotes caveat (kind 'caveat', dated 2026-06-16) rather than a status banner in prose — correct per AGENTS.md 4d, and the caveat is candid: it records that the 2n^2 cumulative-closure series reproduces the observed noble-gas Z only for He and Ne, and that the ionization mechanism is an interpretation pending derivation. 'the six noble gases' is right (He, Ne, Ar, Kr, Xe, Rn). No negation-contrast, no pivot, no dash, no aphorism, no meta-commentary, no warmth, no superlative, no non-speakable chain; the three conditions are distinct and substantive.",
+        "notes": "no trap of this class; full-context read"
       }
     ],
     "wall-base-ring-minimal": [
@@ -2325,5 +2485,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T04:26:54.680Z"
 }

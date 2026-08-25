@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.508Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-negation-contrast constructions present."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.555Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-rhetorical-pivot constructions present."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.600Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-em-dash constructions present."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 49 words)"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.645Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-compulsive-triple constructions present."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.687Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-closing-aphorism constructions present."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1346,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.728Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-meta-commentary constructions present."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1380,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.769Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-thesis-restatement constructions present."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1414,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.810Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-performed-warmth constructions present."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1448,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.851Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-superlative-inflation constructions present."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1482,21 @@
         "reviewed_at": "2026-08-15T10:30:59.063Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "5fd624ba51dc",
+          "ts": "80656bd52aab"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q11",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:18:53.892Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Full-context read (proof, 5 sentences, plain assertive register; degenerate-Lean-witness caveat already carried in .ts authorNotes); no trap-nonspeakable-syntax constructions present."
       }
     ],
     "wall-base-ring-minimal": [

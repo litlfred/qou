@@ -1,10 +1,11 @@
 ---
 # qou-8zjd
 title: 'REGRESSION: new ctype averaged_weighted breaks 4 live consumers; canonical_word_for fails for every Z>=1,N>=1'
-status: in-progress
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-14T15:59:06Z
-updated_at: 2026-08-14T15:59:06Z
+updated_at: 2026-08-19T21:05:18Z
 ---
 
 ## What happened

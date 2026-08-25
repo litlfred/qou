@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:42.976Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.078Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.195Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.275Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.342Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.415Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.520Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.618Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.736Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "470b5208add8",
+          "ts": "1d57907d801e"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:e02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T01:36:43.853Z",
+        "reviewed_sha": "18d37358e896faaf57428dffa12c413f70f47531",
+        "evidence": "Pure-data table(); no trap verdict per the batch spec. Read and every cell checked against standard values. Atomic numbers Li 3, Na 11, K 19, Rb 37, Cs 55, Fr 87 - all CORRECT. Valence shell n = 2,3,4,5,6,7 - all CORRECT. First ionization energies 5.39 / 5.14 / 4.34 / 4.18 / 3.89 / 4.07 eV - all CORRECT to the two decimals shown (5.3917, 5.1391, 4.3407, 4.1771, 3.8939, 4.0727; the Fr value is the 1999 laser-spectroscopy measurement). 'Curls in residual' = 1 for every alkali is correct (one valence electron each).",
+        "notes": "THE TABLE FALSIFIES ITS OWN PARENT BLOCK. rem:francium-extremal-metal states as a consequence 'The lowest ionization energy (E_ion approx 4.07 eV)' for francium and 'The crossing energy decreases monotonically with n', but this table shows Cs at 3.89 eV BELOW Fr at 4.07 eV, so Fr does not have the lowest alkali ionization energy and the sequence 5.39, 5.14, 4.34, 4.18, 3.89, 4.07 is not monotone. The parent block concedes the reversal two sentences later ('The slight ionization-energy uptick for francium reflects relativistic contraction of the 7s orbital'), so the block contradicts itself with the table as the disproof. See the batch anomaly list. Second, smaller item: the ionization energies carry no citation, no witness and no source note anywhere in the block or its .ts."
+      }
     ]
   },
   "source_hashes": {
     "md": "470b5208add8",
     "ts": "1d57907d801e"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T01:36:43.853Z"
 }

@@ -19,6 +19,8 @@ class ConfinementSDPData where
   nTarget : ℝ
   y0Star : ℝ
   slaterStrictFeasible : Prop
+  /-- Strong duality.
+      (Needs abstract LP/SDP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
   strong_duality : slaterStrictFeasible → primalOpt = nTarget * y0Star
 
 /-- **Confinement SDP primal–dual**.

@@ -141,7 +141,7 @@ theorem wenzlNormalisation_ne_zero {n : ℕ} {Q X : ℝ}
 
 Semisimplicity of $H_n(q)$ with Markov parameter $X$ is governed by the
 Schur elements of the symmetrizing trace: the algebra is semisimple iff
-every $s_{\lambda}$ is nonzero (Geck--Pfeiffer [geck2000] Thm 7.2.6).
+every $s_{\lambda}$ is nonzero (Geck--Pfeiffer [geckpfeiffer2000] Thm 7.2.6).
 Here we prove — **sorry-free, on the concrete `schurElement` above** —
 that in the substrate regime $Q > 1$, $X \leq 0$ every Schur element is
 nonzero, carry the Geck--Pfeiffer criterion as a cited hypothesis class
@@ -234,9 +234,9 @@ theorem schurElement_ne_zero {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
     nonzero, the algebra is semisimple at rank $n$.  `semisimple n` is
     an opaque per-rank `Prop`; **no instance is declared** — the
     symmetrizing-trace theory is not in Mathlib, and a fabricated
-    instance would launder [geck2000] into a Lean proof.
+    instance would launder [geckpfeiffer2000] into a Lean proof.
 
-    Ref: [geck2000] Geck--Pfeiffer, Thm 7.2.6. -/
+    Ref: [geckpfeiffer2000] Geck--Pfeiffer, Thm 7.2.6. -/
 class SchurElementCriterion (Q X : ℝ) (semisimple : ℕ → Prop) : Prop where
   /-- Schur-element non-vanishing implies semisimplicity, carried as a
       hypothesis. -/

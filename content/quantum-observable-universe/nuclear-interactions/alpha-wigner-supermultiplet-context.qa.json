@@ -1230,6 +1230,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.326Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1249,6 +1266,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.368Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1268,6 +1302,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.411Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1287,6 +1338,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 149 words)"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.452Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1306,6 +1374,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.491Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "Block-final chiastic flourish 'What nuclear phenomenology encodes in the Wigner term, we read off the SU(4) structure of the A=4 shell.' FIXED in place -> 'The binding that nuclear phenomenology supplies through the Wigner term is here fixed by the SU(4) structure of the A = 4 shell.' Content kept, inverted quotable syntax removed."
       }
     ],
     "trap-meta-commentary": [
@@ -1325,6 +1410,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.530Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1344,6 +1446,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.572Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "major",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-performed-warmth": [
@@ -1363,6 +1482,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.612Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1382,6 +1518,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.652Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1401,6 +1554,23 @@
         "reviewed_at": "2026-08-15T10:31:01.429Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "eb823842fc6d",
+          "ts": "9835a344d795"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:g00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:42:18.691Z",
+        "reviewed_sha": "c12101c0455c8a76d4dc1e334e627098a9fb0878",
+        "severity": "minor",
+        "evidence": "Full-context read of rem:alpha-wigner-supermultiplet-context. Verified dim Lambda^4(C^4)=1 and dim Lambda^A(C^4)=0 for A>4 (correct); 2 spin x 2 isospin = SU(4) fundamental (correct); Wigner-term description matches Satula1997 (W(A)|N-Z| vanishes at N=Z, separate delta_{N,Z} cusp term supplies the even-even extra binding).",
+        "notes": "No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1423,5 +1593,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:42:18.691Z"
 }

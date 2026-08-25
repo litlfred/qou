@@ -9,9 +9,9 @@ CONTEXT (read first, in order):
     the exact ring identity (q−q⁻¹) = (v−v⁻¹)·[2]_v, v = √q.
   * binding_qhamiltonian_rotational_scale.py — the canonical rotational-tier frame reused here
     (D/T/³He/⁴He vs AME, j = n/2, n = 3A strands; forward-only, no AME inversion).
-  * uploads/0012035v3.pdf (Broda, NA-Stokes): P exp(i∮_∂S A) = 𝒫 exp(i/2 ∫_S 𝓕), with the
+  * library/arxiv-math-ph-0012035v3/0012035v3.pdf (Broda, NA-Stokes): P exp(i∮_∂S A) = 𝒫 exp(i/2 ∫_S 𝓕), with the
     path-dependent curvature 𝓕(x) = U⁻¹(x,O) F(x) U(x,O) and F = dA − i[A,A].
-  * uploads/phys-rep09.pdf (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151, Thm 1 eq (32)):
+  * library/phys-rep09/phys-rep09.pdf (Blanes–Casas–Oteo–Ros, Phys. Rep. 470 (2009) 151, Thm 1 eq (32)):
     Magnus:  Ω(t) = ∫A dt₁ + ½∫∫_{t₂<t₁} [A(t₁), A(t₂)] dt₂ dt₁ + ⋯  — the order-2 term is
     the double-integral COMMUTATOR ½∮∮[A,A]; every Magnus term of order k ≥ 2 is a Lie element
     (sum of nested commutators).
@@ -97,8 +97,16 @@ from codata_constants import (  # noqa: E402
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
 )
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # muon-canonical pin (computations/ layer canonical, q-pinning-50-digit witness);
 # Q_50_DIGIT_STR resolves to the environment's anchor (proton in package-layer envs).

@@ -38,9 +38,11 @@ from __future__ import annotations
 
 import json
 import math
+from fractions import Fraction
 import os
 import re
 from glob import glob
+import sys
 from pathlib import Path
 
 from mpmath import mp, mpf
@@ -48,6 +50,19 @@ from mpmath import mp, mpf
 mp.dps = 65  # _precision.py default compute precision
 
 REPO = Path(__file__).resolve().parents[3]
+
+# The package lives in the repo, but nothing here put it on sys.path, so
+# `from qou_substrate.constants import ...` raised ImportError and the ladder
+# in `_q0()` fell all the way to its last rung. That rung is a 17-DIGIT
+# literal, and this script runs at `mp.dps = 65` and serialises with
+# `mp.nstr(q0, 50)` — so the committed witness has been reporting 50 digits
+# derived from 17. The witness records `"source": "literal proton pin
+# (package unavailable)"`, which is how the degradation was visible at all.
+for _p in (REPO / "tools" / "qou-substrate" / "python",
+           REPO / "computations",
+           REPO / "computations" / "substrate"):
+    if str(_p) not in sys.path:
+        sys.path.insert(0, str(_p))
 OUT = Path(__file__).with_suffix(".witness.json")
 
 
@@ -61,10 +76,33 @@ def _q0() -> tuple[mpf, str]:
         try:
             from qou_substrate.constants import Q  # type: ignore
 
-            return mpf(str(Q)), "qou_substrate.constants.Q"
-        except Exception:
-            # Never an mpf(<float>) -- the literal is carried as a string.
-            return mpf("1.1099785827513808"), "literal proton pin (package unavailable)"
+            del Q  # only needed to prove the module imports at all
+            # `Q_MP` before `mpf(str(Q))`: the latter LAUNDERS the f64 constant
+            # into a value that looks 65-dps and is accurate to ~16 digits.
+            # Kept as the last package rung purely for a hypothetical build
+            # that exposes `Q` but neither `Q_50_DIGIT_STR` nor `Q_MP`.
+            try:
+                from qou_substrate.constants import Q_MP  # type: ignore
+
+                return mpf(Q_MP), "qou_substrate.constants.Q_MP"
+            except Exception:
+                from qou_substrate.constants import Q as _Qf  # type: ignore
+
+                return mpf(str(_Qf)), "qou_substrate.constants.Q (f64, LAUNDERED)"
+        except Exception as exc:
+            # FAIL rather than degrade silently. The previous last rung
+            # returned a 17-digit literal and let the census carry on printing
+            # 50 digits from it — provenance recorded, but nothing downstream
+            # reads a provenance string, so the numbers looked authoritative.
+            # A census that cannot obtain its anchor has nothing to report.
+            raise RuntimeError(
+                "wlambda census: cannot resolve the proton q_0. The package "
+                "`qou_substrate` must be importable; it lives at "
+                "tools/qou-substrate/python and is added to sys.path above. "
+                "Refusing to fall back to a truncated literal: this script "
+                "runs at mp.dps = 65 and serialises 50 digits, so a 17-digit "
+                "anchor would be reported as though it were exact."
+            ) from exc
 
 
 def qint(n: int, q: mpf) -> mpf:
@@ -184,7 +222,16 @@ def main() -> None:
     rows = []
     for n in range(3, 9):
         s_q = weight_sum(n, q0)
-        s_c = sum(dim_classical(l, n) ** 2 for l in partitions(n)) / math.factorial(n)
+        # EXACT, not float. This is the classical sum-of-squares identity
+        # Sum_lambda (f^lambda)^2 = n!, so the value is exactly 1 by a theorem.
+        # `int / int` in Python 3 is float division, which turned a proved
+        # identity into a float64 that merely lands on 1.0 — and put raw
+        # float64 in the witness. Fraction keeps it exact and lets the emission
+        # show `1`, which is the actual claim. Bean qou-irzg.
+        s_c = Fraction(
+            sum(dim_classical(l, n) ** 2 for l in partitions(n)),
+            math.factorial(n),
+        )
         rows.append(
             {
                 "n": n,
@@ -192,7 +239,7 @@ def main() -> None:
                 "sum_q_deformed_unbalanced_convention": mp.nstr(
                     weight_sum_unbalanced(n, q0), 30
                 ),
-                "sum_classical": s_c,
+                "sum_classical": str(s_c),
                 "deviation_from_one": mp.nstr(s_q - 1, 12),
             }
         )

@@ -48,7 +48,7 @@ export default proposition({
       body:
         "**Base ring minimised (AGENTS.md §7c).** The Lean sibling moved from " +
         "`[Field K]` + `field_simp` to a generic `[CommRing R]` with the " +
-        "modulus carried as a unit `q : Rˣ`. Two changes of substance: " +
+        "modulus carried as a unit `q : Units R`. Two changes of substance: " +
         "(i) `q_int` is now the **division-free** symmetric q-integer " +
         "`[n]_q = ∑_{i<n} qⁱ·q^(−(n−1−i))`, with `q_int_mul_h_skein` proving " +
         "the previous quotient definition's relation `[n]_q · h = qⁿ − q⁻ⁿ` " +

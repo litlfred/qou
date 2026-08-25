@@ -1426,6 +1426,22 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.808Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: no assert-by-denying construction beyond contrasts that are the block's own stated content.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1445,6 +1461,22 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.849Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: no setup-then-reframe; no second clause that voids its predecessor.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-em-dash": [
@@ -1465,6 +1497,22 @@
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "severity": "minor",
         "evidence": "4 stylistic spaced dashes in 299 words (1.34/100w) — restructure into sentences"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.892Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: spaced-dash count = 4; every occurrence is a range or a true parenthetical, none substituting for sentence structure.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-triples": [
@@ -1484,6 +1532,22 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 299 words)"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.933Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: no reflex three-item list; enumerations present carry distinct content per item.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-closing-aphorism": [
@@ -1503,6 +1567,22 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:18.974Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: final prose sentence is: \"The group-16 sequence $\\mathrm{O}\\,104.5^\\circ \\to \\mathrm{S/Se/Te}\\sim 90^\\circ$ confirms the saturation.\" - substantive, not a quotable placed for cadence.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-meta-commentary": [
@@ -1522,6 +1602,22 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.014Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: no narration of the author's own emphasis; emphasis is placed rather than announced.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-thesis-restatement": [
@@ -1541,6 +1637,22 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.056Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: final sentence checked against the body: \"The group-16 sequence $\\mathrm{O}\\,104.5^\\circ \\to \\mathrm{S/Se/Te}\\sim 90^\\circ$ confirms the saturation.\" - not a restatement of what the text already established.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-performed-warmth": [
@@ -1560,6 +1672,22 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.097Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "evidence": "Full-context read of the remark block (q^ell domain weights; six-row angle table checked row-by-row against molecular-angle-master-table.witness.json; s-p hybridisation flip at n=2->3). Judged on the whole text: institutional register throughout; no personal warmth, gratitude or journey language.",
+        "notes": "clean on this criterion"
       }
     ],
     "trap-superlative": [
@@ -1579,6 +1707,23 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.136Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "'This reproduces the angles for CH4, NH3, H2O, C2H4, CO2 within 0.6 deg' is false against the block's own witness: molecular-angle-master-table.witness.json gives miss_deg C2H4 = +0.6322. The witness's own assertion is the looser and true 'all second-row angles ... within 1 deg'. The block tightened its cited tolerance past what the data supports.",
+        "notes": "PROPOSED (not applied - numeric): change 'within 0.6 deg' to 'within 1 deg' to match the witness assertion, or to 'within 0.64 deg'. Other rows verified: CH4 -0.029, NH3 -0.120, H2O +0.219, CO2 0.000, H2S -2.100. The +2.1 deg H2S residual quoted in prose is the sign-flipped miss_deg and is used correctly."
       }
     ],
     "trap-nonspeakable": [
@@ -1598,6 +1743,23 @@
         "reviewed_at": "2026-08-15T10:31:01.600Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "38b25adb7737",
+          "ts": "90f2563094a3"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:p00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T05:24:19.177Z",
+        "reviewed_sha": "98d98a471d0e686e474bb4ec221c7ad839614885",
+        "severity": "minor",
+        "evidence": "'We use the self-dual-s versus chiral-p split plus the ns penetration of the (n-1) inner shells, Delta(n) proportional to (n-1) = central-atom size.' - a five-link noun chain ending in an inline appositive that equates a proportionality to a phrase ('= central-atom size'). It parses on the page and stalls aloud.",
+        "notes": "PROPOSED (not applied - math-adjacent): split into two sentences and move the proportionality out of the appositive, e.g. 'The flip follows from the self-dual-s versus chiral-p split together with the ns penetration of the (n-1) inner shells. That penetration scales as Delta(n) ~ (n-1), i.e. with the central atom's size.'"
       }
     ],
     "wall-base-ring-minimal": [
@@ -1620,5 +1782,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T05:24:19.177Z"
 }

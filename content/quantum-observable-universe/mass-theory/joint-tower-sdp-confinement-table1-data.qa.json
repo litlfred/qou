@@ -891,11 +891,191 @@
         "reviewed_sha": "0dd491577c9b9461f7ef4574271d009a5b5126e5",
         "notes": "block has no .lean sibling"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.639Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.693Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.754Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.810Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.862Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.917Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:35.977Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.026Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.080Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "dbdaa8121dc5",
+          "ts": "a0863fe90e9a"
+        },
+        "result": "n/a",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:23:36.149Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "table( pure-data block, 6 embedding rows. RECOMPUTED every strand count against the framework's 3-strands-per-nucleon, 1-per-quark convention: 8Be = 2 x 4He gives H_24 <- H_12^{otimes 2} (12*2=24, and 8 nucleons *3 = 24) OK; 12C = 3 x 4He gives H_36 <- H_12^{otimes 3} (12 nucleons *3=36) OK; 4He = 4 x nucleon gives H_12 <- H_3^{otimes 4} OK; nucleon = 3 x quark gives H_3 <- H_1^{otimes 3} OK; 2H gives H_6 <- H_3^{otimes 2} OK; 3H/3He give H_9 <- H_3^{otimes 3} OK. All six internally consistent and consistent with the H_18/H_21 for 6Li/7Li in the sibling table 2. Arrow direction (hooked arrow pointing left) reads as 'the tensor power embeds in the larger algebra', matching the column header 'embedding'.",
+        "notes": "One note: H_1 is the trivial algebra (one strand, no generators), so the 'nucleon = 3 x quark' row is a formal placeholder rather than a substantive embedding -- H_1^{otimes 3} carries no braiding to transport. Harmless as a bookkeeping row but it is the one row that asserts nothing."
+      }
     ]
   },
   "source_hashes": {
     "md": "dbdaa8121dc5",
     "ts": "a0863fe90e9a"
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:23:36.149Z"
 }

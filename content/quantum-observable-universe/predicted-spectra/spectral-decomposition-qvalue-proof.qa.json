@@ -1176,6 +1176,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.266Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1195,6 +1210,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.305Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-em-dash": [
@@ -1214,6 +1244,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 693 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.346Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-triples": [
@@ -1233,6 +1278,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 693 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.385Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-closing-aphorism": [
@@ -1252,6 +1312,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.426Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-meta-commentary": [
@@ -1271,6 +1346,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.466Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-thesis-restatement": [
@@ -1290,6 +1380,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.506Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-performed-warmth": [
@@ -1309,6 +1414,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.544Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-superlative": [
@@ -1328,6 +1448,21 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.585Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "evidence": "Full read (proof, ~7.0kB, 5 numbered steps plus 3 sections). Embeddability set verified complete: the six knots with (r-1)(s-1)/2 <= 4 are exactly tau(2,3),(2,5),(2,7),(2,9),(3,4),(3,5). Degree-3 genus bound: tau(2,27) gives (1)(26)/2 = 13, so 'genus >= 13' correct. Tower termination floor(2g/(g-1)) = floor(8/3) = 2 correct. F_deg2 and F_Pauli arithmetic re-derived (see the interpretation block's entry)."
       }
     ],
     "trap-nonspeakable": [
@@ -1347,6 +1482,23 @@
         "reviewed_at": "2026-08-15T10:31:01.233Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e430e15d916b",
+          "ts": "f52d8efe92a8"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_06",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T06:33:27.624Z",
+        "reviewed_sha": "d40c10dd4c308a8989538a28f07d57281d08a288",
+        "severity": "minor",
+        "evidence": "Steps 1-5 and the 'Shell correction proportions' section run on strings of 6-12 word declaratives created by splitting subordinated sentences: 'This is the quantum-dimension weighted trace...', 'The operator Delta_beta = ... is the beta-decay difference operator.', 'Schur orthogonality forces this structure.', 'This is computed from the Rosso-Jones expansion.', 'An example is 137Cs with N = 82.' Side-by-side with the orphaned -interpretation.md the same content is one flowing sentence each, so the split is mechanical, not authorial.",
+        "notes": "proposed: restore the subordinated forms preserved in spectral-decomposition-qvalue-interpretation.md (e.g. '..., where J(tau(r,s)) is the Rosso-Jones invariant (the quantum-dimension weighted trace of the full twist on each irrep of H_r(q)), and Delta_beta = T_mix - T_nn is the beta-decay difference operator.'). Structural - spans ~20 sentences."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1369,5 +1521,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T06:33:27.624Z"
 }

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T00:56:53.014188+00:00",
-  "commitSha": "5807a80576f1f61bed9f57bc5828e4007b5b2b84",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:45:01.330953+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "eps_zero_bracketed_and_entropy_blocked",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "qbeta-c3-imq-ratio-and-entropy",
   "scriptFile": "qbeta_c3_imq_ratio_and_entropy_probe.py",
-  "scriptHash": "33a688d65942",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "87918b67f6c7",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_imq_ratio_and_entropy_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_imq_ratio_and_entropy_probe.py"
   },
   "description": "Autonomous ε(q₀) decay-projection investigation (candidate (iii); #3600/#3636). (1) Proxy-independent ratio ε(proton)/ε(muon)=S(p)/S(m)≈−4.08 (~−4 within the ~2-digit S noise — observation, not identified). (2) ε=0 crossing q* bracketed to a ~1.3e-8 window (S sign-flips). (3) Entropy block: 2 anchors at ~2.2 digits locate q* to ~8e-11 only — q* not PSLQ-identifiable, ε(q₀) underdetermined by anchors. Scope-(a) negative: numerical identification is entropy-blocked (NOT a structural claim ε is underivable — the archimedean functor / Φ_b state-integral #3596 is the open route). No c_k wired; no fit; C14.",
   "contentBlock": "conj:im-q-physical-role",

@@ -1131,7 +1131,8 @@
         "reviewed_at": "2026-07-07T14:26:56.666500Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents '$\\\\delta_{\\\\mathrm{CP}}$ as imaginary part of the alternating-block character' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1446,7 +1447,8 @@
         "notes": "Lean sibling content/quantum-observable-universe/observations/cp-violation-spectral-form.lean contains compilation errors.",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/cp-violation-spectral-form.lean contains compilation errors: content/quantum-observable-universe/observations/cp-violation-spectral-form.lean:37:2: error: Invalid field notation: Type of",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean sibling content/quantum-observable-universe/observations/cp-violation-spectral-form.lean contains compilation errors."
       },
       {
         "result": "pass",

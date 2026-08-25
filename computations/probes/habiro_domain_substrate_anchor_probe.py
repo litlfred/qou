@@ -81,8 +81,9 @@ del _Path, _bridge
 import sys
 
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 
 def qpoch(q, k):

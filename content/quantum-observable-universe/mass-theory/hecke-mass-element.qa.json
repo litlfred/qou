@@ -2001,6 +2001,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.433Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Full read of the definition; no assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -2020,6 +2035,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.485Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No setup-then-reframe."
       }
     ],
     "trap-em-dash": [
@@ -2039,6 +2069,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.525Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Only name-ligature double hyphens (Frobenius--Hopf, Jones--Markov, Schur--Weyl); no structural dashes."
       }
     ],
     "trap-triples": [
@@ -2058,6 +2103,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 127 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.647Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "\"(Delta, int_A, varrho)\" enumerates the three actual constituent maps of alpha_varrho."
       }
     ],
     "trap-closing-aphorism": [
@@ -2077,6 +2137,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.687Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Closes on the desc/trans splitting, which is content."
       }
     ],
     "trap-meta-commentary": [
@@ -2096,6 +2171,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.738Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "No narration of emphasis."
       }
     ],
     "trap-thesis-restatement": [
@@ -2115,6 +2205,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.787Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Definition block; no closing restatement."
       }
     ],
     "trap-performed-warmth": [
@@ -2134,6 +2239,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.831Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Institutional register."
       }
     ],
     "trap-superlative": [
@@ -2153,6 +2273,21 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.875Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "\"every such endomorphism is an element of the Hecke algebra\" is the quantum Schur-Weyl statement, correctly unqualified."
       }
     ],
     "trap-nonspeakable": [
@@ -2172,6 +2307,22 @@
         "reviewed_at": "2026-08-15T10:31:00.520Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6c6868d1e428",
+          "ts": "0c513d3fc003"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:19:04.913Z",
+        "reviewed_sha": "aacea43e017db3fbd968cec390ab55a49a297bbc",
+        "evidence": "Each sentence carries one clause plus a citation; reads aloud.",
+        "notes": "Separate (non-trap) finding: uses[] declares def:mass-identity, rem:hecke-algebra-from-braiding and thm:jones-markov-trace, but the prose also links def:quantum-observable-universe and prop:descent-eigenspaces as immediate neighbours. Proposed fix: add both to uses[]."
       }
     ],
     "wall-base-ring-minimal": [
@@ -2194,5 +2345,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T16:19:04.913Z"
 }

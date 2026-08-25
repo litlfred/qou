@@ -1773,6 +1773,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:25.595Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "'The Pell-Lucas linear recursion does not close the gap between c_4 and c_5, c_6, c_7' is a factual negative result about a specific recursion, immediately followed by the positive replacement; a scope statement, not assertion-by-denial."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1792,6 +1807,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:25.693Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "trap-em-dash": [
@@ -1811,6 +1841,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 129 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:25.746Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "trap-triples": [
@@ -1830,6 +1875,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 129 words)"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:25.831Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "trap-closing-aphorism": [
@@ -1849,6 +1909,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:25.902Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "trap-meta-commentary": [
@@ -1868,6 +1943,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.007Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "trap-thesis-restatement": [
@@ -1887,6 +1977,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.080Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Block-final sentence 'Until the upstream c_8 categorical proof lands, c_4 holds empirical tier' introduces the epistemic tier, which nothing earlier states, and is exactly the tiering the corpus's c_k discipline requires. Substantive, not a closer."
       }
     ],
     "trap-performed-warmth": [
@@ -1906,6 +2011,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.138Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "trap-superlative": [
@@ -1925,6 +2045,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.235Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "trap-nonspeakable": [
@@ -1944,6 +2079,21 @@
         "reviewed_at": "2026-08-15T10:31:00.723Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "d9211ce15363",
+          "ts": "ace9be91a992"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v05",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T22:20:26.321Z",
+        "reviewed_sha": "5fe3747acc72f96cb32aaa60c3a94b24ff6bfa10",
+        "evidence": "Full read of the proposition. RECOMPUTED every quoted rational with sympy at the silver ratio q=1+sqrt2 (b^2 = 1 - 1/[2]_q^2 = 1 - 1/8 = 7/8, verified: [2]_q = q+q^-1 = 2sqrt2): c_3.c_4 = (-2)(-49/32) = 49/16 = c_8 exact; c_8/c_3 = -49/32 = -2.b^4 with b^4=49/64 exact; and the companion c_3.c_6 = (-2)(7/2) = -7 = c_9 exact. All arithmetic correct. Recorded separately: the product identity is a consequence of the assumed closed forms (c_4 = c_3 b^4, c_8 = c_3^2 b^4), so it cannot independently force c_4; and the c_k ladder is convention-C-frame and carries no C-conditional scoping. No trap of this category."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1967,5 +2117,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-21T22:20:26.321Z"
 }

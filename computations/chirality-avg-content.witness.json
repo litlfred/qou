@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-11T00:57:35.056776+00:00",
-  "commitSha": "7f55e1eb6c275ed6d7166357bd371b53e2d91fec",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:58:07.637441+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chirality-avg-content",
   "scriptFile": "chirality_avg_content.py",
-  "scriptHash": "031a7c44f774",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "8258beae916b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -21,13 +21,22 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/chirality_avg_content.py"
+    ],
+    "reproduce": "python3 -u computations/chirality_avg_content.py"
   },
   "description": "First numerical computation of ⟨c⟩_β = Σ w_λ χ^λ(β) c(λ) / Σ w_λ χ^λ(β) for the figure-8 (4_1), Borromean (B_3), trefoil (3_1 at its braid index 2) and T(3,3) braids at q_0. Inhabits ChiralityFactorClass with structural-content values.  Every row records the COMPUTED writhe and the verified topology of its closure (component count, determinant, braid index).",
   "contentBlock": "prop:chirality-writhe-ribbon-derivation",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision_dps": 50,
-  "q_0": "1.10997859555733471989976322048",
+  "q_0": "1.1099785827513808075916690956107688798744991218736",
   "q0_anchor": "muon",
   "q0_anchor_note": "IDEAL / canonical 3-CAL pin (CAL-2 = 𝔇_β, proxy m_μ/m_e), q_0 = 1.10997859555733471... .  This is NOT a free choice made here: `q_parameter` auto-selects the anchor from `q0_anchor_manifest.json` by the running producer's stem, and `chirality_avg_content` is listed under `ideal_muon`.  The 2026-08-07 owner directive (touched compute defaults to the proton anchor) is not applied by hand here: retagging a manifest-tagged ideal producer is part of the tracked ~840-witness migration (bean tnjb), which is explicitly not authorised as an idle-time drain.  No number in this witness moves as a result of the 2026-08-10 corrections.",
   "cross_script_anchor_note": "ANCHOR ASYMMETRY, stated so no reader mixes the two layers.  This producer is manifest-tagged `ideal_muon`. Its companion `chirality_avg_content_chiral.py` is in NEITHER manifest list, so it falls through to the experimental/proton default, and its committed witness moved by ~1e-7 relative when re-run on 2026-08-10.  Neither producer straddles the two layers internally — each evaluates q_0, the Wedderburn weights and the Hecke characters at one and the same anchor — but ⟨c⟩ values must not be compared ACROSS the two witnesses below the 1e-7 level.",
@@ -73,10 +82,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
+          "wedderburn_weight": "0.141811507642269465675684892864",
           "chi_lambda_beta": "1.0000000000000009",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.42543451509565402789084659972"
+          "weighted_chi_c": "0.425434522926808779918125312721"
         },
         {
           "shape": [
@@ -87,9 +96,9 @@
             2,
             1
           ],
-          "dim_q": "2.10997859555733471989976322048",
-          "wedderburn_weight": "0.631346192245338912914108124172",
-          "chi_lambda_beta": "-0.9106773300219759",
+          "dim_q": "2.10997858275138080759166909561",
+          "wedderburn_weight": "0.631346196203222099325673964269",
+          "chi_lambda_beta": "-0.9106773502706684",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
         },
@@ -103,22 +112,22 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "1.0000000000000018",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "1.0000000000000013",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.425434515095654410781910185808"
+          "weighted_chi_c": "-0.425434522926808950091934483444"
         }
       ],
-      "numerator": "-3.82891063586088362376281699807e-16",
-      "denominator": "-0.291329654609756867386301254093",
-      "avg_content_c_beta": "1.31428798108102047239191204362e-15",
+      "numerator": "-1.70173809170723358810821871437e-16",
+      "denominator": "-0.291329665777276584311067154492",
+      "avg_content_c_beta": "5.84127979952519966522474259817e-16",
       "transpose_collapse": {
         "applicable": true,
         "writhe_ell": 0,
         "c_max": 3,
         "predicted_numerator": "0.0",
-        "actual_numerator": "-3.82891063586088362376281699807e-16",
-        "relative_residual": "3.82891e-16",
+        "actual_numerator": "-1.70173809170723358810821871437e-16",
+        "relative_residual": "1.70174e-16",
         "collapse_verified": true,
         "vanishing_requires_zero_writhe": true,
         "avg_c_can_vanish_here": true
@@ -173,10 +182,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "1.000000000000001",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "1.0000000000000013",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.425434515095654070434298109285"
+          "weighted_chi_c": "0.425434522926808950091934483444"
         },
         {
           "shape": [
@@ -187,9 +196,9 @@
             2,
             1
           ],
-          "dim_q": "2.10997859555733471989976322048",
-          "wedderburn_weight": "0.631346192245338912914108124172",
-          "chi_lambda_beta": "1.994185810380575",
+          "dim_q": "2.10997858275138080759166909561",
+          "wedderburn_weight": "0.631346196203222099325673964269",
+          "chi_lambda_beta": "1.9941858129799659",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
         },
@@ -203,22 +212,22 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "1.0000000000000027",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "1.0000000000000022",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.425434515095654793672973771896"
+          "weighted_chi_c": "-0.425434522926809332983005117572"
         }
       ],
-      "numerator": "-7.23238675662611148461771730347e-16",
-      "denominator": "1.54264462807723109725700065387",
-      "avg_content_c_beta": "-4.6883038549459290202941135016e-16",
+      "numerator": "-3.82891070634127557324349210734e-16",
+      "denominator": "1.54264464283187095022562744802",
+      "avg_content_c_beta": "-2.48204323927281750821296342055e-16",
       "transpose_collapse": {
         "applicable": true,
         "writhe_ell": 0,
         "c_max": 3,
         "predicted_numerator": "0.0",
-        "actual_numerator": "-7.23238675662611148461771730347e-16",
-        "relative_residual": "7.23239e-16",
+        "actual_numerator": "-3.82891070634127557324349210734e-16",
+        "relative_residual": "3.82891e-16",
         "collapse_verified": true,
         "vanishing_requires_zero_writhe": true,
         "avg_c_can_vanish_here": true
@@ -260,10 +269,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.473938457056175796317436245325",
-          "chi_lambda_beta": "1.3675518842842074",
+          "wedderburn_weight": "0.473938459932619229415038990104",
+          "chi_lambda_beta": "1.3675518369513862",
           "content_c_lambda": 1,
-          "weighted_chi_c": "0.648135429981923120729057576358"
+          "weighted_chi_c": "0.648135411482764373904588641649"
         },
         {
           "shape": [
@@ -274,22 +283,22 @@
             2
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.473938457056175796317436245325",
-          "chi_lambda_beta": "-0.7312336822404466",
+          "wedderburn_weight": "0.473938459932619229415038990104",
+          "chi_lambda_beta": "-0.7312337075494344",
           "content_c_lambda": -1,
-          "weighted_chi_c": "0.346559763108543198988884425696"
+          "weighted_chi_c": "0.346559777206798222714645089026"
         }
       ],
-      "numerator": "0.994695193090466319717942002054",
-      "denominator": "0.301575666873379921740173150662",
-      "avg_content_c_beta": "3.29832709450030248809854281503",
+      "numerator": "0.994695188689562596619233730674",
+      "denominator": "0.301575634275966151189943552623",
+      "avg_content_c_beta": "3.298327436424574899923614395",
       "transpose_collapse": {
         "applicable": true,
         "writhe_ell": 3,
         "c_max": 1,
-        "predicted_numerator": "0.994695193090465404784526119141",
-        "actual_numerator": "0.994695193090466319717942002054",
-        "relative_residual": "9.14933e-16",
+        "predicted_numerator": "0.994695188689561772918018279151",
+        "actual_numerator": "0.994695188689562596619233730674",
+        "relative_residual": "8.23701e-16",
         "collapse_verified": true,
         "vanishing_requires_zero_writhe": true,
         "avg_c_can_vanish_here": false
@@ -344,10 +353,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "1.8701981562092858",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "1.870198026749111",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.79564684571968301333267876211"
+          "weighted_chi_c": "0.795646805288666487504446293604"
         },
         {
           "shape": [
@@ -358,8 +367,8 @@
             2,
             1
           ],
-          "dim_q": "2.10997859555733471989976322048",
-          "wedderburn_weight": "0.631346192245338912914108124172",
+          "dim_q": "2.10997858275138080759166909561",
+          "wedderburn_weight": "0.631346196203222099325673964269",
           "chi_lambda_beta": "2.0000000000000018",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
@@ -374,22 +383,22 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "0.5347026980429225",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "0.5347027350564918",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.227480983062228445029111380381"
+          "weighted_chi_c": "-0.227481002996418216693608680241"
         }
       ],
-      "numerator": "0.56816586265745456830356738173",
-      "denominator": "1.60373499408464944837195900412",
-      "avg_content_c_beta": "0.354276650913726488924301260563",
+      "numerator": "0.568165802292248270810837613363",
+      "denominator": "1.60373499516814023647385275229",
+      "avg_content_c_beta": "0.354276613033988272681015606956",
       "transpose_collapse": {
         "applicable": true,
         "writhe_ell": 6,
         "c_max": 3,
-        "predicted_numerator": "0.568165862657454483348476722687",
-        "actual_numerator": "0.56816586265745456830356738173",
-        "relative_residual": "8.49551e-17",
+        "predicted_numerator": "0.568165802292247472805297460536",
+        "actual_numerator": "0.568165802292248270810837613363",
+        "relative_residual": "7.98006e-16",
         "collapse_verified": true,
         "vanishing_requires_zero_writhe": true,
         "avg_c_can_vanish_here": false
@@ -410,6 +419,6 @@
     "scope_a_caveat": "The collapse uses 'every non-extreme partition of n ≤ 3 has content 0', which fails from n = 4 ((3,1) has c = +2).  For n ≥ 4 the Type-B ≈ 0 claim is refuted as tested — scope-(a) — not excluded in principle.",
     "why_the_amphichiral_rows_do_vanish": "figure-8 and Borromean return ⟨c⟩ = 0 because their writhe is 0, not because they are amphichiral.  The same invariant explains both the successes and the failures, and it is level-dependent: Markov II moves the writhe off 0 without changing the link."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

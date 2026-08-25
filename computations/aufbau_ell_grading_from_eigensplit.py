@@ -65,6 +65,7 @@ import _path_bridge  # noqa: F401,E402
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 NMAX = 7  # shells 1..7 -> orbitals up to 7s..  (covers Z<=110, past Rn=86)
 NOBLE = [2, 10, 18, 36, 54, 86]       # Ne/Ar/Kr/Xe/Rn closures + He
@@ -112,7 +113,7 @@ def crossover_sign(a, n=3):
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     q = mp.mpf(str(Q0))
     tr = q - 1 / q
     disc = mp.sqrt(tr * tr + 4)

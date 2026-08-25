@@ -93,7 +93,7 @@ data.
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_theta_canonical.py
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_connection_matrix.py
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_pole_divisor.py
--- Ref: [rsz2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
+-- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 
 namespace QOU.QBeta.C1ZeroSide

@@ -1114,6 +1114,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.329Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "conjecture; 3 apparent negations all factual scope: 'does not supply the MeV unit', 'axiomatisation is not proof', 'square-root-free'. Substantive-contrast / temporal-status false-positive classes."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1133,6 +1148,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.405Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No setup-then-reframe. 'what this conjecture asserts is the remaining physical identification' is a scope delimiter separating two cited theorems from the conjectural step."
       }
     ],
     "trap-em-dash": [
@@ -1152,6 +1182,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (2 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.479Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "One dash pair, a true parenthetical enumerating the two TL channels (direct amplitude 1, exchange weight z=delta^-1). Density 1 in 3 paragraphs."
       }
     ],
     "trap-triples": [
@@ -1171,6 +1216,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 211 words)"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.570Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Semicolon triple 'Markov property (theorem); CWF unit-tangent (theorem); remaining identification (conjecture)' is a substantive proved/proved/open partition, not a reflex list."
       }
     ],
     "trap-closing-aphorism": [
@@ -1190,6 +1250,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.629Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Final line 'No instance of the class is provided, and axiomatisation is not proof, so nothing here is carried downstream' is the repo Anti-Laundering scope statement, factual not quotable-flourish."
       }
     ],
     "trap-meta-commentary": [
@@ -1209,6 +1284,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.691Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No narrated emphasis; no 'we emphasize'/'note the framing'."
       }
     ],
     "trap-thesis-restatement": [
@@ -1228,6 +1318,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.750Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Closing section is Scope (new information: MeV anchor open, near-match label), not a restatement of the conjecture."
       }
     ],
     "trap-performed-warmth": [
@@ -1247,6 +1352,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.808Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "Institutional register throughout."
       }
     ],
     "trap-superlative": [
@@ -1266,6 +1386,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.877Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "No unqualified maximum-strength claims; 'near-match' and 'remains open' are hedged correctly."
       }
     ],
     "trap-nonspeakable": [
@@ -1285,6 +1420,21 @@
         "reviewed_at": "2026-08-15T10:31:00.688Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "a40afae4e9c1",
+          "ts": "7a3d99b5d013"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:12:58.943Z",
+        "reviewed_sha": "fb23f09cdd2ac928c1b11c34897df5f683e11fc8",
+        "evidence": "One long noun chain ('the Gauss-Calugareanu-White-Fuller linking integrand reads that direction through unit tangents per unit arc length') but it parses aloud; rest is short-clause."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1308,5 +1458,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:12:58.943Z"
 }

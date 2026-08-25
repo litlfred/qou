@@ -49,12 +49,22 @@ structure CRManifoldData where
   [topM : TopologicalSpace M]
   /-- CR dimension `n ≥ 1`; real dimension of `M` is `2n + 1`. -/
   n : ℕ
+  /-- `n ≥ 1`, as the docstring above already claimed. Taken from the library
+      copy, which had it where this one did not (bean `qou-u87j`). -/
+  n_pos : 0 < n
   /-- Levi form signature `(r, s)` with `r + s = n`. -/
   r : ℕ
   s : ℕ
   rs_sum : r + s = n
-  /-- The contact form `θ` as an `R_q`-valued function on `M`. -/
-  contactForm : M → R_q
+  /-- The contact form `θ` as a real-valued function on `M`.
+
+      Was `M → R_q`. A contact form is a real 1-form: this structure's own
+      `reebField` docstring characterises `ξ` by `ι_ξ dθ = 0` and `θ(ξ) = 1`,
+      and neither the exterior derivative nor the normalisation `= 1` means
+      anything over `R_q = ℤ[q, q⁻¹]`. §7c reserves `ℝ` for archimedean
+      constructs and this is one; the library copy always had `ℝ`
+      (bean `qou-u87j`). -/
+  contactForm : M → ℝ
   /-- The contact form is non-degenerate: there exists a point where θ ≠ 0. -/
   contact_nondeg : ∃ p : M, contactForm p ≠ 0
   /-- The Reeb vector field `ξ`, characterised by `ι_ξ dθ = 0` and `θ(ξ) = 1`. -/

@@ -1428,6 +1428,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.587Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1447,6 +1463,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.626Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-em-dash": [
@@ -1466,6 +1498,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.667Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-triples": [
@@ -1485,6 +1533,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 64 words)"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.707Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-closing-aphorism": [
@@ -1504,6 +1568,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.749Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-meta-commentary": [
@@ -1523,6 +1603,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.789Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-thesis-restatement": [
@@ -1542,6 +1638,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.830Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-performed-warmth": [
@@ -1561,6 +1673,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.869Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-superlative": [
@@ -1580,6 +1708,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.909Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "trap-nonspeakable": [
@@ -1599,6 +1743,22 @@
         "reviewed_at": "2026-08-15T10:31:01.017Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "6cbd259dc355",
+          "ts": "31a8be0f4fa8"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:k00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:46:05.950Z",
+        "reviewed_sha": "1ea8935abc8c4b46f3620d87a565251f7225ed8f",
+        "evidence": "Full read of a 4-sentence remark (title 'Non-commutativity and geometric drag'). Chain: q(p) != 1 => comultiplication on the Frobenius-Hopf object A non-cocommutative => A_infty not a commutative direct limit => moving a vortex through J^1 S_n requires rearranging SU_q(2) fibre data => inertial resistance. No em-dash (only the LaTeX en-dash in 'Frobenius--Hopf'), no triple, no superlative, no warmth; the final sentence is a cross-reference closer to rem:mass-geometric-drag (documented false-positive class).",
+        "notes": "No instance of this category found on a full read; no fix needed."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1621,5 +1781,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T03:46:05.950Z"
 }

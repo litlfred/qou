@@ -1757,6 +1757,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.778Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-rhetorical-pivot": [
@@ -1776,6 +1791,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.817Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-em-dash": [
@@ -1795,6 +1825,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "dash density acceptable (3 in 278 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.857Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "3 spaced em-dashes in 382 words, all appositive."
       }
     ],
     "trap-triples": [
@@ -1814,6 +1859,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "triple density acceptable (0 in 278 words)"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.895Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-closing-aphorism": [
@@ -1833,6 +1893,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.940Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-meta-commentary": [
@@ -1852,6 +1927,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:20.980Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-thesis-restatement": [
@@ -1871,6 +1961,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.021Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-performed-warmth": [
@@ -1890,6 +1995,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.062Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-superlative": [
@@ -1909,6 +2029,21 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.107Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Full read (382w, prop) with ALL FIVE identities recomputed symbolically and at 40 dps. (1) 3+h^2 = q^2+1+q^-2 = [3]_q exact. (2) (2+h^2)[2]_q = (q^2+q^-2)(q+q^-1) = [4]_q exact. (3) is (1) and (2) combined. (4) [2][3](1+h^2) expands to q^5+q^3+q+q^-1+q^-3+q^-5 = [6]_q exact (residual 9e-41 at 40 dps). (5) is (4) times [5]. Both quotient presentations follow. xi_2 = 1.4893071, which is 0.71 pct below 3/2 and justifies the block's title."
       }
     ],
     "trap-nonspeakable": [
@@ -1928,6 +2063,22 @@
         "reviewed_at": "2026-08-15T10:31:00.793Z",
         "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
         "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "e9eb1c8d7a64",
+          "ts": "98e0f0a40fdb"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:f02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T02:26:21.149Z",
+        "reviewed_sha": "dc7c16b2951776b2ad454f7fc75fd25bb3bd71b0",
+        "evidence": "Prose is speakable.",
+        "notes": "THREE RECOMPUTED FLAGS for the report, none of which touch the five proved identities. (1) 'closes m_mu/m_e via Vol(4_1)/hbar_q^2 to 0.034 pct of CODATA' does NOT reproduce: Vol(4_1)/hbar_q^2 = 206.768326 at the proton pin against CODATA 206.7682830, i.e. +2.10e-5 pct = 209.8 ppb - which is exactly the documented mu-p substrate tension - and it is identically zero at the muon pin, where the relation IS the pin. The quoted 0.034 pct is ~1600x too large and matches neither pin. (2) 'closes m_tau/m_e via Vol(10_43)/hbar_q^2 to +0.79 pct' omits the xi_3 factor and is impossible as written: m_tau/m_e = 3477.23 needs Vol/hbar^2 = 34.137 without xi_3, far outside any 10-crossing volume, whereas the cited witness carries Vol(10_43) = 13.83304617 and predicted_xi_3 = 2.4873628890, and xi_3 Vol/hbar^2 = 3504.8 gives exactly the witness's rel_err_percent = 0.79443. So the muon sentence needs xi_2 EXCLUDED and the tau sentence needs xi_3 INCLUDED, using the same formula template. (3) 'numerical cross-checks ... verify each identity' names 3 assertions for 5 identities; the two omitted are the trivial cross-multiplied consequences, so the logic is fine but 'each' overstates. WITNESS CHECKED: tau-amphichiral-sdp-probe.witness.json exists, allPassed true, q0Anchor proton - but its assertion muon_canonical_pin_consistency computes 206.768283, which is the MUON-pin value of Vol(4_1)/hbar_q^2, not the proton-pin 206.768326 the header declares; a two-layer straddle to triage."
       }
     ],
     "wall-base-ring-minimal": [
@@ -1951,5 +2102,5 @@
       }
     ]
   },
-  "updated_at": "2026-08-15T21:15:41.696Z"
+  "updated_at": "2026-08-22T02:26:21.149Z"
 }

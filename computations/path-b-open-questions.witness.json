@@ -1,8 +1,8 @@
 {
   "engine": "numpy",
   "engineVersion": "numpy 2.4.6",
-  "computedAt": "2026-08-15T20:42:24.269602+00:00",
-  "commitSha": "e8b02bc7c2ab4e82557f7f610a9686f3c90950f5",
+  "computedAt": "2026-08-21T14:57:33.594479+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "self_evacuating_eq_domino_count",
@@ -48,11 +48,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 774,
+  "durationMs": 2061,
   "computation": "path-b-open-questions",
   "scriptFile": "path_b_open_questions.py",
   "scriptHash": "0f6807149338",
-  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
+  "scriptCommitSha": "d882d17218e4ba101e32cf5905bce4f9b4ccfb81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -64,14 +64,13 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Resolve three open questions from path_b_evacuation: (1) why no self-paired SYT — connect to 2-core / domino-tableau count for (3,2,1); (2) refine SYT-level invariants — find which statistic best predicts diag(M) (descents, major index, Hoefsmit + count); (3) derive q^(1/5) — test fractional-power, corner-hook, and abelian-residue hypotheses.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": 1.1099785955573347,
+    "q_0": 1.1099785827513808,
     "cot_w_codata": 1.8230678710486174,
     "shape": [
       3,
@@ -82,7 +81,7 @@
   "data": {
     "syt_invariant_correlations": {
       "content_sum": [
-        0.03262383229938035,
+        0.03262383786263811,
         0.05481631871250128
       ],
       "max_diag_entry": [
@@ -90,19 +89,19 @@
         0.0
       ],
       "n_descents": [
-        -0.07075121907745603,
+        -0.07075121945687171,
         -0.1084652289093281
       ],
       "major_index": [
-        -0.02773130898046216,
+        -0.02773131208052533,
         -0.001483738317275951
       ],
       "n_plus": [
-        0.07536316900658438,
+        0.07536316696876577,
         -0.03757345746510897
       ],
       "n_minus": [
-        -0.1703023046089266,
+        -0.17030230186582787,
         -0.09706476511819816
       ],
       "comaj_charge": [
@@ -110,8 +109,8 @@
         0.0
       ]
     },
-    "multivariate_R2": 0.0847565216940015
+    "multivariate_R2": 0.08475652336168282
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

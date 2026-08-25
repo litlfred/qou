@@ -102,6 +102,7 @@ from hecke_characters import (  # noqa: E402
 )
 from witness_base import WitnessBuilder  # noqa: E402
 from partition_utils import hook_length_1based as hook_length  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def q_int(k: int, q_val: mpf) -> mpf:
@@ -309,7 +310,7 @@ def avg_content_for_braid(name: str, n: int, word: list[tuple[int, int]],
 
 
 def main() -> None:
-    mp.dps = 30  # f64 chi values limit downstream precision to ~16 dps
+    set_compute_dps()  # f64 chi values limit downstream precision to ~16 dps
     q_0 = mpf(Q_50_DIGIT_STR)
 
     cases = [
