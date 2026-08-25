@@ -1,11 +1,11 @@
 ---
 # qou-29hy
 title: 'law-of-sines Lean module has no lean.ref: QOU.Knot.IdealTetLawOfSines uncited corpus-wide'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T16:32:33Z
-updated_at: 2026-08-25T16:32:55Z
+updated_at: 2026-08-25T18:29:53Z
 ---
 
 ## Measured 2026-08-25 (fresh container, corrects my own earlier claim)
@@ -37,3 +37,23 @@ as a support lemma reached through `KummerRadial`.
 
 Being a standalone library `.lean` with no `.qa.json` sidecar, it is invisible
 to every per-block checker — nothing but an agent will notice it drift.
+
+
+## RESOLVED 2026-08-25 — support-lemma disposition (owner call)
+
+Owner chose "support lemma": no new content block. Verified the premise
+rather than assuming it — `KummerRadial.lean:41` imports the module and its
+docstring names `log_sin_sub_log_sin` as the mechanism.
+
+Enforcement added instead of a block: all 9 declarations pinned in
+`scripts/lean-axiom-guard.py`, measured by `#print axioms` against a
+lean-direct build of the 3-module cone. All return
+`[propext, Classical.choice, Quot.sound]` — zero `sorryAx`.
+`--filter IdealTet` green.
+
+Full guard still rc=2 on missing/stale `QOU.Mathlib*` oleans — pre-existing
+`qou-agrd`, stash-proved identical with and without these entries.
+
+Note for the next agent: the lean-direct oleans built here (3 modules) were
+NOT seeded to a `lake-cache/*` addon branch. Doing so would save the ~40s
+rebuild; skipped as out of scope.
