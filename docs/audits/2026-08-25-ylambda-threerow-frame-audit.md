@@ -280,3 +280,117 @@ separate read.
 Known instance already beaned by a sibling and not re-declared here:
 `qou-58w3` (`he4-two-row-dominance` pins a convention-C 866/1000 that D makes
 exactly 1).
+
+---
+
+## The arity question from #5744 — answered: the blocks stay, only the weight goes
+
+A sibling working the Frobenius co-Casimir term of the unified mass formula
+(#5744, bean `qou-bn8e`) asked whether "the ≥3-row stratum is a structural zero
+under D" means the block is **absent from `Â`** or **present with zero weight**,
+because `thm:frobenius-codim-universal` gives
+
+```
+τ(C_dim_q) = Σ_{λ ∈ Â} 1 / dim_q(λ)
+```
+
+and the two readings move Term 3 differently. The sibling was right that the
+distinction matters and right not to guess it.
+
+**It is the second reading. Every ≥3-row block is present in `Â` with a nonzero
+quantum dimension; only the weight the trace assigns it is zero. `τ(C_dim_q)` is
+unaffected, and Term 3 does not move.**
+
+### Why — the two symbols name different objects
+
+The vanishing theorem is about `wenzlWeight`, and the co-Casimir reads `dim_q`.
+They are separate functions and neither is defined in terms of the other:
+
+| | |
+|---|---|
+| `wenzlWeight r Q μ` | `schurPrincipal r Q μ / [r]_Q^{|μ|}` — the **weight** `y_λ` |
+| `dim_q(λ)` | `[n]_q! / ∏_x [h_x]_q` — the **quantum dimension** |
+
+`wenzlWeight_eq_zero_iff` concludes `wenzlWeight r Q μ = 0 ↔ r < μ.colLen 0`. It
+quantifies over *all* `YoungDiagram`s and removes nothing from any index set — it
+is a statement about the value of a weight function, not about the membership of
+a block. The co-Casimir never reads that function.
+
+### The vanishing is not a truncation, and that is the load-bearing part
+
+It is tempting to read `y_λ = 0` as Wenzl's root-of-unity truncation, in which
+the ≥(r+1)-row blocks really do leave the semisimple quotient. That is **not**
+what is happening at the substrate pin. `wenzlWeight_eq_zero_iff` carries the
+hypothesis `hQ : ∀ k : ℤ, k ≠ 0 → Q ^ k ≠ 1` — `Q` is explicitly **generic, not a
+root of unity**. The vanishing is the elementary fact that a Schur polynomial in
+`r` variables is identically zero when `ℓ(λ) > r`; `schurPrincipal r Q μ =
+s_μ(1, Q, …, Q^{r−1})` has only `r` variables.
+
+So at `q₀` no block is truncated away. `H_n(q)` is semisimple, every `λ ⊢ n` is a
+block of it, and each has a perfectly good nonzero `dim_q`. The docstring's
+remark that the vanishing "is the reason the level-`r` trace factors through the
+quotient by the ≥(r+1)-row blocks" is about a *quotient one may construct*; the
+co-Casimir as the corpus applies it is applied to `H_n(q)` itself.
+
+### Measured at the proton pin, n = 6, 40 dps, mpf end to end
+
+| λ | rows | `y_λ` | `dim_q(λ)` |
+|---|---|---|---|
+| (6) | 1 | 0.115324224902 | 1.0 |
+| (5,1) | 2 | 0.0789529624759 | 5.22044127533 |
+| (4,2) | 2 | 0.046032434692 | 9.66904824567 |
+| (4,1,1) | 3 | **0.0** | 10.6690482457 |
+| (3,3) | 2 | 0.015123810098 | 5.44860697034 |
+| (3,2,1) | 3 | **0.0** | 17.3446732767 |
+| (3,1,1,1) | 4 | **0.0** | 10.6690482457 |
+| (2,2,2) | 3 | **0.0** | 5.44860697034 |
+| (2,2,1,1) | 4 | **0.0** | 9.66904824567 |
+| (2,1,1,1,1) | 5 | **0.0** | 5.22044127533 |
+| (1⁶) | 6 | **0.0** | 1.0 |
+
+Seven of eleven blocks carry `y_λ = 0`. The **minimum** `dim_q` across those
+seven is `1.0`; none is zero. `Σ_λ 1/dim_q` over all eleven is
+`3.20213400122175`, against `1.47851063354769` over the ≤2-row blocks alone —
+the two readings differ by more than a factor of two, which is why the sibling
+was right to ask rather than assume.
+
+### The corpus settles it independently, and this is the strongest evidence
+
+`frobenius-codim-universal.lean` states its own worked specialisation in the
+header: *"n = 3: tr_M(C_dim_q) = 2 + 1/[2]_q"*. The partitions of 3 are `(3)`,
+`(2,1)` and `(1,1,1)` — and `(1,1,1)` has **three rows**. Measured:
+
+```
+(3)       rows=1  dim_q=1.0             y_λ=0.505404226504
+(2,1)     rows=2  dim_q=2.01089686671   y_λ=0.247297886748
+(1,1,1)   rows=3  dim_q=1.0             y_λ=0.0
+
+2 + 1/[2]_q                            = 2.497290545604915556
+Σ over ALL 3 blocks (incl. 3-row 1,1,1) = 2.497290545604915556   ✓
+Σ over ≤2-row blocks only               = 1.497290545604915556   ✗
+```
+
+The three-row block `(1,1,1)` contributes a full `1/dim_q = 1` to the corpus's
+own stated value while contributing zero weight. Had the ≥3-row blocks been
+absent from `Â`, the corpus's `n = 3` specialisation would read `1 + 1/[2]_q`.
+It does not.
+
+### The co-Casimir could not have been applied under the other reading anyway
+
+`SemisimpleFrobeniusAlgebra`, the class `thm:frobenius-codim-universal` is stated
+over, carries `dim_q_ne_zero : ∀ μ, dim_q μ ≠ 0` as a **hypothesis**. Under the
+first reading — blocks retained with vanishing quantum dimension — that
+hypothesis fails and `1/dim_q(λ)` is undefined, so the sum would not merely
+change value, it would not exist. Measured above: the hypothesis holds at every
+block of `n = 3` and `n = 6`.
+
+### Scope
+
+This answers the arity question and nothing more. It says the co-Casimir's index
+set and value are untouched by the D-frame stratum collapse; it makes no claim
+about any *other* consumer of `y_λ`, which is what the rest of this audit is
+about. The sibling's own invariance result is unaffected under either reading, as
+they stated.
+
+Reproduce: `dim_q` by the `q`-hook-length formula and `wenzlWeight` by the
+bialternant in `r = 2` variables, both at `mpf(Q_50_DIGIT_STR)`, `mp.dps = 40`.
