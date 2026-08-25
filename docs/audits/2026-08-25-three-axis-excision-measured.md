@@ -278,3 +278,34 @@ positive. Both counts are useful as alarms and neither is a work queue.
 | B | actionable convention-C sites | 14 | **9** on the merged tree (3 by this branch, the rest by `main`) |
 | C | `test_ctype_consumer_coverage` | **RED** (2 failures) | **PASS** (6 baselined, 0 unadjudicated) |
 | C | off-canon `pn_convention` baseline entries | 8 | **6** |
+
+
+## Correction: `Q0_FLIP: 0` is a weaker gate than this branch cited
+
+Raised by the sibling on PR #5765 and confirmed here against the audit's own
+source, not taken on trust. `q0_anchor_consistency_audit`'s docstring is
+explicit:
+
+> `Q0_OK` — anchor ∈ {muon,proton} **and `q0Value` matches that anchor's pin**
+
+It compares the two recorded **stamp fields to each other** — never against the
+constants the producer actually consumed. So a producer that copies
+`constants.q_0` out of an *input* witness inherits whatever pin that input
+carried, gets stamped from the manifest, and reports `Q0_OK` either way.
+`Q0_FLIP: 0` therefore means "no witness contradicts its own stamp", which is
+strictly weaker than "computed at the anchor it claims".
+
+**The conclusion it was cited for still holds, because the actual check was a
+different one.** For `signed_crossing_feasibility_probe` the pin was established
+by reading the *payload* — `constants.q0` is the proton value both before and
+after the re-run — against the code's `from q_parameter import Q_MP`. That is a
+comparison of the recorded value to the consumed constant, which is exactly what
+the audit does not do. What needs correcting is the framing: `Q0_FLIP: 0` was
+listed as part of the gate and is better described as a consistency check that
+happened to be green.
+
+This is the same failure class as axis A one layer up, and worth stating
+together: four producers hardcoded `Q0 = 1.1099785955573347` (the muon value)
+while one of them *labelled* that literal `# proton-pinned substrate modulus`.
+The stamp and the arithmetic are independently settable, and only one of them is
+audited.
