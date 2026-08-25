@@ -415,10 +415,14 @@ def main() -> int:
             print(f"    SKIPPED — {results[k]['reason']}")
             print(f"    (ρ_2 has dim 2 and β_EW(n=3) is degenerate;")
             print(f"     conjecture is not testable at this k)")
-            wb.add_assertion(
-                f"k{k}_skipped_due_to_degeneracy",
-                computed=True, expected=True,
-            )
+            # This was `computed=True, expected=True` — a skip MARKER dressed
+            # as an assertion, so it inflated `allPassed` with a control-flow
+            # fact (bean `qou-26f2`). A skip is data: it records what did not
+            # run, and nothing about it can fail. The real check for the k that
+            # DO run is the `k{k}_ratio_matches_q_root` assertion below, and
+            # `k3_residual_matches_q_one_fifth` above already had the right
+            # shape.
+            wb.add_data(f"k{k}_skipped_due_to_degeneracy", True)
             continue
         rel_err = results[k]["relative_error"]
         match = rel_err < 0.05  # 5% tolerance

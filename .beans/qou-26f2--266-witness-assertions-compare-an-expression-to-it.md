@@ -127,10 +127,10 @@ and are *not* urgent by the same argument: no block's status depends on them.
 - [x] `conj:schwinger-measure-computational-time` (4)
 - [x] `thm:topological-mass` (3)
 - [x] `prop:confinement-nf-partial-proof` (2)
-- [ ] `conj:staircase-ew-residual`
-- [ ] `prop:t-beta-markov-frobenius-collapse`
+- [x] `conj:staircase-ew-residual`
+- [x] `prop:t-beta-markov-frobenius-collapse`
 - [x] `rem:knot-operator-basis-table`
-- [ ] `rem:per-observable-100x-status-dashboard`
+- [x] `rem:per-observable-100x-status-dashboard`
 - [x] `conj:flavor-split-habiro-derivation`
 - [x] `rem:hecke-operations`
 - [x] `prop:bar-involution-invariance`
@@ -259,3 +259,66 @@ exclude. The scan is exploratory so the count cannot be pinned in advance;
 `len(candidates) > 0` can fail and is what the name claims.
 
 **7 of 10 done.** All seven files pass `assertions_are_falsifiable`.
+
+
+## Batch 4 landed 2026-08-25 — the impact set is DRAINED, 10/10
+
+- **`prop:t-beta-markov-frobenius-collapse`** (`qbeta_markov_trace_norm_probe.py`).
+  `shapes-differ-per-channel` compared `float(max_diff)` to itself with the
+  comment *"We just record the differences"* — right, and the reason it should
+  not have been an assertion. The name and the `source` both state the
+  checkable claim ("non-zero is expected"), so it is now
+  `bool(max_diff > 0)` against `True`, with the magnitude kept as data.
+- **`rem:per-observable-100x-status-dashboard`** (`per_observable_100x_status.py`).
+  A snapshot count has no external expectation, but it has an internal one: the
+  summary must agree with the rows serialised beside it. Now
+  `computed=len(out["rows"]), expected=out["summary"]["total"]` — which fails if
+  rows are filtered after the summary is built, the realistic way this
+  dashboard goes wrong.
+- **`conj:staircase-ew-residual`** (`staircase_ew_residual_conjecture.py`).
+  `k{k}_skipped_due_to_degeneracy` was a skip MARKER dressed as an assertion,
+  inflating `allPassed` with a control-flow fact. Demoted to `add_data`. The
+  file's `k3_residual_matches_q_one_fifth` already had the right shape.
+
+### One thing worth not misreading
+
+Re-running `qbeta_markov_trace_norm_probe.py` here reports a FAILURE — but it
+is **`L2-constraint-at-q0`, computed 3.455e-09 against tolerance 1e-9**, a
+pre-existing assertion unrelated to this change. My new assertion passes. The
+overshoot is 3.5x tolerance and this container is missing `scipy`, so it is
+most likely an environment precision gap rather than a corpus defect — but it
+is *not* verified as such, and someone should re-run it properly provisioned
+before assuming so. Recorded here rather than left in a terminal scrollback.
+
+## Status: impact set complete
+
+All 10 blocks that claimed `computation.status: "verified"` on the strength of
+a tautological assertion now have assertions that can fail. Every one of the 10
+producers passes `assertions_are_falsifiable`.
+
+**~250 sites remain**, all in scripts no content block cites. Not urgent by the
+argument that opened this drain: no block's status depends on them. They are
+now machine-visible — the criterion is `critical` in the registry and runs in
+the script sweep — so they surface on the gate rather than needing a census.
+
+### The four remedies, for whoever takes the rest
+
+1. **Supply the real expected value** — when one exists independently
+   (`KNOWN_P_N`, the e⁻ pair tables).
+2. **Assert the property the name claims** — when intent is recoverable
+   (`_finite`, `_completed`, `shapes-differ`).
+3. **Demote to data** — when no independent check exists. Looks like giving up;
+   is the only honest option, and the author is often already saying so in a
+   comment.
+4. **Move the check out of a bare `assert`** — when the script verifies
+   properly but the witness cannot show it.
+
+### Witnesses
+
+Not regenerated in any batch. Running the producers here rewrites the
+`environment` block and this container lacks `clarabel` and `pyhecke_native`
+and carries older `mpmath`; `WitnessBuilder` warns that the numbers can be
+identical while provenance silently degrades. Every producer was run to confirm
+its new assertions pass, then its witness reverted. **The witnesses want
+regenerating in a properly provisioned environment** — that is the one
+outstanding task from this drain.
