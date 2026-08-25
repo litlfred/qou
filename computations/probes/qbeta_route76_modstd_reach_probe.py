@@ -264,6 +264,29 @@ def main() -> int:
         "speedup_vs_finduni_budget_at_least": (
             G6_FINDUNI_BUDGET_MS // max(c1["elapsed_ms"], 1)),
         "both_classes_zero_dimensional": len(reached) == 2,
+        # INDEPENDENT CONFIRMATION, by a second agent on a second route.  Gate G7c of
+        # `qbeta_route76_strategy_matrix_probe.py` (PR #5761, on main) reaches 10_100's
+        # geometric obstruction class in 67.0 s under modStd + finduni and lands on the
+        # same shape field.  It was arrived at without reference to this probe; the two
+        # were reconciled only afterwards.  Its timing differs from the numbers above
+        # because it is a different machine and a different pipeline -- that the
+        # CONCLUSION survives both is the point, and the FIELD is the invariant, not the
+        # seconds.
+        "independent_confirmation": {
+            "probe": "qbeta_route76_strategy_matrix_probe.py",
+            "gate": "G7c",
+            "elapsed_s": 67.0,
+            "same_shape_field": True,
+            # G7c localises the misattribution more sharply than this probe does, and
+            # the second fact is the decisive one: minAssGTZ DID finish a class of
+            # 10_100 inside G6's own 600 s budget.  So G6 did not measure a manifold
+            # that cannot be reached -- it measured a class that is slower, and recorded
+            # the result against the manifold.
+            "the_wall_is_the_decomposition_not_the_groebner_basis":
+                "GB alone lands dim 0 in 87.6 s",
+            "the_wall_is_class_specific":
+                "minAssGTZ finished class 0 in 312 s -- INSIDE G6's own 600 s budget",
+        },
         "pass": len(reached) == 2,
     })
 
