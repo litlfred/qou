@@ -1,11 +1,11 @@
 ---
 # qou-iav7
 title: threerow_isospin_parity_probe has the same C/D straddle as qou-qdtk, and emits NO witness
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T19:29:30Z
-updated_at: 2026-08-25T21:28:53Z
+updated_at: 2026-08-25T21:47:22Z
 ---
 
 FOUND 2026-08-25 while draining `qou-qdtk` (PR for that is in flight). Not previously
@@ -91,3 +91,72 @@ Related: its one self-fulfilling assertion (`isospin_pattern_survives_fixed_n_co
 `add_assertion(name, holds, holds)`) is fixed in the `qou-ploj` PR — patched by AST and
 verified well-formed, but **not executed**, because the probe cannot be run to
 completion here. Flagged rather than claimed as verified.
+
+
+## RESOLVED 2026-08-25 — it now completes in 0.8 s, and says something true
+
+Repaired rather than retired: two of its three parts are convention-independent and
+were worth keeping. It runs to completion and emits the witness it never previously
+reached.
+
+**Corrected figure from this bean.** Above I wrote "n=18 ≈ 14 years/grid point",
+carried from the probe's own table. That table hardcoded `32.0 s/pt` at n=12. Measured
+on this container: **54.5 s/pt** (one grid point, ⁴He at q₀). Every projection was
+understated by ~1.7×, so n=18 is **23.1 yr/grid point**, not 14. The conclusion —
+⁶Li/⁷Li out of reach by orders of magnitude — is unaffected.
+
+### What it cannot do, measured
+
+`F_iso` sums only `len(lam) >= 3`, which convention D sets to zero for every `n`. So the
+controlled test returns the same answer for every isospin class *because it returns
+nothing*. Whole n=6 control, 0.6 s:
+
+```
+ case  (Z,N)  class    F(1.001)   F(1.05)   F(q0)    F(1.2)     F(2)
+ D     (1,1)  Z=N      0.0        0.0       0.0      7.42e-51   1.88e-46
+ pp    (2,0)  Z!=N     0.0        0.0       0.0      4.60e-51   2.12e-46
+ nn    (0,2)  Z!=N     0.0        0.0       0.0      7.41e-51   1.57e-46
+```
+
+### The trap, and it is this probe's own design that builds it
+
+Those residuals are round-off, they are **(Z,N)-dependent** — the braid word is by
+construction the only varying input, so the noise is exactly what varies with isospin —
+and the ordering is **not stable in q**: `D > nn > pp` at q=1.2 inverts to
+`pp > D > nn` at q=2.0. A bisect-on-sign-change over that yields isospin-correlated
+crossings that are artifact, and the old verdict (`predicted == observed` over
+`crosses_below_q0`) would have reported them as a surviving pattern.
+
+**A well-designed control over a null object manufactures precisely the correlation it
+was built to test for.** That is the generalisable lesson, and it is worse than an
+ordinary stale record: the better the control, the more convincing the artifact.
+
+### The unfinishable leg is unnecessary, not merely expensive
+
+The n=12 sweep is ~71 min measured. It is not run — and does not need to be, because
+the vanishing is proved for **all** n, so no compute returns anything but zero. 70 of
+77 partitions at n=12 are weight-zero. That is the resolution to "what can it compute
+at a runtime that exists": the expensive part was never the part that carried the
+answer.
+
+### Kept, dropped, added
+
+- **Kept**: the confound argument (Z=N ⟺ A even across all six — verified, assertion),
+  the cost law `Σ dim² = n!`, the interface census.
+- **Dropped**: C's `U_STAR`/`Q_STAR`, the "real-level branch", the "diagnostic ray", the
+  crossing sweep, `scan()`/`bisect()`, and the verdict-from-noise.
+- **Added**: four real assertions with independent expectations —
+  `wenzl_level_is_constant_two`, `controlled_object_is_structural_zero` (null tolerance
+  1e-30, chosen once against the C-era O(1) magnitudes and f64 noise),
+  `residual_ordering_is_unstable_in_q`, `a_ladder_confound_holds`.
+
+### One thing I nearly shipped
+
+Making the probe finish meant its cost table finally reached a witness — and the
+raw-float64 ratchet flagged **26 raw float64 fields** that had been latent in the file
+all along, invisible only because it never completed. `Σ dim²` and `n!` are exact
+integers, so `float(21!)` was discarding precision for nothing; they are now `int`, and
+the ratios/projections are `mpf`. Zero raw float64 in the emitted witness.
+
+**Scope-(a), about this instrument.** The isospin question is neither answered nor
+refuted. A probe that could address it must be built on an object D does not annihilate.
