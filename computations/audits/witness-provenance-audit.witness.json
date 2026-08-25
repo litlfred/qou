@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T18:37:32.295404+00:00",
-  "commitSha": "41389ea6bfa97321f5e31c62019c9e7a50640071",
+  "computedAt": "2026-08-25T19:06:17.883596+00:00",
+  "commitSha": "ff7e968871813eb34c4f91e332d3f4ec7b38607a",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 95,
+      "computed": 96,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 3,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2759,
+      "total_scanned": 2760,
       "prov_ok": 2337,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 244,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 95,
+      "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965567234505255527364987314244291409931134469010511054729975"
+      "completeness_ratio": "0.965217391304347826086956521739130434782608695652173913043478"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -9952,6 +9952,14 @@
         },
         {
           "witness": "qbeta-route75-multiknot-gluing-symbolic.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "qbeta-route76-modstd-reach.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

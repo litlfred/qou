@@ -1,11 +1,11 @@
 ---
 # qou-1jw9
 title: 'GAP: thm:wedderburn-mass-formula is unfalsifiable as written — no unique M_i, no producer'
-status: in-progress
+status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T16:37:08Z
+updated_at: 2026-08-25T18:17:41Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -462,3 +462,73 @@ false 'never existed' verdicts but never false 'exists' ones.
 So the table DOES have a producer.  What section 3a establishes is that the
 producer is not the published formula -- which is the stronger finding, not a
 weaker one.
+
+
+
+=== STATUS 2026-08-25T18:2xZ — coefficient sub-question CLOSED on main; PARENT GAP STILL OPEN ===
+
+Merged to main as dc72e4494 (PR #5771, rebase-merge; #5758 closed as superseded,
+branch retained per rule 9).  On main now:
+  computations/wedderburn_beta3_provenance_probe.py
+  content/quantum-observable-universe/lean/QOU/Mass/WedderburnMassFormulaCoefficients.lean
+
+UNCLAIMING deliberately (status -> todo).  I am no longer working this, and a
+bean left at in-progress reads as an ACTIVE CLAIM -- which is what triggered
+this very takeover.  Do not infer from the merge that the bean is done.
+
+WHAT IS CLOSED: only the third-coefficient question.  h_A^2 = [3]_q - 3 exactly
+(Lean, sorry-free); 0.0499 has no construction; the recorded pair violates
+2*b3 + b2 + 6 = 0 by 0.012385, so it is inconsistent for any q.
+
+WHAT IS STILL OPEN -- the bean's actual title.  thm:wedderburn-mass-formula
+remains UNFALSIFIABLE AS WRITTEN: its M_i prose still does not determine a
+unique construction, no reading reproduces D (54 % .. 2653 %), and the
+published table still has no producer that is the published formula.  The
+coefficient result NARROWS this (the correction term carries one q-integer
+DOF, not two); it does not close it.
+
+CHEAPEST NEXT STEP, if anyone picks this up: what the _deprecated/ producer's
+0.0499 actually was.  That is script archaeology on next_partition_levels.py's
+history, not physics -- and it is the only lead that does not require deciding
+the M_i reading first.
+
+STILL PROHIBITED, unchanged: no seventh Delta_lambda ansatz; only CAL-1/2/3
+admissible; no fitting (owner, 2026-08-25); sign agreement is one bit.
+
+TAKEOVER 2026-08-25T16:20Z. Prior session (session_01Y49zmah825kkwu2aB8CbAY) stalled on
+branch claude/phantom-witness-and-groundstate-2026-08-25 at 1d7bede2f (last commit
+12:37:25Z, >3h idle, PR #5758 draft, no reviews, no in-flight CI). Continuing from that
+tip on claude/agent-stalled-no-fitting-a5ur1w. Not force-pushing the stalled branch.
+
+Picking up its ONE stated open item: the published formula's h_A^2 = 0.043707282 and the
+recovered producer's beta3 = 0.0499 disagree by 14.2 %. Under the owner's no-fitting
+ruling that is an authoring call, but it is premature to ask it until the measurement is
+done: does the published formula, evaluated with h_A^2, reproduce the published table at
+all? The producer with beta3 does (20 rows, mean 0.074 %). If h_A^2 does not, the call is
+settled by measurement rather than by preference.
+
+
+RESOLVED the '#5758 Left open' item by measurement, PR #5773.
+
+beta3 = 0.0499 reproduces 20/20 published M_pred to 0.00049 MeV; the published
+h_A^2 = 0.0437073 reproduces 0/20 at the 3 dp the table quotes. Published
+summary figures are beta3's too (0.0740 % / 0.1917 % vs h_A^2's 0.0746 % /
+0.1909 %). So: the table is NOT the published formula's output -- confirmed.
+
+The OTHER branch of the disjunction is NOT supported and must not be quoted as
+if it were: on accuracy the two coefficients are indistinguishable, h_A^2 being
+marginally BETTER on the worst row. Phi_3 enters ~50x more weakly than Phi_1, so
+a 14.2 % coefficient change moves the table < 1 part in 30 000. The table
+carries NO evidence about which coefficient is correct. Scope (a).
+
+Foreclosed for beta3: not h_A^2 at either pin (both 0.0437062, flat to 13
+digits); ratio 1.1416862 = q0^1.26992, not an integer/half-integer power; 3 sig
+figs where alpha has 6 and beta2 has 7.
+
+NOT DONE, deliberately: regenerating the 20 published values under h_A^2. It is
+the option that would make the block's own 'zero fitted parameters' claim true
+and costs 0.0006 pp of mean accuracy, but changing twenty published numbers is
+the author's call. Replacement values are already in the probe's results block.
+
+Probe: computations/audits/wedderburn_beta3_vs_hA2_discrimination.py
+Audit:  docs/audits/2026-08-25-wedderburn-table-is-not-the-published-formula.md

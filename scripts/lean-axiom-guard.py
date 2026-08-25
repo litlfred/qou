@@ -120,6 +120,40 @@ QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTran
 QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule | clean
 QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_sum_V | clean
 QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwoSaddleSumRule_holds | clean
+# --- the REST of that law-of-sines module: support lemmas (bean qou-29hy) ---
+# The two entries above (`norm_eq_sin_div_sin`, `log_sin_sub_log_sin`) are the
+# ones the exposition blocks cite.  These seven are the rest of the module, and
+# they are pinned for a DIFFERENT reason, so they are listed separately rather
+# than folded into the block above.
+#
+# Disposition (owner call, 2026-08-25): `QOU.Knot.IdealTetLawOfSines` stays a
+# SUPPORT module and does NOT get its own content block.  The law of sines
+# already has paper presence -- a `## The law of sines` section in
+# `mass-theory/ideal-tetrahedron-relabelling-invariance.md`, and the identity
+# stated outright in `mass-theory/kummer-bloch-wigner-identity.md` -- so a block
+# would duplicate live prose.  It is reached through `QOU.Knot.KummerRadial`,
+# which imports it (`KummerRadial.lean:41`) and names
+# `IdealTetLawOfSines.log_sin_sub_log_sin` as the step that makes the two sides'
+# derivatives agree.
+#
+# Because no block will ever cite these seven, no `lean.ref` will ever point at
+# them, and the module has no `.qa.json` sidecar, they are invisible to every
+# per-block checker AND to the manifest.  A `sorry` reaching them would surface
+# in the two cited declarations only if it happened to lie on their path; these
+# seven close that gap.  `lean.ref` is singular and both neighbouring blocks
+# correctly point at their own claims, so the manifest cannot be the mechanism.
+#
+# Measured 2026-08-25 by `#print axioms` (not by grep), against a lean-direct
+# build of the 3-module cone (ClausenFunctionMathlibFiller ->
+# BlochWignerLobachevsky -> IdealTetLawOfSines): all nine declarations in the
+# module return [propext, Classical.choice, Quot.sound] -- zero sorryAx.
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.one_sub_ne_zero | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.ne_zero_of_im_pos | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂ | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃ | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_pos | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₃_pos | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.sin_tetAngle₂_eq | clean
 """
 
 
