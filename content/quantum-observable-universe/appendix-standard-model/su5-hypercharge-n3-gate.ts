@@ -17,6 +17,24 @@ export default remark({
   ],
   authorNotes: [
     {
+      kind: "caveat",
+      date: "2026-08-25",
+      body:
+        "**CORRECTION, same day, on the owner's one-word question 'SU(5) " +
+        "derived?'** The first merged version of this block opened *'SU(5) " +
+        "is not an import into this framework. It is already present, as " +
+        "level r=5 of the Wenzl tower.'* That over-claims, and in exactly " +
+        "the way AGENTS.md \u00a7'Conditional-proved \u2260 " +
+        "premise-established' names. What is present at r=5 is a VALUE OF A " +
+        "RATIONAL FUNCTION; ocneanu_param_eq_of_fibre_qdim is an " +
+        "IMPLICATION whose antecedent (a fibre of quantum dimension [5]_q, " +
+        "or [3]_q) no construction in this framework supplies. 'Already " +
+        "present' restated that hypothesis as fact. The block now opens by " +
+        "saying plainly that SU(5) is NOT derived, and the conditional is " +
+        "marked as one.",
+    },
+
+    {
       kind: "note",
       date: "2026-08-25",
       body:

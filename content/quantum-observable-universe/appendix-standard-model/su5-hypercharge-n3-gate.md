@@ -1,7 +1,10 @@
-$\mathrm{SU}(5)$ is not an import into this framework.  It is already present,
-as **level $r = 5$ of the same Wenzl tower whose level $r = 2$ is the
-framework's own fibre**.  The relevant statement is the Ocneanu parameter as a
-function of the level,
+**$\mathrm{SU}(5)$ is not derived here, and nothing below should be read as
+deriving it.**  What the framework possesses is a *ladder on which
+$\mathrm{SU}(5)$ would be a rung*, together with a proved statement about what
+occupying that rung would force.  It does not possess anything occupying it.
+The distinction is the whole content of this block.
+
+The ladder is the Ocneanu parameter as a function of the Wenzl level,
 
 $$
   z_r \;=\; \frac{q^{r}}{[r]_q},
@@ -15,12 +18,19 @@ $r$ is $\ell(\lambda) \le r$, so the tower is a ladder of admissible row counts:
 the framework stands on rung $2$, the flavour fundamental needs rung $3$, and
 $\mathrm{SU}(5)$ is rung $5$.
 
-**The rung fixes the trace parameter, with nothing left to choose.**  This is
-the content of the fibre-dimension result, which is proved for general $N$: a
-fibre of quantum dimension $\dim_q V = [N]_q$ forces $z\,[N]_q = q^N$.  So a
-genuinely five-dimensional fibre would carry $z = z_5$ as a consequence, not as
-a fit — the same way the two-dimensional fibre carries $z_2$.  Whatever else is
-uncertain here, the *parameter* is not a free one.
+**The rung would fix the trace parameter, with nothing left to choose.**  This
+is the fibre-dimension result, proved for general $N$: a fibre of quantum
+dimension $\dim_q V = [N]_q$ forces $z\,[N]_q = q^N$.  So a genuinely
+five-dimensional fibre would carry $z = z_5$ as a consequence rather than as a
+fit, exactly as the two-dimensional fibre carries $z_2$.
+
+That statement is a **conditional**, and its antecedent is not established.  No
+construction in this framework produces a fibre of quantum dimension $[5]_q$, or
+of $[3]_q$; the theorem says what would follow *if* one existed, and restating
+its hypothesis as though it held would be the error the framework's own
+discipline names — a conditional lemma proves the implication, never the
+premise.  What the corpus contains at $r = 5$ is a value of a rational
+function, not an object.
 
 **What is missing is therefore not the object but a mechanism to climb.**  The
 framework has no construction taking it from rung $2$ to any higher rung.  That
