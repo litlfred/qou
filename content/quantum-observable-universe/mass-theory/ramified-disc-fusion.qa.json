@@ -1295,7 +1295,8 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "Lean proof is missing because the Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is not found."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1853,7 +1854,8 @@
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
       },
       {
         "result": "pass",
@@ -1886,7 +1888,8 @@
         "reviewed_at": "2026-07-07T14:26:56.713410Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/ramified-disc-fusion.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

@@ -1159,7 +1159,8 @@
         "reviewed_at": "2026-07-07T14:26:57.185069Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1474,7 +1475,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured relations in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean."
+        "referee_argument": "The conjectured relations in 'Type-B Cartan folding realises CPT via symmetric-crystal $\\\\mathbb{Z}/2$ fixed points' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/type-b-folding-cpt.lean.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       },
       {
         "result": "pass",

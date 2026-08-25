@@ -1200,7 +1200,8 @@
         "reviewed_at": "2026-07-07T14:26:57.030357Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean sibling fails to compile, leading to divergence from the stated narrative."
       },
       {
         "result": "pass",
@@ -1405,7 +1406,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:34:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:34:13: error: unexpected token 'section'; expected 'lemma'",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/q-momentum.lean:34:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

@@ -525,7 +525,8 @@
         "reviewed_at": "2026-07-07T14:26:57.302227Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -594,7 +595,8 @@
         "reviewed_at": "2026-07-07T14:26:57.302227Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Per-nucleon channel decomposition via $S_3^A$ branching' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Per-nucleon channel decomposition via $S_3^A$ branching' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -665,7 +667,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean for 'Per-nucleon channel decomposition via $S_3^A$ branching' fails compilation with error: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean for 'Per-nucleon channel decomposition via $S_3^A$ branching' fails compilation with error: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean fails compilation: content/quantum-observable-universe/particle-interactions/per-nucleon-channel-decomposition.lean:25:51: error: failed to synthesize"
       },
       {
         "result": "pass",

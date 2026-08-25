@@ -1494,7 +1494,8 @@
         "reviewed_at": "2026-07-07T14:26:55.406038Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Integration of skewed-Poisson structures' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Integration of skewed-Poisson structures' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1598,7 +1599,8 @@
         "reviewed_at": "2026-07-07T14:26:55.406038Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1809,7 +1811,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation: content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean contains compilation errors: content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean fails compilation: content/quantum-observable-universe/models-of-qous/skew-poisson-integration.lean:38:12: error(lean.unknownIdentifier): Unknown constant `Nat.Prime`"
       },
       {
         "result": "pass",

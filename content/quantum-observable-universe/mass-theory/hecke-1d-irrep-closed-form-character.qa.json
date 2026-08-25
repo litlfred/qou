@@ -938,7 +938,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-06-24T12:07:53Z",
-        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43"
+        "reviewed_sha": "bc3d1b8b24b9279c2379e4628e437d0d03325d43",
+        "evidence": "The mechanical Bucket-B flag is rebutted: it caught an orphan §3b-cond audit stub at lean:248 in a namespace the lean.ref never resolves to; the referenced export at lean:225 is a sorry-free inductive proof of both 1-d character closed forms. Survivable objections: (i) the .md §3b-cond 'conditional on conj:borromean-quark' banner is unsupported — uses[] omits the conjecture and the real theorem is unconditional, a manifest/Lean divergence that over-states a dependency; (ii) the Lean proves power-bookkeeping for a free scalar λ_σ and never certifies λ_σ∈{+q,-q⁻¹} is forced by the Hecke quadratic relation, so the advertised eigenvalue-derivation is narrative-only. Neither impugns the closed-form character, which is true and proven."
       },
       {
         "field_hash": {

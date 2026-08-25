@@ -1562,7 +1562,8 @@
         "reviewed_at": "2026-07-07T14:26:55.002985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block exhibits post-hoc fitting of parameters and representations to match physical data.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The block exhibits post-hoc fitting of parameters and representations to match physical data."
       },
       {
         "result": "pass",
@@ -1827,7 +1828,8 @@
         "reviewed_at": "2026-07-07T14:26:55.002985Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The physical mapping of torus knots or moduli surfaces to particles/interactions is highly speculative."
       },
       {
         "result": "pass",
@@ -1896,7 +1898,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/torus-knot-generators.lean:36:30: error: unknown tactic"
       },
       {
         "result": "pass",

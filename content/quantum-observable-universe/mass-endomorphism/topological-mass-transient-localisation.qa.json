@@ -1635,7 +1635,8 @@
         "reviewed_at": "2026-07-07T14:26:56.153175Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1834,7 +1835,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing, preventing formal verification of the claims in 'Transient terms localise to exceptional divisors'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing, preventing formal verification of the claims in 'Transient terms localise to exceptional divisors'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-transient-localisation.lean is missing."
       },
       {
         "result": "pass",

@@ -1492,7 +1492,8 @@
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Markov-trace GNS embedding $H_\\\\infty(q) \\\\hookrightarrow L(\\\\mathcal{H})$ \u2014 operator-algebra route to the Archimedean side' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1557,7 +1558,8 @@
         "reviewed_at": "2026-07-07T14:26:56.548903Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1718,7 +1720,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean fails compilation: content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean contains compilation errors: content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/algebraic-gns-embedding.lean fails compilation: content/quantum-observable-universe/observations/algebraic-gns-embedding.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Topology/ContinuousFunction/Basic.olean' of module Mathlib.Topology.ContinuousFunction.Basic does not exist"
       },
       {
         "field_hash": {

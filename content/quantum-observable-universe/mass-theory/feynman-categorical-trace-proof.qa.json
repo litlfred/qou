@@ -1009,7 +1009,8 @@
         "reviewed_at": "2026-06-28T10:58:52.268Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1124,7 +1125,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, preventing formal verification of the claims in 'Proof of Feynman transition amplitude as categorical trace'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing, preventing formal verification of the claims in 'Proof of Feynman transition amplitude as categorical trace'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-theory/feynman-categorical-trace-proof.lean is missing."
       }
     ],
     "voice-probe-narrative": [

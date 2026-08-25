@@ -1632,7 +1632,8 @@
         "reviewed_at": "2026-07-07T14:26:56.234966Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1831,7 +1832,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.lean is missing.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.lean is missing, preventing formal verification of the claims in 'Global regularity of the $q$-deformed Navier--Stokes equation'.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.lean is missing."
       },
       {
         "result": "pass",

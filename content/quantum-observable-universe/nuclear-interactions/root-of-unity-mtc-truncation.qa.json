@@ -1245,7 +1245,8 @@
         "reviewed_at": "2026-07-07T14:26:57.171854Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "Conjectured block 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' has no Lean sibling, representing a minor structural gap.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjectured block 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' has no Lean sibling, representing a minor structural gap."
       },
       {
         "result": "pass",
@@ -1450,7 +1451,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic and physical relations in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' are unproven, and the sibling Lean file is missing entirely, preventing formal verification."
+        "referee_argument": "The conjectured algebraic and physical relations in 'At $q = e^{2\\\\pi i / k}$, the KLR algebra truncates to a Modular Tensor Category of non-abelian anyons' are unproven, and the sibling Lean file is missing entirely, preventing formal verification.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing."
       },
       {
         "result": "pass",

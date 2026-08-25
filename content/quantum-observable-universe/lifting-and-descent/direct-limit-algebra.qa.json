@@ -1129,7 +1129,8 @@
         "reviewed_at": "2026-07-07T14:26:55.688321Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Quantum Observable Universe as Direct Limit' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Quantum Observable Universe as Direct Limit' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1230,7 +1231,8 @@
         "reviewed_at": "2026-07-07T14:26:55.688321Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1435,7 +1437,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:32:29: error: expected token",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:32:29: error: expected token, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:32:29: error: expected token, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/lifting-and-descent/direct-limit-algebra.lean:32:29: error: expected token"
       },
       {
         "result": "pass",

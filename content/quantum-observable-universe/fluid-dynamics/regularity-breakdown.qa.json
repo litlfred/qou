@@ -1136,7 +1136,8 @@
         "reviewed_at": "2026-07-07T14:26:56.252119Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The prose in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1442,7 +1443,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'Regularity breakdown at $q = 1$: the classical limit as a phase transition' remain unproven and are represented as sorry stubs in the formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       },
       {
         "result": "pass",

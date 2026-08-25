@@ -1179,7 +1179,8 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs."
+        "notes": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs.",
+        "evidence": "The prose presents 'Modular $S$-transform $q \\\\leftrightarrow \\\\tilde q = \\\\exp(2\\\\pi i / \\\\tau)$ for Hecke parameter analytic continuation' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
@@ -1283,7 +1284,8 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1457,7 +1459,8 @@
         "reviewed_at": "2026-07-07T14:26:56.212353Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification."
+        "notes": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1493,7 +1496,8 @@
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/q-geometric-langlands/modular-s-transform-q-q-tilde.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -1741,7 +1745,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

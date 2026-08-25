@@ -995,7 +995,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.045868Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Substrate statement contains archimedean constructs."
+        "notes": "Substrate statement contains archimedean constructs.",
+        "evidence": "Substrate statement contains archimedean constructs."
       }
     ],
     "da-false-claim": [
@@ -1049,7 +1050,8 @@
         "reviewed_at": "2026-07-07T14:26:57.045868Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
       },
       {
         "result": "pass",
@@ -1217,7 +1219,8 @@
         "reviewed_at": "2026-07-07T14:26:57.045868Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling fails to compile, leading to divergence from the stated narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean sibling fails to compile, leading to divergence from the stated narrative."
       },
       {
         "result": "pass",
@@ -1422,7 +1425,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/q-energy.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling fails compilation with error: content/quantum-observable-universe/climax-volume-mass/q-energy.lean:27:13: error: unexpected token 'section'; expected 'lemma'",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling fails compilation: content/quantum-observable-universe/climax-volume-mass/q-energy.lean:27:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

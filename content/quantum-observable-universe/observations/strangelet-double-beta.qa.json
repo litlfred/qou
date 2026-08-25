@@ -804,7 +804,7 @@
           "in_degree": 1,
           "cone_size": 40,
           "depth": 21,
-          "pagerank": 9.5e-05,
+          "pagerank": 0.000095,
           "edge_span_max": 14,
           "edge_span_mean": 14,
           "worst_target": ""
@@ -1461,7 +1461,8 @@
         "reviewed_at": "2026-06-28T11:04:36.980Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Strangelet interactions descend from the degree-2 fiber via double beta decay' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Strangelet interactions descend from the degree-2 fiber via double beta decay' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1546,7 +1547,8 @@
         "reviewed_at": "2026-07-07T14:26:56.568353Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1727,7 +1729,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean contains compilation errors: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/strangelet-double-beta.lean fails compilation: content/quantum-observable-universe/observations/strangelet-double-beta.lean:66:52: error: unsolved goals"
       },
       {
         "field_hash": {

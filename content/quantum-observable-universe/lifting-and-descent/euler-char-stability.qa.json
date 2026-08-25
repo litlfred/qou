@@ -1509,7 +1509,8 @@
         "reviewed_at": "2026-07-07T14:26:55.684210Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
       },
       {
         "result": "pass",
@@ -1816,7 +1817,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/euler-char-stability.lean fails compilation with errors (../lifting-and-descent/euler-char-stability.lean:25:18: error(lean.inferBinderTypeFailed): Failed to infer type of binder `n`), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/euler-char-stability.lean fails compilation with errors (../lifting-and-descent/euler-char-stability.lean:25:18: error(lean.inferBinderTypeFailed): Failed to infer type of binder `n`), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility."
       },
       {
         "result": "pass",

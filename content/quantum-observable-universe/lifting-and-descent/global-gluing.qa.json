@@ -1491,7 +1491,8 @@
         "reviewed_at": "2026-07-07T14:26:55.651104Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Let (\\mathbf{C}, A, \\tau) be a' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
       },
       {
         "result": "pass",
@@ -1798,7 +1799,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/global-gluing.lean fails compilation with errors (../lifting-and-descent/global-gluing.lean:38:21: error: Function expected at), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/global-gluing.lean fails compilation with errors (../lifting-and-descent/global-gluing.lean:38:21: error: Function expected at), preventing formal verification of the claims in 'Let (\\mathbf{C}, A, \\tau) be a'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility."
       },
       {
         "result": "pass",

@@ -1508,7 +1508,8 @@
         "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1612,7 +1613,8 @@
         "reviewed_at": "2026-07-07T14:26:57.347792Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1823,7 +1825,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean for 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' fails compilation with error: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean for 'Confinement = KLR grading shift (conditional on Brundan–Kleshchev isomorphism + crystal-graph realisation)' fails compilation with error: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean fails compilation: content/quantum-observable-universe/particle-interactions/confinement-grading-correspondence-conditional.lean:25:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Order/Defs.olean' of module Mathlib.Order.Defs does not exist"
       },
       {
         "result": "pass",

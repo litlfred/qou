@@ -1831,7 +1831,8 @@
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean:48:3: error: Application type mismatch: The argument",
         "verdict": "open-objection",
-        "referee_argument": "The proposed formalization for 'Axiom 2 — observability via Peter--Weyl decomposition' (asserting 'For $\\mathbf{C} = \\mathbf{Rep}(U_{q}(\\mathfrak{g}))$ at generic $q$') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean:48:3: error: Application type mismatch: The argument. A competent referee cannot accept this as a verified mathematical claim."
+        "referee_argument": "The proposed formalization for 'Axiom 2 — observability via Peter--Weyl decomposition' (asserting 'For $\\mathbf{C} = \\mathbf{Rep}(U_{q}(\\mathfrak{g}))$ at generic $q$') fails to compile with error: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean:48:3: error: Application type mismatch: The argument. A competent referee cannot accept this as a verified mathematical claim.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/qou-exists-axiom-2.lean:48:3: error: Application type mismatch: The argument"
       },
       {
         "result": "pass",

@@ -1685,7 +1685,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-07-07T14:26:57.266789Z",
-        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c"
+        "reviewed_sha": "5155e1edd71e30397eaafae10ddf9ef1ddf1031c",
+        "evidence": "The resolved Lean (sibling-first per §0a) is : True := trivial — a no-shadowing-stub violation over a real same-FQN library decl, and a Bucket-B 'proved'-over-vacuous flag. The shadow is not even the worst problem: the real library decl proves only a 2×2 matrix non-equality, while the .md proposition claims a fully-proved LP-optimum / braid-image / uniqueness theorem for a physical confinement mechanism, and the downstream ConfinementLP backing discharges those sub-claims by logically-disconnected accessors (hopf_ne). corpus-grep finds the overclaim tracked, never closed, and the sibling caveat actively contradicts the selection claim. Multiple referee arguments survive. Downstream consumers (confined-particle, shell-closure-stability, nucleon-ordering-factorization) rely on it as a proved selection principle."
       },
       {
         "result": "pass",

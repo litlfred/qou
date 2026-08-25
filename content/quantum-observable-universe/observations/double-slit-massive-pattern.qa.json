@@ -802,7 +802,7 @@
           "in_degree": 1,
           "cone_size": 29,
           "depth": 16,
-          "pagerank": 9.5e-05,
+          "pagerank": 0.000095,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1472,7 +1472,8 @@
         "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'Massive-particle interference pattern' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Massive-particle interference pattern' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1537,7 +1538,8 @@
         "reviewed_at": "2026-07-07T14:26:56.531881Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1700,7 +1702,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation: content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean contains compilation errors: content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/double-slit-massive-pattern.lean fails compilation: content/quantum-observable-universe/observations/double-slit-massive-pattern.lean:67:2: error: No goals to be solved"
       },
       {
         "field_hash": {

@@ -1607,7 +1607,8 @@
         "reviewed_at": "2026-06-28T10:58:40.920Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, causing divergence from the fully-verified narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1672,7 +1673,8 @@
         "reviewed_at": "2026-06-28T10:58:40.952Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, indicating incomplete verification.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1734,7 +1736,8 @@
         "reviewed_at": "2026-06-28T10:58:40.901Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Bring residue → canonical resolvent form 1/(1 − h_q · q^{α_shift})' as verified, but the sibling Lean proof contains sorry stubs.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Bring residue → canonical resolvent form 1/(1 − h_q · q^{α_shift})' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
@@ -1768,7 +1771,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-06-24T13:22:51Z",
-        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6"
+        "reviewed_sha": "6d0885de28e290e1d247120ae212a62ad1adbad6",
+        "evidence": "The strongest objection is not the alleged sorry (there is none — the bucket flag's premise is imprecise) but a worse, verified defect: the live bring-residue-resolvent.lean does not compile under the pinned toolchain — four decide tactics on Rat-inverse propositions fail (L200/206/212/219), confirmed by lean-direct against live hash c1306e75c789 with a passing control proving decide works on plain Rat. The Phase-3 'sorry-free Lean witnesses' and the bring_residue_at_q_eq_2_cascade advertised in the .md do not exist, and the labels proved/sorry-free/closed form are false-as-applied. The lean.ref target bring_residue_equation itself compiles and is non-vacuous (mul_inv_cancel₀, real Field hypothesis), so the vacuity/self-assuming/trivial-True lenses are rebutted — but a build-broken file carrying a proved+sorry-free label is an open objection. Mechanically fixable (replace the 4 `unfold; decide` with native_decide or show;norm_num)."
       },
       {
         "field_hash": {
@@ -1787,7 +1791,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/bring-residue-resolvent.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -2079,7 +2084,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

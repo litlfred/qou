@@ -1178,7 +1178,8 @@
         "reviewed_at": "2026-07-07T14:26:55.607190Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
-        "notes": "Proposition contains interpretative physics text."
+        "notes": "Proposition contains interpretative physics text.",
+        "evidence": "Proposition contains interpretative physics text."
       }
     ],
     "fit-section-chapter": [
@@ -1312,7 +1313,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:55.607190Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
-        "notes": "Missing proof."
+        "notes": "Missing proof.",
+        "evidence": "Missing proof."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1782,7 +1784,8 @@
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The referenced Lean file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing, leading to complete divergence."
       },
       {
         "field_hash": {
@@ -2068,7 +2071,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing, preventing formal verification of the claims in 'Discrete iterations per Reeb circuit'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing, preventing formal verification of the claims in 'Discrete iterations per Reeb circuit'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/information-theory/reeb-operations-per-planck.lean is missing."
       },
       {
         "field_hash": {

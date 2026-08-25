@@ -1136,7 +1136,8 @@
         "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Carbon dioxide $CO_2$ as a molecular braid' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Carbon dioxide $CO_2$ as a molecular braid' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1240,7 +1241,8 @@
         "reviewed_at": "2026-07-07T14:26:55.494371Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1451,7 +1453,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation: content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:21:46: error: unknown tactic",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean contains compilation errors: content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:21:46: error: unknown tactic, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean fails compilation: content/quantum-observable-universe/molecular-construction/co2-molecular-braid.lean:21:46: error: unknown tactic"
       },
       {
         "result": "pass",

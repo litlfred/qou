@@ -1144,7 +1144,8 @@
         "reviewed_at": "2026-07-07T14:26:57.287172Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Down quark' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Down quark' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1248,7 +1249,8 @@
         "reviewed_at": "2026-07-07T14:26:57.287172Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/down-quark.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/down-quark.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1459,7 +1461,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/down-quark.lean fails compilation: content/quantum-observable-universe/particle-interactions/down-quark.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/down-quark.lean for 'Down quark' fails compilation with error: content/quantum-observable-universe/particle-interactions/down-quark.lean:30:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/down-quark.lean for 'Down quark' fails compilation with error: content/quantum-observable-universe/particle-interactions/down-quark.lean:30:13: error: unexpected token 'section'; expected 'lemma'. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/down-quark.lean fails compilation: content/quantum-observable-universe/particle-interactions/down-quark.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

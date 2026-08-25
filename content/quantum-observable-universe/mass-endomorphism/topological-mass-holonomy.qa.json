@@ -1635,7 +1635,8 @@
         "reviewed_at": "2026-07-07T14:26:56.149472Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1834,7 +1835,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing, preventing formal verification of the claims in 'Descended term is the unknot-core holonomy'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing, preventing formal verification of the claims in 'Descended term is the unknot-core holonomy'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/mass-endomorphism/topological-mass-holonomy.lean is missing."
       },
       {
         "result": "pass",

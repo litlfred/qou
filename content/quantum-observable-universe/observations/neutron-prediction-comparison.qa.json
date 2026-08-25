@@ -1461,7 +1461,8 @@
         "reviewed_at": "2026-07-07T14:26:56.493101Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Comparison of predicted and observed stable neutron numbers for $p \\\\leq 103$' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1541,7 +1542,8 @@
         "reviewed_at": "2026-07-07T14:26:56.493101Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1704,7 +1706,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation: content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean contains compilation errors: content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/neutron-prediction-comparison.lean fails compilation: content/quantum-observable-universe/observations/neutron-prediction-comparison.lean:38:39: error: failed to synthesize"
       },
       {
         "field_hash": {

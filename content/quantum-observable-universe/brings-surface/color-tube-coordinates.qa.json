@@ -1428,7 +1428,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/color-tube-coordinates.lean:72:2: error: ring_nf made no progress on goal"
       },
       {
         "result": "pass",

@@ -1132,7 +1132,8 @@
         "reviewed_at": "2026-07-07T14:26:56.444340Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Bundle initial conditions' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Bundle initial conditions' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1236,7 +1237,8 @@
         "reviewed_at": "2026-07-07T14:26:56.444340Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1447,7 +1449,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean fails compilation: content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean contains compilation errors: content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean contains compilation errors: content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean fails compilation: content/quantum-observable-universe/measurement-observation/bundle-initial-conditions.lean:31:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "result": "pass",

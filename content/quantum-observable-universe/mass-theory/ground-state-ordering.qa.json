@@ -1856,7 +1856,8 @@
         "reviewed_at": "2026-06-28T22:42:53.527Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "If the ordering breaks Lorentz invariance implicitly, the ground state physical plausibility is highly questionable."
+        "notes": "If the ordering breaks Lorentz invariance implicitly, the ground state physical plausibility is highly questionable.",
+        "evidence": "If the ordering breaks Lorentz invariance implicitly, the ground state physical plausibility is highly questionable."
       },
       {
         "result": "pass",
@@ -1933,7 +1934,8 @@
         "notes": "Referee verdict: open-objection. Objection: Sibling Lean file is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims."
+        "referee_argument": "The referenced Lean sibling file is missing, preventing formal verification of the claims.",
+        "evidence": "Referee verdict: open-objection. Objection: Sibling Lean file is missing."
       },
       {
         "field_hash": {
@@ -1979,7 +1981,8 @@
         "reviewed_at": "2026-06-28T10:58:49.111Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The referenced Lean file content/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/mass-theory/ground-state-ordering.lean is missing, leading to complete divergence."
       },
       {
         "field_hash": {
@@ -2034,7 +2037,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

@@ -1145,7 +1145,8 @@
         "reviewed_at": "2026-07-07T14:26:55.675904Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'The Kummer-tower perpetuity result' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'The Kummer-tower perpetuity result' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
       },
       {
         "result": "pass",
@@ -1451,7 +1452,8 @@
         "notes": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic or physical relations in 'The Kummer-tower perpetuity result' remain unproven and are represented as sorry stubs in content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean."
+        "referee_argument": "The conjectured algebraic or physical relations in 'The Kummer-tower perpetuity result' remain unproven and are represented as sorry stubs in content/quantum-observable-universe/lifting-and-descent/motivic-perpetual-obstruction.lean.",
+        "evidence": "Conjecture/Proof is open with sorry placeholders, hence the objection is survivable."
       },
       {
         "result": "pass",

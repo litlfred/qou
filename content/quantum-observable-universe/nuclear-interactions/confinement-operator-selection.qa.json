@@ -1621,7 +1621,8 @@
         "reviewed_at": "2026-07-07T14:26:57.345163Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1826,7 +1827,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing entirely, preventing formal verification of the claims in 'Confinement operator selection via topological Brunnian minimality'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing entirely, preventing formal verification of the claims in 'Confinement operator selection via topological Brunnian minimality'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/confinement-operator-selection.lean is missing."
       },
       {
         "result": "pass",

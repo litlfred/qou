@@ -1143,7 +1143,8 @@
         "reviewed_at": "2026-07-07T14:26:56.052511Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
+        "notes": "The prose in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
+        "evidence": "The prose in 'Conjecture (D24 Lusztig canonical basis closure, conditional on' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
       },
       {
         "result": "pass",

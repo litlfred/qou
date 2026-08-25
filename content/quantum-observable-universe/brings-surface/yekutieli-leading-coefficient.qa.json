@@ -1612,7 +1612,8 @@
         "reviewed_at": "2026-07-07T14:26:55.082130Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Divergence detected: Lean reference 'qou:QOU.Archimedean.yekutieli_leading_coefficient' is specified but the file content/quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.lean is missing.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Divergence detected: Lean reference 'qou:QOU.Archimedean.yekutieli_leading_coefficient' is specified but the file content/quantum-observable-universe/brings-surface/yekutieli-leading-coefficient.lean is missing."
       },
       {
         "result": "pass",
@@ -1810,7 +1811,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:yekutieli-leading-coefficient'.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing for 'lem:yekutieli-leading-coefficient', preventing formal verification of the claims.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:yekutieli-leading-coefficient'."
       },
       {
         "result": "pass",

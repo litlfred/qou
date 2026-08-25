@@ -1566,7 +1566,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-07-07T14:26:56.785534Z",
-        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc"
+        "reviewed_sha": "4969df905a8d555017a1d0756f02b58dea170ddc",
+        "evidence": "The central theorem calibrations_eq_cohomology proves NOTHING about cohomology: the CalibrationCohomologyAlignment structure carries the three equalities cal_i=hodge_i as axiomatic fields (align1/2/3) and the 'theorem' merely rewrites by them (:= by rw [A.align1,A.align2,A.align3]) — a self-assuming projection / def-disguised-True; yet .ts declares validation:'validated', kind proposition."
       },
       {
         "result": "pass",

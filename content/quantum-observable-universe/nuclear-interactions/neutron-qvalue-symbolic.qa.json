@@ -1758,7 +1758,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-06-24T06:07:15Z",
-        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782"
+        "reviewed_sha": "4f28e2af4bb71c61bdfe56fb63b1c64ceb134782",
+        "evidence": "The +0.17% Q_β match rides on the ansatz Q_β=|Δ(net)|·E_0 the cited audit labels 'POSTULATED, NOT DERIVED' (with net != the tr_M-weighted mass) — honestly disclosed, but the wired witness is a CODATA-masses witness (not a Q_β witness) and prose/ts name different scripts, a surviving reproducibility-wiring defect."
       },
       {
         "field_hash": {
@@ -1778,7 +1779,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing entirely, preventing formal verification of the claims in 'Symbolic $Q$-value of free neutron decay'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing entirely, preventing formal verification of the claims in 'Symbolic $Q$-value of free neutron decay'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing."
       },
       {
         "result": "pass",
@@ -1947,7 +1949,8 @@
         "reviewed_at": "2026-07-07T14:26:57.134928Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/neutron-qvalue-symbolic.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",

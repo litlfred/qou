@@ -1729,7 +1729,8 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -2024,7 +2025,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/tower-pair-equality-fixed-level.lean:36:40: error: invalid binder annotation, type is not a class instance"
       },
       {
         "field_hash": {

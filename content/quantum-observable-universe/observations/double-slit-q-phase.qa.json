@@ -1137,7 +1137,8 @@
         "reviewed_at": "2026-07-07T14:26:56.647110Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose presents '$q$-deformed path phase' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents '$q$-deformed path phase' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1241,7 +1242,8 @@
         "reviewed_at": "2026-07-07T14:26:56.647110Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The Lean sibling content/quantum-observable-universe/observations/double-slit-q-phase.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/observations/double-slit-q-phase.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1452,7 +1454,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/double-slit-q-phase.lean fails compilation: content/quantum-observable-universe/observations/double-slit-q-phase.lean:43:2: error: No goals to be solved",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling content/quantum-observable-universe/observations/double-slit-q-phase.lean contains compilation errors: content/quantum-observable-universe/observations/double-slit-q-phase.lean:43:2: error: No goals to be solved, invalidating the claimed formalization.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/observations/double-slit-q-phase.lean fails compilation: content/quantum-observable-universe/observations/double-slit-q-phase.lean:43:2: error: No goals to be solved"
       },
       {
         "result": "pass",

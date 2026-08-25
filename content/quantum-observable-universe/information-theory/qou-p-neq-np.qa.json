@@ -1243,7 +1243,8 @@
         "reviewed_at": "2026-07-07T14:26:55.616820Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "Conjectured block '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' has no Lean sibling, representing a minor structural gap.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjectured block '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' has no Lean sibling, representing a minor structural gap."
       },
       {
         "result": "pass",
@@ -1442,7 +1443,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured relations in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' are unproven, and the sibling Lean file is missing."
+        "referee_argument": "The conjectured relations in '$\\\\mathrm{P} \\\\neq \\\\mathrm{NP}$ at non-torsion $q \\\\in \\\\mathbb{G}_m$' are unproven, and the sibling Lean file is missing.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing."
       },
       {
         "result": "pass",
