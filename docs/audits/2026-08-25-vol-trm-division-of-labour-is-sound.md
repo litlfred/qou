@@ -75,3 +75,62 @@ ratios are not excised.
 - Addendum 4, 6, 7 — [Ito/Dehornoy audit](2026-08-25-ito-dehornoy-hyperbolicity-criterion.md)
 - The admitted fit — [sibling audit](2026-08-25-knot-id-is-an-admitted-fit.md)
 - Atlas provenance, unenforced — bean `qou-4b6g`
+
+---
+
+## Addendum — the charitable reading, measured (2026-08-25)
+
+Calling *"Same Markov class"* a category error is an **argument**, and it invites
+a charitable reply: *granted the phrasing is loose, but surely the two objects
+agree on the invariant that matters.* The Markov trace **is** that invariant — it
+is what `ρ(K)` in the mass law actually is, it is defined on **both** objects (on
+the atom element by linearity, on the knot braid as a braid), and it is a Markov
+invariant, so genuinely Markov-equivalent objects **must** agree on it.
+
+So the charitable reading is testable.
+[`atom_vs_atlas_markov_trace_probe.py`](../../computations/meson/atom_vs_atlas_markov_trace_probe.py),
+2 assertions, symbolic in `q`:
+
+$$\mathrm{tr}_M(\mathcal{B}_3) \;=\; -\,\frac{q^{12}-3q^{10}+2q^{8}-4q^{6}+2q^{4}-3q^{2}+1}{q^{4}\,(q^{2}+1)^{2}}$$
+
+| pair | difference |
+|---|---|
+| proton element − Borromean braid | **≠ 0** |
+| neutron element − Borromean braid | **≠ 0** |
+| proton element − neutron element | **≠ 0** |
+
+**They do not agree.** The charitable reading fails, exactly — which turns
+Addendum 6 from an argument into a measurement.
+
+**Three guards make the negative trustworthy.** *Same algebra*: `A = 1` gives
+`3A = 3` strands and `(σ₁σ₂⁻¹)³` is a 3-braid, both in `H₃`, so no stabilisation
+or normalisation mismatch. *Same convention*: both sides go through
+`markov_peel` / `markov_trace_canonical`, and the guard tests the **answer**
+rather than the source, per AGENTS.md — the `(q²+1)²` denominator is the
+convention-D peel signature, and there are no half-integer powers of `q`, which
+is what convention C would leave. (Deliberately **not** via
+`from_scratch/wenzl_y_axiomatic.py`, whose `z = 1/(q^{1/2}+q^{-1/2})` is
+convention C; that comparison would have measured the convention, not the
+objects.) *Symbolic*: no anchor, no dps, no float, so "agrees to N digits"
+cannot arise.
+
+### The third row is a sanity check, not a defect
+
+`p` and `n` share an atlas entry — both the Borromean link — so `Vol` is shared
+and the p–n difference must come from `ρ`. It does, and it factors:
+
+$$\mathrm{tr}_M(\mathfrak{p}) - \mathrm{tr}_M(\mathfrak{n}) \;=\; \frac{(q-1)(q+1)(q^{4}+1)(q^{4}+2q^{2}+2)}{4q\,(q^{2}+1)^{2}}$$
+
+**Vanishing at `q = 1`** — the splitting switches off in the classical limit,
+which is what it should do. So sharing a knot is deliberate and correct.
+
+### What it settles, and what it does not
+
+Settled: the atlas knot is **not** a Markov-equivalent stand-in for the atom
+element, in the one sense that could have rescued the sentence. The warrant gap
+above is real, not a phrasing quibble.
+
+Not settled, and not claimed: that the framework is wrong. This **confirms** the
+division of labour is a genuine split rather than a redundancy — the two objects
+really are different, and really are used for different factors. Scope **(a)**:
+two specific objects, `H₃`, convention D.
