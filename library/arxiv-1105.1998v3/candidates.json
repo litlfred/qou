@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1105.1998v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "daf3bffad8eb2749fdfcc69cde5ee683ab90c9a7f3007930e1b37b8d0da9e59a",
+  "file": "1105.1998v3.pdf"
+ },
+ "provenance": {
+  "title": null,
+  "authors": null,
+  "arxiv": {
+   "id": "1105.1998",
+   "version": "3",
+   "primary_class": "math.CA",
+   "stamp_date": "16 Dec 2011"
+  },
+  "doi": "10.3842/SIGMA.2011.115"
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "theorem": 2,
+   "lemma": 5,
+   "proposition": 1,
+   "corollary": 1
+  },
+  "formalization_candidates": 9
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "For any x \u2208 C\u2217 \\ [p\u03bd+2; p],",
+   "section_file": "sections/sec-001-2-the-connection-formula.md",
+   "section_title": "The connection formula",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "We assume that the function f can be p-Borel transformed to the analytic func-",
+   "section_file": "sections/sec-003-23-the-p-borel-transformation-and-the-p-laplace.md",
+   "section_title": "The p-Borel transformation and the p-Laplace transformation",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": null,
+   "statement": "For any k \u2208 N, \u03bb \u2208 C\u2217, we have",
+   "section_file": "sections/sec-003-23-the-p-borel-transformation-and-the-p-laplace.md",
+   "section_title": "The p-Borel transformation and the p-Laplace transformation",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": null,
+   "statement": "For any x \u2208 C\u2217 \\ (\u2212\u221e, 0] where arg x \u2208 (\u2212\u03c0, \u03c0 ), we have",
+   "section_file": "sections/sec-004-3-the-limit-of-the-connection-formula.md",
+   "section_title": "The limit of the connection formula",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4",
+   "name": null,
+   "statement": "For any \u03bd \u2208 C\u2217 \\ Z, we have",
+   "section_file": "sections/sec-004-3-the-limit-of-the-connection-formula.md",
+   "section_title": "The limit of the connection formula",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1",
+   "name": null,
+   "statement": "For any x \u2208 C\u2217 (\u2212\u03c0 < arg x < \u03c0 ), we have",
+   "section_file": "sections/sec-004-3-the-limit-of-the-connection-formula.md",
+   "section_title": "The limit of the connection formula",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": null,
+   "statement": "For any x \u2208 C\u2217 (\u2212\u03c0 < arg x \u2264 \u03c0 ) and \ufb01xed constant K, we have",
+   "section_file": "sections/sec-004-3-the-limit-of-the-connection-formula.md",
+   "section_title": "The limit of the connection formula",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "1",
+   "name": null,
+   "statement": "For any x \u2208 C\u2217 (\u2212\u03c0 < arg x \u2264 \u03c0 ), we have",
+   "section_file": "sections/sec-004-3-the-limit-of-the-connection-formula.md",
+   "section_title": "The limit of the connection formula",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": null,
+   "statement": "For any x \u2208 C\u2217 \\ (\u2212\u221e, 0] ( \u2212\u03c0 < arg x \u2264 \u03c0 ), we have",
+   "section_file": "sections/sec-004-3-the-limit-of-the-connection-formula.md",
+   "section_title": "The limit of the connection formula",
+   "pages": "6-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

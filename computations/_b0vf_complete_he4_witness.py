@@ -232,7 +232,7 @@ def main() -> int:
         "partial": False,
         "convention": "colour-weighted-averaged-crossing",
         "producer": "branch-decomp + chi_lambda_all_partitions_mpfr",
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",   # string: see chi_4he_via_rust_lossless
         "tr_M_at_q0": mp.nstr(s, 50),
         "tr_M_markov_peel_xref": mp.nstr(peel_he4, 50),
         "tr_M_dual_path_rel_gap": mp.nstr(rel_mp, 6),

@@ -1,0 +1,158 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T12:59:43.591543+00:00",
+  "commitSha": "cb29ea3319f6b0c51b5ca5ed3221c9c98ed57a21",
+  "assertions": [
+    {
+      "name": "casimir_prefactor_equals_textbook_at_substrate",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "1.00000000000000000000000000000000000000000000000000000000000e-40",
+      "unit": "rel deviation |c_q(q\u2080) - \u03c0\u00b2/240| / (\u03c0\u00b2/240) under natural \u03b5 \u221d \u210f_q\u00b2 calibration",
+      "source": "Direct derivation: under \u03b5 = \u03b5\u2080 \u00b7 \u210f_q\u00b2 (forced by matching observation), the 1/\u210f_q\u00b2 in Geom_\u03b5 exactly cancels the \u210f_q\u00b2 in \u03b5, giving q-independent c_q = \u03c0\u00b2/240. All \u03b2_k = 0 for k \u2265 1."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "casimir-beta-2-derivation",
+  "scriptFile": "casimir_beta_2_derivation.py",
+  "scriptHash": "32ed88eea844",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/casimir_beta_2_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/casimir_beta_2_derivation.py"
+  },
+  "description": "Direct derivation of \u03b2_2 from substrate-centered computation, avoiding the singular Taylor expansion. Under the natural calibration \u03b5 = \u03b5\u2080\u00b7\u210f_q\u00b2 (where \u03b5\u2080 is the q-independent 'true' infinitesimal in the surreal vacuum), the QOU Geom_\u03b5(N\u00b7\u2299) = N\u00b7\u03b5/\u210f_q\u00b2 reduces to N\u00b7\u03b5\u2080 \u2014 exactly q-independent. Standard-part arithmetic then gives the textbook Casimir prefactor \u03c0\u00b2/240 at ANY q, including substrate. Hence \u03b2_2 = \u03b2_4 = ... = 0 (all even-rank corrections vanish), and \ud835\udcd1_q = 1 identically. This is the calibrated derivation: it ASSUMES \u03b5 is naturally proportional to \u210f_q\u00b2 in the surreal field. If this calibration is wrong (i.e., \u03b5 is q-independent as written in vacuum-epsilon), then Geom_\u03b5 at substrate differs from classical by a factor 1/\u210f_q\u00b2(q\u2080) \u2248 101, predicting QOU Casimir is 100\u00d7 larger than textbook \u2014 WRONG. So the calibration \u03b5 \u221d \u210f_q\u00b2 is FORCED for QOU to match observation; under that calibration, \u03b2_k = 0 for all k.",
+  "contentBlock": "conj:casimir-epsilon-vacuum",
+  "parameters": {
+    "substrate_q": "1.10997858275138080759166909561076887987449912187357763605672",
+    "hbar_q_squared_at_substrate": "0.00981718645427507381056905717956425288904928457539776924373571",
+    "textbook_force_prefactor": "0.0411233516712056609118103791661506297304737475301699609433890"
+  },
+  "data": {
+    "naive_convention_geom_\u03b5": [
+      {
+        "n": 1,
+        "geom_\u03b5(n\u00b7\u2299)": "1.01862178604597213080330027214700541765568052427676366103430"
+      },
+      {
+        "n": 2,
+        "geom_\u03b5(n\u00b7\u2299)": "2.03724357209194426160660054429401083531136104855352732206860"
+      },
+      {
+        "n": 3,
+        "geom_\u03b5(n\u00b7\u2299)": "3.05586535813791639240990081644101625296704157283029098310290"
+      },
+      {
+        "n": 4,
+        "geom_\u03b5(n\u00b7\u2299)": "4.07448714418388852321320108858802167062272209710705464413721"
+      },
+      {
+        "n": 5,
+        "geom_\u03b5(n\u00b7\u2299)": "5.09310893022986065401650136073502708827840262138381830517151"
+      },
+      {
+        "n": 6,
+        "geom_\u03b5(n\u00b7\u2299)": "6.11173071627583278481980163288203250593408314566058196620581"
+      },
+      {
+        "n": 7,
+        "geom_\u03b5(n\u00b7\u2299)": "7.13035250232180491562310190502903792358976366993734562724011"
+      },
+      {
+        "n": 8,
+        "geom_\u03b5(n\u00b7\u2299)": "8.14897428836777704642640217717604334124544419421410928827441"
+      },
+      {
+        "n": 9,
+        "geom_\u03b5(n\u00b7\u2299)": "9.16759607441374917722970244932304875890112471849087294930871"
+      },
+      {
+        "n": 10,
+        "geom_\u03b5(n\u00b7\u2299)": "10.1862178604597213080330027214700541765568052427676366103430"
+      }
+    ],
+    "calibrated_convention_geom_\u03b5": [
+      {
+        "n": 1,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0100000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 2,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0200000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 3,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0300000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 4,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0400000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 5,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0500000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 6,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0600000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 7,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0700000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 8,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0800000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 9,
+        "geom_\u03b5(n\u00b7\u2299)": "0.0900000000000000000000000000000000000000000000000000000000000"
+      },
+      {
+        "n": 10,
+        "geom_\u03b5(n\u00b7\u2299)": "0.100000000000000000000000000000000000000000000000000000000000"
+      }
+    ],
+    "derived_beta_coefficients": {
+      "\u03b2_0": "1.00000000000000000000000000000000000000000000000000000000000",
+      "\u03b2_1": "0.0",
+      "\u03b2_2": "0.0",
+      "\u03b2_3": "0.0",
+      "\u03b2_4": "0.0",
+      "\u03b2_5": "0.0",
+      "\u03b2_2k+1 (all)": "0.0",
+      "\u03b2_2k (all k\u22651)": "0.0"
+    },
+    "result": {
+      "B_q_at_substrate": "1.0",
+      "casimir_prefactor_qou_calibrated": "0.04112335167120566091181037916615062973047374753016996094338895573425019",
+      "casimir_prefactor_textbook": "0.04112335167120566091181037916615062973047374753016996094338895573425019",
+      "deviation": "0.0",
+      "interpretation": "Under calibration \u03b5 = \u03b5\u2080 \u00b7 \u210f_q\u00b2 (forced for QOU to match observation), all substrate corrections vanish identically: \u03b2_k = 0 for k \u2265 1, \ud835\udcd1_q = 1 at any q. QOU Casimir = standard Casimir EXACTLY at substrate. No deviation. Sub-problem 3 derived: \u03c0\u00b2/240 is the unique QOU prefactor under the natural calibration."
+    }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.substrate_q). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

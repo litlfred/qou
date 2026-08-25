@@ -1,0 +1,105 @@
+We view that space as a completed graded algebra, in
+which acts the operator
+
+Aj :=Id+ SO eas, (33)
+
+wEennd
+
+and to which we extend .7 J by declaring that
+ST e-#7 UV] =e ** STW, the upshot being
+
+SI+ = S!- ok, (34)
+
+at least in restriction to those transseries of
+Réelle“*]]_ all of whose components satisfy the
+growth and convergence requirements needed for (28).
+
+We can now reach a more conceptual understanding
+of Theorem 3 and the identities (12):
+
+e The identities (12) express that Aj is an algebra
+endomorphism, which is no surprise since (34) in-
+volves two algebra homomorphisms 77+.
+
+e The formulas expressing A,,. in terms of
+Az... Af, alluded to right after the statement
+of Theorem 3 are just the homogeneous compo-
+
+nents of the relation
+
+log Af = SD ec ¥Ag, (35)
+
+weand
+which is the true origin of formula (11).
+
+e In the context of a completed graded algebra like
+ours, the logarithm of an algebra automorphism is
+always a derivation, and the homogeneous com-
+ponents of a derivation are all derivations, this
+explains why each A,, is a derivation of RQ.
+
+Definition 7. The operator Ay is called the symbolic
+Stokes automorphism in the direction d = e!Ryo.
+The operator Ag := log Aj is called the directional
+alien derivation in the direction d.
+
+Here we see how we can go beyond the traditional
+theory of asymptotic series, in which a function is de-
+termined by its asymptotics only up to an infinitely
+flat function. In the framework of 1-Gevrey asymp-
+totics, flat functions are in fact exponentially small,
+and the previous computation offers a glimpse of how
+the resurgent tools gives us a handle on the exponen-
+tially small ambiguities inherent to the situation.
+
+The point is that Ay is an algebra automorphism
+that commutes with & and composition with z +>
+
+z+a, and thus preserves the property of being a formal
+solution to a differential or difference equation. One
+can construct other such automorphisms; the simplest
+example is (At)”, with arbitrary w € C, which can
+be written as a mould expansion:
+
+(36)
+
+with the notation ||w 1 -++w,|| = w1+---+w,. The case
+w= +3 gives rise to the median summation operator,
+Sox = SI+ 0 (At)-2 = SI 0 (At)?, especially
+useful when 0, = 0 and real symmetry is at play.
+
+All this can be particularly relevant in physics,
+where one often starts by developing a so-called per-
+turbative theory, where various formal expansions nat-
+urally appear; but then, if they can be subjected to
+the resurgent apparatus, one may hope to incarnate
+them as functions with meaningful exponentially small
+contributions related to non-perturbative physics...
+
+4 The algebra R of general resurgent
+singularities
+
+We now relax one by one the two requirements im-
+posed by Definition 1, namely that the only obstacles
+to analytic continuation may occur at points of a given
+lattice Q and that the singularities are no worse than
+simple.
+
+4.1 Relaxing the constraint on the location of
+singularities.
+
+Definition 8. We call endlessly continuable any @(¢)
+analytic near 0 for which, for every real L > 0, there
+exists a finite subset F, of C such that G(¢) can be
+analytically continued along every Lipschitz path of
+length < L starting in the initial domain of definition
+of @ and avoiding Fy.
+
+Variants are possible—see [CNP93; KS20], or
+[Eca85] for the most general definition (‘continuable
+with no cut’). The point is that singular points are
+possibly very numerous but, in a sense, still isolated.
+This leaves room for a behaviour such as the one en-
+visioned by Voros [Vor83b]: there may exist a dense
+subset 2 of C such that, at every point of 2, at least
+one of the branches of the analytic continuation of @ is

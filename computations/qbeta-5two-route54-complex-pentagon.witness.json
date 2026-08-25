@@ -1,0 +1,122 @@
+{
+  "probe": "qbeta_5two_route54_complex_pentagon",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 70,
+  "follows": "Route 53 (the constant pinned)",
+  "lean": "QOU/QBeta/FiveTwoComplexPentagon.lean -- pentagonSum_eq_pi_sq_div_two",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the ONE-variable complex five-term identity: for real a in (0,1) and every w off both real cuts, the Rogers pentagon sum is exactly pi^2/2. 30 pairs, including |w| = 40, w straddling both cuts, and w within 1e-8 of the real axis. This is the numerical shadow of the Lean theorem pentagonSum_eq_pi_sq_div_two, which is unconditional and sorry-free",
+      "pairs_tested": 30,
+      "max_abs_deviation": "1.4517358e-70",
+      "sample": [
+        {
+          "a": "0.05",
+          "w": "(1.5 + 0.8j)",
+          "w_off_both_cuts": true,
+          "abs_dev": "7.2445433e-71"
+        },
+        {
+          "a": "0.05",
+          "w": "(-2.0 + 0.5j)",
+          "w_off_both_cuts": true,
+          "abs_dev": "7.2445433e-71"
+        },
+        {
+          "a": "0.05",
+          "w": "(0.2 - 3.0j)",
+          "w_off_both_cuts": true,
+          "abs_dev": "0.0"
+        },
+        {
+          "a": "0.05",
+          "w": "(5.0 + 0.01j)",
+          "w_off_both_cuts": true,
+          "abs_dev": "3.6222716e-71"
+        },
+        {
+          "a": "0.05",
+          "w": "(-40.0 - 0.001j)",
+          "w_off_both_cuts": true,
+          "abs_dev": "7.2445433e-71"
+        },
+        {
+          "a": "0.05",
+          "w": "(0.5 + 1.0e-8j)",
+          "w_off_both_cuts": true,
+          "abs_dev": "1.3494013e-79"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the base region is right: on the positive real square the same sum is pi^2/2, which is where the corpus's already-proved REAL five-term identity (FiveTwoAbelFiveTerm.rogersL_fiveTerm) pins the constant. Three reflections convert Abel's arguments into the pentagon's, at a cost of 3*pi^2/6",
+      "max_abs_deviation": "7.2445433e-71",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE NEGATIVE THAT MATTERS. The one-variable restriction is NOT an artefact of the proof. With BOTH variables non-real the identity is false, and the deviation is not even a REAL multiple of pi^2 -- it carries a non-zero imaginary part, so it is a (2 pi i)*(log combination) and not a flattening integer. So no sharpening of the same argument reaches the two-variable case",
+      "cases": [
+        {
+          "x": "(2.0 + 0.5j)",
+          "y": "(1.5 - 0.9j)",
+          "both_off_cuts": true,
+          "dev_over_pi_sq": "(-0.077979130377369 + 0.23028430838781j)",
+          "dev_is_integer_multiple_of_pi_sq": false
+        },
+        {
+          "x": "(-1.0 + 0.3j)",
+          "y": "(3.0 + 2.0j)",
+          "both_off_cuts": true,
+          "dev_over_pi_sq": "(-0.074714528064925 + 0.49460912317053j)",
+          "dev_is_integer_multiple_of_pi_sq": false
+        },
+        {
+          "x": "(0.5 + 3.0j)",
+          "y": "(0.5 - 3.0j)",
+          "both_off_cuts": true,
+          "dev_over_pi_sq": "(-0.44743154328875 + 0.35405983474375j)",
+          "dev_is_integer_multiple_of_pi_sq": false
+        },
+        {
+          "x": "(2.0 + 0.1j)",
+          "y": "(2.0 - 0.1j)",
+          "both_off_cuts": true,
+          "dev_over_pi_sq": "(-0.015902251256176 + 0.22103299097857j)",
+          "dev_is_integer_multiple_of_pi_sq": false
+        }
+      ],
+      "all_off_cuts": true,
+      "none_is_integer_multiple": true,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the consequence for the 5_2 lane, exactly located. The theorem REACHES the mixed pair (y_3, y_1) -- the cubic's real root against a complex one, since y_3 = 0.43016 lies in (0,1) -- and DOES NOT reach (y_1, conj y_1), which is the pair Vol(5_2) = 3*D(y_1) actually needs. Same obstruction Routes 45-46 measured, now with an address",
+      "y_real": "0.43015970900194673409",
+      "y_upper": "(0.78492014549902663296 + 1.3071412786820454805j)",
+      "y_real_in_unit_interval": true,
+      "dev_mixed_pair_over_pi_sq": "(7.34025698362e-72 - 1.8350642459e-72j)",
+      "dev_conjugate_pair_over_pi_sq": "(-0.327865386529 + 0.134262906747j)",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the target is unmoved. A = sum Li2(y_j) still has no proof. G1 is a theorem about pairs one of whose members is real, G3 is a negative, G4 says the pair the volume needs is on the wrong side of it. This gate exists so none of it can be read as progress toward the sum rule",
+      "A": "0.971730681468648259127774169939",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "proved": "the complex five-term identity for the Rogers dilogarithm holds unconditionally whenever ONE variable is real in (0,1) and the other is anywhere off both real cuts. Sorry-free in Lean, standard axioms.",
+    "negative": "with BOTH variables non-real it is false, and the deviation is not even a real multiple of pi^2 -- it has a non-zero imaginary part.",
+    "for_the_lane": "reaches the 5_2 pair (y_3, y_1); does not reach (y_1, conj y_1), which is the pair Vol(5_2) needs.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

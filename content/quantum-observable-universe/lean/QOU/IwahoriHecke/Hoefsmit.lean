@@ -1,5 +1,6 @@
 import QOU.IwahoriHecke.TypeA
 import QOU.IwahoriHecke.MarkovTrace
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # `QOU.IwahoriHecke.Hoefsmit` — Hoefsmit seminormal basis (Sprint 5)
@@ -84,7 +85,7 @@ operator-valued type once Hoefsmit lands.
 
 Refs:
 - [hoefsmit1974] PhD thesis, UBC. Seminormal basis for Iwahori-Hecke
-- [halverson-1998-markov-weights] DOI 10.1006/jabr.1998.7437
+- [orellana1998] DOI 10.1006/jabr.1998.7437
 - [wenzl1988] DOI 10.1007/BF01404457
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 - [manuscript] content/.../hecke-branching-trace-decomposition.md
@@ -190,6 +191,21 @@ noncomputable def qBracket (R : Type v) [Field R] (q : R) (k : ℤ) : R :=
     (q^k - q^(-k)) / (q - q⁻¹)
   else
     (k : R)  -- classical limit at q = ±1
+
+/-- **Bridge to the canonical integer-indexed bracket** — conditional, and the
+hypotheses are the guard itself.
+
+This is the one corpus definition that guards `q = 1` and `q = −1` *by name*
+rather than through the denominator, and the difference is real: at `q = 0`
+(where Lean's `0⁻¹ = 0` makes `q − q⁻¹ = 0`) this site takes the formula branch
+and returns `0`, whereas the denominator-guarded `qIntBalClSing` returns `k`.
+So the tie is to the plain `qIntBalZ` under the guard's own hypotheses, not to
+either classical extension. -/
+theorem qBracket_eq_canonical {R : Type v} [Field R] (q : R) (k : ℤ)
+    (h1 : q ≠ 1) (hm : q ≠ -1) :
+    qBracket R q k = QOU.QInteger.qIntBalZ q k := by
+  unfold qBracket QOU.QInteger.qIntBalZ
+  rw [dif_pos ⟨h1, hm⟩]
 
 /-- **q-bracket at q = 1 limit** (classical case). -/
 theorem qBracket_at_one (R : Type v) [Field R] (k : ℤ) :

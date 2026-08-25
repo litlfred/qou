@@ -1,9 +1,0 @@
----
-# qou-ed5h
-title: Prove SpechtIrreducible.specht_form_nondegenerate
-status: todo
-type: task
-created_at: 2026-08-04T10:24:55Z
-updated_at: 2026-08-04T10:24:55Z
----
-

@@ -24,20 +24,57 @@ script as `ok_acknowledged_anchor` rather than as a registry-bypass
 violation.
 """
 
-# ── Fundamental constants (CODATA 2022) ─────────────────────────
 
-M_E_MEV     = 0.51099895000   # ± 0.00000000015 MeV
-M_E_MEV_ERR = 0.00000000015
+# Path bridge (subdirectory refactor — Phase 6, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+del _sys, _Path
+
+# ── Fundamental constants (CODATA 2022) ─────────────────────────
+# Single source of truth: codata_2022_source.M_E_MEV = 0.51099895069(15)
+# MeV (full 11-sig-fig CODATA-2022; same module codata_constants.py
+# imports from). float()-cast on import so the ~266 importers' float
+# arithmetic / json.dumps stay intact (an mpf would break json.dumps);
+# the cast value is bit-identical to the prior literal. The old literal
+# 0.51099895000 was truncated by 3 figs. The computations/ dir is on
+# sys.path via the path bridge above, so this resolves cleanly.
+# READ from the registry -- this file already did so for M_E_MEV and
+# hardcoded everything else, which is how the CODATA-2018 values below
+# survived under 2022 labels (drain qou-7ot6-a, 2026-08-21).
+from codata_2022_source import (  # noqa: E402
+    M_E_MEV as _M_E_MEV,
+    M_E_MEV_ERR as _M_E_MEV_ERR,
+    M_P_MEV as _M_P_MEV,
+    M_P_MEV_ERR as _M_P_MEV_ERR,
+    M_N_MEV as _M_N_MEV,
+    M_N_MEV_ERR as _M_N_MEV_ERR,
+    M_N_MINUS_P_MEV as _M_N_MINUS_P_MEV,
+    M_N_MINUS_P_MEV_ERR as _M_N_MINUS_P_MEV_ERR,
+    M_MU_OVER_M_E as _M_MU_OVER_M_E,
+    M_MU_OVER_M_E_ERR as _M_MU_OVER_M_E_ERR,
+)
+M_E_MEV     = float(_M_E_MEV)
+M_E_MEV_ERR = float(_M_E_MEV_ERR)   # was 0.00000000015; table says ...16
 
 # Energy scale for Q-values: κ = m_e / 3
 # This is E_× × μ₀ where E_× = ½(q−q⁻¹)×m_e c² and μ₀ = m_e/(3×E_×).
 KAPPA       = M_E_MEV / 3.0   # 0.170333 MeV
 
-M_P_MEV     = 938.27208816    # ± 0.00000029 MeV
-M_P_MEV_ERR = 0.00000029
+M_P_MEV     = float(_M_P_MEV)       # was 938.27208816 (CODATA-2018)
+M_P_MEV_ERR = float(_M_P_MEV_ERR)
 
-M_N_MEV     = 939.56542052    # ± 0.00000054 MeV
-M_N_MEV_ERR = 0.00000054
+# NOTE: the registry's M_N_MEV is the AME-DERIVED neutron mass
+# (939.56542179), not the CODATA-direct 939.56542194. That is the corpus's
+# deliberate choice -- see codata_2022_source -- so reading the registry
+# follows it rather than the raw table. The literal here was 939.56542052,
+# the CODATA-2018 DIRECT value: wrong edition and wrong determination.
+M_N_MEV     = float(_M_N_MEV)
+M_N_MEV_ERR = float(_M_N_MEV_ERR)
 
 # ── Free neutron beta-decay Q-value (CODATA 2022) ────────────────
 # n → p + e⁻ + ν̄ₑ,  Q = m_n − m_p − m_e
@@ -53,12 +90,23 @@ M_N_MEV_ERR = 0.00000054
 #           = 0.78233341 MeV
 # δQ = sqrt(δm_n² + δm_p² + δm_e²)
 #    = sqrt(5.4e-7² + 2.9e-7² + 1.5e-16²) ≈ 6.1e-7 MeV
-M_N_MINUS_P_MEV     = 1.2933321    # ± 0.0000005 MeV  (direct CODATA 2022 value)
-M_N_MINUS_P_MEV_ERR = 0.0000005    # https://physics.nist.gov/cgi-bin/cuu/Value?mnmpm
+# Was the literal 1.2933321 labelled "direct CODATA 2022 value" -- 320 ppb
+# from the actual 2022 entry (1.29333251). Now read from the registry, where
+# codata_table_vintage_audit checks it against the NIST table.
+M_N_MINUS_P_MEV     = float(_M_N_MINUS_P_MEV)
+M_N_MINUS_P_MEV_ERR = float(_M_N_MINUS_P_MEV_ERR)
 
 import math as _math
 Q_NEUTRON_MEV     = M_N_MEV - M_P_MEV - M_E_MEV            # 0.78233341 MeV
 Q_NEUTRON_MEV_ERR = _math.sqrt(M_N_MEV_ERR**2 + M_P_MEV_ERR**2 + M_E_MEV_ERR**2)
+
+# m_n via the 3-input scheme (m_n = m_p + Q_β + m_e) — the canonical anchor
+# list pins m_p, m_e and the β-decay sector, deriving m_n rather than using
+# it as a 4th input. Numerically identical to M_N_MEV by construction
+# (Q_NEUTRON_MEV = M_N_MEV − M_P_MEV − M_E_MEV), so this is the same CODATA
+# value, named for the 3-input consumers. Restores the missing export that
+# delta_lambda_empirical_tabulation.py imports (bean t2vq).
+m_n_derived_3input = M_P_MEV + Q_NEUTRON_MEV + M_E_MEV     # = M_N_MEV
 
 G_F_MEV     = 1.1663788e-11   # ± 0.0000006e-11 MeV⁻²
 G_F_MEV_ERR = 0.0000006e-11
@@ -66,11 +114,49 @@ G_F_MEV_ERR = 0.0000006e-11
 HBAR_MEV_S  = 6.582119569e-22 # ± 0.000000030e-22 MeV·s (exact in SI since 2019)
 HBAR_MEV_S_ERR = 0.0          # exact by definition
 
-ALPHA_EM_INV     = 137.035999084  # ± 0.000000021 (CODATA 2018, Cs recoil)
+# noqa: P31 - DELIBERATE determination choice, not a stale edition. The
+# Cs-recoil value is retained on purpose; CODATA-2022 would be a
+# different determination, not merely newer digits.
+ALPHA_EM_INV     = 137.035999084  # noqa: P31 - CODATA 2018, Cs recoil, +/- 21e-9
 ALPHA_EM_INV_ERR = 0.000000021
 
-MU_OVER_E        = 206.7682830    # ± 0.0000046 (CODATA 2022)
-MU_OVER_E_ERR    = 0.0000046
+MU_OVER_E        = float(_M_MU_OVER_M_E)      # was 206.7682830 (CODATA-2018)
+MU_OVER_E_ERR    = float(_M_MU_OVER_M_E_ERR)
+
+TAU_OVER_E       = 3477.23        # ± 0.23 (CODATA 2022; m_τ = 1776.86 MeV, m_e = 0.511 MeV)
+TAU_OVER_E_ERR   = 0.23
+
+# ── Molecular bond dissociation energies (experimental comparison) ─
+# Observed D_0 values used purely as comparison targets for the
+# molecular binding computes — NOT inputs to any derivation.
+# Source: NIST Chemistry WebBook (C≡O and N≡N bond dissociation energies).
+D0_CO_EV         = 11.09          # eV, observed C≡O dissociation energy
+D0_CO_EV_ERR     = 0.01
+D0_N2_EV         = 9.79           # eV, observed N≡N dissociation (pure-covalent triple)
+D0_N2_EV_ERR     = 0.01
+D0_H2_EV         = 4.478          # ± 0.001, observed H–H bond dissociation (H₂)
+D0_H2_EV_ERR     = 0.001
+D0_CC_EV         = 3.60           # ± 0.05, observed C–C single bond (ethane-class)
+D0_CC_EV_ERR     = 0.05
+D0_CO2_DOUBLE_EV = 8.28           # ± 0.05, CO₂ C=O double-bond comparison (2-bond ref)
+D0_CO2_DOUBLE_EV_ERR = 0.05
+
+# ── Molecular bond lengths & resonance (experimental comparison) ───
+# Benzene aromatic C–C vs single/double refs (Å); benzene resonance
+# energy (kcal/mol). Comparison targets only — NOT inputs.
+BOND_LEN_BENZENE_ANG    = 1.40    # ± 0.01, observed aromatic C–C (benzene)
+BOND_LEN_CC_SINGLE_ANG  = 1.54    # ± 0.01, C–C single-bond reference
+BOND_LEN_CC_DOUBLE_ANG  = 1.34    # ± 0.01, C=C double-bond reference
+BENZENE_RESONANCE_KCAL  = 36.0    # ± 1, observed benzene resonance energy (kcal/mol)
+
+# ── Molecular bond angles (experimental comparison) ────────────────
+# Observed H–O–H angle and the symmetric tetrahedral reference. Used
+# purely as comparison targets for the angle-shift compute — NOT inputs
+# to any derivation. Sources: H₂O gas-phase geometry (Hoy & Bunker,
+# J. Mol. Spectrosc. 74 (1979); NIST CCCBDB); tetrahedral = arccos(−1/3).
+ANGLE_H2O_HOH_DEG         = 104.5     # ± 0.1, observed H–O–H bond angle (water, gas)
+ANGLE_H2O_HOH_DEG_ERR     = 0.1
+ANGLE_H2O_TETRAHEDRAL_DEG = 109.4712  # arccos(−1/3) in degrees, symmetric reference
 
 G_A_PDG     = 1.2754          # ± 0.0013 (PDG 2024)
 G_A_PDG_ERR = 0.0013
@@ -83,13 +169,25 @@ VOL_FIGURE_EIGHT_ERR = 1e-12
 VOL_THREE_TWIST      = 2.828122088330783  # ± 1e-12
 VOL_THREE_TWIST_ERR  = 1e-12
 
-VOL_BORROMEAN        = 7.327724753846269  # ± 1e-12
-VOL_BORROMEAN_ERR    = 1e-12
+# Borromean rings complement (L6a4). Canonical identity Vol(L6a4) = 8·G
+# (Adams 1985). The literal here matches 8·mpmath.catalan at f64 precision.
+# Producer witness: `snappy-borromean-volume.witness.json` (single source
+# of truth for all precision tiers). Previous f64 value `7.327724753846269`
+# was a stale numerical literal that disagreed with 8·G at digit 11;
+# corrected in the SnapPy witness migration PR.
+VOL_BORROMEAN        = 7.3277247534177521  # = 8·G to f64 precision
+VOL_BORROMEAN_ERR    = 1e-15
 # 50-dps string form for high-precision mpmath computations (use via
 # `mp.mpf(VOL_BORROMEAN_50DPS_STR)` to preserve the full Catalan-constant
 # expansion past float's 16-digit floor). Borromean rings complement
 # admits the closed form 8 · G where G is Catalan's constant.
-VOL_BORROMEAN_50DPS_STR = "7.32772475587766148235147121870981010907842498879866"
+# Previous string carried a typo (`587766` instead of `341775` at digit 9);
+# corrected to match `8·mpmath.catalan` at the declared precision.
+# Authoritative source: `snappy-borromean-volume.witness.json` →
+# `alt_precision["50"]`. Consumers should prefer reading from that
+# witness rather than this constant; this constant is kept for backward
+# compatibility with f64-tier consumers.
+VOL_BORROMEAN_50DPS_STR = "7.3277247534177521204368281194590728861931949942534"
 VOL_4_1_50DPS_STR       = "2.02988321281930725004240510854904057483004159909893"
 
 # ── Hyperbolic-knot volumes (used by per_atom_rho_deviation and
@@ -104,7 +202,7 @@ VOL_6_2          = 4.400832516123046  # SnapPy 6_2 volume
 VOL_6_2_ERR      = 1e-15
 VOL_8_11         = 8.286316817806593  # SnapPy 8_11 volume
 VOL_8_11_ERR     = 1e-15
-VOL_L6A4         = 7.327724753846269  # Borromean (= VOL_BORROMEAN)
+VOL_L6A4         = 7.3277247534177521  # Borromean = 8·G (per VOL_BORROMEAN above)
 VOL_L6A4_ERR     = 1e-15
 VOL_7_SQ_1       = 4.749499981874439  # Whitehead-pair / α-α coupling knot
 VOL_7_SQ_1_ERR   = 1e-15

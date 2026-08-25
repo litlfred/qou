@@ -98,7 +98,8 @@ intermediate value theorem would realise `c·m + c/2`, which is not a multiple o
 That is the whole argument. Nothing here is deep; the point is that it is stated
 against the hypothesis the mathematics actually supplies.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.Archimedean

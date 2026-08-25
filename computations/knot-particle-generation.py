@@ -17,6 +17,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
 from q_parameter import Q, VOL_FIGURE_EIGHT as VOL_4_1_CANONICAL
+from codata_constants import (  # noqa: E402  (drain qou-7ot6-a)
+    M_E_MEV,
+    M_N_MEV_VALIDATION,
+    M_DEUTERON_MEV_VALIDATION,
+    M_HE3_MEV_VALIDATION,
+    M_HE4_MEV_VALIDATION,
+)
 
 # ── Substrate parameter (from muon-electron mass ratio) ──────────────
 q = Q
@@ -25,12 +32,17 @@ q_half = math.sqrt(q)
 q_inv_half = 1.0 / q_half
 
 # ── Hyperbolic volumes (from SnapPy / Clausen function) ──────────────
-VOL_FIGURE_EIGHT = 3.0 * (  # Vol(4_1) = 3 Cl_2(π/3)
-    sum((-1)**k * math.sin((2*k+1) * math.pi/3) / (2*k+1)**2
-        for k in range(1000))
-    * 2  # Clausen function Cl_2(θ) = -∫₀^θ ln|2sin(t/2)| dt
-)
-# Use canonical value from q_parameter.py
+# A local `VOL_FIGURE_EIGHT = 3.0 * (...)` once stood here, annotated
+# `Vol(4_1) = 3 Cl_2(π/3)`. Both halves were wrong: `3·Cl₂(π/3) ≈ 3.0448`
+# is not Vol(4₁) (the Λ↔Cl₂ coefficient slip — `Λ(θ) = Cl₂(2θ)/2`, so the
+# two-tetrahedron figure-eight complement is `2·Cl₂(π/3) = 6Λ(π/3) ≈
+# 2.0298832128`), and the series as written evaluated to 4.9348 — 2.43× the
+# true volume — so it did not even compute its own annotation.
+#
+# It was dead (assigned, never read; every use below goes through VOL_4_1),
+# but it shadowed the canonical `VOL_FIGURE_EIGHT` imported on line 19, which
+# means 2.029883212819307 in every other file in the corpus. Removed rather
+# than corrected: the canonical constant is already imported.
 VOL_4_1 = VOL_4_1_CANONICAL  # figure-eight knot (2.029883212819307)
 VOL_5_2 = 2.8281220883      # three-twist knot (from SnapPy)
 VOL_5_1 = 0.0               # cinquefoil (torus knot, zero volume)
@@ -38,14 +50,14 @@ VOL_TREFOIL = 0.0            # trefoil (torus knot, zero volume)
 
 # ── CODATA 2022 / PDG 2024 / AME2020 reference values (MeV/c²) ──────
 CODATA = {
-    "electron":    0.51099895000,
+    "electron":    float(M_E_MEV),
     "muon":      105.6583755,
     "tau":      1776.86,
     "proton":    float(M_P_MEV_VALIDATION),
-    "neutron":   939.56542052,
-    "deuteron": 1875.61294257,
-    "He-3":     2808.39160743,
-    "He-4":     3727.37940824,
+    "neutron":   float(M_N_MEV_VALIDATION),
+    "deuteron": float(M_DEUTERON_MEV_VALIDATION),
+    "He-3":     float(M_HE3_MEV_VALIDATION),
+    "He-4":     float(M_HE4_MEV_VALIDATION),
     "Li-6":     5601.518,
     "Li-7":     6533.833,
     "Be-9":     8392.750,

@@ -23,7 +23,179 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.285Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose). Category absent."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.332Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose). Category absent."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.379Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose). Category absent."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.425Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "'the Tate-rational identification, the zeta_5-orbit-sum, and PSLQ independence verification' are three named, distinct inputs actually used downstream; substantive."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.490Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose). Category absent."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.539Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose). Category absent."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.582Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose). Category absent."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.627Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "Full read of the 2-paragraph prose section intro (kind prose). Category absent."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.673Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "evidence": "'the genuinely new depth-3 content' - 'genuinely' does disambiguation work (depth-3 content not reducible to lower depth), not maximum-strength inflation."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "8d3ac1f7ced7",
+          "ts": "da134280c0f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:v00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T21:07:13.880Z",
+        "reviewed_sha": "3e9fe99795a203dc1d9373992edb9a5c2e7fd240",
+        "severity": "minor",
+        "evidence": "Closing sentence read 'The general Cl_3 orbit-sum formula finalises the trilog substrate-flow data, priming it for the subsequent spectral computations.' - 'trilog substrate-flow data' is a three-noun chain and 'priming it for' is corporate register; also 'The sequence leverages ...' one sentence earlier.",
+        "notes": "fix applied: 'leverages' -> 'uses'; 'finalises the trilog substrate-flow data, priming it for the subsequent spectral computations' -> 'completes the trilogarithm substrate-flow data used by the spectral computations that follow'. $$ delimiters still balance (0)."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.768647Z"
+  "updated_at": "2026-08-21T21:07:13.880Z"
 }

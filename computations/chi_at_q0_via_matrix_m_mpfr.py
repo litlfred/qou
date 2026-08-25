@@ -138,6 +138,7 @@ def _split_atom_braid(Z: int, N: int) -> tuple[
 def build_chi_cache_at_q0_matrix_m(
     atom_name: str, Z: int, N: int, q_str: str, *, dps: int = 50,
     max_dim: int | None = None,
+    fresh: bool = False,
 ) -> dict:
     """Per-λ χ^λ(β_atomic(Z, N); q_0) via the matrix-M mpfr backend.
 
@@ -182,14 +183,41 @@ def build_chi_cache_at_q0_matrix_m(
     # Filename + payload keys parameterised by dps so --dps=70 doesn't
     # collide with the 50dps cache.
     out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-{dps}dps-matrix-m.witness.json"
-    # Reuse existing cache if present (incremental resume).
+    # Reuse existing cache if present (incremental resume) — but ONLY when it
+    # was computed at this same q₀, and only when not explicitly discarded.
+    #
+    # This used to resume UNCONDITIONALLY ("always reuse (lossless)"), which is
+    # how bean `qou-7bv5` happened: a stale deuteron cache was handed straight
+    # back on every re-run, and the producer's own cross-check then graded those
+    # stale entries against a fresh Rust value and printed `0/11 match` while
+    # exiting 0. Deleting the file by hand was the only way to regenerate it.
+    # Measured on that repair: 0 of 11 per-λ χ values were identical and
+    # `tr_M` moved 63 % (1.33178… → 2.17544…).
+    #
+    # The guard below is not invented here — it is the one
+    # `chi_at_q0_via_hoefsmit_mpfr` has carried since its own version of this
+    # incident, ported across so the two producers of the same χ family behave
+    # the same way. Its comment there is worth repeating: *a stale cache
+    # wearing a fresh label is indistinguishable by inspection; only
+    # recomputation can reveal it* — which is why `--fresh` exists as the
+    # repair path for a cache that was already relabelled.
     already: dict[tuple, dict] = {}
     if out_path.exists():
         try:
             prior = json.loads(out_path.read_text())
-            for entry in prior.get("by_partition", []):
-                key = tuple(entry["partition"])
-                already[key] = entry
+            prev_q = str(prior.get("q_0_50dps", "")).strip()
+            n_prior = len(prior.get("by_partition", []))
+            if fresh:
+                print(f"    --fresh: discarding {n_prior} cached "
+                      f"partition(s) and recomputing from scratch")
+            elif prev_q and prev_q != str(q_str).strip():
+                print(f"    q0 CHANGED ({prev_q[:22]}… -> "
+                      f"{str(q_str)[:22]}…): discarding {n_prior} cached "
+                      f"partition(s) and recomputing")
+            else:
+                for entry in prior.get("by_partition", []):
+                    key = tuple(entry["partition"])
+                    already[key] = entry
         except (json.JSONDecodeError, KeyError):
             pass
 
@@ -230,7 +258,12 @@ def build_chi_cache_at_q0_matrix_m(
                 "y_lambda": "skipped-max-dim",
                 "chi_lambda": "skipped-max-dim",
                 "contribution": "0",
-                "compute_time_sec": 0.0,
+                # Wall clock, not a measurement.  Serialized as a string for
+                # the same reason `chi_at_q0_via_hoefsmit_mpfr.py` does it:
+                # it keeps raw float64 out of the witness (the raw-float64
+                # ratchet counts every one) and stops per-run timing jitter
+                # from rewriting the file on an otherwise identical rerun.
+                "compute_time_sec": "0.000",
             })
             continue
         # y_lam check BEFORE the expensive block-table precompute and
@@ -255,7 +288,7 @@ def build_chi_cache_at_q0_matrix_m(
             "y_lambda": str(y_lam),
             "chi_lambda": str(chi),
             "contribution": str(contrib),
-            "compute_time_sec": round(time.time() - t_part, 3),
+            "compute_time_sec": f"{time.time() - t_part:.3f}",
         }
         per_partition.append(entry)
 
@@ -290,7 +323,7 @@ def build_chi_cache_at_q0_matrix_m(
                 "n_skipped_max_dim": n_skipped,
                 "tr_M_partial": n_skipped > 0,
                 "partial": resume_partial,
-                "compute_time_sec_so_far": round(time.time() - t0, 2),
+                "compute_time_sec_so_far": f"{time.time() - t0:.2f}",
                 "tr_M_at_q0": str(running_total),
                 "by_partition": per_partition,
             }
@@ -298,7 +331,7 @@ def build_chi_cache_at_q0_matrix_m(
         _save_partial(out_path,
                       _payload(resume_partial=len(per_partition) < len(shapes)))
         print(f"    λ={shape_t!s:25} dim={dim:>3}  "
-              f"+{entry['compute_time_sec']:>6.3f}s  "
+              f"+{entry['compute_time_sec']:>6}s  "
               f"({len(per_partition)}/{len(shapes)})", flush=True)
 
     elapsed = time.time() - t0
@@ -326,7 +359,7 @@ def build_chi_cache_at_q0_matrix_m(
         "n_skipped_max_dim": n_skipped,
         "tr_M_partial": n_skipped > 0,
         "partial": False,
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",
         "tr_M_at_q0": str(running_total),
         "by_partition": per_partition,
     }
@@ -340,7 +373,7 @@ def build_chi_cache_at_q0_matrix_m(
         "n_skipped_max_dim": n_skipped,
         "tr_M_partial": n_skipped > 0,
         "tr_M_at_q0": str(running_total),
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",
         "out_path": str(out_path),
     }
 
@@ -380,6 +413,15 @@ def main() -> int:
         "atoms", nargs="*",
         help="Atoms to build (default: deuteron — single-isotope smoke "
              "test). One of: " + ", ".join(ATOMS),
+    )
+    parser.add_argument(
+        "--fresh", action="store_true",
+        help="Discard any existing cache and recompute from scratch. This is "
+             "the repair path for a cache that was already relabelled: the q0 "
+             "guard compares against the STORED q0, so a witness wrongly "
+             "stamped with the current anchor looks self-consistent and would "
+             "resume its stale values forever. Same flag, same reason, as "
+             "chi_at_q0_via_hoefsmit_mpfr.",
     )
     parser.add_argument(
         "--dps", type=int, default=50,
@@ -439,6 +481,7 @@ def main() -> int:
             record = build_chi_cache_at_q0_matrix_m(
                 atom_name, Z, N, q_str, dps=args.dps,
                 max_dim=args.max_dim,
+                fresh=args.fresh,
             )
         except Exception as exc:  # noqa: BLE001
             print(f"  {atom_name:>10}  ERROR  {type(exc).__name__}: {exc}")
@@ -448,7 +491,7 @@ def main() -> int:
         tr_m_short = record["tr_M_at_q0"][:22]
         print(f"  {atom_name:>10}  {record['n_strands']:>3}  "
               f"{n_parts:>10}  {tr_m_short:>22}  "
-              f"{record['compute_time_sec']:>9.2f}s")
+              f"{record['compute_time_sec']:>9}s")
         last_record = record
 
         # Cross-validate against Rust chi_q_via_gp at q_0 (the

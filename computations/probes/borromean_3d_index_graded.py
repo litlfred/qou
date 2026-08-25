@@ -68,6 +68,7 @@ import _path_bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 
 import borromean_3d_index as bor  # noqa: E402  (validated machinery, reused)
+from _precision import set_compute_dps  # noqa: E402
 
 T0 = time.time()
 QMAX = 6              # q-order of the graded sweep (Q-degree cap = 12)
@@ -429,7 +430,7 @@ def main() -> int:
         from m_p_substrate_identity_50dps import F_Bor
         from q_parameter import Q_50_DIGIT_STR
         from mpmath import mp, mpf
-        mp.dps = 50
+        set_compute_dps()
         wedderburn["F_Bor_at_q0"] = mp.nstr(F_Bor(mpf(Q_50_DIGIT_STR)), 30)
     except Exception as exc:  # record, don't fail the topology probe
         wedderburn["F_Bor_at_q0"] = f"unavailable ({exc})"

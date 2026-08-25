@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0806.3105v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a37b4f2e96365d302d813c7ab1449719839d6fccf791a4e6754c1e0560182ce7",
+  "file": "0806.3105v3.pdf"
+ },
+ "provenance": {
+  "title": "KNOTS AND PREONS Robert J. Finkelstein",
+  "authors": "Department of Physics and Astronomy",
+  "arxiv": {
+   "id": "0806.3105",
+   "version": "3",
+   "primary_class": "hep-th",
+   "stamp_date": "4 Nov 2008"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

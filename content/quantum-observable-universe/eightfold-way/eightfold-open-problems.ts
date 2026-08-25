@@ -10,7 +10,6 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:eightfold-open-problems",
   title: "Open problems",
-  md: "eightfold-open-problems.md",
   interprets: "prop:schur-weyl-eightfold",
   uses: [
     "prop:a2-from-three-strands",

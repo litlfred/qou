@@ -7,7 +7,7 @@ docs/audits/2026-07-26-tau-coherence-orbit-program-and-habiro-bridge.md
 
 CONTEXT. The GSWZ epsilon_m units (arXiv:2412.04241 eqn (16)) are the
 Chern-class map c_{zeta_m} of Calegari-Garoufalidis-Zagier
-(arXiv:1712.04887, uploads/1712.04887v3.pdf, their [10]). CGZ Theorem
+(arXiv:1712.04887, library/arxiv-1712.04887v3/1712.04887v3.pdf, their [10]). CGZ Theorem
 1.6 identifies c_zeta with the COMPUTABLE map R_zeta built from the
 cyclic quantum dilogarithm
 
@@ -55,6 +55,9 @@ m — queued as the next increment on qou-9p9y.
 
 import json
 import sys
+
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
 
 checks = {}
 detail = {}
@@ -206,7 +209,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "cgz_cyclic_qdilog_unit_probe",
     "beans": ["qou-9p9y"],
-    "source": "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21)/(33)/(34), §4.4, Theorem 7.4; uploads/1712.04887v3.pdf",
+    "source": "CGZ arXiv:1712.04887v3 eqns (8)/(20)/(21)/(33)/(34), §4.4, Theorem 7.4; library/arxiv-1712.04887v3/1712.04887v3.pdf",
     "checks": checks,
     "cases": detail,
     "scope": (
@@ -216,7 +219,7 @@ witness = {
         "5_2 symbols is the next increment"
     ),
 }
-with open("computations/probes/cgz_cyclic_qdilog_unit.witness.json", "w") as f:
+with open(_HERE_W / "cgz_cyclic_qdilog_unit.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

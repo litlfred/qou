@@ -25,7 +25,9 @@ use hecke_engine::littlewood_richardson;
 use hecke_engine::tr_m_atomic_mpfr as trmpfr;
 use napi_derive::napi;
 
-/// Markov parameter `z = 1 / (q^{1/2} + q^{-1/2})`.
+/// Markov parameter `z = q^3 / (q^2 + 1)` — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09; see
+/// `docs/coordination/trace-convention-registry.md`.
 #[napi]
 pub fn markov_z(q: f64) -> f64 {
     gram::markov_z(q)
@@ -38,9 +40,13 @@ pub fn hecke_h(q: f64) -> f64 {
 }
 
 /// Markov-trace weights on the NF basis as a length-6 array.
+///
+/// Convention D (qou-m7py, 2026-08-15): the production Markov trace
+/// `h·z² + z`, matching `pyhecke.gram.TR_M`. The legacy `z³` weights are
+/// `hecke_engine::gram::trace_weights`.
 #[napi]
 pub fn trace_weights(q: f64) -> Vec<f64> {
-    gram::trace_weights(q).to_vec()
+    gram::trace_weights_markov(q).to_vec()
 }
 
 /// Gram matrix `G_ij = tr_M(b_i · b_j)` as a 6×6 array.

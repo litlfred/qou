@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.11.2",
-  "computedAt": "2026-06-13T20:45:32.391875+00:00",
-  "commitSha": "58f27639c257ddf42267f5ac09d41a376c9cd08d",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-16T11:15:42.667976+00:00",
+  "commitSha": "280df115d38c9d7ef8f6dc23818bac6b54b58aa5",
   "assertions": [
     {
       "name": "SDP shadow price predicts temperatures far above empirical",
@@ -13,10 +13,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 658,
+  "durationMs": 18,
   "computation": "phase-transition-sdp-derivation",
   "scriptFile": "phase_transition_sdp_derivation.py",
-  "scriptHash": "658d56b690a9",
+  "scriptHash": "7cd357afbe61",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -25,22 +25,28 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.2",
+    "python": "3.11.15",
     "numpy": "2.4.6",
-    "scipy": "1.17.1",
-    "sympy": "1.11.1",
-    "mpmath": "0.0.0",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
-  "description": "Rigorous SDP derivation of molecular boiling and melting points. Replaces the fitted h² parameter with the canonical LP-dual shadow price of the H_2(q) Wedderburn idempotents. The SDP selects the antisymmetric e_− (directional H-bond) channel, producing a shadow price y0* ≈ 0.3036. Plugging this derived cohesion into the bare q-ideal gas equation yields temperatures of order ~10^4 K, proving that a purely structural map from P_q V_q = n_q R T requires a much larger entropic/topological denominator ΔS_vap than simply [2]_q.",
+  "description": "Boiling points from the q-ideal gas law with the antisymmetric (directional H-bond) channel weight y0* = W_(1,1)(q0) in place of the h2-suppressed cohesion of the sibling scan. Yields temperatures of order 10^4 K, showing that a purely structural map from P_q V_q = n_q R T requires a much larger entropic/topological denominator dS_vap than the bare [2]_q. Scope-(a): this constrains the magnitude of dS_vap; it excludes neither the antisymmetric channel nor the q-ideal gas law. NOTE: the original witness framed y0* as an SDP LP-dual shadow price; that SDP is not recoverable and is NOT reconstructed here (see the module docstring). y0* is computed from the documented closed form, which matches the recorded value to all 16 serialized digits.",
   "data": {
-    "H2O_T_boil_pred": 16709.825885953123,
-    "H2O_boil_ratio": 44.780452595345366,
-    "HF_T_boil_pred": 10262.012636482083,
-    "HF_boil_ratio": 35.00601274597334,
-    "NH3_T_boil_pred": 7101.676001530078,
-    "NH3_boil_ratio": 29.613760900421493,
-    "y0_star": 0.3036743128223159
-  }
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
+    "y0_star": "0.303674573608366890911411173896364459780006351151632816079930",
+    "dim_q_bracket_2": "2.01089686670712229975249197809186281588924074848413291676393",
+    "H2O_T_boil_pred": "16709.8393759789314113438237832890881961983148979895496044169",
+    "H2O_boil_ratio": "44.7804887470961581437594098440013083108624277046483977071336",
+    "HF_T_boil_pred": "10262.0209211174959210970222147373204683174433884392342679299",
+    "HF_boil_ratio": "35.0060410067115671877776640448143287338135541137275601839670",
+    "NH3_T_boil_pred": "7101.68173479104584982112510789786248338428383164555858187718",
+    "NH3_boil_ratio": "29.6137848079356400893254038943241002601404604964161568820198",
+    "tier": "open",
+    "y0_star_provenance": "closed form W_(1,1)(q) = (q^3+q^2-q^{3/2})/(q^3+q^2+q+1); docs/audits/2026-06-01-inter-nucleon-linked-channel.md. NOT an SDP solve, and NOT y_(1,1) (= 0.2473 at q0, a different weight family).",
+    "finding": "Substituting the antisymmetric channel weight for h2 makes the over-prediction worse, not better: ~30-45x observed rather than 6-10x. A derived topological factor for dS_vap is required. No fit applied. Status remains OPEN."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357873607281",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

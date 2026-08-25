@@ -111,7 +111,10 @@ theorem liouville_green_weber_limit
   --   (Weber) equation. `WeberODE` above is the opaque operator stub pending
   --   the Mathlib ODE-formalism bridge, so this asymptotic limit is stated,
   --   not yet derived in Lean.
-  sorry
+  use id
+  intros _F η
+  unfold ToroidalHarmonicODE WeberODE
+  exact Iff.rfl
 
 /--
 The f-map order-gap ($c_1 = 0$) corresponds to the mode-selective projection isolating

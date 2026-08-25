@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:13:28.806232+00:00",
-  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:49:01.828050+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "markov_m3_completeness_n2",
-      "computed": "0.0",
+      "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -14,7 +14,7 @@
     },
     {
       "name": "markov_m3_completeness_n3",
-      "computed": "4.0091470651382934692108047007272228182227953201576e-51",
+      "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -22,7 +22,7 @@
     },
     {
       "name": "markov_m3_completeness_n4",
-      "computed": "2.672764710092195646140536467151481878815196880105e-51",
+      "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -30,7 +30,7 @@
     },
     {
       "name": "markov_m3_completeness_n5",
-      "computed": "2.672764710092195646140536467151481878815196880105e-51",
+      "computed": "9.055679078826712367509119290887791780682531198139138189582614889935501e-72",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -38,7 +38,7 @@
     },
     {
       "name": "markov_m3_completeness_n6",
-      "computed": "1.3363823550460978230702682335757409394075984400525e-51",
+      "computed": "0.0",
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
@@ -58,7 +58,7 @@
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+      "source": "Markov axiom (M2): tr_M(\u03c3_{n-1}\u00b7x) = z\u00b7tr_M(x)"
     },
     {
       "name": "alpha_k_markov_axiom_k2",
@@ -66,7 +66,7 @@
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+      "source": "Markov axiom (M2): tr_M(\u03c3_{n-1}\u00b7x) = z\u00b7tr_M(x)"
     },
     {
       "name": "alpha_k_markov_axiom_k3",
@@ -74,15 +74,23 @@
       "expected": "0",
       "passed": true,
       "tolerance": "1.0e-40",
-      "source": "Markov axiom (M2): tr_M(σ_{n-1}·x) = z·tr_M(x)"
+      "source": "Markov axiom (M2): tr_M(\u03c3_{n-1}\u00b7x) = z\u00b7tr_M(x)"
+    },
+    {
+      "name": "cross_validation_h3_witness",
+      "computed": "0.0",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "1.0e-25",
+      "source": "alpha-k-jones-markov-h3.witness.json"
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 15,
   "computation": "alpha-k-macdonald-closed-form",
   "scriptFile": "alpha_k_macdonald_closed_form.py",
-  "scriptHash": "58c0fc4af891",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "26a7c0f730cc",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -92,15 +100,25 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
-  "description": "α_k mass-tower coefficients via the Macdonald hook-content closed form for y_λ.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_λ for every partition λ ⊢ n at every n ≤ 6, and cross-checks against the Markov-axiom prediction tr_M(σ_1 ⋯ σ_{k-1}) = z^{k-1}.",
+  "invocation": {
+    "argv": [
+      "computations/alpha/alpha_k_macdonald_closed_form.py"
+    ],
+    "reproduce": "python3 -u computations/alpha/alpha_k_macdonald_closed_form.py"
+  },
+  "description": "\u03b1_k mass-tower coefficients via the Macdonald hook-content closed form for y_\u03bb.  Replaces the linear-system / Hoefsmit-matrix path used in alpha_k_jones_markov_h3.py by a rounding-free algebraic evaluation of y_\u03bb for every partition \u03bb \u22a2 n at every n \u2264 6, and cross-checks against the Markov-axiom prediction tr_M(\u03c3_1 \u22ef \u03c3_{k-1}) = z^{k-1}.",
   "contentBlock": "prop:macdonald-hook-telescope",
   "data": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
-    "z_markov": "0.4993203340335612717689663862757371401611757978999",
-    "dps": 50,
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "z_markov": "0.61268803714646525159582986394589924802630839154506",
+    "dps": 70,
     "y_lambda_by_n": {
       "2": {
         "n": 2,
@@ -110,7 +128,7 @@
               2
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.69632542031293342944999378384747963813394457725062"
+            "y_lambda_at_q0": "0.7527021132519654015937793516202361378301755988749"
           },
           {
             "partition": [
@@ -118,7 +136,7 @@
               1
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.30367457968706657055000621615252036186605542274938"
+            "y_lambda_at_q0": "0.2472978867480345984062206483797638621698244011251"
           }
         ]
       },
@@ -130,7 +148,7 @@
               3
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.41539578633234285396775579738846403626500771799236"
+            "y_lambda_at_q0": "0.50540422650393080318755870324047227566035119774981"
           },
           {
             "partition": [
@@ -138,7 +156,7 @@
               1
             ],
             "f_lambda": 2,
-            "y_lambda_at_q0": "0.28092963398059057548223798645901560186893685925825"
+            "y_lambda_at_q0": "0.2472978867480345984062206483797638621698244011251"
           },
           {
             "partition": [
@@ -147,7 +165,7 @@
               1
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.022744945706475995067768229693504759997118563491126"
+            "y_lambda_at_q0": "-1.7501583087407671190053672006931454687225344217544e-72"
           }
         ]
       },
@@ -159,7 +177,7 @@
               4
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.22752693019099215824816882117020367653587038236528"
+            "y_lambda_at_q0": "0.31926258454593995102232848646119407306323993051996"
           },
           {
             "partition": [
@@ -167,7 +185,7 @@
               1
             ],
             "f_lambda": 3,
-            "y_lambda_at_q0": "0.18786885614135069571958697621826035972913733562709"
+            "y_lambda_at_q0": "0.18614164195799085216523021677927820259711126722985"
           },
           {
             "partition": [
@@ -175,7 +193,7 @@
               2
             ],
             "f_lambda": 2,
-            "y_lambda_at_q0": "0.069473304641640549517786114948841150483773867868396"
+            "y_lambda_at_q0": "0.061156244790043746240990431600485659572713133895244"
           },
           {
             "partition": [
@@ -184,7 +202,7 @@
               1
             ],
             "f_lambda": 3,
-            "y_lambda_at_q0": "0.02358747319759933024486489529191409165602565576277"
+            "y_lambda_at_q0": "-1.9619355443429843450155721463701720540360112024878e-72"
           },
           {
             "partition": [
@@ -194,7 +212,7 @@
               1
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "-0.0008425274911233351770966655984093316589070922716434"
+            "y_lambda_at_q0": "2.1177723560221722601020494567702658531347678073337e-73"
           }
         ]
       },
@@ -206,7 +224,7 @@
               5
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.11814839833204929527871041561757366687875061014407"
+            "y_lambda_at_q0": "0.19427718737799284509808870128240153003884179718535"
           },
           {
             "partition": [
@@ -214,7 +232,7 @@
               1
             ],
             "f_lambda": 4,
-            "y_lambda_at_q0": "0.1093785318589428629694584055526300096571197722212"
+            "y_lambda_at_q0": "0.12498539716794710592423978517879254302439813333461"
           },
           {
             "partition": [
@@ -222,7 +240,7 @@
               2
             ],
             "f_lambda": 5,
-            "y_lambda_at_q0": "0.061723715323097967120984305485519650575923917932059"
+            "y_lambda_at_q0": "0.061156244790043746240990431600485659572713133895244"
           },
           {
             "partition": [
@@ -231,7 +249,7 @@
               1
             ],
             "f_lambda": 6,
-            "y_lambda_at_q0": "0.016766608959309865629144265180110699496093645473828"
+            "y_lambda_at_q0": "-1.5696920154196210341066697478347551029885200014058e-72"
           },
           {
             "partition": [
@@ -240,7 +258,7 @@
               1
             ],
             "f_lambda": 5,
-            "y_lambda_at_q0": "0.0077495893185425823968018094633214999078499499363368"
+            "y_lambda_at_q0": "-6.4458768682832322418475273808288257006737610020246e-73"
           },
           {
             "partition": [
@@ -250,7 +268,7 @@
               1
             ],
             "f_lambda": 4,
-            "y_lambda_at_q0": "-0.00092872508025311778108117935151810774791793964739527"
+            "y_lambda_at_q0": "2.5234415790495991327585033954746561901988489912049e-73"
           },
           {
             "partition": [
@@ -261,7 +279,7 @@
               1
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.000086197589129782603984513753108776089010847375751871"
+            "y_lambda_at_q0": "-4.0566922302742687265645393870439033706408118387123e-74"
           }
         ]
       },
@@ -273,7 +291,7 @@
               6
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "0.059187716931123886279274910065865313963221848453784"
+            "y_lambda_at_q0": "0.11532422490206616611036906989019053151376047733151"
           },
           {
             "partition": [
@@ -281,7 +299,7 @@
               1
             ],
             "f_lambda": 5,
-            "y_lambda_at_q0": "0.058960681400925408999435505551708352915528761690291"
+            "y_lambda_at_q0": "0.078952962475926678987719631392210998525081319853836"
           },
           {
             "partition": [
@@ -289,7 +307,7 @@
               2
             ],
             "f_lambda": 9,
-            "y_lambda_at_q0": "0.040284386965704782087048708251229316127730552320355"
+            "y_lambda_at_q0": "0.046032434692020426936520153786581544499316813480771"
           },
           {
             "partition": [
@@ -298,7 +316,7 @@
               1
             ],
             "f_lambda": 10,
-            "y_lambda_at_q0": "0.010133463492312671882974191749692340613860458210556"
+            "y_lambda_at_q0": "-1.0941215110265229425368660477858693458609869870863e-72"
           },
           {
             "partition": [
@@ -306,7 +324,7 @@
               3
             ],
             "f_lambda": 5,
-            "y_lambda_at_q0": "0.014120874004911360835530924939105603706885065737979"
+            "y_lambda_at_q0": "0.015123810098023319304470277813904115073396320414472"
           },
           {
             "partition": [
@@ -315,7 +333,7 @@
               1
             ],
             "f_lambda": 16,
-            "y_lambda_at_q0": "0.0073184543524818241984046722951847307413082998737266"
+            "y_lambda_at_q0": "-6.8515460913106591145039813195332160377378421858959e-73"
           },
           {
             "partition": [
@@ -325,7 +343,7 @@
               1
             ],
             "f_lambda": 10,
-            "y_lambda_at_q0": "-0.00068530888548463045223459886476637185907511261045474"
+            "y_lambda_at_q0": "2.0958410473796781988059443190443584664625120427008e-73"
           },
           {
             "partition": [
@@ -334,7 +352,7 @@
               2
             ],
             "f_lambda": 5,
-            "y_lambda_at_q0": "0.00077318673693221832328258199363165247576143503418127"
+            "y_lambda_at_q0": "-5.237206282576895629039203401829900644952263413209e-74"
           },
           {
             "partition": [
@@ -344,7 +362,7 @@
               1
             ],
             "f_lambda": 9,
-            "y_lambda_at_q0": "-0.00034205177087146012488544482549488330921978497157111"
+            "y_lambda_at_q0": "9.2938985128511643556037427888738040155930752519213e-74"
           },
           {
             "partition": [
@@ -355,7 +373,7 @@
               1
             ],
             "f_lambda": 5,
-            "y_lambda_at_q0": "0.000098635576102972796038864338743147420376957934630581"
+            "y_lambda_at_q0": "-5.0178931961519550160781520245708267782297057668802e-74"
           },
           {
             "partition": [
@@ -367,13 +385,14 @@
               1
             ],
             "f_lambda": 1,
-            "y_lambda_at_q0": "-0.000012437986973190192054350585634371331366110558878709"
+            "y_lambda_at_q0": "9.6120096587768628951361263752692340758889392816793e-75"
           }
         ]
       }
     },
-    "closed_form_formula": "y_λ = Q^{n(λ)} · (1-Q)^n / (1-X)^n · ∏ (1-X·Q^c)/(1-Q^h)"
+    "closed_form_formula": "y_\u03bb = Q^{n(\u03bb)} \u00b7 (1-Q)^n / (1-X)^n \u00b7 \u220f (1-X\u00b7Q^c)/(1-Q^h)"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -10,5 +10,5 @@
 | $\cosh(h)$ | hyperbolic-cosine of skein | per-Z gain $\alpha_Z \approx [3]_q^2 \cdot \cosh(h)$ |
 | Volume forms $\alpha \wedge d\alpha$ | contact volume | Reeb dynamics |
 | Unsigned linking $\lvert\mathrm{lk}\rvert$ | absolute linking | knot multiplicity |
-| Markov parameter $z = 1/(q^{1/2}+q^{-1/2})$ | Markov-axiom factor | interface knot $\bowtie_K = z$ |
+| Markov parameter $z = q^3/(q^2+1)$ (convention D; $z(q_0) = 0.61268803714646525160$) | Markov-axiom factor | interface knot $\bowtie_K = z$ |
 | All $c_k(q)$ in the precision ladder | classical rationals in $q$ | $\mathrm{tr}_M$ expansion about $q=1$ |

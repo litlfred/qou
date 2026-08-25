@@ -64,12 +64,13 @@ structure LeptonMassRatio where
   /-- q > 1. -/
   q_gt_one : 1 < q
   /-- Hyperbolic volume of the figure-eight knot 4₁.
-      `Vol(4₁) = 3 · Cl₂(π/3) ≈ 2.02988`. -/
+      `Vol(4₁) = 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.02988` — two regular ideal
+      tetrahedra, each of volume `Cl₂(π/3) = 3 · Λ(π/3)`. -/
   vol_figure_eight : ℝ
   /-- Volume is positive. -/
   vol_pos : 0 < vol_figure_eight
   /-- CODATA muon-electron mass ratio. -/
-  codata_ratio : ℝ := 206.7682830
+  codata_ratio : ℝ := 206.7682827
   /-- The quantum Planck constant. -/
   hbar_q : ℝ := 1 - q⁻¹
   /-- The theoretical prediction: `m_μ/m_e = Vol(4₁)/ℏ_q²`. -/

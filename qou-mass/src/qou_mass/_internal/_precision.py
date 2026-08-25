@@ -1,135 +1,72 @@
+"""_precision — back-compat shim. The canonical module is now
+``qou_substrate.precision`` in ``tools/qou-substrate/``.
+
+This file is a thin re-export so the 121 scripts in this directory that
+do ``from _precision import set_compute_dps, fmt`` keep working without
+modification. New code should import from ``qou_substrate`` directly
+once ``qou-substrate`` is on PyPI.
+
+See ``docs/workplans/2026-05-24-library-reuse-production-readiness.md``
+Tier-2 item 2a for the promotion rationale.
+
+
+    IMPORTING THIS MODULE DOES NOT SET `mp.dps`
+    -------------------------------------------
+    Measured: `import _precision` leaves `mpmath.mp.dps` at mpmath's default
+    **15**, i.e. float64-grade.  `set_compute_dps()` must be called explicitly
+    before any `mpf` arithmetic you intend to be high-precision.
+
+    This matters because `fmt()` will happily render a 53-bit value out to the
+    full serialization width, so the number *reads* as measured while carrying
+    ~15 significant digits.  The float64-padding ratchet is what catches it
+    (worked case: `nonet_mixing_purity.py`, PR #5023).
+
+    Note the mirror hazard in the other direction: some modules raise global
+    `mp.dps` as an import side effect (e.g. `y_lambda_su_n` sets 50 at module
+    scope, correctly — see `wedderburn_jones_markov.y_lambda_at`).  So an
+    unset dps can be silently too low, and a set one silently too high.  Both
+    present as "the number looks fine, at the wrong precision".
 """
-_precision.py — shared precision infrastructure for QOU compute scripts.
 
-Centralizes the COMPUTE precision (mp.mp.dps) and the SERIALIZATION
-precision used when emitting mpmath values into witness JSON.
-
-USAGE
------
-
-At the top of any mpmath-based script::
-
-    from _precision import set_compute_dps, fmt
-
-    set_compute_dps()           # set mp.mp.dps to COMPUTE_DPS (default 50)
-    ...
-    w.add_data("alpha", fmt(alpha))   # serialize at OUTPUT_DPS
-
-Or with explicit per-script override::
-
-    set_compute_dps(60)         # raise compute precision
-    fmt(x, dps=50)              # override output dps for one value
-
-WHY
----
-
-mp.mp.dps controls the working precision of mpmath operations.  The
-last few digits of any mp.mpf are inherently floor noise that varies
-by:
-
-  - mpmath version (the noise grows/shrinks with internal table sizes)
-  - OS / libm version (transcendental functions like ``mp.sqrt`` lean
-    on libm in some code paths)
-  - Python interpreter rebuilds
-
-Serializing values at full mp.dps with ``str(mpf)`` exposes those
-trailing noise digits in committed witness JSON, which then drifts
-between CI and local environments — producing reproducibility CI
-failures even when the *physics* is bit-stable to ~45 digits.
-
-The convention: COMPUTE at OUTPUT_DPS + GUARD digits, SERIALIZE at
-OUTPUT_DPS.  GUARD = 10 by default (well below the precision a
-single ``str(mpf)`` would expose).
-
-ENVIRONMENT OVERRIDES
----------------------
-
-Per-process overrides (useful in CI / sanity checks)::
-
-    QOU_COMPUTE_DPS=60   python3 script.py     # raise compute precision
-    QOU_OUTPUT_DPS=45    python3 script.py     # raise output precision
-    QOU_PRECISION_GUARD=15  python3 script.py  # raise guard separately
-
-CONSTANTS
----------
-
-  COMPUTE_DPS_DEFAULT   = 50   (mp.mp.dps target)
-  OUTPUT_DPS_DEFAULT    = 40   (serialization precision)
-  PRECISION_GUARD_DEFAULT = 10 (COMPUTE = OUTPUT + GUARD)
-"""
 from __future__ import annotations
 
-import os
-from mpmath import mp, mpf
 
-# ── Defaults ────────────────────────────────────────────────────
-PRECISION_GUARD_DEFAULT: int = 10
-OUTPUT_DPS_DEFAULT: int = 40
-COMPUTE_DPS_DEFAULT: int = OUTPUT_DPS_DEFAULT + PRECISION_GUARD_DEFAULT  # 50
+# Path bridge (subdirectory refactor — Phase 6, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+del _sys, _Path
 
-# ── Environment overrides ───────────────────────────────────────
-def _env_int(key: str, default: int, minimum: int = 1) -> int:
-    """Read a positive int from env ``key``, falling back to ``default``.
+import sys
+from pathlib import Path
 
-    Rejects unparseable values *and* values below ``minimum`` (default
-    1) — ``mp.nstr(..., 0)`` raises and ``mp.dps = 0`` is meaningless,
-    so we never accept ≤ 0 even when explicitly set in the env.
-    """
-    v = os.environ.get(key)
-    if not v:
-        return default
-    try:
-        parsed = int(v)
-    except ValueError:
-        return default
-    if parsed < minimum:
-        return default
-    return parsed
+try:
+    import qou_substrate.precision as _qs_precision  # noqa: F401
+except ImportError:
+    # SEARCH upward for the substrate checkout rather than counting `.parent`s.
+    # A fixed count cannot be right for both layouts this file lives in:
+    #   computations/substrate/_precision.py            -> repo root is 3 up
+    #   qou-mass/src/qou_mass/_internal/_precision.py   -> repo root is 5 up
+    # (the vendor sync copies this file verbatim into a flatter tree). The
+    # hardcoded 4 was wrong in BOTH: it resolved to the parent of the repo in
+    # the source layout and to `qou-mass/tools/...` in the vendored one, so the
+    # fallback never fired anywhere. It only stayed invisible because
+    # `import _path_bridge` normally puts the substrate on sys.path first --
+    # and the vendor sync STRIPS that import, which is exactly where it bit.
+    _QOU_SUBSTRATE_PYTHON = None
+    for _anc in Path(__file__).resolve().parents:
+        _cand = _anc / "tools" / "qou-substrate" / "python"
+        if _cand.is_dir():
+            _QOU_SUBSTRATE_PYTHON = _cand
+            break
+    if _QOU_SUBSTRATE_PYTHON is not None and str(_QOU_SUBSTRATE_PYTHON) not in sys.path:
+        sys.path.insert(0, str(_QOU_SUBSTRATE_PYTHON))
 
-
-COMPUTE_DPS: int = _env_int("QOU_COMPUTE_DPS", COMPUTE_DPS_DEFAULT)
-OUTPUT_DPS: int = _env_int("QOU_OUTPUT_DPS", OUTPUT_DPS_DEFAULT)
-PRECISION_GUARD: int = _env_int("QOU_PRECISION_GUARD", PRECISION_GUARD_DEFAULT)
-
-# Auto-correct if env vars combine to violate guard
-if COMPUTE_DPS - OUTPUT_DPS < PRECISION_GUARD:
-    # Bump COMPUTE_DPS to keep the guard
-    COMPUTE_DPS = OUTPUT_DPS + PRECISION_GUARD
-
-
-def set_compute_dps(dps: int | None = None) -> int:
-    """Set ``mp.mp.dps`` to ``dps`` (or ``COMPUTE_DPS`` if ``None``).
-
-    Returns the actual value of ``mp.mp.dps`` after the set.
-    Idempotent.
-    """
-    if dps is None:
-        dps = COMPUTE_DPS
-    mp.dps = dps
-    return mp.dps
-
-
-def fmt(value, dps: int | None = None, strip_zeros: bool = False) -> str:
-    """Serialize an mpmath value to its output-precision string form.
-
-    Uses ``mp.nstr`` with ``OUTPUT_DPS`` (default) or an explicit per-
-    call override.  ``strip_zeros=False`` keeps trailing zeros so
-    JSON byte-stability is preserved across runs.
-
-    Routing:
-
-    - ``mpf`` (real) and ``mpc`` (complex): formatted via ``mp.nstr``
-      at the requested precision — the canonical numeric path.
-    - Everything else (``int``, ``float``, ``str``, ``Path``, lists,
-      dicts, ``None``, …): short-circuited to ``str(value)`` without
-      touching ``mp.nstr``.  ``int`` and ``float`` get their natural
-      Python repr (no spurious mpf-promotion noise on a 0.1-style
-      float).  Use ``str(...)`` directly for non-numeric witness
-      fields; ``fmt`` tolerates them only as a safety net.
-    """
-    if dps is None:
-        dps = OUTPUT_DPS
-    from mpmath import mpc  # local import: mpc is rarely needed
-    if isinstance(value, (mpf, mpc)):
-        return mp.nstr(value, dps, strip_zeros=strip_zeros)
-    return str(value)
+from qou_substrate.precision import *  # noqa: F401,F403,E402
+from qou_substrate.precision import (  # noqa: F401,E402
+    _env_int,
+)

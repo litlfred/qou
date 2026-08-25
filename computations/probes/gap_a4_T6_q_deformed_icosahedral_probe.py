@@ -265,7 +265,7 @@ def test_H_sector_closed_form() -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder(
         "gap-a4-T6-q-deformed-icosahedral-probe",
         engine="mpmath",

@@ -2,10 +2,23 @@
 # -*- coding: utf-8 -*-
 """c_knot_nonuniversal_pinned_weight_probe.py — the clean cross-isotope C_knot test, run with the
 NOW-PINNED Markov weight y_λ (PR #4543). Verdict: C_knot is NOT a universal derivable factor — it
-varies 2.83× across the four lightest isotopes (D/T/³He/⁴He), and two knots at the SAME strand count
-(T, ³He at H₉) require C_knot differing by 35%. So "derive C_knot = 5.85 as one geometric/scale
+varies 59.1× across the four lightest isotopes (D/T/³He/⁴He), and two knots at the SAME strand count
+(T, ³He at H₉) require C_knot differing by a factor 1.37. So "derive C_knot as one geometric/scale
 factor" is REFUTED (scope-a); the mirror-pair inequality further gives a scope-(b) exclusion of any
 level-only rescale g(n, q₀). The Δ_λ magnitude derivation itself stays OPEN (bean qou-3q7t).
+
+CONVENTION-D REFRESH (2026-08-11, bean qou-4jut). Every figure above and below was re-derived after
+`70d1ade383` ("excise C tiers 2+3: 176 producer sites to convention D") — a deliberate repo-wide
+migration that this file's committed witness PRE-DATED, so HEAD could not reproduce its own witness
+(scriptHash fcc009c4ce2802cd vs sha256(HEAD) 32fdfcc3ed1c4342). Convention D is right by an
+independent, experiment-free argument: it gives QR = Q² EXACTLY, hence r = log_Q(QR) = 2, and r is
+the number of variables in the Wenzl principal specialisation s_λ(1,Q,…,Q^{r−1}) — it must be a
+positive integer, and the mass chapter forces 2 (the fundamental of SU_q(2)). The pre-migration
+convention returns a non-integer r and therefore was never a fibre dimension at all.
+BOTH VERDICTS SURVIVE and in fact strengthen: spread 2.83× → 59.12× (scope-a), mirror ratio
+1.35 → 1.367 (scope-b), and f^λ remains the tightest dim convention. Nothing that was claimed
+becomes false; the magnitudes move. The witness's own description now INTERPOLATES every figure from
+the run, so it can no longer drift from its payload the way this docstring did.
 
 Context — why this supersedes c_knot_not_universal_probe.py
 ----------------------------------------------------------
@@ -16,7 +29,7 @@ and C_knot(K) = B_AME(K) / (m_e · |Σ|) is the FITTED deficit ratio = the open 
 found a "41× convention spread" (5.85 vs 240) for the deuteron — but PR #4543 showed that 41× was
 RIGHT-weight (Markov y_λ) vs WRONG-weight (signed dim_q, not the Markov trace): a category error, not
 a genuine ambiguity. With the weight now PINNED to the derived Wenzl y_λ (BindingWeightMarkovPinning),
-C_knot = 5.85 is well-posed, and the honest universality question can finally be asked cleanly. THIS
+C_knot is well-posed, and the honest universality question can finally be asked cleanly. THIS
 probe asks it: with the ONE derived weight and the SAME conventions as the master formula, is C_knot
 universal across isotopes?
 
@@ -25,20 +38,19 @@ THE MEASUREMENT (all four caches interface-inclusive, χ^λ from the Rust Hoefsm
 For each K ∈ {D(H₆), T(H₉), ³He(H₉), ⁴He(H₁₂)}: S(K) = |Σ_λ y_λ χ^λ(β_K) sgn f^λ| (y_λ the pinned
 Wenzl weight, Σ y_λ f^λ = 1 verified), then C_knot(K) = B_AME(K)/(m_e S(K)):
 
-    C_knot(D)=5.85  C_knot(T)=4.44  C_knot(³He)=3.29  C_knot(⁴He)=9.31   → spread 2.83×
+    C_knot(D)=6.068  C_knot(T)=6.706  C_knot(³He)=4.905  C_knot(⁴He)=290.01  → spread 59.12×
 
 Three independent kills of the single-factor hypothesis, all 0-fit:
-  1. NON-UNIVERSAL: spread 2.83× (min ³He 3.29, max ⁴He 9.31) with the pinned weight + best dim (f^λ).
-  2. DIM CONVENTION doesn't fix it: f^λ (hook SYT) is already the TIGHTEST (spread 2.83×) vs dim_q
-     (116×) and no-dim (122×) — the master formula's f^λ choice is the good one, yet still 2.83×.
+  1. NON-UNIVERSAL: spread 59.12× (min ³He 4.905, max ⁴He 290.01) with the pinned weight + best dim.
+  2. DIM CONVENTION doesn't fix it: f^λ (hook SYT) is still the TIGHTEST (spread 59.12×) vs dim_q
+     (219.8×) and no-dim (73.98×) — the master formula's f^λ choice is the good one, yet still 59×.
   3. NO SCALE fixes it: the spread is invariant under any global scale (m_e → E₀/μ₀); C_knot/A and
-     C_knot/(A−1) are non-constant; log C / log A ∈ {2.55,1.36,1.09,1.61} is not a clean power. A
-     deuteron-pinned scale (0-fit CAL on B(²H)) PREDICTS T/³He/⁴He at +32% / +78% / −37% — far outside
-     the isospin ±8% band (ROUTE 5, docs/audits/2026-08-01-mu3-target-robustness-audit.md).
+     C_knot/(A−1) are non-constant; log C / log A ∈ {2.60,1.73,1.45,4.09} is not a clean power. A
+     deuteron-pinned scale (0-fit CAL on B(²H)) PREDICTS T/³He/⁴He at −9.5% / +23.7% / −97.9% — far
+     outside the isospin ±8% band (ROUTE 5, docs/audits/2026-08-01-mu3-target-robustness-audit.md).
 
 The MIRROR-PAIR invariant (the Lean-provable core): T and ³He sit at the SAME strand count H₉ but
-require C_knot(T)=4.44 ≠ 3.29=C_knot(³He) (ratio 1.35, robust across all three dim conventions
-1.29–1.35). Therefore C_knot cannot be a function of (n, q₀) alone — it carries genuine per-knot
+require C_knot(T)=6.706 ≠ 4.905=C_knot(³He) (ratio 1.367, robust across all three dim conventions). Therefore C_knot cannot be a function of (n, q₀) alone — it carries genuine per-knot
 (isospin/mirror) content. Lean `CKnotNonUniversal.no_level_only_closure` proves the cross-
 multiplied inequality B_AME(T)·S(³He) ≠ B_AME(³He)·S(T) (sorry-free, norm_num on rationals).
 
@@ -74,8 +86,9 @@ sys.path.insert(0, str(COMP))
 import _path_bridge  # noqa: F401,E402 — substrate path bridge
 from mpmath import mp, mpf, fabs, sqrt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 q0 = mpf(Q_50_DIGIT_STR)
 qi = 1 / q0
@@ -84,7 +97,7 @@ m_e = mpf("0.51099895069")
 
 # Wenzl Schur-principal parameters (Q = q², Markov z pinned) — the CANONICAL y_λ (markov module).
 Q = q0 ** 2
-z_mark = 1 / (sqrt(q0) + 1 / sqrt(q0))
+z_mark = q0**3 / (q0**2 + 1)
 z_w = q0 * z_mark
 QR = z_w / (1 - Q + z_w)
 
@@ -263,6 +276,21 @@ def main() -> int:
     # Framing / writhe test (0-fit): does the omitted Jones/HOMFLY framing factor q₀^{c·w(K)} account
     # for C_knot? Writhe w(K) = (#σ − #σ⁻¹) of the canonical word (averaged interface crossings are
     # writhe-neutral). If framing closes it, c = ln(C_knot)/(w·ln q₀) is CONSTANT across isotopes.
+    #
+    # LEVEL OF DEFINITION (framing note; nothing below changes). The writhe is a property of the
+    # BRAID WORD, not of its closure — Markov-I (conjugation) invariant, but Markov-II stabilisation
+    # β ∈ B_n ↦ βσ_n^{±1} ∈ B_{n+1} shifts it by ±1 while presenting the same link. The four rows sit
+    # at n(K) = 3(Z+N) strands, already recorded as `n_strands` above, and they are NOT all equal:
+    #     D  n=6  w=4      T  n=9  w=4      ³He n=9  w=8      ⁴He n=12 w=8
+    # n(K) is the braid index (atom-knot.md), i.e. the lowest level of the substrate tower. Under the
+    # owner ruling (states are Gröbner–Shirshov normal forms; the observable is the trace at the
+    # lowest level) these canonical words ARE the states, so the cross-isotope comparison compares
+    # states, not two presentations of one state — it stands as written.
+    # This probe's result is moreover a NEGATIVE and is level-proof either way: D and T share w=4 yet
+    # have different C_knot, so no writhe-ONLY factor q₀^{c·w} (a hypothesis with no n-dependence by
+    # construction) can close C_knot, whatever level each row sits at. The separate scope-(b) mirror
+    # exclusion is already a SAME-level comparison (T and ³He both at n=9; `same_n` asserted below).
+    # Ref: docs/audits/2026-08-10-writhe-level-of-definition.md §5d.
     framing = {}
     try:
         from canonical_braid_crossings import atom_canonical_crossings  # noqa: E402
@@ -305,17 +333,24 @@ def main() -> int:
             "The clean cross-isotope C_knot universality test, run with the NOW-PINNED Markov weight "
             "y_λ (PR #4543, Σ y_λ f^λ = 1 verified). Master-formula conventions "
             "(binding_energy_categorical_deuteron): B(K) = m_e·|Σ_λ y_λ χ^λ(β_K) sgn f^λ|, χ^λ from the "
-            "interface-inclusive Rust Hoefsmit caches. Result: C_knot = 5.85/4.44/3.29/9.31 for "
-            "D/T/³He/⁴He → spread 2.83×, NON-UNIVERSAL. f^λ (hook SYT) is the tightest dim convention "
-            "(2.83× vs dim_q 116×, none 122×); no global/A-power scale fixes it (log C/log A non-"
-            "constant); a deuteron-pinned 0-fit scale mispredicts T/³He/⁴He by +32%/+78%/−37% (≫ "
-            "isospin ±8%). Mirror pair T & ³He at the SAME H₉ need C_knot differing 35% (robust 1.29–"
-            "1.35 across dim conventions) ⇒ C_knot is NOT a function of (n,q₀); it is per-knot Δ_λ. "
+            f"interface-inclusive Rust Hoefsmit caches. Result: C_knot = {per['D']['C_knot']}/"
+            f"{per['T']['C_knot']}/{per['3He']['C_knot']}/{per['4He']['C_knot']} for "
+            f"D/T/³He/⁴He → spread {mp.nstr(spread, 5)}×, NON-UNIVERSAL. f^λ (hook SYT) is the tightest "
+            f"dim convention ({dim_rows['f']['spread']}× vs dim_q {dim_rows['dimq']['spread']}×, "
+            f"none {dim_rows['none']['spread']}×); no global/A-power scale fixes it (log C/log A non-"
+            f"constant); a deuteron-pinned 0-fit scale mispredicts T/³He/⁴He by "
+            f"{pin_pred['T']['err_pct']}%/{pin_pred['3He']['err_pct']}%/{pin_pred['4He']['err_pct']}% "
+            f"(≫ isospin ±8%). Mirror pair T & ³He at the SAME H₉ need C_knot differing by a factor "
+            f"{mp.nstr(mirror_ratio, 5)} (robust across dim conventions: "
+            f"{dim_rows['f']['T_over_3He_sameH9']}/{dim_rows['dimq']['T_over_3He_sameH9']}/"
+            f"{dim_rows['none']['T_over_3He_sameH9']}) ⇒ C_knot is NOT a function of (n,q₀); it is "
+            "per-knot Δ_λ. "
             "scope-(a): single-universal-C_knot derivation route REFUTED; scope-(b): level-only rescale "
             "g(n,q₀) excluded by the mirror inequality (Lean no_level_only_closure). Δ_λ magnitude "
             "stays OPEN (bean qou-3q7t). Supersedes c_knot_not_universal_probe.py (whose 41× was right-"
             "vs-wrong weight, now resolved). No fit; B_AME diagnostic-only (never inverted); nothing "
-            "wired; exact mpmath."),
+            "wired; exact mpmath. NOTE: every figure in this description is INTERPOLATED from the "
+            "values computed in this run — it cannot go stale against its own payload."),
         "audit_only": True,
         "tier": "scope-(a) refutation of single-universal-C_knot + scope-(b) level-only exclusion; no fit",
         "scriptHash": hashlib.sha256(this.read_bytes()).hexdigest()[:16],
@@ -329,31 +364,37 @@ def main() -> int:
                 "C_knot_T": mp.nstr(cT, 6),
                 "C_knot_3He": mp.nstr(cHe, 6),
                 "ratio": mp.nstr(mirror_ratio, 5),
-                "note": "same H₉ ⇒ any g(n,q₀) closure would force C_knot(T)=C_knot(³He); they differ 35%.",
+                "note": (f"same H₉ ⇒ any g(n,q₀) closure would force C_knot(T)=C_knot(³He); they "
+                         f"differ by a factor {mp.nstr(mirror_ratio, 5)}."),
             },
             "dim_convention_scan": dim_rows,
             "framing_writhe_test": {
                 "per_isotope": framing,
                 "framing_excluded": framing_excluded,
-                "note": "Writhe w(K)=#σ−#σ⁻¹ of the canonical word (averaged interface crossings "
-                        "writhe-neutral): w(D)=w(T)=4, w(³He)=w(⁴He)=8. The omitted Jones/HOMFLY "
-                        "framing factor q₀^{c·w} would need constant c to close C_knot, but c varies "
-                        "3× (4.23/3.57/1.43/2.67) and — decisively — D&T (same writhe 4) and ³He&⁴He "
-                        "(same writhe 8) have DIFFERENT C_knot, so no writhe-only factor closes it. "
-                        "The q₀^17≈5.85 numerology is a coincidence (w(D)=4 needs c=4.23, not a clean "
-                        "framing exponent, and the same c fails T). Framing RULED OUT (scope-b).",
+                "note": (
+                    "Writhe w(K)=#σ−#σ⁻¹ of the canonical word (averaged interface crossings "
+                    "writhe-neutral): w(D)=w(T)=4, w(³He)=w(⁴He)=8. The omitted Jones/HOMFLY "
+                    "framing factor q₀^{c·w} would need CONSTANT c to close C_knot. The per-isotope "
+                    "c is recorded in `per_isotope.framing_c` above and is not constant; and — "
+                    "decisively, and independently of those values — D&T (same writhe 4) and ³He&⁴He "
+                    "(same writhe 8) have DIFFERENT C_knot, so no writhe-only factor closes it. "
+                    "That pair argument is what carries the exclusion; the c-spread is corroboration. "
+                    "Framing RULED OUT (scope-b)."),
             },
             "deuteron_pinned_scale_prediction": {
                 "alpha_MeV": mp.nstr(alpha, 6),
                 "alpha_over_m_e": mp.nstr(alpha / m_e, 6),
                 "predictions": pin_pred,
-                "note": "0-fit CAL on B(²H); errors +32/+78/−37% ≫ isospin ±8% ⇒ single scale fails.",
+                "note": (f"0-fit CAL on B(²H); errors {pin_pred['T']['err_pct']}/"
+                         f"{pin_pred['3He']['err_pct']}/{pin_pred['4He']['err_pct']}% ≫ isospin ±8% "
+                         f"⇒ single scale fails."),
             },
             "verdict": {
                 "single_universal_C_knot_refuted": single_factor_refuted,
                 "level_only_rescale_excluded": level_only_excluded,
                 "classification": (
-                    "scope-(a): C_knot is non-universal (2.83× with the pinned weight + best dim), so "
+                    f"scope-(a): C_knot is non-universal ({mp.nstr(spread, 5)}× with the pinned "
+                    "weight + best dim), so "
                     "'derive C_knot as one geometric/scale factor' is refuted. scope-(b): the level-only "
                     "rescale class g(n,q₀)·m_e·S(K) is structurally excluded by the T/³He mirror "
                     "inequality (cited invariant no_level_only_closure). NOT an exclusion of a per-"

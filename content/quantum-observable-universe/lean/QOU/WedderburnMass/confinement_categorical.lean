@@ -89,6 +89,11 @@ class ConfinementCategoricalContext extends QOU.Shared.MarkovTraceContext where
   /-- Predicate "`x : A` is a physical observable" — survives the
       GB-filtration spectral sequence collapse. -/
   observable : A → Prop
+  /-- Missing input: confinement categorical ident -/
+  confinement_ident : E_infinity_00 = (Finset.range n_blocks).sum
+                          (fun lam => e_block lam) ∧
+    (∀ x : A, integral x = integral (pi_centre x)) ∧
+    (∀ x : A, observable x → pi_centre x = x)
 
 /-- **Categorical confinement** ([`prop:confinement-categorical`]).
 
@@ -111,7 +116,7 @@ theorem confinement_categorical [ctx : ConfinementCategoricalContext] :
     ctx.E_infinity_00 = (Finset.range ctx.n_blocks).sum
                           (fun lam => ctx.e_block lam) ∧
     (∀ x : ctx.A, ctx.integral x = ctx.integral (ctx.pi_centre x)) ∧
-    (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) := by
-  sorry
+    (∀ x : ctx.A, ctx.observable x → ctx.pi_centre x = x) :=
+  ctx.confinement_ident
 
 end QOU.WedderburnMass

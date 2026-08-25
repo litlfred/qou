@@ -143,7 +143,7 @@ def test_spin_lift_kernel() -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder("gap-a4-T10-mckay-character-2I-probe",
                        engine="mpmath")
     w.set_audit_only(

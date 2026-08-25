@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-08T21:31:30.406957+00:00",
-  "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-21T14:44:31.345318+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "five_charge_blocks",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "charge-slambda-reeb-phase-crack",
   "scriptFile": "charge_slambda_reeb_phase_crack.py",
   "scriptHash": "4f1c612104f1",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -54,15 +54,14 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
-    "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "data": {
     "description": "Formalize-first crack: charge-type S_λ is the H_{3A} q-Reeb phase, not partition-only Z(Z−1); the 22.6× miss is the GAP-A-4 obstruction. Audit-only; no fit; no production rewire.",
-    "q0": 1.1099785955573347,
-    "sum_C_lambda_charge": 0.03305473025804147,
-    "bare_partition_only_he3_MeV": 0.033781864954400366,
+    "q0": 1.1099785827513808,
+    "sum_C_lambda_charge": 0.03305472672527087,
+    "bare_partition_only_he3_MeV": 0.03378186134391623,
     "ame_split_MeV": 0.76374,
     "rho_need_T": 18.345,
     "rho_need_He3": 18.652,
@@ -80,10 +79,10 @@
       "bracket_sinh_only_pct": 60.439866903959064,
       "bracket_full_pct": 117.60910381179782
     },
-    "bare_fraction_of_split": 0.04423215355278022,
+    "bare_fraction_of_split": 0.04423214882540685,
     "reeb_fraction_of_split": 1.176091038117978,
     "verdict": "Charge-type S_λ SHAPE Z(Z−1)/A^{1/3} is forced (content-sum + BW); the MAGNITUDE cannot come from partition-only C_λ×count (GAP-A-4: p≡n≡³He at H_3). The real S_λ is the free-vs-atom q-Reeb phase |Δθ_λ| at H_{3A}: with universal ρ≈18.5 it gives the split to ~118% (right order) vs the partition-only 4.4% (22.6× short). The Coulomb channel sinh(log q)=h/2 is already inside C_λ=w̃_λ·h/2 (crossing-energy-decomposition.lean). ρ-normalisation push: the cosh(strong)/sinh(Coulomb) channel split BRACKETS the AME split — sinh-only 60% (under), full 118% (over); no no-fit closure to ~100%. The residual is the cosh/sinh mixing of the mirror split (a 5.9% spurious cosh mirror-asymmetry — mirror partners should have equal strong binding), not a missing partition formula. No fit; no rewire."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

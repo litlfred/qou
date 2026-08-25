@@ -184,7 +184,9 @@ def main() -> int:
             {
                 "n_plus": pp,
                 "n_minus": mm,
-                "Q": float(sp.Rational(pp - mm, 2)),
+                # exact half-integer; float() threw away the exactness for
+                # no gain — sympy prints it as "p/q" or an integer.
+                "Q": str(sp.Rational(pp - mm, 2)),
                 "crossings": pp + mm,
                 "channel_total_ratio": (
                     "undefined (Q=0)"

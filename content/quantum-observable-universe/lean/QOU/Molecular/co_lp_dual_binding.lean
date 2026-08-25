@@ -55,32 +55,32 @@ class CoLpDualBindingContext (R : Type*) [Preorder R] where
     `3` minimises `Φ₁` over the candidate bond orders `{1, 2, 3}` — as a
     field, NOT the conclusion (the minimality inequalities are *derived*
     from it below). -/
-class QIntegerMassFormula (ctx : CoLpDualBindingContext R) : Prop where
+class CoGroundStateSelection (ctx : CoLpDualBindingContext R) : Prop where
   /-- Bond order 3 minimises `Φ₁` over the candidate orders (the
       ground-state selection hypothesis). -/
   triple_minimises : ∀ k : ℕ, k ≤ 3 → ctx.Phi_1_k 3 ≤ ctx.Phi_1_k k
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the triple bond
+/-- **Theorem (conditional on `CoGroundStateSelection`)** — the triple bond
     beats the single bond: `Φ₁(3) ≤ Φ₁(1)`.  Derived by instantiating
     the minimisation *hypothesis* at `k = 1`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
 theorem co_triple_beats_single (ctx : CoLpDualBindingContext R)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : CoGroundStateSelection ctx] :
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 1 :=
   hc.triple_minimises 1 (by omega)
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the triple bond
+/-- **Theorem (conditional on `CoGroundStateSelection`)** — the triple bond
     beats the double bond: `Φ₁(3) ≤ Φ₁(2)`.  Derived by instantiating
     the minimisation *hypothesis* at `k = 2`. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
 theorem co_triple_beats_double (ctx : CoLpDualBindingContext R)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : CoGroundStateSelection ctx] :
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 2 :=
   hc.triple_minimises 2 (by omega)
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the resolving
+/-- **Theorem (conditional on `CoGroundStateSelection`)** — the resolving
     declaration for `lean.ref` `qou:QOU.Molecular.co_lp_dual_binding`.
 
     Conjoins the *definitional* triple-bond selection `k* = 3` with the
@@ -90,7 +90,7 @@ theorem co_triple_beats_double (ctx : CoLpDualBindingContext R)
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, bond-order optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co-lp-dual-binding.md
 theorem co_lp_dual_binding (ctx : CoLpDualBindingContext R)
-    [hc : QIntegerMassFormula ctx] :
+    [hc : CoGroundStateSelection ctx] :
     ctx.k_star = 3 ∧
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 1 ∧
     ctx.Phi_1_k 3 ≤ ctx.Phi_1_k 2 :=

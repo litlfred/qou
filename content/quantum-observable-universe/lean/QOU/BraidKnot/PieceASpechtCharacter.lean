@@ -69,7 +69,7 @@ theorem trace_centralC2_specht_module (μ : YoungDiagram) :
 
 /-- The central element `C_2` evaluated on the full group algebra is given by 
 a sum of dimensions and squared contents, bridging representation theory to hooks. -/
-lemma trace_centralC2_regular_rep (n : ℕ) :
+lemma trace_centralC2_regular_rep (n : ℕ) [SnWedderburnPartitionBridge.SnIsotypicSpechtSplit k] :
     LinearMap.trace k _ (LinearMap.mulLeft k (centralC2 (k := k) n)) =
     ∑ μ : SpechtClassification.PartitionIndex n,
       (contentSqSum μ.val : k) * (Module.finrank k (Specht.SpechtSubmodule (k := k) μ.val))^2 := by

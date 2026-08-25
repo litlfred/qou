@@ -1,0 +1,129 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-0205308v2",
+ "source": {
+  "file": "0205308v2.pdf",
+  "sha256": "2de5a4f40d80174c10370befaf89d78ebc5290a1773452e01173a674d2cf7572",
+  "bytes": 145065,
+  "pages": 9
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/0205308",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "29 May 2006"
+  },
+  "doi": null,
+  "title": "WDVV Equations as Functional Relations",
+  "authors_raw": "H.W. Braden 1 and A. Marshakov 2",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210609173832-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "WDVV Equations as Functional Relations"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "WDVV and dispersionless Hirota equations",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The associativity equations as cocycle conditions",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Example: perturbative Seiberg-Witten prepotentials",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Discussion",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 6000,
+   "n_words": 1048
+  },
+  {
+   "id": "sec-001-wdvv-and-dispersionless-hirota-equations",
+   "number": null,
+   "title": "WDVV and dispersionless Hirota equations",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 5,
+   "n_chars": 4784,
+   "n_words": 919
+  },
+  {
+   "id": "sec-002-the-associativity-equations-as-cocycle-condition",
+   "number": null,
+   "title": "The associativity equations as cocycle conditions",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 1733,
+   "n_words": 421
+  },
+  {
+   "id": "sec-003-example-perturbative-seiberg-witten-prepotential",
+   "number": null,
+   "title": "Example: perturbative Seiberg-Witten prepotentials",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2051,
+   "n_words": 462
+  },
+  {
+   "id": "sec-004-discussion",
+   "number": null,
+   "title": "Discussion",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4224,
+   "n_words": 681
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 18792
+ }
+}

@@ -1,81 +1,84 @@
 {
- "schema": "witness/v1",
- "id": "deuteron-naive-z-physical-but-does-not-close",
- "description": "Deuteron A=2 derive-then-check of the naive per-pair magnitude z=1/[2]_v (and the q-Reeb g_reeb), completing the A=4 interface audit's explicit open thread. z is scope-(b) EXCLUDED at A=4 (det<0) but PHYSICAL at A=2 (K2 spectrum {+-1}, 1-z^2>0); yet it does NOT close the deuteron under any 0-fit scale. 0 free parameters; B_AME diagnostic-only; nothing wired.",
- "verdict": "HONEST NEGATIVE (scope-(a) insufficiency + scope-(b) cross-A death): the naive per-pair magnitude z=1/[2]_v is PHYSICAL at A=2 (1-z^2=0.751>0) but does NOT close the deuteron -- b2(z)=-ln(1-z^2)=0.287 is a reduction and no derived scale (m_e/mu0/E+) reaches B_AME (needs undrivable ~7.76 MeV; as a master-Sigma dressing needs non-integer exponent k=6.16). Same for g_reeb. Combined with the A=4 scope-(b) exclusion (5z^2>1), the uniform-z per-pair mechanism is dead across A. Structural: A=2 is not a [1^A] singlet (rank 6), so the He4-local -ln det cumulant has no reason to transfer to the deuteron.",
- "free_parameters": 0,
- "targets_never_inverted_into_production": true,
- "results": {
-  "derived_inputs_0fit": {
-   "q0": "1.10997859555733471",
-   "z_naive_eq_1_over_[2]_v": "0.499320334033561272",
-   "g_reeb_eq_1_over_sqrt(5+(q0-1)^2/q0)": "0.446727067798147204",
-   "ceiling_A4_1_over_sqrt5": "0.4472135955",
-   "ceiling_A2_(m<1)": "1",
-   "mu0_MeV": "1.62951039143",
-   "E_plus_MeV": "2.13063839751"
+  "schema": "witness/v1",
+  "id": "deuteron-naive-z-physical-but-does-not-close",
+  "description": "Deuteron A=2 derive-then-check of the naive per-pair magnitude z=1/[2]_v (and the q-Reeb g_reeb), completing the A=4 interface audit's explicit open thread. z is scope-(b) EXCLUDED at A=4 (det<0) but PHYSICAL at A=2 (K2 spectrum {+-1}, 1-z^2>0); yet it does NOT close the deuteron under any 0-fit scale. 0 free parameters; B_AME diagnostic-only; nothing wired.",
+  "verdict": "HONEST NEGATIVE (scope-(a) insufficiency + scope-(b) cross-A death): the naive per-pair magnitude z=1/[2]_v is PHYSICAL at A=2 (1-z^2=0.751>0) but does NOT close the deuteron -- b2(z)=-ln(1-z^2)=0.287 is a reduction and no derived scale (m_e/mu0/E+) reaches B_AME (needs undrivable ~7.76 MeV; as a master-Sigma dressing needs non-integer exponent k=6.16). Same for g_reeb. Combined with the A=4 scope-(b) exclusion (5z^2>1), the uniform-z per-pair mechanism is dead across A. Structural: A=2 is not a [1^A] singlet (rank 6), so the He4-local -ln det cumulant has no reason to transfer to the deuteron.",
+  "free_parameters": 0,
+  "targets_never_inverted_into_production": true,
+  "results": {
+    "derived_inputs_0fit": {
+      "q0": "1.10997859555733471",
+      "z_naive_eq_1_over_[2]_v": "0.499320334033561272",
+      "g_reeb_eq_1_over_sqrt(5+(q0-1)^2/q0)": "0.446727067798147204",
+      "ceiling_A4_1_over_sqrt5": "0.4472135955",
+      "ceiling_A2_(m<1)": "1",
+      "mu0_MeV": "1.62951039143",
+      "E_plus_MeV": "2.13063839751"
+    },
+    "master_sigma_deuteron": {
+      "B_cat_MeV": "0.380081019523",
+      "B_AME_MeV": "2.2245662",
+      "C_knot_deficit": "5.85287369201"
+    },
+    "per_magnitude": {
+      "z_naive": {
+        "magnitude": "0.499320334033561272",
+        "A2_det_K2": "0.750679204020612793",
+        "A2_det_closed_1_minus_m2": "0.750679204020612793",
+        "A2_det_matches_closed": true,
+        "A2_physical_det_gt_0": true,
+        "A4_det_(1-5m2)(1-m2)": "-0.185120479337347141",
+        "A4_physical_det_gt_0": false,
+        "b2_minus_ln_det_A2": "0.286776876904098",
+        "b2_is_reduction_lt_1": true,
+        "MeV_if_scale_me": "0.14654268318",
+        "MeV_if_scale_mu0": "0.467305900936",
+        "MeV_if_scale_Eplus": "0.611017825449",
+        "required_scale_to_hit_B_AME_MeV": "7.75713238813",
+        "Bcat_times_inv_det": "0.50631617006",
+        "required_inv_det_exponent_k": "6.16135020755"
+      },
+      "g_reeb": {
+        "magnitude": "0.446727067798147204",
+        "A2_det_K2": "0.800434926896469591",
+        "A2_det_closed_1_minus_m2": "0.800434926896469591",
+        "A2_det_matches_closed": true,
+        "A2_physical_det_gt_0": true,
+        "A4_det_(1-5m2)(1-m2)": "0.00174065339290472883",
+        "A4_physical_det_gt_0": true,
+        "b2_minus_ln_det_A2": "0.22260004042243",
+        "b2_is_reduction_lt_1": true,
+        "MeV_if_scale_me": "0.113748387079",
+        "MeV_if_scale_mu0": "0.362729079",
+        "MeV_if_scale_Eplus": "0.474280193411",
+        "required_scale_to_hit_B_AME_MeV": "9.9935570352",
+        "Bcat_times_inv_det": "0.474843121847",
+        "required_inv_det_exponent_k": "7.937701928"
+      }
+    },
+    "cross_A_structural_verdict": {
+      "z_excluded_at_A4_det_lt_0": true,
+      "z_physical_at_A2_det_gt_0": true,
+      "z_insufficient_at_A2_no_0fit_closure": true,
+      "naive_uniform_z_dead_across_A": true,
+      "deuteron_A2_antisym_rank_C(4,2)": 6,
+      "he4_A4_antisym_rank_C(4,4)": 1,
+      "deuteron_is_not_a_[1^A]_singlet": true
+    },
+    "assertions": {
+      "z_physical_at_A2": true,
+      "g_reeb_physical_at_A2": true,
+      "z_excluded_at_A4": true,
+      "A2_det_matches_closed_form_1_minus_m2": true,
+      "b2_is_a_reduction_lt_1": true,
+      "derived_scale_undershoots_B_AME": true,
+      "z_required_exponent_non_integer": true,
+      "naive_uniform_z_dead_across_A": true,
+      "deuteron_not_a_singlet_shell": true
+    },
+    "all_assertions_pass": true
   },
-  "master_sigma_deuteron": {
-   "B_cat_MeV": "0.380081019523",
-   "B_AME_MeV": "2.2245662",
-   "C_knot_deficit": "5.85287369201"
-  },
-  "per_magnitude": {
-   "z_naive": {
-    "magnitude": "0.499320334033561272",
-    "A2_det_K2": "0.750679204020612793",
-    "A2_det_closed_1_minus_m2": "0.750679204020612793",
-    "A2_det_matches_closed": true,
-    "A2_physical_det_gt_0": true,
-    "A4_det_(1-5m2)(1-m2)": "-0.185120479337347141",
-    "A4_physical_det_gt_0": false,
-    "b2_minus_ln_det_A2": "0.286776876904098",
-    "b2_is_reduction_lt_1": true,
-    "MeV_if_scale_me": "0.14654268318",
-    "MeV_if_scale_mu0": "0.467305900936",
-    "MeV_if_scale_Eplus": "0.611017825449",
-    "required_scale_to_hit_B_AME_MeV": "7.75713238813",
-    "Bcat_times_inv_det": "0.50631617006",
-    "required_inv_det_exponent_k": "6.16135020755"
-   },
-   "g_reeb": {
-    "magnitude": "0.446727067798147204",
-    "A2_det_K2": "0.800434926896469591",
-    "A2_det_closed_1_minus_m2": "0.800434926896469591",
-    "A2_det_matches_closed": true,
-    "A2_physical_det_gt_0": true,
-    "A4_det_(1-5m2)(1-m2)": "0.00174065339290472883",
-    "A4_physical_det_gt_0": true,
-    "b2_minus_ln_det_A2": "0.22260004042243",
-    "b2_is_reduction_lt_1": true,
-    "MeV_if_scale_me": "0.113748387079",
-    "MeV_if_scale_mu0": "0.362729079",
-    "MeV_if_scale_Eplus": "0.474280193411",
-    "required_scale_to_hit_B_AME_MeV": "9.9935570352",
-    "Bcat_times_inv_det": "0.474843121847",
-    "required_inv_det_exponent_k": "7.937701928"
-   }
-  },
-  "cross_A_structural_verdict": {
-   "z_excluded_at_A4_det_lt_0": true,
-   "z_physical_at_A2_det_gt_0": true,
-   "z_insufficient_at_A2_no_0fit_closure": true,
-   "naive_uniform_z_dead_across_A": true,
-   "deuteron_A2_antisym_rank_C(4,2)": 6,
-   "he4_A4_antisym_rank_C(4,4)": 1,
-   "deuteron_is_not_a_[1^A]_singlet": true
-  },
-  "assertions": {
-   "z_physical_at_A2": true,
-   "g_reeb_physical_at_A2": true,
-   "z_excluded_at_A4": true,
-   "A2_det_matches_closed_form_1_minus_m2": true,
-   "b2_is_a_reduction_lt_1": true,
-   "derived_scale_undershoots_B_AME": true,
-   "z_required_exponent_non_integer": true,
-   "naive_uniform_z_dead_across_A": true,
-   "deuteron_not_a_singlet_shell": true
-  },
-  "all_assertions_pass": true
- }
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): results.derived_inputs_0fit.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

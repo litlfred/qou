@@ -1,5 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
+import Mathlib.Algebra.Order.Ring.Abs
 import QOU.Torsion.BraneTower
 
 /-!
@@ -43,14 +44,26 @@ LaTeX label: `prop:gb-residue-spectral-sum`
 
 namespace QOU.BraidKnot
 
+-- Generic over the ambient ring, matching the library declaration
+-- (`lean/QOU/BraidKnot/GBResidueSpectralSum.lean:46`). This mirror had `ℝ`
+-- hardcoded throughout, which is the direction of drift opposite to most of
+-- bean `qou-u87j`: here the library is AHEAD and the sibling never picked up
+-- the generalisation. The block settles it — `gb-residue-spectral-sum.md`
+-- states the decomposition for `T_w ∈ H_n(R, q)`, the Hecke algebra over a
+-- generic ring.
+variable {R : Type*} [CommRing R] [LinearOrder R]
+
 /-- A root of unity `ζ_ℓ` at which the `ℓ`-th knot-operator energy
     `E_ℓ(q)` vanishes. In the formal development each `ζ_ℓ` is a
     primitive `n_ℓ`-th root of unity for some `n_ℓ ≥ 2`. -/
-structure RootOfUnity where
+structure RootOfUnity (R : Type*) where
   n : ℕ
   n_pos : 0 < n
-  value : ℝ  -- real part; actual root sits in ℂ but we keep the real piece
-  -- (in Mathlib-ready form this would be `value : Complex`)
+  /-- The coordinate of `ζ_ℓ` in the ambient ring `R`. At `R := ℝ` this is the
+      real part; a full Mathlib treatment would take `R := ℂ`. Abstracting `R`
+      is how the library states it, and it says the same thing without pinning
+      the ring. -/
+  value : R
 
 /-- **GB residue spectral sum.**
 
@@ -71,25 +84,25 @@ structure RootOfUnity where
       * `residue ℓ` — the cyclotomic residue
         `Res_{q→ζ_ℓ}(Φ_q · tr_{M,ℓ})`, per `prop:residue-at-root`.
         Replaces the previous `opaque residueAtRoot`. -/
-class GBResidueSpectralSum where
+class GBResidueSpectralSum (R : Type*) [CommRing R] [LinearOrder R] where
   /-- The descended (E⁰) Markov trace of the braid word. -/
-  descended : ℝ
+  descended : R
   /-- The confinement-level cutoff `ℓ(K, q)`.  Strata above this
       give zero contribution. -/
   levelBound : ℕ
   /-- The substrate parameter. -/
-  q : ℝ
+  q : R
   /-- The roots of unity indexed by filtration level. -/
-  roots : Fin levelBound → RootOfUnity
+  roots : Fin levelBound → RootOfUnity R
   /-- The graded Markov trace value at level `ℓ`, supplied by the
       instance.  Per `prop:graded-markov-trace-from-gs-filtration`,
       this is the value of `tr_M` descended to `J^ℓ / J^{ℓ+1}`. -/
-  gradedTrace : Fin levelBound → ℝ
+  gradedTrace : Fin levelBound → R
   /-- The cyclotomic residue value at level `ℓ`, supplied by the
       instance.  Per `prop:residue-at-root`, this is the
       cyclotomic projection of `Φ_q · gradedTrace ℓ` in the
       Habiro completion. -/
-  residue : Fin levelBound → ℝ
+  residue : Fin levelBound → R
   /-- The spectral sum:
       `𝔪 = |descended| + Σ_ℓ residue ℓ`.
 
@@ -97,7 +110,7 @@ class GBResidueSpectralSum where
       `mass = |descended| + Σ_ℓ residueAtRoot ℓ.val (roots ℓ) q`,
       with `residue ℓ` standing in for the unfolded
       `residueAtRoot ℓ.val (roots ℓ) q` term. -/
-  mass : ℝ
+  mass : R
   /-- Consistency: the mass is the descended term plus the sum of
       residues over filtration levels.  This is the content of
       `prop:gb-residue-spectral-sum`. -/
@@ -106,12 +119,12 @@ class GBResidueSpectralSum where
 
 /-- Convenience accessor: the residue at level `ℓ` for a spectral-sum
     instance.  Replaces the previous `opaque residueAtRoot ℓ ζ q`. -/
-def residueAt (S : GBResidueSpectralSum) (ℓ : Fin S.levelBound) : ℝ :=
+def residueAt (S : GBResidueSpectralSum R) (ℓ : Fin S.levelBound) : R :=
   S.residue ℓ
 
 /-- Convenience accessor: the graded trace at level `ℓ`.  Replaces
     the previous `opaque gradedMarkovTrace ℓ q`. -/
-def gradedMarkovTrace (S : GBResidueSpectralSum) (ℓ : Fin S.levelBound) : ℝ :=
+def gradedMarkovTrace (S : GBResidueSpectralSum R) (ℓ : Fin S.levelBound) : R :=
   S.gradedTrace ℓ
 
 /-- Classical limit: when every cyclotomic residue vanishes (in the
@@ -120,7 +133,7 @@ def gradedMarkovTrace (S : GBResidueSpectralSum) (ℓ : Fin S.levelBound) : ℝ 
     descended Markov trace.
 
     Ref: [manuscript] `prop:categorical-mass-markov`. -/
-theorem classical_limit_descended (S : GBResidueSpectralSum)
+theorem classical_limit_descended (S : GBResidueSpectralSum R)
     (hres : ∀ ℓ : Fin S.levelBound, S.residue ℓ = 0) :
     S.mass = |S.descended| := by
   rw [S.spectral_decomposition]
@@ -133,13 +146,13 @@ theorem classical_limit_descended (S : GBResidueSpectralSum)
     The previous statement
     `∃ N, ∀ ℓ ≥ N, residueAtRoot ℓ ζ q = 0`
     becomes a tautology in the class-based formulation: the
-    residue function `residue : Fin levelBound → ℝ` has domain
+    residue function `residue : Fin levelBound → R` has domain
     of cardinality `levelBound`, and any `ℓ ≥ levelBound` falls
     outside the domain.  Stated formally, the cumulative sum
     truncates at `levelBound`.
 
     Ref: [manuscript] `prop:confinement-level-unique`. -/
-theorem spectral_sum_finite (S : GBResidueSpectralSum) :
+theorem spectral_sum_finite (S : GBResidueSpectralSum R) :
     ∃ N : ℕ, ∀ ℓ ≥ N,
       ∀ (h : ℓ < S.levelBound), S.residue ⟨ℓ, h⟩ = 0 ∨ ℓ < S.levelBound := by
   -- Above any `N ≥ levelBound`, the second clause is vacuous (the
@@ -173,10 +186,10 @@ categorical R-matrix action evaluated at the crystal limit
     `|descended| + Σ_ℓ residue ℓ`, and `spectral_decomposition`
     holds by `rfl`. -/
 def GBResidueSpectralSum.fromCrystalData
-    (descended : ℝ) (levelBound : ℕ) (q : ℝ)
-    (roots : Fin levelBound → RootOfUnity)
-    (gradedTrace residue : Fin levelBound → ℝ) :
-    GBResidueSpectralSum where
+    (descended : R) (levelBound : ℕ) (q : R)
+    (roots : Fin levelBound → RootOfUnity R)
+    (gradedTrace residue : Fin levelBound → R) :
+    GBResidueSpectralSum R where
   descended := descended
   levelBound := levelBound
   q := q

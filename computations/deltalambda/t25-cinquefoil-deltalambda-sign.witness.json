@@ -3,12 +3,12 @@
   "description": "Formalize-first parameter-free test: does the chiral cinquefoil T(2,5)=(\u03c31\u03c32\u03c33\u03c34)^2 Hecke character reproduce the mixed-sign \u0394_\u03bb chirality target sgn(w_0^{S_{\u03bb'}}) over \u03bb\u22a25? Seminormal reps self-validated via Hecke+braid relations. No fit; nothing wired.",
   "auditOnly": "docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md",
   "tier": "symbolic-exact reps (sympy, self-validated) + q_0 sign eval",
-  "computedAt": "2026-08-08T21:37:15.419214+00:00",
-  "commitSha": "805af289643924a1ef42919e65274edb0ebd0d53",
+  "computedAt": "2026-08-23T09:05:30.489000+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "scriptFile": "t25_cinquefoil_deltalambda_sign_probe.py",
-  "scriptHash": "c1eb315999ea",
+  "scriptHash": "64740807204f",
   "q0_source": "qou_substrate.q_at(40)",
   "q0": "1.1099785827513808076",
   "assertions": [
@@ -101,7 +101,7 @@
           1
         ],
         "dim": 5,
-        "chi_q0": -4.591774807899561e-41,
+        "chi_q0": 1.1479437019748901e-41,
         "sgn_chi": 0,
         "sgn_target": 1,
         "match": false
@@ -134,7 +134,7 @@
           2
         ],
         "dim": 5,
-        "chi_q0": -5.739718509874451e-42,
+        "chi_q0": 1.7219155529623352e-41,
         "sgn_chi": 0,
         "sgn_target": 1,
         "match": false
@@ -189,7 +189,7 @@
     "next_lead": "chiral character at q=root of unity (fibre level, Im(q)\u22600), not real-q re-framing",
     "gate": "\u0394_\u03bb gate -- parameter-free probe, not a fit; nothing wired"
   },
-  "scriptCommitSha": "79fbbb3c0b0175a0e915cefb999a8c7d7e34390d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "durationMs": 0,
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

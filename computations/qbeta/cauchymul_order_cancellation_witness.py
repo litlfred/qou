@@ -60,6 +60,12 @@ column is float only for display). Nothing fitted, nothing wired.
 
 from __future__ import annotations
 
+from fractions import Fraction
+
+import mpmath as mp
+
+mp.mp.dps = 60
+
 import json
 import os
 import subprocess
@@ -96,6 +102,12 @@ def log_q_abs(x: int, q: int) -> int:
     return e
 
 
+def _rat(fr: Fraction) -> dict:
+    """An exact rational as both "p/q" and a 50-digit decimal (see qborel probe)."""
+    return {"exact": f"{fr.numerator}/{fr.denominator}",
+            "decimal": mp.nstr(mp.mpf(fr.numerator) / mp.mpf(fr.denominator), 50)}
+
+
 def main() -> None:
     a, b, prod = build_witness(Q, N)
 
@@ -105,17 +117,25 @@ def main() -> None:
     print()
     print(f"{'n':>3} {'log_q|a_n|':>11} {'n^2':>6} {'log_q|b_n|':>11} {'log_q|b_n|/n^2':>16}")
     rows = []
+    ratios = []
     for n in range(1, N + 1):
         la = log_q_abs(a[n], Q)
         lb = log_q_abs(b[n], Q)
-        ratio = lb / (n * n)
+        # la, lb and n^2 are all INTEGERS (log_q of a power of q), so the ratio
+        # is an exact rational. It was float64, and it is not "only for display"
+        # as the inputs block below claimed — it is stored in the witness AND two
+        # verdicts are decided on it (`> 0.9` and the monotonicity chain).
+        ratio = Fraction(lb, n * n)
+        ratios.append(ratio)
         rows.append({"n": n, "log_q_abs_a": la, "n_squared": n * n,
-                     "log_q_abs_b": lb, "ratio_b_over_n2": ratio})
-        print(f"{n:>3} {la:>11} {n*n:>6} {lb:>11} {ratio:>16.4f}")
+                     "log_q_abs_b": lb,
+                     "ratio_b_over_n2": _rat(ratio)})
+        print(f"{n:>3} {la:>11} {n*n:>6} {lb:>11} "
+              f"{float(mp.mpf(ratio.numerator) / mp.mpf(ratio.denominator)):>16.4f}")
 
-    b_positive_order = rows[-1]["ratio_b_over_n2"] > 0.9
-    monotone = all(rows[i]["ratio_b_over_n2"] <= rows[i + 1]["ratio_b_over_n2"]
-                   for i in range(2, len(rows) - 1))
+    b_positive_order = ratios[-1] > Fraction(9, 10)
+    monotone = all(ratios[i] <= ratios[i + 1]
+                   for i in range(2, len(ratios) - 1))
     print()
     print(f"b carries positive order too (ratio -> 1): {b_positive_order}")
     print(f"ratio increasing in n (from n=3): {monotone}")
@@ -149,13 +169,16 @@ def main() -> None:
             "n_max": N,
             "a": "a_n = q^(n^2)",
             "b": "formal inverse of a (a_0 = 1)",
-            "arithmetic": "exact integers; floats used only for the display ratio",
+            "arithmetic": ("exact integers throughout; the log_q|b_n|/n^2 ratio is "
+                           "an exact Fraction, serialized as p/q plus a 50-dps "
+                           "decimal. No float64 anywhere (it used to be float64, "
+                           "and the verdicts were decided on it)."),
         },
         "results": {
             "product_is_unit_sequence": product_is_unit,
             "b_has_positive_order": b_positive_order,
             "ratio_increasing": monotone,
-            "final_ratio_log_q_abs_b_over_n2": rows[-1]["ratio_b_over_n2"],
+            "final_ratio_log_q_abs_b_over_n2": _rat(ratios[-1]),
             "rows": rows,
         },
         "verdict": (

@@ -1,0 +1,106 @@
+where w runs over the Riemann surface of the loga-
+
+rithm. For the sake of simplicity, we begin by limiting
+Vv Vv a
+
+ourselves to a subalgebra, R& C R [Eca81; MS16],
+
+easier to describe because it is isomorphic to a subal-
+
+gebra Rg of formal series in one indeterminate.
+
+2.1 Simple (-resurgent series
+
+It is convenient to denote the indeterminate by z~!
+because our formal series will appear as asymptotic
+expansions at infinity of functions analytic in certain
+unbounded domains. Let us fix a rank-1 lattice 2
+of C. We shall sometimes use the notations ‘w,’ for a
+generator of 2. and
+
+wp = kw, keZ (2)
+
+for the elements of Q.
+
+Definition 1. The space Rs, of simple Q-resurgent
+series is defined as the set of all formal series G(z) =
+Vaso ln?” € C[[z~1]] such that the Borel transform
+
+n
+
+BO) = Dena (3)
+
+n>0
+
+has positive radius of convergence, defines a function
+that has (possibly multivalued) analytic continuation
+along any path y starting close enough to 0 and avoid-
+ing Q, and all the branches of the analytic continuation
+of A(¢) have at worst ‘simple singularities’.
+
+By ‘simple singularities’, we mean that, if ¢; is the
+endpoint of a path 7 as above and we denote by cont
+the analytic continuation of @ along ¥, and if w is a
+point of Q nearest to ¢; (so that cont.,G is holomorphic
+on the line-segment [¢), w[; see Fig. 1), one must have
+
+OEE + FO), (4)
+
+ao
+2m
+
+cont,P(w + €) =
+where ag is a complex number and both functions ¥
+and F extend analytically through € = 0.
+Defining
+B: Cz] — Cé@ Cl], BP = 0564+ (5)
+(here 6 is just a symbol representing the image of 1),
+
+we have
+
+Cfe1} CR} = BRS) CCl] (6)
+
+Figure 1: The path y avoids 2 and ends at (1, near w.
+
+with Rs, := the set of all cod + G € CO @ C{C} such
+that @ extends analytically to the universal cover of
+C—Q and has at worst simple singularities.
+
+The first inclusion in (6) means that convergent se-
+ries are always resurgent: if the radius of convergence
+of ((z) happens to be positive, then G(¢) extends to
+an entire function of ¢, thus the above definition is
+satisfied with any 2.
+
+Examples of divergent simple Q-resurgent series. The
+Euler series GE(z) = Leprol Vi ple Pt (formal so-
+lution to the equation —S2+y = 27!) and the Stirling
+series 8 (z) = pe gag? a Ot - (asymp-
+totic expansion of log (Fez? *eT(z)) as |z| > 00
+
+with |arg z| < 7 —) have Borel transforms
+
+PF (¢) = Tee’ PS(¢) = (8 coth $ _ 1) (7)
+
+meromorphic with simple poles in Q = Z or 27iZ.
+But the typical Borel transforms found in prac-
+tice are multivalued, as is the case for instance
+for exp(@8(z)) € R§,iz (asymptotic expansion of
+
+faz? *e'T(z)), whose Borel transform can be ex-
+
+pressed in terms of the Lambert W function [Sau21].
+In the latter example, the Borel transform has a prin-
+cipal branch regular at ¢ = 0 but the other branches of
+its analytic continuation are singular at 0. A more el-
+ementary example of the same phenomenon is offered
+by Lig(¢) = — ff) log(d — 6) € Ry.
+
+The growth of the coefficients of a resurgent series
+P(z) is at most factorial, because BS € C5 @ C{¢}
+implies that there exist C,M > 0 such that |en| <
+CM"n!. Such series are said to be 1-Gevrey. If the
+radius of convergence of G(z) is zero, we may hope
+to get information on its divergence by studying the
+singularities of its Borel transform. This will be done
+by means of Ecalle’s alien operators (see below).

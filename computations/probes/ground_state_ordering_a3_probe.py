@@ -123,7 +123,7 @@ def phi_ref(ordering: list[str]) -> mp.mpf:
 
 
 _H = Q0 - 1 / Q0
-_Z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+_Z = Q0**3 / (Q0**2 + 1)
 _HALF = mp.mpf(1) / 2
 
 

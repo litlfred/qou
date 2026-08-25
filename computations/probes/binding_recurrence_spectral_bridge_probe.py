@@ -37,8 +37,9 @@ REPO = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(REPO / "computations"))
 import _path_bridge  # noqa: E402,F401
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 Q0_STR = "1.10997858275138080759166909561076887987449912187357763605672"
 Q0 = mp.mpf(Q0_STR)
 

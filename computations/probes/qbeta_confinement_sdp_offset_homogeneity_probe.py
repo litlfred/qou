@@ -59,7 +59,6 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-import numpy as np
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -75,12 +74,19 @@ if _TOOLS.is_dir() and str(_TOOLS) not in sys.path:
     sys.path.insert(0, str(_TOOLS))
 
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
-from pyhecke.gram import TR_M, NF_NAMES, gram_matrix  # noqa: E402
+from pyhecke.gram import (  # noqa: E402
+    NF_NAMES, gram_matrix_mp_strings, tr_m_mp_strings,
+)
 
 set_compute_dps()
 
 SCALES = ["1.0", "2.0", "3.7067", "100.0"]
-TOL = 1e-9
+TOL = mp.mpf("1e-9")
+
+
+
+def _norm(v):
+    return mp.sqrt(mp.fsum(x ** 2 for x in v))
 
 
 def main() -> int:
@@ -88,101 +94,159 @@ def main() -> int:
     print(" confinement-SDP offset — can it carry ϑ_K, or is it homogeneous?")
     print("=" * 78)
 
-    t = np.asarray([float(v) for v in TR_M], dtype=float)
-    G = gram_matrix()
-    G = np.asarray([[float(v) for v in row] for row in G], dtype=float)
+    # 50-dps decimal strings in, decimal strings out. The float64 here was never
+    # a serialization choice (bean qou-t0rf): it was the scipy/HiGHS f64 LP and
+    # the f64 Gram feeding it. `gram_matrix_mp_strings` / `tr_m_mp_strings`
+    # exist for exactly this boundary and clarabel solves at ~50 dps.
+    # `backend="clarabel"`, not "auto", so a missing binary RAISES instead of
+    # silently dropping back to f64 and re-dirtying the witness.
+    t = tr_m_mp_strings()
+    G_str = gram_matrix_mp_strings()
+    G = [[mp.mpf(v) for v in row] for row in G_str]
     d = len(t)
     print(f"\n  NF basis ({d}): {list(NF_NAMES)}")
-    print(f"  objective t = tr_M(b_i)  — KNOT-INDEPENDENT (from pyhecke.gram)")
-    print(f"  Gram G {G.shape}          — KNOT-INDEPENDENT")
-    print(f"  only n_target = |tr_M(K)| varies per knot\n")
+    print("  objective t = tr_M(b_i)  — KNOT-INDEPENDENT (from pyhecke.gram)")
+    print(f"  Gram G ({d}, {d})          — KNOT-INDEPENDENT")
+    print("  only n_target = |tr_M(K)| varies per knot")
+    print("  LP: clarabel MPFR @ 167 bits, decimal strings across the boundary")
 
-    base = None
-    rows, scale_ok = [], True
-    for s in SCALES:
-        n = float(s)
-        r = solve_operator_selection_lp(t, G, n, backend="scipy")
-        x = np.asarray(r.x_star, dtype=float)
-        if not r.feasible:
-            print(f"  n_target={s}: INFEASIBLE")
-            scale_ok = False
+    # ── H1, as an IDENTITY rather than a solver measurement ──────────────
+    # The previous version tested homogeneity by asking a solver for x*(n) at
+    # several n and checking x*(n) = (n/n0) x*(n0) to 1e-9. That test passed,
+    # but it was measuring scipy/HiGHS's VERTEX SELECTION, not the LP: HiGHS
+    # crossovers to a basic solution, vertices of n*P are n times vertices of P,
+    # so a vertex-returning solver reproduces the scaling for free. Clarabel is
+    # a pure interior-point method with no crossover and returns a different
+    # point of the same face — under which the identical LP "fails" the same
+    # test. A property that flips with the solver is not a property of the LP.
+    #
+    # What IS a property of the LP: feasible(n) = n * feasible(1), because
+    # 1^T x = n and G x >= 0 are both homogeneous. That is an identity, checked
+    # here directly on the constraint functions at 50 dps, with no solver.
+    print("\n[H1] cone-slice identity (solver-free): x feasible at n  <=>  "
+          "x/n feasible at 1")
+    worst = mp.mpf(0)
+    for k in range(1, 201):                      # deterministic, seed-free grid
+        n = mp.mpf(k) / 4
+        x = [mp.mpf(k + i) * (-1) ** i for i in range(d)]
+        s = mp.fsum(x)
+        if s == 0:
             continue
-        uni = np.full(d, n / d)
-        off = x - uni
-        mag = float(np.linalg.norm(off))
-        unit = (off / mag).tolist() if mag > TOL else None
-        if base is None:
-            base = (n, x.copy(), off.copy(), mag)
-            dev = 0.0
-            angdev = 0.0
-        else:
-            # H1: does x*(n) equal (n/n0) x*(n0) ?
-            dev = float(np.max(np.abs(x - (n / base[0]) * base[1])))
-            # H2: is the offset direction unchanged?
-            b_off = base[2]
-            cos = float(off @ b_off / (np.linalg.norm(off) * np.linalg.norm(b_off))) \
-                if mag > TOL and np.linalg.norm(b_off) > TOL else 1.0
-            angdev = float(np.arccos(max(-1.0, min(1.0, cos))))
-        scale_ok = scale_ok and dev < TOL and angdev < 1e-7
-        rows.append({"n_target": s, "offset_norm": mag,
-                     "offset_norm_over_n": mag / n,
-                     "max_dev_from_scaled": dev,
-                     "angle_dev_from_base_rad": angdev})
-        print(f"    n_target={s:>8}   ‖offset‖ = {mag:.12g}   "
-              f"‖offset‖/n = {mag / n:.12g}")
-        print(f"    {'':>8}          max|x*(n) − (n/n₀)x*(n₀)| = {dev:.3g}   "
-              f"angle drift = {angdev:.3g} rad")
+        x = [xi * n / s for xi in x]             # force 1^T x = n
+        gx = [mp.fsum(G[i][j] * x[j] for j in range(d)) for i in range(d)]
+        gxn = [mp.fsum(G[i][j] * (x[j] / n) for j in range(d)) for i in range(d)]
+        worst = max(worst, max(abs(a / n - b) for a, b in zip(gx, gxn)))
+    cone_exact = bool(worst < mp.mpf("1e-30"))
+    print(f"     max |(Gx)/n − G(x/n)| over 200 points = {mp.nstr(worst, 4)}"
+          f"   → identity holds: {cone_exact}")
 
-    ratios = [r["offset_norm_over_n"] for r in rows]
-    const = (max(ratios) - min(ratios)) < 1e-9 if ratios else False
-    print(f"\n  H1/H2: ‖offset‖/n constant across scales: {const}")
-    print(f"         exact scaling x*(n) = (n/n₀)·x*(n₀): {scale_ok}")
+    # ── H2: does the LP pin x* at all? ───────────────────────────────────
+    print("\n[H2] what the LP actually determines, per scale:")
+    rows, gaps = [], []
+    for sc in SCALES:
+        n = mp.mpf(sc)
+        r = solve_operator_selection_lp(t, G_str, sc, backend="clarabel")
+        if not r.feasible:
+            print(f"     n_target={sc}: INFEASIBLE")
+            return 1
+        if r.x_star_str is None:
+            raise RuntimeError(
+                "the LP returned no full-precision strings — an f64 backend "
+                "answered, which would re-dirty this witness")
+        x = [mp.mpf(v) for v in r.x_star_str]
+        gaps.append(abs(mp.mpf(r.duality_gap_str)))
+        off = [xi - n / d for xi in x]
+        rows.append({
+            "n_target": sc,
+            "primal_obj": mp.nstr(mp.mpf(r.primal_obj_str), 4),
+            "y0_star": mp.nstr(mp.mpf(r.y0_star_str), 4),
+            "duality_gap": mp.nstr(abs(mp.mpf(r.duality_gap_str)), 4),
+            "offset_norm_solver_dependent": mp.nstr(_norm(off), 15),
+            "active_set": list(r.active_set),
+        })
+        print(f"     n={sc:>8}  min t·x = {rows[-1]['primal_obj']:>11}   "
+              f"y0* = {rows[-1]['y0_star']:>11}   "
+              f"‖offset‖ = {rows[-1]['offset_norm_solver_dependent']}")
 
-    homogeneous = bool(const and scale_ok)
+    max_gap = max(gaps) if gaps else mp.mpf(0)
+    objs = [abs(mp.mpf(r["primal_obj"])) for r in rows]
+    y0s = [abs(mp.mpf(r["y0_star"])) for r in rows]
+    obj_is_zero = bool(objs and max(objs) < mp.mpf("1e-10"))
+    y0_is_zero = bool(y0s and max(y0s) < mp.mpf("1e-10"))
+    degenerate = bool(obj_is_zero and y0_is_zero)
+    print(f"\n     LP duality gap (max) = {mp.nstr(max_gap, 4)} — the accuracy "
+          "floor is the interior-point")
+    print("     solver's convergence, not the arithmetic.")
+    print(f"     min t·x = 0 at every n: {obj_is_zero}      "
+          f"y0* = 0 at every n: {y0_is_zero}")
+    if degenerate:
+        print("     ⇒ the objective is DEGENERATE: the optimal face is not a "
+              "point, so x* — and")
+        print("       therefore 'the offset' — is not determined by the LP at "
+              "all. Which point comes")
+        print("       back is a solver choice (HiGHS: a vertex; clarabel: an "
+              "interior point).")
+
+    homogeneous = cone_exact
+
     verdict = (
-        "THE CONFINEMENT LP IS HOMOGENEOUS, SO ITS OFFSET CANNOT CARRY ϑ_K — a "
-        "structural exclusion of the canonical formulation, established before "
-        "any fitting. The Frobenius constraint G x >= 0 is a CONE, so the "
-        "feasible set at net n_target is exactly n_target times the fixed "
-        "polytope at 1. Measured: x*(n) = (n/n0) x*(n0) to "
-        f"{max((r['max_dev_from_scaled'] for r in rows), default=0):.2g} and the "
-        "offset direction is constant to "
-        f"{max((r['angle_dev_from_base_rad'] for r in rows), default=0):.2g} rad, "
-        "with ||offset||/n constant. Since t and G are knot-INDEPENDENT "
-        "(properties of the H_3 basis at q0) and only n_target = |tr_M(K)| "
-        "varies, two knots produce PARALLEL offsets: the ANGLE carries zero "
-        "knot information — it is literally the same number for every knot — "
-        "and the MAGNITUDE is a fixed constant times tr_M(K). So the pair "
-        "(magnitude, angle) supplies ONE knot-dependent number, not two, and "
-        "its knot-to-knot content is the ratio tr_M(K1)/tr_M(K2). "
+        "THE CONFINEMENT LP CANNOT CARRY ϑ_K, and the reason is stronger than "
+        "the one this probe originally recorded. TWO FACTS, established "
+        "separately. (1) HOMOGENEITY, now as an IDENTITY rather than a "
+        "measurement: 1^T x = n and G x >= 0 are both homogeneous, so "
+        "feasible(n) = n * feasible(1) exactly — checked on the constraint "
+        f"functions at 50 dps to {mp.nstr(worst, 3)}, with no solver involved. "
+        "Since t and G are knot-INDEPENDENT (properties of the H_3 basis at q0) "
+        "and only n_target = |tr_M(K)| varies, two knots give PARALLEL offsets: "
+        "the ANGLE carries zero knot information and the MAGNITUDE is a fixed "
+        "constant times tr_M(K), so the pair supplies ONE knot-dependent number "
+        "and its content is the ratio tr_M(K1)/tr_M(K2). "
         "AfreeThetaConstraint.ratio_attained proves a ratio-shaped candidate is "
-        "unfalsifiable — it names an A_omega rather than testing one. This "
-        "route, in this formulation, therefore cannot clear the falsifiability "
-        "bar. THE ESCAPE, and it is the only one: a formulation whose t or G is "
-        "itself knot-dependent is NOT homogeneous and is NOT excluded. That "
-        "means the braid's own operator content must enter the OBJECTIVE or the "
-        "GRAM, not merely the net constraint. SCOPE (a): this excludes the "
-        "canonical scalar-net formulation as the corpus builds it, not the "
-        "proposal. Nothing fitted; nothing wired."
+        "unfalsifiable. (2) WORSE: the objective is DEGENERATE. min t·x = 0 and "
+        f"y0* = 0 at every tested n (to {mp.nstr(max_gap, 3)}, the solver's "
+        "duality gap), so the optimal face is not a point and the LP does not "
+        "determine x* at all. 'The offset from the lattice saddle' is therefore "
+        "not a well-defined function of the knot even before homogeneity is "
+        "invoked — it is whatever point on a zero-objective face the solver "
+        "happens to return. "
+        "RETRACTED, and this is the reason the second fact surfaced: the "
+        "earlier version reported x*(n) = (n/n0) x*(n0) to 1e-9 as the "
+        "measurement establishing homogeneity. That number was an artifact of "
+        "scipy/HiGHS crossing over to a VERTEX — vertices of n*P are n times "
+        "vertices of P, so any vertex-returning solver reproduces the scaling "
+        "regardless. Re-run against clarabel's interior point the same LP "
+        "'fails' it. The conclusion was right; the evidence was solver-"
+        "dependent and has been replaced by the identity above. "
+        "THE ESCAPE, unchanged and still the only one: a formulation whose t or "
+        "G is itself knot-dependent is NOT homogeneous and is NOT excluded — "
+        "the braid's operator content must enter the OBJECTIVE or the GRAM, not "
+        "merely the net constraint. SCOPE (a): this excludes the canonical "
+        "scalar-net formulation as the corpus builds it, not the proposal. "
+        "Nothing fitted; nothing wired."
         if homogeneous else
-        "NOT HOMOGENEOUS on the tested scales — the offset direction or the "
-        "normalised magnitude moved. Inspect the table: if real, the offset "
-        "does carry scale-dependent structure and the route is still live.")
+        "THE CONE-SLICE IDENTITY FAILED, which should be impossible for "
+        "homogeneous constraints — inspect the Gram construction before reading "
+        "anything else here.")
     print("\nVERDICT:", verdict)
 
-    wb = WitnessBuilder("qbeta-confinement-sdp-offset-homogeneity", engine="scipy+mpmath")
+    wb = WitnessBuilder("qbeta-confinement-sdp-offset-homogeneity",
+                        engine="pyhecke+clarabel-mpfr+mpmath")
     wb.set_description(
         "Tests whether the confinement operator-selection LP's solution offset "
-        "can carry theta_K. The Frobenius constraint Gx >= 0 is a homogeneous "
-        "cone, so the feasible set at net n_target is n_target times a fixed "
-        "polytope; with t and G knot-independent (pyhecke.gram) and only "
-        "n_target = |tr_M(K)| varying, the optimum and hence the offset scale "
-        "exactly. Verified numerically. Consequence: two knots give PARALLEL "
-        "offsets — the angle is knot-independent and the magnitude is "
-        "proportional to tr_M(K), so the pair supplies one number, not two, and "
-        "is ratio-shaped. AfreeThetaConstraint.ratio_attained proves such a "
-        "candidate unfalsifiable. Escape: a formulation with knot-dependent t "
-        "or G is not homogeneous and is not excluded. Nothing fitted.")
+        "can carry theta_K. Two independent reasons it cannot. (1) The "
+        "Frobenius constraint Gx >= 0 and the net constraint 1^T x = n are both "
+        "homogeneous, so feasible(n) = n * feasible(1) as an IDENTITY (verified "
+        "on the constraint functions at 50 dps, no solver); with t and G "
+        "knot-independent and only n_target = |tr_M(K)| varying, two knots give "
+        "parallel offsets, so the pair (magnitude, angle) is ratio-shaped and "
+        "unfalsifiable by AfreeThetaConstraint.ratio_attained. (2) The "
+        "objective is DEGENERATE: min t.x = 0 and y0* = 0 at every n, so the "
+        "optimal face is not a point and x* is not determined by the LP — "
+        "'the offset' is a solver artifact. Supersedes this witness's earlier "
+        "x*(n) = (n/n0)x*(n0) measurement, which read scipy/HiGHS's vertex "
+        "selection rather than a property of the program. Escape: a formulation "
+        "with knot-dependent t or G is not homogeneous and is not excluded. "
+        "Nothing fitted.")
     wb.set_content_block("conj:im-q-physical-role")
     wb.add_data("program", "min t.x s.t. 1^T x = n_target, G x >= 0 "
                            "(prop:operator-selection-lp)")
@@ -190,23 +254,67 @@ def main() -> int:
                 {"t": "tr_M(b_i) from pyhecke.gram", "G": "tr_M(b_i b_j)",
                  "basis": list(NF_NAMES)})
     wb.add_data("knot_dependent_input", "n_target = |tr_M(K)| only")
-    wb.add_data("scaling_table", rows)
+    wb.add_data("cone_slice_identity", {
+        "max_dev": mp.nstr(worst, 4),
+        "holds": cone_exact,
+        "method": ("(Gx)/n vs G(x/n) on 200 deterministic points with "
+                   "1^T x = n, evaluated at 50 dps — no LP solver"),
+    })
+    wb.add_data("lp_degeneracy", {
+        "min_objective_is_zero_at_every_n": obj_is_zero,
+        "y0_star_is_zero_at_every_n": y0_is_zero,
+        "degenerate": degenerate,
+        "consequence": ("the optimal face is not a point, so x* and hence the "
+                        "offset are not determined by the LP; the returned "
+                        "point is a solver choice"),
+    })
+    wb.add_data("per_scale", rows)
     wb.add_data("homogeneous", homogeneous)
+    wb.add_data("lp_precision", {
+        "backend": "clarabel MPFR @ 167 bits (~50 dps)",
+        "inputs": "gram_matrix_mp_strings / tr_m_mp_strings — no f64 anywhere",
+        "max_duality_gap": mp.nstr(max_gap, 4),
+        "reported_digits": 15,
+        "why": ("the interior-point solver's convergence gap, not float "
+                "arithmetic, is the accuracy floor; values are reported to 15 "
+                "digits, inside it. The previous version solved this LP with "
+                "scipy/HiGHS in float64 and published 17."),
+    })
+    wb.add_data("RETRACTED_measurement", {
+        "was": "x*(n) = (n/n0) x*(n0) to 1e-9, and ||offset||/n constant",
+        "why_retracted": (
+            "solver-dependent, not a property of the LP. scipy/HiGHS crosses "
+            "over to a basic (vertex) solution; vertices of n*P are n times "
+            "vertices of P, so the scaling is reproduced by the solver's "
+            "selection rule regardless of the program. clarabel, a pure "
+            "interior-point method, returns a different point of the same "
+            "zero-objective face and the same LP 'fails' the test."),
+        "replaced_by": "the cone_slice_identity block, which needs no solver",
+        "conclusion_unchanged": True,
+    })
     wb.add_data("why_it_matters",
                 "homogeneity makes the offset direction knot-independent and the "
                 "magnitude proportional to tr_M(K); the pair is therefore "
-                "ratio-shaped and unfalsifiable by ratio_attained")
+                "ratio-shaped and unfalsifiable by ratio_attained. Degeneracy "
+                "makes the offset undefined in the first place.")
     wb.add_data("the_only_escape",
                 "put the braid's operator content into the OBJECTIVE t or the "
                 "GRAM G, not merely the net constraint n_target; that breaks "
                 "homogeneity and is not excluded here")
     wb.add_data("verdict", verdict)
     wb.add_assertion("confinement_lp_is_homogeneous",
-                     computed=1.0 if homogeneous else 0.0, expected=1.0,
-                     tolerance=0.5,
-                     source="x*(n) = (n/n0) x*(n0) and ||offset||/n constant "
-                            "across the tested net values — the cone-slice "
-                            "structure of G x >= 0")
+                     computed="1" if homogeneous else "0", expected="1",
+                     tolerance="0.5",
+                     source="feasible(n) = n * feasible(1) as an identity on "
+                            "the constraint functions at 50 dps — the "
+                            "cone-slice structure of 1^T x = n with G x >= 0, "
+                            "checked without an LP solver")
+    wb.add_assertion("lp_objective_is_degenerate",
+                     computed="1" if degenerate else "0", expected="1",
+                     tolerance="0.5",
+                     source="min t.x = 0 and y0* = 0 at every tested n, so the "
+                            "optimal face is not a point and the LP does not "
+                            "pin x* — the offset is a solver artifact")
     wb.save()
     print("  witness -> computations/probes/"
           "qbeta-confinement-sdp-offset-homogeneity.witness.json")

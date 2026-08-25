@@ -18,7 +18,7 @@ $$I_{4_1}(0) = 1 - 2q - 3q^2 + 2q^3 + 8q^4 + 18q^5 + 18q^6 + 14q^7 - 12q^8 - 52q
 `I_T(λ)` and `I_T(2µ)` also match. No negative q-powers (a genuine power series, as
 required for the 1-efficient triangulation, Cor 10.21). Source: Garoufalidis–Hodgson–
 Hoffman–Rubinstein, *The 3D-index and normal surfaces* (arXiv:1604.02688), Example 4.1,
-supplied by the owner (`uploads/1604.02688v1.pdf`, commit `39e0b64b`).
+supplied by the owner (`library/arxiv-1604.02688v1/1604.02688v1.pdf`, commit `39e0b64b`).
 
 The gluing formula is the paper's Example 4.1:
 $$I_T(x\mu + y\lambda) = \sum_{k\in\mathbb Z} q^k\, J_\Delta(2k,k,x)\, J_\Delta(2k-x+2y,\,k,\,-2y),$$

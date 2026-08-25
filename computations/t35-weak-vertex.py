@@ -103,7 +103,7 @@ W_trefoil = div.markov_trace(trefoil_reduced, 2)
 print(f"T_{{2,3}} Markov trace (electron): {W_trefoil:.10f}")
 
 # Unknot has trace 1
-W_unknot = 1.0
+W_unknot = 1          # exact: the unknot's normalised Markov trace is 1
 print(f"K_{{0_1}} Markov trace (neutrino): {W_unknot:.10f}")
 
 # ── Crossing energy from T_{3,5} ───────────────────────────────
@@ -133,11 +133,11 @@ print(f"  This means the corrected half-lives are {halflife_correction:.4f}× th
 
 # ── Apply correction to all 6 nuclei ───────────────────────────
 nuclei = [
-    {"name": "³H",   "obs_yr": 12.32,  "pred_yr": 13.0,   "corr_yr": 12.4,  "unit": "yr"},
-    {"name": "¹⁴C",  "obs_yr": 5730.0, "pred_yr": 6800.0, "corr_yr": 6690.0,"unit": "yr"},
+    {"name": "³H",   "obs_yr": 12.32,  "pred_yr": 13,     "corr_yr": 12.4,  "unit": "yr"},
+    {"name": "¹⁴C",  "obs_yr": 5730,   "pred_yr": 6800,   "corr_yr": 6690,  "unit": "yr"},
     {"name": "⁶⁰Co", "obs_yr": 5.2714, "pred_yr": 6.2,    "corr_yr": 6.17,  "unit": "yr"},
-    {"name": "⁹⁰Sr", "obs_yr": 28.79,  "pred_yr": 32.0,   "corr_yr": 31.9,  "unit": "yr"},
-    {"name": "¹³⁷Cs","obs_yr": 30.17,  "pred_yr": 33.0,   "corr_yr": 32.9,  "unit": "yr"},
+    {"name": "⁹⁰Sr", "obs_yr": 28.79,  "pred_yr": 32,     "corr_yr": 31.9,  "unit": "yr"},
+    {"name": "¹³⁷Cs","obs_yr": 30.17,  "pred_yr": 33,     "corr_yr": 32.9,  "unit": "yr"},
     {"name": "²¹⁰Bi","obs_yr": 5.012,  "pred_yr": 5.8,    "corr_yr": 5.79,  "unit": "d"},
 ]
 

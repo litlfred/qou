@@ -180,7 +180,7 @@ fit. -/
     generic `B_geom`.  **No instance is supplied**: the framework does not yet derive
     `B_geom` (that derivation IS the open keystone).  Discharging this by *choosing*
     `B_geom` to hit `κ_phys` would be the forbidden fit and is explicitly not done. -/
--- Ref: [donagi-markman1996cubics] https://arxiv.org/abs/alg-geom/9408004 §1
+-- Ref: [donagi-markman1994] https://arxiv.org/abs/alg-geom/9408004 §1
 -- Ref: [manuscript] conj:qdifference-kernel-prolongation-symbol;
 --      QOU.Brings.SuperDMBerezinian (qCubicGradedSplit); qou-jqof;
 --      docs/audits/2026-08-01-a3-magnitude-super-berezinian-cross-sector.md

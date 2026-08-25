@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "candetgl",
+ "source_sha256": "d788af715428b8b2",
+ "brief": "The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics — 18 sections: INTRODUCTION; PRELIMINARIES; Fuller,9 Bauer, Crick, and",
+ "extended": "**The Biot–Savart operator for application to knot theory, fluid dynamics, and plasma physics**\n\n*Jason Cantarella, Dennis DeTurck, and Herman Gluck*\n\n31 pp, 18 sections.\n\n**Outline.** I INTRODUCTION; II PRELIMINARIES; 8 Fuller,9 Bauer, Crick, and; C The Hodge decomposition theorem; 1 FK˜ﬂuxless knots; 2 HK˜harmonic knots; 3 CG˜curly gradients; 4 HG˜harmonic gradients; 5 GG˜grounded gradients; III STANDARD INFORMATION ABOUT THE BIOT–SAVART; C Examples; IV PROOF OF THEOREM A; V PROOF OF THEOREM B; C Proof of Corollary to Theorem A; VI PROOF OF THEOREM C; VII PROOF OF THEOREM D; C Proof of 2; Acknowledgments\n\n**Extracted claims (proposals, not verified).**\n- Theorem: A: The equation „ 3BS(V)5V holds in V if and only if V is divergence-free and\n- Theorem: B: The kernel of the Biot –Savart operator is precisely the space of gradient vector\n- Theorem: C: The image of the Biot –Savart operator is a proper subspace of the image of\n- Theorem: D: The Biot –Savart operator is a bounded operator, and hence extends to a\n- Theorem: A: The equation „ 3BS (V)5V holds in V if and only if V is divergence-free and\n- Theorem: B: The kernel of the Biot –Savart operator is precisely the space of gradient vector",
+ "tokens": {
+  "brief": 40,
+  "extended": 302
+ },
+ "sections": [
+  {
+   "id": "sec-000-i-introduction",
+   "title": "INTRODUCTION",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-001-ii-preliminaries",
+   "title": "PRELIMINARIES",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-8-fuller9-bauer-crick-and",
+   "title": "Fuller,9 Bauer, Crick, and",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-c-the-hodge-decomposition-theorem",
+   "title": "The Hodge decomposition theorem",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-004-1-fkﬂuxless-knots",
+   "title": "FK˜ﬂuxless knots",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-005-2-hkharmonic-knots",
+   "title": "HK˜harmonic knots",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-006-3-cgcurly-gradients",
+   "title": "CG˜curly gradients",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-4-hgharmonic-gradients",
+   "title": "HG˜harmonic gradients",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-008-5-gggrounded-gradients",
+   "title": "GG˜grounded gradients",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-009-iii-standard-information-about-the-biotsavart-op",
+   "title": "STANDARD INFORMATION ABOUT THE BIOT–SAVART OPERATOR",
+   "pages": "8-12"
+  },
+  {
+   "id": "sec-010-c-examples",
+   "title": "Examples",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-011-iv-proof-of-theorem-a",
+   "title": "PROOF OF THEOREM A",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-012-v-proof-of-theorem-b",
+   "title": "PROOF OF THEOREM B",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-013-c-proof-of-corollary-to-theorem-a",
+   "title": "Proof of Corollary to Theorem A",
+   "pages": "15-21"
+  },
+  {
+   "id": "sec-014-vi-proof-of-theorem-c",
+   "title": "PROOF OF THEOREM C",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-015-vii-proof-of-theorem-d",
+   "title": "PROOF OF THEOREM D",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-016-c-proof-of-2",
+   "title": "Proof of 2",
+   "pages": "25-29"
+  },
+  {
+   "id": "sec-017-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "29-31"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

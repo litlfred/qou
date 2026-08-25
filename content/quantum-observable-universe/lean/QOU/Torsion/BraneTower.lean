@@ -40,7 +40,7 @@ structure QuantumCharacteristicClasses where
     LaTeX: `\label{def:direct-limit-algebra}` -/
 structure DirectLimitAlgebra where
   tower : RecursiveBraneTower
-  substrateAt : (n : ℕ) → SubstrateParameter (tower.level n).M
+  substrateAt : (n : ℕ) → ArchimedeanSubstrateField (tower.level n).M
   sectionAlgebra : ℕ → Type*
   transitionMap : (n : ℕ) → sectionAlgebra n → sectionAlgebra (n + 1)
   limitAlgebra : Type*

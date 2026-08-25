@@ -51,9 +51,13 @@ def main() -> int:
 
     # Sanity windows (fail-fast against accidental bit-rot of the
     # canonical constants).  Tightened to the 1-keV CODATA bands.
+    # noqa: P31 (x3) - these are WINDOW BOUNDS, not constants. They are
+    # deliberately loose (1-keV bands) so the check fails on bit-rot rather
+    # than on a CODATA edition bump; replacing them with table values would
+    # collapse each window to a point and destroy the check.
     e_in_window = float(M_E_MEV) > 0.510998 and float(M_E_MEV) < 0.511000
-    p_in_window = float(M_P_MEV) > 938.27200 and float(M_P_MEV) < 938.27220
-    n_in_window = float(M_N_MEV) > 939.56500 and float(M_N_MEV) < 939.56600
+    p_in_window = float(M_P_MEV) > 938.27200 and float(M_P_MEV) < 938.27220  # noqa: P31
+    n_in_window = float(M_N_MEV) > 939.56500 and float(M_N_MEV) < 939.56600  # noqa: P31
 
     # engine must be a witness-schema enum value; the CODATA provenance
     # lives in the "source" parameter below.

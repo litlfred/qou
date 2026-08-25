@@ -17,7 +17,7 @@ The Skein relation $q[L_+] - q^{-1}[L_-] = (q^{1/2} - q^{-1/2})[L_0]$ deforms th
 $$
   \Delta E_{\mathrm{perc}}(d)
   \;=\;
-  \frac{1}{\eta}\,\operatorname{arsinh}\!\bigl(\eta\,d\bigr),
+  \frac{1}{\eta}\,\mathrm{arsinh}\!\bigl(\eta\,d\bigr),
   \qquad
   \eta := \frac{q - q^{-1}}{2}.
 $$
@@ -26,7 +26,7 @@ Here $d$ denotes the Riemannian chord length, and $\Delta E_{\mathrm{perc}}$ den
 
 See [Table 1](#tbl:schrodinger-color-falsifiability-table1-data).
 
-The large-$d$ logarithmic asymptote precisely matches the second-order Weber–Fechner law suggested by \cite{bujack2022}. The empirical power-law exponent of $\approx 0.5$ captures the intermediate-$d$ behavior of $\operatorname{arsinh}(\eta d)/\eta$, mapping the transition between the linear and logarithmic regimes.
+The large-$d$ logarithmic asymptote precisely matches the second-order Weber–Fechner law suggested by \cite{bujack2022}. The empirical power-law exponent of $\approx 0.5$ captures the intermediate-$d$ behavior of $\mathrm{arsinh}(\eta d)/\eta$, mapping the transition between the linear and logarithmic regimes.
 
 **Numerical prediction from the substrate parameter.**
 
@@ -42,7 +42,7 @@ The transition from Riemannian to Weber–Fechner scaling occurs at $\Delta E \a
 
 **Falsifiability protocol.**
 
-The categorical prediction forms a one-parameter family $\Delta E_{\mathrm{perc}}(d) = \operatorname{arsinh}(\eta d)/\eta$. A high-precision color-perception experiment can fit $\eta$ to a confidence interval $[\eta_-, \eta_+]$. This forces three possible outcomes:
+The categorical prediction forms a one-parameter family $\Delta E_{\mathrm{perc}}(d) = \mathrm{arsinh}(\eta d)/\eta$. A high-precision color-perception experiment can fit $\eta$ to a confidence interval $[\eta_-, \eta_+]$. This forces three possible outcomes:
 
 See [Table 2](#tbl:schrodinger-color-falsifiability-table2-data).
 

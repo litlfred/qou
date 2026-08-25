@@ -47,7 +47,9 @@ from pathlib import Path
 import sympy as sp
 import mpmath as mp
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
@@ -83,8 +85,16 @@ def derive_h3_plancherel_weights_at_q(q_val):
 
     Uses the constraints:
       tr_M(1) = 1
-      tr_M(σ_1) = z = 1/(q^{1/2} + q^{-1/2})
+      tr_M(σ_1) = z = q^3/(q^2 + 1)   — convention D, matching the body
       tr_M(σ_1 σ_2) = z² (Markov axiom on σ_2)
+
+    This line read `z = 1/(q^{1/2} + q^{-1/2})` — convention C, EXCISED
+    2026-08-09 and re-affirmed 2026-08-15 — while the body below computed
+    `q_val**3 / (q_val**2 + 1)`. The docstring stated the excised convention as
+    the operative constraint, so the only convention statement a reader of this
+    function would find was the wrong one. Same shape as
+    `markov_peel.tr_M_atomic` (#5190), which cost a session: row 11 of
+    docs/audits/2026-08-15-detector-blindness-taxonomy.md.
 
     For H_3, the χ^λ(σ_1) values:
       (3): q
@@ -103,7 +113,7 @@ def derive_h3_plancherel_weights_at_q(q_val):
     # σ_1 σ_2 σ_1 = trefoil
     chi_tre = {p: chi_lambda_fast(p, [(1.0, 0.0, 0), (1.0, 0.0, 1), (1.0, 0.0, 0)], q_val=q_val).real for p in parts}
 
-    z = 1.0 / (q_val ** 0.5 + 1.0 / q_val ** 0.5)
+    z = q_val**3 / (q_val**2 + 1)
 
     # Solve the linear system y · M = b where M[i, j] = chi^{λ_j}(w_i)
     # and b = (1, z, z^2). Three equations, three unknowns.

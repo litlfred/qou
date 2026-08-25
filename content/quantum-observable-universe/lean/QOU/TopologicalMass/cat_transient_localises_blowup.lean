@@ -69,6 +69,10 @@ opaque localComponent : ℕ → ℝ
     component. -/
 noncomputable def traceLocal (i : ℕ) : ℝ := trFrob (localComponent i)
 
+class CatTransientInputs : Prop where
+  /-- Open input -/
+  decomp : alpha - tauHat alpha = ∑ i ∈ Finset.range N, localComponent i
+
 /-- **Open geometric input (the .md's first clause).**  The transient
     component `α − τ̂ₙ(α)` is supported on the kernels of `𝔡_{n+1}` at
     the disjoint blow-up centres, hence decomposes in the observation
@@ -76,10 +80,10 @@ noncomputable def traceLocal (i : ℕ) : ℝ := trFrob (localComponent i)
     support analysis (kernel support + disjointness of the centres),
     not in Mathlib. -/
 -- Ref: [manuscript] quantum-observable-universe/mass-endomorphism/topological-mass-cat-transient.md
-theorem transient_decomposition :
+theorem transient_decomposition [ctx : CatTransientInputs] :
     alpha - tauHat alpha
       = ∑ i ∈ Finset.range N, localComponent i :=
-  sorry
+  ctx.decomp
 
 end CatTransient
 
@@ -91,7 +95,7 @@ open CatTransient in
 apply the additive trace to the support decomposition
 `transient_decomposition` and distribute over the finite sum via
 `map_sum`. -/
-theorem cat_transient_localises_blowup :
+theorem cat_transient_localises_blowup [CatTransientInputs] :
     trFrob (alpha - tauHat alpha)
       = ∑ i ∈ Finset.range N, traceLocal i := by
   rw [transient_decomposition]

@@ -27,7 +27,7 @@ The proof factors into three steps.
 generic $q$, the functional satisfying M1 (cyclicity), M2 (the
 Markov axiom
 $\mathrm{tr}^{(n)}(x \cdot \sigma_{n-1}) = z \cdot \mathrm{tr}^{(n-1)}(x)$
-with the framework parameter $z = 1/(q^{1/2} + q^{-1/2})$), and M3
+with the framework parameter $z = q^{3}/(q^{2}+1)$, **convention D**), and M3
 ($\mathrm{tr}(1) = 1$) is unique
 ([Markov-trace uniqueness](#prop:markov-trace-frobenius-selection);
 Jones \cite{jones1987}, Wenzl \cite{wenzl1988}). Consequently any
@@ -97,8 +97,8 @@ $\square$
    (per-eigenvalue), via `markov_peel` (recursive symbolic), and via
    `tr_M_via_wenzl_bridge_mpfr` (50 dps Wenzl bridge).  All three
    should give the same $|\tau|$ to 50 dps; the resulting
-   $\Delta_{\mathrm{cat}}$ should be ATOM-DEPENDENT but
-   CONVENTION-INDEPENDENT.
+   $\Delta_{\mathrm{cat}}$ should be atom-dependent but
+   convention-independent.
 
 2. **Convention-dependent regularizer dominates the brane-tower
    variation.**  The non-categorical brane-tower regularization

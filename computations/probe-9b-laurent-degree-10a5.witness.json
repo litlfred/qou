@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-02T17:26:12.465502+00:00",
-  "commitSha": "ba99d5562ceaebbbdfcc11f239d757b25f476788",
+  "computedAt": "2026-08-21T15:31:37.128340+00:00",
+  "commitSha": "e1cca3baaeb1a768682bad3e71ed7f4bfca385d6",
   "assertions": [
     {
       "name": "closed_form_exact_identity_D",
@@ -22,7 +22,7 @@
     },
     {
       "name": "closed_form_matches_transfer_D",
-      "computed": 9.110798661042794e-20,
+      "computed": 5.549015604252466e-31,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-18,
@@ -30,7 +30,7 @@
     },
     {
       "name": "closed_form_matches_transfer_T",
-      "computed": 9.110798661042794e-20,
+      "computed": 3.772379013629252e-31,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-18,
@@ -38,7 +38,7 @@
     },
     {
       "name": "closed_form_matches_transfer_3He",
-      "computed": 9.110798661042794e-20,
+      "computed": 4.012697591185187e-31,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-18,
@@ -46,7 +46,7 @@
     },
     {
       "name": "closed_form_matches_transfer_4He",
-      "computed": 9.110798661042794e-20,
+      "computed": 6.597470802955254e-31,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-18,
@@ -54,51 +54,51 @@
     },
     {
       "name": "residual_law_reproduced_D",
-      "computed": -0.011164205027064611,
+      "computed": 0.6319034332349442,
       "expected": -0.01,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.02,
       "source": "log_q0(B_AME/B_pred) − (10A−5) vs the 2026-06-09 delta-lambda-canonical-residual audit values"
     },
     {
       "name": "residual_law_reproduced_T",
-      "computed": -0.0662001485963124,
+      "computed": -1.024926010409768,
       "expected": -0.07,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.02,
       "source": "log_q0(B_AME/B_pred) − (10A−5) vs the 2026-06-09 delta-lambda-canonical-residual audit values"
     },
     {
       "name": "residual_law_reproduced_3He",
-      "computed": -1.404355937742256,
+      "computed": -1.9763332410181214,
       "expected": -1.4,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.02,
       "source": "log_q0(B_AME/B_pred) − (10A−5) vs the 2026-06-09 delta-lambda-canonical-residual audit values"
     },
     {
       "name": "residual_law_reproduced_4He",
-      "computed": 0.272285724058662,
+      "computed": -1.6954124490000737,
       "expected": 0.27,
-      "passed": true,
+      "passed": false,
       "tolerance": 0.02,
       "source": "log_q0(B_AME/B_pred) − (10A−5) vs the 2026-06-09 delta-lambda-canonical-residual audit values"
     },
     {
       "name": "h_at_q0_is_q0_to_minus_15_near_match",
-      "computed": -15.000205756871829,
+      "computed": -15.000208479027528,
       "expected": -15.0,
       "passed": true,
       "tolerance": 0.001,
       "source": "OBSERVATION TIER (near-match, not derived): log_q0 h(q0) = log_q0(q0 − q0⁻¹); the deuteron residual exponent 10·2−5 = 15 coincides with −log_q0 h to ≈2e-4 relative — i.e. Δ_λ(D) ≈ 1/h(q0)"
     }
   ],
-  "allPassed": true,
-  "durationMs": 257465,
+  "allPassed": false,
+  "durationMs": 791487,
   "computation": "probe-9b-laurent-degree-10a5",
   "scriptFile": "probe_9b_laurent_degree_10a5.py",
-  "scriptHash": "ed66027ddebc",
-  "scriptCommitSha": "0e3c35074964f09a0f7cd90e076ae168db1939a9",
+  "scriptHash": "49ecf3394d0a",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -108,37 +108,39 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "PROBE 1 (9b, bean drjk): exact Laurent-degree bookkeeping of the Phase-5q closed form tr_M(𝓑_K)=tr_p^Z·tr_n^N·∏f_i vs the canonical binding residual law Δ_λ≈q₀^(10A−5). Closed form verified EXACTLY in ℚ (D, T; rational s-points, exact rational δ(q)) and vs the transfer path at q₀ (≤1e-18). VERDICT: hypothesis '10A−5 from per-block/per-interface degree bookkeeping' REFUTED scope-(a) — trace-side exponent shrinks with A (4.97→0.88) while the law grows +10/nucleon (carried by B_AME). Observation tier: h(q₀)=q₀^−15.0002 (deuteron anchor), and the ³He −1.40 outlier decomposes into p/n-trace asymmetry + interface-sign swap + AME mirror asymmetry. Exploratory; NOT wired; no new constants.",
   "auditOnly": "docs/audits/2026-07-02-9b-probes-laurent-degree-manybody.md",
   "parameters": {
     "compute_dps": 85,
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "Q_beta_n_MeV": 0.7823334093100222,
     "pn_convention": "bring_color_weighted (proven leading δ)"
   },
   "data": {
     "nucleon_traces": {
-      "tr_p_symbolic_in_s": "(s**40 + s**39 - s**36 + s**35 - s**33 + s**31 - s**29 + s**27 + 2*s**24 + s**23 + s**21 - s**19 - s**17 + 2*s**16 - s**13 + s**11 - s**9 + s**7 - s**5 - s**4 - s + 1)/(4*s**21 + 4*s**19)",
-      "tr_n_symbolic_in_s": "(s**40 + s**39 - s**36 + s**35 - s**33 + s**31 - s**29 + s**27 - s**25 - s**21 + 4*s**20 + s**19 + s**15 - s**13 + s**11 - s**9 + s**7 - s**5 - s**4 - s + 1)/(4*s**21 + 4*s**19)",
-      "tr_p_at_q0": "1.0653062286131670593652845464313725576506616741351",
-      "tr_n_at_q0": "0.92323329718615355710525339599068604013866212190134",
-      "log_q0_tr_p": 0.6063048946304201,
-      "log_q0_tr_n": -0.7655046626061276,
+      "tr_p_symbolic_in_s": "(s**44 + s**40 + 2*s**36 + 2*s**32 + 3*s**28 + 2*s**24 + s**20 - s**16 - s**8 - s**4 - 1)/(4*s**26 + 8*s**22 + 4*s**18)",
+      "tr_n_symbolic_in_s": "(s**36 - s**32 + 2*s**28 - 2*s**24 + 4*s**20 - 3*s**16 + 3*s**12 - 2*s**8 + s**4 - 1)/(4*s**18)",
+      "tr_p_at_q0": "1.1457596924573008696890815957741193059437280619435",
+      "tr_n_at_q0": "0.98774368811580957163402016550129498205504875906279",
+      "log_q0_tr_p": 1.3040728820128904,
+      "log_q0_tr_n": -0.11819009718339858,
       "degrees_p": {
-        "leading_deg_s": 19,
-        "lowest_deg_s": -19,
-        "leading_deg_q": 9.5,
-        "lowest_deg_q": -9.5,
+        "leading_deg_s": 18,
+        "lowest_deg_s": -18,
+        "leading_deg_q": 9.0,
+        "lowest_deg_q": -9.0,
         "bar_symmetric_range": true
       },
       "degrees_n": {
-        "leading_deg_s": 19,
-        "lowest_deg_s": -19,
-        "leading_deg_q": 9.5,
-        "lowest_deg_q": -9.5,
+        "leading_deg_s": 18,
+        "lowest_deg_s": -18,
+        "leading_deg_q": 9.0,
+        "lowest_deg_q": -9.0,
         "bar_symmetric_range": true
       }
     },
@@ -146,30 +148,30 @@
       "positive": {
         "form": "f_pp = z",
         "degrees": {
-          "leading_deg_s": -1,
-          "lowest_deg_s": 1,
-          "leading_deg_q": -0.5,
-          "lowest_deg_q": 0.5,
-          "bar_symmetric_range": true
+          "leading_deg_s": 2,
+          "lowest_deg_s": 6,
+          "leading_deg_q": 1.0,
+          "lowest_deg_q": 3.0,
+          "bar_symmetric_range": false
         },
-        "value_at_q0": "0.4993203340335612717689663862757371401611757978999",
-        "log_q0_f": -6.656148800804098,
-        "one_minus_f_at_q0": "0.5006796659664387282310336137242628598388242021001",
-        "log_q0_one_minus_f": -6.6300931512808345
+        "value_at_q0": "0.61268803714646525159582986394589924802630839154509",
+        "log_q0_f": -4.695188827093875,
+        "one_minus_f_at_q0": "0.38731196285353474840417013605410075197369160845491",
+        "log_q0_one_minus_f": -9.090648427685936
       },
       "negative": {
         "form": "f_nn = z − h",
         "degrees": {
-          "leading_deg_s": 2,
+          "leading_deg_s": -6,
           "lowest_deg_s": -2,
-          "leading_deg_q": 1.0,
+          "leading_deg_q": -3.0,
           "lowest_deg_q": -1.0,
-          "bar_symmetric_range": true
+          "bar_symmetric_range": false
         },
-        "value_at_q0": "0.29026001203796759278710374980976978989955249625233",
-        "log_q0_f": -11.855180066845413,
-        "one_minus_f_at_q0": "0.70973998796203240721289625019023021010044750374767",
-        "log_q0_one_minus_f": -3.2859323876375655
+        "value_at_q0": "0.40362773835082593616498365081622430416655089628202",
+        "log_q0_f": -8.695188827093874,
+        "one_minus_f_at_q0": "0.59637226164917406383501634918377569583344910371798",
+        "log_q0_one_minus_f": -4.953868491925955
       },
       "averaged": {
         "form": "f_pn = z − h(1/2 − δ/4)",
@@ -180,10 +182,10 @@
           "lowest_deg_q": -5.0,
           "bar_symmetric_range": false
         },
-        "value_at_q0": "0.39486207469498770007169049990492520125408020672095",
-        "log_q0_f": -8.905618510726457,
-        "one_minus_f_at_q0": "0.60513792530501229992830950009507479874591979327905",
-        "log_q0_one_minus_f": -4.814024803977758
+        "value_at_q0": "0.50822978937673896257799579765589360389830839091657",
+        "log_q0_f": -6.486648647946196,
+        "one_minus_f_at_q0": "0.49177021062326103742200420234410639610169160908343",
+        "log_q0_one_minus_f": -6.802173887603041
       }
     },
     "exact_identity_checks": [
@@ -194,7 +196,7 @@
           "3/2",
           "7/5"
         ],
-        "wall_sec": 2.42
+        "wall_sec": 9.43
       },
       {
         "atom": "T",
@@ -203,61 +205,61 @@
           "3/2",
           "7/5"
         ],
-        "wall_sec": 25.34
+        "wall_sec": 90.13
       }
     ],
     "per_nucleon_increments": [
       {
         "step": "D→T",
         "added": "+n (+nn interface)",
-        "d_log_Delta_lambda": 9.945,
+        "d_log_Delta_lambda": 8.343,
         "d_BAME_side": 12.827,
-        "d_trace_side": -2.882,
+        "d_trace_side": -4.484,
         "law_increment": 10
       },
       {
         "step": "D→3He",
         "added": "+p (+pp interface)",
-        "d_log_Delta_lambda": 8.607,
+        "d_log_Delta_lambda": 7.392,
         "d_BAME_side": 11.922,
-        "d_trace_side": -3.316,
+        "d_trace_side": -4.531,
         "law_increment": 10
       },
       {
         "step": "T→4He",
         "added": "+p (pp; census T{pn,nn}→⁴He{pp,pn,nn})",
-        "d_log_Delta_lambda": 10.338,
+        "d_log_Delta_lambda": 9.33,
         "d_BAME_side": 11.547,
-        "d_trace_side": -1.208,
+        "d_trace_side": -2.217,
         "law_increment": 10
       },
       {
         "step": "3He→4He",
         "added": "+n (nn; census ³He{pp,pn}→⁴He{pp,pn,nn})",
-        "d_log_Delta_lambda": 11.677,
+        "d_log_Delta_lambda": 10.281,
         "d_BAME_side": 12.451,
-        "d_trace_side": -0.774,
+        "d_trace_side": -2.17,
         "law_increment": 10
       }
     ],
     "exponent_dictionary_q0_units": {
-      "log_q0_z": -6.656148800804098,
-      "log_q0_h": -15.000205756871829,
-      "log_q0_tr_p": 0.6063048946304201,
-      "log_q0_tr_n": -0.7655046626061276,
-      "log_q0_tr_n_over_tr_p": -1.3718095572365478,
-      "log_q0_f_pp": -6.656148800804098,
-      "log_q0_f_pn": -8.905618510726457,
-      "log_q0_f_nn": -11.855180066845413,
-      "log_q0_g_pp=1-f_pp": -6.6300931512808345,
-      "log_q0_g_pn=1-f_pn": -4.814024803977758,
-      "log_q0_g_nn=1-f_nn": -3.2859323876375655,
-      "log_q0_delta_flavor": -63.14681037454899
+      "log_q0_z": -4.695188827093875,
+      "log_q0_h": -15.000208479027528,
+      "log_q0_tr_p": 1.3040728820128904,
+      "log_q0_tr_n": -0.11819009718339858,
+      "log_q0_tr_n_over_tr_p": -1.4222629791962889,
+      "log_q0_f_pp": -4.695188827093875,
+      "log_q0_f_pn": -6.486648647946196,
+      "log_q0_f_nn": -8.695188827093874,
+      "log_q0_g_pp=1-f_pp": -9.090648427685936,
+      "log_q0_g_pn=1-f_pn": -6.802173887603041,
+      "log_q0_g_nn=1-f_nn": -4.953868491925955,
+      "log_q0_delta_flavor": -63.1468204426298
     },
     "mirror_decomposition_T_vs_3He": {
-      "observed_exponent_gap_T_minus_3He": 1.338,
-      "nucleon_trace_asymmetry_term (−log tr_n/tr_p)": 1.372,
-      "interface_sign_swap_term (−log (1−f_pn·f_nn)/(1−f_pp·f_pn))": -0.938,
+      "observed_exponent_gap_T_minus_3He": 0.951,
+      "nucleon_trace_asymmetry_term (−log tr_n/tr_p)": 1.422,
+      "interface_sign_swap_term (−log (1−f_pn·f_nn)/(1−f_pp·f_pn))": -1.375,
       "B_AME_mirror_asymmetry_term (log B_T/B_3He)": 0.904,
       "note": "The trace side supplies nucleon asymmetry + interface swap; their sum plus the AME mirror term reproduces the observed gap by construction. The point is the SPLIT: how much of the ³He −1.40 deviation is generated by interface SIGNS (pp vs nn) vs the p/n trace asymmetry."
     },
@@ -270,18 +272,18 @@
         "interface_kinds": [
           "averaged"
         ],
-        "tr_free_closed": "0.98352618195548050569232970261262953513066814133038",
-        "tr_atom_closed": "0.38835718872378100730177249496534606587836263700872",
-        "prod_f": "0.39486207469498770007169049990492520125408020672095",
-        "one_minus_prod_f": "0.60513792530501229992830950009507479874591979327905",
-        "rel_diff_vs_transfer_atom": 9.110798661042794e-20,
-        "rel_diff_vs_transfer_free": 5.857826651023196e-50,
-        "B_pred_MeV": "0.465620587590568996092951221898",
+        "tr_free_closed": "1.1317169043222100827313075681159639985201502826418",
+        "tr_atom_closed": "0.57517224391777187082653534398618088915249435289285",
+        "prod_f": "0.50822978937673896257799579765589360389830839091657",
+        "one_minus_prod_f": "0.49177021062326103742200420234410639610169160908343",
+        "rel_diff_vs_transfer_atom": 5.549015604252466e-31,
+        "rel_diff_vs_transfer_free": 1.8877077435956794e-31,
+        "B_pred_MeV": "0.435403481607492665066161661691",
         "B_AME_MeV": 2.2245662,
-        "Delta_lambda": "4.77763711332307488003825362858",
-        "log_q0_Delta_lambda": 14.988835794972935,
+        "Delta_lambda": "5.109206274113813674736893618",
+        "log_q0_Delta_lambda": 15.631903433234944,
         "law_10A_minus_5": 15,
-        "dev_from_law": -0.011164205027064611,
+        "dev_from_law": 0.6319034332349442,
         "degrees_one_minus_prod_f": {
           "leading_deg_s": 6,
           "lowest_deg_s": -10,
@@ -290,10 +292,10 @@
           "bar_symmetric_range": false
         },
         "degrees_delta_tr": {
-          "leading_deg_s": 44,
-          "lowest_deg_s": -48,
-          "leading_deg_q": 22.0,
-          "lowest_deg_q": -24.0,
+          "leading_deg_s": 42,
+          "lowest_deg_s": -46,
+          "leading_deg_q": 21.0,
+          "lowest_deg_q": -23.0,
           "bar_symmetric_range": false
         },
         "writhe_atom": {
@@ -308,11 +310,11 @@
         },
         "writhe_diff_atom_minus_free": 0,
         "log_decomposition": {
-          "log_q0_BAME_over_Qbeta": 10.015611223019471,
-          "minus_log_q0_tr_free": 0.15919976797570748,
-          "minus_log_q0_one_minus_prod_f": 4.814024803977758,
-          "trace_side_total": 4.973224571953465,
-          "total": 14.988835794972935
+          "log_q0_BAME_over_Qbeta": 10.015612330461396,
+          "minus_log_q0_tr_free": -1.1858827848294917,
+          "minus_log_q0_one_minus_prod_f": 6.802173887603041,
+          "trace_side_total": 5.616291102773549,
+          "total": 15.631903433234944
         }
       },
       {
@@ -324,30 +326,30 @@
           "averaged",
           "negative"
         ],
-        "tr_free_closed": "0.90802411983566707176671820142944112197096404749747",
-        "tr_atom_closed": "0.10407106930208715571593073165688859407758241976544",
-        "prod_f": "0.11461267055430398862175152245412013292615473013827",
-        "one_minus_prod_f": "0.88538732944569601137824847754587986707384526986173",
-        "rel_diff_vs_transfer_atom": 9.110798661042794e-20,
-        "rel_diff_vs_transfer_free": 9.151422143026272e-50,
-        "B_pred_MeV": "0.628959330949128138121077997812",
+        "tr_free_closed": "1.1178462289782265773283413848251415843676477632299",
+        "tr_atom_closed": "0.22931010210455650733209081026890887960280163645605",
+        "prod_f": "0.20513564044864976892685000166038351176091031419587",
+        "one_minus_prod_f": "0.79486435955135023107314999833961648823908968580413",
+        "rel_diff_vs_transfer_atom": 3.772379013629252e-31,
+        "rel_diff_vs_transfer_free": 2.7624464515539972e-31,
+        "B_pred_MeV": "0.695131497432200743034289646385",
         "B_AME_MeV": 8.4817962,
-        "Delta_lambda": "13.4854445790645717823081797248",
-        "log_q0_Delta_lambda": 24.933799851403688,
+        "Delta_lambda": "12.2017146846770055752346307414",
+        "log_q0_Delta_lambda": 23.975073989590232,
         "law_10A_minus_5": 25,
-        "dev_from_law": -0.0662001485963124,
+        "dev_from_law": -1.024926010409768,
         "degrees_one_minus_prod_f": {
-          "leading_deg_s": 8,
+          "leading_deg_s": 0,
           "lowest_deg_s": -12,
-          "leading_deg_q": 4.0,
+          "leading_deg_q": 0.0,
           "lowest_deg_q": -6.0,
           "bar_symmetric_range": false
         },
         "degrees_delta_tr": {
-          "leading_deg_s": 65,
-          "lowest_deg_s": -69,
-          "leading_deg_q": 32.5,
-          "lowest_deg_q": -34.5,
+          "leading_deg_s": 54,
+          "lowest_deg_s": -66,
+          "leading_deg_q": 27.0,
+          "lowest_deg_q": -33.0,
           "bar_symmetric_range": false
         },
         "writhe_atom": {
@@ -362,11 +364,11 @@
         },
         "writhe_diff_atom_minus_free": -1,
         "log_decomposition": {
-          "log_q0_BAME_over_Qbeta": 22.84243627282757,
-          "minus_log_q0_tr_free": 0.9247044305818352,
-          "minus_log_q0_one_minus_prod_f": 1.1666591479942807,
-          "trace_side_total": 2.0913635785761158,
-          "total": 24.933799851403688
+          "log_q0_BAME_over_Qbeta": 22.842438798551765,
+          "minus_log_q0_tr_free": -1.0676926876460933,
+          "minus_log_q0_one_minus_prod_f": 2.2003278786845626,
+          "trace_side_total": 1.1326351910384695,
+          "total": 23.975073989590232
         }
       },
       {
@@ -378,30 +380,30 @@
           "positive",
           "averaged"
         ],
-        "tr_free_closed": "1.0477565676413004582450360499088079712009749821853",
-        "tr_atom_closed": "0.20657847508740299947588410513714093687525942386618",
-        "prod_f": "0.19716266303388627992578471155647182730372349192145",
-        "one_minus_prod_f": "0.80283733696611372007421528844352817269627650807855",
-        "rel_diff_vs_transfer_atom": 9.110798661042794e-20,
-        "rel_diff_vs_transfer_free": 9.240572805314151e-50,
-        "B_pred_MeV": "0.658081724984591998000670493734",
+        "tr_free_closed": "1.296675612244944017737899295230299597865508014495",
+        "tr_atom_closed": "0.40376703685142817036867025333340254115508707059188",
+        "prod_f": "0.31138631207259565241288839663309982228956162859607",
+        "one_minus_prod_f": "0.68861368792740434758711160336690017771043837140393",
+        "rel_diff_vs_transfer_atom": 4.012697591185187e-31,
+        "rel_diff_vs_transfer_free": 2.841114132061592e-31,
+        "B_pred_MeV": "0.698552209989764250310256286785",
         "B_AME_MeV": 7.71804132,
-        "Delta_lambda": "11.7280894256419389633082520812",
-        "log_q0_Delta_lambda": 23.595644062257744,
+        "Delta_lambda": "11.0486248695900496236079491099",
+        "log_q0_Delta_lambda": 23.02366675898188,
         "law_10A_minus_5": 25,
-        "dev_from_law": -1.404355937742256,
+        "dev_from_law": -1.9763332410181214,
         "degrees_one_minus_prod_f": {
-          "leading_deg_s": 5,
-          "lowest_deg_s": -9,
-          "leading_deg_q": 2.5,
-          "lowest_deg_q": -4.5,
+          "leading_deg_s": 8,
+          "lowest_deg_s": -4,
+          "leading_deg_q": 4.0,
+          "lowest_deg_q": -2.0,
           "bar_symmetric_range": false
         },
         "degrees_delta_tr": {
           "leading_deg_s": 62,
-          "lowest_deg_s": -66,
+          "lowest_deg_s": -58,
           "leading_deg_q": 31.0,
-          "lowest_deg_q": -33.0,
+          "lowest_deg_q": -29.0,
           "bar_symmetric_range": false
         },
         "writhe_atom": {
@@ -416,11 +418,11 @@
         },
         "writhe_diff_atom_minus_free": 1,
         "log_decomposition": {
-          "log_q0_BAME_over_Qbeta": 21.938075867136018,
-          "minus_log_q0_tr_free": -0.4471051266547127,
-          "minus_log_q0_one_minus_prod_f": 2.1046733217764375,
-          "trace_side_total": 1.657568195121725,
-          "total": 23.595644062257744
+          "log_q0_BAME_over_Qbeta": 21.938078292863658,
+          "minus_log_q0_tr_free": -2.4899556668423823,
+          "minus_log_q0_one_minus_prod_f": 3.5755441329606032,
+          "trace_side_total": 1.0855884661182214,
+          "total": 23.02366675898188
         }
       },
       {
@@ -433,30 +435,30 @@
           "averaged",
           "negative"
         ],
-        "tr_free_closed": "0.96732375059192494747999458356500059134669333837091",
-        "tr_atom_closed": "0.055358426266783106469852047498437740316331036735298",
-        "prod_f": "0.057228436945653579720785177332870008669289462386735",
-        "one_minus_prod_f": "0.94277156305434642027921482266712999133071053761327",
-        "rel_diff_vs_transfer_atom": 9.110798661042794e-20,
-        "rel_diff_vs_transfer_free": 1.306439469830527e-49,
-        "B_pred_MeV": "0.713460941351808337056994802679",
+        "tr_free_closed": "1.2807831515286464106363378671336518462759115691004",
+        "tr_atom_closed": "0.16097414544240738182587344098071685392360735413342",
+        "prod_f": "0.12568415289526626941387850586668409901893672284696",
+        "one_minus_prod_f": "0.87431584710473373058612149413331590098106327715304",
+        "rel_diff_vs_transfer_atom": 2.9603091040162626e-31,
+        "rel_diff_vs_transfer_free": 6.597470802955254e-31,
+        "B_pred_MeV": "0.876063997507514779044809062823",
         "B_AME_MeV": 28.2956624,
-        "Delta_lambda": "39.6597217310700394033891340838",
-        "log_q0_Delta_lambda": 35.27228572405866,
+        "Delta_lambda": "32.2986248499012002497018640448",
+        "log_q0_Delta_lambda": 33.304587550999926,
         "law_10A_minus_5": 35,
-        "dev_from_law": 0.272285724058662,
+        "dev_from_law": -1.6954124490000737,
         "degrees_one_minus_prod_f": {
-          "leading_deg_s": 7,
-          "lowest_deg_s": -11,
-          "leading_deg_q": 3.5,
-          "lowest_deg_q": -5.5,
+          "leading_deg_s": 2,
+          "lowest_deg_s": -6,
+          "leading_deg_q": 1.0,
+          "lowest_deg_q": -3.0,
           "bar_symmetric_range": false
         },
         "degrees_delta_tr": {
-          "leading_deg_s": 83,
-          "lowest_deg_s": -87,
-          "leading_deg_q": 41.5,
-          "lowest_deg_q": -43.5,
+          "leading_deg_s": 74,
+          "lowest_deg_s": -78,
+          "leading_deg_q": 37.0,
+          "lowest_deg_q": -39.0,
           "bar_symmetric_range": false
         },
         "writhe_atom": {
@@ -471,18 +473,18 @@
         },
         "writhe_diff_atom_minus_free": 0,
         "log_decomposition": {
-          "log_q0_BAME_over_Qbeta": 34.38908977973108,
-          "minus_log_q0_tr_free": 0.31839953595141496,
-          "minus_log_q0_one_minus_prod_f": 0.5647964083761617,
-          "trace_side_total": 0.8831959443275766,
-          "total": 35.27228572405866
+          "log_q0_BAME_over_Qbeta": 34.38909358218696,
+          "minus_log_q0_tr_free": -2.3717655696589834,
+          "minus_log_q0_one_minus_prod_f": 1.2872595384719538,
+          "trace_side_total": -1.0845060311870298,
+          "total": 33.304587550999926
         }
       }
     ],
     "verdict": {
       "hypothesis": "10A−5 = 5·[A nucleons] + 5·[(A−1) interfaces]: a per-block/per-interface q₀⁵ factorization derivable from Laurent-degree bookkeeping of the Phase-5q closed form",
       "tier": "REFUTED — scope (a) ONLY",
-      "scope_a_statement": "Leading-degree / writhe / interface bookkeeping of the Phase-5q closed form, ALONE, does not produce 10A−5. The exact trace-side contribution to log_q0 Δ_λ (−log tr_free − log(1−∏f)) SHRINKS with A (+4.97 at D → +0.88 at ⁴He) while the law grows by +10 per nucleon; the growth is carried by the experimental B_AME/Q_β term, which the closed form does not model. Exact Laurent degrees of Δtr and the writhe difference are O(1)–O(20) and NOT of the form 10A−5. This constrains this bookkeeping route only — it does NOT structurally exclude a per-object q₀⁵ factor arising elsewhere in the chain (no proved invariant; scope-(b) NOT claimed).",
+      "scope_a_statement": "Leading-degree / writhe / interface bookkeeping of the Phase-5q closed form, ALONE, does not produce 10A−5. The exact trace-side contribution to log_q0 Δ_λ (−log tr_free − log(1−∏f)) SHRINKS with A (+5.62 at D → -1.08 at ⁴He) while the law grows by +10 per nucleon; the growth is carried by the experimental B_AME/Q_β term, which the closed form does not model. Exact Laurent degrees of Δtr and the writhe difference are O(1)–O(20) and NOT of the form 10A−5. This constrains this bookkeeping route only — it does NOT structurally exclude a per-object q₀⁵ factor arising elsewhere in the chain (no proved invariant; scope-(b) NOT claimed).",
       "observation_tier_residues": [
         "log_q0 h(q0) = −15.0002: the deuteron exponent 15 equals −log_q0 h to 2e-4 relative (Δ_λ(D) ≈ 1/h(q0)) — near-match, not derived",
         "Deuteron decomposition splits cleanly as ≈10.0 (B_AME side) + ≈4.97 (trace side ≈ −log_q0 Δtr) — the '10+5' at A=2 is real but the split does NOT persist (trace side → 0.88 at ⁴He)",
@@ -490,6 +492,6 @@
       ]
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

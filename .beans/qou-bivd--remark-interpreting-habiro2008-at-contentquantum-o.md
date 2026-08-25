@@ -13,7 +13,7 @@ Record the paraphrase gap: the file cites determination by values at all roots o
 - Abstract / Thm 1.1 — J_M in Zhat[q] unifies the SU(2) WRT invariants: evaluation at each root of unity zeta recovers tau_zeta(M), and tau_zeta(M) for all roots of unity is determined by the values at infinitely many roots of unity of prime power order.
   Use here: The precise rigidity statement the Keystone files gesture at; using the prime-power-order form would make the cited antecedent match the source.
 
-Source: `uploads/0605314v1.pdf` (`habiro2008`)
+Source: `library/arxiv-math-0605314v1/0605314v1.pdf` (`habiro2008`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

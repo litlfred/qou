@@ -77,7 +77,8 @@ Route 37, 11 gates, all pass. G0 is a regression gate on the quadrature split
 version of that fix before). G4 and G8 are gated on the **ratio** `gap/ε` over
 six decades, not on a small residual at the finest sample.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.MathlibExt

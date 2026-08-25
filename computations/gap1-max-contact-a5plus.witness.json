@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-12T00:31:06.605349+00:00",
-  "commitSha": "643426a0a02326c08764f65b916e26326b678008",
+  "computedAt": "2026-08-23T09:07:48.489816+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "max_contact_bounded_simplex_overshoots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 3,
+  "durationMs": 8,
   "computation": "gap1-max-contact-a5plus",
   "scriptFile": "gap1_max_contact_a5plus.py",
-  "scriptHash": "465318d208da",
-  "scriptCommitSha": "5c56aff6dc071ab4ca9972409d04545d7b41b43d",
+  "scriptHash": "6e5ffe757b68",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,7 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gap1_max_contact_a5plus.py"
+    ],
+    "reproduce": "python3 -u computations/gap1_max_contact_a5plus.py"
   },
   "description": "GAP-1 (qou-lzoh): forward-predict binding from the max-contact deltahedra (3A−6 contacts: tri-bipyramid 9, octahedron 12, pentagonal-bipyramid 15) with per-bond b* pinned by the SINGLE deuteron datum. Max-contact (linear in A) tracks extensive B_strong with a BOUNDED ratio ~0.7–0.8 at A=5,6,7 (no blow-up), while simplex C(A,2) (quadratic) overshoots by A=7 and the a_D^(n)·C(A,n) tower blows up +920% @⁶Li (#3585). So the max-contact restriction 3A−6<C(A,2) is what tames the pairwise backbone at A≥5 — confirms GAP-1. Residual = bounded per-nucleon many-body/cluster term (GAP-2/GAP-4), reported not fitted. Scope-(a), deltahedral geometry, single anchor, no fit, no wiring.",
   "data": {

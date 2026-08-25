@@ -38,7 +38,7 @@ formalize-first result; running PSLQ on noise is forbidden.
 
 STAGE 2 (only if Stage 1 passes) — mpmath.pslq per coefficient per anchor
 against the arithmetic-dictated basis ONLY (GSWZ + Garoufalidis–Zagier;
-4₁ trace field ℚ(√−3), Vol(4₁) = 2Λ(π/3) so Λ(π/3) is NOT separately
+4₁ trace field ℚ(√−3), Vol(4₁) = 2·Cl₂(π/3) = 6Λ(π/3) so Λ(π/3) is NOT separately
 included):
 
     {1, √3, π², Vol(4₁), ζ(3)}
@@ -93,7 +93,7 @@ def ladder_chain(q):
     """Reproduce the c_3/c_4 extraction chain at anchor q (the producer's
     exact convention — qbeta_ck_k_gt_3_habiro_extension_scoping.py)."""
     h = q - 1 / q
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     alpha = (z - 1) * h / 2
     d1 = q ** 3 / (q ** 2 + 1)
     d2 = -1 / (q * (q ** 2 + 1))
@@ -310,7 +310,7 @@ def main():
             "arithmetic_basis_not_run": {
                 "1": "1", "sqrt3": mp.nstr(mp.sqrt(3), 30),
                 "pi^2": mp.nstr(mp.pi ** 2, 30),
-                "Vol(4_1)=2*Lambda(pi/3)": mp.nstr(vol41, 30),
+                "Vol(4_1)=2*Cl_2(pi/3)=6*Lambda(pi/3)": mp.nstr(vol41, 30),
                 "zeta(3)": mp.nstr(mp.zeta(3), 30),
             },
         },

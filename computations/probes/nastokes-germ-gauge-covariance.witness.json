@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T07:49:20.158347+00:00",
-  "commitSha": "3f7f56fcb184fde1dab5aecce01b2314bd5fe3a8",
+  "computedAt": "2026-08-09T19:40:03.608388+00:00",
+  "commitSha": "4fb254b7758de06ece4d57b8133c027960d23892",
   "assertions": [
     {
       "name": "A1_rep_certified",
@@ -96,11 +96,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 37,
+  "durationMs": 25,
   "computation": "nastokes-germ-gauge-covariance",
   "scriptFile": "nastokes_germ_gauge_covariance_probe.py",
-  "scriptHash": "c7df41b9270b",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "6207f903ad9d",
+  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -141,92 +141,92 @@
       {
         "shape": "(11, 1)",
         "germ_pair": "(0,1)",
-        "norm_Omega_base": 4948.437227819676,
-        "norm_Omega_gauged": 1162.8544104705331,
-        "covariance_defect_rel": 0.7812826746443599,
-        "tr_Om2_base": 3555244.168404439,
-        "tr_Om2_gauged": 163183.59164052393
+        "norm_Omega_base": "4948.437227819676",
+        "norm_Omega_gauged": "1162.8544104705331",
+        "covariance_defect_rel": "0.7812826746443599",
+        "tr_Om2_base": "3555244.168404439",
+        "tr_Om2_gauged": "163183.59164052393"
       },
       {
         "shape": "(11, 1)",
         "germ_pair": "(3,4)",
-        "norm_Omega_base": 2341.7572972399257,
-        "norm_Omega_gauged": 3020.983603407377,
-        "covariance_defect_rel": 1.2535549276805913,
-        "tr_Om2_base": -1212383.9248433984,
-        "tr_Om2_gauged": 760775.0103556628
+        "norm_Omega_base": "2341.7572972399257",
+        "norm_Omega_gauged": "3020.983603407377",
+        "covariance_defect_rel": "1.2535549276805913",
+        "tr_Om2_base": "-1212383.9248433984",
+        "tr_Om2_gauged": "760775.0103556628"
       },
       {
         "shape": "(10, 1, 1)",
         "germ_pair": "(0,1)",
-        "norm_Omega_base": 14845.311683459015,
-        "norm_Omega_gauged": 1198833.5186611477,
-        "covariance_defect_rel": 13.377725878833095,
-        "tr_Om2_base": 31997197.51563998,
-        "tr_Om2_gauged": 6890898020.258329
+        "norm_Omega_base": "14845.311683459015",
+        "norm_Omega_gauged": "1198833.5186611477",
+        "covariance_defect_rel": "13.377725878833095",
+        "tr_Om2_base": "31997197.51563998",
+        "tr_Om2_gauged": "6890898020.258329"
       },
       {
         "shape": "(10, 1, 1)",
         "germ_pair": "(3,4)",
-        "norm_Omega_base": 7025.271891719777,
-        "norm_Omega_gauged": 690127.0101556488,
-        "covariance_defect_rel": 14.426607690349813,
-        "tr_Om2_base": -10911455.323590595,
-        "tr_Om2_gauged": -5784289.866262695
+        "norm_Omega_base": "7025.271891719777",
+        "norm_Omega_gauged": "690127.0101556488",
+        "covariance_defect_rel": "14.426607690349813",
+        "tr_Om2_base": "-10911455.323590595",
+        "tr_Om2_gauged": "-5784289.866262695"
       }
     ],
-    "B1_worst_covariance_defect_rel": 14.426607690349813,
-    "B2_character_worst_rel_diff": 1.7345864040248633e-15,
+    "B1_worst_covariance_defect_rel": "14.426607690349813",
+    "B2_character_worst_rel_diff": "1.7345864040248633e-15",
     "B2_rows": [
       {
         "germ_pair": "(0,1)",
         "trace_powers_seminormal": [
-          3.410605131648481e-13,
-          3555244.168404439,
-          -1296127542.9869752,
-          6566899409522.931
+          "3.410605131648481e-13",
+          "3555244.168404439",
+          "-1296127542.9869752",
+          "6566899409522.931"
         ],
         "trace_powers_burau": [
-          1.2017054018542694e-12,
-          43954089.92389822,
-          -9319834954.942451,
-          968709994049103.5
+          "1.2017054018542694e-12",
+          "43954089.92389822",
+          "-9319834954.942451",
+          "968709994049103.5"
         ],
         "rel_diff": [
-          2.5234375,
-          11.363170528347823,
-          6.190523035614642,
-          146.5140600820438
+          "2.5234375",
+          "11.363170528347823",
+          "6.190523035614642",
+          "146.5140600820438"
         ],
-        "norm_Omega_seminormal": 4948.437227819676,
-        "norm_Omega_burau": 25268.891609735307
+        "norm_Omega_seminormal": "4948.437227819676",
+        "norm_Omega_burau": "25268.891609735307"
       },
       {
         "germ_pair": "(3,4)",
         "trace_powers_seminormal": [
-          2.1316282072803006e-13,
-          -1212383.9248433984,
-          877892497.0597205,
-          -367095764183.0068
+          "2.1316282072803006e-13",
+          "-1212383.9248433984",
+          "877892497.0597205",
+          "-367095764183.0068"
         ],
         "trace_powers_burau": [
-          -2.091660178393795e-13,
-          633281.034200998,
-          231615998.27328104,
-          208504153858.4582
+          "-2.091660178393795e-13",
+          "633281.034200998",
+          "231615998.27328104",
+          "208504153858.4582"
         ],
         "rel_diff": [
-          1.98125,
-          1.5223436415018434,
-          0.736168153789877,
-          1.5679830011727225
+          "1.98125",
+          "1.5223436415018434",
+          "0.736168153789877",
+          "1.5679830011727225"
         ],
-        "norm_Omega_seminormal": 2341.7572972399257,
-        "norm_Omega_burau": 4034.6738583744414
+        "norm_Omega_seminormal": "2341.7572972399257",
+        "norm_Omega_burau": "4034.6738583744414"
       }
     ],
-    "B2_worst_invariant_rel_diff": 146.5140600820438,
-    "B2_trace_control": 9.102686302259886e-17
+    "B2_worst_invariant_rel_diff": "146.5140600820438",
+    "B2_trace_control": "9.102686302259886e-17"
   },
   "caveats": [
     "SCOPE-(b), STRUCTURAL EXCLUSION, for the claim 'Omega_2 (equivalently F_q) has a basis-independent value'.  Cited invariant: the germ is the right logarithmic derivative of a q-family, hence a 1-COCYCLE, defined only up to the coboundary (1 - Ad u)Theta; the induced defect on [dq_i, dq_j] is nonzero (Lean gaugeDefect_ne_zero; exhibited exactly here in A3), and the conjugation-invariant tr(Omega^k) demonstrably differ between two realizations of the SAME representation.  This is a proved algebraic obstruction, not a failed search.",
@@ -235,5 +235,8 @@
     "sorry-free != derived.  Nothing here derives a Delta_lambda, a binding energy, or a magnitude.  The bean's >= 3-body magnitude gate is untouched and OPEN.  This closes a route by showing its observable does not exist, which is a narrower and more fundamental statement than 'the value was not selected'.",
     "The A >= 3 germ is q-DEPENDENT (#4849 sec 2.2), so the q0 pin is material and is recorded.  q0 = experimental proton anchor per the owner directive of 2026-08-07; no muon-serving cache is touched anywhere in this probe.",
     "Arithmetic: exact sympy over Q(q) in part A; float64 in part B, where the verdict is a 0-vs-O(1) question (covariance defect) and a relative-difference-of-invariants question at the 1e-1..1e0 level, not a 1-ppQ question.  Representation certification residuals are reported."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_experimental_proton_anchor, parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

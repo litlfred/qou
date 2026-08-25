@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T18:48:53.048367+00:00",
-  "commitSha": "5d644a9ed7f509ec3e49de6dd2ab0d66b8674900",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:45:01.674507+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "kashaev_converges_to_vol_4_1",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "qbeta-c3-kashaev-invariant-grounding",
   "scriptFile": "qbeta_c3_kashaev_invariant_grounding.py",
-  "scriptHash": "d5dca5d4f0d0",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ffa52c3d6459",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_kashaev_invariant_grounding.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_kashaev_invariant_grounding.py"
   },
   "description": "Grounds S=Im 𝔙 in the Kashaev invariant ⟨4₁⟩_N (Habiro sum, q=e^{2πi/N}). Volume conjecture for 4₁: (2π/N)ln⟨4₁⟩_N → Vol(4₁)=2.0298832 with the N^{3/2} correction. ⟨4₁⟩_N is REAL ⇒ CS(4₁)=0 (amphichiral) ⇒ the c₃ bar-odd S is the substrate-deformation phase, NOT the knot's own CS (matches Im 𝔙=0 at the complete structure). Scope-(a); C14; no c_k wired; no fit. Confirms the wall: closing S needs the q₀→m map (open volume conj).",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

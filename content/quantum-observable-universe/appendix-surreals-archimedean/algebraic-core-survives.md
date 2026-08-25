@@ -131,8 +131,3 @@ The break from $\mathbb{R}$ to $\mathbf{No}$ only becomes
 non-trivial at the last step: when a categorical quantity is
 compared to a *measured* real number, a standard-part must be
 taken ([classical limit as standard-part](#conj:classical-limit-stpart)).
-
-This observation is the foundation for the appendix's central
-move: the substrate parameter $q$ can be taken in $\mathbf{No}$
-(indeed in the infinitesimal neighbourhood of $1$) without
-disturbing any of the algebraic machinery of the main paper.

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-28T02:32:47.529450+00:00",
-  "commitSha": "59c962e82c0ebcd6649eb58d5a1bd942dd1457e5",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:05:25.125113+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "isotope_partition_sets_disjoint",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 61,
+  "durationMs": 5,
   "computation": "perblock-weight-class-feasibility",
   "scriptFile": "perblock_weight_class_feasibility_probe.py",
-  "scriptHash": "04d24db1ba87",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e37ae6af41ac",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,9 +38,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/perblock_weight_class_feasibility_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/perblock_weight_class_feasibility_probe.py"
   },
   "description": "GAP-9 (bean qou-noge, epic qou-xu6t): tests — and REFUTES — the inference that the per-block-weight class is excludable by the isotope-spread failure pattern. Each isotope samples a per-block weight on partitions of its own n (D: 11 of λ⊢6; T/³He: 30 of λ⊢9; ⁴He: 77 of λ⊢12) and those index sets share ZERO partitions, so a free per-block weight has no shared unknowns across isotopes. The attainable A-growth S(⁴He)/S(D) is therefore the full interval [1.5e-3, 2.4e+2] (concentrate the weight on one partition per isotope), which contains the 12.72 target by three orders of magnitude either side. Hence the class is NOT excludable and the spread evidence is fully consistent with 'the right formula has not been tried'. What IS excludable is a formula family at a time — e.g. GAP-6's e^{−C_λ τ}, bounded by its undamped supremum 3.658 for every τ ≥ 0. CORRECTION OF RECORD: the session asserted twice that the spread pattern implicates a many-body term over a per-block weight; that inference does not hold, and the GAP-3 triple-Ursell lead stands on its own merits (it supplies a sign nothing else did) rather than on class exclusion. Nothing wired.",
   "contentBlock": "conj:binding-manybody-eq-jet-filtration",

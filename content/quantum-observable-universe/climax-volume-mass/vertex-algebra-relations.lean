@@ -58,12 +58,18 @@ open UGB.GrobnerShirshov.Hecke
          DOI: 10.1007/978-1-4612-0783-2 -/
 #check @farCommRelation  -- ReductionRule (HeckeGen n) ℝ
 
-/- The three families form a Gröbner–Shirshov basis (Bokut & Shiao
-    2001, Theorem 3.5).
+/- The three families do **NOT** form a Gröbner–Shirshov basis. This comment
+    previously cited Bokut & Shiao 2001, Theorem 3.5 for the claim; that theorem
+    gives a GS basis for the **completed** system, obtained by adjoining
+    `sᵢsᵢ₋₁⋯sⱼsᵢ → sᵢ₋₁sᵢsᵢ₋₁⋯sⱼ`, and the defining relations alone are not
+    confluent. Refuted at n = 4 in `UGB.GrobnerShirshov.Hecke.NotAGSBasis`:
+    Yang–Baxter for (σ₂,σ₃) and far-commutation for (σ₃,σ₁) overlap on
+    `σ₃σ₂σ₃σ₁`, and the two reductions `σ₂σ₃σ₂σ₁` and `σ₃σ₂σ₁σ₃` are both
+    irreducible. Bean qou-auq3 tracks the completion.
     Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
          — Kassel, "Quantum Groups," Springer GTM 155, 1995.
          DOI: 10.1007/978-1-4612-0783-2 -/
-#check @hecke_is_gs_basis  -- IsGrobnerShirshovBasis
+#check @UGB.GrobnerShirshov.Hecke.hecke_is_gs_basis_false
 
 -- ═══════════════════════════════════════════════════════════════════
 -- QU-2: Antipode = Hecke inverse (derived from heckeRelation)

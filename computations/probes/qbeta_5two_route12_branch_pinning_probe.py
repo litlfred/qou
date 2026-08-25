@@ -30,7 +30,15 @@ STILL OPEN: the envelope theorem itself (differentiability of V along the path,
 plus the implicit function theorem for y_j(x)). See `qou-trns`.
 """
 from mpmath import mp,mpf,mpc,polyroots,log,pi,exp,fabs,nstr,arg
-mp.dps=30
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 def roots_x(x): return list(polyroots([x,-(x**2+1),x**2+x+1,-x],maxsteps=400,extraprec=800))
 TWOPI=2*pi
 print("Compare g against the CONTINUOUS branch log x = i*phi (not mpmath's principal Log,")

@@ -7,7 +7,7 @@ The strong force binding derives strictly from the Jaco-Shalen-Johannson (JSJ) d
 $$
   \mathcal{L}_{\mathrm{qCLT}} = \alpha \sum_i \ln\lvert V_i\rvert,
 $$
-where $\alpha = \mathfrak{m}_e / (q_0(q_0-1))$ is the rigid substrate scale, determined solely by the electron mass and the unified substrate parameter $q_0 \approx 1.1097$. The $V_i$ represent the Markov traces of the two-nucleon sub-braids. This categorical derivation requires no empirical Bethe-Weizsäcker parameters ($a_V, a_S, a_A, a_P$). It relies strictly on the mathematical structure of the Hecke channel traces.
+where $\alpha = \mathfrak{m}_e / (q_0(q_0-1))$ is the rigid substrate scale, determined solely by the electron mass and the unified substrate parameter $q_0 \approx 1.1100$. The $V_i$ represent the Markov traces of the two-nucleon sub-braids. This categorical derivation requires no empirical Bethe-Weizsäcker parameters ($a_V, a_S, a_A, a_P$). It relies strictly on the mathematical structure of the Hecke channel traces.
 
 **2. Derivation of Coulomb Repulsion.**
 The Coulomb term arises organically from the $q$-deformed wedge product $\wedge_q$ in the gauge sector of $\mathfrak{S}_q$:

@@ -20,6 +20,7 @@ Audit-only; pure-canonical (q₀ only, no fit). Witness emitted.
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import json
 import sys
 from datetime import datetime, timezone
@@ -29,6 +30,12 @@ from pathlib import Path
 import mpmath as mp
 
 from q_parameter import Q_MP as Q0  # noqa: E402  (muon-pinned canonical, matches kaon witness)
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 # PDG 2024 masses (MeV), charged pion as the unit
 M_PI = mp.mpf("139.57039")
@@ -55,7 +62,7 @@ def meson_ratio(q0: mp.mpf, n: int, n_q: int = 2) -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(str(Q0))
     print(f"\n  GEN-3 MESON (T(2,7)) via χ^(2,1)·Seifert²   q₀ = {float(q0):.10f}\n")
 

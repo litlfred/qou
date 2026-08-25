@@ -45,6 +45,16 @@ import QOU.Archimedean.DilogarithmArchimedeanLimit
 import QOU.Archimedean.TypeBFoldedCrystalCombinatorics
 import QOU.Archimedean.HyperbolicVolumeIndependence
 import QOU.Archimedean.JetOrderIndependence
+-- Formalize-first prune: the `ordω` grade-separation mechanism behind the
+-- surreal-squeeze family (q-NS / q-Collatz / P-vs-NP) is provably blind to
+-- polynomial relations among standard reals, so it cannot route to
+-- `HyperbolicVolumeIndependence` (2026-08-09).
+import QOU.Archimedean.SurrealGradingPrune
+-- Companion to the prune, from the other side: the tower-height contrapositive
+-- of `rem:yekutieli-transcendence-shadow` is invalid as stated because
+-- `VolumeTowerDecomposition` is ungraded, and the graded repair reads the
+-- height straight off the relation as `h(P) = deg_q P` (2026-08-09).
+import QOU.Archimedean.TowerHeightAttack
 import QOU.Archimedean.RealisationVolumeCompatibility
 -- Γ₀(5) hauptmodul gate t₅(τ₀) = −10 (exact ℚ/ℤ arithmetic lock; uploaded-papers
 -- audit idea A2, 2026-07-18). Pure rational arithmetic — no ℝ, consistent with

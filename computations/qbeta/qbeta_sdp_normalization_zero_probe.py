@@ -35,13 +35,14 @@ import _path_bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 
-mp.mp.dps = 50
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 

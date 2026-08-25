@@ -1,36 +1,31 @@
 {
-  "computation": "he4-binding-k-averaged-interface",
-  "description": "Stage 1.5 of the A=4 binding-K search: the canonical AVERAGED interface operator on the naive {3,6,9} placement, via linearity (8 plain GP words, exact q-Laurent, 50 dps). Captures 96.2% of the canonical 4He trace (rel 3.8%, vs 14.7% plain); the residual is the measured woven color-tube structure. Scope-(a); no fit.",
-  "audit_only": true,
-  "computedAt": "2026-07-18T19:19:18.211333+00:00",
-  "engine": "pyhecke_native(GP)+mpmath",
-  "dps": 50,
-  "canonical_target": "0.055358426266783106465",
-  "tr_M_cp_K_avg": "0.05746184945141535556",
-  "rel_delta": "0.03799644113",
-  "plain_best_rel_delta": "0.1469 (stage 1)",
-  "per_sign_words": {
-    "(1, 1, 1)": "0.2036441434838786",
-    "(1, 1, -1)": "0.06350631304714029",
-    "(1, -1, 1)": "0.0634900512741141",
-    "(1, -1, -1)": "0.019788112304988",
-    "(-1, 1, 1)": "0.06350631304714029",
-    "(-1, 1, -1)": "0.01980437407801419",
-    "(-1, -1, 1)": "0.019788112304988",
-    "(-1, -1, -1)": "0.006167376071059344"
-  },
-  "verdict": "Stage 1.5: the averaged 3-bond operator K_avg = ⊗(σ+σ⁻¹)/2 on the naive inter-nucleon interfaces gives tr_M(cp·K_avg) = 0.0574618494514 vs the canonical 0.0553584262668 — rel Δ = 0.038 (96.2% captured; plain best was 14.7%). The residual 3.8% is the measured woven color-tube structure of the canonical recipe (9 averaged crossings at {1,2,4,5,6,7,10}) beyond the naive {3,6,9} placement. A=4 factorization T ≈ cp·K_avg holds to 3.8% — honest partial identification. No AME; no fit; nothing wired. Scope-(a).",
-  "scope": "(a) — averaged 3-bond partial identification; woven-structure residual 3.8% measured",
-  "assertions": [
-    {
-      "label": "averaged interface improves on plain best (3.8% < 14.7%)",
-      "passed": true
-    }
-  ],
-  "allPassed": true,
-  "scriptHash": "52402c1b5437",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "durationMs": 0,
-  "scriptFile": "he4_binding_k_averaged_interface_probe.py"
+ "computation": "he4-binding-k-averaged-interface",
+ "description": "Stage 1.5 of the A=4 binding-K search: the canonical AVERAGED interface operator on the naive {3,6,9} placement, via linearity (8 plain GP words, exact q-Laurent, 50 dps). Captures 96.2% of the canonical 4He trace (rel 3.8%, vs 14.7% plain); the residual is the measured woven color-tube structure. Scope-(a); no fit.",
+ "audit_only": true,
+ "computedAt": "2026-08-23T09:03:02.907600+00:00",
+ "engine": "pyhecke_native(GP)+mpmath",
+ "dps": 50,
+ "canonical_target": "0.16097414544240738183",
+ "tr_M_cp_K_avg": "0.12428611734487179573",
+ "rel_delta": "0.2279125508",
+ "plain_best_rel_delta": "0.1469 (stage 1)",
+ "per_sign_words": {
+  "(1, 1, 1)": "0.3465708625942399",
+  "(1, 1, -1)": "0.1458983003764473",
+  "(1, -1, 1)": "0.1458731550911624",
+  "(1, -1, -1)": "0.06139457595802254",
+  "(-1, 1, 1)": "0.1458983003764473",
+  "(-1, 1, -1)": "0.06141972124330747",
+  "(-1, -1, 1)": "0.06139457595802254",
+  "(-1, -1, -1)": "0.02583944716132483"
+ },
+ "verdict": "Stage 1.5: the averaged 3-bond operator K_avg = \u2297(\u03c3+\u03c3\u207b\u00b9)/2 on the naive inter-nucleon interfaces gives tr_M(cp\u00b7K_avg) = 0.124286117345 vs the canonical 0.160974145442 \u2014 rel \u0394 = 0.2279 (96.2% captured; plain best was 14.7%). The residual 3.8% is the measured woven color-tube structure of the canonical recipe (9 averaged crossings at {1,2,4,5,6,7,10}) beyond the naive {3,6,9} placement. A=4 factorization T \u2248 cp\u00b7K_avg holds to 3.8% \u2014 honest partial identification. No AME; no fit; nothing wired. Scope-(a).",
+ "scope": "(a) \u2014 averaged 3-bond partial identification; woven-structure residual 3.8% measured",
+ "assertions": [
+  {
+   "label": "averaged interface improves on plain best (3.8% < 14.7%)",
+   "passed": false
+  }
+ ],
+ "allPassed": false
 }

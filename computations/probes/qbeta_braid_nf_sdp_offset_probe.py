@@ -33,7 +33,30 @@ and `nf` is the NORMAL-FORM vector of the braid word in `H_3(q)` — the braid's
 own operator content, reduced through the Gröbner-Shirshov tables
 (`pyhecke.gram.hm`). Since `G` is invertible (rank 6), `G x = nf` fixes
 `x* = G⁻¹ nf` uniquely, and `nf`'s DIRECTION varies per knot, not merely its
-scale. Homogeneity is therefore broken and the offset direction becomes
+scale.
+
+    ⛔ THAT PREMISE IS FALSE UNDER CONVENTION D (2026-08-19, bean qou-cds2).
+    `G` has rank 5 of 6 under D — the radical is the q-antisymmetriser — so
+    `x*` is not unique, and it exists at all only if `nf` is orthogonal to the
+    radical. It is not: BOTH anchors carry a radical component of ~47 % of
+    their NF norm (0.47268915 for each, identically). So `G x = nf` is
+    UNSATISFIABLE for both and this probe's question is ill-posed under D, not
+    merely harder to solve.
+
+    This probe ran on convention C, because `pyhecke.gram`'s mpmath path was
+    still on C until 2026-08-19 while the float64 path had been D since
+    08-15. Its committed witness is therefore C-frame.
+
+    It now REFUSES TO RUN rather than re-solving on the quotient and reporting
+    an offset angle: `mp.lu_solve` does not raise on the singular D Gram (it
+    returns entries of order 1e50 with a ~1e-3 residual at every precision
+    from 20 to 120 dps), so without this guard the probe would publish
+    laundered numbers that look like a result. Re-deriving the question under
+    D is separate work.
+
+    Measurement + the quotient API that a re-derivation would use:
+    `computations/qbeta/gram_mp_path_convention_d_migration_probe.py`
+    (witness `gram-mp-path-convention-d-migration.witness.json`). Homogeneity is therefore broken and the offset direction becomes
 knot-dependent — giving a MAGNITUDE *and* an ANGLE per knot, two numbers, which
 is what the falsifiability bar requires.
 
@@ -75,7 +98,6 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
-import numpy as np
 import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -101,20 +123,46 @@ S_PROTON = mp.mpf("-0.03945936")
 # q0); fixed 2026-08-07, which moved the derived theta by -0.60% / -0.05%.
 Q0 = mp.mpf(Q_50_DIGIT_STR)
 
-IDENT = [1.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+IDENT = [mp.mpf(1)] + [mp.mpf(0)] * 5
+
+# `_gram.hm` / `_gram.G` / `_gram.TR_M` are float64 — the float64 in this
+# witness was upstream of the probe, not a serialization choice (bean
+# qou-t0rf). pyhecke's mp path (`gram_matrix_mp`, `tr_m_mp`, `hm_mp`) computes
+# the same objects from the 50-digit q_0 with no float anywhere, so this probe
+# now sources them there.
 
 
 def sigma(nf, gen):
-    """Right-multiply by σ_gen  →  hm(nf, c=1, d=0, gen)."""
-    return _gram.hm(nf, 1.0, 0.0, gen)
+    """Right-multiply by σ_gen  →  hm_mp(nf, c=1, d=0, gen)."""
+    return _gram.hm_mp(nf, 1, 0, gen)
 
 
 def sigma_inv(nf, gen):
-    """Right-multiply by σ_gen⁻¹ = σ_gen − h·I  →  hm(nf, c=1, d=−h, gen).
+    """Right-multiply by σ_gen⁻¹ = σ_gen − h·I  →  hm_mp(nf, c=1, d=−h, gen).
 
     From the Hecke relation σ² = hσ + 1 with h = q − q⁻¹.
     """
-    return _gram.hm(nf, 1.0, -float(_gram.h), gen)
+    return _gram.hm_mp(nf, 1, -_gram.h_mp(), gen)
+
+
+def _nf_tr_mp(nf):
+    """Markov trace of an NF vector at mpmath precision."""
+    tr = _gram.tr_m_mp()
+    return mp.fsum(nf[i] * tr[i] for i in range(6))
+
+
+def _norm(v):
+    return mp.sqrt(mp.fsum(x ** 2 for x in v))
+
+
+def _dot(u, v):
+    return mp.fsum(a * b for a, b in zip(u, v))
+
+
+def ang_between(u, v):
+    """Angle between two vectors, clamped — mpmath throughout."""
+    c = _dot(u, v) / (_norm(u) * _norm(v))
+    return mp.acos(max(mp.mpf(-1), min(mp.mpf(1), c)))
 
 
 def braid_nf(n_reps):
@@ -131,12 +179,36 @@ def main() -> int:
     print(" braid NF in the Frobenius-demand SDP — offset from the lattice saddle")
     print("=" * 78)
 
-    G = np.asarray([[float(v) for v in row] for row in _gram.gram_matrix()],
-                   dtype=float)
-    Ginv = np.linalg.inv(G)
-    d = G.shape[0]
+    Gm = _gram.gram_matrix_mp()
+    G = mp.matrix(Gm)
+    d = G.rows
+
+    # ---- convention-D guard (bean qou-cds2) --------------------------------
+    # Under D this Gram is singular and `mp.lu_solve` below would return ~1e50
+    # garbage WITHOUT raising. Refuse rather than publish it.
+    _v = mp.matrix(_gram.radical_mp())
+    _vv = mp.fsum(_v[i] * _v[i] for i in range(d))
+    if _vv > 0:
+        _resid = max(abs(t) for t in (G * _v))
+        if _resid < mp.mpf("1e-30"):
+            print("\n  ⛔ REFUSING TO RUN — the Gram is SINGULAR under convention D.")
+            print(f"     ||G · radical|| = {mp.nstr(_resid, 6)} (the q-antisymmetriser")
+            print("     is a null direction), so `G x = nf` has no unique solution and")
+            print("     has NO solution at all unless nf ⊥ radical.")
+            print("")
+            print("     AND nf IS NEVER ⊥ radical, FOR ANY BRAID:")
+            print("         <radical, nf(β)> = (−1/q)^writhe(β)   exactly")
+            print("     i.e. the pairing is β's SIGN-REPRESENTATION value, and a")
+            print("     zpow of a nonzero base never vanishes. So this is not a bad")
+            print("     choice of anchor and cannot be fixed by picking another knot")
+            print("     — the premise ('G is invertible (rank 6)') fails universally.")
+            print("     Lean: QOU.QBeta.signRepValue_ne_zero (sorry-free).")
+            print("     mp.lu_solve would NOT raise here — it returns ~1e50 entries")
+            print("     with a ~1e-3 residual — so running on would publish laundered")
+            print("     numbers. See gram_mp_path_convention_d_migration_probe.py.")
+            return 2
     print(f"\n  NF basis ({d}): {list(_gram.NF_NAMES)}   h = q₀ − q₀⁻¹ = "
-          f"{float(_gram.h):.12g}")
+          f"{mp.nstr(_gram.h_mp(), 20)}")
 
     # ---- G0 GATE: is σ⁻¹ really the inverse? ----
     print("\n[G0] gate — σ_g · σ_g⁻¹ = 1 in NF (verifies σ⁻¹ = σ − h·I):")
@@ -144,40 +216,45 @@ def main() -> int:
     for gen in (0, 1):
         back = sigma_inv(sigma(list(IDENT), gen), gen)
         err = max(abs(a - b) for a, b in zip(back, IDENT))
-        ok = err < 1e-12
+        ok = err < mp.mpf("1e-40")
         g0_ok = g0_ok and ok
-        print(f"     gen {gen}: max|σσ⁻¹ − 1| = {err:.3g}  → {ok}")
+        print(f"     gen {gen}: max|σσ⁻¹ − 1| = {mp.nstr(err, 4)}  → {ok}")
 
     anchors = {"muon (4₁)": 2, "proton (𝔹₃)": 3}
     res = {}
     print("\n[nf] braid normal forms and their SDP solutions:")
     for name, reps in anchors.items():
-        nf = np.asarray(braid_nf(reps), dtype=float)
-        x = Ginv @ nf
-        g1 = float(np.linalg.norm(G @ x - nf))
-        net = float(np.ones(d) @ x)
-        x_sym = np.full(d, net / d)
-        off = x - x_sym
-        mag = float(np.linalg.norm(off))
-        res[name] = {"reps": reps, "nf": nf.tolist(), "x_star": x.tolist(),
-                     "G1_resid": g1, "net": net,
-                     "offset": off, "offset_norm": mag,
-                     "tr_M": float(_gram.nf_tr(list(nf)))}
+        nf = braid_nf(reps)
+        # lu_solve, not an explicit inverse: same x*, one fewer ill-conditioned
+        # step, and mpmath solves at the working precision.
+        xv = mp.lu_solve(G, mp.matrix(nf))
+        x = [xv[i] for i in range(d)]
+        g1 = _norm([_dot(Gm[i], x) - nf[i] for i in range(d)])
+        net = mp.fsum(x)
+        off = [xi - net / d for xi in x]
+        mag = _norm(off)
+        res[name] = {"reps": reps, "nf": [mp.nstr(v, 20) for v in nf],
+                     "x_star": [mp.nstr(v, 20) for v in x],
+                     "G1_resid": mp.nstr(g1, 4), "net": mp.nstr(net, 20),
+                     "offset": off, "offset_norm": mp.nstr(mag, 20),
+                     "tr_M": mp.nstr(_nf_tr_mp(nf), 20)}
         print(f"    {name:<12} (σ₁σ₂⁻¹)^{reps}")
-        print(f"      nf      = [{', '.join(f'{v:.6g}' for v in nf)}]")
-        print(f"      tr_M    = {res[name]['tr_M']:.12g}   net 1ᵀx* = {net:.12g}")
-        print(f"      G1 |Gx*−nf| = {g1:.3g}   ‖offset from saddle‖ = {mag:.12g}")
+        print(f"      nf      = [{', '.join(mp.nstr(v, 8) for v in nf)}]")
+        print(f"      tr_M    = {res[name]['tr_M']}   net 1ᵀx* = "
+              f"{mp.nstr(net, 12)}")
+        print(f"      G1 |Gx*−nf| = {mp.nstr(g1, 4)}   "
+              f"‖offset from saddle‖ = {mp.nstr(mag, 12)}")
 
-    g1_ok = all(r["G1_resid"] < 1e-6 for r in res.values())
+    g1_ok = all(mp.mpf(r["G1_resid"]) < mp.mpf("1e-40") for r in res.values())
 
     # ---- G2: are the two offsets parallel (i.e. did homogeneity survive)? ----
     o1 = res["muon (4₁)"]["offset"]
     o2 = res["proton (𝔹₃)"]["offset"]
-    cos = float(o1 @ o2 / (np.linalg.norm(o1) * np.linalg.norm(o2)))
-    cos = max(-1.0, min(1.0, cos))
-    sep = float(np.arccos(cos))
-    not_parallel = abs(sep) > 1e-7 and abs(sep - np.pi) > 1e-7
-    print(f"\n[G2] angle BETWEEN the two anchors' offsets = {sep:.12g} rad")
+    sep = ang_between(o1, o2)
+    not_parallel = (abs(sep) > mp.mpf("1e-7")
+                    and abs(sep - mp.pi) > mp.mpf("1e-7"))
+    print(f"\n[G2] angle BETWEEN the two anchors' offsets = "
+          f"{mp.nstr(sep, 12)} rad")
     print(f"     offsets are NOT parallel (homogeneity broken): {not_parallel}")
     if not not_parallel:
         print("     ** parallel ⇒ this collapses to the homogeneous case; the "
@@ -200,19 +277,13 @@ def main() -> int:
     #                                                  onto the objective
     #   'angle_to_sym'      angle(offset, 1)         — angle to the symmetric
     #                                                  (lattice-saddle) direction
-    t_vec = np.asarray([float(v) for v in _gram.TR_M], dtype=float)
-    ones = np.ones(d)
-
-    def ang_between(u, v):
-        c = float(u @ v / (np.linalg.norm(u) * np.linalg.norm(v)))
-        return float(np.arccos(max(-1.0, min(1.0, c))))
+    t_vec = _gram.tr_m_mp()
+    ones = [mp.mpf(1)] * d
 
     readings = {
-        "offset_magnitude": {k: mp.mpf(repr(res[k]["offset_norm"])) for k in res},
-        "angle_to_t": {k: mp.mpf(repr(ang_between(res[k]["offset"], t_vec)))
-                       for k in res},
-        "angle_to_sym": {k: mp.mpf(repr(ang_between(res[k]["offset"], ones)))
-                         for k in res},
+        "offset_magnitude": {k: mp.mpf(res[k]["offset_norm"]) for k in res},
+        "angle_to_t": {k: ang_between(res[k]["offset"], t_vec) for k in res},
+        "angle_to_sym": {k: ang_between(res[k]["offset"], ones) for k in res},
     }
     verdicts = {}
     for label, vals in readings.items():
@@ -250,7 +321,7 @@ def main() -> int:
     verdict = (
         ("THE BRAID'S OPERATOR CONTENT DOES BREAK THE HOMOGENEITY — the two "
          "anchors' offsets are genuinely non-parallel "
-         f"(separation {sep:.6g} rad), so unlike every earlier reading the "
+         f"(separation {mp.nstr(sep, 6)} rad), so unlike every earlier reading the "
          "direction carries knot information and the route supplies a MAGNITUDE "
          "and an ANGLE per knot rather than one scaled number. That is the "
          "falsifiability bar cleared. "
@@ -270,7 +341,7 @@ def main() -> int:
         "G^-1 nf uniquely, and the offset from the symmetric point (the lattice "
         "saddle, per SymmetricOptimum) is computable per knot. Gates: sigma "
         "inverse verified against the Hecke relation, and G x* = nf to "
-        f"{max(r['G1_resid'] for r in res.values()):.2g}. "
+        f"{mp.nstr(max(mp.mpf(r['G1_resid']) for r in res.values()), 3)}. "
         "One of the three, 'angle_to_sym', turned out VACUOUS BY CONSTRUCTION "
         "— the offset is orthogonal to the all-ones direction by definition "
         "(1^T offset = 0), so that angle is pi/2 identically for every knot; it "
@@ -285,7 +356,7 @@ def main() -> int:
         "test only.")
     print("\nVERDICT:", verdict)
 
-    wb = WitnessBuilder("qbeta-braid-nf-sdp-offset", engine="pyhecke+numpy+mpmath")
+    wb = WitnessBuilder("qbeta-braid-nf-sdp-offset", engine="pyhecke+mpmath")
     wb.set_description(
         "Owner proposal: the interaction IS an SDP solution carrying the knot's "
         "magnitude, angle, and offset from the lattice saddle. Takes the fix "
@@ -306,7 +377,7 @@ def main() -> int:
     wb.add_data("nf_basis", list(_gram.NF_NAMES))
     wb.add_data("anchors", {k: {kk: vv for kk, vv in v.items()
                                 if kk != "offset"} for k, v in res.items()})
-    wb.add_data("offset_separation_rad", sep)
+    wb.add_data("offset_separation_rad", mp.nstr(sep, 20))
     wb.add_data("homogeneity_broken", bool(not_parallel))
     wb.add_data("readings_tested", verdicts)
     wb.add_data("readings_declared_together",
@@ -328,13 +399,16 @@ def main() -> int:
                  "separation"])
     wb.add_data("verdict", verdict)
     wb.add_assertion("G0_sigma_inverse_correct",
-                     computed=1.0 if g0_ok else 0.0, expected=1.0, tolerance=0.5,
+                     computed="1" if g0_ok else "0", expected="1",
+                     tolerance="0.5",
                      source="sigma_g * sigma_g^-1 = 1 in NF for both generators, "
                             "verifying sigma^-1 = sigma - h*I from the Hecke "
                             "relation")
     wb.add_assertion("G1_solve_consistent",
-                     computed=1.0 if g1_ok else 0.0, expected=1.0, tolerance=0.5,
-                     source="G x* = nf to < 1e-6 for both anchors")
+                     computed="1" if g1_ok else "0", expected="1",
+                     tolerance="0.5",
+                     source="G x* = nf to < 1e-40 for both anchors (the float64 "
+                            "version of this gate could only ask for 1e-6)")
     wb.save()
     print("  witness -> computations/probes/qbeta-braid-nf-sdp-offset.witness.json")
     return 0 if (g0_ok and g1_ok) else 1

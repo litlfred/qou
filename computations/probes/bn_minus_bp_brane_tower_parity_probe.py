@@ -45,6 +45,14 @@ Run:  PYTHONPATH=computations:tools/pyhecke/python:tools/qou-substrate/python:co
 """
 import sys
 import time
+# Path bridge: puts computations/ and every cluster subdir (incl. substrate/,
+# where _precision lives) on sys.path, so the bare-name import below resolves
+# without the PYTHONPATH prefix in the docstring. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 t0 = time.time()
 
@@ -73,7 +81,7 @@ def main():
     import sympy as sp
     from fractions import Fraction as Fr
     from mpmath import mp, mpf, besselj, findroot
-    mp.dps = 50
+    set_compute_dps()
 
     from hoefsmit_symbolic import chi_lambda_symbolic, Q
     from canonical_braid_crossings import atom_canonical_crossings

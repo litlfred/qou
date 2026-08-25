@@ -1,4 +1,7 @@
-import Mathlib.Tactic
+import Mathlib.Algebra.Group.Basic
+import Mathlib.Algebra.Group.Units.Defs
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Tactic.Ring
 
 /-!
 # QOU.Mass — the content generating function is palindromic and bar-even
@@ -25,22 +28,36 @@ the five partitions of `4` carry `(f, content)` pairs
 so `C_4(q) = q⁶ + 3q² + 2 + 3q⁻² + q⁻⁶`, manifestly palindromic, with first moment
 `1·6 + 3·2 + 2·0 + 3·(−2) + 1·(−6) = 0`.
 
-Ground ring: generic `Field` with `q ≠ 0` (the exponent is a `ℤ` power; §7c
-algebraic, not archimedean).
+## Ground ring (§7c) — a `CommRing` with `q` carried as a unit
+
+The content exponents are **negative as well as positive**, so `q` must be
+invertible; it need not lie in a field. Carrying `q : Rˣ` and reading the
+generating function back into `R` through the unit coercion puts the block on
+its natural base ring — `ℤ[q, q⁻¹] = LaurentPolynomial ℤ` is the intended
+instance, and it is not a field. The `Units` group supplies the `ℤ`-power
+`q ^ (e : ℤ)` directly, so no ring-level division appears anywhere.
+
+This is strictly stronger than the earlier `[Field K]` + `q ≠ 0` statement:
+instantiate `R := K` and `q := Units.mk0 q hq` to recover it.
 -/
 
 namespace QOU.Mass
 namespace ContentGenfun
 
-/-- `C_4(q) = q⁶ + 3q² + 2 + 3q⁻² + q⁻⁶` (the `n = 4` content generating function). -/
-noncomputable def C4 {K : Type*} [Field K] (q : K) : K :=
-  q ^ (6 : ℤ) + 3 * q ^ (2 : ℤ) + 2 + 3 * q ^ (-2 : ℤ) + q ^ (-6 : ℤ)
+variable {R : Type*} [CommRing R]
 
-/-- **Palindromy (n = 4 instance)**: `C_4(q) = C_4(q⁻¹)`. -/
-theorem C4_palindromic {K : Type*} [Field K] (q : K) (_hq : q ≠ 0) :
-    C4 q = C4 q⁻¹ := by
+/-- `C_4(q) = q⁶ + 3q² + 2 + 3q⁻² + q⁻⁶` (the `n = 4` content generating
+function), read into `R` through the unit coercion. -/
+def C4 (q : Rˣ) : R :=
+  ↑(q ^ (6 : ℤ)) + 3 * ↑(q ^ (2 : ℤ)) + 2 + 3 * ↑(q ^ (-2 : ℤ)) + ↑(q ^ (-6 : ℤ))
+
+/-- **Palindromy (n = 4 instance)**: `C_4(q) = C_4(q⁻¹)`. Over the unit group the
+exponent flip `q ^ e ↦ q ^ (-e)` permutes the five terms, so no non-vanishing
+hypothesis is needed. -/
+theorem C4_palindromic (q : Rˣ) : C4 (R := R) q = C4 q⁻¹ := by
+  have e : ∀ n : ℤ, (q⁻¹ : Rˣ) ^ n = q ^ (-n) := fun n => by rw [inv_zpow, zpow_neg]
   unfold C4
-  simp only [inv_zpow, zpow_neg, inv_inv]
+  simp only [e, neg_neg]
   ring
 
 /-- **First moment vanishes (n = 4 instance)**: `Σ_λ f^λ · content(λ) = 0` — the

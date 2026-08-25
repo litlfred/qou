@@ -1,0 +1,159 @@
+{
+  "all_q_verified": true,
+  "anchor": {
+    "has_own_anchor": false,
+    "note": "The weights are exact rational functions of symbolic q and hold at every q on the genericity locus, so this computation does not depend on an anchor. The canonical proton pin is recorded so a later reader can tell which layer any numeric evaluation belongs to without inferring it from a call site.",
+    "pin": "experimental (proton), per the 2026-08-07 owner directive",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "q_0_source": "qou_substrate.constants.Q_50_DIGIT_STR (read live)",
+    "weights_at_canonical_q0": {
+      "(1,1,1,1)": "-0.0008425276167013005281205345",
+      "(2,1,1)": "0.02358747022975282699253549",
+      "(2,2)": "0.06947330408850531282073966",
+      "(3,1)": "0.1878688567516986371844741",
+      "(4,)": "0.2275269384953362823556125"
+    }
+  },
+  "arithmetic": "exact (sympy Rational + symbolic z); no float64 in the derivation",
+  "bean": "qou-x64l",
+  "block_dimensions": {
+    "(1,1,1,1)": 1,
+    "(2,1,1)": 3,
+    "(2,2)": 2,
+    "(3,1)": 3,
+    "(4,)": 1
+  },
+  "closed_forms": {
+    "(1,1,1,1)": "-q^3 (z - q)(A z - q^3)(B z - q^5) / (A^2 B C)",
+    "(2,1,1)": "q^2 (z - q)(q z + 1)(A z - q^3) / (A^2 C)",
+    "(2,2)": "-q^3 (z - q)(q z + 1) / (A^2 B)",
+    "(3,1)": "-q (z - q)(q z + 1)(q A z + 1) / (A^2 C)",
+    "(4,)": "(q z + 1)(q A z + 1)(q B z + 1) / (A^2 B C)",
+    "notation": "A = q^2+1, B = q^4+q^2+1, C = q^4+1 (the wedderburn4 genericity factors h2, h3, h4)"
+  },
+  "compute": "h4_markov_weights_closed_form",
+  "cross_check_alpha_k_jones_markov_h4": {
+    "cross_check_passed": true,
+    "markov_z": "0.49932033403359827",
+    "max_relative_difference_allowed": "1e-12",
+    "note": "The published values are floats from an independent numerical constraint system (status: exploratory). Agreement at this level confirms the closed forms and fixes the partition labelling, which the spectral computation alone does not determine.",
+    "published_q0_source": "computations/alpha-k-jones-markov-h4.witness.json:substrate.q_0 (read at run time, not transcribed -- it is a muon-era value stale against both documented pins, quoted here only as the input those published floats were computed at)",
+    "sum_w_times_dim": "1.000000000000000000000000",
+    "weights": {
+      "(1,1,1,1)": {
+        "closed_form": "-0.0008425274911545625737952333",
+        "published_float": "-0.0008425274911545449",
+        "relative_difference": "2.098e-14"
+      },
+      "(2,1,1)": {
+        "closed_form": "0.02358747319685983917344294",
+        "published_float": "0.02358747319685989",
+        "relative_difference": "2.146e-15"
+      },
+      "(2,2)": {
+        "closed_form": "0.06947330464150193773408077",
+        "published_float": "0.06947330464150198",
+        "relative_difference": "6.029e-16"
+      },
+      "(3,1)": {
+        "closed_form": "0.1878688561415023053684741",
+        "published_float": "0.18786885614150228",
+        "relative_difference": "1.349e-16"
+      },
+      "(4,)": {
+        "closed_form": "0.2275269301930642534798826",
+        "published_float": "0.22752693019306408",
+        "relative_difference": "7.626e-16"
+      }
+    },
+    "worst_relative_difference": "2.098e-14"
+  },
+  "description": "Exact closed-form Jones-Markov weights w_lambda for tr_M on the H4(q) subscript normal-form basis. Supplies the missing input to BilinearTrace.gram_symm_of_rep_decomp, which is the route to an independent proof of trM4_cyclic that does not route through the ASCII Gram chain (bean qou-x64l step 4).",
+  "presentation_check": {
+    "braid_s0_s1": true,
+    "braid_s1_s2": true,
+    "far_commute_s0_s2": true,
+    "hecke_quadratic_sigma0": true,
+    "hecke_quadratic_sigma1": true,
+    "hecke_quadratic_sigma2": true
+  },
+  "source_of_truth": "generator actions and TRM4 transcribed from content/quantum-observable-universe/lean/QOU/Machinery/HeckeH4StabilizationRung.lean",
+  "status": "derived",
+  "verification_by_q": {
+    "2": {
+      "block_dims": [
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      "character_normalisation_ok": true,
+      "closed_forms_matched": 5,
+      "decomposition_failures": [],
+      "decomposition_holds_on_all_24": true,
+      "generic": true,
+      "h": "3/2"
+    },
+    "3": {
+      "block_dims": [
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      "character_normalisation_ok": true,
+      "closed_forms_matched": 5,
+      "decomposition_failures": [],
+      "decomposition_holds_on_all_24": true,
+      "generic": true,
+      "h": "8/3"
+    },
+    "4": {
+      "block_dims": [
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      "character_normalisation_ok": true,
+      "closed_forms_matched": 5,
+      "decomposition_failures": [],
+      "decomposition_holds_on_all_24": true,
+      "generic": true,
+      "h": "15/4"
+    },
+    "5/2": {
+      "block_dims": [
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      "character_normalisation_ok": true,
+      "closed_forms_matched": 5,
+      "decomposition_failures": [],
+      "decomposition_holds_on_all_24": true,
+      "generic": true,
+      "h": "21/10"
+    },
+    "7/3": {
+      "block_dims": [
+        1,
+        1,
+        2,
+        3,
+        3
+      ],
+      "character_normalisation_ok": true,
+      "closed_forms_matched": 5,
+      "decomposition_failures": [],
+      "decomposition_holds_on_all_24": true,
+      "generic": true,
+      "h": "40/21"
+    }
+  }
+}

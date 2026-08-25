@@ -1,0 +1,203 @@
+{
+  "schema": "uses-edge-rejections/v1",
+  "purpose": "Candidate uses[] edges that were considered and REJECTED on editorial grounds. Scans that propose uses[] restorations (prose-corroboration, empty-uses completeness, declares-some-names-more, the \u00a73b-cond rule-4 banner scan) must filter their candidates against this ledger, or they re-propose settled work every run. An entry here is a claim that a human or agent READ the blocks and concluded the edge does not belong -- it is not a claim that the target is unrelated.",
+  "why_this_exists": "Forward-pointing candidates were triaged by DIRECTION and never by CONTENT, so a wrong edge could sit in the 'correct but blocked' pile indefinitely. rem:bsd-surreal-bound -> rem:rh-surreal-bound did exactly that for a whole work-arc: it was held as 'correct but forward' across three audits before anyone read the sentence that produced it, which turned out to say the two results GENERALIZE one another rather than depend.",
+  "reasons": {
+    "overview-source": "Source is a chapter overview (\u00a70) block, typically a remark, that NAMES later results without depending on them. A survey previews; it does not require. Detected by reductio: satisfying such an edge proposes moving the target ahead of the introduction that previews it.",
+    "generalisation": "Source generalises, specialises, or compares itself to the target. A generalisation does not depend on its own special case.",
+    "wrong-direction": "The dependency is real but runs the other way; the reverse edge is the correct one.",
+    "restates-target": "Source restates the target's entire content inline, so the reader need not leave the block.",
+    "future-work": "Source names the target as work it explicitly does NOT do ('its proof would require ...').",
+    "aggregator": "Source is an index/catalog/aggregator; the instances depend on it or it merely files them, so the edge runs the other way.",
+    "mis-aimed": "The prose citation names the wrong block -- the cited content lives elsewhere (often the target's proof sibling). Retarget rather than declare.",
+    "author-ruling": "Settled by the repo owner directly."
+  },
+  "rejections": [
+    {
+      "source": "conj:classical-limit-stpart",
+      "target": "conj:archimedean-stpart",
+      "reason": "author-ruling",
+      "note": "Closed a cycle: conj:archimedean-stpart already declares uses:[conj:classical-limit-stpart] on main. Owner ruled the committed direction correct -- the narrow single-functor identification (L = St . ev_{1+eps}) is the more basic claim, and the whole-category St extension builds on it. This reverse edge is backwards and must not be declared.",
+      "settled": "2026-08-10",
+      "by": "owner"
+    },
+    {
+      "source": "rem:q-metric-contact-deformation",
+      "target": "def:ns-obstruction",
+      "reason": "overview-source",
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
+    },
+    {
+      "source": "rem:q-metric-contact-deformation",
+      "target": "prop:core-levi-form",
+      "reason": "overview-source",
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
+    },
+    {
+      "source": "rem:q-metric-contact-deformation",
+      "target": "rem:hyperbolic-overlap-saturation",
+      "reason": "overview-source",
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
+    },
+    {
+      "source": "rem:q-metric-contact-deformation",
+      "target": "rem:townsend-biot-savart-strain",
+      "reason": "overview-source",
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
+    },
+    {
+      "source": "rem:q-metric-contact-deformation",
+      "target": "thm:q-ns-wellposedness",
+      "reason": "overview-source",
+      "note": "This block sits at fluid-dynamics \u00a70 and names five results developed across \u00a73-\u00a76. Satisfying these five proposed moving def:ns-obstruction from \u00a74 to before position 9 -- a definition relocated ahead of the introduction that previews it.",
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
+    },
+    {
+      "source": "rem:planck-reynolds",
+      "target": "prop:discrete-vortex-spectrum",
+      "reason": "overview-source",
+      "note": "Also one leg of a would-be cycle; rejecting it dissolves both fluid-dynamics cycles.",
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
+    },
+    {
+      "source": "rem:planck-reynolds",
+      "target": "rem:vortex-intensity-modes",
+      "reason": "overview-source",
+      "settled": "2026-08-10",
+      "refiled_as": "foreshadows",
+      "refiled_note": "Rejected as a uses[] DEPENDENCY and re-declared as a forward POINTER in foreshadows[], once that field stopped being a subset of uses[] (folio-assistant#109). The rejection stands as written: the reader does not need this block first. Verified forward by foreshadows-point-forward (pass)."
+    },
+    {
+      "source": "rem:hecke-charge-mass-duality",
+      "target": "def:vertex-operator",
+      "reason": "overview-source",
+      "settled": "2026-08-10",
+      "refiled_as": "none",
+      "refiled_note": "NOT re-filed with the other seven. On re-reading, this one does not read as a preview: the block writes Y(a, z) as the object it is describing (\"the result is the vertex operator Y(a,z)\") and gives its mode expansion, rather than pointing a reader forward. foreshadows[] requires the prose to frame the reference as deferred, and this prose does not. Left as an open question: either a genuine uses[] dependency pointing forward (an ordering problem) or a self-contained mention needing no edge at all."
+    },
+    {
+      "source": "rem:bsd-surreal-bound",
+      "target": "rem:rh-surreal-bound",
+      "reason": "generalisation",
+      "note": "bsd-surreal-bound.md line 27: 'The BSD bound generalizes the RH bound ... RH is the r = 0 specialization'. The BSD argument closes on lem:surreal-squeeze and prop:surreal-rate-calculus, both already declared and both backward.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "conj:p-vs-np-qou",
+      "target": "rem:p-vs-np-surreal-bound",
+      "reason": "wrong-direction",
+      "note": "p-vs-np-conjecture.md line 24: 'See [Surreal bound for P vs NP] for the squeeze-inequality statement IMPLIED BY this conjecture'. The bound depends on the conjecture.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:p-vs-np-surreal-bound",
+      "target": "rem:millennium-unification",
+      "reason": "aggregator",
+      "note": "A '(see X)' filing note; the aggregator cites the instance, not the reverse.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:bsd-surreal-bound",
+      "target": "def:q-from-epsilon",
+      "reason": "restates-target",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:rh-surreal-bound",
+      "target": "def:q-from-epsilon",
+      "reason": "restates-target",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:millennium-unification",
+      "target": "def:q-from-epsilon",
+      "reason": "restates-target",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:yang-mills-surreal-bound",
+      "target": "def:q-from-epsilon",
+      "reason": "restates-target",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:p-vs-np-surreal-bound",
+      "target": "def:q-from-epsilon",
+      "reason": "restates-target",
+      "note": "Five blocks each write 'q = 1 + eps' inline, which is the target definition's entire content.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:bsd-surreal-bound",
+      "target": "rem:adelic-tate-squeeze",
+      "reason": "future-work",
+      "note": "'Its proof requires integrating the surreal ordw-calculus with the Tate thesis adelic Fourier transform' -- work the block explicitly does not do. ACCEPTED on rem:millennium-unification, where the same target carries the headline claim and appears three times.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:millennium-unification",
+      "target": "rem:body-asymptotics-catalog",
+      "reason": "aggregator",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:yang-mills-surreal-bound",
+      "target": "rem:ns-surreal-bound",
+      "reason": "generalisation",
+      "note": "'analogous to how X ...' is a cross-problem illustration, not a prerequisite.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:hecke-charge-mass-duality",
+      "target": "def:coulomb-charge",
+      "reason": "restates-target",
+      "note": "Closest call of the arc: the block uses n_+ and n_- without defining them and only this target defines them. Two independent readings disagreed, so it does not land -- an addition carries the burden and a split verdict does not discharge it. Revisit if a third reading is decisive.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "rem:hecke-charge-mass-duality",
+      "target": "def:crossing-energy",
+      "reason": "restates-target",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "prf:quantum-dilogarithm-stratified",
+      "target": "prop:spectral-sequence-collapse",
+      "reason": "mis-aimed",
+      "note": "The cited section 'Frobenius duality of strata' appears zero times in the proposition and at line 32 of prf:spectral-sequence-collapse. The same edge is ACCEPTED for prf:phi-q-categorical-truncation, whose Step 1 uses what the one-sentence proposition states.",
+      "settled": "2026-08-10"
+    },
+    {
+      "source": "prf:phi-q-categorical-truncation",
+      "target": "conj:brane-tower-z-habiro",
+      "reason": "future-work",
+      "note": "Cited twice in the prose, both times as commentary rather than a prerequisite: once naming conj:brane-tower-z-habiro as the open target of the remaining uniform-bound gap, once observing that the empirical k=2 subtractive sweet spot is *consistent with* k_star <= 2 under this proposition. Corroboration and an open-target pointer are not dependencies. Independently barred: AGENTS.md \u00a73b forbids a proof of a provable-kind parent from depending on a conjecture, so declaring this would demote the parent."
+    },
+    {
+      "source": "prf:quantum-dilogarithm-stratified",
+      "target": "conj:brane-tower-z-habiro",
+      "reason": "future-work",
+      "note": "Cited twice in the prose, both times as commentary rather than a prerequisite: once naming conj:brane-tower-z-habiro as the open target of the remaining uniform-bound gap, once observing that the empirical k=2 subtractive sweet spot is *consistent with* k_star <= 2 under this proposition. Corroboration and an open-target pointer are not dependencies. Independently barred: AGENTS.md \u00a73b forbids a proof of a provable-kind parent from depending on a conjecture, so declaring this would demote the parent."
+    }
+  ],
+  "refiling_note": "Seven overview-source rows carry refiled_as: \"foreshadows\" -- rejected as dependencies, re-declared as forward pointers. A row with refiled_as absent or \"none\" has NOT been re-declared anywhere and remains simply rejected. Scans must keep filtering on ALL rows regardless of refiled_as: the point is that none of them is a uses[] edge.",
+  "scan_filters": {
+    "note": "A scan proposing uses[] restorations must apply THREE filters before surfacing a candidate. Measured on the prn1 corroborated backlog (2026-08-11): 142 raw -> 93 after the first three -> 83 genuinely actionable. Roughly 40% of every run is otherwise re-proposed settled work.",
+    "1_rejection_ledger": "The `rejections` list below. A JUDGEMENT that the edge does not belong, made by reading the blocks. Permanent, so it lives here. Removed 23 of 142.",
+    "2_foreshadows": "content/<paper>/foreshadows.json. A target already recorded as a forward POINTER is not a uses[] dependency candidate. Removed 18 of 119.",
+    "3_transitive_reachability": "COMPUTED, and deliberately NOT ledgered: drop any candidate A->T where T is already reachable from A through A's declared uses[] cone. The schema requires immediate neighbours only (types.ts: 'If A->B and B->C, then A lists only B'), so such an edge is redundant by construction. It must stay computed rather than recorded, because reachability is STATE-DEPENDENT: if the intermediate edge is later removed, the target stops being reachable and SHOULD be re-proposed. A ledger row would suppress it forever, which is wrong. Removed 10 of 93 -- all of them edges pruned in prn1 tranche 2 and re-surfaced by the next scan.",
+    "4_direction": "Forward-pointing candidates are not uses[] edges; see the detangler criteria. Removed 8 of 101."
+  }
+}

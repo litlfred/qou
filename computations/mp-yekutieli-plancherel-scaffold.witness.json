@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:51.451834+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:57:19.877093+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "scaffold_plancherel_match",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 16,
+  "durationMs": 8,
   "computation": "mp-yekutieli-plancherel-scaffold",
   "scriptFile": "mp_yekutieli_plancherel_scaffold.py",
   "scriptHash": "ac65660a3fa3",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,22 +28,24 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Item 1 scaffold of PR #1645: tests the per-block × Plancherel-weight hypothesis for the (α_em/π)/dim H_3 form. Verifies that a 1-dim Wedderburn block carrying (α_em/π) reproduces (α_em/π)/6 under Plancherel weighting. NOT a derivation — scaffold only.",
   "parameters": {
-    "q_80dps": "1.1099785955573347198997632204832250266562084087801536866079811461449304145619756",
+    "q_80dps": "1.1099785827513808075916690956107688798744991218735787360728142401817989635744830",
     "mp_dps_runtime": "80"
   },
   "data": {
-    "residual_target": "0.0004448283766704252052744746",
+    "residual_target": "0.0003902701549161378741312839",
     "alpha_em_over_pi_6": "0.0003871365776286198825312902",
     "trivial_block_contrib": "0.0003871365776286198825312902",
     "sign_block_contrib": "0.0003871365776286198825312902",
     "plancherel_match": "yes",
     "verdict": "SCAFFOLD PASSES: per-block × Plancherel-weight hypothesis is NUMERICALLY consistent with the (α_em/π)/6 form. The structural mechanism CANDIDATE is: EM correction lives at a 1-dim Wedderburn block (sign or trivial) and propagates to the proton's mass identity with Plancherel weight P_λ = d²_λ/|S_3| = 1/6. NOT yet a derivation — the WHICH-block question (sign vs trivial), the Bring zero-mode derivation of the bare per-block (α_em/π), and the residual 54 ppb structural form remain open."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

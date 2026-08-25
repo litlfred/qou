@@ -65,7 +65,8 @@ same lemma that pins the transport's own branch integer — given continuity,
 which remains the open hypothesis there. At `x = 1` the corpus records
 `k = (+1, −1, 0)`, whose sum is `0`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

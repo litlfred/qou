@@ -1,7 +1,16 @@
 # Canonical nucleon/atom mass — guardrail (READ BEFORE touching mass compute)
 
-**Owner ruling 2026-06-24.** There is **one** correct absolute nucleon
-mass: the **muon-anchored Hecke energy** (the production substrate-identity).
+> **🛑 ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean `qou-exam`).** The
+> framework no longer claims/targets/scores an **absolute** nucleon or atomic mass
+> in MeV as a prediction. The canonical formula below **still stands** — but its
+> MeV output is an `m_e`-scaled *realization of the dimensionless ratio* `m_p/m_e`,
+> not an absolute-mass claim. This guardrail is retained to keep the *ratio*
+> realization on the one correct (muon-anchored) form and off the deprecated
+> Borromean-volume forms. Full ruling:
+> [`audits/2026-08-11-excise-absolute-mass-notion.md`](audits/2026-08-11-excise-absolute-mass-notion.md).
+
+**Owner ruling 2026-06-24.** There is **one** correct [now: `m_e`-scaled] nucleon
+mass form: the **muon-anchored Hecke energy** (the production substrate-identity).
 Two Borromean-volume forms that look canonical are **wrong** and are
 deprecated. This doc exists so the error does not recur.
 

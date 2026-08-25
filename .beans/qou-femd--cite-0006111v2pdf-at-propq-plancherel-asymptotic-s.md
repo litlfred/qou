@@ -3,8 +3,9 @@
 title: Cite 0006111v2.pdf at prop:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:12:32Z
-updated_at: 2026-08-08T16:12:32Z
+updated_at: 2026-08-21T17:04:54Z
 ---
 
 Clauses (1)/(2) of the block cite kerov1981 + biane1998 + feray2010; the concentration result they actually lean on is this paper's Thm 1/Thm 2.
@@ -15,7 +16,14 @@ Clauses (1)/(2) of the block cite kerov1981 + biane1998 + feray2010; the concent
 - Thm 2 — Under the same hypotheses, |chi^lambda(rho) - psi(rho)| <= K(delta + q^{-1})^{1/4} q^{-l/2} for all rho with |rho| = l <= n/2 — concentration stated directly on normalized character values.
   Use here: Character-level concentration is the form clause (2) of prop:q-plancherel-asymptotic-skeleton uses ('character fluctuations have variance O(1/sqrt(n-3))'); Thm 2 is the q=1 statement of that shape from a source that actually proves a fluctuation bound, unlike the currently-cited feray2010 (see the 0304010v1 row).
 
-Source: `uploads/0006111v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-math-0006111v2/0006111v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-math-0006111v2/  ->  [biane2000]
+  Approximate factorization and concentration for characters of symmetric groups
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [biane2000] as the citation key when you do it.

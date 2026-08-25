@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:17:35.581338+00:00",
-  "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-09T22:40:21.822807+00:00",
+  "commitSha": "91d03c79c26ec860af7dea28c1aaebba175d161e",
   "assertions": [
     {
       "name": "family_alpha_literal_wenzl_markov_trace_at_least_one_passes_10_ppm",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 12,
   "computation": "qbeta-wenzl-habiro-chain-alpha",
   "scriptFile": "qbeta_wenzl_habiro_chain_alpha.py",
-  "scriptHash": "a4a322b6616b",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptHash": "db473bf9b57a",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,7 +29,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "data": {
     "targets": {
@@ -51,18 +53,21 @@
             "computed": "-0.497290545604915555995839231665",
             "target": "-1.0",
             "err_ppm": 502709.45439508447,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "3": {
             "computed": "0.328546821370823183297163796762",
             "target": "-2.06934257711516783787971951725",
             "err_ppm": 1158768.6954321717,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "4": {
             "computed": "-0.243327804910860333036616893681",
             "target": "0.0",
-            "err_ppm": NaN,
+            "err_ppm": null,
+            "err_ppm_undefined_reason": "target below the 1e-30 precision floor — relative error undefined",
             "passed": true
           }
         },
@@ -76,18 +81,21 @@
             "computed": "0.551981855026205072838326429268",
             "target": "-1.0",
             "err_ppm": 1551981.855026205,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "3": {
             "computed": "0.223435033655381889541162632506",
             "target": "-2.06934257711516783787971951725",
             "err_ppm": 1107973.9218273219,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "4": {
             "computed": "0.0743509984813888439452614145976",
             "target": "0.0",
-            "err_ppm": NaN,
+            "err_ppm": null,
+            "err_ppm_undefined_reason": "target below the 1e-30 precision floor — relative error undefined",
             "passed": true
           }
         },
@@ -101,18 +109,21 @@
             "computed": "0.448018144973794927161673570732",
             "target": "-1.0",
             "err_ppm": 1448018.144973795,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "3": {
             "computed": "0.11947132360297174386450977397",
             "target": "-2.06934257711516783787971951725",
             "err_ppm": 1057733.9513158447,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "4": {
             "computed": "0.0212574720289301910541903434989",
             "target": "0.0",
-            "err_ppm": NaN,
+            "err_ppm": null,
+            "err_ppm_undefined_reason": "target below the 1e-30 precision floor — relative error undefined",
             "passed": true
           }
         },
@@ -126,18 +137,21 @@
             "computed": "1.51360632110220674375665274643",
             "target": "-1.0",
             "err_ppm": 2513606.3211022066,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "3": {
             "computed": "2.71515938716169880610485553892",
             "target": "-2.06934257711516783787971951725",
             "err_ppm": 2312087.9148714235,
+            "err_ppm_undefined_reason": null,
             "passed": false
           },
           "4": {
             "computed": "3.86635460629708082872395189542",
             "target": "0.0",
-            "err_ppm": NaN,
+            "err_ppm": null,
+            "err_ppm_undefined_reason": "target below the 1e-30 precision floor — relative error undefined",
             "passed": true
           }
         },

@@ -1,0 +1,125 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0006051v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "10483e75bd3655eaef5e621e7c4090525ffd11939c2e0f0fd711740e72419769",
+  "file": "0006051v1.pdf"
+ },
+ "provenance": {
+  "title": "logarithm\u201d) in [Kon]. The \ufb01nite logarithm is the case n = 1 of the n-th poly- logarithm li n \u2208 Z/p [z] de\ufb01ned by li n(z) = \u2211 p\u2212 1 k=1 zk/k n. In loc. cit. Kontsevich proved that the \ufb01nite logarithm satis\ufb01es a 4-term functional equa tion, known as",
+  "authors": null,
+  "arxiv": {
+   "id": "math/0006051",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "7 Jun 2000"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "corollary": 1,
+   "proposition": 2,
+   "lemma": 3,
+   "remark": 1
+  },
+  "formalization_candidates": 6
+ },
+ "candidates": [
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "2.2",
+   "name": null,
+   "statement": "Let \u03b1 \u2208 X be a root of unity. Then we have Lin(\u03b1 ) \u2208 pnW and",
+   "section_file": "sections/sec-002-2-the-proof.md",
+   "section_title": "The proof",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.3",
+   "name": null,
+   "statement": "Let \u03b1 be a root of unity in X. Set ~Lin(\u03b1 ) = p\u2212 n Lin(\u03b1 ). Then",
+   "section_file": "sections/sec-002-2-the-proof.md",
+   "section_title": "The proof",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.4",
+   "name": null,
+   "statement": "In the situation above we have vp(ak) \u2265 \u2212 vp(k!), where vp is the",
+   "section_file": "sections/sec-002-2-the-proof.md",
+   "section_title": "The proof",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "2.5",
+   "name": null,
+   "statement": "We have the equation Fn(z) = \u2212nLn(z) \u2212 Ln\u2212 1(z) log(z), where",
+   "section_file": "sections/sec-003-4-amnon-besser.md",
+   "section_title": "AMNON BESSER",
+   "pages": "4-5",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
+   "name": null,
+   "statement": "We de\ufb01ne a sequence of functions fk(z, S ) inductively as fol-",
+   "section_file": "sections/sec-005-6-amnon-besser.md",
+   "section_title": "AMNON BESSER",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.2",
+   "name": null,
+   "statement": "Suppose z \u2208 X and w \u2208 W . Then",
+   "section_file": "sections/sec-005-6-amnon-besser.md",
+   "section_title": "AMNON BESSER",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.3",
+   "name": null,
+   "statement": "If z, S \u2208 X and z \u2261 S (mod p) then pk|Dfk(z, S ).",
+   "section_file": "sections/sec-005-6-amnon-besser.md",
+   "section_title": "AMNON BESSER",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

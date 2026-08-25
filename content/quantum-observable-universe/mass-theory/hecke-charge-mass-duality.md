@@ -6,7 +6,7 @@ to the two Markov moves of the braid group.
 | Restriction | Markov move | $H_n(R, q)$ element | Physical invariant |
 |---|---|---|---|
 | Horizontal | Conjugation (within a fibre) | $\rho(\beta)$ | Charge $Q$, crossing energy $\mathfrak{E}_{\mathrm{cross}}$ |
-| Vertical | Stabilisation (along the tower) | $\Phi_{\mathrm{mass}}(\beta)$ | Mass $\mathfrak{m} = \mathrm{Vol}/\hbar_q^2$ |
+| Vertical | Stabilisation (along the tower) | $\Phi_{\mathrm{mass}}(\beta)$ | Mass $\mathfrak{m} = \lvert \mathrm{tr}_M(\Phi_{\mathrm{mass}}(\beta)) \rvert$ |
 | Mixed | Both simultaneously | $Y(a, z)$ (vertex operator) | Full particle data |
 
 The Frobenius pairing $\langle a, b \rangle_F = \int_A \mu(a \otimes b)$
@@ -36,8 +36,8 @@ through the Frobenius form (collapsing tower data) and
 comultiplies (probing the tower depth).
 Its Markov trace
 ([mass via Markov trace](#prop:hecke-mass-trace)) gives the
-categorical mass $\mathfrak{m} = \mathrm{Vol}(K)/\hbar_q^2$
-— a **vertical** invariant measuring resistance to
+categorical mass $\mathfrak{m} = \lvert \mathrm{tr}_M(\Phi_{\mathrm{mass}}(\beta)) \rvert$,
+a **vertical** invariant measuring resistance to
 transport through the comultiplication.
 
 **Mixed: the vertex operator as generating function.**
@@ -72,5 +72,5 @@ with the Frobenius form $\int_A$ (vertical: integrating along the
 tower).  This pairing identifies the particle element
 $\rho(\beta)$ (charge carrier) with the mass element
 $\Phi_{\mathrm{mass}}(\beta)$ (mass carrier) as dual aspects of a
-single Hecke algebra element — connected by exactly the
+single Hecke algebra element, connected by exactly the
 Frobenius--comultiplication map that defines the categorical mass.

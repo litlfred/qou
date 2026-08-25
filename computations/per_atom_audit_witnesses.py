@@ -62,14 +62,16 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402  (drain qou-7ot6-a)
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
 q0_f64 = float(mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"]))
 h_f64 = q0_f64 - 1.0 / q0_f64
 h_sq_f64 = h_f64 * h_f64
 
-M_E = 0.510998950
+M_E = float(M_E_MEV)  # registry (was the truncated literal 0.510998950)
 VOL_BOR = float(8 * mp.catalan)
 
 # Per-atom data: (sym, A, Z, N, B_AME, B_prod, bug_type, squash_paths)

@@ -146,8 +146,10 @@ The week's capstone ([`2026-07-12-c3-wall-resolution-capstone.md`](2026-07-12-c3
   `S` is bar-odd, so with `q = q₀ + iε`, `sign S = sign ε` — no real `q₀` flips it.
   (This *supersedes* the branch-selector framing of #3573 as the operative story: the
   complexification is `Im(q)`, and it is smooth.)
-- **`q*` (the `S=0` point) is a third, decay-sector determination of `q₀`** — the μ–p
-  tension is now a **μ–p–Q_β three-way**.
+- ~~**`q*` (the `S=0` point) is a third, decay-sector determination of `q₀`** — the μ–p
+  tension is now a **μ–p–Q_β three-way**.~~ **[WITHDRAWN 2026-08-15 — PR #5074, bean
+  `qou-kh7e`, registry §9f.]** `q*` is the zero of `c₃ + Vol(4₁)` with `c₃` extracted
+  from experimental `Q_β`, so it presupposes (H1). Two pins, two-way tension.
 - **Φ_b status** ([`2026-07-13-phib-proof-status…`](2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md)):
   G2 **closed** (cyclic fibre-branch construction, 5 sorry-free Lean results, PR #3768);
   the analytic real-integral `Φ_b` also landed sorry-free (`95169c15`). **The single

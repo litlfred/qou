@@ -24,7 +24,7 @@ applied **by hand** in [`docs/audits/2026-07-20-qlift-routeA-rsz-invariants.md`]
 C1 written as `L1 = (q²x−1)σ² − (q−1)σ − (q−1)` in `x=q^m`; its Newton polygon at
 `x=∞` gives slope **½, mult 2** (pure isoclinic), vs GGM's `{−1,+1}`. That slope
 comparison is even formalized on main (`ThetaSlopeArithmetic.lean`). RSZ Astérisque 355
-is read directly (`uploads/0903.0853v3.pdf`).
+is read directly (`library/arxiv-0903.0853v3/0903.0853v3.pdf`).
 
 **What is genuinely missing** is therefore NOT "RSZ in the corpus" but:
 (i) reusable **Lean/Python RSZ infra** (the Newton polygon is by-hand, not a checker);

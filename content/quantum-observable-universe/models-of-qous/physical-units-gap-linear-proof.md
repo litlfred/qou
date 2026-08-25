@@ -1,8 +1,7 @@
-The point of the identity is that the archimedean normalisation
-$1/\hbar_q^2$ in the mass formula buys back exactly two of the three
-vanishing orders of $\Delta_q$, no more — separating two rates that
-are easily conflated and leaving a physical-units mass gap at first
-order in $h$.
+The archimedean normalisation $1/\hbar_q^2$ in the mass formula buys
+back exactly two of the three vanishing orders of $\Delta_q$, and no
+more. It separates two rates that are easily conflated, and leaves a
+physical-units mass gap at first order in $h$.
 
 **Proof.** Direct computation:
 $\Delta_q / \hbar_q^2

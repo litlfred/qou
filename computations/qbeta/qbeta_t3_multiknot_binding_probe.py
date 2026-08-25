@@ -32,12 +32,23 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from qbeta_t4_anchors import theta_t4, q0 as _q0_canonical  # noqa: E402
 
 # =============================================================
-# Physical constants (CODATA 2018)
+# Physical constants -- READ from the registry, never typed, exactly as the
+# substrate q0 below already is (bean qou-vbw1). This block was honestly
+# labelled "(CODATA 2018)" and carried the 2018 values while the rest of the
+# corpus is on 2022; reading codata_constants removes both the transcription
+# and the edition question. Drain qou-7ot6-a.
 # =============================================================
-m_e = 0.51099895000   # MeV/c²
-m_mu = 105.6583745     # MeV/c²
-m_p = 938.27208816     # MeV/c²
-m_n = 939.56542052     # MeV/c²
+from codata_constants import (  # noqa: E402
+    M_E_MEV as _M_E_MEV,
+    M_MU_MEV_VALIDATION as _M_MU_MEV,
+    M_P_MEV_VALIDATION as _M_P_MEV,
+    M_N_MEV_VALIDATION as _M_N_MEV,
+)
+
+m_e = float(_M_E_MEV)     # was 0.51099895000 (truncated)
+m_mu = float(_M_MU_MEV)   # was 105.6583745   (CODATA-2018)
+m_p = float(_M_P_MEV)     # was 938.27208816  (CODATA-2018)
+m_n = float(_M_N_MEV)     # was 939.56542052  (CODATA-2018)
 
 # Substrate — READ from the canonical constant, never typed (bean qou-vbw1).
 # The former literal `1.10997859` was an 8-digit truncation; the substrate

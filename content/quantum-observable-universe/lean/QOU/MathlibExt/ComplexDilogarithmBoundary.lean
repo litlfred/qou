@@ -38,7 +38,8 @@ but reflection at `z = 1` and any other boundary evaluation get it for free.
 continuity argument in this file applies to it. Route 33 G5 records that as the
 sharper obstacle, and it stays open.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.MathlibExt

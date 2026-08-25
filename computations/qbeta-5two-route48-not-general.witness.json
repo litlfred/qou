@@ -1,0 +1,114 @@
+{
+  "probe": "qbeta_5two_route48_not_general",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 70,
+  "follows": "Route 47 (the closed form)",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE NEGATIVE THAT MATTERS MOST. Route 47's closed form is NOT a general identity: it holds for the 5_2 saddle orbit and FAILS for every other orbit tried, including X^3-X^2+1 which lies in the SAME field. So no known theorem is being rediscovered and the sum rule does not reduce to a citation -- which is what one would want to rule out before reading further into the literature",
+      "per_orbit": {
+        "y   y^3-2y^2+3y-1  (5_2)": {
+          "P": "2.7775344259781150641",
+          "predicted": "2.7775344259781150641",
+          "match": true
+        },
+        "w   w^3-w^2+2w-1": {
+          "P": "2.1572677745665642454",
+          "predicted": "1.9864898719937849757",
+          "match": false
+        },
+        "c   X^3+X^2-1": {
+          "P": "0.62026665141155081871",
+          "predicted": "-0.17077790257277926963",
+          "match": false
+        },
+        "-c  X^3-X^2+1": {
+          "P": "1.6449340668482264365",
+          "predicted": "3.4606460362692321426",
+          "match": false
+        },
+        "rho X^3-X-1 (plastic)": {
+          "P": "1.5909675950016199316",
+          "predicted": "-0.17077790257277926963",
+          "match": false
+        },
+        "c^5 X^3-4X^2+5X-1": {
+          "P": "4.3145355491331284907",
+          "predicted": "4.1437576465603492211",
+          "match": false
+        },
+        "other field X^3-X^2+X+1": {
+          "P": "1.4564794062468631636",
+          "predicted": "2.9129588124937263272",
+          "match": false
+        },
+        "other field X^3+2X^2+2X+2": {
+          "P": "-0.42890907923065708541",
+          "predicted": "1.2222591516330598062",
+          "match": false
+        }
+      },
+      "orbits_matching": [
+        "y   y^3-2y^2+3y-1  (5_2)"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "two exact values turned up by falsifying the general form, neither predicted and neither explained: the Rogers-L Galois sum over X^3-X^2+1 is exactly pi^2/6, and P(c^5) = 2*P(w) exactly. Gated here rather than left in scrollback",
+      "sum_L_over_X3-X2+1": "1.64493406684822643647241516665",
+      "pi_sq_over_6": "1.64493406684822643647241516665",
+      "residual_a": "0.0",
+      "P_c5": "4.31453554913312849070941603132",
+      "two_P_w": "4.31453554913312849070941603132",
+      "residual_b": "7.24454326306e-71",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "a FOURTH alphabet, same gap. Route 41's alphabet was closed over UNITS, so it never contained 1/(1+y) -- norm 7, not an algebraic integer -- and missed the diagonal pentagon entirely. Admitting non-units and closing under 1-z, 1/z, 1/(1+z), 1-z^2 gives 57 orbits and 52 relations, and the rank test still says the y-orbit sum is NOT determined. The gap has been exactly 1 across four independent alphabets, which is itself the finding: the missing input is not a relation of this kind that was overlooked",
+      "alphabets": [
+        {
+          "description": "pure power tower c^m",
+          "determined": false
+        },
+        {
+          "description": "82 orbits, closed under 1-x and 1/x",
+          "rank": 46,
+          "rank_with_target": 47,
+          "determined": false
+        },
+        {
+          "description": "168 orbits, same closure",
+          "rank": 153,
+          "rank_with_target": 154,
+          "determined": false
+        },
+        {
+          "description": "57 orbits, NON-UNITS admitted",
+          "rank": 43,
+          "rank_with_target": 44,
+          "determined": false
+        }
+      ],
+      "gap_always": 1,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the target is unmoved. A = sum Li2(y_j) still has no proof; G1 is a negative, G2 is two unexplained values, G3 is a fourth failure. This gate exists so none of it can be read as progress toward the theorem",
+      "A": "0.971730681468648259127774169939",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "negative": "Route 47's closed form is special to the 5_2 orbit, not a general theorem -- it fails even for another orbit in the same field. The sum rule does not reduce to citing a known identity.",
+    "new": "sum L over X^3-X^2+1 = pi^2/6 exactly; P(c^5) = 2*P(w) exactly. Unexplained.",
+    "unchanged": "a fourth alphabet, now including non-units, leaves the rank gap at exactly 1. Four independent alphabets, same gap.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

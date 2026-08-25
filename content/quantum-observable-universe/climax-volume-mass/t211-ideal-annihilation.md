@@ -15,7 +15,7 @@ The torus knot $T_{2,11}$ validates every structural relation; it behaves as a p
 | Jones polynomial  | Survives | $J_{T_{2,11}}(q) \neq 0$                             |
 | Translation (J-4) | Survives | Lifts to all brane levels                            |
 
-Yet the cohomological constraints obliterate it:
+Yet the cohomological constraints annihilate it:
 
 | Constraint          | Status     | Detail                                   |
 | ------------------- | ---------- | ---------------------------------------- |
@@ -60,7 +60,7 @@ $$
   F(T_{2,11}, N) = 1  \forall N.
 $$
 
-* **No shell structure**: eigenvalues $(1, 1)$ yield the degenerate Chebyshev recurrence $\hat{V}(n) = 1$ for all $n$ — utterly flat, with no energy separation and no sub-shells.
+* **No shell structure**: eigenvalues $(1, 1)$ yield the degenerate Chebyshev recurrence $\hat{V}(n) = 1$ for all $n$ — flat, with no energy separation and no sub-shells.
 * **No shell-transition levels**: it produces zero effective crossings on $\Sigma_4$, ensuring it cannot lift a spin-orbit level across a gap (shell-transition knot).
 * **Null force operator**: the $(2,11)$ channel contributes only the identity factor to the spectral decomposition, rendering it a multiplicative ghost.
 
@@ -97,7 +97,7 @@ This acts as a **crystallographic obstruction at the group level**: $11$-fold ro
 | $T_{2,9}$  |   $\mathbb{Z}_9$  |        No        |   Yes ($g=4$)   | Embeds (sym broken) |
 | $T_{2,11}$ | $\mathbb{Z}_{11}$ |      **No**      |  **No** ($g=5$) | **Doubly excluded** |
 
-For $T_{2,7}$ and $T_{2,9}$: the cyclic symmetry exceeds $S_5$ yet the genus fits — their symmetries simply *break* on $\Sigma_4$. For $T_{2,11}$: **both** criteria fail. It remains the ghost of the fourth generation — algebraically valid but topologically null, entirely bereft of shell action and compatible symmetry.
+For $T_{2,7}$ and $T_{2,9}$: the cyclic symmetry exceeds $S_5$ yet the genus fits — their symmetries simply *break* on $\Sigma_4$. For $T_{2,11}$: **both** criteria fail. It remains the ghost of the fourth generation — algebraically valid but topologically null, with no shell action and no compatible symmetry.
 
 **Representation-theoretic refinement.** The privileged role of $T_{2,3}$ and $T_{2,5}$ atop the embedding table attains a representation-theoretic footing under the weight identification of [prop:x5-bring-weight-identification](#prop:x5-bring-weight-identification). Passing to the hyperelliptic quintic $\mathcal{X}_5$ of [thm:hyperelliptic-z5-classification](#thm:hyperelliptic-z5-classification), the non-trivial $\mathbb{Z}_5$-isotypical part of $H^1(\mathcal{X}_5, \mathbb{Q})$ manifests exactly as the 4-dim character sum $\chi_1 \oplus \chi_2 \oplus \chi_3 \oplus \chi_4$. The Seifert surface of $T_{2,5}$ fills this representation completely ($g(T_{2,5}) = 2 = \dim_{\mathbb{C}} J(\mathcal{X}_5)$), while $T_{2,3}$ occupies only a 2-dim sub-isotype. See [rem:weight-identification-consequences](#rem:weight-identification-consequences) for details.
 

@@ -37,6 +37,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from reduced_block_kernel import chi_all_lambda_reduced_block  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_MP as Q0  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # atom knots; empirical first-order chirality coefficient (coeff of h in a_K)
 ISO = [("D", 1, 1, 1), ("3H", 1, 2, 0), ("3He", 2, 1, 0), ("4He", 2, 2, 0)]
@@ -49,7 +50,28 @@ def content_sum(lam) -> int:
 
 def _writhe(word, pn_only: bool) -> int:
     """Net writhe: σ (d≈0) → +1, σ⁻¹ (d≈−h) → −1, averaged/pn → 0. If
-    `pn_only`, count ONLY inter-nucleon crossings (generator index ≡ 2 mod 3)."""
+    `pn_only`, count ONLY inter-nucleon crossings (generator index ≡ 2 mod 3).
+
+    LEVEL OF DEFINITION (framing note; no number here changes). Both w_full and
+    w_pn are properties of the BRAID WORD, not of its closure: Markov-I
+    (conjugation) invariant, but Markov-II stabilisation β ∈ B_n ↦ βσ_n^{±1} ∈
+    B_{n+1} shifts w by ±1 while presenting the same link. The `ISO` rows sit at
+    n = 3(Z+N) strands (`atom-knot.md`), which differ row to row:
+
+        D  n = 6      ³H  n = 9      ³He n = 9      ⁴He n = 12
+
+    n(K) is the braid index — the lowest level of the substrate tower. Under the
+    owner ruling (states are Gröbner–Shirshov normal forms; the observable is the
+    trace at the lowest level) these canonical words ARE the states, so the
+    cross-isotope rows compare distinct states, not two presentations of one
+    state, and the table stands as written.
+
+    The FINDING below is untouched by this: it is a character mismatch read off a
+    single row — the canonical pn interface is the colour-averaged crossing, hence
+    writhe-neutral, so the deuteron's w_pn = 0 at n = 6 contradicts the empirical
+    a_D = 1 + h. That is a same-level statement and needs no cross-isotope
+    comparison. Ref: docs/audits/2026-08-10-writhe-level-of-definition.md §5d.
+    """
     h = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
     w = 0
     for _c, d, g in word:
@@ -75,7 +97,7 @@ def kappa_avg(Z: int, N: int) -> float:
 
 
 def main() -> int:
-    mp.mp.dps = 40
+    set_compute_dps()
     h = float(mp.mpf(str(Q0)) - 1 / mp.mpf(str(Q0)))
     kappa_pn = kappa_avg(1, 1)   # the elementary 2-nucleon pn bond (deuteron)
 

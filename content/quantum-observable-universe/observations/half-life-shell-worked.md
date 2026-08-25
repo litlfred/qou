@@ -27,4 +27,4 @@ The leading-order prediction ($6690$ yr) overestimates the observed $5730$ yr. T
 
 See [Table](#tbl:half-life-shell-worked-table-data).
 
-Transitions altering a closed sub-link suffer the largest corrections. The shell correction emerges naturally from the discrete structure of the Skein polynomial.
+Transitions altering a closed sub-link suffer the largest corrections. The shell correction emerges from the discrete structure of the Skein polynomial.

@@ -6,16 +6,16 @@ import { processIngestion } from '../pipeline/bib-photo-ingestion-watcher.js';
  * bib-agent-backfill.ts
  * 
  * Implements Phase 4 of the Bib Human-Review workflow:
- * Identifies references mapped in `uploads/intake.json` that are currently 
+ * Identifies references mapped in `library/intake.json` that are currently 
  * 'unreviewed' or 'source-in-repo', and triggers the ingestion pipeline.
  */
 
-const INTAKE_FILE = 'uploads/intake.json';
+const INTAKE_FILE = 'library/intake.json';
 const REVIEWS_FILE = 'content/schema/references.review.json';
 
 async function main() {
   if (!existsSync(INTAKE_FILE)) {
-    console.error("No uploads/intake.json found.");
+    console.error("No library/intake.json found.");
     return;
   }
 

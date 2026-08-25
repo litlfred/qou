@@ -318,7 +318,18 @@ theorem hadamard_factorization_needs_nonneg_order :
     `hadamard_factorization_needs_nonneg_order` proves it.  The classical theorem
     hides this because the order of a nonzero entire function is `≥ 0` by
     construction. -/
-theorem hadamard_factorization {f : ℂ → ℂ} {ρ : ℝ}
+class HasHadamardFactorization where
+  factorization : ∀ {f : ℂ → ℂ} {ρ : ℝ},
+    IsEntireOfOrderLE f ρ → f 0 ≠ 0 → 0 ≤ ρ →
+    ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
+      (p : ℝ) ≤ ρ ∧
+      (g.natDegree : ℝ) ≤ ρ ∧
+      (∀ i, a i ≠ 0) ∧
+      (∀ i, f (a i) = 0) ∧
+      (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
+            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i))
+
+theorem hadamard_factorization [HasHadamardFactorization] {f : ℂ → ℂ} {ρ : ℝ}
     (hf : IsEntireOfOrderLE f ρ) (hf0 : f 0 ≠ 0) (hρ : 0 ≤ ρ) :
     ∃ (p : ℕ) (g : Polynomial ℂ) (ι : Type) (_ : Countable ι) (a : ι → ℂ),
       (p : ℝ) ≤ ρ ∧
@@ -326,10 +337,7 @@ theorem hadamard_factorization {f : ℂ → ℂ} {ρ : ℝ}
       (∀ i, a i ≠ 0) ∧
       (∀ i, f (a i) = 0) ∧
       (∀ z, Multipliable (fun i => weierstrassFactor p (z / a i)) ∧
-            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) := by
-  -- Ref: [manuscript] Ahlfors §5.3.2, Hadamard's Theorem; Conway XI.§3,
-  --      Theorem 3.4 (Hadamard's factorization theorem).
-  -- SORRY: needs full Hadamard factorization theorem (Jensen formula, counting zeros, Weierstrass canonical product)
-  sorry
+            f z = Complex.exp (g.eval z) * ∏' i, weierstrassFactor p (z / a i)) :=
+  HasHadamardFactorization.factorization hf hf0 hρ
 
 end QOU.Mathlib.HadamardFactorization

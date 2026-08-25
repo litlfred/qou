@@ -58,8 +58,9 @@ from qbeta_ck_sseries_exact_rational import (  # noqa: E402
     q, simp, ser_add, ser_mul, ser_scale, ser_inv, ser_sqrt,
     ser_log1, ser_cos0, rat_series, load_net_symbolic,
 )
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 

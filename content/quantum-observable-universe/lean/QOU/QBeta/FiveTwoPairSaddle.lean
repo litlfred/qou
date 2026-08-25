@@ -68,7 +68,8 @@ endpoint failure — `x·y = 2.2469796` lands ON Li₂'s cut, so `a₁ = a₂ = 
 of cancelling. Benign because `envelopeS_total` needs `HasDerivAt` only on
 `Ico 0 π`, but every statement here must carry a hypothesis that excludes it.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

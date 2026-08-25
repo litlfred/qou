@@ -77,6 +77,6 @@ claimed; registry untouched. Refutation scoped (a) with the invariant (DT
 spectrum, Conjecture 4) cited, per the "before declaring refuted" rule.
 
 ## Cross-references
-- GGM 2012.00062 Eq 96/98 (`uploads/2012.00062v3.pdf`)
+- GGM 2012.00062 Eq 96/98 (`library/arxiv-2012.00062v3/2012.00062v3.pdf`)
 - Even-channel `ℚ(√3)`: [`2026-07-11-fmap-action-qsqrt3-saddle-block.md`](2026-07-11-fmap-action-qsqrt3-saddle-block.md); `QOU/QBeta/Qsqrt3SaddleArithmetic.lean`
 - A_ω scouts: #3813 (3D-index assembly), #3872 (annihilator certificate)

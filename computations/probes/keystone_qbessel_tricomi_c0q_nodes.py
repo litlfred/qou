@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """s013 redirect (ii), sourced sub-route — does the 0th-order q-Bessel Tricomi
-function C_{0,q} (Raza–Fadel–Cesarano 2025, uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) supply
+function C_{0,q} (Raza–Fadel–Cesarano 2025, library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) supply
 a PARAMETER-FREE (0-dof, falsifiable) reproduction of the keystone value-map
 target bwS0 = {1, [4]_q, [5]_q, [4]_q[3]_q/[2]_q} ≈ {1, 4.110, 5.220, 6.220}?
 
@@ -9,7 +9,7 @@ dimension data (balanced Laurent polynomials in q₀), and that the disciplined
 multi-argument non-compact q-Bessel row is an unfalsifiable ≥4-dof fit *unless*
 its radial arguments are fixed by a Plancherel measure — which needs the
 un-uploaded Koelink–Swarttouw q-Hankel kernel. The owner then uploaded
-`uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf`, which is NOT that Plancherel source (it cites Koornwinder–
+`library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf`, which is NOT that Plancherel source (it cites Koornwinder–
 Swarttouw [22] but does not contain the kernel); what it DOES give is the
 entire, parameter-free 0th-order q-Bessel Tricomi series (eq. 11):
 
@@ -40,7 +40,7 @@ No fit; no tuned arguments; nothing wired.
 Output: keystone-qbessel-tricomi-c0q-nodes.witness.json
 
 # Ref: [manuscript] Raza–Fadel–Cesarano, "On 2-variable q-Legendre polynomials",
-#      Carpathian Math. Publ. 2025, 17(1) 14–26 (uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf), eqs. (9)–(11)
+#      Carpathian Math. Publ. 2025, 17(1) 14–26 (library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf), eqs. (9)–(11)
 """
 from __future__ import annotations
 
@@ -53,15 +53,21 @@ sys.path.insert(0, str(ROOT))
 sys.path.insert(0, str(HERE))
 
 import _path_bridge as _bridge  # noqa: E402, F401
+from q_parameter import Q_MP  # noqa: E402
 from mpmath import mp, mpf, findroot  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # Categorical substrate q₀ (muon-canonical fibre value, as used by the merged
 # compact-hecke probe); the paper's 0<q<1 convention uses its inverse image.
-Q0 = mpf("1.1099785955541805")
+# q0 comes from the pin table, never a literal. This held
+# `1.1099785955541805`, the SUPERSEDED muon value -- it matches
+# neither current pin, so nothing could compare it against
+# anything. Owner ruling 2026-08-24, bean `qou/ftuv`.
+Q0 = Q_MP
 Q = 1 / Q0                       # ≈ 0.90092, the |q|<1 evaluation point
 
 
@@ -91,7 +97,7 @@ def qfact_table(nmax, q=Q):
 
 
 def C0q(x, q=Q, terms=140):
-    """0th-order q-Bessel Tricomi, uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. (11).
+    """0th-order q-Bessel Tricomi, library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. (11).
 
     ([k]_q!)² grows like ((1-q)^{-k})² ≈ 10^{2k} at q≈0.9, so the alternating
     series converges fast; 140 terms is ample for |x| ≤ 400 at 50 dps."""
@@ -179,7 +185,7 @@ def main():
         or vector_match(zeros))
     any_match = bool(matches) or whole_vec_match
 
-    print("# s013 — q-Bessel Tricomi C_{0,q} (uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq.11) vs compact target\n")
+    print("# s013 — q-Bessel Tricomi C_{0,q} (library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq.11) vs compact target\n")
     print(f"q0 = {mp.nstr(Q0, 12)}   q = 1/q0 = {mp.nstr(Q, 12)}")
     print(f"targets  {[mp.nstr(v, 7) for v in tvals]}")
     print(f"first {len(zeros)} positive zeros of C_0,q:")
@@ -191,7 +197,7 @@ def main():
 
     verdict = (
         "REFUTED-as-is (scope a): no parameter-free quantity of the sourced "
-        "0th-order q-Bessel Tricomi C_{0,q} (uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) — "
+        "0th-order q-Bessel Tricomi C_{0,q} (library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) — "
         "positive zeros, zero ratios/roots, consecutive gaps, or C_{0,q} at "
         "q-integer/integer nodes — reproduces the compact keystone target "
         "{1,[4]_q,[5]_q,[4][3]/[2]} within 1%, and the ordered zero vectors do "
@@ -211,7 +217,7 @@ def main():
     wb.set_description(
         "s013 redirect (ii) sourced sub-route: test whether the 0th-order "
         "q-Bessel Tricomi C_{0,q} from the owner-uploaded Raza–Fadel–Cesarano "
-        "2025 paper (uploads/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) reproduces the compact "
+        "2025 paper (library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf eq. 11) reproduces the compact "
         "value-map target {1,[4]_q,[5]_q,[4][3]/[2]} at any PARAMETER-FREE node "
         "(zeros, zero ratios, q-integer evaluations). 0-dof falsifiable; no "
         "argument tuning; expected scope-(a) refutation carrying an in-repo "

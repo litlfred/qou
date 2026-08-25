@@ -49,8 +49,9 @@ sys.path.insert(0, str(HERE.parent))
 from mpmath import mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from probe_staircase_ew_k3_categorical import build_hoefsmit_mpfr  # noqa: E402
+from hoefsmit_mpfr import build_hoefsmit_mpfr  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _trace(M, dim: int) -> "mp.mpf":
@@ -70,7 +71,7 @@ def main() -> int:
         "symbolic-character-table-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     q = Q_MP
     h = q - 1 / q
@@ -211,12 +212,12 @@ def main() -> int:
     for r in self_conj_results:
         print(f"  {r['shape']:<13} {r['dim']:<5} "
               f"{r['chi_over_h']:<20.15f} {r['expected_integer']:<10} "
-              f"{r['residue']:.2e}")
+              f"{float(r['residue']):.2e}")
     print()
     print(f"Pair characters for λ = (3,1,1):")
-    print(f"  adjacent σ_1 σ_2:      χ = {float(chi_adj):.12f},  expected h² = {float(chi_adj_expected):.12f},  res = {res_adj:.2e}")
-    print(f"  non-adj σ_1 σ_3:       χ = {float(chi_nonadj):.12f},  expected h²−2 = {float(chi_nonadj_expected):.12f},  res = {res_nonadj:.2e}")
-    print(f"  Coxeter σ_1 σ_2 σ_3:   χ = {float(chi_triple):.12f},  expected −h = {float(chi_triple_expected):.12f},  res = {res_triple:.2e}")
+    print(f"  adjacent σ_1 σ_2:      χ = {float(chi_adj):.12f},  expected h² = {float(chi_adj_expected):.12f},  res = {float(res_adj):.2e}")
+    print(f"  non-adj σ_1 σ_3:       χ = {float(chi_nonadj):.12f},  expected h²−2 = {float(chi_nonadj_expected):.12f},  res = {float(res_nonadj):.2e}")
+    print(f"  Coxeter σ_1 σ_2 σ_3:   χ = {float(chi_triple):.12f},  expected −h = {float(chi_triple_expected):.12f},  res = {float(res_triple):.2e}")
     return 0
 
 

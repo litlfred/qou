@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-01T21:42:01.201206+00:00",
-  "commitSha": "cecd1165b597de93e7e4bfc560fba120fd9641cb",
+  "computedAt": "2026-08-24T13:33:42.391584+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "amplification_factor_equals_inv_u3",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 6,
   "computation": "qbeta-c3-hypersensitivity-u3-extraction",
   "scriptFile": "qbeta_c3_hypersensitivity_u3_extraction_probe.py",
   "scriptHash": "b5d4d1c21930",
-  "scriptCommitSha": "cecd1165b597de93e7e4bfc560fba120fd9641cb",
+  "scriptCommitSha": "96a817bb5ab82d45eecfd655c7e488ef29b2b011",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,25 +32,34 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_hypersensitivity_u3_extraction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_hypersensitivity_u3_extraction_probe.py"
   },
   "description": "Direction-4 reconciliation. The c₃ 'hypersensitivity' dc₃/dq≈3.8e6 is the 1/u³ ladder-extraction amplification (c₃=(Q_codata/Q_N2−1)/u³, u³≈6.2e-7) of a SMOOTH numerator g=Q_codata/Q_N2−1 (dg/dq≈2.37, O(1)): dc₃/dq ÷ dg/dq = 1.6185e6 = 1/u³ exactly. So the apparent hypersensitivity is an EXTRACTION artifact, not a physical near-singularity — fully consistent with the smooth argument-map radius R=2logφ≈0.962 (#4508). Consequences: the muon/proton sign flip of S=c₃+Vol(4₁) is g/u³ crossing the −Vol(4₁) threshold (smooth g, amplified); |S_p/S_m|≈4.075 is a ratio of two 1/u³-amplified near-threshold residuals, hypersensitive to the 1e-8 pin gap — NOT a fundamental geometric ratio, which is why every parameter-free geometric route missed it (#4497/#4501/#4503). The smooth object to reproduce is g (=Im 𝔙₄₁(u(q₀))), not the amplified ratio. No fit; nothing wired; diagnostic reframing.",
   "contentBlock": "conj:binding-qbeta-complex-volume",
   "data": {
     "u3_amplification_readout": {
-      "u_muon": "0.00851723634",
-      "u_cubed": "6.178685577e-7",
-      "g_muon_smooth_numerator": "-1.248218205e-6",
+      "u_muon": "0.008517236352",
+      "u_cubed": "6.178685604e-7",
+      "g_muon_smooth_numerator": "-1.248008183e-6",
       "g_proton_smooth_numerator": "-1.278580907e-6",
       "dg_dq_smooth": "2.3715674",
       "dc3_dq_amplified": "3838405.9",
-      "amplification_factor": "1618510.176",
-      "inv_u_cubed": "1618467.209",
+      "amplification_factor": "1618510.169",
+      "inv_u_cubed": "1618467.202",
       "amplification_equals_inv_u3": true,
       "numerator_is_smooth": true,
-      "S_ratio_muon_proton": "4.075127",
+      "S_ratio_muon_proton": "3.9369205",
       "verdict": "c₃ hypersensitivity = 1/u³ extraction amplification of a smooth numerator; |S_p/S_m| is a near-threshold extraction artifact, not a geometric ratio; consistent with smooth radius R≈0.962, no on-anchor singularity or winding change needed"
     }
   }

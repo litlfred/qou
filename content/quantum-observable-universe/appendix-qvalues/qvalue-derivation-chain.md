@@ -11,7 +11,7 @@ $$
   \mathcal{Q}(q)
 $$
 
-**Step 1.** The traced volume $\hat{V}_i(q)$ for each generator $\sigma_i$ is exact in $\mathbb{Q}(q^{1/2})$:
+**Step 1.** The traced volume $\hat{V}_i(q)$ for each generator $\sigma_i$ is exact in $\mathbb{Q}(q)$:
 
 $$
   \hat{V}_i = z \cdot M_i[0,0] + M_i[1,0],
@@ -19,7 +19,7 @@ $$
   M_i = \prod_{j > i} T(\mathfrak{w}^+(i,j), \mathfrak{w}^0(i,j))
 $$
 
-where $z = 1/(\sqrt{q} + 1/\sqrt{q})$ is the Markov parameter and $T(c,d) = \begin{psmallmatrix} c(q-q^{-1})+d & c \\ c & d \end{psmallmatrix}$ is the transfer matrix.
+where $z = q^{3}/(q^{2}+1)$ is the Markov parameter (**convention D**) and $T(c,d) = \begin{psmallmatrix} c(q-q^{-1})+d & c \\ c & d \end{psmallmatrix}$ is the transfer matrix.
 
 **Step 2.** Classify each generator's log-ratio as unbinding ($u$), rebinding ($r$), or unchanged ($uc$), then $q$-weight:
 

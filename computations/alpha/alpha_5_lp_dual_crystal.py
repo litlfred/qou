@@ -216,7 +216,12 @@ def per_atom_lp(atom_label: str, q_val: float, *,
     if n_target == 0.0:
         return None
 
-    res = solve_operator_selection_lp(t, G, n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     return {
         "atom": atom_label,
         "n": n,
@@ -330,6 +335,13 @@ def main() -> int:
             per_atom_q.append({
                 "atom": atom,
                 "y0_star": r["lp"]["y0_star"],
+                # The sweep row mirrors y0_star out of `r["lp"]`, which is a
+                # to_dict() carrying the companion; copying the number up
+                # without it is what left these bare.
+                **({"y0_star_str": r["lp"]["y0_star_str"]}
+                   if "y0_star_str" in r["lp"] else {}),
+                **{_k: r["lp"][_k] for _k in ("backend", "precision_bits")
+                   if _k in r["lp"]},
                 "active_count": len(r["lp"]["active_set"]),
                 "feasible": r["lp"]["feasible"],
             })

@@ -1,0 +1,76 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T04:07:21.436702+00:00",
+  "commitSha": "5c7ea6e2509e85f86abe5f257ce68bcdd70010d6",
+  "assertions": [
+    {
+      "name": "the dissipation-scale crossing B* exists for every eps in the sweep (theta_n < 1 for all rungs beyond it), once the ladder is long enough to reach the physical dissipation scale",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "theta_n = sup_t u_n/(nu*k_n) profile per rung, layer-invariant; ladder length eps-scaled to k_phys ~ 2"
+    },
+    {
+      "name": "the crossing's physical wavenumber is bounded above by the Kolmogorov prediction k_phys* = 2^{3/4} eps^{1/4} and is monotone DECREASING in the sweep — the crossing moves down as eps -> 0, so the dissipation-scale condition gets EASIER toward the classical limit (bounded-above is the sharp statement; the measured decay ~eps^0.6 is faster than the eps^{1/4} prediction, i.e. the finite ladder dissipates harder than continuum Kolmogorov)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "theta ~ (sup u)/(nu_phys k_phys) with Kolmogorov sup u ~ k_sub^{-1/3} gives theta = 2 eps^{1/3} k_phys^{-4/3}, crossing at 2^{3/4} eps^{1/4}; measured k_phys(B*) = 0.9487 / 0.2202 / 0.1039 at eps = 1e-1 / 1e-2 / 3e-3"
+    },
+    {
+      "name": "the per-rung trajectory equilibrium ratio r_n = sup u_n / ((sup u_{n-1})^2/(nu*k_n)) is <= 1 on every empty-start rung at every eps — rung_equilibrium's bound holds along actual trajectories (remainder (a), empirical face)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max over rungs n >= N_DATA of r_n, per eps"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4439,
+  "computation": "qns-dissipation-scale-probe",
+  "scriptFile": "qns_dissipation_scale_probe.py",
+  "scriptHash": "286bfbac9a37",
+  "scriptCommitSha": "fcb9c131443cb7da1d96cf0ae6db42a8c6ee1a6f",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF7 (bean qou-qzh2): probe-level check of the amplitude repair's one in-model hypothesis (PR #5066) — the band-at-dissipation-scale condition theta_n = sup u_n/(nu*k_n) < 1 beyond a crossing rung B*, plus the eps-uniformity of the crossing's physical wavenumber k_phys(B*) = q^{B*}-1, plus the per-rung trajectory equilibrium ratio r_n <= 1 (rung_equilibrium along actual DN runs). Same integrator and data as SF6 (N=32, unforced, band-limited first-4-rung data, T=10 eddy, ladder length eps-scaled to reach k_phys ~ 2). theta is layer-invariant (nu*k converts by (q-1)*c_q = 1); the layer question is where the crossing sits in physical wavenumber. Scope (a); float64 RK2 exploratory tier; full-NS nonlocality caveat untouched.",
+  "data": {
+    "eps1e-01_ladder_len": 12,
+    "eps1e-01_bstar_rung": 6,
+    "eps1e-01_kphys_at_bstar": "0.9487171000000012",
+    "eps1e-01_kphys_bstar_predicted": "0.9457416090031757",
+    "eps1e-01_max_equilibrium_ratio": "0.901391842880148",
+    "eps1e-01_n_excited_ratios": 8,
+    "eps1e-02_ladder_len": 111,
+    "eps1e-02_bstar_rung": 19,
+    "eps1e-02_kphys_at_bstar": "0.22019003994796704",
+    "eps1e-02_kphys_bstar_predicted": "0.5318295896944989",
+    "eps1e-02_max_equilibrium_ratio": "0.745262128839694",
+    "eps1e-02_n_excited_ratios": 21,
+    "eps3e-03_ladder_len": 367,
+    "eps3e-03_bstar_rung": 32,
+    "eps3e-03_kphys_at_bstar": "0.10390268500949595",
+    "eps3e-03_kphys_bstar_predicted": "0.39359793425308603",
+    "eps3e-03_max_equilibrium_ratio": "0.7143104866156127",
+    "eps3e-03_n_excited_ratios": 34,
+    "kphys_over_predicted_per_eps": [
+      "1.0031461986746695",
+      "0.4140236726475707",
+      "0.2639817843725924"
+    ],
+    "tier": "exploratory",
+    "n_cap": 400,
+    "n_data": 4
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "engine": "snappy",
+  "engineVersion": "snappy 3.3.2",
+  "computedAt": "2026-08-16T02:32:55.929218+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
+  "assertions": [
+    {
+      "name": "fourone_abs_slopes_match_lean",
+      "computed": "[4]",
+      "expected": "[4]",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "SnapPy normal_boundary_slopes vs a41MaxAbsSlope"
+    },
+    {
+      "name": "fivetwo_abs_slopes_match_literature",
+      "computed": "[0, 4, 10]",
+      "expected": "[0, 4, 10]",
+      "passed": true,
+      "tolerance": "exact",
+      "source": "SnapPy vs Hatcher-Oertel recall {0,-4,-10} (abs)"
+    },
+    {
+      "name": "volumes_match_corpus_f64",
+      "computed": "True",
+      "expected": "True",
+      "passed": true,
+      "tolerance": "1e-9 per knot",
+      "source": "SnapPy float64 volume vs corpus 50-digit values"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 48,
+  "computation": "dt-crossknot-snappy-slope-hardening",
+  "scriptFile": "dt_crossknot_snappy_slope_hardening_probe.py",
+  "scriptHash": "e0bb4383bee3",
+  "scriptCommitSha": "0ed8abc241495a7467276f97ef5de98e38e6fb5c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "D3 (qou-btvl) + qou-52sn: recompute the Route-A cross-knot boundary slopes with SnapPy 3.3.2 normal_boundary_slopes() (spun-normal, FXrays exact integer output). Hardens the literature-recalled 4_1 {+-4} and 5_2 {0,-4,-10} (magnitude sets convention-independent; SnapPy sign convention differs from Hatcher-Oertel and is recorded as-is). New 6_1 datum |slopes| = {0,4,8}; no 6_1 DT spectrum exists in corpus or carried literature, so no R1/R2 comparison is made. Volume cross-checks are float64-tier informational. Scope-(a); nothing wired. Beans qou-btvl / qou-52sn.",
+  "contentBlock": "prop:phi-b-unitary-bar-odd",
+  "data": {
+    "knots": {
+      "4_1": {
+        "slopes_snappy": [
+          [
+            4,
+            -1
+          ],
+          [
+            4,
+            1
+          ]
+        ],
+        "abs_slopes": [
+          4
+        ],
+        "max_abs_slope": 4,
+        "volume_snappy_f64": "2.0298832128",
+        "volume_corpus_err": "1.931e-11"
+      },
+      "5_2": {
+        "slopes_snappy": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            1
+          ],
+          [
+            10,
+            1
+          ]
+        ],
+        "abs_slopes": [
+          0,
+          4,
+          10
+        ],
+        "max_abs_slope": 10,
+        "volume_snappy_f64": "2.8281220883",
+        "volume_corpus_err": "3.078e-11"
+      },
+      "6_1": {
+        "slopes_snappy": [
+          [
+            0,
+            1
+          ],
+          [
+            4,
+            -1
+          ],
+          [
+            8,
+            1
+          ]
+        ],
+        "abs_slopes": [
+          0,
+          4,
+          8
+        ],
+        "max_abs_slope": 8,
+        "volume_snappy_f64": "3.16396322888",
+        "volume_corpus_err": "3.144e-12"
+      }
+    },
+    "convention_note": {
+      "snappy_vs_hatcher_oertel": "sign differs (orientation convention); magnitude sets compared",
+      "spun_normal_scope": "detected spun-normal slopes; completeness not asserted"
+    },
+    "six_one_status": {
+      "dt_spectrum": "NOT AVAILABLE (corpus + carried GGM tables cover 4_1/5_2 only); slopes banked, no reading tested"
+    }
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "SnapPy cusp/slope geometry only — hyperbolic invariants of the cross-knot census, computed from the manifolds themselves. No substrate value is read; the 3-module import cone reaches neither q_parameter nor qou_substrate.constants."
+}

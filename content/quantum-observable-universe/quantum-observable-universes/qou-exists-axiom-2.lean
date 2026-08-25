@@ -15,7 +15,7 @@ encodes the fibre functor via the `fibreFunctor` field of the
 `QuantumUniverse` structure (inherited by
 `QuantumObservableUniverse` through `extends`).  This sibling
 records the structural existence claim that every
-`QuantumObservableUniverse k` exhibits a fibre functor — the
+`QuantumObservableUniverse R` exhibits a fibre functor — the
 carrier of the Peter–Weyl decomposition.
 
 LaTeX label: `lem:qou-exists-axiom-2`
@@ -38,7 +38,7 @@ universe cObj cHom uk fib
 
 /-- **Axiom 2 — fibre functor / Peter–Weyl carrier (existence form).**
 
-    Any `QuantumObservableUniverse k` exhibits a `fibreFunctor : C →
+    Any `QuantumObservableUniverse R` exhibits a `fibreFunctor : C →
     Type*` (inherited from its `QuantumUniverse` base).  This is the
     carrier of the Peter–Weyl decomposition — the structural input
     for axiom 2's observability conditions. -/
@@ -46,14 +46,14 @@ universe cObj cHom uk fib
 -- NOTE: `def`, not `theorem` — `Functor` is a `Type _` (data,
 -- not a proposition).  Per Copilot review on PR #794.
 def exists_axiom_2_observability_data
-    {k : Type uk} [Field k]
-    (Q : QOU.QuantumObservableUniverse.{cObj, cHom, uk, fib} k) :
+    {R : Type uk} [CommRing R]
+    (Q : QOU.QuantumObservableUniverse.{cObj, cHom, uk, fib} R) :
     @CategoryTheory.Functor Q.C Q.catInst (Type fib) inferInstance :=
   Q.fibreFunctor
 
 lemma exists_axiom_2_observability
-    {k : Type uk} [Field k]
-    (Q : QOU.QuantumObservableUniverse.{cObj, cHom, uk, fib} k) :
+    {R : Type uk} [CommRing R]
+    (Q : QOU.QuantumObservableUniverse.{cObj, cHom, uk, fib} R) :
     Nonempty (@CategoryTheory.Functor Q.C Q.catInst (Type fib) inferInstance) :=
   ⟨exists_axiom_2_observability_data Q⟩
 

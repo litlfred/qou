@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1301.6953v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "8c9231d0832df3b6f9fa790e80c2caeb63a3b6c75d187d76ada0f42769ec4372",
+  "file": "1301.6953v1.pdf"
+ },
+ "provenance": {
+  "title": "LU TP 13-03 Januray 2013",
+  "authors": "Chiral Perturbation Theory and Mesons",
+  "arxiv": {
+   "id": "1301.6953",
+   "version": "1",
+   "primary_class": "hep-ph",
+   "stamp_date": "29 Jan 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -20,7 +20,7 @@ Mass evaluates the magnitude that survives both sectors. The argument evaluates 
 
 The color factor $S_3$ fixes the spacetime coordinates. The spacetime factor $S_2$ fixes the color coordinates ([`prop:color-spacetime-s5-factorization`](#prop:color-spacetime-s5-factorization), parts 1–2). Therefore, color and electromagnetism form independent coordinates. The discrete color charge is not a function of the continuous phase, and conversely. The rigidity in part $3$ of that proposition makes this non-coincidence sharp. A continuous winding argument cannot factor through a finite group such as $\mu_5$. Thus, $\arg\mathrm{tr}_M$ remains structurally barred from being a color character.
 
-The two remain nonetheless faces of one substrate. The Galois group $S_5$ properly contains $S_2\times S_3$. Its remaining generators carry spacetime indices into color indices. An electromagnetic-to-color relation therefore forms an $S_5$ statement, realized by those off-block generators, not a relation internal to the $U(1)$ phase. Mass, electromagnetism, and color form one trace object read on its modulus, its spacetime phase, and its color grading.
+The two remain nonetheless faces of one substrate. The Galois group $S_5$ properly contains $S_2\times S_3$. Its remaining generators carry spacetime indices into color indices. An electromagnetic-to-color relation therefore forms an $S_5$ statement, realized by those off-block generators, not a relation internal to the $U(1)$ phase.
 
 ## Archimedean realization
 

@@ -61,7 +61,8 @@ bound on the four `arg`s reaches it (they sum to 11.857 > 2π). And `hcont` at
 `φ = π` (Route 36 G11) — `envelopeS_total` wants continuity on the **closed**
 interval, the `Li₂` argument sits on the cut there, and nothing has discharged it.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle
@@ -1144,7 +1145,8 @@ unique (a quartic with one minimum).
 `S(0) = 3·S(π)`, so `S(π) − S(0) = π²` **reformulates** it. Closing Gap A moves a
 named gap inside a proved chain; it does not move the headline.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 theorem envelopeS_total_concrete_final :
     envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) π
       = envelopeS Yreal (fun u => (Ypair u).1) (fun u => (Ypair u).2) 0 + π ^ 2 := by

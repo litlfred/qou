@@ -57,8 +57,17 @@ import pathlib
 
 from mpmath import mp, mpf, qp, fabs, fsum, acos, acosh, sin, sinh, sqrt
 
-mp.dps = 50
-Q0 = mpf("1.10997858")          # proton-pinned substrate q_0
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
+# Substrate modulus from the registry, not re-typed here: the literal was
+# "1.10997858", the proton pin truncated to 9 s.f. (canonical
+# 1.10997858275138…). Proton is the default anchor per AGENTS.md.
+from q_parameter import Q_MP  # noqa: E402
+Q0 = Q_MP          # proton-pinned substrate q_0
 QMU = mpf("1.110037")           # muon-anchor q (cross-anchor reference; ~22 ppm above q0)
 
 HERE = pathlib.Path(__file__).resolve().parent

@@ -31,6 +31,26 @@ The `≤` direction: the 1-indexed encoding embeds into the 0-indexed one by `en
 (`inj_on` + `lt_card` on an `n`-element cell set forces surjectivity onto `{1,…,n}`) together with
 weak-row monotonicity from adjacent strictness; it is the remaining half of the bridge.
 
+## Corrections (2026-08-23)
+
+Three statements above describe the state of the corpus when this file was written and no longer
+hold.  The text is left in place; each is superseded as follows.
+
+* *"which the corpus records as 'not yet a theorem … the multi-session next step'"* —
+  `RSKBurnsideTarget` no longer records that (it was corrected the same day), and
+  `RSKBurnsideHolds` is a theorem for **every** `n`: `QOU.Mathlib.rskBurnsideHolds`, from the
+  Robinson–Schensted correspondence.
+* *"the single open premise of `YoungDiagramTailFirstInstance.nuV_top_closed_form`"* — discharged
+  by `PlancherelNormalisation.nuV_top_closed_form_unconditional`.
+* *"that gap is orthogonal and stays open"* — the orthogonality stands; the gap does not.
+  `QOU.BraidKnot.numSYT_mul_hookProduct_partition` proves exactly the named bridge (1)
+  (`numSYT (toYoungDiagram Λ) * Λ.hookProduct = n!`) and is axiom-clean, as is its payoff
+  `dimIrrep_eq_numSYT`.
+
+And in **This file** below, *"it is the remaining half of the bridge"*: the reverse inequality is
+proved, as the equality `QOU.BraidKnot.numSYT_eq_numStandardYoungTableaux` in `NumSYTBridge`.  This
+file still carries only the `≤` direction, which is what makes the sentence easy to miss.
+
 -- Ref: [sagan2001] Sagan, The Symmetric Group §3 (standard tableaux; both entry conventions)
 -/
 

@@ -79,7 +79,16 @@ def main():
 
     # ── N=0 reduction content (two functionals) ───────────────────────
     eps = h ** 2 / 2 - h               # ε(Δ): Frobenius counit
-    z_sub = mp.sqrt(q) / (q + 1)       # substrate Markov loop value
+    # Convention D: z = q³/(q²+1). Was `mp.sqrt(q)/(q+1)`, which is convention
+    # C in disguise — `√q/(q+1)` is exactly `1/(√q + 1/√q)`, and the square root
+    # is the tell: C must leave ℚ(q), D never does.
+    #
+    # Safe as a one-line change here, unlike the other independent C site found
+    # with it (`bond_extensivity_equal_weight.f_bonds`), because everything
+    # downstream is generic in z: `trM_zsub` is `h²/2 − h·z` and the recorded
+    # gap identity `h·(z − 1)` holds for any Markov parameter. Nothing here
+    # depends on z's closed form.
+    z_sub = q ** 3 / (q ** 2 + 1)      # substrate Markov loop value
     trM_zsub = h ** 2 / 2 - h * z_sub  # tr_M(Δ) at the substrate loop
     gap = eps - trM_zsub               # exact gap = h·(z_sub − 1)
 

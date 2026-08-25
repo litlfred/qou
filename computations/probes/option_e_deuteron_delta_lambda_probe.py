@@ -43,10 +43,11 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp
+from _precision import set_compute_dps  # noqa: E402
 
 
 def main() -> int:
-    mp.dps = 50
+    set_compute_dps()
 
     repo_root = Path(__file__).resolve().parent.parent.parent
     # Witness lives under computations/ (moved out of folio-assistant/

@@ -93,9 +93,22 @@ ISO = [("2H", 1, 1, 2.224573), ("3H", 1, 2, 8.481821), ("3He", 2, 1, 7.718058),
 
 
 def _params(dps: int = 50):
+    """Substrate parameters for the single-pipeline binding.
+
+    CONVENTION-HYBRID BUG, fixed 2026-08-09 (bean qou-wgta item 1). `tau`
+    below is the Lean closed form (4+h²−3h⁴−h⁶)/(h²+4), which IS convention
+    D — while `z` was `1/(√q + √(1/q))`, which is convention C. `z` builds
+    f_pp / f_pn / f_nn, so this function's binding was tau(D) × bonds(C):
+    a number reproducible under NEITHER convention, while the docstring of
+    `borromean_binding` below declared D and the registry recorded this
+    channel as D/D/agreed. Registry:
+    docs/coordination/trace-convention-registry.md.
+    """
     mp.mp.dps = dps
     q = mp.mpf(str(Q0)); me = mp.mpf(str(M_E)); qi = 1 / q; h = q - qi
-    E0 = me / (q * (q - 1)); z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(qi))
+    # z: convention D (SU(2)/Temperley-Lieb), q³/(q²+1). Was C's
+    # 1/(√q + √(1/q)) = 0.4993203342 against D's 0.6126880371 at the proton pin.
+    E0 = me / (q * (q - 1)); z = q**3 / (q**2 + 1)
     tau = (4 + h**2 - 3 * h**4 - h**6) / (h**2 + 4)          # Borromean H_3 trace
     return q, qi, h, E0, z, tau
 

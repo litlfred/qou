@@ -3,11 +3,11 @@
  "probe": "gswz_epsm_kummer_level_probe",
  "engine": "python3-int-exact",
  "scriptFile": "gswz_epsm_kummer_level_probe.py",
- "commitSha": "1a259abb9a8a9d854ea588e0a26445f1a415ae5c",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
  "beans": [
   "qou-9p9y"
  ],
- "source": "CGZ arXiv:1712.04887v3 (uploads/1712.04887v3.pdf); GSWZ arXiv:2412.04241v2 eqn (275) (uploads/2412.04241v2.pdf); base place: gswz_epsm_5adic_cyclic_qdilog_probe.py (this branch)",
+ "source": "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ arXiv:2412.04241v2 eqn (275) (library/arxiv-2412.04241v2/2412.04241v2.pdf); base place: gswz_epsm_5adic_cyclic_qdilog_probe.py (this branch)",
  "fields": {
   "m2_symbol_classes": {
    "sym1": {

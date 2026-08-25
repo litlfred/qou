@@ -18,15 +18,28 @@ namespace QOU.BraidKnot.CyclotomicTrilogImaginary
 
 open QOU.Infra.Polylogarithm
 
-/-- **Theorem (`prop:cyclotomic-trilog-imaginary-closed-form`).**
-    At every `n ≥ 2`, the predicted closed form
-    `imLi3ZetaPredicted n` agrees with itself by `rfl`; the
-    substantive identification of this value with the actual
-    `Im Li_3(exp(2π i / n))` is encoded as the conditional-class
-    `TheoremA`. -/
-theorem closed_form_holds : ∀ n : ℕ, 2 ≤ n →
-    imLi3ZetaPredicted (n : ℝ) = imLi3ZetaPredicted (n : ℝ) := by
-  intro _ _
-  rfl
+/-! ### `closed_form_holds` — REMOVED 2026-08-21
+
+    It read `∀ n, 2 ≤ n → imLi3ZetaPredicted n = imLi3ZetaPredicted n`,
+    closed by `rfl` (vacuity ledger, `proof-no-trivial-true` /
+    `reflexive-tautology`, verdict genuine).  A name asserting that a
+    closed form *holds* is exactly the claim a reflexive equality cannot
+    make: a closed-form statement needs the predicted value on one side
+    and the closed form on the other.  That makes it worse than a merely
+    empty theorem — a reader grepping for whether the `Im Li₃` closed form
+    is established would have found a green `theorem` and stopped.
+
+    It was **dropped rather than restated** because both halves of the
+    real content already exist upstream, and duplicating either here would
+    add nothing:
+
+    - the verified `n = 4` row is
+      `QOU.Infra.Polylogarithm.beta3_from_jonquiere :
+      imLi3ZetaPredicted 4 = beta3`, proved from the definitions;
+    - the **general-`n`** identification with the analytic
+      `Im Li₃(exp(2πi/n))` is conditional content, carried by
+      `TheoremA.agrees_at`, and remains unproved.
+
+    Nothing referenced this declaration. -/
 
 end QOU.BraidKnot.CyclotomicTrilogImaginary

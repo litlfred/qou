@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T20:13:00.176690+00:00",
-  "commitSha": "8ebaee55993e8d63c7cb3b4196bcdbee4b275bab",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:33.788376+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "geometric_closed_form_differs_only_at_hbar6",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "flavor-split-geometric-closure-probe",
   "scriptFile": "flavor_split_geometric_closure_probe.py",
-  "scriptHash": "fd61295b97ed",
-  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
+  "scriptHash": "4a2a8cd407c8",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,27 +29,34 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/flavor_split_geometric_closure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/flavor_split_geometric_closure_probe.py"
   },
   "description": "Scope-(a) measurement: the flavor-split subleading (1+ℏ_q³) vs the geometric closed form 1/(1−ℏ_q³). They differ at O(ℏ_q⁶) ~ 9.5e-7; neither closes the Δm_pn/M_N gap to CODATA (leading already −0.5%). The closed form is a hypothesis, not a derived identity — NOT wired to production δ (calibration-sensitive; needs an independent derivation that the correction is geometric).",
   "parameters": {
     "q0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "hbar_q": "0.099081716044258507839177117518906063985258373389462",
-    "leading": "0.0013757108070270960085511092741065506222254760119377",
-    "subleading_1_plus_hbar3": "0.0013770489659925545053975695881732168367239748151548",
-    "geometric_closed_1_over_1_minus_hbar3": "0.0013770502688920405817874381366924776776033645445393",
-    "rel_closed_vs_trunc": "0.00000094615334548926595554005235508208083423443396890862",
-    "err_trunc_vs_codata": "0.00030561301920949091759016760135967208724789509428907",
-    "err_closed_vs_codata": "0.00030466715502078220176976084307295476990438416764725",
-    "codata_dmn_over_mn": "0.0013774699387394029668339406551297433261342328109031",
+    "hbar_q": "0.09908171604425850783917711751890606398525837338946307825521469634167789",
+    "leading": "0.001375710807027096008551109274106550622225476011937774931321338387473873",
+    "subleading_1_plus_hbar3": "0.001377048965992554505397569588173216836723974815154796535592272745263871",
+    "geometric_closed_1_over_1_minus_hbar3": "0.001377050268892040581787438136692477677603364544539283169190295245090577",
+    "rel_closed_vs_trunc": "0.0000009461533454892659555400523550820808342344339682516602253478930478909367",
+    "err_trunc_vs_codata": "0.0003056130192094909175901676013596720872478950942699398363853353339122936",
+    "err_closed_vs_codata": "0.0003046671550207822017697608430729547699043841676287841158087716429063527",
+    "codata_dmn_over_mn": "0.001377469938739402966833940655129743326134232810903099235092864918057108",
     "geometric_closes_gap": false,
-    "C_true_codata_over_leading": "1.001278707489482061191485579149752694111327559207",
-    "ratio_Ctrue_minus_1_over_hbar3": "1.3145909848642104055895796294305827520336656903115",
-    "fraction_of_correction_supplied_by_1plus_hbar3": "0.76069287825162910074929807799563032581570123374297"
+    "C_true_codata_over_leading": "1.001278707489482061191485579149752694111327559207008719675861036622146",
+    "ratio_Ctrue_minus_1_over_hbar3": "1.31459098486421040558957962943058275203366569029173430844318388063927",
+    "fraction_of_correction_supplied_by_1plus_hbar3": "0.7606928782516291007492980779956303258157012337543833053822972237460782"
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

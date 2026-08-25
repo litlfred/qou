@@ -79,7 +79,8 @@ boundary value rather than a constant of integration". **That was wrong** —
 Route 35 showed `Re L` is continuous across the cut, so there was no limit to
 take. The correction is recorded in `qou-invr` rather than quietly deleted.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoExtendIdentification

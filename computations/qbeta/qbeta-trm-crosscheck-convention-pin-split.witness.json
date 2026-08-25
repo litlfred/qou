@@ -1,0 +1,82 @@
+{
+  "computation": "qbeta-trm-crosscheck-convention-pin-split",
+  "description": "The L1 tr_M cross-check is red for two independent reasons. The known one is a convention C/D straddle (Hoefsmit and chi-cache on D, peel and Habiro on C \u2014 the 1.481 factor). The unrecorded one is a PIN straddle: Habiro matches convention C at the PROTON pin to 2.71e-13, inside a gate that raises SystemExit unless the RUNTIME pin is muon. It survived because that witness records no q0 for the guard to compare against.",
+  "audit_only": true,
+  "tier": "measured (from committed witnesses)",
+  "scope": "scope-(a), diagnosis only. Wires nothing, changes no value, regenerates no witness. Only one script in computations/ enforces a runtime pin, so this is this gate \u2014 not a corpus-wide class.",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+  "computedAt": "2026-08-21T15:02:38.811233+00:00",
+  "commitSha": "8ba73cc915af09920d0345ede34ec1de63f65bbe",
+  "engine": "mpmath",
+  "engineVersion": "1.4.1",
+  "scriptFile": "qbeta_trm_crosscheck_convention_pin_split_probe.py",
+  "scriptHash": "de5fab542d84",
+  "assertions": [
+    {
+      "name": "1_hoef_and_chi_are_same_footing",
+      "passed": true,
+      "detail": "Hoefsmit vs chi-cache 3.22e-9 \u2014 two methods on the same convention AND pin agree at ~1e-9"
+    },
+    {
+      "name": "2_peel_and_habiro_split_by_a_PIN_not_a_convention",
+      "passed": true,
+      "detail": "peel vs Habiro 0.0001821 \u2014 far above the 1 ppQ gate but nothing like the 1.481 convention factor; this is the muon/proton pin signature and it was NOT in the bean's diagnosis"
+    },
+    {
+      "name": "3_convention_split_is_the_1p481_factor",
+      "passed": true,
+      "detail": "Hoefsmit/peel = 1.481039261325128 \u2014 the C->D ratio, confirming the convention straddle the bean already recorded"
+    },
+    {
+      "name": "4_two_inputs_cannot_be_pin_verified",
+      "passed": true,
+      "detail": "inputs recording no q0 VALUE: ['Habiro', 'Hoefsmit']. Habiro is labelled q0Anchor=ambiguous, a tolerated state, and Hoefsmit carries no anchor at all \u2014 neither gives the guard anything to compare, so both bypass a gate that refuses to START off-muon"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "deuteron_abs_tr_M": {
+      "Hoefsmit": "0.575172243917771800000000000000000000000000000000000000000000",
+      "chi-cache": "0.575172245769771300000000000000000000000000000000000000000000",
+      "markov_peel": "0.388357188723781000000000000000000000000000000000000000000000",
+      "Habiro": "0.388286471559408800000000000000000000000000000000000000000000"
+    },
+    "input_anchors": {
+      "Hoefsmit": {
+        "witness": "atomic-tr-m-mpfr-50dps",
+        "q0Anchor": "muon",
+        "recorded_q0": null
+      },
+      "chi-cache": {
+        "witness": "canonical-tr-m-via-chi-cache",
+        "q0Anchor": "muon",
+        "recorded_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+      },
+      "markov_peel": {
+        "witness": "markov-peel-atomic-tr-m-muon",
+        "q0Anchor": "muon",
+        "recorded_q0": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+      },
+      "Habiro": {
+        "witness": "habiro-coefficients-extended",
+        "q0Anchor": "ambiguous",
+        "recorded_q0": null
+      }
+    },
+    "hoef_vs_chi_rel": "0.00000000321990414805465830166504854223538449613535015134474463044398",
+    "peel_vs_habiro_rel": "0.000182126263859234398321393784323500389958556745732590103912806",
+    "convention_ratio_hoef_over_peel": "1.48103926132512763584753784600642749086859158180854867124804",
+    "inputs_without_recorded_q0": [
+      "Habiro",
+      "Hoefsmit"
+    ],
+    "verdict": "Two repairs, two owners: regenerate habiro-coefficients-extended under QOU_Q0_ANCHOR=ideal and stamp its anchor (the pin straddle); the C->D split belongs to the convention-D cascade. The guard extension landing with this probe closes the false-assurance hole but drains neither."
+  },
+  "context": {
+    "bean": "qou-3zby",
+    "gate": "computations/cross_check_trM_1ppb.py (the L1 compute-precision gate)",
+    "audit": "docs/audits/2026-07-18-avg-color-delta-q0-pin-mismatch.md",
+    "corpus_context": "1966 of 2681 witnesses (73%) carry no q0Anchor"
+  }
+}

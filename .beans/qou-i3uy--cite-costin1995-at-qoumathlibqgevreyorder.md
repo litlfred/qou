@@ -13,7 +13,7 @@ The Borel-summability/Stokes files carry no classical-ODE anchor; this reference
 - main theorem (abstract statement) — For analytic nonlinear systems of ODEs at a rank-one irregular singularity, under non-degeneracy and integrability conditions the formal exponential (trans-)series solutions are Borel summable in Ecalle's sense, and the resummed functions are exactly the solutions decaying in a specified sector; the correspondence's dependence on the ray gives the local Stokes phenomenon.
   Use here: It is the classical-side anchor for 'trans-series are Borel summable and the ray-dependence IS the Stokes phenomenon', which is the pattern the q-difference Stokes work assumes. Citing it would make the analogy's classical leg explicit rather than tacit.
 
-Source: `uploads/0608414v1.pdf` (`costin1995`)
+Source: `library/arxiv-math-0608414v1/0608414v1.pdf` (`costin1995`)
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.

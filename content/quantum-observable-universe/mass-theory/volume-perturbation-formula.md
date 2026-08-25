@@ -1,7 +1,7 @@
 *The vertex volume perturbation when going from $H_k$ to $H_{k+1}$
 is:*
 $$\delta\Phi_k = z^2 \cdot \mathrm{Vol}(4_1) \cdot [k{-}3]_q$$
-*where $z = 1/(\sqrt{q}+1/\sqrt{q})$ is the Markov parameter
+*where $z = q^{3}/(q^{2}+1)$ is the Markov parameter (**convention D**)
 and $\mathrm{Vol}(4_1) = 2.030$ is the figure-eight knot volume.*
 
 *Both fundamental hyperbolic volumes appear:*

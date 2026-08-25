@@ -1,8 +1,8 @@
 {
   "engine": "sympy+numpy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:49:07.270204+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-21T15:05:27.954331+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [
     {
       "name": "rho3_corrected_err_lt_0p5pct",
@@ -57,11 +57,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 48411,
+  "durationMs": 81450,
   "computation": "staircase-ew-predictions",
   "scriptFile": "staircase_ew_predictions.py",
   "scriptHash": "18b0513ae11f",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -79,8 +79,8 @@
   "description": "Staircase EW corner-hook falsification probe.  Tests P1: ρ_4 = (4,3,2,1) pure-SL stratum should NOT benefit from q^(1/7) correction.  Reproduces ρ_3 sanity check (0.127%). Also examines corner-generator eigenvalue structure and q-hook ratios for a derivation of why q^(1/h_corner) appears.",
   "contentBlock": "conj:weinberg-angle-categorical",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204...",
-    "q_0_numeric": 1.1099785955573347,
+    "q_0": "1.1099785827513808075916690956...",
+    "q_0_numeric": 1.1099785827513808,
     "cot_w_codata": 1.8230678710486174
   },
   "data": {
@@ -94,12 +94,12 @@
           "ratio_applicable": true,
           "top_degenerate": false,
           "top_multiplicity": 1,
-          "ev_max_pos": 5.24032530842388,
-          "ev_2nd_pos": 2.938800957618752,
-          "ratio": 1.7831508101419717,
-          "ratio_corrected": 1.8207528400154989,
-          "err_raw": 0.021895542969382516,
-          "err_corrected": 0.001269854551156669,
+          "ev_max_pos": 5.240324264513024,
+          "ev_2nd_pos": 2.9388005292816093,
+          "ratio": 1.7831507148237866,
+          "ratio_corrected": 1.8207527384860525,
+          "err_raw": 0.021895595253878686,
+          "err_corrected": 0.0012699102426907134,
           "correction_helps": true,
           "cot_w_codata": 1.8230678710486174
         },
@@ -111,12 +111,12 @@
           "ratio_applicable": false,
           "top_degenerate": true,
           "top_multiplicity": 2,
-          "ev_max_pos": 56.00476610689944,
-          "ev_2nd_pos": 56.00476610689942,
-          "ratio": 1.0000000000000004,
-          "ratio_corrected": 1.0150174645883063,
-          "err_raw": 0.45147406968188925,
-          "err_corrected": 0.4432366009475695,
+          "ev_max_pos": 56.00474059882332,
+          "ev_2nd_pos": 56.004740598823126,
+          "ratio": 1.0000000000000033,
+          "ratio_corrected": 1.0150174629153983,
+          "err_raw": 0.4514740696818877,
+          "err_corrected": 0.4432366018652029,
           "correction_helps": true,
           "cot_w_codata": 1.8230678710486174
         }
@@ -134,8 +134,8 @@
           "n_q": 8,
           "n_neg_qinv": 8,
           "n_other": 0,
-          "eig_max": 1.1099785955573347,
-          "q_1_over_h": 1.0210874086811161
+          "eig_max": 1.1099785827513808,
+          "q_1_over_h": 1.021087406325035
         },
         {
           "shape": [
@@ -150,8 +150,8 @@
           "n_q": 384,
           "n_neg_qinv": 384,
           "n_other": 0,
-          "eig_max": 1.1099785955573347,
-          "q_1_over_h": 1.0150174645883059
+          "eig_max": 1.1099785827513808,
+          "q_1_over_h": 1.015017462915395
         }
       ],
       "hook_ratios": [
@@ -162,12 +162,12 @@
             1
           ],
           "h_corner": 5,
-          "q_int_h": 5.220441324676727,
-          "q_int_hm1": 4.109682435643728,
-          "hook_ratio_h_hm1": 1.270278520646575,
-          "hook_ratio_hp1_h": 1.2236679395997467,
-          "q_1_over_h": 1.0210874086811161,
-          "err_h_hm1_vs_cotw": 0.3032192926992243
+          "q_int_h": 5.220441275326899,
+          "q_int_hm1": 4.109682411207942,
+          "hook_ratio_h_hm1": 1.2702785161913464,
+          "hook_ratio_hp1_h": 1.2236679344267571,
+          "q_1_over_h": 1.021087406325035,
+          "err_h_hm1_vs_cotw": 0.30321929514303275
         },
         {
           "shape": [
@@ -177,35 +177,35 @@
             1
           ],
           "h_corner": 7,
-          "q_int_h": 7.625342178928932,
-          "q_int_hm1": 6.388086679568544,
-          "hook_ratio_h_hm1": 1.1936817018024484,
-          "hook_ratio_hp1_h": 1.1731526040524258,
-          "q_1_over_h": 1.0150174645883059,
-          "err_h_hm1_vs_cotw": 0.3452346340151066
+          "q_int_h": 7.625342037132499,
+          "q_int_hm1": 6.388086592175452,
+          "hook_ratio_h_hm1": 1.1936816959357623,
+          "hook_ratio_hp1_h": 1.1731525975231414,
+          "q_1_over_h": 1.015017462915395,
+          "err_h_hm1_vs_cotw": 0.3452346372331361
         }
       ],
       "derivation_rho3": {
         "h_corner": 5,
-        "q_int_h": 5.220441324676727,
-        "q_int_hm1": 4.109682435643728,
-        "hook_ratio": 1.270278520646575,
-        "q_1_over_h": 1.0210874086811161,
-        "predicted_ratio": 1.2440448387149594,
-        "actual_ratio": 1.7831508101419717,
-        "err_derivation": 0.30233335753810386,
-        "hook_vs_cot_w_err": 0.3032192926992243,
+        "q_int_h": 5.220441275326899,
+        "q_int_hm1": 4.109682411207942,
+        "hook_ratio": 1.2702785161913464,
+        "q_1_over_h": 1.021087406325035,
+        "predicted_ratio": 1.244044837222278,
+        "actual_ratio": 1.7831507148237866,
+        "err_derivation": 0.30233332108149014,
+        "hook_vs_cot_w_err": 0.30321929514303275,
         "conclusion": "hook-ratio hypothesis FALSIFIED; eigenvalue ratio is emergent from full beta_EW word structure"
       },
       "derivation_rho4": {
         "h_corner": 7,
-        "q_int_h": 7.625342178928932,
-        "q_int_hm1": 6.388086679568544,
-        "hook_ratio": 1.1936817018024484,
+        "q_int_h": 7.625342037132499,
+        "q_int_hm1": 6.388086592175452,
+        "hook_ratio": 1.1936816959357623,
         "note": "EW reading inapplicable — top eigenvalue degenerate in pure-SL stratum"
       }
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

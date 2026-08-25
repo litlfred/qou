@@ -1,6 +1,7 @@
 import Mathlib.Tactic
 import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Topology.Algebra.Order.Field
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidsKnots.nsi_q_deformed_kernel
@@ -60,6 +61,13 @@ noncomputable def hbarQ (q : ℝ) : ℝ := 1 - q⁻¹
 
 /-- The `q`-integer `[2]_q = q + q⁻¹`. -/
 noncomputable def qInt2 (q : ℝ) : ℝ := q + q⁻¹
+
+
+/-- **Bridge to the canonical bracket.** The longhand `q + q⁻¹` is this site's
+body and its proofs use it, so the consolidation is the identity, not an alias.
+Conditional: the two agree away from `q − q⁻¹ = 0`. -/
+theorem qInt2_eq_canonical (q : ℝ) (h : q - q⁻¹ ≠ 0) :
+    qInt2 q = QOU.QInteger.qIntBal q 2 := (QOU.QInteger.qIntBal_two q h).symm
 
 /-- The `q`-deformed Möbius kernel of
     [`lem:nsi-q-deformed-kernel`]: `[2]_q / (r² − ℏ_q²)` as a
@@ -146,20 +154,27 @@ class NsiQDeformedKernelContext (E : Type*) [NormedAddCommGroup E] where
       of the filament (the `q`-deformed commutator's replacement of
       the classical `1/r²`). -/
   K_cat : ℝ → ℝ → ℝ
+  /-- The q-deformed commutator. -/
+  qDeformedCommutator : ℝ → ℝ → ℝ
+  /-- The categorical kernel is derived from the q-deformed commutator evaluated on the filament. -/
+  K_cat_eq : ∀ s t, K_cat s t = qDeformedCommutator q ‖ϱ s - ϱ t‖
+  /-- The q-deformed commutator matches the concrete q-deformed kernel for q ≠ 1. -/
+  qDeformedCommutator_eq : ∀ r, q ≠ 1 → qDeformedCommutator q r = qDeformedKernel q r
 
 /-- **Identification of the inherited kernel** — the trace-side
     kernel of the filament's categorical mass equals the concrete
     `q`-deformed kernel `[2]_q / (‖ϱ(s) − ϱ(t)‖² − ℏ_q²)` for
-    `q ≠ 1`.  Genuinely open Lean-side (the `q`-deformed commutator
-    and `q`-Hodge star are not yet formalised); honest `sorry` per
-    AGENTS.md §1. -/
+    `q ≠ 1`.  Sorry-free, but §3b-**conditional** on
+    `NsiQDeformedKernelContext`: the un-formalised content (the
+    `q`-deformed commutator and `q`-Hodge star) is carried as the explicit
+    hypothesis fields `K_cat_eq` and `qDeformedCommutator_eq`, from which
+    the identification is derived.  The premise is assumed, not
+    established — see AGENTS.md §"Conditional-proved ≠ premise-established". -/
 -- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md
 theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
-    [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (_hq1 : ctx.q ≠ 1) :
+    [ctx : NsiQDeformedKernelContext E] (s t : ℝ) (hq1 : ctx.q ≠ 1) :
     ctx.K_cat s t = qDeformedKernel ctx.q ‖ctx.ϱ s - ctx.ϱ t‖ := by
-  -- Ref: [manuscript] lem:nsi-q-deformed-kernel — the q-deformed commutator and q-Hodge star
-  -- are not yet formalised.
-  sorry
+  rw [ctx.K_cat_eq, ctx.qDeformedCommutator_eq _ hq1]
 
 /-- **`q`-deformed commutator replaces `1/r²` with a hard kernel at
     `r = ℏ_q`** ([`lem:nsi-q-deformed-kernel`]) — the resolving
@@ -168,9 +183,11 @@ theorem nsi_q_kernel_identification {E : Type*} [NormedAddCommGroup E]
 
     Conjoins the two parts of the manuscript lemma: (1) the
     identification of the inherited trace-side kernel with
-    `[2]_q / (r² − ℏ_q²)` at `r = ‖ϱ(s) − ϱ(t)‖` (the open part,
-    `sorry` in `nsi_q_kernel_identification`), and (2) the hard
-    singularity at `r = ℏ_q` (**derived sorry-free** in
+    `[2]_q / (r² − ℏ_q²)` at `r = ‖ϱ(s) − ϱ(t)‖` (**sorry-free but
+    §3b-conditional** — `nsi_q_kernel_identification` derives it from the
+    context's `K_cat_eq` / `qDeformedCommutator_eq` hypothesis fields,
+    which is where the un-formalised commutator content sits), and (2) the
+    hard singularity at `r = ℏ_q` (**derived sorry-free** in
     `nsi_q_kernel_hard_singularity` from the concrete kernel).
     Neither conjunct projects a conclusion field. -/
 -- Ref: [manuscript] lem:nsi-q-deformed-kernel, quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.md

@@ -50,7 +50,8 @@ a collision permutes roots, and a symmetric function cannot notice a
 permutation. Only the per-root labelling dies, and only the argument used
 labels.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDiscriminant

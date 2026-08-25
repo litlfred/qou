@@ -1,11 +1,11 @@
 {
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "higgs_categorical_mass_formula_attempt",
-  "computedAt": "2026-07-18T17:42:15.152315+00:00",
+  "computedAt": "2026-08-23T09:09:29.839527+00:00",
   "description": "Constructs a categorical mass formula for the Higgs (T(2,8)) using substrate quantities: P_4/P_2 (binomial pattern from PR #1125), 6/5 (cardinality ratio), and 1 - h_0^4 \u00b7 2G (h^4 correction from this branch's probe). Tests whether m_H = m_W \u00b7 (P_4/P_2) \u00b7 (6/5) \u00b7 (1 - h_0^4 \u00b7 2G) matches the measured Higgs mass.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
+  "engineVersion": "mpmath 1.4.1",
   "factors": {
     "P_2_at_h0": 0.5665144291309271,
     "P_3_at_h0": 0.6359359517718722,
@@ -19,8 +19,8 @@
   "formula": "m_H = m_W \u00b7 (P_4/P_2) \u00b7 (6/5) \u00b7 (1 - h_0^4 \u00b7 2G)",
   "interpretation": "If m_H prediction matches measurement within 1%, the formula has all categorical components: P_m from binomial pattern, 6/5 from cardinality ratio, 1 - h_0^4\u00b72G from h^4 correction with Vol(B_3) anchor. This would be the FIRST constructed categorical mass formula for a torus-knot particle (Higgs) in the RT-route chain, using m_W as the anchor.",
   "parameters": {
-    "G_CATALAN": "0.91596559417721901505460351493238411077414937428167",
-    "H_0": "0.20906029879563931543084621312967494385975749526306",
+    "G_CATALAN": "0.915965594177219015054603514932384110774149374281672134266498119621763",
+    "H_0": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
     "M_H_GEV": 125.1,
     "M_W_GEV": 80.379,
     "M_Z_GEV": 91.1876,
@@ -35,9 +35,11 @@
     "m_H_from_Z_GeV": 125.71153545228563,
     "m_H_measured_GeV": 125.1
   },
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "higgs_categorical_mass_formula_attempt.py",
-  "scriptHash": "ff5a25b77663",
+  "scriptHash": "54655725ebe1",
   "status": "exploratory",
   "tags": [
     "categorical-mass-formula",

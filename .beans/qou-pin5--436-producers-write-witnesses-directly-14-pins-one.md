@@ -1,11 +1,11 @@
 ---
 # qou-pin5
-title: '436 producers write witnesses with a raw json.dump — 14 pinned witnesses are one rerun away from losing their pin'
+title: 436 producers write witnesses with a raw json.dump — 14 pinned witnesses are one rerun away from losing their pin
 status: todo
 type: task
 priority: normal
 created_at: 2026-08-08T21:40:00Z
-updated_at: 2026-08-08T21:40:00Z
+updated_at: 2026-08-16T11:42:13Z
 ---
 
 Found by causing it. On 2026-08-08 I fixed `t25_cinquefoil_deltalambda_sign_probe`'s
@@ -66,3 +66,28 @@ The broader 436 mostly carry no pin at all, which is a tolerated state — they 
 not need converting unless and until someone wants them audited. Do **not** bulk-
 convert: the point is that a pin should be *produced* by whatever writes it, not
 that every witness needs a pin.
+
+
+--------
+
+## 2026-08-16 — three of the 436, tracked from the churn side on `qou-pg2r`
+
+`qou-pg2r` now carries a named work item for three specific probes in this
+bean's 436:
+
+    computations/probes/qbeta_nz_even_series_fourone_probe.py
+    computations/probes/qbeta_sdeformed_leading_bound_probe.py
+    computations/probes/sdeformed_channel_signflip_probe.py
+
+Same root cause, seen from the other end. This bean measures the **pin-loss**
+consequence of raw `json.dump` (14 pinned witnesses one rerun from losing
+`q0Anchor`); `qou-pg2r` measures the **overwrite-churn** consequence (no
+`_witnesses_substantively_equal`, so every re-run rewrites and every re-run
+looks like drift).
+
+**One fix serves both** — routing a producer through `WitnessBuilder.save()`
+restores the preserve-forward of the pin *and* the preserve-if-unchanged
+path. Whoever works either bean should say whether the move generalises
+across the 436 rather than fixing three and closing.
+
+*(Cross-linked 2026-08-16.)*

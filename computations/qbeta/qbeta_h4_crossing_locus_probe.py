@@ -63,6 +63,14 @@ sys.path.insert(0, str(ROOT))
 from qbeta_h4_route_a_gate_probe import (  # noqa: E402
     HA, q, s, reduce_quiet, mul_terms, baryon, net,
 )
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 alpha, beta = sp.symbols("alpha beta")
 
@@ -154,7 +162,7 @@ def is_categorical(val):
 
 def main() -> int:
     t0 = time.monotonic()
-    mp.dps = 50
+    set_compute_dps()
     print("=" * 78)
     print(" 8we6 option-2: does a passing 4th-strand crossing rule EXIST? (qou-tti3)")
     print("=" * 78)

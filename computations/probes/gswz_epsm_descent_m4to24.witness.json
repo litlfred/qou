@@ -1,0 +1,78 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_descent_m4to24_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_descent_m4to24_probe.py",
+ "commitSha": "2d4591687af3a64f51954ee479b51e0788848085",
+ "beans": [
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ arXiv:2412.04241v2 eqn (270); Lean backbone QOU.Machinery.CyclicQuantumDilog (#4964); m=2/m=3 layers PR #4968",
+ "checks": {
+  "all_per_m_checks_pass": true,
+  "m4_checks_pass": true,
+  "m6_checks_pass": true,
+  "m8_checks_pass": true,
+  "m12_checks_pass": true,
+  "m24_checks_pass": true
+ },
+ "per_m": {
+  "4": {
+   "field": "d=16, n_gal=8, N=2496",
+   "shift_exponents": {
+    "r1": 3,
+    "r2": 2
+   },
+   "canonical_root_integral": false,
+   "nu_dlog": 0,
+   "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
+   "seconds": "0.2"
+  },
+  "6": {
+   "field": "d=24, n_gal=12, N=3744",
+   "shift_exponents": {
+    "r1": 3,
+    "r2": 4
+   },
+   "canonical_root_integral": false,
+   "nu_dlog": 0,
+   "canonical_note": "fractional: m | 2r1 is True, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
+   "seconds": "0.7"
+  },
+  "8": {
+   "field": "d=32, n_gal=16, N=4992",
+   "shift_exponents": {
+    "r1": 7,
+    "r2": 6
+   },
+   "canonical_root_integral": false,
+   "nu_dlog": 0,
+   "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
+   "seconds": "1.7"
+  },
+  "12": {
+   "field": "d=48, n_gal=24, N=7488",
+   "shift_exponents": {
+    "r1": 9,
+    "r2": 10
+   },
+   "canonical_root_integral": false,
+   "nu_dlog": 0,
+   "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
+   "seconds": "7.8"
+  },
+  "24": {
+   "field": "d=96, n_gal=48, N=14976",
+   "shift_exponents": {
+    "r1": 9,
+    "r2": 10
+   },
+   "canonical_root_integral": false,
+   "nu_dlog": 0,
+   "canonical_note": "fractional: m | 2r1 is False, m | r2 is False \u2014 canonical m-th root needs canonical roots of base elements on the alpha-line; abstract layer pins nu only",
+   "seconds": "59.6"
+  }
+ },
+ "scope": "scope-(a): shift exponents, canonical-root integrality, nu, and (where integral) the canonical eps_m value, for every remaining m | 24; fractional cases disclose the exact divisibility failure and pin nu only; no printed targets exist"
+}

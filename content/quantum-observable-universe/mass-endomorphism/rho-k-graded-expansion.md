@@ -4,16 +4,20 @@ We expose the graded expansion of the categorical density $\rho_K$ by multiplyin
 
 $$
   \boxed{
+  \begin{aligned}
     m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)| \cdot \rho_K
-    \;=\;
+    \;=\;&
     \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece (Markov mult.)}}
-    \;+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
-    \;+\; \underbrace{\tfrac{\alpha\, z^2}{2}\!\!\sum_{i<j}\!\ln\bigl(\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}}\bigr)\!\big|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
+    \\[4pt]
+    &+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
+    \\[4pt]
+    &+\; \underbrace{\tfrac{\alpha\, z^2}{2}\!\!\sum_{i<j}\!\ln\bigl(\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}}\bigr)\!\big|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
     \;+\; \dots
+  \end{aligned}
   }
 $$
 
-where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = 1/(q^{1/2} + q^{-1/2})$ forms the Markov parameter. The graded expansion truncates at the single-generator level to achieve the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
+where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**). The graded expansion truncates at the single-generator level to achieve the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
 
 ## Proof
 

@@ -5,6 +5,7 @@ export default proof({
   title: "Proof of Observation increases quantum energy and deforms the action",
   of: "prop:observation-energy",
   uses: [
+    "prop:observation-energy",
     "def:observation",
     "def:quantum-planck-constant",
     "def:categorical-action",

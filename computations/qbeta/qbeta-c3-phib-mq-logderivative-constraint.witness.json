@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T00:23:26.947282+00:00",
-  "commitSha": "10959dd775bf588aa448adc56f30936d4ee829d8",
+  "computedAt": "2026-08-24T13:26:36.908139+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "quotient_rule_identity_closes",
-      "computed": 1.4081481410803865e-37,
+      "computed": 1.4081481417314879e-37,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-08,
@@ -22,7 +22,7 @@
     },
     {
       "name": "anchor_fd_matches_local_derivative",
-      "computed": 6.175662826030367e-07,
+      "computed": 6.218380595872427e-07,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.0001,
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 25,
+  "durationMs": 7,
   "computation": "qbeta-c3-phib-mq-logderivative-constraint",
   "scriptFile": "qbeta_c3_phib_mq_logderivative_constraint.py",
   "scriptHash": "8c9352dd00c5",
-  "scriptCommitSha": "10959dd775bf588aa448adc56f30936d4ee829d8",
+  "scriptCommitSha": "05d6e77634449e72a7eab74593a5393d9bf4f93e",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,9 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_phib_mq_logderivative_constraint.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_phib_mq_logderivative_constraint.py"
   },
   "description": "Lever derivative decomposition (exact): dS/dq = A'/u^3 - 3(u'/u)(S - Vol41), with A'/u^3 carrying ~99.997% (A' ~ +2.37 = the smooth un-levered slope; the log-derivative term is only ~1e2). The S hypersensitivity is a STATIC 1/u^3 amplification of a smooth CODATA-vs-ladder slope. Gate for any m(q0) assignment (one anchor): u^3 d/dq[Im V(m(q))] = A'(q) ~ +2.37. Structural measurement; no fit; no c_k wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",
@@ -60,12 +69,12 @@
       "static_term_fraction": 0.9999734524335919
     },
     "muon_decomposition": {
-      "dS_dq": "3838403.523990967536563055",
-      "A_prime": "2.3715673832142044674",
-      "static_term_Aprime_over_u3": "3838304.043516034304852176",
-      "logderiv_term": "99.480474933231710879",
-      "identity_closure_rel": 1.4081481410803865e-37,
-      "static_term_fraction": 0.9999740828512919
+      "dS_dq": "3838403.491197331678833947",
+      "A_prime": "2.3715673836365835169",
+      "static_term_Aprime_over_u3": "3838304.027461280462121095",
+      "logderiv_term": "99.463736051216712852",
+      "identity_closure_rel": 1.4081481417314879e-37,
+      "static_term_fraction": 0.9999740872119673
     },
     "m_q0_gate": "DERIVATIVE GATE (per-candidate, one-anchor): a candidate assignment m(q0) with S = Im V(m(q0)) must satisfy u^3 d/dq[Im V(m(q))] = A'(q) ~ +2.37 at the anchor (A' = d/dq[Q_codata/Q_N2 - 1], smooth, canonical). Equivalently Im V(m(q)) = A(q)/u(q)^3 with A smooth: the complex volume carries the inverse-cube ladder factor STATICALLY. NZ-leading: |u_hol(q)|^2 sin(2 phi(q)) proportional to u^-3 x smooth. Candidates failing this are excluded without the second anchor.",
     "initial_guess_corrected": "The probe's original hypothesis (log-derivative term dominates) was REFUTED by its own measurement and corrected: the log-derivative term is ~1e2 of the 3.84e6 slope; A'/u^3 dominates. Recorded per the anti-self-deception design.",

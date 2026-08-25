@@ -83,8 +83,9 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def regulator_independence_check():

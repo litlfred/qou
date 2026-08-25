@@ -10,7 +10,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "Δtr_M(q) is symbolic-rational; Taylor coefficients extracted as exact rationals"
+      "source": "\u0394tr_M(q) is symbolic-rational; Taylor coefficients extracted as exact rationals"
     }
   ],
   "allPassed": true,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Habiro Taylor expansion of the exact Q_β expression in h = q - q⁻¹ basis at q=1. Tests whether the Q_β c_k are uniquely determined Habiro Taylor coefficients of a substrate-canonical Q_β formula consuming Habiro-witness-cited tr_M polynomials. If yes, closes the c_k flip-flop saga the same way PR #1511 closed the α_EM saga.",
+  "description": "Habiro Taylor expansion of the exact Q_\u03b2 expression in h = q - q\u207b\u00b9 basis at q=1. Tests whether the Q_\u03b2 c_k are uniquely determined Habiro Taylor coefficients of a substrate-canonical Q_\u03b2 formula consuming Habiro-witness-cited tr_M polynomials. If yes, closes the c_k flip-flop saga the same way PR #1511 closed the \u03b1_EM saga.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "data": {
     "inputs": {
@@ -44,7 +44,7 @@
       "q_0_50dps": "1.1099785827513808075916690956107688798744991218736"
     },
     "delta_tr_M_taylor_at_q_eq_1": {
-      "basis": "ε = q - 1",
+      "basis": "\u03b5 = q - 1",
       "coefficients": {
         "eps^0": "0",
         "eps^1": "-5/4",
@@ -55,7 +55,7 @@
         "eps^6": "25/64",
         "eps^7": "-135/256"
       },
-      "note": "These are the substrate-exact Taylor coefficients of Δtr_M(q) at q=1, computed symbolically from the Habiro-witness-cited rational tr_M expressions. The Q_β c_k will inherit from these via the (yet-undefined) categorical formula Q_β = m_e × f(Δtr_M, q)."
+      "note": "These are the substrate-exact Taylor coefficients of \u0394tr_M(q) at q=1, computed symbolically from the Habiro-witness-cited rational tr_M expressions. The Q_\u03b2 c_k will inherit from these via the (yet-undefined) categorical formula Q_\u03b2 = m_e \u00d7 f(\u0394tr_M, q)."
     },
     "numerical_sanity_at_q0": {
       "tr_M_proton_at_q0": "1.06530614425445",
@@ -63,10 +63,10 @@
       "delta_tr_M_at_q0": "-0.14207291434281288"
     },
     "gap_identified": {
-      "missing_categorical_formula": "Q_β = m_e × f(Δtr_M(q), q) for substrate-canonical f",
+      "missing_categorical_formula": "Q_\u03b2 = m_e \u00d7 f(\u0394tr_M(q), q) for substrate-canonical f",
       "current_form_A_misses_by_ppm": 1677,
       "current_form_A_consumes_delta_tr": false,
-      "parallel_to_alpha_em_thread": "PR #1511 (main) — there [2]_q · (1-h²α) was the Habiro element; Q_β's analog is yet to be identified"
+      "parallel_to_alpha_em_thread": "PR #1511 (main) \u2014 there [2]_q \u00b7 (1-h\u00b2\u03b1) was the Habiro element; Q_\u03b2's analog is yet to be identified"
     },
     "upstream_witness_hashes": [
       {
@@ -78,5 +78,8 @@
         "computedAt": "2026-07-18T17:55:54.718701+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.inputs.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

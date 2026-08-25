@@ -58,15 +58,24 @@ import sympy as sp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from habiro_coefficients_atomic import trace_diff_numerator as _trace_diff  # noqa: E402
+from habiro_coefficients_atomic import cyclotomic_expansion as _cyc_expand  # noqa: E402
 
 # Upstream hash records captured before the WitnessBuilder exists;
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP as Q0  # noqa: E402
+# The canonical serializer, NOT a canonical algorithm import: the primitives
+# below stay a deliberate local mirror, but anything this probe writes as TEXT
+# goes out in the canonical `u` (bean qou-0ndb). Today its `u` IS U_CANONICAL,
+# so every string here is already right — by luck of the caller's variable
+# name, which is precisely the property that failed four times in this family.
+from habiro_coefficients_atomic import str_in_u  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # 50-dps for q₀ verification
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def log(msg: str) -> None:
@@ -85,11 +94,11 @@ def to_u_polynomial(expr_in_q, q, u):
     poly = sp.Poly(p_expanded, u)
     monoms = poly.monoms()
     if not monoms:
-        return sp.Integer(0), 0, str(den)
+        return sp.Integer(0), 0, str_in_u(den, u)
     min_pow = min(int(m[0]) for m in monoms)
     shift = -min_pow if min_pow < 0 else 0
     p_shifted = sp.expand(p_expanded * u ** shift)
-    return p_shifted, shift, str(sp.expand(den))
+    return p_shifted, shift, str_in_u(sp.expand(den), u)
 
 
 def cyclotomic_expansion(p_in_u, u, max_m=30):
@@ -152,7 +161,7 @@ def habiro_of_z_pow_k(k, u, q, max_m=20):
     isolate its cyclotomic signature in the Habiro decomposition).
     """
     log(f"  --- z(q)^{k} Habiro decomposition ---")
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     expr = sp.together(z ** k)
     p_u, shift, denom_str = to_u_polynomial(expr, q, u)
     log(f"    z(q)^{k} as p(u): deg = {sp.Poly(p_u, u).degree()}, "
@@ -189,7 +198,7 @@ def habiro_of_z_pow_k(k, u, q, max_m=20):
 
     return {
         "k": k,
-        "p_in_u_factored": str(sp.factor(p_u)),
+        "p_in_u_factored": str_in_u(sp.factor(p_u), u),
         "shift": shift,
         "denom_in_u": denom_str,
         "num_coeffs": len(coeffs),
@@ -228,7 +237,7 @@ def analyse_pochhammer_factors(u, max_m=20):
 def habiro_of_z_diff(u, q, max_m=20):
     """Compute Habiro expansion of z(q)^2 − z(q)^1 and z(q)^2 − z(q)^1·z(q)."""
     log("  --- z(q)² − z(q)¹ Habiro decomposition (interference test) ---")
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     expr_diff = sp.together(z ** 2 - z)
     log(f"    z² − z = {sp.factor(expr_diff)}")
     p_u, shift, denom_str = to_u_polynomial(expr_diff, q, u)
@@ -250,7 +259,7 @@ def habiro_of_z_diff(u, q, max_m=20):
     log(f"    Σ a_m · (u;u)_m for (z²−z) = {str(factored)[:200]}")
     log(f"    Cyclotomic factor map: {cy_counts}")
     return {
-        "diff_p_in_u": str(sp.factor(p_u)),
+        "diff_p_in_u": str_in_u(sp.factor(p_u), u),
         "habiro_sum_factored": str(factored),
         "cyclotomic_counts": cy_counts,
         "phi8_power": cy_counts.get(8, 0),
@@ -275,32 +284,42 @@ def extract_helium_witnesses(u):
     he3 = record_upstream(he3_path, _UPSTREAM_RECORDS) if he3_path.exists() else None
     he4 = record_upstream(he4_path, _UPSTREAM_RECORDS) if he4_path.exists() else None
 
-    def parse_coeffs(coeffs_list):
-        """Parse list of {m, a_m} into dict {m: sympy_expr}."""
-        result = {}
-        for e in coeffs_list:
-            m = e["m"]
-            a_m = sp.sympify(e["a_m"].replace("^", "**"), locals={"check_q": u})
-            result[m] = a_m
-        return result
+    # `parse_coeffs` lived here. It is gone with the a_m-differencing it fed:
+    # its own docstring records that it had to map BOTH "u" and "check_q" to one
+    # symbol precisely because the pairs below subtracted coefficients from two
+    # differently-serialized witnesses. Differencing the traces instead removes
+    # the subtraction, and with it the need for that reconciliation (qou-0ndb).
 
-    n_coeffs = parse_coeffs(atomic["results"]["n (neutron, A=1)"]["habiro_coefficients"])
-    d_coeffs = parse_coeffs(atomic["results"]["D (deuteron, A=2)"]["habiro_coefficients"])
+    # Carry the TRACES, not the a_m. A witness's a_m expand its own
+    # DENOMINATOR-CLEARED numerator p = d*t, so Sum (a_m^X - a_m^Y)(u;u)_m
+    # reconstructs d_X*t_X - d_Y*t_Y, which is proportional to the pair
+    # difference t_X - t_Y only where the denominators agree at the evaluation
+    # point. Proved sorry-free in QOU/Habiro/MirrorPairNormalisation.lean
+    # (coeffDiff_at_coincidence: dX*t - dY*t = (dX - dY)*t), so a mismatch
+    # contributes the denominator GAP times the common value and the cyclotomic
+    # multiplicities read off it are not the pair's. Bean qou-0ndb.
+    n_tr = atomic["results"]["n (neutron, A=1)"]["tr_M_in_q"]
+    d_tr = atomic["results"]["D (deuteron, A=2)"]["tr_M_in_q"]
 
     pairs = []
-    pairs.append(("(D − n)", d_coeffs, n_coeffs))
+    pairs.append(("(D − n)", d_tr, n_tr))
 
     if he3 is not None:
-        he3_coeffs = parse_coeffs(he3["habiro_coefficients"])
-        pairs.append(("(³He − D)", he3_coeffs, d_coeffs))
+        pairs.append(("(³He − D)", he3["tr_M_in_q"], d_tr))
     if he4 is not None and he3 is not None:
-        he4_coeffs = parse_coeffs(he4["habiro_coefficients"])
-        pairs.append(("(⁴He − ³He)", he4_coeffs, he3_coeffs))
+        pairs.append(("(⁴He − ³He)", he4["tr_M_in_q"], he3["tr_M_in_q"]))
 
     results = []
-    for label, big, small in pairs:
+    for label, big_tr, small_tr in pairs:
         log(f"\n  --- Δa_m {label} ---")
-        max_m = max(max(big.keys(), default=0), max(small.keys(), default=0))
+        # Habiro-expand the TRUE difference; M_first is defined on that
+        # expansion, so the correct object is the expansion OF the difference,
+        # not a difference of two expansions (qou-0ndb).
+        diff = _trace_diff(big_tr, small_tr, u, label=label)
+        big = {c["m"]: sp.sympify(c["a_m"], locals={"u": u})
+               for c in _cyc_expand(diff, u)}
+        small = {}
+        max_m = max(big.keys(), default=0)
 
         # Track WHERE Φ_8 first enters: compute running prefix sums and
         # find smallest M such that Σ_{m=0..M} Δa_m·(u;u)_m carries Φ_8.
@@ -496,7 +515,7 @@ def main() -> int:
     log("\n[6] Numerical cross-check at q_0 (50 dps)")
     q0_mp = mp.mpf(str(Q0))
     u0_mp = mp.sqrt(q0_mp)
-    z_at_q0 = 1 / (mp.sqrt(q0_mp) + 1 / mp.sqrt(q0_mp))
+    z_at_q0 = q0_mp**3 / (q0_mp**2 + 1)
     log(f"  q_0 = {float(q0_mp):.16f}")
     log(f"  u_0 = √q_0 = {float(u0_mp):.16f}")
     log(f"  z(q_0) = {float(z_at_q0):.16f}")

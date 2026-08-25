@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T21:51:01.013054+00:00",
-  "commitSha": "9d2bd8e854449e89f30f6d1b18e6d73091051d30",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T14:40:43.555797+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "assertions": [
     {
       "name": "reproduces_published_light_kappas",
-      "computed": 0.00040974265137274344,
-      "expected": 0.0,
+      "computed": "0.00040974265",
+      "expected": "0",
       "passed": true,
-      "tolerance": 0.002,
+      "tolerance": "2e-3",
       "unit": "relative deviation",
       "source": "End-to-end check: this independent extraction from the qou-mass isotope witnesses reproduces the published kappa values for the four original mirror pairs. Tolerance is 2e-3, not machine-level: the qou-mass isotope table and the original scoping probe draw on AME tabulations that differ at the 4th decimal (max observed deviation ~4e-4). That floor is recorded rather than tuned away, and is far below the ~7% scatter the hypotheses are judged on."
     },
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "em-linking-mirror-series",
   "scriptFile": "em_linking_mirror_series_extension.py",
-  "scriptHash": "f1fa3864c5c0",
-  "scriptCommitSha": "c04ba95ac4eeaf6b2482f3cb2682c7e31f7233ef",
+  "scriptHash": "fdffff1a5cb7",
+  "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_mirror_series_extension.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_mirror_series_extension.py"
   },
   "description": "The discriminating test for the open two-like-charge EM-linking invariant (bean qou-i6rg): extends the kappa(A) mirror series from A <= 13 to the full A = 2Z-1 ladder using the corpus's own AME reference binding energies, and scores the three tied hypotheses (coth-saturation, Freedman-He with Vol ~ A, Freedman-He with Vol ~ Z) over the extended range where they diverge. Nothing fitted: the per-pair Coulomb unit and all exponents are fixed in advance. Includes an end-to-end validation that the recomputed light-pair kappa values reproduce the published ones.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -275,50 +287,50 @@
       "3": {
         "recomputed": "3.2135068",
         "published": "3.2135073",
-        "rel_dev": 1.6241061911597975e-07
+        "rel_dev": "1.6241062e-7"
       },
       "7": {
         "recomputed": "2.3060521",
         "published": "2.3058673",
-        "rel_dev": 8.016370479445232e-05
+        "rel_dev": "8.0163705e-5"
       },
       "11": {
         "recomputed": "2.3259422",
         "published": "2.3268956",
-        "rel_dev": 0.00040974265137274344
+        "rel_dev": "0.00040974265"
       },
       "13": {
         "recomputed": "2.1057324",
         "published": "2.1057469",
-        "rel_dev": 6.907152574308821e-06
+        "rel_dev": "6.9071526e-6"
       }
     },
     "hypothesis_scores_all_pairs": {
       "H_FH_A: kappa * A^(1/3) const": {
         "constant": "5.2219424",
-        "rel_scatter": 0.07376388470387815
+        "rel_scatter": "0.073763885"
       },
       "H_FH_Z: kappa * Z^(1/3) const": {
         "constant": "4.2135305",
-        "rel_scatter": 0.061693144491421874
+        "rel_scatter": "0.061693144"
       },
       "H_coth: arccoth(kappa) / A^(1/3) const": {
         "constant": "0.22178329",
-        "rel_scatter": 0.055940073724450076
+        "rel_scatter": "0.055940074"
       }
     },
     "hypothesis_scores_bound_only": {
       "H_FH_A: kappa * A^(1/3) const": {
         "constant": "5.2898905",
-        "rel_scatter": 0.054985090401496184
+        "rel_scatter": "0.05498509"
       },
       "H_FH_Z: kappa * Z^(1/3) const": {
         "constant": "4.260662",
-        "rel_scatter": 0.0439032337765154
+        "rel_scatter": "0.043903234"
       },
       "H_coth: arccoth(kappa) / A^(1/3) const": {
         "constant": "0.21944513",
-        "rel_scatter": 0.03504612185454515
+        "rel_scatter": "0.035046122"
       }
     },
     "unbound_exclusion": {
@@ -345,6 +357,16 @@
       "max": "3.2135068",
       "n_pairs_in_series": 31
     },
-    "verdict": "kappa stays above 1 across the series (min 1.40203), so H_coth is not falsified outright; the ranking is ['H_coth: arccoth(kappa) / A^(1/3) const', 'H_FH_Z: kappa * Z^(1/3) const', 'H_FH_A: kappa * A^(1/3) const']. Note the per-pair Coulomb unit is held at its A=3 value throughout, as in the original scoping probe; any A-dependence of the underlying strong bond B_pp is therefore absorbed into kappa and remains a confound."
+    "verdict": "kappa stays above 1 across the series (min 1.40203), so H_coth is not falsified outright; the ranking is ['H_coth: arccoth(kappa) / A^(1/3) const', 'H_FH_Z: kappa * Z^(1/3) const', 'H_FH_A: kappa * A^(1/3) const']. Note the per-pair Coulomb unit is held at its A=3 value throughout, as in the original scoping probe; any A-dependence of the underlying strong bond B_pp is therefore absorbed into kappa and remains a confound.",
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-invariant-scoping.witness.json",
+        "sha256": "b28c2c4fc9b61e160032a66892f328ebdb23306f3a7fb9c9a645fae50d9a804f",
+        "size_bytes": 3604,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-08-23T09:22:42.077242+00:00"
+      }
+    ]
   }
 }

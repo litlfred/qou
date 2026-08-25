@@ -44,7 +44,7 @@ interacting level, (b) is carried by 4_1, the substrate-defining knot, and
 Emits `casimir-d6-qcorrection-structure.witness.json`.
 
 Ref: [casimir1948] https://dwc.knaw.nl/DL/publications/PU00018547.pdf
-Ref: [thurston1979] The geometry and topology of three-manifolds (Vol(4_1))
+Ref: [thurston1978] The geometry and topology of three-manifolds (Vol(4_1))
 """
 from __future__ import annotations
 
@@ -58,8 +58,9 @@ sys.path.insert(0, str(HERE))
 from q_parameter import Q_MP as Q  # noqa: E402 (bootstraps qou_substrate path)
 import mpmath as mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def jones_figure8(q):

@@ -113,7 +113,7 @@ in sandbox (arXiv 403 on all routes) — round restricted to derivable/machine-v
 The genuine E_q(2) q-Hankel/Plancherel pairing with per-channel arguments
 (Koelink–Swarttouw kernel) / the true colored LR-Hikami amplitude at the modular-transform
 level. **Needs the primary sources:** run from a network-open environment, or owner drops
-into `uploads/`: Hikami arXiv:1811.05376; Andersen–Mistegård arXiv:2205.01282;
+into `library/`: Hikami arXiv:1811.05376; Andersen–Mistegård arXiv:2205.01282;
 Lawrence–Rozansky CMP 205 (1999).
 
 ## Third-pass result (2026-07-02, papers uploaded): value step SETTLED at the false-theta level — REFUTED
@@ -134,7 +134,7 @@ unnecessary). `keystone_valuemap_genuine_smatrix_s013.py` + audit
   classes, ratios 1/4.11/5.22/6.22) is NOT the vacuum row of this object — type (2≠4) +
   value (φ) mismatch.** The geometric route cannot close on S³/2I itself.
 - Redirects: larger-D Seifert data (D(3,4,5)=6, γ=4); colored Ẑ/GPPV blocks (Murakami
-  2205.01282 in uploads/); or accept `BWVacuumRowIsHecke` as non-geometric. Owner decision
+  2205.01282 in library/); or accept `BWVacuumRowIsHecke` as non-geometric. Owner decision
   needed on which (if any) to pursue — the original owner-gated scope (WRT(S³/2I)) is
   exhausted at this level.
 

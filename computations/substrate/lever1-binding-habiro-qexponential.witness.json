@@ -26,13 +26,13 @@
     },
     "L_at_q0": {
       "m=1": "1.0",
-      "m=2": "0.494581090017",
-      "m=3": "-0.00593448168066",
-      "m=4": "-0.00255842746315",
-      "m=5": "9.886109176e-5",
-      "m=6": "2.98429595397e-5",
-      "m=7": "-2.18246604562e-6",
-      "m=8": "-4.6724553848e-7"
+      "m=2": "0.49458109121",
+      "m=3": "-0.00593448039316",
+      "m=4": "-0.00255842693249",
+      "m=5": "9.88610494439e-5",
+      "m=6": "2.98429474273e-5",
+      "m=7": "-2.18246466405e-6",
+      "m=8": "-4.67245262851e-7"
     },
     "classical_limit_is_exp_x_plus_x2over2": true,
     "log_truncates_at_degree_2": false,
@@ -45,11 +45,13 @@
   },
   "verdict": "q-GAUSSIAN SKELETON + CYCLOTOMIC HABIRO DRESSING. The binding q-EGF \u015c(z)=\u03a3 S(m)z^m/[m]_q! has log \u015c = L_1 z + L_2 z\u00b2 + \u03a3_{m\u22653} L_m z^m with L_1,L_2 \u2192 1,1/2 at q=1 (the classical exp(x+x\u00b2/2) skeleton) and the higher L_{\u22653} ALL carrying a (q-1) factor (vanish at q=1) \u2014 a pure fibre/q-deformation correction in the Habiro ring. So the explicit binding-side object is a q-Gaussian dressed by a higher Habiro correction (the log-coefficient tower L_{\u22653}), constructed here in closed symbolic form. This is the binding analog of the gated Q_\u03b2 element F(q); it is NOT that element (the Q_\u03b2 F is gated on the SW-residue keystone, fitting \u03a6\u2082 forbidden), but it exhibits the SAME Habiro-ring habitat from exact, non-floor-limited data. (a)-scoped.",
   "scriptHash": "b43478c979b5",
-  "scriptCommitSha": "e98f1c4d93dc84abe7967a14a22e8b73bca3c31a",
-  "commitSha": "e98f1c4d93dc84abe7967a14a22e8b73bca3c31a",
+  "scriptCommitSha": "a4d9906659a83d4afe10bab1ccd55d9d0da1224f",
+  "commitSha": "3b0517783c57197f726bc4f80f85c89d293fa74d",
   "engine": "sympy",
-  "computedAt": "2026-07-02T12:04:59.283969+00:00",
+  "computedAt": "2026-08-14T19:49:31.250990+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "lever1_binding_habiro_qexponential.py"
 }

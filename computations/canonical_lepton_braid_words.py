@@ -52,6 +52,7 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from codata_2022_source import M_MU_OVER_M_E  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ── Canonical lepton braid words (c, d, gen_idx) format ─────────
@@ -195,17 +196,21 @@ def lepton_mass_dimensionless(
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Substrate at q_0
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2_target = M_MU_OVER_M_E
     cal_tau_e   = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2_target
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # Markov parameter, convention D (owner ruling 2026-08-15): z = q^3/(q^2+1).
+    # Was convention C `1/(sqrt(q0) + 1/sqrt(q0))`. No square root is needed
+    # under D; a surviving one would be z_C showing through.
+    z = q0 ** 3 / (q0 ** 2 + 1)
 
     print(f"=== Substrate at q_0 = {float(q0):.10f} ===")
     print(f"  h = {float(h):.6f}, z = {float(z):.6f}")

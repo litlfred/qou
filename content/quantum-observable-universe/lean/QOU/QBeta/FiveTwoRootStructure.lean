@@ -53,7 +53,8 @@ The hypotheses `ht0`, `ht1`, `h3` and `hbig` of
 `p(Y) = (Y − t)(Y − y₂)(Y − y₃)` so that a consumer holding Vieta data can match
 its roots against these.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

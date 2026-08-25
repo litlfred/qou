@@ -1,0 +1,41 @@
+Twist formulas for one-row colored A» webs and sl; tails of
+(2, 2m)-torus links
+
+Wataru Yuasa
+Research Institute for Mathematical Sciences, Kyoto University
+
+1 Introduction
+
+The author made tools to calculate the quantum invariant of knots and links obtained
+from sl3 by using the Kuperberg’s linear skein theory. In this article, we will introduce
+one of these tools, a full twist formula, which is useful to compute explicitly the lz colored
+Jones polynomial. As an application, we give explicit formula of the one-row colored sl3
+tail for a (2, 2m)-torus link.
+
+The quantum invariants of knots are obtained through a functor from the category of
+framed oriented tangles to the representation category of a quantum group of a simple Lie
+algebra. Thus, one can define an invariant J?(K) of a knot K for each simple Lie algebra
+g and its representation V. For example, the colored Jones polynomial J,(/) = . an
+is obtained from the (n + 1)-dimensional irreducible representation V2 of sf and one can
+compute it by applying the Kauffman bracket skein relation to a knot diagram colored by
+the Jones-Wenzl projector. In this case, J,(K) is explicitly calculated for many knots and
+there are many useful formulas which decompose a tangle diagram to the linear sum of the
+web basis by the skein relation. This method to calculate quantum invariants from knot
+diagrams is called the linear skein theory, see for example [Lic97]. The linear skein theory
+is constructed for some other g than slz. We will treat the slz colored Jones polynomial
+Tie (K ) which is obtained from the irreducible representation with the highest weight
+(n,0) of slg. The linear skein theory for sl3 with a general irreducible representation
+(m,n) was constructed by Kuperberg [Kup94, Kup96]. However, there are few non-trivial
+examples of explicit formulas of Tee mK ). For example, Lawrence [Law03] calculated
+Tee (KX) for the trefoil knot, more generally, In [GMV13, GV17] for the (2,2m + 1)-
+and (4,5)-torus knots by using a representation theoretical method. In [Yual7], the
+author calculated Tey (K ) for the two-bridge links K with one-row coloring (n,0) by the
+Kuperberg’s linear skein theory. The full twist formula for one-row colored anti-parallel
+Ay webs was used in this calculation, and this full formula plays an important role in the
+study of slz tails of knots and links.
+
+The tail of a knot K is a q-series which is a limit of the colored Jones polynomials
+{Jn(K;q)}n. Independently, the existence of the tails for alternating knots was shown
+in [DL06, DLO7] and [GL15], more generally, for adequate links in [Arm13]. In [GL15],
+Garoufalidis and Lé showed a more general stability, the existence of the tail is the zero-
+stability, for alternating knots. Some explicit descriptions of tails are known for T(2,2m+

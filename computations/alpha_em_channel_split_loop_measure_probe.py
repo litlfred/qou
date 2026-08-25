@@ -52,8 +52,9 @@ import sympy as sp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def main() -> int:

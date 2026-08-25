@@ -33,7 +33,9 @@ which itself does `open QOU.QPochhammer`). Both `open`s are needed here.
 
 **Scope.** This discharges *reflection only*. The inversion and Landen extensions
 and the five-term relation — the other five hypotheses — remain open; see
-`qou-rhyp`. The 5₂ sum rule remains **verified to 80 dps, unproved**.
+`qou-rhyp`. **The 5₂ sum rule is PROVED**:
+`QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoRogersReflection

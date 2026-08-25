@@ -3,8 +3,9 @@
 title: Cite 9504015v2.pdf at content/quantum-observable-universe/lean/QOU/BraidKnot/KeystoneRTSurgeryCon…
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-09T00:10:47Z
-updated_at: 2026-08-09T00:10:47Z
+updated_at: 2026-08-21T17:04:51Z
 ---
 
 KeystoneRTSurgeryConstruction.lean carries the RT/WRT = Chern-Simons identification as a named, cited-but-unformalised hypothesis whose '-- Ref:' list currently names only Reshetikhin-Turaev 1991 / Turaev 1994 and beasleywitten2005. Adding this paper documents the perturbative form of that identification and its explicit verification on the Seifert class the file's manifold belongs to, so a reader can see how far the cited literature actually goes. It documents the hypothesis; it does not discharge it, and the file's honest-scope banner should stay unchanged.
@@ -15,7 +16,14 @@ KeystoneRTSurgeryConstruction.lean carries the RT/WRT = Chern-Simons identificat
 - Equation (1.6), p. 3, with equation (4.28), Section 4 — The Kirby-Melvin surgery formula for Z'(M;k) as a sum over odd colours of the framing-independent coloured Jones polynomial weighted by prod_j sin(pi alpha_j/K); and, for the Seifert surgery link of N unknots linked to a single unknot, the explicit sine-product coloured Jones J_{beta,alpha_1..alpha_N}(L;k) = prod_j sin(pi beta alpha_j/K) / [sin^{N-1}(pi beta/K) sin(pi/K)] up to normalisation.
   Use here: The per-colour weight sin(pi alpha/K) is the S-matrix vacuum row d_alpha/D that KeystoneRTSurgeryConstruction.lean proves the RT surgery sum weights each label by — so (1.6) is an explicit analytic instance of the assembly that file formalises abstractly. Equation (4.28) then gives the coloured Seifert link invariant in closed sine-product form, which is the machinery the colored-Sigma(2,3,5) step needs to lift the bare closed-manifold number to a lambda-indexed family. Useful as a cited construction to build against; it is not a substitute for the carried (RT) hypothesis.
 
-Source: `uploads/9504015v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-q-alg-9504015v2/9504015v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-q-alg-9504015v2/  ->  [rozansky1995]
+  Witten's invariants of rational homology spheres at prime values of K and trivial connection contribution
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [rozansky1995] as the citation key when you do it.

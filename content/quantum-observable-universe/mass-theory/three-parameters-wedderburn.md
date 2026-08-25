@@ -1,6 +1,6 @@
 The number of calibration inputs
-([calibration inputs](#rem:calibration-inputs)) is not ad hoc:
-it equals the number of **irreducible representations** of
+([calibration inputs](#rem:calibration-inputs))
+equals the number of **irreducible representations** of
 $H_3(R, q)$, which is the number of partitions of $3$.
 
 ## Wedderburn-Artin decomposition

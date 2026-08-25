@@ -8,9 +8,14 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 
 /-!
-# The nucleon–nucleon interface is a single scalar, and it has a floor
+# The nucleon–nucleon interface is a single scalar
 
-**Why no crossing convention can bind the deuteron.**
+**The interface collapses to one number, and that number is bounded.**
+
+> The title and subtitle here used to read "…and it has a floor" / "Why no
+> crossing convention can bind the deuteron". Both are **withdrawn** (2026-08-09):
+> the floor is convention-**C** specific and the deuteron IS reachable under the
+> production convention **D**. See the retraction below.
 
 In the `H_{3A}` atom word (`computations/mass_at_3A_proper.atom_braid_word_3A`)
 the generator `σ₂` is the *only* one joining strand 2 — nucleon `k`'s last quark
@@ -32,25 +37,56 @@ the `a = 1` cases at `d ∈ {0, −h(½−δ/4), −h/2, −h}`, i.e. `μ ∈ [z
 Four consequences are recorded here.
 
 `mu_mem_Icc` — the admissible `μ` lies in `[z−h, z]`, so with `−ln` decreasing
-the binding is confined to `[α·ln(1/z), α·ln(1/(z−h))]`. Numerically that is
-`[2.907195, 5.177967]` MeV, while `B_AME(²H) = 2.2245662`: **below the floor by
-30.69 %**. `mu_unreachable` is the formal statement that a target above `z` is
-not attained by any admissible offset — no crossing sign, colour weight, or
-multiplicity reaches the deuteron.
+the binding is confined to `[α·ln(1/z), α·ln(1/(z−h))]`. `mu_unreachable` is the
+formal statement that a target above `z` is not attained by any admissible
+offset. Both are conditional theorems and remain true as stated.
 
-`bond_energy_floor` — **the stronger, q-independent form, which supersedes
-`mu_unreachable` as the headline.** The production Markov parameter is
-`z = 1/(q^{1/2} + q^{-1/2})`, and AM-GM (`two_le_add_inv`,
+> **RETRACTION 2026-08-09 — the deuteron IS reachable, and the impossibility
+> narrative that used to stand here is withdrawn.** This paragraph read
+> "Numerically that is `[2.907195, 5.177967]` MeV, while `B_AME(²H) =
+> 2.2245662`: **below the floor by 30.69 %** … no crossing sign, colour weight,
+> or multiplicity reaches the deuteron." Those numbers are convention **C**
+> (`z = 1/(√q+1/√q) = 0.4993`), which was excised. Under the production
+> convention **D** (`z = q³/(q²+1) = 0.6127`) the admissible band is
+> `[2.0507, 3.7978]` MeV and **contains** `B_AME(²H) = 2.224566`. Solving for
+> the required offset gives `d = −0.024973 = −0.11945·h`, **inside** the Hecke
+> range `[−h, 0]`, where under C it was `+0.4230·h` and outside. The theorems
+> are untouched; only the claim that they *bind here* was wrong. What remains
+> open is that the derived colour weight `t = ½ − δ/4 = 0.499656` does not equal
+> the required `t = 0.119453` — a derivation gap, not an impossibility.
+> Audit: `docs/audits/2026-08-09-two-nucleon-channels-isospin-not-crossing-count.md`;
+> bean `qou-kj4v`.
+
+`bond_energy_floor` — a `z`-form-specific bound. **`z = 1/(q^{1/2} + q^{-1/2})`
+is convention C and is NO LONGER the production Markov parameter** (production
+is D, `z = q³/(q²+1)`); this paragraph used to call it "the production Markov
+parameter" and to bill this as "the stronger, q-independent form, which
+supersedes `mu_unreachable` as the headline". Both withdrawn. For a `z` of the
+C form, AM-GM (`two_le_add_inv`,
 `markov_param_le_half`) gives `z ≤ 1/2` for *every* `q`. With `d ≤ 0` that
 forces `μ ≤ 1/2` (`mu_le_half`) and hence
 
     B_bond = −α·log μ  ≥  α·log 2  =  2.90150117984 MeV,
 
 against `B_AME(²H) = 2.224566` — **30.43 % below**. This holds for every `q`,
-every crossing convention, every multiplicity, and every `N` in an `SU(N)`
-choice of `z` (larger `N` shrinks `z` and *increases* the floor). It is
-therefore no longer a statement about the interface at all: contrapositively
-(`alpha_upper_bound`), the deuteron is reachable only if
+every crossing convention, and every multiplicity — **but only for a `z` of the
+form `1/(x + x⁻¹)`**, which is where AM-GM bites.
+
+> **SCOPE CORRECTION 2026-08-09.** This paragraph previously added "and every
+> `N` in an `SU(N)` choice of `z` (larger `N` shrinks `z` and *increases* the
+> floor)". **That is false**, and it mattered. It assumed the `SU(N)` family is
+> `z = 1/[N]`, which it is not — the `SU(N)` weights are quantum dimensions
+> (hook-content), and the `SU(2)` member is registry convention **D** at
+> `z = q³/(q²+1) = 0.6126880 > 1/2`. `markov_param_le_half` does not apply to
+> it, so neither does the floor. Measured under D the admissible band is
+> `[2.0507, 3.7978] MeV` and `B_AME(²H) = 2.224566` lies **inside** it, with the
+> required offset `d = −0.1192·h` admissible. The impossibility below is
+> therefore specific to convention **C**, the production binding trace, not a
+> statement about Markov traces in general. See `computations/y_lambda_su_n.py`
+> and `docs/coordination/trace-convention-registry.md`.
+
+Within convention C it stands — and only there. Contrapositively
+(`alpha_upper_bound`), under C the deuteron would be reachable only if
 
     α  ≤  B_AME(²H)/log 2  =  3.2093703 MeV,
 
@@ -60,10 +96,15 @@ Pursued in bean `qou-qlma`.
 `charge_independence_iff` — the strong force is charge independent, so a bond
 model must give `L_pp = L_nn`. With `d_pp = 0` (σ) and `d_nn = −h` (σ⁻¹) that
 demands `z = z − h`, i.e. `h = 0`, i.e. `q = 1`: the classical limit, where the
-Hecke structure is gone. Measured, `α(L_nn − L_pp) = 2.27077 MeV`, which is
-*identically* the ³H/³He mirror splitting this framework predicts — so that
-splitting is an artifact of the σ/σ⁻¹ charge assignment, not an isospin effect.
-Nature's is 0.764 MeV and mostly Coulomb.
+Hecke structure is gone. Measured under C, `α(L_nn − L_pp) = 2.27077 MeV`; under D with the derived
+writhe term wired it is **0.76532 MeV** (the writhe factor `(1−h)^(Δe/2)` shifts
+pp and nn equally and oppositely, removing 56.19 % of the asymmetry). Either way
+the splitting is an artifact of the σ/σ⁻¹ charge assignment, not an isospin
+effect — charge symmetry demands the *strong* mirror split be small, and the
+flavour parameter δ cancels out of it entirely by `mirror_split_eq_L_diff`.
+Nature's 0.7638 MeV is mostly Coulomb (uniform-sphere E_C alone gives 0.9984),
+so the strong sector should supply only the small Nolen–Schiffer residual, not
+the whole split. Beans `qou-4waf`, `qou-usft`.
 
 `proj_add_eq_one` / `proj_mul_eq_zero` — the same quadratic supplies the isospin
 decomposition for free. `P₊ = (σ + q⁻¹)/(q + q⁻¹)` and `P₋ = (q − σ)/(q + q⁻¹)`
@@ -80,16 +121,19 @@ are about the *scalar* `μ`, never about `A`.
 Companion audit: `docs/audits/2026-08-08-binding-functional-attack-vectors-and-li2q-guard.md`.
 Beans `qou-c6gx`, `qou-h7mh`.
 
-**Scope.** This is an impossibility result about the *interface*, and it is
-conditional in one place: `interface_scalar` takes the Markov property as a
+**Scope.** This is a structural result about the *interface* — it collapses to
+one scalar, and that scalar is bounded by the Hecke range. It is **not** an
+impossibility result for the deuteron; that reading was C-specific and is
+retracted above. It is conditional in one place: `interface_scalar` takes the Markov property as a
 hypothesis, because in this corpus that property is an `axiom` carrying a
 `sorry` (`jones-markov-trace.lean`, standing in for Jones 1987) rather than a
 theorem. Nothing here proves the trace exists.
 
-It also does **not** claim the interface is where the ²H error lives — the
-opposite. Since no admissible `μ` reaches AME, and since the per-bond deficit
-changes sign across `A` (audit §4), the defect is in the *form* of
-`B = −α·ln μ` summed over bonds, not in the choice of crossing. The two
+It also does **not** claim the interface is where the ²H error lives. Note the
+premise of that argument has itself been retracted: an admissible `μ` **does**
+reach AME under convention D (see the retraction above). The per-bond
+sign-change evidence (audit §4) was also computed under C and needs re-running
+before it is cited. The two
 positive routes suggested by `proj_*` — a derived Clebsch weighting, and
 charge independence imposed with Coulomb carrying the mirror split — are
 neither formalised nor wired here.
@@ -162,8 +206,10 @@ theorem mu_mem_Icc (z h d : R) (hd_lo : -h ≤ d) (hd_hi : d ≤ 0) :
 /-- **The floor theorem.** A target strictly above `z` is attained by no
 admissible interface element. With `z = 1/(√q₀ + 1/√q₀)` this says
 `B ≥ α·ln(1/z) = 2.907195 MeV` for every crossing convention, while
-`B_AME(²H) = 2.2245662` — so the deuteron is unreachable, and the ²H miss cannot
-be localised in the interface. -/
+`B_AME(²H) = 2.2245662`. **Retracted as a physical claim 2026-08-09**: those are
+convention-C numbers, and under production convention D the deuteron IS
+reachable at `d = −0.11945·h`. The theorem below is a true conditional and is
+unaffected; only its application to ²H was wrong. -/
 theorem mu_unreachable (z d μ_req : R) (hd_hi : d ≤ 0) (htarget : z < μ_req) :
     z + d ≠ μ_req := by
   intro hcontra
@@ -366,5 +412,172 @@ theorem proj_mul_eq_zero (σ : A) (q qi s h : R)
     _ = 0 := by rw [key, smul_zero]
 
 end Projectors
+
+section IsospinOrdering
+
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **Convention D makes `2z − h` a manifest positive.** With the
+Temperley–Lieb / SU(2) Markov parameter `z = q³/(q²+1)` and the Hecke
+parameter `h = q − q⁻¹`,
+
+    2z − h = (q⁴ + 1) / (q(q² + 1)),
+
+an identity, not an estimate. Every factor on the right is positive for
+`q > 0`, so the sign needs no numerical input. -/
+theorem two_z_sub_h_conventionD (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 + 1 ≠ 0) :
+    2 * (q ^ 3 / (q ^ 2 + 1)) - (q - q⁻¹) = (q ^ 4 + 1) / (q * (q ^ 2 + 1)) := by
+  field_simp
+  ring
+
+/-- **…hence `h < 2z` for every `q > 0`.** -/
+theorem h_lt_two_z_conventionD (q : R) (hq : 0 < q) :
+    q - q⁻¹ < 2 * (q ^ 3 / (q ^ 2 + 1)) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hq2 : (0 : R) < q ^ 2 + 1 := by positivity
+  have hid := two_z_sub_h_conventionD q hq0 (ne_of_gt hq2)
+  have hpos : (0 : R) < (q ^ 4 + 1) / (q * (q ^ 2 + 1)) := by positivity
+  linarith [hid ▸ hpos]
+
+omit [LinearOrder R] [IsStrictOrderedRing R] in
+/-- **The two isospin channels partition the free trace.** The scalar shadow of
+`proj_add_eq_one`: `μ₊ + μ₋ = 1` exactly. Projecting onto a channel can only
+*remove* trace weight, so `μ_T < 1` and `B_T = −α·log μ_T > 0` for both `T` —
+which is why the projector decomposition alone can never produce an unbound
+channel. Unbinding needs `μ > 1`, and that requires leaving the convex
+decomposition of `1`, e.g. `stacked_crossing_gt_one`. -/
+theorem mu_sum_eq_one (q z : R) (hs : q + q⁻¹ ≠ 0) :
+    (z + q⁻¹) / (q + q⁻¹) + (q - z) / (q + q⁻¹) = 1 := by
+  rw [← add_div, div_eq_one_iff_eq hs]
+  ring
+
+/-- **THE ORDERING IS FORCED — no fit, no multiplicity, every `q`.**
+
+`μ₊` is the `T = 1` (isospin-symmetric) interface scalar and `μ₋` the `T = 0`
+(antisymmetric) one. Under convention D,
+
+    μ₋ < μ₊   for every  q > 0,
+
+because the difference is `μ₊ − μ₋ = (2z − h)/(q + q⁻¹)` and
+`h_lt_two_z_conventionD` makes the numerator positive. With `B = −α·log μ`
+decreasing in `μ`, the **isospin singlet is always the more strongly bound
+channel**. Nature agrees: of the four two-nucleon channels — pp, nn, pn(¹S₀)
+all `T = 1`, pn(³S₁) the deuteron at `T = 0` — exactly the `T = 0` one binds.
+
+This is the replacement for the crossing-multiplicity story. The channel is
+selected by a representation label, not by a count of crossings, so there is
+no `m_pp` / `m_nn` to tune (cf. bean `qou-h7mh`: "DO NOT JUST FIT m_*"). -/
+theorem mu_singlet_lt_mu_triplet (q z : R) (hq : 0 < q)
+    (hz : z = q ^ 3 / (q ^ 2 + 1)) :
+    (q - z) / (q + q⁻¹) < (z + q⁻¹) / (q + q⁻¹) := by
+  have hq0 : q ≠ 0 := ne_of_gt hq
+  have hinv : 0 < q⁻¹ := by positivity
+  have hs : 0 < q + q⁻¹ := by linarith
+  have hnum : q - z < z + q⁻¹ := by
+    have := h_lt_two_z_conventionD q hq
+    rw [hz]; linarith
+  exact (div_lt_div_iff_of_pos_right hs).mpr hnum
+
+/-- **…and therefore the singlet binds harder.** `−log` is decreasing, so
+`μ₋ < μ₊` transports to `B₊ < B₋` for any positive scale `α`. Stated over `ℝ`
+because `Real.log` is. -/
+theorem singlet_binds_more (α μp μm : ℝ) (hα : 0 < α) (hm : 0 < μm)
+    (hlt : μm < μp) : -α * Real.log μp < -α * Real.log μm := by
+  have hlog : Real.log μm < Real.log μp := Real.log_lt_log hm hlt
+  nlinarith
+
+end IsospinOrdering
+
+section ChannelSelection
+
+/-- **Any interface keyed on nucleon CONTENT is refuted by the two pn channels.**
+
+The proposal "identical nucleons take two crossings" — and every variant of it —
+assigns the interface from the unordered pair of nucleon species, i.e. it
+factors through `content : Channel → Content`. But nature's two pn channels
+have the *same* content and *opposite* boundness: pn(³S₁) is the deuteron at
+`+2.224566 MeV`, pn(¹S₀) is unbound (a virtual state at `−0.066 MeV`). A
+function of the content alone must give them the same energy.
+
+So the refutation is logical, not numerical: no choice of `m_pp`, `m_nn`,
+`m_pn` can succeed, because the failure is in what the multiplicities are
+allowed to depend on. `mu_singlet_lt_mu_triplet` supplies the variable that
+does work — the isospin label `T`, which separates the two pn channels. -/
+theorem content_keyed_interface_refuted
+    {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
+    {Channel Content : Type*} (content : Channel → Content) (B : Content → R)
+    (pn_triplet pn_singlet : Channel)
+    (hsame : content pn_triplet = content pn_singlet)
+    (hbound : 0 < B (content pn_triplet))
+    (hunbound : B (content pn_singlet) ≤ 0) : False := by
+  rw [hsame] at hbound
+  linarith
+
+end ChannelSelection
+
+section ConjugationInvariance
+
+variable {A : Type*} [Ring A] {K : Type*}
+
+/-- **A conjugated interface has the same trace value.**
+
+The attack that dies here: `chi_monotone_transfer.word_to_mpfr` rejects
+non-monotone braid words, so a bond joining strands `1 ↔ 3` must be written
+`σ₁σ₂σ₁⁻¹` and is currently unreachable. The proposed remedy was to lift that
+restriction and thereby enlarge the set of attainable interface values.
+
+It attains nothing new. Cyclicity of the Markov trace, `tr (ab) = tr (ba)`,
+gives conjugation invariance for free:
+
+    tr (u b u⁻¹) = tr (u⁻¹ u b) = tr b.
+
+Every conjugate of `σ₂` carries `σ₂`'s value exactly. Lifting the monotone-word
+restriction changes which *words* are admissible but not which *numbers* are
+reachable, so the colour-weight blocker — that `span{1, σ₂}` is a 2-plane
+inside the 4-dimensional `V_(2,1)` block — survives untouched. The refutation
+is by derivation, not by measurement.
+
+Stated for a bare `u : Aˣ` and an arbitrary codomain `K`: no order, no
+topology, no algebraic structure on the target is used. Cyclicity alone is the
+whole hypothesis. -/
+theorem trace_conj_eq (tr : A → K) (hcyc : ∀ a b : A, tr (a * b) = tr (b * a))
+    (u : Aˣ) (b : A) : tr ((u : A) * b * (↑u⁻¹ : A)) = tr b := by
+  rw [hcyc ((u : A) * b) (↑u⁻¹ : A), ← mul_assoc]
+  simp
+
+/-- **…so conjugation enlarges no reachable set.** Packaging of the above for
+the reachability question: if `S` is the set of interface values attainable by
+monotone words and `tr b ∈ S`, then `tr (u b u⁻¹) ∈ S` as well. No `S` can grow
+by admitting conjugates. -/
+theorem conjugation_reaches_no_new_values (tr : A → K)
+    (hcyc : ∀ a b : A, tr (a * b) = tr (b * a))
+    (u : Aˣ) (b : A) (S : Set K) (hb : tr b ∈ S) :
+    tr ((u : A) * b * (↑u⁻¹ : A)) ∈ S := by
+  rw [trace_conj_eq tr hcyc u b]; exact hb
+
+/-- **The ordering-dependence of the nuclear chain is NOT a trace defect.**
+
+Bean `qou-c6gx` recorded that the dashboard's binding energy depends on the
+hard-coded nucleon ordering (³He: `ppn` 6.7969 MeV vs `pnp` 7.7794 MeV) and read
+it as a possible violation of trace invariance. It is not one. `ppn` carries the
+bond multiset `{pp, pn}`; `pnp` carries `{pn, pn}`. Different multisets are
+genuinely different links — *not* conjugates of one another — so different
+traces are the correct answer.
+
+Formally: an energy keyed on the bond multiset is automatically well defined on
+any two orderings that induce the *same* multiset. When they induce different
+ones, the values may legitimately differ, and the ill-posedness lies in the
+*input* — a nucleus has no ordering — not in the trace.
+
+That is evidence against the chain as a nuclear model (`qou-h7mh`), which is a
+strictly different complaint from the one `qou-c6gx` filed. -/
+theorem multiset_keyed_energy_well_defined
+    {Ordering Bonds : Type*} (bonds : Ordering → Bonds) (E : Bonds → K)
+    (o₁ o₂ : Ordering) (hsame : bonds o₁ = bonds o₂) :
+    E (bonds o₁) = E (bonds o₂) := by
+  rw [hsame]
+
+end ConjugationInvariance
 
 end QOU.QBeta.InterfaceScalar

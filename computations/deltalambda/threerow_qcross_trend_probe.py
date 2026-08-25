@@ -101,9 +101,10 @@ from schur_principal_mpmath import (  # noqa: E402
     hooks_and_contents, n_partition,
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import set_compute_dps, str_at_true_precision  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from threerow_chi_sparse import chi_atom_sparse  # noqa: E402
+from threerow_sign_crossing_probe import fmt_f64_limited  # noqa: E402
 
 warnings.filterwarnings("ignore")
 set_compute_dps(50)
@@ -242,12 +243,19 @@ def exact_crossing_polys(n, eps_exp=28):
             continue
         for (a, b), _m in iv:
             if a > 1:
+                # `a`, `b` are EXACT sympy rationals bounding an isolated root.
+                # They used to be `float()`-ed before both the reported q_cross
+                # and the branch verdict, so an exact bound was compared with a
+                # 50-dps q* across an f64 round-trip. Carried as mpf instead:
+                # exact in, 50 dps out, verdict decided at full precision.
+                a_mp = mp.mpf(int(a.p)) / mp.mpf(int(a.q))
+                b_mp = mp.mpf(int(b.p)) / mp.mpf(int(b.q))
                 out.append({
                     "irreducible_degree": int(pf.degree()),
                     "multiplicity": int(mult),
                     "u_lo": str(a), "u_hi": str(b),
-                    "q_cross": float(a) * float(b),
-                    "on_real_level_branch": bool(float(a) ** 2 < float(Q_STAR)),
+                    "q_cross": str_at_true_precision(a_mp * b_mp),
+                    "on_real_level_branch": bool(a_mp ** 2 < Q_STAR),
                 })
     return int(P.degree()), out
 
@@ -335,15 +343,17 @@ def main() -> int:
     print(f"       ⇒ q₀ ∈ (q_2, q_3) = (1, {mp.nstr(q3, 12)});  r(q₀)={mp.nstr(level_r(Q0),8)} ∉ ℤ")
     van = {}
     for lam in [(3, 2, 1), (4, 1, 1), (3, 1, 1, 1), (2, 2, 1, 1), (1,) * 6]:
-        van[str(lam)] = float(abs(schur_principal_mpmath(lam, q3)))
+        van[str(lam)] = str_at_true_precision(abs(schur_principal_mpmath(lam, q3)))
     print(f"       vanishing law at r=3: |s_λ| = " +
-          ", ".join(f"{k}:{v:.2e}" for k, v in van.items()) + "  (ℓ>3 ⇒ 0)")
+          ", ".join(f"{k}:{float(mp.mpf(v)):.2e}" for k, v in van.items())
+          + "  (ℓ>3 ⇒ 0)")
 
     # ── 1. character-free q_cross(n) ───────────────────────────────────────
     print("\n" + "─" * 90)
     print(f" 1. CHARACTER-FREE  G_n on the REAL-LEVEL BRANCH (1, q*),  n = 3..{N_MAX_FREE}")
     print("─" * 90)
     free = {}
+    free_mpf = {}     # mpf crossings, kept out of the witness dict
     all_free_cross = []
     for n in range(3, N_MAX_FREE + 1):
         t0 = time.time()
@@ -351,18 +361,21 @@ def main() -> int:
         cs, _g, _v = crossings(f, Q_LO, Q_HI, GRID_FREE)
         free[str(n)] = {
             "n_partitions_l_ge_3": sum(1 for l in partitions_of(n) if len(l) >= 3),
-            "S_at_lo": float(f(Q_LO)), "S_at_q0": float(f(Q0)), "S_at_hi": float(f(Q_HI)),
-            "crossings": [float(c) for c in cs],
+            "S_at_lo": str_at_true_precision(f(Q_LO)),
+            "S_at_q0": str_at_true_precision(f(Q0)),
+            "S_at_hi": str_at_true_precision(f(Q_HI)),
+            "crossings": [str_at_true_precision(c) for c in cs],
             "n_crossings": len(cs),
         }
-        all_free_cross += [float(c) for c in cs]
+        free_mpf[str(n)] = list(cs)      # monotonicity is decided on these, not
+        all_free_cross += list(cs)       # on their decimal strings
         print(f"  n={n:2d}  crossings={len(cs)}  " +
               (" ".join(f"{float(c):.6f}" for c in cs) if cs else "—") +
               f"   [{time.time()-t0:.1f}s]", flush=True)
 
-    seq = [(int(k), v["crossings"][0]) for k, v in free.items() if v["crossings"]]
+    seq = [(int(k), cs[0]) for k, cs in free_mpf.items() if cs]
     monotone = all(seq[i + 1][1] > seq[i][1] for i in range(len(seq) - 1))
-    print(f"\n  first-crossing sequence: {[(n, round(q,6)) for n,q in seq]}")
+    print(f"\n  first-crossing sequence: {[(n, round(float(q), 6)) for n, q in seq]}")
     print(f"  MONOTONE INCREASING? {monotone}")
 
     # ── 2. character-dressed isotopes ──────────────────────────────────────
@@ -382,12 +395,14 @@ def main() -> int:
         fq0 = f(Q0)
         iso[name] = {
             "n_strands": n, "grid_points": npts,
-            "F_at_lo": float(f(Q_LO)), "F_at_q0": float(fq0), "F_at_hi": float(f(Q_HI)),
+            "F_at_lo": fmt_f64_limited(f(Q_LO)),
+            "F_at_q0": fmt_f64_limited(fq0),
+            "F_at_hi": fmt_f64_limited(f(Q_HI)),
             "sign_at_q0": int(mp.sign(fq0)),
-            "crossings_on_real_level_branch": [float(c) for c in cs],
+            "crossings_on_real_level_branch": [fmt_f64_limited(c) for c in cs],
             "n_crossings": len(cs),
         }
-        all_iso_cross += [float(c) for c in cs]
+        all_iso_cross += list(cs)
         print(f"  {name:4s} n={n:2d}  F(q₀)={float(fq0):+.5e}  crossings={len(cs)}  " +
               (" ".join(f"{float(c):.6f}" for c in cs) if cs else "—") +
               f"   [{time.time()-t0:.0f}s]", flush=True)
@@ -405,22 +420,26 @@ def main() -> int:
         for r in roots:
             tag = "REAL-LEVEL BRANCH" if r["on_real_level_branch"] else "off-branch (q>q*)"
             print(f"        irreducible deg {r['irreducible_degree']:4d}  "
-                  f"q_cross = {r['q_cross']:.15f}   [{tag}]")
+                  f"q_cross = {r['q_cross']}   [{tag}]")
         print(f"        [{time.time()-t0:.0f}s]", flush=True)
 
     # ── 4. 🛑 GENERICITY GATE ──────────────────────────────────────────────
     print("\n" + "=" * 90)
     print(" 4. 🛑 GENERICITY GATE — does q₀'s position carry information?")
     print("=" * 90)
-    a_i, b_i, w_i = sign_window(all_iso_cross, float(Q0), 1.0, float(Q_STAR))
-    a_f, b_f, w_f = sign_window(all_free_cross, float(Q0), 1.0, float(Q_STAR))
-    branch_w = float(Q_STAR) - 1.0
+    a_i, b_i, w_i = sign_window(all_iso_cross, Q0, mp.mpf(1), Q_STAR)
+    a_f, b_f, w_f = sign_window(all_free_cross, Q0, mp.mpf(1), Q_STAR)
+    branch_w = Q_STAR - 1
     nat = count_natural_constants(a_i, b_i)
     n_nat = sum(len(v) for v in nat.values())
-    print(f"  ISOTOPE sign-vector window around q₀ : [{a_i:.6f}, {b_i:.6f}]  width {w_i:.6f}")
-    print(f"     = {100*w_i/branch_w:.1f}% of the real-level branch (width {branch_w:.6f})")
-    print(f"     information content = log2(branch/window) = {math.log2(branch_w/w_i):.3f} bits")
-    print(f"  CHARACTER-FREE (n≤{N_MAX_FREE}) window       : [{a_f:.6f}, {b_f:.6f}]  width {w_f:.6f}")
+    print(f"  ISOTOPE sign-vector window around q₀ : [{float(a_i):.6f}, "
+          f"{float(b_i):.6f}]  width {float(w_i):.6f}")
+    print(f"     = {float(100*w_i/branch_w):.1f}% of the real-level branch "
+          f"(width {float(branch_w):.6f})")
+    print(f"     information content = log2(branch/window) = "
+          f"{math.log2(float(branch_w/w_i)):.3f} bits")
+    print(f"  CHARACTER-FREE (n≤{N_MAX_FREE}) window       : [{float(a_f):.6f}, "
+          f"{float(b_f):.6f}]  width {float(w_f):.6f}")
     print(f"  'natural' constants inside the ISOTOPE window: {n_nat}")
     for k, v in nat.items():
         print(f"     {k:24s} {len(v):3d}   e.g. {', '.join(v[:6])}")
@@ -474,23 +493,27 @@ def main() -> int:
     w.add_parameter("n_max_character_free", N_MAX_FREE)
     w.add_parameter("chi_precision", "f64 Hoefsmit seminormal (sparse kernel, = dense to 1.4e-15)")
     w.add_data("branch_geometry", {
-        "dual_cauchy_max_rel_err": float(cauchy_err),
-        "level_at_q0": float(level_r(Q0)),
+        "dual_cauchy_max_rel_err": str_at_true_precision(cauchy_err),
+        "level_at_q0": str_at_true_precision(level_r(Q0)),
         "level_ladder_q_k": {str(k): mp.nstr(v, 20) for k, v in ladder.items()},
         "level_r_at_1p45_complex": str(r_above),
         "s_lambda_vanishing_at_r3": van,
         "q0_between_q2_and_q3": True,
     })
     w.add_data("character_free_crossings", free)
-    w.add_data("character_free_first_crossing_sequence", [[n, q] for n, q in seq])
+    w.add_data("character_free_first_crossing_sequence",
+               [[n, str_at_true_precision(q)] for n, q in seq])
     w.add_data("isotope_crossings", iso)
     w.add_data("exact_algebraic", exact)
     w.add_data("genericity", {
-        "isotope_sign_window": [a_i, b_i], "isotope_window_width": w_i,
-        "character_free_sign_window": [a_f, b_f], "character_free_window_width": w_f,
-        "real_level_branch_width": branch_w,
-        "window_fraction_of_branch": w_i / branch_w,
-        "information_bits": math.log2(branch_w / w_i),
+        "isotope_sign_window": [fmt_f64_limited(a_i), fmt_f64_limited(b_i)],
+        "isotope_window_width": fmt_f64_limited(w_i),
+        "character_free_sign_window": [str_at_true_precision(a_f),
+                                       str_at_true_precision(b_f)],
+        "character_free_window_width": str_at_true_precision(w_f),
+        "real_level_branch_width": str_at_true_precision(branch_w),
+        "window_fraction_of_branch": fmt_f64_limited(w_i / branch_w),
+        "information_bits": fmt_f64_limited(mp.log(branch_w / w_i) / mp.log(2)),
         "natural_constants_in_window": nat,
         "natural_constants_count": n_nat,
     })
@@ -503,8 +526,9 @@ def main() -> int:
     w.add_caveat(
         "🛑 GENERICITY / ANTI-NUMEROLOGY. 'q₀ lies between two crossings' is NOT a result: "
         f"the interval around q₀ reproducing the same isotope sign-vector has width "
-        f"{w_i:.4f} = {100*w_i/branch_w:.1f}% of the real-level branch, i.e. only "
-        f"{math.log2(branch_w/w_i):.2f} bits of constraint, and contains {n_nat} "
+        f"{float(w_i):.4f} = {float(100*w_i/branch_w):.1f}% of the real-level "
+        f"branch, i.e. only "
+        f"{math.log2(float(branch_w/w_i)):.2f} bits of constraint, and contains {n_nat} "
         "systematically-generated 'natural' constants. q₀'s position is therefore reported "
         "as COINCIDENTAL, not derived. No q was ever solved for to produce a sign pattern "
         "(free_parameters=0); the anchor is an input throughout."

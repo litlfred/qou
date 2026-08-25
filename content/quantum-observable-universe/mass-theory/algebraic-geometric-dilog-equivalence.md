@@ -75,7 +75,7 @@ denominator**:
 The bijection between the rows is the content of
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
 Under that bijection, the algebraic state sum and the hyperbolic
-volume are not two competing engines: they are the same regulator
+volume are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
 schemes.
 
@@ -134,13 +134,22 @@ consequences are derived unconditionally from the class:
    a $\sigma$-unitary
    ([unitary phases are bar-odd](#prop:phi-b-unitary-bar-odd)).
 
-2. (**Zero crossing.**) The measured sign flip
-   $S(\text{muon}) \approx +0.00968 > 0 > S(\text{proton}) \approx
-   -0.03946$, together with continuity of $S$ on $q_0 > 1$, forces by
-   the intermediate value theorem a substrate $q^{*}$ between the
-   anchors where $S(q^{*}) = 0$: there $c_3 = -\mathrm{Vol}(4_1)$
-   exactly and the $\Phi_b$ readout is $1$ — the bar-odd leak switches
-   off (Lean: `exists_zero_crossing`, `exists_pure_bar_even`).
+2. (**Zero crossing — conditional on a sign flip the data does not
+   establish.**) *If* $S$ changes sign between the anchors, continuity of
+   $S$ on $q_0 > 1$ forces by the intermediate value theorem a substrate
+   $q^{*}$ where $S(q^{*}) = 0$: there $c_3 = -\mathrm{Vol}(4_1)$ and the
+   $\Phi_b$ readout is $1$ (Lean: `exists_zero_crossing`,
+   `exists_pure_bar_even`, which take the flip as an explicit hypothesis).
+   The premise is **not established by the data**: each anchor value
+   $S(\text{muon}) \approx +0.00968$, $S(\text{proton}) \approx -0.03946$
+   carries a CAL-3 propagated uncertainty of $\pm 1.26$ (130× / 32× the
+   value); only the swing $S(\text{muon}) - S(\text{proton})$ is resolved,
+   and it is the cross-anchor $c_3$ difference with $\mathrm{Vol}(4_1)$
+   cancelled. So the zero-crossing is a conditional structural statement,
+   not an established prediction. (The onward identification of this
+   $S$-channel with the resurgent monodromy datum $A_\omega$ has no
+   literature support and is not derivable; recorded in
+   `docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`.)
 
 ## The fibre branch ($\lvert q \rvert = 1$, real $b$) and construction status
 

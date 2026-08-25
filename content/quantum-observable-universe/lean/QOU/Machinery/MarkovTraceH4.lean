@@ -25,9 +25,21 @@ reproduces the hardcoded `H3` block exactly).  Convention: `T_{s_i}² = 1 + h·T
 * `trM_markov_σ2` — the Markov reduction (M3) `tr(x·σ₂)=z·tr(x)` for `x ∈ H₃`
   (parabolic NF indices `{0,2,3,7,8,13}`), **sorry-free**.  This is the base case
   for the general-`n` Markov stabilization (τ-functor open item A).
-* `trM_cyclic` — cyclicity (M2): machine-validated in the compute infra but held as
-  a cited `sorry` (the `Fin 24` brute force is heartbeat-infeasible; structural proof
-  is follow-up).  Not vacuous, not laundered.
+* `trM_cyclic` — cyclicity (M2): **sorry-free**, now in
+  `QOU.Machinery.H4BasisBridge`. It used to be proved in
+  `QOU.Machinery.MarkovTraceH4Gram` from `gram_symm` over the 576-entry
+  `MarkovTraceH4Gram0..7` closure; that whole chain (6604 generated lines, the
+  tree's build pole) was **deleted** once `QOU.Machinery.H4.trM4_cyclic`
+  (`H4Cyclicity`) proved cyclicity directly on the subscript basis from the
+  three generators. `trM_cyclic` is now a three-rewrite corollary of it across
+  the basis relabelling, under the same fully-qualified name.
+  Verified: `#print axioms QOU.Machinery.H4.trM_cyclic` →
+  `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
+
+  `trM_cyclic_of_gram_symm` below is **kept**: it is the sorry-free reduction
+  "Gram symmetry ⇒ cyclicity", still true and still the `Fin 24` instance of
+  `BilinearTraceCyclicity.cyclic_of_gram_symm`. What went away is its former
+  *input*, the 576 computed entries — not the reduction itself.
 -/
 
 namespace QOU.Machinery.H4

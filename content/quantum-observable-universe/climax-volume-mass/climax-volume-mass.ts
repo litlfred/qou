@@ -39,8 +39,16 @@ export default chapter({
       title: "Crossing energy and Coulomb charge",
       label: "sec:crossing-energy",
       blocks: [
+        // def:crossing-energy and def:coulomb-charge relocated to
+        // knots-particles-confinement §7 (2026-08-09, decision 5). They move
+        // as ONE unit — coulomb-charge.ts carries `uses: ["def:crossing-energy"]`
+        // and coulomb-charge.md defines the Coulomb charge as a decomposition
+        // OF the crossing energy — so splitting them across the chapter
+        // boundary would have created a fresh forward edge. The blocks below
+        // still develop both quantities; only the two definitions moved, so
+        // this section's title now names material it consumes rather than
+        // establishes. Title revisit deferred (no section renames this round).
         "crossing-energy-intro",
-        "crossing-energy",
         "crossing-energy-categorical-origin",
         "crossing-energy-trefoil",
         "commutative-crossing-energy",
@@ -48,7 +56,6 @@ export default chapter({
         "categorical-coordinate-ring-dedup",
         "commutative-crossing-energy-table2-data",
         "commutative-crossing-energy-table1-data",
-        "coulomb-charge",
         "coulomb-strong-ratio-q-rational",
         "coulomb-strong-ratio-q-rational-proof",
         "skein-crossing-asymmetry-prop",

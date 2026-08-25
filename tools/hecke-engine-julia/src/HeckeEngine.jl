@@ -63,7 +63,9 @@ function version()::String
     unsafe_string(ptr)
 end
 
-"""Markov parameter z = 1 / (q^{1/2} + q^{-1/2})."""
+"""Markov parameter z = q^3 / (q^2 + 1) — trace convention D
+(SU(2)/Temperley-Lieb). Convention C excised 2026-08-09; see
+docs/coordination/trace-convention-registry.md."""
 markov_z(q::Float64)::Float64 = ccall((:qou_hecke_markov_z, _LIB), Float64, (Float64,), q)
 
 """Hecke relation coefficient h = q − q⁻¹."""

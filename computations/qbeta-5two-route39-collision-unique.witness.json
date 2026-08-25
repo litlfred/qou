@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route39_collision_unique",
   "bean": "qou-glbl",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": [
     "QOU/QBeta/FiveTwoRootLabelling.lean (pairDisc, realRootPath)",
     "QOU/QBeta/FiveTwoRootStructure.lean (two_fifths_lt, W_nonneg_of_disc_nonneg)",
@@ -12,14 +12,14 @@
       "gate": "G1",
       "claim": "THE REDUCTION: pairDisc(phi) * t^2 * (t-1)^2 = E(t) with E(t) = t^4 - 2t^3 + 7t^2 - 6t + 1, so the zeros of pairDisc are the zeros of a QUARTIC IN t. Checked on the arc AND at five values of c OUTSIDE [-1,1] -- the identity is a consequence of `unitCubic c t = 0` alone, not of anything about the arc, and checking it only where it will be used would not have shown that",
       "arc_points": 400,
-      "worst_residual_on_arc": "1.23045215555e-40",
-      "worst_residual_off_arc": "6.88766221185e-41",
+      "worst_residual_on_arc": "1.1659186814e-70",
+      "worst_residual_off_arc": "7.47093524003e-71",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "E'(t) = 2(2t-1)(t^2 - t + 3), and t^2 - t + 3 has discriminant -11 < 0 so it is positive everywhere. Hence E is strictly DECREASING below t = 1/2 and strictly INCREASING above -- a single minimum, established by a factorisation rather than by locating roots numerically",
-      "worst_residual": "1.46936793853e-39",
+      "worst_residual": "1.15912692209e-69",
       "discriminant_of_the_quadratic_factor": -11,
       "E_at_one_half": "-0.4375",
       "pass": true

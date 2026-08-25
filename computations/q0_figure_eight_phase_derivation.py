@@ -9,7 +9,7 @@ HYPOTHESIS (from PR #1332 + workplan Priority 3):
 
         θ(q) = arccos(Re(tr(ρ_{(2,1)}(4₁; q)))/2)
 
-    If θ(q₀) = Vol(4₁) = 2Λ(π/3), then q₀ is DERIVED from the
+    If θ(q₀) = Vol(4₁) = 2·Cl₂(π/3), then q₀ is DERIVED from the
     equation "spectral phase of the figure-eight equals its
     hyperbolic volume" — a purely topological/algebraic constraint.
 
@@ -79,7 +79,7 @@ def spectral_phase(q):
 
 
 def vol_figure_eight():
-    """Vol(4₁) = 2Λ(π/3) where Λ is the Lobachevsky function."""
+    """Vol(4₁) = 2·Cl₂(π/3) = 6Λ(π/3), Cl₂ the Clausen function."""
     return 2 * clsin(2, mppi / 3)
 
 
@@ -101,7 +101,7 @@ def main():
     print("=" * 70)
     print()
     print(f"q₀ = {q0}")
-    print(f"Vol(4₁) = 2Λ(π/3) = {float(vol_41):.15f}")
+    print(f"Vol(4₁) = 2·Cl₂(π/3) = {float(vol_41):.15f}")
     print()
     print(f"tr(ρ_{{(2,1)}}(4₁; q₀)) = {float(tr_at_q0):.15f}")
     print(f"θ = arccos(tr/2) = {float(theta_at_q0):.15f}")

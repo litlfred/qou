@@ -14,8 +14,15 @@ where each interface contributes a Markov-axiom factor f_i(q):
   - **averaged** (σ_g - (h/2)·I, the canonical p-n
     form in `mass_at_3A_proper.atom_braid_word_3A`): f = z(q) - h(q)/2
 
-with `z(q) = 1/(q^{1/2} + q^{-1/2})` (Markov parameter) and
-`h(q) = q - q^{-1}` (Hecke skein parameter).
+with `z(q) = q^3 / (q^2 + 1)` (Markov parameter, registry convention **D**)
+and `h(q) = q - q^{-1}` (Hecke skein parameter).
+
+OWNER RULING 2026-08-09 excised convention **C**, `z = 1/(q^{1/2} +
+q^{-1/2})`, which this header documented until 2026-08-15. Reading C off
+this docstring rather than off `markov_z` below is a **23% error**
+(0.4993203 vs 0.6126880 at q_0). `markov_z`'s own docstring carries the
+forcing argument and the registry pointers — it is authoritative; this
+header is a summary of it.
 
 Combined with Phase 5l (`prop:constit-factor-tau-M-proton-identity`)
   tr_M(𝓑_K^vac) = tr_M^3(𝓑_p)^Z · tr_M^3(𝓑_n)^N
@@ -131,15 +138,87 @@ PnConvention = Literal["chi_lambda_braid", "strict_averaged", "bring_color_weigh
 
 
 def markov_z(q: mp.mpf) -> mp.mpf:
-    """Markov parameter z(q) = 1 / (q^{1/2} + q^{-1/2})."""
+    """Markov parameter z(q) = q^3 / (q^2 + 1) — registry convention **D**.
+
+    OWNER RULING 2026-08-09: convention C excised. This returned C's
+    `1/(q^{1/2} + q^{-1/2}) = 0.4993203` until then; it now returns D's
+    `q^3/(q^2+1) = 0.6126880`.
+
+    The selection is FORCED, not stipulated. `lem:feynman-eigenbasis-
+    decomposition` puts the row cap `ell(lambda) <= 2` in the mass channel's own
+    decomposition (V = the fundamental of SU_q(2)), so `y_(1^3) = 0`; given that,
+    `QOU.BraidsAndKnots.MarkovTraceTLUniqueness.
+    markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free) makes the faithful
+    normalised Markov trace unique and equal to `q^3/(q^2+1)`. The competing root
+    `z = q` is degenerate (`y_(2,1) = 0`, not faithful on TL_3).
+
+    NOT decided by which value matches experiment. For the record it does NOT
+    flatter the binding table: mean |err| over {2H,3H,3He,4He,6Li,7Li} moves
+    37.39% -> 43.85%. It does fix 2H (+74.85% -> +27.36%) and, structurally, the
+    deuteron stops being unreachable — under C, AME sits 30.4% below the whole
+    admissible band; under D it is inside it.
+
+    Registry: docs/coordination/trace-convention-registry.md.
+    Forcing: docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md.
+    """
     q = mp.mpf(q)
-    return 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    return q ** 3 / (q ** 2 + 1)
 
 
 def hecke_h(q: mp.mpf) -> mp.mpf:
     """Hecke skein parameter h(q) = q - q^{-1}."""
     q = mp.mpf(q)
     return q - 1 / q
+
+
+def trM_sigma1_sq(q: mp.mpf) -> mp.mpf:
+    """tr_M(sigma_1^2) = h*z + 1, for any n >= 2.
+
+    Follows from the Hecke quadratic sigma^2 = h*sigma + 1 and tr_M(sigma) = z;
+    it holds for ANY Markov parameter, which is exactly why it belongs here in
+    terms of `markov_z` rather than being written out.
+
+    ## Why this function exists
+
+    This identity was copy-pasted, specialised to convention C, into at least
+    five places:
+
+        knot_operator_census_group_actions.trM_sigma1_sq   1 + (q-1)/sqrt(q)
+        c_3_categorical_derivation_attempt.trM_hopf        1 + (q-1)/sqrt(q)
+        lepton_t2n_torus_tower.trM_hopf_census_form        1 + (q-1)/sqrt(q)
+        inter_nucleon_linked_channel.census_hopf           1 + (Q0-1)/sqrt(Q0)
+        tools/sage-examples/.../hecke_surface.trace_weights (via a local z)
+
+    `1 + (q-1)/q^{1/2}` IS `h*z + 1` evaluated at z_C -- the square root is
+    z_C's, not the identity's. So when z moved to D every copy silently went on
+    describing the excised convention, and the sage example's guard
+    (`assert abs(TR_M[1] - z) < 1e-9`) started failing while the rest just
+    returned wrong numbers quietly.
+
+    A local copy of a library value is the whole defect class. One definition,
+    gated by R11 in the trace-convention registry, is the fix.
+    """
+    q = mp.mpf(q)
+    return hecke_h(q) * markov_z(q) + 1
+
+
+def wenzl_weights_h2(q: mp.mpf) -> tuple:
+    """H_2(q) Wedderburn weights (y_(2), y_(1,1)), solved from the axioms.
+
+    tr_M(1) = y_(2) + y_(1,1) = 1 and tr_M(sigma_1) = y_(2)*q - y_(1,1)/q = z
+    give y_(2) = (q*z + 1)/(q^2 + 1) and y_(1,1) = 1 - y_(2), for any z.
+
+    The convention-C specialisation of this is
+    `(q^{3/2} + q + 1)/(q^3 + q^2 + q + 1)`, which is what
+    `lepton_t2n_torus_tower.wenzl_weights` hardcoded (twice -- once numerically
+    and once in sympy, and the two were migrated separately, so for one commit
+    they disagreed and the file's own symbolic-vs-numeric assertion caught it).
+    The q^{3/2} is z_C's square root showing through a formula that has none of
+    its own.
+    """
+    q = mp.mpf(q)
+    y2 = (q * markov_z(q) + 1) / (q ** 2 + 1)
+    return y2, 1 - y2
 
 
 def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
@@ -314,13 +393,18 @@ def closed_form_tau_M(
 ) -> mp.mpf:
     """Full closed-form tr_M(𝓑_K) at q.
 
-    TRACE CONVENTION: **convention C** — the full-Hecke Ocneanu / Wenzl
-    z-trace, z = 1/(q^{1/2}+q^{-1/2}) (`markov_z` below), weights from
-    `y_lambda_wenzl_bridge_numeric`, y_(1^3) != 0. This is the binding
-    channel's trace. It is NOT convention D (SU(2)/Temperley-Lieb, Jones
-    weights, z = q^3/(q^2+1)), which the production *mass* channel uses via
-    `m_p_substrate_identity_50dps.trM_borromean`; the two differ by 195.8 ppm
-    on beta_Bor. Registry: docs/coordination/trace-convention-registry.md.
+    TRACE CONVENTION: **convention D** — SU(2)/Temperley-Lieb (Jones),
+    z = q^3/(q^2+1) (`markov_z` above), weights from
+    `y_lambda_wenzl_bridge_numeric`, y_(1^3) = 0. Both the binding and the
+    mass channel are now D; convention C (the full-Hecke Ocneanu / Wenzl
+    z-trace, z = 1/(q^{1/2}+q^{-1/2}), y_(1^3) != 0) was excised by owner
+    ruling 2026-08-09. Registry:
+    docs/coordination/trace-convention-registry.md.
+
+    This docstring said **C** until 2026-08-09 while `markov_z` had already
+    returned D since 33a6c7aa, and `y_lambda_wenzl_bridge_numeric` was still
+    C until bean qou-wgta item 3 — so the declaration, the interface and the
+    constituent were three different answers. All three are D now.
 
     Inputs are the two H_3 Markov-trace building blocks:
       - tr_M^3(𝓑_p, q) — the proton's H_3 trace

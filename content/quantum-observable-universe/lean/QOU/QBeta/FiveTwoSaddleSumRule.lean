@@ -7,9 +7,33 @@ merged 2026-08-02) established to 80 dps that the three 5₂ saddle values satis
     Σⱼ Re(Vⱼ) = −3π²/2                                              (SUM)
 
 with `Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼ·πi)²` and `yⱼ` the roots of
-`y³ − 2y² + 3y − 1`. That is strong evidence, **not a proof**.
+`y³ − 2y² + 3y − 1`. That was strong evidence, not a proof.
 
-## What this file does and does not prove
+## STATUS: (SUM) IS NOW PROVED — elsewhere
+
+`QOU/QBeta/FiveTwoComplexPentagon.lean` proves it, sorry-free, on the standard
+axioms `[propext, Classical.choice, Quot.sound]`:
+
+* `fiveTwo_saddle_sum_rule` — the closed form
+  `Σ Li₂(yⱼ) = −π²/6 − ½·log²y₃ + ⅔·(arg y₁ − π)²`;
+* `fiveTwo_sum_V` — `Σ Vⱼ = −3π²/2 + 2π·log y₃·i`, whose real part is (SUM);
+* `fiveTwoSaddleSumRule_holds` — the same, packaged as an instance of the
+  `FiveTwoSaddleSumRule` class declared below, at the actual saddle data.
+
+The route is **not** the one this file anticipated. This file's plan was to pin
+`A = Σ Li₂(yⱼ)` against `B = Σ Li₂(1−yⱼ)` and hunt for a second relation
+(`FiveTwoDilogLadder`). What worked instead was the complex five-term
+(pentagon) identity for the Rogers L-function, which determines `A` outright.
+No dilogarithm ladder was needed. See that file's header for the four-step chain.
+
+Scope, so this is not overread: (SUM) is the **sum rule**. The 5₂ **volume**
+conjecture is untouched — the Bloch–Wigner `D` cancels identically on the Galois
+sum, which is precisely why the sum rule fell without reaching the volume.
+
+## What *this* file proves
+
+This file remains the algebraic and reflection layer, and everything in it is
+still live — `branch_data_of_cubic` in particular is used by the proof.
 
 Mathlib carries **no polylogarithm** (no `Polylog`, no `dilog` — checked
 2026-08-03). **QOU, however, has its own** (correction 2026-08-03; an earlier
@@ -22,15 +46,15 @@ dilogarithm exists" and is misleading):
   with the derivative infra Mathlib lacks.
 
 That is exactly the hypothesis `sum_reflection_of_branch` takes, so the
-abstract `Li` below is *instantiable today for real arguments in `(0,1)`* —
-which covers the real saddle root `y₃ = 0.4301597…`. It does **not** cover
-`y₁, y₂` (complex, and `|y₁| = 1.52 > 1`), so (SUM) still cannot be discharged.
-The missing piece is a complex `Li₂` with the complex reflection identity;
-tracked as bean `qou-ph1k`.
+abstract `Li` below is instantiable for real arguments in `(0,1)` — which covers
+the real saddle root `y₃ = 0.4301597…` but not `y₁, y₂` (complex, and
+`|y₁| = 1.52 > 1`). The complex `Li₂` that closes that gap — bean `qou-ph1k` —
+now exists: `QOU.MathlibExt.cLiTwoExt`, with the complex reflection and
+inversion identities, in `QOU/MathlibExt/ComplexRogersDilog.lean`.
 
 Keeping `Li` abstract here is therefore deliberate: it makes the reduction
-independent of which dilogarithm implementation eventually supplies the
-hypothesis. This file:
+independent of which dilogarithm implementation supplies the hypothesis. This
+file:
 
 * proves the **algebraic skeleton** sorry-free and over a generic `CommRing`
   (`cubic_iff_sq_eq_cube`);
@@ -41,18 +65,18 @@ hypothesis. This file:
 * proves the two **bookkeeping consequences** that the prose asserts —
   that `π²/2` is the *unique* centering shift (`centering_constant_unique`)
   and that `V₃` is *determined* by `V₁` (`V_two_of_sum_rule`);
-* records (SUM) itself as a **content-bearing conjecture carrier with no
-  instance** (`FiveTwoSaddleSumRule`), which is the honest representation of
-  an open statement.
+* declares (SUM) itself as the class `FiveTwoSaddleSumRule` — which is now a
+  **theorem**, instantiated in `FiveTwoComplexPentagon` (above). The class is
+  kept as the statement's canonical home; no global instance is declared,
+  because it is true at the 5₂ saddle data, not at arbitrary `Li, y, b`.
 
-The genuinely open input is isolated in `FiveTwoDilogLadder`: one further
-relation between `Σ Li₂(yⱼ)` and `Σ Li₂(1−yⱼ)`. `sum_reflection_of_branch`
-supplies one equation in those two unknowns; a second is needed, and the
-identified route (Kubert/distribution relation on `Li₂(y²) = Li₂((1−y)³)`)
-is not formalized here.
+`FiveTwoDilogLadder` — one further relation between `Σ Li₂(yⱼ)` and
+`Σ Li₂(1−yⱼ)`, via the Kubert/distribution relation on `Li₂(y²) = Li₂((1−y)³)`
+— is still unproved, but is **no longer needed**: it was the anticipated route
+to (SUM), and (SUM) was proved without it.
 
 -- Ref: [manuscript] docs/coordination/1ppq-qbeta.md, 2026-08-02 row
--- Ref: [garoufalidis2020] https://arxiv.org/abs/2012.00062 eq (233)–(234)
+-- Ref: [garoufalidis-gu-marino2023peacock] https://arxiv.org/abs/2012.00062 eq (233)–(234)
 -/
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Algebra.BigOperators.Fin
@@ -179,35 +203,60 @@ theorem V_two_of_sum_rule (V : Fin 3 → ℝ)
   simp only [Fin.sum_univ_three] at hsum
   linarith
 
-/-! ### The open statements
+/-! ### The carriers
 
-Both carriers below are **primary conjectures**: their signatures take no
-other conjecture class as a hypothesis. Neither is given an instance, which
-is the honest representation of "numerically verified, not proved". -/
+Both carriers below are **primary**: their signatures take no other conjecture
+class as a hypothesis. `FiveTwoSaddleSumRule` is now a **theorem** — see its
+docstring for the witness. `FiveTwoDilogLadder` is still a conjecture, and is
+given no instance, which is the honest representation of "numerically verified,
+not proved". -/
 
-/-- **CONJECTURE (verified to 80 dps, unproved).** The 5₂ saddle sum rule.
+/-- **PROVED.** The 5₂ saddle sum rule.
 
 `Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` over the three roots of the saddle cubic
 satisfies `Σⱼ Re Vⱼ = −3π²/2`.
 
-Numerical status: residual `3.4e-80` at 80 dps, and **specific to the 5₂
-cubic** — five control cubics of the same shape, four sharing the `Πy = 1`
-constraint, miss the target by 0.16 to 2.83. So this is an arithmetic
-property of the 5₂ saddle cubic, not branch bookkeeping.
+The witness is `QOU.QBeta.FiveTwoComplexPentagon.fiveTwoSaddleSumRule_holds`,
+which exhibits the roots and constructs this class at `Li = cLiTwoExt`,
+`y = ![a, ā, t]`, `b = ![-1, 1, 1]` — sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`. The stronger closed form
+`Σ Li₂(yⱼ) = −π²/6 − ½·log²t + ⅔·(arg a − π)²` is
+`FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`, and the complex value
+`Σ Vⱼ = −3π²/2 + 2π·log t·i` is `fiveTwo_sum_V`.
 
-No instance is provided: the statement is open. -/
+No *global* instance is declared, and none should be: the class is parameterised
+by `Li`, `y`, `b`, and the statement is true at the 5₂ saddle data, not at
+arbitrary arguments. That specificity was already visible numerically — five
+control cubics of the same shape, four sharing the `Πy = 1` constraint, miss the
+target by 0.16 to 2.83 — so this is an arithmetic property of the 5₂ saddle
+cubic, not branch bookkeeping. Recorded residual before the proof: `3.4e-80` at
+80 dps.
+
+Scope: this is the **sum rule**, not the 5₂ **volume** conjecture, which remains
+untouched — the Bloch–Wigner `D` cancels identically on the Galois sum, which is
+exactly why the sum rule could be proved without reaching the volume. -/
 class FiveTwoSaddleSumRule (Li : ℂ → ℂ) (y b : Fin 3 → ℂ) : Prop where
   /-- `Σⱼ Re Vⱼ = −3π²/2`. -/
   sum_re_eq :
     (∑ j, (3 * Li (y j) + (Complex.log (y j) + b j * (Real.pi : ℂ) * I) ^ 2)).re
       = -3 * (Real.pi ^ 2 / 2)
 
-/-- **CONJECTURE (unproved).** The missing second relation.
+/-- **CONJECTURE (unproved).** A second relation between `A` and `B`.
 
 `sum_reflection_of_branch` gives one equation in `A = Σ Li₂(yⱼ)` and
 `B = Σ Li₂(1−yⱼ)`. Numerically `A ≈ 0.9717306815` and `B ≈ 0.3514640301`,
-neither with an evident closed form, so a second independent relation is
-required to close the sum rule.
+neither with an evident closed form.
+
+Historical note: this class was introduced because a second independent relation
+looked *necessary* to close the sum rule. It was not — the sum rule is now proved
+by the complex five-term route (`FiveTwoComplexPentagon`), which determines `A`
+outright rather than pinning it against `B`: what is proved there is
+`A = −π²/6 − ½·log²t + ⅔·(arg a − π)²`. Note also that the right-hand side of
+`sum_reflection_of_branch` is already explicit in the logarithms, so `B` follows
+from `A` by subtraction wherever that relation's reflection hypothesis holds —
+no *second* relation is involved in either direction. So this class is off the
+critical path, and is retained because the Kubert route below is of independent
+interest.
 
 The identified route is the Kubert/distribution relation
 `Li₂(zⁿ) = n·Σ_{k<n} Li₂(ζₙᵏ z)` applied to `Li₂(y²) = Li₂((1−y)³)`, which
@@ -470,7 +519,7 @@ Numerics for the split, to 60 dps, are in
 `computations/probes/qbeta_5two_route40_distribution_factors_probe.py`.
 Bean `qou-0yqu`.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** -/
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule` and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
 
 /-- `u³ + u² = 1` gives `1 − u³ = u²`: the cube-root parameter presents the
 saddle root `y = u³` and its reflection `1 − y` at once. -/
@@ -571,5 +620,268 @@ theorem sum_distribution_of_duplication
     (∑ j, Li ((u j) ^ 2)) = 2 * ∑ j, (Li (u j) + Li (-(u j))) := by
   rw [Finset.mul_sum]
   exact Finset.sum_congr rfl fun j _ => hdup (u j)
+
+/-! ### §7e — the sum rule **is** a flattened-Rogers statement
+
+Probes Routes 42–45 (`qou-xblo`) measured that the sum rule sits naturally in
+the *extended* Bloch group rather than the ordinary one: `Σ_σ D(σ y) = 0`
+identically, so the Bloch–Wigner regulator — the ordinary group's — is blind to
+it, while the flattened Rogers dilogarithm
+
+    R̂(z; p, q) = Li₂ z + ½·log z·log(1−z) − (πi/2)·(p·log(1−z) + q·log z)
+
+gives `Σ_σ R̂(y_σ; ε_σ, 0) = −π²/6` at 60 dps, with `ε` the branch data that
+`branch_data_of_cubic` above already proves integral.
+
+⚠ **That numerical identity is NOT proved here and nothing below claims it.**
+What *is* proved is the bridge: the corpus's `V`-form and the flattened form
+differ by an **elementary** term, over an abstract `Li`, using only the branch
+relation. So the two statements are equivalent, and a proof of either is a proof
+of the other. That turns "they differ by an elementary term, verified to 50 dps"
+into a theorem, and it is the whole of what knowing the new target buys in Lean
+— the analytic content (a complex `Li₂`, the pentagon identity, `ℬ̂(ℂ)`) is
+still absent from Mathlib and from this corpus. -/
+
+/-- **The flattened Rogers dilogarithm**, with `Li` abstract.
+
+`p` multiplies `log(1−z)` and `q` multiplies `log z`, matching Neumann's
+convention and the probes. -/
+noncomputable def flattenedRogers (Li : ℂ → ℂ) (z p q : ℂ) : ℂ :=
+  Li z + Complex.log z * Complex.log (1 - z) / 2
+    - ((Real.pi : ℂ) * I / 2) * (p * Complex.log (1 - z) + q * Complex.log z)
+
+/-- **The V-form and the flattened form differ by an elementary term.**
+
+For each root, given only the branch relation `2·log y − 3·log(1−y) = 2πi·ε`,
+
+    3·Li(y) + (log y + b·πi)²
+      = 3·R̂(y; ε, 0) + (3πi/2)·ε·log(1−y) + πi·(ε + 2b)·log y − π²·b²
+
+with the correction built from logs and the branch integers alone — no
+dilogarithm in it. The dilogarithm cancels identically; the content is the
+`log²` bookkeeping that the branch relation controls. -/
+theorem V_eq_three_flattenedRogers_add_elementary
+    (Li : ℂ → ℂ) {y ε b : ℂ}
+    (hbranch : 2 * Complex.log y - 3 * Complex.log (1 - y)
+      = 2 * (Real.pi : ℂ) * I * ε) :
+    3 * Li y + (Complex.log y + b * (Real.pi : ℂ) * I) ^ 2
+      = 3 * flattenedRogers Li y ε 0
+        + (3 * ((Real.pi : ℂ) * I / 2) * ε * Complex.log (1 - y)
+          + (Real.pi : ℂ) * I * (ε + 2 * b) * Complex.log y
+          - (Real.pi : ℂ) ^ 2 * b ^ 2) := by
+  unfold flattenedRogers
+  -- `ring` treats `I` as an opaque atom, so `(b·π·I)^2` never becomes `-b²π²`
+  -- on its own; `Complex.I_sq` has to be supplied as a second relation.
+  linear_combination (Complex.log y / 2) * hbranch
+    + (b ^ 2 * (Real.pi : ℂ) ^ 2) * Complex.I_sq
+
+/-- **The sum rule is equivalent to the flattened statement**, summed over the
+three roots.
+
+`Σ V(yⱼ) = 3·Σ R̂(yⱼ; εⱼ, 0) + (elementary)`. Since the correction contains no
+`Li`, proving either side's value proves the other's — which is exactly why the
+extended-Bloch reformulation is worth having rather than merely suggestive.
+
+When this was written it was a bridge between two open statements. It is now a
+bridge from a proved one: **the 5₂ sum rule is PROVED**, in
+`QOU.QBeta.FiveTwoComplexPentagon` (`fiveTwo_saddle_sum_rule`,
+`fiveTwoSaddleSumRule_holds`), sorry-free on the standard axioms. The flattened
+side is developed independently in `QOU/QBeta/FiveTwoFlattenedPentagon.lean`,
+where the pentagon holds with **no branch hypotheses at all** — which is the
+reason the flattening was worth having. -/
+theorem sum_V_eq_three_sum_flattenedRogers
+    (Li : ℂ → ℂ) (y ε b : Fin 3 → ℂ)
+    (hbranch : ∀ j, 2 * Complex.log (y j) - 3 * Complex.log (1 - y j)
+      = 2 * (Real.pi : ℂ) * I * ε j) :
+    (∑ j, (3 * Li (y j) + (Complex.log (y j) + b j * (Real.pi : ℂ) * I) ^ 2))
+      = 3 * (∑ j, flattenedRogers Li (y j) (ε j) 0)
+        + ∑ j, (3 * ((Real.pi : ℂ) * I / 2) * ε j * Complex.log (1 - y j)
+          + (Real.pi : ℂ) * I * (ε j + 2 * b j) * Complex.log (y j)
+          - (Real.pi : ℂ) ^ 2 * (b j) ^ 2) := by
+  have per := fun j =>
+    V_eq_three_flattenedRogers_add_elementary Li (b := b j) (hbranch j)
+  simp only [Fin.sum_univ_three]
+  linear_combination per 0 + per 1 + per 2
+
+/-! ### §7f — the pentagon collapses on the diagonal
+
+Route 46 measured that the Rogers pentagon, summed over the three embeddings of
+the 5₂ saddle orbit at `x = y = z`, equals `3π²/2` **exactly with principal
+branches and no flattening** (residual 2.5e-60) — where the sibling `c`-orbit
+needs a branch correction. That measurement is analytic and is not proved here.
+
+What *is* proved is the algebra underneath it: on the diagonal `x = y = z` two
+pairs of the five arguments coincide, so the five-term relation is really a
+three-term one. That is what makes the relation concrete enough to use, and it
+needs no dilogarithm theory at all. -/
+
+/-- On the diagonal, `(1−z)/(1−z²) = 1/(1+z)` — the collapse that makes two
+pairs of pentagon arguments coincide. -/
+theorem pentagon_diagonal_arg {z : ℂ} (h1 : (1 : ℂ) + z ≠ 0) (h2 : (1 : ℂ) - z ≠ 0) :
+    (1 - z) / (1 - z * z) = 1 / (1 + z) := by
+  have hfac : (1 : ℂ) - z * z = (1 - z) * (1 + z) := by ring
+  rw [hfac]
+  field_simp
+
+/-- **The pentagon collapses to three terms on the diagonal.**
+
+With `L` abstract and carrying the five-term (pentagon) relation, at `x = y = z`
+
+    2·L(z) + 2·L(1/(1+z)) + L(1−z²) = π²/2
+
+because `(1−z)/(1−z²) = 1/(1+z)` appears twice. `L` is abstract, so this is
+exactly as strong as the pentagon hypothesis and no stronger — no dilogarithm
+theory is used or claimed. -/
+theorem pentagon_diagonal (L : ℂ → ℂ)
+    (hpent : ∀ x y : ℂ, L x + L y + L ((1 - x) / (1 - x * y)) + L (1 - x * y)
+      + L ((1 - y) / (1 - x * y)) = (Real.pi : ℂ) ^ 2 / 2)
+    {z : ℂ} (h1 : (1 : ℂ) + z ≠ 0) (h2 : (1 : ℂ) - z ≠ 0) :
+    2 * L z + 2 * L (1 / (1 + z)) + L (1 - z ^ 2) = (Real.pi : ℂ) ^ 2 / 2 := by
+  have h := hpent z z
+  rw [pentagon_diagonal_arg h1 h2, show (1 : ℂ) - z * z = 1 - z ^ 2 by ring] at h
+  linear_combination h
+
+/-- The same, summed over the three roots: a relation between **three** Galois
+sums rather than five.
+
+Route 46 measures the right-hand side as `3π²/2` for the 5₂ saddle orbit with
+principal branches. Here it is a consequence of the pentagon hypothesis, with no
+branch analysis of its own.
+
+The hypothesis as stated — the pentagon for *all* `x, y : ℂ` — is false on the
+cuts, so it is not dischargeable in this form; that is why it is a hypothesis.
+The true statements are `FiveTwoComplexPentagon.pentagonSum_eq_pi_sq_div_two`
+(regularity hypotheses) and `FiveTwoFlattenedPentagon`'s flattened pentagon
+(none). Neither is needed for the sum rule, which took the direct route. -/
+theorem sum_pentagon_diagonal (L : ℂ → ℂ)
+    (hpent : ∀ x y : ℂ, L x + L y + L ((1 - x) / (1 - x * y)) + L (1 - x * y)
+      + L ((1 - y) / (1 - x * y)) = (Real.pi : ℂ) ^ 2 / 2)
+    (y : Fin 3 → ℂ) (h1 : ∀ j, (1 : ℂ) + y j ≠ 0) (h2 : ∀ j, (1 : ℂ) - y j ≠ 0) :
+    2 * (∑ j, L (y j)) + 2 * (∑ j, L (1 / (1 + y j))) + (∑ j, L (1 - (y j) ^ 2))
+      = 3 * ((Real.pi : ℂ) ^ 2 / 2) := by
+  have per := fun j => pentagon_diagonal L hpent (h1 j) (h2 j)
+  simp only [Fin.sum_univ_three]
+  linear_combination per 0 + per 1 + per 2
+
+/-! ### §7g — Neumann's kernel condition, and why `R` does not see the flattening
+
+Route 49 read the definitions from Neumann, *Extended Bloch group and the
+Cheeger–Chern–Simons class*, Geom. Topol. 8 (2004) (`library/0307092v2/0307092v2.pdf`):
+
+* `R(z;p,q) = R(z) + (πi/2)·(p·log(1−z) + q·log z) − π²/6`, valued in `ℂ/π²ℤ`;
+* `ℬ̂(ℂ) = ker ν` with `ν([z;p,q]) = (log z + pπi) ∧ (−log(1−z) + qπi)`.
+
+Expanding `ν`, membership forces `3q + 2p = 0` at each root. The two theorems
+below are the algebraic content of that, and they need no dilogarithm at all —
+only the branch relation, which `branch_data_of_cubic` already supplies.
+
+⚠ The *numerical* statements of Routes 42–49 — `Σ_σ R(y_σ) = −(2π/3)·arg(y₁)`,
+`Vol(5₂) = 3·D(y₁)`, the irrationality of `arg(y₁)/π` — are **not** proved here
+and are not stated as theorems anywhere in this corpus. They need a complex
+`Li₂` carrying the five-term identity, which Mathlib does not have. -/
+
+/-- **The admissible flattening correction is an integer multiple of `π²`.**
+
+Neumann's kernel condition forces `(p,q) = (3k, −2k)`. For such a flattening the
+correction term is exactly `k·π²·ε` — so in `ℂ/π²ℤ`, where `R` takes values, it
+vanishes whenever `k·ε` is an integer. That is why `R` is independent of the
+choice of admissible flattening, and it is pure algebra over the branch
+relation. -/
+theorem admissible_correction {y ε : ℂ} (k : ℂ)
+    (hbranch : 2 * Complex.log y - 3 * Complex.log (1 - y)
+      = 2 * (Real.pi : ℂ) * I * ε) :
+    ((Real.pi : ℂ) * I / 2) * (3 * k * Complex.log (1 - y)
+        + (-2 * k) * Complex.log y)
+      = k * (Real.pi : ℂ) ^ 2 * ε := by
+  linear_combination (-(k * (Real.pi : ℂ) * I / 2)) * hbranch
+    - (k * (Real.pi : ℂ) ^ 2 * ε) * Complex.I_sq
+
+/-- **`ν = 0` forces `3q + 2p = 0`**, at a root where the branch integer is `0`.
+
+At the real saddle root the branch relation reads `2·log y = 3·log(1−y)`, both
+logs are real, and `ν`'s `πi`-part is `q·log y + p·log(1−y)`. Requiring it to
+vanish pins the flattening to the line `3q + 2p = 0` — which is exactly the null
+direction Route 44 found by search and could only describe as a torsor. -/
+theorem nu_pi_part_eq_zero_iff {y : ℂ} {p q : ℂ} (hlog : Complex.log y ≠ 0)
+    (hbranch : 2 * Complex.log y - 3 * Complex.log (1 - y) = 0) :
+    q * Complex.log y + p * Complex.log (1 - y) = 0 ↔ 3 * q + 2 * p = 0 := by
+  have h1 : Complex.log (1 - y) = 2 / 3 * Complex.log y := by
+    linear_combination (-1 / 3 : ℂ) * hbranch
+  rw [h1]
+  constructor
+  · intro h
+    have : (3 * q + 2 * p) * Complex.log y = 0 := by linear_combination 3 * h
+    rcases mul_eq_zero.mp this with h' | h'
+    · exact h'
+    · exact absurd h' hlog
+  · intro h
+    linear_combination (Complex.log y / 3) * h
+
+/-! ### §7h — the five-term (pentagon) identity: its derivative vanishes
+
+The analytic input this whole lane is missing is the five-term identity for a
+complex `Li₂`. Its standard proof is two steps: differentiate in one variable
+and show the derivative vanishes identically, then pin the constant. **Step one
+is algebra**, and it is proved here.
+
+Writing `L(z) = Li₂(z) + ½·log z·log(1−z)` for the Rogers dilogarithm,
+`L′(z) = −½·( log(1−z)/z + log z/(1−z) )`. Differentiating the pentagon sum in
+`x` and expanding every `log` of a composite argument into the five basic ones —
+
+    log a₃ = log(1−x) − log(1−xy),      log(1−a₃) = log x + log(1−y) − log(1−xy)
+    log a₄ = log(1−xy),                 log(1−a₄) = log x + log y
+    log a₅ = log(1−y) − log(1−xy),      log(1−a₅) = log y + log(1−x) − log(1−xy)
+
+— the coefficient of each of `log x`, `log(1−x)`, `log y`, `log(1−y)`,
+`log(1−xy)` vanishes separately as a rational function. That is the content
+below, with the five logs left as free variables so no branch choice is made.
+
+⚠ **This is not the five-term identity.** Two things are still owed: the
+`HasDerivAt` statements assembling `L′` from `hasDerivAt_cLiTwoExt'` through the
+chain rule, and — the genuinely delicate part — the branch conditions under
+which the three `log` expansions above actually hold. Those expansions are
+exactly where flattening enters, so the branch bookkeeping of Routes 45–46 and
+Neumann's `ker ν` are the same difficulty showing up again. Nothing here
+discharges them.
+
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule` and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. -/
+
+/-- `L′(z) = −½·( log(1−z)/z + log z/(1−z) )`, with the two logarithms passed in
+as free variables so the lemma makes no branch choice. -/
+noncomputable def rogersDeriv (a la l1a : ℂ) : ℂ := -(1 / 2) * (l1a / a + la / (1 - a))
+
+/-- **The pentagon's `x`-derivative vanishes identically.**
+
+The five terms are `L(x)`, `L(y)`, `L((1−x)/(1−xy))`, `L(1−xy)`,
+`L((1−y)/(1−xy))`, whose `x`-derivatives carry the chain-rule factors
+`1`, `0`, `(y−1)/(1−xy)²`, `−y`, `(1−y)·y/(1−xy)²`. With each composite
+logarithm expanded into the five basic ones, the sum is zero — for **all**
+values of the five log variables, so the identity is independent of every
+branch choice. Only the five non-vanishing conditions are needed. -/
+theorem pentagon_deriv_x_eq_zero (x y lx l1x ly l1y lxy : ℂ)
+    (hx : x ≠ 0) (hx1 : (1 : ℂ) - x ≠ 0) (hy : y ≠ 0) (hy1 : (1 : ℂ) - y ≠ 0)
+    (hxy : (1 : ℂ) - x * y ≠ 0) :
+    rogersDeriv x lx l1x * 1
+      + rogersDeriv y ly l1y * 0
+      + rogersDeriv ((1 - x) / (1 - x * y)) (l1x - lxy) (lx + l1y - lxy)
+          * ((y - 1) / (1 - x * y) ^ 2)
+      + rogersDeriv (1 - x * y) lxy (lx + ly) * (-y)
+      + rogersDeriv ((1 - y) / (1 - x * y)) (l1y - lxy) (ly + l1x - lxy)
+          * ((1 - y) * y / (1 - x * y) ^ 2)
+      = 0 := by
+  unfold rogersDeriv
+  -- `field_simp` normalises `x * y` to `y * x`, so it needs the non-vanishing
+  -- hypothesis in that orientation too.
+  have hyx : (1 : ℂ) - y * x ≠ 0 := by rwa [mul_comm y x]
+  have h3 : (1 : ℂ) - (1 - x) / (1 - x * y) = x * (1 - y) / (1 - x * y) := by
+    field_simp; ring
+  have h5 : (1 : ℂ) - (1 - y) / (1 - x * y) = y * (1 - x) / (1 - x * y) := by
+    field_simp; ring
+  rw [h3, h5]
+  have hxy1 : x * (1 - y) ≠ 0 := mul_ne_zero hx hy1
+  have hyx1 : y * (1 - x) ≠ 0 := mul_ne_zero hy hx1
+  have hxyne : x * y ≠ 0 := mul_ne_zero hx hy
+  field_simp
+  ring
 
 end QOU.QBeta.FiveTwo

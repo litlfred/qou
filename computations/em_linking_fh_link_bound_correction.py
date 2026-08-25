@@ -69,63 +69,55 @@ per-component indexing and on the complement constraint.
 
 from __future__ import annotations
 
-import math
+import mpmath as mp
 
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
+# The pair integrals ARE the sibling probe's, as its docstring says; importing
+# them keeps one implementation of the kink-split quadrature rather than a
+# float64 copy that silently disagreed in the 7th digit.
+from em_linking_borromean_acn_probe import (  # noqa: E402
+    QUAD_DPS, acn_mp, phi_mp,
+)
 
-PHI = (1 + 5 ** 0.5) / 2
 N_COMPONENTS = 3
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 # Per-pair Gauss ACN for the golden-ratio Borromean realisation, from
 # em-linking-borromean-acn.witness.json (recomputed below as a check).
-KAPPA_A3 = 3.2135068
-KAPPA_A41 = 1.5310907
-
-
-def curve1(s: float, a: float, b: float):
-    return ((a * math.cos(s), b * math.sin(s), 0.0),
-            (-a * math.sin(s), b * math.cos(s), 0.0))
-
-
-def curve2(t: float, a: float, b: float):
-    return ((0.0, a * math.cos(t), b * math.sin(t)),
-            (0.0, -a * math.sin(t), b * math.cos(t)))
-
-
-def acn_pair(a: float, b: float, n: int) -> float:
-    """Unsigned Gauss integral over one Borromean component pair."""
-    h = 2 * math.pi / n
-    tot = 0.0
-    for i in range(n):
-        s = (i + 0.5) * h
-        (x1, y1, z1), (u1, u2, u3) = curve1(s, a, b)
-        for j in range(n):
-            t = (j + 0.5) * h
-            (x2, y2, z2), (v1, v2, v3) = curve2(t, a, b)
-            wx, wy, wz = x1 - x2, y1 - y2, z1 - z2
-            cx = v2 * wz - v3 * wy
-            cy = v3 * wx - v1 * wz
-            cz = v1 * wy - v2 * wx
-            num = u1 * cx + u2 * cy + u3 * cz
-            r2 = wx * wx + wy * wy + wz * wz
-            tot += abs(num) / (r2 * math.sqrt(r2))
-    return tot * h * h / (4 * math.pi)
+# 8 significant digits is all these carry, and nothing derived from them is
+# reported past that.
+KAPPA_A3 = mp.mpf("3.2135068")
+KAPPA_A41 = mp.mpf("1.5310907")
+KAPPA_DIGITS = 8
 
 
 def main() -> None:
+    set_compute_dps(QUAD_DPS)
+
+    def q(x, d=20):
+        return mp.nstr(mp.mpf(x), d)
+
     # The right object: component-vs-whole-link, not pair-vs-pair.
     # Under S_3 symmetry every pair integral is equal, so
     # ACN(L_k, L) = sum_{j != k} ACN_pair = (N-1) * ACN_pair.
-    per_pair = acn_pair(PHI, 1.0, 800)
+    per_pair = acn_mp(phi_mp(), 1)
     acn_component = (N_COMPONENTS - 1) * per_pair
     sum_over_components = N_COMPONENTS * acn_component
 
     # Realisation-dependence, carried through to the corrected object.
     sweep = {}
-    for ratio in (1.2, 1.5, PHI, 2.0, 3.0):
-        p = acn_pair(ratio, 1.0, 400)
-        sweep[f"a/b={ratio:.4f}"] = {
+    for label, ratio in (("1.2000", mp.mpf("1.2")), ("1.5000", mp.mpf("1.5")),
+                         ("1.6180", phi_mp()), ("2.0000", mp.mpf(2)),
+                         ("3.0000", mp.mpf(3))):
+        p = acn_mp(ratio, 1)
+        sweep[f"a/b={label}"] = {
             "acn_pair": p,
             "acn_component_vs_link": (N_COMPONENTS - 1) * p,
         }
@@ -142,12 +134,12 @@ def main() -> None:
     # contribution is A-independent, so kappa's decline must come from
     # the flux. E ~ ac * Flux^2  =>  Flux ~ sqrt(kappa).
     kappa_ratio = KAPPA_A3 / KAPPA_A41
-    flux_ratio_required = math.sqrt(kappa_ratio)
+    flux_ratio_required = mp.sqrt(kappa_ratio)
     # For contrast, what the (now-unsupported) Vol^(-1/3) reading gave.
-    vol_ratio_predicted = (41.0 / 3.0) ** (1.0 / 3.0)
+    vol_ratio_predicted = mp.cbrt(mp.mpf(41) / 3)
 
     wb = WitnessBuilder("em-linking-fh-link-bound-correction",
-                        engine="python-float64")
+                        engine="mpmath")
     wb.set_description(
         "CORRECTION probe (beans qou-b5yi, qou-a9li). A close read of "
         "Komendarczyk eq. (43) and Khesin Thm 3.6 overturns two things "
@@ -214,15 +206,15 @@ def main() -> None:
                        "the S_3 symmetry of the Borromean complement "
                        "every pair integral is equal, so this is "
                        "(n-1) * ACN_pair with n = 3."),
-        "acn_pair_golden_realisation": per_pair,
-        "acn_component_vs_link": acn_component,
-        "sum_over_components": sum_over_components,
-        "realisation_spread_pct": spread_pct,
+        "acn_pair_golden_realisation": q(per_pair),
+        "acn_component_vs_link": q(acn_component),
+        "sum_over_components": q(sum_over_components),
+        "realisation_spread_pct": q(spread_pct, 12),
         "bracket": {
             "lower_bound_per_component": ac_lower,
             "lower_bound_summed": sum_lower,
-            "upper_bound_per_component": acn_component,
-            "upper_bound_summed": sum_over_components,
+            "upper_bound_per_component": q(acn_component),
+            "upper_bound_summed": q(sum_over_components),
             "reading": ("2*genus_cx(L_k) - 1 <= ac(L_k,L) <= "
                         "ACN(L_k,L)[realisation]. The realisation value "
                         "bounds the minimised topological value from "
@@ -245,14 +237,15 @@ def main() -> None:
                       "A-INDEPENDENT, and there is no volume factor, so "
                       "ALL A-dependence of kappa must be carried by the "
                       "flux: E ~ ac * Flux^2."),
-        "kappa_decline_A3_to_A41": kappa_ratio,
-        "required_flux_decline": flux_ratio_required,
-        "vol_third_root_ratio_for_contrast": vol_ratio_predicted,
+        "kappa_decline_A3_to_A41": q(kappa_ratio, KAPPA_DIGITS),
+        "required_flux_decline": q(flux_ratio_required, KAPPA_DIGITS),
+        "vol_third_root_ratio_for_contrast": q(vol_ratio_predicted,
+                                               KAPPA_DIGITS),
         "reading": (
-            f"kappa falls by {kappa_ratio:.3f} across the series, so "
+            f"kappa falls by {q(kappa_ratio, 4)} across the series, so "
             f"saturating eq. (43) with a constant topological factor "
             f"would require the per-component flux to fall by "
-            f"{flux_ratio_required:.3f} over the same range. That is a "
+            f"{q(flux_ratio_required, 4)} over the same range. That is a "
             "specific, independently-derivable quantity -- it is NOT "
             "derived here, and nothing is wired. The point of reporting "
             "it is to make the size of the remaining obligation "
@@ -261,7 +254,7 @@ def main() -> None:
     })
     wb.add_data("residual_gap", (
         "Freedman-He, Ann. of Math. 134 (1991) 189-229 is not in the "
-        "corpus or in uploads/ (201 PDFs scanned by title metadata, no "
+        "corpus or in library/ (201 PDFs scanned by title metadata, no "
         "match), so FH's own definition of the minimisation domain for "
         "ac(L_k, L) is not directly verified. Both corrections rest on "
         "Komendarczyk's statement of it, which is unambiguous on the "
@@ -287,20 +280,20 @@ def main() -> None:
     out = wb.save()
 
     print("CORRECTED OBJECT (component vs whole link, not pair vs pair)")
-    print(f"  ACN_pair (golden)          = {per_pair:.6f}")
-    print(f"  ACN(L_k, L) = 2 * pair     = {acn_component:.6f}")
-    print(f"  sum over 3 components      = {sum_over_components:.6f}")
-    print(f"  realisation spread         = {spread_pct:.1f}%")
+    print(f"  ACN_pair (golden)          = {q(per_pair, 20)}")
+    print(f"  ACN(L_k, L) = 2 * pair     = {q(acn_component, 12)}")
+    print(f"  sum over 3 components      = {q(sum_over_components, 12)}")
+    print(f"  realisation spread         = {q(spread_pct, 3)}%")
     print(f"  bracket per component      : {ac_lower} <= ac <= "
-          f"{acn_component:.4f}")
+          f"{q(acn_component, 6)}")
     print("\nrealisation sweep:")
     for k, v in sweep.items():
-        print(f"  {k}: pair {v['acn_pair']:.6f}  "
-              f"component {v['acn_component_vs_link']:.6f}")
+        print(f"  {k}: pair {q(v['acn_pair'], 12)}  "
+              f"component {q(v['acn_component_vs_link'], 12)}")
     print("\nEQ (43) HAS NO VOLUME FACTOR -- Vol^(-1/3) was Khesin's "
           "single-torus bound.")
-    print(f"  kappa declines by {kappa_ratio:.3f} over A = 3..41")
-    print(f"  => required flux decline {flux_ratio_required:.3f} "
+    print(f"  kappa declines by {q(kappa_ratio, 4)} over A = 3..41")
+    print(f"  => required flux decline {q(flux_ratio_required, 4)} "
           "(not derived here)")
     print(f"witness -> {out}")
 

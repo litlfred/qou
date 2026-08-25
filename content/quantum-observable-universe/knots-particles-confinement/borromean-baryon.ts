@@ -10,5 +10,8 @@ export default definition({
   lean: { ref: "qou:QOU.Braiding.BorromeanBaryon",
     validation: "not_checked",
   },
-  uses: ["def:hadron"],
+  // The three-strand word realising the baryon costs exactly the three
+  // pairwise crossings that prop:pairwise-interaction-decomposition (part 3)
+  // shows to be the minimum for a mutually-interacting triple.
+  uses: ["def:hadron", "prop:pairwise-interaction-decomposition"],
 });

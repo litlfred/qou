@@ -37,8 +37,9 @@ mod 7 — which is where the `/7` in `mₖ/7` comes from.
 
 **Scope.** This derives the three numerators *given* the five-term instances and
 reflection.  It does **not** prove the five-term relation, the inversion/Landen
-extensions, or Route 8's transport.  The 5₂ sum rule remains **verified to 80 dps,
-unproved**.
+extensions, or Route 8's transport.  **The 5₂ sum rule is PROVED**:
+`QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoLevelSevenLadder

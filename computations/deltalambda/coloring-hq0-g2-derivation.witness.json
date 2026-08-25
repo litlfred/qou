@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-07-26T00:38:54.947747+00:00",
-  "commitSha": "2cadd0727b265346c81bdce6990038fc83131215",
+  "computedAt": "2026-08-23T09:01:10.699340+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "rogers_inflection_L2_half_zero",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "coloring-hq0-g2-derivation",
   "scriptFile": "coloring_hq0_g2_derivation_probe.py",
-  "scriptHash": "87c6db485928",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "f7d3ede6687a",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/coloring_hq0_g2_derivation_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/coloring_hq0_g2_derivation_probe.py"
   },
   "description": "H(q₀) coloring-map derivation: the flat trefoil shape z=1/2 is an INFLECTION point of the Rogers dilogarithm (L''(1/2)=0; bracket antisymmetric under Abel reflection z↦1-z), so the single-tetrahedron bar-even 2nd-order correction vanishes. Consistency-pinned (κ=1/2 from μ₀'s 3-crossing weight, parameter-free) single-coordinate amplitudes give g₂∈{0 (Rogers), 2 (naive symmetric)}; the target 1.0087 is reproduced by NEITHER. Hence g₂ is a 4-tetrahedron octahedral e₂ quantity, not a single-modulus one — scope-(a) prune, redirects to FourDilogFirstOrder.e2. No fit to g₂; nothing wired.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",
@@ -46,7 +58,7 @@
   "result": {
     "A_inflection": {
       "L2_half_via_bracket": "0.0",
-      "L2_half_via_numeric_diff": "-6.07716e-64",
+      "L2_half_via_numeric_diff": "0.0",
       "bracket_half_B(1/2)": "0.0",
       "bracket_antisymmetric_under_reflect": true,
       "inflection_confirmed": true,
@@ -70,9 +82,9 @@
         [
           "Rogers L(z) single tet",
           "1.38629",
-          "-3.03858e-64",
+          "0.0",
           "-1.08202",
-          "-3.55748e-64"
+          "0.0"
         ],
         [
           "naive symmetric z+1/z",
@@ -88,8 +100,8 @@
     },
     "D_single_modulus_purely_bar_odd": {
       "L'''(1/2)_bar_odd_3rd": "3.09035",
-      "L''(1/2)_bar_even_2nd": "-6.07716e-64",
-      "L''''(1/2)_bar_even_4th": "4.34673e-70",
+      "L''(1/2)_bar_even_2nd": "0.0",
+      "L''''(1/2)_bar_even_4th": "1.47273e-90",
       "euler_reflection_L(z)+L(1-z)": "1.6449341",
       "euler_reflection_eq_pi2_over_6": true,
       "all_even_derivs_vanish": true,

@@ -1,0 +1,122 @@
+with a certain sequence of exponents (o;,). This hap-
+pens e.g. with one-parameter transseries solutions to
+Painlevé equations, in which case there are also two-
+parameter transseries containing logarithms [Bal+23;
+
+Sv29].
+
+The general alien operators
+
+Ave Ende(R), Aw € Dere(R), forweEC (53)
+
+are defined by the natural generalization of what was
+
+done in RS, e.g. Aw =
+
+> meyiate)t sing ((cont(.) rm) (w+d)), (54)
+
+ce{+,—}r
+
+where wy < +--+ < wp_1 are the points of ]0,w[ (now
+in C) to be circumvented when following the analytic
+
+continuation of the minor.
+
+5 Mould Calculus
+5.1 The mould algebra
+
+We have encountered R3,-valued moulds in the context
+of alien calculus, and 9’, a rank-one lattice minus the
+origin, was then used as alphabet. We now develop
+the basics of mould calculus in the broader context of
+a commutative Q-algebra A and an arbitrary alpha-
+bet NV. We denote by NV the free monoid on N, which
+is not supposed to be countable or contained in C,
+but, when necessary, we assume VV to be a commu-
+tative semigroup, in which case we use the notation
+||| = wr + +++ +, for any w = wy-+-w, EN.
+
+An A-valued mould on N is just amap M: N >
+A; it is customary to use the notation M“ instead
+of M(w). Word concatenation in NV induces mould
+multiplication:
+
+»S
+
+(a,b) such that w=ab
+
+(M x N)2:= M2N?, (55)
+
+and the space AX of all moulds is thus an associative
+A-algebra, non-commutative if NW’ has more than one
+element, whose unit is the mould fl defined by 1% = 1
+and 1“ = 0 for w # @ (AX is sometimes denoted
+by AW) in algebraic combinatorics). A mould M is
+invertible if and only if M® is invertible in A.
+
+There is also an associative non-commutative mould
+composition: for each U € AX, we have an A-algebra
+
+10
+
+homomorphism M ++ M oU defined by (MoU)? :=
+M® and, for w 4 2,
+
+(M oU)2:= Mile lie’ le"... ye",
+
+(56)
+We denote by r(w) the length of a word w. The iden-
+tity mould I defined by I[# = 1 if r(w) = 1 and 0
+otherwise satifies MoI = M and IoU = U for all
+moulds M and U such that U? = 0. Such U has a
+composition inverse if and only U® is invertible in A
+whenever r(w) = 1.
+
+A mould M is said to have order > p if M“ = 0
+whenever r(w) <p. There is correspondingly a notion
+of formal convergence (a series of moulds }* M;, is con-
+vergent if ord(M;,) — 00, so that for any given w only
+finitely many terms contribute), which for instance al-
+lows to define mutually inverse bijections
+~
+2
+log
+
+{M «AX | M? =0} {M ¢ AX | M% =1}
+
+(57)
+
+by the usual exponential and logarithm series.
+
+Mould expansions. A-valued moulds often provide the
+coefficients of certain multi-indexed expansions in an
+associative A-algebra B. We may then restrict to
+finite-support moulds so as to avoid infinite expan-
+sions, as we did earlier with V = 9’, A = Ré and
+B = End¢(A), or we may assume B to be a complete
+filtered associative algebra, thus endowed with a no-
+tion of formal convergence.
+
+Then, given a family (B.,)uen in B, we extend it
+to N by defining Bg = 1g and
+
+By = By, -++ By, for any w =w1-+-w, EN, (58)
+and consider the mould expansion
+MB:= > M*B, €B (59)
+
+wen
+
+associated with M ¢ AX. One can check that
+(M x N)B = (NB)(MB), (expM)B = exp(MB),
+(log M)B = log(MB) when these mould expansions
+make sense.
+
+If B is only supposed to be a Lie algebra, one can
+define another kind of mould expansion: we then set
+Buy = (Bu, [--- [Bur Bu,]--.]] and
+
+1 Ww
+MB) := > To Bul:
+wAD
+
+(60)

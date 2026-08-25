@@ -67,8 +67,8 @@ from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E40
 # Symbolic q and z for derivation
 q = sp.Symbol('q', positive=True)
 z = sp.Symbol('z', positive=True)
-z_num = 1.0 / (Q0 ** 0.5 + Q0 ** (-0.5))
-z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+z_num = Q0**3 / (Q0**2 + 1)
+z_sym = q**3 / (q**2 + 1)
 
 
 def omega_lambda_formula_guess(shape: tuple[int, ...], *,
@@ -221,7 +221,7 @@ def tr_M_via_ocneanu_word(Z: int, N: int, *,
     """
     from mass_at_3A_proper import (atom_braid_word_3A,
                                      chi_lambda_of_word,
-                                     _cached_seminormal)
+                                     _cached_seminormal, Q0_PROTON)
     from hecke_characters import partitions_of
     if q_val is None:
         q_val = Q0
@@ -238,7 +238,7 @@ def tr_M_via_ocneanu_word(Z: int, N: int, *,
                                                     z_val=z_val)
     total = 0.0
     for shape in partitions_of(n_strands):
-        sigmas, dim, _syts = _cached_seminormal(shape)
+        sigmas, dim, _syts = _cached_seminormal(shape, Q0_PROTON)
         if dim == 0:
             continue
         chi = chi_lambda_of_word(sigmas, dim, word, n_strands - 1)

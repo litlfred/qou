@@ -1,6 +1,6 @@
 ## Topological selection versus operator-space cost
 
-We do not assert the Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ as the confinement operator out of convenience; a topological principle selects it. Confinement requires that no proper subset of the three quarks can be isolated. Equivalently, the braid closure must be a Brunnian link. $\mathcal{B}_3$ provides the crossing-minimal such link.
+A topological principle selects the Borromean braid $\mathcal{B}_3 = (\sigma_0\sigma_1^{-1})^3$ as the confinement operator. Confinement requires that no proper subset of the three quarks can be isolated. Equivalently, the braid closure must be a Brunnian link. $\mathcal{B}_3$ provides the crossing-minimal such link.
 
 This selection occurs on braid space, not on the Frobenius Gram matrix. A minimum-action functional on that matrix does not select $\mathcal{B}_3$. Because $\mathrm{NF}(\mathcal{B}_3)$ is $\approx 99.8\%$ the identity $\gamma$, any cost-minimising operator-space program selects the smallest-cost mesonic channel $L_\pm$. The Gram and Markov-trace data serve strictly as a consistency check.
 

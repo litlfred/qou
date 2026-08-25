@@ -62,6 +62,13 @@ class VolumeConjecture (q : ℝ) where
       of `sorry` for KVC. -/
   kvc_holds : ∀ β, hypVolume β = kashaevLimit β
 
+/-- **CONJECTURE.** A combinatorial constructor for subLink and its hyperbolic volume. -/
+class PieceVolumeConjecture (q : ℝ) [VolumeConjecture q] where
+  /-- The piece volume function. -/
+  pieceVolume : Braid → ∀ {n}, Finset (Fin (n - 1)) → ℝ
+  /-- The piece volume is non-negative. -/
+  pieceVolume_nonneg : ∀ β {n} (S : Finset (Fin (n - 1))), 0 ≤ pieceVolume β S
+
 /-- The hyperbolic volume of a Φ_q-piece `K_S`, lifted from the
     typeclass.  This is the canonical bridge between the abstract
     `SubLink.hypVolume` field on the geometry side and the typeclass
@@ -69,7 +76,7 @@ class VolumeConjecture (q : ℝ) where
     instance of `VolumeConjecture` populates a real value. -/
 -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
 --                   kashaev-volume-conjecture
-noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
+noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q] [hi : PieceVolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) : ℝ :=
   -- The Φ_q-piece K_S is the closure of the sub-braid obtained by
   -- replacing each crossing outside `S` with the identity strand.
@@ -82,9 +89,9 @@ noncomputable def pieceVolume (q : ℝ) [VolumeConjecture q]
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
   -- CONJECTURE: A combinatorial constructor for subLink and its hyperbolic volume is deferred to the SnapPy bridge layer.
-  sorry
+  hi.pieceVolume β S
 
-theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
+theorem pieceVolume_nonneg (q : ℝ) [VolumeConjecture q] [inst : PieceVolumeConjecture q]
     (β : Braid) (S : Finset (Fin (β.n - 1))) :
     0 ≤ pieceVolume q β S := by
   -- Once `pieceVolume` is given a concrete combinatorial definition,
@@ -93,14 +100,14 @@ theorem pieceVolume_nonneg (q : ℝ) [inst : VolumeConjecture q]
   -- Ref: [manuscript] Ch 3 §sec:calibration-algebraic-mass /
   --                   kashaev-volume-conjecture
   -- CONJECTURE: Becomes a non-trivial fact derived from hypVolume_nonneg applied to the sub-braid subLink β S once pieceVolume is concrete.
-  sorry
+  exact inst.pieceVolume_nonneg β S
 
 end QOU.Kashaev
 
 /-! ## Conditional theorems (downstream of the Volume Conjecture)
 
 These previously concluded `: True := trivial` — vacuous (they asserted
-nothing, despite docstrings claiming `Vol(4₁)=2Λ(π/3)` etc.). They are now
+nothing, despite docstrings claiming `Vol(4₁)=2·Cl₂(π/3)` etc.). They are now
 **real conditional theorems**: given `[VolumeConjecture q]`, the specific
 braid's hyperbolic volume equals its Kashaev limit — a direct, honest instance
 of the universal `kvc_holds` field.
@@ -109,7 +116,7 @@ of the universal `kvc_holds` field.
 universal (`∀ β, hypVolume β = kashaevLimit β`), so a per-knot instance for the
 figure-eight (where the volume conjecture *is* a theorem — Andersen–Hansen 2006)
 cannot be constructed without discharging *all* braids. The specific numeric
-values `Vol(4₁)=2Λ(π/3)`, `Vol(B₃)=8G` are literature theorems, **not** derivable
+values `Vol(4₁)=2·Cl₂(π/3)`, `Vol(B₃)=8G=8·Cl₂(π/2)` are literature theorems, **not** derivable
 from the abstract class, so they are cited, not asserted here. -/
 
 namespace QOU.Kashaev
@@ -130,7 +137,7 @@ def borromeanBraid : Braid :=
 
 /-- **CONDITIONAL** (from `kvc_holds`). If the Volume Conjecture holds, the
     figure-eight braid's hyperbolic volume equals its Kashaev limit. (The value
-    `Vol(4₁)=2·Λ(π/3)≈2.029883` — connecting to `m_μ/m_e = Vol(4₁)/ℏ_q²` — is the
+    `Vol(4₁)=2·Cl₂(π/3)=6·Λ(π/3)≈2.029883` — connecting to `m_μ/m_e = Vol(4₁)/ℏ_q²` — is the
     Andersen–Hansen theorem, cited, not derived from the abstract class.) -/
 -- Ref: [thurston1978] Thurston's geometry and topology of three-manifolds — hyperbolic structure on figure-eight complement
 -- Ref: [kashaev1997] — original volume conjecture

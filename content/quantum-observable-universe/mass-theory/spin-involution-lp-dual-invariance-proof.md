@@ -140,8 +140,13 @@ ${}^3\mathrm{He}$ ($n=9$ with $Z=2$ shell):
 
 $$
   \mathrm{tr}_M(\sigma_{pp}) \;=\; \mathrm{tr}_M(\sigma_{nn})
-  \;=\; 0.06216177120816107\ldots \quad \text{(exact representation evaluation; algebraic equality via the Hoefsmit seminormal form's $\sigma_{pp} = \sigma_{nn}$ identity on the $V_{(2,1)}$ block, independent of dps)}.
+  \;=\; 0.06216177120816107\ldots
 $$
+
+This is an exact representation evaluation. The equality is algebraic — it
+follows from the Hoefsmit seminormal form's $\sigma_{pp} = \sigma_{nn}$
+identity on the $V_{(2,1)}$ block — and so is independent of the working
+precision.
 
 The earlier $1.326\times$ ratio between $\Delta_{\text{shell}}(Z=2)$
 and $\Delta_{\text{shell}}(N=2)$ in

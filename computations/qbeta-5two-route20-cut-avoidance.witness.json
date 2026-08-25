@@ -2,20 +2,20 @@
   "probe": "qbeta_5two_route20_cut_avoidance",
   "bean": "qou-trns",
   "parent_bean": "qou-0yqu",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": "QOU/Archimedean/BranchIntegerPinning.lean (eq_zero_of_continuousOn_of_exp_eq_one)",
   "gates": [
     {
       "gate": "G1",
       "claim": "hexp: exp(F) = prod_j(1 - x*y_j)/x = 1 on the arc (and prod_j(1 - y_j/x) = 1/x) -- ALREADY Lean-proved as prod_one_sub_x_mul / prod_x_sub; measured only to confirm the instantiation is the one the lemma expects",
       "n_points": 41,
-      "worst": "5.1337603e-41",
+      "worst": "4.5278395e-71",
       "pass": true
     },
     {
       "gate": "G2",
       "claim": "h0: F(0) = Sum_j Log(1 - y_j) = 0 at the base point x = 1 -- this is what selects the integer 0 rather than merely showing it is constant",
-      "value": "0.0",
+      "value": "9.0556791e-72",
       "pass": true
     },
     {
@@ -73,9 +73,9 @@
       "gate": "G6",
       "claim": "ORIENTATION IS LOAD-BEARING, and this is the mechanism behind the three spurious 2*pi's recorded on qou-trns. Rising to phi = pi the factor reaches -(w_1-1) from ABOVE, arg -> +pi, matching the principal branch's value ON the cut: F is continuous, hcont holds. Descending to phi = -pi it arrives from BELOW, arg -> -pi, while principal Log still returns +pi: a genuine 2*pi*i discontinuity at the endpoint",
       "upward_|F(pi-eps) - F(pi)|": [
-        "0.0",
-        "1.1479437e-41",
-        "2.2958874e-41"
+        "2.7167037e-71",
+        "4.5278395e-71",
+        "4.5278395e-71"
       ],
       "downward_|F(-pi+eps) - F(-pi)|": [
         "6.2831853",
@@ -89,7 +89,7 @@
       "gate": "G7",
       "claim": "conclusion (this is what the lemma OUTPUTS, recorded so the instantiation is seen to close): F = Sum_j Log(1 - x*y_j) - i*phi vanishes on the arc -- branch integer 0, endpoint included",
       "n_points": 41,
-      "worst": "5.1337603e-41",
+      "worst": "4.5278395e-71",
       "pass": true
     }
   ],

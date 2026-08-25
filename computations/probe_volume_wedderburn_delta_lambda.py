@@ -29,6 +29,12 @@ It does NOT touch production. Δ_λ remains an open gate (GAP-A-3/A-4).
 """
 from __future__ import annotations
 
+import sys as _sys
+from pathlib import Path as _Path
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+_sys.path.insert(0, str(_Path(__file__).resolve().parent))
+import _path_bridge as _bridge  # noqa: F401,E402
+
 import json
 import sys
 from pathlib import Path
@@ -37,8 +43,9 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).parent
 
 # CAL-1 electron mass (CODATA, the binding energy scale ρ).
@@ -123,7 +130,13 @@ def vol_abs_content(part: list[int], n: int) -> mp.mpf:
 
 def vol_uniform(part: list[int], n: int) -> mp.mpf:
     """Vol_λ = 1 (scalar Path-C baseline; the global scale is the single
-    knot volume). Known: D +0.2%, A≥3 −60% (binding_link_volumes.py)."""
+    knot volume). Known: D −6.3%, A≥3 −56% (binding_link_volumes.py).
+
+    ⚠ Corrected 2026-08-15 (bean `qou-jdhm`): read "D +0.2%, A≥3 −60%".
+    The deuteron figure was trace convention C, excised by owner ruling
+    2026-08-09; under convention D it is −6.3%.  ("D" in this line means
+    the *deuteron*, not the trace convention — the collision is
+    unfortunate and is why the convention is now named explicitly.)"""
     return mp.mpf(1)
 
 

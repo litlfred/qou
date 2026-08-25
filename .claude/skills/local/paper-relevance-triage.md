@@ -148,7 +148,7 @@ say what would need checking.
 
 ```jsonc
 {
-  "source": { "kind": "upload", "file": "uploads/0409565v2.pdf" },
+  "source": { "kind": "upload", "file": "library/arxiv-math-0409565v2/0409565v2.pdf" },
   "id": "leitnerpawloski2004",
   "status": "verified-clean",
   "relevance": {

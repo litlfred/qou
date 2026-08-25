@@ -65,7 +65,8 @@ So this theorem gives the branches on `[0,π] ∖ {φ₀}` and cannot give them 
 holds off one point into a statement on the whole interval, using continuity
 there. The two bricks are built for each other.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.** This is one hypothesis
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms. This is one hypothesis
 of the envelope step, not the envelope step, and certainly not the sum rule.
 -/
 

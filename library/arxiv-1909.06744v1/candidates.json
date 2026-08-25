@@ -1,0 +1,151 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1909.06744v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "82e3980da78c07da9b673f5e5ba963b4327b0c52776589448707aba0bd2432fa",
+  "file": "1909.06744v1.pdf"
+ },
+ "provenance": {
+  "title": "Springer correspondence for symmetric spaces Toshiaki Shoji",
+  "authors": null,
+  "arxiv": {
+   "id": "1909.06744",
+   "version": "1",
+   "primary_class": "math.RT",
+   "stamp_date": "15 Sep 2019"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 9,
+  "by_kind": {
+   "proposition": 4,
+   "remark": 2,
+   "lemma": 1,
+   "theorem": 2
+  },
+  "formalization_candidates": 7
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "16.3",
+   "name": null,
+   "statement": "Under the identi\ufb01cation NG\u03b9\u03b8\u2243 \u03a8 N , the pair (O, E ) is cuspidal",
+   "section_file": "sections/sec-001-162-lusztigs-theory-of-the-generalized-springer.md",
+   "section_title": "Lusztig\u2019s theory of the generalized Springer correspondence for reductive",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "16.4",
+   "name": null,
+   "statement": "In general, \u03b8-stable Levi subgroup L has the form",
+   "section_file": "sections/sec-001-162-lusztigs-theory-of-the-generalized-springer.md",
+   "section_title": "Lusztig\u2019s theory of the generalized Springer correspondence for reductive",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "16.6",
+   "name": null,
+   "statement": "We de\ufb01ne a function q1(n) for n\u2265 0 by",
+   "section_file": "sections/sec-002-165-we-give-here-some-example-of-cuspidal-pairs.md",
+   "section_title": "We give here some example of cuspidal pairs. It would be interesting t o",
+   "pages": "19-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "16.8",
+   "name": "[SY]",
+   "statement": "(i) For \u03be\u2208 CN \u2243 SG\u03b9\u03b8 , indG",
+   "section_file": "sections/sec-003-167-we-prepare-some-notations-for-formulating-th.md",
+   "section_title": "We prepare some notations for formulating the generalized Springe r cor-",
+   "pages": "19-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "17.2",
+   "name": null,
+   "statement": "There exists an open dense subset X 0",
+   "section_file": "sections/sec-003-167-we-prepare-some-notations-for-formulating-th.md",
+   "section_title": "We prepare some notations for formulating the generalized Springe r cor-",
+   "pages": "19-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "18.1",
+   "name": null,
+   "statement": "Let m\u2208 Qa,r . For each \u03bb\u2208 P(m), one can de\ufb01ne a subvariety",
+   "section_file": "sections/sec-003-167-we-prepare-some-notations-for-formulating-th.md",
+   "section_title": "We prepare some notations for formulating the generalized Springe r cor-",
+   "pages": "19-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "18.2",
+   "name": "[S4]",
+   "statement": "For each m\u2208 Qa,r , (\u03c0m)\u2217 ~K (m)",
+   "section_file": "sections/sec-003-167-we-prepare-some-notations-for-formulating-th.md",
+   "section_title": "We prepare some notations for formulating the generalized Springe r cor-",
+   "pages": "19-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "18.4",
+   "name": null,
+   "statement": "The construction of ( \u03c0m)\u2217 ~K (m)",
+   "section_file": "sections/sec-003-167-we-prepare-some-notations-for-formulating-th.md",
+   "section_title": "We prepare some notations for formulating the generalized Springe r cor-",
+   "pages": "19-24",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "19.2",
+   "name": null,
+   "statement": "Assume that N = 2n + 1. Then",
+   "section_file": "sections/sec-003-167-we-prepare-some-notations-for-formulating-th.md",
+   "section_title": "We prepare some notations for formulating the generalized Springe r cor-",
+   "pages": "19-24",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

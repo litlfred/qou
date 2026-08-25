@@ -8,7 +8,10 @@ the alpha_EM correction 2/(3pi).
 Owner directive: "prove Status section: the from-the-Lagrangian derivation."
 
 prop:em-coupling-bring-zero-mode derives
-    1/alpha_EM = q[9]_q[10]_q + 2g/(4pi(g-1)) + O(alpha),   g = 4,
+    1/alpha_EM = q[9]_q[10]_q + 2g/(4pi(g-1)) + alpha*H*(1-h^2 alpha) + D2,  g = 4,
+  H = [2]_q/(8pi); h = q - 1/q (Hecke structure constant, NOT hbar_q = 1-1/q);
+  D2 = uncomputed archimedean two-loop (weight-3), distinct from the -h^2 H alpha^2
+  term already carried above. alpha appears on BOTH sides: solved as a fixed point.
 and flags, in its Status section, that the FROM-THE-LAGRANGIAN derivation of
 the 2/(3pi) term is open — recording a FAILED naive attempt on the 3-manifold
 M_Bring x S^1.
@@ -46,7 +49,8 @@ from witness_base import WitnessBuilder
 
 import mpmath as mp
 
-mp.mp.dps = 40
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # Canonical substrate q_0 (50-digit, proton-pinned) — imported, never hardcoded.
 # q_parameter re-exports qou_substrate.constants; Q_50_DIGIT_STR == q_at() to 50 dps

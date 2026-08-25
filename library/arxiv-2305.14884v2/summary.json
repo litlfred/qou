@@ -1,0 +1,107 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2305.14884v2",
+ "source_sha256": "ebc8e64d901c9e4f",
+ "brief": "PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS — We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices)",
+ "extended": "**PERTURBATIVE INVARIANTS OF CUSPED HYPERBOLIC 3-MANIFOLDS**\n\n*STAVROS GAROUFALIDIS, MATTHIAS STORZER, AND CAMPBELL WHEELER*\n\n48 pp, 17 sections.\n\n**Abstract.** We prove that a formal power series associated to an ideally triangu lated cusped hyperbolic 3-manifold (together with some further choices) is a top ological invariant. This formal power series is conjectured to agree to all orders in pertu rbation theory with two important topological invariants of hyperbolic knots, namely the Ka shaev invariant and the Andersen–Kashaev invariant (also known as the state-integral) o f Teichm¨ uller TQFT.\n\n**Outline.** 1 Introduction; 2.1 The Faddeev quantum dilogarithm; 2 Preliminaries; 2.2 Neumann–Zagier data; 2.3 Geometric aspects; 3 Formal Gaussian integration; 3.1 Basics on formal Gaussian integration; 4 Elementary invariance properties; 5 Invariance under the choice of quad; 6 Invariance under Pachner moves; 6.1 The case of B with full rank; 6.2 The case of B with nullity one; 6.3 The case of B with nullity two; Acknowledgements; Appendix A. Complements on the Fourier transfo; Appendix B. Complements on the pentagon identi; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: Φ Ξ (ℏ) is a topological invariant of a cusped hyperbolic 3-manifol d.\n- Theorem 1.1: It was clear from [ 11] that a NZ-datum Ξ = ( A,B,ν,z,f,f ′′) depends on\n- Theorem 3.4: implies the following identity relating ψℏ(•,z ) and ψℏ(•,z ′′).\n- Theorem 5.1: The series Φ Ξ (ℏ) is independent of the choice of a nondegenerate quad.\n- Theorem 6.1: The series Φ Ξ (ℏ) is invariant under 2–3 Pachner moves.\n- Proposition 6.2: If B has full rank, then Φ Ξ (ℏ) is invariant under the 2–3 Pachner move",
+ "tokens": {
+  "brief": 49,
+  "extended": 426
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-21-the-faddeev-quantum-dilogarithm",
+   "title": "The Faddeev quantum dilogarithm",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-002-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-22-neumannzagier-data",
+   "title": "Neumann–Zagier data",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-23-geometric-aspects",
+   "title": "Geometric aspects",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-005-3-formal-gaussian-integration",
+   "title": "Formal Gaussian integration",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-006-31-basics-on-formal-gaussian-integration",
+   "title": "Basics on formal Gaussian integration",
+   "pages": "9-18"
+  },
+  {
+   "id": "sec-007-4-elementary-invariance-properties",
+   "title": "Elementary invariance properties",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-008-5-invariance-under-the-choice-of-quad",
+   "title": "Invariance under the choice of quad",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-009-6-invariance-under-pachner-moves",
+   "title": "Invariance under Pachner moves",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-010-61-the-case-of-b-with-full-rank",
+   "title": "The case of B with full rank",
+   "pages": "25-27"
+  },
+  {
+   "id": "sec-011-62-the-case-of-b-with-nullity-one",
+   "title": "The case of B with nullity one",
+   "pages": "27-33"
+  },
+  {
+   "id": "sec-012-63-the-case-of-b-with-nullity-two",
+   "title": "The case of B with nullity two",
+   "pages": "33-41"
+  },
+  {
+   "id": "sec-013-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-014-appendix-a-complements-on-the-fourier-transform",
+   "title": "Appendix A. Complements on the Fourier transform",
+   "pages": "41-43"
+  },
+  {
+   "id": "sec-015-appendix-b-complements-on-the-pentagon-identity",
+   "title": "Appendix B. Complements on the pentagon identity",
+   "pages": "43-46"
+  },
+  {
+   "id": "sec-016-references",
+   "title": "References",
+   "pages": "46-48"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

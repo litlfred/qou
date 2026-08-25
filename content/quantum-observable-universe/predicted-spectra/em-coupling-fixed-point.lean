@@ -110,8 +110,16 @@ theorem fixedPoint_iff_cubic (q α : ℝ) (hα : α ≠ 0) :
   · intro h; linear_combination -h
   · intro h; linear_combination -h
 
-/-- CODATA 2018 value of the inverse fine-structure constant. -/
-def codataInvAlpha : ℝ := 137.035999084
+/-- CODATA 2022 value of the inverse fine-structure constant,
+    `137.035999177(21)`.
+
+    Was the CODATA-2018 Cs-recoil value `137.035999084`. Those are
+    different DETERMINATIONS, not merely older digits -- they sit 4.4 sigma
+    apart on the 2022 uncertainty -- so this was an owner decision rather
+    than a mechanical drain (2026-08-22). The shift is 0.68 ppb against the
+    `1e-6` class bound and ~690x smaller than the 468 ppb structural gap the
+    CS tower actually carries, so no conclusion here moves. -/
+def codataInvAlpha : ℝ := 137.035999177
 
 /-- **B₃(ℂ) O(α²) normalization class** (the sole open input; §3b-cond).
 

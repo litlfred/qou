@@ -1,0 +1,97 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2505.00799v2",
+ "source_sha256": "cc9d2ab4c6c79b50",
+ "brief": "QUANTUM MODULAR FORMS AND RESURGENCE — In 2010, Zagier described a new phenomenon which he called quantum mod- ularity.",
+ "extended": "**QUANTUM MODULAR FORMS AND RESURGENCE**\n\n*ELEANOR MCSPIRIT AND LARRY ROLEN*\n\n32 pp, 15 sections.\n\n**Abstract.** In 2010, Zagier described a new phenomenon which he called quantum mod- ularity. This connected various examples coming from disparate fields which exhibit near- modular behavior. In the fifteen years since, Zagier’s philosophy has informed new devel- opments in areas such as knot theory, 3-dimensional topology, combinatorics, and physics. More recently, the concept of holomorphic quantum modularity has emerged, pointing to a clearer structure for Zagier’s original examples. These new developments suggest connec- tions to perturbative quantum field theory, like the theory of resurgence. In 2024, Fantini and Rella proposed a means of codifying some of these connections under their program of “modular resurgence.” Inspired by their work, we unify all of the examples of quantum modular forms in Zagier’s original paper under the umbrella of resurgence.\n\n**Outline.** 1 Introduction and statement of results; 1.1 Statement of Main Results; 2.1 Resurgence; Acknowledgements; 2 Preliminaries; 2.2 Eichler Integrals of Cusp Forms of Integer; 2.3 Maass Waveforms; 3 Intermediate results; 3.1 Asymptotics; 3.2 Median Resummation; 3.3 Discontinuity Calculations; 4 Proof of Theorem 1.5; 5 Proofs of Corollaries; 6 Generalizations and Open Questions; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.5: Supposeg is one of the following:\n- Theorem 1.5: and its proof additionally give evidence towards some conjectures of Fantini\n- Proposition 2.8: Supposef is as above. Then the following are true.\n- Proposition 3.1: Let L(ρ) be a Dirichlet series convergent in some\n- Proposition 3.2: Letg be of Type 5 and let φ0(z) denote the asymptotic expansion of g(z)\n- Proposition 3.3: Letg be of Type 6 and let φ∗",
+ "tokens": {
+  "brief": 29,
+  "extended": 460
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-statement-of-results",
+   "title": "Introduction and statement of results",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-11-statement-of-main-results",
+   "title": "Statement of Main Results",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-002-21-resurgence",
+   "title": "Resurgence",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-003-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-004-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "7-11"
+  },
+  {
+   "id": "sec-005-22-eichler-integrals-of-cusp-forms-of-integer-an",
+   "title": "Eichler Integrals of Cusp Forms of Integer and Half-Integer Weight",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-006-23-maass-waveforms",
+   "title": "Maass Waveforms",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-007-3-intermediate-results",
+   "title": "Intermediate results",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-008-31-asymptotics",
+   "title": "Asymptotics",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-009-32-median-resummation",
+   "title": "Median Resummation",
+   "pages": "19-24"
+  },
+  {
+   "id": "sec-010-33-discontinuity-calculations",
+   "title": "Discontinuity Calculations",
+   "pages": "24-27"
+  },
+  {
+   "id": "sec-011-4-proof-of-theorem-15",
+   "title": "Proof of Theorem 1.5",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-012-5-proofs-of-corollaries",
+   "title": "Proofs of Corollaries",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-013-6-generalizations-and-open-questions",
+   "title": "Generalizations and Open Questions",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "References",
+   "pages": "31-32"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

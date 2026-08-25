@@ -5,6 +5,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Molecular.ch4_lp_dual_binding", validation: "not_checked" },
   title: "$S_4$-symmetric strand ordering minimises $\\Phi_1$ for $CH_4$",
   uses: [
+    "conj:q-integer-mass-formula",
     "def:ch4-molecular-braid",
     "prop:h2-lp-dual-binding",
   ],

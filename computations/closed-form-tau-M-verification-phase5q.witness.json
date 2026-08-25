@@ -11,7 +11,7 @@
       "passed": true,
       "tolerance": 1e-12,
       "unit": "dimensionless",
-      "source": "Phase 5q: max relative error between empirical tr_M(𝓑_K) and the closed-form prediction across 4 atoms at q_0.  Identity holds at mpfr-50-dps precision if max rel.err < 1e-12."
+      "source": "Phase 5q: max relative error between empirical tr_M(\ud835\udcd1_K) and the closed-form prediction across 4 atoms at q_0.  Identity holds at mpfr-50-dps precision if max rel.err < 1e-12."
     }
   ],
   "allPassed": true,
@@ -20,7 +20,7 @@
   "scriptFile": "closed_form_tau_M_verification_phase5q.py",
   "scriptHash": "880897369499",
   "scriptCommitSha": "18ad1576e2b3499e1485f5c5c5f677e2bfed7a0b",
-  "description": "Phase 5q: empirical verification of the combined Phase 5c.1 (interface-knot Markov-axiom factor) + Phase 5l (constit-side disjoint-product) closed form for tr_M(𝓑_K) across D, T, ³He, ⁴He at q_0.  Compares the full y_λ · χ_λ pipeline at H_{3A} (expensive) against tr_M^3(𝓑_p)^Z · tr_M^3(𝓑_n)^N · ∏_i f_i(q) (closed form, evaluated through `closed_form_tau_M.py`).  Verification unblocks the migration of 4 production tr_M scripts (cheat-sheet §5 action #4).",
+  "description": "Phase 5q: empirical verification of the combined Phase 5c.1 (interface-knot Markov-axiom factor) + Phase 5l (constit-side disjoint-product) closed form for tr_M(\ud835\udcd1_K) across D, T, \u00b3He, \u2074He at q_0.  Compares the full y_\u03bb \u00b7 \u03c7_\u03bb pipeline at H_{3A} (expensive) against tr_M^3(\ud835\udcd1_p)^Z \u00b7 tr_M^3(\ud835\udcd1_n)^N \u00b7 \u220f_i f_i(q) (closed form, evaluated through `closed_form_tau_M.py`).  Verification unblocks the migration of 4 production tr_M scripts (cheat-sheet \u00a75 action #4).",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
     "q_0": "1.1099785955541805752815940796095093779932822799587",

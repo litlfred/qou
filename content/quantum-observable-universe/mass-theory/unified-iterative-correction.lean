@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Unified iterative (2,2) correction
@@ -38,6 +39,19 @@ open scoped Classical in
 noncomputable def qInt (q : F) (n : ℕ) : F :=
   if hq : q - q⁻¹ = 0 then n
   else (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
+
+/-- **Bridge to the canonical singular-locus-guarded bracket.**
+
+This site is *not* `qIntBalCl`: it guards the whole singular locus
+`q − q⁻¹ = 0`, so it returns `n` at `q = −1` where the one-sided `qIntBalCl`
+falls through to `0`.  `qIntBalClSing` is the canonical form with that guard;
+the agreement is definitional. -/
+theorem qInt_eq_canonical (q : F) (n : ℕ) :
+    qInt q n = QOU.QInteger.qIntBalClSing q n := by
+  unfold qInt QOU.QInteger.qIntBalClSing
+  split_ifs with h
+  · rfl
+  · rfl
 
 /-- The q-hook product of the (2,2) partition is [3]_q · [2]_q²,
     obtained from the four hook lengths {3, 2, 2, 1} of the 2×2

@@ -8,7 +8,6 @@ export default remark({
   uses: [
     "prop:q-beta-categorical-precision-ladder",
     "prop:markov-trace-frobenius-selection",
-    "rem:borromean-baryon-interpretation",
   ],
   cites: [
     "kashiwara1990",

@@ -39,9 +39,22 @@ ln_q0 = math.log(q0)
 # as a constant: a bare number kept only for documentation is itself an
 # untraceable literal, and the certificate rightly flagged it when it was one.)
 
-# Measured S values (bar-odd leak)
-S_muon = +0.00968298
-S_proton = -0.03945936
+# Measured S values (bar-odd leak) — READ, not typed.
+#
+# These were bare literals, and the certificate flagged them. They are not
+# free parameters: they are S = c_3 + Vol(4_1) at the two anchors, computed by
+# `qbeta_c3_barodd_sleak_probe.py` from the anchor-blind keystone witness. But
+# that probe emitted NO witness of its own, so there was nothing to read and
+# four separate consumers hand-copied a 6-digit printout of it.
+#
+# It now emits `qbeta-c3-barodd-sleak.witness.json`, at the 9 significant
+# digits the c_3 + Vol(4_1) cancellation supports — the subtraction costs
+# ~2.3 decades at the muon anchor, so 12-digit inputs do not give 12-digit S.
+_SLEAK = json.loads(
+    (Path(__file__).resolve().parent
+     / "qbeta-c3-barodd-sleak.witness.json").read_text(encoding="utf-8"))
+S_muon = float(_SLEAK["data"]["S_leak"]["muon"])
+S_proton = float(_SLEAK["data"]["S_leak"]["proton"])
 
 # Formula: S_K = A_ω · κ · (ln²q₀ − ϑ_K²)
 A_omega = 3

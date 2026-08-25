@@ -71,7 +71,8 @@ other two — are stated as hypotheses here rather than assumed silently. They a
 **proved** in `FiveTwoRootStructure` (`exists_pinning_data`), by IVT plus real
 algebra; this file does not depend on that one, so the factoring stays honest.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

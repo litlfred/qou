@@ -34,7 +34,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 
 import numpy as np
 import mpmath as mp
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP
 from experimental_constants import M_E_MEV
@@ -46,6 +47,7 @@ from hecke_characters import (
 from hecke_core_legacy import _step_chain_generic
 from q_mpmath import set_q, qfac
 from witness_base import WitnessBuilder
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 set_q(Q0_FLOAT)
 
@@ -104,7 +106,7 @@ def _process(args):
         return None
     if chi == 0:
         return None
-    dq = float(dim_q(lam_t))
+    dq = float(dim_q(lam_t, Q0_PROTON))
     w_lam = dq * dq / nfac
     log_abs_chi = float(mp.log(abs(chi)))
     sign_chi = 1 if chi > 0 else -1
@@ -150,7 +152,7 @@ def main():
         n = 3 * A
         word = atomic_braid_word(Z, N)
         word_marshalled = [(1 if s == '+' else -1, g) for s, g in word]
-        nfac = float(qfac(n))
+        nfac = float(qfac(n, Q0_PROTON))
 
         jobs = [
             (tuple(lam), word_marshalled, nfac, float(Q0_FLOAT))

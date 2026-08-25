@@ -136,6 +136,176 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.211Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.250Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.290Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.330Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'where each carries structure, where QOU extends, where assumptions diverge' names the three comparison axes actually used by the section; functional, not reflex."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.369Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "One-paragraph intro, no closer."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.410Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'This section compares' is signposting."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.451Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.493Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "None."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.535Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "'three established programmes nearest' is a scoped comparative."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "9007623a8227",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:q10",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-15T21:19:05.576Z",
+        "reviewed_sha": "2ae8b6c0421cd48887030461faefa3c8d3ee05cd",
+        "evidence": "Readable."
+      }
     ]
   },
   "updated_at": "2026-07-07T14:26:55.459339Z"

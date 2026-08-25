@@ -46,5 +46,3 @@ $$
 identically to mpmath precision, with both equalling $\alpha_{EM}^{-1}(q_0) \approx 136.823$. The gap $|\,\text{chain} - \text{CODATA}\,| \approx 0.213$ is the $\mathcal{O}(10^{-3})$ precision gap inherited from [`prop:em-coupling-projection`](#prop:em-coupling-projection). This refactoring leaves it unchanged. Closing this gap requires [`conj:e-hartree-categorical-derivation`](#conj:e-hartree-categorical-derivation) and higher-order $C_5$-invariant corrections.
 
 All $3$ assertions in the witness pass.
-
-Expressing the shift as a unified multiplicative chain demonstrates that electromagnetic shifts follow an intrinsically multiplicative algebraic chain.

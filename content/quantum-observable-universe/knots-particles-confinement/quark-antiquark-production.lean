@@ -8,14 +8,18 @@
 
   Ref: [manuscript] Chapter 6, §3b
 -/
-import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Ring.Units
 import Mathlib.Tactic.Ring
 
 namespace QOU.Archimedean
 
-/-- Hecke-Skein quantum-integer differential `h(q) = q − q⁻¹`
-    (generic ring, `q` invertible). -/
-def heckeH {R : Type*} [DivisionRing R] (q : R) : R := q - q⁻¹
+/-- Hecke-Skein quantum-integer differential `h(q) = q − q⁻¹`.
+
+    Base ring (AGENTS.md §7c): a generic `[CommRing R]` with the modulus
+    carried as a **unit** `q : Rˣ`, so `↑q⁻¹` is a `Units` coercion — the
+    docstring's "generic ring, `q` invertible" made literal. No field,
+    no ring inverse. -/
+def heckeH {R : Type*} [CommRing R] (q : Rˣ) : R := (q : R) - (↑q⁻¹ : R)
 
 /-- **Normal-form coefficients of `L₊ · e⁻`** — the heart of the
     quark-creation computation in `def:quark-antiquark-production`.
@@ -30,7 +34,7 @@ def heckeH {R : Type*} [DivisionRing R] (q : R) : R := q - q⁻¹
     in the basis `{1, σ₀, σ₁, L₊, L₋, e⁻}`. The four nonzero
     coefficients (over the standard NF basis) are therefore
     `(c_{σ₁}, c_{L₊}, c_{L₋}, c_{e⁻}) = (1, h, h, h²)`. -/
-def hopfTrefoilNFCoeffs {R : Type*} [DivisionRing R] (q : R) : R × R × R × R :=
+def hopfTrefoilNFCoeffs {R : Type*} [CommRing R] (q : Rˣ) : R × R × R × R :=
   (1, heckeH q, heckeH q, heckeH q * heckeH q)
 
 /-- **Quark-antiquark production from Hopf-link pair creation.**
@@ -43,21 +47,22 @@ def hopfTrefoilNFCoeffs {R : Type*} [DivisionRing R] (q : R) : R × R × R × R 
     derivation: the residual-electron coefficient is `h²` and the
     leading hadronic coefficient is `1`. -/
 -- Ref: [manuscript] Chapter 6, §3b
-theorem quarkAntiquarkProduction {R : Type*} [DivisionRing R] (q : R) :
+theorem quarkAntiquarkProduction {R : Type*} [CommRing R] (q : Rˣ) :
     (hopfTrefoilNFCoeffs q).1 = 1
       ∧ (hopfTrefoilNFCoeffs q).2.1 = heckeH q
       ∧ (hopfTrefoilNFCoeffs q).2.2.1 = heckeH q
       ∧ (hopfTrefoilNFCoeffs q).2.2.2 = (heckeH q) ^ 2 := by
   refine ⟨rfl, rfl, rfl, ?_⟩
-  simp [hopfTrefoilNFCoeffs, pow_two]
+  simp only [hopfTrefoilNFCoeffs]
+  ring
 
 /-- Witness: the two cross-color Hopf channels `L₊` (from `φ₀ψ₁`) and
     `L₋` (from `φ₁ψ₀`) carry equal NF coefficient `h` in `L₊ · e⁻`,
     reflecting the chiral `quark/antiquark` symmetry of the two
     independent pair productions. -/
 -- Ref: [manuscript] Chapter 6, §3b
-theorem quark_antiquark_production_witness {R : Type*} [DivisionRing R]
-    (q : R) :
+theorem quark_antiquark_production_witness {R : Type*} [CommRing R]
+    (q : Rˣ) :
     (hopfTrefoilNFCoeffs q).2.1 = (hopfTrefoilNFCoeffs q).2.2.1 :=
   rfl
 
@@ -67,7 +72,7 @@ theorem quark_antiquark_production_witness {R : Type*} [DivisionRing R]
     coefficient is `1`. -/
 -- Ref: [manuscript] Chapter 6, §3b
 def QuarkAntiquarkProduction : Prop :=
-  ∀ {R : Type} [inst : DivisionRing R] (q : R),
+  ∀ {R : Type} [inst : CommRing R] (q : Rˣ),
     (hopfTrefoilNFCoeffs q).1 = 1 ∧
     (hopfTrefoilNFCoeffs q).2.2.2 = (heckeH q) ^ 2
 

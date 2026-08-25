@@ -192,7 +192,7 @@ theorem end_to_end_splitting :
 
 /-- The nucleon mass ratio m_n/m_p matches CODATA to 6 decimal places. -/
 theorem end_to_end_nucleon_ratio :
-    |neutron_mass_MeV / proton_mass_MeV - 1.0013784| < 1e-6 :=
+    |neutron_mass_MeV / proton_mass_MeV - 1.0013784| < 1e-6 :=  -- noqa: P31 - re-export of nucleon_mass_ratio_approx; same deliberate round
   nucleon_mass_ratio_approx
 
 /-! ## §5 Dependency audit

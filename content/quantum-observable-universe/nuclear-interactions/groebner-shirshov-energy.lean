@@ -39,15 +39,35 @@ theorem heckeEnergyChange_pos (q : ℝ) (hq : 1 < q) (c : ℝ) (hc : c ≠ 0) :
   · rw [sub_pos, div_lt_iff₀ (by linarith : (0 : ℝ) < q)]
     nlinarith
 
+/-- The energy change of a single division step carrying coefficient `coeff`.
+    Only the Hecke relation moves energy; Yang-Baxter and far commutativity are
+    energy-preserving. This is the per-step form of the `.hecke`-only filter
+    used by `energy_path_independent` below. -/
+-- Ref: [manuscript] §6/groebner-shirshov-energy
+noncomputable def stepEnergyChange (q coeff : ℝ) : DivisionStepType → ℝ
+  | .hecke => heckeEnergyChange q coeff
+  | .yangBaxter => 0
+  | .farComm => 0
+
 /-- Yang-Baxter steps have zero energy change. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-theorem yangBaxter_energy_zero (step : DivisionStepType) (h : step = .yangBaxter) :
-    (0 : ℝ) = 0 := rfl
+theorem yangBaxter_energy_zero (q coeff : ℝ) (step : DivisionStepType)
+    (h : step = .yangBaxter) : stepEnergyChange q coeff step = 0 := by
+  subst h; rfl
 
 /-- Far commutativity steps have zero energy change. -/
 -- Ref: [manuscript] §6/groebner-shirshov-energy
-theorem farComm_energy_zero (step : DivisionStepType) (h : step = .farComm) :
-    (0 : ℝ) = 0 := rfl
+theorem farComm_energy_zero (q coeff : ℝ) (step : DivisionStepType)
+    (h : step = .farComm) : stepEnergyChange q coeff step = 0 := by
+  subst h; rfl
+
+/-- The step hypothesis in the two results above is load-bearing: the remaining
+    constructor genuinely moves energy, so neither statement holds for an
+    arbitrary `step`. -/
+-- Ref: [manuscript] §6/groebner-shirshov-energy
+theorem stepEnergyChange_hecke_ne_zero (q coeff : ℝ) (hq : 1 < q) (hc : coeff ≠ 0) :
+    stepEnergyChange q coeff .hecke ≠ 0 := by
+  simpa [stepEnergyChange] using ne_of_gt (heckeEnergyChange_pos q hq coeff hc)
 
 /-- The total energy change is the sum of Hecke step energies.
     Yang-Baxter and far commutativity contribute zero. -/

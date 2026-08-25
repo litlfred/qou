@@ -77,7 +77,7 @@ from schur_principal_mpmath import (  # noqa: E402
     y_lambda_at_q0_mpmath, partitions_of, _f_lambda,
 )
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
-from _precision import set_compute_dps  # noqa: E402
+from _precision import fmt, set_compute_dps, str_at_true_precision  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 warnings.filterwarnings("ignore")
@@ -116,13 +116,45 @@ def chi_atom(shape: tuple[int, ...], Z: int, N: int, q: mp.mpf) -> mp.mpf:
     sig, dim, _ = build_seminormal_matrices(tuple(shape), q=qf)
     if dim == 0:
         return mp.mpf(0)
-    word = atom_braid_word_3A(Z, N, include_inter=True, q=q)  # (c, d, gen0) at q
+    # `allow_float64=True` DECLARES the loss where it actually happens. The
+    # seminormal matrices are built at `float(q)` and each letter is assembled
+    # as `float(c)·σ + float(d)·I`, so this χ path is f64 end to end whatever
+    # precision `q` carries in. `reject_float64_q` (efcaf79ed) is right that a
+    # 50-dps pipeline must not be silently capped at 17 digits; it is not being
+    # silenced here, it is being answered — the PRECISION note in this module's
+    # docstring and the witness caveat say the same thing in prose.
+    word = atom_braid_word_3A(Z, N, include_inter=True, q=q,  # (c, d, gen0) at q
+                              allow_float64=True)
     I = np.eye(dim)
     prod = np.eye(dim)
     for (c, d, g) in word:
         M = float(c) * sig[g] + float(d) * I
         prod = prod @ M
     return mp.mpf(float(np.trace(prod)))
+
+
+F64_SIG_DIGITS = 17          # binary64's round-trip decimal width
+
+
+def fmt_f64_limited(x: mp.mpf) -> str:
+    """Serialize a value whose NARROWEST input was the f64 χ kernel.
+
+    `str_at_true_precision` cannot detect this case, and silently gets it wrong
+    in the expensive direction.  Its test is representational and exact — "is
+    this mpf equal to its own float64?" — which is right for a pure f64 kernel
+    output.  But `F = Σ y_λ(q)·χ^λ(β;q)·Δ_λ` MIXES a 50-dps mpmath weight with
+    an f64 character, so the product is not a 53-bit dyadic and the helper keeps
+    all 50 digits, ~34 of which the χ kernel never supplied.  That reads as
+    measured and is worse than the raw float64 it replaced.
+
+    So the mixed case is handled by hand, at the same limit
+    `str_at_true_precision` would apply to a pure f64 value: the kernel's own
+    round-trip width.  ACCURACY is looser still — the measured seminormal
+    accumulation `chi_vs_witness_max_rel_at_q0` is ~1.5e-6 — but that is a
+    caveat about the number, not a reason to truncate it: a witness has to stay
+    reproducible, and these digits ARE what the kernel produced.
+    """
+    return fmt(x, F64_SIG_DIGITS)
 
 
 def F_iso(Z: int, N: int, q: mp.mpf, min_rows: int = 3) -> mp.mpf:
@@ -169,7 +201,7 @@ def bisect_cross(f, qa: mp.mpf, qb: mp.mpf, fa: mp.mpf, fb: mp.mpf,
     return (qa + qb) / 2
 
 
-def validate_chi_at_q0(names=("D", "T")) -> float:
+def validate_chi_at_q0(names=("D", "T")) -> mp.mpf:
     """Cross-check χ^λ(β_K;q₀) against the canonical atom-chi witnesses (sign+value).
 
     Validate on the smaller isotopes (D n=6, T n=9) — enough to confirm the
@@ -177,7 +209,7 @@ def validate_chi_at_q0(names=("D", "T")) -> float:
     """
     import json
     COMP = Path(__file__).resolve().parent.parent
-    max_rel = 0.0
+    max_rel = mp.mpf(0)
     for name in names:
         Z, N = ZN[name]
         wf = COMP / f"atom-chi-rust-{name.lower()}.witness.json"
@@ -188,7 +220,7 @@ def validate_chi_at_q0(names=("D", "T")) -> float:
             lam = tuple(e["partition"])
             r = mp.mpf(e["chi_lambda"])
             mine = chi_atom(lam, Z, N, Q0)
-            rel = float(abs(mine - r) / (abs(r) + mp.mpf("1e-40")))
+            rel = abs(mine - r) / (abs(r) + mp.mpf("1e-40"))
             max_rel = max(max_rel, rel)
     return max_rel
 
@@ -203,7 +235,8 @@ def main() -> int:
 
     # --- convention gate: χ path vs canonical witnesses at q₀ --------------
     chi_rel = validate_chi_at_q0()
-    print(f"\n χ^λ(β_K;q₀) vs canonical atom-chi witnesses: max rel diff = {chi_rel:.2e}"
+    print(f"\n χ^λ(β_K;q₀) vs canonical atom-chi witnesses: max rel diff = "
+          f"{float(chi_rel):.2e}"
           f"  ({'OK' if chi_rel < 1e-5 else 'FAIL'}; f64 seminormal accumulation)")
 
     import time
@@ -230,17 +263,21 @@ def main() -> int:
         for i in range(len(grid) - 1):
             if vals[i] != 0 and vals[i + 1] != 0 and (vals[i] > 0) != (vals[i + 1] > 0):
                 qc = bisect_cross(f, grid[i], grid[i + 1], vals[i], vals[i + 1], iters=24)
-                crossings.append(float(qc))
+                crossings.append(qc)          # keep the mpf; serialize at the sink
         crossed = s_lo != s_hi or len(crossings) > 0
+        # PRIMARY block: every value here passes through the f64 χ kernel, so it
+        # is serialized at that kernel's width, not at mpmath's.
         iso_rows[name] = {
             "Z": Z, "N": N, "n_strands": 3 * (Z + N),
-            "F_at_qlo": float(vals[0]), "F_at_q0": float(vals[-1]),
+            "F_at_qlo": fmt_f64_limited(vals[0]),
+            "F_at_q0": fmt_f64_limited(vals[-1]),
             "sign_qlo": s_lo, "sign_q0": s_hi,
             "sign_crossed": bool(crossed),
             "n_crossings_on_grid": len(crossings),
-            "crossing_q_values": crossings,
+            "crossing_q_values": [fmt_f64_limited(c) for c in crossings],
         }
-        cs = f"CROSS @ q={crossings}" if crossings else "no crossing"
+        cs = (f"CROSS @ q={[float(c) for c in crossings]}" if crossings
+              else "no crossing")
         print(f"  {name:4s} n={3*(Z+N):2d}  F(q_lo)={float(vals[0]):+.5e}  "
               f"F(q₀)={float(vals[-1]):+.5e}  sign {s_lo:+d}→{s_hi:+d}  {cs}")
 
@@ -256,15 +293,19 @@ def main() -> int:
         crossings = []
         for i in range(len(grid) - 1):
             if (vals[i] > 0) != (vals[i + 1] > 0):
-                crossings.append(float(bisect_cross(f, grid[i], grid[i + 1],
-                                                    vals[i], vals[i + 1])))
+                crossings.append(bisect_cross(f, grid[i], grid[i + 1],
+                                              vals[i], vals[i + 1]))
+        # G is character-free and therefore full 50-dps mpmath — these keep
+        # every digit, where the primary block above keeps 53 bits' worth.
         cf_rows[str(n)] = {
-            "G_at_qlo": float(vals[0]), "G_at_q0": float(vals[-1]),
+            "G_at_qlo": str_at_true_precision(vals[0]),
+            "G_at_q0": str_at_true_precision(vals[-1]),
             "sign_qlo": s_lo, "sign_q0": s_hi,
             "sign_crossed": bool(s_lo != s_hi or crossings),
-            "crossing_q_values": crossings,
+            "crossing_q_values": [str_at_true_precision(c) for c in crossings],
         }
-        cs = f"CROSS @ q={crossings}" if crossings else "no crossing"
+        cs = (f"CROSS @ q={[float(c) for c in crossings]}" if crossings
+              else "no crossing")
         print(f"  n={n:2d}  G(q_lo)={float(vals[0]):+.5e}  G(q₀)={float(vals[-1]):+.5e}  "
               f"sign {s_lo:+d}→{s_hi:+d}  {cs}")
 
@@ -299,7 +340,7 @@ def main() -> int:
     w.add_parameter("free_parameters", 0)
     w.add_parameter("grid_npts", npts)
     w.add_parameter("chi_precision", "f64 Hoefsmit seminormal (no mpfr kernel in sandbox)")
-    w.add_data("chi_vs_witness_max_rel_at_q0", chi_rel)
+    w.add_data("chi_vs_witness_max_rel_at_q0", fmt_f64_limited(chi_rel))
     w.add_data("primary_full_character_object", iso_rows)
     w.add_data("companion_character_free", cf_rows)
     w.add_data("any_isotope_sign_crossed", bool(any_iso_cross))
@@ -328,6 +369,18 @@ def main() -> int:
             f"character object. n=6 (D) and n=9 (T,³He) fully answer the light-chain "
             f"crossing question."
         )
+    w.add_caveat(
+        f"SERIALIZATION SPLIT (raw-float64 ratchet). Every numeric field is a "
+        f"decimal string, at the precision of its NARROWEST input. The PRIMARY "
+        f"block passes through the f64 χ kernel and is written at that kernel's "
+        f"round-trip width ({F64_SIG_DIGITS} significant digits) — the same "
+        f"digits the previous raw-float64 output carried, neither inflated nor "
+        f"lost. The COMPANION block is character-free and therefore full 50-dps "
+        f"mpmath, and now shows all of it where float64 was discarding ~34 "
+        f"digits. Note the two are NOT interchangeable: representational width "
+        f"is not accuracy, and the χ path's accuracy is the ~1.5e-6 recorded in "
+        f"chi_vs_witness_max_rel_at_q0, far looser than {F64_SIG_DIGITS} digits."
+    )
     w.add_caveat(
         "value_only object: F_K is NOT a binding energy (Δ_λ is value-only; the "
         "extensive super-pairwise magnitude term is open). This probe tests ONLY "

@@ -48,6 +48,17 @@ will adjust the working precision.
 """
 from __future__ import annotations
 
+
+# Path bridge (subdirectory refactor — Phase 6, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+del _sys, _Path
+
 import sys
 from pathlib import Path
 from typing import Iterator
@@ -170,13 +181,13 @@ VOL_6_2_MPF       = _vol_6_2(COMPUTE_DPS)
 VOL_8_11_MPF      = _vol_8_11(COMPUTE_DPS)
 CATALAN_G_MPF     = _catalan_G(COMPUTE_DPS)
 
-VOL_4_1_F64       = float(VOL_4_1_MPF)
-VOL_BORROMEAN_F64 = float(VOL_BORROMEAN_MPF)
-VOL_7_SQ_1_F64    = float(VOL_7_SQ_1_MPF)
-VOL_5_2_F64       = float(VOL_5_2_MPF)
-VOL_6_2_F64       = float(VOL_6_2_MPF)
-VOL_8_11_F64      = float(VOL_8_11_MPF)
-CATALAN_G_F64     = float(CATALAN_G_MPF)
+VOL_4_1_F64       = float(VOL_4_1_MPF)        # noqa: I8 — intentional f64 dual-precision constant for f64-mode consumers
+VOL_BORROMEAN_F64 = float(VOL_BORROMEAN_MPF)  # noqa: I8 — intentional f64 dual-precision constant for f64-mode consumers
+VOL_7_SQ_1_F64    = float(VOL_7_SQ_1_MPF)     # noqa: I8 — intentional f64 dual-precision constant for f64-mode consumers
+VOL_5_2_F64       = float(VOL_5_2_MPF)        # noqa: I8 — intentional f64 dual-precision constant for f64-mode consumers
+VOL_6_2_F64       = float(VOL_6_2_MPF)        # noqa: I8 — intentional f64 dual-precision constant for f64-mode consumers
+VOL_8_11_F64      = float(VOL_8_11_MPF)       # noqa: I8 — intentional f64 dual-precision constant for f64-mode consumers
+CATALAN_G_F64     = float(CATALAN_G_MPF)      # noqa: I8 — intentional f64 dual-precision constant for f64-mode consumers
 
 # Backward-compat aliases (mass_table_ppb.py, magic_A_formula.py,
 # alpha_cluster_recursion.py, family_1_kashaev.py originally

@@ -1,5 +1,6 @@
 import Mathlib.RingTheory.RootsOfUnity.Basic
 import Mathlib.RingTheory.Polynomial.Cyclotomic.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Level-2 SU(2) Verlinde witness at a primitive 8th root of unity
@@ -108,6 +109,22 @@ theorem hecke_eigenvalues (σ : R) (h : (σ - ζ) * (σ + ζ⁻¹) = 0) :
 noncomputable def qInt (q : R) (n : ℕ) : R :=
   if q = q⁻¹ then (n : R) else (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
 
+/-- **Bridge to the canonical singular-locus-guarded bracket.**
+
+The guard here is written `q = q⁻¹`, which is the same locus as
+`q − q⁻¹ = 0` (`sub_eq_zero`) — so this is the two-sided `qIntBalClSing`, not
+the one-sided `qIntBalCl`.  That matters in this file specifically: the roots of
+unity it works with sit exactly where the balanced denominator degenerates, so
+which guard is in force is not a formality here. -/
+theorem qInt_eq_canonical (q : R) (n : ℕ) :
+    qInt q n = QOU.QInteger.qIntBalClSing q n := by
+  unfold qInt QOU.QInteger.qIntBalClSing
+  rw [← sub_eq_zero (a := q) (b := q⁻¹)]
+  split_ifs with h
+  · rfl
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
+
 /-- **Identity (3): `[4]_q = 0` at `q = ζ`** (first vanishing quantum
     integer).
 
@@ -141,16 +158,19 @@ theorem qInt_four_eq_zero (hζ : IsPrimitiveRoot ζ 8) : qInt ζ 4 = 0 := by
   rw [if_neg hnei, zpow_neg, zpow_natCast, h4]
   norm_num
 
-/-- **Wenzl annihilator at `q = ζ` (level-2 SU(2) Verlinde truncation)**.
+/-- **Wenzl-annihilator target at `q = ζ` (level-2 SU(2) Verlinde truncation)**,
+    as a **predicate** on the character value: the Hecke character `χ^λ` at
+    `q = ζ` (given as a function of the first-column length) vanishes for every
+    partition `λ` with first-column length `≥ 4` — the categorical content of the
+    universal `Φ_8` cancellation at `M = 7`.
 
-    For any partition `λ` with first-column length `≥ 4`, the Hecke
-    character `χ^λ` at `q = ζ` has zero quantum trace — the categorical
-    content of the universal `Φ_8` cancellation at `M = 7`. Stated as a
-    structural target; a full proof needs the Wenzl projector machinery
-    not yet in Mathlib. -/
-theorem wenzl_annihilator (_n : ℕ) (firstCol : ℕ) (_h : 4 ≤ firstCol) :
-    ∃ chi_lambda_at_zeta : R, chi_lambda_at_zeta = 0 :=
-  -- Ref: [wenzl1987] §3 Theorem 3.1; [jones1987] §5; [witten1989] §4.
-  ⟨0, rfl⟩
+    Named (§3b), not asserted: the previous
+    `wenzl_annihilator (_n) (firstCol) (_h : 4 ≤ firstCol) :
+    ∃ chi, chi = 0 := ⟨0, rfl⟩` was trivially true in every ring and used none of
+    its hypotheses. A full proof needs the Wenzl projector machinery not yet in
+    Mathlib. -/
+-- Ref: [wenzl1987] §3 Theorem 3.1; [jones1987] §5; [witten1989] §4.
+def wenzlAnnihilatorHolds (chi_lambda_at_zeta : ℕ → R) : Prop :=
+  ∀ firstCol : ℕ, 4 ≤ firstCol → chi_lambda_at_zeta firstCol = 0
 
 end QOU.BraidKnot.Zeta8Witness

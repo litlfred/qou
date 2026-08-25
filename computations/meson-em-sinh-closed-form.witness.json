@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-07T00:02:18.133944+00:00",
-  "commitSha": "ae890226b4f6b93ff173aacf5ef5515b5e013d73",
+  "computedAt": "2026-08-22T19:24:16.545738+00:00",
+  "commitSha": "b9b87e05051cb1a6607623dc2675a6e328778dca",
   "assertions": [
     {
       "name": "closed_form_ring_identity",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 7,
   "computation": "meson-em-sinh-closed-form",
   "scriptFile": "meson_em_sinh_closed_form.py",
-  "scriptHash": "973373c8ac74",
-  "scriptCommitSha": "5a68b7fcaf26905ef42dd980580d604e8fa13524",
+  "scriptHash": "bc6c8a107d4b",
+  "scriptCommitSha": "4fe2715ad3aab1fc1b03986991d98c2bbae8ad7c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,54 +35,102 @@
   },
   "environment": {
     "python": "3.11.15",
-    "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
   },
-  "description": "Closed-form identity (1 + ℏ_q − ℏ_q²/2) = (3q² − 1)/(2q²), verified at q₀ to machine precision. Full meson m_K²/m_π² closure form: [3]_q[4]_q + (α_em/π)·(3q² − 1)/(2q²). At q₀: +0.047 ppm. The numerator 3q²−1 reflects 3 generations + substrate; denominator 2q² is the standard EM-self-energy halving on the substrate-natural scale.",
+  "invocation": {
+    "argv": [
+      "computations/meson_em_sinh_closed_form.py"
+    ],
+    "reproduce": "python3 -u computations/meson_em_sinh_closed_form.py"
+  },
+  "description": "Meson m_K²/m_π² closure: [3]_q[4]_q + (α_em/π)·(1 + log(1+ℏ_q)), the FULL series. At q₀: +0.103 ppm. DE-FITTED 2026-08-22 (owner directive 2026-08-09): the two-term truncation (3q²−1)/(2q²) was removed as a data-selected stopping point — it is the ONLY order below the series limit (23.45 ppb vs a converged 51.475 ppb), the signature of a fit. The ring identity (1+ℏ_q−ℏ_q²/2) = (3q²−1)/(2q²) remains exact and is still verified here; it is the identification of that truncation as the physical factor that was wrong. Cost 23.45 → 51.48 ppb, still inside the 263.6 ppb L2 target at 5.1x margin.",
   "auditOnly": "docs/audits/2026-05-28-meson-mass-ratio-derived-vs-fitted.md",
   "data": {
     "series_form_at_q0": "1.0941731228171209709",
     "closed_form_at_q0": "1.0941731228171209709",
     "ring_identity_residual": 0.0,
-    "full_meson_miss_ppm": 0.04689941461668807,
+    "full_meson_miss_ppm": 0.10295080617708441,
+    "em_factor_form": "1 + log(1 + hbar_q)  [FULL series, de-fitted 2026-08-22]",
+    "em_factor_at_q0": "1.0944750275656286258",
+    "em_truncation_order_sweep_ppb": [
+      {
+        "stop_at_hbar_power": 1,
+        "m_K_over_m_pi_err_ppb": "479.112317856"
+      },
+      {
+        "stop_at_hbar_power": 2,
+        "m_K_over_m_pi_err_ppb": "23.4497070334"
+      },
+      {
+        "stop_at_hbar_power": 3,
+        "m_K_over_m_pi_err_ppb": "53.5482690495"
+      },
+      {
+        "stop_at_hbar_power": 4,
+        "m_K_over_m_pi_err_ppb": "51.3116061994"
+      },
+      {
+        "stop_at_hbar_power": 5,
+        "m_K_over_m_pi_err_ppb": "51.4888961143"
+      },
+      {
+        "stop_at_hbar_power": 6,
+        "m_K_over_m_pi_err_ppb": "51.4742576234"
+      },
+      {
+        "stop_at_hbar_power": 7,
+        "m_K_over_m_pi_err_ppb": "51.4755008293"
+      },
+      {
+        "stop_at_hbar_power": 8,
+        "m_K_over_m_pi_err_ppb": "51.4753930477"
+      },
+      {
+        "stop_at_hbar_power": null,
+        "m_K_over_m_pi_err_ppb": "51.4754017637"
+      }
+    ],
+    "em_truncation_order_sweep_note": "Order 2 is the ONLY stopping order below the converged limit (51.4754 ppb) — a non-monotonic dip. That is why the two-term truncation is a fit and not a derivation.",
     "alpha_em_inv_derived_exact": "137.035935093976",
     "alpha_em_source": "derived (q·[9]_q·[10]_q dressed by the CS tower); NOT the experimental value",
     "cs_tower_order_sweep": [
       {
         "order": 0,
         "alpha_em_inv": 136.82320885358257,
-        "meson_miss_ppb": 362.736985593755
+        "meson_miss_ppb": 418.87552320119516
       },
       {
         "order": 1,
         "alpha_em_inv": 137.03536721305434,
-        "meson_miss_ppb": 47.74124986897949
+        "meson_miss_ppb": 103.79287370894366
       },
       {
         "order": 2,
         "alpha_em_inv": 137.03593357799554,
-        "meson_miss_ppb": 46.901661919145546
+        "meson_miss_ppb": 102.9530540996186
       },
       {
         "order": 3,
         "alpha_em_inv": 137.03593508992864,
-        "meson_miss_ppb": 46.89942061594878
+        "meson_miss_ppb": 102.95081217800043
       },
       {
         "order": 6,
         "alpha_em_inv": 137.0359350939756,
-        "meson_miss_ppb": 46.89941461668818
+        "meson_miss_ppb": 102.95080617708452
       },
       {
         "order": 12,
         "alpha_em_inv": 137.0359350939756,
-        "meson_miss_ppb": 46.89941461668807
+        "meson_miss_ppb": 102.9508061770844
       },
       {
         "order": "exact",
         "alpha_em_inv": 137.0359350939756,
-        "meson_miss_ppb": 46.89941461668807
+        "meson_miss_ppb": 102.9508061770844
       }
     ],
     "cs_tower_converges_but_not_to_measurement": true

@@ -70,7 +70,7 @@ deformation — the honest home for the decision.
 ## 5. Next compute (deferred; needs the uploaded source, not conventions)
 
 Implement `𝔙(u)` for 4₁ from Murakami's explicit formulas
-(`uploads/0401084v3.pdf`, theorem-grade; cross-check against the merged
+(`library/arxiv-math-0401084v3/0401084v3.pdf`, theorem-grade; cross-check against the merged
 Newton solver on the real slice and Hikami's NZ series
 `2v = −2πi + 4√3iu + …`), then evaluate the NAMED candidates
 `(N, k) ∈ {3, 6, 60, 120} × {1, 2}` at both anchors against all four gates.

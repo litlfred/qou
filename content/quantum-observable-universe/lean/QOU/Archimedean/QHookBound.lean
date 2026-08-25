@@ -1,6 +1,7 @@
 import QOU.Archimedean.GroundRing
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # q-Hook Perturbation Bound
@@ -44,6 +45,14 @@ open QOU.Archimedean
 noncomputable def qIntReal (q : ℝ) (m : ℕ) : ℝ :=
   if _hq : q = 1 then m
   else (q ^ m - q⁻¹ ^ m) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.** The alias was refused —
+a proof below needs this literal body — so the consolidation is this
+equation: same function, one canonical meaning, no proof touched. -/
+theorem qIntReal_eq_canonical (q : ℝ) (m : ℕ) :
+    qIntReal q m = QOU.QInteger.qIntBalCl q m := by
+  simp [qIntReal, QOU.QInteger.qIntBal, QOU.QInteger.qIntBalCl,
+    QOU.Mass.QHookDimensionBalanced.qIntBal, inv_pow, zpow_neg, zpow_natCast]
 
 /-- For q > 1 and m ≥ 1, [m]_q > 0. -/
 theorem qInt_pos (q : ℝ) (hq : q > 1) (m : ℕ) (hm : m ≥ 1) :

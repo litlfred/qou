@@ -181,7 +181,7 @@ for k, ck in CKS.items():
 
 # Prefactor P(q) = (Q_A/m_e)·cos(α − u/2)   [dimensionless, q-dependent]
 QA_over_me = (1 + 2 * q - q ** 2) * (q + 1) / (2 * q ** 3)  # |q²−2q−1| = 1+2q−q² near q=1
-z_expr = sp.sqrt(q) / (q + 1)
+z_expr = q ** 3 / (q ** 2 + 1)   # convention D (was C: sqrt(q)/(q+1))
 alpha_expr = (z_expr - 1) * (q - 1 / q) / 2
 t_series = trunc(ser(alpha_expr) - u_series / 2)  # argument of cos, O(h)
 t_sq = trunc(t_series * t_series)
@@ -260,7 +260,7 @@ def R2mp(r):
 
 def chain(q0):
     """The N3-producer chain at anchor q0 → dict of mpf quantities."""
-    zq = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    zq = q0**3 / (q0**2 + 1)
     H = q0 - 1 / q0
     alpha = (zq - 1) * H / 2
     hbar = (q0 - 1) / q0

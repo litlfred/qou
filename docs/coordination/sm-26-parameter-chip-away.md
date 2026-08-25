@@ -85,13 +85,18 @@ canonically: `κ = sign(κ)·|κ| = T₃ × generation-winding`, so **T₃ = sig
 reads as the generation* — orthogonal by construction, derived from the oriented
 crossing already in the corpus (not a second postulate). Sorry-free Lean (exit 0,
 axioms clean): **charm ≠ strange** (both n=5, opposite T₃) resolves the meson
-degeneracy, and **GMN `Q = T₃ + Y/2` is PROVED for all six quarks** (a theorem that
-would break under a wrong sign/½ — derive-then-check passed). Honest remainder
+degeneracy, and **GMN `Q = T₃ + Y/2` closes** — a real derive-then-check (a wrong sign or a
+wrong ½ breaks it). **State its width, though:** quantified over six quarks it
+collapses to **two** distinct rows, since `Y` is constant and `Q`, `T₃` both
+depend only on the up/down-type bit. One sign correlation plus one
+normalisation, checked twice — now machine-checked as such
+(`gmn_check_has_two_distinct_rows`, `genWinding_finer_than_gmn_data`), so the
+"all six quarks" phrasing cannot be read as six confirmations. Honest remainder
 (conjecture class, no instance): up=positive is *inherited* from the ⋈_K strong-
 isospin datum (consistent, not *forced*), and the SU(2)_L gauge/CKM lift is open —
 both reduce to the open SU(3)-flavour sector. So: a real orthogonal ℤ/2 passing GMN,
 NOT yet *the* gauged weak isospin. Chiral-EFT lit for the binding-side template in
-`uploads/` (owner: 1011.1343, 1906.12122, s00601-2022).
+`library/` (owner: 1011.1343, 1906.12122, s00601-2022).
 
 **★★★ UPDATE — the two follow-on tests (both landed, both honest negatives that sharpen):**
 - **`qou-buxs` (T₃ vs Δ_λ sign), #4623 — DERIVED negative.** The literal T₃ = sign(net

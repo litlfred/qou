@@ -124,8 +124,8 @@ def tr_m_via_combiner(Z: int, N: int, dps: int = 50) -> dict:
         "trM_transfer": mp.nstr(abs(tr_ref), dps),
         "abs_diff": mp.nstr(abs_d, 6),
         "rel_diff": mp.nstr(rel_d, 6),
-        "combiner_wall_s": round(comb_wall, 2),
-        "transfer_wall_s": round(ref_wall, 3),
+        "combiner_wall_s": f"{comb_wall:.2f}",
+        "transfer_wall_s": f"{ref_wall:.3f}",
     }
 
 

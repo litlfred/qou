@@ -1,0 +1,58 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-q-alg-9504020v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "0baef40fa9934c9119af2c67252f8032e288c884da72eeaecf405bf91569cda9",
+  "file": "9504020v1.pdf"
+ },
+ "provenance": {
+  "title": "\u2217On leave from St. Petersburg Branch of the Steklov Mathemati cal Institute, Fontanka 27, St. Petersburg 191011, RUSSIA \u2020URA 14-36 du CNRS, associ\u00b4 ee ` a l\u2019E.N.S. de Lyon, et ` a l\u2019Universit` e de Savoie",
+  "authors": null,
+  "arxiv": {
+   "id": "q-alg/9504020",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "24 Apr 1995"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 2,
+  "by_kind": {
+   "remark": 1,
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "ably, quantized dilogarithm identity, like YBE, is a lso connected with",
+   "section_file": "sections/sec-001-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "2-2",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1",
+   "name": null,
+   "statement": "(1) The quantity \u27e8L\u27e9N is an ambient isotopy invariant of the link",
+   "section_file": "sections/sec-003-3-invariants-of-links-in-three-sphere.md",
+   "section_title": "Invariants of Links in Three-Sphere",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

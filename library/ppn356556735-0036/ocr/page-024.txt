@@ -1,0 +1,60 @@
+Trigonometric Sums 193
+
+5.6. Theorem (orthogonality relations of Green functions). Assume that p+2
+or that G is k-isomorphic to GL, and that q is sufficiently large. Let T and T, be
+two F-stable maximal tori of G. Then
+
+IG? Y Orn, cAOI=IT ITE MING(T, T,)'\.
+
+ere:
+
+We prove this by induction on the semisimple rank s(G) of G. If s(G)=0 then G
+is a torus and the statement is trivial. Suppose now the theorem to be true for
+all G, with s(G,)<s(G). By 2.8 and 5.3 we may assume that G is either semisimple
+and adjoint or that G~GL, (notice that the set of rational nilpotents of g is not
+affected by passing to the adjoint group). In fact, if p=3 and if the root system ®
+contains an irreducible component of type A, then 2.8 does not apply, and an
+extra argument is needed. Arguing as in the beginning of the proof of 2.8, we
+reduce to the case G=SL, (and p=3). Then gcgl, and it is easily seen that the
+orthogonality properties for G can be obtained from those for GL;. Since the
+case G=GL,, can be disposed of without assumptions on the characteristic (see
+below), this exceptional case does not cause trouble. Assume now that G is
+adjoint semisimple. Then the center of g consists of 0 only. Let A’, Aj be strongly
+regular elements in (t’)’, (t;)’. By the orthogonality relations for the group
+characters of the finite group g* we have (the bar having the obvious meaning)
+
+Y S9(X, ASX, A)=lg WGN ea a5 (1)
+
+XegF
+where 4 4,=1 if A’ and Aj are G*-conjugate, and 0 otherwise. On the other
+hand, this sum equals
+
+» YX S&X+Y, A)S(X + Y, A}).
+Xegh Yeo?
+X semisimple ¥ nilpotent
+IX Y=0
+
+Let Hy be the connected centralizer of Xe g. If X is semisimple and [X, Y]=0,
+then Y lies in the Lie algebra by of Hy (see [3,p.225]). Using 3.15 and the
+
+induction assumption, the last sum can be transformed into (up to a factor
+g2tO(— yD +e(T)
+
+Y Or, o(X)Qr,,6(X)-1GF ITP! TEI ING (TT)
+
+xeWE
+HIT OTE! ARI? x
+XegF 8,816GF
+X semisimple Xead(g)t nad(gy)ty
+
+W(X, Ad’(g) A’) W(¢X, Ad'(g,) 41>) |Ny, (ad(g) T, ad(g,) T,)"1.
+The double sum equals
+
+YX WKAd(g) X, >) WCAd (ng) X, 47)
+x Malstiaets Adiayvet?
+neNg(T, Ti)
+=1G"| LY WKX, AD) WKAR) X, A,)= 1G It 6, 45
+Xet®
+neNg(T,T)F
+
+=1G |g" 1q7 Oey 4:

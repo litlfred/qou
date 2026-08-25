@@ -1,0 +1,313 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1304.2705v1",
+ "source": {
+  "file": "1304.2705v1.pdf",
+  "sha256": "cb07e66e418e11f235fe5368f3d882048d43a8a19f0fa53c219db88ce78260cb",
+  "bytes": 222723,
+  "pages": 16
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1304.2705",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "9 Apr 2013"
+  },
+  "doi": null,
+  "title": "FROM STATE INTEGRALS TO q-SERIES",
+  "authors_raw": "STA VROS GAROUF ALIDIS AND RINAT KASHAEV",
+  "abstract": "It is well-known to the experts that multi-dimensional state integra ls of prod- ucts of Faddeev’s quantum dilogarithm which arise in Quantum Topolog y can be written as ﬁnite sums of products of basic hypergeometric series in q = e2πiτ and ˜q = e− 2πi/τ . We illustrate this fact by giving a detailed proof for a family of one-dimens ional integrals which includes state-integral invariants of 4 1 and 5 2 knots.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180918081629-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "FROM STATE INTEGRALS TO q-SERIES"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "State-integrals and their q-series",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "q-difference equations",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "The case of the 41 knot",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "The case of the 52 knot",
+   "page": 5,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 1,
+   "title": "Proofs",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "A residue computation",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The Taylor series of m(x) and \"0365n(x)",
+   "page": 8,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The connection with the differential operators l and \"0365l",
+   "page": 8,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.1",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Some auxiliary power series",
+   "page": 10,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Proposition 2.2",
+   "page": 12,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Lemma 1.5",
+   "page": 13,
+   "source": "outline",
+   "number": "2.7"
+  },
+  {
+   "level": 1,
+   "title": "An application: state-integrals of the 41 and 52 knots",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Corollary 1.7",
+   "page": 14,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Corollary 1.8",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgments",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-state-integrals-and-their-q-series",
+   "number": "1.1",
+   "title": "State-integrals and their q-series",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 5854,
+   "n_words": 1155
+  },
+  {
+   "id": "sec-002-13-the-case-of-the-41-knot",
+   "number": "1.3",
+   "title": "The case of the 41 knot",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1399,
+   "n_words": 300
+  },
+  {
+   "id": "sec-003-14-the-case-of-the-52-knot",
+   "number": "1.4",
+   "title": "The case of the 52 knot",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1541,
+   "n_words": 398
+  },
+  {
+   "id": "sec-004-2-proofs",
+   "number": "2",
+   "title": "Proofs",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-005-21-a-residue-computation",
+   "number": "2.1",
+   "title": "A residue computation",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 10,
+   "n_chars": 4967,
+   "n_words": 1115
+  },
+  {
+   "id": "sec-006-25-some-auxiliary-power-series",
+   "number": "2.5",
+   "title": "Some auxiliary power series",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 3336,
+   "n_words": 777
+  },
+  {
+   "id": "sec-007-26-proof-of-proposition-22",
+   "number": "2.6",
+   "title": "Proof of Proposition 2.2",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-008-27-proof-of-lemma-15",
+   "number": "2.7",
+   "title": "Proof of Lemma 1.5",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 825,
+   "n_words": 160
+  },
+  {
+   "id": "sec-009-3-an-application-state-integrals-of-the-41-and-5",
+   "number": "3",
+   "title": "An application: state-integrals of the 41 and 52 knots",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-31-proof-of-corollary-17",
+   "number": "3.1",
+   "title": "Proof of Corollary 1.7",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 14,
+   "n_chars": 573,
+   "n_words": 144
+  },
+  {
+   "id": "sec-011-32-proof-of-corollary-18",
+   "number": "3.2",
+   "title": "Proof of Corollary 1.8",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 1102,
+   "n_words": 305
+  },
+  {
+   "id": "sec-012-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 166,
+   "n_words": 28
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3032,
+   "n_words": 435
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 14,
+  "chars_total": 22795
+ },
+ "duplicate_copies": [
+  "stateintegralsqseries"
+ ]
+}

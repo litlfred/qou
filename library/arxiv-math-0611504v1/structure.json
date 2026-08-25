@@ -1,0 +1,384 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0611504v1",
+ "source": {
+  "file": "0611504v1.pdf",
+  "sha256": "a33d2771c873a97e4f7c23b5cbab2ad55fa313e5d4b062f2338bdaf3ad639ec6",
+  "bytes": 621973,
+  "pages": 40
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0611504",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "16 Nov 2006"
+  },
+  "doi": null,
+  "title": "QUANTUM HYPERBOLIC GEOMETRY",
+  "authors_raw": "STÉPHANE BASEILHAC 1 AND RICCARDO BENEDETTI 2",
+  "abstract": "W e construct a new family, indexed by the odd integers N ≥ 1, of (2 + 1)-dimensional quantum ﬁeld theories called quantum hyperbolic ﬁeld theories (QHFT), and we study its main structural properties. The QHFT are deﬁned for (marked) (2 + 1)-bordisms supported by compact oriented 3-manifolds Y with a properly embedded framed tangle LF and an arbitrary P SL(2, C)- character ρ of Y \\ LF (covering, for example, the case of hyperbolic cone manifol ds). The marking of QHFT bordisms includes a speciﬁc set of parameters for the sp ace of pleated hyperbolic structures on punctured surfaces. Each QHFT associates in a constructi ve way to any triple ( Y, L F , ρ ) with marked boundary components a tensor built on the matrix dilo garithms, which is holomorphic in the boundary parameters. W e establish surgery formulas for QHFT partitions functions and describe their relations with the quantum hyperbolic invariants of [4, 5] (either deﬁned for unframed links in closed manifolds and characters trivial at the link meridia ns, or hyperbolic cusped 3-manifolds). For every P SL(2, C)-character of a punctured surface, we produce new families of conjugacy classes of “moderately projective” representations of the mapping cl ass groups. 1",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210913112621-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "QUANTUM HYPERBOLIC GEOMETRY"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Universal QHG",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Building blocks",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "QHG triangulated pseudomanifolds",
+   "page": 7,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "QHG universal functor",
+   "page": 9,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Towards geometric specializations",
+   "page": 10,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Parameters for PSL(2,C)-characters of surfaces",
+   "page": 12,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Efficient triangulations",
+   "page": 13,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Cocycle parameters",
+   "page": 14,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Cross-ratio parameters",
+   "page": 16,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "The QHFT bordism category",
+   "page": 20,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Marked topological bordisms",
+   "page": 20,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Boundary structures",
+   "page": 21,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "The QHFT functor",
+   "page": 22,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "From QHFT bordisms to QHG-triangulated pseudomanifolds",
+   "page": 22,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Amplitudes",
+   "page": 24,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "QHFT variants",
+   "page": 26,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Mapping class group representations",
+   "page": 26,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Tunneling the (+)/(-) states",
+   "page": 27,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Partition functions",
+   "page": 28,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "QHFT vs QHFT0 partition functions",
+   "page": 29,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Invariants of cusped manifolds and surgery formulas",
+   "page": 29,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Manifolds that fiber over S1 - Examples",
+   "page": 35,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 9211,
+   "n_words": 1526
+  },
+  {
+   "id": "sec-001-2-universal-qhg",
+   "number": "2",
+   "title": "Universal QHG",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 2077,
+   "n_words": 364
+  },
+  {
+   "id": "sec-002-21-building-blocks",
+   "number": "2.1",
+   "title": "Building blocks",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 9913,
+   "n_words": 1956
+  },
+  {
+   "id": "sec-003-22-qhg-triangulated-pseudomanifolds",
+   "number": "2.2",
+   "title": "QHG triangulated pseudomanifolds",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3890,
+   "n_words": 756
+  },
+  {
+   "id": "sec-004-23-qhg-universal-functor",
+   "number": "2.3",
+   "title": "QHG universal functor",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 14,
+   "n_chars": 19054,
+   "n_words": 3557
+  },
+  {
+   "id": "sec-005-32-cocycle-parameters",
+   "number": "3.2",
+   "title": "Cocycle parameters",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 6956,
+   "n_words": 1360
+  },
+  {
+   "id": "sec-006-33-cross-ratio-parameters",
+   "number": "3.3",
+   "title": "Cross-ratio parameters",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 20,
+   "n_chars": 15415,
+   "n_words": 2936
+  },
+  {
+   "id": "sec-007-4-the-qhft-bordism-category",
+   "number": "4",
+   "title": "The QHFT bordism category",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 148,
+   "n_words": 25
+  },
+  {
+   "id": "sec-008-41-marked-topological-bordisms",
+   "number": "4.1",
+   "title": "Marked topological bordisms",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3873,
+   "n_words": 762
+  },
+  {
+   "id": "sec-009-42-boundary-structures",
+   "number": "4.2",
+   "title": "Boundary structures",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 4091,
+   "n_words": 822
+  },
+  {
+   "id": "sec-010-5-the-qhft-functor",
+   "number": "5",
+   "title": "The QHFT functor",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 6435,
+   "n_words": 1161
+  },
+  {
+   "id": "sec-011-52-amplitudes",
+   "number": "5.2",
+   "title": "Amplitudes",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 7495,
+   "n_words": 1427
+  },
+  {
+   "id": "sec-012-53-qhft-variants",
+   "number": "5.3",
+   "title": "QHFT variants",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 2241,
+   "n_words": 412
+  },
+  {
+   "id": "sec-013-54-mapping-class-group-representations",
+   "number": "5.4",
+   "title": "Mapping class group representations",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 7265,
+   "n_words": 1375
+  },
+  {
+   "id": "sec-014-6-partition-functions",
+   "number": "6",
+   "title": "Partition functions",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 3300,
+   "n_words": 617
+  },
+  {
+   "id": "sec-015-62-invariants-of-cusped-manifolds-and-surgery-fo",
+   "number": "6.2",
+   "title": "Invariants of cusped manifolds and surgery formulas",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 40,
+   "n_chars": 35367,
+   "n_words": 7137
+  },
+  {
+   "id": "sec-016-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 4020,
+   "n_words": 591
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 24,
+  "sections": 17,
+  "chars_total": 140751
+ },
+ "duplicate_of": "agt-v7-n2-p13-s",
+ "duplicate_note": "Same work as library/agt-v7-n2-p13-s/, which was chosen as canonical because it is named by a references.ts entry. Kept on disk rather than deleted — existing citations may point here — but skipped by the ranking and the summary index so one work is not counted twice."
+}

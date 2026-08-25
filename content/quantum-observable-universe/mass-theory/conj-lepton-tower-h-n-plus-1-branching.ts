@@ -78,6 +78,24 @@ export default conjecture({
         "Option E (Kashiwara crystal, PR #1252). See " +
         "`docs/audits/2026-05-25-t6-f-ell-derivation-attempt.md` followup section.",
     },
+    {
+      kind: "refined-framing",
+      date: "2026-08-09",
+      body:
+        "**Base ring minimised (AGENTS.md §7c).** The q-bracket algebra in the " +
+        "Lean sibling moved from `[Field R]` + `field_simp` to a generic " +
+        "`[CommRing R]` with the modulus carried as a unit `q : Units R`, so " +
+        "`↑q⁻¹` is a `Units` coercion rather than a ring inverse. The two ξ_m " +
+        "closed forms are now division-free identities " +
+        "(`muon_xi_cross_mul`, `tau_xi_cross_mul`) that hold in every " +
+        "commutative ring with **no** non-vanishing hypotheses. Because ξ_m is " +
+        "itself a quotient of brackets, `lepton_xi` and the two theorems about " +
+        "it keep their field and their `≠ 0` hypotheses, now confined to a " +
+        "`RatioForm` section and derived from the generic identities by " +
+        "`div_eq_div_iff`. The conjecture's content is untouched: what is open " +
+        "is still the categorical derivation of the q-bracket form, not the " +
+        "algebra.",
+    },
   ],
   tags: [
     "tier:E",

@@ -136,7 +136,349 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.639Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.677Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 92 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.714Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 92 words)"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.750Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found.",
+        "evidence": "Three-item summary matches the chapter's three substantive blocks (initial conditions / observation braid / isotopy equivalence); substantive enumeration."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.789Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.830Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.868Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found.",
+        "evidence": "Chapter-close block: summarising what the chapter established is the block's function, not manufactured restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.905Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.942Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:00.080Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "cad606a3d459",
+          "ts": "73ad1d9ea8a5"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:pq_09",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T07:01:58.982Z",
+        "reviewed_sha": "7fb8fcfc1dbb2807b71f228072c268df9ff17611",
+        "severity": "Full-context agent read of the whole block; all ten trap categories judged in context. No instance of this category found."
+      }
+    ]
   },
-  "updated_at": "2026-07-07T14:26:56.445361Z"
+  "updated_at": "2026-08-22T07:01:58.982Z"
 }

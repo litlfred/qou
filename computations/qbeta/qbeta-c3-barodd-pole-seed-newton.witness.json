@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T23:05:08.112493+00:00",
-  "commitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:44:55.158200+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "complete_convention_vol_cs",
-      "computed": 4.591774807899561e-41,
+      "computed": 1.8111358157653425e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-25,
@@ -22,7 +22,7 @@
     },
     {
       "name": "branch_bar_parity_swap",
-      "computed": 1.857987377871281e-40,
+      "computed": 3.1369792523132786e-71,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-20,
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 43,
+  "durationMs": 63,
   "computation": "qbeta-c3-barodd-pole-seed-newton",
   "scriptFile": "qbeta_c3_barodd_pole_seed_newton_probe.py",
-  "scriptHash": "29c1f08cb134",
-  "scriptCommitSha": "a7a0cc4dd3adeea25889856bb4d85591ef093b5a",
+  "scriptHash": "300935b750b0",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,22 +44,32 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_barodd_pole_seed_newton_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_barodd_pole_seed_newton_probe.py"
   },
   "description": "Seeds Thurston's figure-8 gluing Newton with the real substrate pole q0^{-k}. Result: flows to the GOLDEN branch (z²−z−1=0, φ=1.618, real, Vol=0), NOT the cusp (z²−z+1=0, e^{iπ/3}). Bar-parity roles swap (Lean CuspShapeBarParity): cusp barOdd²=−3 (√−3=CS), golden barEven²=+5 (√5, no CS). Full Rogers-dilog CS at substrate scale ~1e-5 ≪ |S| — confirms landed geometry-side clean-negative (1a4894b8). Phase φ(q0) is the branch selector (open conj:agde). Scope-(a); C14; m(q0) NOT fitted; no c_k wired.",
   "contentBlock": "conj:algebraic-geometric-dilog-equivalence",
   "data": {
     "complete_convention": {
       "Vol": "2.02988321281930725",
-      "CS": "4.5917748079e-41"
+      "CS": "1.81113581577e-71"
     },
     "pole_seed_branch": {
       "golden_phi": "1.6180339887498948482",
       "result": "real pole q0^{-k} -> golden branch (real, Vol=0), not cusp"
     },
     "branch_bar_parity": {
-      "cusp_barOdd_sq": "(-3.0 - 1.98829681605e-41j)",
+      "cusp_barOdd_sq": "(-3.0 - 3.13697925231e-71j)",
       "golden_barEven_sq": "5.0",
       "lean": "QOU.QBeta.CuspShapeBarParity (cuspShape_barOdd_sq=−3, goldenShape_barEven_sq=+5)"
     },

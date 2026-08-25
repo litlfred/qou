@@ -26,8 +26,10 @@ import sys
 import time
 
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 
 def perms(n):

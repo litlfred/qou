@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-05T11:28:21.676943+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "computedAt": "2026-08-16T12:51:06.975845+00:00",
+  "commitSha": "0504169edd19fe9e2be816b643b2377a3d895cce",
   "assertions": [
     {
       "name": "binding_rows_count",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 14,
   "computation": "binding-q-target-sweep",
   "scriptFile": "binding_q_target_sweep.py",
   "scriptHash": "81724512cfee",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "bd1bdfe0583787dcbaaaa0a6d7b40a50159cdfb6",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,9 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Per-isotope binding-energy + Q_β precision-ladder sweep against Workplan v7 L2 100×-experimental targets. Shows current canonical state across all on-disk witnesses. Audit-only — no new predictions.",
   "data": {
@@ -229,19 +231,19 @@
     "upstream_witness_hashes": [
       {
         "path": "canonical-tr-m-via-chi-cache.witness.json",
-        "sha256": "362895b37d1f179579e53d5f606b8c51cd5388e3fec33572a62bda0692d57183",
-        "size_bytes": 45669,
-        "commitSha": "2bfeb6134ad67611ad2873e0c92a5c47af4f65cd",
-        "scriptCommitSha": "e4bc522ce86b2886977509df649613bacb0de950",
-        "computedAt": "2026-06-29T15:46:46.528162+00:00"
+        "sha256": "ce6a8438d3859acaf7944825bde12efe5a6555999983e294f9b852e89796c91f",
+        "size_bytes": 50664,
+        "commitSha": "5f881d3ad7b1b9e330b0b3a77ff1b9a11898d63e",
+        "scriptCommitSha": "e5dcd8f544149dd7d3706e92d42278f70c4fd393",
+        "computedAt": "2026-08-10T01:32:42.734242+00:00"
       },
       {
         "path": "mass-table-ppb.witness.json",
-        "sha256": "72c93a1ae5c1ad8154a4660c97b0aee985e18e6a8b5d2e903588dd512914b89b",
-        "size_bytes": 11913,
-        "commitSha": "cf175829ea7eb4cb53526e1c0955680945eb935e",
-        "scriptCommitSha": "fb92449d6b0184c1e5d73617fc033973591bfaa3",
-        "computedAt": "2026-06-22T12:36:08.687751+00:00"
+        "sha256": "b4ae85f99a4de169bb12931025bb08521d08a73b648f81e24654623ea2e19e54",
+        "size_bytes": 16544,
+        "commitSha": "0504169edd19fe9e2be816b643b2377a3d895cce",
+        "scriptCommitSha": "b393679b5ba10c0aa16a8d421800e30e52a8019d",
+        "computedAt": "2026-08-16T12:43:52.890299+00:00"
       },
       {
         "path": "q-beta-predicted.witness.json",

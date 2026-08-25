@@ -77,7 +77,12 @@ def main():
                 word.append((1, gen + 1))
             elif typ == 'sigma_inv':
                 word.append((-1, gen + 1))
-            elif typ == 'averaged':
+            elif typ in ('averaged', 'averaged_weighted'):
+                # `averaged_weighted` belongs here, not in the `else`. It is
+                # if anything LESS representable as a signed crossing than
+                # `averaged` — it carries a magnitude, not just a midpoint.
+                # Listing only `averaged` turned the informative refusal below
+                # into a bare "unknown crossing type".
                 has_averaged = True
             else:
                 raise ValueError(f"unknown crossing type: {typ!r}")

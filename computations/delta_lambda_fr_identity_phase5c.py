@@ -63,9 +63,10 @@ _UPSTREAM_RECORDS: list = []
 # the label problem this sweep exists to remove.
 from q_parameter import Q_50_DIGIT_STR as Q0_STR
 from q_mpmath import set_q, qint
+from _precision import set_compute_dps  # noqa: E402
 set_q(Q0_STR)
 
-mp.mp.dps = 50
+set_compute_dps()
 Q0 = mp.mpf(str(Q0_STR))
 
 # Per-(Z, N) atoms to test
@@ -297,7 +298,7 @@ def main() -> int:
     # τ_M(β_K^FULL) / τ_M(β_K^CONSTIT) should equal z exactly per the
     # Markov axiom (prop:interface-knot-markov-z). This is the
     # categorical content of the Phase 5c.1 finding.
-    z_markov = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_markov = Q0**3 / (Q0**2 + 1)
     h_hecke = Q0 - 1 / Q0
     z_minus_h = z_markov - h_hecke
     # Per Markov axiom + Hecke skein σ⁻¹ = σ - h·1:

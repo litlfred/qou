@@ -3,8 +3,9 @@
 title: Remark interpreting 1704.02352v2.pdf at conj:q-plancherel-asymptotic-skeleton
 status: todo
 type: task
+priority: normal
 created_at: 2026-08-08T16:13:15Z
-updated_at: 2026-08-08T16:13:15Z
+updated_at: 2026-08-21T17:05:03Z
 ---
 
 Same discipline as its companion 1402.4615: the Jack alpha-deformation is not the folio's q-deformation and hypotheses are unchecked, so this is a remark recording the precedent and the required input, not aid-proof. One remark can cover both Jack papers.
@@ -15,7 +16,14 @@ Same discipline as its companion 1402.4615: the Jack alpha-deformation is not th
 - Abstract + main theorem (§1.1) — Each such Jack-deformed random Young diagram converges to a limit shape, and fluctuations around the limit are asymptotically Gaussian.
   Use here: The template statement for the folio's open 'q-deformed Kerov-Vershik convergence'. Records that the deformed statement is a theorem for one deformation, so part (3) is plausibly reachable rather than speculative — while remaining silent on the q case.
 
-Source: `uploads/1704.02352v2.pdf` — no `references.ts` entry yet
+Source: `library/arxiv-1704.02352v2/1704.02352v2.pdf` — no `references.ts` entry yet
 Relevance: **supporting** — agent assessment, not yet adjudicated.
 
 Raised by `local/paper-relevance-triage`; the ledger row is in `content/bib-qa-verifications.json`.
+
+STALE LINE 2026-08-21 (bean qou-kqbk, PR #5384). The body above says 'no `references.ts` entry yet'. There is one:
+
+  library/arxiv-1704.02352v2/  ->  [dolega-sniady2018]
+  Gaussian fluctuations of Jack-deformed random Young diagrams
+
+The library registration backlog is drained to zero. NOT closing this bean — the entry existing is necessary for the task in the title and not sufficient. Use [dolega-sniady2018] as the citation key when you do it.

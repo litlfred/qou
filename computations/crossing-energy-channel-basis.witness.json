@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T19:06:46.748020+00:00",
-  "commitSha": "28c7286e1e7b04757a3bf5de6fe1792e057524f6",
+  "computedAt": "2026-08-09T19:13:38.892364+00:00",
+  "commitSha": "457f4cc4a74c311cbd0a1c3a595627b877e90a9b",
   "assertions": [
     {
       "name": "n_zero_entries_in_change_of_basis",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 601,
+  "durationMs": 675,
   "computation": "crossing-energy-channel-basis",
   "scriptFile": "crossing_energy_channel_basis_probe.py",
-  "scriptHash": "e301cd35a698",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "e79c4b86daea",
+  "scriptCommitSha": "d28dec3a4f00d2e1151f6855e0c11c71f9aafc81",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -47,6 +47,8 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -99,7 +101,7 @@
       {
         "n_plus": 1,
         "n_minus": 0,
-        "Q": 0.5,
+        "Q": "1/2",
         "crossings": 1,
         "channel_total_ratio": "0.103963710052",
         "per_crossing_ratio": "0.103963710052"
@@ -107,7 +109,7 @@
       {
         "n_plus": 3,
         "n_minus": 0,
-        "Q": 1.5,
+        "Q": "3/2",
         "crossings": 3,
         "channel_total_ratio": "0.103963710052",
         "per_crossing_ratio": "0.103963710052"
@@ -115,7 +117,7 @@
       {
         "n_plus": 2,
         "n_minus": 1,
-        "Q": 0.5,
+        "Q": "1/2",
         "crossings": 3,
         "channel_total_ratio": "0.311891130157",
         "per_crossing_ratio": "0.103963710052"
@@ -123,7 +125,7 @@
       {
         "n_plus": 5,
         "n_minus": 2,
-        "Q": 1.5,
+        "Q": "3/2",
         "crossings": 7,
         "channel_total_ratio": "0.242581990122",
         "per_crossing_ratio": "0.103963710052"
@@ -131,7 +133,7 @@
       {
         "n_plus": 3,
         "n_minus": 3,
-        "Q": 0.0,
+        "Q": "0",
         "crossings": 6,
         "channel_total_ratio": "undefined (Q=0)",
         "per_crossing_ratio": "0.103963710052"
@@ -153,5 +155,8 @@
   "caveats": [
     "This is a structural (scope-b) exclusion of the e_- route only. It does not exclude an electromagnetic reading of either channel reached by some other, stated route; no such route is currently in the corpus. Physical relabelling remains an author call.",
     "notation-register-table3-data calls h = q - 1/q 'the Hecke-relation discriminant'. The discriminant of sigma^2 - h*sigma - 1 is h^2 + 4 = [2]_q^2, not h; h is the trace. Flagged, not edited here."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.numerics_at_q0.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

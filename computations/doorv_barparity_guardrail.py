@@ -66,8 +66,10 @@ from datetime import datetime, timezone
 from typing import Sequence
 
 from mpmath import mp, mpf
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 # --------------------------------------------------------------------------- #
 # Model bar-even / bar-odd corpus objects.

@@ -156,7 +156,8 @@ from pathlib import Path
 
 import mpmath as mp
 
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 

@@ -250,7 +250,13 @@ def load_atomic_tr_m_status() -> dict[str, str]:
     rows. Empty dict for atoms whose source witness is canonical."""
     out: dict[str, str] = {}
     for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
-        if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
+        # Skip BOTH layers of the primary reference: the proton one is
+        # already loaded above, and the muon one must NOT come in through this
+        # glob -- `atomic-tr-m-*` matches it, so a guard naming only one layer
+        # lets the other in as an "extension" and silently reintroduces the
+        # straddle this file was just fixed for.
+        if ext.name in ("atomic-tr-m-mpfr-50dps-proton.witness.json",
+                        "atomic-tr-m-mpfr-50dps.witness.json"):
             continue
         try:
             d = _load_upstream(ext)
@@ -290,7 +296,7 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
 
     # 1. Legacy 5-atom witness (p, n, D, T, ³He) — load first as
     #    fallback layer (gets overwritten by Model B for D, T, ³He).
-    legacy = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    legacy = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     if legacy.exists():
         d = _load_upstream(legacy)
         for r in d.get("results", []):
@@ -325,7 +331,13 @@ def load_atomic_tr_m() -> dict[str, mp.mpf]:
     # reduced-confidence rows; downstream consumers must check the
     # status if they care about provenance.
     for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
-        if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
+        # Skip BOTH layers of the primary reference: the proton one is
+        # already loaded above, and the muon one must NOT come in through this
+        # glob -- `atomic-tr-m-*` matches it, so a guard naming only one layer
+        # lets the other in as an "extension" and silently reintroduces the
+        # straddle this file was just fixed for.
+        if ext.name in ("atomic-tr-m-mpfr-50dps-proton.witness.json",
+                        "atomic-tr-m-mpfr-50dps.witness.json"):
             continue
         try:
             d = _load_upstream(ext)
@@ -477,8 +489,10 @@ def main() -> int:
                       f"×{improvement:>9.1f}")
                 legacy_compare.append({
                     "atom": atom,
-                    "rho_K_err_pct": fmt(rho_err_f),
-                    "legacy_E0_err_pct": fmt(legacy_err_f),
+                    # NO FLOAT64 (bean qou-65qv): serialize the mpf values.
+                    # The float()s above exist only for the %9.4f print.
+                    "rho_K_err_pct": fmt(r["err_pct"]),
+                    "legacy_E0_err_pct": fmt(legacy_err),
                     "improvement_factor": improvement,
                 })
             except (TypeError, ValueError):

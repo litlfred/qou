@@ -8275,7 +8275,7 @@
       ]
     }
   ],
-  "wall_seconds": 130.5,
+  "wall_seconds": "101.6",
   "lean_bridge": {
     "lean_module": "QOU.MassTheory.GroundStateOrderingRefutation",
     "t_eq_sqrt_q0": "1.053555211059857464170469",
@@ -8290,5 +8290,8 @@
     "phi_prescribed_from_probe": "-2.29121657442619518120844",
     "max_abs_diff_lean_vs_probe": "1.2446e-60",
     "gap_nats": "-1.352303011"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,0 +1,43 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 601
+
+Fig. 5. AR*’” (left) and an example (right).
+
+A.3. The general case
+
+The results mentioned in the previous two paragraphs can also be deduced from
+Theorem 2 as follows. In all cases, Thepegen Ez, Stricts,.., is a symmetric polyno-
+mial in A;,,...,A,,, with constant term 1, and the enumeration formulas follow from
+the fact that the application of an “operator” polynomial with these properties to
+Thicjen — leaves the polynomial invariant as was shown, e.g., in [15, Lemma 2.5}.
+In fact, a common generalization follows if we assume that v = 1 — u, because in
+this case the same argument applies and we can conclude that the generating func-
+
+. + bj -—
+tion is Ty cicjen Soa
+2-enumeration of ASMs or the enumeration of perfect matchings of the Aztec diamonds,
+
+. (This result could also be derived using known proofs for the
+
+see, e.g., [27,10].) In particular, it follows that the generating function is independent
+of u.
+
+A.3.1. Perfect matchings
+
+The specialization v = 1—u of the generating function is also the weighted enumeration
+of perfect matchings of a certain portion of the square grid: First observe that, by
+extending the bijection between monotone triangles with bottom row 1,2,...,n and
+n x n ASMs to monotone triangles with arbitrary increasing bottom row of positive’
+integers, say, b;,...,b,, we see that the latter are in bijection to n x m matrices, where
+m is any positive integer with m > b, that have the same properties as ASMs with
+the exception that column sums do not have to be 1, but it is still required that the
+topmost non-zero entry of each column is 1, and, in addition, the column sums have to
+be 1 precisely for the columns by,..., bn.
+
+Now let AR”’” denote the rectangular graph that consists of n rows of sequences of
+m consecutive cells of the form ©, see Fig. 5 (left) for AR“”. It is a well-known fact, see
+[7], that the perfect matchings of AR™"” can be partitioned into classes that are indexed
+by n x n ASMs, such that, for a given ASM, the number of perfect matchings in the
+
+* It is no restriction to confine our considerations to monotone triangles that contain only positive integers
+in the bottom row, because every monotone triangle that contains non-positive integers can be transformed
+to one that has only positive integers by adding the same positive integer to every entry.

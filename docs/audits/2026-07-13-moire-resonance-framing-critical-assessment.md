@@ -54,9 +54,9 @@ physical picture the mathematics does not support.
 ## 2. "Vol(4₁) is a Moiré beat" — a metaphor with no quantitative content
 
 A Moiré beat has a **beat frequency** `Δf = |f₁ − f₂|` — that is the entire
-content of the phenomenon. The claim that `Vol(4₁) = 2Λ(π/3) ≈ 2.0299` (Lobachevsky
+content of the phenomenon. The claim that `Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0299` (Lobachevsky
 function) is "the macroscopic Moiré beat of the two incommensurate periods `b`,
-`b⁻¹`" produces **no such frequency** and no map from `(b, b⁻¹)` to `2Λ(π/3)`.
+`b⁻¹`" produces **no such frequency** and no map from `(b, b⁻¹)` to `2·Cl₂(π/3)`.
 `Vol(4₁)` is the hyperbolic volume of the figure-eight complement — a scissors-
 congruence / Bloch-group invariant (Neumann, extended Bloch group), computed by the
 Bloch–Wigner dilogarithm at the shape parameter `z = e^{iπ/3}`. That derivation is
@@ -113,7 +113,11 @@ a keystone gap the framework has honestly kept open.** Three independent reasons
    unity to the Stokes data — but the object they relate is the **asymptotic
    (divergent, resurgent) series** whose Borel/transseries structure carries the
    Stokes constants. The D-ladder study already established this sequence is
-   q-Gevrey-divergent and non-holonomic (bottoming out near `k = 21`). You cannot
+   ~~q-Gevrey-divergent and~~ **[divergence claim SUPERSEDED 2026-08-09 —
+   `D(ũ)` is convergent, `ρ = 0.1428`; see
+   `2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`. The GZ
+   asymptotic series named above is a different object and remains genuinely
+   divergent/resurgent.]** non-holonomic (bottoming out near `k = 21`). You cannot
    both invoke quantum modularity to get `A_ω` *and* claim you have "eliminated
    analysis / no Borel resummation needed": the resurgent series is the vehicle
    quantum modularity rides on. Removing it removes the datum.

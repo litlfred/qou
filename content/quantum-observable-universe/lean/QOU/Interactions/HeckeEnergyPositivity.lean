@@ -1,6 +1,7 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.Interactions.HeckeEnergyPositivity — q-integer positivity and Hecke-energy positivity
@@ -39,6 +40,21 @@ namespace QOU.Interactions.HeckeEnergyPositivity
     making positivity proofs trivial. -/
 def qIntegerRescaled (q : ℝ) (k : ℕ) : ℝ :=
   (Finset.range k).sum (fun j => q ^ (2 * j))
+
+/-- **Bridge to the canonical geometric bracket.**
+
+`QIntegerCanonical` names this definition as *the* live example of legitimate
+geometric usage — "correct only where the variable means `q²`".  This turns that
+documented claim into a theorem: the rescaled bracket is literally `qIntGeo`
+evaluated at `q²`, unconditionally.
+
+Consolidating it onto `qIntBal` would have been the mis-migration the module
+warns about; consolidating it onto `qIntGeo (q ^ 2)` is the *correct* one, and
+having it as an equation means the site is no longer an unexplained straggler in
+the census. -/
+theorem qIntegerRescaled_eq_canonical (q : ℝ) (k : ℕ) :
+    qIntegerRescaled q k = QOU.QInteger.qIntGeo (q ^ 2) k := by
+  simp [qIntegerRescaled, QOU.QInteger.qIntGeo_def, pow_mul]
 
 @[simp] theorem qIntegerRescaled_zero (q : ℝ) :
     qIntegerRescaled q 0 = 0 := by

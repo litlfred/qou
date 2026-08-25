@@ -1,79 +1,79 @@
 {
-  "computation": "interface-4body-assembly",
-  "description": "Task 2: linear-chain vs complete-graph (tetrahedral) interface topology for B=E0*tau_vac*(1-PROD f). Many-body topology moves the 4He/D binding ratio only marginally; the interface deficit saturates.",
-  "scriptFile": "interface_4body_assembly_probe.py",
-  "parameters": {
-    "q_0": "1.1099785827513808075916690956107688798744991218736",
-    "E0_MeV": "4.1859813632944758969450621587590084101434868908797",
-    "tau_p": "1.22036288908669305595736107223",
-    "tau_n": "1.1948624254133771065332385697605928646986009643795",
-    "free_parameters": 0
-  },
-  "data": {
-    "atoms": [
-      {
-        "atom": "D",
-        "Z": 1,
-        "N": 1,
-        "n_chain": 1,
-        "n_complete": 1,
-        "B_chain_MeV": "3.05607593259",
-        "B_complete_MeV": "3.05607593259",
-        "B_AME_MeV": "2.224566",
-        "err_chain_pct": "37.3785",
-        "err_complete_pct": "37.3785"
-      },
-      {
-        "atom": "T",
-        "Z": 1,
-        "N": 2,
-        "n_chain": 2,
-        "n_complete": 3,
-        "B_chain_MeV": "6.23623353278",
-        "B_complete_MeV": "6.76546851269",
-        "B_AME_MeV": "8.481798",
-        "err_chain_pct": "-26.4751",
-        "err_complete_pct": "-20.2354"
-      },
-      {
-        "atom": "3He",
-        "Z": 2,
-        "N": 1,
-        "n_chain": 2,
-        "n_complete": 3,
-        "B_chain_MeV": "5.59174765316",
-        "B_complete_MeV": "6.52159496121",
-        "B_AME_MeV": "7.718043",
-        "err_chain_pct": "-27.5497",
-        "err_complete_pct": "-15.502"
-      },
-      {
-        "atom": "4He",
-        "Z": 2,
-        "N": 2,
-        "n_chain": 3,
-        "n_complete": 6,
-        "B_chain_MeV": "8.25632670018",
-        "B_complete_MeV": "8.82024667153",
-        "B_AME_MeV": "28.295673",
-        "err_chain_pct": "-70.8212",
-        "err_complete_pct": "-68.8283"
-      }
-    ],
-    "self_consistent": true,
-    "scaling_4He_over_D": {
-      "chain": "2.70161045808",
-      "complete": "2.88613465964",
-      "AME": "12.7196374484"
-    }
-  },
-  "scriptHash": "db2d9d844f62",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "3f2744fc130ac954c221d932963e14eaa66f0210",
-  "engine": "mpmath",
-  "computedAt": "2026-07-18T15:19:56.605436+00:00",
-  "durationMs": 0,
-  "engineVersion": "mpmath 1.3.0",
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+ "computation": "interface-4body-assembly",
+ "description": "Task 2: linear-chain vs complete-graph (tetrahedral) interface topology for B=E0*tau_vac*(1-PROD f). Many-body topology moves the 4He/D binding ratio only marginally; the interface deficit saturates.",
+ "scriptFile": "interface_4body_assembly_probe.py",
+ "parameters": {
+  "q_0": "1.10997858275138080759166909561076887987449912187357763605672",
+  "E0_MeV": "4.185981363294475896945062158759008410143486890879650999772224232747828",
+  "tau_p": "1.22036288908669305595736107223",
+  "tau_n": "0.9737730613113362084881579823528874976463453528120615981943207074361024",
+  "free_parameters": 0
+ },
+ "data": {
+  "atoms": [
+   {
+    "atom": "D",
+    "Z": 1,
+    "N": 1,
+    "n_chain": 1,
+    "n_complete": 1,
+    "B_chain_MeV": "1.926659419",
+    "B_complete_MeV": "1.926659419",
+    "B_AME_MeV": "2.224566",
+    "err_chain_pct": "-13.3917",
+    "err_complete_pct": "-13.3917"
+   },
+   {
+    "atom": "T",
+    "Z": 1,
+    "N": 2,
+    "n_chain": 2,
+    "n_complete": 3,
+    "B_chain_MeV": "3.64606939364",
+    "B_complete_MeV": "4.11003214064",
+    "B_AME_MeV": "8.481798",
+    "err_chain_pct": "-57.013",
+    "err_complete_pct": "-51.5429"
+   },
+   {
+    "atom": "3He",
+    "Z": 2,
+    "N": 1,
+    "n_chain": 2,
+    "n_complete": 3,
+    "B_chain_MeV": "3.79179026085",
+    "B_complete_MeV": "4.67440818705",
+    "B_AME_MeV": "7.718043",
+    "err_chain_pct": "-50.8711",
+    "err_complete_pct": "-39.4353"
+   },
+   {
+    "atom": "4He",
+    "Z": 2,
+    "N": 2,
+    "n_chain": 3,
+    "n_complete": 6,
+    "B_chain_MeV": "5.01573069739",
+    "B_complete_MeV": "5.70540524043",
+    "B_AME_MeV": "28.295673",
+    "err_chain_pct": "-82.2739",
+    "err_complete_pct": "-79.8365"
+   }
+  ],
+  "self_consistent": false,
+  "scaling_4He_over_D": {
+   "chain": "2.60333022429",
+   "complete": "2.96129413645",
+   "AME": "12.7196374484"
+  }
+ },
+ "scriptHash": "f32cc943531e",
+ "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+ "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+ "engine": "mpmath",
+ "computedAt": "2026-08-23T09:23:43.238083+00:00",
+ "durationMs": 0,
+ "engineVersion": "mpmath 1.4.1",
+ "q0Anchor": "proton",
+ "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

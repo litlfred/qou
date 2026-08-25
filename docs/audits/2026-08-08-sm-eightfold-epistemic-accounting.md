@@ -75,7 +75,10 @@ one finding that matters materially is §5.1 (the twist battery).
 
 Everything below was checked, not summarised.
 
-### Lean: 11 files, all green, all sorry-free
+### Lean: 20 files, all green, all sorry-free, zero red
+
+The 11 files the two chapters cite directly, plus the 9-module colour cone
+(next subsection).
 
 `scripts/lean-verify.sh` (never `lake build`), foreground, real exit codes
 captured per file. Environment: `/usr/local/bin/lean`, toolchain `v4.24.0`,
@@ -110,18 +113,44 @@ The `WeylInvarianceQDeformation` warning is only
 > three. I briefly suspected an unproved colour claim on the raw count and
 > retract that; the files are genuinely sorry-free.
 
-### Not verified, and why
+### The colour-row cone: 9 more modules, all green
 
 `QOU/MathlibExt/OctonionSU3BracketClosure.lean`,
 `OctonionSU3Stabilizer.lean`, `OctonionColourActionBaseModule.lean` — the
-Lean backing the colour row — return `✗ FAILED` under `lean-verify.sh`, but
-the diagnostic is a **missing intra-package olean cascade**
-(`object file '…/QOU/MathlibExt/OctonionDerivationProperties.olean' … does
-not exist`), an artifact of this worktree, **not** a proof error. The correct
-tool is `scripts/lean-direct-cone.sh`, which was launched; it had not
-completed when this document was written. **These three files are therefore
-recorded as UNVERIFIED-HERE, not red.** Do not cite this audit as evidence
-against them.
+Lean backing the colour row — initially returned `✗ FAILED` under
+`lean-verify.sh`, but the diagnostic was a **missing intra-package olean
+cascade** (`object file '…/QOU/MathlibExt/OctonionDerivationProperties.olean'
+… does not exist`), an artifact of this worktree, **not** a proof error.
+
+Rebuilt with the correct tool —
+`scripts/lean-direct-cone.sh QOU.MathlibExt.OctonionColourActionBaseModule -k -j4`
+— which confirms it: **`done: ok=9 in 923s`, `err=0`, `blocked=0`.** Every
+module in the cone type-checks:
+
+| Module | Status | Seconds |
+|---|---|---|
+| `QOU.MathlibExt.DerivationRankNullity` | ok | 6.0 |
+| `QOU.MathlibExt.OctonionDerivations` | ok | 328.7 |
+| `QOU.MathlibExt.OctonionDerivationProperties` | ok | 8.1 |
+| `QOU.MathlibExt.OctonionDerivationsBound` | ok | 20.3 |
+| `QOU.MathlibExt.OctonionDerivationsUpperBound` | ok | 554.3 |
+| `QOU.MathlibExt.OctonionSU3Stabilizer` | ok | 7.1 |
+| `QOU.StandardModel.ColourStabilizerAction` | ok | 2.2 |
+| `QOU.MathlibExt.OctonionSU3BracketClosure` | ok | 3.3 |
+| `QOU.MathlibExt.OctonionColourActionBaseModule` | ok | 3.0 |
+
+**So the running total is 20 Lean files verified green and sorry-free, with
+zero red.** The corpus red-sweep warning does not bite anywhere in these two
+chapters' citation graph.
+
+**Consequence for the colour row.** `sm-open-problems.md:12`'s substantive
+claims — the proved `dim = 8` gate, bracket closure "sorry-free", the
+faithful action on the octonion base module — are **accurate as stated**. The
+only defect on that row is the citation-precision issue of §5.3 (the proofs
+live in `QOU/MathlibExt/Octonion*`, not at the block's cited `lean.ref`), and
+the row's own parenthetical "tautological instance" for the faithful action.
+`OctonionDerivationsUpperBound` at 554 s is the cone's bottleneck, worth
+noting for anyone re-running it.
 
 ### Numerics: independently reproduced, not read
 
@@ -577,9 +606,11 @@ render-QA surface). Findings 1–8 are reported for the owner to triage.
 
 ## 9. What this audit did NOT establish
 
-- The three `QOU/MathlibExt/Octonion*` files backing the colour row are
-  **UNVERIFIED-HERE** (missing intra-package olean cascade in this worktree,
-  not a proof error). Do not cite this document against them.
+- ~~The three `QOU/MathlibExt/Octonion*` files backing the colour row are
+  **UNVERIFIED-HERE**.~~ **Resolved after first commit:**
+  `scripts/lean-direct-cone.sh` returned `ok=9, err=0, blocked=0` — all three,
+  plus their 6-module cone, type-check. See §"The colour-row cone". The
+  initial `✗ FAILED` was a missing-olean cascade, as diagnosed.
 - The genus bound and continuant Lean behind Finding 6 live in
   `particle-interactions/` and were not verified.
 - Finding 8 is a referee objection, not a computed bound.

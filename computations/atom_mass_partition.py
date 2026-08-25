@@ -32,7 +32,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q as q0
 
 HA = q0 - 1.0/q0
-z_markov = 1.0 / (q0**0.5 + q0**(-0.5))
+z_markov = q0**3 / (q0**2 + 1)
 
 
 # ══════════════════════════════════════════════════════════════

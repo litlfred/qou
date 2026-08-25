@@ -30,6 +30,8 @@ combiner prefers the numerical cache when present.
 """
 from __future__ import annotations
 
+import hashlib
+
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import argparse
 import json
@@ -51,6 +53,7 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from per_irrep_pole_atom import ATOMS, ATOM_ALIASES, parts_of  # noqa: E402
 from q_parameter import Q as Q_0_FLOAT, Q_50_DIGIT_STR  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
+    anchor_of_q0,
     _build_seminormal_matrices_mpf,
     _chi_lambda_of_word_mpf,
     _load_y_lambda,
@@ -187,13 +190,51 @@ def build_chi_cache_at_q0(
             "n_partitions_total": len(list(parts_of(n))),
             "partial": result["n_partitions_used"] < len(list(parts_of(n))),
             "convention": convention,
-            "compute_time_sec": round(elapsed, 2),
+            # wall clock, not a measurement: string keeps raw float64 out of
+            # the witness and stops per-run jitter rewriting the file
+            "compute_time_sec": f"{elapsed:.2f}",
             "tr_M_at_q0": result["tr_M"],
             "by_partition": result["by_partition"],
         }
 
     # Incremental path — partition-by-partition with per-step save.
-    out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
+    #
+    # OFF-ANCHOR q GETS ITS OWN FILE (2026-08-23, bean `qou-8chw`). The cache
+    # path used to be `…-at-q0-50dps.witness.json` for EVERY q, so whatever q
+    # was evaluated last owned a file whose name says q₀. The "q0 CHANGED"
+    # branch below discards and recomputes — correct for the returned value —
+    # and then writes the new q's χ into the q₀-named file.
+    #
+    # That was survivable while the only two reachable q were the muon and
+    # proton pins, both arguably "q₀". It stopped being survivable the moment
+    # the BAR IMAGE became reachable: `tr_m_wenzl_bridge_mpfr` used to raise on
+    # 1/q₀, and now computes it, so an ordinary probe evaluating at 1/q₀
+    # rewrote `chi-deuteron-h6-at-q0-50dps.witness.json` to hold
+    # q_0_50dps = 0.90091828… — observed, on eight caches at once, in the run
+    # that prompted this. A later consumer reading a file named `at-q0` would
+    # have got bar-image χ with nothing in the filename to say so.
+    #
+    # An unblock that converts a loud crash into silent cache poisoning is a
+    # net loss, so the path now carries the q whenever it is off-anchor. The
+    # two anchors keep their existing filenames untouched — no migration, no
+    # change for any current consumer.
+    #
+    # WHY A HASH AND NOT THE EXISTING `-at-qinv-` NAME. The corpus already has
+    # a bar-image convention, `chi-{atom}-h{n}-at-qinv-50dps.witness.json`,
+    # written by `chi_at_q_inv_via_native_mpfr.py` with 8 tracked files and
+    # several consumers. Reusing it here looked tidier and would have been the
+    # same defect again: that producer's schema is NOT this one's — it keys the
+    # modulus as `q_inv_50dps_str` and carries a full `_provenance` / `engine` /
+    # `scriptHash` block, where this incremental cache writes `q_0_50dps`,
+    # `partial` and `tr_M_at_q0`. Writing this shape into those filenames would
+    # hand every `at-qinv` consumer a file missing the field it reads. Checked
+    # before choosing, not after.
+    _anchor = anchor_of_q0(q_str)
+    if _anchor is None:
+        _tag = hashlib.sha256(str(q_str).strip().encode()).hexdigest()[:8]
+        out_path = HERE / f"chi-{atom_name}-h{n}-at-q{_tag}-50dps.witness.json"
+    else:
+        out_path = HERE / f"chi-{atom_name}-h{n}-at-q0-50dps.witness.json"
     already: dict[tuple, dict] = {}
     if out_path.exists():
         existing = json.loads(out_path.read_text())
@@ -385,7 +426,7 @@ def build_chi_cache_at_q0(
                 "y_lambda": str(y_lam),
                 "chi_lambda": str(chi),
                 "contribution": str(contrib),
-                "compute_time_sec": round(time.time() - t_part, 2),
+                "compute_time_sec": f"{time.time() - t_part:.2f}",
             }
             per_partition.append(entry)
             # Incremental save (atomic rename — interrupt-safe).
@@ -409,12 +450,13 @@ def build_chi_cache_at_q0(
                 "n_partitions": len(per_partition),
                 "n_partitions_total": len(shapes),
                 "partial": len(per_partition) < len(shapes),
-                "compute_time_sec_so_far": round(time.time() - t0, 2),
+                "compute_time_sec_so_far": f"{time.time() - t0:.2f}",
                 "tr_M_at_q0": str(running_total),
                 "by_partition": per_partition,
             }
             _save_partial(out_path, payload)
-            print(f"    λ={shape_t!s:20} dim={dim:>3}  +{entry['compute_time_sec']:>5.1f}s  "
+            print(f"    λ={shape_t!s:20} dim={dim:>3}  "
+                  f"+{float(entry['compute_time_sec']):>5.1f}s  "
                   f"({len(per_partition)}/{len(shapes)})")
 
     elapsed = time.time() - t0
@@ -426,7 +468,7 @@ def build_chi_cache_at_q0(
         "n_partitions_total": len(shapes),
         "partial": len(per_partition) < len(shapes),
         "convention": convention,
-        "compute_time_sec": round(elapsed, 2),
+        "compute_time_sec": f"{elapsed:.2f}",
         "tr_M_at_q0": str(running_total),
         "by_partition": per_partition,
     }
@@ -536,7 +578,7 @@ def main() -> int:
         tr_m_short = record["tr_M_at_q0"][:22]
         print(f"  {atom_name:>9}  {record['n_strands']:>3}  "
               f"{n_parts:>14}  {tr_m_short:>22}  "
-              f"{record['compute_time_sec']:>9.2f}s")
+              f"{float(record['compute_time_sec']):>9.2f}s")
     print()
     return 0
 

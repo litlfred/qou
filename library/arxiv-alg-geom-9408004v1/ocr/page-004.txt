@@ -1,0 +1,42 @@
+plectic form o induces an isomorphism
+(3) i=o!: Vv STU.
+
+We refine our question by considering pairs consisting of the family 7: ¥ —
+U together with the isomorphism 7, and asking for the existence of ao which
+is compatible with both. Our first answer is:
+
+Theorem 1. (Infinitesimal cubic condition) Consider a family x :
+xX — U of polarized abelian varieties with classifying map q:U — A, and
+vertical bundle V, together with an isomorphism (3). Then there exists a
+non-degenerate holomorphic 2-form a on X for which 7 is Lagrangian and
+which induces the given isomorphism i, if and only if the composition of (2)
+and (3):
+
+dqoi € Hom(V*, Sym’V) =T(V @ Sym?V)
+
+comes from a cubic c € T(SymV). In this case, there is a unique o for
+which the 0-section of 7 is Lagrangian.
+
+Proof.
+The short exact sequence of sheaves on ¥:
+0—-WVaTX 4 TU 0
+determines a subsheaf F of ATX which fits in the exact sequences:
+0+ F 4 MTX = n*MVTU = 0
+0- wMY = F a n*(V@TU) — 0.
+
+We are looking for a 2-vector o~!, a section of A?7'¥, for which the fibers of
+7 are isotropic; this means that o—! goes to 0 in m*A?TU, so it comes from
+a section of F. The question is therefore whether the given
+
+i€ HWU,V@TU) Cc A(X, n*(V@TU))
+
+is in the image of H°(4,F). Locally in U, this happens if and only if 7 goes
+to 0 under the coboundary map
+
+mm (V@TU) > Rir7*A?V
+| |
+VeTu — MVeY.
+
+The bottom map factors as 3 o (1 @ dq), where
+
+1@dq:V@TU—>V® Sym?V

@@ -36,7 +36,7 @@ export default conjecture({
     "kashaev1997",
     "faddeev1996",
     "ohtsuki2002",
-    "khovanov-lauda2009",
+    "khovanovlauda2009",
     "kashiwara1991",
   ],
   tags: [

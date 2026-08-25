@@ -38,7 +38,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Verifies that sign(y_λ) equals sign(Z)·(−1)^P(λ), where P(λ) counts cells of λ whose content lies below c* = −log_Q(Q^r). Derived from the Wenzl principal specialisation: for Q>1 every hook factor 1−Q^h is negative (fixed sign (−1)^|λ|), and a numerator factor 1−Q^r·Q^c is negative exactly above the threshold. Swept over every partition for n=2..12. Replaces the qualitative 'sign-indefinite for n≥4' of weight-factor-audit §W3 with a combinatorial rule, which is what makes the μ₃ door budget of PR #4657 computable.",
+  "description": "Verifies that sign(y_\u03bb) equals sign(Z)\u00b7(\u22121)^P(\u03bb), where P(\u03bb) counts cells of \u03bb whose content lies below c* = \u2212log_Q(Q^r). Derived from the Wenzl principal specialisation: for Q>1 every hook factor 1\u2212Q^h is negative (fixed sign (\u22121)^|\u03bb|), and a numerator factor 1\u2212Q^r\u00b7Q^c is negative exactly above the threshold. Swept over every partition for n=2..12. Replaces the qualitative 'sign-indefinite for n\u22654' of weight-factor-audit \u00a7W3 with a combinatorial rule, which is what makes the \u03bc\u2083 door budget of PR #4657 computable.",
   "parameters": {
     "q0": "1.10997858275138080759166909561",
     "Q": "1.23205245416676393126980451354",
@@ -160,7 +160,10 @@
     ]
   },
   "caveats": [
-    "The threshold c* = −log_Q(Q^r) is q-dependent; the concrete cut 'content ≤ −3' is specific to q₀. The PARITY RULE itself is q-independent for q > 1 — only the location of the cut moves.",
+    "The threshold c* = \u2212log_Q(Q^r) is q-dependent; the concrete cut 'content \u2264 \u22123' is specific to q\u2080. The PARITY RULE itself is q-independent for q > 1 \u2014 only the location of the cut moves.",
     "sign(Z) is inferred per n from one block and then required to be consistent across all blocks; the probe verifies consistency, it does not independently derive sign(Z)."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

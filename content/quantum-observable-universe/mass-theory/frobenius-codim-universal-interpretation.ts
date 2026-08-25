@@ -5,5 +5,12 @@ export default remark({
   label: "rem:frobenius-codim-universal-interpretation",
   title: "Physical content: the tower residual as $\\tau(C_{\\dim_q})$",
   tags: ["frobenius", "tower-residual", "fibre-functor", "m_e", "universality"],
-  uses: ["thm:frobenius-codim-universal", "prop:partition-sum-proton-residual"],
+  // def:quantum-universe added 2026-08-14: the new §"What the theorem does and
+  // does not supply" locates the content in the Wedderburn-semisimplicity
+  // axiom rather than in the identity, and cites it directly.
+  uses: [
+    "thm:frobenius-codim-universal",
+    "prop:partition-sum-proton-residual",
+    "def:quantum-universe",
+  ],
 });

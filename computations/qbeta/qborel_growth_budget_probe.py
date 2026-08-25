@@ -46,7 +46,12 @@ from __future__ import annotations
 import json
 import os
 import subprocess
+from fractions import Fraction
 from typing import Dict, List
+
+import mpmath as mp
+
+mp.mp.dps = 60
 
 D_VALUES = (1, 2, 3, 4)
 N_ASYMPTOTIC = 400
@@ -66,23 +71,41 @@ def coeff_degree(n: int) -> int:
     return n * n
 
 
+def _rat(fr: Fraction) -> dict:
+    """An exact rational, as both its "p/q" form and a 50-digit decimal.
+
+    Neither alone is right for a witness: "p/q" is exact but unreadable and
+    uncomparable at a glance, and a decimal alone throws the exactness away.
+    Both, and no float64 anywhere in between.
+    """
+    return {"exact": f"{fr.numerator}/{fr.denominator}",
+            "decimal": mp.nstr(mp.mpf(fr.numerator) / mp.mpf(fr.denominator), 50)}
+
+
 def main() -> None:
     per_d: Dict[str, dict] = {}
     any_absorbs = False
 
     for d in D_VALUES:
         t = kernel_degrees(d, N_ASYMPTOTIC)
-        measured = t[N_ASYMPTOTIC] / N_ASYMPTOTIC**2
-        predicted = 1.0 / (2 * d)
-        budget = (coeff_degree(N_ASYMPTOTIC) - t[N_ASYMPTOTIC]) / N_ASYMPTOTIC**2
-        absorbs = budget <= 0.0
+        # Every quantity here is an INTEGER over an INTEGER -- kernel degrees
+        # t_n and the proved deg_q(c_n) = n^2 are exact. They were computed in
+        # binary floating point, which put two verdicts (`< 0.01` and `<= 0`) on
+        # the wrong side of a rounding step for no reason: Fraction is exact and
+        # costs nothing at these sizes. Serialized as exact "p/q" plus a 50-dps
+        # decimal, so the witness carries the rational, not a float64 shadow.
+        measured = Fraction(t[N_ASYMPTOTIC], N_ASYMPTOTIC**2)
+        predicted = Fraction(1, 2 * d)
+        budget = Fraction(coeff_degree(N_ASYMPTOTIC) - t[N_ASYMPTOTIC],
+                          N_ASYMPTOTIC**2)
+        absorbs = budget <= 0
         any_absorbs |= absorbs
         per_d[str(d)] = {
-            "measured_deg_t_over_n2": measured,
-            "rsz_predicted_1_over_2d": predicted,
-            "abs_diff": abs(measured - predicted),
-            "reading_matches_rsz": abs(measured - predicted) < 0.01,
-            "budget_deg_c_minus_t_over_n2": budget,
+            "measured_deg_t_over_n2": _rat(measured),
+            "rsz_predicted_1_over_2d": _rat(predicted),
+            "abs_diff": _rat(abs(measured - predicted)),
+            "reading_matches_rsz": abs(measured - predicted) < Fraction(1, 100),
+            "budget_deg_c_minus_t_over_n2": _rat(budget),
             "kernel_absorbs_growth": absorbs,
             "table": [
                 {"n": n, "deg_t_n": t[n], "deg_c_n": coeff_degree(n),
@@ -95,10 +118,10 @@ def main() -> None:
     for d in D_VALUES:
         r = per_d[str(d)]
         print(
-            f"{d:>3} {r['measured_deg_t_over_n2']:>12.4f} "
-            f"{r['rsz_predicted_1_over_2d']:>9.4f} "
+            f"{d:>3} {float(mp.mpf(r['measured_deg_t_over_n2']['decimal'])):>12.4f} "
+            f"{float(mp.mpf(r['rsz_predicted_1_over_2d']['decimal'])):>9.4f} "
             f"{str(r['reading_matches_rsz']):>6} "
-            f"{r['budget_deg_c_minus_t_over_n2']:>+9.4f} "
+            f"{float(mp.mpf(r['budget_deg_c_minus_t_over_n2']['decimal'])):>+9.4f} "
             f"{str(r['kernel_absorbs_growth']):>8}"
         )
     print()

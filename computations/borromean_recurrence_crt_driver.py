@@ -293,7 +293,7 @@ def main() -> int:
                                         "max": max(degrees)}},
         "prime_runs": runlog,
         "verdict": verdict,
-        "wall_seconds": round(time.time() - t0, 1),
+        "wall_seconds": f"{time.time() - t0:.1f}",
     }
     out = script_path.with_name(
         "borromean-diagonal-recurrence-reconstruct.witness.json")

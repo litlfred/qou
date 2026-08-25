@@ -553,8 +553,32 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
 
     The CANONICAL replacement is:
         computations/mass_at_3A_proper.py
-            per_generator_V_hat_3A(Z, N, weight_scheme="normalized_plancherel")
+            per_generator_V_hat_3A(Z, N)
     which sums over all partitions of 3A with proper Wedderburn weights.
+
+    NO WEIGHT SCHEME HERE IS KNOWN-GOOD, and this warning should not be read as
+    endorsing one (bean qou-2tuv):
+      - `normalized_plancherel` (the default) sums to 1 as the Markov identity
+        requires, but puts max|V_hat| at 1.08837 against a phi_q_safe cap of
+        1.087779 — AT the pole — so `binding_3A_tower` returns ~1e7 MeV. It was
+        marked DEPRECATED by docs/audits/2026-05-11-plancherel-usage-audit.md.
+      - `jones_wenzl` keeps V_hat small, but only because its weights DO NOT
+        SUM TO 1: measured -0.8230 at A=1, +0.0547 at A=2, -0.0009 at A=3. It
+        buys a finite tower by driving the volumes toward zero.
+    Migrating for the weights alone therefore trades one defect for another.
+
+    Migration is a PACKAGE swap, not a drop-in function substitution. The
+    H_{3A} volumes come with (a) the jones_wenzl weights, (b) a free-baseline
+    subtraction B ~ (free - atom), and (c) the alpha = m_e * Vol_q(B_3) scale
+    from prop:binding-scale-catalan feeding the Phi_q tower, NOT the
+    `sum ln|V|` proxy. Swapping only the function and keeping the old consumer
+    measures -1650% on the deuteron; the full package measures -30.1% against
+    production's +81.6%.
+
+    Feasibility caveat: the H_{3A} sum runs over p(3A) — 77 at A=4, 17,977 at
+    A=12, 1.8e9 at A=40 — and mass_at_3A_proper's own header says it "fails for
+    3A >~ 35". Callers that scan heavy nuclei CANNOT migrate; they must declare
+    the H_3 approximation instead.
 
     Migration is NOT YET DONE for the 15+ callers (mass_formula_6term.py,
     tower_isotope_absolute.py, paper_six_term_isotope_sweep.py, ...).
@@ -687,31 +711,34 @@ def atom_per_generator_volumes(Z, N, include_inter=True, crossings_per_pair=1,
                 sp_arr[i] *= c * q0 + d
                 ap_arr[i] *= -c * qi + d
 
-    # Build per-generator V̂_full from accumulators
-    z_mark = 1.0 / (q0 ** 0.5 + qi ** 0.5)
-    h_val = q0 - qi
-    def q_int(n):
-        return (q0 ** n - qi ** n) / h_val if abs(h_val) > 1e-15 else float(n)
-    # Wedderburn weights (H_3 weights — same as mass_endomorphism.py)
-    nf3 = q_int(2) * q_int(3) * q_int(1)  # [3]_q!  (with [1]_q = 1)
-    # Use H_3 weights as in mass_endomorphism (1-dim sym, 2-dim std, 1-dim alt)
-    # W_sym, W_std, W_alt computed from quantum dimensions
-    qdim_sym = 1.0
-    qdim_std = q_int(2)
-    qdim_alt = 1.0
-    nf3_val = q_int(1) * q_int(2) * q_int(3)
-    w_sym = qdim_sym ** 2 / nf3_val
-    w_std = qdim_std ** 2 / nf3_val
-    w_alt = qdim_alt ** 2 / nf3_val
-    wt = w_sym + w_std + w_alt
-    w_sym /= wt
-    w_std /= wt
-    w_alt /= wt
-
+    # Build per-generator V̂_full from accumulators.
+    #
+    # `z` and `W_SYM/W_STD/W_ALT` come from `pyhecke.gram` — the module this
+    # file already imports them from at the top. They used to be SHADOWED here
+    # by a local recomputation, and the two had diverged:
+    #
+    #   local  z_mark = 1/(q^½ + q^-½) = 0.4993203  ← convention **C**
+    #   gram   z      = q³/(q²+1)      = 0.6126880  ← convention **D**
+    #
+    # The owner ruling of 2026-08-09 excised C repo-wide (`33a6c7aa4`, "the
+    # trace is now D everywhere") and `gram.py` moved to D on 2026-08-15, but
+    # this local copy was never registered as a C implementation
+    # (docs/coordination/trace-convention-registry.json lists only the two
+    # `_HISTORICAL` sites in schur_principal_mpmath and `gram.py::z`), so the
+    # migration never visited it. Every one of the callers of this function was
+    # still getting C.
+    #
+    # The weights were NOT divergent — the local recomputation reproduced
+    # gram's W_SYM/W_STD/W_ALT to the last f64 digit — but recomputing a
+    # constant that is imported three lines above is how the `z` fork happened
+    # in the first place, so both now come from the single source.
+    #
+    # NOTE: these remain the H_3 weights, which are wrong for A > 1 — see the
+    # DeprecationWarning above. Fixing the convention does not fix that.
     vols = []
     for i in range(n_gens_total):
-        Vs = z_mark * a_arr[i] + b_arr[i]
-        Vf = w_sym * sp_arr[i] + w_std * Vs + w_alt * ap_arr[i]
+        Vs = z * a_arr[i] + b_arr[i]
+        Vf = W_SYM * sp_arr[i] + W_STD * Vs + W_ALT * ap_arr[i]
         vols.append({"std": Vs, "sym": sp_arr[i], "alt": ap_arr[i], "full": Vf})
     return vols
 

@@ -136,7 +136,187 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.198Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read: 2-sentence prose intro. 'emerges from the fibre structure of S rather than as a postulated relation' is the false-positive class 'substantive mathematical contrast' -- derived-versus-postulated IS the section's claim (the section proves the commutator as a structural identity), not manufactured emphasis.",
+        "notes": "Pass by the substantive-contrast carve-out."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.242Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.286Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.329Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.374Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.419Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.462Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.509Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.554Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "f47c71ce9608",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:j00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:31:08.599Z",
+        "reviewed_sha": "57fb41eac0d2ac3ef7e22b4159a297c2999d10f7",
+        "evidence": "Full read of the 2-sentence prose intro; no instance of this construction. Sign convention [p,q] = -i hbar is correct (equivalent to [q,p] = +i hbar).",
+        "notes": "No trap. See the returned anomaly list for a notation finding on this block (unregistered \\hat{q}, and symbols that do not match the section it introduces)."
+      }
+    ]
   },
-  "updated_at": "2026-07-07T14:26:55.761712Z"
+  "updated_at": "2026-08-22T03:31:08.599Z"
 }

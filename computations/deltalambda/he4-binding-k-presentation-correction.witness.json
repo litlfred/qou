@@ -2,7 +2,7 @@
  "computation": "he4-binding-k-presentation-correction",
  "description": "Same-day correction of the A=4 stage-1/stage-1.5 probes: the GP-kernel presentation identity is measured (GP variable v = \u221aq; evaluating at q computes the paper trace at q\u00b2) and the full operator dictionary is certified end-to-end against the certified combiner traces (p, n, D, 4He). Canonical seam structure read off the builder: one pair-typed crossing per seam at generators {2,5,8}. Stage-1/1.5 headline residuals (14.7%, 3.8%) are void.",
  "audit_only": true,
- "computedAt": "2026-07-18T18:11:11.456835+00:00",
+ "computedAt": "2026-08-23T09:03:53.681811+00:00",
  "engine": "mpmath",
  "dps": 50,
  "q_pin": {
@@ -14,8 +14,8 @@
   "gp_variable": "v with generator eigenvalues (v\u00b2, \u2212v\u207b\u00b2); paper q = v\u00b2",
   "correct_eval_point": "v = \u221aq\u2080",
   "layer1_plain_word": {
-   "rel_at_sqrt_q": "8.03141e-51",
-   "rel_at_q": "0.0262852"
+   "rel_at_sqrt_q": "5.35323e-51",
+   "rel_at_q": "0.0231339"
   }
  },
  "operator_dictionary": {
@@ -40,44 +40,44 @@
  },
  "end_to_end": {
   "proton": {
-   "gp_reproduction": "1.065306228613167059365285",
-   "combiner_target": "1.065306228613167059365285",
-   "rel_delta": "2.91034e-49",
+   "gp_reproduction": "1.145759782287835504726286",
+   "combiner_target": "1.145759692457300869689082",
+   "rel_delta": "7.84026e-8",
    "n_crossings": 11,
    "n_averaged": 2,
    "n_color_weighted": 0,
    "tolerance": "1e-15",
-   "passed": true
+   "passed": false
   },
   "neutron": {
-   "gp_reproduction": "0.9232332971861535571052534",
-   "combiner_target": "0.9232332971861535571052534",
-   "rel_delta": "2.88053e-49",
+   "gp_reproduction": "0.9877437566876611113341356",
+   "combiner_target": "0.9877436881158095716340202",
+   "rel_delta": "6.94227e-8",
    "n_crossings": 11,
    "n_averaged": 2,
    "n_color_weighted": 0,
    "tolerance": "1e-15",
-   "passed": true
+   "passed": false
   },
   "deuteron": {
-   "gp_reproduction": "0.3883571887237810072705909",
-   "combiner_target": "0.3883571887237810072663901",
-   "rel_delta": "1.0817e-20",
+   "gp_reproduction": "0.5751723310178838519223898",
+   "combiner_target": "0.5751722439177718708265353",
+   "rel_delta": "1.51433e-7",
    "n_crossings": 23,
    "n_averaged": 4,
    "n_color_weighted": 1,
    "tolerance": "1e-12",
-   "passed": true
+   "passed": false
   },
   "helium-4": {
-   "gp_reproduction": "0.05535842626678310646540726",
-   "combiner_target": "0.05535842626678310646480845",
-   "rel_delta": "1.0817e-20",
+   "gp_reproduction": "0.1609741932291199649301114",
+   "combiner_target": "0.1609741454424073818258734",
+   "rel_delta": "2.9686e-7",
    "n_crossings": 47,
    "n_averaged": 8,
    "n_color_weighted": 1,
    "tolerance": "1e-12",
-   "passed": true
+   "passed": false
   }
  },
  "voided_claims": [
@@ -93,26 +93,28 @@
   },
   {
    "label": "end-to-end combiner reproduction: proton",
-   "passed": true
+   "passed": false
   },
   {
    "label": "end-to-end combiner reproduction: neutron",
-   "passed": true
+   "passed": false
   },
   {
    "label": "end-to-end combiner reproduction: deuteron",
-   "passed": true
+   "passed": false
   },
   {
    "label": "end-to-end combiner reproduction: helium-4",
-   "passed": true
+   "passed": false
   }
  ],
- "allPassed": true,
- "scriptHash": "5204e228f48a",
- "scriptCommitSha": "aa084f9e1f42bbde2f5da9c2b461be2a41ba988f",
- "commitSha": "b860526b7601f1a3fed649619dd7950ed8afc73e",
+ "allPassed": false,
+ "scriptHash": "ce314a2ed63b",
+ "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+ "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
  "durationMs": 0,
- "engineVersion": "mpmath 1.3.0",
+ "engineVersion": "mpmath 1.4.1",
+ "q0Anchor": "muon",
+ "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
  "scriptFile": "he4_binding_k_presentation_correction_probe.py"
 }

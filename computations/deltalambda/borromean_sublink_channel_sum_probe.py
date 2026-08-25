@@ -59,8 +59,9 @@ import mpmath as mp  # noqa: E402
 from hecke_character_symbolic import hoefsmit_matrices_symbolic  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 qs = sp.Symbol("q", positive=True, real=True)
 
 
@@ -309,7 +310,7 @@ def main():
                            "deficit against the unlink baseline is exactly 0.",
         "anti_fit": "μ₃/c₃ reported as target context only; no free parameter "
                     "tuned; nothing wired.",
-        "wall_seconds": round(time.time() - t_start, 2),
+        "wall_seconds": f"{time.time() - t_start:.2f}",
     }
     out = HERE / "borromean-sublink-channel-sum.witness.json"
     out.write_text(json.dumps(wit, indent=2))

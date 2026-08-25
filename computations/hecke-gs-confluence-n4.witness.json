@@ -1,0 +1,2082 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-10T01:32:45.589969+00:00",
+  "commitSha": "ff3f231cf0deb2e0846ee2400703c0fabbc89d84",
+  "assertions": [
+    {
+      "name": "overlap_compositions_failing_to_reduce",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "inclusion_compositions_failing_to_reduce",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "distinct_leading_monomials",
+      "computed": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "name": "overlap_shapes",
+      "computed": "58",
+      "expected": "58",
+      "passed": true
+    },
+    {
+      "name": "degenerate_shapes",
+      "computed": "13",
+      "expected": "13",
+      "passed": true
+    },
+    {
+      "name": "proper_shapes",
+      "computed": "45",
+      "expected": "45",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 64,
+  "computation": "hecke-gs-confluence-n4",
+  "scriptFile": "hecke_gs_confluence_n4.py",
+  "scriptHash": "4cded0fa39f4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Every overlap and inclusion composition of the Bokut-Shiao-completed Hecke rewriting system at n = 4 has an S-polynomial that reduces to zero. Exact over Z[h], h = q - q^-1; no float is formed.",
+  "parameters": {
+    "n": 4,
+    "rules": 16,
+    "deformation_symbol": "h = q - q^{-1}",
+    "lean_module": "UGB.GrobnerShirshov.HeckeCompletion"
+  },
+  "data": {
+    "overlap_compositions": 92,
+    "inclusion_compositions": 22,
+    "overlap_spoly_identically_zero": 26,
+    "inclusion_spoly_identically_zero": 22,
+    "proper_overlap_total_steps": 428,
+    "proper_overlap_max_chain": 25,
+    "proper_overlap_chain_histogram": {
+      "0": 4,
+      "1": 5,
+      "3": 21,
+      "4": 5,
+      "5": 1,
+      "6": 4,
+      "8": 13,
+      "9": 6,
+      "10": 4,
+      "12": 2,
+      "15": 3,
+      "19": 1,
+      "25": 1
+    },
+    "leading_monomials": [
+      "00",
+      "11",
+      "22",
+      "33",
+      "101",
+      "212",
+      "323",
+      "20",
+      "30",
+      "31",
+      "2102",
+      "32103",
+      "3213"
+    ],
+    "compositions": {
+      "overlap": [
+        {
+          "rule1": "Q0",
+          "rule2": "Q0",
+          "left": [],
+          "overlap": [
+            0,
+            0
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q0",
+          "rule2": "Q0",
+          "left": [
+            0
+          ],
+          "overlap": [
+            0
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q1",
+          "rule2": "Q1",
+          "left": [],
+          "overlap": [
+            1,
+            1
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q1",
+          "rule2": "Q1",
+          "left": [
+            1
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q1",
+          "rule2": "Y01",
+          "left": [
+            1
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q1",
+          "rule2": "B010",
+          "left": [
+            1
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q2",
+          "rule2": "Q2",
+          "left": [],
+          "overlap": [
+            2,
+            2
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q2",
+          "rule2": "Q2",
+          "left": [
+            2
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q2",
+          "rule2": "Y12",
+          "left": [
+            2
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q2",
+          "rule2": "B121",
+          "left": [
+            2
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q2",
+          "rule2": "F20",
+          "left": [
+            2
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q2",
+          "rule2": "B120",
+          "left": [
+            2
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            0,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 4,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "Q3",
+          "left": [],
+          "overlap": [
+            3,
+            3
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "Q3",
+          "left": [
+            3
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "Y23",
+          "left": [
+            3
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "B232",
+          "left": [
+            3
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "F30",
+          "left": [
+            3
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "F31",
+          "left": [
+            3
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "B230",
+          "left": [
+            3
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 5,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Q3",
+          "rule2": "B231",
+          "left": [
+            3
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 4,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y01",
+          "rule2": "Q1",
+          "left": [
+            1,
+            0
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B010",
+          "rule2": "Q1",
+          "left": [
+            1,
+            0
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y01",
+          "rule2": "Y01",
+          "left": [],
+          "overlap": [
+            1,
+            0,
+            1
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y01",
+          "rule2": "B010",
+          "left": [],
+          "overlap": [
+            1,
+            0,
+            1
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B010",
+          "rule2": "Y01",
+          "left": [],
+          "overlap": [
+            1,
+            0,
+            1
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B010",
+          "rule2": "B010",
+          "left": [],
+          "overlap": [
+            1,
+            0,
+            1
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y01",
+          "rule2": "Y01",
+          "left": [
+            1,
+            0
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y01",
+          "rule2": "B010",
+          "left": [
+            1,
+            0
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B010",
+          "rule2": "Y01",
+          "left": [
+            1,
+            0
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B010",
+          "rule2": "B010",
+          "left": [
+            1,
+            0
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y12",
+          "rule2": "Q2",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B121",
+          "rule2": "Q2",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y12",
+          "rule2": "Y12",
+          "left": [],
+          "overlap": [
+            2,
+            1,
+            2
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y12",
+          "rule2": "B121",
+          "left": [],
+          "overlap": [
+            2,
+            1,
+            2
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B121",
+          "rule2": "Y12",
+          "left": [],
+          "overlap": [
+            2,
+            1,
+            2
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B121",
+          "rule2": "B121",
+          "left": [],
+          "overlap": [
+            2,
+            1,
+            2
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y12",
+          "rule2": "Y12",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y12",
+          "rule2": "B121",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B121",
+          "rule2": "Y12",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B121",
+          "rule2": "B121",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y12",
+          "rule2": "F20",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 1,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B121",
+          "rule2": "F20",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 1,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y12",
+          "rule2": "B120",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            0,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 10,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B121",
+          "rule2": "B120",
+          "left": [
+            2,
+            1
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            0,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 10,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "Q3",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "Q3",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "Y23",
+          "left": [],
+          "overlap": [
+            3,
+            2,
+            3
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "B232",
+          "left": [],
+          "overlap": [
+            3,
+            2,
+            3
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "Y23",
+          "left": [],
+          "overlap": [
+            3,
+            2,
+            3
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "B232",
+          "left": [],
+          "overlap": [
+            3,
+            2,
+            3
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "Y23",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "B232",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "Y23",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "B232",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "F30",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 6,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "F30",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 6,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "F31",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 1,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "F31",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 1,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "B230",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 12,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "B230",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 12,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "Y23",
+          "rule2": "B231",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 10,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B232",
+          "rule2": "B231",
+          "left": [
+            3,
+            2
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 10,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F20",
+          "rule2": "Q0",
+          "left": [
+            2
+          ],
+          "overlap": [
+            0
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F20",
+          "rule2": "F20",
+          "left": [],
+          "overlap": [
+            2,
+            0
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F30",
+          "rule2": "Q0",
+          "left": [
+            3
+          ],
+          "overlap": [
+            0
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F30",
+          "rule2": "F30",
+          "left": [],
+          "overlap": [
+            3,
+            0
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F31",
+          "rule2": "Q1",
+          "left": [
+            3
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F31",
+          "rule2": "Y01",
+          "left": [
+            3
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 6,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F31",
+          "rule2": "B010",
+          "left": [
+            3
+          ],
+          "overlap": [
+            1
+          ],
+          "right": [
+            0,
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 6,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "F31",
+          "rule2": "F31",
+          "left": [],
+          "overlap": [
+            3,
+            1
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B120",
+          "rule2": "Q2",
+          "left": [
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B120",
+          "rule2": "Y12",
+          "left": [
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 9,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B120",
+          "rule2": "B121",
+          "left": [
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 9,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B120",
+          "rule2": "F20",
+          "left": [
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 4,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B120",
+          "rule2": "B120",
+          "left": [],
+          "overlap": [
+            2,
+            1,
+            0,
+            2
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B120",
+          "rule2": "B120",
+          "left": [
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            2
+          ],
+          "right": [
+            1,
+            0,
+            2
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 15,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "Q3",
+          "left": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "Y23",
+          "left": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 9,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "B232",
+          "left": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 9,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "F30",
+          "left": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 4,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "F31",
+          "left": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 8,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "B230",
+          "left": [],
+          "overlap": [
+            3,
+            2,
+            1,
+            0,
+            3
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "B230",
+          "left": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 25,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B230",
+          "rule2": "B231",
+          "left": [
+            3,
+            2,
+            1,
+            0
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 15,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "Q3",
+          "left": [
+            3,
+            2,
+            1
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 3,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "Y23",
+          "left": [
+            3,
+            2,
+            1
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 9,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "B232",
+          "left": [
+            3,
+            2,
+            1
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 9,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "F30",
+          "left": [
+            3,
+            2,
+            1
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            0
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 1,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "F31",
+          "left": [
+            3,
+            2,
+            1
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            1
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 4,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "B230",
+          "left": [
+            3,
+            2,
+            1
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            0,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 19,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "B231",
+          "left": [],
+          "overlap": [
+            3,
+            2,
+            1,
+            3
+          ],
+          "right": [],
+          "degenerate": true,
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "rule1": "B231",
+          "rule2": "B231",
+          "left": [
+            3,
+            2,
+            1
+          ],
+          "overlap": [
+            3
+          ],
+          "right": [
+            2,
+            1,
+            3
+          ],
+          "degenerate": false,
+          "spoly_identically_zero": false,
+          "steps": 15,
+          "reduces_to_zero": true,
+          "residue": {}
+        }
+      ],
+      "inclusion": [
+        {
+          "inner": "Q0",
+          "outer": "Q0",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Q1",
+          "outer": "Q1",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Q2",
+          "outer": "Q2",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Q3",
+          "outer": "Q3",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Y01",
+          "outer": "Y01",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B010",
+          "outer": "Y01",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Y12",
+          "outer": "Y12",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B121",
+          "outer": "Y12",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Y23",
+          "outer": "Y23",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B232",
+          "outer": "Y23",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "F20",
+          "outer": "F20",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "F30",
+          "outer": "F30",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "F31",
+          "outer": "F31",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Y01",
+          "outer": "B010",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B010",
+          "outer": "B010",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B120",
+          "outer": "B120",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Y12",
+          "outer": "B121",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B121",
+          "outer": "B121",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B230",
+          "outer": "B230",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B231",
+          "outer": "B231",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "Y23",
+          "outer": "B232",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        },
+        {
+          "inner": "B232",
+          "outer": "B232",
+          "left": [],
+          "right": [],
+          "spoly_identically_zero": true,
+          "steps": 0,
+          "reduces_to_zero": true,
+          "residue": {}
+        }
+      ]
+    }
+  },
+  "caveats": [
+    "Computational witness, not a proof. It establishes that the Lean obligation set at n = 4 is discharge-able and supplies the reduction chain each Lean proof must reproduce; it does not discharge it.",
+    "n = 4 only. Bokut & Shiao's theorem is for all n, and nothing here bears on n > 4.",
+    "Faithfulness to the Lean definitions is checked by inspection against the table in this script's docstring, not mechanically."
+  ]
+}

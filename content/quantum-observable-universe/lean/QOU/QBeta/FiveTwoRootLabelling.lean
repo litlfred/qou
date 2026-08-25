@@ -72,7 +72,8 @@ Checked against a numerical derivative at seven values of `c` spanning the arc,
 agreeing to `5.7e-42` (Route 36). At `c = 3/4` it is exactly `−2/7`, the point
 where `unitCubic_deriv_ge`'s bound `7/4` is attained.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

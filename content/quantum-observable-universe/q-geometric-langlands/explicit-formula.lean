@@ -33,7 +33,15 @@ structure ReebEigenvalue where
   /-- The eigenvalue ρ ∈ ℂ (represented here as ℝ for the real part). -/
   val : ℝ
 
-/-- The q-integer [ρ]_q = (q^ρ - q^{-ρ}) / (q - q^{-1}). -/
+/-- The q-integer [ρ]_q = (q^ρ - q^{-ρ}) / (q - q^{-1}).
+
+**Deliberately not consolidated onto `QOU.QInteger.qIntBal`** (`qou-qint`
+census).  The index is a Reeb eigenvalue `ρ : ℝ` and the powers are `rpow`, so
+this is the continuous-index bracket; the canonical `qIntBal` (ℕ) and
+`qIntBalZ` (ℤ) are both discrete.  Distinct from the `JonesMarkovWenzl` case,
+which merely *looked* continuous — there the `rpow`s were at half-integer
+multiples of a `ℕ` index and did reduce to `qIntBal` at `q^{1/2}`.  Here `ρ`
+ranges over a genuine spectrum, so no such reduction exists. -/
 noncomputable def qInteger (q : ℝ) (hq : 1 < q) (ρ : ℝ) : ℝ :=
   (q ^ ρ - q ^ (-ρ)) / (q - q⁻¹)
 

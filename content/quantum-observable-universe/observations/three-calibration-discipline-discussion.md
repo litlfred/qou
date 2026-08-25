@@ -17,7 +17,7 @@ This proposition formalizes the calibration discipline.
    $$
      \frac{m_\mu}{m_e} \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2},
      \qquad \hbar_q = 1 - q_0^{-1},
-     \qquad \mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299.
+     \qquad \mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\,\Lambda(\pi/3) \approx 2.0299.
    $$
 
    Inverted for $q_0$, CAL-1 and CAL-2 coordinatize the single modulus $q_0$ one-to-one. The modulus is overdetermined. It can be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which agree on $q_0$ to within 0.3% ([substrate-consistency window](#prop:substrate-consistency-window)). In the observations chapter, one may anchor $q_0$ on the proton ratio $m_p/m_e$ for higher precision. This is a substitution within the same overdetermined $H^1$ datum. It does not introduce a new calibration.

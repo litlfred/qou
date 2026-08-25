@@ -12,6 +12,7 @@ violation.
 """
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 #!/usr/bin/env python3
 """
 Q-value from INVERSE Markov trace — vortex tube resistance.
@@ -40,17 +41,43 @@ from mpmath import mp
 from itertools import combinations
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q as q, Q_INV as qi, HA as h, LN_Q
+# mpmath, not the f64 family. This script is pure arithmetic on q0 — vertex
+# volumes are a linear recursion, the Markov trace is their product — so there
+# was never a reason for it to run in float64 (bean qou-t0rf). It also writes
+# its witness with a bare `json.dump(..., default=str)` rather than
+# `WitnessBuilder.save()`, so the raw-float64 guard installed at that single
+# write point never saw it; carrying mpf through is what actually fixes it,
+# and `default=str` then serializes them losslessly.
+from q_parameter import Q_MP as q, Q_INV_MP as qi, HA_MP as h, LN_Q_MP as LN_Q
 from experimental_constants import (
-    M_E_MEV, M_P_MEV, M_N_MEV,
-    Q_TRITIUM_MEV, Q_NEUTRON_MEV,
+    M_E_MEV as _M_E_MEV, M_P_MEV as _M_P_MEV, M_N_MEV as _M_N_MEV,
+    Q_TRITIUM_MEV as _Q_TRITIUM_MEV, Q_NEUTRON_MEV as _Q_NEUTRON_MEV,
 )
 
-z = 1.0 / (q**0.5 + q**(-0.5))
+# THE dps RULE APPLIES HERE TOO, and this block was on the wrong side of it.
+# The rule is stated 100 lines below ("Precision must be raised BEFORE the
+# module-scope constants") but `set_compute_dps()` was called there, while
+# these five constants are built up here -- at mpmath's default dps=15. An
+# `mpf` created at dps 15 holds ~53 bits, so printing it later at dps 50
+# reveals the binary64 expansion rather than the value: `Q_TRITIUM_MEV` went
+# into the witness as
+#     0.01861000000000000154098955817971727810800075531005859375
+# instead of 0.01861 -- 40 fabricated digits, flagged by
+# `witness_float64_padding_audit` as NEW fake precision. Raising dps
+# afterwards cannot recover what was never stored. Bean `qou-xt5l`.
+set_compute_dps()
+
+M_E_MEV = mp.mpf(repr(_M_E_MEV))
+M_P_MEV = mp.mpf(repr(_M_P_MEV))
+M_N_MEV = mp.mpf(repr(_M_N_MEV))
+Q_TRITIUM_MEV = mp.mpf(repr(_Q_TRITIUM_MEV))
+Q_NEUTRON_MEV = mp.mpf(repr(_Q_NEUTRON_MEV))
+
+z = q**3 / (q**2 + 1)
 ln_q = LN_Q
 
 print("INVERSE MARKOV TRACE Q-VALUES")
-print(f"  q₀ = {q:.15f}, h = {h:.10f}, z = {z:.10f}")
+print(f"  q₀ = {mp.nstr(q, 17)}, h = {mp.nstr(h, 12)}, z = {mp.nstr(z, 12)}")
 print("=" * 80)
 
 
@@ -61,7 +88,7 @@ print("=" * 80)
 def chain_V(ordering, gen, type_fn):
     """Vertex volume V̂ at generator position gen."""
     n = len(ordering)
-    a, b = 0.0, 1.0
+    a, b = mp.mpf(0), mp.mpf(1)
     for j in range(gen + 1, n):
         d = type_fn(ordering[gen], ordering[j])
         new_a = a * h + a * d + b
@@ -74,7 +101,7 @@ def markov_trace_product(ordering, type_fn):
     """Markov trace = product of vertex volumes."""
     n = len(ordering)
     vols = []
-    product = 1.0
+    product = mp.mpf(1)
     for i in range(n - 1):
         V = chain_V(ordering, i, type_fn)
         vols.append(V)
@@ -84,14 +111,14 @@ def markov_trace_product(ordering, type_fn):
 
 def nucleon_typed_d(ti, tj):
     """Nucleon-level crossing coefficient."""
-    if ti == 'p' and tj == 'p': return 0.0
+    if ti == 'p' and tj == 'p': return mp.mpf(0)
     if ti == 'n' and tj == 'n': return -h
     return -h / 2
 
 
 def quark_typed_d(fi, fj):
     """Quark-level crossing coefficient."""
-    if fi == 'u' and fj == 'u': return 0.0
+    if fi == 'u' and fj == 'u': return mp.mpf(0)
     if fi == 'd' and fj == 'd': return -h
     return -h / 2
 
@@ -99,7 +126,7 @@ def quark_typed_d(fi, fj):
 def find_gs_nucleon(Z, N):
     """Find ground state nucleon ordering (max |tr_M| = most stable)."""
     A = Z + N
-    best_tr = 0
+    best_tr = mp.mpf(0)
     best_ord = None
     for pp in combinations(range(A), Z):
         o = ['n'] * A
@@ -115,7 +142,7 @@ def find_gs_nucleon(Z, N):
 def find_gs_quark(Z, N):
     """Find ground state quark ordering (max |tr_M| = most stable)."""
     A = Z + N
-    best_tr = 0
+    best_tr = mp.mpf(0)
     best_ord = None
     for pp in combinations(range(A), Z):
         quarks = []
@@ -135,11 +162,17 @@ def find_gs_quark(Z, N):
 #  Q-VALUE COMPUTATIONS
 # ══════════════════════════════════════════════════════════════
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 decays = [
     (0, 1, 1, 0, Q_NEUTRON_MEV,  'n→p'),
     (1, 2, 2, 1, Q_TRITIUM_MEV,  '³H→³He'),
-    (2, 4, 3, 3, 3.508,          '⁶He→⁶Li'),
-    (6, 8, 7, 7, 0.15648,        '¹⁴C→¹⁴N'),
+    (2, 4, 3, 3, mp.mpf("3.508"),    '⁶He→⁶Li'),
+    (6, 8, 7, 7, mp.mpf("0.15648"),  '¹⁴C→¹⁴N'),
 ]
 
 print("\n" + "=" * 80)
@@ -155,14 +188,14 @@ for Z_par, N_par, Z_dau, N_dau, Q_exp, name in decays:
     gs_par, tr_par = find_gs_nucleon(Z_par, N_par)
     gs_dau, tr_dau = find_gs_nucleon(Z_dau, N_dau)
 
-    inv_par = 1.0 / abs(tr_par) if abs(tr_par) > 1e-300 else float('inf')
-    inv_dau = 1.0 / abs(tr_dau) if abs(tr_dau) > 1e-300 else float('inf')
+    inv_par = 1 / abs(tr_par) if abs(tr_par) > mp.mpf('1e-300') else mp.inf
+    inv_dau = 1 / abs(tr_dau) if abs(tr_dau) > mp.mpf('1e-300') else mp.inf
     delta_inv = inv_par - inv_dau  # > 0 if parent has more stored energy
 
     print(f"\n  {name} (A={A})")
-    print(f"    Parent:   {''.join(gs_par)}, tr_M = {tr_par:+.8f}, 1/|tr_M| = {inv_par:.4f}")
-    print(f"    Daughter: {''.join(gs_dau)}, tr_M = {tr_dau:+.8f}, 1/|tr_M| = {inv_dau:.4f}")
-    print(f"    Δ(1/|tr_M|) = {delta_inv:+.6f}")
+    print(f"    Parent:   {''.join(gs_par)}, tr_M = {mp.nstr(mp.mpf(tr_par), 10)}, 1/|tr_M| = {mp.nstr(mp.mpf(inv_par), 6)}")
+    print(f"    Daughter: {''.join(gs_dau)}, tr_M = {mp.nstr(mp.mpf(tr_dau), 10)}, 1/|tr_M| = {mp.nstr(mp.mpf(inv_dau), 6)}")
+    print(f"    Δ(1/|tr_M|) = {mp.nstr(mp.mpf(delta_inv), 8)}")
 
     nuc_results.append({
         'name': name, 'A': A, 'tr_par': tr_par, 'tr_dau': tr_dau,
@@ -175,18 +208,18 @@ print("\n  CALIBRATION:")
 for r in nuc_results:
     if abs(r['delta_inv']) > 1e-10:
         scale = r['Q_exp'] / abs(r['delta_inv'])
-        print(f"    {r['name']:>12s}: scale = Q_exp/|Δ(1/|tr_M|)| = {scale:.6f} MeV")
+        print(f"    {r['name']:>12s}: scale = Q_exp/|Δ(1/|tr_M|)| = {mp.nstr(mp.mpf(scale), 8)} MeV")
 
 # Use ³H as calibrator
 if len(nuc_results) >= 2:
     tritium_r = next((r for r in nuc_results if '³H' in r['name']), None)
     if tritium_r and abs(tritium_r['delta_inv']) > 1e-10:
         cal_scale = tritium_r['Q_exp'] / abs(tritium_r['delta_inv'])
-        print(f"\n  Using ³H as calibrator: scale = {cal_scale:.6f} MeV")
+        print(f"\n  Using ³H as calibrator: scale = {mp.nstr(mp.mpf(cal_scale), 8)} MeV")
         for r in nuc_results:
             Q_calc = abs(r['delta_inv']) * cal_scale
-            err = (Q_calc / r['Q_exp'] - 1) * 100 if r['Q_exp'] > 0 else float('nan')
-            print(f"    {r['name']:>12s}: Q = {Q_calc:.6f} MeV (exp: {r['Q_exp']:.6f}, err: {err:+.1f}%)")
+            err = (Q_calc / r['Q_exp'] - 1) * 100 if r['Q_exp'] > 0 else mp.nan
+            print(f"    {r['name']:>12s}: Q = {mp.nstr(mp.mpf(Q_calc), 8)} MeV (exp: {mp.nstr(mp.mpf(r['Q_exp']), 8)}, err: {mp.nstr(mp.mpf(err), 3)}%)")
 
 
 print("\n\n" + "=" * 80)
@@ -202,14 +235,14 @@ for Z_par, N_par, Z_dau, N_dau, Q_exp, name in decays:
     gs_par, tr_par = find_gs_quark(Z_par, N_par)
     gs_dau, tr_dau = find_gs_quark(Z_dau, N_dau)
 
-    inv_par = 1.0 / abs(tr_par) if abs(tr_par) > 1e-300 else float('inf')
-    inv_dau = 1.0 / abs(tr_dau) if abs(tr_dau) > 1e-300 else float('inf')
+    inv_par = 1 / abs(tr_par) if abs(tr_par) > mp.mpf('1e-300') else mp.inf
+    inv_dau = 1 / abs(tr_dau) if abs(tr_dau) > mp.mpf('1e-300') else mp.inf
     delta_inv = inv_par - inv_dau
 
     print(f"\n  {name} (A={A}, 3A={3*A} quarks)")
-    print(f"    Parent:   tr_M = {tr_par:+.12e}, 1/|tr_M| = {inv_par:.4f}")
-    print(f"    Daughter: tr_M = {tr_dau:+.12e}, 1/|tr_M| = {inv_dau:.4f}")
-    print(f"    Δ(1/|tr_M|) = {delta_inv:+.6f}")
+    print(f"    Parent:   tr_M = {mp.nstr(mp.mpf(tr_par), 14)}, 1/|tr_M| = {mp.nstr(mp.mpf(inv_par), 6)}")
+    print(f"    Daughter: tr_M = {mp.nstr(mp.mpf(tr_dau), 14)}, 1/|tr_M| = {mp.nstr(mp.mpf(inv_dau), 6)}")
+    print(f"    Δ(1/|tr_M|) = {mp.nstr(mp.mpf(delta_inv), 8)}")
 
     quark_results.append({
         'name': name, 'A': A, 'n_quarks': 3*A,
@@ -223,17 +256,17 @@ print("\n  CALIBRATION:")
 for r in quark_results:
     if abs(r['delta_inv']) > 1e-10:
         scale = r['Q_exp'] / abs(r['delta_inv'])
-        print(f"    {r['name']:>12s}: scale = {scale:.6f} MeV")
+        print(f"    {r['name']:>12s}: scale = {mp.nstr(mp.mpf(scale), 8)} MeV")
 
 # Use free neutron as calibrator
 neutron_r = next((r for r in quark_results if 'n→p' in r['name']), None)
 if neutron_r and abs(neutron_r['delta_inv']) > 1e-10:
     cal_scale_n = neutron_r['Q_exp'] / abs(neutron_r['delta_inv'])
-    print(f"\n  Using n→p as calibrator: scale = {cal_scale_n:.6f} MeV")
+    print(f"\n  Using n→p as calibrator: scale = {mp.nstr(mp.mpf(cal_scale_n), 8)} MeV")
     for r in quark_results:
         Q_calc = abs(r['delta_inv']) * cal_scale_n
-        err = (Q_calc / r['Q_exp'] - 1) * 100 if r['Q_exp'] > 0 else float('nan')
-        print(f"    {r['name']:>12s}: Q = {Q_calc:.6f} MeV (exp: {r['Q_exp']:.6f}, err: {err:+.1f}%)")
+        err = (Q_calc / r['Q_exp'] - 1) * 100 if r['Q_exp'] > 0 else mp.nan
+        print(f"    {r['name']:>12s}: Q = {mp.nstr(mp.mpf(Q_calc), 8)} MeV (exp: {mp.nstr(mp.mpf(r['Q_exp']), 8)}, err: {mp.nstr(mp.mpf(err), 3)}%)")
 
 
 # ══════════════════════════════════════════════════════════════
@@ -258,21 +291,21 @@ for level, results_list, typed_d_fn, gs_fn, label in [
         gs_par, tr_par = gs_fn(Z_par, N_par)
         gs_dau, tr_dau = gs_fn(Z_dau, N_dau)
 
-        F_par = -mp.log(abs(tr_par)) if abs(tr_par) > 1e-300 else float('inf')
-        F_dau = -mp.log(abs(tr_dau)) if abs(tr_dau) > 1e-300 else float('inf')
+        F_par = -mp.log(abs(tr_par)) if abs(tr_par) > mp.mpf('1e-300') else mp.inf
+        F_dau = -mp.log(abs(tr_dau)) if abs(tr_dau) > mp.mpf('1e-300') else mp.inf
         dF = F_par - F_dau
 
         results_list.append({
-            'name': name, 'A': A, 'F_par': float(F_par), 'F_dau': float(F_dau),
-            'dF': float(dF), 'Q_exp': Q_exp,
+            'name': name, 'A': A, 'F_par': F_par, 'F_dau': F_dau,
+            'dF': dF, 'Q_exp': Q_exp,
         })
 
     print(f"\n  {label} level:")
     print(f"  {'Decay':>12s} | {'F_par':>10s} | {'F_dau':>10s} | {'ΔF':>10s} | {'Q_exp':>10s}")
     print(f"  {'':->60s}")
     for r in results_list:
-        print(f"  {r['name']:>12s} | {r['F_par']:>+10.4f} | {r['F_dau']:>+10.4f} | "
-              f"{r['dF']:>+10.4f} | {r['Q_exp']:>10.6f}")
+        print(f"  {r['name']:>12s} | {mp.nstr(mp.mpf(r['F_par']), 6):>10} | {mp.nstr(mp.mpf(r['F_dau']), 6):>10} | "
+              f"{mp.nstr(mp.mpf(r['dF']), 6):>10} | {mp.nstr(mp.mpf(r['Q_exp']), 8):>10}")
 
 
 # ══════════════════════════════════════════════════════════════
@@ -290,10 +323,10 @@ Q0 = M_N_MEV - M_P_MEV - M_E_MEV
 for Z_par, N_par, Z_dau, N_dau, Q_exp, name in decays:
     A = Z_par + N_par
     dB = Q_exp - Q0
-    print(f"  {name:>12s}: Q = {Q_exp:.6f} = {Q0:.3f} + ({dB:+.4f}) MeV  [ΔB = {dB:+.4f}]")
+    print(f"  {name:>12s}: Q = {mp.nstr(mp.mpf(Q_exp), 8)} = {mp.nstr(mp.mpf(Q0), 5)} + ({mp.nstr(mp.mpf(dB), 6)}) MeV  [ΔB = {mp.nstr(mp.mpf(dB), 6)}]")
 
-print(f"\n  The ΔB values span {min(Q_exp - Q0 for _,_,_,_,Q_exp,_ in decays):.3f} to "
-      f"{max(Q_exp - Q0 for _,_,_,_,Q_exp,_ in decays):.3f} MeV")
+print(f"\n  The ΔB values span {mp.nstr(mp.mpf(min(Q_exp - Q0 for _,_,_,_,Q_exp,_ in decays)), 5)} to "
+      f"{mp.nstr(mp.mpf(max(Q_exp - Q0 for _,_,_,_,Q_exp,_ in decays)), 5)} MeV")
 print(f"  This is what the Garside algebra must produce.")
 
 
@@ -322,27 +355,27 @@ for Z_par, N_par, Z_dau, N_dau, Q_exp, name in decays:
         sum_dV = sum(V_dau[i] - V_par[i] for i in range(A - 1))
         Q_vv = abs(sum_dV) * z**2 * M_E_MEV
     else:
-        Q_vv = float('nan')
+        Q_vv = mp.nan
 
     # Free energy (nucleon)
     if A <= 14:
         _, tr_par = find_gs_nucleon(Z_par, N_par)
         _, tr_dau = find_gs_nucleon(Z_dau, N_dau)
         dF = (-mp.log(abs(tr_par))) - (-mp.log(abs(tr_dau)))
-        Q_fe = float(abs(dF) * ln_q * M_E_MEV)
+        Q_fe = abs(dF) * ln_q * M_E_MEV
     else:
-        Q_fe = float('nan')
+        Q_fe = mp.nan
 
     # Inverse Markov trace (nucleon)
     if A <= 14:
-        inv_par = 1.0 / abs(tr_par)
-        inv_dau = 1.0 / abs(tr_dau)
+        inv_par = 1 / abs(tr_par)
+        inv_dau = 1 / abs(tr_dau)
         d_inv = inv_par - inv_dau
     else:
-        d_inv = float('nan')
+        d_inv = mp.nan
 
-    print(f"  {name:>12s} | {Q_exp:>8.4f} | {Q_vv:>12.6f} | "
-          f"{Q_fe:>12.6f} | {d_inv:>+12.4f} | {dB:>+8.4f}")
+    print(f"  {name:>12s} | {mp.nstr(mp.mpf(Q_exp), 6):>8} | {mp.nstr(mp.mpf(Q_vv), 8):>12} | "
+          f"{mp.nstr(mp.mpf(Q_fe), 8):>12} | {mp.nstr(mp.mpf(d_inv), 6):>12} | {mp.nstr(mp.mpf(dB), 6):>8}")
 
 print(f"\n  KEY OBSERVATION:")
 print(f"  The Δ(1/|tr_M|) column at nucleon level has the right PATTERN:")

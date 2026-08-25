@@ -35,5 +35,5 @@ integral on $S^1 \times S^1$. Under a surreal lift (see
 $E_{\mathrm{cat}}$ lifts verbatim (categorical operations only)
 and $\lim_{q \to 1}$ becomes
 $\mathrm{st} \circ \text{eval}_{q = 1 + \varepsilon}$; the
-The right-hand side remains in $\mathbb{R}$ as an external anchor.
+right-hand side remains in $\mathbb{R}$ as an external anchor.
 Lebesgue measure is not used inside QOU. $\square$

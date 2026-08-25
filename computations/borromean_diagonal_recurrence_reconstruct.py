@@ -399,7 +399,7 @@ def main() -> int:
         "parameters": {"r": R_ORD, "W": W_WIN, "samples": len(kept),
                        "verify_range": f"n=1..{NVER}"},
         "result": result,
-        "wall_seconds": round(time.time() - t0, 1),
+        "wall_seconds": f"{time.time() - t0:.1f}",
     }
     out = script_path.with_name(
         "borromean-diagonal-recurrence-reconstruct.witness.json")

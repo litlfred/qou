@@ -4,6 +4,7 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Proton tower residual = m_e · tr_M(C_Frob)
@@ -54,8 +55,8 @@ def protonTowerMass : ℝ := 938.7228
     reproduce (to 0.14 %). -/
 def protonTowerResidualMeV : ℝ := 1.2779
 
-/-- The CODATA proton mass, in MeV.  CODATA 2022: 938.27208816 MeV. -/
-def protonCodata : ℝ := 938.27208816  -- :leanval[m_p_MeV]{precision=11}
+/-- The CODATA proton mass, in MeV.  CODATA 2022: 938.27208943 MeV. -/
+def protonCodata : ℝ := 938.27208943  -- :leanval[m_p_MeV]{precision=11}
 
 /-- The electron rest-mass, in MeV.  Pinned to the CODATA 2022 value
     `0.51099895069 MeV` (truncated; full uncertainty ≤ 1 keV).  The
@@ -70,6 +71,18 @@ def qSubstrate : ℝ := 1.10998
 /-- The q-integer [2]_q = q + q⁻¹, evaluated at q = q_0.
     1.10998 + 1/1.10998 ≈ 2.01092. -/
 noncomputable def qInt2 : ℝ := qSubstrate + 1 / qSubstrate
+
+/-- **Bridge to the canonical balanced bracket at the substrate anchor.**
+
+Unlike the generic shorthand sites, this one is pinned at a *numeral*, so the
+`q − q⁻¹ ≠ 0` side condition of `qIntBal_two` is not carried as a hypothesis —
+it is discharged by `norm_num` at `q₀ = 1.10998` (where `q₀² ≈ 1.232 ≠ 1`).  The
+equation is therefore unconditional, which is what one wants of a site whose
+whole purpose is a numeric evaluation. -/
+theorem qInt2_eq_canonical : qInt2 = QOU.QInteger.qIntBal qSubstrate 2 := by
+  have hne : qSubstrate - qSubstrate⁻¹ ≠ 0 := by
+    rw [qSubstrate]; norm_num
+  rw [QOU.QInteger.qIntBal_two _ hne, qInt2, one_div]
 
 /-- The Markov trace of the Frobenius co-Casimir of H_n(q):
       tr_M(C_Frob) = Σ_{λ ⊢ n} 1/dim_q(λ).
@@ -146,9 +159,9 @@ computable terms must invalidate these axioms first. -/
 theorem electronMass_witness :
     (0.510998 : ℝ) ≤ electronMass ∧ electronMass ≤ (0.511000 : ℝ) := by
   refine ⟨?_, ?_⟩
-  · show (0.510998 : ℝ) ≤ 0.51099895
+  · show (0.510998 : ℝ) ≤ 0.51099895  -- :leanval[m_e_MeV]{precision=8}
     norm_num
-  · show (0.51099895 : ℝ) ≤ 0.511000
+  · show (0.51099895 : ℝ) ≤ 0.511000  -- :leanval[m_e_MeV]{precision=8}
     norm_num
 
 /-- Witness theorem (formerly axiom).  CODATA 2022 neutron mass

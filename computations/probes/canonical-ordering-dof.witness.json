@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-09T05:13:30.262365+00:00",
-  "commitSha": "1467751a1c15fc34497aa5433ba75850ba6fd92c",
+  "computedAt": "2026-08-23T12:19:34.128734+00:00",
+  "commitSha": "935c11c33670a4a5165e199eb7d2554375fe5f59",
   "assertions": [
     {
       "name": "closed_form_ratio_hardcodes_canonical_ordering",
@@ -138,11 +138,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 9,
   "computation": "canonical-ordering-dof",
   "scriptFile": "canonical_ordering_dof_probe.py",
-  "scriptHash": "28c91eaeb54a",
-  "scriptCommitSha": "1467751a1c15fc34497aa5433ba75850ba6fd92c",
+  "scriptHash": "e27e4aa5996e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -154,7 +154,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/canonical_ordering_dof_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/canonical_ordering_dof_probe.py"
   },
   "description": "Is the canonical cross-species nucleon ordering p...pn...n derivable, or a free degree of freedom? Q1: it is LIVE IN PRODUCTION -- the A>=3 binding chain (mass_table_comprehensive -> binding_canonical -> closed_form_tau_M -> closed_form_ratio) iterates a hardcoded ['p']*Z + ['n']*N, so every mixed-species A>=3 row of mass-table-comprehensive.witness.json inherits the choice. Q2: the interface product factorises as P(o)/P(canonical) = (f_pn/f_pp)^(b_p-1) * (f_pn/f_nn)^(b_n-1) over the p-/n-BLOCK counts; at the substrate anchor f_pn/f_pp < 1 < f_pn/f_nn, so the canonical arrangement is a SADDLE -- no extremal principle can select it (candidate 1 REFUTED). The trace IS a function of the interface multiset, but the multiset is not determined by (Z, N), so candidate 2 re-coordinatises the DOF without removing it. What survives is candidate 3: a genuine undeclared degree of freedom. free_parameters = 0; no AME quantity selects anything; nothing is wired; no ordering is recommended.",
   "auditOnly": true,
@@ -163,7 +172,7 @@
     "q0_pin": "experimental/proton (q_parameter.Q_50_DIGIT_STR; owner directive 2026-08-07) -- the same pin the production chain uses; layer-pure, no muon cache read",
     "free_parameters": 0,
     "conventions_covered": "strict_averaged, bring_color_weighted",
-    "dps": 50
+    "dps": 70
   },
   "data": {
     "production_trace": {
@@ -187,18 +196,18 @@
     "factorisation": {
       "n_orderings_checked": 3140,
       "block_count_identity": true,
-      "worst_rel_multiset_form": "5.34553e-51",
-      "worst_rel_block_form": "8.01829e-51"
+      "worst_rel_multiset_form": "3.62227e-71",
+      "worst_rel_block_form": "5.43341e-71"
     },
     "candidate1_extremum": {
       "verdict": "REFUTED -- canonical is a saddle, not an extremum",
       "per_convention": {
         "strict_averaged": {
-          "f_pp": "0.49932033418369445241",
-          "f_nn": "0.29026003538805513698",
-          "f_pn": "0.3947901847858747947",
-          "u_fpn_over_fpp": "0.79065513210330391463",
-          "v_fpn_over_fnn": "1.3601258756069224677",
+          "f_pp": "0.6126880371464652516",
+          "f_nn": "0.40362773835082593616",
+          "f_pn": "0.50815788774864559388",
+          "u_fpn_over_fpp": "0.82939090848801515901",
+          "v_fpn_over_fnn": "1.2589766249091729688",
           "u_lt_1_and_v_gt_1": true,
           "per_atom": [
             {
@@ -208,9 +217,9 @@
               "n_orderings": 6,
               "canonical": "ppnn",
               "argmin": "pnnp",
-              "min_over_canonical": "0.790655132103",
+              "min_over_canonical": "0.829390908488",
               "argmax": "nppn",
-              "max_over_canonical": "1.36012587561",
+              "max_over_canonical": "1.25897662491",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -222,9 +231,9 @@
               "n_orderings": 20,
               "canonical": "pppnnn",
               "argmin": "pnnnpp",
-              "min_over_canonical": "0.790655132103",
+              "min_over_canonical": "0.829390908488",
               "argmax": "nppnpn",
-              "max_over_canonical": "1.46266645068",
+              "max_over_canonical": "1.31460295438",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -236,9 +245,9 @@
               "n_orderings": 70,
               "canonical": "ppppnnnn",
               "argmin": "pnnnnppp",
-              "min_over_canonical": "0.790655132103",
-              "argmax": "nppnpnpn",
-              "max_over_canonical": "1.57293761136",
+              "min_over_canonical": "0.829390908488",
+              "argmax": "npnpnppn",
+              "max_over_canonical": "1.37268706462",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -250,9 +259,9 @@
               "n_orderings": 924,
               "canonical": "ppppppnnnnnn",
               "argmin": "pnnnnnnppppp",
-              "min_over_canonical": "0.790655132103",
-              "argmax": "nppnpnpnpnpn",
-              "max_over_canonical": "1.81904687913",
+              "min_over_canonical": "0.829390908488",
+              "argmax": "npnpnpnppnpn",
+              "max_over_canonical": "1.49666780153",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -264,9 +273,9 @@
               "n_orderings": 35,
               "canonical": "pppnnnn",
               "argmin": "pnnnnpp",
-              "min_over_canonical": "0.790655132103",
+              "min_over_canonical": "0.829390908488",
               "argmax": "npnpnpn",
-              "max_over_canonical": "1.57293761136",
+              "max_over_canonical": "1.37268706462",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -278,9 +287,9 @@
               "n_orderings": 12870,
               "canonical": "ppppppppnnnnnnnn",
               "argmin": "pnnnnnnnnppppppp",
-              "min_over_canonical": "0.790655132103",
-              "argmax": "nppnpnpnpnpnpnpn",
-              "max_over_canonical": "2.10366356844",
+              "min_over_canonical": "0.829390908488",
+              "argmax": "npnpnpnpnpnpnppn",
+              "max_over_canonical": "1.63184644619",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -288,11 +297,11 @@
           ]
         },
         "bring_color_weighted": {
-          "f_pp": "0.49932033418369445241",
-          "f_nn": "0.29026003538805513698",
-          "f_pn": "0.3948620864139681634",
-          "u_fpn_over_fpp": "0.79079913110188448692",
-          "v_fpn_over_fnn": "1.3603735901364037372",
+          "f_pp": "0.6126880371464652516",
+          "f_nn": "0.40362773835082593616",
+          "f_pn": "0.50822978937673896258",
+          "u_fpn_over_fpp": "0.82950826287350021518",
+          "v_fpn_over_fnn": "1.2591547633800004447",
           "u_lt_1_and_v_gt_1": true,
           "per_atom": [
             {
@@ -302,9 +311,9 @@
               "n_orderings": 6,
               "canonical": "ppnn",
               "argmin": "pnnp",
-              "min_over_canonical": "0.790799131102",
+              "min_over_canonical": "0.829508262874",
               "argmax": "nppn",
-              "max_over_canonical": "1.36037359014",
+              "max_over_canonical": "1.25915476338",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -315,10 +324,10 @@
               "N": 3,
               "n_orderings": 20,
               "canonical": "pppnnn",
-              "argmin": "pnnnpp",
-              "min_over_canonical": "0.790799131102",
+              "argmin": "ppnnnp",
+              "min_over_canonical": "0.829508262874",
               "argmax": "nppnpn",
-              "max_over_canonical": "1.46346576579",
+              "max_over_canonical": "1.31516106124",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -329,10 +338,10 @@
               "N": 4,
               "n_orderings": 70,
               "canonical": "ppppnnnn",
-              "argmin": "pppnnnnp",
-              "min_over_canonical": "0.790799131102",
+              "argmin": "pnnnnppp",
+              "min_over_canonical": "0.829508262874",
               "argmax": "nppnpnpn",
-              "max_over_canonical": "1.57437049879",
+              "max_over_canonical": "1.37365847894",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -344,9 +353,9 @@
               "n_orderings": 924,
               "canonical": "ppppppnnnnnn",
               "argmin": "pnnnnnnppppp",
-              "min_over_canonical": "0.790799131102",
-              "argmax": "npnpnpnpnppn",
-              "max_over_canonical": "1.82203071673",
+              "min_over_canonical": "0.829508262874",
+              "argmax": "nppnpnpnpnpn",
+              "max_over_canonical": "1.49857481513",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -358,9 +367,9 @@
               "n_orderings": 35,
               "canonical": "pppnnnn",
               "argmin": "pnnnnpp",
-              "min_over_canonical": "0.790799131102",
+              "min_over_canonical": "0.829508262874",
               "argmax": "npnpnpn",
-              "max_over_canonical": "1.57437049879",
+              "max_over_canonical": "1.37365847894",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -371,10 +380,10 @@
               "N": 8,
               "n_orderings": 12870,
               "canonical": "ppppppppnnnnnnnn",
-              "argmin": "ppppnnnnnnnnpppp",
-              "min_over_canonical": "0.790799131102",
-              "argmax": "npnpnpnpnpnpnppn",
-              "max_over_canonical": "2.10864973351",
+              "argmin": "pppnnnnnnnnppppp",
+              "min_over_canonical": "0.829508262874",
+              "argmax": "nppnpnpnpnpnpnpn",
+              "max_over_canonical": "1.63485066411",
               "canonical_is_min": false,
               "canonical_is_max": false,
               "canonical_is_extremum": false
@@ -455,23 +464,23 @@
       "readout": "B_pred = -alpha*ln(tau_M) (mass_table_comprehensive.try_binding_symbolic_log_trace); the ordering shift is exactly -alpha*ln(ratio), additive",
       "alpha_MeV": "3.7444596599416103248",
       "convention": "strict_averaged",
-      "dB_per_extra_p_block_MeV": "0.879548845863",
-      "dB_per_extra_n_block_MeV": "-1.1517106089",
+      "dB_per_extra_p_block_MeV": "0.700452451465",
+      "dB_per_extra_n_block_MeV": "-0.862346021038",
       "named_isotopes": [
         {
           "atom": "T",
           "Z": 1,
           "N": 2,
           "in_production_table": true,
-          "B_pred_MeV_production": 8.473201,
-          "B_AME_MeV": 8.481821,
+          "B_pred_MeV_production": "5.514921",
+          "B_AME_MeV": "8.481821",
           "n_reachable_multisets": 2,
           "ratio_min": "1.0",
-          "ratio_max": "1.360125876",
-          "dB_min_MeV": "-1.1517106",
+          "ratio_max": "1.258976625",
+          "dB_min_MeV": "-0.86234602",
           "dB_max_MeV": "0.0",
-          "spread_MeV": "1.1517106",
-          "spread_pct_of_B_AME": 13.579
+          "spread_MeV": "0.86234602",
+          "spread_pct_of_B_AME": "10.166991510875856"
         },
         {
           "atom": "3He",
@@ -481,11 +490,11 @@
           "B_pred_MeV_production": null,
           "B_AME_MeV": null,
           "n_reachable_multisets": 2,
-          "ratio_min": "0.7906551321",
+          "ratio_min": "0.8293909085",
           "ratio_max": "1.0",
           "dB_min_MeV": "0.0",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "0.87954885",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "0.70045245",
           "spread_pct_of_B_AME": null
         },
         {
@@ -496,11 +505,11 @@
           "B_pred_MeV_production": null,
           "B_AME_MeV": null,
           "n_reachable_multisets": 4,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "1.360125876",
-          "dB_min_MeV": "-1.1517106",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "2.0312595",
+          "ratio_min": "0.8293909085",
+          "ratio_max": "1.258976625",
+          "dB_min_MeV": "-0.86234602",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "1.5627985",
           "spread_pct_of_B_AME": null
         },
         {
@@ -508,145 +517,145 @@
           "Z": 3,
           "N": 3,
           "in_production_table": true,
-          "B_pred_MeV_production": 18.131442,
-          "B_AME_MeV": 31.994,
+          "B_pred_MeV_production": "11.60812",
+          "B_AME_MeV": "31.994",
           "n_reachable_multisets": 7,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "1.462666451",
-          "dB_min_MeV": "-1.4238724",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "2.3034212",
-          "spread_pct_of_B_AME": 7.2
+          "ratio_min": "0.8293909085",
+          "ratio_max": "1.314602954",
+          "dB_min_MeV": "-1.0242396",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "1.724692",
+          "spread_pct_of_B_AME": "5.3906733827448001"
         },
         {
           "atom": "7Li",
           "Z": 3,
           "N": 4,
           "in_production_table": true,
-          "B_pred_MeV_production": 23.062339,
-          "B_AME_MeV": 39.2445,
+          "B_pred_MeV_production": "15.051504",
+          "B_AME_MeV": "39.2445",
           "n_reachable_multisets": 8,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "1.572937611",
-          "dB_min_MeV": "-1.6960341",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "2.575583",
-          "spread_pct_of_B_AME": 6.563
+          "ratio_min": "0.8293909085",
+          "ratio_max": "1.372687065",
+          "dB_min_MeV": "-1.1861332",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "1.8865856",
+          "spread_pct_of_B_AME": "4.8072611745543449"
         },
         {
           "atom": "9Be",
           "Z": 4,
           "N": 5,
           "in_production_table": true,
-          "B_pred_MeV_production": 30.356908,
-          "B_AME_MeV": 58.165,
+          "B_pred_MeV_production": "19.819795",
+          "B_AME_MeV": "58.165",
           "n_reachable_multisets": 11,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "1.69152217",
-          "dB_min_MeV": "-1.9681959",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "2.8477447",
-          "spread_pct_of_B_AME": 4.896
+          "ratio_min": "0.8293909085",
+          "ratio_max": "1.43333755",
+          "dB_min_MeV": "-1.3480267",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "2.0484792",
+          "spread_pct_of_B_AME": "3.5218416250676324"
         },
         {
           "atom": "12C",
           "Z": 6,
           "N": 6,
           "in_production_table": true,
-          "B_pred_MeV_production": 40.015149,
-          "B_AME_MeV": 92.162,
+          "B_pred_MeV_production": "25.912994",
+          "B_AME_MeV": "92.162",
           "n_reachable_multisets": 16,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "1.819046879",
-          "dB_min_MeV": "-2.2403577",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "3.1199065",
-          "spread_pct_of_B_AME": 3.385
+          "ratio_min": "0.8293909085",
+          "ratio_max": "1.496667802",
+          "dB_min_MeV": "-1.5099203",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "2.2103728",
+          "spread_pct_of_B_AME": "2.3983558850645569"
         },
         {
           "atom": "16O",
           "Z": 8,
           "N": 8,
           "in_production_table": true,
-          "B_pred_MeV_production": 54.604288,
-          "B_AME_MeV": 127.619,
+          "B_pred_MeV_production": "35.449577",
+          "B_AME_MeV": "127.619",
           "n_reachable_multisets": 22,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "2.103663568",
-          "dB_min_MeV": "-2.7846812",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "3.66423",
-          "spread_pct_of_B_AME": 2.871
+          "ratio_min": "0.8293909085",
+          "ratio_max": "1.631846446",
+          "dB_min_MeV": "-1.8337074",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "2.5341599",
+          "spread_pct_of_B_AME": "1.9857230427588478"
         },
         {
           "atom": "40Ca",
           "Z": 20,
           "N": 20,
           "in_production_table": true,
-          "B_pred_MeV_production": 142.139118,
-          "B_AME_MeV": 342.052,
+          "B_pred_MeV_production": "92.669075",
+          "B_AME_MeV": "342.052",
           "n_reachable_multisets": 58,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "5.032347834",
-          "dB_min_MeV": "-6.0506223",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "6.9301712",
-          "spread_pct_of_B_AME": 2.026
+          "ratio_min": "0.8293909085",
+          "ratio_max": "2.741590184",
+          "dB_min_MeV": "-3.7764303",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "4.4768827",
+          "spread_pct_of_B_AME": "1.3088310329452003"
         },
         {
           "atom": "56Fe",
           "Z": 26,
           "N": 30,
           "in_production_table": true,
-          "B_pred_MeV_production": 205.630123,
-          "B_AME_MeV": 492.254,
+          "B_pred_MeV_production": "135.052359",
+          "B_AME_MeV": "492.254",
           "n_reachable_multisets": 77,
-          "ratio_min": "0.7906551321",
-          "ratio_max": "8.370165242",
-          "dB_min_MeV": "-7.9557547",
-          "dB_max_MeV": "0.87954885",
-          "spread_MeV": "8.8353035",
-          "spread_pct_of_B_AME": 1.795
+          "ratio_min": "0.8293909085",
+          "ratio_max": "3.710573999",
+          "dB_min_MeV": "-4.9096853",
+          "dB_max_MeV": "0.70045245",
+          "spread_MeV": "5.6101377",
+          "spread_pct_of_B_AME": "1.1396835194468661"
         }
       ],
       "n_exposed_rows": 14968,
       "n_rows_spread_gt_1pct_of_B_AME": 60,
       "largest_spread_atom": "237Og",
-      "largest_spread_MeV": 33.874186,
+      "largest_spread_MeV": "20.504346112497961",
       "AME_ROLE": "denominator only -- used to express the size of an already-computed spread. No ordering is selected by it."
     },
     "crosscheck_full_trace": [
       {
-        "source": "wenzl_bridge_strict",
+        "source": "wenzl_bridge_y_cache",
         "convention": "strict_averaged",
         "ratio": "T_npn_over_pnn",
-        "measured": "1.360125891092944",
-        "closed_form": "1.360125875606922",
-        "rel_diff": "1.13857e-8"
+        "measured": "1.258976624909173",
+        "closed_form": "1.258976624909173",
+        "rel_diff": "4.92315e-17"
       },
       {
-        "source": "wenzl_bridge_strict",
+        "source": "wenzl_bridge_y_cache",
         "convention": "strict_averaged",
         "ratio": "He3_pnp_over_ppn",
-        "measured": "0.7906551265706377",
-        "closed_form": "0.7906551321033039",
-        "rel_diff": "6.99757e-9"
+        "measured": "0.8293909084880151",
+        "closed_form": "0.8293909084880152",
+        "rel_diff": "4.92315e-17"
       },
       {
-        "source": "pr4850_y_lambda_chi",
-        "convention": "bring_color_weighted",
+        "source": "wenzl_bridge_y_closed_form",
+        "convention": "strict_averaged",
         "ratio": "T_npn_over_pnn",
-        "measured": "1.360373590136357",
-        "closed_form": "1.360373590136404",
-        "rel_diff": "3.40704e-14"
+        "measured": "1.258976624909173",
+        "closed_form": "1.258976624909173",
+        "rel_diff": "4.92315e-17"
       },
       {
-        "source": "pr4850_y_lambda_chi",
-        "convention": "bring_color_weighted",
+        "source": "wenzl_bridge_y_closed_form",
+        "convention": "strict_averaged",
         "ratio": "He3_pnp_over_ppn",
-        "measured": "0.7907991311016426",
-        "closed_form": "0.7907991311018845",
-        "rel_diff": "3.05927e-13"
+        "measured": "0.8293909084880151",
+        "closed_form": "0.8293909084880152",
+        "rel_diff": "4.92315e-17"
       }
     ],
     "two_live_conventions": {
@@ -671,8 +680,8 @@
           "production_sorted": "ppn",
           "corpus_rule_interleaved": "pnp",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "0.790655132103",
-          "dB_MeV_interleaved_minus_sorted": "0.87954885"
+          "tau_ratio_interleaved_over_sorted": "0.829390908488",
+          "dB_MeV_interleaved_minus_sorted": "0.70045245"
         },
         {
           "atom": "4He",
@@ -681,8 +690,8 @@
           "production_sorted": "ppnn",
           "corpus_rule_interleaved": "pnpn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "1.07539050386",
-          "dB_MeV_interleaved_minus_sorted": "-0.27216176"
+          "tau_ratio_interleaved_over_sorted": "1.0441837667",
+          "dB_MeV_interleaved_minus_sorted": "-0.16189357"
         },
         {
           "atom": "6Li",
@@ -691,8 +700,8 @@
           "production_sorted": "pppnnn",
           "corpus_rule_interleaved": "pnpnpn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "1.15646473578",
-          "dB_MeV_interleaved_minus_sorted": "-0.54432353"
+          "tau_ratio_interleaved_over_sorted": "1.09031973864",
+          "dB_MeV_interleaved_minus_sorted": "-0.32378714"
         },
         {
           "atom": "7Li",
@@ -701,8 +710,8 @@
           "production_sorted": "pppnnnn",
           "corpus_rule_interleaved": "pnpnpnn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "1.15646473578",
-          "dB_MeV_interleaved_minus_sorted": "-0.54432353"
+          "tau_ratio_interleaved_over_sorted": "1.09031973864",
+          "dB_MeV_interleaved_minus_sorted": "-0.32378714"
         },
         {
           "atom": "9Be",
@@ -711,8 +720,8 @@
           "production_sorted": "ppppnnnnn",
           "corpus_rule_interleaved": "pnpnpnpnn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "1.2436511949",
-          "dB_MeV_interleaved_minus_sorted": "-0.81648529"
+          "tau_ratio_interleaved_over_sorted": "1.1384941716",
+          "dB_MeV_interleaved_minus_sorted": "-0.48568071"
         },
         {
           "atom": "12C",
@@ -721,8 +730,8 @@
           "production_sorted": "ppppppnnnnnn",
           "corpus_rule_interleaved": "pnpnpnpnpnpn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "1.43823875052",
-          "dB_MeV_interleaved_minus_sorted": "-1.3608088"
+          "tau_ratio_interleaved_over_sorted": "1.24132266761",
+          "dB_MeV_interleaved_minus_sorted": "-0.80946785"
         },
         {
           "atom": "16O",
@@ -731,8 +740,8 @@
           "production_sorted": "ppppppppnnnnnnnn",
           "corpus_rule_interleaved": "pnpnpnpnpnpnpnpn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "1.66327239661",
-          "dB_MeV_interleaved_minus_sorted": "-1.9051323"
+          "tau_ratio_interleaved_over_sorted": "1.35343860652",
+          "dB_MeV_interleaved_minus_sorted": "-1.133255"
         },
         {
           "atom": "40Ca",
@@ -741,8 +750,8 @@
           "production_sorted": "ppppppppppppppppppppnnnnnnnnnnnnnnnnnnnn",
           "corpus_rule_interleaved": "pnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "3.97885164129",
-          "dB_MeV_interleaved_minus_sorted": "-5.1710735"
+          "tau_ratio_interleaved_over_sorted": "2.27384997372",
+          "dB_MeV_interleaved_minus_sorted": "-3.0759778"
         },
         {
           "atom": "56Fe",
@@ -751,8 +760,8 @@
           "production_sorted": "ppppppppppppppppppppppppppnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn",
           "corpus_rule_interleaved": "pnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnpnnnnn",
           "orderings_agree": false,
-          "tau_ratio_interleaved_over_sorted": "6.15396368243",
-          "dB_MeV_interleaved_minus_sorted": "-6.8040441"
+          "tau_ratio_interleaved_over_sorted": "2.94729379829",
+          "dB_MeV_interleaved_minus_sorted": "-4.0473392"
         }
       ]
     }
@@ -762,5 +771,8 @@
     "SCOPE-(a) for the headline: the ordering is an UNDECLARED DEGREE OF FREEDOM. This probe refutes the two candidate resolutions the bean named; it does NOT prove that no principle whatever can fix the arrangement. A selection rule from outside the trace -- a confinement/SDP argument, a Markov-move or normal-form argument, a coordination-graph constraint -- is not excluded and was not searched exhaustively. Bean qou-48is stays OPEN.",
     "NOTHING IS WIRED and NO ordering is recommended. Part 5 reports how far the production number moves; AME appears there only as a denominator to express that spread. Selecting an ordering because it reproduces AME is the forbidden fit and is explicitly not done here -- which matters especially, since the finding is precisely about an unlicensed choice.",
     "The deuteron is the null control: its two orderings share one interface multiset, so D is exactly ordering-independent. The DOF switches on at A >= 3 with both species present."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,15 +1,15 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T14:26:25.028793+00:00",
-  "commitSha": "75362d0bd890c096280688549321120bfa2b6bf7",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:58:07.637441+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "chirality-avg-content",
   "scriptFile": "chirality_avg_content.py",
-  "scriptHash": "2c7a0e537a52",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "8258beae916b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -19,18 +19,30 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
-  "description": "First numerical computation of ⟨c⟩_β = Σ w_λ χ^λ(β) c(λ) / Σ w_λ χ^λ(β) for the figure-8 (4_1) and Borromean (B_3) braids at q_0. Inhabits ChiralityFactorClass with structural-content values.",
+  "invocation": {
+    "argv": [
+      "computations/chirality_avg_content.py"
+    ],
+    "reproduce": "python3 -u computations/chirality_avg_content.py"
+  },
+  "description": "First numerical computation of ⟨c⟩_β = Σ w_λ χ^λ(β) c(λ) / Σ w_λ χ^λ(β) for the figure-8 (4_1), Borromean (B_3), trefoil (3_1 at its braid index 2) and T(3,3) braids at q_0. Inhabits ChiralityFactorClass with structural-content values.  Every row records the COMPUTED writhe and the verified topology of its closure (component count, determinant, braid index).",
   "contentBlock": "prop:chirality-writhe-ribbon-derivation",
   "auditOnly": "docs/audits/2026-05-09-refocused-1ppb-workplan-v3.md",
   "precision_dps": 50,
-  "q_0": "1.10997859555733471989976322048",
+  "q_0": "1.1099785827513808075916690956107688798744991218736",
+  "q0_anchor": "muon",
+  "q0_anchor_note": "IDEAL / canonical 3-CAL pin (CAL-2 = 𝔇_β, proxy m_μ/m_e), q_0 = 1.10997859555733471... .  This is NOT a free choice made here: `q_parameter` auto-selects the anchor from `q0_anchor_manifest.json` by the running producer's stem, and `chirality_avg_content` is listed under `ideal_muon`.  The 2026-08-07 owner directive (touched compute defaults to the proton anchor) is not applied by hand here: retagging a manifest-tagged ideal producer is part of the tracked ~840-witness migration (bean tnjb), which is explicitly not authorised as an idle-time drain.  No number in this witness moves as a result of the 2026-08-10 corrections.",
+  "cross_script_anchor_note": "ANCHOR ASYMMETRY, stated so no reader mixes the two layers.  This producer is manifest-tagged `ideal_muon`. Its companion `chirality_avg_content_chiral.py` is in NEITHER manifest list, so it falls through to the experimental/proton default, and its committed witness moved by ~1e-7 relative when re-run on 2026-08-10.  Neither producer straddles the two layers internally — each evaluates q_0, the Wedderburn weights and the Hecke characters at one and the same anchor — but ⟨c⟩ values must not be compared ACROSS the two witnesses below the 1e-7 level.",
   "cases": [
     {
-      "name": "figure-8 4_1",
+      "name": "figure-8 4_1 (σ_1 σ_2^-1)^2 in H_3",
       "n_strands": 3,
       "braid_word": [
         [
@@ -50,6 +62,14 @@
           2
         ]
       ],
+      "closure": "4_1 figure-eight knot (1 component, det 5)",
+      "closure_components": 1,
+      "closure_determinant": 5,
+      "braid_index_of_closure": 3,
+      "at_braid_index": true,
+      "writhe": 0,
+      "writhe_source": "computed_from_braid_word",
+      "level_note": "at the braid index of 4_1 (= 3): minimal level",
       "n_partitions": 3,
       "rows": [
         {
@@ -62,10 +82,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
+          "wedderburn_weight": "0.141811507642269465675684892864",
           "chi_lambda_beta": "1.0000000000000009",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.42543451509565402789084659972"
+          "weighted_chi_c": "0.425434522926808779918125312721"
         },
         {
           "shape": [
@@ -76,9 +96,9 @@
             2,
             1
           ],
-          "dim_q": "2.10997859555733471989976322048",
-          "wedderburn_weight": "0.631346192245338912914108124172",
-          "chi_lambda_beta": "-0.9106773300219757",
+          "dim_q": "2.10997858275138080759166909561",
+          "wedderburn_weight": "0.631346196203222099325673964269",
+          "chi_lambda_beta": "-0.9106773502706684",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
         },
@@ -92,18 +112,29 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "1.0000000000000016",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "1.0000000000000013",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.425434515095654325695007166677"
+          "weighted_chi_c": "-0.425434522926808950091934483444"
         }
       ],
-      "numerator": "-2.97804160566957505617537819153e-16",
-      "denominator": "-0.291329654609756769479363811402",
-      "avg_content_c_beta": "1.02222398528523811264915139224e-15"
+      "numerator": "-1.70173809170723358810821871437e-16",
+      "denominator": "-0.291329665777276584311067154492",
+      "avg_content_c_beta": "5.84127979952519966522474259817e-16",
+      "transpose_collapse": {
+        "applicable": true,
+        "writhe_ell": 0,
+        "c_max": 3,
+        "predicted_numerator": "0.0",
+        "actual_numerator": "-1.70173809170723358810821871437e-16",
+        "relative_residual": "1.70174e-16",
+        "collapse_verified": true,
+        "vanishing_requires_zero_writhe": true,
+        "avg_c_can_vanish_here": true
+      }
     },
     {
-      "name": "Borromean B_3",
+      "name": "Borromean B_3 (σ_1 σ_2^-1)^3 in H_3",
       "n_strands": 3,
       "braid_word": [
         [
@@ -131,6 +162,14 @@
           2
         ]
       ],
+      "closure": "Borromean rings (3 components, det 16)",
+      "closure_components": 3,
+      "closure_determinant": 16,
+      "braid_index_of_closure": 3,
+      "at_braid_index": true,
+      "writhe": 0,
+      "writhe_source": "computed_from_braid_word",
+      "level_note": "at the braid index of the Borromean rings (= 3)",
       "n_partitions": 3,
       "rows": [
         {
@@ -143,10 +182,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
+          "wedderburn_weight": "0.141811507642269465675684892864",
           "chi_lambda_beta": "1.0000000000000013",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.425434515095654198064652637981"
+          "weighted_chi_c": "0.425434522926808950091934483444"
         },
         {
           "shape": [
@@ -157,9 +196,9 @@
             2,
             1
           ],
-          "dim_q": "2.10997859555733471989976322048",
-          "wedderburn_weight": "0.631346192245338912914108124172",
-          "chi_lambda_beta": "1.9941858103805747",
+          "dim_q": "2.10997858275138080759166909561",
+          "wedderburn_weight": "0.631346196203222099325673964269",
+          "chi_lambda_beta": "1.9941858129799659",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
         },
@@ -173,18 +212,29 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "1.0000000000000024",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "1.0000000000000022",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.4254345150956546660426192432"
+          "weighted_chi_c": "-0.425434522926809332983005117572"
         }
       ],
-      "numerator": "-4.67977966605218972615992698893e-16",
-      "denominator": "1.54264462807723090785314298027",
-      "avg_content_c_beta": "-3.03360837672971911269909883387e-16"
+      "numerator": "-3.82891070634127557324349210734e-16",
+      "denominator": "1.54264464283187095022562744802",
+      "avg_content_c_beta": "-2.48204323927281750821296342055e-16",
+      "transpose_collapse": {
+        "applicable": true,
+        "writhe_ell": 0,
+        "c_max": 3,
+        "predicted_numerator": "0.0",
+        "actual_numerator": "-3.82891070634127557324349210734e-16",
+        "relative_residual": "3.82891e-16",
+        "collapse_verified": true,
+        "vanishing_requires_zero_writhe": true,
+        "avg_c_can_vanish_here": true
+      }
     },
     {
-      "name": "trefoil 3_1 (σ_1^3 in H_2)",
+      "name": "trefoil 3_1 (σ_1^3 in H_2) — CANONICAL, minimal level",
       "n_strands": 2,
       "braid_word": [
         [
@@ -200,6 +250,14 @@
           1
         ]
       ],
+      "closure": "3_1 trefoil knot (1 component, det 3)",
+      "closure_components": 1,
+      "closure_determinant": 3,
+      "braid_index_of_closure": 2,
+      "at_braid_index": true,
+      "writhe": 3,
+      "writhe_source": "computed_from_braid_word",
+      "level_note": "CANONICAL trefoil datum: braid index of 3_1 = T(2,3) is min(2,3) = 2 (Morton-Williams), so this row is at the lowest level of the substrate tower and is the value the owner ruling selects.  The σ_1^3 row in chirality_avg_content_chiral.py sits at n = 3, where the same word closes to the SPLIT LINK 3_1 ⊔ 0_1 — a different link, not a second representative of the trefoil.  Its ⟨c⟩ = 1.8149 is therefore not a rival value for this knot.",
       "n_partitions": 2,
       "rows": [
         {
@@ -211,10 +269,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.473938457056175796317436245325",
-          "chi_lambda_beta": "1.3675518842842074",
+          "wedderburn_weight": "0.473938459932619229415038990104",
+          "chi_lambda_beta": "1.3675518369513862",
           "content_c_lambda": 1,
-          "weighted_chi_c": "0.648135429981923120729057576358"
+          "weighted_chi_c": "0.648135411482764373904588641649"
         },
         {
           "shape": [
@@ -225,18 +283,29 @@
             2
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.473938457056175796317436245325",
-          "chi_lambda_beta": "-0.7312336822404466",
+          "wedderburn_weight": "0.473938459932619229415038990104",
+          "chi_lambda_beta": "-0.7312337075494344",
           "content_c_lambda": -1,
-          "weighted_chi_c": "0.346559763108543198988884425696"
+          "weighted_chi_c": "0.346559777206798222714645089026"
         }
       ],
-      "numerator": "0.994695193090466319717942002054",
-      "denominator": "0.301575666873379921740173150662",
-      "avg_content_c_beta": "3.29832709450030248809854281503"
+      "numerator": "0.994695188689562596619233730674",
+      "denominator": "0.301575634275966151189943552623",
+      "avg_content_c_beta": "3.298327436424574899923614395",
+      "transpose_collapse": {
+        "applicable": true,
+        "writhe_ell": 3,
+        "c_max": 1,
+        "predicted_numerator": "0.994695188689561772918018279151",
+        "actual_numerator": "0.994695188689562596619233730674",
+        "relative_residual": "8.23701e-16",
+        "collapse_verified": true,
+        "vanishing_requires_zero_writhe": true,
+        "avg_c_can_vanish_here": false
+      }
     },
     {
-      "name": "T(2,3) torus knot in H_3 (writhe +6)",
+      "name": "T(3,3) torus link ((σ_1 σ_2)^3 in H_3)",
       "n_strands": 3,
       "braid_word": [
         [
@@ -264,6 +333,14 @@
           2
         ]
       ],
+      "closure": "T(3,3) torus link (3 components, det 4)",
+      "closure_components": 3,
+      "closure_determinant": 4,
+      "braid_index_of_closure": 3,
+      "at_braid_index": true,
+      "writhe": 6,
+      "writhe_source": "computed_from_braid_word",
+      "level_note": "at the braid index of T(3,3) (= 3).  Formerly mislabelled the trefoil T(2,3); the closure has 3 components, so it is not a knot at all.  The '⟨c⟩_β ≈ 0 by Type-B' prediction on this row is likewise structurally excluded: writhe = +6 ≠ 0.",
       "n_partitions": 3,
       "rows": [
         {
@@ -276,10 +353,10 @@
             1
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "1.8701981562092858",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "1.870198026749111",
           "content_c_lambda": 3,
-          "weighted_chi_c": "0.79564684571968301333267876211"
+          "weighted_chi_c": "0.795646805288666487504446293604"
         },
         {
           "shape": [
@@ -290,8 +367,8 @@
             2,
             1
           ],
-          "dim_q": "2.10997859555733471989976322048",
-          "wedderburn_weight": "0.631346192245338912914108124172",
+          "dim_q": "2.10997858275138080759166909561",
+          "wedderburn_weight": "0.631346196203222099325673964269",
           "chi_lambda_beta": "2.0000000000000018",
           "content_c_lambda": 0,
           "weighted_chi_c": "0.0"
@@ -306,18 +383,42 @@
             3
           ],
           "dim_q": "1.0",
-          "wedderburn_weight": "0.141811505031884548333261004544",
-          "chi_lambda_beta": "0.5347026980429225",
+          "wedderburn_weight": "0.141811507642269465675684892864",
+          "chi_lambda_beta": "0.5347027350564918",
           "content_c_lambda": -3,
-          "weighted_chi_c": "-0.227480983062228445029111380381"
+          "weighted_chi_c": "-0.227481002996418216693608680241"
         }
       ],
-      "numerator": "0.56816586265745456830356738173",
-      "denominator": "1.60373499408464944837195900412",
-      "avg_content_c_beta": "0.354276650913726488924301260563"
+      "numerator": "0.568165802292248270810837613363",
+      "denominator": "1.60373499516814023647385275229",
+      "avg_content_c_beta": "0.354276613033988272681015606956",
+      "transpose_collapse": {
+        "applicable": true,
+        "writhe_ell": 6,
+        "c_max": 3,
+        "predicted_numerator": "0.568165802292247472805297460536",
+        "actual_numerator": "0.568165802292248270810837613363",
+        "relative_residual": "7.98006e-16",
+        "collapse_verified": true,
+        "vanishing_requires_zero_writhe": true,
+        "avg_c_can_vanish_here": false
+      }
     }
   ],
-  "interpretation": "⟨c⟩_β values give the Wedderburn-weighted average content for each atomic braid; the chirality first-order factor is a_K(β) = 1 + w(β) · ⟨c⟩_β · h where w(β) is the writhe and h = q − q⁻¹.",
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "interpretation": "⟨c⟩_β values give the Wedderburn-weighted average content for each atomic braid; the chirality first-order factor is a_K(β) = 1 + w(β) · ⟨c⟩_β · h where w(β) is the writhe and h = q − q⁻¹.  w(β) is a datum of the braid WORD at a fixed strand count, not of the closure — Markov II shifts it by ±1 — so a_K is well-defined only once the level is pinned.  Per the owner ruling the level is the braid index; the rows here record whether they sit at it.",
+  "retracted_prediction": {
+    "bean": "qou-kjmo",
+    "claim": "Expected: ⟨c⟩_β ≈ 0 by Type-B transpose cancellation (c(λ) + c(λ^T) = 0), asserted for both chiral rows.",
+    "outcome": "FAILED on both rows",
+    "measured": {
+      "trefoil 3_1 (σ_1^3 in H_2)": "3.29832709450030 (committed, muon pin)",
+      "T(3,3) ((σ_1 σ_2)^3 in H_3)": "0.354276650913726 (committed, muon pin)"
+    },
+    "scope": "b-for-n-le-3, a-for-n-ge-4",
+    "invariant": "For n ≤ 3 the transpose pairing collapses the numerator exactly to (c_max/[n]_q!)·(q^ℓ − (−1/q)^ℓ), since dim_q((n)) = dim_q((1^n)) = 1 and the only non-extreme partition at n ≤ 3 is the self-transpose (2,1) with c = 0.  SIGN/POSITIVITY INVARIANT: for real q > 0, odd ℓ gives q^ℓ + q^{−ℓ} ≥ 2 > 0 (AM–GM, never zero) and even ℓ gives q^ℓ − q^{−ℓ}, zero only at q = 1.  Hence at q_0 ≠ 1, ⟨c⟩_β = 0 ⟺ writhe = 0. The cancellation therefore CANNOT deliver ≈ 0 for any nonzero-writhe braid at n ≤ 3.  Verified per row by transpose_collapse_check().",
+    "scope_a_caveat": "The collapse uses 'every non-extreme partition of n ≤ 3 has content 0', which fails from n = 4 ((3,1) has c = +2).  For n ≥ 4 the Type-B ≈ 0 claim is refuted as tested — scope-(a) — not excluded in principle.",
+    "why_the_amphichiral_rows_do_vanish": "figure-8 and Borromean return ⟨c⟩ = 0 because their writhe is 0, not because they are amphichiral.  The same invariant explains both the successes and the failures, and it is level-dependent: Markov II moves the writhe off 0 without changing the link."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

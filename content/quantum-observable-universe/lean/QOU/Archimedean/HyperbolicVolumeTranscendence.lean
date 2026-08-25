@@ -152,7 +152,7 @@ theorem catalan_G_pos : catalan_G > 0 := by
 The three QOU volumes used in `SingleVolumeIrrational` /
 `BorelZagierQOU` / `HyperbolicVolumeIndependence`:
 
-* `vol_4_1` — figure-eight knot (Higgs); exact `3 · Cl_2(π/3)`,
+* `vol_4_1` — figure-eight knot (Higgs); exact `2 · Cl_2(π/3)`,
   bumped 2026-06-07 to a 24-dps OEIS A091518 literal (Cl_2 not
   yet in Mathlib so a symbolic form is not available locally).
 * `vol_5_2` — three-twist knot (down quark); 15-dps SnapPy literal
@@ -162,7 +162,16 @@ The three QOU volumes used in `SingleVolumeIrrational` /
   (exact; supersedes the former 15-dps SnapPy literal). -/
 
 /-- Hyperbolic volume of the figure-eight knot 4₁ (Higgs boson).
-    Exact: 3 · Cl₂(π/3) ≈ 2.029883212819307250042408. -/
+    Exact: 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.029883212819307250042408
+    (two regular ideal tetrahedra, each of volume Cl₂(π/3) = 3Λ(π/3)).
+
+    Corrected 2026-08-09: this docstring and the §1 summary above both
+    read `3 · Cl₂(π/3)`, which is 3.0448…, not the 2.0298… literal the
+    definition actually carries. The same slip is live in four other
+    docstrings — `QOU/MassDerivation.lean`, `QOU/HadronicMass.lean`,
+    `observations/local-substrate-q.lean`,
+    `observations/skein-mass-relation.lean` — while the rest of the
+    corpus has `2 · Cl₂(π/3)` correctly. -/
 noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (strange quark
@@ -391,7 +400,7 @@ to analysis. -/
     LaTeX: `\label{prop:cs-evaluation-faithfulness}` -/
 structure CSEvaluationFaithful where
   /-- The lifting condition with obstruction classes. -/
-  ylc : QOU.Torsion.YekutieliLiftingCondition
+  ylc : QOU.Torsion.YekutieliLiftingCondition ℝ
   /-- A tower decomposition of some knot volume. -/
   vtd : VolumeTowerDecomposition
   /-- The towers agree. -/
@@ -460,7 +469,7 @@ class HyperbolicVolumeIndependence where
   irrationality ⟸ ℚ-linear independence ⟸ algebraic independence -/
 
 /-- **Conjecture (Irrationality of a single volume).**
-    Vol(4₁) = 3 Cl₂(π/3) is irrational.
+    Vol(4₁) = 2 Cl₂(π/3) = 6 Λ(π/3) is irrational.
 
     LaTeX: `\label{conj:single-volume-irrationality}` -/
 class SingleVolumeIrrational where
@@ -691,13 +700,13 @@ gives the Yekutieli bridge theorem. -/
     Bound to a specific Yekutieli witness so the conjectural
     content is visible at the call site. -/
 class TowerNoncollapseImpliesIndependence
-    (_ylc : QOU.Torsion.YekutieliLiftingCondition) : Prop where
+    (_ylc : QOU.Torsion.YekutieliLiftingCondition ℝ) : Prop where
   /-- The independence witness produced by the bridge. -/
   independence : HyperbolicVolumeIndependence
 
 /-- Per-instance form. -/
 theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutieliLiftingCondition)
+    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ)
     [hi : TowerNoncollapseImpliesIndependence ylc] :
     HyperbolicVolumeIndependence :=
   hi.independence

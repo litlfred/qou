@@ -1,0 +1,228 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-q-alg-9504015v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ea5588225a393477d8b59b4f1374ec9192da2632b9beccdd0f17bb68f9584047",
+  "file": "9504015v2.pdf"
+ },
+ "provenance": {
+  "title": "Witten\u2019s Invariants of Rational Homology Spheres at Prime",
+  "authors": "Values of K and Trivial Connection Contribution",
+  "arxiv": {
+   "id": "q-alg/9504015",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "24 Apr 1995"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 15,
+  "by_kind": {
+   "theorem": 3,
+   "proposition": 10,
+   "lemma": 2
+  },
+  "formalization_candidates": 15
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.1",
+   "name": "H. Murakami, [5], [6]",
+   "statement": "For a RHS M and a prime K > 2",
+   "section_file": "sections/sec-003-2-tr\u01eb\u00b5\u03bd\u03c1.md",
+   "section_title": "Tr\u01eb\u00b5\u03bd\u03c1",
+   "pages": "2-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "1.2",
+   "name": "T. Ohtsuki [7], [8]",
+   "statement": "For any RHS M there exists a sequence of rational",
+   "section_file": "sections/sec-004-2-z-zkx-111.md",
+   "section_title": "Z ZK[x]. (1.11)",
+   "pages": "4-5",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1.1",
+   "name": null,
+   "statement": "Ohtsuki\u2019s invariants \u03bbn(M) of eq. (1.14) and loop corrections to the trivial",
+   "section_file": "sections/sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not.md",
+   "section_title": "Z Z[x] instead of (1.11) (in other words, he did not \ufb01x the coe\ufb03cient at x",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1.2",
+   "name": null,
+   "statement": "Let L be an algebraically split link (ASL ) in S3. Then its framing-",
+   "section_file": "sections/sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not.md",
+   "section_title": "Z Z[x] instead of (1.11) (in other words, he did not \ufb01x the coe\ufb03cient at x",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "1.3",
+   "name": null,
+   "statement": "Let M be a rational homology sphere (RHS ) constructed by (pj, 1) surg-",
+   "section_file": "sections/sec-005-2-z-zx-instead-of-111-in-other-words-he-did-not.md",
+   "section_title": "Z Z[x] instead of (1.11) (in other words, he did not \ufb01x the coe\ufb03cient at x",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.1",
+   "name": null,
+   "statement": "For odd values of its indices \u03b1j, the unframed colored Jones polynomial",
+   "section_file": "sections/sec-008-4-\u03ba1.md",
+   "section_title": "(\u03ba\u22121)",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.2",
+   "name": null,
+   "statement": "There is an upper bound on the indices of the coe\ufb03cients C (n)",
+   "section_file": "sections/sec-008-4-\u03ba1.md",
+   "section_title": "(\u03ba\u22121)",
+   "pages": "9-11",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": null,
+   "statement": "For p, p\u2032, m \u2208 Z Z, p\u2032 \u2208 2Z Z, m \u2265 0",
+   "section_file": "sections/sec-012-2-j-res.md",
+   "section_title": "J (res)",
+   "pages": "12-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
+   "name": null,
+   "statement": "The sum of eq. (3.1) is related to the gaussian integral. For p, q \u2208 Z Z,",
+   "section_file": "sections/sec-013-3-gaussian-sums-and-integrals.md",
+   "section_title": "Gaussian Sums and Integrals",
+   "pages": "14-15",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3.1",
+   "name": null,
+   "statement": "If a degree of a polynomial P (n) \u2208 Z ZK[n] is less than K and P (n) = 0 for all",
+   "section_file": "sections/sec-015-2-z-zkx-and-using-the-checked-binomial-polynomia.md",
+   "section_title": "Z ZK[x] and using the \u201cchecked binomial polynomial\u201d",
+   "pages": "15-17",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.2",
+   "name": null,
+   "statement": "For p \u2044= 0 (mod K), 0 \u2264 m \u2264 K",
+   "section_file": "sections/sec-016-2-1m2m.md",
+   "section_title": "(\u22121)m(2m)!",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.3",
+   "name": null,
+   "statement": "The gaussian sums and integrals of polynomials \u02dcDm,n are related by the",
+   "section_file": "sections/sec-016-2-1m2m.md",
+   "section_title": "(\u22121)m(2m)!",
+   "pages": "17-18",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.1",
+   "name": null,
+   "statement": "Let M be a manifold constructed by (pj, qj) surgeries on an N-component",
+   "section_file": "sections/sec-021-1-s-47.md",
+   "section_title": "S, (4.7)",
+   "pages": "22-23",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "s 1.1, 1.2 and Proposition 1.1.",
+   "section_file": "sections/sec-021-1-s-47.md",
+   "section_title": "S, (4.7)",
+   "pages": "22-23",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "5.1",
+   "name": null,
+   "statement": "The invariants \u03bbn(M) are \ufb01nite type invariants of RHS as de\ufb01ned in [20]",
+   "section_file": "sections/sec-027-5-discussion.md",
+   "section_title": "Discussion",
+   "pages": "29-30",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

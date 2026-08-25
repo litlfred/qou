@@ -427,6 +427,189 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 `criteria["proof-no-<x>"]` array of `QaCriterionEntry` with `reviewer.kind =
 "agent"`.
 
+### 10. Conjectural class carries too little — `proof-unclosable-context-sorry`
+
+A `sorry` whose statement is **refutable over the very class it is stated on**.
+Not an open gap: it can never be discharged, because discharging it would prove
+something false.
+
+The shape is a §3b-cond conjectural class whose fields the conclusion talks
+about, but which the class never relates to one another:
+
+```lean
+class MassCategoricalDescentContext where
+  B : ℝ            -- total binding energy
+  B_desc : ℝ       -- descended component
+  B_trans : ℝ      -- transient component
+  …               -- no equation mentioning any of the three
+
+theorem mass_categorical_descent [ctx : MassCategoricalDescentContext] :
+    ctx.B = ctx.B_desc + ctx.B_trans := by
+  -- Ref: [manuscript] …
+  sorry
+```
+
+Pick `B := 0, B_desc := 1, B_trans := 0` and the statement is false. Machine
+proof, no junk values and no cleverness required:
+
+```lean
+theorem mass_categorical_descent_unconstrained_false :
+    ¬ ∀ ctx : MassCategoricalDescentContext, ctx.B = ctx.B_desc + ctx.B_trans := by
+  intro h
+  have := h { CategoricalObj := Unit, m_endo := id,
+              B := 0, B_desc := 1, B_trans := 0, B_BW := 0 }
+  norm_num at this
+```
+
+**How it differs from #1 and #9.** All three are "the Lean does not prove the
+claim", but the classes differ in *where* the content went:
+
+| | class carries | consequence |
+|---|---|---|
+| #1 self-assuming | the **conclusion**, as a field | theorem projects it; proves nothing |
+| #10 unclosable | **neither** conclusion nor relating hypotheses | nothing to derive from; `sorry` unclosable |
+| #9 false cited | (no class) statement admits a degenerate input | discharging it discharges `False` |
+
+**AGENTS.md §3b-cond item 5 already forbids this** — *"the class axiomatises
+hypotheses, not the conclusion … the theorem must **derive** its conclusion
+from them."* That sentence has been read as forbidding only the #1 direction
+(carrying too much). These fail it the other way: carrying too little. The
+rubric's own verified exemplar shows the shape that works —
+`QOU/FluidDynamics/q_bkm_criterion.lean`'s `QBKMContext` carries the two
+directions as **implications** (`vorticityIntegralFinite → extendsSmoothly` and
+its converse) and the theorem composes them with `Iff.intro`, sorry-free.
+
+**Detection — build an adversarial instance, do not grep.** This was tried two
+ways syntactically and both failed:
+
+- flagging junk-value smells by regex: matched doc-comment slashes, 26 of 33
+  "hits", useless;
+- flagging classes whose fields are all bare data: caught 1 of 11, because
+  `MassCategoricalDescentContext` *does* have a hypothesis field — it just does
+  not mention `B`, `B_desc` or `B_trans`.
+
+The property that matters is *"do the class's hypotheses constrain the fields
+the conclusion mentions"*, and that is not a grep. The reliable test is the
+small-instance check of §9 lifted from parameters to classes: **instantiate the
+class with numbers chosen to disagree** and see whether it compiles. Two
+minutes per statement, and the answer is a proof either way.
+
+**#1 and #10 are adjacent, and the naive fix for #1 produces #10.** Deleting a
+conclusion-bearing field removes the self-assuming projection and leaves the
+theorem with nothing to derive from — vacuous becomes unclosable. Observed
+in-repo: `QOU/AlgebraicSubstrate/qou_obstruction_reduction.lean`'s
+`obstruction_trace_gap` says so in its own docstring —
+
+> The two conjuncts were previously carried as class fields
+> (`kappa0_eq_chi_A`, `phi_1_image_eq_chi_A`) and projected here, which made
+> this theorem assume exactly what it claims … Fields deleted; the gap is now
+> real.
+
+The gap became real *and* impossible to close. Deleting the field is half a
+repair; the other half is putting back the hypotheses the derivation needs. When
+fixing a #1, check the result against #10 before calling it done.
+
+**A class that constrains nothing refutes both a statement and its opposite.**
+`bare_is_lp_unstable` (`∃ X, …`) and `dressed_is_lp_stable` (`¬ ∃ X, …`) share
+`AtomicLPStabilityContext` and are both refutable — `Candidate := Empty` kills
+the first, one satisfying candidate kills the second. If you find one of a
+±pair, check its sibling.
+
+**Where they concentrate.** Measured over the whole qou corpus (bean qou-o7qo):
+18 context-class `sorry`s among the 822 modules that no build ever reached,
+against 3 among the 870 that always compiled — six times the density. A module
+that compiles gets read and its `sorry`s reported every build. Sweep
+never-built modules first.
+
+**Fix.** Add to the class the hypothesis the derivation actually needs — for
+the example above, whatever relates `B` to its two components — so the theorem
+composes it, per the exemplar. Restating the theorem to dodge the gap moves the
+bug. Since this changes what the block claims, it is the author's call, not the
+auditor's: report with the refutation attached.
+
+**Where these hide.** All three found so far were in modules outside the
+`lake build` import closure (bean qou-rc7b), so no build had ever reported
+their `sorry`s, and each carried `-- Ref:` citations that made them look
+audited. Expect the population to correlate with build coverage, not with
+apparent maturity.
+
+### 11. Axiom-in-class-field laundering — `proof-no-axiom-class-laundering`
+
+A class field encodes a mathematical claim (e.g., `almost_everywhere_nontrivial`).
+The theorem that extracts this field is 'sorry-free' because the sorry was pushed
+into the `instance` declaration, which fills the field via a bare `axiom` or
+`sorry`. The theorem appears sorry-free in audits while the claim remains
+unproved.
+
+```lean
+-- The class declares the claim as a field:
+class MotivicGaloisCharacter (M : Type*) where
+  galois_action : M → M
+  almost_everywhere_nontrivial : ∃ S, ∀ x ∉ S, galois_action x ≠ x  -- ← unproved claim
+
+-- The instance fills it with an axiom:
+axiom ae_nontrivial_placeholder : ∃ S, ∀ x ∉ S, myAction x ≠ x
+instance : MotivicGaloisCharacter MyType where
+  galois_action := myAction
+  almost_everywhere_nontrivial := ae_nontrivial_placeholder  -- ← bare axiom
+
+-- The downstream theorem looks sorry-free:
+theorem galois_char_nontrivial [MotivicGaloisCharacter M] :
+    ∃ S, ∀ x ∉ S, MotivicGaloisCharacter.galois_action x ≠ x :=
+  MotivicGaloisCharacter.almost_everywhere_nontrivial  -- ← "proved" ✗
+```
+
+**Why this is WORSE than a visible `sorry`:**
+
+- Audits that grep for `sorry`/`axiom` in theorem files miss it — the axiom
+  lives in the instance file, not the theorem file
+- The class instance file may not even compile (as happened with
+  `qou-motivic-galois-instance.lean` which had 3 type mismatches)
+- Downstream blocks cite the 'sorry-free' theorem as proved
+- `#print axioms` on the theorem shows `sorryAx` or the named axiom, but
+  only if someone thinks to run it — the file-level grep misses it entirely
+
+**How it differs from #1 and #10:**
+
+| | mechanism | why audits miss it |
+|---|---|---|
+| #1 self-assuming | conclusion IS a field; theorem projects it | file-local, caught by field-name grep |
+| #10 unclosable | class has too few hypotheses; sorry unclosable | file-local sorry visible |
+| #11 axiom-in-class | claim is a field; INSTANCE fills it with axiom/sorry | axiom is in a **different file**; theorem file is clean |
+
+**Honest dispositions:**
+
+1. **PROVE it** — supply a constructive witness for the class field in the
+   instance
+2. **SEPARATE it** — move the claim OUT of the class into a standalone
+   theorem with an explicit `sorry` and `-- Ref:` citation
+3. **DEMOTE it** — label the block as `conjecture(...)` in the `.ts` metadata
+
+**Never:** pack an unproved claim as a class field and fill it with `axiom`.
+
+**Detection.** For every `class` with a `Prop`-valued field, check that every
+`instance` fills that field with a proof term, not `sorry` / `axiom` /
+`by exact someAxiom`. Concretely:
+
+1. Enumerate all `class` declarations; for each, identify fields whose type
+   is `Prop` (or returns `Prop` after applying parameters).
+2. For each `instance` of that class (grep `instance.*:.*ClassName`), check
+   whether the corresponding field assignment is a proof term or one of:
+   - a bare `axiom` name
+   - `sorry`
+   - `by exact <axiom_name>` where the name resolves to an `axiom`
+3. If the instance is in a file that does not compile, flag unconditionally —
+   a non-compiling instance filling a `Prop` field is evidence of laundering.
+4. Run `#print axioms <theorem_name>` on any downstream theorem that extracts
+   the field — if it shows `sorryAx` or an unjustified `axiom`, the laundering
+   is confirmed.
+
+**Motivating incident.** `MotivicGaloisCharacter.almost_everywhere_nontrivial`
+was carried as a class field. The instance in `qou-motivic-galois-instance.lean`
+attempted to fill it with a bare axiom but had 3 type mismatches and never
+compiled. Downstream theorems extracted the field and appeared sorry-free,
+passing all file-level audits. The claim was unproved.
+
 | criterion id | status | anti-pattern |
 |---|---|---|
 | `proof-no-self-assuming-projection` | active | #1 circular projection |
@@ -437,6 +620,8 @@ Mirrors the existing `proof-statement-integrity` model (Agent-checked,
 | `proof-no-provable-axiom` | active | #6 uncited / provable axiom |
 | `proof-no-false-cited-sorry` | active | #9 cited `sorry` on a false statement |
 | `proof-docstring-sorry-mismatch` | active | #8 docstring claims a `sorry` the body lacks |
+| `proof-unclosable-context-sorry` | active | #10 class carries too little; `sorry` unclosable |
+| `proof-no-axiom-class-laundering` | active | #11 axiom-in-class-field laundering |
 
 **Minimal wiring (per Agent-A recon):**
 

@@ -6,6 +6,7 @@ import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Linarith
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.FluidDynamics.surreal_enstrophy_finite_modes — the surreal enstrophy at
@@ -190,6 +191,14 @@ theorem infinitesimal_sum {ι : Type*} (s : Finset ι) (f : ι → K)
     eigenvalue datum of the q-NS tower whose `q → 1` degeneration to `k` is
     Obstruction 1 of `conj:regularity-breakdown`. -/
 def qInt (q : K) (k : ℕ) : K := ∑ j ∈ range k, q ^ j
+
+/-- **Bridge to the canonical geometric q-integer.**  This site is the
+geometric form `∑_{j<k} q^j`, not the balanced one — so it ties to `qIntGeo`,
+and tying it to `qIntBal` would be exactly the mis-consolidation
+`QIntegerCanonical` warns about.  Unconditional: `qIntGeo` asks only for a
+`CommRing`, which `K` has as a `Field`, and neither side divides. -/
+theorem qInt_eq_canonical_geo (q : K) (k : ℕ) :
+    qInt q k = QOU.QInteger.qIntGeo q k := rfl
 
 /-- `[k]_1 = k`. -/
 theorem qInt_one (k : ℕ) : qInt (1 : K) k = (k : K) := by

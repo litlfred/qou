@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T14:50:11.181644+00:00",
-  "commitSha": "073cc38ed6e6afb21c117f46b1317e6d0aeb0143",
+  "computedAt": "2026-08-21T15:05:55.238564+00:00",
+  "commitSha": "aa14edb5f6729abb9630f9f744bb673edbf47c6f",
   "assertions": [],
   "allPassed": true,
-  "durationMs": -1782137695574,
+  "durationMs": 33,
   "computation": "tower-psd-marginality-vs-A",
   "scriptFile": "tower_psd_marginality_vs_A.py",
   "scriptHash": "b66e51ea53f1",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -26,7 +26,7 @@
   },
   "description": "Adjacent-pair tower PSD across D/T/³He/⁴He. HONEST CORRECTION: the 'all adjacent pairs tight' found for D is GENERIC (maximizing Σx_i saturates the PSD det=0 for any positive V̂ by AM-GM) — NOT a deuteron anomaly. The meaningful confinement metric is the gap from max V̂_i to the Φ_q pole (q₀) and the tridiagonal min-eigenvalue; reports which nucleus is genuinely closest to the cone edge. So the only real SDP/PSD distinction across nuclei is the Wedderburn channel migration (separate probe), not the tower PSD tightness.",
   "parameters": {
-    "q0": 1.1099785955573347
+    "q0": 1.1099785827513808
   },
   "data": {
     "rows": [
@@ -37,16 +37,16 @@
         "A": 2,
         "n_gens": 5,
         "V_hat": [
-          0.989,
-          0.9711,
-          0.2641,
-          0.8542,
-          0.9755
+          1.0802,
+          0.9469,
+          0.34,
+          0.9411,
+          0.9431
         ],
-        "max_V_hat": 0.989,
-        "min_V_hat": 0.2641,
-        "pole_gap_q0_minus_maxV": 0.121,
-        "tridiag_min_eig": -0.424356,
+        "max_V_hat": 1.0802,
+        "min_V_hat": 0.34,
+        "pole_gap_q0_minus_maxV": 0.0298,
+        "tridiag_min_eig": -0.479464,
         "all_pairs_tight": true
       },
       {
@@ -56,19 +56,19 @@
         "A": 3,
         "n_gens": 8,
         "V_hat": [
-          0.989,
-          0.9711,
-          0.2641,
-          0.8542,
-          0.9755,
-          0.1596,
-          0.8542,
-          0.9755
+          1.0802,
+          0.9469,
+          0.34,
+          0.9411,
+          0.9431,
+          0.2355,
+          0.9411,
+          0.9431
         ],
-        "max_V_hat": 0.989,
-        "min_V_hat": 0.1596,
-        "pole_gap_q0_minus_maxV": 0.121,
-        "tridiag_min_eig": -0.467895,
+        "max_V_hat": 1.0802,
+        "min_V_hat": 0.2355,
+        "pole_gap_q0_minus_maxV": 0.0298,
+        "tridiag_min_eig": -0.538255,
         "all_pairs_tight": true
       },
       {
@@ -78,19 +78,19 @@
         "A": 3,
         "n_gens": 8,
         "V_hat": [
-          0.989,
-          0.9711,
-          0.3687,
-          0.989,
-          0.9711,
-          0.2641,
-          0.8542,
-          0.9755
+          1.0802,
+          0.9469,
+          0.4445,
+          1.0802,
+          0.9469,
+          0.34,
+          0.9411,
+          0.9431
         ],
-        "max_V_hat": 0.989,
-        "min_V_hat": 0.2641,
-        "pole_gap_q0_minus_maxV": 0.121,
-        "tridiag_min_eig": -0.564886,
+        "max_V_hat": 1.0802,
+        "min_V_hat": 0.34,
+        "pole_gap_q0_minus_maxV": 0.0298,
+        "tridiag_min_eig": -0.625559,
         "all_pairs_tight": true
       },
       {
@@ -100,22 +100,22 @@
         "A": 4,
         "n_gens": 11,
         "V_hat": [
-          0.989,
-          0.9711,
-          0.3687,
-          0.989,
-          0.9711,
-          0.2641,
-          0.8542,
-          0.9755,
-          0.1596,
-          0.8542,
-          0.9755
+          1.0802,
+          0.9469,
+          0.4445,
+          1.0802,
+          0.9469,
+          0.34,
+          0.9411,
+          0.9431,
+          0.2355,
+          0.9411,
+          0.9431
         ],
-        "max_V_hat": 0.989,
-        "min_V_hat": 0.1596,
-        "pole_gap_q0_minus_maxV": 0.121,
-        "tridiag_min_eig": -0.570368,
+        "max_V_hat": 1.0802,
+        "min_V_hat": 0.2355,
+        "pole_gap_q0_minus_maxV": 0.0298,
+        "tridiag_min_eig": -0.634483,
         "all_pairs_tight": true
       }
     ],
@@ -123,20 +123,20 @@
       "all_pairs_tight_is_generic": true,
       "closest_to_pole": "D",
       "pole_gaps": {
-        "D": 0.121,
-        "T": 0.121,
-        "3He": 0.121,
-        "4He": 0.121
+        "D": 0.0298,
+        "T": 0.0298,
+        "3He": 0.0298,
+        "4He": 0.0298
       },
       "tridiag_min_eigs": {
-        "D": -0.424356,
-        "T": -0.467895,
-        "3He": -0.564886,
-        "4He": -0.570368
+        "D": -0.479464,
+        "T": -0.538255,
+        "3He": -0.625559,
+        "4He": -0.634483
       },
       "reading": "⁴He is cone-marginal in EXACTLY the same (generic) sense as D — adjacent-pair tightness is not a discriminator. The honest distinction between nuclei is the Wedderburn weight migration, not the tower PSD."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -10,7 +10,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.0,
-      "source": "Δtr_M(q) = sym + antisym by linearity of bar-involution"
+      "source": "\u0394tr_M(q) = sym + antisym by linearity of bar-involution"
     }
   ],
   "allPassed": true,
@@ -34,7 +34,7 @@
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
-  "description": "Structural observation: Δtr_M(q) bar-decomposition under q → 1/q. Records the closed forms of the symmetric and antisymmetric components without proposing a c_k closure candidate (per AGENTS.md no-7th-ansatz discipline).",
+  "description": "Structural observation: \u0394tr_M(q) bar-decomposition under q \u2192 1/q. Records the closed forms of the symmetric and antisymmetric components without proposing a c_k closure candidate (per AGENTS.md no-7th-ansatz discipline).",
   "auditOnly": "docs/audits/2026-06-01-delta-tr-m-bar-decomposition-structural-finding.md",
   "data": {
     "delta_tr_M_in_q": "(-q**(25/2) - q**(23/2) - 2*q**(21/2) + 2*q**(19/2) + q**(17/2) + q**(15/2) - 2*q**12 + 4*q**10 - 2*q**8)/(4*q**(21/2) + 4*q**(19/2))",
@@ -57,9 +57,9 @@
       "delta_tr_full": -0.1420729143428128,
       "match": true
     },
-    "structural_finding": "Δtr_M(q) decomposes in t = q^(1/2) as sym(t) + antisym(t) under t ↔ 1/t. The symmetric part has a clean closed form (see sym_part_t_factored); the antisymmetric part is more intricate. This decomposition is the natural projection onto bar-eigenspaces of the Hecke bar-involution.",
-    "anti_pattern_guard": "This probe does NOT propose a c_k closure. Any future attempt to use this decomposition for c_k must pass the cross-anchor test (q_proton vs q_muon) AND have a structural justification — not just numerical near-match.",
-    "follow_up_research_direction": "(NEW) Decomposing Q_β candidate forms onto bar-symmetric / antisymmetric projections may give a structured attack on the Habiro element identification. The sym part is in the binding (Li_2^q) sector per prop:li2q-phiq-bar-symmetrization; the antisym part is in the mass (Φ_q) sector. Q_β being a mass DIFFERENCE means the sym projection is dominant — investigating which Wedderburn blocks contribute to sym vs antisym could narrow the Habiro search.",
+    "structural_finding": "\u0394tr_M(q) decomposes in t = q^(1/2) as sym(t) + antisym(t) under t \u2194 1/t. The symmetric part has a clean closed form (see sym_part_t_factored); the antisymmetric part is more intricate. This decomposition is the natural projection onto bar-eigenspaces of the Hecke bar-involution.",
+    "anti_pattern_guard": "This probe does NOT propose a c_k closure. Any future attempt to use this decomposition for c_k must pass the cross-anchor test (q_proton vs q_muon) AND have a structural justification \u2014 not just numerical near-match.",
+    "follow_up_research_direction": "(NEW) Decomposing Q_\u03b2 candidate forms onto bar-symmetric / antisymmetric projections may give a structured attack on the Habiro element identification. The sym part is in the binding (Li_2^q) sector per prop:li2q-phiq-bar-symmetrization; the antisym part is in the mass (\u03a6_q) sector. Q_\u03b2 being a mass DIFFERENCE means the sym projection is dominant \u2014 investigating which Wedderburn blocks contribute to sym vs antisym could narrow the Habiro search.",
     "upstream_witness_hashes": [
       {
         "path": "habiro-coefficients-atomic.witness.json",
@@ -70,5 +70,8 @@
         "computedAt": "2026-07-18T17:55:54.718701+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873578736072814240181799",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.at_q_proton_numerical.q_proton). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

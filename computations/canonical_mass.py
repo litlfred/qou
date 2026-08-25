@@ -1,7 +1,15 @@
 #!/usr/bin/env python3
 """Canonical nucleon / atom mass — the SINGLE entry point (facade).
 
-Owner ruling 2026-06-24: there is ONE correct absolute nucleon mass, the
+ABSOLUTE MASS EXCISED (owner ruling 2026-08-11, bean qou-exam):
+    The framework no longer claims/targets an ABSOLUTE nucleon/atom mass in MeV as
+    a prediction. This facade stays the single entry point, but its MeV outputs are
+    `m_e`-scaled REALIZATIONS of the dimensionless ratio (m_p/m_e, m_n/m_e) — a
+    rendering for anyone who wants MeV, NOT a framework prediction. The predictive
+    content is the ratio; do not report `m_p ≈ 938.27 MeV` as a prediction.
+    Ruling: docs/audits/2026-08-11-excise-absolute-mass-notion.md. (No compute change.)
+
+Owner ruling 2026-06-24: there is ONE correct [now: m_e-scaled] nucleon mass, the
 **muon-anchored Hecke energy** (the production substrate-identity):
 
     m_p = dim V_{(2,1)} · (m_μ · F_Bor − |S_3| · m_e) = 2·(m_μ·F_Bor − 6·m_e)
@@ -13,8 +21,8 @@ The c_q² (= 1/ℏ_q²) factor is applied ONCE, in the muon anchor m_μ, then
 dressed by the *dimensionless* Borromean factor F_Bor.
 
 DO NOT use the Borromean-volume forms for absolute nucleon/atom mass:
-    m_e · Vol(𝓑₃) · λ_A / ℏ_q²       (vol_density_borromean)  → 966  (+2.96%, a FIT)
-    m_e · Vol(𝓑₃) · tr_M / ℏ_q²      (vol_density_per_block)  → 406  (−57%)
+    m_e · Vol(𝓑₃) · λ_A / ℏ_q²       (per_knot_density_borromean)  → 966  (+2.96%, a FIT)
+    m_e · Vol(𝓑₃) · tr_M / ℏ_q²      (per_knot_density_per_block)  → 406  (−57%)
 Both apply 1/ℏ_q² to the wrong (Borromean) volume. They are DEPRECATED for
 absolute mass (mass_vol_density emits a DeprecationWarning). Route every
 absolute-mass consumer through THIS module instead.
@@ -105,6 +113,14 @@ def prediction_uncertainty_ppb(Z: int, N: int, layer: str = "canonical") -> floa
     This is the theory error bar: a model deviation (err m_sym) far exceeding
     σ_pred is a genuine formula systematic, not calibration noise."""
     import mpmath as mp
+    # Raised HERE, not at module scope, because `mp` is imported inside this
+    # function — there is no module-level binding to assign to. Every mpmath
+    # value below (q, m_e, the CAL sigmas) was otherwise built at mpmath's
+    # default 15 dps, so what this producer emitted was honestly float64: no
+    # fake precision to detect and no constant built too early, which is why the
+    # padding / raw-float64 / import-time gates all passed it.
+    # Gate: never_raises_dps_audit.py (bean qou-j6gb).
+    mp.mp.dps = 50
     from m_p_substrate_identity_50dps import F_Bor
     from q_parameter import Q_MP as q0, vol_4_1_at
     from codata_constants import M_E_MEV

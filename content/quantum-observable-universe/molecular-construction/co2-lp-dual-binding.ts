@@ -8,6 +8,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Molecular.co2_lp_dual_binding", validation: "not_checked" },
   title: "LP dual selects linear $O{=}C{=}O$ geometry",
   uses: [
+    "conj:q-integer-mass-formula",
     "def:co2-molecular-braid",
     "prop:co-lp-dual-binding",
   ],

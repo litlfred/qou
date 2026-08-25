@@ -71,6 +71,8 @@ from _habiro_coefficient_extract import (  # noqa: E402
 )
 from q_parameter import Q_MP as _Q_CANONICAL  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from habiro_coefficients_atomic import load_a_m as _load_a_m  # noqa: E402
+from habiro_coefficients_atomic import mirror_trace_diff_numerator as _mirror_trace_diff  # noqa: E402 — shared loader; refuses a self-failed witness (qou-s41x)
 
 
 # Shell-closure test atoms (Z, N)
@@ -149,13 +151,10 @@ def main() -> int:
     u = sp.symbols('u')
 
     def load_a_m(slug):
-        d = json.load(open(HERE / f"habiro-coefficients-{slug}.witness.json"))
-        out = {}
-        for c in d.get('habiro_coefficients', []):
-            m = c['m']
-            a_m_str = c['a_m'].replace('^', '**')
-            out[m] = sp.sympify(a_m_str, locals={'u': u, 'check_q': u})
-        return out
+        # Delegates to the shared loader, which REFUSES a witness flagging its
+        # own reconstruction_matches false (bean qou-s41x). This was one of
+        # three byte-identical copies, none of which consulted that flag.
+        return _load_a_m(slug, u, witness_dir=HERE)
 
     def q_poch(m):
         if m == 0: return sp.Integer(1)
@@ -188,10 +187,16 @@ def main() -> int:
             M_max = min(max(ax), max(ay))
             print(f"\n--- {X_lab} − {Y_lab} (A={A}, {shell_class}) "
                   f"M_max={M_max} ---")
-            total = sp.Integer(0)
-            for m in range(M_max + 1):
-                delta = ax.get(m, sp.Integer(0)) - ay.get(m, sp.Integer(0))
-                total += delta * q_poch(m)
+            # Difference the TRACES, not the a_m. Sum_m (a_m^X - a_m^Y)(u;u)_m
+            # reconstructs d_X*t_X - d_Y*t_Y, because each witness's
+            # coefficients expand its own DENOMINATOR-CLEARED numerator. That is
+            # proportional to t_X - t_Y only where the two denominators agree at
+            # the evaluation point; proved sorry-free in
+            # QOU/Habiro/MirrorPairNormalisation.lean (coeffDiff_at_coincidence).
+            # Under convention C they agreed on every canonical pair, so the
+            # shortcut was accidentally valid; under D they differ by a factor of
+            # 4 and every multiplicity collapses to 0 (bean qou-0ndb).
+            total = _mirror_trace_diff(X_slug, Y_slug, u, witness_dir=HERE)
             print(f"  total degree: {sp.degree(total, u)}")
             mult_8 = cyc_mult(total, u**4 + 1)
             mult_1 = cyc_mult(total, u - 1)

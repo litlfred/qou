@@ -42,8 +42,53 @@ $h = q - q^{-1}$.
 |---|---|---|---|---|---|---|
 | **A** | matrix-M parabolic | — | — | — | never evaluated | not-a-$z$-trace |
 | **B** | Plancherel $d_q^2/[3A]_q!$, averaged crossings | — | — | — | never evaluated | deprecated |
-| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715967$ | pinned-by-definition |
-| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646524$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787266$ | forced-given-premise |
+| **C** | full-Hecke Ocneanu / Wenzl $z$-trace | $1/(q^{1/2}+q^{-1/2})$ | $0.49932033418369445241$ | $(0.4153958,\,0.2809296,\,0.0227449)$ | $0.998366622585715966895$ | pinned-by-definition — **EXCISED 2026-08-09** |
+| **D** | SU(2)/Temperley–Lieb (Jones) | $q^3/(q^2+1)$ | $0.61268803714646525160$ | $(0.5054042,\,0.2472979,\,0)$ | $0.998562163836787265951$ | forced-given-premise — **PRODUCTION** |
+
+> **Precision re-record, 2026-08-09 (bean `qou-wgta` item 12).** Every value in
+> the JSON twin had been computed from `meta.q0.value = "1.1099785827513808"`,
+> a **17-digit truncation** of the canonical
+> `q_parameter.Q_50_DIGIT_STR = 1.1099785827513808075916690956107688798744991218736`
+> — so the recorded $z(q_0)$, weights and $\mathrm{tr}_M$ were wrong in the
+> 18th significant figure against the code that uses the full constant
+> ($z_D$ was recorded $\ldots524365$, correct is $\ldots525160$). Nothing
+> noticed while the validator only compared strings; **R9 found it on its
+> first run.** All JSON values are now recomputed at 50 dps, cross-checked
+> two ways: D's weights against the closed forms $[4]_q/[2]_q^3$ and
+> $1/[2]_q^2$, and $\mathrm{tr}^D_M(\beta_{\mathrm{Bor}})$ against the Lean
+> closed form $(4+h^2-3h^4-h^6)/(h^2+4)$, both agreeing to $<10^{-60}$.
+
+> **Convention C has no live production implementation as of 2026-08-09.**
+> The four rows this file used to list under C —
+> `markov_trace_canonical::tr_M_element`, `closed_form_tau_M::markov_z` +
+> `y_lambda_wenzl_bridge_numeric`, `binding_canonical.py`, and
+> `wedderburn_jones_markov::y_lambda_at` — are **all convention D** now
+> (bean `qou-wgta`). C survives in exactly **two** places, both deliberate:
+> the explicitly-named historical functions in `schur_principal_mpmath` that
+> keep the excised convention *quotable* for the D-vs-C comparison in
+> `y_lambda_su_n.main()`. R9 asserts both are *still C*; the preserved
+> reference stopping being C without anyone noticing is precisely what
+> happened to its predecessor.
+>
+> The third place — `pyhecke/gram.py::z`, the one **blocked migration** —
+> moved to D on 2026-08-15 (bean `qou-w8zz`), once `G` was inverted on the
+> quotient `H_3/rad` rather than the full NF basis, which removes the
+> degeneracy that blocked it. See `resolved_migrations` in the JSON twin.
+> The registry row was not updated when the migration landed, so R9 — which
+> is written to *assert* the exception — went red on main with *"registry
+> says convention C but the CODE returns 0.6126880371464652"*. That is the
+> gate working as designed: a numeric evaluator caught a stale record, where
+> R4/R5 compare a docstring to a registry field and stay green whenever both
+> sides go stale together.
+
+> **Registry gap closed 2026-08-09.**
+> `computations/wedderburn_jones_markov.py::y_lambda_at` is convention **C** and
+> was **not listed**. Measured `y_λ(3, q₀) = (0.4153957954, 0.2809296310,
+> 0.0227449426)` — the C row above, to every digit shown. It is the widest C
+> surface in the repo by a wide margin (**155 consumers**, against 62 for
+> `binding_canonical`, 46 for `closed_form_tau_M`, 27 for `tr_M_element`), so any
+> C→D migration driven off the previously-listed implementations alone would
+> have missed most of the change.
 
 - **C and the "Wenzl-bridge $z$-trace" are one convention, not two** — proved as
   a rational-function identity in
@@ -74,9 +119,85 @@ because those can differ, and the mass channel is the case where they do.
 
 | channel | definitional | production | status |
 |---|---|---|---|
-| `mass` | **C** — `prop:categorical-mass-markov` names the trace on the full $\mathrm{H}_n(R,q)$; `rem:markov-axioms-primitive` pins $z = 1/(q^{1/2}+q^{-1/2})$ | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | **disputed** (bean `qou-3qrv`) |
-| `binding` | C | C — `binding_canonical.py` → `closed_form_tau_M` → `markov_z` | agreed |
-| `borromean-binding-single-pipeline` | D | D — `borromean_binding_recompute.py` | agreed |
+| `mass` | **D** — owner ruling 2026-08-09 (the row cap $\ell(\lambda)\le 2$ forces it) | **D** — `trM_borromean` → `F_Bor` → `canonical_mass` | agreed |
+| `binding` | D | **D** — `binding_canonical.py` → `closed_form_tau_M` → `markov_z`, and `y_lambda_wenzl_bridge_numeric` | agreed |
+| `borromean-binding-single-pipeline` | D | **D** — `borromean_binding_recompute.py` | agreed |
+| `qbeta-decay` | **D** — owner ruling 2026-08-15 ("convention D is convention. excise convention C"); and **C is now structurally excluded**, see below | **C** — `qbeta_utils.markov_parameter` (`α=(z−1)h/2` feeds every committed $c_k$ extraction), `qbeta_ck_sseries_exact_rational` core, `ZBarParity.lean` | **agreed-migration-pending** (bean `qou-cds1`) |
+
+> **`qbeta-decay` — C is excluded; D is not thereby derived. Updated
+> 2026-08-23 (bean `qou-b3nk`, closed).** This note previously read
+> *"null (contradictory) / disputed / neither convention is derived"*. Two
+> things have since superseded that, and the markdown twin had absorbed
+> neither while the JSON had absorbed only the first.
+>
+> **1. The status was settled by owner ruling (2026-08-15)** — *"convention D
+> is convention. excise convention C"*
+> ([`2026-08-15-owner-ruling-convention-d-proton-color.md`](../audits/2026-08-15-owner-ruling-convention-d-proton-color.md)).
+> The definitional side is **D**; production is still C, and migrating it is
+> `qou-cds1`, which is open. A $z$-swap is **not** that migration (measured:
+> $c_3 \to \approx -974$, rung convergence collapses) — the ladder must be
+> **re-derived**, not re-evaluated.
+>
+> **2. C is no longer merely "not derived" — it is a scope-(b) structural
+> exclusion, identically in $q$.** The level family is
+> $z_r = q^{2r-1}(1-q^2)/(1-q^{2r}) = q^r/[r]_q$, which lies in $\mathbb{Q}(q)$
+> for **every** $r$. But $z_C = \sqrt q/(q+1) \notin \mathbb{Q}(q)$: $x^2 - q$
+> is Eisenstein at the prime $q$ of $\mathbb{Q}[q]$, hence irreducible over
+> $\mathbb{Q}(q)$, so $\sqrt q \notin \mathbb{Q}(q)$ — and $z_C \in
+> \mathbb{Q}(q)$ would give $\sqrt q = z_C\,(q+1) \in \mathbb{Q}(q)$. For
+> non-integer real $r$ the same conclusion follows from non-constancy of the
+> formal level: $r_C(1.05) = 2.2267$ vs $r_C(1.15) = 2.9553$. So $z_C$ is
+> **not $z_r$ for any $r$, at any $q$** — the named invariant is field
+> membership, which is what makes this (b) rather than (a).
+> [`wenzl_level_family.py`](../../computations/probes/wenzl_level_family.py)
+> W4/W9, 10/10, sympy-exact over $\mathbb{Q}(q)$;
+> [`2026-08-16-wenzl-level-family.md`](../audits/2026-08-16-wenzl-level-family.md).
+>
+> **This subsumes one of the two conditions the old note listed, and shows they
+> were never independent.** The old wording gave *"fixed-rank fibre membership
+> ($N_{\mathrm{eff}}(z_C) = 2.5995$ **pointwise**, $q$-dependent)"* as a
+> condition that *would* exclude C **if demanded**. W3 proves $N_{\mathrm{eff}}$
+> and the Wenzl level are the **same map**, so that pointwise number was a
+> shadow of a $q$-identical structural fact. The full-bar condition
+> $\overline z = z - h$ (`QOU.QBeta.zD_full_bar_covariant` /
+> `barEven_fullBar_forces_classical`, sorry-free; premise: trace
+> bar-compatibility) remains a **separate** and still-premised route.
+>
+> **What is unconditional, and what is not.** $z_C \neq z_r$ for all $r$ is a
+> theorem about rational-function fields and carries no premise. The inference
+> *"therefore C is not an admissible convention for this channel"* is
+> conditional on the channel's $z$ being a **fibre-level parameter at all** —
+> the categorical-fibre premise, which is the framework's own but is not proved
+> here.
+>
+> **Excluding C does not derive D.** The exclusion says $z_C$ is *no* level; it
+> does not say *which* level the decay channel occupies. $r = 2$ for this
+> channel still requires the decay fibre's rank, which is exactly `qou-cds1`
+> and is **open**. W10 records that every channel that is in the family at all
+> sits at $r = 2$ and none at $r \ge 3$ — suggestive, not a derivation.
+>
+> **The mutual-exclusivity theorem changes role.**
+> `decayLadder_zC_threeRow_ne_zero` (sorry-free) shows any faithful normalised
+> Markov trace at $z_C$ carries $y_{(1^3)} \neq 0$, so the mass channel's
+> two-row forcing cannot transfer *while the ladder keeps $z_C$*. That
+> antecedent is now itself excluded, so the theorem no longer stands as an
+> obstruction to D — it is an argument for abandoning $z_C$.
+>
+> Until the migration lands, every $c_3$ / $S$ / $q^*_S$ quote still names its
+> convention. Prior audit:
+> [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md);
+> numeric shadow: `computations/qbeta/qbeta-decay-channel-convention-status.witness.json` (18/18).
+
+> **All three channels were carrying a convention the code did not supply,
+> and the table above said "agreed" throughout.** Found 2026-08-09
+> (`qou-wgta`): `closed_form_tau_M` declared C in its docstring while its
+> `markov_z` had returned D since `33a6c7aa` **and** its
+> `y_lambda_wenzl_bridge_numeric` constituent was still C — three different
+> answers in one call path. `borromean_binding_recompute` computed
+> $\tau$ from the Lean **D** closed form and its bond factors from a **C**
+> $z$, so the single-pipeline binding was reproducible under *neither*
+> convention. Both are fixed; see R9 below for why the validator could not
+> have told you.
 
 A channel whose two conventions differ **must** carry `status: "disputed"` and a
 non-null `open_item` naming a bean and an audit. R8 of the validator enforces
@@ -123,6 +244,95 @@ Both one-dimensional characters equal $1$ at writhe $0$
 
 R7 makes listing an excluded symbol as a convention implementation an error.
 
+## Symbol collisions — objects that look convention-scoped and are not
+
+Two unrelated matrices are written $G$ in this corpus. Conflating them is the
+fastest way to "discover" that a headline number moved under the C → D
+excision when it did not.
+
+| symbol | what it is | convention-scoped? |
+|---|---|---|
+| $G_{ij} = \mathrm{tr}_M(b_i b_j)$ — the **Markov–Gram** | $6 \times 6$, on the $H_3(q)$ normal-form basis. [`prop:frobenius-gram-matrix`](../../content/quantum-observable-universe/mass-theory/frobenius-gram-matrix.md); code `tools/pyhecke/python/pyhecke/gram.py`; Lean `QOU/QBeta/GramSignature.lean` | **YES.** $\det = -0.18920521914403668$ under **C**; $\det = 0$ **exactly** under **D**, where the $(1^3)$ block is the radical, the form is singular and $G^{-1}$ does not exist. `np.linalg.inv` raises nothing there — see the blocking note at the head of `gram.py`. |
+| $G_{\mathrm{CS}}$ — the **Chern–Simons pairing Gram** | $2 \times 2$, on the force-carrier pair $(T_{2,9}, T_{3,5})$ on Bring's surface. [`rem:em-coupling-chern-simons`](../../content/quantum-observable-universe/predicted-spectra/em-coupling-chern-simons.md), [`prop:gram-determinant-plancherel-ratio`](../../content/quantum-observable-universe/mass-theory/gram-determinant-plancherel-ratio.md); code `computations/substrate/hecke_core_symbolic.py::alpha_em_inv_sym_exact` | **NO.** Built from $\pi$, the torus-knot data $(m_i, n_i)$ and $[2]_q, [3]_q, [5]_q, [9]_q$ alone. No $z$ anywhere. At $q_0$: $\det G^{\mathrm{cl}}_{\mathrm{CS}} = 60.630144110670241284$, $\det G^{q}_{\mathrm{CS}} = 35.21703297433989011$, $\kappa = 1.721614201708788213$ (60 dps). |
+
+**Consequence, checked 2026-08-09 (decision 3 of the detangler review).** The
+fine-structure figure $\alpha^{-1} = 137.0359351$
+([`sec:fine-structure-data`](../../content/quantum-observable-universe/observations/fine-structure-data.md))
+runs through $G_{\mathrm{CS}}$, **not** the Markov–Gram, so it does **not** sit
+downstream of a convention-C determinant and is unaffected by the excision.
+$\hbar_q = 1 - q^{-1}$ in $\delta_{\mathrm{CS}}$ is likewise $z$-free. Independent
+re-evaluation of the producer at 60 dps reproduces every published digit:
+bare $136.82320885358258431$, $\delta_{\mathrm{CS}} = 0.0015506021328500969$,
+resummed $\alpha^{-1} = 137.03593509397560466$ ($-0.4676$ ppm vs CODATA 2022).
+Whether $\kappa$ is *derived* is a separate, still-open question
+([`rem:alpha-em-derivation-open-problems`](../../content/quantum-observable-universe/predicted-spectra/alpha-em-derivation-open-problems.md));
+this row settles only *which matrix* the symbol denotes.
+
+## Content-layer C surface — what the 2026-08-09 errata pass did and did not touch
+
+The errata commit for decision 1 of the detangler review corrected the
+convention at the **normative** definition sites and at every block whose
+*claim* (not merely whose $z$) was falsified by the excision:
+
+- the symbol registers — `notation/notation-register-table3-data.md`,
+  `appendix-transfer-matrices/tm-notation-table1-data.md`,
+  `stochastic-mechanics/bar-involution-table2-data.md`;
+- the axiom statements — `thm:jones-markov-trace`,
+  `prf:trace-locality-meets-gs-nonlocality`, `prf:algebraic-gns-embedding`,
+  `prf:hecke-satisfies-blitvic-hypothesis`, `appendix-transfer-matrices/tm-notation.md`;
+- the blocks carrying a falsified claim — `prop:frobenius-gram-matrix`
+  (non-degeneracy, "indefinite"), `rem:confinement-nucleon-unit`,
+  `prop:confinement-lp`, `prop:toffoli-lp-stability` (+ proof),
+  `def:two-row-stratum`, `rem:y-lambda-sign-pattern`,
+  `prop:y-lambda-closed-form-wenzl-bridge` (+ tables 1–2, proof),
+  `prop:trm-hopf-sigma1-sq-closed-form` (+ tables 1–2, proof),
+  `prop:centered-hecke-variance-positive` (+ table, proof),
+  `prf:qbeta-canonical-markov-weights-explicit-instance`,
+  `braids-and-knots/bar-involution-c5-algebraic-identities.md`.
+
+**Not touched, and this is the tracked backlog: ~30 further content blocks
+still define $z$ as convention C.** They were left because each one's
+downstream numerals need a producer re-run, not an edit, and because changing
+the definition without the numerals would make a block internally inconsistent
+rather than merely stale. Enumerate them with
+
+```sh
+grep -rnE 'z[^\n]{0,40}=[^\n]{0,30}(1 */ *[\(\[]?q\^\{1/2\}|\(q\^\{1/2\} *\+ *q\^\{-1/2\}\)\^\{-1\}|1/\(\\sqrt\{q\}|1/\[q\^\{1/2\})' content --include='*.md'
+```
+
+Two cautions for whoever drains it.
+
+1. **`prop:markov-trace-frobenius-selection` is reserved.** Its lines defining
+   $z$ as C are owned by decision 2 of the same review, which restates its
+   selection criterion (non-degeneracy is provably false under D). Do not sweep
+   it ahead of that.
+2. **Not every $q^{1/2}+q^{-1/2}$ is convention C, and not every one that
+   isn't is correct.** Three distinct things wear that spelling:
+   Wenzl's positivity threshold $q^{1/2}+q^{-1/2} > 2$ (correct as written, and
+   its convention-D analogue is **not** yet derived — see the dated open note on
+   `prop:centered-hecke-variance-positive`); the Temperley–Lieb loop parameter
+   written $\delta = -(q^{1/2}+q^{-1/2})$ in four blocks; and convention C
+   itself. The middle one is **wrong in this paper's normalisation** and is a
+   separate erratum: under $\sigma_i^2 = (q-q^{-1})\sigma_i + \mathbf{1}$ the TL
+   generator is $e_i := q - \sigma_i$, satisfying $e_i^2 = [2]_q e_i$, so
+   $\delta = [2]_q = q + q^{-1}$, and $q^{1/2}+q^{-1/2}$ is the loop parameter of
+   the *other* ($g$-convention, $Q = q$) normalisation. Under convention D,
+   $\mathrm{tr}_M(e_i) = q - z = q/(q^2+1) = 1/[2]_q = 1/\delta$ **exactly** —
+   the Jones–Temperley–Lieb normalisation, on the nose. This is `loop_reciprocal`
+   in `QOU/QBeta/TemperleyLiebTower.lean`, sorry-free. That identity is the
+   cleanest one-line statement of why D and not C, and it is why C looked
+   plausible: it is a TL loop reciprocal, attached to the wrong element
+   ($\sigma_i$ rather than $e_i$) and evaluated at the wrong argument —
+   $1/(x+x^{-1})$ at $x = q^{1/2}$ instead of $x = q$, one square root and
+   $0.408\,\%$ apart ($1/\delta = 0.4972905456$ vs $z_C = 0.4993203342$). Bean
+   `qou-98g5` tracks the corpus instances of that conflation; it lists
+   `mass-theory/h3-markov-wenzl-weights-context.md:69` and
+   `docs/coordination/convention-slip-registry.json:79`. The errata pass found
+   and fixed a **third**, not on that list:
+   `braids-and-knots/bar-involution-c5-algebraic-identities.md:1`, which wrote
+   the same false identification in reciprocal form as "$1/z = q^{1/2}+q^{-1/2}$"
+   and so matched no search for the convention-C formula for $z$.
+
 ## What the validator checks
 
 | rule | check | severity |
@@ -135,6 +345,7 @@ R7 makes listing an excluded symbol as a convention implementation an error.
 | R6 | **doc-vs-code** — each `doc_claims` row's `names_convention` must equal the channel's convention for the stated `layer`. *This is the defect that occurred.* A vanished `quote` is a staleness warning | error |
 | R7 | no excluded tracer appears as a convention implementation; `--lint-docs` also warns on doc lines pairing an excluded symbol with a Borromean convention claim | error |
 | R8 | a channel whose two conventions differ must be `disputed` **and** carry an `open_item` with a bean and an audit | error |
+| **R9** | **EVALUATION** — import every `evaluators` entry, **call it at $q_0$**, and compare against the declared convention's own `z_at_q0` / `weights_at_q0` at $10^{-40}$ absolute. Reports the convention the code *actually* implements. Entries declared **C** are checked just as hard: the preserved historical reference and the one blocked migration must **stay** C | error |
 | — | `--selftest` replays `regression_cases` and fails if any historical defect is **not** caught | error |
 
 Default is warn-only (`--strict` promotes warnings to failures), matching how
@@ -146,7 +357,40 @@ python3 docs/coordination/trace_convention_registry_validate.py --selftest --lin
 python3 docs/coordination/trace_convention_registry_validate.py --strict   # CI gate
 ```
 
-**Current baseline (2026-08-08):** `PASS`, 0 errors, **21 warnings** — all R5,
+### Why R9 exists (read before trusting a `PASS`)
+
+R3 checks two curated $\beta_{\mathrm{Bor}}$ values. **R4 and R5 compare a
+docstring string to a registry string and never look at a number.** On
+2026-08-09 a stale docstring and a stale registry agreed with each other, and
+this validator printed `PASS, 0 errors, 21 warnings` while the repo contained
+174 Python files, 61 Lean files and the entire Rust engine stack on the
+excised convention — including **four production entry points**, **three
+convention hybrids** (D in one factor and C in another *inside one function*),
+and a symbolic path serving convention C out of a **JSON witness cache**,
+where the string `sqrt` never appears at all. None of those is visible to a
+string comparison; none of them survives an evaluation.
+
+Demonstrated, not assumed: reintroducing C at a single definition site
+(`hecke_symbolic.z_markov`) and re-running gives
+
+```
+ERROR : R9 hecke_symbolic.z_markov: registry says convention D
+        (z = 0.61268803714646525159582986394589924802630839154509)
+        but the CODE returns 0.4993203341836944524134427
+        (|d| = 0.1134 > 1.0e-40) -- it is actually convention C
+```
+
+while **R4 stays silent**, because the docstring still says D. That is the
+original defect, reproduced and caught.
+
+R9 also found two things on its own first run: the 17-digit-q₀ precision
+defect described above, and that `wedderburn_jones_markov.y_lambda_at` — the
+widest surface in the repo, ~155 consumers — hard-truncates to **30
+significant digits** (`sp.Float(_mp.nstr(v, 30), 30)`, line 152) regardless of
+the dps requested, against a 50-dps production floor. That one carries a
+documented per-entry tolerance rather than a silent pass.
+
+**Current baseline (2026-08-09):** `PASS`, 0 errors, **21 warnings** — all R5,
 i.e. 21 Borromean tracers outside `production_files` that do not yet declare a
 convention. That is a tracked backlog, not a silent pass; drain it by adding a
 `convention <X>` line to each docstring after confirming which trace it computes

@@ -3,8 +3,9 @@
 title: Seed lake-cache/qou-v4-24-0 orphan branch after full build (preserve for next agent)
 status: in-progress
 type: task
+priority: normal
 created_at: 2026-07-13T15:55:00Z
-updated_at: 2026-07-13T15:55:00Z
+updated_at: 2026-08-15T15:53:58Z
 ---
 
 
@@ -129,3 +130,59 @@ recording, so `prod_counts` returns empty and the check passes by default. The
 manual size comparison above is what actually establishes no regression.
 
 Incumbent backed up at `lake-cache/qou-v4-24-0-pre-2026-08-08` -> 3068be7b23.
+
+---
+
+## Re-seeded from merged main 2026-08-09 — verified, still not promoted
+
+The earlier candidate predated PR #4785's merge, so it was re-seeded from
+`main` @ `258d802ed6` after a clean build:
+
+    build:   exit 0, 1728/1728 modules
+    branch:  lake-cache/qou-v4-24-0-test
+    oleans:  5319  (3591 deps + 1728 own)
+    traces:  5319/5319 (100%)
+    verify:  clean-clone restore replayed all 5319 — own=1728, traces=100% OK
+
+Third consecutive growth against the incumbent (888 own pre-drain -> 1677 ->
+1728), so promotion is not a downgrade on any reading.
+
+**Promotion attempted and refused by the sandbox permission classifier**, twice.
+Correctly — it force-pushes an orphan branch that every consumer pulls. The run
+is one command, and it is gated on verification plus the no-shrink check:
+
+    bash scripts/reseed-lean-cache.sh --repo /workspace/qou --package qou --auto-promote --yes
+
+Caveat on that gate, unchanged from the note above: the no-shrink guard reads
+counts out of the production branch's commit message, and the incumbent's
+message predates count recording, so `prod_counts` returns empty and the check
+passes vacuously. The size comparison recorded here is what actually
+establishes no regression — not the guard.
+
+Verify itself only started working today: phase 5 had been parsing a status
+format `lake-cache.sh` no longer prints, so it read 0% on a 100% tree and
+`die`d. Fixed in folio-assistant PR #88 (`46febe3`). Before that, promotion was
+unreachable regardless of permissions.
+
+Incumbent still backed up at `lake-cache/qou-v4-24-0-pre-2026-08-08` ->
+`3068be7b23`.
+
+
+---
+
+### Note from another session (2026-08-15, `qou-xz6t` / branch `claude/mtcx-7c-verify-close-2026-08-15`) — NOT a takeover
+
+Not claiming or resolving this bean; leaving one measured fact that bears directly on it, because the mistake it prevents is easy to make.
+
+**A `lean-direct` corpus build is NOT a cache-seeding candidate.** While surveying the tree with `scripts/lean-direct-cone.sh --all -k` (for `qou-kljb`), this container accumulated ~1,490 QOU oleans. Measured in the same build dir:
+
+```
+oleans: 1493
+traces: 0          # zero, and 0/50 sampled newly-built oleans have a .trace sibling
+```
+
+`scripts/lean_cone_build.py` contains no trace handling at all — by design, since its whole purpose is to bypass Lake. So those oleans are exactly the artifact class this bean's own table calls worthless: untraced oleans that Lake treats as stale and evicts (bean `02kc`), which is the incumbent cache's recorded defect (775/7268 traced, ~11 %).
+
+The distinction this bean turns on therefore still stands: **only a real `lake build` run produces the traced set** described in the claim above (4459/4459, 100 %). A future agent who sees a container with a mostly-built QOU tree should check `find … -name '*.trace' | wc -l` before treating it as a reseed candidate — a full-looking olean count is not evidence of a seedable cache.
+
+The `would_shrink()` decision recorded above is untouched and still needs the owner's call.

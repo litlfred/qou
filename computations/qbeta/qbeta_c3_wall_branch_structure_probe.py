@@ -48,8 +48,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 Q = {"muon": mp.mpf("1.10997859555733471"),
      "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
 S_TARGET = {"muon": mp.mpf("0.00968298"), "proton": mp.mpf("-0.03945936")}

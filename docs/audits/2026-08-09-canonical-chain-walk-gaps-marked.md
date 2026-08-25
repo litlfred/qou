@@ -36,7 +36,7 @@ These are inputs. Nothing here is a prediction, and the corpus says so.
 
 ## Step 1 — q₀ from CAL-2 · **CAL + DERIVED**, with an **owner-gated fork**
 
-`m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2Λ(π/3) ≈ 2.0299`,
+`m_μ/m_e = Vol(4₁)/ℏ_q²`, `ℏ_q = 1 − q₀⁻¹`, `Vol(4₁) = 2·Cl₂(π/3) ≈ 2.0299`,
 inverted for `q₀ ≈ 1.10998`.
 
 **Fork (declared, not a defect):** production pins q₀ on the *proton* ratio
@@ -123,10 +123,10 @@ invariant — it depends on the braid representative**. That is the same defect 
 the measured nucleon-ordering dependence (B varies by up to **2.88 MeV** over
 permutations of `['p']*Z + ['n']*N`). Two symptoms, one cause.
 
-`z_m = 1/[2]_{√q}` is also specifically the **Temperley–Lieb / SU(2)** value,
-while nucleons are 3-quark SU(3) objects. SU(3) is the natural rival and goes the
-wrong way (`1/[3]_q = 0.3285` → `B_pp = 4.659` vs `2.907`), which is a reason to
-keep `z_m` but not a derivation of it.
+~~`z_m = 1/[2]_{√q}` is also specifically the **Temperley–Lieb / SU(2)**
+value…~~ **CORRECTED 2026-08-09** — see bean `qou-qlma` and `computations/y_lambda_su_n.py`: this is convention **C** (full-Hecke Ocneanu), NOT Temperley–Lieb. TL/SU(2) is convention **D** at `z = q³/(q²+1) = 0.6126880`; `D ≠ C` is Lean-proved and they differ by 195.8 ppm on `β_Bor`. C has `y_(1³) = 0.0227 ≠ 0`, so it does not carry the N=2 row cap, and it matches **no integer N** (effective N = 2.5995). The `1/[3]_q = 0.3285` "SU(3) rival" quoted here was also
+invented — the real SU(N) weights are quantum dimensions (hook-content), not
+`1/[N]`.
 
 ## Step 5 — the braid word and interface templates · **ASSUMED — GAP 2**
 

@@ -110,6 +110,12 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TOL_30 = mpf("1e-30")   # Euler / Jackson moment identity
 TOL_Q = mpf("1e-20")    # quadrature cross-checks (dps 40 working)
 N_SYM = 12              # symbolic identity depth
@@ -373,7 +379,7 @@ def block_s5_q_laguerre(wb: WitnessBuilder):
         closed = _p ** sp.Rational(-k * (k + 1), 2) * qpoch(_p, k)
         assert sp.simplify(prod_ratio - closed) == 0, k
     # numeric quadrature cross-check of the recurrence at 3 points
-    mp.dps = 40
+    set_compute_dps()
     worst_q = mpf(0)
     pts = [mpf(5) / 6, 1 / mpf(Q0_MUON_STR), 1 / mpf(Q0_PROTON_STR)]
     quad_tbl = {}

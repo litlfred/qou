@@ -195,16 +195,16 @@ def main() -> int:
                           "x_i - x_sigma(i) = 0 for the fixed locus; sympy Rational")
     wb.add_data("verdict", verdict)
     wb.add_assertion("m004_symmetry_group_nontrivial",
-                     computed=float(m["symmetry_order"]), expected=4.0,
-                     tolerance=0.5,
+                     computed=str(m["symmetry_order"]), expected="4",
+                     tolerance="0.5",
                      source="exhaustive over all 720 coordinate permutations")
     wb.add_assertion("m004_symmetric_point_NOT_unique_hypothesis_ii_fails",
-                     computed=0.0 if m["fixed_locus_is_unique_point"] else 1.0,
-                     expected=1.0, tolerance=0.5,
+                     computed="0" if m["fixed_locus_is_unique_point"] else "1",
+                     expected="1", tolerance="0.5",
                      source="fixed locus is the line (t, 1-2t, t, 1-2t, t, t)")
     wb.add_assertion("L6a4_symmetric_point_IS_unique_hypothesis_ii_holds",
-                     computed=1.0 if p["fixed_locus_is_unique_point"] else 0.0,
-                     expected=1.0, tolerance=0.5,
+                     computed="1" if p["fixed_locus_is_unique_point"] else "0",
+                     expected="1", tolerance="0.5",
                      source="fixed locus is the single regular ideal octahedron "
                             "point (1/4, 1/4, 1/2 per tetrahedron)")
     wb.save()

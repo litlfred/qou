@@ -7,6 +7,7 @@ export default proposition({
     validation: "not_checked",
   },
   uses: [
+    "def:categorical-proton",
     "prop:categorical-proton-exists",
     "prop:hadron-unique",
   ],

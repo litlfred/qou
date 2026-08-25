@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T19:12:59.178591+00:00",
-  "commitSha": "f0192ba15e74983fb9cd089f8ef93dc32831342c",
+  "computedAt": "2026-08-09T19:13:37.329194+00:00",
+  "commitSha": "457f4cc4a74c311cbd0a1c3a595627b877e90a9b",
   "assertions": [
     {
       "name": "checks_failed",
@@ -12,18 +12,18 @@
     },
     {
       "name": "implied_rank_of_z_D",
-      "computed": 2.0,
-      "expected": 2.0,
+      "computed": "2.0",
+      "expected": "2.0",
       "passed": true,
-      "tolerance": 1e-40,
+      "tolerance": "1e-40",
       "source": "mp.findroot on z_N(q_0)"
     },
     {
       "name": "implied_rank_of_z_C",
-      "computed": 2.599515536400177,
-      "expected": 2.599515536400177,
+      "computed": "2.5995155364001770161807405265",
+      "expected": "2.5995155364001770",
       "passed": true,
-      "tolerance": 1e-15,
+      "tolerance": "1e-15",
       "source": "mp.findroot on z_N(q_0); independent of #4766's N_eff"
     },
     {
@@ -35,11 +35,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 1137,
+  "durationMs": 1264,
   "computation": "markov-z-fibre-rank-bar-covariance",
   "scriptFile": "markov_z_fibre_rank_bar_covariance_probe.py",
-  "scriptHash": "2e1e11f331dc",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "47cacb3d249e",
+  "scriptCommitSha": "4945fae345f23d4eeeed130f7e9126f19e492edc",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,6 +48,8 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
@@ -172,5 +174,8 @@
   "caveats": [
     "Scope (b) applies only to the family z = q^N/[N]_q, i.e. to fibre readings via the Wenzl bridge's X = Q^N. A Markov parameter arising some other way is not covered.",
     "N is treated as a real variable when inverting z -> N. The non-integrality of N_from_C is therefore a statement about that continuation, matching #4766's N_eff = 2.5995155364."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759167",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.rank_table_at_q0[].z_at_q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

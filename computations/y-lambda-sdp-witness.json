@@ -1,5 +1,5 @@
 {
-  "description": "LP feasibility cross-check for y_λ: solves Ay=b with y≥0 via cvxpy and compares to the linear-solve witness.  Certifies positivity of the Markov-trace block weights and provides a robust path at near-singular q.",
+  "description": "Ocneanu weights y_\u03bb at the convention-D Markov parameter z = q\u00b3/(q\u00b2+1), with the non-negativity question the convention-C version of this witness was built to test. Under C it failed at n = 4, 5, 6; under D every \u2113(\u03bb) \u2264 2 weight is strictly positive and every \u2113(\u03bb) \u2265 3 weight is exactly zero, so y \u2265 0 holds at each n with no tolerance. Weights are listed in descending lexicographic partition order; the pairing is verified by tr(1) = \u03a3 dim_\u03bb y_\u03bb = 1 before rewriting.",
   "references": [
     "prop:alpha-k-derivation-procedure",
     "prop:confinement-sdp"
@@ -8,139 +8,95 @@
     "2": {
       "n": 2,
       "q": 1.1099785955541805,
-      "z": 0.4993203340335982,
-      "ls_status": "optimal",
+      "z": 0.6126880505455891,
       "y_ls": [
-        0.6963254203144307,
-        0.30367457968556943
+        0.752702113845058,
+        0.24729788615494194
       ],
-      "min_y_lambda": 0.30367457968556943,
-      "max_y_lambda": 0.6963254203144307,
-      "ls_residual": 2.7755575615628914e-16,
+      "min_y_lambda": 0.24729788615494194,
+      "max_y_lambda": 0.752702113845058,
       "positivity_holds": true,
       "positivity_violators": [],
-      "cross_check": {
-        "max_abs_diff_vs_linsolve": 2.220446049250313e-16,
-        "all_within_1e-9": true
-      }
+      "n_support": 2
     },
     "3": {
       "n": 3,
       "q": 1.1099785955541805,
-      "z": 0.4993203340335982,
-      "ls_status": "optimal",
+      "z": 0.6126880505455891,
       "y_ls": [
-        0.4153957863345663,
-        0.2809296339798641,
-        0.02274494570570535
+        0.5054042276901161,
+        0.24729788615494194,
+        0.0
       ],
-      "min_y_lambda": 0.02274494570570535,
-      "max_y_lambda": 0.4153957863345663,
-      "ls_residual": 1.1102230246251565e-16,
+      "min_y_lambda": 0.0,
+      "max_y_lambda": 0.5054042276901161,
       "positivity_holds": true,
       "positivity_violators": [],
-      "cross_check": {
-        "max_abs_diff_vs_linsolve": 5.551115123125783e-17,
-        "all_within_1e-9": true
-      }
+      "n_support": 2
     },
     "4": {
       "n": 4,
       "q": 1.1099785955541805,
-      "z": 0.4993203340335982,
-      "ls_status": "optimal",
+      "z": 0.6126880505455891,
       "y_ls": [
-        0.22752693019306405,
-        0.18786885614150228,
-        0.06947330464150202,
-        0.023587473196859943,
-        -0.0008425274911545499
+        0.3192625860318768,
+        0.18614164165823932,
+        0.06115624449670263,
+        0.0,
+        0.0
       ],
-      "min_y_lambda": -0.0008425274911545499,
-      "max_y_lambda": 0.22752693019306405,
-      "ls_residual": 2.220446049250313e-16,
-      "positivity_holds": false,
-      "positivity_violators": [
-        {
-          "index": 4,
-          "y_lambda": -0.0008425274911545499
-        }
-      ],
-      "cross_check": {
-        "max_abs_diff_vs_linsolve": 4.163336342344337e-17,
-        "all_within_1e-9": true
-      }
+      "min_y_lambda": 0.0,
+      "max_y_lambda": 0.3192625860318768,
+      "positivity_holds": true,
+      "positivity_violators": [],
+      "n_support": 3
     },
     "5": {
       "n": 5,
       "q": 1.1099785955541805,
-      "z": 0.4993203340335982,
-      "ls_status": "optimal",
+      "z": 0.6126880505455891,
       "y_ls": [
-        0.11814839833360222,
-        0.10937853185946184,
-        0.0617237153231962,
-        0.016766608958844218,
-        0.0077495893183057545,
-        -0.0009287250802900742,
-        8.619758913552128e-05
+        0.1942771888703401,
+        0.12498539716153668,
+        0.06115624449670263,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
-      "min_y_lambda": -0.0009287250802900742,
-      "max_y_lambda": 0.11814839833360222,
-      "ls_residual": 1.1102230246251565e-16,
-      "positivity_holds": false,
-      "positivity_violators": [
-        {
-          "index": 5,
-          "y_lambda": -0.0009287250802900742
-        }
-      ],
-      "cross_check": {
-        "max_abs_diff_vs_linsolve": 4.85722573273506e-17,
-        "all_within_1e-9": true
-      }
+      "min_y_lambda": 0.0,
+      "max_y_lambda": 0.1942771888703401,
+      "positivity_holds": true,
+      "positivity_violators": [],
+      "n_support": 3
     },
     "6": {
       "n": 6,
       "q": 1.1099785955541805,
-      "z": 0.4993203340335982,
-      "ls_status": "optimal",
+      "z": 0.6126880505455891,
       "y_ls": [
-        0.059187716932148526,
-        0.05896068140145367,
-        0.0402843869659352,
-        0.01013346349207295,
-        0.014120874004975281,
-        0.007318454352285739,
-        -0.0006853088855144635,
-        0.0007731867369053958,
-        -0.000342051770885372,
-        9.863557610981555e-05,
-        -1.2437986974288914e-05
+        0.11532422621629666,
+        0.07895296265404342,
+        0.04603243450749327,
+        0.0,
+        0.015123809989209362,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0
       ],
-      "min_y_lambda": -0.0006853088855144635,
-      "max_y_lambda": 0.059187716932148526,
-      "ls_residual": 2.220446049250313e-16,
-      "positivity_holds": false,
-      "positivity_violators": [
-        {
-          "index": 6,
-          "y_lambda": -0.0006853088855144635
-        },
-        {
-          "index": 8,
-          "y_lambda": -0.000342051770885372
-        },
-        {
-          "index": 10,
-          "y_lambda": -1.2437986974288914e-05
-        }
-      ],
-      "cross_check": {
-        "max_abs_diff_vs_linsolve": 2.2985086056692694e-17,
-        "all_within_1e-9": true
-      }
+      "min_y_lambda": 0.0,
+      "max_y_lambda": 0.11532422621629666,
+      "positivity_holds": true,
+      "positivity_violators": [],
+      "n_support": 4
     }
   },
-  "computedAt": "2026-04-26T04:39:41.425651+00:00"
+  "computedAt": "2026-04-26T04:39:41.425651+00:00",
+  "markov_convention": "D",
+  "markov_parameter_symbolic": "q**3/(q**2 + 1)",
+  "scriptFile": "computations/regenerate_y_lambda_sdp_conventionD.py",
+  "partition_order": "descending-lex"
 }

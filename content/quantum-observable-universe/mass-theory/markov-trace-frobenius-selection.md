@@ -1,8 +1,26 @@
-*The Jones–Markov form $\mathrm{tr}_M$ is the unique non-degenerate Frobenius pairing on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$. The QOU mass identity's Markov trace is uniquely fixed by the categorical action, the fibre functor, and the Markov-trace uniqueness theorem (Jones 1987, Wenzl 1988).*
+*Let $R \supseteq \mathbb{Q}(q)$ with $q$ generic; write $[m]_q = (q^m - q^{-m})/(q - q^{-1})$, so that $[2]_q = q + q^{-1}$. A **Markov trace** on the tower $H_1 \subset H_2 \subset \cdots$ is a compatible family of linear functionals $\tau_n \colon H_n(R,q) \to R$ satisfying M1 ($\tau(1) = 1$), M2 (cyclicity, $\tau(xy) = \tau(yx)$) and M3 ($\tau(x \sigma_{n-1}) = z \, \tau(x)$ for $x \in H_{n-1}$), for a parameter $z \in R$.*
 
-| form | $\tau(1)$ | $\tau(\sigma_i)$ | $w_\lambda$ | non-degenerate? |
-|---|---:|---:|---|:---:|
-| Jones–Markov $\mathrm{tr}_M$ | $1$ | $z = 1/[q^{1/2}+q^{-1/2}]$ | Wenzl-bridge $y_\lambda$ | yes, on $H_n(q)$ |
+**(i) Uniqueness at a fixed parameter.** *For each $z$ there is exactly one Markov trace on the tower with that parameter, the Ocneanu–Jones trace $\mathrm{tr}^{z}_M$. This follows from M1–M3 alone. Non-degeneracy of the induced pairing is neither a hypothesis nor a conclusion of it, and cannot serve as the selection criterion: on the split semisimple $H_n(R,q)$ **every** weight vector $(w_\lambda)_{\lambda \vdash n}$ with all $w_\lambda \neq 0$ induces a non-degenerate associative form, so "non-degenerate" singles out nothing — and in particular does not fix $z$.*
+
+**(ii) Selection of the parameter in the QOU mass channel.** *What fixes $z$ is not non-degeneracy but a prescribed degeneracy. The mass fibre is the fundamental $V$ of $\mathrm{SU}_q(2)$, of quantum dimension $[2]_q$, so $V^{\otimes n}$ carries no channel $\lambda$ with $\ell(\lambda) \geq 3$ ([eigenbasis decomposition](#lem:feynman-eigenbasis-decomposition)). A trace that is the categorical trace of the fibre action therefore puts weight $y_\lambda = 0$ on every such $\lambda$ (the **row cap**) and nonzero weight on the channels the fibre does supply (**faithfulness on the two-row blocks**). Imposed at level $3$ — the first level at which the row cap says anything — those two conditions, together with M1–M3 at an unknown $z$, determine everything:*
+
+$$
+  y_{(n-k,\,k)} \;=\; \frac{[\,n-2k+1\,]_q}{[2]_q^{\,n}},
+  \qquad
+  y_\lambda \;=\; 0 \ \ (\ell(\lambda) \geq 3),
+  \qquad
+  z \, [2]_q \;=\; q^{2},
+$$
+
+*that is, $z = q^{3}/(q^{2}+1)$ — **convention D** of the [trace-convention registry](../../../docs/coordination/trace-convention-registry.md). Neither condition may be dropped: without the row cap $z$ is free (the whole Ocneanu family, convention C among it), and without faithfulness the trivial character $y = (1, 0, \ldots, 0)$ at $z = q$ satisfies M1–M3 and the row cap alike.*
+
+**(iii) What the pairing then is.** *Consequently $\langle x, y \rangle_\tau := \mathrm{tr}_M(xy)$ is **degenerate** on $H_n(R,q)$ for $n \geq 3$, and the radical of the form (not the Jacobson radical — $H_n$ is split semisimple at generic $q$) is exactly the Temperley–Lieb ideal $I_n = \ker\bigl(H_n(q) \twoheadrightarrow \mathrm{TL}_n(q)\bigr)$, neither larger nor smaller. $\mathrm{tr}_M$ vanishes identically on $I_n$, so it is still determined on all of $H_n(R,q)$ — uniqueness is on the nose, not merely modulo the radical — and it descends to a non-degenerate pairing on the quotient. It is $(\mathrm{TL}_n(q), \mathrm{tr}_M)$, not $(H_n(R,q), \mathrm{tr}_M)$, that is a symmetric Frobenius algebra.*
+
+**Status.** *(i) and (iii) are unconditional. (ii) is an implication whose antecedent — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — is **open** (bean `qou-n1dj`); the implication itself is proved sorry-free at $n = 3$ (`QOU.BraidsAndKnots.markovWeights_eq_jones_of_fibre_categorical`). Its extension to $n > 3$ rests on the restriction property together with the closed form above, which is verified against every partition of $n \leq 7$ to a worst residual of $1.34 \times 10^{-51}$ and proved in Lean only as fixed-$n$ instances of the recursion $[m+2]_q + [m]_q = [2]_q [m+1]_q$ (`QOU.QBeta.TemperleyLiebTower`), not by a general-$n$ induction.*
+
+| form | $\tau(1)$ | $z = \tau(\sigma_i)$ | $y_\lambda$ | radical of $\langle \cdot, \cdot \rangle_\tau$ | non-degenerate? |
+|---|---:|---:|---|---|---|
+| Jones–Markov $\mathrm{tr}_M$, **convention D** | $1$ | $q^{3}/(q^{2}+1)$ | $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$; $y_\lambda = 0$ for $\ell(\lambda) \geq 3$ | the Temperley–Lieb ideal $I_n$ (zero for $n \leq 2$) | **no** on $H_n(q)$; **yes** on $\mathrm{TL}_n(q) = H_n(q)/I_n$ |
 
 ## Proof
 
@@ -16,6 +34,7 @@ A quantum observable universe specifies a rigid monoidal category $\mathbf{C}$ w
 ### Step 2: Non-abelian Stokes at finite slice
 
 Yekutieli's non-abelian Stokes theorem at finite slice depth yields the multiplicative trace on the closed surface obtained by Markov closure of the braid word $T_w$:
+
 $$
   \int_{S^1} T_w
   \;=\;
@@ -25,40 +44,65 @@ This trace is the categorical trace in $\mathbf{C}$. It depends on the fibre fun
 
 ### Step 3: Frobenius pairing
 
-The categorical trace descends to a Frobenius integral $\int_A \colon A \to R$. The algebra $A$ is a Frobenius algebra relative to this integral. This defines a non-degenerate bilinear form:
+The categorical trace descends to an integral $\int_A \colon A \to R$, defining the symmetric associative bilinear form
+
 $$
   \langle x, y \rangle_\tau \;:=\; \tau(xy).
 $$
 
+Under the row cap this form is **not** non-degenerate on $A = H_n(R,q)$: its radical is the Temperley–Lieb ideal $I_n$, and it is the quotient $\mathrm{TL}_n(q) = A/I_n$ that is Frobenius relative to the induced integral.
+
 The QOU mass identity uses the Frobenius co-Casimir trace identity ([Frobenius co-Casimir universal](#thm:frobenius-codim-universal)):
+
 $$
   \tau(C_{\dim_q}) \;=\; \sum_\lambda \frac{1}{\dim_q(\lambda)}.
 $$
-This identity requires $\tau(p_\lambda) \neq 0$ for every Wedderburn block. The trace $\tau$ must be non-degenerate.
+
+> **OPEN (2026-08-09) — owner's call, not settled here.** As written, $C_{\dim_q}$ divides by $\tau(p_\lambda)$ and the sum runs over *every* Wedderburn block, so under convention D the element is **undefined**: $\tau(p_\lambda) = 0$ for every $\lambda$ with $\ell(\lambda) \geq 3$. Two ways out, with different costs.
+>
+> **(a) Restrict to the radical quotient.** Read $C_{\dim_q}$ and the identity on $\mathrm{TL}_n(q) = H_n(q)/I_n$, i.e. sum only over $\ell(\lambda) \leq 2$. The identity then holds verbatim with a smaller right-hand side. **Cost:** every published value computed through the co-Casimir — in particular Term 4 of the six-term mass identity, $\mathrm{tr}(G^{-1} \cdot D)$ in [Gram-matrix spectral connection](#rem:gram-matrix-spectral-connection) — is computed on a different index set and must be **republished**, regenerated by its producer.
+>
+> **(b) Retire the co-Casimir route.** Drop it alongside the refuted Frobenius / co-Casimir deuteron result. **Cost:** Term 4 loses its derivation and the six-term identity is reduced to five derived terms plus a gap.
+>
+> Until this is decided, no Term-4 number in the corpus is to be edited, and no block may assert that the co-Casimir identity holds on $H_n(R,q)$ under convention D.
 
 The **Jones–Markov form** $\mathrm{tr}_M$ satisfies:
 - $\mathrm{tr}_M(1) = 1$.
-- $\mathrm{tr}_M(x \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}$ with $z = 1/(q^{1/2} + q^{-1/2})$.
+- $\mathrm{tr}_M(x \sigma_{n-1}) = z \cdot \mathrm{tr}_M(x)$ for $x \in H_{n-1}$, with $z = q^{3}/(q^{2}+1)$ (**convention D**; the value is derived in Step 3b of the proof, not stipulated).
 
-It is non-degenerate on $H_n(R, q)$. The trace on the primitive idempotents is $\mathrm{tr}_M(p_\lambda) = \dim_q(\lambda) \cdot d_\lambda / [n]_q!$. This is non-zero for every $\lambda \vdash n$ at generic $q$. The Markov-trace uniqueness theorem forces $\mathrm{tr}_M$ to be the unique non-degenerate Frobenius form on the Hecke algebra.
+Its block weights are $\mathrm{tr}_M(p_\lambda) = y_\lambda$, given by the Ocneanu hook–content product at framing ratio $a^2 = z / z_{-}$, where $z_{-} = z - (q - q^{-1})$. Under convention D that ratio is exactly $q^{4}$, since $z_{-} = 1/(q(q^{2}+1))$ and hence $z / z_{-} = q^{4}$ identically in $q$. The numerator factor $z \, q^{c(x)} - z_{-} \, q^{-c(x)}$ therefore vanishes precisely on cells of content $c(x) = -2$ — the cells in position $(r+2, r)$, the first of which is $(3,1)$ — and a Young diagram contains such a cell if and only if $\ell(\lambda) \geq 3$. Hence $y_\lambda = 0 \iff \ell(\lambda) \geq 3$: the row cap is not an extra input to the weight formula but a reading of it, and the vanishing set is *exactly* the Temperley–Lieb ideal. The Markov-trace uniqueness theorem then fixes $\mathrm{tr}_M$ among traces with this $z$; it says nothing about non-degeneracy.
 
 ### Step 4: Wedderburn + Markov-trace formula
 
 The trace $\mathrm{tr}_M$ admits the explicit form:
+
 $$
   \mathrm{tr}_M(x) \;=\; \sum_\lambda y_\lambda(q) \cdot \chi_\lambda(x),
 $$
-where $y_\lambda(q)$ are the Wenzl-bridge weights.
+where the sum runs over $\lambda \vdash n$ with $\ell(\lambda) \leq 2$ — every other character is annihilated — and $y_{(n-k,k)} = [\,n-2k+1\,]_q / [2]_q^{\,n}$. Equivalently $\mathrm{tr}_M$ factors through $\mathrm{TL}_n(q)$, and the surviving blocks carry $\sum d_\lambda^2 = \mathrm{Catalan}(n)$ of the $n!$ dimensions of $H_n(q)$ (`QOU.QBeta.TemperleyLiebTower.catalan_three` / `catalan_four` / `catalan_five`).
 
-## Uniqueness theorem
+## Selection theorem
 
-**Theorem (Markov-trace uniqueness on H_n(R, q)).** *Any non-degenerate Frobenius form on the Iwahori–Hecke algebra $H_n(R, q)$ at generic $q$ equals the Jones–Markov form $\mathrm{tr}_M$ block-wise. The QOU mass identity uniquely determines $\mathrm{tr}_M$ as the canonical Markov trace.*
+**Theorem (Markov-trace selection).** *Let $\tau$ be a cyclic functional on the tower satisfying M1 and M3 for **some** parameter $z$, and let $(w_\lambda)_{\lambda \vdash 3}$ be its level-$3$ weight vector. Suppose*
+
+1. *(**row cap**) $w_\lambda = 0$ whenever $\ell(\lambda) \geq 3$, and*
+2. *(**faithfulness on the quotient**) $w_\lambda \neq 0$ whenever $\ell(\lambda) \leq 2$.*
+
+*Then $z$ is forced to satisfy $z \, [2]_q = q^{2}$, and $\tau = \mathrm{tr}_M$, the convention-D Jones–Markov trace, at every level of the tower — **on all of** $H_n(R,q)$, not merely modulo the radical, because $\tau$ is identically zero on the radical. The radical of $\langle \cdot, \cdot \rangle_\tau$ is exactly $I_n$, and the descended pairing on $\mathrm{TL}_n(q)$ is non-degenerate.*
+
+*Level $3$ is where the hypotheses bite, and the statement is false if they are imposed lower: at $n \leq 2$ the row cap is vacuous and M1 + M3 leave one free parameter, so $z$ is genuinely undetermined there. Given level $3$, no higher level adds freedom — the restriction of a level-$n$ Markov trace to $H_3(R,q)$ is again a Markov trace with the same $z$.*
+
+*Both hypotheses are load-bearing and neither is redundant. Dropping 1 leaves $z$ free (the full Ocneanu family, convention C among it). Dropping 2 admits the trivial character $y = (1, 0, 0)$ at $z = q$, which satisfies M1–M3 and the row cap and makes the conclusion **false**, not merely unprovable (`markovWeights_degenerate_root`). Dropping M1 / M3 admits, at $n = 3$, the entire two-parameter family $\{(y_{(3)}, y_{(2,1)}, 0) : y_{(2,1)} \neq 0\}$ — so hypotheses 1 and 2 alone do **not** single out $\mathrm{tr}_M$; the Markov axioms are still required.*
+
+*Formalised at $n = 3$, sorry-free, division-free, over a generic commutative domain: `QOU.BraidsAndKnots.markovWeights_eq_jones_of_threeRow_eq_zero` ([`MarkovTraceTLUniqueness.lean`](../lean/QOU/BraidsAndKnots/MarkovTraceTLUniqueness.lean)), with the fibre-side antecedent in `markovWeights_eq_jones_of_fibre_categorical` ([`FibreCategoricalTraceForcesJones.lean`](../lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean)).*
 
 ## Discussion
 
-This proposition is a structural theorem about the representation theory of the Hecke algebra. We introduce no fitting or empirical input. We formalize the uniqueness via the `MarkovTraceUniqueness` class in Lean. Downstream Lean results depend on this class instance.
+This proposition is a structural theorem about the representation theory of the Hecke algebra. We introduce no fitting or empirical input, and no numerical $q_0$: parts (i) and (iii) are unconditional, and part (ii) is division-free over a generic commutative domain. What it is **conditional** on is one named categorical premise — that the mass-channel trace is the categorical trace of the fibre action on $V^{\otimes n}$ — which is open (bean `qou-n1dj`, [`FibreCategoricalTraceForcesJones.lean`](../lean/QOU/BraidsAndKnots/FibreCategoricalTraceForcesJones.lean)). Conditional-proved is not premise-established.
 
 ## Computational consequence
+
+> **STALE / CONVENTION-UNLABELLED (flagged 2026-08-09, not repaired here).** The four-way agreement below was produced by `computations/cross_check_trM_1ppb.py` through `markov_trace_canonical.tr_M_element`, whose default $z$ was **convention C** until the 2026-08-09 migration ([`docs/audits/2026-08-08-borromean-trace-convention-forcing.md`](../../../docs/audits/2026-08-08-borromean-trace-convention-forcing.md) traces the same 11-letter word `atom_braid_word_3A(1,0)` through that machinery and gets $1.06530614425444993$, the value tabulated here). Under production convention D these values change. Per the [registry](../../../docs/coordination/trace-convention-registry.md) Rule, trace values quoted below 0.1 % must name their convention id; these are quoted to 16 digits and name none. **The table must be regenerated by its producer, not hand-edited.**
 
 The QOU production stack computes $\mathrm{tr}_M$ on the canonical 11-crossing proton/neutron braid via four independent paths. They agree to $\leq 2 \times 10^{-15}$ at the proton-pinned $q_0$:
 

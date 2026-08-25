@@ -20,7 +20,8 @@ With it, the remaining obstacle in item 4 is the **inversion** leg for `x > 1`,
 which lies *on* `cLiTwoExt`'s cut — where no continuity argument in that file
 applies — and needs boundary values from off the cut.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.Archimedean

@@ -106,7 +106,7 @@ def main() -> int:
     idem_minus_b = sp.simplify(e_minus_sq[1] - e_minus[1])
 
     # Markov trace: tr_M(1) = 1, tr_M(σ) = z = 1 / (q^{1/2} + q^{-1/2})
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
 
     def tr_M(x):
         return sp.simplify(x[0] + x[1] * z)

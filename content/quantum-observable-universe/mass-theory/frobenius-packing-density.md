@@ -23,4 +23,6 @@ Populating the alt block mandates its antiparticle partner by CPT symmetry, doub
 
 Topological saturation triggers this threshold. Simple two-body links suppress the alt block. Three-body Borromean entanglement forces cyclic interaction, activating the alt channel. Closed-shell clusters saturate all blocks internally, while two-body inter-cluster bonds revert to the single-chirality density.
 
-Mass computes as the geometric volume scaled by the discrete fractional volume occupied within the Wedderburn module. This categorical structure derives the $\{m_e, 2m_e\}$ threshold directly from the Frobenius pairing without phenomenological tuning.
+Mass computes as the geometric volume scaled by the discrete fractional volume occupied within the Wedderburn module. This categorical structure is a *candidate* mechanism for the $\{m_e, 2m_e\}$ threshold; it is **not** an established derivation.
+
+The mechanism is refuted under the canonical colour-weighted convention. In the canonical $^4$He decomposition the alternating channel carries zero Frobenius weight, $y_{[1^{12}]} = 0$, with exact two-row dominance — every block of nonzero weight has at most two rows. The CPT argument doubles the density by *populating* the alternating channel, so with that channel structurally empty there is nothing to double. The $\rho_F$ prefactor accordingly remains an open input hypothesis, consistent with [the doubly-magic binding context](magic-A-binding-formula-context.md).

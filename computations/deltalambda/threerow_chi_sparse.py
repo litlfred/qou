@@ -55,6 +55,7 @@ sys.path[:0] = [
     str(Path(__file__).resolve().parent.parent / "hecke"),
 ]
 import _path_bridge  # noqa: F401,E402
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 
 import numpy as np  # noqa: E402
 import scipy.sparse as sp  # noqa: E402
@@ -66,6 +67,13 @@ from hecke_characters import build_seminormal_matrices  # noqa: E402
 # Column-batch width. Memory is dim·B·8 bytes (dim=7700, B=256 → 15.8 MB).
 BATCH = 256
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def chi_atom_sparse(shape: tuple[int, ...], Z: int, N: int, q: mp.mpf,
                     batch: int = BATCH) -> mp.mpf:
@@ -79,7 +87,11 @@ def chi_atom_sparse(shape: tuple[int, ...], Z: int, N: int, q: mp.mpf,
     sig, dim, _ = build_seminormal_matrices(tuple(shape), sparse=True, q=qf)
     if dim == 0:
         return mp.mpf(0)
-    word = atom_braid_word_3A(Z, N, include_inter=True, q=q)
+    # See `threerow_sign_crossing_probe.chi_atom`: the CSR letters below are
+    # `float(c)·σ + float(d)·I`, so this path is f64 end to end and the
+    # declaration belongs here, at the point where the loss occurs.
+    word = atom_braid_word_3A(Z, N, include_inter=True, q=q,
+                              allow_float64=True)
     ident = sp.identity(dim, format="csr")
     # Each letter stays CSR (≤2 nnz/row); build once, reuse across all batches.
     letters = [(float(c) * sp.csr_matrix(sig[g]) + float(d) * ident).tocsr()
@@ -95,23 +107,23 @@ def chi_atom_sparse(shape: tuple[int, ...], Z: int, N: int, q: mp.mpf,
     return mp.mpf(tr)
 
 
-def self_check(verbose: bool = True) -> float:
+def self_check(verbose: bool = True) -> mp.mpf:
     """Verify bit-level agreement with the #4829 dense chi_atom. Returns max rel diff."""
     from threerow_sign_crossing_probe import chi_atom, Q0
     cases = [((3, 2, 1), 1, 1), ((2, 2, 2), 1, 1), ((4, 1, 1), 1, 1),
              ((3, 1, 1, 1), 1, 1), ((5, 2, 1, 1), 1, 2), ((4, 3, 1, 1), 1, 2),
              ((5, 3, 1), 2, 1), ((3, 3, 3), 1, 2)]
-    worst = 0.0
+    worst = mp.mpf(0)
     for shape, Z, N in cases:
         a = chi_atom(shape, Z, N, Q0)
         b = chi_atom_sparse(shape, Z, N, Q0)
-        rel = float(abs(a - b) / (abs(a) + mp.mpf("1e-40")))
+        rel = abs(a - b) / (abs(a) + mp.mpf("1e-40"))
         worst = max(worst, rel)
         if verbose:
             print(f"  {str(shape):18s} dense={float(a):+.12e} sparse={float(b):+.12e} "
-                  f"rel={rel:.2e}")
+                  f"rel={float(rel):.2e}")
     if verbose:
-        print(f"  max rel diff = {worst:.3e}  "
+        print(f"  max rel diff = {float(worst):.3e}  "
               f"({'OK — f64 epsilon' if worst < 1e-12 else 'FAIL'})")
     return worst
 

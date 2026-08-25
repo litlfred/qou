@@ -46,7 +46,7 @@ Run: python3 -u computations/alpha_em_b2_scalar_c_probe.py 2>&1 | tee /tmp/b2c.l
 
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [braden-northover-2012] https://doi.org/10.3842/SIGMA.2012.065
--- Ref: [halverson-1998-markov-weights] https://doi.org/10.1006/jabr.1998.7437
+-- Ref: [orellana1998] https://doi.org/10.1006/jabr.1998.7437
 """
 from __future__ import annotations
 
@@ -59,8 +59,9 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import seminormal_matrices_mpfr  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 SHAPE = (4, 1)      # std = standard 4-dim S₅ irrep; #SYT = 4
 N = sum(SHAPE)      # 5

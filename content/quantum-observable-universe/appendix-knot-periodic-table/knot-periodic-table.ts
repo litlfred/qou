@@ -4,6 +4,10 @@ export default prose({
   label: "prose:knot-periodic-table",
   title: "Knot-periodic table of the elements",
   uses: [
+    // The classification the whole table is organised by.
+    // def:borromean-baryon, the trefoil-link identification the summary
+    // asserts for p and n, is NOT listed: it is reached through this cone.
+    "prop:fermion-boson-knot-link",
     "prop:shell-structure-eigenvalues",
     "thm:generation-completeness",
     "rem:knot-exhaustiveness",

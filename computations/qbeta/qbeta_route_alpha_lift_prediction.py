@@ -45,6 +45,14 @@ sys.path.insert(0, str(ROOT / "habiro"))
 sys.path.insert(0, str(REPO / "tools" / "qou-substrate" / "python"))
 
 from qbeta_h4_stagec_markov_infra import tr_M  # noqa: E402  (merged #3228)
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 qs = sp.symbols("q", positive=True)
 
@@ -66,7 +74,7 @@ def load_net_words():
 
 def main() -> int:
     t0 = time.monotonic()
-    mp.dps = 50
+    set_compute_dps()
     tol = mp.mpf("1e-40")
 
     from qou_substrate.constants import q_at, q_muon_at  # noqa: E402

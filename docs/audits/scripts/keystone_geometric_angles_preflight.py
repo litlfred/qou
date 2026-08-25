@@ -27,9 +27,15 @@ separate, follow-up probe.
 DISCIPLINE: parameter-free; the angles are KNOWN group theory (not fitted); the
 character validation is EXACT (φ closed form). No fit, nothing wired.
 """
+import sys
+from pathlib import Path
+
 from mpmath import mp, mpf, sqrt, cos, pi, acos, nstr
 
-mp.dps = 40
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mpf("1.1099785955541805")
 
 # ---------------------------------------------------------------------------

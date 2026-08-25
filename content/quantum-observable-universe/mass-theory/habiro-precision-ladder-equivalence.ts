@@ -9,8 +9,6 @@ export default proposition({
   },
   uses: [
     "thm:jones-markov-trace",
-    "prop:y-lambda-closed-form-wenzl-bridge",
-    "prop:mass-endomorphism-tower",
   ],
   cites: [
     "habiro2000",

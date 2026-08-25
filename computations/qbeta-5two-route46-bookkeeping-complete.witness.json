@@ -1,0 +1,163 @@
+{
+  "probe": "qbeta_5two_route46_bookkeeping_complete",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 60,
+  "follows": [
+    "Route 45 (continuation-derived flattening)"
+  ],
+  "corrects": "Route 45's G5 explanation -- the y-orbit does not need a different flattening, it needs none; the c-recipe over-corrects it.",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE RESULT. The Rogers pentagon summed over the three embeddings of the 5_2 saddle orbit equals 3*pi^2/2 EXACTLY with principal branches and NO flattening. The configuration this lane actually cares about needs no branch bookkeeping at all -- which is not what Route 45 predicted",
+      "raw_total": "(14.804406601634037928251736499814227 + 0.0j)",
+      "three_halves_pi_squared": "14.804406601634037928251736499814227",
+      "residual": "2.48920611114e-60",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the c-orbit raw total misses by 6.4718 -- so the discrepancy Route 41 reported belongs to the c configuration, NOT the y one. Gated side by side with G1 so the two cannot be conflated again",
+      "raw_total": "(8.33260327793434519218761245283 + 0.0j)",
+      "shortfall": "6.4718033236996927361",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE METHOD. The correction is read off winding numbers along the continuation path -- pi*i*sum_i(w1_i*log a_i + w0_i*log(1-a_i)) -- and reproduces Route 45's hand-derived c-orbit answer. On the y-orbit every winding is ZERO, which is WHY no correction arises: a derivation, not an observation after the fact",
+      "c_orbit_windings": [
+        {
+          "im": "0.0",
+          "w0": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "w1": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "im": "0.74486177",
+          "w0": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "w1": [
+            0,
+            0,
+            0,
+            1,
+            0
+          ]
+        },
+        {
+          "im": "-0.74486177",
+          "w0": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "w1": [
+            0,
+            0,
+            0,
+            -1,
+            0
+          ]
+        }
+      ],
+      "y_orbit_windings": [
+        {
+          "im": "0.0",
+          "w0": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "w1": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "im": "-1.3071413",
+          "w0": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "w1": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        {
+          "im": "1.3071413",
+          "w0": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "w1": [
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        }
+      ],
+      "c_residual_after_correction": "2.48920611114e-60",
+      "y_residual_after_correction": "2.48920611114e-60",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "\u26a0 CORRECTS ROUTE 45's OWN REASON. Its G5 said the c-flattening 'does not transfer to the y-orbit, which needs its own derivation' -- implying y needs a DIFFERENT correction. It needs NONE: applying the c-recipe to y OVER-corrects, moving an exact total off by 4.873. G5's numeric claim stands; the explanation attached to it did not",
+      "y_total_with_c_recipe": "(9.931025041689573868739896 + 0.0j)",
+      "y_total_with_nothing": "(14.80440660163403792825174 + 0.0j)",
+      "over_correction": "4.87338155994",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "CONSEQUENCE. Route 41's rank no-go carried a gated limit -- its rows were Bloch-group statements and turning one into a statement about sum Li2 needed branch bookkeeping that was not done. For the y-orbit that bookkeeping is now done and is trivial, so the pentagon row IS an exact sum-L identity there. The rank conclusion is firmer, and still a no-go",
+      "y_pentagon_row_is_an_exact_sumL_identity": true,
+      "route41_limit_discharged_for_y": true,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "the y-orbit pentagon Galois sum is exactly 3*pi^2/2 with principal branches (2.5e-60). The c-orbit needs one crossing's correction, which Route 45 derived and which the winding rule reproduces.",
+    "consequence": "Route 41's gated G4 limit is discharged for the y-orbit: its pentagon row is an exact sum-L identity, not merely a Bloch-group one.",
+    "still_open": "none of this derives the integer in Sum Rhat = -pi^2/6, and the rank no-go is unchanged in direction. The sum rule is untouched.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

@@ -1,0 +1,1587 @@
+{
+ "done": {
+  "aK_via_lp_dual_hecke_basis": {
+   "rc": 0,
+   "sec": 7.3,
+   "witnesses": [
+    "a-K-via-lp-dual-hecke-basis.witness.json"
+   ],
+   "max_rel_move": 0.011574074074074073,
+   "median_rel_move": 0.0,
+   "n_fields": 110,
+   "err": "\u26a0 raw-float64: a-K-via-lp-dual-hecke-basis.witness.json: 101 raw float64 field(s) would enter the witness \u2014 .assertions[1].computed, .assertions[1].expected, .assertions[1].tolerance, .assertions[3].c"
+  },
+  "alpha_basis_knot_couplings": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "alpha-basis-knot-couplings.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": ""
+  },
+  "alpha_em_4pi_fixed_point_solve": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "alpha-em-4pi-fixed-point-solve.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 28,
+   "err": "\u26a0 raw-float64: alpha-em-4pi-fixed-point-solve.witness.json: 9 raw float64 field(s) would enter the witness \u2014 .data.experimental_sigma_ppb, .data.forms_solved.A_quadratic.residual_ppb, .data.forms_solv"
+  },
+  "alpha_em_4pi_q0_sensitivity": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "alpha-em-4pi-q0-sensitivity.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": "\u26a0 raw-float64: alpha-em-4pi-q0-sensitivity.witness.json: 9 raw float64 field(s) would enter the witness \u2014 .data.sigma_q0_ppb, .data.residual_ppb, .data.derivatives[0].propagated_sigma_alpha_ppb, .data"
+  },
+  "alpha_em_no_pi_correction_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "alpha-em-no-pi-correction-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 16,
+   "err": ""
+  },
+  "alpha_em_rt_phase2_emfermionloop": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "alpha-em-rt-phase2-emfermionloop.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": ""
+  },
+  "alpha_em_rt_phase3_schwinger_derivation": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "alpha-em-rt-phase3-schwinger-derivation.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 9,
+   "err": ""
+  },
+  "alpha_em_rt_shadow_world_symbolic_phase1": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "alpha-em-rt-shadow-world-symbolic-phase1.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "alpha_k_four_strand_singlet_selection": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "alpha-k-four-strand-singlet-selection.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": ""
+  },
+  "alpha_k_per_force_assembly": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "alpha-k-per-force-assembly.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 51,
+   "err": ""
+  },
+  "alpha_k_selection_rule_conditional": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "alpha-k-selection-rule-conditional.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": ""
+  },
+  "alpha_k_split_pole_order_audit": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "alpha-k-split-pole-order-audit.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "atom_braid_active_partitions": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "atom-braid-active-partitions.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 32,
+   "err": ""
+  },
+  "atom_level_wedderburn_tower": {
+   "rc": 0,
+   "sec": 7.9,
+   "witnesses": [
+    "atom-level-wedderburn-tower.witness.json"
+   ],
+   "max_rel_move": 0.967013275507113,
+   "median_rel_move": 0.0,
+   "n_fields": 165,
+   "err": "\u26a0 raw-float64: atom-level-wedderburn-tower.witness.json: 103 raw float64 field(s) would enter the witness \u2014 .parameters.q_0, .results.p.descended_tr_M, .results.p.phi_q_atom_sum, .results.p.by_level.0"
+  },
+  "atomic_braid_alpha_shift_l6": {
+   "rc": 0,
+   "sec": 4.2,
+   "witnesses": [
+    "atomic-braid-alpha-shift-l6.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 55,
+   "err": ""
+  },
+  "atomic_tr_m_mpfr_50dps": {
+   "rc": 0,
+   "sec": 14.7,
+   "witnesses": [
+    "atomic-tr-m-mpfr-50dps-proton.witness.json",
+    "atomic-tr-m-mpfr-50dps.witness.json"
+   ],
+   "max_rel_move": 10.499999999999998,
+   "median_rel_move": 1.153711796956224e-08,
+   "n_fields": 139,
+   "err": ""
+  },
+  "atomic_mass_via_rho_k": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "atomic-mass-via-rho-k.witness.json"
+   ],
+   "max_rel_move": 0.011675991243006568,
+   "median_rel_move": 0.0,
+   "n_fields": 78,
+   "err": "  from codata_constants import M_E_MEV, M_P_MEV, M_N_MEV  # noqa: E402"
+  },
+  "aufbau_ell_grading_from_eigensplit": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "aufbau-ell-grading-from-eigensplit.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 44,
+   "err": ""
+  },
+  "aufbau_ell_penetration_hartree_pinned": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "aufbau-ell-penetration-hartree-pinned.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 37,
+   "err": ""
+  },
+  "b_over_m_order_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "b-over-m-order-probe.witness.json"
+   ],
+   "max_rel_move": 2.3288088174107481e-07,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": "\u26a0 raw-float64: b-over-m-order-probe.witness.json: 6 raw float64 field(s) would enter the witness \u2014 .data.empirical_inputs_MeV.d.B, .data.empirical_inputs_MeV.d.m, .data.empirical_inputs_MeV.He3.B, .da"
+  },
+  "balanced_head_dominance_binding_period_probe": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "balanced-head-dominance-binding-period-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 188,
+   "err": ""
+  },
+  "bar_symmetry_three_candidates": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "bar-symmetry-three-candidates.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 26,
+   "err": ""
+  },
+  "basis_knot_tables": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "basis-knot-tables.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 723,
+   "err": ""
+  },
+  "benzene_assembly_spine": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "benzene-assembly-spine.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 28,
+   "err": ""
+  },
+  "beta_ew_delta_I_conjugate_pairing": {
+   "rc": 0,
+   "sec": 45.2,
+   "witnesses": [
+    "beta-ew-delta-I-conjugate-pairing.witness.json"
+   ],
+   "max_rel_move": 4.0,
+   "median_rel_move": 0.0,
+   "n_fields": 175,
+   "err": "\u26a0 environment: beta-ew-delta-I-conjugate-pairing.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel; downgraded mpmath 1.4.1 -> 1.3.0. If this container is si"
+  },
+  "binding_a3plus_joint_ji_combiner": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "binding-a3plus-joint-ji-combiner.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 1083,
+   "err": ""
+  },
+  "binding_bar_even_odd_probe": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "binding-bar-even-odd-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 47,
+   "err": ""
+  },
+  "binding_block_multiplicative": {
+   "rc": 0,
+   "sec": 8.8,
+   "witnesses": [
+    "binding-block-multiplicative.witness.json"
+   ],
+   "max_rel_move": 2.2102786015722977e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 260,
+   "err": "\u26a0 raw-float64: binding-block-multiplicative.witness.json: 40 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .data.per_atom.D"
+  },
+  "binding_bring_enhancement_compare": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "binding-bring-enhancement-compare.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 49,
+   "err": ""
+  },
+  "borromean_volume_propagation_to_m_p": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "borromean-volume-propagation-to-m-p.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 29,
+   "err": ""
+  },
+  "m_p_borromean_verification_50dps": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "m-p-borromean-verification-50dps.witness.json"
+   ],
+   "max_rel_move": 0.9935677313948809,
+   "median_rel_move": 1.1535010216103343e-07,
+   "n_fields": 53,
+   "err": "\u26a0 raw-float64: m-p-borromean-verification-50dps.witness.json: 17 raw float64 field(s) would enter the witness \u2014 .assertions[0].computed, .assertions[0].expected, .assertions[0].tolerance, .assertions["
+  },
+  "mass_table_ppb": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "mass-table-ppb.witness.json"
+   ],
+   "max_rel_move": 1.153711783645715e-08,
+   "median_rel_move": 0.0,
+   "n_fields": 180,
+   "err": "\u26a0 environment: mass-table-ppb.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel. If this container is simply missing a library, install it and re-run rather "
+  },
+  "canonical_mass_table_extended": {
+   "rc": 0,
+   "sec": 5.9,
+   "witnesses": [
+    "canonical-mass-table-extended.witness.json"
+   ],
+   "max_rel_move": 0.04508979747802828,
+   "median_rel_move": 0.0,
+   "n_fields": 524,
+   "err": "\u26a0 environment: canonical-mass-table-extended.witness.json: the environment block records LESS than the witness on disk \u2014 dropped clarabel. If this container is simply missing a library, install it and"
+  },
+  "binding_canonical": {
+   "rc": 0,
+   "sec": 6.9,
+   "witnesses": [
+    "ame-2020-binding-energies.witness.json",
+    "binding-canonical.witness.json"
+   ],
+   "max_rel_move": 0.21127372844515288,
+   "median_rel_move": 0.0,
+   "n_fields": 110,
+   "err": "\u26a0 raw-float64: binding-canonical.witness.json: 36 raw float64 field(s) would enter the witness \u2014 .parameters.Q_beta_n_MeV, .data.results[0].Q_beta_n_MeV, .data.results[0].B_MeV, .data.results[0].wall_"
+  },
+  "binding_color_vs_charge_tn3he": {
+   "rc": 0,
+   "sec": 3.3,
+   "witnesses": [
+    "binding-color-vs-charge-tn3he.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "binding_combiner_markov_peel_fallback": {
+   "rc": 0,
+   "sec": 80.7,
+   "witnesses": [
+    "binding-combiner-markov-peel-fallback.witness.json"
+   ],
+   "max_rel_move": 0.5,
+   "median_rel_move": 0.0,
+   "n_fields": 103,
+   "err": "\u26a0 raw-float64: binding-combiner-markov-peel-fallback.witness.json: 17 raw float64 field(s) would enter the witness \u2014 .data.results[0].free_config.elapsed_reduce_sec, .data.results[0].free_config.elaps"
+  },
+  "binding_crossing_moment_viability": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "binding-crossing-moment-viability.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 53,
+   "err": ""
+  },
+  "rho_prefactor_structural_verifier": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "rho-prefactor-structural-verifier.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 338,
+   "err": ""
+  },
+  "binding_k_solver": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "binding-k-solver.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 1659,
+   "err": ""
+  },
+  "binding_observe_last": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "binding-observe-last.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 56,
+   "err": ""
+  },
+  "binding_perblock_bond_type_a3": {
+   "rc": 0,
+   "sec": 3.0,
+   "witnesses": [
+    "binding-perblock-bond-type-a3.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": ""
+  },
+  "binding_selection_rule_tau_closure": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "binding-selection-rule-tau-closure.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": ""
+  },
+  "block_swap_binding": {
+   "rc": -9,
+   "sec": 1200.1,
+   "witnesses": [
+    "block-swap-binding.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 16,
+   "err": "TIMEOUT >1200s"
+  },
+  "borromean-axial-coupling": {
+   "rc": 1,
+   "sec": 0.5,
+   "witnesses": [
+    "borromean-axial-coupling.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 125,
+   "err": "KeyError: 'gram_inverse'"
+  },
+  "branching-qvalue-chain": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "branching-qvalue-chain.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 40,
+   "err": "\u26a0 raw-float64: branching-qvalue-chain.witness.json: 29 raw float64 field(s) would enter the witness \u2014 .q0, .q0_err, .numeric.a, .numeric.a_err, .numeric.b, .numeric.b_err, .numeric.delta, .numeric.del"
+  },
+  "bring_zero_mode_per_block_scaffold": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "bring-zero-mode-per-block-scaffold.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 7,
+   "err": ""
+  },
+  "bw_chirality_isotopes": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "bw-chirality-isotopes.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 112,
+   "err": "\u26a0 raw-float64: bw-chirality-isotopes.witness.json: 81 raw float64 field(s) would enter the witness \u2014 .q_0, .coefficients_MeV.lambda_V, .coefficients_MeV.lambda_S, .coefficients_MeV.lambda_C, .coeffici"
+  },
+  "canonical_isospin_pyhecke": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "canonical-isospin-pyhecke.witness.json"
+   ],
+   "max_rel_move": 0.32406542056074766,
+   "median_rel_move": 0.0,
+   "n_fields": 28,
+   "err": "\u26a0 raw-float64: canonical-isospin-pyhecke.witness.json: 13 raw float64 field(s) would enter the witness \u2014 .parameters.q_0, .results.p   (Z=1, N=0).tr_M_q0, .results.p   (Z=1, N=0).walltime_sec, .result"
+  },
+  "canonical_tr_m_via_chi_cache": {
+   "rc": 0,
+   "sec": 1.2,
+   "witnesses": [
+    "canonical-tr-m-via-chi-cache.witness.json"
+   ],
+   "max_rel_move": 1.0,
+   "median_rel_move": 0.0,
+   "n_fields": 966,
+   "err": ""
+  },
+  "casimir_d6_qcorrection_structure": {
+   "rc": 0,
+   "sec": 0.2,
+   "witnesses": [
+    "casimir-d6-qcorrection-structure.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": ""
+  },
+  "casimir_jet_order_derivation": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "casimir-jet-order-derivation.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 26,
+   "err": ""
+  },
+  "casimir_n_unknot_construction": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "casimir-n-unknot-construction.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 64,
+   "err": ""
+  },
+  "casimir_xi_2_dig_deeper": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "casimir-xi-2-dig-deeper.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 69,
+   "err": "\u26a0 raw-float64: casimir-xi-2-dig-deeper.witness.json: 23 raw float64 field(s) would enter the witness \u2014 .assertions[0].tolerance, .parameters.substrate_q, .parameters.h2_substrate, .data.finding_B3_sur"
+  },
+  "sigma_shell_characterization": {
+   "rc": 0,
+   "sec": 3.1,
+   "witnesses": [
+    "sigma-shell-characterization.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 92,
+   "err": "\u26a0 raw-float64: sigma-shell-characterization.witness.json: 18 raw float64 field(s) would enter the witness \u2014 .enumeration_top_by_magnitude.2[0].y_abs, .enumeration_top_by_magnitude.2[0].w_lam, .enumera"
+  },
+  "categorical_q_decay_ba_low_isotopes": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "categorical-q-decay-ba-low-isotopes.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 175,
+   "err": "\u26a0 raw-float64: categorical-q-decay-ba-low-isotopes.witness.json: 132 raw float64 field(s) would enter the witness \u2014 .parameters.q_0_err, .parameters.m_e_MeV, .parameters.Q_beta_n_MeV_derived, .paramet"
+  },
+  "ch-bond-writhe-lp": {
+   "rc": 0,
+   "sec": 1.2,
+   "witnesses": [
+    "ch-bond-writhe-lp.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": "\u26a0 raw-float64: ch-bond-writhe-lp.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .parameters.q, .parameters.E_mol_eV, .data.bond_H-H.E_eV, .data.bond_C-H.E_eV, .data.bond_C-O.E_eV, .da"
+  },
+  "charge_coulomb_tn3he_derived": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "charge-coulomb-tn3he-derived.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": ""
+  },
+  "charge_slambda_reeb_phase_crack": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "charge-slambda-reeb-phase-crack.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 30,
+   "err": ""
+  },
+  "chirality_avg_content": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "chirality-avg-content.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 185,
+   "err": ""
+  },
+  "close_321_weinberg_gap": {
+   "rc": 0,
+   "sec": 1.7,
+   "witnesses": [
+    "close-321-weinberg-gap.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 215,
+   "err": ""
+  },
+  "co_bond_order_active_set": {
+   "rc": 0,
+   "sec": 1.2,
+   "witnesses": [
+    "co-bond-order-active-set.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 60,
+   "err": ""
+  },
+  "complex_fibre_cross_ratio": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "complex-fibre-cross-ratio.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 62,
+   "err": ""
+  },
+  "confined_knot_binding": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "confined-knot-binding.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 93,
+   "err": ""
+  },
+  "crystal_keystone_selector": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "crystal-keystone-selector.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 106,
+   "err": ""
+  },
+  "d_density_derivation": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "d-density-derivation.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 29,
+   "err": ""
+  },
+  "defect_info_a_trend_probe": {
+   "rc": 0,
+   "sec": 39.8,
+   "witnesses": [
+    "defect-info-a-trend-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 62,
+   "err": ""
+  },
+  "defect_weighted_zero_point_probe": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "defect-weighted-zero-point-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 32,
+   "err": ""
+  },
+  "deligne_stable_range_binding_period_probe": {
+   "rc": 0,
+   "sec": 3.6,
+   "witnesses": [
+    "deligne-stable-range-binding-period-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 72,
+   "err": ""
+  },
+  "delta_lambda_cancellation_ascaling_probe": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "delta-lambda-cancellation-ascaling-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 42,
+   "err": ""
+  },
+  "delta_lambda_canonical_residual": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "delta-lambda-canonical-residual.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 74,
+   "err": ""
+  },
+  "delta_lambda_extended_tower": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "delta-lambda-extended-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 95,
+   "err": ""
+  },
+  "delta_lambda_full_variance_phase5e_1": {
+   "rc": 0,
+   "sec": 3.4,
+   "witnesses": [
+    "delta-lambda-full-variance-phase5e-1.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 450,
+   "err": ""
+  },
+  "delta_lambda_imme_triplet": {
+   "rc": 0,
+   "sec": 735.7,
+   "witnesses": [
+    "delta-lambda-imme-triplet.witness.json"
+   ],
+   "max_rel_move": 8.959043654464448e-07,
+   "median_rel_move": 0.0,
+   "n_fields": 105,
+   "err": "\u26a0 environment: delta-lambda-imme-triplet.witness.json: the environment block records LESS than the witness on disk \u2014 downgraded mpmath 1.4.1 -> 1.3.0. If this container is simply missing a library, in"
+  },
+  "delta_lambda_imme_quartet": {
+   "rc": 0,
+   "sec": 61.4,
+   "witnesses": [
+    "delta-lambda-imme-quartet.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 62,
+   "err": ""
+  },
+  "delta_lambda_l1_ceiling_sign_prune": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "delta-lambda-l1-ceiling-sign-prune.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 56,
+   "err": ""
+  },
+  "delta_lambda_magnitude_deficit_profile": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "delta-lambda-magnitude-deficit-profile.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 78,
+   "err": ""
+  },
+  "delta_lambda_qdim_route_probe": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "delta-lambda-qdim-route-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 32,
+   "err": ""
+  },
+  "delta_lambda_z_coefficient_and_slope": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "delta-lambda-z-coefficient-and-slope.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 41,
+   "err": ""
+  },
+  "delta_n2_lp_dual_extraction": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "delta-n2-lp-dual-extraction.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "delta_q_decoration": {
+   "rc": 0,
+   "sec": 0.8,
+   "witnesses": [
+    "delta-q-decoration.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 236,
+   "err": ""
+  },
+  "derived_chi_catalogue_consumer_q0": {
+   "rc": 0,
+   "sec": 1.2,
+   "witnesses": [
+    "derived-chi-catalogue-consumer-q0.witness.json"
+   ],
+   "max_rel_move": 1.097715552279575,
+   "median_rel_move": 0.0,
+   "n_fields": 46,
+   "err": "\u26a0 raw-float64: derived-chi-catalogue-consumer-q0.witness.json: 16 raw float64 field(s) would enter the witness \u2014 .data.isotopes[0].catalogue_secs, .data.isotopes[0].rust_secs, .data.isotopes[0].mpfr_s"
+  },
+  "derived_chi_catalogue_matrix_m_mpfr": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "derived-chi-catalogue-matrix-m-mpfr.witness.json",
+    "derived-chi-catalogue-matrix-m-mu-n-mpfr.witness.json"
+   ],
+   "max_rel_move": 0.4874051050037973,
+   "median_rel_move": 0.0,
+   "n_fields": 467,
+   "err": "\u26a0 raw-float64: derived-chi-catalogue-matrix-m-mpfr.witness.json: 70 raw float64 field(s) would enter the witness \u2014 .data.isotopes[0].total_precompute_secs, .data.isotopes[0].total_call_secs, .data.iso"
+  },
+  "derived_chi_catalogue_matrix_m_multi_a_benchmark": {
+   "rc": 0,
+   "sec": 2.1,
+   "witnesses": [
+    "derived-chi-catalogue-matrix-m-multi-a-benchmark.witness.json"
+   ],
+   "max_rel_move": 0.5217912813549599,
+   "median_rel_move": 0.0,
+   "n_fields": 204,
+   "err": "\u26a0 raw-float64: derived-chi-catalogue-matrix-m-multi-a-benchmark.witness.json: 70 raw float64 field(s) would enter the witness \u2014 .data.isotopes[0].total_precompute_secs, .data.isotopes[0].total_call_se"
+  },
+  "derived_chi_catalogue_matrix_m_numerical": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "derived-chi-catalogue-matrix-m-numerical.witness.json"
+   ],
+   "max_rel_move": 0.3639271562248422,
+   "median_rel_move": 0.0,
+   "n_fields": 59,
+   "err": "\u26a0 raw-float64: derived-chi-catalogue-matrix-m-numerical.witness.json: 27 raw float64 field(s) would enter the witness \u2014 .data.cases[0].precompute_secs, .data.cases[0].call_secs, .data.cases[0].rust_se"
+  },
+  "e0_lambda_composite": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [
+    "e0-lambda-composite.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 109,
+   "err": ""
+  },
+  "e0_lambda_tryall": {
+   "rc": 0,
+   "sec": 0.3,
+   "witnesses": [],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 0,
+   "err": "  g = vol_density_borromean(Q0, QI0)"
+  },
+  "e_hartree_mechanism_b_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "e-hartree-mechanism-b-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 31,
+   "err": ""
+  },
+  "e_hartree_round19_dressed_scalar_block": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "e-hartree-round19-dressed-scalar-block.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 6,
+   "err": ""
+  },
+  "e_hartree_round20_trace_ratio": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "e-hartree-round20-trace-ratio.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": ""
+  },
+  "e_hartree_round22_arch_bridge": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "e-hartree-round22-arch-bridge.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 12,
+   "err": ""
+  },
+  "e_hartree_round23_normalization": {
+   "rc": 0,
+   "sec": 1.1,
+   "witnesses": [
+    "e-hartree-round23-normalization.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 5,
+   "err": ""
+  },
+  "e_hartree_round24_molecular_reuse": {
+   "rc": 0,
+   "sec": 0.1,
+   "witnesses": [
+    "e-hartree-round24-molecular-reuse.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "em_linking_invariant_probe": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "em-linking-invariant-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 29,
+   "err": ""
+  },
+  "emitted_particle_tracker": {
+   "rc": 0,
+   "sec": 11.2,
+   "witnesses": [
+    "emitted-particle-tracker.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 64,
+   "err": ""
+  },
+  "escape1_geometric_holonomy_section": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "escape1-geometric-holonomy-section.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 42,
+   "err": ""
+  },
+  "flavor_dependent_cusp_shape": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "flavor-dependent-cusp-shape.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 40,
+   "err": ""
+  },
+  "flavor_split_xq_refinement": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "flavor-split-xq-refinement.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "four_unwired_theorems_regression": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "four-unwired-theorems-regression.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "fr_pullback_k3_test": {
+   "rc": 0,
+   "sec": 5.7,
+   "witnesses": [
+    "fr-pullback-k3-test.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 121,
+   "err": ""
+  },
+  "full_twist_delta_n2_verification": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "full-twist-delta-n2-verification.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 2117,
+   "err": "\u26a0 raw-float64: full-twist-delta-n2-verification.witness.json: 12 raw float64 field(s) would enter the witness \u2014 .data.results_by_n.1.invariant_ratio_dim_sq, .data.results_by_n.2.invariant_ratio_dim_sq"
+  },
+  "gamma_gamma_pair_production_decomposition": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "gamma-gamma-pair-production-decomposition.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 46,
+   "err": ""
+  },
+  "gram_h3_symbolic_regression": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "gram-h3-symbolic-regression.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 49,
+   "err": ""
+  },
+  "h2-integer-lp": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "h2-integer-lp.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 91,
+   "err": ""
+  },
+  "h2-molecular-binding": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "h2-molecular-binding.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": "\u26a0 raw-float64: h2-molecular-binding.witness.json: 30 raw float64 field(s) would enter the witness \u2014 .assertions[2].expected, .assertions[2].tolerance, .parameters.q, .parameters.HA, .parameters.z, .pa"
+  },
+  "h2o_angle_activeset_gb": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "h2o-angle-activeset-gb.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 33,
+   "err": ""
+  },
+  "h2o_angle_gb_truncation_inverse": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "h2o-angle-gb-truncation-inverse.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 102,
+   "err": ""
+  },
+  "h2o_angle_knot_correction": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "h2o-angle-knot-correction.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 19,
+   "err": ""
+  },
+  "h2o_angle_q2_symmetric_block": {
+   "rc": 0,
+   "sec": 1.0,
+   "witnesses": [
+    "h2o-angle-q2-symmetric-block.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 22,
+   "err": ""
+  },
+  "h2o_bond_angle_shift_phi1": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "h2o-bond-angle-shift-phi1.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 15,
+   "err": ""
+  },
+  "h2s_chiral_residue_bar_antisymmetric": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "h2s-chiral-residue-bar-antisymmetric.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 12,
+   "err": ""
+  },
+  "h2s_chirality_residue_s3_holonomy": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "h2s-chirality-residue-s3-holonomy.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 11,
+   "err": ""
+  },
+  "h2s_lone_pair_asymmetry": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "h2s-lone-pair-asymmetry.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 10,
+   "err": ""
+  },
+  "h4_residual_higher_precision_pslq": {
+   "rc": 0,
+   "sec": 0.5,
+   "witnesses": [
+    "h4-residual-higher-precision-pslq.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 8,
+   "err": ""
+  },
+  "h5_h3_functor_keystone": {
+   "rc": 0,
+   "sec": 0.7,
+   "witnesses": [
+    "h5-h3-functor-keystone.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 95,
+   "err": ""
+  },
+  "hadron_knot_table": {
+   "rc": 1,
+   "sec": 33.5,
+   "witnesses": [
+    "hadron-knot-table.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 693,
+   "err": "TypeError: no supported conversion for types: (dtype('float64'), dtype('O'))"
+  },
+  "hbond_vdw_energy_ladder": {
+   "rc": 0,
+   "sec": 0.4,
+   "witnesses": [
+    "hbond-vdw-energy-ladder.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 18,
+   "err": ""
+  },
+  "hbond_vdw_sdp": {
+   "rc": 0,
+   "sec": 0.9,
+   "witnesses": [
+    "hbond-vdw-sdp.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 38,
+   "err": ""
+  },
+  "he3_pairknot_clambda_coulomb_probe": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "he3-pairknot-clambda-coulomb-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 118,
+   "err": ""
+  },
+  "he3_tritium_cosh_asymmetry_diagnosis": {
+   "rc": -9,
+   "sec": 1200.1,
+   "witnesses": [
+    "he3-tritium-cosh-asymmetry-diagnosis.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 14,
+   "err": "TIMEOUT >1200s"
+  },
+  "hh-trefoil-corrected": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "hh-trefoil-corrected.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 32,
+   "err": ""
+  },
+  "hh-vertex-volume": {
+   "rc": 0,
+   "sec": 1.8,
+   "witnesses": [
+    "hh-vertex-volume.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 13,
+   "err": ""
+  },
+  "homflypt_reference_qa": {
+   "rc": 0,
+   "sec": 4.6,
+   "witnesses": [
+    "homflypt-reference-qa.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 225,
+   "err": ""
+  },
+  "homflypt_su_n_mass_tower": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "homflypt-su-n-mass-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 34,
+   "err": ""
+  },
+  "hybridization_sp_gap_braid": {
+   "rc": 0,
+   "sec": 2.1,
+   "witnesses": [
+    "hybridization-sp-gap-braid.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 18,
+   "err": ""
+  },
+  "intermediate_knot_detection": {
+   "rc": 0,
+   "sec": 2.6,
+   "witnesses": [
+    "intermediate-knot-detection.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 628,
+   "err": ""
+  },
+  "iterative_lp_dual_h6_deuteron": {
+   "rc": 0,
+   "sec": 3.6,
+   "witnesses": [
+    "iterative-lp-dual-h6-deuteron.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 116,
+   "err": ""
+  },
+  "iterative_lp_dual_levels": {
+   "rc": 0,
+   "sec": 4.0,
+   "witnesses": [
+    "iterative-lp-dual-levels.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": ""
+  },
+  "jet_knot_invariants": {
+   "rc": 0,
+   "sec": 2.6,
+   "witnesses": [
+    "jet-knot-invariants.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 223,
+   "err": ""
+  },
+  "lambda_scale_proof_step4_h4_remainder": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "lambda-scale-proof-step4-h4-remainder.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 54,
+   "err": ""
+  },
+  "lambda_scale_proof_step5_skein_anchor": {
+   "rc": 0,
+   "sec": 1.4,
+   "witnesses": [
+    "lambda-scale-proof-step5-skein-anchor.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 17,
+   "err": ""
+  },
+  "lambda_scale_rd_c4_pslq_search": {
+   "rc": 0,
+   "sec": 3.0,
+   "witnesses": [
+    "lambda-scale-rd-c4-pslq-search.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 35,
+   "err": ""
+  },
+  "landauer_crossing_energy_probe": {
+   "rc": 0,
+   "sec": 1.6,
+   "witnesses": [
+    "landauer-crossing-energy-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 34,
+   "err": ""
+  },
+  "lepton_t2n_torus_tower": {
+   "rc": 0,
+   "sec": 2.2,
+   "witnesses": [
+    "lepton-t2n-torus-tower.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 101,
+   "err": ""
+  },
+  "li2q_fbor_expansion_probe": {
+   "rc": 0,
+   "sec": 4.6,
+   "witnesses": [
+    "li2q-fbor-expansion-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": ""
+  },
+  "linking_weight_canonical_object_lwfix": {
+   "rc": 0,
+   "sec": 2.9,
+   "witnesses": [
+    "linking-weight-canonical-object-lwfix.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 38,
+   "err": ""
+  },
+  "low_isotope_sign_flip_diagnostic": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "low-isotope-sign-flip-diagnostic.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 57,
+   "err": ""
+  },
+  "lp_confinement_nf_forcing": {
+   "rc": 0,
+   "sec": 12.1,
+   "witnesses": [
+    "lp-confinement-nf-forcing.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 348,
+   "err": ""
+  },
+  "lw2_c2_independent_hopf_test_attempt": {
+   "rc": 0,
+   "sec": 3.1,
+   "witnesses": [
+    "lw2-c2-independent-hopf-test-attempt.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 27,
+   "err": ""
+  },
+  "lw_growth_rate_probe": {
+   "rc": 0,
+   "sec": 39.1,
+   "witnesses": [
+    "lw-growth-rate-probe.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 67,
+   "err": ""
+  },
+  "m_p_spectral_corrected_50dps": {
+   "rc": 0,
+   "sec": 1.3,
+   "witnesses": [
+    "m-p-spectral-corrected-50dps.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 21,
+   "err": ""
+  },
+  "mass_formula_6term": {
+   "rc": 0,
+   "sec": 176.4,
+   "witnesses": [],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 0,
+   "err": "  vols_dict = atom_per_generator_volumes(Z, N, include_inter=include_inter)"
+  },
+  "mass_formula_6term_mpfr_50dps": {
+   "rc": 0,
+   "sec": 17.0,
+   "witnesses": [
+    "mass-formula-6term-mpfr-50dps.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 55,
+   "err": ""
+  },
+  "mass_per_knot_density": {
+   "rc": 0,
+   "sec": 0.6,
+   "witnesses": [
+    "mass-per-knot-density.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 24,
+   "err": "  eq = abs(vol_density_borromean(q) - per_knot_density_vd(vol_borromean(), q))"
+  },
+  "mass_sweep_wiring_status": {
+   "rc": 0,
+   "sec": 1.9,
+   "witnesses": [
+    "mass-sweep-wiring-status.witness.json"
+   ],
+   "max_rel_move": 0.0,
+   "median_rel_move": 0.0,
+   "n_fields": 112,
+   "err": ""
+  }
+ }
+}

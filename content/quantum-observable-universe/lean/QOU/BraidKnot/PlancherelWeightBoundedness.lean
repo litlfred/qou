@@ -1,6 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Order.Ring.Abs
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Algebra.BigOperators.Ring.Finset
 
@@ -20,6 +20,19 @@ it is recorded alongside but is not the probability measure.
 This formalises the convergence guarantee for the curvature-rank
 strata `Φ_k` and the universal Frobenius co-Casimir tail.
 
+## Base ring (AGENTS.md §7c)
+
+Pre-archimedean: the statements below hold over **any** linearly
+ordered commutative ring `R` — `[CommRing R] [LinearOrder R]
+[IsStrictOrderedRing R]` — and use no completeness, no `Real.*`
+function and no archimedean axiom. Only the order is needed (for
+`0 ≤ w_λ`, `|·|` and `Finset.single_le_sum`). This matches the
+narrative, which asserts `Σ_λ w_λ = 1` *exactly in* `ℚ`: the
+classical weights `(dim V_λ)²/n!` are rational, so `R := ℚ` is
+already an instance and the previous `ℝ` specialisation was
+gratuitous. `R := ℝ` remains an instance for archimedean evaluation
+downstream.
+
 LaTeX label: `prop:plancherel-weight-boundedness`
 
 ## References
@@ -30,16 +43,20 @@ LaTeX label: `prop:plancherel-weight-boundedness`
 
 namespace QOU.BraidKnot
 
-/-- Abstract Plancherel data: a finite indexing set with weights. -/
-structure PlancherelDistribution where
+/-- Abstract Plancherel data: a finite indexing set with weights,
+    over any linearly ordered commutative ring (§7c: no archimedean
+    input; `ℚ` and `ℝ` are both instances). -/
+structure PlancherelDistribution (R : Type*) [CommRing R] [LinearOrder R]
+    [IsStrictOrderedRing R] where
   partitions : Finset (List ℕ)
-  weight : List ℕ → ℝ
+  weight : List ℕ → R
   weight_nonneg : ∀ p ∈ partitions, 0 ≤ weight p
   weight_sum_one : (partitions.sum weight) = 1
 
 namespace PlancherelDistribution
 
-variable (P : PlancherelDistribution)
+variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
+variable (P : PlancherelDistribution R)
 
 /-- Each Plancherel weight is bounded above by 1. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
@@ -56,7 +73,7 @@ theorem weight_le_one : ∀ p ∈ P.partitions, P.weight p ≤ 1 := by
 /-- A bounded function on partitions yields a bounded weighted sum. -/
 -- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
 theorem weighted_sum_bounded
-    (f : List ℕ → ℝ) (M : ℝ)
+    (f : List ℕ → R) (M : R)
     (hM : ∀ p ∈ P.partitions, |f p| ≤ M) (_hM_nn : 0 ≤ M) :
     |P.partitions.sum (fun p => P.weight p * f p)| ≤ M := by
   -- |Σ w · f| ≤ Σ |w · f| = Σ w · |f| ≤ Σ w · M = M · Σ w = M
@@ -83,10 +100,13 @@ end PlancherelDistribution
     1. Each weight is in `[0, 1]`.
     2. Sum of weights is `1`.
 
-    Hence any bounded function `f : Partition → ℝ` has a Plancherel
-    average bounded by `‖f‖_∞`. -/
+    Hence any bounded function `f : Partition → R` has a Plancherel
+    average bounded by `‖f‖_∞`.
+
+    Stated over any linearly ordered commutative ring (§7c). -/
 -- Ref: [manuscript] Ch. Braids and Knots, §Plancherel boundedness
-theorem plancherel_weight_boundedness (P : PlancherelDistribution) :
+theorem plancherel_weight_boundedness {R : Type*} [CommRing R] [LinearOrder R]
+    [IsStrictOrderedRing R] (P : PlancherelDistribution R) :
     (∀ p ∈ P.partitions, 0 ≤ P.weight p ∧ P.weight p ≤ 1) ∧
     P.partitions.sum P.weight = 1 :=
   ⟨fun p hp => ⟨P.weight_nonneg p hp, P.weight_le_one p hp⟩,

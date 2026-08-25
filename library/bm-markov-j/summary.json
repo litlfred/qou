@@ -1,0 +1,25 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "bm-markov-j",
+ "source_sha256": "ffc46b9daf7dc858",
+ "brief": "On Markov's Theorem — 1 sections: Document",
+ "extended": "**On Markov's Theorem**\n\n*Department of Mathematics, Barnard College, Columbia University*\n\n16 pp, 1 sections.\n\n**Outline.** Document",
+ "tokens": {
+  "brief": 10,
+  "extended": 33
+ },
+ "sections": [
+  {
+   "id": "sec-000-document",
+   "title": "Document",
+   "pages": "1-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

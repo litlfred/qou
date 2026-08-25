@@ -1,0 +1,57 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0511710v2",
+ "source_sha256": "f88f50d459080490",
+ "brief": "Higher gauge theory — Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional",
+ "extended": "**Higher gauge theory**\n\n*Riverside, CA 92521, USA*\n\n29 pp, 7 sections.\n\n**Abstract.** Just as gauge theory describes the parallel transport of poi nt particles using connections on bundles, higher gauge theory describe s the parallel transport of 1-dimensional objects (e.g. strings) using 2- connections on 2-bundles. A 2-bundle is a categoriﬁed version of a bundle: t hat is, one where the ﬁber is not a manifold but a category with a suitable smooth structure. Where gauge theory uses Lie groups and Lie algebr as, higher gauge theory uses their categoriﬁed analogues: Lie 2-group s and Lie 2- algebras. We describe a theory of 2-connections on principa l 2-bundles and explain how this is related to Breen and Messing’s theory of con- nections on nonabelian gerbes. The distinctive feature of o ur theory is that a 2-connection allows parallel transport along paths a nd surfaces in a parametrization-independent way.\n\n**Outline.** Abstract; 1 Introduction; 2 Internalization; 1 If φ: C → X is a plot in X, and f : C′ → C i; 2 If iα : Cα → C is an open cover of a convex ; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 21: For any smooth group G and smooth space B, suppose E → B\n- Theorem 23: For any smooth 2-group G and smooth space B, suppose that\n- Theorem 15: Suppose for simplicity that ki = 1 . Let (G, H, t, α) be the smooth",
+ "tokens": {
+  "brief": 49,
+  "extended": 345
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-8"
+  },
+  {
+   "id": "sec-002-2-internalization",
+   "title": "Internalization",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-003-1-if-φ-c-x-is-a-plot-in-x-and-f-c-c-is-a-smooth",
+   "title": "If φ: C → X is a plot in X, and f : C′ → C is a smooth map between",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-2-if-iα-cα-c-is-an-open-cover-of-a-convex-set-c",
+   "title": "If iα : Cα → C is an open cover of a convex set C by convex subsets Cα ,",
+   "pages": "9-27"
+  },
+  {
+   "id": "sec-005-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "27-27"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "27-29"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

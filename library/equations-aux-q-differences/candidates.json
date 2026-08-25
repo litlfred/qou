@@ -1,0 +1,39 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "equations-aux-q-differences",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "357d4e0b546b27e6a316a7177e9240d5d8ea3b6d8a06bd57a3b2679a31eeb094",
+  "file": "Equations_aux_q-differences.pdf"
+ },
+ "provenance": {
+  "title": "\u00b4Equations aux q-di\ufb00\u00b4erences",
+  "authors": "L. Di Vizio, J-P. Ramis, J. Sauloy \u2217,C .Z h a n g\u2020",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "conjecture": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "conjecture",
+   "source_kind": "conjecture",
+   "number": "5.3",
+   "name": null,
+   "statement": "(Grothendieck) L\u2019\u00b4equation di\ufb00\u00b4erentielle",
+   "section_file": "sections/sec-025-3-cela-signi\ufb01e-que-pour-tous-m1m2-z-tels-que-qm1.md",
+   "section_title": "Cela signi\ufb01e que pour tous m1,m2 \u2208 Z tels que qm1",
+   "pages": "26-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

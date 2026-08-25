@@ -37,7 +37,8 @@ work — but it is *not* what is proved here. Formalising it would need the root
 multiset to be conjugation-closed **as a permutation**; mirroring the sector
 argument needs no such thing, so that is what is done.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.QBeta.FiveTwoDeformedSaddle

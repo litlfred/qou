@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-05-26T15:25:48.617057+00:00",
-  "commitSha": "b2db0a42628241e51a4ef4b3db30f68ab794e505",
+  "computedAt": "2026-08-23T14:36:51.923076+00:00",
+  "commitSha": "d2ab464acc599f6a4b366a739a07ffe6c95b85f0",
   "assertions": [
     {
       "name": "factored_form_exact",
@@ -17,13 +17,29 @@
   "durationMs": 16,
   "computation": "phase2b-dim-v21-bridge",
   "scriptFile": "phase2b_dim_v21_bridge_derivation.py",
-  "scriptHash": "6e2c45fd8b0e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "ee23f75fc565",
+  "scriptCommitSha": "b95f0922f66c5905be1d0bd3a6db67f7b550757b",
   "precisionMetadata": {
-    "compute_dps": 50,
-    "output_dps": 40,
+    "compute_dps": 70,
+    "output_dps": 60,
     "guard_digits": 10,
-    "truncation_bound": "1e-40"
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/phase5/phase2b_dim_v21_bridge_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/phase5/phase2b_dim_v21_bridge_derivation.py"
   },
   "description": "Formal derivation of why dim V_(2,1) = 2 enters the proton mass formula linearly. The Borromean mass formula factors through the bar-pair Z/2 symmetry y_(3) ↔ y_(1,1,1), with dim V_(2,1) = |{bar-pair}| as the fold factor. F_Bor decomposes as 1 + q⁻³·χ^(2,1) + q⁻⁶ via Wedderburn, and the integer 2 divides both 2·m_μ and 12·m_e = 2·6·m_e.",
   "contentBlock": "prop:proton-mass-substrate-identity",
@@ -40,5 +56,7 @@
       "S3_order": 6,
       "product": 12
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

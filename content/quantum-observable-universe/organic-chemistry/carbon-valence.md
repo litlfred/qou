@@ -16,4 +16,4 @@ This **half-filling** makes carbon unique among the light elements:
 2. **Symmetric energy landscape**: adding a trefoil and removing a trefoil cost comparable crossing energy. Carbon shares electrons via covalent bonds.
 3. **Chain-forming ability**: with 4 sites, carbon can bond to two neighbours while retaining 2 sites for branching. This is the topological origin of organic chemistry's combinatorial richness.
 
-The residual linking number $\lambda(R) = 4$ places carbon in the middle of the metallic character spectrum. It is neither metallic nor inert, but maximally covalent.
+The residual linking number $\lambda(R) = 4$ places carbon in the middle of the metallic character spectrum. It is maximally covalent, sitting between the metallic and the inert extremes.

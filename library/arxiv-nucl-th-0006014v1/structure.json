@@ -1,0 +1,663 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-nucl-th-0006014v1",
+ "source": {
+  "file": "0006014v1.pdf",
+  "sha256": "208c7a6aaf628b3060d594ca7bbb5551bb90e867892358cac24c40bbce9298de",
+  "bytes": 1110969,
+  "pages": 69,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "nucl-th/0006014",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "9 Jun 2000"
+  },
+  "doi": null,
+  "title": "The high-precision, charge-dependent Bonn nucleon-nucleon potential (CD-Bonn)",
+  "authors_raw": "Department of Physics, University of Idaho, Moscow, Idaho 8 3844, U. S. A",
+  "title_lines": [
+   "The high-precision, charge-dependent Bonn nucleon-nucle on",
+   "potential (CD-Bonn)",
+   "R. Machleidt ∗"
+  ],
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126160947-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:nucl-th/0006014v1  9 Jun 2000"
+  },
+  "title_prev": "The high-precision, charge-dependent Bonn nucleon-nucle on potential (CD-Bonn) R. Machleidt ∗"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Eﬀective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
+   "page": 1,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Partial wave decomposition . . . . . . . . . . . . . . . . . . . . . . . . . . 26",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
+   "page": 1,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 2,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "INTRODUCTION",
+   "page": 3,
+   "source": "inferred",
+   "number": "I"
+  },
+  {
+   "level": 1,
+   "title": "THE MODEL",
+   "page": 4,
+   "source": "inferred",
+   "number": "II"
+  },
+  {
+   "level": 1,
+   "title": "CHARGE DEPENDENCE",
+   "page": 7,
+   "source": "inferred",
+   "number": "III"
+  },
+  {
+   "level": 1,
+   "title": "NUCLEON-NUCLEON SCA TTERING",
+   "page": 10,
+   "source": "inferred",
+   "number": "IV"
+  },
+  {
+   "level": 1,
+   "title": "THE DEUTERON",
+   "page": 13,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "CONCLUSIONS",
+   "page": 14,
+   "source": "inferred",
+   "number": "VI"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgments",
+   "page": 15,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Scattering equation",
+   "page": 15,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "R-matrix and partial wave decomposition",
+   "page": 18,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
+   "page": 19,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+   "page": 19,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + −⟩",
+   "page": 19,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| − +⟩ (A22)",
+   "page": 19,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + −⟩",
+   "page": 19,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + +⟩",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(q′,q ) = RJ",
+   "page": 19,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(q,q ′). (A23)",
+   "page": 19,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Phase shifts",
+   "page": 21,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The asymptotic wave function associated with VS and δS",
+   "page": 23,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "Eﬀective range expansion",
+   "page": 24,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(η′)q cot(δC",
+   "page": 24,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(η′) = 2πη ′",
+   "page": 24,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "OBE amplitudes",
+   "page": 25,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Partial wave decomposition",
+   "page": 26,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Final potential expressions",
+   "page": 28,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(ˆk) +ψ2(k)Y 1M",
+   "page": 33,
+   "source": "inferred",
+   "number": "01"
+  },
+  {
+   "level": 1,
+   "title": "(ˆk)",
+   "page": 33,
+   "source": "inferred",
+   "number": "21"
+  },
+  {
+   "level": 1,
+   "title": "(q) = (2/π)1/ 2",
+   "page": 35,
+   "source": "inferred",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "(q) = (2/π)1/ 2",
+   "page": 35,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 37,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-scattering-equation-15",
+   "number": "1",
+   "title": "Scattering equation . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 15",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-2-r-matrix-and-partial-wave-decomposition-18",
+   "number": "2",
+   "title": "R-matrix and partial wave decomposition . . . . . . . . . . . . . . . . . . 18",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-3-phase-shifts-21",
+   "number": "3",
+   "title": "Phase shifts . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 21",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-003-4-eﬀective-range-expansion-2-4",
+   "number": "4",
+   "title": "Eﬀective range expansion . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 4",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 33,
+   "n_words": 5
+  },
+  {
+   "id": "sec-004-1-obe-amplitudes-25",
+   "number": "1",
+   "title": "OBE amplitudes . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 25",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 83,
+   "n_words": 31
+  },
+  {
+   "id": "sec-005-3-final-potential-expressions-28",
+   "number": "3",
+   "title": "Final potential expressions . . . . . . . . . . . . . . . . . . . . . . . . . . 28",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 91,
+   "n_words": 12
+  },
+  {
+   "id": "sec-006-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1072,
+   "n_words": 178
+  },
+  {
+   "id": "sec-007-i-introduction",
+   "number": "I",
+   "title": "INTRODUCTION",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1392,
+   "n_words": 222
+  },
+  {
+   "id": "sec-008-ii-the-model",
+   "number": "II",
+   "title": "THE MODEL",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 7,
+   "n_chars": 12512,
+   "n_words": 2206
+  },
+  {
+   "id": "sec-009-iii-charge-dependence",
+   "number": "III",
+   "title": "CHARGE DEPENDENCE",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 10578,
+   "n_words": 1907
+  },
+  {
+   "id": "sec-010-iv-nucleon-nucleon-sca-ttering",
+   "number": "IV",
+   "title": "NUCLEON-NUCLEON SCA TTERING",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 13,
+   "n_chars": 9128,
+   "n_words": 1635
+  },
+  {
+   "id": "sec-011-v-the-deuteron",
+   "number": "V",
+   "title": "THE DEUTERON",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2737,
+   "n_words": 471
+  },
+  {
+   "id": "sec-012-vi-conclusions",
+   "number": "VI",
+   "title": "CONCLUSIONS",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 5214,
+   "n_words": 835
+  },
+  {
+   "id": "sec-013-acknowledgments",
+   "number": null,
+   "title": "Acknowledgments",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 246,
+   "n_words": 43
+  },
+  {
+   "id": "sec-014-1-scattering-equation",
+   "number": "1",
+   "title": "Scattering equation",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 5285,
+   "n_words": 1056
+  },
+  {
+   "id": "sec-015-2-r-matrix-and-partial-wave-decomposition",
+   "number": "2",
+   "title": "R-matrix and partial wave decomposition",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1935,
+   "n_words": 358
+  },
+  {
+   "id": "sec-016-1-qq-rjqq",
+   "number": "1",
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + +⟩",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-017-2-qq-rjqq",
+   "number": "2",
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| − −⟩",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-018-3-qq-rj-qq",
+   "number": "3",
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + −⟩",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-019-4-qq-rj-qq-a22",
+   "number": "4",
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| − +⟩ (A22)",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-020-5-qq-rjqq",
+   "number": "5",
+   "title": "(q′,q ) ≡ ⟨+ + |RJ(q′,q )| + −⟩",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2,
+   "n_words": 1
+  },
+  {
+   "id": "sec-021-6-qq-rj-qq",
+   "number": "6",
+   "title": "(q′,q ) ≡ ⟨+ − |RJ (q′,q )| + +⟩",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 41,
+   "n_words": 11
+  },
+  {
+   "id": "sec-022-5-qq-rj",
+   "number": "5",
+   "title": "(q′,q ) = RJ",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-023-6-qq-a23",
+   "number": "6",
+   "title": "(q,q ′). (A23)",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3151,
+   "n_words": 738
+  },
+  {
+   "id": "sec-024-3-phase-shifts",
+   "number": "3",
+   "title": "Phase shifts",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4411,
+   "n_words": 809
+  },
+  {
+   "id": "sec-025-l-the-asymptotic-wave-function-associated-with-v",
+   "number": "L",
+   "title": "The asymptotic wave function associated with VS and δS",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 1126,
+   "n_words": 199
+  },
+  {
+   "id": "sec-026-4-eﬀective-range-expansion",
+   "number": "4",
+   "title": "Eﬀective range expansion",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 442,
+   "n_words": 87
+  },
+  {
+   "id": "sec-027-0-ηq-cotδc",
+   "number": "0",
+   "title": "(η′)q cot(δC",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 181,
+   "n_words": 42
+  },
+  {
+   "id": "sec-028-0-η-2πη",
+   "number": "0",
+   "title": "(η′) = 2πη ′",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1119,
+   "n_words": 180
+  },
+  {
+   "id": "sec-029-1-obe-amplitudes",
+   "number": "1",
+   "title": "OBE amplitudes",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2359,
+   "n_words": 488
+  },
+  {
+   "id": "sec-030-2-partial-wave-decomposition",
+   "number": "2",
+   "title": "Partial wave decomposition",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 2676,
+   "n_words": 700
+  },
+  {
+   "id": "sec-031-3-final-potential-expressions",
+   "number": "3",
+   "title": "Final potential expressions",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 33,
+   "n_chars": 8241,
+   "n_words": 1901
+  },
+  {
+   "id": "sec-032-01-ˆk-ψ2ky-1m",
+   "number": "01",
+   "title": "(ˆk) +ψ2(k)Y 1M",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 4017,
+   "n_words": 836
+  },
+  {
+   "id": "sec-033-0-q-2π1-2",
+   "number": "0",
+   "title": "(q) = (2/π)1/ 2",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 1090,
+   "n_words": 237
+  },
+  {
+   "id": "sec-034-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 69,
+   "n_chars": 39098,
+   "n_words": 7604
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 38,
+  "sections": 35,
+  "chars_total": 118268
+ }
+}

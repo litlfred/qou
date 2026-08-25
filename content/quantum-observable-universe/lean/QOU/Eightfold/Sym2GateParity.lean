@@ -47,7 +47,7 @@ they are simply the wrong dimension.
 `self_duality_does_not_decide_gate` records the counterexample pair formally, so
 the invalid inference cannot be re-derived from this file.
 
--- Ref: [fulton-harris] §11 (Clebsch–Gordan for `sl₂`); Frobenius–Schur
+-- Ref: [fulton-harris1991] §11 (Clebsch–Gordan for `sl₂`); Frobenius–Schur
 -- indicator `(-1)^{2j}` for the spin-`j` irrep of `SU(2)`.
 -/
 

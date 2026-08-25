@@ -19,6 +19,25 @@
   Archimedean (ℝ).  -- Ref: [vanderveen2008] arXiv:math/0611181
 -/
 
+/-
+**CROSS-REFERENCE (2026-08-19) — a second Whitehead-link VC program exists.**
+
+`QOU/Knot/WhiteheadLinkScaffold.lean` + `QOU/Knot/WhiteheadMajorantRate.lean`
+(epic `qou-u1b5`) attack the same theorem from the OPPOSITE end, via the
+phase/majorant route:
+
+* this program has the MAGNITUDE — `whitehead_vc_innerSum_half`, sorry-free;
+* that one has the PHASES — `‖J_N(W)‖ ≤ majorant`,
+  `tendsto_log_whiteheadLinkMajorant_vol` (`→ 4G`), and the residue isolated as
+  the conditional class `VdVWhiteheadLemma4` (open: no instance in the corpus).
+
+The gap between the two ends — non-cancellation of the phased outer sum
+`Σ_n (2n+1)·χ_{N,n}^{-1}·(Σ_k S_{n,k})` — is exactly what `VdVWhiteheadLemma4`
+states. Discharging it is what would join the two halves into the VC for
+`J_N(W)` proper. COMPLEMENTARY, not redundant; coordinate before extending.
+Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`.
+-/
+
 import QOU.Knot.Clausen
 import QOU.Knot.WhiteheadVolumeConjecture
 

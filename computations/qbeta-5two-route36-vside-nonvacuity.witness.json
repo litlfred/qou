@@ -1,7 +1,7 @@
 {
   "probe": "qbeta_5two_route36_vside_nonvacuity",
   "bean": "qou-glbl",
-  "dps": 40,
+  "dps": 70,
   "pairs_with_lean": [
     "QOU/QBeta/FiveTwoTransport.lean (VSide)",
     "QOU/QBeta/FiveTwoRootStructure.lean (exists_pinning_data)"
@@ -29,7 +29,7 @@
       "real_roots": 291,
       "real_roots_carried_by_Re_lt_1": 291,
       "real_roots_where_naive_Im_test_would_misattribute": 1,
-      "worst_spurious_Im_magnitude": "2.5545753e-41",
+      "worst_spurious_Im_magnitude": "1.9319727e-71",
       "misattribution_rate": "1 of 291 real roots (1 of 597 checks) -- rare enough that a spot check would miss it entirely",
       "min_margin_1_minus_Re_at_real_roots": "0.1980717375",
       "complex_roots": 306,
@@ -63,7 +63,7 @@
       "claim": "WHAT A LEAN PROOF NEEDS, per condition -- with every clause MEASURED. (1) y != 0, x*y != 0, y/x != 0: the product of the three roots is -d/a = 1 identically in x, so no root can vanish; measured below as |y1*y2*y3 - 1| and as a lower bound on |y|. (2) x*y and y/x in notCut: via Im != 0, no case split (G3), and exists_pinning_data already supplies a sign -- measured below as the per-arc-point count of roots with (x*y).im < 0. (3) y in notCut: THE ONLY ONE NEEDING A CASE SPLIT -- real root via Re = t < 1, complex pair via Im != 0 (G2)",
       "hardest_condition": "y in notCut -- the only one needing a real/complex case split",
       "min_abs_y_over_all_checks": "0.4301926788",
-      "worst_abs_root_product_minus_one": "2.4420184e-41",
+      "worst_abs_root_product_minus_one": "2.0772559e-71",
       "min_roots_per_arc_point_with_Im_xy_neg": 1,
       "already_available": [
         "exists_pinning_data: 0 < t < 1, (x*y_3).im < 0, c < 0 -> (x*y_2).im < 0",
@@ -77,9 +77,9 @@
       "arc_points_with_three_real_roots": 46,
       "arc_points_with_one_real_root": 153,
       "discriminant_as_quartic_in_c": "16c^4 - 48c^3 + 28c^2 + 12c - 31",
-      "discriminant_identity_error_checked_off_arc": "0.0",
+      "discriminant_identity_error_checked_off_arc": "1.8546e-68",
       "c_star_the_only_transition_in_[-1,1]": "-0.7422176658829284376",
-      "shift_certificate_error_off_root_locus": "1.102e-39",
+      "shift_certificate_error_off_root_locus": "8.6935e-70",
       "max_real_root_over_arc": "0.80192826251",
       "pass": true
     },
@@ -90,7 +90,7 @@
       "counterexample_x_closed_form": "(9 - sqrt 65)/4",
       "counterexample_y": "2",
       "counterexample_abs_x": "0.23443556292536258691",
-      "counterexample_curve_residual": "1.3775e-40",
+      "counterexample_curve_residual": "1.0867e-70",
       "counterexample_y_in_notCut": false,
       "sup_of_real_roots_is_largest_level7_root": "0.80193773580483825247",
       "level7_root_closed_form_2cos_pi_over_7_minus_1": "0.80193773580483825247",
@@ -146,7 +146,7 @@
       "claim": "THE LEAN LABELLING REPRODUCES THE ACTUAL ROOTS. `FiveTwoRootLabelling` builds Y_1 = realRoot(cos phi) and (Y_2,Y_3) = otherRoots (t-2c) (t^2-2ct+2c+1). That second line is Vieta on the quadratic cofactor and TYPE-CHECKS whether or not it names the right numbers -- exactly the failure mode this lane has hit nine times (a correct theorem about the wrong polynomial). Checked against polyroots: the multiset {Y_1,Y_2,Y_3} must equal the actual root multiset at every arc point. The identity behind it is (Y-t)(Y^2+(t-2c)Y+(t^2-2ct+2c+1)) = unitCubic, whose constant term needs gamma_rel: t*(t^2-2ct+2c+1) = 1",
       "arc_points": 199,
       "points_with_no_unique_(0,1)_root": 0,
-      "worst_multiset_mismatch": "4.5917748e-41",
+      "worst_multiset_mismatch": "7.2445433e-71",
       "pass": true
     },
     {
@@ -202,11 +202,11 @@
     {
       "gate": "G13",
       "claim": "he_j FOR THE PAIR NEEDS k = 0, AND A TERM-BY-TERM BOUND CANNOT PIN IT. For the positive REAL root he_j is already proved and needs no k at all (dVdy is purely imaginary, t' is real). For the pair Re(dVdy*Y') = k*2*pi*Im(Y'/y), so k = 0 is required. Measured: |dVdy| <= 1.2e-40 at the pair (k = 0) and = 2*pi/t at the real root, max 14.6055 (|k| = 1) -- Route 30 G2's split, reconfirmed from the LEAN definition of dVdy. THE USEFUL PART IS THE NEGATIVE ONE: the pinning quantity S = arg(1-y)+arg(1-xy)+arg(1-y/x)-2arg(-y) is identically 0, but the four terms bounded separately give 11.857 > 2*pi, so no term-by-term argument works. Two groupings ARE tight, each under pi/2, and their sum 2.8152 < 2*pi pins k = 0 with room. The first, |arg(1-y)| < pi/2, is provable from Re y < 1 (for the pair Re y = c - t/2, c <= 1, t > 0). The second is the open obligation",
-      "max_abs_dVdy_at_pair": "1.2278366e-40",
+      "max_abs_dVdy_at_pair": "9.6578511e-71",
       "max_abs_dVdy_at_positive_real_root": "14.60551427",
       "pinning_S_range_at_pair": [
-        "-9.1835496e-41",
-        "9.1835496e-41"
+        "-7.2445433e-71",
+        "7.2445433e-71"
       ],
       "naive_termwise_bound": "1.4076 + 3.1133 + 3.1133 + 2*2.1115 = 11.857 > 2*pi = 6.2832 -- INSUFFICIENT",
       "tight_grouping_1_arg_1_minus_y": "in [-1.4076, 1.4076], < pi/2, PROVABLE from Re y < 1",

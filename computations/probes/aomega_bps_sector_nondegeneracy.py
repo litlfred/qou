@@ -25,6 +25,9 @@ polynomial at t = -1 (calibrated on the trefoil against the KRSS worked example)
 import json
 import datetime
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 
 def det_from_alexander(coeffs_at_minus1):
     """|Δ_K(-1)| = knot determinant = rank of thin reduced HOMFLY/Kh homology
@@ -114,7 +117,7 @@ def main():
             "internal QOU-driver derivation still open (qou-qnnq)."
         ),
     }
-    out = "computations/probes/aomega-bps-sector-nondegeneracy.witness.json"
+    out = _HERE_W / "aomega-bps-sector-nondegeneracy.witness.json"
     with open(out, "w") as f:
         json.dump(witness, f, indent=2)
     print(f"open-sector 4_1 count = {open_count_4_1} (det); reproduces {{3,4}}? {open_reproduces}")

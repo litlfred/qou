@@ -43,13 +43,22 @@ import platform
 import subprocess
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 _HERE = os.path.dirname(os.path.abspath(__file__))
 
 # Canonical substrate q0 — the muon-anchored computations-layer value carried by
 # computations/q-pinning-50-digit.witness.json (AGENTS.md "q0 anchor convention").
-Q0 = mp.mpf("1.10997859555733471")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 
 
 def qint(k):                       # balanced q-integer [k]_q
@@ -115,7 +124,7 @@ def sigma_pow_markov_trace(k):
     """tr_M(sigma^k) in H_2 via the Hecke recursion sigma^2 = h sigma + 1,
     tr(sigma^k) = a_k z + b_k, z = 1/(sqrt q + 1/sqrt q). The (2,k) torus link."""
     h = Q0 - 1 / Q0
-    z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z = Q0**3 / (Q0**2 + 1)
     a, b = mp.mpf(0), mp.mpf(1)
     for _ in range(k):
         a, b = h * a + b, a

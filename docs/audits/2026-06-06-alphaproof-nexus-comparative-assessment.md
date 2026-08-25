@@ -5,7 +5,7 @@
 **Subject paper:** Tsoukalas, Kovsharov, Shirobokov, … Kohli, Chaudhuri (Google
 DeepMind), *Advancing Mathematics Research with AI-Driven Formal Proof Search*,
 arXiv:2605.22763v1 [cs.AI], 21 May 2026.
-**Local copy:** [`uploads/2605.22763v1.pdf`](https://github.com/litlfred/qou/blob/main/uploads/2605.22763v1.pdf)
+**Local copy:** [`library/arxiv-2605.22763v1/2605.22763v1.pdf`](https://github.com/litlfred/qou/blob/main/library/arxiv-2605.22763v1/2605.22763v1.pdf)
 (uploaded to `main` by the owner; arXiv blocks automated fetch).
 **Their code:**
 [`google-deepmind/alphaproof-nexus-results`](https://github.com/google-deepmind/alphaproof-nexus-results)

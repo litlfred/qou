@@ -184,7 +184,10 @@ def main():
             mp.mp.dps = 80
 
             y_val = y_lambda_wenzl_bridge_numeric(list(shape), qi, dps=80)
-            chi_val = chi_lambda_at_q(shape, qi_f)
+            # NO FLOAT64 (bean qou-65qv): y_val above is taken at the exact qi
+            # while chi was taken at the float64 qi_f -- a layer straddle
+            # inside a single product. Both now use qi.
+            chi_val = chi_lambda_at_q(shape, qi)
 
             product = mp.mpf(y_val) * mp.mpf(chi_val)
             f_vals.append(product)
@@ -210,7 +213,7 @@ def main():
             result = {
                 "partition": list(shape),
                 "d_lambda": d,
-                "wall_time_s": round(wall, 2),
+                "wall_time_s": f"{wall:.2f}",
                 "y_at_q0": str(mp.nstr(y_at_q0, 20)),
                 "chi_at_q0": str(mp.nstr(mp.mpf(chi_at_q0), 20)),
                 "product_at_q0": str(mp.nstr(f_vals[0], 20)),
@@ -232,7 +235,7 @@ def main():
             result = {
                 "partition": list(shape),
                 "d_lambda": d,
-                "wall_time_s": round(wall, 2),
+                "wall_time_s": f"{wall:.2f}",
                 "status": f"solve_failed: {e}",
             }
             print(f"    FAILED: {e}")

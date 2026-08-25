@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1204.4824v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "bf01cbaa5a8712c82f1f20fb5c85ce796468cf5e67b2968e1fca5ab18bb77d3d",
+  "file": "1204.4824v2.pdf"
+ },
+ "provenance": {
+  "title": "Prepared for submission to JHEP Spectral networks",
+  "authors": "Davide Gaiotto, 1 Gregory W. Moore 2 and Andrew Neitzke 3",
+  "arxiv": {
+   "id": "1204.4824",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "6 Oct 2013"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "F(\u00b7,W) descends to a homomorphism",
+   "section_file": "sections/sec-048-b4-formal-parallel-transport-for-the-path-groupo.md",
+   "section_title": "B.4 Formal parallel transport for the path groupoid",
+   "pages": "80-80",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

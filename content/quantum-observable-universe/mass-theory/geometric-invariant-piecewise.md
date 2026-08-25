@@ -15,8 +15,8 @@ $$
 $$
 
 routes the physical weight of a state through its fundamental
-topological geometry.  The three cases are not *ad hoc*: each arises
-from an established theorem in low-dimensional topology.
+topological geometry.  Each of the three cases arises from an established theorem in
+low-dimensional topology.
 
 **1. The piecewise split: Thurston's Geometrization.**
 Thurston's theorem for knot complements states that

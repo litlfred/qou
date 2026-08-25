@@ -123,7 +123,15 @@ from hecke.hecke_characters import standard_young_tableaux  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A            # noqa: E402
 from witness_base import WitnessBuilder                     # noqa: E402
 
-mp.mp.dps = 40
+# Path bridge (moved above the set_compute_dps() call — it is what
+# puts computations/substrate on sys.path so `_precision` resolves).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 from qou_substrate.constants import Q_50_DIGIT_STR          # noqa: E402
 
@@ -381,6 +389,29 @@ def moebius_residual(word, subset, sig, h, dim, F, curvature_of=None, cache=None
 
 def fro(M):
     return float(np.linalg.norm(M, "fro"))
+
+
+def f64_json(o):
+    """Serialize an f64 result tree for a witness: every float becomes its own
+    repr string, ints/bools/None/strings pass through.
+
+    The sweep in this probe is float64 BY DESIGN and says so in its own caveat
+    (numpy at dim up to 77, with an independent mpmath 40-dps re-run of R_3 as
+    the control). So there is nothing to recover by widening these numbers, and
+    nothing honest to gain by padding them: repr(float) is exactly the ~17
+    digits the kernel produced, round-trips exactly, and keeps raw float64 JSON
+    out of the witness. Applied once at the sink rather than at ~30 call sites,
+    so no result can be added later and quietly miss it.
+    """
+    if isinstance(o, bool) or o is None:
+        return o
+    if isinstance(o, float):
+        return repr(o)
+    if isinstance(o, dict):
+        return {k: f64_json(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [f64_json(v) for v in o]
+    return o
 
 
 # ---------------------------------------------------------------------------
@@ -835,7 +866,7 @@ def main() -> int:
     w.add_parameter("readout", "operator (Frobenius norm for size only; quadratic, "
                                "hence outside listPairing_trace_zero)")
     for k, v in results.items():
-        w.add_data(k, v)
+        w.add_data(k, f64_json(v))
     for k, v in assertions.items():
         w.add_assertion(k, v, 1)
     w.add_caveat("SCOPE-(a). Super-pairwise is a NECESSARY property of the missing "
@@ -853,7 +884,10 @@ def main() -> int:
                  "is robust across both; the VALUE is not.")
     w.add_caveat("Arithmetic: float64 in the sweep (visible cast from the exact mpf word), "
                  "with an independent mpmath 40-dps re-run of R_3 at dim 11 as the control. "
-                 "The verdict is a 0-vs-O(1e3) question, not a 1-ppQ question.")
+                 "The verdict is a 0-vs-O(1e3) question, not a 1-ppQ question. Every numeric "
+                 "field is written as a decimal STRING at binary64's own round-trip width "
+                 "(repr) -- not widened, which would read as precision the numpy sweep never "
+                 "had, and not narrowed, which would stop the witness reproducing.")
     for c in caveats:
         w.add_caveat(c)
     w.save()

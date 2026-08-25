@@ -68,6 +68,7 @@ This script:
      SAME 1/dim_q value (since dim_q(λ) = dim_q(λ')).
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 import sys
 from pathlib import Path
@@ -142,6 +143,13 @@ def gb_filtration_level(partition):
     return len(partition) - 1
 
 
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
+
 if __name__ == "__main__":
     print("Σ_{λ⊢n} 1/dim_q(λ) via Frobenius + GB filtration")
     print("=" * 76)
@@ -186,7 +194,7 @@ if __name__ == "__main__":
         classical_sum = sum(Fraction(1, dim_specht(lam)) for lam in parts)
         print(f"  Classical Σ 1/d_λ = {classical_sum} = {float(classical_sum):.6f}")
         print(f"  q-symbolic  Σ 1/dim_q(λ) = {sp.nsimplify(total_simpl)}")
-        print(f"  at q_0 = {total_q0:.6f}")
+        print(f"  at q_0 = {mp.nstr(total_q0, 7)}")  # display only; mpf has no %f
 
         print(f"\n  Filtration decomposition (level = height − 1):")
         for level in sorted(by_level.keys()):
@@ -194,7 +202,7 @@ if __name__ == "__main__":
             level_q0 = mp.mpf(str(level_sum.subs(q, q0).evalf(50)))
             level_q0_polynomial_q = expose_polynomial(level_sum, q)
             print(f"    level {level}: Σ = {sp.nsimplify(level_sum)} "
-                  f"(at q_0: {level_q0:.6f})")
+                  f"(at q_0: {float(level_q0):.6f})")
             for entry in by_level[level]:
                 mark = "★" if entry["self_dual"] else " "
                 print(f"      {mark} λ={entry['partition']!s:<20} "

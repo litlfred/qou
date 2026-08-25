@@ -181,14 +181,58 @@ theorem fits_AME_conditional [inst : QIntegerMassFormula]
 
 
 
-/-- **Faithful instance.** Carries the conjecture as an explicit sorry. -/
-noncomputable instance canonical : QIntegerMassFormula where
+/-- **The zero-`f_magic` model** — a `def`, deliberately NOT an `instance`.
+
+It was declared `instance` and documented as *"Faithful instance. Carries the
+conjecture as an explicit sorry."* Neither half held: there is no `sorry` term
+anywhere in this file (all five occurrences of the word are in docstrings and
+comments), so `#print axioms fits_AME_conditional` reported
+`[propext, Classical.choice, Quot.sound]` and the conditional theorem read as
+established.
+
+`f_magic := fun _ => 0` is **load-bearing rather than a placeholder**: it makes
+`binding_energy_bw q m_e Z N (f_magic Z) (f_magic N)` reduce definitionally to
+the `… 0 0` in `IsAMEValue.fits_bound`, which is what lets `fits_AME` be
+discharged by projecting that field. So under this model the seven-term formula
+is evaluated with every magic-number correction set to zero.
+
+Demoting it costs nothing: measured 2026-08-24, the library file, its
+content-block sibling, and `wigner_coefficient_conditional` (the only outside
+consumer, which binds `[inst : QIntegerMassFormula]` as a *hypothesis*) all
+build with **zero** errors afterwards. The measurement is sensitive rather than
+vacuous — as a `def`, `inferInstance` for the class fails with *"failed to
+synthesize QOU.Interactions.QIntegerMassFormula"*, and succeeds when it is
+restored to an `instance`.
+
+**This demotion does NOT discharge the finding, and that is deliberate.** The
+laundering lives one level up, in the *hypothesis* class: `IsAMEValue` is
+documented as recording *"the two physical invariants every real entry
+satisfies"*, but carries a third field, `fits_bound`, whose own docstring says
+*"Trivialized bound hypothesis to close sorry"* — and which asserts the 1 %
+agreement outright. With that field present, `fits_AME_conditional` reduces to
+`∀ …, [claim] → [claim]` no matter how this model is declared.
+
+Resolving that is an authorial choice, not a cleanup, because two rival versions
+of the class exist and they disagree about what is being claimed. The
+content-block sibling
+[`mass-theory/q-integer-mass-formula.lean`](../../../mass-theory/q-integer-mass-formula.lean)
+— which per AGENTS.md §0a *shadows* this file — has no `IsAMEValue` gate at all,
+no instance (honestly uninhabited), and states `fits_AME` over an **arbitrary
+real** `B_AME`, which is false as written. So deleting `fits_bound` here would
+move this file toward a statement that is worse, not better. The likely right
+shape keeps `IsAMEValue`'s two genuine invariants and relocates the conjecture
+into `QIntegerMassFormula`, where this file's own class docstring already says
+it belongs — but which of the two versions is the paper's claim is the author's
+call. Tracked on bean `qou-hjf4`;
+[`docs/audits/2026-08-24-faithful-instance-family.md`](../../../../../docs/audits/2026-08-24-faithful-instance-family.md).
+
+Same disposition as `triv_hecke` / `triv_wedderburn` (PR #5581),
+`skeletonRealisation` (PR #5621) and `CrystalGraphRealization.canonical`. -/
+-- Ref: [manuscript] conj:q-integer-mass-formula
+noncomputable def canonical : QIntegerMassFormula where
   f_magic := fun _ => 0
   tolerance := 1 / 100
   tolerance_bound := ⟨by norm_num, by norm_num⟩
-  -- Ref: [manuscript] conj:q-integer-mass-formula (§3b-cond conjectural field):
-  --      the AME-accuracy assertion is the conjecture proper; per AGENTS.md
-  --      §3b the `sorry` denotes "conjectured", not "missing proof".
   fits_AME := fun q m_e Z N B_AME inst => inst.fits_bound q m_e
 
 end QOU.Interactions

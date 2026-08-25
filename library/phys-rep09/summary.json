@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "phys-rep09",
+ "source_sha256": "cd345d3df9358efc",
+ "brief": "The Magnus expansion and some of its applications — 8 sections: Introduction; Introduction; Stochastic differential equations",
+ "extended": "**The Magnus expansion and some of its applications**\n\n88 pp, 8 sections.\n\n**Outline.** Introduction; Introduction; Stochastic differential equations; Electromagnetism; Optics; Conclusions; Acknowledgments; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1: LetA(t)beaknownfunctionof t(ingeneral,inanassociativering),andletY (t)beanunknown\n- Theorem 4: ThesolutionofthedifferentialequationY ′=A(t)YwithinitialconditionY (0)=Y0canbewrittenasY (t)=\n- Theorem 5: TheequationA (t)=dexpΩ(Ω′)canbesolvedby Ω′=dexp−1\n- Theorem 6: Thefunction ϕ(ε)=logY(t;ε)isananalyticfunctionof εinthesetB π,with\n- Theorem 9: LetusconsiderthedifferentialequationY ′=A(t)YdefinedinaHilbertspace HwithY (0)=I,andletA (t)bea\n- Theorem 9: providessufficientconditionsfortheconvergenceoftheMagnusseriesbasedonanestimatebythenorm",
+ "tokens": {
+  "brief": 31,
+  "extended": 205
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "3-48"
+  },
+  {
+   "id": "sec-001-introduction",
+   "title": "Introduction",
+   "pages": "48-79"
+  },
+  {
+   "id": "sec-002-stochastic-differential-equations",
+   "title": "Stochastic differential equations",
+   "pages": "79-82"
+  },
+  {
+   "id": "sec-003-electromagnetism",
+   "title": "Electromagnetism",
+   "pages": "82-82"
+  },
+  {
+   "id": "sec-004-optics",
+   "title": "Optics",
+   "pages": "82-84"
+  },
+  {
+   "id": "sec-005-conclusions",
+   "title": "Conclusions",
+   "pages": "84-84"
+  },
+  {
+   "id": "sec-006-acknowledgments",
+   "title": "Acknowledgments",
+   "pages": "84-85"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "85-88"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

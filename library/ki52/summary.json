@@ -1,0 +1,112 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "ki52",
+ "source_sha256": "35ad4ee5a00d4a18",
+ "brief": "On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki — We give a presentation of the asymptotic expansion of the Kashaev invariant of the 5 2 knot.",
+ "extended": "**On the asymptotic expansion of the Kashaev invariant of the 5 2 knot Tomotada Ohtsuki**\n\n52 pp, 18 sections.\n\n**Abstract.** We give a presentation of the asymptotic expansion of the Kashaev invariant of the 5 2 knot. As the volume conjecture states, the leading term of the expansion presents the hyperbolic volume and the Chern-Simons invariant of the complement of the 5 2 knot. Further, we obtain a method to compute the full Poincare asymptotics to all orders of the Kashaev invariant of the 5 2 knot.\n\n**Outline.** Abstract; 1 Introduction; 2 Calculation of the Kashaev invariant of the ; 2.2 Calculation of ⟨ 52 ⟩N toward its asymptot; 3 Calculation by the saddle point method; 2 (Nx 2)2 +b4Nx 2); 4 Calculation by the Poisson summation formula; 2 Re 1; 5 Proof of Theorem 1.1; 4.6 (Poisson summation formula) (see also Rema; 5.2 Calculation of the asymptotic expansion; 24 (x2; 2 (t0 +s0)2 + 1; 2 (2\u0019; 5 (\u0000Vts)3 + 3; 5.3 Verifying the assumption of the saddle poi; 5.4 Verifying the assumption of the Poisson su; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.1: The asymptotic expansion of the Kashaev invariant ⟨ 52 ⟩N of the 52 knot\n- Proposition 3.2: , and multi-variable cases in Propositions 3.4 and 3.5. We use Proposition\n- Proposition 3.1: For a non-zero a 2 C, the domain fz 2 C j Reaz2 < 0g has two\n- Proposition 3.2: Let a be a non-zero complex number, and let (z) and r(z) be holo-\n- Proposition 3.1: We put ^ r(z) = r(z)=z2. Since ^r(z) is analytic in a neighborhood of 0,\n- Proposition 3.1: , and obtain the second equality putting y =",
+ "tokens": {
+  "brief": 45,
+  "extended": 396
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-5"
+  },
+  {
+   "id": "sec-002-2-calculation-of-the-kashaev-invariant-of-the-52",
+   "title": "Calculation of the Kashaev invariant of the 52 knot",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-003-22-calculation-of-52-n-toward-its-asymptotic-exp",
+   "title": "Calculation of ⟨ 52 ⟩N toward its asymptotic expansion",
+   "pages": "7-10"
+  },
+  {
+   "id": "sec-004-3-calculation-by-the-saddle-point-method",
+   "title": "Calculation by the saddle point method",
+   "pages": "10-15"
+  },
+  {
+   "id": "sec-005-2-nx-22-b4nx-2",
+   "title": "(Nx 2)2 +b4Nx 2)",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-006-4-calculation-by-the-poisson-summation-formula",
+   "title": "Calculation by the Poisson summation formula",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-007-2-re-1",
+   "title": "Re 1",
+   "pages": "19-28"
+  },
+  {
+   "id": "sec-008-5-proof-of-theorem-11",
+   "title": "Proof of Theorem 1.1",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-009-46-poisson-summation-formula-see-also-remark-48",
+   "title": "(Poisson summation formula) (see also Remark 4.8 and Appendix B), this sum is",
+   "pages": "28-30"
+  },
+  {
+   "id": "sec-010-52-calculation-of-the-asymptotic-expansion",
+   "title": "Calculation of the asymptotic expansion",
+   "pages": "30-31"
+  },
+  {
+   "id": "sec-011-24-x2",
+   "title": "(x2",
+   "pages": "31-32"
+  },
+  {
+   "id": "sec-012-2-t0-s02-1",
+   "title": "(t0 +s0)2 + 1",
+   "pages": "32-33"
+  },
+  {
+   "id": "sec-013-2-2",
+   "title": "(2\u0019",
+   "pages": "33-35"
+  },
+  {
+   "id": "sec-014-5-vts3-3",
+   "title": "(\u0000Vts)3 + 3",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-015-53-verifying-the-assumption-of-the-saddle-point",
+   "title": "Verifying the assumption of the saddle point method",
+   "pages": "36-39"
+  },
+  {
+   "id": "sec-016-54-verifying-the-assumption-of-the-poisson-summa",
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "pages": "39-49"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "49-52"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

@@ -1,0 +1,470 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1712.04887v3",
+ "source": {
+  "file": "1712.04887v3.pdf",
+  "sha256": "024317c20a1d8b66234e608af46941093a675b6399ef480dfedd52a31dcd7bf5",
+  "bytes": 711529,
+  "pages": 43
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1712.04887",
+   "version": "3",
+   "primary_class": "math.NT",
+   "stamp_date": "6 Apr 2021"
+  },
+  "doi": null,
+  "title": "Bloch groups, algebraic K-theory, units, and Nahm's conjecture",
+  "authors_raw": "UNITS, AND NAHM’S CONJECTURE",
+  "abstract": "Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identiﬁcation of the Bloch group of F with the K-group K3(F ) gives (up to an unidentiﬁed invertible scalar) a formula for a certain abstract Chern class from K3(F ). The units we deﬁne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm’s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210407001859Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.21",
+   "Title": ""
+  },
+  "title_prev": "BLOCH GROUPS, ALGEBRAICK-THEORY",
+  "title_lines": [
+   "BLOCH GROUPS, ALGEBRAICK-THEORY"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Bloch groups and associated units",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Algebraic K-groups and associated units",
+   "page": 4,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Nahm's Conjecture",
+   "page": 5,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "Motivation from quantum topology",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Plan of the paper",
+   "page": 8,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "The maps Pz and Rz",
+   "page": 8,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries on the Bloch group",
+   "page": 8,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The map Pz",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The map Rz",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Compatibilities",
+   "page": 14,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "The 5-term relation",
+   "page": 15,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "An eigenspace computation",
+   "page": 16,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 1,
+   "title": "Chern Classes for algebraic K-theory",
+   "page": 17,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Definitions",
+   "page": 17,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The relation between étale cohomology and Galois cohomology",
+   "page": 18,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Upgrading from Fntimes to OFtimes",
+   "page": 19,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Upgrading from S-units to units",
+   "page": 20,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.5",
+   "page": 20,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "Reduction to finite fields",
+   "page": 21,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Local Chern class maps",
+   "page": 21,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Bloch group of Fq",
+   "page": 23,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "The local Chern class map cz",
+   "page": 24,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "The local Rz map",
+   "page": 25,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 1,
+   "title": "Comparison between the maps cz and Rz",
+   "page": 25,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.6",
+   "page": 25,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Digression: the modpq dilogarithm",
+   "page": 28,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "The Chern class map on n-torsion in Qzeta",
+   "page": 28,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "The connecting homomorphism to K-theory",
+   "page": 31,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Nahm's conjecture and the asymptotics of Nahm sums at roots of unity",
+   "page": 33,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Nahm's conjecture and Nahm sums",
+   "page": 34,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Application to the calculation of Rz",
+   "page": 37,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Application to Nahm's conjecture",
+   "page": 40,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 41,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-bloch-groups-and-associated-units",
+   "number": "1.1",
+   "title": "Bloch groups and associated units",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 6202,
+   "n_words": 1203
+  },
+  {
+   "id": "sec-002-12-algebraic-k-groups-and-associated-units",
+   "number": "1.2",
+   "title": "Algebraic K-groups and associated units",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 6787,
+   "n_words": 1271
+  },
+  {
+   "id": "sec-003-14-motivation-from-quantum-topology",
+   "number": "1.4",
+   "title": "Motivation from quantum topology",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 5378,
+   "n_words": 957
+  },
+  {
+   "id": "sec-004-15-plan-of-the-paper",
+   "number": "1.5",
+   "title": "Plan of the paper",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 13678,
+   "n_words": 2596
+  },
+  {
+   "id": "sec-005-24-compatibilities",
+   "number": "2.4",
+   "title": "Compatibilities",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2430,
+   "n_words": 495
+  },
+  {
+   "id": "sec-006-25-the-5-term-relation",
+   "number": "2.5",
+   "title": "The 5-term relation",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1658,
+   "n_words": 311
+  },
+  {
+   "id": "sec-007-26-an-eigenspace-computation",
+   "number": "2.6",
+   "title": "An eigenspace computation",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2594,
+   "n_words": 524
+  },
+  {
+   "id": "sec-008-3-chern-classes-for-algebraic-k-theory",
+   "number": "3",
+   "title": "Chern Classes for algebraic K-theory",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 6359,
+   "n_words": 1172
+  },
+  {
+   "id": "sec-009-34-upgrading-from-s-units-to-units",
+   "number": "3.4",
+   "title": "Upgrading from S-units to units",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 1646,
+   "n_words": 291
+  },
+  {
+   "id": "sec-010-35-proof-of-theorem-15",
+   "number": "3.5",
+   "title": "Proof of Theorem 1.5",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 1239,
+   "n_words": 242
+  },
+  {
+   "id": "sec-011-4-reduction-to-finite-fields",
+   "number": "4",
+   "title": "Reduction to finite fields",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 21,
+   "n_chars": 420,
+   "n_words": 85
+  },
+  {
+   "id": "sec-012-41-local-chern-class-maps",
+   "number": "4.1",
+   "title": "Local Chern class maps",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 5430,
+   "n_words": 1043
+  },
+  {
+   "id": "sec-013-42-the-bloch-group-of-fq",
+   "number": "4.2",
+   "title": "The Bloch group of Fq",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 25,
+   "n_chars": 5300,
+   "n_words": 1009
+  },
+  {
+   "id": "sec-014-51-proof-of-theorem-16",
+   "number": "5.1",
+   "title": "Proof of Theorem 1.6",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 31,
+   "n_chars": 12758,
+   "n_words": 2406
+  },
+  {
+   "id": "sec-015-6-the-connecting-homomorphism-to-k-theory",
+   "number": "6",
+   "title": "The connecting homomorphism to K-theory",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 41,
+   "n_chars": 25199,
+   "n_words": 4786
+  },
+  {
+   "id": "sec-016-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 718,
+   "n_words": 123
+  },
+  {
+   "id": "sec-017-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 6157,
+   "n_words": 883
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 35,
+  "sections": 18,
+  "chars_total": 103953
+ }
+}

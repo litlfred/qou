@@ -1,6 +1,6 @@
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Group.Invertible.Basic
 import Mathlib.Tactic.Ring
-import Mathlib.Tactic.FieldSimp
 
 
 /-!
@@ -16,31 +16,35 @@ LaTeX label: `prop:antiparticle-crossing-reversal`
 ## References
 - [manuscript] Ch. 6, §chirality-trefoil-electron-positron
 
-**Ground ring**: a field `R` carrying the substrate parameter `q`.  The Coulomb
-channel and the bar-involution both use `q⁻¹`, so the realisation field must
-admit inverses; specialise via `ι : R → ℝ, q ↦ q₀` for numerical evaluation.
+**Ground ring (§7c)**: a bare `CommRing R`.  The Coulomb channel and the
+bar-involution both use `q⁻¹`, but only ever of the substrate parameter itself,
+so `q` is carried as a **unit** `q : Rˣ` rather than a nonzero element of a
+field — the statements then hold verbatim over `ℤ[q,q⁻¹]`.  Halving the
+antisymmetric component needs only `[Invertible (2 : R)]` (written `⅟(2 : R)`),
+the exact characteristic condition.  Specialise via `ι : R → ℝ, q ↦ q₀` for
+numerical evaluation.
 -/
 
 namespace QOU.Torsion
 
-variable {R : Type*} [Field R]
+variable {R : Type*} [CommRing R] [Invertible (2 : R)]
 
 /-- A knot composite with crossing counts and a substrate parameter `q`. -/
-structure KnotComposite (R : Type*) where
+structure KnotComposite (R : Type*) [CommRing R] where
   /-- Number of positive crossings. -/
   pos_crossings : ℕ
   /-- Number of negative crossings. -/
   neg_crossings : ℕ
-  /-- Substrate parameter `q`. -/
-  q : R
+  /-- Substrate parameter `q`, carried as a unit (§7c). -/
+  q : Rˣ
 
 /-- Crossing energy: `+q` per positive crossing, `-q⁻¹` per negative crossing. -/
 def KnotComposite.crossingEnergy (H : KnotComposite R) : R :=
-  (H.pos_crossings : R) * H.q + (H.neg_crossings : R) * (-H.q⁻¹)
+  (H.pos_crossings : R) * (H.q : R) + (H.neg_crossings : R) * (-(↑H.q⁻¹ : R))
 
 /-- Bar-involution `q ↦ q⁻¹` applied to the crossing energy. -/
 def KnotComposite.barCrossingEnergy (H : KnotComposite R) : R :=
-  (H.pos_crossings : R) * H.q⁻¹ + (H.neg_crossings : R) * (-H.q)
+  (H.pos_crossings : R) * (↑H.q⁻¹ : R) + (H.neg_crossings : R) * (-(H.q : R))
 
 /-- Mirror operation: swap positive and negative crossings. -/
 def KnotComposite.mirror (H : KnotComposite R) : KnotComposite R where
@@ -50,8 +54,10 @@ def KnotComposite.mirror (H : KnotComposite R) : KnotComposite R where
 
 /-- Coulomb charge: antisymmetric component of the crossing energy. -/
 def KnotComposite.coulombCharge (H : KnotComposite R) : R :=
-  ((H.pos_crossings : R) - (H.neg_crossings : R)) * (H.q - H.q⁻¹) / 2
+  ((H.pos_crossings : R) - (H.neg_crossings : R)) * ((H.q : R) - (↑H.q⁻¹ : R))
+    * ⅟(2 : R)
 
+omit [Invertible (2 : R)] in
 /-- **Crossing-energy bar-reversal** (narrative claim 2):
     `𝔈(𝔥^σ) = −𝔈(𝔥)|_{q ↦ q⁻¹}` — positive crossings `+q` become negative
     `−q⁻¹` and vice versa under the mirror. -/
@@ -73,7 +79,7 @@ theorem coulomb_reversal (H : KnotComposite R) :
 /-- **Bare-mass invariance** (narrative claim 4): the mirror preserves the total
     crossing count (hence the knot type and its hyperbolic volume), so a particle
     and its antiparticle have equal bare mass. -/
-theorem bare_mass_invariance {S : Type*} (H : KnotComposite S) :
+theorem bare_mass_invariance {S : Type*} [CommRing S] (H : KnotComposite S) :
     H.mirror.pos_crossings + H.mirror.neg_crossings
       = H.pos_crossings + H.neg_crossings := by
   simp only [KnotComposite.mirror]

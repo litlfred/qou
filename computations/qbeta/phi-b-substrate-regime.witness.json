@@ -3,8 +3,8 @@
   "description": "Pin + validate the Faddeev Phi_b substrate-regime b-map (b = sqrt(t/2pi) e^(i pi/4), q = 1/q0) at both anchors: contour vs modular-double product, shift equations, Phi(0) closed form, dual-face suppression quantified.",
   "auditOnly": true,
   "tier": "infrastructure-validation (no c_k, no wiring, no fits)",
-  "computedAt": "2026-07-11T12:28:37.083084+00:00",
-  "commitSha": "e692be0dfe69fbd1fc4441fc01345472ec98e64d",
+  "computedAt": "2026-08-24T13:26:28.566076+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "phi_b_substrate_regime.py",
@@ -39,7 +39,7 @@
     {
       "name": "S5_double_product_equals_contour",
       "passed": true,
-      "detail": "P/Phi = 1 at both anchors (worst rel 1.4e-39, kmax=1153)"
+      "detail": "P/Phi = 1 at both anchors (worst rel 1.1e-39, kmax=1153)"
     },
     {
       "name": "S3_shift_in_inv_b_via_product",
@@ -70,9 +70,9 @@
         "im_log_phi": "0.0325033027074513711360152668517"
       },
       "muon": {
-        "z_u": "0.00851723634004395810711354481101",
-        "re_log_phi": "7.91272704706467650132983783599",
-        "im_log_phi": "0.032503307770579601802022090043"
+        "z_u": "0.00851723635242482310735822116751",
+        "re_log_phi": "7.91272704107035667170204951947",
+        "im_log_phi": "0.0325033078056018556085446260856"
       }
     },
     "verdict": "SUBSTRATE REGIME PINNED + VALIDATED: at real q0 > 1 the Faddeev b-map is b = sqrt(ln q0 / 2pi) * e^(+i pi/4) (q = 1/q0, dual q~ = e^(-4pi^2/ln q0) ~ 1e-164; the previously-documented arg b = -pi/4 branch is the inverse-conjugate object log Phi_(b-) = -conj(log Phi_(b+)) -- same phase, inverted modulus -- and does not support the product form). Contour evaluator, modular-double product, both shift equations, modular invariance, and the Phi(0) closed form all agree at both anchors. Dual face is ~1e-82-suppressed at real substrate-scale arguments (S6) => the c3 S-leak CANNOT be a real substrate-scale-argument dual-face readout (scope-(a)); the argument search must probe the c_b lattice / complex arguments or compact-face differences. NO c_k derived; NO wiring."

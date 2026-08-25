@@ -14,7 +14,7 @@ This script does the per-knot wire-up for the 6 atoms with `Vol(K)`
 data in `per-atom-hyperbolic-volume.witness.json`, using:
 
     VolDensity(K, q₀) = [Vol(K) / ℏ_q²] · tr_M(K, q₀)
-                     = `_li_2_q_util.vol_density_per_block(vol_K, tr_M_K, q)`
+                     = `_li_2_q_util.per_knot_density_per_block(vol_K, tr_M_K, q)`
 
 where `tr_M(K, q₀)` is the canonical Markov trace over the partitions
 of K's strand count (H_3 for the 3-strand baryons; H_6 for D; etc.),
@@ -44,7 +44,7 @@ with:
 - atom, Z, N, A
 - vol_K (Vol of the canonical knot for this atom)
 - tr_M_K (canonical Markov trace at q_0)
-- vol_density_per_block (m_e × VolDensity(K, q₀))
+- per_knot_density_per_block (m_e × VolDensity(K, q₀))
 - m_pred_per_block_MeV (per-knot reading prediction)
 - m_observed_MeV (CODATA / AME)
 - err_per_block_pct (vs CODATA)
@@ -74,8 +74,8 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 from _li_2_q_util import (  # noqa: E402
-    vol_density_borromean,
-    vol_density_per_block,
+    per_knot_density_borromean,
+    per_knot_density_per_block,
     geom_leading,
 )
 from q_parameter import Q_MP as q_0  # noqa: E402
@@ -110,7 +110,7 @@ def main() -> int:
     )
     w.set_description(
         "Per-block reading of m(K) = m_e · VolDensity(K, q₀) for the "
-        "6 atoms with Vol(K) data, using vol_density_per_block(vol_K, "
+        "6 atoms with Vol(K) data, using per_knot_density_per_block(vol_K, "
         "tr_M_K, q). EXPLORATORY truth-tracking, NOT a closure — "
         "validates the vol_density_per_block_wiring.py RED verdict "
         "across the atomic table."
@@ -133,7 +133,7 @@ def main() -> int:
     ]
 
     # Production uniform-Vol baseline (same for every atom)
-    vol_density_uniform = vol_density_borromean(q)
+    vol_density_uniform = per_knot_density_borromean(q)
     m_avg_production = m_e * vol_density_uniform
 
     # H_3 building blocks for the Phase 5q closed form (sub-second compute)
@@ -161,10 +161,10 @@ def main() -> int:
             })
             continue
 
-        # Paper-faithful per-block: vol_density_per_block already folds
+        # Paper-faithful per-block: per_knot_density_per_block already folds
         # in tr_M(K, q₀) — i.e. this returns m_e × VolDensity(K, q₀) when
         # multiplied by m_e below; do NOT re-multiply by tr_M_K here.
-        vol_density_pb = vol_density_per_block(vol_K, tr_M_K, q)
+        vol_density_pb = per_knot_density_per_block(vol_K, tr_M_K, q)
         m_pred_pb = m_e * vol_density_pb
 
         codata = CODATA[atom]
@@ -182,7 +182,7 @@ def main() -> int:
             "knot": knot_label,
             "vol_K": float(vol_K),
             "tr_M_K": float(tr_M_K),
-            "vol_density_per_block": float(vol_density_pb),
+            "per_knot_density_per_block": float(vol_density_pb),
             "vol_density_uniform_production": float(vol_density_uniform),
             "m_pred_per_block_MeV": float(m_pred_pb),
             "m_pred_production_MeV": float(m_avg_production),
@@ -239,7 +239,7 @@ def main() -> int:
 
     # Brief human-readable report
     print()
-    print("=== per-knot reading (vol_density_per_block) vs production ===")
+    print("=== per-knot reading (per_knot_density_per_block) vs production ===")
     print(f"{'atom':<5}{'Vol(K)':>10}{'tr_M(K)':>10}{'m_pb (MeV)':>14}{'m_prod (MeV)':>15}{'observed':>14}{'err_pb %':>10}{'err_prod %':>12}")
     for r in rows:
         if r.get("m_pred_per_block_MeV") is None:

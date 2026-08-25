@@ -130,6 +130,34 @@ export default proposition({
         "upstreamable lemmas, not because a downstream number moved.",
       see: "content/quantum-observable-universe/lean/QOU/QBeta/C1ThetaZeroLocus.lean",
     },
+    {
+      kind: "note",
+      date: "2026-08-09",
+      body:
+        "Lean sibling: archimedean specialisation over $\\mathbb{R}$ " +
+        "(AGENTS.md §7c). There is no pre-archimedean statement of this " +
+        "result to move to, and the file carries no generic-ring content to " +
+        "split off: `C1ThetaZeroLocus.lean` is complex analysis end to end. " +
+        "The theorem `qThetaC_eq_zero_iff` is a statement about the zero set " +
+        "of a holomorphic function on $\\mathbb{C}^\\times$, and its proof " +
+        "runs the argument principle on an annulus — `analyticOrderAt`, " +
+        "`circleIntegral`, `MeromorphicOn.extract_zeros_poles`. None of that " +
+        "has a `CommRing` form; a divisor computed by contour integration is " +
+        "archimedean by construction.\n\n" +
+        "Where the real numbers specifically enter, as distinct from the " +
+        "complex ones: the modulus $P$ is a *real* parameter constrained by " +
+        "the order hypothesis $1 < P$, which is what makes the $q$-theta " +
+        "series converge at all — there is no $\\theta_P$ over a ring without " +
+        "it; the contour radii $r, R, \\rho, c, d$ are real with $0 < r < R$; " +
+        "`isPreconnected_openAnnulus` realises the annulus as " +
+        "`Complex.exp` of the strip $\\log r < \\operatorname{re} z < \\log R$, " +
+        "using `Real.log` and the $\\mathbb{R}$-linearity of `Complex.re`; and " +
+        "`qTheta_pos_of_pos` is a positivity argument on the positive real " +
+        "axis. The zero lattice itself, $-P^{2\\mathbb{Z}}$, is indexed by " +
+        "$\\mathbb{Z}$ but its points are real powers of $P$ embedded in " +
+        "$\\mathbb{C}$.",
+      see: "content/quantum-observable-universe/lean/QOU/QBeta/C1ThetaZeroLocus.lean",
+    },
   ],
   tags: [
     "q-difference",

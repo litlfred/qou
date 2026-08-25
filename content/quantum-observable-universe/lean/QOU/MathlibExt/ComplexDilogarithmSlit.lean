@@ -61,7 +61,8 @@ derivative, not yet a theorem.
 5 is a restatement, and even the whole chain leaves an unevaluated real integral.
 This file is taken for the Mathlib gap, as that bean instructs.
 
-**The 5₂ sum rule remains verified to 80 dps, unproved.**
+**The 5₂ sum rule is PROVED**: `QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule`
+and `fiveTwoSaddleSumRule_holds`, sorry-free, standard axioms.
 -/
 
 namespace QOU.MathlibExt

@@ -265,9 +265,9 @@ possible. That is why the split has not produced a visible failure.
    mostly Coulomb). It does not move the magnitude: `B(²H) = 3.890455`, +74.9%.
 2. **"Colour-weighted" is a misnomer.** δ is `Δm/M_N`, the neutron–proton mass
    splitting — a **flavour** (isospin) quantity. No SU(3) colour averaging
-   appears anywhere in the trace, which is the N = 2 (SU(2)/Temperley–Lieb)
-   Ocneanu member throughout. The `½` is a plain σ/σ⁻¹ midpoint and `δ/4` a
-   small isospin tilt on it.
+   appears anywhere in the trace. The `½` is a plain σ/σ⁻¹ midpoint and `δ/4` a
+   small isospin tilt on it. (This bullet originally called the trace "the
+   N = 2 (SU(2)/Temperley–Lieb) Ocneanu member". **CORRECTED 2026-08-09** — see bean `qou-qlma` and `computations/y_lambda_su_n.py`: this is convention **C** (full-Hecke Ocneanu), NOT Temperley–Lieb. TL/SU(2) is convention **D** at `z = q³/(q²+1) = 0.6126880`; `D ≠ C` is Lean-proved and they differ by 195.8 ppm on `β_Bor`. C has `y_(1³) = 0.0227 ≠ 0`, so it does not carry the N=2 row cap, and it matches **no integer N** (effective N = 2.5995).)
 
 ### 2026-08-09 follow-up: the split is REAL and PRINCIPLED, not just drift
 

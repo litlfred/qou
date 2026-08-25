@@ -1,0 +1,288 @@
+---
+doc_id: arxiv-2109.00379v1
+doc_title: "TWISTED NEUMANN–ZAGIER MATRICES"
+section_id: sec-008-32-the-knot-63
+section_title: "The knot 63"
+section_number: 3.2
+pages: 14-16
+source_pdf: 2109.00379v1.pdf
+source_sha256: f0c9bd89312a761c
+doc_brief: "TWISTED NEUMANN–ZAGIER MATRICES — The Neumann–Zagier matrices of an ideal triangulation are integer matrices with symplectic properties whose entries encode the number of tetrahedra that wind around"
+---
+gLLPQccdefffhggaacv aBBb has six tetrahedra ∆ 1,..., ∆6 with the peripheral torus shown
+in Figure 6.
+z3
+z5
+z5
+z6
+z1
+z2
+z4
+z2
+z4 z1
+z5
+z6
+ z3
+z5
+z3
+z1
+z6 z4
+z2
+z4
+z6
+z3
+z1
+z2
+e3
+e2
+e4
+e6
+ e5
+e1
+Figure 6. The triangulation of the peripheral torus of 6 3.
+TWISTED NEUMANN–ZAGIER MATRICES 15
+The gluing equations of the six edges are
+e1 :z1z2z3z4z6 = 1,
+e2 :z′
+1z′
+2(z′′
+2)2z′
+4(z′′
+4)2z′
+6 = 1,
+e3 :z′′
+1z′
+2z′
+3z′
+5z′′
+6 = 1,
+e4 :z′′
+1z′
+3z′
+4z′
+5z′′
+6 = 1,
+e5 :z′
+1z3(z′′
+3)2z5(z′′
+5)2z′
+6 = 1,
+e6 :z1z2z4z5z6 = 1
+and the corresponding gluing equation matrices are
+G =
+
+
+1 1 1 1 0 1
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 1 0 1 0
+1 1 0 1 1 1
+
+
+, G′ =
+
+
+0 0 0 0 0 0
+1 1 0 1 0 1
+0 1 1 0 1 0
+0 0 1 1 1 0
+1 0 0 0 0 1
+0 0 0 0 0 0
+
+
+, G′′ =
+
+
+0 0 0 0 0 0
+0 2 0 2 0 0
+1 0 0 0 0 1
+1 0 0 0 0 1
+0 0 2 0 2 0
+0 0 0 0 0 0
+
+
+. (43)
+The NZ matrices are
+A =
+
+
+1 1 1 1 0 1
+−1 −1 0 −1 0 −1
+0 −1 −1 0 −1 0
+0 0 −1 −1 −1 0
+−1 0 1 0 1 −1
+1 1 0 1 1 1
+
+
+, B =
+
+
+0 0 0 0 0 0
+−1 1 0 1 0 −1
+1 −1 −1 0 −1 1
+1 0 −1 −1 −1 1
+−1 0 2 0 2 −1
+0 0 0 0 0 0
+
+
+,
+with
+ABT =
+
+
+0 0 0 0 0 0
+0 0 −1 −1 2 0
+0 −1 3 2 −4 0
+0 −1 2 3 −4 0
+0 2 −4 −4 6 0
+0 0 0 0 0 0
+
+
+symmetric. As in Section 3.1, we assign an integer to (each oriented edge and) each vertex
+of the dual complex according to the abelianization map α :π1(M) ↠ Z . See Figure 7.
+Choosing a lift ~ei of ei as in Figure 7, we have the table
+0 1 2 3
+~e1 z4 z1z3z6 z2
+~e2 z′
+1z′′
+4 z′′
+2z′
+4 z′
+2z′′
+4 z′′
+2z′
+6
+~e3 z′′
+1z′
+5 z′
+2z′
+3z′′
+6
+~e4 z′′
+1z′
+3z′
+4 z′
+5z′′
+6
+~e5 z′′
+3z′′
+5z′
+6 z3z5 z′
+1z′′
+3z′′
+5
+~e6 z1z2z4z5z6
+where the (i,k )-entry is the product of shape-parameters contributed fromµk·~∆1,...,µ k·~∆6
+to~ei. Hence, we have
+G(t) =
+
+
+t t 2 t 1 0 t
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 0 0 0 0
+0 0 t 0 t 0
+t2 t2 0 t2 t2 t2
+
+
+, G′(t) =
+
+
+0 0 0 0 0 0
+1 t2 0 t 0 t3
+0 t t 0 1 0
+0 0 t2 t2 t3 0
+t2 0 0 0 0 1
+0 0 0 0 0 0
+
+
+, G′′(t) =
+
+
+0 0 0 0 0 0
+0 t +t3 0 1 + t2 0 0
+1 0 0 0 0 t
+t2 0 0 0 0 t3
+0 0 1 + t2 0 1 + t2 0
+0 0 0 0 0 0
+
+
+(44)
+16 STA VROS GAROUF ALIDIS AND SEOKBEOM YOON
+~e3
+~e2
+~e4
+~e5
+~e1
+~e6
+06
+05
+1325
+02
+01
+12
+16
+32
+14
+36
+24
+2204
+26
+25
+21
+23
+35
+15
+13 05
+06
+03
+01
+16
+04
+22
+24
+36
+33
+31
+42
+13
+11
+Figure 7. The dual 1-skeleton of E 2.
+and
+A(t) =
+
+
+t t 2 t 1 0 t
+−1 −t2 0 0 0 −t3
+0 −t −t 0 −1 0
+0 0 −t2 −t2 −t3 0
+−t2 0 t 0 t −1
+t2 t2 0 t2 t2 t2
+
+
+, B(t) =
+
+
+0 0 0 0 0 0
+−1 t−t2 +t3 0 1 −t +t2 0 −t3
+1 −t −t 0 −1 t
+t2 0 −t2 −t2 −t3 t3
+−t2 0 1 + t2 0 1 + t2 −1
+0 0 0 0 0 0
+
+
+, (45)
+giving that
+A(t)B(1/t)T =
+
+
+0 0 0 0 0 0
+0 −2t + 4− 2t−1 −t2 +t− 1 −1 +t−1−t−2 t3 +t−2 0
+0 −1 +t−1−t−2 3 t−1 +t−3 −t− 1−t−1−t−2 0
+0 −t2 +t− 1 t3 +t 3 −t3−t2−t−1− 1 0
+0 t2 +t−3 −t2−t1− 1−t−1 −1−t−1−t−2−t−3 2t + 2 + 2t−1 0
+0 0 0 0 0 0
+
+
+which specializes to matrix ABT when t = 1.

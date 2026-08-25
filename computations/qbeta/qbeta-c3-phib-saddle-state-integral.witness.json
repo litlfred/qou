@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T11:10:46.668730+00:00",
-  "commitSha": "c8aedd7efc3c4594ed42cbb1c728fbc6965c614b",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:46:13.279962+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "saddle_Im_zero_at_real_meridian",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "qbeta-c3-phib-saddle-state-integral",
   "scriptFile": "qbeta_c3_phib_saddle_state_integral_probe.py",
-  "scriptHash": "57582d2184e0",
-  "scriptCommitSha": "8fabb54497f162569c0561272437d1826891a323",
+  "scriptHash": "4fa47362372b",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -38,7 +38,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_c3_phib_saddle_state_integral_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_c3_phib_saddle_state_integral_probe.py"
   },
   "description": "Owner-directed 'build it': the Φ_b state-integral SADDLE 𝔙(m) (= the validated gluing Newton solve vol_of_m, Vol(4₁) to 4e-18) at the substrate meridian m=q₀. Result: Re 𝔙=2.02048069 (volume deficit 0.00940 from complete Vol(4₁) — the S(muon) scale), Im 𝔙=0 EXACTLY at both anchors (real m ⇒ CS=0, amphichirality); finite-b adds i·t·κ₁=0.058 (imaginary, #3654). Both smooth + anchor-blind. So the state integral supplies the S scale from two geometric handles (deficit, finite-b), no fit, but no anchor-dependence — CONFIRMING no physical near-singular substrate→u map: S's sign-flip is the 1/u³ ladder artifact (merged #3636), not a term in 𝔙. Route 1 closes: the saddle does NOT give the sign-flip because it is not physical; a complex m=q₀+iε (the smooth ε) is needed for nonzero saddle Im. Scope-(a); C14; no c_k wired; no fit.",
   "contentBlock": "conj:im-q-physical-role",
@@ -54,10 +63,10 @@
       },
       {
         "anchor": "muon",
-        "Re_V_saddle": "2.0204806910666174136",
+        "Re_V_saddle": "2.0204806910522781007",
         "Im_V_saddle": "0.0",
-        "vol_deficit": "0.0094025217526898364592",
-        "finite_b_im": "0.057827352336156303313",
+        "vol_deficit": "0.0094025217670291493852",
+        "finite_b_im": "0.057827352380373879954",
         "S_target": "0.00968298"
       }
     ],

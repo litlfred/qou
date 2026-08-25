@@ -30,7 +30,7 @@ For a half-solar-mass strangelet core ($N_B \approx 6 \times 10^{56}$ baryons):
 | CFL gap breaking | $2.5$ MeV | $\sim 2.4 \times 10^{51}$ erg | $2\times$ kilonova |
 | Standard kilonova (GW170817) | — | $\sim 10^{51}$ erg | Reference |
 
-The strangelet deconversion energy is two hundred times the observed kilonova luminosity of GW170817. Much of this fuels ejecta kinetic energy and escapes via neutrinos. The scale ensures observable consequences.
+The strangelet deconversion energy is two hundred times the observed kilonova luminosity of GW170817. Much of this fuels ejecta kinetic energy and escapes via neutrinos.
 
 **Three signatures.**
 1. **Post-merger thermal excess.** The deconversion energy heats the merger remnant beyond gravitational and $r$-process expectations. This thermal energy produces a brighter, longer-lasting kilonova. The luminosity excess scales with the strangelet core mass.

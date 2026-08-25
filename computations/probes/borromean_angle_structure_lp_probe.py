@@ -8,7 +8,7 @@ the angle-structure LP <-> confinement-SDP dual dictionary, COMPARISON-ONLY.
 
 SOURCES (primary, no guessed conventions):
   [GA]    Garoufalidis, "The 3D index of an ideal triangulation and angle structures"
-          (arXiv:1208.1663, uploads/1208.1663v2.pdf):
+          (arXiv:1208.1663, library/arxiv-1208.1663v2/1208.1663v2.pdf):
           - Section 2.2: a generalized angle structure on an ideal tetrahedron assigns
             angles at edges summing to 1 around each vertex (footnote 2: "traditionally
             pi" — we work in pi-units throughout); opposite edges share the angle, so a
@@ -24,7 +24,7 @@ SOURCES (primary, no guessed conventions):
             LP route) the well-definedness the sibling probe borromean_3d_index.py
             used via SnapPy's "all tetrahedra positively oriented".
   [GHHR]  Garoufalidis-Hodgson-Hoffman-Rubinstein, "The 3D-index and normal surfaces"
-          (arXiv:1604.02688, uploads/1604.02688v1.pdf):
+          (arXiv:1604.02688, library/arxiv-1604.02688v1/1604.02688v1.pdf):
           - Prop A.3 (eq (34)): for any generalised angle structure alpha and any
             embedded spun normal surface S,
                 chi(S) = - sum_q alpha(q) x_q / pi + rho_alpha(dS) / (2 pi),

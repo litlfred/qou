@@ -56,6 +56,32 @@ theorem sn_wedderburnArtin (n : ℕ) :
   exact IsSemisimpleRing.exists_ringEquiv_pi_matrix_divisionRing
     (MonoidAlgebra k (Equiv.Perm (Fin n)))
 
+/-- **Wedderburn–Artin for `k[S_n]`, algebra form.** The same decomposition as
+`sn_wedderburnArtin`, but as a `k`-**algebra** equivalence rather than a bare ring equivalence — the
+division rings `𝔇 i` carry compatible `k`-algebra structures. No algebraic closure is needed:
+Mathlib's `IsSemisimpleRing.exists_algEquiv_pi_matrix_divisionRing` supplies the algebra form over
+*any* base `R₀` with `Algebra R₀ R`, not only over an algebraically closed one.
+
+Why this rung matters: the downstream target
+`SnWedderburnPartitionBridge.sn_isotypic_specht_split` is stated as an `≃ₐ[R]`, so the ring-form
+`sn_wedderburnArtin` cannot feed it, while the algebra-form algebraically-closed
+`sn_wedderburnArtin_algClosed` is unavailable over a general characteristic-zero `k`. This theorem is
+the missing char-0 algebra-form rung between the two.
+
+What it still does **not** give (the residual gap in `sn_isotypic_specht_split`): the collapse
+`𝔇 i ≃ k` (ℚ is a splitting field for `S_n`), the partition labelling of the block index, the
+identification `𝔫 i = dim_k S^{λ_i}`, and the `C₂` block-scalar alignment. -/
+theorem sn_wedderburnArtin_alg (n : ℕ) :
+    ∃ (N : ℕ) (𝔇 : Fin N → Type) (𝔫 : Fin N → ℕ) (_ : ∀ i, DivisionRing (𝔇 i))
+      (_ : ∀ i, Algebra k (𝔇 i)),
+      (∀ i, NeZero (𝔫 i)) ∧
+      Nonempty (MonoidAlgebra k (Equiv.Perm (Fin n)) ≃ₐ[k]
+        (∀ i, Matrix (Fin (𝔫 i)) (Fin (𝔫 i)) (𝔇 i))) := by
+  haveI : IsSemisimpleRing (MonoidAlgebra k (Equiv.Perm (Fin n))) :=
+    sn_isSemisimpleRing n
+  exact IsSemisimpleRing.exists_algEquiv_pi_matrix_divisionRing k
+    (MonoidAlgebra k (Equiv.Perm (Fin n)))
+
 /-- **Wedderburn–Artin for `K[S_n]` over an algebraically closed field.** When the base field `K` is
 algebraically closed (and characteristic zero) the division rings collapse to `K`, so `K[S_n]` is
 isomorphic — as a `K`-algebra — to a finite product of matrix algebras `Matrix (Fin 𝔫ᵢ) (Fin 𝔫ᵢ) K`.

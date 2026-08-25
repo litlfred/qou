@@ -2,7 +2,7 @@
 | ----- | ---------------------------------------------------------------------------------------- | --------------------- |
 | C-1 | $d^2 = 0$ on $\ker[\xi, \cdot]$ | De Rham nilpotence |
 | C-2 | $d_q^2\alpha = q^{-1}(1-q^{-1})\omega_V\wedge_q[\xi,\alpha]$ | $q$-obstruction |
-| C-3 | $\mathrm{tr}_M(\rho(\beta)\cdot S(\rho(\beta'))^*) = \delta_{\beta\beta'}$ | Poincar'e duality |
+| C-3 | $\mathrm{tr}_M(\rho(\beta)\cdot S(\rho(\beta'))^*) = \delta_{\beta\beta'}$ | Poincaré duality |
 | C-4a | $\chi(A_{n+1}) = \chi(A_n)$ | Euler stability |
 | C-4b | $\mathrm{tr}_M(\mathrm{id}) = -6$ | Descartes |
 | C-5 | $\kappa_n = \mathrm{tr}_M(\check{R}_{(n+1)} - L_{-1}\check{R}_{(n)}) \neq 0$ | Perpetual obstruction |

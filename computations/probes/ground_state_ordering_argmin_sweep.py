@@ -90,7 +90,7 @@ class Kernel:
             self.qi = +(mp.mpf(1) / q)
             self.h = +(q - self.qi)
             self.c = +((q + self.qi) / 2)
-            self.z = +(mp.sqrt(q) / (q + 1))
+            self.z = +(q ** 3 / (q ** 2 + 1))   # convention D (was C: sqrt(q)/(q+1))
             self.two_q = +(q + self.qi)
             # readout coefficients
             self.cp = +((self.z + self.qi) / self.two_q)   # weight on μ₊
@@ -381,10 +381,34 @@ def main() -> int:
         "max_A": args.max_a,
         "verdict_tally": verdict,
         "results": results,
-        "wall_seconds": round(time.time() - t0, 1),
+        # wall clock, not a measurement — string so it is not raw float64
+        "wall_seconds": f"{time.time() - t0:.1f}",
     }
     path = args.out or str(Path(__file__).resolve().parent.parent /
                            "ground-state-ordering-argmin-sweep.witness.json")
+
+    # PRESERVE blocks this probe does not produce. The committed witness carries
+    # a `lean_bridge` block that NO producer writes — it was added by 7c60b2f38
+    # and is cited by
+    # docs/audits/2026-08-09-ground-state-ordering-truth-value.md. A plain
+    # overwrite DELETED it, which is why this witness could not be regenerated
+    # (and so kept its one raw-float64 field on the ratchet indefinitely).
+    #
+    # Merge rather than clobber: anything already on disk that this run does not
+    # compute is carried forward. A producer that silently drops published data
+    # is worse than a stale field.
+    existing = {}
+    try:
+        existing = json.loads(Path(path).read_text())
+    except (OSError, ValueError):
+        pass
+    carried = [k for k in existing if k not in out]
+    for k in carried:
+        out[k] = existing[k]
+    if carried:
+        print(f"  carried forward {len(carried)} block(s) this probe does not "
+              f"produce: {', '.join(sorted(carried))}")
+
     Path(path).write_text(json.dumps(out, indent=2) + "\n")
     print(f"\nwrote {path}  ({out['wall_seconds']}s)")
     return 0

@@ -1,7 +1,7 @@
 import { proof } from "../../schema/builders";
 
 export default proof({
-  label: "proof:ugb-main",
+  label: "prf:ugb-main",
   title: "Proof of the main theorem",
   tags: ["groebner-basis", "freeness"],
   uses: [

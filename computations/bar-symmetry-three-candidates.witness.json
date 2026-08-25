@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:13:45.539706+00:00",
-  "commitSha": "cae0becd630ab3343b30c5ed3b32e038ed03e82e",
+  "computedAt": "2026-08-15T11:27:37.167945+00:00",
+  "commitSha": "14ed96a80242a6940427eb121ebf43a6843b9c64",
   "assertions": [
     {
       "name": "bring_color_tube_breaks_bar_symmetry",
@@ -20,11 +20,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 10,
   "computation": "bar-symmetry-three-candidates",
   "scriptFile": "bar_symmetry_three_candidates.py",
-  "scriptHash": "b78c5c3834c6",
-  "scriptCommitSha": "c4ab12b6302fa62343f303820d6efb8e2667719d",
+  "scriptHash": "c028dac486f5",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,73 +35,74 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
-  "description": "Bar-symmetry (q ↔ q⁻¹) test for three candidate linking_weight forms in VolDensity(𝓑₃). Family A and via-Jones are bar-symmetric; Bring color-tube and the combined Bring + Faddeev h⁴ are bar-asymmetric (Φ_q-side mass-anchor convention, per the cheat sheet §4). The +108 ppm m_p match of the Bring + Faddeev h⁴ candidate relies on the q^{10} asymmetry — symmetrising loses the numerical match. This is an additional axis of categorical distinctness between the three candidates.",
+  "description": "Bar-symmetry (q ↔ q⁻¹) test for three candidate linking_weight forms in VolDensity(𝓑₃). Family A and via-Jones are bar-symmetric; Bring color-tube and the combined Bring + compact-q-dilog h⁴ are bar-asymmetric (Φ_q-side mass-anchor convention, per the cheat sheet §4). The +108 ppm m_p match of the Bring + compact-q-dilog h⁴ candidate relies on the q^{10} asymmetry — symmetrising loses the numerical match. This is an additional axis of categorical distinctness between the three candidates.",
   "contentBlock": "conj:borromean-baryon-mass-formula",
   "parameters": {
     "dps": 80,
-    "q_0": "1.1099785955573347198997632204832250266562084087802"
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "rows": [
       {
         "form": "Family A `(3q²+4+3q⁻²)/4`",
-        "f_at_q0": "2.532779663674675982663684",
-        "f_at_q0_inv": "2.532779663674675982663684",
+        "f_at_q0": "2.532779656399391492051515",
+        "f_at_q0_inv": "2.532779656399391492051515",
         "abs_diff": "0.0",
         "bar_symmetric": true
       },
       {
         "form": "via-Jones (Markov trace bridge)",
-        "f_at_q0": "2.494248652789650223030748",
-        "f_at_q0_inv": "2.494248652789650223030748",
-        "abs_diff": "8.433758354584418579478859e-81",
-        "bar_symmetric": true
-      },
-      {
-        "form": "Bring color-tube `1/(1-h·q^10)`",
-        "f_at_q0": "2.4599992318226214762209",
-        "f_at_q0_inv": "0.9314091662736525974036278",
-        "abs_diff": "1.528590065548968878817272",
-        "bar_symmetric": false
-      },
-      {
-        "form": "Faddeev h⁴ `1/(1-h⁴)`",
-        "f_at_q0": "1.001913889488060778023845",
-        "f_at_q0_inv": "1.001913889488060778023845",
+        "f_at_q0": "2.494248655347149063804853",
+        "f_at_q0_inv": "2.494248655347149063804853",
         "abs_diff": "0.0",
         "bar_symmetric": true
       },
       {
-        "form": "Bring + Faddeev h⁴ (combined)",
-        "f_at_q0": "2.461913121310682254244744",
-        "f_at_q0_inv": "0.9333230557617133754274724",
-        "abs_diff": "1.528590065548968878817272",
+        "form": "Bring color-tube `1/(1-h·q^10)`",
+        "f_at_q0": "2.459998418887548384192148",
+        "f_at_q0_inv": "0.931409165992640747922709",
+        "abs_diff": "1.528589252894907636269439",
+        "bar_symmetric": false
+      },
+      {
+        "form": "compact-q-dilog h⁴ `1/(1-h⁴)`",
+        "f_at_q0": "1.001913888636878273032647",
+        "f_at_q0_inv": "1.001913888636878273032647",
+        "abs_diff": "0.0",
+        "bar_symmetric": true
+      },
+      {
+        "form": "Bring + compact-q-dilog h⁴ (combined)",
+        "f_at_q0": "2.461912307524426657224795",
+        "f_at_q0_inv": "0.9333230546295190209553556",
+        "abs_diff": "1.528589252894907636269439",
         "bar_symmetric": false
       },
       {
         "form": "Bring SYMMETRISED (bring + bring∘inv)/2",
-        "f_at_q0": "1.695704199048137036812264",
-        "f_at_q0_inv": "1.695704199048137036812264",
+        "f_at_q0": "1.695703792440094566057428",
+        "f_at_q0_inv": "1.695703792440094566057428",
         "abs_diff": "0.0",
         "bar_symmetric": true
       },
       {
         "form": "Combined SYMMETRISED",
-        "f_at_q0": "1.697618088536197814836108",
-        "f_at_q0_inv": "1.697618088536197814836108",
+        "f_at_q0": "1.697617681076972839090075",
+        "f_at_q0_inv": "1.697617681076972839090075",
         "abs_diff": "0.0",
         "bar_symmetric": true
       }
     ],
-    "interpretation": "Three candidates split into TWO bar-symmetry classes: (1) Family A and via-Jones are bar-symmetric (linking_weight respects q ↔ q⁻¹ involution); (2) Bring color-tube and the combined Bring + Faddeev h⁴ are bar-asymmetric (Φ_q-side, per the cheat sheet §4 convention sorting). The asymmetry is framework-consistent for mass-anchor compute (37 scripts use Φ_q), but introduces NEW asymmetry that neither Family A nor via-Jones have — an additional axis of categorical distinctness.",
+    "interpretation": "Three candidates split into TWO bar-symmetry classes: (1) Family A and via-Jones are bar-symmetric (linking_weight respects q ↔ q⁻¹ involution); (2) Bring color-tube and the combined Bring + compact-q-dilog h⁴ are bar-asymmetric (Φ_q-side, per the cheat sheet §4 convention sorting). The asymmetry is framework-consistent for mass-anchor compute (37 scripts use Φ_q), but introduces NEW asymmetry that neither Family A nor via-Jones have — an additional axis of categorical distinctness.",
     "lean_uniqueness_ref": {
       "generic": "qou:QOU.BraidKnot.@nucleus_uniqueness_closed (3*A)",
       "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
       "note": "Certifies T_w uniqueness at the abstract empty-constraint SDP level (PR #1537 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -116,8 +116,16 @@ def main() -> int:
     )
 
     # ---- The two named conventions, placed in the family. -------------------
-    z_C_expr = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))     # binding + 8 corpus sites
-    z_D_expr = q**3 / (q**2 + 1)                      # Jones / SU_q(2)
+    # Convention C is EXCISED (owner ruling 2026-08-09, re-affirmed 2026-08-15).
+    # It stays here because this probe COMPARES the two conventions -- removing
+    # the excised one would remove the thing being compared.
+    #
+    # The "binding + 8 corpus sites" attribution was already stale when written:
+    # the binding channel moved to D on 2026-08-09. Left as recorded history
+    # rather than re-counted, because re-inventorying belongs to qou-cdh3 and a
+    # fresh count in a probe comment would only go stale again.
+    z_C_expr = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))     # EXCISED (attribution stale)
+    z_D_expr = q**3 / (q**2 + 1)                      # CANONICAL — Jones / SU_q(2)
 
     # D is exactly N = 2.
     checks["z_D_is_rank_2_exactly"] = (
@@ -199,12 +207,15 @@ def main() -> int:
 
     wb.add_assertion("checks_failed", sum(1 for v in checks.values() if not v), 0)
     wb.add_assertion(
-        "implied_rank_of_z_D", float(N_from_D), 2.0,
-        tolerance=1e-40, source="mp.findroot on z_N(q_0)",
+        # STRINGS: the documented WitnessBuilder convention for keeping an
+        # assertion value out of float64. N_from_* come off mp.findroot at the
+        # working precision and were being cut to 17 digits at the assertion.
+        "implied_rank_of_z_D", mp.nstr(N_from_D, 30), "2.0",
+        tolerance="1e-40", source="mp.findroot on z_N(q_0)",
     )
     wb.add_assertion(
-        "implied_rank_of_z_C", float(N_from_C), 2.5995155364001770,
-        tolerance=1e-15,
+        "implied_rank_of_z_C", mp.nstr(N_from_C, 30), "2.5995155364001770",
+        tolerance="1e-15",
         source="mp.findroot on z_N(q_0); independent of #4766's N_eff",
     )
     wb.add_assertion(

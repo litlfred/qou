@@ -61,7 +61,7 @@ def char_profile(Z, N, mode):
         w = [(c, 0.0, k) for (c, d, k) in w]
     out = {}
     for lam in _parts(n):
-        sig, dim, _ = _cached_seminormal(lam)
+        sig, dim, _ = _cached_seminormal(lam, Q0)  # this producer's OWN q — see qou-wee5
         if dim == 0:
             continue
         out[lam] = mp.mpf(str(chi_lambda_of_word(sig, dim, w, ng)))

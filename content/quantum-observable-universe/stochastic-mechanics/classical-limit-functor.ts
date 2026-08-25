@@ -9,7 +9,6 @@ export default definition({
   uses: [
     "def:substrate-parameter-planck",
     "def:adelic-substrate",
-    "def:classical-limit-obstruction",
   ],
   tags: [
     "classical-limit",

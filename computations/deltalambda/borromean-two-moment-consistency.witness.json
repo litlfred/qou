@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T15:26:29.232610+00:00",
-  "commitSha": "5061e1f650a59de32a539f738e5e472f37dcb752",
+  "computedAt": "2026-08-23T09:01:09.560165+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "signs_derived_both_moments_milnor_parity",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 6,
+  "durationMs": 5,
   "computation": "borromean-two-moment-consistency",
   "scriptFile": "borromean_two_moment_consistency_probe.py",
-  "scriptHash": "26ff22fb3a96",
-  "scriptCommitSha": "5061e1f650a59de32a539f738e5e472f37dcb752",
+  "scriptHash": "9ef8dde6d973",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -55,7 +55,19 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/borromean_two_moment_consistency_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/borromean_two_moment_consistency_probe.py"
   },
   "description": "Two-moment cross-check of the Borromean/Brunnian Δ_λ magnitude identification (0-fit, from committed witnesses). Signs derived at both A (Milnor parity), but the same framing gives c₃/μ₃=0.63× and c₄/μ₄=0.0127× — inconsistent ~50×, with the A-trend backwards (clusters shrink O(h⁴)→O(h⁶) where the data grows). Downgrades the μ₃ near-miss toward coincidence; the magnitude identification fails the second moment. No fit; nothing wired.",
   "auditOnly": "docs/audits/2026-08-01-deltalambda-borromean-two-moment-consistency.md",

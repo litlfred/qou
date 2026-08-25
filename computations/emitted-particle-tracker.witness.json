@@ -1,15 +1,15 @@
 {
   "engine": "emitted_particle_tracker.py",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-08T21:53:01.553666+00:00",
-  "commitSha": "0ec585b9a39cc9cfd3d7be897a4d03d6610e6f7b",
+  "computedAt": "2026-08-23T09:07:47.185253+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 29,
   "computation": "emitted-particle-tracker",
   "scriptFile": "emitted_particle_tracker.py",
-  "scriptHash": "39b869f4e124",
-  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "scriptHash": "a96d22ab56bb",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -23,12 +23,19 @@
     "sympy": "1.14.0",
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
-    "clarabel": "0.11.1"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/emitted_particle_tracker.py"
+    ],
+    "reproduce": "python3 -u computations/emitted_particle_tracker.py"
   },
   "description": "Per-step emitted-particle ledger for the iterative knot build: γγ̄ vertices + retained (bar-even) / emitted (bar-odd) trace energy in MeV, via the q-parameterised core tr_M(q⁻¹). Emitted = E₀·|bar-odd|, the Chern–Simons/decay channel that radiates as each nucleon links in. Exploratory.",
   "parameters": {
-    "E0_MeV": 4.185980827582891,
-    "q_0": 1.1099785955573347
+    "E0_MeV": 4.185981363294476,
+    "q_0": 1.1099785827513808
   },
   "data": {
     "step_p": {
@@ -37,12 +44,12 @@
       "N": 0,
       "A": 1,
       "gamma_vertices": 5,
-      "tr_q0": 1.0653062286131671,
-      "tr_qinv": 0.06824145930949495,
-      "retained_MeV": 2.3725044443975887,
-      "emitted_MeV": 2.086847004081765,
+      "tr_q0": 1.1457596924573008,
+      "tr_qinv": -0.07343443053864257,
+      "retained_MeV": 2.2443667808906858,
+      "emitted_MeV": 2.551761938549586,
       "emitted_multilink_MeV": 0.0,
-      "delta_emitted_MeV": 2.086847004081765
+      "delta_emitted_MeV": 2.551761938549586
     },
     "step_D": {
       "name": "D",
@@ -50,12 +57,12 @@
       "N": 1,
       "A": 2,
       "gamma_vertices": 12,
-      "tr_q0": 0.388357188723781,
-      "tr_qinv": 0.007768408035428439,
-      "retained_MeV": 0.829087076674441,
-      "emitted_MeV": 0.7965686695772968,
-      "emitted_multilink_MeV": 1.235020274498333,
-      "delta_emitted_MeV": -1.2902783345044682
+      "tr_q0": 0.5751722439177719,
+      "tr_qinv": -0.0014808531711619371,
+      "retained_MeV": 1.2007307349738991,
+      "emitted_MeV": 1.2069295587501585,
+      "emitted_multilink_MeV": 1.167841621981574,
+      "delta_emitted_MeV": -1.3448323797994277
     },
     "step_3He": {
       "name": "3He",
@@ -63,12 +70,12 @@
       "N": 1,
       "A": 3,
       "gamma_vertices": 17,
-      "tr_q0": 0.206578475087403,
-      "tr_qinv": 0.00026470344080442126,
-      "retained_MeV": 0.43292078981769067,
-      "emitted_MeV": 0.4318127462894881,
-      "emitted_multilink_MeV": 1.7592945142210399,
-      "delta_emitted_MeV": -0.3647559232878086
+      "tr_q0": 0.4037670368514282,
+      "tr_qinv": 4.3892744351718696e-05,
+      "retained_MeV": 0.8451725127912761,
+      "emitted_MeV": 0.8449887785814361,
+      "emitted_multilink_MeV": 1.8684933737645286,
+      "delta_emitted_MeV": -0.36194078016872244
     },
     "step_4He": {
       "name": "4He",
@@ -76,12 +83,12 @@
       "N": 2,
       "A": 4,
       "gamma_vertices": 24,
-      "tr_q0": 0.055358426266783105,
-      "tr_qinv": 3.534409525586214e-05,
-      "retained_MeV": 0.11593863035151225,
-      "emitted_MeV": 0.11579068064640295,
-      "emitted_multilink_MeV": 1.9084623623263064,
-      "delta_emitted_MeV": -0.3160220656430852
+      "tr_q0": 0.16097414544240737,
+      "tr_qinv": 1.0670137842856296e-06,
+      "retained_MeV": 0.3369196196469936,
+      "emitted_MeV": 0.3369151531471781,
+      "emitted_multilink_MeV": 2.3437342800494374,
+      "delta_emitted_MeV": -0.5080736254342578
     },
     "step_6Li": {
       "name": "6Li",
@@ -89,12 +96,12 @@
       "N": 3,
       "A": 6,
       "gamma_vertices": 36,
-      "tr_q0": 0.007891074113512872,
-      "tr_qinv": 1.6080580007620068e-07,
-      "retained_MeV": 0.016516279039098313,
-      "emitted_MeV": 0.01651560590910223,
-      "emitted_multilink_MeV": 1.9747263956756984,
-      "delta_emitted_MeV": -0.09927507473730071
+      "tr_q0": 0.04505202706655273,
+      "tr_qinv": -7.68825997085324e-10,
+      "retained_MeV": 0.09429347123046836,
+      "emitted_MeV": 0.09429347444875966,
+      "emitted_multilink_MeV": 2.939462963962972,
+      "delta_emitted_MeV": -0.2426216786984185
     },
     "step_7Li": {
       "name": "7Li",
@@ -102,14 +109,14 @@
       "N": 4,
       "A": 7,
       "gamma_vertices": 43,
-      "tr_q0": 0.0021146319542430453,
-      "tr_qinv": 2.1471332213575934e-08,
-      "retained_MeV": 0.004425949348220258,
-      "emitted_MeV": 0.00442585946963527,
-      "emitted_multilink_MeV": 1.833958331945331,
-      "delta_emitted_MeV": -0.012089746439466961
+      "tr_q0": 0.01796137598066255,
+      "tr_qinv": -1.8689830146723602e-11,
+      "retained_MeV": 0.037592992517971595,
+      "emitted_MeV": 0.03759299259620688,
+      "emitted_multilink_MeV": 2.9589807316440364,
+      "delta_emitted_MeV": -0.056700481852552775
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

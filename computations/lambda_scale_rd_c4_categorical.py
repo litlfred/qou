@@ -109,7 +109,7 @@ def main() -> int:
 
     q = sp.Symbol("q", positive=True)
     h = q - 1/q
-    z_markov = 1/(sp.sqrt(q) + 1/sp.sqrt(q))
+    z_markov = q**3 / (q**2 + 1)
 
     # ── H_3 Wedderburn-block Markov-trace weights ───────────────
     # H_3(q) has 3 blocks: V_(3), V_(2,1), V_(1,1,1)

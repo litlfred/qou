@@ -84,8 +84,25 @@ from hecke_core import (  # noqa: E402
     Phi_q,
 )
 from experimental_constants import Q_NEUTRON_MEV, M_E_MEV  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).parent
+
+# This producer never raised working precision, so EVERY mpmath value in it —
+# including the 50-dps strings it lifts out of upstream witnesses — was built at
+# mpmath's default 15 dps. The clearest symptom is in `load_tr_M_50dps` below:
+#
+#     out[r["atom"]] = abs(mp.mpf(r["tr_M_at_q0_50dps"]))
+#
+# a field whose NAME says 50 dps, truncated to 15 on the way in. The emitted
+# witness contained no decimal string longer than 25 digits anywhere.
+#
+# Nothing here was "fake precision" and no constant was built too early, so the
+# padding, raw-float64 and import-time gates all passed it cleanly — the numbers
+# were honestly float64. That is the blind spot never_raises_dps_audit.py exists
+# for (bean qou-j6gb). Idempotent, and at module scope so it also covers the
+# `mp.mpf(str(...))` constants immediately below.
+set_compute_dps()
 
 Q0 = Q_MP
 # `z_mark`, `h_val` are float64 in `hecke_core` (see `q_parameter.py`).
@@ -126,6 +143,7 @@ _T1_CACHE_B: dict | None = None
 
 # Default T1 source.  Set to "model-a" via environment to revert.
 import os as _os  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 _T1_DEFAULT_SOURCE = _os.environ.get("QOU_T1_SOURCE", "model-b")
 
 
@@ -136,7 +154,7 @@ def _load_canonical_t1() -> dict:
     global _T1_CACHE
     if _T1_CACHE is not None:
         return _T1_CACHE
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     if not path.exists():
         raise FileNotFoundError(f"missing canonical T1 witness: {path}")
     d = json.loads(path.read_text())
@@ -339,7 +357,7 @@ def term4_frobenius_codim(A):
     from schur_weyl_symbolic import partitions_of
     from hecke_characters import young_hooks, qfac
     n = 3 * A
-    nfac_val = mp.mpf(qfac(n))
+    nfac_val = mp.mpf(qfac(n, Q0_PROTON))
     q = Q0
     q_inv = 1 / q
     denom = q - q_inv
@@ -1083,7 +1101,7 @@ def q_beta_substrate_cos_tightened_MeV() -> float:
     here is the empirically-solid substrate-derived Q_β.
     """
     q = Q_MP  # Q at 50 dps mpmath (was: mp.mpf(repr(Q0_FLOAT)) — f64-quantised)
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     Q_A = mp.mpf(repr(M_E_MEV)) * mp.fabs(q ** 2 - 2 * q - 1) * (q + 1) / (2 * q ** 3)
     return float(Q_A * mp.cos((z - 1) * h / 2))
@@ -1321,6 +1339,15 @@ if __name__ == "__main__":
         except FileNotFoundError as _exc:
             print(f"  ⚠ upstream missing: {_exc}")
 
+    # `M_P_MEV_VALIDATION` was referenced BARE here while the file only ever
+    # imports it aliased, and function-scoped at that (`as _M_P_CODATA`, twice).
+    # So this line raised NameError and the producer was dead — not slow, not
+    # skipped: it could not run at all. Imported here rather than at module
+    # scope to match the convention the other two sites state explicitly:
+    # validation-only CODATA, used to report fit residuals, never as a
+    # prediction input. The neighbouring entries are plain CODATA floats, which
+    # is what this one was meant to be.
+    from codata_constants import M_P_MEV_VALIDATION  # noqa: E402
     ISOTOPES = [
         ("p",   1, 0, False,  float(M_P_MEV_VALIDATION)),
         ("n",   0, 1, False,  939.565),

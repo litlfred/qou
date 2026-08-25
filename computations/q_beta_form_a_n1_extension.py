@@ -86,6 +86,7 @@ import mpmath as mp
 import sympy as sp
 
 from _precision import set_compute_dps, fmt  # noqa: E402
+from q_parameter import Q_MP  # noqa: E402 — experimental/proton pin, 50 dps
 set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
@@ -98,11 +99,15 @@ from witness_base import WitnessBuilder  # noqa: E402
 def main() -> int:
     w = WitnessBuilder("q-beta-form-a-n1-extension", engine="mpmath")
 
-    # ── Load CAL-2 q_0 from canonical pinning witness ──────────
-    import json
-    q_pinning = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-    with q_pinning.open() as fh:
-        q_0 = mp.mpf(json.load(fh)["derived_50_digit"]["q"])
+    # ── q_0: experimental/proton pin per the 2026-08-07 owner directive ──
+    # This producer's manifest entry is physical_proton.  It previously read
+    # q-pinning-50-digit.witness.json directly; that witness is MUON-anchored,
+    # so it computed at the ideal pin while declaring the experimental one.
+    # NOTE the comment this replaces said "Load CAL-2 q_0" — CAL-2 names the
+    # CALIBRATION, not the pin.  AGENTS.md: the directive "is about which
+    # numerical evaluation code defaults to, not about redefining the 3-CAL
+    # triple".  Q_MP is the proton pin at the same 50 dps.
+    q_0 = Q_MP
 
     m_e = M_E_MEV
     q_codata = mp.mpf(str(Q_BETA_MEV))

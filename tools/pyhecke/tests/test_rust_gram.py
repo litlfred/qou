@@ -62,15 +62,36 @@ def test_rust_gram_det_matches_python():
     assert abs(rust_det - py_det) < 1e-10
 
 
-def test_rust_gram_inverse_is_right_inverse():
-    """G · G_inv = I (sanity)."""
+def test_rust_cert_has_no_full_inverse_and_quotient_inverse_kills_the_radical():
+    """Under convention D there is NO 6x6 inverse, so the certificate must not
+    offer one, and what it does offer must be the inverse on the quotient.
+
+    This replaces `test_rust_gram_inverse_is_right_inverse`, which asserted
+    `G @ cert["inverse"] == I`. That identity is FALSE under convention D — the
+    form is singular (corank 1, the three-strand q-antisymmetriser; det = 0
+    exactly over Q(q), see computations/probes/gram_radical_cellular_revalidation.py).
+    The old test survived the C -> D migration only because the whole module
+    skips when the Rust binary is not built, so it never ran to fail. Its key
+    `cert["inverse"]` no longer exists either — the field was renamed to
+    `quotient_inverse` deliberately, so that a stale consumer breaks loudly."""
     import numpy as np
 
     cert = bridge.gram_from_rust()
+    assert "inverse" not in cert, (
+        "`inverse` must not be resurrected: under convention D the 6x6 inverse "
+        "does not exist, and a field by that name would name a nonexistent object"
+    )
     G = np.array(cert["matrix"])
-    G_inv = np.array(cert["inverse"])
-    prod = G @ G_inv
-    assert np.allclose(prod, np.eye(6), atol=1e-10)
+    GP = np.array(cert["quotient_inverse"])
+    rad = np.array(cert["radical"])
+
+    # the radical really is a null direction of G
+    assert np.linalg.norm(G @ rad) < 1e-10
+    # the quotient inverse annihilates it too — that is what makes it the
+    # inverse ON THE QUOTIENT rather than an approximation to a missing inverse
+    assert np.linalg.norm(GP @ rad) < 1e-10
+    # and on the complement of the radical it does invert: G·GP·G = G
+    assert np.allclose(G @ GP @ G, G, atol=1e-10)
 
 
 def test_rust_gram_at_custom_q():

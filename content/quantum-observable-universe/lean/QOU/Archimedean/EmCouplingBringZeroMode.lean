@@ -8,7 +8,7 @@ import QOU.Archimedean.BlochWignerUnitCircle
 
 The candidate closed form
 
-  1/α_EM = q · [9]_q · [10]_q + 2g/(4π(g-1)) + O(α/(4π))
+  1/α_EM = q · [9]_q · [10]_q + 2g/(4π(g-1)) + α·H·(1 - h²α) + Δ₂
 
 at g = 4 (Bring's surface, χ = -6), with the additive correction
 2/(3π) = 2g/(4π(g-1)) identified as the τ_arch-image of a specific
@@ -23,7 +23,27 @@ sibling typeclass `QOU.Archimedean.BlochSuslinUniqueness` from
 `prop:archimedean-functor-uniqueness`, the resulting conditional
 proposition is:
 
-  Theorem (conditional). 1/α_EM - q[9]_q[10]_q = 2/(3π) + O(α).
+  Theorem (conditional). 1/α_EM - q[9]_q[10]_q = 2/(3π) + α·H·(1 - h²α) + Δ₂.
+
+**On the correction term, and why it is not written `O(α)`.** The α-dependent
+part is not an unspecified asymptotic remainder: to the order currently derived
+it is the explicit Habiro/Schwinger self-coupling
+
+  α·H·(1 - h²α),    H = [2]_q/(8π),    h = q - q⁻¹,
+
+with `h` the Hecke structure constant (the denominator of the balanced `[k]_q`,
+forced by the `σ² = (q-q⁻¹)σ + 1` relation) — **not** the mass-chain `ℏ_q =
+1 - q⁻¹`, from which it differs by a factor ≈ 2.11. Since α appears on both
+sides, the relation is solved as a fixed point rather than evaluated as a series;
+truncating after `α·H` gives the quadratic form and retaining the cubic
+`(1 - h²α)` factor gives the better one.
+
+`Δ₂` is the genuine remainder: the uncomputed **archimedean two-loop** term. It
+is *not* the `-h²Hα²` piece already included above — that piece is weight 1 (a
+q-rational over π), whereas the two-loop object is weight 3 (ζ(3)-type), about
+40× larger, and lives on the archimedean side of the wall rather than in the
+fibre. Writing the whole α-dependence as `O(α)` hid both the derived terms and
+that distinction.
 
 The Lean theorem `bring_zero_mode_additive_form` takes the class
 as an `[Instance]` hypothesis and is proved without `sorry` —

@@ -86,12 +86,26 @@ theorem habiro_terminates (h : HabiroExpansion) :
     evaluations are integers.  (Verified computationally for proton (M=8),
     neutron (M=8), deuteron (M=12), ³He (M=16), ⁴He (M=20) —
     `habiro-expansion-atomic-probe.witness.json`, `all_integral: true`.)
-    Replaces the prior placeholder `True`. -/
+
+    **Stated in the ambient ring, which is where the claim has teeth.**
+    `HabiroCoeff` is `Polynomial ℤ`, so `(h.coeffs m).eval u₀ : ℤ` is an
+    integer by typing and `∃ z : ℤ, (h.coeffs m).eval u₀ = z` — what stood
+    here until 2026-08-21 — restated that typing rather than the
+    proposition.  The claim that can fail is about `HabiroExpansion.eval`,
+    which evaluates through `Int.castRingHom R` into an arbitrary
+    `CommRing R` (`R := ℝ` at the substrate): at an integer point the
+    result stays in the image of `ℤ`, with the integer given by the
+    ℤ-valued evaluation.  Over `ℚ[u]` coefficients the corresponding
+    statement is false, which is the distinction the md is drawing. -/
 -- Ref: [habiro2000] Corollary 1.2
 -- Ref: [manuscript] witness habiro-expansion-atomic-probe.witness.json
-theorem habiro_integral (h : HabiroExpansion) (m : Fin (h.M + 1)) (u₀ : ℤ) :
-    ∃ z : ℤ, (h.coeffs m).eval u₀ = z :=
-  ⟨(h.coeffs m).eval u₀, rfl⟩
+theorem habiro_integral {R : Type*} [CommRing R]
+    (h : HabiroExpansion) (m : Fin (h.M + 1)) (u₀ : ℤ) :
+    (h.coeffs m).eval₂ (Int.castRingHom R) (u₀ : R)
+      = ((h.coeffs m).eval u₀ : ℤ) := by
+  have : ((u₀ : ℤ) : R) = (Int.castRingHom R) u₀ := rfl
+  rw [this, Polynomial.eval₂_at_apply]
+  rfl
 
 /-- **PROPOSITION (determinacy of the evaluation).** The Habiro evaluation of
     `tr_M` at the substrate `u` is *determined* by the expansion data: it is

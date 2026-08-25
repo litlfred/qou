@@ -19,4 +19,4 @@ $$
 *The energy takes values in:*
 - *Archimedean realisation $R = \mathbb{R}$: $E(\lambda, q) \in \mathbb{R}_{\geq 0}$ (totally ordered).*
 - *Non-archimedean $\mathbb{Q}_p$: $E(\lambda, q) \in \{p^{-n} : n \in \mathbb{Z}\} \cup \{0\}$ (totally ordered).*
-- *Finite field $\mathbb{F}_p$: no archimedean absolute value exists. The energy filtration is undefined. Confinement falls back to ILP feasibility (see [stable atom](#def:stable-atom)), which IS base-ring-independent.*
+- *Finite field $\mathbb{F}_p$: no archimedean absolute value exists. The energy filtration is undefined. Confinement falls back to ILP feasibility (see [stable atom](#def:stable-atom)), which *is* base-ring-independent.*

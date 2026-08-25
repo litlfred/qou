@@ -58,6 +58,7 @@ from codata_constants import (
     M_E_MEV)
 from mass_at_3A_proper import dim_q, qfac
 from q_parameter import Q as Q0
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -72,7 +73,7 @@ ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
 
 def alpha_k(k: int) -> mp.mpf:
     """α_0 = α_1 = α_3 = 1; α_2 = z²; α_{k≥4} = m_e · 8G."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3):
         return mp.mpf(1)
@@ -93,7 +94,7 @@ def phi_k_knot_weighted(
     Z(β, K) ensures Σ ~w_λ^{knot} = Σ ~w_λ within each depth k stratum
     (renormalisation, not absolute reweighting).
     """
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     closure_chi_map = {tuple(c["partition"]): mp.mpf(str(c["chi_lambda"]))
                        for c in closure_chi}
 
@@ -105,7 +106,7 @@ def phi_k_knot_weighted(
             shape = tuple(p["partition"])
             if len(shape) - 1 != k:
                 continue
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             w = mp.mpf(str(dq * dq)) / qfact
             Z_norm_uniform += w
             chi_K = mp.fabs(closure_chi_map.get(shape, mp.mpf(0)))
@@ -123,7 +124,7 @@ def phi_k_knot_weighted(
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue

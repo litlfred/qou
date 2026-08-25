@@ -55,6 +55,42 @@ sys.path.insert(0, str(HERE))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import U_MEV, M_E_MEV  # noqa: E402 — u→MeV factor (bean 46ke)
+import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+# Raise precision before anything is built. U_MEV and M_E_MEV arrive from the
+# registry as ~70-digit mpf and were being cast back down with float() at four
+# sites; that discarded registry precision for no reason.
+set_compute_dps()
+
+_KILO = mp.mpf(10) ** 3
+_MEGA = mp.mpf(10) ** 6
+_HUNDRED = mp.mpf(100)
+
+
+def _as_mpf(x):
+    """Exact mpf from a JSON number, string, or mpf. None passes through.
+
+    `mp.mpf(str(x))` and NOT `mp.mpf(x)`. The AME table stores decimal
+    literals that json parses to float64, and `mpf(<float>)` would capture the
+    binary tail instead of the decimal the file states: mpf(8071.31806) is
+    8071.3180599999996048, while mpf(str(8071.31806)) is 8071.31806 exactly.
+    Python's str() of a float is the shortest round-tripping repr, so this
+    recovers the literal rather than inventing digits. That distinction is
+    what `mpf_float_source_audit.py` exists to enforce.
+    """
+    if x is None:
+        return None
+    try:
+        return x if isinstance(x, mp.mpf) else mp.mpf(str(x))
+    except (TypeError, ValueError):
+        return None
+
+
+def _e(x):
+    """Serialize a numeric field: full-precision string, or None."""
+    return None if x is None else fmt(x)
+
 
 # Zero-parameter magic-A binding B = 2·m_e·A·(8G)·ρ_F (Catalan's G; NO fit, NO
 # AME) — used to DERIVE the ⁴He α-cluster anchor rather than feed AME back.
@@ -173,41 +209,44 @@ def assemble_row(
 
     # Reference values from AME 2020 (B in MeV, m_excess in MeV;
     # the AME file stores keV → convert).
-    b_ame_keV = ame_entry.get("binding_energy_total_keV")
-    b_ame_mev = b_ame_keV / 1000.0 if b_ame_keV is not None else None
-    me_keV = ame_entry.get("mass_excess_keV")
-    me_mev = me_keV / 1000.0 if me_keV is not None else None
-    qbeta_keV = ame_entry.get("beta_decay_energy_keV")
-    qbeta_mev = qbeta_keV / 1000.0 if qbeta_keV is not None else None
-    atomic_mass_u = ame_entry.get("atomic_mass_micro_u")
+    b_ame_keV = _as_mpf(ame_entry.get("binding_energy_total_keV"))
+    b_ame_mev = b_ame_keV / _KILO if b_ame_keV is not None else None
+    me_keV = _as_mpf(ame_entry.get("mass_excess_keV"))
+    me_mev = me_keV / _KILO if me_keV is not None else None
+    qbeta_keV = _as_mpf(ame_entry.get("beta_decay_energy_keV"))
+    qbeta_mev = qbeta_keV / _KILO if qbeta_keV is not None else None
+    atomic_mass_u = _as_mpf(ame_entry.get("atomic_mass_micro_u"))
     if atomic_mass_u is not None:
-        atomic_mass_u = atomic_mass_u / 1e6  # micro-u → u
+        atomic_mass_u = atomic_mass_u / _MEGA  # micro-u → u
 
     # Free nucleons (Z+N=1): mass prediction track.
     is_nucleon = (Z, N) in [(1, 0), (0, 1)]
     if is_nucleon:
         l1 = l1_lookup(Z, N, layer1)
+        # `prediction_MeV_50dps` is a 50-digit string. float() on a field whose
+        # NAME states its precision was the single clearest defect here.
         m_pred = (
-            float(l1.get("prediction_MeV_50dps"))
+            _as_mpf(l1.get("prediction_MeV_50dps"))
             if (l1 and l1.get("prediction_MeV_50dps")) else None
         )
         m_ref = (
-            float(l1.get("B_AME_MeV"))
+            _as_mpf(l1.get("B_AME_MeV"))
             if (l1 and l1.get("B_AME_MeV") is not None) else None
         )
         m_err = m_pred - m_ref if (m_pred is not None and m_ref is not None) else None
-        m_err_ppm = (m_err / m_ref * 1e6) if (m_err is not None and m_ref) else None
-        
+        m_err_ppm = (m_err / m_ref * _MEGA) if (m_err is not None and m_ref) else None
+
         m_composite_MeV = None
-        m_composite_ref_MeV = atomic_mass_u * float(U_MEV) if atomic_mass_u is not None else None
+        m_composite_ref_MeV = atomic_mass_u * U_MEV if atomic_mass_u is not None else None
         m_composite_err_MeV = None
         m_composite_err_ppm = None
         
         if m_p_borr is not None and m_n_borr is not None:
-            m_composite_MeV = N * m_n_borr + Z * m_p_borr + Z * float(M_E_MEV)
+            m_composite_MeV = (N * _as_mpf(m_n_borr) + Z * _as_mpf(m_p_borr)
+                               + Z * M_E_MEV)
             if m_composite_ref_MeV is not None:
                 m_composite_err_MeV = m_composite_MeV - m_composite_ref_MeV
-                m_composite_err_ppm = (m_composite_err_MeV / m_composite_ref_MeV * 1e6) if m_composite_ref_MeV else None
+                m_composite_err_ppm = (m_composite_err_MeV / m_composite_ref_MeV * _MEGA) if m_composite_ref_MeV else None
                 
         return {
             "Z": Z, "N": N, "A": A, "element": element,
@@ -217,24 +256,24 @@ def assemble_row(
             "prediction_MeV_50dps": (
                 l1.get("prediction_MeV_50dps") if l1 else None
             ),
-            "reference_MeV_50dps": m_ref,
-            "err_MeV": m_err,
-            "err_ppm": m_err_ppm,
+            "reference_MeV_50dps": _e(m_ref),
+            "err_MeV": _e(m_err),
+            "err_ppm": _e(m_err_ppm),
             "composite_mass": {
-                "M_pred_MeV": m_composite_MeV,
-                "M_AME_MeV": m_composite_ref_MeV,
-                "err_MeV": m_composite_err_MeV,
-                "err_ppm": m_composite_err_ppm,
+                "M_pred_MeV": _e(m_composite_MeV),
+                "M_AME_MeV": _e(m_composite_ref_MeV),
+                "err_MeV": _e(m_composite_err_MeV),
+                "err_ppm": _e(m_composite_err_ppm),
                 "canonical_status": "borromean-tower-via-fitted-lambda",
                 "formula": "N·m_n + Z·m_p + Z·m_e − B(A,Z)",
                 "m_p_source": "borromean-tower (conj:borromean-baryon-mass-formula)" if m_p_borr is not None else None,
                 "B_source": "L1-borromean-via-canonical"
             },
             "ame_reference": {
-                "B_AME_keV": b_ame_keV,  # 0 for free nucleons
-                "mass_excess_keV": me_keV,
-                "atomic_mass_u": atomic_mass_u,
-                "Q_beta_keV": qbeta_keV,
+                "B_AME_keV": _e(b_ame_keV),  # 0 for free nucleons
+                "mass_excess_keV": _e(me_keV),
+                "atomic_mass_u": _e(atomic_mass_u),
+                "Q_beta_keV": _e(qbeta_keV),
             },
         }
 
@@ -256,21 +295,15 @@ def assemble_row(
     l2 = l2_lookup(Z, N, layer2)
     l3 = l3_lookup(Z, N, layer3)
 
-    def _as_float(x):
-        try:
-            return float(x)
-        except (TypeError, ValueError):
-            return None
-
     # Canonical candidates: the α-cluster recursion (canonical-recursive;
     # c_αα = m_e·Vol(7²₁) is canonical). Present in L2 and/or the L3 sweep.
     canonical_candidates: list[tuple[float, str, str]] = []
-    if l2 and _as_float(l2.get("B_pred_MeV")) is not None:
+    if l2 and _as_mpf(l2.get("B_pred_MeV")) is not None:
         canonical_candidates.append(
-            (_as_float(l2["B_pred_MeV"]), "L2-alpha-cluster", "canonical-recursive")
+            (_as_mpf(l2["B_pred_MeV"]), "L2-alpha-cluster", "canonical-recursive")
         )
     if (l3 and str(l3.get("strategy", "")).startswith("α-cluster")
-            and _as_float(l3.get("B_pred_MeV")) is not None):
+            and _as_mpf(l3.get("B_pred_MeV")) is not None):
         # DERIVE-DON'T-ANCHOR (2026-07-11, owner ruling): the α-cluster ANCHOR
         # cell — n_α=1, pairs=0 — is the trivial identity B_pred = 1·B(⁴He) +
         # 0·c_αα = B(⁴He) itself. The L3 sweep fed that ⁴He value from AME
@@ -291,16 +324,16 @@ def assemble_row(
             # Gate the derived path on applicable==True (Copilot): only tag
             # magic-A-derived when magic-A actually applies AND yields a value.
             _applicable = bool(_magic and _magic.get("applicable"))
-            _b_derived = _as_float(_magic.get("B_pred_MeV")) if _applicable else None
+            _b_derived = _as_mpf(_magic.get("B_pred_MeV")) if _applicable else None
             if _b_derived is not None:
                 _b_val = _b_derived
                 _layer_tag = "L3-α-cluster:n_α=1,pairs=0(magic-A-derived)"
             else:
                 # magic-A inapplicable — fall back to the L3 value; tag honestly.
-                _b_val = _as_float(l3["B_pred_MeV"])
+                _b_val = _as_mpf(l3["B_pred_MeV"])
                 _layer_tag = "L3-α-cluster:n_α=1,pairs=0(L3-fallback)"
         else:
-            _b_val = _as_float(l3["B_pred_MeV"])
+            _b_val = _as_mpf(l3["B_pred_MeV"])
             _layer_tag = f"L3-{l3['strategy']}"
         canonical_candidates.append((_b_val, _layer_tag, "canonical-recursive"))
 
@@ -333,15 +366,15 @@ def assemble_row(
     #   • L3 census  B = ρ·Vol(census-knot), ρ hand-assigned
     #   • L3 partial-shell  linear interpolation between α anchors
     noncanonical_candidates: list[tuple[float, str, str]] = []
-    if l1 and _as_float(l1.get("prediction_MeV_50dps")) is not None:
+    if l1 and _as_mpf(l1.get("prediction_MeV_50dps")) is not None:
         noncanonical_candidates.append(
-            (_as_float(l1["prediction_MeV_50dps"]), "L1-canonical",
+            (_as_mpf(l1["prediction_MeV_50dps"]), "L1-canonical",
              "canonical-with-empirical-assignment")
         )
     if (l3 and not str(l3.get("strategy", "")).startswith("α-cluster")
-            and _as_float(l3.get("B_pred_MeV")) is not None):
+            and _as_mpf(l3.get("B_pred_MeV")) is not None):
         noncanonical_candidates.append(
-            (_as_float(l3["B_pred_MeV"]),
+            (_as_mpf(l3["B_pred_MeV"]),
              f"L3-{l3.get('strategy', 'partial-shell')}", "heuristic")
         )
 
@@ -356,16 +389,17 @@ def assemble_row(
         excised = {
             "excised_layer": layer_used,
             "excised_status": canonical_status,
-            "excised_prediction_MeV": b_pred,
+            "excised_prediction_MeV": _e(_as_mpf(b_pred)),
             "reason": "non-canonical (heuristic / empirical-assignment)",
         }
     else:
         layer_used = "derivation-pending"
         canonical_status = "pending"
 
+    b_pred = _as_mpf(b_pred)
     err_MeV = (b_pred - b_ame_mev) if (b_pred is not None and b_ame_mev is not None) else None
-    err_pct = (err_MeV / b_ame_mev * 100.0) if (err_MeV is not None and b_ame_mev) else None
-    err_ppm = (err_MeV / b_ame_mev * 1e6) if (err_MeV is not None and b_ame_mev) else None
+    err_pct = (err_MeV / b_ame_mev * _HUNDRED) if (err_MeV is not None and b_ame_mev) else None
+    err_ppm = (err_MeV / b_ame_mev * _MEGA) if (err_MeV is not None and b_ame_mev) else None
 
     # L4 composite mass: M = N·m_n + Z·m_p − B
     # CANONICAL ONLY (per user directive 2026-05-19): emit only when
@@ -387,12 +421,13 @@ def assemble_row(
             "asymptotic-approximation",  # L4 A>40 q-CLT extrapolation (approx, not canonical)
         )
     ):
-        m_composite_MeV = N * m_n_borr + Z * m_p_borr + Z * float(M_E_MEV) - b_pred
+        m_composite_MeV = (N * _as_mpf(m_n_borr) + Z * _as_mpf(m_p_borr)
+                           + Z * M_E_MEV - b_pred)
         composite_canonical_status = canonical_status
 
     # L4 reference: from AME atomic mass (× u→MeV, registry U_MEV ≈ 931.494).
     m_composite_ref_MeV = (
-        atomic_mass_u * float(U_MEV) if atomic_mass_u is not None else None
+        atomic_mass_u * U_MEV if atomic_mass_u is not None else None
     )
     m_composite_err_MeV = (
         m_composite_MeV - m_composite_ref_MeV
@@ -400,7 +435,7 @@ def assemble_row(
         else None
     )
     m_composite_err_ppm = (
-        m_composite_err_MeV / m_composite_ref_MeV * 1e6
+        m_composite_err_MeV / m_composite_ref_MeV * _MEGA
         if (m_composite_err_MeV is not None and m_composite_ref_MeV)
         else None
     )
@@ -410,21 +445,21 @@ def assemble_row(
         "prediction_type": "binding_energy",
         "layer": layer_used or "L?-pending",
         "canonical_status": canonical_status,
-        "prediction_MeV_50dps": b_pred,
-        "reference_MeV_50dps": b_ame_mev,
-        "err_MeV": err_MeV,
-        "err_pct": err_pct,
-        "err_ppm": err_ppm,
+        "prediction_MeV_50dps": _e(b_pred),
+        "reference_MeV_50dps": _e(b_ame_mev),
+        "err_MeV": _e(err_MeV),
+        "err_pct": _e(err_pct),
+        "err_ppm": _e(err_ppm),
         "excised": excised,
         # L4 composite mass — emitted ONLY when B is canonical
         # (canonical_status ∈ {canonical-substrate,
         # canonical-with-empirical-assignment, canonical-recursive}).
         # No AME B fallback. heuristic / pending rows get None here.
         "composite_mass": {
-            "M_pred_MeV": m_composite_MeV,
-            "M_AME_MeV": m_composite_ref_MeV,
-            "err_MeV": m_composite_err_MeV,
-            "err_ppm": m_composite_err_ppm,
+            "M_pred_MeV": _e(m_composite_MeV),
+            "M_AME_MeV": _e(m_composite_ref_MeV),
+            "err_MeV": _e(m_composite_err_MeV),
+            "err_ppm": _e(m_composite_err_ppm),
             "canonical_status": composite_canonical_status,
             "formula": "N·m_n + Z·m_p − B(A,Z)",
             "m_p_source": (
@@ -434,10 +469,10 @@ def assemble_row(
             "B_source": layer_used,
         },
         "ame_reference": {
-            "B_AME_keV": b_ame_keV,
-            "mass_excess_keV": me_keV,
-            "atomic_mass_u": atomic_mass_u,
-            "Q_beta_keV": qbeta_keV,
+            "B_AME_keV": _e(b_ame_keV),
+            "mass_excess_keV": _e(me_keV),
+            "atomic_mass_u": _e(atomic_mass_u),
+            "Q_beta_keV": _e(qbeta_keV),
             "estimated": (
                 ame_entry.get("binding_energy_per_A_estimated")
                 or ame_entry.get("mass_excess_estimated")

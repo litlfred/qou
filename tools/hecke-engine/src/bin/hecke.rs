@@ -33,7 +33,8 @@ struct Cli {
 enum Cmd {
     /// Print the H_3(q) Gram matrix + inverse as JSON.
     Gram {
-        /// Substrate parameter q (default: q_0 = 1.1099785955541805).
+        /// Substrate parameter q (default: q_0 = 1.1099785827513808, the
+        /// proton pin — see `gram::Q_0`).
         #[arg(long)]
         q: Option<f64>,
         /// Pretty-print JSON.

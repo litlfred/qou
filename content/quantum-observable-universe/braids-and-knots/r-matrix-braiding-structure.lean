@@ -68,7 +68,18 @@ class RMatrixBraidingContext where
 /-- **Yang–Baxter equation for the universal `R`-matrix**
     ([`prop:r-matrix-braiding-structure`]).
 
-    `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`. -/
+    `R₁₂ ∘ R₁₃ ∘ R₂₃ = R₂₃ ∘ R₁₃ ∘ R₁₂`.
+
+    **Assumed, not derived here.** The body projects
+    `RMatrixBraidingContext.claim_yang_baxter`, so this declaration
+    *restates* the hypothesis rather than proving it. The citations below
+    record where the property is established for the object the abstract
+    context models — Drinfeld's universal `R`-matrix of a quantised
+    enveloping algebra — not a proof carried out in this development, which
+    never constructs that `R`-matrix. Note the statement is genuinely
+    conditional: `comp`, `R12`, `R13`, `R23` are arbitrary context data, and
+    YBE is false for a general assignment, so this may not be strengthened
+    to a global `axiom` over the context. -/
 -- Ref: [drinfeld1985] V. Drinfeld, Hopf algebras and the quantum Yang–Baxter equation, 1985
 -- Ref: [kassel1995] Ch. VIII (Quantum SL(2)) + Ch. XIII (Braided categories)
 -- Ref: [manuscript] Ch. 4, §enveloping-algebras
@@ -84,7 +95,14 @@ def r_matrix_braiding_structure
     The braid operators satisfy the braid relation
     `Ř₁ Ř₂ Ř₁ = Ř₂ Ř₁ Ř₂`, so `σ_i ↦ Ř_i` extends to a representation of
     the braid group on any tensor power of a finite-dimensional
-    `U_q(𝔰𝔲(2))`-module. -/
+    `U_q(𝔰𝔲(2))`-module.
+
+    **Assumed, not derived here** — the body projects
+    `RMatrixBraidingContext.claim_braid_relation`. Kassel is cited for where
+    the braid relation is established for `Ř = P ∘ R` built from a genuine
+    universal `R`-matrix; it is not a proof performed here. As with
+    `r_matrix_braiding_structure`, `Rcheck1`/`Rcheck2` are arbitrary context
+    data, so the statement is genuinely conditional. -/
 -- Ref: [kassel1995] Ch. XIII (Braided categories)
 -- Ref: [manuscript] Ch. 4, §enveloping-algebras
 def braid_rep_from_R_check

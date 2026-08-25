@@ -1,0 +1,92 @@
+{
+  "probe": "qbeta_5two_route43_flattened_rogers",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 60,
+  "follows": "Route 42 (the volume anchor and the Bloch-Wigner obstruction)",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the flattening is NOT a fitted parameter: eps_j = (2 log y_j - 3 log(1-y_j)) / (2 pi i) is measured as exactly (+1, -1, 0), the cubic's own branch data. That these are integers is already sorry-free Lean on main (`branch_data_of_cubic`), proved from the cubic with no dilogarithm involved -- so the flattening the extended Bloch group needs is already a theorem",
+      "eps_measured": [
+        "1.0",
+        "-1.0",
+        "0.0"
+      ],
+      "eps_expected": [
+        1,
+        -1,
+        0
+      ],
+      "worst_deviation": "1.55575381947e-61",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "THE REFORMULATION. Summed over the Galois orbit, the FLATTENED Rogers dilogarithm at the saddle roots equals exactly -pi^2/6 -- one unit of the extended Bloch group's indeterminacy. The imaginary part vanishes too, so this is a complex identity and not merely a statement about real parts",
+      "sum_Rhat": "(-1.644934066848226436472415166646025189219 + 0.0j)",
+      "minus_pi_sq_over_6": "-1.644934066848226436472415166646025189219",
+      "residual": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE SIGNATURE. -3pi^2/2 is exactly -9 units of pi^2/6, and the flattened sum is exactly -1 unit -- while the INDIVIDUAL Re(V_j)/(pi^2/6) are irrational. Integral only in the sum is the signature of a Chern-Simons-type invariant, whose indeterminacy is precisely pi^2/6. The gate requires the individual values NOT to be integers, so the quantisation cannot be read as trivial",
+      "sum_rule_in_units": "-9.0",
+      "per_root_in_units": [
+        "-2.1615504004341775804",
+        "-2.1615504004341775804",
+        "-4.6768991991316448391"
+      ],
+      "any_individual_integral": false,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the flattened form is EQUIVALENT to the sum rule, not weaker: sum V_j equals 3*sum Rhat plus an elementary term built from the cubic's branch data and the logs. So proving the flattened statement proves the sum rule, which is what makes the reformulation worth having",
+      "sum_V": "(-14.8044066016340379282517364998 - 5.30048710131356396277497282403j)",
+      "three_sum_Rhat_plus_elementary": "(-14.8044066016340379282517364998 - 5.30048710131356396277497282403j)",
+      "residual": "2.48920611114e-60",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the whole solution set over p,q in {-2..2} with the conjugate root carrying the conjugate flattening -- reported rather than suppressed, because eps was FOUND by this search and only then recognised as the branch data. A second assignment also gives an integer, so this probe does NOT claim the flattening is unique or that it satisfies Neumann's geometric conditions, which are not imposed anywhere here",
+      "solutions": [
+        {
+          "p1_q1": [
+            -2,
+            2
+          ],
+          "p3_q3": [
+            0,
+            0
+          ],
+          "units": 11
+        },
+        {
+          "p1_q1": [
+            1,
+            0
+          ],
+          "p3_q3": [
+            0,
+            0
+          ],
+          "units": -1
+        }
+      ],
+      "count": 2,
+      "branch_data_is_among_them": true,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "sum_sigma Rhat(y_sigma; eps_sigma, 0) = -pi^2/6 exactly, with eps the cubic's own branch data (+1,-1,0) -- already integral by a sorry-free Lean theorem on main. Equivalent to the sum rule up to an elementary term.",
+    "signature": "-3pi^2/2 is -9 units of pi^2/6 and the flattened sum is -1 unit, while the individual Re(V_j) are irrational in those units. Integral only in the sum -- a Chern-Simons-type quantisation.",
+    "not_proved": "this is a reformulation. Nothing here derives the integer -1, and Neumann's parity/geometric conditions on the flattening are not imposed -- eps was found by search and then recognised. The target becomes: show sum_sigma [y_sigma; eps_sigma, 0] is torsion in extended-Bloch B-hat(C).",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

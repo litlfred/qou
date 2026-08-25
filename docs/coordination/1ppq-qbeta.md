@@ -83,6 +83,47 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 - 1 ppt → N=5
 - **1 ppQ → N=7**
 
+## Resummation arm — CLOSED (the D-ladder is convergent)
+
+> **The bar-odd `D(ũ)` resummation front is closed, and its negative results are
+> not open levers.** `D(ũ)` is **convergent** — radius
+> `ρ = ũ(q*_ρ) = 0.142799996644689…`, the image of a **`Q_b` zero** at
+> `q*_ρ ≈ 1.48989`, the real root > 1 of an irreducible degree-12 factor of the
+> `Δ_net` numerator; `κ = 0`. So there is no instanton action, no Borel-plane
+> singularity to locate, no Stokes constant to extract and no Écalle/`Φ_b`
+> resummation to perform for this object. Correction:
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md);
+> registry row **KC22**. The large-order law is fixed with no free parameters by
+> the single logarithmic branch point,
+> `d_k = −(1/(2h*_ρ))·ρ^{−k}/k·(1 + O(1/k))`, `h*_ρ = 0.818706471352`.
+>
+> **Tier the 11 probe witnesses of that arm as scope-(b) closed / ill-posed**,
+> not scope-(a) negative. Their recorded failures — *"gate fails at every `s`"*,
+> *"length-blocked at k=41"*, *"UNDECIDABLE at k=21"*, *"estimator gap
+> persists"* — are the estimators detecting that **there is nothing to
+> estimate**, not obstructions to be overcome by more terms:
+>
+> `qbeta-dladder-` **ecalle-acceleration** · **ecalle-phib-resummation** ·
+> **single-instanton-extraction** · **fibre-branch-stokes-ambiguity** ·
+> **fibre-two-action** · **jackson-qborel-acceleration** ·
+> **qborel-leroy-resummation** · **parity-split-resummation** ·
+> **parity-odd-singularity-even-order** · **barodd-borel-pade-laplace** ·
+> **parity-adjudication**
+>
+> **Do not delete them** — they are the evidence the arm was pursued properly
+> and exhausted, and their input (the exact `d_k`, `k ≤ 21`) is live.
+> **Do not widen this to the neighbours.** The 6 arithmetic witnesses
+> (non-holonomicity, the 2-adic parity grading and its Lean anchors) are
+> **unaffected**; `qbeta-dladder-extension-singularity`'s exact k=31 extension
+> **stands and is reusable** (only its "divergence-class `C` drift" reading is
+> the spurious `1/log k` decay); and the deformed-meridian / odd-channel-Stokes
+> witnesses are a **different object**, not assessed either way.
+> **`Φ_b` itself is genuinely resurgent — only `D(ũ)` is not**, so a blanket
+> sweep of the family would be the mirror of the original error.
+>
+> Full classification of all 29 (A unaffected / B ill-posed / C partial /
+> D not assessed): audit §6. Tracked on bean `qou-4wq6`.
+
 ## Open probes (current queue)
 
 > **Refuted-class map (method-level).** Before opening a new derivation probe,
@@ -1052,13 +1093,26 @@ the [2026-07-12 capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md)
 (the `1/u³` artifact, `S = h·D(ũ)`, structural sign-flip, decay-sector `q*`)
 these are now **registry rows KC21 + KC22** in
 [`ck-dk-canonical-registry.md §9`](ck-dk-canonical-registry.md) + JSON twin
-(validator green): the odd-channel element is transcendental/**resurgent**
-(Écalle class) — the low-order (q-)holonomic search class is CLOSED. Do not
-re-run holonomic/P-finite hunts on `D(ũ)`; the live routes are (i) the
-resurgent/acceleration chain, (ii) KC19's crossing-weight `w(q)` derived from
+(validator green): ~~the odd-channel element is transcendental/**resurgent**
+(Écalle class)~~ **[WITHDRAWN 2026-08-09]** — the low-order (q-)holonomic search
+class is CLOSED. Do not
+re-run holonomic/P-finite hunts on `D(ũ)`; the live routes are ~~(i) the
+resurgent/acceleration chain~~ **[(i) WITHDRAWN 2026-08-09]**, (ii) KC19's crossing-weight `w(q)` derived from
 the Φ_b state integral, (iii) canonical `c₄^even` rungs via H₄ Hoefsmit
 (bean `8we6`) since extracted `c_k≥4` are noise (P4 entropy audit). No fit;
 no c_k wired; no tier change.
+
+> **⚠ [SUPERSEDED 2026-08-09] — route (i) is withdrawn, and the *reason* given
+> for the closure is wrong. The closure instruction itself STANDS.** `D(ũ)` is
+> **CONVERGENT** (`ρ = ũ(q*_ρ) = 0.142799996644689…`, `κ = 0`), so the
+> "transcendental/resurgent (Écalle class)" reading — and the
+> "resurgent/acceleration chain" named as live route (i) — rest on a divergence
+> the ladder does not have. **"Do not re-run holonomic/P-finite hunts on
+> `D(ũ)`" remains correct and in force**: a convergent series need not be
+> holonomic, and KC22's closed form `φ(w)log(1−w/ρ) + ψ(w)` is exactly such an
+> element — so the (q-)holonomic exclusion survives losing the divergence that
+> was mistakenly offered as its justification. Routes (ii) and (iii) are
+> untouched. See the 2026-08-14 entry at the end of this ledger; `qou-dri7`.
 
 
 **2026-07-17 (bar-odd-S follow-up) — ξ-FRAME PHASE LAW: κ̃_n/ξⁿ ∈ (−i)ⁿ·ℝ (rung 1
@@ -1080,6 +1134,14 @@ is FIXED on main (`ser_div`, valuation-aware, credits the #3691 diagnosis);
 corpus sweep finds zero remaining shift-divide offenders. Audit:
 `2026-07-17-deformed-tower-xi-frame-phase-law.md`. No fit; no c_k wired; no
 integer Stokes constant claimed; no tier change.
+
+> **⚠ Premise corrected 2026-08-09 — read the entry below with this.** Its
+> results are stated "conditional on the triple-confirmed divergence class",
+> and the ladder is **convergent** (`κ = 0`). The gate failure is therefore not
+> a finite-`k` shadow to be resolved by longer ladders, and the `A ≈ 0.236`
+> observation is **not** a lever awaiting ORD-63 confirmation. What survives:
+> the sorry-free 2-adic transport invariant, and the measurements as data. See
+> §"Resummation arm — CLOSED" at the top of this ledger.
 
 **2026-07-17 (PR #3818, `claude/dladder-qborel-acceleration-2026-07-17`) —
 q-Borel acceleration of the D-ladder: transport invariant proved, fixed-base
@@ -1167,11 +1229,17 @@ of `η²` alone and die at the `ũ¹` obstruction. **Scope-(a):** the 07-04
 positive stands (`η` bar-odd, `η² ∈ ℚ(√3)[[ũ]]` margin 9); what is refuted is
 `E` being *generated by* `η²` — the bar-even fibre needs ≥ 2 independent
 generators (`ũ`, `η²`). Consonant with KC21/KC22: no fibre-level algebraic
-shortcut past the resurgent D-ladder exists. Probe
+shortcut past the ~~resurgent~~ **[WITHDRAWN 2026-08-09]** D-ladder exists.
+Probe
 `qbeta_eta_square_functional_g_probe.py` → witness
 `qbeta-eta-square-functional-g-probe.witness.json`; audit
 [`2026-07-17-eta-square-functional-g-refutation.md`](../audits/2026-07-17-eta-square-functional-g-refutation.md).
 No fit; no c_k wired; no tier change.
+
+> **⚠ [SUPERSEDED 2026-08-09]** — only the word "resurgent" is withdrawn:
+> `D(ũ)` is convergent (`ρ = 0.1428`, `κ = 0`). **The no-shortcut finding
+> itself stands** — there is still no fibre-level algebraic shortcut past the
+> D-ladder. See the 2026-08-14 entry at the end of this ledger.
 
 
 
@@ -1183,7 +1251,7 @@ the run); the 11-point ladder (N≤524288, dps 1050, 947d cancellation) measured
 −0.166002385 — residual 9.2e-9, LAW SURVIVES. κ̃₅ = 210.675324 − 35.29743·i
 [5d/3d]; rungs 1–4 sharpened to 22/17/13/9 digits; #3691 values reproduced.
 The perturbative-null for A_ω hardens: κ̃_n/ξⁿ ∈ (−i)ⁿ·ℝ verified through
-rung 5. G3 route-1 (owner-uploaded sources now in uploads/): exact-integer
+rung 5. G3 route-1 (owner-uploaded sources now in library/): exact-integer
 I_Δ engine + exact triality certificates + substrate convergence
 (I_Δ(0,0)(e^−t)=0.1922789824); DGG anchor (4.20) glyph-verified; assembly of
 the 4₁ TOTAL index NOT yet certified (flat-wing divergence of the bare 4.18;
@@ -1248,7 +1316,7 @@ bug* — its `tet_norm` under-summed the per-factor series, reported a spurious
 negative lead for large-argument I_Δ, and its convergence guard then wrongly
 rejected the convergent bare sum as a "flat divergent wing." There is **no
 missing 'U=2·log m charge dictionary'**: (4.18)'s arguments ARE the resolved
-dictionary (DGG §4.3 scout of uploads/1112.5179). Validated coefficients now in
+dictionary (DGG §4.3 scout of library/1112.5179). Validated coefficients now in
 hand: `I_41(0,0) = 1−2q−3q²+2q³+8q⁴+18q⁵+18q⁶+14q⁷−12q⁸−52q⁹−106q¹⁰−…`. The A_ω
 VALUE remains one tranche away — the coefficient↔Stokes dictionary (GGM
 2012.00062, classical Stokes matrix `S⁰=[[1,0],[−3,1]]` → load-bearing integer
@@ -1310,9 +1378,14 @@ median resummation) + "for 2, look at knot operators." Both scoped + settled:
 (`BarOddLadderShape`), precision-limited by the experimental Q_β
 (`dq*/dQ_β ≈ −0.54`), NOT by any resummation or knot choice. The one genuinely-
 open target is the geometric `Im 𝔙_q → N_odd` normalization (the capstone) —
-where the anchor-dependence enters — and the odd-channel D-ladder q-Borel/Écalle
-acceleration (sibling #3818) operating on `D(u)` where the swing lives. No c_k;
+where the anchor-dependence enters — and ~~the odd-channel D-ladder q-Borel/Écalle
+acceleration (sibling #3818) operating on `D(u)` where the swing lives~~
+**[WITHDRAWN 2026-08-09]**. No c_k;
 no fit; scope-(a).
+
+> **⚠ [SUPERSEDED 2026-08-09]** — the q-Borel/Écalle acceleration named here has
+> no target: `D(ũ)` is convergent (`ρ = 0.1428`, `κ = 0`). The capstone
+> normalization named alongside it is unaffected. `qou-dri7` (scrapped).
 
 **2026-07-18 (#3872) — G3 STEP 2 DONE: GGM 4₁ Stokes data exact — Theorem 9
 certified, (59a) DERIVED OCR-free, integer Stokes 3 at ι = Vol(4₁)/π; new
@@ -1404,9 +1477,15 @@ prune; 5₂ quantum volume anchor-smooth #3902; branch-point locus generic). The
 c₃ bar-odd swing is confirmed representational — the 1/u³ inversion of a smooth
 N_odd (BarOddLadderShape) crossing zero at q*, pinned by experimental Q_β. Per
 the owner conditional (NOT anomalously close ⇒), the lever is now the
-alien-calculus / resurgence thread (D-ladder Écalle acceleration, sibling
-#3818) — where the swing lives in the transseries of D(u), not in any knot's
+~~alien-calculus / resurgence thread (D-ladder Écalle acceleration, sibling
+#3818) — where the swing lives in the transseries of D(u)~~
+**[WITHDRAWN 2026-08-09]**, not in any knot's
 geometry. No c_k; no fit; scope-(a).
+
+> **⚠ [SUPERSEDED 2026-08-09]** — this lever is withdrawn. `D(u)` has no
+> transseries to live in: it is convergent (`ρ = 0.1428`, `κ = 0`), with closed
+> form `φ(w)log(1−w/ρ) + ψ(w)`. The swing itself is real and unaffected — it is
+> the `1/u³` ladder inversion of the smooth `N_odd`, as this same entry states.
 **2026-07-18 (follow-on to merged #3872) — DEFORMED LEG TRANCHE A: GGM §5.2
 4₁ holomorphic blocks implemented; m-structure certified; Theorem-14
 assembly reading OPEN (honest fail); Kashaev-ray frame confirmed as the
@@ -1529,8 +1608,8 @@ dictionary, and the odd-phase null. No fit; no c_k wired.
 **2026-07-18 (#3916) — Φ_b 2-loop b-dictionary: bar-parity IS the √3 trace-field
 grading; F1's odd D-ladder pinned to the geometric κ_odd subladder.** Follow-up
 to the branch-point closure, on the restarted designated Φ_b branch. Per #3844's
-four-front note the single unowned piece feeding F1 (odd D-ladder Écalle
-acceleration) is "the deformed b-dictionary normalization, which #3596's Φ_b
+four-front note the single unowned piece feeding F1 (~~odd D-ladder Écalle
+acceleration~~ **[work item SCRAPPED 2026-08-14]**) is "the deformed b-dictionary normalization, which #3596's Φ_b
 construction supplies once its saddle expansion is pushed to 2-loop at m=q₀." The
 4₁ Φ_b state integral's semiclassical tower log Z ~ 𝔙/ħ + ½logdet + Σ ħⁿSₙ has
 fluctuation invariants Sₙ = the exact Ohtsuki κ-ladder (κ_1..κ_7, up to ħ↔2πi/N).
@@ -1549,6 +1628,13 @@ stays the OPEN keystone bridge — characterized, not asserted; the raw odd-k
 growth is O(1) decreasing (3-adic denominator explosion), #3861's mild q-Gevrey
 order is the arithmetic-normalized extraction. ħ↔2πi/N: perturbative κ_n only.
 No c_k wired; scope-(a); no fit.
+
+> **⚠ [SUPERSEDED 2026-08-09]** — only the *work item* named at the top of this
+> entry is withdrawn: `D(ũ)` is convergent (`ρ = 0.1428`, `κ = 0`), so there is
+> nothing to accelerate (`qou-dri7`, scrapped). **The b-dictionary
+> normalization, the Φ_b 2-loop tranche, and the Ohtsuki κ-ladder findings in
+> this entry are unaffected** — the κ-tower *is* genuinely divergent
+> (Gevrey-1, Borel singularity `A ≈ 0.7`), which is a different ladder.
 
 **2026-07-18 (#3916 cont.) — d↔κ BRIDGE PRUNED (formalize-first): the action is
 Vol(4₁)/π (shared), not new; the keystone narrows to one √3-graded Stokes
@@ -1806,7 +1892,12 @@ mechanism* behind that ladder and pins where the odd channel departs from it:
 - **Bar-odd `Q_β` channel escapes it (KC22).** The D-ladder `D(ũ)` is proven **not** low-order
   `(q-)holonomic` in any tested class (KC22, prime-certified). In this language: the odd
   channel is *not* the trace of powers of a knot operator on any finite-dimensional Gram
-  module — it has no quantum-A-polynomial recurrence, hence the resurgent/Écalle route. The
+  module — it has no quantum-A-polynomial recurrence. **It does NOT follow that the odd
+  channel is resurgent** (corrected 2026-08-14; the clause here formerly read "hence the
+  resurgent/Écalle route"). Non-holonomic does not imply divergent: KC22's own closed form
+  `D(w) = φ(w)log(1−w/ρ) + ψ(w)`, with algebraic `φ`,`ψ` over a degree-12 field, is
+  **convergent** (`ρ = 0.1428`, `κ = 0`) *and* not low-order P-finite — it is the
+  counterexample to the inference, and it is the object under discussion. The
   even(μ–p) vs odd(`Q_β`) split is exactly "has a Gram recurrence" vs "does not."
 
 Audit: [`2026-07-18-knot-operator-gram-recurrence.md`](../audits/2026-07-18-knot-operator-gram-recurrence.md).
@@ -1903,7 +1994,7 @@ scope-(a).
 from Masbaum, "be critical" colored-Jones gate CLEARED).** The owner flagged
 the self-calibrating `(V_{5_2}-1)/(V_{4_1}-1)` extraction of `C_{5_2,1}` as a
 possibly-erroneous probe and pointed at Masbaum's twist-knot paper (uploaded on
-main, `uploads/agt-v3-n1-p17-p.pdf`, `masbaum2003`, DOI 10.2140/agt.2003.3.537).
+main, `library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf`, `masbaum2003`, DOI 10.2140/agt.2003.3.537).
 Critical verification (`qbeta_5two_masbaum_cyclotomic_probe.py`, 4/4):
 (1) V_{4_1}, V_{5_2} match KnotInfo; (2) Masbaum Thm 5.1/Rem 5.2 for K_2
 reproduces the standard Jones V_{5_2} at N=2 EXACTLY (fixing t=q⁻¹);
@@ -2625,7 +2716,7 @@ location result, not a closure.
 
 **2026-07-26 (convention reconciliation, CLOSED) — V_GGMW = V_GGM +
 2π²/3 exactly; the corpus's Im(V₁) and V₃ match NEITHER published
-convention.** With GGM 2012.00062v3 in `uploads/`, eq (234) at x = 1
+convention.** With GGM 2012.00062v3 in `library/`, eq (234) at x = 1
 gives `V = 3Li₂(y) + (log(−y))²` on `y² = (1−y)³` (the same cubic as
 GGMW eq 184), and §6.1 states "for σ₃ we only keep the real part of V".
 Computed at 30 dps: `V_GGM(σ₁) = −3.5556078909 + 2.8281220883i`,
@@ -2982,7 +3073,7 @@ integral-defined dilogarithm, the object that makes sense at `‖y₁‖ = 1.52`
 `Re(1 − yz) > 0` on `[0,1]`, true for all three roots).
 
 *Route 6 — Zagier's enhanced dilogarithm — REFUTED, scope-(a).* Owner supplied
-Zagier (2007) as `uploads/zagier-the-dilogarithm-function.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
+Zagier (2007) as `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
 `{eᵘ+eᵛ=1}`, valued in `ℂ/(π²/2)ℤ`, looked like our `Vⱼ` exactly: same
 `Li₂ + (log)(log)`-with-branch-data shape, roots on `2u = 3v + 2πik`, and
 `−3π²/2` an exact multiple of the ambiguity. Had it closed, the problem would
@@ -3320,3 +3411,247 @@ The sum rule is `Σⱼ Re Vⱼ = −3π²/2`; what is proved is `Σₖ(2L(wₖ)+
    lane's whole "take real parts" convention and is written down nowhere.
 
 **Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-09 (PR #4865) — THE 5₂ SADDLE SUM RULE IS PROVED. Routes 51–70.**
+
+Every entry above this line records the sum rule as "verified to 80 dps,
+unproved". That is now false, and this entry is the reason. Those entries are
+left as written — they were accurate on their dates, and this is a log.
+
+`QOU/QBeta/FiveTwoComplexPentagon.lean`, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+* `fiveTwo_saddle_sum_rule` — there exist `t ∈ (0,1)` real and `a` with
+  `Im a > 0`, all three of `t, a, ā` roots of `X³ − 2X² + 3X − 1`, with
+  `Li₂(a) + Li₂(ā) + Li₂(t) = −π²/6 − ½·log²t + ⅔·(arg a − π)²`.
+* `fiveTwo_sum_V` — `Σⱼ Vⱼ = −3π²/2 + 2π·log t·i`. The real part is (SUM). The
+  imaginary part is new: the corpus only ever recorded `Σ Re Vⱼ`.
+* `fiveTwoSaddleSumRule_holds` — the class `QOU.QBeta.FiveTwo.FiveTwoSaddleSumRule`,
+  whose docstring read "No instance is provided: the statement is open",
+  constructed at `Li = cLiTwoExt`, `y = ![a, ā, t]`, `b = ![−1, +1, +1]`.
+
+**The route was not the one this log spent ten entries planning.** The whole
+`A`-vs-`B` programme — Kubert/distribution, the "one remaining distribution
+relation", `FiveTwoDilogLadder` — was never needed. What worked:
+
+1. the complex five-term identity for `cRogersL`, unconditional when one
+   variable is real in `(0,1)` and the other is off both cuts;
+2. the flattened (Neumann `ℬ̂(ℂ)`) pentagon, with **no** branch hypotheses;
+3. complex Rogers reflection + inversion, giving the anharmonic group in four
+   one-log forms where the `log²` terms cancel completely;
+4. branch pinning from `y² = (1−y)³` plus a 4π-wide window, then `SaddleRoots`
+   — proved inhabited by IVT (`f(0) = −1 < 0 < 1 = f(1)`) and an explicit square
+   root (`0 < 3t² − 4t + 8` unconditionally).
+
+Verified per-module with the `.olean` deleted first: `FiveTwoComplexPentagon` +
+`FiveTwoFlattenedPentagon` exit 0 at 3241 jobs, 0 warnings; `FiveTwoSaddleSumRule`
+exit 0 at 1893 jobs. `origin/main` at measurement `f689f12d2d06aee2959002f13b9ac39c1a79e3cf`.
+
+Probe `computations/probes/qbeta_5two_route70_sum_rule_proved_probe.py` (80 dps,
+4 gates) is a **control on the statement, not evidence**: it checks that the
+expression proved is the one this log recorded as the target
+(`A = 0.9717306814686482591277741699`), and that `b = (−1,+1,+1)` is pinned —
+the only one of five assignments reaching `−3π²/2`.
+
+**NOT proved: the 5₂ VOLUME conjecture.** `Vol(5₂) = 3·D(y₁)` and `D` cancels
+identically on the Galois sum — which is exactly why the sum rule could fall
+without reaching the volume. Nothing in this lane speaks to `Vol(5₂)`.
+
+**2026-08-14 (PR #5022 follow-on) — THE D-LADDER IS CONVERGENT; the
+resurgent/Écalle inference is WITHDRAWN. This ledger was never told.**
+
+The 2026-08-09 convergence correction
+([`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md))
+landed in the KC22 registry row and **never reached this ledger**. That is the
+defect this entry closes: the ledger's last word on `D(ũ)` was the
+divergence-era conclusion, and five downstream entries (2026-07-12 → 07-18)
+name a "resurgent/acceleration chain" as a live route on that basis. Each is
+now marked `[SUPERSEDED 2026-08-09]` in place; none is rewritten.
+
+**What changed.** `D(ũ) = Σ d_k ũ^k` is **convergent**, radius
+`ρ = ũ(q*_ρ) = 0.142799996644689688905720885779` — the image of a `Q_b` zero the
+2026-07-12 singularity search omitted (`k²Δ²log|d_k| → 1`, `kΔ² → 0`, so
+`κ = 0`). Closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)` with algebraic `φ`,`ψ` over
+a degree-12 field, giving `d_k = −(1/(2h*_ρ))ρ^{−k}/k(1+O(1/k))` with **no free
+parameters**.
+
+**What is withdrawn.** Écalle acceleration, median/Watson resummation and
+Borel–Leroy all exist to sum a *divergent* series. There is none here. The three
+beans carrying that work — `qou-b00b`, `qou-dri7`, `qou-xuc4`, one task under
+three titles, all opened 2026-07-17 with empty bodies — are consolidated into
+`qou-dri7` and **scrapped**.
+
+**What is NOT withdrawn** — three separate things, easy to over-read:
+
+1. **The (q-)holonomic closure stands.** KC22's exclusion is untouched. A
+   convergent series need not be holonomic; `φ(w)log(1−w/ρ) + ψ(w)` is exactly
+   such an element. Do not re-run P-finite hunts on `D(ũ)` — that instruction
+   was right, only its stated *reason* was wrong.
+2. **The κ-tower is genuinely divergent** and its resurgence work is unaffected
+   (Gevrey-1, ratios 1.32→3.63→4.93, Borel singularity `A ≈ 0.7`) — as this
+   ledger already recorded, with the scope-(b) invariant that a divergent and a
+   convergent series cannot be equated term-by-term. Two different ladders; the
+   κ-tower diverges, `D(ũ)` does not.
+3. **Écalle machinery as a normalization technique** (Écalle median /
+   M-dictionary lateral) is a different usage and is untouched.
+
+**A correction of an inference, not just a status.** The framing bullet reading
+*"no quantum-A-polynomial recurrence, hence the resurgent/Écalle route"* is
+corrected in place: non-holonomic does **not** imply divergent, and `D(ũ)` is
+the counterexample. That step was invalid independently of the 2026-08-09
+correction. Wider corpus sweep for the same step: bean `qou-arvu`.
+
+**Scope-(a).** No invariant is named excluding q-Borel methods from this
+function. A study of the `log(1−w/ρ)` branch point would be a *different* task
+with a different motivation and needs a bean that says so — not a resumption of
+the scrapped titles. No fit; no `c_k` wired; no tier change (c₃ stays
+EMPIRICAL/REFUTED-as-real-q).
+
+## 2026-08-15 — owner redirect: c₃ refutation chain audited against the C→D trace-convention flip (survives; value layer C-conditional)
+
+**Trigger.** Owner critical-distance redirect: probes behind "c₃ REFUTED as
+real-q fibre element" may be invalid after the C→D trace flip, the
+color-weighting fixes, the GGM V₃ = −7.693 correction, and the q₀ pin changes.
+
+**Audit:** [`2026-08-15-c3-refutation-chain-convention-validity-audit.md`](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)
+· probe `qbeta_c3_ladder_trace_convention_sensitivity_probe.py` (9/9, exit 0)
+· registry §9g + c₂/c₃/KC13/KC21/KC22 provenance notes (.md + JSON twin,
+validator clean).
+
+**Verdict, tiered:**
+
+- **REFUTED-as-real-q SURVIVES** — measured, not assumed: the anchor-swing
+  mechanism is convention-immune (swing D/C = **1.0052**; `u`, `Q_A` are
+  z-free), and P3 (entropy bound), P4 (q→1 shadow; `z_C(1)=z_D(1)=1/2`
+  exact), P6 (KC20 `Δ_net` numerator z-free) are convention-independent.
+  V₃ was already canonical in the 2026-07-30 B1 re-run; color-weighting does
+  not reach the qbeta chain; anchor q₀ values are unchanged.
+- **The value layer is convention-C-conditional** — the extractor's N=1 rung
+  consumes `z_C` via `α=(z−1)h/2` (`qbeta_utils.py:124-125`); re-extraction
+  under D shifts c₃ from ≈ −2.07 to ≈ **−974** — so (H1) `−Vol(4₁)`,
+  `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`, and the KC21/KC22 D-ladder constants
+  hold in the C frame only. `bar(z_D) = q⁻⁴·z_D` exactly ⇒ KC13's
+  no-scalar-z-source prune is C-scoped.
+- **Bigger than the redirect asked:** the canonical rung **c₂ = −1 is also a
+  C-frame statement** (implied empirical c₂ under D ≈ −9.30; rung convergence
+  58× under C vs 1.12× under D). The C→D excision does NOT transfer to Q_β by
+  a z-swap; it would require re-deriving the ladder from the D-trace.
+- **Root cause:** the Q_β channel was never registered in
+  `trace-convention-registry.json` (channels: mass/binding/borromean only),
+  so the whole channel has been convention-silent — the exact failure mode
+  that registry's rule names. Open item: bean **`qou-b3nk`** (register the
+  channel; examine whether the two-row forcing transfers to the decay
+  channel, whose explicit weight instance has `y_(1³) ≠ 0`).
+
+Scope-(a) throughout; no convention adjudicated; no `c_k` wired; no tier
+flips (c₂ stays CANONICAL for its now-named object; c₃ stays
+EMPIRICAL/REFUTED-as-real-q — in both frames).
+
+## 2026-08-15 — bean `qou-b3nk` worked: qbeta-decay channel registered DISPUTED; the forcing/ladder boundary proved
+
+**Branch:** `claude/qbeta-channel-convention-2026-08-15` (PR #5111) ·
+**Audit:** [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md)
+
+Outcome **(c)** of the bean, leaning (b): **neither C nor D is derived for the
+decay channel** — registered `disputed` in `trace-convention-registry.json`
+(`channels.qbeta-decay`: definitional `null` (contradictory — the decay blocks
+write the excised-C value while naming it "the Markov–Jones parameter", whose
+referent has read D since 2026-08-09), production `C`; R9 evaluator on
+`qbeta_utils.markov_parameter` asserts the C-state, CONFIRMED |d| = 1.9e-51).
+
+New Lean, sorry-free
+([`MarkovZFullBarCondition.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+`lean`-direct exit 0, no `sorryAx`):
+
+- **`decayLadder_zC_threeRow_ne_zero`** — any faithful normalised Markov trace
+  at the ladder's `z_C` has `y_(1³) ≠ 0` for all `s = √q > 1` (locus
+  `s⁷+s⁵−s⁴−1 = (s−1)(s⁶+s⁵+2s⁴+s³+s²+s+1)` empty). **The two-row forcing and
+  the C-frame ladder are mutually exclusive** — no z-swap transfer; D-adoption
+  = ladder re-derivation (measured collapse: c₃ → ≈ −974, N2/N1 0.017 → 0.89).
+- **`zD_full_bar_covariant`** / **`barEven_fullBar_forces_classical`** /
+  **`zC_fails_fullBar`** — the full-bar condition `bar(z) = z − h` (PR #4834
+  discussion, sympy witness 2026-08-08) is now in Lean: D holds exactly; any
+  bar-even `z` (= C, KC13) fails away from `q² = 1`. Premise (trace
+  bar-compatibility) named, not proved.
+
+Witness correction: the `y_(1³) ≠ 0` escape had been cited via the explicit
+instance `y = (z, 1/2−z, z)` — that inhabitant is **not** an Ocneanu
+`z_C`-trace (its `σ₀` value is `h/2` exactly, z-independent, sympy). The
+correct witness is C's own solve (`y_(1³) = 0.02274…`, probe 18/18, proton
+pin) and the Lean brick. Conclusion unchanged.
+
+Scope-(a); no convention adjudicated; no `c_k` wired; no tier flips. Bean
+stays **in-progress** (closing is a human action); settlement routes in the
+audit §4 (derive the decay fibre, or prove/refute
+`conj:binding-qbeta-complex-volume` / bar-compatibility).
+
+## 2026-08-15 — KC21's parity immunity: it was ASSERTED; now VERIFIED, and its stated mechanism was wrong (bean `qou-kc21im`, PR #5123)
+
+**Trigger:** reading the **owner-redirect entry** above (*"c₃ refutation chain
+audited against the C→D trace-convention flip"*, PR #5107 — not the `qou-b3nk`
+entry immediately preceding, which landed separately) back against the sentence
+it added. That audit's own logic splits the c₃ record into a C-conditional value
+layer and a structural layer, and the structural sentence reads *"the structural parity
+statement (`S(−ε)=−S(ε)`) and the `1/u³` result are convention-immune."* The
+`1/u³` half was **measured** (swing ratio D/C = 1.0052). The parity half was
+not — and it is exactly the kind of claim that needs measuring, since `c₃(q)`
+is *defined by* an extractor consuming the convention-C `z`, and under D that
+extractor is a different function (c₃ ≈ −974).
+
+**Probe:** [`qbeta-kc21-parity-convention-immunity`](../../computations/qbeta/qbeta_kc21_parity_convention_immunity_probe.py)
+— 12/12, exit 0, 60 dps, proton pin.
+**Lean:** [`LadderParityReflection.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderParityReflection.lean)
+— `lean`-direct exit 0, sorry-free, no `sorryAx`.
+**Audit:** [2026-08-15 KC21 parity convention-immunity](../audits/2026-08-15-kc21-parity-convention-immunity-audit.md).
+**Registry:** new **§9h**; KC21 row + JSON twin relabelled.
+
+**Verdict, tiered:**
+
+- **VERIFIED-immune (`ε`-parity).** Re-derived under D: `Im` odd / `Re` even to
+  `1e-45` relative over `ε ∈ [10⁻³⁰, 10⁻²]`, non-vacuously
+  (`Im c₃^D(q₀+10⁻⁸i) = 0.0386`), while the C→D shift moves the value by 972 =
+  **470× \|c₃^C\|**. A parity that survives a 470× reframing of its own object
+  is not riding on the frame.
+- **The reduction is stronger than "z-free".** `z` *does* enter — it just
+  cannot matter. The parity is **Schwarz reflection**, whose only hypothesis on
+  the Markov parameter is that `z` be **real-valued on the real q-axis**; it
+  never reads `z`'s formula. Every ingredient (`h`, `ℏ_q`, `b`, `u`, `Q_A`,
+  `z_C`, `z_D`, `cos`) is reflective, and the class is closed under the field
+  operations and composition. A control convention `z_X = q/(1+q²)`, in **no**
+  channel, has the parity too. Formalized quantified over conventions:
+  `alphaPhase_im_odd_of_reflective_markov`.
+- **Correction 1 — the literal statement is FALSE.** `Re S` is even and nonzero
+  (`−0.0394593` at the proton pin), so `S(−ε) = −S(ε)` read of the full complex
+  value cannot hold. The statement is about **`Im S`** / the decay projection.
+  Registry corrected; `reflective_re_even` makes the failure a theorem.
+- **Correction 2 — the parity is NOT evidence for bar-oddness.** KC21 and the
+  2026-07-12 capstone derive it as *"bar-odd ⇒ odd in ε"*.
+  `ImQDecayLinearResponse`'s actual chain is `fig8TraceC_conj`: **real
+  coefficients** ⇒ conjugation commutes ⇒ `Im` odd in `ε`. Bar-oddness is never
+  used, and the bar-**even** `Q_A` has the identical `ε`-parity (measured). So
+  *"the sign-flip is structural because `S` is bar-odd"* should read *"because
+  `S` is real-analytic in `q`"* — a premise satisfied by essentially every
+  ladder ingredient, which says correspondingly little about which channel `S`
+  lives in. The immunity stands; the evidential weight attached to it does not.
+- **The BAR involution is untouched, and is now the more pressing question.**
+  `σ: q ↦ q⁻¹` is a *different* involution from complex conjugation.
+  `bar(z_D) = q⁻⁴·z_D` and the `z_C` full-bar-condition failure (PR #5111)
+  stand as stated, and **the `h·D(ũ)` bar-split inherits none of the
+  `ε`-parity's immunity.** Correction 2 removes the `ε`-parity as support for
+  the bar-odd reading, so the companion question — whether trace-derived
+  quantities carry clean *bar* parity at all now — is left open and sharper
+  than before.
+
+Scope-(a) throughout; no convention adjudicated for the Q_β channel (`qou-b3nk`
+unchanged); no C-conditional value revived; no `c_k` wired; no tier flipped in
+either direction (KC21 stays `proved-lean`, the value layer stays
+C-conditional). Adjacent: the NO-FLOAT64 ratchet's NEW-dirty count drained
+**2 → 0** — a `round()` float64 in this branch's own probe, fixed at the
+producer here; and one left by the #5107 probe, which this branch also fixed
+but which `main` had **independently fixed first**, in the better form. Both
+carried the duration as a float; this branch serialized it as the string
+`durationSec`, `main` as integer `durationMs`. Only `durationMs` is in
+`_EPHEMERAL_META_FIELDS`, so `durationSec` would have left an unmasked
+wall-clock field drifting on every re-run. On rebase this branch's version of
+that one fix was **dropped in favour of main's** (convergent fix, superseded);
+the leak is drained either way.

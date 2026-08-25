@@ -3,7 +3,9 @@ from pathlib import Path
 import json
 from mpmath import mp, mpf
 
-mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 HERE = Path('.').resolve()
 sys.path.insert(0, str(HERE))
 import _path_bridge as _pb

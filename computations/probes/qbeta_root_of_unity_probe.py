@@ -17,7 +17,7 @@ ANTI-FITTING DISCIPLINE (the whole point — see prompt §"THE ANTI-FITTING
 DISCIPLINE"). Matching a knot invariant to c_2,c_3 is meaningful ONLY for a
 knot + root-of-unity that the framework FORCES with ZERO free choices.
 Exactly two forced candidates exist:
-  (a) figure-eight 4₁  — q₀ is fixed by Vol(4₁)=2Λ(π/3); the Kashaev/volume knot.
+  (a) figure-eight 4₁  — q₀ is fixed by Vol(4₁)=2·Cl₂(π/3)=6Λ(π/3); the Kashaev/volume knot.
   (b) Hopf link        — the canonical hint c_3 = −2 = J_Hopf(q=1) (registry §3).
 Plus trefoil 3₁ as a CONTROL (non-hyperbolic; D(z)=0).
 
@@ -42,7 +42,8 @@ mp.mp.dps = 60
 # ---------------------------------------------------------------------------
 # Substrate constants (canonical defs — qbeta_sa_qa_chain_gamma.py lines 63-67)
 # ---------------------------------------------------------------------------
-Q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+Q0 = mp.mpf(Q_50_DIGIT_STR)
 H = Q0 - 1 / Q0
 HBAR_Q = (Q0 - 1) / Q0
 B_SQ = (H ** 2 + 3) / (H ** 2 + 4)
@@ -53,7 +54,7 @@ U_SUB = B * HBAR_Q ** 2  # 0.008517234550156142… (matches witness)
 C2_TARGET = mp.mpf("-1.0")
 C3_TARGET = mp.mpf("-2.06934257711516783787971951725")
 
-VOL_41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))  # 2 Λ(π/3) ≈ 2.02988
+VOL_41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))  # 2·Cl₂(π/3) = 6Λ(π/3) ≈ 2.02988
 
 
 # ===========================================================================
@@ -341,7 +342,7 @@ def main():
         "description": (
             "FORCED-knot root-of-unity / Ohtsuki–Habiro test of the Q_β c_k "
             "ladder. Computes the genuine quantum invariants of the only two "
-            "framework-forced knots — figure-eight 4₁ (q₀ fixed by Vol(4₁)=2Λ(π/3); "
+            "framework-forced knots — figure-eight 4₁ (q₀ fixed by Vol(4₁)=2·Cl₂(π/3); "
             "Kashaev/Habiro cyclotomic colored Jones + Ohtsuki loop series) and the "
             "Hopf link (registry hint c_3=−2=J_Hopf(q=1)) — plus the trefoil 3₁ as a "
             "non-hyperbolic control. Each formula is verified against a literature "

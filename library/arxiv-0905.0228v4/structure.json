@@ -1,0 +1,188 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-0905.0228v4",
+ "source": {
+  "file": "0905.0228v4.pdf",
+  "sha256": "1744545d0f21094990dbcd087d38a50947a3ee737f2c10f89264512848d8b721",
+  "bytes": 213208,
+  "pages": 19
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "0905.0228",
+   "version": "4",
+   "primary_class": "math.CO",
+   "stamp_date": "17 Jun 2010"
+  },
+  "doi": null,
+  "title": "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS",
+  "authors_raw": "JOHANN CIGLER AND JIANG ZENG",
+  "abstract": "Two well-known q-Hermite polynomials are the continuous and discrete q-Hermite polynomials. In this paper we consider a new family of q-Hermite polynomials and prove several curious properties about these polynomials. One st riking property is the connection with q-Fibonacci and q-Lucas polynomials. The latter relation yields a generaliz ation of the Touchard-Riordan formula.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210709004909-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "A CURIOUS q-ANALOGUE OF HERMITE POL YNOMIALS",
+  "title_lines": [
+   "A CURIOUS q-ANALOGUE OF HERMITE POLYNOMIALS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The q-Hermite polynomials Hn(x,s|q)",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The rescaled discrete q-Hermite polynomials II",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
+   "page": 12,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Appendix",
+   "page": 16,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Some well-known facts",
+   "page": 16,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "A second proof of Proposition 14",
+   "page": 17,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgement",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 11183,
+   "n_words": 2392
+  },
+  {
+   "id": "sec-001-3-the-rescaled-discrete-q-hermite-polynomials-ii",
+   "number": "3",
+   "title": "The rescaled discrete q-Hermite polynomials II",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 6141,
+   "n_words": 1503
+  },
+  {
+   "id": "sec-002-4-connection-with-q-fibonacci-polynomials-and-q",
+   "number": "4",
+   "title": "Connection with q-Fibonacci polynomials and q-Lucas polynomials",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 16,
+   "n_chars": 5754,
+   "n_words": 1506
+  },
+  {
+   "id": "sec-003-5-appendix",
+   "number": "5",
+   "title": "Appendix",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-51-some-well-known-facts",
+   "number": "5.1",
+   "title": "Some well-known facts",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2069,
+   "n_words": 457
+  },
+  {
+   "id": "sec-005-52-a-second-proof-of-proposition-14",
+   "number": "5.2",
+   "title": "A second proof of Proposition 14",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 19,
+   "n_chars": 2215,
+   "n_words": 519
+  },
+  {
+   "id": "sec-006-acknowledgement",
+   "number": null,
+   "title": "Acknowledgement",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 113,
+   "n_words": 17
+  },
+  {
+   "id": "sec-007-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 2786,
+   "n_words": 429
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 9,
+  "sections": 8,
+  "chars_total": 30261
+ }
+}

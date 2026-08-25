@@ -45,7 +45,14 @@ from typing import Any, Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
 from derivation_chain import FirstPrinciple, Q_0  # noqa: E402
+from witness_producer_executes_audit import (  # noqa: E402
+    is_prose as _is_prose,
+    producer_of as _producer_of,
+)
 from witness_base import WitnessBuilder  # noqa: E402
+from mpmath import mp, mpf  # noqa: E402 — chain values are carried as mpf, never float64
+
+mp.dps = 50
 
 
 HERE = Path(__file__).parent
@@ -86,8 +93,9 @@ class ChainResult:
     chain_path: Path
     target: str
     target_value: Any
-    target_tolerance: float
-    computed_value: Optional[float]
+    target_is_numeric: bool
+    target_tolerance: Any
+    computed_value: Optional[Any]
     structural_ok: bool
     leaf_matches: bool
     issues: list[str]
@@ -95,30 +103,77 @@ class ChainResult:
     has_script_frontier: bool
 
 
-def _eval_simple_algebra(operation: str, q: float) -> Optional[float]:
+def _eval_simple_algebra(operation: str, q: Any) -> Optional[Any]:
     """Try to recognise a small set of canonical algebraic operations
     in the `operation` field; return the numerical result at q if
-    possible, else None."""
+    possible, else None.
+
+    Arithmetic is done in `mpf`, not float64: `c_q = 1/(q - 1)` amplifies its
+    input by q/(q-1) ~ 10, so a float64 round-trip here would eat a decade of
+    the 1e-12 tolerance the chains are checked against.
+    """
     op = operation.replace(" ", "")
     # c_q derivation algebra
     if "1/(q-1)" in op or "1/(q−1)" in op:
-        return 1.0 / (q - 1.0)
+        qq = q if isinstance(q, mpf) else mpf(str(q))
+        return mpf(1) / (qq - 1)
     return None
+
+
+#: `q_0 = <digits>` as written into a chain step's prose `operation` field.
+_DECLARED_Q0_RE = re.compile(r"q_0\s*=\s*([0-9]+\.[0-9]+)")
+
+
+def _declared_q0(operation: str) -> Optional[Any]:
+    """The q_0 a chain step *declares it evaluated at*, as `mpf`, or None.
+
+    A chain records which substrate pin it was built against; the module-level
+    `Q_0` is the experimental (proton) pin that new compute defaults to
+    (AGENTS.md, owner directive 2026-08-07).  Re-evaluating a muon-pinned chain
+    against the proton `Q_0` mixes the two layers inside one comparison, which
+    is the straddle AGENTS.md forbids -- and `c_q` amplifies the ~11.5 ppb
+    mu-p tension to ~1.16e-7, three decades past the 1e-12 chain tolerance, so
+    the straddle reads as a hard formula failure rather than as the pin
+    difference it is.  Prefer the chain's own declared pin; fall back to `Q_0`
+    only for a chain that names none.
+
+    The migration posture (AGENTS.md rule 4) keeps recorded muon-layer
+    artifacts as recorded until the tracked sweep (bean `qou-1c4y`) runs, so
+    this check must be able to validate them where they stand.
+    """
+    m = _DECLARED_Q0_RE.search(operation)
+    return mpf(m.group(1)) if m else None
+
+
+def _ser(v: Any) -> Any:
+    """Serialize a carried value for the witness.
+
+    `mpf` is not JSON-serializable, and `float(v)` would reintroduce exactly the
+    float64 downcast this module now avoids, so numeric values leave as
+    full-precision decimal text.  `WitnessBuilder.add_assertion` documents
+    strings as the drained convention (qou-t0rf) and still coerces with
+    `float()` for the pass/fail decision, so nothing downstream changes.
+    """
+    return mp.nstr(v, mp.dps) if isinstance(v, mpf) else v
 
 
 def validate_chain(chain_path: Path) -> ChainResult:
     with chain_path.open("r", encoding="utf-8") as f:
-        chain_data = json.load(f)
+        # `parse_float=str` keeps every JSON float literal as its exact source
+        # text, so `mpf` below reads the authored digits rather than a value
+        # already rounded through float64.  Without this the downcast happens
+        # inside `json`, before this module ever sees the number.
+        chain_data = json.load(f, parse_float=str)
 
     target = chain_data["target"]
     target_value_raw = chain_data["target_value"]
     try:
-        target_value: Any = float(target_value_raw)
+        target_value: Any = mpf(str(target_value_raw))
         target_is_numeric = True
     except (TypeError, ValueError):
         target_value = target_value_raw
         target_is_numeric = False
-    target_tolerance = float(chain_data.get("target_tolerance", 1e-9))
+    target_tolerance = mpf(str(chain_data.get("target_tolerance", "1e-9")))
     steps = chain_data["steps"]
 
     # 1. Structural well-formedness re-check (defended by the schema,
@@ -210,7 +265,7 @@ def validate_chain(chain_path: Path) -> ChainResult:
     else:
         last = leaves[-1]
         try:
-            computed = float(last["output_value"])
+            computed = mpf(str(last["output_value"]))
         except (TypeError, ValueError):
             structural_issues.append(
                 f"COMPUTATIONAL leaf {last['name']!r} output_value not "
@@ -226,20 +281,34 @@ def validate_chain(chain_path: Path) -> ChainResult:
 
     # 4. Re-evaluate simple algebraic targets (c_q chain) at the shared Q_0.
     if "c_q" in target and target_is_numeric:
-        recomputed = _eval_simple_algebra(steps[-1].get("operation", ""), Q_0)
+        leaf_op = steps[-1].get("operation", "")
+        declared = _declared_q0(leaf_op)
+        q_eval = declared if declared is not None else mpf(str(Q_0))
+        pin = "chain-declared" if declared is not None else "module Q_0 (proton)"
+        recomputed = _eval_simple_algebra(leaf_op, q_eval)
         if recomputed is not None:
             rel = abs(recomputed - target_value) / abs(target_value)
             if rel > target_tolerance:
+                # mp.nstr, not an .2e format spec: `rel` and
+                # `target_tolerance` are mpf, and mpf.__format__ rejects
+                # `.2e` with a TypeError.  This is the FAILURE branch, so
+                # the crash fired only when the validator had a real
+                # discrepancy to report -- it ran clean for as long as the
+                # chain agreed and died the moment it disagreed, discarding
+                # the finding it had just made.
                 structural_issues.append(
-                    f"c_q algebra re-eval at q_0={Q_0} gives {recomputed} "
-                    f"vs target {target_value} (rel_diff {rel:.2e}, "
-                    f"target_tolerance {target_tolerance:.2e})"
+                    f"c_q algebra re-eval at q_0={mp.nstr(q_eval, 20)} "
+                    f"[{pin}] gives {mp.nstr(recomputed, 20)} "
+                    f"vs target {target_value} "
+                    f"(rel_diff {mp.nstr(rel, 3)}, "
+                    f"target_tolerance {mp.nstr(target_tolerance, 3)})"
                 )
 
     return ChainResult(
         chain_path=chain_path,
         target=target,
         target_value=target_value,
+        target_is_numeric=target_is_numeric,
         target_tolerance=target_tolerance,
         computed_value=computed,
         structural_ok=structural_ok,
@@ -252,11 +321,25 @@ def validate_chain(chain_path: Path) -> ChainResult:
 
 # ── Witness trust audit ────────────────────────────────────────
 
+def _scan(root: Path, pattern: str) -> list[Path]:
+    """Recursively collect `pattern` under `root`, skipping the retired-producer
+    archive `_deprecated/`.
+
+    Previously these scans used a NON-recursive `glob`, so every witness and
+    chain living in a subdirectory (`probes/`, `qbeta/`, `deltalambda/`,
+    `alpha_em/`, ...) was invisible to the trust audit — ~1.25k live witnesses,
+    i.e. the audit's "computational-only" headline *understated* the real gap
+    rather than overstating it. A coverage hole in a gap-measuring tool is the
+    one defect that hides itself, so the scan is recursive.
+    """
+    return sorted(q for q in root.rglob(pattern) if "_deprecated" not in q.parts)
+
+
 def collect_referenced_scripts(chains_dir: Path) -> set[str]:
     """Walk every chain JSON and collect the set of script paths
     referenced via `script: <path>` in any step's `notes`."""
     refs: set[str] = set()
-    for cp in sorted(chains_dir.glob("*.derivation.json")):
+    for cp in _scan(chains_dir, "*.derivation.json"):
         with cp.open("r", encoding="utf-8") as f:
             data = json.load(f)
         for s in data.get("steps", []):
@@ -281,7 +364,7 @@ def collect_fully_trusted_scripts(chains_dir: Path) -> set[str]:
     derivation-fully-trusted (the chain proves their output from
     first principles, no computational shortcuts)."""
     fully: set[str] = set()
-    for cp in sorted(chains_dir.glob("*.derivation.json")):
+    for cp in _scan(chains_dir, "*.derivation.json"):
         with cp.open("r", encoding="utf-8") as f:
             data = json.load(f)
         steps = data.get("steps", [])
@@ -303,6 +386,7 @@ def audit_witness_trust(chains_dir: Path) -> dict:
     out: dict[str, list[str]] = {
         "derivation-fully-trusted": [],
         "derivation-backed": [],
+        "audit-only-exempt": [],
         "computational-only": [],
     }
 
@@ -312,7 +396,7 @@ def audit_witness_trust(chains_dir: Path) -> dict:
         guessed = _expected_script_for_witness(witness_name)
         return guessed in basenames
 
-    for wp in sorted(chains_dir.glob("*.witness.json")):
+    for wp in _scan(chains_dir, "*.witness.json"):
         # Skip the audit's own output to avoid self-reference noise.
         if wp.name == AUDIT_WITNESS_NAME:
             continue
@@ -325,19 +409,42 @@ def audit_witness_trust(chains_dir: Path) -> dict:
         # not objects; tolerate them. Prefer scriptFile from the first dict
         # element (preserves metadata); otherwise fall back to the name-based
         # guess in _is_in_set.
+        # `scriptFile` is only ONE of the spellings a witness uses to name its
+        # producer -- `producer` and `computation.script` are equally common,
+        # and the whole chi-at-q0 family (8 witnesses) declares `producer`.
+        # Reading `scriptFile` alone left them uncredited: a chain that claimed
+        # their producer moved the count by zero, so the drain looked like it
+        # had done nothing. `witness_producer_executes_audit.producer_of` knows
+        # every spelling and the categorizer already uses it; use the same one
+        # here so the two tools cannot disagree about who produced what.
         if isinstance(data, dict):
-            script_file = data.get("scriptFile")
+            script_file = _producer_of(data)
         elif isinstance(data, list):
-            script_file = next(
-                (item.get("scriptFile") for item in data if isinstance(item, dict)),
-                None,
-            )
+            first = next((item for item in data if isinstance(item, dict)), None)
+            script_file = _producer_of(first) if first else None
         else:
             script_file = None
+        # A prose provenance value ("(legacy -- no matching producer found ...)")
+        # names no script; treat it as absent rather than as a basename.
+        if script_file and _is_prose(script_file):
+            script_file = None
+        if script_file:
+            script_file = Path(script_file).name
+        # A witness that declares `auditOnly` records a QA/audit tool's FINDING,
+        # not a derivation of a physical target — demanding a first-principles
+        # chain for the output of a sorry-counter is a category error. This is the
+        # same basis on which the audit already skips its own witness above; it is
+        # reported in a dedicated bucket, never dropped, so the exemption stays
+        # visible and auditable rather than shrinking the denominator silently.
+        audit_only = isinstance(data, dict) and bool(
+            data.get("auditOnly") or data.get("audit_only") or data.get("auditOnlyDoc")
+        )
         if _is_in_set(wp.name, script_file, fully_trusted_basenames, fully_trusted):
             out["derivation-fully-trusted"].append(wp.name)
         elif _is_in_set(wp.name, script_file, referenced_basenames, referenced):
             out["derivation-backed"].append(wp.name)
+        elif audit_only:
+            out["audit-only-exempt"].append(wp.name)
         else:
             out["computational-only"].append(wp.name)
     return out
@@ -346,7 +453,7 @@ def audit_witness_trust(chains_dir: Path) -> dict:
 # ── Main ───────────────────────────────────────────────────────
 
 def main() -> int:
-    chain_files = sorted(HERE.glob("*.derivation.json"))
+    chain_files = _scan(HERE, "*.derivation.json")
     if not chain_files:
         print("No *.derivation.json files found.")
         return 1
@@ -378,8 +485,8 @@ def main() -> int:
         {
             "chain": r.chain_path.name,
             "target": r.target,
-            "target_value": r.target_value,
-            "computed_value": r.computed_value,
+            "target_value": _ser(r.target_value),
+            "computed_value": _ser(r.computed_value),
             "structural_ok": r.structural_ok,
             "leaf_matches": r.leaf_matches,
             "issues": r.issues,
@@ -401,7 +508,7 @@ def main() -> int:
         # chains declare tighter values).  Symbolic chains (no
         # COMPUTATIONAL leaf) skip this — they are validated purely
         # structurally + via `chain_valid[...]` above.
-        if isinstance(r.target_value, (int, float)) and r.computed_value is not None:
+        if r.target_is_numeric and r.computed_value is not None:
             abs_tol = (
                 abs(r.target_value) * r.target_tolerance
                 if r.target_value != 0
@@ -409,9 +516,9 @@ def main() -> int:
             )
             w.add_assertion(
                 f"leaf_value[{r.chain_path.stem}]",
-                computed=r.computed_value,
-                expected=r.target_value,
-                tolerance=abs_tol,
+                computed=_ser(r.computed_value),
+                expected=_ser(r.target_value),
+                tolerance=_ser(abs_tol),
             )
     w.save()
 
@@ -428,10 +535,11 @@ def main() -> int:
     n_full = len(audit["derivation-fully-trusted"])
     n_backed = len(audit["derivation-backed"])
     n_comp = len(audit["computational-only"])
+    n_exempt = len(audit["audit-only-exempt"])
     print(
         f"\nWitness trust audit: "
         f"fully-trusted={n_full}, derivation-backed={n_backed}, "
-        f"computational-only={n_comp}"
+        f"audit-only-exempt={n_exempt}, computational-only={n_comp}"
     )
     if audit["derivation-fully-trusted"]:
         print("  derivation-fully-trusted witnesses:")

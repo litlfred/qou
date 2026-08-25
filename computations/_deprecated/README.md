@@ -111,3 +111,22 @@ variant — a content decision, not a file move.
 This mirrors the "kept in place with a `DEPRECATION-CANDIDATE` header"
 convention already used above for the 23 scripts that live importers still
 need. Witnesses have no comment syntax, so the marker lives here instead.
+
+## `chi-{proton,neutron}-h3-at-q0-50dps-matrix-m.witness.json` (2026-08-16)
+
+Deprecated rather than migrated, per the owner ruling that historical
+convention-C material leaves the live corpus and is referenced only by audits.
+All four conditions hold, checked rather than assumed:
+
+1. **Producerless by design.** `chi_at_q0_via_matrix_m_mpfr.py` REFUSES to build
+   them — `"A=1 single nucleon, use hoefsmit producer"`, exit 1. The matrix-M
+   path covers A ≥ 2 only, so nothing in the tree can regenerate these.
+2. **Unconsumed.** No `.py`, `.ts` or `.md` reads either file.
+3. **Superseded.** The live siblings `chi-{proton,neutron}-h3-at-q0-50dps.witness.json`
+   are convention D (`y = 0.50540422, 0.24729788, 0`), owned by the hoefsmit
+   producer.
+4. **Stale convention C.** They still carry `y = 0.41539579, 0.28092963,
+   0.02274494` — the n=3 C fingerprints.
+
+They were the last two convention-C files in the whole `-matrix-m` family; the
+A ≥ 2 members regenerate to D from their own producer.
