@@ -1,7 +1,7 @@
 ---
 # qou-znut
 title: 'JUDGEMENT: BorromeanQuark.canonical defines topological_mass to be the formula it then asserts'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-24T19:39:26Z
@@ -89,3 +89,47 @@ conditional theorems in `reidemeister-mass-invariance.lean` and
 
 **Detector note:** `checkNoVacuousInstanceData` does not and cannot flag this —
 the data value is a genuine formula. See `folio-assistant-ilbh`.
+
+
+## Resolved 2026-08-24 — Reading B, and the code now matches it
+
+Owner's verdict: **B, definitional.** Recorded and implemented.
+
+Implementing B means removing the class, not annotating it. B's content is that
+`topological_mass` never was an independent functional that had to be shown to
+agree with a volume formula — it *is* the formula, and there was no hypothesis
+to discharge. A typeclass whose instance is the only possible one asserts the
+opposite: that something was discharged. So under B the class is not merely
+redundant, it is the one part of the file that misstates the situation.
+
+`def baryon_mass` was already present at line 63 and already *was* the
+definition. What existed on top of it was a `class` restating it as a field
+plus an assertion, and an unguarded `instance` supplying the assertion's own
+right-hand side as that field's value.
+
+**Now:**
+
+    theorem baryon_mass_from_volume (q : R) (hq : q > 1) :
+        baryon_mass q hq = borromean_volume / (1 - 1/q)^2 :=
+      rfl
+
+No class, no instance, no binder. `#print axioms` → `[propext,
+Classical.choice, Quot.sound]`, no `sorryAx`. Cone compiles, `ok=1`.
+
+The docstring carries the verdict and the reasoning, so the next reader meets
+the decision rather than re-deriving the objection. It also states explicitly
+what is **not** claimed and never was: that the physical nucleon mass is
+`borromean_volume / (1 - 1/q)^2`. That is `conj:borromean-quark`, it lives in
+the narrative, and no declaration in this file asserts it — which is exactly
+what the old class docstring already conceded.
+
+**Blast radius, confirmed empty.** The only importer of
+`QOU.Archimedean.BorromeanQuark` is the root aggregator. The three
+`[BorromeanQuark]` theorems in `QOU/Mass/DeuteronBindingDressing.lean` bind
+`QOU.ParticleInteractions.BorromeanQuark` — a different class with `q`, `h`,
+`m_e`, `net_p` fields — and that file imports only
+`QOU.ParticleInteractions.neutron_qvalue_symbolic`. Verified, not assumed.
+
+Still open and untouched, as this bean said: the name collision itself (three
+distinct classes called `BorromeanQuark` in three namespaces), and `qou-kx92`
+(`[BorromeanQuark] : True := trivial` conditionals elsewhere).

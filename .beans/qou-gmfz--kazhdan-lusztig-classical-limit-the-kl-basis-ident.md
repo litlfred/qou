@@ -1,7 +1,7 @@
 ---
 # qou-gmfz
 title: 'Kazhdan-Lusztig classical limit: the KL-basis identification and monoidality are still unstated'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T19:39:51Z
@@ -80,3 +80,92 @@ this file, both now correctly conditional on `q = 1`. No instance exists outside
 the module docstring keeps promising three things the Lean states one of.
 Consider trimming that docstring in the same change so the gap is visible from
 the top of the file, not just from this bean.
+
+
+---
+
+## Infrastructure built 2026-08-25 — item (1) landed, sorry-free
+
+Owner's direction: build out the needed infra. Item (1) — "a `KLBasis`
+structure over `Z[S_n]` carrying the bar involution and the defining
+self-duality, so `KLBasisElt` can be *required* to be it rather than permitted
+to be anything" — is done.
+
+**`QOU/Mathlib/KazhdanLusztigBasis.lean`**, registered in `QOU.lean`.
+
+- `BarInvolution R M` — a ring involution `barR` plus a semilinear module
+  involution `barM`, with `barM (r • m) = barR r • barM m` written out rather
+  than routed through Mathlib's `sigma`-semilinear maps (which would force a
+  `RingHomInvPair` for a map that is only involutive).
+- `KLBasis W R M B` — a `Module.Basis W R M` every element of which is
+  bar-invariant. The basis field is the substantive one: it is what
+  `KLBasisElt : Type u` was missing.
+- **`nontrivial_of_klBasis`** — the point. A module carrying a KL basis over a
+  nonempty index is nontrivial, so `KLBasisElt := PUnit` cannot inhabit the
+  structure. This is the theorem that converts a signature into a constraint.
+- `bar_smul_self_iff` — `r • C w` is bar-invariant iff `barR r = r`. Shows
+  bar-invariance is a condition on something, which it was not before.
+- Plus `ne_zero`, `basis_injective`, `barM_bijective`.
+
+`#print axioms` on all six: `[propext, Classical.choice, Quot.sound]`, no
+`sorryAx`. Checked directly rather than inferred from a green build — a
+mid-session trim of one proof compiled clean while silently emitting
+`declaration uses 'sorry'`, which is exactly the failure this corpus keeps
+finding.
+
+**Also landed:** the module docstring of `KazhdanLusztigClassicalLimit.lean` no
+longer promises three claims the Lean states one of. It now says which one is
+carried and why the other two are not — this bean suggested exactly that, and
+it is done in the same change.
+
+## Two things blocked on Mathlib SOURCES, not on difficulty
+
+This checkout carries Mathlib as **oleans only** (`.lake/packages/mathlib/`
+has no source tree), so lemma names cannot be searched, only guessed and
+compiled. Two shallow facts are consequently unproved and are left stated
+rather than `sorry`ed:
+
+- [ ] `Function.Involutive LaurentPolynomial.invert`. Needed to instantiate
+      `BarInvolution` at the actual ground ring `R_q = Z[q, q^-1]`, which would
+      stop this file being purely abstract. `LaurentPolynomial.invert_invert`
+      does not exist and `simp` does not close it.
+- [ ] The *converse* of `bar_smul_self_iff` was briefly weakened for the same
+      reason before the real cause surfaced — see below — and is now proved.
+
+Cheap for anyone with sources to hand.
+
+## The real bug, worth recording
+
+Every proof in the first four compile attempts failed in confusing ways —
+unsolved `case w : W`, tactics reported as "never executed", one silent
+`sorry`. The cause was a single line: this Mathlib has **`Module.Basis`, not
+`Basis`**. With `-DautoImplicit=false` the unknown identifier gave the structure
+field an error type, and every downstream proof failed *downstream of that*
+rather than at the source. Time was spent rewriting correct proofs.
+
+Lesson for the next agent on an olean-only checkout: when a proof fails in a
+way that makes no sense, `#check` the types it mentions in a three-line scratch
+file before touching the proof. That probe costs one compile; guessing cost
+five.
+
+## Still owed — items (2) and (3), and the wiring
+
+- [ ] **Wire `KLBasisElt` to `KLBasis`.** Not done, and the obstacle is
+      specific: requiring `KLBasis (Equiv.Perm (Fin n)) R _ _` needs an `n`,
+      and `KazhdanLusztigClassicalLimit` takes only `(R) (q)
+      [HeckeAnyonicSubstrate] [CrystalGraphRealization]` — the strand count is
+      not in scope. Adding a `KLBasis` over an unconstrained index would tighten
+      the class without ruling out the trivial model, since `KLBasisElt :=
+      PUnit` still admits the rank-one module `R`. **Pinning the index to
+      `S_n` is what makes the constraint bite.**
+- [ ] **(2) `tau` as a field**, with `kl_compatible_with_tau` restated as a
+      commuting square and the `pm 1` statement demoted to a corollary. Check
+      `HeckeAnyonicSubstrate` / `CrystalGraphRealization` for an existing `tau`
+      before re-declaring.
+- [ ] **(3) Monoidality.** Unchanged: largest, least load-bearing.
+- [ ] **Unitriangularity** is deliberately absent from `KLBasis` — `C_w = T_w +
+      sum_{v<w} P_{v,w} T_v` with the degree bound needs the `T`-basis and
+      Bruhat order, i.e. the Hecke algebra this tree does not have. Without it
+      `KLBasis` specifies what a KL basis *satisfies* rather than pinning it, so
+      downstream may use it to constrain but never to conclude uniqueness. The
+      module docstring says so.

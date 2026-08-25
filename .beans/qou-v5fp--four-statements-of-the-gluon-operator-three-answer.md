@@ -62,3 +62,59 @@ disagree about *which operator*, and item 2 is untouched —
 corpus. Picking one objective and re-witnessing against it is still owed. It
 just can no longer rescue a mass split, because there is no longer a split to
 rescue.
+
+
+---
+
+## Item 2 resolved 2026-08-24 — and it was understated
+
+This bean called `universal-ilp.witness.json` "self-certifying — its assertions
+compare each computed operator against an `expected` value baked into
+`universal-ilp.py`". There are no baked-in expected values. All five assertions
+read `computed=sel[0], expected=sel[0]` — the **same expression** — so the file
+records `"computed": "sigma_1", "expected": "sigma_1"` and `allPassed: true`
+was guaranteed regardless of what the script produced.
+
+Two further facts found while fixing it, either of which alone sinks the
+`verified` status:
+
+- **The producer cannot finish.** `computations/universal-ilp.py` raises at
+  Level 4: `NameError: apply_atom_nf is not defined`. That function exists
+  nowhere in the repository. The script never reaches `w.save()`. Confirmed
+  pre-existing by stashing my edit and re-running the unmodified file.
+- **The witness is four months old.** `computedAt: 2026-04-14`,
+  `commitSha: 95eb85e4` — predating the 2026-05-19 trace fix that `qou-jqjx`
+  turns on, among much else.
+
+**Landed.** `def:universal-ilp-algorithm` demoted to
+`computation.status: "failed"` with the three reasons recorded. The tautology
+is fixed at source: the witness block now asserts that the reported operator
+label re-parses to its own crossing count — independent of the selection rule,
+and able to fail. The site carries a comment naming two repairs that were
+considered and rejected as tautologies in longer form (feasibility and
+minimum-crossing are both true by construction, since `universal_ilp` scans
+crossing number upward and takes the first feasible candidate).
+
+**Not repaired: `apply_atom_nf`.** `build_atom_nf(Z, N)` builds an atom NF from
+scratch; the missing function applied an atom's construction to an *existing*
+NF, and nothing in the tree records what that composition was. Guessing would
+fabricate the molecular levels rather than restore them, so levels 4 and 4b
+(H-H, C-C bonds) have no live producer and this is now the blocking item for
+re-witnessing anything here.
+
+**Spun out: `qou-26f2`.** The tautology is not local — an AST census of 3,253
+files found **266 of 3,482** `add_assertion` calls (7.6%, 195 files) passing
+the same expression on both sides. Census script kept at
+`scripts/tautological-assertion-census.py`.
+
+## What remains on THIS bean
+
+- [x] Item 2 — the self-certifying witness. Resolved as above.
+- [ ] **Item 1 — pick one objective and state it once.** Still open, and still
+      needs a decision rather than a measurement. Note the live producer's
+      docstring and banner already say `min cr(K)` with `min |tr_M|` as
+      tiebreak, matching `def:universal-ilp-algorithm`; it was the *retired*
+      producer that sorted by `|tr_M|` alone. So the disagreement is between
+      the definition and a retired script, not between two live ones — which
+      makes this smaller than it looked, but it still cannot be re-witnessed
+      until `apply_atom_nf` is recovered.

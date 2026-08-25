@@ -1,7 +1,7 @@
 ---
 # qou-tpt6
 title: QIntegerMassFormula launders its conjecture into IsAMEValue.fits_bound, a class with zero instances
-status: todo
+status: completed
 type: bug
 priority: high
 created_at: 2026-08-24T19:38:09Z
@@ -83,3 +83,52 @@ Two coherent options, and they are not the same paper:
 
 Option 1 is the one that makes `#print axioms` tell the truth. Either way,
 `f_magic := fun _ => 0` (hjf4) still needs a verdict.
+
+
+## Resolved 2026-08-24 — neither option 1 nor 2: the file was not needed
+
+Asked whether we need this at all. Measured, and the answer is no. Deleted
+`QOU/Interactions/QIntegerMassFormula.lean` and dropped its import from
+`QOU.lean`.
+
+**What the measurement found — a second declaration this bean did not know
+about.** `content/quantum-observable-universe/mass-theory/q-integer-mass-formula.lean`
+declares `QOU.Interactions.QIntegerMassFormula` too: **same namespace, same
+class name**, and it is the honest one.
+
+|  | `lean/QOU/Interactions/…` (deleted) | `content/…/mass-theory/…` (kept) |
+|---|---|---|
+| states `fits_AME` | forwards to `IsAMEValue.fits_bound` | **directly, as the conjecture** |
+| `IsAMEValue` | yes — carries the conjecture in a class named for a lookup | none |
+| instance | `canonical`, with `f_magic := fun _ => 0` | **none** — the conditional is genuinely conditional |
+| compiled | yes | no — `content/*.lean` sit outside `lean/` |
+
+So the deleted file was the strictly worse of two same-named declarations, and
+the honest one is the one the content block resolves to:
+`content/…/mass-theory/q-integer-mass-formula.ts` carries
+`lean.ref: "qou:QOU.Interactions.QIntegerMassFormula"` and resolves siblings
+first.
+
+**Consumers: none.** `grep` over the whole compiled tree for
+`QIntegerMassFormula` / `IsAMEValue` returns, outside the file itself, only the
+root aggregator's `import` line and three `QOU.Molecular` classes that happen
+to share the name — different namespace, self-contained, no import of this
+module. Verified rather than assumed.
+
+**This removes one of `qou-hjf4`'s candidates, and does not close it.**
+`f_magic := fun _ => 0` was in the deleted instance, so that candidate is gone
+— but `hjf4` is a triage of **11** trivially-inhabiting-instance candidates and
+the other ten are untouched. Noted on that bean rather than claimed here.
+
+Deleting was preferable to either option in this bean. Option 1 (state the
+conjecture with a `sorry` so `#print axioms` sees it) is what the surviving
+sibling already does by supplying no instance at all; re-doing it here would
+have produced a *third* statement of the same conjecture. Option 2 would have
+kept a misnamed class alive in a file nothing reads.
+
+**Not fixed, and now the residue:** two declarations of the same fully-qualified
+name still existed a moment ago, one compiled and one not. That is a hazard
+worth its own look — the same shape agent-B hit on `CrystalRMatrixSubLemma`,
+and the same shape as `qou-znut`'s three `BorromeanQuark` classes. Whether
+`content/*.lean` siblings should be allowed to shadow compiled module paths is
+a platform question, not a QOU one.

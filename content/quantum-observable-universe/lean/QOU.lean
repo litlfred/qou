@@ -833,7 +833,6 @@ import QOU.MathlibExt.EndSemisimple
 import QOU.HyperellipticQuintic.zeta5_residue_monodromy
 
 import QOU.Archimedean.BorromeanQuark
-import QOU.Interactions.QIntegerMassFormula
 import QOU.Archimedean.EmCouplingBringZeroMode
 import QOU.Archimedean.BringEllipticFactor
 import QOU.Archimedean.SigmaJGeometricCarrier
@@ -1215,3 +1214,4 @@ import QOU.Mathlib.SeparatedGauss
 -- because the scaling does not move the index.  Discharges the x half of RothOperatorFamily's
 -- `hres`.
 import QOU.Mathlib.RothInductionHypothesis
+import QOU.Mathlib.KazhdanLusztigBasis

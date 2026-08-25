@@ -73,3 +73,17 @@ forwarded to `IsAMEValue.fits_bound`, a field whose own docstring reads
 corpus-wide**, so `fits_AME_conditional` is unsatisfiable-as-stated rather than
 vacuously true. Fix them together — the `f_magic := fun _ => 0` verdict this
 bean owns and the laundering `qou-tpt6` owns are the same edit.
+
+
+---
+
+## One candidate removed 2026-08-24 — 11 -> 10, bean stays open
+
+`QIntegerMassFormula.canonical`'s `f_magic := fun _ => 0` is gone: the whole
+module `QOU/Interactions/QIntegerMassFormula.lean` was deleted as unneeded
+(bean `qou-tpt6`). It had no consumers in the compiled tree and duplicated the
+fully-qualified name of an honest sibling under `content/…/mass-theory/` that
+states the conjecture directly and supplies no instance.
+
+So this candidate is not *triaged*, it is **withdrawn** — there is no longer a
+declaration to judge. The remaining ten still need reading.

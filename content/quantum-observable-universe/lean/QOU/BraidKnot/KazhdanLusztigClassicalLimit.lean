@@ -5,12 +5,40 @@ import QOU.BraidKnot.CrystalGraphRealization
 /-!
 # QOU.BraidKnot.KazhdanLusztigClassicalLimit — q → 1 classical limit (conjecture)
 
-Class axiomatisation of [conj:kazhdan-lusztig-classical-limit]: as
-`q → 1`, the KLR canonical basis `{b_w}` of `H_n(R, q)` flattens to
-the Kazhdan–Lusztig basis `{C_w}` of `ℤ[S_n]`, and the resulting
-classical-limit functor is monoidal and compatible with the
-observation functor `τ`.  The bosonic / fermionic split is the
-eigenvalue decomposition of `s_i` acting on `{C_w}`.
+Class axiomatisation of the *statistics* half of
+[conj:kazhdan-lusztig-classical-limit].
+
+**What the narrative conjecture claims — three things:** as `q → 1` the KLR
+canonical basis `{b_w}` of `H_n(R, q)` flattens to the Kazhdan–Lusztig basis
+`{C_w}` of `ℤ[S_n]`; the resulting classical-limit functor is monoidal; and it
+is compatible with the observation functor `τ`.
+
+**What the class below states — one of them, weakly.** `kl_compatible_with_tau`
+says that at `q = 1` a phase is `±1`. That is a consequence one would want
+*from* τ-compatibility, not τ-compatibility; `τ` appears nowhere in the class
+despite the field's name. Monoidality is not stated — there is no tensor
+structure on either side to be monoidal about. And "flattens to the KL basis" is
+not stated either: `KLBasisElt` is an arbitrary `Type u` with no
+Kazhdan–Lusztig structure, so any type at all satisfies the signature.
+
+This docstring used to assert all three (bean `qou-gmfz`). It now says which one
+is carried, so the gap is visible from the top of the file rather than only from
+the bean.
+
+**Infrastructure now exists for the missing half.**
+`QOU.Mathlib.KazhdanLusztigBasis` supplies `BarInvolution` and `KLBasis` — a
+basis indexed by the group, every element bar-invariant — with
+`nontrivial_of_klBasis` proving that a module carrying one cannot be trivial,
+so `KLBasisElt := PUnit` cannot inhabit it for a nonempty index. All sorry-free.
+
+It is **not** wired in here, and the reason is specific: requiring
+`klBasis : KLBasis (Equiv.Perm (Fin n)) R _ _` needs an `n`, and this class
+takes only `(R) (q) [HeckeAnyonicSubstrate] [CrystalGraphRealization]` — the
+strand count is not in scope. Adding a `KLBasis` over an *unconstrained* index
+would tighten the class (bar-invariance and basis structure become real
+obligations) without ruling out the trivial model, since `KLBasisElt := PUnit`
+still admits the rank-one module `R`. Pinning the index to `S_n` is what makes
+the constraint bite, and that is the next step on `qou-gmfz`.
 
 Takes `[HeckeAnyonicSubstrate R q]` and `[CrystalGraphRealization R q]`
 as upstream inputs.

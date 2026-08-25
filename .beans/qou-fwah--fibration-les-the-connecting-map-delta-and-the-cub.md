@@ -79,3 +79,36 @@ State at re-check, `QOU/Mathlib/HomotopyLifting.lean:210`:
 - referenced from `QOU/Mathlib/FibrationExactness.lean:56` as the named hole.
 
 Nothing has changed and nothing has silently discharged it.
+
+
+---
+
+## Queued as two items 2026-08-24 — they are not one task
+
+Owner's call, recorded: both go in the to-do queue. Kept in one bean rather
+than split, because item 2 depends on item 1 and separating them loses that.
+
+- [ ] **1. `SerreCubePairBridge`** — small, self-contained, real geometry.
+      One explicit homeomorphism of `I^{n+1}` (Hatcher §4.2, radial projection
+      from a point above the cube) plus transport of the lifting predicate
+      along it. Prerequisite, and easy: `HasHomotopyLiftingProperty` is not yet
+      known invariant under `Y ~= Y'`, so that congruence lemma comes first.
+      **Payoff is immediate** — until this exists every user of
+      `FibrationExactness` supplies the *relative* lifting property by hand,
+      and a Serre fibration does not hand it to them.
+
+- [ ] **2. `delta : pi_n(B,b) -> pi_{n-1}(F,e)`** — its own project, do not
+      start casually. The construction is short; well-definedness is not, and
+      exactness at the two remaining spots needs `pi_n(E, F, e) ~= pi_n(B, b)`,
+      i.e. **relative homotopy groups, which Mathlib does not have** (olean
+      survey 2026-08-24: `HomotopyGroup` and nothing relative). Comparable in
+      size to what absolute `HomotopyGroup` cost upstream.
+
+**Sequencing.** 1 before 2, and 1 is worth doing on its own merits whether or
+not 2 is ever started. Item 2's downstream payoff is already costed LOW in
+`qou-jbfx` item 2, and `pi_3(SU(2)) = Z` would additionally need `SU(2) ~= S^3`
+as spaces, `pi_n(S^n) = Z` (no Hurewicz, no degree theory for n >= 2 in
+Mathlib), and Lie-group topology to know the bundle is a fibration at all.
+Nothing downstream is blocked meanwhile: the hole is a named `Prop`, not a
+`sorry`, deliberately so `sorryAx` does not leak into every downstream
+`#print axioms`.

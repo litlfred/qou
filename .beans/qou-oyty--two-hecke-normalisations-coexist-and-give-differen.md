@@ -105,3 +105,34 @@ and is unaffected by the withdrawal.
 `HeckeExtOne.lean` keeps every theorem; its module docstring now states which
 normalisation each result belongs to, and the two normalisation-A theorems are
 labelled as such rather than as "the corpus's".
+
+
+---
+
+## Reduced to one live item 2026-08-24 — this is now a standing to-do
+
+Owner's call, recorded: keep this open as a to-do to resolve. Options 2 and 3
+are closed, so the bean is exactly option 1 and nothing else.
+
+- [x] **Option 3** — check whether the mixed-channel argument needs B.
+      Answered above: it does, the value is `Z[i]`, and the claim it protected
+      is withdrawn on `prop:phase-transition-boundary`.
+- [x] **Option 2** — annotate `phase-transition-boundary` with the relation its
+      "= Z" assumes. Moot: there is no live "= Z" left to annotate.
+- [ ] **Option 1** — declare ONE normalisation in the substrate, in a single
+      block cited by both chapters, and mark every Hecke relation elsewhere as
+      a rescaling of it with the rescaling written down.
+
+**Why option 1 survives its own motivating claim.** The withdrawal removed the
+*symptom*, not the fork. Convention A lives in
+`QOU/BraidKnot/HeckeAnyonicSubstrate.lean` (`(T - q)(T + 1) = 0`) and
+convention B in `rem:hecke-algebra-from-braiding` (`(sigma - q)(sigma + q^-1) = 0`);
+neither declares itself, and any future computation depending on the eigenvalue
+*difference* hits the same divergence with no signpost. `HeckeExtOne.lean`
+proves the general `R/(alpha - beta)` form precisely so neither convention is
+baked in — that is a mitigation, not a fix.
+
+**Scope when picked up.** One substrate block declaring the relation; a
+rescaling note on `HeckeAnyonicSubstrate`'s `heckeQuadratic` field; and a sweep
+for other statements of the quadratic. Not urgent, not large, and it stops the
+next occurrence rather than annotating it.
