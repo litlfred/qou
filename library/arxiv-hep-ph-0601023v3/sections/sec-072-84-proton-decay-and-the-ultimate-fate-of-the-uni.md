@@ -7,6 +7,7 @@ section_number: 8.4
 pages: 138-139
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 Since quantum gravity eﬀects could destabilize the proton, the eventual fate
 of the universe would be governed by the proton lifetime [392 , 390]. Thus, for

@@ -7,6 +7,7 @@ section_number: 1
 pages: 66-67
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 scale [214, 215, 216]. See Figure. (9) where we show the value s of the gauge
 couplings at diﬀerent scales in the context of the MSSM.

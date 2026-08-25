@@ -7,5 +7,6 @@ section_number: 3
 pages: 3-3
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 

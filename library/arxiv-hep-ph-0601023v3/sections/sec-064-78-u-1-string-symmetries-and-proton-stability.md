@@ -7,6 +7,7 @@ section_number: 7.8
 pages: 122-124
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 We are already familiar with the fact that in supersymmetric theories the
 baryon and lepton number dimension four operators QLDc, UcDcDc, and

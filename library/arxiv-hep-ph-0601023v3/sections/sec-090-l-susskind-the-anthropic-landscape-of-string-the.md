@@ -7,6 +7,7 @@ section_number: L
 pages: 216-217
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 th/0302219;
 T. Banks, M. Dine and E. Gorbatov, Is there a String Theory Land-

@@ -7,6 +7,7 @@ section_number: 2.8
 pages: 10-10
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 The special unitary group in 3 dimensions can be seen to arise in this co ntext in many diﬀerent
 ways. First, we can see it arising as the subgroup of Spin(7) that pr eserves two orthogonal

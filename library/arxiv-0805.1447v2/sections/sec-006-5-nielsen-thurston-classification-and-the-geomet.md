@@ -7,6 +7,7 @@ section_number: 5
 pages: 16-20
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 closed braid complements
 In this section, we describe an application of theorem 1 for genus

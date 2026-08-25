@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 84-85
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 The SO(10) models in 5D which have been investigated by a numb er of
 authors [267, 268]. Here the gauge multiplet V is 45 dimensional belonging to

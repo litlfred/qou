@@ -7,6 +7,7 @@ section_number: 4.2
 pages: 12-16
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 case. The strategy is almost the same as tiled case, but we need to
 do some additional arguments to evaluate valance of vertices beca use

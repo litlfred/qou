@@ -7,6 +7,7 @@ section_number: null
 pages: 18-19
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+doc_brief: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
 ---
 However, what does change in the knot complement and in the branched covering? As a toy
 example, we consider the complement of the unknot D2× S1. Then, the Dehn twist along the meridian

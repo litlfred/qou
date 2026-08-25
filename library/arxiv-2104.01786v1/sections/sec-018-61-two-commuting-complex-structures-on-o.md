@@ -7,6 +7,7 @@ section_number: 6.1
 pages: 21-22
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 We have already introduced the complex structures J, ˜J on O, ˜O in sections 2, 3. They extend
 to two commuting complex structures on O × ˜O.

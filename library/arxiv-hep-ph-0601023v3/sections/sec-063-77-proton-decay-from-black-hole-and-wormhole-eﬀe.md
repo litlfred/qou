@@ -7,6 +7,7 @@ section_number: 7.7
 pages: 121-122
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 Quantum gravity does not conserve baryon number and thus can catalyze
 proton decay. There is a signiﬁcant amount of literature try ing to analyze

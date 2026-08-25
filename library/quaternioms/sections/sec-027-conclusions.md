@@ -7,6 +7,7 @@ section_number: null
 pages: 26-26
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 • Over H, quantum computation is mathematically sound, universal, and polynomially
 equivalent to the complex model, with viable high-ﬁdelity realizations.

@@ -7,6 +7,7 @@ section_number: null
 pages: 5-5
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+doc_brief: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
 ---
 Now, we will describe the case of a 3-manifold (the knot complement) with boundary a torus T2.
 First, we will change the 2-fold covering of the torus to a 3-fold covering by adding a trivial sheet. For

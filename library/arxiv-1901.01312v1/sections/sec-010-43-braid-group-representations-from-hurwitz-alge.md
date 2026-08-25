@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 5-6
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 Using known isomorphisms between division algebras and Cliﬀord algebras, one can investigate
 the braid content of (hyper)complex division algebras. The complex number algebra C is

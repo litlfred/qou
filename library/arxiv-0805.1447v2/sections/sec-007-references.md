@@ -7,6 +7,7 @@ section_number: null
 pages: 20-21
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 [B] J.Birman, Braids, Links, and Mapping Class Groups, Annals of Math. Studies
 82, Princeton Univ. Press (1975).

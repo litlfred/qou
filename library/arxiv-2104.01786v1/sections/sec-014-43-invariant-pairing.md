@@ -7,6 +7,7 @@ section_number: 4.3
 pages: 17-18
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 There is no so(11, 3) invariant pairing on the space of semi-spinors S+. This is because the
 matrices appearing in (57) have diﬀerent symmetry properties. Th e ﬁrst two terms are anti-

@@ -7,6 +7,7 @@ section_number: null
 pages: 16-17
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 We begin by securing the structural backbone over H: A well-deﬁned multipartite
 composition. This provides the substrate on which universality and simulation statements

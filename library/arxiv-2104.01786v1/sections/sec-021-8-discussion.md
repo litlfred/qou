@@ -7,6 +7,7 @@ section_number: 8
 pages: 24-27
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 We have developed a very eﬃcient formalism that describes the semi- spinor representation of
 Spin(11, 3) as the direct product of the usual O and split ˜O octonions. This is likely the most

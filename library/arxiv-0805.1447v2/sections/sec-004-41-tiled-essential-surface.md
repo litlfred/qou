@@ -7,6 +7,7 @@ section_number: 4.1
 pages: 10-12
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 Assume F is tiled. Since F is tiled, every singular point is bb-singularity,
 and F can be decomposed into bb-tiles. A decomposition into bb-tiles

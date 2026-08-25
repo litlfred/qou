@@ -7,6 +7,7 @@ section_number: 5
 pages: 6-6
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 Considering the edges of each ribbon in the Helon model, one can identify this twisting with a
 braid in B2. This braid group is represented, albeit not faithfully, by C. Likewise, the braiding

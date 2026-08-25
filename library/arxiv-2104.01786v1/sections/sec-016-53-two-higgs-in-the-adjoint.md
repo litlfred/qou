@@ -7,6 +7,7 @@ section_number: 5.3
 pages: 19-20
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 As we already said, the Higgs ﬁeld Φ cannot break the U(1) B−L symmetry. One thus needs
 additional Higgs ﬁelds. The option that currently seems preferred in the literature goes under

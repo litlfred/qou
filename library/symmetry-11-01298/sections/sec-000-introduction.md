@@ -7,6 +7,7 @@ section_number: null
 pages: 1-3
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+doc_brief: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
 ---
 General relativity (GR) deepens our view on space-time. In parallel, the appearance of quantum
 ﬁeld theory (QFT) gives us a different view of particles, ﬁelds and the measurement process.

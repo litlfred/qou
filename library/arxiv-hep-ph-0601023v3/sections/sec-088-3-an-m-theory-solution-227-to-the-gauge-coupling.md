@@ -7,6 +7,7 @@ section_number: 3
 pages: 197-199
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 where the gravity propagates in a higher dimensional bulk wh ile gauge
 and matter ﬁelds reside on four dimensional wall. Below a cer tain

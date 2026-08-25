@@ -7,6 +7,7 @@ section_number: 2
 pages: 4-6
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this section we review some of fundamental facts of Dehornoy
 ordering and Dehornoy ﬂoor. Braid group Bn is, by deﬁnition, a group

@@ -7,6 +7,7 @@ section_number: C
 pages: 224-230
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 dimensions,” Phys. Rev. D 61, 015008 (2000) [hep-ph/9907362].
 [234] G. F. Giudice, R. Rattazzi and J. D. Wells, “Quantum gra vity and

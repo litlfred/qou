@@ -7,6 +7,7 @@ section_number: 7.9
 pages: 124-127
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 Dimension 4 and dimension 5 proton decay operators can be eli minated by
 speciﬁc choice of discrete symmetries. However, if the symm etries are global

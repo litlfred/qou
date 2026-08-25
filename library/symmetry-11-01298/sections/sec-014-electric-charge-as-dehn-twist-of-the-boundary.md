@@ -7,6 +7,7 @@ section_number: null
 pages: 17-18
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+doc_brief: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
 ---
 We described above the knot complement as a branched covering branched along a braid. What
 is the meaning of a charge in this description? Let us start with the case of an electric charge. Given a

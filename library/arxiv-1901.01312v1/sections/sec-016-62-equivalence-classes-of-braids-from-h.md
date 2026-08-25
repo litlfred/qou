@@ -7,6 +7,7 @@ section_number: 6.2
 pages: 7-8
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 The braid generators in (10) and their products correspond to unit quaternions, which we write
 asa +bI +cJ +dK witha2 +b2 +c2 +d2 = 1. It is not diﬃcult to show that any even product

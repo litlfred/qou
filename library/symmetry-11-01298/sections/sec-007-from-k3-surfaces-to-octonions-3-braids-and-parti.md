@@ -7,6 +7,7 @@ section_number: null
 pages: 9-9
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+doc_brief: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
 ---
 The results of the previous section illustrated the power of the approach and its relation to particle
 physics. In this section, we will discuss the topological reasons and the relation to the models of Furey,

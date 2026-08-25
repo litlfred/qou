@@ -7,6 +7,7 @@ section_number: 2.4
 pages: 8-9
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 Any of the Cliﬀord generators Ei squares to minus the identity, and so is a complex structure
 on O. Thus, a choice of a unit u ∈ Im(O) gives rise to the complex structure J := Lu. Our

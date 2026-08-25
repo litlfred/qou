@@ -7,6 +7,7 @@ section_number: 5.1
 pages: 6-6
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 In [24] it was shown that braiding of ribbons and twisting of ribbons within three strand ribbon
 braids are interchangeable, and that any orientable 6 ribbon braid can always be written as a

@@ -7,6 +7,7 @@ section_number: 3
 pages: 6-7
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 2 σ1), we have for example
 ν → [0, 0, 0]B, e +→ [1, 1, 1]B = [0, 0, 0](σ2σ3)(σ3σ1)(σ1σ2)B,

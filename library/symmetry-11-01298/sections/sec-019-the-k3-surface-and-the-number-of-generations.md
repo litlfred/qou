@@ -7,6 +7,7 @@ section_number: null
 pages: 22-23
 source_pdf: symmetry-11-01298.pdf
 source_sha256: 595648c84501e8a6
+doc_brief: "Braids, 3-Manifolds, Elementary Particles: Number Theory and Symmetry in Particle Physics — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
 ---
 In Section 4.1, we discussed a relation between the K3 surface and octonions by using the
 intersection form. Here, we use only the E8 matrix, i.e., the Cartan matrix of the Lie algebra E8. In this

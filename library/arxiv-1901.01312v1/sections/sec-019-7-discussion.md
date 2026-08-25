@@ -7,6 +7,7 @@ section_number: 7
 pages: 9-9
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 There exist several curious structural similarities between recent braid- and Hurwitz algebraic
 descriptions of a single generation of fermions. Cliﬀord algebras that are isomorphic to complex

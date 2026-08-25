@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-3
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 Leptons and quarks are identiﬁed with representations of the gauge group U(1)Y×SU (2)L×
 SU (3)C in the Standard Model (SM) of particle physics. Despite its success in accurately

@@ -7,6 +7,7 @@ section_number: 3.4
 pages: 12-14
 source_pdf: 2104.01786v1.pdf
 source_sha256: 34087d5063ef5507
+doc_brief: "Spin(11, 3), particles and octonions — The fermionic ﬁelds of one generation of the Standard Model, including the Lorentz spinor degrees of freedom, can be identiﬁed with components of a sin gle real"
 ---
 We now enter into a less familiar part of the discussion. It is clear that any of the 3 Cliﬀord
 generators ˜E5, 6, 7 (or any unit vector constructed as their linear combination) can se rve as a

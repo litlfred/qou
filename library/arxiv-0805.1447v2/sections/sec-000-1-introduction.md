@@ -7,6 +7,7 @@ section_number: 1
 pages: 1-4
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 In this paper we study an application of left-invariant total orderin g
 of braid group Bn to knot theory. An left-invariant total ordering,

@@ -7,6 +7,7 @@ section_number: null
 pages: 4-5
 source_pdf: quaternioms.pdf
 source_sha256: becedcbc858611dd
+doc_brief: "Quaternionic and Octonionic Frameworks for Quantum Computation: Mathematical Structures, Models, and Fundamental Limitations — 40 sections: Introduction; Extended Related Work; Introduction: Bridging"
 ---
 The transition from an abstract mathematical formalism to a concrete physical im-
 plementation is the most challenging and critical step in the development of any new

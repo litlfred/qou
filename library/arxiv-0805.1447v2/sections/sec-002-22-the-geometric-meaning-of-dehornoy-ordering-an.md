@@ -7,6 +7,7 @@ section_number: 2.2
 pages: 6-8
 source_pdf: 0805.1447v2.pdf
 source_sha256: b7ee20b0a7f5f3da
+doc_brief: "Braid ordering and the geometry of closed braid — The relationships between braid ordering and the ge- ometry of its closure is studied."
 ---
 hornoy ﬂoor. Now we give a geometric description of Dehornor order-
 ing given in [FGRR W]. Let Γ be a graph in Dn consisting of horizontal

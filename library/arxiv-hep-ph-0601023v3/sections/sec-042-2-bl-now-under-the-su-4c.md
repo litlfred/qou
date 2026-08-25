@@ -7,6 +7,7 @@ section_number: 2
 pages: 85-86
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 decompositionSU (4)C →SU (3)C ×U(1)B−L, one ﬁnds (4 , 2, 1) → 31/3 + 1−1
 which leads to P ′ = −i for the (4, 2, 1) multiplet. Thus 16-pet spinor has Z ′

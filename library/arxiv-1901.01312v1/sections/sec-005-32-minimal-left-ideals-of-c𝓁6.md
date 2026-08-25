@@ -7,6 +7,7 @@ section_number: 3.2
 pages: 4-4
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 The goal of identifying SM structure from tensor products of Hurwitz algebras is not unique
 to Dixon. More recently, Furey and Stoica have likewise looked at C⊗ O, and its associated

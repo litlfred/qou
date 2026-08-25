@@ -7,6 +7,7 @@ section_number: 6.3
 pages: 8-9
 source_pdf: 1901.01312v1.pdf
 source_sha256: a480da38283622d6
+doc_brief: "Braided fermions from Hurwitz algebras — Some curious structural similarities between a recent braid- and Hurwitz algebraic description of the unbroken internal symmetries for a single generations of"
 ---
 There are several possibilities for extending the braid- and Hurwitz algebraic description from
 a single generation to exactly three generations. The algebra C𝓁(6) is large enough to represent

@@ -7,6 +7,7 @@ section_number: 4.6
 pages: 48-54
 source_pdf: 0601023v3.pdf
 source_sha256: 875ab040b50487a1
+doc_brief: "Proton Stability in Grand Unified Theories, in Strings and in Branes — A broad overview of the current status of proton stability in uni- ﬁed models of particle interactions is given which includes"
 ---
 The SO(10) is an interesting group in that a single spinor rep resentation of
 SO(10) can accommodate a full generation of quarks and lepto ns. Thus the
