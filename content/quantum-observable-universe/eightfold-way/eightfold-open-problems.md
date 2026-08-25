@@ -87,6 +87,22 @@ Gell-Mann--Nishijima relation cannot be closed.
    $G_2 = \mathrm{Aut}(\mathbb{O})$, which is precisely why the parity
    exclusion leaves it standing.
 
+   The mechanism behind that escape is now proved rather than asserted, and
+   it is worth stating because it bounds how far the exclusion reaches.
+   The parity argument runs through self-duality: every $\mathrm{SU}(2)$
+   irrep satisfies $V^* \cong V$, so the cross terms $V_i \otimes V_j$
+   contribute no singlet and the survivors are forced to be distinct
+   even-dimensional irreps.  A **complex-type** representation
+   ($\mathrm{FS} = 0$, $\mathbf{3} \not\cong \bar{\mathbf{3}}$) pairs to a
+   singlet only against its conjugate, so one whose conjugate is *absent*
+   from the object passes the gate at any dimension, odd included ---
+   `Sym2GateComplexType.lean`, sorry-free, exhibits such an object at
+   dimension exactly $3$.  So `dimOfMult_ne_three_of_gate` is a scope-(b)
+   exclusion **within the self-dual sector** and is silent, not negative,
+   outside it.  This is the same non-self-duality that
+   [the colour construction](#prop:color-su3-from-g2) already identifies as
+   what the $\mathrm{Sym}^2$ gate consumes.
+
 2. **Hypercharge $Y$.**
    The writhe-to-isospin map $w \mapsto I_3$ is derived.  The
    hypercharge $Y$ is not: the writhe map is falsified as a $Y$
