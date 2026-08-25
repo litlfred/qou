@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T07:05:26Z
+updated_at: 2026-08-25T07:12:36Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -531,3 +531,57 @@ So the next step is not another convention or another invariant: it is either
 
 Do not try a sixth "what property of N" lead. That family is exhausted, and this file
 shows why: the obstruction is structural, not conventional.
+
+
+## ANSWER to "is Mathas wrong, or is there a better reference?"
+
+**Mathas is NOT wrong.** My swapped identity is CONSISTENT with 3.24(iii) given (iv) —
+the defect is provability ORDER, not correctness. Using (iii) to get (iv) is circular
+for us because our derivation of (iii) already needs (iv).
+
+**But there IS a better route, and it is in the same book at 3.25 rather than 3.24:
+Jucys's CENTRALITY argument.**
+
+    S_m := A_1 + ... + A_m ;   A_m = S_m - S_{m-1}
+
+For i < m, every generator occurring in A_i is one that BOTH S_m and S_{m-1} commute
+with, hence A_m commutes with A_i. **The product statement is never used.**
+
+### Measured (jm_partial_sum_centrality_probe.py; H_5 regular rep, exact Fractions)
+
+q in {2,3}, d in {1/2, 1/3, 1} — including d = 1, NOT Mathas's normalisation:
+
+    S_m commutes with sigma_j for EVERY j != m
+
+    m=1: Y n Y Y    m=2: Y Y n Y    m=3: Y Y Y n    m=4: Y Y Y Y
+
+and the exception is explained exactly:
+
+    sigma_j commutes with the INDIVIDUAL A_i except for i in {j, j+1}   (= 3.24(i))
+
+At j = m the summation cutoff SPLITS the pair (A_m, A_{m+1}) — and that pair is exactly
+what `addJM_sigma_comm_add` already handles. Every other term commutes individually.
+
+### What it buys, and what it does not
+
+BUYS: a NON-CIRCULAR route, d-independent, that never touches the product half. This is
+the route to formalise.
+
+DOES NOT BUY: it still needs 3.24(i) **in full**, and the `i >= j+2` half is NOT
+provable from the recursion by induction — at i = j+2 the recursion introduces
+sigma_{j+1}, adjacent to sigma_j, and commutation holds only by cancellation. Mathas
+proves that case from the explicit transposition form ("T_{k+1} commutes with T_(j,k)").
+
+**So the conclusion of `HeckeAdditiveJucysMurphy` is reinforced, not overturned**: the
+missing ingredient is the sum-of-transpositions expansion. What changed is that we now
+know WHICH argument to run once we have it — Jucys's centrality, not Mathas's 3.24(iii).
+
+### Restating (a)/(b), which an earlier note referenced without defining
+
+(a) add transposition elements T_(i,k) and their expansion to the `HeckeGenerators`
+    presentation;
+(b) drop the abstract presentation and work in a concrete model (regular representation)
+    where those elements already exist.
+
+(a) is now clearly preferable: the centrality route needs only the expansion, and gives
+a general-n Lean proof. (b) would only ever verify fixed n.
