@@ -38,7 +38,7 @@ be.** Seven routes, seven checked:
 |---|---|---|---|---|
 | 1 | Odd-dim summand of `V^⊗n` | `QOU/Eightfold/Sym2GateParity.lean`, sorry-free | Clebsch–Gordan + Frobenius–Schur parity, `[fulton-harris1991]` §11 | **sound** |
 | 2 | Permutation `S₃ = W(A₂)` 3-dim rep | same criterion (odd dim ⇒ FS `+1`) | as (1) | **sound** |
-| 3 | Re-tune the Ocneanu parameter to `N = 3` | `y_{(2,1)}/y_{(3)} = q[2]_q[N−1]_q/[N+2]_q` | exact symbolic ratio in `(q, N)` | **sound** |
+| 3 | Re-tune the Ocneanu parameter to `N = 3` | `y_{(2,1)}/y_{(3)} = q[2]_q[N−1]_q/[N+2]_q` | exact symbolic ratio in `(q, N)`; the non-proportionality **now Lean-proved** (see below) | **sound** |
 | 4 | Hecke centralizer on regular `H₃` | `QOU/StandardModel/ColourHeckeRegularHost.lean`, sorry-free | exact `ℚ` matrices, `dim ≤ 6 < 8` | **sound**, scope stated in-file |
 | 5 | 4-form → `Spin(7)` → `G₂` → `SU(3)` | one table row, no citation | elementary dimension count | **true, uncited** — see below |
 | 6 | `S₄` / Fano bridge → Klein quartic | "marked-pair obstruction" | pointer resolves nowhere | **unresolved citation** |
@@ -54,10 +54,48 @@ closed form
 
     y_{(2,1)} / y_{(3)}  =  q [2]_q [N−1]_q / [N+2]_q
 
-which is an identity in the two free symbols. Non-proportionality at `N = 2`
-versus `N = 3` is read off the `N`-dependence directly; no anchor, no pin, no
-floating-point evaluation, and no dependence on the Markov parameter `z`
-enters. It is convention-independent in the sense that matters here.
+which is an identity in the two free symbols. No anchor, no pin, no
+floating-point evaluation, and no dependence on the Markov parameter `z` enters.
+It is convention-independent in the sense that matters here.
+
+### But the last step was a sample, and now is not
+
+**Correcting this file's own first draft.** It reported route 3 as resting on
+"exact symbolic" work full stop. The *formula* is symbolic; the **inference** was
+not. The source concludes non-proportionality because the ratio *"differs at
+every `q` tested"* — a finite sample. An audit whose whole point is provenance
+should not let that pass, so it is proved instead.
+
+At `N = 2` the ratio is `q [2]_q [1]_q / [4]_q`, at `N = 3` it is
+`q [2]_q [2]_q / [5]_q`. Cancelling the common nonzero `q [2]_q`, they agree iff
+`[1]_q [5]_q = [2]_q [4]_q`. And there is an exact identity:
+
+    [2]_q [4]_q  −  [1]_q [5]_q  =  [3]_q
+
+so the discrepancy is not merely nonzero on a sample — it **is** `[3]_q`.
+
+| declaration | statement |
+|---|---|
+| `QOU.Eightfold.OcneanuTwoThreeNotProportional.laurent_identity` | the division-free Laurent core, no `q²−1` denominator |
+| `…​.qb_two_four_sub_one_five` | `[2]_q[4]_q − [1]_q[5]_q = [3]_q` |
+| `…​.ratio_eq_iff_qb_three_eq_zero` | the two ratios are equal **iff** `[3]_q = 0` |
+| `QOU.Archimedean.OcneanuTwoThreeSubstrate.ocneanu_ratio_N2_ne_N3` | at real `q > 1` they differ |
+
+Stated as an `iff` on purpose: it says exactly what would have to hold for the
+traces to be proportional, rather than asserting they are not. The archimedean
+file rules it out via `[3]_q = q² + 1 + q⁻² > 0`.
+
+Two things worth noting. `sub_inv_ne_zero` records that the `q`-brackets are
+well-defined **exactly** on `q² ≠ 1` — by
+`HeckeBraidingNonSymmetric.double_braiding_eq_one_iff`, exactly the
+non-symmetric locus, so the two Lean strands on this branch meet. And the scope
+is unchanged: the ratio formula itself is consumed from the source audit and not
+re-derived here, so this strengthens the exclusion's *stated reason* from sampled
+to proved and claims nothing further about `N = 3`.
+
+Verified `lean`-direct, exit 0 on both files against the real Mathlib import
+cone, zero `sorry`, `#print axioms` giving only `propext`, `Classical.choice`,
+`Quot.sound`.
 
 ## Route 1 — the failure mode was real, and was already caught
 
@@ -126,6 +164,9 @@ construction can. The row is fine; its **tier label** is a shade strong.
   re-auditing the prune. That was the actionable question.
 - **Records the negative.** Someone will ask this again. The answer is that the
   prune was checked at provenance level on 2026-08-25 and held.
+- **One row got stronger under the check**, which is the useful kind of outcome:
+  route 3's non-proportionality moved from a finite sample to a machine-checked
+  identity. The worry did not find a rotten row, but asking it improved one.
 
 ## Adjacent finding — the literature is absent
 
