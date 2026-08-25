@@ -222,7 +222,20 @@ def main() -> int:
     # ---- G6: the measured reach, including what did NOT finish ---------------------
     gates.append({
         "gate": "G6",
-        "claim": "MEASURED REACH, AND IT DOES NOT BEAT ROUTE 75. Garoufalidis-Goerner-"
+        "SCOPE_CORRECTED": (
+            "RE-SCOPED (b) -> (a) by qbeta_route76_modstd_reach_probe.py (bean qou-mfas). "
+            "Every NUMBER below stands and was reproduced: minAssGTZ at 600s and finduni "
+            "at 1500s really do not complete on 10_100. What was wrong is the SCOPE -- "
+            "'less far-reaching' is a claim about the METHOD, drawn from measurements of "
+            "two ALGORITHM SETTINGS. A third setting, modStd (modular Groebner), completes "
+            "10_100 on BOTH obstruction classes in tens of seconds, and its degree-14 "
+            "component generates Route 75's shape field (disc 75015471937637449). The "
+            "`caveat` key below -- 'a different engine setting may well do better' -- was "
+            "exactly right; the headline above it was not. 11a1 (17 tets) is UNAFFECTED: "
+            "there the Groebner basis itself is the wall, not the decomposition"),
+        "claim": "MEASURED REACH OF THESE TWO SETTINGS. [HEADLINE SUPERSEDED -- see "
+                 "SCOPE_CORRECTED; the measurements stand, the method-level conclusion "
+                 "does not.] Garoufalidis-Goerner-"
                  "Zickert say Groebner is feasible for Ptolemy varieties 'even for many "
                  "simplices', and that is a comparison against the GLUING equations, not an "
                  "absolute claim. Measured here with a 600s budget: Ptolemy+Singular "
@@ -255,9 +268,15 @@ def main() -> int:
             "finduni_measured": {"6_1": "2.0s, quartic", "7_2": "0.0s, quintic",
                                  "8_2": "0.0s, DEGREE 8"},
             "but": "10_100 (15 Ptolemy variables) TIMES OUT under finduni too, at 1500s -- "
-                   "measured, not inferred. So switching algorithm moves the ceiling (degree "
-                   "8 becomes instant) WITHOUT rescuing 14 tetrahedra. The G6 conclusion "
-                   "stands: more rigorous, less far-reaching.",
+                   "measured, not inferred. So switching FROM minAssGTZ TO finduni moves "
+                   "the ceiling (degree 8 becomes instant) WITHOUT rescuing 14 tetrahedra.",
+            "conclusion_superseded": (
+                "This used to end 'The G6 conclusion stands: more rigorous, less "
+                "far-reaching.' Two settings failing is not the method failing. modStd "
+                "rescues 14 tetrahedra -- see SCOPE_CORRECTED above and "
+                "qbeta-route76-modstd-reach.witness.json. The inference from 'these two "
+                "algorithms time out' to 'the route is less far-reaching' is exactly the "
+                "scope-(a)-stated-as-(b) error AGENTS.md warns about"),
         },
         "caveat": "this measures THIS CONFIGURATION, not the method's limit: 600s budget, "
                   "minAssGTZ (not primdecGTZ), degree-reverse-lex `dp` ordering, default "
@@ -265,7 +284,12 @@ def main() -> int:
                   "no claim is made that the Ptolemy route cannot reach these manifolds",
         "reproduce": "the 6_1/7_2 successes and the 10_100/11a1 timeouts are from a direct "
                      "run of `decompose()` with timeout=600 on each manifold",
+        # Retained for consumer compatibility: still False AS MEASURED HERE, i.e. under
+        # minAssGTZ/finduni.  It is NOT a property of the route -- read the two keys below
+        # before quoting it.
         "beats_route_75_reach": False,
+        "beats_route_75_reach_scope": "under minAssGTZ and finduni only",
+        "beats_route_75_reach_under_modstd": True,
         "pass": True,
     })
 
