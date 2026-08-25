@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T01:38:56Z
+updated_at: 2026-08-25T07:39:31Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1622,3 +1622,56 @@ Taylor above reproduces the D value the fixed probe emits.
 **Still not started, and still needs the owner's go:** the actual D-frame
 re-derivation. Nothing above is a re-derivation — it is one confirmed staleness
 instance plus a faster instrument.
+---
+
+## 2026-08-25 — S1 attempt (PR #5748). Does NOT close; block located.
+
+Scope-(a). Nothing wired; no c_k value, tier or channel registration moved.
+
+**Correction to this bean's own framing.** `decayLadder_zC_threeRow_ne_zero`
+does not forbid the z-substitution. It is about z_C ONLY: at the C parameter
+the third Wedderburn row is forcibly present, so "keep the C ladder" and "the
+two-row forcing applies here" are incompatible. The theorem that blocks the
+SUBSTITUTION is `eigenphase_bar_defect_of_fullBar` (same file): feeding a
+full-bar parameter into the C eigenphase leaves a bar defect of exactly h²,
+z-independently. Two different blocks, both needed.
+
+**What parity derives.** For a general shift c = ce + co,
+`generalShift_bar_defect` gives defect h·(h + 2·co) — ce and z both absent.
+So bar-oddness forces co = −h/2 UNIQUELY and constrains ce NOT AT ALL. The
+canonical member is z_D^even = z_D − h/2 = (q⁴+1)/(2q(q²+1)), which is
+[2]_q·Ξ/2 — the weight-determined half of the Markov parameter — so this is a
+re-derivation, not a substitution. Does not contradict
+`no_weight_function_gives_phase`, which excludes the weights fixing the FULL α.
+
+**Measured (proton; muon agrees). Harness reproduces C's −2.06934258 and this
+bean's −974.43 before being trusted.**
+
+  candidate            implied c₂    c₃       |r₂/r₁|
+  C as recorded          −1.0176   −2.0693     0.017
+  D naive z-swap         −9.2989 −974.43       0.893
+  D bar-odd, derived     −1.7331  −86.081      0.423
+
+11× better than the banned swap, still not the c₂ = −1 band.
+
+**Three no-fit measurements.**
+* Window: landing in |c₂+1| ≤ 0.02 demands the eigenphase to 4.5e-4 relative.
+  C and derived-D differ by 36 window-widths; naive by 463.
+* The cross-anchor swing — this bean's f-map discriminator — is
+  phase-independent to 0.5% (1.0052 naive, 1.00026 derived). It carries almost
+  no convention information.
+* The data demand z* = 0.4991045: 0.043% from z_C, 1.81% from z_D^even, 22.8%
+  from z_D. The ladder's empirical content IS "z ≈ z_C", which is why C looked
+  derived — and is why the re-derivation must change the SHAPE, not just z.
+
+**Where it blocks / what unblocks it.** ce = z* − z_D^even = −0.0090534 is
+bar-even, hence NOT excluded by parity. Deriving ce from convention-D data is
+the open item. Two guards for whoever tries:
+* ce ≈ −u (6.3% away) is INADMISSIBLE: bar(u)/u = q², u is not bar-even. h² is.
+* ce is resolved to only 1.45% (68.8σ) by σ(Q_β)/Q_β = 7.8e-7. ce/h² =
+  −0.207142 sits 1.7e-4 from (√2−1)/2 — 84× below resolution. Any
+  identification quoted to better than 1.5% is arithmetic, not measurement.
+
+Artifacts: `computations/qbeta/qbeta_d_frame_eigenphase_window_probe.py`;
+`QOU/QBeta/DFrameEigenphaseBarOdd.lean` (9 theorems, sorry-free, axioms clean);
+`docs/audits/2026-08-25-qbeta-ck-ladder-convention-d-eigenphase-window.md`.
