@@ -4226,3 +4226,79 @@ realises it.
 ⚠ And correction 23's encoding restriction stands: `rothLemmaTheta_iterate` needs `t` to be a
 `2^{M−1}`-th power in `ℚ`. That is an artifact of the root-free encoding, not of §14 — removing
 it means proving `rothBound_succ_of_lemma4` in `ℝ` and transferring back.
+
+### §13 read in full (doc pp. 93–95) — the argument, verbatim
+
+**The per-entry index bound.** `Δ_{μν}A = A_{j_{μ1}…j_{μ,m−1} j_{νm}}`, so property (C) gives
+
+    J(Δ_{μν}A) ≥ max(0, J(A) − Σ_{h<m} j_{μh}/r_h − j_{νm}/r_m)
+
+and then, using `r₁ ≥ r₂ ≥ … ≥ r_m` and `μ−1 ≤ n−1 ≤ r_m ≤ t·r_{m−1}`,
+
+    ≥ max(0, J(A) − (1/r_{m−1})Σ_{h<m} j_{μh} − j_{νm}/r_m)
+    ≥ max(0, J(A) − (μ−1)/r_{m−1} − (ν−1)/r_m)
+    ≥ max(0, J(A) − t − (ν−1)/r_m)
+
+**Summed by properties (A) and (B):**   `J(W) ≥ Σ_{ν=1}^{n} max(0, J(A) − t − (ν−1)/r_m)`.
+
+**The case split.** `N := ⌊{J(A)−t}·r_m⌋ + 1`, so `N−1 ≤ {J(A)−t}r_m < N`.
+
+- `n ≤ N`: every term is non-negative, so `J(W) ≥ n{J(A)−t} − n(n−1)/(2r_m)`, giving (1).
+- `n > N` (assuming `J(A) ≥ t`, so `N ≥ 1`): the terms vanish past `N`, so
+
+      J(W) ≥ Σ_{ν=1}^{N} {J(A)−t−(ν−1)/r_m} = N{J(A)−t} − N(N−1)/(2r_m)
+           ≥ N{J(A)−t} − (N/2){J(A)−t} = (N/2){J(A)−t} > (r_m/2){J(A)−t}²
+
+  Solving for `J(A)`:
+
+      (2):  J(A) ≤ t + √((2/r_m)·J(W)) ≤ t + 2√((1/n)·J(W))    if n > N
+
+  the second step because `n ≤ r_m + 1` gives `r_m/2 ≥ (r_m/(r_m+1))·(n/2) ≥ n/4`.  ⚠ "In the
+  case `J(A) < t` so far excluded this estimate is still valid."
+
+**Both cases together:**
+
+    J(A) ≤ t + 2·max( (1/n)J(W),  √((1/n)J(W)) )
+
+and since `J(W) ≤ n·Φ_m` (§12),
+
+    J(A) ≤ t + 2·max(Φ_m, √Φ_m),      Φ_m = Θ_{m−1}(b;ρ;H) + Θ₁(b;ρ_m;H_m)
+
+with `A` chosen so that `J(A) = Θ_m(a; r; H)`.  **That is Lemma 4.**
+
+⚠ This confirms correction 15 from the source's own page: display (2) really does carry *both*
+`√((2/r_m)J(W))` and `2√((1/n)J(W))`, joined by `n ≤ r_m + 1`.
+
+### ⚠ An open question about the arc's §13, deliberately not answered
+
+**§13's leading term is `t`, once.**  `index_le_of_rothGrowth_of_factor_bound` /
+`..._of_rescaled_bounds` conclude
+
+    θ ≤ 2/ω + 2·max(εU + εV, q)
+
+and with §11's `ω = 1/t` that leading term is **`2t`, not `t`**.  A factor of two there is not
+free: `rothConstant_step_lemma4` consumes `θ ≤ s + 2w` and yields `c_{m+1} = 2c_m + 3`; a `2s`
+leading term would need `c_{m+1} ≥ 2c_m + 4` and would move `c_m = 2^{m+1} − 3`, which correction
+eleven pinned against §14.
+
+**I have not read the arc's derivation of the `2/ω`,** only its statement — and this arc's own
+history says that is exactly when to stop. Correction 14 was made by reading one display without
+the derivation; correction 17 by reading a label without the theorem. The `2/ω` may be genuine
+slack, or the arc's `ω` may not be `1/t` at that point, or `hθt : 2/ω ≤ θ` may be doing something
+I am misreading.
+
+**Resolving it is the first thing the next attempt at §13 should do**, before any assembly is
+built on top of `index_le_of_rothGrowth_of_rescaled_bounds`.
+
+### What `RothLemma4` still needs
+
+Its arithmetic core exists (`RothRecursionArith`'s `sq_le_two_mul_max_of_sum_le` and friends are
+exactly the two-case analysis above), and `index_le_of_rothGrowth_of_rescaled_bounds` is §13's
+conclusion given `hres` — which the two `Θ`-form halves now supply. What is missing:
+
+1. the `2t` / `t` question above;
+2. the assembly: split `σ ≃ Fin (n+1)` into `σ' ⊕ Unit`, take `IsRothTheta`'s realising pair,
+   feed it through, and package the descended system (`rothGammaFull_descend` + `exists_isRothTheta`)
+   into `RothLemma4`'s existential.
+
+(2) is plumbing of a size this arc has done before; (1) is not plumbing.
