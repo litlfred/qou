@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-08-25T16:35:35Z
+updated_at: 2026-08-25T17:45:42Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -54,3 +54,56 @@ second outcome moves 4-B from 'route identified' to 'route excluded'.
 
 CARRIED: qou-gcmn (B_pp frozen at A=3) bounds every scatter number here. The
 structural half involves no data and is unaffected.
+
+## ADDENDUM 2026-08-25 — the discrimination test could not discriminate
+
+Probe: computations/em_linking_kappa_regime_reachability_probe.py
+Witness: em-linking-kappa-regime-reachability.witness.json (3 assertions, pass)
+
+Prior question nobody asked, computed from the contest's OWN fitted
+constants (no new hypothesis, nothing scored, nothing fitted):
+
+  series spans alpha in [0.3165, 0.8732] over A = 3..63
+  coth within 10% of limit -> alpha 1.5223 -> A = 334
+  within  5% -> A = 606     within 1% -> A = 1764
+  heaviest known nuclide      A = 294
+
+SATURATION BEGINS PAST THE END OF THE NUCLEAR CHART. Not 'the test was run
+and came out close' — the discriminating regime is unreachable in any
+nucleus. qou-i6rg's premise ('needs NO new theory, only more AME data') is
+wrong: more data cannot settle it.
+
+Two quantitative corollaries:
+ - coth vs its two-term expansion 1/alpha + alpha/3: max dev 0.97% over the
+   measured range, against the 3.505% scatter. NOT separable. So H_coth's
+   advantage tracks the curvature term alpha^2/3, not saturation. (The
+   one-term 1/alpha IS separable at 19.49%, consistent with H_FH_A scoring
+   worse — the data resolves the first curvature correction and nothing
+   beyond it.)
+ - H_coth vs H_FH_Z predictive spread: max 6.285%, mean 3.247% = 1.79x the
+   scatter. A gap of order the noise is not a discrimination.
+
+SECOND, O2-INDEPENDENT ROUTE TO THE SAME SUBTRACTION. Radial Laplacian on
+H^3 is u'' + 2 coth(r) u', so harmonic solutions off the origin are
+-C coth(r) + D. Decay at infinity forces D = C:
+    G(r) = -(coth r - 1)/4pi ~ -(1/2pi) e^(-2r)
+The DECAYING Green's function of H^3 is already the subtracted one; the
+saturating -coth(r)/4pi is the D=0 non-decaying choice. Needs neither
+compactness nor finite volume, so independent of O2.
+Relatedly (standard, stated not re-derived): finite covolume => delta = 2
+and #{d<=R} ~ c e^(2R) cancels the e^(-2R) decay, so the Green's-function
+Poincare series diverges — O2 in analytic form.
+
+SCOPE: (a) negative on a TEST, not on a hypothesis. NOT claimed: H_coth
+false, power law true, or the metric Coulomb route failing.
+
+NET on 4-B, all three together: the two H_FH warrants withdrawn (round 5);
+the winner is not an admissible kernel (O2); and the measurement could not
+have separated them anyway (here). The ROUTE is untouched. What is gone is
+the belief that its kernel has been identified.
+
+NEXT CHANGES: 'extend the series' is now known futile. Either derive the
+kernel (zero-mean Green's fn of an actual finite-volume quotient, PREDICTING
+kappa(A) instead of scoring parameterisations against it), or find an
+observable probing alpha >= 1.5 — which no nucleus supplies, since
+alpha ~ A^(1/3) here.

@@ -461,3 +461,18 @@ metric Coulomb pairing `⟨A₁, J₂⟩` survives as the route exactly as round
 left it — what fails is this parameterisation of it, and the sharpened next
 question is the zero-mean Green's function of the actual fibre rather than a
 one-term stand-in for it.
+
+**Addendum, same day — the test could not have discriminated either.** A
+reachability check computed from the contest's own fitted constants: the series
+spans `α ∈ [0.317, 0.873]`, while `coth` comes within 10 % of its limit only at
+`α = 1.522`, i.e. **`A = 334`** — past the heaviest known nuclide (`A = 294`).
+Saturation is therefore unreachable in any nucleus, so `qou-i6rg`'s *"needs NO
+new theory, only more AME data"* is not the situation: more data cannot help.
+Over the measured range `coth` agrees with its two-term expansion
+`1/α + α/3` to 0.97 % against the 3.505 % scatter, so `H_coth`'s advantage
+tracks the curvature term, not saturation; and the two hypotheses' predictions
+differ by at most 6.285 % = 1.79 × that scatter. Details, plus an
+O2-independent derivation of the same subtraction from the `H³` boundary
+condition (`G = −(coth r − 1)/4π` is the decaying Green's function; the
+saturating form is the non-decaying choice of the additive constant), in the
+addendum to the round-6 record.

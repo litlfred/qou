@@ -352,8 +352,16 @@ new comparable number without touching `SU(3)`.
 > under the admissible family, scatter rises monotonically with neutralisation
 > (3.5 % → 11.2 % → 22.3 %) and the best admissible member carries *more*
 > residual structure than the hypothesis rejected for carrying structure.
-> Do **not** cite hyperbolic-saturation as the selected mechanism. Rank 1 is
-> unchanged: 4-B is still the smallest-scope gating object.
+> Do **not** cite hyperbolic-saturation as the selected mechanism. **Nor was
+> the contest capable of selecting one:** the series spans `α ∈ [0.317, 0.873]`
+> while `coth` reaches within 10 % of its limit only at `α = 1.522`, i.e.
+> `A = 334` — past the heaviest known nuclide (`A = 294`). Saturation is
+> unreachable in any nucleus, `coth` is within 0.97 % of `1/α + α/3` over the
+> measured range against 3.505 % scatter, and the two hypotheses differ by at
+> most 1.79 × that scatter. So **more AME data cannot settle it** — which was
+> `qou-i6rg`'s stated premise. Rank 1 is unchanged: 4-B is still the
+> smallest-scope gating object, but the next step is to *derive* the kernel,
+> not to extend the series.
 > [`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
 
 ### 4-C. A third flavour grade (strangeness / charm Cartan)

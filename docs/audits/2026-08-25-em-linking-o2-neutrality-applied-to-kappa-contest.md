@@ -184,3 +184,105 @@ not introduced here:
   (`Q0_OK 963 → 970`, `STALE 229 → 228`) that cannot be attributed to content
   from inside this container. Leaving a witness honestly stale beats
   committing one that measures the harness.
+
+---
+
+# Addendum — the discrimination test could not discriminate
+
+Second probe:
+[`em_linking_kappa_regime_reachability_probe.py`](../../computations/em_linking_kappa_regime_reachability_probe.py)
+(witness `em-linking-kappa-regime-reachability.witness.json`, 3 assertions,
+all passed). Same bean.
+
+The finding above says the contest's winner is not an admissible kernel. That
+prompts a prior question nobody had asked, and it is cheaper to answer than the
+one it supersedes: **does the series reach the regime where its hypotheses
+diverge at all?**
+
+Bean `qou-i6rg` extended the mirror series to `A = 63` and called it *"the
+measurement that selects the hyperbolic kernel or kills it"*, on the grounds
+that `H_coth` saturates at `κ → 1` while the power laws send `κ → 0`, so they
+*"diverge at large A and in opposite directions"*. That is true asymptotically.
+It is not true at `A = 63`.
+
+Computed from the contest's **own** fitted constants — no new hypothesis,
+nothing scored, nothing fitted:
+
+| quantity | value |
+|---|---|
+| `α` spanned by the series (`A = 3…63`) | **[0.3165, 0.8732]** |
+| `α` for `coth` within 10 % of its limit | 1.5223 → **`A = 334`** |
+| … within 5 % | 1.8568 → `A = 606` |
+| … within 1 % | 2.6517 → `A = 1764` |
+| heaviest known nuclide | `A = 294` |
+
+**Saturation begins past the end of the nuclear chart.** Not "the test was run
+and came out close" — the discriminating regime is not reachable in any
+nucleus. There is no heavier mirror pair to go and measure.
+
+Two corollaries, both quantitative:
+
+1. **`coth` is not separable from its own short-range expansion here.** Over
+   the measured range `coth α = 1/α + α/3 − α³/45 + …` agrees with its two-term
+   truncation to **0.97 %**, against the **3.505 %** scatter the hypotheses are
+   judged on. So whatever `H_coth`'s advantage tracks on this data, it is the
+   curvature term `α²/3` — not saturation. (The *one*-term `1/α` **is**
+   separable, at 19.49 %, which is consistent with `H_FH_A` scoring worse. The
+   data resolves the first curvature correction and nothing beyond it.)
+2. **The separation actually achieved is 1.79 × the noise.** `H_coth` and
+   `H_FH_Z`, each at its own fitted constant, differ by at most **6.285 %**
+   across the whole series (mean 3.247 %) against 3.505 % scatter. A gap of
+   order the noise is not a discrimination.
+
+## A second, O2-independent route to the same subtraction
+
+Worth recording because it needs neither compactness nor finite volume. The
+radial Laplacian on `H³` is `u'' + 2 coth(r) u'`, so harmonic solutions off the
+origin are `−C coth(r) + D`: the fundamental solution is fixed only up to an
+additive constant. `C` is set by the delta normalisation; `D` by the boundary
+condition. Requiring decay at infinity gives `D = C`:
+
+$$G(r) = -\frac{\coth(r) - 1}{4\pi} \sim -\frac{1}{2\pi}e^{-2r}$$
+
+So **the decaying Green's function of `H³` is already the subtracted one**, and
+the saturating `−coth(r)/4π` is the `D = 0` choice, which does not vanish at
+infinity. The subtraction the main finding derives from finite-volume
+neutrality is also just the ordinary boundary condition one level down.
+
+Relatedly, and standard: for finite-covolume `Γ` the critical exponent is
+`δ(Γ) = 2` and lattice points satisfy `#{d ≤ R} ~ c e^{2R}`, exactly cancelling
+the `e^{−2R}` decay — so the Green's-function Poincaré series diverges. That
+divergence *is* O2 in analytic form: a finite-volume quotient admits no Green's
+function without the `−1/vol(M)` source correction. Stated as the known fact it
+is, not re-derived; nothing above rests on it.
+
+## Scope
+
+**(a) scope-limited negative on a TEST, not on a hypothesis.** What is claimed:
+the `A = 63` series does not reach the regime in which its hypotheses diverge,
+so it cannot have selected among them on the stated grounds. What is **not**
+claimed: that `H_coth` is false, that a power law is true, or that the metric
+Coulomb route fails. This is about what the measurement can resolve.
+
+## What this changes
+
+`qou-i6rg` is marked `completed`, and the front has been reading its ranking as
+a settled selection. It is not one, and no amount of further AME data can make
+it one — the bean's own premise was that the test *"needs NO new theory, only
+more AME data"*, and the missing ingredient turns out to be neither. Combined
+with the main finding, the position on 4-B is:
+
+- the two `H_FH` hypotheses lost their warrant (round 5, misattribution);
+- the winner is not an admissible kernel (main finding, O2);
+- and the measurement could not have separated them in any case (here).
+
+The route — the metric Coulomb pairing on the hyperbolic Green's function —
+is untouched by all three. What is gone is the belief that its kernel has been
+identified.
+
+**The honest next step changes accordingly.** Not "extend the series"; that is
+now known to be futile. Either derive the kernel (compute the zero-mean Green's
+function of an actual finite-volume quotient and *predict* `κ(A)` rather than
+score parameterisations against it), or find an observable that probes
+`α ≳ 1.5` — which, since `α ∝ A^{1/3}` in this parameterisation, no nucleus
+supplies.
