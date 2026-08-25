@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-25T21:35:00Z
+updated_at: 2026-08-25T22:00:00Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -71,3 +71,24 @@ sweep, not the grep.
 Sweep results pending. Any genuine finding changes a NUMBER, so each needs the
 usual treatment: confirm the site intends canonical, check whether a committed
 witness carries the blind value, and fix at the producer.
+
+
+---
+
+# 2026-08-25 — CONFIRMED 11-0 against the committed cache
+
+`computations/probes/exact_rational_chi_gauge_probe.py` settles this from the
+corpus's own numbers rather than from the ruling. Running one exact-arithmetic
+pipeline over the deuteron's 11 cached symbolic characters, at three
+independent rational `q`:
+
+    colour-weighted   d = -h*(1/2 - delta/4)     11 / 11 match
+    colour-blind      d = -h/2                    0 / 11 match
+
+So the **committed chi cache is colour-weighted**. A consumer using `h/2` for a
+p-n interface therefore disagrees with the corpus's own recorded numbers — not
+merely with a convention preference. That raises the stakes on the sweep: any
+genuine finding is a number that contradicts a committed witness.
+
+The blind arm is kept in the probe permanently as the control; without it the
+weighted result would be an assertion rather than a discrimination.
