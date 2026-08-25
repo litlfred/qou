@@ -199,7 +199,25 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
     # further down records that callers legitimately pass them, and a string is
     # not a request for precision. Only the mpmath types dispatch, because only
     # for those is the downcast unambiguously wrong.
-    if isinstance(q, (_mpf_type, _mpc_type)):
+    if isinstance(q, _mpc_type):
+        # Dispatching mpc here would be worse than useless: the exact twin is
+        # real-only (`q_local = q if isinstance(q, mp.mpf) else mp.mpf(str(q))`
+        # stringifies, and mpf("(1.11 + 0.0j)") dies with an opaque
+        # "invalid literal for int()" from inside mpmath). An earlier revision
+        # of this branch routed mpc there and produced exactly that traceback.
+        #
+        # A complex q is a legitimate FIBRE-level object (AGENTS.md separates
+        # the fibre, where Im(q) is unconstrained, from the archimedean
+        # evaluation, where Im(q_0) = 0). So this is a missing capability, not
+        # a forbidden input, and it says so.
+        raise SeminormalPrecisionLoss(
+            "build_seminormal_matrices() was handed a complex q "
+            f"({type(q).__name__}); the exact seminormal builder is real-only, "
+            "so there is no exact path to dispatch to. Complex q is a "
+            "fibre-level object and supporting it is unimplemented, not "
+            "refused. Pass an mpf for the exact real path. Bean qou-8xb1."
+        )
+    if isinstance(q, _mpf_type):
         if sparse:
             # scipy.sparse rejects dtype=object, so an exact matrix cannot be
             # returned in CSR form. Refusing beats silently handing back a
