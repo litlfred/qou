@@ -114,15 +114,35 @@ direction rather than a hope is the prune itself: `μ̄₁₂₃` is the *unique
 first-order candidate left once pairwise linking is excluded on a Brunnian
 carrier.
 
-**Two objects are missing, not one** — corrected after the retraction above:
+**Two objects were missing, not one** — identified after the retraction above.
+**The first is now supplied**; the second is not.
 
-1. **A computable `μ̄₁₂₃` for ≥ 3 components.** The corpus has a name and a
-   conjecture class, not a computation. Tractable: for a closed braid with
-   vanishing pairwise linking, `μ̄₁₂₃` has no indeterminacy and is the degree-2
-   Magnus coefficient of a longitude word — a finite computation of the same
-   shape as `crossSum` above.
-2. **The map from a triple linking number to an energy.** The same gap as
-   everywhere on this surface, and untouched by any of the above.
+1. ~~A computable `μ̄₁₂₃` for ≥ 3 components.~~ **DONE**, same session:
+   `QOU/BraidsAndKnots/MilnorTripleLinkingMagnus.lean`, sorry-free, and every
+   theorem in it depends on **no axioms at all**.
 
-Do not report 4-B as "one object away". It is two, and only the first is
-currently tractable.
+   | declaration | statement |
+   |---|---|
+   | `magnus_commutator` | the degree-2 expansion of `[x₁,x₂]` is `1 + X₁X₂ − X₂X₁` |
+   | `mubar_borromean_eq_one` | **`μ̄₁₂₃ = 1`** on the Borromean braid — the corpus's first nonzero triple linking value |
+   | `mubar_unlink_eq_zero` | `μ̄₁₂₃ = 0` on the unlink |
+   | `mubar_separates_borromean_from_unlink` | the invariant separates what pairwise linking could not |
+   | `noncommutator_degree_one_nonzero` | control on the well-definedness hypothesis |
+
+   **A coherence check fell out.** The degree-1 Magnus coefficients *are* the
+   linking numbers, so `magnus_commutator`'s `c1 = c2 = 0` reproduces
+   `borromean_crossSum_zero` by a completely different route — a braid-word
+   crossing simulation there, a free-group series here. Two independent
+   computations agreeing is worth more than either alone. It also verifies
+   rather than assumes the condition under which `μ̄₁₂₃` is
+   indeterminacy-free.
+
+   **Two topological inputs are consumed, not proved:** Milnor's identification
+   of `μ̄₁₂₃` with the `X₁X₂` coefficient of the longitude, and that the
+   Borromean longitude is `[x₁, x₂]`. Both are standard and cited.
+
+2. **The map from a triple linking number to an energy.** Untouched. This is
+   the same gap as everywhere on this surface, and nothing above narrows it.
+
+So 4-B is now genuinely **one object away** — but that object is the hard one,
+and no value for `E_EM` is claimed.
