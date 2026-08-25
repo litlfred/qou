@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-25T16:43:58Z
+updated_at: 2026-08-25T17:06:03Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -89,3 +89,42 @@ stale in the same way?** The generic staleness triage keys on `scriptHash` of
 the producer, and this class is invisible to it — the producer file is unchanged;
 a *dependency* changed. That is the import-cone drift case AGENTS.md flags as
 "the one that actually bites". The count is unmeasured. Do not assume it is 1.
+
+
+---
+
+## Blast radius MEASURED (2026-08-25) — bounded, and the cheap triage route is closed
+
+The section above said the count was unmeasured. It is now bounded, though not
+resolved.
+
+**Upper bound: 106 witnesses.** Of 3088 `*.witness.json` scanned, 106 record a
+top-level `scriptFile` whose stem is one of the **153** scripts that genuinely
+*import* `atom_braid_word_3A` / `per_generator_V_hat_3A` (AST-checked imports,
+not name mentions; `_deprecated/` excluded). Largest contributors:
+`compute_atom_chi_rust` (4), `bar_pairing_binding_observable` (3),
+`binding_production_route_C_vs_D_probe` (3),
+`binding_sum_C_vs_D_per_isotope_probe` (3), `atomic_tr_m_mpfr_50dps` (2),
+`rho_k_markov_multiplicativity_probe` (2), `markov_peel_atomic_witness` (2).
+
+**106 is an UPPER BOUND on a SUBSET, and three gaps make it neither.** It counts
+only *direct* importers — transitive ones are missed entirely; **490** of the
+3088 witnesses record no `scriptFile` at all and are invisible to this method;
+and being emitted by an importer does not imply the number moved. Do not quote
+106 as a stale count.
+
+**The cheap triage route is closed — this is the actionable finding.** The
+gram-norm case was settled without re-running anything, by comparing a stored
+`tr_atom`/`tr_free` against the independent 50-dps `tr_m_atom_zn` engine. Of the
+106, **exactly 1 carries a comparable trace field: the gram-norm witness
+itself.** So the other 105 cannot be adjudicated from stored data — each needs
+its producer re-run. That is why this is a bean and not a PR: it is a
+long-compute campaign, not a scan.
+
+**Detector caution, recorded because it will bite the next person.** The first
+pass of this measurement returned **0** — it looked for `d["witness"]
+["scriptFile"]`, but provenance in these files is at **top level**
+(`d["scriptFile"]`), so the nested lookup found nothing and read as a clean
+tree. Caught only by asserting the known positive was detected. Any re-run of
+this measurement must self-test against `gram-norm-binding-probe.witness.json`
+before its count is trusted.
