@@ -80,6 +80,46 @@ QOU.BraidKnot.OVTopAssembly | QOU.BraidKnot.OVTopAssembly.sum_numSYT_sq_eq_facto
 QOU.BraidKnot.RSKBurnsideDischarge | QOU.BraidKnot.RSKBurnsideDischarge.rskBurnsideHolds | sorryAx
 QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.sum_sytDim_sq_eq_factorial | sorryAx
 QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormalisation.nuV_top_closed_form_unconditional | sorryAx
+
+# --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
+# Three content blocks assert these are proved; the assertion is only as good as an
+# axiom check, so the check is pinned here rather than left as a one-off.  Measured
+# 2026-08-10: all six depend on [propext, Classical.choice, Quot.sound] and nothing
+# else.  A `sorry` appearing anywhere upstream regresses this gate, which is the
+# point — the blocks would then be claiming more than the Lean delivers.
+QOU.Knot.RivinConcavity | QOU.Knot.Rivin.strictConcaveOn_tetVolLine | clean
+QOU.Knot.RivinConcavity | QOU.Knot.Rivin.cot_quadratic_pos | clean
+QOU.Knot.RivinConcavity | QOU.Knot.Rivin.deriv_deriv_Lob | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.norm_eq_sin_div_sin | clean
+QOU.Knot.IdealTetLawOfSines | QOU.Knot.IdealTet.log_sin_sub_log_sin | clean
+QOU.Knot.KummerRadial | QOU.Knot.KummerRadial.kummer | clean
+# The volume functor's definitional layer (same PR).  `volume_rotate` is the
+# well-definedness that makes "the volume of an ideal tetrahedron" a property of
+# the tetrahedron rather than of a chosen edge label.
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.volume_rotate | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.rotate_angles | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.volume_eq_dilog | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTriangulation.volume_eq_dilog | clean
+QOU.MathlibExt.IdealTriangulation | QOU.MathlibExt.IdealTetrahedron.param_prod | clean
+# The birthday-axiom DEFECT REPORT (same PR).  These are proofs that a two-valued
+# `flatBirthday` satisfies the six SurrealField birthday axioms — i.e. that the
+# axioms admit a model that is not Conway's birthday.  A NEGATIVE result, so it is
+# worth pinning for the opposite reason to the others: if one of these ever fails,
+# the axioms were strengthened and the defect report needs re-checking, not
+# quietly deleting.  The last two are the birthday-free analytic content.
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_avg_le | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_add_le | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_neg | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.flatBirthday_ofReal_le_omega | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.st_ofSeq_of_tendstoReal | clean
+QOU.AppendixSurreals.HyperrealLimitTransfer | QOU.AppendixSurreals.HyperrealTransfer.tendstoReal_le_of_eventuallyLE' | clean
+# The 5_2 saddle sum rule (same PR).  `fiveTwoSaddleSumRule_holds` INHABITS a
+# conjecture class the corpus declared with no instance and "the statement is
+# open" — so its axiom status is exactly what distinguishes a discharged
+# conjecture from a relabelled one.  Pin it.
+QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule | clean
+QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwo_sum_V | clean
+QOU.QBeta.FiveTwoComplexPentagon | QOU.QBeta.FiveTwoComplexPentagon.fiveTwoSaddleSumRule_holds | clean
 """
 
 
