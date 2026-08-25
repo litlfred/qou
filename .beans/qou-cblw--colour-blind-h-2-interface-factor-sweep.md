@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-25T22:15:00Z
+updated_at: 2026-08-25T23:05:00Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -170,3 +170,54 @@ Not a sweep-and-replace. Each genuine site changes a number, so: confirm intent,
 check the downstream witness, fix at the producer. The Rust pair (3-4) is the
 highest-value single fix — wiring `color_weight.rs` in would close both, and it
 is the one place where the canonical implementation already exists.
+
+## 2026-08-25 — the two Rust sites now NAME their convention (`d85f1d581b`)
+
+Not flipped — **named**. `gram.rs` open-coded `-0.5 * h` at both p-n sites
+(items 3-4). They now call `color_weight::pn_offset{,_from_h}` under a
+`GRAM_PN_CONVENTION` constant whose doc records that it is `StrictAveraged`
+while canonical is `BringColorWeighted`, gap `h*delta/4 = 7.19e-05` at the
+proton pin.
+
+This also gives `color_weight.rs` its **first caller**. It was a fully ported,
+self-checking, 50-dps-validated implementation of the canonical convention with
+zero consumers outside its own tests — which is precisely how the blind form
+survived next to it.
+
+`gram_pn_convention_is_still_the_blind_one` asserts the live state, so the
+eventual flip breaks a test by design: flip + corpus migration land in one
+commit or not at all.
+
+**Blast radius of the actual flip (measured, unchanged): 51 Python files, 18
+committed witnesses.** Owner-scoped; not an agent edit. Item 3-4 is therefore
+*prepared*, not closed.
+
+### Verification lesson worth keeping
+
+`cargo test --lib` reported **212 passed** and that proved **nothing** about
+this change: the only atom tests in the suite are `build_atom_nf_vacuum` and
+`build_atom_nf_hydrogen`, and **neither has a p-n bond**. A green suite over a
+path no test crosses is not evidence, and I nearly reported it as if it were.
+
+Established empirically instead: stashed the change and diffed `build_atom_nf`
++ `atom_per_generator_volumes` at 17 significant digits over deuteron / 4He /
+7Li / 3He — identical. Now pinned in-suite as
+`pn_offset_is_bit_identical_to_the_open_coded_form` (`assert_eq!` on `f64`,
+deliberately not a tolerance).
+
+### A structural note on `build_atom_nf`
+
+It takes `(z, n, h)` — no `q` — so `delta(q)` is not directly reachable there.
+That is a **soft** obstruction, not a structural one: `h = q - 1/q` inverts
+uniquely on `q > 0` as `q = (h + sqrt(h^2+4))/2`. `pn_offset_from_h` does that,
+is exact (no inversion) for the blind convention, and round-trips the
+`q`-carrying form under both. Worth recording so the h-only signature is not
+later cited as a reason the colour weighting *cannot* be applied there.
+
+### One finding retracted mid-task
+
+I planned to write a test asserting the two conventions differ by `h*delta/4`.
+It **already existed** — `colour_weighting_is_a_real_shift_not_a_no_op`.
+Corpus-grepped before writing, which is the only reason it did not become a
+duplicate. Second time this session that the thing I was about to build was
+already there.
