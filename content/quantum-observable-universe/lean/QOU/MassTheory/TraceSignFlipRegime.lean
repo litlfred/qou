@@ -10,6 +10,32 @@ the four sectors `rem:isospin-mass-split-em-localisation` calls sign-flip
 invariant, only the shell correction has a proof. This file settles the **trace
 tower**, and the answer is not the one the remark needs.
 
+## What was already in the corpus, and what this adds
+
+**Found after writing this file, which is the wrong order.**
+[`prop:chirality-dual-space-derivation`](../../../mass-theory/chirality-dual-space-derivation.md)
+already records the symmetric-channel case, in the same notation:
+
+  `τ_sym(σ) − τ_sym(σ⁻¹) = h`,  with  `h = q − q⁻¹`,
+
+which is `trace_inv_sub_trace` below specialised to the one-dimensional
+symmetric representation, where `σ` acts by `q` and `tr 1 = 1`. Anyone citing
+this file should cite that one too.
+
+What is genuinely added here is not the deviation but **when it vanishes**:
+
+1. It holds for **any** `R`-linear functional on **any** algebra whose element
+   satisfies the Hecke relation — the corpus statement is about `τ_sym`
+   specifically, over `ℝ`.
+2. The **iff**: `tr σ⁻¹ = tr σ ↔ q² = 1`, rather than the value of the
+   difference alone.
+3. The **tie to the braiding**: by `double_braiding_eq_one_iff`, that locus is
+   exactly `σ² = 1`. So "the trace is sign-flip blind" and "the braiding is
+   symmetric" are the *same condition*, which is what makes this a statement
+   about the framework rather than an arithmetic identity.
+4. Generic over a field, with the `ℝ` specialisation kept on the archimedean
+   side of the §7c wall.
+
 ## The result
 
 The Hecke relation itself forces the inverse of a generator:

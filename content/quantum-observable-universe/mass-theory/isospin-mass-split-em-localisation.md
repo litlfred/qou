@@ -11,9 +11,9 @@ Sector by sector, one entry of that enumeration fails. The unified mass formula 
 | descended trace | **not invariant** at the substrate — see below |
 | brane tower | **invariant** — its trace-invariant form takes no braid word either (`QOU.Mass.BraneTowerIsospinBlind.braneTowerR_eq_binom_sum`); the general form is invariant once the per-subset weight is Markov-invariant (`braneTowerW_isospin_blind`). Absent from the list above, but benignly so |
 | shell correction | invariant in the **crystal limit** $q \to 0$ only ([`prop:crystal-isospin-degeneracy`](crystal-isospin-degeneracy.md)) |
-| chirality | no invariance result in either direction |
+| chirality | **breaks both involutions**: it is the unique S-odd term ([`frobenius-s-classification`](frobenius-s-classification.md), `chirality_is_unique_S_odd`), and its factor reads the crossing signs directly, $\prod_c (1 + \mathrm{sign}(c)\,h)$ with $h = q - q^{-1}$ ([`prop:chirality-dual-space-derivation`](chirality-dual-space-derivation.md)). It does not *itself* source this split, though: ${}^3\mathrm{H}$ and ${}^3\mathrm{He}$ carry the same crossing multiset (one positive, one negative), so both get the same factor $1 - h^2$ |
 
-The descended trace is the one entry that fails outright, and it is the sector the argument can least afford to lose. The Hecke relation gives $\sigma^{-1} = \sigma - (q - q^{-1})$, so a generator flip moves the trace by $(q - q^{-1})\,\mathrm{tr}(1)$ — about $0.209\,\mathrm{tr}(1)$ at $q_0$ — which vanishes only where $q^2 = 1$, the symmetric-braiding locus the framework sits off (`QOU.MassTheory.TraceSignFlipRegime`). A $q \to 0$ invariance does not transfer to $q_0$.
+Two of the four named sectors therefore fail the premise, not one. The descended trace is the entry the argument can least afford to lose, and it fails outright. The Hecke relation gives $\sigma^{-1} = \sigma - (q - q^{-1})$, so a generator flip moves the trace by $(q - q^{-1})\,\mathrm{tr}(1)$ — about $0.209\,\mathrm{tr}(1)$ at $q_0$ — which vanishes only where $q^2 = 1$, the symmetric-braiding locus the framework sits off (`QOU.MassTheory.TraceSignFlipRegime`). A $q \to 0$ invariance does not transfer to $q_0$.
 
 The split is also not Coulomb-dominated. Writing it as the free-nucleon term minus the binding difference,
 
