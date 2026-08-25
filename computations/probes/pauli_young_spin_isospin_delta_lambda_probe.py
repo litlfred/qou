@@ -48,6 +48,15 @@ mp.mp.dps = 60
 REPO = Path(__file__).resolve().parents[2]
 COMP = REPO / "computations"
 
+# Canonical helpers, imported rather than re-spelled: a local copy of z or of
+# the flavour split is exactly how this file drifted a convention behind the
+# ruling (bean `qou-4e5k`, twice over on this branch).
+sys.path[:0] = [str(COMP), str(COMP / "substrate"),
+                str(REPO / "tools" / "qou-substrate" / "python")]
+from closed_form_tau_M import markov_z  # noqa: E402 — canonical convention-D z
+from _li_2_q_util import flavor_split_leading  # noqa: E402 — derived δ
+from q_parameter import Q_MP  # noqa: E402 — experimental (proton) pin
+
 # ---- electron mass (CODATA, MeV) -- the single dimensional input of the
 #      whole framework (CAL-1).  NOT a Delta_lambda parameter.
 M_E = mp.mpf("0.51099895069")
@@ -296,11 +305,15 @@ def main():
 
     # ---- deuteron 0.572 pn-weight cross-check -------------------------------
     # E0 = m_e / (q0 (q0-1)); pn-weight = (B_D/E0)/L_pn, L_pn = -log(f_pn).
-    q0 = mp.mpf("1.10997858275138080759166909561076887987449912187357763605672")
+    q0 = Q_MP
     E0 = M_E / (q0 * (q0 - 1))
-    z = mp.sqrt(q0) / (q0 + 1)
+    # Convention D (canonical). This was `mp.sqrt(q0)/(q0 + 1)` — convention C,
+    # excised by the 2026-08-09 ruling and reaffirmed 2026-08-15 R1.
+    z = markov_z(q0)
     h = q0 - 1 / q0
-    delta_cf = mp.mpf("0.00137705")
+    # Derived flavour split, not the literal 0.00137705 this used to carry —
+    # that value is 9.7e-4 relative off `flavor_split_leading(q0)`.
+    delta_cf = flavor_split_leading(q0)
     f_pn = z - h * (mp.mpf("0.5") - delta_cf / 4)
     L_pn = -mp.log(f_pn)
     pn_weight_ame = (AME["B_deuteron_MeV"] / E0) / L_pn
@@ -310,7 +323,14 @@ def main():
     print("\n" + "=" * 78)
     print("DEUTERON pn-WEIGHT cross-check (signed_crossing_feasibility_probe.py object)")
     print(f"    E0 = m_e/(q0(q0-1))        = {mp.nstr(E0, 10)} MeV")
-    print(f"    pn-weight from AME B_D     = {mp.nstr(pn_weight_ame, 8)}   (target ~0.572)")
+    # NOT a target. `signed_crossing_feasibility_probe` computes this same
+    # expression (B_D/E0)/L_pn, so agreement is by construction, not evidence —
+    # it says the two files share a formula and a convention, nothing about the
+    # physics. Under convention C both read 0.5719, which is where the "target
+    # ~0.572" this line used to quote came from; the reference now reads 0.7852.
+    print(f"    pn-weight from AME B_D     = {mp.nstr(pn_weight_ame, 8)}   "
+          f"(same expression as signed_crossing_feasibility_probe; agreement is "
+          f"by construction)")
     print(f"    pn-weight from B_pred(PY)  = {mp.nstr(pn_weight_pred, 8)}")
     print("=" * 78)
 
@@ -339,7 +359,14 @@ def main():
                 "E0_MeV": mp.nstr(E0, 30),
                 "pn_weight_from_AME": mp.nstr(pn_weight_ame, 30),
                 "pn_weight_from_pred": mp.nstr(pn_weight_pred, 30),
-                "target": "0.572",
+                "reference_signed_crossing_feasibility": "0.7852",
+                "reference_note": (
+                    "same expression (B_D/E0)/L_pn as "
+                    "signed_crossing_feasibility_probe, so agreement is by "
+                    "construction, not evidence. Was '0.572' — the convention-C "
+                    "value of the same quantity, adopted as a target while this "
+                    "file was itself still in C."
+                ),
             },
             "verdict_deuteron": verdict,
         },
