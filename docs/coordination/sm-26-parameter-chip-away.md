@@ -207,3 +207,37 @@ separation law is imported. None of the three refutes the metric Coulomb
 pairing. What they remove is the impression that a kernel had been selected,
 that more data would settle it, and that the hyperbolic reading was
 load-bearing for the fit.
+
+
+---
+
+## 2026-08-25 — 4-C retitled: no third flavour grade is missing
+
+PR [#5770](https://github.com/litlfred/qou/pull/5770), bean `qou-17mq`.
+**Corrects the "D-meson mass gates on exactly TWO objects" entry above: object 1
+is void.**
+
+`orderedContent_injective` is proved sorry-free (`by decide`) on `main`:
+`D̄⁰ (−5,+3)` and `K⁰ (+3,−5)` collide **only as multisets**, and the ordering is
+the quark/antiquark strand orientation — the same `signedWrithe` that gives
+`T₃`, *"topological strand-orientation data, not a fit"*.
+
+The arity slip: `mass_from_graded_content_cannot_separate` quantifies over
+`f : Multiset ℤ → ℚ` — **symmetric** functions of the *unordered* content. It
+does not say the content cannot carry the mass. The ordered complement is
+injective. Fourth recorded instance of `da-arity-conflation`.
+
+**Consequence for the ranking: 4-C does not reduce into 4-A.** That dependency
+placed the rank-2 near-term object behind the `N = 3` problem, the framework's
+hardest open question. It is not there. What remains is object 2 of the entry
+above — `qou-qpj9`'s canonical content → hyperbolic-braid map — which needs no
+`SU(3)`, flavour or colour.
+
+**Not thereby solved.** Injectivity gives a factorisation, never a derivation of
+the factorising map. Fitting through five injectively-labelled points is the
+per-state fit the J/ψ attack already recorded as worthless.
+
+Bean `qou-dnm1` (`todo`) carries the void framing and four attack options for
+the absent grade; body appended, **status left for the author**. A prior agent
+reached this on `qou-mesont3` and it never propagated here — re-verified at
+source rather than taken from that bean.
