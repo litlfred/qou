@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:08:52Z
-updated_at: 2026-08-25T11:26:16Z
+updated_at: 2026-08-25T11:36:08Z
 ---
 
 ## Map (measured 2026-08-25 by git merge-tree against origin/main)
@@ -141,3 +141,30 @@ Its `references.ts` looked like it added 13 references. It did not — all 13 we
 present at the merge-base, so main DELETED them. Resolving toward main gives an
 id set byte-identical to main's. A stale branch's apparent additions can be
 someone else's deletions.
+
+
+## CORRECTION 2026-08-25 — six reached main, not seven
+
+The close-out above says SEVEN merged. **Six reached `main`. #4925 did not**, and the
+reason is my error: I merged it without checking its base. Its base is
+`claude/fivetwo-level7-ladder-numerators`, not `main` — the PR body says so in its
+second line.
+
+Consequences:
+
+* Its content landed on the **stacking branch**, not on `main`.
+* I resolved its conflicts against `origin/main`, which were **not** that PR's
+  actual conflicts. The resolution is sound as a main-targeted one — which is why
+  it was salvageable — but it was not the resolution the PR needed.
+* I pushed two commits (`353847c13e`, `0e2eddcfec`) onto a branch whose last commit
+  was **2 h old**, i.e. live. Nothing force-pushed, nothing lost, but not mine to
+  add to — and an hour earlier I had declined to touch #5746 on exactly that
+  ground. The rule I applied to a sibling I failed to apply to a base.
+
+Remedy: **PR #5761**, from #4925's head retargeted at `main`. Zero conflicts against
+current main, 11 files, run-validate exit 0. Draft; not merged.
+
+**The check that was missing, for next time: read the PR's `base.ref` before
+resolving anything.** `merge-tree origin/main <head>` answers a question about main;
+if the base is not main, it is answering the wrong question, and it will do so
+silently and produce a plausible-looking resolution.
