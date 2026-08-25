@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T18:57:13Z
-updated_at: 2026-08-25T19:23:18Z
+updated_at: 2026-08-25T21:23:00Z
 ---
 
 MEASURED 2026-08-24, branch claude/excise-convention-c-2026-08-24.
@@ -226,3 +226,49 @@ Revised status, stated as measurement rather than extrapolation:
 The same caution applies to the 4He figure in the note above: ">= tens of
 hours" was reached the same way, so treat it as a lower bound that is probably
 much too low, which is the direction that keeps it honest.
+
+
+---
+
+## The patch IS landed — correcting my own repeated claim (2026-08-25)
+
+I stated three times, in this bean, in PR #5775, and to the owner, that the
+`per_generator_V_hat_3A` scalar-collapse patch had **not** landed and that the
+`qou-wlaf` re-run campaign was gated behind it. **That was wrong the whole
+time.**
+
+The collapse is on `main`. Measured on today's `main`:
+
+    per_generator_V_hat_3A(1, 2)   # 3H, A=3   ->  0.21 s
+
+against the 2.5 h+ this bean records for the unpatched path. The source
+carries the `# Per-generator SCALAR collapse, replacing a per-λ matrix
+product.` comment at line 883.
+
+**Why I missed it, because the failure mode generalises.** I checked with
+`git log -3 origin/main -- computations/mass_at_3A_proper.py`, saw only a
+language-cleanup commit and an old merge, and concluded "not landed". The
+collapse arrived under a commit named for something else entirely —
+`89d94187b9 probe: per-block-magnitude binding for A=3 (operator-valued, no
+Δ_λ)` — and was further back than three commits. The original
+`23b9c4f5ba perf(qou-9ohz): ...` is **not** an ancestor of `main`; its content
+was re-landed by another route, so searching for the commit finds nothing while
+the change is present.
+
+**A cherry-pick confirmed it independently and by accident:**
+`git cherry-pick --no-commit 23b9c4f5ba` auto-merged to an **empty diff**. A
+no-op cherry-pick is a positive result — it says the content is already there.
+
+Two rules worth keeping:
+
+  * **Test the behaviour, not the commit log.** `git log -N -- <file>` answers
+    "what recently touched this file", which is not "does this change exist".
+    One timing call settled in 0.2 s what the log had answered wrongly for
+    hours.
+  * **A no-op cherry-pick is evidence.** If a patch you believe is missing
+    cherry-picks to an empty diff, stop and check whether it landed by another
+    route before concluding the cherry-pick failed.
+
+**Consequence: the `qou-wlaf` residue is NOT gated.** Every place that says it
+waits on this patch — this bean, `qou-wlaf`, and PR #5775's body — is stale on
+that point.
