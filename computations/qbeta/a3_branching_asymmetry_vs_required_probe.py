@@ -41,10 +41,12 @@ set_compute_dps()
 # PIN: MUON (ideal CAL-2) -- 1.10997859555733471..., not the proton
 # 1.1099785827513808. Recorded explicitly because this literal carried no pin
 # label at all; re-pinning is bean qou-1c4y, not this drain.
-Q0 = mp.mpf("1.1099785955573347")
+Q0_STR = "1.1099785955573347"     # 17 sig digits, verbatim -- see note below
+Q0 = mp.mpf(Q0_STR)
 LNQ = mp.log(Q0)
-MU3 = mp.mpf("0.4708")
-C3 = mp.mpf("0.297")
+MU3_STR, C3_STR = "0.4708", "0.297"
+MU3 = mp.mpf(MU3_STR)
+C3 = mp.mpf(C3_STR)
 R_STAR = MU3 / C3
 X_REQ = mp.sqrt(R_STAR - 1)              # r* = 1 + x²  ⇒  x = √(r*−1)
 
@@ -95,8 +97,12 @@ def main() -> None:
         "engine": "mpmath mpf (0 free params; structural)",
         "free_parameters": 0,
         "inputs": {
-            "q0": fmt(Q0), "q0_pin": "muon (ideal CAL-2)",
-            "mu3_MeV": fmt(MU3), "c3_single_trace_MeV": fmt(C3), "r_star": fmt(R_STAR),
+            "q0": Q0_STR, "q0_pin": "muon (ideal CAL-2)",
+            "q0_precision_note": (
+                "17 significant digits, recorded VERBATIM as computed with; the muon anchor's "
+                "full value is 1.10997859555733471989976..., so padding to the serialization "
+                "width would append digits that are wrong from the 18th."),
+            "mu3_MeV": MU3_STR, "c3_single_trace_MeV": C3_STR, "r_star": fmt(R_STAR),
             "arithmetic": f"mpmath mpf at {mp.mp.dps} dps (no float64 anywhere)",
             "borromean_braid": "(sigma_1 sigma_2^{-1})^3",
             "chi_(3)_borr": 1, "chi_(1,1,1)_borr": 1,

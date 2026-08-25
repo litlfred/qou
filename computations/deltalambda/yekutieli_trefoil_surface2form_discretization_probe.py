@@ -42,7 +42,8 @@ set_compute_dps()
 # PIN: MUON (ideal CAL-2) -- 1.10997859555733471..., not the proton
 # 1.1099785827513808. Recorded because this literal carried no pin label;
 # re-pinning is bean qou-1c4y, not this drain.
-Q0 = mp.mpf("1.1099785955573347")
+Q0_STR = "1.1099785955573347"     # 17 sig digits, verbatim -- see note below
+Q0 = mp.mpf(Q0_STR)
 H = Q0 - 1 / Q0              # Hecke h = q − q⁻¹ ≈ 0.209
 
 # ---- 2×2 matrix helpers (pure python) ----
@@ -105,7 +106,11 @@ def main() -> None:
         "engine": "mpmath mpf (pure 2x2 matrices; 0 free params; structural validation)",
         "free_parameters": 0,
         "inputs": {
-            "q0": fmt(Q0), "q0_pin": "muon (ideal CAL-2)", "h": fmt(H),
+            "q0": Q0_STR, "q0_pin": "muon (ideal CAL-2)", "h": fmt(H),
+            "q0_precision_note": (
+                "17 significant digits, recorded VERBATIM as computed with; the muon anchor's "
+                "full value is 1.10997859555733471989976..., so padding to the serialization "
+                "width would append digits that are wrong from the 18th."),
             "arithmetic": f"mpmath mpf at {mp.mp.dps} dps (no float64 anywhere)",
             "seifert_matrix_trefoil": V,
             "genus": 1, "h1_rank_2g": 2, "intersection_a_dot_b": V[0][1] - V[1][0],

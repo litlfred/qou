@@ -60,7 +60,8 @@ from hecke_characters import build_seminormal_matrices_mp  # noqa: E402
 # PIN: MUON (ideal CAL-2) -- 1.10997859555733471..., not the proton
 # 1.1099785827513808. Recorded because this literal carried no pin label;
 # re-pinning is bean qou-1c4y, not this drain.
-Q0 = mp.mpf("1.1099785955573347")
+Q0_STR = "1.1099785955573347"     # 17 sig digits, verbatim -- see note below
+Q0 = mp.mpf(Q0_STR)
 H = Q0 - 1 / Q0
 
 PARTITIONS_6 = [(6,), (5, 1), (4, 2), (4, 1, 1), (3, 3), (3, 2, 1),
@@ -197,7 +198,13 @@ def main() -> None:
         "engine": "mpmath mpf (H₆ Hoefsmit seminormal via build_seminormal_matrices_mp; 0 free params)",
         "free_parameters": 0,
         "inputs": {
-            "q0": fmt(Q0), "q0_pin": "muon (ideal CAL-2)", "h": fmt(H),
+            "q0": Q0_STR, "q0_pin": "muon (ideal CAL-2)", "h": fmt(H),
+            "q0_precision_note": (
+                "17 significant digits, recorded VERBATIM as computed with. The muon anchor's "
+                "full value is 1.10997859555733471989976..., so fmt()-padding this literal to "
+                "the serialization width appends zeros that are not merely fabricated but WRONG "
+                "from digit 18 -- caught by q0_value_drift_audit on this branch. q0Value must "
+                "equal what the producer computed with."),
             "arithmetic": f"mpmath mpf at {mp.mp.dps} dps (no float64 anywhere)",
             "q_eq_1_reference": "exact classical Young seminormal limit (was q = 1 + 1e-7)",
             "deuteron_H6_word": "proton{σ0,σ1}·INTERFACE σ2·neutron{σ3,σ4}",

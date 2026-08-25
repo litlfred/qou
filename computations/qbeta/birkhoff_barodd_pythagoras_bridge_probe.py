@@ -56,14 +56,16 @@ set_compute_dps()
 # experimental layers inside one witness; see AGENTS.md "Never straddle the two
 # layers inside one quantity". Re-pinning all three is bean qou-1c4y, not this
 # drain.
-Q0 = mp.mpf("1.1099785955573347")
+Q0_STR = "1.1099785955573347"     # 17 sig digits, verbatim -- see note below
+Q0 = mp.mpf(Q0_STR)
 # The A3 crossterm probe's "h" reading is q0 - 1, NOT the Hecke h = q - 1/q
 # (which is 0.2090603...). Kept under its corpus name, derived rather than
 # re-typed as an independent float literal so the two cannot drift apart.
 H_LIT = Q0 - 1
 HBAR_Q = 1 - 1 / Q0              # ℏ_q = 1 − q⁻¹
-MU3 = mp.mpf("0.4708")           # AME residual 3-body moment (#4320)
-C3_SINGLE = mp.mpf("0.297")      # single-trace Borromean H₉ deficit (#4364)
+MU3_STR, C3_STR = "0.4708", "0.297"
+MU3 = mp.mpf(MU3_STR)            # AME residual 3-body moment (#4320)
+C3_SINGLE = mp.mpf(C3_STR)       # single-trace Borromean H₉ deficit (#4364)
 R_STAR = MU3 / C3_SINGLE         # ≈ 1.5852, the missing A=3 magnitude factor
 
 _TOL = mp.mpf(10) ** -30         # was 1e-12 (float64-grade); real at 70 dps
@@ -137,10 +139,18 @@ def main() -> None:
         "engine": "mpmath mpf/mpc (structural demonstration; 0 free params)",
         "free_parameters": 0,
         "inputs": {
-            "q0": fmt(Q0), "q0_pin": "muon (ideal CAL-2)",
+            "q0": Q0_STR, "q0_pin": "muon (ideal CAL-2)",
+            "q0_precision_note": (
+                "17 significant digits, recorded VERBATIM as computed with. The muon anchor's "
+                "full value is 1.10997859555733471989976..., so fmt()-padding this literal to "
+                "the serialization width would append zeros that are not merely fabricated but "
+                "WRONG from digit 18. q0Value must equal what the producer computed with "
+                "(qou_substrate/witness.py::_q0_value_for_anchor). Quantities derived from it "
+                "below are exact functions of THIS literal, reproducible, but carry no more "
+                "physical accuracy than its 17 digits."),
             "h": fmt(H_LIT), "h_definition": "q0 - 1 (the A3 crossterm probe's reading; NOT the Hecke h = q - 1/q)",
             "hbar_q": fmt(HBAR_Q),
-            "mu3_MeV": fmt(MU3), "c3_single_trace_MeV": fmt(C3_SINGLE), "r_star": fmt(R_STAR),
+            "mu3_MeV": MU3_STR, "c3_single_trace_MeV": C3_STR, "r_star": fmt(R_STAR),
             "arithmetic": f"mpmath mpf/mpc at {mp.mp.dps} dps (no float64 anywhere)",
             "mu3_source": "additive-residual-simplex #4320",
             "c3_source": "borromean-H9-magnitude-lift #4364",

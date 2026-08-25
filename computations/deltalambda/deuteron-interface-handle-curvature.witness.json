@@ -1,13 +1,14 @@
 {
  "computation": "deuteron-interface-handle-curvature",
  "scriptFile": "deuteron_interface_handle_curvature_probe.py",
- "computedAt": "2026-08-25T16:46:26.665122+00:00",
+ "computedAt": "2026-08-25T16:52:56.986225+00:00",
  "engine": "mpmath mpf (H\u2086 Hoefsmit seminormal via build_seminormal_matrices_mp; 0 free params)",
  "free_parameters": 0,
  "inputs": {
-  "q0": "1.10997859555733470000000000000000000000000000000000000000000",
+  "q0": "1.1099785955573347",
   "q0_pin": "muon (ideal CAL-2)",
   "h": "0.209060321995593642930382259776440357718948216440892097990755",
+  "q0_precision_note": "17 significant digits, recorded VERBATIM as computed with. The muon anchor's full value is 1.10997859555733471989976..., so fmt()-padding this literal to the serialization width appends zeros that are not merely fabricated but WRONG from digit 18 -- caught by q0_value_drift_audit on this branch. q0Value must equal what the producer computed with.",
   "arithmetic": "mpmath mpf at 70 dps (no float64 anywhere)",
   "q_eq_1_reference": "exact classical Young seminormal limit (was q = 1 + 1e-7)",
   "deuteron_H6_word": "proton{\u03c30,\u03c31}\u00b7INTERFACE \u03c32\u00b7neutron{\u03c33,\u03c34}",
