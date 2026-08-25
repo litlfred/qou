@@ -35,6 +35,26 @@ class (relations required only for `i < n - 1`) is the only route to a `dim > 1`
 This is a **scope-(b) structural exclusion** in the sense of `AGENTS.md`: the invariant that
 forbids the construction is proved here, not inferred from a failed search.
 
+## Exactly what is excluded — the exclusion does NOT reach reducible representations
+
+The hypothesis that does the work is the **centralizer condition** `sigma_scalar_of_schur.schur`,
+not "irreducible" and not "`dim > 1`".  A reducible representation has a non-scalar idempotent in
+its centralizer, so it simply fails that hypothesis and the theorem says nothing about it.
+
+That is not a hedge — §5 **proves the boundary is real**: `existsNonscalar_heckeGenerators`
+exhibits a genuine `HeckeGenerators` instance on `2×2` matrices whose generators are **not
+scalar**, namely the constant diagonal `σᵢ = diag(q, −q⁻¹)` for every `i`.  It is reducible (the
+two coordinate lines are invariant), so:
+
+* **`dim > 1` instances exist.**  Any reading of this file as "no multi-dimensional instance
+  exists" is wrong, and `constGenerators` is the counterexample.
+* **The Schur hypothesis is load-bearing, and the exclusion is sharp.**  What `H_∞` cannot host is
+  an *irreducible* action, not a big one.
+
+(Raised by the sibling `Sym²`-gate PR #5764, where an irrep-level exclusion was being read as
+covering arbitrary objects — `V_{1/2} ⊕ V_0` has dimension 3, is not an irrep, and passes.  Same
+shape of trap, so the boundary is proved here rather than asserted.)
+
 Refs:
 - [jones1987] V. Jones, Hecke algebra representations of braid groups and link polynomials.
 - [wenzl1988] H. Wenzl, Hecke algebras of type A_n and subfactors.
@@ -217,6 +237,81 @@ theorem stdTwo_no_stable_extension {q : K}
   rw [h1] at hc
   exact stdTwo1_not_scalar c hc
 
+/-! ## §5  The exclusion is sharp: a non-scalar (reducible) instance exists -/
+
 end StdTwo
+
+/-- **Constant generators.**  Any Hecke-quadratic unit `X` gives a `HeckeGenerators` with
+`σᵢ = X` for every `i`.
+
+Braid and far-commutation are `rfl` once all generators coincide, so the only real content is the
+Hecke relation.  This is the general form of the counterexample that refutes reading the cascade
+as a statement about dimension. -/
+def constGenerators (X Xi : A) (hX : X * Xi = 1) (hXi : Xi * X = 1)
+    (hHecke : X * X = algebraMap R A (q - q⁻¹) * X + 1) : HeckeGenerators R A q where
+  σ _ := X
+  σinv _ := Xi
+  mul_σinv _ := hX
+  σinv_mul _ := hXi
+  hecke _ := hHecke
+  braid _ := rfl
+  far _ _ _ := rfl
+
+section Sharp
+
+variable {K : Type*} [Field K]
+
+/-- The reducible 2-dimensional generator `diag(q, −q⁻¹)`: the two Hecke eigenvalues placed on
+the diagonal, so each coordinate line is invariant. -/
+noncomputable def diagTwo (q : K) : Matrix (Fin 2) (Fin 2) K := !![q, 0; 0, -q⁻¹]
+
+/-- Its inverse `diag(q⁻¹, −q)`. -/
+noncomputable def diagTwoInv (q : K) : Matrix (Fin 2) (Fin 2) K := !![q⁻¹, 0; 0, -q]
+
+theorem diagTwo_mul_inv {q : K} (hq : q ≠ 0) : diagTwo q * diagTwoInv q = 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [diagTwo, diagTwoInv, Matrix.mul_apply, Fin.sum_univ_two, hq]
+
+theorem diagTwoInv_mul {q : K} (hq : q ≠ 0) : diagTwoInv q * diagTwo q = 1 := by
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [diagTwo, diagTwoInv, Matrix.mul_apply, Fin.sum_univ_two, hq]
+
+/-- `diag(q, −q⁻¹)` satisfies the Hecke relation, in the class's `algebraMap` vocabulary. -/
+theorem diagTwo_hecke {q : K} (hq : q ≠ 0) :
+    diagTwo q * diagTwo q
+      = algebraMap K (Matrix (Fin 2) (Fin 2) K) (q - q⁻¹) * diagTwo q + 1 := by
+  rw [Algebra.algebraMap_eq_smul_one, smul_mul_assoc, one_mul]
+  ext i j
+  fin_cases i <;> fin_cases j <;>
+    simp [diagTwo, Matrix.mul_apply, Fin.sum_univ_two] <;> field_simp <;> ring
+
+/-- It is **not** a scalar matrix, provided `q² ≠ −1` (i.e. `q ≠ −q⁻¹`, so the two Hecke
+eigenvalues are distinct). -/
+theorem diagTwo_not_scalar {q : K} (hq : q ≠ 0) (hq2 : q * q + 1 ≠ 0) (c : K) :
+    diagTwo q ≠ algebraMap K (Matrix (Fin 2) (Fin 2) K) c := by
+  intro h
+  have e00 := congr_fun (congr_fun h 0) 0
+  have e11 := congr_fun (congr_fun h 1) 1
+  simp [diagTwo, Algebra.algebraMap_eq_smul_one] at e00 e11
+  -- q = c and -q⁻¹ = c, so q = -q⁻¹, i.e. q² = -1
+  apply hq2
+  field_simp at e11
+  linear_combination q * e00 - e11
+
+/-- **The exclusion is sharp.**  There *is* a `HeckeGenerators` instance on `2×2` matrices whose
+generators are not scalar — so `H_∞(q)` does have multi-dimensional representations, and what
+§3 excludes is precisely the **irreducible** ones.
+
+Any reading of `stdTwo_no_stable_extension` as "no `dim > 1` instance exists" is refuted by this. -/
+theorem existsNonscalar_heckeGenerators {q : K} (hq : q ≠ 0) (hq2 : q * q + 1 ≠ 0) :
+    ∃ H : HeckeGenerators K (Matrix (Fin 2) (Fin 2) K) q,
+      ∀ c : K, H.σ 0 ≠ algebraMap K (Matrix (Fin 2) (Fin 2) K) c :=
+  ⟨constGenerators (diagTwo q) (diagTwoInv q) (diagTwo_mul_inv hq) (diagTwoInv_mul hq)
+      (diagTwo_hecke hq),
+   fun c => diagTwo_not_scalar hq hq2 c⟩
+
+end Sharp
 
 end QOU.BraidKnot.Hecke
