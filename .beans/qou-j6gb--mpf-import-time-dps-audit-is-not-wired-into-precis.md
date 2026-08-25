@@ -5,7 +5,7 @@ status: in-progress
 type: bug
 priority: normal
 created_at: 2026-08-10T02:36:03Z
-updated_at: 2026-08-25T16:44:32Z
+updated_at: 2026-08-25T16:49:23Z
 ---
 
 
@@ -826,3 +826,35 @@ Also corrected while here: the note above reads "this is 5 additions someone mad
 without draining". Accurate as far as the ratchet goes, but the four real ones
 predate the directive that made them defects, so "without draining" reads more
 culpably than the history supports.
+
+
+## "The recorded mpmath version" is not one fact -- it is per-witness
+
+The handoff into this session said re-runs could not settle anything because
+"this container has mpmath 1.3.0 against the recorded 1.4.1". Measured across
+the 3088 committed witnesses under `computations/`:
+
+    recorded mpmath 1.3.0 : 1201 witnesses
+    recorded mpmath 1.4.1 :  702 witnesses
+    recorded 0.0.0        :    2
+
+There is no single recorded version to be matched or mismatched. This container
+has 1.4.1, so it matches 702 and differs from 1201 -- and the four AUDIT
+witnesses the gate rewrites record 1.3.0, i.e. the opposite direction from the
+one the handoff named.
+
+The handoff's CONCLUSION still stands (do not regenerate those audits here) but
+for a different and stronger reason, which is the one qou-hlp5 already gives:
+this container is missing **scipy, sympy and clarabel** entirely. Verified by the
+tell qou-hlp5 documents -- the dependency list SHRINKS in the regenerated
+witness:
+
+    -    "scipy": "1.17.1"
+    -    "sympy": "1.14.0"
+    -    "clarabel": "0.11.1"
+    -    "mpmath": "1.3.0"   ->   +    "mpmath": "1.4.1"
+
+Practical rule: check the environment block of THE witness you are about to
+regenerate, not a remembered version number. `mpmath` alone was installable here
+(pip, 1.4.1) and was enough to re-run the three pure-python probes, whose
+witnesses carry no scipy/sympy/clarabel dependency at all.
