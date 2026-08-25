@@ -1,10 +1,10 @@
 **$\mathrm{SU}(5)$ is not derived here, and nothing below should be read as
-deriving it.**  What the framework possesses is a *ladder on which
-$\mathrm{SU}(5)$ would be a rung*, together with a proved statement about what
-occupying that rung would force.  It does not possess anything occupying it.
+deriving it.**  What the framework possesses is a *family of levels among
+which $\mathrm{SU}(5)$ is one*, together with a proved statement about what
+occupying that level would force.  It does not possess anything occupying it.
 The distinction is the whole content of this block.
 
-The ladder is the Ocneanu parameter as a function of the Wenzl level,
+The family is the Ocneanu parameter as a function of the Wenzl level,
 
 $$
   z_r \;=\; \frac{q^{r}}{[r]_q},
@@ -14,11 +14,19 @@ $$
 whose $r = 2$ member is $z_2 = q^3/(q^2+1)$ — the canonical trace parameter the
 framework actually runs on — and whose $r = 5$ member is
 $z_5 \approx 0.32275$ at the substrate anchor.  The Schur–Weyl row cap at level
-$r$ is $\ell(\lambda) \le r$, so the tower is a ladder of admissible row counts:
-the framework stands on rung $2$, the flavour fundamental needs rung $3$, and
-$\mathrm{SU}(5)$ is rung $5$.
+$r$ is $\ell(\lambda) \le r$, so each level fixes an admissible row count: the
+framework sits at $r = 2$, the flavour fundamental would need $r = 3$, and
+$\mathrm{SU}(5)$ is $r = 5$.
 
-**The rung would fix the trace parameter, with nothing left to choose.**  This
+**These levels are alternatives, not stages.**  The framework carries a
+*single* Markov trace parameter — production computes one $z$, the canonical
+$z_2 = q^3/(q^2+1)$ — and the fibre-dimension result below fixes $z$ from the
+fibre.  So one fibre occupies one level; there is no sense in which the
+framework passes *through* $r = 3$ and $r = 4$ on its way to $r = 5$, and
+nothing is cumulative.  Reaching a higher level means a *different* fibre, not
+a further step.
+
+**The level would fix the trace parameter, with nothing left to choose.**  This
 is the fibre-dimension result, proved for general $N$: a fibre of quantum
 dimension $\dim_q V = [N]_q$ forces $z\,[N]_q = q^N$.  So a genuinely
 five-dimensional fibre would carry $z = z_5$ as a consequence rather than as a
@@ -32,10 +40,11 @@ discipline names — a conditional lemma proves the implication, never the
 premise.  What the corpus contains at $r = 5$ is a value of a rational
 function, not an object.
 
-**What is missing is therefore not the object but a mechanism to climb.**  The
-framework has no construction taking it from rung $2$ to any higher rung.  That
-is the same gap as the flavour problem, one rung further along: the
-three-dimensional fundamental is rung $3$, and no object of the single-fibre
+**What is missing is therefore not the object but a construction supplying a
+different fibre.**  The framework has no construction yielding a fibre at any
+level other than $r = 2$.  That is the same gap as the flavour problem, at a
+larger level: the three-dimensional fundamental would be $r = 3$, and no object
+of the single-fibre
 category can supply it, since every object of that category passing the
 $\mathrm{Sym}^2$ gate has even dimension.  Climbing cannot be done from inside
 the fibre; it requires structure at the groupoid level, which is exactly what
@@ -48,7 +57,8 @@ presupposes it.
 
 ## What the grand-unified organisation contributes anyway
 
-One observation survives independently of whether the tower is ever climbed, and
+One observation survives independently of whether any other level is ever
+reached, and
 it re-scopes the framework's open list.
 
 In the Georgi–Glashow organisation one generation and its antiparticles occupy
