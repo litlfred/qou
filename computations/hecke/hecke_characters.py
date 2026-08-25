@@ -182,31 +182,37 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
     if dim == 0:
         return [], dim, syts
 
-    # GUARD (bean qou-8xb1): refuse an mpmath q rather than silently downcast
-    # it. This builder is float64 all the way down -- it coerces q on the next
-    # line, computes the axial-distance entries in float, reaches for mp.sqrt
-    # and throws the precision away, and returns np.zeros(). So an `mpf` handed
-    # in came back as a double with NO signal: measured at shape (3,2,1),
-    # dim 16, passing q as mpf produced output BIT-IDENTICAL to passing the f64
-    # value. A caller that asked for precision got none and could not tell.
+    # DISPATCH ON THE OPERAND (bean qou-8xb1): an mpmath `q` gets exact
+    # arithmetic, a float gets the float64 path, and the decision follows the
+    # VALUE rather than a flag. Same shape `qou-d8gq` landed for the sibling
+    # builder in pyhecke (`dtype=_value_dtype(vals)`), for the same reason.
     #
-    # Deliberately NARROW. `str`, `Fraction` and plain numerics stay accepted,
-    # because the #1861 rationale below records that callers legitimately pass
-    # them and coercing those is the documented intent. Only the mpmath types
-    # are refused -- for those, and only those, the downcast is always a defect,
-    # since carrying more than a double is their entire purpose.
+    # This function used to coerce here (`float(q)`) and was float64 all the
+    # way down: it computed the axial-distance entries in float, reached for
+    # mp.sqrt and threw the precision away, and returned np.zeros(). An `mpf`
+    # handed in came back as a double with NO signal -- measured at shape
+    # (3,2,1), dim 16, output was BIT-IDENTICAL to passing the f64 value. An
+    # earlier revision of this branch merely raised on that input; refusing is
+    # better than lying, but the caller still could not get what it asked for.
+    # Now it can.
     #
-    # Zero callers passed an mpf when this landed, so nothing changes today;
-    # the guard exists so the next one gets an error instead of a wrong number.
+    # `str`, `Fraction` and plain numerics keep coercing -- the #1861 rationale
+    # further down records that callers legitimately pass them, and a string is
+    # not a request for precision. Only the mpmath types dispatch, because only
+    # for those is the downcast unambiguously wrong.
     if isinstance(q, (_mpf_type, _mpc_type)):
-        raise SeminormalPrecisionLoss(
-            f"build_seminormal_matrices() was handed q as {type(q).__name__}, "
-            f"which it would silently truncate to float64 (it coerces q, "
-            f"computes in float, and returns np.zeros()). Use "
-            f"build_seminormal_matrices_mp(shape, q) for the exact mpmath "
-            f"twin, or pass float(q) explicitly if float64 is genuinely what "
-            f"you want. See bean qou-8xb1."
-        )
+        if sparse:
+            # scipy.sparse rejects dtype=object, so an exact matrix cannot be
+            # returned in CSR form. Refusing beats silently handing back a
+            # float64 sparse matrix, which is the defect this dispatch exists
+            # to remove. (Same boundary AGENTS.md records for su4_1111.)
+            raise SeminormalPrecisionLoss(
+                "build_seminormal_matrices(sparse=True) cannot carry an "
+                f"mpmath q: scipy.sparse has no dtype for {type(q).__name__}. "
+                "Pass sparse=False for the exact dense path, or float(q) if "
+                "float64 is genuinely what you want. Bean qou-8xb1."
+            )
+        return build_seminormal_matrices_mp(shape, q)
 
     # Resolve q (override or module default).  Derive amplitude h locally.
     q_local = float(q0) if q is None else float(q)
@@ -283,12 +289,33 @@ def build_seminormal_matrices_mp(shape, q):
 
     WHY THIS EXISTS
     ---------------
-    `build_seminormal_matrices` above is float64 all the way down and cannot be
-    made otherwise without moving numbers for its 64 live callers: it coerces
-    its argument (`q_local = float(q)`), so an `mpf` handed to it is silently
-    downcast; it computes the axial-distance entries in float; it even reaches
-    for `mp.sqrt` and then throws the precision away (`b = float(mp.sqrt(...))`);
-    and it returns `np.zeros((dim, dim))`, i.e. float64 storage.
+    `build_seminormal_matrices` above computes in float64: it coerces its
+    argument, computes the axial-distance entries in float, reaches for
+    `mp.sqrt` and throws the precision away (`b = float(mp.sqrt(...))`), and
+    returns `np.zeros((dim, dim))`, i.e. float64 storage.
+
+    UPDATED 2026-08-25 (bean qou-8xb1): it no longer SILENTLY downcasts an
+    `mpf` -- it dispatches here instead, so a caller asking for exact
+    arithmetic now gets it through the ordinary entry point. This function
+    remains the implementation and the explicit way to ask.
+
+    Its float64 path is still the DEFAULT (`q=None`, and the ~64 callers that
+    pass a float), and deliberately so. Flipping the default would be a false
+    fix, measured: numpy silently re-truncates `mp.matrix` back to float64 in
+    most operations --
+
+        np.trace(sigma)             -> float64
+        np.abs(sigma)**2            -> float64
+        np.eye(d) @ sigma           -> float64
+        np.sum(np.abs(sigma)**2)    -> float64
+        sigma @ sigma (mpmath's @)  -> mpf, preserved
+
+    -- so callers handed exact matrices would go on producing float64 results
+    while LOOKING exact, which is strictly worse than the honest float64 they
+    get now. That last one matters: `np.sum(np.abs(M)**2)` is exactly what the
+    deuteron probe's `fro2` computed. Exactness has to be carried by the
+    consumer, not merely handed to it, which is why opting in per-consumer is
+    the right shape.
 
     That makes it a library-level float64 entry point, which is why draining a
     probe that calls it is not a probe-local fix. Per AGENTS.md ("a float64
