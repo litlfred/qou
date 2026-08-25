@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T13:01:13.853233+00:00",
-  "commitSha": "3f1a4e3f23bb3eb999bfd9e276e99e475382c2e8",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T10:00:44.654619+00:00",
+  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
   "assertions": [
     {
       "name": "C1_X_eq_Q_pow_N_is_ocneanu_fibre_relation",
@@ -69,11 +69,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 215,
+  "durationMs": 260,
   "computation": "binding-channel-convention-exposure",
   "scriptFile": "binding_channel_convention_exposure_probe.py",
   "scriptHash": "f8f554eb44ba",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "4ecae4eaffcb56e025c9f1694739ddfe30c773d4",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -83,8 +83,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/binding_channel_convention_exposure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/binding_channel_convention_exposure_probe.py"
   },
   "description": "Exposure of the BINDING channel to the convention-D resolution that settled the mass channel. Establishes that the binding chain's own weight producer (y_lambda_wenzl_bridge) is parameterised by the fibre quantum dimension via X = Q^N <=> z*[N]_q = q^N, that its hard-coded z_C corresponds to no integer fibre dimension, and that the row cap ell(lambda) <= N is already encoded in its closed form -- so convention D annihilates every >2-row Wedderburn block at every n, not only at n = 3. Measurement only; no production value changed.",
   "contentBlock": "prop:h3-markov-wenzl-weights",
@@ -549,5 +559,7 @@
       "norm_C": "1.0",
       "worst_abs_err": "9.0557e-72"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

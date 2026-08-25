@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-08T13:27:44.512813+00:00",
-  "commitSha": "0d3eafb90f7fee227c1b9d3ac2f57c08dddb75cc",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T10:10:12.887487+00:00",
+  "commitSha": "bdb22ba3d2d794c690a0c2710b4bad008746e6c6",
   "assertions": [
     {
       "name": "T_reproduces_upstream_c3_in_convention_C",
@@ -34,11 +34,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 25,
   "computation": "mu3-door-sign-c-vs-d",
   "scriptFile": "mu3_door_sign_C_vs_D_probe.py",
   "scriptHash": "5470cde87a88",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "2149dd01abed3f50e04daf01d9c781e2e1b5c099",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -48,8 +48,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/mu3_door_sign_C_vs_D_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/mu3_door_sign_C_vs_D_probe.py"
   },
   "description": "Does the recorded mu_3 door verdict -- a SIGN (Delta^2 g < 0 => door OPEN/submodular) -- survive the convention-D resolution? Delta^2 g is a y_lambda-weighted sum over lambda |- 9, and convention D zeroes 25 of the 30 weights, so the sign is not protected. Also reports how far c_3 moves, hence how far the A=3 magnitude target r* ~ 1.585 moves. Proton pin. Measurement only.",
   "contentBlock": "prop:h3-markov-wenzl-weights",
@@ -73,26 +83,26 @@
       "n_partitions": 30,
       "n_y_D_zero": 25,
       "C_abs": {
-        "d2g": "0.42254733638246750811",
-        "c3_MeV": "-1.7687752752067308348",
+        "d2g": "0.42254733638246749303",
+        "c3_MeV": "-1.7687752752067307717",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
       "C_raw": {
-        "d2g": "0.38998770125162965987",
-        "c3_MeV": "-1.6324812493533755077",
+        "d2g": "0.38998770125162964635",
+        "c3_MeV": "-1.6324812493533754511",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
       "D_abs": {
-        "d2g": "0.3278398323471159966",
-        "c3_MeV": "-1.3723314283506130373",
+        "d2g": "0.32783983234711598262",
+        "c3_MeV": "-1.3723314283506129787",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
       "D_raw": {
-        "d2g": "0.3278398323471159966",
-        "c3_MeV": "-1.3723314283506130373",
+        "d2g": "0.32783983234711598262",
+        "c3_MeV": "-1.3723314283506129787",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
@@ -114,26 +124,26 @@
       "n_partitions": 30,
       "n_y_D_zero": 25,
       "C_abs": {
-        "d2g": "0.33574550659882314604",
-        "c3_MeV": "-1.4054244334325361663",
+        "d2g": "0.33574550659882313332",
+        "c3_MeV": "-1.405424433432536113",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
       "C_raw": {
-        "d2g": "0.31744947166322416055",
-        "c3_MeV": "-1.3288375721699341665",
+        "d2g": "0.31744947166322414955",
+        "c3_MeV": "-1.3288375721699341204",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
       "D_abs": {
-        "d2g": "0.24697584011312442605",
-        "c3_MeV": "-1.0338362638975350912",
+        "d2g": "0.24697584011312441551",
+        "c3_MeV": "-1.0338362638975350471",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
       "D_raw": {
-        "d2g": "0.24697584011312442605",
-        "c3_MeV": "-1.0338362638975350912",
+        "d2g": "0.24697584011312441551",
+        "c3_MeV": "-1.0338362638975350471",
         "submodular": false,
         "door": "CLOSED (supermodular)"
       },
@@ -146,5 +156,7 @@
       "c3_D_over_C_raw": "0.778000476168",
       "r_star_scale_factor_raw": "1.28534625702"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
