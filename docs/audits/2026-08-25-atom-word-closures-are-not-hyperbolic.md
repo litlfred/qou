@@ -157,3 +157,42 @@ binding number, so it is not free.
 `KnotRegistry.lean:114` documents 4₁ as *"Exact: 3 · Cl₂(π/3)"*. Per AGENTS.md that name
 is wrong (correct: `2·Cl₂(π/3) = 6Λ(π/3)`); the value beside it, 2.02988321281931, is
 right — the wrong-name/right-value class AGENTS.md warns about. Tracked under `qou-zdz5`.
+
+
+---
+
+## Addendum 2026-08-25 — this is an instance of Nielsen–Thurston, not an accident
+
+The library ingest surfaced **Ito, *Braid ordering and the geometry of closed braid*
+(arXiv:0805.1447v2)**, now at [`library/arxiv-0805.1447v2/`](../library/arxiv-0805.1447v2/).
+It reframes the result above.
+
+**Verified in the ingested text** ([`sec-006-5-nielsen-thurston-classification…`](../library/arxiv-0805.1447v2/sections/sec-006-5-nielsen-thurston-classification-and-the-geomet.md)):
+every braid is exactly one of **periodic**, **reducible**, or **pseudo-Anosov**, and
+
+> *"F admits a complete hyperbolic structure **if and only if** φ is pseudo-Anosov"*, while
+> *"F_φ is **Seifert-fibered** if and only if φ is **periodic**"*, and a **reducible** φ gives
+> a complement containing an essential torus, hence decomposable.
+
+**So the measurement above is the classification, restated.** Each branch braid is monotone
+⇒ its closure is a connected sum of (2,k) torus links ⇒ **periodic/reducible, never
+pseudo-Anosov** ⇒ non-hyperbolic. The SnapPy failure on 32/32 is not a numerical accident;
+it is what Nielsen–Thurston predicts for that class of word.
+
+Two consequences worth having:
+
+1. **The question becomes decidable in general.** "Is this closed braid word hyperbolic?"
+   is a Nielsen–Thurston classification of the word — algorithmic — rather than a
+   per-isotope SnapPy experiment. Any future atom word can be classified without
+   triangulating anything.
+2. **A candidate structural reason, not just a fact.** Ito's classification theorem carries
+   a **Dehornoy floor ≥ 3** hypothesis, and short atom words have *small* floor — precisely
+   the regime where a word admits many closed-braid representatives and closures tend to be
+   torus or composite. That suggests the non-hyperbolicity is forced by the *shortness and
+   monotonicity* of the interface construction, not by the choice of interface element.
+
+> **Scope of what I verified.** I read the Nielsen–Thurston trichotomy and the
+> hyperbolic ⟺ pseudo-Anosov / Seifert ⟺ periodic statements **directly in the ingested
+> text** — those are confirmed. I did **not** locate the `[β]_D ≥ 3` hypothesis or confirm
+> the "Theorem 2" numbering by grep; that part is **reported, not verified here**, and item
+> 2 above is a **conjecture about why**, not a result. Treat it as a lead.
