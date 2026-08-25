@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T17:05:00Z
+updated_at: 2026-08-25T18:35:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -339,3 +339,64 @@ launder an axiom". Nothing compiles that path (Lake globs are `["QOU","QOU.+"]`
 rooted at `lean/`), so it could drift indefinitely. Same family as `qou-a5dr`,
 one file over, still live. Re-synced rather than deleted: a `definition` block
 requires its sibling.
+
+
+---
+
+# 2026-08-25 (second pass) — the archimedean route is UNBLOCKED, and by what
+
+Attempted the archimedean route this bean named. It supplies the algebraic
+half; the estimate is still open. `QOU/LiftingDescent/FrobeniusNormRoute.lean`,
+sorry-free, eight declarations, `#print axioms` standard-only.
+
+## The refutation is about RING homs, and about FIELDS
+
+Re-reading this bean's own two facts:
+
+* no ring hom `ℤ[ζ_2p] →+* ℤ` exists at all;
+* with target `𝔽_p` the residue is a **unit** whenever `p ∤ C`.
+
+Both are statements about **ring** homomorphisms and about **fields**. The
+field norm is neither. `Algebra.norm ℤ : S →* ℤ` is a `MonoidHom` — multiplicative
+only, `N(x+y) ≠ N(x)+N(y)` — so its existence is untouched by the first; and
+`ℤ` is **not a field**, so `|N| ≥ 2` is a genuine non-unit, untouched by the
+second.
+
+That asymmetry is why this route is open when the other is closed. I had been
+reading the refutation as closing "transfer non-unitness backwards along a map
+to ℤ" in general. It closes it only for **ring** maps into **fields**.
+
+## Proved in a computable model, not asserted
+
+`ℤ[i]` has the same shape as `ℤ[ζ_2p]` here — rank-2 free over `ℤ`, generated
+by a root of an integer polynomial with no rational root — and is `decide`-able:
+
+    no_ringHom_gaussianInt_to_int   NO ring hom ℤ[i] →+* ℤ (i would go to an
+                                    integer square root of −1)
+    one_add_i_not_isUnit            and the norm route goes through anyway:
+                                    1+i is a non-unit, via Zsqrtd.normMonoidHom
+
+`IsUnit` is not decidable, so `decide` cannot prove the second; it discharges
+only `1 < |N(1+i)| = 2` and the criterion does the rest. The norm is what makes
+the statement reachable.
+
+Also `not_isUnit_iff_eq_zero_groupWithZero`: in a group with zero a non-unit is
+exactly zero. That is the general fact `isUnit_four_zmod` is an instance of —
+the cap is *every nonzero element being invertible*, not anything about
+residues or primes — and `ℤ` escapes it by not being one.
+
+`frobenius_not_unit_of_norm_bound` carries the perpetual shape: **no exception
+set**, every prime rather than all but finitely many.
+
+## STILL OPEN — the estimate, and it is the hard half
+
+The archimedean bound is an explicit hypothesis, **not** established. And the
+data recorded so far cannot supply it: `habiro-frobenius-probe.witness.json`
+gives `abs_frob` at **one** embedding per prime, frequently `< 1` (proton at
+`p = 11`: `0.046`), while the bound required is on the product over the **whole**
+embedding orbit. A single small conjugate is no obstacle — conjugates of a
+non-unit may individually be small — but one embedding is not an orbit.
+
+So the next concrete step is a producer that emits the **full conjugate orbit**
+per prime, not a single embedding. That is a compute task, not a Lean one, and
+it is what would turn the hypothesis into a theorem.
