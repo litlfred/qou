@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T22:16:28.196425+00:00",
-  "commitSha": "8b98d6db0c9c887fb7ff33c87194cca2626bdaac",
+  "computedAt": "2026-08-25T22:21:41.997645+00:00",
+  "commitSha": "318c8acd9499ffb91c7f35b0e5b485a445ae30a3",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 7,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2766,
-      "prov_ok": 2343,
+      "total_scanned": 2771,
+      "prov_ok": 2348,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 244,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965292841648590021691973969631236442516268980477223427331887"
+      "completeness_ratio": "0.965355467340310357271743053049440635149765427643450018044027"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -683,6 +683,10 @@
         },
         {
           "witness": "atom-vhyp-closure-matrix-m.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "atom-word-braid-letter-census.witness.json",
           "missing_fields": []
         },
         {
@@ -4287,6 +4291,22 @@
         },
         {
           "witness": "mdl-bit-count.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-conjugacy-floor-search.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-dehornoy-floor.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-floor-conjugacy-bound.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-length-cap.witness.json",
           "missing_fields": []
         },
         {
