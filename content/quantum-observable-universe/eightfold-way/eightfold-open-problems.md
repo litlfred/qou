@@ -26,7 +26,7 @@ the list cannot silently break the pointers.
 | $S_4$ bridge: transitive on local Fano lines | verified numerically (`s4_fano_action.py`) | [colour from $G_2$](#prop:color-su3-from-g2) |
 | The $S_4$ bridge selects the Klein quartic | **refuted** (machine-verified), and not narrowly: the $S_4$-invariant quartics form a pencil, so *infinitely many* pairwise non-isomorphic genus-3 curves admit $S_4$ (Fermat is the member $t = 0$ of the pencil, $t$ being the pencil parameter, not a partition). The datum has essentially no separating power | `s4_genus3_competitor_fermat.py`, `s4_genus3_pencil_infinite_family.py` |
 | Bring $\to$ Klein-quartic genus degeneration | **excluded** under its own three premises (scope-(b)): the pinch supplies an $S_4$-stable pair of marked points, and $S_4$ has *no orbit of size $\le 2$* on $\mathbb{P}^2$, since the $3$-dimensional representation and its restriction to $A_4$ are both absolutely irreducible. No smooth plane quartic carries such a pair, and Klein is not hyperelliptic. Rescue requires explicitly dropping one premise: hyperelliptic target, multi-node/separating pinch, or non-faithful $S_4$ | `s4_marked_pair_obstruction.py` |
-| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition; the Lean file proves only arithmetic ($6=6 \wedge 0=0$) | `Sym2Gate.lean` |
+| Octonionic $\mathbf{3}$ not excluded by the $\mathrm{Sym}^2$ gate | literature decomposition; the Lean file proves only the dimension shadow ($3\cdot 4/2 = 6 \wedge 0 < 1$ --- $\mathrm{Sym}^2$ dimension $6$, singlet count $0$ below the fail threshold).  The singlet count $0$ is the cited $\mathrm{SU}(3)$-irreducibility input, not a formalised one | `Sym2Gate.lean` |
 | The octonion algebra $\mathbb{O}$ and $G_2 = \mathrm{Aut}(\mathbb{O})$ | **open**: used throughout [the colour-algebra section](#sec:color-algebra) but never defined — this paper has no definition of $\mathbb{O}$ to point at | — |
 | Continuous $G_2$ completion ($S^6 = G_2/\mathrm{SU}(3)$) | **open**: Mathlib gap (no `Octonion` type, no $G_2$ Lie group) — infrastructure, not structural | item *Continuous $G_2$ completion* |
 | Flavour vs. colour $\mathrm{SU}(3)$ | **open**: whether same, different, or groupoid-dual | item *Flavour versus colour separation* |
@@ -57,8 +57,11 @@ Gell-Mann--Nishijima relation cannot be closed.
    missing.  *Open:* construct a
    three-dimensional object $W$ in the multi-fibre groupoid whose
    symmetric square $\mathrm{Sym}^2(W)$ is irreducible (no singlet).
-   The octonion $G_2$ route provides a colour $\mathrm{SU}(3)$ candidate
-   that passes this test; whether it yields *flavour*
+   The octonion $G_2$ route supplies a colour $\mathrm{SU}(3)$ candidate
+   that the gate does not exclude --- *not excluded* rather than
+   *passes*, since the singlet count $0$ that would make it pass is the
+   cited $\mathrm{SU}(3)$-irreducibility input and not a formalised one
+   (ledger row, `Sym2Gate.lean`).  Whether it yields *flavour*
    $\mathrm{SU}(3)$ is untested.
 
    *That the search is confined to the groupoid level is now a theorem,
@@ -79,6 +82,10 @@ Gell-Mann--Nishijima relation cannot be closed.
    $(-1)^{2j}$).  Even dimension is *necessary, not sufficient*:
    $V_{1/2}^{\oplus 2}$ has dimension $4$ and fails the gate too, so the
    parity invariant prunes candidates rather than characterising them.
+   The octonionic candidate is no counterexample to this: it is not an
+   object of the single-fibre category at all, arising instead from
+   $G_2 = \mathrm{Aut}(\mathbb{O})$, which is precisely why the parity
+   exclusion leaves it standing.
 
 2. **Hypercharge $Y$.**
    The writhe-to-isospin map $w \mapsto I_3$ is derived.  The
