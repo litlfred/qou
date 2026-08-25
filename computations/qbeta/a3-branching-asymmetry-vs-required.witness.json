@@ -1,54 +1,54 @@
 {
  "computation": "a3-branching-asymmetry-vs-required",
  "scriptFile": "a3_branching_asymmetry_vs_required_probe.py",
- "computedAt": "2026-08-25T16:25:05.512377+00:00",
- "engine": "python-mpmath dps=70 (0 free params; structural)",
+ "computedAt": "2026-08-09T01:55:31.898220+00:00",
+ "engine": "python-float (0 free params; structural)",
  "free_parameters": 0,
  "inputs": {
-  "q0": "1.10997859555733470000000000000000000000000000000000000000000",
-  "mu3_MeV": "0.470800000000000000000000000000000000000000000000000000000000",
-  "c3_single_trace_MeV": "0.297000000000000000000000000000000000000000000000000000000000",
-  "r_star": "1.58518518518518518518518518518518518518518518518518518518519",
+  "q0": 1.1099785955573347,
+  "mu3_MeV": 0.4708,
+  "c3_single_trace_MeV": 0.297,
+  "r_star": 1.5851851851851853,
   "borromean_braid": "(sigma_1 sigma_2^{-1})^3",
-  "chi_(3)_borr": "1.00000000000000000000000000000000000000000000000000000000000",
-  "chi_(1,1,1)_borr": "1.00000000000000000000000000000000000000000000000000000000000",
+  "chi_(3)_borr": 1.0,
+  "chi_(1,1,1)_borr": 1.0,
   "note_equal_characters": "both 1-dim characters = 1 on the Borromean braid (A3OffBlockDerivation Part 1)"
  },
  "results": {
-  "x_required": "0.764973976802600249855439542506195794962292100341331384212894",
-  "x2_required": "0.585185185185185185185185185185185185185185185185185185185185",
+  "x_required": 0.7649739768026003,
+  "x2_required": 0.5851851851851853,
   "branching_rows": [
    {
     "weight": "symmetric Wedderburn d_q\u00b2/[n]!",
-    "x": "0.0",
-    "x2": "0.0",
-    "r_star_1_plus_x2": "1.00000000000000000000000000000000000000000000000000000000000",
-    "abs_err_vs_rstar": "0.585185185185185185185185185185185185185185185185185185185185"
+    "x": 0.0,
+    "x2": 0.0,
+    "r_star_1_plus_x2": 1.0,
+    "abs_err_vs_rstar": 0.5851851851851853
    },
    {
     "weight": "content c=3 (bare H\u2083)",
-    "x": "0.303183999448514816481099290246840714565087047318426498839224",
-    "x2": "0.0919205375215970325441471220692719054327625160031565038169469",
-    "r_star_1_plus_x2": "1.09192053752159703254414712206927190543276251600315650381695",
-    "abs_err_vs_rstar": "0.493264647663588152641038063115913279752422669182028681368238"
+    "x": 0.30318399944851476,
+    "x2": 0.091920537521597,
+    "r_star_1_plus_x2": 1.091920537521597,
+    "abs_err_vs_rstar": 0.49326464766358824
    },
    {
     "weight": "content c=6",
-    "x": "0.555322459886451504465392521859817959573500643073554165457260",
-    "x2": "0.308383034454339540273738781047768543328005150962697658611138",
-    "r_star_1_plus_x2": "1.30838303445433954027373878104776854332800515096269765861114",
-    "abs_err_vs_rstar": "0.276802150730845644911446404137416641857180034222487526574047"
+    "x": 0.5553224598864513,
+    "x2": 0.30838303445433934,
+    "r_star_1_plus_x2": 1.3083830344543395,
+    "abs_err_vs_rstar": 0.2768021507308458
    },
    {
     "weight": "content c=9 (\u2248H\u2089 cabling scale)",
-    "x": "0.734793103437411554777794126486692238121963439978761052055174",
-    "x2": "0.539920904859182596437788511645789347433501744619624918893905",
-    "r_star_1_plus_x2": "1.53992090485918259643778851164578934743350174461962491889391",
-    "abs_err_vs_rstar": "0.0452642803260025887473966735393958377516834405655602662912798"
+    "x": 0.7347931034374116,
+    "x2": 0.5399209048591826,
+    "r_star_1_plus_x2": 1.5399209048591826,
+    "abs_err_vs_rstar": 0.045264280326002604
    }
   ],
-  "max_branching_x2": "0.539920904859182596437788511645789347433501744619624918893905",
-  "content_c_that_would_be_needed": "9.66159113673964566547714595772147730536826328790702472677775",
+  "max_branching_x2": 0.5399209048591826,
+  "content_c_that_would_be_needed": 9.661591136739645,
   "branching_supplies_required": false
  },
  "verdict": "scope-(a): BARE H\u2083 (content c=3) gives x\u00b2\u22480.09, r*\u22481.09 \u2014 ~6\u00d7 short in x\u00b2 of the required x\u00b2=0.585; symmetric weight gives x=0, r*=1. BUT the CABLED content c\u22489 (the H\u2089 strand scale at which c\u2083 is actually computed) gives x\u00b2\u22480.54, r*\u22481.54 \u2014 only ~3% short of 1.585 (exact needs c\u22489.7). So the Pythagorean transverse leg 2x is NOT the bare-branching slope; it lives at the CABLED/transverse (H\u2089 Birkhoff/Stokes surface-curvature, qou-prjo) level, where it NEARLY closes. A near-miss lead, not a closure \u2014 the 9\u21929.66 residual is the open fine structure.",

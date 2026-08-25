@@ -5,7 +5,7 @@ status: todo
 type: bug
 priority: normal
 created_at: 2026-08-25T16:38:19Z
-updated_at: 2026-08-25T16:38:59Z
+updated_at: 2026-08-25T18:02:42Z
 ---
 
 ## Found 2026-08-25 while draining the 5 NEW raw-float64 witnesses on main
@@ -81,3 +81,59 @@ leak live -- its scope is `d_for_ctype` consumers and `hoefsmit_numpy.py`, so it
 does not see `np.zeros(...)` allocations that later receive mpf, and it does not
 see an input-side `float(q)` coercion at all. A detector keyed on the ALLOCATION
 would still miss line 168.
+
+
+## CORRECTIONS 2026-08-25, from the #5763 exchange — three of my numbers/claims were wrong
+
+**1. Blast radius was inflated. 64/53, not 102/65.** My `grep -rln build_seminormal_matrices computations/` counted `_deprecated/`:
+
+    all matches under computations/            102   <- what I reported
+    excluding _deprecated/                      64   <- the real direct-caller count
+      ... of those, emitting a witness          53   (WitnessBuilder/write_witness/witness.json)
+      ... counting only literal "witness.json"  32
+
+#5763 independently reported 64 direct callers / 55 witness-emitting. The 53-vs-55 gap is
+definitional (which emit-idiom you grep for), not a disagreement. **Use 64 / ~53.**
+
+**2. "The coercion is DELIBERATE" attributed the rationale to the wrong line — and the
+truth is the opposite.** I wrote that line 168 is documented as intentional, citing the
+#1861 Copilot comment. Verified: there are TWO coercions in TWO functions.
+
+    line 168  in build_seminormal_matrices (def at 142)
+              comment: "Resolve q (override or module default). Derive amplitude h locally."
+              -> NO rationale. UNDOCUMENTED.
+
+    line 381  in chi_lambda_braid (def at 295)
+              comment: "...so callers passing mpmath / str / numeric types don't break
+                        NumPy dtype handling further down (per Copilot review on PR #1861)."
+              -> this is the documented one, and it is CALLER-side.
+
+So the builder's own input coercion carries no recorded justification; only the character
+function's does. This strengthens the defect (nothing documents why the builder throws q
+away) while weakening my "deliberate design, hands off" framing.
+
+**3. The 642x is MATMUL, not construction — my text was right, my emphasis was not.**
+`qou-d8gq`'s 642x is mpf matrix MULTIPLICATION at dim=162. #5763 measured mpf
+CONSTRUCTION separately: dim 16 -> 0.7x, dim 35 -> 21.5x, dim 162 -> 9.8x, dim 168 -> 32.4x.
+Two independent costs. Construction is ~10-30x; a consumer that constructs AND multiplies
+at dim ~162+ still pays the 642x on top.
+
+## RESOLVED by #5763 — additively, which is better than the fix I was weighing
+
+I recorded this as blocked and treated the fix as "modify the builder, 64 consumers, needs
+owner sign-off". #5763 took the route I did not consider: **add
+`build_seminormal_matrices_mp` alongside, returning `mp.matrix` instead of `np.ndarray`.**
+Nothing existing modified, no caller changed, so the thing the #1861 comment protects
+(numpy dtype handling in the f64 path) is untouched by construction. Verified there against
+the f64 builder across all 11 partitions of 6: max deviation 4.441e-16 (2 ulp).
+
+`deuteron-interface-handle-curvature` IS therefore drained, and the ratchet is NEW 5 -> 0 on
+that branch.
+
+**What remains open, and why this bean stays alive:** the f64 builder itself is unchanged, so
+every one of the ~64 direct callers still gets float64 unless it opts into the `_mp` variant.
+The silent part is the live defect -- passing `Q_MP` to `build_seminormal_matrices` still
+returns bit-identical f64 output with no warning. A caller that believes it asked for
+precision still does not get it. Options, unranked: raise on an mpf argument, warn, or
+dispatch to the `_mp` builder. Any of the three needs the adoption trade in item 3 weighed
+per-consumer, which is the owner call this bean was opened for.

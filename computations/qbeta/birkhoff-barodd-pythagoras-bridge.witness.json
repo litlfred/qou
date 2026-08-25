@@ -1,108 +1,107 @@
 {
  "computation": "birkhoff-barodd-pythagoras-bridge",
  "scriptFile": "birkhoff_barodd_pythagoras_bridge_probe.py",
- "computedAt": "2026-08-25T16:29:17.146716+00:00",
- "engine": "python-mpmath/mpc dps=70 (structural demonstration; 0 free params)",
+ "computedAt": "2026-08-09T01:17:41.976937+00:00",
+ "engine": "python-complex (structural demonstration; 0 free params, no precision needed)",
  "free_parameters": 0,
  "inputs": {
-  "q0": "1.10997859555733470000000000000000000000000000000000000000000",
-  "h": "0.109978595557334690000000000000000000000000000000000000000000",
-  "hbar_q": "0.0990817264382589400000000000000000000000000000000000000000000",
-  "mu3_MeV": "0.470800000000000000000000000000000000000000000000000000000000",
-  "c3_single_trace_MeV": "0.297000000000000000000000000000000000000000000000000000000000",
-  "r_star": "1.58518518518518518518518518518518518518518518518518518518519",
-  "q0_pin": "muon",
+  "q0": 1.1099785955573347,
+  "h": 0.10997859555733469,
+  "hbar_q": 0.09908172643825894,
+  "mu3_MeV": 0.4708,
+  "c3_single_trace_MeV": 0.297,
+  "r_star": 1.5851851851851853,
   "mu3_source": "additive-residual-simplex #4320",
   "c3_source": "borromean-H9-magnitude-lift #4364"
  },
  "results": {
   "structural_checks": [
    {
-    "name": "barOdd_unitModulus_sq_eq_neg_one[E=+i]",
+    "name": "barOdd_unitModulus_sq_eq_neg_one[E=1j]",
     "bar_odd_sigmaE_eq_negE": true,
     "unit_modulus_E_sigmaE_eq_1": true,
     "E_squared": [
-     "-1.00000000000000000000000000000000000000000000000000000000000",
-     "0.0"
+     -1.0,
+     0.0
     ],
     "passed": true
    },
    {
-    "name": "barOdd_unitModulus_sq_eq_neg_one[E=-i]",
+    "name": "barOdd_unitModulus_sq_eq_neg_one[E=(-0-1j)]",
     "bar_odd_sigmaE_eq_negE": true,
     "unit_modulus_E_sigmaE_eq_1": true,
     "E_squared": [
-     "-1.00000000000000000000000000000000000000000000000000000000000",
-     "0.0"
+     -1.0,
+     0.0
     ],
     "passed": true
    },
    {
     "name": "affine_modulus_quadrature[fs=1.0,s=1.0]",
-    "modulus_squared": "2.00000000000000000000000000000000000000000000000000000000000",
-    "fs2_plus_s2": "2.00000000000000000000000000000000000000000000000000000000000",
+    "modulus_squared": 2.0,
+    "fs2_plus_s2": 2.0,
     "passed": true
    },
    {
     "name": "affine_modulus_quadrature[fs=0.7,s=1.3]",
-    "modulus_squared": "2.18000000000000000000000000000000000000000000000000000000000",
-    "fs2_plus_s2": "2.18000000000000000000000000000000000000000000000000000000000",
+    "modulus_squared": 2.18,
+    "fs2_plus_s2": 2.18,
     "passed": true
    },
    {
     "name": "affine_modulus_quadrature[fs=0.9,s=1.5]",
-    "modulus_squared": "3.06000000000000000000000000000000000000000000000000000000000",
-    "fs2_plus_s2": "3.06000000000000000000000000000000000000000000000000000000000",
+    "modulus_squared": 3.06,
+    "fs2_plus_s2": 3.06,
     "passed": true
    }
   ],
   "all_structural_pass": true,
   "transverse_slope_needed_per_fs": [
    {
-    "fs": "1.00000000000000000000000000000000000000000000000000000000000",
-    "s_transverse_needed": "1.22996425611909139296735175489816884794057880005277742695551",
+    "fs": 1.0,
+    "s_transverse_needed": 1.2299642561190915,
     "is_O1_not_Oh": true
    },
    {
-    "fs": "0.950000000000000000000000000000000000000000000000000000000000",
-    "s_transverse_needed": "1.26898072141801659803688607443068231529436505262658258651000",
+    "fs": 0.95,
+    "s_transverse_needed": 1.2689807214180169,
     "is_O1_not_Oh": true
    },
    {
-    "fs": "0.900000000000000000000000000000000000000000000000000000000000",
-    "s_transverse_needed": "1.30491841558412756163271809549379396543380111420439954367320",
+    "fs": 0.9,
+    "s_transverse_needed": 1.3049184155841276,
     "is_O1_not_Oh": true
    }
   ],
-  "placeholder_model_fs_s_eq_1_gives_sqrt2": "1.41421356237309504880168872420969807856967187537694807317668",
+  "placeholder_model_fs_s_eq_1_gives_sqrt2": 1.4142135623730951,
   "placeholder_matches_rstar": false,
   "longitudinal_readings": [
    {
     "reading": "h",
-    "rho": "0.109978595557334690000000000000000000000000000000000000000000",
-    "correction_1_minus_rho": "0.890021404442665310000000000000000000000000000000000000000000",
-    "abs_err_vs_rstar": "0.695163780742519875185185185185185185185185185185185185185185",
+    "rho": 0.10997859555733469,
+    "correction_1_minus_rho": 0.8900214044426653,
+    "abs_err_vs_rstar": 0.6951637807425199,
     "lands_rstar": false
    },
    {
     "reading": "-h",
-    "rho": "-0.109978595557334690000000000000000000000000000000000000000000",
-    "correction_1_minus_rho": "1.10997859555733469000000000000000000000000000000000000000000",
-    "abs_err_vs_rstar": "0.475206589627850495185185185185185185185185185185185185185185",
+    "rho": -0.10997859555733469,
+    "correction_1_minus_rho": 1.1099785955573347,
+    "abs_err_vs_rstar": 0.47520658962785056,
     "lands_rstar": false
    },
    {
     "reading": "\u210f_q",
-    "rho": "0.0990817264382589400000000000000000000000000000000000000000000",
-    "correction_1_minus_rho": "0.900918273561741060000000000000000000000000000000000000000000",
-    "abs_err_vs_rstar": "0.684266911623444125185185185185185185185185185185185185185185",
+    "rho": 0.09908172643825894,
+    "correction_1_minus_rho": 0.900918273561741,
+    "abs_err_vs_rstar": 0.6842669116234442,
     "lands_rstar": false
    },
    {
     "reading": "-\u210f_q",
-    "rho": "-0.0990817264382589400000000000000000000000000000000000000000000",
-    "correction_1_minus_rho": "1.09908172643825894000000000000000000000000000000000000000000",
-    "abs_err_vs_rstar": "0.486103458746926245185185185185185185185185185185185185185185",
+    "rho": -0.09908172643825894,
+    "correction_1_minus_rho": 1.0990817264382589,
+    "abs_err_vs_rstar": 0.4861034587469264,
     "lands_rstar": false
    }
   ],
