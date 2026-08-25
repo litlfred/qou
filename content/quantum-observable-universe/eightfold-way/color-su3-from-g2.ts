@@ -46,5 +46,6 @@ export default proposition({
   // (sorry-free, real content) in QOU.Eightfold.Sym2GateParity. It is not
   // cited as this block's ref because it is a statement about SU(2) irreps,
   // not about the SU(3) fundamental this block invokes.
+  cites: ["gunaydin-gursey1973"],
   lean: { ref: "qou:QOU.Eightfold.Sym2Gate.sym2_dim_3" },
 });
