@@ -239,7 +239,13 @@ def main():
             "open wall is the fibre→archimedean τ-transfer, NOT a missing discretization. Honest negative."
         ),
         "computed_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-        "elapsed_sec": round(time.perf_counter() - t0, 3),
+        # Serialized as a string, like every other numeric in this witness.
+        # elapsed_sec is runtime timing METADATA, not a payload number -- it is
+        # in `_EPHEMERAL_META_FIELDS` (qou_substrate/witness.py) and is stripped
+        # by NAME for comparison, so the type change is inert to the mask. As a
+        # JSON float it was this witness's only raw-float64 field and its sole
+        # entry on the NO-FLOAT64 ratchet's NEW list, for zero precision content.
+        "elapsed_sec": f"{time.perf_counter() - t0:.3f}",
         "data": out,
     }
     src = Path(__file__).read_bytes()
