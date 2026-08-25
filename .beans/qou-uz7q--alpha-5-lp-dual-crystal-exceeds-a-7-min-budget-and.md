@@ -352,3 +352,60 @@ Two reasons, both checked rather than assumed:
 
 Recorded because "a hardcoded muon string in a live path" is worth knowing even
 when it is inert, and because the inertness is a measurement, not an assumption.
+
+## PROFILED — and this bean's own candidate is REFUTED
+
+This bean said: *"`sp.simplify` at 62, 75 and 104 … Stated as a candidate, not a
+cause. Nothing here is profiled, so do not record `simplify` as the hot spot
+without measuring it."* Measured now. **It is not `simplify`.**
+
+Method: `cProfile` under a wrapper that runs the producer via `runpy` and dumps
+cumulative + self-time stats from a `SIGALRM` handler. **The producer is not
+edited**, so no `scriptHash` drift — the objection this bean raises against adding
+logging does not apply to profiling it from outside. 1200 s budget on
+`qbeta/qbeta_c3even_exact_sseries_probe`; it did not finish, consistent with the
+earlier > 1800 s censoring.
+
+**2,588,247,572 function calls in 1200 s.** The chain, by cumulative time:
+
+| frame | ncalls | cumtime | share |
+|---|---|---|---|
+| `main` | 1 | 1199.5 | — |
+| `sympy.series.series` → `log._eval_nseries` | 1 | 1192.4 | 99.4 % |
+| `Mul._eval_nseries` / `Power._eval_nseries` | 337 / 366 | 1191.4 | 99.3 % |
+| **`trigsimp` → `futrig` → `_eapply`** | 383 | 1188.9 | **99.1 %** |
+| **`polys.polytools.factor`** | **3** | **1173.8** | **97.8 %** |
+
+Self time is entirely dense multivariate polynomial arithmetic underneath that
+`factor`: `dmp_mul` 205 s, `dmp_zero_p` 170 s, `dmp_degree` 101 s, `dmp_sub`
+81 s, with `dmp_rr_div` at 971 s cumulative.
+
+**The mechanism.** `Rq` carries a live `sp.cos(alpha_eff)` node. When `series`
+expands `log(Rq(1+s)/R1)`, sympy's nseries machinery calls `trigsimp` *because a
+trig node is present*, and `futrig`'s `_eapply` hands the accumulated rational
+expression to `factor` — which, with `sqrt(q**4+q**2+1)` in it, means factoring
+over an algebraic extension. **Three `factor` calls consume 97.8 % of the run.**
+
+So the cost is not in the probe's own `simplify` calls at all — those complete
+before the series step (the run prints `R(q=1) exact = 1` and reaches the series
+line). The cost is inside `sp.series`, triggered by the `cos`.
+
+### Caveat on the numbers
+
+`cProfile` adds per-call overhead, and at 2.6e9 calls that overhead is large in
+absolute terms — the 1200 s is **not** a runtime estimate for an unprofiled run,
+and the bias favours call-heavy pure-Python (`dmp_*` micro-functions) over C-level
+work. The *relative* attribution is what this establishes, and a 97.8 % share has
+room to survive the bias. The unprofiled run is still > 1800 s and still
+UNMEASURED; this does not change that.
+
+### What it implies for step 2 — stated as a candidate, and being tested
+
+If the `cos` node is what summons `trigsimp` → `factor`, then expanding
+`cos(alpha_eff)` into its Taylor polynomial **before** handing the expression to
+`series` should remove the trig node and with it those three `factor` calls.
+`alpha_eff(q=1) = 0`, so a truncated `cos` polynomial is exact to the order used.
+
+**Not yet verified** — a route comparison at low orders is in flight. Recording
+the reasoning separately from the result, because the whole point of this section
+is that this bean previously recorded a plausible mechanism as if measured.
