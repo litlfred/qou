@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T01:25:18Z
+updated_at: 2026-08-25T01:38:56Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1522,3 +1522,23 @@ re-derivation too — it is the record of what the C frame was.
 
 The drain's audit lists both as actionable because the detector cannot tell a
 comparison from a defect; only the second is a false positive.
+
+
+### Addendum 2026-08-25 — basis for both qbeta dispositions, given qou-4bq3
+
+`qou-4bq3` has shown the audit's `deliberate` column is unreliable. Neither
+qbeta disposition above used it.
+
+**`qbeta_zcd_classical_coincidence_probe.py`** was left because of what the code
+says: it defines `def z_C(qq)` (`sqrt(qq)/(qq+1)`, line 113) directly beside
+`def z_D(qq)` (`qq**3/(qq**2+1)`, line 117), each with a docstring naming its
+convention, and assertion 7 exists precisely to record that the ladder's
+`markovZ'` equals `z_C`. Prose naming C and D and explaining why both are
+present — the standard `qou-4bq3` sets.
+
+Note line 113 is itself an instance of the detector-blind `sqrt(q)/(q+1)`
+spelling catalogued in `qou-l7j1`, benign here.
+
+**`qbeta_h_frame_rungs_probe.py:73`** was never called deliberate. It is a real
+C defect, deferred to this bean's re-derivation because swapping it is the
+banned substitution — a different disposition from "leave it, it is fine".
