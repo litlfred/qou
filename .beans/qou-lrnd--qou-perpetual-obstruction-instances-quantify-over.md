@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T19:50:00Z
+updated_at: 2026-08-25T21:00:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -593,3 +593,77 @@ Why do two atoms with different Habiro coefficients collapse to the *same*
 primitive root of unity at `q = zeta_6`? If that is forced by the structure
 rather than coincidental, it is a statement about the Habiro element at roots of
 unity that nothing in the corpus currently makes. Not pursued here.
+
+
+---
+
+# 2026-08-25 (sixth pass) — A=3 is 18 DAYS in sympy. The owner was right about Rust.
+
+Measured the thing I had been recommending, and it is not viable. Third
+correction to my own recommendation on this front; the pattern is recorded
+below because it matters more than any single number.
+
+## The measurement
+
+The symbolic chi cache is per-partition and resumable
+(`per_irrep_pole_atom.py tritium`). Two completed partitions give a clean
+cost law:
+
+    lambda = (9)     dim   1     3.9 s
+    lambda = (8,1)   dim   8   276.1 s      (dim^2 predicts 250 s)
+
+A `dim^2` fit on two independent points, matching the Rust docstring's stated
+`O(dim^2 * k)`. Unit cost **4.31 s per dim^2**.
+
+Partitions of 9 have `sum dim^2 = 9! = 362,880`, so the total is
+**1,564,920 s = 18.1 DAYS** of CPU. The worst single partition,
+`(4,3,1,1)` at dim 216, is **55.9 hours on its own**.
+
+So the "resumable grind" I recommended one pass ago is resumable and
+**infeasible**. Four workers does not rescue an 18-day serial total.
+
+## What this does to the options
+
+| route | verdict |
+|---|---|
+| sympy symbolic chi (the cache) | **18 days** — dead |
+| word-expansion + exact word characters | `2^19` words for tritium — dead |
+| Geck-Pfeiffer exact q-characters | crate documents it "structurally incomplete at q != 1" — our regime |
+| **Rust exact seminormal over Q(q)** | the only live route |
+
+The owner's instinct — *"A=3 should not be out of reach... using rust?"* — is
+**correct, and now quantified**: 18 days of sympy is exactly the gap a compiled
+exact-arithmetic implementation closes. The same doc that gives the cost law
+says `chi_q_atomic` is "<< 1 s in release-optimised Rust for typical atomic
+braids" at f64.
+
+## What the Rust build actually requires (measured, not assumed)
+
+NOT a coefficient-type swap, which is what I originally proposed:
+
+1. **A gauge change to remove the square root.** Hoefsmit's symmetric form is
+   `[[a, b], [b, a']]` with `b = sqrt(a a' + 1)`; the trace-invariant
+   asymmetric form `[[a, b^2], [1, a']]` is rational. `seminormal.rs:275` is
+   the `sqrt` in question.
+2. **A genuine `Q(q)` fraction field with polynomial gcd.** Intermediate
+   entries carry denominators `1 + q^2 + ... + q^{2(rho-1)}`: verified `a = q`
+   at `rho = 1` but `q^3/(q^2+1)` at `rho = 2`, and n=9 reaches `rho = 8`.
+   `LaurentRationalQ` holds Laurent polynomials, **not** quotients.
+
+The OUTPUT type is fine — cached characters are Laurent with rational
+coefficients (denominators `768 q^7`, `192 q^5`: integer times monomial), which
+`LaurentRationalQ` represents exactly. The denominators cancel in the trace.
+So the target was right and the route was wrong.
+
+## The pattern, recorded because it is the lesson
+
+Three recommendations on this front, three corrections:
+
+1. "generate more coefficients" — impossible; the expansion terminates.
+2. "extend chi_q_atomic to LaurentQ" — the intermediates are not Laurent.
+3. "finish the cache, it is a resumable grind" — 18 days.
+
+Each was stated before measuring the thing that killed it. The measurements
+were all cheap: a docstring, eight symbolic `cancel` calls, and two cache
+timings. **Measure the cost law before recommending a route**, especially when
+recommending against the one the owner proposed.
