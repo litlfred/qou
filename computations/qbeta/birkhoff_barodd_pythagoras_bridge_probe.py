@@ -32,72 +32,103 @@ from __future__ import annotations
 
 import datetime as _dt
 import json
-import math
 import os
+import sys
+from pathlib import Path
+
+import mpmath as mp
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+
+from _precision import fmt, set_compute_dps  # noqa: E402
+from qou_substrate.constants import q_at  # noqa: E402
+
+set_compute_dps()
 
 # --- corpus constants (NOT recomputed here; from the option-e / A3 ledgers) ---
-Q0 = 1.1099785955573347          # proton-pinned substrate modulus
-H = Q0 - 1.0 / Q0                # Hecke parameter h = q − q⁻¹ ... (kept as the corpus 'h')
-H_LIT = 0.10997859555733469      # the 'h' reading used by the A3 crossterm probe
-HBAR_Q = 0.09908172643825894     # ℏ_q = 1 − q⁻¹
-MU3 = 0.4708                     # AME residual 3-body moment (#4320)
-C3_SINGLE = 0.297                # single-trace Borromean H₉ deficit (#4364)
+# Canonical experimental (proton) pin — owner directive 2026-08-07/R2. This
+# probe previously hardcoded 1.1099785955573347 while LABELLING it
+# "proton-pinned"; that literal is the MUON value (proton is ...5827513808).
+Q0 = q_at()
+
+# Two distinct quantities were both called "h" here. Measured against the old
+# literals: H_LIT = 0.10997859555733469 is q − 1, NOT the h = q − q⁻¹ defined
+# one line above it (0.20906…) — a factor of ~1.9. Both are now derived from
+# the pin and named for what they are, and the longitudinal scan below tests
+# BOTH rather than silently picking one.
+H_HECKE = Q0 - 1 / Q0            # h = q − q⁻¹ ≈ 0.209 (the Hecke parameter)
+H_QMINUS1 = Q0 - 1               # q − 1 ≈ 0.110 (the reading the A3 crossterm probe used)
+HBAR_Q = 1 - 1 / Q0              # ℏ_q = 1 − q⁻¹ ≈ 0.099
+
+# Empirical inputs, as exact decimal strings rather than float literals.
+MU3 = mp.mpf("0.4708")           # AME residual 3-body moment (#4320)
+C3_SINGLE = mp.mpf("0.297")      # single-trace Borromean H₉ deficit (#4364)
 R_STAR = MU3 / C3_SINGLE         # ≈ 1.5852, the missing A=3 magnitude factor
 
+_TOL = mp.mpf("1e-12")
 
-def approx(a: float, b: float, tol: float = 1e-12) -> bool:
-    return abs(a - b) <= tol * max(1.0, abs(a), abs(b))
+
+def approx(a, b, tol=None) -> bool:
+    tol = _TOL if tol is None else tol
+    return abs(a - b) <= tol * max(mp.mpf(1), abs(a), abs(b))
 
 
 def main() -> None:
     checks: list[dict] = []
 
     # (1) bar-odd + unit-modulus ⇒ E² = −1, witnessed with σ = conjugation, E = ±i.
-    for E in (1j, -1j):
-        sigmaE = E.conjugate()
-        barodd = approx((sigmaE + E).real, 0.0) and approx((sigmaE + E).imag, 0.0)
-        unitmod = approx((E * sigmaE).real, 1.0) and approx((E * sigmaE).imag, 0.0)
+    for E in (mp.mpc(0, 1), mp.mpc(0, -1)):
+        sigmaE = mp.conj(E)
+        barodd = approx((sigmaE + E).real, 0) and approx((sigmaE + E).imag, 0)
+        unitmod = approx((E * sigmaE).real, 1) and approx((E * sigmaE).imag, 0)
         sq = E * E
         checks.append({
-            "name": f"barOdd_unitModulus_sq_eq_neg_one[E={E}]",
+            "name": f"barOdd_unitModulus_sq_eq_neg_one[E={'+i' if E.imag > 0 else '-i'}]",
             "bar_odd_sigmaE_eq_negE": barodd,
             "unit_modulus_E_sigmaE_eq_1": unitmod,
-            "E_squared": [sq.real, sq.imag],
-            "passed": barodd and unitmod and approx(sq.real, -1.0) and approx(sq.imag, 0.0),
+            "E_squared": [fmt(sq.real), fmt(sq.imag)],
+            "passed": bool(barodd and unitmod and approx(sq.real, -1) and approx(sq.imag, 0)),
         })
 
     # (2) Pythagorean quadrature: |fs − s·E|² = fs² + s²  (E = i, fs, s real/bar-even).
-    E = 1j
-    for fs, s in ((1.0, 1.0), (0.7, 1.3), (0.9, 1.5)):
+    E = mp.mpc(0, 1)
+    for fs_s, s_s in (("1", "1"), ("0.7", "1.3"), ("0.9", "1.5")):
+        fs, s = mp.mpf(fs_s), mp.mpf(s_s)
         factor_c = fs - s * E
-        mod_sq = (factor_c * factor_c.conjugate()).real
+        mod_sq = (factor_c * mp.conj(factor_c)).real
         quad = fs * fs + s * s
         checks.append({
-            "name": f"affine_modulus_quadrature[fs={fs},s={s}]",
-            "modulus_squared": mod_sq,
-            "fs2_plus_s2": quad,
-            "passed": approx(mod_sq, quad),
+            "name": f"affine_modulus_quadrature[fs={fs_s},s={s_s}]",
+            "modulus_squared": fmt(mod_sq),
+            "fs2_plus_s2": fmt(quad),
+            "passed": bool(approx(mod_sq, quad)),
         })
 
     # (3) Reframing: the transverse slope s that the modulus reading requires, per fs.
     #     r* = √(fs² + s²)  ⇒  s = √(r*² − fs²).   Reported, NOT fitted.
     transverse = []
-    for fs in (1.0, 0.95, 0.9):
+    for fs_s in ("1", "0.95", "0.9"):
+        fs = mp.mpf(fs_s)
         disc = R_STAR * R_STAR - fs * fs
-        s_needed = math.sqrt(disc) if disc >= 0 else float("nan")
-        transverse.append({"fs": fs, "s_transverse_needed": s_needed,
-                           "is_O1_not_Oh": s_needed > 0.5})
+        s_needed = mp.sqrt(disc) if disc >= 0 else None
+        transverse.append({"fs": fmt(fs), "s_transverse_needed": fmt(s_needed),
+                           "is_O1_not_Oh": bool(s_needed is not None and s_needed > mp.mpf("0.5"))})
 
     # Placeholder-model quadrature (fs = s = 1) is √2 ≠ r*: the honest 'not-derived' flag.
-    placeholder_root2 = math.sqrt(2.0)
+    placeholder_root2 = mp.sqrt(2)
 
     # (4) Longitudinal readings MISS (reproduce the A3 crossterm finding): factor = 1 − ρ.
     longitudinal = []
-    for name, rho in (("h", H_LIT), ("-h", -H_LIT), ("ℏ_q", HBAR_Q), ("-ℏ_q", -HBAR_Q)):
-        corr = 1.0 - rho
-        longitudinal.append({"reading": name, "rho": rho, "correction_1_minus_rho": corr,
-                             "abs_err_vs_rstar": abs(corr - R_STAR),
-                             "lands_rstar": abs(corr - R_STAR) < 0.02})
+    for name, rho in (("q-1", H_QMINUS1), ("-(q-1)", -H_QMINUS1),
+                      ("h = q-1/q", H_HECKE), ("-h", -H_HECKE),
+                      ("ℏ_q", HBAR_Q), ("-ℏ_q", -HBAR_Q)):
+        corr = 1 - rho
+        longitudinal.append({"reading": name, "rho": fmt(rho),
+                             "correction_1_minus_rho": fmt(corr),
+                             "abs_err_vs_rstar": fmt(abs(corr - R_STAR)),
+                             "lands_rstar": bool(abs(corr - R_STAR) < mp.mpf("0.02"))})
     n_long_hit = sum(1 for x in longitudinal if x["lands_rstar"])
 
     all_struct_pass = all(c["passed"] for c in checks)
@@ -106,20 +137,23 @@ def main() -> None:
         "computation": "birkhoff-barodd-pythagoras-bridge",
         "scriptFile": "birkhoff_barodd_pythagoras_bridge_probe.py",
         "computedAt": _dt.datetime.now(_dt.timezone.utc).isoformat(),
-        "engine": "python-complex (structural demonstration; 0 free params, no precision needed)",
+        "engine": "mpmath mpc (structural demonstration; 0 free params)",
         "free_parameters": 0,
         "inputs": {
-            "q0": Q0, "h": H_LIT, "hbar_q": HBAR_Q,
-            "mu3_MeV": MU3, "c3_single_trace_MeV": C3_SINGLE, "r_star": R_STAR,
+            "q0": fmt(Q0), "q0Anchor": "proton",
+            "h_hecke_q_minus_qinv": fmt(H_HECKE), "q_minus_1": fmt(H_QMINUS1),
+            "hbar_q": fmt(HBAR_Q),
+            "mu3_MeV": fmt(MU3), "c3_single_trace_MeV": fmt(C3_SINGLE),
+            "r_star": fmt(R_STAR),
             "mu3_source": "additive-residual-simplex #4320",
             "c3_source": "borromean-H9-magnitude-lift #4364",
         },
         "results": {
             "structural_checks": checks,
-            "all_structural_pass": all_struct_pass,
+            "all_structural_pass": bool(all_struct_pass),
             "transverse_slope_needed_per_fs": transverse,
-            "placeholder_model_fs_s_eq_1_gives_sqrt2": placeholder_root2,
-            "placeholder_matches_rstar": approx(placeholder_root2, R_STAR, tol=1e-2),
+            "placeholder_model_fs_s_eq_1_gives_sqrt2": fmt(placeholder_root2),
+            "placeholder_matches_rstar": bool(approx(placeholder_root2, R_STAR, tol=mp.mpf("1e-2"))),
             "longitudinal_readings": longitudinal,
             "n_longitudinal_landing_rstar": n_long_hit,
         },
@@ -150,16 +184,16 @@ def main() -> None:
         json.dump(witness, fh, indent=1)
         fh.write("\n")
 
-    print(f"r* = μ₃/c₃ = {R_STAR:.6f}")
+    print(f"r* = μ₃/c₃ = {mp.nstr(R_STAR, 7)}")
     print(f"[1] bar-odd + unit-modulus ⇒ E²=−1 : {all(c['passed'] for c in checks[:2])}")
     print(f"[2] |fs−s·E|² = fs²+s²             : {all(c['passed'] for c in checks[2:])}")
-    print(f"[3] transverse slope s (fs=1)      : {transverse[0]['s_transverse_needed']:.6f}  (O(1))")
-    print(f"    placeholder fs=s=1 ⇒ √2        : {placeholder_root2:.6f}  (≠ r* — NOT derived)")
-    print(f"[4] longitudinal readings landing r*: {n_long_hit}/4")
+    print(f"[3] transverse slope s (fs=1)      : {transverse[0]['s_transverse_needed'][:8]}  (O(1))")
+    print(f"    placeholder fs=s=1 ⇒ √2        : {mp.nstr(placeholder_root2, 7)}  (≠ r* — NOT derived)")
+    print(f"[4] longitudinal readings landing r*: {n_long_hit}/{len(longitudinal)}")
     print(f"wrote {out}")
     assert all_struct_pass, "structural demonstration failed"
     assert n_long_hit == 0, "longitudinal reading unexpectedly landed r* (reframing premise)"
-    assert not approx(placeholder_root2, R_STAR, tol=1e-2), "placeholder must NOT match r* (honesty)"
+    assert not approx(placeholder_root2, R_STAR, tol=mp.mpf("1e-2")), "placeholder must NOT match r* (honesty)"
     print("ALL ASSERTIONS PASS (6/6)")
 
 
