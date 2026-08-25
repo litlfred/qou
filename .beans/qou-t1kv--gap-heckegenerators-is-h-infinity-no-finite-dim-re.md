@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T17:48:28Z
+updated_at: 2026-08-25T18:43:09Z
 ---
 
 ## The defect
@@ -184,3 +184,36 @@ refutation was `scalarGenerators`, dimension 1; this one is dimension 2 and non-
 What H_infinity cannot host is an IRREDUCIBLE action, not a big one.
 
 All 23 declarations re-checked: [propext, Classical.choice, Quot.sound], no sorryAx.
+
+
+## BOUNDED CLASS BUILT + JM SPECTRAL HALF HAS ITS FIRST INSTANCE (2026-08-25, PR #5778)
+
+    HeckeGeneratorsBelow R A q n   relations only for i + 1 < n
+    stdTwoBelow3                   the 2-dim (2,1) rep AS AN INSTANCE at n = 3
+    stdTwoBelow3_jm_content        L_k act on e0 = (1,0) by q^(2c), c = 0, 1, -1
+
+At n = 3 the bounded class collapses to two Hecke-quadratic generators plus one
+braid relation; far-commutation is VACUOUS (needs i+1 < j with j+1 < 3). All three
+obligations were already proved by #5766, so the instance assumes nothing new. The
+two results are exactly complementary: the unbounded class CANNOT admit this pair,
+the bounded class DOES.
+
+**The prize did not require the full port.** The eigenvalues q^0, q^2, q^-2 are
+q^(2c) for the contents of (0,0), (0,1), (1,0) — the SYT [[1,2],[3]] on (2,1).
+`HeckeJucysMurphyElements.lean` records the spectral half as "Untouched here. It
+needs Young's seminormal form, which the corpus does not carry." It now has one
+instance. ONE TABLEAU AT ONE n — not Young's theorem; the general-n statement is
+exactly as open as before.
+
+### Side finding: three fields of the UNBOUNDED class are redundant
+`hecke_mul_sub_eq_one` / `sub_mul_hecke_eq_one` derive sigma^-1 = sigma - (q-q^-1)
+from the Hecke relation alone (scalars are central; no invertibility hypothesis).
+So `HeckeGenerators.sigma_inv` / `mul_sigma_inv` / `sigma_inv_mul` are derivable
+data, not axioms. NOT changed in #5778 — removing them touches every downstream
+instance. Worth a separate scoped pass.
+
+### STILL OPEN — the ~1-day estimate is UNCHANGED
+The full port (jmRaw_comm, jmProd_eq_delta_pow, fullTwist_smul_eq_theta_sq
+re-proved on the bounded class, ~700 lines / 8 files) is NOT done. #5778 took the
+minimum path to the dim>1 content-spectrum realisation, which turned out not to
+need the general theory ported first. That port remains this bean's actual scope.
