@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T06:30:59Z
+updated_at: 2026-08-25T06:33:48Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -281,3 +281,28 @@ theorem, and drawn the opposite conclusion with equal confidence.
 
 **Any probe testing a claimed identity must include a case whose answer is already
 known.** A probe with no control measures itself.
+
+
+## Next lead — what L_k has that the counterexample lacks (HYPOTHESIS, UNTESTED)
+
+The refutation says "commutes with v" is insufficient. So what is the extra
+structure? Two candidates, neither tested — recording them as leads, NOT findings:
+
+1. **Palindromicity.** `jmRaw_hook` gives `L_k = (s_{k-1}..s_1) s_0^2 (s_1..s_{k-1})` —
+   a palindrome around `s_0^2`. The counterexample `N = v` is a single letter, trivially
+   palindromic, so palindromicity ALONE is probably not enough either. But `L_k` is a
+   palindrome whose CENTRE is a square, which `v` is not.
+
+2. **The recursion.** `L_k = s_{k-1} L_{k-1} s_{k-1}`, so an induction on k is available:
+   at step k the unknown N is itself `w M w` with `w = s_{k-1}`, `M = L_{k-1}`, where
+   `w` and `u = s_k` are ADJACENT (braid applies) and `w` and `v = s_{k+1}` are FAR
+   (commute). That gives two more relations the counterexample cannot use, and is the
+   route I would try first.
+
+**How to test cheaply.** The 2-dim irrep of H_3 can only reach k = 0 — it has two
+generators, so there is no room for the k = 1 adjacent pair. Testing k = 1 needs H_4
+(3-dim standard irrep, or the 24-element regular representation built from the Hecke
+multiplication table). Whoever does it: **keep a control case whose answer is known**,
+per the harness bug recorded above.
+
+Do not record either candidate as established without that measurement.
