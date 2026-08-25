@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-24T18:09:12Z
+updated_at: 2026-08-25T08:19:16Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1481,3 +1481,229 @@ weight solve would answer it.
 `qou-5pgl`'s question therefore stands open: is `0.998367` convention-C, and
 what is its D value? That needs the trace machinery, not the weight solve.
 Recording the negative so the next attempt does not repeat this route.
+
+
+## 2026-08-25 — the two qbeta C sites in the probe drain: one LEFT, one KEPT
+
+The probe/derived-tower convention-C drain (PR #5739) was assigned both live
+qbeta C sites. **Neither was migrated**, and the two reasons are different.
+
+### `computations/qbeta/qbeta_h_frame_rungs_probe.py:73` — LEFT, because this bean owns it
+
+    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))      # z_C
+    alpha = (z - 1) * hh / 2
+
+That `alpha` is the **C-frame eigenphase**, and per
+`qbeta_zcd_classical_coincidence_probe` assertion 7 the ladder's `markovZ'` is
+hard-coded to z_C, so the phase is exactly where the convention enters the
+ladder. Substituting z_D into it is the banned "substitute into a derived
+conclusion" move — and AGENTS.md is explicit that the ladder "must be
+RE-DERIVED under D, and that is not a z-swap", with
+`QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) making the C-frame
+ladder and the mass channel's three-row forcing mutually exclusive.
+
+So the site is a **real C defect that cannot be fixed by the drain**; it closes
+when this bean's re-derivation lands, not before. Flagging it here so the
+re-derivation knows to update this probe's z and alpha together rather than
+leaving a C binding behind in a file that will then look migrated.
+
+Note the probe's own docstring already says it establishes "nothing physical"
+and that alpha is "un-derived in both frames", so nothing downstream is
+asserting a D-frame result off it today.
+
+### `computations/qbeta/qbeta_zcd_classical_coincidence_probe.py:213` — KEPT, deliberate comparison
+
+    markovZ_prime = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+
+This is assertion 7 of a probe whose entire subject is C-vs-D. The line exists
+to RECORD that the ladder's markovZ' equals z_C; migrating it would destroy the
+probe's own finding. Correctly left, and it should stay through the
+re-derivation too — it is the record of what the C frame was.
+
+The drain's audit lists both as actionable because the detector cannot tell a
+comparison from a defect; only the second is a false positive.
+
+
+### Addendum 2026-08-25 — basis for both qbeta dispositions, given qou-4bq3
+
+`qou-4bq3` has shown the audit's `deliberate` column is unreliable. Neither
+qbeta disposition above used it.
+
+**`qbeta_zcd_classical_coincidence_probe.py`** was left because of what the code
+says: it defines `def z_C(qq)` (`sqrt(qq)/(qq+1)`, line 113) directly beside
+`def z_D(qq)` (`qq**3/(qq**2+1)`, line 117), each with a docstring naming its
+convention, and assertion 7 exists precisely to record that the ladder's
+`markovZ'` equals `z_C`. Prose naming C and D and explaining why both are
+present — the standard `qou-4bq3` sets.
+
+Note line 113 is itself an instance of the detector-blind `sqrt(q)/(q+1)`
+spelling catalogued in `qou-l7j1`, benign here.
+
+**`qbeta_h_frame_rungs_probe.py:73`** was never called deliberate. It is a real
+C defect, deferred to this bean's re-derivation because swapping it is the
+banned substitution — a different disposition from "leave it, it is fine".
+
+> **Cross-reference to the section above (added on resolving the rebase conflict).**
+> `main`'s *"the two qbeta C sites in the probe drain"* entry covers
+> `qbeta_h_frame_rungs_probe.py:73`, which is **one of the 13 sites** the AST pass
+> below flags, and reaches the same verdict independently: a real C defect the
+> drain cannot fix, closing only when this bean's re-derivation lands. The two
+> records are complementary — that one covers producers *still on C*, this one
+> covers producers *already moved to D with a C witness and a C gate*.
+---
+
+## A sub-class the "Live C sites" list does not cover (2026-08-25, bean `qou-uz7q`)
+
+That list tracks producers **still computing in C**. There is a second, opposite
+failure mode, and it is worse because it is invisible:
+
+> **already swapped to D, with the witness AND the gate threshold left at C.**
+
+Such a producer computes D numbers, compares them to a C answer, and **fails its
+own gate** — while the corpus reads it as passing, because the committed witness
+still says `allPassed: true`.
+
+### Measured instance: `qbeta_c3even_exact_sseries_probe`
+
+`70d1ade383` ("excise C tiers 2+3: 176 producer sites to convention D") swapped
+this probe's `z` on 2026-08-09 and did not regenerate its witness. Re-running it
+today flips `allPassed` `true` → `false`.
+
+Attribution by decisive test — numeric Taylor of `log(R(1+s)/R(1))` with the
+**live `cos`**, mpmath 60 dps, under each `z`:
+
+| probe source | `[s^3]` | matches |
+|---|---|---|
+| **D** — today's `z = q**3/(q**2+1)` | −4.4084936490538903383 | the re-run, `\|diff\| = 0.0` |
+| **C** — witness-era `z = 1/(sqrt(q)+1/sqrt(q))` | −3.9084936490538903383 | the committed, `\|diff\| = 3.1e-61` |
+
+The gate threshold confirms it independently: `c_2^even ≈ −8.006` **is** the C
+value — the committed C witness carries `−8.00641005870925` exactly. A correctly
+migrated D producer *must* fail a C-calibrated gate.
+
+This is candidate **33** of `convention-frame-staleness-audit` (73 suspects over
+139 D-form producers), promoted **suspect → confirmed** by that audit's own
+decisive-test method.
+
+### 🛑 Do NOT connect these numbers to (H1) — normalisation unestablished
+
+The probe reports `c3_even` **+86.66 (C) → +78.59 (D)**, a 9.3 % move. It is
+tempting to read that against this bean's table (`c₃`: −2.069 → −974.43, a 500×
+move) or against (H1) `c₃^even = −Vol(4₁) ≈ −2.03`. **Do not.** Those are three
+different objects, and `+86.66` cannot be the same normalisation as `−2.03`.
+Nothing here establishes which normalisation the probe's `c3_even` is in, so
+nothing here bears on (H1) either way. Recorded because AGENTS.md names *"a
+quantity differing only by normalisation, mistaken for a discrepancy"* as the
+exact error class this section could otherwise commit.
+
+### The D numbers were NOT landed
+
+Per this bean's own load-bearing constraint — `decayLadder_zC_threeRow_ne_zero`,
+so the C→D move **is not a z-swap** — `70d1ade383` performed exactly that
+substitution on this probe. Its D output is correct arithmetic from a move the
+ruling names invalid. The committed C witness was **restored**; nothing landed.
+The re-derivation this bean owns is what would produce a landable number.
+
+### What is now unblocked
+
+Both exact-`s`-series probes were **TIMEOUT / UNMEASURED** (> 1800 s censored),
+so no D-frame number could be obtained from them at all. Profiling showed the
+cost was `sympy`'s `trigsimp` → `polys.factor` fired by a live `cos` node inside
+`sp.series` — **3 `factor()` calls = 97.8 % of a 1200 s run** — not the probe's
+own `simplify`. Expanding `cos(alpha_eff)` to a finite Taylor polynomial first
+(exact: `alpha_eff(q=1) = 0`) gives **370 s at the probe's own order 9**, against
+a live-`cos` route that cannot finish **order 3** in 420 s.
+
+So the re-derivation now has a working experimental instrument on this axis where
+it previously had none. Validated value-neutral twice: the residual against the
+live-`cos` function falls at `s^N` (9.002 decades/decade at N=9), and the numeric
+Taylor above reproduces the D value the fixed probe emits.
+
+**Still not started, and still needs the owner's go:** the actual D-frame
+re-derivation. Nothing above is a re-derivation — it is one confirmed staleness
+instance plus a faster instrument.
+---
+
+## 2026-08-25 — S1 attempt (PR #5748). Does NOT close; block located.
+
+Scope-(a). Nothing wired; no c_k value, tier or channel registration moved.
+
+**Correction to this bean's own framing.** `decayLadder_zC_threeRow_ne_zero`
+does not forbid the z-substitution. It is about z_C ONLY: at the C parameter
+the third Wedderburn row is forcibly present, so "keep the C ladder" and "the
+two-row forcing applies here" are incompatible. The theorem that blocks the
+SUBSTITUTION is `eigenphase_bar_defect_of_fullBar` (same file): feeding a
+full-bar parameter into the C eigenphase leaves a bar defect of exactly h²,
+z-independently. Two different blocks, both needed.
+
+**What parity derives.** For a general shift c = ce + co,
+`generalShift_bar_defect` gives defect h·(h + 2·co) — ce and z both absent.
+So bar-oddness forces co = −h/2 UNIQUELY and constrains ce NOT AT ALL. The
+canonical member is z_D^even = z_D − h/2 = (q⁴+1)/(2q(q²+1)), which is
+[2]_q·Ξ/2 — the weight-determined half of the Markov parameter — so this is a
+re-derivation, not a substitution. Does not contradict
+`no_weight_function_gives_phase`, which excludes the weights fixing the FULL α.
+
+**Measured (proton; muon agrees). Harness reproduces C's −2.06934258 and this
+bean's −974.43 before being trusted.**
+
+  candidate            implied c₂    c₃       |r₂/r₁|
+  C as recorded          −1.0176   −2.0693     0.017
+  D naive z-swap         −9.2989 −974.43       0.893
+  D bar-odd, derived     −1.7331  −86.081      0.423
+
+11× better than the banned swap, still not the c₂ = −1 band.
+
+**Three no-fit measurements.**
+* Window: landing in |c₂+1| ≤ 0.02 demands the eigenphase to 4.5e-4 relative.
+  C and derived-D differ by 36 window-widths; naive by 463.
+* The cross-anchor swing — this bean's f-map discriminator — is
+  phase-independent to 0.5% (1.0052 naive, 1.00026 derived). It carries almost
+  no convention information.
+* The data demand z* = 0.4991045: 0.043% from z_C, 1.81% from z_D^even, 22.8%
+  from z_D. The ladder's empirical content IS "z ≈ z_C", which is why C looked
+  derived — and is why the re-derivation must change the SHAPE, not just z.
+
+**Where it blocks / what unblocks it.** ce = z* − z_D^even = −0.0090534 is
+bar-even, hence NOT excluded by parity. Deriving ce from convention-D data is
+the open item. Two guards for whoever tries:
+* ce ≈ −u (6.3% away) is INADMISSIBLE: bar(u)/u = q², u is not bar-even. h² is.
+* ce is resolved to only 1.45% (68.8σ) by σ(Q_β)/Q_β = 7.8e-7. ce/h² =
+  −0.207142 sits 1.7e-4 from (√2−1)/2 — 84× below resolution. Any
+  identification quoted to better than 1.5% is arithmetic, not measurement.
+
+Artifacts: `computations/qbeta/qbeta_d_frame_eigenphase_window_probe.py`;
+`QOU/QBeta/DFrameEigenphaseBarOdd.lean` (9 theorems, sorry-free, axioms clean);
+`docs/audits/2026-08-25-qbeta-ck-ladder-convention-d-eigenphase-window.md`.
+
+
+---
+
+### Adjudication, 2026-08-25: `qbeta_h_frame_rungs_probe.py:73` — the sibling is RIGHT, I was wrong
+
+Recorded because two records in this bean disagreed and the merge coordinator
+declined to adjudicate. Adjudicating my own side against it: **the sibling's
+"this bean owns it" is correct, and my contrary claim is retracted.**
+
+I reported that file as "a frame-change probe that disclaims carrying physics",
+and named only `qbeta_utils.py::substrate_ladder_quantities` and
+`markov_parameter` as the live C eigenphase sites. Read at the body:
+
+    73:    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    74:    alpha = (z - 1) * hh / 2
+
+That is an independent inline C spelling of the ladder eigenphase — a third
+genuine site, not a consumer of the other two, and squarely a B2-class site:
+swapping z there is exactly the substitution `naivePhase_not_barOdd` shows is
+never bar-odd.
+
+**How I got it wrong, since the mode recurs.** I read the docstring's "WHAT THIS
+DOES NOT ESTABLISH. Nothing physical." and stopped. That disclaimer is about the
+probe's *conclusion* — it is a change of variable — not about what the file
+*contains*. AGENTS.md's own instruction covers this exactly ("Read at the body
+rather than the docstring"), and it is the same failure the `y_lambda_at`
+correction documents one section over. A docstring saying a file establishes
+nothing physical is not evidence about which convention its arithmetic carries.
+
+My "two live sites" count is therefore also retracted as incomplete. It should
+not be used as a denominator anywhere.

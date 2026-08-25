@@ -1154,7 +1154,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Substrate statement contains archimedean constructs."
+        "notes": "Substrate statement contains archimedean constructs.",
+        "evidence": "Substrate statement contains archimedean constructs."
       }
     ],
     "wall-side-proof": [
@@ -1434,7 +1435,8 @@
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1499,7 +1501,8 @@
         "reviewed_at": "2026-07-07T14:26:57.312740Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1662,7 +1665,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean for 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' fails compilation with error: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean for 'Magic-shell coupling slope $\\\\kappa = -E_0 \\\\cdot \\\\log(1/h) / ([2]_q [3]_q)$ \u2014 categorical closed form' fails compilation with error: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean fails compilation: content/quantum-observable-universe/particle-interactions/magic-shell-coupling-kappa.lean:142:8: error(lean.unknownIdentifier): Unknown identifier `lt_div_iff`"
       },
       {
         "field_hash": {

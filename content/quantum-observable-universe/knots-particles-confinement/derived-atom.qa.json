@@ -1075,7 +1075,8 @@
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1179,7 +1180,8 @@
         "reviewed_at": "2026-07-07T14:26:57.244048Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1390,7 +1392,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean for 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' fails compilation with error: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean for 'Derived atom $\\\\mathcal{A}(Z, N)$ from pair production' fails compilation with error: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/derived-atom.lean fails compilation: content/quantum-observable-universe/particle-interactions/derived-atom.lean:24:4: error: `QOU.Interactions.DerivedAtom` has already been declared"
       },
       {
         "result": "pass",

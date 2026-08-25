@@ -1076,7 +1076,8 @@
         "reviewed_at": "2026-07-07T14:26:57.158688Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1274,7 +1275,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured relations in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean."
+        "referee_argument": "The conjectured relations in 'Iwahori–Hecke algebra is the anyon algebra: every QOU particle is anyonic before observation' remain unproven and are represented only by sorry stubs in the formalization content/quantum-observable-universe/particle-interactions/hecke-anyonic-substrate.lean.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       }
     ],
     "bib-cite-resolves": [

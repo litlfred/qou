@@ -795,7 +795,7 @@
           "in_degree": 1,
           "cone_size": 44,
           "depth": 20,
-          "pagerank": 9.8e-05,
+          "pagerank": 0.000098,
           "edge_span_max": 1,
           "edge_span_mean": 1,
           "worst_target": ""
@@ -1794,7 +1794,8 @@
         "reviewed_at": "2026-07-07T14:26:55.531025Z",
         "reviewed_sha": "cadbc030d3d70a18393385c351e18f20ee5bc89a",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -2077,7 +2078,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/appendix-qvalues/proton-mass-substrate-identity.lean:4:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidsAndKnots/FBorBorromeanObservable.olean' of module QOU.BraidsAndKnots.FBorBorromeanObservable does not exist"
       },
       {
         "result": "pass",
@@ -2137,7 +2139,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

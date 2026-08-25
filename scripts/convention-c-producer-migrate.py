@@ -55,7 +55,15 @@ import pathlib
 import re
 import sys
 
-DELIBERATE = re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "lib"))
+from convention_c_names import (  # noqa: E402
+    deliberate_c_kind, is_deliberate_c_name, selftest_rows)
+
+#: Shared with `convention-c-producer-audit.py` -- ONE definition, because this
+#: file and that one carried two copies of the same regex and both copies had
+#: the same `re.I` defect (bean `qou-4bq3`). See
+#: `scripts/lib/convention_c_names.py`.
+DELIBERATE = is_deliberate_c_name
 SKIP_PREFIXES = ("tools/pyhecke/",)
 
 
@@ -195,17 +203,40 @@ BAR_SITE = re.compile(r"(^|_)bar(_|$)|\bbar\s*\(|bar-symmetric|bar symmetric",
                       re.I)
 
 
-def _file_has_c_reference(tree: ast.AST) -> bool:
-    """G1: does anything in this file mention a deliberately C-named symbol?"""
+def _file_c_reference(tree: ast.AST):
+    """G1: the deliberately C-named symbol this file mentions, or None.
+
+    Returns the NAME, not a boolean, so a caller can report the basis of its
+    verdict. That is the fix for bean `qou-4bq3`: this guard reached
+    `convention-c-triage.py` as a bare bool, so a B3 "deliberate comparison --
+    leave it" verdict gave the reader no way to see it had fired on `__doc__`.
+    Eight of 24 B3 verdicts on `main` rested on such a collision.
+
+    Prefers a `z`-anchored match (`z_C`, `zc`) over a bare `_C_` token, since
+    the first is a Markov-parameter label and the second could be any
+    quantity's convention tag -- the caller then reports the strongest basis
+    present rather than whichever name `ast.walk` reached first.
+    """
+    best = None
     for node in ast.walk(tree):
         nm = None
         if isinstance(node, ast.Name):
             nm = node.id
         elif isinstance(node, ast.Attribute):
             nm = node.attr
-        if nm and DELIBERATE.search(nm):
-            return True
-    return False
+        if not nm:
+            continue
+        kind = deliberate_c_kind(nm)
+        if kind == "z_C":
+            return nm
+        if kind and best is None:
+            best = nm
+    return best
+
+
+def _file_has_c_reference(tree: ast.AST) -> bool:
+    """Boolean form of :func:`_file_c_reference` (kept for existing callers)."""
+    return _file_c_reference(tree) is not None
 
 
 def _ladder_phase_targets(tree: ast.AST) -> set:
@@ -262,7 +293,7 @@ def migrate_file(path: pathlib.Path, apply: bool):
         if "**3" in den_src:
             continue
         nm = names[0]
-        if DELIBERATE.search(nm):
+        if DELIBERATE(nm):
             skipped.append((n.lineno, nm, old_src, "deliberately C-named"))
             continue
         # G3: bar images -- see the note above BAR_SITE.

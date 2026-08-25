@@ -761,33 +761,76 @@ def yekutieli_correction_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
 
 
 def borromean_markov_trace_h2(q: mpf, q_inv: mpf | None = None) -> mpf:
-    """Markov trace of the Borromean braid (σ₁σ₂⁻¹)³ on H₃(q).
+    """Borromean braid (σ₁σ₂⁻¹)³ trace in the **jones** normalisation —
+    the ALTERNATIVE-normalisation comparison column, kept deliberately.
 
     Via the Jones polynomial of the Borromean rings:
         V(t) = −t⁻³ + 3t⁻² − 2t⁻¹ + 4 − 2t + 3t² − t³
-    at t = q², normalized by (q^{1/2} + q^{-1/2})².
+    at t = q², divided by the loop value `q + 2 + q⁻¹`.
 
-    Taylor expansion at q=1 (h = q − q⁻¹ = 0):
-        tr_M(β_Bor, q) = 1 + (3/16)·h² + O(h⁴)
+    ── which normalisation this is, and why it is NOT migrated ──────
 
-    The h² coefficient **3/16** is a clean rational identified by
-    `mpmath.identify`.  Under the (n−1)-strand normalization
-    (Jones normalization factor 4 = (1+1)² at q=1 for n=3 strands):
+    `q + 2 + q⁻¹ = (q^{1/2} + q^{-1/2})² = 1/z_C²` — the square of the
+    **convention-C** loop value, since `z_C = 1/(√q + 1/√q)`.  It is a
+    loop value raised to `n−1 = 2` (Markov closure of a 3-strand braid),
+    NOT a dimension count: the `4` it tends to at `q = 1` is `δ(1)²`, and
+    EVERY candidate normaliser below equals 4 there, so that limit
+    distinguishes nothing.
 
-        (3/16) × 4 = 3/4 = Family A's proved h² coefficient
+    It is nevertheless **left exactly as it is**, because this function's
+    job IS to be the non-canonical column.  The canonical (**wenzl**)
+    normaliser for this object is `[2]_q² = q² + 2 + q⁻²`, carried by
+    `markov_trace_for_knot` and by Lean `QOU.BraidsAndKnots.trM_borromean`
+    (`= (4 + h² − 3h⁴ − h⁶)/(h² + 4)`, sorry-free).  Two audits display
+    the two side by side; overwriting this one would delete the
+    comparison it exists to make.  Measured at q₀ (70 dps):
 
-    establishing that Family A's λ_A = 5/2 + (3/4)·h² IS the
-    Borromean braid trace, renormalized to the H₄ Wedderburn sum.
+        normaliser                          value      trace
+        q + 2 + q⁻¹   (jones, here)    4.0108969   1.0067304534877074
+        [2]_q² = q²+2+q⁻² (wenzl)      4.0437062   0.99856216383678727
+        1/z_D² = (q²+1)²/q⁶             2.6639201   1.5157706817416908
 
-    Ref: `yekutieli_borromean_h2_extraction.py` (empirical computation).
+    The `√q` spelling was removed (2026-08-25): `q + 2 + q⁻¹` is the same
+    number to the last bit (difference exactly 0.0 at 70 dps), so no
+    committed value moves, and no half-integer power of `q` is left in
+    this module for the next convention detector to re-flag.
+
+    ── the (3/16) × 4 = 3/4 claim: REFUTED, retained as the datum ───
+
+    Taylor at q = 1 (h = q − q⁻¹), exact:
+        this (jones)  : 1 + (3/16)h² − (97/128)h⁴ − (829/4096)h⁶
+        wenzl / Lean  : 1 + 0·h²      − (3/4)h⁴    − (1/16)h⁶
+
+    An earlier version of this docstring read the h² match
+    `(3/16) × 4 = 3/4` as "establishing that Family A's
+    λ_A = 5/2 + (3/4)·h² IS the Borromean braid trace".  **That claim is
+    false and is withdrawn.**  It is an artefact of this normalisation:
+    under the canonical `[2]_q²` the h² coefficient is exactly 0, and
+    `QOU.BraidsAndKnots.family_a_h_minus_bridge_explicit` proves the gap
+    `λ_A − bridge = (3/4)h² + (12h⁴ + 4h⁶)/(h² + 4)`, strictly positive
+    for every h ≠ 0 (`family_a_h_minus_bridge_pos`).  The factor also
+    fails at h⁰ (5/2, not 4) and at h⁴ (production terminates, this does
+    not) — a one-coefficient coincidence, not a renormalisation.
+
+    Scope: this is a **scope-(a)** negative about the bridge claim — the
+    two objects do not agree — not a claim that either object is wrong.
+
+    Refs:
+      - `content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanMarkovTrace.lean`
+      - `docs/audits/2026-06-01-vol-density-compute-vs-paper-audit.md` §1
+      - `docs/audits/2026-06-01-vol-density-derivation-trace.md` (FITTED row)
+      - `computations/audits/per_knot_density_compute_vs_paper_audit.py`
+        (`paper_J_borromean_jones_norm`, the same expression inline)
+      - `yekutieli_borromean_h2_extraction.py` (empirical computation)
     """
     qi = mpf(1) / q if q_inv is None else q_inv
-    sq = mp.sqrt(q)
-    sqi = mpf(1) / sq
     t = q ** 2
     ti = qi ** 2
     jones = -ti**3 + 3*ti**2 - 2*ti + 4 - 2*t + 3*t**2 - t**3
-    norm = (sq + sqi) ** 2
+    # Convention-C loop value squared, (√q + 1/√q)², written without the
+    # half-power. Deliberate: see the docstring — this is the alternative
+    # normalisation, and the canonical one is [2]_q² = q² + 2 + q⁻².
+    norm = q + 2 + qi
     return jones / norm
 
 

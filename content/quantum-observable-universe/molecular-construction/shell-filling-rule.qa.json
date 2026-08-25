@@ -1658,7 +1658,8 @@
         "reviewed_at": "2026-07-07T14:26:55.469907Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/molecular-construction/shell-filling-rule.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/molecular-construction/shell-filling-rule.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1863,7 +1864,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/molecular-construction/shell-filling-rule.lean is missing.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/molecular-construction/shell-filling-rule.lean is missing, preventing formal verification of the claims in 'Shell filling minimises $\\\\Phi_1$ (aufbau from LP dual)'.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/molecular-construction/shell-filling-rule.lean is missing."
       },
       {
         "result": "pass",

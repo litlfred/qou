@@ -1157,7 +1157,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.447358Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Contains borderline interpretive prose."
+        "notes": "Contains borderline interpretive prose.",
+        "evidence": "Contains borderline interpretive prose."
       }
     ],
     "fit-section-chapter": [
@@ -1637,7 +1638,8 @@
         "reviewed_at": "2026-07-07T14:26:57.447358Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1842,7 +1844,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing entirely, preventing formal verification of the claims in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing entirely, preventing formal verification of the claims in 'Confinement Frobenius reciprocity: bound-state observables as $G^{-1}$-weighted dual pairings'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/confinement-frobenius-reciprocity.lean is missing."
       },
       {
         "result": "pass",

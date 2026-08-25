@@ -1589,7 +1589,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic or physical relations are completely unproven, and the sibling Lean file is missing."
+        "referee_argument": "The conjectured algebraic or physical relations are completely unproven, and the sibling Lean file is missing.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file is missing."
       },
       {
         "result": "pass",
@@ -1635,7 +1636,8 @@
         "reviewed_at": "2026-07-07T14:26:56.833820Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "Conjectured block 'Geometric invariant $\\\\mathrm{Geom}(K)$ as rigid dualizing evaluation' has no Lean sibling, representing a minor structural gap.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjectured block 'Geometric invariant $\\\\mathrm{Geom}(K)$ as rigid dualizing evaluation' has no Lean sibling, representing a minor structural gap."
       },
       {
         "result": "pass",
@@ -1676,7 +1678,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

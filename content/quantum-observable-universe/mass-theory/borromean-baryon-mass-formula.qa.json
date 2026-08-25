@@ -1062,7 +1062,8 @@
         "reviewed_at": "2026-07-07T14:26:56.728811Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1343,7 +1344,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-06-24T03:58:58Z",
-        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e"
+        "reviewed_sha": "43dc406cec31fe3ed66167cb760e798d5add820e",
+        "evidence": "The block revives lambda_scale as a live 'conjectural common scale' with an 'open R&D' derivation, after its own sibling block, its witness, and AGENTS.md record lambda_scale as structurally falsified, purged, and absorbed into VolDensity (Family A, PR #1080)."
       },
       {
         "field_hash": {
@@ -1364,7 +1366,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "severity": "minor",
         "verdict": "survivable-objection",
-        "referee_argument": "The conjectured algebraic or physical relations in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' remain unproven and are represented as sorry stubs in the formalization."
+        "referee_argument": "The conjectured algebraic or physical relations in 'Borromean baryon mass formula with common scale $\\\\lambda_{\\\\mathrm{scale}}$' remain unproven and are represented as sorry stubs in the formalization.",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       },
       {
         "result": "pass",

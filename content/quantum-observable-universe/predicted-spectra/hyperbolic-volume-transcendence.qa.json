@@ -1113,7 +1113,8 @@
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Algebraic independence of QOU hyperbolic volumes' as verified, but the sibling Lean proof contains sorry stubs.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Algebraic independence of QOU hyperbolic volumes' as verified, but the sibling Lean proof contains sorry stubs."
       },
       {
         "result": "pass",
@@ -1217,7 +1218,8 @@
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, causing divergence from the fully-verified narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, causing divergence from the fully-verified narrative."
       },
       {
         "result": "pass",
@@ -1391,7 +1393,8 @@
         "reviewed_at": "2026-07-07T14:26:56.397391Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, indicating incomplete verification.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry, indicating incomplete verification."
       },
       {
         "result": "pass",
@@ -1427,7 +1430,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -1672,7 +1676,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

@@ -1130,7 +1130,8 @@
         "reviewed_at": "2026-07-07T14:26:55.643302Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Big bang state (degree-$0$ trivial configuration)' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Big bang state (degree-$0$ trivial configuration)' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1231,7 +1232,8 @@
         "reviewed_at": "2026-07-07T14:26:55.643302Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1436,7 +1438,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/big-bang-state.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/big-bang-state.lean:29:31: error(lean.unknownIdentifier): Unknown identifier `JetHorizon`"
       },
       {
         "result": "pass",

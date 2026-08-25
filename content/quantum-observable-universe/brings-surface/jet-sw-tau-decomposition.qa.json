@@ -1475,7 +1475,8 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
       },
       {
         "result": "pass",
@@ -1643,7 +1644,8 @@
         "reviewed_at": "2026-07-07T14:26:55.068465Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Lean sibling has 'sorry', representing a divergence from the fully claimed narrative proof."
       },
       {
         "result": "pass",
@@ -1848,7 +1850,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean sibling has sorry stubs.",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains sorry placeholders, rendering the formal proof for 'prop:jet-sw-tau-decomposition' incomplete.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "Referee verdict: open-objection. Objection: Lean sibling has sorry stubs."
       },
       {
         "result": "pass",

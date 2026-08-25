@@ -1160,7 +1160,8 @@
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'From Hoefsmit scattering weights to physical mass via the observation frame' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'From Hoefsmit scattering weights to physical mass via the observation frame' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1264,7 +1265,8 @@
         "reviewed_at": "2026-07-07T14:26:56.977360Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1475,7 +1477,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/hoefsmit-scattering-pipeline.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",
@@ -1648,7 +1651,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

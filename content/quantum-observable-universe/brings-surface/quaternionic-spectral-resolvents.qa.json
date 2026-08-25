@@ -1010,7 +1010,8 @@
         "reviewed_at": "2026-07-07T14:26:55.084077Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling is a stub or context-class wrapper that does not prove the actual claim from first principles."
       }
     ],
     "da-circular": [
@@ -1050,7 +1051,8 @@
         "reviewed_at": "2026-07-07T14:26:55.084077Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block overclaims the physical/mathematical scope and the level of Lean formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The block overclaims the physical/mathematical scope and the level of Lean formalization."
       }
     ],
     "da-hidden-dof": [
@@ -1165,7 +1167,8 @@
         "reviewed_at": "2026-07-07T14:26:55.084077Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Key categorical or topological terms are defined heuristically rather than rigorously.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Key categorical or topological terms are defined heuristically rather than rigorously."
       }
     ],
     "da-empirical-fragility": [
@@ -1262,7 +1265,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
         "verdict": "open-objection",
         "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean:30:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "field_hash": {

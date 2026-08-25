@@ -1225,7 +1225,8 @@
         },
         "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "b4ea040723a1332bd55c196ec3957bef43bc0abd",
-        "notes": "Substrate statement contains archimedean constructs."
+        "notes": "Substrate statement contains archimedean constructs.",
+        "evidence": "Substrate statement contains archimedean constructs."
       }
     ],
     "wall-side-proof": [
@@ -1639,7 +1640,8 @@
         "reviewed_at": "2026-07-07T14:26:57.421087Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The referenced Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing, leading to complete divergence."
       },
       {
         "result": "pass",
@@ -1844,7 +1846,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing entirely, preventing formal verification of the claims in 'Frobenius positivity filter for even-$A$ decays'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing entirely, preventing formal verification of the claims in 'Frobenius positivity filter for even-$A$ decays'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/particle-interactions/frobenius-positivity-filter.lean is missing."
       },
       {
         "result": "pass",

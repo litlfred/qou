@@ -1512,7 +1512,8 @@
         "reviewed_at": "2026-07-07T14:26:55.658936Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be an archimedean quantum obser...' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be an archimedean quantum obser...' presents the result as established, but the Lean formalization is incomplete (contains sorry / fails compilation)."
       },
       {
         "result": "pass",
@@ -1819,7 +1820,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility.",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/jet-prolongation-C.lean fails compilation with errors (../lifting-and-descent/jet-prolongation-C.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Geometry/Manifold/SmoothManifoldWithCorners.olean' of module Mathlib.Geometry.Manifold.SmoothManifoldWithCorners does not exist), preventing formal verification of the claims in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be an archimedean quantum obser...'."
+        "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/lifting-and-descent/jet-prolongation-C.lean fails compilation with errors (../lifting-and-descent/jet-prolongation-C.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Geometry/Manifold/SmoothManifoldWithCorners.olean' of module Mathlib.Geometry.Manifold.SmoothManifoldWithCorners does not exist), preventing formal verification of the claims in 'Let (\\mathbf{C}, \\varTheta, G, \\mathcal{S}) be an archimedean quantum obser...'.",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file has issues: da-vacuous, da-lean-narrative-divergence, da-reproducibility."
       },
       {
         "result": "pass",

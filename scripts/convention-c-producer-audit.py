@@ -87,10 +87,19 @@ import re
 import sys
 from collections import Counter, defaultdict
 
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent / "lib"))
+from convention_c_names import (  # noqa: E402
+    deliberate_c_kind, is_deliberate_c_name, selftest_rows)
+
 ROOTS = ("computations", "qou-mass", "tools")
 
 #: A target whose own name declares it convention C is a labelled comparison.
-DELIBERATE = re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)
+#:
+#: This was a single case-folded regex until 2026-08-25, and `re.I` folded its
+#: `C_` alternative into `c_`, so it matched ordinary identifiers -- `c_k`,
+#: `q_fac_n`, `desc_tr_M`, `__doc__`. See `scripts/lib/convention_c_names.py`
+#: for the measurement and for why the obvious widening was rejected.
+DELIBERATE = is_deliberate_c_name
 
 #: The registry blocks this path on C by design (`blocked_migrations`).
 BLOCKED_BY_DESIGN = "tools/pyhecke/"
@@ -206,6 +215,71 @@ def is_c_form_halfarg(node: ast.AST):
         return None
     d = "".join(ast.unparse(den).split())
     return num if d in (f"{num}**2+1", f"1+{num}**2") else None
+
+
+def _sqrt_of(node: ast.AST):
+    """If `node` is a square root of a single symbol, return that symbol's source.
+
+    Accepts `sqrt(X)` under any module alias, and `X ** 0.5` however the corpus
+    spells the exponent (`0.5`, `mpf("0.5")`, `mp.mpf('0.5')`). A square root of
+    a COMPOUND expression returns None -- `mp.sqrt(q**4 + q**2 + 1)` is a
+    polynomial norm, not `q^{1/2}`.
+    """
+    node = unwrap_casts(node)
+    if isinstance(node, ast.Call) and len(node.args) == 1:
+        if ast.unparse(node.func).split(".")[-1] == "sqrt":
+            a = unwrap_casts(node.args[0])
+            return ast.unparse(a) if isinstance(a, ast.Name) else None
+    if isinstance(node, ast.BinOp) and isinstance(node.op, ast.Pow):
+        if not isinstance(unwrap_casts(node.left), ast.Name):
+            return None
+        e = "".join(ast.unparse(node.right).split()).strip("'\"")
+        for lit in ("0.5", ".5", "mpf(0.5)", "mpf('0.5')", 'mpf("0.5")'):
+            if e == lit or e.endswith("mpf('0.5')") or e.endswith('mpf("0.5")') \
+                    or e.endswith("mpf(0.5)"):
+                return ast.unparse(unwrap_casts(node.left))
+        return None
+    return None
+
+
+def is_c_form_direct(node: ast.AST):
+    """Convention C written DIRECTLY: ``z = sqrt(q) / (q + 1)``.
+
+    Algebraically identical to the reciprocal form the rest of this file
+    matches -- ``sqrt(q)/(q+1) == 1/(sqrt(q) + 1/sqrt(q))``, the same number
+    ``0.4993203342`` -- but structurally nothing like it. There is no unit
+    numerator, so `is_c_form` bails at `_is_unit_numerator`; the numerator is
+    not the same symbol as the denominator's square, so `is_c_form_halfarg`
+    bails too. Bound to an ordinary name like `z`, the site is invisible to
+    every matcher here. Blind spelling #15, bean `qou-l7j1`.
+
+    It is the *spelling*, not the position, that hides these -- which makes it
+    a distinct class from the tuple-return blind spot (`_li_2_q_util.py:302`
+    went unreported while `:312` was listed) even though both present as "the
+    detector's list is a floor, not a census".
+
+    Requires the denominator to be exactly ``<base> + 1`` (or ``1 + <base>``)
+    for the SAME base the numerator takes the root of. That is what keeps the
+    precision: ``sqrt(q)/(q**2 + 1)`` and ``sqrt(q)/(q + 2)`` are different
+    numbers and are not matched. With the base tied, any hit IS `z_C` as an
+    algebraic identity, so this widening cannot produce a false positive about
+    the VALUE -- only about whether that value is playing the Markov role,
+    which is the same judgement every other matcher here leaves to the reader.
+
+    Returns the base symbol source, or None.
+    """
+    node = unwrap_casts(node)
+    if not (isinstance(node, ast.BinOp) and isinstance(node.op, ast.Div)):
+        return None
+    base = _sqrt_of(node.left)
+    if base is None:
+        return None
+    den = unwrap_casts(node.right)
+    if not (isinstance(den, ast.BinOp) and isinstance(den.op, ast.Add)):
+        return None
+    d = "".join(ast.unparse(den).split())
+    b = "".join(base.split())
+    return base if d in (f"{b}+1", f"1+{b}", f"{b}+1.0", f"1.0+{b}") else None
 
 
 def _defines_convention_d(src: str, sym: str) -> bool:
@@ -351,8 +425,20 @@ _Q_LIKE = re.compile(r"^_?[qQ][A-Za-z0-9_]{0,6}$")
 #: A binding that names a Markov trace or a Wedderburn weight -- the
 #: quantities that are rational in q under convention D, so a half-integer
 #: power in one is z_C showing through.
+#: `bond` / `f_pp` / `f_pn` / `f_nn` added 2026-08-25 (bean `qou-l7j1`). Per-bond
+#: energies are Wedderburn weights by another name, and they are where the
+#: half-integer power actually surfaced: `mirror_split_milnor_one_third_probe.py`
+#: writes `f_nn` and `f_pn` with `q0 ** mpf("1.5")` two lines under an
+#: unlabelled `z = sqrt(q0)/(q0+1)`.
+#:
+#: MEASURED before adding, because over-breadth is this scanner's whole risk
+#: (its first version returned 50 sites, nearly all legitimate square roots).
+#: Corpus-wide the widening adds exactly THREE bindings, all in that one file,
+#: all genuine -- 3/3. It buys the bean's own named instance and nothing else,
+#: and all three land in the second tier rather than the actionable count.
 TRACE_OR_WEIGHT = re.compile(
-    r"tr_?M|trace|^W\d|_W\d|\bW\d+\b|y_lam|y_lambda|weight|wenzl|hopf|census",
+    r"tr_?M|trace|^W\d|_W\d|\bW\d+\b|y_lam|y_lambda|weight|wenzl|hopf|census"
+    r"|bond|^f_(pp|pn|nn|np)$",
     re.I)
 
 
@@ -390,7 +476,7 @@ def _half_integer(node: ast.AST):
     return None
 
 
-def scan_closed_forms(roots=ROOTS):
+def scan_closed_forms(roots=ROOTS, c_files=()):
     """Find CONVENTION-C-SPECIALISED CLOSED FORMS -- the third blind spot.
 
     Migrating `z` is not migrating the file. Quantities DERIVED from `z` get
@@ -417,9 +503,29 @@ def scan_closed_forms(roots=ROOTS):
     `sqrt` of a COMPOUND expression is not matched — `mp.sqrt(q**4+q**2+1)` is
     a legitimate polynomial norm, not `q^{1/2}`.
 
-    Reported only for files that ALSO define `z` the convention-D way: in a
-    file still wholly on C a square root is expected and is `scan()`'s
-    business, whereas in a migrated file it is a leftover.
+    Reported for files that ALSO define `z` the convention-D way: in a file
+    still wholly on C a square root is expected and is `scan()`'s business,
+    whereas in a migrated file it is a leftover.
+
+    ## That rationale had a hole, and `c_files` is the patch (bean `qou-l7j1`)
+
+    "is `scan()`'s business" ASSUMES `scan()` SEES THE FILE. When the file's
+    `z` used a spelling no matcher knew -- `z = sqrt(q)/(q+1)`, blind spelling
+    #15 -- `scan()` missed it, this function skipped it by design, and the file
+    was invisible to **both halves of the audit** at once. Worked instance:
+    `deltalambda/mirror_split_milnor_one_third_probe.py` binds that `z` and
+    then writes `f_pp`/`f_pn`/`f_nn` bond weights carrying `q0 ** 1.5` -- which
+    is exactly the half-integer fingerprint this function exists to catch.
+
+    Half the fix is `is_c_form_direct`, which makes `scan()` see it. The other
+    half is here: a file `scan()` reports as C is passed in as `c_files` and
+    its closed forms are collected into a SEPARATE, second-tier bucket. They
+    are not defects *yet* -- the file's `z` is the defect and is already in the
+    actionable list -- but they are work that the `z` migration does not
+    finish, and an agent who migrates only the `z` will otherwise call the file
+    done. Keeping them out of the actionable count preserves the narrowing
+    below; surfacing them at all is what stops the two halves of the audit
+    pointing at each other.
 
     ## Narrowed to trace/weight bindings, deliberately
 
@@ -458,17 +564,21 @@ def scan_closed_forms(roots=ROOTS):
                 tree = ast.parse(src)
             except (SyntaxError, UnicodeDecodeError, OSError):
                 continue
-            # Only files that have already moved to D. Elsewhere a square root
-            # is the unmigrated z itself, which `scan` already reports.
-            if "**3" not in "".join(src.split()).replace("* *", "**"):
-                continue
-            if not any(_defines_convention_d(src, t.id)
-                       for n in ast.walk(tree)
-                       if isinstance(n, ast.Assign)
-                       for t in n.targets if isinstance(t, ast.Name)) \
-               and not any(_returns_convention_d(fn) for fn in ast.walk(tree)
-                           if isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef))):
-                continue
+            # Files that have already moved to D: a square root there is a
+            # leftover. Files `scan()` reports as still on C: second tier --
+            # see the docstring; their `z` is the listed defect, these are the
+            # work it does not finish.
+            pending = sp_ in c_files
+            if not pending:
+                if "**3" not in "".join(src.split()).replace("* *", "**"):
+                    continue
+                if not any(_defines_convention_d(src, t.id)
+                           for n in ast.walk(tree)
+                           if isinstance(n, ast.Assign)
+                           for t in n.targets if isinstance(t, ast.Name)) \
+                   and not any(_returns_convention_d(fn) for fn in ast.walk(tree)
+                               if isinstance(fn, (ast.FunctionDef, ast.AsyncFunctionDef))):
+                    continue
 
             # locals bound to sqrt(q), for the one-hop `rt**3` shape
             roots_of_q = {
@@ -508,12 +618,12 @@ def scan_closed_forms(roots=ROOTS):
                     continue
                 if not any(TRACE_OR_WEIGHT.search(nm) for nm in names):
                     continue
-                if any(DELIBERATE.search(nm) for nm in names):
+                if any(DELIBERATE(nm) for nm in names):
                     continue
                 hit = _half_power_in(value)
                 if hit:
                     out.append((sp_, getattr(value, "lineno", n.lineno),
-                                f"{names[0]} <- {hit}"))
+                                f"{names[0]} <- {hit}", pending))
     return out
 
 
@@ -732,12 +842,13 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                 if n.value is None:
                     continue
                 if not (is_c_form(n.value) or is_c_form_halfarg(n.value)
-                        or is_c_form_reciprocal(n.value, half_vars)):
+                        or is_c_form_reciprocal(n.value, half_vars)
+                        or is_c_form_direct(n.value)):
                     continue
                 nm = names[0]
                 yield (sp, n.lineno, nm, ast.unparse(n.value),
                        classify(sp, blocked_files, declared_files),
-                       bool(DELIBERATE.search(nm)))
+                       bool(DELIBERATE(nm)))
 
             # RETURNED, not assigned. The scan above keys off an assignment
             # TARGET, so a function that computes the convention straight into
@@ -782,13 +893,14 @@ def scan(roots=ROOTS, blocked_files=(), declared_files=()):
                     # unwrap it or the shape never matches.
                     while isinstance(val, ast.UnaryOp) and isinstance(val.op, ast.UAdd):
                         val = val.operand
-                    if not (is_c_form(val) or is_c_form_halfarg(val)):
+                    if not (is_c_form(val) or is_c_form_halfarg(val)
+                            or is_c_form_direct(val)):
                         continue
                     yield (sp, r.lineno, f"{fn.name}() -> return",
                            ast.unparse(val),
                            "convention dispatcher (returns C and D) — labelled comparison"
                            if dispatcher else classify(sp, blocked_files, declared_files),
-                           bool(DELIBERATE.search(fn.name)) or dispatcher)
+                           bool(DELIBERATE(fn.name)) or dispatcher)
 
 
 def selftest() -> int:
@@ -905,17 +1017,33 @@ def selftest() -> int:
     # version returned 50 sites in D-migrated files, nearly all legitimate
     # square roots, which is the loose-grep error this repo has now made
     # twice. These fixtures pin the narrowing.
-    def _cf(src: str) -> int:
+    def _in_tmp_pkg(body: str, fn):
+        """Write `body` as a one-module root and run `fn(rootname)` inside it."""
+        import os
         import tempfile
         d = pathlib.Path(tempfile.mkdtemp())
-        (d / "m.py").write_text("z = q ** 3 / (q ** 2 + 1)\n" + src)
+        (d / "m.py").write_text(body)
         cwd = pathlib.Path.cwd()
         try:
-            import os
             os.chdir(d.parent)
-            return len(scan_closed_forms(roots=(d.name,)))
+            return fn(d.name)
         finally:
             os.chdir(cwd)
+
+    def _cf(src: str) -> int:
+        return _in_tmp_pkg("z = q ** 3 / (q ** 2 + 1)\n" + src,
+                           lambda r: len(scan_closed_forms(roots=(r,))))
+
+    def _cf_pending(body: str):
+        """(actionable, second-tier) closed-form counts for a whole module."""
+        def run(r):
+            live = [x for x in scan(roots=(r,)) if not x[5]]
+            rows = scan_closed_forms(roots=(r,), c_files={x[0] for x in live})
+            return (sum(1 for x in rows if not x[3]), sum(1 for x in rows if x[3]))
+        return _in_tmp_pkg(body, run)
+
+    def _scan_src_count(body: str) -> int:
+        return _in_tmp_pkg(body, lambda r: len(list(scan(roots=(r,)))))
 
     # The reciprocal form `1/(t + 1/t)` with `q = t**2` declared. Decidable
     # ONLY from that declaration: it is character-for-character `1/[2]_q`, the
@@ -1017,6 +1145,96 @@ def selftest() -> int:
         ("a mere comment mentioning D does not count as a definition",
          not _defines_convention_d("# convention D: q**3/(q**2+1)\nz = 0.4993", "z")),
     ]
+    # ------------------------------------------------------------------
+    # The DELIBERATE name classifier (bean `qou-4bq3`). Until 2026-08-25 this
+    # was `re.compile(r"(_c\b|_C\b|C_|_c_|zc$|z_c)", re.I)`, and `re.I` folded
+    # the `C_` alternative into `c_`, so it matched ordinary identifiers.
+    # Measured over every identifier in `computations/`, `qou-mass/` and
+    # `tools/`: 1112 distinct names / 5316 occurrences matched ONLY through
+    # that collision, including `c_k` (128 uses), `__doc__` (96),
+    # `exec_module`, `cyclotomic_poly`, `MAGIC_NUMBERS` and `basic_edges`.
+    #
+    # These fixtures are the regression lock. EVERY entry in the MUST-NOT half
+    # matched the old pattern, so this block fails against it -- a guard that
+    # cannot fail on its own known positive is worth nothing.
+    checks += list(selftest_rows())
+
+    # The two ends of the classifier's own reasoning, pinned separately from
+    # the name list so a future narrowing cannot quietly drop either:
+    checks += [
+        # Bare `C` is a Wedderburn block label (`A, C, D = 1.0, 1.0, 1.0`) and
+        # the multiplicative Jucys-Murphy Casimir `C = sum_k L_k` -- 598 uses
+        # across 162 files. The old regex did not match it; nor may this one.
+        ("a bare `C` is a block label / Casimir, not a convention",
+         not is_deliberate_c_name("C")),
+        # The trailing camelCase widening was MEASURED at ~45 % precision (22
+        # genuine against 26 false of 50 candidate names) and REJECTED. If a
+        # later change adopts it, this fixture fails and the docstring in
+        # `scripts/lib/convention_c_names.py` has to be re-argued first.
+        ("the ~45 %-precision camelCase widening stays rejected",
+         not any(map(is_deliberate_c_name,
+                     ("detC", "okC", "aC", "coefsC", "CShR4", "SL2C")))),
+        # The kind tag is what lets a B3 verdict name its basis.
+        ("a z-anchored name reports the strongest basis",
+         deliberate_c_kind("z_c") == "z_C"),
+        ("a plain `_C_` token is reported as the weaker basis",
+         deliberate_c_kind("pin_C") == "_C_"),
+    ]
+
+    # ------------------------------------------------------------------
+    # Blind spelling #15 -- `z = sqrt(q)/(q+1)` (bean `qou-l7j1`). The SAME
+    # NUMBER as `1/(sqrt q + 1/sqrt q)`, 0.4993203342, and no matcher here saw
+    # it: no unit numerator for `is_c_form`, and the numerator is not the
+    # denominator's square root for `is_c_form_halfarg`. Three live instances,
+    # one of them (`mirror_split_milnor_one_third_probe.py`) also hiding its
+    # own `q0 ** 1.5` bond weights behind the miss.
+    #
+    # The rejects are the precision: the base must be TIED, or this widens into
+    # every quotient with a square root on top.
+    _direct = [
+        ("mp.sqrt(q0) / (q0 + 1)", "q0"),
+        ("sqrt(q) / (1 + q)", "q"),
+        ("q ** 0.5 / (q + 1)", "q"),
+        ("q0 ** mp.mpf('0.5') / (q0 + 1)", "q0"),
+        ("float(mp.sqrt(Q) / (Q + 1))", "Q"),          # inside a numeric cast
+        ("mp.sqrt(q) / (q ** 2 + 1)", None),           # not q+1 -- a different number
+        ("mp.sqrt(q) / (q + 2)", None),                # not q+1
+        ("mp.sqrt(q) / (p + 1)", None),                # base NOT tied
+        ("q ** 3 / (q ** 2 + 1)", None),               # convention D
+        ("mp.sqrt(q ** 4 + q ** 2 + 1) / (q + 1)", None),  # sqrt of a polynomial
+    ]
+    for src, want in _direct:
+        got = is_c_form_direct(ast.parse(src, mode="eval").body)
+        verb = f"flags (base {want})" if want else "rejects"
+        checks.append((f"direct spelling {verb}: {src}", got == want))
+
+    checks += [
+        # `scan` must actually consult the new matcher, not merely define it.
+        ("`scan` reports a direct-spelling z (the whole point of #15)",
+         _scan_src_count("z = mp.sqrt(q0) / (q0 + 1)\n") == 1),
+        ("`scan` still ignores a direct-spelling D",
+         _scan_src_count("z = q0 ** 3 / (q0 ** 2 + 1)\n") == 0),
+        # The second-tier bucket. A file wholly on C used to be skipped by
+        # `scan_closed_forms` on the reasoning that `scan` would report it --
+        # which failed exactly when `scan` could not see it.
+        ("a C file's closed forms are collected as SECOND TIER, not actionable",
+         _cf_pending("z = mp.sqrt(q0) / (q0 + 1)\n"
+                     "W2 = (q0 ** 1.5 + q0 + 1) / d\n") == (0, 1)),
+        ("a D file's closed forms stay in the ACTIONABLE tier",
+         _cf_pending("z = q0 ** 3 / (q0 ** 2 + 1)\n"
+                     "W2 = (q0 ** 1.5 + q0 + 1) / d\n") == (1, 0)),
+        ("a file on neither convention is still not scanned at all",
+         _cf_pending("W2 = (q0 ** 1.5 + q0 + 1) / d\n") == (0, 0)),
+        # Per-bond energies are Wedderburn weights by another name. Measured at
+        # 3/3 corpus-wide before adding; `f_pp`/`f_pn`/`f_nn` only, not any
+        # `f_xx`, so an unrelated two-letter f-name is still left alone.
+        ("a per-bond weight with a half-power is a trace/weight binding",
+         _cf("f_nn = (q ** 1.5 - q ** 3 + 1) / (q * (q + 1))\n") == 1),
+        ("`bond` in the name is enough",
+         _cf("eps_bond = mp.sqrt(q)\n") == 1),
+        ("an unrelated two-letter f-name is NOT a bond weight",
+         _cf("f_ab = mp.sqrt(q)\n") == 0),
+    ]
     for name, ok in checks:
         print(f"  {'ok  ' if ok else 'FAIL'}  reexport: {name}")
         bad += not ok
@@ -1069,13 +1287,26 @@ def main() -> int:
                      if not any(e in k for e in _EXCUSED))
     print(f"\n  ACTIONABLE (excludes blocked-by-design): {actionable} sites")
 
-    closed = scan_closed_forms()
+    # A file `scan()` reports as still on C is passed in, so its closed forms
+    # are collected too -- into the SECOND-TIER bucket below, never the count.
+    # Without this a file whose `z` used an unmatched spelling was invisible to
+    # both halves of the audit at once (bean `qou-l7j1`).
+    closed_all = scan_closed_forms(c_files={r[0] for r in live})
+    closed = [c for c in closed_all if not c[3]]
+    pending = [c for c in closed_all if c[3]]
     if closed:
         print(f"\n  C-SPECIALISED CLOSED FORMS: {len(closed)} trace/weight binding(s) in "
               f"convention-D files still carry a half-integer power of q.")
         print("  Migrating z is not migrating the file: h*z+1 and (q*z+1)/(q^2+1) are")
         print("  rational under D, so a square root in one is z_C showing through.")
-        for path, line, what in closed:
+        for path, line, what, _ in closed:
+            print(f"    {path}:{line}   {what}")
+    if pending:
+        print(f"\n  SECOND TIER — {len(pending)} closed form(s) in files whose z is STILL C "
+              f"(listed above).")
+        print("  NOT in the actionable count: the z is the defect. These are the work the")
+        print("  z migration does NOT finish — re-derive them, do not substitute z_D.")
+        for path, line, what, _ in pending:
             print(f"    {path}:{line}   {what}")
 
     leaks = scan_reexports(repo=pathlib.Path("."))

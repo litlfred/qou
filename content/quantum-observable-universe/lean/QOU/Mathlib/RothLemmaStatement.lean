@@ -94,10 +94,13 @@ Here is what it is for.
 
 The induction step splits off the **last** variable in the ordering and its row cost is
 
-    t = (d_last + 1) / D₁,     D₁ a lower bound on the *other* variables' degrees.
+    t = d_last / D₁,     D₁ a lower bound on the *other* variables' degrees.
 
 `RothGrowth` makes the degrees decrease along the ordering, so every earlier degree is at
-least `ω` times the last one, and `t ≤ 2/ω`.  Choosing `ω ≥ 2/ε` gives `t ≤ ε`.
+least `ω` times the last one, and `t ≤ 1/ω`.  Choosing `ω ≥ 1/ε` gives `t ≤ ε`.
+
+⚠ The numerator was `d_last + 1` until correction 24, which cost a factor `2` here and
+nowhere in §13.  See `RothOperatorFamily.cost_sepW_le`.
 
 **This was the arc's own reconstruction, and §11 has since confirmed it.**  Property `Γ_m`'s
 first clause reads `max(s₂/s₁, …, s_M/s_{M−1}) ≤ t`, i.e. `s_h ≥ s_{h+1}/t` — which is
@@ -143,18 +146,22 @@ theorem rothGrowth_mul_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {
       (by show (k : ℕ) = ((j : ℕ) + 1) + ((k : ℕ) - ((j : ℕ) + 1)); omega)
   nlinarith [le_trans zero_le_one hω]
 
-/-- **`t ≤ 2/ω`** — the row cost of the induction step, bounded by the growth constant alone.
+/-- **`t ≤ 1/ω`** — the row cost of the induction step, bounded by the growth constant alone.
 
-`(d_last + 1)/d_earlier ≤ 2/ω`: the `+1` costs a factor `2` because `d_last ≥ 1`, and `ω` comes
-straight from `rothGrowth_mul_le`.
+`d_last/d_earlier ≤ 1/ω`, straight from `rothGrowth_mul_le`.  So `ω ≥ 1/ε` forces `t ≤ ε`.
 
-So `ω ≥ 2/ε` forces `t ≤ ε`.  ⚠ The `t` here is the *row cost*, a local quantity; do not
-confuse it with §11's parameter `t`, against which `ω = 1/t` — under that identification this
-bound reads `row cost ≤ 2t`, which is the shape §13 consumes. -/
+⚠ The `t` here is the *row cost*, a local quantity; do not confuse it with §11's parameter
+`t`, against which `ω = 1/t` — under that identification this bound reads `row cost ≤ t`,
+which is the shape §13 consumes, on the nose.
+
+⚠ This used to be stated with numerator `d_last + 1` and conclusion `2/ω`, the `2` being
+`1 + 1/d_last ≤ 2`.  Both are true, and the loose one is what the arc carried for eleven
+commits; §13's row term is `(μ-1)/r_{m-1}` with `μ ≤ n ≤ r_m + 1`, so the numerator the
+source uses is `r_m`, not `r_m + 1`.  Correction 24. -/
 theorem rothGrowth_row_cost_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
     (hω : 1 ≤ ω) (hg : RothGrowth o ω d) {j k : Fin m} (hjk : (j : ℕ) + 1 ≤ (k : ℕ))
     (hdk : d (o.symm k) ≠ 0) :
-    ((d (o.symm k) : ℚ) + 1) / (d (o.symm j) : ℚ) ≤ 2 / ω := by
+    (d (o.symm k) : ℚ) / (d (o.symm j) : ℚ) ≤ 1 / ω := by
   have hωpos : (0 : ℚ) < ω := lt_of_lt_of_le zero_lt_one hω
   have hdk1 : (1 : ℚ) ≤ (d (o.symm k) : ℚ) := by
     exact_mod_cast Nat.one_le_iff_ne_zero.mpr hdk
@@ -459,6 +466,67 @@ theorem exists_isRothTheta {σ : Type*} [Finite σ] (a : ℤ) (r H : σ → ℕ)
     ∃ Θ : ℚ, IsRothTheta a r H Θ :=
   exists_isRothTheta_of_finite a r H (finite_rothPolySet a r) (finite_rothFracSet H)
     (exists_inRothPolySet a r ha) (exists_inRothFracSet H hH)
+
+/-! ### Transport along a type equivalence
+
+The variable *type* is incidental — `RothLemmaTheta σ m` and `RothLemmaTheta τ m` say the same
+thing when `σ ≃ τ` — but they are different propositions, and `rothLemmaTheta_iterate` needs the
+base case at `Fin 1` while `rothLemmaTheta_one` proves it at `Unit`.
+
+`index_rename_equiv` (`QOU.Mathlib.RothIndex`) already carries the index across; these carry the
+two membership predicates, and hence `IsRothTheta`.  ⚠ The height side really is free, as that
+module's docstring predicted: `coeff_rename_mapDomain` matches coefficients across a renaming, so
+the sup-norm bound transports with no arithmetic at all. -/
+
+theorem InRothPolySet.rename_equiv {σ τ : Type*} [DecidableEq σ] [DecidableEq τ] (e : σ ≃ τ)
+    {a : ℤ} {r : σ → ℕ} {A : MvPolynomial σ ℤ} (h : InRothPolySet a r A) :
+    InRothPolySet a (r ∘ e.symm) (rename e A) := by
+  obtain ⟨h0, hd, hc⟩ := h
+  refine ⟨fun hz => h0 (rename_injective _ e.injective (by rw [hz, map_zero])), ?_, ?_⟩
+  · intro k
+    have hk := degreeOf_rename_of_injective (p := A) (f := (e : σ → τ)) e.injective (e.symm k)
+    rw [Equiv.apply_symm_apply] at hk
+    rw [hk]
+    exact hd _
+  · intro n
+    have hn : Finsupp.mapDomain (e : σ → τ) (Finsupp.mapDomain (e.symm : τ → σ) n) = n := by
+      rw [← Finsupp.mapDomain_comp]
+      simp
+    rw [← hn, coeff_rename_mapDomain _ e.injective]
+    exact hc _
+
+theorem InRothFracSet.rename_equiv {σ τ : Type*} (e : σ ≃ τ)
+    {H : σ → ℕ} {κ : σ → ℚ} (h : InRothFracSet H κ) :
+    InRothFracSet (H ∘ e.symm) (κ ∘ e.symm) := fun k => h (e.symm k)
+
+/-- **`IsRothTheta` transports along a type equivalence.**  The value `Θ` is unchanged — it is a
+supremum over sets the equivalence matches up. -/
+theorem IsRothTheta.rename_equiv {σ τ : Type*} [DecidableEq σ] [DecidableEq τ] (e : σ ≃ τ)
+    {a : ℤ} {r H : σ → ℕ} {Θ : ℚ} (h : IsRothTheta a r H Θ) :
+    IsRothTheta a (r ∘ e.symm) (H ∘ e.symm) Θ := by
+  classical
+  obtain ⟨hub, A₀, κ₀, hA₀, hκ₀, heq⟩ := h
+  have hcomp : ∀ {α : Type} (f : σ → α), (f ∘ (e.symm : τ → σ)) ∘ (e : σ → τ) = f := by
+    intro α f; funext j; simp
+  constructor
+  · intro A κ hA hκ
+    have hA' : InRothPolySet a r (rename (e.symm : τ → σ) A) := by
+      have hx := hA.rename_equiv e.symm
+      rwa [Equiv.symm_symm, hcomp r] at hx
+    have hκ' : InRothFracSet H (κ ∘ (e : σ → τ)) := by
+      have hx := hκ.rename_equiv e.symm
+      rwa [Equiv.symm_symm, hcomp H] at hx
+    have hb := hub _ _ hA' hκ'
+    have hmr : rename (e.symm : τ → σ) (map (algebraMap ℤ ℚ) A)
+        = map (algebraMap ℤ ℚ) (rename (e.symm : τ → σ) A) := (map_rename _ _ _).symm
+    rw [index_rename_equiv e, hcomp r, hmr]
+    exact hb
+  · refine ⟨rename e A₀, κ₀ ∘ (e.symm : τ → σ), hA₀.rename_equiv e, hκ₀.rename_equiv e, ?_⟩
+    have hmr : rename (e.symm : τ → σ) (map (algebraMap ℤ ℚ) (rename (e : σ → τ) A₀))
+        = map (algebraMap ℤ ℚ) A₀ := by
+      rw [← map_rename, rename_rename, Equiv.symm_comp_self, rename_id_apply]
+    rw [index_rename_equiv e, hcomp r, hcomp κ₀, hmr]
+    exact heq
 
 /-! ### §10 — the base case in `Θ` form
 
@@ -807,6 +875,30 @@ structure RothGammaFull {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (p q F : ℕ)
   clause is a *weaker* hypothesis, hence a *stronger* theorem — the shape this arc has now got
   wrong four times. -/
   degPos : ∀ j, d j ≠ 0
+
+/-- **`RothGammaFull` transports along a type equivalence.**
+
+Every clause is stated through `o.symm j`, so reindexing the variable type composes the
+equivalence into the ordering and leaves the content alone. -/
+theorem RothGammaFull.rename_equiv {σ τ : Type*} {m p q F : ℕ} (e : σ ≃ τ)
+    {o : σ ≃ Fin m} {d : σ → ℕ} {Kh : σ → ℤ} {b : ℤ}
+    (h : RothGammaFull o p q F d Kh b) :
+    RothGammaFull (e.symm.trans o) p q F (d ∘ e.symm) (Kh ∘ e.symm) b where
+  growth := by
+    intro j k hjk
+    simpa using h.growth j k hjk
+  height := by
+    intro j k hj
+    simpa using h.height j k hj
+  floorExp := h.floorExp
+  floor := by
+    intro j hj
+    simpa using h.floor j hj
+  heightBound := by
+    intro j hj
+    simpa using h.heightBound j hj
+  two_le := fun k => h.two_le _
+  degPos := fun k => h.degPos _
 
 /-- **From a `p/q` power bound to an `E : ℕ` one** — the bridge between the arc's two height
 idioms, with the rounding as an explicit hypothesis.
@@ -1167,28 +1259,54 @@ given property `Γ_m`, and it **produces** a system with `Γ_{m−1}`.  ⚠ No s
 
 Leading `t ≤ s` contributes `1`, the max contributes `2(c+1)`, total `2c+3`.
 
-`w` is `max(Ψ, √Ψ)`, encoded root-free as `w = Ψ ∨ w² = Ψ`.  ⚠ `0 ≤ w` is deliberately **not**
+`w` is `max(Ψ, √Ψ)`, encoded root-free as `w ≤ Ψ ∨ w² ≤ Ψ`.  ⚠ `0 ≤ w` is deliberately **not**
 required, though the max satisfies it: without it the second disjunct also admits `−√Ψ`, and a
 smaller `w` only makes `s + 2w` smaller, so the theorem is stronger without it.  Same reason
 `0 ≤ u` came off `rothConstant_step`.  Callers instantiate at the real max, where it holds.
 
+⚠⚠ **The twenty-fifth correction is the `≤` in that disjunction; it used to be `=`.**  The two
+encodings are not interchangeable, and the `=` one is not the faithful reading of
+`θ ≤ t + 2·max(Ψ, √Ψ)`:
+
+* with `≤`, the admissible `w` are exactly `w ≤ max(Ψ, √Ψ)`, so `∃ w` with `θ ≤ t + 2w` says
+  precisely `θ ≤ t + 2·max(Ψ, √Ψ)`;
+* with `=`, the admissible `w` are `Ψ` and — **only when `Ψ` is a square in `ℚ`** — `±√Ψ`.
+
+So the `=` form silently demands that `Ψ` be a rational square whenever the `√` branch is the
+operative one, which is the regime the recursion actually runs in (`Ψ < 1`).  Nothing supplies
+that: `Ψ = Θ_{m−1} + t` with `Θ_{m−1}` an infimum over a finite set of indices and `t = p/q`.
+The producer of this disjunction is `RothVariableSplit.RothLemma4`, which is why the `def`
+moved with it.
+
+⚠ Note what the `=` form cost and what it did not.  Nothing proved was false — this theorem is
+true either way, and *stronger* now that its hypothesis is weaker.  The damage was entirely on
+the other side of the arrow: `RothLemma4` had to **produce** a `w`, and could not.  A hypothesis
+nobody has had to discharge is indistinguishable from an unsatisfiable one — correction 9's
+lesson, and this is its fourth instance in the arc.
+
 ⚠ This covers what `rothConstant_step_source` does not — that one's `u² ≤ 4Ψ` is the `√Ψ`
 branch alone, which is the max only when `Ψ ≤ 1`. -/
-theorem rothConstant_step_lemma4 {m : ℕ} (hm : 1 ≤ m) {s Ψ w θ : ℚ}
+theorem rothConstant_step_lemma4 {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {m : ℕ} (hm : 1 ≤ m) {s Ψ w θ : K}
     (hs0 : 0 ≤ s) (hs1 : s ≤ 1)
-    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
-    (hw : w = Ψ ∨ w ^ 2 = Ψ)
+    (hΨ : Ψ ≤ ((rothConstant m : K) + 1) * s ^ 2)
+    (hw : w ≤ Ψ ∨ w ^ 2 ≤ Ψ)
     (hθ : θ ≤ s + 2 * w) :
-    θ ≤ (rothConstant (m + 1) : ℚ) * s := by
-  have hc1 : (1 : ℚ) ≤ (rothConstant m : ℚ) := by exact_mod_cast rothConstant_one_le hm
+    θ ≤ (rothConstant (m + 1) : K) * s := by
+  have hc1 : (1 : K) ≤ (rothConstant m : K) := by exact_mod_cast rothConstant_one_le hm
+  have hc0 : (0 : K) ≤ (rothConstant m : K) + 1 := by linarith
   have hsq : s ^ 2 ≤ s := by nlinarith
-  have hws : w ≤ ((rothConstant m : ℚ) + 1) * s := by
+  have hws : w ≤ ((rothConstant m : K) + 1) * s := by
     rcases hw with h | h
-    · rw [h]; nlinarith
-    · refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
-      rw [h]
-      nlinarith [sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s)]
-  have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
+    · calc w ≤ Ψ := h
+        _ ≤ ((rothConstant m : K) + 1) * s ^ 2 := hΨ
+        _ ≤ ((rothConstant m : K) + 1) * s := mul_le_mul_of_nonneg_left hsq hc0
+    · refine le_of_pow_le_pow_left₀ two_ne_zero (mul_nonneg hc0 hs0) ?_
+      calc w ^ 2 ≤ Ψ := h
+        _ ≤ ((rothConstant m : K) + 1) * s ^ 2 := hΨ
+        _ ≤ (((rothConstant m : K) + 1) * s) ^ 2 := by
+            nlinarith [sq_nonneg s, mul_nonneg hc0 (sq_nonneg s)]
+  have hrec : ((rothConstant (m + 1) : ℕ) : K) = 2 * (rothConstant m : K) + 3 := by
     rw [rothConstant_rec m hm]; push_cast; ring
   rw [hrec]
   linarith
@@ -1214,7 +1332,7 @@ constant in this one. -/
 theorem rothConstant_step_perturbed {m : ℕ} (hm : 1 ≤ m) {s Ψ w v θ : ℚ}
     (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (hv0 : 0 ≤ v) (hv1 : v ≤ 1)
     (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2 + v ^ 2)
-    (hw : w = Ψ ∨ w ^ 2 = Ψ)
+    (hw : w ≤ Ψ ∨ w ^ 2 ≤ Ψ)
     (hθ : θ ≤ s + 2 * w) :
     θ ≤ (rothConstant (m + 1) : ℚ) * s + 2 * v := by
   have hc1 : (1 : ℚ) ≤ (rothConstant m : ℚ) := by exact_mod_cast rothConstant_one_le hm
@@ -1222,10 +1340,9 @@ theorem rothConstant_step_perturbed {m : ℕ} (hm : 1 ≤ m) {s Ψ w v θ : ℚ}
   have hvq : v ^ 2 ≤ v := by nlinarith
   have hws : w ≤ ((rothConstant m : ℚ) + 1) * s + v := by
     rcases hw with h | h
-    · rw [h]; nlinarith
+    · nlinarith
     · refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
-      rw [h]
-      nlinarith [sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s),
+      nlinarith [h, sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s),
         mul_nonneg (mul_nonneg (by linarith : (0:ℚ) ≤ (rothConstant m : ℚ) + 1) hs0) hv0]
   have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
     rw [rothConstant_rec m hm]; push_cast; ring
@@ -1291,37 +1408,66 @@ absorb the additive `t`, and it is exactly `t ≤ s^{2^k}` for the relevant `k` 
 ⚠ **The chain needs the `s_n` to exist as rationals.**  For a general rational `t` they do not:
 `s_n = t^{2^{−(n−1)}}` is irrational in general.  So this closes the induction exactly for `t`
 that is a perfect `2^{m−1}`-th power of a rational — which is a genuine restriction, and the
-price of staying in `ℚ`.  Going to `ℝ` for the exponent is the alternative; it is not taken. -/
-theorem rothConstant_chain {sq Θ w : ℕ → ℚ} {t : ℚ}
+price of staying in `ℚ`.  Going to `ℝ` for the exponent is the alternative; it is not taken. 
+⚠⚠ **Correction twenty-three: the ranges used to be unbounded, and that made this vacuous.**
+
+`hsq` read `∀ n, sq (n + 1) ^ 2 = sq n` — for **every** `n`.  Iterating, `sq 1 = sq (k+1)^{2^k}`
+for every `k`, so `sq 1` is a `2^k`-th power **in `ℚ`** for every `k`.  Writing `sq 1 = a/b` in
+lowest terms, each `a` and `b` is then a `2^k`-th power for every `k`, so every prime exponent in
+them is divisible by every `2^k` and hence zero: `sq 1 = 1` (or `0`, forcing `sq ≡ 0` and
+`t ≤ 0`).  At `sq 1 = 1` the whole sequence is `1` and the conclusion is `Θ n ≤ c_n`, with **no
+`t` in it at all** — not §14's `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.
+
+So the only instance was the constant one the witness below exhibits, and the witness's own note
+— "the interesting instances have `sq n = s^{2^{m−n}}`" — describes a sequence that is not
+defined for `n > m` and therefore never satisfied `hsq`.
+
+Bounding the ranges to `n < M` fixes it: only `M` successive square roots are needed, so
+`sq 1 = t` may be any `2^{M−1}`-th power of a rational, which is what an application choosing its
+own `t` would supply anyway.
+
+⚠ The arithmetic above is elementary but **is not formalised here**.  A Lean witness would need
+the irrationality of `√2` (`Mathlib.Data.Real.Irrational`), whose `.olean` is not in this
+project's built Mathlib closure, so importing it would mean compiling that module.  Recorded as
+an argument, not as a theorem.
+
+⚠ The restriction to perfect powers is an artifact of the **root-free rational encoding**, not
+of §14 — over `ℝ` every non-negative `t` has a `2^k`-th root and the restriction vanishes.
+Removing it in `ℚ` means proving the step by passing to `ℝ` and back, which the inequalities all
+support (they are field-generic) but which is not done here.
+-/
+theorem rothConstant_chain {M : ℕ} {sq Θ w : ℕ → ℚ} {t : ℚ}
     (hs0 : ∀ n, 0 ≤ sq n) (hs1 : ∀ n, sq n ≤ 1)
-    (hsq : ∀ n, sq (n + 1) ^ 2 = sq n)
+    (hsq : ∀ n, n < M → sq (n + 1) ^ 2 = sq n)
     (ht : ∀ n, t ≤ sq n)
     (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
-    (hw : ∀ n, w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
-    (hstep : ∀ n, Θ (n + 1) ≤ t + 2 * w n) :
-    ∀ n, 1 ≤ n → Θ n ≤ (rothConstant n : ℚ) * sq n := by
+    (hw : ∀ n, n < M → w n ≤ Θ n + t ∨ (w n) ^ 2 ≤ Θ n + t)
+    (hstep : ∀ n, n < M → Θ (n + 1) ≤ t + 2 * w n) :
+    ∀ n, 1 ≤ n → n ≤ M → Θ n ≤ (rothConstant n : ℚ) * sq n := by
   intro n hn
   induction n, hn using Nat.le_induction with
-  | base => exact hbase
+  | base => intro _; exact hbase
   | succ n hn ih =>
+      intro hnM
+      have hlt : n < M := by omega
       have hΨ : Θ n + t ≤ ((rothConstant n : ℚ) + 1) * sq (n + 1) ^ 2 := by
-        rw [hsq n]
-        linarith [ht n, ih]
-      exact rothConstant_step_lemma4 (θ := Θ (n + 1)) hn (hs0 (n + 1)) (hs1 (n + 1)) hΨ (hw n)
-        (by linarith [hstep n, ht (n + 1)])
+        rw [hsq n hlt]
+        linarith [ht n, ih (by omega)]
+      exact rothConstant_step_lemma4 (θ := Θ (n + 1)) hn (hs0 (n + 1)) (hs1 (n + 1)) hΨ
+        (hw n hlt) (by linarith [hstep n hlt, ht (n + 1)])
 
 /-- **The chain in `RothBound` shape.**  Same hypotheses, conclusion converted by
 `rothBound_pow_iff` at each level. -/
-theorem rothBound_chain {sq Θ w : ℕ → ℚ} {t : ℚ}
+theorem rothBound_chain {M : ℕ} {sq Θ w : ℕ → ℚ} {t : ℚ}
     (hs0 : ∀ n, 0 ≤ sq n) (hs1 : ∀ n, sq n ≤ 1)
-    (hsq : ∀ n, sq (n + 1) ^ 2 = sq n)
+    (hsq : ∀ n, n < M → sq (n + 1) ^ 2 = sq n)
     (ht : ∀ n, t ≤ sq n) (hΘ0 : ∀ n, 0 ≤ Θ n)
     (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
-    (hw : ∀ n, w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
-    (hstep : ∀ n, Θ (n + 1) ≤ t + 2 * w n) :
-    ∀ n, 1 ≤ n → RothBound n (sq n ^ (2 ^ (n - 1))) (Θ n) := fun n hn =>
+    (hw : ∀ n, n < M → w n ≤ Θ n + t ∨ (w n) ^ 2 ≤ Θ n + t)
+    (hstep : ∀ n, n < M → Θ (n + 1) ≤ t + 2 * w n) :
+    ∀ n, 1 ≤ n → n ≤ M → RothBound n (sq n ^ (2 ^ (n - 1))) (Θ n) := fun n hn hnM =>
   (rothBound_pow_iff (hs0 n)).mpr
-    ⟨hΘ0 n, rothConstant_chain hs0 hs1 hsq ht hbase hw hstep n hn⟩
+    ⟨hΘ0 n, rothConstant_chain hs0 hs1 hsq ht hbase hw hstep n hn hnM⟩
 
 /-- ⚠ **Why the chain is parameterised by `s` and not by `t` alone.**
 
@@ -1526,25 +1672,25 @@ radicand `S/n`.  The source's chain is
 `r_m/2 ≥ (r_m/(r_m+1))·(n/2) ≥ (1/2)·(n/2) = n/4`; all it actually needs is **`n ≤ 2·r_m`**,
 which `n ≤ r_m + 1` and `r_m ≥ 1` give at once.
 
-Root-free: `v` stands for the left square root and `w` for `√(S/n)`. -/
+Root-free: `v` stands for the left square root and `w` for `√(S/n)`.
+
+⚠ `hw` is `S/n ≤ w²`, not `S/n = w²` — correction 25.  The `=` form demands that `S/n` be a
+square in `ℚ`, which nothing supplies, and only the `≤` direction is used.  `0 ≤ S` was
+previously *derived* from the equality and so has to be assumed now; it is free at every call
+site (`S` is a bound on an index). -/
 theorem radicand_weaken {S rm n v w : ℚ}
-    (hn : 0 < n) (hrm : 1 ≤ rm) (hnrm : n ≤ rm + 1)
-    (hv : v ^ 2 ≤ 2 / rm * S) (hw : w ^ 2 = S / n) (hw0 : 0 ≤ w) :
+    (hn : 0 < n) (hrm : 1 ≤ rm) (hnrm : n ≤ rm + 1) (hS : 0 ≤ S)
+    (hv : v ^ 2 ≤ 2 / rm * S) (hw : S / n ≤ w ^ 2) (hw0 : 0 ≤ w) :
     v ≤ 2 * w := by
   have hrm0 : (0 : ℚ) < rm := lt_of_lt_of_le zero_lt_one hrm
   have hdiv : 2 / rm ≤ 4 / n := by
     rw [div_le_div_iff₀ hrm0 hn]
     linarith
-  have hS : 0 ≤ S := by
-    have h : 0 ≤ S / n := by rw [← hw]; exact sq_nonneg w
-    by_contra hc
-    push_neg at hc
-    exact absurd h (not_le.mpr (div_neg_of_neg_of_pos hc hn))
   refine le_of_pow_le_pow_left₀ two_ne_zero (by linarith) ?_
   calc v ^ 2 ≤ 2 / rm * S := hv
     _ ≤ 4 / n * S := mul_le_mul_of_nonneg_right hdiv hS
     _ = 4 * (S / n) := by ring
-    _ = 4 * w ^ 2 := by rw [hw]
+    _ ≤ 4 * w ^ 2 := by linarith
     _ = (2 * w) ^ 2 := by ring
 
 /-- **`Φ ≤ Ψ` reduces to `Θ₁ ≤ t`.**  `Φ_m = Θ' + Θ₁` and `Ψ_m = Θ' + t`, so the two differ

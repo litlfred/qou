@@ -1623,7 +1623,8 @@
         "reviewed_at": "2026-07-07T14:26:57.021318Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Divergence detected: Lean reference 'qou:QOU.BraidsKnots.nsi_q_deformed_kernel' is specified but the file content/quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.lean is missing.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Divergence detected: Lean reference 'qou:QOU.BraidsKnots.nsi_q_deformed_kernel' is specified but the file content/quantum-observable-universe/climax-volume-mass/nsi-q-deformed-kernel.lean is missing."
       },
       {
         "result": "pass",
@@ -1821,7 +1822,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:nsi-q-deformed-kernel'.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing for 'lem:nsi-q-deformed-kernel', preventing formal verification of the claims.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:nsi-q-deformed-kernel'."
       },
       {
         "result": "pass",

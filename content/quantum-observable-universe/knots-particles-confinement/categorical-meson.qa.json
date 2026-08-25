@@ -1114,7 +1114,8 @@
         "reviewed_at": "2026-07-07T14:26:57.356151Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Meson (categorical)' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Meson (categorical)' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1218,7 +1219,8 @@
         "reviewed_at": "2026-07-07T14:26:57.356151Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1429,7 +1431,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean fails compilation: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean for 'Meson (categorical)' fails compilation with error: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean for 'Meson (categorical)' fails compilation with error: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/categorical-meson.lean fails compilation: content/quantum-observable-universe/particle-interactions/categorical-meson.lean:37:30: error: Type mismatch"
       },
       {
         "result": "pass",

@@ -791,6 +791,20 @@ import QOU.QBeta.BirkhoffAmplitudeWellPosed
 -- (not a bare entry — gauge-movable, ill-posed); cross-ratio elliptic because the exponent
 -- multipliers cancel; the WALL is χ(P)'s VALUE (0-exp determined, ∞-exp/closed-form open).
 import QOU.QBeta.BirkhoffAmplitudeE
+-- A=3 amplitude bar-odd/unit-modulus Pythagorean bridge: the carrier E=χ(P) is √−1
+-- (bar-odd σE=−E + unit-modulus E·σE=1 ⇒ E²=−1), so the affine lift's modulus is a
+-- quadrature fs²+s²; resolves the "real E vs unit phase" type tension, relocates the
+-- magnitude datum to the transverse slope s (qou-prjo). Conditional §3b, no instance.
+import QOU.QBeta.BirkhoffBarOddPythagorasBridge
+-- A=3 branching ↔ modulus-bridge composition: the branching reduction 1−x², the transverse
+-- leg 2x, and the lift 1+x² form a Pythagorean triple (lift = 2 − factor_sa); the branching's
+-- own x is too small to supply r*=1.585 (scope-(a) negative — s is genuinely transverse).
+import QOU.QBeta.A3BranchingModulusReflection
+-- qou-prjo: canonical discretization of the Yekutieli surface 2-form on the trefoil (genus-1)
+-- Seifert surface — ∑ V_ij ⁅A_i,A_j⁆; only the skew (intersection) part of the Seifert form
+-- survives, so the trefoil term = a single germ q-curvature ⁅A_a,A_b⁆, zero iff the handles
+-- commute (abelian H₂ ⇒ 0; nonzero only at the non-commutative germ/interface level).
+import QOU.QBeta.YekutieliTrefoilDiscretization
 -- c₃ Faddeev tetraplectic→combinatorics reduction backbone: the q²-shift functional
 -- equation of the single-lattice product ∏(1+q^{2n+1}x) (telescoping), the recurrence
 -- that pins the e_k = q^{k²}/(q²;q²)_k coefficients (Python witness cross-checks k≤6).
@@ -1209,6 +1223,7 @@ import QOU.Mathlib.RothOperatorFamily
 -- of index, RothGrowth and degreeOf across it.  Connects Roth's lemma's STATEMENT (one degree
 -- vector, one ordering) to the split form every operator-family result is written for.
 import QOU.Mathlib.RothVariableSplit
+import QOU.Mathlib.RothRealLadder
 -- Multivariate content over ℤ and the primitive part — Mathlib has Polynomial.content and
 -- IsPrimitive for ONE variable only.  Half of Mahler §6's Gauss step, which is what lets the
 -- induction hypothesis (about INTEGER polynomials) reach the factors of a minimum separated

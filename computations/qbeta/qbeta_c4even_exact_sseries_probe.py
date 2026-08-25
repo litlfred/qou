@@ -98,7 +98,19 @@ def main() -> int:
     alpha_eff = (z - 1) * h / 2 - u / 2
     QA_over_me = (2 * q + 1 - q**2) * (q + 1) / (2 * q**3)
     Qb_over_me = sgn * dnet_reg / q
-    Rq = Qb_over_me / (QA_over_me * sp.cos(alpha_eff))
+    # cos(alpha_eff) is expanded to a FINITE Taylor polynomial before it ever
+    # reaches sp.series.  Exact, not an approximation: alpha_eff(q=1) = 0 (so
+    # alpha_eff = O(s)), and sp.series(..., 0, NS+1) needs terms only through
+    # s^NS, so a cos polynomial of degree >= NS cannot affect a retained
+    # coefficient.  A LIVE cos node makes sympy's nseries call trigsimp, whose
+    # futrig hands an expression carrying sqrt(q**4+q**2+1) to polys.factor --
+    # factoring over an algebraic extension.  Profiled on the c_3 twin: 3
+    # factor() calls = 97.8% of a 1200s run, and the live-cos route could not
+    # complete even at series order 3 within 420s (bean qou-uz7q).
+    _kmax = NS // 2                      # degree 2*_kmax >= NS
+    cos_alpha_eff = sum((-1) ** k * alpha_eff ** (2 * k) / sp.factorial(2 * k)
+                        for k in range(_kmax + 1))
+    Rq = Qb_over_me / (QA_over_me * cos_alpha_eff)
 
     R1 = sp.simplify(Rq.subs(q, 1))
     print(f"  R(q=1) exact = {R1}")

@@ -1171,7 +1171,8 @@
           "kind": "agent",
           "id": "one-voice-audit",
           "version": "gemini-3.1-pro"
-        }
+        },
+        "evidence": "Very short block, might not fit well."
       }
     ],
     "wall-side-statement": [
@@ -1413,7 +1414,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Content is too brief and may be vacuous. author resolution needed"
       },
       {
         "result": "pass",

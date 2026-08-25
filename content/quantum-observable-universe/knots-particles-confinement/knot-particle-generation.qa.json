@@ -1116,7 +1116,8 @@
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose presents 'Knot-particle generation from $T_{m,n}$ torus knot generators' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Knot-particle generation from $T_{m,n}$ torus knot generators' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1220,7 +1221,8 @@
         "reviewed_at": "2026-07-07T14:26:57.401233Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1431,7 +1433,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean for 'Knot-particle generation from $T_{m,n}$ torus knot generators' fails compilation with error: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean for 'Knot-particle generation from $T_{m,n}$ torus knot generators' fails compilation with error: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean fails compilation: content/quantum-observable-universe/particle-interactions/knot-particle-generation.lean:94:3: error(lean.unknownIdentifier): Unknown constant `Real.sqrt`"
       },
       {
         "result": "pass",

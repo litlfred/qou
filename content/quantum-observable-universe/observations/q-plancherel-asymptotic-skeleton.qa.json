@@ -1574,7 +1574,8 @@
         "reviewed_at": "2026-07-07T14:26:56.530050Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1701,7 +1702,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing, preventing formal verification of the claims in 'Asymptotic skeleton of the q-Plancherel measure $\\\\tilde w_\\\\lambda$ — convergence on a continuous Young-diagram space'.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/q-plancherel-asymptotic-skeleton.lean is missing."
       }
     ],
     "milnor-amalgamated-flow": [

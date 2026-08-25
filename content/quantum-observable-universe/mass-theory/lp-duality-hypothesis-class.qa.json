@@ -1326,7 +1326,8 @@
         "reviewed_at": "2026-06-28T05:50:24.256Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1445,7 +1446,8 @@
         "reviewed_at": "2026-07-07T14:26:56.879677Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
-        "notes": "The bounds on the LP duality hypothesis class are vaguely defined; could lead to overfitting if the class is arbitrarily enlarged later."
+        "notes": "The bounds on the LP duality hypothesis class are vaguely defined; could lead to overfitting if the class is arbitrarily enlarged later.",
+        "evidence": "The bounds on the LP duality hypothesis class are vaguely defined; could lead to overfitting if the class is arbitrarily enlarged later."
       },
       {
         "result": "pass",
@@ -1628,7 +1630,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/LpDualityHypothesisClass.olean' of module QOU.BraidKnot.LpDualityHypothesisClass does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/LpDualityHypothesisClass.olean' of module QOU.BraidKnot.LpDualityHypothesisClass does not exist"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/LpDualityHypothesisClass.olean' of module QOU.BraidKnot.LpDualityHypothesisClass does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lp-duality-hypothesis-class.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/build/lib/lean/QOU/BraidKnot/LpDualityHypothesisClass.olean' of module QOU.BraidKnot.LpDualityHypothesisClass does not exist"
       },
       {
         "field_hash": {

@@ -1521,7 +1521,8 @@
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean is incomplete (has sorry)."
       }
     ],
     "da-hidden-dof": [
@@ -1586,7 +1587,8 @@
         "reviewed_at": "2026-07-07T14:26:57.257990Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1749,7 +1751,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean for 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' fails compilation with error: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean for 'Unique nuclear normal form via Gr\u00f6bner reduction in $H_n(q)$' fails compilation with error: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean fails compilation: content/quantum-observable-universe/particle-interactions/nuclear-groebner-reduction.lean:33:63: error: unexpected identifier; expected 'lemma'"
       },
       {
         "field_hash": {

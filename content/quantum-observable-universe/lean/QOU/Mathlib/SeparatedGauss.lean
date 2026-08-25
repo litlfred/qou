@@ -325,6 +325,69 @@ theorem exists_integral_wronskian_factors {τ : Type*} {r : ℕ}
   refine exists_integral_separated_factorization _ _ hWx _ ?_
   rw [map_det_pderivList, hP, det_separated_wronskian]
 
+/-- **The same factorisation, run on the *divided* Wronskian.**
+
+⚠⚠ **The twenty-sixth correction is that this theorem has to exist.**  Correction 21 replaced
+the Wronskian's height bound: §12's budget covers `W`, the determinant **divided** by
+`∏_i ∏_h (listIdx …)!`, and not the determinant itself, which is larger by a factor
+`2^{Θ(r² log r)}`.  That correction landed in `WronskianHeight` — `exists_divided_wronskian`
+produces exactly `det = C c · W` with `|coeff W| ≤ r!·S^r·(2^{Σd}·B)^r` — but **it was never
+propagated to the consumers.**  `exists_integral_wronskian_factors` still factors `det`, and so
+the induction-hypothesis halves built on it take a bound on `det`.  Feeding them the only bound
+§11's clause admits is therefore impossible: the two lemmas do not compose, and the arc had
+both of them green.
+
+Nothing here is deep.  `exists_integral_separated_factorization` was already stated for an
+arbitrary integral `W` whose map is a separated product, and
+
+    map W = C c⁻¹ · (renameₗ Wx · renameᵣ Wy) = renameₗ Wx · renameᵣ (C c⁻¹ · Wy)
+
+is that shape, with the constant parked on the `y` side so the `x` half keeps its exact
+`C l · Wx`.  The `y` half's constant is `l⁻¹·c⁻¹`, non-zero, and `index_C_mul` does not care
+which constant it is.
+
+⚠ What did not catch this: `lake build` (both lemmas are true), `#print axioms` (both are
+clean), and every witness in the arc (none composes them).  What caught it was trying to write
+the assembly and finding that `hB`'s `b` had to be two different numbers. -/
+theorem exists_integral_wronskian_factors_div {τ : Type*} {r : ℕ}
+    (Dx : Fin r → List σ) (Dy : Fin r → List τ)
+    (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial τ ℚ)
+    (P : MvPolynomial (σ ⊕ τ) ℤ)
+    (hP : map (Int.castRingHom ℚ) P
+        = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ τ) ℚ) * rename Sum.inr (ψ k))
+    (hWx : mvGenWronskian Dx φ ≠ 0)
+    (W : MvPolynomial (σ ⊕ τ) ℤ) {c : ℤ} (hc : c ≠ 0)
+    (hdet : (Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det = C c * W) :
+    ∃ (l l' : ℚ) (U' : MvPolynomial σ ℤ) (V' : MvPolynomial τ ℤ), l ≠ 0 ∧ l' ≠ 0 ∧
+      map (Int.castRingHom ℚ) U' = C l * mvGenWronskian Dx φ ∧
+      map (Int.castRingHom ℚ) V' = C l' * mvGenWronskian Dy ψ ∧
+      (rename Sum.inl U' : MvPolynomial (σ ⊕ τ) ℤ) * rename Sum.inr V' = W := by
+  classical
+  have hcQ : ((c : ℚ)) ≠ 0 := Int.cast_ne_zero.mpr hc
+  have h1 : (C ((c : ℚ)) : MvPolynomial (σ ⊕ τ) ℚ) * map (Int.castRingHom ℚ) W
+      = (rename Sum.inl (mvGenWronskian Dx φ) : MvPolynomial (σ ⊕ τ) ℚ)
+        * rename Sum.inr (mvGenWronskian Dy ψ) := by
+    rw [show (C ((c : ℚ)) : MvPolynomial (σ ⊕ τ) ℚ)
+        = map (Int.castRingHom ℚ) (C c) by rw [map_C]; rfl,
+      ← map_mul, ← hdet, map_det_pderivList, hP, det_separated_wronskian]
+  have hmapW : map (Int.castRingHom ℚ) W
+      = (rename Sum.inl (mvGenWronskian Dx φ) : MvPolynomial (σ ⊕ τ) ℚ)
+        * rename Sum.inr (C ((c : ℚ))⁻¹ * mvGenWronskian Dy ψ) := by
+    have h2 : map (Int.castRingHom ℚ) W
+        = C ((c : ℚ))⁻¹ * ((rename Sum.inl (mvGenWronskian Dx φ) : MvPolynomial (σ ⊕ τ) ℚ)
+            * rename Sum.inr (mvGenWronskian Dy ψ)) := by
+      rw [← h1, ← mul_assoc, ← C_mul, inv_mul_cancel₀ hcQ, C_1, one_mul]
+    rw [h2]
+    simp only [map_mul, rename_C]
+    ring
+  obtain ⟨l, U', V', hl, hU', hV', hfact⟩ :=
+    exists_integral_separated_factorization (mvGenWronskian Dx φ)
+      (C ((c : ℚ))⁻¹ * mvGenWronskian Dy ψ) hWx W hmapW
+  refine ⟨l, l⁻¹ * ((c : ℚ))⁻¹, U', V', hl, mul_ne_zero (inv_ne_zero hl) (inv_ne_zero hcQ),
+    hU', ?_, hfact⟩
+  rw [hV', ← mul_assoc, ← C_mul]
+
 /-- **§7's height step, with integrality supplied.**
 
 `H(U') ≤ H(W)` and `H(V') ≤ H(W)` for the integral factors above.  This is the inequality the

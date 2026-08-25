@@ -903,7 +903,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07T23:33:29.067070+00:00"
-        }
+        },
+        "evidence": "Uses words like 'obviously' or 'trivial' which might mask false claims. author resolution needed."
       },
       {
         "result": "pass",

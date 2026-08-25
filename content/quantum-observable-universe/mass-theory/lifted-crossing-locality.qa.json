@@ -1198,7 +1198,8 @@
         "reviewed_at": "2026-07-07T14:26:56.787625Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -1249,7 +1250,8 @@
         "reviewed_at": "2026-07-07T14:26:56.787625Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -1495,7 +1497,8 @@
         "reviewed_at": "2026-07-07T14:26:56.787625Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -1546,7 +1549,8 @@
         "reviewed_at": "2026-07-07T14:26:56.787625Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules."
       },
       {
         "result": "pass",
@@ -1628,7 +1632,8 @@
         "notes": "Lean sibling contains compilation errors.",
         "severity": "minor",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/lifted-crossing-locality.lean:42:36: error: Invalid field `prod`: The environment does not contain `List.prod`",
+        "evidence": "Lean sibling contains compilation errors."
       },
       {
         "field_hash": {
@@ -1647,7 +1652,8 @@
         "reviewed_at": "2026-07-07T14:26:56.787625Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
+        "notes": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology.",
+        "evidence": "This looks fitted. Possible hidden degrees of freedom, overfitting, or numerology. Flagged per critical distance rules. Referee might reject due to suspected numerology."
       },
       {
         "result": "pass",

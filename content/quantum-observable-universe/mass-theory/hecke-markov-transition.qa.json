@@ -1617,7 +1617,8 @@
         "reviewed_at": "2026-06-28T10:58:38.025Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Hecke generator as stochastic transition operator' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Hecke generator as stochastic transition operator' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1769,7 +1770,8 @@
         "reviewed_at": "2026-06-28T10:58:38.043Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -2076,7 +2078,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean contains 'sorry' placeholders.",
         "severity": "major",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean contains sorry placeholders, which means the main theorem remains unproved. This makes the formalization claim vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/hecke-markov-transition.lean contains 'sorry' placeholders."
       },
       {
         "field_hash": {

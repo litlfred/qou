@@ -606,7 +606,8 @@
         "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -675,7 +676,8 @@
         "reviewed_at": "2026-07-07T14:26:57.230332Z",
         "reviewed_sha": "8eafea2450fb8c6902b6ab97bca65ee79eae6d73",
         "notes": "The prose in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' presents the result as established, but the Lean formalization in content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -746,7 +748,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean for 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' fails compilation with error: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist. This invalidates the claim of formal verification."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean for 'Bar-involution invariance of Plancherel weights and Type-B-folded normal forms' fails compilation with error: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist. This invalidates the claim of formal verification.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean fails compilation: content/quantum-observable-universe/particle-interactions/bar-involution-invariance.lean:28:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/GroupPower/Basic.olean' of module Mathlib.Algebra.GroupPower.Basic does not exist"
       },
       {
         "result": "pass",

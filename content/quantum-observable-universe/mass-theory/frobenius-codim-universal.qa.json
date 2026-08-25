@@ -1601,7 +1601,8 @@
         "reviewed_at": "2026-07-07T14:26:56.772312Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1804,7 +1805,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/frobenius-codim-universal.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/RepresentationTheory/FDRep.olean' of module Mathlib.RepresentationTheory.FDRep does not exist"
       },
       {
         "field_hash": {

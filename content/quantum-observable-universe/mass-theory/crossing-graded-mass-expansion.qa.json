@@ -1125,7 +1125,8 @@
         "reviewed_at": "2026-07-07T14:26:56.778622Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The prose presents 'Crossing-graded expansion of the categorical mass endomorphism' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Crossing-graded expansion of the categorical mass endomorphism' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1229,7 +1230,8 @@
         "reviewed_at": "2026-07-07T14:26:56.778622Z",
         "reviewed_sha": "f3d72fed878bb395c3da0a8557bada5ec408ece0",
         "notes": "The Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1440,7 +1442,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean fails compilation: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean contains compilation errors: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean contains compilation errors: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean fails compilation: content/quantum-observable-universe/mass-theory/crossing-graded-mass-expansion.lean:79:10: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern"
       },
       {
         "result": "pass",

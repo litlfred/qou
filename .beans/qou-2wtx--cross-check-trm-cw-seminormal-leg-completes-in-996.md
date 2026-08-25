@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T18:49:51Z
-updated_at: 2026-08-24T23:21:22Z
+updated_at: 2026-08-24T23:47:23Z
 ---
 
 ## The measurement
@@ -427,3 +427,136 @@ diverging was really 12 of 12"). Same neighbourhood, independently found.
 
 **The peel witness is still not regenerated on main** as of +165 commits, so this
 bean's step 1 remains open and unclaimed.
+
+
+---
+
+## The wenzl degradation: my "also C-era" hypothesis is REFUTED, and my staleness test was a FALSE POSITIVE
+
+#5734's survey found `cross_check_trM_wenzl_lr_1ppb` widening 0.7977 → 0.9223
+under the D peel, and offered two readings. Chased both.
+
+**Reading 1 — the Wenzl/LR leg is also C-era: REFUTED.** It does not compute a
+convention at all; it **loads a third stored witness**,
+`rho-k-full-via-wenzl-lr.witness.json`. That witness's producer,
+`rho_k_full_via_wenzl_lr.py`, uses `wedderburn_jones_markov.y_lambda_at(n, Q_0)`
+— i.e. **D** — and the witness was computed **2026-08-19**, ten days *after* the
+C→D excision. It is D by both code and date.
+
+So two D-convention routes disagree by 0.92, which is a **more** interesting
+problem than staleness, not a lesser one.
+
+**Reading 2 — that witness is itself stale: REFUTED (after two false positives
+of mine, in opposite directions).** Re-running the producer changed the witness,
+and I nearly recorded that as a positive. The log says why:
+
+    ✗ unavailable: hecke-tr-m-wenzl-lr binary not built
+    atoms: 4; available: 0/4
+
+The witness moved because the re-run **emptied it** — the Rust binary
+(`tools/hecke-engine/target/release/hecke-tr-m-wenzl-lr`) is absent in this
+container, so 0 of 4 atoms were computed. That is the degraded-rerun hazard
+AGENTS.md names verbatim: *"A regeneration is only trustworthy if the rerun
+environment can do everything the original could."* Tree was restored; no damage.
+
+**Third time this session an environment fault impersonated a finding**, after
+`hadron_knot_table`'s missing scipy and the `_y_lambda_at_convention_C_HISTORICAL`
+dead-code control. The shared shape: **a comparison is only evidence once you
+confirm both sides actually ran.** A diff is not a verdict.
+
+## Status
+
+The 0.7977 → 0.9223 widening is **unexplained**, and both of the explanations
+#5734 offered are now closed off:
+
+- not C-era staleness in the Wenzl/LR leg (refuted by code and date);
+- not measured-stale (the probe was degraded, so unmeasured).
+
+Deciding it needs the Rust binary built
+(`cargo build --release --bin hecke-tr-m-wenzl-lr`) and the producer re-run in a
+capable environment. **#5734's wording remains accurate** — it says "which of
+those it is, is NOT established" — so no correction is owed there, only this
+narrowing.
+
+Worth noting for whoever picks it up: since both legs are D, a genuine
+disagreement at 0.92 would be a *substantive* result about the two routes, not a
+bookkeeping fix.
+
+### Reading 2, settled — and it took two false positives to get there
+
+**Attempt 1 said "stale". Degraded environment.** The Rust binary
+`hecke-tr-m-wenzl-lr` was absent, so the re-run emitted `available: 0/4` and
+*emptied* the witness. The diff was my container, not the corpus.
+
+**Attempt 2, after `cargo build --release` (35 s), said "stale" again. Also
+wrong — my own volatile-key mask.** With `available: 4/4`, exactly **6 of 291
+fields** moved:
+
+| field | before → after | what it is |
+|---|---|---|
+| `rows/0..3/duration_ms_total` ×4 | 19→45, 402→280, 390→173, 2065→1285 | **wall-clock noise** |
+| `upstream_witness_hashes/0/{sha256,bytes}` | 47239 → 47562 bytes | the **peel witness I just regenerated** — correctly noticed |
+
+**Not one `rho_k` value moved.** The Wenzl/LR reference reproduces exactly and is
+**current, not stale**.
+
+AGENTS.md states this trap outright — *"mask volatile keys or you measure your
+own harness"* — and I hit it anyway, because my mask listed
+`computedAt/commitSha/durationMs/...` and not `duration_ms_total`. A near-miss
+on a key name is a full miss.
+
+## So the widening is REAL, and it is the interesting outcome
+
+Every bookkeeping explanation is now closed:
+
+- the Wenzl/LR leg is **D** (uses `y_lambda_at`), by code and by date;
+- its reference witness is **current** (values reproduce byte-for-byte);
+- the peel is now **D** and current.
+
+**Two current, convention-D routes to `tr_M` disagree by 0.92 on 12 of 12
+pair-tests.** That is not a staleness defect to be drained — it is a substantive
+disagreement between two independent derivations, and it is exactly the kind of
+thing the L1 defence-in-depth cross-checks exist to surface.
+
+Worth stating plainly: **moving the peel to D did not create this; it revealed
+it.** Under the C peel the gap was 0.7977 — also red, also 12/12 divergent. The
+regeneration changed a wrong-convention red into a correct-convention red, and
+the residual is now a real question about the mathematics rather than about
+bookkeeping.
+
+## RETRACTION (2026-08-24, later the same day)
+
+The section above concludes: *"every bookkeeping explanation is closed, and the
+widening is REAL: two current, convention-D routes to tr_M disagree by 0.92 on
+12 of 12 pair-tests."* **That conclusion is withdrawn.** The widening is neither
+real nor a disagreement between two routes to the same quantity.
+
+`cross_check_trM_wenzl_lr_1ppb` compares `|tr_M(β_canonical(Z, N))|` against
+`|tr_M(β_p ⊗ β_n ⊗ …)|`. Those are **different objects**: the Wenzl LR identity
+holds for tensor-product (disjoint) braids, and the canonical atomic braid is not
+one — it carries inter-nucleon arc crossings the disjoint product omits.
+`rho_k_full_via_wenzl_lr.py` states this in its docstring, dated **2026-05-17**,
+including the expected magnitude (*"~80 % relative on D, T, ³He"*). A `1e-9`
+tolerance was being applied across a known inequality.
+
+Closed on `main` by `7823271e66` (bean `qou-u6n2`, a different session), which
+marks those pair-types `compares_same_object: false` and excludes them from
+`any_diverge`.
+
+**What my reasoning did wrong.** The two candidate readings I formed — C-era leg,
+stale witness — were both genuinely refuted by measurement, and I treated
+"refuted every explanation I thought of" as "the effect is real." That is an
+argument from exhaustion of *my own* hypothesis list, and the corpus-grep
+checklist exists precisely because that list is not the corpus. I ran the
+checklist on the cross-check's identifiers and never on the producer supplying
+the outlying leg; `sed -n '1,55p'` on that file answers it in one command.
+
+The two false positives recorded above (the degraded re-run with the Rust binary
+absent; the unmasked `duration_ms_total`) stand as recorded — they were errors in
+the staleness test, and they are what made the "everything else is closed" framing
+feel earned.
+
+**Unaffected.** The seminormal-leg root cause (191 % → 6.7e-8), the two-stacked-
+defects chain, and the peel regeneration itself are all independent of this and
+stand. `main` reproduced the identical regenerated values from a different
+diagnosis and a different environment.

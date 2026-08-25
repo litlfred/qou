@@ -1160,7 +1160,8 @@
         "reviewed_at": "2026-07-07T14:26:55.523452Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The prose in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' presents the result as established, but the Lean formalization is incomplete (has sorry).",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' presents the result as established, but the Lean formalization is incomplete (has sorry)."
       },
       {
         "result": "pass",
@@ -1475,7 +1476,8 @@
         "notes": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders.",
         "verdict": "survivable-objection",
         "referee_argument": "The conjectured algebraic or physical relations in 'H₂S bond-angle residual $=$ chiral $S^3$ braid holonomy' remain unproven and are represented as sorry stubs in the formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Conjecture is open, hence the objection is survivable. Sibling Lean file contains 'sorry' placeholders."
       },
       {
         "result": "pass",

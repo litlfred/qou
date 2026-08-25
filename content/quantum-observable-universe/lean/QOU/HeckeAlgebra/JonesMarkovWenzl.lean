@@ -2,7 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Combinatorics.Enumerative.Partition
 import Mathlib.Tactic
 import QOU.HeckeAlgebra.Common
-import QOU.HeckeAlgebra.MarkovTrace
 import QOU.HeckeAlgebra.QSubstrate
 import QOU.MathlibExt.QIntegerCanonical
 
@@ -93,7 +92,7 @@ type-level interface; concrete computation is deferred.
 
 namespace QOU.HeckeAlgebra.JonesMarkovWenzl
 
-open QOU.HeckeAlgebra QOU.HeckeAlgebra.MarkovTrace QOU.HeckeAlgebra.QSubstrate
+open QOU.HeckeAlgebra QOU.HeckeAlgebra.QSubstrate
 
 /-- The q-integer `[k]_q := (q^{k/2} - q^{-k/2}) / (q^{1/2} - q^{-1/2})`.
     Equivalent to the standard `[k]_q = 1 + q + q² + ... + q^{k-1}`
@@ -265,9 +264,6 @@ noncomputable def wenzlClosedForm {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : 
     have. It was previously *vacuous*: both sides were opaque axioms, so the
     equation constrained nothing. With `wenzlClosedForm` now defined, it says
     something that could be false. -/
--- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (identification y_λ = wenzlClosedForm)
-axiom JonesMarkovCoefficient_eq_wenzl :
-    ∀ {n : ℕ} (lam : Nat.Partition n) (q : ℝ),
-    JonesMarkovCoefficient lam q = wenzlClosedForm lam q
+
 
 end QOU.HeckeAlgebra.JonesMarkovWenzl

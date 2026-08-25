@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T01:46:45.461022+00:00",
-  "commitSha": "a606f1a43e8071c20dec0d602993b33467560930",
+  "computedAt": "2026-08-25T07:08:20.095565+00:00",
+  "commitSha": "d2ed0442844c166f01d646508b2b9e0082a8854f",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 5,
+  "durationMs": 4,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2740,
-      "prov_ok": 2326,
+      "total_scanned": 2739,
+      "prov_ok": 2324,
       "prov_audit_exempt": 79,
-      "prov_exempt_no_reader": 237,
+      "prov_exempt_no_reader": 238,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 95,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965328467153284671532846715328467153284671532846715328467153"
+      "completeness_ratio": "0.965315808689302665206279664110989412194231471339905074844834"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -215,10 +215,6 @@
         },
         {
           "witness": "alpha-em-yekutieli-h2-extraction.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "alpha-high-precision.witness.json",
           "missing_fields": []
         },
         {
@@ -3935,10 +3931,6 @@
         },
         {
           "witness": "lepton-tower-bend-screening.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": []
         },
         {
@@ -11019,6 +11011,14 @@
         },
         {
           "witness": "keystone-wrt-schurweyl-plancherel-4count.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
+          "witness": "lepton-tower-probe-1-cinquefoil-muon.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",

@@ -1285,7 +1285,8 @@
         "reviewed_at": "2026-07-07T14:26:55.565928Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "minor",
-        "notes": "Proposition has no corresponding proof block."
+        "notes": "Proposition has no corresponding proof block.",
+        "evidence": "Proposition has no corresponding proof block."
       }
     ],
     "proof-narrative-lean-equiv": [
@@ -1608,7 +1609,8 @@
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Boltzmann constant is unity in QOU natural units' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Boltzmann constant is unity in QOU natural units' as verified, but the sibling Lean file fails to compile."
       },
       {
         "field_hash": {
@@ -1754,7 +1756,8 @@
         "reviewed_at": "2026-06-28T10:51:03.753Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -1969,7 +1972,8 @@
         "reviewed_at": "2026-07-07T14:26:55.565928Z",
         "reviewed_sha": "3d013432534476e0631face07ace0a9965f94c53",
         "severity": "major",
-        "notes": "Identifying k_B T with \\hbar_q implies temperature is purely a measure of quantum deformation. While this aligns with thermal time hypotheses, asserting it without dimensional justification feels physically fragile."
+        "notes": "Identifying k_B T with \\hbar_q implies temperature is purely a measure of quantum deformation. While this aligns with thermal time hypotheses, asserting it without dimensional justification feels physically fragile.",
+        "evidence": "Identifying k_B T with \\hbar_q implies temperature is purely a measure of quantum deformation. While this aligns with thermal time hypotheses, asserting it without dimensional justification feels physically fragile."
       },
       {
         "result": "pass",
@@ -2051,7 +2055,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma'",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/boltzmann-constant.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/boltzmann-constant.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma', invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/boltzmann-constant.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/boltzmann-constant.lean:26:13: error: unexpected token 'section'; expected 'lemma'"
       },
       {
         "field_hash": {

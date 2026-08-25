@@ -277,7 +277,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",
@@ -613,7 +614,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-07"
-        }
+        },
+        "evidence": "Block contains unsupported statements or placeholders (sorry/admit/TODO). Author resolution needed."
       },
       {
         "result": "pass",

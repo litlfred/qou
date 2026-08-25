@@ -822,7 +822,8 @@
         "severity": "major",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.lean contains 'sorry' placeholders.",
         "verdict": "open-objection",
-        "referee_argument": "The sibling Lean file q-harmonic-flow.lean contains sorry placeholders, meaning the main result of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' is unproved and the formalization of 'The substrate parameter $q(p)$, promoted from a fixed modulus to a' is currently vacuous."
+        "referee_argument": "The sibling Lean file q-harmonic-flow.lean contains sorry placeholders, meaning the main result of 'The substrate field $q(p)$ evolves by the $q$-harmonic-map heat flow $\\\\partial_t q = -\\\\Delta_q q$' is unproved and the formalization of 'The substrate parameter $q(p)$, promoted from a fixed modulus to a' is currently vacuous.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/q-harmonic-flow.lean contains 'sorry' placeholders."
       },
       {
         "result": "pass",

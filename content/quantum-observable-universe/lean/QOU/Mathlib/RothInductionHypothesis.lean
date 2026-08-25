@@ -270,6 +270,83 @@ theorem index_rescaled_wronskian_le_right_theta [DecidableEq σ]
   have hmap : map (algebraMap ℤ ℚ) V' = C l⁻¹ * mvGenWronskian Dy ψ := hV'
   rwa [hmap, index_C_mul _ _ (inv_ne_zero hl)] at happ
 
+/-! ### ⚠⚠ Correction twenty-six — the two halves above take the wrong `b`
+
+`hB` in both is a bound on the **determinant**'s coefficients.  Correction 21 established that
+§12's budget covers the **divided** Wronskian `W`, with `det = C c · W` and `c` a product of
+factorials of size `2^{Θ(r² log r)}`; `WronskianHeight.exists_divided_wronskian` proves exactly
+that, and §11's clause `b ≤ 2^{c'}·a^r` has no room for the extra factor.
+
+So the two halves above and the only available height bound **do not compose**, and both were
+green.  The correction landed in `WronskianHeight` and was never propagated here.
+
+The `_div` forms below take `W` and the factorisation `det = C c · W` instead, and are
+otherwise identical — `SeparatedGauss.exists_integral_wronskian_factors_div` parks the `c⁻¹` on
+the `y` side, and `index_C_mul` is indifferent to which constant it divides out.
+
+⚠ The originals are kept: they are true, and a caller who does have a determinant bound (a
+small `r`, say) can still use them.  What they cannot be is the induction's `hres`. -/
+
+/-- **The `x` half of `hres`, in `Θ` form, against the divided Wronskian** — correction 26. -/
+theorem index_rescaled_wronskian_le_theta_div [DecidableEq σ]
+    {r : ℕ} (d₁ : σ → ℕ) (b : ℤ) (H : σ → ℕ) (κ : σ → ℚ) (Θ' : ℚ)
+    (hΘ' : IsRothTheta b (fun j => r * d₁ j) H Θ') (hκ : InRothFracSet H κ)
+    (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
+    (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
+    (P : MvPolynomial (σ ⊕ Unit) ℤ)
+    (hP : map (Int.castRingHom ℚ) P
+        = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) ℚ) * rename Sum.inr (ψ k))
+    (hWx : mvGenWronskian Dx φ ≠ 0) (hWy : mvGenWronskian Dy ψ ≠ 0)
+    (hdeg : ∀ j k, degreeOf j (φ k) ≤ d₁ j)
+    (W : MvPolynomial (σ ⊕ Unit) ℤ) {c : ℤ} (hc : c ≠ 0)
+    (hdet : (Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det = C c * W)
+    (hB : ∀ m, |coeff m W| ≤ b) :
+    index (fun j => r * d₁ j) κ (mvGenWronskian Dx φ) ≤ ((Θ' : ℚ) : WithTop ℚ) := by
+  classical
+  obtain ⟨l, l', U', V', hl, hl', hU', hV', hfact⟩ :=
+    exists_integral_wronskian_factors_div Dx Dy φ ψ P hP hWx W hc hdet
+  have hU'ne : U' ≠ 0 := integral_factor_ne_zero hl hWx hU'
+  have hV'ne : V' ≠ 0 := integral_factor_ne_zero hl' hWy hV'
+  have hdegU : ∀ j, degreeOf j U' ≤ r * d₁ j := fun j =>
+    degreeOf_integral_factor_le hU' j
+      (degreeOf_mvGenWronskian_le j Dx φ (d₁ j) (fun k => hdeg j k))
+  have hBU : ∀ n, |coeff n U'| ≤ b := fun n =>
+    abs_coeff_integral_wronskian_factor_le hfact hV'ne hB n
+  have happ := hΘ'.1 U' κ ⟨hU'ne, hdegU, hBU⟩ hκ
+  have hmap : map (algebraMap ℤ ℚ) U' = C l * mvGenWronskian Dx φ := hU'
+  rwa [hmap, index_C_mul _ _ hl] at happ
+
+/-- **The `y` half of `hres`, in `Θ` form, against the divided Wronskian** — correction 26. -/
+theorem index_rescaled_wronskian_le_right_theta_div [DecidableEq σ]
+    {r : ℕ} (d₂ : Unit → ℕ) (b : ℤ) (H' : Unit → ℕ) (κ' : Unit → ℚ) (Θ₁ : ℚ)
+    (hΘ₁ : IsRothTheta b (fun j => r * d₂ j) H' Θ₁) (hκ' : InRothFracSet H' κ')
+    (Dx : Fin r → List σ) (Dy : Fin r → List Unit)
+    (φ : Fin r → MvPolynomial σ ℚ) (ψ : Fin r → MvPolynomial Unit ℚ)
+    (P : MvPolynomial (σ ⊕ Unit) ℤ)
+    (hP : map (Int.castRingHom ℚ) P
+        = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (σ ⊕ Unit) ℚ) * rename Sum.inr (ψ k))
+    (hWx : mvGenWronskian Dx φ ≠ 0) (hWy : mvGenWronskian Dy ψ ≠ 0)
+    (hdeg : ∀ j k, degreeOf j (ψ k) ≤ d₂ j)
+    (W : MvPolynomial (σ ⊕ Unit) ℤ) {c : ℤ} (hc : c ≠ 0)
+    (hdet : (Matrix.of fun i j =>
+        pderivList ((Dx i).map Sum.inl ++ (Dy j).map Sum.inr) P).det = C c * W)
+    (hB : ∀ m, |coeff m W| ≤ b) :
+    index (fun j => r * d₂ j) κ' (mvGenWronskian Dy ψ) ≤ ((Θ₁ : ℚ) : WithTop ℚ) := by
+  classical
+  obtain ⟨l, l', U', V', hl, hl', hU', hV', hfact⟩ :=
+    exists_integral_wronskian_factors_div Dx Dy φ ψ P hP hWx W hc hdet
+  have hU'ne : U' ≠ 0 := integral_factor_ne_zero hl hWx hU'
+  have hV'ne : V' ≠ 0 := integral_factor_ne_zero hl' hWy hV'
+  have hdegV : ∀ j, degreeOf j V' ≤ r * d₂ j := fun j =>
+    degreeOf_integral_factor_le hV' j
+      (degreeOf_mvGenWronskian_le j Dy ψ (d₂ j) (fun k => hdeg j k))
+  have hBV : ∀ n, |coeff n V'| ≤ b := fun n =>
+    abs_coeff_integral_wronskian_factor_le_right hfact hU'ne hB n
+  have happ := hΘ₁.1 V' κ' ⟨hV'ne, hdegV, hBV⟩ hκ'
+  have hmap : map (algebraMap ℤ ℚ) V' = C l' * mvGenWronskian Dy ψ := hV'
+  rwa [hmap, index_C_mul _ _ hl'] at happ
+
 /-- **Non-vacuity of the `Θ` form.**
 
 Same data as `index_rescaled_wronskian_le_witness` — one variable each side, everything

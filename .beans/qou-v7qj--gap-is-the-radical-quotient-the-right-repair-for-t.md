@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T21:23:19Z
-updated_at: 2026-08-24T21:24:00Z
+updated_at: 2026-08-25T07:08:51Z
 ---
 
 ## Where this comes from
@@ -131,3 +131,36 @@ may be circular: `tr_M(𝓑₃) = 0.998562` and `Σ NF(𝓑₃) = 0.999601` are 
 and `n_target ≈ 1.000` for the proton, which is consistent with the intended
 constraint having been `t·x = n_target` rather than `Σx = n_target` with `t·x`
 minimised — and equally consistent with `n_target` having been picked as ≈ 1.
+
+
+## 2026-08-25 — ANSWERED from the literature: the selection principle exists
+
+Birman–Menasco, *Studying links via closed braids III* (Pacific J. Math. **161**,
+1993), ingested as `library/pjm-v161-n1-p02-p/` in #5707 and unread until now.
+
+**Classification Theorem (Version I):** a link represented by a closed 3-braid
+admits a **unique conjugacy class** of 3-braid representatives, except for
+(i) the unknot (3 classes), (ii) `(2,k)` torus links with `k ≠ ±1` (2 classes),
+(iii) links admitting braid-preserving flypes (≤ 2 classes). And the conjugacy
+problem in `B₃` has algorithmic solutions *"each yielding unique normal forms
+for conjugacy classes"*.
+
+So: **link type → conjugacy class → canonical word**, all determined, none of it
+optimization. That is the non-invariant data my class-function obstruction
+showed no invariant could supply — and it comes from topological input, not from
+a program.
+
+`𝓑₃ = (σ₀σ₁⁻¹)³` checks clean against all three exceptions (Brunnian, not a
+torus link, and every exponent is `±1` where the flype family needs `|·| ≥ 2`),
+so **the Borromean link determines its conjugacy class uniquely**.
+
+**Consequence for Obstruction A:** the corpus's meson braid `𝔐 = (σ₀σ₁)²σ₁σ₀`
+closes to T(2,5), which is exception (ii). It therefore does **not** have a
+unique 3-braid representative — two conjugacy classes. Any argument treating
+"the meson braid" as determined by its closure is under-specified for this link
+specifically, and that is a known ambiguity rather than a corpus defect.
+
+Scope: braid index 3 only. Birman–Menasco are explicit that the pathologies of
+papers III–V obstruct generalisation to higher index.
+
+Full analysis: `docs/audits/2026-08-25-closed-3-braid-selection-principle-exists.md`.

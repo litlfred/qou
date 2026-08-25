@@ -860,7 +860,7 @@
           "in_degree": 0,
           "cone_size": 22,
           "depth": 13,
-          "pagerank": 7.6e-05,
+          "pagerank": 0.000076,
           "edge_span_max": 2,
           "edge_span_mean": 2,
           "worst_target": ""
@@ -1124,8 +1124,20 @@
         "reviewed_at": "2026-08-22T06:38:29.732Z",
         "reviewed_sha": "934ea7cd53e76f7107e79529f299ab7340fcd236",
         "severity": "major",
-        "evidence": "RESOLVED 2026-08-23. The duplication was real: the dated CORRECTION banner at L9-20 restated the body's 'asymptotic bound (scope-limited)' section verbatim. The banner has been migrated out of the scholarly prose into `authorNotes` (AGENTS.md \u00a74d) as part of registering this block, so the correction is now stated once, in the body, where it is scholarly content. Reinstated rather than deleted: this criterion is agent-authored and the mechanical sweep does not regenerate it, so dropping the entry would have erased the finding instead of recording that it was addressed.",
+        "evidence": "RESOLVED 2026-08-23. The duplication was real: the dated CORRECTION banner at L9-20 restated the body's 'asymptotic bound (scope-limited)' section verbatim. The banner has been migrated out of the scholarly prose into `authorNotes` (AGENTS.md §4d) as part of registering this block, so the correction is now stated once, in the body, where it is scholarly content. Reinstated rather than deleted: this criterion is agent-authored and the mechanical sweep does not regenerate it, so dropping the entry would have erased the finding instead of recording that it was addressed.",
         "notes": "proposed: migrate the L9-20 banner to authorNotes (kind:\"note\", date 2026-07-11) per AGENTS.md 4d and keep only the body section. Not applied: the block has no .ts sibling to hold authorNotes (it is an orphan .md)."
+      }
+    ],
+    "voice-branch-jargon": [
+      {
+        "result": "pass",
+        "notes": "Fixed. The closing \"Companion keystone re-scope: `#3501`/`#3503`.\" is deleted — a pure tracker pointer; \"(Combinatorial constraints proposed over $S_5$ cells did not survive audit.)\" -> \"... did not survive scrutiny.\"; and the three bare \"keystone\" references -> \"the precision ladder\", which the manuscript defines at `prop:q-beta-categorical-precision-ladder`. The whole correction banner survives intact: both anchor deviations (muon +0.479%, proton -1.907%), the 2.43% cross-anchor swing, the 6.9x comparison at the CAL-2 pin, and the \"scope-limited, not exact\" verdict.",
+        "reviewed_at": "2026-08-08T12:00:00Z",
+        "reviewer": {
+          "kind": "agent",
+          "id": "local/branch-jargon-rereview",
+          "agent_skill": "local/one-voice-audit"
+        }
       }
     ]
   },

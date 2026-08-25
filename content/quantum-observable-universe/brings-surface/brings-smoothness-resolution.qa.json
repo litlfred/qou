@@ -1422,7 +1422,8 @@
         "reviewed_at": "2026-07-07T14:26:55.052376Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The Lean theorem is completely vacuous: it defines a structure with abstract Prop fields, instantiates them all as True, and proves their conjunction trivially.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean theorem is completely vacuous: it defines a structure with abstract Prop fields, instantiates them all as True, and proves their conjunction trivially."
       },
       {
         "result": "pass",
@@ -1488,7 +1489,8 @@
         "reviewed_at": "2026-07-07T14:26:55.052376Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "The block overclaims the physical/mathematical scope and the level of Lean formalization.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The block overclaims the physical/mathematical scope and the level of Lean formalization."
       },
       {
         "result": "pass",
@@ -1789,7 +1791,8 @@
         "notes": "Referee verdict: open-objection.",
         "verdict": "open-objection",
         "referee_argument": "One or more formalization requirements are unfulfilled.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "Referee verdict: open-objection."
       },
       {
         "result": "pass",

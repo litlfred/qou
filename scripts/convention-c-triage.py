@@ -183,8 +183,19 @@ def triage(recs, migrate):
 
         if target in migrate._ladder_phase_targets(tree):
             reasons.append(("B2", "feeds the ladder phase (z-1)*h/2 — re-derivation"))
-        if r.get("deliberate") or migrate._file_has_c_reference(tree):
-            reasons.append(("B3", "file references a C-named symbol — comparison"))
+        # B3 names the symbol it fired on. A bare "references a C-named symbol"
+        # is unfalsifiable by the reader, and that is exactly how eight of the
+        # 24 B3 verdicts on `main` came to rest on `__doc__`, `q_fac_n` and
+        # `c_k` (bean `qou-4bq3`) -- a false "deliberate" reads as an excuse and
+        # a genuine defect survives the sweep wearing it.
+        if r.get("deliberate"):
+            reasons.append(("B3", f"the target `{target}` is itself C-named "
+                                  "— labelled comparison"))
+        else:
+            c_sym = migrate._file_c_reference(tree)
+            if c_sym:
+                reasons.append(("B3", f"file references the C-named symbol "
+                                      f"`{c_sym}` — comparison"))
         if WITNESS_MARKERS.search(src):
             reasons.append(("B4", "emits a committed witness — value change"))
         else:

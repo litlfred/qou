@@ -1110,7 +1110,8 @@
         "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The prose presents 'Computational horizon' as verified, but the sibling Lean file fails to compile.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The prose presents 'Computational horizon' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1211,7 +1212,8 @@
         "reviewed_at": "2026-07-07T14:26:55.602281Z",
         "reviewed_sha": "bb6eddc5d435a9d43aba4bab47b860d9da907600",
         "notes": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1416,7 +1418,8 @@
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean contains compilation errors: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/information-theory/computational-horizon.lean fails compilation: /Users/litlfred/space_cats/qou/content/quantum-observable-universe/information-theory/computational-horizon.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/content/quantum-observable-universe/lean/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Data/Nat/Defs.olean' of module Mathlib.Data.Nat.Defs does not exist"
       },
       {
         "result": "pass",

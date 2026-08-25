@@ -1822,7 +1822,8 @@
           "agent_skill": "local/devils-advocate-watcher"
         },
         "reviewed_at": "2026-06-24T12:50:45Z",
-        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33"
+        "reviewed_sha": "7030e24e69206f50237590a614af029a9e1afb33",
+        "evidence": "The C1 'sorry-while-labelled-sorry-free' flag is a FALSE POSITIVE (4th of 4): the sorry is comment-only, the lemma is genuinely sorry-free, and 'sorry-free' in the prose refers to the real 0-sorry SpectralProjector. The genuine residual is a lean–narrative divergence: the .ts lean.ref attaches a substantive-sounding name borromean_h4_numeric_factorisation to the trivial identity (-3)·(1/4)=-3/4 := by norm_num, which does not formalize the stated categorical proposition (that is the deferred := sorry composition theorem). PARTIAL not surviving: the .lean docstring (33-35,70-72) and .md Scope note (244-250) openly disclose the deferral, the underlying math is correct + witness-reproduced, and -3/4 is a topological invariant (no mass-path/hidden-DOF). ≥1 partial, none surviving ⇒ survivable-objection."
       },
       {
         "field_hash": {
@@ -2175,7 +2176,8 @@
           "agent_skill": "local/qa-agent-drain",
           "agent_model": "gemini-3.1-pro",
           "agent_date": "2026-07-19"
-        }
+        },
+        "evidence": "Block is quite long, consider breaking it up for clarity."
       }
     ],
     "milnor-brevity": [

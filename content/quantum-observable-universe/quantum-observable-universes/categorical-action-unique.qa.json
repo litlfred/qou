@@ -1493,7 +1493,8 @@
         "reviewed_at": "2026-07-07T14:26:55.796069Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The prose presents 'Uniqueness of the categorical action (given $\\\\Phi$)' as verified, but the sibling Lean file fails to compile."
+        "notes": "The prose presents 'Uniqueness of the categorical action (given $\\\\Phi$)' as verified, but the sibling Lean file fails to compile.",
+        "evidence": "The prose presents 'Uniqueness of the categorical action (given $\\\\Phi$)' as verified, but the sibling Lean file fails to compile."
       },
       {
         "result": "pass",
@@ -1597,7 +1598,8 @@
         "reviewed_at": "2026-07-07T14:26:55.796069Z",
         "reviewed_sha": "7293b650900574726bcc2e510c6061c3bb0e76e9",
         "severity": "minor",
-        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean fails compilation, causing divergence from the narrative."
+        "notes": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean fails compilation, causing divergence from the narrative.",
+        "evidence": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean fails compilation, causing divergence from the narrative."
       },
       {
         "result": "pass",
@@ -1808,7 +1810,8 @@
         "severity": "critical",
         "notes": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Rigid/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Rigid.Basic does not exist",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Rigid/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Rigid.Basic does not exist, invalidating the claimed formalization."
+        "referee_argument": "The Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean contains compilation errors: content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Rigid/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Rigid.Basic does not exist, invalidating the claimed formalization.",
+        "evidence": "Referee verdict: open-objection. Lean sibling content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean fails compilation: content/quantum-observable-universe/quantum-observable-universes/categorical-action-unique.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/CategoryTheory/Monoidal/Rigid/Basic.olean' of module Mathlib.CategoryTheory.Monoidal.Rigid.Basic does not exist"
       },
       {
         "result": "pass",

@@ -1564,7 +1564,8 @@
         "reviewed_at": "2026-07-07T14:26:56.650996Z",
         "reviewed_sha": "0e4a9da66a8924d043f4561aee6e61c4dd936fb8",
         "notes": "The referenced Lean file content/quantum-observable-universe/observations/centered-hecke-variance-positive.lean is missing, leading to complete divergence.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The referenced Lean file content/quantum-observable-universe/observations/centered-hecke-variance-positive.lean is missing, leading to complete divergence."
       }
     ],
     "da-citation-misuse": [
@@ -1691,7 +1692,8 @@
         "notes": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/centered-hecke-variance-positive.lean is missing.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file content/quantum-observable-universe/observations/centered-hecke-variance-positive.lean is missing, preventing formal verification of the claims in 'Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime'.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Sibling Lean file content/quantum-observable-universe/observations/centered-hecke-variance-positive.lean is missing."
       }
     ],
     "milnor-amalgamated-flow": [

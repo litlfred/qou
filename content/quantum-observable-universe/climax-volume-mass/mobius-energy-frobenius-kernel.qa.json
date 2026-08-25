@@ -1623,7 +1623,8 @@
         "reviewed_at": "2026-07-07T14:26:57.059596Z",
         "reviewed_sha": "4d54022746fd7e27f2a619d8a83ff0c3ce97906e",
         "notes": "Divergence detected: Lean reference 'qou:QOU.BraidsKnots.mobius_frobenius_kernel' is specified but the file content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.lean is missing.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "Divergence detected: Lean reference 'qou:QOU.BraidsKnots.mobius_frobenius_kernel' is specified but the file content/quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.lean is missing."
       },
       {
         "result": "pass",
@@ -1821,7 +1822,8 @@
         "notes": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:mobius-energy-frobenius-kernel'.",
         "verdict": "open-objection",
         "referee_argument": "The referenced Lean sibling file is missing for 'lem:mobius-energy-frobenius-kernel', preventing formal verification of the claims.",
-        "severity": "critical"
+        "severity": "critical",
+        "evidence": "Referee verdict: open-objection. Objection: Lean file is missing for 'lem:mobius-energy-frobenius-kernel'."
       },
       {
         "result": "pass",

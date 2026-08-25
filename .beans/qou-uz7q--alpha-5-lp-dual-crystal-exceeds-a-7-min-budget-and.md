@@ -317,3 +317,382 @@ before the timeout" that turned out to be the most useful diagnostic in this
 whole exercise. Fixed mid-batch to a per-producer path, which is why only
 `c4even` has its own log. The measurement tool had the same defect it was
 measuring.
+
+## The qbeta probes validate against the MUON pin, via a live fallback
+
+Read while setting up the profile, and complete on its own:
+
+```python
+q0 = mp.mpf(str(params["q"])) if params and "q" in params else None
+...
+if q0 is None:
+    # fall back to the canonical muon q0 string used corpus-wide
+    q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+```
+
+**That fallback is live, not dead code.** `free-neutron-decay.witness.json` has
+**no `parameters` block at all** (`params is None`), so every run takes the muon
+branch. The same witness also carries no `q0Anchor` and no `q0Value` — it is
+`Q0_ANCHOR_MISSING`, which AGENTS.md classes as *not a failure* and which covers
+~71 % of the corpus, so that part is unremarkable.
+
+**It has no consequence for this probe's result, and I am not proposing an edit.**
+Two reasons, both checked rather than assumed:
+
+1. **`q0` is used only for a validation assert at `1e-6`.** The probe's product —
+   the exact `s`-series and the `c_3` extraction — is symbolic in `q` and carries
+   no pin. Observed this run: `Δ(net) mine = -0.188290620016` vs
+   `witness = -0.188290620011`, residual ~5e-12, passing with ~2e5× margin. The
+   μ–p gap is 1.15e-8 relative — three orders below the tolerance — so the anchor
+   choice cannot flip this assert either way.
+2. **Editing it would drift `scriptHash` on a > 1800 s producer** for zero payload
+   change, which is exactly what this bean argues against elsewhere. If the
+   fallback is ever changed to proton per the 2026-08-07 directive, it should ride
+   along with the eventual re-run, paying the drift once.
+
+Recorded because "a hardcoded muon string in a live path" is worth knowing even
+when it is inert, and because the inertness is a measurement, not an assumption.
+
+## PROFILED — and this bean's own candidate is REFUTED
+
+This bean said: *"`sp.simplify` at 62, 75 and 104 … Stated as a candidate, not a
+cause. Nothing here is profiled, so do not record `simplify` as the hot spot
+without measuring it."* Measured now. **It is not `simplify`.**
+
+Method: `cProfile` under a wrapper that runs the producer via `runpy` and dumps
+cumulative + self-time stats from a `SIGALRM` handler. **The producer is not
+edited**, so no `scriptHash` drift — the objection this bean raises against adding
+logging does not apply to profiling it from outside. 1200 s budget on
+`qbeta/qbeta_c3even_exact_sseries_probe`; it did not finish, consistent with the
+earlier > 1800 s censoring.
+
+**2,588,247,572 function calls in 1200 s.** The chain, by cumulative time:
+
+| frame | ncalls | cumtime | share |
+|---|---|---|---|
+| `main` | 1 | 1199.5 | — |
+| `sympy.series.series` → `log._eval_nseries` | 1 | 1192.4 | 99.4 % |
+| `Mul._eval_nseries` / `Power._eval_nseries` | 337 / 366 | 1191.4 | 99.3 % |
+| **`trigsimp` → `futrig` → `_eapply`** | 383 | 1188.9 | **99.1 %** |
+| **`polys.polytools.factor`** | **3** | **1173.8** | **97.8 %** |
+
+Self time is entirely dense multivariate polynomial arithmetic underneath that
+`factor`: `dmp_mul` 205 s, `dmp_zero_p` 170 s, `dmp_degree` 101 s, `dmp_sub`
+81 s, with `dmp_rr_div` at 971 s cumulative.
+
+**The mechanism.** `Rq` carries a live `sp.cos(alpha_eff)` node. When `series`
+expands `log(Rq(1+s)/R1)`, sympy's nseries machinery calls `trigsimp` *because a
+trig node is present*, and `futrig`'s `_eapply` hands the accumulated rational
+expression to `factor` — which, with `sqrt(q**4+q**2+1)` in it, means factoring
+over an algebraic extension. **Three `factor` calls consume 97.8 % of the run.**
+
+So the cost is not in the probe's own `simplify` calls at all — those complete
+before the series step (the run prints `R(q=1) exact = 1` and reaches the series
+line). The cost is inside `sp.series`, triggered by the `cos`.
+
+### Caveat on the numbers
+
+`cProfile` adds per-call overhead, and at 2.6e9 calls that overhead is large in
+absolute terms — the 1200 s is **not** a runtime estimate for an unprofiled run,
+and the bias favours call-heavy pure-Python (`dmp_*` micro-functions) over C-level
+work. The *relative* attribution is what this establishes, and a 97.8 % share has
+room to survive the bias. The unprofiled run is still > 1800 s and still
+UNMEASURED; this does not change that.
+
+### What it implies for step 2 — stated as a candidate, and being tested
+
+If the `cos` node is what summons `trigsimp` → `factor`, then expanding
+`cos(alpha_eff)` into its Taylor polynomial **before** handing the expression to
+`series` should remove the trig node and with it those three `factor` calls.
+`alpha_eff(q=1) = 0`, so a truncated `cos` polynomial is exact to the order used.
+
+**Not yet verified** — a route comparison at low orders is in flight. Recording
+the reasoning separately from the result, because the whole point of this section
+is that this bean previously recorded a plausible mechanism as if measured.
+
+## The fix is MEASURED and VALIDATED — expand `cos` before `series`
+
+The previous section recorded this as a candidate. It is now measured, and
+validated against ground truth rather than against itself.
+
+### Route comparison (per-route SIGALRM cap of 420 s)
+
+| order N | A — live `cos` (what the probe does) | B — `cos` expanded first |
+|---|---|---|
+| 3 | **> 420 s CAPPED** | **4.53 s** |
+| 4 | **> 420 s CAPPED** | **55.44 s** |
+| 5 | **> 420 s CAPPED** | **56.19 s** |
+
+**A cannot finish at N=3 — the lowest order tested — while the probe needs N=9.**
+So the cost is not driven by series order; it is the trig node summoning
+`trigsimp` → `factor`, exactly as the profile attributed. The ratio is ≥ 93× at
+N=3 and unbounded from below, because A never completed at any order.
+
+### Why B is not merely faster but CORRECT
+
+**A produced no series at any order, so there was nothing to compare B against.**
+Comparing B to A was therefore impossible, and a speedup on a different quantity
+would be worthless. Validated instead against the **true function**, which is a
+stronger test than A would have been:
+
+evaluate `F(s) = log(Rq(1+s)/R1)` numerically with the **live `cos`** at 60 dps
+(mpmath throughout, no float64 — the probe's own `Rq`, unexpanded), and check that
+`|F(s) − P_N(s)|` decays like `s^N`:
+
+```
+  s=1e-2:  8.5558041e-10
+  s=1e-3:  8.4936691e-15   -> falls 5.003 decades per decade (expect 5)
+  s=1e-4:  8.4875754e-20   -> falls 5.000 decades per decade (expect 5)
+```
+
+Exactly the required order. `R(1) = 1.0` numerically also matches the probe's
+own exact `R(q=1) exact = 1`. B is the correct order-N expansion of the same
+function.
+
+**Why the truncation is exact rather than an approximation:** `alpha_eff(q=1) = 0`
+(verified symbolically), so `alpha_eff = O(s)` and a `cos` polynomial carried to
+degree ≥ N contributes nothing beyond `O(s^N)`. No accuracy is traded for the
+speed.
+
+### Coefficients (N=5), exact
+
+```
+c[0] = 0
+c[1] = 0
+c[2] = 9/8
+c[3] = -37/8 + sqrt(3)/8
+c[4] = -887/192 - 9*sqrt(3)/16
+```
+
+The `sqrt(3)` is `sqrt(q**4+q**2+1)` at `q=1`, as expected.
+
+> **Notation collision — do NOT conflate.** `9/8` here is the `s²` coefficient of
+> `log(R(1+s)/R(1))`. AGENTS.md separately discusses `c̃₂ = c₂ − 1/8 = −9/8` for
+> the *normalised* `Φ(u)/Φ(0)` model. Different object, different variable,
+> opposite sign. This bean asserts **no** relationship between them; it is flagged
+> only because the corpus already carries a documented history of confusing
+> quantities that differ by normalisation.
+
+### It is a class, not one producer
+
+`c4even` is structurally identical (`Rq = Qb_over_me / (QA_over_me *
+sp.cos(alpha_eff))` at line 101, `sp.series(sp.log(Rq...))` at line 108), so one
+change covers both TIMEOUT qbeta probes — and neither needs `KC` touched, which
+this bean establishes is not a tuning knob.
+
+Corpus-wide, an AST pass (resolving each `series()` call's first argument through
+local bindings, rather than grepping for files that merely contain both) finds
+**13 sites in 9 files** where a trig node reaches the expanded expression:
+
+```
+qbeta/qbeta_c3even_exact_sseries_probe.py:110   cos   <- measured TIMEOUT
+qbeta/qbeta_c4even_exact_sseries_probe.py:108   cos   <- measured TIMEOUT
+qbeta/qbeta_eigenphase_taylor_in_u.py:128,129,160
+qbeta/qbeta_h_frame_rungs_probe.py:76,86
+qbeta/qbeta_crossing_weight_hecke_probe.py:247,248
+qbeta/qbeta_h4_route_a_gate_probe.py:176
+qbeta/_h4_g_linear_response.py:40   qbeta/_h4_route_ladder_scan.py:34
+probes/qbeta_phib_saddle_fluctuation_transseries_probe.py:243   sin
+```
+
+**Two caveats, both load-bearing.** The detector binds names *last-write-wins over
+the whole file* — the identical flaw that produced three wrong upstreams in
+`inherited_q0_pin_audit.py` before it was made scope-aware — so an attribution
+can be wrong where a name is rebound. And reaching a trig node does **not** imply
+slowness: cost depends on whether `factor` receives a large algebraic input.
+These are **13 candidates for one mechanism, of which 2 are measured**, not 13
+slow producers.
+
+### Still open
+
+- **The N=9 timing** — the order the probe actually needs. B at N=5 is 56 s; N=9
+  is running and is the number that decides whether this makes the probes
+  tractable or merely faster. Do not quote a speedup for the real probe until it
+  lands.
+- **No producer has been edited.** Everything above was measured from outside, so
+  no `scriptHash` has drifted. Applying the change to the two probes is a
+  proposal, not something this bean has done — and it would pay the drift, so it
+  should ride with the re-run that regenerates their witnesses.
+
+## Scaling, with `series` timed apart from extraction — and a flaw in my own test
+
+The previous section left the N=9 timing open. A first attempt burned 90+ minutes
+with no output, and I could not attribute it: **that harness printed only after
+`nsimplify` of every coefficient**, so a slow extraction and a slow `series` were
+indistinguishable in it. Re-run with `series` printed immediately and extraction
+timed on its own line:
+
+| N | `sp.series` | extract + `simplify` |
+|---|---|---|
+| 5 | 56.2 s | — |
+| 6 | **365.8 s** | **0.0 s** |
+| 7 | **365.1 s** | **0.0 s** |
+| 8 | **1386.8 s** | **0.0 s** |
+
+**Extraction is free at every order.** So the 90-minute silence was `series`
+itself; the harness flaw was real but did not change the answer. Worth recording
+both facts — the instrument was wrong, and it happened not to matter.
+
+### N=6 and N=7 are identical because MY truncation was too generous
+
+365.8 s vs 365.1 s is not a coincidence. `cos_poly` used `range(n//2 + 2)`, so:
+
+| N | cos degrees |
+|---|---|
+| 5 | 0..6 |
+| 6, 7 | 0..8 |
+| 8, 9 | 0..10 |
+
+N=6 and N=7 expand the **same** polynomial, as do N=8 and N=9. The apparent
+"scaling" is partly an artifact of my formula rather than a property of the
+problem.
+
+**And the generosity is not free.** `series(..., 0, N)` needs terms through
+`s^(N-1)`, and `alpha_eff = O(s)`, so the `cos` truncation needs degree **≥ N-1**
+— no more. At N=9 that is degree **8**, not the degree **10** my harness used —
+and degree 10 is the same expression that made N=8 cost 1387 s, while degree 8
+is the one that ran in **365 s**. So the N=9 number I was about to report would
+have measured my own over-truncation.
+
+Re-running N=9 at the minimal sufficient degree, with the ground-truth residual
+check attached so a cheaper truncation cannot pass by being wrong.
+
+## VERIFIED — and the verification found a SECOND, larger defect
+
+The perf fix was applied to both probes and `c3even` re-run. It completed in
+**360.9 s** (from > 1800 s censored). Then every value in its witness moved, and
+its own gate went **FAIL**:
+
+| quantity | committed (2026-07-02) | re-run |
+|---|---|---|
+| `c2_even` | −8.00641005870925 | **−7.45876032789888** |
+| `c3_even` | +86.6611630646910 | **+78.5944241201959** |
+| `[s^3] log R` | −33/8 + √3/8 | **−37/8 + √3/8** |
+| `allPassed` | `true` | **`false`** |
+| gate `c_2^even ≈ −8.006` | PASS | **FAIL** |
+
+### The movement is NOT the perf fix — measured, not argued
+
+Numeric Taylor of `log(R(1+s)/R(1))` with the **LIVE `cos`** (i.e. the perf change
+absent), mpmath 60 dps, under each `z`:
+
+| probe source | `[s^3]` | matches |
+|---|---|---|
+| **D** — today's `z = q**3/(q**2+1)` | −4.4084936490538903383 | the **re-run** value, `\|diff\| = 0.0` |
+| **C** — witness-era `z = 1/(sqrt(q)+1/sqrt(q))` | −3.9084936490538903383 | the **committed** value, `\|diff\| = 3.1e-61` |
+
+So the perf change contributes **exactly nothing**: the live-`cos` function under
+D already gives the new value. **The entire movement is the C→D convention
+migration.** `70d1ade383` ("excise C tiers 2+3: 176 producer sites to convention
+D") swapped this probe's `z` on 2026-08-09 and did not regenerate its witness.
+
+The gate threshold tells the same story: `−8.006` **is** the convention-C value —
+the committed C witness carries `−8.00641005870925` exactly. The gate is
+C-calibrated, so a correctly-migrated D producer must fail it.
+
+### Already known as a class — this is candidate #33, now CONFIRMED
+
+Corpus-grepped before declaring anything.
+[`convention-frame-staleness-audit.witness.json`](computations/convention-frame-staleness-audit.witness.json)
+already tracks this: **73 suspect witnesses** of 140 examined against 139 D-form
+producers, and `qbeta-c3even-exact-sseries.witness.json` is **candidate 33**. Two
+entries carry `confirmed_by_decisive_test` with beans (`qou-h4ab`,
+`qou-g49k-followup`), and the `fr-pullback-cosh-h` entry has exactly the shape
+measured above (committed / convention_D / convention_C).
+
+**So the finding is not a new class — it is candidate 33 promoted from suspect to
+confirmed**, by the audit's own decisive-test method.
+
+### Why the D witness was NOT committed
+
+The re-run's D numbers are correct arithmetic and are **not** a valid ladder.
+AGENTS.md, the 2026-08-15 convention ruling:
+
+> **The ladder must be RE-DERIVED under D, and that is not a z-swap** —
+> `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` … makes the C-frame ladder and the
+> mass channel's three-row forcing mutually exclusive, so substituting `z_D` into
+> the existing ladder is not a valid move.
+
+`70d1ade383` substituted `z_D` into this ladder. Whether it intended to claim
+D-frame ladder values or was draining C-form sites mechanically is not something
+this bean can establish — but either way the producer now emits numbers from the
+move the ruling names as invalid. **Committing them would enshrine that.** The
+committed C witness is restored; nothing was landed.
+
+Tranche `qou-cds1` (§S1) owns the re-derivation. This adds a measured instance.
+
+### The two defects were hiding each other
+
+The probe times out in the sweep, so its verdict reads TIMEOUT rather than FAIL —
+which is why a producer that **fails its own gate on `main`** went unnoticed for
+16 days. Fixing the timeout is what made the convention staleness visible. That is
+the argument for the perf fix independent of any speedup: it turns an unmeasurable
+producer into one whose failures are legible.
+
+### Status of the perf change
+
+**Kept.** Validated value-neutral twice over — the `s^N` residual check, and the
+live-`cos` numeric Taylor above, which reproduces the D value the perf-fixed
+probe emits. It makes the probe *measurable*, not *correct*: its output is still
+C-conditional per the ruling.
+
+`c4even` carries the identical edit and has **not** been re-run — under the ruling
+its D output would be no more landable than `c3even`'s.
+
+### Not landed, deliberately
+
+`scripts/precision-gates.sh --changed` regenerated three audit witnesses
+(`q0-anchor-consistency`, `witness-provenance`, `mpf-float-source`) showing real
+drains — `prov_missing` 94→79, `Q0_ANCHOR_MISSING` 1646→1639, `benign` 13→12.
+**But `total_scanned` fell by 7 in two of them**, so the population changed and
+not merely the verdicts; this session's snapshot/restore cycles have been adding
+and removing untracked witnesses all along. The gate says attribute the movement
+before claiming it, and I cannot attribute this cleanly to main either. Restored
+rather than committed. All blocking precision gates were green.
+
+## Read-only sweep: does any OTHER producer share the c3even shape?
+
+Bounded, no runs, no writes. The c3even shape is: **a D-form producer gating on a
+constant that is its own C-era answer.**
+
+**First detector was noise, and the noise is the lesson.** Keying on "a producer
+constant matches a value in its own committed witness" with `|c| > 1` and a 2e-3
+relative tolerance produced ~20 hits, of which I can defend **zero**: `2.0`
+matched a deuterium mass number, `10.0` a tolerance field, `3.0` an `A=3`, and
+`2.0` vs `2.00272236446` passed at 0.14 %. Small round numbers match everything.
+
+Tightened to the actual signature — non-round, ≥5 significant figures, relative
+match < 1e-4, not a q₀ anchor — **13 survive, and most are legitimate**:
+
+| class | examples | verdict |
+|---|---|---|
+| experimental inputs | `0.78233341` (Q_β CODATA), `0.15648` (Q_exp), `14899.169` / `18622.835` (AME) | correct by design |
+| deliberate historical records | `-2.0097` (`c3_muon_hopf_on_record`), `-2.069342577115168` (`c3_proton_on_record`) | AGENTS.md says keep and scope, do not correct |
+| search targets | `1.22035866` (`phase_5g_constit_factor_search/target`) | by design |
+
+**One survivor has the c3even shape** —
+[`probes/qbeta_ck_qholonomic_recurrence_test.py`](computations/probes/qbeta_ck_qholonomic_recurrence_test.py):
+
+```python
+z = q**3 / (q**2 + 1)                                   # line 210 — convention D
+...
+gate("muon_c3_matches_N3_witness",
+     abs(c3_mu - mp.mpf("-2.021615577060006120530024970029644566094740817719")) < mp.mpf("1e-12"),
+```
+
+A **D-form** producer gating at **1e-12** on a **C-frame** `c_3` constant.
+
+**NOT confirmed, and the gap is specific.** `c3_mu` is read from an anchors
+structure (`anchors["muon"]["c_emp"][3]`), not computed from that `z`. So the gate
+may never touch the migrated parameter, in which case a C constant against a
+C-era witness passes consistently and there is no defect. Establishing which
+needs the same decisive test used for c3even — evaluate under both `z` forms and
+see which reproduces — and that sits in `qou-cds1`, not here.
+
+By contrast `qbeta_ck_basis_constrained_pslq.py` is **clean**: its `c3_*_on_record`
+constants are written *into* the witness as records (`mp.nstr(...)` in the output
+dict), not compared against. That is the legitimate case.
+
+**Result: 1 further candidate, 0 further confirmed.** Reported as a count rather
+than a list of alarms, because the first detector's 20 hits were the alarm and
+they were all mine.

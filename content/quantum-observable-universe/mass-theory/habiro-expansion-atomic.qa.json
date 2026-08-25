@@ -1568,7 +1568,8 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous.",
-        "severity": "major"
+        "severity": "major",
+        "evidence": "The Lean sibling contains 'sorry' placeholders, rendering the proof vacuous."
       },
       {
         "field_hash": {
@@ -1881,7 +1882,8 @@
         "reviewed_at": "2026-06-28T05:50:25.638Z",
         "reviewed_sha": "6b830a632a24a3ca20da3b2105c9f5ac53f99748",
         "notes": "The Lean sibling fails compilation, causing divergence from the narrative.",
-        "severity": "minor"
+        "severity": "minor",
+        "evidence": "The Lean sibling fails compilation, causing divergence from the narrative."
       },
       {
         "field_hash": {
@@ -2260,7 +2262,8 @@
         "notes": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist",
         "severity": "critical",
         "verdict": "open-objection",
-        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist"
+        "referee_argument": "The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist",
+        "evidence": "Referee verdict: open-objection. Objection: The Lean sibling contains compilation errors: content/quantum-observable-universe/mass-theory/habiro-expansion-atomic.lean:1:0: error: object file '/Users/litlfred/space_cats/qou/.lake/packages/mathlib/.lake/build/lib/lean/Mathlib/Algebra/Polynomial/EuclideanDomain.olean' of module Mathlib.Algebra.Polynomial.EuclideanDomain does not exist"
       },
       {
         "field_hash": {

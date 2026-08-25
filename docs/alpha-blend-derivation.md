@@ -771,7 +771,13 @@ Borromean prefactor:  Vol(B_3) = 8G (Catalan)                            (prop: 
 | α-blend reduction (this doc) | proved as 1-parameter family (Lemma 3.3) | this doc, §3 |
 | α* = G/3 (closed form) | **falsified** by PSLQ (this doc, §5) — but see note | ~~alpha_high_precision.py~~ **retired to `_deprecated/` 2026-08-25** |
 
-> **🛑 α\* EXCISED (2026-08-25).** α\* was a **fit**: its producer normalised the
+> **🛑 RETRACTION (2026-08-25).** A claim that briefly stood here — that
+> restoring the chirality term refutes α\* being its stand-in — is **withdrawn**;
+> the test compared a correction term against an input the formula consumes, and
+> used nucleon-internal chains in an atomic formula. The α\* excision below is
+> **unaffected**: it rests on α\* being a fit, not on that test.
+>
+> > **🛑 α\* EXCISED (2026-08-25).** α\* was a **fit**: its producer normalised the
 > energy scale on CODATA `M_p` and root-found on CODATA `M_n` — two inputs, neither
 > CAL-1/2/3. Only CAL-1/2/3 are admissible, so the constant is retired along with
 > its published value `0.3058074307438076264762191`.
