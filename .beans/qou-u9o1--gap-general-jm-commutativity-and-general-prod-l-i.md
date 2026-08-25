@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T08:03:26Z
+updated_at: 2026-08-25T08:11:06Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -630,3 +630,43 @@ blocking step.
 The conjugation-permutation law itself, hence not 3.24(i), not centrality, not
 commutativity. This file supplies the object and its expansion only. JucysMurphySpectrum is
 untouched; the general-lambda twist stays conditional.
+
+
+## The PAIR-SWAP law is PROVED — 3.24(i)'s mechanism is in Lean
+
+`sigma_comm_transp_pair` in `HeckeTranspositionExpansion.lean`, sorry-free, axioms clean:
+
+    for i > j+1 :   sigma_j (T_(j,i) + T_(j+1,i)) = (T_(j,i) + T_(j+1,i)) sigma_j
+
+### Why this is the right lemma
+
+With the expansion `A_k = d . SUM_{l<k} T_(l,k)` in hand, "does sigma_j commute with A_k?"
+becomes "does sigma_j fix that sum?". For i > j+1 exactly TWO terms can be disturbed —
+l = j and l = j+1 — because i itself is out of sigma_j's reach. So the whole question
+reduces to whether that PAIR is preserved.
+
+Measured first (`jm_transposition_pair_swap_probe.py`, H_6 faithful, exact Fractions,
+q in {2,3}): the pair commutes in EVERY case, each term ALONE never does. A genuine pair
+phenomenon — which is exactly why a term-by-term approach fails and the sum is essential.
+
+### The proof needs BOTH relations
+
+Base case i = j+2, with u = sigma_j, v = sigma_{j+1}: one braid move reduces the claim to
+
+    v u v^2 + u v  =  v^2 u v + v u
+
+and only the HECKE relation v^2 = hv + 1 turns both sides into h.vuv + uv + vu. **Braid
+alone does not close it.** The step i -> i+1 is pure far-commutation (sigma_j commutes with
+sigma_i since i > j+1), with both transpositions gaining the same outer conjugation.
+
+### Chain status
+
+    expansion A_k = d.SUM T_(l,k)          DONE  (addJM_eq_transp_sum)
+    pair-swap law                          DONE  (sigma_comm_transp_pair)
+    3.24(i): sigma_j commutes with A_k     NEXT  -- split the sum into the pair + the rest
+    partial-sum centrality                 then
+    telescoping => commutativity           then
+
+The next step is now bookkeeping over a Finset: terms with l outside {j, j+1} commute
+individually by far-commutation, and the two exceptional terms are handled by the lemma just
+proved. No new mathematical ingredient is needed for it.
