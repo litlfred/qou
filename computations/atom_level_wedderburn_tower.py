@@ -37,6 +37,7 @@ Sum weights by GB level, scaling by z^ℓ.
 Witness: atom-level-wedderburn-tower.witness.json
 """
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 import sys
 import time
@@ -57,6 +58,7 @@ from syt_prefix_cache import (
     BlockCache,
     build_seminormal_matrices_cached,
 )
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 # Shared BlockCache for P21 compute-audit compliance — avoids
 # rebuilding Hoefsmit content-distance tables per shape at large n.
@@ -78,11 +80,14 @@ def chi_lambda_atom(shape, crossings):
     I = sp_sparse.eye(dim, format='csr') if is_sp else np.eye(dim)
     prod = sp_sparse.eye(dim, format='csr') if is_sp else np.eye(dim)
     h_val = float(Q0_FLOAT) - 1.0 / float(Q0_FLOAT)
-    d_for = {"sigma": 0.0, "sigma_inv": -h_val, "averaged": -h_val / 2}
+    # `d` from the canonical vocabulary, not a private dict. The dict this
+    # replaces had no `averaged_weighted` entry, so this trace raised
+    # KeyError on every word carrying a p-n interface (qou-8zjd).
+    from canonical_braid_crossings import d_for_ctype
     for gen_idx, ct in crossings:
         if gen_idx >= len(sigmas):
             raise IndexError
-        M = sigmas[gen_idx] + d_for[ct] * I
+        M = sigmas[gen_idx] + float(d_for_ctype(ct, h_val)) * I
         prod = prod @ M
     return (float(prod.diagonal().sum()) if is_sp
             else float(np.trace(prod))), dim
@@ -92,13 +97,20 @@ def height_level(partition):
     return len(partition) - 1
 
 
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
+
 def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
     """Compute atom-level Wedderburn tower.
     Returns dict with descended trace, sum-of-Φ_q over partitions,
     and per-level breakdown by height."""
     A = Z + N
     k = 3 * A
-    nfac = qfac(k)
+    nfac = qfac(k, Q0_PROTON)
     crossings = atomic_braid_to_crossings(Z, N, include_inter=include_inter)
 
     descended = 0.0
@@ -110,7 +122,7 @@ def atom_level_tower(Z, N, include_inter=True, with_phi_q=True):
         chi, d = chi_lambda_atom(shape, crossings)
         if d == 0:
             continue
-        d_q_val = float(dim_q(shape))
+        d_q_val = float(dim_q(shape, Q0_PROTON))
         w_lambda = d_q_val ** 2 / float(nfac)
         # Markov contribution
         mc = w_lambda * chi / d
@@ -222,6 +234,31 @@ if __name__ == "__main__":
         "parameters": {
             "q_0": float(Q0_FLOAT),
             "level_heuristic": "len(λ) - 1 (diagram height - 1)",
+        },
+        # Owner ruling 2026-08-15: "mpmath on anything in production; if not
+        # production, deprecate it with precision_tier = float64."
+        #
+        # This producer is NOT production. Walked against the decision tree in
+        # `local/production-vs-exploratory-discipline`: it reaches none of the
+        # named production locations, and it is a LEAF — the only reader of
+        # `atom-level-wedderburn-tower.witness.json` is this file, and its only
+        # importer is `test_ctype_consumer_coverage.py`, a vocabulary guard.
+        #
+        # Its numerical core is float64 by choice, not necessity: numpy matrix
+        # products and a `BlockCache(float(Q0_FLOAT), …)`, while a 50-dps source
+        # for q₀ and h exists in `q_parameter`. That is why it does NOT claim
+        # `float64-integrator` — that tier is for output with no
+        # higher-precision source (an ODE integrator IS the source), and
+        # claiming it here would be the "ordinary f64 sloppiness" that
+        # carve-out's own comment says it must be designed against.
+        "precision_tier": "float64",
+        "deprecated": {
+            "reason": ("exploratory f64 shape-probe; retired rather than "
+                       "rewritten in mpmath, which would be a rewrite of the "
+                       "numpy matrix core for a leaf nobody reads"),
+            "not_production": ("reaches no production location; sole witness "
+                               "reader is itself, sole importer is a test"),
+            "ruling": "owner 2026-08-15",
         },
         "results": results,
     }

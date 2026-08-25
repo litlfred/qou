@@ -1,0 +1,136 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0511710v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f88f50d45908049080d3a545857aca9b09164367dbf73ecc5512c279bfbef159",
+  "file": "0511710v2.pdf"
+ },
+ "provenance": {
+  "title": "Higher Gauge Theory John Baez Department of Mathematics University of California",
+  "authors": "Riverside, CA 92521, USA",
+  "arxiv": {
+   "id": "math/0511710",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "28 Jun 2006"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 8,
+  "by_kind": {
+   "example": 5,
+   "theorem": 3
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "7",
+   "name": null,
+   "statement": "Given any abelian group H, there is a Lie crossed module where",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "8",
+   "name": null,
+   "statement": "Given any Lie group H, there is a Lie crossed module with G =",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "10",
+   "name": null,
+   "statement": "Any smooth space can be seen as a smooth 2-space with only",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "11",
+   "name": null,
+   "statement": "Any smooth group (for example a Lie group) can be seen as a",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "12",
+   "name": null,
+   "statement": "Given a smooth space M , there is a smooth 2-space P1(M ), the",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "21",
+   "name": null,
+   "statement": "For any smooth group G and smooth space B, suppose E \u2192 B",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "23",
+   "name": null,
+   "statement": "For any smooth 2-group G and smooth space B, suppose that",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "15",
+   "name": null,
+   "statement": "Suppose for simplicity that ki = 1 . Let (G, H, t, \u03b1) be the smooth",
+   "section_file": "sections/sec-004-2-if-i\u03b1-c\u03b1-c-is-an-open-cover-of-a-convex-set-c.md",
+   "section_title": "If i\u03b1 : C\u03b1 \u2192 C is an open cover of a convex set C by convex subsets C\u03b1 ,",
+   "pages": "9-27",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

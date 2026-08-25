@@ -6,8 +6,8 @@
   "auditOnly": true,
   "computation": {
     "script": "computations/alpha_em/alpha_em_multiplicity2_realcomplex_probe.py",
-    "scriptCommitSha": "914caefe2e78876a4b41bc634984bbb17c20b518",
-    "scriptHash": "a78024760890"
+    "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+    "scriptHash": "641967a80155"
   },
   "inputs": {
     "genus": 4,
@@ -72,11 +72,13 @@
   "verdict": "REAL-VS-HOLOMORPHIC SUB-QUESTION: CLOSES (scope-(a), forced). The per-loop mode count is the REAL harmonic-1-form count b\u2081 = 2g = 8, NOT the holomorphic g = 4: the merged \u03b6-index \u2212\u03b6_\u0394\u2081(0) = 2g is the REAL Hodge Laplacian on \u03a9\u00b9(M,\u211d), and the photon is a real U(1) gauge field, so its self-energy propagator lives on the same real harmonic sector. The factor 2 in 8\u03c0 = 2\u00b7(4\u03c0) IS the real\u2295complex Hodge doubling H\u00b9(M,\u211d)\u2297\u2102 = H^{1,0}\u2295H^{0,1} \u2014 FORCED by the reality of \u0394\u2081, not a conflation. || NORMALIZATION-FORM SUB-QUESTION: stays OPEN (scope-(a)). 8\u03c0 admits reading (P) \u03c0\u00b7b\u2081 [one bare loop-\u03c0 traced over the b\u2081 real sectors, the #3896 index home] and reading (H) (4\u03c0)\u00b72 [the #3909 heat-kernel Gaussian 4\u03c0 \u00d7 a residual 2]; under (H) the residual 2 is a DISTINCT multiplicity the real-vs-complex argument does not supply. No proved invariant selects (P) over (H). Honest: the count is forced real-b\u2081; the reciprocal normalization FORM is not derived. No 8\u03c0 manufactured; no \u03b1_k wired; no fit; 1/(8\u03c0) stays a phase-4 identification.",
   "scope": "(a) scope-limited \u2014 real count forced; normalization form open",
   "antiLaundering": "no CODATA read; no convention tuned to 8\u03c0; factor 2 not fitted (claimed only via the real \u03b6-index); form residual stated open",
-  "scriptHash": "a78024760890",
-  "scriptCommitSha": "914caefe2e78876a4b41bc634984bbb17c20b518",
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "scriptHash": "641967a80155",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "python",
-  "computedAt": "2026-07-18T17:41:51.974301+00:00",
+  "computedAt": "2026-08-23T08:49:17.375973+00:00",
   "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "alpha_em_multiplicity2_realcomplex_probe.py"
 }

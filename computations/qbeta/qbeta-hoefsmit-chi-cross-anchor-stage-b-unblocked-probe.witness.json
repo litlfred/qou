@@ -10,7 +10,7 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "Stage B dual gate: (i) regression — chi at q_p must match PR #1851's published values to 8 dps after the chi_lambda_braid fix (pass q_value through to build_seminormal_matrices); (ii) cross-anchor — all 3 Wedderburn blocks must swing < 1e-6 across q_p/q_μ (substrate scale ~1e-8). PASS unblocks Stage C N=k extraction; the operator-level F(u) is q-stable per block (finer-grained confirmation of PR #1836's scalar q-stability)."
+      "source": "Stage B dual gate: (i) regression \u2014 chi at q_p must match PR #1851's published values to 8 dps after the chi_lambda_braid fix (pass q_value through to build_seminormal_matrices); (ii) cross-anchor \u2014 all 3 Wedderburn blocks must swing < 1e-6 across q_p/q_\u03bc (substrate scale ~1e-8). PASS unblocks Stage C N=k extraction; the operator-level F(u) is q-stable per block (finer-grained confirmation of PR #1836's scalar q-stability)."
     }
   ],
   "allPassed": true,
@@ -32,7 +32,7 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Stage B test, NOW UNBLOCKED via PR #1856 path C. The chi_lambda_braid Python fallback now passes q_value through to build_seminormal_matrices(q=...). Regression at q_p matches PR #1851 published values exactly. All 3 Wedderburn blocks PASS the q-stability gate (swings at Δq/q level); Stage C (N=k extraction) unblocked.",
+  "description": "Stage B test, NOW UNBLOCKED via PR #1856 path C. The chi_lambda_braid Python fallback now passes q_value through to build_seminormal_matrices(q=...). Regression at q_p matches PR #1851 published values exactly. All 3 Wedderburn blocks PASS the q-stability gate (swings at \u0394q/q level); Stage C (N=k extraction) unblocked.",
   "contentBlock": "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   "data": {
     "anchors": {
@@ -87,11 +87,14 @@
     ],
     "swing_threshold": 1e-06,
     "verdict": {
-      "stage_b_status": "PASS — UNBLOCKED",
+      "stage_b_status": "PASS \u2014 UNBLOCKED",
       "all_blocks_q_stable": true,
       "regression_ok": true,
       "stage_c_unblocked": true,
       "interpretation": "Operator-level F(u) is q-stable per Wedderburn block; Stage C N=k extraction is unblocked."
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751381",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.per_block_cross_anchor[].chi_at_q_proton). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

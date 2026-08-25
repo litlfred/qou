@@ -1,13 +1,12 @@
 {
-  "computation": "nv1_candidate_a_doubleprime",
-  "description": "Test of the q-deformed Plancherel sum hypothesis N_v = sum_{lambda |- 9} dim_q V_lambda * f_lambda |_{q=q_0} vs the CODATA-G_F-back-solved value N_v = 1,445,519. Source: docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 129-159.",
-  "auditOnly": "docs/audits/2026-05-03-nv1-candidate-a-doubleprime-test.md",
   "name": "nv1_candidate_a_doubleprime",
+  "description": "Test of the q-deformed Plancherel sum hypothesis N_v = sum_{lambda |- 9} dim_q V_lambda * f_lambda |_{q=q_0} vs the CODATA-G_F-back-solved value N_v = 1,445,519. Source: docs/audits/2026-05-02-nv-frob-filter-conjectures.md lines 129-159.",
+  "computation": "nv1_candidate_a_doubleprime",
   "inputs": {
     "n_target": 9,
     "k_w_label": "weak-sector characteristic level",
-    "q_0_dps_50": "1.1099785955541805752815940796095093779932822799587",
-    "hbar_q_dps_50": "0.20906032198987946110160842229792190646175630391646",
+    "q_0_dps_50": "1.1099785827513808075916690956107688798744991218736",
+    "hbar_q_dps_50": "0.20906029879563931543084621312967494385975749526302",
     "n_v_target": 1445519,
     "codata_g_f_relative_precision": "5.0e-7",
     "mpmath_dps": 50
@@ -28,8 +27,8 @@
         1
       ],
       "f_lambda": 8,
-      "dim_q_V_lambda": "8.9456900339480419102",
-      "product_dq_f": "71.565520271584335281",
+      "dim_q_V_lambda": "8.9456898178643910698",
+      "product_dq_f": "71.565518542915128559",
       "self_conjugate": false
     },
     {
@@ -38,8 +37,8 @@
         2
       ],
       "f_lambda": 27,
-      "dim_q_V_lambda": "32.92215114695502769",
-      "product_dq_f": "888.89808096778574763",
+      "dim_q_V_lambda": "32.922149737599910771",
+      "product_dq_f": "888.89804291519759082",
       "self_conjugate": false
     },
     {
@@ -49,8 +48,8 @@
         1
       ],
       "f_lambda": 28,
-      "dim_q_V_lambda": "33.92215114695502769",
-      "product_dq_f": "949.82023211474077532",
+      "dim_q_V_lambda": "33.922149737599910771",
+      "product_dq_f": "949.82019265279750159",
       "self_conjugate": false
     },
     {
@@ -59,8 +58,8 @@
         3
       ],
       "f_lambda": 48,
-      "dim_q_V_lambda": "62.249631178564829926",
-      "product_dq_f": "2987.9822965711118365",
+      "dim_q_V_lambda": "62.249627689802547341",
+      "product_dq_f": "2987.9821291105222724",
       "self_conjugate": false
     },
     {
@@ -70,8 +69,8 @@
         1
       ],
       "f_lambda": 105,
-      "dim_q_V_lambda": "135.54110634323275114",
-      "product_dq_f": "14231.81616603943887",
+      "dim_q_V_lambda": "135.54109886325367711",
+      "product_dq_f": "14231.815380641636097",
       "self_conjugate": false
     },
     {
@@ -82,8 +81,8 @@
         1
       ],
       "f_lambda": 56,
-      "dim_q_V_lambda": "71.195321212512871837",
-      "product_dq_f": "3986.9379879007208228",
+      "dim_q_V_lambda": "71.195317507666938411",
+      "product_dq_f": "3986.937780429348551",
       "self_conjugate": false
     },
     {
@@ -92,8 +91,8 @@
         4
       ],
       "f_lambda": 42,
-      "dim_q_V_lambda": "56.515736159755431918",
-      "product_dq_f": "2373.6609187097281405",
+      "dim_q_V_lambda": "56.515732545811034841",
+      "product_dq_f": "2373.6607669240634633",
       "self_conjugate": false
     },
     {
@@ -103,8 +102,8 @@
         1
       ],
       "f_lambda": 162,
-      "dim_q_V_lambda": "218.12051661384490079",
-      "product_dq_f": "35335.523691442873928",
+      "dim_q_V_lambda": "218.12050260929129297",
+      "product_dq_f": "35335.521422705189461",
       "self_conjugate": false
     },
     {
@@ -114,8 +113,8 @@
         2
       ],
       "f_lambda": 120,
-      "dim_q_V_lambda": "161.60478045408946887",
-      "product_dq_f": "19392.573654490736264",
+      "dim_q_V_lambda": "161.60477006348025813",
+      "product_dq_f": "19392.572407617630975",
       "self_conjugate": false
     },
     {
@@ -126,8 +125,8 @@
         1
       ],
       "f_lambda": 189,
-      "dim_q_V_lambda": "251.04266776079992848",
-      "product_dq_f": "47447.064206791186482",
+      "dim_q_V_lambda": "251.04265234689120374",
+      "product_dq_f": "47447.061293562437507",
       "self_conjugate": false
     },
     {
@@ -139,8 +138,8 @@
         1
       ],
       "f_lambda": 70,
-      "dim_q_V_lambda": "90.437887306710459607",
-      "product_dq_f": "6330.6521114697321725",
+      "dim_q_V_lambda": "90.437882283410945612",
+      "product_dq_f": "6330.6517598387661928",
       "self_conjugate": true
     },
     {
@@ -150,8 +149,8 @@
         1
       ],
       "f_lambda": 84,
-      "dim_q_V_lambda": "115.50156141756717734",
-      "product_dq_f": "9702.1311590756428964",
+      "dim_q_V_lambda": "115.50155348363752663",
+      "product_dq_f": "9702.1304926255522366",
       "self_conjugate": false
     },
     {
@@ -161,8 +160,8 @@
         2
       ],
       "f_lambda": 168,
-      "dim_q_V_lambda": "232.26172823288185864",
-      "product_dq_f": "39019.970343124152251",
+      "dim_q_V_lambda": "232.2617120000518087",
+      "product_dq_f": "39019.967616008703861",
       "self_conjugate": false
     },
     {
@@ -173,8 +172,8 @@
         1
       ],
       "f_lambda": 216,
-      "dim_q_V_lambda": "294.51135941144668856",
-      "product_dq_f": "63614.45363287248473",
+      "dim_q_V_lambda": "294.51133968985435604",
+      "product_dq_f": "63614.449373008540904",
       "self_conjugate": false
     },
     {
@@ -185,8 +184,8 @@
         1
       ],
       "f_lambda": 216,
-      "dim_q_V_lambda": "294.51135941144668856",
-      "product_dq_f": "63614.45363287248473",
+      "dim_q_V_lambda": "294.51133968985435604",
+      "product_dq_f": "63614.449373008540904",
       "self_conjugate": false
     },
     {
@@ -198,8 +197,8 @@
         1
       ],
       "f_lambda": 189,
-      "dim_q_V_lambda": "251.04266776079992848",
-      "product_dq_f": "47447.064206791186482",
+      "dim_q_V_lambda": "251.04265234689120374",
+      "product_dq_f": "47447.061293562437507",
       "self_conjugate": false
     },
     {
@@ -212,8 +211,8 @@
         1
       ],
       "f_lambda": 56,
-      "dim_q_V_lambda": "71.195321212512871837",
-      "product_dq_f": "3986.9379879007208228",
+      "dim_q_V_lambda": "71.195317507666938411",
+      "product_dq_f": "3986.937780429348551",
       "self_conjugate": false
     },
     {
@@ -223,8 +222,8 @@
         3
       ],
       "f_lambda": 42,
-      "dim_q_V_lambda": "58.98582525781174542",
-      "product_dq_f": "2477.4046608280933076",
+      "dim_q_V_lambda": "58.985820937826491786",
+      "product_dq_f": "2477.404479388712655",
       "self_conjugate": true
     },
     {
@@ -235,8 +234,8 @@
         1
       ],
       "f_lambda": 168,
-      "dim_q_V_lambda": "232.26172823288185864",
-      "product_dq_f": "39019.970343124152251",
+      "dim_q_V_lambda": "232.2617120000518087",
+      "product_dq_f": "39019.967616008703861",
       "self_conjugate": false
     },
     {
@@ -248,8 +247,8 @@
         1
       ],
       "f_lambda": 120,
-      "dim_q_V_lambda": "161.60478045408946887",
-      "product_dq_f": "19392.573654490736264",
+      "dim_q_V_lambda": "161.60477006348025813",
+      "product_dq_f": "19392.572407617630975",
       "self_conjugate": false
     },
     {
@@ -260,8 +259,8 @@
         2
       ],
       "f_lambda": 84,
-      "dim_q_V_lambda": "115.50156141756717734",
-      "product_dq_f": "9702.1311590756428964",
+      "dim_q_V_lambda": "115.50155348363752663",
+      "product_dq_f": "9702.1304926255522366",
       "self_conjugate": false
     },
     {
@@ -273,8 +272,8 @@
         1
       ],
       "f_lambda": 162,
-      "dim_q_V_lambda": "218.12051661384490079",
-      "product_dq_f": "35335.523691442873928",
+      "dim_q_V_lambda": "218.12050260929129297",
+      "product_dq_f": "35335.521422705189461",
       "self_conjugate": false
     },
     {
@@ -287,8 +286,8 @@
         1
       ],
       "f_lambda": 105,
-      "dim_q_V_lambda": "135.54110634323275114",
-      "product_dq_f": "14231.81616603943887",
+      "dim_q_V_lambda": "135.54109886325367711",
+      "product_dq_f": "14231.815380641636097",
       "self_conjugate": false
     },
     {
@@ -302,8 +301,8 @@
         1
       ],
       "f_lambda": 28,
-      "dim_q_V_lambda": "33.92215114695502769",
-      "product_dq_f": "949.82023211474077532",
+      "dim_q_V_lambda": "33.922149737599910771",
+      "product_dq_f": "949.82019265279750159",
       "self_conjugate": false
     },
     {
@@ -315,8 +314,8 @@
         1
       ],
       "f_lambda": 42,
-      "dim_q_V_lambda": "56.515736159755431918",
-      "product_dq_f": "2373.6609187097281405",
+      "dim_q_V_lambda": "56.515732545811034841",
+      "product_dq_f": "2373.6607669240634633",
       "self_conjugate": false
     },
     {
@@ -329,8 +328,8 @@
         1
       ],
       "f_lambda": 48,
-      "dim_q_V_lambda": "62.249631178564829926",
-      "product_dq_f": "2987.9822965711118365",
+      "dim_q_V_lambda": "62.249627689802547341",
+      "product_dq_f": "2987.9821291105222724",
       "self_conjugate": false
     },
     {
@@ -344,8 +343,8 @@
         1
       ],
       "f_lambda": 27,
-      "dim_q_V_lambda": "32.92215114695502769",
-      "product_dq_f": "888.89808096778574763",
+      "dim_q_V_lambda": "32.922149737599910771",
+      "product_dq_f": "888.89804291519759082",
       "self_conjugate": false
     },
     {
@@ -360,8 +359,8 @@
         1
       ],
       "f_lambda": 8,
-      "dim_q_V_lambda": "8.9456900339480419102",
-      "product_dq_f": "71.565520271584335281",
+      "dim_q_V_lambda": "8.9456898178643910698",
+      "product_dq_f": "71.565518542915128559",
       "self_conjugate": false
     },
     {
@@ -384,9 +383,9 @@
   ],
   "principal_sum": {
     "definition": "sum_{lambda |- 9} dim_q V_lambda * f_lambda",
-    "value_at_q0": "488814.852553042199639286988628",
-    "ratio_to_n_v": "0.338158718462394613726479547227",
-    "relative_deviation": "-0.6618412815376054"
+    "value_at_q0": "488814.821072716549945908573188",
+    "ratio_to_n_v": "0.338158696684524070555910073259",
+    "relative_deviation": "-0.6618413033154759"
   },
   "classical_limit_check": {
     "sum_f_lambda_squared": 362880,
@@ -396,25 +395,22 @@
   "variants": {
     "a_sum_dim_q_squared": {
       "definition": "sum_{lambda |- 9} (dim_q V_lambda)^2",
-      "value": "658784.266672994379645750795619",
-      "relative_deviation_from_n_v": "-0.5442576218832168"
+      "value": "658784.181680958743721766772542",
+      "relative_deviation_from_n_v": "-0.5442576806801165"
     },
     "b_self_conjugate_only": {
       "definition": "sum_{lambda |- 9, lambda = lambda'} dim_q V_lambda * f_lambda",
       "n_self_conjugate": 2,
-      "value": "8808.05677229782548015845578016",
-      "relative_deviation_from_n_v": "-0.9939066475277753"
+      "value": "8808.05623922747884781719717388",
+      "relative_deviation_from_n_v": "-0.9939066478965496"
     },
     "c_descent_involution_residual": {
       "definition": "N_v - sum dim_q V_lambda * f_lambda  (gap; no canonical formula)",
-      "delta_w_value": "956704.147446957800360713011372",
-      "ratio_to_7_factorial": "189.822251477571"
+      "delta_w_value": "956704.178927283450054091426812",
+      "ratio_to_7_factorial": "189.8222577236674"
     }
   },
   "verdict": "fail",
   "verdict_note": "Relative deviation -0.662 exceeds CODATA precision substantially; q-deformed Plancherel sum is falsified.",
-  "timing_seconds": 0.012160539627075195,
-  "engine": "python",
-  "scriptFile": "nv1_candidate_a_doubleprime.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "timing_seconds": 0.013695478439331055
 }

@@ -31,11 +31,29 @@ ROOT = HERE.parent
 for p in (str(ROOT), str(ROOT / "substrate")):
     sys.path.insert(0, p)
 
-mp.mp.dps = 50
+# Path bridge (moved above the set_compute_dps() call — it is what
+# puts computations/substrate on sys.path so `_precision` resolves).
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 from tr_m_atom_via_transfer import tr_m_atom_zn          # noqa: E402  (PR #2405)
 from wedderburn_jones_markov import y_lambda_at          # noqa: E402
-from q_parameter import Q as q0                          # noqa: E402
+# 50-dps source (NO FLOAT64). Behaviour is unchanged: Q_MP differs from the
+# f64 Q by ~1e-17, far inside the 1e-12 cache tolerance either way.
+#
+# NOT a layer straddle, though it looks like one: `y-lambda-at-q0.witness.json`
+# is muon-built, but the cache gate compares the caller's q against the
+# WITNESS's own recorded q0, not against q_parameter.Q. |q_muon - q_proton| =
+# 1.28e-8 is 12810x the 1e-12 tolerance, so a proton-q0 caller misses the
+# muon cache and falls through to the live closed form at the q it asked for.
+# (The 1e-12 sits between float64 ulp at q~1.11, 2.46e-16, and that anchor gap.)
+# AGENTS.md still describes the older, broken gate -- the code is ahead of it.
+from q_parameter import Q_MP as q0                       # noqa: E402
 from codata_constants import M_E_MEV                     # noqa: E402
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),

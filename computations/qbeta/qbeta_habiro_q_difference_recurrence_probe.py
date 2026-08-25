@@ -72,7 +72,7 @@ import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as Q_CANONICAL  # noqa: E402
 
 set_compute_dps()
 

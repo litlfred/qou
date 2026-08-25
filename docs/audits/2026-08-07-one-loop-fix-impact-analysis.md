@@ -196,7 +196,7 @@ can the change-of-curve law, which is a ratio — so a normalization
 shape of the per-cusp factor `2^{(c−1)/2}` this arc wanted.** Having a
 multi-cusp formula therefore does *not* revive it, and `c_σ = 2^{−3/4}` stays at
 IDENTIFICATION. Pinning it needs an external multi-cusp reference value, and
-nothing in `uploads/` supplies one — Garoufalidis–Yoon prove 1-loop = adjoint
+nothing in `library/` supplies one — Garoufalidis–Yoon prove 1-loop = adjoint
 torsion for **two-bridge knots**, which are one-cusped.
 
 ## Recommended order
@@ -224,7 +224,7 @@ torsion for **two-bridge knots**, which are one-cusped.
 
 **Unit tests available now:** DG's own 4₁ worked example (`√3/2`), and the two
 new invariant values `|τ(5_2)| = 1.161162738134`, `|τ(6_2)| = 2.216589930891`.
-Garoufalidis–Yoon (arXiv:2411.03801, already in `uploads/`) proves 1-loop =
+Garoufalidis–Yoon (arXiv:2411.03801, already in `library/`) proves 1-loop =
 adjoint torsion **for two-bridge knots**, which covers `4₁`, `5_2` and `6_2` —
 so the 1-cusped leg can be validated against a theorem, not just against
 self-consistency.

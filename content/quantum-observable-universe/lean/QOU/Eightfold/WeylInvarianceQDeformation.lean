@@ -24,7 +24,8 @@ This file proves:
    separation, which is the file's actual claim.
 5. `qSerre_neq_cartan_diag`: for (q-1)² ≠ 0, the Gaussian binomial [2]_q differs
    from the diagonal Cartan entry 2.
-6. `root_angle_ratio_A2`: the root angle ratio a₁₂/a₁₁ = -1/2 is q-independent.
+6. `root_angle_ratio_A2`: the root angle ratio a₁₂/a₁₁ = -1/2 is q-independent,
+   stated division-free over ℤ as the cross-multiplied `2·a₁₂ = -a₁₁`.
 
 ## Scope — what this file does NOT establish
 
@@ -51,7 +52,18 @@ docs/audits/2026-08-03-eightfold-way-a2-q-deformation-dialog-assessment.md §1.
 
 Pure algebra. The q-independence of root data under Drinfeld–Jimbo
 quantisation is a theorem of Lusztig/Kashiwara, not a physics claim.
+
+## Namespace
+
+Added 2026-08-08 (bean `qou-ref10`).  The file previously declared everything
+at the root, which (a) violates AGENTS.md §2 — *all declarations live under the
+`QOU` root namespace* — and (b) made every content-block `lean.ref` into this
+module name a declaration that does not exist.  The namespace matches the
+module path, as in the three sibling files of this directory
+(`RowCapObstruction`, `GellMannOkuboIdentity`, `Sym2GateParity`).
 -/
+
+namespace QOU.Eightfold.WeylInvarianceQDeformation
 
 -- § 1. Gaussian binomial [2]_q (framed form avoids inverses)
 
@@ -145,8 +157,16 @@ theorem qSerre_eq_cartan_at_classical :
 
 -- § 4. Root angle is q-independent
 
-/-- The root angle cos θ = a₁₂/a₁₁ = -1/2, hence θ = 120°.
-    Both entries are fixed integers, so the ratio is q-independent. -/
+/-- The root angle `cos θ = a₁₂/a₁₁ = -1/2`, hence `θ = 120°`.
+    Both entries are fixed integers, so the ratio is q-independent.
+
+    §7c: stated **division-free over the Cartan datum's own ring ℤ**, as the
+    cross-multiplied identity `2·a₁₂ = -a₁₁`.  This is the R[h] pattern — the
+    ratio claim `a₁₂/a₁₁ = -1/2` is recovered from it in any ℚ-algebra by
+    dividing through by the unit `a₁₁ = 2`, so nothing is lost by not passing
+    to ℚ, and the integrality of the Cartan entries stays visible. -/
 theorem root_angle_ratio_A2 :
-    (cartanMatrix_A2 0 1 : ℚ) / (cartanMatrix_A2 0 0 : ℚ) = -1 / 2 := by
-  simp [cartanMatrix_A2]
+    2 * cartanMatrix_A2 0 1 = -(cartanMatrix_A2 0 0) := by
+  decide
+
+end QOU.Eightfold.WeylInvarianceQDeformation

@@ -31,8 +31,10 @@ import pyhecke_native
 from kl_betti_smoothness_pruned import (
     partitions, dim_sn, canonical_Q, syt_shape, inverse_rsk,
 )
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 N = 12
 m_e = mpf("0.51099895069")

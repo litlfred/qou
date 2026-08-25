@@ -31,6 +31,3 @@ $\mathbf{No}_{\mathrm{fin}}$ (they are rational in $\varepsilon$).
 Applying $\mathrm{st}$ recovers exactly the paper's reals; the
 discarded infinitesimal part is an explicit record of the
 first-order quantum correction.
-
-The functorial standard-part is the bridge between the surreal-
-ambient reformulation and the archimedean paper.

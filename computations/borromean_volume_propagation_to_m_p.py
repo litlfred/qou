@@ -8,8 +8,10 @@ Finding from `borromean_volume_100dps.py`:
   Audit / production script Vol = 7.327722906465      (stale, ~10 dps)
   Δ = 1.85e-6 absolute = 0.252 ppm relative
 
-The m_p_borromean_verification_50dps.py production script uses the
-stale Vol(𝓑₃) value AND a hardcoded λ_p_scale = 2.4599527869 — and
+The m_p_borromean_verification_50dps.py script — described as the
+production script when this probe was written, since deprecated for
+absolute mass by the 2026-06-24 ruling and imported by nothing — uses
+the stale Vol(𝓑₃) value AND a hardcoded λ_p_scale = 2.4599527869 — and
 together they close m_p to 250 ppb. The HYPOTHESIS this script tests:
 
   If the hardcoded λ_p_scale was originally calibrated against

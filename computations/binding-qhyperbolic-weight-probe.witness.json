@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-11T11:15:40.849700+00:00",
-  "commitSha": "4ce1621e44f6dcfad7f1a1e4d72be4a466c69807",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T08:55:21.016630+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "derived_qhyperbolic_weight_closes_or_refutes_A3plus",
@@ -10,15 +10,15 @@
       "expected": "1",
       "passed": true,
       "tolerance": 0,
-      "source": "worst |err| over ['D', 'T', '3He', '4He'] at 1 global scale; growth vs 12.72. 1=refuted (no zero-fit closure), 0=closes → promote."
+      "source": "worst |err| over ['D', 'T', '3He', '4He'] at 1 global scale; growth vs 12.72. 1=refuted (no zero-fit closure), 0=closes \u2192 promote."
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "binding-qhyperbolic-weight-probe",
   "scriptFile": "binding_qhyperbolic_weight_probe.py",
-  "scriptHash": "f31b92620570",
-  "scriptCommitSha": "4ce1621e44f6dcfad7f1a1e4d72be4a466c69807",
+  "scriptHash": "5fea45ca3f27",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,10 +27,21 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
-  "description": "EXPLORATORY: DERIVED non-compact / q-hyperbolic binding weights (C_λ at √q₀ half-monodromy, √C amplitude, Casimir/q-dim) vs the compact C_λ that refuted. Seeks the AME A-growth 12.72 zero-fit; asserts refutation if none closes to 5%. Full p(3A) sum; no τ/AME fit; no production touch.",
+  "invocation": {
+    "argv": [
+      "computations/binding_qhyperbolic_weight_probe.py"
+    ],
+    "reproduce": "python3 -u computations/binding_qhyperbolic_weight_probe.py"
+  },
+  "description": "EXPLORATORY: DERIVED non-compact / q-hyperbolic binding weights (C_\u03bb at \u221aq\u2080 half-monodromy, \u221aC amplitude, Casimir/q-dim) vs the compact C_\u03bb that refuted. Seeks the AME A-growth 12.72 zero-fit; asserts refutation if none closes to 5%. Full p(3A) sum; no \u03c4/AME fit; no production touch.",
   "parameters": {
     "q0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "sqrt_q0_50dps": "1.0535552110598574641704686986707191825838829731705",
@@ -131,6 +142,9 @@
         }
       }
     },
-    "verdict": "REFUTED (scope-(a)): no DERIVED non-compact / q-hyperbolic weight closes the A≥3 binding zero-fit to 5%. The compact C_λ over-grows (S(⁴He)/S(D)=34.15 vs target 12.72); the half-monodromy √q₀ scale gives 30.96; √C gives 11.14; Casimir/q-dim gives 0.00. Structural reason: the binding sum runs over Young-diagram partitions (compact SU_q(2)/S_n objects); a true non-compact Faddeev weight has no partition labelling, and the modular dual q̃ of q₀≈1.11 is non-perturbative (e^{±O(400)}) — explode/collapse, never the moderate 12.72 regime. The Δ_λ / A≥3 binding closure stays OPEN; no 7th fit introduced. Touches no production."
-  }
+    "verdict": "REFUTED (scope-(a)): no DERIVED non-compact / q-hyperbolic weight closes the A\u22653 binding zero-fit to 5%. The compact C_\u03bb over-grows (S(\u2074He)/S(D)=34.15 vs target 12.72); the half-monodromy \u221aq\u2080 scale gives 30.96; \u221aC gives 11.14; Casimir/q-dim gives 0.00. Structural reason: the binding sum runs over Young-diagram partitions (compact SU_q(2)/S_n objects); a true non-compact Faddeev weight has no partition labelling, and the modular dual q\u0303 of q\u2080\u22481.11 is non-perturbative (e^{\u00b1O(400)}) \u2014 explode/collapse, never the moderate 12.72 regime. The \u0394_\u03bb / A\u22653 binding closure stays OPEN; no 7th fit introduced. Touches no production."
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

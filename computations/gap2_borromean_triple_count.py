@@ -50,17 +50,18 @@ for p in (str(HERE / "substrate"), str(HERE)):
         sys.path.insert(0, p)
 
 import mpmath as mp  # noqa: E402
-try:
-    from _precision import set_compute_dps
-    set_compute_dps()
-except Exception:
-    mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps
+set_compute_dps()
 from codata_constants import (  # noqa: E402
     AME_B_DEUTERON_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
     AME_B_LI5_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_LI7_MEV_VALIDATION,
 )
-from coulomb_energy import coulomb_energy_mev  # noqa: E402  (canonical Coulomb, αℏc=1.43996)
+# Canonical Coulomb: α_EM DERIVED from q₀ and R₀ = λ̄_π (CAL-3), per bean qou-usft.
+# The comment here used to say "αℏc=1.43996" — the CODATA value the module stopped
+# using on 2026-08-09. The code was already correct; only the annotation was stale.
+from coulomb_energy import coulomb_energy_mev  # noqa: E402
 try:
     from witness_base import WitnessBuilder
     _HAVE_WB = True
@@ -106,8 +107,9 @@ GRAPHS = {
 
 
 def b_strong(B, Z, A):
-    """Strong binding = AME binding + discrete-proton Coulomb (canonical coulomb_energy_mev,
-    αℏc=1.43996, r₀ shared) — adds back the charge energy for the charge-symmetric comparison."""
+    """Strong binding = AME binding + discrete-proton Coulomb (canonical coulomb_energy_mev:
+    α_EM derived from q₀, R₀ = λ̄_π CAL-3, R₀ shared across callers) — adds back the charge
+    energy for the charge-symmetric comparison."""
     return mp.mpf(str(B)) + mp.mpf(str(coulomb_energy_mev(Z, A)))
 
 

@@ -3,6 +3,8 @@ import Mathlib.Data.Complex.Basic
 import Mathlib.LinearAlgebra.Matrix.Defs
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
+import QOU.TypedCrossingsEncoding
 
 /-!
 # Mass-computation chain stubs — m_n + higher atoms/isotopes
@@ -179,30 +181,13 @@ is forced. But the `c=1, d=-H_A/2` ud-average is a convention.
 
 -- Ref: [manuscript] prop:typed-crossings-quark-content
 -- Ref: [manuscript] §four-term-pair-nucleon
-/-- **Typed-crossings encoding (derived).**
-
-Work in a field `A` (the Hecke algebra image, where the `½` average
-makes sense), with `σ` the positive crossing and `H_A = q − q⁻¹`
-(here a scalar `h`).  The Skein form of the Hecke quadratic relation
-gives `σ⁻¹ = σ − H_A · 1` (hypothesis `hinv`).  Each typed crossing
-`c·σ + d·1` then has its `(c, d)` pair **forced**:
-
-* `uu = σ` → `(c, d) = (1, 0)`;
-* `dd = σ⁻¹ = σ − H_A·1` → `(c, d) = (1, −H_A)` (forced by `hinv`);
-* `ud = ½(σ + σ⁻¹) = σ − ½H_A·1` → `(c, d) = (1, −H_A/2)`.
-
-The `ud`-average identity is derived here by `ring` from `hinv`; this
-is the genuine computation underlying gap 3 (the `½` averaging is the
-sole convention, the rest is forced). -/
-theorem typed_crossings_encoding_unique
-    {A : Type*} [Field A] (h2 : (2 : A) ≠ 0) (σ σinv : A) (h : A)
-    (hinv : σinv = σ - h * 1) :
-    σinv = σ - h ∧ (1 / 2 : A) * (σ + σinv) = σ - (h / 2) := by
-  -- Ref: [manuscript] prop:typed-crossings-quark-content
-  refine ⟨by rw [hinv]; ring, ?_⟩
-  rw [hinv]
-  field_simp
-  ring
+--
+-- The theorem discharging this gap, `typed_crossings_encoding_unique`, is
+-- generic over `[Field A]` and so sits on the algebraic side of the §7c
+-- wall: it now lives in `QOU.TypedCrossingsEncoding` (same namespace,
+-- imported above). Moved out by bean `qou-q7cm` — it was the sole
+-- generic-ring declaration in this archimedean roadmap, and the reason
+-- `wall-side-correct` reported the file MIXED.
 
 /-! ## Gap 4: Φ_q tower convergence (extends existing sorry)
 
@@ -288,8 +273,13 @@ with #636 on naming if R1 (rename to `w̃_λ`) is adopted.
 -/
 
 /-- Balanced quantum integer `[n]_q = (qⁿ − q⁻ⁿ)/(q − q⁻¹)`. -/
-noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
-  (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
+-- Consolidated onto the canonical q-integer (bean `qou-qint`): this was a
+-- verbatim duplicate of `QOU.QInteger.qIntBal`.  Kept as a local `abbrev` so
+-- call sites are unchanged; the DEFINITION now has a single home.  Proofs that
+-- said `unfold <local>` become `simp only [<local>, ...qIntBal]` -- `unfold`
+-- reduces through the alias and leaves the follow-up tactic nothing to act on.
+-- See QOU/MathlibExt/QIntegerCanonical.lean.
+noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ := QOU.QInteger.qIntBal q n
 
 -- Ref: [manuscript] prop:schur-weyl-mass-decomposition
 -- Ref: [wenzl1988] Hecke algebra Markov trace
@@ -311,7 +301,7 @@ theorem wedderburn_weights_H3 (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
       qInt q 3 * qInt q 2 * qInt q 1 = qInt q 3 * qInt q 2 := by
   -- Ref: [manuscript] prop:schur-weyl-mass-decomposition formulas
   have h1 : qInt q 1 = 1 := by
-    unfold qInt; rw [pow_one, pow_one]; exact div_self hq
+    simp only [qInt, QOU.Mass.QHookDimensionBalanced.qIntBal]; rw [pow_one, pow_one]; exact div_self hq
   exact ⟨h1, by rw [h1, mul_one]⟩
 
 /-! ## Gap 7: Atomic braid word `atom_braid_word_3A(Z, N)` at H_{3A}

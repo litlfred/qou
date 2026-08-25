@@ -1,0 +1,389 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0411505v2",
+ "source": {
+  "file": "0411505v2.pdf",
+  "sha256": "a38cec365e0a227ecbfd1f3feaa9910d56cc8026e406fc0148fbbb1c598e45cf",
+  "bytes": 350769,
+  "pages": 22
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0411505",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "7 Mar 2005"
+  },
+  "doi": null,
+  "title": "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION",
+  "authors_raw": "STAVROS GAROUFALIDIS AND MARTIN LOEBL",
+  "abstract": "The colored Jones function of a knot is a sequence of Laurent p olynomials that encodes the Jones polynomial of a knot and its parallels. It has been unde rstood in terms of representations of quantum groups and Witten gave an intrinsic quantum ﬁeld theory inte rpretation of the colored Jones function as the expectation value of Wilson loops of a 3-dimensional gauge t heory, the Chern-Simons theory. W e present the colored Jones function as an evaluation of the inverse of a non-commutative fermionic partition function. This result is in the form familiar in quantum ﬁeld theory, na mely the inverse of a generalized determinant. Our formula also reveals a direct relation between the Alexa nder polynomial and the colored Jones function of a knot and immediately implies the extensively studied Me lvin-Morton-Rozansky conjecture, ﬁrst proved by Bar-Natan and the ﬁrst author about ten years ago.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181122035632-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "A NON-COMMUT A TIVE FORMULA FOR THE COLORED JONES FUNCTION",
+  "title_lines": [
+   "A NON-COMMUTATIVE FORMULA FOR THE COLORED JONES FUNCTION"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "The Jones polynomial of a knot",
+   "page": 1,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Statement of the main result",
+   "page": 2,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgement",
+   "page": 4,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 1,
+   "title": "The zeta function of a graph and the quantum MacMahon Master Theorem",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "The arc-graph of a knot projection",
+   "page": 5,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The enhanced arc-graph and the Jones polynomial",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 2",
+   "page": 8,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Row and column arcs order",
+   "page": 8,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Flows on GK and monomials of GB'K(m1,…mr)",
+   "page": 8,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Cabling of the arc graph",
+   "page": 9,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "Comparison of excess numbers",
+   "page": 11,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "Sortings and multiplicities of flows",
+   "page": 12,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "Sortings",
+   "page": 12,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Sortings and the Jones polynomial",
+   "page": 13,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 7",
+   "page": 14,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 1,
+   "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1. The Foata-Zeilberger formula",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix B. A state sum for the Jones polynomial",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1. Rotation and Excess numbers",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix C. A combinatorial counting of structures",
+   "page": 20,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 22,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-the-jones-polynomial-of-a-knot",
+   "number": "1.1",
+   "title": "The Jones polynomial of a knot",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-12-statement-of-the-main-result",
+   "number": "1.2",
+   "title": "Statement of the main result",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 9148,
+   "n_words": 1710
+  },
+  {
+   "id": "sec-003-13-acknowledgement",
+   "number": "1.3",
+   "title": "Acknowledgement",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 169,
+   "n_words": 28
+  },
+  {
+   "id": "sec-004-2-the-zeta-function-of-a-graph-and-the-quantum-m",
+   "number": "2",
+   "title": "The zeta function of a graph and the quantum MacMahon Master Theorem",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3998,
+   "n_words": 823
+  },
+  {
+   "id": "sec-005-3-the-arc-graph-of-a-knot-projection",
+   "number": "3",
+   "title": "The arc-graph of a knot projection",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 2784,
+   "n_words": 597
+  },
+  {
+   "id": "sec-006-4-the-enhanced-arc-graph-and-the-jones-polynomia",
+   "number": "4",
+   "title": "The enhanced arc-graph and the Jones polynomial",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 3590,
+   "n_words": 750
+  },
+  {
+   "id": "sec-007-5-proof-of-theorem-2",
+   "number": "5",
+   "title": "Proof of Theorem 2",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 128,
+   "n_words": 28
+  },
+  {
+   "id": "sec-008-51-row-and-column-arcs-order",
+   "number": "5.1",
+   "title": "Row and column arcs order",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 4345,
+   "n_words": 960
+  },
+  {
+   "id": "sec-009-6-cabling-of-the-arc-graph",
+   "number": "6",
+   "title": "Cabling of the arc graph",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4276,
+   "n_words": 982
+  },
+  {
+   "id": "sec-010-61-comparison-of-excess-numbers",
+   "number": "6.1",
+   "title": "Comparison of excess numbers",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2747,
+   "n_words": 659
+  },
+  {
+   "id": "sec-011-7-sortings-and-multiplicities-of-flows",
+   "number": "7",
+   "title": "Sortings and multiplicities of flows",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 2157,
+   "n_words": 523
+  },
+  {
+   "id": "sec-012-72-sortings-and-the-jones-polynomial",
+   "number": "7.2",
+   "title": "Sortings and the Jones polynomial",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2950,
+   "n_words": 656
+  },
+  {
+   "id": "sec-013-73-proof-of-theorem-7",
+   "number": "7.3",
+   "title": "Proof of Theorem 7",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 15,
+   "n_chars": 2727,
+   "n_words": 630
+  },
+  {
+   "id": "sec-014-appendix-a-the-zeta-function-of-a-graph-and-the",
+   "number": null,
+   "title": "Appendix A. The zeta function of a graph and the Foata-Zeilberger formula",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2543,
+   "n_words": 525
+  },
+  {
+   "id": "sec-015-appendix-b-a-state-sum-for-the-jones-polynomial",
+   "number": null,
+   "title": "Appendix B. A state sum for the Jones polynomial",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 6352,
+   "n_words": 1298
+  },
+  {
+   "id": "sec-016-b1-rotation-and-excess-numbers",
+   "number": null,
+   "title": "B.1. Rotation and Excess numbers",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 2029,
+   "n_words": 406
+  },
+  {
+   "id": "sec-017-appendix-c-a-combinatorial-counting-of-structure",
+   "number": null,
+   "title": "Appendix C. A combinatorial counting of structures",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 4143,
+   "n_words": 883
+  },
+  {
+   "id": "sec-018-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 4226,
+   "n_words": 657
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 19,
+  "chars_total": 58312
+ }
+}

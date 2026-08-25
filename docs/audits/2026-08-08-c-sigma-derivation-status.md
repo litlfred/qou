@@ -61,7 +61,7 @@ measured value to ~17 digits.
 ### Independent confirmation of step 3 on a second manifold
 
 `k` is calibrated on `4_1` alone, which was the chain's thinnest point. Ohtsuki's
-asymptotic expansion of the Kashaev invariant of `5_2` (`uploads/ki52.pdf`,
+asymptotic expansion of the Kashaev invariant of `5_2` (`library/ki52/ki52.pdf`,
 Theorem 1.1) is a **rigorous theorem**, and its 1-loop constant satisfies
 
 ```
@@ -73,6 +73,78 @@ on a **cubic** trace field (discriminant −23), so not a quadratic coincidence.
 → addendum in `docs/audits/2026-08-08-per-cusp-factor-dissolves.md`
 
 ## THE ONE ASSUMPTION BEING CARRIED — read this before citing the upgrade
+
+> **AMENDED 2026-08-08 — it is not one assumption, it is two, and only the
+> second is actually assumed.** Full argument in
+> `docs/audits/2026-08-08-prefactor-form-what-is-actually-assumed.md`.
+>
+> * **The exponent `−1/2` is NOT assumed.** For any pair of manifolds
+>   `k_i = k_j` and `p_ij = −1/2` are algebraically the same statement, so the
+>   `k_c`-constancy checks in this very document were exponent measurements all
+>   along. The 17-digit `k_1 = k_2` agreement *is* `p = −1/2` to 17 digits. A
+>   free four-point fit — 4 points, 2 parameters, 2 residual degrees of freedom,
+>   so a test that can actually fail — returns `p = −0.4983` and `k = 0.70699`
+>   against the predicted `2^{−1/2}`.
+> * **What IS assumed is that `c_σ` depends on `τ` ALONE.** A law
+>   `c_σ = k·|τ|^p·f(M)` with `f` weakly varying fits the four points equally
+>   well, and nothing in the corpus excludes it. That is the load-bearing part.
+>
+> **AMENDED AGAIN, same day — the FORM is in the literature; the CONSTANT is
+> not.** `library/arxiv-0903.2472v1/0903.2472v1.pdf` (Dimofte–Gukov–Lenells–Zagier) was sitting
+> downloaded and cited nowhere in the repository. Read. Its eq (2.3) is
+>
+> ```
+> S₁^(ρ) = ½ log( T(M; E_ρ) / 2 )      ⇒   one-loop factor = 2^{−1/2}·T^{1/2}
+> ```
+>
+> * **`k = 2^{−1/2}` IS still calibrated.** An earlier version of this amendment
+>   said it "is the `/2` inside their logarithm" and that it was never a fit.
+>   Retracted. DGLZ carry a `/2` in (2.3), a `+log 2` in (4.5) between `S₁` and
+>   the colored-Jones coefficient `s₁`, and a `log π` shift against
+>   Gukov–Murakami — and fix their integration constants against colored-Jones
+>   asymptotics. The corpus measures `c_σ` from that same asymptotic, so it
+>   matches `s₁`, under which the relation is `T = 4/|τ_DG|` rather than
+>   `1/|τ_DG|`. A factor of 4 from a convention choice; the constant cannot be
+>   lifted.
+>   **Superseded later the same day, for links only.** "Cannot be lifted *from
+>   DGLZ*" remains true and is the whole of what was shown here. But `k` does not
+>   have to come from DGLZ: van der Veen's colored-Jones asymptotic for the
+>   Whitehead chains gives `c_σ = 2^{1/2−n}(n²+m²)^{−1/4}` outright
+>   (`n = c+d`, `m = 4a−c+d`), reproducing `k = 2^{−1/2}` with no calibration and
+>   no convention to reconcile. So on the **link** side `k` is derived, and the
+>   `4_1` calibration is corroborated rather than required; on the **knot** side
+>   this entry stands unchanged, since van der Veen's family contains no knots.
+>   See `2026-08-08-vdv-constant-closed-form-and-the-open-bridge.md`.
+> * **What IS invariant is the exponent** — no multiplicative constant changes
+>   `−1/2` — so the FORM transfers and the prefactor does not. The `T^{+1/2}` vs
+>   `|τ|^{−1/2}` sign is likewise a choice of variable, verified to 1.3e−10 on
+>   `5_2` and 6.2e−21 on `L5a1`. Read correctly that agreement says **one
+>   constant serves both cusp numbers**, which is this corpus's own empirical
+>   result — DGLZ assert nothing about cusp-independence, and Ray–Singer torsion
+>   on a cusped manifold needs a basis of `H¹` whose rank is the cusp number.
+> * That also dissolves the Ohtsuki–Takata discrepancy noted a moment ago — DGLZ
+>   carry `+1/2` in the torsion too.
+> * Eq (2.3) is stated for a **general** 3-manifold `M` with a flat `G_C` bundle,
+>   with **no** restriction to knots, two-bridge knots or cusp number. So the
+>   "`c_σ` depends on `τ` alone" part above is a cited result — for the FORM. The
+>   NORMALISATION at `c ≥ 2` is a separate, still-open question, and it is the
+>   one with a track record here (the retracted `2^{(c−1)/2}`, and L6a4's
+>   unexplained 0.35%).
+> * `jones_1loop_c0_calibration_fig8.py`'s `exp(2c₀) = 1/(2|τ_DG|)` coincides
+>   with eq (2.3) under one convention reading and differs by the eq (4.5)
+>   `log 2` under the other — a structural echo, not provenance for the constant.
+>
+> **What is actually left is RIGOUR.** Eq (2.3) is a one-loop saddle-point /
+> Feynman-diagram derivation (Witten 1989, Bar-Natan–Witten 1991,
+> Gukov–Murakami 2006), not a theorem. And the gap is not link-shaped: the
+> formula already covers links, and the missing proof is missing for `4_1` too.
+> Wherever this document says "no theorem covers the link case", read it as a
+> statement about proof status, not about the formula's reach.
+>
+> Machine-checked:
+> `computations/probes/one_loop_dglz_prefactor_identification_probe.py`.
+>
+> The text below stands as written; read it with all of the above in mind.
 
 The chain assumes the **1-loop prefactor form**
 

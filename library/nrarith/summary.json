@@ -1,0 +1,202 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "nrarith",
+ "source_sha256": "085ec9541ddc6cd4",
+ "brief": "Arithmetic of hyperbolic manifolds (Neumann–Reid) — survey of arithmetic Kleinian groups: an arithmetic M = H³/Γ is determined up to commensurability by its invariant trace field and quaternion…",
+ "extended": "**Arithmetic of Hyperbolic Manifolds** — Walter D. Neumann and Alan W. Reid. Survey.\n\nHyperbolic 3-manifolds here are complete orientable finite-volume quotients H³/Γ with Γ ⊂ PSL₂ℂ a Kleinian group. The arithmetic ones form a more tractable subclass because arithmetic invariants are available: an arithmetic M is determined up to commensurability by its defining field k (a number field with exactly one complex place) together with a quaternion algebra over k.\n\nCovers the invariant trace field, the invariant quaternion algebra, commensurability classes, and the identification of arithmetic manifolds among all hyperbolic ones.\n\n**Why it may bear here.** The invariant trace field and quaternion algebra are the arithmetic side of the same hyperbolic-volume objects this corpus uses geometrically (Vol(4₁), cusp shapes, the Bloch-group material). Relevance is a prior, not a verdict — no claim is made that a specific result is needed.",
+ "tokens": {
+  "brief": 48,
+  "extended": 235
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-psl2c-has-algebraic-integer-trace-if-and-only",
+   "title": "PSL2C has algebraic integer trace if and only if it has algebraic",
+   "pages": "3-4"
+  },
+  {
+   "id": "sec-002-2-trace-ﬁelds",
+   "title": "Trace-ﬁelds",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-21-let-be-a-kleinian-group-of-ﬁnite-covolume-it",
+   "title": "Let \u0000 be a Kleinian group of ﬁnite covolume. It is well known, and follows from",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-22-in-this-subsection-we-give-a-geometric-descri",
+   "title": "In this subsection we give a geometric description of the invariant trace ﬁeld k(\u0000)",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-2-psl2k",
+   "title": "PSL2k\u0001:",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-006-23-a-horospherical-section-of-a-cusp-of-a-hyperb",
+   "title": "A horospherical section of a cusp of a hyperbolic manifold M is a ﬂat torus. This",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-007-24-the-following-theorem-is-from-nr1-our-formula",
+   "title": "The following theorem is from [NR1]. Our formulation here is stronger, but the",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-008-3-quaternion-algebras",
+   "title": "Quaternion algebras",
+   "pages": "7-7"
+  },
+  {
+   "id": "sec-009-31-in-this-section-we-associate-to-a-kleinian-gr",
+   "title": "In this section we associate to a Kleinian group \u0000 a quaternion algebra over the",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-010-32-the-trace-ﬁeld-invariant-trace-ﬁeld-and-invar",
+   "title": "The trace ﬁeld, invariant trace ﬁeld, and invariant quaternion algebra are quite",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-011-4-short-geodesics-in-arithmetic-orbifolds",
+   "title": "Short geodesics in arithmetic orbifolds",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-012-41-arithmetic-kleinian-groups-are-obtained-as-fo",
+   "title": "Arithmetic Kleinian groups are obtained as follows (cf., [Bo] and [Vig, Chap. 4],",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-013-42-we-shall-make-use-of-the-characterization-the",
+   "title": "We shall make use of the characterization theorems for arithmetic Kleinian groups",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-014-2-it-follows-that-when-is-derived-from-a-quatern",
+   "title": "It follows that when \u0000 is derived from a quaternion algebra, the associated quaternion",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-015-2-the-proof-of-theorem-46-gives-the-same-results",
+   "title": "The proof of Theorem 4.6 gives the same results for closed arithmetic 3-orbifolds",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-016-2-od-thus-if-tr",
+   "title": "Od. Thus if tr",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-017-2-od-with-j",
+   "title": "Od with j",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-018-44-for-closed-hyperbolic-3-orbifolds-we-conjectu",
+   "title": "For closed hyperbolic 3-orbifolds we conjecture a similar result to Corollary 4.7:",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-019-45-lemma-49-has-a-converse-as-pointed-out-to-us",
+   "title": "Lemma 4.9 has a converse, as pointed out to us by Ted Chinburg:",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-020-5-commensurators-of-chain-links",
+   "title": "Commensurators of chain links",
+   "pages": "15-19"
+  },
+  {
+   "id": "sec-021-6-surgery-on-one-component-of-the-whitehead-link",
+   "title": "Surgery on one component of the Whitehead link complement",
+   "pages": "19-19"
+  },
+  {
+   "id": "sec-022-61-in-t-thurston-describes-how-to-obtain-the-com",
+   "title": "In [T] Thurston describes how to obtain the complement W of the Whitehead link",
+   "pages": "19-23"
+  },
+  {
+   "id": "sec-023-62-we-are-only-interested-in-generalized-dehn-su",
+   "title": "We are only interested in generalized Dehn surgeries on one cusp of W , so we",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-024-2-z-recall-that-w",
+   "title": "Z. Recall that W",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-025-2-z",
+   "title": "Z:",
+   "pages": "26-27"
+  },
+  {
+   "id": "sec-026-2-pgl2c",
+   "title": "PGL2C:",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-027-2-psl2qpzi",
+   "title": "PSL2Q(pz;i):",
+   "pages": "28-28"
+  },
+  {
+   "id": "sec-028-2-z-2q-is-an-arbitrary-integer-assume-p-0-then-6",
+   "title": "Z, 2q is an arbitrary integer.) Assume p = 0. Then (6.4) and (6.5) imply that",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-029-7-arithmeticity-of-chain-links",
+   "title": "Arithmeticity of chain links",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-030-8-commensurators-of-chain-links-proofs",
+   "title": "Commensurators of chain links: proofs",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-031-9-the-dodecahedral-knots-of-aitchison-and-rubins",
+   "title": "The dodecahedral knots of Aitchison and Rubinstein",
+   "pages": "34-34"
+  },
+  {
+   "id": "sec-032-91-one-of-the-original-motivating-questions-for",
+   "title": "One of the original motivating questions for this work was the question: does",
+   "pages": "34-35"
+  },
+  {
+   "id": "sec-033-10-further-comments",
+   "title": "Further comments",
+   "pages": "35-36"
+  },
+  {
+   "id": "sec-034-102-we-do-not-yet-know-an-example-of-a-cocompact",
+   "title": "We do not yet know an example of a cocompact Kleinian group \u0000 with invariant",
+   "pages": "36-37"
+  },
+  {
+   "id": "sec-035-references",
+   "title": "References",
+   "pages": "37-38"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "abstract",
+   "opening-text"
+  ],
+  "note": "Written after reading the document, not assembled mechanically. Regeneration preserves this (summarize-library keeps kind==\"agent\"). The \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

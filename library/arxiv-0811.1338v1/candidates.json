@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-0811.1338v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "9a57cb6e014d3ead46a259490c046a5a76877c1e3f4dcc0c18c0df748c4adcc2",
+  "file": "0811.1338v1.pdf"
+ },
+ "provenance": {
+  "title": "Modern Theory of Nuclear Forces E. Epelbaum\u2217",
+  "authors": "Forschungszentrum J\u00a8 ulich, Institut f\u00a8 ur Kernphysik (IKP-3) and J\u00a8 ulich Center for Hadron Physics, D-52425 J\u00a8 ulich",
+  "arxiv": {
+   "id": "0811.1338",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "9 Nov 2008"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "remark": 1
+  },
+  "formalization_candidates": 0
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "ably, even the N 4LO/ contributions to the two-",
+   "section_file": "sections/sec-017-2-charge.md",
+   "section_title": "(charge-",
+   "pages": "20-21",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

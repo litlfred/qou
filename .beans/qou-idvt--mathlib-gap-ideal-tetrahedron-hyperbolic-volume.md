@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T08:00:00Z
-updated_at: 2026-08-08T08:00:00Z
+updated_at: 2026-08-16T02:35:38Z
 ---
 
 Split out so two beans stop each carrying the same "large Mathlib gap" note.
@@ -122,3 +122,157 @@ them.
 
 Revised tiering: T1 (Lobachevsky on top of `Cl_2`) → T2 (`Vol` as the sum) →
 **T3-core DONE** → T3-plumbing (second-derivative test) ⇒ `qou-krvm` (iv).
+
+---
+
+## 2026-08-08 (later) — T1 IS DONE. Two claims in this bean were stale.
+
+`QOU/Archimedean/LobachevskyDerivative.lean` + `IdealTetrahedronShapeBridge.lean`,
+both sorry-free (`#print axioms` clean, cone-built).
+
+**Correction 1 — "the corpus has `Cl_2` but no `Λ`" was already false when
+written.** `BlochWignerLobachevsky` has carried `Lob t = Cl_2 (2*t)/2` plus
+`Lob_neg` / `Lob_zero` / `Lob_pi_div_two` / `Lob_pi` all along, and
+`QOU/Knot/Clausen.lean` has carried `hasDerivAt_Cl_2_series`
+(`Cl₂'(θ) = −log(2 sin(θ/2))` on `(0,2π)`). The same stale sentence is repeated
+in `IdealTetrahedronConcavity.lean`'s docstring; both are now corrected.
+
+**What was genuinely missing** was `Λ`'s OWN derivative — one chain rule away,
+and the thing that makes `Lob` the primitive `Λ(x) = −∫₀ˣ log|2 sin t| dt`
+rather than a rescaled `Cl₂`:
+
+  * `hasDerivAt_Lob` — `Λ'(t) = −log(2 sin t)` on `(0,π)`
+  * `hasDerivAt_deriv_Lob` / `deriv_deriv_Lob` — **`Λ''(t) = −cot t`**, which
+    `IdealTetrahedronConcavity` had only in prose while writing its Hessian in
+    `cot`. It is now a theorem, so that Hessian is the Hessian OF the
+    Lobachevsky volume sum.
+
+**Correction 2 — `Λ` is NOT concave on `(0,π)`.** `Λ'' = −cot` is negative only
+on `(0,π/2)` and is POSITIVE on `(π/2,π)` (`deriv_deriv_Lob_neg` / `_pos`, both
+proved). Concavity of the tetrahedron volume comes from the SUM via
+`cot_add_cot_pos`, not from `Λ` termwise. Recorded because "Λ''=−cot, so Λ is
+concave" is the plausible false next step, and the octahedral point
+`(π/4,π/4,π/2)` sits exactly at the sign change.
+
+**Bonus — the shape bridge.** `AngleTriple` is *precisely* what
+`tetAngles_sum_eq_pi` produces, so `BlochWignerLobachevsky` and
+`IdealTetrahedronConcavity` were describing one object from opposite ends with
+no link. `AngleTriple.ofShape (z) (hz : 0 < z.im)` is the missing constructor;
+concavity and the exact `det = 1` now transport to shape coordinates.
+
+Its hypothesis is settled too:
+`computations/qbeta/descartes_lambda_shape_upper_half_plane.py` shows the
+Descartes cubic has NEGATIVE discriminant (−18.948) at both anchors, so
+`z_q = λ(𝓔_q)` is necessarily non-real — a sign fact, no fit. (Two side
+findings there, both scope-(a) and unwired: `D(z_q) = 0.91496` sits 0.11% off
+Catalan — a near-match, not an identity — and `ξ = D/ℏ_q² = 93.2`, which
+contradicts `conj:crossing-graded-mass-expansion`'s own "perturbative /
+`ξ → 0`" framing.)
+
+**Revised tiering — 2 of 4 closed:**
+T1 **DONE** → T2 (`Vol` = the Λ-sum; GEOMETRIC, still open) → T3-core **DONE**
+→ T3-plumbing (`C²` second-derivative test, still open) ⇒ `qou-krvm` (iv).
+
+Still NOT closed, and not axiomatised anywhere per this bean's GUARD: T2 and
+T3-plumbing. Bean stays open.
+
+
+
+--------
+
+## 2026-08-15 (PR #5142) — T2 packaged as a §3b-cond conditional class; STILL OPEN
+
+New file QOU/Archimedean/MostowIdealTetVolume.lean (lean-direct exit 0,
+#print axioms = [propext, Classical.choice, Quot.sound], NO sorryAx).
+Does NOT close T2 and does NOT close qou-krvm (iv). It records the exact
+remaining gap and packages it honestly.
+
+**Sharpened gap statement.** The bean's older notes framed T2 as "Vol =
+the Λ-sum (GEOMETRIC, still open)". Measured against the corpus, the
+gap is narrower than that: the ANALYTIC identity is ALREADY PROVED,
+sorry-free, against the genuine dx dy dz/z³ measure —
+`hypVolume_chimney_inscribedTriangle` (OrthoschemeTiling):
+  hypVolume (chimney (inscribedTriangle R t α β γ) R) = ofReal(Λα+Λβ+Λγ).
+So "the Λ-sum IS the real hyperbolic volume of a concrete region" is
+done (Milnor circumcentre subdivision, OrthoschemeLambdaSum + Tiling).
+The ONE remaining piece is Milnor's geometric identification: that the
+chimney over the inscribed triangle IS the ideal tetrahedron of dihedral
+angles (α,β,γ). Mathlib has no ideal simplices — that cannot yet be
+stated, let alone proved (qou-5gai H-tier).
+
+**What the class does (§3b-cond, non-laundering).**
+- class MostowIdealTetVolume — PRIMARY conjecture; content field
+  `region_eq_chimney` axiomatises the geometric INPUT (region = chimney),
+  NOT the volume conclusion.
+- idealTetVolume_eq_lambda_sum [MostowIdealTetVolume] — DERIVES
+  Vol = Λα+Λβ+Λγ by rw-ing the region identity and applying the PROVED
+  analytic theorem. Genuine derivation, not a self-assuming projection.
+- Non-vacuity is an `example : Nonempty ...` (region = a chimney,
+  shape-witness) — deliberately NOT a global instance, so the theorem
+  stays conditional and cannot fire on any real ideal tetrahedron.
+- NO instance for the framework's genuine ideal tetrahedron — the honest
+  open state. region_eq_chimney_is_restrictive gives §3b-tax non-degen.
+
+**qou-krvm (iv) is now conditional-on-class, not proved.** Its analytic
+half (concavity+invariance of the Λ-sum) was already done
+(tetVol_strictConcaveOn); T2 was the geometric half, now conditional.
+
+Bean STAYS OPEN. The GUARD holds: no instance discharges the geometric
+input; the class is the labelled open conjecture, not a close.
+
+--------
+
+## 2026-08-15 (PR #5157) — T2 attempt: region_eq_chimney NOT dischargeable; verdict OPEN. Unconditional volume bridge added.
+
+ATTEMPT to discharge `MostowIdealTetVolume.region_eq_chimney` and provide the
+real instance (which would close T2 + qou-krvm (iv)).
+
+**VERDICT: region_eq_chimney is NOT provable on main; NO genuine instance is
+possible.** Sharpened reason: *the subject does not exist as a defined object.*
+`tetRegion` is an ABSTRACT class field, so not even a single `⊆` containment is
+statable, let alone `tetRegion = chimney`. There is no independent definition of
+"the ideal tetrahedron of dihedral angles (α,β,γ) as a REGION of H³" anywhere:
+
+- `IdealTetrahedronRegion.lean`: `chimney` is over an ARBITRARY base; the
+  region↔tetrahedron identification is explicitly "not provable without
+  hyperbolic geometry Mathlib does not have".
+- `MathlibExt/IdealTriangulation.lean`: `IdealTetrahedron` is only a shape
+  parameter z:ℂ; `IdealTetrahedron.volume := BlochWigner_lob z` is a NUMBER, not
+  a region ("the identification with a hyperbolic volume in the metric sense is
+  not available").
+- 0 hyperbolic-geometry modules: no ideal vertices of ∂H³, no geodesic
+  planes/half-spaces, no dihedral angle of an ideal simplex.
+
+The §3b-cond conditional-class packaging in MostowIdealTetVolume is the correct
+honest open state; the GUARD holds — no instance was fabricated.
+
+**EXACT remaining step:** DEFINE the region `T_{αβγ} ⊆ upperHalfSpace` as the
+intersection of four hyperbolic geodesic half-spaces (one hemisphere face + three
+vertical faces from the inscribed triangle's chords), whose bounding planes meet
+at IDEAL vertices on ∂H³ with dihedral angles (α,β,γ); then prove
+`T_{αβγ} = chimney(inscribedTriangle 1 t α β γ) 1`. The geodesic-plane primitive
+and the ideal-vertex/dihedral-angle notions are the missing Mathlib
+infrastructure. NOTE: decomposing the chimney into its four bounding half-spaces
+is trivial unfolding and is NOT progress — calling those pieces "geodesic" is
+unbacked naming (that IS the missing metric content).
+
+**qou-krvm (iv): unchanged — conditional-on-class, NOT proved.** Analytic half
+(concavity+invariance of the Λ-sum) already done (`tetVol_strictConcaveOn`);
+geometric half is T2, conditional via `idealTetVolume_eq_lambda_sum`.
+
+**GENUINE PARTIAL added** (PR #5157, `IdealTetVolumeChimneyBridge.lean`;
+lean-direct exit 0; `#print axioms` = [propext, Classical.choice, Quot.sound],
+NO sorryAx / NO added axiom): `blochWigner_lob_eq_hypVolume_chimney` — for acute
+shapes, `hypVolume(chimney(inscribedTriangle 1 t (α z)(β z)(γ z)) 1) =
+ENNReal.ofReal (BlochWigner_lob z)`. The Bloch–Wigner ideal-tet volume D(z) (=
+`IdealTetrahedron.volume`) IS the genuine dx dy dz/z³ measure of the concrete
+normalized chimney. Composes the proved `hypVolume_chimney_inscribedTriangle`
+with the def of `BlochWigner_lob`; joins the Archimedean-measure and
+Knot/Bloch–Wigner subsystems and upgrades `IdealTetrahedron.volume`'s "not a
+metric volume" apology for acute shapes.
+
+**GUARD on the partial: it is a VOLUME equality, NOT a REGION equality.** Equal
+volume ≠ equal set — it does NOT prove the ideal tetrahedron IS the chimney;
+region_eq_chimney (T2) stays OPEN; (iv) not discharged; no instance/axiom.
+
+Bean STAYS OPEN.

@@ -1,6 +1,6 @@
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.Finset.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Field.Basic
 import Mathlib.Tactic
 
 
@@ -16,55 +16,54 @@ The recurrence Φ_{n+1}(x; q) = (1 - x q^n)^{-1} · Φ_n(x; q) is the
 algebraic shadow of the inductive filtration step that drives jet-
 stratified GB reduction.
 
+## Base ring (§7c): the file splits at the reciprocal
+
+The **denominator side** — `denomPoly`, its unfold lemmas, the root
+characterisation, and the `AlgebraicCuspComplete` predicate — is a
+polynomial identity in `q` and `x` and is stated over `[CommRing R]`.
+Nothing there divides.
+
+The **reciprocal side** — `partialProduct = (x; q)_n⁻¹` — genuinely needs
+a field, and this is not scaffolding that could be moved to a unit: the
+element being inverted, `(x; q)_n`, **provably vanishes**. That is the
+whole subject of the file — `denomPoly_root_iff` exhibits the roots and
+`AlgebraicCuspComplete` is *defined* as `(x; q)_n = 0`, the algebraic
+address of a cusp. An inverse of something that can vanish is exactly the
+case a `Field` (equivalently a `GroupWithZero`, whose `0⁻¹ = 0` convention
+makes `partialProduct` total) is for; a `Units`/`Invertible` restatement
+would make the pole locus uninhabited and so would destroy the content.
+
 -- Ref: [manuscript] def:q-pochhammer-partial-product
 -- Ref: [faddeev1994] Faddeev, "Current-like variables in massive and massless integrable models," Lectures 1994
 -/
 
 namespace QOU.QPochhammer
 
+section Denominator
+
+variable {R : Type*} [CommRing R]
+
 /-- Denominator polynomial `(x; q)_n = ∏_{k=0..n-1} (1 - x q^k)` as a
-    real-valued partial product. The roots of this polynomial in `x`
+    partial product over the base ring. The roots of this polynomial in `x`
     are exactly `q^{-k}` for `k = 0, .., n-1`, and they are the
     addresses of the algebraic poles of the categorical state sum. -/
 -- Ref: [manuscript] def:q-pochhammer-partial-product
-def denomPoly (q x : ℝ) : ℕ → ℝ
+def denomPoly (q x : R) : ℕ → R
   | 0 => 1
   | n + 1 => (1 - x * q ^ n) * denomPoly q x n
 
 /-- One-step unfold of the denominator. -/
-@[simp] theorem denomPoly_succ (q x : ℝ) (n : ℕ) :
+@[simp] theorem denomPoly_succ (q x : R) (n : ℕ) :
     denomPoly q x (n + 1) = (1 - x * q ^ n) * denomPoly q x n := rfl
 
-@[simp] theorem denomPoly_zero (q x : ℝ) : denomPoly q x 0 = 1 := rfl
-
-/-- The q-Pochhammer partial product `Φ_n(x; q) = 1 / (x; q)_n`.
-    Defined via the recurrence `Φ_{n+1} = (1 - x q^n)^{-1} · Φ_n`.
-    The recurrence is the inductive filtration step on the algebraic
-    side of the QOU framework. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product
-noncomputable def partialProduct (q x : ℝ) (n : ℕ) : ℝ :=
-  (denomPoly q x n)⁻¹
-
-@[simp] theorem partialProduct_zero (q x : ℝ) :
-    partialProduct q x 0 = 1 := by
-  simp [partialProduct, denomPoly]
-
-/-- Recursive step of the partial product: adding one filtration
-    level multiplies by exactly one new pole factor. -/
--- Ref: [manuscript] def:q-pochhammer-partial-product §recursive structure
-theorem partialProduct_succ (q x : ℝ) (n : ℕ)
-    (hk : 1 - x * q ^ n ≠ 0) (hd : denomPoly q x n ≠ 0) :
-    partialProduct q x (n + 1)
-      = (1 - x * q ^ n)⁻¹ * partialProduct q x n := by
-  unfold partialProduct
-  rw [denomPoly_succ, mul_inv]
+@[simp] theorem denomPoly_zero (q x : R) : denomPoly q x 0 = 1 := rfl
 
 /-- The factor index `k` is a root of `denomPoly q x n` precisely when
     `1 - x q^k = 0`, i.e. when `x = q^{-k}` (assuming `q^k ≠ 0`).
     These roots are the algebraic addresses of the geometric cusps
     that bound the active JSJ piece on the archimedean side. -/
 -- Ref: [manuscript] def:q-pochhammer-partial-product §interpretation
-theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :
+theorem denomPoly_root_iff (q x : R) (n : ℕ) (k : ℕ) (hk : k < n) :
     1 - x * q ^ k = 0 → denomPoly q x n = 0 := by
   intro hroot
   -- Induction on n peels off the (k+1)th factor.
@@ -87,8 +86,42 @@ theorem denomPoly_root_iff (q x : ℝ) (n : ℕ) (k : ℕ) (hk : k < n) :
     `shared-denominator-cusp-holonomy.lean`; the present predicate is
     the purely algebraic shadow. -/
 -- Ref: [manuscript] conj:shared-denominator-cusp-holonomy
-def AlgebraicCuspComplete (q x : ℝ) (n : ℕ) : Prop :=
+def AlgebraicCuspComplete (q x : R) (n : ℕ) : Prop :=
   denomPoly q x n = 0
+
+end Denominator
+
+section Reciprocal
+
+/-! The reciprocal side inverts `(x; q)_n`, which vanishes exactly on the
+cusp locus of `AlgebraicCuspComplete` above, so the inverse is a genuine
+field inverse and not a unit (§7c). -/
+
+variable {R : Type*} [Field R]
+
+/-- The q-Pochhammer partial product `Φ_n(x; q) = 1 / (x; q)_n`.
+    Defined via the recurrence `Φ_{n+1} = (1 - x q^n)^{-1} · Φ_n`.
+    The recurrence is the inductive filtration step on the algebraic
+    side of the QOU framework. -/
+-- Ref: [manuscript] def:q-pochhammer-partial-product
+noncomputable def partialProduct (q x : R) (n : ℕ) : R :=
+  (denomPoly q x n)⁻¹
+
+@[simp] theorem partialProduct_zero (q x : R) :
+    partialProduct q x 0 = 1 := by
+  simp [partialProduct, denomPoly]
+
+/-- Recursive step of the partial product: adding one filtration
+    level multiplies by exactly one new pole factor. -/
+-- Ref: [manuscript] def:q-pochhammer-partial-product §recursive structure
+theorem partialProduct_succ (q x : R) (n : ℕ)
+    (hk : 1 - x * q ^ n ≠ 0) (hd : denomPoly q x n ≠ 0) :
+    partialProduct q x (n + 1)
+      = (1 - x * q ^ n)⁻¹ * partialProduct q x n := by
+  unfold partialProduct
+  rw [denomPoly_succ, mul_inv]
+
+end Reciprocal
 
 /- Asymptotic equivalence with the Bloch–Wigner / classical
     dilogarithm `Li₂` is **not stated here**. The genuine asymptotic

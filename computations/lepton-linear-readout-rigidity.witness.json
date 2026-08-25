@@ -1,15 +1,15 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-07T22:04:43.141471+00:00",
-  "commitSha": "1485a272701034b27dd53e75aca3af04301c7f56",
+  "computedAt": "2026-08-10T01:56:30.296110+00:00",
+  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
   "assertions": [],
   "allPassed": true,
   "durationMs": 0,
   "computation": "lepton-linear-readout-rigidity",
   "scriptFile": "lepton_linear_readout_rigidity.py",
-  "scriptHash": "97bdcfeb8297",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "35d7b81eea3f",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -18,7 +18,12 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Bean qou-lsp9 second pass. Every linear functional on the 2-dimensional H_2(q) evaluated along the lepton generation braids obeys one two-step recursion with ratio q^2; the canonical Markov-trace readout is excluded quantitatively, and the surviving node escape is identified as a 3-parameter fit to 2 numbers rather than a derivation.",
   "contentBlock": "prop:lepton-continuant-recurrence",
@@ -26,7 +31,7 @@
     "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
     "q0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
     "h": "0.2090602987956393154308462131296749438597574952630225625334068739226195",
-    "z_markov": "0.4993203341836944524134426802576663037519481640415322074643519921624937"
+    "z_markov": "0.6126880371464652515958298639458992480263083915450636084720501751483235"
   },
   "data": {
     "master_identity": {
@@ -74,19 +79,19 @@
       },
       "markov_trace_canonical": {
         "alpha": "1.0",
-        "beta": "0.4993203341836944524134426802576663037519481640415322074643519921624937",
-        "A_growing_amplitude": "1.554234876876163011757026018413052878831934809128936395512321233960012",
-        "B_decaying_amplitude": "0.5501531813830186260760911409367537238017260521213044885701115712437093",
-        "ratio_w3_to_w5": "1.359896872299066972045028911534353578654194795139253505358241739310806",
-        "ratio_w5_to_w7": "1.30835632989843014011712543672835517040696026411067023801726366952216",
+        "beta": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
+        "A_growing_amplitude": "1.68007059914055885843147808426744111706658212083610233172771442280824",
+        "B_decaying_amplitude": "0.4480181449737949271616735707318049322169006979191049722330407540693258",
+        "ratio_w3_to_w5": "1.321645129894057152441618246454895173423507438558635034157226842543892",
+        "ratio_w5_to_w7": "1.287073450327481103002964116086998323538516703332729724416414932770351",
         "log_increments": [
-          "0.3074088676809196014211262703241247364970813307019749680381184294134995",
-          "0.2687716394042192221842391108682306951593896286309495816533508492036603"
+          "0.2788772711238082834319012473836544465143412908361285851697113428418888",
+          "0.2523709979470280239738127828288937877920283035972598986183553723304497"
         ],
-        "bend_r1_over_r2": "1.039393352730320805835088376243054941130424746969061528341800101164447",
-        "node_index_n_star": "-4.976685558104195333497643018648352520723725397620032920045171850869832",
-        "p_required_step_1": "17.3436726163020582951205180247600180144551466629411667785914200553519",
-        "p_required_step_2": "10.50107827599743793160031426677849767999174826442317663813095752625694"
+        "bend_r1_over_r2": "1.026860688920107614218658454795051632307593060557977041960425498438175",
+        "node_index_n_star": "-6.33385200426199853002775776425466071252212476148380868874553589942544",
+        "p_required_step_1": "19.11808280008237423319699311582682138803853317473315428657530070145333",
+        "p_required_step_2": "11.18350383646014564086409374730533758572141215046837092648337178979366"
       },
       "sigma_only": {
         "alpha": "0.0",
@@ -154,19 +159,19 @@
       }
     },
     "canonical_markov_readout": {
-      "z": "0.4993203341836944524134426802576663037519481640415322074643519921624937",
+      "z": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
       "alpha_beta": [
         "1",
-        "0.4993203341836944524134426802576663037519481640415322074643519921624937"
+        "0.6126880371464652515958298639458992480263083915450636084720501751483235"
       ],
-      "u_equals_A_over_B": "2.825094772639511637043307749913955589935951425401115443711803123367883",
+      "u_equals_A_over_B": "3.7500057039851098688169146963119098244704619324301465552991620600596",
       "ratios": [
-        "1.359896872299066972045028911534353578654194795139253505358241739310806",
-        "1.30835632989843014011712543672835517040696026411067023801726366952216"
+        "1.321645129894057152441618246454895173423507438558635034157226842543892",
+        "1.287073450327481103002964116086998323538516703332729724416414932770351"
       ],
-      "bend": "1.039393352730320805835088376243054941130424746969061528341800101164447",
+      "bend": "1.026860688920107614218658454795051632307593060557977041960425498438175",
       "observed_bend": "12.29517288103792224609294396199356043783153431909516729669229059917404",
-      "p_required_to_match_bend": "64.94272101208837075799423475497748615134870673752213555903572327349124",
+      "p_required_to_match_bend": "94.66463730752661926914326255530574872227289753063118228836013353652464",
       "verdict": "EXCLUDED. The derived readout has no node in the generation window, so its bend is 1 + O(q^{-2n}) while the observed bend is 12.3; matching it needs the exponent above, which is the same exponential fine-tuning the net showed. This is the case that matters, because z is derived rather than chosen."
     },
     "node_escape": {
@@ -181,7 +186,7 @@
           "residual": "8.693451915673643872808754519252280109455229950213572661999310294338081e-69",
           "implied_beta_over_alpha": "-0.5276110826759725258295532213647437510558318857154179335631237624851254",
           "sign_of_beta_over_alpha": "negative",
-          "ratio_to_canonical_z": "-1.056658514695838961335989589899111972933875020730696461362746722565475"
+          "ratio_to_canonical_z": "-0.8611414793297901822749484825884863436227027170571811053689303257707412"
         },
         {
           "u": "0.6706191298907358467978648718257626929519030021406286523216515656836181",
@@ -189,10 +194,10 @@
           "residual": "1.912559421448201652017925994235501624080150589046985985639848264754378e-68",
           "implied_beta_over_alpha": "-0.1921538716679803365618193699949645725434056615059379874082068013863846",
           "sign_of_beta_over_alpha": "negative",
-          "ratio_to_canonical_z": "-0.3848308560918511345468867157737836999369429112488877470346124692772265"
+          "ratio_to_canonical_z": "-0.3136243243183239613244870792402100275301821772025435622438900814390978"
         }
       ],
-      "canonical_z": "0.4993203341836944524134426802576663037519481640415322074643519921624937",
+      "canonical_z": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
       "every_escape_needs_opposite_signs": true,
       "why_positivity_closes_it": "EVERY solution has beta/alpha < 0, i.e. requires phi(1) and phi(sigma_0) of OPPOSITE SIGN. For q > 1 the Hecke parameter h = q - 1/q is positive, so the continuant is positive from b_1 on; hence any readout with alpha >= 0 and beta > 0 is strictly positive at every index and has NO node at all. The canonical Markov trace is such a readout (tr_M(1) = 1 > 0, tr_M(sigma_0) = z > 0), so the escape is unavailable to it. Sorry-free Lean twin (lepton_continuant_positivity.lean): QOU.Archimedean.linFunctionalK_pos / markovReadout_pos.",
       "why_it_would_not_be_a_derivation_anyway": "even granting a sign-indefinite readout, the class (A/B, g, p) carries THREE free parameters against TWO observed ratios -- underdetermined, so a solution family exists for trivial counting reasons and predicts nothing at winding 9."
@@ -202,5 +207,8 @@
   },
   "caveats": [
     "Scope-(b) covers H_2(q)-linear readouts with no node in the generation window (including the canonical Markov trace). Readouts with a node are NOT excluded; they are unconstrained (3 parameters, 2 observations). Nothing here touches non-linear or non-H_2 bridges -- an additive interface term, or a route where the generation index enters through linking with the hyperbolic Higgs knot 4_1 -- which remain open (bean qou-htk4)."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.readouts.sigma_only.A_growing_amplitude, parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,0 +1,48 @@
+ee
+
+‘arXiv:alg-geom/9408004v1 9 Aug 1994:
+
+CUBICS, INTEGRABLE SYSTEMS, AND
+
+CALABI-YAU THREEFOLDS
+
+Ron Donagif]
+
+University of Pennsylvania
+and
+
+Eyal Markmanf|
+University of Michigan
+
+To Professor Hirzebruch, on his 65" birthday
+
+80. Introduction
+
+In this work we construct an analytically completely integrable Hamil-
+tonian system which is canonically associated to any family of Calabi-Yau
+threefolds. The base of this system is a moduli space of gauged Calabi- Yaus
+in the family, and the fibers are Deligne cohomology groups (or intermediate
+Jacobians) of the threefolds. This system has several interesting properties:
+the multivalued sections obtained as Abel-Jacobi images, or “normal func-
+tions”, of a family of curves on the generic variety of the family, are always
+Lagrangian; the natural affine coordinates on the base, which are used in
+the mirror correspondence, arise as action variables for the integrable sys-
+tem; and the Yukawa cubic, expressing the infinitesimal variation of Hodge
+structure in the family, is essentially equivalent to the symplectic structure
+on the total space.
+
+We begin our study by exploring this equivalence in a much more gen-
+eral context. The general question is as follows: Given a family of abelian
+varieties, when is there a symplectic form on the total space with respect
+to which the abelian varieties are Lagrangian? This turns out to involve a
+symmetry condition on the partials of the period map for the family. Equiv-
+alently, this amounts to the existence of a field of cubics on the tangent
+bundle to the base, such that the differential of the period map at each
+point is given by contraction with the cubic. We give several versions of
+this ‘cubic condition’ in §1. For most of the examples and applications, we
+refer the reader to the survey [DM]. The one example which we work out in
+detail here is the integrable system of a Calabi-Yau family, where the ‘cubic’
+is Yukawa’s.
+
+‘Supported by grants from NSF and NSA
+2Supported by Rackham Fellowship, University of Michigan, 1993

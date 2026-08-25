@@ -1,0 +1,172 @@
+---
+doc_id: arxiv-0904.1556v2
+doc_title: "The Algebra of Grand Uniﬁed Theories"
+section_id: sec-009-232-hypercharge-and-u1
+section_title: "Hypercharge and U(1)"
+section_number: 2.3.2
+pages: 22-25
+source_pdf: 0904.1556v2.pdf
+source_sha256: a1a43786d817f085
+doc_brief: "The Algebra of Grand Unified Theories — The Standard Model is the best tested and most widely accepte d theory of elementary particles we have today."
+---
+In Section 2.2.2, we saw how to extend the notion of isospin to weak iso spin, which
+proved to be more fundamental, since we saw in Section 2.3.1 how this g ives rise to
+interactions among left-handed fermions mediated via W bosons.
+We grouped all the fermions into SU(2) representations. When we d id this in
+Section 2.1, we saw that the SU(2) representations of particles we re labeled by a
+quantity, the hypercharge Y , which relates the isospin I3 to the charge Q via the
+Gell-Mann–Nishijima formula
+Q =I3 +Y/ 2.
+We can use this formula to extend the notion of hypercharge to weak hyper-
+charge, a quantity which labels the weak isospin representations. For left- handed
+quarks, this notion, like weak isospin, coincides with the old isospin and hyper-
+charge. We have weak hypercharge Y = 1
+3 for these particles:
+Q(uL) = I3(uL) +Y/ 2 = 1
+2 + 1
+6 = 2
+3
+Q(dL) = I3(dL) +Y/ 2 = − 1
+2 + 1
+6 = − 1
+3.
+But just as weak isospin extended isospin to leptons, weak hyperch arge extends
+hypercharge to leptons. For left-handed leptons the Gell-Mann–N ishijima formula
+holds if we set Y = −1:
+Q(νL) = I3(νL) +Y/ 2 = 1
+2 − 1
+2 = 0
+Q(e−
+L ) = I3(e−
+L ) +Y/ 2 = − 1
+2 − 1
+2 = −1.
+Note that the weak hypercharge of quarks comes in units one-thir d the size of
+the weak hypercharge for leptons, a reﬂection of the fact that q uark charges come
+in units one-third the size of lepton charges. Indeed, thanks to th e Gell-Mann–
+Nishijima formula, these facts are equivalent.
+For right-handed fermions, weak hypercharge is even simpler. Sinc e I3 = 0 for
+these particles, the Gell-Mann–Nishijima formula reduces to
+Q =Y/ 2.
+22
+So, the hypercharge of a right-handed fermion is twice its charge. In summary, the
+fermions have these hypercharges:
+The First Generation of F ermions — Hypercharge
+Name Symbol Hypercharge
+Y
+Left-handed leptons
+( νL
+e−
+L
+)
+−1
+Left-handed quarks
+( uL
+dL
+)
+1
+3
+Right-handed neutrino νR 0
+Right-handed electron e−
+R −2
+Right-handed up quark uR 4
+3
+Right-handed down quark dR − 2
+3
+But what is the meaning of hypercharge? We can start by reviewing o ur answer
+for the quantity I3. This quantity, as we have seen, is related to how particles inter-
+act via W bosons, because particles with I3 = ± 1
+2 span the fundamental represen-
+tation of SU(2), while the W bosons span the complexiﬁed adjoint representation,
+which acts on any other representation. Yet there is a deeper con nection.
+In quantum mechanics, observables such as I3 correspond to self-adjoint opera-
+tors. We will denote the operator corresponding to an observable with a caret; for
+example, ˆI3 is the operator corresponding to I3. A state of speciﬁc I3, such as νL,
+which has I3 = 1
+2 , is an eigenvector,
+ˆI3νL = 1
+2νL
+with an eigenvalue that is the I3 of the state. This makes it easy to write ˆI3 as a
+matrix when we let it act on the C2 with basis νL and e−
+L , or any other doublet.
+We get
+ˆI3 =
+( 1
+2 0
+0 − 1
+2
+)
+.
+Note that this is an element of su(2) divided by i. So, it lies in sl(2, C), the
+complexiﬁed adjoint representation of SU(2). In fact it equals 1
+2W 0, one of the
+gauge bosons. So, up to a constant of proportionality, the obser vable ˆI3 is one of
+the gauge bosons!
+Similarly, corresponding to hypercharge Y is an observable ˆY . This is also, up
+to proportionality, a gauge boson, though this gauge boson lives in t he complexiﬁed
+adjoint rep of U(1).
+Here are the details. Particles with hypercharge Y span irreps CY of U(1).
+Since U(1) is abelian, all of its irreps are one-dimensional. By CY we denote the
+one-dimensional vector space C with action of U(1) given by
+α ·z =α3Yz.
+23
+The factor of 3 takes care of the fact that Y might not be an integer, but is only
+guaranteed to be an integral multiple of 1
+3 . For example, the left-handed leptons
+νL and e−
+L both have hypercharge Y = −1, so each one spans a copy of C−1:
+νL ∈ C−1, e −
+L ∈ C−1
+or, more compactly,
+νL,e −
+L ∈ C−1 ⊗ C2
+where C2 is trivial under U(1).
+In summary, the fermions we have met thus far lie in these U(1) repr esentations:
+The First Generation of F ermions — U(1) Representations
+Name Symbol U(1) rep
+Left-handed leptons
+( νL
+e−
+L
+)
+C−1
+Left-handed quarks
+( uL
+dL
+)
+C 1
+3
+Right-handed neutrino νR C0
+Right-handed electron e−
+R C−2
+Right-handed up quark uR C 4
+3
+Right-handed down quark dR C− 2
+3
+Now, the adjoint representation u(1) of U(1) is just the tangent space to the
+unit circle in C at 1. It is thus parallel to the imaginary axis, and can be identiﬁed
+with iR. It is generated by i. i also generates the complexiﬁcation, C ⊗ u(1) ∼
+= C,
+though this also has other convenient generators, like 1. Given a pa rticle ψ ∈ CY
+of hypercharge Y , we can diﬀerentiate the action of U(1) on ψ
+eiθ ·ψ =e3iYθψ
+and set θ = 0 to ﬁnd out how u(1) acts:
+i ·ψ = 3iYψ.
+Dividing by i we obtain
+1 ·ψ = 3Yψ.
+In other words, we have
+ˆY = 1
+3 ∈ C
+as an element of the complexiﬁed adjoint rep of U(1).
+Particles with hypercharge interact by exchange of a boson, called the B bo-
+son, which spans the complexiﬁed adjoint rep of U(1). Of course, s ince C is one-
+dimensional, any nonzero element spans it. Up to a constant of prop ortionality, the
+24
+B boson is just ˆY , and we might as well take it to be equal to ˆY , but calling it B
+is standard in physics.
+TheB boson is a lot like another, more familiar U(1) gauge boson—the photo n!
+The hypercharge force which the B boson mediates is a lot like electromagnetism,
+which is mediated by photons, but its strength is proportional to hy percharge rather
+than charge. As usual, we can draw the U(1) intertwining operator s as Feynman
+diagrams:
+B

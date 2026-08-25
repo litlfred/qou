@@ -37,6 +37,28 @@ in the QOU formalization.  Its purpose is twofold:
 > `docs/canonical-mass-formula-guardrail.md`,
 > `docs/canonical-derivation-cheat-sheet.md` §9.
 
+> **Pillar 1 carries less than its heading (bean `qou-szd6`).**  Pillar 1 is
+> stated below as "the volume constraint forces `Aut⊗(ω) ≅ SU(2)`".  The
+> conjunct actually proved is `emg.ext_sq_action g = 𝟙 exteriorSquare`,
+> discharged by projecting the `det_one` field of `QOU.SU2Emergence`
+> (`VolumeForm.lean`).  That structure has three fields — an abstract
+> `gaugeGroupType`, an action on `exteriorSquare`, and `det_one` — and
+> `exteriorSquare` is an unconstrained parameter.  **It mentions neither
+> `SU(2)` nor the rank of the fundamental object**, so what this synthesis
+> node checks is that a group acts trivially on some object, not that the
+> gauge group is `SU(2)`.  The two supporting lemmas
+> (`SU2EmergenceVolumeDeterminant`, `SU2EmergenceDaggerUnitarity`) are
+> single-field classes restating their own conclusions, with docstrings
+> recording the witness as pending a categorical-determinant formalisation in
+> Mathlib.
+>
+> This is a gap in the *formalisation*, not a claim that the theorem is
+> wrong — `prf:su2-emergence` is a real argument, but it takes the rank as an
+> input to both of its lemmas rather than deriving it.
+> `QOU.BraidsAndKnots.VolumeConstraintForcesFibreTwo` re-sources that rank
+> from the categorical volume constraint of `def:quantum-observable-universe`;
+> see bean `qou-n1dj` for what remains open.
+
 ## How to use
 
 ```
@@ -44,7 +66,7 @@ lake exe graph QOU.LightningPath   -- renders the full dependency DAG
 ```
 
 The resulting graph shows the critical path from `FrobeniusHopfData` through
-`SubstrateParameter`, `TopologicalMassDecomposition`, `ArchimedeanMassFormula`,
+`ArchimedeanSubstrateField`, `TopologicalMassDecomposition`, `ArchimedeanMassFormula`,
 and `HadronicMass` to `terminal_resolution_hadronic_mass`.
 -/
 

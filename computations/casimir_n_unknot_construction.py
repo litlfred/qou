@@ -75,7 +75,7 @@ from pathlib import Path
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from q_parameter import Q  # noqa: E402  (bootstraps qou_substrate path)
+from q_parameter import Q_MP as Q  # noqa: E402  (bootstraps qou_substrate path)
 import mpmath as mp  # noqa: E402
 from y_lambda_wenzl_bridge import (  # noqa: E402
     y_lambda_wenzl_bridge_numeric,
@@ -83,8 +83,9 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     partitions_of,
 )
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def regulator_independence_check():

@@ -32,11 +32,11 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "⁴He empirical (λ ⊢ 12) contribution accounting. Asks whether (4,4,4) is actually PSD-dominant per the PR #1289 framing, using the existing partial H_12 chi cache.",
+  "description": "\u2074He empirical (\u03bb \u22a2 12) contribution accounting. Asks whether (4,4,4) is actually PSD-dominant per the PR #1289 framing, using the existing partial H_12 chi cache.",
   "auditOnly": "docs/audits/2026-06-01-precision-residual-probes-workplan.md",
   "data": {
     "cache_anchor_q_0": "1.1099785955541805",
-    "cache_anchor_note": "Cache was generated at pre-2026-05-28 muon anchor q_0=1.10997859555…; current production anchor is q_proton=1.10997858275… (Δq ≈ 1.28e-8). Cross-anchor q-stability of the contribution table is plausible at this scale but not formally verified by this probe.",
+    "cache_anchor_note": "Cache was generated at pre-2026-05-28 muon anchor q_0=1.10997859555\u2026; current production anchor is q_proton=1.10997858275\u2026 (\u0394q \u2248 1.28e-8). Cross-anchor q-stability of the contribution table is plausible at this scale but not formally verified by this probe.",
     "cached_count": 24,
     "total_partitions": 77,
     "tr_M_at_q0": "0.055157787594843024826696911635220748993898254682885",
@@ -152,7 +152,7 @@
       "4+_rows": 0.001571427124013852
     },
     "partition_444_contribution_upper_bound": 2.36e-52,
-    "verdict": "(4,4,4) is NOT PSD-dominant for tr_M(β_⁴He) at q_proton. Bulk is in 2-row partitions (84.5% of |contribs|), led by (9, 3) at +29.09%. PR #1289's (4,4,4) framing requires reconciliation: either (a) it refers to a different ⁴He braid frame than the canonical Hoefsmit cache, or (b) it refers to a non-tr_M observable (e.g. the magic-A binding form B = ρ_F·m_e·A·8G has its own PSD structure decoupled from the bare Hoefsmit decomposition). Re-frame the ⁴He interface-operator research direction accordingly.",
-    "research_implication": "If (4,4,4) is not the dominant block of tr_M at q_proton, the categorical interface-operator research direction needs re-aiming: compute the H_12 A-operator extract at the actual top contributor ((9,3), (8,4), (10,2)) instead, and re-test the +5.87% gap closure against magic-A B = ρ_F·m_e·A·8G with structural ρ_F."
+    "verdict": "(4,4,4) is NOT PSD-dominant for tr_M(\u03b2_\u2074He) at q_proton. Bulk is in 2-row partitions (84.5% of |contribs|), led by (9, 3) at +29.09%. PR #1289's (4,4,4) framing requires reconciliation: either (a) it refers to a different \u2074He braid frame than the canonical Hoefsmit cache, or (b) it refers to a non-tr_M observable (e.g. the magic-A binding form B = \u03c1_F\u00b7m_e\u00b7A\u00b78G has its own PSD structure decoupled from the bare Hoefsmit decomposition). Re-frame the \u2074He interface-operator research direction accordingly.",
+    "research_implication": "If (4,4,4) is not the dominant block of tr_M at q_proton, the categorical interface-operator research direction needs re-aiming: compute the H_12 A-operator extract at the actual top contributor ((9,3), (8,4), (10,2)) instead, and re-test the +5.87% gap closure against magic-A B = \u03c1_F\u00b7m_e\u00b7A\u00b78G with structural \u03c1_F."
   }
 }

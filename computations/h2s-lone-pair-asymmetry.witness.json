@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:31.472914+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:48:48.946679+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "H₂O lones are symmetric (equal defects), H₂S lones are asymmetric",
@@ -17,7 +17,7 @@
   "computation": "h2s-lone-pair-asymmetry",
   "scriptFile": "h2s_lone_pair_asymmetry.py",
   "scriptHash": "2a607b41ca93",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,13 +27,15 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "The H₂S +2.1° residual is a lone-pair braid-word asymmetry. H₂O's two lone pairs are equivalent self-dual e⁻=σ₀σ₁σ₀ (palindromic defect 0,0 — symmetric). H₂S's are inequivalent: the inert 3s² (self-dual, defect 0) and the 3p_z (chiral, non-palindrome, defect 2ℓ=2). The defect mismatch (0 vs 2) is the asymmetry; the chiral p-lone's directional bias opens the orbital-locked 90° base. The asymmetry exists iff the s-channel is inert (pure-p, third row) — H₂O (s active) has none.",
   "contentBlock": "prop:symmetric-block-domain-weight",
   "parameters": {
-    "q": 1.1099785955573347
+    "q": 1.1099785827513808
   },
   "data": {
     "s_lone_word": [
@@ -59,6 +61,6 @@
     "h2s_defect_mismatch": 2,
     "finding": "The H₂S +2.1° is a braid-word asymmetry between its two lone pairs: the inert 3s² is the self-dual e⁻ (palindromic defect 0, ℓ=0), the 3p_z is chiral (defect 2, ℓ=1). H₂O has two EQUAL self-dual lones (defects 0,0) — symmetric, no tilt, clean 104.5°. The defect mismatch (0 vs 2) in H₂S — present only because the s-channel is inert (pure-p, third row) — gives the chiral p-lone a directional bias that opens the orbital-locked 90° base by ~+2°. So the residual is the structural signature of the inert s-pair, not a fit; exact magnitude needs the chiral-lone directional-repulsion model."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

@@ -1,0 +1,49 @@
+Meromorphic Solutions of Some Difference Equations 317
+
+Cluster set of y(x) as x->—©o on the real axis is a continuum. Hence }(x)
+must tend to the same root 2 of z= R(z), as x» — 00 on the real axis. Similarly, the
+cluster set of y(x) as Re x->— oo in 3(A) is a continuum, hence y(€+i7)—A, as E>
+—oo, for any 7. Combining this with the above argument, we obtain (4.5) for any
+compact set. ,
+
+Because of the fact y(x)—2—0 and
+
+D@+)D—a/ly@)—’4}e RQ) as Re x-+—00,
+we must have, obviously, | R’(4)|= 1. Q.E.D.
+
+Lemma 9. Suppose that
+(4.7) there is no maximally fixed value for R(w) (see Def. 2.2).
+
+Let py be a number such that po= R(t). If A(t) is the set defined in (2.14), then A(t)
+contains at least three distinct values p1, [1s, fs, Such that 1;# po.
+
+Proof. By (4.7), A,(y) contains a yy. A,(¢y) contains a pr po, pa Ail?)
+contains a fy fos fas Pe Q.E.D.
+
+Lemma 10. Suppose (4.7) and use the same notations as in lemma9. For any
+A>O0, there is a number a such that y(x)#p,; in X(A, a).
+
+Proof. Let m,,j=1, 2, 3, be integers such that R"(u,)=j. Suppose there is
+a sequence {x,}, X,=&,+in, € X(A), &,>—©, |€,|>m, and y(x,)=4. If yn»
+then we can suppose x/=x,+[]&,[l>é+in, —1<& <0, and y(x/)=/, which is a
+contradiction. Thus we have 7, =7.
+
+We can suppose that |&,—&,|>m, if n#k. Then, &,—&, can not be any
+integer. Thus, x/—x,+[é,[] lies in —1<Rex<0, Imx=y%. We have x4; if
+n#k, Hence x/-+,+ in, —1<&,<0, and y(x})=p, which is a contradiction.
+
+As for y, and , the arguments are the same as above. Q.E.D.
+
+Theorem 11. Suppose (4.7). Then, for any compact set #, we have (4.5) with
+(4.6).
+
+Proof. Take a sequence {€,}, €,>— 00. Let A>0 be arbitrarily chosen. By
+lemma 10, {y(€,+x), n=1, 2, ---} is a normal family on each compact subset of
+(A). As in the proof of theorem 8, we have y(€,+x)—>Y(x) uniformly on each
+compact set. Y(x) is a meromorphic solution of (1.3) which does not take three
+values /4,, /45 /4s) as seen by the theorem of Hurwitz [1, p. 176]. Hence Y(x) must be
+a constant 4 which satisfies (4.6), as in the proof of theorem 8. Q.E.D.
+
+Suppose (4.7) does not hold, i-e., R(w) has a maximally fixed value. Then, by
+a linear transformation, R(w) can be taken as a polynomial of degree at least 2. In
+this case the theorem 8 applies, and we have, by theorems 8 and 11,

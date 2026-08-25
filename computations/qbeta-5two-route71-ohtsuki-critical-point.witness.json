@@ -1,0 +1,73 @@
+{
+  "probe": "qbeta_5two_route71_ohtsuki_critical_point",
+  "beans": [
+    "qou-thmb",
+    "qou-xblo"
+  ],
+  "dps": 80,
+  "source": {
+    "ref": "Ohtsuki, Quantum Topol. 7 (2016) 669-735, DOI 10.4171/QT/83",
+    "file": "library/104171-qt-83/10.4171-qt-83.pdf",
+    "blob": "632e54acc09336ae9dbfc1207bef99a13a5f72a4",
+    "settles": "the 5_2 volume conjecture IS a published theorem -- bean qou-thmb recorded this as unverified memory; it is now verified from the paper."
+  },
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "Ohtsuki's critical-point system (1-x)y = 1, x(y-1)^2 = 1 (Appendix C) is solved exactly by y = 1/(1-x) with x a root of x^3 = (1-x)^2. Checked by residual of BOTH equations at all three roots",
+      "max_system_residual": "2.155749405e-81",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "THE IDENTIFICATION. {1 - y : y a root of the corpus saddle cubic y^2=(1-y)^3} equals the root set of Ohtsuki's x^3=(1-x)^2, exactly. So the corpus's 5_2 saddle cubic and Ohtsuki's volume-conjecture critical point are the same equation in coordinates differing by z -> 1-z -- the reflection already proved in Lean as cRogersL_add_one_sub",
+      "corpus_roots": [
+        "0.4301597090019467340886",
+        "(0.7849201454990266329557 - 1.307141278682045480492353j)",
+        "(0.7849201454990266329557 + 1.307141278682045480492353j)"
+      ],
+      "ohtsuki_roots": [
+        "0.5698402909980532659114",
+        "(0.2150798545009733670443 - 1.307141278682045480492353j)",
+        "(0.2150798545009733670443 + 1.307141278682045480492353j)"
+      ],
+      "max_setwise_mismatch": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE PAYOFF. At the complex critical point, Im Vhat = Vol(5_2) -- agreeing with the corpus's own SnapPy HP 50-dps constant to its full recorded precision. This is the bridge from the corpus's saddle data to the hyperbolic volume",
+      "x_critical": "(0.21507985450097336704430002094 + 1.30714127868204548049235257351j)",
+      "y_critical": "(0.337641021377626987019545572761 + 0.562279512062301243899182144909j)",
+      "Vhat_at_critical": "(-3.02412837650930165971995122169 + 2.82812208833078316276389880928j)",
+      "Im_Vhat": "2.82812208833078316276389880927663494277098131730064947704352",
+      "Vol_5_2_corpus_snappy_50dps": "2.8281220883307831627638988092766349427709813173006",
+      "residual": "4.947704352e-50",
+      "extends_corpus_constant_to_79_dps": "2.828122088330783162763898809276634942770981317300649477043520327258802548322472",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "CONTROL: the branch matters. At the REAL critical point Im Vhat = 1.7668..., which is NOT Vol(5_2) = 2.8281... So the geometric solution is the complex critical point, and a probe that forgot to select it would report a wrong volume rather than an obvious failure",
+      "x_real": "0.5698402909980532659114",
+      "Im_Vhat_at_real_point": "-1.766829033771187987591658",
+      "distance_from_volume": "1.061293055",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "SCOPE, so this cannot be overread. What is checked here is that the critical VALUE of Ohtsuki's potential is the volume. The volume CONJECTURE is the asymptotic  2pi/N log <5_2>_N -> Vol(5_2), which needs the saddle point method of Ohtsuki \u00a73-5 plus the Poisson summation of \u00a74 -- 67 pages, none of it here and none of it in Lean. Nor does the corpus's proved SUM RULE give the volume: D cancels identically on the Galois orbit",
+      "critical_value_identified": true,
+      "volume_conjecture_formalized": false,
+      "sum_rule_gives_volume": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "identification": "Ohtsuki's 5_2 critical point x^3=(1-x)^2 and the corpus's saddle cubic y^2=(1-y)^3 are the same equation under x = 1-y.",
+    "volume": "Im Vhat at the complex critical point = Vol(5_2), residual 4.9e-50 (the precision floor of the corpus's own 50-dps constant).",
+    "not_established": "the volume conjecture itself (the asymptotic). Ohtsuki proves it; nothing here formalizes it.",
+    "sum_rule_status": "PROVED (FiveTwoComplexPentagon.fiveTwo_saddle_sum_rule)"
+  },
+  "lesson": "The first run of this probe reported a 3.8e-13 mismatch, stable across dps = 40/60/80/120 -- so not a precision artifact. The cause was a Vol(5_2) constant typed from memory, wrong from the 12th digit. The corpus's recorded SnapPy HP 50-dps value is authoritative and its docstring already warns that a 15-dps literature anchor (2.82812208833410) was wrong. Take the constant from the corpus, never from memory; and a residual that does NOT shrink with dps is evidence about the inputs, not about the identity."
+}

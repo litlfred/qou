@@ -7,17 +7,42 @@ Temperley–Lieb quotient annihilates the three-row partition. In the
 [trace-convention registry](../../../docs/coordination/trace-convention-registry.md)
 this is **convention D**, with Ocneanu parameter $z = q^3/(q^2+1)$.
 
-A second trace appears in the framework's compute, and it is not the same
-object. The **binding channel uses the full-Hecke Ocneanu** trace —
-**convention C**, with parameter $z = 1/(q^{1/2}+q^{-1/2})$ and Wedderburn
-weights given by the Wenzl Schur-principal specialisation
-(`y_lambda_wenzl_bridge_numeric` $\to$ `closed_form_tau_M` $\to$
-`binding_canonical`). Its three-row weight is $y_{(1^3)}(q) \neq 0$ for
-$q \neq 1$. Convention C is the trace pinned by the primitive Markov axioms
-([`rem:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md)),
-and Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
-$\mathbb{Z}$-Laurent identity — proven in the $y_\lambda$–$\mathrm{tr}_M$
-equivalence proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`).
+The **binding channel uses convention D** as well, since the owner ruling of
+2026-08-09 excised convention C. There is now **one** trace in the framework's
+compute, not two.
+
+> **Convention C excised (owner ruling, 2026-08-09).** Until then a *second*
+> trace ran in the binding channel: the full-Hecke Ocneanu trace, **convention
+> C**, $z = 1/(q^{1/2}+q^{-1/2})$, with Wedderburn weights from the Wenzl
+> Schur-principal specialisation and three-row weight
+> $y_{(1^3)}(q) \neq 0$ for $q \neq 1$. It was pinned by
+> [`rem:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md),
+> which described its own $z$ as "a stipulation of this definition, not a
+> consequence of it".
+>
+> It is gone because the selection turned out to be **forced**:
+> `lem:feynman-eigenbasis-decomposition` already puts the row cap
+> $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving
+> $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free)
+> then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace.
+>
+> **Not decided by experimental match, and the numbers say so.** Switching the
+> binding channel to D makes the aggregate *worse* — mean $|{\rm err}|$ over
+> $\{{}^2$H, $^3$H, $^3$He, $^4$He, $^6$Li, $^7$Li$\}$ moves $37.39\% \to
+> 43.85\%$. What it fixes is structural: under C the deuteron was
+> **unreachable**, $B_{\rm AME} = 2.2246$ lying $30.4\%$ below the whole
+> admissible band $[2.9072, 5.1780]$ MeV; under D the band is $[2.0507, 3.7978]$
+> and AME sits inside it. ${}^2$H itself improves $+74.85\% \to +27.36\%$.
+>
+> The mass channel was already on D in production, so the $m_e$-scaled
+> renderings of $m_p$ and $m_n$ are **unchanged** (verified: $938.27208943$,
+> $939.56542276$).
+>
+> Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
+> $\mathbb{Z}$-Laurent identity remains proven for C in the
+> $y_\lambda$–$\mathrm{tr}_M$ equivalence proof
+> (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`); that identity is
+> about C and is now historical.
 
 By contrast, **the production mass channel uses convention D** — the closed form
 of this proposition, entering as `trM_borromean` $\to$ `F_Bor` $\to$
@@ -127,7 +152,7 @@ independent data:
   the heat-kernel decay rate, *not* a Markov-trace ingredient.
 - $w_\lambda(q) = [n]_q! / H_q(\lambda)^2$ — Plancherel measure
   ([`rem:symmetric-point-resolution-loss`](../models-of-qous/symmetric-point-resolution-loss.md)):
-  normalised by $\sum_\lambda w_\lambda = 1$; at $q = 1$ it is
+  normalised by $\sum_\lambda w_\lambda(1) = 1$ at $q = 1$ only — the $q$-deformed sum $\sum_\lambda w_\lambda(q)$ is **not** $1$ (0.987 at $n = 3$, 1.051 at $n = 8$, measured in `docs/audits/scripts/wlambda_normalisation_census.py`); at $q = 1$ it is
   non-uniform in a *different* pattern ($\tfrac16, \tfrac23, \tfrac16$
   for $n = 3$) from the Wenzl weights of this proposition
   ($\tfrac12, \tfrac14, 0$).

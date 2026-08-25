@@ -83,7 +83,7 @@ sys.path.insert(0, str(HERE))
 
 from hecke_laurent_fast import tr_M_atomic_fast as tr_M_atomic  # noqa: E402
 from hecke_symbolic import q as q_sym                     # noqa: E402
-from q_parameter import Q as Q0                           # noqa: E402
+from q_parameter import Q_MP as Q0                           # noqa: E402
 from witness_base import WitnessBuilder                   # noqa: E402
 
 # Pin precision floor; matches the markov-peel witness convention.

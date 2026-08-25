@@ -1,0 +1,142 @@
+{
+  "probe": "qbeta_5two_route35_inversion_shape",
+  "bean": "qou-invr",
+  "cross_ref": "qou-rstq",
+  "dps": 70,
+  "attack_vector": "A2 -- is Re Li2 continuous across the cut? YES",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "A2's premise: Li2's discontinuity across [1,inf) is EXACTLY 2*pi*i*log(x) -- purely imaginary. So Re Li2 is CONTINUOUS across the cut even though Li2 is not. The Re jump measures as zero; the Im jump is nonzero and matches the prediction, which is what makes the zero meaningful rather than a null result",
+      "per_point": [
+        {
+          "x": "1.5",
+          "re_jump": "0.0",
+          "im_jump": "2.54761240984",
+          "predicted_2_pi_i_log_x": "(0.0 + 2.54761240984j)",
+          "matches_prediction": true
+        },
+        {
+          "x": "2.2469796037175",
+          "re_jump": "0.0",
+          "im_jump": "5.08678461578",
+          "predicted_2_pi_i_log_x": "(0.0 + 5.08678461578j)",
+          "matches_prediction": true
+        },
+        {
+          "x": "3.0",
+          "re_jump": "0.0",
+          "im_jump": "6.90278459045",
+          "predicted_2_pi_i_log_x": "(0.0 + 6.90278459045j)",
+          "matches_prediction": true
+        },
+        {
+          "x": "5.0",
+          "re_jump": "0.0",
+          "im_jump": "10.1123966442",
+          "predicted_2_pi_i_log_x": "(0.0 + 10.1123966442j)",
+          "matches_prediction": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the SAME for the full Rogers L, which is what is actually needed. Both of its terms jump -- Li2 by 2*pi*i*log x, and log(x)*log(1-x)/2 because log(1-x) crosses log's cut -- and BOTH jumps are purely imaginary, so Re L is continuous across [1,inf). Checking Li2 alone would not have settled this",
+      "per_point": [
+        {
+          "x": "1.5",
+          "re_jump": "0.0",
+          "im_jump": "1.27380620492"
+        },
+        {
+          "x": "2.2469796037175",
+          "re_jump": "0.0",
+          "im_jump": "2.54339230789"
+        },
+        {
+          "x": "3.0",
+          "re_jump": "0.0",
+          "im_jump": "3.45139229522"
+        },
+        {
+          "x": "5.0",
+          "re_jump": "0.0",
+          "im_jump": "5.05619832211"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE REDUCTION. Given G1/G2, the inversion leg is equivalent to the REAL identity Re Li2(x) + Li2(1/x) = pi^2/3 - (1/2)log^2(x) for x > 1 -- in which 1/x lies in (0,1), where the series converges and cLiTwo_ofReal already bridges. No boundary value, no cut-crossing, no new analytic infrastructure. This is a different and much smaller problem than the one qou-invr recorded",
+      "n_points": 200,
+      "worst": "9.055679079e-71",
+      "at_x": "9.45",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "WHICH SIDE Lean's own definition lands on, measured rather than reasoned. cLiTwoExt y = -int_0^1 log(1 - y t)/t dt with the principal branch, at real x > 1, equals Li2(x - i0) -- the LOWER boundary value. I PREDICTED THE UPPER ONE before measuring, from arg(negative real) = +pi, and was wrong. Recorded because branch signs are exactly what this lane has repeatedly got wrong. The conclusion does not depend on it: the REAL PART agrees with both sides",
+      "per_point": [
+        {
+          "x": "1.5",
+          "lean_integral": "(2.37439527027248 - 1.273806204919601j)",
+          "dist_to_upper": "2.5476124",
+          "dist_to_lower": "2.144767e-30",
+          "picks": "lower (x - i0)",
+          "re_matches_both": true
+        },
+        {
+          "x": "2.2469796037175",
+          "lean_integral": "(2.454327343972528 - 2.543392307888486j)",
+          "dist_to_upper": "5.0867846",
+          "dist_to_lower": "1.4015868e-30",
+          "picks": "lower (x - i0)",
+          "re_matches_both": true
+        },
+        {
+          "x": "3.0",
+          "lean_integral": "(2.320180423313098 - 3.451392295223203j)",
+          "dist_to_upper": "6.9027846",
+          "dist_to_lower": "1.0723835e-30",
+          "picks": "lower (x - i0)",
+          "re_matches_both": true
+        }
+      ],
+      "prediction_was": "upper (x + i0)",
+      "measured": "lower (x - i0)",
+      "conclusion_depends_on_side": false,
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the target itself: extend(pi^2/6, rogersL)(x) = Re L(x) for x > 1, 200 points. And at w_1 = 1/(1-x_root) = 2.24698 -- the ONE argument of the six that `extended_sum` uses in this regime, and the whole of what qou-rstq item 4 still lacks",
+      "n_points": 200,
+      "worst": "7.244543263e-71",
+      "at_x": "1.7",
+      "w1": "2.2469796037174670611",
+      "extend_at_w1": "2.543675100801596303694",
+      "ReL_at_w1": "2.543675100801596303694",
+      "difference_at_w1": "3.6222716e-71",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "WHAT REMAINS, named so this probe is not misread as closing qou-invr. Two things, both smaller than a boundary-value theory but neither free: (1) INTEGRABILITY of the defining integral at x > 1 -- Lean's intervalIntegrable_log_one_sub_div_of_notCut assumes notCut, which FAILS here, so cLiTwoExt at x > 1 is currently a Lean `integral` with no proof its integrand is integrable, and an unproved-integrable integral is the junk value 0. The singularity at t = 1/x is logarithmic, hence integrable, but that needs proving. (2) the real identity of G3. Item 4 is NOT closed",
+      "still_needed": [
+        "IntervalIntegrable (fun t => log(1 - x*t)/t) volume 0 1, for real x > 1",
+        "Re Li2(x) + Li2(1/x) = pi^2/3 - (1/2) log^2 x, for real x > 1"
+      ],
+      "no_longer_needed": "a boundary value of Li2 obtained from off the cut; the real part is continuous across it (G1/G2), so there is nothing to take a limit of",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "Li2's jump across [1,inf) is exactly 2*pi*i*log(x), purely imaginary, so Re Li2 -- and Re of the full Rogers L -- is CONTINUOUS across the cut. Lean's integral definition lands on the lower boundary value, but its real part agrees with both sides.",
+    "changes": "the inversion leg is NOT a boundary-value problem. It reduces to one real identity, Re Li2(x) + Li2(1/x) = pi^2/3 - (1/2)log^2 x, whose partner argument 1/x lies safely in (0,1).",
+    "still_open": "integrability of the defining integral at x > 1 (logarithmic singularity at t = 1/x -- integrable, but Lean's existing lemma assumes notCut and does not apply), and the real identity itself. qou-rstq item 4 remains open at exactly one argument, w_1 = 2.24698.",
+    "prediction_falsified": "I expected the integral to pick the UPPER boundary value; it picks the lower. Immaterial to the conclusion, recorded anyway.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

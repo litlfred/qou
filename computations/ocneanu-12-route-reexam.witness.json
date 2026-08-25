@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:54.940939+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:57:25.908485+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "reexam_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "ocneanu-12-route-reexam",
   "scriptFile": "ocneanu_12_route_reexam.py",
   "scriptHash": "4270d8b28df8",
-  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,20 +28,22 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Re-examines commit 6766b40b9's correction of the Ocneanu −1/12 attribution for the proton-mass-identity '12'. Confirms the Borromean pole-order claim (pole 4, leading -1) but finds the empirical k = 12.0xx is tighter than the audit's 'empirical integer near-match' phrasing suggests, deserving deeper categorical investigation. Several natural candidates (4·3 edge cells, Σd_λ²·2, 3!·[2]_q-at-1) all give 12 EXACTLY.",
   "parameters": {
-    "q_50dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_50dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "k_required": "11.99955517162342283144208",
-    "delta_k_minus_12": "-0.0004448283765771685579244825",
-    "relative_pct": "-0.00370690313814",
-    "F_Bor_at_q0": "4.469138597826758581370788",
+    "k_required": "11.99960972984508386212587",
+    "delta_k_minus_12": "-0.0003902701549161378741312839",
+    "relative_pct": "-0.00325225129097",
+    "F_Bor_at_q0": "4.469138735767522529389075",
     "verdict": "AUDIT VERDICT STANDS but with NUANCE: the empirical k ≈ 12 is extraordinarily close to integer 12 (~10⁻⁴ relative). The correction commit was right that the Borromean's pole structure doesn't give -1/12 — but the integer 12 itself is so tight (10⁻⁴) that it deserves a NEW structural explanation, not just 'empirical near-match.' Several natural candidates (4·3 = #edge cells × #strands; Σd_λ²·2 = 6·2; 3!·[2]_q at q=1 = 12) hit exactly 12 — deserves categorical investigation."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

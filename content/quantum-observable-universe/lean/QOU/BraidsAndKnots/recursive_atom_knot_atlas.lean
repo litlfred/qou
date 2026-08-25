@@ -63,7 +63,7 @@ substantive open work; see
 
 namespace QOU.BraidsAndKnots
 
-open QOU.BraidKnot
+open QOU.BraidKnot QOU.HeckeAlgebra
 
 /-- **Atlas SDP-uniqueness theorem statement.**
 
@@ -80,7 +80,7 @@ theorem atlas_entry_uniqueness (A : ℕ)
              (nucleusEmptySDP (3 * A)).objAt
                (nucleusRealStrongDualityPair (3 * A)).Φstar) :
     Φ' = (nucleusRealStrongDualityPair (3 * A)).Φstar :=
-  nucleus_uniqueness_closed h_feas h_obj
+  nucleus_uniqueness_closed (3 * A) h_feas h_obj
 
 /-! ## Atlas-tracked nuclei — sorry-free, axiom-free uniqueness theorems
 

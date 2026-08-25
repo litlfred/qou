@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:01.774359+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:48:20.337912+00:00",
+  "commitSha": "355e43a0abc09c620b5fb5261aa80b48afab1c7e",
   "assertions": [
     {
       "name": "C(q) is rational in q (depth-0 ⇒ τ_arch = q_0-evaluation, no regulator)",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 178,
+  "durationMs": 152,
   "computation": "e-hartree-round22-arch-bridge",
   "scriptFile": "e_hartree_round22_arch_bridge.py",
-  "scriptHash": "b3067a869865",
-  "scriptCommitSha": "74d93256a6861178964a03c4928922127afea3c3",
+  "scriptHash": "fb4516a00068",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,26 +41,28 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "conj:e-hartree round 22: sharpens the δ_q→archimedean bridge (the gap left by round 21's Mechanism-B refutation) to a single decided functor-image question, using the EXISTING τ_arch.  Per prop:depth-2-identification-bloch-suslin, τ_arch's Bloch–Suslin regulator (K_3^ind→ℝ/π²ℚ) governs the DEPTH-2 dilog sector; the round-20 coefficient C(q)=h(q²+q⁻²)² is DEPTH-0 (rational in q), so τ_arch(C(q)) is plain q_0-evaluation = C(q_0) ≈ 0.873 (≠ 1).  Hence the bridge gives τ_arch(ρ_(2,2)) = C(q_0)·α² — the α² scaling (structural, rounds 20/21) times an EXPLICIT derived O(1) categorical coefficient, NOT new infrastructure (contra round 11's fear).  Remaining gap is now a single GATED comparison — is C(q_0) the physical molecular/Hartree ratio? — deliberately not taken (fishing gate), plus the m_e c² CAL-1 unit.  No fit, no experimental number.",
   "contentBlock": "conj:e-hartree-categorical-derivation",
   "data": {
-    "q0": "1.10997859555733",
+    "q0": "1.10997858275138080759166909561076887987449912187357873607281",
     "C_q_symbolic": "(q**2 - 1)*(q**4 + 1)**2/q**5",
-    "C_q0_archimedean_image": "0.873189586243408",
+    "C_q0_archimedean_image": "0.87318948105425683399145342656057593404371019146772",
     "C_is_rational_depth0": true,
     "sibling_deltas": {
-      "T2_3": "0.636318202043734",
-      "T2_5": "1.09138714429597",
-      "T2_7": "1.59415649125339",
-      "T3_4": "1.87018883898099",
-      "T2_9": "2.16660038971492",
-      "T3_5": "2.48662110132891"
+      "T2_3": "0.636318129401951513925371248814254573947107711443285652540823",
+      "T2_5": "1.09138701286492971705513224911548062027130291238495817355799",
+      "T2_7": "1.59415628470186879760224565011435022018186107683469565433351",
+      "T3_4": "1.87018858625583784338714051129906707494809459244293799390763",
+      "T2_9": "2.16660008355141824995324379542217791753590429420991940865918",
+      "T3_5": "2.48662073316509849902386222367243200963919030867434062926665"
     },
     "finding": "Round 22 converts the δ_q→archimedean bridge from 'missing infrastructure' (round 11) to 'q_0-evaluation of a depth-0 coefficient'.  τ_arch(ρ_(2,2)) = C(q_0)·α² with C(q_0)=h(q²+q⁻²)²|_q0 ≈ 0.873 explicit and ≠ 1; the α² scaling is structural; the Bloch–Suslin regulator does not enter (depth-2 only).  The sole remaining open item is the GATED comparison of the derived O(1) coefficient C(q_0) to the physical molecular/Hartree ratio (not taken — fishing gate), plus the standing m_e c² CAL-1 unit transport."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

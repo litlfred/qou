@@ -1,0 +1,52 @@
+{
+  "probe": "qbeta_5two_route19_transport_repaired",
+  "bean": "qou-trns",
+  "parent_bean": "qou-0yqu",
+  "dps": 70,
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the two Vieta products hold on the arc: prod(1-x*y_j) = x and prod(1-y_j/x) = 1/x -- both already Lean-proved, both nonvanishing on |x|=1",
+      "worst": "3.2650715e-71",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "Sum_j log(1 - x*y_j) is CONTINUOUS through the branch point and equals the continuous log of the symmetric product, branch integer 0",
+      "n_points": 4001,
+      "window": "phi_0 +- 0.05",
+      "max_step": "2.5e-5",
+      "a_2pi_jump_would_be": "6.2831853",
+      "max_dev_from_log_x": "7.5896599e-71",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "Sum_j log(1 - y_j/x) likewise equals -log x, continuously through the branch point",
+      "max_step": "2.5e-5",
+      "max_dev_from_minus_log_x": "7.6362566e-71",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the reason: AT the collision the two colliding roots are equal, so the two log-terms being permuted are IDENTICAL -- a sum cannot notice a relabelling of equal terms",
+      "min_root_separation_at_phi0": "5.2026565e-36",
+      "min_term_separation_at_phi0": "5.2026565e-36",
+      "note": "this is a SQUARE-ROOT branch point, so separation ~ sqrt|delta phi|; even with phi_0 at working precision the residual separation is ~1e-19, not ~1e-38. That is the expected behaviour, not a failure to resolve the collision.",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "with both sums pinned, Sum_j dV/dx = -2 log(x)/x, and integrating along x = e^{i phi} gives S - S(1) = phi^2 -- checked directly on the arc",
+      "worst": "2.8978173e-70",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "outcome": "The transport argument is REPAIRED. Working with the two symmetric Vieta products instead of a per-root branch labelling, the sum of logs is continuous through the branch point and equals the continuous log of the product with branch integer 0.",
+    "why_it_works": "at the collision the two colliding roots are EQUAL, so the two log-terms being permuted are identical. A sum cannot notice a relabelling of equal terms. The old argument tracked a labelling, which is precisely what a collision destroys.",
+    "already_in_lean": "both products -- prod_one_sub_x_mul and prod_x_sub in QOU/QBeta/FiveTwoCyclotomicBloch.lean, sorry-free since #4658.",
+    "still_missing": "the envelope theorem needs dy_j/dx, which does not exist AT the branch point. The fix is removability: S is analytic on the arc minus one point (the IFT applies there, discriminant non-zero) and continuous at it (Route 17), so the identity extends by Riemann's removable singularity theorem. Ordinary analysis, NOT written.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

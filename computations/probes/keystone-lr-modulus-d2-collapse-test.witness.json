@@ -3,12 +3,12 @@
   "description": "Decisive first gate of the LR modulus ID: does the SU(2)-colored \u03a3(2,3,5) order-5 fibre carry 4 independent components (needed for \u03bb\u22a25 classes) or collapse to D=2?",
   "audit_only": true,
   "tier": "numerical (structural gate)",
-  "computedAt": "2026-07-17T20:42:29.019974+00:00",
-  "commitSha": "ed01a36cdeda9607d2eeea8d1ee921aa20258911",
+  "computedAt": "2026-08-23T09:23:48.066005+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "keystone_lr_modulus_d2_collapse_test.py",
-  "scriptHash": "16da6c5ad257",
+  "scriptHash": "c30119db0c26",
   "assertions": [
     {
       "name": "four_colors_evaluated",
@@ -61,8 +61,8 @@
     "psi_singular_values": [
       "9.066124e+00",
       "5.045008e-01",
-      "3.111823e-41",
-      "1.304591e-42"
+      "3.364398e-71",
+      "7.251097e-73"
     ],
     "psi_matrix_rank": 2,
     "d2_collapse": true,

@@ -1,0 +1,179 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T23:25:36.725481+00:00",
+  "commitSha": "8cf939a3b463cfbcf7dae6c92d2914ab5d7a06b9",
+  "assertions": [
+    {
+      "name": "alexander_computable",
+      "computed": "1.0",
+      "expected": "1.0",
+      "passed": true,
+      "tolerance": "0.0",
+      "unit": "boolean",
+      "source": "all 4 canonical braid closures admit Burau-derived Alexander polynomial"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 9205,
+  "computation": "delta-lambda-alexander-phase4",
+  "scriptFile": "delta_lambda_alexander_phase4.py",
+  "scriptHash": "ce50aa990620",
+  "scriptCommitSha": "561fe967761dfbf4d4f5644dd60078508dfd23c8",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Phase 4 of the closed-forms-first-principles workplan: tests whether Alexander polynomial (computed from Burau rep) gives a per-knot factor V(K) that captures the N-direction structure missing from Vol_hyp(K) (Phase 3). Tests V(K) \u2208 {|\u0394_K(-1)| (determinant), |\u0394_K(q_0)|, |\u0394_K(q_0^2)|} against the empirical |\u0394_\u03bb*| across D, T, \u00b3He, \u2074He.",
+  "parameters": {
+    "q0": "1.1099785827513808"
+  },
+  "data": {
+    "alexander_polynomials": {
+      "D": "t**25 + 2*t**24 + 7*t**23 + 11*t**22 + 17*t**21 + 20*t**20 + 21*t**19 + 18*t**18 + 13*t**17 + 9*t**16 + 3*t**15 + t**14 + 7*t**12 + 11*t**11 + 17*t**10 + 20*t**9 + 21*t**8 + 18*t**7 + 13*t**6 + 9*t**5 + 3*t**4 - 2*t**2",
+      "T": "t**40 + 2*t**39 + 17*t**38 + 31*t**37 + 123*t**36 + 202*t**35 + 499*t**34 + 728*t**33 + 1268*t**32 + 1625*t**31 + 2170*t**30 + 2440*t**29 + 2708*t**28 + 2714*t**27 + 2709*t**26 + 2489*t**25 + 2342*t**24 + 2089*t**23 + 1962*t**22 + 1956*t**21 + 2029*t**20 + 2293*t**19 + 2479*t**18 + 2686*t**17 + 2692*t**16 + 2670*t**15 + 2368*t**14 + 2140*t**13 + 1590*t**12 + 1234*t**11 + 688*t**10 + 404*t**9 + 123*t**8 + 40*t**7 - 20*t**6 - 5*t**5 - 8*t**4 + 2*t**3",
+      "3He": "-t**37 - 8*t**35 + 7*t**34 - 8*t**33 + 77*t**32 + 111*t**31 + 348*t**30 + 510*t**29 + 859*t**28 + 1071*t**27 + 1341*t**26 + 1431*t**25 + 1519*t**24 + 1444*t**23 + 1335*t**22 + 1050*t**21 + 653*t**20 + 143*t**19 - 418*t**18 - 892*t**17 - 1260*t**16 - 1430*t**15 - 1528*t**14 - 1448*t**13 - 1410*t**12 - 1161*t**11 - 1001*t**10 - 653*t**9 - 441*t**8 - 178*t**7 - 81*t**6 + 7*t**5 + 2*t**4 + 12*t**3 - 2*t**2",
+      "4He": "-t**52 - 18*t**50 + 7*t**49 - 124*t**48 + 147*t**47 - 313*t**46 + 1368*t**45 + 845*t**44 + 7464*t**43 + 9363*t**42 + 26689*t**41 + 35877*t**40 + 66532*t**39 + 84709*t**38 + 121078*t**37 + 141348*t**36 + 168387*t**35 + 181135*t**34 + 187389*t**33 + 188797*t**32 + 169171*t**31 + 157410*t**30 + 110131*t**29 + 82380*t**28 + 15178*t**27 - 22746*t**26 - 88105*t**25 - 120011*t**24 - 161875*t**23 - 176946*t**22 - 189201*t**21 - 189393*t**20 - 177114*t**19 - 166716*t**18 - 136882*t**17 - 118232*t**16 - 81712*t**15 - 61945*t**14 - 32980*t**13 - 21213*t**12 - 6659*t**11 - 3876*t**10 + 444*t**9 - 249*t**8 + 479*t**7 - 57*t**6 + 62*t**5 - 24*t**4 + 2*t**3"
+    },
+    "evaluations": {
+      "D": {
+        "minus_one": {
+          "real": "0.0",
+          "imag": "0.0",
+          "abs": "0.0"
+        },
+        "q0": {
+          "real": "1236.8254869370191",
+          "imag": "0.0",
+          "abs": "1236.8254869370191"
+        },
+        "q0_squared": {
+          "real": "8474.198492185527",
+          "imag": "0.0",
+          "abs": "8474.198492185527"
+        }
+      },
+      "T": {
+        "minus_one": {
+          "real": "0.0",
+          "imag": "0.0",
+          "abs": "0.0"
+        },
+        "q0": {
+          "real": "615002.8216583326",
+          "imag": "0.0",
+          "abs": "615002.8216583326"
+        },
+        "q0_squared": {
+          "real": "10624061.266683083",
+          "imag": "0.0",
+          "abs": "10624061.266683083"
+        }
+      },
+      "3He": {
+        "minus_one": {
+          "real": "0.0",
+          "imag": "0.0",
+          "abs": "0.0"
+        },
+        "q0": {
+          "real": "111723.00145565983",
+          "imag": "0.0",
+          "abs": "111723.00145565983"
+        },
+        "q0_squared": {
+          "real": "2139123.1894237935",
+          "imag": "0.0",
+          "abs": "2139123.1894237935"
+        }
+      },
+      "4He": {
+        "minus_one": {
+          "real": "0.0",
+          "imag": "0.0",
+          "abs": "0.0"
+        },
+        "q0": {
+          "real": "47467167.858934015",
+          "imag": "0.0",
+          "abs": "47467167.858934015"
+        },
+        "q0_squared": {
+          "real": "2364192019.0435877",
+          "imag": "0.0",
+          "abs": "2364192019.0435877"
+        }
+      }
+    },
+    "empirical_best_abs_delta": {
+      "D": "22.956407323087852",
+      "T": "366.2845899608697",
+      "3He": "210.943396230587",
+      "4He": "3451.1436864376496"
+    },
+    "rel_std_per_evaluation": {
+      "q0": {
+        "ratios": {
+          "D": "0.018560748921773167",
+          "T": "0.0005955819665561806",
+          "3He": "0.0018880928142116318",
+          "4He": "7.270591109825597e-05"
+        },
+        "mean": "0.005279282403409809",
+        "min": "7.270591109825597e-05",
+        "max": "0.018560748921773167",
+        "max_over_min": "255.2852806794466",
+        "rel_std": "1.4578641589117216"
+      },
+      "q0_squared": {
+        "ratios": {
+          "D": "0.002708976824682249",
+          "T": "3.447688984150848e-05",
+          "3He": "9.86120842752436e-05",
+          "4He": "1.4597560852243204e-06"
+        },
+        "mean": "0.0007108813887210563",
+        "min": "1.4597560852243204e-06",
+        "max": "0.002708976824682249",
+        "max_over_min": "1855.7736132101554",
+        "rel_std": "1.623519320237147"
+      }
+    },
+    "cross_z_n_consistency": {
+      "q0": {
+        "T_over_D_ratio": "0.0320882508063841",
+        "He4_over_He3_ratio": "0.03850759377452222",
+        "consistency": "0.16670330028217317"
+      },
+      "q0_squared": {
+        "T_over_D_ratio": "0.012726904684964395",
+        "He4_over_He3_ratio": "0.014803014214260855",
+        "consistency": "0.14024910732682996"
+      }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "delta-lambda-empirical-tabulation.witness.json",
+        "sha256": "6293e276ecfe9b05cd10baef5d869adc9640d2ea5ce18a1fe5aaf153ed98d15d",
+        "size_bytes": 32120,
+        "commitSha": "ce39b659e64f7bb00a5b6c01399cc7f595da16e0",
+        "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+        "computedAt": "2026-07-05T11:19:13.300674+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

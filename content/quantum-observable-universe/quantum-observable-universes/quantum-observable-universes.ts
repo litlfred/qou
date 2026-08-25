@@ -171,7 +171,6 @@ export default chapter({
       label: "sec:substrate-parameter",
       blocks: [
         "substrate-parameter-intro",
-        "quantum-universe-explication",
         "braiding-eigenvalue-extraction",
         "braiding-eigenvalue-extraction-novelty",
         "spectral-chart-correspondence",
@@ -184,6 +183,7 @@ export default chapter({
         "substrate-parameter-unique-proof",
         "substrate-parameter-su2",
         "substrate-parameter-brings",
+        "quantum-universe-explication",
         "quantum-gauge-group",
         "quantum-planck-constant",
         "planck-limits",
@@ -232,11 +232,11 @@ export default chapter({
         "algebraic-substrate-intro",
         "substrate-preamble",
         "frobenius-hopf-substrate",
+        "brings-coordinate-ring",
         "substrate-parameter-planck",
         "categorical-reeb-derivation",
         "reeb-flow-bridge",
         "reeb-contact-universal-computer",
-        "brings-coordinate-ring",
         // conj:magic-numbers-bring relocated to observations/
         // sec:beta-decay-magic-shells-k12-barrier-bypass (2026-07-07):
         // a tier-E nuclear-physics conjecture belongs with the magic-
@@ -381,11 +381,11 @@ export default chapter({
         "categorical-instanton-exists-proof",
         "categorical-instanton-unique",
         "categorical-instanton-unique-proof",
-        "instanton-on-shell",
         "categorical-irreducible",
         "categorical-irreducible-proof",
         "categorical-self-duality",
         "categorical-self-duality-proof",
+        "instanton-on-shell",
         "self-dual-ses",
         "hopf-non-cocommutativity",
       ],
@@ -475,6 +475,8 @@ export default chapter({
         "q-resolvent-unique",
         "q-resolvent-unique-proof",
         "laplace-fourier-wick-rotation",
+        "q-exp-entire",
+        "beta-eq-ln-q-dictionary",
       ],
     }),
 

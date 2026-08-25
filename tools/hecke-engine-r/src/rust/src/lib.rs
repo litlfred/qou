@@ -33,7 +33,8 @@ fn qou_version() -> String {
     env!("CARGO_PKG_VERSION").to_string()
 }
 
-/// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
+/// Markov parameter z = q^3 / (q^2 + 1) — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09.
 /// @param q substrate parameter (numeric)
 /// @return z (numeric)
 /// @export
@@ -53,11 +54,11 @@ fn qou_hecke_h(q: f64) -> f64 {
 
 /// Markov-trace weights on the NF basis (length-6 numeric vector).
 /// @param q substrate parameter (numeric)
-/// @return [1, z, z, z^2, z^2, z^3]
+/// @return [1, z, z, z^2, z^2, h*z^2 + z] (convention D, qou-m7py 2026-08-15)
 /// @export
 #[extendr]
 fn qou_trace_weights(q: f64) -> Vec<f64> {
-    gram::trace_weights(q).to_vec()
+    gram::trace_weights_markov(q).to_vec()
 }
 
 /// Gram matrix G_ij = tr_M(b_i * b_j), returned as a 6x6 R matrix.

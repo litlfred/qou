@@ -4,7 +4,7 @@ The **$S^3$ boundary action** dictates the critical temperatures. It restricts t
 $$
   \mathfrak{S}_q^{(\partial)} = \mathrm{tr}_{\mathrm{Ad}} \!\oint_{S^2} \omega_{\mathcal{F}} \,\wedge\, *\eta_q,
 $$
-This precisely constitutes the non-abelian Stokes surface integral of the adjoint connection.
+This is the non-abelian Stokes surface integral of the adjoint connection.
 
 The gas--liquid critical temperature is
 $$
@@ -16,8 +16,8 @@ $$
 $$
 where $n_K$ denotes the crossing number of the particle knot.
 
-Sublimation represents a direct solid--gas transition. It occurs when topological obstruction rigorously blocks the intermediate liquid phase. In this case, the Hecke representation at the mixed-channel temperature forms a non-split extension:
+Sublimation represents a direct solid--gas transition. It occurs when topological obstruction blocks the intermediate liquid phase. In this case, the Hecke representation at the mixed-channel temperature forms a non-split extension:
 $$
   0 \to V_{\mathrm{sym}} \to V_{\mathrm{mixed}} \to V_{\mathrm{asym}} \to 0.
 $$
-This extension is classified by $\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}}, V_{\mathrm{sym}}) \cong \mathbb{Z}$. The Hopf invariant of $\pi_3(S^2) = \mathbb{Z}$ inherently generates it.
+This extension is classified by $\mathrm{Ext}^1_{H_n(q)}(V_{\mathrm{asym}}, V_{\mathrm{sym}}) \cong \mathbb{Z}$. The Hopf invariant of $\pi_3(S^2) = \mathbb{Z}$ generates it.

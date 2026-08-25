@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-14T19:06:12.707968+00:00",
+  "commitSha": "469875559f03ffb2a89758568b988f991c81cb68",
+  "assertions": [
+    {
+      "name": "vector_nonet_is_near_ideal",
+      "computed": "0.995344919035514832148454906445298875819479576976660484693587",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.01",
+      "unit": "probability",
+      "source": "phi is ss-bar to within ~0.5 percentage points: the vector nonet is ideally mixed."
+    },
+    {
+      "name": "pseudoscalar_nonet_is_far_from_ideal",
+      "computed": "0.503184595273138262867447787092110703784914183097069618567308",
+      "expected": "0.5",
+      "passed": true,
+      "tolerance": "0.05",
+      "unit": "probability",
+      "source": "eta-prime is only ~50% ss-bar: the pseudoscalar nonet sits about as far from ideal mixing as possible."
+    },
+    {
+      "name": "two_nonets_disagree_on_mixing",
+      "computed": "0.492160323762376569281007119353188172034565393879590866126279",
+      "expected": "0.49",
+      "passed": true,
+      "tolerance": "0.05",
+      "unit": "probability",
+      "source": "The two nonets have identical SU(3) content yet differ by ~0.49 in heavy-state ss-bar purity. No SU(3)-symmetric statement can distinguish them, so the mixing is genuinely extra data -- the content-bearing target."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "nonet-mixing-purity",
+  "scriptFile": "nonet_mixing_purity.py",
+  "scriptHash": "3e8cc1edeab0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "COMPARATOR (not a derivation): convention-free singlet-octet mixing purity of the pseudoscalar and vector meson nonets, from PDG central values. Scores whether the nonet mixing angle is a content-bearing derivation target. It is: the first-order octet ansatz constrains it not at all (NonetMixingUnconstrained.lean, sorry-free), unlike GMO and decuplet equal spacing, which are identities of the ansatz and hence content-free as targets. Two nonets with IDENTICAL SU(3) content sit at nearly opposite extremes: the vector nonet is ideally mixed to ~0.5 percentage points, the pseudoscalar nonet is ~50 pp away. No SU(3)-symmetric statement distinguishes them. Nothing fitted; nothing wired; PDG values are comparators only. The framework cannot currently attempt this -- the singlet is unavailable at dim V = 2 (RowCapObstruction.lean) -- so this scores the TARGET, not prospects.",
+  "contentBlock": "rem:vector-meson-nonet",
+  "data": {
+    "pseudoscalar_nonet": {
+      "states": "eta / eta-prime",
+      "real_off_diagonal": "True",
+      "m8_GeV": "0.5643249736192932004828560001564628537902078515403824890552912280755049",
+      "m1_GeV": "0.9481733088384127433327818405274767620584236389705223485232185580218711",
+      "off_diagonal_sign_chosen": "-1",
+      "heavy_ssbar_probability": "0.5031845952731382628674477870921107037849141830970696185673083617383845",
+      "light_nnbar_probability": "0.5031845952731382628674477870921107037849141830970696185673083617383846",
+      "departure_from_ideal_pp": "49.68154047268617371325522129078892962150858169029303814326916382616155",
+      "rejected_branch_ssbar_probability": "0.1832597865269900962355675090670752287382243246377681384547061869324342"
+    },
+    "vector_nonet": {
+      "states": "omega / phi",
+      "real_off_diagonal": "True",
+      "m8_GeV": "0.9322036870412674640771026738826760152525948793245199978693448184186177",
+      "m1_GeV": "0.8847901965933317610554898643957497850396754960596804200568976631651054",
+      "off_diagonal_sign_chosen": "-1",
+      "heavy_ssbar_probability": "0.995344919035514832148454906445298875819479576976660484693587101074285",
+      "light_nnbar_probability": "0.995344919035514832148454906445298875819479576976660484693587101074285",
+      "departure_from_ideal_pp": "0.4655080964485167851545093554701124180520423023339515306412898925714953",
+      "rejected_branch_ssbar_probability": "0.07194758033831162456946667218400706792066397373086348083992208590830292"
+    },
+    "gmo_deviation_on_physical_states": {
+      "pseudoscalar_eta": "0.05971022184690373993155274248771250828274066051908808201419636697728065",
+      "vector_omega": "0.3154720616572603001907688701066793272186517193023809007327856794178828",
+      "vector_phi": "-0.1373758079770991863872252390681043653397263098419465713072310423439219",
+      "note": "GMO applied to the PHYSICAL states. It nearly works for the pseudoscalar eta (~6%) because that nonet is barely mixed, and fails badly for the physical omega (~32%) because that nonet is ideally mixed, so the physical omega is not the octet member. The failure is a mixing effect, not a failure of SU(3)."
+    },
+    "convention_note": "Reported as quark content, not as a mixing angle. Angle conventions differ across the literature (theta_V ~ 39 deg and ~50.8 deg are the same physics under complementary definitions); the ss-bar probability of the heavy state is convention-independent, with ideal mixing exactly 1. The determinant fixes only the SQUARE of the off-diagonal, so both sign branches are computed and the rejected one is recorded rather than silently dropped.",
+    "honest_scope": "Comparator only. This does NOT claim the framework derives the mixing, and it is not evidence for the framework. It establishes that a derivation WOULD be evidence -- which is exactly what the GMO and equal-spacing null results establish is NOT true of those two."
+  }
+}

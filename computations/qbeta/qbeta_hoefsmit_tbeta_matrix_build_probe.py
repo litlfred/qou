@@ -97,14 +97,20 @@ def main() -> int:
     print()
 
     # Word format for chi_lambda_braid: list of (sign, generator) pairs.
+    # GENERATORS ARE 1-BASED.  hecke_characters.chi_lambda_braid documents
+    # `[(sign, generator_1based), ...]` with `generator in {1, ..., n-1}`, and
+    # the Rust panics on 0: 'invalid generator index 0 for n = 3 (valid range:
+    # 1..=2)'.  This probe passed 0-based indices, so it could not run at all.
+    # sigma_0 sigma_1 sigma_0 in the 0-based naming of the docstring above is
+    # generators 1,2,1 here.
     # Electron knot (free-neutron-decay PARTICLE_KNOT): (0,1,0)
     # = σ_0 σ_1 σ_0 (all positive crossings)
-    electron_word = [(1, 0), (1, 1), (1, 0)]
+    electron_word = [(1, 1), (1, 2), (1, 1)]
     # Identity (no crossings) — the "before" state for Hopf-link
     # intermediate trace
     identity_word = []
     # Intermediate Hopf word (0,1)
-    hopf_word = [(1, 0), (1, 1)]
+    hopf_word = [(1, 1), (1, 2)]
 
     print(f"  Per-block Markov-trace components at q_0 = {Q0:.16f}:")
     print(f"  {'λ':<10} {'dim_q':>10} {'χ(1)':>14} {'χ(σ₀σ₁)':>14} "

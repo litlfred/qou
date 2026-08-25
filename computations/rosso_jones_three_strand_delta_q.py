@@ -19,6 +19,26 @@ THE DERIVATION (pre-archimedean, convention-free).
       beta_{m,p} = (sigma_1 sigma_2 ... sigma_{m-1})^p   in  B_m,
   whose writhe (number of positive crossings) is
       w(m,p) = (m-1) * p.
+
+  MINIMAL-STRAND CONDITION (REQUIRED — m <= p).
+  The writhe is NOT a knot invariant: it is a property of a braid PRESENTATION
+  at a given level of the brane tower (Markov II, beta |-> beta*sigma_n^{+-1},
+  presents the SAME link and shifts w by +-1; Lean: writhe_stabilize in
+  WritheMarkovInvariance.lean).  The observable is the value at the LOWEST level
+  of the tower, i.e. at the BRAID INDEX, which for a torus knot is
+      braid index of T_{m,p} = min(m, p)      (Morton-Williams; Lean-proved in
+                                               nuclear-interactions/
+                                               box-braid-irreducibility-proof)
+  So w = (m-1)p is the writhe AT THE BRAID INDEX only when m = min(m,p), i.e.
+  when m <= p.  This matters because T_{m,p} and T_{p,m} are the SAME knot while
+      (m-1)p  !=  (p-1)m       (for m != p),
+  so dropping the condition assigns TWO writhes -- hence two delta_q -- to one
+  knot: the trefoil read as T_{2,3} gives w = 3 but as T_{3,2} gives w = 4;
+  10_124 read as T_{3,5} gives w = 10 but as T_{5,3} gives w = 12.  Every carrier
+  below has m < p, so no value here is affected; the guard
+  check_minimal_strand() below makes the requirement enforced rather than
+  latent.  See docs/audits/2026-08-10-writhe-level-of-definition.md.
+
   In the TRIVIAL one-dimensional block of H_m(q) every generator acts by the
   symmetric eigenvalue sigma_i |-> q, so the Coxeter word acts by q^{m-1} and
       rho_triv(beta_{m,p}) = q^{(m-1)p} = q^{w}.
@@ -66,6 +86,33 @@ from witness_base import WitnessBuilder
 import sympy as sp
 
 
+def check_minimal_strand(m: int, p: int, name: str = "") -> None:
+    """Enforce the minimal-strand condition m <= p on a torus-knot carrier.
+
+    The writhe w = (m-1)p is a property of the m-strand PRESENTATION, not of the
+    knot.  The observable is its value at the lowest level of the brane tower --
+    the braid index, min(m, p) by Morton-Williams.  So w = (m-1)p is the
+    braid-index writhe only for m <= p.  Since T_{m,p} and T_{p,m} are the same
+    knot but (m-1)p != (p-1)m, a swapped pair would silently assign a second,
+    wrong delta_q to a knot that already has one (trefoil: w = 3 as T_{2,3} vs 4
+    as T_{3,2}; 10_124: w = 10 as T_{3,5} vs 12 as T_{5,3}).
+
+    Raises:
+        ValueError: if m > p.
+    """
+    if m > p:
+        raise ValueError(
+            f"minimal-strand condition violated for T_{{{m},{p}}}"
+            f"{' (' + name + ')' if name else ''}: m={m} > p={p}.  The writhe "
+            f"rule w=(m-1)p is only the braid-index writhe when m = min(m,p) "
+            f"(Morton-Williams: braid index of T_{{m,p}} is min(m,p)).  "
+            f"T_{{{m},{p}}} and T_{{{p},{m}}} are the SAME knot but "
+            f"(m-1)p={(m - 1) * p} != (p-1)m={(p - 1) * m}, so this input would "
+            f"assign a second delta_q to a knot that already has one.  "
+            f"Present the carrier at its braid index: use T_{{{p},{m}}}."
+        )
+
+
 def qbracket(q, k):
     """[k]_q = (q^k - q^{-k})/(q - q^{-1})  (Laurent polynomial for k >= 1)."""
     return (q ** k - q ** (-k)) / (q - 1 / q)
@@ -101,8 +148,10 @@ def main() -> None:
     print("=" * 74)
     print("alpha_{basis-knot} STEP 2 — three-strand Rosso-Jones delta_q (no pi)")
     print("=" * 74)
-    print("  delta_q(T_{m,p}) = q^{(m-1)p} - q^{-(m-1)p} = h*[(m-1)p]_q")
-    print("  (bar-odd / sinh / e_- part of the trivial-channel twist q^{(m-1)p})")
+    print("  delta_q(T_{m,p}) = q^{(m-1)p} - q^{-(m-1)p} = h*[(m-1)p]_q,  m <= p")
+    print("  (bar-odd / sinh / e_- part of the trivial-channel twist q^{(m-1)p};")
+    print("   m <= p is REQUIRED so m is the braid index min(m,p) and w=(m-1)p is")
+    print("   the writhe at the lowest level of the tower -- see check_minimal_strand)")
     print()
     print(f"  {'knot':6s} {'m':>2s} {'p':>2s} {'w=(m-1)p':>9s} "
           f"{'delta_q':>16s}  status")
@@ -110,6 +159,8 @@ def main() -> None:
     data = {}
     all_identities_hold = True
     for name, m, p, force in knots:
+        # GUARD: w=(m-1)p is the braid-index writhe only when m = min(m,p).
+        check_minimal_strand(m, p, name)
         w = (m - 1) * p
         dq = delta_q_writhe(q, w)
         # The exact symbolic identity delta_q == h*[w]_q in R.

@@ -59,11 +59,12 @@ forced value.
 Nothing is fit; nothing is wired. "No seventh fit-based ansatz" + PROBE-4 KL-prune stand.
 
 -- Ref: [habiro2002] K. Habiro, On the colored Jones polynomials of some simple links,
---   Surikaisekikenkyusho Kokyuroku 1172 (2000) 34–43; [habiro2008] A unified Witten–Reshetikhin–
+--   Surikaisekikenkyusho Kokyuroku 1172 (2000) 34–43; [habiro2004] A unified Witten–Reshetikhin–
 --   Turaev invariant for integral homology spheres, Invent. Math. 171 (2008) 1–81.
 -- Ref: [manuscript] deltalambda GAP-A-3 ROUTE 4 audit 2026-08-01; habiro_a3_probe.py.
 -/
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.MassTheory.HabiroMagnitudeA3
 
@@ -193,6 +194,13 @@ theorem rStar_lt_two : rStar < 2 := by
 inverse powers `(q^n)⁻¹ = q^{-n}`. The α_EM-shape finite Habiro element `[k]_q·(1 − h²X)` has
 this as its dominant factor (the correction `(1−h²X)` is `≈ 1` for the categorical `X`). -/
 noncomputable def qInt (n : ℕ) (q : ℝ) : ℝ := (q ^ n - (q ^ n)⁻¹) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.** The alias was refused — a proof
+below needs this literal body, with the inverse written `(q^n)⁻¹` rather than
+`q⁻¹^n` — so the consolidation is this equation rather than a substitution. -/
+theorem qInt_eq_canonical (n : ℕ) (q : ℝ) :
+    qInt n q = QOU.QInteger.qIntBal q n := by
+  simp [qInt, QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, inv_pow]
 
 /-- `q − q⁻¹ ≠ 0` for `q > 1` (since `q⁻¹ < 1 < q`). -/
 theorem denom_ne (q : ℝ) (hq : 1 < q) : q - q⁻¹ ≠ 0 := by

@@ -23,24 +23,41 @@
 #
 # LaTeX label: `prop:selection-rule-anchors-c1-c3`
 #
-# AGENTS.md §7c compliant: stated over ℝ for the substrate-anchor regime;
-# both halves are polynomial identities in q over a Field.
+# AGENTS.md §7c: both halves are polynomial identities in q over a Field,
+# as this docstring already observed — so the file is now stated over a
+# generic `{R : Type*} [Field R] [CharZero R]`, not over ℝ.
+#
+# `[CharZero R]` is required, not decorative: every anchor divides by 4
+# (and by 2), so `field_simp` needs `(4 : R) ≠ 0`. A port to plain
+# `[Field R]` leaves those goals unsolved.
+#
+# The old hypothesis `0 < q` was never used as an ordering — each proof
+# consumed it only through `ne_of_gt` to obtain `q ≠ 0` for `field_simp`.
+# It is therefore replaced by the weaker, order-free `q ≠ 0`, which
+# strengthens all three anchors. The archimedean substrate evaluation is
+# the instantiation `R := ℝ` at `q := q₀`.
 -/
 
-import Mathlib.Data.Real.Basic
-import Mathlib.Algebra.Order.Field.Basic
+import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Order.Ring.Cast
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
 namespace QOU.Mass
 
-/-- **c=1 anchor (muon)** — the average of the two q-dimensions of `H_2`
-is exactly 1 for all real `q > 0`.
+variable {R : Type*} [Field R] [CharZero R]
 
-`(1/2) · ( dim_q V_{(2)} + dim_q V_{(1,1)} ) = (1/2)(1 + 1) = 1`. -/
-theorem selection_rule_c1_eq_one (q : ℝ) (_hq : 0 < q) :
-    ((1 : ℝ) + 1) / 2 = 1 := by
+/-- **c=1 anchor (muon)** — the average of the two q-dimensions of `H_2`
+is exactly 1, at every `q` and over any base field.
+
+`(1/2) · ( dim_q V_{(2)} + dim_q V_{(1,1)} ) = (1/2)(1 + 1) = 1`.
+
+The `q` argument is retained for uniformity with the c=3 anchors but is
+genuinely unused: both `H_2` q-dimensions are the constant 1, so the
+statement carries no `q` at all. -/
+theorem selection_rule_c1_eq_one (_q : R) :
+    ((1 : R) + 1) / 2 = 1 := by
   norm_num
 
 /-- **c=3 anchor (proton)** — Family-A: the average of the five
@@ -52,13 +69,13 @@ Substituting the explicit q-hook values:
 
 Both sides are written here as explicit Laurent polynomials in `q`;
 the identity is a pure ring computation after clearing `q⁻¹`. -/
-theorem selection_rule_c3_eq_family_a_q_form (q : ℝ) (hq : 0 < q) :
+theorem selection_rule_c3_eq_family_a_q_form (q : R) (hq : q ≠ 0) :
     (1 + (q^2 + 1 + q⁻¹^2) + (q^2 + q⁻¹^2) + (q^2 + 1 + q⁻¹^2) + 1) / 4
     = (3 * q^2 + 4 + 3 * q⁻¹^2) / 4 := by
   -- `ring` over ℝ doesn't handle `q⁻¹` directly (per Copilot review on
   -- PR #1929); `field_simp` clears denominators first, then `ring`
   -- closes on the resulting polynomial identity.
-  have hq_ne : q ≠ 0 := ne_of_gt hq
+  have hq_ne : q ≠ 0 := hq
   field_simp
   ring
 
@@ -67,10 +84,10 @@ where `h := q - q⁻¹`.
 
 Uses the standard identity `q² + q⁻² = h² + 2`, then `field_simp; ring`
 clears the `q⁻¹` denominators and matches the polynomial form. -/
-theorem family_a_q_form_eq_h_form (q : ℝ) (hq : 0 < q) :
+theorem family_a_q_form_eq_h_form (q : R) (hq : q ≠ 0) :
     (3 * q^2 + 4 + 3 * q⁻¹^2) / 4
     = 5 / 2 + (3 / 4) * (q - q⁻¹)^2 := by
-  have hq_ne : q ≠ 0 := ne_of_gt hq
+  have hq_ne : q ≠ 0 := hq
   field_simp
   ring
 
@@ -78,7 +95,7 @@ theorem family_a_q_form_eq_h_form (q : ℝ) (hq : 0 < q) :
 selection-rule average at H_4, in the `h`-form expected by PR #1765:
 
 `lw(3) = 5/2 + (3/4)·(q − q⁻¹)²`. -/
-theorem selection_rule_c3_eq_family_a (q : ℝ) (hq : 0 < q) :
+theorem selection_rule_c3_eq_family_a (q : R) (hq : q ≠ 0) :
     (1 + (q^2 + 1 + q⁻¹^2) + (q^2 + q⁻¹^2) + (q^2 + 1 + q⁻¹^2) + 1) / 4
     = 5 / 2 + (3 / 4) * (q - q⁻¹)^2 := by
   rw [selection_rule_c3_eq_family_a_q_form q hq]

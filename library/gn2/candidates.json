@@ -1,0 +1,184 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "gn2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ffe8965c496dbb2ff99fb515692fe8738823a3c6177b8e1efaa3956384969d5c",
+  "file": "gn2.pdf"
+ },
+ "provenance": {
+  "title": "ning polynomial of the SL(2;C)-character variety of the twist knot. 1. Motivation and background 1.1. Motivation. The Kau man bracket skein module of a 3-manifold was intro- duced by J. Przyticki as a natural generalization of the Kau",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "theorem": 3,
+   "lemma": 8,
+   "remark": 1
+  },
+  "formalization_candidates": 11
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2",
+   "name": "Przytycki [P2]",
+   "statement": "The KBSM of the genus 2 handlebody is the free",
+   "section_file": "sections/sec-003-11-motivation-the-kau.md",
+   "section_title": "Motivation. The Kau",
+   "pages": "1-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": "Recursive relation ofXi",
+   "statement": "The skeinXi, (m+1\u0015i\u0015 0), as an element",
+   "section_file": "sections/sec-006-4-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": "General term",
+   "statement": "The skeins Xi, (0\u0014i\u0014m + 1) can be written in terms",
+   "section_file": "sections/sec-006-4-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "3",
+   "name": "Handle-slide relation",
+   "statement": "The handle-slide of Xm yields the following re-",
+   "section_file": "sections/sec-006-4-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "s 2 and 3 give us the following theorem.",
+   "section_file": "sections/sec-007-6-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4",
+   "name": null,
+   "statement": "Fork\u0015 0 andi = 1; 2;:::;m+1, as an element ofKt(EKm),Xi\u0003Sk(y)",
+   "section_file": "sections/sec-008-22-the-other-factorization-relations-the-action.md",
+   "section_title": "The other factorization relations (The action of Sk(y) on Xi). We now",
+   "pages": "6-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5",
+   "name": "General term",
+   "statement": "t\u00002iXi\u0003Sk(y) =(y\u0000t2\u0000t\u00002)\u00001\u0002 [\u0000t4k+2Sn+k+1(y) +t\u00004k\u00002Sn\u0000k\u00003(y)",
+   "section_file": "sections/sec-009-8-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "6",
+   "name": "Handle-slide relation",
+   "statement": "Xm+1\u0003Sk(y) +t\u00004Xm\u0003Sk(y) +t\u00002x2Sk(y) = 0:",
+   "section_file": "sections/sec-009-8-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "8-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "6",
+   "name": "Bullock [B1], Przytycki-Sikora [PS]",
+   "statement": "For any compact orientable 3-",
+   "section_file": "sections/sec-010-3-application-to-the-character-variety-of-the-m.md",
+   "section_title": "Application to the character variety of the m-twist knot",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "7",
+   "name": null,
+   "statement": "For any non-negative integer m, the minimal relation Rm(\u00001) has the",
+   "section_file": "sections/sec-010-3-application-to-the-character-variety-of-the-m.md",
+   "section_title": "Application to the character variety of the m-twist knot",
+   "pages": "9-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "1",
+   "name": null,
+   "statement": "The diagram in Figure 1 is alternating and irreducible, so the minimal",
+   "section_file": "sections/sec-011-10-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "10-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "7",
+   "name": null,
+   "statement": "Consider the character ring Q(\u00191(EKm)) and the KBSAKQ",
+   "section_file": "sections/sec-011-10-razvan-gelca-and-fumikazu-nagasato.md",
+   "section_title": "R\u0015AZVAN GELCA AND FUMIKAZU NAGASATO",
+   "pages": "10-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

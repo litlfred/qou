@@ -41,6 +41,16 @@ for p in "$ROOT"/content/*/lean/.lake/build/lib/lean; do
 done
 export LEAN_PATH="$LP"
 
+# NOTE — `-DautoImplicit=false` is NOT set here, and that is correct: it is
+# hardcoded, unconditionally, in the `lean` invocation inside
+# scripts/lean_cone_build.py (see `compile_one`). LEAN_CONE_EXTRA_ARGS is
+# *appended* to it, so overriding this variable cannot turn autoImplicit back
+# on. Do not "restore" the flag here — it moved in 6d60eb3e2a, it was not lost.
+# Why it matters: with autoImplicit on, a class field such as
+# `chi : ℕ → ℕ → R` inside a `extends MarkovTraceContext` descendant silently
+# auto-binds `R` as a fresh implicit instead of resolving to the inherited
+# parent field, and a no-op base-ring refactor compiles green.
+#
 # Match the package's `moreLeanArgs`: QOU/.../AllKnownIsotopesUniqueness is
 # machine-generated (~12800 declarations) and overflows Lean's default
 # elaboration-thread stack, aborting with a bare exit 134 rather than a source

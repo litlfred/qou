@@ -1,0 +1,65 @@
+{
+  "probe": "qbeta_5two_route42_extended_bloch_anchor",
+  "bean": "qou-0yqu",
+  "dps": 70,
+  "follows": [
+    "Route 40 (distribution factors)",
+    "Route 41 (ladder rank)"
+  ],
+  "corrects": [
+    "the branch assignment b = (+1,-1,0) for V_j -- the real root carries +1, not 0 (G2)",
+    "'Im(sum V_j) = 0' -- it is 2*pi*log(y_3), and a scan demanding Im = 0 rejected the correct branch assignment (G3)"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE ANCHOR. The field is the 5_2 knot's TRACE FIELD, not merely a cubic field of discriminant -23: the knot's hyperbolic volume is 3*D(y_1) at the complex root of the saddle cubic, and 6*D(c_1) at the generator c = 1/rho. Checked against a PUBLISHED volume, so this identifies y_1 as the tetrahedron shape rather than restating a definition. The published constant's precision, not the identity's, is what bounds this gate",
+      "Vol_5_2_reference": "2.828122088330783162",
+      "D(y_1)": "0.9427073627769277209212996",
+      "Vol / D(y_1)": "2.999999999999999999189676",
+      "Vol / D(c_1)": "5.999999999999999998379351",
+      "relative_deviation_from_3": "2.7010814e-19",
+      "relative_deviation_from_6": "2.7010814e-19",
+      "both_consistent_with_the_reference_precision": true,
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the sum rule reproduces with branch integers b = (-1, +1, +1) -- note the REAL root carries +1, not 0. The second half is the negative control and the correction: b = (+1, -1, 0), assuming the real root's branch is trivial, MISSES by more than 16. It is recorded because that is what this session asserted first",
+      "Re_sum_with_(-1,+1,+1)": "-14.8044066016340379282517364998",
+      "target_-3pi^2/2": "-14.8044066016340379282517364998",
+      "residual": "2.89781730522e-70",
+      "Re_sum_with_the_WRONG_(+1,-1,0)": "-30.82201549534345025367374",
+      "how_far_the_wrong_one_misses": "16.0176088937",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the imaginary half of the same sum is 2*pi*log(y_3) EXACTLY -- elementary, with no volume in it. So both halves of sum V_j are elementary and the hyperbolic volume appears nowhere in the Galois sum, even though it is 3*D(y_1) at a single root. \u26a0 A first pass reported this imaginary part as ZERO; that was an artifact of the wrong branch assignment in G2, and a scan that demanded Im = 0 therefore rejected the correct answer",
+      "Im_sum": "-5.30048710131356396277497282403",
+      "2_pi_log_y3": "-5.30048710131356396277497282403",
+      "residual": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "WHY EVERY LADDER ROUTE FAILED. D(y_1) alone carries the entire volume, but summed over the Galois orbit D cancels IDENTICALLY -- y_2 = conj(y_1) with D(conj z) = -D(z), and the real root gives 0. D is exactly the regulator the ordinary Bloch group computes, so that whole apparatus evaluates to zero on a Galois-summed dilogarithm and can carry no information about A. This is general (conjugate symmetry, every number field), which is why Routes 1-5, 40 and 41 could not have closed",
+      "D(y_1)_alone": "0.9427073627769277209212996",
+      "sum_over_the_galois_orbit": "0.0",
+      "worst_over_other_field_elements": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the target is unmoved. A = sum Li2(y_j) still has no proof, and nothing above is progress toward one -- G1 is an anchor, G4 is an obstruction, G2 and G3 are corrections. This gate exists so the anchor cannot be misread as the theorem",
+      "A": "0.971730681468648259127774169939",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "anchor": "the field is the 5_2 trace field: Vol(5_2) = 3*D(y_1) = 6*D(c_1).",
+    "obstruction": "D cancels identically on a Galois sum, and D is the ordinary Bloch group's regulator, so that machinery is structurally blind to A. Both halves of sum V_j are elementary; the volume is absent.",
+    "next": "the branch integers b_j are FLATTENING data. The extended Bloch group (Neumann) is built from flattenings, its regulator is the complex volume Vol + i*CS rather than Vol alone, and the Rogers dilogarithm is well defined on it -- it retains exactly what D discards. Attempt the proof there. Prerequisite: finish Route 41's G4 branch bookkeeping. Sibling #4824 is already in extended-Bloch territory.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

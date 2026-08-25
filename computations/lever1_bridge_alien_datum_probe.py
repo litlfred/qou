@@ -51,6 +51,8 @@ for p in (str(HERE / "substrate"), str(HERE)):
         sys.path.insert(0, p)
 
 import mpmath as mp  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
 mp.mp.dps = 600
 NS = (100, 200, 400)
@@ -150,7 +152,7 @@ def main() -> int:
     print(f"   local model: B̂(ξ) ≈ A_ω·(1−√2ξ)^(3/2)·exp(1/(4(1−√2ξ)))  near ξ = 1/√2")
 
     # 5. q-rigidity: alien datum stationary at q=1 (deformation even + O(ε²))
-    mp.mp.dps = 50
+    set_compute_dps()
     n0 = 20
     eps_list = [mp.mpf('0.02'), mp.mpf('0.04')]
     I20 = mp.mpf(I[n0])

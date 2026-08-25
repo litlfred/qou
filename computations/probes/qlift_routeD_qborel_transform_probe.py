@@ -9,7 +9,7 @@ Kernels (three-term windows aligned at index m):
   C1 (proved q-lift, c(q)=1):   [m+1]_q b_{m+1} = b_m + b_{m-1}
   GGM eq 49 (arXiv:2012.00062): y_{m+1} - (2 - q^m) y_m + y_{m-1} = 0.
 
-CONVENTION (RSZ, uploads/0903.0853v3.pdf Definition 2.3.3, |q| > 1): the
+CONVENTION (RSZ, library/arxiv-0903.0853v3/0903.0853v3.pdf Definition 2.3.3, |q| > 1): the
 level-1 formal q-Borel transform is the theta-kernel coefficient map
 f_n -> f_n * q^{-n(n-1)/2}.  RSZ 1.2.1 notes kernels are not canonical; the
 q-exponential variant divides by (q;q)_n.  All variants and directions are
@@ -45,8 +45,16 @@ import os
 from datetime import datetime, timezone
 
 from mpmath import mp, mpf
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+set_compute_dps()
 
 TOL_KILL = mpf("1e-40")   # pre-stated closure threshold
 TOL_ID = mpf("1e-45")     # exact-identity verification tolerance
@@ -288,8 +296,8 @@ def main():
                            "(diagonal-gauge scope-(b) exclusion; this probe shows the "
                            "formal q-Borel transform lies INSIDE that class and "
                            "re-derives the exclusion via the gauge invariant)",
-            "rsz_source": "uploads/0903.0853v3.pdf Def 2.3.3 p.23 + 1.2.1 (kernel choices)",
-            "ggm_source": "uploads/2012.00062v3.pdf p.14 (eq 49)",
+            "rsz_source": "library/arxiv-0903.0853v3/0903.0853v3.pdf Def 2.3.3 p.23 + 1.2.1 (kernel choices)",
+            "ggm_source": "library/arxiv-2012.00062v3/2012.00062v3.pdf p.14 (eq 49)",
             "discipline": "formalize-first (all identities derived by hand in the "
                           "audit doc before running); scope-(a)/(b) per AGENTS.md; "
                           "no AME data; anti-fit",

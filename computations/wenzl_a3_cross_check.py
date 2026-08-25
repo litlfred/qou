@@ -49,15 +49,11 @@ CANONICAL_TRM = {"tritium": 0.1040521067420517, "3He": 0.2065408170207396}
 def ops_to_word(ops):
     """(gen, ctype) → (c, d, g) Hecke word."""
     word = []
+    # `d_for_ctype` rather than a private if/elif; the chain this replaces
+    # raised on `averaged_weighted`, i.e. on every Z>=1,N>=1 atom.
+    from canonical_braid_crossings import d_for_ctype
     for gen, ctype in ops:
-        if ctype == "sigma":
-            word.append((1.0, 0.0, int(gen)))
-        elif ctype == "sigma_inv":
-            word.append((1.0, -float(H_VAL), int(gen)))
-        elif ctype == "averaged":
-            word.append((1.0, -float(H_VAL) / 2, int(gen)))
-        else:
-            raise ValueError(f"unknown crossing {ctype!r}")
+        word.append((1.0, float(d_for_ctype(ctype, H_VAL)), int(gen)))
     return word
 
 

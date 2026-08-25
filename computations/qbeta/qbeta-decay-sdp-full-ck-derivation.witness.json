@@ -10,7 +10,7 @@
       "expected": 0,
       "passed": true,
       "tolerance": 1e-05,
-      "source": "SDP-T_β extraction matches empirical sweep c_4"
+      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_4"
     },
     {
       "name": "c_5_extracted_matches_empirical",
@@ -18,7 +18,7 @@
       "expected": 0,
       "passed": true,
       "tolerance": 1e-05,
-      "source": "SDP-T_β extraction matches empirical sweep c_5"
+      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_5"
     },
     {
       "name": "c_6_extracted_matches_empirical",
@@ -26,7 +26,7 @@
       "expected": 0,
       "passed": true,
       "tolerance": 1e-05,
-      "source": "SDP-T_β extraction matches empirical sweep c_6"
+      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_6"
     },
     {
       "name": "c_7_extracted_matches_empirical",
@@ -34,7 +34,7 @@
       "expected": 0,
       "passed": true,
       "tolerance": 0.001,
-      "source": "SDP-T_β extraction matches empirical sweep c_7"
+      "source": "SDP-T_\u03b2 extraction matches empirical sweep c_7"
     }
   ],
   "allPassed": true,
@@ -43,7 +43,7 @@
   "scriptFile": "qbeta_decay_sdp_full_ck.py",
   "scriptHash": "e55e6f5b8135",
   "scriptCommitSha": "unknown",
-  "description": "FULL c_k derivation from SDP-T_β framework. R(q_0) = Q_β / (Q_A · cos) factored as ∏(1 + c_k·b^k·ℏ_q^(2k)) sequentially. All c_k (k=2..7) reproduced EXACTLY at 50dps. This validates the audit claim that the c_k are tautologically determined by the precision-ladder structure once Q_β CODATA is input.",
+  "description": "FULL c_k derivation from SDP-T_\u03b2 framework. R(q_0) = Q_\u03b2 / (Q_A \u00b7 cos) factored as \u220f(1 + c_k\u00b7b^k\u00b7\u210f_q^(2k)) sequentially. All c_k (k=2..7) reproduced EXACTLY at 50dps. This validates the audit claim that the c_k are tautologically determined by the precision-ladder structure once Q_\u03b2 CODATA is input.",
   "parameters": {
     "q_0_50dps": "1.10997859555...",
     "Q_AME_50dps": "0.78233341400000004817906074094935320317745208740256"
@@ -62,10 +62,10 @@
     "c_k_closed_forms": {
       "c_2": "-1 (factor convention)",
       "c_3": "-2 (J_Hopf at q=1, Fact 3)",
-      "c_4": "c_3·b⁴ = -2·b⁴ = -1.133121",
-      "c_5": "-(b² + 1/2) = -1.252702",
-      "c_6": "c_3²·b² = 4·b² = 3.010808",
-      "c_7": "c_3³ = -8 (loose; N=7 leverage limit)"
+      "c_4": "c_3\u00b7b\u2074 = -2\u00b7b\u2074 = -1.133121",
+      "c_5": "-(b\u00b2 + 1/2) = -1.252702",
+      "c_6": "c_3\u00b2\u00b7b\u00b2 = 4\u00b7b\u00b2 = 3.010808",
+      "c_7": "c_3\u00b3 = -8 (loose; N=7 leverage limit)"
     },
     "derivation_status": "c_2 derived from R(q_0) factorization. c_3 derived from R(q_0)/N2. c_4..c_7 sequentially extracted; each matches the empirical sweep value EXACTLY at 50dps. The 'closed form' interpretations match c_4 best (0.9%), c_5 (2.4%), c_6 (14%), c_7 (not uniquely)."
   }

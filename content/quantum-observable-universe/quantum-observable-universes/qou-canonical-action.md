@@ -19,4 +19,4 @@ $$
   \underbrace{\int_A\!\bigl(\psi^* \cdot \mathcal{D}_\nabla\psi\bigr)}_{\text{matter}}.
 $$
 
-The categorical trace factors as $\mathrm{tr} = \int_A \circ \mathrm{tr}_A$, so all three summands share the same integration. The gauge term forms the Yang--Mills curvature integral. The action $\mathfrak{S}_q$ acts as the analogue of Hamilton's classical $S = \int L\,\mathrm{d}t$, with $\int_A$ replacing integration over spacetime and $\mathcal{L}_q$ replacing the Lagrangian density. The single scalar $\lambda$ tracks the normalization of the Frobenius form $\int_A$, corresponding to the freedom in choosing physical units.
+The categorical trace factors as $\mathrm{tr} = \int_A \circ \mathrm{tr}_A$, so all three summands share the same integration. The gauge term is the Yang--Mills curvature integral. The action $\mathfrak{S}_q$ is the analogue of Hamilton's classical $S = \int L\,\mathrm{d}t$, with $\int_A$ replacing integration over spacetime and $\mathcal{L}_q$ replacing the Lagrangian density. The single scalar $\lambda$ tracks the normalization of the Frobenius form $\int_A$, corresponding to the freedom in choosing physical units.

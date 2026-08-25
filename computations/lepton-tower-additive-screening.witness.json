@@ -171,5 +171,8 @@
   },
   "caveats": [
     "Scope-(b) covers POSITIVE two-mode sums only. More than two modes is not formalised (the Lagrange identity generalises by symmetrising over pairs, but that is not done here). Sign-indefinite combinations are NOT excluded and are demonstrated above to escape -- they remain the one open shape in this direction."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.cases.Vol(4_1)-like base.h, data.cases.equal rates g=h.g, data.cases.equal rates g=h.h). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

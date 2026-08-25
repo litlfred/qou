@@ -68,6 +68,7 @@ from hecke_characters import (  # noqa: E402
 )
 from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
@@ -274,7 +275,7 @@ def analyze_atom(atom: dict, wenzl: dict) -> dict:
         y = wenzl.get(lam, 0.0)
         prod = abs(y * chi)
         d_lam = syt_count(lam)
-        dq = float(dim_q(lam))      # q-dim at module-level Q
+        dq = float(dim_q(lam, Q0_PROTON))      # q-dim at module-level Q
         per_lambda.append({
             "lambda": list(lam),
             "is_hook": is_hook_partition(lam),
@@ -367,7 +368,12 @@ def operator_selection_lp_per_atom(analysis: dict) -> dict:
     t = -np.array([r["y_times_chi_abs"] for r in per_lambda])
     G = np.eye(K)
     n_target = 1.0
-    res = solve_operator_selection_lp(t, G, n_target)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res = solve_operator_selection_lp(t, G, n_target, backend="clarabel")
     return {
         **res.to_dict(),
         "channel_lambdas": [r["lambda"] for r in per_lambda],

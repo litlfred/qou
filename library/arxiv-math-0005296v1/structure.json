@@ -1,0 +1,79 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0005296v1",
+ "source": {
+  "file": "0005296v1.pdf",
+  "sha256": "1714653ecfdf01bccb517050f0b4d41a1b56d2462c1d74cd86e2530ede75f004",
+  "bytes": 68291,
+  "pages": 4
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0005296",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "31 May 2000"
+  },
+  "doi": null,
+  "title": "An example concerning Ohtsuki’s invariant and the full SO(3) quautum invariant ∗",
+  "authors_raw": "Bang-He Li & Tian-Jun Li",
+  "abstract": "Two lens spaces are given to show that Ohtsuki’s τ for rational homology spheres does not determine Kirby-Melvin’s {τ ′ r, r odd ≥ 3} By using partial Kirby-Melvin’s quautum SO(3) invariants {τ ′ r(M ), r odd prime > |H1(M, Z)|} [KM], Ohtsuki [O] deﬁned a topological invariant τ (M ) = ∞∑ n=0 λn(M )(t − 1)n ∈ Q[[t − 1]] for rational homology 3-sphere M . R.Lawrence [La] conjectured that λn(M ) ∈ { Z, if |H1(M, Z)| = 1 Z[ 1 2 , 1 |H1(M,Z )| ], if |H1(M, Z)| > 1 and if r is an odd prime which does not divide |H1(M, Z)|, then {|H1(M, Z)|}rτ ′ r(M ) is the r−adic limit of the series ∞∑ n=0 λ √ n (M )hn where {·}r stands for the Jacobi symbol, and h = e 2πi r − 1. Rozansky [R] has proved that this conjecture is true. So τ (M ) and {τ ′ r, r odd prime not dividing |H1(M, Z)|} determine each other. A natural question arises: Does τ determine all {τ ′ r, r odd ≥ 3}? It was proved in [Li] that τ ′ r(M ) = τ ′ r(M ′) iﬀ ξr(M, A) = ξr(M ′, A) for r odd ≥ 3, where A is any r−th primitive root of unit. So the question is equivalent to: D oes τ (M ) determine all ξr(M, er)? Where, ea stands for e 2πi a . ∗The ﬁrst author is supported partially by the National Scien ce Foundation of P. R. China, the second author is supported partially by NSF grant DMS 9304580 1",
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20210823023725-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0005296v1  [math.QA]  31 May 2000"
+  },
+  "title_lines": [
+   "An example concerning Ohtsuki’s invariant and the full",
+   "SO(3) quautum invariant ∗"
+  ],
+  "title_prev": "λn(M )(t − 1)n ∈ Q[[t − 1]] for rational homology 3-sphere M . R.Lawrence [La] conjectured that λn(M ) ∈"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 3,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3076,
+   "n_words": 790
+  },
+  {
+   "id": "sec-001-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 1334,
+   "n_words": 197
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 2,
+  "chars_total": 4410
+ }
+}

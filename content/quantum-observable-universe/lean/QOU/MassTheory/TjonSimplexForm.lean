@@ -12,7 +12,9 @@ import Mathlib.Data.Real.Basic
 Pionless EFT explains the empirical Tjon correlation between `B(³H)` and
 `B(⁴He)` by the *absence* of a four-nucleon force at leading order: one
 SU(4)-symmetric three-nucleon parameter suffices to renormalise the four-nucleon
-system (Platter–Hammer–Meißner, `nucl-th/0409040`). This file turns that
+system (Platter–Hammer–Meißner, `[platter2005tjon]`, `nucl-th/0409040`; there
+`B_d = 2.22` and `B_t = 8.48 MeV` give `B_α = 29.5 MeV` against the
+Coulomb-corrected experimental `29.0 ± 0.1`). This file turns that
 statement into arithmetic on the residual-simplex ansatz
 `M(A) = ∑ₖ μₖ · C(A,k)` of `QOU.MassTheory.UrsellSlotAlignment`, and draws the
 consequence the Δ_λ programme needs.
@@ -37,12 +39,29 @@ sign carries no four-body information.
 additivity forces `μ₃ = μ₄ = 0`, so every nonzero high moment measures
 *non-additivity*, not a `k`-body force.
 
+**On the name.** Throughout this file `μ₄` is called the "four-body moment"
+because that is the standing name for the `k = 4` simplex coefficient, and the
+docstrings are careful to deny the physical reading each time. It is worth
+saying once, plainly, why the denial is needed: with three moments fitted to
+three anchors (`A = 2, 3, 4`) the system is exactly determined, so
+`μ₄ := M(4) − 4M(3) + 6M(2)` is a **definition** carrying zero residual
+freedom. Writing `μ₄` is another way of writing "the amount by which `M(4)`
+exceeds the two-point prediction" and nothing more; it acquires no physical
+content from the index it is written under. This is the corpus rule *defined
+residual ≠ derived decomposition* applied to this file's own vocabulary.
+Narrative twin: `rem:tjon-universality-external`.
+
 `mu4_target_exceeds_n3lo_bound` certifies the numeric claim behind the
 GAP-9 probe: the corpus target `μ₄ = −4.591` (in units of `B(D) = 2.224566 MeV`)
 exceeds `34 ×` the N³LO four-nucleon estimate of `0.300 MeV`
-(Jurgenson–Navrátil–Furnstahl, `arXiv:0905.1873`, which measures the SRG-induced
-four-body force at `λ = 2 fm⁻¹` as "about 50 keV net" and quotes the N³LO
-long-range estimate as "of order a few hundred keV").
+(Jurgenson–Navrátil–Furnstahl, `[jurgenson2009srg]`, `arXiv:0905.1873`, which
+measures the SRG-induced four-body force at `λ = 2 fm⁻¹` as "about 50 keV net"
+and quotes the N³LO long-range estimate as "of order a few hundred keV").
+
+`§UniversalLimitCrossCheck` at the foot of the file adds the external check that
+the framing above needs: the field's own parameter-free four-body answer
+(`[hammer2007fourbody]`) is **not** on the `μ₄ = 0` baseline, and the simplex
+basis assigns it a `μ₄` larger than the nuclear one.
 
 Base ring: **generic** `[CommRing R]` (§7c) for the identities; the sign lemma
 adds only an ordering. The one numeric certification is over `ℝ`, as it must be.
@@ -135,6 +154,7 @@ section NumericCertification
 in units of `B(D) = 2.224566 MeV` is `10.213 MeV`, which exceeds `34 ×` the
 N³LO four-nucleon estimate of `0.300 MeV`. Over `ℝ`, as a numeric statement must
 be; this is a certification of the probe's arithmetic, not a structural theorem. -/
+-- Ref: [jurgenson2009srg] https://doi.org/10.1103/PhysRevLett.103.082501
 theorem mu4_target_exceeds_n3lo_bound :
     (34 : ℝ) * 0.300 < 4.591 * 2.224566 := by norm_num
 
@@ -177,5 +197,130 @@ theorem ladder_ratio_neg (M₂ M_A : K) :
     (-M_A) / (-M₂) = M_A / M₂ := neg_div_neg_eq M_A M₂
 
 end SignBlindness
+
+
+section UniversalLimitCrossCheck
+
+/-!
+### `μ₄ = 0` and "no four-body force" are **not** the same statement
+
+The file's framing above is that a large `μ₄` is a simplex-basis artifact rather
+than four-body physics. That framing is *strengthened*, not merely illustrated,
+by the field's own parameter-free answer, and this section proves the point
+rather than asserting it.
+
+Hammer–Platter solve the four-boson Yakubovsky equations **with no four-body
+parameter at all** and report that, away from threshold, the four-body ground
+state is related to the deepest three-body state by a factor of `5`
+(`[hammer2007fourbody]` §III.B). So `M(4) = 5·M(3)` is a ratio produced by a
+calculation that contains no four-body input.
+
+Say it that way and no further. "No four-body parameter is needed to renormalise
+at leading order" is **not** "no four-body force exists": `[jurgenson2009srg]`
+puts the four-nucleon force at tens to a few hundred keV — small, not zero. And
+the authors themselves flag that their universality rests on the RG analysis of
+their ref. [12], which Yamashita et al. dispute (§I, p. 3) — though that dispute
+explicitly *exempts* the nuclear case, "⁴He atoms and nucleons (where this
+sensitivity is absent)", which is the case at issue here. The argument below
+needs only the weak reading, so it takes only the weak reading.
+
+`universal_ratio_forces_mu4` computes what the simplex basis assigns to that
+calculation: `μ₄ = 9·μ₂ + μ₃`, which is **positive and large** — at the nuclear
+`(μ₂, μ₃) = (1, 0.8128)` it is `9.81`, some `2.6 ×` the value the nuclear data
+themselves produce. A quantity that is large in a calculation carrying no
+four-body input at all is not measuring a four-body input.
+
+`tjon_baseline_lt_four_ratio` sharpens this into an exclusion: on the `μ₄ = 0`
+baseline the ratio `M(4)/M(3)` is *strictly below 4* for any positive `μ₂`, so
+the universal ratio `5` is **outside the baseline's reachable range entirely**
+(`universal_ratio_not_in_tjon_baseline`). The two notions of "no four-body
+parameter" — the EFT's (no new coupling in a nonlinear Yakubovsky solution) and
+the simplex's (`μ₄ = 0` in a linear inclusion–exclusion form) — are therefore
+provably inequivalent, and the external result may be cited as motivation for
+the baseline but never as a derivation of it.
+
+Companion probe: `computations/deltalambda/tjon_external_cross_check_probe.py`,
+which also re-derives the AME2020 inputs from `library/mass_1.mas20.txt` rather
+than from transcribed literals.
+-/
+
+section BaselineBounds
+
+variable {R : Type*} [CommRing R]
+
+/-- The gap between `M(4)` and twice `M(3)`. Pure bookkeeping, recorded because
+it is what lets a measured ladder be read back as a sign statement about `μ₃`. -/
+theorem four_sub_two_mul_three (μ₂ μ₃ μ₄ : R) :
+    Mval μ₂ μ₃ μ₄ 4 - 2 * Mval μ₂ μ₃ μ₄ 3 = 2 * μ₃ + μ₄ := by
+  simp only [Mval_three, Mval_four]
+  ring
+
+/-- **What the simplex basis assigns to a calculation carrying no four-body
+input.** If a ladder realises the universal four-to-three ratio `M(4) = 5·M(3)`,
+then its four-body moment is `μ₄ = 9·μ₂ + μ₃` — determined entirely by the
+*lower* moments, with no four-body input anywhere. -/
+theorem universal_ratio_forces_mu4 (μ₂ μ₃ μ₄ : R)
+    (h : Mval μ₂ μ₃ μ₄ 4 = 5 * Mval μ₂ μ₃ μ₄ 3) : μ₄ = 9 * μ₂ + μ₃ := by
+  simp only [Mval_three, Mval_four] at h
+  linear_combination h
+
+end BaselineBounds
+
+section BaselineOrder
+
+variable {R : Type*} [CommRing R] [LinearOrder R] [IsStrictOrderedRing R]
+
+/-- **The `μ₄ = 0` baseline is strictly below ratio 4.** For any positive `μ₂`
+the two-point prediction satisfies `M(4) < 4·M(3)`, whatever `μ₃` is. The bound
+does not constrain `μ₃` at all: the gap is exactly `−6·μ₂`. -/
+theorem tjon_baseline_lt_four_ratio {μ₂ : R} (μ₃ : R) (hμ₂ : 0 < μ₂) :
+    Mval μ₂ μ₃ 0 4 < 4 * Mval μ₂ μ₃ 0 3 := by
+  simp only [Mval_three, Mval_four]
+  linarith
+
+/-- **The universal ratio is unreachable on the baseline.** A ladder with `μ₄ = 0`,
+positive `μ₂` and positive `M(3)` cannot satisfy `M(4) = 5·M(3)`. Hence the EFT's
+"no four-body parameter at leading order" and the simplex's `μ₄ = 0` are
+inequivalent conditions, and a nonzero `μ₄` cannot be read as four-body physics
+on the strength of the former. -/
+theorem universal_ratio_not_in_tjon_baseline {μ₂ μ₃ : R} (hμ₂ : 0 < μ₂)
+    (hM₃ : 0 < Mval μ₂ μ₃ 0 3) :
+    Mval μ₂ μ₃ 0 4 ≠ 5 * Mval μ₂ μ₃ 0 3 := by
+  have h4 := tjon_baseline_lt_four_ratio (R := R) μ₃ hμ₂
+  intro h
+  rw [h] at h4
+  linarith
+
+/-- **A ladder flatter than ratio 2 has a negative three-body moment.** Recorded
+because the corpus block-trace operator measures `M(4) < 2·M(3)` under both bond
+conventions, which by `four_sub_two_mul_three` pins `2·μ₃ + μ₄ < 0` — a
+diagnosis of the operator's ladder, not of nature's. -/
+theorem two_mu3_add_mu4_neg_of_flat {μ₂ μ₃ μ₄ : R}
+    (h : Mval μ₂ μ₃ μ₄ 4 < 2 * Mval μ₂ μ₃ μ₄ 3) : 2 * μ₃ + μ₄ < 0 := by
+  have hd := four_sub_two_mul_three μ₂ μ₃ μ₄
+  linarith
+
+end BaselineOrder
+
+section ExternalNumerics
+
+/-- The nuclear ladder sits *below* the universal ratio: with the corpus's
+AME-derived `ρ_strong = (1, 3.8128, 13.0316)` one has `M(4) < 5·M(3)`, i.e.
+`B(⁴He)/B(³H) ≈ 3.42` against the zero-range universal `5`. Nuclear binding is
+not in the universal regime — finite-range effects shift it, exactly as the
+source states. -/
+-- Ref: [hammer2007fourbody] https://doi.org/10.1140/epja/i2006-10301-8
+theorem ame_ratio_below_universal : (13.0316 : ℝ) < 5 * 3.8128 := by norm_num
+
+/-- And the corpus block-trace operator is flatter still — flatter even than the
+pairwise ratio `2`, using the complete-graph ladder `M(3) = 1.78578`,
+`M(4) = 2.11435` of the GAP-10 witness. With `ame_ratio_below_universal` this
+orders the three: operator `1.18` < nature `3.42` < universal `5`, so the
+external number widens the ladder gap rather than closing it. -/
+theorem operator_ladder_below_pairwise : (2.11435 : ℝ) < 2 * 1.78578 := by norm_num
+
+end ExternalNumerics
+
+end UniversalLimitCrossCheck
 
 end QOU.MassTheory.TjonSimplexForm

@@ -1,12 +1,14 @@
 {
   "engine": "snappea",
   "engineVersion": "snappy 3.3.2",
-  "computedAt": "2026-04-07T12:33:26.002226+00:00",
+  "computedAt": "2026-08-23T13:21:03.832642+00:00",
+  "commitSha": "9f11db11d8c188b2d92fff2a756325c3594f8220",
   "assertions": [
     {
       "name": "Vol(0_1) — unknot (neutrino)",
       "computed": 0.0,
       "expected": 0.0,
+      "passed": true,
       "tolerance": 1e-10,
       "unit": "volume",
       "source": "Trivial knot"
@@ -15,6 +17,7 @@
       "name": "Vol(3_1) — trefoil (electron)",
       "computed": 0.0,
       "expected": 0.0,
+      "passed": true,
       "tolerance": 1e-10,
       "unit": "volume",
       "source": "Torus knot (non-hyperbolic)"
@@ -23,14 +26,16 @@
       "name": "Vol(4_1) — figure-eight (Higgs field / mass mechanism)",
       "computed": 2.029883212819307,
       "expected": 2.02988321281931,
+      "passed": true,
       "tolerance": 1e-10,
       "unit": "volume",
-      "source": "OEIS A091518, 3·Cl₂(π/3)"
+      "source": "OEIS A091518, 2·Cl₂(π/3) = 6Λ(π/3)"
     },
     {
-      "name": "Vol(5_1) — cinquefoil (muon T_{2,5})",
+      "name": "Vol(5_1) — cinquefoil T(2,5) (muon; torus knot, Vol_hyp=0)",
       "computed": 0.0,
       "expected": 0.0,
+      "passed": true,
       "tolerance": 1e-10,
       "unit": "volume",
       "source": "Torus knot (non-hyperbolic)"
@@ -39,6 +44,7 @@
       "name": "Vol(5_2) — three-twist (strange quark)",
       "computed": 2.828122088330783,
       "expected": 2.82812208832975,
+      "passed": true,
       "tolerance": 1e-10,
       "unit": "volume",
       "source": "SnapPy census"
@@ -47,6 +53,7 @@
       "name": "Vol(7_1) — septafoil (tau T_{2,7})",
       "computed": 0.0,
       "expected": 0.0,
+      "passed": true,
       "tolerance": 1e-10,
       "unit": "volume",
       "source": "Torus knot (non-hyperbolic)"
@@ -55,6 +62,7 @@
       "name": "Vol(L2a1) — Hopf link (strong force)",
       "computed": -3.556201149539995e-08,
       "expected": 0.0,
+      "passed": true,
       "tolerance": 1e-06,
       "unit": "volume",
       "source": "Torus link (non-hyperbolic)"
@@ -63,39 +71,65 @@
       "name": "Vol(L6a4) — Borromean rings (nucleon)",
       "computed": 7.327724753417752,
       "expected": 7.32772475341775,
+      "passed": true,
       "tolerance": 1e-10,
       "unit": "volume",
       "source": "8·G (Catalan's constant), OEIS A006752"
     },
     {
       "name": "m_μ/m_e (CODATA 2022)",
-      "computed": 206.768283,
-      "expected": 206.768283,
+      "computed": 206.7682827,
+      "expected": 206.7682827,
+      "passed": true,
       "tolerance": 1e-07,
       "unit": "dimensionless",
-      "source": "CODATA 2022"
+      "source": "CODATA 2022 (NIST allascii.txt, muon-electron mass ratio)"
     },
     {
       "name": "substrate q from Vol(4_1) and m_μ/m_e",
-      "computed": 1.1099785955541805,
+      "computed": 1.109978595642739,
       "expected": 1.10997,
+      "passed": true,
       "tolerance": 0.001,
       "unit": "dimensionless",
       "source": "QOU derivation (Ch11)"
     },
     {
       "name": "ℏ_q = 1 - 1/q",
-      "computed": 0.0990817264356989,
+      "computed": 0.09908172650757774,
       "expected": 0.09905,
+      "passed": true,
       "tolerance": 0.001,
       "unit": "dimensionless",
       "source": "QOU definition (Ch1)"
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
-  "precision": "f64_numeric_fallback",
-  "truncation_eps": 0.0,
-  "scriptFile": "knot_volumes.py",
-  "commitSha": "610a6aa2bde5fabec35796ead6bbb0adb76f6533"
+  "durationMs": 0,
+  "computation": "knot-volumes",
+  "scriptFile": "knot-volumes.py",
+  "scriptHash": "1cee1afa0c89",
+  "scriptCommitSha": "484f1a86105ace5a153505a1a392e5969f88d1cd",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/knot-volumes.py"
+    ],
+    "reproduce": "python3 -u computations/knot-volumes.py"
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Reads no substrate q₀: no q_parameter.Q / Q_MP / q_at import and no q₀ literal; the only registry value consumed is the CODATA muon-electron mass ratio. The 1.10997… in assertions[9] is an OUTPUT — q derived forward from Vol(4₁) and m_μ/m_e, i.e. the CAL-2 definition run as that assertion's subject, checked against its own expected 1.10997 ± 1e-3. It is therefore in the muon basin BY CONSTRUCTION and cannot track the proton pin: there is nothing here for a re-pin to change. Distinguish from the z2bn-tau-derivation-probe case (bean qou-bdkx), where an `independent` declaration was FALSE because the producer hardcoded a q₀ and consumed it five times — the check is whether q₀ is an input, not whether a q₀-shaped number appears."
 }

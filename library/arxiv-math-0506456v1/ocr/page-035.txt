@@ -1,0 +1,50 @@
+Asymptotics of the quantum invariants for the figure 8 knot 35
+
+Proposition 3. For p 4 0 the set of conjugacy classes of abelian SU(2)—represen-
+tations of 71(M,/q) is given by
+
+Coley
+
+where [|p|/2] is the integer part of |p|/2. For p = 0 the set of conjugacy classes of
+abelian SU(2)-representations of 7(M,/q) is given by
+
+{mi |e) }.
+
+so topologically this set is a closed interval. Oo
+
+5.2. Chern—Simons invariants
+
+We begin by recalling formulas from [18] for the Chern-Simons invariants of the
+flat SU(2)-connections on M,/,. The basic tool will be Theorem 6 below due to P.
+A. Kirk and E. P. Klassen.
+
+Let M be a closed oriented 3-manifold with a knot A’ in its interior and let
+X be the complement of a tubular neighborhood of K in M. Moreover, let js be
+a meridian of K and X a longitude, both in 0X. Let G be SU(2) or SL(2,C). If
+p:m(X) > G is a representation, then p extends to a G-representation of 7 (M)
+if and only if p(u) = 1. Now assume that p; : 7 (X) > G is a piecewise smooth
+path of representations, t € I = [0,1]. Choose a piecewise smooth path g: I > G
+such that
+
+gpi(nge? = diag (e270, e-Pr'al)
+
+goldgr = diag (€271 20100) (5.66)
+
+for some piecewise smooth curves a, 3. If G = SU(2) this is always possible by [18,
+Lemma 3.1], and in that case a and ( are real-valued. If G = SL(2,C) the above
+is possible if the path p avoids the parabolic representations (i.e. upper triangular
+with 1s or —1s on the diagonal), cf. [18, Remark p. 354]. (See the text in connection
+to (5.63) for the case of the figure 8 knot.) In that case the curves a and { are
+complex-valued. We then have
+
+Theorem 6 ( [18, Theorem 4.2] ). Assume that po(4) = pi(u) = 1. Thinking
+of po and p; as flat G-connections on M, we have
+
+1
+C8(p1) — C8(p0) = =2 [ B(t)a'(t)dt (mod Z),
+
+where CS is the Chern—Simons functional associated to G. oO
+
+We note that in case G = SL(2,C) the Chern—Simons functional takes values in
+
+C/Z.

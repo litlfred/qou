@@ -1,0 +1,304 @@
+{
+  "engine": "python+mpmath(exact combinatorics)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-24T14:56:24.147611+00:00",
+  "commitSha": "1ab17d35c7850e13c798ab0e5076244f0cb9a003",
+  "assertions": [
+    {
+      "name": "y_vanishing_is_SU_N_schur_vanishing",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "y_lambda = 0 iff len(lambda) > N, at N = 2,3,4,n — so the support is N=2, not Delta"
+    },
+    {
+      "name": "zD_is_the_SU2_markov_parameter",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "z_D = q^3/(q^2+1) = q^N/[N]_q at N=2 — the Gram singularity is the same fact"
+    },
+    {
+      "name": "y_lambda_vanishes_on_every_ge3row_block",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "7 of 11 partitions, each contributing exactly 0"
+    },
+    {
+      "name": "ge3row_blocks_contribute_exactly_zero",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "not small — identically zero, so no per-block weight there can act"
+    },
+    {
+      "name": "support_is_the_le2row_set",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "the whole sum is carried by the Temperley-Lieb quotient"
+    },
+    {
+      "name": "dimension_identity_holds_n3_to_n6",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "sum_(>=3 rows) dim^2 = n! - Catalan(n) — the general-n form"
+    },
+    {
+      "name": "surviving_sum_is_cancellation_dominated",
+      "computed": "1",
+      "expected": true,
+      "passed": true,
+      "value": true,
+      "note": "cancellation ratio 3.43525x"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "delta-lambda-closure-tl-support",
+  "scriptFile": "delta_lambda_closure_tl_support_probe.py",
+  "scriptHash": "996d9e6d7a9c",
+  "scriptCommitSha": "1ab17d35c7850e13c798ab0e5076244f0cb9a003",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/delta_lambda_closure_tl_support_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/delta_lambda_closure_tl_support_probe.py"
+  },
+  "description": "Support analysis of the parameter-free Delta_lambda closure. y_lambda vanishes on every >= 3-row partition, so the sum is supported entirely on the Temperley-Lieb quotient and no per-block weight on a >= 3-row block can contribute to it. The surviving 4-term sum is cancellation-dominated (3.44x).",
+  "source_witness": "computations/rho-w-crystal-vertex-trace.witness.json",
+  "n_strands": 6,
+  "captured_fraction": "0.164802418824414840789431676806630691067925944505050288090048",
+  "closure_status": "does_not_close",
+  "signed_total": "-0.717445421638373002107157942483209074290265147127090471825101",
+  "sum_of_absolute_terms": "2.464603894931472305009377815785477985027579112027930826524681",
+  "cancellation_ratio": "3.435249317367239682048354776156306853425877937622267938038102626240168",
+  "largest_term_pct_of_total": "176.9735890517805884133092144752122213590479166256946152686726636560372",
+  "by_partition": [
+    {
+      "partition": [
+        6
+      ],
+      "rows": 1,
+      "y_lambda": "0.11532422490206616611036906989019053151376047733151",
+      "signed_contribution": "0.179890821712567051197853247097834399202216545043189869838475",
+      "contributes": true
+    },
+    {
+      "partition": [
+        5,
+        1
+      ],
+      "rows": 2,
+      "y_lambda": "0.078952962475926678987719631392210998525081319853835",
+      "signed_contribution": "-1.26968891216110876390477984729736329645546366913653277564083",
+      "contributes": true
+    },
+    {
+      "partition": [
+        4,
+        2
+      ],
+      "rows": 2,
+      "y_lambda": "0.046032434692020426936520153786581544499316813480771",
+      "signed_contribution": "0.693688414933982600253256689553300056166440437407230307511315",
+      "contributes": true
+    },
+    {
+      "partition": [
+        4,
+        1,
+        1
+      ],
+      "rows": 3,
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0",
+      "contributes": false
+    },
+    {
+      "partition": [
+        3,
+        3
+      ],
+      "rows": 2,
+      "y_lambda": "0.015123810098023319304470277813904115073396320414472",
+      "signed_contribution": "-0.321335746123813889653488031836980233203458460440977873534061",
+      "contributes": true
+    },
+    {
+      "partition": [
+        3,
+        2,
+        1
+      ],
+      "rows": 3,
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0",
+      "contributes": false
+    },
+    {
+      "partition": [
+        3,
+        1,
+        1,
+        1
+      ],
+      "rows": 4,
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0",
+      "contributes": false
+    },
+    {
+      "partition": [
+        2,
+        2,
+        2
+      ],
+      "rows": 3,
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0",
+      "contributes": false
+    },
+    {
+      "partition": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "rows": 4,
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0",
+      "contributes": false
+    },
+    {
+      "partition": [
+        2,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rows": 5,
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0",
+      "contributes": false
+    },
+    {
+      "partition": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "rows": 6,
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0",
+      "contributes": false
+    }
+  ],
+  "dimension_identity": [
+    {
+      "n": 3,
+      "partitions": 3,
+      "contributing_le2rows": 2,
+      "sum_dim_sq_ge3rows": 1,
+      "n_factorial_minus_catalan": 1,
+      "equal": true
+    },
+    {
+      "n": 4,
+      "partitions": 5,
+      "contributing_le2rows": 3,
+      "sum_dim_sq_ge3rows": 10,
+      "n_factorial_minus_catalan": 10,
+      "equal": true
+    },
+    {
+      "n": 5,
+      "partitions": 7,
+      "contributing_le2rows": 3,
+      "sum_dim_sq_ge3rows": 78,
+      "n_factorial_minus_catalan": 78,
+      "equal": true
+    },
+    {
+      "n": 6,
+      "partitions": 11,
+      "contributing_le2rows": 4,
+      "sum_dim_sq_ge3rows": 588,
+      "n_factorial_minus_catalan": 588,
+      "equal": true
+    }
+  ],
+  "su_N_row_cutoff_sweep": [
+    {
+      "N": 2,
+      "nonzero": 4,
+      "of": 11,
+      "longest_surviving_column": 2,
+      "vanishes_above_N_rows": true
+    },
+    {
+      "N": 3,
+      "nonzero": 7,
+      "of": 11,
+      "longest_surviving_column": 3,
+      "vanishes_above_N_rows": true
+    },
+    {
+      "N": 4,
+      "nonzero": 9,
+      "of": 11,
+      "longest_surviving_column": 4,
+      "vanishes_above_N_rows": true
+    },
+    {
+      "N": 6,
+      "nonzero": 11,
+      "of": 11,
+      "longest_surviving_column": 6,
+      "vanishes_above_N_rows": true
+    }
+  ],
+  "zD_equals_qN_over_bracketN_at_N2": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "context": {
+    "bean": "qou-zf9n",
+    "scope": "(b) structural exclusion whose invariant is SU(N) Schur vanishing (y_lambda = 0 iff len(lambda) > N), verified at N = 2,3,4,6. Exact, but CONTINGENT ON N = 2 rather than intrinsic to the closure — TL_n is the SU(2) quotient, so the support restriction is what N = 2 means. It also excludes only contributions THROUGH THIS FORMULA; a separate additive super-pairwise term is untouched, which is the AGENTS.md expectation.",
+    "root_cause": "z_D = q^3/(q^2+1) = q^N/[N]_q at N = 2, verified symbolically. The Gram singularity, the radical's identity, y_lambda = 0 above 2 rows, the n! - Catalan(n) corank, the TL_n quotient and this support are one fact.",
+    "same_phenomenon_as": [
+      "QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero (radical = q-antisymmetriser = the (1^3) block)",
+      "the TL_n quotient rank result of PR #5592",
+      "bean qou-8iru (y_lambda = 0 for >= 3 rows)"
+    ],
+    "not_a_proposal": "This does NOT propose a seventh ansatz. It bounds where one could act, which is the opposite move."
+  }
+}

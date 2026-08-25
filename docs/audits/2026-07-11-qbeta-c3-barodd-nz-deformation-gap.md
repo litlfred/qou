@@ -14,18 +14,18 @@ bar-odd `S` reduces to a **single** open link. The rest is closed:
 |---|---|---|
 | **Algebra** — `S = decay projection ½[e_k(q,q³,…)−e_k(q⁻¹,q⁻³,…)]`, bar-odd, nonzero | **closed** (sorry-free) | Lean `QOU.QBeta` `EkParitySplit.lean` (`massProj`/`decayProj`, `sigma_decayProj`, `decayProj_eq_zero_iff`, `decayProj_ne_zero_iff`) |
 | **Object** — Faddeev `Φ_b` (modular double, sinh kernel, self-dual) | **built + validated** | `phi_b_evaluator.py` (vs Hikami math/0604094) |
-| **Geometry** — `S` = bar-odd projection of the **4₁ deformation phase** | **framed** | this probe: `Vol(4₁)=2Λ(π/3)`, `CS(4₁)=0` |
+| **Geometry** — `S` = bar-odd projection of the **4₁ deformation phase** | **framed** | this probe: `Vol(4₁)=2·Cl₂(π/3)`, `CS(4₁)=0` |
 | **Observable** — the two `S`-values from a *derived* `z(q₀)` | **OPEN (single link)** | the `z→c_k` evaluation map (PR #3458) |
 
 ## The geometry (why S is a deformation phase)
 
-- `Vol(4₁) = 2·D(e^{iπ/3}) = 2Λ(π/3) = 2.02988…` (Bloch–Wigner; computed). This
+- `Vol(4₁) = 2·D(e^{iπ/3}) = 2·Cl₂(π/3) = 2.02988…` (Bloch–Wigner; computed). This
   is the **bar-even** part of c₃ (`−Vol(4₁)`), already solved.
 - **4₁ is amphichiral ⇒ `CS(4₁)=0`** at the complete structure (`log|e^{iπ/3}|=0`).
   So the bar-odd `S` is **not** the knot's own Chern–Simons — it is a
   **deformation phase** induced by the substrate `q₀` sitting off the complete
   point. Neumann–Zagier: `CVol(u)=CVol(0)−(τ/4)u²+O(u³)`, cusp modulus `τ ∝ √−3`
-  (the `π/3` angle of `Vol(4₁)=2Λ(π/3)` — corpus-structural, not fitted).
+  (the `π/3` angle of `Vol(4₁)=2·Cl₂(π/3)` — corpus-structural, not fitted).
 
 ## The falsifiable finding (no fit): a smooth deformation cannot close S
 

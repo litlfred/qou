@@ -100,6 +100,12 @@ from codata_constants import (  # noqa: E402
 
 # ── PDG 2024 reference for charged pion ─────────────────────────
 M_PI_PDG_MEV = M_PI_PM_MEV_VALIDATION       # PDG 2024 (codata_constants registry)
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 M_PI_PDG_ERR_MEV = mpf("0.00018")           # ±0.00018 MeV (1.3 ppb)
 
 
@@ -171,7 +177,8 @@ def markov_trace_basis(q):
     """Canonical Wenzl Markov trace of the basis elements at q.
 
     Convention A (matches lepton_tower_probe_1):
-      z := 1 / (q^½ + q^-½)
+      z := q^3/(q^2+1) = q^2/[2]_q      (convention D, canonical 2026-08-15;
+                                        convention C, 1/(q^½ + q^-½), is excised)
       tr_M(1)            = 1
       tr_M(σ_i)          = z
       tr_M(σ_i σ_j)      = z²    for i ≠ j (Hopf link)
@@ -191,7 +198,12 @@ def markov_trace_basis(q):
     normalization. The meson NF lives in H_3(q), so we use the H_3
     trace.)
     """
-    z = mpf(1) / (sqrt(q) + 1 / sqrt(q))
+    # Convention D (canonical, 2026-08-15 owner ruling). The tr_M identities
+    # below (tr(sigma)=z, tr(sigma_i sigma_j)=z^2, tr(sigma_0 sigma_1 sigma_0)
+    # = h z^2 + z) follow from the Markov property plus the Hecke relation and
+    # hold for ANY z, so they are convention-independent and this is a pure
+    # definition migration.
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     tr_sig = z
     tr_Lplus = z ** 2          # Hopf link L_+

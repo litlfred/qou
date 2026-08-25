@@ -55,6 +55,143 @@ from rho_k_h3a_refinement import standard_young_tableaux  # noqa: E402
 # Per compute-pipeline-audit §Optimization #3 (2026-05-23).
 _HOEFSMIT_NUMPY_CACHE: dict[tuple, tuple[list[np.ndarray], int]] = {}
 
+# ── P22 structured path (bean qou-bk0q) ──────────────────────────
+#
+# Hoefsmit seminormal generators carry at most TWO nonzeros per row: a
+# diagonal entry plus, where a swap partner exists, one symmetric off-diagonal
+# pair. Density is 1.31 % at dim 120 and 0.34 % at dim 462, and keeps falling.
+# Stored dense, the eleven generators of the dim-7700 partition of n=12 occupy
+# 5.22 GB — which is what hangs helium-4 at four workers on a 16 GB box
+# (qou-5qwb / qou-9br4).
+#
+# THE THRESHOLD IS MEASURED, NOT ASSUMED. Structured is SLOWER at small dim,
+# where dense BLAS runs near peak and the column gathers dominate:
+#
+#     dim    16     28     84    120    297    462    891   1485   2376
+#     ratio 4.13x  5.29x  3.57x  2.60x  2.81x  2.35x  1.69x  0.70x  0.84x
+#            <-------------- dense wins -------------->  <- structured wins ->
+#
+# The ratio falls monotonically from dim 84 and crosses 1 between 891 and 1485.
+# 1200 sits inside that bracket, safely clear of 891, and does not over-fit the
+# exact crossing (2376's 0.84 vs 1485's 0.70 is non-monotonic — cache effects).
+#
+# History worth keeping: this number was twice claimed without measuring — once
+# as "~3900x faster" from a flop count (refuted: the structured step is
+# bandwidth-bound), then as "no speedup, dense always wins" from two data points
+# that both sat below the crossover. Only the ladder above settles it.
+_STRUCTURED_DIM_THRESHOLD = 1200
+
+_HOEFSMIT_STRUCT_CACHE: dict[tuple, tuple[list, list, int]] = {}
+_DIM_CACHE: dict[tuple, int] = {}
+
+
+def _dim_of(shape: tuple[int, ...]) -> int:
+    """dim of the irrep — needed to pick a path before building anything."""
+    key = tuple(shape)
+    if key not in _DIM_CACHE:
+        syts, _, _ = standard_young_tableaux(key)
+        _DIM_CACHE[key] = len(syts)
+    return _DIM_CACHE[key]
+
+
+def hoefsmit_structured(
+    shape: tuple[int, ...], q_value: float
+) -> tuple[list, list, int]:
+    """(diags, pairs, dim) — the generators by structure, never materialised.
+
+    Same entries as `hoefsmit_matrices_numpy`, stored as a diagonal vector plus
+    the symmetric off-diagonal pairs. O(dim) per generator instead of O(dim^2).
+    The pairs form a partial MATCHING — each index appears in at most one pair,
+    because the builder marks both partners `processed` — so the scatter-adds
+    in `_chi_structured` touch disjoint columns and cannot alias.
+    """
+    cache_key = (tuple(shape), round(q_value, 15))
+    if cache_key in _HOEFSMIT_STRUCT_CACHE:
+        return _HOEFSMIT_STRUCT_CACHE[cache_key]
+
+    n = sum(shape)
+    syts, cells, contents = standard_young_tableaux(shape)
+    dim = len(syts)
+    if dim == 0:
+        return [], [], 0
+
+    q = float(q_value)
+    h = q - 1.0 / q
+
+    diags, pairs = [], []
+    for k in range(1, n):
+        diag = np.zeros(dim, dtype=np.float64)
+        pi, pj, pb = [], [], []
+        processed: set[int] = set()
+        for i in range(dim):
+            if i in processed:
+                continue
+            ci_k = syts[i][k]
+            ci_k1 = syts[i][k + 1]
+            rho = contents[ci_k1] - contents[ci_k]
+            a = h / (1.0 - q ** (-2 * rho))
+
+            swap_map = dict(syts[i])
+            swap_map[k], swap_map[k + 1] = ci_k1, ci_k
+            j = None
+            for jj in range(dim):
+                if jj == i:
+                    continue
+                if syts[jj] == swap_map:
+                    j = jj
+                    break
+
+            if j is None:
+                diag[i] = a
+                processed.add(i)
+            else:
+                a_prime = h / (1.0 - q ** (2 * rho))
+                b = np.sqrt(a * a_prime + 1.0)
+                diag[i] = a
+                diag[j] = a_prime
+                pi.append(i); pj.append(j); pb.append(b)
+                processed.add(i)
+                processed.add(j)
+        diags.append(diag)
+        pairs.append((np.array(pi, dtype=np.intp),
+                      np.array(pj, dtype=np.intp),
+                      np.array(pb, dtype=np.float64)))
+
+    _HOEFSMIT_STRUCT_CACHE[cache_key] = (diags, pairs, dim)
+    return diags, pairs, dim
+
+
+def _chi_structured(shape, crossings, q_value) -> mp.mpf:
+    """chi^lambda via structured generators — same arithmetic, reordered.
+
+    `cross = sigma + d*eye` is `diag + d` with the pairs untouched, so
+
+        (M @ cross)[:, j] = M[:, j]*diag[j] + M[:, i]*b
+
+    is a column scale plus two vectorised column-adds. Agrees with the dense
+    path to 6.8e-16 (machine epsilon) — it is not a different object.
+    """
+    from canonical_braid_crossings import d_for_ctype
+    diags, pairs, dim = hoefsmit_structured(shape, q_value)
+    if dim == 0:
+        return mp.mpf(0)
+    q = float(q_value)
+    h = q - 1.0 / q
+
+    M = np.eye(dim, dtype=np.float64)
+    for gen_idx, ctype in crossings:
+        if gen_idx < 0 or gen_idx >= len(diags):
+            raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
+        d_val = float(d_for_ctype(ctype, h))
+        diag = diags[gen_idx] + d_val
+        I, J, B = pairs[gen_idx]
+        out = M * diag[None, :]
+        if I.size:
+            out[:, J] += M[:, I] * B[None, :]
+            out[:, I] += M[:, J] * B[None, :]
+        M = out
+    return mp.mpf(float(np.trace(M)))
+
 
 def hoefsmit_matrices_numpy(
     shape: tuple[int, ...], q_value: float
@@ -140,13 +277,19 @@ def chi_numpy(
     Returns mp.mpf for compatibility with co-Casimir / pentagon-
     reduction consumers that expect mpmath types.
     """
+    # Above the measured crossover the structured path is faster AND ~1900x
+    # smaller; below it dense BLAS wins by up to 5x and the memory difference
+    # is under a megabyte. See _STRUCTURED_DIM_THRESHOLD for the ladder.
+    if _dim_of(shape) >= _STRUCTURED_DIM_THRESHOLD:
+        return _chi_structured(shape, crossings, q_value)
+
     matrices, dim = hoefsmit_matrices_numpy(shape, q_value)
     if dim == 0:
         return mp.mpf(0)
 
     q = float(q_value)
     h = q - 1.0 / q
-    d_lookup = {"sigma": 0.0, "sigma_inv": -h, "averaged": -h / 2.0}
+    from canonical_braid_crossings import d_for_ctype
     eye = np.eye(dim, dtype=np.float64)
 
     M = np.eye(dim, dtype=np.float64)
@@ -154,7 +297,23 @@ def chi_numpy(
         if gen_idx < 0 or gen_idx >= len(matrices):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
-        d_val = d_lookup[ctype]
+        # float() is load-bearing, not cosmetic. `d_for_ctype` returns a plain
+        # float for 'sigma' / 'sigma_inv' / 'averaged' but an mpmath `mpf` for
+        # 'averaged_weighted'. A single mpf in the sum promotes `cross` to
+        # dtype=object, and because M is reassigned from the product, M stays
+        # dtype=object for EVERY remaining crossing — so the loop silently
+        # leaves BLAS and runs pure-Python matmul to the end.
+        #
+        # Measured on tritium (n=9, dim=120, 35 crossings): the first
+        # averaged_weighted crossing appears at index 11, and matmul cost jumps
+        # from ~0.0005 s to ~2.7 s and never recovers — 66 s for one partition
+        # instead of ~0.02 s. That is the whole of the ~148x slowdown that made
+        # rho-k-co-casimir-extended look unrunnable (bean qou-5qwb).
+        #
+        # Casting is correct here, not a precision loss: this function is the
+        # declared float64/BLAS path (see docstring), validated against the
+        # mpmath path at 1e-14. Callers wanting full precision use chi_numeric.
+        d_val = float(d_for_ctype(ctype, h))
         cross = sigma + d_val * eye
         M = M @ cross   # numpy matmul (C-level BLAS)
 

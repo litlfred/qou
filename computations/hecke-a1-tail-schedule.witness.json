@@ -1,0 +1,616 @@
+{
+  "engine": "sympy",
+  "engineVersion": "sympy 1.14.0",
+  "computedAt": "2026-08-24T04:56:58.420330+00:00",
+  "commitSha": "1433c3c2be31d2b1496ac8438302695780856e94",
+  "assertions": [
+    {
+      "name": "cases_whose_step_count_is_NOT_2m_plus_2",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_whose_transports_are_NOT_well_formed",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_whose_two_quadratic_steps_do_NOT_emit_four_words",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_the_number_landing_on_an_already_present_word_is_NOT_3",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_introducing_a_number_of_fresh_words_OTHER_than_1",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_whose_quadratic_steps_are_NOT_well_formed",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_where_a_step_source_was_NOT_unique_in_the_list",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_NOT_reducing_to_zero",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_NOT_starting_from_four_terms",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    },
+    {
+      "name": "cases_NOT_using_exactly_two_quadratic_steps",
+      "computed": "0",
+      "expected": "0",
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 49,
+  "computation": "hecke-a1-tail-schedule",
+  "scriptFile": "hecke_a1_tail_schedule.py",
+  "scriptHash": "91b6d1d5f223",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hecke_a1_tail_schedule.py"
+    ],
+    "reproduce": "python3 -u computations/hecke_a1_tail_schedule.py"
+  },
+  "parameters": {
+    "scope": "a = 1 (j1 = i1), b in 1..7; the tail only, from the FOUR terms TCancel1_coeffEq leaves",
+    "why": "a = 1 does not transfer to any tail this arc has: TCancel1_coeffEq leaves four terms (h, 1, -h, -1), never a two-term pair, and one of them carries a quadratic redex from the start. This measures the schedule its own tail needs."
+  },
+  "data": {
+    "cases": [
+      {
+        "a": 1,
+        "b": 1,
+        "n": 9,
+        "run_length_m": 0,
+        "start_terms": 4,
+        "total_steps": 2,
+        "matches_2m_plus_2": true,
+        "transports_well_formed": true,
+        "quadratic_steps_well_formed": true,
+        "emissions_total": 4,
+        "emissions_onto_an_already_present_word": 3,
+        "emissions_introducing_a_fresh_word": 1,
+        "fresh_words_rel_i": [
+          [
+            1
+          ]
+        ],
+        "every_step_source_was_unique_in_the_list": true,
+        "quadratic_steps": 2,
+        "emissions_rel_i": [
+          [
+            [
+              1,
+              0
+            ],
+            [
+              1
+            ]
+          ],
+          [
+            [
+              0,
+              1
+            ],
+            [
+              1
+            ]
+          ]
+        ],
+        "reduces_to_zero": true,
+        "W1_transported_rel_i": [
+          1,
+          0
+        ],
+        "W4_transported_rel_i": [
+          1,
+          0,
+          0
+        ]
+      },
+      {
+        "a": 1,
+        "b": 2,
+        "n": 10,
+        "run_length_m": 1,
+        "start_terms": 4,
+        "total_steps": 4,
+        "matches_2m_plus_2": true,
+        "transports_well_formed": true,
+        "quadratic_steps_well_formed": true,
+        "emissions_total": 4,
+        "emissions_onto_an_already_present_word": 3,
+        "emissions_introducing_a_fresh_word": 1,
+        "fresh_words_rel_i": [
+          [
+            1,
+            2
+          ]
+        ],
+        "every_step_source_was_unique_in_the_list": true,
+        "quadratic_steps": 2,
+        "emissions_rel_i": [
+          [
+            [
+              1,
+              2,
+              0
+            ],
+            [
+              1,
+              2
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              1,
+              2
+            ]
+          ]
+        ],
+        "reduces_to_zero": true,
+        "W1_transported_rel_i": [
+          1,
+          2,
+          0
+        ],
+        "W4_transported_rel_i": [
+          1,
+          2,
+          0,
+          0
+        ]
+      },
+      {
+        "a": 1,
+        "b": 3,
+        "n": 11,
+        "run_length_m": 2,
+        "start_terms": 4,
+        "total_steps": 6,
+        "matches_2m_plus_2": true,
+        "transports_well_formed": true,
+        "quadratic_steps_well_formed": true,
+        "emissions_total": 4,
+        "emissions_onto_an_already_present_word": 3,
+        "emissions_introducing_a_fresh_word": 1,
+        "fresh_words_rel_i": [
+          [
+            1,
+            2,
+            3
+          ]
+        ],
+        "every_step_source_was_unique_in_the_list": true,
+        "quadratic_steps": 2,
+        "emissions_rel_i": [
+          [
+            [
+              1,
+              2,
+              3,
+              0
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              2,
+              3
+            ],
+            [
+              1,
+              2,
+              3
+            ]
+          ]
+        ],
+        "reduces_to_zero": true,
+        "W1_transported_rel_i": [
+          1,
+          2,
+          3,
+          0
+        ],
+        "W4_transported_rel_i": [
+          1,
+          2,
+          3,
+          0,
+          0
+        ]
+      },
+      {
+        "a": 1,
+        "b": 4,
+        "n": 12,
+        "run_length_m": 3,
+        "start_terms": 4,
+        "total_steps": 8,
+        "matches_2m_plus_2": true,
+        "transports_well_formed": true,
+        "quadratic_steps_well_formed": true,
+        "emissions_total": 4,
+        "emissions_onto_an_already_present_word": 3,
+        "emissions_introducing_a_fresh_word": 1,
+        "fresh_words_rel_i": [
+          [
+            1,
+            2,
+            3,
+            4
+          ]
+        ],
+        "every_step_source_was_unique_in_the_list": true,
+        "quadratic_steps": 2,
+        "emissions_rel_i": [
+          [
+            [
+              1,
+              2,
+              3,
+              4,
+              0
+            ],
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              2,
+              3,
+              4
+            ],
+            [
+              1,
+              2,
+              3,
+              4
+            ]
+          ]
+        ],
+        "reduces_to_zero": true,
+        "W1_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          0
+        ],
+        "W4_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          0,
+          0
+        ]
+      },
+      {
+        "a": 1,
+        "b": 5,
+        "n": 13,
+        "run_length_m": 4,
+        "start_terms": 4,
+        "total_steps": 10,
+        "matches_2m_plus_2": true,
+        "transports_well_formed": true,
+        "quadratic_steps_well_formed": true,
+        "emissions_total": 4,
+        "emissions_onto_an_already_present_word": 3,
+        "emissions_introducing_a_fresh_word": 1,
+        "fresh_words_rel_i": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        ],
+        "every_step_source_was_unique_in_the_list": true,
+        "quadratic_steps": 2,
+        "emissions_rel_i": [
+          [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              0
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              5
+            ]
+          ]
+        ],
+        "reduces_to_zero": true,
+        "W1_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0
+        ],
+        "W4_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          0,
+          0
+        ]
+      },
+      {
+        "a": 1,
+        "b": 6,
+        "n": 14,
+        "run_length_m": 5,
+        "start_terms": 4,
+        "total_steps": 12,
+        "matches_2m_plus_2": true,
+        "transports_well_formed": true,
+        "quadratic_steps_well_formed": true,
+        "emissions_total": 4,
+        "emissions_onto_an_already_present_word": 3,
+        "emissions_introducing_a_fresh_word": 1,
+        "fresh_words_rel_i": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        ],
+        "every_step_source_was_unique_in_the_list": true,
+        "quadratic_steps": 2,
+        "emissions_rel_i": [
+          [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              0
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ]
+          ]
+        ],
+        "reduces_to_zero": true,
+        "W1_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0
+        ],
+        "W4_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          0,
+          0
+        ]
+      },
+      {
+        "a": 1,
+        "b": 7,
+        "n": 15,
+        "run_length_m": 6,
+        "start_terms": 4,
+        "total_steps": 14,
+        "matches_2m_plus_2": true,
+        "transports_well_formed": true,
+        "quadratic_steps_well_formed": true,
+        "emissions_total": 4,
+        "emissions_onto_an_already_present_word": 3,
+        "emissions_introducing_a_fresh_word": 1,
+        "fresh_words_rel_i": [
+          [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ]
+        ],
+        "every_step_source_was_unique_in_the_list": true,
+        "quadratic_steps": 2,
+        "emissions_rel_i": [
+          [
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              0
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          ],
+          [
+            [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ]
+          ]
+        ],
+        "reduces_to_zero": true,
+        "W1_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0
+        ],
+        "W4_transported_rel_i": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          0,
+          0
+        ]
+      }
+    ]
+  },
+  "caveats": [
+    "The order measured is the one a Lean chain should follow and is NOT deg-lex's: both transports first, then the two quadratic steps. That is legal because every step's source occurs exactly once in the list at the moment it is rewritten (asserted above), which is what the `ofTerms` list model requires -- each lemma reads its redex off `L1 ++ (W, c) :: L2`.",
+    "The ending is NOT a sign-pair, unlike every other tail in this arc. The two quadratic steps emit FOUR words: three land on words already carried with the opposite coefficient, and exactly ONE is fresh -- `[s_{i-1}] ++ D`, created by the first quadratic step and cancelled by the second's. So the element reaches zero outright and a Lean chain finishes with a CoeffEq on an explicit multi-entry list, not with `ofTerms_cancel_pair`. An earlier revision of this probe asserted that EVERY emission lands on an already-present word; that is false, and the assertion caught it -- the fresh word is exactly the intermediate the two quadratic steps share.",
+    "b = 1 is the m = 0 case: `descWord i2 j2` is EMPTY (i2 < j2 = i1), both transports are no-ops, and the tail is the two quadratic steps alone. The four starting words are still four distinct words there.",
+    "This measures the TAIL only. The prefix (`prefixChain1`, six steps) and the join through `TCancel1_coeffEq` are separate and already proved; what was missing is exactly this continuation."
+  ],
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Grobner-Shirshov rewriting in the Hecke algebra over the FORMAL parameter h = q - q^-1 (a sympy Symbol). The reduction is combinatorial in the braid word and its coefficients are rational functions of that symbol; no substrate q0 is read anywhere in the import cone (verified: no qou_substrate constants import, no q_parameter / q_at / Q_50_DIGIT reference, in this file or in hecke_gs_confluence_n4.py which supplies the rule table)."
+}

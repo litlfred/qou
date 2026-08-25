@@ -1,0 +1,42 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 587
+
+T
+
+Fig. 4. Non-intersecting lattice paths for the second version.
+
+and with ending points (k —1,q) and (k —b; +1,n—k+b;—-1),2<j <m+n-1, for
+some 2 < bg <...<bm4m-1 <mM+n+k—-1.
+
+Case q=n—k +1: Here, we need to count families of non-intersecting lattice paths
+starting at (—i+1,i-1),i=1,...,m-—1, and (-i+1,2i-m-—1),m<i<m+n-1,
+and with ending points (k — 6; +1,n—k+b;-—1),1 < j < m+n-—1, for some
+2<b1 <...<bmim-1 SmM+n4t+k-1.
+
+First we assume q < n—k.
+
+The generating function of lattice paths starting at (a,b) and ending at (c,d) with
+respect to the weight
+
+pifirst step is horizontal]
+allowing steps in north direction and east direction is
+
+P-N((a+1,b) > (e,d)) +N((a,b+ 1) > (e,d))
+
+(Ce) Cee)
+=P + .
+c-a-1l c-a
+
+The formula is true whenever c+ d—a-—b > 0. It is also true when c+ d—a—b=0
+and c—a=0. Ife+d—a—b=0 and c—a #0 or c+d—a~—b < 0, then the generating
+function vanishes. It follows that the generating function of (m,n, k)-Magog trapezoids
+with g minima and w.r.t. the number of maxima is
+
+(et9=3) |
+
+det (pees) + (Ertan i 2), i<ktmt+q-2
+
+(xkio,)
+
+1<i,j<m+n-1 Rees weee (erasersene)) + ("hoy ) ,
+
+i>kt+m+q-1

@@ -41,6 +41,26 @@ where:
 - **y_λ(atom)** are SDP shadow-prices from the confinement constraint
 - The sum runs over all partitions λ of n (Wedderburn blocks of H_n(q))
 
+> **NOTE 2026-08-08 (bean qou-c6gx): the y_λ bullet describes the PROPOSED KLR
+> path, not the shipped code, and has been misread as a description of it.**
+> In production, `tr_M = Σ_λ y_λ χ^λ` takes y_λ from
+> `wedderburn_jones_markov.y_lambda_at(n, q₀)` — the closed-form Jones–Markov
+> hook-length weight, a function of q₀ alone, cached in
+> `y-lambda-at-q0.witness.json`. It is **not** an SDP shadow price. The SDP dual
+> `y_star` lives in a separate script family (`aK_via_lp_dual*`,
+> `pn_alpha_lp_dual`, `lp_dual_witness_validator`) and never reaches
+> `tr_m_atom_via_transfer.tr_m_atom_zn`, which is what every binding consumer
+> calls.
+>
+> The distinction matters for error attribution: because the SDP is DOWNSTREAM
+> of the pairing (see the chain in §1 — pairing, *then* confinement SDP), its
+> `n_target` is an input it reproduces, not a check it applies. For ²H the
+> recorded `tr_M_rel_err_vs_witness = 1.43e-16` therefore confirms only that the
+> solver reproduced its own input; it cannot and does not validate the trace.
+> Compounding this, that `n_target = 0.38828642407479047` is the colour-BLIND
+> trace (Δ 1.87e-08), not the colour-weighted one the canonical braid word
+> produces (Δ 7.07e-05) — so the SDP was never solved against the shipped word.
+
 **Production simplification** (current `mass_table_ppb.py`):
 ```
 B = ν_SDP · m_e · Vol(K)        [Kashaev law, single-block]

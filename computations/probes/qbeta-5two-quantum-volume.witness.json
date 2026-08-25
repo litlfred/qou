@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T09:50:48.695060+00:00",
-  "commitSha": "6c39ebd8d7069bb76452e898bef442dde83d7bf6",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:31:19.950066+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "vol_5_2_validates",
-      "computed": 4.591774807899561e-41,
+      "computed": 4.947704352032726e-50,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-06,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 12,
+  "durationMs": 5,
   "computation": "qbeta-5two-quantum-volume",
   "scriptFile": "qbeta_5two_quantum_volume_probe.py",
-  "scriptHash": "9df4170995e7",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b55d2fe9e347",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -36,9 +36,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_quantum_volume_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_quantum_volume_probe.py"
   },
   "description": "5₂ complex volume 𝔙(5₂)=Vol+iCS via the Neumann–Zagier saddle (Hikami 0604094 §4.2, eq 4.13), deformed to the substrate meridian m=q₀ at both anchors. Validates Vol(5₂)=2.82812 at m=1. THE TEST (Step 1): the anchor-DEPENDENT quantum volume is the one object the Lean-proved no_anchor_invariant_realizes_swing does not exclude — is its cross-anchor swing the ~3.84e6-sensitive quantity N_odd=S·u³ needs? Measured max |d𝔙/dq| vs the 3.84e6 target. 5₂ is chiral (Re 𝔙 = CS-partner ≠ 0, unlike amphichiral 4₁). No c_k; no fit; scope-(a). Corpus CS(5₂)≈−0.153π² is a proposed target, not a derivation — reported for contrast, not wired.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

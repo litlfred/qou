@@ -24,8 +24,21 @@ Writing any $T_w$ as a free-algebra word, the GB rewriting
 algorithm reduces $T_w$ to normal form by applying $R_H, R_{YB}$
 repeatedly.  The filtration $J^\ell(q)$ collects elements requiring
 at least $\ell$ applications of these relations to reach normal
-form.  Equivalently, $J^\ell$ is the image of $I^\ell$ (the
-$\ell$-th power of the rewrite ideal) under the quotient map.*
+form.*
+
+> **Gap.** The ideal-power reading of $J^\bullet$ — *"$J^\ell$ is the
+> image of $I^\ell$ under the quotient map"* — is **false, and Step 1
+> above is what refutes it:** Step 1 establishes $I = \ker\pi$ for
+> $\pi : \mathbb{C}\langle\sigma_i\rangle \twoheadrightarrow H_n(R,q)$,
+> so $\pi(I) = 0$ and therefore $\pi(I^\ell) = 0$ for every
+> $\ell \geq 1$ — the ideal-power filtration is identically zero above
+> degree $0$, and cannot stratify anything. Proved sorry-free as
+> `QOU.BraidKnot.WordFiltration.map_pow_eq_bot`.
+>
+> **Step 3 below reads $J^\bullet$ this way, so Step 3 is incomplete as
+> it stands.** Two further readings of $J^\bullet$ present elsewhere in
+> the corpus also fail — see
+> [`docs/audits/2026-08-16-three-gb-filtrations-one-name.md`](../../../docs/audits/2026-08-16-three-gb-filtrations-one-name.md).
 
 **Step 3: $F^{\,r}$ measures rewrite depth.**
 *By the Leibniz rule and Step 1, $F^{\,r}(T_w) \in I^r$ but

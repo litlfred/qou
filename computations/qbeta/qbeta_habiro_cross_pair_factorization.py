@@ -375,6 +375,27 @@ def compare_pair_signatures(np_sig: dict,
 # ─── Main ──────────────────────────────────────────────────────
 
 
+
+# ── qou-lnog preflight ─────────────────────────────────────────────────────
+# This script forms its pair difference by SUBTRACTING the two witnesses' a_m.
+# That is valid only when their denominators agree, because a witness's a_m
+# expand its own denominator-cleared numerator p = d*t (proved sorry-free in
+# QOU/Habiro/MirrorPairNormalisation.lean). Whether it holds is a property of
+# the CONVENTION, not of this file:
+#
+#     convention C   d_p = d_n = 4u^19(u^2+1)           IDENTICAL -> valid
+#     convention D   d_p = 4u^18(u^4+1)^2, d_n = 4u^18   DIFFER   -> invalid
+#
+# So this script was CORRECT when its committed witness was produced (C) and is
+# wrong under D with no edit in between. The preflight raises rather than let it
+# emit a plausible polynomial that is not the pair's; porting to D means
+# expanding trace_diff_numerator(tr_x, tr_y, sym) instead of differencing two
+# expansions, which is a restructure this file has not had.
+def _qou_lnog_preflight(tr_x, tr_y, label):
+    from habiro_coefficients_atomic import require_am_differenceable
+    require_am_differenceable(tr_x, tr_y, label=label)
+
+
 def main() -> int:
     set_compute_dps()
     t0 = time.perf_counter()
@@ -413,6 +434,23 @@ def main() -> int:
     if he4_path.exists():
         he4_a = load_atom_from_external(str(he4_path))
         print(f"  Loaded ⁴He from {he4_path.name} (M = {max(he4_a)})")
+
+    # All three pairs this script forms, checked before any of them is built.
+    # The n-p leg was VALID under C (identical denominators) and is what the
+    # committed witness records; the two cross-validation legs differ under BOTH
+    # conventions and were never a_m-differenceable. Re-measured on the correct
+    # object, the witness's SPECIFIC verdict survives: Phi_1*Phi_2 is present for
+    # n-p and absent from every atomic-number jump, which the Lean explains --
+    # Phi_1 divides a difference exactly where the two traces coincide at q=1,
+    # true for the mirror pair and for none of the jumps (bean qou-lnog).
+    if he3_a is not None and he4_a is not None:
+        _he3 = json.loads(he3_path.read_text())["tr_M_in_q"]
+        _he4 = json.loads(he4_path.read_text())["tr_M_in_q"]
+        _qou_lnog_preflight(hab["results"]["n (neutron, A=1)"]["tr_M_in_q"],
+                            hab["results"]["p (proton, A=1)"]["tr_M_in_q"], "n - p")
+        _qou_lnog_preflight(_he3, hab["results"]["D (deuteron, A=2)"]["tr_M_in_q"],
+                            "3He - D")
+        _qou_lnog_preflight(_he4, _he3, "4He - 3He")
 
     if he3_a is None or he4_a is None:
         print("\n  ERROR: helium-3 and/or helium-4 Habiro coefficient "

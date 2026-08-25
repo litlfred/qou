@@ -1,0 +1,302 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1002.0126v1",
+ "source": {
+  "file": "1002.0126v1.pdf",
+  "sha256": "ea218a0586a1349094e265496a903e14e1422811503036c78f6d37e3c0b9ecb9",
+  "bytes": 604910,
+  "pages": 39
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1002.0126",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "31 Jan 2010"
+  },
+  "doi": null,
+  "title": "An introduction to the volume conjecture",
+  "authors_raw": null,
+  "abstract": "This is an introduction to the Volume Conjecture and its gene r- alizations for nonexperts. The Volume Conjecture states that a certain limit of the colo red Jones polynomial of a knot would give the volume of its complement. If we deform the parameter of the colored Jones polynomial we also conjectur e that it would also give the volume and the Chern–Simons invariant of a three-ma nifold obtained by Dehn surgery determined by the parameter. I start with a deﬁnition of the colored Jones polynomial and i nclude ele- mentary examples and short description of elementary hyper bolic geometry.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180529031540-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "AN INTRODUCTION TO THE VOLUME CONJECTURE",
+   "HITOSHI MURAKAMI"
+  ],
+  "title_prev": "AN INTRODUCTION TO THE VOLUME CONJECTURE HITOSHI MURAKAMI"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Link invariant from a Yang–Baxter operator",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Braid presentation of a link",
+   "page": 2,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Yang–Baxter operator",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Invariant",
+   "page": 5,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Quantum (g,V) invariant",
+   "page": 8,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Example of calculation",
+   "page": 10,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "Volume conjecture",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Statement of the Volume Conjecture",
+   "page": 16,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Proof of the Volume Conjecture for the figure-eight knot",
+   "page": 18,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Knots and links for which the Volume Conjecture is proved",
+   "page": 22,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Supporting evidence for the Volume Conjecture",
+   "page": 22,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Approximation of the colored Jones polynomial",
+   "page": 22,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Geometric interpretation of the limit",
+   "page": 26,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Generalizations of the Volume Conjecture",
+   "page": 29,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Complexification",
+   "page": 29,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Deformation of the parameter",
+   "page": 29,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3770,
+   "n_words": 639
+  },
+  {
+   "id": "sec-001-2-link-invariant-from-a-yangbaxter-operator",
+   "number": "2",
+   "title": "Link invariant from a Yang–Baxter operator",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 95,
+   "n_words": 19
+  },
+  {
+   "id": "sec-002-21-braid-presentation-of-a-link",
+   "number": "2.1",
+   "title": "Braid presentation of a link",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 2050,
+   "n_words": 386
+  },
+  {
+   "id": "sec-003-23-invariant",
+   "number": "2.3",
+   "title": "Invariant",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1449,
+   "n_words": 275
+  },
+  {
+   "id": "sec-004-22-yangbaxter-operator",
+   "number": "2.2",
+   "title": "Yang–Baxter operator",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 10,
+   "n_chars": 6259,
+   "n_words": 1226
+  },
+  {
+   "id": "sec-005-25-example-of-calculation",
+   "number": "2.5",
+   "title": "Example of calculation",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 4585,
+   "n_words": 909
+  },
+  {
+   "id": "sec-006-3-volume-conjecture",
+   "number": "3",
+   "title": "Volume conjecture",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 22,
+   "n_chars": 11182,
+   "n_words": 2271
+  },
+  {
+   "id": "sec-007-4-supporting-evidence-for-the-volume-conjecture",
+   "number": "4",
+   "title": "Supporting evidence for the Volume Conjecture",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 22,
+   "n_chars": 342,
+   "n_words": 63
+  },
+  {
+   "id": "sec-008-41-approximation-of-the-colored-jones-polynomial",
+   "number": "4.1",
+   "title": "Approximation of the colored Jones polynomial",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 6436,
+   "n_words": 1446
+  },
+  {
+   "id": "sec-009-42-geometric-interpretation-of-the-limit",
+   "number": "4.2",
+   "title": "Geometric interpretation of the limit",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 29,
+   "n_chars": 4401,
+   "n_words": 856
+  },
+  {
+   "id": "sec-010-5-generalizations-of-the-volume-conjecture",
+   "number": "5",
+   "title": "Generalizations of the Volume Conjecture",
+   "level": 1,
+   "page_start": 29,
+   "page_end": 29,
+   "n_chars": 1091,
+   "n_words": 189
+  },
+  {
+   "id": "sec-011-52-deformation-of-the-parameter",
+   "number": "5.2",
+   "title": "Deformation of the parameter",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 38,
+   "n_chars": 15030,
+   "n_words": 3236
+  },
+  {
+   "id": "sec-012-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 6817,
+   "n_words": 1105
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 18,
+  "sections": 13,
+  "chars_total": 63507
+ }
+}

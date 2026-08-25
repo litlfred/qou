@@ -80,11 +80,30 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
 
+import math
+
 import mpmath
 import sympy as sp
 
+from _precision import json_safe_float, set_compute_dps, fmt  # noqa: E402
+
+
+def _json_safe(o):
+    """Recursively: non-finite floats -> marker strings, finite floats -> repr."""
+    if isinstance(o, bool) or o is None:
+        return o
+    if isinstance(o, float):
+        v = json_safe_float(o)
+        return v if isinstance(v, str) else repr(v)
+    if isinstance(o, dict):
+        return {k: _json_safe(v) for k, v in o.items()}
+    if isinstance(o, (list, tuple)):
+        return [_json_safe(v) for v in o]
+    return o
+
 from experimental_constants import M_E_MEV
 from q_parameter import Q as Q_0
+from q_parameter import Q_50_DIGIT_STR as Q_0_STR
 from witness_base import WitnessBuilder
 from witness_polynomial import expose_polynomial
 
@@ -163,6 +182,23 @@ def cyclotomic_residue(tr_M_expr, zeta, n: int):
         return result
     except Exception:
         return None
+
+
+
+def _eval_poly_mpf(expr_in_u, u_sym, x):
+    """Horner-evaluate a polynomial in `u_sym` at the `mpf` `x`, exactly.
+
+    Coefficients come from a sympy Poly, so they are exact `Integer` or
+    `Rational`; only the arithmetic at `mp.dps` is inexact, and sympy is kept
+    out of the numeric path. Added 2026-08-23 (bean `qou-bm4i`) — see
+    `tr_M_at_q0_polynomial` below.
+    """
+    poly = sp.Poly(sp.expand(expr_in_u), u_sym)
+    acc = mpmath.mp.mpf(0)
+    for c in poly.all_coeffs():
+        r = sp.Rational(c)
+        acc = acc * x + mpmath.mp.mpf(int(r.p)) / mpmath.mp.mpf(int(r.q))
+    return acc
 
 
 def mittag_leffler_term6(
@@ -300,8 +336,17 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
         return None
     u = sp.Symbol("u")
     try:
-        p_in_u = sp.sympify(p_in_u_str)
-        denom_in_u = sp.sympify(denom_in_u_str)
+        # BOTH names. `to_u_polynomial(expr, q, check_q)` renders its returned
+        # strings using whatever SYMBOL the caller passed, so the habiro
+        # witnesses carry either — habiro-coefficients-atomic.witness.json
+        # (2026-07-18) says "check_q", newer ones say "u". Sympifying with no
+        # locals gave the string its OWN fresh symbol, `.subs(u, sqrt_q)` below
+        # then no-opped, the expression stayed symbolic, and
+        # `float(complex(...))` raised "Cannot convert expression to float" —
+        # which is why this producer has been dead on main.
+        _loc = {"u": u, "check_q": u}
+        p_in_u = sp.sympify(p_in_u_str, locals=_loc)
+        denom_in_u = sp.sympify(denom_in_u_str, locals=_loc)
     except Exception as e:
         print(f"    SKIP: sympify failed: {e}")
         return None
@@ -310,9 +355,28 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     p_in_q = p_in_u.subs(u, sqrt_q)
     denom_in_q = denom_in_u.subs(u, sqrt_q)
     tr_M_expr = p_in_q / denom_in_q
-    # Sanity check at q_0
-    tr_M_at_q0_check = float(complex(sp.N(tr_M_expr.subs(q, Q_0))).real)
-    print(f"    tr_M(T_w, q_0) [from polynomial] = {tr_M_at_q0_check:.6f}")
+    # tr_M at q_0, exactly.
+    #
+    # PRECISION (2026-08-23, bean `qou-bm4i`). This was
+    #     float(complex(sp.N(tr_M_expr.subs(q, Q_0))).real)
+    # on a `Q_0` that is `q_parameter.Q`, itself a float64 — so a witness
+    # advertising `output_dps: 60` stored 16 digits, and the cross-validation
+    # against markov_substrate_realizer ran an `rtol = 1e-9` comparison on
+    # values truncated seven orders inside its own tolerance. `sp.N` also
+    # defaults to 15 digits, so the sympy step lost precision independently of
+    # the `float()`.
+    #
+    # Now: full-precision q_0 from `Q_50_DIGIT_STR`, Horner over the exact
+    # polynomial coefficients at `mp.dps`, `fmt` on output.
+    q0_mpf = mpmath.mp.mpf(Q_0_STR)
+    u_0_mpf = mpmath.sqrt(q0_mpf)
+    _p_val = _eval_poly_mpf(p_in_u, u, u_0_mpf)
+    _d_val = _eval_poly_mpf(denom_in_u, u, u_0_mpf)
+    if _d_val == 0:
+        print("    SKIP: denominator vanishes at q_0")
+        return None
+    tr_M_at_q0_check = _p_val / _d_val
+    print(f"    tr_M(T_w, q_0) [from polynomial] = {float(tr_M_at_q0_check):.6f}")
     print(f"    tr_M_at_q0 [from witness]        = {atom_data.get('tr_M_at_q0', 'N/A')}")
 
     # Compute Term-6 sum
@@ -333,7 +397,16 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
             for r in n_data["roots"])
         for n_data in per_n
     )
-    if higher_order_unresolved:
+    # A DIVERGENT total was previously reported as "complete-simple-poles-only":
+    # the status only ever asked about higher-order poles, never whether the
+    # Mittag-Leffler sum was finite. The deuteron's n=1 root (zeta = 1, the pole
+    # at q = 1) gives an infinite residue, so its total is +inf — and the witness
+    # called that complete, in bare `Infinity` tokens that made the file invalid
+    # JSON on top of it.
+    total_finite = bool(mpmath.isfinite(total))
+    if not total_finite:
+        status = "divergent-simple-pole-sum"
+    elif higher_order_unresolved:
         status = "incomplete-higher-order-pole-detected"
     elif higher_order_resolved:
         status = "complete-with-sqrt-sub-fallback"
@@ -349,7 +422,10 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     # Record term6_in_MeV as None only when an UNRESOLVED higher-order
     # pole remains (sqrt-sub fallback failed).  When resolved via
     # contour integration the partial sum IS the full Term-6.
-    term6_value = None if higher_order_unresolved else total * M_E_MEV
+    # None when there is no finite value to report — a divergent sum is not a
+    # number in MeV, and `inf` there read like one.
+    term6_value = (None if (higher_order_unresolved or not total_finite)
+                   else total * M_E_MEV)
     # Expose tr_M(T_w, q) symbolically so downstream consumers can
     # re-evaluate at any q without re-running the script.
     try:
@@ -364,18 +440,27 @@ def evaluate_atom_term6(atom_label: str, atom_data: dict, n_max: int = 6):
     return {
         "atom": atom_label,
         "n_max": n_max,
-        "tr_M_at_q0_polynomial": tr_M_at_q0_check,
+        "tr_M_at_q0_polynomial": fmt(tr_M_at_q0_check),
         "tr_M_polynomial": tr_M_polynomial,
-        "term6_simple_residue_partial": total,
+        # `_json_safe` over the whole tree: the divergence shows up in
+        # per_n_breakdown roots too (residue_complex, contribution_real), and
+        # every one of them was a bare `Infinity` token. Markers keep the fact
+        # that the residue diverges — which is the RESULT here, not a failure —
+        # while making the witness parse.
+        "term6_simple_residue_partial": json_safe_float(float(total)),
         "term6_in_MeV": term6_value,
         "status": status,
         "higher_order_pole_unresolved": higher_order_unresolved,
         "higher_order_pole_resolved_via_sqrt_sub": higher_order_resolved,
-        "per_n_breakdown": per_n,
+        "per_n_breakdown": _json_safe(per_n),
     }
 
 
 def main():
+    # `_precision` does not raise mp.dps on import; without this the mpf
+    # evaluation below runs at mpmath's default 15 and `fmt` pads a
+    # float64-grade value out to full width (bean `qou-bm4i`).
+    set_compute_dps()
     print("=" * 78)
     print("Term 6 — Mittag-Leffler full pole sum")
     print("=" * 78)
@@ -435,10 +520,16 @@ def main():
             "now resolves to ≈ 0.057 MeV."
         )
         .set_content_block("prop:full-pole-structure-mass-trace")
-        .add_parameter("q_0", Q_0)
-        .add_parameter("m_e_MeV", M_E_MEV)
+        # `_json_safe` also carries floats to their repr strings: every number
+        # in this witness comes off a float64/sympy-N path (the residues are
+        # evaluated numerically), so repr is exactly the digits produced and it
+        # round-trips bit-exactly. Non-finite values become markers rather than
+        # bare JSON tokens — the deuteron's divergent sum is the one that
+        # matters and it is a RESULT, not a failure.
+        .add_parameter("q_0", _json_safe(Q_0))
+        .add_parameter("m_e_MeV", _json_safe(M_E_MEV))
         .add_parameter("n_max_cutoff", n_max)
-        .add_data("atoms", out_atoms)
+        .add_data("atoms", _json_safe(out_atoms))
         .add_caveat(
             "CONVENTION: this script reads habiro-coefficients-atomic."
             "witness.json, populated by markov_trace_symbolic in "

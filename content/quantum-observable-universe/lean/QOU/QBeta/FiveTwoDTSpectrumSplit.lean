@@ -187,4 +187,74 @@ theorem readings_all_distinct :
     (chiralityOdd (Splus0 0 1) (Sminus0 0 2) ≠ Splus0 0 1) ∧
     (chiralityOdd (Splus0 0 1) (Sminus0 0 2) ≠ Sminus0 0 2) := by decide
 
+/-! ## Route C, M0 — the DT split IS the bar-eigenspace decomposition
+
+The chirality involution `τ` (the `q ↦ q⁻¹` / mirror swap) on the ordered pair
+of q→0 Stokes constants `(dt⁺, dt⁻)`, the faithful `ℤ/2` (bar-even ⊕ bar-odd)
+grading it induces, and the corollary that any `τ`-symmetric *scalar* is blind to
+the nonzero bar-odd datum — the bar-graded restatement of
+`Driver14CharacterVarietyDTMenu.no_scalar_matches_chirality_split_datum`. This is
+milestone M0 of Route C: it turns the proved "no scalar" negative into the
+positive statement *"the DT count is the bar-graded object"*, connecting the split
+to the corpus bar-parity programme (`c1-ggm-bar-parity-faces`,
+`OhtsukiTowerBarParity`).
+-- Ref: [manuscript] docs/audits/2026-08-11-route-c-bps-cohomology-scoping.md (Route C M0) -/
+
+/-- The chirality involution `τ` on the ordered pair of `S⁺`/`S⁻` Stokes
+constants (the mirror / `q ↦ q⁻¹` swap exchanging the two factorization
+constants). -/
+def barSwap : Int × Int → Int × Int := fun p => (p.2, p.1)
+
+/-- `τ` is an involution: `τ ∘ τ = id`. -/
+theorem barSwap_involutive (p : Int × Int) : barSwap (barSwap p) = p := by
+  cases p; rfl
+
+/-- Bar-even part of the pair (the `τ`-symmetric combination). -/
+def barEvenPair (p : Int × Int) : Int := p.1 + p.2
+
+/-- Bar-odd part of the pair (the `τ`-antisymmetric combination = `chiralityOdd`). -/
+def barOddPair (p : Int × Int) : Int := chiralityOdd p.1 p.2
+
+/-- `τ` fixes the bar-even part (the `+1` eigenspace). -/
+theorem barEvenPair_fixed (p : Int × Int) :
+    barEvenPair (barSwap p) = barEvenPair p := by
+  cases p; unfold barEvenPair barSwap; omega
+
+/-- `τ` negates the bar-odd part (the `-1` eigenspace). -/
+theorem barOddPair_negated (p : Int × Int) :
+    barOddPair (barSwap p) = - barOddPair p := by
+  cases p; unfold barOddPair barSwap chiralityOdd; omega
+
+/-- **Faithful reconstruction.** The ordered pair is recovered from its
+bar-grading (`2·dt⁺ = even + odd`, `2·dt⁻ = even − odd`): the `ℤ/2` grading loses
+no information, so the DT spectrum *is* its bar-graded datum. -/
+theorem barGrading_faithful (p : Int × Int) :
+    2 * p.1 = barEvenPair p + barOddPair p ∧
+    2 * p.2 = barEvenPair p - barOddPair p := by
+  cases p; unfold barEvenPair barOddPair chiralityOdd; constructor <;> omega
+
+/-- The certified ordered `5₂` DT-constant pair `(4, 3)`. -/
+def dtPair52 : Int × Int := (Splus0 0 1, Sminus0 0 2)
+
+/-- Its bar-grading is `(even, odd) = (7, 1)`. -/
+theorem dtPair52_grading :
+    (barEvenPair dtPair52, barOddPair dtPair52) = (7, 1) := by decide
+
+/-- **The `5₂` datum is genuinely chiral**: `τ` moves it (`(4,3) ↦ (3,4)`),
+because its bar-odd part is nonzero. -/
+theorem dtPair52_chiral : barSwap dtPair52 ≠ dtPair52 := by decide
+
+/-- **Scalar-shadow corollary** (bar-graded form of
+`no_scalar_matches_chirality_split_datum`). Any `τ`-symmetric integer reading `g`
+(`g a b = g b a`) assigns the *same* value to the chirality-swapped pair, so it
+cannot recover the ordered `5₂` datum, whose bar-odd part is nonzero (`= 1`).
+"No scalar serves the datum" ⇔ "the bar-odd part is nonzero". -/
+theorem symmetric_scalar_blind_to_chirality
+    (g : Int → Int → Int) (hsym : ∀ a b, g a b = g b a) :
+    g dtPair52.1 dtPair52.2 = g (barSwap dtPair52).1 (barSwap dtPair52).2
+      ∧ barOddPair dtPair52 ≠ 0 := by
+  refine ⟨?_, by decide⟩
+  show g dtPair52.1 dtPair52.2 = g dtPair52.2 dtPair52.1
+  exact hsym _ _
+
 end QOU.QBeta.FiveTwoDTSpectrumSplit

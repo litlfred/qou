@@ -353,19 +353,19 @@ def main() -> int:
                 "the max-strictness LP whose objective is purely combinatorial and "
                 "therefore symmetric")
     wb.add_assertion("offset_vanishes_at_symmetric_point",
-                     computed=1.0 if all_degenerate else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed="1" if all_degenerate else "0", expected="1",
+                     tolerance="0.5",
                      source="||x_geom - x_LP|| < 1e-12 for both anchors — the "
                             "structural finding, not a null result")
     wb.add_assertion("both_anchors_are_two_regular_ideal_cells",
-                     computed=1.0 if regular_ok else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed="1" if regular_ok else "0", expected="1",
+                     tolerance="0.5",
                      source="Vol(m004) = 2 x regular ideal tetrahedron and "
                             "Vol(L6a4) = 2 x regular ideal octahedron, each to "
                             "<1e-9 relative")
     wb.add_assertion("G0_geometric_point_satisfies_GA_system",
-                     computed=1.0 if gate_ok else 0.0, expected=1.0,
-                     tolerance=0.5,
+                     computed="1" if gate_ok else "0", expected="1",
+                     tolerance="0.5",
                      source="the complete structure's angles must satisfy the "
                             "same edge/tet linear system as the LP — coordinate "
                             "convention gate")

@@ -228,21 +228,17 @@ Hecke quadratic relation. -/
     Layer 3: structural induction on the Hecke quadratic).
 
     Companion: `docs/audits/2026-05-12-lean-p4-canonical-instance-review.md`. -/
+class RigidMonoidalStructuralGapInvarianceAxiom (α : Type*) : Prop where
+  /-- The missing input for the convention factorization. -/
+  convention_factorisation : ∀ (c : OperatorVolumeConvention α) (β : α), c.markov_trace β = 0
+
 -- Ref: [manuscript] prop:rigid-monoidal-structural-gap-invariance §"Skeleton"
 -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985)
 -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
-instance canonical (α : Type*) :
+instance canonical (α : Type*) [ctx : RigidMonoidalStructuralGapInvarianceAxiom α] :
     RigidMonoidalStructuralGapInvariance α where
   categorical_trace _ := (0 : ℝ)
-  convention_factorisation := by
-    intro c β
-    -- §3b-cond conjectural input: Layer-1 Jones-Wenzl Markov-trace
-    -- uniqueness.  The skeleton sets `categorical_trace ≡ 0`; any
-    -- non-trivial convention's `markov_trace` need not vanish, so
-    -- this identification is the conjecture proper.  Discharges
-    -- §3b-cond for downstream consumers.
-    -- Ref: [jones1985] V. Jones, BAMS 12.1 (1985) — Markov trace uniqueness
-    -- Ref: [wenzl1988] H. Wenzl, Invent. Math. 92 (1988)
-    sorry
+  convention_factorisation := ctx.convention_factorisation
+
 
 end QOU.BraidKnot

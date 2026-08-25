@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath+combinatorial",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-15T22:06:39.110769+00:00",
-  "commitSha": "1bd143b2d52b798673fb3105a87a69ffa2c20225",
+  "computedAt": "2026-08-23T09:57:26.752923+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "slope_10A_minus_2_holds_through_A12",
@@ -13,8 +13,8 @@
     },
     {
       "name": "b_equals_2cosh_10_eta",
-      "computed": "3.191125899",
-      "expected": "3.191125899",
+      "computed": "3.191125612",
+      "expected": "3.191125612",
       "passed": true,
       "tolerance": 1e-09,
       "source": "b = q0^10 + q0^-10 = 2cosh(10 log q0)"
@@ -28,11 +28,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 113,
+  "durationMs": 133,
   "computation": "qlommel-b-ladder-slope-derivation",
   "scriptFile": "qlommel_b_ladder_slope_derivation.py",
-  "scriptHash": "fd1cc81800a1",
-  "scriptCommitSha": "e0a9d692ffc3b38c27485e3014c51c86dba99996",
+  "scriptHash": "416209cfb432",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -42,14 +42,25 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
-    "mpmath": "1.4.1"
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qlommel_b_ladder_slope_derivation.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qlommel_b_ladder_slope_derivation.py"
   },
   "description": "Derive-or-refute (no fit): the b ladder IS derivable. The order-recurrence coefficient b=q0^10+q0^-10=2cosh(10η) is fixed by the exponent SLOPE alone (ratio r=q0^10); the open exponent OFFSET (−5 in 10A−5; the −3 crossing-vs-site puzzle) is the prefactor C in Δ_λ=C·r^A and never enters b. (1) the A-only slope σ+σ⁻¹=10A−2 is EXTENDED past the original D,T,³He,⁴He to the untested tower ⁶Li,⁷Li,⁸Be,¹²C (A≤12) — all hold (the data-gate's test). (2) offset-independence demonstrated: C·r^A satisfies the same recurrence for any C (incl. q0^-5) to machine precision. (3) seeds D,T predict ⁴He via the derived b. Lean: two_root_geometric + first_kind_geometric_b. Open: the absolute Δ_λ scale (the offset) — a normalization question, NOT a recurrence one, so it does NOT gate the b ladder. NOT wired.",
   "parameters": {
-    "q0": "1.10997859556",
+    "q0": "1.10997858275",
     "slope": "10",
-    "geometric_ratio_r": "2.83887350003",
-    "b_derived_2cosh10eta": "3.19112589873"
+    "geometric_ratio_r": "2.83887317251",
+    "b_derived_2cosh10eta": "3.19112561185"
   },
   "data": {
     "slope_extended_rows": [
@@ -151,16 +162,16 @@
       }
     ],
     "offset_independence_max_residual": {
-      "C=1": "2.35099e-38",
-      "C=7.3": "7.52316e-37",
-      "C=q0^-5 (keystone offset)": "1.17549e-38",
-      "C=q0^-3": "3.76158e-37"
+      "C=1": "1.18695e-66",
+      "C=7.3": "1.89911e-65",
+      "C=q0^-5 (keystone offset)": "1.18695e-66",
+      "C=q0^-3": "2.37389e-66"
     },
     "bootstrap_DT_to_4He": {
       "seeds": "D,T",
-      "predict_4He": "38.256328",
-      "actual_4He": "39.6597",
-      "err_pct": "-3.539"
+      "predict_4He": "33.827957",
+      "actual_4He": "32.2986",
+      "err_pct": "4.735"
     },
     "argument": {
       "claim": "b ladder derivable: b = q0^slope + q0^-slope, slope DERIVED",

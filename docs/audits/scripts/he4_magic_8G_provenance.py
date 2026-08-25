@@ -27,6 +27,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.a
 for sub in ("computations", "computations/substrate", "tools/qou-substrate/python"):
     sys.path.insert(0, os.path.join(ROOT, sub))
 
+from _precision import set_compute_dps  # noqa: E402
+
 try:
     import mpmath as mp
 except ImportError as e:  # pragma: no cover
@@ -35,7 +37,7 @@ except ImportError as e:  # pragma: no cover
         sys.exit(1)
     sys.exit(0)
 
-mp.mp.dps = 30
+set_compute_dps()
 G = mp.catalan
 eightG = 8 * G
 

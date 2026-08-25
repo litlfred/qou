@@ -30,7 +30,15 @@ abbrev R_q := ℝ
 /-- The substrate indeterminate, specialised to the numerical anchor. -/
 noncomputable def q_param : R_q := 1.1097
 
-/-- The q-number `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)` (real exponents). -/
+/-- The q-number `[n]_q = (qⁿ - q⁻ⁿ)/(q - q⁻¹)` (real exponents).
+
+**Deliberately not consolidated onto `QOU.QInteger.qIntBal`** (`qou-qint`
+census).  The index `n` here is an element of `R_q`, not a `ℕ` or a `ℤ`, and
+that is load-bearing rather than incidental: `qCasimir` below evaluates it at
+`j` and `j + 1` for a *spin* `j`, which takes half-integer values.  The
+canonical bracket and its `ℤ`-indexed sibling `qIntBalZ` are both
+discretely-indexed, so neither can express this; there is no equation to state,
+not merely none convenient. -/
 -- Ref: [manuscript] §6/q-angular-momentum
 noncomputable def qNumber (q : R_q) (n : R_q) : R_q :=
   (q ^ n - q ^ (-n)) / (q - q ^ (-(1 : R_q)))

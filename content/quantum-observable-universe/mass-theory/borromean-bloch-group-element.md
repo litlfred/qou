@@ -33,11 +33,22 @@ $$
   \mathrm{Im}\,\mathrm{Li}_2(z) + \log|z| \cdot \arg(1 - z).
 $$
 
-For an ideal tetrahedron with cross-ratio $z$, the hyperbolic volume
-is $\Lambda(\theta) = D(e^{i\theta})/2 = \mathrm{Im}\,\mathrm{Li}_2(e^{i\theta})$
-— the **Lobachevsky function**.  So hyperbolic volume IS a regulator
-evaluation, per
-[`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period).
+For an ideal tetrahedron with cross-ratio $z = e^{i\theta}$ on the unit
+circle, $\log|z| = 0$, so the regulator collapses to the **Clausen
+function**
+
+$$
+  D(e^{i\theta}) \;=\; \mathrm{Im}\,\mathrm{Li}_2(e^{i\theta}) \;=\; \mathrm{Cl}_2(\theta),
+  \qquad
+  \Lambda(\theta) \;=\; \tfrac{1}{2}\mathrm{Cl}_2(2\theta),
+$$
+
+where $\Lambda$ is the **Lobachevsky function**.  So hyperbolic volume
+IS a regulator evaluation, per
+[`rem:vol-as-motivic-period`](#rem:vol-as-motivic-period).  The two
+normalisations differ by both an argument doubling and a factor $2$;
+keeping one function's coefficient while writing the other's name is
+a recurring slip.
 
 ## The Borromean Bloch-group element
 
@@ -45,24 +56,30 @@ Per
 [`def:quantum-bloch-group`](#def:quantum-bloch-group) and the
 classical Bloch-Suslin construction:
 
-- The Borromean complement decomposes into 8 ideal octahedra, each
-  with cross-ratio $\zeta = e^{i\pi/3}$ (the regular ideal
-  octahedron, $\theta = \pi/3$).
-- Each octahedron contributes Bloch-group element $8 \cdot
-  [\zeta]_2 + \ldots$ via the Lobachevsky decomposition.
+- The Borromean complement decomposes into **two** regular ideal
+  octahedra (Thurston), each of volume $4G = 4\,\mathrm{Cl}_2(\pi/2)
+  \approx 3.66386$.
+- In the Bloch group each octahedron is $4 \cdot [i]$, so the
+  cross-ratio carried by the class is the **fourth** root of unity
+  $\zeta_4 = i = e^{i\pi/2}$ — not the sixth root $e^{i\pi/3}$, which
+  is the figure-eight parameter.
 - The total Bloch-group element is
 
 $$
   [\mathcal{B}_3]_{B(\mathbb{C})}
   \;=\;
-  8 \cdot [e^{i\pi/3}]
+  8 \cdot [i]
   \;\in\;
   B(\mathbb{C}),
 $$
 
-with regulator $r_2[\mathcal{B}_3] = 8 \cdot \Lambda(\pi/3) =
-8G$ (Catalan's constant; see
-[`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).
+with regulator $r_2[\mathcal{B}_3] = 8 \cdot D(i) = 8\,\mathrm{Cl}_2(\pi/2)
+= 8G$ (Catalan's constant; see
+[`prop:binding-scale-catalan`](#prop:binding-scale-catalan)).  This is
+the $\zeta_4$ row of the
+[transcendental-accounting table](../appendix-surreals/transcendental-accounting-table-data.md);
+the figure-eight sits in the $\zeta_6$ row with
+$\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$.
 
 ## The conjectural content — $h^4$ as the next-order regulator term
 
@@ -134,9 +151,9 @@ class BorromeanBlochGroupElement
     (M : Type*) [BrCategory M] [QuantumDilogarithm M] where
   /-- The Bloch-group element of the Borromean complement. -/
   borromean_bloch_class : BlochGroup (Complex)
-  /-- It equals 8 · [e^(iπ/3)]. -/
+  /-- It equals 8 · [i], the ζ₄ (octahedral) class. -/
   borromean_bloch_eq_eight_xi :
-    borromean_bloch_class = 8 • bloch_symbol (Complex.exp (Complex.I * π / 3))
+    borromean_bloch_class = 8 • bloch_symbol Complex.I
   /-- The Beilinson regulator of the class equals 8G. -/
   regulator_eq_eight_G : r_2 borromean_bloch_class = 8 * catalan_G
   /-- The order-h² regulator correction equals -6G. -/
@@ -148,7 +165,7 @@ class BorromeanBlochGroupElement
 
 ## What remains open
 
-1. **Compute prototype**: at $q = q_0$, canonical evaluate both
+1. **Compute prototype**: at $q = q_0$, numerically evaluate both
    sides of the conjectural identity
    $r_2^{(2)}[\mathcal{B}_3] = -6G$.  The left side requires
    extending the Bloch-Wigner regulator to order $h^2$ via the

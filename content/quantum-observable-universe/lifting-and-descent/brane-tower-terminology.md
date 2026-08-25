@@ -1,3 +1,3 @@
-The mathematics here strictly traces the iterated jet prolongation $A_{n+1} = J^1(A_n)$. We assign the term *brane* to each localized layer $A_n$, representing a geometric boundary enclosing level-$n$ internal degrees of freedom.
+The mathematics here traces the iterated jet prolongation $A_{n+1} = J^1(A_n)$. We assign the term *brane* to each localized layer $A_n$, representing a geometric boundary enclosing level-$n$ internal degrees of freedom.
 
 We call the lifting condition \cite{yekutieli2010} that governs extensions from $n$ to $n+1$ the *quantum lifting condition*, and reserve the qualifier *Yekutieli* for the nonabelian multiplicative integration \cite{yekutieli2015} over the tower. These results control structural assembly rather than the Kähler-differential jet object itself. We therefore write simply *(recursive) brane tower* for the sequence.

@@ -22,7 +22,23 @@ WHAT IS ESTABLISHED (corpus, not fitted).
 WHAT STEP 2 ADDS (now derived).
   The delta_q decoration MAGNITUDE is fixed by the WRITHE w = (m-1)k
   (rosso_jones_three_strand_delta_q.py / prop:torus-knot-delta-q-writhe):
-      delta_q(T_{m,k}) = q^{(m-1)k} - q^{-(m-1)k} = h*[(m-1)k]_q.
+      delta_q(T_{m,k}) = q^{(m-1)k} - q^{-(m-1)k} = h*[(m-1)k]_q,   m <= k.
+
+  MINIMAL-STRAND CONDITION (REQUIRED — m <= k).
+  The writhe is a property of the m-strand PRESENTATION, not of the knot: the
+  vertical Markov move shifts it by +-1 while presenting the same link (Lean:
+  writhe_stabilize, WritheMarkovInvariance.lean).  The observable is its value at
+  the LOWEST level of the brane tower, i.e. at the braid index, and for a torus
+  knot the braid index is min(m,k) (Morton-Williams; Lean-proved in
+  nuclear-interactions/box-braid-irreducibility-proof).  So w = (m-1)k is the
+  braid-index writhe only for m <= k.  Since T_{m,k} = T_{k,m} as knots while
+  (m-1)k != (k-1)m, a swapped pair would give one knot two delta_q values (the
+  trefoil: w = 3 as T_{2,3} vs 4 as T_{3,2}; 10_124: w = 10 as T_{3,5} vs 12 as
+  T_{5,3}), and hence two different couplings.  Both genus-4 carriers below have
+  m < k, so no coupling here is affected -- 1/alpha_EM = q[9]_q[10]_q is
+  unchanged; check_minimal_strand() makes the requirement enforced, not latent.
+  See docs/audits/2026-08-10-writhe-level-of-definition.md.
+
   So each force carrier carries TWO derived data:
       (i)  intertwining partition  lambda = (m, 1^{n-m})   [first index m],
       (ii) writhe decoration       delta_q = h*[(m-1)k]_q  [writhe (m-1)k].
@@ -65,11 +81,86 @@ try:
 except Exception:
     HAVE_MP = False
 
+# q0 SOURCING -- the anchor must never be chosen silently (bean qou-7vm4).
+#
+# Historically this block chose the physics anchor by whether an import
+# succeeded: the happy path gives q_at() = the PROTON pin, while the
+# `except` fallback is a hardcoded MUON literal. Nothing warned, and nothing
+# was recorded in the witness, so a witness produced in a constrained
+# environment silently carried a different anchor from one produced here.
+# That is what made this producer's committed witness (70-digit muon)
+# irreproducible from a HEAD that imports the proton pin.
+#
+# The fallback is retained -- the producer must still run without
+# qou_substrate -- but the path taken is now WARNED about and RECORDED
+# (`q0_source` / `q0_anchor` in the witness payload).
+#
+# RESOLVED 2026-08-22 (was: an open owner call, beans qou-7vm4 / qou-d5eg).
+# This note used to say the manifest listed this producer under `ideal_muon`
+# while the code imported the proton pin -- a layer straddle. It was re-tagged
+# in the interim and the three now AGREE on proton, measured on main:
+#   * q0_anchor_manifest.json  -> `physical_proton` (and NOT in `ideal_muon`)
+#   * this module              -> imports q_at() == the proton pin
+#   * the committed witness    -> q0_anchor "proton", and its q0 matches the
+#     50-digit proton pin to 1.9e-50 while differing from the muon pin by
+#     1.16e-8 (the known mu-p substrate tension), so the VALUE agrees with the
+#     label rather than merely being tagged.
+# The muon fallback below is retained only for the no-`qou_substrate`
+# environment, and taking it is warned about and recorded.
+#
+# STILL LIVE, but now LATENT rather than active: this module imports
+# `qou_substrate.constants.q_at` directly instead of routing through
+# `q_parameter`, and it is `q_parameter` that reads the manifest and honours an
+# `ideal_muon` tag. So the tag still cannot fire here. That is harmless while
+# the tag says `physical_proton` (the direct import gives the same pin), but if
+# this producer were ever re-tagged to `ideal_muon` the tag would silently fail
+# and this code would keep using proton -- the original defect, re-armed. Any
+# such re-tag must also switch this import to `q_parameter`. Tracked in
+# qou-7vm4, which stays OPEN for that reason.
+def _manifest_tag() -> str:
+    """This producer's anchor group, read from `q0_anchor_manifest.json`.
+
+    Read rather than hardcoded: the previous literal (`ideal_muon`) survived a
+    re-tag to `physical_proton` and shipped a false field in every witness this
+    producer emitted. Returns "unknown (manifest unreadable)" rather than
+    guessing, so a lookup failure is visible instead of silently asserting a
+    group.
+    """
+    import json
+    from pathlib import Path
+
+    stem = Path(__file__).stem
+    try:
+        manifest = json.loads(
+            (Path(__file__).resolve().parent / "q0_anchor_manifest.json").read_text()
+        )
+    except Exception as exc:  # pragma: no cover - environment-dependent
+        return f"unknown (manifest unreadable: {exc!r})"
+    hits = [g for g, v in manifest.items() if isinstance(v, list) and stem in v]
+    if len(hits) == 1:
+        return hits[0]
+    if not hits:
+        return "untagged (stem absent from manifest)"
+    return f"AMBIGUOUS (stem in {len(hits)} groups: {', '.join(sorted(hits))})"
+
+
+_Q0_MUON_FALLBACK = "1.1099785955573347198997632204832250266562084087802"
 try:
     from qou_substrate.constants import q_at
     Q0 = str(q_at())
-except Exception:
-    Q0 = "1.1099785955573347198997632204832250266562084087802"
+    Q0_SOURCE = "qou_substrate.constants.q_at()"
+    Q0_ANCHOR = "proton"
+except Exception as _e:  # pragma: no cover - environment-dependent
+    Q0 = _Q0_MUON_FALLBACK
+    Q0_SOURCE = f"hardcoded muon fallback (qou_substrate import failed: {_e!r})"
+    Q0_ANCHOR = "muon"
+    print(
+        "WARNING: qou_substrate unavailable; falling back to the hardcoded "
+        "MUON q0 literal. This CHANGES THE PHYSICS ANCHOR relative to a run "
+        "with qou_substrate present (proton). Recorded as q0_anchor='muon' "
+        "in the witness. See bean qou-7vm4.",
+        file=sys.stderr,
+    )
 
 CODATA_INV_ALPHA = "137.035999177"   # CODATA 2022 1/alpha_EM
 
@@ -77,6 +168,38 @@ CODATA_INV_ALPHA = "137.035999177"   # CODATA 2022 1/alpha_EM
 def qbracket(q, k):
     """[k]_q = (q^k - q^{-k})/(q - q^{-1})."""
     return (q ** k - q ** (-k)) / (q - 1 / q)
+
+
+def check_minimal_strand(m: int, k: int, name: str = "") -> None:
+    """Enforce the minimal-strand condition m <= k on a torus-knot carrier.
+
+    Kept local rather than imported from rosso_jones_three_strand_delta_q.py so
+    that this producer does not take a sympy/witness dependency on another
+    producer module; the two copies state the same condition and cite the same
+    sources.  (If a shared computations/ utility module is introduced later,
+    both should be centralised there.)
+
+    The writhe w = (m-1)k is a property of the m-strand PRESENTATION, not of the
+    knot; the observable is its value at the lowest level of the brane tower,
+    the braid index min(m,k) (Morton-Williams).  So w = (m-1)k is the
+    braid-index writhe only for m <= k.  T_{m,k} and T_{k,m} are the same knot
+    but (m-1)k != (k-1)m, so a swapped pair assigns a second delta_q -- and
+    hence a second coupling -- to a carrier that already has one.
+
+    Raises:
+        ValueError: if m > k.
+    """
+    if m > k:
+        raise ValueError(
+            f"minimal-strand condition violated for carrier T_{{{m},{k}}}"
+            f"{' (' + name + ')' if name else ''}: m={m} > k={k}.  The writhe "
+            f"rule w=(m-1)k is only the braid-index writhe when m = min(m,k) "
+            f"(Morton-Williams: braid index of T_{{m,k}} is min(m,k)).  "
+            f"T_{{{m},{k}}} and T_{{{k},{m}}} are the SAME knot but "
+            f"(m-1)k={(m - 1) * k} != (k-1)m={(k - 1) * m}, so this input would "
+            f"give the carrier a second delta_q and a second coupling.  "
+            f"Present the carrier at its braid index: use T_{{{k},{m}}}."
+        )
 
 
 def main() -> None:
@@ -107,11 +230,16 @@ def main() -> None:
     print(f"  q0 = {mp.nstr(q, 12) if HAVE_MP else q}   reference n = {n_ref} strands")
     print("  carrier T_{m,k}: partition lambda=(m,1^{n-m}) [index m] ; "
           "delta_q=h[(m-1)k]_q [writhe]")
+    print("  (m <= k REQUIRED: m is then the braid index min(m,k), so the writhe "
+          "is read")
+    print("   at the lowest level of the tower -- see check_minimal_strand)")
     print()
     print(f"  {'knot':6s} {'m':>2s} {'k':>2s} {'writhe':>6s} "
           f"{'lambda(n=4)':>12s} {'delta_q':>12s}  role")
     data = {}
     for name, m, k, role in knots:
+        # GUARD: w=(m-1)k is the braid-index writhe only when m = min(m,k).
+        check_minimal_strand(m, k, name)
         w_writhe = (m - 1) * k
         lam = partition(m, n_ref)
         dq = h * qbracket(q, w_writhe)
@@ -173,6 +301,22 @@ def main() -> None:
     )
     w.set_content_block("prop:force-carrier-intertwining-correspondence")
     w.add_data("q0", str(q))
+    # Which anchor this run actually used, and how it was obtained. Recorded
+    # unconditionally so a later reader never has to infer the layer from a
+    # call site (AGENTS.md: "Say which pin you used").
+    w.add_data("q0_anchor", Q0_ANCHOR)
+    w.add_data("q0_source", Q0_SOURCE)
+    w.add_data("q0_manifest_tag", _manifest_tag())
+    w.add_data(
+        "q0_anchor_caveat",
+        "Resolved 2026-08-22 (beans qou-7vm4 / qou-d5eg): the manifest tag, this "
+        "module's import, and this witness now all say PROTON. The tag above is "
+        "READ FROM q0_anchor_manifest.json at run time rather than hardcoded, so "
+        "it cannot silently go stale against a re-tag the way the previous "
+        "hardcoded `ideal_muon` literal did. `q0_anchor`/`q0_source` above record "
+        "the path actually taken; the muon fallback fires only without "
+        "qou_substrate and warns when it does.",
+    )
     w.add_data("n_reference_strands", n_ref)
     w.add_data("force_knots", data)
     w.add_data("delta_q_T2_9_h9", str(dq_2_9))

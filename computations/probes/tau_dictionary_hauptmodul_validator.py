@@ -102,6 +102,12 @@ Q0_PROTON = "1.1099785827513808075916690956107688798744991218736"
 T5_TARGET = -10          # t₅(τ₀) = −10 exactly (rational root of the sextic)
 J5_TARGET = mpf(-25) / 2  # Fricke companion j(5τ₀) = 5³/(−10) = −25/2
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # ── tolerance ladder (pre-stated; see module docstring) ────────────────────
 TOL_PASS_T5 = mpf("1e-3")   # matches bring_hauptmodul_gate_probe.py
 TOL_PASS_J5 = mpf("1.0")    # matches bring_hauptmodul_gate_probe.py j check

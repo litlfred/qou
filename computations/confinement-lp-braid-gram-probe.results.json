@@ -1,0 +1,298 @@
+{
+  "computation": "confinement-lp-braid-gram-probe",
+  "bean": "qou/ndsa",
+  "field": "Q(q) \u2014 exact, no floating point",
+  "conclusion": "Candidates 1 and 2 both fail. Candidate 1's objective is constant on its feasible set (t.x = u_0), so it optimises nothing and merely reads back a coordinate of its own input. Candidate 2 leaves the radical intact for every braid word tried, on both sides, because V spans a two-sided ideal; with <t,v> = tr_M(V) = 0 holding for any Gram, y_0 = 0 remains forced. A surviving formulation must change the COST vector, not the Gram.",
+  "radical": [
+    "-1*q^3",
+    "q^2",
+    "q^2",
+    "-1*q",
+    "-1*q",
+    "1"
+  ],
+  "one_dot_radical": "-1*q^3 + 2*q^2 - 2*q + 1",
+  "per_braid_word": [
+    {
+      "word": "identity (control)",
+      "generators": [],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "sigma_0",
+      "generators": [
+        0
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "sigma_1",
+      "generators": [
+        1
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "L+ = s0 s1",
+      "generators": [
+        0,
+        1
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "e- = s0 s1 s0",
+      "generators": [
+        0,
+        1,
+        0
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "trefoil s0^3",
+      "generators": [
+        0,
+        0,
+        0
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "alternating s0 s1 s0 s1",
+      "generators": [
+        0,
+        1,
+        0,
+        1
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "s1 s0 s1 s0 s1",
+      "generators": [
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    },
+    {
+      "word": "long s0^2 s1^2 s0",
+      "generators": [
+        0,
+        0,
+        1,
+        1,
+        0
+      ],
+      "left": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      },
+      "mid": {
+        "annihilates_radical": true,
+        "rank": 5,
+        "det_zero": true
+      }
+    }
+  ],
+  "checks": [
+    {
+      "key": "radical_exists",
+      "ok": true,
+      "detail": "det G = 0, nullity 1, v = (-1*q^3, q^2, q^2, -1*q, -1*q, 1)"
+    },
+    {
+      "key": "one_dot_v_nonzero",
+      "ok": true,
+      "detail": "<1,v> = -1*q^3 + 2*q^2 - 2*q + 1"
+    },
+    {
+      "key": "cost_orthogonal_to_radical",
+      "ok": true,
+      "detail": "<t,v> = tr_M(V) = 0 \u2014 V is in the radical of the trace form, so this holds whatever Gram is used"
+    },
+    {
+      "key": "cost_is_gram_row",
+      "ok": true,
+      "detail": "t_j = G_0j, so t.x = (Gx)_0 = u_0 for EVERY feasible x"
+    },
+    {
+      "key": "feasible_set_has_constant_objective",
+      "ok": true,
+      "detail": "x and x+v both satisfy Gx = u and both score u_0 = (q^8 + q^7 + q^6 - 1*q^5 + 2*q^4 + 2*q^2 + 1)/(q^4 + 2*q^2 + 1) \u2014 the program has nothing to optimise"
+    },
+    {
+      "key": "u_demand_must_be_orthogonal_to_radical",
+      "ok": true,
+      "detail": "Gx = u is solvable only for u \u22a5 v, so a knot-derived demand profile is constrained before the LP is even feasible"
+    },
+    {
+      "key": "radical_survives[left]  w = identity (control)",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = identity (control)",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = sigma_0",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = sigma_0",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = sigma_1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = sigma_1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = L+ = s0 s1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = L+ = s0 s1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = e- = s0 s1 s0",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = e- = s0 s1 s0",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = trefoil s0^3",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = trefoil s0^3",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = alternating s0 s1 s0 s1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = alternating s0 s1 s0 s1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = s1 s0 s1 s0 s1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = s1 s0 s1 s0 s1",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[left]  w = long s0^2 s1^2 s0",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    },
+    {
+      "key": "radical_survives[mid]  w = long s0^2 s1^2 s0",
+      "ok": true,
+      "detail": "G^w v = 0: True   rank 5/6   det G^w = 0: True"
+    }
+  ],
+  "all_passed": true
+}

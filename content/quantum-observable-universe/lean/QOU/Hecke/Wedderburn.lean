@@ -103,16 +103,35 @@ class WedderburnDecomp
   sum to `1`: `Σ_{λ ∈ all_parts} π_λ = 1`.  This is the machine-checked
   "we account for everything" — by Wedderburn–Artin the partitions of `n`
   index ALL irreducibles (Mathas 1999 §3.43), so the blocks exhaust the
-  algebra with no residue.  `trace_decomp` below is the `y_λ`-weighted
-  refinement that rests on this partition of unity. -/
+  algebra with no residue.  `trace_exhaustive` below is the *derived*
+  unweighted decomposition that rests on this partition of unity; the `y_λ`
+  enter one level down, through `block_scaling`. -/
   complete : all_parts.sum (fun lam => pi_lambda lam) = 1
-  /-- Trace decomposition: the Markov trace decomposes over `all_parts` as
-  `tr(x) = Σ_{λ ∈ all_parts} y_λ · tr(x · π_λ)`.
-  Follows from `Σ_{λ ∈ all_parts} π_λ = 1` (partition of unity),
-  trace linearity, and `y_λ` as central coefficients. -/
-  trace_decomp : ∀ (x : A),
-      MT.trace x =
-        all_parts.sum (fun lam => y_lambda lam • MT.trace (x * pi_lambda lam))
+  /-- The **block character** `χ^λ` — the matrix trace on the `λ` block,
+  before the Markov normalisation. Named as a field because the class stores
+  the blocks only abstractly (see the header: *"the matrix-algebra isomorphisms
+  are captured abstractly"*), so there is nothing to compute it from. -/
+  chi_lambda : Partition n → A → R
+  /-- **Block scaling.** The Markov trace restricted to block `λ` is the block
+  character scaled by the central coefficient: `tr_M(x · π_λ) = y_λ · χ^λ(x)`.
+
+  This is the sentence in this class's header docstring — *"The Markov trace's
+  restriction to each block is the matrix trace scaled by the central
+  coefficient `y_λ`"* — which was prose and is now a field. It is where the
+  `y_λ` actually enter, and it is a **hypothesis**, not the conclusion:
+  `trace_decomposition` derives `tr_M(x) = Σ_λ y_λ · χ^λ(x)` from it together
+  with `complete`, and neither input is that identity.
+
+  It replaces a field `trace_decomp` that asserted the conclusion directly, over
+  the terms `tr_M(x · π_λ)` rather than `χ^λ(x)` — applying `y_λ` on top of a
+  quantity that already carries it. That field was not merely redundant with
+  the derived `trace_exhaustive`: the two together forced `(1 − y_μ) · tr_M(π_μ)
+  = 0` for every block, i.e. every weight trivial or its block trace zero.
+  Machine-checked as `weights_inert` / `weight_one_or_block_trace_zero` in
+  commit `9e8b712fa2`, which is where those two theorems can still be run; they
+  are deleted here along with the field they were about. -/
+  block_scaling : ∀ (x : A) (lam : Partition n),
+      MT.trace (x * pi_lambda lam) = y_lambda lam * chi_lambda lam x
 
 namespace WedderburnDecomp
 
@@ -121,17 +140,6 @@ variable {R : Type u} {n : ℕ} {q : R} {A : Type u}
   [HA : HeckeAlgebra R n q A]
   [MT : MarkovTrace n q A]
   [WD : WedderburnDecomp n q A]
-
-/-- Wedderburn decomposition of the Markov trace:
-    tr_M(x) = Σ_λ y_λ · χ^λ(x)
-where χ^λ(x) = tr(x · π_λ) (block-restricted trace), and the sum
-runs over `WD.all_parts` (the complete set of irreducibles). -/
-theorem trace_decomposition (x : A) :
-    MT.trace x = WD.all_parts.sum (fun lam =>
-      WD.y_lambda lam • MT.trace (x * WD.pi_lambda lam)) := by
-  -- Ref: [thm:wedderburn-mass-formula]. Follows directly from the
-  -- trace_decomp axiom of WedderburnDecomp.
-  exact WD.trace_decomp x
 
 open Classical in
 /-- **(§9.4 L-2) Kronecker orthogonality of the central idempotents** —
@@ -164,8 +172,8 @@ theorem pi_mul_pi (lam mu : Partition n) :
 `Σ_λ π_λ = 1` (`WD.complete`) via left-distributivity and `R`-linearity
 of the trace — it does NOT re-assume a decomposition.  The sum runs over
 the complete set `WD.all_parts` (the `p(n)` partitions of `n`); there are
-no other blocks.  Contrast `trace_decomposition`, which projects the
-`y_λ`-weighted `trace_decomp` axiom; this lemma needs only `complete`. -/
+no other blocks.  This lemma needs only `complete`; `trace_decomposition`
+below adds `block_scaling` to it and gets the `y_λ`-weighted form. -/
 theorem trace_exhaustive (x : A) :
     MT.trace x
       = WD.all_parts.sum (fun lam => MT.trace (x * WD.pi_lambda lam)) := by
@@ -177,6 +185,29 @@ theorem trace_exhaustive (x : A) :
           rw [hx]
     _ = WD.all_parts.sum (fun lam => MT.trace (x * WD.pi_lambda lam)) :=
           map_sum MT.trace _ WD.all_parts
+
+/-- **Wedderburn decomposition of the Markov trace, derived**:
+`tr_M(x) = Σ_λ y_λ · χ^λ(x)`, the sum running over `WD.all_parts` (the
+complete set of irreducibles).
+
+Two inputs, neither of them the conclusion: `complete` (via
+`trace_exhaustive`, which contributes the unweighted sum) and `block_scaling`
+(which contributes the weights, one block at a time). Note where each enters —
+the `y_λ` are *not* a consequence of completeness, which is why assuming the
+whole identity was never necessary, and they are *not* free either, which is
+why the honest axiom is the block scaling.
+
+Previously this projected a `trace_decomp` field, i.e. proved nothing; see
+`block_scaling`'s docstring for what that field asserted and why it was worse
+than redundant. The general form of this argument, stated on a bare
+`AddMonoidHom` with no Hecke structure at all, is
+`QOU.QBeta.WedderburnTraceDecomposition.trace_eq_sum_weighted_characters`. -/
+theorem trace_decomposition (x : A) :
+    MT.trace x = WD.all_parts.sum (fun lam =>
+      WD.y_lambda lam * WD.chi_lambda lam x) := by
+  -- Ref: [thm:wedderburn-mass-formula].
+  rw [trace_exhaustive (WD := WD) x]
+  exact Finset.sum_congr rfl (fun lam _ => WD.block_scaling x lam)
 
 /-- Auxiliary product shift: `(a·π_λ)·(b·π_μ) = (a·b)·(π_λ·π_μ)`, from
 centrality of the idempotents. The noncommutative bookkeeping behind both

@@ -1,3 +1,5 @@
+import Mathlib.RingTheory.Ideal.Maps
+import Mathlib.Algebra.Algebra.Defs
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.CategoryTheory.Category.Basic
 import Mathlib.RingTheory.Ideal.Basic

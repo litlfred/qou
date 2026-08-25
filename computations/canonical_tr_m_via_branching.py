@@ -96,6 +96,104 @@ EXTRACT_FILENAMES = {
 }
 
 
+def _extract_anchor_q(extract: dict):
+    """The q an A^λ extract was generated at, or None if it records none.
+
+    TWO SPELLINGS, both live, which is the whole reason this exists. The H_6 pn
+    deuteron extract records `q0Value` at top level (50 digits); the H_9 nn
+    extract records `data.q_0` (float64). Same fact, different key, different
+    nesting, different precision — and a guard keying on only the first reads
+    the second as "no provenance at all".
+
+    I reported the H_9 extract as UNSTAMPED on that basis, in a bean and in a
+    commit message. It is not; it carries `data.q_0 = 1.1099785827513808`
+    alongside `h = 0.20906029879563937`. The provenance was there and the reader
+    was looking for the wrong key — so this returns the value rather than
+    letting an absent key stand in for an absent fact.
+    """
+    v = extract.get("q0Value")
+    if v is None:
+        v = (extract.get("data") or {}).get("q0Value")
+    if v is None:
+        v = (extract.get("data") or {}).get("q_0")
+    if v is None:
+        return None
+    q = mp.mpf(str(v))
+    return q if q > 0 else None
+
+
+def build_A_extract_at_q(n_outer: int, interface: str, q_val, dps: int = 50):
+    """Build the A^λ_{ξν}(I) extract AT `q_val` from the categorical closed form.
+
+    The drop-in replacement for `load_A_extract`'s frozen JSON. Returns the same
+    shape the consumer expects (`results_per_lambda[str(tuple(lam))]
+    ["A_per_pair"][pair_key]` with `matrix_re` / `matrix_im` / `c_lr` / `d_mu` /
+    `d_nu`), so `compute_chi_lambda_via_branching` is untouched.
+
+    WHY THIS EXISTS (bean `qou-8chw`). `load_A_extract` reads a JSON stamped at
+    one q and never re-evaluates it, so `compute_tr_m_via_branching(Z, N, q_val)`
+    returned a HYBRID off-anchor — a frozen operator at q_0 against weights and
+    blocks at q_val. At the bar image that was +0.0332 versus the fine-Bratteli
+    transfer's -0.00148, not even the same sign, and it degenerated to the right
+    answer exactly at q_0, so it failed TOWARD agreement where it is tested.
+
+    THE GAUGE QUESTION IS SETTLED, MEASURED NOT ASSUMED. The closure-b design
+    doc only ever claimed the categorical A matches the fitted extract "modulo
+    the V_ξ⊗V_ν basis gauge", which would have made this swap silently change
+    tr_M. It does not: building both ways at q_0 and comparing ENTRYWISE over
+    all 11 λ ⊢ 6 and all 35 (ξ,ν) pairs (0 missing) gives a worst difference of
+    **7.05e-51**. Same gauge, no transform needed.
+
+    Only `interface == "pn"` is built here: `gauge_aligned_A_combiner_general`
+    constructs the physical p-n bridge `I_pn = σ_{n_inner-1} − h(1/2 − δ/4)·1`,
+    the colour-weighted form (qou-gdtb). The frozen extract agrees — it records
+    `interface_ctype: "averaged_weighted"` — which is why the entrywise match
+    above is meaningful rather than a coincidence of conventions.
+    """
+    if interface != "pn" or n_outer % 3 != 0:
+        return None
+    n_block = 3
+    n_inner = n_outer - n_block
+    if n_inner < 3:
+        return None
+    try:
+        import a_operator_gauge_align as _ga
+    except ImportError:
+        return None
+    q_str = mp.nstr(mp.mpf(str(q_val)), dps)
+    out: dict = {}
+    for lam in partitions_of(n_outer):
+        try:
+            blocks = _ga.gauge_aligned_A_combiner_general(
+                lam, n_inner, n_block, q_str, dps)
+        except Exception:
+            return None
+        if not blocks:
+            continue
+        per_pair: dict = {}
+        for (xi, nu), info in blocks.items():
+            M = info["A"]
+            rows, cols = M.rows, M.cols
+            re = [[mp.nstr(M[i, j].real if hasattr(M[i, j], "real") else M[i, j],
+                           dps) for j in range(cols)] for i in range(rows)]
+            im = [[mp.nstr(M[i, j].imag, dps) if hasattr(M[i, j], "imag")
+                   else "0.0" for j in range(cols)] for i in range(rows)]
+            per_pair[f"({tuple(xi)},{tuple(nu)})"] = {
+                "matrix_re": re,
+                "matrix_im": im,
+                "c_lr": info["c"],
+                "d_mu": info["d_mu"],
+                "d_nu": info["d_nu"],
+            }
+        out[str(tuple(lam))] = {"A_per_pair": per_pair}
+    if not out:
+        return None
+    return {"results_per_lambda": out,
+            "built_at_q": q_str,
+            "provenance": "categorical closed form via "
+                          "a_operator_gauge_align.gauge_aligned_A_combiner_general"}
+
+
 def load_A_extract(n_outer: int, interface: str) -> dict | None:
     """Load the A^λ_{ξν}(I) extract for (n_outer, interface). Returns
     None if not yet cached."""
@@ -124,7 +222,7 @@ def evaluate_word_matrix_np(shape: tuple, word: list,
     return M
 
 
-def per_nucleon_intra_word(nucleon_type: str) -> list[tuple]:
+def per_nucleon_intra_word(nucleon_type: str, q_val=None) -> list[tuple]:
     """Return the H_3 intra-block braid word for a single nucleon.
 
     Matches the convention used in mass_at_3A_proper.atom_braid_word_3A
@@ -141,18 +239,36 @@ def per_nucleon_intra_word(nucleon_type: str) -> list[tuple]:
         ops = atom_canonical_crossings(0, 1)
     else:
         raise ValueError(f"unknown nucleon {nucleon_type!r}")
-    # Convert to (c, d, gen_idx) tuples
+    # Convert to (c, d, gen_idx) tuples.
+    #
+    # h MUST come from `q_val`, not from the module constant (2026-08-24,
+    # bean `qou-8chw`). `hecke_core.h` is a float64 `q_0 - 1/q_0` frozen at the
+    # proton pin, so calling this with `q_val != q_0` built the per-nucleon word
+    # at q_0 while the caller evaluated it at `q_val` — the SECOND frozen input
+    # on this path, and much the larger of the two. At the bar image the true
+    # `h(1/q_0) = -(q_0 - 1/q_0)` is SIGN-FLIPPED, so the neutron's Hecke-negative
+    # letters `(1, -h, g)` carried the wrong sign entirely.
+    #
+    # Measured, tr_M^atom(D) at 1/q_0 against the fine-Bratteli transfer's
+    # -0.0014808531711619370338:
+    #
+    #     frozen A^λ  + frozen h   ->  +0.0332037   (21x off, wrong sign)
+    #     built  A^λ  + frozen h   ->  +0.0331943   (A^λ freeze is only ~3e-4)
+    #     built  A^λ  + threaded h ->  -0.00148039  (3.2e-4, sign now agrees)
+    #
+    # So the A^λ freeze was real but small; THIS was the one that inverted the
+    # sign. At q_0 the two are identical (h(q_0) is what the constant holds), so
+    # neither showed up where the path is normally tested.
     from hecke_core import h as h_val
+    if q_val is not None:
+        _q = mp.mpf(str(q_val))
+        h_val = float(_q - 1 / _q)
     word = []
+    # `d_for_ctype` rather than a private table: the if/elif this replaces
+    # raised on `averaged_weighted`, i.e. on every Z≥1,N≥1 atom.
+    from canonical_braid_crossings import d_for_ctype
     for gen, ctype in ops:
-        if ctype == "sigma":
-            word.append((1.0, 0.0, int(gen)))
-        elif ctype == "sigma_inv":
-            word.append((1.0, -float(h_val), int(gen)))
-        elif ctype == "averaged":
-            word.append((1.0, -float(h_val) / 2, int(gen)))
-        else:
-            raise ValueError(f"unknown crossing type {ctype!r}")
+        word.append((1.0, float(d_for_ctype(ctype, h_val)), int(gen)))
     return word
 
 
@@ -206,7 +322,7 @@ def compute_chi_lambda_via_branching(
         key = (nuc, mu)
         if key not in rho_cache_h3:
             rho_cache_h3[key] = evaluate_word_matrix_np(
-                mu, per_nucleon_intra_word(nuc), q_val
+                mu, per_nucleon_intra_word(nuc, q_val), q_val
             )
         return rho_cache_h3[key]
 
@@ -329,9 +445,31 @@ def compute_chi_lambda_via_branching(
         d_nu = pair_info["d_nu"]
         c_lr = pair_info["c_lr"]
 
-        # A matrix
-        re = np.array(pair_info["matrix_re"])
-        im = np.array(pair_info["matrix_im"])
+        # A matrix.
+        #
+        # `dtype=float` is load-bearing, not decorative. The extract witnesses
+        # are migrating off raw float64 JSON numbers onto full-precision
+        # decimal STRINGS (`_precision.fmt`) as each producer is ported —
+        # `sublemma_2_1_A_operator_extract.py` did so under bean `qou-zck8`.
+        # A bare `np.array(["0.0", ...])` builds a `<U3` string array, and the
+        # `1j * im` below then raises
+        #     UFuncNoLoopError: ufunc 'multiply' did not contain a loop with
+        #     signature matching types (complex128, <U3)
+        # which this file's caller catches and reports as a per-atom row
+        # ERROR — i.e. the deuteron silently drops out of the canonical mass
+        # table rather than failing loudly.
+        #
+        # Spelling the dtype makes numpy parse the decimal strings, and is a
+        # no-op for the extracts that still carry numbers (H_9+), so both
+        # witness generations work while the migration is in flight.
+        #
+        # This truncates to float64, which is what this path already was
+        # (np.kron / complex128 below, and `q_val=float(Q_FLOAT)` at the entry
+        # point) — so no precision is lost relative to the numeric witnesses.
+        # It does mean the extra digits in the strings are discarded here; that
+        # is a property of this branching path, not of the serialization.
+        re = np.array(pair_info["matrix_re"], dtype=float)
+        im = np.array(pair_info["matrix_im"], dtype=float)
         A_mat = re + 1j * im   # shape (d_xi*d_nu, d_xi*d_nu)
 
         # ρ_ξ ⊗ ρ_ν
@@ -394,7 +532,12 @@ def compute_tr_m_via_branching(
         # default include_inter=True, pn_convention="bring_color_weighted")
         # and same y_λ Jones–Markov weights, so the value is identical:
         # transfer ≡ char_fast (full Hoefsmit) to 4.7e-15, and
-        # tr_M_atom(D)=0.388357 matches this combiner's own A=2 value.
+        # The A=2 cross-check figure once quoted here was tr_M_atom(D) =
+        # 0.388357; BOTH sides of that comparison have since moved. The live
+        # value is 0.5751722439177719, agreed by the transfer, the Hoefsmit /
+        # markov-peel arbiter, the chi-cache combiner, and -- since qou-zck8
+        # regenerated this file's own A-operator extract off float64 -- by this
+        # combiner too, to the float64 floor its NumPy rho factor permits.
         # ~5000× the markov_peel symbolic path (⁶Li 0.16 s vs ~17 min).
         #
         # Honours the no-truncation precision ruling — ALL partitions kept
@@ -414,15 +557,19 @@ def compute_tr_m_via_branching(
             tr_atom_mp, _tr_free, _chi, _wall = tr_m_atom_zn(
                 Z, N, dps=mp.mp.dps, q=q_arg)
         except ValueError as e:
-            # The canonical color-weighted atom word is q0-baked (its
-            # interface d carries flavor_split_subleading(q0)), so the
-            # transfer can only re-lift it at q0. A true q≠q0 sweep needs a
-            # q-parameterised word builder (not yet wired) — fail with a
-            # clean err rather than the old native path's silent q0/q_val
-            # hybrid. (Production always uses q0, so this never fires there.)
+            # CORRECTED 2026-08-23 (bean `qou-e58e`): this comment used to
+            # say the word is "q0-baked" and can only re-lift at q0. That is
+            # WRONG and was believed on the strength of a stale docstring --
+            # the word re-lifts fine at q≠q0 (12 of the deuteron's 23 letters
+            # change at 1/q0), and tr_m_atom_zn threads q through. The guard
+            # below is kept because a ValueError from the transfer must not be
+            # silently swallowed, but it is a real error path, not a statement
+            # about q0-baking. NOTE this is the A>=3 branch; the A=2 branching
+            # path below has its own, unrelated q defect -- see
+            # branching_q_threading_probe.py (bean `qou-8chw`).
             return None, time.time() - t0, (
-                f"transfer path supports q=q0 only (q0-baked color-weighted "
-                f"word); custom q_val={q_val} unsupported: {e}"
+                f"transfer raised at q_val={q_val}; not a q0-baking limit "
+                f"(the word re-lifts off q0) — see the note above: {e}"
             )
         return abs(tr_atom_mp), time.time() - t0, None
 
@@ -430,7 +577,12 @@ def compute_tr_m_via_branching(
     ordering = ["p"] * Z + ["n"] * N
     extract_cache: dict[tuple[int, str], dict] = {}
     iface = interface_type_for_pair(ordering[-2], ordering[-1])
-    extract = load_A_extract(n, iface)
+    # Build A^λ AT q_val when the categorical closed form covers this
+    # (n_outer, interface); fall back to the frozen JSON otherwise, where the
+    # guard below still refuses off-anchor q. See `build_A_extract_at_q`.
+    extract = build_A_extract_at_q(n, iface, q_val)
+    if extract is None:
+        extract = load_A_extract(n, iface)
     if extract is None:
         return None, 0.0, (
             f"Missing A^λ_{{ξν}}(I_{iface}) extract at H_{n}. "
@@ -438,6 +590,96 @@ def compute_tr_m_via_branching(
             f"--n-outer {n} --interface {iface}"
         )
     extract_cache[(n, iface)] = extract
+
+    # ── q GUARD, now FALLBACK-ONLY (2026-08-24, bean `qou-8chw`) ────────────
+    # HISTORY. `load_A_extract` reads a JSON stamped at one q (`q0Value`, the
+    # proton pin) and never re-evaluates it, while two of this path's three
+    # q-carrying inputs DO receive `q_val`:
+    #
+    #     y_lambda_at(n, q_val)                     <- q_val  (and bar-even)
+    #     evaluate_word_matrix_np(mu, intra, q_val) <- q_val
+    #     A^λ_{ξν}(I)                               <- WAS FROZEN
+    #
+    # So off-anchor the return was a HYBRID — a frozen operator at q_0 against
+    # weights and per-nucleon blocks at q_val. At the bar image it gave +0.0332
+    # against the fine-Bratteli transfer's -0.00148: not even the same sign.
+    # Worse than merely wrong: at q_val = q_0 the hybrid degenerates to the
+    # correct value, so the function was right exactly where it is usually
+    # tested and silently wrong everywhere else — failing TOWARD agreement with
+    # an independent path at the anchor, which reads as corroboration.
+    #
+    # THE FIX LANDED. `build_A_extract_at_q` above now constructs A^λ at
+    # `q_val` from `a_operator_gauge_align.gauge_aligned_A_combiner_general`,
+    # so the (n_outer % 3 == 0, pn) case — every Z≥1,N≥1 atom this path
+    # serves — threads q end to end. The gauge precondition was MEASURED, not
+    # assumed: both constructions at q_0 over all 11 λ ⊢ 6 and all 35 (ξ,ν)
+    # pairs agree entrywise to 7.05e-51.
+    #
+    # THIS GUARD SURVIVES for the fallback. When the builder declines (a
+    # (n_outer, interface) it does not cover — e.g. the H_9 nn extract), the
+    # frozen JSON is loaded and the frozen-q hazard is exactly as it was, so
+    # the loud refusal still beats a silent hybrid. A built extract carries no
+    # `q0Value`, so `_q_anchor` is 0 and the guard is inert on that path.
+    #
+    # Tolerance 1e-12, not 1e-30, and the reason matters: the DEFAULT path sets
+    # `q_val = float(Q_FLOAT)`, a float64 truncation of the 50-digit q_0, so it
+    # sits ~1e-16 from the extract's stamp. A 1e-30 gate refused production's
+    # own default — caught by testing the default path, which is the one case
+    # it would have been easy not to test. 1e-12 separates cleanly: the float64
+    # truncation is ~1e-16, while the bar image is ~2e-1 away.
+    # FAIL-CLOSED on an UNSTAMPED frozen extract (2026-08-24). Keying the guard
+    # on `q0Value` alone is quiet exactly where provenance is least known: an
+    # extract with no stamp gives `_q_anchor = 0`, the `> 0` test is false, and
+    # a hybrid sails through.
+    #
+    # THIS IS FORWARD-LOOKING HARDENING, NOT A LIVE-BUG FIX — stated plainly
+    # because I first wrote it up as the latter, twice, and it is neither time.
+    #
+    # First error: I called `(9, "nn")` a live hybrid risk here. `A >= 3`
+    # returns via the fine-Bratteli transfer well before this point, so `n` is
+    # ALWAYS 6 and no H_9 entry is reachable from this function at all.
+    #
+    # Second error: I then called that extract UNSTAMPED. It is not. It records
+    # `data.q_0 = 1.1099785827513808` next to `h = 0.20906029879563937`; the
+    # H_6 deuteron records the same fact as a top-level 50-digit `q0Value`. Two
+    # spellings of one stamp, and the reader only knew the first — so "key
+    # absent" was being read as "provenance absent". `_extract_anchor_q` now
+    # accepts both, which is why this branch is close to unreachable in
+    # practice: both extracts on disk DO record their q.
+    #
+    # Its two real consumers, `sublemma_2_1_h9_tritium_verify` and
+    # `sublemma_2_1_h12_helium_4_framework`, take no q parameter at all — they
+    # are anchor-only verification scripts, for which a frozen extract is
+    # correct. There is no q-threading defect there either.
+    #
+    # What this change actually buys: an extract that genuinely records nothing,
+    # or an n = 6 entry added without a stamp, now refuses off-anchor instead of
+    # going silent.
+    #
+    # A BUILT extract legitimately carries no `q0Value` — it carries
+    # `built_at_q` instead — so key on that to tell "built at q_val" from
+    # "frozen at an unrecorded q", rather than on the absence of a stamp.
+    if "built_at_q" not in extract:
+        _q_anchor = _extract_anchor_q(extract)
+        _q_here = mp.mpf(str(q_val))
+        if _q_anchor is None:
+            # Records no q under any spelling `_extract_anchor_q` knows.
+            # Presume the package anchor and refuse anywhere else — the
+            # conservative reading, since a wrong presumption costs a refusal
+            # while the alternative costs a silent hybrid.
+            _q_anchor = mp.mpf(str(Q_FLOAT))
+            _why = ("records no generation q (checked `q0Value`, `data.q0Value`,"
+                    " `data.q_0`), so it is presumed to be at the package"
+                    " anchor")
+        else:
+            _why = f"is frozen at q={mp.nstr(_q_anchor, 12)}"
+        if abs(_q_here - _q_anchor) > mp.mpf("1e-12"):
+            return None, 0.0, (
+                f"A^λ extract {_why} and is not re-evaluated; "
+                f"q_val={mp.nstr(_q_here, 12)} would return a hybrid, not tr_M "
+                f"at either q. Use tr_m_atom_via_transfer.tr_m_atom_zn for "
+                f"q ≠ q_0 (bean qou-8chw)."
+            )
 
     # Loop over λ ⊢ n
     t0 = time.time()

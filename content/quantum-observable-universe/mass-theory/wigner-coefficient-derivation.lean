@@ -8,12 +8,16 @@
 -/
 
 import QOU.Torsion.HeckeMassElement
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.BraidKnot
 
 /-- Quantum n-integer `[n]_q = (q^n − q^{-n}) / (q − q^{-1})`. -/
-noncomputable def qInt (n : ℕ) (q : ℝ) : ℝ :=
-  (q ^ n - q⁻¹ ^ n) / (q - q⁻¹)
+-- Consolidated onto the canonical q-integer (bean `qou-qint`): this was a
+-- verbatim duplicate of `QOU.QInteger.qIntBal`.  Kept as a local `abbrev` so
+-- every call site and proof below is unchanged, while the DEFINITION now has a
+-- single home.  See QOU/MathlibExt/QIntegerCanonical.lean.
+noncomputable abbrev qInt (n : ℕ) (q : ℝ) : ℝ := QOU.QInteger.qIntBal q n
 
 /-- The quantum factorial [n]_q! = Π_{k=1}^n [k]_q. -/
 noncomputable def qFactorial (n : ℕ) (q : ℝ) : ℝ :=
@@ -34,12 +38,12 @@ noncomputable def wignerCoefficient (k : ℕ) (q m_e : ℝ) : ℝ :=
 -- Ref: [manuscript] Ch. mass-theory, prop:wigner-coefficient-derivation ([5]_q!·m_e near-match to 68.9 MeV at q_0)
 axiom wigner_coefficient_axiom (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
-    (hme : m_e = 0.51099895) :
+    (hme : m_e = 0.51099895069) :
     |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03
 
 theorem wigner_coefficient (q₀ m_e : ℝ)
     (hq : q₀ = 1.109978595554181)
-    (hme : m_e = 0.51099895) :
+    (hme : m_e = 0.51099895069) :
     |wignerCoefficient 5 q₀ m_e - 68.896| / 68.896 < 0.03 :=
   wigner_coefficient_axiom q₀ m_e hq hme
 

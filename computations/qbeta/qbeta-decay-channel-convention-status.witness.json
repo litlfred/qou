@@ -1,0 +1,106 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-16T00:20:15.303024+00:00",
+  "commitSha": "99e383a2d037dee34e428dc530b9c6abec2b6aee",
+  "assertions": [
+    {
+      "name": "checks_failed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "mpmath 65 dps + sympy exact"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 221,
+  "computation": "qbeta-decay-channel-convention-status",
+  "scriptFile": "qbeta_decay_channel_convention_status_probe.py",
+  "scriptHash": "a18360a219e9",
+  "scriptCommitSha": "0425e4175135fb757bac826bccaacf4246709cd4",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Numeric shadow of the qbeta-decay 'disputed' registration: registry cross-check of z_C/z_D and both weight vectors; y_(1^3)(z_C) != 0 as the corrected escape witness (the explicit class inhabitant is not an Ocneanu z-trace: its sigma_0 value is h/2 exactly); exact factorisation of the z_C Jones-pin coincidence locus (empty for s > 1, Lean decayLadder_zC_not_jones); full-bar condition numeric shadow (D holds, C fails by exactly h); N_eff(z_C, q0) = 2.5995... non-integer. Adjudicates NO convention (scope-(a)).",
+  "parameters": {
+    "dps_compute": 65,
+    "dps_serialize": 50,
+    "q0_pin": "proton (q_at; AGENTS 2026-08-07 owner directive)",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
+    "uses_muon_built_cache": false
+  },
+  "data": {
+    "checks": {
+      "zC_matches_registry": true,
+      "zD_matches_registry": true,
+      "yC(3)_matches_registry": true,
+      "yD(3)_matches_registry": true,
+      "yC(2,1)_matches_registry": true,
+      "yD(2,1)_matches_registry": true,
+      "yC(1^3)_matches_registry": true,
+      "yD(1^3)_matches_registry": true,
+      "yC_1cubed_nonzero": true,
+      "instance_sigma0_is_h_over_2_exact": true,
+      "instance_is_not_zC_trace_at_q0": true,
+      "jones_pin_locus_factors_exactly": true,
+      "zC_fails_jones_pin_at_q0": true,
+      "zD_satisfies_jones_pin": true,
+      "zD_full_bar_holds_at_q0": true,
+      "zC_full_bar_fails_by_exactly_h": true,
+      "neff_zC_between_2_and_3": true,
+      "neff_zC_not_integer": true
+    },
+    "z_C_at_q0": "0.49932033418369445241344268025766630375194816404153",
+    "z_D_at_q0": "0.61268803714646525159582986394589924802630839154506",
+    "yC_at_q0": {
+      "(3)": "0.41539579536061340131043751972541446062496615551884",
+      "(2,1)": "0.28092963103101970777815130637822107959502749332953",
+      "(1^3)": "0.022744942577347183133259867518143380184978857822104"
+    },
+    "yD_at_q0": {
+      "(3)": "0.50540422650393080318755870324047227566035119774981",
+      "(2,1)": "0.2472978867480345984062206483797638621698244011251",
+      "(1^3)": "-2.4753785278167133769605890897383669213067155815863e-69"
+    },
+    "instance_sigma0_value": "h/2 exactly (z-independent, sympy)",
+    "instance_vs_zC_gap_at_q0": "0.39479018478587479469801957369282883182206941641002",
+    "jones_pin_gap_zC_at_q0": "-0.22797075867361954558886963605933702981947266590937",
+    "jones_pin_locus": "s^7+s^5-s^4-1 = (s-1)(s^6+s^5+2s^4+s^3+s^2+s+1)",
+    "full_bar_residual_D": "0.0",
+    "full_bar_residual_C_minus_h": "5.9347298410998742171707764184762232213881036460125e-67",
+    "neff_zC_at_q0": "2.5995155364001770161807405265030437515276756971463",
+    "lean": {
+      "file": "content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean",
+      "decls": [
+        "QOU.QBeta.zD_full_bar_covariant",
+        "QOU.QBeta.barEven_fullBar_forces_classical",
+        "QOU.QBeta.zC_fails_fullBar",
+        "QOU.QBeta.decayLadder_zC_not_jones",
+        "QOU.QBeta.decayLadder_zC_threeRow_ne_zero"
+      ],
+      "axioms": "propext, (Classical.choice,) Quot.sound — no sorryAx"
+    },
+    "registration": {
+      "channel": "qbeta-decay",
+      "status": "disputed",
+      "definitional_convention": null,
+      "production_convention": "C",
+      "open_item_bean": "qou-b3nk"
+    }
+  },
+  "caveats": [
+    "Scope-(a): adjudicates no convention. The full-bar exclusion of C is conditional on trace bar-compatibility (tr(bar y) = bar(tr y)) — the standard Ocneanu-trace property, asserted context, not proved. The fibre-integrality exclusion of C is conditional on the decay trace being a categorical fibre trace. Neither premise is derived for the decay channel; no corpus block derives the decay fibre.",
+    "A z-swap C->D under the existing ladder is NOT a migration: the 2026-08-15 sensitivity probe measured c_3 -> ~-974, implied c_2 -> -9.3, and rung-convergence collapse. D-adoption requires ladder re-derivation."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+}

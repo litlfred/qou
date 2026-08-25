@@ -1,0 +1,26 @@
+# Pinned commit of the litlfred/folio-assistant platform.
+#
+# The content pipeline, the Zod schemas and every QA checker live in that repo,
+# reached through the unpinned `folio-assistant/` symlink that
+# scripts/setup-folio-assistant.sh creates. So every number this repo quotes —
+# "run-validate: N issues", "check-wall-side: M/1190", any qa-sweep count — is a
+# function of BOTH the corpus commit and the platform commit. Without a pin only
+# the first is visible in `git log`, and two agents on the same corpus commit can
+# measure different baselines and both be correct.
+#
+# That is not hypothetical: on 2026-08-08 corpus 455013fcf5 reported
+# "10 issue(s)" against platform e1030e8 and "29 issue(s)" against e3c2d6b, in a
+# single session, and two agents spent a round disagreeing about which baseline
+# was real. Neither was wrong; the baseline was not well-defined. See bean `vbase`.
+#
+# Bumping the platform is now a deliberate, reviewable edit to this one line.
+# When you bump it, state the before/after issue counts in the commit message —
+# a change in count is a platform behaviour change and should be looked at, not
+# absorbed silently.
+#
+# Override for local testing without editing this file:
+#     FOLIO_ASSISTANT_REF=<branch|tag|sha> scripts/setup-folio-assistant.sh
+#
+# Pinned 2026-08-08. Against this platform, corpus 9d6fa7f2c8 measures
+# `run-validate content/quantum-observable-universe` → 4 issue(s) (all warnings).
+428ca5c98c107191303878eb98b6bfbc61f2f066

@@ -32,6 +32,8 @@ and the whole question reduces to: **where does `θ_p` vanish?**
 
 * `qTheta_neg_zpow_eq_zero` — `θ_p(w) = 0` for every `w ∈ −p^ℤ`, the `⊇`
   direction of the zero locus, which is exactly what places the poles above.
+  The converse — that these are the *only* zeros, each simple — is
+  `QOU/QBeta/C1ThetaZeroLocus.lean`, built on the contour identity below.
 * `summable_qThetaTerm` — the series converges for `P > 1`, `w ≠ 0`.
 * `qTheta_functional_equation` — `θ_P(P²w) = w·θ_P(w)`, i.e. `θ_p(pw) = w θ_p(w)`.
 * `qThetaC_conj` / `norm_qThetaC_conj_pair` — `θ_P` commutes with conjugation,
@@ -47,19 +49,17 @@ and the whole question reduces to: **where does `θ_p` vanish?**
   `logDeriv_qThetaC_functional_equation` — the functional equation over `ℂ`,
   differentiated, and in logarithmic-derivative form
   `p·θ'(pw)/θ(pw) = 1/w + θ'(w)/θ(w)`. That last one is the **`+1` per
-  period**: it is the entire zero-counting mechanism, and it is what leaves the
-  argument principle as the *only* missing ingredient for the converse zero
-  locus (see below).
+  period**: it is the entire zero-counting mechanism the converse zero locus
+  runs on.
 * `circleIntegral_scale` / `winding_step` / `qTheta_winding_step` — the same
   `+1`, carried up to the **contour** level:
 
       ∮_{|z| = pρ} θ'/θ dz  =  2πi  +  ∮_{|z| = ρ} θ'/θ dz
 
   for any `ρ > 0` on whose circle `θ_P` does not vanish. This is the form the
-  argument principle consumes, and it is the last step Mathlib supports.
-  `circleIntegral_scale` (change of variables for `circleIntegral`, absent from
-  Mathlib) and `winding_step` (`1/w` in the integrand ⇒ `2πi` in the integral)
-  are stated `θ`-free and are reusable.
+  argument principle consumes. `circleIntegral_scale` (change of variables for
+  `circleIntegral`, absent from Mathlib) and `winding_step` (`1/w` in the
+  integrand ⇒ `2πi` in the integral) are stated `θ`-free and are reusable.
 * `qTheta_inversion` — `θ_P(1/w) = w·θ_P(w)`, Morita's inversion formula
   (arXiv:1105.1998 §2.1) in our normalisation.
 * `thetaRatio_multiplier` — `θ_P(cz)/θ_P(z)` is a q-character with multiplier
@@ -74,9 +74,9 @@ and the whole question reduces to: **where does `θ_p` vanish?**
 `summable_qThetaTerm`, `differentiableOn_qThetaC` and
 `qTheta_functional_equation` are the **analytic foundation for the converse**.
 The vanishing theorem itself needs none of them (see below), but every route to
-"these are the *only* zeros" needs `θ_p` to be a genuine analytic object —
-which is now proved, not assumed — and the functional equation is what forces
-the zero set to be a union of `p`-orbits.
+"these are the *only* zeros" needs `θ_p` to be a genuine analytic object, and
+the functional equation is what forces the zero set to be a union of
+`p`-orbits.
 
 The proof is an **involution**, and needs no analysis at all. For each `k`, the
 map `n ↦ 2k−1−n` on `ℤ`
@@ -157,7 +157,7 @@ Numerically all of the above is checked in the witness
 `computations/qbeta/c3-w2-c1-connection-matrix.witness.json` (7/7).
 
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_connection_matrix.py
--- Ref: [rsz2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
+-- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 
 namespace QOU.QBeta.C1Poles
@@ -507,6 +507,19 @@ noncomputable def qThetaCTerm (P : ℝ) (w : ℂ) (n : ℤ) : ℂ :=
 
 lemma qThetaC_eq_tsum (P : ℝ) (w : ℂ) : qThetaC P w = ∑' n : ℤ, qThetaCTerm P w n := rfl
 
+/-- **The complex `θ_P` restricted to real arguments is the real one.**
+
+The bridge every real fact about `θ_P` — the vanishing theorem
+`qTheta_neg_zpow_eq_zero` above all — crosses to reach the complex-analytic
+statements. Unconditional: `Complex.ofReal_tsum` needs no summability, since
+both sides are `0` when the family is not summable. -/
+lemma qThetaC_ofReal (P w : ℝ) : qThetaC P (w : ℂ) = ((qTheta P w : ℝ) : ℂ) := by
+  rw [qThetaC_eq_tsum, qTheta, Complex.ofReal_tsum]
+  refine tsum_congr fun n => ?_
+  rw [qThetaCTerm, qThetaTerm]
+  push_cast
+  ring
+
 lemma norm_qThetaCTerm (P : ℝ) (hP : 0 < P) (w : ℂ) (n : ℤ) :
     ‖qThetaCTerm P w n‖ = qThetaTerm P ‖w‖ n := by
   rw [qThetaCTerm, qThetaTerm, norm_mul, norm_zpow, norm_zpow, Complex.norm_real,
@@ -667,13 +680,11 @@ theorem deriv_qThetaC_functional_equation (P : ℝ) (hP : 1 < P) (w : ℂ) (hw :
 This is the whole zero-counting mechanism in one line. Integrating over
 `|w| = ρ` and substituting `w ↦ pw` turns the `1/w` into `2πi`, so the winding
 number of `θ_p` on `|w| = pρ` is exactly **one more** than on `|w| = ρ`.
-The argument principle would then read that off as *exactly one zero, counted
-with multiplicity, in every fundamental annulus* — which with
-`qTheta_neg_zpow_eq_zero` pins that zero at `−p^k` and makes it simple, i.e.
-gives the converse zero locus outright.
-
-Mathlib has no argument principle, so the last step is not taken here. What is
-established is that **everything else it needs is proved**. -/
+The argument principle reads that off as *exactly one zero, counted with
+multiplicity, in every fundamental annulus*, which with
+`qTheta_neg_zpow_eq_zero` pins that zero at `−p^k` and makes it simple. That
+inference is taken in `QOU/QBeta/C1ThetaZeroLocus.lean`
+(`qThetaC_eq_zero_iff`). -/
 theorem logDeriv_qThetaC_functional_equation (P : ℝ) (hP : 1 < P) (w : ℂ)
     (hw : w ≠ 0) (hθ : qThetaC P w ≠ 0) :
     (P : ℂ) ^ (2:ℤ) * deriv (qThetaC P) ((P : ℂ) ^ (2:ℤ) * w)
@@ -741,14 +752,13 @@ The only hypothesis beyond `ρ > 0` is that `θ_P` has no zero on `|z| = ρ` —
 unavoidable, since otherwise the integrand is not defined there, and harmless,
 since the radius is ours to choose.
 
-**This is as far as Mathlib allows.** The argument principle would now read the
-left-hand side minus the right as *the number of zeros, with multiplicity, in
-the annulus `ρ < |z| < pρ`*, hence exactly one; `qTheta_neg_zpow_eq_zero`
-supplies that zero at `−p^k`, making it simple and the only one, so the zero
-set is exactly `−p^ℤ` and the C1 pole divisor is exact rather than `⊇`.
+The argument principle reads the left-hand side minus the right as *the number
+of zeros, with multiplicity, in the annulus `ρ < |z| < pρ`*, hence exactly one;
+`qTheta_neg_zpow_eq_zero` supplies that zero at `−p^k`, making it simple and the
+only one, so the zero set is exactly `−p^ℤ` and the C1 pole divisor is exact
+rather than `⊇`. That is `QOU/QBeta/C1ThetaZeroLocus.lean`, which consumes this
+theorem: `qThetaC_eq_zero_iff` and `qThetaC_analyticOrderAt_neg_zpow`.
 
-Mathlib has no argument principle, no winding number and no complex residue, so
-that last inference is not taken here. Everything it consumes is proved above.
 Checked numerically at our substrate in
 `computations/qbeta/c3_w2_c1_theta_zero_count.py`. -/
 theorem qTheta_winding_step (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
@@ -787,13 +797,12 @@ theorem qTheta_winding_step (P : ℝ) (hP : 1 < P) (ρ : ℝ) (hρ : 0 < ρ)
   rw [hcast]
   rw [← mul_div_assoc, h, one_div]
 
-/-! ### The argument principle on an annulus — proved, given a factorisation
+/-! ### The argument principle on an annulus
 
-Added 2026-08-08 (bean `qou-argp` step 1). `qTheta_winding_step` above produces
-the contour identity; this section proves the inference that consumes it, in the
-form Mathlib does not have. What is **not** here is the *existence* of the
-factorisation — that zeros of a holomorphic function on a compact annulus are
-finite and of finite order — which is `qou-argp` step 2.
+`qTheta_winding_step` above produces the contour identity; this section proves
+the inference that consumes it, in the form Mathlib does not have — for a
+function presented as `(∏ (·−a)^{m a})·u`. The *existence* of that presentation
+for an analytic function is `QOU.Mathlib.exists_finset_factorisation`.
 
 Everything below is `θ`-free and upstreamable. -/
 
@@ -989,21 +998,32 @@ theorem logDeriv_prod_pow_sub_mul (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ �
   rw [this]
 
 
-/-- **The argument principle on an annulus, `Finset`-indexed.**
+/-- **The argument principle on an annulus, `Finset`-indexed**, with the factors
+allowed to sit anywhere off the two contours.
 
 For `F = (∏ a ∈ S, (·−a)^{m a})·u` with `u` analytic and non-vanishing on a
-neighbourhood of the closed annulus and every `a ∈ S` strictly inside it, the
-winding difference counts the zeros with multiplicity. -/
-theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ)
+neighbourhood of the closed annulus, the winding difference counts *exactly the
+factors between the two circles*, with multiplicity. A factor inside the inner
+circle contributes `2πi` to both integrals and cancels; one outside the outer
+circle contributes to neither.
+
+The weaker hypothesis is what the θ instantiation needs. A factorisation
+obtained from `MeromorphicOn.extract_zeros_poles` is analytic on an *open* set,
+which must therefore be strictly larger than the closed contour annulus — so its
+zero set can spill into the two collars, and demanding `r < ‖a‖ < R` for every
+`a ∈ S` would be a hypothesis one cannot discharge without first proving the
+collars zero-free. Counting with a filter removes the need entirely. -/
+theorem argumentPrinciple_annulus_filter (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ)
     {A : Set ℂ} (r R : ℝ) (hr : 0 < r) (hrR : r < R)
     (hAopen : IsOpen A) (hAsub : Metric.closedBall (0:ℂ) R \ Metric.ball (0:ℂ) r ⊆ A)
     (hu : AnalyticOnNhd ℂ u A) (hune : ∀ z ∈ A, u z ≠ 0)
-    (hS : ∀ a ∈ S, r < ‖a‖ ∧ ‖a‖ < R) :
+    (hS : ∀ a ∈ S, ‖a‖ ≠ r ∧ ‖a‖ ≠ R) :
     (∮ z in C((0:ℂ), R), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
         / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
       - (∮ z in C((0:ℂ), r), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
         / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
-      = (∑ a ∈ S, (m a : ℂ)) * (2 * Real.pi * Complex.I) := by
+      = (∑ a ∈ S.filter (fun a => r < ‖a‖ ∧ ‖a‖ < R), (m a : ℂ))
+          * (2 * Real.pi * Complex.I) := by
   classical
   set F : ℂ → ℂ := fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w with hF
   set L : ℂ → ℂ := fun z => deriv u z / u z with hL
@@ -1048,8 +1068,8 @@ theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m :
     have := (circleIntegrable_sub_zpow_iff (c := (0:ℂ)) (w := a) (R := ρ) (n := -1)).2
       (Or.inr (Or.inr h0))
     simpa using this.const_mul (m a : ℂ)
-  have hRne : ∀ a ∈ S, R ≠ ‖a‖ := fun a ha => ne_of_gt (hS a ha).2
-  have hrne : ∀ a ∈ S, r ≠ ‖a‖ := fun a ha => ne_of_lt (hS a ha).1
+  have hRne : ∀ a ∈ S, R ≠ ‖a‖ := fun a ha => ((hS a ha).2).symm
+  have hrne : ∀ a ∈ S, r ≠ ‖a‖ := fun a ha => ((hS a ha).1).symm
   have hbig : ∀ ρ : ℝ, 0 ≤ ρ → Metric.sphere (0:ℂ) ρ ⊆ A → (∀ a ∈ S, ρ ≠ ‖a‖) →
       (∮ z in C((0:ℂ), ρ), deriv F z / F z)
         = (∑ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), ρ), (z - a)⁻¹))
@@ -1066,16 +1086,6 @@ theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m :
     congr 1
     exact Finset.sum_congr rfl fun a _ => circleIntegral.integral_const_mul _ _ _ _
   rw [hbig R hR0.le hsphR hRne, hbig r hr.le hsphr hrne]
-  -- each `(z−a)⁻¹` gives `2πi` outside and `0` inside
-  have hInR : ∀ a ∈ S, (∮ z in C((0:ℂ), R), (z - a)⁻¹) = 2 * Real.pi * Complex.I :=
-    fun a ha => QOU.QBeta.C1Poles.integral_inv_sub_inside a R (hS a ha).2
-  have hInr : ∀ a ∈ S, (∮ z in C((0:ℂ), r), (z - a)⁻¹) = 0 :=
-    fun a ha => QOU.QBeta.C1Poles.integral_inv_sub_outside a r hr.le (hS a ha).1
-  rw [Finset.sum_congr rfl (fun a ha => by rw [hInR a ha] :
-        ∀ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), R), (z - a)⁻¹)
-          = (m a : ℂ) * (2 * Real.pi * Complex.I)),
-      Finset.sum_congr rfl (fun a ha => by rw [hInr a ha] :
-        ∀ a ∈ S, (m a : ℂ) * (∮ z in C((0:ℂ), r), (z - a)⁻¹) = (m a : ℂ) * 0)]
   -- the `u'/u` integrals cancel by the annulus Cauchy theorem
   have hcancel : (∮ z in C((0:ℂ), R), L z) = ∮ z in C((0:ℂ), r), L z := by
     refine Complex.circleIntegral_eq_of_differentiable_on_annulus_off_countable
@@ -1085,8 +1095,43 @@ theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m :
       fun h => hz.1.2 (Metric.ball_subset_closedBall h)⟩
     exact ((hdu z hzA).differentiableAt (hAopen.mem_nhds hzA)).div
       ((hu z hzA).differentiableAt) (hune z hzA)
-  rw [hcancel]
-  simp [Finset.sum_mul]
+  rw [hcancel, add_sub_add_right_eq_sub, ← Finset.sum_sub_distrib,
+      Finset.sum_filter, Finset.sum_mul]
+  -- term by term: `2πi − 2πi` inside, `2πi − 0` between, `0 − 0` outside
+  refine Finset.sum_congr rfl fun a ha => ?_
+  rcases lt_trichotomy ‖a‖ r with h | h | h
+  · rw [QOU.QBeta.C1Poles.integral_inv_sub_inside a R (by linarith),
+        QOU.QBeta.C1Poles.integral_inv_sub_inside a r h,
+        if_neg (by rintro ⟨h', -⟩; linarith)]
+    ring
+  · exact absurd h (hS a ha).1
+  · rcases lt_trichotomy ‖a‖ R with h2 | h2 | h2
+    · rw [QOU.QBeta.C1Poles.integral_inv_sub_inside a R h2,
+          QOU.QBeta.C1Poles.integral_inv_sub_outside a r hr.le h, if_pos ⟨h, h2⟩]
+      ring
+    · exact absurd h2 (hS a ha).2
+    · rw [QOU.QBeta.C1Poles.integral_inv_sub_outside a R (by linarith) h2,
+          QOU.QBeta.C1Poles.integral_inv_sub_outside a r hr.le h,
+          if_neg (by rintro ⟨-, h'⟩; linarith)]
+      ring
+
+/-- **The argument principle on an annulus, `Finset`-indexed** — the special case
+of `argumentPrinciple_annulus_filter` where every factor already lies strictly
+between the two contours, so the filter is the whole index set. -/
+theorem argumentPrinciple_annulus_finset (u : ℂ → ℂ) (S : Finset ℂ) (m : ℂ → ℕ)
+    {A : Set ℂ} (r R : ℝ) (hr : 0 < r) (hrR : r < R)
+    (hAopen : IsOpen A) (hAsub : Metric.closedBall (0:ℂ) R \ Metric.ball (0:ℂ) r ⊆ A)
+    (hu : AnalyticOnNhd ℂ u A) (hune : ∀ z ∈ A, u z ≠ 0)
+    (hS : ∀ a ∈ S, r < ‖a‖ ∧ ‖a‖ < R) :
+    (∮ z in C((0:ℂ), R), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
+        / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
+      - (∮ z in C((0:ℂ), r), deriv (fun w => (∏ a ∈ S, (w - a) ^ (m a)) * u w) z
+        / ((∏ a ∈ S, (z - a) ^ (m a)) * u z))
+      = (∑ a ∈ S, (m a : ℂ)) * (2 * Real.pi * Complex.I) := by
+  classical
+  rw [argumentPrinciple_annulus_filter u S m r R hr hrR hAopen hAsub hu hune
+        (fun a ha => ⟨(hS a ha).1.ne', (hS a ha).2.ne⟩),
+      Finset.filter_true_of_mem hS]
 
 end ArgumentPrinciple
 

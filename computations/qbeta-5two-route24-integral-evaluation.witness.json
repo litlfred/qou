@@ -1,0 +1,103 @@
+{
+  "probe": "qbeta_5two_route24_integral_evaluation",
+  "bean": "qou-0yqu",
+  "related_bean": "qou-clx8",
+  "dps": 120,
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the integral is I = -int_0^1 log P(z)/z dz with P(z) = 1-2z+3z^2-z^3, the RECIPROCAL of the 5_2 cubic, i.e. P(z) = prod_j (1 - y_j z). It is a real integer cubic, positive on [0,1], and I equals sum_j Li2(y_j)",
+      "I": "0.971730681468648259127774169938550500112005996",
+      "sum_Li2": "0.971730681468648259127774169938550500112005996",
+      "diff": "0.0",
+      "min_P_on_[0,1]": "0.615109375",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "derived independently here, not taken from the bean: 3*sum Li2(y_j) + sum Re log^2(-y_j) = -3 pi^2/2, which is exactly sum_j Re V_j = -3 pi^2/2 at x = 1 since V_j = 3 Li2(y_j) + log(-y_j)^2 there. So 'evaluate the integral' and 'prove the sum rule' are ONE task, not two",
+      "lhs": "-14.80440660163403792825173649981422670297",
+      "minus_3pi2_over_2": "-14.80440660163403792825173649981422670297",
+      "diff": "1.5490368e-120",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "RESIDUES ARE CIRCULAR, and the reason is sharp. IBP gives I = int_0^1 log z * P'(z)/P(z) dz, rational apart from log z. But P'/P is a logarithmic derivative with simple roots, so EVERY residue is exactly 1 -- they carry only where the roots are, no arithmetic. The transcendence is in log z, whose branch cut contributes int_0^1 log z/(z-r) dz = Li2(1/r) at each pole, and the sum returns sum_j Li2(y_j): the quantity we started from",
+      "ibp_matches_I": "0.0",
+      "residues_of_Pprime_over_P": [
+        "1.0",
+        "(1.0 - 8.55172578805e-122j)",
+        "(1.0 + 8.55172578805e-122j)"
+      ],
+      "all_residues_are_one": true,
+      "per_pole_integral": "0.488251591942598124049825702706",
+      "per_pole_Li2": "0.488251591942598124049825702706",
+      "residue_route_returns": "0.971730681468648259127774169938550500112",
+      "equals_I": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "PSLQ at 120 dps pins the closed form: 6I = 3 pi^2 - 3 L^2 + 4 th^2 - 8 pi th with L = log y_3, th = arg y_1 -- and it is MINIMAL: no sub-basis of {pi^2, L^2, th^2} supports any relation, so all four terms are needed. The pi*L and th*L coefficients come out zero, so the relation is exactly the form -pi^2/6 - L^2/2 + (2/3)(th - pi)^2 that qou-0yqu records",
+      "relation_coeffs": [
+        -6,
+        3,
+        -3,
+        4,
+        -8,
+        0,
+        0
+      ],
+      "basis_order": [
+        "I",
+        "pi^2",
+        "L^2",
+        "th^2",
+        "pi*th",
+        "pi*L",
+        "th*L"
+      ],
+      "subbasis_relations": {
+        "{I,pi^2}": null,
+        "{I,pi^2,L^2}": null,
+        "{I,pi^2,th^2}": null,
+        "{I,pi^2,L^2,th^2}": null
+      },
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "CAUTION on the disc -23 literature lead. That machinery computes zeta_F(2) via the BLOCH-WIGNER D, the imaginary-part invariant. Here sum_j D(y_j) = 0 automatically (P is real: D(y_3) = 0 and D(conj y_1) = -D(y_1)), so it says nothing. And PSLQ finds D(y_1) INDEPENDENT of the whole log/arg basis, while I lies inside it -- D enters the relation with coefficient 0. Different invariants; the zeta_F(2) route governs the one this problem does not need",
+      "D_y1": "0.942707362776927720921299603092",
+      "sum_D": "0.0",
+      "relation_with_D": [
+        6,
+        -3,
+        3,
+        -4,
+        8,
+        0
+      ],
+      "D_vs_log_arg_basis": null,
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the constructive counterpart: prod_j y_j = 1 and prod_j (1 - y_j) = 1, so y and 1-y are units. A complex cubic field has unit rank r1 + r2 - 1 = 1, so the exterior square of the units (tensor Q) is ZERO and the wedge obstruction y ^ (1-y) vanishes identically -- the structural reason a weight-2 ladder should exist. That points the attack at explicit five-term functional equations, which this branch already has as a Lean theorem (rogersL_fiveTerm), rather than at a zeta-value lookup",
+      "prod_y": "1.0",
+      "prod_one_minus_y": "1.0",
+      "unit_rank_of_complex_cubic": "r1 + r2 - 1 = 1 + 1 - 1 = 1",
+      "dim_exterior_square": "C(1,2) = 0",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "what_the_integral_is": "I = -int_0^1 log(1 - 2z + 3z^2 - z^3)/z dz = 0.97173068146864825912777416993855050011..., a real integral of an integer cubic, positive on [0,1].",
+    "can_we_evaluate": "Numerically to any precision. In closed form as a theorem: that IS the sum rule (G2), so it is the open problem itself, not a separable subproblem. The closed form is known and MINIMAL (G4): 6I = 3 pi^2 - 3 L^2 + 4 th^2 - 8 pi th.",
+    "lean_proof": "Not available and not close. What is Lean-proved is the restatement (I equals the dilog sum) and now the continuation it needs; the EVALUATION is the unproved step. A Lean proof would have to follow whatever functional-equation argument establishes it on paper, and no such argument is in hand.",
+    "residues": "Ruled out, demonstrably (G3). IBP makes the integrand rational apart from log z, but P'/P is a logarithmic derivative with simple roots so every residue is exactly 1 -- no arithmetic content. The branch cut of log z contributes Li2 at each pole and returns the original sum. It is the circle qou-0yqu warns about, traversed the other way.",
+    "where_to_attack": "G6: y and 1-y are units and the field's unit rank is 1, so the wedge obstruction vanishes identically and a weight-2 ladder should exist. Explicit five-term functional equations are the route, and rogersL_fiveTerm is already a Lean theorem on this branch. G5 cautions that the disc -23 zeta_F(2) literature governs the Bloch-Wigner invariant, which is NOT this one.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

@@ -1,0 +1,48 @@
+such that for each nef class k we have
+
+Wr = > Wp,
+
+{v|e(v) =k}
+or
+Neg= Do Nug:
+{ule()=k}
+or equivalently:
+Fa Ng,
+
+The point is that we want a formula for the w, in terms of v alone, without
+knowledge of the actual curves on X whose Abel-Jacobi image is v.
+
+We do not know whether such a formula exists. But if it does, it is
+likely to involve only the infinitesimal invariant dv, associated to a normal
+function by Griffiths [G2] and improved by Green [Gr1]. This invariant lives
+in a certain Koszul cohomology group. It vanishes if and only if v is locally
+constant, i.e. can be lifted locally to a constant section 7 of the Gauss-Manin
+local system R?Y¥,C of the family ¥: ¥ > M.
+
+The reason is that the sum, over all v in y~!(k), is too big. For example,
+when k = 0, any torsion element in J(X) (or in H?(X,Q/Z)) extends to a
+finitely valued Lagrangian multisection of T. , but there is no reason to expect
+any contribution of these torsion sections to the curve count. By continuity,
+one expects no contribution from any locally constant normal function, so
+wy, should depend only on dv.
+
+In our case, of normal functions on CY threefolds, we can describe the
+Koszul cohomology group in which év lives explicitly in terms of the Yukawa
+cubic. In general, dv is obtained by choosing a lift , differentiating it with
+respect to the Gauss-Manin connection V, and taking the part independent
+of choices. In our case, V7 lives in
+
+Hom(Tx,.M, H?/F?H?)
+
+which is canonically identified with @?(F?)*. The differential equation (7)
+satisfied by any normal function asserts that 7 lands in
+
+Hom(Tx,.M, F'H?/F?H?)
+
+which is (F?)* @ (H?!)*. By Remark (2) to Theorem 4, any normal function
+is Lagrangian. This means that V7 is symmetric, so we are down to
+
+Sym? (H™)*,
+
+or the space of quadrics on V = H?!. The ambiguity arising from a change
+of the lift 7 amounts to those quadrics which are partial derivatives, in some

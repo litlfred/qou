@@ -26,7 +26,7 @@ Three are **single balanced q-integers** [m]_q = q^{m−1}+…+q^{−(m−1)} �
 dimension.
 
 **FACT 2 (source scan) — the uploaded Murakami paper has no colored block.**
-`uploads/2205.01282v2.pdf` (Murakami, GPPV proof that WRT = radial limit of the
+`library/arxiv-2205.01282v2/2205.01282v2.pdf` (Murakami, GPPV proof that WRT = radial limit of the
 homological block Ẑ) over 18 pages has **0** occurrences of
 color/colour/decorat/wilson/refined/equivariant (32 "homological block", 9
 "false theta", 4 "knot" — all bibliographic). Its homological block is the
@@ -54,7 +54,7 @@ geometric candidate tried was the wrong *type* for this target:
     argument ⇒ **≥4 free reals for 4 targets ⇒ an unfalsifiable fit** (dof ≥
     constraints) — unless the arguments are **fixed by the E_q(2) Plancherel
     measure**, which needs the **Koelink–Swarttouw q-Hankel kernel**, a source
-    **not in `uploads/`**.
+    **not in `library/`**.
 
 So redirect (ii) is **not disciplined-actionable in-repo**: the uploaded
 Murakami paper supplies no colored block, the only falsifiable q-Bessel form is
@@ -93,7 +93,7 @@ routes tried.
 - Redirect (iii) resolves the value-map *question* definitionally but does not
   advance the Subgoal-2 geometric-derivation goal.
 - **Owner decision surfaced:** either (a) drop Koelink–Swarttouw (q-Hankel /
-  E_q(2) Plancherel) into `uploads/` to test the one remaining disciplined
+  E_q(2) Plancherel) into `library/` to test the one remaining disciplined
   q-Bessel form, or (b) accept redirect (iii) as the honest resolution of the
   value map and record the geometric Subgoal-2 route as stalled at the
   compact/geometric type mismatch, or (c) pivot the keystone effort elsewhere.
@@ -102,5 +102,5 @@ No fit; no q-Bessel formula is written in the probe (fabrication-avoidance); the
 only computed quantities are the exact compact quantum dimensions and a text
 scan. Three-calibration discipline untouched; nothing wired.
 
-# Ref: [murakami2022wrt] arXiv:2205.01282 (uploads/2205.01282v2.pdf)
+# Ref: [murakami2022wrt] arXiv:2205.01282 (library/arxiv-2205.01282v2/2205.01282v2.pdf)
 # Ref: [hikami2005brieskorn] https://doi.org/10.1063/1.1834694

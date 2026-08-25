@@ -1,5 +1,5 @@
 **Conjecture (complex-volume unification of mass-binding and decay).** [Lean classes: `ComplexVolumeMatch` / `SingleFrakVAssembly` / `StageCSigma3Lift`]
-*Binding and the $\beta$-decay $Q$-value are not two stories. They form
+*Binding and the $\beta$-decay $Q$-value form
 the real and imaginary parts of a single complex fibre observable — the
 complexified mass-endomorphism convolution-defect*
 
@@ -111,11 +111,11 @@ same $\mathfrak{V}$.
   $\mathrm{Vol}$ and $\mathrm{CS}$ are separately real.
 
 
-## The open single-$\mathfrak{V}$ assembly and the ζ₄-faithfulness constraint
+## The open single-$\mathfrak{V}$ assembly and the $\zeta_4$-faithfulness constraint
 
-The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **ζ₄-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_\beta$) channel. The full ζ₄-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
+The complex-volume model $V_0(z) = \cosh z + i\sinh z$ satisfies the **$\zeta_4$-partner relation**: $V_0(z + i\pi/2) = -\cosh z + i\sinh z$, exactly negating the bar-even (binding) channel while keeping the bar-odd ($Q_\beta$) channel. The full $\zeta_4$-orbit decomposes the model into exactly the two **faithful** eigencomponents (trivial and sign isotypes vanish).
 
-**Constraint on the open assembly:** Any candidate physical assembly $\mathfrak{V}$ must be **ζ₄-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
+**Constraint on the open assembly:** Any candidate physical assembly $\mathfrak{V}$ must be **$\zeta_4$-faithful** (supported entirely on the $\pm i$ characters of $\mathbb{Z}_4$). A candidate with a nonzero orbit sum or sign isotype is falsified (`QOU.Mass.ComplexVolumeZeta4Partner.SingleFrakVAssembly`). This structural consequence forces $\zeta_4^2 = -1$ on the assembly, providing non-degenerate conditional content for the conjecture class.
 
 
 ## The open Stage-C $\sigma_3$-lift obligation
@@ -140,11 +140,15 @@ three statements are derived unconditionally from the two classes
 (`phase_eq_im_deformed_volume`, `phiB_eq_cs_phase`,
 `exists_cs_vanishing`): the fibre-branch $\Phi_b$ phase at the
 identified argument **is** the deformed Chern–Simons part; the $\Phi_b$
-readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and the measured
-sign flip of $S$ between the anchors forces a substrate point $q^{*}$
+readout is the pure phase $e^{i\,\mathrm{CS}(u(q_0))}$; and *if* $S$ flips
+sign between the anchors, that forces a substrate point $q^{*}$
 where $\mathrm{Im}\,\mathfrak{V}(u(q^{*})) = 0$ — the deformed complex
-volume purely real, a falsifiable geometric prediction of the composed
-conjectures. This makes precise that $\Phi_b$ touches binding **only**
+volume purely real. This last is **conditional on a sign flip the data
+does not establish**: each anchor value carries a CAL-3 propagated
+uncertainty of $\pm 1.26$ (130× / 32× the value); only the swing
+$S(\text{muon}) - S(\text{proton})$ is resolved (the cross-anchor $c_3$
+difference, with $\mathrm{Vol}(4_1)$ cancelled). So it is a conditional
+structural statement, not an established prediction. This makes precise that $\Phi_b$ touches binding **only**
 through this channel: remove the `SDeformedVolumeChannel` hypothesis and
 no binding statement about $\Phi_b$ survives. On the open map $u(q_0)$
 itself, the Neumann–Zagier leading-form family laws are proved sorry-free
@@ -156,21 +160,27 @@ fixed-phase ($\mathrm{Re},\mathrm{Im} \propto d$), phase-crossing
 ($\mathrm{Re} \propto d$, $\mathrm{Im} \propto d^{2}$), and
 transverse-constant ($\mathrm{Re} \propto d$, $\mathrm{Im}$ anchor-constant),
 with $d = q - q^{*}$ — are **refuted**: each is even in $d$, hence the same
-sign on both sides of $q^{*}$, so none can produce the measured flip
-$S(\text{muon}) > 0 > S(\text{proton})$. The surviving necessary condition is
-that $u(q_0)$ must cross the diagonal $|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$
-between the anchors; $u(q_0)$ itself stays open. The measured values live in
-the probe witness, never in the Lean.
+sign on both sides of $q^{*}$, so none can produce a sign flip
+$S(\text{muon}) > 0 > S(\text{proton})$ *were one present*. The surviving
+necessary condition is that $u(q_0)$ must cross the diagonal
+$|\mathrm{Re}\,u| = |\mathrm{Im}\,u|$ between the anchors; $u(q_0)$ itself
+stays open. The measured values live in the probe witness, never in the
+Lean, and — per the O2 analysis
+(`docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`) —
+the individual anchor signs are not resolved by the data; the resolved
+target is the swing $S(\text{muon}) - S(\text{proton})$, and the onward
+identification of this channel with the resurgent monodromy datum
+$A_\omega$ is unsupported (no literature; integrality) and not carried.
 
 ## Computational corroboration
 
-The two channels really construct distinct real components of one object: the
+The two channels construct distinct real components of one object: the
 $E_0\cdot|\Delta(\mathrm{net})|$ **net-route** (the bar-even, binding-like
 $E_0\cdot\Delta(\mathrm{tr})$) provides a precision-ladder $c_2 \approx -8.0$,
 whereas the canonical $c_2 = -1$ lives in the bar-odd $\mathrm{tr}_M$
 **brane-tower** ladder
 (witness `qbeta-ck-sseries-operator-match`). Two different real $c_2$'s for
-the two parities perfectly align with Re/Im components of one complex
+the two parities align with Re/Im components of one complex
 $c_2$.
 
 ## Corollary — one story, and one proof

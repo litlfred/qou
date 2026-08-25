@@ -1,0 +1,570 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T22:27:27.528540+00:00",
+  "commitSha": "7a691ccb6f6688b6fec22191a2d62124e373af7e",
+  "assertions": [
+    {
+      "name": "scan_completed_over_committed_witness_corpus",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "Indicator (1 = the glob found witnesses to scan). Guards against a silent zero-file pass being read as 'nothing is stale' — the failure mode that makes an audit worse than none."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 13,
+  "computation": "codata-2022-downstream-staleness",
+  "scriptFile": "codata_2022_downstream_staleness_scan.py",
+  "scriptHash": "70b648ed2c87",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Scans the committed witness corpus for CODATA-2018 mass literals retired by PR #4860. Measures which witnesses EMBED a superseded value, rather than counting import sites — the latter overstates the surface by an order of magnitude (234 referencing files vs the embedding count here) and cannot be prioritised. Audit-only: a hit means the file records a number CODATA no longer recommends, not that its conclusion changes.",
+  "auditOnly": "docs/audits/2026-08-09-codata-registry-vintage-straddle.md",
+  "parameters": {
+    "witnesses_scanned": 2535
+  },
+  "data": {
+    "retired_literals": {
+      "m_e": {
+        "old": "0.51099895",
+        "new": "0.51099895069"
+      },
+      "m_p": {
+        "old": "938.27208816",
+        "new": "938.27208943"
+      },
+      "m_n": {
+        "old": "939.56542052",
+        "new": "939.56542194"
+      },
+      "m_D": {
+        "old": "1875.61294257",
+        "new": "1875.61294500"
+      },
+      "m_T": {
+        "old": "2808.92113298",
+        "new": "2808.92113668"
+      },
+      "m_3He": {
+        "old": "2808.39160743",
+        "new": "2808.39161112"
+      },
+      "m_4He": {
+        "old": "3727.37940660",
+        "new": "3727.3794118"
+      },
+      "m_mu_over_m_e": {
+        "old": "206.7682830",
+        "new": "206.7682827"
+      }
+    },
+    "files_affected_by_literal": {
+      "m_e": 45,
+      "m_p": 81,
+      "m_n": 53,
+      "m_D": 23,
+      "m_T": 16,
+      "m_3He": 16,
+      "m_4He": 3,
+      "m_mu_over_m_e": 7
+    },
+    "stale_witness_count": 118,
+    "stale_witnesses": {
+      "computations/alpha/three-term-wedderburn.witness.json": {
+        "m_p": 2,
+        "m_n": 1
+      },
+      "computations/applied-uniqueness-mass-table.witness.json": {
+        "m_p": 2,
+        "m_n": 2
+      },
+      "computations/atomic-mass-via-rho-k.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/audits/codata-2022-downstream-staleness.witness.json": {
+        "m_e": 1,
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1,
+        "m_4He": 1,
+        "m_mu_over_m_e": 1
+      },
+      "computations/audits/deuteron-delta-i-audit.witness.json": {
+        "m_D": 1
+      },
+      "computations/audits/e0-calibration-audit.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/audits/hardcoded-literal-audit.witness.json": {
+        "m_e": 42,
+        "m_p": 198,
+        "m_n": 96,
+        "m_D": 35,
+        "m_T": 24,
+        "m_3He": 29
+      },
+      "computations/audits/proton-m_e-anomaly-audit.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/audits/rho-k-proton-substrate-audit.witness.json": {
+        "m_p": 1
+      },
+      "computations/binding-K-direct.witness.json": {
+        "m_p": 3,
+        "m_n": 3,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1,
+        "m_4He": 1
+      },
+      "computations/binding-a3plus-joint-ji-combiner.witness.json": {
+        "m_e": 2
+      },
+      "computations/binding-k-enumerator.witness.json": {
+        "m_e": 1
+      },
+      "computations/binding-k-solver.witness.json": {
+        "m_e": 1
+      },
+      "computations/binding-single-pipeline-comparison.witness.json": {
+        "m_e": 1
+      },
+      "computations/borromean-volume-propagation-to-m-p.witness.json": {
+        "m_p": 1
+      },
+      "computations/build-six-term-substrate-model-b.witness.json": {
+        "m_e": 1,
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/catalan-binding.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/categorical-bypass-volmatch-demo.witness.json": {
+        "m_e": 1
+      },
+      "computations/categorical-q-decay-ba-low-isotopes.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/codata-masses.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/codata-reconciliation.witness.json": {
+        "m_p": 4
+      },
+      "computations/codata-registry-triangulation.witness.json": {
+        "m_p": 1
+      },
+      "computations/compute-audit-scan.witness.json": {
+        "m_p": 2,
+        "m_mu_over_m_e": 1
+      },
+      "computations/d-density-derivation.witness.json": {
+        "m_e": 5
+      },
+      "computations/d-from-scratch.witness.json": {
+        "m_e": 1
+      },
+      "computations/delta-lambda-2row-stratum.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/delta-lambda-empirical-tabulation.witness.json": {
+        "m_p": 3,
+        "m_n": 3,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/derivation-chain-audit.witness.json": {
+        "m_p": 4
+      },
+      "computations/deuteron-from-scratch-ledger.witness.json": {
+        "m_D": 1
+      },
+      "computations/e-0-lp-dual-h3.witness.json": {
+        "m_e": 1
+      },
+      "computations/e0-calibration-audit.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/e0-lambda-composite.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/e0-lambda-tryall.witness.json": {
+        "m_p": 8,
+        "m_n": 1
+      },
+      "computations/flavor-dressed-mass-from-substrate-split.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/gap-a1-binding-k-sdp-feasibility.witness.json": {
+        "m_e": 1
+      },
+      "computations/garside-irrep-qvalues.witness.json": {
+        "m_e": 1
+      },
+      "computations/geom-leading-alt-q-locality-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/implied-h2-coefficient-audit-50dps.witness.json": {
+        "m_p": 1
+      },
+      "computations/iterative-lp-dual-levels.witness.json": {
+        "m_e": 1,
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/joint-tower-sdp-rust.witness.json": {
+        "m_e": 1
+      },
+      "computations/k-star-variance-phase5d-5b.witness.json": {
+        "m_e": 1
+      },
+      "computations/lambda-scale-proof-step5-skein-anchor.witness.json": {
+        "m_e": 1,
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/lambda-scale-refinements-composed-predictions.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/landauer-crossing-energy-probe.witness.json": {
+        "m_p": 1
+      },
+      "computations/li2q-fbor-expansion-probe.witness.json": {
+        "m_p": 1
+      },
+      "computations/low-isotope-mass-table.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/m-p-borromean-verification-50dps.witness.json": {
+        "m_p": 2,
+        "m_n": 1
+      },
+      "computations/m-p-spectral-corrected-50dps.witness.json": {
+        "m_p": 1
+      },
+      "computations/m-p-substrate-identity-50dps.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/m-tau-knot-prediction.witness.json": {
+        "m_mu_over_m_e": 1
+      },
+      "computations/markov/markov-trace-axiomatic-multi-atom.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/mass-formula-6term-mpfr-50dps.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/mass-table-ppb.witness.json": {
+        "m_e": 1
+      },
+      "computations/meson-mass-from-hecke.witness.json": {
+        "m_mu_over_m_e": 1
+      },
+      "computations/meson-vol-density.witness.json": {
+        "m_p": 1
+      },
+      "computations/mmu-lepton-torus-tower-feasibility-probe.witness.json": {
+        "m_mu_over_m_e": 1
+      },
+      "computations/mn-delta-pn-qbeta-habiro-cascade-probe.witness.json": {
+        "m_n": 2
+      },
+      "computations/multi-layer-gap-decomposition.witness.json": {
+        "m_p": 2,
+        "m_n": 2
+      },
+      "computations/neutron-error-diagnostic.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/option-b-proton-mass-full-chain.witness.json": {
+        "m_e": 2,
+        "m_p": 2
+      },
+      "computations/per-atom-rho-deviation.witness.json": {
+        "m_e": 1
+      },
+      "computations/per-knot-density-borromean-h4-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/per-knot-density-borromean-q-locality-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 2
+      },
+      "computations/per-knot-density-per-block-wiring.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/per-knot-mass-table-demonstration.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/phase5/phase2-m-e-hecke-diagnostic.witness.json": {
+        "m_p": 1
+      },
+      "computations/probes/delta-lambda-m-pi-constraint-probe.witness.json": {
+        "m_p": 1
+      },
+      "computations/probes/flavor-split-alpha-qbeta-amplification.witness.json": {
+        "m_p": 1
+      },
+      "computations/probes/flavor-split-substrate-probe.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/probes/gap-a4-L1-light-series-probe-perknot-rerun.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/probes/gap-a4-L1-light-series-probe.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/probes/gap-a4-S-K-additive-probe-perknot-rerun.witness.json": {
+        "m_p": 2,
+        "m_n": 2,
+        "m_D": 2,
+        "m_T": 2,
+        "m_3He": 2
+      },
+      "computations/probes/gap-a4-S-K-additive-probe.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/probes/gap-a4-T2-per-knot-vol-probe-perknot-rerun.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/probes/gap-a4-T2-per-knot-vol-probe.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/probes/geom-leading-alt-q-locality-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/probes/he4-9-3-trace-dominant-correction-probe.witness.json": {
+        "m_e": 1
+      },
+      "computations/probes/he4-rho-f-bar-symmetric-audit-probe.witness.json": {
+        "m_e": 1
+      },
+      "computations/probes/option-a-vol-per-knot-light-series.witness.json": {
+        "m_p": 2,
+        "m_n": 2,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1,
+        "m_4He": 1
+      },
+      "computations/probes/path-b-defect-binding-probe.witness.json": {
+        "m_n": 2
+      },
+      "computations/probes/path-b-habiro-mass-probe.witness.json": {
+        "m_n": 1
+      },
+      "computations/probes/per-knot-density-borromean-h4-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/probes/reeb-5g-unit-anchor-scan.witness.json": {
+        "m_e": 1
+      },
+      "computations/probes/rho-k-h3a-co-casimir-perknot-rerun.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/probes/vol-density-borromean-h4-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/probes/vol-density-borromean-q-locality-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 2
+      },
+      "computations/proton-mass-codata-50dps.witness.json": {
+        "m_p": 2
+      },
+      "computations/proton-mass-full-tower-50dps.witness.json": {
+        "m_p": 1
+      },
+      "computations/proton-mu-mass-ratio-substrate-identity.witness.json": {
+        "m_p": 2
+      },
+      "computations/proton-residual-rootcause.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/q-beta-complex-q-test1-phasea-v2.witness.json": {
+        "m_e": 1
+      },
+      "computations/q-beta-predicted.witness.json": {
+        "m_e": 2
+      },
+      "computations/q-pinning-50-digit.witness.json": {
+        "m_mu_over_m_e": 1
+      },
+      "computations/q-values-derived.witness.json": {
+        "m_e": 1
+      },
+      "computations/qbeta/qbeta-1ppq-achieved.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/reading-a-residual-at-50dps.witness.json": {
+        "m_p": 2
+      },
+      "computations/rho-k-graded-atomic-mass.witness.json": {
+        "m_p": 1
+      },
+      "computations/rho-k-h3a-co-casimir.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1
+      },
+      "computations/rho-k-h3a-crystal.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 2
+      },
+      "computations/rho-k-h3a-lp-dual.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 1
+      },
+      "computations/rho-k-h3a-refinement.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 3
+      },
+      "computations/rho-k-h3a-wenzl-bridge.witness.json": {
+        "m_p": 1,
+        "m_n": 1,
+        "m_D": 3
+      },
+      "computations/rho-k-leading-order-verification.witness.json": {
+        "m_e": 1,
+        "m_p": 3,
+        "m_n": 3,
+        "m_D": 1,
+        "m_T": 1,
+        "m_3He": 1
+      },
+      "computations/rho-prefactor-structural-verifier.witness.json": {
+        "m_e": 1
+      },
+      "computations/sdp-gamma-gamma-to-qqbar.witness.json": {
+        "m_e": 1
+      },
+      "computations/sigma-all-evaluator.witness.json": {
+        "m_mu_over_m_e": 1
+      },
+      "computations/sigma-shell-from-beta-chain.witness.json": {
+        "m_p": 1
+      },
+      "computations/sweeps/light-isotope-sweep.witness.json": {
+        "m_e": 1
+      },
+      "computations/sweeps/low-isotope-binding-sweep.witness.json": {
+        "m_e": 1
+      },
+      "computations/term6-full-pole-sum.witness.json": {
+        "m_e": 1
+      },
+      "computations/term6-habiro-residue-mpfr-50dps.witness.json": {
+        "m_e": 1
+      },
+      "computations/three-term-wedderburn.witness.json": {
+        "m_p": 2,
+        "m_n": 1
+      },
+      "computations/verify-isospin-bar-anomaly.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/vhat-std-vs-full-tower-compare.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/vol-density-borromean-h4-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 1
+      },
+      "computations/vol-density-borromean-q-locality-probe.witness.json": {
+        "m_e": 1,
+        "m_p": 2
+      },
+      "computations/vol-density-per-block-wiring.witness.json": {
+        "m_p": 1,
+        "m_n": 1
+      },
+      "computations/witness-float64-padding-audit.witness.json": {
+        "m_e": 4,
+        "m_n": 1
+      }
+    }
+  }
+}

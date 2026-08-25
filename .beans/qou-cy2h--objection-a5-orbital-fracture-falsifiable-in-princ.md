@@ -1,10 +1,11 @@
 ---
 # qou-cy2h
 title: 'OBJECTION: a5 orbital-fracture ''falsifiable in principle'' unaddressed against exact free-atom f-shell degeneracy'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-08T13:03:57Z
-updated_at: 2026-08-08T13:03:57Z
+updated_at: 2026-08-15T10:37:13Z
 ---
 
 
@@ -46,3 +47,15 @@ and `cal2-higgs-knot-coupling` are the only two blocks in either chapter with
 **no `.qa.json` sidecar**, so they are invisible to every per-block checker
 (`clarity-*`, one-voice, `q-usage-*`, `da-*`). Both are `remark` kind. Worth a
 `qa-sweep` when either block is next touched.
+
+---
+
+**Verification note (2026-08-08).** For anyone picking this up: all Lean in
+both audited chapters' citation graph is green and sorry-free — 11 directly
+cited files plus the 9-module colour cone
+(`scripts/lean-direct-cone.sh` → `ok=9, err=0, blocked=0`), 20 total, zero red.
+The `a5` block has no Lean at all (it is a `remark` with no `.lean` sibling and
+no `lean.ref`), and no `.qa.json` sidecar — which is the secondary finding
+above. Its table is nonetheless correct; I re-derived all six rows by
+icosahedral character arithmetic. So the open item here is purely the
+falsifiable-vs-untestable question, not a formalisation gap.

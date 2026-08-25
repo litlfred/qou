@@ -269,7 +269,7 @@ flavour/colour chapter — but it is not a blocker on the mass chain.
 Honest accounting, because the corpus names "the Wenzl `z`-trace" and "the
 full-Hecke Ocneanu trace" throughout while citing neither author.
 
-**Read.** `uploads/S0273-0979-1985-15304-2.pdf` = Jones 1985, *A polynomial
+**Read.** `library/s0273-0979-1985-15304-2/S0273-0979-1985-15304-2.pdf` = Jones 1985, *A polynomial
 invariant for knots via von Neumann algebras*, Bull. AMS **12**(1) 103–111,
 DOI `10.1090/S0273-0979-1985-15304-2` (corpus key `jones1985`, metadata already
 verified in `references.ts`). Bearing on this question:

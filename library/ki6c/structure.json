@@ -1,0 +1,667 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ki6c",
+ "source": {
+  "file": "ki6c.pdf",
+  "sha256": "b13a73517b349654835ebed4e0567b5677215d24990ebd02bdace946dfb28343",
+  "bytes": 452198,
+  "pages": 72
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "On the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings",
+  "authors_raw": "Tomotada Ohtsuki and Yoshiyuki Yokota",
+  "abstract": "We give presentations of the asymptotic expansions of the Kashaev invariant of the knots with 6 crossings. In particular, we show the volume conjecture for these knots, which states that the leading terms of the expansions present the hyperbolic volume and the Chern-Simons invariant of the complements of the knots. As higher coeﬃcients of the expansions, we obtain a new series of invariants of these knots. A non-trivial part of the proof is to apply the saddle point method to calculate the asymptotic expansion of an integral which presents the Kashaev invariant. A key step of this part is to give a concrete homotopy of the (real 3-dimensional) domain of the integral in C3 in such a way that the boundary of the domain always stays in a certain domain in C3 given by the potential function of the hyperbolic structure. Mathematics Subject Classi cation (2010) . Primary: 57M27. Secondary: 57M25, 57M50.",
+  "docinfo": {
+   "Creator": " TeX output 2016.11.15:2223",
+   "Producer": "dvipdfmx (20110311)",
+   "CreationDate": "D:20161115222418+09'00'"
+  },
+  "title_lines": [
+   "On the asymptotic expansions of",
+   "the Kashaev invariant of the knots with 6 crossings"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Integral presentation of (q)n",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Some behaviors of the dilogarithm function",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "De",
+   "page": 7,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "The Poisson summation formula",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "The saddle point method",
+   "page": 11,
+   "source": "inferred",
+   "number": "2.5"
+  },
+  {
+   "level": 1,
+   "title": "The 61 knot",
+   "page": 12,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.1 for the 61 knot",
+   "page": 12,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "Li2(e2\u0019p\u00001t) + Li2(e2\u0019p\u00001s) + Li2(e2\u0019p\u00001u) + \u00192",
+   "page": 14,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Estimate of the range of ∆′",
+   "page": 16,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Calculation of the critical value",
+   "page": 18,
+   "source": "inferred",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Li2(x0) + Li2(y0) + Li2(z0) + \u00192",
+   "page": 19,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "page": 20,
+   "source": "inferred",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the saddle point method",
+   "page": 22,
+   "source": "inferred",
+   "number": "3.5"
+  },
+  {
+   "level": 1,
+   "title": "The 62 knot",
+   "page": 26,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.1 for the 62 knot",
+   "page": 26,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Estimate of the range of ∆′",
+   "page": 30,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Calculation of the critical value",
+   "page": 33,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "page": 35,
+   "source": "inferred",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the saddle point method",
+   "page": 37,
+   "source": "inferred",
+   "number": "4.5"
+  },
+  {
+   "level": 1,
+   "title": "Arg (1 \u0000y) = Arg",
+   "page": 41,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Arg (1 \u0000y) < 2\u0019",
+   "page": 41,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Arg (1 \u0000y) + 2\u0019",
+   "page": 41,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "We note that, when s +u \u0015 1",
+   "page": 43,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "It is a",
+   "page": 43,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The 63 knot",
+   "page": 44,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Proof of Theorem 1.1 for the 63 knot",
+   "page": 44,
+   "source": "inferred",
+   "number": "5.1"
+  },
+  {
+   "level": 1,
+   "title": "Li2(e2\u0019p\u00001t) \u0000 Li2(e\u00002\u0019p\u00001 (s\u0000t)) \u0000 2 Li2(e2\u0019p\u00001s)",
+   "page": 46,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Estimate of the range of ∆′",
+   "page": 48,
+   "source": "inferred",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Calculation of the critical value",
+   "page": 50,
+   "source": "inferred",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "Li2(x0) \u0000 Li2",
+   "page": 51,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "page": 52,
+   "source": "inferred",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "Verifying the assumption of the saddle point method",
+   "page": 53,
+   "source": "inferred",
+   "number": "5.5"
+  },
+  {
+   "level": 1,
+   "title": "Li2(e2\u0019p\u00001 (t+Xp\u00001)) \u0000 Li2(e2\u0019p\u00001 (1+t\u0000s)+2\u0019(Y \u0000X))",
+   "page": 54,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 70,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 910,
+   "n_words": 152
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 7417,
+   "n_words": 1420
+  },
+  {
+   "id": "sec-002-2-preliminaries",
+   "number": "2",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 94,
+   "n_words": 17
+  },
+  {
+   "id": "sec-003-21-integral-presentation-of-qn",
+   "number": "2.1",
+   "title": "Integral presentation of (q)n",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 2029,
+   "n_words": 494
+  },
+  {
+   "id": "sec-004-22-some-behaviors-of-the-dilogarithm-function",
+   "number": "2.2",
+   "title": "Some behaviors of the dilogarithm function",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1191,
+   "n_words": 324
+  },
+  {
+   "id": "sec-005-23-de",
+   "number": "2.3",
+   "title": "De",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1557,
+   "n_words": 336
+  },
+  {
+   "id": "sec-006-24-the-poisson-summation-formula",
+   "number": "2.4",
+   "title": "The Poisson summation formula",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 5575,
+   "n_words": 1254
+  },
+  {
+   "id": "sec-007-25-the-saddle-point-method",
+   "number": "2.5",
+   "title": "The saddle point method",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1712,
+   "n_words": 363
+  },
+  {
+   "id": "sec-008-3-the-61-knot",
+   "number": "3",
+   "title": "The 61 knot",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 140,
+   "n_words": 28
+  },
+  {
+   "id": "sec-009-31-proof-of-theorem-11-for-the-61-knot",
+   "number": "3.1",
+   "title": "Proof of Theorem 1.1 for the 61 knot",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2554,
+   "n_words": 654
+  },
+  {
+   "id": "sec-010-2-li2e2p1t-li2e2p1s-li2e2p1u-2",
+   "number": "2",
+   "title": "Li2(e2\u0019p\u00001t) + Li2(e2\u0019p\u00001s) + Li2(e2\u0019p\u00001u) + \u00192",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 3071,
+   "n_words": 697
+  },
+  {
+   "id": "sec-011-32-estimate-of-the-range-of",
+   "number": "3.2",
+   "title": "Estimate of the range of ∆′",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 4918,
+   "n_words": 1016
+  },
+  {
+   "id": "sec-012-33-calculation-of-the-critical-value",
+   "number": "3.3",
+   "title": "Calculation of the critical value",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1977,
+   "n_words": 434
+  },
+  {
+   "id": "sec-013-2-li2x0-li2y0-li2z0-2",
+   "number": "2",
+   "title": "Li2(x0) + Li2(y0) + Li2(z0) + \u00192",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 672,
+   "n_words": 199
+  },
+  {
+   "id": "sec-014-34-verifying-the-assumption-of-the-poisson-summa",
+   "number": "3.4",
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 3442,
+   "n_words": 907
+  },
+  {
+   "id": "sec-015-35-verifying-the-assumption-of-the-saddle-point",
+   "number": "3.5",
+   "title": "Verifying the assumption of the saddle point method",
+   "level": 2,
+   "page_start": 22,
+   "page_end": 26,
+   "n_chars": 7600,
+   "n_words": 1941
+  },
+  {
+   "id": "sec-016-4-the-62-knot",
+   "number": "4",
+   "title": "The 62 knot",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 140,
+   "n_words": 28
+  },
+  {
+   "id": "sec-017-41-proof-of-theorem-11-for-the-62-knot",
+   "number": "4.1",
+   "title": "Proof of Theorem 1.1 for the 62 knot",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 30,
+   "n_chars": 4820,
+   "n_words": 1211
+  },
+  {
+   "id": "sec-018-42-estimate-of-the-range-of",
+   "number": "4.2",
+   "title": "Estimate of the range of ∆′",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 33,
+   "n_chars": 6576,
+   "n_words": 1524
+  },
+  {
+   "id": "sec-019-43-calculation-of-the-critical-value",
+   "number": "4.3",
+   "title": "Calculation of the critical value",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 35,
+   "n_chars": 2527,
+   "n_words": 632
+  },
+  {
+   "id": "sec-020-44-verifying-the-assumption-of-the-poisson-summa",
+   "number": "4.4",
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 37,
+   "n_chars": 2869,
+   "n_words": 779
+  },
+  {
+   "id": "sec-021-45-verifying-the-assumption-of-the-saddle-point",
+   "number": "4.5",
+   "title": "Verifying the assumption of the saddle point method",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 41,
+   "n_chars": 6518,
+   "n_words": 1650
+  },
+  {
+   "id": "sec-022-2-arg-1-y-arg",
+   "number": "2",
+   "title": "Arg (1 \u0000y) = Arg",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 139,
+   "n_words": 40
+  },
+  {
+   "id": "sec-023-2-arg-1-y-2",
+   "number": "2",
+   "title": "Arg (1 \u0000y) < 2\u0019",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 22,
+   "n_words": 8
+  },
+  {
+   "id": "sec-024-2-arg-1-y-2",
+   "number": "2",
+   "title": "Arg (1 \u0000y) + 2\u0019",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 43,
+   "n_chars": 3889,
+   "n_words": 1048
+  },
+  {
+   "id": "sec-025-1-we-note-that-when-s-u-1",
+   "number": "1",
+   "title": "We note that, when s +u \u0015 1",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 36,
+   "n_words": 10
+  },
+  {
+   "id": "sec-026-1-it-is-a",
+   "number": "1",
+   "title": "It is a",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 1852,
+   "n_words": 443
+  },
+  {
+   "id": "sec-027-5-the-63-knot",
+   "number": "5",
+   "title": "The 63 knot",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 44,
+   "n_chars": 140,
+   "n_words": 28
+  },
+  {
+   "id": "sec-028-51-proof-of-theorem-11-for-the-63-knot",
+   "number": "5.1",
+   "title": "Proof of Theorem 1.1 for the 63 knot",
+   "level": 2,
+   "page_start": 44,
+   "page_end": 46,
+   "n_chars": 2033,
+   "n_words": 540
+  },
+  {
+   "id": "sec-029-2-li2e2p1t-li2e2p1-st-2-li2e2p1s",
+   "number": "2",
+   "title": "Li2(e2\u0019p\u00001t) \u0000 Li2(e\u00002\u0019p\u00001 (s\u0000t)) \u0000 2 Li2(e2\u0019p\u00001s)",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 48,
+   "n_chars": 2540,
+   "n_words": 602
+  },
+  {
+   "id": "sec-030-52-estimate-of-the-range-of",
+   "number": "5.2",
+   "title": "Estimate of the range of ∆′",
+   "level": 2,
+   "page_start": 48,
+   "page_end": 50,
+   "n_chars": 4485,
+   "n_words": 992
+  },
+  {
+   "id": "sec-031-53-calculation-of-the-critical-value",
+   "number": "5.3",
+   "title": "Calculation of the critical value",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 2019,
+   "n_words": 486
+  },
+  {
+   "id": "sec-032-2-li2x0-li2",
+   "number": "2",
+   "title": "Li2(x0) \u0000 Li2",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 834,
+   "n_words": 245
+  },
+  {
+   "id": "sec-033-54-verifying-the-assumption-of-the-poisson-summa",
+   "number": "5.4",
+   "title": "Verifying the assumption of the Poisson summation formula",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 53,
+   "n_chars": 2258,
+   "n_words": 584
+  },
+  {
+   "id": "sec-034-55-verifying-the-assumption-of-the-saddle-point",
+   "number": "5.5",
+   "title": "Verifying the assumption of the saddle point method",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 54,
+   "n_chars": 1907,
+   "n_words": 475
+  },
+  {
+   "id": "sec-035-2-li2e2p1-txp1-li2e2p1-1ts2y-x",
+   "number": "2",
+   "title": "Li2(e2\u0019p\u00001 (t+Xp\u00001)) \u0000 Li2(e2\u0019p\u00001 (1+t\u0000s)+2\u0019(Y \u0000X))",
+   "level": 1,
+   "page_start": 54,
+   "page_end": 70,
+   "n_chars": 27717,
+   "n_words": 6448
+  },
+  {
+   "id": "sec-036-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 72,
+   "n_chars": 5411,
+   "n_words": 811
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 37,
+  "sections": 37,
+  "chars_total": 123591
+ }
+}

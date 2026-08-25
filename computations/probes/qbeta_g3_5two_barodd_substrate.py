@@ -48,13 +48,14 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_exact_blocks", _HERE / "qbeta_g3_5two_exact_blocks.py")
 _b52 = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_b52)
 
-mp.mp.dps = 45
+set_compute_dps()
 
 S_MUON = mp.mpf("0.00968298")
 S_PROTON = mp.mpf("-0.03945936")

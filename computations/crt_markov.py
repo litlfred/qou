@@ -68,7 +68,7 @@ def markov_trace_at_q(W_crossings_per_gen, n_strands, q_val):
     q = q_val
     qi = 1 / q
     h = q - qi
-    z_mark = 1 / (q ** 0.5 + qi ** 0.5)
+    z_mark = q**3 / (q**2 + 1)
 
     tr_M = 1.0  # Will hold product of V_s over generators
     for gen in range(n_strands - 1):
@@ -211,7 +211,7 @@ def markov_trace_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
 
     qi = 1 / q
     h = q - qi
-    z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
+    z = q**3 / (q**2 + 1)
     crossings, n_strands = _build_crossings(Z, N, include_inter, m_pp, m_pn, m_nn, q, qi, h)
 
     tr_M = mpmath.mpf(1)
@@ -239,7 +239,7 @@ def tower_mass_symbolic_eval(Z, N, include_inter, m_pp, m_pn, m_nn,
     q = mpmath.mpf(str(q_val))
     qi = 1 / q
     h = q - qi
-    z = 1 / (q ** mpmath.mpf('0.5') + qi ** mpmath.mpf('0.5'))
+    z = q**3 / (q**2 + 1)
 
     # H_3 Wedderburn weights (additive Wedderburn, per mass_endomorphism)
     def qint(k):

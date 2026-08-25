@@ -4,4 +4,4 @@ Sympy-computed symbolic entries match the $q_0 \approx 1.110$ empirical values t
 
 ## Role in the framework
 
-This proposition replaces the earlier empirical Gram matrix with categorical closed-form entries. Downstream consumers can now rely on proven structural properties. The remaining $\det \neq 0$ proof reduces what remains to a symbolic-determinant computation.
+This proposition replaces the earlier empirical Gram matrix with categorical closed-form entries. Downstream consumers can now rely on proven structural properties. The remaining $\det \neq 0$ proof reduces to a symbolic-determinant computation.

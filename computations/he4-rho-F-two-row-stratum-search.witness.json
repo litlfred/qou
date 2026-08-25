@@ -1,0 +1,49 @@
+{
+  "engine": "python (mpf 50 dps; reads ⁴He H₁₂ witness)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T16:30:31.782127+00:00",
+  "commitSha": "202d57d4febf12e6fb3b26b8229e84f1a5185f7a",
+  "assertions": [
+    {
+      "name": "rho_F_not_a_constant_and_no_two_row_ratio_derives_it",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "ρ_F=B_AME/(m_e·A·8G) drifts >10% across doubly-magic light nuclei (1.889→2.130→2.284; Coulomb worsens it to 1.95→2.80), so it is not a categorical constant — '2' is a ⁴He rounding. AND the closest fit-free two-row ratio misses 1.889 by >5%. Both structural routes fail; the derivation target (a constant) is ill-posed. Scope-(a). No fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "he4-rho-F-two-row-stratum-search",
+  "scriptFile": "he4_rho_F_two_row_stratum_search.py",
+  "scriptHash": "334ad7fe539e",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "qou-2row derivation attempt for ρ_F(⁴He). Attempt 1: no fit-free two-row Frobenius ratio reproduces ρ_F=1.889 (closest 1.782, −5.7%, cherry-picks blocks). Attempt 2 (decisive): ρ_F is NOT a constant — B_AME/(m_e·A·8G) drifts 1.889 (⁴He) → 2.130 (¹⁶O) → 2.284 (⁴⁰Ca) across doubly-magic light nuclei, and Coulomb add-back makes it worse (1.95→2.39→2.80). So '2' is the rounded ⁴He value, not a universal categorical prefactor. Verdict: ρ_F is a per-nucleus A-dependent effective prefactor; the CPT alt-block route is refuted, a two-row ratio gives no match, and there is no constant to derive — a real derivation must reproduce ρ_F(A), which no corpus quantity supplies. Honest wall. Scope-(a); no fit; no wiring; q₀ proton-anchored.",
+  "parameters": {
+    "q0_anchor": "proton/experimental (q_parameter.Q_MP)"
+  },
+  "data": {
+    "target_rho_F_he4": "1.88916937086",
+    "rho_F_obs": {
+      "4He": "1.8891694",
+      "16O": "2.130136",
+      "40Ca": "2.2837207"
+    },
+    "rho_F_drift_spread_frac": "0.2088491",
+    "closest_two_row_ratio": {
+      "(y[12]+y[11,1])/y[12]": "1.7817796"
+    }
+  }
+}

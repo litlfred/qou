@@ -40,7 +40,7 @@ from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 from experimental_constants import m_n_derived_3input  # noqa: E402
 from witness_base import WitnessBuilder
 
-z = 1.0/(q0**0.5+qi**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # Wedderburn weights (q-deformed, from paper)
 q2 = q0**2

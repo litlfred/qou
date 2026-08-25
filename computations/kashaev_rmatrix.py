@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Kashaev's quantum-dilogarithm R-matrix [Kas95] (q-alg/9504020,
-`uploads/9504020v1.pdf`) — the root-of-unity r-matrix underlying the
+`library/arxiv-q-alg-9504020v1/9504020v1.pdf`) — the root-of-unity r-matrix underlying the
 descendant colored Jones / Kashaev link invariant.
 
 Item #2 of the plan: the [Kas95] state-sum cross-check; also the shared

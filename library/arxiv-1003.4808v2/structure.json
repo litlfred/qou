@@ -1,0 +1,282 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1003.4808v2",
+ "source": {
+  "file": "1003.4808v2.pdf",
+  "sha256": "72301d4bee491f865b87b8fd1945ccf4d693ae9cf3b3ffc011780b3fac9b981d",
+  "bytes": 636459,
+  "pages": 32
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1003.4808",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "26 Mar 2010"
+  },
+  "doi": null,
+  "title": "Quantum Field Theory and the Volume Conjecture",
+  "authors_raw": "Tudor Dimofte and Sergei Gukov",
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181022030800Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": ""
+  },
+  "title_lines": [
+   "Quantum Field Theory and the Volume Conjecture"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Preliminaries",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The many dimensions of the volume conjecture",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Parametrized VC",
+   "page": 6,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantum VC",
+   "page": 9,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Groups and representations",
+   "page": 11,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Links and 3-manifolds",
+   "page": 13,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "TQFT",
+   "page": 14,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Cutting and gluing",
+   "page": 15,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Quantization",
+   "page": 17,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 3,
+   "title": "Methods",
+   "page": 18,
+   "source": "outline",
+   "number": "3.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Simple examples",
+   "page": 21,
+   "source": "outline",
+   "number": "3.2.2"
+  },
+  {
+   "level": 2,
+   "title": "Chern-Simons theory",
+   "page": 23,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 3,
+   "title": "Quantization of Chern-Simons theory",
+   "page": 24,
+   "source": "outline",
+   "number": "3.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Synthesis",
+   "page": 27,
+   "source": "outline",
+   "number": "3.3.2"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-preliminaries",
+   "number": "1",
+   "title": "Preliminaries",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 6,
+   "n_chars": 8331,
+   "n_words": 1655
+  },
+  {
+   "id": "sec-001-2-the-many-dimensions-of-the-volume-conjecture",
+   "number": "2",
+   "title": "The many dimensions of the volume conjecture",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 871,
+   "n_words": 149
+  },
+  {
+   "id": "sec-002-21-parametrized-vc",
+   "number": "2.1",
+   "title": "Parametrized VC",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 4779,
+   "n_words": 833
+  },
+  {
+   "id": "sec-003-22-quantum-vc",
+   "number": "2.2",
+   "title": "Quantum VC",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2936,
+   "n_words": 527
+  },
+  {
+   "id": "sec-004-23-groups-and-representations",
+   "number": "2.3",
+   "title": "Groups and representations",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 3570,
+   "n_words": 656
+  },
+  {
+   "id": "sec-005-24-links-and-3-manifolds",
+   "number": "2.4",
+   "title": "Links and 3-manifolds",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 90,
+   "n_words": 15
+  },
+  {
+   "id": "sec-006-3-tqft",
+   "number": "3",
+   "title": "TQFT",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4095,
+   "n_words": 686
+  },
+  {
+   "id": "sec-007-31-cutting-and-gluing",
+   "number": "3.1",
+   "title": "Cutting and gluing",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2118,
+   "n_words": 383
+  },
+  {
+   "id": "sec-008-32-quantization",
+   "number": "3.2",
+   "title": "Quantization",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 5372,
+   "n_words": 932
+  },
+  {
+   "id": "sec-009-321-methods",
+   "number": "3.2.1",
+   "title": "Methods",
+   "level": 3,
+   "page_start": 18,
+   "page_end": 21,
+   "n_chars": 4661,
+   "n_words": 801
+  },
+  {
+   "id": "sec-010-322-simple-examples",
+   "number": "3.2.2",
+   "title": "Simple examples",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 5762,
+   "n_words": 1037
+  },
+  {
+   "id": "sec-011-33-chern-simons-theory",
+   "number": "3.3",
+   "title": "Chern-Simons theory",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 656,
+   "n_words": 109
+  },
+  {
+   "id": "sec-012-331-quantization-of-chern-simons-theory",
+   "number": "3.3.1",
+   "title": "Quantization of Chern-Simons theory",
+   "level": 3,
+   "page_start": 24,
+   "page_end": 27,
+   "n_chars": 8125,
+   "n_words": 1457
+  },
+  {
+   "id": "sec-013-332-synthesis",
+   "number": "3.3.2",
+   "title": "Synthesis",
+   "level": 3,
+   "page_start": 27,
+   "page_end": 32,
+   "n_chars": 12559,
+   "n_words": 2028
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 14,
+  "sections": 14,
+  "chars_total": 63925
+ }
+}

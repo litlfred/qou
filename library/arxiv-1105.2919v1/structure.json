@@ -1,0 +1,888 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1105.2919v1",
+ "source": {
+  "file": "1105.2919v1.pdf",
+  "sha256": "6d94496f2093ddd05116bd66aa47443aba198a512121113b0858c2cbda34a684",
+  "bytes": 2026416,
+  "pages": 93,
+  "text_source": "embedded"
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1105.2919",
+   "version": "1",
+   "primary_class": "nucl-th",
+   "stamp_date": "15 May 2011"
+  },
+  "doi": null,
+  "title": "Chiral effective field theory and nuclear forces",
+  "authors_raw": "R. Machleidta,\u2217, D. R. Entem b",
+  "title_lines": [
+   "Chiral effective field theory and nuclear forces"
+  ],
+  "abstract": "We review how nuclear forces emerge from low-energy QCD via chiral e\ufb00ective \ufb01eld theory. The presentation is accessible to the non-specialist. At the same time, we also provide considerable detailed information (mostly in appendices) for the bene\ufb01t of researchers who wish to start working in this \ufb01eld.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20241126232932Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.10",
+   "Title": ""
+  }
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction and historical perspective",
+   "page": 4,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Effective field theory for low-energy QCD",
+   "page": 6,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Symmetries of low-energy QCD",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 3,
+   "title": "Chiral symmetry",
+   "page": 7,
+   "source": "outline",
+   "number": "2.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Explicit symmetry breaking",
+   "page": 9,
+   "source": "outline",
+   "number": "2.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Spontaneous symmetry breaking",
+   "page": 10,
+   "source": "outline",
+   "number": "2.1.3"
+  },
+  {
+   "level": 2,
+   "title": "Chiral effective Lagrangians",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 3,
+   "title": "Relativistic formulation",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2.1"
+  },
+  {
+   "level": 3,
+   "title": "Heavy baryon formalism",
+   "page": 12,
+   "source": "outline",
+   "number": "2.2.2"
+  },
+  {
+   "level": 2,
+   "title": "Nucleon contact Lagrangians",
+   "page": 15,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Summary: Effective Lagrangians organized by interaction index",
+   "page": 15,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Nuclear forces from EFT: Overview",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Chiral perturbation theory and power counting",
+   "page": 16,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "The hierarchy of nuclear forces",
+   "page": 18,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Two-nucleon interactions",
+   "page": 19,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Pion-exchange contributions in ChPT",
+   "page": 20,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "One-pion exchange",
+   "page": 20,
+   "source": "outline",
+   "number": "4.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Two-pion exchange",
+   "page": 21,
+   "source": "outline",
+   "number": "4.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Three-pion exchange",
+   "page": 25,
+   "source": "outline",
+   "number": "4.1.3"
+  },
+  {
+   "level": 2,
+   "title": "Perturbative NN scattering in peripheral partial waves",
+   "page": 26,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "NN contact terms",
+   "page": 31,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 3,
+   "title": "Zeroth order (LO)",
+   "page": 32,
+   "source": "outline",
+   "number": "4.3.1"
+  },
+  {
+   "level": 3,
+   "title": "Second order (NLO)",
+   "page": 32,
+   "source": "outline",
+   "number": "4.3.2"
+  },
+  {
+   "level": 3,
+   "title": "Fourth order (N3LO)",
+   "page": 33,
+   "source": "outline",
+   "number": "4.3.3"
+  },
+  {
+   "level": 2,
+   "title": "Definition of NN potential",
+   "page": 34,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "Renormalization",
+   "page": 36,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 3,
+   "title": "Regularization and non-perturbative renormalization",
+   "page": 36,
+   "source": "outline",
+   "number": "4.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Renormalization beyond leading order",
+   "page": 37,
+   "source": "outline",
+   "number": "4.5.2"
+  },
+  {
+   "level": 3,
+   "title": "Back to the beginnings",
+   "page": 38,
+   "source": "outline",
+   "number": "4.5.3"
+  },
+  {
+   "level": 3,
+   "title": "Concluding the renormalization issue",
+   "page": 39,
+   "source": "outline",
+   "number": "4.5.4"
+  },
+  {
+   "level": 2,
+   "title": "Constructing quantitative chiral NN potentials",
+   "page": 41,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 3,
+   "title": "What order?",
+   "page": 41,
+   "source": "outline",
+   "number": "4.6.1"
+  },
+  {
+   "level": 3,
+   "title": "Charge-dependence",
+   "page": 42,
+   "source": "outline",
+   "number": "4.6.2"
+  },
+  {
+   "level": 3,
+   "title": "A quantitative NN potential at N3LO",
+   "page": 47,
+   "source": "outline",
+   "number": "4.6.3"
+  },
+  {
+   "level": 1,
+   "title": "Nuclear many-body forces",
+   "page": 50,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Three-nucleon forces",
+   "page": 51,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 3,
+   "title": "Next-to-leading order",
+   "page": 51,
+   "source": "outline",
+   "number": "5.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Next-to-next-to-leading order",
+   "page": 51,
+   "source": "outline",
+   "number": "5.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Next-to-next-to-next-to-leading order",
+   "page": 52,
+   "source": "outline",
+   "number": "5.1.3"
+  },
+  {
+   "level": 3,
+   "title": "The 3NF at N4LO",
+   "page": 53,
+   "source": "outline",
+   "number": "5.1.4"
+  },
+  {
+   "level": 3,
+   "title": "3NF summary",
+   "page": 54,
+   "source": "outline",
+   "number": "5.1.5"
+  },
+  {
+   "level": 2,
+   "title": "Four-nucleon forces",
+   "page": 54,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 1,
+   "title": "Introducing -isobar degrees of freedom",
+   "page": 55,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 58,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Appendix  A Notation, conventions, and Feynman rules",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  A.1 Notation and conventions",
+   "page": 59,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  A.2 Feynman rules",
+   "page": 61,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  A.2.1 Leading order",
+   "page": 62,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  A.2.2 Next-to-leading order",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  B Two-pion exchange contributions to the 2NF at NLO",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  B.1 Triangle diagrams",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  B.1.1 The triangles in covariant perturbation theory",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  B.1.2 Dimensional regularization of the triangles",
+   "page": 66,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  B.2 Football diagram",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  B.2.1 The football in covariant perturbation theory",
+   "page": 68,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  B.2.2 The proper calculation of the football in time-ordered perturbation theory",
+   "page": 70,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  B.2.3 Dimensional regularization of the football",
+   "page": 71,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  B.3 Box and crossed box diagrams",
+   "page": 72,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  B.4 Summary of 2PE contributions at NLO",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  C Two-pion exchange contributions to the 2NF at NNLO",
+   "page": 77,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  D Two-pion exchange contributions to the 2NF at N3LO",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  D.1 One-loop diagrams",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  D.1.1 ci2 contributions.",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  D.1.2 ci/MN contributions.",
+   "page": 79,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 3,
+   "title": "Appendix  D.1.3 1/MN2 corrections.",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  D.2 Two-loop contributions.",
+   "page": 80,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Appendix  D.3 Impact of individual N3LO contributions on peripheral phase shifts",
+   "page": 82,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  E Fourth order NN contact potential: Partial wave decomposition",
+   "page": 83,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Appendix  F Parameters of N3LO NN potentials",
+   "page": 85,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction-and-historical-perspective",
+   "number": "1",
+   "title": "Introduction and historical perspective",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 7,
+   "n_chars": 16120,
+   "n_words": 2495
+  },
+  {
+   "id": "sec-001-21-symmetries-of-low-energy-qcd",
+   "number": "2.1",
+   "title": "Symmetries of low-energy QCD",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 714,
+   "n_words": 106
+  },
+  {
+   "id": "sec-002-211-chiral-symmetry",
+   "number": "2.1.1",
+   "title": "Chiral symmetry",
+   "level": 3,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 3877,
+   "n_words": 757
+  },
+  {
+   "id": "sec-003-212-explicit-symmetry-breaking",
+   "number": "2.1.2",
+   "title": "Explicit symmetry breaking",
+   "level": 3,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 826,
+   "n_words": 158
+  },
+  {
+   "id": "sec-004-213-spontaneous-symmetry-breaking",
+   "number": "2.1.3",
+   "title": "Spontaneous symmetry breaking",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 2341,
+   "n_words": 392
+  },
+  {
+   "id": "sec-005-221-relativistic-formulation",
+   "number": "2.2.1",
+   "title": "Relativistic formulation",
+   "level": 3,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 6099,
+   "n_words": 1078
+  },
+  {
+   "id": "sec-006-222-heavy-baryon-formalism",
+   "number": "2.2.2",
+   "title": "Heavy baryon formalism",
+   "level": 3,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 6243,
+   "n_words": 1183
+  },
+  {
+   "id": "sec-007-23-nucleon-contact-lagrangians",
+   "number": "2.3",
+   "title": "Nucleon contact Lagrangians",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 3752,
+   "n_words": 700
+  },
+  {
+   "id": "sec-008-3-nuclear-forces-from-eft-overview",
+   "number": "3",
+   "title": "Nuclear forces from EFT: Overview",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 396,
+   "n_words": 73
+  },
+  {
+   "id": "sec-009-31-chiral-perturbation-theory-and-power-counting",
+   "number": "3.1",
+   "title": "Chiral perturbation theory and power counting",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 18,
+   "n_chars": 6206,
+   "n_words": 1088
+  },
+  {
+   "id": "sec-010-32-the-hierarchy-of-nuclear-forces",
+   "number": "3.2",
+   "title": "The hierarchy of nuclear forces",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4619,
+   "n_words": 752
+  },
+  {
+   "id": "sec-011-4-two-nucleon-interactions",
+   "number": "4",
+   "title": "Two-nucleon interactions",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 249,
+   "n_words": 50
+  },
+  {
+   "id": "sec-012-411-one-pion-exchange",
+   "number": "4.1.1",
+   "title": "One-pion exchange",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 177,
+   "n_words": 25
+  },
+  {
+   "id": "sec-013-41-pion-exchange-contributions-in-chpt",
+   "number": "4.1",
+   "title": "Pion-exchange contributions in ChPT",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 3664,
+   "n_words": 630
+  },
+  {
+   "id": "sec-014-412-two-pion-exchange",
+   "number": "4.1.2",
+   "title": "Two-pion exchange",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 25,
+   "n_chars": 10771,
+   "n_words": 1874
+  },
+  {
+   "id": "sec-015-413-three-pion-exchange",
+   "number": "4.1.3",
+   "title": "Three-pion exchange",
+   "level": 3,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 1752,
+   "n_words": 293
+  },
+  {
+   "id": "sec-016-42-perturbative-nn-scattering-in-peripheral-part",
+   "number": "4.2",
+   "title": "Perturbative NN scattering in peripheral partial waves",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 31,
+   "n_chars": 14488,
+   "n_words": 2489
+  },
+  {
+   "id": "sec-017-43-nn-contact-terms",
+   "number": "4.3",
+   "title": "NN contact terms",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 3129,
+   "n_words": 534
+  },
+  {
+   "id": "sec-018-431-zeroth-order-lo",
+   "number": "4.3.1",
+   "title": "Zeroth order (LO)",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 295,
+   "n_words": 63
+  },
+  {
+   "id": "sec-019-432-second-order-nlo",
+   "number": "4.3.2",
+   "title": "Second order (NLO)",
+   "level": 3,
+   "page_start": 32,
+   "page_end": 35,
+   "n_chars": 5489,
+   "n_words": 1005
+  },
+  {
+   "id": "sec-020-45-renormalization",
+   "number": "4.5",
+   "title": "Renormalization",
+   "level": 2,
+   "page_start": 35,
+   "page_end": 36,
+   "n_chars": 2254,
+   "n_words": 421
+  },
+  {
+   "id": "sec-021-451-regularization-and-non-perturbative-renormal",
+   "number": "4.5.1",
+   "title": "Regularization and non-perturbative renormalization",
+   "level": 3,
+   "page_start": 36,
+   "page_end": 37,
+   "n_chars": 6615,
+   "n_words": 1065
+  },
+  {
+   "id": "sec-022-452-renormalization-beyond-leading-order",
+   "number": "4.5.2",
+   "title": "Renormalization beyond leading order",
+   "level": 3,
+   "page_start": 37,
+   "page_end": 38,
+   "n_chars": 4481,
+   "n_words": 733
+  },
+  {
+   "id": "sec-023-453-back-to-the-beginnings",
+   "number": "4.5.3",
+   "title": "Back to the beginnings",
+   "level": 3,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 4399,
+   "n_words": 751
+  },
+  {
+   "id": "sec-024-454-concluding-the-renormalization-issue",
+   "number": "4.5.4",
+   "title": "Concluding the renormalization issue",
+   "level": 3,
+   "page_start": 39,
+   "page_end": 41,
+   "n_chars": 3869,
+   "n_words": 649
+  },
+  {
+   "id": "sec-025-46-constructing-quantitative-chiral-nn-potential",
+   "number": "4.6",
+   "title": "Constructing quantitative chiral NN potentials",
+   "level": 2,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-026-461-what-order",
+   "number": "4.6.1",
+   "title": "What order?",
+   "level": 3,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 4669,
+   "n_words": 881
+  },
+  {
+   "id": "sec-027-462-charge-dependence",
+   "number": "4.6.2",
+   "title": "Charge-dependence",
+   "level": 3,
+   "page_start": 42,
+   "page_end": 50,
+   "n_chars": 22527,
+   "n_words": 3892
+  },
+  {
+   "id": "sec-028-5-nuclear-many-body-forces",
+   "number": "5",
+   "title": "Nuclear many-body forces",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 926,
+   "n_words": 147
+  },
+  {
+   "id": "sec-029-51-three-nucleon-forces",
+   "number": "5.1",
+   "title": "Three-nucleon forces",
+   "level": 2,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 293,
+   "n_words": 62
+  },
+  {
+   "id": "sec-030-511-next-to-leading-order",
+   "number": "5.1.1",
+   "title": "Next-to-leading order",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 1316,
+   "n_words": 228
+  },
+  {
+   "id": "sec-031-512-next-to-next-to-leading-order",
+   "number": "5.1.2",
+   "title": "Next-to-next-to-leading order",
+   "level": 3,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 4390,
+   "n_words": 786
+  },
+  {
+   "id": "sec-032-513-next-to-next-to-next-to-leading-order",
+   "number": "5.1.3",
+   "title": "Next-to-next-to-next-to-leading order",
+   "level": 3,
+   "page_start": 52,
+   "page_end": 54,
+   "n_chars": 4687,
+   "n_words": 831
+  },
+  {
+   "id": "sec-033-515-3nf-summary",
+   "number": "5.1.5",
+   "title": "3NF summary",
+   "level": 3,
+   "page_start": 54,
+   "page_end": 54,
+   "n_chars": 643,
+   "n_words": 102
+  },
+  {
+   "id": "sec-034-52-four-nucleon-forces",
+   "number": "5.2",
+   "title": "Four-nucleon forces",
+   "level": 2,
+   "page_start": 54,
+   "page_end": 58,
+   "n_chars": 9649,
+   "n_words": 1635
+  },
+  {
+   "id": "sec-035-7-conclusions",
+   "number": "7",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 93,
+   "n_chars": 84238,
+   "n_words": 16572
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 69,
+  "sections": 36,
+  "chars_total": 246163
+ }
+}

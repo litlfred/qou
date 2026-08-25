@@ -3,12 +3,12 @@
  "probe": "gswz_52_galois_norm_probe",
  "engine": "python3-sympy-exact",
  "scriptFile": "gswz_52_galois_norm_probe.py",
- "commitSha": "a58c907488a95af5b4ed4ebe0744b4a70d9fead8",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
  "beans": [
   "qou-xx9f",
   "qou-9p9y"
  ],
- "source": "GZ SIGMA 20 (2024) 055 \u00a79 end (uploads/2111.06645v3.pdf); GSWZ (282) (uploads/2412.04241v2.pdf)",
+ "source": "GZ SIGMA 20 (2024) 055 \u00a79 end (library/arxiv-2111.06645v3/2111.06645v3.pdf); GSWZ (282) (library/arxiv-2412.04241v2/2412.04241v2.pdf)",
  "checks": {
   "norm_delta_is_minus_23": true,
   "triple_product_coeffs_rational": true,

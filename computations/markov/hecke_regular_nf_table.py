@@ -175,7 +175,7 @@ def emit_witness():
          "H4":{"dim":H4.N,"parabolic_H3_indices":par4,"top_generator":top,
                "TRM":[str(t) for t in tr4],"reduced_words":[reduced_word(p) for p in H4.S],
                "basis_perms":[list(p) for p in H4.S]}}
-    json.dump(out,open("computations/markov/hecke-regular-nf-h4.witness.json","w"),indent=1)
+    json.dump(out,open(_HERE_W / "hecke-regular-nf-h4.witness.json","w"),indent=1)
     print("witness written; markov_reduction_H4:",mk_ok,"parab:",par4)
 
 def emit_lean_module():
@@ -209,6 +209,9 @@ LEAN_TEMPLATE = r'''import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FinCases
+
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
 
 /-!
 # QOU.Machinery.H4 — the H₄(q) Markov trace on the Fin-24 GB normal-form module

@@ -174,7 +174,14 @@ def main():
     # a structural identity that must be exactly preserved by any
     # consistent computation pipeline.  A non-zero deviation here
     # would falsify the Wenzl-bridge / α_k machinery.
-    h3_w = load_witness(base / "alpha-k-jones-markov-h3.witness.json")
+    # NOTE: the producer (computations/alpha/alpha_k_jones_markov_h3.py) writes
+    # next to itself, under alpha/.  A stale 2026-05-30 copy sat at this
+    # directory's top level and was the one read here; it serialises
+    # z = 0.4993203341836944, the CONVENTION-C Markov parameter, against D's
+    # 0.6126880371464652.  The alpha_2 = z^2 check below is convention-INVARIANT
+    # (it compares a witness against its own z), so it passed either way and did
+    # not surface the frame.  Read the producer's actual output.  [qou-q0zk]
+    h3_w = load_witness(base / "alpha" / "alpha-k-jones-markov-h3.witness.json")
     if h3_w is not None:
         z_val = h3_w.get("z")
         check = (h3_w.get("alpha_k_at_H3_jones_markov", {}) or {}).get(
@@ -196,7 +203,7 @@ def main():
                     "codata_err": 1e-13,  # IEEE 754 cumulative
                     "delta_ppb": abs(check) * 1e9,
                     "codata_unc_ppb": 1.0,
-                    "predicted_source": "alpha-k-jones-markov-h3.witness.json",
+                    "predicted_source": "alpha/alpha-k-jones-markov-h3.witness.json",
                     "anchor": False,
                 })
 

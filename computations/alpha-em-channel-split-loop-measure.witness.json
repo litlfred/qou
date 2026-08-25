@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T23:15:19.935655+00:00",
-  "commitSha": "925b655653bff8ebb6c5232c19c6e75846ac0370",
+  "computedAt": "2026-08-23T08:53:43.119346+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "loop_tower_factorizes_two_channels",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 799,
+  "durationMs": 961,
   "computation": "alpha-em-channel-split-loop-measure",
   "scriptFile": "alpha_em_channel_split_loop_measure_probe.py",
-  "scriptHash": "e7be6bfc9d8e",
-  "scriptCommitSha": "b72a0d3fff2bab89dc278788f8802310b2e5f196",
+  "scriptHash": "e1d51a10d442",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -44,8 +44,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/alpha_em_channel_split_loop_measure_probe.py"
+    ],
+    "reproduce": "python3 -u computations/alpha_em_channel_split_loop_measure_probe.py"
   },
   "description": "Re-scopes the underived alpha_EM per-loop measure 1/(8pi). Verified: the derived loop tower sum (-1)^L [L+1]_q x^L factors as 1/((1+qx)(1+q^-1 x)) (two braiding channels), and with x=alpha/(8pi) the q=1 one-loop term is exactly alpha/(4pi) — the standard gauge loop unit shared equally by the 2 channels. So 1/(8pi) = (1/2)(1/(4pi)) structurally; the 'pi*b1' form is a genus-4 coincidence (2*4pi = pi*8 only because b1=8). Remaining input: the q=1 correspondence normalization (standard QFT), replacing the unsound geometric 1/(pi*dimH1) identification. Genus-independence is the discriminant. No fit; numerics unchanged; scope-(a).",
   "contentBlock": "prop:em-coupling-bring-zero-mode",

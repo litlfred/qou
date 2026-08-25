@@ -94,7 +94,10 @@ def main() -> None:
         "H_FH_Z": [r["kappa"] * mpf(r["Z"]) ** (mpf(1) / 3) for r in rows],
     }
 
-    analysis = {}
+    # `analysis` is the SERIALIZED view (strings, 8 digits — the precision the
+    # 8-digit kappa inputs actually carry); `raw` keeps the mpf values for the
+    # comparisons and orderings below, which must not go through a string.
+    analysis, raw = {}, {}
     for name, vals in hyps.items():
         mean, sd = stats(vals)
         resid = [(v - mean) / mean for v in vals]          # relative residual
@@ -112,25 +115,25 @@ def main() -> None:
         r_lag1 = pearson(rr, resid[1:])
         ev = [x for x, r in zip(resid, rows) if r["z_even"]]
         od = [x for x, r in zip(resid, rows) if not r["z_even"]]
+        raw[name] = {"magic_separation_sigma": sep, "pearson_resid_vs_A": r_A}
         analysis[name] = {
             "constant": mp.nstr(mean, 8),
-            "rel_scatter": float(sd / mean),
-            "residual_by_A": {str(r["A"]): float(x)
+            "rel_scatter": mp.nstr(sd / mean, 8),
+            "residual_by_A": {str(r["A"]): mp.nstr(x, 8)
                               for r, x in zip(rows, resid)},
-            "magic_mean_resid": float(mm), "n_magic": len(magic_r),
-            "nonmagic_mean_resid": float(om), "n_nonmagic": len(other_r),
-            "magic_separation_sigma": float(sep),
-            "pearson_resid_vs_dist_to_magic": float(r_dist),
-            "pearson_resid_vs_A": float(r_A),
-            "lag1_autocorrelation": float(r_lag1),
-            "z_even_mean_resid": float(stats(ev)[0]) if ev else None,
-            "z_odd_mean_resid": float(stats(od)[0]) if od else None,
+            "magic_mean_resid": mp.nstr(mm, 8), "n_magic": len(magic_r),
+            "nonmagic_mean_resid": mp.nstr(om, 8), "n_nonmagic": len(other_r),
+            "magic_separation_sigma": mp.nstr(sep, 8),
+            "pearson_resid_vs_dist_to_magic": mp.nstr(r_dist, 8),
+            "pearson_resid_vs_A": mp.nstr(r_A, 8),
+            "lag1_autocorrelation": mp.nstr(r_lag1, 8),
+            "z_even_mean_resid": mp.nstr(stats(ev)[0], 8) if ev else None,
+            "z_odd_mean_resid": mp.nstr(stats(od)[0], 8) if od else None,
         }
 
     # Verdict: is any shell signature significant at this sample size?
-    sig = {k: abs(v["magic_separation_sigma"]) > 2.0
-           for k, v in analysis.items()}
-    drift = {k: abs(v["pearson_resid_vs_A"]) > 0.6 for k, v in analysis.items()}
+    sig = {k: abs(v["magic_separation_sigma"]) > 2 for k, v in raw.items()}
+    drift = {k: abs(v["pearson_resid_vs_A"]) > mpf("0.6") for k, v in raw.items()}
     any_shell = any(sig.values())
     any_drift = any(drift.values())
 
@@ -173,21 +176,30 @@ def main() -> None:
            if any_drift else
            " No systematic drift with A either.")))
     # The drift test turns out to DISCRIMINATE, which the scatter did not.
-    drift_by_hyp = {k: abs(v["pearson_resid_vs_A"])
-                    for k, v in analysis.items()}
+    drift_by_hyp = {k: abs(v["pearson_resid_vs_A"]) for k, v in raw.items()}
     cleanest = min(drift_by_hyp, key=drift_by_hyp.get)
     drift_gap = max(drift_by_hyp.values()) - min(drift_by_hyp.values())
     wb.add_data("discrimination_by_residual_drift", {
-        "abs_pearson_resid_vs_A": drift_by_hyp,
+        "abs_pearson_resid_vs_A": {k: mp.nstr(v, 8)
+                                   for k, v in drift_by_hyp.items()},
         "cleanest_residuals": cleanest,
-        "gap": float(drift_gap),
+        "gap": mp.nstr(drift_gap, 8),
+        # Quoted from the LIVE values, not transcribed. The previous text hard-coded
+        # them, and they went stale the moment the mirror ladder was extended to
+        # A = 63 without re-running this probe — the witness then disagreed with
+        # its own numbers. Interpolating removes that failure mode entirely.
         "reading": (
             "This is the first test that SEPARATES the two survivors. "
-            "Raw scatter left them tied (4.25% vs 4.52%), but their "
-            "residuals behave differently: H_coth's residuals are "
-            "essentially structureless (r = -0.33 vs A, lag-1 "
-            "autocorrelation -0.16), while H_FH_Z's carry a strong "
-            "systematic trend (r = +0.71, autocorrelation +0.30). A "
+            "Raw scatter left them close ("
+            f"{mp.nstr(mpf(analysis['H_coth']['rel_scatter']) * 100, 3)}% vs "
+            f"{mp.nstr(mpf(analysis['H_FH_Z']['rel_scatter']) * 100, 3)}%), but "
+            "their residuals behave differently: H_coth's residuals are "
+            f"essentially structureless (r = {mp.nstr(raw['H_coth']['pearson_resid_vs_A'], 3)} "
+            f"vs A, lag-1 autocorrelation "
+            f"{mp.nstr(mpf(analysis['H_coth']['lag1_autocorrelation']), 3)}), while "
+            "H_FH_Z's carry a strong systematic trend (r = "
+            f"{mp.nstr(raw['H_FH_Z']['pearson_resid_vs_A'], 3)}, autocorrelation "
+            f"{mp.nstr(mpf(analysis['H_FH_Z']['lag1_autocorrelation']), 3)}). A "
             "correctly-specified model should leave structureless "
             "residuals, so the drift counts AGAINST the Vol^(-1/3) "
             "reading and IN FAVOUR of coth-saturation."),
@@ -216,16 +228,18 @@ def main() -> None:
 
     print(f"pairs analysed: {len(rows)}  "
           f"(magic: {sum(1 for r in rows if r['magic'])})")
+    def sh(s, d=4):                    # the witness holds strings; show d digits
+        return mp.nstr(mpf(s), d)
     for name, a in analysis.items():
-        print(f"\n{name}  (scatter {a['rel_scatter']*100:.2f}%)")
-        print(f"  magic mean resid    : {a['magic_mean_resid']:+.4f} "
+        print(f"\n{name}  (scatter {sh(a['rel_scatter'], 3)} rel)")
+        print(f"  magic mean resid    : {sh(a['magic_mean_resid'])} "
               f"(n={a['n_magic']})")
-        print(f"  non-magic mean resid: {a['nonmagic_mean_resid']:+.4f} "
+        print(f"  non-magic mean resid: {sh(a['nonmagic_mean_resid'])} "
               f"(n={a['n_nonmagic']})")
-        print(f"  separation          : {a['magic_separation_sigma']:+.2f} sigma")
-        print(f"  r(resid, dist_magic): {a['pearson_resid_vs_dist_to_magic']:+.3f}")
-        print(f"  r(resid, A)         : {a['pearson_resid_vs_A']:+.3f}")
-        print(f"  lag-1 autocorr      : {a['lag1_autocorrelation']:+.3f}")
+        print(f"  separation          : {sh(a['magic_separation_sigma'], 3)} sigma")
+        print(f"  r(resid, dist_magic): {sh(a['pearson_resid_vs_dist_to_magic'], 3)}")
+        print(f"  r(resid, A)         : {sh(a['pearson_resid_vs_A'], 3)}")
+        print(f"  lag-1 autocorr      : {sh(a['lag1_autocorrelation'], 3)}")
     print(f"\nshell signature: {any_shell}   drift: {any_drift}")
     print(f"witness -> {out}")
 

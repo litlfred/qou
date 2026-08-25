@@ -52,8 +52,20 @@ except ImportError as e:
 
 
 def markov_z(q: float) -> float:
-    """z = 1 / (q^{1/2} + q^{-1/2}) — knot-theoretic Markov parameter."""
-    return 1.0 / (q ** 0.5 + (1.0 / q) ** 0.5)
+    """z = q^3 / (q^2 + 1) — the production Markov parameter (convention D).
+
+    This was 1/(q^{1/2} + q^{-1/2}), convention C, and it was a LOCAL COPY of
+    a value the library also exports. When `pyhecke.gram.z` moved to D on
+    2026-08-15 the copy did not follow, and the assertion further down --
+    `abs(TR_M[1] - z) < 1e-9`, which exists precisely to catch this -- began
+    failing: TR_M[1] = 0.612688037146 against a local z of 0.499320334184.
+    The example exited 1 on main.
+
+    Kept as a local definition rather than imported, because the point of the
+    example is to show the closed form; but the assertion is what makes that
+    safe, and it earned its keep.
+    """
+    return q ** 3 / (q ** 2 + 1)
 
 
 def hecke_h(q: float) -> float:

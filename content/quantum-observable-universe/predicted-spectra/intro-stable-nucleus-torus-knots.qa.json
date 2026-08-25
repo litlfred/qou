@@ -137,7 +137,188 @@
         "severity": "minor",
         "evidence": "content/quantum-observable-universe/predicted-spectra/intro-stable-nucleus-torus-knots.md:1 — detected regime [symbolic] is disjoint from chapter 'predicted-spectra' expected [fixed-q0, na, real-gt-1, real-positive]"
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.419Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "'The categorical bound-state assignment distinguishes mesons from nucleons via braid words. However, it does not determine which configurations survive.' This is a factual scope statement about what the previous construction does and does not settle -- the skill's temporal/scope false-positive class -- and it sets up the actual content of the section.",
+        "notes": "No change."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.460Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.501Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.543Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.585Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.625Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.666Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.706Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.745Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "severity": "minor",
+        "evidence": "Two consecutive sentences carry the same maximum-strength claim: 'We then confirm the uniqueness of the genus-four torus knot mediating the strong force. A Bring-surface argument pins down this force-carrier knot uniquely.' The second adds only the method; 'uniquely' is redundant against 'the uniqueness' and reads as reinforcement rather than content. The closing 'This provides the exact assignment between stable isotopes and T(p^n, q^n)' compounds it with an unqualified 'exact'.",
+        "notes": "PROPOSED (not applied -- would touch the T(p,q) notation that also needs fixing, so it belongs in one pass): 'We then confirm that the genus-four torus knot mediating the strong force is unique, by a Bring-surface argument. This assigns stable isotopes to the family T(p^n, q^n).'"
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "b81e05aa8999",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:i00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:42:15.787Z",
+        "reviewed_sha": "3dd54992024362954468b14cf342037fd4a162b9",
+        "evidence": "Read in full: two roadmap paragraphs on the stable-nucleus torus-knot assignment. Judged all ten categories in context.",
+        "notes": "SYMBOL COLLISION reported, not fixed: the block writes torus knots as T(p, q) and the family as T(p^n, q^n), using q -- which in this corpus is the substrate parameter and is the subject of the very flow the same sentence invokes ('stabilises such knots under the substrate-parameter flow'). The sibling knot-formula-table-table1-data deliberately writes T_{m,n} for exactly this reason, and the chapter's other blocks use T(2,n) / T_{2,3} / T_{3,5}. Content check: 'the genus-four torus knot mediating the strong force' is consistent -- T(3,5) has genus (3-1)(5-1)/2 = 4, and T_{3,5} is the force carrier named in the e-hartree tables of this same chapter."
+      }
     ]
   },
-  "updated_at": "2026-06-01T16:06:38.106Z"
+  "updated_at": "2026-08-22T03:42:15.787Z"
 }

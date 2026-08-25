@@ -200,13 +200,123 @@ criterion that fired; the `da-referee-verdict` is the rollup.
 | `da-overclaim` | Conclusion stronger than the argument supports: a scope-limited negative written as a structural exclusion, "derived" where it is "fitted", "proved" where it is "conditional", absolute where it is approximate. |
 | `da-hidden-dof` | An undisclosed free parameter — a fourth calibration, an off-menu coefficient, a constant with no canonical-derivation-chain origin, a `h^k` whose source is unstated (numerology). |
 | `da-non-sequitur` | A logical gap: step B does not follow from step A; a "therefore" with a missing lemma; an induction whose step is unproved. |
+| `da-arity-conflation` | A predicate that **varies** — over states, over levels, over instances — is conflated with the single truth value of its universal closure. The four questions are below; this is a specific, recurring form of `da-non-sequitur` / `da-overclaim`, split out because it produced four separate durable-artifact errors in one session and none of the other criteria named it. |
 | `da-lean-narrative-divergence` | `L(B)` proves something weaker than, different from, or vacuously implied by the `.md` claim `S(B)` (proof-statement-integrity failure). |
 | `da-citation-misuse` | A cited reference (`cites[]` or `-- Ref:`) does not contain the invoked result, is mis-attributed, or is used for a claim it does not make. |
 | `da-definitional-ambiguity` | A key term is undefined, admits multiple incompatible readings, or names a construction not shown well-defined ("the unique X" without uniqueness; a regime/base-ring left implicit). |
 | `da-empirical-fragility` | A numerical match lives inside fit noise, relies on cherry-picked precision, hides a cross-anchor swing, or is stale against the current q_0 pin. |
 | `da-physical-implausibility` | A physics claim a domain expert rejects: wrong units, broken conservation law, or contradiction with an established measurement. |
-| `da-reproducibility` | The compute/witness backing a number is irreproducible, stale (`scriptHash`/`scriptCommitSha` drift), or its value contradicts the prose `≈`. |
+| `da-reproducibility` | The compute/witness backing a number is irreproducible, stale (`scriptHash` drift — **not** `scriptCommitSha`, which rebase-merge rewrites; bean `qou-wsha`), or its value contradicts the prose `≈`. |
 | `da-referee-verdict` | Rollup: `clean` / `survivable-objection` / `open-objection` + the strongest objection's one-line referee argument. |
+
+### "The Lean sibling does not compile" is a claim about YOUR MACHINE until proved otherwise (STRICT, 2026-08-23)
+
+**Never record a compile failure as the ground of an objection without first
+building the import cone.** A bare `lean <file>` in a fresh container fails on
+*every* block whose Lean imports anything, and that failure says nothing about
+the block.
+
+This has now happened twice, on the two axes this watcher family covers:
+
+| batch | axis | scale | outcome |
+|---|---|---|---|
+| 2026-06-22 `qa-agent-drain` | `proof-*` | ~76–86 % false-positive | drained in PR #2775 ([audit](../../../docs/audits/2026-06-25-proof-qa-reaudit-false-positives.md)) |
+| 2026-07-07 `qa-agent-drain` | `da-*` + `wall-side-*` | 887 entries / 258 blocks; **225 of 255 siblings compile clean (88 %)** | drained by [`scripts/reaudit-da-compile-claims.py`](../../../scripts/reaudit-da-compile-claims.py), bean `qou-zkia` |
+
+The second batch's own error text says what went wrong: 83 entries recorded
+`object file '/Users/litlfred/space_cats/qou/…' does not exist` — a missing
+olean naming another machine's checkout — and 83 recorded
+`unexpected token 'section'; expected 'lemma'`, which is a **statement-extractor
+parse error**, not a compile of the file at all.
+
+**Before asserting a sibling fails:**
+
+1. Set `LEAN_PATH` to the built olean dirs and build the file's dependency cone
+   — see [`local/lean-environment-setup`](lean-environment-setup.md)
+   §"VERIFY a single file with lean-direct". Restore
+   `lake-cache/qou-<toolchain-slug>` rather than rebuilding Mathlib.
+2. Read the error before believing it. `object file … does not exist` and
+   `unexpected token …; expected 'lemma'` are **your** environment; an
+   `unknownIdentifier`, a type mismatch, or a failed tactic is the file's.
+3. If you cannot build the cone, the criterion is **`n/a`**, not `fail`. "I could
+   not check" and "it is broken" are different verdicts and only one of them is
+   honest.
+
+**A false ground does not disprove the objection — it makes it unreviewable.**
+When correcting such a verdict, set `n/a` pending re-review, never `pass`.
+
+Enforced by [`scripts/qa-evidence-provenance-gate.py`](../../../scripts/qa-evidence-provenance-gate.py)
+(`--strict`), which flags any live verdict whose evidence carries a foreign
+absolute path, a missing-olean error, or an extractor parse error. It compiles
+nothing; it only reads what the verdict itself recorded.
+
+### `da-arity-conflation` — the four questions
+
+Before any "X ⟺ Y" / "X is equivalent to Y" / "a P-witness **is** a Q-witness" /
+"hence no Z can be equivalent to it" reaches a durable artifact, answer all four.
+Each corresponds to a real error that shipped:
+
+1. **One proposition, or a family?** Resolve the prose symbol to its Lean
+   declaration and read its **arity**. `kappa_vanishes : ℕ → Prop` is a
+   *level-indexed family*, not a `Prop`; there is no single truth value to be
+   faithful to. (Error: a "the corpus is inconsistent" claim built on collapsing
+   that family.)
+2. **Pointwise, or the universal closure?** `∀ P, v ↔ Pred P` and
+   `v ↔ ∀ P, Pred P` are different statements. The second is **trivially
+   inhabited** (`⟨_, Iff.rfl⟩`), so a refutation of the first says nothing about
+   it. Check which shape the corpus actually asserts. (Error: "no scalar can be
+   faithful to halting", refuting a claim nobody made.)
+3. **Shared type, or shared instance?** A theorem fixing one `sys` and one `P`
+   couples two questions *inside one instance*. It says nothing about two legs
+   instantiated as different values of that type — and the other instance may
+   not even satisfy the hypothesis. (Error: "a q-NS blow-up witness *is* a
+   q-Collatz divergence witness", where the corpus instantiates the legs
+   separately and the NS instance is proved regular.)
+4. **Set-level fact, truth-value conclusion?** "Undecidable", "not cut out by an
+   ideal", "cofinite locus" are statements about *sets* or *loci*. They are
+   logically independent of whether some scalar is equivalent to a single
+   proposition. (Error: "the halting set is not cut out by any ideal, so no
+   algebraic class can be equivalent to it".)
+
+**Why this is agent-adjudicated (`automated: false`), and why the scanner is
+print-only.** A mechanical scanner for this class was prototyped and **measured**
+against the four known instances. It flags all four files but only two at the
+exact sentence, and — decisively — it fires **identically on the corrected
+text**: the fixed q-Collatz prose, which now explicitly warns against the
+inference, matches the same signature as the version that committed it. It
+detects the *topic*, not the *defect*, because the discriminating fact (does the
+index bind across the equivalence? is the symbol level-indexed in its Lean type?
+are the two legs the same instance?) is semantic and not lexically visible.
+Measured actionable precision: **0 %** on the corpus as of 2026-08-16.
+
+An earlier revision of this paragraph said "≈ 10 % (3 of 29 corpus hits worth an
+agent look)". That figure was a *triage* estimate — three hits that looked worth
+opening — not an adjudication. The three were then adjudicated, and **all three
+are legit**:
+
+| candidate | verdict | why |
+|---|---|---|
+| `q-gl-obstruction-calc.md:13` | legit | *"At Kummer level `n`, `κ₀ mod n` vanishes iff `n ∣ χ(A)`"* — the index `n` **binds on both sides**. This is the *correct* form, and the exact contrast with the error the criterion exists to catch. |
+| `HeckeTauAssignmentGaugeGate.lean:80` | legit | the Lean is `(∀ v u, …) ↔ (∀ u, … ↔ …)`; both sides are universal closures, and the docstring's "pointwise" faithfully names the right-hand side. Fired on "pointwise" + "iff" co-occurring. |
+| `LevelMixingBridge.lean:77` | legit | `DiagonalScalar` is `∀ n, mas n = r * blk (n+k)`; the docstring names two *shapes searched* (B1.3, B1.4′), not a collapsed family. Fired on "per-level" + "single scalar". |
+
+So the first real agent pass over this scanner's output found **0 defects in 29
+candidates**. That does not retire the criterion — the four historical instances
+were real, and the *discipline* is what catches them — but it does sharpen the
+tooling verdict: the scanner is a topic-locator whose hit list, on a corpus that
+has already been swept, is currently all noise. Do not quote 10 %.
+
+So the scanner ships as a **PR-scoped candidate lister**
+([`scripts/arity-conflation-candidates.py`](../../../scripts/arity-conflation-candidates.py)),
+never as a sidecar-writing gate: 26 of 29 corpus hits would enter the
+`needs-agent` backlog for **zero** real findings, on the measurement above. Its
+honest job is to say which paragraphs to ask an agent about — and on a
+already-swept corpus the answer so far is "none of them". Record a `da-arity-conflation` entry only when
+an agent renders a verdict, exactly as the rest of the `da-*` family works.
+
+> **Retraction records re-fire permanently.** A correction note that *quotes* the
+> original error (this repo has several) matches the signature forever. Skip
+> them; do not "fix" a correction record to silence the scanner.
 
 ### Sidecar schema (pre-adopted)
 

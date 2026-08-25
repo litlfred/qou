@@ -6,4 +6,4 @@ $$
   1 \;+\; w(\beta) \cdot h \;+\; O(h^2).
 $$
 
-This rigorously locks the first-order Hecke deformation factor strictly to the topological writhe, cleanly bridging the pure algebraic sequence mapping directly to observed ribbon dynamics.
+The first-order Hecke deformation factor is therefore fixed by the topological writhe.

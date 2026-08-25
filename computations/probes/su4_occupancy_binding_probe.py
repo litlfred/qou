@@ -84,12 +84,17 @@ def run(group="low"):
             E_gate = None
         B_sym_ent = r["B_sym_ent"]
         # candidate full bindings (parameter-free)
-        B_lincomp = B_sym + E0 * (1.0 - w_lam)
+        # B_lincomp is a function of W_lambda, so it inherits the same f64
+        # overflow: NaN in, NaN out, and NaN then propagated into err, masses
+        # and mass_err_ppb. Undefined W_lambda means undefined B_lincomp.
+        _w_ok = w_lam is not None and math.isfinite(w_lam)
+        B_lincomp = (B_sym + E0 * (1.0 - w_lam)) if _w_ok else None
         B_gate = E_gate
         # surprisal of the CLUSTER relative to A free nucleon blocks (the "extra"
         # information the bound operator carries beyond the unbound constituents)
-        s_rel = math.log(1.0 / w_lam) - A * s_free
-        B_sym_gate = B_sym + E0 * s_rel if s_rel > 0 else B_sym
+        s_rel = (math.log(1.0 / w_lam) - A * s_free) if _w_ok else None
+        B_sym_gate = (B_sym + E0 * s_rel
+                      if (s_rel is not None and s_rel > 0) else B_sym)
         # B_vol — the ALL-KNOTS entanglement reading (owner correction 2026-06-29):
         # entanglement belongs to EVERY knot, not one selected partition. Sum the
         # per-knot occupancy surprisal over all A nucleons ⇒ the liquid-drop VOLUME
@@ -111,7 +116,24 @@ def run(group="low"):
         rows.append({
             "iso": name, "Z": Z, "N": N, "A": A,
             "B_AME": bame, "sigma_B_ppb": (r["sigma_AME"] / bame * 1e9) if r["sigma_AME"] else None,
-            "W_lam": w_lam, "E_gate": E_gate,
+            # W_lam is computed in float64 (mass_binding_dashboard.W_lambda_float
+            # divides a q-factorial by a product of q-hooks). For heavy nuclei
+            # both overflow to inf and the quotient is NaN — the same breakdown
+            # the E_gate branch above already marks INVALID rather than
+            # fabricating a binding from. E_gate was nulled there; W_lam was
+            # published raw, which wrote a bare NaN token and made this witness
+            # invalid JSON.
+            #
+            # null, not a marker: an f64 OVERFLOW is a value this computation
+            # could not represent, not a pole of the underlying quantity. The
+            # reason is recorded next to it.
+            "W_lam": (w_lam if (w_lam is not None and math.isfinite(w_lam))
+                      else None),
+            "W_lam_undefined_reason": (
+                None if (w_lam is not None and math.isfinite(w_lam))
+                else "float64 overflow in [n]_q! / prod(q-hooks)^2 — "
+                     "W_lambda not representable at this A"),
+            "E_gate": E_gate,
             "bindings": cand,
             "err": {k: (bame / v if v else None) for k, v in cand.items()},
             "m_unbnd": m_unbnd, "m_nuc_meas": m_nuc_meas,

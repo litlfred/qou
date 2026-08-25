@@ -1,0 +1,42 @@
+{
+  "engine": "python (mpf 50 dps)",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-21T14:57:21.920532+00:00",
+  "commitSha": "658f3990fc6a56b6199dd8e5420ff104834a371f",
+  "assertions": [
+    {
+      "name": "saturated_binding_fraction_approaches_hbar_q_sq",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "tolerance": 0,
+      "source": "The mass-difference cancellation predicts B/A/m_N ≈ ℏ_q² at saturation; AME ⁵⁶Fe gives 0.7 < (B/A/m_N)/ℏ_q² < 1.1 (measured ≈0.9). Scope-(a) forward observation under the numerology guard — the analytic dichotomy is Lean-proved, but the exact ℏ_q² saturation value is not derived (open kernel). No fit."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 3,
+  "computation": "binding-mass-rung-derivation",
+  "scriptFile": "binding_mass_rung_derivation_probe.py",
+  "scriptHash": "0df1ddc87fab",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Derivation attempt for the mass/binding ℏ_q-rung split (item 3b→1 crux). Step 1 (corpus trace): the mass multiplier's 1/ℏ_q² is the CAL-2 muon-anchor cusp factor (m_μ/m_e = Vol(4₁)/ℏ_q²), which the binding ansatz B = m_e·Vol·M does not re-apply. Step 2 (Lean, sorry-free QOU.Mass.BindingMassRung): the analytic dichotomy is proved — mass multiplier is an order-2 pole with residue lw, binding/mass = (M/lw)·ℏ_q² → 0 at the classical point. Step 3 (physical prediction test): the mass-difference cancellation predicts the saturated nuclear binding fraction B/A/m_N ≈ ℏ_q²; AME data rise toward ℏ_q² with A, reaching ≈0.9·ℏ_q² at ⁵⁶Fe (ℏ_q²≈0.982% ≈ empirical ~0.9%/nucleon). VERDICT: the rung factor is traced to CAL-2 and the dichotomy is Lean-proved, but a first-principles proof that binding saturates at EXACTLY ℏ_q² (not merely O(ℏ_q²)) is the OPEN KERNEL (beaned); the 0.9·ℏ_q² match is scope-(a) under the numerology guard. No fit; no wiring; q₀ proton-anchored.",
+  "parameters": {
+    "q0_anchor": "proton/experimental (q_parameter.Q_MP)"
+  },
+  "data": {
+    "hbar_q_sq": "0.009817186454275073810569057",
+    "saturated_fraction_over_hbar_q_sq_Fe56": "0.953643555304",
+    "lean_proof_ref": "qou:QOU.Mass.BindingMassRung (bindingOverMass_eq, massMultiplier_pole_residue, bindingOverMass_tendsto_zero)"
+  }
+}

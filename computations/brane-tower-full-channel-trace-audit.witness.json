@@ -1,18 +1,18 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-18T17:49:45.431929+00:00",
+  "computedAt": "2026-08-24T10:48:53.794980+00:00",
   "computation": "brane-tower-full-channel-trace-audit",
   "scriptFile": "brane_tower_full_channel_trace_audit.py",
-  "scriptHash": "de7ade9da349",
+  "scriptHash": "7339a52efab3",
   "contentBlock": "prop:mass-endomorphism-tower",
   "description": "Channel-level audit of the brane-tower per-generator argument. Decomposes |V\u0302_i| into std/sym/alt H_3 channels and records: (1) the genuine localized Jones\u2013Markov trace Vol_q^({i}) = std channel = 1.146 > q\u2080 for proton \u03c3\u2080 (the divergent one); (2) the bounded |V\u0302_i^full| is the REGULAR-representation trace (Wedderburn\u2013Artin w_\u03bb=d_\u03bb\u00b2/|S_3|), forced by the mass being a left-mult endomorphism trace (def:hecke-mass-element); (3) \u220fstd = Jones\u2013Markov tr_M exactly while \u220ffull is ~10% off \u2014 the descended term labeled 'base-level Markov trace' is computed in the regular-rep convention; (4) a weight-convention discrepancy (classical d_\u03bb\u00b2/|S_3| in atom-mass-full-hecke.md vs q-deformed (dim_q)\u00b2/[3]_q! in the production code). Documentation/consistency audit only \u2014 no mass table is rewired.",
   "parameters": {
-    "q_0_50dps": "1.1099785955541805752815940796095093779932822799587",
+    "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
     "weights_q_deformed": [
-      "0.165461384768100445812957442885",
-      "0.669077230463799108374085114229",
-      "0.165461384768100445812957442885"
+      "0.165461385033606877482534663549",
+      "0.669077229932786245034930672902",
+      "0.165461385033606877482534663549"
     ],
     "weights_classical": [
       "0.166666666666666666666666666667",
@@ -26,70 +26,67 @@
         "per_gen": [
           {
             "gen": 0,
-            "std": "1.14610152105758789684690084293",
-            "sym": "1.88038780844414293003322944379",
-            "alt": "-0.53761599071102341357685433872",
-            "full_qdef": "0.989007315929259773732709087343",
-            "full_classical": "0.98786298366057851730732974613"
+            "std": "1.28242047007382048125115237084",
+            "sym": "1.88038767605581210567886391749",
+            "alt": "-0.537616027272412848350174967879",
+            "full_qdef": "1.0802151925176545762883182089",
+            "full_classical": "1.07874225484644686372221640549"
           },
           {
             "gen": 1,
-            "std": "0.929504244623422902337416411497",
-            "sym": "0.735217761111912923096311899491",
-            "alt": "1.37500290122037384444809206229",
-            "full_qdef": "0.971070158652743696444677296062",
-            "full_classical": "0.971372940137663062815678267962"
+            "std": "0.89343528054519205180222769477",
+            "sym": "0.735217785670894188071759278341",
+            "alt": "1.37500285199255493440845734816",
+            "full_qdef": "0.946937232065694229927821489976",
+            "full_classical": "0.947326959974036221614854567596"
           }
         ],
-        "prod_std_jones_markov": "1.06530622859238925515327756997",
-        "prod_full_regular_rep": "0.960395491188150496512159861497",
-        "prod_full_over_std_ratio": "0.901520581980582761",
-        "t2_full_finite": "1.6183053302953434",
+        "prod_std_jones_markov": "1.14575969245730086968908159577",
+        "prod_full_regular_rep": "1.02289598443797884083137363436",
+        "prod_full_over_std_ratio": "0.892766599463961504",
+        "t2_full_finite": "1.66406022553813343",
         "t2_std_gen0": "inf"
       },
       "neutron": {
         "per_gen": [
           {
             "gen": 0,
-            "std": "1.00385233614709014447587595758",
-            "sym": "1.70330579881182858704031943839",
-            "alt": "-0.599993553372889382869766230527",
-            "full_qdef": "0.854210312825838960676944299791",
-            "full_classical": "0.853120265004549963679009506367"
+            "std": "1.13370465125292969907516869867",
+            "sym": "1.70330569649480742985084029606",
+            "alt": "-0.599993586536387493441369946768",
+            "full_qdef": "0.941091517460297015804165963998",
+            "full_classical": "0.939688452495023122118357523995"
           },
           {
             "gen": 1,
-            "std": "0.919690340825491945021165613179",
-            "sym": "0.658781786581744946396171072418",
-            "alt": "1.51795331985231651093435696288",
-            "full_qdef": "0.975509471107745943156879482472",
-            "full_classical": "0.975916078289338206235865081335"
+            "std": "0.871253096672215899795587708861",
+            "sym": "0.65878181697603031801130373454",
+            "alt": "1.51795324981834593754711018278",
+            "full_qdef": "0.943101207494826514202409837971",
+            "full_classical": "0.943624575580539975790127458794"
           }
         ],
-        "prod_std_jones_markov": "0.923233297169583642463769880919",
-        "prod_full_regular_rep": "0.833290250479516375470908821168",
-        "prod_full_over_std_ratio": "0.902578203184599695",
-        "t2_full_finite": "1.52575348802712473",
-        "t2_std_gen0": "0.825723215488849404"
+        "prod_std_jones_markov": "0.987743688115809571634020165501",
+        "prod_full_regular_rep": "0.887544546479944725313742083575",
+        "prod_full_over_std_ratio": "0.898557548034549587",
+        "t2_full_finite": "1.56508168635423275",
+        "t2_std_gen0": "inf"
       }
     }
   },
   "cross_checks": {
-    "proton_std_g0_matches_witness_1_1461": true,
+    "proton_std_g0_matches_witness_1_1461": false,
     "jones_markov_std_g0_exceeds_q0": true,
-    "regular_rep_full_g0_below_one": true,
+    "regular_rep_full_g0_below_one": false,
     "prod_full_differs_from_jones_markov_trM": true,
     "weight_conventions_differ": true,
     "t2_finite_with_full_divergent_with_std": true
   },
-  "allPassed": true,
+  "allPassed": false,
   "provenance": [
     "terms-2-3-atom-per-gen-mpfr-50dps.witness.json",
     "zhabiro-physical-z-pin.witness.json (PR #2467)",
     "content/quantum-observable-universe/mass-theory/hecke-mass-element.md",
     "content/quantum-observable-universe/observations/atom-mass-full-hecke.md"
-  ],
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "9e62944951a74873db36bf96989f5c0cc69d2271",
-  "durationMs": 0
+  ]
 }

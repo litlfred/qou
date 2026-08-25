@@ -107,6 +107,8 @@ import QOU.BraidKnot.nonabelian_stokes_surface_boundary_stokes
 import QOU.BraidKnot.BraidLinkTypes
 import QOU.BraidKnot.BraidGroupNStrand
 import QOU.BraidKnot.MarkovAxiomsPrimitive
+import QOU.BraidKnot.MarkovParameterFibreRank
+import QOU.BraidKnot.CrossingEnergyBarParity
 import QOU.BraidKnot.H3HeckeIdempotents
 import QOU.BraidKnot.HoefsmitV21CosSymmetrization
 import QOU.BraidKnot.QBetaCategoricalPrecisionLadder

@@ -42,7 +42,8 @@ namespace QOU.Experimental
 -- Ref: CODATA 2018, [manuscript] §11
 structure LocalSubstrateQ where
   /-- Hyperbolic volume of the figure-eight knot.
-      `Vol(4₁) = 3 Cl₂(π/3) ≈ 2.02988`. -/
+      `Vol(4₁) = 2 Cl₂(π/3) = 6 Λ(π/3) ≈ 2.02988` — two regular ideal
+      tetrahedra, each of volume `Cl₂(π/3) = 3 Λ(π/3)`. -/
   vol_figure_eight : ℝ
   /-- The CODATA muon-electron mass ratio. -/
   muon_electron_ratio : ℝ
@@ -93,10 +94,10 @@ theorem unique_q_solution (c : ℝ) (hc_pos : 0 < c) (hc_lt : c < 1) :
     a unique q > 1 solution exists. -/
 -- Ref: [codata2022] CODATA 2022
 theorem codata_ratio_in_range :
-    0 < (2.02988 : ℝ) / 206.7682830 ∧ (2.02988 : ℝ) / 206.7682830 < 1 := by
+    0 < (2.02988 : ℝ) / 206.7682827 ∧ (2.02988 : ℝ) / 206.7682827 < 1 := by
   constructor
   · positivity
-  · rw [div_lt_one (by positivity : (0:ℝ) < 206.7682830)]
+  · rw [div_lt_one (by positivity : (0:ℝ) < 206.7682827)]
     norm_num
 
 end QOU.Experimental

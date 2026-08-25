@@ -35,18 +35,42 @@
     definite at every interior point of the simplex.
   * NOT PROVED, and NOT claimed: that this implies `Λ(α)+Λ(β)+Λ(γ)` is strictly
     concave.  That is the standard second-derivative test, and taking it in Lean
-    needs the `C²` / `ContDiff` machinery plus `Λ'' = -cot`, which in turn needs
-    the Lobachevsky function itself (bean `qou-idvt` T1-T2, still open — the
-    corpus has `Cl_2` in `ClausenFunctionMathlibFiller` but no `Λ`).
+    needs the `C²` / `ContDiff` machinery (bean `qou-idvt` T3-plumbing, open).
   * `Λ` therefore does NOT appear below.  Nothing here is stated in terms of a
     volume; the file is about a 2x2 matrix of cotangents.  That is deliberate —
-    it is the honest scope, and it keeps the result usable the moment T1-T2 land.
+    it is the honest scope, and it keeps the result usable the moment T2 lands.
+
+  UPDATE 2026-08-08 — the `Λ` half of that note was stale and is corrected.
+  It read "T1-T2, still open — the corpus has `Cl_2` in
+  `ClausenFunctionMathlibFiller` but no `Λ`".  In fact `QOU.Archimedean.Lob`
+  (`= Cl_2 (2*t)/2`) already existed in `BlochWignerLobachevsky`, and **T1 is now
+  done**: `Λ'' = -cot` — the identity this docstring states in prose above and
+  whose absence was the stated reason `Λ` could not appear — is proved in
+  `QOU/Archimedean/LobachevskyDerivative.lean` (`deriv_deriv_Lob`, sorry-free).
+
+  What that changes here: nothing in the statements below, deliberately.  What it
+  changes for a reader: the cotangents in this file are now KNOWN to be `Λ''`,
+  so the Hessian is the Hessian of the Lobachevsky volume sum rather than of an
+  unnamed function.  The remaining gap to `qou-krvm` (iv) is T2 (the *geometric*
+  identification `Vol = Λ(α)+Λ(β)+Λ(γ)`) and T3-plumbing (the second-derivative
+  test) — NOT `Λ` or its second derivative.
+
+  Also worth knowing before using `Λ'' = -cot` here: **`Λ` is not concave on
+  `(0,π)`** — `Λ''` is positive on `(π/2,π)` (`deriv_deriv_Lob_pos`).  The
+  concavity below comes from the SUM, via `cot_add_cot_pos`; the octahedral
+  triple `(π/4,π/4,π/2)` sits exactly at that sign change.
+
+  A shape-coordinate entry point now exists too:
+  `IdealTetrahedronShapeBridge.AngleTriple.ofShape` builds an `AngleTriple` from
+  any `z` with `Im z > 0`, so every theorem below applies at a shape parameter.
 
   So this does not close `qou-krvm` (iv).  It removes the part everyone assumed
   was the hard part.
 
   Archimedean (ℝ): trigonometry and ordering throughout — §7c.
 
+  -- Ref: [rivin1994] https://doi.org/10.2307/2118572 (concavity of hyperbolic
+  --      volume on the angle-structure polytope — the qou-krvm (iv) source)
   -- Ref: [manuscript] beans qou-idvt (T3), qou-krvm (iv)
 -/
 

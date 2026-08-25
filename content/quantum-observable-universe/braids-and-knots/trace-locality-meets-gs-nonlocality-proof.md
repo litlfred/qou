@@ -8,7 +8,8 @@ $\mathrm{tr}_M \colon \bigcup_n H_n(R, q) \to R\otimes\mathbb{Q}$
 satisfying normalisation $\mathrm{tr}_M(1) = 1$, the trace property
 $\mathrm{tr}_M(ab) = \mathrm{tr}_M(ba)$, and the Markov property
 $\mathrm{tr}_M(x \sigma_n) = z\, \mathrm{tr}_M(x)$
-for all $x \in H_n(R, q)$, $n \geq 1$, $z = 1/(q^{1/2} + q^{-1/2})$;
+for all $x \in H_n(R, q)$, $n \geq 1$, $z = q^3/(q^2+1)$ (convention D — see
+[`rem:markov-axioms-primitive`](#rem:markov-axioms-primitive));
 the negative stabilisation
 $\mathrm{tr}_M(x \sigma_n^{-1}) = z_{-}\, \mathrm{tr}_M(x)$,
 $z_{-} = z - (q - q^{-1})$, follows from the Hecke quadratic
@@ -50,7 +51,7 @@ this direct sum; in each Wedderburn block, it is a single matrix
 unit times a scalar coefficient. The Markov trace on a matrix unit
 in $\mathrm{End}(S^\lambda_q)$ is (by uniqueness up to scalar) a
 fixed multiple of the standard trace, with proportionality constant
-$\tilde w_\lambda$. The product factorisation then follows from the
+$w_\lambda(q)$. The product factorisation then follows from the
 multiplicativity of the standard trace on products of matrix units
 in distinct positions of the same block: at each normal-form
 generator $e_{j_i}$, the local contribution is exactly the
@@ -59,7 +60,7 @@ data of the GS coefficient $(a_i, b_i)$.
 
 Specifically, Wenzl 1988 establishes:
 - The Wedderburn-block weight
-  $\tilde w_\lambda = \prod_{x \in \lambda}
+  $w_\lambda(q) = \prod_{x \in \lambda}
   \bigl(z\,q^{c(x)} - z_{-}\,q^{-c(x)}\bigr)/\bigl(q^{h(x)} - q^{-h(x)}\bigr)$
   is the canonical proportionality constant, where $c(x)$ and $h(x)$
   are the content and hook length of the cell $x$ and

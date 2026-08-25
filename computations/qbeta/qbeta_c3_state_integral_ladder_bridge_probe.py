@@ -52,8 +52,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from qbeta_utils import substrate_ladder_quantities  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 with mp.workdps(50):
     KAPPA1 = +(11 * mp.sqrt(3) * mp.pi / 108)
 S_TARGET = {"proton": mp.mpf("-0.03945936"), "muon": mp.mpf("0.00968298")}

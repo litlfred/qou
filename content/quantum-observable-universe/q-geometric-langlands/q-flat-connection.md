@@ -24,9 +24,8 @@ $$
 
 Concretely, in the classical limit $q \to 1$, the prefactor $(q - 1)$
 vanishes, so the intrinsic term drops out and $q$-flatness reduces to
-ordinary flatness ($\nabla_q^2 = 0$); it is precisely the
-$q$-deformation ($q \neq 1$) that forces the residual, unavoidable
-curvature.
+ordinary flatness ($\nabla_q^2 = 0$); the residual curvature is present
+only when $q \neq 1$.
 
 In general, a $q$-connection has total curvature
 

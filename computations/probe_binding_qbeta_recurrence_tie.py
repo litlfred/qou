@@ -47,6 +47,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV as _ME, M_P_MEV_VALIDATION  # noqa: E402
 from tr_m_atom_via_transfer import tr_m_atom_zn  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # Neutron chains: (Z, [N ...]); A = Z+N kept ≤ 6 (transfer path, ~0.2 s each)
 CHAINS = [(1, [1, 2, 3, 4]), (2, [1, 2, 3, 4])]
@@ -80,7 +81,7 @@ def implied_c(seq):
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate q₀
     qi = mp.mpf(1) / q0
     E0 = mp.mpf(str(_ME)) / (q0 * (q0 - 1))

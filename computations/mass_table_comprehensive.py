@@ -5,12 +5,24 @@ Computes absolute masses AND binding energies for all nuclei from
 proton (A=1) through ¹²C (A=12), using the current production
 infrastructure:
 
-  ABSOLUTE MASS:
-    m(K) = m_e · [Vol(𝓑₃)/ℏ_q²] · λ_A · (1 ± Δm/(2·M_N))
+  ABSOLUTE MASS — via the `canonical_mass` facade (muon-anchored Hecke
+  energy), NOT the λ_A Borromean form:
 
-  where λ_A = Family A (PROVED), Δm/M_N = substrate-pure flavor-split
-  (PROVED per PR #942). Proton gets −Δm/2, neutron gets +Δm/2.
+    m_p = 2·(m_μ·F_Bor − 6·m_e),  m_μ = m_e·Vol(4₁)/ℏ_q²,
+    F_Bor = |tr_M(β_Bor)|·[3]_q!/q³              → ≈938.27 / 939.56 MeV
+
   Composite nucleus mass = Z·m_p + N·m_n − B(K).
+
+  ⚠ The form `m(K) = m_e·[Vol(𝓑₃)/ℏ_q²]·λ_A · (1 ± Δm/(2·M_N))` that this
+  docstring previously advertised as "the current production tier" was
+  **removed 2026-06-24** (owner ruling): applying 1/ℏ_q² to the *Borromean*
+  volume with ρ=λ_A is a CODATA-implied FIT giving m_p ≈ 966 (+2.96%).
+  λ_A is still computed here, but **only as a diagnostic column** (see
+  `linking_weight_family_a` below) — it does not enter the mass.
+  See docs/canonical-mass-formula-guardrail.md.
+
+  Δm/M_N = substrate-pure flavor-split (PROVED per PR #942) remains the
+  p/n split applied to the facade's nucleon masses.
 
   BINDING ENERGY:
     For A ≤ 3: binding_canonical with use_closed_form=True (PR #921;
@@ -146,16 +158,26 @@ for z in range(2, 119):
 def borromean_mass_prediction(
     q: mp.mpf, Z: int, N: int, atom_name: str = None,
 ) -> dict:
-    """Predict absolute mass of nucleus (Z, N) via the Borromean
-    baryon mass formula (Family A + substrate-pure flavor-split).
+    """Predict absolute mass of nucleus (Z, N) from the canonical nucleon
+    masses (+ substrate-pure flavor-split).
 
-    m_avg = m_e · Vol(𝓑₃)/ℏ_q² · λ_A
-    m_p_pred = m_avg · (1 − Δm/(2·M_N))
-    m_n_pred = m_avg · (1 + Δm/(2·M_N))
+    m_p_pred, m_n_pred = `canonical_mass.proton_neutron_mass_mev()`
+        — the muon-anchored Hecke energy m_p = 2·(m_μ·F_Bor − 6·m_e).
     m_nucleus = Z · m_p_pred + N · m_n_pred − B(K)
 
-    If Vol(K) is available for the atom, uses the truth-tracking
-    per-knot formula: m(K) = m_e · VolDensity(K, q₀)
+    ⚠ The name `borromean_mass_prediction` and the formula
+    `m_avg = m_e · Vol(𝓑₃)/ℏ_q² · λ_A` this docstring used to state are
+    **historical**: that λ_A route is a fit (m_p ≈ 966, +2.96%) and was
+    removed 2026-06-24 by owner ruling — see the inline comment below and
+    docs/canonical-mass-formula-guardrail.md. The function name is kept to
+    avoid churning call sites; it no longer describes the mass route.
+
+    If Vol(K) is available for the atom, a per-knot
+    `m(K) = m_e · per_knot_density_per_block(Vol(K), tr_M(K), q)` column is
+    additionally reported as the TRUTH-TRACKING OVERRIDE. That per-block
+    reading is **not** a canonical absolute mass either (it gives
+    m_p ≈ 406, −57%); per the guardrail `per_knot_density_per_block` is valid
+    for binding *ratios*, where the scale cancels.
     """
     m_e = mp.mpf(str(M_E_MEV))
 
@@ -177,19 +199,20 @@ def borromean_mass_prediction(
     vol_K_used = None
     if atom_name is not None:
         try:
-            import json as _json
+            # (no `import json` here: `record_upstream` parses the file itself
+            # and returns the body, so the local alias was dead.)
             vol_witness = HERE / "per-atom-hyperbolic-volume.witness.json"
             if vol_witness.exists():
                 vol_data = record_upstream(vol_witness, _UPSTREAM_RECORDS)["data"]
                 vol_key = f"Vol_{atom_name}"
                 if vol_key in vol_data:
                     from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M
-                    from _li_2_q_util import vol_density_per_block
+                    from _li_2_q_util import per_knot_density_per_block
                     tau_p_H3 = compute_tau_M_nucleon_H3("p", q)
                     tau_n_H3 = compute_tau_M_nucleon_H3("n", q)
                     tr_M_K = closed_form_tau_M(Z, N, q, tau_p_H3, tau_n_H3)
                     vol_K_used = mp.mpf(str(vol_data[vol_key]))
-                    m_pb = m_e * vol_density_per_block(vol_K_used, tr_M_K, q)
+                    m_pb = m_e * per_knot_density_per_block(vol_K_used, tr_M_K, q)
                     m_nucleus_unbound_symbolic = float(m_pb)
                     _source += " [OVERRIDE: per-knot VolDensity]"
                 else:
@@ -338,16 +361,26 @@ def main() -> int:
         engine="mpmath",
         start_time=t_start,
     )
-    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
+    # `add_upstream_records` is deliberately NOT called here. `_UPSTREAM_RECORDS`
+    # is filled by `record_upstream(...)` inside `borromean_mass_prediction`,
+    # which the row loop below calls once per isotope — so at this point the
+    # list is still empty, and attaching it here recorded nothing. The
+    # regenerated witness had no `upstream_witness_hashes` key at all despite
+    # ~15,000 record_upstream calls. The attach now happens after the loop.
     builder.set_description(
-        "Comprehensive mass/binding table for all nuclei from proton "
-        "(A=1) through ¹²C (A=12) at the current production tier: "
-        "Family A λ_A = 5/2 + (3/4)h² (PROVED) + substrate-pure "
-        "flavor-split Δm/M_N (PROVED, PR #942). Binding energies "
-        "via binding_canonical with use_closed_form=True for A ≤ 3 "
-        "(PR #921). A = 4 uses symbolic path. A ≥ 5 flagged as "
-        "'not yet computed'. Each entry cross-references the "
-        "recursive atom knot atlas methodology tag."
+        "Comprehensive mass/binding table over every (Z, N) in the AME "
+        "enumeration — 14,972 rows spanning A = 1..418, Z = 0..118 — at the "
+        "current production tier: Family A λ_A = 5/2 + (3/4)h² (PROVED) + "
+        "substrate-pure flavor-split Δm/M_N (PROVED, PR #942). Binding "
+        "energies via binding_canonical with use_closed_form=True for A ≤ 3 "
+        "(PR #921); A = 4 uses the symbolic path. Each entry cross-references "
+        "the recursive atom knot atlas methodology tag. "
+        "PRECISION CAVEAT: the per-generator Wedderburn volumes come from "
+        "pyhecke.atom.atom_per_generator_volumes, which uses H_3 weights at "
+        "every A; for A > 1 the correct algebra is H_{3A} and the weights are "
+        "systematically wrong (docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-"
+        "audit.md). The proper H_{3A} sum is infeasible past A ≈ 12, so these "
+        "rows are a coarse diagnostic, not a precision prediction."
     )
     builder.set_content_block("prop:recursive-atom-knot-atlas")
     builder.add_parameter("q_str", Q_50_DIGIT_STR)
@@ -377,11 +410,13 @@ def main() -> int:
     print("-" * 150)
 
     rows = []
-    mt_ppb_path = _pb.witness_path("mass-table-ppb.witness.json", HERE)
-    mt_ppb_data = None
-    if mt_ppb_path.exists():
-        import json as _json
-        mt_ppb_data = builder.add_upstream(mt_ppb_path)
+    # `mass-table-ppb.witness.json` was declared an upstream here and its body
+    # bound to `mt_ppb_data`, which was then never read — two stores, zero
+    # loads. Every B_pred_MeV below comes from this file's own sym / q-CLT /
+    # binding_canonical paths, so the edge asserted a dependency the code does
+    # not have and made drift-detection answer for a witness that cannot
+    # affect a single published number. Removed rather than "wired up":
+    # inventing a use for it would be the tail wagging the dog.
 
     for i, (name, Z, N) in enumerate(ISOTOPES):
         A = Z + N
@@ -549,6 +584,25 @@ def main() -> int:
         "Phase-2 (≥3500 test words; PR #944 delivered Phase-1 for A ≤ 4). "
         "Atlas methodology tags from prop:recursive-atom-knot-atlas."
     )
+
+    builder.add_caveat(
+        "H_3 vs H_{3A}: the per-generator Wedderburn volumes feeding the q-CLT "
+        "column use H_3 weights at every A. For A > 1 the atomic braid lives in "
+        "H_{3A}(q), so the weights are systematically wrong (audit "
+        "2026-05-25-h3-vs-h3a-legacy-bug-audit.md). The correct sum over "
+        "partitions of 3A is infeasible beyond A ≈ 12 — p(36) ≈ 18,000 and "
+        "p(120) ≈ 1.8e9 — so no substitution can fix these rows; treat A > 12 "
+        "as a coarse diagnostic. Measured shape: B_pred/B_AME falls to a "
+        "plateau of ≈ 0.28 for A ≥ 12, i.e. the model gives ≈ 2.5 MeV per "
+        "nucleon where nature gives ≈ 8."
+    )
+
+    # Attach upstream provenance AFTER the row loop — `record_upstream(...)`
+    # inside `borromean_mass_prediction` only fills `_UPSTREAM_RECORDS` as rows
+    # are computed, so attaching before the loop (as this did) recorded nothing.
+    # `add_upstream_records` dedupes by (path, sha256), so the ~15,000 identical
+    # records collapse to one edge per distinct upstream.
+    builder.add_upstream_records(_UPSTREAM_RECORDS)
 
     out = builder.save()
     print(f"\n→ Witness: {out}")

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-02T15:46:57.351432+00:00",
-  "commitSha": "05563751272a73fbea4999822fea6d7819cea3cd",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-08T23:31:49.140236+00:00",
+  "commitSha": "fb8844fcc2738e086751aa0117d79a88e1e5239e",
   "assertions": [
     {
       "name": "multiterm_cost_cannot_rescue_6_2",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "multiterm-cost-deuteron-psd-gate",
   "scriptFile": "multiterm_cost_deuteron_psd_gate_probe.py",
-  "scriptHash": "9f447253b10e",
-  "scriptCommitSha": "e5d247f6d7a29bccbee79d640062635ce2fe6847",
+  "scriptHash": "9c2a27a98463",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,7 +30,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1"
   },
@@ -39,6 +39,12 @@
     "alpha_gap_6_2": "0.89051",
     "cost_6_2_best_case": "0.89051",
     "winner_cost_max": "0.25",
-    "m_e_Sigma_6_MeV": "1.636287112"
+    "m_e_Sigma_6_MeV": "1.636287112",
+    "lean_uniqueness_ref": {
+      "nucleus": "deuteron (²H)",
+      "theorem": "qou:QOU.BraidKnot.NucleusEmptySDPUniqueness.nucleus_uniqueness_closed (parameterised by crossing count n)",
+      "framework_doc": "content/quantum-observable-universe/lean/QOU/BraidKnot/NucleusEmptySDPUniqueness.lean",
+      "note": "T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
+    }
   }
 }

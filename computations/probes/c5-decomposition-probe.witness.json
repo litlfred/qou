@@ -1,48 +1,48 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:26.783679+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:20:56.283051+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "lean_quantum_two_squared_eq_skein_squared_plus_four",
-      "computed": "4.0437062182329013102182450855436030316663417518847",
-      "expected": "4.0437062182329013102182450855436030316663417518847",
+      "computed": "4.043706208532521989402019335677388309768213960713522216242847344641826",
+      "expected": "4.043706208532521989402019335677388309768213960713522216242847344641826",
       "passed": true,
       "tolerance": 1e-40,
       "source": "theorem quantum_two_squared_eq_skein_squared_plus_four"
     },
     {
       "name": "lean_hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared",
-      "computed": "0.75270211384520417247078416697498424697860959562914",
-      "expected": "0.75270211384520417247078416697498424697860959562914",
+      "computed": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
+      "expected": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
       "passed": true,
       "tolerance": 1e-40,
       "source": "theorem hoefsmit_b_squared_eq_one_minus_inv_quantum_two_squared"
     },
     {
       "name": "lean_c5_decomposition_via_quantum_two",
-      "computed": "-1.2527021138452041724707841669749842469786095956291",
-      "expected": "-1.2527021138452041724707841669749842469786095956291",
+      "computed": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
+      "expected": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
       "passed": true,
       "tolerance": 1e-40,
       "source": "theorem c5_decomposition_via_quantum_two"
     },
     {
       "name": "lean_c5RationalMap_at_skein_eq_c5Decomposition",
-      "computed": "-1.2527021138452041724707841669749842469786095956291",
-      "expected": "-1.2527021138452041724707841669749842469786095956291",
+      "computed": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
+      "expected": "-1.252702113251965401593779351620236137830175598874905666382316006259594",
       "passed": true,
       "tolerance": 1e-40,
       "source": "theorem c5RationalMap_at_skein_eq_c5Decomposition"
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "c5-decomposition-probe",
   "scriptFile": "c5_decomposition_probe.py",
-  "scriptHash": "0f134783165a",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "380c9b6caeef",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -52,23 +52,33 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/c5_decomposition_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/c5_decomposition_probe.py"
   },
   "description": "Numerical cross-check of three c_5 closed-form identities from `c5-involution-leibniz-decomposition.lean`: (1) [2]_q² = h²+4, (2) b² = 1 - 1/[2]_q², (3) c_5 = -3/2 + 1/[2]_q² = -3/2 + 1/(h²+4). Closes the 'proven-but-unwired' gap identified post-PR #1252 audit for the highest-centrality (silver-ratio Q_β chain) Lean theorem lacking a production-compute witness.",
   "contentBlock": "prop:c5-involution-leibniz-decomposition",
   "auditOnly": "docs/audits/2026-05-25-option-e-crystal-weight-delta-lambda.md",
   "parameters": {
     "precision_dps": 50,
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
-    "hecke_h": "0.20906032199559367898186263646596735026162330164756",
-    "quantum_two": "2.0108968691190757608176638045004827030507935159128",
-    "b_sq_direct": "0.75270211384520417247078416697498424697860959562914",
-    "c5_value_at_q_0": "-1.2527021138452041724707841669749842469786095956291"
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
+    "hecke_h": "0.2090602987956393154308462131296749438597574952630630782552146963416779",
+    "quantum_two": "2.010896866707122299752491978091862815889240748484136921744785303658322",
+    "b_sq_direct": "0.7527021132519654015937793516202361378301755988749056663823160062595938",
+    "c5_value_at_q_0": "-1.252702113251965401593779351620236137830175598874905666382316006259594"
   },
   "caveats": [
     "The Lean identities are PROVED (sorry-free, field_simp; ring over generic [Field R]); this witness only verifies the canonical substrate-q_0 specialisation. The outer empirical claim 'c_5 matches Q_β data to 2.4%' is a separate downstream check, not asserted here."
   ],
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

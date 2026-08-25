@@ -1,0 +1,36 @@
+{
+  "schema": "witness/v1-informal",
+  "description": "charm_mass_tower_probe: continuant-ratio tower_law vs observed charm/light hierarchy (derive-then-check).",
+  "producer": "computations/charm_mass_tower_probe.py",
+  "consumes": [
+    "conj:complex-mass-constituent-functional"
+  ],
+  "precision": {
+    "engine": "mpmath",
+    "dps": 70,
+    "q0_anchor": "experimental (proton), q_parameter.Q_MP"
+  },
+  "inputs": {
+    "q0": "1.10997858275138080759166909561076887987449912187357763605672",
+    "X_substrate_bracket_2q": "2.01089686670712229975249197809186281588924074848413270958003"
+  },
+  "results": {
+    "contRatio_5_at_substrate": "5.84543930743739410375411502137036123490342756178526108972492",
+    "contRatio_7_at_substrate": "5.87263266770768464036633337492285427221597733407692303379600",
+    "targets": {
+      "current_mc_over_mu": "577.272727272727272727272727272727272727272727272727272727273",
+      "current_mc_over_md": "270.212765957446808510638297872340425531914893617021276595745",
+      "constituent_mc_over_mlight": "4.46428571428571428571428571428571428571428571428571428571429"
+    },
+    "X_needed_for_target": {
+      "current_mc_over_mu": "23.9848798737241914256035532463522807343867900049168423980901",
+      "current_mc_over_md": "16.3773160328638264857788295577821190541957592982559444350153",
+      "constituent_mc_over_mlight": "1.65294360912339667590125261752069187867588285941233645487039"
+    }
+  },
+  "verdict": "scope-(a) REFUTED as sole hierarchy mechanism: contRatio(5) ~ 5.845 at substrate X=[2]_q~2.011 gives a nearly geometric per-generation ladder that matches neither scheme (current mc/mu~577 needs X~24, off ~100x; constituent mc/mlight~4.46 is overshot by ~30%). The observed hierarchy is not a constant continuant ratio. Missing steepness must come from the complex-volume / Chern-Simons (Im) part or a non-continuant contRatio - both OPEN; no charm mass is predicted.",
+  "scope": "(a) scope-limited negative: continuant-ratio contRatio alone; does NOT exclude the complex-mass functional (Im/CS part untested here).",
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561076887987449912187357763605672",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): inputs.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

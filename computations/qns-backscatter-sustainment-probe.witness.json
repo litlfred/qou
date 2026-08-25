@@ -1,0 +1,66 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T00:28:19.294663+00:00",
+  "commitSha": "82c809a6151e03db1c9314d72a3bbef69eb36b08",
+  "assertions": [
+    {
+      "name": "Backscatter does NOT re-open self-sustainment: S_q stays flat/decreasing across the N-sweep (no growth with truncation)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "GOY delta=0.5, S_q across N=(8, 12, 16, 20, 24); scope (a): this model/load/eps, alone"
+    },
+    {
+      "name": "q/classical survival ratio stays near 1 with backscatter present (N-sweep and delta-sweep)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "R(N) and R(delta) within [0.2, 5]; delta in (0.1, 0.5, 0.9)"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 18941,
+  "computation": "qns-backscatter-sustainment-probe",
+  "scriptFile": "qns_backscatter_sustainment_probe.py",
+  "scriptHash": "7dd21dd9fb37",
+  "scriptCommitSha": "42d54441f9c206e5d85e368557b6a49e372e5df7",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "SF4 (bean qou-y7ey, epic qou-a3n3): tests the SF-arc's named fidelity caveat — DN has no backscatter — by rerunning the SF3 protocol in a GOY-class shell model (complex amplitudes, all-conjugated three-shell interactions, (a,b,c)=(1,-delta,delta-1), a+b+c=0, with exact energy conservation on the q-integer ladder, verified analytically: all triad (m,m+1,m+2) terms share the factor k_m, so conservation is ladder-independent). Unforced Kolmogorov load, viscous-scaled horizon, classical same-nu controls; N-sweep at delta=1/2 plus delta-sweep at N=16. If survival grows with N or R=S_q/S_cl >> 1, backward transfer re-opens the unforced sustained channel and the DN-based closure was a model artifact; if flat with R ~ 1, the regularity picture survives its own caveat and sustained forcing remains the only in-model blow-up channel. Scope (a); exploratory tier; float64 RK2.",
+  "data": {
+    "N8_S_q": 2.1619402670697752e-06,
+    "N8_R": 0.4799283631180666,
+    "N12_S_q": 4.886954153104949e-07,
+    "N12_R": 0.3875561768380006,
+    "N16_S_q": 2.4581306848839365e-07,
+    "N16_R": 2.397401363099588,
+    "N20_S_q": 2.2891016874208417e-07,
+    "N20_R": 0.7597619272591516,
+    "N24_S_q": 5.627474088396386e-08,
+    "N24_R": 0.8453753583109362,
+    "delta0.1_S_q": 1.6833107391705645e-05,
+    "delta0.1_R": 1.0342689315952607,
+    "delta0.5_S_q": 2.4581306848839365e-07,
+    "delta0.5_R": 2.397401363099588,
+    "delta0.9_S_q": 1.3635810195895439e-06,
+    "delta0.9_R": 2.6624632685302,
+    "S_spread": 38.41759612056864,
+    "precision_tier": "float64-integrator",
+    "tier": "exploratory",
+    "eps": 0.01,
+    "delta_std": 0.5
+  }
+}

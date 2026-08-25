@@ -1,0 +1,174 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1203.6551v1",
+ "source": {
+  "file": "1203.6551v1.pdf",
+  "sha256": "a8e84f8ed63dbccaa746be61f166bedf3f49ac9e57743dbea492c5cfdd606b9f",
+  "bytes": 729727,
+  "pages": 25
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1203.6551",
+   "version": "1",
+   "primary_class": "math.GT",
+   "stamp_date": "29 Mar 2012"
+  },
+  "doi": null,
+  "title": "On the number of hyperbolic 3-manifolds of a given volume",
+  "authors_raw": "Craig Hodgson and Hidetoshi Masai",
+  "abstract": "The work of Jørgensen and Thurston shows that there is a ﬁnite number N (v) of orientable hyperbolic 3-manifolds with any given volum e v. W e show that there is an inﬁnite sequence of closed orientabl e hyperbolic 3- manifolds, obtained by Dehn ﬁlling on the ﬁgure eight knot co mplement, that are uniquely determined by their volumes. This gives a seque nce of distinct volumes xi converging to the volume of the ﬁgure eight knot complement w ith N (xi) = 1 for each i. W e also give an inﬁnite sequence of 1-cusped hyper- bolic 3-manifolds, obtained by Dehn ﬁlling one cusp of the ( − 2, 3, 8)-pretzel link complement, that are uniquely determined by their volu mes amongst ori- entable cusped hyperbolic 3-manifolds. Finally, we descri be examples showing that the number of hyperbolic link complements with a given v olume v can grow at least exponentially fast with v.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20180802184722-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "On the number of hyperbolic 3-manifolds of a given volume"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Hyperbolic Dehn fillings determined by their volumes",
+   "page": 5,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Dehn filling on the figure eight knot complement and its sister",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Dehn filling on the Whitehead link complement and its sister",
+   "page": 10,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
+   "page": 13,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Hyperbolic graphs with parabolic meridians",
+   "page": 15,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Associated circle packings and cusp moduli",
+   "page": 18,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Construction of different manifolds sharing the same volume",
+   "page": 21,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Some Open Questions",
+   "page": 23,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 24,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 13,
+   "n_chars": 30539,
+   "n_words": 6058
+  },
+  {
+   "id": "sec-001-5-higher-order-terms-in-the-neumann-zagier-asymp",
+   "number": "5",
+   "title": "Higher order terms in the Neumann-Zagier asymptotic formula",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 5174,
+   "n_words": 1183
+  },
+  {
+   "id": "sec-002-6-hyperbolic-graphs-with-parabolic-meridians",
+   "number": "6",
+   "title": "Hyperbolic graphs with parabolic meridians",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 18,
+   "n_chars": 5229,
+   "n_words": 960
+  },
+  {
+   "id": "sec-003-7-associated-circle-packings-and-cusp-moduli",
+   "number": "7",
+   "title": "Associated circle packings and cusp moduli",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 23,
+   "n_chars": 9964,
+   "n_words": 1936
+  },
+  {
+   "id": "sec-004-9-some-open-questions",
+   "number": "9",
+   "title": "Some Open Questions",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2584,
+   "n_words": 470
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 6888,
+   "n_words": 1085
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 6,
+  "chars_total": 60378
+ }
+}

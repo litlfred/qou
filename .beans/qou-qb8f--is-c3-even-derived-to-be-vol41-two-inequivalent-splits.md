@@ -1,11 +1,11 @@
 ---
 # qou-qb8f
-title: 'Is c_3^even DERIVED to be -Vol(4_1)? Two inequivalent splits live in the corpus'
-status: todo
+title: Is c_3^even DERIVED to be -Vol(4_1)? Two inequivalent splits live in the corpus
+status: in-progress
 type: task
 priority: high
 created_at: 2026-08-08T10:45:00Z
-updated_at: 2026-08-08T10:45:00Z
+updated_at: 2026-08-19T21:14:17Z
 ---
 
 Raised (not adjudicated) from PR #4724 after retracting an S_leak-based filter.
@@ -229,3 +229,61 @@ crosses it anyway and KC21 inherits the vocabulary.
 Status: this bean's question is ANSWERED as far as I can take it. (H1) exact =
 open; (H1) motivated = yes. Remaining actionable item is the collision, which is
 a documentation/registry matter for the c_3 owners.
+
+
+---
+
+# *** (c) ANSWERED (2026-08-14, PR #5022) — the registry pointer is placed ***
+
+This bean left item (c) ("should the registry's c_3 row carry a pointer either
+way?") to the registry maintainers. Done. `ck-dk-canonical-registry.md` now
+carries **§9c**, stating the consolidated (H1) verdict:
+
+  (H1) c_3^even = -Vol(4_1) is NOT derived. Geometrically MOTIVATED (Phi_b
+  saddle) but muon-only. The bar-split is not determinable from anchor data at
+  all. Neither named split is a derivation -- S_leak := c_3 + Vol(4_1) and
+  S := -c_3/kappa_(2,1) are both DEFINITIONS. c_3's bar-parity is UNDETERMINED
+  by the present corpus.
+
+Also re-scoped §3's phrase "the -Vol(4_1) piece is the solved bar-even part" ->
+**motivated, not solved** (it contradicted this bean's own three-round verdict
+while sitting in the same bullet that already records the anchor-blind objection
+for the keystone form).
+
+## NEW FINDING that sharpens this bean's second correction
+
+The second correction withdrew "(H1) is UNDERIVED" on the strength of the Phi_b
+volume deficit supplying the |S| scale "fit-free and anchor-blind", noting
+"~2.9% SCALE agreement". Measured (`kc21_kc22_glyph_and_anchor_robustness_check.py`):
+
+  - the deficit IS anchor-blind (spread 2.2e-7); |S_leak| SWINGS 4.075x.
+    An anchor-blind quantity cannot supply an anchor-dependent scale, so the
+    match holds at MUON (2.896%) and misses PROTON (76.17%) -- 26.3x apart.
+    KC21 quotes only the muon. This is the same objection the corpus already
+    accepts against h*D(u~); it was never applied to the deficit.
+  - the 2.9% window is not discriminating: the deficit is 5.32x CLOSER to the
+    ladder's own expansion variable u~_0 (0.544%) than to |S(muon)|. u~_0 carries
+    no 4_1-volume content.
+
+So "(H1) motivated = yes" stands only in the weak sense; the geometric backing
+does not survive the anchor test. The verdict in §9c is worded accordingly.
+The producing witness is honest -- it records both anchors and says
+"|S(muon)|" explicitly; the generalisation happened in the KC21 summary.
+
+## SECOND DEFECT found while placing the pointer (qou-kp9f)
+
+KC21 and KC22 are adjacent and both wrote `q*`, `h*`, `u~(q*)` unqualified for
+TWO DIFFERENT points (1.10998 vs 1.48989; ratios 1.34x / 3.92x / 15.1x). Fixed:
+both rows subscript (q*_S vs q*_rho) and §9a carries the disambiguation table.
+
+Audit: docs/audits/2026-08-14-c3-registry-glyph-collision-and-anchor-selective-scale.md
+
+Scope-(a). No Lean edited; c_3 tier unchanged; nothing wired; no fit.
+Remaining open: the bar-parity itself -> qou-qb8g.
+
+── Verification 2026-08-19 (session qou-a6rd, branch n24484) ──
+Re-adjudicated against committed corpus. All three sub-questions ARE resolved; no remaining work — ready for owner-close (§4a).
+(a) c₃^even = −Vol(4₁): NOT derived — a near-match. Φ_b saddle motivation (vol deficit 0.0094 ≈ |S(muon)| 0.00968) is ~3% off, muon-only + anchor-selective (fails at proton pin), and convention-C-conditional (§9g). q*_S presupposes (H1); WITHDRAWN as independent q₀ determination (#5074 §9f).
+(b) rival c₃^even≈+86.66 = projection artifact / different object (same glyph). Two S's are distinct (SLeakZeroCrossing guards collision). Neither split is a genuinely derived decomposition.
+(c) registry pointer landed #5022, refined #5074 §9f. KC21 tiers only the STRUCTURAL parity (proved-lean, Im S odd) + S=h·D split / 1/u³ / Φ_b saddle (symbolic-exact) — the EQUALITY c₃^even=−Vol(4₁) stays (H1), untiered.
+Open residuals correctly tracked as qb8e (magnitude gate) + qb8g (bar-parity undetermined). NEW live thread beyond qb8f: whole c₃ ladder is C-frame, awaits convention-D re-derivation (qou-cds1).

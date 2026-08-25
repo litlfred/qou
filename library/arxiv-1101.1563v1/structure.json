@@ -1,0 +1,111 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1101.1563v1",
+ "source": {
+  "file": "1101.1563v1.pdf",
+  "sha256": "0c45b250fc4a2a49a5eeb67715789dd99b191e1c6df32e428af5fbf43fc87791",
+  "bytes": 220232,
+  "pages": 20
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1101.1563",
+   "version": "1",
+   "primary_class": "math.RA",
+   "stamp_date": "8 Jan 2011"
+  },
+  "doi": null,
+  "title": "Gröbner-Shirshov bases for categories",
+  "authors_raw": "School of Mathematical Sciences, South China Normal Univer sity",
+  "abstract": "In this paper we establish Composition-Diamond lemma for small categ ories. We give Gr¨ obner-Shirshov bases for simplicial category and cyclic c ategory.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220429045604-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "Gröbner-Shirshov bases for categories∗ L. A. Bokut †",
+  "title_lines": [
+   "Gröbner-Shirshov bases for categories∗",
+   "L. A. Bokut †"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A short survey on Gröbner-Shirshov bases",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Free categories and free category partial algebras",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Composition-Diamond lemma for categories",
+   "page": 8,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Gröbner-Shirshov bases for the simplicial category and the cyclic category",
+   "page": 11,
+   "source": "outline",
+   "number": "5"
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 19965,
+   "n_words": 3624
+  },
+  {
+   "id": "sec-001-3-free-categories-and-free-category-partial-alge",
+   "number": "3",
+   "title": "Free categories and free category partial algebras",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1681,
+   "n_words": 392
+  },
+  {
+   "id": "sec-002-4-composition-diamond-lemma-for-categories",
+   "number": "4",
+   "title": "Composition-Diamond lemma for categories",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 20,
+   "n_chars": 25391,
+   "n_words": 5641
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 3,
+  "chars_total": 47037
+ }
+}

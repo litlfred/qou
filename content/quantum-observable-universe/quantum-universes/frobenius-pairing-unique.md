@@ -5,4 +5,4 @@ $$
   \qquad\text{for some } c \in \mathrm{Aut}_{\mathbf{C}}(\mathbf{1}).
 $$
 
-The induced pairings $\langle \cdot, \cdot \rangle_i = \int_A^{(i)} \circ \mu$ differ by the same scalar. The [Frobenius pairing](#def:frobenius-pairing) is unique up to global normalisation.
+The induced [Frobenius pairings](#def:frobenius-pairing) $\langle \cdot, \cdot \rangle_i = \int_A^{(i)} \circ \mu$ differ by the same scalar.

@@ -33,13 +33,13 @@ to numerical computations but are NOT part of the formal chain.
 | **HadronicMass** | `ℝ` | — | Terminal resolution (numerical) |
 | **MathConstants** | `ℝ` | — | Derived physical constants |
 | **Elaboration** | `ℝ` | — | d_q² computation (numerical) |
-| **SubstrateParameter** | `ℝ` | — | q(p) field (numerical) |
+| **ArchimedeanSubstrateField** | `ℝ` | — | q(p) field (numerical) |
 | **FormalGroups** | generic `k` | ✓ | Skewed-Poisson, Witt vectors |
 | **RepresentationTheory** | generic `k` | ✓ | Categorical hadrons |
 | **PhotonThreading** | `ℤ[q, q⁻¹]` | ✓ | Hecke cost = mass |
 | **MobiusEnergy** | `ℝ` | — | Energy functional (numerical) |
 | **InformationTheory** | `ℝ` | — | Planck length, bandwidth |
-| **GaugeFieldFluidDynamics** | `ℝ` | — | Brane fluid (numerical) |
+| **GaugeFieldFluidDynamics** | generic `R` + `ℝ` shim | partial | q-arithmetic (`qInteger`, `qFactorial`, `qBinomial`, `qHookProduct`) generic over `[Field R]`; the ordering-dependent declarations (`pow_gt_inv_pow`, `qInteger_pos`, `qInteger_sq_pos`, `qInteger_ne_zero`, `markovParameter`, `markovParameter_pos`) stay at `ℝ` as the archimedean shim |
 | **PAdicQuantumGroups** | `ℚ_p`, `𝔽_p` | ✓ | p-adic realisation |
 
 ## The formal chain

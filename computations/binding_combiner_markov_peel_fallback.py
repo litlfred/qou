@@ -38,8 +38,8 @@ The `markov_peel` trace path is *exact-symbolic in q* by construction —
 `crossing_from_cd` maps each numeric (c, d) crossing to an exact element
 of ℚ(q)·H_n(q).  The canonical default p-n interface
 (`pn_convention="bring_color_weighted"`) uses the crossing
-`σ − h·(½ − δ/4)·1` with `δ = flavor_split_subleading(q₀)` a *numeric*
-function of q₀ (see `_li_2_q_util.flavor_split_subleading` /
+`σ − h·(½ − δ/4)·1` with `δ = flavor_split_leading(q₀)` a *numeric*
+function of q₀ (see `_li_2_q_util.flavor_split_leading` /
 `canonical_braid_crossings._avg_color_delta`).  A numeric δ cannot be
 represented as an exact polynomial in the formal symbol q, so the
 exact-symbolic trace path can only carry the color-blind averaged

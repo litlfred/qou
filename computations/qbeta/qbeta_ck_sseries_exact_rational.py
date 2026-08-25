@@ -17,7 +17,7 @@ against convention drift):
     Qb/m_e  = sgn * [Delta(net)/(q-1)] / q          (regularised, finite at q=1)
     QA/m_e  = (2q+1-q^2)(q+1)/(2q^3)
     hbar    = (q-1)/q,   b = sqrt(q^4+q^2+1)/(q^2+1),   u = b*hbar^2
-    z       = sqrt(q)/(q+1),   h = q - 1/q
+    z       = q^3/(q^2+1),     h = q - 1/q      (convention D)
     alpha_eff = (z-1)h/2 - u/2                       (alpha_eff(1) = 0)
     R(q)    = (Qb/m_e) / [(QA/m_e) * cos(alpha_eff)],  R(1) = 1
 

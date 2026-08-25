@@ -3,12 +3,12 @@
   "description": "b3ix distinct route: the 4\u2081 Habiro cyclotomic tail is bar-even (no odd datum) and its archimedean resurgent action is exactly \u03c0\u00b2/5 (golden-ratio dilog), distinct from the geometric Vol/\u03c0 \u2014 the \u0127\u21942\u03c0i/N wall made exact. Odd b3ix needs the 5\u2082 chiral tail. scope-(b).",
   "audit_only": true,
   "tier": "symbolic-exact + numerical (resurgent action closed form)",
-  "computedAt": "2026-07-18T18:00:34.016112+00:00",
-  "commitSha": "d2f173f3eb1d23b4b3238e41ecc9e19ac5aaa85e",
+  "computedAt": "2026-08-23T09:36:54.751629+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "mpmath",
-  "engineVersion": "1.3.0",
+  "engineVersion": "1.4.1",
   "scriptFile": "qbeta_fourone_habiro_tail_action_probe.py",
-  "scriptHash": "15eb4a2a1cba",
+  "scriptHash": "9ca1e3c0944a",
   "assertions": [
     {
       "name": "fourone_habiro_tail_is_bar_even",

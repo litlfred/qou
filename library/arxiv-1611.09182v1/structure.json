@@ -1,0 +1,1155 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1611.09182v1",
+ "source": {
+  "file": "1611.09182v1.pdf",
+  "sha256": "6b40549b96d40ac7045dc59e5086ba8375fb5da7a96375c55a8fc50372d4d4ed",
+  "bytes": 911148,
+  "pages": 97
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1611.09182",
+   "version": "1",
+   "primary_class": "hep-th",
+   "stamp_date": "16 Nov 2016"
+  },
+  "doi": null,
+  "title": "Standard model physics from an algebra?",
+  "authors_raw": null,
+  "abstract": null,
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20161129012210Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": "uWaterloo LaTeX Thesis Template"
+  },
+  "title_lines": [
+   "Standard model physics from an",
+   "algebra?",
+   "C. Furey",
+   "A thesis",
+   "presented to the University of Waterloo",
+   "in fulfillment of the",
+   "thesis requirement for the degree of",
+   "Doctor of Philosophy",
+   "Physics"
+  ],
+  "title_prev": "Standard model physics from an algebra? C. Furey A thesis presented to the University of Waterloo in fulfillment of the thesis requirement for the degree of Doctor of Philosophy Physics"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 2,
+   "source": "outline",
+   "number": "0.1"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 3,
+   "source": "outline",
+   "number": "0.2"
+  },
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 9,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Towards conceptual parsimony",
+   "page": 9,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Outline",
+   "page": 10,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 1,
+   "title": "What lies in an algebra?",
+   "page": 11,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Causality",
+   "page": 11,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Irreversible time",
+   "page": 13,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Particles",
+   "page": 14,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "Summary and outlook",
+   "page": 15,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 1,
+   "title": "Complex quaternions",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Preamble",
+   "page": 16,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Introduction to CH",
+   "page": 16,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Conjugation",
+   "page": 17,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Generalized ideals",
+   "page": 18,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 2,
+   "title": "Complex invariant-action, mc",
+   "page": 19,
+   "source": "outline",
+   "number": "3.5"
+  },
+  {
+   "level": 3,
+   "title": "Preliminaries",
+   "page": 19,
+   "source": "outline",
+   "number": "3.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Weyl and Dirac spinors as generalized ideals",
+   "page": 20,
+   "source": "outline",
+   "number": "3.5.2"
+  },
+  {
+   "level": 3,
+   "title": "A seamless new way to conjugate Weyl spinors",
+   "page": 21,
+   "source": "outline",
+   "number": "3.5.3"
+  },
+  {
+   "level": 3,
+   "title": "Majorana spinors as generalized ideals",
+   "page": 22,
+   "source": "outline",
+   "number": "3.5.4"
+  },
+  {
+   "level": 2,
+   "title": "Hermitian invariant-action, mh",
+   "page": 23,
+   "source": "outline",
+   "number": "3.6"
+  },
+  {
+   "level": 2,
+   "title": "Quaternionic invariant-action, mq",
+   "page": 24,
+   "source": "outline",
+   "number": "3.7"
+  },
+  {
+   "level": 2,
+   "title": "Bilinears",
+   "page": 25,
+   "source": "outline",
+   "number": "3.8"
+  },
+  {
+   "level": 2,
+   "title": "Summary",
+   "page": 25,
+   "source": "outline",
+   "number": "3.9"
+  },
+  {
+   "level": 2,
+   "title": "Outlook",
+   "page": 26,
+   "source": "outline",
+   "number": "3.10"
+  },
+  {
+   "level": 1,
+   "title": "Clifford algebras",
+   "page": 27,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Motivation",
+   "page": 27,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Definition",
+   "page": 27,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Examples of Clifford algebras from CH",
+   "page": 29,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 2,
+   "title": "Minimal left ideals",
+   "page": 30,
+   "source": "outline",
+   "number": "4.4"
+  },
+  {
+   "level": 2,
+   "title": "How to identify minimal left ideals",
+   "page": 31,
+   "source": "outline",
+   "number": "4.5"
+  },
+  {
+   "level": 3,
+   "title": "Some definitions",
+   "page": 31,
+   "source": "outline",
+   "number": "4.5.1"
+  },
+  {
+   "level": 3,
+   "title": "Procedure",
+   "page": 32,
+   "source": "outline",
+   "number": "4.5.2"
+  },
+  {
+   "level": 2,
+   "title": "Minimal left ideals in CH",
+   "page": 33,
+   "source": "outline",
+   "number": "4.6"
+  },
+  {
+   "level": 3,
+   "title": "Fock space structure",
+   "page": 33,
+   "source": "outline",
+   "number": "4.6.1"
+  },
+  {
+   "level": 2,
+   "title": "The Dirac algebra",
+   "page": 34,
+   "source": "outline",
+   "number": "4.7"
+  },
+  {
+   "level": 2,
+   "title": "Right action required",
+   "page": 36,
+   "source": "outline",
+   "number": "4.8"
+  },
+  {
+   "level": 2,
+   "title": "Parity and the field strength tensor",
+   "page": 36,
+   "source": "outline",
+   "number": "4.9"
+  },
+  {
+   "level": 1,
+   "title": "Standard model of particle physics",
+   "page": 40,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "What it is",
+   "page": 40,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "What it is not",
+   "page": 43,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "What it should be",
+   "page": 43,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 1,
+   "title": "One generation of quarks and leptons from CO",
+   "page": 45,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 2,
+   "title": "A summary of the results to come",
+   "page": 46,
+   "source": "outline",
+   "number": "6.1"
+  },
+  {
+   "level": 2,
+   "title": "Introduction to CO",
+   "page": 48,
+   "source": "outline",
+   "number": "6.2"
+  },
+  {
+   "level": 2,
+   "title": "Octonionic chain algebra",
+   "page": 50,
+   "source": "outline",
+   "number": "6.3"
+  },
+  {
+   "level": 2,
+   "title": "A system of ladder operators",
+   "page": 53,
+   "source": "outline",
+   "number": "6.4"
+  },
+  {
+   "level": 2,
+   "title": "Complex conjugation's analogue",
+   "page": 54,
+   "source": "outline",
+   "number": "6.5"
+  },
+  {
+   "level": 2,
+   "title": "Minimal left ideals",
+   "page": 55,
+   "source": "outline",
+   "number": "6.6"
+  },
+  {
+   "level": 2,
+   "title": "MTIS symmetries: su(3)c and u(1)em",
+   "page": 57,
+   "source": "outline",
+   "number": "6.7"
+  },
+  {
+   "level": 2,
+   "title": "Ladders to su(3)c and u(1)em",
+   "page": 58,
+   "source": "outline",
+   "number": "6.8"
+  },
+  {
+   "level": 2,
+   "title": "Towards the weak force",
+   "page": 61,
+   "source": "outline",
+   "number": "6.9"
+  },
+  {
+   "level": 2,
+   "title": "Summary",
+   "page": 62,
+   "source": "outline",
+   "number": "6.10"
+  },
+  {
+   "level": 1,
+   "title": "Why does SU(2)L act on only left-handed fermions?",
+   "page": 63,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 2,
+   "title": "A spotlight on right multiplication",
+   "page": 63,
+   "source": "outline",
+   "number": "7.1"
+  },
+  {
+   "level": 2,
+   "title": "Leptonic subspace of Cl(4)",
+   "page": 64,
+   "source": "outline",
+   "number": "7.2"
+  },
+  {
+   "level": 2,
+   "title": "MTIS symmetries: su(2)L and u(1)Y",
+   "page": 65,
+   "source": "outline",
+   "number": "7.3"
+  },
+  {
+   "level": 2,
+   "title": "Summary and outlook",
+   "page": 66,
+   "source": "outline",
+   "number": "7.4"
+  },
+  {
+   "level": 1,
+   "title": "Group representation structure of some grand unified theories",
+   "page": 67,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 2,
+   "title": "SU(5) unification",
+   "page": 67,
+   "source": "outline",
+   "number": "8.1"
+  },
+  {
+   "level": 3,
+   "title": "Introduction",
+   "page": 67,
+   "source": "outline",
+   "number": "8.1.1"
+  },
+  {
+   "level": 3,
+   "title": "GSM inside SU(5)",
+   "page": 68,
+   "source": "outline",
+   "number": "8.1.2"
+  },
+  {
+   "level": 3,
+   "title": "Some notes on symmetry breaking",
+   "page": 70,
+   "source": "outline",
+   "number": "8.1.3"
+  },
+  {
+   "level": 2,
+   "title": "A fermionic binary code",
+   "page": 71,
+   "source": "outline",
+   "number": "8.2"
+  },
+  {
+   "level": 2,
+   "title": "Spin(10) unification",
+   "page": 73,
+   "source": "outline",
+   "number": "8.3"
+  },
+  {
+   "level": 2,
+   "title": "Pati-Salam model",
+   "page": 76,
+   "source": "outline",
+   "number": "8.4"
+  },
+  {
+   "level": 1,
+   "title": "Towards a three-generation model",
+   "page": 79,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Introduction",
+   "page": 79,
+   "source": "outline",
+   "number": "9.1"
+  },
+  {
+   "level": 2,
+   "title": "Generators of SU(3)c",
+   "page": 80,
+   "source": "outline",
+   "number": "9.2"
+  },
+  {
+   "level": 2,
+   "title": "Three generations under SU(3)c",
+   "page": 81,
+   "source": "outline",
+   "number": "9.3"
+  },
+  {
+   "level": 2,
+   "title": "A sample calculation",
+   "page": 84,
+   "source": "outline",
+   "number": "9.4"
+  },
+  {
+   "level": 2,
+   "title": "Summary for SU(3)c",
+   "page": 85,
+   "source": "outline",
+   "number": "9.5"
+  },
+  {
+   "level": 2,
+   "title": "Three generations under SU(3)c and U(1)em",
+   "page": 86,
+   "source": "outline",
+   "number": "9.6"
+  },
+  {
+   "level": 2,
+   "title": "Outlook: From one generation to three",
+   "page": 89,
+   "source": "outline",
+   "number": "9.7"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion",
+   "page": 91,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 93,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-01-abstract",
+   "number": "0.1",
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 2006,
+   "n_words": 341
+  },
+  {
+   "id": "sec-001-02-acknowledgements",
+   "number": "0.2",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 8,
+   "n_chars": 6461,
+   "n_words": 2210
+  },
+  {
+   "id": "sec-002-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 574,
+   "n_words": 199
+  },
+  {
+   "id": "sec-003-11-towards-conceptual-parsimony",
+   "number": "1.1",
+   "title": "Towards conceptual parsimony",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 1750,
+   "n_words": 296
+  },
+  {
+   "id": "sec-004-12-outline",
+   "number": "1.2",
+   "title": "Outline",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1474,
+   "n_words": 247
+  },
+  {
+   "id": "sec-005-2-what-lies-in-an-algebra",
+   "number": "2",
+   "title": "What lies in an algebra?",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 713,
+   "n_words": 115
+  },
+  {
+   "id": "sec-006-21-causality",
+   "number": "2.1",
+   "title": "Causality",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 1791,
+   "n_words": 310
+  },
+  {
+   "id": "sec-007-23-particles",
+   "number": "2.3",
+   "title": "Particles",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 2146,
+   "n_words": 340
+  },
+  {
+   "id": "sec-008-22-irreversible-time",
+   "number": "2.2",
+   "title": "Irreversible time",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 3397,
+   "n_words": 585
+  },
+  {
+   "id": "sec-009-24-summary-and-outlook",
+   "number": "2.4",
+   "title": "Summary and outlook",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1146,
+   "n_words": 195
+  },
+  {
+   "id": "sec-010-3-complex-quaternions",
+   "number": "3",
+   "title": "Complex quaternions",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-011-31-preamble",
+   "number": "3.1",
+   "title": "Preamble",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1556,
+   "n_words": 284
+  },
+  {
+   "id": "sec-012-33-conjugation",
+   "number": "3.3",
+   "title": "Conjugation",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1208,
+   "n_words": 202
+  },
+  {
+   "id": "sec-013-34-generalized-ideals",
+   "number": "3.4",
+   "title": "Generalized ideals",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 593,
+   "n_words": 100
+  },
+  {
+   "id": "sec-014-35-complex-invariant-action-mc",
+   "number": "3.5",
+   "title": "Complex invariant-action, mc",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1068,
+   "n_words": 173
+  },
+  {
+   "id": "sec-015-351-preliminaries",
+   "number": "3.5.1",
+   "title": "Preliminaries",
+   "level": 3,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 1112,
+   "n_words": 213
+  },
+  {
+   "id": "sec-016-352-weyl-and-dirac-spinors-as-generalized-ideals",
+   "number": "3.5.2",
+   "title": "Weyl and Dirac spinors as generalized ideals",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 21,
+   "n_chars": 2015,
+   "n_words": 390
+  },
+  {
+   "id": "sec-017-353-a-seamless-new-way-to-conjugate-weyl-spinors",
+   "number": "3.5.3",
+   "title": "A seamless new way to conjugate Weyl spinors",
+   "level": 3,
+   "page_start": 21,
+   "page_end": 22,
+   "n_chars": 2337,
+   "n_words": 430
+  },
+  {
+   "id": "sec-018-354-majorana-spinors-as-generalized-ideals",
+   "number": "3.5.4",
+   "title": "Majorana spinors as generalized ideals",
+   "level": 3,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 765,
+   "n_words": 137
+  },
+  {
+   "id": "sec-019-36-hermitian-invariant-action-mh",
+   "number": "3.6",
+   "title": "Hermitian invariant-action, mh",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2337,
+   "n_words": 415
+  },
+  {
+   "id": "sec-020-37-quaternionic-invariant-action-mq",
+   "number": "3.7",
+   "title": "Quaternionic invariant-action, mq",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 1254,
+   "n_words": 239
+  },
+  {
+   "id": "sec-021-39-summary",
+   "number": "3.9",
+   "title": "Summary",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 213,
+   "n_words": 35
+  },
+  {
+   "id": "sec-022-38-bilinears",
+   "number": "3.8",
+   "title": "Bilinears",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 26,
+   "n_chars": 2029,
+   "n_words": 345
+  },
+  {
+   "id": "sec-023-310-outlook",
+   "number": "3.10",
+   "title": "Outlook",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1411,
+   "n_words": 214
+  },
+  {
+   "id": "sec-024-41-motivation",
+   "number": "4.1",
+   "title": "Motivation",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 30,
+   "n_chars": 4888,
+   "n_words": 832
+  },
+  {
+   "id": "sec-025-44-minimal-left-ideals",
+   "number": "4.4",
+   "title": "Minimal left ideals",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1314,
+   "n_words": 224
+  },
+  {
+   "id": "sec-026-45-how-to-identify-minimal-left-ideals",
+   "number": "4.5",
+   "title": "How to identify minimal left ideals",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-027-452-procedure",
+   "number": "4.5.2",
+   "title": "Procedure",
+   "level": 3,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 4238,
+   "n_words": 773
+  },
+  {
+   "id": "sec-028-461-fock-space-structure",
+   "number": "4.6.1",
+   "title": "Fock space structure",
+   "level": 3,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 938,
+   "n_words": 186
+  },
+  {
+   "id": "sec-029-47-the-dirac-algebra",
+   "number": "4.7",
+   "title": "The Dirac algebra",
+   "level": 2,
+   "page_start": 34,
+   "page_end": 36,
+   "n_chars": 2767,
+   "n_words": 549
+  },
+  {
+   "id": "sec-030-48-right-action-required",
+   "number": "4.8",
+   "title": "Right action required",
+   "level": 2,
+   "page_start": 36,
+   "page_end": 40,
+   "n_chars": 4855,
+   "n_words": 907
+  },
+  {
+   "id": "sec-031-5-standard-model-of-particle-physics",
+   "number": "5",
+   "title": "Standard model of particle physics",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-032-51-what-it-is",
+   "number": "5.1",
+   "title": "What it is",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 4111,
+   "n_words": 734
+  },
+  {
+   "id": "sec-033-52-what-it-is-not",
+   "number": "5.2",
+   "title": "What it is not",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 43,
+   "n_chars": 790,
+   "n_words": 125
+  },
+  {
+   "id": "sec-034-53-what-it-should-be",
+   "number": "5.3",
+   "title": "What it should be",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 46,
+   "n_chars": 4002,
+   "n_words": 659
+  },
+  {
+   "id": "sec-035-61-a-summary-of-the-results-to-come",
+   "number": "6.1",
+   "title": "A summary of the results to come",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 50,
+   "n_chars": 6919,
+   "n_words": 1339
+  },
+  {
+   "id": "sec-036-63-octonionic-chain-algebra",
+   "number": "6.3",
+   "title": "Octonionic chain algebra",
+   "level": 2,
+   "page_start": 50,
+   "page_end": 53,
+   "n_chars": 6646,
+   "n_words": 1187
+  },
+  {
+   "id": "sec-037-64-a-system-of-ladder-operators",
+   "number": "6.4",
+   "title": "A system of ladder operators",
+   "level": 2,
+   "page_start": 53,
+   "page_end": 55,
+   "n_chars": 2484,
+   "n_words": 485
+  },
+  {
+   "id": "sec-038-66-minimal-left-ideals",
+   "number": "6.6",
+   "title": "Minimal left ideals",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 57,
+   "n_chars": 3413,
+   "n_words": 609
+  },
+  {
+   "id": "sec-039-67-mtis-symmetries-su3c-and-u1em",
+   "number": "6.7",
+   "title": "MTIS symmetries: su(3)c and u(1)em",
+   "level": 2,
+   "page_start": 57,
+   "page_end": 58,
+   "n_chars": 2837,
+   "n_words": 469
+  },
+  {
+   "id": "sec-040-68-ladders-to-su3c-and-u1em",
+   "number": "6.8",
+   "title": "Ladders to su(3)c and u(1)em",
+   "level": 2,
+   "page_start": 58,
+   "page_end": 61,
+   "n_chars": 3325,
+   "n_words": 686
+  },
+  {
+   "id": "sec-041-69-towards-the-weak-force",
+   "number": "6.9",
+   "title": "Towards the weak force",
+   "level": 2,
+   "page_start": 61,
+   "page_end": 62,
+   "n_chars": 1278,
+   "n_words": 214
+  },
+  {
+   "id": "sec-042-610-summary",
+   "number": "6.10",
+   "title": "Summary",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 913,
+   "n_words": 150
+  },
+  {
+   "id": "sec-043-71-a-spotlight-on-right-multiplication",
+   "number": "7.1",
+   "title": "A spotlight on right multiplication",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 64,
+   "n_chars": 1766,
+   "n_words": 291
+  },
+  {
+   "id": "sec-044-72-leptonic-subspace-of-cl4",
+   "number": "7.2",
+   "title": "Leptonic subspace of Cl(4)",
+   "level": 2,
+   "page_start": 64,
+   "page_end": 65,
+   "n_chars": 1836,
+   "n_words": 314
+  },
+  {
+   "id": "sec-045-73-mtis-symmetries-su2l-and-u1y",
+   "number": "7.3",
+   "title": "MTIS symmetries: su(2)L and u(1)Y",
+   "level": 2,
+   "page_start": 65,
+   "page_end": 66,
+   "n_chars": 1695,
+   "n_words": 305
+  },
+  {
+   "id": "sec-046-74-summary-and-outlook",
+   "number": "7.4",
+   "title": "Summary and outlook",
+   "level": 2,
+   "page_start": 66,
+   "page_end": 67,
+   "n_chars": 1623,
+   "n_words": 260
+  },
+  {
+   "id": "sec-047-811-introduction",
+   "number": "8.1.1",
+   "title": "Introduction",
+   "level": 3,
+   "page_start": 67,
+   "page_end": 70,
+   "n_chars": 4337,
+   "n_words": 822
+  },
+  {
+   "id": "sec-048-813-some-notes-on-symmetry-breaking",
+   "number": "8.1.3",
+   "title": "Some notes on symmetry breaking",
+   "level": 3,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 1600,
+   "n_words": 363
+  },
+  {
+   "id": "sec-049-82-a-fermionic-binary-code",
+   "number": "8.2",
+   "title": "A fermionic binary code",
+   "level": 2,
+   "page_start": 71,
+   "page_end": 76,
+   "n_chars": 6924,
+   "n_words": 1582
+  },
+  {
+   "id": "sec-050-84-pati-salam-model",
+   "number": "8.4",
+   "title": "Pati-Salam model",
+   "level": 2,
+   "page_start": 76,
+   "page_end": 79,
+   "n_chars": 3716,
+   "n_words": 753
+  },
+  {
+   "id": "sec-051-9-towards-a-three-generation-model",
+   "number": "9",
+   "title": "Towards a three-generation model",
+   "level": 1,
+   "page_start": 79,
+   "page_end": 79,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-052-91-introduction",
+   "number": "9.1",
+   "title": "Introduction",
+   "level": 2,
+   "page_start": 79,
+   "page_end": 84,
+   "n_chars": 6046,
+   "n_words": 1133
+  },
+  {
+   "id": "sec-053-94-a-sample-calculation",
+   "number": "9.4",
+   "title": "A sample calculation",
+   "level": 2,
+   "page_start": 84,
+   "page_end": 89,
+   "n_chars": 7028,
+   "n_words": 1389
+  },
+  {
+   "id": "sec-054-97-outlook-from-one-generation-to-three",
+   "number": "9.7",
+   "title": "Outlook: From one generation to three",
+   "level": 2,
+   "page_start": 89,
+   "page_end": 91,
+   "n_chars": 902,
+   "n_words": 152
+  },
+  {
+   "id": "sec-055-10-conclusion",
+   "number": "10",
+   "title": "Conclusion",
+   "level": 1,
+   "page_start": 91,
+   "page_end": 93,
+   "n_chars": 2107,
+   "n_words": 344
+  },
+  {
+   "id": "sec-056-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 93,
+   "page_end": 97,
+   "n_chars": 7976,
+   "n_words": 1213
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 76,
+  "sections": 57,
+  "chars_total": 142630
+ }
+}

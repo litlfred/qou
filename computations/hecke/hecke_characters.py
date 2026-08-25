@@ -46,7 +46,7 @@ from q_parameter import Q, Q_INV, HA, q_int, Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
-z = 1.0 / (q0**0.5 + qi0**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # E_0 calibration: free-neutron β-decay Q-value (MeV), per
 # prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.
@@ -55,6 +55,7 @@ z = 1.0 / (q0**0.5 + qi0**0.5)
 # convention (hyperbolic-volume heuristic) is removed — it was
 # not derivable from the mass-identity prescription.
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 E_0_BETA_DECAY_Q_MEV = Q_NEUTRON_MEV  # CODATA: 0.78233341 ± 6.1e-7 MeV
 
 
@@ -590,8 +591,35 @@ def nuclear_braid_character(Z, N, sigmas, dim, n_gens):
 # §4  MASS AT LEVEL k
 # ══════════════════════════════════════════════════════════════
 
-def qfac(n):
-    return math.prod(q_int(k) for k in range(1, n + 1))
+def _q_int_at(k, q):
+    """`[k]_q = (q^k - q^-k)/(q - q^-1)` at an EXPLICIT q.
+
+    The module-level `q_int` closes over `q_parameter.Q` — the SHIM's Q, which
+    the shim rebinds to muon when the running process's argv stem is listed in
+    `q0_anchor_manifest.json::ideal_muon`. So every q-integer here is a function
+    of the ENTRY POINT unless the caller names its q (bean qou-wee5).
+    """
+    # Association order MIRRORS the module-level `q_int`, which is
+    # `(Q**n - Q_INV**n) / HA` over PRECOMPUTED reciprocal and h. Computing
+    # `q**(-k)` and `q - 1/q` inline instead is the same mathematics but a
+    # different float64 rounding path: measured, it moved `binding_3A` by
+    # 1.7e-16 to 3.2e-16 relative — 1 to 1.5 ULP. That is the floor of the
+    # arithmetic and not a semantic change, but a witness diff cannot tell the
+    # difference, so threading a q would have shown up as "fields moved" across
+    # the whole migration. Binding the reciprocal once makes the explicit path
+    # bit-identical to the default when `q` IS the module q. Bean qou-6p3b.
+    qi = 1 / q
+    h = q - qi
+    return (q ** k - qi ** k) / h
+
+
+def qfac(n, q=None):
+    """`[n]_q!`. `q=None` keeps the historical module-level q — see the note on
+    `_q_int_at` for why that tracks the entry point, and pass `q` explicitly if
+    your result must not."""
+    if q is None:
+        return math.prod(q_int(k) for k in range(1, n + 1))
+    return math.prod(_q_int_at(k, q) for k in range(1, n + 1))
 
 
 def young_hooks(shape):
@@ -606,9 +634,13 @@ def young_hooks(shape):
     return hooks
 
 
-def dim_q(shape):
+def dim_q(shape, q=None):
+    """`d_q(λ)` by the q-hook-length formula. `q=None` keeps the historical
+    module-level q; pass `q` explicitly to pin the anchor (bean qou-wee5)."""
     n = sum(shape)
-    return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
+    if q is None:
+        return qfac(n, Q0_PROTON) / math.prod(q_int(hk) for hk in young_hooks(shape))
+    return qfac(n, q) / math.prod(_q_int_at(hk, q) for hk in young_hooks(shape))
 
 
 def specht_dim(shape):

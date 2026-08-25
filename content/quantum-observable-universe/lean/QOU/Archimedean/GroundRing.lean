@@ -2,6 +2,7 @@ import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.ZMod.Basic
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # Ground Ring: ℤ[q, q⁻¹]
@@ -59,6 +60,36 @@ noncomputable def qInt (n : ℤ) : R_q :=
   else
     -((Finset.range (-n).toNat).sum fun k =>
       LaurentPolynomial.T (-n - 1 - 2 * ↑k))
+
+/-- **Bridge to the canonical bracket — the twist, made division-free.**
+
+This is the one q-integer in the corpus that genuinely *cannot* be an instance
+of `qIntBal`: `R_q = ℤ[q, q⁻¹]` is not a field, so the balanced quotient
+`(qⁿ − q⁻ⁿ)/(q − q⁻¹)` is not even expressible here.  That is why the definition
+above spells out the symmetric weight string `qⁿ⁻¹ + qⁿ⁻³ + ⋯ + q⁻⁽ⁿ⁻¹⁾` as an
+explicit sum of monomials instead.
+
+What it is *not* is a different convention.  `qIntBal_eq_twist_canonical` says
+`[n]_q = q⁻⁽ⁿ⁻¹⁾ · qIntGeo(q²) n` over a field; `qIntGeo` needs only a
+`CommRing`, so the right-hand side survives the drop to `ℤ[q, q⁻¹]` even though
+the left-hand side does not.  This theorem is that surviving half — the same
+twist, stated where no division is available.
+
+Proved for `0 < n`; the negative branch is `-` of this by construction
+(`qInt` is defined by odd extension), matching `qIntBalZ_neg` over a field. -/
+theorem qInt_eq_geo_twist (n : ℤ) (hn : 0 < n) :
+    qInt n = LaurentPolynomial.T (-(n - 1)) *
+      QOU.QInteger.qIntGeo (LaurentPolynomial.T 2) n.toNat := by
+  have h0 : n ≠ 0 := ne_of_gt hn
+  rw [qInt, if_neg h0, if_pos hn, QOU.QInteger.qIntGeo_def, Finset.mul_sum]
+  rw [← Finset.sum_range_reflect]
+  refine Finset.sum_congr rfl ?_
+  intro k hk
+  simp only [Finset.mem_range] at hk
+  have hm : (n.toNat : ℤ) = n := Int.toNat_of_nonneg hn.le
+  rw [LaurentPolynomial.T_pow, ← LaurentPolynomial.T_add]
+  congr 1
+  omega
 
 /-- `[1]_q = 1`. -/
 theorem qInt_one : qInt 1 = 1 := by

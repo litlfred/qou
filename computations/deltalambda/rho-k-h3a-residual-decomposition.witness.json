@@ -1,0 +1,55 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-16T20:57:54.663829+00:00",
+  "commitSha": "4f542c4d449221d7483e79adb818336b42cc4a96",
+  "assertions": [
+    {
+      "name": "schur_weyl_identity_exact_at_matched_pin",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 24,
+  "computation": "rho-k-h3a-residual-decomposition",
+  "scriptFile": "rho_k_h3a_residual_decomposition.py",
+  "scriptHash": "01b49a3893af",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Decomposes the ~1e-8 Schur-Weyl self-check residual of the rho_k_h3a probes into q_0 pin straddle (98%), witness internal self-inconsistency (2%), and the identity itself (0%; 3.1e-49 at the 50-dps floor). Refutes bean qdzu's precision-floor hypothesis and localises the residual entirely in input provenance.",
+  "parameters": {
+    "q0_proton": "1.1099785827513808075916690956107688798744991218736",
+    "q0_muon": "1.1099785955573347198997632204832250266562084087802",
+    "q0_anchor_of_tr_M_witness": "muon",
+    "separation_ppb": "11.5371178899878314835481497061562408156854646552644087269867",
+    "evaluation_pin_used": "muon"
+  },
+  "data": {
+    "residuals": {
+      "lhs_proton_vs_tr_M_primary": "0.00000008524811246138941207359405724720956470201090291208698439564959017454877",
+      "lhs_muon_vs_tr_M_primary": "0.000000001851999519703844379106915522513393970734581117836531253322843310584618",
+      "lhs_muon_vs_tr_M_peel": "3.102707200272533228433060491759631952287420800241049977723953002471684e-49",
+      "witness_primary_minus_peel": "0.000000001851999519703844379106915522513393970734270847116504000000000004535442"
+    }
+  },
+  "caveats": [
+    "DEFECT RECORDED, and it is a CALIBRATION-LAYER crossing plus a witness-internal inconsistency -- NOT the numeric-engine precision floor that bean qdzu hypothesised. The rho_k_h3a probes evaluate Sum_lambda y_lambda chi^lambda at the EXPERIMENTAL (proton) q_0 from q_parameter.Q_MP while reading tr_M from atomic-tr-m-mpfr-50dps.witness.json, which is stamped q0Anchor='muon' (the IDEAL 3-CAL layer). The 11.5371 ppb separation is the mu-p substrate tension itself and accounts for 98% of the reported ~8.5e-8. The remaining 2% (1.852e-9) is the witness disagreeing with ITSELF: its results.tr_M_at_q0_50dps and its results.peel_cross_check.tr_M_at_q0_50dps differ by that amount, and the independently-computed Schur-Weyl sum matches the PEEL branch to 3.1e-49 while missing the PRIMARY branch by 1.852e-9 -- evidence that the primary value, not the identity, is the wrong number. With the pin matched and the peel branch used, the residual is 3.1e-49, i.e. the actual 50-dps engine floor. The identity itself was already proved to hold identically in q at n=3 and n=6 (PR #5168, bean qou-hdyp); beta_D on H_6 with 23 crossings is that proof's n=6 atom. Correct layer for this probe is MUON, matching its input witness -- moving only the evaluation pin to proton would invert the straddle rather than remove it, and regenerating the input witness at proton is gated behind bean qou-1c4y."
+  ],
+  "q0Anchor": "muon",
+  "q0Value": "1.1099785955573347198997632204832250266562084087802"
+}

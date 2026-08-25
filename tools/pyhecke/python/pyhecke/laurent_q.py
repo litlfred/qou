@@ -137,7 +137,38 @@ class LaurentQ:
                 f"LaurentQ.from_sympy: cannot parse {node!r} ({type(node).__name__})"
             )
 
-        _walk(e)
+        # Walk the expression as given; on failure, expand and retry ONCE.
+        #
+        # The `is_Mul` branch above accepts only Numbers and powers of `q` as
+        # factors, so a PRODUCT OF SUMS fails even when every factor is
+        # Laurent and the product plainly is too — despite this method's own
+        # docstring promising "sums and products of the above".
+        #
+        # Measured (bean qou-ls7l). `habiro_coefficients_extended.py` failed
+        # on all four atoms with
+        #     non-Laurent factor -(1 - 1/q**4)*(q - 1)**2/12 + 1/2
+        #     in (-q + 1/q)*(-(1 - 1/q**4)*(q - 1)**2/12 + 1/2)
+        # Both factors ARE Laurent, and `sp.expand` of the product gives
+        #     q**3/12 - q**2/6 - q/2 + 1/6 + 1/(3*q) + 1/(6*q**2)
+        #       - 1/(6*q**4) + 1/(12*q**5)
+        # which parses. `simplify(expand(expr) - expr) == 0`, so this changes
+        # no mathematics — it lets the parser see a Laurent expression it
+        # already claimed to accept.
+        #
+        # Expand on RETRY rather than up front: this is the boundary into the
+        # fast path, and `sp.expand` on an already-flat input is wasted work
+        # that every existing caller would start paying. Callers that used to
+        # succeed take the same route they always did.
+        try:
+            _walk(e)
+        except ValueError:
+            out.clear()
+            expanded = sp.expand(e)
+            if expanded == e:
+                raise            # expanding changed nothing; the original
+                                 # message is the honest one
+            _walk(expanded)      # a genuine non-Laurent input still raises,
+                                 # now naming the expanded form
         return cls(out)
 
     def to_sympy(self, q):

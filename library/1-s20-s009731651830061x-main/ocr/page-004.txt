@@ -1,0 +1,39 @@
+I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604 563
+
+(By the strict increase along rows, it suffices to require that the entries in the i-th
+SE-diagonal are bounded from above by m+ 7% for k <i <n.) A (3,7,5)-Gog trapezoid
+is given next.
+
+Zeilberger’s original n x k-Gog trapezoids are just (0,n, k)-Gog trapezoids as defined by
+Krattenthaler. According to [28,21,22], we define minima and maxima of Gog trapezoids
+as follows:
+
+« A minimum is an entry equal to 1. (The minima are located at the bottom of the
+leftmost NE-diagonal.)
+
+« A mazimum is an entry in the k-th NE-diagonal that is equal to the upper bound
+for the entries in its SE-diagonal.
+
+In the example, we have 3 minima (indicated in red”) and 2 maxima (indicated in blue).
+
+1.1.2. Magog trapezoids
+
+In [21,22], Krattenthaler generalized also Zeilberger’s Magog trapezoids [32] (the latter
+also appeared essentially for the first time in [28, Conjecture 7]): For m,n, k non-negative
+integers with k < n, an (m,n, k)-Magog trapezoid is defined as an arrangement of positive
+integers of the following form
+
+e
+e e
+. e e
+e e e e ;
+e e e e e
+e e e e e
+e e e e e
+
+where n is the number of rows (n = 7 in the example), k is the number of SE-diagonals
+(k = 5 in the example) and the entries in the i-th NE-diagonal (1 <i < n, counted from
+the left) are bounded from above by m + i such that the entries are weakly increasing
+along NE-diagonals and SE-diagonals. Next we display a (2,7,5)-Magog trapezoid.
+
+? For interpretation of the colors, the reader is referred to the web version of this article.

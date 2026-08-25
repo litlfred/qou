@@ -6,11 +6,11 @@
   "assertions": [
     {
       "name": "muon_block_folds_to_zero_at_root",
-      "computed": "0+0φ",
-      "expected": "0+0φ",
+      "computed": "0+0\u03c6",
+      "expected": "0+0\u03c6",
       "passed": true,
       "tolerance": 0,
-      "source": "d((3,2))(φ) = [5]_φ = 0 exactly in ℤ[φ]/(φ²−φ−1); Lean muon_folds_at_root."
+      "source": "d((3,2))(\u03c6) = [5]_\u03c6 = 0 exactly in \u2124[\u03c6]/(\u03c6\u00b2\u2212\u03c6\u22121); Lean muon_folds_at_root."
     },
     {
       "name": "electron_muon_split_is_plus_one",
@@ -18,7 +18,7 @@
       "expected": "{\"0\": 1}",
       "passed": true,
       "tolerance": 0,
-      "source": "d((3,1,1)) − d((3,2)) = 1 (identity of qi-polynomials); Lean electron_muon_split."
+      "source": "d((3,1,1)) \u2212 d((3,2)) = 1 (identity of qi-polynomials); Lean electron_muon_split."
     },
     {
       "name": "muon_block_unfolds_to_quartic",
@@ -26,7 +26,7 @@
       "expected": "{\"0\": 1, \"2\": -3, \"4\": 1}",
       "passed": true,
       "tolerance": 0,
-      "source": "d((3,2))(t) = t⁴−3t²+1 (qi_five); Lean muon_unfolds_generic."
+      "source": "d((3,2))(t) = t\u2074\u22123t\u00b2+1 (qi_five); Lean muon_unfolds_generic."
     },
     {
       "name": "q0_continuation_gives_growing_4class",
@@ -34,7 +34,7 @@
       "expected": "1.000, 4.110, 5.220, 6.220 (approx)",
       "passed": true,
       "tolerance": 0.01,
-      "source": "value-map qi polynomials evaluated at t₀=q₀+q₀⁻¹; unfolds the bounded root (1,φ,0,1)."
+      "source": "value-map qi polynomials evaluated at t\u2080=q\u2080+q\u2080\u207b\u00b9; unfolds the bounded root (1,\u03c6,0,1)."
     }
   ],
   "allPassed": true,
@@ -44,12 +44,12 @@
   "scriptHash": "13427ccbcde8",
   "scriptCommitSha": "",
   "precisionMetadata": {
-    "note": "structural facts exact (ℤ[φ] / ℤ[t]); numeric table float64"
+    "note": "structural facts exact (\u2124[\u03c6] / \u2124[t]); numeric table float64"
   },
   "environment": {
     "python": "3.11"
   },
-  "description": "The archimedean q₀-continuation of the W_λ value map is polynomial evaluation of the Chebyshev quantum integers at t = q₀+q₀⁻¹. Exhibits the muon-block fold (0 at the root) / unfold (t⁴−3t²+1 generically) and the growing 4-class (1,[4],[5],[5]+1). Lean certificate: KeystoneWLambdaContinuation.lean. Scope-(a); does NOT derive loc_matches; no fit; nothing wired.",
+  "description": "The archimedean q\u2080-continuation of the W_\u03bb value map is polynomial evaluation of the Chebyshev quantum integers at t = q\u2080+q\u2080\u207b\u00b9. Exhibits the muon-block fold (0 at the root) / unfold (t\u2074\u22123t\u00b2+1 generically) and the growing 4-class (1,[4],[5],[5]+1). Lean certificate: KeystoneWLambdaContinuation.lean. Scope-(a); does NOT derive loc_matches; no fit; nothing wired.",
   "data": {
     "q0": "1.10997859555733471989976322048322502665620840878015",
     "t0": 2.0108968691190756,
@@ -76,5 +76,8 @@
         "W_lambda(q0)": 0.46154052
       }
     }
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

@@ -1,0 +1,116 @@
+{
+  "probe": "qbeta_5two_route14_fiveterm_arguments_exact",
+  "bean": "qou-rhyp",
+  "roast_item": "qou-rstq item 1",
+  "parent_bean": "qou-0yqu",
+  "arithmetic": "exact, fractions.Fraction in the power basis of Q(w), w^3-2w^2-w+1 = 0",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "sigma(w) = (w-1)/w is an order-3 automorphism of Q(w); w1,w2,w3 are its orbit",
+      "w2": "(0) + (-2)w + (1)w^2",
+      "w3": "(2) + (1)w + (-1)w^2",
+      "minpoly_residuals": [
+        "(0) + (0)w + (0)w^2",
+        "(0) + (0)w + (0)w^2",
+        "(0) + (0)w + (0)w^2"
+      ],
+      "sigma_cubed_is_identity": true,
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the whole argument dictionary {w_k, q, r, s} lies in Q(w), exactly",
+      "dictionary": {
+        "w1": "(0) + (1)w + (0)w^2",
+        "w2": "(0) + (-2)w + (1)w^2",
+        "w3": "(2) + (1)w + (-1)w^2",
+        "q": "(-1) + (3)w + (-1)w^2",
+        "r": "(-3) + (-3)w + (2)w^2",
+        "s": "(-2) + (-1)w + (1)w^2",
+        "1-w2": "(1) + (2)w + (-1)w^2",
+        "1-q": "(2) + (-3)w + (1)w^2",
+        "1-r": "(4) + (3)w + (-2)w^2",
+        "1-s": "(3) + (1)w + (-1)w^2"
+      },
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "hA is the diagonal five-term instance x = y = w2; its identification IS bloch_key",
+      "x": "w2",
+      "y": "w2",
+      "produced": [
+        "1-q",
+        "r",
+        "r"
+      ],
+      "needed": [
+        "1-q",
+        "r",
+        "r"
+      ],
+      "w2_squared_minus_one_minus_q": "(0) + (0)w + (0)w^2",
+      "bloch_key_residual_(1-w1)^2(1+w1)-w1^2": "(0) + (0)w + (0)w^2",
+      "lean": "QOU/QBeta/FiveTwoCyclotomicBloch.bloch_key -- already sorry-free",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "hB is the five-term instance x = 1-w2, y = q",
+      "x": "1-w2",
+      "y": "q",
+      "produced": [
+        "1-q",
+        "1-s",
+        "w2"
+      ],
+      "needed": [
+        "1-q",
+        "1-s",
+        "w2"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "hC is the five-term instance x = w2, y = s",
+      "x": "w2",
+      "y": "s",
+      "produced": [
+        "1-w2",
+        "1-s",
+        "1-r"
+      ],
+      "needed": [
+        "1-w2",
+        "1-s",
+        "1-r"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the six division-free identities a CommRing Lean proof needs, all exactly zero",
+      "residuals": {
+        "A1  w2^2 = 1-q": "(0) + (0)w + (0)w^2",
+        "A2  r(1-w2^2) = w2(1-w2)": "(0) + (0)w + (0)w^2",
+        "B1  (1-w2)q = 1-q": "(0) + (0)w + (0)w^2",
+        "B2  (1-s)q = (1-w2)(1-q)": "(0) + (0)w + (0)w^2",
+        "C1  w2*s = 1-w2": "(0) + (0)w + (0)w^2",
+        "C2  (1-r)w2 = s(1-w2)": "(0) + (0)w + (0)w^2"
+      },
+      "note": "B1 makes hB's denominator 1-xy collapse to q, and C1 makes hC's collapse to w2 -- which is why hB's fifth argument is exactly w2 and hC's fourth is exactly 1-s",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "roast_outcome": "DISCHARGED. hA, hB, hC are genuine five-term instances. The last three arguments of the relation, which are determined as rational functions of (x,y), match the hypotheses' arguments exactly as algebraic numbers.",
+    "hA": "the DIAGONAL instance x = y = w2. Its argument identification w2^2 = 1-q is exactly bloch_key, already sorry-free in FiveTwoCyclotomicBloch.lean.",
+    "hB": "x = 1-w2, y = q. The denominator 1-xy collapses to q, so the fifth argument is w2.",
+    "hC": "x = w2, y = s. The denominator 1-xy collapses to w2, so the fourth argument is 1-s.",
+    "why_exact_matters": "a 1e-40 numerical check confirms the relation holds; it cannot distinguish 'this is five-term at (x,y)' from 'some other identity true at these points'. Exact matching can.",
+    "still_open": "the five-term relation itself (Abel). This probe shows the hypotheses are instances of it, not that it holds.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

@@ -101,6 +101,90 @@ theorem exists_same_writhe_ne_totalTwist (n : ℕ) (hn : 0 < n) :
     simp [totalTwist]
   omega
 
+/-! ## The candidate hypercharge is a function of the total twist alone
+
+The normalised candidate of `def:strand-twist-datum` pairs the datum with
+the writhe-derived isospin `I₃`:
+
+    Y_cand(I₃, t) = 2 · (Q_twist(t) − I₃),   Q_twist(t) = totalTwist(t) / 3,
+
+with `Q_twist = T/3` the helon colour-tube charge quantum
+(Bilson-Thompson, `[bilson-thompson2005]`; the `1/3` is a fixed
+normalisation, NOT a fitted parameter). The lemmas below pin the
+structural content that the enumeration battery
+(`computations/strand_twist_y_battery.py`) obscures:
+
+* `Ycand_factors_totalTwist` — `Y_cand` sees **only** the total twist, not
+  the full multiset. So the battery's per-flavour *multiset* survivors
+  carry strictly more freedom than `Y` constrains.
+* `totalTwist_pinned_of_Ycand` — reproducing a **given** hypercharge `Y`
+  against a **given** isospin `I₃` is *equivalent* to pinning the total
+  twist to `3·(I₃ + Y/2) = 3Q` (the Gell-Mann–Nishijima charge). The total
+  is therefore **uniquely determined** by the spectrum; nothing about the
+  multiset is.
+* `Ycand_bar` — the candidate is bar-odd: `Y_cand(−I₃, bar t) = −Y_cand(I₃, t)`
+  (antiparticle hypercharge flips sign, the CPT-compatible property), a
+  consequence of `totalTwist_bar`.
+
+Consequence for the battery (recorded in the audit, not claimed as physics
+here): the "4 of 10 000 survivors" decompose as `1·2·2·1`, the count of
+size-3 `{−1,0,1}`-multisets realising each *uniquely pinned* total
+`(u,d,ν,e) = (2,−1,0,−3) = 3Q`. The residual freedom is `Y`-invisible
+multiset choice at fixed total, **not** hypercharge non-uniqueness.
+Narrowing it requires the per-strand braid word — the gap that stays open.
+
+Base ring: `ℚ` — the SM quantum numbers are rationals; no ordering,
+`Real.sqrt`, or other archimedean structure appears, so this stays below
+the substrate→archimedean wall (§7c: `ℚ` is the minimal field carrying
+these charges, not a gratuitous `ℝ`). -/
+
+/-- **Candidate hypercharge** on a framed state with writhe-derived isospin
+`I₃`: `Y = 2·(totalTwist/3 − I₃)`. The `def:strand-twist-datum`
+normalisation `Q_twist = totalTwist/3` (helon colour-tube quantum). -/
+def Ycand {n : ℕ} (I3 : ℚ) (t : TwistDatum n) : ℚ :=
+  2 * (((totalTwist t : ℤ) : ℚ) / 3 - I3)
+
+/-- **The candidate hypercharge factors through the total twist**: two
+framings with equal total twist yield the same candidate hypercharge, so
+`Y_cand` cannot distinguish framings that differ only in how a fixed total
+is split across strands. -/
+theorem Ycand_factors_totalTwist {n : ℕ} (I3 : ℚ) (t t' : TwistDatum n)
+    (h : totalTwist t = totalTwist t') : Ycand I3 t = Ycand I3 t' := by
+  unfold Ycand; rw [h]
+
+/-- **The spectrum pins the total twist, and only the total.** Reproducing a
+prescribed hypercharge `Y` against isospin `I₃` is equivalent to the total
+twist equalling `3·(I₃ + Y/2) = 3Q` (Gell-Mann–Nishijima). Hence the SM
+first-generation spectrum uniquely determines each fermion's total twist;
+the residual multiset freedom is unconstrained by `Y`. -/
+theorem totalTwist_pinned_of_Ycand {n : ℕ} (I3 Y : ℚ) (t : TwistDatum n) :
+    Ycand I3 t = Y ↔ ((totalTwist t : ℤ) : ℚ) = 3 * (I3 + Y / 2) := by
+  unfold Ycand
+  constructor
+  · intro h; linarith
+  · intro h; linarith
+
+/-- **Bar (antiparticle) consistency of the candidate**: under orientation
+reversal (`bar`, negating every twist) together with the isospin flip
+`I₃ ↦ −I₃`, the candidate hypercharge negates. The CPT-compatible sign,
+inherited from `totalTwist_bar`. -/
+theorem Ycand_bar {n : ℕ} (I3 : ℚ) (t : TwistDatum n) :
+    Ycand (-I3) (bar t) = -Ycand I3 t := by
+  unfold Ycand
+  rw [totalTwist_bar]
+  push_cast
+  ring
+
+/-- **The surviving multiset ambiguity is `Y`-invisible** (concrete witness).
+The two `d`-quark battery survivors `{−1,−1,1}` and `{−1,0,0}` share total
+twist `−1`, so at the writhe-derived isospin `I₃(d_L) = −1/2` they yield the
+identical candidate hypercharge. The battery cannot separate them; only the
+per-strand braid word could — the open gap. -/
+example : Ycand (-1/2 : ℚ) (![(-1 : ℤ), -1, 1] : TwistDatum 3)
+        = Ycand (-1/2 : ℚ) (![(-1 : ℤ), 0, 0] : TwistDatum 3) := by
+  apply Ycand_factors_totalTwist
+  simp [totalTwist, Fin.sum_univ_three]
+
 end TwistDatum
 
 end QOU.StandardModel

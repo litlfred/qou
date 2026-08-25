@@ -9,11 +9,26 @@ Habiro analysis of the Q_β c_3 residue A needs.
 
 ## Why the variable is s = q^½, not q
 
-The Markov weight `z = 1/(q^½ + q^−½)` is *not* a Laurent polynomial in
-q (or in s): in `s = q^½` it is the rational function `z = s/(s²+1)`.
-So the natural coefficient ring is **ℚ(s)** (rational functions in s),
-not Laurent polynomials. We therefore use sympy with the symbol `s`;
-`q = s²`, `h = q − q⁻¹ = s² − s⁻²` (Laurent in s), `z = 1/(s + s⁻¹)`.
+Historically (**convention C**) the reason was the Markov weight: with
+`z = 1/(q^½ + q^−½)` the half-power is unavoidable, and in `s = q^½` it
+becomes the rational function `z = s/(s²+1)`.
+
+Under **convention D** that reason is gone — `z = q³/(q²+1)` is already
+a rational function of q, needing no half-power at all. The `s` basis is
+nonetheless *retained*, for two reasons:
+
+1. `quantum_int(n)` is the **balanced** q-integer
+   `[n] = (q^{n/2} − q^{−n/2})/(q^{1/2} − q^{−1/2})`, which genuinely
+   needs `s` regardless of the trace convention.
+2. Keeping the symbol fixed makes the C → D change a one-line
+   substitution rather than a re-parameterisation, so every consumer of
+   `specialize(expr, s_value)` and `eval_at_root_of_unity(expr, N, k)`
+   keeps working unchanged — in particular the root-of-unity API, whose
+   `q = e^{2πik/N} → s = e^{πik/N}` map is untouched.
+
+So the coefficient ring is still **ℚ(s)**; `q = s²`,
+`h = q − q⁻¹ = s² − s⁻²` (Laurent in s), and now
+`z = q³/(q²+1) = s⁶/(s⁴+1)` (rational in s, as before).
 
 ## Optional dependency
 
@@ -45,7 +60,10 @@ import sympy as sp
 s = sp.symbols("s", positive=True)
 q_of_s = s ** 2
 h_formal = q_of_s - 1 / q_of_s          # = s² − s⁻²  (Laurent in s)
-z_formal = 1 / (s + 1 / s)              # = s/(s²+1)  (rational in s)
+# Convention D: z = q³/(q²+1).  In the s = q^½ basis this is s⁶/(s⁴+1).
+# (Convention C was `1 / (s + 1 / s)` = s/(s²+1); see the module
+# docstring for why the `s` basis is retained anyway.)
+z_formal = q_of_s ** 3 / (q_of_s ** 2 + 1)   # = s⁶/(s⁴+1)  (rational in s)
 
 
 # Built once at import — the symbolic Markov-Ocneanu-Wenzl weights are

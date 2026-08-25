@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-08-01T20:46:17.062897+00:00",
-  "commitSha": "0cdee704868dd5bc4c8bcd7c1355bf0ee0ce15d1",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-09T13:55:21.888623+00:00",
+  "commitSha": "f884620c6840951a00564d8681c30453c68160d2",
   "assertions": [
     {
       "name": "transforms_scored",
@@ -24,11 +24,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 17,
   "computation": "em-linking-coth-separation",
   "scriptFile": "em_linking_coth_separation_probe.py",
-  "scriptHash": "483c217fcbad",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "28f4fd93cb29",
+  "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +37,9 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
   },
   "description": "EXPLORATORY geometry-first test of the open two-like-charge EM-linking invariant (bean qou-zp6a). Hypothesis H_coth: the missing per-pair factor is the H^3 Coulomb kernel at the pair separation, kappa(A) = coth(alpha(A)). Inverts the existing kappa(A) data (NO fitting; coth is forced by the Green's function) and tests the implied separations against the independent nuclear-radius expectation alpha ~ A^(1/3), scored against NULL compressive transforms to control for the automatic variance reduction of arccoth. Nothing wired; four data points is a direction indicator, not evidence.",
   "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
@@ -85,8 +87,8 @@
           "0.21960574"
         ],
         "coefficient_mean": "0.22305075",
-        "rel_scatter_about_A_cbrt": 0.05801460366197124,
-        "rel_scatter_raw": 0.16355540636809016
+        "rel_scatter_about_A_cbrt": "0.058014604",
+        "rel_scatter_raw": "0.16355541"
       },
       "null: 1/kappa": {
         "values_by_A": {
@@ -102,8 +104,8 @@
           "0.20196652"
         ],
         "coefficient_mean": "0.20941919",
-        "rel_scatter_about_A_cbrt": 0.061176273641129826,
-        "rel_scatter_raw": 0.14801821001392265
+        "rel_scatter_about_A_cbrt": "0.061176274",
+        "rel_scatter_raw": "0.14801821"
       },
       "null: ln(kappa)": {
         "values_by_A": {
@@ -119,8 +121,8 @@
           "0.31670108"
         ],
         "coefficient_mean": "0.48564686",
-        "rel_scatter_about_A_cbrt": 0.39469618532855977,
-        "rel_scatter_raw": 0.17855187910064232
+        "rel_scatter_about_A_cbrt": "0.39469619",
+        "rel_scatter_raw": "0.17855188"
       },
       "null: kappa (untransformed)": {
         "values_by_A": {
@@ -136,8 +138,8 @@
           "0.89555388"
         ],
         "coefficient_mean": "1.3438403",
-        "rel_scatter_about_A_cbrt": 0.3885611749198989,
-        "rel_scatter_raw": 0.17189263959466394
+        "rel_scatter_about_A_cbrt": "0.38856117",
+        "rel_scatter_raw": "0.17189264"
       }
     },
     "ranking_best_first": [
@@ -152,7 +154,7 @@
       "note": "A monotone-increasing alpha(A) is REQUIRED by H_coth, since coth is decreasing: kappa falls with A only if the pair separation grows with A."
     },
     "discrimination": {
-      "H_coth_vs_1_over_kappa_scatter_gap": 0.0031616699791585864,
+      "H_coth_vs_1_over_kappa_scatter_gap": "0.00316167",
       "indistinguishable_on_present_data": true,
       "why": "arccoth(k) = 1/k + 1/(3k^3) + ... , so on the observed range k in [2.1, 3.2] the two transforms agree to a few percent. The A <= 13 data therefore CANNOT select the hyperbolic kernel over a generic reciprocal law.",
       "diverging_forecast": {
@@ -172,6 +174,16 @@
       "discriminating_test": "The two hypotheses diverge at large A and in OPPOSITE directions: H_coth has kappa -> 1 (the derived per-pair unit becomes correct in heavy nuclei), while the 1/kappa power law has kappa -> 0 (the derived unit overshoots). Extending the kappa(A) mirror-pair table to A ~ 27-57 separates them decisively and requires no new theory, only more AME mirror pairs."
     },
     "saturation_prediction": "coth(alpha) -> 1 as alpha -> infinity, so H_coth predicts kappa(A) -> 1 for large A: the missing factor should VANISH in heavy nuclei. The present data (A <= 13) plateaus near 2.1-2.3 rather than trending to 1, so either alpha(A) itself saturates in this range or H_coth is incomplete. Extending the kappa(A) table to heavier mirror pairs is the sharp falsification test and needs no new theory.",
-    "honest_caveats": "(1) Four data points, one free scale -- this cannot confirm anything; it can only fail. (2) arccoth is compressive on this range, so variance reduction is partly automatic; that is precisely why null transforms are scored alongside. (3) A^(1/3) was fixed in advance as the standard nuclear radius law, not selected post hoc. (4) Nothing is wired, and no kappa value is reproduced from theory -- the invariant remains open."
+    "honest_caveats": "(1) Four data points, one free scale -- this cannot confirm anything; it can only fail. (2) arccoth is compressive on this range, so variance reduction is partly automatic; that is precisely why null transforms are scored alongside. (3) A^(1/3) was fixed in advance as the standard nuclear radius law, not selected post hoc. (4) Nothing is wired, and no kappa value is reproduced from theory -- the invariant remains open.",
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-invariant-scoping.witness.json",
+        "sha256": "0567b346a50cd6862458b1b044e79a4d422011b518a95af608c9c883f7f18034",
+        "size_bytes": 3714,
+        "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
+        "scriptCommitSha": "unknown",
+        "computedAt": "2026-07-18T19:19:17.531763+00:00"
+      }
+    ]
   }
 }

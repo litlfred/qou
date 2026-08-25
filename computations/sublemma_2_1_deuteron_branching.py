@@ -44,9 +44,18 @@ import numpy as np
 HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
-from char_fast import chi_lambda_fast  # noqa: E402
+from char_fast import chi_lambda_fast_mp  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q as Q0, Q_MP, Q_50_DIGIT_STR  # noqa: E402
+import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
+
+set_compute_dps()
+
+
+def _c(z):
+    """Serialize a complex character value at full precision."""
+    return {"re": fmt(mp.re(z)), "im": fmt(mp.im(z))}
 
 
 # Standard LR table c^λ_{μν} for partitions of 6 from 3+3.
@@ -179,15 +188,15 @@ def main() -> int:
     chi_p = {}
     chi_n = {}
     for mu in parts_3:
-        chi_p[mu] = chi_lambda_fast(mu, beta_p, q_val=float(Q0))
-        chi_n[mu] = chi_lambda_fast(mu, beta_n, q_val=float(Q0))
+        chi_p[mu] = chi_lambda_fast_mp(mu, beta_p, q_val=Q_MP)
+        chi_n[mu] = chi_lambda_fast_mp(mu, beta_n, q_val=Q_MP)
 
     # χ^λ(β_p ⊗ β_n) for λ ⊢ 6 (no interface)
     chi_disjoint = {}
     chi_D = {}
     for lam in parts_6:
-        chi_disjoint[lam] = chi_lambda_fast(lam, beta_pn_disjoint, q_val=float(Q0))
-        chi_D[lam] = chi_lambda_fast(lam, beta_D_full, q_val=float(Q0))
+        chi_disjoint[lam] = chi_lambda_fast_mp(lam, beta_pn_disjoint, q_val=Q_MP)
+        chi_D[lam] = chi_lambda_fast_mp(lam, beta_D_full, q_val=Q_MP)
 
     # ─── Step 2: LR-prediction for no-interface case ─────────────
     print(f"\n  Per-nucleon characters at q_0:")
@@ -226,10 +235,10 @@ def main() -> int:
         else:
             rel = abs(a - b) / abs(a)
         rel_diffs.append(rel)
-        print(f"  {str(lam):<10} {a.real:>+12.6e}+{a.imag:+8.2e}i  "
-              f"{b.real:>+12.6e}+{b.imag:+8.2e}i  {rel:>+10.2e}")
+        print(f"  {str(lam):<10} {float(mp.re(a)):>+12.6e}+{float(mp.im(a)):+8.2e}i  "
+              f"{float(mp.re(b)):>+12.6e}+{float(mp.im(b)):+8.2e}i  {float(rel):>+10.2e}")
     max_rel = max(rel_diffs)
-    print(f"\n  max relative difference = {max_rel:.2e}")
+    print(f"\n  max relative difference = {float(max_rel):.2e}")
     if max_rel < 1e-6:
         print("  ✓ VERIFIED: standard Hecke branching (Wenzl 1988) holds numerically")
         print("    for the no-interface case at q_0.")
@@ -244,14 +253,14 @@ def main() -> int:
     for lam in parts_6:
         a = chi_D[lam]
         b = chi_disjoint[lam]
-        ratio = a / b if abs(b) > 1e-12 else complex("nan")
-        deviations[lam] = {"chi_D": (a.real, a.imag),
-                           "chi_disjoint": (b.real, b.imag),
-                           "ratio": (ratio.real, ratio.imag),
-                           "ratio_abs": abs(ratio)}
-        print(f"  {str(lam):<10} {a.real:>+12.6e}+{a.imag:+8.2e}i  "
-              f"{b.real:>+12.6e}+{b.imag:+8.2e}i  "
-              f"{abs(ratio):>+10.4f}")
+        ratio = a / b if abs(b) > mp.mpf("1e-12") else mp.mpc("nan")
+        deviations[lam] = {"chi_D": [fmt(mp.re(a)), fmt(mp.im(a))],
+                           "chi_disjoint": [fmt(mp.re(b)), fmt(mp.im(b))],
+                           "ratio": [fmt(mp.re(ratio)), fmt(mp.im(ratio))],
+                           "ratio_abs": fmt(abs(ratio))}
+        print(f"  {str(lam):<10} {float(mp.re(a)):>+12.6e}+{float(mp.im(a)):+8.2e}i  "
+              f"{float(mp.re(b)):>+12.6e}+{float(mp.im(b)):+8.2e}i  "
+              f"{float(abs(ratio)):>+10.4f}")
 
     print(f"\n  Conclusion:")
     print(f"  The branching theorem Σ c^λ_{{μν}} χ^μ(β_p) χ^ν(β_n) reproduces")
@@ -283,20 +292,20 @@ def main() -> int:
         ],
         "computedAt": datetime.now(timezone.utc).isoformat(),
         "parameters": {
-            "q_0": float(Q0),
+            "q_0": Q_50_DIGIT_STR,
             "n_strands": 6,
             "Z": 1, "N": 1,
             "branching": "H_6 ↓ H_3 × H_3",
         },
         "partitions_of_3": [list(m) for m in parts_3],
         "partitions_of_6": [list(l) for l in parts_6],
-        "chi_proton_h3": {str(mu): {"re": chi_p[mu].real, "im": chi_p[mu].imag} for mu in parts_3},
-        "chi_neutron_h3": {str(mu): {"re": chi_n[mu].real, "im": chi_n[mu].imag} for mu in parts_3},
-        "chi_disjoint_h6": {str(lam): {"re": chi_disjoint[lam].real, "im": chi_disjoint[lam].imag} for lam in parts_6},
-        "chi_deuteron_h6": {str(lam): {"re": chi_D[lam].real, "im": chi_D[lam].imag} for lam in parts_6},
-        "lr_prediction_h6": {str(lam): {"re": lr_pred[lam].real, "im": lr_pred[lam].imag} for lam in parts_6},
+        "chi_proton_h3": {str(mu): _c(chi_p[mu]) for mu in parts_3},
+        "chi_neutron_h3": {str(mu): _c(chi_n[mu]) for mu in parts_3},
+        "chi_disjoint_h6": {str(lam): _c(chi_disjoint[lam]) for lam in parts_6},
+        "chi_deuteron_h6": {str(lam): _c(chi_D[lam]) for lam in parts_6},
+        "lr_prediction_h6": {str(lam): _c(lr_pred[lam]) for lam in parts_6},
         "lr_breakdown_per_lambda": {str(lam): lr_breakdown[lam] for lam in parts_6},
-        "max_relative_diff_no_interface": max_rel,
+        "max_relative_diff_no_interface": fmt(max_rel),
         "branching_verified": max_rel < 1e-6,
         "deuteron_interface_ratios": {str(lam): deviations[lam] for lam in parts_6},
         "conclusion": (

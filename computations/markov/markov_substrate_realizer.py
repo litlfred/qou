@@ -55,11 +55,13 @@ from pathlib import Path
 
 import sympy as sp
 from sympy import GF, Integer, Symbol
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness, HabiroCompletionRecord  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as CANONICAL_Q  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR as CANONICAL_Q_STR  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 
 
 HERE = Path(__file__).parent
@@ -93,26 +95,58 @@ def parse_poly_zz(s: str, u: Symbol) -> sp.Poly:
     return sp.Poly(sp.expand(sp.sympify(s, locals={"check_q": u})), u, domain="ZZ")
 
 
-def realize_archimedean(record: HabiroCompletionRecord, q_0: float) -> dict:
+def _eval_poly_mpf(poly: sp.Poly, x: mp.mpf) -> mp.mpf:
+    """Horner-evaluate an integer-coefficient polynomial at an `mpf`.
+
+    The coefficients are exact `int`s from a `domain="ZZ"` Poly, so the
+    only inexact step is the arithmetic at `mp.dps`, and sympy is kept
+    out of the numeric path entirely.
+    """
+    acc = mp.mpf(0)
+    for c in poly.all_coeffs():          # highest degree first
+        acc = acc * x + mp.mpf(int(c))
+    return acc
+
+
+def realize_archimedean(record: HabiroCompletionRecord, q_0: mp.mpf) -> dict:
     """Numerical archimedean realization at `q = q_0`.
 
     The Markov-normalised polynomial `p_in_u(u)` in `u = q^{1/2}` is
     evaluated at `u_0 = q_0^{1/2}`; division by `denom_in_u(u_0)`
     recovers the trace `tr_M(q_0)`.
+
+    PRECISION (fixed 2026-08-23, bean `qou-bm4i`). This used to run
+
+        u_0 = sp.sqrt(sp.Rational(q_0).limit_denominator(10**12))
+        ... float(sp.N(p_val / d_val, 30))
+
+    on a `q_0` that had already been through `float(CANONICAL_Q)`. That is
+    four separate precision losses — float64 on the way in, a rational capped
+    at ~12 digits, a 30-digit evaluation of a 12-digit input, then float64 on
+    the way out — under a `precisionMetadata` block advertising
+    `output_dps: 60`. The witness read as a 60-digit measurement and carried
+    about twelve. `limit_denominator` was the binding one: it caps the INPUT
+    regardless of everything downstream, and `tr_M` is q-sensitive enough that
+    the producer's own comment blames a 1.3e-8 `q_0` drift for a ~1e-7
+    disagreement.
+
+    Now `mpf` end to end at `mp.dps`, Horner over the exact integer
+    coefficients, serialized with `fmt` — no `float()` anywhere on the numeric
+    path.
     """
     u = sp.symbols("u")
     p_u = parse_poly_zz(record.p_in_u, u)
     d_u = parse_poly_zz(record.denom_in_u, u)
-    u_0 = sp.sqrt(sp.Rational(q_0).limit_denominator(10**12))
-    p_val = p_u.eval(u_0)
-    d_val = d_u.eval(u_0)
+    u_0 = mp.sqrt(q_0)
+    p_val = _eval_poly_mpf(p_u, u_0)
+    d_val = _eval_poly_mpf(d_u, u_0)
     if d_val == 0:
         return {"place": "infty", "target": "ℝ", "value": None, "error": "denom vanishes at u_0"}
     return {
         "place": "infty",
         "target": "ℝ",
-        "u_0": float(sp.N(u_0, 30)),
-        "tr_M_at_q0": float(sp.N(p_val / d_val, 30)),
+        "u_0": fmt(u_0),
+        "tr_M_at_q0": fmt(p_val / d_val),
     }
 
 
@@ -172,6 +206,11 @@ def realize_atom(record: HabiroCompletionRecord, q_0: float) -> dict:
 
 
 def main() -> int:
+    # `_precision` does NOT set mp.dps on import — it leaves mpmath at its
+    # default 15, i.e. float64-grade, and `fmt` will happily render a
+    # 53-bit value out to the full serialization width so it READS as
+    # measured. Must be called before any mpf arithmetic here.
+    set_compute_dps()
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0] if __doc__ else "")
     parser.add_argument(
         "--convention",
@@ -197,12 +236,16 @@ def main() -> int:
     # canonical Q used by term6_full_pole_sum.py was the cause of the
     # markov_pipeline_cross_validator ~1e-7 disagreement (q_0 drift of
     # ~1.3e-8 amplified by tr_M's q-sensitivity).
-    q_0 = float(CANONICAL_Q)
+    # `q_parameter.Q` is a float64: lifting it with mp.mpf() reproduces its
+    # binary expansion, which `fmt` then pads out to 60 digits — the exact
+    # "reads as measured, carries 16" defect the padding ratchet exists to
+    # catch, and it caught mine. `Q_50_DIGIT_STR` is the full-precision source.
+    q_0 = mp.mpf(CANONICAL_Q_STR)
     witness_q0 = witness.parameters.get("q_0")
-    if witness_q0 is not None and abs(float(witness_q0) - q_0) > 1e-12:
+    if witness_q0 is not None and abs(mp.mpf(str(witness_q0)) - q_0) > mp.mpf("1e-12"):
         print(
-            f"  NOTE: input witness q_0={float(witness_q0)!r} is stale vs "
-            f"canonical q_parameter.Q={q_0!r}; evaluating at canonical value.",
+            f"  NOTE: input witness q_0={witness_q0} is stale vs "
+            f"canonical q_parameter.Q_50_DIGIT_STR={fmt(q_0)}; evaluating at canonical value.",
             file=sys.stderr,
         )
 
@@ -256,10 +299,15 @@ def main() -> int:
             1 for rz in r["realizations"] if rz["place"].startswith("finite") and rz["tail_in_ideal_mod_p"]
         )
         finite_total = len(FINITE_PLACES)
-        infty_repr = (
-            f"{infty_val:.6e}" if isinstance(infty_val, (int, float))
-            else (infty.get("error") if infty else "missing")
-        )
+        # `tr_M_at_q0` is now a 60-digit STRING from `fmt`, not a float, so the
+        # old `isinstance(..., (int, float))` guard fell through to the error
+        # branch and printed the value as `None`.
+        if isinstance(infty_val, str):
+            infty_repr = f"{mp.mpf(infty_val):.6e}"
+        elif isinstance(infty_val, (int, float)):
+            infty_repr = f"{infty_val:.6e}"
+        else:
+            infty_repr = infty.get("error") if infty else "missing"
         print(
             f"  {atom:>24}  tr_M(q_0)={infty_repr}   "
             f"{finite_count}/{finite_total} finite-place divisibility checks"

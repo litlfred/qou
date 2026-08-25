@@ -1,6 +1,6 @@
 {
   "target": "c_q(q_0)",
-  "target_value": 9.092678397394828,
+  "target_value": 9.0926794561502453911039703556573825637151463686661,
   "target_tolerance": 1e-12,
   "content_block": "prop:full-pole-structure-mass-trace",
   "description": "Step-by-step derivation of c_q \u2248 9.0926 at the substrate parameter q_0 from first principles (categorical action + Frobenius pairing + nonabelian Stokes).  All intermediate steps are AXIOM, MATHLIB_CITED, or DERIVED \u2014 no SCRIPT_CITED frontier.  This is a fully-trusted chain modulo the three AXIOM entrypoints.",
@@ -68,17 +68,17 @@
       "notes": "Pure algebra: q^{-1}/(1 \u2212 q^{-1}) \u00b7 (q/q) = 1/(q \u2212 1).  The DERIVED trust basis records that this step has no new axiom input; it is a one-line manipulation of the previous step."
     },
     {
-      "name": "Evaluate c_q at q_0 = 1.1099785955573347",
-      "operation": "Substitute q := q_0 = 1.1099785955573347 into c_q = 1/(q \u2212 1); compute c_q(q_0) = 1/0.1099785955573347 \u2248 9.0926783974.",
+      "name": "Evaluate c_q at q_0 = 1.1099785827513808 (proton pin)",
+      "operation": "Substitute q := q_0 = 1.1099785827513808075916690956107688798744991218736 (the experimental/proton pin, `qou_substrate.constants.Q_50_DIGIT_STR`) into c_q = 1/(q \u2212 1); compute c_q(q_0) = 9.09267945615024539110 (50-digit value in target_value).",
       "inputs": [
         "c_q_symbolic"
       ],
       "output_name": "c_q_at_q0",
-      "output_value": 9.092678397394828,
+      "output_value": 9.0926794561502453911039703556573825637151463686661,
       "trust_basis": "computational",
       "jet_order": 0,
       "spectral_stratum": "archimedean (q_0 \u2208 \u211d_{>1})",
-      "notes": "COMPUTATIONAL leaf \u2014 bare arithmetic.  Matches the chapter's stated c \u2248 9.12 (rounded) in natural Reeb-step units.  This is NOT the SI 299792458 m/s; recovering the SI value requires the unit conversion via Planck time (see information-speed-of-light.md \u00a7Consistency)."
+      "notes": "Evaluated at the EXPERIMENTAL (proton) pin q_0 = 1.1099785827513808\u2026, per the 2026-08-07 directive that compute defaults to the proton anchor. It was previously evaluated at the ideal/CAL-2 (muon) pin 1.1099785955573347\u2026, giving 9.092678397394828, while `derivation_chain_validator` re-evaluates at the proton default \u2014 a layer straddle worth 1.16e-7 relative against a 1e-12 tolerance. The validator could not report it: the failing branch formatted an mpf with `.2e` and crashed, so it ran clean while the chain agreed and died the moment it disagreed (qou-ibcv). Digits are authored to 50 places because the validator loads with `parse_float=str` and reads the authored digits, not a float64 round-trip. COMPUTATIONAL leaf \u2014 bare arithmetic.  Matches the chapter's stated c \u2248 9.12 (rounded) in natural Reeb-step units.  This is NOT the SI 299792458 m/s; recovering the SI value requires the unit conversion via Planck time (see information-speed-of-light.md \u00a7Consistency)."
     }
   ]
 }

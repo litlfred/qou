@@ -1,0 +1,23 @@
+{
+  "schema": "witness/v1",
+  "probe": "computations/hh1_h5_dim.py",
+  "scriptHash": "704849cb72ed",
+  "bean": "qou-jcmw",
+  "description": "dim HH^1(H_n(q)) via the generator-restricted derivation method (a derivation is fixed by its values on Coxeter generators s_1..s_{n-1} subject to Leibniz-preservation of the quadratic/braid/commuting relations; T_w-basis generator multiplication is pure Coxeter combinatorics, no pyhecke/GS engine). Exact-cyclotomic mpmath at 40 dps; rank by partial-pivot Gaussian elimination with a pivot-gap certificate. No float64, no fit. Computes the dimension of the outer-derivation home HH^1 at the Bring root of unity zeta_5 (where [5]_q=0), the necessary-existence datum for the fibre-level c3 SHAPE carrier.",
+  "assertions": [
+    "n=3 validation gate reproduces the prior probe exactly: dim HH^1 = 1 at q=i ([2]_q=0) and q=zeta_6 ([3]_q=0), = 0 at semisimple q=2.",
+    "n=5 semisimple control q=2: dim HH^1 = 0 (validates the full 120-dim pipeline incl. commuting relations).",
+    "n=5 Bring root q=zeta_5 ([5]_q=0): dim HH^1 = 1 -- the outer-derivation home is exactly one-dimensional; the fibre-level outer carrier exists and is unique up to scale."
+  ],
+  "allPassed": true,
+  "results": {
+    "n3_q_i":        {"N": 6,   "dimZ": 3, "dimInn": 3,   "dimDer": 4,   "dimHH1": 1, "pivot_gap": "1.0 / 4.59e-41"},
+    "n3_q_zeta6":    {"N": 6,   "dimZ": 3, "dimInn": 3,   "dimDer": 4,   "dimHH1": 1, "pivot_gap": "1.0 / 2.3e-41"},
+    "n3_q_2_ss":     {"N": 6,   "dimZ": 3, "dimInn": 3,   "dimDer": 3,   "dimHH1": 0, "pivot_gap": "1.0 / 2.3e-41"},
+    "n5_q_2_ss":     {"N": 120, "dimZ": 7, "dimInn": 113, "dimDer": 113, "dimHH1": 0, "pivot_gap": "1.0 / 5.41e-40"},
+    "n5_q_zeta5_BRING": {"N": 120, "dimZ": 7, "dimInn": 113, "dimDer": 114, "dimHH1": 1, "pivot_gap": "0.387 / 1.78e-39"}
+  },
+  "verification": "Independently re-run this session (main-loop, not the authoring subagent): n=3 gate reproduced exactly; n=5 zeta_5 = 1 with a ~38-order pivot gap certifying the integer rank.",
+  "consequence": "dim HH^1(H_5(zeta_5)) = 1: the fibre-level outer-derivation carrier for the Q_beta c3 SHAPE leg EXISTS and is unique up to scale at the Bring root. This is a necessary-existence datum only.",
+  "scope": "SHAPE-only. Even a fully successful HH^1 carrier supplies only the shape S=(q-q^{-1})*(bar-even); the c3 VALUE leg is proved measurement-limited (QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing, QOU.QBeta.MeasurementLimitedFloor). Substrate q0~1.10998 is NOT a root of unity ([2]_q~2.011), so no outer derivation exists at the archimedean evaluation point -- access is via Habiro-ring continuation. Does NOT close Q_beta or its L2 target (1248 ppb residual = c3-and-beyond truncation, unchanged). The 'c3 swing = this HH^1 class' identification remains an OPEN ASSUMPTION (HH0<->HH1 degree link = bean qou-dilv). Nothing wired, no fit, no tier change; c3 stays empirical/refuted-as-real-q."
+}

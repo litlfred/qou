@@ -91,7 +91,7 @@ theorem isSigmaUnitary_one {R : Type*} [CommRing R] (σ : R →+* R) :
   simp [IsSigmaUnitary]
 
 /-- σ-unitaries are closed under multiplication. -/
-theorem mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
+theorem IsSigmaUnitary.mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
     (hu : IsSigmaUnitary σ u) (hv : IsSigmaUnitary σ v) :
     IsSigmaUnitary σ (u * v) := by
   unfold IsSigmaUnitary at hu hv ⊢
@@ -101,7 +101,7 @@ theorem mul {R : Type*} [CommRing R] {σ : R →+* R} {u v : R}
 
 /-- **Bar-even unitaries are involutions.** If `u` is σ-unitary and σ-fixed
     (bar-even), then `u² = 1`. -/
-theorem sq_eq_one_of_bar_even {R : Type*} [CommRing R]
+theorem IsSigmaUnitary.sq_eq_one_of_bar_even {R : Type*} [CommRing R]
     {σ : R →+* R} {u : R} (hu : IsSigmaUnitary σ u) (heven : σ u = u) :
     u * u = 1 := by
   have h : σ u * u = 1 := hu
@@ -132,12 +132,12 @@ smooth-real magnitude bound is silent. -/
 
 /-- The σ-conjugate `σ u` is the two-sided inverse of a σ-unitary `u`
     (commutative form of `u·ū = 1`). -/
-theorem mul_bar_self {R : Type*} [CommRing R] {σ : R →+* R}
+theorem IsSigmaUnitary.mul_bar_self {R : Type*} [CommRing R] {σ : R →+* R}
     {u : R} (hu : IsSigmaUnitary σ u) : u * σ u = 1 := by
   rw [mul_comm]; exact hu
 
 /-- The σ-inverse of a σ-unitary is σ-unitary. -/
-theorem inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
+theorem IsSigmaUnitary.inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
     (hu : IsSigmaUnitary σ u) (hσ : Function.Involutive σ) :
     IsSigmaUnitary σ (σ u) := by
   unfold IsSigmaUnitary

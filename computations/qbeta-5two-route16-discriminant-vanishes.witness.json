@@ -1,0 +1,77 @@
+{
+  "probe": "qbeta_5two_route16_discriminant_vanishes",
+  "bean": "qou-trns",
+  "roast_item": "qou-rstq item 2",
+  "parent_bean": "qou-0yqu",
+  "dps": 70,
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "disc(x) = x^8-6x^7+11x^6-12x^5-11x^4-12x^3+11x^2-6x+1, checked against a direct recomputation from the cubic, and disc(1) = -23 matches the 5_2 polynomial y^3-2y^2+3y-1",
+      "worst_abs_diff": "1.4489087e-69",
+      "disc_at_1": "-23.0",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "disc is palindromic, so disc(x)/x^4 = Q(u) with u = x + 1/x and Q(u) = u^4 - 6u^3 + 7u^2 + 6u - 31",
+      "palindromic": true,
+      "worst_identity_residual": "3.4773808e-69",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "PROOF (integers + IVT): Q(-2) > 0 > Q(-1), so Q has a real root in (-2,-1) subset [-2,2], i.e. disc vanishes at a point of |x| = 1",
+      "Q_at_minus_2": 49,
+      "Q_at_minus_1": -23,
+      "arithmetic": "exact integers",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "REFUTATION: two of the three y-branches collide EXACTLY on |x| = 1 -- min |disc| is 0, not 0.348",
+      "theta_deg": "137.9206708879635",
+      "u0": "-1.4844353317658568752",
+      "abs_x0": "1.0",
+      "abs_disc_at_x0": "3.9886129e-70",
+      "min_branch_separation": "5.2026565e-36",
+      "colliding_value": "-1.1322418823119001957",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the recorded 0.348 is a GRID minimum: it shrinks as the scan refines, and an N~360 scan of [0,pi] lands near 0.35",
+      "grid_minima": [
+        {
+          "N": 360,
+          "grid_min": "0.12538377"
+        },
+        {
+          "N": 2000,
+          "grid_min": "0.064231674"
+        },
+        {
+          "N": 20000,
+          "grid_min": "0.0068390145"
+        }
+      ],
+      "note": "a grid minimum was reported as if it were the true minimum; the zero was always there and the sampling stepped over it",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "at the base point x = 1 the roots ARE well separated (|disc| = 23, min separation 1.35) -- the collision is a property of the arc, not of the 5_2 point",
+      "min_separation_at_x_eq_1": "1.3544273",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "outcome": "REFUTED. The discriminant of the GGM deformed 5_2 curve VANISHES on the transport arc |x| = 1, at theta = 137.9206708879635 deg, where two of the three y-branches collide exactly. min |disc| = 0, not 0.348.",
+    "proof": "disc is palindromic, so disc(x)/x^4 = Q(x + 1/x) with Q(u) = u^4-6u^3+7u^2+6u-31. Points of |x|=1 correspond to real u in [-2,2]. Q(-2) = +49 and Q(-1) = -23, both exact integers, so IVT gives a root in (-2,-1). No numerics are used in the existence argument.",
+    "what_it_breaks": "(1) qou-trns sub-gap 1's step 2, 'the branches never collide on the arc', which the k=0 pinning argument rests on; (2) the envelope theorem's IFT hypothesis, false as stated; (3) any downstream use of 'min |disc| = 0.348'.",
+    "where_0.348_came_from": "a grid minimum from an ~N=360 scan of [0,pi]. The dip is narrow (|disc'| ~ 87), so the recorded value is about 87*pi/(2N). Refining to N=20000 gives 0.0068.",
+    "likely_repair_NOT_done_here": "Sum_j V_j is SYMMETRIC in the roots, and symmetric functions stay analytic across a branch point even though individual branches do not. So working with the symmetric combination, or deforming the path off |x|=1 around x_0, should recover the transport. Neither is written; neither is assumed here.",
+    "not_refuted": "the sum rule itself. This probe says nothing against it.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

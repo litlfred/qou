@@ -54,14 +54,16 @@ from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 # attached at construction. Owned by this module — see
 # `record_upstream` in qou_substrate.witness for why it is not global.
 _UPSTREAM_RECORDS: list = []
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 
 
 def main() -> int:
     set_compute_dps()
     q = mp.mpf(str(Q0)); h = q - 1 / q
     lnq = mp.log(q)
-    z = mp.mpf(1) / (mp.sqrt(q) + mp.sqrt(1 / q))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q ** 3 / (q ** 2 + 1)
     swap_exponent = mp.log(z / (z - h)) / lnq  # per nn→pp interface swap
 
     rows = []

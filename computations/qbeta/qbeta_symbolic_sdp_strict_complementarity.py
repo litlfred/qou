@@ -87,7 +87,7 @@ import numpy as np  # noqa: E402
 import sympy as sp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
-from lp_dual_solver import solve_operator_selection_lp  # noqa: E402
+from lp_dual_solver import provenance, solve_operator_selection_lp  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
@@ -290,7 +290,12 @@ def main() -> int:
     # n_target = 1 (unit net) for the canonical direction; the physical
     # scale is restored separately and tested for cancellation below.
     print("[3] Genuine operator-selection LP at q_0 (n_target = 1, q-rational):")
-    res1 = solve_operator_selection_lp(t_num, G_num, 1.0)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res1 = solve_operator_selection_lp(t_num, G_num, 1.0, backend="clarabel")
     print(f"    feasible       = {res1.feasible}")
     print(f"    x*             = {[f'{x:+.6f}' for x in res1.x_star]}")
     print(f"    y0_star        = {res1.y0_star:+.8f}")
@@ -305,8 +310,18 @@ def main() -> int:
     # "S cancels from the directions" ⇔ x*(n)/n is independent of n.
     print("[4] Scale-invariance test (does S cancel from the DIRECTION?):")
     n_a, n_b = 0.1868936918861772, 1.0  # one CODATA-shaped, one q-rational
-    res_a = solve_operator_selection_lp(t_num, G_num, n_a)
-    res_b = solve_operator_selection_lp(t_num, G_num, n_b)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res_a = solve_operator_selection_lp(t_num, G_num, n_a, backend="clarabel")
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    res_b = solve_operator_selection_lp(t_num, G_num, n_b, backend="clarabel")
     if res_a.feasible and res_b.feasible:
         dir_a = np.array(res_a.x_star) / n_a
         dir_b = np.array(res_b.x_star) / n_b
@@ -425,6 +440,9 @@ def main() -> int:
     wb.add_data("primal_obj", float(res1.primal_obj))
     wb.add_data("dual_obj", float(res1.dual_obj))
     wb.add_data("duality_gap", float(res1.duality_gap))
+    # Solver, precision, and full-precision decimals behind the f64 above.
+    for _k, _v in provenance(res1).items():
+        wb.add_data(_k, _v)
     wb.add_data("direction_scale_invariant", bool(scale_invariant))
     wb.add_data("direction_max_diff_across_scales", float(dir_diff))
     wb.add_data("frobenius_gram_eigenvalues", [float(e) for e in G_eigs])

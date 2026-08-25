@@ -1,0 +1,45 @@
+Centers and Simple Modules for Iwahori-Hecke algebras 263
+
+map CF(H) — CF((O/p)#) is surjective, hence the bilinear form (., Ys
+
+restricted to Ko(O,H) x CF(H) has values in © if and only if (a ")ep
+restricted to Ko(k,H) x CF((O/p)H) has values in O/p.
+
+Since (-,-) induces a perfect pairing between Ko(k,H) and Ro(k,H),
+the submodule ch Ro(k,H) of CF((O/p)H) is pure if and only if the
+form (.,-)s, restricted to Ko(k,H) x CF((O/p)H) has values in O/p. By
+Proposition 3.1, the decomposition map doy, : Ro(kyH) > Ro(kH) has
+finite cokernel; hence the map 1, ® doy is an isomorphism if and only
+if it is injective, i.e., if and only if ch Ro(k,H) is a pure submodule of
+CF((O/p)H). This completes the proof of (1).
+
+Assume that for q # p, the algebra k,H is semisimple. Then, the
+
+algebra k,H is split semisimple; hence, the algebra O,H is isomorphic
+to a direct product of matrix algebras over Oy. So, the canonical map
+Ko(O,H) = Ko(K,H) is an isomorphism and the form (., Yee, restricted
+to Ko(K gH) x CF(H) has values in 6, and finally the form(-,-)« re-
+stricted to Ko(KH) x CF(H) has values in N,4,0,. Composing the
+canonical map Ko(O,#) > Ko(KyH) with the inverse of the canonical
+map Ko(KH) > Ko(K,H) (note that AH is quasicentral), we get that
+the bilinear form (-, V6, restricted to Ko(OpH) x CF(A) has values in
+
+Nase O,n6,, hence in O since © is a Krull ring [Bki2, Chapitre VII, §1,
+théoréme 4]. Q
+
+4. Center and class functions for symmetric algebras
+
+Let O be a commutative ring and H an O-algebra, free and finitely gen-
+erated as an O-module. Let 7 € CF(H). We say that 7 is a symmetrizing
+form for H (cf [Br]) if the induced map
+
+#:H = Homo(H, 0), hk (kh! & 7(hh’))
+
+is an isomorphism. More concretely, this means that, if B is an O-basis
+of H, then the determinant of the matrix (7(hh’))zyee is a unit inO.
+When such a symmetrizing form exists, we say that the algebra H is
+symmetric.
+
+Assume now that 7 is a symmetrizing form for H. To simplify
+the notations, for h € H and f € Homo(H,©), we put h* = 7(h)
+and f* = 7-}(f). Note that 7 induces an isomorphism of O-modules

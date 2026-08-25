@@ -1,0 +1,42 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1808.05026v1",
+ "source_sha256": "2781e0b34e7889d6",
+ "brief": "GR ¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF — For Temperley-Lieb algebras of types B and D, we construct their Gr¨ obner-Shirshov bases and the corresponding standard monomials.",
+ "extended": "**GR ¨OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF**\n\n*TYPES B AND D*\n\n9 pp, 4 sections.\n\n**Abstract.** For Temperley-Lieb algebras of types B and D, we construct their Gr¨ obner-Shirshov bases and the corresponding standard monomials.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 3 Review of results for the Temperley-Lieb alg; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: Let S be a subset of monic elements in F⟨X⟩. Then the following\n- Theorem 4.2: The algebra T (Bn) has a Gr¨ obner-Shirshov basis ˆRT (Bn) with respect to our\n- Theorem 5.2: The algebra T (Dn) has a Gr¨ obner-Shirshov basis ˆRT (Dn) with respect to our\n- Proposition 2.3: The set of S-standard monomials spans the algebra A = F⟨X⟩/I deﬁned by\n- Proposition 3.1: ([8, Proposition 6.2]) The Temperley-Lieb algebra T (An−1) has a Gr¨ obner-\n- Lemma: and his algorithm [11, 12] for Lie algebras and indepen dently from Buchberger’s algo-",
+ "tokens": {
+  "brief": 47,
+  "extended": 236
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-002-3-review-of-results-for-the-temperley-lieb-algeb",
+   "title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9"
+  },
+  {
+   "id": "sec-003-references",
+   "title": "References",
+   "pages": "9-9"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

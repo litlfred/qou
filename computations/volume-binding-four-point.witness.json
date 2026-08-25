@@ -1,0 +1,107 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-09T19:13:39.276970+00:00",
+  "commitSha": "457f4cc4a74c311cbd0a1c3a595627b877e90a9b",
+  "assertions": [
+    {
+      "name": "usable_points_of_four",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "tolerance": 0,
+      "source": "Reading 2 registry has n_atoms=3; deuteron->Hopf has Vol=0; 4He has no SDP link at all."
+    },
+    {
+      "name": "deuteron_volume_is_zero",
+      "computed": "0.0",
+      "expected": "0.0",
+      "passed": true,
+      "tolerance": "0",
+      "source": "Hopf link L2a1 is Seifert-fibred."
+    },
+    {
+      "name": "mirror_pair_ratio_of_ratios",
+      "computed": "1.02899118054999910285050879126",
+      "expected": "1.0290",
+      "passed": true,
+      "tolerance": "1e-3",
+      "source": "Reproduces the 2026-08-07 ledger's scratch-float64 2.90% at 70 dps."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 14,
+  "computation": "volume-binding-four-point",
+  "scriptFile": "volume_binding_four_point.py",
+  "scriptHash": "97023a026b63",
+  "scriptCommitSha": "da09290333c8c5ae1723c77777a86ab68034636d",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "data": {
+    "targets": [
+      {
+        "name": "D",
+        "A": 2,
+        "B_AME_MeV": "2.224566199999999999999999999999999999999999999999997340954056611765576",
+        "link": "Hopf L2a1",
+        "volume": "0.0",
+        "usable": false
+      },
+      {
+        "name": "T",
+        "A": 3,
+        "B_AME_MeV": "8.481796200000000000000000000000000000000000000000009585209925309324894",
+        "link": "8_11",
+        "volume": "8.2863168178065925881",
+        "usable": true
+      },
+      {
+        "name": "3He",
+        "A": 3,
+        "B_AME_MeV": "7.718041319999999999999999999999999999999999999999995711041411183331376",
+        "link": "L6a4=Borr",
+        "volume": "7.327724753417752120436828119459072886193194994253377074131984956974104",
+        "usable": true
+      },
+      {
+        "name": "4He",
+        "A": 4,
+        "B_AME_MeV": "28.2956623999999999999999999999999999999999999999999915823563342238137",
+        "link": "(none)",
+        "volume": null,
+        "usable": false
+      }
+    ],
+    "exclusions": {
+      "D": "Reading 2 assigns the Hopf link L2a1, which is Seifert-fibred: Vol = 0 exactly. The corpus's +0.2% deuteron match was obtained by substituting Vol(B_3) for Vol(Hopf) -- an unjustified substitution (2026-08-07 ledger §6), so it may not be used as a data point here.",
+      "4He": "No SDP binding link exists. The registry stops at A = 3 (solver scope A <= 3; A = 4 needs B_5 Hoefsmit + Clarabel, conj #604 / GAP-A-1). The only 4He volume in the corpus is Vol_4 ~ 8.046, a BACK-OUT from the bond-count model (assuming the law under test), and it disagrees with the provisional doubly-magic 2*Vol(Borromean) = 14.655 by ~1.8x."
+    },
+    "mirror_pair": {
+      "B_ratio": "1.098957086174293764988550229736266817498717407747697092996563381640716",
+      "Vol_ratio": "1.130817149476273638369281836617223336463206694660909520155137738341745",
+      "ratio_of_ratios": "1.028991180549999102850508791255467648997660652244097583034867471085379",
+      "miss_percent": "2.899118054999910285050879125546764899766065224409758303486747108537923"
+    },
+    "implied_bondcount_constants": {
+      "T": "2.003116879892433934761206113744795402143931878485677598249749795440765",
+      "3He": "2.061189603020146354447525534179198942581982090561857918519147838296061"
+    },
+    "verdict": "scope-(a). The four-point falsification the 2026-08-07 ledger set as its next task cannot be run: Reading 1 supplies zero hyperbolic points and Reading 2 supplies two. The blocker is the absence of an A=4 SDP binding link and the Vol=0 deuteron, not the pending Reading-1-vs-Reading-2 ruling. No claim is made for or against the volume law; the evidence base for it is unchanged and remains two points.",
+    "wired_to_production": false,
+    "fit_performed": false
+  },
+  "caveats": [
+    "Two of the four required points do not exist in the corpus. This witness records that absence; it does not estimate the missing volumes, and deliberately does NOT use the Vol_4 ~ 8.046 bond-count back-out as a fourth point (that would assume the law under test)."
+  ]
+}

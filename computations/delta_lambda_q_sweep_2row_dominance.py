@@ -39,7 +39,8 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q_MP  # noqa: E402
 

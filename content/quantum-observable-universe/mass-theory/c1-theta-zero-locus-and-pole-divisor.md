@@ -1,4 +1,4 @@
-**Proposition (the $q$-theta of the ramified binding module vanishes on the orbit $-p^{\mathbb{Z}}$; the connection matrix's poles are theta zeros).**
+**Proposition (the $q$-theta of the ramified binding module vanishes exactly on the orbit $-p^{\mathbb{Z}}$; the connection matrix's poles are theta zeros).**
 
 Let $p>1$ and let
 $$
@@ -26,29 +26,43 @@ Then:
      \;=\; 2\pi i \;+\; \oint_{|z|=\rho}\frac{\theta_p'}{\theta_p}\,dz .
    $$
    The winding number rises by **exactly one per period**.
-3. **Series solutions.** With $T=\sqrt{(p^{2}-1)/p^{3}}$, the $0$-side series
+3. **The zero locus is exactly that orbit, and every zero is simple.** For
+   $w\neq 0$,
+   $$
+   \theta_p(w)=0 \iff w\in -p^{\mathbb{Z}},
+   $$
+   and $\mathrm{ord}_{w}\theta_p = 1$ at each such $w$. The argument
+   principle on the annulus $\rho<|z|<p\rho$ reads the winding difference of
+   (2) as the number of zeros there counted with multiplicity, so that number
+   is $1$; claim (1) supplies a zero at $-p^{k}$ whenever the annulus meets the
+   orbit, and $\lfloor\log_p|w|\rfloor$ places any given $w$ in such an
+   annulus. The hypothesis in (2) — no zero on the contour — is not a
+   restriction: only finitely many radii carry a zero, so a clean contour can
+   be placed on either side of any point. The origin is excluded because it is
+   an essential singularity, where $\theta_p$ is not an analytic object at all.
+
+   This is not the Jacobi triple product, which additionally identifies the
+   product expansion and needs Liouville on $\mathbb{C}^{*}/p^{\mathbb{Z}}$.
+4. **Series solutions.** With $T=\sqrt{(p^{2}-1)/p^{3}}$, the $0$-side series
    $\sum_k g_k z^{k}$ converges for $\lVert z\rVert<1$ and the $\infty$-side
    series $\sum_k h_k z^{-k}$ is entire, both recursions being consequences of
    $L$ rather than stipulations.
-4. **Pole loci (inclusion only).** Every pole of the connection matrix
-   $P=Y_0^{-1}Y_\infty$ found in the computation lies on one of the three
-   $p$-orbits $-p^{\mathbb{Z}}$, $-T\!\cdot\!p^{\mathbb{Z}}$,
-   $+T\!\cdot\!p^{\mathbb{Z}}$, each a single orbit of the zero set of a
-   $\theta_p$; the first is a normalisation artifact of the $0$-side character's
-   common numerator and is not connection data.
+5. **Pole loci.** Every pole of the connection matrix $P=Y_0^{-1}Y_\infty$
+   found in the computation lies on one of the three $p$-orbits
+   $-p^{\mathbb{Z}}$, $-T\!\cdot\!p^{\mathbb{Z}}$, $+T\!\cdot\!p^{\mathbb{Z}}$,
+   each of which is by (3) the *full* zero set of a $\theta_p$, reduced; the
+   first is a normalisation artifact of the $0$-side character's common
+   numerator and is not connection data.
 
-**Scope — the converse is not proved.** Claim (1) gives $-p^{\mathbb{Z}}\subseteq
-Z(\theta_p)$, hence $\supseteq$ for the pole loci in (4), *not* equality. The
-missing step is a single named lemma — the **argument principle on an annulus**,
-which would read the winding difference in (2) as a zero count and force exactly
-one zero per fundamental annulus. Mathlib has no argument principle, winding
-number, or complex residue. Everything that lemma would consume is proved. This
-is *not* the Jacobi triple product, which additionally needs Liouville on
-$\mathbb{C}^{*}/p^{\mathbb{Z}}$ and is strictly more work.
+**Scope.** (3) determines the zero divisor of $\theta_p$, so the three loci in
+(5) are exact rather than containments and carry multiplicity one. What (5)
+does not settle is completeness in the other direction — whether $P$ has poles
+off those orbits. That, together with the identification of $Y_0$ and
+$Y_\infty$ as the canonical solutions, the meromorphy of $P=Y_0^{-1}Y_\infty$,
+and the closed form for the connection invariant $\chi$, remains open.
 
-**The remaining claims are computational, not derived.** The pole divisor and its
-residue-theorem completeness check, the connection invariant $\chi$ having order
-$2$, the identification $\alpha=t_2/T$, and the closed form for $\chi$ verified
-to $5.3\times10^{-63}$ over twelve points, rest on numerical witnesses. That
-$Y_0$ and $Y_\infty$ are the canonical solutions, that $P=Y_0^{-1}Y_\infty$ is
-meromorphic, and that the divisor is complete, are open.
+**The remaining claims are computational, not derived.** The pole divisor and
+its residue-theorem completeness check, the connection invariant $\chi$ having
+order $2$, the identification $\alpha=t_2/T$, and the closed form for $\chi$
+verified to $5.3\times10^{-63}$ over twelve points, rest on numerical
+witnesses.

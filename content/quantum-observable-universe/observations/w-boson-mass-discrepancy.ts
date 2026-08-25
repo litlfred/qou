@@ -26,7 +26,6 @@ export default remark({
     "Euler-characteristic",
   ],
   uses: [
-    "prop:crossing-energy-decomposition",
     "rem:half-life-as-q-probe",
     "rem:mass-comparison-table",
   ],

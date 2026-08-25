@@ -1,0 +1,129 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0304010v1",
+ "source": {
+  "file": "0304010v1.pdf",
+  "sha256": "fc2296c027b3feb0ff6c894f9ab594d35b5d79e489795280ee70315235af1362",
+  "bytes": 432088,
+  "pages": 49
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0304010",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "1 Apr 2003"
+  },
+  "doi": null,
+  "title": "KEROV’S CENTRAL LIMIT THEOREM FOR THE PLANCHEREL MEASURE ON YOUNG DIAGRAMS",
+  "authors_raw": "Vladimir Ivanov and Grigori Olshanski",
+  "abstract": "Consider random Young diagrams with ﬁxed number n of boxes, dis- tributed according to the Plancherel measure Mn. That is, the weight Mn(λ ) of a diagram λ equals dim 2 λ/n !, where dim λ denotes the dimension of the irreducible representation of the symmetric group Sn indexed by λ . As n → ∞ , the boundary of the (appropriately rescaled) random shape λ concentrates near a curve Ω (Logan– Shepp 1977, Vershik–Kerov 1977). In 1993, Kerov announced a rema rkable theorem describing Gaussian ﬂuctuations around the limit shape Ω. Here we propose a re- construction of his proof. It is largely based on Kerov’s unpubli shed work notes, 1999.",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126162936-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:math/0304010v1  [math.CO]  1 Apr 2003"
+  },
+  "title_lines": [
+   "KEROV’S CENTRAL LIMIT THEOREM FOR THE",
+   "PLANCHEREL MEASURE ON YOUNG DIAGRAMS"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "References",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "(ω(x)−| x|). (2.1)",
+   "page": 9,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Thus, the degree of ⟨f⟩n does not exceed 1",
+   "page": 27,
+   "source": "inferred",
+   "number": "4.10"
+  },
+  {
+   "level": 1,
+   "title": "(¯λ(x)− Ω( x)), x ∈ R. (7.1)",
+   "page": 33,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(p2",
+   "page": 40,
+   "source": "inferred",
+   "number": "2"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 9,
+   "n_chars": 22573,
+   "n_words": 4345
+  },
+  {
+   "id": "sec-001-2-ωx-x-21",
+   "number": "2",
+   "title": "(ω(x)−| x|). (2.1)",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 27,
+   "n_chars": 32086,
+   "n_words": 7145
+  },
+  {
+   "id": "sec-002-410-thus-the-degree-of-fn-does-not-exceed-1",
+   "number": "4.10",
+   "title": "Thus, the degree of ⟨f⟩n does not exceed 1",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 33,
+   "n_chars": 12018,
+   "n_words": 2420
+  },
+  {
+   "id": "sec-003-2-λx-ω-x-x-r-71",
+   "number": "2",
+   "title": "(¯λ(x)− Ω( x)), x ∈ R. (7.1)",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 40,
+   "n_chars": 12817,
+   "n_words": 2747
+  },
+  {
+   "id": "sec-004-2-p2",
+   "number": "2",
+   "title": "(p2",
+   "level": 1,
+   "page_start": 40,
+   "page_end": 49,
+   "n_chars": 19758,
+   "n_words": 3846
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 5,
+  "sections": 5,
+  "chars_total": 99252
+ }
+}

@@ -73,6 +73,27 @@ export default conjecture({
         "above needs only the carrier's own recurrence.",
       see: "docs/audits/2026-07-20-qlift-doorV-stokes.md",
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note — the Lean file already says this, but the " +
+        "checker cannot read it.** `DoorVParityNoIdentity.lean`'s own module " +
+        "docstring states: *\"§7c: this is genuinely archimedean (sign / " +
+        "ordering of `ℝ`), so `ℝ` is the correct base ring here — not a " +
+        "gratuitous specialization.\"* The `wall-side-correct` criterion reads " +
+        "only the block `.md` and this `.ts` `authorNotes`, never the `.lean` " +
+        "docstring, so that acknowledgement never reached it. This note is " +
+        "the missing carrier.\\n\\n" +
+        "The substance stands on its own: the whole theorem is an **ordering** " +
+        "claim. `nonneg_not_signalternating (s : ℕ → ℝ) (hs : ∀ n, 0 ≤ s n)` " +
+        "concludes `¬ (s n * s (n+1) < 0)` from `mul_nonneg`; " +
+        "`posCone_nonneg` builds the non-negative cone from `add_nonneg`; and " +
+        "`doorV_parity_no_identity` derives the scope-(b) exclusion from a " +
+        "single sign flip `y m * y (m+1) < 0`. The cited invariant *is* the " +
+        "non-negativity of a real square. Delete the ordering and there is no " +
+        "statement left.",
+    },
   ],
   tags: [
     "q-difference",

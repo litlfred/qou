@@ -39,13 +39,13 @@
       "a1": "1.1099785827513808",
       "a1_prime": "-0.9009182839557415",
       "b1_sq": "0.0",
-      "conclusion": "sigma_1 is DIAGONAL on (2,1) — b_1 = 0 exactly"
+      "conclusion": "sigma_1 is DIAGONAL on (2,1) \u2014 b_1 = 0 exactly"
     },
     "sigma2_mixing": {
       "a2": "0.6126880371464652",
       "a2_prime": "-0.40362773835082594",
       "b2_sq": "0.7527021132519655",
-      "conclusion": "sigma_2 has off-diagonal binding — b_2 = sqrt([3]_q/[2]_q^2)"
+      "conclusion": "sigma_2 has off-diagonal binding \u2014 b_2 = sqrt([3]_q/[2]_q^2)"
     },
     "typed_traces": {
       "pion_u3_d3": "0.5892211018958324",
@@ -54,5 +54,8 @@
       "CODATA_ratio": "3.53713",
       "miss_factor": "3.004111536028632"
     }
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.sigma1_diagonal.a1). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

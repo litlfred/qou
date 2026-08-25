@@ -163,7 +163,7 @@ def p2_alpha_k(q: mp.mpf) -> dict:
 
     # collapsed weight (exact): tr_M(T_Δ)/z³ would be α₃·(...): the
     # derived form is tr_M(T_Δ) = z + h·z² = z(1 + q^{1/2} − q^{−1/2})
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     collapsed = 1 + mp.sqrt(q) - 1 / mp.sqrt(q)
 

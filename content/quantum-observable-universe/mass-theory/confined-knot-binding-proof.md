@@ -14,8 +14,8 @@ $$
 $$
 
 since $h_{\mathrm{A}} = q - q^{-1}$.  Therefore the weighted sum vanishes:
-$W_{\mathrm{sym}} \cdot \chi_{\mathrm{sym}}
-+ W_{\mathrm{alt}} \cdot \chi_{\mathrm{alt}}
+$W_{\mathrm{sym}} \cdot \chi_{\mathrm{sym}} +
+W_{\mathrm{alt}} \cdot \chi_{\mathrm{alt}}
 = W_{\mathrm{sym}}(\chi_{\mathrm{sym}} + \chi_{\mathrm{alt}}) = 0$.
 
 The standard-representation volume $z - h_{\mathrm{A}}/2$ follows from the

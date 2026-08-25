@@ -1,5 +1,29 @@
 # Jackson q-Borel / Écalle acceleration of the bar-odd D-ladder
 
+> **🛑 PREMISE CORRECTED 2026-08-09 — the D-ladder is CONVERGENT; there is no
+> acceleration to perform.** This document's framing (Jackson q-Borel / Écalle
+> acceleration of a *divergent* bar-odd ladder) rests on a divergence the ladder
+> does not have. `D(ũ)` is convergent with radius
+> `ρ = ũ(q*_ρ) = 0.142799996644689…`, the image of a **`Q_b` zero**
+> (`q*_ρ ≈ 1.48989`, the real root > 1 of an irreducible degree-12 factor of the
+> `Δ_net` numerator) that the 2026-07-12 singularity search omitted; `κ = 0`.
+> See [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md)
+> and registry row **KC22**. Consequently there is **no instanton action, no
+> Borel-plane singularity to locate, no Stokes constant to extract, and no
+> Écalle resummation to perform**.
+>
+> **What survives.** The K1 measurement stands as data — and is now *explained*:
+> a divergence-class estimator cannot converge on a convergent series, so
+> "the gate fails at every Borel–Leroy and Jackson setting" is the expected
+> reading of `κ = 0`, not a finite-`k` shadow. The large-order law is fixed with
+> no free parameters by the single logarithmic branch point:
+> `d_k = −(1/(2h*_ρ))·ρ^{−k}/k·(1 + O(1/k))`, `h*_ρ = q*_ρ − 1/q*_ρ = 0.818706471352`.
+>
+> **What is withdrawn.** The reading of the gate failure as a finite-`k` shadow
+> resolvable by longer ladders or by a genuine multi-level acceleration kernel,
+> and any implication that such a kernel exists to be found. Nothing here was
+> wired; no `c_k` tier changes.
+
 > **Independent replication:** a second implementation
 > ([`2026-07-17-dladder-ecalle-acceleration.md`](2026-07-17-dladder-ecalle-acceleration.md),
 > `qbeta_dladder_ecalle_acceleration_probe.py`) reproduces this document's K1

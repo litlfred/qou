@@ -46,6 +46,14 @@ from pathlib import Path
 
 import sympy as sp
 from mpmath import mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent          # computations/qbeta
 ROOT = HERE.parent                               # computations/
@@ -154,7 +162,7 @@ def ladder_cks(dnet, kc=KC, ns=NS, label=""):
     hbar = (q - 1) / q
     b = sp.sqrt(q**4 + q**2 + 1) / (q**2 + 1)
     u = b * hbar**2
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     h = q - 1 / q
     alpha_eff = (z - 1) * h / 2 - u / 2
     QA_over_me = (2 * q + 1 - q**2) * (q + 1) / (2 * q**3)
@@ -197,7 +205,7 @@ def ladder_cks(dnet, kc=KC, ns=NS, label=""):
 
 def main() -> int:
     t0 = time.monotonic()
-    mp.dps = 50
+    set_compute_dps()
     print("=" * 78)
     print(" 8we6 Route A: three 4th-strand framings, decoupling-gated (owner-authorized)")
     print("=" * 78)

@@ -1,4 +1,3 @@
-import Mathlib.Data.Real.Basic
 import QOU.Shared.MarkovTraceClaim
 
 /-!
@@ -20,10 +19,12 @@ namespace QOU.BraidsAndKnots
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
 class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where
-  /-- Character value `χ^λ_ρ` for partition `λ` and cycle type `ρ`. -/
-  chi : ℕ → ℕ → ℝ
+  /-- Character value `χ^λ_ρ` for partition `λ` and cycle type `ρ`, valued in
+      the inherited coefficient ring `R` of the parent Markov-trace context
+      (§7c: the q-character is a Laurent polynomial in `q`, not a real). -/
+  chi : ℕ → ℕ → R
   /-- Recursion result via border-strip removal. -/
-  chi_recursion : ℕ → ℕ → ℝ
+  chi_recursion : ℕ → ℕ → R
   /-- Manuscript sub-claim (i) — Cache identity: memoized lookup
       agrees with the recursive computation (the recursion is the
       authoritative answer). -/
@@ -37,11 +38,11 @@ class QmnRecursiveMemoizedContext extends QOU.Shared.MarkovTraceContext where
   claim_ii_miss_computes_via_holds : claim_ii_miss_computes_via
   /-- Cache lookup operation `cache_get λ ρ` returns `some v` on hit,
       `none` on miss. -/
-  cache_get : ℕ → ℕ → Option ℝ
+  cache_get : ℕ → ℕ → Option R
   /-- Manuscript sub-claim (iii) — Cache invariant: when the cache
       returns a value, it equals the canonical character value (the
       stored result is faithful — no mutation effect). -/
-  claim_iii_stores_result_cache : ∀ (lam ρ : ℕ) (v : ℝ),
+  claim_iii_stores_result_cache : ∀ (lam ρ : ℕ) (v : R),
     cache_get lam ρ = some v → v = chi lam ρ
 /-- **Proposition statement** (from manuscript):
 
@@ -65,7 +66,7 @@ $\rho \setminus \rho_1$ is $\rho$ with its first part removed.*
 def qmn_recursive_memoized [ctx : QmnRecursiveMemoizedContext] :
     (∀ lam ρ : ℕ, ctx.chi lam ρ = ctx.chi_recursion lam ρ) ∧
     ctx.claim_ii_miss_computes_via ∧
-    (∀ (lam ρ : ℕ) (v : ℝ), ctx.cache_get lam ρ = some v → v = ctx.chi lam ρ) :=
+    (∀ (lam ρ : ℕ) (v : ctx.R), ctx.cache_get lam ρ = some v → v = ctx.chi lam ρ) :=
   ⟨ctx.claim_i_looks_up_cache, ctx.claim_ii_miss_computes_via_holds,
    ctx.claim_iii_stores_result_cache⟩
 

@@ -1,0 +1,530 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-ph-0103325v4",
+ "source": {
+  "file": "0103325v4.pdf",
+  "sha256": "38590174ab836fa16ad0017ff8c948276206d8afd52f4c1288012ee0748bb1fb",
+  "bytes": 462003,
+  "pages": 8
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-ph/0103325",
+   "version": "4",
+   "primary_class": null,
+   "stamp_date": "16 Oct 2002"
+  },
+  "doi": null,
+  "title": "Quantum algebras in phenomenological description of particle properties",
+  "authors_raw": "Quantum and q-deformed algebras find their application not only in mathem atical physics and field theoretical",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220523171210-04'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-ph/0103325v4  16 Oct 2002"
+  },
+  "title_lines": [
+   "Quantum algebras in phenomenological description of parti cle properties",
+   "A.M. Gavrilik a ∗",
+   "aBogolyubov Institute for Theoretical Physics",
+   "03143, Kiev, Ukraine"
+  ],
+  "title_prev": "Quantum algebras in phenomenological description of parti cle properties A.M. Gavrilik a ∗ aBogolyubov Institute for Theoretical Physics, 03143, Kiev, Ukraine"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "V ector mesons: q-deformation vs mixing",
+   "page": 1,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Octet baryon mass sum rules: best can-",
+   "page": 2,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "MΞ = 2MΛ√",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "MΣ, (0. 22%) (10)",
+   "page": 3,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "The value q7 is linked [6,12] to the Cabibbo angle:",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Mass sum rules for decuplet baryons:",
+   "page": 3,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(in fact, θ10 = θC, see",
+   "page": 3,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Highly nonlinear SU (3)-breaking eﬀects",
+   "page": 4,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Using the Hopf-algebra structure",
+   "page": 4,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "E+",
+   "page": 4,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "The link: q-parameter ↔ Cabibbo angle",
+   "page": 5,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "It leads to the single dimensionless quantity fK",
+   "page": 5,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Mass relations from anyonic realization",
+   "page": 6,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Algebras of q-oscillators, q-Bose gas and",
+   "page": 6,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Outlook",
+   "page": 8,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 8,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "L.D. Faddeev, N. Reshetikhin and L. Takhta-",
+   "page": 8,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "A.M. Gavrilik, in ”Symmetries in Science",
+   "page": 8,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A.M. Gavrilik, in ”Non-Euclidean Geometry",
+   "page": 8,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "M. Gell-Mann and Y. Ne’eman, The Eightfold",
+   "page": 8,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "A.M. Gavrilik, in “Noncommutative Struc-",
+   "page": 8,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "A.M. Gavrilik, I.I. Kachurik, and A.V. Terty-",
+   "page": 8,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "S. Okubo, in ”Symmetries and quark models”",
+   "page": 8,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "A.P. Isaev and Z. Popowicz, Phys. Lett. B",
+   "page": 8,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "A. Lerda and S. Sciuto, Nucl. Phys. B 401",
+   "page": 8,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "D.V. Anchishkin, A.M. Gavrilik and N.Z Ior-",
+   "page": 8,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "D.V. Anchishkin, A.M. Gavrilik and N.Z Ior-",
+   "page": 8,
+   "source": "inferred",
+   "number": "27"
+  },
+  {
+   "level": 1,
+   "title": "F. Laue, ”Two-particle interferometry at",
+   "page": 8,
+   "source": "inferred",
+   "number": "28"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 1420,
+   "n_words": 225
+  },
+  {
+   "id": "sec-001-2-v-ector-mesons-q-deformation-vs-mixing",
+   "number": "2",
+   "title": "V ector mesons: q-deformation vs mixing",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4689,
+   "n_words": 928
+  },
+  {
+   "id": "sec-002-3-octet-baryon-mass-sum-rules-best-can",
+   "number": "3",
+   "title": "Octet baryon mass sum rules: best can-",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 492,
+   "n_words": 98
+  },
+  {
+   "id": "sec-003-2-mξ-2mλ",
+   "number": "2",
+   "title": "MΞ = 2MΛ√",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 10,
+   "n_words": 5
+  },
+  {
+   "id": "sec-004-6-mς-0-22-10",
+   "number": "6",
+   "title": "MΣ, (0. 22%) (10)",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1344,
+   "n_words": 255
+  },
+  {
+   "id": "sec-005-2-the-value-q7-is-linked-612-to-the-cabibbo-angl",
+   "number": "2",
+   "title": "The value q7 is linked [6,12] to the Cabibbo angle:",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 652,
+   "n_words": 141
+  },
+  {
+   "id": "sec-006-4-mass-sum-rules-for-decuplet-baryons",
+   "number": "4",
+   "title": "Mass sum rules for decuplet baryons:",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1025,
+   "n_words": 193
+  },
+  {
+   "id": "sec-007-14-in-fact-θ10-θc-see",
+   "number": "14",
+   "title": "(in fact, θ10 = θC, see",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 621,
+   "n_words": 122
+  },
+  {
+   "id": "sec-008-5-highly-nonlinear-su-3-breaking-eﬀects",
+   "number": "5",
+   "title": "Highly nonlinear SU (3)-breaking eﬀects",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 1595,
+   "n_words": 269
+  },
+  {
+   "id": "sec-009-6-using-the-hopf-algebra-structure",
+   "number": "6",
+   "title": "Using the Hopf-algebra structure",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 700,
+   "n_words": 127
+  },
+  {
+   "id": "sec-010-3-e",
+   "number": "3",
+   "title": "E+",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1105,
+   "n_words": 245
+  },
+  {
+   "id": "sec-011-7-the-link-q-parameter-cabibbo-angle",
+   "number": "7",
+   "title": "The link: q-parameter ↔ Cabibbo angle",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1287,
+   "n_words": 277
+  },
+  {
+   "id": "sec-012-3-it-leads-to-the-single-dimensionless-quantity",
+   "number": "3",
+   "title": "It leads to the single dimensionless quantity fK",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2491,
+   "n_words": 437
+  },
+  {
+   "id": "sec-013-8-mass-relations-from-anyonic-realization",
+   "number": "8",
+   "title": "Mass relations from anyonic realization",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 2723,
+   "n_words": 494
+  },
+  {
+   "id": "sec-014-9-algebras-of-q-oscillators-q-bose-gas-and",
+   "number": "9",
+   "title": "Algebras of q-oscillators, q-Bose gas and",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 4286,
+   "n_words": 812
+  },
+  {
+   "id": "sec-015-10-outlook",
+   "number": "10",
+   "title": "Outlook",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 1068,
+   "n_words": 168
+  },
+  {
+   "id": "sec-016-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 89,
+   "n_words": 17
+  },
+  {
+   "id": "sec-017-2-ld-faddeev-n-reshetikhin-and-l-takhta",
+   "number": "2",
+   "title": "L.D. Faddeev, N. Reshetikhin and L. Takhta-",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 196,
+   "n_words": 34
+  },
+  {
+   "id": "sec-018-5-am-gavrilik-in-symmetries-in-science",
+   "number": "5",
+   "title": "A.M. Gavrilik, in ”Symmetries in Science",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 165,
+   "n_words": 24
+  },
+  {
+   "id": "sec-019-6-am-gavrilik-in-non-euclidean-geometry",
+   "number": "6",
+   "title": "A.M. Gavrilik, in ”Non-Euclidean Geometry",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 74,
+   "n_words": 11
+  },
+  {
+   "id": "sec-020-7-m-gell-mann-and-y-neeman-the-eightfold",
+   "number": "7",
+   "title": "M. Gell-Mann and Y. Ne’eman, The Eightfold",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 325,
+   "n_words": 62
+  },
+  {
+   "id": "sec-021-12-am-gavrilik-in-noncommutative-struc",
+   "number": "12",
+   "title": "A.M. Gavrilik, in “Noncommutative Struc-",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 363,
+   "n_words": 64
+  },
+  {
+   "id": "sec-022-16-am-gavrilik-ii-kachurik-and-av-terty",
+   "number": "16",
+   "title": "A.M. Gavrilik, I.I. Kachurik, and A.V. Terty-",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 102,
+   "n_words": 20
+  },
+  {
+   "id": "sec-023-18-s-okubo-in-symmetries-and-quark-models",
+   "number": "18",
+   "title": "S. Okubo, in ”Symmetries and quark models”",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 109,
+   "n_words": 19
+  },
+  {
+   "id": "sec-024-20-ap-isaev-and-z-popowicz-phys-lett-b",
+   "number": "20",
+   "title": "A.P. Isaev and Z. Popowicz, Phys. Lett. B",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 75,
+   "n_words": 13
+  },
+  {
+   "id": "sec-025-22-a-lerda-and-s-sciuto-nucl-phys-b-401",
+   "number": "22",
+   "title": "A. Lerda and S. Sciuto, Nucl. Phys. B 401",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 422,
+   "n_words": 80
+  },
+  {
+   "id": "sec-026-26-dv-anchishkin-am-gavrilik-and-nz-ior",
+   "number": "26",
+   "title": "D.V. Anchishkin, A.M. Gavrilik and N.Z Ior-",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 165,
+   "n_words": 27
+  },
+  {
+   "id": "sec-027-28-f-laue-two-particle-interferometry-at",
+   "number": "28",
+   "title": "F. Laue, ”Two-particle interferometry at",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 67,
+   "n_words": 12
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 29,
+  "sections": 28,
+  "chars_total": 27660
+ }
+}

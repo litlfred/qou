@@ -167,12 +167,20 @@ empirically-supported specific scale.  The empirical witness
 (`staircase-ew-residual-conjecture.witness.json`) verifies this
 specific scale at k=3 (rel.err 0.13 %) and k=4 (rel.err 0.14 %)
 at `q = q_0 ≈ 1.110`. -/
-/-- **External axiom**: the abstract canonical scale function
-`q^(1/(2k-1))` — meaningful in any ring `R` admitting a `(2k-1)`-th
-root structure.  Specialise to `Real.rpow q (1 / (2k-1))` over `R = ℝ`. -/
+/-- The abstract canonical scale function `q^(1/(2k-1))` — meaningful in any
+ring `R` admitting a `(2k-1)`-th root structure.  Specialise to
+`Real.rpow q (1 / (2k-1))` over `R = ℝ`.
+
+`opaque`, not `axiom`, and no longer called "…Axiom": this **names a constant
+with an unspecified value; it asserts nothing**. An `axiom` producing *data*
+still lands in `#print axioms` for every downstream result, which buries the
+axioms that are genuine assumptions among ones that are merely unspecified
+constants — and the `Axiom` suffix invited reading it as a claim about the
+scale, which it never was. The value is `0`; it is hidden behind `opaque`, so
+nothing downstream can unfold it and no consumer gains a fact from it. -/
 -- Ref: [manuscript] docs/audits/2026-05-06-staircase-ew-residual-conjecture.md
-axiom canonicalScaleAxiom {R : Type*} [CommRing R] [Inv R]
-    (q : R) (k : ℕ) : R
+opaque canonicalScaleAxiom {R : Type*} [CommRing R] [Inv R]
+    (_q : R) (_k : ℕ) : R := 0
 
 /-- The canonical scale `q^(1/(2k-1))` on the base ring, realised via the
 external `canonicalScaleAxiom`. -/

@@ -6,8 +6,8 @@
   "auditOnly": true,
   "computation": {
     "script": "computations/alpha_em/alpha_em_channel_swap_involution_probe.py",
-    "scriptCommitSha": "6e5ee05b13d6b5b737bccd75ba9b9a7aaea443e2",
-    "scriptHash": "d2b7f96b7443"
+    "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+    "scriptHash": "c30150314239"
   },
   "controls": [
     {
@@ -67,12 +67,14 @@
   "verdict": "Unification hypothesis for the '2' CORRECTED (scope-(a), exact \u211a(q) algebra) \u2014 the wall is NOT closed. The sibling conjecture-statement audit named 'the bar involution q\u21a6q\u207b\u00b9 swaps e\u208a/e\u208b as conjugation swaps H^{1,0}/H^{0,1}'. Machine-checked result: the Hecke bar involution (q\u21a6q\u207b\u00b9, \u03c3\u21a6\u03c3\u207b\u00b9) FIXES each idempotent \u2014 bar(e\u208a)=e\u208a, bar(e\u208b)=e\u208b \u2014 it does NOT swap them, so the literal hypothesis is REFUTED. The involution that DOES swap e\u208a\u2194e\u208b is the eigenvalue-exchange q\u21a6\u2212q\u207b\u00b9; it also sends [2]_q\u21a6\u2212[2]_q, so the same operation carries the derivability map's separate underived global '\u2212' alternation. CORRECTED bridge: a \u03c4-functor unifying the Hodge 2 (conjugation on H^{1,0}\u2295H^{0,1}, #3920) with the Hecke 2 (e\u208a\u2194e\u208b) must map complex conjugation to q\u21a6\u2212q\u207b\u00b9, NOT the bar involution. Since q\u21a6\u2212q\u207b\u00b9 sends real q\u2080\u22481.11 to \u2248\u22120.90 (real-negative, not a conjugation of a real), the identification is FIBRE-level (complex/formal q, Im q unconstrained per the AGENTS.md banner); at observable q\u2080 it is not conjugation. This sharpens WHICH involution the correspondence must implement; it does NOT derive it. No CODATA read; no fit; no \u03b1_k wired; 1/(8\u03c0) stays a phase-4 identification.",
   "scope": "(a) scope-limited \u2014 refutes the literal bar-swap; identifies q\u21a6\u2212q\u207b\u00b9 as the channel-swap; unification stays open (fibre-level)",
   "antiLaundering": "exact \u211a(q) algebra, machine-checked; no CODATA read; no convention tuned to 8\u03c0; correspondence stated open",
-  "scriptHash": "d2b7f96b7443",
-  "scriptCommitSha": "6e5ee05b13d6b5b737bccd75ba9b9a7aaea443e2",
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "scriptHash": "c30150314239",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "engine": "sympy",
-  "computedAt": "2026-07-18T17:41:49.163467+00:00",
+  "computedAt": "2026-08-23T08:49:03.538863+00:00",
   "durationMs": 0,
   "engineVersion": "sympy 1.14.0",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "alpha_em_channel_swap_involution_probe.py"
 }

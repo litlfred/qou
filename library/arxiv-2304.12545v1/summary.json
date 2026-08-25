@@ -1,0 +1,56 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2304.12545v1",
+ "source_sha256": "bfc3c2be395b1b2d",
+ "brief": "Garoufalidis & Zagier, Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann — survey of gluing equations, volumes, the extended Bloch group, symplectic properties and quantization.",
+ "extended": "**Hyperbolic 3-manifolds, the Bloch group, and the work of Walter Neumann** — Stavros Garoufalidis and Don Zagier.\n\nA survey of Neumann's contributions, organised as: ideal triangulations and the gluing equations; volumes and Dehn surgeries; the Bloch group and the extended Bloch group; symplectic properties; quantization; connections to number theory.\n\n**Why it may bear here.** Every one of those six headings names machinery this corpus uses — gluing equations, hyperbolic volume, the (extended) Bloch group, and the quantization step. As a survey it is the orientation text rather than a source of results.\n\n**Duplicate.** `library/hyperbolicandneumann/` is a second copy of this same document, byte-different but identical in content.",
+ "tokens": {
+  "brief": 49,
+  "extended": 185
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-ideal-triangulations-and-the-gluing-equations",
+   "title": "Ideal triangulations and the gluing equations",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-2-volumes-and-dehn-surgeries",
+   "title": "Volumes and Dehn surgeries",
+   "pages": "3-7"
+  },
+  {
+   "id": "sec-002-3-the-bloch-group-and-the-extended-bloch-group",
+   "title": "The Bloch group and the extended Bloch group",
+   "pages": "7-9"
+  },
+  {
+   "id": "sec-003-4-symplectic-properties",
+   "title": "Symplectic properties",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-5-quantization",
+   "title": "Quantization",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-005-6-connections-to-number-theory",
+   "title": "Connections to number theory",
+   "pages": "12-17"
+  },
+  {
+   "id": "sec-006-references",
+   "title": "References",
+   "pages": "17-19"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

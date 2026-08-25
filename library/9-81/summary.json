@@ -1,0 +1,46 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "9-81",
+ "source_sha256": "12a83d647032306e",
+ "brief": "Kamei, Singular Euclidean structures on a simplicial complex with weighted edges (2003) — extends Rivin's geometric structures on a 2-simplicial complex to weighted-edge assignments.",
+ "extended": "**Singular Euclidean Structures on a Simplicial Complex with Weighted Edges** — Satoshi Kamei, Graduate School of Mathematical Sciences, University of Tokyo. Received July 2002, final version January 2003.\n\nConsiders geometric structures on a simplicial complex. Rivin treated geometric structures on a 2-simplicial complex homeomorphic to an orientable surface when values are assigned to the edges; this extends that setting.\n\n**Why it may bear here.** Companion to the Rivin variational material also held (`arxiv-math-9907032v1`, combinatorial optimization in geometry). Weighted-edge singular Euclidean structures are the same family of objects.",
+ "tokens": {
+  "brief": 45,
+  "extended": 162
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-locally-euclidean-structures",
+   "title": "Locally Euclidean Structures",
+   "pages": "2-5"
+  },
+  {
+   "id": "sec-002-3-singular-euclidean-structures",
+   "title": "Singular Euclidean Structures",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-4-three-dimensional-simplicial-complexes",
+   "title": "Three Dimensional Simplicial Complexes",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-references",
+   "title": "References",
+   "pages": "7-7"
+  }
+ ],
+ "provenance": {
+  "kind": "agent",
+  "from": [
+   "title-page",
+   "opening-text"
+  ],
+  "note": "Written after reading the document. Preserved across regeneration. Any \"why it may bear here\" paragraph is a prior for attention, not a corpus claim — no result is asserted to be in use."
+ }
+}

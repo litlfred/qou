@@ -1,0 +1,118 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_representative_obstruction_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_representative_obstruction_probe.py",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+ "beans": [
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ arXiv:2412.04241v2 Example 4.3 eqn (270); the merged m|24 sweep + alpha-order results (PR #4968, #4983)",
+ "checks": {
+  "f25_is_a_field": true,
+  "f25_has_generators": true,
+  "dlog_table_complete": true,
+  "cubic_splits_as_gswz_says": true,
+  "alpha_residue_generates_f25": true,
+  "alpha_line_identities_mod5": true,
+  "Q_independent_of_generator": true,
+  "units_mod24_are_involutions": true,
+  "sweep_witness_green": true,
+  "closed_form_reproduces_all_measured_shifts": true,
+  "Q_reproduces_merged_lattice_verdicts": true,
+  "only_m2_divides_Q": true,
+  "five_term_never_odd": true,
+  "five_term_hits_every_even_value": true,
+  "reflection_relation_even": true,
+  "inversion_closed_form_exact": true,
+  "inversion_odd_exactly_when_dlog_odd": true,
+  "minus_one_has_dlog_12": true,
+  "Q_mod24_not_invariant_under_five_term": true,
+  "Q_mod2_invariant_under_five_term": true,
+  "required_shift_is_even": true,
+  "required_shift_is_realizable": true,
+  "cleared_representative_has_Q_zero": true,
+  "cleared_representative_integral_at_every_m": true,
+  "seeds_have_K_rational_lifts": true,
+  "lifts_reproduce_seed_residues": true,
+  "every_residue_has_a_K_rational_lift": true
+ },
+ "result": {
+  "Q_xi": 10,
+  "gcd_Q_24": 2,
+  "e_z1": 9,
+  "e_z2": 2,
+  "closed_form_per_m": {
+   "2": true,
+   "3": true,
+   "4": true,
+   "6": true,
+   "8": true,
+   "12": true,
+   "24": true
+  },
+  "lattice_agreement_per_m": {
+   "2": true,
+   "3": true,
+   "4": true,
+   "6": true,
+   "8": true,
+   "12": true,
+   "24": true
+  },
+  "five_term_instances": 506,
+  "five_term_Q_values": [
+   0,
+   2,
+   4,
+   6,
+   8,
+   10,
+   12,
+   14,
+   16,
+   18,
+   20,
+   22
+  ],
+  "reflection_Q_values": [
+   0,
+   6,
+   10,
+   12,
+   16,
+   20
+  ],
+  "inversion_Q_values": [
+   0,
+   4,
+   12,
+   13,
+   16,
+   21
+  ],
+  "inversion_odd_case_count": 12,
+  "required_shift": 14,
+  "explicit_witness": {
+   "five_term_seeds_residues": {
+    "x": [
+     0,
+     2
+    ],
+    "y": [
+     0,
+     2
+    ]
+   },
+   "K_rational_lifts": {
+    "x": "1 + 2*alpha",
+    "y": "1 + 2*alpha"
+   },
+   "shift_Q": 14,
+   "representative_size": "7 symbols (2 + 5)",
+   "Q_of_cleared_representative": 0
+  }
+ },
+ "scope": "The eps_m canonical-cocycle obstruction is the quadratic form Q(sum n_j[w_j]) = sum n_j e(w_j) e(1-w_j) mod 24 on residue-field Teichmuller dlogs; the closed form r(w) = e(w) mod m is VALIDATED against every measured shift in the merged p-adic sweep. Q mod 2 is a Bloch-class invariant (five-term, reflection and inversion relations are all even, swept exhaustively over F_25) but Q mod 24 is NOT -- relations realize every even shift. Since Q(xi) = 10 is even, a representative with Q = 0 exists and is exhibited explicitly with K-rational lifts, giving an integral canonical cocycle SIMULTANEOUSLY at every m | 24. This CONFIRMS the merged scope-(b) alpha exclusion was correctly scoped to one representative and is not a barrier to eps_m. Extracting the eps_m VALUES at m >= 3 needs the p-adic descent re-run on the 7-symbol representative -- the next increment, not done here."
+}

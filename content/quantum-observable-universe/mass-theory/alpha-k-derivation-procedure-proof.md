@@ -65,7 +65,7 @@ the formal derivation.  Each table records:*
 
 - *partition $\lambda \vdash n$ and curvature-rank
   $\mathrm{depth}(\lambda)$;*
-- *Jones–Markov weight $y_\lambda$ (numeric at $q_0 = 1.109978595554181\ldots$ (50 dps));*
+- *Jones–Markov weight $y_\lambda$ (numeric at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps));*
 - *linear-system condition number and residual.*
 
 *Output sums consistent with Plancherel-completeness

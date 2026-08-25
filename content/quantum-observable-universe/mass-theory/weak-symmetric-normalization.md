@@ -10,4 +10,4 @@ $$
 
 The non-degenerate trace uniformizes across the 1-dimensional sym/alt blocks. The resulting expression is a closed-form rational with no free parameters. 
 
-However, the direct cell-content trace now supersedes this Plancherel-weighted formulation. We strictly isolate the structural input to the bar-self-dual cell trace itself, bypassing Plancherel weights entirely.
+However, the direct cell-content trace now supersedes this Plancherel-weighted formulation. The structural input is isolated to the bar-self-dual cell trace itself, bypassing Plancherel weights.

@@ -137,7 +137,7 @@ def main():
     phi_q_V2 = phi_q(V2, q_inv)
     phi_q_V12 = phi_q(V1 * V2, q_inv)
     T2_phi_q_unreg = phi_q_V1 + phi_q_V2
-    z_mark = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z_mark = q**3 / (q**2 + 1)
     T3_phi_q_unreg = z_mark ** 2 * phi_q_V12
 
     # T2/T3 via bar-pair zeta-regularized Archimedean realization

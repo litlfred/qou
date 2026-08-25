@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2211.13362v2",
+ "source_sha256": "3becbeaa1135d2e1",
+ "brief": "Double-slit experiment revisited — The double-slit experiment is one of the quintessential quantum experiments.",
+ "extended": "**Double-slit experiment revisited**\n\n*Siddhant Das*, Dirk-André Deckert*, Leopold Kellers*, Simon Krekels†,‡, and Ward*\n\n15 pp, 8 sections.\n\n**Abstract.** The double-slit experiment is one of the quintessential quantum experiments. However, it tends to be overlooked that a theoretical account of this experiment requires the specification of the joint position and time distribution of detection at the screen, whose position marginal yields the famous interference pattern. The difficulty then arises what this distribution should be. While there exists a variety of proposals for a quantum mechanical time observable, there is no consensus about the right choice. Here, we consider Bohmian mechanics, which allows for a natural and practical approach to this problem. We simulate this distribution in the case of an initial Gaussian wave packet passing through a double-slit potential. We also consider a more challenging setup in which one of the slits is shut during flight.\n\n**Outline.** Introduction; Bohmian account of the DSE; Trajectories for the DSE; First-passage distribution; Dynamic DSE; Numerical DSE; Comparison to the KPM experiment; Concluding remarks",
+ "tokens": {
+  "brief": 27,
+  "extended": 292
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-bohmian-account-of-the-dse",
+   "title": "Bohmian account of the DSE",
+   "pages": "3-3"
+  },
+  {
+   "id": "sec-002-trajectories-for-the-dse",
+   "title": "Trajectories for the DSE",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-003-first-passage-distribution",
+   "title": "First-passage distribution",
+   "pages": "5-5"
+  },
+  {
+   "id": "sec-004-dynamic-dse",
+   "title": "Dynamic DSE",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-numerical-dse",
+   "title": "Numerical DSE",
+   "pages": "6-9"
+  },
+  {
+   "id": "sec-006-comparison-to-the-kpm-experiment",
+   "title": "Comparison to the KPM experiment",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-007-concluding-remarks",
+   "title": "Concluding remarks",
+   "pages": "11-15"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

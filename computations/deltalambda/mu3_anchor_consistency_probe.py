@@ -68,14 +68,23 @@ import pyhecke_native  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
+sys.path.insert(0, str(Path(__file__).resolve().parents[2]
+                       / "tools" / "qou-substrate" / "python"))
+from qou_substrate.witness import _q0_value_for_anchor  # noqa: E402
+
 set_compute_dps(40)
 Q_PROTON = mp.mpf(str(Q0))
-Q_MUON = mp.mpf("1.10997859555733471989976322048322502665620840878015405145269")
+# READ the muon anchor; do not retype it. The proton leg already reads
+# (`q_parameter.Q_MP`) while this one was a 61-character literal that tracked
+# the anchor for 51 digits and then diverged — `…878015405145269` against the
+# anchor's `…878015368660798114`. A probe whose subject IS a crossed
+# calibration layer cannot afford a muon leg that no re-pin can reach.
+Q_MUON = mp.mpf(_q0_value_for_anchor("muon"))
 
 
 def chis(word, qf):

@@ -23,17 +23,29 @@ Usage:
     M_pred, details = compute_mass_at_level(Z, N, k=6)
 """
 
+
+# Path bridge (subdirectory refactor — Phase 4, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+del _sys, _Path
+
 import math
 import numpy as np
 import sys
 from pathlib import Path
+from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from q_parameter import Q, Q_INV, HA, q_int
+from q_parameter import Q, Q_INV, HA, q_int, Q_50_DIGIT_STR
 from experimental_constants import M_E_MEV, M_P_MEV, M_N_MEV
 
 q0 = Q; qi0 = Q_INV; h = HA; me = M_E_MEV
-z = 1.0 / (q0**0.5 + qi0**0.5)
+z = q0**3 / (q0**2 + 1)
 
 # E_0 calibration: free-neutron β-decay Q-value (MeV), per
 # prop:categorical-mass-markov / hecke_core.E_0_CALIBRATION_MEV.
@@ -42,6 +54,7 @@ z = 1.0 / (q0**0.5 + qi0**0.5)
 # convention (hyperbolic-volume heuristic) is removed — it was
 # not derivable from the mass-identity prescription.
 from experimental_constants import Q_NEUTRON_MEV  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 E_0_BETA_DECAY_Q_MEV = Q_NEUTRON_MEV  # CODATA: 0.78233341 ± 6.1e-7 MeV
 
 
@@ -158,6 +171,11 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
 
     sigmas = []
 
+    # O(1) swap-partner lookup (the former linear scan made construction
+    # O(n·dim²) — the wall at dim ≳ 2·10⁴, e.g. n = 15 blocks). Depends only
+    # on `syts`, so build it once outside the per-generator loop.
+    syt_index = {tuple(sorted(t.items())): idx for idx, t in enumerate(syts)}
+
     for k in range(1, n):  # generator σ_k swaps entries k and k+1
         rows, cols, vals = [], [], []
         processed = set()
@@ -180,13 +198,9 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
             swap_map[k + 1] = ci_k
 
             # Check if swap gives valid SYT
-            j = None
-            for jj in range(dim):
-                if jj == i:
-                    continue
-                if syts[jj] == swap_map:
-                    j = jj
-                    break
+            j = syt_index.get(tuple(sorted(swap_map.items())))
+            if j == i:
+                j = None
 
             if j is None:
                 # 1×1 block: eigenvalue is q (same row) or -q⁻¹ (same col)
@@ -197,7 +211,7 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
                 a_prime = h_local / (1.0 - q_local**(2 * rho))  # = a_{-ρ}
                 # b² = a·a' + 1 (from det = -1)
                 b_sq = a * a_prime + 1.0
-                b = math.sqrt(abs(b_sq))
+                b = float(mp.sqrt(abs(b_sq)))
 
                 rows.extend([i, j, i, j])
                 cols.extend([i, j, j, i])
@@ -350,18 +364,19 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
         return (value, PRECISION_F64_FALLBACK) if return_precision else value
 
     # Python fallback: build seminormal matrices and multiply.
-    # `build_seminormal_matrices` is calibrated against the global
-    # substrate parameter `q0`/`h`, so the fallback is *only* valid at
-    # `q_value == q0`.  Reject non-default q_value here rather than
-    # silently returning an inconsistent character (Copilot review
-    # #r3142936624).
-    if not math.isclose(float(q_value), float(q0), rel_tol=0.0, abs_tol=0.0):
-        raise ValueError(
-            "chi_lambda_braid() Python fallback only supports "
-            "q_value == q0; install the Rust kernel (pyhecke_native) "
-            "for non-default q_value."
-        )
-    sigmas, dim, _ = build_seminormal_matrices(tuple(shape))
+    # `build_seminormal_matrices` accepts a `q=` override (resolves
+    # `q_local = q_value if q is not None else q0`); pass the caller's
+    # q_value through so the fallback supports arbitrary q (cross-anchor
+    # q-stability probes, q-rational reconstruction per
+    # prop:alpha-k-derivation-procedure §"CRT-style q-rational
+    # reconstruction").
+    #
+    # Normalize q_value to float ONCE here, and use q_f consistently in
+    # both the q= override AND the h_local computation below — so
+    # callers passing mpmath / str / numeric types don't break NumPy
+    # dtype handling further down (per Copilot review on PR #1861).
+    q_f = float(q_value)
+    sigmas, dim, _ = build_seminormal_matrices(tuple(shape), q=q_f)
     if dim == 0:
         return 0.0
     from scipy import sparse as sp_sparse
@@ -372,7 +387,7 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
     else:
         product = np.eye(dim)
         I = np.eye(dim)
-    h_local = q_value - 1.0 / q_value
+    h_local = q_f - 1.0 / q_f
     for sign, gen in word_marshalled:
         idx = gen - 1
         if idx < 0 or idx >= len(sigmas):
@@ -387,6 +402,112 @@ def chi_lambda_braid(shape, word, q_value=None, precision=None,
     return float(np.trace(product))
 
 
+def chi_lambda_braid_mpf(shape, signed_word, q_value=None, dps=None):
+    """Full-precision χ_λ(β) as an ``mpmath.mpf`` via the mpfr Rust kernel.
+
+    Single chokepoint for the ``mpf → decimal-string → mpfr → mpf``
+    marshalling so the HOMFLY Ocneanu engine
+    (``homfly_ocneanu_trace._chi``) and the 1ppb cross-check χ-anchor
+    (``cross_check_trM_1ppb``) do not each re-implement the precision-tag
+    and guard-digit pattern.
+
+    Args:
+        shape: partition ``λ ⊢ n`` (tuple/list of descending parts).
+        signed_word: braid word as a flat list of **signed** 1-based
+            generators (e.g. ``[1, -2, 1]``); marshalled to
+            ``chi_lambda_braid``'s ``(sign, generator)`` form internally.
+        q_value: Hecke parameter — ``mpf`` / ``float`` / ``str`` /
+            ``None`` (→ substrate ``q₀`` as the canonical 50-digit string
+            ``Q_50_DIGIT_STR``). A string is passed through verbatim (full
+            precision); an ``mpf`` is rendered to ``dps + 5`` guard digits.
+            **Avoid passing a Python ``float``** for the substrate value:
+            the module-level ``q0`` is a float64, so ``q0`` and
+            ``float(q0)`` only carry ~16 digits and would cap the mpfr
+            path — pass ``Q_50_DIGIT_STR`` (or an ``mpf`` built from it).
+        dps: target precision; default ``max(50, current mpmath dps)``.
+
+    Returns an ``mpmath.mpf``. Note ``mp.mpf`` *rounds* the kernel's
+    decimal string to the current working precision — it is deterministic
+    at ``dps``, not an exact real. The string/precision-tag construction
+    is O(dps) and negligible beside the kernel's matrix evaluation, so it
+    is recomputed per call rather than cached.
+    """
+    if dps is None:
+        dps = max(50, mp.dps)
+    if q_value is None:
+        # Default to the canonical high-precision substrate string, NOT the
+        # module-level float64 `q0` (which would silently cap the mpfr path).
+        q_value = Q_50_DIGIT_STR
+    q_str = (q_value if isinstance(q_value, str)
+             else mp.nstr(mp.mpf(q_value), dps + 5, strip_zeros=False))
+    hc = [(1, g) if g > 0 else (-1, -g) for g in signed_word]
+    return mp.mpf(chi_lambda_braid(list(shape), hc,
+                                   q_value=q_str, precision=f"mpfr_{dps}dps"))
+
+
+def chi_lambdas_braid(shapes, word, q_value=None, precision=None):
+    """**Batch variant of `chi_lambda_braid`** — single PyO3 crossing for
+    a list of partitions, all evaluated on the same braid word at the
+    same parameter `q`.
+
+    Args mirror `chi_lambda_braid` but take a *list* of `shapes` and
+    return a list of characters in the same order.
+
+    Backed by `pyhecke_native.chi_lambdas_braid` (f64) or
+    `chi_lambdas_braid_mpfr` (MPFR-50dps).  Both are rayon-parallel
+    over partitions on the Rust side — substantially faster than
+    Python-level `for shape in shapes: chi_lambda_braid(...)` because
+    it (a) saves N-1 PyO3 boundary crossings, (b) shares the
+    word-marshalling work, and (c) gets work-stealing parallelism.
+
+    Tier 1 of the `ffi-roundtrip-audit` skill catalogues 5 sites
+    where this batch form replaces the per-shape loop (F-A pattern);
+    see `.claude/skills/local/ffi-roundtrip-audit.md`.
+    """
+    if q_value is None:
+        q_value = float(q0)
+    tag, dps = _parse_precision(precision)
+
+    word_marshalled = [
+        (1 if (s == '+' or s == 1 or s is True) else -1, int(g))
+        for s, g in word
+    ]
+
+    if tag == PRECISION_SYMBOLIC_Q:
+        raise NotImplementedError(
+            "symbolic-in-q character evaluation is deferred to F3."
+        )
+
+    shapes_list = [list(s) for s in shapes]
+
+    if tag.startswith("mpfr_"):
+        if not _RUST_CHI_AVAILABLE:
+            raise NotImplementedError(
+                f"precision={tag} requires the Rust kernel "
+                "(pyhecke_native).  Install via `maturin build` in "
+                "tools/pyhecke-native/."
+            )
+        if isinstance(q_value, str):
+            q_str = q_value
+        else:
+            q_str = format(float(q_value), f".{(dps or 50) + 5}g")
+        return _pyn.chi_lambdas_braid_mpfr(
+            shapes_list, word_marshalled, q_str, dps or 50
+        )
+
+    # f64 path.
+    if _RUST_CHI_AVAILABLE:
+        return _pyn.chi_lambdas_braid(
+            shapes_list, word_marshalled, float(q_value)
+        )
+
+    # Python fallback (slow): loop the singular path.
+    return [
+        chi_lambda_braid(s, word, q_value=q_value, precision=precision)
+        for s in shapes_list
+    ]
+
+
 def crossing_coeffs(ti, tj):
     """Crossing (c, d) for nucleon types: 1=proton, 0=neutron."""
     if ti == 1 and tj == 1:
@@ -398,7 +519,23 @@ def crossing_coeffs(ti, tj):
 
 
 def nuclear_braid_character(Z, N, sigmas, dim, n_gens):
-    """Compute χ_λ(nuclear braid) for a partition with given sigmas.
+    """Compute χ_λ(INTER-nucleon braid) for a partition with given sigmas.
+
+    **IMPORTANT**: This function computes only the INTER-nucleon
+    crossings (pairs of nucleons crossing each other). For A=1
+    (single nucleon), there are no inter-nucleon crossings, so this
+    returns dim(V_λ) — the trace of the identity matrix.
+
+    The INTRA-nucleon crossings (quark-level structure within a
+    single nucleon, including averaged crossings I = σ − (h/2)·1
+    that encode quark flavour) are computed by the PIPELINE path:
+      atom_braid_word_3A → canonical_braid_crossings →
+      light_isotope_sweep.tr_M_at_q0
+
+    For the FULL character (intra + inter), use the pipeline path.
+    This function is a building block for A ≥ 2 computations where
+    the inter-nucleon crossings are multiplied AFTER the
+    intra-nucleon ones.
 
     The nuclear braid for A nucleons has crossings between all pairs.
     Each crossing at generator g with coefficients (c, d) gives
@@ -453,8 +590,35 @@ def nuclear_braid_character(Z, N, sigmas, dim, n_gens):
 # §4  MASS AT LEVEL k
 # ══════════════════════════════════════════════════════════════
 
-def qfac(n):
-    return math.prod(q_int(k) for k in range(1, n + 1))
+def _q_int_at(k, q):
+    """`[k]_q = (q^k - q^-k)/(q - q^-1)` at an EXPLICIT q.
+
+    The module-level `q_int` closes over `q_parameter.Q` — the SHIM's Q, which
+    the shim rebinds to muon when the running process's argv stem is listed in
+    `q0_anchor_manifest.json::ideal_muon`. So every q-integer here is a function
+    of the ENTRY POINT unless the caller names its q (bean qou-wee5).
+    """
+    # Association order MIRRORS the module-level `q_int`, which is
+    # `(Q**n - Q_INV**n) / HA` over PRECOMPUTED reciprocal and h. Computing
+    # `q**(-k)` and `q - 1/q` inline instead is the same mathematics but a
+    # different float64 rounding path: measured, it moved `binding_3A` by
+    # 1.7e-16 to 3.2e-16 relative — 1 to 1.5 ULP. That is the floor of the
+    # arithmetic and not a semantic change, but a witness diff cannot tell the
+    # difference, so threading a q would have shown up as "fields moved" across
+    # the whole migration. Binding the reciprocal once makes the explicit path
+    # bit-identical to the default when `q` IS the module q. Bean qou-6p3b.
+    qi = 1 / q
+    h = q - qi
+    return (q ** k - qi ** k) / h
+
+
+def qfac(n, q=None):
+    """`[n]_q!`. `q=None` keeps the historical module-level q — see the note on
+    `_q_int_at` for why that tracks the entry point, and pass `q` explicitly if
+    your result must not."""
+    if q is None:
+        return math.prod(q_int(k) for k in range(1, n + 1))
+    return math.prod(_q_int_at(k, q) for k in range(1, n + 1))
 
 
 def young_hooks(shape):
@@ -469,9 +633,28 @@ def young_hooks(shape):
     return hooks
 
 
-def dim_q(shape):
+def dim_q(shape, q=None):
+    """`d_q(λ)` by the q-hook-length formula. `q=None` keeps the historical
+    module-level q; pass `q` explicitly to pin the anchor (bean qou-wee5)."""
     n = sum(shape)
-    return qfac(n) / math.prod(q_int(hk) for hk in young_hooks(shape))
+    if q is None:
+        return qfac(n, Q0_PROTON) / math.prod(q_int(hk) for hk in young_hooks(shape))
+    return qfac(n, q) / math.prod(_q_int_at(hk, q) for hk in young_hooks(shape))
+
+
+def specht_dim(shape):
+    """Integer Specht-module dimension `f^λ = #SYT(λ) = n! / ∏ hook(c)`
+    (hook-length formula) — the `q → 1` specialisation of `dim_q`.
+
+    Centralised here (next to `young_hooks` / `dim_q`, reusing the single
+    `young_hooks` implementation) so binding / observe-last consumers share
+    one hook-length routine instead of re-deriving it (Gemini review, PR
+    #2408). Accepts any iterable partition (tuple or list)."""
+    n = sum(shape)
+    d = math.factorial(n)
+    for hk in young_hooks(shape):
+        d //= hk
+    return d
 
 
 # ════════════════════════════════════════════════════════════════════

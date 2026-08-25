@@ -80,8 +80,15 @@ def load_witness(name: str) -> dict:
     return json.loads(f.read_text())
 
 
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+mp.dps = 50
+
 def main() -> int:
-    bridge = load_witness("atomic-tr-m-mpfr-50dps.witness.json")
+    bridge = load_witness("atomic-tr-m-mpfr-50dps-proton.witness.json")
     peel = load_witness("markov-peel-atomic-tr-m.witness.json")
     pyhecke = load_witness("canonical-isospin-pyhecke.witness.json")
 

@@ -1,0 +1,417 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2402.04839v2",
+ "source": {
+  "file": "2402.04839v2.pdf",
+  "sha256": "daf09811c350a2ad4453a89faaca2af5f0e84788e822fb79c4d3be3e3d9e9fba",
+  "bytes": 882689,
+  "pages": 28
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2402.04839",
+   "version": "2",
+   "primary_class": "math.GT",
+   "stamp_date": "8 Jun 2026"
+  },
+  "doi": null,
+  "title": "On a volume invariant of 3–manifolds",
+  "authors_raw": "Marc Kegel, Arunima Ray, Jonathan Spreer, Em Thompson and Stephan Tillmann",
+  "abstract": null,
+  "docinfo": {
+   "Author": "Marc Kegel; Arunima Ray; Jonathan Spreer; Em Thompson; Stephan Tillmann",
+   "Creator": "arXiv GenPDF (tex2pdf:a6404ea)",
+   "Producer": "pikepdf 8.15.1",
+   "Title": "On a volume invariant of 3-manifolds"
+  },
+  "title_lines": [
+   "On a volume invariant of 3–manifolds"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Properties, examples and questions",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Definition of topological volume and its spectrum",
+   "page": 4,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Refinements of topological volume",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A finiteness result",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Covers and branched covers",
+   "page": 6,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Constructions of unbounded topological volume",
+   "page": 7,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Bounds on topological volume",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Upper bounds from surgery descriptions or triangulations",
+   "page": 8,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Lower bounds",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "The minimal topological volume manifolds",
+   "page": 11,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A census",
+   "page": 12,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Parenthood",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Homology classes of minimisers",
+   "page": 15,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Connected sums",
+   "page": 16,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Examples obtained from the Whitehead link and its sister",
+   "page": 17,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Volume functions on Dehn surgery space",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The topological volume of all but finitely many lens spaces",
+   "page": 19,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Determining the minimiser",
+   "page": 21,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Using tetrahedron shapes to prove equivalence of volumes",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Equivalence of volumes: m006 and m007",
+   "page": 26,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "Equivalence of volumes: m015, m016 and m017",
+   "page": 27,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 9075,
+   "n_words": 1351
+  },
+  {
+   "id": "sec-001-properties-examples-and-questions",
+   "number": null,
+   "title": "Properties, examples and questions",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 223,
+   "n_words": 35
+  },
+  {
+   "id": "sec-002-definition-of-topological-volume-and-its-spectru",
+   "number": null,
+   "title": "Definition of topological volume and its spectrum",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 3998,
+   "n_words": 582
+  },
+  {
+   "id": "sec-003-refinements-of-topological-volume",
+   "number": null,
+   "title": "Refinements of topological volume",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 5,
+   "n_chars": 1205,
+   "n_words": 189
+  },
+  {
+   "id": "sec-004-a-finiteness-result",
+   "number": null,
+   "title": "A finiteness result",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 1425,
+   "n_words": 212
+  },
+  {
+   "id": "sec-005-covers-and-branched-covers",
+   "number": null,
+   "title": "Covers and branched covers",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 3417,
+   "n_words": 500
+  },
+  {
+   "id": "sec-006-constructions-of-unbounded-topological-volume",
+   "number": null,
+   "title": "Constructions of unbounded topological volume",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 2638,
+   "n_words": 384
+  },
+  {
+   "id": "sec-007-bounds-on-topological-volume",
+   "number": null,
+   "title": "Bounds on topological volume",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 8,
+   "n_chars": 243,
+   "n_words": 37
+  },
+  {
+   "id": "sec-008-upper-bounds-from-surgery-descriptions-or-triang",
+   "number": null,
+   "title": "Upper bounds from surgery descriptions or triangulations",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 11,
+   "n_chars": 9046,
+   "n_words": 1462
+  },
+  {
+   "id": "sec-009-lower-bounds",
+   "number": null,
+   "title": "Lower bounds",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 2154,
+   "n_words": 322
+  },
+  {
+   "id": "sec-010-the-minimal-topological-volume-manifolds",
+   "number": null,
+   "title": "The minimal topological volume manifolds",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 229,
+   "n_words": 32
+  },
+  {
+   "id": "sec-011-a-census",
+   "number": null,
+   "title": "A census",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 15,
+   "n_chars": 8636,
+   "n_words": 994
+  },
+  {
+   "id": "sec-012-parenthood",
+   "number": null,
+   "title": "Parenthood",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 15,
+   "n_chars": 1668,
+   "n_words": 222
+  },
+  {
+   "id": "sec-013-homology-classes-of-minimisers",
+   "number": null,
+   "title": "Homology classes of minimisers",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 2854,
+   "n_words": 397
+  },
+  {
+   "id": "sec-014-connected-sums",
+   "number": null,
+   "title": "Connected sums",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1507,
+   "n_words": 224
+  },
+  {
+   "id": "sec-015-examples-obtained-from-the-whitehead-link-and-it",
+   "number": null,
+   "title": "Examples obtained from the Whitehead link and its sister",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1715,
+   "n_words": 267
+  },
+  {
+   "id": "sec-016-volume-functions-on-dehn-surgery-space",
+   "number": null,
+   "title": "Volume functions on Dehn surgery space",
+   "level": 2,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1464,
+   "n_words": 245
+  },
+  {
+   "id": "sec-017-the-topological-volume-of-all-but-finitely-many",
+   "number": null,
+   "title": "The topological volume of all but finitely many lens spaces",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 6433,
+   "n_words": 1001
+  },
+  {
+   "id": "sec-018-determining-the-minimiser",
+   "number": null,
+   "title": "Determining the minimiser",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 26,
+   "n_chars": 13507,
+   "n_words": 2044
+  },
+  {
+   "id": "sec-019-using-tetrahedron-shapes-to-prove-equivalence-of",
+   "number": null,
+   "title": "Using tetrahedron shapes to prove equivalence of volumes",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 26,
+   "n_chars": 544,
+   "n_words": 81
+  },
+  {
+   "id": "sec-020-equivalence-of-volumes-m006-and-m007",
+   "number": null,
+   "title": "Equivalence of volumes: m006 and m007",
+   "level": 2,
+   "page_start": 26,
+   "page_end": 27,
+   "n_chars": 1815,
+   "n_words": 322
+  },
+  {
+   "id": "sec-021-equivalence-of-volumes-m015-m016-and-m017",
+   "number": null,
+   "title": "Equivalence of volumes: m015, m016 and m017",
+   "level": 2,
+   "page_start": 27,
+   "page_end": 28,
+   "n_chars": 1626,
+   "n_words": 292
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 22,
+  "chars_total": 75422
+ }
+}

@@ -38,13 +38,17 @@ import mpmath as mp
 
 sys.path.insert(0, str(Path(__file__).resolve().parent / "substrate"))
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps
+set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 try:
-    from _precision import set_compute_dps
-    set_compute_dps()  # canonical COMPUTE_DPS (=70) — matches WitnessBuilder precisionMetadata
-except Exception:
-    mp.mp.dps = 50
-try:
-    from q_parameter import Q as Q0
+    from q_parameter import Q_MP as Q0
     Q0 = mp.mpf(str(Q0))
 except Exception:
     Q0 = mp.mpf("1.10997859555733471")
@@ -53,7 +57,7 @@ except Exception:
 def sigma_pow_markov_trace(k):
     """tr_M(σ^k) in H_2 via σ² = h σ + 1 (identical to #3548's convention)."""
     h = Q0 - 1 / Q0
-    z = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z = Q0**3 / (Q0**2 + 1)
     a, b = mp.mpf(0), mp.mpf(1)
     for _ in range(k):
         a, b = h * a + b, a

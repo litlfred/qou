@@ -46,6 +46,47 @@ Documented anchor values (50 dps, `computations/qbeta/qbeta_c3_barodd_sleak_prob
 
 `S_leak(muon) > 0 > S_leak(proton)`: a genuine sign change, `S_p/S_μ ≈ −4.08`.
 
+## ⚠ APPLICABILITY (2026-08-08): the anchor signs are NOT resolved by the data
+
+The theorems below are correct and unaffected — they are *conditional* on the two
+anchor signs. But that hypothesis is **not established**, and the table above
+overstates what is known. Two corrections:
+
+1. **"50 dps" above is wrong.** The upstream keystone witness carries the `c₃`
+   values as **12**-significant-digit strings, and `qbeta_c3_barodd_sleak_probe.py`
+   computed in float64 until it was ported. It now emits
+   `computations/qbeta/qbeta-c3-barodd-sleak.witness.json` as the canonical
+   source; read the values there rather than copying this table.
+
+2. **`c₃` is an inversion, and the inversion amplifies.** It is not measured:
+   `c₃ = (Q_codata / Q_N2 − 1) / u³` with `u = b·ℏ_q² ≈ 8.5e−3`
+   (`qbeta_utils.c3_target_at`), so `1/u³ ≈ 1.6e6` multiplies the CAL-3 input
+   error. `Q_β(n) = 0.78233341(61) MeV` (PDG 2024) therefore gives
+
+   ```
+   S_leak(muon)   =  +0.00968298 ± 1.26      (uncertainty 130× the value)
+   S_leak(proton) =  −0.03945936 ± 1.26      (uncertainty  32× the value)
+   ```
+
+   The same `Q_β(n)` enters at both anchors, so the error is **fully correlated**
+   and cancels in the difference but not in the values:
+
+   ```
+   S_leak(muon) − S_leak(proton) = 0.0491423421 ± 7.6e−7   (rel 1.5e−5)
+   ```
+
+   **So the 2.43% SWING is a real, resolved feature — and the SIGN FLIP is not.**
+   At `Q_β + 1σ` both `S_leak` are positive; at `Q_β − 1σ` both are negative. The
+   zero crossing between the anchors is a property of the central value, not of
+   the data.
+
+Consequence for this file: `sleak_zero_between_anchors` and
+`sign_definite_carrier_excluded` stay *proved*, and their scope-(b) exclusion of
+sign-definite carriers stays *valid as an implication*. What is open is whether
+the antecedent holds. Do not cite either theorem as excluding a carrier until the
+anchor signs are established by something other than the central values —
+tightening `Q_β(n)`, or a determination of `c₃` that does not divide by `u³`.
+
 ## The result (formalize-first; the anchor signs are the only empirical input)
 
 * `sleak_zero_between_anchors` — any *continuous* `S_leak` reproducing the two

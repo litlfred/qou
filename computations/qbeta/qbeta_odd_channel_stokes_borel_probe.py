@@ -1,11 +1,33 @@
 #!/usr/bin/env python3
 """qbeta_odd_channel_stokes_borel_probe.py
 
-Lever-1 (independent attack): characterize the divergence class of the bar-ODD
+Lever-1 (independent attack): characterize the growth class of the bar-ODD
 Q_β D-ladder and test whether a fixed-order Borel–Leroy extracts a clean
 odd-channel action / Stokes datum — the G3 monodromy datum the Φ_b keystone
 needs (docs/audits/2026-07-13-phib-proof-status-and-monodromy-datum-gap-audit.md;
 coordination/1ppq-qbeta.md, live route on #3805).
+
+**RE-SCOPED 2026-08-14 — this probe was framed as measuring a "divergence
+class"; the ladder is CONVERGENT.** `D(ũ)` has radius
+ρ = ũ(q*_ρ) = 0.142799996644689…, κ = 0 (2026-08-09 correction,
+docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md). Only the
+framing changes: **every measurement below stands, and two of them read as
+corroboration once the premise is fixed** —
+
+  * the effective Gevrey order **drifts DOWN** (C: ~0.08 → 0.05 as the tail
+    lengthens). A fixed Gevrey-s divergence would hold C constant; a drift
+    toward 0 is what a convergent ladder does to this diagnostic, because the
+    k·log k term is absorbing the −log k of a ρ^{−k}/k law.
+  * the Borel–Leroy pole is s-DEPENDENT, running 0.147 → 0.165 → 0.249 for
+    s = 0.02 → 0.10 → 0.30. The small-s end, **0.147**, sits ≈3% from ρ and
+    trends toward it as s → 0.
+
+Scope-(a): that is *consistency with* the 2026-08-09 radius, **not** a
+derivation of ρ from Borel–Leroy — this probe does not identify the radius and
+does not claim to. The probe's own conclusion — that the even-channel
+plain-Borel (Vol/π) method does **not** transfer to the odd channel, so G3
+(#3805) needs the true q-Borel / alien chain — is a statement about the method
+and is **unaffected**.
 
 BACKGROUND. The even κ-channel (Ohtsuki rungs κ₁..κ₈) admits a plain (conformal)
 Borel analysis giving A ≈ 0.646–0.657 vs Vol(4₁)/π = 0.6461 ("consistent, not
@@ -178,15 +200,21 @@ def main() -> int:
 
     wb = WitnessBuilder("qbeta-odd-channel-stokes-borel", engine="sympy+mpmath")
     wb.set_description(
-        "Odd-channel Q_β D-ladder divergence class. The bar-odd d_k∈ℚ(√3) have a "
-        "DRIFTING effective Gevrey order (C: ~0.08→0.05 as the tail lengthens) and "
-        "a slowly-rising root test — NOT q-Gevrey-1 in any base>1. A fixed-order "
-        "Borel–Leroy gives an s-DEPENDENT pole (0.147→0.165→0.249 for s=0.02→0.10→"
-        "0.30); the stable-window band ~0.147–0.165 brackets 1/(2π) and Vol(4₁)/(4π) "
-        "but the ~12% s-systematic is consistent-not-identified. Scope-(a) NEGATIVE: "
-        "the even-channel plain-Borel method (Vol/π) does not transfer to the odd "
-        "channel; the G3 monodromy datum (#3805) needs the true q-Borel/alien chain. "
-        "No fit; no c_k wired; comparison-only.")
+        "Odd-channel Q_β D-ladder growth class. RE-SCOPED 2026-08-14: this was "
+        "headed 'divergence class', but D(ũ) is CONVERGENT (ρ=0.142799996644689…, "
+        "κ=0; 2026-08-09 correction). Every measurement stands and two now read as "
+        "corroboration: the bar-odd d_k∈ℚ(√3) have a DRIFTING effective Gevrey order "
+        "(C: ~0.08→0.05 as the tail lengthens — a fixed Gevrey-s would hold C "
+        "constant; a drift toward 0 is what a convergent ladder does to this "
+        "diagnostic) and a slowly-rising root test — NOT q-Gevrey-1 in any base>1. A "
+        "fixed-order Borel–Leroy gives an s-DEPENDENT pole (0.147→0.165→0.249 for "
+        "s=0.02→0.10→0.30); the small-s end 0.147 sits ≈3% from ρ and trends toward "
+        "it as s→0 (CONSISTENCY with the 2026-08-09 radius, NOT a derivation of ρ). "
+        "The stable-window band ~0.147–0.165 brackets 1/(2π) and Vol(4₁)/(4π) but "
+        "the ~12% s-systematic is consistent-not-identified. Scope-(a) NEGATIVE, "
+        "UNAFFECTED by the re-scope: the even-channel plain-Borel method (Vol/π) "
+        "does not transfer to the odd channel; the G3 monodromy datum (#3805) needs "
+        "the true q-Borel/alien chain. No fit; no c_k wired; comparison-only.")
     wb.set_content_block("conj:faddeev-phi-b-quasiperiod")
     wb.add_data("ORD", int(P.ORD))
     wb.add_data("KMAX", int(KMAX))

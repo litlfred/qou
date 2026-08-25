@@ -49,8 +49,8 @@ returns the parsed text body.
 - `search_arxiv("<title>")` — for the **37 references that currently
   lack a URL** in `references.ts`, find their arxiv preprint (where
   one exists) and add `url: "https://arxiv.org/abs/..."` to the entry.
-- `download_arxiv("<arxiv-id>", "uploads/")` — bulk-fetch the 36
-  arxiv preprints still missing from `uploads/` (see
+- `download_arxiv("<arxiv-id>", "library/")` — bulk-fetch the 36
+  arxiv preprints still missing from `library/` (see
   `scripts/bib-papers-list.txt` for the canonical list).
 - `read_arxiv_paper("<arxiv-id>")` — pull the parsed body for
   cross-check verification (`validate-bib --cross-check`): does the
@@ -81,8 +81,8 @@ institution metadata. Most useful for bib-qa:
 
 2. **Fixed `leitnerpawloski2004` verification** — its `local_pdf`
    pointed at a non-existent
-   `uploads/leitnerpawloski2004.pdf` alias; the actual file is
-   `uploads/0409565v2.pdf` (arxiv-id-named). Corrected the path so
+   `library/leitnerpawloski2004.pdf` alias; the actual file is
+   `library/arxiv-math-0409565v2/0409565v2.pdf` (arxiv-id-named). Corrected the path so
    `bib-qa.ts` finds the file and `has_local_pdf` flips to `pass`.
 
 3. **Audited the bib-papers ledger.** Findings:
@@ -92,7 +92,7 @@ institution metadata. Most useful for bib-qa:
    | References without URL/DOI in `references.ts` | 37 | No (need search → 9 are pre-1990 books, 28 are findable arxiv preprints) |
    | Verifications with broken `local_pdf` path (file truly missing) | 45 | No (network blocked) |
    | Verifications with broken `local_pdf` path (file exists under different name) | 1 (leitnerpawloski2004) | **Yes — fixed in this commit** |
-   | `scripts/bib-papers-list.txt` entries missing from `uploads/` | 56 of 58 | No (network blocked) |
+   | `scripts/bib-papers-list.txt` entries missing from `library/` | 56 of 58 | No (network blocked) |
 
 ## Why we can't do more in this session
 
@@ -156,7 +156,7 @@ policy.
   correct. A wrong-work resolution (Borel-Wallach vs Borel-Zagier,
   the leitnerpawloski2004 PL-inner-product mismatch) silently
   corrupts the paper's claims.
-- **Local PDFs make verification fast.** Without `uploads/<id>.pdf`,
+- **Local PDFs make verification fast.** Without `library/<id>.pdf`,
   every cross-check requires a network round-trip and an agent
   re-reading the paper. With it, `bib-qa.ts` can directly grep
   the cited text.

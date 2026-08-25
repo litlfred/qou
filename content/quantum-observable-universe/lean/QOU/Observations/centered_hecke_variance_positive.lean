@@ -7,21 +7,32 @@ import Mathlib.Tactic
 [`prop:centered-hecke-variance-positive`](../../../quantum-observable-universe/observations/centered-hecke-variance-positive.md): *Centred Hecke transfer matrix has strictly positive variance in the Wenzl regime*.
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+
+## Base ring (§7c)
+
+The identity `Var(σ_i) = (q − q⁻¹)z + 1 − z²` and its positivity are ordered-field
+algebra: an inverse, a square and `linarith` on two supplied positivity
+hypotheses. No radical is ever taken here -- the Markov parameter
+`z = 1/(q^{1/2} + q^{-1/2})` enters as a field, not as a computed square root --
+so the scalars are a generic ordered field and the substrate evaluation
+(`Var ≈ 0.855` at `q₀ ≈ 1.110`) is the instantiation `R := ℝ`.
 -/
 
 namespace QOU.Observations
 
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 
 /-- Abstract context for the `centered_hecke_variance_positive` claim — manuscript-themed
     typed fields below; the `holds` field carries the `Prop`-valued
     claim of the lemma. -/
-class CenteredHeckeVariancePositiveContext where
-  /-- The substrate parameter `q : ℝ`. -/
-  q : ℝ
+class CenteredHeckeVariancePositiveContext (R : Type*) [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] where
+  /-- The substrate parameter `q`. -/
+  q : R
   /-- Markov parameter `z = 1/(q^{1/2} + q^{-1/2})`. -/
-  z : ℝ
+  z : R
   /-- Variance value `Var(σ_i) = (q − q⁻¹) z + 1 − z²`. -/
-  Var_sigma : ℝ
+  Var_sigma : R
   /-- The variance is given by the Hecke formula. -/
   var_formula : Var_sigma = (q - q⁻¹) * z + 1 - z ^ 2
   /-- The first term (q - q⁻¹) * z is strictly positive. -/
@@ -45,7 +56,7 @@ the QOU substrate $q_0 \approx 1.110$, $\mathrm{Var}(\sigma_i) \approx 0.855$.*
 
     The Lean encoding below states the manuscript claim over a context class and discharges it from the class's fields (§3b-conditional). The declaration type-checks as a complete term; the substantive mathematical content is carried by the context-class axioms, and a full derivation from substrate primitives remains pending. -/
 -- Ref: [manuscript] quantum-observable-universe/observations/centered-hecke-variance-positive.ts
-theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext] :
+theorem centered_hecke_variance_positive [ctx : CenteredHeckeVariancePositiveContext R] :
     ctx.Var_sigma = (ctx.q - ctx.q⁻¹) * ctx.z + 1 - ctx.z ^ 2 ∧
     0 < ctx.Var_sigma := by
   constructor

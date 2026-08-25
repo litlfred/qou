@@ -43,7 +43,7 @@ $$
 
 [*The Mass Endomorphism*](#chap:mass-endomorphism) systematically extracts mass from the spectral data of a single categorical endomorphism. Mass firmly behaves as a categorical invariant: the Markov trace $\mathrm{tr}_M$ of a distinguished Hecke element. A recursive Gröbner–Shirshov reduction evaluates this trace, culminating in the **mass endomorphism conjecture** which analytically resums the brane tower.
 
-[*Particle Interactions and Nuclear Structure*](#chap:particle-interactions) develops the exact interaction-selection mechanism. A **semidefinite program** precisely selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound rigorously limits these operators to a strictly **six-dimensional** basis in $H_3(q)$, capturing identity, $\beta$-decay, photon handling, and pair production without free parameters.
+[*Nuclear Interactions and Binding*](#chap:nuclear-interactions) develops the exact interaction-selection mechanism. A **semidefinite program** precisely selects the unique transfer operator minimizing the categorical action at each vertex. Bring's surface embeddability bound rigorously limits these operators to a strictly **six-dimensional** basis in $H_3(q)$, capturing identity, $\beta$-decay, photon handling, and pair production without free parameters.
 
 [*$q$-Hyperbolic Geometry*](#chap:climax-volume-mass) formally defines the topological mass formula:
 $$
@@ -58,7 +58,7 @@ The geometric term $\mathrm{Geom}(K) = \mathrm{Vol}(K)/\hbar_q^{2}$ acts safely 
 **Part III: Physical Realization.**
 [*Predicted Particle Spectra*](#chap:predicted-spectra) systematically assigns fundamental fermions to specific knots, rigorously constructing mesons, nucleons, and the atomic shell structure strictly from algebraic necessity.
 
-[*Physical Observations*](#chap:observations) formally pins the framework against measured reality. Exactly three weak-sector inputs calibrate the three degrees of freedom of $H^1 = 2W$: the scale ($m_e$), the modulus ($\mathfrak{D}_\beta$), and the orthogonal class ($\mathfrak{D}_\pi$). The muon anchor pins the substrate to $q_0 \approx 1.1097$. These strict inputs predict atomic masses, the fine-structure constant ($1/\alpha_{\mathrm{EM}} \approx 137.0359$), and the exact proton and neutron masses without empirical nuclear tuning.
+[*Physical Observations*](#chap:observations) formally pins the framework against measured reality. Exactly three weak-sector inputs calibrate the three degrees of freedom of $H^1 = 2W$: the scale ($m_e$), the modulus ($\mathfrak{D}_\beta$), and the orthogonal class ($\mathfrak{D}_\pi$). The muon anchor pins the substrate to $q_0 \approx 1.1100$. These strict inputs predict atomic masses, the fine-structure constant ($1/\alpha_{\mathrm{EM}} \approx 137.0359$), and the exact proton and neutron masses without empirical nuclear tuning.
 
 [*Molecular Construction from Nucleon Braids*](#chap:molecular-construction) and [*Organic Chemistry from Hopf Chains*](#chap:organic-chemistry) rigorously extend the formalism to molecular chemistry. Water's $104.5^\circ$ bond angle emerges identically from topological relaxation. Benzene's ring closure strictly derives from the $T(2,6)$ Alexander polynomial, predicting its empirical closure barrier purely from knot invariants.
 

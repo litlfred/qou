@@ -1,0 +1,172 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "modularqholonomicmodules",
+ "source_sha256": "640303a68dd75453",
+ "brief": "MODULAR q-HOLONOMIC MODULES — We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised",
+ "extended": "**MODULAR q-HOLONOMIC MODULES**\n\n*STAVROS GAROUFALIDIS AND CAMPBELL WHEELER*\n\n66 pp, 30 sections.\n\n**Abstract.** We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern– Simons theory are modular. This notion explains conceptually recent structural properties of quantum invariants of knots and 3-manifolds, and of exact and perturbative Chern– Simons theory [26, 27, 28, 37], and in addition provides an eﬀective method to solve the corresponding linear q-diﬀerence equations. An alternative title of our paper, emphasising the equations rather than the modules, is: Modular linear q-diﬀerence equations\n\n**Outline.** 1 Introduction; 1.1 Summary; 1.2 Motivation; 1.4 The generalised q-hypergeometric equation ; 1.5 Modular q-holonomic modules in Chern–Simon; 2 A review of linear q-difference equations; 2.1 Preliminaries; 2.2 An algorithm for a fundamental matrix; 2.3 The q-Borel and the q-Laplace transforms; 2.4 The slash operator and proof of Theorem 1.; 2.5 Duality; 2.6 Categorical aspects; 3.1 Solutions; 3.2 Self duality; 3.3 State integral; 3.4 Resonance; 4 Proof of Theorems 1.5 and 1.6; 4.1 The q-Pochhammer symbol\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: (a) If Equation (6) for the monodromy holds for γ =S and γ =T , then it\n- Theorem 1.4: states that the generalised q-hypergeometric equation is modular. The the-\n- Theorem 1.4: The two cocycles (4) ΩU and ΩV are equal and modular.\n- Theorem 1.2: The equation (28) has two important extensions, each containing important information\n- Theorem 1.9: (a) The monodromy matrix is given by\n- Theorem 1.10: The N-th colored Jones polynomial JN(q) of 41 for|q|< 1 is given by",
+ "tokens": {
+  "brief": 48,
+  "extended": 463
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-summary",
+   "title": "Summary",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-002-12-motivation",
+   "title": "Motivation",
+   "pages": "3-6"
+  },
+  {
+   "id": "sec-003-14-the-generalised-q-hypergeometric-equation-is",
+   "title": "The generalised q-hypergeometric equation is modular",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-004-15-modular-q-holonomic-modules-in-chernsimons-th",
+   "title": "Modular q-holonomic modules in Chern–Simons theory",
+   "pages": "7-12"
+  },
+  {
+   "id": "sec-005-2-a-review-of-linear-q-difference-equations",
+   "title": "A review of linear q-difference equations",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-006-21-preliminaries",
+   "title": "Preliminaries",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-007-22-an-algorithm-for-a-fundamental-matrix",
+   "title": "An algorithm for a fundamental matrix",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-008-23-the-q-borel-and-the-q-laplace-transforms",
+   "title": "The q-Borel and the q-Laplace transforms",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-009-24-the-slash-operator-and-proof-of-theorem-12",
+   "title": "The slash operator and proof of Theorem 1.2",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-010-25-duality",
+   "title": "Duality",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-011-26-categorical-aspects",
+   "title": "Categorical aspects",
+   "pages": "23-24"
+  },
+  {
+   "id": "sec-012-31-solutions",
+   "title": "Solutions",
+   "pages": "24-25"
+  },
+  {
+   "id": "sec-013-32-self-duality",
+   "title": "Self duality",
+   "pages": "25-28"
+  },
+  {
+   "id": "sec-014-33-state-integral",
+   "title": "State integral",
+   "pages": "28-29"
+  },
+  {
+   "id": "sec-015-34-resonance",
+   "title": "Resonance",
+   "pages": "29-31"
+  },
+  {
+   "id": "sec-016-4-proof-of-theorems-15-and-16",
+   "title": "Proof of Theorems 1.5 and 1.6",
+   "pages": "31-31"
+  },
+  {
+   "id": "sec-017-41-the-q-pochhammer-symbol",
+   "title": "The q-Pochhammer symbol",
+   "pages": "31-33"
+  },
+  {
+   "id": "sec-018-42-the-appell-lerch-sums",
+   "title": "The Appell-Lerch sums",
+   "pages": "33-37"
+  },
+  {
+   "id": "sec-019-51-solutions",
+   "title": "Solutions",
+   "pages": "37-37"
+  },
+  {
+   "id": "sec-020-5-a-q-difference-equation-of-the-41-knot",
+   "title": "A q-difference equation of the 41 knot",
+   "pages": "37-40"
+  },
+  {
+   "id": "sec-021-52-monodromy",
+   "title": "Monodromy",
+   "pages": "40-43"
+  },
+  {
+   "id": "sec-022-53-residues",
+   "title": "Residues",
+   "pages": "43-45"
+  },
+  {
+   "id": "sec-023-54-determinants",
+   "title": "Determinants",
+   "pages": "45-46"
+  },
+  {
+   "id": "sec-024-55-state-integral",
+   "title": "State integral",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-025-56-the-inhomogeneous-equation",
+   "title": "The inhomogeneous equation",
+   "pages": "47-52"
+  },
+  {
+   "id": "sec-026-57-the-x-deformation",
+   "title": "The x-deformation",
+   "pages": "52-62"
+  },
+  {
+   "id": "sec-027-58-an-analytic-lift-of-the-colored-jones-polynom",
+   "title": "An analytic lift of the colored Jones polynomial",
+   "pages": "62-63"
+  },
+  {
+   "id": "sec-028-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "63-63"
+  },
+  {
+   "id": "sec-029-references",
+   "title": "References",
+   "pages": "63-66"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

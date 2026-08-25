@@ -1,0 +1,92 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-16T02:32:03.621508+00:00",
+  "commitSha": "151a1a22060801fa50abb638233a9d8eb0d68e83",
+  "assertions": [
+    {
+      "name": "the complex Sabra q-ladder conserves energy inviscidly (per-triad coefficient sum is zero on any ladder; drift is RK2 only)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "nu=0 short run per seed, relative energy drift < 1e-4"
+    },
+    {
+      "name": "the modulus damped-forced form holds along actual trajectories: r_n = sup|u_n|*nu*k_n^2 / F_n(sup moduli) <= 1 on every excited empty-start rung, both seeds, every eps — the rung_equilibrium_forced instance for moduli is validated in the phase-dynamical model class",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "triangle-inequality forcing F_n = k_{n+1}|u_{n+1}||u_{n+2}| + delta*k_n|u_{n-1}||u_{n+1}| + (1-delta)*k_{n-1}|u_{n-1}||u_{n-2}| on sup moduli"
+    },
+    {
+      "name": "PHASE VERDICT — HONEST NEGATIVE, scope (a): the coherence ratio sup|u_n|(Sabra)/sup u_n(real DN) EXCEEDS 1 at every (seed, eps) — the naive 'phases weaken the tail' hypothesis is REFUTED in this cross-model comparison (mild ~1.2-1.4x at eps <= 1e-2; large at eps = 1e-1 where both tails are deeply sub-dissipation). Named confound: Sabra triads include inflow-from-above (u*_{n+1} u_{n+2}), so c_n mixes phase dynamics with triad-structure difference; the clean phase-only comparison (Sabra vs phase-scrambled Sabra) is the recorded follow-up. The route-critical facts stay positive: B* exists everywhere with k_phys(B*) decreasing in eps, and r_n <= 1 (assertion 2) — the per-amplitude route itself survives in the phase-dynamical class",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max coherence ratio per (seed, eps): golden 36.3 / 1.20 / 1.28, silver 1136 / 215 / 1.35 at eps = 1e-1 / 1e-2 / 3e-3; B* k_phys: 0.77 / ~0.20 / ~0.095"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 41036,
+  "computation": "qns-phase-decorrelation-probe",
+  "scriptFile": "qns_phase_decorrelation_probe.py",
+  "scriptHash": "68792981e659",
+  "scriptCommitSha": "69e6123f1614192675ebca40909ff2bf370baf3c",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "SF10 (bean qou-wgyz): phase-decorrelation probe for the SF arc's irreducible caveat. Complex Sabra-type q-shell model (per-triad exact energy conservation on the [n]_q ladder, delta = 0.5, two deterministic phase windings), compared rung-by-rung against the real DN model at matched eps. Measures the modulus damped-forced ratio (the rung_equilibrium_forced instance — no new Lean needed, the invariant applies verbatim to moduli) and the coherence ratio sup|u_n|(Sabra)/sup u_n(DN). Scope (a); float64 complex RK2 exploratory tier; one phase-dynamical model class, not full NS sweeping.",
+  "data": {
+    "golden_inviscid_energy_drift": "1.4557730982766127e-07",
+    "golden_eps1e-01_bstar_rung": 5,
+    "golden_eps1e-01_kphys_at_bstar": "0.7715610000000008",
+    "golden_eps1e-01_max_modulus_ratio": "0.9572722561039441",
+    "golden_eps1e-01_max_coherence_ratio": "36.293106377410794",
+    "golden_eps1e-01_n_compared": 8,
+    "golden_eps1e-02_bstar_rung": 17,
+    "golden_eps1e-02_kphys_at_bstar": "0.19614747568666502",
+    "golden_eps1e-02_max_modulus_ratio": "0.73847457443651",
+    "golden_eps1e-02_max_coherence_ratio": "1.200793619937578",
+    "golden_eps1e-02_n_compared": 21,
+    "golden_eps3e-03_bstar_rung": 29,
+    "golden_eps3e-03_kphys_at_bstar": "0.09402687487130734",
+    "golden_eps3e-03_max_modulus_ratio": "0.6959271422118853",
+    "golden_eps3e-03_max_coherence_ratio": "1.2839346135430898",
+    "golden_eps3e-03_n_compared": 33,
+    "silver_inviscid_energy_drift": "1.120622443005147e-06",
+    "silver_eps1e-01_bstar_rung": 5,
+    "silver_eps1e-01_kphys_at_bstar": "0.7715610000000008",
+    "silver_eps1e-01_max_modulus_ratio": "0.9301396417339116",
+    "silver_eps1e-01_max_coherence_ratio": "1136.4057698154886",
+    "silver_eps1e-01_n_compared": 8,
+    "silver_eps1e-02_bstar_rung": 18,
+    "silver_eps1e-02_kphys_at_bstar": "0.20810895044353162",
+    "silver_eps1e-02_max_modulus_ratio": "0.7343008162517151",
+    "silver_eps1e-02_max_coherence_ratio": "215.4985103125232",
+    "silver_eps1e-02_n_compared": 21,
+    "silver_eps3e-03_bstar_rung": 30,
+    "silver_eps3e-03_kphys_at_bstar": "0.09730895549592121",
+    "silver_eps3e-03_max_modulus_ratio": "0.690721546414923",
+    "silver_eps3e-03_max_coherence_ratio": "1.351969650559129",
+    "silver_eps3e-03_n_compared": 33,
+    "tier": "exploratory",
+    "delta": "0.5",
+    "seeds": [
+      "golden",
+      "silver"
+    ],
+    "n_cap": 400,
+    "n_data": 4
+  },
+  "q0Anchor": "independent",
+  "q0AnchorReason": "Sabra/DN shell model: the only q here is the shell-spacing ratio q = 1 + eps swept over EPS_SWEEP, not the substrate modulus. eps = 1e-1 gives q = 1.1, adjacent to q0 = 1.10998 — coincidence, and the reason this needs stating rather than inferring. Import cone reaches no q_parameter and no qou_substrate.constants."
+}

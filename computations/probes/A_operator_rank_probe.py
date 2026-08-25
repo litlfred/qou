@@ -52,6 +52,7 @@ import sys
 from pathlib import Path
 
 import numpy as np
+from _precision import json_safe_float  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
@@ -153,7 +154,13 @@ def probe_rank_per_lambda(n1: int, n2: int) -> dict:
             "largest_sv": float(sv[0]),
             "smallest_nonzero_sv": smallest_nonzero,
             "next_sv_after_drop": next_zero,
-            "drop_ratio": drop_ratio,
+            # `inf` here is a DELIBERATE sentinel and a meaningful one: the
+            # next singular value is exactly zero, so the rank gap is perfectly
+            # clean (and `status` below reads rank_determined, correctly). The
+            # value is right; writing it as a bare JSON `Infinity` was not —
+            # JSON has no such token, so this witness did not parse under a
+            # strict loader.
+            "drop_ratio": json_safe_float(drop_ratio),
             "status": "rank_determined" if drop_ratio > 1e6 else "rank_ambiguous",
         }
     return out
@@ -195,7 +202,9 @@ def main() -> int:
         drop = r["drop_ratio"]
         total_unknowns += nu
         total_rank += rk
-        drop_str = f"{drop:.2e}" if drop != float("inf") else "∞"
+        # `drop` is now the json_safe_float marker string "inf" for the clean
+        # rank gaps, a float otherwise.
+        drop_str = "∞" if isinstance(drop, str) else f"{drop:.2e}"
         print(f"  {lam_str:<22}{nu:>10}{rk:>8}{ratio:>10.3f}{drop_str:>14}"
               f"{r['status']:>26}")
 
@@ -229,8 +238,17 @@ def main() -> int:
         total_rank / total_unknowns if total_unknowns else 1.0,
     )
 
-    n_exact_drop = sum(1 for r in results.values()
-                       if r.get("drop_ratio", 0) > 1e6)
+    # `drop_ratio` is serialized (the marker string "inf" for a clean gap), so
+    # this READ-BACK must be marker-aware — comparing str > float is a
+    # TypeError, and it is an assertion count, so getting it wrong would change
+    # what the witness asserts rather than just crash.
+    def _drop_ge(r, thr):
+        v = r.get("drop_ratio", 0)
+        if isinstance(v, str):
+            return v == "inf"          # the clean-gap sentinel exceeds any thr
+        return v > thr
+
+    n_exact_drop = sum(1 for r in results.values() if _drop_ge(r, 1e6))
     w.add_assertion(
         name="all_drops_are_exact_zeros",
         computed=n_exact_drop,

@@ -45,5 +45,21 @@ export default proposition({
       date: "2026-05-31",
       body: "SDP-uniqueness wiring: `NucleusEmptySDPUniqueness` landed via PR #1537; the per-stable-isotope `StableIsotopeUniqueness.lean` was pending PR #1542.",
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note.** Every `ℝ` in the Lean sibling's atlas-entry " +
+        "record is a measured or geometric magnitude: `vol_hyp` (the " +
+        "**hyperbolic volume** of the knot closure — a transcendental period), " +
+        "`m_pred_MeV` and `m_AME_MeV` (masses in MeV, the latter straight from " +
+        "**AME2020**), and `err_pct` / `err_ppb` (residuals against that " +
+        "measurement). §7c lists hyperbolic volume and experimental values as " +
+        "`ℝ` rows explicitly. The categorical side of each entry — the " +
+        "canonical Hecke element `T_w` in σ-generators, and its Markov " +
+        "closure — carries no `ℝ`; the atlas is precisely the table where the " +
+        "archimedean functor has already been applied, so the specialisation " +
+        "is the point of the block.",
+    },
   ],
 });

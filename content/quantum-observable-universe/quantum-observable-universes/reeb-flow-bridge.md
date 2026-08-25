@@ -1,4 +1,4 @@
-In classical analytic number theory, the time variable is the real number $x$, and the fundamental counting function is the logarithmic integral $\mathrm{Li}(x) = \int_2^x \frac{dt}{\ln t}$. Here $\ln t$ converts multiplicative structure into additive structure. Primes act as discrete, isolated events scattered along the continuum.
+In classical analytic number theory, the time variable is the real number $x$, and the fundamental counting function is the logarithmic integral $\mathrm{Li}(x) = \int_2^x \frac{dt}{\ln t}$. Here $\ln t$ converts multiplicative structure into additive structure. Primes are discrete, isolated events scattered along the continuum.
 
 The $q$-deformed Reeb flow modifies this dynamically. The derivation $\xi_q \colon A \to A$ acts on the Frobenius--Hopf substrate $A$ as a continuous dynamical system, generating a flow on the state bundle $\mathcal{S}$ that replaces the classical logarithmic clock with a periodic orbit structure.
 

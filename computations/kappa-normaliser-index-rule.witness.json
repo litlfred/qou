@@ -1,0 +1,162 @@
+{
+  "engine": "python-stdlib",
+  "engineVersion": "3",
+  "computedAt": "2026-08-10T17:56:04.495325+00:00",
+  "computation": "kappa-normaliser-index-rule",
+  "scriptFile": "probe_kappa_normaliser_index_rule.py",
+  "contentBlock": "conj:magic-shell-coupling-kappa",
+  "description": "Underdetermination probe, no fit and no rule selected. Three index rules for kappa's normaliser all reproduce [2]_q[3]_q at the A=3 anchors -- the only place kappa has been evaluated -- and diverge at every magic shell above 2.",
+  "parameters": {
+    "q_0": "1.10997858275138080000000000000000000000000000000000000000000",
+    "q_0_pin": "proton (experimental layer), m_p/m_e",
+    "m_e_MeV": "0.510998950000000000000000000000000000000000000000000000000000",
+    "kappa_empirical_MeV": "-1.07079075032658570000000000000000000000000000000000000000000",
+    "rules": [
+      {
+        "id": "R1",
+        "description": "(A_magic, A) -- magic number and mass number"
+      },
+      {
+        "id": "R2",
+        "description": "(2, 3) fixed -- sl_2 irreps V_2, V_3, shell-independent"
+      },
+      {
+        "id": "R3",
+        "description": "(A_magic, A_magic+1) -- the shell and its successor"
+      }
+    ]
+  },
+  "data": {
+    "quantum_E0_log_inv_h_MeV": "6.55161570853949453904542988109807140237058962498326274521935",
+    "anchors": [
+      {
+        "anchor": "A=3 single-magic (3He / 3H)",
+        "A_magic": 2,
+        "A": 3,
+        "status": "the only anchors kappa has seen",
+        "by_rule": {
+          "R1": {
+            "indices": [
+              2,
+              3
+            ],
+            "normaliser": "6.12057927791506344559709308333065747079930321033454871813115",
+            "kappa_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+          },
+          "R2": {
+            "indices": [
+              2,
+              3
+            ],
+            "normaliser": "6.12057927791506344559709308333065747079930321033454871813115",
+            "kappa_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+          },
+          "R3": {
+            "indices": [
+              2,
+              3
+            ],
+            "normaliser": "6.12057927791506344559709308333065747079930321033454871813115",
+            "kappa_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+          }
+        },
+        "kappa_spread_MeV": "0.0",
+        "rules_agree": true
+      },
+      {
+        "anchor": "A=15 single-magic (15O / 15N)",
+        "A_magic": 8,
+        "A": 15,
+        "status": "never evaluated",
+        "by_rule": {
+          "R1": {
+            "indices": [
+              8,
+              15
+            ],
+            "normaliser": "195.727445212565867356534677265969462572365422161238374803792",
+            "kappa_MeV": "-0.0334731580511064437833417625524169398100655172796699692190434"
+          },
+          "R2": {
+            "indices": [
+              2,
+              3
+            ],
+            "normaliser": "6.12057927791506344559709308333065747079930321033454871813115",
+            "kappa_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+          },
+          "R3": {
+            "indices": [
+              8,
+              9
+            ],
+            "normaliser": "92.7088137655255970868505824485715929980754330332172186067470",
+            "kappa_MeV": "-0.0706687470417808042101302057821471468464604142900855438460711"
+          }
+        },
+        "kappa_spread_MeV": "1.03695096539416014914136517826963654413490814480104653279066",
+        "rules_agree": false
+      },
+      {
+        "anchor": "A=39 single-magic (39K)",
+        "A_magic": 20,
+        "A": 39,
+        "status": "never evaluated",
+        "by_rule": {
+          "R1": {
+            "indices": [
+              20,
+              39
+            ],
+            "normaliser": "10620.6922550185920939195859854608416893781611794129108349956",
+            "kappa_MeV": "-0.000616872756617504080275976637646360984580149130379865111635307"
+          },
+          "R2": {
+            "indices": [
+              2,
+              3
+            ],
+            "normaliser": "6.12057927791506344559709308333065747079930321033454871813115",
+            "kappa_MeV": "-1.07042412344526659292470694082205348394497366208071650200970"
+          },
+          "R3": {
+            "indices": [
+              20,
+              21
+            ],
+            "normaliser": "1603.81976120088529623305618564957698209192145223338245792493",
+            "kappa_MeV": "-0.00408500747218245342649934446012395360526380683125525455207585"
+          }
+        },
+        "kappa_spread_MeV": "1.06980725068864908884443096418440712296039351295033663689806",
+        "rules_agree": false
+      }
+    ]
+  },
+  "assertions": [
+    {
+      "name": "all_rules_coincide_at_the_A3_anchor",
+      "passed": true,
+      "detail": "R1, R2 and R3 all give indices (2,3) at A=3, so the anchor that fixed kappa cannot distinguish the index rule -- the same degeneracy the excess conventions have there"
+    },
+    {
+      "name": "A3_value_reproduces_the_published_closed_form",
+      "passed": true,
+      "detail": "the shared A=3 value is the published kappa_closed, so this probe is reading the same object the conjecture states"
+    },
+    {
+      "name": "rules_diverge_at_every_untested_shell",
+      "passed": true,
+      "detail": "R1, R2 and R3 disagree at the 8 and 20 shells -- the discriminating measurement lies entirely outside the fitted region"
+    },
+    {
+      "name": "no_rule_selected",
+      "passed": true,
+      "detail": "this probe deliberately does not choose a rule; selecting one on the numbers would be a new fit, which is what the demotion was about"
+    }
+  ],
+  "allPassed": true,
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080000000000000000000000000000000000000000000",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

@@ -52,8 +52,10 @@ sys.path.insert(0, str(HERE / "substrate"))
 from binding_heat_kernel_weight_probe import (  # noqa: E402
     CHI, AME_B, A_GROWTH_TARGET, q0, dim_classical, content_casimir, load_y)
 from witness_base import WitnessBuilder  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 HBAR = 1 - 1 / q0                      # ℏ_q = (q−1)/q — the corpus convention
 S_STAR = HBAR                          # canonical Reeb time
 H_OLD = q0 - 1 / q0                    # what the parent probe used (≈ 2·ℏ)

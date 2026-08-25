@@ -16,6 +16,7 @@ export default proposition({
     "mass-volume",
     "markov-trace",
   ],
+  foreshadows: ["conj:mass-volume-factorization"],
   uses: [
     "prop:six-canonical-knot-operators",
     "conj:mass-volume-factorization",

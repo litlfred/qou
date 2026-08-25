@@ -61,8 +61,10 @@ for p in (str(HERE / "substrate"), str(HERE)):
         sys.path.insert(0, p)
 
 import mpmath as mp  # noqa: E402
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # Alien-datum actions (lever1-bridge-alien-datum.witness.json).
 OMEGA0 = mp.mpf(1) / mp.sqrt(2)     # level-1/2 action

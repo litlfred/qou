@@ -1,0 +1,66 @@
+import Mathlib.RingTheory.Polynomial.Basic
+import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
+import Mathlib.Algebra.Polynomial.Laurent
+
+/-!
+# QOU.AlgebraicSubstrate.LocalQZetaFunction
+
+Canonical declaration of the local q-zeta function of Bring's curve, shared
+by the `q-geometric-langlands` content blocks.
+
+Moved out of the `local-q-zeta-function.lean` content-block sibling (bean
+`qou-lsib`, owner-authorised 2026-08-23). Content-block siblings sit outside
+the `qou` package's `["QOU", "QOU.+"]` globs, so they are not modules and
+cannot import one another; `spectral-half-line.lean` and
+`hasse-weil-bound.lean` referenced this structure and simply failed to
+compile as a result. `QOU.Archimedean.ParticleKnots` is the same fix applied
+to the particle-knot structures.
+-/
+
+open Polynomial Complex
+
+namespace QOU.AlgebraicSubstrate
+
+noncomputable section
+
+/-- Ground ring `R_q = ℤ[q, q⁻¹]` (Laurent polynomials over `ℤ`). -/
+abbrev R_q := LaurentPolynomial ℤ
+
+/-- The formal parameter `q` of the ground ring. -/
+def q_param : R_q := LaurentPolynomial.T 1
+
+/-- The formal parameter `q⁻¹` of the ground ring. -/
+def q_inv_param : R_q := LaurentPolynomial.T (-1)
+
+/-- The genus of Bring's curve. -/
+def bringsGenus : ℕ := 4
+
+/-- **Local q-zeta function** of Bring's curve.
+
+    Encodes the generating function for point counts over finite
+    extensions of `F_q`. The characteristic polynomial `P(t)` has degree
+    `2g = 8`, with roots `α₁, …, α₈` — the fundamental Frobenius
+    eigenvalues.
+
+    LaTeX: `\label{def:local-q-zeta-function}`
+    Ref: [manuscript] Chapter 8, Section 4 -/
+structure LocalQZetaFunction where
+  /-- The substrate parameter `q`. -/
+  q : R_q
+  /-- The 8 fundamental Frobenius eigenvalues `α₁, …, α₈`. -/
+  eigenvalues : Fin 8 → ℂ
+  /-- The *reversed* characteristic polynomial `P̃(X) = ∏ᵢ (X − αᵢ)`.
+      Related to the standard form `P(t) = ∏ᵢ (1 − αᵢ t)` by
+      `P(t) = t^{2g} · P̃(1/t)`, so the roots of `P̃` are the eigenvalues
+      `αᵢ` themselves (not their reciprocals). We use this convention
+      to match Lean's polynomial root factorization. -/
+  charPoly : ℂ[X]
+  /-- `P̃` has degree `2g = 8`. -/
+  charPoly_degree : charPoly.natDegree = 2 * bringsGenus
+  /-- `P̃` factors as `∏ᵢ (X − αᵢ)`. -/
+  charPoly_roots :
+    charPoly = ∏ i : Fin 8, (X - C (eigenvalues i))
+
+end
+
+end QOU.AlgebraicSubstrate

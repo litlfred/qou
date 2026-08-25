@@ -43,6 +43,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps, str_at_true_precision  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -63,6 +64,12 @@ from witness_base import WitnessBuilder, record_upstream
 _UPSTREAM_RECORDS: list = []
 from codata_constants import M_E_MEV
 from q_parameter import Q as Q0
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 B_D_AME_MEV = mp.mpf("2.22456607")  # AME 2020 deuteron binding energy
 
@@ -277,10 +284,15 @@ def main() -> int:
             per_lambda.append({
                 "partition": p["partition"],
                 "k_lambda": k_lambda,
-                "y_lambda": str(p["y"]),
-                "chi_lambda": str(p["chi"]),
-                "delta_lambda": str(delta_l),
-                "contribution": str(term),
+                # str_at_true_precision, not str: delta_l is mp.mpf(<float>) —
+                # 53 bits promoted — and str() renders it at the live mp.dps,
+                # emitting 50 digits of binary64 tail that read as measured.
+                # A no-op on the values that DID carry more than 53 bits, since
+                # the short form is then exact.
+                "y_lambda": str_at_true_precision(p["y"]),
+                "chi_lambda": str_at_true_precision(p["chi"]),
+                "delta_lambda": str_at_true_precision(delta_l),
+                "contribution": str_at_true_precision(term),
             })
         B_D_pred *= M_E_MEV
         err_abs = abs(B_D_pred - B_D_AME_MEV)

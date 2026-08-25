@@ -52,8 +52,9 @@ from witness_base import WitnessBuilder  # noqa: E402
 from qbeta_g3_fourone_index_assembly import (  # noqa: E402
     tet_norm, _dense_mul, series_str,
 )
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 ORD = 44           # x-order for grid assemblies (q-order 22)
 GRID = [(m, e) for m in range(-2, 3) for e in range(-2, 3)]

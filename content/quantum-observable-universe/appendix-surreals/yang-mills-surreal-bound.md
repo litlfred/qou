@@ -10,13 +10,15 @@ $$
 
 In the $\omega$-adic register ([Big-O via $\ordw$](#rem:conway-normal-form)): $\ordw(\Delta_q) = -3 > -\infty = \ordw(0)$. The mass gap sits at strictly higher $\omega$-order than the zero element.
 
-The Yang--Mills specialization of [surreal squeeze](#lem:surreal-squeeze) is degenerate: the "drift" is the putative massless glueball excitation of energy $\delta = 0$. The squeeze
+The Yang--Mills specialization of [surreal squeeze](#lem:surreal-squeeze) concerns the putative massless glueball excitation, of energy $\delta = 0$. The squeeze
 
 $$
 \delta^2 \cdot \varepsilon^{-1} > \varepsilon^3
 $$
 
-holds strictly for every standard-real $\delta > 0$ and degenerates to the marginal equality at $\delta = 0$. Therefore, the only excitation with zero cost is the trivial one (no excitation). Every non-trivial excitation has $\delta \geq \Delta_q \asymp \varepsilon^3 > 0$, which is the categorical mass-gap statement.
+is equivalent to $|\delta| > \varepsilon^2$. It therefore holds for every standard-real $\delta > 0$ — which is exactly the hypothesis under which the lemma is stated — is marginal at $\delta = \varepsilon^2$, and **fails** at $\delta = 0$, where the left side vanishes while the right side is $\varepsilon^3 > 0$. The massless excitation is excluded by that failure, not by a degeneracy: the only excitation of zero cost is the trivial one.
+
+Two things do not follow from the lemma as stated, and are recorded here rather than assumed. The lemma quantifies over **standard-real** $\delta$, so it says nothing directly about an infinitesimal $\delta$; and the threshold the inequality supplies, $\varepsilon^2$, is larger than the asserted gap $\Delta_q \asymp \varepsilon^3$ by a factor of $\varepsilon^{-1}$, so an excitation sitting at $\Delta_q$ does not clear it. The categorical mass-gap statement $\delta \geq \Delta_q$ for non-trivial excitations is therefore the intended reading of $\Delta_q \asymp \varepsilon^3 > 0$ established above, not a consequence of this squeeze.
 
 The Yang--Mills mass-gap theorem is literally true in the QOU framework as a surreal-order inequality: $\Delta_q > 0$ in $\mathbb{R}(\varepsilon)$, equivalently $\ordw(\Delta_q) = -3$. Classical Yang--Mills on $\mathbb{R}^4$ is recovered as the standard part ([calculus up to $\varepsilon$](#rem:calculus-up-to-epsilon)): $\mathrm{st}\bigl(\Delta_q / \varepsilon^3\bigr) = c > 0$ for a standard real $c$, so the classical mass gap is $\Delta_{\mathrm{YM}} = \lim_{\varepsilon \to 0} \Delta_q / \varepsilon^3 \cdot \varepsilon^3_{\mathrm{phys}}$ at the physical $\varepsilon = 1/\omega$ value.
 

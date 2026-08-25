@@ -1,0 +1,241 @@
+{
+  "probe": "qbeta_5two_route36_vside_nonvacuity",
+  "bean": "qou-glbl",
+  "dps": 70,
+  "pairs_with_lean": [
+    "QOU/QBeta/FiveTwoTransport.lean (VSide)",
+    "QOU/QBeta/FiveTwoRootStructure.lean (exists_pinning_data)"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "NON-VACUITY, the gate class that caught correction 6: all SIX VSide conditions hold SIMULTANEOUSLY at every root at every arc point. The earlier version of this hypothesis carried `-y in slitPlane` and failed at ALL 199 points, making its theorem true and about nothing. Checking conditions one at a time would not have caught that; checking them together is the whole point",
+      "arc_points": 199,
+      "checks": 597,
+      "all_six_hold": 597,
+      "per_condition_failures": {
+        "y_ne_0": 0,
+        "y_notCut": 0,
+        "xy_notCut": 0,
+        "y_div_x_notCut": 0,
+        "xy_ne_0": 0,
+        "y_div_x_ne_0": 0
+      },
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "WHICH DISJUNCT carries `y in notCut`, classified by ROOT TYPE rather than by `Im != 0`. This matters: polyroots returns |Im| ~ 1e-41 for the REAL root, so a naive `Im != 0` test attributes it to the wrong disjunct. In exact arithmetic the real root is carried by Re < 1 and the complex pair by Im != 0 -- and a Lean proof must follow the exact split, not the numerical one",
+      "real_roots": 291,
+      "real_roots_carried_by_Re_lt_1": 291,
+      "real_roots_where_naive_Im_test_would_misattribute": 1,
+      "worst_spurious_Im_magnitude": "1.9319727e-71",
+      "misattribution_rate": "1 of 291 real roots (1 of 597 checks) -- rare enough that a spot check would miss it entirely",
+      "min_margin_1_minus_Re_at_real_roots": "0.1980717375",
+      "complex_roots": 306,
+      "complex_roots_carried_by_Im_ne_0": 306,
+      "min_abs_Im_at_complex_roots": "0.08077403422",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "RETRACTED AND REPLACED. The first version claimed `x*y and y/x are NEVER real on the arc ... so their notCut membership needs no case split at all`. FALSE, and the gate hid it by passing on a grid minimum, which is not a lower bound: refine the grid and the complex-pair minimum shrinks like 1/N (0.00587 at N=399, 0.00215 at N=999) -- a simple ZERO CROSSING. There is exactly one on (0,pi), found by bisecting the SYMMETRIC prod_j Im(x*y_j) so no branch tracking is needed. At it, x*y is real and notCut holds via `Re < 1`, so the obligation is the OPPOSITE of what was claimed. The crossing is exact: r is the unique real root of r^5 - r^3 + 1, with c = r(1+r)/2 and t = 1/r^2, all to 20 digits. Benign in Lean: r >= 1 gives r^5 - r^3 + 1 = r^3(r^2-1) + 1 >= 1 > 0, so no real root of the quintic reaches 1",
+      "crossings_of_x_times_y_on_open_arc": 1,
+      "crossings_of_y_over_x_on_open_arc": 1,
+      "crossing_phi": [
+        "1.4240498823546710303"
+      ],
+      "crossing_value_r": [
+        "-1.2365057033914990243"
+      ],
+      "r_as_root_of_quintic_r5_minus_r3_plus_1": "-1.2365057033914990243",
+      "agreement_with_quintic_root": "5.5778e-32",
+      "c_predicted_r_times_1_plus_r_over_2": "0.14622032556410336872",
+      "c_measured_at_crossing": "0.14622032556410336872",
+      "t_predicted_one_over_r_squared": "0.65404518415175798204",
+      "Re_lt_1_at_every_crossing": true,
+      "retracted_claim": "x*y and y/x are NEVER real on the arc; no case split needed",
+      "why_the_old_gate_passed": "it tested a grid minimum against 1e-6; a grid minimum cannot certify a lower bound, and the zero sat between sample points",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "WHAT A LEAN PROOF NEEDS, per condition -- with every clause MEASURED. (1) y != 0, x*y != 0, y/x != 0: the product of the three roots is -d/a = 1 identically in x, so no root can vanish; measured below as |y1*y2*y3 - 1| and as a lower bound on |y|. (2) x*y and y/x in notCut: via Im != 0, no case split (G3), and exists_pinning_data already supplies a sign -- measured below as the per-arc-point count of roots with (x*y).im < 0. (3) y in notCut: THE ONLY ONE NEEDING A CASE SPLIT -- real root via Re = t < 1, complex pair via Im != 0 (G2)",
+      "hardest_condition": "y in notCut -- the only one needing a real/complex case split",
+      "min_abs_y_over_all_checks": "0.4301926788",
+      "worst_abs_root_product_minus_one": "2.0772559e-71",
+      "min_roots_per_arc_point_with_Im_xy_neg": 1,
+      "already_available": [
+        "exists_pinning_data: 0 < t < 1, (x*y_3).im < 0, c < 0 -> (x*y_2).im < 0",
+        "gamma_rel: t*(t^2 - 2ct + 2c + 1) = 1, so no root is 0"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "THE ARC CROSSES THE DISCRIMINANT, and no real root reaches 1. On |x| = 1 the y-cubic is `unitCubic (Re x)` with REAL coefficients, so the roots are all-real or one-real-plus-conjugate-pair. Both regimes occur on the arc -- so `continuous_otherRoots`'s collision branch is exercised, not defensive, and the real branch of `y in notCut` must cover three roots at some arc points. Separately: shifting t = 1 + s gives unitCubic c (1+s) = 1 + (4-2c)s + (3-2c)s^2 + s^3, whose coefficients are ALL POSITIVE for c <= 1, so no root reaches 1 -- a uniform Re < 1 needing no `exists_pinning_data`",
+      "arc_points_with_three_real_roots": 46,
+      "arc_points_with_one_real_root": 153,
+      "discriminant_as_quartic_in_c": "16c^4 - 48c^3 + 28c^2 + 12c - 31",
+      "discriminant_identity_error_checked_off_arc": "1.8546e-68",
+      "c_star_the_only_transition_in_[-1,1]": "-0.7422176658829284376",
+      "shift_certificate_error_off_root_locus": "8.6935e-70",
+      "max_real_root_over_arc": "0.80192826251",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "IS `|x| = 1` LOAD-BEARING IN `root_mem_notCut`, OR DECORATION? Load-bearing, and the counterexample is exact rather than sampled: the curve is quadratic in x, so fixing y = 2 and solving gives 2x^2 - 9x + 2 = 0, x = (9 +- sqrt 65)/4 -- both real, neither on the unit circle, and y = 2 is real with Re >= 1 so it is NOT in notCut. Drop the hypothesis and the theorem is FALSE. Checked here because a hypothesis that is never tested off its own configuration is indistinguishable from one that does nothing. SEPARATELY: the arc's real roots climb to the largest LEVEL-7 root 2cos(pi/7) - 1 as phi -> pi, which is the configuration `sum_re_deformedV_at_neg_one` evaluates -- so the transport's endpoint is the level-7 point, not merely near it",
+      "counterexample_x": "0.23443556292536258691",
+      "counterexample_x_closed_form": "(9 - sqrt 65)/4",
+      "counterexample_y": "2",
+      "counterexample_abs_x": "0.23443556292536258691",
+      "counterexample_curve_residual": "1.0867e-70",
+      "counterexample_y_in_notCut": false,
+      "sup_of_real_roots_is_largest_level7_root": "0.80193773580483825247",
+      "level7_root_closed_form_2cos_pi_over_7_minus_1": "0.80193773580483825247",
+      "sampled_max_over_arc": "0.80192826251",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "VSide is FALSE AT phi = pi, and G1 STRUCTURALLY CANNOT SEE IT because it samples the OPEN interval pi*(i+1)/(N+1). At the endpoint x = -1, all three roots are real (they are the level-7 roots), and for a real root Im(x*y) = y*sin(phi) -- so every imaginary part vanishes SIMULTANEOUSLY. Two roots survive on Re < 1; the third, y = -2.2469796, gives x*y = +2.2469796, real with Re >= 1, which is exactly Li2's cut. So VSide.hc2 and hc3 are false there and MUST NOT be attempted on the closed arc. The transport is unaffected: `envelopeS_total` asks for the derivative only on `Ico 0 pi` and for continuity on `Icc 0 pi`, so the endpoint needs a VALUE but not differentiability -- and `sum_re_deformedV_at_neg_one` already supplies the value at x = -1 with no differentiability hypothesis",
+      "phi_pi_roots_failing_hc2": [
+        "-2.246979603717467"
+      ],
+      "phi_pi_x_times_failing_root": [
+        "2.246979603717467"
+      ],
+      "phi_pi_all_six_hold": false,
+      "phi_zero_all_hold": true,
+      "naive_exp_i_pi_evaluation_would_report_ok": true,
+      "why_naive_is_wrong": "exp(i*pi) returns -1 + 4.1e-43j, and that spurious Im satisfies the first disjunct -- the same trap as G2, in a new place. x must be built exactly as mpc(-1, 0)",
+      "consequence": "any attempt to prove VSide for phi in Icc 0 pi is attempting something FALSE; the provable statement is over Ico 0 pi",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "BOTH `log(-y)` ROUTES ARE NEEDED. `-y in slitPlane` is `Re y < 0 or Im y != 0`, so it fails precisely at a POSITIVE REAL root -- and there is exactly one at every arc point (`exists_root_mem_Ioo` puts it in (0,1)). So route 2 (`hasDerivAt_log_neg_ofReal`) can never be dropped, and route 1 is impossible there. Dropping route 2 is correction 6's mistake in a new place: a statement carrying only `slitPlane` would be VACUOUS at that root. The other two roots take route 1 either as a genuine complex pair (153 points) or, where the discriminant has flipped, as NEGATIVE reals (46 points, G5)",
+      "roots_taking_route1_slitPlane": 398,
+      "roots_taking_route2_positive_real": 199,
+      "arc_points_with_no_route2_root": 0,
+      "arc_points_with_more_than_one_route2_root": 0,
+      "lean": "log_neg_route (hx0 : x != 0) (hc : curve x y = 0) : -y in slitPlane or (0 < y.re and y.im = 0)",
+      "still_open": "route 2's lemma is stated for a path `fun u => ((t u : R) : C)`, so it needs Y real-valued NEAR phi, not merely real AT phi. That is a condition on the labelling, not on the root -- it belongs to the concrete Y1 Y2 Y3",
+      "pass": true
+    },
+    {
+      "gate": "G9",
+      "claim": "THE CONCRETE LABELLING IS FORCED, and it discharges G8's residue rather than leaving it. Take Y_1 phi = ((t (cos phi) : R) : C) with t(c) the unique root of unitCubic c in (0,1), and (Y_2, Y_3) = otherRoots. Then: (a) t is SINGLE-VALUED -- already a Lean theorem, `real_root_neg_of_ne` says the other real roots are negative; (b) t stays bounded away from 0 and 1, so `unitCubic_deriv_ge`'s hypotheses hold with margin and the IFT applies at 7/4; (c) the (0,1) root IS the unique POSITIVE REAL root, i.e. exactly the one `log_neg_route` sends to route 2; and (d) Y_1 is real-valued BY CONSTRUCTION, which is precisely the shape route 2's lemma requires. So the 'real near phi, not merely at phi' condition is not an extra obligation -- it falls out of the only labelling that makes sense",
+      "arc_points": 199,
+      "points_where_(0,1)_root_not_unique": 0,
+      "points_where_(0,1)_root_is_not_the_route2_root": 0,
+      "t_range": [
+        "0.4301926788",
+        "0.8019282625"
+      ],
+      "t_endpoints_cross_check": "t -> 0.4301597 as phi -> 0 (the real root at x = +1) and t -> 0.8019377 = 2cos(pi/7) - 1 as phi -> pi, the largest level-7 root -- matching G6 independently",
+      "max_grid_jump_in_t": "0.0036469176",
+      "grid_step": "0.015707963",
+      "implied_bound_on_dt_dphi": "0.23217",
+      "still_open": "the Lean construction itself: defining t(c) from `exists_root_mem_Ioo` + `real_root_neg_of_ne` and differentiating it through `ImplicitScalar`. The PIECES are all proved; what is missing is the assembly",
+      "pass": true
+    },
+    {
+      "gate": "G10",
+      "claim": "THE LEAN LABELLING REPRODUCES THE ACTUAL ROOTS. `FiveTwoRootLabelling` builds Y_1 = realRoot(cos phi) and (Y_2,Y_3) = otherRoots (t-2c) (t^2-2ct+2c+1). That second line is Vieta on the quadratic cofactor and TYPE-CHECKS whether or not it names the right numbers -- exactly the failure mode this lane has hit nine times (a correct theorem about the wrong polynomial). Checked against polyroots: the multiset {Y_1,Y_2,Y_3} must equal the actual root multiset at every arc point. The identity behind it is (Y-t)(Y^2+(t-2c)Y+(t^2-2ct+2c+1)) = unitCubic, whose constant term needs gamma_rel: t*(t^2-2ct+2c+1) = 1",
+      "arc_points": 199,
+      "points_with_no_unique_(0,1)_root": 0,
+      "worst_multiset_mismatch": "7.2445433e-71",
+      "pass": true
+    },
+    {
+      "gate": "G11",
+      "claim": "WHAT `hcont` NEEDS AT phi = pi -- AND IT IS CHEAPER THAN THIS GATE FIRST SAID. The first version claimed hcont needs `Re Li2 continuous ACROSS the cut`, a 2-D statement about the real part. RETRACTED: it needs only ONE-SIDED continuity from BELOW. cLiTwoExt w = -int log(1-wt)/t dt, and for real w > 1 the principal log gives arg = +pi past t = 1/w -- the same limit as approaching from Im < 0. Measured: from below the gap falls linearly to 1.4e-9; from above it sits at 5.0868 = |2*pi*i*log r|, matching the predicted jump to 10 digits. And the arc approaches the cut from Im < 0, so it meets it on the CONTINUOUS side. What is still open is the Lean statement, not a 2-D continuity theorem",
+      "cut_point_x_times_y": "2.246979603717467",
+      "cLiTwoExt_on_cut": "(2.454327343972528 - 2.543392307888486j)",
+      "Im_on_cut_equals_neg_pi_log_r": "0.0",
+      "gap_from_below": [
+        "0.0014014",
+        "1.4016e-5",
+        "1.4016e-7",
+        "1.4016e-9"
+      ],
+      "gap_from_above": [
+        "5.0867",
+        "5.0868",
+        "5.0868",
+        "5.0868"
+      ],
+      "jump_measured": "(0.0 + 5.08678461558j)",
+      "jump_predicted_2pi_i_log_r": "(0.0 + 5.08678461578j)",
+      "arc_approach_slope_Im/(phi-pi)": [
+        "2.246800729",
+        "2.246977815",
+        "2.246979586"
+      ],
+      "slope_note": "positive because Im(x*y) < 0 and (phi - pi) < 0; it converges to r itself, i.e. Im(x*y) ~ -r*(pi - phi) -- linear approach from BELOW",
+      "numerical_trap": "integrating [0,1] in ONE piece gives 2.4873 - 2.5226i, which is WRONG -- the integrand has a log singularity at t = 1/r inside. Split at Re(1/w), and split on BOTH sides or the off-cut comparisons are silently garbage. Correct value matches mpmath polylog(2,r) exactly",
+      "localisation_at_phi_pi": {
+        "Yreal": "0.8019377358048383  ->  x*y = -0.8019  (Re < 1, fine)",
+        "Ypair.1": "-0.5549581320873712  ->  x*y = +0.5550  (Re < 1, fine)",
+        "Ypair.2": "-2.246979603717467  ->  x*y = +2.2470  ON THE CUT",
+        "note": "pairDisc(pi) = 2.8629 > 0, so otherRoots is in its REAL branch there; only ONE of the three terms is difficult, and it is Ypair.2's cLiTwoExt(x*y). hcont is not three problems, it is one"
+      },
+      "still_open": "the Lean statement: cLiTwoExt continuous at a cut point along a path approaching from Im < 0. One-sided, not two-dimensional, and needed for ONE term (Ypair.2's) rather than for all three branches",
+      "pass": true
+    },
+    {
+      "gate": "G12",
+      "claim": "`hasDerivAt_Ypair_fst/snd` CARRY `pairDisc phi < 0`, AND THAT HYPOTHESIS IS SATISFIABLE -- measured, not assumed, because it does two jobs at once (selecting otherRoots' complex branch and keeping sqrt away from 0) and a hypothesis like that is exactly the shape that turns out to hold nowhere (correction 6). It holds at 153 of 199 arc points; the other 46 are the all-real regime. CROSS-CHECK: pairDisc is computed here from the LEAN definitions (beta = t-2c, gamma = t^2-2ct+2c+1), a different formula from G5's cubic discriminant, and the two agree exactly -- same 153/46 split, and the zero lands on the known collision phi_0 = 137.9206708879635 deg with cos = c* = -0.7422176658829284376",
+      "points_pairDisc_neg_complex_pair": 153,
+      "points_pairDisc_pos_all_real": 46,
+      "points_undetermined": 0,
+      "pairDisc_zero_phi_rad": "2.4071698135544545213",
+      "pairDisc_zero_phi_deg": "137.9206708879635054",
+      "known_collision_phi0_deg": "137.9206708879635",
+      "cos_of_zero": "-0.7422176658829284376",
+      "c_star_from_G5_quartic": "-0.7422176658829284376",
+      "cross_check_agreement": "5.6819e-31",
+      "pass": true
+    },
+    {
+      "gate": "G13",
+      "claim": "he_j FOR THE PAIR NEEDS k = 0, AND A TERM-BY-TERM BOUND CANNOT PIN IT. For the positive REAL root he_j is already proved and needs no k at all (dVdy is purely imaginary, t' is real). For the pair Re(dVdy*Y') = k*2*pi*Im(Y'/y), so k = 0 is required. Measured: |dVdy| <= 1.2e-40 at the pair (k = 0) and = 2*pi/t at the real root, max 14.6055 (|k| = 1) -- Route 30 G2's split, reconfirmed from the LEAN definition of dVdy. THE USEFUL PART IS THE NEGATIVE ONE: the pinning quantity S = arg(1-y)+arg(1-xy)+arg(1-y/x)-2arg(-y) is identically 0, but the four terms bounded separately give 11.857 > 2*pi, so no term-by-term argument works. Two groupings ARE tight, each under pi/2, and their sum 2.8152 < 2*pi pins k = 0 with room. The first, |arg(1-y)| < pi/2, is provable from Re y < 1 (for the pair Re y = c - t/2, c <= 1, t > 0). The second is the open obligation",
+      "max_abs_dVdy_at_pair": "9.6578511e-71",
+      "max_abs_dVdy_at_positive_real_root": "14.60551427",
+      "pinning_S_range_at_pair": [
+        "-7.2445433e-71",
+        "7.2445433e-71"
+      ],
+      "naive_termwise_bound": "1.4076 + 3.1133 + 3.1133 + 2*2.1115 = 11.857 > 2*pi = 6.2832 -- INSUFFICIENT",
+      "tight_grouping_1_arg_1_minus_y": "in [-1.4076, 1.4076], < pi/2, PROVABLE from Re y < 1",
+      "tight_grouping_2_range": [
+        "-1.4076132",
+        "1.4076132"
+      ],
+      "tight_grouping_2": "arg(1-xy) + arg(1-y/x) - 2 arg(-y) -- the OPEN obligation; measured under pi/2, needs only < 3*pi/2 for the pinning",
+      "max_Re_y_at_pair": "0.7847802931",
+      "pass": true
+    },
+    {
+      "gate": "G14",
+      "claim": "A SECOND ROUTE TO k = 0, ALSO CLOSED. G13 ruled out bounding the four args separately. The next natural idea is the saddle condition itself: on the curve y^2 = (1-y)(1-xy)(1-y/x), so (1-xy)(1-y/x) = y^2/(1-y), and taking args should reduce G to arg(y) and arg(1-y), both boundable. It does -- up to an integer m -- and the route needs m pinned. It is NOT: m takes BOTH values +-1 on the arc and never 0, so this trades one branch-pinning problem for another of the same difficulty. Recorded so the next pass does not rediscover it. One crumb: m flips sign between the conjugate pair, so it CANCELS on the sum over roots -- the sum may be reachable where the per-root statement is not, but `he_j` is stated per-root, so that would mean changing the interface rather than finishing a proof",
+      "m_values_occurring": [
+        -1,
+        1
+      ],
+      "m_is_pinned": false,
+      "conclusion": "route closed; m is not constant",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "VSide is NON-VACUOUS on the OPEN arc: all six conditions hold simultaneously at all 597 checks (199 interior arc points x 3 roots) -- and is FALSE at the endpoint phi = pi (G7).",
+    "endpoint": "G7. At x = -1 the roots are the level-7 roots, all real, and Im(x*y) = y*sin(phi) vanishes for all three at once. The root y = -2.2469796 then has x*y = +2.2469796 on Li2's cut, so hc2 and hc3 FAIL. G1 samples the open interval and structurally cannot see this. The transport survives because `envelopeS_total` needs the derivative only on `Ico 0 pi`; VSide must be proved over Ico, never Icc.",
+    "trap_avoided": "a naive `Im != 0` disjunct attribution counts the REAL root as complex, because polyroots returns |Im| ~ 1e-41 for it. Classified by root type instead. The non-vacuity conclusion is unaffected; the REASON it holds -- which is what a proof needs -- was contaminated.",
+    "structural_surprise": "291 real roots over 199 arc points, not 199 -- at 46 of them ALL THREE roots are real. The arc crosses the discriminant at c* = -0.74221766588, so `continuous_otherRoots`'s collision branch is live, and the real branch of `y in notCut` must cover three roots at some points. G5.",
+    "still_open": "the Lean proof of VSide, plus concrete Y_1 Y_2 Y_3 and the two log(-y) routes. Everything else in Gap A is proved.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

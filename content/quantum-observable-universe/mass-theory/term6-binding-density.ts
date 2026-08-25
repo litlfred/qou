@@ -16,7 +16,6 @@ export default remark({
     "magic-shell-correction",
   ],
   uses: [
-    "prop:wigner-np-pairing",
     "prop:categorical-neutrality-saturated-shells",
   ],
   cites: ["bethe1936", "weizsacker1935", "geckpfeiffer2000"],

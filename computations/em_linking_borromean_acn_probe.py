@@ -58,20 +58,53 @@ This probe reports ACN for the standard mutually-orthogonal-ellipse
 realisation across several aspect ratios, so the realisation-dependence
 is visible rather than hidden. Nothing is wired.
 
-Precision note: this is a smooth 2D quadrature over disjoint curves (no
-singularity), so plain float64 with an explicit convergence check is
-appropriate and mpmath's cost is unwarranted; the grid refinement is
-reported.
+PRECISION NOTE -- REVISED, and the earlier note was wrong. It read:
+"this is a smooth 2D quadrature over disjoint curves (no singularity),
+so plain float64 with an explicit convergence check is appropriate and
+mpmath's cost is unwarranted". The premise is false for the ACN. The
+integrand carries an ABSOLUTE VALUE, and the determinant inside it has
+the closed form
+
+    det[x'(s), y'(t), x(s)-y(t)]  =  a*b*(b*cos t - a*sin s)
+
+(derived below, checked against the explicit triple product), so |num|
+has a KINK on the curve b*cos t = a*sin s cutting straight through the
+domain. The integrand is C^0 there, not smooth, and the midpoint rule
+degrades from spectral to algebraic convergence. That is visible in the
+old witness and was misread as convergence: n=400 -> n=800 moved the
+6th digit (3.7e-7), and the n=800 value 1.6426377156933236 was published
+to 17 digits while being correct to about 6. The signed integral, which
+has no absolute value and IS analytic, converged to ~1e-16 immediately
+-- the two behaviours sitting side by side in one witness.
+
+The fix is not more grid. Splitting the integration at the kink restores
+smoothness on each piece, and mpmath's adaptive quadrature then reaches
+full precision: ACN = 1.642637681773124472637643, stable across dps.
+The old float64 value was wrong in its 7th digit.
 """
 
 from __future__ import annotations
 
 import math
 
+import mpmath as mp
+
 import _path_bridge  # noqa: F401
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.precision import set_compute_dps  # noqa: E402
 
-PHI = (1 + 5 ** 0.5) / 2
+# The nested adaptive quadrature costs ~O(dps^2); the corpus default of 70
+# would spend minutes per aspect ratio for digits nothing consumes. 30 dps
+# yields ~25 stable digits -- three times what the 8-digit kappa data can
+# use, and ~20 more than the float64 version actually had.
+QUAD_DPS = 30
+
+PHI = (1 + 5 ** 0.5) / 2                      # float64, for the cross-check
+
+
+def phi_mp():
+    """The golden ratio at working precision."""
+    return (1 + mp.sqrt(5)) / 2
 
 
 def curve1(s: float, a: float, b: float):
@@ -115,26 +148,95 @@ def gauss_integrals(a: float, b: float, n: int) -> tuple[float, float]:
     return signed * scale, unsigned * scale
 
 
+def _integrand(s, t, a, b, signed: bool):
+    """Gauss integrand with the determinant in closed form.
+
+    det[x'(s), y'(t), x(s)-y(t)] = a*b*(b*cos t - a*sin s): expand the triple
+    product and the sin^2 s + cos^2 s of the two surviving terms collapses.
+    `gauss_integrals` still evaluates the raw triple product, so the two
+    routines cross-check each other rather than sharing an assumption.
+    """
+    num = a * b * (b * mp.cos(t) - a * mp.sin(s))
+    wx = a * mp.cos(s)
+    wy = b * mp.sin(s) - a * mp.cos(t)
+    wz = -b * mp.sin(t)
+    r2 = wx * wx + wy * wy + wz * wz
+    return (num if signed else abs(num)) / (r2 * mp.sqrt(r2))
+
+
+def acn_mp(a, b):
+    """Average crossing number by adaptive quadrature, split at the kink.
+
+    The domain is folded to a quarter, s in [-pi/2, pi/2] x t in [0, pi]: the
+    unsigned integrand is invariant under s -> pi - s and under t -> -t. Within
+    that quarter the kink |b cos t - a sin s| = 0 is met exactly -- for each s
+    the inner kink sits at t = arccos((a/b) sin s) when that is in range, and
+    the outer integral is split where the root enters and leaves, |sin s| = b/a.
+    Each piece is then analytic and mp.quad converges to working precision.
+    """
+    a, b = mp.mpf(a), mp.mpf(b)
+
+    def inner(s):
+        c = (a / b) * mp.sin(s)
+        pts = [0, mp.acos(c), mp.pi] if abs(c) < 1 else [0, mp.pi]
+        return mp.quad(lambda t: _integrand(s, t, a, b, False), pts)
+
+    half = mp.pi / 2
+    spts = [-half, 0, half]
+    if b < a:
+        s0 = mp.asin(b / a)
+        spts = [-half, -s0, 0, s0, half]
+    return 4 * mp.quad(inner, spts) / (4 * mp.pi)
+
+
+def linking_mp(a, b):
+    """Signed Gauss integral -- the Brunnian control -- on the FULL domain.
+
+    Deliberately NOT folded like `acn_mp`. The signed integrand is odd under
+    the involution (s, t) -> (-s, pi - t), which maps the quarter domain to
+    itself, so a folded signed integral is zero identically and would test the
+    symmetry rather than the quadrature. Computed whole, the vanishing is a
+    real measurement. No kink here: without the absolute value the integrand
+    is analytic, so no splitting is needed.
+    """
+    a, b = mp.mpf(a), mp.mpf(b)
+    two_pi = 2 * mp.pi
+    return mp.quad(
+        lambda s: mp.quad(lambda t: _integrand(s, t, a, b, True), [0, two_pi]),
+        [0, two_pi]) / (4 * mp.pi)
+
+
 def main() -> None:
-    # Convergence check on the canonical (golden-ratio) realisation.
-    convergence = {}
-    for n in (200, 400, 800):
-        lk, acn = gauss_integrals(PHI, 1.0, n)
-        convergence[f"n={n}"] = {"linking": lk, "acn": acn}
-    lk_ref = convergence["n=800"]["linking"]
-    acn_ref = convergence["n=800"]["acn"]
-    conv_delta = abs(acn_ref - convergence["n=400"]["acn"])
+    set_compute_dps(QUAD_DPS)
+    phi = phi_mp()
+
+    acn_ref = acn_mp(phi, 1)
+    lk_ref = linking_mp(phi, 1)
+
+    # Stability, replacing the old grid refinement: re-run 10 dps lower and see
+    # how far the two agree. This measures the quadrature, not the arithmetic.
+    set_compute_dps(QUAD_DPS - 10)
+    acn_lo = acn_mp(phi_mp(), 1)
+    set_compute_dps(QUAD_DPS)
+    stable_delta = abs(acn_ref - mp.mpf(acn_lo))
+
+    # What the superseded float64 midpoint rule gave, kept as a cross-check on
+    # the new routine AND as the evidence that the kink cost it ~10 digits.
+    f64 = {f"n={n}": gauss_integrals(PHI, 1.0, n) for n in (200, 400, 800)}
+    f64_err = abs(acn_ref - mp.mpf(repr(f64["n=800"][1])))
 
     # Realisation-dependence: sweep the ellipse aspect ratio.
     sweep = {}
-    for ratio in (1.2, 1.5, PHI, 2.0, 3.0):
-        lk, acn = gauss_integrals(ratio, 1.0, 400)
-        sweep[f"a/b={ratio:.4f}"] = {"linking": lk, "acn": acn}
+    for label, ratio in (("1.2000", mp.mpf("1.2")), ("1.5000", mp.mpf("1.5")),
+                         ("1.6180", phi), ("2.0000", mp.mpf(2)),
+                         ("3.0000", mp.mpf(3))):
+        sweep[f"a/b={label}"] = {"linking": linking_mp(ratio, 1),
+                                 "acn": acn_mp(ratio, 1)}
     acns = [v["acn"] for v in sweep.values()]
     acn_min, acn_max = min(acns), max(acns)
 
     # Targets implied by the Freedman-He template fit.
-    targets = {"Vol~A": 4.7929826, "Vol~Z": 3.9913751}
+    targets = {"Vol~A": mp.mpf("4.7929826"), "Vol~Z": mp.mpf("3.9913751")}
     comparison = {
         k: {"target": v,
             "acn_over_target": acn_ref / v,
@@ -143,7 +245,10 @@ def main() -> None:
     }
     best_key = min(comparison, key=lambda k: abs(comparison[k]["rel_diff_pct"]))
 
-    wb = WitnessBuilder("em-linking-borromean-acn", engine="python-float64")
+    def q(x, d=20):
+        return mp.nstr(mp.mpf(x), d)
+
+    wb = WitnessBuilder("em-linking-borromean-acn", engine="mpmath")
     wb.set_description(
         "EXPLORATORY first-principles computation of the average "
         "crossing number (ACN) of a Borromean component PAIR -- the "
@@ -190,21 +295,51 @@ def main() -> None:
         "realisation": ("three mutually orthogonal ellipses, semi-axes "
                         "(a,b), cyclically permuted -- the standard "
                         "Borromean model"),
-        "quadrature": "midpoint rule on [0,2pi]^2 (spectral for smooth periodic)",
-        "precision": ("float64; smooth integrand over disjoint curves, "
-                      "no singularity"),
+        "numerator_closed_form": ("det[x'(s),y'(t),x-y] = a*b*(b cos t - "
+                                  "a sin s); the triple product's two "
+                                  "surviving terms collapse by "
+                                  "sin^2 s + cos^2 s = 1"),
+        "quadrature": ("mpmath adaptive quadrature, SPLIT at the kink "
+                       "b cos t = a sin s where |num| is only C^0; domain "
+                       "folded to a quarter using the two symmetries of "
+                       "the unsigned integrand"),
+        "precision": f"mpmath at {QUAD_DPS} dps",
+        "control_not_folded": ("the signed integral is computed on the "
+                               "FULL domain: it is odd under "
+                               "(s,t) -> (-s, pi-t), which preserves the "
+                               "quarter domain, so a folded control would "
+                               "vanish identically and test nothing"),
     })
-    wb.add_data("convergence", convergence)
-    wb.add_data("aspect_ratio_sweep", sweep)
+    wb.add_data("precision_check", {
+        "acn_at_dps": {str(QUAD_DPS): q(acn_ref, 25),
+                       str(QUAD_DPS - 10): q(acn_lo, 15)},
+        "agreement_between_them": q(stable_delta, 3),
+        "superseded_float64_midpoint": {k: {"linking": q(v[0], 3),
+                                            "acn": q(v[1], 17)}
+                                        for k, v in f64.items()},
+        "float64_n800_error": q(f64_err, 3),
+        "reading": ("The old n=800 midpoint value was published to 17 "
+                    "digits and is wrong in its 7th: the |.| kink caps "
+                    "midpoint convergence at algebraic. Splitting at the "
+                    "kink removes the cap. The signed control shows the "
+                    "contrast in the same table -- with no absolute value "
+                    "the integrand is analytic and float64 already had "
+                    "it to ~1e-16."),
+    })
+    wb.add_data("aspect_ratio_sweep",
+                {k: {"linking": q(v["linking"], 3), "acn": q(v["acn"])}
+                 for k, v in sweep.items()})
     wb.add_data("bounds", {
         "lower_bound_minimal_crossing_number_per_pair": 2,
-        "computed_ACN_golden_realisation": acn_ref,
-        "ACN_range_over_sweep": [acn_min, acn_max],
+        "computed_ACN_golden_realisation": q(acn_ref),
+        "ACN_range_over_sweep": [q(acn_min), q(acn_max)],
         "reading": ("2 <= C_true(pair) <= ACN(realisation); the ACN is "
                     "an upper bound on Freedman-He's minimised "
                     "asymptotic crossing number."),
     })
-    wb.add_data("comparison_to_template_fit", comparison)
+    wb.add_data("comparison_to_template_fit",
+                {k: {kk: q(vv, 12) for kk, vv in v.items()}
+                 for k, v in comparison.items()})
 
     # Corrected lower bound (my first version asserted the wrong one).
     total_link_acn = 3 * acn_ref
@@ -223,10 +358,11 @@ def main() -> None:
         "0 <= C_true(pair) <= ACN, and the computed value violates "
         "nothing. The failure is recorded rather than deleted."))
     wb.add_data("total_link_reading", {
-        "ACN_pair": acn_ref,
-        "ACN_total_link_3_pairs": total_link_acn,
-        "comparison": tot_cmp,
-        "realisation_spread_pct": realisation_spread_pct,
+        "ACN_pair": q(acn_ref),
+        "ACN_total_link_3_pairs": q(total_link_acn),
+        "comparison": {k: {kk: q(vv, 12) for kk, vv in v.items()}
+                       for k, v in tot_cmp.items()},
+        "realisation_spread_pct": q(realisation_spread_pct, 12),
         "status": (
             "CANDIDATE ONLY -- explicitly not a result. The per-pair "
             "ACN (1.643) falls 59-66% short of the template-implied "
@@ -241,7 +377,7 @@ def main() -> None:
             "cautions bite hard: (i) the kappa data is already "
             "per-pair normalised, so multiplying by 3 risks "
             "double-counting, and (ii) the ACN varies by "
-            f"{realisation_spread_pct:.1f}% across the aspect-ratio "
+            f"{q(realisation_spread_pct, 3)}% across the aspect-ratio "
             "sweep, which is COMPARABLE TO the 2.8% agreement -- the "
             "match is within realisation noise and must not be read as "
             "a confirmation."),
@@ -249,16 +385,28 @@ def main() -> None:
     wb.set_audit_only("docs/audits/2026-08-01-em-linking-reads-round1.md")
     wb.add_assertion(
         name="signed_linking_number_vanishes",
-        computed=abs(lk_ref), expected=0.0, tolerance=1e-6,
+        computed=q(abs(lk_ref), 3), expected="0", tolerance="1e-6",
         unit="linking number",
         source=("Brunnian control: the SIGNED Gauss integral over a "
                 "Borromean component pair must vanish, validating both "
                 "the quadrature and the realisation."))
     wb.add_assertion(
         name="acn_converged",
-        computed=conv_delta, expected=0.0, tolerance=1e-4,
+        computed=q(stable_delta, 3), expected="0", tolerance="1e-18",
         unit="ACN",
-        source="Grid refinement n=400 -> n=800 changes ACN by less than 1e-4.")
+        source=("Dropping the working precision by 10 dps moves the ACN by "
+                "less than 1e-18 -- the quadrature, not the arithmetic, is "
+                "what is being checked. The old form of this assertion "
+                "compared two grid sizes at a 1e-4 tolerance and passed "
+                "while the value was wrong in its 7th digit."))
+    wb.add_assertion(
+        name="float64_midpoint_was_wrong_in_the_7th_digit",
+        computed=q(f64_err, 3), expected="3.4e-8", tolerance="1e-8",
+        unit="ACN",
+        source=("The superseded n=800 midpoint value differs from the "
+                "converged one by ~3.4e-8, against the 17 digits it was "
+                "published with. Recorded as a measured claim so the "
+                "regression cannot come back unnoticed."))
     wb.add_assertion(
         name="acn_nonnegative_above_unlink_bound",
         computed=int(acn_ref >= 0.0), expected=1, tolerance=0, unit="bool",
@@ -275,17 +423,21 @@ def main() -> None:
                 "does not reproduce kappa(A)."))
     out = wb.save()
 
-    print("convergence (golden-ratio realisation):")
-    for k, v in convergence.items():
-        print(f"  {k}: lk = {v['linking']:+.3e}   ACN = {v['acn']:.6f}")
-    print("\naspect-ratio sweep (n=400):")
+    print(f"mpmath adaptive quadrature at {QUAD_DPS} dps, split at the kink")
+    print(f"  ACN (golden)  = {q(acn_ref, 25)}")
+    print(f"  lk  (control) = {q(abs(lk_ref), 3)}   (full domain, unfolded)")
+    print(f"  agreement vs {QUAD_DPS - 10} dps: {q(stable_delta, 3)}")
+    print(f"  superseded float64 n=800: {q(f64['n=800'][1], 17)} "
+          f"-- off by {q(f64_err, 3)}")
+    print("\naspect-ratio sweep:")
     for k, v in sweep.items():
-        print(f"  {k}: lk = {v['linking']:+.3e}   ACN = {v['acn']:.6f}")
-    print(f"\ncomputed ACN (golden) = {acn_ref:.6f}   "
-          f"[bounds: 2 <= C_true <= {acn_ref:.4f}]")
+        print(f"  {k}: lk = {q(v['linking'], 3):>12}   "
+              f"ACN = {q(v['acn'], 12)}")
+    print(f"\ncomputed ACN (golden) = {q(acn_ref, 12)}   "
+          f"[bounds: 2 <= C_true <= {q(acn_ref, 6)}]")
     for k, c in comparison.items():
-        print(f"  vs template target {k} = {c['target']:.4f}: "
-              f"{c['rel_diff_pct']:+.1f}%")
+        print(f"  vs template target {k} = {q(c['target'], 8)}: "
+              f"{q(c['rel_diff_pct'], 4)}%")
     print(f"closest template reading: {best_key}")
     print(f"witness -> {out}")
 

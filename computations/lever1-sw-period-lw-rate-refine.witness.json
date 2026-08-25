@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T12:04:57.201526+00:00",
-  "commitSha": "ad645f313de23c8ddca7e42f9ce77f36bef70722",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:12:32.955653+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "fork_resolved_naive_rate_overshoots",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 5,
   "computation": "lever1-sw-period-lw-rate-refine",
   "scriptFile": "lever1_sw_period_lw_rate_refine.py",
-  "scriptHash": "ef7de698b732",
-  "scriptCommitSha": "f33bd44665c82a1dcaa2611d4c521c163cfc4ea3",
+  "scriptHash": "ff9c75d493b2",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lever1_sw_period_lw_rate_refine.py"
+    ],
+    "reproduce": "python3 -u computations/lever1_sw_period_lw_rate_refine.py"
   },
   "description": "Lever-1 (z2bn): quantitative refinement of the SW-period↔lw fork, mpmath-only. Reproduces the fork resolution in-container (lw ratio grows 1.34→3.10 super-exp; depth-2 → λ₊≈2.18 constant; split at n≥5 ⇒ lw/#1765 is the true prolongation, τ-recurrence the n≤4 fit). NEW: the naive single-branch rate (n−½)/R overshoots the true lw ratio ~2.5× at n=8 (color cubic has 6 branch points in 3 pairs; exact rate = full multi-branch residue sum, not nearest point). lw tracks the involution-class ~√n (q→1 telephone limit). Sharpens the open piece to the exact super-exp a_D^(n) kernel (q-Bessel-class), τ being its n≤4 shadow. Anti-fit: lw categorical, branch points geometric, overshoot reported not tuned. Scope-(a), no wiring.",
   "data": {

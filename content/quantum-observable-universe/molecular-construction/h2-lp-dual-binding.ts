@@ -8,6 +8,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Molecular.h2_lp_dual_binding", validation: "not_checked" },
   title: "LP dual gives optimal $H_2$ binding",
   uses: [
+    "conj:q-integer-mass-formula",
     "def:h2-molecular-braid",
     "prop:shell-filling-rule",
   ],
@@ -19,6 +20,10 @@ export default proposition({
       "computations/h2-integer-lp.witness.json",
       "computations/h2-molecular-binding.witness.json",
     ],
-    status: "verified",
+    status: "failed",
+    // status was "verified" until 2026-08-23; the cited witness's own
+    // `allPassed` is false (H2 binding energy within 5% of observed (no calibration)). Per ComputationStatus,
+    // "failed" = script ran, witness does NOT match expected values.
+    // Nothing compared the two until scripts/check-computation-status.py.,
   },
 });

@@ -19,7 +19,7 @@ function entryHash(entry: unknown): string {
  * This script runs the automation half of the bib-human-review workflow.
  * Triggered by either:
  *  1) A GitHub webhook payload for a `bib-physical-review` issue photo upload.
- *  2) A local run over `uploads/` to process the backfill queue.
+ *  2) A local run over `library/` to process the backfill queue.
  *
  * Steps:
  *  1. Read the source / OCR.

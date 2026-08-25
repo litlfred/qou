@@ -58,12 +58,14 @@ sys.path.insert(0, str(Path(__file__).parent))
 import mpmath as mp
 import numpy as np
 
-mp.mp.dps = 30
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 from q_parameter import Q as Q0_FLOAT, Q_MP, Q_INV_MP  # noqa: E402
 from hecke_characters import dim_q  # noqa: E402
 from syt_prefix_cache import BlockCache, build_seminormal_matrices_cached  # noqa: E402
 from codata_constants import M_E_MEV as m_e  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 def partitions_of(n):
@@ -107,7 +109,7 @@ def main():
     Q0 = Q_MP
     QI = Q_INV_MP
     h_amp = Q0 - QI
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
 
     print(f"  Substrate: q_0 = {Q0}, h_0 = {float(h_amp):.6f}")
     print(f"  Markov z = 1/(√q + 1/√q) = {float(z_mark):.10f}")
@@ -137,9 +139,9 @@ def main():
         data[shape] = {
             "sigmas": sigmas_dense,
             "dim": d_lam,
-            "dim_q": float(dim_q(shape)),
+            "dim_q": float(dim_q(shape, Q0_PROTON)),
         }
-        print(f"    {shape}: dim = {d_lam}, dim_q = {float(dim_q(shape)):.6f}")
+        print(f"    {shape}: dim = {d_lam}, dim_q = {float(dim_q(shape, Q0_PROTON)):.6f}")
     print()
 
     # Constraint elements: 5 unknowns (y_λ for the 5 partitions of 4)
@@ -243,7 +245,7 @@ def main():
         else:
             sigmas3_dense = list(sigmas3)
         data3[shape] = {"sigmas": sigmas3_dense, "dim": d_lam3,
-                        "dim_q": float(dim_q(shape))}
+                        "dim_q": float(dim_q(shape, Q0_PROTON))}
     constraint_words3 = {
         "1": [],
         "s0": [(0, 1)],

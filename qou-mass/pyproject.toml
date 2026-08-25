@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "qou-mass"
-version = "0.1.0a1"
+version = "1.0.0"
 description = "Quantum Observable Universe mass-prediction library — |tr_M(β_atom, q_0)|, binding energies, nucleon masses via the canonical-derivation pipeline."
 authors = [{name = "Steven Q. Smith", email = "litlfred@users.noreply.github.com"}]
 license = {text = "see LICENSE in https://github.com/litlfred/qou"}
@@ -32,6 +32,14 @@ dependencies = [
     "mpmath>=1.3",
     "sympy>=1.12",
     "numpy>=1.24",
+    # Added in v1.0.0 with the generated `_internal/` vendoring. The
+    # vendored modules are shims that re-export from these — `_precision`
+    # from `qou_substrate.precision`, `mass_at_3A_proper` from
+    # `pyhecke.atom` — so they are hard runtime requirements of the live
+    # `canonical_braid()` path, not optional accelerators. Without them
+    # that path degrades to a strand count (see api.canonical_braid).
+    "qou-substrate>=0.1",
+    "pyhecke>=0.1",
 ]
 
 [project.optional-dependencies]
@@ -57,7 +65,13 @@ Issues = "https://github.com/litlfred/qou/issues"
 where = ["src"]
 
 [tool.setuptools.package-data]
-"qou_mass" = ["data/*.json"]
+# `data/*.json` — the hand-curated shards read by the public API.
+# `*.witness.json` at the package ROOT — vendored witnesses the `_internal`
+#   modules load themselves. They cannot live under `data/`: those modules
+#   resolve paths as `Path(__file__).parent.parent`, which inside the wheel
+#   is `qou_mass/`, so `data/` would FileNotFoundError at runtime. Both are
+#   written by `scripts/sync-qou-mass-vendor.py`; do not hand-place either.
+"qou_mass" = ["data/*.json", "data/isotopes/*.json", "*.witness.json"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

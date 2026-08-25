@@ -1,23 +1,25 @@
 {
   "benchmark_tr_m": {
-    "tr_m_at_substrate": 1.8366586095186817,
-    "word_description": "(σ_0 σ_1 σ_2)^4 (T(4,5)-style)"
+    "tr_m_at_substrate": 2.086641217277176,
+    "word_description": "(\u03c3_0 \u03c3_1 \u03c3_2)^4 (T(4,5)-style)"
   },
-  "commitSha": "ce3567490fc7d470b81700717d308476fcdd2540",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "compute": "h4_wedderburn_atlas",
-  "computedAt": "2026-07-18T17:41:56.180935+00:00",
-  "description": "Jones-Markov weights y_λ at H_4(q) = canonical extension of alpha_k_jones_markov_h3.py to the 4-strand Wedderburn case. Closes the gap identified in PR #1231 BIG review: 'H_4 framework exists; gap is absence of explicit production knot atlas for H_4 (only H_3 in use).' Production consumer for Higgs T(2,8) projection to H_4 + 4-strand structures.",
+  "computedAt": "2026-08-23T08:49:01.624289+00:00",
+  "description": "Jones-Markov weights y_\u03bb at H_4(q) = canonical extension of alpha_k_jones_markov_h3.py to the 4-strand Wedderburn case. Closes the gap identified in PR #1231 BIG review: 'H_4 framework exists; gap is absence of explicit production knot atlas for H_4 (only H_3 in use).' Production consumer for Higgs T(2,8) projection to H_4 + 4-strand structures.",
   "durationMs": 0,
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
+  "engineVersion": "mpmath 1.4.1",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "scriptFile": "alpha_k_jones_markov_h4.py",
-  "scriptHash": "dffa18d3bd0d",
+  "scriptHash": "101b96035541",
   "status": "exploratory",
   "substrate": {
     "h_0": 0.2090602987956393,
-    "markov_z": 0.4993203341836944,
-    "q_0": "1.10997858275138080759166909561"
+    "markov_z": 0.6126880371464652,
+    "q_0": "1.109978582751380807591669095610768879874499121873577636056718792510176"
   },
   "tags": [
     "h4-wedderburn-atlas",
@@ -27,9 +29,9 @@
   ],
   "wedderburn_h3_crosscheck": {
     "weights": {
-      "(1, 1, 1)": 0.022744942577347143,
-      "(2, 1)": 0.28092963103101976,
-      "(3,)": 0.4153957953606133
+      "(1, 1, 1)": -7.766549965716928e-17,
+      "(2, 1)": 0.24729788674803466,
+      "(3,)": 0.5054042265039307
     }
   },
   "wedderburn_h4": {
@@ -42,11 +44,11 @@
       "(4,)": 1
     },
     "jones_markov_weights": {
-      "(1, 1, 1, 1)": -0.0008425276179071466,
-      "(2, 1, 1)": 0.023587470195254343,
-      "(2, 2)": 0.0694733040788763,
-      "(3, 1)": 0.18786885675688914,
-      "(4,)": 0.22752693860372417
+      "(1, 1, 1, 1)": -1.8697403519185594e-17,
+      "(2, 1, 1)": 8.859653663461886e-19,
+      "(2, 2)": 0.06115624479004378,
+      "(3, 1)": 0.18614164195799088,
+      "(4,)": 0.3192625845459398
     },
     "partitions": [
       [
@@ -85,7 +87,5 @@
     "Higgs T(2,8) projection to H_4 (precursor for refined formula)",
     "4-strand alpha-particle internal braids (D11 Wigner SU(4) line)",
     "any production code needing tr_M on 4-strand braids"
-  ],
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  ]
 }

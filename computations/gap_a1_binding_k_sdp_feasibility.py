@@ -62,6 +62,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 from binding_k_solver import (  # noqa: E402
     per_block_evaluation, load_wenzl_weights,
 )
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 Q0 = float(Q_FLOAT)
 HERE = Path(__file__).parent
@@ -110,7 +111,7 @@ def main() -> int:
             "y_lambda": y,
             "y_chi": y * chi,
             "abs_y_chi": abs(y * chi),
-            "dim_q": float(dim_q(lam)),
+            "dim_q": float(dim_q(lam, Q0_PROTON)),
             "psd_within_tol": blk["psd_within_tol"],
         })
     per_lambda.sort(key=lambda r: r["abs_y_chi"], reverse=True)
@@ -130,7 +131,12 @@ def main() -> int:
     # selected channel is the dominant block. G = I (diagonal PSD lift).
     t = -np.array([r["abs_y_chi"] for r in per_lambda])
     G = np.eye(len(per_lambda))
-    sdp = solve_psd_operator_selection_sdp(t, G, n_target=1.0)
+    # Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+    # whether the Rust binary happens to be built, so the same script
+    # yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+    # makes a missing binary an error rather than a changed answer.
+    # Bean `qou/ftuv`.
+    sdp = solve_psd_operator_selection_sdp(t, G, n_target=1.0, backend="clarabel")
     sdp_d = sdp.to_dict()
     # The diagonal-lift SDP delegates to the operator-selection LP, so the
     # LP-style dual variables live in Z_star = [y0_star, *y_star] and the

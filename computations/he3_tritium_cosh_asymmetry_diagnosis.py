@@ -38,7 +38,7 @@ from mass_at_3A_proper import (  # noqa: E402
     atom_braid_word_3A, chi_lambda_of_word, _cached_seminormal,
 )
 from sympy.utilities.iterables import partitions as _sympy_partitions  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
@@ -61,7 +61,7 @@ def char_profile(Z, N, mode):
         w = [(c, 0.0, k) for (c, d, k) in w]
     out = {}
     for lam in _parts(n):
-        sig, dim, _ = _cached_seminormal(lam)
+        sig, dim, _ = _cached_seminormal(lam, Q0)  # this producer's OWN q — see qou-wee5
         if dim == 0:
             continue
         out[lam] = mp.mpf(str(chi_lambda_of_word(sig, dim, w, ng)))

@@ -1,0 +1,230 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1808.05026v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "2781e0b34e7889d6fd306b5c62cade2f9392f1913a1887830dc59069b9ad3188",
+  "file": "1808.05026v1.pdf"
+ },
+ "provenance": {
+  "title": "GR \u00a8OBNER-SHIRSHOV BASES FOR TEMPERLEY-LIEB ALGEBRAS OF",
+  "authors": "TYPES B AND D",
+  "arxiv": {
+   "id": "1808.05026",
+   "version": "1",
+   "primary_class": "math.RA",
+   "stamp_date": "15 Aug 2018"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 15,
+  "by_kind": {
+   "lemma": 5,
+   "remark": 2,
+   "proposition": 2,
+   "theorem": 3,
+   "example": 3
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": null,
+   "name": null,
+   "statement": "and his algorithm [11, 12] for Lie algebras and indepen dently from Buchberger\u2019s algo-",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-2",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": "[1, 2]",
+   "statement": "Every p \u2208 F\u27e8X\u27e9 can be expressed as",
+   "section_file": "sections/sec-001-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "The term \u2211 \u03b2juj in the expression (2.1) is called a normal form (or a remainder) of p",
+   "section_file": "sections/sec-001-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "2-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.3",
+   "name": null,
+   "statement": "The set of S-standard monomials spans the algebra A = F\u27e8X\u27e9/I de\ufb01ned by",
+   "section_file": "sections/sec-001-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.6",
+   "name": "[1, 2]",
+   "statement": "Let S be a subset of monic elements in F\u27e8X\u27e9. Then the following",
+   "section_file": "sections/sec-001-2-preliminaries.md",
+   "section_title": "Preliminaries",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
+   "name": null,
+   "statement": "([8, Proposition 6.2]) The Temperley-Lieb algebra T (An\u22121) has a Gr\u00a8 obner-",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "3.2",
+   "name": null,
+   "statement": "Note that |MT (A3)| = C4 = 14. Explicitly, the \u02c6RT (A3)-standard monomials are",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "(1) One interesting point of considering standard monomia ls is that the product of two",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "The following relation holds in T (Bn):",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "From this, we de\ufb01ne MT (Bn) by the set of \u02c6RT (Bn)-standard monomials. Among the",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": null,
+   "statement": "The algebra T (Bn) has a Gr\u00a8 obner-Shirshov basis \u02c6RT (Bn) with respect to our",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "4.3",
+   "name": null,
+   "statement": "(1) We enumerate the \u02c6RT (B3)-standard monomials containing E0:",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "5.1",
+   "name": null,
+   "statement": "The following relations hold in T (Dn).",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.2",
+   "name": null,
+   "statement": "The algebra T (Dn) has a Gr\u00a8 obner-Shirshov basis \u02c6RT (Dn) with respect to our",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "5.3",
+   "name": null,
+   "statement": "(1) The \u02c6RT (D4)-standard monomials containing E0 are as follows:",
+   "section_file": "sections/sec-002-3-review-of-results-for-the-temperley-lieb-algeb.md",
+   "section_title": "Review of results for the Temperley-Lieb algebra of type An-1",
+   "pages": "3-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

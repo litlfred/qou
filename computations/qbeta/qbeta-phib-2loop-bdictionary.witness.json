@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-17T22:06:36.682212+00:00",
-  "commitSha": "9ae6e60f8839db1886a2f31ff33e1192204780fb",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:56:27.574509+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "phib_2loop_bdictionary_gated",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 19,
+  "durationMs": 7,
   "computation": "qbeta-phib-2loop-bdictionary",
   "scriptFile": "qbeta_phib_2loop_bdictionary_probe.py",
-  "scriptHash": "47117801a88a",
-  "scriptCommitSha": "9ae6e60f8839db1886a2f31ff33e1192204780fb",
+  "scriptHash": "27c38ceb0e2d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_phib_2loop_bdictionary_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_phib_2loop_bdictionary_probe.py"
   },
   "description": "Odd-channel Φ_b 2-loop b-dictionary at m=q₀ (owner-directed L2 gap-close). Semiclassical saddle expansion of the 4₁ figure-eight state integral with the Neumann-Zagier potential V(z)=Li2(z)-Li2(1/z): 1-loop is the torsion -1/2 log(-V''), 2-loop is A1 = V''''/(8 V''^2) - 5 V'''^2/(24 V''^3). GATED formalize-first: G1 the geometric saddle z*=e^{iπ/3} reproduces Vol(4_1)=2.02988; G2 the 1-loop torsion |-V''(z*)|=sqrt(3) (4_1 adjoint Reidemeister torsion). Only if both gates pass is A1 (the 2-loop b-dictionary coefficient) reported, at the complete structure and at the substrate deformation m=q0 (deformed saddle from the corpus vol_of_m gluing solve). Feeds the merged F1 D-ladder acceleration normalization; coordinated with #3805 (even-channel GGM A_omega). Scope-(a); no c_k wired; no fit; if a gate fails no 2-loop claim is made.",
   "data": {
@@ -37,7 +48,7 @@
       0.8660254037844386
     ],
     "V_star": [
-      0.0,
+      -4.527839539413356e-72,
       2.0298832128193074
     ],
     "vol_pred": 2.0298832128193074,

@@ -1,4 +1,4 @@
-import Mathlib.Data.Real.Basic
+import Mathlib.Order.Defs.PartialOrder
 import Mathlib.Tactic.NormNum
 
 /-!
@@ -43,10 +43,20 @@ self-assuming-projection shape forbidden by AGENTS.md §3b-cond item 5):
 The single irreducibly-conjectural input is the **LP-dual ground-state
 selection** — the symmetric `(2,2)` configuration minimises `Φ₁` over
 the carbon-valence-feasible configurations. It is carried by the
-§3b-cond class `QIntegerMassFormula` as a *quantified hypothesis* the
-theorem instantiates, never restated verbatim in the conclusion. -/
+§3b-cond class `Co2SymmetricSelection` as a *quantified hypothesis* the
+theorem instantiates, never restated verbatim in the conclusion.
+
+## Base ring (§7c)
+
+`Φ₁` is the LP objective functional on bond configurations and the only thing
+done to its values is `≤`; the strand counts and valences are `ℕ`. Nothing is
+measured and nothing is archimedean, so the `Φ₁` values live in a generic
+ordered `R` (contrast `ch4_lp_dual_binding`, whose `E_bind_CH` is a measured
+bond energy and is `ℝ` by meaning). The substrate evaluation is `R := ℝ`. -/
 
 namespace QOU.Molecular
+
+variable {R : Type*} [Preorder R]
 
 /-- The five carbon-valence-feasible bond configurations
     `(k₁, k₂)` with `k₁ + k₂ ≤ 4`, encoded as an index type.
@@ -62,7 +72,7 @@ inductive Co2Config
 /-- Data of the CO₂ LP-dual-binding claim. All fields are *inputs*
     (the symmetric candidate's bond orders, the molecular composition,
     and the `Φ₁`-functional); none is a conclusion. -/
-class Co2LpDualBindingContext where
+class Co2LpDualBindingContext (R : Type*) [Preorder R] where
   /-- Bond order to the first oxygen atom in the symmetric candidate. -/
   k1 : ℕ
   /-- Bond order to the second oxygen atom in the symmetric candidate. -/
@@ -89,14 +99,14 @@ class Co2LpDualBindingContext where
       oxygen contributions (definitional composition input). -/
   n_strands_def : n_strands = strands_C + 2 * strands_O
   /-- `Φ₁` of each carbon-valence-feasible bond configuration. -/
-  Phi1_config : Co2Config → ℝ
+  Phi1_config : Co2Config → R
 
 /-- §3b-cond conjecture class (non-degenerate per AGENTS.md §3b-cond
     item 5): carries the conjectural LP-dual *hypothesis* — the
     symmetric `(2,2)` configuration is the `Φ₁`-minimiser over all
     carbon-valence-feasible configurations — as a quantified field, NOT
     any conclusion of the theorems below. -/
-class QIntegerMassFormula (ctx : Co2LpDualBindingContext) : Prop where
+class Co2SymmetricSelection (ctx : Co2LpDualBindingContext R) : Prop where
   /-- The symmetric configuration minimises `Φ₁` over all feasible
       configurations (the ground-state selection hypothesis). -/
   symmetric_minimises :
@@ -108,7 +118,7 @@ class QIntegerMassFormula (ctx : Co2LpDualBindingContext) : Prop where
     primal-feasibility check, computed from the definitional geometry
     inputs — not a projected hypothesis field. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
-theorem co2_carbon_valence_feasible (ctx : Co2LpDualBindingContext) :
+theorem co2_carbon_valence_feasible (ctx : Co2LpDualBindingContext R) :
     ctx.k1 + ctx.k2 ≤ 4 := by
   norm_num [ctx.k1_def, ctx.k2_def]
 
@@ -116,11 +126,11 @@ theorem co2_carbon_valence_feasible (ctx : Co2LpDualBindingContext) :
     uses `18 + 2·24 = 66` strands, evaluated from the per-atom
     composition inputs — not a projected definitional field. -/
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
-theorem co2_strand_count (ctx : Co2LpDualBindingContext) :
+theorem co2_strand_count (ctx : Co2LpDualBindingContext R) :
     ctx.n_strands = 66 := by
   norm_num [ctx.n_strands_def, ctx.strands_C_def, ctx.strands_O_def]
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the symmetric
+/-- **Theorem (conditional on `Co2SymmetricSelection`)** — the symmetric
     double-bond configuration `(2,2)` has `Φ₁` no greater than either
     asymmetric alternative `(3,1)` or `(1,3)`.
 
@@ -129,14 +139,14 @@ theorem co2_strand_count (ctx : Co2LpDualBindingContext) :
     obtained by using the quantified hypothesis at two points. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
-theorem co2_symmetric_beats_asymmetric (ctx : Co2LpDualBindingContext)
-    [hc : QIntegerMassFormula ctx] :
+theorem co2_symmetric_beats_asymmetric (ctx : Co2LpDualBindingContext R)
+    [hc : Co2SymmetricSelection ctx] :
     ctx.Phi1_config Co2Config.sym ≤ ctx.Phi1_config Co2Config.asym31 ∧
     ctx.Phi1_config Co2Config.sym ≤ ctx.Phi1_config Co2Config.asym13 :=
   ⟨hc.symmetric_minimises Co2Config.asym31,
    hc.symmetric_minimises Co2Config.asym13⟩
 
-/-- **Theorem (conditional on `QIntegerMassFormula`)** — the resolving
+/-- **Theorem (conditional on `Co2SymmetricSelection`)** — the resolving
     declaration for `lean.ref` `qou:QOU.Molecular.co2_lp_dual_binding`.
 
     Conjoins (1) the *derived* carbon-valence feasibility
@@ -148,8 +158,8 @@ theorem co2_symmetric_beats_asymmetric (ctx : Co2LpDualBindingContext)
     quantified `symmetric_minimises` hypothesis. -/
 -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199 (LP duality, symmetric optimum)
 -- Ref: [manuscript] quantum-observable-universe/molecular-construction/co2-lp-dual-binding.md
-theorem co2_lp_dual_binding (ctx : Co2LpDualBindingContext)
-    [hc : QIntegerMassFormula ctx] :
+theorem co2_lp_dual_binding (ctx : Co2LpDualBindingContext R)
+    [hc : Co2SymmetricSelection ctx] :
     ctx.k1 + ctx.k2 ≤ 4 ∧
     ctx.n_strands = 66 ∧
     (ctx.Phi1_config Co2Config.sym ≤ ctx.Phi1_config Co2Config.asym31 ∧

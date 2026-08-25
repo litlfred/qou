@@ -1,0 +1,163 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1105.1998v3",
+ "source": {
+  "file": "1105.1998v3.pdf",
+  "sha256": "daf3bffad8eb2749fdfcc69cde5ee683ab90c9a7f3007930e1b37b8d0da9e59a",
+  "bytes": 160668,
+  "pages": 11
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1105.1998",
+   "version": "3",
+   "primary_class": "math.CA",
+   "stamp_date": "16 Dec 2011"
+  },
+  "doi": "10.3842/SIGMA.2011.115",
+  "title": "A Connection Formula of the Hahn-Exton q-Bessel Function",
+  "authors_raw": "Graduate School of Information Science and Technology, Osak a University",
+  "abstract": "We show a connection formula of the Hahn–Exton q-Bessel function around the origin and the infinity. We introduce the q-Borel transformation and the q-Laplace transformation following C. Zhang to obtain the connection formula . We consider the limit p → 1− of the connection formula.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181028105506-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "A Connection Formula",
+   "of the Hahn–Exton q-Bessel Function",
+   "Takeshi MORITA"
+  ],
+  "title_prev": "A Connection Formula of the Hahn–Exton q-Bessel Function Takeshi MORITA"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The connection formula",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "The theta function of Jacobi",
+   "page": 3,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "The Hahn-Exton q-Bessel function",
+   "page": 4,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The p-Borel transformation and the p-Laplace transformation",
+   "page": 4,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "The limit of the connection formula",
+   "page": 6,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Limit of the connection formula",
+   "page": 7,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 2814,
+   "n_words": 708
+  },
+  {
+   "id": "sec-001-2-the-connection-formula",
+   "number": "2",
+   "title": "The connection formula",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1008,
+   "n_words": 304
+  },
+  {
+   "id": "sec-002-21-the-theta-function-of-jacobi",
+   "number": "2.1",
+   "title": "The theta function of Jacobi",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 548,
+   "n_words": 114
+  },
+  {
+   "id": "sec-003-23-the-p-borel-transformation-and-the-p-laplace",
+   "number": "2.3",
+   "title": "The p-Borel transformation and the p-Laplace transformation",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 4166,
+   "n_words": 960
+  },
+  {
+   "id": "sec-004-3-the-limit-of-the-connection-formula",
+   "number": "3",
+   "title": "The limit of the connection formula",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 11,
+   "n_chars": 8219,
+   "n_words": 2265
+  },
+  {
+   "id": "sec-005-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 1537,
+   "n_words": 232
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 8,
+  "sections": 6,
+  "chars_total": 18292
+ }
+}

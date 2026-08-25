@@ -28,11 +28,17 @@ theorem spectrahedral_phase_collapse (u : ℝ) (hu_pos : u > 0) (h_supergolden :
   ring
 
 /--
-Nucleon SDP Rank Drop: Explicit evaluation of the (2,1) self-conjugate block
-for the Proton/Neutron H_3(q) braid words. The regime change occurs exactly
-at the Supergolden Ratio q = ψ (u = 1/ψ), where the block structurally drops rank.
+The det-factor `detFactor3 u = u³ + u − 1` vanishes exactly at the supergolden
+threshold `u³ + u − 1 = 0` — a definitional unfolding of `detFactor3`.
+
+Named honestly as a definitional lemma: the previous `nucleon_sdp_rank_drop`
+carried an unused `hu_pos : u > 0` and a docstring claiming the nucleon (2,1)-block
+rank drop, while the body only unfolded `detFactor3`'s definition (`:= rfl`). The
+substantive rank-drop consequence for the Frobenius Gram matrix is the real
+theorem `spectrahedral_phase_collapse` above, which derives `det G = 0` from this
+factorization at the threshold.
 -/
-theorem nucleon_sdp_rank_drop (u : ℝ) (hu_pos : u > 0) :
+theorem detFactor3_eq_zero_iff (u : ℝ) :
     detFactor3 u = 0 ↔ u^3 + u - 1 = 0 := by
   rfl
 

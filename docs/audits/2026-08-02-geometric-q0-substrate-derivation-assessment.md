@@ -36,7 +36,7 @@ This is a **type/arena mismatch**, not a computational gap:
 
 1. **The current `q₀` "proof" inverts an observable.**
    [`observations/local-substrate-q-proof.md`](../../content/quantum-observable-universe/observations/local-substrate-q-proof.md):
-   `(1 − q⁻¹)² = Vol(4₁)/(m_μ/m_e) ≈ 0.009817 ⇒ q ≈ 1.10998`. `Vol(4₁) = 2Λ(π/3)`
+   `(1 − q⁻¹)² = Vol(4₁)/(m_μ/m_e) ≈ 0.009817 ⇒ q ≈ 1.10998`. `Vol(4₁) = 2·Cl₂(π/3)`
    is geometric; **`m_μ/m_e` is a CODATA observable**. This is exactly CAL-2 — the
    calibration the discipline forbids passing off as a parameter-free derivation.
 

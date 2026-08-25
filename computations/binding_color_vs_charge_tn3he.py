@@ -35,9 +35,9 @@ from habiro_coefficients_interpolate import (  # noqa: E402
 )
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 from schur_weyl_symbolic import partitions_of  # noqa: E402
-from _li_2_q_util import flavor_split_subleading  # noqa: E402
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 from closed_form_tau_M import compute_tau_M_nucleon_H3, closed_form_tau_M  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV  # noqa: E402 — CAL-1
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
@@ -65,7 +65,7 @@ def _per_block(Z, N, inter):
 
 
 def main() -> int:
-    delta = flavor_split_subleading(q0)
+    delta = flavor_split_leading(q0)
     print(f"E_0 = {float(E0):.4f} MeV   δ = {float(delta):.4e}   "
           f"α_EM = {float(ALPHA_EM):.4e}\n")
 

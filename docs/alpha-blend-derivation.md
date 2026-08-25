@@ -769,7 +769,27 @@ Borromean prefactor:  Vol(B_3) = 8G (Catalan)                            (prop: 
 | Vol(B_3) = 8G (hyperbolic) | known theorem (cited) | borromean-baryon-interpretation |
 | 3-term Wedderburn mass formula | proved | wedderburn-mass-formula |
 | α-blend reduction (this doc) | proved as 1-parameter family (Lemma 3.3) | this doc, §3 |
-| α* = G/3 (closed form) | **falsified** by PSLQ (this doc, §5) | alpha_high_precision.py |
+| α* = G/3 (closed form) | **falsified** by PSLQ (this doc, §5) — but see note | ~~alpha_high_precision.py~~ **retired to `_deprecated/` 2026-08-25** |
+
+> **🛑 RETRACTION (2026-08-25).** A claim that briefly stood here — that
+> restoring the chirality term refutes α\* being its stand-in — is **withdrawn**;
+> the test compared a correction term against an input the formula consumes, and
+> used nucleon-internal chains in an atomic formula. The α\* excision below is
+> **unaffected**: it rests on α\* being a fit, not on that test.
+>
+> > **🛑 α\* EXCISED (2026-08-25).** α\* was a **fit**: its producer normalised the
+> energy scale on CODATA `M_p` and root-found on CODATA `M_n` — two inputs, neither
+> CAL-1/2/3. Only CAL-1/2/3 are admissible, so the constant is retired along with
+> its published value `0.3058074307438076264762191`.
+>
+> **The G/3 falsification's verdict survives, its reasoning does not.** It was run
+> against `0.305807`, which is not α\* in any coherent frame — that producer
+> computed with two Markov parameters 22.7 % apart in one functional. `G/3 =
+> 0.30532` sits 0.16 % from the stale figure and 7.6 % from the coherent root
+> `0.283762164004797872`, so G/3 is **further** from α\*, not nearer: still
+> falsified, by a wider margin than recorded here.
+>
+> Any other closed-form search in §5 was targeting `0.305807` and is void.
 | α* as phenomenological residual | identified (this doc, §6.4) | this doc, §6.4 |
 
 The α-blend remains a useful 1-parameter ansatz for **diagnostic

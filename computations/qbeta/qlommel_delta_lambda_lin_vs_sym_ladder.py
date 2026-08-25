@@ -66,8 +66,9 @@ import time  # noqa: E402
 import mpmath as mp  # noqa: E402
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 
 SINGLE_PIPELINE = (pathlib.Path(__file__).resolve().parent.parent
                    / "binding-single-pipeline-comparison.witness.json")

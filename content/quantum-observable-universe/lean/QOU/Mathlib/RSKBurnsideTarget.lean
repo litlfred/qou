@@ -17,9 +17,10 @@ Mathlib's abstract partition index `Nat.Partition n` maps to a `YoungDiagram` vi
 `YoungDiagram.ofRowLens` applied to the parts sorted weakly-decreasing (the same sorted-list the
 `PartitionListBridge` builds), and `numStandardYoungTableaux` of that diagram is the genuine SYT
 count (a `Finite`-backed `Nat.card`).  So `RSKBurnsideHolds n` is a faithful, fully-*defined*
-`Prop` — a well-typed equation, **not yet a theorem**: its *proof* is the RSK correspondence
-`S_n ≃ Σ_λ SYT(λ)²` (absent from pinned Mathlib; the multi-session next step).  This supplies the
-concrete `dimSYT` for the abstract `dim` field of `RSKBridge.RSKBijection`.
+`Prop`.  **It is now a theorem for every `n`** (`QOU.Mathlib.rskBurnsideHolds`, epic `qou-nrex`):
+its proof is exactly the RSK correspondence `S_n ≃ Σ_λ SYT(λ)²`, which the pinned Mathlib lacks and
+which was built in-repo (`SchenstedRSKEquiv.rskEquiv`).  This file supplies the concrete `dimSYT`
+for the abstract `dim` field of `RSKBridge.RSKBijection`.
 
 `rskBurnside_imp_substrate` makes the connection explicit: a proof of `RSKBurnsideHolds n` discharges
 `RSKBridge.RSK_substrate_axiom n` (instantiate its existential witness with `dimSYT`).  Discharge
@@ -30,10 +31,11 @@ paths (status):
   `SYTEnum.dimSYT_eq_numSYTenum` ∘ the GNW general HLF `SYTEnum.numSYTenum_eq_dimHLF`), making
   `RSKBurnsideHolds n` equivalent to a computable `dimHLF` sum
   (`IdentityIHLFBridge.rskBurnsideHolds_iff_dimHLF`).
-* a proof of `RSKBurnsideHolds n`: **done for `n ≤ 12`**
-  (`PartitionsOfBridge.rskBurnsideHolds_le12` — the `Nat.Partition n ↔ partitionsOf n`
-  enumeration bridge feeding the `decide`-verified `dim_validated_le12` through the
-  equivalence above).  General `n` still awaits RSK.
+* a proof of `RSKBurnsideHolds n`: **done for every `n`** (`QOU.Mathlib.rskBurnsideHolds`, from
+  the Robinson–Schensted correspondence).  Previously this line read *"done for `n ≤ 12` … general
+  `n` still awaits RSK"*, citing `PartitionsOfBridge.rskBurnsideHolds_le12` — the `decide`-verified
+  enumeration bridge, which remains valid and is still the cheapest route at small `n`, but is no
+  longer the only one.  Corrected 2026-08-23.
 
 Pure combinatorics on `ℕ`; nothing archimedean; no fit.
 -/
@@ -56,9 +58,12 @@ noncomputable def dimSYT (p : Nat.Partition n) : ℕ :=
   numStandardYoungTableaux (partitionShape p)
 
 /-- **Identity-I axiom (i), stated with the genuine SYT count** — the RSK / Burnside identity
-`∑_{p ⊢ n} dim(p)² = n!`.  A faithful, fully-*defined* `Prop` (a well-typed equation), **not yet a
-theorem**: its proof is the RSK correspondence `S_n ≃ Σ_λ SYT(λ)²`, which the pinned Mathlib lacks
-and which is the multi-session next step toward discharging `PlancherelSnData.sum_dim_sq`. -/
+`∑_{p ⊢ n} dim(p)² = n!`.
+
+Kept as a named `Prop` because a great deal of the corpus is phrased against it.  It is **no longer
+open**: `QOU.Mathlib.rskBurnsideHolds` proves it for every `n` from the Robinson–Schensted
+correspondence, built in-repo since the pinned Mathlib lacks it.  This docstring previously said
+"not yet a theorem … the multi-session next step"; corrected 2026-08-23. -/
 def RSKBurnsideHolds (n : ℕ) : Prop :=
   ∑ p : Nat.Partition n, (dimSYT p) ^ 2 = n.factorial
 

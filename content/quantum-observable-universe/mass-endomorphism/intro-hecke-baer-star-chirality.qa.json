@@ -136,7 +136,187 @@
         "reviewed_sha": "d4a8cf462aeef2262429b13571ddd385968bce63"
       }
     ],
-    "milnor-amalgamated-flow": []
+    "milnor-amalgamated-flow": [],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:05.973Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Four-sentence chapter-section intro; no assertion-by-denial.",
+        "notes": "No change."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.013Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No pivot.",
+        "notes": "No change."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.052Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Zero em-dashes.",
+        "notes": "No change."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.093Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No list.",
+        "notes": "No change."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.134Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Closes on \"The chapters on particle interactions and observations consume this structure to separate matter from antimatter\" - a forward pointer to named chapters, not a quotable line.",
+        "notes": "No change."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.176Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "\"We record the foundational generic form of the Baer-star here. We use it to articulate the chirality pairing\" is section signposting, which is this block's function; it announces content, not emphasis.",
+        "notes": "No change."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.212Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Intro block; nothing yet established.",
+        "notes": "No change."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.249Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "No personal register.",
+        "notes": "No change."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.285Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "\"canonical Baer-star involution\" is the standard technical use of \"canonical\", not inflation, and the sibling proposition supplies the involution q -> q^{-1}, sigma_i -> sigma_i^{-1} it names.",
+        "notes": "Noted, not a trap: the .ts is a bare prose() with no label, unlike the other sec: prose blocks in this chapter which all carry explicit labels."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "044198353a75",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:h00",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T03:24:06.321Z",
+        "reviewed_sha": "83fa213b564534ad1c79394203b62f86c271df58",
+        "evidence": "Sentences are short and read aloud.",
+        "notes": "No change."
+      }
+    ]
   },
-  "updated_at": "2026-07-07T14:26:56.136212Z"
+  "updated_at": "2026-08-22T03:24:06.321Z"
 }

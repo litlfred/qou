@@ -79,7 +79,7 @@ inputs; the torsion is computed, not tuned); nothing wired; L2 unchanged.
 
 -- Ref: [manuscript] docs/audits/2026-07-25-borromean-jones-asymptotics-volume-and-1loop.md
 
-THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], uploads/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
+THEOREM BACKING (2026-08-02, bean qou-pvuw): the 1-loop conjecture used below is now a THEOREM for both calibration cases — 4_1 is 2-bridge (Garoufalidis-Yoon arXiv:2411.03801 Thm 1.1, [garoufalidis-yoon-2024], library/arxiv-2411.03801v2/2411.03801v2.pdf) and the Borromean rings are a fundamental shadow link (Pandey-Wong arXiv:2308.06643, [pandey-wong-2023]). Wording below kept for history; readings of exp(2c0) = 1/|det J_NZ| are theorem-backed.
 """
 from __future__ import annotations
 
@@ -91,8 +91,16 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 # ── SnapPy gluing_equations('rect') rows: (a[·], b[·], sign);
 #    equation Π_j z_j^{a_j} (1−z_j)^{b_j} = (−1)^sign.  First N rows are edges,

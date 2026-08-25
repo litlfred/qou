@@ -1,0 +1,141 @@
+{
+  "probe": "qbeta_5two_route40_distribution_factors",
+  "bean": "qou-0yqu",
+  "dps": 70,
+  "pairs_with_lean": [
+    "QOU/QBeta/FiveTwoSaddleSumRule.lean section 7d (12 theorems, sorry-free, standard axioms)"
+  ],
+  "retracts": "the never-committed claim that the distribution (Kubert) family is VACUOUS on the Galois sum, i.e. that summing it gives `A = A`. False -- see G1 (reversed generating polynomial) and G4/G8 (the inflated polynomials are reducible, so the inflated sum is not one atomic unknown).",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "`prod_i (1 - X_i z) = z^d R(1/z)` IS the highest-first coefficient list read low-to-high, with NO reversal -- checked against the literal product over `polyroots` at three points on four polynomials. The second half is the negative control: the reversed convention must FAIL, because reversing it is the natural-looking error that produced the retracted no-go",
+      "as_is_matches_product": true,
+      "reversed_matches_product": false,
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the integral route agrees with an INDEPENDENT computation (mpmath `polylog` at the roots) on all eight polynomials in play, and the hypothesis it needs -- no root in [1,inf), Li2's cut -- is verified two ways that must agree. The negative controls X^3-X-1 and X^4-X-1 DO have such a root and must be rejected, so the screen is not decoration",
+      "worst_cross_check_residual": "8.15011117094e-71",
+      "screen_consistent_and_clean": true,
+      "negative_controls_rejected": {
+        "X^3-X-1 (plastic)": true,
+        "X^4-X-1": true
+      },
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the whole ladder is the POWERS OF ONE GENERATOR `c` (root of X^3+X^2-1, c = 1/rho with rho the plastic number): c^2 gives Q so B = C_2, c^3 gives P so A = C_3, and c^5 gives the reflection since 1-c = c^5. Minimal polynomials computed by exact integer Newton identities, and every discriminant is -23*square -- one and the same cubic field",
+      "tower": {
+        "c^1": {
+          "minpoly": "X**3 + X**2 - 1",
+          "disc": -23,
+          "irreducible": true,
+          "disc_is_-23*square": true
+        },
+        "c^2": {
+          "minpoly": "X**3 - X**2 + 2*X - 1",
+          "disc": -23,
+          "irreducible": true,
+          "disc_is_-23*square": true
+        },
+        "c^3": {
+          "minpoly": "X**3 - 2*X**2 + 3*X - 1",
+          "disc": -23,
+          "irreducible": true,
+          "disc_is_-23*square": true
+        },
+        "c^4": {
+          "minpoly": "X**3 + 3*X**2 + 2*X - 1",
+          "disc": -23,
+          "irreducible": true,
+          "disc_is_-23*square": true
+        },
+        "c^5": {
+          "minpoly": "X**3 - 4*X**2 + 5*X - 1",
+          "disc": -23,
+          "irreducible": true,
+          "disc_is_-23*square": true
+        },
+        "c^6": {
+          "minpoly": "X**3 + 2*X**2 + 5*X - 1",
+          "disc": -575,
+          "irreducible": true,
+          "disc_is_-23*square": true
+        },
+        "c^7": {
+          "minpoly": "X**3 + X**2 + 7*X - 1",
+          "disc": -1472,
+          "irreducible": true,
+          "disc_is_-23*square": true
+        }
+      },
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "P(X^3) = X^9-2X^6+3X^3-1 and Q(X^2) = X^6-X^4+2X^2-1 are BOTH REDUCIBLE, with the stated exact integer factorizations. This is the fact that refutes the retracted no-go: the Li2-sum over the nine (resp. six) numbers is not one new unknown, it splits along the factors. Both cubic factors have discriminant -23 -- the same field as y",
+      "P(X^3) = (X^3+X^2-1)(X^6-X^5+X^4-2X^3+X^2+1)": true,
+      "Q(X^2) = (X^3-X^2+1)(X^3+X^2-1)": true,
+      "nine_reducible": true,
+      "six_reducible": true,
+      "disc_of_cubic_factors": {
+        "X^3+X^2-1": -23,
+        "X^3-X^2+1": -23
+      },
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the two distribution relations hold: A = C_3 = 3*(C_1 + E) (triplication) and B = C_2 = 2*(C_1 + D) (duplication). Evaluated at dps 40 AND 60 so that a single-precision quadrature coincidence cannot pass -- the residual must fall with the working precision, not merely be small once",
+      "residual_dps40": [
+        "1.1479437e-41",
+        "1.1479437e-41"
+      ],
+      "residual_dps60": [
+        "7.7787691e-62",
+        "0.0"
+      ],
+      "falls_with_precision": true,
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "both reflections close in elementary terms with PRINCIPAL logs and no branch correction: C_2 + C_3 = pi^2/2 - sum log y log(1-y) over the y-orbit, and C_1 + C_5 = the same over the c-orbit. `1-c^3 = c^2` and `1-c = c^5` are why these two land inside the tower instead of introducing fresh orbits",
+      "residuals": {
+        "y-orbit: C_2 + C_3": "7.244543263e-71",
+        "c-orbit: C_1 + C_5": "0.0"
+      },
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "THE ROUTE DOES NOT CLOSE, and this is a proof rather than an impression. Six unknowns (C_1, C_2, C_3, C_5, D, E), four relations. The functional that reads off A = C_3 lies in the row space iff rank is unchanged when it is stacked on. It is not: rank goes 4 -> 5, so NO combination of reflection + duplication + triplication over this tower determines A",
+      "rank_of_relations": 4,
+      "rank_with_target_stacked": 5,
+      "A_determined": false,
+      "solution_family_dimension": 2,
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "the retracted claim, isolated. The change of variables IS true: S_9 = A/3 to 40+ digits. The retracted step was reading that as `A = A`, which requires S_9 to be one atomic new unknown. It is not -- S_9 = C_1 + E with BOTH parts nonzero and C_1 far from S_9. So the relation connects genuinely different quantities and the family is NOT vacuous",
+      "change_of_variables_holds |A - 3*S9|": "0.0",
+      "S9_splits |S9 - (C1+E)|": "0.0",
+      "C1": "-0.59698046904738615106",
+      "E": "0.92089069620360223744",
+      "S9": "0.32391022715621608638",
+      "|C1 - S9|": "0.920890696204",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "structure": "the tower is the powers of one generator c (root of X^3+X^2-1, c = 1/rho, rho the plastic number): B = C_2, A = C_3, and the reflection of C_1 is C_5 because 1-c = c^5. Every minimal polynomial has discriminant -23*square: one cubic field throughout.",
+    "relations": "four, all verified numerically here: C_2+C_3 and C_1+C_5 elementary (reflection), C_2 = 2(C_1+D) (duplication), C_3 = 3(C_1+E) (triplication).",
+    "no_go": "six unknowns, four relations, and the functional reading off A is NOT in the row space -- rank 4 -> 5 when stacked. So distribution + reflection over this tower provably cannot determine A. Unlike the retracted claim, this is a rank computation, not an integral identity.",
+    "not_closed_by_this": "the five-term relation, Landen (Route 3), and any relation using a root not of the form c^m are all untouched.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

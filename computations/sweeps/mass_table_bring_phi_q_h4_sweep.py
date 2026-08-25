@@ -56,7 +56,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from codata_constants import M_E_MEV  # noqa: E402
 from _li_2_q_util import (  # noqa: E402
     linking_weight_family_a,
-    flavor_split_subleading,
+    flavor_split_leading,
 )
 
 mp.mp.dps = 80
@@ -91,7 +91,7 @@ def main() -> int:
     # ── Both candidates' m_p, m_n ────────────────────────────────
     lam_A = linking_weight_family_a(Q0, Q_INV)
     lam_BF = linking_weight_bring_plus_phi_q_h4(Q0, Q_INV)
-    dm_over_Mn = flavor_split_subleading(Q0, Q_INV)
+    dm_over_Mn = flavor_split_leading(Q0, Q_INV)
 
     m_avg_A = scale_const * lam_A
     m_avg_BF = scale_const * lam_BF

@@ -1,11 +1,11 @@
 ---
 # qou-a5os
 title: 'MISLABEL: three-generation row tiered ''partially derived'' on {3,5,7,9} minus {9}; own status says bridge is open'
-status: todo
+status: completed
 type: task
-audit: docs/audits/2026-08-08-sm-eightfold-epistemic-accounting.md
+priority: normal
 created_at: 2026-08-08T13:03:52Z
-updated_at: 2026-08-08T13:03:52Z
+updated_at: 2026-08-15T05:23:30Z
 ---
 
 

@@ -63,7 +63,7 @@ $$
   \bigr).
 $$
 
-Non-degeneracy demands $\det G^{(n)}_{ij} \neq 0$ at every brane level.
+Non-degeneracy requires $\det G^{(n)}_{ij} \neq 0$ at every brane level.
 
 ### J-3: Markov trace at level $n$
 
@@ -271,7 +271,7 @@ $$
   \bigr).
 $$
 
-The perpetual obstruction $\kappa_n \neq 0$ confirms: at every level, the $R$-matrix possesses a nonzero transient component. Braiding at level $n{+}1$ is **not** exclusively determined by level $n$.
+The obstruction persists: $\kappa_n \neq 0$ at every level, so the $R$-matrix possesses a nonzero transient component. Braiding at level $n{+}1$ is **not** exclusively determined by level $n$.
 
 ### JC-5: Betti numbers across levels
 
@@ -382,7 +382,7 @@ $$
   \qquad\text{(level-independent)}.
 $$
 
-Every structural and cohomological relation holds precisely in $\mathcal{A}_\infty$. The global gluing condition compels locally defined braid words to patch seamlessly into a robust element of the direct limit.
+Every structural and cohomological relation holds precisely in $\mathcal{A}_\infty$. The global gluing condition requires locally defined braid words to patch into a well-defined element of the direct limit.
 
 ***
 
@@ -400,4 +400,4 @@ See [Table 2](#tbl:vertex-algebra-jet-relations-table2-data).
 
 See [Table 3](#tbl:vertex-algebra-jet-relations-table3-data).
 
-The total presentation on $J^n(A)$ demands **34 relations**: 11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, 9 cohomological, plus the 2 inter-level relations J-3c and J-4a that bind adjacent brane levels. Each is expressed entirely in the level-$n$ Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace $\mathrm{tr}_M^{(n)}$, and the :refterm[descent]{#descent} involution $\hat{\tau}_n$.
+The total presentation on $J^n(A)$ comprises **34 relations**: 11 structural (level-$n$ QU/QUO), 4 :refterm[descent]{#descent}, 9 cohomological, plus the 2 inter-level relations J-3c and J-4a that bind adjacent brane levels. Each is expressed entirely in the level-$n$ Hecke generators $\sigma_i^{(n)}$, the level-$n$ Markov trace $\mathrm{tr}_M^{(n)}$, and the :refterm[descent]{#descent} involution $\hat{\tau}_n$.

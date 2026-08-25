@@ -67,8 +67,27 @@ def main() -> int:
     q0 = mp.mpf(src["constants"][Q0_KEY])
 
     rows = []
+    unsolvable = []
     for iso, d in src["isotopes"].items():
         rho = mp.mpf(d["B_odd_sinh_MeV"]) / mp.mpf(d["B_even_cosh_MeV"])
+        # R(nu) = sqrt(2)*|Gamma(..)/Gamma(..)| is an ABSOLUTE VALUE, so it is
+        # non-negative for every nu.  A negative rho therefore has no solution
+        # AT ALL -- not "none in (0,1)", and not a bracketing or starting-point
+        # problem.  mp.findroot bottomed out at residual 0.023 against a 1e-40
+        # tolerance and raised "Try another starting point or tweak arguments",
+        # which is exactly the wrong instinct here: no argument makes an
+        # absolute value equal a negative number.
+        #
+        # The sign is PHYSICAL, not noise: 3H and 3He are mirror nuclei and
+        # their odd (sinh) channels have opposite sign (+0.15173766 vs
+        # -0.15171379).  Whether the right reading is to invert |rho| and carry
+        # the sign separately is a question about what this probe CLAIMS, so it
+        # is left to the owner rather than decided here (bean qou-n7ue).
+        if rho < 0:
+            unsolvable.append((iso, NEUTRONS[iso], rho))
+            print(f"  {iso:4s} N={NEUTRONS[iso]}  rho={mp.nstr(rho, 8):>12s}  "
+                  f"NO SOLUTION — R(nu) >= 0 for all nu, rho < 0")
+            continue
         nu_cl = invert_ratio(rho, mp.gamma)
         nu_q = invert_ratio(rho, lambda x: gamma_q_gt1(x, q0))
         rows.append((iso, NEUTRONS[iso], rho, nu_cl, nu_q))
@@ -85,7 +104,19 @@ def main() -> int:
     means = {n: mp.fsum(v) / len(v) for n, v in by_n.items()}
     spread_across = max(means.values()) - min(means.values())
     n_organized = bool(spread_within < spread_across / 10)
+    # WITHHELD when any isotope was unsolvable.  Dropping one is not neutral
+    # for this verdict: with 3He removed the N=1 class is a SINGLETON, so
+    # `spread_within` for that class is identically 0 and the comparison is
+    # degenerate.  Reporting the same verdict on a reduced sample would be a
+    # weaker claim wearing the stronger claim's name.
+    if unsolvable:
+        n_organized = None
 
+    if unsolvable:
+        names = ", ".join(i for i, _n, _r in unsolvable)
+        print(f"\n  ** n_organized WITHHELD: {names} unsolvable (rho < 0). "
+              f"Dropping it leaves an N-class singleton, so the within-class "
+              f"spread is degenerate and the verdict is not comparable. **")
     print(f"\n  nu spread within N-classes : {mp.nstr(spread_within, 6)}")
     print(f"  nu spread across N-classes : {mp.nstr(spread_across, 6)}")
     print(f"  nu N-organized (within << across)? {n_organized}")

@@ -1,0 +1,60 @@
+262 C. McMullen
+
+the partition {[1,3], [2,4]}.) If G,, is reducible, an invariant partition can
+be constructed using the ‘innermost’ simple closed curves, so (2')=>(2).
+
+The implication (3')=>(3) follows from Nielsen realization: any finite sub-
+group of the modular group of a multiply-punctured sphere can be realized
+by a group of Mobius transformations after appropriately relocating the punc-
+tures. (See Zieschang, [Z, 54.3] where the Nielsen problem is solved for surfaces
+with punctures; the general case was later proved by Kerckhoff [Ker]).
+
+Examples. Assume d is 4 or more. The following sets are tangled:
+
+(a) Any open connected neighborhood of p(X)=X‘.
+
+(b) Any V whose monodromy permutes roots arbitrarily (G..m,=Sym(r)).
+(This includes (a) as a special case.)
+
+(c) Any neighborhod of a loop in the complement of the discriminant locus,
+such that the monodromy around the loop is transitive on the roots and pseudo-
+Anosov on their complement.
+
+Theorem 1.2 (Location of Failures). Let Vc Poly, be open, connected and tangled.
+Then
+
+(a) Any purely iterative algorithm fails on V.
+(b) There is no continuous map T: V+Exp, such that the attractor of T,
+is contained in the roots of p for each p inV.
+
+In part (a), by ‘fail’ we mean there exists an open set U in VxC such
+that z is a bad initial guess for T, for every (p, z) in U.
+
+Complements
+
+(1) Since the notion of tangledness depends only on monodromy around
+loops, part (b) of the Theorem gives a topological obstruction to the construction
+of a robust algorithm over the 1-skeleton of Poly,—A for d24. One can ask
+if there is already an obstruction over the 0-skeleton: does there exist a finite
+set AcC which is not the attractor of any rational map? If so, the polynomial
+with roots at A would be ‘universally unsolvable’ by rational iteration.
+
+In fact, by a recent result of Flexor and Sentenac [FS], there is no universally
+unsolvable polynomial: for any p(z), one can choose a complex number h such
+that modified Newton’s method
+
+p(z)
+M@)=2—h P’(2)
+
+is an expanding rational map whose attractor coincides with the roots of p.
+However, by Theorem 2.1(b), h cannot be chosen continuously over any tangled
+set of p’s!
+
+(2) Shub and Smale have shown [SS] that if one allows complex conjugation
+in the formula for T,(z) (so the resulting map is only real-algebraic) then there
+exist generally convergent algorithms for all degrees.
+
+(3) One can remain in the complex algebraic category and consider, more
+generally, finite towers of purely iterative algorithms. In this context polynomials
+of degree 5 become solvable but those of degree 6 are not [DM].
+

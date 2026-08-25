@@ -36,7 +36,14 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 q0 = mp.mpf(Q_50_DIGIT_STR)
 VOL_B3 = 8 * mp.catalan                      # Vol(𝓑₃) = 8·G (Adams 1985), the uniform value
-VOL_6_2 = mp.mpf("4.40083298054544839393")   # Vol(6₂) hyperbolic volume (SnapPy census, §9.3 deuteron link)
+# Vol(6₂), §9.3 deuteron link. The literal here was
+#   4.40083298054544839393  -- annotated "SnapPy census" and NOT from it:
+# it is wrong at digit 9 (1.06e-7 relative) while printing 21. The true
+# value, snappy.Manifold("6_2").volume(bits_prec=500), was already in the
+# corpus at probes/gap_a4_T2_per_knot_vol_probe.py, so the two disagreed.
+# Vol(6₂) has no closed form, hence a literal; it is checked by
+# computations/hyperbolic_volume_literal_audit.py.
+VOL_6_2 = mp.mpf("4.40083251612304610144120386564")
 M_D_AME = mp.mpf(M_D_MEV_VALIDATION)            # deuteron mass (CODATA/AME), MeV
 
 # canonical H₆ deuteron trace tr_M(β_D) from the chi-deuteron-h6 cache

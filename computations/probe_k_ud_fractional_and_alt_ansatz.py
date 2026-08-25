@@ -52,6 +52,12 @@ from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 M_D_OVER_M_U_PDG = mpf("2.16")
 M_D_OVER_M_U_PDG_ERR = mpf("0.07")
 BRING_BASE_EXPONENT = 10

@@ -29,7 +29,8 @@ from pathlib import Path
 import mpmath as mp
 from mpmath import mpc, mpf
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 # Constants — m_e from canonical source (CAL-1)
 from codata_constants import M_E_MEV  # noqa: E402  # CODATA validation constant

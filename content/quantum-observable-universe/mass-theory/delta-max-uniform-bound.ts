@@ -16,7 +16,15 @@ export default proposition({
     ref: "qou:QOU.MassEndomorphism.delta_max_uniform_bound",
     validation: "not_checked",
   },
-  uses: ["prop:jet-tower-convergence"],
+  uses: [
+    // def:recursive-brane-tower is NOT listed although the proof invokes it
+    // by name for A_{n+1} = A_n (x) Omega^1(A_n): it is already reachable
+    // through this cone.
+    "prop:jet-tower-convergence",
+    // The End(A_{n+1}) splitting that puts every transient endomorphism in
+    // ker tau-hat_n.
+    "prop:descent-eigenspaces",
+  ],
   cites: ["kassel1995", "leitner2026"],
   computation: {
     engine: "mpmath",

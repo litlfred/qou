@@ -1,4 +1,4 @@
-Let $\mathbf{w}=(w_1,w_2,w_3,w_4)$ be a spectral resolvent tuple. The two **involutions are the twist**:
+Let $\mathbf{w}=(w_1,w_2,w_3,w_4)$ be a spectral resolvent tuple. The two involutions are the **twist**:
 ```tex
 \begin{align}
   \sigma_1(\mathbf{w}) &= (w_2,w_1,w_4,w_3)

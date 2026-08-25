@@ -141,7 +141,7 @@ theorem wenzlNormalisation_ne_zero {n : ℕ} {Q X : ℝ}
 
 Semisimplicity of $H_n(q)$ with Markov parameter $X$ is governed by the
 Schur elements of the symmetrizing trace: the algebra is semisimple iff
-every $s_{\lambda}$ is nonzero (Geck--Pfeiffer [geck2000] Thm 7.2.6).
+every $s_{\lambda}$ is nonzero (Geck--Pfeiffer [geckpfeiffer2000] Thm 7.2.6).
 Here we prove — **sorry-free, on the concrete `schurElement` above** —
 that in the substrate regime $Q > 1$, $X \leq 0$ every Schur element is
 nonzero, carry the Geck--Pfeiffer criterion as a cited hypothesis class
@@ -153,8 +153,9 @@ use $X > 0$ (e.g. $X = Q^{-N}$), where the numerator factors
 $1 - X\,Q^{c(x)}$ genuinely vanish at cells of content $c = N$ — that
 vanishing locus *is* the Temperley--Lieb / level-rank quotient
 structure, not a defect.  The $X \leq 0$ bound proves the
-generic-parameter statement; the $X = Q^{-N}$ stratification is a
-follow-on with real combinatorial content. -/
+generic-parameter statement; the $X = Q^{-N}$ stratification is
+proved below (`schurElement_tl_eq_zero_iff`) — it is no longer
+outstanding work. -/
 
 /-- In-range cells have positive hook length (sorry-free). -/
 theorem hookLength_pos {lam : Partition} {i j : ℕ}
@@ -233,9 +234,9 @@ theorem schurElement_ne_zero {Q X : ℝ} (hQ : 1 < Q) (hX : X ≤ 0)
     nonzero, the algebra is semisimple at rank $n$.  `semisimple n` is
     an opaque per-rank `Prop`; **no instance is declared** — the
     symmetrizing-trace theory is not in Mathlib, and a fabricated
-    instance would launder [geck2000] into a Lean proof.
+    instance would launder [geckpfeiffer2000] into a Lean proof.
 
-    Ref: [geck2000] Geck--Pfeiffer, Thm 7.2.6. -/
+    Ref: [geckpfeiffer2000] Geck--Pfeiffer, Thm 7.2.6. -/
 class SchurElementCriterion (Q X : ℝ) (semisimple : ℕ → Prop) : Prop where
   /-- Schur-element non-vanishing implies semisimplicity, carried as a
       hypothesis. -/
@@ -257,7 +258,7 @@ theorem semisimple_of_substrate {Q X : ℝ} {ss : ℕ → Prop}
   C.semisimple_of_schur_ne_zero n fun lam _ => schurElement_ne_zero hQ hX lam
 
 /-! ## The Temperley–Lieb stratification at the physical parameter
-     $X = Q^{-N}$ (follow-on to the $X \leq 0$ regime bound)
+     $X = Q^{-N}$ (companion to the $X \leq 0$ regime bound)
 
 At the physical Markov specialisation $X = Q^{-N}$ the content
 numerator $1 - Q^{-N} Q^{c(x)}$ vanishes **exactly** at cells of
@@ -266,7 +267,31 @@ precisely the set of partitions containing a content-$N$ cell — the
 Temperley--Lieb / level-rank quotient stratification, proved here as
 a sorry-free iff on the concrete `schurElement`.  Vanishing Schur
 elements are the *structure* at physical $X$, not a defect: they cut
-out the quotient category. -/
+out the quotient category.
+
+**⚠ Convention: this gives COLUMNS, and a corpus block says rows.**
+With `cellContent i j = j - i` and rows/columns 0-indexed, a partition
+has a content-`N` cell (for `N ≥ 0`) exactly when `N < λ₁`, so the
+blocks that *survive* at `X = Q^{-N}` are those with **at most `N`
+columns**.  The textbook `GL(N)` / HOMFLY statement is the transpose —
+quantum dimension `∏ [N + c(x)]/[h(x)]` vanishes at `c(x) = -N`, i.e.
+at `X = Q^{+N}`, giving at most `N` **rows**.  So this file uses the
+*conjugate* convention.
+
+That collides with `mass-theory/hecke-radical-is-temperley-lieb.md`,
+which states the survivors are the **two-row** shapes `(n-k,k)` and
+tabulates them for `n = 2..7`.  The Catalan dimension counts there are
+unaffected (`dim λ = dim λ'`), so nothing numerical is wrong — but the
+two blocks label *different sets of partitions* as the TL quotient.
+**Anyone wiring `schurElement_tl_eq_zero_iff` to that block must
+transpose.**  The `N < 0` mirror gives the textbook row form directly.
+
+Both forms are proved in `QOU.MathlibExt.TLContentStratification`,
+which eliminates the existential in `HasContentCell` and replaces it
+with a one-line shape statistic: at `X = Q^{-N}`, `N ≥ 0`, a block
+survives iff `λ₁ ≤ N` (`schurElement_tl_ne_zero_iff_numCols_le`);
+the `N < 0` mirror is `ℓ(λ) ≤ -N`
+(`schurElement_tl_ne_zero_iff_length_le`). -/
 
 /-- `lam` contains an in-range cell of content `N`. -/
 def HasContentCell (lam : Partition) (N : ℤ) : Prop :=

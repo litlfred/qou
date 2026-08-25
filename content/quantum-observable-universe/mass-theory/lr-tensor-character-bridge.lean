@@ -39,7 +39,7 @@
     - [macdonald1995] Macdonald, "Symmetric Functions and Hall
       Polynomials" §I.5 (self-dual PSH structure of Sym; Schur basis
       diagonalises product + coproduct).
-    - [geck-pfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
+    - [geckpfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
       groups and Iwahori–Hecke algebras" §9.1.5 (parabolic
       induction/restriction for type-A Hecke).
     - [ram1991] Ram, "A Frobenius formula for the characters of the
@@ -48,7 +48,7 @@
 
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Data.List.Basic
-import Mathlib.Data.Real.Basic
+import Mathlib.Algebra.Ring.Defs
 
 namespace QOU.BraidsAndKnots
 
@@ -113,9 +113,9 @@ def iteratedLR : Partition → List Partition → ℕ
     The substantive content is `bridge`: the identity
     `χ^ν(⊗ β_i) = Σ_p c^ν_{λ_1,…,λ_k} · Π_i χ^{λ_i}(β_i)`. -/
 class LRTensorCharacterBridge
-    (TensorBraid : Type*) where
+    (R : Type*) [CommRing R] (TensorBraid : Type*) where
   /-- LHS tensor character `χ^ν_{H_n}(β_1 ⊗ … ⊗ β_k)`. -/
-  tensorChar : Partition → TensorBraid → ℝ
+  tensorChar : Partition → TensorBraid → R
   /-- Finite index set of LR partition-tuples `(λ_1, …, λ_k)` feeding `ν`. -/
   tupleIndex : Partition → TensorBraid → Type*
   /-- Each tuple-index set is finite. -/
@@ -123,15 +123,15 @@ class LRTensorCharacterBridge
   /-- The partition-tuple `[λ_1, …, λ_k]` named by an index `p`. -/
   tupleOf : (ν : Partition) → (β : TensorBraid) → tupleIndex ν β → List Partition
   /-- Per-tuple product of per-factor characters `Π_i χ^{λ_i}_{H_{n_i}}(β_i)`. -/
-  factorChar : (ν : Partition) → (β : TensorBraid) → tupleIndex ν β → ℝ
+  factorChar : (ν : Partition) → (β : TensorBraid) → tupleIndex ν β → R
   /-- **The LR comultiplication bridge** (the substantive claim of
       `cor:lr-tensor-character-bridge`): the tensor character equals the
       iterated-LR-weighted sum of the per-factor character products. -/
   bridge :
     ∀ (ν : Partition) (β : TensorBraid),
       tensorChar ν β =
-        @Finset.sum (tupleIndex ν β) ℝ _ (@Finset.univ _ (tupleFintype ν β))
-          (fun p => (Nat.cast (iteratedLR ν (tupleOf ν β p)) : ℝ) * factorChar ν β p)
+        @Finset.sum (tupleIndex ν β) R _ (@Finset.univ _ (tupleFintype ν β))
+          (fun p => (Nat.cast (iteratedLR ν (tupleOf ν β p)) : R) * factorChar ν β p)
 
 attribute [instance] LRTensorCharacterBridge.tupleFintype
 
@@ -150,18 +150,20 @@ attribute [instance] LRTensorCharacterBridge.tupleFintype
 -- Ref: [wenzl1988] Wenzl, Invent. Math. 92 (1988) — semisimplicity of H_n(q)
 -- Ref: [ram1991] Ram, Invent. Math. 106 (1991) — Frobenius character formula
 theorem lr_tensor_character_bridge
-    {TensorBraid : Type*} [h : LRTensorCharacterBridge TensorBraid]
+    {R : Type*} [CommRing R] {TensorBraid : Type*}
+    [h : LRTensorCharacterBridge R TensorBraid]
     (ν : Partition) (β : TensorBraid) :
     h.tensorChar ν β =
       ∑ p : h.tupleIndex ν β,
-        (iteratedLR ν (h.tupleOf ν β p) : ℝ) * h.factorChar ν β p :=
+        (iteratedLR ν (h.tupleOf ν β p) : R) * h.factorChar ν β p :=
   h.bridge ν β
 
 /-- The class axiomatisation is **consistent** (no `sorry` introduced):
     a trivial model with an empty tuple index, where both sides are `0`,
     inhabits the class. -/
 def LRTensorCharacterBridge.trivialModel
-    (TensorBraid : Type*) : LRTensorCharacterBridge TensorBraid where
+    (R : Type*) [CommRing R] (TensorBraid : Type*) :
+    LRTensorCharacterBridge R TensorBraid where
   tensorChar := fun _ _ => 0
   tupleIndex := fun _ _ => PEmpty
   tupleFintype := fun _ _ => inferInstanceAs (Fintype PEmpty)

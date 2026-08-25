@@ -1,5 +1,5 @@
-The quantum differential does not square to zero, and this single
-defect organises the entire section. The obstruction it measures is
+The failure of the quantum differential to square to zero organises
+this section. The obstruction it measures is
 what confines the $q$-Geometric Langlands correspondence to the
 non-torsion locus: the correspondence is well-defined only where that
 obstruction is controlled, and each result below either quantifies the

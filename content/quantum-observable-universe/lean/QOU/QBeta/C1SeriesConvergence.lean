@@ -68,7 +68,7 @@ from zero.
 * **`Y₀`, `Y_∞`, the inverse, meromorphy** — bean `qou-c1ln` row 4, untouched.
 
 -- Ref: [manuscript] computations/qbeta/c3_w2_c1_pole_divisor.py
--- Ref: [rsz2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
+-- Ref: [ramis-sauloy-zhang2013] Astérisque 355 §3.3 (Ramis–Sauloy–Zhang)
 -/
 
 namespace QOU.QBeta.C1Series

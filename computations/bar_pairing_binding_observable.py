@@ -74,6 +74,12 @@ from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 from per_irrep_pole_atom import parts_of  # noqa: E402
 
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # AME 2020 binding energies (MeV), for comparison only.
 AME_B_MEV = {
     "deuteron": mp.mpf("2.224566"),

@@ -58,6 +58,7 @@ from mpmath import mp  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP, Q_50_DIGIT_STR  # noqa: E402
 from hecke_character_symbolic import standard_young_tableaux  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _partitions_of(n: int):
@@ -129,7 +130,7 @@ def main() -> int:
         "wedderburn-weight-canonical-probe",
         engine="mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     # (1) and (2): verify dim_q(λ)|_{q→1} = f_λ classical for n = 1..6.
     classical_limit_results = []

@@ -85,7 +85,7 @@ q = Symbol("q", positive=True)
 def main():
     set_compute_dps()
     t0 = time.time()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     print("=" * 70)
     print("  Phase 2b₂: dim V_(2,1) categorical bridge")

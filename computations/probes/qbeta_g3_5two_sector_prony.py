@@ -46,6 +46,7 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 _spec = importlib.util.spec_from_file_location(
     "qbeta_g3_5two_classical_strip",
@@ -53,7 +54,7 @@ _spec = importlib.util.spec_from_file_location(
 _st = importlib.util.module_from_spec(_spec)
 _spec.loader.exec_module(_st)
 
-mp.mp.dps = 45
+set_compute_dps()
 
 
 def prony2(zs):

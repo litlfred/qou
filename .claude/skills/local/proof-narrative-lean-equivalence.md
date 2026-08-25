@@ -103,6 +103,45 @@ theorem yekutieli_lifting : True := trivial
 **Always a finding.** The stub exists for CI purposes but the formal
 claim is absent.
 
+#### A2 — `Nonempty X` kernels (named sub-signature)
+
+The same defect in a form **no syntactic detector sees**: there is no
+`sorry`, no `True`, no unsound quantifier, and *the statement is true*.
+
+```lean
+theorem CategoricalProton.exists : Nonempty CategoricalProton :=
+  ⟨{ skein_uu := 0, skein_ud := 0 }⟩
+```
+
+A `theorem`/`lemma`, or a `class`/`structure` **field**, whose *entire*
+content is `Nonempty X`. It is a finding exactly when `X` is inhabited
+by construction — a placeholder, or a structure with no constraining
+fields. Then the headline name (`…​.exists`) reads as the narrative
+claim while the kernel proves only that a degenerate term exists.
+
+**Triage rules. Without the last two the signal is unusable** — an
+untuned scan of this corpus returned 376 raw hits for 14 real ones:
+
+1. **Strip comments before scanning.** Otherwise a docstring *quoting*
+   a declaration is read as source. This trap bit three separate scans
+   in one session, including one that re-reported a fix write-up as the
+   live defect.
+2. **Exclude `.lake/packages`** — Mathlib dominates the count.
+3. **Exclude `have`/`haveI`/`letI`** — ordinary proof plumbing, and the
+   bulk of the raw hits.
+4. **Flag only where `X` is a placeholder or property-free structure.**
+5. **A `Nonempty` field inside a content-bearing structure is fine** —
+   `fibre_nonempty`, `nonempty : Nonempty Λ` are non-degeneracy
+   side-conditions, exactly what such a field is for.
+
+**Disposition is usually "blocked", not "fix".** Check whether the
+narrative's claims are *statable* against the type at all. If the
+structure has no field for the asserted property, a better witness is
+not the repair — the type has to grow first, and that is a
+formalisation project. Do **not** delete the theorem either: for what
+the statement says the proof is correct, and deleting it would
+misrepresent a trivial statement as an open conjecture.
+
 ### Class B — Scope mismatch
 
 Lean proves a special case; narrative claims the general one. E.g.
@@ -153,6 +192,17 @@ From `.md`:
   the content-object structure: `<block>.md` is the statement,
   `<block>-proof.md` is the proof)
 - Record: stated hypotheses, conclusion, level of generality
+
+> **The `.md` is the narrative — the Lean docstring is not.** Quoting
+> the `/-- … -/` above the declaration and comparing it to the proof
+> term audits Lean against itself and silently drops this skill's whole
+> subject. The two differ in practice: a docstring is written by the
+> formaliser alongside the proof, so it tends to describe the *intended*
+> witness, while the `.md` carries the paper's actual assertion —
+> quantifiers, named stability conditions, and the ambient object the
+> term is claimed to live in. Those are precisely where Class B and
+> Class C hide. **Open the `.md` for every block you report on**, and
+> quote it in the finding.
 
 ### Phase 3 — Classify each block
 

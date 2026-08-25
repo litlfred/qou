@@ -6,7 +6,7 @@ $$
   \qquad
   \mathfrak{m}^{(k)}_{q,\mathcal{K}}(\mathcal{T})
   \;=\; \!\!\sum_{\substack{\lambda \,\vdash\, n \\ \mathrm{depth}(\lambda) = k}}\!\!
-    \tilde w_\lambda \cdot \log\Bigl|\!\int_{A_\lambda}\!\rho(\beta_\mathcal{K}) \cdot \mathcal{T}\Bigr|.
+    w_\lambda(q) \cdot \log\Bigl|\!\int_{A_\lambda}\!\rho(\beta_\mathcal{K}) \cdot \mathcal{T}\Bigr|.
 $$
 
 The sum organizes the individual stratum contributions via q-deformed Wedderburn block weights. 

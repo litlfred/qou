@@ -10,7 +10,7 @@
   "scriptFile": "build_six_term_substrate_model_b.py",
   "scriptHash": "f91707b2624f",
   "scriptCommitSha": "c4a8fe805d5b49b1cf4af87d420b015fd0754e55",
-  "description": "Six-term substrate-only mass predictor on Model B (SDP-canonical low-strand) braids with substrate E_0 (Convention A: CAL-1 + CAL-2 only, NO proton-anchor back-fit). Per-term breakdown for p, n, D, T, ³He, ⁴He using Model B's canonical-knot strand count n_canon (not Model A's 3A) for T2, T3, T4.",
+  "description": "Six-term substrate-only mass predictor on Model B (SDP-canonical low-strand) braids with substrate E_0 (Convention A: CAL-1 + CAL-2 only, NO proton-anchor back-fit). Per-term breakdown for p, n, D, T, \u00b3He, \u2074He using Model B's canonical-knot strand count n_canon (not Model A's 3A) for T2, T3, T4.",
   "contentBlock": "thm:knot-mass-formula-unified",
   "auditOnly": "docs/coordination/six-term-mass-pipeline.md (migration to default Model B); docs/audits/2026-05-11-model-b-mass-table.md",
   "parameters": {
@@ -99,7 +99,7 @@
         "err_pct": "-99.7369105139"
       },
       {
-        "isotope": "³He",
+        "isotope": "\u00b3He",
         "Z": 2,
         "N": 1,
         "n_canon": 3,
@@ -118,7 +118,7 @@
         "err_pct": "-99.5798572526"
       },
       {
-        "isotope": "⁴He",
+        "isotope": "\u2074He",
         "Z": 2,
         "N": 2,
         "knot": "open (no Model B low-strand)",

@@ -90,9 +90,23 @@ _UPSTREAM_RECORDS: list = []
 GRAM_WITNESS_PATH = _pb.witness_path("gram-matrix-dual.witness.json", HERE)
 _gram_data = record_upstream(GRAM_WITNESS_PATH, _UPSTREAM_RECORDS)
 GRAM = np.array(_gram_data["gram_matrix"], dtype=float)
-GRAM_INV = np.array(_gram_data["gram_inverse"], dtype=float)
+# The Gram matrix is SINGULAR (eigenvalues carry one exact zero; the
+# null vector is the sign representation, `gram_radical`), so a true
+# inverse does not exist and the upstream producer stopped emitting
+# `gram_inverse` in be59f01376.  `gram_quotient_inverse` -- the inverse
+# on the quotient by the radical -- was MEASURED to be the Moore-Penrose
+# pseudo-inverse of `gram_matrix` to 3.8e-16 relative, i.e. to the
+# precision the witness is written at, and it annihilates the radical.
+# That is the standard meaning of G^{-1} for singular G.
+#
+# Safe here for a reason specific to this consumer: `dual_pairing` feeds
+# this matrix into a RATIO (`g_A` below) with the same `u_A` and the same
+# restricted matrix in numerator and denominator, so `g_A` depends on it
+# only through the direction of `u_A^T M|_A` -- overall scale cancels.
+# See bean qou-cnbm for the measurement.
+GRAM_INV = np.array(_gram_data["gram_quotient_inverse"], dtype=float)
 assert GRAM.shape == (6, 6), f"Gram matrix shape mismatch: {GRAM.shape}"
-assert GRAM_INV.shape == (6, 6), f"Gram inverse shape mismatch: {GRAM_INV.shape}"
+assert GRAM_INV.shape == (6, 6), f"Gram quotient-inverse shape mismatch: {GRAM_INV.shape}"
 
 
 # ── Step 2. Solve the operator-selection LP for the proton ───────
@@ -106,7 +120,12 @@ assert GRAM_INV.shape == (6, 6), f"Gram inverse shape mismatch: {GRAM_INV.shape}
 T_NF = TR_M.copy()  # Markov-trace vector on NF basis
 N_TARGET = 1.0       # proton confinement net (normalised categorical mass)
 
-lp = solve_operator_selection_lp(T_NF, GRAM, N_TARGET)
+# Pinned, not `auto`: `auto` picks clarabel-MPFR or scipy-f64 by
+# whether the Rust binary happens to be built, so the same script
+# yields different numbers on different boxes. QOU_REQUIRE_CLARABEL=1
+# makes a missing binary an error rather than a changed answer.
+# Bean `qou/ftuv`.
+lp = solve_operator_selection_lp(T_NF, GRAM, N_TARGET, backend="clarabel")
 if not lp.feasible:
     raise RuntimeError(
         "Operator-selection LP for proton bound state was infeasible. "
@@ -126,7 +145,17 @@ ACTIVE_TOL = 1e-9
 # zero (g_A would then be undefined).  Same scale as ACTIVE_TOL — a
 # pairing of magnitude ≤ 1e-15 is in float-roundoff territory.
 ZERO_PAIRING_TOL = 1e-15
-active_set = [int(i) for i, y in enumerate(y_star) if abs(y) > ACTIVE_TOL]
+# `y > tol`, NOT `abs(y) > tol`. A shadow price is non-negative for an
+# inequality constraint; y > 0 means TIGHT. Taking the absolute value
+# admitted NEGATIVE y as active, contradicting the comment three lines
+# up and AGENTS.md's LP-dual contract ("indices i with y_star[i] > 0").
+# Measured: y_star[1] = y_star[2] = -2.61e-08 -- solver noise, 26x above
+# ACTIVE_TOL and NEGATIVE -- grew active_set [0] -> [0,1,2]. That put 8
+# more float64 fields in the witness and tripped the raw-float64 ratchet,
+# which is why this surfaced as a precision red rather than as what it is.
+# The two sibling LP producers already use the correct form:
+# derive_e_0_lp_dual_h3.py:164 and gap_a1_binding_k_sdp_feasibility.py:151.
+active_set = [int(i) for i, y in enumerate(y_star) if y > ACTIVE_TOL]
 if not active_set:
     # Degenerate LP: fall back to the entire basis (all u* effectively 0
     # but we still need a non-empty subspace for the master formula).
@@ -259,7 +288,13 @@ w.add_parameter("n_target", N_TARGET)
 
 # Bound-state-observable CI gate fields:
 w.add_data("gram_matrix", GRAM.tolist())
+# Emitted under `gram_inverse` because that is the name in
+# `bound_state_observable_validator.REQUIRED_FIELDS`, and that validator
+# documents the field by its ROLE -- "G^{-1} used for dualisation" -- which
+# the pseudo-inverse is.  `gram_inverse_kind` names the actual object so the
+# role-name does not read as a claim that G is invertible.  It is not.
 w.add_data("gram_inverse", GRAM_INV.tolist())
+w.add_data("gram_inverse_kind", "moore-penrose-pseudoinverse")
 w.add_data("lp_active_set", active_set)
 w.add_data("shadow_prices", y_star.tolist())
 w.add_data("active_basis_names", [NF_NAMES[i] for i in active_set])

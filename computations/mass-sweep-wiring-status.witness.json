@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-07T11:12:18.669851+00:00",
-  "commitSha": "b4e08da801707f834026feab2747afed9f7d60e0",
+  "computedAt": "2026-08-23T21:17:28.924519+00:00",
+  "commitSha": "57eee7f0140292da30e0e603d13e570fdde35a87",
   "assertions": [
     {
       "name": "no_atom_fully_canonical",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 3,
   "computation": "mass-sweep-wiring-status",
   "scriptFile": "mass_sweep_wiring_status.py",
-  "scriptHash": "c45a51f28cd0",
-  "scriptCommitSha": "8e43287ac32516de7bca862b321c5871fd314906",
+  "scriptHash": "a23fb0934008",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,7 +32,15 @@
     "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/mass_sweep_wiring_status.py"
+    ],
+    "reproduce": "python3 -u computations/mass_sweep_wiring_status.py"
   },
   "description": "Wiring-status taxonomy for every atom in mass_table_ppb.py ATOM_ASSIGN.  Per author direction 2026-05-24, classifies each entry as canonical-sdp / extrapolated / exploratory / alpha-cluster / gap / unwired.  Identifies KLR-positivity violations (predicted > observed) and the suspect formula component for each.  Reports that NO atom is fully canonically wired — every current prediction sits at EXPLORATORY/extrapolated layer, awaiting R5-full SDP.",
   "parameters": {
@@ -124,7 +132,7 @@
         "A": 6,
         "Z": 3,
         "N": 3,
-        "B_AME_MeV": 31.993987199999996,
+        "B_AME_MeV": 31.9939872,
         "B_pred_exploratory_MeV": null,
         "err_MeV": null,
         "err_rel": null,
@@ -307,7 +315,17 @@
       "alpha-cluster": 6
     },
     "klr_violations_count": 8,
-    "fully_canonically_wired_atoms": []
+    "fully_canonically_wired_atoms": [],
+    "upstream_witness_hashes": [
+      {
+        "path": "q-pinning-50-digit.witness.json",
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
+      }
+    ]
   },
   "q0Anchor": "muon",
   "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"

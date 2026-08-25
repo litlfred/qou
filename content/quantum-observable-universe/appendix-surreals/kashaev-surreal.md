@@ -98,10 +98,9 @@ unity. This identifies the second row's content with a standard
 resurgence construction; it does not touch the third row, which
 remains the genuine geometric input.
 
-This is the appendix's sharpest expression of "trade analytic
-for surreal": Kashaev becomes one transseries reduction
-plus one $\mathrm{Vol}$-identity, instead of an analytic
-limit plus a $\mathrm{Vol}$-identity.
+Kashaev thus becomes one transseries reduction plus one
+$\mathrm{Vol}$-identity, instead of an analytic limit plus a
+$\mathrm{Vol}$-identity.
 
 ## Potential utility and its limits
 
@@ -141,7 +140,7 @@ For the figure-eight knot the two question marks collapse:
        2 \pi \cdot \frac{\log |J_{4_1}(\zeta_\omega, \omega)|}{\omega}
      \right)
      \;=\; \mathrm{Vol}(S^3 \setminus 4_1)
-     \;=\; 2\Lambda(\pi/3),
+     \;=\; 2\,\mathrm{Cl}_2(\pi/3),
    $$
 
    conditional only on the transfer equivalence, not on any open

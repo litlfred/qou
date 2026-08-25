@@ -71,7 +71,7 @@ def anti_pion_word():
 
 def main():
     set_compute_dps()
-    mp.mp.dps = 50
+    set_compute_dps()
     q = mp.mpf(Q_50_DIGIT_STR)
     q_f = float(q)
     h = q_f - 1.0/q_f

@@ -6,7 +6,7 @@ export default definition({
   lean: { ref: "qou:QOU.BraidKnot.ConfinedParticle",
     validation: "not_checked",
   },
-  uses: ["prop:confinement-phase-stratification"],
+  uses: [],
   tags: [
     "confinement",
     "particle",

@@ -417,7 +417,63 @@ dihedral angles rather than through a complex dilogarithm:
 
     D(z) = Λ(arg z) + Λ(arg 1/(1−z)) + Λ(arg(1 − 1/z)).
 
-This extends `BlochWigner_unit_circle` past `|z| = 1`. -/
+This extends `BlochWigner_unit_circle` past `|z| = 1`.
+
+⚠ **THIS IS A DEFINITION, AND IT IS NOT THE STANDARD ONE** (recorded
+2026-08-08 after reading Neumann–Zagier 1985 §3). The literature's Bloch–Wigner
+function is
+
+    D(z) = Im Li₂(z) + log|z| · arg(1 − z)          (Neumann–Zagier eq. (39))
+
+i.e. it is built from the **dilogarithm**, not from `Λ`. That the Λ-sum above
+equals it is **Kummer's identity** (Lewin, *Polylogarithms*, p. 121 eq. (5.5)),
+which Neumann–Zagier invoke explicitly to pass from their eq. (37)
+`Vol(S(z)) = Λ(α)+Λ(β)+Λ(γ)` to eq. (38) `Vol(S(z)) = D(z)`. It is a **theorem,
+not a definitional unfolding**.
+
+So, precisely:
+
+* ⚠⚠ **STATUS: KUMMER IS NOW PROVED (2026-08-09, bean `qou-kmmr`).**
+
+  `QOU/Knot/KummerRadial.lean` — `kummer` — proves, sorry-free and on the
+  standard axioms, for every `z` with `Im z > 0`:
+
+      BlochWigner_lob z = Im (cLiTwoExt z) + log‖z‖ · arg(1 − z)
+
+  So the two objects named `D` in this corpus are the **same function** on the
+  upper half plane. This bullet previously said the identity "cannot currently be
+  proved in this corpus" (Mathlib has no dilogarithm); that was corrected first to
+  "unblocked, not impossible" once `QOU.MathlibExt.cLiTwoExt` was recognised, and
+  is now simply **done**.
+
+  The proof chain, all sorry-free: `KummerUnitCircle` (the Λ-side on `|z| = 1`,
+  which is Clausen duplication) → `KummerDilogHalf` (the `cLiTwoExt` side there,
+  by same-derivative with basepoint `θ = π`) → `IdealTetLawOfSines`
+  (`‖z‖ = sin θ₂/sin θ₃`) → `KummerRadial` (a radial reduction, using the unit
+  circle as basepoint).
+
+* **The prohibition below is therefore LIFTED.** It used to read: "do not
+  transport dilogarithm facts onto this symbol — the five-term relation, the
+  functional equations, or any N–Z result stated for *their* `D` — without first
+  proving Kummer's identity. The name is shared; the objects are so far only
+  numerically observed to agree."
+
+  That condition is now met. Dilogarithm facts about `cLiTwoExt` **may** be
+  transported onto `BlochWigner_lob` on `{Im z > 0}`, via `kummer`. Outside the
+  upper half plane nothing is claimed — `BlochWigner_lob` is built from `arg`s and
+  this file separately proves it vanishes on real shapes in `(0,1)`, which is a
+  branch statement, not an instance of Kummer.
+
+* The numerical cross-check that used to be the only evidence is retained as a
+  control, not as grounds: `computations/qbeta/xi_classical_limit_probe.py`
+  matches the two forms at the substrate anchor to ~1e-6 series accuracy, and
+  Routes 72–73 match them to `1e-41`/`1e-45` at five shapes including `y₁`.
+
+Consequence for `qou-idvt` T2 / `qou-5gai` H4: the target factors as
+(geometric) `Vol = D` ∘ (analytic) `D = Λ-sum`. **The analytic factor is now
+closed** (`kummer`). The *geometric* one — that a particular triangulation's
+Λ-sum is the hyperbolic volume of a particular knot complement — is untouched and
+is still the whole of H4. Nothing here computes `Vol(5₂)`. -/
 -- Ref: [thurston1978], [milnor1982], [zagier1986]
 noncomputable def BlochWigner_lob (z : ℂ) : ℝ :=
   Lob (tetAngle₁ z) + Lob (tetAngle₂ z) + Lob (tetAngle₃ z)

@@ -173,5 +173,8 @@
   },
   "caveats": [
     "The identity sum_lambda f^lambda s_lambda = p_1^n is a CLASSICAL theorem of symmetric-function theory (Macdonald I.7; Stanley EC2 section 7), cited rather than re-proved. This probe verifies it numerically at the substrate specialisation; the Lean file YLambdaNormalizationSign.lean carries it as an explicit hypothesis (hZ) and proves the sign consequence sorry-free. The premise is established literature, NOT a conjecture."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

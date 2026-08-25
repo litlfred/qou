@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-1012.5432v4",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ec5f6da1f813649eaa2d181004d06fefc47c4ae42db286849c3ce37313ab6439",
+  "file": "1012.5432v4.pdf"
+ },
+ "provenance": {
+  "title": null,
+  "authors": null,
+  "arxiv": {
+   "id": "1012.5432",
+   "version": "4",
+   "primary_class": "quant-ph",
+   "stamp_date": "26 Dec 2012"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

@@ -1,6 +1,6 @@
 *The baryon decuplet --- the $10$-dimensional fully symmetric channel
 of the Schur--Weyl decomposition $V^{\otimes 3}$ --- is realized by
-the Borromean baryon (Definition~\ref{def:borromean-baryon}) with
+the Borromean baryon ([Definition](#def:borromean-baryon)) with
 symmetric quark content.*
 
 The Schur--Weyl decomposition at $N = 3$, $n = 3$ assigns the
@@ -13,33 +13,33 @@ $\Delta^{++}\ (uuu)$, $\Delta^{-}\ (ddd)$ and $\Omega^{-}\ (sss)$.  The
 remaining seven states fill the edges and the centre, with
 $\Sigma^{*0}\ (uds)$ at the centre:
 
-\begin{center}
-\begin{tabular}{l c c c}
-\hline
-State & Content & $I_3$ & $Y$ \\
-\hline
-$\Delta^{++}$ & $uuu$ & $+3/2$ & $+1$ \\
-$\Delta^{+}$  & $uud$ & $+1/2$ & $+1$ \\
-$\Delta^{0}$  & $udd$ & $-1/2$ & $+1$ \\
-$\Delta^{-}$  & $ddd$ & $-3/2$ & $+1$ \\
-$\Sigma^{*+}$ & $uus$ & $+1$ & $0$ \\
-$\Sigma^{*0}$ & $uds$ & $0$   & $0$ \\
-$\Sigma^{*-}$ & $dds$ & $-1$  & $0$ \\
-$\Xi^{*0}$    & $uss$ & $+1/2$ & $-1$ \\
-$\Xi^{*-}$    & $dss$ & $-1/2$ & $-1$ \\
-$\Omega^{-}$  & $sss$ & $0$   & $-2$ \\
-\hline
-\end{tabular}
-\end{center}
+| State | Content | $I_3$ | $Y$ |
+|---|---|---|---|
+| $\Delta^{++}$ | $uuu$ | $+3/2$ | $+1$ |
+| $\Delta^{+}$ | $uud$ | $+1/2$ | $+1$ |
+| $\Delta^{0}$ | $udd$ | $-1/2$ | $+1$ |
+| $\Delta^{-}$ | $ddd$ | $-3/2$ | $+1$ |
+| $\Sigma^{*+}$ | $uus$ | $+1$ | $0$ |
+| $\Sigma^{*0}$ | $uds$ | $0$ | $0$ |
+| $\Sigma^{*-}$ | $dds$ | $-1$ | $0$ |
+| $\Xi^{*0}$ | $uss$ | $+1/2$ | $-1$ |
+| $\Xi^{*-}$ | $dss$ | $-1/2$ | $-1$ |
+| $\Omega^{-}$ | $sss$ | $0$ | $-2$ |
 
-\textbf{Borromean realization.}
+**Borromean realization.**
 Each decuplet state is a Borromean baryon: three quark-unknots joined
 by the Borromean link $\mathcal{B}_3$.  The symmetric partition
 $\lambda = (3)$ corresponds to the Hecke symmetrizer
-$e_{(3)} = \sum_{\sigma \in S_3} T_\sigma$, which projects onto the
-subspace where all three strands are interchangeable.
+$e_{(3)} = \sum_{\sigma \in S_3} T_\sigma$, which --- once normalized ---
+projects onto the subspace where all three strands are interchangeable.
+The normalization is not bookkeeping: $e_{(3)}$ satisfies
+$e_{(3)}^2 = c\, e_{(3)}$ with $c = \sum_{\sigma \in S_3} q^{\ell(\sigma)}$,
+equal to $|S_3| = 6$ in the classical limit, so $e_{(3)}$ is idempotent
+only after division by $c$ and the symmetric channel is identifiable with
+$\mathrm{Sym}^3$ only where $c$ is invertible.  In characteristic $2$ or
+$3$ it is not, and the identification fails.
 
-\textbf{What the Borromean topology does and does not supply.}
+**What the Borromean topology does and does not supply.**
 The Borromean link carries an $S_3$ symmetry permuting its three
 components, so it is a *consistent* carrier for the symmetric channel.
 It does not, however, *select* that channel: the octet $(2,1)$ and the
@@ -52,7 +52,7 @@ such a connection; it is withdrawn as a non-sequitur.  The channel
 selection is carried entirely by the Hecke projector, not by the
 topology.
 
-\textbf{Missing ingredient: spin and colour.}
+**Missing ingredient: spin and colour.**
 The physical decuplet is spin-$3/2$, and what forces the *flavour*-symmetric
 channel for it is the requirement that the total wavefunction be
 antisymmetric once colour is included: with colour antisymmetric and
@@ -61,20 +61,22 @@ the spin factor nor the colour antisymmetry, so the identification
 $\lambda = (3) \leftrightarrow$ decuplet is at present a *matching of
 dimensions and weights*, not a derivation of the spin--flavour--colour
 selection rule.  This is recorded as an open item in
-\S\ref{sec:eightfold-open-problems}.
+[the open-problems section](#sec:eightfold-open-problems).
 
-\textbf{Octet vs.\ decuplet.}
+**Octet versus decuplet.**
 The mixed partition $\lambda = (2,1)$ gives the $8$-dimensional
-baryon octet (proton, neutron, $\Sigma$, $\Lambda$, $\Xi$).  The
+baryon octet (proton, neutron, $\Sigma$, $\Lambda$, $\Xi$), whose weight
+diagram and its degeneracy are treated in
+[the octet proposition](#prop:baryon-octet-decomposition).  The
 antisymmetric partition $\lambda = (1^3)$ gives the singlet.  The
 distinction between octet and decuplet is entirely carried by the
 Hecke module: the $S^{(3)}$ projector (one-dimensional) selects the
 decuplet, while the $S^{(2,1)}$ projector (two-dimensional) selects
 the octet.
 
-\textbf{Conditional on $N = 3$.}
+**Conditional on $N = 3$.**
 As with all eightfold-way content, this derivation is conditional on
 the flavor fundamental being three-dimensional
-(Proposition~\ref{prop:schur-weyl-eightfold}).  At $N = 2$, the
+([Proposition](#prop:schur-weyl-eightfold)).  At $N = 2$, the
 symmetric partition $(3)$ yields only a $4$-dimensional spin-$3/2$
 quadruplet, not a decuplet.

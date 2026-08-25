@@ -1,0 +1,41 @@
+{
+ "engine": "mpmath",
+ "scriptFile": "logsine_smooth_defect_constant.py",
+ "commitSha": "dc8f6652b3702f968c80ae940d7dca95445692c6",
+ "description": "L4-1 correction evidence: the antitone squeeze of LogSineSmoothPart.smooth_defect_squeeze brackets the scaled smooth defect but does NOT pin van der Veen's 1/2 constant \u2014 the true limit is the midpoint of the proved interval. Lemma 3's explicit -(1/2) log 2N therefore still needs the Riemann/mean-value refinement (bean qou-shrp).",
+ "computation": "logsine_smooth_defect_constant",
+ "audit_only": true,
+ "precision_dps": 30,
+ "rows": [
+  {
+   "N": 200,
+   "scaled_defect": "-0.2266246832",
+   "proved_lower": "-0.451582705289",
+   "proved_upper": "0",
+   "half_prediction": "-0.225791352645",
+   "err_vs_half": "0.000833331",
+   "interval_width": "0.451583"
+  },
+  {
+   "N": 800,
+   "scaled_defect": "-0.225999685935",
+   "proved_lower": "-0.451582705289",
+   "proved_upper": "0",
+   "half_prediction": "-0.225791352645",
+   "err_vs_half": "0.000208333",
+   "interval_width": "0.451583"
+  },
+  {
+   "N": 3200,
+   "scaled_defect": "-0.225843435977",
+   "proved_lower": "-0.451582705289",
+   "proved_upper": "0",
+   "half_prediction": "-0.225791352645",
+   "err_vs_half": "5.20833e-5",
+   "interval_width": "0.451583"
+  }
+ ],
+ "squeeze_pins_the_half": false,
+ "verdict_gap_is_factor_two": true,
+ "timestamp": "2026-08-11T11:20:25+00:00"
+}

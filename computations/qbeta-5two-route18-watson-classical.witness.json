@@ -1,0 +1,120 @@
+{
+  "probe": "qbeta_5two_route18_watson_classical",
+  "beans": [
+    "qou-fivt",
+    "qou-abel",
+    "qou-0yqu"
+  ],
+  "dps": 70,
+  "sources": [
+    "Kirillov, Dilogarithm identities, hep-th/9408113, SS1.2.2 (Watson 1937)",
+    "Zagier, The Dilogarithm Function, Ch. I SS3 and Ch. II 'The Rogers dilogarithm'"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "Kirillov's cubic x^3+2x^2-x-1 is this lane's x^3-2x^2-x+1 under x -> -x",
+      "worst_identity_residual": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "Kirillov/Watson's alpha, beta, gamma ARE this lane's -w3, w2, 1/w1",
+      "pairs": [
+        {
+          "kirillov": "alpha = (1/2)sec(2pi/7)",
+          "value": "0.80193773580483825247",
+          "ours": "-w3",
+          "matches": "0.80193773580483825247"
+        },
+        {
+          "kirillov": "beta  = (1/2)sec(pi/7)",
+          "value": "0.55495813208737119142",
+          "ours": "w2",
+          "matches": "0.55495813208737119142"
+        },
+        {
+          "kirillov": "gamma = 2cos(3pi/7)",
+          "value": "0.44504186791262880858",
+          "ours": "1/w1",
+          "matches": "0.44504186791262880858"
+        }
+      ],
+      "worst": "9.0556791e-72",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "Watson's (1937) three relations hold: 1/7, 10/7, 8/7 times L(1)",
+      "relations": [
+        {
+          "lhs": "L(a)-L(a^2)",
+          "value_over_L1": "0.14285714285714285714",
+          "target": "0.14285714285714285714",
+          "resid": "1.3583519e-71"
+        },
+        {
+          "lhs": "2L(b)+L(b^2)",
+          "value_over_L1": "1.4285714285714285714",
+          "target": "1.4285714285714285714",
+          "resid": "0.0"
+        },
+        {
+          "lhs": "2L(g)+L(g^2)",
+          "value_over_L1": "1.1428571428571428571",
+          "target": "1.1428571428571428571",
+          "resid": "3.6222716e-71"
+        }
+      ],
+      "worst": "3.6222716e-71",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "this lane's (17,5,-1)/7 are the same classical family -- same field Q(zeta_7)^+, same denominator 7, different combinations of the same L-values",
+      "targets": [
+        {
+          "lhs": "2L1+2L(w2)-L(q)",
+          "value_over_L1": "2.4285714285714285714",
+          "m_over_7": "17/7",
+          "resid": "3.6222716e-71"
+        },
+        {
+          "lhs": "2L(w2)-L(r)",
+          "value_over_L1": "0.71428571428571428571",
+          "m_over_7": "5/7",
+          "resid": "0.0"
+        },
+        {
+          "lhs": "-2L1+2L(w2)+L(s)",
+          "value_over_L1": "-0.14285714285714285714",
+          "m_over_7": "-1/7",
+          "resid": "4.0750556e-71"
+        }
+      ],
+      "worst": "4.0750556e-71",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "Zagier's extension (L(x)=2L(1)-L(1/x) for x>1, -L(x/(x-1)) for x<0) is exactly FiveTwoRogersExtend.extend -- inversion and Landen hold by definition",
+      "worst": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "Zagier's L'(x) = -log(1-x)/(2x) - log(x)/(2(1-x)) is hasDerivAt_rogersL, verbatim -- and he names it as the route to all the functional equations",
+      "worst_vs_finite_difference": "2.6518001e-36",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "headline": "THE LEVEL-7 LADDER IS CLASSICAL. Watson (1937). This lane's Lean result is a FORMALIZATION of a known identity family, not a new derivation.",
+    "correspondence": "Kirillov's alpha, beta, gamma are exactly -w3, w2, 1/w1, and his cubic is ours under x -> -x. Verified to 1e-30.",
+    "what_is_still_this_lane's": "the ROUTE and the FORMALIZATION. Kirillov proves accessibility from the duplication formula; this lane derived it from the five-term relation, and proved the whole chain sorry-free in Lean, which the literature does not do.",
+    "extend_is_zagier": "FiveTwoRogersExtend.extend is Zagier's definition verbatim. Route 13's repair was the standard one -- now checked against the source, not memory.",
+    "deriv_is_zagier": "hasDerivAt_rogersL is Zagier's L'(x), verbatim, and he names that formula as the route to all the functional equations -- which is how Abel was proved here.",
+    "CORRECTION": "qou-rstq claimed the purely-imaginary cut jump 'is written down nowhere'. It is in Zagier Ch. I SS3: Li_2 jumps by 2*pi*i*log|z| across [1, inf). Standard; cite it rather than claiming folklore.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-07T13:40:06.952055+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-23T17:39:08.178574+00:00",
+  "commitSha": "df6f0827ba8a107168a634aa3994fe64751cb94d",
   "assertions": [
     {
       "name": "li_2_q_finite_proton",
@@ -18,11 +18,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "hydrogen-step-by-step",
   "scriptFile": "hydrogen_step_by_step.py",
   "scriptHash": "3e2243aacc0a",
-  "scriptCommitSha": "1d06c9193dcdabfa16fb23a7a354b52fc057f2ea",
+  "scriptCommitSha": "d156e8d5099de6a6f55635372453302e81510eb3",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,12 +30,20 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "0aaae20308e9cca7"
+  },
+  "invocation": {
+    "argv": [
+      "computations/hydrogen_step_by_step.py"
+    ],
+    "reproduce": "python3 -u computations/hydrogen_step_by_step.py"
   },
   "description": "Full ¹H mass step-by-step under canonical Li_2^q tower",
   "data": {
@@ -45,22 +53,22 @@
     "BE_H_MeV": "0.000013605693",
     "proton_terms_cat_units": {
       "T1_descended": "0.96039549118815049651215986149723955840572223004978",
-      "T2_single_Li2q": "3.0197861117652327057249272002817621352529662978757",
-      "T3_pair_Li2q": "0.36127481884429696564119020386067479383016393538142",
-      "T4_Frobenius": "1.6362871145930839171346603946380531265217381602479",
-      "T5_chirality_BW_A_grade": "4.2555548965480031880688760873016925371098187891359",
-      "T6_Habiro_A_nucleon": "1.921135702610148536969493791505930264359463199664",
+      "T2_single_Li2q": "3.0197861226956949690177184962514434358616584923289",
+      "T3_pair_Li2q": "0.36127482011669798762944100795990428397488191514679",
+      "T4_Frobenius": "1.636287114593083917134660394638053126521738160248",
+      "T5_chirality_BW_A_grade": "4.1887308561594223214016865798174551308989203243785",
+      "T6_Habiro_A_nucleon": "1.9211357026101485369694937915059302643594631996641",
       "T7_sigma_shell": "0.0",
-      "m_hecke_sum": "12.1544341355489158100513075390853524154798726123547"
+      "m_hecke_sum": "12.08761010736319822866516013167002580002238432181607"
     },
     "predictions_MeV": {
-      "m_p_pred": "6.210903089496213206103369507535101246659071817728127702735179585316193",
-      "m_p_CODATA": "938.2720881599999999999999999999999999999999999999996847323682500418433",
-      "m_p_residual_pct": "-99.33804882742743474534784785156140573488344875569381236898064216034845",
-      "m_H_pred": "6.721888434493213206103369507535101246659071817728128268178651485370661",
+      "m_p_pred": "6.176756081212432537570363506644205421136666166959925880039814381636946",
+      "m_p_CODATA": "938.2720894299999999999999999999999999999999999999994592249096324098442",
+      "m_p_residual_pct": "-99.34168817864284869442230494691182093845088296106197760161736358404505",
+      "m_H_pred": "6.687741426209432537570363506644205421136666166959926445483286281691414",
       "m_H_CODATA": "938.7830731",
-      "m_H_residual_MeV": "-932.0611846655067867938966304924648987533409281822718717318213485146293",
-      "m_H_residual_pct": "-99.28397852207789096681110903729021429810662062120129972886931769228438"
+      "m_H_residual_MeV": "-932.0953316737905674624296364933557945788633338330400735545167137183086",
+      "m_H_residual_pct": "-99.28761589148326618485443977625929721067776821987525390060387889180706"
     },
     "gap_inventory": [
       {
@@ -88,20 +96,22 @@
     "upstream_witness_hashes": [
       {
         "path": "proton-mass-full-tower-50dps.witness.json",
-        "sha256": "f4d85ea0c42d0d033eb35fe0113551af58f797d626106f093b08df41f4e17821",
-        "size_bytes": 6342,
-        "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
-        "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
-        "computedAt": "2026-07-05T11:22:13.857929+00:00"
+        "sha256": "749cb3846010ff605a8a39cd2864842c2f05b8ac357bd7c88772b791368300e2",
+        "size_bytes": 6644,
+        "commitSha": "52114432e8670fe758007aabd5170142f7185bcd",
+        "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
+        "computedAt": "2026-08-23T07:40:56.733316+00:00"
       },
       {
         "path": "q-pinning-50-digit.witness.json",
-        "sha256": "4a13e8e61f6dcbbb58e8e101d8d60c0e6bdf6fce263ec134981ab5daf6c720d6",
-        "size_bytes": 5201,
-        "commitSha": null,
-        "scriptCommitSha": null,
-        "computedAt": null
+        "sha256": "29f2a0298501e8630c4a484a24f3f6b5f18ca989577bbb5b1550efe9de476d4f",
+        "size_bytes": 6237,
+        "commitSha": "1e5a6cfd5b1d56efec2eb2710db535639d3d400d",
+        "scriptCommitSha": "101c11ff754d647b4242dacb9c7a12cc92624ae2",
+        "computedAt": "2026-08-21T15:53:19.212262+00:00"
       }
     ]
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
 }

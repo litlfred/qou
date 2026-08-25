@@ -19,6 +19,5 @@ $$
 $$
 
 The volume constraint provides the special-linear condition
-($\det = 1$), while the positive-definite dagger structure provides
-the compactness (unitarity), locking the gauge group exclusively to
-$\mathrm{SU}(2)$. $\square$
+($\det = 1$); the positive-definite dagger structure provides
+the compactness (unitarity). $\square$

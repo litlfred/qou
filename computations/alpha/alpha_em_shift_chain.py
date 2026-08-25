@@ -49,11 +49,12 @@ if str(HERE) not in sys.path:
 
 from q_parameter import q_at  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 # Precision must be raised BEFORE the module-scope constants below: at
 # import time mp.dps is still mpmath's default 15 (~binary64), and a
 # literal rounded there cannot be recovered by raising dps afterwards.
-mp.mp.dps = 50
+set_compute_dps()
 
 CODATA_ALPHA_INV = mp.mpf("137.035999084")  # CODATA 2022 (8.1×10⁻¹⁰ rel. unc.)
 
@@ -64,7 +65,7 @@ def q_integer(q: mp.mpf, n: int) -> mp.mpf:
 
 
 def main() -> None:
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = q_at(50)
 
     # Read α_shift values from the upstream witness — this is the

@@ -31,6 +31,12 @@ from chirality_weighted_3body_cluster_probe import (  # noqa: E402
     E0, AME, q0, atom_braid_word_3A, perblock, word_with,
 )
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+mp.mp.dps = 50
+
 B2 = mp.mpf("2.224566")  # deuteron, MeV
 
 

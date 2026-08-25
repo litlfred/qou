@@ -34,4 +34,4 @@ He-4 retains minor deficit in $\sigma_0 = -0.061$ and $L_- = -0.037$. He-3 exhib
 
 ## Comparison: He-3 vs He-4
 
-The He-3 atom achieves full deficit closure with only three nucleons. He-4 adds a second neutron. This fourth nucleon slightly reopens the $\sigma_0$ and $L_-$ deficit channels while reducing the overall Markov trace. The binding tightens despite the residual deficit. This gives the categorical expression of doubly-magic $N=Z=2$ stability.
+The He-3 atom achieves full deficit closure with only three nucleons. He-4 adds a second neutron. This fourth nucleon slightly reopens the $\sigma_0$ and $L_-$ deficit channels while reducing the overall Markov trace. The binding tightens despite the residual deficit.

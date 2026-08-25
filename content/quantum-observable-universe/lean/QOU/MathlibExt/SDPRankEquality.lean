@@ -168,8 +168,16 @@ theorem PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter
 theorem PosSemidef.rank_via_eigenvalues
     {n : ℕ} {M : Matrix (Fin n) (Fin n) ℝ} (hM : M.PosSemidef) :
     M.rank = (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i)).card := by
-  rw [Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter hM,
-      hM.1.rank_eq_card_non_zero_eigs, Fintype.card_subtype]
+  -- `Matrix.PosSemidef.eigenvalues_pos_filter_eq_ne_zero_filter` never existed.
+  -- What it stood for is one line from `eigenvalues_nonneg`: on a PSD matrix
+  -- every eigenvalue is `≥ 0`, so `0 < λᵢ` and `λᵢ ≠ 0` cut out the same set.
+  have hfilter : (Finset.univ.filter (fun i => 0 < hM.1.eigenvalues i))
+      = (Finset.univ.filter (fun i => hM.1.eigenvalues i ≠ 0)) := by
+    refine Finset.filter_congr (fun i _ => ?_)
+    constructor
+    · exact fun h => ne_of_gt h
+    · exact fun h => lt_of_le_of_ne (hM.eigenvalues_nonneg i) (Ne.symm h)
+  rw [hfilter, hM.1.rank_eq_card_non_zero_eigs, Fintype.card_subtype]
 
 /-! ## §2  Strict-complementarity kernel disjointness
 
@@ -488,13 +496,15 @@ theorem rank_sum_le_of_mul_zero
     simp [Module.finrank_pi]
   rw [h_dim_n] at h_S_rank_nullity
   -- Matrix.rank = finrank of toLin' range (Mathlib def).
-  -- Pending exact Mathlib name; using `Matrix.rank_eq_finrank_range_toLin'` here.
+  -- `Matrix.rank A` is *definitionally* `finrank R (range A.mulVecLin)`, so the
+  -- only gap is `toLin' = mulVecLin` — that is `Matrix.toLin'_apply'`. (The name
+  -- this comment used to guess, `rank_eq_finrank_range_toLin'`, never existed.)
   rw [show sc.Φstar.rank =
         Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') from
-        Matrix.rank_eq_finrank_range_toLin' sc.Φstar,
+        by rw [Matrix.toLin'_apply']; rfl,
       show (sdp.dualSlack sc.ystar).rank =
         Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') from
-        Matrix.rank_eq_finrank_range_toLin' (sdp.dualSlack sc.ystar)]
+        by rw [Matrix.toLin'_apply']; rfl]
   -- Now goal: finrank(range Φ) + finrank(range S) ≤ n.
   -- From h_finrank_le: finrank(range Φ) ≤ finrank(ker S).
   -- From h_S_rank_nullity: finrank(range S) + finrank(ker S) = n.
@@ -579,18 +589,18 @@ theorem rank_equality_under_strict_complementarity
   --                          ≥ 2n - n = n.
   rw [show sc.Φstar.rank =
         Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') from
-        Matrix.rank_eq_finrank_range_toLin' sc.Φstar,
+        by rw [Matrix.toLin'_apply']; rfl,
       show (sdp.dualSlack sc.ystar).rank =
         Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') from
-        Matrix.rank_eq_finrank_range_toLin' (sdp.dualSlack sc.ystar)]
+        by rw [Matrix.toLin'_apply']; rfl]
   -- Goal: finrank(range Φ) + finrank(range S) = n.
   -- h_Φ_rn, h_S_rn, h_kers_le, h_le all give the bounds; omega closes.
   rw [show sc.Φstar.rank =
         Module.finrank ℝ (LinearMap.range sc.Φstar.toLin') from
-        Matrix.rank_eq_finrank_range_toLin' sc.Φstar,
+        by rw [Matrix.toLin'_apply']; rfl,
       show (sdp.dualSlack sc.ystar).rank =
         Module.finrank ℝ (LinearMap.range (sdp.dualSlack sc.ystar).toLin') from
-        Matrix.rank_eq_finrank_range_toLin' (sdp.dualSlack sc.ystar)] at h_le
+        by rw [Matrix.toLin'_apply']; rfl] at h_le
   omega
 
 /-! ## §4  Slater uniqueness from rank equality (proven)

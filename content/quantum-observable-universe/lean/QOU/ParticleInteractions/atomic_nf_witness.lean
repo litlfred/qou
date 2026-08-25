@@ -7,17 +7,28 @@ import Mathlib.Tactic
 [`prop:atomic-nf-witness`](../../../quantum-observable-universe/particle-interactions/atomic-nf-witness.md): *Atomic braid normal form witness*.
 
 This module states the manuscript claim over a context class so the `lean.ref` URI resolves to a real, compiling declaration in the `qou` Lake package (§3b-conditional). See the declaration docstring below for what the term discharges versus what is carried as a context-class axiom.
+
+## Base ring (§7c)
+
+The nucleon/electron indices, mass numbers and word caps are `ℕ`. The scalars
+are Hecke-trace quantities -- the `Φ₁` cost, and the certificate's
+`tr_alt(q_0)`, `net(q_0)` and `F_Pauli = |tr_alt / net|`. They are compared,
+divided and taken in absolute value, which needs an ordered field, but nothing
+archimedean; so the scalars are a generic `R` and the substrate certificate is
+the instantiation `R := ℝ`.
 -/
 
 namespace QOU.ParticleInteractions
 
+variable {R : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
 
 /-- Abstract context for the `atomic_nf_witness` claim —
     manuscript-themed typed fields below; sub-claims encode the
     five steps of the atomic braid construction (nucleon ordering /
     electron placement / GB convergence / NF accumulation /
     certificate output). -/
-class AtomicNfWitnessContext where
+class AtomicNfWitnessContext (R : Type*) [Field R] [LinearOrder R]
+    [IsStrictOrderedRing R] where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -28,11 +39,11 @@ class AtomicNfWitnessContext where
   /-- The braid representative type. -/
   Braid : Type
   /-- `Φ₁` cost of an ordering (indexed by nucleon-permutation index). -/
-  Phi_1 : ℕ → ℝ
+  Phi_1 : ℕ → R
   /-- Ground-state ordering index `π*` that minimises `Φ₁`. -/
   pi_star : ℕ
   /-- `Φ₁` cost as a function of electron position (greedy step). -/
-  Phi_1_electron : ℕ → ℝ
+  Phi_1_electron : ℕ → R
   /-- The greedy-chosen electron position `e*`. -/
   electron_pos_star : ℕ
   /-- Predicate: GB reduction at construction step `k` converges. -/
@@ -42,12 +53,12 @@ class AtomicNfWitnessContext where
   /-- Predicate: NF element accumulated without stripping at mass `A`. -/
   NF_no_strip : ℕ → Prop
   /-- The `F_Pauli` value recorded in the witness certificate. -/
-  F_Pauli : ℝ
+  F_Pauli : R
   /-- The `tr_alt(q_0)` and `net(q_0)` values from the certificate. -/
-  trAlt : ℝ
-  net : ℝ
-  /-- The atomic NF witness claim (conclusion). -/
-  atomic_nf_witness_claim : (∀ π : ℕ, Phi_1 pi_star ≤ Phi_1 π) ∧
+  trAlt : R
+  net : R
+  /-- External theorem / missing input: atomic NF certificate facts. -/
+  atomic_nf_witness_field : (∀ π : ℕ, Phi_1 pi_star ≤ Phi_1 π) ∧
     (∀ p : ℕ, Phi_1_electron electron_pos_star ≤
                 Phi_1_electron p) ∧
     (∀ k : ℕ, gb_converges k) ∧
@@ -86,14 +97,13 @@ to be in Gröbner--Shirshov normal form.  Specifically:*
    computation time, word count, and engine version.
 -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
-theorem atomic_nf_witness (ctx : AtomicNfWitnessContext) :
+theorem atomic_nf_witness (ctx : AtomicNfWitnessContext R) :
     (∀ π : ℕ, ctx.Phi_1 ctx.pi_star ≤ ctx.Phi_1 π) ∧
     (∀ p : ℕ, ctx.Phi_1_electron ctx.electron_pos_star ≤
                 ctx.Phi_1_electron p) ∧
     (∀ k : ℕ, ctx.gb_converges k) ∧
     (∀ a : ℕ, a ≤ 9 → ctx.NF_no_strip a) ∧
-    ctx.F_Pauli = |ctx.trAlt / ctx.net| := by
-  -- Ref: [manuscript] quantum-observable-universe/particle-interactions/atomic-nf-witness.ts
-  exact ctx.atomic_nf_witness_claim
+    ctx.F_Pauli = |ctx.trAlt / ctx.net| :=
+  ctx.atomic_nf_witness_field
 
 end QOU.ParticleInteractions

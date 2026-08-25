@@ -1,7 +1,24 @@
 """Per-isotope L1 + L2 + L3 mass-gap decomposition probe.
 
+⚠ RE-SCOPED 2026-08-09 (bean `qou-7loj`): **L1 is closed, and the residual is
+no longer a percent-level gap.** The free-nucleon rows this probe reads used to
+carry +2.89 % because the mass table sourced them from the deprecated Vol·ρ
+witness; they now come from the `canonical_mass` facade and are accurate to
+ppb. So L1 measures **+0.0000 MeV for every atom**, and what remains is the
+binding-side residual alone:
+
+    ²H +0.0243   ³H −0.0132   ³He −0.2291   ⁴He +1.6640   (total +1.4459 MeV)
+
+against the pre-fix framing of "+2.89–3.86 %" (≈ 27 MeV *per nucleon*). The
+L2+L3 sign structure the probe was built to expose survives intact — and is
+now the whole signal rather than a correction on top of a large L1.
+
+The Markov × 5/2 projection below is correspondingly **inapplicable**: it
+projects an improvement to a layer that no longer has a gap. It is retained,
+guarded, and re-arms automatically if an L1 gap reappears.
+
 Per `docs/audits/2026-05-24-single-knot-vs-multi-nucleon-reconciliation.md`,
-the +2.89-3.86 % multi-isotope gap decomposes as three layers:
+the multi-isotope gap decomposes as three layers:
 
     m_atom(Z, N) = Σ_i m_nucleon_i           (L1: single-knot VolDensity)
                  + Σ_{(i,j)} V_inter(i,j)    (L2: inter-nucleon channels)
@@ -36,8 +53,9 @@ from pathlib import Path
 
 import mpmath as mp
 from mpmath import mpf
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 LOW_ISO_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
@@ -164,7 +182,28 @@ def project_l1_improvement(decomp: dict) -> dict:
     L1 improvement and the resulting err_pct for free nucleons.
     """
     if not decomp["is_free_nucleon"]:
-        return {"applies": False}
+        return {"applies": False, "reason": "not a free nucleon"}
+
+    # L1 IS CLOSED (2026-08-09, bean qou-7loj). This projection asks "what if we
+    # swapped Family A's linking weight for structural Markov × 5/2, taking the
+    # single-knot gap +3.43 % → +1.948 %". It presupposes an L1 gap of several
+    # percent. The nucleon rows now come from the canonical_mass facade and are
+    # accurate to ppb, so there is no percent-level L1 gap left to project an
+    # improvement on — projecting anyway produced the nonsense it used to print:
+    # a "0.00x improvement" and a −18 MeV Δ, from comparing the canonical value
+    # against actual × 1.01948.
+    #
+    # Kept rather than deleted: it is the record of what the L1 layer cost under
+    # the Vol·ρ route, and it re-arms automatically if an L1 gap ever reappears.
+    if abs(float(decomp["err_pct"])) < float(L1_STRUCTURAL_MARKOV_5_2_PCT):
+        return {
+            "applies": False,
+            "reason": (
+                f"L1 closed: observed gap {float(decomp['err_pct']):+.6f}% is "
+                f"already below the projected {float(L1_STRUCTURAL_MARKOV_5_2_PCT)}% "
+                f"(canonical_mass facade; the projection assumes a Vol·ρ-era gap)"
+            ),
+        }
 
     # For free p, n: predicted = actual × (1 + L1_gap_pct/100)
     # With L1 Markov × 5/2 improvement: predicted_new = actual × (1 + 1.948/100)
@@ -239,13 +278,20 @@ def main() -> None:
     print("\n" + "=" * 80)
     print("L1 PROJECTION: replacing Family A → structural Markov × 5/2 (PR #1081)")
     print("=" * 80)
-    print(f"{'atom':<6} {'err FA (%)':>12} {'err M5/2 (%)':>14} {'Δ (MeV)':>10} {'x improvement':>16}")
-    print("-" * 65)
-    for p in l1_projections:
-        print(f"{p['label']:<6} {p['old_err_pct']:>+12.3f}  "
-              f"{p['new_err_pct']:>+14.3f}  "
-              f"{p['improvement_MeV']:>+10.4f}  "
-              f"{(p['improvement_factor_x'] or 0):>15.2f}x")
+    applicable = [p for p in l1_projections if p.get("applies")]
+    if not applicable:
+        skipped = [p for p in l1_projections if not p.get("applies")]
+        print("  INAPPLICABLE — the L1 layer this projects an improvement for is closed.")
+        for p in skipped:
+            print(f"    {p.get('label', '?')}: {p.get('reason', 'n/a')}")
+    else:
+        print(f"{'atom':<6} {'err FA (%)':>12} {'err M5/2 (%)':>14} {'Δ (MeV)':>10} {'x improvement':>16}")
+        print("-" * 65)
+        for p in applicable:
+            print(f"{p['label']:<6} {p['old_err_pct']:>+12.3f}  "
+                  f"{p['new_err_pct']:>+14.3f}  "
+                  f"{p['improvement_MeV']:>+10.4f}  "
+                  f"{(p['improvement_factor_x'] or 0):>15.2f}x")
 
     # L2+L3 sign-flip evidence
     print("\n" + "=" * 80)

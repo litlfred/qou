@@ -23,13 +23,13 @@
     "sympy": "1.14.0",
     "mpmath": "1.3.0"
   },
-  "description": "Workplan 2 Phase 2 — closed-form Path A derivation of m_e_Hecke at 50 dps for the electron at H_2 from CAL-1 M_E_MEV and CAL-2 q_0_50dps alone. NO FITTING per owner directive 2026-05-10. Replaces the DEPRECATED placeholder literal M_HECKE_PIPELINE_AT_Q0['e']=0.0007783. T1(e) is the standard Markov parameter z; T4(e) is the H_2 instantiation of the Frobenius co-Casimir master formula. Partial Path A subset (T1+T4); T2/T3/T5/T6 quarantined same as the proton derivation (see derive_m_p_hecke_path_a.py).",
+  "description": "Workplan 2 Phase 2 \u2014 closed-form Path A derivation of m_e_Hecke at 50 dps for the electron at H_2 from CAL-1 M_E_MEV and CAL-2 q_0_50dps alone. NO FITTING per owner directive 2026-05-10. Replaces the DEPRECATED placeholder literal M_HECKE_PIPELINE_AT_Q0['e']=0.0007783. T1(e) is the standard Markov parameter z; T4(e) is the H_2 instantiation of the Frobenius co-Casimir master formula. Partial Path A subset (T1+T4); T2/T3/T5/T6 quarantined same as the proton derivation (see derive_m_p_hecke_path_a.py).",
   "auditOnly": "docs/audits/2026-05-10-1ppb-workplan-update.md",
   "owner_directive_2026_05_10": "do workplans 2 phase 2; make sure no fitting; all should be derived",
   "data": {
     "electron": {
       "atom": "electron",
-      "braid": "β_e = 1 (identity in H_2(q), zero crossings)",
+      "braid": "\u03b2_e = 1 (identity in H_2(q), zero crossings)",
       "q_0_50dps": "1.10997859555733471989976322048322502665620840878015368660798",
       "t1_descended": {
         "value_50dps": "0.499320334033561271768966386275737140161175797899895610447189",
@@ -38,10 +38,10 @@
       },
       "t4_frobenius_co_casimir": {
         "value_50dps_MeV": "0.768236860014506359726467634712715566108102918737393579470061",
-        "formula": "M_E_MEV · z · ([2]_q + 1)",
+        "formula": "M_E_MEV \u00b7 z \u00b7 ([2]_q + 1)",
         "irrep_decomposition": {
-          "lambda_2_sym": "σ_1 ↦ +q, dim_q = [2]_q",
-          "lambda_11_alt": "σ_1 ↦ -q^{-1}, dim_q = 1",
+          "lambda_2_sym": "\u03c3_1 \u21a6 +q, dim_q = [2]_q",
+          "lambda_11_alt": "\u03c3_1 \u21a6 -q^{-1}, dim_q = 1",
           "co_casimir_h2_dimensionless": "1.50340203042914072275561532173665130644556807267402557135611"
         }
       },
@@ -52,5 +52,8 @@
       },
       "no_fitting_assertion": "Both T1(e) and T4(e) are closed-form expressions in q_0 (CAL-2) and M_E_MEV (CAL-1). No upstream witness consumed; no CODATA m_p / m_n / m_e_other tuning. The construction is the H_2 instantiation of the master Frobenius co-Casimir formula proved in QOU.BraidKnot.MassFormulaCategorical."
     }
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.electron.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

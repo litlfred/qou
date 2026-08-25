@@ -65,6 +65,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_MP  # noqa: E402
 from partition_utils import hook_lengths_with_cells as hook_lengths  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -116,7 +117,7 @@ def y_lambda_macdonald(p, q_mp):
     chosen `mp.mp.dps`.
     """
     Q = q_mp ** 2
-    z = 1 / (mp.sqrt(q_mp) + 1 / mp.sqrt(q_mp))
+    z = q_mp**3 / (q_mp**2 + 1)
     X = q_mp * z / (1 - Q + q_mp * z)
     cells = hook_lengths(p)
     n = sum(p)
@@ -159,7 +160,7 @@ def alpha_k_via_telescope(n, k, q_mp):
     every n ≥ k.  This function returns the structural value as a
     direct algebraic cross-check on the closed-form pipeline.
     """
-    z = 1 / (mp.sqrt(q_mp) + 1 / mp.sqrt(q_mp))
+    z = q_mp**3 / (q_mp**2 + 1)
     return z ** (k - 1)
 
 
@@ -177,7 +178,7 @@ def main():
         .set_content_block("prop:macdonald-hook-telescope")
     )
 
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = Q_MP
 
     print(f"q_0 = {mp.nstr(q0, 20)}, dps = {mp.mp.dps}")
@@ -222,7 +223,7 @@ def main():
 
     # Markov-axiom α_k cross-check for k = 1, 2, 3 at H_4.
     print("\nStep 3: Markov-axiom α_k cross-check (k = 1,2,3 at H_4)...")
-    z_val = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    z_val = q0**3 / (q0**2 + 1)
     for k in range(1, 4):
         target = alpha_k_via_telescope(4, k, q0)  # z^{k-1}
         diff = abs(target - z_val ** (k - 1))

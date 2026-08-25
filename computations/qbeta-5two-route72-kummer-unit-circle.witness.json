@@ -1,0 +1,106 @@
+{
+  "probe": "qbeta_5two_route72_kummer_unit_circle",
+  "beans": [
+    "qou-kmmr"
+  ],
+  "dps": 60,
+  "lean": "QOU/Knot/KummerUnitCircle.lean -- blochWigner_lob_exp; QOU/Knot/KummerDilogHalf.lean -- im_cLiTwoExt_exp, kummer_unit_circle",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "on |z| = 1 the ideal tetrahedron is ISOSCELES: the three angles of e^{i theta} are (theta, (pi-theta)/2, (pi-theta)/2), and they sum to pi. This is what collapses Kummer to a one-variable identity there",
+      "samples": [
+        {
+          "theta": "0.25",
+          "angles": [
+            "0.25",
+            "1.44579632679",
+            "1.44579632679"
+          ]
+        },
+        {
+          "theta": "1.0",
+          "angles": [
+            "1.0",
+            "1.07079632679",
+            "1.07079632679"
+          ]
+        },
+        {
+          "theta": "1.0471975512",
+          "angles": [
+            "1.0471975512",
+            "1.0471975512",
+            "1.0471975512"
+          ]
+        },
+        {
+          "theta": "1.57079632679",
+          "angles": [
+            "1.57079632679",
+            "0.785398163397",
+            "0.785398163397"
+          ]
+        },
+        {
+          "theta": "2.5",
+          "angles": [
+            "2.5",
+            "0.320796326795",
+            "0.320796326795"
+          ]
+        },
+        {
+          "theta": "3.01659265359",
+          "angles": [
+            "3.01659265359",
+            "0.0625",
+            "0.0625"
+          ]
+        }
+      ],
+      "max_angle_deviation": "1.5557538e-61",
+      "max_sum_minus_pi": "3.1115076e-61",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "Lam(theta) + 2 Lam((pi-theta)/2) = Cl_2(theta), and it is exactly the Clausen duplication formula Cl_2(2t) = 2 Cl_2(t) - 2 Cl_2(pi-t) halved -- which the corpus already had as Cl_2_duplication, so the Lean proof is three lines",
+      "max_lambda_identity_residual": "2.3336307e-61",
+      "max_duplication_residual": "4.6672615e-61",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE OTHER HALF -- NOW PROVED (Route 73). Im cLiTwoExt(e^{i theta}) = Cl_2(theta), so the Lambda-sum equals the Bloch-Wigner dilogarithm form on |z| = 1. When this gate was written that was numerically true but unproved; QOU/Knot/KummerDilogHalf.lean (im_cLiTwoExt_exp, kummer_unit_circle) now proves it, sorry-free. The gate is kept as the numerical control on the statement",
+      "max_residual_lambda_vs_dilog": "1.5557538e-61",
+      "numerically_true": true,
+      "proved_in_lean_for_cLiTwoExt": true,
+      "proved_by": "QOU/Knot/KummerDilogHalf.lean -- im_cLiTwoExt_exp, Route 73",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "SCOPE: this file does NOT reach Vol(5_2). The 5_2 shape y_1 has |y_1| = 1.5236, so it is off the unit circle; its tetrahedron is NOT isosceles and log|z| != 0. The general-z case needs the genuine two-variable argument and is untouched",
+      "y1": "(0.7849201454990266329557 + 1.307141278682045480492353j)",
+      "abs_y1": "1.5247025799298517702",
+      "y1_angles": [
+        "1.030019489685363686",
+        "1.407715442602953035",
+        "0.70385772130147651749"
+      ],
+      "isosceles_failure_a2_minus_a3": "0.70385772",
+      "on_unit_circle": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "proved": "Kummer's identity on |z| = 1, BOTH halves: BlochWigner_lob(e^{i theta}) = Cl_2(theta) = Im cLiTwoExt(e^{i theta}), sorry-free, standard axioms. The Lambda-side IS Clausen duplication; the dilogarithm side is same-derivative-plus-basepoint at theta = pi.",
+    "not_proved": [
+      "Vol(5_2) -- the geometric factor of Vol = D is untouched"
+    ],
+    "superseded_2": "This list used to include 'Kummer for general z'. That is now PROVED (QOU/Knot/KummerRadial.lean, Route 73/74) -- by a RADIAL reduction using this file's |z| = 1 result as basepoint, not by the two-variable argument anticipated here.",
+    "since_superseded": "G3's 'not proved in Lean' was true when written and is now false -- Route 73 proved it. Corrected here rather than left to rot.",
+    "sum_rule_status": "PROVED"
+  }
+}

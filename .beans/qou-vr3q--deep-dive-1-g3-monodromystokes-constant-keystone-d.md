@@ -7,7 +7,7 @@ priority: high
 tags:
     - alien-habiro
 created_at: 2026-07-18T17:08:37Z
-updated_at: 2026-07-18T17:20:36Z
+updated_at: 2026-08-11T00:20:00Z
 parent: qou-89f9
 ---
 
@@ -20,3 +20,19 @@ Derivation candidate (not fit): the exact GGM 4₁ Stokes matrix integer 3 (S⁰
 Lean scaffold ALREADY present: CyclicDilogPentagon.lean faddeevPhi_unique_of_pentagon (sorry-free), MonodromyDatumRigidity.lean monodromy_datum_rigidity (sorry-free) ⇒ A_ω carries NO fitting freedom IF pentagon holds. SINGLE open input = PentagonRigidity.uniqueUpToScalar (Faddeev-Volkov 'doubly-periodic⇒constant' Liouville step, Mathlib gap, no instance).
 
 FORMALIZE-FIRST target: prove PentagonRigidity (Liouville step) → discharges uniqueness leg, converts G3 from 'find a function' to 'verify pentagon pins the proved inversion/unitarity/self-duality bundle'. k=21 singularity now CONFIRMED structurally unresolvable by fixed-order Borel-Leroy through k=31 (gap persists 0.172); needs Φ_b state-integral/GGM route. Full memo: docs/audits/2026-07-18-g3-stokes-keystone-evidence-base.md
+
+---
+
+## 2026-08-11 TAKEOVER + status refresh (this bean was stale; owner-authorised takeover of the stalled leg)
+
+Last A_ω commit was 10 days prior (`caf115a24`); substantive work 3 weeks prior. Owner authorised takeover. On takeover the leg is verified worked to its genuine research frontier — every tractable sub-step below is ALREADY LANDED. The three claims above are superseded:
+
+1. **Uniqueness leg CLOSED (sorry-free), NOT "single open input = PentagonRigidity Mathlib gap".** `MathlibExt/DoublyPeriodicLiouville.lean` proves the "doubly-periodic entire ⇒ constant" Liouville step from Mathlib primitives (no longer a carried hypothesis). Uniqueness is discharged sorry-free via the regularity-carrying `FaddeevPhiPhysical` (`QBeta/FaddeevPhiFullUniqueness.lean`, `faddeevPhi_uniqueUpToScalar`, class fields `hStripGrowth` + `hNF : MeromorphicNFOn`). The abstract-`FaddeevPhi`-ratio route (beans qou-cons/qou-rp5f) hit a real wall — the bare class has no regularity field (`faddeevPhi_mul_latticeIndicator` witnesses closure under pathological doubly-periodic multipliers) — and is superseded by the `FaddeevPhiPhysical` route.
+
+2. **Trace-field H1 REFUTED, not "unverified".** Reading GGM 2012.00062 directly, the 4₁ off-diagonal DT spectrum is the PAIR {3,4} (eq 98); the co-occurring 4 has no discriminant meaning, so `Stokes -3 = disc(ℚ(√-3))` is refuted (scope-(a), `docs/audits/2026-07-18-aomega-stokes3-is-dt-invariant-not-tracefield-disc.md`). Do not resurrect.
+
+3. **`A_ω=3` conditional adoption LANDED.** `mass-theory/aomega-fourone-dt-count.md` (Theorem conditional on `conj:stokes-dt-bps-bridge`); value 3 from the sorry-free decidable `QOU.QBeta.StokesQZeroDTCount` (eq-60 `S⁺(0)=[[1,3],[0,1]]`); bridge asserts no value. Passed the non-degeneracy gate on the CLOSED GPPV/GGM sector; the OPEN-HOMFLY Gukov–Stošić sector (`det(4₁)=5 ∉ {3,4}`) was correctly rejected. Symmetry-constant-vs-spectrum fork RESOLVED against a universal scalar by the 5₂ cross-knot test (`FiveTwoDTSpectrumSplit.lean`, sorry-free): 5₂ chiral, 3×3 block splits {3,4} across chirality — the real fork is which spectrum member the observable inherits via chirality.
+
+**REMAINING OPEN PIECE — literature-open, NOT a QOU wiring gap (honest terminus).** The internal derivation of the q→0 3d-index DT count from QOU Hecke/Bring data (Wedderburn mult of H_n(q), Markov-trace, Bring embedding) reproducing S⁺(0)₁₂=3 for 4₁ AND the companion 4 / surviving the 5₂ test is an **open problem in the categorification of DT / 3d-index invariants — open in the DT/state-integral literature itself** (per `2026-08-02-aomega-internal-derivation-symmetry-constant-target.md` §B). Recomputing the q→0 index "internally" via the QOU colored Jones / state integral IS re-importing GGM, not a categorical shortcut. Until such a formula exists, `A_ω=3` is certified-as-GGM-DT-count (imported, proven-for-4₁, conditionally adopted) but NOT internally derived; claiming a closure would violate the anti-laundering rule. Consolidated frontier map: `docs/audits/2026-08-11-g3-and-qdifference-slope-frontier-consolidation.md`.
+
+Status left `in-progress` (not `done`): the QOU-actionable content is exhausted, but the naming leg (internal derivation) is a genuine open problem — closing it is a human/owner call, not an agent's, and it awaits a literature advance in DT categorification.

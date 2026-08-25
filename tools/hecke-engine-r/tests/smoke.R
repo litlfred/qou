@@ -51,11 +51,14 @@ stopifnot(qou_lr_coefficient(c(2L), c(1L), c(1L)) == 1)
 # 10. lr_coefficient: size mismatch returns 0.
 stopifnot(qou_lr_coefficient(c(3L), c(2L), c(2L)) == 0)
 
-# 11. tr_m_atomic_mpfr: 3-strand single positive crossing returns z ≈ 0.4993.
+# 11. tr_m_atomic_mpfr: 3-strand single positive crossing returns
+#     z = q^3/(q^2+1) ≈ 0.6126895 — trace convention D. Was ≈ 0.4993203
+#     (convention C) until the excision of 2026-08-09; see
+#     docs/coordination/trace-convention-registry.md.
 #     n=3 (not n=2) — B_2 trips an upstream edge case in tr_m_word_lq.
 trace_str <- qou_tr_m_atomic_mpfr(c(1L), c(1L), 3L, "1.10998", 20L)
 stopifnot(is.character(trace_str))
 stopifnot(nchar(trace_str) > 0)
-stopifnot(startsWith(trace_str, "4.99"))
+stopifnot(startsWith(trace_str, "6.12"))
 
 cat("OK: 11/11 heckeengine smoke tests pass (Phase A + Phase B)\n")

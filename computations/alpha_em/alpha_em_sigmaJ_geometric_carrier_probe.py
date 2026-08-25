@@ -8,7 +8,7 @@ democratic braiding data exactly.
 
 Established inputs: brick 3 (merged): at the democratic points q = +-i the
 semisimplified braiding sigma_ss = +-i squares to -1 (J-type), transpose fixes
-each point, bar exchanges them. Braden-Disney-Hogg (uploads/2208.13692v1.pdf):
+each point, bar exchanges them. Braden-Disney-Hogg (library/arxiv-2208.13692v1/2208.13692v1.pdf):
 the Bring vertices are the permutations of [1:i:-1:-i:0] (Prop 3.9, fixed points
 of order-4 automorphisms); B/<4-cycle> is elliptic with j = -25/2 = j(5*tau0)
 (SS4.3, Weber's T).
@@ -161,7 +161,7 @@ def main():
         "context": {
             "builds_on": "merged #3933 (bricks 1-3: corrected dictionary, unique tau target, sigma->J at "
                          "the degenerate locus) + Braden-Disney-Hogg Prop 3.9/SS4.3/Prop 4.6 (PDF in "
-                         "uploads/)",
+                         "library/)",
             "remaining": "the functorial statement tau(braiding) = the order-4 automorphism action; its "
                          "classical limit inherits the conformal structure J defines, hence a0 (Clause A)",
             "scope_guard": "derives NO clause; no fit; nothing wired; 1/(8pi) stays phase-4",

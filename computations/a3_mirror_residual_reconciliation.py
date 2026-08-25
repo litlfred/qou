@@ -35,7 +35,7 @@ def _pp_bond_from_witness(fallback: str = "2.2861") -> str:
         return str((w.get("data", w))["B_iso_MeV"]["pp"])
     except Exception:
         return fallback
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_TRITIUM_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION,

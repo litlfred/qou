@@ -64,7 +64,7 @@ from witness_base import WitnessBuilder  # noqa: E402
 
 q = sp.symbols("q", positive=True)
 h_sym = q - 1 / q
-z_sym = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))
+z_sym = q**3 / (q**2 + 1)
 
 
 def hecke_power_decomposition(k: int):

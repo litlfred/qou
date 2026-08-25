@@ -24,12 +24,12 @@ export default chapter({
         "nuclear-groebner-reduction",
         "nuclear-groebner-reduction-proof",
         "nuclear-groebner-reduction-computational",
-        "nuclear-reduction-algorithm",
         "groebner-shirshov-energy",
         "groebner-shirshov-energy-proof",
         "groebner-shirshov-energy-interpretation",
         "inductive-gb-reduction",
         "inductive-gb-reduction-proof",
+        "nuclear-reduction-algorithm",
         "nucleon-ordering-factorization",
         "nucleon-ordering-factorization-proof",
         "box-braid-irreducibility",
@@ -110,11 +110,39 @@ export default chapter({
       label: "sec:nuclear-binding",
       blocks: [
         "nuclear-binding-intro",
-        "nuclear-operator-regimes",
-        "nuclear-operator-regimes-interpretation",
         "demand-profile",
         "demand-stability",
+        "nuclear-operator-regimes",
+        "nuclear-operator-regimes-interpretation",
         "periodic-table-demand-conjecture",
+      ],
+    }),
+
+    // ── §3b. The NN channel: isospin selection and the interface band ──
+    // Decision 7 homes all three nuclear Lean results here — isospin
+    // selection, the band separation, the colour-tube floor — because they
+    // are one connected argument and none of them had any exposition.
+    // Reading order: select the channel → refute the alternative → define
+    // the map → state the branching → measure the gap → close the
+    // colour-tube route. Placement AFTER §3 is the least disruptive
+    // insertion; siting it right after §2 sec:confinement-selection (also
+    // operator selection, and upstream of §3's (Z,N) magic-number work) is
+    // arguably the better read and is left as an owner call. Decision 4
+    // forbids CHAPTER moves, not section ordering inside a chapter.
+    section({
+      title: "Isospin selection and the interface band",
+      label: "sec:nn-isospin-interface",
+      blocks: [
+        "nn-isospin-interface-intro",
+        "isospin-singlet-binds-more",
+        "isospin-singlet-binds-more-proof",
+        "content-keyed-interface-refuted",
+        "nucleon-pair-isospin-channel",
+        "isospin-selection-class-inhabited",
+        "branching-identity-isospin-weights",
+        "interface-band-between-isospin-weights",
+        "interface-never-realises-isospin-weight",
+        "colour-tube-floor-overshoots-deuteron",
       ],
     }),
 
@@ -155,6 +183,7 @@ export default chapter({
         "transfer-beta-decay-intro",
         "ground-state-ordering-table2-data",
         "ground-state-ordering-table1-data",
+        "energy-scale-planck",
         "neutron-qvalue-symbolic",
         "qbeta-counit-closed-form",
         "qbeta-counit-transition",
@@ -263,7 +292,6 @@ export default chapter({
       label: "sec:beta-stability-closure",
       blocks: [
         "intro-beta-stability-closure",
-        "energy-scale-planck",
         "skein-binding-lagrangian",
         "skein-binding-lagrangian-derivation",
         "beta-stability",
@@ -283,8 +311,8 @@ export default chapter({
         "hyperelliptic-z5-classification-interpretation",
         "bring-z5-descent",
         "x5-bring-prym-jacobian",
-        "weight-identification-consequences",
         "u1-phase-tube",
+        "weight-identification-consequences",
         "descent-mirror-intro",
         "e-minus-one",
       ],

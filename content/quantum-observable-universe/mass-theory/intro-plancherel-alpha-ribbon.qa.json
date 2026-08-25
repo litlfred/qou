@@ -136,7 +136,179 @@
           "agent_skill": "local/one-voice-audit"
         }
       }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.485Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "Four-sentence prose intro read in full; no assert-by-denial construction."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.528Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "No setup-then-reframe; sentences are flat declaratives."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.569Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "Zero em-dashes."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.613Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "'identifies ... verifies ... and formalizes' enumerates three real downstream blocks (Plancherel weight, probability check, knot-factor formula); substantive, not reflex."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.652Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "Closer is a dependency statement about downstream models, not a quotable line."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.697Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "No narration of emphasis."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.744Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "Final sentence introduces new information (which outputs downstream models consume), not a restatement."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.800Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "Institutional register."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.844Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "severity": "minor",
+        "evidence": "Two bare intensifiers in a 4-sentence block: 'The knot-factor distills directly from a Plancherel-weighted Wedderburn block sum' and 'Downstream binding-energy models rely strictly on the explicit knot-factor outputs'. Neither 'directly' nor 'strictly' is doing work a qualified statement would not.",
+        "notes": "Proposed (not applied, since 'strictly' may be carrying an intended exclusivity claim): 'distills directly from' -> 'distills from'; 'rely strictly on' -> 'rely only on' if exclusivity is meant, else 'rely on'. Suspected de-hedging-intensifier sweep damage rather than original drafting."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "d77b1c35f997",
+          "ts": "da134280c0f0"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:w02",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-21T16:32:23.886Z",
+        "reviewed_sha": "c1d65440705be401839393d604a24fc465a91ff0",
+        "evidence": "'a Plancherel-weighted Wedderburn block sum' is the densest chain and is still speakable."
+      }
     ]
   },
-  "updated_at": "2026-07-07T14:26:56.786906Z"
+  "updated_at": "2026-08-21T16:32:23.886Z"
 }

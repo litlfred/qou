@@ -75,7 +75,7 @@ TOL = mp.mpf("1e-25")
 # Symbolic q-data
 QS = sp.Symbol("q", positive=True)
 HS = QS - 1 / QS                          # h = q - q⁻¹
-ZS = 1 / (sp.sqrt(QS) + 1 / sp.sqrt(QS))  # Markov parameter z
+ZS = QS**3 / (QS**2 + 1)  # Markov parameter z
 
 
 def chain_ab(coeffs, h=HS):
@@ -109,7 +109,7 @@ def fold_factorization(ab_pairs, z=ZS):
 
 def main() -> int:
     q0 = mp.mpf(Q_50_DIGIT_STR)
-    z0 = 1 / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    z0 = q0**3 / (q0**2 + 1)
     h0 = q0 - 1 / q0
 
     w = WitnessBuilder("probe-markov-trace-factorization", engine="sympy")

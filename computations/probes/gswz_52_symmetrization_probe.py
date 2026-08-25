@@ -59,6 +59,7 @@ queued on qou-9p9y.
 """
 
 import json
+import pathlib
 import sys
 
 import sympy as sp
@@ -159,7 +160,7 @@ witness = {
     "schema": "probe-witness/v1",
     "probe": "gswz_52_symmetrization_probe",
     "beans": ["qou-9p9y"],
-    "source": "GSWZ arXiv:2412.04241v2 §4.6 eqns (282)/(283)/(286); uploads/2412.04241v2.pdf",
+    "source": "GSWZ arXiv:2412.04241v2 §4.6 eqns (282)/(283)/(286); library/arxiv-2412.04241v2/2412.04241v2.pdf",
     "field": "Q(alpha)/(alpha^3 - alpha^2 + 1) (5_2 trace field)",
     "checks": checks,
     "g2_exact": sp.sstr(sp.simplify(g2)),
@@ -170,7 +171,7 @@ witness = {
     },
     "scope": "scope-(a): 5_2 symmetrization + gluing digit vs printed data; (287) Psi-division capstone and eps_m (m>1) queued",
 }
-with open("computations/probes/gswz_52_symmetrization.witness.json", "w") as f:
+with open(pathlib.Path(__file__).resolve().parent / "gswz_52_symmetrization.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

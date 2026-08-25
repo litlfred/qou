@@ -25,7 +25,12 @@ import numpy as np
 import mpmath as mp
 from fractions import Fraction
 
-mp.mp.dps = 50
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 results = []
 def check(name, ok, detail=""):
     results.append((name, bool(ok), detail))

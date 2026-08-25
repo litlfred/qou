@@ -50,34 +50,91 @@ from markov_trace_canonical import tr_M_element
 from q_parameter import Q as Q0_FLOAT
 from witness_polynomial import expose_polynomial
 
+
+def _flavor_split_leading_sym(q):
+    """Symbolic δ, LEADING term only:  δ(q) = (q−1)²(1−q⁻⁴)/3.
+
+    Deliberately NOT `tr_m_algebraic_q.flavor_split_leading_sym`, whose
+    docstring claims it matches `_li_2_q_util.flavor_split_leading` "at any q"
+    and does not: it multiplies by the posited subleading `(1 + ℏ³)`, so the
+    two disagree by exactly ℏ³ = 9.727037e-04 relative at q_0 (bean
+    `qou-4e5k`).  `canonical_braid_crossings._avg_color_delta` — which builds
+    the numeric crossing this function must reproduce — uses the leading term
+    alone, so matching it is the consistency requirement here.
+    """
+    return (q - 1) ** 2 * (1 - q ** (-4)) / sp.Integer(3)
+
 # Rational approximation of q_0 for sympy, kept consistent with q_parameter.Q.
 _Q0_RATIONAL = sp.Rational(str(float(Q0_FLOAT)))
+
+
+def _d_weighted_at_q0() -> float:
+    """Numeric `d` of the colour-weighted p-n crossing at q_0.
+
+    Sourced from `canonical_braid_crossings.d_for_ctype`, the module that owns
+    ctype knowledge, so this file never carries a second definition of the
+    weighting (the failure mode of `qou-4e5k`: two copies of one dispatch
+    disagreeing about the same crossing).
+    """
+    from canonical_braid_crossings import d_for_ctype
+    return float(d_for_ctype(
+        "averaged_weighted", float(HA_sym.subs(q_sym, _Q0_RATIONAL))))
 
 
 # Tolerances for float-to-symbolic conversion of Hecke (c, d) coefficients:
 # - _C_FACTOR_TOL: exact-float comparison for (c ∈ {0, 1})
 # - _D_EXACT_TOL:  exact-float comparison for (d ∈ {0, 1})
-# - _D_HECKE_TOL:  numeric match to ±h or ±h/2 at q_0 (h value differs from
-#                  exact 1 by rounding of the q_0 rational; looser threshold).
+# - _D_HECKE_TOL:  numeric match to ±h, ±h/2, or the colour-weighted p-n
+#                  interface at q_0.
+#
+# _D_HECKE_TOL WAS 1e-3, AND THAT SILENTLY DISCARDED THE COLOUR WEIGHTING.
+# ------------------------------------------------------------------------
+# The colour-weighted p-n crossing carries d = -h(1/2 - δ/4), whose distance
+# from the colour-BLIND -h/2 is h·δ/4 = 7.190163e-05 at q_0.  A 1e-3 window
+# swallows it: the crossing matched the `-h/2` branch and was rewritten as
+# colour-blind, with no error and no warning.  Measured consequence on the
+# deuteron: this path returned 0.575090871629810316751633 against the
+# bridge/peel value 0.575172243917771870826535, a gap of 8.14e-05 — while
+# `recomputed-low-isotope-mass-table.md` claims the paths agree to machine
+# epsilon.  See bean `qou-4e5k`.
+#
+# The old comment justified 1e-3 as absorbing "rounding of the q_0 rational".
+# Measured, that rounding is EXACTLY ZERO: h from `_Q0_RATIONAL` and h at the
+# 50-dps q_0 agree to the bit, and every intra crossing in the production word
+# lands at distance 0.0 from its target.  So the loose window bought nothing
+# and cost the weighting.  1e-9 leaves ~7 orders of margin on both sides.
 _C_FACTOR_TOL = 1e-12
 _D_EXACT_TOL = 1e-12
-_D_HECKE_TOL = 1e-3
+_D_HECKE_TOL = 1e-9
 
 
 def _factor_from(c_f: float, d_f: float, g: int) -> SymbolicHeckeElement:
-    """Hecke factor c·T_g + d·I as a symbolic element."""
+    """Hecke factor c·T_g + d·I as a symbolic element.
+
+    The colour-weighted p-n interface is matched STRUCTURALLY (against
+    `d_for_ctype("averaged_weighted", h)`) rather than by proximity, and maps
+    to a fully symbolic `-h(1/2 - δ(q)/4)` so the normal form stays a function
+    of q.  This mirrors `tr_m_algebraic_q.build_atom_symbolic_q`, whose
+    docstring states the rule this function previously broke: the colour δ
+    "is numerically indistinguishable from -h/2, so it must be placed
+    structurally, not matched".
+    """
     if abs(c_f) < _C_FACTOR_TOL:
         c = sp.Integer(0)
     else:
         c = sp.Integer(1)
+    h_at_q0 = float(HA_sym.subs(q_sym, _Q0_RATIONAL))
     if abs(d_f) < _D_EXACT_TOL:
         d = sp.Integer(0)
     elif abs(d_f - 1.0) < _D_EXACT_TOL:
         d = sp.Integer(1)
-    elif abs(d_f + float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < _D_HECKE_TOL:
+    elif abs(d_f + h_at_q0) < _D_HECKE_TOL:
         d = -HA_sym            # mixed sign convention: -h
-    elif abs(d_f + 0.5 * float(HA_sym.subs(q_sym, _Q0_RATIONAL))) < _D_HECKE_TOL:
-        d = -HA_sym / 2        # -h/2
+    elif abs(d_f - _d_weighted_at_q0()) < _D_HECKE_TOL:
+        # Colour-weighted p-n interface: -h(1/2 - δ/4), δ = flavour split.
+        d = -HA_sym * (sp.Rational(1, 2) - _flavor_split_leading_sym(q_sym) / 4)
+    elif abs(d_f + 0.5 * h_at_q0) < _D_HECKE_TOL:
+        d = -HA_sym / 2        # -h/2 (colour-BLIND averaged)
     else:
         d = sp.nsimplify(d_f)
     return SymbolicHeckeElement({(g,): c, (): d})
