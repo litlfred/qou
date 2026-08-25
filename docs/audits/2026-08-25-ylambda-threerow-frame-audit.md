@@ -137,15 +137,100 @@ not about the mathematics.** Compare against a noise floor tied to the working
 precision — which is exactly the fix `mu3_door_budget_probe` needed, arriving one
 layer up in the tool written to find it.
 
+## Three states, not one — measured on the top candidates
+
+Working down the triage separates the class into three states. The distinction
+matters, because only the third is a live corpus defect.
+
+### (1) Code reasons about the stratum; the record is already honest
+
+`mu3_frechet_perblock_probe` still filters on negative weights, but its committed
+witness reads `n_negative_weight = 0`, `n_negative_y_lambda_at_9 = 0`. It has been
+regenerated under D and answers 0. The code is dead weight; nothing is being
+mis-stated. **No action beyond tidying.**
+
+### (2) Stale convention-C record; the producer would now return zero
+
+`threerow-sign-crossing.witness.json` on `main` records
+
+```
+D    F_at_qlo = 8.0529125227220376e-5   F_at_q0 = -0.19496635114594539
+     sign_crossed = True   crossing_q_values = ['1.0536500613326059']
+T    F_at_q0 = -2.3181589081699395      sign_crossed = False
+3He  F_at_q0 = -2.8064582609621747      sign_crossed = False
+```
+
+Order-unity magnitudes — so this is a **C-era number**, not a sign taken of noise.
+Re-run on `main` today:
+
+```
+D    n= 6  F(q_lo)=+0.00000e+00  F(q₀)=+0.00000e+00  sign +0→+0  no crossing
+T    n= 9  F(q_lo)=+0.00000e+00  F(q₀)=+0.00000e+00  sign +0→+0  no crossing
+3He  n= 9  F(q_lo)=+0.00000e+00  F(q₀)=+0.00000e+00  sign +0→+0  no crossing
+VERDICT: sign crossing on (1,q₀] in the ≥3-row object — NO
+```
+
+**The verdict inverts**: the committed record says the deuteron ≥3-row object
+crosses sign at `q = 1.0537`; the live producer says the object is identically
+zero and there is no crossing. Nothing on `main` marks the committed number as
+C-frame. `threerow-4he-completion.witness.json` has the same shape
+(`sign_qlo = 1`, `sign_q0 = -1`, plus `sign_change_brackets` at 1.19–1.25 and
+1.33–1.44).
+
+Two things worth noting about the re-run. Its character-free leg still reports
+`CROSS @ q=[1.0001396…, 1.0002147…, 1.0052872…, 1.0082994…]` while simultaneously
+printing `G(q_lo) = G(q₀) = +0.00000e+00` — sign flips located in round-off,
+the `mu3_door_budget` shape again — and those crossing lists are **identical for
+n = 6 and n = 9**. And its three assertions **all pass**, because they check
+internal consistency rather than whether the object is nonzero. A naive
+regeneration would therefore land a green witness with vacuous content.
+
+### (3) Stale record *and* the producer now refutes it — the live defect
+
+`ylambda-sign-content-threshold.witness.json`. Committed on `main`:
+
+```
+rule_holds_all_partitions   computed 1  expected 1  passed TRUE
+no_threshold_degeneracy     computed 1  expected 1  passed TRUE
+by_n: n_negative_y = 0, 0, 1, 1, 3, 4, 8, 10   (n = 2 … 9)
+```
+
+That `10` at n = 9 is exactly the convention-C count. Re-run on `main` today:
+
+```
+rule_holds_all_partitions   computed 0  expected 1  passed FALSE
+no_threshold_degeneracy     computed 0  expected 1  passed FALSE
+RESULT: FAILED — see mismatches above. The rule as stated is wrong.
+```
+
+and every mismatch reads `predicted=1 measured=-1 y=0.0` — the "measured sign" is
+being taken of a value that is exactly zero.
+
+**So `main` currently carries a green assertion for a claim its own producer
+refutes.** The probe's thesis — *sign(y_λ) is a content-threshold parity* — is a
+statement about a sign structure that convention D removed: under D, 25 of the 30
+partitions of 9 have `y_λ = 0` and none is negative.
+
+This one is not merely stale bookkeeping. A passing assertion is what the QA
+pipeline reads as evidence.
+
 ## Not done
 
-The remaining 26 flagged files are **candidates**, not findings. Each needs
-`--measure` pointed at its specific object plus a read of whether it is a declared
-comparison. Highest-value by signal, excluding the confirmed instance and the
-declared comparisons: `threerow_4he_completion_probe`,
-`delta_lambda_closure_tl_support_probe`, `threerow_crossing_a_dependence_probe`,
-`threerow_sign_crossing_probe`, `mu3_frechet_perblock_probe`,
-`ylambda_sign_content_threshold_probe`.
+Of the 27 flagged, **4 are now confirmed** (`threerow_qcross_trend_probe`,
+`threerow-sign-crossing`, `threerow-4he-completion`,
+`ylambda-sign-content-threshold`), **1 is clear** (`mu3_frechet_perblock_probe`,
+state 1), and the remaining 22 are **candidates, not findings**.
+
+None of the four was repaired here. Repair is a judgement about what each probe
+was *for*, and in two cases (state 2) it is a choice between re-running — which
+lands a green witness with vacuous content — and retiring the probe. That is the
+author's call, not a mechanical drain.
+
+Two further candidates share the `≥3-row` framing and the D accessor, and were
+checked at source but not run: `threerow_crossing_a_dependence_probe` and
+`threerow_sign_crossing_decomp`. `delta_lambda_closure_tl_support_probe` reads
+`y_lambda_su_n` rather than the `schur_principal_mpmath` accessor and needs a
+separate read.
 
 Known instance already beaned by a sibling and not re-declared here:
 `qou-58w3` (`he4-two-row-dominance` pins a convention-C 866/1000 that D makes
