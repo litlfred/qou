@@ -38,7 +38,13 @@
     `h² ≠ 0`. This is the parity half of why the C→D move is not a `z`-swap:
     `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` blocks it from the
     Temperley–Lieb side, and this blocks it from the bar-parity side.
-  * `barOdd_shift_unique` — bar-oddness holds **iff `t = −1/2`**, uniquely.
+  * `barOdd_shift_unique` — within `h`-proportional shifts, bar-oddness holds
+    **iff `t = −1/2`**.
+  * `generalShift_bar_defect` / `barOdd_forces_oddPart` — and for a **general**
+    shift the bar-EVEN part cancels identically, so what parity actually pins is
+    the shift's bar-ODD part, uniquely `−h/2`. The bar-even part is left
+    **free**. This is a weaker conclusion than "the phase is unique", and the
+    difference is the whole remaining gap — see below.
   * `zD_sub_halfH_eq` / `zD_even_barEven` — the surviving parameter has the
     closed form `z_D − h/2 = (q⁴+1) / (2q(q²+1))`, and it is bar-even.
   * `barOddPhase_eq_moment_form` — that parameter is exactly the
@@ -46,10 +52,27 @@
     `QOU.QBeta.loopMean_eq_twoQ_mul_moment` (`2z − h = [2]_q·Ξ`, valid in ANY
     convention) the unique bar-odd phase is `([2]_q·Ξ − 2)·h/2`.
 
-  So the D-frame bar-odd eigenphase is **derived**, carries no free parameter,
-  and is built from the convention-D Wedderburn weights together with the `h`
-  that `QOU.QBeta.MarkovWeightsConventionD` already names as the permitted
-  bar-odd source.
+  So the D-frame eigenphase's **bar-odd part** is derived, carries no free
+  parameter, and is built from the convention-D Wedderburn weights together
+  with the `h` that `QOU.QBeta.MarkovWeightsConventionD` already names as the
+  permitted bar-odd source.
+
+  ## The gap this leaves, stated precisely
+
+  Because `generalShift_bar_defect` shows the bar-even part of the shift drops
+  out, bar-parity prunes the D-frame eigenphase class to an **affine family**
+
+      { (z_D − h/2 + e − 1)·h/2  :  e bar-even },
+
+  not to a single phase. The probe measures the canonical member `e = 0`. So
+  the honest status is: *parity supplies the bar-odd half of the D eigenphase
+  and says nothing about the bar-even half.* Measured, the even shift that
+  would land the ladder on the structural `c₂ = −1` is `e ≈ −0.00905` — a
+  bar-even quantity, hence **not excluded by parity**. Whether any *derived*
+  convention-D object equals it is the open question; choosing `e` to hit the
+  target is a fit and is forbidden (AGENTS.md §"Axiomatization is NOT a Proof",
+  §"no seventh fit-based ansatz"). Note also that the window is narrow — an
+  `e` agreeing to 1 % is 22 window-widths away and would not be evidence.
 
   ## What this does NOT establish
 
@@ -57,6 +80,10 @@
     `QOU.QBeta.LadderPhaseFromWeights.no_weight_function_gives_phase`, which
     excludes the weights determining the FULL `α`. The bar-odd **projection**
     is a strictly weaker object, and it is that projection which is pinned here.
+  * It does **not** pin the eigenphase itself — only its bar-odd part; see
+    the gap above. An earlier draft of this file said "uniquely" without that
+    qualification, which over-claimed: the uniqueness holds within
+    `h`-proportional shifts, not among all shifts.
   * It does **not** derive the ladder's *shape* — that `α` enters as
     `cos(α − u/2)`, or that the rungs are `(1 + c_k u^k)`, is asserted upstream
     in both frames and is untouched.
@@ -162,6 +189,50 @@ theorem barOdd_parameter_eq (z zbar hk hkbar : F)
     (zbar + (-(1 / 2) : F) * hkbar - 1) * hkbar + (z + (-(1 / 2) : F) * hk - 1) * hk = 0 := by
   rw [shiftedPhase_bar_defect z zbar hk hkbar _ hfull hh,
       two_mul_negHalf_add_one h2, zero_mul]
+
+/-! ## §2b. General shifts: the bar-even part cancels, the bar-odd part is forced -/
+
+/-- **The defect of a general shift depends only on the shift's bar-ODD part.**
+
+    Split the shift as `c = ce + co` with `bar ce = ce` and `bar co = −co`.
+    Then
+
+        bar(2α_c) + 2α_c = h·(h + 2·co),
+
+    with `ce` absent — and `z` absent too. So the bar-even half of the shift is
+    invisible to the involution and parity constrains only `co`.
+
+    This is the statement that makes `barOdd_shift_unique` a *narrower* result
+    than it looks: within `h`-proportional shifts the answer is a single `t`,
+    but among all shifts the answer is an affine family. -/
+theorem generalShift_bar_defect (z zbar hk hkbar ce co cebar cobar : R)
+    (hfull : zbar = z - hk) (hh : hkbar = -hk)
+    (hce : cebar = ce) (hco : cobar = -co) :
+    (zbar + cebar + cobar - 1) * hkbar + (z + ce + co - 1) * hk
+      = hk * (hk + 2 * co) := by
+  subst hfull; subst hh; subst hce; subst hco; ring
+
+/-- **Bar-oddness forces the shift's bar-odd part to be `−h/2`, and nothing
+    else.**  The forward direction is the pruning; the reverse direction shows
+    it holds for EVERY bar-even `ce`, which is the non-uniqueness. -/
+theorem barOdd_forces_oddPart (z zbar hk hkbar ce co cebar cobar : F)
+    (hfull : zbar = z - hk) (hh : hkbar = -hk)
+    (hce : cebar = ce) (hco : cobar = -co) (hk0 : hk ≠ 0) (h2 : (2 : F) ≠ 0) :
+    (zbar + cebar + cobar - 1) * hkbar + (z + ce + co - 1) * hk = 0
+      ↔ co = -(hk / 2) := by
+  rw [generalShift_bar_defect z zbar hk hkbar ce co cebar cobar hfull hh hce hco]
+  constructor
+  · intro hzero
+    rcases mul_eq_zero.mp hzero with h | h
+    · exact absurd h hk0
+    · field_simp
+      linear_combination h
+  · intro hcov
+    subst hcov
+    have hzero : hk + 2 * -(hk / 2) = 0 := by
+      field_simp
+      ring
+    rw [hzero, mul_zero]
 
 /-! ## §3. The convention-D parameter's bar-even projection, in closed form -/
 

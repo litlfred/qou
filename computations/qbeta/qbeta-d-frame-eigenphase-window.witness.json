@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T07:08:54.881727+00:00",
-  "commitSha": "99817f1db2ad335d62aa8516c48f8930a2bb7e09",
+  "computedAt": "2026-08-25T07:31:31.257317+00:00",
+  "commitSha": "2832d6f90f05aee9029d6999596772a151aaa192",
   "assertions": [
     {
       "name": "bar_odd_shift_unique",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 21,
+  "durationMs": 26,
   "computation": "qbeta-d-frame-eigenphase-window",
   "scriptFile": "qbeta_d_frame_eigenphase_window_probe.py",
-  "scriptHash": "0657bdf62fdf",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "16442992eb2d",
+  "scriptCommitSha": "8c1d0ed4de9460ccb87edf0698bd04dfbec78b61",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -174,12 +174,23 @@
       "z_star": "0.499104480184784994190898414448076311065995776220039174429022",
       "rel_gap_to_z_C": "0.000432482591279368859656485034121423447313149389732976268042893",
       "rel_gap_to_z_D_even": "0.0181393033388695060950132065251199525215235763410868685416727",
-      "rel_gap_to_z_D": "0.227574709246504591741634342429130044326723022450756455763902"
+      "rel_gap_to_z_D": "0.227574709246504591741634342429130044326723022450756455763902",
+      "required_bar_even_shift_ce": "-0.00905340756386059968950834293298546503043386769351330760441677",
+      "ce_over_h_squared": "-0.207142368735185935169678343681594183730302602528190394027636",
+      "ce_over_u": "-1.06295153791375019833238138653008996189918677793673295472576",
+      "ce_experimental_sigma": "0.000131608168318692724910823897193220759591877088175238332654256",
+      "ce_relative_resolution": "0.0145368655271907041341820395093976242797833635289155843286820",
+      "ce_significance_sigma": "68.7906205178506047464174260893423000976537172371957590772272",
+      "u_is_not_bar_even": "bar(u)/u = q^2; so ce = -u is parity-inadmissible",
+      "note": "ce is BAR-EVEN, so bar-parity does not exclude it. Reported as an open target; selecting it to hit c_2 = -1 would be a fit."
     }
   },
   "caveats": [
     "No c_k value here is a proposal. The naive-z-swap row measures the move QOU.QBeta.decayLadder_zC_threeRow_ne_zero forbids, and is reported only to reproduce the sensitivity figure recorded in bean qou-cds1.",
     "The CODATA inversion is a measuring stick applied AFTER the eigenphase is chosen by the §1 bar-parity argument. No phase is selected by fitting.",
+    "Bar-parity prunes the D eigenphase class to an AFFINE FAMILY, not a point: generalShift_bar_defect shows the bar-even part of the shift cancels. The canonical member (bar-even part zero) is what is measured.",
     "Scope-(a) negative: the derived bar-odd D eigenphase alone does not reproduce the c_2 = -1 band. No proved invariant excludes the ladder shape, so this is NOT a scope-(b) structural exclusion."
-  ]
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }
