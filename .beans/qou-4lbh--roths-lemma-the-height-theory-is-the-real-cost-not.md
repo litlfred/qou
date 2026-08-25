@@ -4389,3 +4389,44 @@ produce, the production is the test, and until it is written the statement is un
 matter how many theorems consume it. `rothBound_succ_of_lemma4_witness` consumed the `=` form
 happily for eleven commits — because its `Ψ = 1/8` … no: because it took the *first* disjunct,
 where the equality costs nothing.
+
+## Correction 26 — correction 21 was never propagated to its consumers
+
+Correction 21 established that §12's budget covers the **divided** Wronskian `W`, not the
+determinant: `det = C c · W` with `c = ∏_i ∏_h (listIdx …)!` of size `2^{Θ(r² log r)}`, and
+§11's clause `b ≤ 2^{c'}·a^r` has no room for that factor. `WronskianHeight`'s
+`exists_divided_wronskian` proves exactly that, and it is the arc's only height bound on the
+Wronskian.
+
+But the two `Θ`-form halves of `hres` — `index_rescaled_wronskian_le_theta` and
+`..._right_theta` — take `hB` as a bound on the **determinant**'s coefficients, because they
+were written against `exists_integral_wronskian_factors`, which factors `det`.
+
+**So the arc's only available height bound and the arc's only usable induction-hypothesis
+halves do not compose.** Both are true; both are green; both have witnesses. Nothing in the
+project objected, because nothing had ever put them next to each other.
+
+Fixed with `exists_integral_wronskian_factors_div` (`SeparatedGauss`) and the two `_div` halves
+(`RothInductionHypothesis`). The work is small — `exists_integral_separated_factorization` was
+already stated for an arbitrary integral `W` whose map is a separated product, and
+
+    map W = C c⁻¹ · (renₗ Wx · renᵣ Wy) = renₗ Wx · renᵣ (C c⁻¹ · Wy)
+
+is that shape, with the constant parked on the `y` side so the `x` half keeps its exact
+`C l · Wx`. The `y` half's constant is `l⁻¹·c⁻¹ ≠ 0`, and `index_C_mul` is indifferent.
+
+The originals are kept — they are true, and a caller holding a determinant bound can use them.
+What they cannot be is the induction's `hres`.
+
+### What found it
+
+Not a build, not `#print axioms`, not a witness. **Writing the assembly and discovering that
+`hB`'s `b` had to be two different numbers at once.** That is the third distinct time in this
+arc that the composition — not the components — was the test, and it is the strongest argument
+for pushing the assembly through even where the pieces all look finished: an unexercised
+interface between two green theorems is exactly as untested as an undischarged hypothesis.
+
+⚠ Note the shape of the failure. Correction 21 was **correct and complete in the module where
+it landed.** The defect is that a correction to a lemma is not a correction to its consumers,
+and the arc had no mechanism that would notice. A green build after a correction says the
+corrected file still compiles, not that anything downstream now means what it did before.
