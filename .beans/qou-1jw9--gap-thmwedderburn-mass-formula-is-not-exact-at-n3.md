@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T18:46:31Z
+updated_at: 2026-08-25T19:01:37Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -555,3 +555,28 @@ DO NOT, on picking this up: treat the alternative ('keep the numbers, document
 beta3') as an equal option. Post-#5763 it is close to untenable -- beta3 is
 unreachable from the construction its own sibling coefficients use, inside a
 block whose headline claim is zero fitted parameters.
+
+
+REGENERATION DONE, PR #5781 (owner said 'go' 2026-08-25).
+
+New evidence found doing it, independent of both prior probes: the 2nd and 3rd
+coefficients are LOCKED. [3]_q - 3 = (q-1/q)^2 = h_A^2, so beta2 = -6 - 2*h_A^2
+identically in q. The superseded witness's beta2 = -6.087415 IS that identity at
+h_A^2 = 0.043707282; 0.0499 would have forced beta2 = -6.0998. The old witness
+contradicts its own third coefficient in its own arithmetic. Residual exactly 0,
+asserted in the new witness.
+
+Table now: mean 0.0745925 %, max 0.190854 % (worst row improves), 0 fitted
+parameters, proton pin. Correction is PROVENANCE not fit -- Phi_3 enters ~50x
+more weakly than Phi_1, so accuracy is materially unchanged. Do not present this
+as an accuracy improvement.
+
+Block is now witness-backed: computations/wedderburn_mass_table_z1_20.py ->
+wedderburn-mass-table-z1-20.witness.json, wired in the table .ts.
+
+TWO THINGS REMAIN, both recorded as caveats, neither authorised here:
+  1. Phi_1/Phi_2/Phi_3 are CARRIED from the recovered witness, not re-derived.
+     The transfer-matrix computation behind them is still unreproduced in-tree.
+     This is the deeper provenance gap and is the natural next item.
+  2. Base masses are 44/36 ppm below CODATA -- ~1.5 MeV at Z=20, i.e. LARGER
+     than the coefficient fix on heavy rows. Separate defect.
