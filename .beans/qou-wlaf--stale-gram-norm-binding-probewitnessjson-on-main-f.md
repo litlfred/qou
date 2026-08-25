@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-25T21:29:37Z
+updated_at: 2026-08-25T21:49:37Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -364,3 +364,63 @@ pattern is consistent enough to state as a rule: **in this corpus, validate the
 measuring instrument against a known answer before believing any count it
 produces** — and validate it in the loop it will actually run in, not
 standalone, since that is precisely where this one diverged.
+
+
+---
+
+## Attempt 2: instrument VALIDATED, campaign partial (8/95), and one structural fix outstanding
+
+Attempt 2 fixed what attempt 1 got wrong. The in-loop self-test
+(`atom_braid_active_partitions`, verified by hand not to move) **passes**, so
+these verdicts are trustworthy in a way attempt 1's were not.
+
+Getting there took two more masks, each named by the self-test rather than
+found by another sweep:
+
+  * **`.engineVersion`** — an environment artifact, the class flagged on #5763.
+    This alone accounted for attempt 1's false MOVED.
+  * **`bridge_elapsed_sec`, `python_hoefsmit_elapsed_sec`,
+    `rust_canonical_chi_elapsed_sec`** — wall-clock fields the exact-name mask
+    missed because they are SUFFIXED. Masking is now suffix-aware, for timing
+    keys only.
+
+The mask stays narrow on purpose. `.assertions[].source` embeds a **computed
+number** (`"max|chi_comb-chi_young|=5.9119161e-48 < 1e-25"`), so masking it
+would hide true positives — the worse failure of the two.
+
+### Result so far — and "MOVED" is the wrong granularity
+
+    processed        8 of 95
+    IDENTICAL        3
+    MOVED            4     ->  substantive 3, provenance-only 1
+    TIMEOUT          1     (180 s budget; says nothing about the witness)
+
+**`atomic_tr_m_mpfr_50dps` moves in `.scriptHash` ONLY.** No number changed —
+that is provenance drift, not stale content, and it must not be counted
+alongside a witness whose values moved. Report this axis three ways
+(substantive / provenance-only / identical), never as a bare MOVED count. The
+recorded per-witness `fields` make the split computable from the checkpoint
+without re-running anything.
+
+Three of eight moving substantively is a real signal that the class is not
+rare, but **8 is far too small a sample to extrapolate to 95** and no rate
+should be quoted from it.
+
+### Structural fix still needed: do not sweep in the working tree
+
+The campaign was stopped early because it **dirties the working tree**. It
+restores `computations/` between producers, but at any instant the tree
+carries whatever the running producer wrote — including
+`witness-raw-float64-audit.witness.json`, an audit witness that
+[`b28296c0d`] already had to revert once for being swept in accidentally.
+
+Restoring mid-run is not a fix either: it would hand the currently-running
+producer a restored baseline and could manufacture a false IDENTICAL.
+
+**The next run should execute in a `git worktree` or a throwaway clone**, so
+the sweep cannot touch the session's tree at all. That removes the dirty-tree
+problem and the contamination risk together, and it is the reason this
+attempt stopped at 8 rather than a defect in the instrument.
+
+Harness committed at `computations/audits/witness_dependency_residue_{targets,run}.py`
+with the pinned-SHA and self-test discipline built in.
