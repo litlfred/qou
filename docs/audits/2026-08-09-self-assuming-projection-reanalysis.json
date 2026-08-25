@@ -1,0 +1,1108 @@
+{
+ "audit": "self-assuming-projection re-analysis (name-independent type-match pass)",
+ "generated": "2026-08-09",
+ "supersedes": "docs/audits/2026-06-18-self-assuming-projection-triage.json",
+ "producer": "scripts/lean-self-assuming-typematch-scan.mjs",
+ "method": "A provable-kind declaration (or Prop-valued def) whose body is a bare projection of an instance/structure binder field, where the projected class field TYPE is character-identical (after stripping the binder prefix and collapsing whitespace) to the theorem CONCLUSION. Name-independent: does NOT consult CONCLUSION_FIELD.",
+ "scope": "invisible to content/pipeline/lean-vacuity-axiom-audit.ts (not flagged at all, neither counted nor exempt)",
+ "verification": "6 of 84 read by hand in full; all 6 true positives (mi_sw_nonneg, sw_determines_mi, qInt_ratio_bound_small, knot_operator_selection, pair_skein_mass_formula, cat_eigenspace_decomposition)",
+ "totals": {
+  "invisible": 84,
+  "in_library_tree_no_sidecar": 48,
+  "in_content_block_siblings": 36
+ },
+ "candidates": [
+  {
+   "file": "content/quantum-observable-universe/braids-and-knots/knot-eigenbasis-complete.lean",
+   "line": 303,
+   "kind": "theorem",
+   "decl": "knot_eigenbasis_density",
+   "carrier": "KnotEigenbasisData",
+   "fields": [
+    "summands_detected"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ μ ∈ decomp.partitions, ∃ (β : alex.Braid), markov.tr (braid_rep β) ≠ 0",
+   "field_type": "∀ μ ∈ decomp.partitions, ∃ (β : alex.Braid), markov.tr (braid_rep β) ≠ 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/brings-surface/levi-form-defect.lean",
+   "line": 51,
+   "kind": "theorem",
+   "decl": "matter_locus_nonempty",
+   "carrier": "LeviFormDefect",
+   "fields": [
+    "nondeg"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∃ (x y : carrier), leviForm x y ≠ 0",
+   "field_type": "∃ (x y : carrier), leviForm x y ≠ 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.lean",
+   "line": 48,
+   "kind": "theorem",
+   "decl": "mi_sw_nonneg",
+   "carrier": "MISWAbelianisation",
+   "fields": [
+    "mi_nonneg"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "0 ≤ mi_norm",
+   "field_type": "0 ≤ mi_norm"
+  },
+  {
+   "file": "content/quantum-observable-universe/brings-surface/mi-sw-abelianisation.lean",
+   "line": 53,
+   "kind": "theorem",
+   "decl": "sw_determines_mi",
+   "carrier": "MISWAbelianisation",
+   "fields": [
+    "abelianisation"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "mi_norm = sw_period",
+   "field_type": "mi_norm = sw_period"
+  },
+  {
+   "file": "content/quantum-observable-universe/brings-surface/quaternionic-spectral-resolvents.lean",
+   "line": 62,
+   "kind": "theorem",
+   "decl": "uncertainty_vanishes",
+   "carrier": "QuaternionicResolvent",
+   "fields": [
+    "omega_zero_balanced"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "omega 0 = 0",
+   "field_type": "omega 0 = 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/climax-volume-mass/mobius-energy-proof.lean",
+   "line": 105,
+   "kind": "theorem",
+   "decl": "MobiusEnergy",
+   "carrier": "CategoricalMobiusEnergy",
+   "fields": [
+    "classicalLimit"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "energy = classicalLimitCoeff * classicalEnergy.value + classicalLimitConst",
+   "field_type": "energy = classicalLimitCoeff * classicalEnergy.value + classicalLimitConst"
+  },
+  {
+   "file": "content/quantum-observable-universe/climax-volume-mass/mobius-energy.lean",
+   "line": 73,
+   "kind": "theorem",
+   "decl": "mobius_energy_nonneg",
+   "carrier": "CategoricalMobiusEnergy",
+   "fields": [
+    "energy_classical_nonneg"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "0 ≤ energy_classical",
+   "field_type": "0 ≤ energy_classical"
+  },
+  {
+   "file": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection-proof.lean",
+   "line": 81,
+   "kind": "theorem",
+   "decl": "NonSelfIntersection.exclusionRadius_eq",
+   "carrier": "NonSelfIntersection",
+   "fields": [
+    "exclusionRadius_def"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "exclusionRadius = hbar_q q",
+   "field_type": "exclusionRadius = hbar_q q"
+  },
+  {
+   "file": "content/quantum-observable-universe/climax-volume-mass/non-self-intersection.lean",
+   "line": 67,
+   "kind": "theorem",
+   "decl": "noncocomm_iff_quantum",
+   "carrier": "NonSelfIntersection",
+   "fields": [
+    "noncocomm_pos"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "0 < noncocomm",
+   "field_type": "0 < noncocomm"
+  },
+  {
+   "file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
+   "line": 106,
+   "kind": "theorem",
+   "decl": "core_levi_form",
+   "carrier": "CoreLeviContext",
+   "fields": [
+    "cond_def"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "cond = max lamPar lamPerp / min lamPar lamPerp",
+   "field_type": "cond = max lamPar lamPerp / min lamPar lamPerp"
+  },
+  {
+   "file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
+   "line": 164,
+   "kind": "theorem",
+   "decl": "core_levi_cond_aspect_bound",
+   "carrier": "CoreLeviContext",
+   "fields": [
+    "cond_aspect_bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|cond - max (aPerp / aPar) (aPar / aPerp) ^ 2| ≤ C0 * hbar ^ 2",
+   "field_type": "|cond - max (aPerp / aPar) (aPar / aPerp) ^ 2| ≤ C0 * hbar ^ 2"
+  },
+  {
+   "file": "content/quantum-observable-universe/fluid-dynamics/core-levi-form.lean",
+   "line": 172,
+   "kind": "theorem",
+   "decl": "core_levi_cond_bound",
+   "carrier": "CoreLeviContext",
+   "fields": [
+    "cond_bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "cond ≤ 1 + C0 * hbar ^ 2",
+   "field_type": "cond ≤ 1 + C0 * hbar ^ 2"
+  },
+  {
+   "file": "content/quantum-observable-universe/fluid-dynamics/helicity-conservation.lean",
+   "line": 78,
+   "kind": "theorem",
+   "decl": "helicity_cwf_relation",
+   "carrier": "HelicityContext",
+   "fields": [
+    "cwf"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "Wr + Tw = Lk",
+   "field_type": "Wr + Tw = Lk"
+  },
+  {
+   "file": "content/quantum-observable-universe/knots-particles-confinement/magic-shell-coupling-kappa.lean",
+   "line": 82,
+   "kind": "theorem",
+   "decl": "kappa_closed_form_is_categorical",
+   "carrier": "HasMagicShellCouplingKappaClosedForm",
+   "fields": [
+    "kappa_closed_eq_empirical"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "kappaClosed q m_e = kappa_empirical",
+   "field_type": "kappaClosed q m_e = kappa_empirical"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/BranchingConvergence.lean",
+   "line": 352,
+   "kind": "theorem",
+   "decl": "branching_convergence",
+   "carrier": "BranchingConverges",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)",
+   "field_type": "|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/HyperbolicVolumeTranscendence.lean",
+   "line": 699,
+   "kind": "theorem",
+   "decl": "tower_noncollapse_implies_independence",
+   "carrier": "TowerNoncollapseImpliesIndependence",
+   "fields": [
+    "independence"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "HyperbolicVolumeIndependence",
+   "field_type": "HyperbolicVolumeIndependence"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/knot_operator_selection.lean",
+   "line": 80,
+   "kind": "theorem",
+   "decl": "knot_operator_selection",
+   "carrier": "KnotOperatorSelectionContext",
+   "fields": [
+    "operator_selection"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "tr_Phi = (Finset.range n_partitions).sum (fun l => tr_Phi_lambda l) ∧ action_pair = channel_sum ∧ pairing_kernel_dim = 0 ∧ (∀ Φ_alt : CategoricalObj → CategoricalObj, is_on_shell Φ_alt → action_Phi ≤ ",
+   "field_type": "tr_Phi = (Finset.range n_partitions).sum (fun l => tr_Phi_lambda l) ∧ action_pair = channel_sum ∧ pairing_kernel_dim = 0 ∧ (∀ Φ_alt : CategoricalObj → Categoric"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean",
+   "line": 71,
+   "kind": "theorem",
+   "decl": "term7_structural",
+   "carrier": "Term7ShellCorrectionClass",
+   "fields": [
+    "alpha5_derived"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∃ a : ℝ, a < 0 ∧ a = alpha5_value",
+   "field_type": "∃ a : ℝ, a < 0 ∧ a = alpha5_value"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/MassTowerOpenProblemsClasses.lean",
+   "line": 171,
+   "kind": "theorem",
+   "decl": "brane_tower_finite",
+   "carrier": "ZHabiroConvergenceClass",
+   "fields": [
+    "uniform_bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∃ (brane_tower_sum : ℝ → ℝ) (M : ℝ), M > 0 ∧ M < brane_tower_pole ∧ ∀ z < brane_tower_pole, brane_tower_sum z ≤ M",
+   "field_type": "∃ (brane_tower_sum : ℝ → ℝ) (M : ℝ), M > 0 ∧ M < brane_tower_pole ∧ ∀ z < brane_tower_pole, brane_tower_sum z ≤ M"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/OrderingIndependence.lean",
+   "line": 113,
+   "kind": "theorem",
+   "decl": "skein_multiset_invariance_axiom",
+   "carrier": "SkeinMultisetInvariant",
+   "fields": [
+    "invariance"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "skeinPolynomialSym config₁ = skeinPolynomialSym config₂",
+   "field_type": "skeinPolynomialSym config₁ = skeinPolynomialSym config₂"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean",
+   "line": 406,
+   "kind": "theorem",
+   "decl": "qInt_ratio_bound_small",
+   "carrier": "QIntRatioBoundSmall",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6",
+   "field_type": "|qIntReal q m / m - 1| ≤ (q - q⁻¹) ^ 2 * m / 6"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean",
+   "line": 599,
+   "kind": "theorem",
+   "decl": "qFact_ratio_bound",
+   "carrier": "QFactRatioBound",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|qFactReal q k / (k.factorial : ℝ) - 1| ≤ (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36",
+   "field_type": "|qFactReal q k / (k.factorial : ℝ) - 1| ≤ (q - q⁻¹) ^ 2 * k * (k + 1) * (2 * k + 1) / 36"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean",
+   "line": 709,
+   "kind": "theorem",
+   "decl": "wedderburn_weight_perturbation",
+   "carrier": "WedderburnWeightPerturbation",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|w_q / w_cl - 1| ≤ 3 * h_sq * k / 3",
+   "field_type": "|w_q / w_cl - 1| ≤ 3 * h_sq * k / 3"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/QHookBound.lean",
+   "line": 795,
+   "kind": "theorem",
+   "decl": "convergence_rate",
+   "carrier": "ConvergenceRate",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)",
+   "field_type": "|f_k - f_inf| ≤ C_q / Real.sqrt (k - 3 : ℝ)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean",
+   "line": 1026,
+   "kind": "theorem",
+   "decl": "convergence_bound",
+   "carrier": "ConvergenceBound",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|f_k - f_inf| ≤ C_q / (k - 3 : ℝ)",
+   "field_type": "|f_k - f_inf| ≤ C_q / (k - 3 : ℝ)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/SkewSYT.lean",
+   "line": 1081,
+   "kind": "theorem",
+   "decl": "knot_invariant_convergence",
+   "carrier": "KnotInvariantConvergence",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|a_k - a_inf| ≤ C / (k - 3 : ℝ)",
+   "field_type": "|a_k - a_inf| ≤ C / (k - 3 : ℝ)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Archimedean/TMCorrespondence.lean",
+   "line": 317,
+   "kind": "theorem",
+   "decl": "matrixChain_eq_buildChains_axiom",
+   "carrier": "MatrixChainEqBuildChains",
+   "fields": [
+    "eq"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "matrixChain (chainCrossings config j) = (buildChains config).get! j",
+   "field_type": "matrixChain (chainCrossings config j) = (buildChains config).get! j"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/ArchimedeanUniverse.lean",
+   "line": 136,
+   "kind": "theorem",
+   "decl": "descartes_universality",
+   "carrier": "ArchimedeanCondition",
+   "fields": [
+    "descartes"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "eulerChar = -6",
+   "field_type": "eulerChar = -6"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/ElectronShell.lean",
+   "line": 95,
+   "kind": "theorem",
+   "decl": "noble_gas_multi_operator",
+   "carrier": "NobleGasMultiOperator",
+   "fields": [
+    "multi"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "bindingMultiplicity S q ≥ 2",
+   "field_type": "bindingMultiplicity S q ≥ 2"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GBResidueSpectralSum.lean",
+   "line": 94,
+   "kind": "theorem",
+   "decl": "gb_residue_spectral_sum",
+   "carrier": "GBResidueSpectralSum",
+   "fields": [
+    "spectral_decomposition"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "mass = |descended| + ∑ ℓ : Fin levelBound, residue ℓ",
+   "field_type": "mass = |descended| + ∑ ℓ : Fin levelBound, residue ℓ"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/GradedTraceResidueSplit.lean",
+   "line": 91,
+   "kind": "theorem",
+   "decl": "graded_trace_residue_split",
+   "carrier": "GradedTraceResidueSplit",
+   "fields": [
+    "split_identity"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "total = smooth + oscillating",
+   "field_type": "total = smooth + oscillating"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/LpDualityHypothesisClass.lean",
+   "line": 158,
+   "kind": "theorem",
+   "decl": "theorem_3_via_class",
+   "carrier": "HasFiniteLPDuality",
+   "fields": [
+    "dualityGapZero"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "lp.duality_gap = 0",
+   "field_type": "lp.duality_gap = 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/PhiQTowerAlgebraicStratification.lean",
+   "line": 106,
+   "kind": "theorem",
+   "decl": "phi_q_tower_algebraic_stratification",
+   "carrier": "PhiQTowerAlgebraicStratification",
+   "fields": [
+    "mass_sum"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "mass = level0 + level1 + level2_adj + level2_non_adj",
+   "field_type": "mass = level0 + level1 + level2_adj + level2_non_adj"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/QRogersPentagonArchimedean.lean",
+   "line": 203,
+   "kind": "theorem",
+   "decl": "rogers_correction_leading_h_order",
+   "carrier": "RogersCorrectionLeadingOrderH4",
+   "fields": [
+    "leading_h_order_eq_four"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "leading_h_order = 4",
+   "field_type": "leading_h_order = 4"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/ShellClosureStability.lean",
+   "line": 107,
+   "kind": "theorem",
+   "decl": "shell_closure_monotone",
+   "carrier": "ShellClosureMonotone",
+   "fields": [
+    "monotone"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "frobeniusStability D_prev q ≤ frobeniusStability D q",
+   "field_type": "frobeniusStability D_prev q ≤ frobeniusStability D q"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidsAndKnots/S5SO3FiberAction.lean",
+   "line": 877,
+   "kind": "theorem",
+   "decl": "a4_betti_magnitude_closure",
+   "carrier": "A4BettiTraceFactorization",
+   "fields": [
+    "trace_factorization_closure"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "target_binding_gap = raw_structural_scale * betti_sum",
+   "field_type": "target_binding_gap = raw_structural_scale * betti_sum"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/BraidsKnots/ReebBundleComplementEqualsVolume.lean",
+   "line": 42,
+   "kind": "theorem",
+   "decl": "ReebBundleComplementEqualsVolume",
+   "carrier": "MassVolumeFactorization",
+   "fields": [
+    "factorization_identity"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "markov_trace = jsj_volume_sum",
+   "field_type": "markov_trace = jsj_volume_sum"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/ChannelSeparation.lean",
+   "line": 96,
+   "kind": "theorem",
+   "decl": "adjoint_vanishing_propagation",
+   "carrier": "JetGradedChannelSeparation",
+   "fields": [
+    "adjoint_vanishing"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "Subsingleton ((𝟙_ C) ⟶ adjointObj)",
+   "field_type": "Subsingleton ((𝟙_ C) ⟶ adjointObj)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Encounter/MostowRigidity.lean",
+   "line": 321,
+   "kind": "theorem",
+   "decl": "mass_eigenvalue_isolated",
+   "carrier": "MostowRigidity",
+   "fields": [
+    "mostow_gap_pos"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "0 < mostow_gap",
+   "field_type": "0 < mostow_gap"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/FeynmanPathIntegrals.lean",
+   "line": 210,
+   "kind": "theorem",
+   "decl": "amplitude_finite_sum",
+   "carrier": "FeynmanCategoricalTrace",
+   "fields": [
+    "partitions_count"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "decomp.partitions.length ≤ decomp.n / 2 + 1",
+   "field_type": "decomp.partitions.length ≤ decomp.n / 2 + 1"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/FlavorDressing/DressedMassFromSubstrateSplit.lean",
+   "line": 122,
+   "kind": "theorem",
+   "decl": "dressed_mass_from_substrate_split",
+   "carrier": "DressedMassSubstrateSplit",
+   "fields": [
+    "split"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q",
+   "field_type": "F.μ Flavor.down - F.μ Flavor.up = M_N * substrate_split_factor q"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Habiro/FlowSolution.lean",
+   "line": 70,
+   "kind": "theorem",
+   "decl": "habiro_flow_solutions_realise_synthesis",
+   "carrier": "HabiroFlowSolution",
+   "fields": [
+    "all_hold"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "expQ_solves_base_reeb ∧ fourier_diagonalises_qheat ∧ liTwoQ_volumetric",
+   "field_type": "expQ_solves_base_reeb ∧ fourier_diagonalises_qheat ∧ liTwoQ_volumetric"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/HadronicMass.lean",
+   "line": 443,
+   "kind": "theorem",
+   "decl": "proton_pair_skein_approx",
+   "carrier": "ProtonPairSkeinApprox",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|proton_from_pair_skein - proton_topological| < 0.5",
+   "field_type": "|proton_from_pair_skein - proton_topological| < 0.5"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/HadronicMass.lean",
+   "line": 470,
+   "kind": "theorem",
+   "decl": "neutron_pair_skein_approx",
+   "carrier": "NeutronPairSkeinApprox",
+   "fields": [
+    "bound"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|neutron_from_pair_skein - neutron_topological| < 0.5",
+   "field_type": "|neutron_from_pair_skein - neutron_topological| < 0.5"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/HadronicMass.lean",
+   "line": 611,
+   "kind": "theorem",
+   "decl": "skein_mass_relation_holds",
+   "carrier": "SkeinMassRelationHolds",
+   "fields": [
+    "identity"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV = (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV",
+   "field_type": "substrate_q * proton_mass_MeV - substrate_q⁻¹ * neutron_mass_MeV = (substrate_q ^ (1/2 : ℝ) - substrate_q ^ (-(1/2 : ℝ))) * deuteron_mass_MeV"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/HadronicMass/pair_skein_mass_formula.lean",
+   "line": 57,
+   "kind": "theorem",
+   "decl": "pair_skein_mass_formula",
+   "carrier": "PairSkeinMassContext",
+   "fields": [
+    "pair_skein_mass_ident"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q)",
+   "field_type": "∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Infra/Polylogarithm.lean",
+   "line": 157,
+   "kind": "theorem",
+   "decl": "beta3_via_class",
+   "carrier": "TheoremA",
+   "fields": [
+    "value_at_4"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "imLi3ZetaPredicted 4 = beta3",
+   "field_type": "imLi3ZetaPredicted 4 = beta3"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Interactions/ConfinementSDP.lean",
+   "line": 200,
+   "kind": "theorem",
+   "decl": "sdp_lp_projection",
+   "carrier": "ScalarLPProjection",
+   "fields": [
+    "agrees"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "primalOpt n = nTarget n * y0Star n",
+   "field_type": "primalOpt n = nTarget n * y0Star n"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Interactions/TrefoilCanonicalMassUnit.lean",
+   "line": 168,
+   "kind": "theorem",
+   "decl": "trefoil_topological_mass_eq_codata",
+   "carrier": "TrefoilElectronMassConj",
+   "fields": [
+    "trefoil_mass_eq_m_e"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "trefoil_topological_mass = m_e_MeV_codata",
+   "field_type": "trefoil_topological_mass = m_e_MeV_codata"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Knot/FigureEightVolume.lean",
+   "line": 116,
+   "kind": "theorem",
+   "decl": "saddle_eq_volume",
+   "carrier": "VolumeConjecture41",
+   "fields": [
+    "limit_eq_vol"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "Filter.Tendsto (fun N : ℕ => (2 * π / (N : ℝ)) * Real.log (kashaev N)) Filter.atTop (nhds VOL_4_1)",
+   "field_type": "Filter.Tendsto (fun N : ℕ => (2 * π / (N : ℝ)) * Real.log (kashaev N)) Filter.atTop (nhds VOL_4_1)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/MobiusEnergy.lean",
+   "line": 148,
+   "kind": "theorem",
+   "decl": "MobiusEnergy",
+   "carrier": "CategoricalMobiusEnergy",
+   "fields": [
+    "classicalLimit"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "energy = (1 / 4) * classicalEnergy.value + classicalLimitConst",
+   "field_type": "energy = (1 / 4) * classicalEnergy.value + classicalLimitConst"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/MotivesArchimedean.lean",
+   "line": 163,
+   "kind": "theorem",
+   "decl": "factors_def",
+   "carrier": "VolThroughTau",
+   "fields": [
+    "factors"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "knotVol = τ.archRestriction algVol",
+   "field_type": "knotVol = τ.archRestriction algVol"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/PAdicQuantumGroups.lean",
+   "line": 170,
+   "kind": "theorem",
+   "decl": "padic_frobenius_relation_preserved",
+   "carrier": "PAdicQOU",
+   "fields": [
+    "fv_comm"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ (x : carrier), frobenius (verschiebung (frobenius x)) = frobenius (frobenius (verschiebung x))",
+   "field_type": "∀ (x : carrier), frobenius (verschiebung (frobenius x)) = frobenius (frobenius (verschiebung x))"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/GaugeTheory.lean",
+   "line": 61,
+   "kind": "theorem",
+   "decl": "fiber_adjoint_involution_sq",
+   "carrier": "FiberAdjointInvolution",
+   "fields": [
+    "involution_sq"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "involution ≫ involution = 𝟙 adjointObj",
+   "field_type": "involution ≫ involution = 𝟙 adjointObj"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean",
+   "line": 133,
+   "kind": "theorem",
+   "decl": "categorical_irreducible",
+   "carrier": "HasCategoricalIrreducibility",
+   "fields": [
+    "subsingleton"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "Subsingleton ((𝟙_ C) ⟶ adjointObj)",
+   "field_type": "Subsingleton ((𝟙_ C) ⟶ adjointObj)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean",
+   "line": 231,
+   "kind": "theorem",
+   "decl": "categorical_dq_squared_nonvanishing",
+   "carrier": "HasDqSquaredNonvanishing",
+   "fields": [
+    "nonvanishing"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "cqd.dq ≫ cqd.dq ≠ 0",
+   "field_type": "cqd.dq ≫ cqd.dq ≠ 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean",
+   "line": 259,
+   "kind": "theorem",
+   "decl": "kernelIncl_exact",
+   "carrier": "CategoricalJet",
+   "fields": [
+    "exact"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "kernelIncl ≫ jetEval = 0",
+   "field_type": "kernelIncl ≫ jetEval = 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Instanton.lean",
+   "line": 279,
+   "kind": "theorem",
+   "decl": "categorical_jet_prolongation",
+   "carrier": "CategoricalJetProlongation",
+   "fields": [
+    "commutes"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "cj.jetEval ≫ connection = prolonged_connection ≫ cj.jetEval",
+   "field_type": "cj.jetEval ≫ connection = prolonged_connection ≫ cj.jetEval"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/QuantumObservableUniverse/Propositions.lean",
+   "line": 71,
+   "kind": "theorem",
+   "decl": "main_commutative_diagram",
+   "carrier": "MainCommutativeDiagram",
+   "fields": [
+    "commutes"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ (x : JetBundle), substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)",
+   "field_type": "∀ (x : JetBundle), substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/TopologicalMass/cat_eigenspace_decomposition.lean",
+   "line": 63,
+   "kind": "theorem",
+   "decl": "cat_eigenspace_decomposition",
+   "carrier": "CatEigenspaceDecompositionContext",
+   "fields": [
+    "decomposition"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "m_rho = nrm (tr (tau_hat α)) + nrm (tr (α - tau_hat α))",
+   "field_type": "m_rho = nrm (tr (tau_hat α)) + nrm (tr (α - tau_hat α))"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Torsion/JetProlongation.lean",
+   "line": 61,
+   "kind": "theorem",
+   "decl": "jet_prolongation_C",
+   "carrier": "JetProlongationQOU",
+   "fields": [
+    "dim_preserved"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "prolonged.n = base.n",
+   "field_type": "prolonged.n = base.n"
+  },
+  {
+   "file": "content/quantum-observable-universe/lean/QOU/Torsion/TopologicalMass.lean",
+   "line": 88,
+   "kind": "theorem",
+   "decl": "topological_mass_decomposition",
+   "carrier": "TopologicalMassDecomposition",
+   "fields": [
+    "decomposition"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "totalMass = baselineHolonomy + (Finset.univ.sum fun i => exceptionalContribution i)",
+   "field_type": "totalMass = baselineHolonomy + (Finset.univ.sum fun i => exceptionalContribution i)"
+  },
+  {
+   "file": "content/quantum-observable-universe/lifting-and-descent/descent-lemma.lean",
+   "line": 42,
+   "kind": "theorem",
+   "decl": "descent_surjective",
+   "carrier": "DescentLemma",
+   "fields": [
+    "surjective"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "Function.Surjective descentMap",
+   "field_type": "Function.Surjective descentMap"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/conj-rho-prefactor-structural.lean",
+   "line": 275,
+   "kind": "theorem",
+   "decl": "rho_eq_qdim_via_canonical_knot",
+   "carrier": "RhoPrefactorStructural",
+   "fields": [
+    "rho_eq_qdim"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|(rho : ℝ) - q_int d_lambda_star| ≤ (1 : ℝ) / 2",
+   "field_type": "|(rho : ℝ) - q_int d_lambda_star| ≤ (1 : ℝ) / 2"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/crystal-basis-resolves-mass-tower-open-problems.lean",
+   "line": 10,
+   "kind": "theorem",
+   "decl": "crystal_basis_reduction",
+   "carrier": "CrystalBasisCorrespondence",
+   "fields": [
+    "reduction_holds_proof"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "reduction_holds",
+   "field_type": "reduction_holds"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/descended-level-zero.lean",
+   "line": 20,
+   "kind": "theorem",
+   "decl": "descended_level_zero",
+   "carrier": "DescendedLevelZeroContext",
+   "fields": [
+    "desc_contrib_zero"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ n : ℕ, 1 ≤ n → desc_contrib n = 0",
+   "field_type": "∀ n : ℕ, 1 ≤ n → desc_contrib n = 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/he4-channel-active-set.lean",
+   "line": 154,
+   "kind": "theorem",
+   "decl": "he4_strong_duality_value",
+   "carrier": "HasHe4ChannelActiveSet",
+   "fields": [
+    "strong_duality"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "tDD * xDD + tTp * xTp + tHe3n * xHe3n = n_target * y0_star",
+   "field_type": "tDD * xDD + tTp * xTp + tHe3n * xHe3n = n_target * y0_star"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean",
+   "line": 95,
+   "kind": "theorem",
+   "decl": "mass_anchor_stable_forward",
+   "carrier": "MassAnchorStableGateClass",
+   "fields": [
+    "swing_within_tolerance"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "swing ≤ anchorTolerance",
+   "field_type": "swing ≤ anchorTolerance"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/mass-side-kernel-formalize-first-gates.lean",
+   "line": 177,
+   "kind": "theorem",
+   "decl": "mass_direction_sanity_forward",
+   "carrier": "MassDirectionSanityGateClass",
+   "fields": [
+    "magnitude_within_threshold"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|m_candidate - directionTarget| ≤ directionThreshold * directionTarget",
+   "field_type": "|m_candidate - directionTarget| ≤ directionThreshold * directionTarget"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean",
+   "line": 105,
+   "kind": "theorem",
+   "decl": "bar_even_kernel_implies_radius_of_convergence",
+   "carrier": "BarEvenKernel",
+   "fields": [
+    "pole_at_u_substrate"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|pole - uSubstrate| ≤ radiusTolerance",
+   "field_type": "|pole - uSubstrate| ≤ radiusTolerance"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/q-beta-bar-even-kernel-typeclass.lean",
+   "line": 125,
+   "kind": "theorem",
+   "decl": "bar_even_kernel_implies_direction_sanity",
+   "carrier": "BarEvenKernel",
+   "fields": [
+    "direction_match"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|magnitude - directionTarget| ≤ directionThreshold * directionTarget",
+   "field_type": "|magnitude - directionTarget| ≤ directionThreshold * directionTarget"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/q-beta-direction-sanity-gate.lean",
+   "line": 86,
+   "kind": "theorem",
+   "decl": "qbeta_direction_sanity_magnitude_match",
+   "carrier": "DirectionSanityGateClass",
+   "fields": [
+    "magnitude_match"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "|m_candidate - qBetaTargetMagnitudeAtQ0| ≤ directionSanityThreshold * qBetaTargetMagnitudeAtQ0",
+   "field_type": "|m_candidate - qBetaTargetMagnitudeAtQ0| ≤ directionSanityThreshold * qBetaTargetMagnitudeAtQ0"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/q-beta-radius-of-convergence-gate.lean",
+   "line": 102,
+   "kind": "theorem",
+   "decl": "qbeta_g_simple_pole_at_u_substrate",
+   "carrier": "RadiusOfConvergenceGateClass",
+   "fields": [
+    "pole_location_is_u_substrate"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "qBetaCandidatePoleLocation = u_substrate",
+   "field_type": "qBetaCandidatePoleLocation = u_substrate"
+  },
+  {
+   "file": "content/quantum-observable-universe/mass-theory/shared-denominator-cusp-holonomy.lean",
+   "line": 71,
+   "kind": "theorem",
+   "decl": "shared_denominator_cusp_holonomy",
+   "carrier": "SharedDenominatorCuspHolonomy",
+   "fields": [
+    "cusp_complete_of_root"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 → ∃ z : ℂ, GeometricShape z",
+   "field_type": "∀ (k : Fin n), 1 - x * q ^ (k : ℕ) = 0 → ∃ z : ℂ, GeometricShape z"
+  },
+  {
+   "file": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram-proof.lean",
+   "line": 63,
+   "kind": "theorem",
+   "decl": "main_commutative_diagram",
+   "carrier": "MainCommutativeDiagram",
+   "fields": [
+    "commutes"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ (x : JetBundle), substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)",
+   "field_type": "∀ (x : JetBundle), substrate_coupling (euler_lagrange x) = parallel_transport (jet_eval x)"
+  },
+  {
+   "file": "content/quantum-observable-universe/models-of-qous/main-commutative-diagram.lean",
+   "line": 78,
+   "kind": "theorem",
+   "decl": "diagram_commutes",
+   "carrier": "MainCommutativeDiagram",
+   "fields": [
+    "commutativity"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "(1 - qInv) * einsteinValue = schrodingerValue",
+   "field_type": "(1 - qInv) * einsteinValue = schrodingerValue"
+  },
+  {
+   "file": "content/quantum-observable-universe/molecular-construction/h2s-angle-s3-braid-holonomy.lean",
+   "line": 39,
+   "kind": "theorem",
+   "decl": "opening_eq_holonomy_of_conj",
+   "carrier": "H2SAngleS3HolonomyConjecture",
+   "fields": [
+    "angle_eq_holonomy"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "d.angleOpeningDeg = d.s3BraidHolonomyDeg",
+   "field_type": "d.angleOpeningDeg = d.s3BraidHolonomyDeg"
+  },
+  {
+   "file": "content/quantum-observable-universe/nuclear-interactions/cpt-d6-d7-d8-closure.lean",
+   "line": 66,
+   "kind": "def",
+   "decl": "cpt_closure",
+   "carrier": "CPTClosure",
+   "fields": [
+    "cpt_trace_preserved"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "∀ b : ClosedBraid, markovTrace (cptComposite b) = markovTrace b",
+   "field_type": "∀ b : ClosedBraid, markovTrace (cptComposite b) = markovTrace b"
+  },
+  {
+   "file": "content/quantum-observable-universe/nuclear-interactions/q-beta-spectral-bridge.lean",
+   "line": 294,
+   "kind": "theorem",
+   "decl": "q_beta_spectral_conditional",
+   "carrier": "BorromeanQuark",
+   "fields": [
+    "forms_agree"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "Q_beta_A = Q_beta_B",
+   "field_type": "Q_beta_A = Q_beta_B"
+  },
+  {
+   "file": "content/quantum-observable-universe/observations/diagrammatic-double-magic-lr-fusion.lean",
+   "line": 133,
+   "kind": "theorem",
+   "decl": "nu_selfConjugate",
+   "carrier": "DoubleMagicConjecture",
+   "fields": [
+    "nuZN_selfConj"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "SelfConjugate nuZN",
+   "field_type": "SelfConjugate nuZN"
+  },
+  {
+   "file": "content/quantum-observable-universe/quantum-observable-universes/contact-affine-chart.lean",
+   "line": 66,
+   "kind": "theorem",
+   "decl": "ContactAffineChart.affineCoord_welldefined",
+   "carrier": "ContactAffineChart",
+   "fields": [
+    "reeb_nonzero"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "reeb_contraction ≠ 0",
+   "field_type": "reeb_contraction ≠ 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/quantum-observable-universes/volume-from-rigidity.lean",
+   "line": 53,
+   "kind": "theorem",
+   "decl": "volume_form_is_nondegen",
+   "carrier": "VolumeFormFactorisation",
+   "fields": [
+    "epsilon_epi"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "Epi epsilon",
+   "field_type": "Epi epsilon"
+  },
+  {
+   "file": "content/quantum-observable-universe/quantum-universes/categorical-jet.lean",
+   "line": 55,
+   "kind": "theorem",
+   "decl": "CategoricalJet.kernelIncl_exact",
+   "carrier": "CategoricalJet",
+   "fields": [
+    "exact"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "kernelIncl ≫ jetEval = 0",
+   "field_type": "kernelIncl ≫ jetEval = 0"
+  },
+  {
+   "file": "content/quantum-observable-universe/quantum-universes/categorical-jet.lean",
+   "line": 83,
+   "kind": "theorem",
+   "decl": "categorical_jet_prolongation",
+   "carrier": "CategoricalJetProlongation",
+   "fields": [
+    "commutes"
+   ],
+   "pattern": "field-projection",
+   "conclusion": "cj.jetEval ≫ connection = prolonged_connection ≫ cj.jetEval",
+   "field_type": "cj.jetEval ≫ connection = prolonged_connection ≫ cj.jetEval"
+  }
+ ]
+}

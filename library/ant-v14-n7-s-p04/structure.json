@@ -1,0 +1,206 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "ant-v14-n7-s-p04",
+ "source": {
+  "file": "ant-v14-n7-s-p04.pdf",
+  "sha256": "6abd838a4c933311f3ffd0d14c21b1ba88152e7572278b09d33671b0ae949a9d",
+  "bytes": 312221,
+  "pages": 10
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": "10.2140/ant.2020.14.1791",
+  "title": "Elliptic curves over totally real cubic fields are modular",
+  "authors_raw": "Maarten Derickx , Filip Najman and Samir Siksek",
+  "abstract": null,
+  "docinfo": {
+   "Producer": "pypdf"
+  },
+  "title_prev": "Elliptic curves over totally real cubic ﬁelds are modular",
+  "title_lines": [
+   "Elliptic curves over totally real cubic fields are modular"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Images mod 3, 5, 7 and modularity",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Modular curves",
+   "page": 3,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Modularity of elliptic curves over Q(ζ7)+",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 6",
+   "page": 4,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The modular curve X(b5, ns7)",
+   "page": 5,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Namely, one given by the pencil of quadrics going",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "This means that there is only one Q-rational g2",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem 7",
+   "page": 8,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 9,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3251,
+   "n_words": 529
+  },
+  {
+   "id": "sec-001-2-images-mod-3-5-7-and-modularity",
+   "number": "2",
+   "title": "Images mod 3, 5, 7 and modularity",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 1782,
+   "n_words": 339
+  },
+  {
+   "id": "sec-002-3-modular-curves",
+   "number": "3",
+   "title": "Modular curves",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3925,
+   "n_words": 726
+  },
+  {
+   "id": "sec-003-4-modularity-of-elliptic-curves-over-qζ7",
+   "number": "4",
+   "title": "Modularity of elliptic curves over Q(ζ7)+",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 800,
+   "n_words": 161
+  },
+  {
+   "id": "sec-004-5-proof-of-theorem-6",
+   "number": "5",
+   "title": "Proof of Theorem 6",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2085,
+   "n_words": 395
+  },
+  {
+   "id": "sec-005-6-the-modular-curve-xb5-ns7",
+   "number": "6",
+   "title": "The modular curve X(b5, ns7)",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5069,
+   "n_words": 919
+  },
+  {
+   "id": "sec-006-4-namely-one-given-by-the-pencil-of-quadrics-goi",
+   "number": "4",
+   "title": "Namely, one given by the pencil of quadrics going",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 224,
+   "n_words": 48
+  },
+  {
+   "id": "sec-007-4-this-means-that-there-is-only-one-q-rational-g",
+   "number": "4",
+   "title": "This means that there is only one Q-rational g2",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 8,
+   "n_chars": 1613,
+   "n_words": 277
+  },
+  {
+   "id": "sec-008-7-proof-of-theorem-7",
+   "number": "7",
+   "title": "Proof of Theorem 7",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2500,
+   "n_words": 457
+  },
+  {
+   "id": "sec-009-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 10,
+   "n_chars": 4471,
+   "n_words": 660
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 10,
+  "sections": 10,
+  "chars_total": 25720
+ }
+}

@@ -69,25 +69,25 @@ def KComplex.normSq (z : KComplex K) : K := z.1 * z.1 + z.2 * z.2
 /-! ### Algebraic identities for `KComplex.mul` -/
 
 /-- Left identity for `KComplex.mul`. -/
-theorem KComplex.one_mul (z : KComplex K) :
+theorem one_mul (z : KComplex K) :
     KComplex.mul (KComplex.one K) z = z := by
   unfold KComplex.one KComplex.mul
   refine Prod.ext ?_ ?_ <;> simp
 
 /-- Right identity for `KComplex.mul`. -/
-theorem KComplex.mul_one (z : KComplex K) :
+theorem mul_one (z : KComplex K) :
     KComplex.mul z (KComplex.one K) = z := by
   unfold KComplex.one KComplex.mul
   refine Prod.ext ?_ ?_ <;> simp
 
 /-- `KComplex.mul` is commutative. -/
-theorem KComplex.mul_comm (z w : KComplex K) :
+theorem mul_comm (z w : KComplex K) :
     KComplex.mul z w = KComplex.mul w z := by
   unfold KComplex.mul
   refine Prod.ext ?_ ?_ <;> · simp; ring
 
 /-- `KComplex.mul` is associative. -/
-theorem KComplex.mul_assoc (a b c : KComplex K) :
+theorem mul_assoc (a b c : KComplex K) :
     KComplex.mul (KComplex.mul a b) c =
       KComplex.mul a (KComplex.mul b c) := by
   unfold KComplex.mul
@@ -96,7 +96,7 @@ theorem KComplex.mul_assoc (a b c : KComplex K) :
 /-! ### Imaginary-unit identity `i² = −1` -/
 
 /-- The imaginary unit squares to `−1 + 0·i`. -/
-theorem KComplex.I_mul_I :
+theorem I_mul_I :
     KComplex.mul (KComplex.I K) (KComplex.I K)
       = (-(1 : K), (0 : K)) := by
   unfold KComplex.mul KComplex.I
@@ -105,13 +105,13 @@ theorem KComplex.I_mul_I :
 /-! ### Conjugate identities -/
 
 /-- Conjugation is involutive. -/
-theorem KComplex.conj_conj (z : KComplex K) :
+theorem conj_conj (z : KComplex K) :
     KComplex.conj (KComplex.conj z) = z := by
   unfold KComplex.conj
   refine Prod.ext ?_ ?_ <;> simp
 
 /-- `z · conj z = (‖z‖², 0)`. -/
-theorem KComplex.mul_conj (z : KComplex K) :
+theorem mul_conj (z : KComplex K) :
     KComplex.mul z (KComplex.conj z) = (KComplex.normSq z, 0) := by
   unfold KComplex.mul KComplex.conj KComplex.normSq
   refine Prod.ext ?_ ?_ <;> · simp; try ring
@@ -119,14 +119,14 @@ theorem KComplex.mul_conj (z : KComplex K) :
 /-! ### Norm-squared identities -/
 
 /-- `‖z · w‖² = ‖z‖² · ‖w‖²` (Brahmagupta–Fibonacci). -/
-theorem KComplex.normSq_mul (z w : KComplex K) :
+theorem normSq_mul (z w : KComplex K) :
     KComplex.normSq (KComplex.mul z w)
       = KComplex.normSq z * KComplex.normSq w := by
   unfold KComplex.mul KComplex.normSq
   simp; ring
 
 /-- `‖z‖² ≥ 0` (always). -/
-theorem KComplex.normSq_nonneg (z : KComplex K) :
+theorem normSq_nonneg (z : KComplex K) :
     0 ≤ KComplex.normSq z := by
   unfold KComplex.normSq
   have h1 : (0 : K) ≤ z.1 * z.1 := mul_self_nonneg _
@@ -134,7 +134,7 @@ theorem KComplex.normSq_nonneg (z : KComplex K) :
   linarith
 
 /-- The algebraic norm is faithful: `‖z‖² = 0 ↔ z = 0`. -/
-theorem KComplex.normSq_eq_zero (z : KComplex K) :
+theorem normSq_eq_zero (z : KComplex K) :
     KComplex.normSq z = 0 ↔ z = 0 := by
   unfold KComplex.normSq
   refine ⟨fun h => ?_, fun h => ?_⟩

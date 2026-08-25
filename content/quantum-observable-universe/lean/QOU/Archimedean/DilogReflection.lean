@@ -422,4 +422,48 @@ theorem LiTwo_eq_integral {x : ℝ} (hx0 : 0 < x) (hx1 : x < 1) :
   rw [LiTwo_zero, sub_zero] at hftc
   exact hftc.symm
 
+/-! ## Rescaled to the unit interval — the shape Route 5 of the 5₂ sum rule needs
+
+`LiTwo_eq_integral` integrates over `[0, x]`, with the argument as the *endpoint*.
+Route 5 (bean `qou-0yqu`) needs the argument inside the *integrand* over a fixed
+range, because that is what turns a product over roots into a single logarithm:
+
+    Σⱼ Li₂(yⱼ) = −∫₀¹ log ∏ⱼ(1 − yⱼz) / z dz = −∫₀¹ log(1 − 2z + 3z² − z³)/z dz
+
+the factorisation being `QOU.QBeta.FiveTwo.prod_one_sub_mul_eq`, and the
+resulting integral convergent by
+`QOU.QBeta.FiveTwo.intervalIntegrable_log_recipCubic_div`.
+
+The substitution `t = y·z` is all that separates the two shapes. Note this
+lemma is real and needs `0 < y < 1`, so on its own it covers only the real
+saddle root `y₃ = 0.4301…`; the conjugate pair `y₁, y₂` has `|y₁| = 1.52` and
+is not reached here. -/
+
+open MeasureTheory in
+/-- **Unit-interval integral representation**: `Li₂(y) = −∫₀¹ log(1 − yz)/z dz`
+for `0 < y < 1`. The substitution `t = y·z` in `LiTwo_eq_integral`. -/
+theorem LiTwo_eq_integral_unit {y : ℝ} (hy0 : 0 < y) (hy1 : y < 1) :
+    LiTwo y = -∫ z in (0 : ℝ)..1, Real.log (1 - y * z) / z := by
+  have hy : y ≠ 0 := ne_of_gt hy0
+  -- the substitution `t = y·z`
+  have hcomp : (∫ z in (0 : ℝ)..1, -Real.log (1 - y * z) / (y * z))
+      = y⁻¹ • ∫ t in (y * 0 : ℝ)..(y * 1), -Real.log (1 - t) / t :=
+    intervalIntegral.integral_comp_mul_left (fun t : ℝ => -Real.log (1 - t) / t) hy
+  -- pull the constant `y⁻¹` out of the integrand
+  have hpt : ∀ z : ℝ, -Real.log (1 - y * z) / (y * z)
+      = y⁻¹ * (-Real.log (1 - y * z) / z) := by
+    intro z
+    rcases eq_or_ne z 0 with rfl | hz
+    · simp
+    · field_simp
+  have hleft : (∫ z in (0 : ℝ)..1, -Real.log (1 - y * z) / (y * z))
+      = y⁻¹ * ∫ z in (0 : ℝ)..1, -Real.log (1 - y * z) / z := by
+    rw [← intervalIntegral.integral_const_mul]
+    exact intervalIntegral.integral_congr fun z _ => hpt z
+  rw [hleft, mul_zero, mul_one, ← LiTwo_eq_integral hy0 hy1, smul_eq_mul] at hcomp
+  have hcancel : (∫ z in (0 : ℝ)..1, -Real.log (1 - y * z) / z) = LiTwo y :=
+    mul_left_cancel₀ (inv_ne_zero hy) hcomp
+  rw [← hcancel, ← intervalIntegral.integral_neg]
+  exact intervalIntegral.integral_congr fun z _ => by rw [neg_div]
+
 end QOU.Archimedean

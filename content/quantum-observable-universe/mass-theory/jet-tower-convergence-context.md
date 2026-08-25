@@ -3,8 +3,8 @@
 The hypothesis $|\Delta^{(n)}(\varrho)| \leq \Delta_{\max}(\varrho)$
 — uniform boundedness of per-level binding across the brane tower —
 is the named conjecture
-[`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max)
-(workplan **P3.4** path (b)). This proposition therefore
+[`conj:jet-tower-uniform-delta-max`](#conj:jet-tower-uniform-delta-max).
+This proposition therefore
 **reduces the convergence question to a single boundedness
 statement**: once $\Delta^{(n)}$ is shown to be bounded (uniformly
 or with growth slower than $\hbar_q^{-2n}$), the tail decays as a

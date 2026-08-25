@@ -127,7 +127,7 @@ structure PentagonClosure (R : Type*) [CommRing R] where
 /-- **Cyclic periodicity of a solution.** Given the pentagon closure, any solution
 of the recursion is `N`-periodic — it descends to a genuine function on the
 cyclic lattice `ℤ/N`. Uses `closure` essentially. -/
-theorem PentagonClosure.solution_periodic (P : PentagonClosure R) {f : ℕ → R}
+theorem solution_periodic (P : PentagonClosure R) {f : ℕ → R}
     (hf : ∀ k, f (k + 1) = P.w k * f k) (k : ℕ) :
     f (k + P.N) = f k := by
   rw [solution_shift hf k P.N, P.closure k, one_mul]

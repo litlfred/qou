@@ -24,11 +24,19 @@ total for 101 partitions; mpmath expected ~10ms total.
 
 ## Convention
 
-Matches `markov_weights_symbolic.schur_principal_symbolic` exactly:
+**Convention D** (SU(2)/Temperley–Lieb, Jones).  Matches
+`markov_weights_symbolic.schur_principal_symbolic` exactly:
   Q     = q²
-  z_W   = q · z_markov,   z_markov = 1/(√q + 1/√q)
+  z_W   = q · z_markov,   z_markov = q³/(q² + 1)
   Q^r   = z_W / (1 - Q + z_W)            (Wenzl level eigenvalue)
+        = q⁴ = Q²  under D, i.e. r = 2 exactly
   s_λ   = Q^{n(λ)} · ∏_{x ∈ λ} (1 - Q^r · Q^{c(x)}) / (1 - Q^{h(x)})
+
+Convention C (z = 1/(√q + 1/√q)) was excised by owner ruling 2026-08-09;
+docs/coordination/trace-convention-registry.md.  It survives here only as
+`_wenzl_constants_convention_C_HISTORICAL` /
+`y_lambda_at_q0_mpmath_convention_C_HISTORICAL`, which exist so the D-vs-C
+comparison in `y_lambda_su_n.main()` keeps a live C to quote.
 """
 from __future__ import annotations
 
@@ -37,6 +45,7 @@ import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 from typing import Iterable
 
 import mpmath as mp
+from _precision import set_compute_dps  # noqa: E402
 
 
 def hooks_and_contents(lam: tuple[int, ...]) -> tuple[list[int], list[int]]:
@@ -63,16 +72,72 @@ def n_partition(lam: tuple[int, ...]) -> int:
 
 
 def _wenzl_constants(q_val: mp.mpf) -> tuple[mp.mpf, mp.mpf]:
-    """Returns (Q, Q^r) at q = q_val, matching the symbolic convention."""
+    """Returns (Q, Q^r) at q = q_val, matching the symbolic convention.
+
+    TRACE CONVENTION **D** (SU(2)/Temperley–Lieb, Jones), z = q³/(q² + 1) —
+    the same z as `markov_weights_symbolic.Z_MARK`.  Owner ruling 2026-08-09
+    excised convention C (z = 1/(√q + 1/√q)), which this function carried
+    until then.  Registry: docs/coordination/trace-convention-registry.md.
+
+    Under D the Wenzl level relation collapses exactly:
+
+        z_W = q·z  = q⁴/(q² + 1),
+        Q^r = z_W/(1 − Q + z_W)
+            = q⁴ / ((1 − q²)(q² + 1) + q⁴)
+            = q⁴ / (1 − q⁴ + q⁴)  =  q⁴  =  Q²,
+
+    i.e. **r = 2**, the SU(2) level.  `schur_principal_mpmath` is then the
+    two-variable specialization s_λ(1, Q) and returns 0 for every λ with
+    three or more rows.  C gave a non-integral level (Q^r ≈ 1.72025 at q₀
+    against Q² ≈ 1.51795, ratio 1.13327) and hence y_(1³) ≠ 0.
+    """
     Q = q_val ** 2
-    # z_markov = 1 / (√q + 1/√q)
-    sq = mp.sqrt(q_val)
-    z_markov = 1 / (sq + 1 / sq)
+    # z_markov = q³/(q² + 1)      (convention D)
+    z_markov = q_val ** 3 / (q_val ** 2 + 1)
     # z_W = q · z_markov
     z_W = q_val * z_markov
     # Q^r = z_W / (1 - Q + z_W)
     QR = z_W / (1 - Q + z_W)
     return Q, QR
+
+
+def _wenzl_constants_convention_C_HISTORICAL(
+    q_val: mp.mpf,
+) -> tuple[mp.mpf, mp.mpf]:
+    """DEAD FOR PRODUCTION — convention C, excised 2026-08-09.
+
+    Retained because the excision has to stay **measurable**.  The D-vs-C
+    comparison in `y_lambda_su_n.main()` needs one live C implementation to
+    quote, and after the qou-wgta sweep every other one in the repo has been
+    switched.  Left unpreserved, that comparison silently degrades to D-vs-D
+    and reports C's y_(1³)/y_(3) as 0 with a spurious *integral* N* = 2 —
+    the exact opposite of the finding it exists to display.
+
+    C: z = 1/(√q + 1/√q).  Q^r is then not a power of Q (1.72025 at q₀
+    against Q² = 1.51795), so C carried no SU(N) row cap and y_(1³) ≠ 0.
+
+    Do not call this from anything that feeds a predicted observable.
+    """
+    Q = q_val ** 2
+    sq = mp.sqrt(q_val)
+    z_markov = 1 / (sq + 1 / sq)
+    z_W = q_val * z_markov
+    QR = z_W / (1 - Q + z_W)
+    return Q, QR
+
+
+def _schur_principal_with(lam: tuple[int, ...], Q: mp.mpf,
+                          QR: mp.mpf) -> mp.mpf:
+    """s_λ(1, Q, …, Q^{r-1}) from precomputed (Q, Q^r).  Shared by the
+    production path and the convention-C historical path so the two cannot
+    drift apart in anything but the two constants."""
+    hs, cs = hooks_and_contents(lam)
+    num = mp.mpf(1)
+    den = mp.mpf(1)
+    for h, c in zip(hs, cs):
+        num *= 1 - QR * Q ** c
+        den *= 1 - Q ** h
+    return Q ** n_partition(lam) * num / den
 
 
 def schur_principal_mpmath(lam: tuple[int, ...], q_val: mp.mpf) -> mp.mpf:
@@ -82,16 +147,9 @@ def schur_principal_mpmath(lam: tuple[int, ...], q_val: mp.mpf) -> mp.mpf:
 
         s_λ = Q^{n(λ)} · ∏_{x ∈ λ} (1 - Q^r · Q^{c(x)}) / (1 - Q^{h(x)})
 
-    O(|λ|) mpf operations. No sympy.
+    O(|λ|) mpf operations. No sympy.  Convention D — see `_wenzl_constants`.
     """
-    Q, QR = _wenzl_constants(q_val)
-    hs, cs = hooks_and_contents(lam)
-    num = mp.mpf(1)
-    den = mp.mpf(1)
-    for h, c in zip(hs, cs):
-        num *= 1 - QR * Q ** c
-        den *= 1 - Q ** h
-    return Q ** n_partition(lam) * num / den
+    return _schur_principal_with(lam, *_wenzl_constants(q_val))
 
 
 def _f_lambda(lam: tuple[int, ...]) -> int:
@@ -128,15 +186,40 @@ def y_lambda_at_q0_mpmath(
     Computes y_λ = s_λ / Z where Z = Σ_μ s_μ · f^μ enforces the
     normalisation Σ_λ y_λ · f^λ = tr_M(1) = 1.
 
-    For n ∈ {2, ..., 12}: matches `wedderburn_jones_markov.y_lambda_at`
-    (which loads from witness) to ~10⁻¹⁵.
+    TRACE CONVENTION **D** — see `_wenzl_constants`.  Every λ with three or
+    more rows comes back exactly 0 (the SU(2) row cap ℓ(λ) ≤ 2).
 
     For n > 12: extends the y_λ tower beyond the cached witness.
+
+    NOTE: `y-lambda-at-q0.witness.json` still holds convention-C weights and
+    is therefore NOT a valid cross-check for this function until it is
+    regenerated.  `main()` reports that comparison as a C-vs-D delta, not as
+    an error.
     """
+    return _y_lambda_normalised(n, q_val, _wenzl_constants(q_val))
+
+
+def y_lambda_at_q0_mpmath_convention_C_HISTORICAL(
+    n: int, q_val: mp.mpf
+) -> dict[tuple[int, ...], mp.mpf]:
+    """DEAD FOR PRODUCTION — convention C, excised 2026-08-09.
+
+    The one surviving live C implementation, kept so the D-vs-C comparison
+    stays measurable.  See `_wenzl_constants_convention_C_HISTORICAL`.
+    """
+    return _y_lambda_normalised(
+        n, q_val, _wenzl_constants_convention_C_HISTORICAL(q_val))
+
+
+def _y_lambda_normalised(
+    n: int, q_val: mp.mpf, wenzl: tuple[mp.mpf, mp.mpf]
+) -> dict[tuple[int, ...], mp.mpf]:
+    """y_λ = s_λ / Σ_μ s_μ f^μ for a given (Q, Q^r).  Convention-agnostic:
+    the convention lives entirely in `wenzl`."""
     shapes = partitions_of(n)
-    s_vals: dict[tuple[int, ...], mp.mpf] = {}
-    for sh in shapes:
-        s_vals[sh] = schur_principal_mpmath(sh, q_val)
+    s_vals: dict[tuple[int, ...], mp.mpf] = {
+        sh: _schur_principal_with(sh, *wenzl) for sh in shapes
+    }
 
     Z = mp.mpf(0)
     for sh in shapes:
@@ -146,8 +229,17 @@ def y_lambda_at_q0_mpmath(
 
 
 def main() -> int:
-    """Smoke-test: verify against the existing y-lambda-at-q0 witness
-    for n ∈ {2, ..., 12}, then benchmark n=13."""
+    """Smoke-test against the y-lambda-at-q0 witness for n ∈ {2, ..., 12},
+    then benchmark n=13.
+
+    NOTE (2026-08-09, bean qou-wgta item 9): that witness still holds
+    **convention C** weights while this module now computes **D**, so the
+    column below is a C-vs-D gap of order 10⁻¹ — not an accuracy figure.
+    It is labelled as such until the witness is regenerated.  The real
+    accuracy check meanwhile is the D column against
+    `markov_weights_symbolic.y_lambda_symbolic` (sympy, independent code
+    path): those agree to round-off.
+    """
     import json
     import time
     from pathlib import Path
@@ -156,7 +248,7 @@ def main() -> int:
     if str(HERE) not in sys.path:
         sys.path.insert(0, str(HERE))
 
-    mp.mp.dps = 50
+    set_compute_dps()
     from q_parameter import Q_MP  # noqa: E402
 
     print("=" * 80)
@@ -169,7 +261,12 @@ def main() -> int:
     )
     cache = witness.get("data", witness)["by_n"]
 
-    print(f"  {'n':<3} {'partitions':>10} {'wall (s)':>10} {'max rel err':>15}")
+    print("  witness y-lambda-at-q0.witness.json is still convention C;")
+    print("  this module is convention D.  The last column is therefore the")
+    print("  C-vs-D GAP, not an error, until that witness is regenerated.")
+    print()
+    print(f"  {'n':<3} {'partitions':>10} {'wall (s)':>10} "
+          f"{'max C-vs-D gap':>15}")
     print("  " + "-" * 55)
 
     for n in range(2, 13):

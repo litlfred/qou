@@ -57,7 +57,7 @@ def CellIndex.next (c : CellIndex) : CellIndex :=
 
 /-- Bidegree of `d_r` is `(r, 1 - r)`: `next.p − p = r` and
     `next.q − q = 1 − r`. -/
-theorem CellIndex.next_bidegree (c : CellIndex) :
+theorem next_bidegree (c : CellIndex) :
     c.next.p - c.p = (c.r : ℤ) ∧ c.next.q - c.q = 1 - (c.r : ℤ) := by
   refine ⟨?_, ?_⟩ <;> simp [CellIndex.next] <;> ring
 
@@ -255,7 +255,7 @@ instance gb_trivial_converges (R : Type u) (n : ℕ) :
     `r₀`, it also collapses at any later page `r₁ ≥ r₀`.  The
     `d_r = 0` condition for `r ≥ r₀` immediately implies it for
     `r ≥ r₁` since `r ≥ r₁ ≥ r₀`. -/
-theorem CollapsesAt.mono {R : Type u} (S : SpectralSequence R)
+theorem mono {R : Type u} (S : SpectralSequence R)
     (r₀ r₁ : ℕ) (h : r₀ ≤ r₁) (h_collapses : CollapsesAt S r₀) :
     CollapsesAt S r₁ := by
   intro c hc x

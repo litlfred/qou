@@ -37,5 +37,20 @@ export default proposition({
         "infrastructure; no sympy probe — the structural content is captured " +
         "by the type definitions.",
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The bundled gates in `q-beta-bar-even-kernel-typeclass.lean` are " +
+        "stated against **substrate decimal literals**: `uSubstrate : ℝ := " +
+        "0.008517234550156142` with `radiusTolerance := uSubstrate / " +
+        "1000000`, and `directionTarget := 0.99824`. The §4(a) gate is " +
+        "literally `|pole - uSubstrate| ≤ radiusTolerance` — a numerical " +
+        "proximity claim about a substrate value — so the `ℝ` is forced by " +
+        "the statement rather than chosen. (Same disposition as " +
+        "`q-beta-radius-of-convergence-gate`, which carries the same " +
+        "`u_substrate` literal.)",
+    },
   ],
 });

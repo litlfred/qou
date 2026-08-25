@@ -71,7 +71,7 @@ from pathlib import Path
 
 import mpmath as mp
 
-_ROOT = Path(__file__).resolve().parents[2]
+_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(_ROOT / "tools" / "pyhecke" / "python"))
 sys.path.insert(0, str(_ROOT / "tools" / "qou-substrate" / "python"))
 sys.path.insert(0, str(Path(__file__).parent))
@@ -97,7 +97,7 @@ except (ImportError, AttributeError) as _q_err:  # narrow: only "not there"
 
 QI = 1 / Q0
 H = Q0 - QI                         # h = q - q^-1 (Hecke scalar)
-Z_MARKOV = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))   # tr_M(sigma_i) = z
+Z_MARKOV = Q0**3 / (Q0**2 + 1)   # tr_M(sigma_i) = z
 
 AME = _ROOT / "qou-mass" / "src" / "qou_mass" / "data" / "ame2020.json"
 
@@ -374,12 +374,12 @@ def main() -> int:
         sf, af, stdf, _T = blocks_fast(Zl, Nl, P_intra=P_intra,
                                        N_intra=N_intra)
         rel = max(
-            abs(sb - sf) / max(abs(sb), mp.mpf(1e-30)),
-            abs(ab - af) / max(abs(ab), mp.mpf(1e-30)),
+            abs(sb - sf) / max(abs(sb), mp.mpf("1e-30")),
+            abs(ab - af) / max(abs(ab), mp.mpf("1e-30")),
             max(abs(stdb[i][j] - stdf[i][j]) for i in (0, 1)
                 for j in (0, 1))
             / max(max(abs(stdb[i][j]) for i in (0, 1) for j in (0, 1)),
-                  mp.mpf(1e-30)),
+                  mp.mpf("1e-30")),
         )
         bf_dev = max(bf_dev, rel)
         if have_f64:

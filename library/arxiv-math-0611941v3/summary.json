@@ -1,0 +1,61 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-math-0611941v3",
+ "source_sha256": "bf6f2d55c7adee51",
+ "brief": "HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK — Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are",
+ "extended": "**HECKE ALGEBRAS OF FINITE TYPE ARE CELLULAR MEINOLF GECK**\n\n16 pp, 8 sections.\n\n**Abstract.** Let H be the one-parameter Hecke algebra associated to a ﬁnite Weyl gr oup W , deﬁned over a ground ring in which “bad” primes for W are invertible. Using deep properties of the Kazhdan–Lusztig basis of H and Lusztig’s a-function, we show that H has a natural cellular structure in the sense of Graham and Lehrer. Th us, we obtain a general theory of “Specht modules” for Hecke algebras of ﬁnite type. Pre viously, a general cellular structure was only known to exist in types An and Bn.\n\n**Outline.** 1 Introduction; 2 Kazhdan–Lusztig theory and the asymptotic ri; 2.1 Irreducible representations of W and H; 2.3 The Kazhdan–Lusztig basis of H; 2.5 Representations of J; 3 A cell datum for H; 4 Examples and applications to modular represe; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 211
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-001-2-kazhdanlusztig-theory-and-the-asymptotic-ring",
+   "title": "Kazhdan–Lusztig theory and the asymptotic ring",
+   "pages": "2-2"
+  },
+  {
+   "id": "sec-002-21-irreducible-representations-of-w-and-h",
+   "title": "Irreducible representations of W and H",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-003-23-the-kazhdanlusztig-basis-of-h",
+   "title": "The Kazhdan–Lusztig basis of H",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-004-25-representations-of-j",
+   "title": "Representations of J",
+   "pages": "5-7"
+  },
+  {
+   "id": "sec-005-3-a-cell-datum-for-h",
+   "title": "A cell datum for H",
+   "pages": "7-11"
+  },
+  {
+   "id": "sec-006-4-examples-and-applications-to-modular-represent",
+   "title": "Examples and applications to modular representations",
+   "pages": "11-15"
+  },
+  {
+   "id": "sec-007-references",
+   "title": "References",
+   "pages": "15-16"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

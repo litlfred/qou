@@ -1,0 +1,111 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2312.00624v1",
+ "source_sha256": "bda867f7b84f69c3",
+ "brief": "On the structure of wave functions in complex Chern–Simons theory — We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the",
+ "extended": "**On the structure of wave functions in complex Chern–Simons theory**\n\n*Marcos Mariño and Claudia Rella*\n\n43 pp, 18 sections.\n\n**Abstract.** We study the structure of wave functions in complex Chern–Simons theory on the complement of a hyperbolic knot, emphasizing the similarities with the topological string/spectral theory correspondence. We first conjecture a hidden integrality structure in the holomorphic blocks and show that this structure guarantees the cancellation of potential singularities in the full non- perturbative wave function at rational values of the coupling constant. We then develop various techniques to determine the wave function at such rational points. Finally, we illustrate our conjec- tures and obtain explicit results in the examples of the figure-eight and the three-twist knots. In the case of the figure-eight knot, we also perform a direct evaluation of the state integral in the rational case and observe that the resulting wave function has the features of the ground state for a quantum mirror curve.\n\n**Outline.** Introduction; Complex Chern–Simons theory and the A-polynomi; Classical and quantum A-polynomials; The structure of the wave function; General conjectures; Cancellation of singularities; The wave function in the rational case, I; The wave function in the rational case, II; Solving a second-order q-difference equation; Solving a third-order q-difference equation; Examples; The figure-eight knot; The three-twist knot; The wave function from the state integral; Evaluation at rational points; Factorization and two special subcases; Conclusions; An alternative way of obtaining the integer se",
+ "tokens": {
+  "brief": 48,
+  "extended": 412
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "2-4"
+  },
+  {
+   "id": "sec-001-complex-chernsimons-theory-and-the-a-polynomial",
+   "title": "Complex Chern–Simons theory and the A-polynomial",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-classical-and-quantum-a-polynomials",
+   "title": "Classical and quantum A-polynomials",
+   "pages": "4-9"
+  },
+  {
+   "id": "sec-003-the-structure-of-the-wave-function",
+   "title": "The structure of the wave function",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-004-general-conjectures",
+   "title": "General conjectures",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-005-cancellation-of-singularities",
+   "title": "Cancellation of singularities",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-006-the-wave-function-in-the-rational-case-i",
+   "title": "The wave function in the rational case, I",
+   "pages": "14-17"
+  },
+  {
+   "id": "sec-007-the-wave-function-in-the-rational-case-ii",
+   "title": "The wave function in the rational case, II",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-008-solving-a-second-order-q-difference-equation",
+   "title": "Solving a second-order q-difference equation",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-009-solving-a-third-order-q-difference-equation",
+   "title": "Solving a third-order q-difference equation",
+   "pages": "20-23"
+  },
+  {
+   "id": "sec-010-examples",
+   "title": "Examples",
+   "pages": "23-23"
+  },
+  {
+   "id": "sec-011-the-figure-eight-knot",
+   "title": "The figure-eight knot",
+   "pages": "23-26"
+  },
+  {
+   "id": "sec-012-the-three-twist-knot",
+   "title": "The three-twist knot",
+   "pages": "26-29"
+  },
+  {
+   "id": "sec-013-the-wave-function-from-the-state-integral",
+   "title": "The wave function from the state integral",
+   "pages": "29-30"
+  },
+  {
+   "id": "sec-014-evaluation-at-rational-points",
+   "title": "Evaluation at rational points",
+   "pages": "30-34"
+  },
+  {
+   "id": "sec-015-factorization-and-two-special-subcases",
+   "title": "Factorization and two special subcases",
+   "pages": "34-36"
+  },
+  {
+   "id": "sec-016-conclusions",
+   "title": "Conclusions",
+   "pages": "36-38"
+  },
+  {
+   "id": "sec-017-an-alternative-way-of-obtaining-the-integer-sequ",
+   "title": "An alternative way of obtaining the integer sequences",
+   "pages": "38-43"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

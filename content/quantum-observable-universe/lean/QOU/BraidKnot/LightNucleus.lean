@@ -35,19 +35,19 @@ def LightNucleus.A : LightNucleus → ℕ
 def LightNucleus.n₀ (n : LightNucleus) : ℕ := 3 * n.A
 
 /-- The number of constituents (nucleons). -/
-def LightNucleus.numConstituents (n : LightNucleus) : ℕ := n.A
+def numConstituents (n : LightNucleus) : ℕ := n.A
 
 /-- Strand count is positive (A ≥ 2 ⟹ n_0 ≥ 6). -/
-theorem LightNucleus.n₀_pos (n : LightNucleus) : 0 < n.n₀ := by
+theorem n₀_pos (n : LightNucleus) : 0 < n.n₀ := by
   cases n <;> decide
 
 /-- The mass-number `A` is at least 2 for every light nucleus. -/
-theorem LightNucleus.A_ge_two (n : LightNucleus) : 2 ≤ n.A := by
+theorem A_ge_two (n : LightNucleus) : 2 ≤ n.A := by
   cases n <;> decide
 
 /-- The strand count `n_0` is at least 6 (the minimum for a binding
     operation between two trefoils, each on 3 strands). -/
-theorem LightNucleus.n₀_ge_six (n : LightNucleus) : 6 ≤ n.n₀ := by
+theorem n₀_ge_six (n : LightNucleus) : 6 ≤ n.n₀ := by
   cases n <;> decide
 
 end QOU.BraidKnot

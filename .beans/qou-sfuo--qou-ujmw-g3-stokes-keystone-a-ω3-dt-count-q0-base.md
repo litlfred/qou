@@ -1,7 +1,7 @@
 ---
 # qou-sfuo
 title: 'qou-ujmw G3 Stokes keystone: A_ω=3 DT-count — q→0 base case landed (PR #4534); internal categorical derivation still open'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-01T23:39:37Z
 updated_at: 2026-08-01T23:39:37Z

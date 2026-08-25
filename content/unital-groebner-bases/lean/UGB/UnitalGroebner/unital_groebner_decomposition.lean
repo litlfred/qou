@@ -41,9 +41,12 @@ two algorithmic consequences over the concrete `AlgElement` /
 
 The `R`-module structure of the summands and the explicit `I`-component
 are not formalized (raw `AlgElement` data type; see `AlgOps.lean` §6).
-The single remaining `sorry` is the existence/termination half; the
-flatness half is supplied by the `gs_implies_flat` axiom of
-`Flatness.lean`.
+The existence/termination half is **proved** (bean qou-lzoo): it is
+`normal_form_exists`, from `reduction_well_founded` plus the hypothesis
+`hlc` that every rule has a unit leading coefficient. It used to invoke an
+axiom of the same name that was not merely unproved but **false** — see
+`NormalFormExistsRefutation`. The flatness half is still supplied by the
+`gs_implies_flat` axiom of `Flatness.lean`.
 -/
 
 namespace UGB.UnitalGroebner
@@ -69,14 +72,21 @@ theorem unital_groebner_decomposition [Field k] [DecidableEq G]
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
     (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord))
     (h_deformed h_graded : HilbertFunction) :
     (∀ f : AlgElement G k, ∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
       isFlat h_deformed h_graded := by
   refine ⟨?_, ?_⟩
-  · -- Õ(G)-component: existence of a normal form for each f. This is the
-    -- termination half (normal_form_exists), the remaining manuscript step.
-    -- Ref: [manuscript] unital-groebner-bases — Õ(G)-component existence (termination)
-    sorry
+  · -- Õ(G)-component: existence of a normal form for each f — now a theorem
+    -- rather than the false axiom it used to invoke (bean qou-lzoo).
+    --
+    -- `hlc` is not decoration. Over a field it is *not* automatic: `lc` is the
+    -- coefficient at the leading monomial of the `support` field, which is only
+    -- a superset of the true support, so a rule can have `lc = 0`. Without it
+    -- the conclusion is false — `NormalFormExistsRefutation` exhibits an `f`
+    -- with no normal form for a system that satisfies `hgs`.
+    intro f
+    exact normal_form_exists ord sys hlc f
   · -- Flatness: discharged by the gs_implies_flat axiom of Flatness.lean
     -- (Hilbert function preserved under the GS deformation).
     exact gs_implies_flat ord sys hgs h_deformed h_graded

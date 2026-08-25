@@ -55,16 +55,23 @@ import pyhecke_native as pn
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
 
-mp.mp.dps = 30
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402  (drain qou-7ot6-a)
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-q0_f64 = float(mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"]))
+q0_f64 = float(mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"]))
 h_f64 = q0_f64 - 1.0 / q0_f64
 h_sq_f64 = h_f64 * h_f64
 
-M_E = 0.510998950
+M_E = float(M_E_MEV)  # registry (was the truncated literal 0.510998950)
 VOL_BOR = float(8 * mp.catalan)
 
 # Per-atom data: (sym, A, Z, N, B_AME, B_prod, bug_type, squash_paths)
@@ -215,6 +222,7 @@ def main() -> int:
     print(f"  Skipped (heavy atoms): {sum(1 for a in audits if a['canonical_candidate'] and 'skipped' in a['canonical_candidate'])}")
 
     w = WitnessBuilder("per-atom-audit-witnesses", engine="python+pyhecke-native")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Per-atom audit witnesses (item 6 from author 2026-05-25 multi-select). "
         "For each KLR-violating atom: bug type (per PR #1228 §3 taxonomy), "

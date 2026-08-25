@@ -48,7 +48,10 @@ theorem knot_factor_shell_closed
   · -- Surviving trivialPartition term:
     -- weight · (c · c_mirror) / trivial² = weight · trivial² / trivial² = weight
     rw [eq.trivial_block]
-    field_simp
+    -- `field_simp` is not available here (this file's import cone stops at
+    -- `Mathlib.Data.Real.Basic`), and pulling in `Mathlib.Tactic.FieldSimp`
+    -- for one cancellation is not worth the dep. Cancel `t^2` explicitly.
+    rw [mul_div_assoc, div_self (pow_ne_zero 2 triv_nz), mul_one]
   · -- Off-trivial terms vanish via vanish_offblock
     intro μ hμ_in hμ_ne
     rw [eq.vanish_offblock μ hμ_in hμ_ne]
@@ -57,9 +60,11 @@ theorem knot_factor_shell_closed
     intro h_not_in
     exact absurd eq.trivial_in h_not_in
 
-/-- **Existence form**: there exists a real `a = 1` realising the
-    shell-closed knot factor. -/
-theorem knot_factor_shell_closed_value :
-    ∃ a : ℝ, a = 1 := ⟨1, rfl⟩
+-- The former `knot_factor_shell_closed_value : ∃ a : ℝ, a = 1 := ⟨1, rfl⟩`
+-- was removed: `∃ a, a = 1` is provable by `⟨1, rfl⟩` regardless of any
+-- knot-factor content, so it asserted nothing. `knot_factor_shell_closed`
+-- above already proves the real statement (`knotFactor … = 1`, from the
+-- Markov-equilibrium hypotheses) and is the declaration the content block
+-- resolves to.
 
 end QOU.BraidKnot

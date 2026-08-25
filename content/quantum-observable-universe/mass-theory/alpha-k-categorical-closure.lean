@@ -83,14 +83,21 @@ class AlphaKCategoricalClosure (q : ℝ) : Type where
       agrees with the CODATA-calibrated value. -/
   cal3_direction : E0_framework = E0_codata
 
-/-- **Conjectural instance.** The `sorry` represents the conjecture
-    itself (per AGENTS.md §3b): that the categorical $\alpha_k$
-    resummation exists, selects the geometric family, and closes CAL-3 in
-    the right direction. Downstream conditional theorems take
-    `[AlphaKCategoricalClosure q]` as an explicit instance hypothesis. -/
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- The docstring below already said downstream theorems "take
+-- `[AlphaKCategoricalClosure q]` as an explicit instance hypothesis" — but a
+-- global instance was supplied anyway, so that hypothesis was discharged for
+-- free everywhere and never had to be written.
+--
+-- History: this file previously carried
+--     axiom alphaKCategoricalClosure_conjecture (q : ℝ) : AlphaKCategoricalClosure q
+--     noncomputable instance (q : ℝ) : AlphaKCategoricalClosure q :=
+--       alphaKCategoricalClosure_conjecture q
+-- i.e. the conjecture — that the categorical α_k resummation exists, selects
+-- the geometric family, and closes CAL-3 in the right direction — was asserted
+-- by `axiom`.  Removed, not completed.
 -- Ref: [manuscript] conj:alpha-k-categorical-closure
 -- Ref: [manuscript] prop:alpha-k-derivation-procedure
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01239013
-noncomputable instance (q : ℝ) : AlphaKCategoricalClosure q := sorry
 
 end QOU.BraidKnot

@@ -40,6 +40,13 @@ class ClassicalRiemannHypothesis : Prop where
 -- The conjecture itself.  The `sorry` represents the **open conjecture**
 -- per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/stochastic-mechanics/classical-riemann-hypothesis.ts
-noncomputable instance : ClassicalRiemannHypothesis := sorry
+
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- History: this file previously carried
+--     axiom classicalRiemannHypothesis_conjecture : ClassicalRiemannHypothesis
+--     noncomputable instance : ClassicalRiemannHypothesis := classicalRiemannHypothesis_conjecture
+-- i.e. the conjecture was asserted by `axiom` and installed as a global instance, so
+-- every downstream `[ClassicalRiemannHypothesis]` resolved for free.  Removed, not completed — downstream
+-- results must take `[ClassicalRiemannHypothesis]` as an explicit hypothesis.
 
 end QOU.BraidKnot

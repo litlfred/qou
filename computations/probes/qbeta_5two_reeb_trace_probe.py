@@ -20,18 +20,18 @@ FINDING 2 — the bar-odd datum is the WRITHE, in the CONJUGATE-PAIR blocks. The
 1-dim blocks (3) [σ↦q] and (1,1,1) [σ↦−q⁻¹] are bar-CONJUGATE, with characters
 `χ_{(3)}(β) = q^{w}`, `χ_{(1,1,1)}(β) = (−1)^{|β|} q^{−w}` where `w` = writhe
 (exponent sum). Their bar-odd combination `½(χ_{(3)} − q^{2·?}…)` is nonzero iff
-`w ≠ 0`:  **4₁ has writhe 0 (amphichiral) ⇒ bar-odd = 0**; **5₂ has writhe 2
-(chiral) ⇒ bar-odd = ½(q²−q⁻²) ≠ 0** — a genuine bar-odd sinh-object, exactly the
+`w ≠ 0`:  **4₁ has writhe 0 (amphichiral) ⇒ bar-odd = 0**; **5₂ has writhe 4
+(chiral) ⇒ bar-odd = ½(q⁴−q⁻⁴) ≠ 0** — a genuine bar-odd sinh-object, exactly the
 nonzero channel 4₁ structurally lacks. This is where CS≠0 enters.
 
 Construction mirrors the validated 4₁ Reeb probe
-`qbeta_c3_reeb_rotation_phase_probe.py`; canonical 5₂ 3-braid `(1,1,1,−2,1,−2)`
+`qbeta_c3_reeb_rotation_phase_probe.py`; canonical 5₂ 3-braid `(1,1,1,2,−1,2)`
 (`_deprecated/hyperbolic_knot_db_extended.py:44`, vol 2.8281220).
 
 HONEST SCOPE. 5₂ supplies a nonzero bar-odd datum via the writhe — the "nonzero
 home" fork-option-2 needs. It does NOT defeat the Lean-proved anchor-invariance
 prune (`QOU.QBeta.SRigidity.no_anchor_invariant_realizes_swing`): the writhe
-datum ½(q₀²−q₀⁻²) is smooth in q₀, so its VALUE cannot produce S's 2×10⁶ swing;
+datum ½(q₀⁴−q₀⁻⁴) is smooth in q₀, so its VALUE cannot produce S's 2×10⁶ swing;
 the swing still needs the anchor-dependent quantum volume 𝔙_q(5₂) (a later
 brick). No c_k; no fit; scope-(a).
 
@@ -57,7 +57,15 @@ Q = {"muon": mp.mpf("1.10997859555733471"),
      "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
 
 # canonical 3-braid word for 5₂ (generators 1,2 ↦ σ₁,σ₂; negatives = inverses)
-BRAID_5_2 = [1, 1, 1, -2, 1, -2]
+# CORRECTED 2026-08-11 (bean qou-9mum).  This file previously used
+# [1, 1, 1, -2, 1, -2], which is the braid word for 6₂, not 5₂:
+# its Alexander determinant |Δ(-1)| is 11 (6₂), where 5₂ is 7.  Seven
+# sibling probes had already been moved to the correct word (see
+# qbeta_5two_capstone_carrier_falsification_probe.py:206 and
+# docs/coordination/1ppq-qbeta.md); this one and the categorical-Markov
+# probe were missed.  The writhe changes 2 -> 4, so the bar-odd datum
+# changes ½(q²-q⁻²) -> ½(q⁴-q⁻⁴) and its anchor value moves by 2.04x.
+BRAID_5_2 = [1, 1, 1, 2, -1, 2]
 # 4₁ for the amphichirality contrast: (σ₁σ₂⁻¹)² = [1,-2,1,-2]
 BRAID_4_1 = [1, -2, 1, -2]
 # known Jones polynomial of 5₂ (Knot Atlas), V(q) with this chirality:
@@ -126,9 +134,9 @@ def main() -> int:
           "(3)/(1,1,1) asymmetry):")
     print(f"    writhe(4₁) = {w41}  (amphichiral)   D_odd(4₁) = ½(χ₃−χ₁₁₁) = {D41}")
     print(f"    writhe(5₂) = {w52}  (chiral)        D_odd(5₂) = ½(χ₃−χ₁₁₁) = {D52}")
-    print(f"    ⇒ 5₂ D_odd = ½(q²−q⁻²) is a genuine bar-odd sinh-object — the "
+    print(f"    ⇒ 5₂ D_odd = ½(q⁴−q⁻⁴) is a genuine bar-odd sinh-object — the "
           f"nonzero home 4₁ (writhe 0 ⇒ D_odd=0) structurally lacks.")
-    writhe_ok = (w41 == 0 and w52 == 2)
+    writhe_ok = (w41 == 0 and w52 == 4)
     d41_zero = (D41 == 0)
     d52_nonzero = (sp.simplify(D52) != 0)
 
@@ -138,7 +146,7 @@ def main() -> int:
 
     # ---- the 5₂ bar-odd datum at the substrate anchors (numeric) ----
     D52_fn = sp.lambdify(q, D52, "mpmath")
-    print(f"\n  5₂ bar-odd writhe datum D_odd(q₀) = ½(q₀²−q₀⁻²):")
+    print(f"\n  5₂ bar-odd writhe datum D_odd(q₀) = ½(q₀⁴−q₀⁻⁴):")
     barodd_vals = {}
     for name, q0 in Q.items():
         val = D52_fn(q0)
@@ -152,7 +160,7 @@ def main() -> int:
     wb.set_description(
         "Foundational brick of the non-amphichiral (5₂) route (fork option 2). "
         "The H₃(q) Hoefsmit V_{(2,1)} q-Reeb trace of the canonical 5₂ 3-braid "
-        "(1,1,1,-2,1,-2): τ_{5₂}(q) is BAR-ASYMMETRIC (nonzero bar-odd part), "
+        "(1,1,1,2,-1,2): τ_{5₂}(q) is BAR-ASYMMETRIC (nonzero bar-odd part), "
         "unlike the amphichiral 4₁ (τ_{4₁} bar-symmetric, bar-odd=0). So 5₂ "
         "supplies a NONZERO bar-odd knot-operator datum — the 'nonzero home' the "
         "CS=0 fork needs. Validated at the q=1 permutation anchor. HONEST SCOPE: "
@@ -169,13 +177,13 @@ def main() -> int:
                             "chirality — FINDING 1, refutes the naive q-Reeb guess")
     wb.add_assertion("writhe_amphichiral_vs_chiral",
                      computed=1.0 if writhe_ok else 0.0, expected=1.0, tolerance=0.5,
-                     source="writhe(4₁)=0 (amphichiral), writhe(5₂)=2 (chiral) — the "
+                     source="writhe(4₁)=0 (amphichiral), writhe(5₂)=4 (chiral) — the "
                             "conjugate-pair (3)/(1,1,1) asymmetry")
     wb.add_assertion("bar_odd_writhe_datum_4one_zero_5two_nonzero",
                      computed=0.0 if (d41_zero and d52_nonzero) else 1.0,
                      expected=0.0, tolerance=0.5,
-                     source="D_odd=½(χ₃−χ₁₁₁): 0 for 4₁ (writhe 0), ½(q²−q⁻²)≠0 for "
-                            "5₂ (writhe 2) — FINDING 2: the bar-odd home is the "
+                     source="D_odd=½(χ₃−χ₁₁₁): 0 for 4₁ (writhe 0), ½(q⁴−q⁻⁴)≠0 for "
+                            "5₂ (writhe 4) — FINDING 2: the bar-odd home is the "
                             "writhe, a sinh-object, nonzero for chiral 5₂")
     wb.add_assertion("q1_permutation_anchor",
                      computed=float(tau41_at1), expected=-1.0, tolerance=0.01,
@@ -192,17 +200,17 @@ def main() -> int:
                 {k: mp.nstr(v, 15) for k, v in barodd_vals.items()})
     wb.add_data("anchor_smoothness_caveat",
                 f"|D_odd(p)−D_odd(mu)| = {mp.nstr(swing, 6)}: the writhe datum "
-                "½(q₀²−q₀⁻²) is anchor-smooth, so NOT the S-swing carrier "
+                "½(q₀⁴−q₀⁻⁴) is anchor-smooth, so NOT the S-swing carrier "
                 "(no_anchor_invariant_realizes_swing binds). 5₂ gives a nonzero "
                 "bar-odd HOME; the anchor-dependent swing still needs 𝔙_q(5₂).")
-    wb.add_data("braid_word_5_2", "(1,1,1,-2,1,-2) = σ₁³σ₂⁻¹σ₁σ₂⁻¹ (canonical table)")
+    wb.add_data("braid_word_5_2", "(1,1,1,2,-1,2) = σ₁³σ₂σ₁⁻¹σ₂ (canonical table)")
     wb.add_data("verdict",
                 ("TWO FINDINGS. (1) REFUTED the naive q-Reeb guess: τ_{5₂}(q) on "
                  "V_{(2,1)} is bar-EVEN, same as τ_{4₁} — the self-conjugate (2,1) "
                  "block cannot carry chirality for any knot. (2) LOCATED the bar-odd "
                  "datum in the WRITHE: the conjugate-pair (3)/(1,1,1) asymmetry "
                  "D_odd=½(χ₃−χ₁₁₁) is 0 for amphichiral 4₁ (writhe 0) and "
-                 "½(q²−q⁻²)≠0 for chiral 5₂ (writhe 2) — a genuine bar-odd "
+                 "½(q⁴−q⁻⁴)≠0 for chiral 5₂ (writhe 4) — a genuine bar-odd "
                  "sinh-object, the nonzero home fork-option-2 needs. But D_odd(q₀) "
                  "is anchor-smooth ⇒ not the S-swing (the Lean-proved anchor-"
                  "invariance prune binds); the swing needs 𝔙_q(5₂), the next brick. "

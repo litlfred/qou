@@ -1,0 +1,84 @@
+{
+  "schema": "witness/v1",
+  "producer": "computations/deltalambda/vol_t_he3_snappy_probe.py",
+  "computation": "vol-t-he3-snappy",
+  "description": "Front-1 decision point: hyperbolic Vol(T), Vol(\u00b3He) of the actual braid closures. Reading 1 (mass-braid H\u2089 closure, SnapPy, all averaged-crossing conventions): NON-HYPERBOLIC, Vol\u22610 (degenerate) \u2014 the mass-braid closure carries no hyperbolic volume, so the radial handle Vol\u00b7\u03c1/\u210f_q\u00b2 is identically 0 and cannot equal C_knot\u22483\u20134. Reading 2 (corpus binding links: T\u21928\u2081\u2081=8.2863, \u00b3He\u2192L6a4=Borromean=7.3277, both SnapPy-verified hyperbolic): UNEQUAL (ratio 1.131) \u2014 so mirror-knot equality is FALSE here too. Re-running the mirror test with the TRUE volumes: C_knot ratio 1.350 vs radial-prediction Vol\u00b7tr_M ratio 0.570 \u2014 STILL anti-correlated (opposite sides of 1; ratio-of-ratios 2.37). \u03c1=tr_M radial handle refuted under every reading (scope-a); survivor is a DERIVED \u03c1\u2260tr_M with T/\u00b3He ratio > ~2.1. bean qou-0g4z / front-1.",
+  "audit_only": true,
+  "tier": "scope-(a) refutation of the \u03c1=tr_M radial binding handle; 0-fit",
+  "free_parameters": 0,
+  "method": "SnapPy 3.3.x braid-closure + verify_hyperbolicity; validated against fig8/Borromean/trefoil",
+  "inputs": {
+    "C_knot_master_formula": {
+      "D": 5.8529,
+      "T": 4.444147,
+      "3He": 3.2918,
+      "4He": 9.3133
+    },
+    "tr_M_per_block": {
+      "D": 0.3883572073592214,
+      "T": 0.10407107962429059,
+      "3He": 0.20657849186184504,
+      "4He": 0.05535842626678311
+    },
+    "binding_links": {
+      "D": "L2a1",
+      "T": "8_11",
+      "3He": "L6a4"
+    }
+  },
+  "result": {
+    "reading1_mass_braid_closure": {
+      "T": {
+        "pos": {
+          "status": "DEGENERATE(non-hyperbolic)",
+          "vol": 0.0,
+          "n_components": 4
+        },
+        "neg": {
+          "status": "DEGENERATE(non-hyperbolic)",
+          "vol": 0.0,
+          "n_components": 4
+        },
+        "drop": {
+          "status": "DEGENERATE(non-hyperbolic)",
+          "vol": 0.0,
+          "n_components": 5
+        }
+      },
+      "3He": {
+        "pos": {
+          "status": "DEGENERATE(non-hyperbolic)",
+          "vol": 0.0,
+          "n_components": 4
+        },
+        "neg": {
+          "status": "DEGENERATE(non-hyperbolic)",
+          "vol": 0.0,
+          "n_components": 4
+        },
+        "drop": {
+          "status": "DEGENERATE(non-hyperbolic)",
+          "vol": 0.0,
+          "n_components": 5
+        }
+      },
+      "non_hyperbolic_all_conventions": true,
+      "Vol_T": 0.0,
+      "Vol_3He": 0.0,
+      "equal": true,
+      "note": "both degenerate (Vol=0); equal-but-degenerate; handle\u22610"
+    },
+    "reading2_binding_link": {
+      "Vol_T_8_11": 8.286316817806593,
+      "Vol_3He_L6a4_borromean": 7.327724753417752,
+      "vol_ratio_T_over_3He": 1.1308171494762738,
+      "equal": false,
+      "c_knot_ratio": 1.3500659213803998,
+      "trM_ratio": 0.503784681001016,
+      "radial_pred_ratio_Vol_trM": 0.5696883569193828,
+      "ratio_of_ratios": 2.3698323916622526,
+      "anti_correlated": true
+    }
+  },
+  "verdict": "rho-eq-trM-radial-handle-refuted-every-volume-reading"
+}

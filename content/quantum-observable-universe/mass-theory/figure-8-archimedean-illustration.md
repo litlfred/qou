@@ -18,7 +18,7 @@ the bar involution $q \mapsto q^{-1}$ — is what selects the
 figure-8 as a *mass* invariant rather than a chirality invariant.
 
 **Pre-archimedean (substrate) representation.**
-On the algebraic side, $4_1$ has a completely rigorous motivic
+On the algebraic side, $4_1$ has a rigorous motivic
 representation via its Hecke normal form. The
 [algebraic quantum volume](#def:algebraic-quantum-volume) of $4_1$
 is a finite product of Laurent polynomials,
@@ -28,7 +28,7 @@ $$
   \;=\;
   \prod_{i=0}^{2} \hat{V}_i(q)
   \;\in\;
-  \mathbb{Z}[q^{± 1/2}],
+  \mathbb{Z}[q^{\pm 1/2}],
 $$
 
 with the $\hat{V}_i(q)$ explicitly determined by the four-strand
@@ -36,7 +36,7 @@ braid word above (cf.
 [`thm:markov-trace-factorization`](#thm:markov-trace-factorization)).
 At this level no $\pi$, no $\zeta$-values, no real-analytic
 transcendentals appear: the entire object is a Laurent polynomial
-in $q^{± 1/2}$ and lives strictly in the substrate ring $R$.
+in $q^{\pm 1/2}$ and lives strictly in the substrate ring $R$.
 
 **Archimedean (laboratory) image.**
 Apply the archimedean realization functor $\tau_{\text{arch}} =
@@ -77,7 +77,7 @@ measurement. Both pictures are needed:
 
 | Side | Object for $4_1$ | Lives in | Role |
 |---|---|---|---|
-| Pre-archimedean | $\mathrm{Vol}_q(4_1) = \prod_i \hat{V}_i(q)$ | $\mathbb{Z}[q^{± 1/2}]$ | Exact algebraic identities, mass-formula state sum, Hecke trace |
+| Pre-archimedean | $\mathrm{Vol}_q(4_1) = \prod_i \hat{V}_i(q)$ | $\mathbb{Z}[q^{\pm 1/2}]$ | Exact algebraic identities, mass-formula state sum, Hecke trace |
 | Archimedean | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | $\mathbb{R}$ (transcendental) | Laboratory mass-scale, Higgs-like amphichiral mechanism |
 
 The bridge between the two columns is uniquely determined by

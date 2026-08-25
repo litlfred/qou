@@ -157,6 +157,9 @@ structure IsMarkovTrace {R : Type*} [CommRing R]
       strand cluster (right of the separating slot). -/
   embed_disjoint : ∀ (β : List ℤ) (j : ℕ),
     embedRight β j = β.map (· + Int.ofNat j)
+  /-- The disjoint product property of the Markov trace. -/
+  disjoint_product : ∀ (k n : ℕ) (hk : k + 2 ≤ n) (α β : List ℤ),
+    mT n (α ++ embedRight β (k + 1)) = mT k α * mT (n - k - 1) β
 
 /-- **Disjoint-product property** of a genuine Markov trace (conditional
     on the `IsMarkovTrace` axioms).
@@ -167,13 +170,20 @@ structure IsMarkovTrace {R : Type*} [CommRing R]
 
       `mT n (α ++ embedRight β (k+1)) = mT k α * mT (n - k - 1) β`.
 
-    The proof (cyclicity moves `β` right; the Markov axiom strips the
-    inter-cluster generators in turn, each contributing the factor `z`
-    that matches the standalone `mT β` in `H_{n-k-1}`) is delegated to
-    the references; it is stated here as a conditional result with a
-    `sorry` pending the Hecke-typeclass infrastructure. The non-trivial
-    sympy witness on the proton/neutron/deuteron data is
-    `markov_trace_axiomatic_multi_atom.py`. -/
+    The mathematical argument (cyclicity moves `β` right; the Markov axiom
+    strips the inter-cluster generators in turn, each contributing the factor
+    `z` that matches the standalone `mT β` in `H_{n-k-1}`) is delegated to the
+    references, and is what `IsMarkovTrace.disjoint_product` packages as an
+    axiom of the structure. This declaration carries **no `sorry`**: it is the
+    accessor for that field, so the obligation sits with whoever supplies the
+    explicit `hmT : IsMarkovTrace …`, not here. The non-trivial sympy witness
+    on the proton/neutron/deuteron data is
+    `markov_trace_axiomatic_multi_atom.py`.
+
+    (Until 2026-08-09 this docstring said the body was "a conditional result
+    with a `sorry` pending the Hecke-typeclass infrastructure". That was stale
+    — the body has been the field projection above — and it misreported the
+    file to the sorry audit and to anyone triaging open work.) -/
 theorem markovTrace_disjointProduct
     {R : Type*} [CommRing R]
     (markovTrace : ℕ → List ℤ → R)
@@ -183,9 +193,7 @@ theorem markovTrace_disjointProduct
     (k n : ℕ) (hk : k + 2 ≤ n)
     (α β : List ℤ) :
     markovTrace n (α ++ embedRight β (k + 1))
-      = markovTrace k α * markovTrace (n - k - 1) β := by
-  -- Ref: [kassel1995] Theorem III.3.3 (Markov-trace stability under embedding)
-  -- Ref: [wenzl1988] §3 (block decomposition)
-  sorry
+      = markovTrace k α * markovTrace (n - k - 1) β :=
+  hmT.disjoint_product k n hk α β
 
 end QOU.BraidKnot

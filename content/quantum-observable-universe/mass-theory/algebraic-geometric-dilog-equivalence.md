@@ -1,10 +1,8 @@
-> **SUPERSEDED-$\rho_q$ note .** Any use of the
-> scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the
-> structurally-wrong leading-order ansatz per
-> [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md);
+> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used
+> below is the structurally-wrong leading-order ansatz; the operator-valued
+> form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md));
 > the canonical replacement is the operator-valued $A^\lambda_{\mu, \nu}(I)$
 > graded expansion [`prop:rho-k-graded-expansion`](rho-k-graded-expansion.md).
-> Full purge tracking: [`docs/audits/-superseded-rho-q-purge.md`](../../../docs/audits/-superseded-rho-q-purge.md).
 
 **Conjecture (Algebraic-geometric dilogarithm equivalence).**
 *The categorical Markov trace of the nonabelian multiplicative integral
@@ -77,13 +75,13 @@ denominator**:
 The bijection between the rows is the content of
 ([shared-denominator cusp holonomy](#conj:shared-denominator-cusp-holonomy)).
 Under that bijection, the algebraic state sum and the hyperbolic
-volume are not two competing engines: they are the same regulator
+volume are the same regulator
 $\Phi_n(x; q_0) \mapsto D(z(x))$ evaluated through two convergence
 schemes.
 
 ## Conjectural standing
 
-This block is downstream of
+This result is downstream of
 ([Kashaev volume conjecture](#conj:kashaev-volume-conjecture)) and
 ([Archimedean limit](#conj:dilogarithm-archimedean-limit)), so it is
 necessarily a **conjecture** — propagation of conjectural backing
@@ -103,7 +101,7 @@ The class asserts nothing provable-outright; no instance is fabricated. This
 matches the conjectural-class pattern used for
 [Φ$_q$-tower JSJ bridge](#rem:phi-q-tower-jsj-bridge).
 
-## The bar-odd keystone: argument identification to $S$
+## The bar-odd open item: argument identification to $S$
 
 The equivalence above is the **bar-even** face of the correspondence:
 the asymptotic recovers the real volume $D(z) = \mathrm{Vol}_{\mathrm{hyp}}$,
@@ -111,7 +109,7 @@ which for the amphichiral $4_1$ supplies the $-\mathrm{Vol}(4_1)$ part of
 the $Q_\beta$ coefficient $c_3$. Its **bar-odd** companion is the
 anchor-dependent leak $S = c_3 + \mathrm{Vol}(4_1)$, carried not by the
 compact $\Phi_q$ but by the Faddeev non-compact $\Phi_b$
-(modular double). The keystone open item is the
+(modular double). The open item is the
 **argument-identification map**: the structural map $q_0 \mapsto z(q_0)$
 — the substrate-to-meridian-holonomy map supplied by the same
 pole-to-cusp matching as items 1–2 — such that the fibre-branch Faddeev
@@ -136,13 +134,22 @@ consequences are derived unconditionally from the class:
    a $\sigma$-unitary
    ([unitary phases are bar-odd](#prop:phi-b-unitary-bar-odd)).
 
-2. (**Zero crossing.**) The measured sign flip
-   $S(\text{muon}) \approx +0.00968 > 0 > S(\text{proton}) \approx
-   -0.03946$, together with continuity of $S$ on $q_0 > 1$, forces by
-   the intermediate value theorem a substrate $q^{*}$ between the
-   anchors where $S(q^{*}) = 0$: there $c_3 = -\mathrm{Vol}(4_1)$
-   exactly and the $\Phi_b$ readout is $1$ — the bar-odd leak switches
-   off (Lean: `exists_zero_crossing`, `exists_pure_bar_even`).
+2. (**Zero crossing — conditional on a sign flip the data does not
+   establish.**) *If* $S$ changes sign between the anchors, continuity of
+   $S$ on $q_0 > 1$ forces by the intermediate value theorem a substrate
+   $q^{*}$ where $S(q^{*}) = 0$: there $c_3 = -\mathrm{Vol}(4_1)$ and the
+   $\Phi_b$ readout is $1$ (Lean: `exists_zero_crossing`,
+   `exists_pure_bar_even`, which take the flip as an explicit hypothesis).
+   The premise is **not established by the data**: each anchor value
+   $S(\text{muon}) \approx +0.00968$, $S(\text{proton}) \approx -0.03946$
+   carries a CAL-3 propagated uncertainty of $\pm 1.26$ (130× / 32× the
+   value); only the swing $S(\text{muon}) - S(\text{proton})$ is resolved,
+   and it is the cross-anchor $c_3$ difference with $\mathrm{Vol}(4_1)$
+   cancelled. So the zero-crossing is a conditional structural statement,
+   not an established prediction. (The onward identification of this
+   $S$-channel with the resurgent monodromy datum $A_\omega$ has no
+   literature support and is not derivable; recorded in
+   `docs/audits/2026-08-14-aomega-to-S-bridge-refuted-O2-negative.md`.)
 
 ## The fibre branch ($\lvert q \rvert = 1$, real $b$) and construction status
 
@@ -173,7 +180,7 @@ $[1, \infty)$) are discharged from Mathlib, not carried. The
 **definition-to-contour identity** — that the real-integral `phiB`
 equals the Faddeev contour integral — remains a numerical pin
 ($8 \times 10^{-29}$ against the validated contour evaluator) and is
-assumed nowhere in the Lean; its honest §3b carrier is
+assumed nowhere in the Lean; its honest carrier is
 `QOU.MathlibExt.PhiBFibreExtension` (the constructed `phiB` extends to a
 full Faddeev $\Phi_b$; no instance).
 
@@ -185,11 +192,11 @@ $\mathfrak{Q}_\beta = \mathrm{Im}\,\mathfrak{V}$ — and with it any
 on the complex-volume unification
 ([binding–$Q_\beta$ complex volume](#conj:binding-qbeta-complex-volume)).
 $\Phi_b$ touches binding **only** through that unproven channel
-identity; no statement in this block or in the Lean carriers above
+identity; no statement here or in the Lean carriers above
 assumes it. The channel is carried explicitly as the class
 `SDeformedVolumeChannel` ($u(q_0)$ map + deformed volume + the identity
 $S = \mathrm{Im}\,\mathfrak{V}(u(q_0))$), and the composition with the
-keystone is derived, not assumed: `phase_eq_im_deformed_volume`,
+argument-identification map is derived, not assumed: `phase_eq_im_deformed_volume`,
 `phiB_eq_cs_phase`, and `exists_cs_vanishing` (the sign flip of $S$
 forces a substrate point with vanishing deformed Chern–Simons part).
 

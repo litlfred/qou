@@ -1,0 +1,19 @@
+{
+  "note": "Known float64-padded witness fields. Regenerate ONLY when draining; the count must go DOWN. Not a way to silence a new failure. Fix at the producer, never by hand-editing.",
+  "count": 13,
+  "padded_keys": [
+    "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json::parameters.m_e_MeV",
+    "computations/_deprecated/beta-decay-residue-sum-h3-probe.witness.json::data.Q_beta_codata_MeV",
+    "computations/_deprecated/beta-decay-residue-sum-h3-probe.witness.json::data.m_e_MeV",
+    "computations/_deprecated/cross-check-trM-1ppb.witness.json::deltas[0].markov_peel",
+    "computations/_deprecated/cross-check-trM-1ppb.witness.json::deltas[1].markov_peel",
+    "computations/_deprecated/cross-check-trM-1ppb.witness.json::deltas[2].markov_peel",
+    "computations/_deprecated/cross-check-trM-1ppb.witness.json::deltas[3].markov_peel",
+    "computations/_deprecated/cross-check-trM-1ppb.witness.json::deltas[4].markov_peel",
+    "computations/_deprecated/cross-check-trM-1ppb.witness.json::tolerance_relative",
+    "computations/_deprecated/m-n-difference-formula.witness.json::data.delta_m_codata_MeV",
+    "computations/_deprecated/m-n-difference-formula.witness.json::data.m_n_predicted_MeV",
+    "computations/_deprecated/term6-habiro-residue-mpfr-50dps.witness.json::m_e_mev_50dps",
+    "computations/audits/hardcoded-literal-audit.witness.json::data.rows[26].hits[4].literal"
+  ]
+}

@@ -3,8 +3,18 @@ import sys
 from pathlib import Path
 import math
 import mpmath as mp
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+# `mp` here is the mpmath MODULE, so `mp.dps = 50` only sets a stray attribute
+# on it and leaves the working context at mpmath's default 15. Precision lives
+# on the context, `mpmath.mp` — hence `mp.mp.dps` under this import alias (the
+# same form rho_k_co_casimir_extended.py uses).
+#
+# The no-op form was silently in effect: every value below was computed at ~53
+# bits and then written with `mp.nstr(..., 40)`, so the witness claimed 40
+# digits and carried 16. That is the padding this file was flagged for.
+set_compute_dps()
 
 def compute_bring_homology_pairing():
     # Target value

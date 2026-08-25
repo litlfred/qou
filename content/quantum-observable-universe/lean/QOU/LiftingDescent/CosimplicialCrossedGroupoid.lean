@@ -2,6 +2,7 @@ import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.Group.Basic
+import QOU.Torsion.YekutieliTriple
 
 /-!
 # QOU.LiftingDescent.CosimplicialCrossedGroupoid
@@ -37,14 +38,17 @@ def q_inv_param : R_q := LaurentPolynomial.T (-1)
 
 /-- A Yekutieli triple at level `n` over a manifold `M`:
     the datum `(x, g, a)` of local trivialisations, transition
-    automorphisms, and deformation parameters. -/
+    automorphisms, and deformation parameters.
+
+    **De-duplicated (bean `qou-s82c`).** This module used to declare its own
+    copy of this structure, byte-identical to `QOU.Torsion.YekutieliTriple`
+    except for the coefficient ring. It is now that structure instantiated at
+    this module's ground ring `R_q = ℤ[q, q⁻¹]` — one definition, two rings,
+    instead of two definitions that could drift apart. The generic structure
+    asks only for `[Zero R]` precisely so a `CommRing` without total inverses
+    can instantiate it. -/
 -- Ref: [yekutieli2010] §3
-structure YekutieliTriple (M : Type*) where
-  level : ℕ
-  objects : M → M
-  oneMorphisms : M → R_q
-  twoMorphisms : M → R_q
-  twoMorphisms_ne_zero : ∀ (p : M), twoMorphisms p ≠ 0
+abbrev YekutieliTriple (M : Type*) := QOU.Torsion.YekutieliTriple R_q M
 
 /-- A crossed module in the sense of Yekutieli [yekutieli2010]:
     a pair of (possibly non-abelian) groups `N`, `G`, a boundary

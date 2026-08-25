@@ -10,14 +10,14 @@ This is the precise sense in which the $q$-dilogarithm is **forced by the rigid-
 
 ## Two guises of the one pentagon
 
-The same Mac Lane coherence already appears in the corpus in two formalized guises, which this proposition records as one law:
+The same Mac Lane coherence has already appeared above in two formalized guises, which this proposition records as one law:
 
 - **Cochain / 3-cocycle guise.** The additive twist associator $\alpha = dF$ satisfies the pentagon automatically because $d^2 = 0$ (`QOU.BringsSurface.PentagonTwist.assoc_pentagon`, sorry-free).
 - **Dilogarithm five-term guise.** The `pentagon` field of the $q$-dilogarithm datum, whose operator form is the Faddeev–Kashaev pentagon $\Phi(\mathsf P)\Phi(\mathsf Q) = \Phi(\mathsf Q)\Phi(\mathsf P+\mathsf Q)\Phi(\mathsf P)$ ([`rem:q-dilogarithm-pentagon-associator`](q-dilogarithm-pentagon-associator.md)).
 
 ## Lean structure
 
-[`QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog`](../lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean) proves the biconditional over a generic carrier (`[Add H]`; §7c — categorical content, no archimedean construct), **sorry-free and axiom-free** (`#print axioms` reports no dependency). The forward direction packages the witness; the reverse reads the datum's five-term field — a genuine equivalence, not a self-assuming projection.
+[`QOU.QuantumObservableUniverses.DilogPentagonAssociator.pentagon_iff_isDilog`](../lean/QOU/QuantumObservableUniverses/DilogPentagonAssociator.lean) proves the biconditional over a generic carrier (`[Add H]`; categorical content, no archimedean construct), **sorry-free and axiom-free** (`#print axioms` reports no dependency). The forward direction packages the witness; the reverse reads the datum's five-term field — a genuine equivalence, not a self-assuming projection.
 
 ## Scope boundary
 

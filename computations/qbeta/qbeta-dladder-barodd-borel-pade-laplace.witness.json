@@ -52,7 +52,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "W9 (bean qou-dri7) — Borel–Padé[m/m] + Laplace resummation of the exact bar-odd Q_β D-ladder D(ũ)=Σ d_k ũ^k to a VALUE at the real substrate ũ₀, the odd-ladder analogue of the even-κ-tower Borel–Padé probe. (A) direct optimal-truncation value S_opt + least-term δ_np at edge N* (anchor-blind, corpus fibre audit); (B) classical Borel–Padé Laplace reproduces S_opt (residual + order-spread reported), nearest Borel pole on/off ℝ⁺ = Stokes-ambiguous/summable, pole |ζ*| DRIFTS with order ⇒ no single classical instanton action (matches the odd-channel s-scan negative); (C) theta-kernel q-Borel coefficient class; (D) 1ppQ verdict — value precise at substrate but anchor-blind (Stokes datum is fibre-borne, |ũ|≳0.19); (E) |Im(h₀·D)|≈0 on the meridian. No c_k wired; no fit; nothing to production; scope-(a).",
+  "description": "W9 (bean qou-dri7) \u2014 Borel\u2013Pad\u00e9[m/m] + Laplace resummation of the exact bar-odd Q_\u03b2 D-ladder D(\u0169)=\u03a3 d_k \u0169^k to a VALUE at the real substrate \u0169\u2080, the odd-ladder analogue of the even-\u03ba-tower Borel\u2013Pad\u00e9 probe. (A) direct optimal-truncation value S_opt + least-term \u03b4_np at edge N* (anchor-blind, corpus fibre audit); (B) classical Borel\u2013Pad\u00e9 Laplace reproduces S_opt (residual + order-spread reported), nearest Borel pole on/off \u211d\u207a = Stokes-ambiguous/summable, pole |\u03b6*| DRIFTS with order \u21d2 no single classical instanton action (matches the odd-channel s-scan negative); (C) theta-kernel q-Borel coefficient class; (D) 1ppQ verdict \u2014 value precise at substrate but anchor-blind (Stokes datum is fibre-borne, |\u0169|\u22730.19); (E) |Im(h\u2080\u00b7D)|\u22480 on the meridian. No c_k wired; no fit; nothing to production; scope-(a).",
   "data": {
     "q0": "1.10997859555733471989976322048",
     "n_terms": 21,
@@ -102,7 +102,7 @@
     "nearest_pole_abs_spread_across_order": "0.6473915049",
     "classical_pade_poles_drift_froissart_spurious": true,
     "genuine_onaxis_stokes_obstruction": false,
-    "stokes_ambiguity_is_delta_np_exp_minus_A_over_u": "the real-axis Stokes ambiguity is δ_np≈exp(−A/ũ₀), exp-suppressed at the substrate (anchor-blind) and O(1) only on the fibre |ũ|≳0.19; the drifting classical Padé poles are Froissart-spurious, not it.",
+    "stokes_ambiguity_is_delta_np_exp_minus_A_over_u": "the real-axis Stokes ambiguity is \u03b4_np\u2248exp(\u2212A/\u0169\u2080), exp-suppressed at the substrate (anchor-blind) and O(1) only on the fibre |\u0169|\u22730.19; the drifting classical Pad\u00e9 poles are Froissart-spurious, not it.",
     "value_reproduced_by_borel_laplace": true,
     "qborel_theta_kernel": {
       "coeff_root_lo": "3.7386615",
@@ -111,12 +111,15 @@
     },
     "one_ppq_met_at_accessible_order": false,
     "Im_h0_D": "0.0",
-    "verdict": "Bar-odd D-ladder Borel–Padé+Laplace at the real substrate ũ₀=0.00945395: [A] direct optimal-truncation value S_opt=-0.0166749175685 with least term at index N*=21=edge (anchor-blind), δ_np=4.918e-27 (≪1ppQ but anchor-blind — Stokes datum is fibre-borne, corpus 2026-07-18). [B] classical Borel–Padé Laplace REPRODUCES S_opt to resid 7.448e-14 (order-convergent 3e-6→7e-14 over m=2..5) ⇒ the value exists and is essentially unambiguous at the substrate. Nearest Padé poles land near ℝ⁺ but |ζ*| DRIFTS 0.647 across order ⇒ Froissart-spurious, no single classical instanton action (matches the odd-channel s-scan negative); the genuine Stokes ambiguity is δ_np=exp(−A/ũ₀)≈4.92e-27, real-axis but exp-suppressed here. [C] theta-kernel q-Borel over-suppresses to entire ⇒ neither classical (spurious poles) nor naive theta (entire) kernel isolates the action; the two-critical-time accelerator is needed (corpus). [D] value pinned to ≫1ppQ by optimal truncation (δ_np≈4.92e-27); Borel–Padé cross-check confirms to ~13 digits — but ANCHOR-BLIND. [E] |Im(h₀·D)|=0.0≈0 on the meridian. No c_k wired; no fit; scope-(a).",
-    "scope": "(a) — resummation of exact ℚ(√3) ladder to a value; no wiring, no fit",
+    "verdict": "Bar-odd D-ladder Borel\u2013Pad\u00e9+Laplace at the real substrate \u0169\u2080=0.00945395: [A] direct optimal-truncation value S_opt=-0.0166749175685 with least term at index N*=21=edge (anchor-blind), \u03b4_np=4.918e-27 (\u226a1ppQ but anchor-blind \u2014 Stokes datum is fibre-borne, corpus 2026-07-18). [B] classical Borel\u2013Pad\u00e9 Laplace REPRODUCES S_opt to resid 7.448e-14 (order-convergent 3e-6\u21927e-14 over m=2..5) \u21d2 the value exists and is essentially unambiguous at the substrate. Nearest Pad\u00e9 poles land near \u211d\u207a but |\u03b6*| DRIFTS 0.647 across order \u21d2 Froissart-spurious, no single classical instanton action (matches the odd-channel s-scan negative); the genuine Stokes ambiguity is \u03b4_np=exp(\u2212A/\u0169\u2080)\u22484.92e-27, real-axis but exp-suppressed here. [C] theta-kernel q-Borel over-suppresses to entire \u21d2 neither classical (spurious poles) nor naive theta (entire) kernel isolates the action; the two-critical-time accelerator is needed (corpus). [D] value pinned to \u226b1ppQ by optimal truncation (\u03b4_np\u22484.92e-27); Borel\u2013Pad\u00e9 cross-check confirms to ~13 digits \u2014 but ANCHOR-BLIND. [E] |Im(h\u2080\u00b7D)|=0.0\u22480 on the meridian. No c_k wired; no fit; scope-(a).",
+    "scope": "(a) \u2014 resummation of exact \u211a(\u221a3) ladder to a value; no wiring, no fit",
     "caveats": [
-      "At the real substrate meridian the least term sits at the ladder edge (N*=KMAX), so δ_np is a lower bound and the value is ANCHOR-BLIND: the physical Stokes datum (c₃ swing / A_ω) lives on the fibre branch |ũ|≳0.19 (docs/audits/2026-07-18-dladder-fibre-branch-stokes-ambiguity.md), NOT here.",
-      "Classical Borel–Padé poles are partly Froissart/spurious for a sub-factorial (q-Gevrey C≈0.06) series; the |ζ*| drift across order confirms there is no single classical instanton action — the genuine action needs the theta-kernel q-Borel / two-critical-time accelerator (corpus).",
-      "Anti-fit: the Laplace contour (ℝ⁺ for real ũ₀>0) and the Padé order are fixed by the singularity structure, never tuned to a target. No c_k wired."
+      "At the real substrate meridian the least term sits at the ladder edge (N*=KMAX), so \u03b4_np is a lower bound and the value is ANCHOR-BLIND: the physical Stokes datum (c\u2083 swing / A_\u03c9) lives on the fibre branch |\u0169|\u22730.19 (docs/audits/2026-07-18-dladder-fibre-branch-stokes-ambiguity.md), NOT here.",
+      "Classical Borel\u2013Pad\u00e9 poles are partly Froissart/spurious for a sub-factorial (q-Gevrey C\u22480.06) series; the |\u03b6*| drift across order confirms there is no single classical instanton action \u2014 the genuine action needs the theta-kernel q-Borel / two-critical-time accelerator (corpus).",
+      "Anti-fit: the Laplace contour (\u211d\u207a for real \u0169\u2080>0) and the Pad\u00e9 order are fixed by the singularity structure, never tuned to a target. No c_k wired."
     ]
-  }
+  },
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471989976322048",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

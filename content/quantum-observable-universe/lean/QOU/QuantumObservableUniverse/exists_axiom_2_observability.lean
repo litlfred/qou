@@ -1,3 +1,4 @@
+import Mathlib.Data.Nat.Notation
 
 /-!
 # QOU.QuantumObservableUniverse.exists_axiom_2_observability

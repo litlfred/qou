@@ -19,6 +19,7 @@ from pathlib import Path as _Path  # noqa: E402
 _sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
+from _precision import set_compute_dps  # noqa: E402
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
 import sys
@@ -138,14 +139,13 @@ def main():
 
     # Numerically at q₀:
     import mpmath as mp
-    mp.mp.dps = 50
+    set_compute_dps()
 
     try:
         from q_parameter import Q_50_DIGIT_STR, vol_4_1_at
     except ImportError:
         from qou_substrate.constants import Q_50_DIGIT_STR, vol_4_1_at
 
-    from _precision import set_compute_dps
     set_compute_dps()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
@@ -181,8 +181,9 @@ def main():
     # a clean function of q. The (Vol/ℏ²) part involves Vol(4₁) which
     # is transcendental. Unless the transcendental part cancels...
 
-    # Actually, Vol(4₁)/ℏ² = 2Λ(π/3) / ((q-1)/q)² where Λ is the
-    # Lobachevsky function. This is a CONSTANT (specific number ≈ 206.77)
+    # Actually, Vol(4₁)/ℏ² = 2·Cl₂(π/3) / ((q-1)/q)² where Cl₂ is the
+    # Clausen function (= 6Λ(π/3), Λ the Lobachevsky function).
+    # This is a CONSTANT (specific number ≈ 206.77)
     # at q = q₀. So R_alg varies with q but Vol/ℏ² also varies
     # (through ℏ²), so S = R_alg × ℏ²/Vol is genuinely a function of q.
 

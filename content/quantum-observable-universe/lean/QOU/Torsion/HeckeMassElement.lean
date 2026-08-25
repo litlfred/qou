@@ -77,7 +77,7 @@ structure HeckeMassElement (R : Type u) [CommRing R] where
     pairing is supplied by the caller.  Valued in `R` (no Archimedean
     norm). -/
 -- Ref: [manuscript] §4/hecke-mass-element
-def HeckeMassElement.frobeniusMassSquared
+def frobeniusMassSquared
     {R : Type u} [CommRing R] (frobenius_form : R → R → R)
     (Φ : HeckeMassElement R) : R :=
   frobenius_form Φ.massElement Φ.massElement
@@ -99,10 +99,10 @@ noncomputable def HeckeMassElement.mass
 /-- The mass decomposes via the triangle inequality, with equality
     when descended and transient components are non-negative reals. -/
 -- Ref: [manuscript] §4/hecke-mass-element
-theorem HeckeMassElement.mass_upper_bound {R : Type u} [NormedCommRing R]
+theorem mass_upper_bound {R : Type u} [NormedCommRing R]
     (Φ : HeckeMassElement R) :
     Φ.mass ≤ ‖Φ.descendedComponent‖ + ‖Φ.transientComponent‖ := by
-  unfold mass
+  unfold HeckeMassElement.mass
   rw [Φ.decomposition]
   exact norm_add_le Φ.descendedComponent Φ.transientComponent
 
@@ -111,12 +111,12 @@ theorem HeckeMassElement.mass_upper_bound {R : Type u} [NormedCommRing R]
 -- Ref: [kassel1995] Ch. X (Hecke algebras and Markov trace)
 --      — Kassel, "Quantum Groups," Springer GTM 155, 1995.
 --      DOI: 10.1007/978-1-4612-0783-2
-theorem HeckeMassElement.mass_exact
+theorem mass_exact
     (Φ : HeckeMassElement ℝ)
     (h_desc : 0 ≤ Φ.descendedComponent)
     (h_trans : 0 ≤ Φ.transientComponent) :
     Φ.mass = ‖Φ.descendedComponent‖ + ‖Φ.transientComponent‖ := by
-  unfold mass
+  unfold HeckeMassElement.mass
   rw [Φ.decomposition,
       Real.norm_of_nonneg (add_nonneg h_desc h_trans),
       Real.norm_of_nonneg h_desc,

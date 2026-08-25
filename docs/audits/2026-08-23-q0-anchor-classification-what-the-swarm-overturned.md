@@ -1,0 +1,226 @@
+# q₀ anchor classification: the swarm overturned my own method at 37 %
+
+**Date:** 2026-08-23
+**Bean:** `qou-qflp`
+**Supersedes:** the 2026-08-19 draft of this doc, whose central number was wrong.
+
+## Nothing here is the #5324 fix — main landed that independently
+
+Before anything else: the diagnosis, the reference restore, and the guard that
+PR #5324 carried are **all on `main` already**, landed by a sibling while this
+branch was open:
+
+| commit | what |
+|---|---|
+| `2e4745448` | restore the muon anchor — the repin sweep overwrote its own definition |
+| `7ddaeab36` | the 262 Q0_FLIPs are ONE corrupted anchor definition (bean `qou-cezp`) |
+| `31d1bdf6e` | a producer-declared **`comparison`** anchor — the one label the audit can verify |
+
+So #5324's fix is redundant and this branch was rebuilt on `main` carrying only
+what is additive. This is the sanctioned parallel-research overlap working as
+intended — two agents reached the same diagnosis from different contexts, and
+the convergence step is to drop the duplicate, not to defend it.
+
+`31d1bdf6e` is a direct answer to a finding below: the witnesses that read
+**both** pins deliberately now have a label of their own rather than needing an
+exclusion list.
+
+## The headline: a swarm measured my classifier, and each fix is quantified
+
+I built a mechanical classifier for the ~1900 anchor-missing witnesses — AST
+import-cone reachability at depth ≤ 3 over the repo's own
+`q0_producer_pin_classifier.classify()`. It reported **722 of 889** producers as
+reaching no q₀ at all, i.e. candidates for `q0Anchor: "independent"`.
+
+Thirteen read-only agents then adjudicated the same producers by reading them.
+**887 of 889 adjudicated**; ground truth is **460 independent**, 420
+q₀-dependent, 7 undetermined.
+
+Scored against that, with each fix made this session added in turn:
+
+| method | proposes independent | **false** | rate | true-indep excluded |
+|---|---|---|---|---|
+| **A** import-cone, as first reported | 720 | 285 | **39.6 %** | 32 |
+| **B** + proton-literal + artifact-resolution | 588 | 159 | **27.0 %** | 38 |
+| **C** + witness-read data-flow detector | 495 | 82 | **16.6 %** | 52 |
+| **D** + float-literal + truncated-pin | 462 | **65** | **14.1 %** | 68 |
+
+**77 % of the false `independent` calls removed**, and the false direction is
+the dangerous one: it lets a migration skip a q₀-dependent witness silently,
+leaving a stale pin presented as pin-agnostic. The cost is 20 more genuinely
+independent producers wrongly excluded (32 → 52) — the safe direction, and the
+trade is worth taking.
+
+Two numbers not to lose:
+
+- **The 722 was wrong and remains wrong.** Do not quote it. Method D's 462 is
+  the current best mechanical proposal, still carrying 65 known-false members.
+  Its size lands within 2 of the 460 genuine independents, which is a
+  coincidence of composition (65 false in, 68 true out) and not a sign of
+  convergence — do not read the closeness as accuracy.
+- **An earlier report of this said 37 %, extrapolated from a 443-producer
+  sample.** The completed measurement is **39.6 %** — the extrapolation held and
+  slightly understated. Recorded because the extrapolation *could* have been
+  wrong and the only way to know was to finish.
+
+### Why each fix bought what it did
+
+The routes of the 285 false calls, and what remains after C:
+
+| route | in A | in C | what it is |
+|---|---|---|---|
+| **d** | 136 | 41 | a q₀ literal in the producer's own file |
+| **b** | 97 | 26 | reads a q₀-bearing witness **by file path** |
+| f | 14 | 9 | indirect import |
+| a, e | 6 | 6 | accessor / caller-supplied |
+
+Route **b** is the structural lesson and the reason method C exists: **an import
+graph is the wrong shape for this question.** A producer that opens
+`chi-proton-h3-at-q0-50dps.witness.json` and reads a number out of it is exactly
+as q₀-dependent as one calling `q_at()`, and no depth on the import cone reaches
+it. Route **d** shrank because `classify()` had no proton branch at all (below).
+
+## A real defect in shared infra: `classify()` never looked for a proton literal
+
+Chasing route **d** found this, and it is live on `main` today.
+[`q0_producer_pin_classifier.py:149`](../../computations/audits/q0_producer_pin_classifier.py)
+tested `s.startswith("1.10997859555")` — **muon only**. There was no proton
+branch at all. So:
+
+```python
+Q_P = mp.mpf("1.109978582751380808")     # computations/alpha_em_two_loop_structure_probe.py:63
+```
+
+classified as `none`, which that module's own docstring defines as *"no numeric
+q₀ reached at all (purely symbolic producer)"*. It is not symbolic. It is
+pinned, in the most literal way the language offers.
+
+**Measured on the 2026-08-23 tree:** 137 producers carry a *live* proton literal
+(non-comment, outside `__main__`, AST-confirmed). `classify()` called **53 of
+them `none`.** Those 53 were invisible to the manifest-proposal path and stayed
+`UNDETERMINED` — the same gap that let the 30.4 ppb `qbeta-ck-cache` mislabel
+survive, one pin over.
+
+Fixed here by a symmetric proton branch. Effect on the classifier's own reported
+population of 112:
+
+| | before | after |
+|---|---|---|
+| proton | 37 | **42** |
+| muon | 28 | 25 |
+| none | 25 | **20** |
+| BOTH | 21 | 24 |
+| *muon disagreements* | 7 | **5** |
+
+Safe by construction: the extra evidence can only turn `none` into `proton`, or
+`muon` into `BOTH`. It cannot manufacture an `ideal_muon` entry, which is the
+only behaviourally live direction (`physical_proton` is inert — anything not
+under `ideal_muon` already resolves to proton).
+
+## The cheap question, corrected twice
+
+Separate from what producers *do*: what do the witnesses already *say*?
+[`q0_anchor_payload_recovery.py`](../../computations/audits/q0_anchor_payload_recovery.py)
+scans the payloads for either pin.
+
+| payload carries | count |
+|---|---|
+| no pin string at all | 1558 |
+| **proton** | **147** |
+| **muon** | **179** |
+| **both** → `comparison` | **40** |
+
+**326 of 1924 need no producer analysis and no re-run** — the q₀ is sitting in
+their own payload, recorded under an ad-hoc key: `q_0_50dps` (89), `q0` (81),
+`q_0` (44), `q_proton` (29), `q_muon` (21), `q` (15), and more. The field was
+never missing; the **name** was never agreed. The 40 carrying both are
+`31d1bdf6e`'s new `comparison` anchor, exactly.
+
+Two corrections to my own figures on the way here, both worth recording because
+they are opposite kinds of error:
+
+1. **Population mismatch (over-count).** The first scan walked every
+   `computations/**/*.witness.json` while quoting the population from the audit
+   that skips `_deprecated` (370) and `AUDIT_SUFFIXES` (59). Two populations,
+   one label.
+2. **Prefix too long (under-count).** The scan then used the 12-digit muon
+   prefix `1.109978595557`. The corpus carries **two** muon values agreeing to
+   11 digits and diverging at the 12th — `…55733471989` (current) and
+   `…55418057528` (superseded), as `q0_muon_population_partition.py` on main
+   documents. The 12-digit prefix silently dropped every witness still on the
+   superseded value: recoverable muon read **93** when it is **179**.
+
+Both are the same failure in different directions — a threshold chosen without
+checking what it separates. Which is, structurally, the same mistake as the
+722: a method whose blind spot was never measured until something else measured
+it.
+
+## What is actually open
+
+- **326** labellable by transcription (a witness mutation; needs the usual
+  sign-off, but no recomputation and no numerical change).
+- **40** are `comparison` — label, do not resolve to one pin.
+- **1558** genuinely need the producer question, and the only method with a
+  measured error rate on it is *reading them*, at ~55 % independent.
+- The swarm covered 443 of 889; **446 were never adjudicated** (8 of 13 agents
+  hit a weekly limit). Re-running them is the obvious next step now the limit
+  has reset.
+
+
+## Two more defects, found by following the residual
+
+Method C left 82 false calls, route **d** (a literal in the producer's own
+file) dominating at 41 — which the proton-literal fix should have closed.
+Reading them found two further defects in the same function:
+
+1. **Float literals were invisible.** `visit_Constant` inspected only
+   `isinstance(n.value, str)`, so `q0 = 1.1099785955573347` written as a bare
+   float reached the `none` verdict.
+   `deltalambda_cyclotomic_sign_map_probe.py:168` is exactly this — and the
+   bare float is *also* a NO-FLOAT64 violation in its own right, independently
+   of the classification question.
+2. **A truncated pin did not match.** The test was one-directional
+   (`s.startswith(PIN)`), but the corpus writes the proton value as
+   `1.10997858275` in **12 places** — a prefix *of* the canonical string rather
+   than the other way round. Matching in both directions, with a minimum length
+   of 9 digits after the point (where the two pins first differ), catches those
+   without letting a coarse `1.10998` match either pin.
+
+Together these move the classifier's own reach on the 889 from `proton: 39` to
+`proton: 85`, and the pipeline from 16.6 % to **14.1 %** false.
+
+### What the last 65 are, and why no scan will get them
+
+The surviving route-**d** cases are **not** producers hardcoding a q₀ at all.
+They hardcode a q₀-**derived** constant:
+
+```python
+TR = {"p": mp.mpf("1.0653062"), "n": mp.mpf("0.9232333")}   # tr_M at q0
+H_Q_SUBSTRATE = 0.0922502          # hbar_q at the proton-pinned q0
+delta_tr_D = mpf("0.5952397103674884")   # a frozen H6 Wedderburn trace difference
+b = mp.mpf('0.86758406730705817865833308252393344606969606677438')  # Hoefsmit b at q0
+```
+
+No q₀ appears anywhere, so no detector keyed on q₀ can find them — yet each
+value is pin-specific and goes silently stale when the pin moves. This is the
+source-code twin of the witness limit recorded above (`atom-chi-rust-*` carrying
+50-dps χ at a pin the file never records), and it is the same conclusion: the
+pin has to be **declared**, because it cannot be recovered.
+
+### And a third, fourth and fifth q₀ value are live in the corpus
+
+Scanning for `1.1097…`/`1.1099…` literals that match **neither** pin found 25
+distinct values, including:
+
+| value | sites | what |
+|---|---|---|
+| `1.10998` | 27 | coarse 5-digit proxy; rounds from both pins |
+| `1.10997859303152` | 12 | neither pin |
+| `1.10997803335532` | 9 | neither pin |
+| `1.1097090249` | 8 | legacy |
+| `1.10970000000` | 3 | coarse legacy |
+
+`q0_muon_population_partition.py` on `main` documents two **muon** values that
+agree to 11 digits. These are a different problem: values that are neither
+muon nor proton, sitting in live code where a pin is expected. Not triaged
+here — recorded because a q₀ audit that knows only two values cannot see them.

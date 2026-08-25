@@ -9,8 +9,8 @@ $$
 The transfer matrix $T(c, d)$ at each crossing has eigenvalues
 
 $$
-  \lambda_{±} = 
-  \frac{\mathrm{tr}T ± \sqrt{(\mathrm{tr}T)^2 - 4\det T}}{2},
+  \lambda_{\pm} = 
+  \frac{\mathrm{tr}T \pm \sqrt{(\mathrm{tr}T)^2 - 4\det T}}{2},
 $$
 
 which are real and opposite in sign because $\det T < 0$ for all three crossing types.
@@ -23,7 +23,7 @@ $$
   \hat{V}_i =  c_+\lambda_+^k +  c_-\lambda_-^k
 $$
 
-where $c_{±}$ depend on $z$ and the crossing coefficients. Since $\lambda_- < 0$, the term $c_- \lambda_-^k$ alternates in sign with $k$.
+where $c_{\pm}$ depend on $z$ and the crossing coefficients. Since $\lambda_- < 0$, the term $c_- \lambda_-^k$ alternates in sign with $k$.
 
 ## The generator bound
 
@@ -86,6 +86,6 @@ The crossover occurs at $A = 5$ for all $q > 1$. The $q$-correction is $O(\varep
 
 **At $q = 1$:** $[k]_1 = k$ and $[2]_1 = 2$, so $(A-1)! > 2^{A-1}$ also crosses at $A = 5$. The bound is topological: it derives from the Iwahori--Hecke algebra dimension $A!$ and does not depend on $q$.
 
-**At $q \to \infty$:** $[k]_q \sim q^{k-1}$, giving $[A\!-\!1]_q! \sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$. The crossover shifts to $(A-1)(A-2)/2 > A-1$, forcing $A > 4$ — the same.
+**At $q \to \infty$:** $[k]_q \sim q^{k-1}$, giving $[A\!-\!1]_q! \sim q^{(A-1)(A-2)/2}$ and $[2]_q^{A-1} \sim q^{A-1}$. The crossover shifts to $(A-1)(A-2)/2 > A-1$, forcing $A > 4$, the same crossover.
 
 **Note.** This bound applies to the alternating $\mathfrak{p} \mathfrak{n}$ filling order. Shell closures ([shell closure](#prop:shell-closure-normal-form)) create stability islands beyond $A_{\max}$: the palindromic Poincaré distribution restores $P > 0$, and successive shell closures at magic numbers $\{2, 8, 20, 28, 50, 82, 126\}$ re-stabilize the Skein polynomial, so the physical nuclear chart extends to $A \sim 300$.

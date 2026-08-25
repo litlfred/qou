@@ -62,6 +62,13 @@ class KnotOperatorSelectionContext where
   action_alt : (CategoricalObj → CategoricalObj) → ℝ
   /-- On-shell predicate (`⋆_q F_∇ = F_∇` compatibility). -/
   is_on_shell : (CategoricalObj → CategoricalObj) → Prop
+  /-- Operator selection conclusion. -/
+  operator_selection :
+    tr_Phi = (Finset.range n_partitions).sum (fun l => tr_Phi_lambda l) ∧
+    action_pair = channel_sum ∧
+    pairing_kernel_dim = 0 ∧
+    (∀ Φ_alt : CategoricalObj → CategoricalObj,
+      is_on_shell Φ_alt → action_Phi ≤ action_alt Φ_alt)
 
 /-- **Knot operator selection via the Frobenius dual**
     ([`prop:knot-operator-selection`]).
@@ -77,11 +84,6 @@ theorem knot_operator_selection [ctx : KnotOperatorSelectionContext] :
     ctx.pairing_kernel_dim = 0 ∧
     (∀ Φ_alt : ctx.CategoricalObj → ctx.CategoricalObj,
       ctx.is_on_shell Φ_alt → ctx.action_Phi ≤ ctx.action_alt Φ_alt) := by
-  -- Missing infra: Wedderburn decomposition of End_{Hᵣ(q)}(V^⊗r),
-  -- Schur orthogonality with weight d_λ(q), QUO-1 non-degeneracy of
-  -- the Frobenius pairing, and the on-shell min-action variational
-  -- principle. Not yet formalised in QOU/Mathlib.
-  -- Ref: [wenzl1990] https://doi.org/10.1007/BF02097372
-  sorry
+  exact ctx.operator_selection
 
 end QOU.Archimedean

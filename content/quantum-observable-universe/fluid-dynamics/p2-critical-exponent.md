@@ -46,4 +46,4 @@ $$
 
 Neither closure is rigorous; the true $\alpha$ is fixed by the actual $q$-Navier--Stokes enstrophy spectrum (the turbulence-closure problem) and is open. The two values bracket it under their respective hypotheses.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs. Generic categorical identities remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

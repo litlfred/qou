@@ -13,8 +13,8 @@ $$
       \cdot \hat{V}_j^{\mathrm{full}}\rvert\bigr),
 $$
 
-*where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter and $\mathrm{Li}_2^q$ is the symmetric q-dilogarithm $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$.*
+*where $z = q^{3}/(q^{2}+1)$ is the Markov parameter (**convention D**) and $\mathrm{Li}_2^q$ is the symmetric q-dilogarithm $\mathrm{Li}_2^q(z) = \sum_{n \geq 1} z^n / (n \cdot [n]_q)$.*
 
 The three sums isolate the three types of blow-up centers in the brane tower. The descended term is the base-level regular-representation trace. The single-generator blow-ups and the pair blow-ups apply the $\mathrm{Li}_2^q$ functional across the generator loci. The weight $z^2$ for pairs strictly follows from the Markov-trace factorization.
 
-The substitution of $\mathrm{Li}_2^q$ for the older $\Phi_q$ Kashaev limit is canonical. The Faddeev $\Phi_q$ form was empirically incompatible with isospin symmetry at $q_0$ and created massive mirror-nucleus pathologies. The literal integration of the $q$-deformed dilogarithm evaluates securely to $\mathrm{Li}_2^q$.
+The substitution of $\mathrm{Li}_2^q$ for the older $\Phi_q$ Kashaev limit is canonical. The Faddeev $\Phi_q$ form was empirically incompatible with isospin symmetry at $q_0$ and created massive mirror-nucleus pathologies. The literal integration of the $q$-deformed dilogarithm evaluates to $\mathrm{Li}_2^q$.

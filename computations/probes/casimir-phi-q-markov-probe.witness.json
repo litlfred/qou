@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:20:28.270547+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:21:43.004846+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "zero_phi_q_markov_q_zeta_within_one_percent",
@@ -15,11 +15,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 55,
+  "durationMs": 97,
   "computation": "casimir-phi-q-markov-probe",
   "scriptFile": "casimir_phi_q_markov_probe.py",
-  "scriptHash": "d740a286b42a",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptHash": "27370c7b7f2d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -29,181 +29,191 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/casimir_phi_q_markov_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/casimir_phi_q_markov_probe.py"
   },
   "description": "Empirical Φ_q / Markov-trace / extended-q-zeta probe for the Casimir-prefactor sub-problem.  Tests Heine and Tsumura-style q-zeta variants, Φ_q evaluations at natural z values (1, q^{1/2}, q^{-1}), Markov-parameter candidates z_M (three convention variants), and mixed combinations.  All candidates × π²/6 geometric multiplier (the same that converts classical ζ(-3) = -1/120 to π²/720).  Counts sub-1% matches and reports best in each family.  A null result reinforces the audit's narrowing of sub-problem 3 (the prefactor is not derivable from any obvious Hecke-/Φ_q-/q-zeta primitive at substrate q_0).",
   "contentBlock": "conj:casimir-epsilon-vacuum",
   "parameters": {
-    "substrate_q": 1.1099785955573347,
+    "substrate_q": 1.1099785827513808,
     "target_pi_sq_720": 0.013707783890401887
   },
   "data": {
     "phi_q_evaluations": {
-      "phi_q_at_1": 901387.4653645926,
-      "phi_q_at_q_half": 4978421.623524402,
-      "phi_q_at_q_inv": 89311.02625813016,
-      "log_phi_q_at_1": 13.711690483400478
+      "phi_q_at_1": 901388.9872309766,
+      "phi_q_at_q_half": 4978430.300538091,
+      "phi_q_at_q_inv": 89311.1676782414,
+      "log_phi_q_at_1": 13.711692171758878
     },
     "markov_parameters": {
-      "z_M_v1": 0.4993203340335613,
-      "z_M_v2": 2.002722364462702,
-      "z_M_v3": 0.49729054500844455
+      "z_M_v1": 0.4993203341836944,
+      "z_M_v2": 2.002722363860533,
+      "z_M_v3": 0.49729054560491553
     },
     "extended_q_zeta": {
-      "heine_zeta_neg3": 2.3960055363644206,
-      "tsumura_style": 26.229597489983995
+      "heine_zeta_neg3": 2.3960058012904475,
+      "tsumura_style": 26.229609119530082
     },
     "geom_multiplied_candidates": [
       {
         "form": "Heine ζ_q(-3)",
-        "raw_value": 2.3960055363644206,
-        "casimir_candidate": 3.9412711311227926,
-        "rel_residue_vs_pi_sq_720": 286.5206643637305
+        "raw_value": 2.3960058012904475,
+        "casimir_candidate": 3.941271566908639,
+        "rel_residue_vs_pi_sq_720": 286.5206961548537
       },
       {
         "form": "Tsumura-style Σ[n]_q³ q^{-7n}",
-        "raw_value": 26.229597489983995,
-        "casimir_candidate": 43.14595847099141,
-        "rel_residue_vs_pi_sq_720": 3146.5516987980795
+        "raw_value": 26.229609119530082,
+        "casimir_candidate": 43.14597760082794,
+        "rel_residue_vs_pi_sq_720": 3146.5530943436097
       },
       {
         "form": "z_M^v1 = 1/[2]_{q^½}",
-        "raw_value": 0.4993203340335613,
-        "casimir_candidate": 0.8213490277218408,
-        "rel_residue_vs_pi_sq_720": 58.91844008402735
+        "raw_value": 0.4993203341836944,
+        "casimir_candidate": 0.8213490279688,
+        "rel_residue_vs_pi_sq_720": 58.918440102043334
       },
       {
         "form": "z_M^v2 = q^½ + q^{-½}",
-        "raw_value": 2.002722364462702,
-        "casimir_candidate": 3.2943462437435285,
-        "rel_residue_vs_pi_sq_720": 239.32668373552423
+        "raw_value": 2.002722363860533,
+        "casimir_candidate": 3.2943462427530004,
+        "rel_residue_vs_pi_sq_720": 239.326683663264
       },
       {
         "form": "z_M^v3 = 1/[2]_q",
-        "raw_value": 0.49729054500844455,
-        "casimir_candidate": 0.8180101586059118,
-        "rel_residue_vs_pi_sq_720": 58.67486540101335
+        "raw_value": 0.49729054560491553,
+        "casimir_candidate": 0.8180101595870671,
+        "rel_residue_vs_pi_sq_720": 58.674865472589865
       },
       {
         "form": "z_M^v1 cubed",
-        "raw_value": 0.124490943129941,
-        "casimir_candidate": 0.20477939336850512,
-        "rel_residue_vs_pi_sq_720": 13.93891317559292
+        "raw_value": 0.12449094324223497,
+        "casimir_candidate": 0.2047793935532213,
+        "rel_residue_vs_pi_sq_720": 13.938913189068197
       },
       {
         "form": "z_M^v3 cubed",
-        "raw_value": 0.1229789005853547,
-        "casimir_candidate": 0.20229218307639124,
-        "rel_residue_vs_pi_sq_720": 13.757468070242563
+        "raw_value": 0.12297890102787275,
+        "casimir_candidate": 0.20229218380430425,
+        "rel_residue_vs_pi_sq_720": 13.75746812334473
       },
       {
         "form": "Φ_q(1)",
-        "raw_value": 901387.4653645926,
-        "casimir_candidate": 1482722.9492081942,
-        "rel_residue_vs_pi_sq_720": 108166494.84375112
+        "raw_value": 901388.9872309766,
+        "casimir_candidate": 1482725.4525780545,
+        "rel_residue_vs_pi_sq_720": 108166677.4677172
       },
       {
         "form": "Φ_q(q^{1/2})",
-        "raw_value": 4978421.623524402,
-        "casimir_candidate": 8189175.327669145,
-        "rel_residue_vs_pi_sq_720": 597410593.8229282
+        "raw_value": 4978430.300538091,
+        "casimir_candidate": 8189189.60078456,
+        "rel_residue_vs_pi_sq_720": 597411635.0645709
       },
       {
         "form": "Φ_q(q^{-1})",
-        "raw_value": 89311.02625813016,
-        "casimir_candidate": 146910.7496371748,
-        "rel_residue_vs_pi_sq_720": 10717322.15097562
+        "raw_value": 89311.1676782414,
+        "casimir_candidate": 146910.98226393352,
+        "rel_residue_vs_pi_sq_720": 10717339.121388968
       },
       {
         "form": "log Φ_q(1)",
-        "raw_value": 13.711690483400478,
-        "casimir_candidate": 22.554826790224073,
-        "rel_residue_vs_pi_sq_720": 1644.4028580080574
+        "raw_value": 13.711692171758878,
+        "casimir_candidate": 22.55482956746232,
+        "rel_residue_vs_pi_sq_720": 1644.4030606110655
       },
       {
         "form": "log Φ_q(q^{1/2})",
-        "raw_value": 15.420623455696377,
-        "casimir_candidate": 25.365908854313794,
-        "rel_residue_vs_pi_sq_720": 1849.4748146835652
+        "raw_value": 15.420625198619494,
+        "casimir_candidate": 25.365911721307402,
+        "rel_residue_vs_pi_sq_720": 1849.4750238343393
       },
       {
         "form": "log Φ_q(q^{-1})",
-        "raw_value": 11.399880233577427,
-        "casimir_candidate": 18.752051354201225,
-        "rel_residue_vs_pi_sq_720": 1366.985628029291
+        "raw_value": 11.399881817032519,
+        "casimir_candidate": 18.75205395888045,
+        "rel_residue_vs_pi_sq_720": 1366.985818043902
       },
       {
         "form": "1/Φ_q(1)",
-        "raw_value": 1.1094008275292809e-06,
-        "casimir_candidate": 1.8248912149925278e-06,
-        "rel_residue_vs_pi_sq_720": 0.9998668719006965
+        "raw_value": 1.1093989544646553e-06,
+        "casimir_candidate": 1.8248881339247157e-06,
+        "rel_residue_vs_pi_sq_720": 0.9998668721254642
       },
       {
         "form": "1/Φ_q(q^{1/2})",
-        "raw_value": 2.0086687621529017e-07,
-        "casimir_candidate": 3.3041276758791655e-07,
-        "rel_residue_vs_pi_sq_720": 0.9999758959748541
+        "raw_value": 2.0086652612007353e-07,
+        "casimir_candidate": 3.3041219170436805e-07,
+        "rel_residue_vs_pi_sq_720": 0.9999758960168655
       },
       {
         "form": "ℏ_q² · log Φ_q(1)",
-        "raw_value": 0.13461025032097004,
-        "casimir_candidate": 0.22142498649993103,
-        "rel_residue_vs_pi_sq_720": 15.153230038516405
+        "raw_value": 0.13461023865378088,
+        "casimir_candidate": 0.22142496730817413,
+        "rel_residue_vs_pi_sq_720": 15.153228638453708
       },
       {
         "form": "z_M^v1 · log Φ_q(1)",
-        "raw_value": 6.84652587233633,
-        "casimir_candidate": 11.2620836469638,
-        "rel_residue_vs_pi_sq_720": 820.5831046803596
+        "raw_value": 6.84652671742659,
+        "casimir_candidate": 11.26208503708156,
+        "rel_residue_vs_pi_sq_720": 820.5832060911908
       }
     ],
     "direct_candidates": [
       {
         "form": "heine_zeta(-3) raw",
-        "value": 2.3960055363644206,
-        "rel_residue_vs_pi_sq_720": 173.79160420978698
+        "value": 2.3960058012904475,
+        "rel_residue_vs_pi_sq_720": 173.79162353647237
       },
       {
         "form": "z_M^v1 squared",
-        "value": 0.2493207959793872,
-        "rel_residue_vs_pi_sq_720": 17.18826427180255
+        "value": 0.24932079612931632,
+        "rel_residue_vs_pi_sq_720": 17.188264282740064
       },
       {
         "form": "(log Φ_q(1))²",
-        "value": 188.01045591257522,
-        "rel_residue_vs_pi_sq_720": 13714.598189742333
+        "value": 188.0105022130737,
+        "rel_residue_vs_pi_sq_720": 13714.601567421674
       },
       {
         "form": "log Φ_q(1) / [4]_q",
-        "value": 3.3364355271048387,
-        "rel_residue_vs_pi_sq_720": 242.39714966187876
+        "value": 3.3364359577675153,
+        "rel_residue_vs_pi_sq_720": 242.3971810792603
       },
       {
         "form": "ℏ_q² · log Φ_q(1)",
-        "value": 0.13461025032097004,
-        "rel_residue_vs_pi_sq_720": 8.819986322896685
+        "value": 0.13461023865378088,
+        "rel_residue_vs_pi_sq_720": 8.819985471760626
       },
       {
         "form": "ℏ_q⁴",
-        "value": 9.637719031913825e-05,
-        "rel_residue_vs_pi_sq_720": 0.9929691632805343
+        "value": 9.637714987800209e-05,
+        "rel_residue_vs_pi_sq_720": 0.9929691662307658
       },
       {
         "form": "π²·ℏ_q⁴/6",
-        "value": 0.00015853412362306558,
-        "rel_residue_vs_pi_sq_720": 0.9884347371617034
+        "value": 0.00015853405710006304,
+        "rel_residue_vs_pi_sq_720": 0.9884347420146398
       }
     ],
     "best_geom_multiplied": {
       "form": "1/Φ_q(1)",
-      "value": 1.8248912149925278e-06,
-      "rel_residue": 0.9998668719006965
+      "value": 1.8248881339247157e-06,
+      "rel_residue": 0.9998668721254642
     },
     "best_direct": {
       "form": "π²·ℏ_q⁴/6",
-      "value": 0.00015853412362306558,
-      "rel_residue": 0.9884347371617034
+      "value": 0.00015853405710006304,
+      "rel_residue": 0.9884347420146398
     }
   }
 }

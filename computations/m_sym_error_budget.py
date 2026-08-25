@@ -97,7 +97,7 @@ def _ame():
 
 
 def _q0():
-    from q_parameter import Q
+    from q_parameter import Q_MP as Q
     try:
         from qou_substrate.constants import Q_ERR
         qerr = mp.mpf(str(Q_ERR))

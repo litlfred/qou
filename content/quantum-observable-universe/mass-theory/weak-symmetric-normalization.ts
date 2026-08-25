@@ -10,7 +10,7 @@ export default proposition({
   },
   uses: [
     "prop:gram-determinant-plancherel-ratio",
-    "prop:knot-operator-lp-selection",
+    "conj:weak-spectral-completeness",
   ],
   tags: [
     "plancherel",

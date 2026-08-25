@@ -69,12 +69,12 @@ def InSymmetricIdempotent (x : TMatrix) : Prop :=
   ∃ b : TMatrix, tracedVolCleared x = tracedVolCleared b
 
 /-- Reflexivity: every `x` factors through itself. -/
-theorem InSymmetricIdempotent.refl (x : TMatrix) :
+theorem refl (x : TMatrix) :
     InSymmetricIdempotent x :=
   ⟨x, rfl⟩
 
 /-- Symmetry: the relation is symmetric in `x` and `b`. -/
-theorem InSymmetricIdempotent.symm {x b : TMatrix}
+theorem symm {x b : TMatrix}
     (h : tracedVolCleared x = tracedVolCleared b) :
     tracedVolCleared b = tracedVolCleared x :=
   h.symm

@@ -75,7 +75,7 @@ def WedderburnDecomposition.PosSemidef {n : ℕ}
   ∀ (lam : Nat.Partition n), Matrix.PosSemidef (x lam)
 
 /-- **Block-PSD is preserved under non-negative scaling.** -/
-theorem WedderburnDecomposition.PosSemidef.smul_nonneg
+theorem PosSemidef.smul_nonneg
     {n : ℕ} {x : WedderburnDecomposition n} (h : x.PosSemidef)
     {c : ℝ} (hc : 0 ≤ c) :
     WedderburnDecomposition.PosSemidef (fun lam => c • x lam) := by
@@ -83,7 +83,7 @@ theorem WedderburnDecomposition.PosSemidef.smul_nonneg
   exact (h lam).smul hc
 
 /-- **Block-PSD is preserved under sum.** -/
-theorem WedderburnDecomposition.PosSemidef.add
+theorem PosSemidef.add
     {n : ℕ} {x y : WedderburnDecomposition n}
     (hx : x.PosSemidef) (hy : y.PosSemidef) :
     WedderburnDecomposition.PosSemidef (fun lam => x lam + y lam) := by
@@ -107,7 +107,7 @@ theorem WedderburnDecomposition.PosSemidef.add
     `axiom` keeps the embedding opaque pending concrete
     construction. -/
 -- Ref: [wedderburn1908] https://doi.org/10.1112/plms/s2-6.1.77 (Wedderburn decomposition ⊕_λ M_{f^λ}; Σ_λ(f^λ)²=n! via RSK, [fulton1997])
-axiom wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →
+opaque wedderburnEmbed : ∀ {n : ℕ}, WedderburnDecomposition n →
     Matrix (Fin (heckeDim n)) (Fin (heckeDim n)) ℝ
 
 end QOU.HeckeAlgebra.Wedderburn

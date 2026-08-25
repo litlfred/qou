@@ -49,7 +49,7 @@ def hatV
     (i : Generator n) : A :=
   HA.embed i
 
-/-- Pentagon UV-commutation, **corrected level-internal identity**
+/-! Pentagon UV-commutation, **corrected level-internal identity**
 (post-PR-501).
 
 The original `prop:pentagon-uv-commutation` claim was that the
@@ -107,8 +107,8 @@ theorem pentagon_uv_commutation_inter_level_placeholder
     [CommRing R] [Inv R] [Ring A] [Algebra R A]
     [HA : HeckeAlgebra R n q A]
     (i j k : Generator n) :
-    let u := hatV i * hatV j
-    let v := hatV k
+    let u : A := hatV (q := q) i * hatV (q := q) j
+    let v : A := hatV (q := q) k
     u * v = q • (v * u) ∨ True := by
   -- Ref: [prop:pentagon-uv-commutation], §"Derivation" Steps 1-4.
   -- Ref: [manuscript] docs/audits/2026-05-02-r7-pentagon-trace-vs-operator.md
@@ -120,6 +120,6 @@ theorem pentagon_uv_commutation_inter_level_placeholder
   -- The corrected level-internal identity is plain commutativity
   -- in the scalar trace ring; see
   -- `QOU.BraidKnot.VhatPairCommutationTrace`.
-  Or.inr trivial
+  exact Or.inr trivial
 
 end QOU.QuantumBloch

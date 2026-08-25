@@ -18,21 +18,21 @@ and report each $c_k$ with its **tiered classification**.*
 
 | $k$ | $c_k$ | Tier | Notes |
 |---|---|---|---|
-| 2 | $-1$ | **proved** | Taylor-exact, established |
+| 2 | $-1$ | **structural** | Taylor coefficient of the explicit-factor product $\prod_{k\ge2}(1 + c_k u^k)$; no fit, no CODATA, no $q_0$. Not "proved" — the Lean re-reads the $N{=}2$ factor rather than deriving it. For the normalised series (cosine factor inside) the coefficient is $\tilde c_2 = c_2 - 1/8 = -9/8$ |
 | 3 | $-2 = J_{\mathrm{Hopf}}(q = 1)$ | **near-match** | swings $\leq 3.47\%$ at m_p-pin $q_0$ |
 | $\geq 4$ | $q_0$-dependent | **near-match** | N=4→N=5 non-monotonicity is the experimental signature |
 | any | empirical fit | **fitted** | flagged as discipline violation |
 
-*Per AGENTS.md "$\mathfrak{Q}_\beta$ c_k is a TRUNCATION ORDER, not an inclusion/exclusion
-gate", **never** report tiers as binary wired / dropped — always
-tiered.*
+*The $c_k$ are a truncation order, not an inclusion/exclusion criterion: a tier is
+reported as a tier, never collapsed to a binary keep-or-discard verdict.*
 
 ### Algorithm
 
 ```
 1. Choose N from target precision.
 2. For k = 2:
-   c_2 = -1   (proved).
+   c_2 = -1   (structural: the u^2 coefficient of the explicit-factor
+              product, fixed by the N=2 factor's form -- not derived).
 3. For k = 3, …, N:
    compute c_k from the categorical-precision-ladder formula at q_0;
    classify as `near-match` if within 5% of a closed-form q=1
@@ -43,7 +43,10 @@ tiered.*
 
 *[`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder)
 establishes the convergent ladder, the truncation-order
-inequality, and the Taylor-exactness of $c_2$.*
+inequality, and that $c_2$ is the exact $u^2$ coefficient of the
+explicit-factor product. That is a re-reading of the $N{=}2$ factor's
+form, not a derivation of it; and it is a statement about *that*
+series — the normalised series' coefficient is $\tilde c_2 = -9/8$.*
 
 ### Python API entry point
 
@@ -57,15 +60,11 @@ Higher-precision regenerations use
 
 *Canonical witness:
 [`q-beta-predicted.witness.json`](../../../computations/q-beta-predicted.witness.json).
-**Must** record each $c_k$ alongside its tier. The $\mathfrak{Q}_\beta$ subdir
-ledger ([`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md))
-maintains the reversal-history table; any inclusion/exclusion decision
-must update both.*
+**Must** record each $c_k$ alongside its tier.*
 
 ### Notes
 
 *Permanent fix path is the $\mathfrak{Q}_\beta$ Habiro element parallel to
 $\alpha_{\mathrm{EM}}$'s $[2]_q \cdot (1 - h^2 \alpha)$
-(PR #1511). The $c_3$ reversal history (six entries as of
-2026-05-31) is the canonical example of why tiered classification
-is mandatory.*
+The classification of $c_3$ has been reversed repeatedly, and is the
+canonical example of why tiered classification is mandatory.*

@@ -1,12 +1,12 @@
 ---
 # sp09
 title: 'D [independent]: numSYT_mul_hookProduct (StandardYoungTableau.lean:113) — FRT hook-length'
-status: todo
+status: completed
 type: task
 priority: low
-parent: sp00
 created_at: 2026-07-05T16:30:00Z
-updated_at: 2026-07-05T16:30:00Z
+updated_at: 2026-08-08T07:43:03Z
+parent: sp00
 ---
 
 Frame-Robinson-Thrall: numSYT(lam).prod(hooks)=n!. Needs NPS hook-walk (probability layer) or RSK. Famous, absent.
@@ -91,3 +91,54 @@ REMAINING (mechanical, ~1 short session):
    (the sorried QOU.BraidKnot.numSYT_mul_hookProduct in StandardYoungTableau.lean
     stays as the honest cited sorry, OR is re-pointed once the downstream lands.)
    Needs the full HookLengthFormula cone built to verify (~40 modules).
+
+## Summary of Changes — RESOLVED 2026-08-08
+
+`QOU.BraidKnot.numSYT_mul_hookProduct` is **proved and axiom-clean**
+(`#print axioms` → propext / Classical.choice / Quot.sound, no `sorryAx`).
+`StandardYoungTableau.lean` now has **zero** sorries; full `lake build`
+green at 4323 jobs.
+
+Exactly the two bridges this bean specified, and the architecture note was
+right: both had to live downstream of `StandardYoungTableau` AND
+`HookLengthFormula`.
+
+**Bridge (1)** — `hookProduct_eq_hookLengthProduct`, in
+`QOU/BraidKnot/HookProductBridge.lean`. Sized here at ~40 lines; came in at
+about 8, because the per-cell hook agreement was already available from
+`qou-xevq`'s `hookLength_eq_rowLen_add_colLen`. Both sides reduce to
+`(rowLen i − j) + (colLen j − i) − 1` on a genuine cell.
+
+**Bridge (2)** — `numSYT_eq_numStandardYoungTableaux`, in the new
+`QOU/BraidKnot/SytCountBridge.lean`.
+
+`SYTEncodingBridge.lean` already had the 1-indexed ⟶ 0-indexed direction
+(`toBraidKnot`) and the `≤` inequality, and its header named what was
+missing: "the pigeonhole … together with weak-row monotonicity from
+adjacent strictness; it is the remaining half of the bridge." That half is
+what this adds:
+
+- `entry_row_lt` / `entry_col_lt` (in `StandardYoungTableau.lean`) —
+  strictness for arbitrary `j1 < j2`, since the structure fields only give
+  adjacent steps.
+- `toSsyt` — row-strictness weakened to the SSYT's `row_weak'`.
+- `toSsyt_bijOn` — the pigeonhole: `SurjOn` from `InjOn` plus equal finite
+  cardinality, via `Finset.surjOn_of_injOn_of_card_le`.
+- `mathlibSyt_ext` — the 1-indexed structure carries no `@[ext]`.
+- `sytEquiv` — the equivalence, reusing `SYTEncodingBridge.toBraidKnot`
+  rather than redefining it.
+
+**The theorem** transports
+`QOU.Mathlib.numStandardYoungTableaux_mul_hookLengthProduct` (already
+sorry-free) across both bridges. The sorry'd declaration was removed from
+`StandardYoungTableau.lean` — it cannot be stated there, since
+`HookLengthFormula`'s cone transitively imports that file — and replaced
+by a section comment pointing downstream. Nothing referenced it in code;
+all mentions were in prose.
+
+### Snags worth recording
+
+`omega` treats definitionally-equal terms as distinct atoms three separate
+times: `μ.card` vs `μ.cells.card` (a reducible abbrev), `S.entry` vs
+`S.toSsyt.entry`, and `j.succ` vs `j + 1`. Each needed the `rfl` equation
+or `Nat.succ_eq_add_one` stated explicitly.

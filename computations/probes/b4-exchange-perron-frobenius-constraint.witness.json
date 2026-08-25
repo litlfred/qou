@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-06T10:39:39.774831+00:00",
-  "commitSha": "bf05a670126b621bc222cc016ec27a92f3dd3128",
+  "computedAt": "2026-08-23T09:18:37.060896+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "positive_factor_dominant_eigenvalue_positive",
@@ -21,8 +21,8 @@
   "durationMs": 0,
   "computation": "b4-exchange-perron-frobenius-constraint",
   "scriptFile": "b4_exchange_perron_frobenius_constraint.py",
-  "scriptHash": "00fc0c1ff57e",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "043c14d3d290",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,23 +34,32 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/b4_exchange_perron_frobenius_constraint.py"
+    ],
+    "reproduce": "python3 -u computations/probes/b4_exchange_perron_frobenius_constraint.py"
   },
   "description": "Perron–Frobenius excludes the positive-pair-factor [1^4] exchange matrix (dominant eigenvalue +1.289 > 0, needs <0) ⇒ the exchange must be sign-carrying (bar-ODD/writhe), not the bar-even binding factors. audit-only, no fit.",
   "tier": "structural (Perron–Frobenius theorem on the framework exchange matrix)",
   "result": {
     "pair_factors": {
-      "g_pp": "0.49932033",
-      "g_pn": "0.39479018",
+      "g_pp": "0.61268804",
+      "g_pn": "0.50815789",
       "all_positive": true
     },
     "he4_exchange_eigenvalues": [
-      "-0.49932",
-      "-0.49932",
-      "-0.29026",
-      "1.2889"
+      "-0.612688",
+      "-0.612688",
+      "-0.403628",
+      "1.629"
     ],
-    "dominant_eigenvalue": "1.2889007",
+    "dominant_eigenvalue": "1.6290038",
     "dominant_is_positive": true,
     "perron_frobenius": "nonnegative irreducible ⇒ largest-modulus eigenvalue positive ⇒ positive pair factors CANNOT give the required λ<0 (EXCLUDED)",
     "consequence": "the [1^4] exchange matrix must have NEGATIVE entries — the exchange is the SIGN-CARRYING (bar-ODD / writhe) channel, not the bar-even positive binding factors z. Same chirality-sign channel that solved the 3-body sign.",

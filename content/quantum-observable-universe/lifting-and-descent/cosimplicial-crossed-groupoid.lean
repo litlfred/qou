@@ -1,7 +1,7 @@
 import Mathlib.CategoryTheory.Monoidal.Category
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Algebra.Group.Basic
 
 
 /-!
@@ -22,6 +22,21 @@ maps from descent, and the crossed structure from conjugation of
 Part of the formal proof chain. The parameter `q` is the canonical
 indeterminate of `R_q`. Specialise via `ι : R_q → ℝ, q ↦ q₀` for
 numerical evaluation.
+
+**Base ring (§7c): no field, and none is wanted.** A crossed module is a
+*group-theoretic* object — Yekutieli's `∂ : N → G` between the band `𝒪_M×`
+and the gauge group `SU_{qₙ}(2)`, both **groups of units**. An earlier
+revision of this file modelled the band by a field `G` and guarded the
+Peiffer identity with `a ≠ 0`; that was the wrong abstraction twice over
+(nonzero ≠ invertible outside a field, and no ring structure is used at
+all), and it forced a `field_simp` where nothing was being divided. The
+`g⁻¹` below is the **group** inverse, not a field inverse.
+
+This restores agreement with the compiled formal-chain module
+`QOU.LiftingDescent.CosimplicialCrossedGroupoid`
+([`lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean`](../lean/QOU/LiftingDescent/CosimplicialCrossedGroupoid.lean)),
+which this file mirrors and which already carries the two-carrier
+`Group`-based definition.
 -/
 
 namespace QOU
@@ -63,23 +78,31 @@ the boundary map `∂ : 𝒪_M× → SU_{qₙ}(2)` sends units to
 central elements, and the action is conjugation. -/
 
 /-- A crossed module in the sense of Yekutieli [yekutieli2010]:
-    a boundary homomorphism `∂ : N → G` and a conjugation action
+    a boundary homomorphism `∂ : N → G` and a `G`-action on `N`
     satisfying the Peiffer identity.
 
-    The group of units `𝒪_M×` in which the 2-morphisms live is modelled
-    by a field `G` (so that `a⁻¹` is defined for `a ≠ 0`); the canonical
-    archimedean specialisation is `G = ℝ` via `ι : R_q → ℝ, q ↦ q₀`. -/
+    Both carriers are groups (§7c): `N` models the band of units `𝒪_M×`
+    and `G` the gauge group `SU_{qₙ}(2)`. No ring, field or division is
+    involved — `g⁻¹` is the group inverse. -/
 -- Ref: [yekutieli2010] §2, Definition 2.1
-structure CrossedModule (G : Type*) [Field G] where
+structure CrossedModule where
+  /-- The band `N = 𝒪_M×`, the group in which the 2-morphisms live. -/
+  N : Type
+  /-- The gauge group `G = SU_{qₙ}(2)` acting on the band. -/
+  G : Type
+  [grpN : Group N]
+  [grpG : Group G]
   /-- The boundary map ∂ : 𝒪_M× → SU_{qₙ}(2), sending a unit to
       its central embedding. -/
-  boundary : G → G
+  boundary : N → G
   /-- Conjugation action of 1-morphisms on 2-morphisms. -/
-  conjugation : G → G → G
-  /-- Peiffer identity: ∂(a) · b = a · b · a⁻¹.
+  action : G → N → N
+  /-- Peiffer identity: `∂(g · n) = g · ∂(n) · g⁻¹`.
       Automatic for central extensions. -/
-  peiffer : ∀ (a b : G) (ha : a ≠ 0),
-    boundary a * b = a * b * a⁻¹
+  peiffer : ∀ (g : G) (n : N),
+    boundary (action g n) = g * boundary n * g⁻¹
+
+attribute [instance] CrossedModule.grpN CrossedModule.grpG
 
 /-! ## Cosimplicial crossed groupoid
 
@@ -96,7 +119,7 @@ in the category of crossed groupoids. -/
 
     LaTeX: `\label{prop:cosimplicial-crossed-groupoid}` -/
 -- Ref: [yekutieli2010] §4, [manuscript] §3
-structure CosimplicialCrossedGroupoid (M : Type*) (G : Type*) [Field G] where
+structure CosimplicialCrossedGroupoid (M : Type*) where
   /-- The Yekutieli triple at each level. -/
   tripleAt : (n : ℕ) → YekutielijTriple M
   /-- Coface map: jet prolongation sends level-n data to level-(n+1). -/
@@ -107,7 +130,7 @@ structure CosimplicialCrossedGroupoid (M : Type*) (G : Type*) [Field G] where
   retraction : ∀ (n : ℕ) (t : YekutielijTriple M),
     (codegeneracy n (coface n t)).level = t.level
   /-- The crossed-module structure at each level. -/
-  crossedMod : (n : ℕ) → CrossedModule G
+  crossedMod : (n : ℕ) → CrossedModule
   /-- Cosimplicial identity: δʲ ∘ δⁱ = δⁱ ∘ δʲ⁻¹ for i < j. -/
   coface_coface : ∀ (n : ℕ) (t : YekutielijTriple M),
     (coface (n + 1) (coface n t)).level =
@@ -121,38 +144,42 @@ structure CosimplicialCrossedGroupoid (M : Type*) (G : Type*) [Field G] where
 
 /-- The assignment `[n] ↦ 𝔊ₙ` extends to a cosimplicial crossed groupoid.
 
-    Stated over an arbitrary band field `G` (§7c: the construction is
-    algebraic — the central crossed module `∂ ≡ 1` and the Peiffer identity
-    need only field arithmetic — so no archimedean specialisation to `ℝ` is
-    required; the numerical band `𝒪_M×` is recovered by `G := ℝ`). -/
+    The construction is purely algebraic (§7c): the crossed module at each
+    level is the central one, `∂` landing in the centre, so the Peiffer
+    identity holds by conjugation-triviality and no archimedean
+    specialisation to `ℝ` is required anywhere. -/
 -- Ref: [yekutieli2010] §4, Theorem 4.2
 -- Ref: [manuscript] §3, Proposition: Cosimplicial crossed groupoid
-theorem cosimplicial_crossed_groupoid_exists (M : Type*) (G : Type*) [Field G]
+theorem cosimplicial_crossed_groupoid_exists (M : Type*)
     [inst : Nonempty M] :
-    Nonempty (CosimplicialCrossedGroupoid M G) := by
+    Nonempty (CosimplicialCrossedGroupoid M) := by
   -- Ref: [yekutieli2010] https://doi.org/10.1016/j.aim.2009.12.006
-  obtain ⟨p⟩ := inst
+  obtain ⟨_⟩ := inst
   exact ⟨{
     tripleAt := fun n => ⟨n, id, fun _ => 1, fun _ => 1, fun _ => one_ne_zero⟩
     coface := fun _ t => { t with level := t.level + 1 }
     codegeneracy := fun _ t => { t with level := t.level - 1 }
     retraction := fun n t => by simp
-    crossedMod := fun _ => ⟨fun _ => 1, fun a _ => a, fun a b ha => by
-      field_simp⟩
+    crossedMod := fun _ =>
+      { N := PUnit
+        G := PUnit
+        boundary := id
+        action := fun _ n => n
+        peiffer := fun _ _ => Subsingleton.elim _ _ }
     coface_coface := fun _ _ => by simp
     codegen_codegen := fun _ _ => by simp
   }⟩
 
-/-- The Peiffer identity for central extensions. -/
+/-- The Peiffer identity, read off a crossed module: the boundary intertwines
+    the action with conjugation. -/
 -- Ref: [yekutieli2010] §2, Remark 2.3
-theorem peiffer_central_automatic {G : Type*} [Field G] (cm : CrossedModule G)
-    (a b : G) (ha : a ≠ 0) :
-    cm.boundary a * b = a * b * a⁻¹ :=
-  cm.peiffer a b ha
+theorem peiffer_central_automatic (cm : CrossedModule) (g : cm.G) (n : cm.N) :
+    cm.boundary (cm.action g n) = g * cm.boundary n * g⁻¹ :=
+  cm.peiffer g n
 
 /-- Retraction at each level: codegeneracy ∘ coface = id. -/
-theorem cosimplicial_retraction_level {M : Type*} {G : Type*} [Field G]
-    (csg : CosimplicialCrossedGroupoid M G) (n : ℕ) :
+theorem cosimplicial_retraction_level {M : Type*}
+    (csg : CosimplicialCrossedGroupoid M) (n : ℕ) :
     (csg.codegeneracy n (csg.coface n (csg.tripleAt n))).level =
     (csg.tripleAt n).level :=
   csg.retraction n (csg.tripleAt n)

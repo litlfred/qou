@@ -30,6 +30,23 @@ and the Borromean c₀ = −1.417 becomes a trustworthy measured invariant.  The
 (N up to 1200), so its c₀ carries far smaller extraction error than the
 Habiro-triple-product Borromean tower — this is the clean calibration anchor.
 
+NORMALIZATION NOTE (2026-08-08, bean qou-fl4t).  Nothing here is superseded —
+this file is the anchor the later work calibrates on — but be explicit about
+which τ it means.  The `|τ_adj(4₁)| = 1/√3` above is `1/T` with `T = √3`, and
+`T = 2·|τ_DG|` where `|τ_DG(4₁)| = √3/2` is Dimofte–Garoufalidis' own worked
+value (their eq. 3.2), computed at any cusp number by
+`computations/one_loop_torsion.py`.  So this file's relation reads, in DG's
+normalization,
+
+    exp(2 c₀) = 1 / (2 |τ_DG|)     equivalently     c_σ = 2^{−1/2} |τ_DG|^{−1/2}
+
+and that form carries NO per-cusp factor: the constant `2^{−1/2}` measured here
+at c = 1 is the same one measured at c = 2 on the Whitehead link, to 17 digits,
+so the c = 1 calibration in this file predicts c_σ(L5a1) = 2^{−3/4} with nothing
+adjustable.  See `docs/audits/2026-08-08-per-cusp-factor-dissolves.md`.  The
+`2^{(c−1)/2}` factor that once stood between them is proved to cancel in
+`QOU.OneLoopEdgeLattice.percusp_factor_absorbs`.
+
 Discipline: audit-only; scope-(a); NO fit (every 4₁ constant is known a priori
 and only CHECKED, never tuned); nothing wired; L2 unchanged.  Reuses the
 corpus's own figure-eight Kashaev sum

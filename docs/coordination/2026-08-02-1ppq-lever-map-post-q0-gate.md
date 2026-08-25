@@ -51,9 +51,34 @@ observables**:
    compute.
 2. **q₀-derivation is now FOREVER GATED** (2026-08-02).
 
-Together: **the 5 L2 mass/Q_β misses are no longer framework-closable.** They are
-either measurement-limited or would require the forbidden q₀ route. Grinding
-the c_k tower / re-pinning q₀ cannot move them below the experimental floor.
+Together — **re-scoped 2026-08-08 (bean `qou-qb8a`); the conclusion below is
+narrower than originally written, and the numbers are unchanged.**
+
+**Original wording:** *"the 5 L2 mass/Q_β misses are no longer
+framework-closable."* That is a **scope-(b) structural exclusion asserted without
+a proved invariant**, and per AGENTS.md §"Before declaring refuted" it must be
+scope-(a).
+
+**Correct scope-(a) statement:**
+
+* **Verification** below `σ_exp = 779.7 ppb` is measurement-limited. TRUE.
+* **Extracting** c₃ *from* a measured Q_β is measurement-limited
+  (`dq*/dQ_β ≈ −0.54`). TRUE.
+* **Re-pinning q₀ cannot move them.** TRUE — the anchor swing is 29.96 ppb,
+  2.4% of the 1248 ppb residual.
+* **But the 1248 ppb Q_β prediction error is the c₃ truncation — a framework
+  quantity.** Under the proton pin, q₀'s measurement uncertainty contributes
+  `≈ 0.16 ppb`, four orders below it. **No proved invariant excludes a
+  categorical derivation of c₃ from improving the prediction.** So "grinding the
+  c_k tower" is dead as a *fit*; a *derived* c₃ is not excluded.
+* And a better neutron measurement **tightens** `σ_exp`, making the L2 target
+  (`σ_exp/100`) proportionally **harder** — so waiting on the measurement does
+  not close L2 by itself.
+
+The practical consequence for this lever map is unchanged: the binding / `Δ_λ`
+magnitude closure remains the better-value derivation lever, because it is
+scale-free. What changes is that the c₃ route is recorded as **open and hard**,
+not as **excluded**.
 
 **Therefore the remaining framework-*derivation* precision lever is NOT the 7 L2
 masses — it is the per-isotope binding / `Δ_λ` magnitude closure (Subgoal-1),

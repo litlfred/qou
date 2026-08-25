@@ -284,7 +284,7 @@ def main():
     print("-" * 70)
     print()
 
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q_50_DIGIT_STR)
     t0 = q0 - 1  # t = q-1
     vol = vol_4_1_at(50)

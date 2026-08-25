@@ -12,7 +12,7 @@ export default definition({
   label: "def:atomic-valence-open-sites",
   title: "Valence and lone pairs as open bonding sites",
   lean: {
-    ref: "qou:QOU.Molecular.AtomicValence",
+    ref: "qou:QOU.Molecular.atomicValence",
     validation: "not_checked",
   },
   uses: ["def:electron-shell-braid-capacity"],

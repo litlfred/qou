@@ -31,16 +31,21 @@ sys.path.insert(0, str(HERE))
 def _pp_bond_from_witness(fallback: str = "2.2861") -> str:
     """Per-block pp strong bond, pinned to per-bond-growth-a3 witness (no drift)."""
     try:
-        w = json.loads((HERE / "per-bond-growth-a3.witness.json").read_text())
+        w = record_upstream(HERE / "per-bond-growth-a3.witness.json", _UPSTREAM_RECORDS)
         return str((w.get("data", w))["B_iso_MeV"]["pp"])
     except Exception:
         return fallback
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, AME_B_TRITIUM_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION,
 )
-from witness_base import WitnessBuilder  # noqa: E402  (mandatory — canonical witness-emitting audit)
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402  (mandatory — canonical witness-emitting audit)
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
 q = mp.mpf(str(Q0))
@@ -100,6 +105,7 @@ def main() -> int:
     print("    best (−2.97%); below that needs the EM-linking object, no fit.")
 
     wb = WitnessBuilder("a3-mirror-residual-reconciliation", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "The ~3% ³He residual of the linear-chain bond-count binding reconciles "
         "with the corpus-derived pp-Coulomb mechanism (def:coulomb-charge): the "

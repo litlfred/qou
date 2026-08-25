@@ -133,7 +133,7 @@ def main() -> int:
     )
     builder.set_content_block("prop:neutron-qvalue-symbolic")
 
-    hab = json.loads((_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)).read_text())
+    hab = builder.add_upstream(_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE))
     results = hab["results"]
 
     p = parse_atom_coeffs(results["p (proton, A=1)"])

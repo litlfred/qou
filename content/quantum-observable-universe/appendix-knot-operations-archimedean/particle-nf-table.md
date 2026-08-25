@@ -8,7 +8,7 @@ view:
 Every fundamental particle in the knot--particle dictionary
 ([Knot--particle dictionary](#rem:knot-particle-dictionary))
 has a unique Gröbner normal form in the Iwahori--Hecke algebra
-$H_3(q)$ with $q = q_0 = 1.109978595554181\ldots$ (50 dps).
+$H_3(q)$ with $q = q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps).
 
 The **basis** of $H_3(q)$ in normal form is
 $\{\ \mathbf{1},\ \sigma_0,\ \sigma_1,\ \sigma_0\sigma_1,\
@@ -50,7 +50,7 @@ own knot type.
    contains all six basis elements.  The net $\approx 0.451$ is
    the mirror-trefoil's Jones polynomial at $q_0$.
 
-4. **Gluon** $L_{±}$ is already a basis element of $H_3(q)$.
+4. **Gluon** $L_{\pm}$ is already a basis element of $H_3(q)$.
    The Borromean braid $B_3 = (\sigma_0\sigma_1^{-1})^3$ contains
    both $L_+$ and $L_-$ in its NF.  This is the
    Hopf link $\mathcal{L}_H$ from [Definition](#def:borromean-baryon):

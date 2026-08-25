@@ -36,16 +36,22 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder
-from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV)
 from mass_at_3A_proper import dim_q, qfac
 from q_parameter import Q as Q0
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
     "T":   AME_B_TRITIUM_MEV_VALIDATION,
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
@@ -68,7 +74,7 @@ def is_self_conjugate(shape: tuple) -> bool:
 
 
 def alpha_k(k: int) -> mp.mpf:
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3):
         return mp.mpf(1)
@@ -80,7 +86,7 @@ def alpha_k(k: int) -> mp.mpf:
 def phi_k_selfconj_restricted(by_partition, n_strands, k, restrict_low_k):
     """Φ_k with low-k restricted to self-conjugate partitions
     (renormalised to preserve total measure within the stratum)."""
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     is_low_k = k <= 3 and restrict_low_k
 
     if is_low_k:
@@ -90,7 +96,7 @@ def phi_k_selfconj_restricted(by_partition, n_strands, k, restrict_low_k):
             shape = tuple(p["partition"])
             if len(shape) - 1 != k:
                 continue
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             w = mp.mpf(str(dq * dq)) / qfact
             Z_uniform += w
             if is_self_conjugate(shape):
@@ -108,7 +114,7 @@ def phi_k_selfconj_restricted(by_partition, n_strands, k, restrict_low_k):
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue

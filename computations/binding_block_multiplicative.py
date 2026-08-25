@@ -80,11 +80,22 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 
 from _precision import set_compute_dps, OUTPUT_DPS, fmt
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from codata_constants import AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
 from mass_at_3A_proper import E_0_CALIBRATION_MEV
 from _li_2_q_util import load_q_50dps, li_2_q
 
+
+# Precision must be raised BEFORE the module-scope constants below: at import
+# time mp.dps is still mpmath's default 15 (~binary64), and a literal rounded
+# there cannot be recovered by raising dps afterwards. Idempotent; the call at
+# the top of main() stays. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 B_AME = {
     "D":   mp.mpf("2.22456607"),
@@ -128,7 +139,7 @@ def load_block_factors_from_witness() -> dict:
             "binding_via_interface_knot.py first to compute the "
             "block-factor table from H_6 (D) characters."
         )
-    w = json.loads(w_path.read_text())
+    w = record_upstream(w_path, _UPSTREAM_RECORDS)
     per_atom = w["data"]["per_atom"]
 
     # From D (Z=1, N=1, H_6): V_free = [V^p_0, V^p_1, 1.0, V^n_0, V^n_1]
@@ -298,6 +309,7 @@ def predict_binding(Z: int, N: int, factors: dict, q: mp.mpf,
 def main() -> int:
     set_compute_dps()
     builder = WitnessBuilder("binding-block-multiplicative")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Closed-form B(K) via block-multiplicativity (T1_free = "
         "v_p^Z · v_n^N) + structural interface arrangement, derived "

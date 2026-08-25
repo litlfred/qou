@@ -67,25 +67,50 @@ from wedderburn_jones_markov import y_lambda_at  # noqa: E402
 # package rather than via the witness_base back-compat shim (which
 # re-exports the identical class). Bootstrap the in-repo package path —
 # mirrors low_isotopes_binding_sweep.py.
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()  # ensure mp.mp.dps = COMPUTE_DPS (consistent with infra)
 
+
+#: Columns exposed in the nuclide-keyed view — the scalars a witnessed-value
+#: pin can address. Excludes `knot_operators` / `braid_word_canonical` and the
+#: provenance strings: those are bulk, and duplicating them doubles the file.
+#:
+#: Every numeric column here is a `fmt` STRING, not a float+`_str` pair. The
+#: pair was this branch's earlier design and it is superseded by bean qou-3wqg,
+#: which lifted the prediction chain to mpmath at the root: once `pred` is a
+#: genuine mpf, `fmt` writes digits that exist and the shadow rule has nothing
+#: left to excuse. The pair only ever made sense while `pred` was still a float
+#: — i.e. while the extra digits were binary64 noise wearing a string.
+_PINNABLE_COLUMNS = (
+    "Z", "N", "A", "n_strands",
+    "prediction_type", "prediction_method",
+    "tr_M_q0_canonical_50dps", "prediction_MeV_50dps",
+    "B_AME_MeV", "err_MeV", "err_pct", "err_ppb", "err_ppm",
+)
 # AME 2020 binding energies (MeV) for the canonical atoms.
-B_AME_MEV: dict[tuple[int, int], float] = {
-    (1, 0):  0.0,        # proton (no binding)
-    (0, 1):  0.0,        # neutron (no binding; mass excess separate)
-    (1, 1):  float(AME_B_DEUTERON_MEV_VALIDATION), # D
-    (1, 2):  float(AME_B_TRITIUM_MEV_VALIDATION),  # T
-    (2, 1):  float(AME_B_HE3_MEV_VALIDATION),  # ³He
-    (2, 2): float(AME_B_HE4_MEV_VALIDATION),   # ⁴He
-    (3, 2): 26.328,      # ⁵Li (unstable, half-life ~10⁻²² s)
-    (3, 3): float(AME_B_LI6_MEV_VALIDATION),    # ⁶Li
-    (3, 4): 39.24522,    # ⁷Li
-    (4, 3): 37.6,        # ⁷Be
-    (4, 4): 56.49951,    # ⁸Be
+# mpf throughout (bean qou-3wqg). The five `AME_B_*_MEV_VALIDATION` constants
+# ARE mpf in `codata_constants`; wrapping them in `float()` here truncated them
+# on the way in, and the four literals below were plain floats. `err = pred -
+# ref` is now mpf on both sides, so it carries the precision the port to
+# `mass_table_ppb.py` made available rather than losing it at the subtraction.
+# The literals become strings for the same reason a `mpf(<float literal>)` is
+# flagged elsewhere: `mp.mpf(26.328)` binds the binary64 value, `mp.mpf("26.328")`
+# binds the decimal one.
+B_AME_MEV: dict[tuple[int, int], mp.mpf] = {
+    (1, 0):  mp.mpf(0),  # proton (no binding)
+    (0, 1):  mp.mpf(0),  # neutron (no binding; mass excess separate)
+    (1, 1):  AME_B_DEUTERON_MEV_VALIDATION,  # D
+    (1, 2):  AME_B_TRITIUM_MEV_VALIDATION,   # T
+    (2, 1):  AME_B_HE3_MEV_VALIDATION,   # ³He
+    (2, 2): AME_B_HE4_MEV_VALIDATION,    # ⁴He
+    (3, 2): mp.mpf("26.328"),      # ⁵Li (unstable, half-life ~10⁻²² s)
+    (3, 3): AME_B_LI6_MEV_VALIDATION,     # ⁶Li
+    (3, 4): mp.mpf("39.24522"),    # ⁷Li
+    (4, 3): mp.mpf("37.6"),        # ⁷Be
+    (4, 4): mp.mpf("56.49951"),    # ⁸Be
 }
 
 # Default atom list: full coverage through A=7 via canonical.
@@ -163,9 +188,45 @@ def compute_tr_m_canonical(
         # are Rust-backed and MPFR. The returned `method_used` records
         # the per-atom route ("laurent_q_rust" or "branching").
         eff = "laurent_q_rust" if (Z + N) < 2 else "branching"
-        return compute_tr_m_canonical(
+        res = compute_tr_m_canonical(
             Z, N, label, dps=dps, timeout_sec=timeout_sec, method=eff,
         )
+        # Fall back to the sympy H_3 path when the Rust extension is simply
+        # ABSENT. This is narrow on purpose and does NOT reopen the PR #886
+        # decision below: #886 declined an automatic chain out of `Case C`,
+        # a MATHEMATICAL condition where the Rust kernel is inapplicable and
+        # the right answer may differ. A missing `pyhecke_native` is an
+        # ENVIRONMENT capability, not a case distinction -- the sympy path
+        # computes the same object, and for p and n it agrees exactly with
+        # `laurent_q` to every digit printed.
+        #
+        # Only `auto` falls back. An explicit `--method laurent_q_rust` still
+        # errors, because there the caller asked for that kernel by name.
+        # `method_used` carries the substitution into the witness so the
+        # route is recorded rather than silently swapped.
+        val, wall, err, used = res
+        # Trigger the sympy fallback when native is ABSENT. As of qou-m7py
+        # (2026-08-15) the Rust crate is on convention D and proton-pinned to
+        # match the Python side exactly, so the native dispatch no longer
+        # REFUSES — the #5055/qou-w8zz divergence guard is resolved. The legacy
+        # "NATIVE_DIVERGENCE" markers below are kept only so an older wheel that
+        # still raises them lands in this fallback rather than silently skipping
+        # the atom (`main()` drops any atom with a non-empty err). The
+        # missing-wheel branch ("pyhecke_native missing") is the live case: the
+        # sympy path is correct, just slower.
+        _native_unavailable = err and (
+            "pyhecke_native missing" in err
+            or "NATIVE_DIVERGENCE" in err
+            or "native divergence" in err.lower()
+        )
+        if val is None and _native_unavailable:
+            v2, w2, e2, u2 = compute_tr_m_canonical(
+                Z, N, label, dps=dps, timeout_sec=timeout_sec,
+                method="laurent_q",
+            )
+            if v2 is not None:
+                return v2, w2, None, f"{u2} (auto-fallback: {used} unavailable)"
+        return res
 
     if method == "laurent_q_rust":
         try:
@@ -322,60 +383,70 @@ def lookup_b_pred_existing(
         rows = mass_table_ppb.get("data", mass_table_ppb).get("rows", [])
         for r in rows:
             if r.get("Z") == Z and r.get("N") == N:
-                return r.get("B_pred_MeV"), r.get("origin")
+                b = r.get("B_pred_MeV")
+                # `mp.mpf(...)` on the STRING, not `float(...)` (bean qou-3wqg).
+                # `mass_table_ppb.py` used to compute `B = nu * m_e * Vol` in
+                # Python floats and emit a JSON number; it now computes in
+                # mpmath and emits a 44-digit decimal string, so lifting it here
+                # is lossless where a float() would throw the lift away again.
+                # Accepts a bare number too, so a witness written before that
+                # port still loads.
+                return (mp.mpf(b) if b is not None else None), r.get("origin")
         return None, None
     except (KeyError, json.JSONDecodeError):
         return None, None
 
 
-def lookup_nucleon_mass_borromean(
+def lookup_nucleon_mass_canonical(
     Z: int, N: int, borromean: dict | None = None,
 ) -> tuple[float | None, str | None]:
-    """Cross-reference the Borromean tower m_p / m_n prediction.
+    """Canonical absolute nucleon mass for the p / n rows, via the facade.
 
-    `canonical-mass-table-extended` computes |tr_M| but does not
-    self-derive nucleon mass. The Borromean tower verification
-    (`m-p-borromean-verification-50dps.witness.json`) provides
-    m_p and m_n at 0.25 ppm, conditional on
-    `conj:borromean-baryon-mass-formula`. For p (Z=1, N=0) and n
-    (Z=0, N=1) rows we surface this prediction so the table is
-    not misleadingly empty for free nucleons.
+    `canonical-mass-table-extended` computes |tr_M| but does not self-derive a
+    nucleon mass, so the free-nucleon rows have to source theirs. They now come
+    from `canonical_mass.nucleon_mass_mev()` — the muon-anchored Hecke energy
+    `m_p = 2·(m_μ·F_Bor − 6·m_e)`, CODATA to +1.35 ppb — which is what
+    docs/canonical-mass-formula-guardrail.md requires of *every* absolute-mass
+    consumer.
+
+    HISTORY (fixed 2026-08-08, bean `qou-7loj`). This function used to read
+    `m-p-borromean-verification-50dps.witness.json` and return its
+    `m_p_pred_MeV = 965.384` / `m_n_pred_MeV = 966.715` — the
+    `m_e·Vol(𝓑₃)/ℏ_q²·λ_A` form the 2026-06-24 ruling deprecated for absolute
+    mass. So the table's nucleon rows were 27 MeV (+2.89 %) high while labelled
+    `prediction_method=CANONICAL_TRACE`, and that propagated through
+    `low_isotope_mass_table.py` into every consumer of the low-isotope table.
+
+    It survived every guard because the deprecated value crossed the boundary
+    as **data**: a `json.loads` of a witness path, with no import and no call,
+    so `noncanonical_reentry_audit.py` had no AST edge to find, and the formula
+    appeared in no prose or docstring for the status guards to read.
+
+    The Borromean-tower figure is not lost — it remains in its own witness,
+    which is the right place for a prediction conditional on
+    `conj:borromean-baryon-mass-formula`. It is simply no longer served as the
+    canonical absolute mass. `borromean` is still accepted so existing call
+    sites keep working; it is unused.
 
     Returns (m_pred_MeV, origin_label) or (None, None).
     """
+    del borromean  # retained for call-site compatibility; no longer consulted
+    species = {(1, 0): "proton", (0, 1): "neutron"}.get((Z, N))
+    if species is None:
+        return None, None
     try:
-        if borromean is None:
-            path = _pb.witness_path("m-p-borromean-verification-50dps.witness.json", HERE)
-            if not path.exists():
-                return None, None
-            borromean = json.loads(path.read_text())
-        data = borromean.get("data", borromean)
-
-        def _to_float(x: Any) -> float | None:
-            # The Borromean witness stores values as mpmath-formatted
-            # strings (e.g. "938.27185263683084707"). Coerce to f64
-            # for downstream arithmetic; the 50-dps source value is
-            # preserved as a string in the witness file itself.
-            if x is None:
-                return None
-            try:
-                return float(x)
-            except (TypeError, ValueError):
-                return None
-
-        if Z == 1 and N == 0:
-            return (
-                _to_float(data.get("proton", {}).get("m_p_pred_MeV")),
-                "borromean-tower (conj:borromean-baryon-mass-formula)",
-            )
-        if Z == 0 and N == 1:
-            return (
-                _to_float(data.get("neutron", {}).get("m_n_pred_MeV")),
-                "borromean-tower (conj:borromean-baryon-mass-formula)",
-            )
+        from canonical_mass import nucleon_mass_mev  # noqa: E402 — facade
+        return (
+            float(nucleon_mass_mev(species)),
+            "canonical_mass facade (muon-anchored Hecke energy)",
+        )
+    except (ImportError, ValueError, TypeError):
         return None, None
-    except (KeyError, json.JSONDecodeError):
-        return None, None
+
+
+#: Pre-2026-08-08 name. Kept so an older call site fails loudly at review time
+#: rather than silently resurrecting the +2.89 % route.
+lookup_nucleon_mass_borromean = lookup_nucleon_mass_canonical
 
 
 def main() -> int:
@@ -413,6 +484,24 @@ def main() -> int:
         ),
     )
     parser.add_argument("--timeout", type=int, default=1500)
+    parser.add_argument(
+        "--allow-partial-canonical",
+        action="store_true",
+        help=(
+            "Permit writing the canonical witness from a RESTRICTED --atoms "
+            "set. Off by default: see the guard below. Only pass this if you "
+            "intend the canonical table to shrink."
+        ),
+    )
+    parser.add_argument(
+        "--allow-precision-downgrade",
+        action="store_true",
+        help=(
+            "Permit REPLACING the committed canonical witness with one built "
+            "at a LOWER --target-dps. Off by default: see the guard below. "
+            "Only pass this if you intend the canonical table to get coarser."
+        ),
+    )
     args = parser.parse_args()
 
     # dps policy:
@@ -429,7 +518,11 @@ def main() -> int:
     label_to_ZN.update({"proton": (1, 0), "neutron": (0, 1)})
     requested = [s.strip() for s in args.atoms.split(",") if s.strip()]
 
-    paper_floor_ppb = 780.0
+    # An int: this is the paper's declared CAL-2 propagation floor, a stated
+    # threshold rather than a computed quantity, and `780.0` would otherwise
+    # be the last raw float64 in this witness. `atlas_render_canonical_table`
+    # already reads it through `int(...)`.
+    paper_floor_ppb = 780
     paper_floor_dps = float(-mp.log10(mp.mpf(paper_floor_ppb) * mp.mpf("1e-9")))
     pruning_safe = verify_pruning_safe(args.target_dps, paper_floor_ppb)
 
@@ -460,6 +553,17 @@ def main() -> int:
         "laurent_q_rust": "pyhecke-native v0.9.0 tr_m_atomic_mpfr (Tier 1.A Rust + MPFR) + mpmath y_λ (MPFR-50dps)",
         "rust_f64":  f"Rust hecke-canonical-chi (f64) + mpmath y_λ",
         "rust_mpfr": f"Rust hecke-canonical-chi (MPFR-50dps) + mpmath y_λ",
+        # `branching` is this script's DEFAULT method and `auto` is the
+        # documented route for mixed nucleon+composite sets, yet neither had
+        # an entry -- so the default invocation wrote "unknown method
+        # 'branching'" into its own witness `description`, i.e. the provenance
+        # string disclaimed the run that produced it.
+        "branching": "operator-valued Wenzl branching combiner (canonical "
+                     "pipeline) + mpmath y_λ",
+        "auto": "per-atom route: A<2 -> direct H_3 Hoefsmit "
+                "(laurent_q_rust, falling back to laurent_q when "
+                "pyhecke_native is absent); A>=2 -> operator-valued Wenzl "
+                "branching combiner; + mpmath y_λ",
     }.get(args.method, f"unknown method '{args.method}'")
 
     # Pre-load upstream witnesses through the builder so their
@@ -487,6 +591,10 @@ def main() -> int:
         pass
 
     records: list[dict] = []
+    #: Labels of the rows that actually landed in `records`, in the same order.
+    #: Kept alongside rather than read back off the records, because a record
+    #: carries (Z, N) but not the `--atoms` label the registry keys on.
+    computed_labels: list[str] = []
     for atom_str in requested:
         if atom_str not in label_to_ZN:
             print(f"  {atom_str:<6} (skip — unknown)")
@@ -519,19 +627,20 @@ def main() -> int:
         origin: str | None = None
         prediction_type = "mass" if is_nucleon else "binding_energy"
         if is_nucleon:
-            pred, origin = lookup_nucleon_mass_borromean(Z, N, borromean_data)
-            # CODATA references taken from the Borromean witness so the
-            # comparison stays consistent with the prediction source.
+            pred, origin = lookup_nucleon_mass_canonical(Z, N)
+            # CODATA reference from codata_constants, not from the Borromean
+            # witness: that witness is the deprecated Vol·ρ route (qou-7loj),
+            # and sourcing the *reference* from it too was what kept the row's
+            # err_ppm looking self-consistent while the prediction was 2.89 %
+            # off the canonical value.
             try:
-                bdata = (borromean_data or {}).get("data", borromean_data or {})
-                key = "proton" if (Z, N) == (1, 0) else "neutron"
-                codata_key = (
-                    "m_p_codata_MeV" if (Z, N) == (1, 0)
-                    else "m_n_codata_MeV"
+                from codata_constants import (  # noqa: E402
+                    M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
                 )
-                v = bdata.get(key, {}).get(codata_key)
-                ref = float(v) if v is not None else None
-            except (TypeError, ValueError):
+                ref = mp.mpf(str(
+                    M_P_MEV_VALIDATION if (Z, N) == (1, 0) else M_N_MEV_VALIDATION
+                ))
+            except (ImportError, TypeError, ValueError):
                 ref = None
         else:
             pred, origin = lookup_b_pred_existing(Z, N, mass_table_ppb_data)
@@ -566,21 +675,35 @@ def main() -> int:
             prediction_MeV_50dps=(
                 str(pred) if pred is not None else None
             ),
-            B_AME_MeV=ref,
-            err_MeV=err_val,
-            err_pct=err_pct_val,
-            err_ppb=err_ppb_val,
-            err_ppm=err_ppm_val,
+            # `fmt` (not `str(float(...))`) — bean qou-3wqg. These are mpf now:
+            # `ref` comes from the un-`float()`-ed AME constants above and
+            # `pred` is lifted from mass_table_ppb's 44-digit decimal string, so
+            # the subtraction carries real precision and `fmt` writes it out at
+            # OUTPUT_DPS. This is NOT the stringify-a-float move the audit
+            # forbids — that was the earlier attempt here, and it was reverted
+            # precisely because `pred` was still a float at the time.
+            B_AME_MeV=fmt(ref) if ref is not None else None,
+            err_MeV=fmt(err_val) if err_val is not None else None,
+            err_pct=fmt(err_pct_val) if err_pct_val is not None else None,
+            err_ppb=fmt(err_ppb_val) if err_ppb_val is not None else None,
+            err_ppm=fmt(err_ppm_val) if err_ppm_val is not None else None,
             # Provenance reflects actual method used (Copilot review).
             chi_cache_witness=(
                 f"(computed live via {method_used})"
             ),
         )
         records.append(record.to_dict())
+        computed_labels.append(atom_str)
 
         tr_m_str = fmt(tr_m, dps=15)  # display-only, full precision via fmt
-        pred_str = f"{pred:.4f}" if pred is not None else "—"
-        ame_str = f"{ref:.4f}" if ref is not None else "—"
+        # float() on BOTH console columns is display-only: mpf implements no
+        # `__format__`, so `f"{x:.4f}"` raises once the qou-3wqg lift makes
+        # these mpf, and the console shows 4 decimals either way. The witness
+        # columns take the mpf path above — do not copy either cast into a
+        # record. `pred` needed this the moment the root lift landed; `ref`
+        # needed it when B_AME_MEV stopped being wrapped in float().
+        pred_str = f"{float(pred):.4f}" if pred is not None else "—"
+        ame_str = f"{float(ref):.4f}" if ref is not None else "—"
         origin_str = (origin or "—")[:20]
         print(f"  {atom_str:<6} {A:>2} {n:>3} {tr_m_str:<22} "
               f"{pred_str:>16} {ame_str:>10} {origin_str:<22} "
@@ -624,8 +747,121 @@ def main() -> int:
         .add_parameter("atoms_requested", ",".join(requested))
         .add_parameter("timeout_per_atom_sec", args.timeout)
         .add_data("rows", records)
+        # Nuclide-keyed view of the SAME records, so consumers can address a
+        # row by what it is rather than by where it sits (bean `qou-xwet`).
+        #
+        # `data.rows` is ordered by DEFAULT_ATOMS and a comment has long asked
+        # callers not to reorder it. That guard was never enough: it addresses
+        # reordering, while what actually happened was a second producer
+        # SHRINKING the set, which shifts every index without reordering
+        # anything. `registry.ts`'s `B_2H_AME_MeV` pin at `data.rows.2` then
+        # addressed 3He for eight weeks under a description naming deuterium.
+        #
+        # Keys are the `--atoms` labels (p, n, D, T, 3He, ...). A key is absent
+        # when its row is absent, so a pin against a missing nuclide fails
+        # loudly instead of silently reading its neighbour. `rows` is kept
+        # as-is: it is the ordered presentation, and removing it would break
+        # every existing reader for no gain.
+        #
+        # SCALARS ONLY, deliberately. Mirroring whole records here doubled the
+        # witness (68 KB -> 133 KB) to say everything twice; the bulk is
+        # `knot_operators` and `braid_word_canonical`, which no pin addresses.
+        # This view exists to be ADDRESSED, not to duplicate provenance -- a
+        # reader wanting the full record still goes to `rows`.
+        .add_data("rows_by_nuclide", {
+            label: {k: rec[k] for k in _PINNABLE_COLUMNS if k in rec}
+            for label, rec in zip(computed_labels, records)
+        })
         .add_data("n_atoms_computed", len(records))
     )
+
+    # GUARD — a restricted --atoms run may NOT overwrite the canonical witness
+    # (bean `qou-xwet`).
+    #
+    # The output filename is FIXED (see the module docstring), so ANY run of
+    # this script rewrites `canonical-mass-table-extended.witness.json`
+    # wholesale, including a run that was asked for a handful of atoms. That
+    # is not hypothetical: `low_isotope_mass_table.py` drove this script with
+    # `--atoms p,n,D,T,3He` purely as a speed optimisation, and the resulting
+    # five-row table replaced the canonical nine-row one on `main` — 4He and
+    # every A >= 5 row silently disappeared, committed under two commit
+    # messages that only discussed the low-isotope table.
+    #
+    # It also broke a consumer without tripping anything: `registry.ts` pins
+    # `B_2H_AME_MeV` POSITIONALLY at `data.rows.2.B_AME_MeV`, so the row set
+    # moving underneath it silently repoints that value at a different
+    # nuclide. (The ordering comment on DEFAULT_ATOMS guards against
+    # *reordering the list*; it cannot see a caller shrinking the set.)
+    #
+    # So: refuse. A partial table is fine to compute and print, it is just not
+    # the canonical artifact. Callers that genuinely want a subset should
+    # filter the full table downstream — which is exactly what
+    # `low_isotope_mass_table.project_to_low_isotope()` already does.
+    _default_labels = [label for _, _, label in DEFAULT_ATOMS]
+    _missing = [lab for lab in _default_labels if lab not in requested]
+    if _missing and not args.allow_partial_canonical:
+        print()
+        print("  REFUSING to write the canonical witness from a partial run.")
+        print(f"    requested : {','.join(requested)}")
+        print(f"    missing   : {','.join(_missing)}")
+        print("  The output path is fixed, so this would REPLACE the canonical")
+        print("  table with a subset and silently repoint every positional")
+        print("  consumer of data.rows (see bean qou-xwet).")
+        print("  Run with the full default --atoms set and filter downstream,")
+        print("  or pass --allow-partial-canonical if the shrink is intended.")
+        return 2
+
+    # Sibling guard: refuse to REPLACE the canonical witness with a
+    # LOWER-PRECISION one.
+    #
+    # The partial-write guard above closes the row-subset shrink (bean
+    # `qou-xwet`). It does not see the other axis. The output path is equally
+    # fixed for precision, so a caller passing a smaller `--target-dps`
+    # overwrites the canonical artifact with a coarser computation, and nothing
+    # in the run says an artifact was downgraded.
+    #
+    # Measured, not hypothetical (bean `qou-7e1t`). `low_isotope_mass_table.py`
+    # re-runs this script by default with its OWN defaults —
+    # `--method auto --target-dps 11` — over a committed canonical table built
+    # at `--target-dps 60`:
+    #
+    #     target_dps  60 -> 11        method  branching -> auto
+    #     rows         7 ->  9        (p, n compute under `auto`)
+    #
+    # Note the row count moves the OTHER way, so the partial guard above stays
+    # silent by construction: the replacement is WIDER in coverage while being
+    # coarser in precision. That combination is what made this survive the
+    # qou-xwet fix, and it is why the check has to be on dps specifically
+    # rather than on "does the table look smaller".
+    #
+    # Refuse rather than warn: a warning in a subprocess whose stdout is
+    # already dozens of lines is exactly what got missed.
+    _existing_dps = None
+    try:
+        _existing_path = _pb.witness_path(
+            "canonical-mass-table-extended.witness.json", HERE)
+        if _existing_path.exists():
+            _existing_dps = (json.loads(_existing_path.read_text())
+                             .get("parameters", {}).get("target_dps"))
+    except Exception:  # noqa: BLE001 — a missing/unreadable prior artifact is
+        _existing_dps = None  # not a reason to block the first write.
+
+    if (_existing_dps is not None
+            and isinstance(_existing_dps, int)
+            and args.target_dps < _existing_dps
+            and not args.allow_precision_downgrade):
+        print()
+        print("  REFUSING to overwrite the canonical witness at LOWER precision.")
+        print(f"    committed target_dps : {_existing_dps}")
+        print(f"    this run             : {args.target_dps}")
+        print("  The output path is fixed, so this would REPLACE the canonical")
+        print("  table with a coarser computation. The partial-write guard")
+        print("  above cannot catch it — a coarser run can be WIDER in row")
+        print("  coverage (see bean qou-7e1t).")
+        print("  Re-run at >= the committed target_dps, or pass")
+        print("  --allow-precision-downgrade if the downgrade is intended.")
+        return 2
+
     out = builder.save()
     print()
     print(f"  Witness: {out.name}")

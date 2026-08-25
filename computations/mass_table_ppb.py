@@ -48,13 +48,44 @@ sys.path.insert(0, str(Path(__file__).parent))
 # qou-substrate (Layer 2a): import WitnessBuilder directly from the
 # package rather than via the witness_base back-compat shim (which
 # re-exports the identical class). Mirrors low_isotopes_binding_sweep.py.
-sys.path.insert(0, str(Path(__file__).resolve().parents[2] / "tools" / "qou-substrate" / "python"))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools" / "qou-substrate" / "python"))
 
-from q_parameter import Q as Q0
-from experimental_constants import M_E_MEV
+# PRECISION LIFT (bean qou-3wqg). This module imported the FLOAT variant of all
+# three constants and computed `B = nu * m_e * Vol` in Python floats, with no
+# `import mpmath` anywhere in the file. Every `B_pred_MeV` in the emitted 16-row
+# table was therefore float64 FROM THE ROOT — and because those numbers were
+# honestly float64 rather than padded or built too early, all four precision
+# gates passed it cleanly. `canonical-mass-table-extended` reads `B_pred_MeV`
+# out of this witness, so its `err_*` fields could not carry more than a float
+# no matter what that producer did (that is the chain traced on qou-3wqg).
+#
+# This is exactly the lift the comment below anticipated — "a `--precision mpfr`
+# lift only needs to update one place" — because mpf variants already sat beside
+# the floats:
+#     q_parameter.Q_MP             knot_volumes.VOL_BORROMEAN_MPF
+#     codata_constants.M_E_MEV     knot_volumes.VOL_7_SQ_1_MPF
+# `experimental_constants.M_E_MEV` is a float while `codata_constants.M_E_MEV`
+# is the same quantity as mpf, which is why the electron mass changes MODULE
+# rather than name.
+from _precision import set_compute_dps, fmt  # noqa: E402,F401
+set_compute_dps()
+
+from q_parameter import Q_MP as Q0  # noqa: E402
+from codata_constants import M_E_MEV  # noqa: E402 — mpf; experimental_constants' is float
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
-from knot_volumes import VOL_BORROMEAN, VOL_7_SQ_1  # noqa: E402
-from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_LI6_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
+from knot_volumes import (  # noqa: E402
+    VOL_BORROMEAN_MPF as VOL_BORROMEAN,
+    VOL_7_SQ_1_MPF as VOL_7_SQ_1,
+    VOL_6_2_MPF,
+    VOL_8_11_MPF,
+)
+from codata_constants import (  # noqa: E402
+    ame_binding_mev,
+    AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION, AME_B_LI5_MEV_VALIDATION,
+    AME_B_LI6_MEV_VALIDATION, AME_B_LI7_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+)
 
 # Knot volumes now imported from `knot_volumes` (canonical mpmath
 # 50dps source). Catalan G + Vol(L6a4) = 8G + Vol(7²_1) literature
@@ -68,31 +99,47 @@ from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDA
 C_ALPHA_DERIVED = M_E_MEV * VOL_7_SQ_1         # ≈ 2.4270 MeV
 
 # Hyperbolic volumes from SnapPy (50-digit HP, independent of AME).
+#
+# From `knot_volumes`, not typed here.  The qou-3wqg port swapped L6a4 and 7²_1
+# onto the `_MPF` constants and left these two as bare Python float literals --
+# so the 50 digits written out were parsed to binary64 at import and only ~17
+# survived, while the comment above still promised 50.  That floor propagated:
+# `B = nu * M_E_MEV * vol` inherited it, and `str()` on the mpf product then
+# printed the float64's full binary expansion, which is how `B_pred_MeV` reached
+# eight consumers as `2.2488207979013089793867766275070607662200927734375` --
+# 49 digits of which ~17 are real.  The imported constants are digit-identical
+# to the literals they replace, so this recovers precision without moving a
+# value.
 KNOT_VOL = {
-    "6_2":       4.4008325161230461014412038656409280339834854185165,
-    "8_11":      8.2863168178065925881,
+    "6_2":       VOL_6_2_MPF,
+    "8_11":      VOL_8_11_MPF,
     "L6a4":      VOL_BORROMEAN,
 }
 
 # AME2020 light-atom table (B in MeV; positive = binding).
-AME_TABLE = [
-    ("2H",     1,  1,   float(AME_B_DEUTERON_MEV_VALIDATION)),
-    ("3H",     1,  2,   float(AME_B_TRITIUM_MEV_VALIDATION)),
-    ("3He",    2,  1,   float(AME_B_HE3_MEV_VALIDATION)),
-    ("4He",    2,  2,  float(AME_B_HE4_MEV_VALIDATION)),
-    ("6Li",    3,  3,  float(AME_B_LI6_MEV_VALIDATION)),
-    ("7Li",    3,  4,  39.24453),
-    ("8Be",    4,  4,  56.49951),
-    ("9Be",    4,  5,  58.16498),
-    ("11B",    5,  6,  76.20548),
-    ("12C",    6,  6,  92.16175),
-    ("14N",    7,  7, 104.65877),
-    ("16O",    8,  8, 127.61929),
-    ("19F",    9, 10, 147.80137),
-    ("20Ne",  10, 10, 160.64486),
-    ("24Mg",  12, 12, 198.25690),
-    ("40Ca",  20, 20, 342.05212),
+# (symbol, Z, N) only -- NO binding values are typed here.  Every B comes from
+# the vendored AME2020 table via `ame_binding_mev(Z, A)` with `A = Z + N`.
+#
+# What this replaces: five entries read `float(AME_B_*_MEV_VALIDATION)` while
+# the other eleven were hand-typed decimals.  One column, two sources, and they
+# disagreed -- 9Be by 1.6e-5 and 7Li by 1.4e-5 relative against the repo's own
+# vendored table, with 8Be/11B/12C/14N/16O/19F/20Ne/24Mg/40Ca off by less.  A
+# typed literal cannot be re-derived, cannot be corrected when the vendored
+# table is updated, and silently competes with the registry it sits beside.
+#
+# Values stay `mp.mpf`: `ame_binding_mev` parses and divides inside
+# `workdps(>= 50)`, and the old `float(...)` threw that away at the first
+# opportunity -- which is what put a binary64 `B_AME_MeV` into this producer's
+# witness and, from there, into every consumer that lifts it with `mp.mpf`.
+_AME_NUCLIDES = [
+    ("2H",     1,  1), ("3H",     1,  2), ("3He",    2,  1),
+    ("4He",    2,  2), ("6Li",    3,  3), ("7Li",    3,  4),
+    ("8Be",    4,  4), ("9Be",    4,  5), ("11B",    5,  6),
+    ("12C",    6,  6), ("14N",    7,  7), ("16O",    8,  8),
+    ("19F",    9, 10), ("20Ne",  10, 10), ("24Mg",  12, 12),
+    ("40Ca",  20, 20),
 ]
+AME_TABLE = [(sym, Z, N, ame_binding_mev(Z, Z + N)) for sym, Z, N in _AME_NUCLIDES]
 
 # Atom → (knot, nu_sdp, source-label) hypothesis table.
 # ZERO-PARAMETER = the pairing is stated in the framework; the
@@ -123,17 +170,21 @@ ATOM_ASSIGN = {
     # gap row so the witness output makes the missing prediction
     # visible.  See docs/audits/2026-05-24-a5-a7-isotope-wiring-gap.md
     # for the knot-census target volumes and candidate paths.
-    "5Li":  {"rule": "gap",      "B_AME_MeV_target": 26.328,
-             "vol_kashaev_target_m_e_units": 26.328 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 26.328 / (2 * M_E_MEV),
+    # 5Li from the registry, not the literal 26.328 that stood here: the
+    # vendored table gives 26.3306625, so the typed value was 1.0e-4 off -- the
+    # largest of the discrepancies in this file.
+    "5Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI5_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI5_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI5_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
-    "6Li":  {"rule": "gap",      "B_AME_MeV_target": float(AME_B_LI6_MEV_VALIDATION),
-             "vol_kashaev_target_m_e_units": float(AME_B_LI6_MEV_VALIDATION) / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": float(AME_B_LI6_MEV_VALIDATION) / (2 * M_E_MEV),
+    "6Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI6_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI6_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI6_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
-    "7Li":  {"rule": "gap",      "B_AME_MeV_target": 39.24453,
-             "vol_kashaev_target_m_e_units": 39.24453 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 39.24453 / (2 * M_E_MEV),
+    # 7Li likewise: the literal 39.24453 stood against the vendored 39.2450807.
+    "7Li":  {"rule": "gap",      "B_AME_MeV_target": AME_B_LI7_MEV_VALIDATION,
+             "vol_kashaev_target_m_e_units": AME_B_LI7_MEV_VALIDATION / M_E_MEV,
+             "vol_kashaev_target_2m_e_units": AME_B_LI7_MEV_VALIDATION / (2 * M_E_MEV),
              "origin": "GAP: A ∈ {5,6,7} no atom→knot rule yet"},
     # 8Be: α-cluster (n_α=2, n_pairs=1)
     "8Be":  {"rule": "alpha",    "n_alpha": 2, "n_pairs": 1,
@@ -156,24 +207,39 @@ ATOM_ASSIGN = {
     # the Kashaev single-knot rule (target volumes too large for
     # low-crossing census). Likely need composite rules combining
     # α-cores + valence nucleon knots.
-    "9Be":  {"rule": "gap",      "B_AME_MeV_target": 58.165,
-             "vol_kashaev_target_m_e_units": 58.165 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 58.165 / (2 * M_E_MEV),
+    #
+    # Targets come from `ame_binding_mev`, not typed.  The four below read
+    # 58.165 / 76.206 / 104.659 / 147.801 and every one disagreed with the
+    # vendored AME2020 table -- by 1.7e-5, 1.2e-5, 3.8e-6 and 2.5e-6 relative --
+    # which is the same defect, in the same file, that the `_AME_NUCLIDES`
+    # comment above records fixing for the main table.  The three Li rows beside
+    # them were already on registry constants; these four were missed.
+    "9Be":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(4, 9),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(4, 9) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(4, 9) / (2 * M_E_MEV),
              "structural_hint": "2α + n (Borromean halo nucleus)",
              "origin": "GAP: odd-A, Borromean halo — needs composite rule"},
-    "11B":  {"rule": "gap",      "B_AME_MeV_target": 76.206,
-             "vol_kashaev_target_m_e_units": 76.206 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 76.206 / (2 * M_E_MEV),
+    "11B":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(5, 11),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(5, 11) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(5, 11) / (2 * M_E_MEV),
              "structural_hint": "2α + 3p (p-shell nucleus)",
              "origin": "GAP: odd-A, p-shell — needs composite rule"},
-    "14N":  {"rule": "gap",      "B_AME_MeV_target": 104.659,
-             "vol_kashaev_target_m_e_units": 104.659 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 104.659 / (2 * M_E_MEV),
+    "14N":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(7, 14),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(7, 14) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(7, 14) / (2 * M_E_MEV),
              "structural_hint": "3α + 2p (p-shell, N=Z mirror)",
              "origin": "GAP: odd-A, N=Z mirror — needs composite rule"},
-    "19F":  {"rule": "gap",      "B_AME_MeV_target": 147.801,
-             "vol_kashaev_target_m_e_units": 147.801 / M_E_MEV,
-             "vol_kashaev_target_2m_e_units": 147.801 / (2 * M_E_MEV),
+    "19F":  {"rule": "gap",
+             "B_AME_MeV_target": ame_binding_mev(9, 19),
+             "vol_kashaev_target_m_e_units": ame_binding_mev(9, 19) / M_E_MEV,
+             "vol_kashaev_target_2m_e_units":
+                 ame_binding_mev(9, 19) / (2 * M_E_MEV),
              "structural_hint": "4α + 3p (sd-shell onset)",
              "origin": "GAP: odd-A, sd-shell onset — needs composite rule"},
 }
@@ -252,9 +318,16 @@ def predict(sym: str) -> dict | None:
 
 
 def fmt_ppb(err_abs: float, b_ame: float) -> str:
+    """Format a relative error in ppb for the console.
+
+    `float(...)` on the ratio, not on the inputs: both arrive as `mp.mpf` now
+    that the AME column is sourced from the vendored table, the division is
+    done in mpmath, and only the already-reduced ppb figure is narrowed for
+    display.  mpf has no `__format__`, so every `:+.3f` below would raise.
+    """
     if b_ame <= 0:
         return "—"
-    ppb = abs(err_abs) / b_ame * 1e9
+    ppb = float(abs(err_abs) / b_ame * 1e9)
     if ppb > 1e9:
         return f"{ppb/1e9:+.3g}×10⁹"
     if ppb > 1e6:
@@ -323,11 +396,16 @@ def main() -> int:
         )
     print("=" * 130)
     print("MASS TABLE — AME2020 vs ZERO-FREE-PARAMETER predictions")
-    print(f"  q₀ = {Q0:.10f}   m_e = {M_E_MEV} MeV")
-    print(f"  8G = {VOL_BORROMEAN:.10f}   Vol(7²_1) = {VOL_7_SQ_1:.10f}")
-    print(f"  c_αα (derived = m_e · Vol(7²_1)) = {C_ALPHA_DERIVED:.6f} MeV")
+    # float(Q0) for the console only.  Q0 is an mpf and mpf has no __format__,
+    # so `:.10f` raised TypeError here -- on `main`, before any change in this
+    # commit, which is why this producer could not regenerate its own witness.
+    print(f"  q₀ = {float(Q0):.10f}   m_e = {M_E_MEV} MeV")
+    # Same console-only float() as the q₀ line above, for the same reason.
+    print(f"  8G = {float(VOL_BORROMEAN):.10f}   "
+          f"Vol(7²_1) = {float(VOL_7_SQ_1):.10f}")
+    print(f"  c_αα (derived = m_e · Vol(7²_1)) = {float(C_ALPHA_DERIVED):.6f} MeV")
     print(f"  B(⁴He_derived) = 2m_e · 4·8G = "
-          f"{2*M_E_MEV*4*VOL_BORROMEAN:.6f} MeV   "
+          f"{float(2*M_E_MEV*4*VOL_BORROMEAN):.6f} MeV   "
           f"(AME 4He: {float(AME_B_HE4_MEV_VALIDATION)} MeV)")
     print(f"  NO AME VALUES USED AS INPUTS.")
     if args.shell_correction:
@@ -346,7 +424,7 @@ def main() -> int:
         if pred is None:
             no_assign.append((sym, Z, N, A, B_ame))
             print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
-                  f"{B_ame:>10.4f}   "
+                  f"{float(B_ame):>10.4f}   "
                   f"[no zero-parameter rule assigned]")
             continue
         B_pred_kashaev = pred["B_pred"]
@@ -360,17 +438,24 @@ def main() -> int:
             else None
         )
         err = (B_pred - B_ame) if B_pred is not None else None
-        pct = (err / B_ame * 100) if (err is not None and B_ame) else 0.0
-        ppb = (err / B_ame * 1e9) if (err is not None and B_ame) else 0.0
+        # `None`, not `0.0`, when there is no prediction.  A GAP row has no
+        # error -- it has no B_pred to take an error OF -- and writing `0.0`
+        # there both put six raw float64 zeros into the witness and, far worse,
+        # made the row read as a perfect prediction.  The `within` counters
+        # below took that at face value: every one of the six "within 1 ppb"
+        # atoms this producer reported was a GAP row.  Zero predictions are
+        # within 1 ppb.
+        pct = (err / B_ame * 100) if (err is not None and B_ame) else None
+        ppb = (err / B_ame * 1e9) if (err is not None and B_ame) else None
         l3_marker = f"  [+ε_shell={eps_shell:+.3f}]" if eps_shell != 0.0 else ""
         if B_pred is None:
             print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
-                  f"{B_ame:>10.4f}   "
+                  f"{float(B_ame):>10.4f}   "
                   f"[GAP — {pred['formula']}]")
         else:
             print(f"  {sym:>5} {Z:>3} {N:>3} {A:>3}  "
-                  f"{B_ame:>10.4f}  {B_pred:>+11.4f}  {err:>+11.6f}  "
-                  f"{pct:>+8.3f}%  {fmt_ppb(err, B_ame):>12}  "
+                  f"{float(B_ame):>10.4f}  {float(B_pred):>+11.4f}  {float(err):>+11.6f}  "
+                  f"{float(pct):>+8.3f}%  {fmt_ppb(err, B_ame):>12}  "
                   f"{pred['formula']}{l3_marker}  [{pred['origin']}]")
         rows.append({
             "sym": sym, "Z": Z, "N": N, "A": A,
@@ -389,13 +474,18 @@ def main() -> int:
     # Summary
     print()
     print("  Summary:")
-    ok = rows
+    # Scored rows are the ones that actually carry a prediction.  `ok = rows`
+    # scored the GAP rows too, on their fabricated 0.0 error.
+    ok = [r for r in rows if r["err_ppb"] is not None]
+    gap = [r for r in rows if r["err_ppb"] is None]
     within = {1: 0, 1e3: 0, 1e6: 0, 1e9: 0}
     for r in ok:
         for th in within:
             if abs(r["err_ppb"]) <= th:
                 within[th] += 1
     print(f"    n = {len(ok)} atoms with zero-parameter prediction")
+    print(f"    n = {len(gap)} atoms with a rule but no prediction (GAP): "
+          f"{', '.join(r['sym'] for r in gap)}")
     print(f"    n = {len(no_assign)} atoms without rule "
           f"({', '.join(a[0] for a in no_assign)})")
     print(f"    within 1    ppb  (1e-9):    {within[1]}")
@@ -403,9 +493,11 @@ def main() -> int:
     print(f"    within 1e6  ppb  (0.1%):    {within[1e6]}")
     print(f"    within 1e9  ppb  (100%):    {within[1e9]}")
 
-    mean_pct = sum(abs(r["err_pct"]) for r in ok) / len(ok) if ok else 0.0
-    mean_ppb = sum(abs(r["err_ppb"]) for r in ok) / len(ok) if ok else 0.0
-    print(f"    mean |err|:   {mean_pct:.4f}%  =  {mean_ppb:.3e} ppb")
+    # Over the scored rows only -- averaging the GAP rows' 0.0 in pulled the
+    # mean down by the 6/16 of the table that made no prediction at all.
+    mean_pct = sum(abs(r["err_pct"]) for r in ok) / len(ok) if ok else None
+    mean_ppb = sum(abs(r["err_ppb"]) for r in ok) / len(ok) if ok else None
+    print(f"    mean |err|:   {float(mean_pct):.4f}%  =  {float(mean_ppb):.3e} ppb")
 
     builder = (
         WitnessBuilder("mass-table-ppb", engine="python+snappy")

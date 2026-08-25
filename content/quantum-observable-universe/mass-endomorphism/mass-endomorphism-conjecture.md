@@ -4,7 +4,7 @@ We define the **Hecke mass element** $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$
 
 ## Scope: convenience target, not load-bearing
 
-We clarify the scope of this conjecture after the P3.1 conjectural-propagation audit:
+The scope of this conjecture is as follows:
 
 - **Load-bearing claim** (already proved, not part of this conjecture): The categorical mass equals the infinite-series sum
 
@@ -18,13 +18,13 @@ We clarify the scope of this conjecture after the P3.1 conjectural-propagation a
     \Bigr).
   $$
 
-  This follows from [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) and [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream block that relies on the mass tower routes through this infinite series.
+  This follows from [`thm:knot-mass-formula-unified`](#thm:knot-mass-formula-unified) and [`prop:mass-endomorphism-tower`](#prop:mass-endomorphism-tower). It does not depend on the closed-form conjecture below. Every algebraic downstream result that relies on the mass tower routes through this infinite series.
 
-- **Convenience target** (the conjectural content of this block): We conjecture the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
+- **Convenience target** (the conjectural content here): We conjecture the existence of a single element $\Phi_{\mathrm{mass}}(\beta) \in H_n(R, q)$—a finite-rank Hecke element—whose Markov trace gives the full categorical mass. This element would collapse the infinite series into a closed-form evaluation. It serves symbolic computation but is not required for the structural derivations in this paper.
 
 If this conjecture fails (no closed-form $\Phi_{\mathrm{mass}}$ exists in finite-rank $H_n(R, q)$), the algebraic mass formula remains valid as the infinite series. Compute scripts attempting to materialise $\Phi_{\mathrm{mass}}$ as a single element must truncate explicitly. Scripts that evaluate the infinite sum at $q_0$ (the dominant case) remain unaffected.
 
-The failure consequence column in [`docs/audits/conjecture-cones.md`](../../../docs/audits/conjecture-cones.md) records this scope accurately: "tower formula remains correct as an infinite series; the closed form is a convenience". We specify this distinction here in response to user clarification.
+The scope of a failure is therefore exactly this: the tower formula remains correct as an infinite series, and the closed form is a convenience.
 
 ## Statement
 
@@ -115,7 +115,7 @@ The conjecture regarding a "closed-form expression in $H_n(R, q)$" asks a questi
       \;=\; (z q^{-1};\, q^{-1})_n,
   $$
 
-  *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The completion $\widehat{\mathbb{Z}[q^{± 1}][z]}_z = \varprojlim_n \mathbb{Z}[q^{± 1}][z] / (P_n(q, z))$ has cyclotomic projections $\pi_n^{(z)}$ acting as structural truncations at depth $n$, replacing Yekutieli's ad-hoc cutoff with a quotient by a structural ideal. The [conjecture that the brane tower lives in this ring](#conj:brane-tower-z-habiro) has two independent claims: (a) the algebraic Cauchy-limit (the partial sums converge in the $z$-Habiro topology), and (b) the existence of a canonical level-selection rule $n_\star(\mathfrak{H})$ derivable from substrate data.*
+  *whose zero locus is exactly the first $n$ poles of $\Phi_q$. The completion $\widehat{\mathbb{Z}[q^{\pm 1}][z]}_z = \varprojlim_n \mathbb{Z}[q^{\pm 1}][z] / (P_n(q, z))$ has cyclotomic projections $\pi_n^{(z)}$ acting as structural truncations at depth $n$, replacing Yekutieli's ad-hoc cutoff with a quotient by a structural ideal. The [conjecture that the brane tower lives in this ring](#conj:brane-tower-z-habiro) has two independent claims: (a) the algebraic Cauchy-limit (the partial sums converge in the $z$-Habiro topology), and (b) the existence of a canonical level-selection rule $n_\star(\mathfrak{H})$ derivable from substrate data.*
 
 2. *Magic-shell structural term. Add a separate $\Delta_{\text{shell}}(Z, N)$ contribution to the binding formula distinguishing closed-shell stabilization from the brane-tower transient.*
 
@@ -146,7 +146,7 @@ We tested three single-level approaches for the proton ($uud$) and neutron ($udd
 
 None of these single-level computations reproduce the neutron-to-proton mass ratio. The quantum dilogarithm $\Phi_q = \sum \log \lvert\hat{V}_i\rvert$ gives the correct binding energy differences between nuclei (Q-values at Level 0), but not single-nucleon absolute masses.
 
-The proton mass $938.272$ MeV in this paper derives from the pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$. This requires the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as input, calibrated from CODATA $m_p$. The structural content (pair formula, splitting isolation, binding energy) is categorically derived; the absolute scale is calibrated.
+The proton mass $938.272$ MeV in this paper derives from the pair Skein formula $m_p = \mathcal{S}_{uu} + 2\mathcal{S}_{ud}$. This requires the dressed quark mass $\mu_\mathfrak{u} \approx 311$ MeV as input, calibrated from CODATA $m_p$. The structural content (pair formula, splitting isolation, binding energy) is categorically derived; the absolute scale is calibrated — consistent with absolute mass in MeV not being a framework prediction, the predictive content residing in the dimensionless ratios, with $m_e$ (CAL-1) setting the MeV scale by fiat.
 
 ## Candidate structures
 

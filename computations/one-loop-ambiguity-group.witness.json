@@ -1,0 +1,60 @@
+{
+  "description": "Group-theoretic characterisation of the |det J| triangulation ambiguity. Refutes both the universal-sqrt(2) reading and the tetrahedron-count reading; identifies the ambiguity as the unit group of the trace field (5_2 -> sqrt(plastic), ~30 digits), which is exactly where the dropped DG flattening monomial lives.",
+  "computation": "one_loop_ambiguity_group_probe",
+  "audit_only": true,
+  "bits_prec": 212,
+  "trials": 40,
+  "plastic_number": "1.32471795724474602596090885447809734073440405690173336453402",
+  "results": {
+    "4_1": {
+      "cusps": 1,
+      "tetrahedra": 2,
+      "distinct_values": 1,
+      "exponents_integral": false,
+      "generator": null,
+      "generator_identified_as": "n/a (single value)"
+    },
+    "5_2": {
+      "cusps": 1,
+      "tetrahedra": 3,
+      "distinct_values": 9,
+      "exponents_integral": false,
+      "generator": "1.15096392525775803568060121845909583558647094828387672848528",
+      "generator_identified_as": "sqrt(rho) [plastic]"
+    },
+    "6_2": {
+      "cusps": 1,
+      "tetrahedra": 5,
+      "distinct_values": 20,
+      "exponents_integral": false,
+      "generator": "1.02653046000155713799057356426838330217284835977527549707757",
+      "generator_identified_as": "unidentified (rank>=2: 10 distinct gaps)"
+    },
+    "L5a1": {
+      "cusps": 2,
+      "tetrahedra": 4,
+      "distinct_values": 5,
+      "exponents_integral": true,
+      "generator": "1.41421356237309504880168872420939615713934375075389614635336",
+      "generator_identified_as": "sqrt(2)"
+    },
+    "L6a4": {
+      "cusps": 3,
+      "tetrahedra": 8,
+      "distinct_values": 7,
+      "exponents_integral": true,
+      "generator": "1.41421356237309504880168872420689615713934375075389614635337",
+      "generator_identified_as": "sqrt(2)"
+    }
+  },
+  "h1_universal_sqrt2_ladder": false,
+  "h2_determined_by_tetrahedron_count": false,
+  "conclusion": "ambiguity group = units of the trace field; flattening diagnosis confirmed",
+  "bears_on": [
+    "bean qou-fl4t",
+    "bean qou-pn5j",
+    "PR #4691",
+    "PR #4658"
+  ],
+  "timestamp": "2026-08-08T00:49:39+00:00"
+}

@@ -54,6 +54,7 @@ sys.path.insert(0, str(_HERE.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def _load(name):
@@ -68,7 +69,7 @@ _bs = _load("qbeta_g3_5two_barodd_substrate")      # certified Z52 assembly
 theta = _bl.theta
 H = _bl.H
 
-mp.mp.dps = 45
+set_compute_dps()
 
 
 def blocks_m(m, x, q, qh):

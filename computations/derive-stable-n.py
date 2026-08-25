@@ -10,8 +10,9 @@ Then invert: for each p, find A such that Z_stable(A) = p.
 import math
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
-from computations.q_parameter import Q
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import _path_bridge  # noqa: F401, E402
+from q_parameter import Q  # noqa: E402
 
 q = Q
 delta_m = 1.293  # MeV, m_n - m_p = S_dd - S_uu

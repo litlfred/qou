@@ -12,6 +12,17 @@ export default algorithm({
     witness: "computations/cal-3-q-beta.witness.json",
     status: "verified",
   },
+  authorNotes: [
+    {
+      kind: "status",
+      body:
+        "Superseded status figures, moved out of the published prose during " +
+        "the one-voice pass: the earlier note read \"164.0x as of 2026-05-31 " +
+        "/ Habiro-exact 5.7 ppb at the pre-re-pin muon anchor\". Those " +
+        "numbers describe the pre-re-pin muon anchor, not the current pin; " +
+        "the live figures are in the block's Status paragraph.",
+    },
+  ],
   tags: [
     "mba",
     "step-11",

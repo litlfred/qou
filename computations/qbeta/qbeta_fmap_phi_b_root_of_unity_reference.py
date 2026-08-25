@@ -3,14 +3,14 @@
 
 Task-2 step of the f-map program (pre-registered, non-fishing): evaluate the
 VALIDATED Faddeev Φ_b (phi_b_evaluator.py — literature-verified against
-uploads/0604094v1.pdf, Hikami math/0604094) at REAL b with b² RATIONAL, i.e.
+library/arxiv-math-0604094v1/0604094v1.pdf, Hikami math/0604094) at REAL b with b² RATIONAL, i.e.
 q = e^{2πib²} a ROOT OF UNITY — the fibre/decay saddle where the bar-odd
 factor F_odd of the ladder element F(q) = F_even·F_odd must live.
 
 Points (chosen by CORPUS STRUCTURE, not by numerical matching):
   * b² = 1/4  ⇒ q = i = ζ₄        — the corpus's PROVED ζ₄ residue structure
   * b² = 2/5  ⇒ q = e^{4πi/5} = ζ₅² — the ζ₅ / Galois locus (cl3-zeta5 thread)
-  * b² = 1/6  ⇒ q = e^{πi/3} = ζ₆  — the Vol(4₁) = 2Λ(π/3) angle π/3
+  * b² = 1/6  ⇒ q = e^{πi/3} = ζ₆  — the Vol(4₁) = 2·Cl₂(π/3) angle π/3
   * b² = 1    ⇒ q = 1 (self-dual point b = 1/b) — degenerate control
 
 At each point: Φ_b(z) for a few small real z, each row GATED by a local shift-
@@ -35,8 +35,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 
 from phi_b_evaluator import phi_b  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 35
+set_compute_dps()
 
 POINTS = [
     ("zeta_4  (b^2 = 1/4, q = i)", mp.mpf(1) / 4),
@@ -64,7 +65,7 @@ def main() -> int:
     wb.set_description(
         "Reference values of the validated Faddeev non-compact quantum "
         "dilogarithm Φ_b (phi_b_evaluator.py — literature-verified against "
-        "uploads/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at "
+        "library/arxiv-math-0604094v1/0604094v1.pdf, Hikami math/0604094 eqs (2.1)-(2.5)) at "
         "rational b² (root-of-unity q, the fibre/decay saddle), for the "
         "F_odd construction. Every row gated by a local shift-equation "
         "check; unimodularity |Φ_b| = 1 (the pure-phase fact behind "

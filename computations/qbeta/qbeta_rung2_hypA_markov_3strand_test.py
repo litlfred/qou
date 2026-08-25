@@ -105,7 +105,7 @@ def main() -> int:
     q = sp.Symbol("q", positive=True)
     hbar_q = (q - 1) / q
     qint_2 = q + 1 / q
-    z = 1 / (sp.sqrt(q) + 1 / sp.sqrt(q))         # Markov-Jones parameter
+    z = q**3 / (q**2 + 1)         # Markov-Jones parameter
 
     # The actual rung 2 form (closure on main)
     rung2_actual = hbar_q ** 3 / qint_2

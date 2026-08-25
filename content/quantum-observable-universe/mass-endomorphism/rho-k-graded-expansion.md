@@ -4,16 +4,20 @@ We expose the graded expansion of the categorical density $\rho_K$ by multiplyin
 
 $$
   \boxed{
+  \begin{aligned}
     m_e \cdot |\!\mathrm{tr}_M(\mathcal{B}_K)| \cdot \rho_K
-    \;=\;
+    \;=\;&
     \underbrace{Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e}_{\rho_K^{\mathrm{LO}}\text{-piece (Markov mult.)}}
-    \;+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
-    \;+\; \underbrace{\tfrac{\alpha\, z^2}{2}\!\!\sum_{i<j}\!\ln\bigl(\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}}\bigr)\!\big|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
+    \\[4pt]
+    &+\; \underbrace{\tfrac{\alpha}{2} \sum_i \ln\bigl(\hat V_i^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}}}\bigr)}_{\rho_K^{\text{single-gen}}\text{-piece}}
+    \\[4pt]
+    &+\; \underbrace{\tfrac{\alpha\, z^2}{2}\!\!\sum_{i<j}\!\ln\bigl(\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}} \cdot \overline{\hat V_i^{\mathrm{full}} \hat V_j^{\mathrm{full}}}\bigr)\!\big|_{\mathrm{Wedd}}}_{\rho_K^{\text{pair-gen}}\text{-piece (open)}}
     \;+\; \dots
+  \end{aligned}
   }
 $$
 
-where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = 1/(q^{1/2} + q^{-1/2})$ forms the Markov parameter. The graded expansion truncates at the single-generator level to achieve the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
+where $\alpha = m_e \cdot 8G$ ([binding scale](#prop:binding-scale-catalan)) and $z = q^{3}/(q^{2}+1)$ forms the Markov parameter (**convention D**). The graded expansion truncates at the single-generator level to achieve the empirical $0.18\%$ accuracy reported in [atomic braid mass](#thm:wedderburn-mass-formula).
 
 ## Proof
 
@@ -91,7 +95,7 @@ Combined with the Hecke branching trace decomposition (refined Sub-lemma 2.1, op
 
 ## Production wiring
 
-The graded expansion is realised end-to-end by `computations/rho_k_graded_atomic_mass.py` (witness `rho-k-graded-atomic-mass.witness.json`). The leading-order constituents $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are drawn from the canonical muon-anchored mass facade (`computations/canonical_mass.py`). No CODATA nucleon masses enter. The single-generator correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at $50$ decimal places of precision, yielding $0.19\%$ mean error and $0.30\%$ maximum error across the published $Z = 1..10$ table. The pair-generator tier is reported as the open residual only. It is never added to the mass, as its naive log-additive form degrades accuracy (see Table 1). Per-generator volumes carry the known $H_3$-weight convention of the published table. The dynamic $H_{3A}$ re-weighting forms a separate tracked fix (`docs/audits/2026-05-25-h3-vs-h3a-legacy-bug-audit.md` §7 Tier 2).
+The graded expansion is realised end-to-end by `computations/rho_k_graded_atomic_mass.py` (witness `rho-k-graded-atomic-mass.witness.json`). The leading-order constituents $Z m_{\mathfrak{p}} + N m_{\mathfrak{n}} + Z m_e$ are drawn from the canonical muon-anchored mass facade (`computations/canonical_mass.py`). No CODATA nucleon masses enter. The single-generator correction $\alpha \sum_i \ln|\hat V_i^{\mathrm{full}}|$ is evaluated at $50$ decimal places of precision, yielding $0.19\%$ mean error and $0.30\%$ maximum error across the published $Z = 1..10$ table. The pair-generator tier is reported as the open residual only. It is never added to the mass, as its naive log-additive form degrades accuracy (see Table 1). Per-generator volumes carry the known $H_3$-weight convention of the published table. The dynamic $H_{3A}$ re-weighting remains a separate open correction.
 
 ## References
 

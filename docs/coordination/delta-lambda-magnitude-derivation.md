@@ -3,6 +3,27 @@
 **Date:** 2026-07-27 · **Branch:** `claude/delta-lambda-magnitude-derivation-2026-07-27`
 **Milestone bean:** `qou-ksxr`
 
+> **🟥 STATUS UPDATE (2026-08-08) — read before working this ledger.** Two
+> later results reframe the front:
+> 1. **The per-partition `Δ_λ` VALUE is PROVED** (2026-08-02, sorry-free,
+>    general-n: `Δ_λ = (−1)^{n(λ)}·dim V_λ`,
+>    `dtEuler_eq_deltaLambda_unconditional`). The NZ/Stokes→`|S|`→`|Δ_λ|` chain
+>    below is therefore **superseded on the per-partition value**; its residual
+>    value is only as a *route to the many-body magnitude*, not the Δ_λ value.
+> 2. **The ℓ¹-ceiling forecloses the whole "better `Δ_λ` closes binding"
+>    premise** (2026-08-07, `free_parameters = 0`): `Σ_λ|y_λ χ^λ Δ_λ|` reaches
+>    at most `[0.36, 0.59]` of the AME target across D/T/³He/⁴He *even with
+>    perfect interference*. So **no re-derivation of `Δ_λ` — by this NZ/Stokes
+>    route or any other — can close binding**; a genuinely **new additive
+>    ≥4-body term** is required (must supply 41–64 % of each target alone). The
+>    live successor front is the He4-local cumulant `b₄ = −ln det(I + m·S)`, not
+>    a better `Δ_λ` magnitude. See
+>    [`docs/audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md`](../audits/2026-08-07-l1-ceiling-confirms-magnitude-absent-and-he4-two-row-suppression.md)
+>    and the precision-goals Δ_λ gate.
+> The Lean sub-tasks below (hibinv/hratio entireness, Stokes-constant algebra)
+> remain **valid formalization targets in their own right**; just do not frame
+> them as "closing binding."
+
 ## Notation (2026-07-27, owner directive: avoid collision with substrate u = b·ℏ_q²)
 
 | Symbol | Meaning |
@@ -121,3 +142,23 @@ Rationale: T4 is the fastest falsification — if the integer 3 doesn't reproduc
 |S|, the entire chain is scope-(a) and T1/T2/T5 are moot for this route. T3
 sharpens the smooth prefactor needed for T4. T2/T1 are the Lean rigidity tasks,
 longer but decoupled from the probe. T5 is conditional on all others.
+
+---
+
+## Session 2026-08-09 · PR #4346 (`z-c-k-f-map-keystone`) — H₆ interface handles + skew-only Lean
+
+Extension of the qou-prjo surface-term cluster (#4798, #4619, #4818, #4796 item #4),
+from a distinct route. **No §6 inconsistency** with #4798's scope-(a) "NEGATIVE"
+(natural scalar extractions gauge-unpinned c₂∈0…897); we agree curvature nonzero,
+raw trace null, magnitude open.
+
+| Artifact | Novelty vs siblings |
+|---|---|
+| `QOU/QBeta/YekutieliTrefoilDiscretization.lean` (sorry-free): `surface2Form=ΣV_ij⁅A_i,A_j⁆`; **skew-only survives ⇒ = corpus germ F_q**; `=0 ⇔ commute`; **central color dressing drops out** | NOVEL — #4798 has no Lean; #4619 Lean is abelian shadow + cell count |
+| `deuteron_interface_handle_curvature_probe.py`: `A_a=ρ(σ₂),A_b=ρ(σ₃)` in **real H₆ Hoefsmit seminormal**; F_q nonzero, `tr=0` (concrete in H₆), singlets→0, `dF_q~h²` | NOVEL — fills the "H₆ interface handles not in corpus" gap #4619/#4796 name; #4798 used 2-dim Hecke on σ₁ |
+| A=3 bridge `BirkhoffBarOddPythagorasBridge.lean` (`E²=−1`; `|factor|²=fs²+s²`); `A3BranchingModulusReflection.lean` (`(1+x²)²=(1−x²)²+(2x)²`, lift=2−factor_sa) | Addresses the `option-e.md` named-open phase→real-amplitude bridge |
+
+**Open (deliberately, no fit):** the deuteron MeV binding via the operator-valued
+quadrature pairing `tr_M(ρ·dF_q)` — the channel *past* #4798's negative scalar route.
+**Hedges carried:** `r*≈1.585` is a C-convention number (#4766, moves 22–26%);
+`C_knot=5.853` may be a normalization artifact pending the fibre→τ-transfer check (#4796).

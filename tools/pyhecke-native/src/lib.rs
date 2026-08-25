@@ -14,7 +14,8 @@ use hecke_engine::{
 use pyo3::prelude::*;
 use rug::Float;
 
-/// Markov parameter z = 1 / (q^{1/2} + q^{-1/2}).
+/// Markov parameter z = q^3 / (q^2 + 1) — trace convention D
+/// (SU(2)/Temperley-Lieb). Convention C excised 2026-08-09.
 #[pyfunction]
 fn markov_z(q: f64) -> f64 {
     gram::markov_z(q)
@@ -27,9 +28,12 @@ fn hecke_h(q: f64) -> f64 {
 }
 
 /// Markov-trace weights on the NF basis as a length-6 list.
+///
+/// Convention D (qou-m7py, 2026-08-15): `TR_M[5] = h·z² + z`, matching
+/// `pyhecke.gram.TR_M`. The legacy `z³` weights are `gram::trace_weights`.
 #[pyfunction]
 fn trace_weights(q: f64) -> Vec<f64> {
-    gram::trace_weights(q).to_vec()
+    gram::trace_weights_markov(q).to_vec()
 }
 
 /// Gram matrix G_ij = tr_M(b_i · b_j) as a 6x6 list of lists.
@@ -44,10 +48,26 @@ fn gram_determinant(q: f64) -> f64 {
     gram::det_6x6(&gram::gram_matrix(q))
 }
 
-/// Gram inverse as a 6x6 list of lists.
+/// Inverse on the quotient `H_3(q)/rad`, as a 6x6 list of lists.
+///
+/// REPLACES `gram_inverse`, which is gone (2026-08-15). With the correct
+/// `TR_M[5] = h*z^2 + z` the Markov-Gram form is singular under convention D,
+/// so a 6x6 inverse does not exist. Exposed under a NEW name rather than
+/// keeping `gram_inverse` pointed at the pseudoinverse: the two differ exactly
+/// on the radical, so a caller who asked for an inverse must see that there
+/// is not one instead of silently receiving a different matrix.
+///
+/// Python callers of `pyhecke_native.gram_inverse` now get AttributeError,
+/// which is the intended outcome — see `gram_radical` for the null direction.
 #[pyfunction]
-fn gram_inverse(q: f64) -> Vec<Vec<f64>> {
-    gram::gram_inverse(q).iter().map(|r| r.to_vec()).collect()
+fn gram_quotient_inverse(q: f64) -> Vec<Vec<f64>> {
+    gram::gram_quotient_inverse(q).iter().map(|r| r.to_vec()).collect()
+}
+
+/// The radical (null direction) of the Markov-Gram form, in closed form.
+#[pyfunction]
+fn gram_radical(q: f64) -> Vec<f64> {
+    gram::gram_radical(q).to_vec()
 }
 
 /// NF multiplication: multiply NF vector by `(c · σ_gen + d · 1)`.
@@ -1803,7 +1823,8 @@ fn pyhecke_native(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(trace_weights, m)?)?;
     m.add_function(wrap_pyfunction!(gram_matrix, m)?)?;
     m.add_function(wrap_pyfunction!(gram_determinant, m)?)?;
-    m.add_function(wrap_pyfunction!(gram_inverse, m)?)?;
+    m.add_function(wrap_pyfunction!(gram_quotient_inverse, m)?)?;
+    m.add_function(wrap_pyfunction!(gram_radical, m)?)?;
     m.add_function(wrap_pyfunction!(hm, m)?)?;
     m.add_function(wrap_pyfunction!(nf_tr, m)?)?;
     m.add_function(wrap_pyfunction!(nf_net, m)?)?;
@@ -1919,12 +1940,28 @@ fn chi_lambda_all_partitions_f64(
 /// recommended; pin to `q_parameter.Q_50_DIGIT_STR` from Python).
 /// `dps` controls the MPFR working precision (50 = production,
 /// 100 = research-grade).
+/// `avg_shifts` (optional) overrides the shift applied to `sign == 0`
+/// crossings, **indexed by word position** — an atomic braid mixes conventions
+/// (p–p and n–n symmetric at `h/2`, p–n colour-weighted), and ⁴He at H_12
+/// contains both, so one word-level shift cannot express it. An empty string at
+/// a position means `h/2` there. Omitted or `None` keeps `h/2` throughout, so
+/// existing four-argument callers are unaffected. Pass `h·(1/2 - δ/4)` for the
+/// **colour-weighted** p–n crossing, which the sign encoding
+/// alone cannot express: a crossing is `σ_g + d·I`, and quantising `d` to a
+/// sign discards everything but the three symmetric cases. That is why
+/// `chi_at_q0_via_hoefsmit_mpfr` refused the native path with
+/// `unrecognised d=…` and fell back to a loop impractical at H_12.
+///
+/// A string rather than an `f64`: the shift carries the substrate flavour
+/// split δ and must cross the boundary at the same precision as `q_str`.
 #[pyfunction]
+#[pyo3(signature = (n_strands, word, q_str, dps, avg_shifts=None))]
 fn chi_lambda_all_partitions_mpfr(
     n_strands: usize,
     word: Vec<(i32, u32)>,
     q_str: String,
     dps: u32,
+    avg_shifts: Option<Vec<String>>,
 ) -> Vec<(Vec<usize>, String)> {
     let word_with_averaged: Vec<wenzl_lr::CrossingPair> = word
         .iter()
@@ -1942,11 +1979,12 @@ fn chi_lambda_all_partitions_mpfr(
             (c, gen)
         })
         .collect();
-    wenzl_lr::chi_lambda_canonical_all_partitions_mpfr(
+    wenzl_lr::chi_lambda_canonical_all_partitions_mpfr_shift(
         n_strands,
         &word_with_averaged,
         &q_str,
         dps,
+        avg_shifts.as_deref(),
     )
 }
 

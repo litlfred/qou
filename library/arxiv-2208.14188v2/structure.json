@@ -1,0 +1,394 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-2208.14188v2",
+ "source": {
+  "file": "2208.14188v2.pdf",
+  "sha256": "92a7651c81b799b393123a235a0275531f55b77881894a33d8d5e43e28b24780",
+  "bytes": 920222,
+  "pages": 46
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "2208.14188",
+   "version": "2",
+   "primary_class": "hep-th",
+   "stamp_date": "8 Feb 2023"
+  },
+  "doi": null,
+  "title": "Resurgence in complex Chern-Simons theory at generic levels",
+  "authors_raw": null,
+  "abstract": "In this note we study the resurgent structure of sl(2, C) Chern-Simons state integral model on knot complements S3\\41,S 3\\52 with generic discrete level k≥ 1 and with small boundary holonomy deformation. The coeﬃcients of the saddle point expansions are in the trace ﬁeld of the knot extended by the holonomy parameter. Despite increasing complication of the asymptotic series as the level k increases, the resurgent structure of the asymptotic series is universal: both the distribution of Borel plane singularities and the associated Stokes constants are independent of the level k.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20230209014119Z",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "medialab",
+   "Title": ""
+  },
+  "title_prev": "Resurgence in complex Chern-Simons theory at generic levels Zhihao Duana Jie Gub aKorea Institute for Advanced Study 85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea bSchool of Phyiscs and Shing-Tung Yau Center",
+  "title_lines": [
+   "Resurgence in complex Chern-Simons theory at",
+   "generic levels",
+   "Zhihao Duana Jie Gub",
+   "aKorea Institute for Advanced Study",
+   "85 Hoegiro, Dongdaemun-gu, Seoul 02455, Korea",
+   "bSchool of Phyiscs and Shing-Tung Yau Center"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Resurgent structure of complex Chern-Simons theory at generic level",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Perturbative complex Chern-Simons theory at generic level",
+   "page": 4,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Resurgent structure of complex Chern-Simons theory",
+   "page": 10,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Stokes constants and BPS invariants",
+   "page": 15,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Figure eight",
+   "page": 16,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic series",
+   "page": 16,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Holomorphic blocks",
+   "page": 19,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "Resurgent structure",
+   "page": 21,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 1,
+   "title": "Three twists",
+   "page": 24,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Asymptotic series",
+   "page": 24,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Holomorphic blocks",
+   "page": 30,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Resurgent structure",
+   "page": 32,
+   "source": "outline",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Conclusion and discussion",
+   "page": 34,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A Tetrahedron partition function at level k",
+   "page": 38,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.1 Fundamental properties",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.2 Zeros and poles",
+   "page": 39,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.3 Integral identities",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "A.4 Semi-classical limit",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "B Power series of state integrals at different levels",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.1 Knot 41",
+   "page": 40,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "B.2 Knot 52",
+   "page": 42,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6146,
+   "n_words": 998
+  },
+  {
+   "id": "sec-001-2-resurgent-structure-of-complex-chern-simons-th",
+   "number": "2",
+   "title": "Resurgent structure of complex Chern-Simons theory at generic level",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-perturbative-complex-chern-simons-theory-at-g",
+   "number": "2.1",
+   "title": "Perturbative complex Chern-Simons theory at generic level",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 10,
+   "n_chars": 12860,
+   "n_words": 2361
+  },
+  {
+   "id": "sec-003-22-resurgent-structure-of-complex-chern-simons-t",
+   "number": "2.2",
+   "title": "Resurgent structure of complex Chern-Simons theory",
+   "level": 2,
+   "page_start": 10,
+   "page_end": 15,
+   "n_chars": 11020,
+   "n_words": 1893
+  },
+  {
+   "id": "sec-004-23-stokes-constants-and-bps-invariants",
+   "number": "2.3",
+   "title": "Stokes constants and BPS invariants",
+   "level": 2,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 1571,
+   "n_words": 263
+  },
+  {
+   "id": "sec-005-3-figure-eight",
+   "number": "3",
+   "title": "Figure eight",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-31-asymptotic-series",
+   "number": "3.1",
+   "title": "Asymptotic series",
+   "level": 2,
+   "page_start": 16,
+   "page_end": 19,
+   "n_chars": 5183,
+   "n_words": 980
+  },
+  {
+   "id": "sec-007-32-holomorphic-blocks",
+   "number": "3.2",
+   "title": "Holomorphic blocks",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 3640,
+   "n_words": 639
+  },
+  {
+   "id": "sec-008-33-resurgent-structure",
+   "number": "3.3",
+   "title": "Resurgent structure",
+   "level": 2,
+   "page_start": 21,
+   "page_end": 24,
+   "n_chars": 6814,
+   "n_words": 1264
+  },
+  {
+   "id": "sec-009-4-three-twists",
+   "number": "4",
+   "title": "Three twists",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-010-41-asymptotic-series",
+   "number": "4.1",
+   "title": "Asymptotic series",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 30,
+   "n_chars": 9759,
+   "n_words": 1846
+  },
+  {
+   "id": "sec-011-42-holomorphic-blocks",
+   "number": "4.2",
+   "title": "Holomorphic blocks",
+   "level": 2,
+   "page_start": 30,
+   "page_end": 32,
+   "n_chars": 2404,
+   "n_words": 402
+  },
+  {
+   "id": "sec-012-43-resurgent-structure",
+   "number": "4.3",
+   "title": "Resurgent structure",
+   "level": 2,
+   "page_start": 32,
+   "page_end": 34,
+   "n_chars": 5630,
+   "n_words": 1043
+  },
+  {
+   "id": "sec-013-5-conclusion-and-discussion",
+   "number": "5",
+   "title": "Conclusion and discussion",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 38,
+   "n_chars": 8141,
+   "n_words": 1426
+  },
+  {
+   "id": "sec-014-a-tetrahedron-partition-function-at-level-k",
+   "number": null,
+   "title": "A Tetrahedron partition function at level k",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 39,
+   "n_chars": 782,
+   "n_words": 168
+  },
+  {
+   "id": "sec-015-a1-fundamental-properties",
+   "number": null,
+   "title": "A.1 Fundamental properties",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 39,
+   "n_chars": 539,
+   "n_words": 116
+  },
+  {
+   "id": "sec-016-a2-zeros-and-poles",
+   "number": null,
+   "title": "A.2 Zeros and poles",
+   "level": 2,
+   "page_start": 39,
+   "page_end": 40,
+   "n_chars": 267,
+   "n_words": 57
+  },
+  {
+   "id": "sec-017-a3-integral-identities",
+   "number": null,
+   "title": "A.3 Integral identities",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 40,
+   "n_chars": 209,
+   "n_words": 34
+  },
+  {
+   "id": "sec-018-a4-semi-classical-limit",
+   "number": null,
+   "title": "A.4 Semi-classical limit",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 46,
+   "n_chars": 15740,
+   "n_words": 2488
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 22,
+  "sections": 19,
+  "chars_total": 90705
+ }
+}

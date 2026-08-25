@@ -41,7 +41,7 @@ from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
 from hecke_characters import specht_dim  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 

@@ -82,7 +82,7 @@ coefficient `c n` is determined by the previous `d` values via the kernel
 `-(q 0)⁻¹ · q (j+1)`. This is the "kernel produces `c_k` from the seed" engine —
 it makes rigorous the Step-2 statement that the kernel fixes `c_{n}` from the
 last `d` coefficients. -/
-theorem CFinite.recurrence_step {K : Type*} [Field K] {d : ℕ} {q c : ℕ → K}
+theorem recurrence_step {K : Type*} [Field K] {d : ℕ} {q c : ℕ → K}
     (h : CFinite d q c) {n : ℕ} (hn : d ≤ n) :
     c n = -(q 0)⁻¹ * ∑ j ∈ Finset.range d, q (j + 1) * c (n - (j + 1)) := by
   obtain ⟨hq0, hrec⟩ := h

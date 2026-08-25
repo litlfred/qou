@@ -112,7 +112,7 @@ def load_abs_tr_M(w: "WitnessBuilder | None" = None) -> dict[str, mp.mpf]:
     (``witness_dependency_drift.py``) to walk.
     """
     out: dict[str, mp.mpf] = {}
-    for legacy_name in ["atomic-tr-m-mpfr-50dps.witness.json"]:
+    for legacy_name in ["atomic-tr-m-mpfr-50dps-proton.witness.json"]:
         f = HERE / legacy_name
         if f.exists():
             d = w.add_upstream(f) if w is not None else \
@@ -123,7 +123,13 @@ def load_abs_tr_M(w: "WitnessBuilder | None" = None) -> dict[str, mp.mpf]:
                 if atom is not None and tr_str is not None:
                     out[atom] = abs(mp.mpf(tr_str))
     for ext in sorted(HERE.glob("atomic-tr-m-*.witness.json")):
-        if ext.name == "atomic-tr-m-mpfr-50dps.witness.json":
+        # Skip BOTH layers of the primary reference: the proton one is
+        # already loaded above, and the muon one must NOT come in through this
+        # glob -- `atomic-tr-m-*` matches it, so a guard naming only one layer
+        # lets the other in as an "extension" and silently reintroduces the
+        # straddle this file was just fixed for.
+        if ext.name in ("atomic-tr-m-mpfr-50dps-proton.witness.json",
+                        "atomic-tr-m-mpfr-50dps.witness.json"):
             continue
         try:
             d = w.add_upstream(ext) if w is not None else \
@@ -194,6 +200,25 @@ def main() -> int:
     abs_tr_M = load_abs_tr_M(w)
     delta_lambda = load_delta_lambda(w)
 
+    # Is the Δ_λ witness the PROVED VALUE table only (value_only), or does it
+    # carry the fully y_λ·χ^λ-weighted per-λ terms?  A value_only witness must
+    # NOT be raw-summed into a binding prediction: Δ_λ is the proved per-partition
+    # weight (-1)^{n(λ)}·dim V_λ, but the binding total also needs the y_λ·χ^λ
+    # weighting AND the separate super-pairwise extensive magnitude term (open).
+    delta_lambda_value_only = False
+    _dlf = HERE / "delta-lambda-witness.json"
+    if _dlf.exists():
+        try:
+            _dld = json.loads(_dlf.read_text())
+            _params = _dld.get("parameters", {}) or {}
+            delta_lambda_value_only = bool(
+                _dld.get("value_only")
+                or _params.get("value_only")
+                or (_dld.get("data", {}) or {}).get("value_only")
+            )
+        except (json.JSONDecodeError, AttributeError):
+            pass
+
     if delta_lambda is None:
         print("  ⚠ delta-lambda-witness.json not present — Δ_λ values")
         print("    are the central open compute (PRs #602, #603, #613).")
@@ -256,15 +281,30 @@ def main() -> int:
             # belongs in the derivation-race PR).
             blocks = delta_lambda[atom]
             sum_delta = sum(blocks.values(), mp.mpf(0))
-            binding = M_E_MEV * sum_delta
-            err_pct = (binding - binding_codata) / binding_codata * 100 if binding_codata != 0 else None
-            status = "computed_via_delta_lambda_sum"
-            row["status"] = status
             row["abs_tr_M"] = str(abs_tr)
-            row["sum_delta_lambda"] = str(sum_delta)
-            row["binding_predicted_MeV"] = str(binding)
-            if err_pct is not None:
-                row["err_pct"] = str(err_pct)
+            if delta_lambda_value_only:
+                # Proved per-partition VALUE present; binding NOT computable from
+                # it alone (needs y_λ·χ^λ + the open extensive magnitude term).
+                # Emit the raw Σ Δ_λ as a labelled DIAGNOSTIC only — never a
+                # binding prediction (anti-laundering).
+                status = "delta_lambda_value_present"
+                row["status"] = status
+                row["sum_delta_lambda_raw_diagnostic"] = str(sum_delta)
+                row["binding_note"] = (
+                    "Δ_λ value proved (signed Springer dim); binding total "
+                    "requires y_λ·χ^λ weighting + separate extensive magnitude "
+                    "term (open) — raw Σ Δ_λ is NOT a binding energy."
+                )
+            else:
+                # Full y_λ·χ^λ·Δ_λ witness — the binding sum is meaningful.
+                binding = M_E_MEV * sum_delta
+                err_pct = (binding - binding_codata) / binding_codata * 100 if binding_codata != 0 else None
+                status = "computed_via_delta_lambda_sum"
+                row["status"] = status
+                row["sum_delta_lambda"] = str(sum_delta)
+                row["binding_predicted_MeV"] = str(binding)
+                if err_pct is not None:
+                    row["err_pct"] = str(err_pct)
 
         rows.append(row)
         abs_tr_str = mp.nstr(abs_tr, 12) if abs_tr is not None else "—"

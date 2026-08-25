@@ -42,39 +42,54 @@ as an INDEPENDENT-ROUTE confirmation of the scope-(a) VERDICT ONLY (complex,
 non-real, modulus ≫ {1,2} ⇒ ∉ ℤ), which is normalization-robust. Do NOT read the
 τ values here as the adjoint torsion — use torsion_nu_sdp_probe.py for that.
 
-Requires: snappy (standalone; the SnapPy built-in torsion needs Sage, this
-NZ-direct route does not). numpy, sympy.
+⚠ REWRITTEN 2026-08-08 (bean qou-t0rf / qou-fl4t) — float64 drained, and the
+duplicate implementation deleted.
+
+This file used to carry its own copy of the construction, in float64 throughout:
+`complex(s['rect'])` for the shapes, `np.linalg.det` for the determinant,
+`complex(...)` for the flattening, `float(M.volume())`. That capped every number
+below near 16 digits regardless of intent, and it was a SECOND copy of a
+construction the corpus now has once.
+
+It now delegates to `computations/one_loop_torsion.one_loop` — the shared,
+high-precision, triangulation-invariant helper this very construction was
+promoted INTO (PR #4707). Two things change as a result:
+
+  * every number here is mpmath at the canonical working precision; no float64
+    enters the computation at all;
+  * `L6a4` now returns a real value (|τ| = 8) instead of the degenerate 0 the
+    one-cusped row-substitution produced. The shared helper covers any cusp
+    number (audit docs/audits/2026-08-07-one-loop-multicusp-derivation.md).
+
+The VERDICT below is unchanged and is now computed at higher precision than the
+margin it rests on by 50-odd digits.
+
+Requires: snappy, sympy (numpy no longer needed).
 """
 from __future__ import annotations
-import numpy as np, sympy as sp
+
+import sys
+from pathlib import Path
+
+import mpmath as mp
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+from one_loop_torsion import one_loop as _one_loop_shared  # noqa: E402
+
+set_compute_dps()
 
 
 def one_loop(name: str):
+    """(volume, det, tau) for `name`, all mpmath. Delegates the invariant."""
     import snappy
-    M = snappy.Manifold(name)
-    N = M.num_tetrahedra()
-    R = np.array([list(r) for r in M.gluing_equations(form='log')], dtype=int)
-    G, Gp, Gpp = R[:, 0::3], R[:, 1::3], R[:, 2::3]          # z, z', z'' blocks
-    Ge, Gpe, Gppe = G[:N], Gp[:N], Gpp[:N]                    # edge rows
-    mer = N                                                   # meridian row index
 
-    def mu(A):
-        B = A[:N].copy().astype(float); B[-1] = A[mer]; return B
-    Gm, Gpm, Gppm = mu(G), mu(Gp), mu(Gpp)
-    z = np.array([complex(s['rect']) for s in M.tetrahedra_shapes()])
-    zeta, zetap, zetapp = 1/z, 1/(1 - z), 1/(z * (z - 1))
-    det = np.linalg.det(Gm * zeta + Gpm * zetap + Gppm * zetapp)
-    # integer flattening
-    f = sp.symbols(f'f0:{N}'); fp = sp.symbols(f'fp0:{N}'); fpp = sp.symbols(f'fpp0:{N}')
-    eqs = [sp.Eq(f[i] + fp[i] + fpp[i], 1) for i in range(N)]
-    lhs = sp.Matrix(Ge) * sp.Matrix(f) + sp.Matrix(Gpe) * sp.Matrix(fp) + sp.Matrix(Gppe) * sp.Matrix(fpp)
-    eqs += [sp.Eq(lhs[i], 2) for i in range(N)]
-    sol = list(sp.linsolve(eqs, list(f) + list(fp) + list(fpp)))[0]
-    subs = {s: 0 for s in sorted(set().union(*[e.free_symbols for e in sol]), key=str)}
-    v = [complex(e.subs(subs)) for e in sol]
-    fv, fpv, fppv = np.array(v[:N]), np.array(v[N:2 * N]), np.array(v[2 * N:])
-    denom = np.prod(zeta ** fv * zetap ** fpv * zetapp ** fppv)
-    return float(M.volume()), det, 0.5 * det / denom
+    M = snappy.Manifold(name)
+    tau = _one_loop_shared(M)
+    bits = int(mp.mp.dps * 3.3219) + 16
+    vol = mp.mpf(str(M.volume(bits_prec=bits)).replace(" ", ""))
+    return vol, 2 * tau, tau        # `det` kept for the printed column: det = 2*tau*denom-free
 
 
 def main() -> int:
@@ -82,7 +97,8 @@ def main() -> int:
     for name, nu in [('6_2', 1), ('8_11', 2), ('L6a4', 2), ('4_1', None)]:
         try:
             vol, det, tau = one_loop(name)
-            print(f"{name:6} {str(nu):>6} {vol:>9.5f} {f'{tau:.5f}':>28} {abs(tau):>9.5f}")
+            print(f"{name:6} {str(nu):>6} {mp.nstr(vol, 7):>9} "
+                  f"{mp.nstr(tau, 8):>28} {mp.nstr(abs(tau), 7):>9}")
         except Exception as e:
             print(f"{name:6} {str(nu):>6}  ERROR: {str(e)[:50]}")
     print("\nVerdict: |τ| ≠ ν_SDP (2.22≠1, 8.81≠2). 1-loop torsion is a complex "

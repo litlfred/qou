@@ -1,6 +1,6 @@
 **3-fold Markov closure $\to$ Hopf-link substructure $\to$ $c_3 = -2$.**
 
-This proposition formalizes the Track C direction: **proving** the
+This proposition **proves** the
 categorical identification $c_3 = J_{\text{Hopf}}(q=1) = -2$ in the
 $\mathfrak{Q}_\beta$ precision ladder, not just observing it empirically.
 

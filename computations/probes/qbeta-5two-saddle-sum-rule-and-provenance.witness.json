@@ -1,0 +1,124 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:36:44.361615+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "assertions": [
+    {
+      "name": "sum_rule_exact",
+      "computed": 2.897817305224548e-70,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-35,
+      "source": "sum_j Re V_j = -3 pi^2/2"
+    },
+    {
+      "name": "relation_V3_from_V1",
+      "computed": 2.173362978918411e-70,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-35,
+      "source": "V3 = -2 Re V1 - 3 pi^2/2"
+    },
+    {
+      "name": "extraction_is_centering",
+      "computed": 2.173362978918411e-70,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 1e-35,
+      "source": "sum_j V_j^ext = 0 -- the pi^2/2 shift centers"
+    },
+    {
+      "name": "legacy_literals_are_extraction_convention",
+      "computed": 0.00010498525121583873,
+      "expected": 0.0,
+      "passed": true,
+      "tolerance": 0.0002,
+      "source": "both legacy literals match the extraction convention to ~4 digits"
+    },
+    {
+      "name": "legacy_pair_internally_inconsistent",
+      "computed": 7.30306e-05,
+      "expected": 7.30306e-05,
+      "passed": true,
+      "tolerance": 0.0,
+      "source": "the pair violates the exact relation => the two were computed independently"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "qbeta-5two-saddle-sum-rule-and-provenance",
+  "scriptFile": "qbeta_5two_saddle_sum_rule_and_provenance_probe.py",
+  "scriptHash": "d107facd5f64",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/qbeta_5two_saddle_sum_rule_and_provenance_probe.py"
+  },
+  "description": "Exact 5_2 saddle sum rule sum_j Re V_j = -3 pi^2/2 (hence V3 = -2 Re V1 - 3 pi^2/2, and sum_j V_j^ext = 0), plus the provenance verdict on the two long-unexplained corpus literals. auditOnly; comparison to published mathematics; no fit; nothing wired.",
+  "data": {
+    "identities": {
+      "sum_Re_V": "-14.8044066016340379282517364998",
+      "minus_3_pi2_over_2": "-14.8044066016340379282517364998",
+      "sum_residual": "2.89782e-70",
+      "relation_residual": "2.17336e-70",
+      "centering_residual": "2.17336e-70"
+    },
+    "provenance": {
+      "extraction_sigma1": "1.3791943096610752232",
+      "extraction_sigma3": "-2.7583886193221504465",
+      "legacy_im_V1": "1.3790860299",
+      "legacy_V3": "-2.7580990292",
+      "rel_sigma1": "7.8509431e-5",
+      "rel_sigma3": "0.00010498525",
+      "pair_inconsistency": "7.30306e-5",
+      "supersedes": "the 2026-07-26 'matches neither published convention' verdict and the 2026-08-01 'Im V1 only' narrowing -- both tested one literal; both literals are the extraction convention at ~4 digits",
+      "still_open": "the source of the ~1e-4 evaluation error"
+    },
+    "refuted_error_sources": {
+      "li2_truncation_best_over_N_3_59": "0.00028959",
+      "implied_root_for_legacy_sigma3": "0.435192805077",
+      "implied_root_cubic_residual": "0.00921523",
+      "scope": "scope-(a): these two candidate sources are excluded by direct test; the space of error sources is not exhausted"
+    },
+    "specificity_controls": {
+      "note": "five control cubics of the same shape (one real + two conjugate roots); four share prod(y)=1, so sum log y = 0 as for 5_2. None reproduces -3 pi^2/2 => the identity is not branch bookkeeping.",
+      "deviations": {
+        "y^3-2y^2+3y-2": "2.82963",
+        "y^3-y^2+2y-1": "0.450973",
+        "y^3+y^2+2y-1": "0.161673",
+        "y^3-3y^2+4y-1": "0.476813",
+        "y^3-2y^2+4y-1": "0.242075"
+      },
+      "five_two_residual": "2.89782e-70"
+    },
+    "proof_status": {
+      "status": "NUMERICALLY VERIFIED to 80 dps, NOT PROVED",
+      "reduction": "sum log y_j = 0 (Vieta, prod y = 1) and sum L_j = pi*i give sum L_j^2 = -pi^2 - 2*e2(L), so the sum rule is equivalent to 3*sum Li2(y_j) = 2*Re e2(L) - pi^2/2 -- a dilogarithm-vs-log-product relation, i.e. Bloch-group / five-term shaped.",
+      "open": "a Bloch-group or five-term-relation proof over the 5_2 trace field. Numerical verification at 80 dps is strong evidence, not a proof.",
+      "branch_data": "2 log y_j - 3 log(1-y_j) = 2 pi i eps_j with eps = (+1,-1,0), exact at all three roots; this is where the pi^2 in the sum rule comes from",
+      "derived_relation": "summing the reflection identity over the roots gives A + B = pi^2/2 - (2/3) sum (log y_j)^2 - (4 pi/3) arg(y1), verified exactly, where A = sum Li2(y_j), B = sum Li2(1-y_j)",
+      "why_not_closed": "one equation, two unknowns (A = 0.9717306815, B = 0.3514640301, no evident closed form for either separately)",
+      "identified_route": "Kubert/distribution relation Li2(z^n) = n sum_k Li2(zeta_n^k z) applied to Li2(y^2) = Li2((1-y)^3), which supplies a second relation at the cost of omega*(1-y) arguments"
+    },
+    "verdict": "SUM RULE: sum_j Re V_j = -3 pi^2/2 exactly (residual 2.9e-70 at 50 dps), equivalently V3 = -2 Re V1 - 3 pi^2/2. The corpus's pi^2/2 'extraction' shift is therefore the unique CENTERING that makes the three saddle values sum to zero, not an unexplained fudge. It is SPECIFIC to the 5_2 cubic, not branch bookkeeping: five control cubics of the same shape -- four sharing 5_2's prod(y)=1 constraint -- miss the target by 0.162 to 2.83, so the identity is an arithmetic property of the 5_2 saddle cubic (Bloch-group / dilogarithm-ladder shaped), NOT a formal artifact. It is verified to 80 digits but NOT PROVED. PROVENANCE: both long-unexplained literals ARE that convention to ~4 digits (rel 7.85e-5 and 0.000105), so the earlier 'matches neither convention' verdict was wrong -- the formula was right and the evaluation was sloppy. The pair violates the exact relation by 7.3e-5, so the two were computed independently. Li_2 truncation and root imprecision are both REFUTED as the error source (scope-(a), direct test); the residual ~1e-4 stays OPEN but is now bounded to a 4-digit evaluation error in a correct formula. V3 no longer needs to be carried as an independent literal: (REL) gives it from V1."
+  }
+}

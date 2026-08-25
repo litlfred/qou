@@ -1,8 +1,20 @@
 import { algorithm } from "../../schema/builders";
 
 export default algorithm({
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "Working-channel pointers pulled out of the published prose for the " +
+        "owner-gated $c_4$ reconcile (46 vs 4143/90): PR #3280, finding 5 of " +
+        "`docs/audits/2026-07-03-deuteron-from-scratch-error-ledger.md` (which " +
+        "also carries the per-stage attribution of the 1.4 ppb muon-identity " +
+        "reconcile), and bean `2i8g`.",
+    },
+  ],
   label: "alg:mass-identity",
-  title: "Mass identity $m_p = 2\\,(m_\\mu F_{\\mathrm{Bor}} - 6 m_e) \\cdot R_{\\mathrm{s5bb}}$ (muon-anchored Hecke energy)",
+  title: "Nucleon mass ratio $m_p = 2\\,(m_\\mu F_{\\mathrm{Bor}} - 6 m_e) \\cdot R_{\\mathrm{s5bb}}$ (muon-anchored Hecke energy)",
   uses: [
     "prop:mass-identity-exists",
     "prop:mass-identity-unique",

@@ -14,8 +14,8 @@
     },
     {
       "name": "S-at-q0-matches-sdp-witness",
-      "computed": "0.18689369188617716011080460702942218631505966186523",
-      "expected": "0.18689369188617716011080460702942218631505966186523",
+      "computed": "0.18689369188617716",
+      "expected": "0.18689369188617716",
       "passed": true,
       "source": "S(q_0) loaded from qbeta-decay-sdp-knot-operator.witness.json tau_M_at_q0"
     }
@@ -62,7 +62,7 @@
       ]
     },
     "step_4_pointer": {
-      "S_at_q0": "0.18689369188617716011080460702942218631505966186523",
+      "S_at_q0": "0.18689369188617716",
       "structural_note": "Under Markov collapse T_β = S · I, the c_k Taylor coefficients of Q_β(q)/E_0(q) are the w-Taylor coefficients of S(q), not of a 6-channel L2 projection. Re-extracting c_k from S(q) directly is the runnable next-probe; this script does NOT propose c_k values (forbidden ansatz pattern per AGENTS.md)."
     }
   }

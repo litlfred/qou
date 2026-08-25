@@ -437,7 +437,7 @@ class SDPSlaterUniqueness
 /-- **Instance for the interior case** (dual slack PosDef) —
     derived from `_unique_of_dualSlack_posDef` (batch 12).
     This instance is **fully proven**, no axiom dependency. -/
-def SDPSlaterUniqueness.ofDualSlackPosDef
+def ofDualSlackPosDef
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
     (h_S_posDef : (sdp.dualSlack sc.ystar).PosDef) :
     SDPSlaterUniqueness sdp sc where
@@ -448,7 +448,7 @@ def SDPSlaterUniqueness.ofDualSlackPosDef
 /-- **Instance for the active-empty + cost-PosDef case** —
     derived from `_unique_of_active_empty_and_cost_posDef`
     (batch 26).  Fully proven. -/
-def SDPSlaterUniqueness.ofActiveEmptyAndCostPosDef
+def ofActiveEmptyAndCostPosDef
     {sdp : SDPPrimal n ℝ ι} (sc : RealStrictComplementarityPair sdp)
     (h_active_empty : sc.active = ∅)
     (h_cost_posDef : sdp.cost.PosDef) :
@@ -539,7 +539,7 @@ delivery. -/
     multiplication form.  Renamed to reflect what's actually
     proven; the range-inclusion interpretation is documented
     but not stated as the theorem's type. -/
-theorem Matrix.PosSemidef.mul_zero_comm
+theorem PosSemidef.mul_zero_comm
     {S Φ : Matrix (Fin n) (Fin n) ℝ}
     (hS : S.PosSemidef) (hΦ : Φ.PosSemidef)
     (h_zero : S * Φ = 0) :
@@ -606,7 +606,7 @@ axiom SDPRankUniqueness
     The proof is **fully closed modulo `SDPRankUniqueness`**.
     When that axiom is replaced by a Mathlib theorem, this entire
     function becomes axiom-free. -/
-theorem SDPSlaterUniqueness.ofSlater_proven
+theorem ofSlater_proven
     {n : ℕ} {ι : Type*} [Fintype ι]
     (sdp : SDPPrimal n ℝ ι) (sc : RealStrictComplementarityPair sdp)
     (h_slater : sdp.IsStrictlyFeasible) :

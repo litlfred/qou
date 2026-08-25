@@ -1,0 +1,291 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0604057v2",
+ "source": {
+  "file": "0604057v2.pdf",
+  "sha256": "649fad141dc34eb9388a87f99a58e4520f3c4b0bbf42f17ae49a267b712b5c7b",
+  "bytes": 285558,
+  "pages": 19
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0604057",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "17 Apr 2006"
+  },
+  "doi": null,
+  "title": "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY OF A KNOT",
+  "authors_raw": "WEIPING LI AND QINGXUE W ANG",
+  "abstract": "In this paper, by using the regulator map of Beilinson-Delig ne, we show that the quan- tization condition posed by Gukov is true for the SL2(C) character variety of the hyperbolic knot in S3. Furthermore, we prove that the corresponding C∗-valued 1-form is a secondary characteristic class (Chern-Simons) arising from the vanishing ﬁrst Chern class of the ﬂat line bundle over the smooth part of the character variety, where the ﬂat line bund le is the pullback of the universal Heisenberg line bundle over C∗ × C∗. The second part of the paper is to deﬁne an algebro-geometric invariant of 3-manifolds resulting from the Dehn surgery along a hyperbolic knot complement in S3. We establish a Casson type invariant for these 3-manifolds. In the last section, we exp licitly calculate the character variety of the ﬁgure-eight knot and discuss some applications.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20220301110147-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "VOLUME CONJECTURE, REGULA TOR AND SL2(C)-CHARACTER VARIETY OF A KNOT",
+  "title_lines": [
+   "VOLUME CONJECTURE, REGULATOR AND SL2(C)-CHARACTER VARIETY",
+   "OF A KNOT"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Terminology and Notation",
+   "page": 2,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "2.1.",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "2.2.",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "2.3.",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "2.4.",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "A-polynomial, regulator and K2 of a curve",
+   "page": 3,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "3.1.",
+   "page": 3,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 2,
+   "title": "The regulator map of K2",
+   "page": 4,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "3.3.",
+   "page": 5,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "SL2(C) Character Variety and a New Knot Invariant",
+   "page": 7,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The curve of characters",
+   "page": 7,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
+   "page": 9,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "An Example: The Figure Eight Knot",
+   "page": 12,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 18,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 4100,
+   "n_words": 709
+  },
+  {
+   "id": "sec-001-2-terminology-and-notation",
+   "number": "2",
+   "title": "Terminology and Notation",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21",
+   "number": null,
+   "title": "2.1.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 572,
+   "n_words": 117
+  },
+  {
+   "id": "sec-003-22",
+   "number": null,
+   "title": "2.2.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-004-23",
+   "number": null,
+   "title": "2.3.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 2,
+   "n_chars": 403,
+   "n_words": 89
+  },
+  {
+   "id": "sec-005-24",
+   "number": null,
+   "title": "2.4.",
+   "level": 2,
+   "page_start": 2,
+   "page_end": 3,
+   "n_chars": 849,
+   "n_words": 177
+  },
+  {
+   "id": "sec-006-3-a-polynomial-regulator-and-k2-of-a-curve",
+   "number": "3",
+   "title": "A-polynomial, regulator and K2 of a curve",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 458,
+   "n_words": 87
+  },
+  {
+   "id": "sec-007-31",
+   "number": null,
+   "title": "3.1.",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 4,
+   "n_chars": 3218,
+   "n_words": 644
+  },
+  {
+   "id": "sec-008-32-the-regulator-map-of-k2",
+   "number": "3.2",
+   "title": "The regulator map of K2",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 2506,
+   "n_words": 538
+  },
+  {
+   "id": "sec-009-33",
+   "number": null,
+   "title": "3.3.",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 7,
+   "n_chars": 5518,
+   "n_words": 1218
+  },
+  {
+   "id": "sec-010-41-the-curve-of-characters",
+   "number": "4.1",
+   "title": "The curve of characters",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 9,
+   "n_chars": 5387,
+   "n_words": 1155
+  },
+  {
+   "id": "sec-011-42-invariant-and-dehn-surgery-of-hyperbolic-knot",
+   "number": "4.2",
+   "title": "Invariant and Dehn Surgery of Hyperbolic Knots",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 12,
+   "n_chars": 11663,
+   "n_words": 2287
+  },
+  {
+   "id": "sec-012-5-an-example-the-figure-eight-knot",
+   "number": "5",
+   "title": "An Example: The Figure Eight Knot",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 18,
+   "n_chars": 16093,
+   "n_words": 3452
+  },
+  {
+   "id": "sec-013-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 4319,
+   "n_words": 644
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 14,
+  "chars_total": 55086
+ }
+}

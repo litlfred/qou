@@ -35,7 +35,9 @@ everything that is not the irreducible open kernel:
 
 What deliberately remains open: the **faithfulness** direction
 $\mathrm{res} \neq 0 \Rightarrow \mathrm{P} \neq \mathrm{NP}$ — that
-*is* the conjecture (the `sorry` on `QouPNeqNp`).  $\mathrm{P}$ and
+*is* the conjecture (the instance-free `faithful` field of `QouPNeqNp`;
+no instance is provided, so it is assumed only where written).
+$\mathrm{P}$ and
 $\mathrm{NP}$ themselves are kept as an opaque `Prop` parameter:
 Mathlib has no standard P/NP formalisation, and axiomatising one here
 would add fake precision without content (per the anti-laundering

@@ -254,7 +254,7 @@ theorem PartitionOf5.single_altSum_eq_deltaLambda (p : PartitionOf5) :
 /-- **`G_λ` is cancellation-free** — all its mass sits on one grade-parity
     (`E=0` or `O=0`), matching the general characterization: the concentrated
     top-cohomology object saturates the `|χ| = dim` ceiling. -/
-theorem PartitionOf5.single_is_single_parity (p : PartitionOf5) :
+theorem single_is_single_parity (p : PartitionOf5) :
     (masses p.singleCoeffs).1 = 0 ∨ (masses p.singleCoeffs).2 = 0 := by
   cases p <;> decide
 

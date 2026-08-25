@@ -1,5 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Ring
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.BraidKnot.ZeqNRhoCorrection
@@ -47,9 +48,8 @@ structure KnotAssignment (A : ℕ) where
 
 /-- q-integer `[n]_q = (q^n − q^(−n))/(q − q^(−1))`.  Specialises
     to `n` at `q = 1` (after applying l'Hôpital). -/
-noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
-  if q = 1 then (n : ℝ)
-  else ((q^n - q^(-(n : ℤ))) / (q - q^(-1 : ℤ)))
+noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ :=
+  QOU.QInteger.qIntBalCl q n
 
 /-- **Z=N ρ-correction conjecture (axiomatised).**
 
@@ -103,7 +103,7 @@ noncomputable def dimensionalAnomaly (q : ℝ) (A : ℕ) : ℝ :=
 
 /-- `qInt 1 n = (n : ℝ)` by definition (the `if q = 1` branch). -/
 @[simp] theorem qInt_one (n : ℕ) : qInt 1 n = (n : ℝ) := by
-  unfold qInt; simp
+  simp only [qInt, QOU.QInteger.qIntBalCl]; simp
 
 /-- At `q = 1`, the dimensional anomaly vanishes — the q-deformation
     correction has no effect, and the Kashaev law is exact. -/

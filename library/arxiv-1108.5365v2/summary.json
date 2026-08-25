@@ -1,0 +1,191 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1108.5365v2",
+ "source_sha256": "000961ede2234231",
+ "brief": "Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R) — We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual",
+ "extended": "**Representation of the Quantum Plane, its Quantum Double and Harmonic Analysis on GL+_q(2,R)**\n\n*Double and Harmonic Analysis on GL+*\n\n92 pp, 34 sections.\n\n**Abstract.** We give complete detail of the description of the GNS represe ntation of the quantum plane A and its dual ˆA as a von Neumann algebra. In particu- lar we obtain a rather surprising result that the multiplica tive unitary W is manageable in this quantum semigroup context. We study the q uantum dou- ble group construction introduced by Woronowicz, and using Baaj and Vaes’ construction of the multiplicative unitary Wm, we give the GNS description of the quantum double D(A) which is equivalent to GL+ q (2, R). Furthermore we study the fundamental corepresentation T λ,t and its matrix coeﬃcients, and show that it can be expressed by the b-hypergeometric function.\n\n**Outline.** 1 Introduction; 2 Preliminaries; 2.1 Mellin transform; 2.4 The multiplicative unitary; 2.5 q-commuting operators; 3 The quantum dilogarithm; 3.2 Integral transformations; 4 The quantum plane; 4.2 The quantum plane algebra and its modular ; 4.3 The Haar functional; 4.4 The GNS description; 4.5 Modular maps and the right picture; 4.6 The multiplicative unitary; 5 The dual space; 5.2 The non-degenerate pairing; 5.3 The GNS description; 5.4 The multiplicative unitary and modular map; 6 Transformation to new Hilbert spaces",
+ "tokens": {
+  "brief": 49,
+  "extended": 343
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "2-8"
+  },
+  {
+   "id": "sec-001-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "8-8"
+  },
+  {
+   "id": "sec-002-21-mellin-transform",
+   "title": "Mellin transform",
+   "pages": "8-13"
+  },
+  {
+   "id": "sec-003-24-the-multiplicative-unitary",
+   "title": "The multiplicative unitary",
+   "pages": "13-15"
+  },
+  {
+   "id": "sec-004-25-q-commuting-operators",
+   "title": "q-commuting operators",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-005-3-the-quantum-dilogarithm",
+   "title": "The quantum dilogarithm",
+   "pages": "16-19"
+  },
+  {
+   "id": "sec-006-32-integral-transformations",
+   "title": "Integral transformations",
+   "pages": "19-22"
+  },
+  {
+   "id": "sec-007-4-the-quantum-plane",
+   "title": "The quantum plane",
+   "pages": "22-23"
+  },
+  {
+   "id": "sec-008-42-the-quantum-plane-algebra-and-its-modular-dou",
+   "title": "The quantum plane algebra and its modular double",
+   "pages": "23-27"
+  },
+  {
+   "id": "sec-009-43-the-haar-functional",
+   "title": "The Haar functional",
+   "pages": "27-28"
+  },
+  {
+   "id": "sec-010-44-the-gns-description",
+   "title": "The GNS description",
+   "pages": "28-31"
+  },
+  {
+   "id": "sec-011-45-modular-maps-and-the-right-picture",
+   "title": "Modular maps and the right picture",
+   "pages": "31-34"
+  },
+  {
+   "id": "sec-012-46-the-multiplicative-unitary",
+   "title": "The multiplicative unitary",
+   "pages": "34-39"
+  },
+  {
+   "id": "sec-013-5-the-dual-space",
+   "title": "The dual space",
+   "pages": "39-41"
+  },
+  {
+   "id": "sec-014-52-the-non-degenerate-pairing",
+   "title": "The non-degenerate pairing",
+   "pages": "41-44"
+  },
+  {
+   "id": "sec-015-53-the-gns-description",
+   "title": "The GNS description",
+   "pages": "44-46"
+  },
+  {
+   "id": "sec-016-54-the-multiplicative-unitary-and-modular-maps",
+   "title": "The multiplicative unitary and modular maps",
+   "pages": "46-47"
+  },
+  {
+   "id": "sec-017-6-transformation-to-new-hilbert-spaces",
+   "title": "Transformation to new Hilbert spaces",
+   "pages": "47-47"
+  },
+  {
+   "id": "sec-018-61-unitary-transformations",
+   "title": "Unitary transformations",
+   "pages": "47-48"
+  },
+  {
+   "id": "sec-019-62-the-representation-space",
+   "title": "The representation space",
+   "pages": "48-51"
+  },
+  {
+   "id": "sec-020-63-the-corepresentation-space",
+   "title": "The corepresentation space",
+   "pages": "51-53"
+  },
+  {
+   "id": "sec-021-7-the-quantum-double-construction",
+   "title": "The quantum double construction",
+   "pages": "53-61"
+  },
+  {
+   "id": "sec-022-73-the-multiplicative-unitary",
+   "title": "The multiplicative unitary",
+   "pages": "61-66"
+  },
+  {
+   "id": "sec-023-74-the-left-regular-corepresentation",
+   "title": "The left regular corepresentation",
+   "pages": "66-72"
+  },
+  {
+   "id": "sec-024-75-the-right-regular-corepresentation",
+   "title": "The right regular corepresentation",
+   "pages": "72-75"
+  },
+  {
+   "id": "sec-025-8-regular-representation",
+   "title": "Regular representation",
+   "pages": "75-75"
+  },
+  {
+   "id": "sec-026-81-pairing-with-uqgl2r",
+   "title": "Pairing with Uq(gl(2,R))",
+   "pages": "75-77"
+  },
+  {
+   "id": "sec-027-82-the-principal-series-representation",
+   "title": "The principal series representation",
+   "pages": "77-79"
+  },
+  {
+   "id": "sec-028-83-casimir-operator",
+   "title": "Casimir operator",
+   "pages": "79-82"
+  },
+  {
+   "id": "sec-029-84-left-regular-representation",
+   "title": "Left regular representation",
+   "pages": "82-85"
+  },
+  {
+   "id": "sec-030-85-right-regular-representation",
+   "title": "Right regular representation",
+   "pages": "85-87"
+  },
+  {
+   "id": "sec-031-86-the-modular-double",
+   "title": "The modular double",
+   "pages": "87-88"
+  },
+  {
+   "id": "sec-032-9-representation-theoretic-meaning-for-certain-i",
+   "title": "Representation theoretic meaning for certain integral transforms",
+   "pages": "88-89"
+  },
+  {
+   "id": "sec-033-references",
+   "title": "References",
+   "pages": "89-92"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

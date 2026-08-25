@@ -1,0 +1,245 @@
+{
+  "probe": "qbeta_clx8_route23_slit_radial",
+  "bean": "qou-clx8",
+  "parent_bean": "qou-0yqu",
+  "dps": 70,
+  "pairs_with_lean": "QOU/MathlibExt/ComplexDilogarithm{Slit,Deriv,Unique}.lean",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the old side condition Re(1-yz)>0 on [0,1] is EXACTLY Re y < 1, so the region it excluded is the whole half-plane Re y >= 1 (minus the cut). On points there -- including both examples qou-clx8 names -- cLiTwoExt still equals Li2, so the old hypothesis was excluding a region where the identity holds, exactly as that bean says",
+      "old_condition_is": "Re y < 1",
+      "region_gained": "{Re y >= 1} minus [1, inf)",
+      "points": [
+        {
+          "point": "bean example 1",
+          "y": "(1.5 + 0.3j)",
+          "old_hypothesis": false,
+          "new_hypothesis": true,
+          "|cLiTwoExt - Li2|": "0.0"
+        },
+        {
+          "point": "bean example 2",
+          "y": "(3.0 + 0.001j)",
+          "old_hypothesis": false,
+          "new_hypothesis": true,
+          "|cLiTwoExt - Li2|": "0.0"
+        },
+        {
+          "point": "far right",
+          "y": "(6.0 + 2.0j)",
+          "old_hypothesis": false,
+          "new_hypothesis": true,
+          "|cLiTwoExt - Li2|": "0.0"
+        },
+        {
+          "point": "just past the 1",
+          "y": "(1.0001 - 2.0j)",
+          "old_hypothesis": false,
+          "new_hypothesis": true,
+          "|cLiTwoExt - Li2|": "5.6597994e-73"
+        },
+        {
+          "point": "deep right",
+          "y": "(40.0 + 0.5j)",
+          "old_hypothesis": false,
+          "new_hypothesis": true,
+          "|cLiTwoExt - Li2|": "0.0"
+        }
+      ],
+      "worst": "5.6597994e-73",
+      "all_rejected_by_old": true,
+      "all_accepted_by_new": true,
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the Lean hypothesis `y.im != 0 or y.re < 1` is exactly C minus [1,inf): it rejects every point of the cut and accepts every point off it",
+      "cut_points_rejected": [
+        "(1.0 + 0.0j)",
+        "(2.0 + 0.0j)",
+        "(7.0 + 0.0j)"
+      ],
+      "off_points_accepted": [
+        "(0.9 + 0.0j)",
+        "(-5.0 + 0.0j)",
+        "(2.0 + 0.0001j)",
+        "(1.0 - 0.5j)"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "the cut is [1,inf) and not |y|>=1 because for real y>1 the integrand is singular INSIDE the interval, at z = 1/y in (0,1) -- that is the actual obstruction, and it is what makes the geometric hypothesis the right one",
+      "singularities": [
+        {
+          "y": "1.5",
+          "singularity_at_z": "0.6666666667",
+          "inside_0_1": true
+        },
+        {
+          "y": "3.0",
+          "singularity_at_z": "0.3333333333",
+          "inside_0_1": true
+        },
+        {
+          "y": "20.0",
+          "singularity_at_z": "0.05",
+          "inside_0_1": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "cLiTwoExt(t*y) = -int_0^t log(1-y u)/u du -- the substitution u = t*z, which moves the parameter OUT of the integrand and INTO the limit of integration. This is what lets FTC reach it instead of differentiation under the integral",
+      "n_checks": 9,
+      "worst": "4.5278395e-72",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "d/dt cLiTwoExt(t*y) = -log(1 - y*t)/t -- the radial derivative the Lean file proves by the fundamental theorem of calculus. Finite-difference check at step 1e-12 (central, so error ~ h^2 * f''')",
+      "rows": [
+        {
+          "y": "(1.5 + 0.3j)",
+          "t": "0.3",
+          "|fd - pred|": "1.45672e-24"
+        },
+        {
+          "y": "(1.5 + 0.3j)",
+          "t": "0.75",
+          "|fd - pred|": "9.03299e-24"
+        },
+        {
+          "y": "(-2.0 + 1.0j)",
+          "t": "0.3",
+          "|fd - pred|": "4.10217e-25"
+        },
+        {
+          "y": "(-2.0 + 1.0j)",
+          "t": "0.75",
+          "|fd - pred|": "1.36644e-25"
+        },
+        {
+          "y": "(0.4 + 0.2j)",
+          "t": "0.3",
+          "|fd - pred|": "1.31728e-26"
+        },
+        {
+          "y": "(0.4 + 0.2j)",
+          "t": "0.75",
+          "|fd - pred|": "2.10011e-26"
+        }
+      ],
+      "worst": "9.0329856e-24",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the radial statement is the chain-rule reading of d/dw Li2(w) = -log(1-w)/w: cLiTwoExt'(t y)*y = -log(1-y t)/t identically. So G5 is that derivative restricted to rays, not a weaker statement about a different function",
+      "worst": "2.0249114e-71",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "the quadrature trap qou-clx8 records is REAL and is mitigated here: at y = 3 + 0.001i plain quad([0,1]) is silently wrong, while splitting at Re(1/y) is exact. Demonstrated rather than asserted, so every other gate's method is visible",
+      "err_plain_quad": "0.011522133",
+      "err_split_at_Re_inv_y": "0.0",
+      "split_point": "0.3333332963",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "DIRECTION INDEPENDENCE -- the difference quotient along four distinct complex directions agrees with -log(1-w)/w at every test point. A radial derivative gives one direction; complex differentiability needs all of them, and this is the content ComplexDilogarithmDeriv adds over ComplexDilogarithmSlit",
+      "n_checks": 12,
+      "rows": [
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(1.0 + 0.0j)",
+          "|fd - pred|": "5.29992e-25"
+        },
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(0.0 + 1.0j)",
+          "|fd - pred|": "5.29992e-25"
+        },
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(0.5 + 0.5j)",
+          "|fd - pred|": "2.64996e-25"
+        },
+        {
+          "w": "(1.5 + 0.3j)",
+          "direction": "(-0.6 + 0.4j)",
+          "|fd - pred|": "2.75596e-25"
+        }
+      ],
+      "worst": "5.2999157e-25",
+      "pass": true
+    },
+    {
+      "gate": "G9",
+      "claim": "the closed form -log(1-w)/w must carry w != 0: Lean's x/0 = 0 makes it 0 at w = 0, while the true derivative there is 1. The INTEGRAL form is correct at 0, which is why the Lean theorem states the integral as primary and the closed form as a corollary. Same junk-value trap that made hinv1/hlan1 false",
+      "limit_of_closed_form_as_w_to_0": [
+        "1.00005000333",
+        "1.000000005",
+        "1.0"
+      ],
+      "integral_form_at_w_eq_0": "1.0",
+      "lean_junk_value_of_closed_form_at_0": "0 (since x/0 = 0)",
+      "pass": true
+    },
+    {
+      "gate": "G10",
+      "claim": "UNIQUENESS has bite. eqOn_cLiTwoExt_of_eqOn_ball says any analytic g on C minus [1,inf) agreeing with the SERIES on the disc IS cLiTwoExt. mpmath's polylog(2,.) is such a g, built by a wholly different route (functional equations + acceleration). They agree at every point tested -- at |y| up to 40, where the defining series diverges outright, so neither is summing it",
+      "rows": [
+        {
+          "y": "(1.5 + 0.3j)",
+          "|y|": "1.52971",
+          "series_term_k400": "4.35564e+68",
+          "|cLiTwoExt - polylog|": "0.0"
+        },
+        {
+          "y": "(-2.0 + 3.0j)",
+          "|y|": "3.60555",
+          "series_term_k400": "3.84194e+217",
+          "|cLiTwoExt - polylog|": "0.0"
+        },
+        {
+          "y": "(6.0 + 2.0j)",
+          "|y|": "6.32456",
+          "series_term_k400": "1.61391e+315",
+          "|cLiTwoExt - polylog|": "0.0"
+        },
+        {
+          "y": "(40.0 + 0.5j)",
+          "|y|": "40.0031",
+          "series_term_k400": "4.29979e+635",
+          "|cLiTwoExt - polylog|": "0.0"
+        }
+      ],
+      "worst": "0.0",
+      "series_diverges_at_all_points": true,
+      "pass": true
+    },
+    {
+      "gate": "G11",
+      "claim": "star-convexity about 0: for y OFF the cut the whole segment {s*y : s in [0,1]} stays off it -- the Lean lemma starConvex_zero_notCut, which is what makes C minus [1,inf) connected and the identity theorem applicable. With a NEGATIVE control: for y ON the cut the segment does meet it, so the property is not vacuously true of everything",
+      "segment_points": 21,
+      "off_cut_segments_stay_off": true,
+      "on_cut_points_whose_segment_hits": [
+        "(2.0 + 0.0j)",
+        "(7.0 + 0.0j)"
+      ],
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "outcome": "cLiTwoExt's integral converges on ALL of C minus [1,inf) -- the geometric hypothesis qou-clx8 asked for, now Lean-proved -- and its derivative ALONG RAYS is proved by FTC rather than by differentiating under the integral sign.",
+    "what_widened": "the old side condition Re(1-y)>0 rejects every point in G1, including both examples the bean names, while the identity holds at all of them. ComplexDilogarithm.intervalIntegrable_log_one_sub_div is now stated on slitPlane membership, with the old form kept as a corollary.",
+    "now_closed": "analyticity AND uniqueness on C minus [1,inf) are proved -- analyticOnNhd_cLiTwoExt in ComplexDilogarithmDeriv.lean, by differentiation under the integral sign. Mathlib supplies the DUI theorem; the piece it does not supply is the uniform lower bound on ||1 - w z|| over a ball times [0,1], proved by compactness. G8 tests direction independence, which the radial derivative could not give.",
+    "does_not_move_the_sum_rule": "qou-clx8 is explicit that Route 5 is a restatement; even the whole chain leaves an unevaluated real integral. Taken for the Mathlib gap, as instructed.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

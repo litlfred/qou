@@ -214,7 +214,7 @@ def test_chi_21_consistency(q_0: mp.mpf) -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder(
         "gap-a4-T7-bratteli-stabilization-probe",
         engine="mpmath",

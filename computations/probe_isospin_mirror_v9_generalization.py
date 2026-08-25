@@ -39,6 +39,13 @@ getcontext().prec = 40
 
 M_E_MEV = D("0.51099895069")
 M_PI_MEV = D("139.57039")
+# ARCHIVAL: the v9-era substrate literal, 243,000 ppb (0.024 %) from
+# both live pins. NOT migrated on purpose — these files ARE the record
+# of the v1..v9 progression that docs/coordination/option-e.md tracks
+# ("DO NOT REPEAT failed paths"), and option_e_probe1_derive_1plusq_over_2
+# exists specifically to show the published 0.11 %% near-match was obtained
+# at THIS stale q0. Re-pinning would silently alter a recorded historical
+# result and delete that probe's subject. Do not read it as a live pin.
 Q_0 = D("1.1097090249")
 H_Q = 1 - 1 / Q_0
 H = Q_0 - 1 / Q_0
@@ -50,7 +57,7 @@ AME_MeV = {"D": D("2.224566"), "T": D("8.481798"), "3He": D("7.71806")}
 
 def load_chi_atom(repo_root, atom_label):
     fn_map = {"D": "d", "T": "t", "3He": "3he"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"atom-chi-rust-{fn_map[atom_label]}.witness.json")
     with fn.open() as f:
         data = json.load(f)["data"]
@@ -64,7 +71,7 @@ def load_chi_atom(repo_root, atom_label):
 
 def load_y(repo_root, atom_label):
     name_map = {"D": "deuteron-h6", "T": "tritium-h9", "3He": "helium-3-h9"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"chi-{name_map[atom_label]}-at-q0-50dps.witness.json")
     with fn.open() as f:
         data = json.load(f)
@@ -85,7 +92,7 @@ def sum_y_chi(y, chi_atom):
 
 
 def main() -> int:
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    repo_root = Path(__file__).resolve().parent.parent
 
     base = {}
     for atom in ["D", "T", "3He"]:
@@ -175,7 +182,7 @@ def main() -> int:
         ],
         "allPassed": bool(refuted),
     }
-    out = (repo_root / "folio-assistant" / "computations"
+    out = (repo_root / "computations"
            / "probe-isospin-mirror-v9-generalization.witness.json")
     with out.open("w") as f:
         json.dump(witness, f, indent=2)

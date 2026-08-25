@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-12T16:27:44.827858+00:00",
-  "commitSha": "adccdfa6e157b5686a89ac51801f6c31e21ff00d",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:10:21.672246+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "alien_datum_closed_form_verified_and_q_stationary",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 5,
   "computation": "lever1-bridge-alien-datum",
   "scriptFile": "lever1_bridge_alien_datum_probe.py",
-  "scriptHash": "2e7bafb144ca",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "4ee464cd108d",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lever1_bridge_alien_datum_probe.py"
+    ],
+    "reproduce": "python3 -u computations/lever1_bridge_alien_datum_probe.py"
   },
   "description": "Lever-1 (z2bn) W5: the Bridge-equation / alien-derivative datum of the classical binding period at its level-1/2 Borel singularity, in closed form (derived from proved involution asymptotics + the Laguerre generating identity BEFORE measurement): omega0=1/sqrt2, second-level action A2=1/4, branch exponent gamma=3/2, Stokes constant A_omega=4*sqrt2*e^(-3/8)~3.8884; local model B(xi) ~ A_omega*(1-sqrt2*xi)^(3/2)*exp(1/(4(1-sqrt2*xi))). Verified against exact I(n) to n=400 with 3-point extrapolation (all components <2-5%). q-rigidity: the deformation of the datum is bar-even and O((q-1)^2) (measured exponent ~2) — the alien datum is stationary at the classical point, the derived form of the external dialog's '(q-1)^2 in A_omega(q)' claim. Co-equational scope: the q=1 EGF is entire, so the resurgence is coefficient-plane; the literal ODE Bridge form does not apply verbatim. No fit; no wiring; binding only. Scope-(a) with derived-exact leading forms.",
   "data": {

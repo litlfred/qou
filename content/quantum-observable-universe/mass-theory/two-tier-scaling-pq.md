@@ -18,7 +18,7 @@ $$
 $$
 
 In Hecke language, $[N]_q$ is the Markov-trace normalisation that
-ensures invariance under stabilisation $\beta \mapsto \beta\sigma_n^{± 1}$
+ensures invariance under stabilisation $\beta \mapsto \beta\sigma_n^{\pm 1}$
 ([axiomatic Markov closed form](#prop:markov-trace-axiomatic-closed-form)).
 Physically, it acts as a vacuum subtraction: $P_K(q)$ measures the
 *excess* topological complexity of the knot $K$ relative to the
@@ -30,7 +30,7 @@ trivial component, and Reidemeister-I invariance would fail
 ## Tier 2: physical scaling — base mass $m_0$
 
 Evaluating the normalised $P_K(q)$ at the substrate parameter
-$q_0 = 1.109978595554181\ldots$ (50 dps) produces a dimensionless real number; converting
+$q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps) produces a dimensionless real number; converting
 to MeV requires multiplication by a base mass scale,
 
 $$

@@ -20,4 +20,29 @@ export default proposition({
     "rigidity",
     "uniqueness",
   ],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module " +
+        "`lean/QOU/QBeta/PhiBProdUniquenessMeromorphic.lean` uses " +
+        "`Real.pi`, `Complex.*`. These are real-analytic constructs with " +
+        "no generic-`CommRing` counterpart, so the `ℝ` specialisation is " +
+        "forced by the statement itself rather than chosen. The block " +
+        "therefore sits on the archimedean side of the §7c wall by " +
+        "construction.",
+    },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "Moved out of the published prose (one-voice sweep): the closing line " +
+        "used to read \"The full brick-by-brick chain is recorded in the " +
+        "keystone arc map.\" That pointer belongs here \u2014 the arc map is a " +
+        "planning record, not part of the manuscript \u2014 and the prose now " +
+        "ends on the mathematical hedge it already carried.",
+    },
+  ],
 });

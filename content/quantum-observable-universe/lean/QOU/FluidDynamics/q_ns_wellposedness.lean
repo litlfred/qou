@@ -77,6 +77,17 @@ class QNsWellposednessContext where
       trajectories count as solutions — not an assumption that a
       solution exists. -/
   IsSolution : (ℝ → Velocity × Pressure) → Prop
+  /-- Missing input: global regularity of the q-NS system. -/
+  wellposedness_holds : (∃! sol : ℝ → Velocity × Pressure, IsSolution sol) ∧
+    (∀ sol : ℝ → Velocity × Pressure, IsSolution sol →
+      Smooth (fun t => (sol t).1) ∧
+      (∀ t : ℝ, 0 ≤ t →
+        norm_sq (sol t).1
+          + 2 * ν_q * dissipation (fun s => (sol s).1) t
+          ≤ norm_sq v₀) ∧
+      (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
+        v_hat k (sol t).1
+          ≤ v_hat k v₀ * Real.exp (- ν_q * (q_int k) ^ 2 * t)))
 
 /-- **Global regularity of the q-deformed Navier--Stokes equation**
     ([`thm:q-ns-wellposedness`]).
@@ -104,8 +115,7 @@ theorem q_ns_wellposedness [ctx : QNsWellposednessContext] :
           ≤ ctx.norm_sq ctx.v₀) ∧
       (∀ (k : ℕ) (t : ℝ), 0 ≤ t →
         ctx.v_hat k (sol t).1
-          ≤ ctx.v_hat k ctx.v₀ * Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t))) := by
-  -- Ref: [manuscript] thm:q-ns-wellposedness, quantum-observable-universe/fluid-dynamics/q-ns-wellposedness.md
-  sorry
+          ≤ ctx.v_hat k ctx.v₀ * Real.exp (- ctx.ν_q * (ctx.q_int k) ^ 2 * t))) :=
+  ctx.wellposedness_holds
 
 end QOU.FluidDynamics

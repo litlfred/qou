@@ -5,7 +5,7 @@ export default proposition({
   title:
     "Long-element $\\chi_\\lambda(w_0)$ sign-character weighting of the $c_k$ chain at $H_3$",
   lean: {
-    ref: "qou:QOU.BraidKnot.ChiLambdaW0SignWeighting",
+    ref: "qou:QOU.BraidKnot.chi_lambda_w0_sign_weighting",
     validation: "not_checked",
   },
   uses: [

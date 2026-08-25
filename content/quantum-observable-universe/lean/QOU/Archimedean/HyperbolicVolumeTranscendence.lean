@@ -129,7 +129,10 @@ theorem catalan_G_numerical_bounds :
     rw [h20] at hlow
     have hnum : (0.915 : ℝ) < ∑ i ∈ Finset.range 20, (-1 : ℝ) ^ i * f i := by
       norm_num [hf_def, Finset.sum_range_succ]
-    linarith
+    -- `linarith` does not connect these: it treats each partial sum as an
+    -- opaque atom and the two occurrences do not unify for it.  The chain is
+    -- plain transitivity, so state it directly.
+    exact lt_of_lt_of_le hnum hlow
   · -- upper: G ≤ S₉₃ (odd partial sum) and S₉₃ < 0.916
     have hup := hf_anti.tendsto_le_alternating_series hfl 46
     have h93 : ∑ i ∈ Finset.range (2 * 46 + 1), (-1 : ℝ) ^ i * f i =
@@ -137,7 +140,7 @@ theorem catalan_G_numerical_bounds :
     rw [h93] at hup
     have hnum : (∑ i ∈ Finset.range 93, (-1 : ℝ) ^ i * f i) < 0.916 := by
       norm_num [hf_def, Finset.sum_range_succ]
-    linarith
+    exact lt_of_le_of_lt hup hnum
 
 /-- Catalan's constant is positive. -/
 theorem catalan_G_pos : catalan_G > 0 := by
@@ -149,7 +152,7 @@ theorem catalan_G_pos : catalan_G > 0 := by
 The three QOU volumes used in `SingleVolumeIrrational` /
 `BorelZagierQOU` / `HyperbolicVolumeIndependence`:
 
-* `vol_4_1` — figure-eight knot (Higgs); exact `3 · Cl_2(π/3)`,
+* `vol_4_1` — figure-eight knot (Higgs); exact `2 · Cl_2(π/3)`,
   bumped 2026-06-07 to a 24-dps OEIS A091518 literal (Cl_2 not
   yet in Mathlib so a symbolic form is not available locally).
 * `vol_5_2` — three-twist knot (down quark); 15-dps SnapPy literal
@@ -159,7 +162,16 @@ The three QOU volumes used in `SingleVolumeIrrational` /
   (exact; supersedes the former 15-dps SnapPy literal). -/
 
 /-- Hyperbolic volume of the figure-eight knot 4₁ (Higgs boson).
-    Exact: 3 · Cl₂(π/3) ≈ 2.029883212819307250042408. -/
+    Exact: 2 · Cl₂(π/3) = 6 · Λ(π/3) ≈ 2.029883212819307250042408
+    (two regular ideal tetrahedra, each of volume Cl₂(π/3) = 3Λ(π/3)).
+
+    Corrected 2026-08-09: this docstring and the §1 summary above both
+    read `3 · Cl₂(π/3)`, which is 3.0448…, not the 2.0298… literal the
+    definition actually carries. The same slip is live in four other
+    docstrings — `QOU/MassDerivation.lean`, `QOU/HadronicMass.lean`,
+    `observations/local-substrate-q.lean`,
+    `observations/skein-mass-relation.lean` — while the rest of the
+    corpus has `2 · Cl₂(π/3)` correctly. -/
 noncomputable def vol_4_1 : ℝ := figureEightEntry.volume.value
 
 /-- Hyperbolic volume of the three-twist knot 5₂ (strange quark
@@ -310,7 +322,7 @@ theorem VolumeTowerDecomposition.tendsto_zero
   vtd.sum_eq.summable.tendsto_atTop_zero
 
 /-- For any ε > 0, eventually |Φ_n(K)| < ε. -/
-theorem VolumeTowerDecomposition.eventually_small
+theorem eventually_small
     (vtd : VolumeTowerDecomposition) (ε : ℝ) (hε : 0 < ε) :
     ∃ N, ∀ n, n ≥ N → |vtd.levelContribution n| < ε := by
   have h := vtd.tendsto_zero
@@ -351,8 +363,8 @@ noncomputable def baselineDecomposition
     rw [heq]
     exact (hasSum_ite_eq 0 vol).summable
   sum_eq := by
-    apply hasSum_ite_eq
-  baseline_dominant := by simp [hvol]
+    exact hasSum_ite_eq 0 vol
+  baseline_dominant := by simpa using hvol
 
 /-- Tower decomposition for Vol(4₁). -/
 -- Ref: [turaev2010] Turaev, "Quantum Invariants of Knots and 3-Manifolds," de Gruyter 2010
@@ -388,7 +400,7 @@ to analysis. -/
     LaTeX: `\label{prop:cs-evaluation-faithfulness}` -/
 structure CSEvaluationFaithful where
   /-- The lifting condition with obstruction classes. -/
-  ylc : QOU.Torsion.YekutieliLiftingCondition
+  ylc : QOU.Torsion.YekutieliLiftingCondition ℝ
   /-- A tower decomposition of some knot volume. -/
   vtd : VolumeTowerDecomposition
   /-- The towers agree. -/
@@ -401,7 +413,7 @@ structure CSEvaluationFaithful where
 
 /-- Given faithfulness and a non-collapsing tower, infinitely many
     level contributions are non-zero.  (Proved from the structure.) -/
-theorem CSEvaluationFaithful.infinitely_many_nonzero
+theorem infinitely_many_nonzero
     (csf : CSEvaluationFaithful)
     (h_tower : ∀ n, Nonempty (csf.ylc.obstructionClass n)) :
     ∀ n, csf.vtd.levelContribution n ≠ 0 :=
@@ -457,7 +469,7 @@ class HyperbolicVolumeIndependence where
   irrationality ⟸ ℚ-linear independence ⟸ algebraic independence -/
 
 /-- **Conjecture (Irrationality of a single volume).**
-    Vol(4₁) = 3 Cl₂(π/3) is irrational.
+    Vol(4₁) = 2 Cl₂(π/3) = 6 Λ(π/3) is irrational.
 
     LaTeX: `\label{conj:single-volume-irrationality}` -/
 class SingleVolumeIrrational where
@@ -496,7 +508,7 @@ class BorelZagierQOU where
     and is the correct hypothesis here.
 
     Ref: [zagier1986] https://doi.org/10.1007/BFb0084581 -/
-theorem HyperbolicVolumeIndependence.implies_single_irrational
+theorem implies_single_irrational
     [hvi : HyperbolicVolumeIndependence] : SingleVolumeIrrational where
   vol_4_1_irrational := by
     -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
@@ -606,7 +618,7 @@ theorem HyperbolicVolumeIndependence.implies_single_irrational
     2. defining `S` as `Finset.image` of `Fin 3` to give a clean
        cardinality-3 witness.
     Sorry retained pending refactor to a Fin-indexed witness. -/
-theorem HyperbolicVolumeIndependence.implies_borel_zagier
+theorem implies_borel_zagier
     [_hvi : HyperbolicVolumeIndependence] :
     BorelZagierQOU where
   linear_independent := by
@@ -688,13 +700,13 @@ gives the Yekutieli bridge theorem. -/
     Bound to a specific Yekutieli witness so the conjectural
     content is visible at the call site. -/
 class TowerNoncollapseImpliesIndependence
-    (_ylc : QOU.Torsion.YekutieliLiftingCondition) : Prop where
+    (_ylc : QOU.Torsion.YekutieliLiftingCondition ℝ) : Prop where
   /-- The independence witness produced by the bridge. -/
   independence : HyperbolicVolumeIndependence
 
 /-- Per-instance form. -/
 theorem tower_noncollapse_implies_independence
-    (ylc : QOU.Torsion.YekutieliLiftingCondition)
+    (ylc : QOU.Torsion.YekutieliLiftingCondition ℝ)
     [hi : TowerNoncollapseImpliesIndependence ylc] :
     HyperbolicVolumeIndependence :=
   hi.independence

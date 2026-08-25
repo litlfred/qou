@@ -3,7 +3,7 @@ import { remark } from "../../schema/builders";
 export default remark({
   label: "rem:conway-kt-vol-injectivity-test",
   title:
-    "Conway--Kinoshita--Terasaka mutant pair: B1 Vol-injectivity sanity check",
+    "Conway--Kinoshita--Terasaka mutant pair: a volume-injectivity check for the depth correspondence",
   interprets: "rem:transcendental-accounting",
   uses: [
     "rem:transcendental-accounting",

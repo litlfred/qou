@@ -1151,7 +1151,7 @@ and `initial_1`; step uses the recursion at `n = k+1` to solve for
 **Status**: sorry-free. Strong induction on `n`; base cases discharged
 by `initial_0`/`initial_1`; step solves the recursion at `n = k+1` for
 `a (k+2)` using the IH on `a (k+1)` and `a k`. -/
-theorem ZRecursionCoeffs.unique (w1 w2 : ZRecursionCoeffs) :
+theorem unique (w1 w2 : ZRecursionCoeffs) :
     ∀ n : ℕ, w1.a n = w2.a n := by
   intro n
   induction n using Nat.strong_induction_on with

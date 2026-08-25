@@ -39,7 +39,7 @@ structure QuantumCharacteristicClass where
 -- relocation.  `isUnobstructed` uses `(0 : qcc.ObstructionSpace)` directly.
 
 /-- The extension is unobstructed iff `κₙ = 0`. -/
-def QuantumCharacteristicClass.isUnobstructed (qcc : QuantumCharacteristicClass) : Prop :=
+def isUnobstructed (qcc : QuantumCharacteristicClass) : Prop :=
   haveI := qcc.addCommGroup
   qcc.kappa = (0 : qcc.ObstructionSpace)
 

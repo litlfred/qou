@@ -44,10 +44,51 @@
 set -uo pipefail
 
 REPO_URL="${FOLIO_ASSISTANT_REPO:-https://github.com/litlfred/folio-assistant.git}"
-REF="${FOLIO_ASSISTANT_REF:-main}"
+
+# --- resolve the platform ref (PINNED by default) ------------------------
+# The checkers live in the platform repo, so every count this repo quotes
+# ("validate: N issues", "wall-side M/1190") is a function of TWO inputs — the
+# corpus and the platform — and only one of them used to be visible in `git log`.
+# Defaulting to `main` meant two agents on the same corpus commit could measure
+# different numbers and each be right; that happened (bean `vbase`), and cost a
+# round of argument about whose baseline was wrong.
+#
+# So the default is now the SHA in `.folio-assistant-pin`. Moving the platform is
+# a deliberate, reviewable one-line commit to that file, not a silent consequence
+# of when you happened to clone. `FOLIO_ASSISTANT_REF` still overrides for
+# testing against an unreleased platform.
+PIN_FILE="$(dirname "$0")/../.folio-assistant-pin"
+if [ -n "${FOLIO_ASSISTANT_REF:-}" ]; then
+  REF="$FOLIO_ASSISTANT_REF"
+elif [ -f "$PIN_FILE" ]; then
+  # strip comments and blank lines; take the first remaining token
+  REF="$(sed 's/#.*//' "$PIN_FILE" | tr -d '[:space:]' | head -c 64)"
+  [ -n "$REF" ] || REF="main"
+else
+  REF="main"
+fi
 
 die() { echo "setup-folio-assistant: ERROR: $*" >&2; exit 1; }
 info() { echo "setup-folio-assistant: $*" >&2; }
+warn() { echo "setup-folio-assistant: WARNING: $*" >&2; }
+
+# Report when the clone's checkout is NOT at $REF. $REF may be a branch name or
+# a pinned SHA (.folio-assistant-pin), so resolve origin/$REF first and fall
+# back to $REF itself — comparing against "origin/<sha>" silently yields nothing.
+report_off_ref() {
+  _tgt="$REF"
+  if git -C "$CLONE_DIR" rev-parse --verify --quiet "refs/remotes/origin/$REF" >/dev/null 2>&1; then
+    _tgt="origin/$REF"
+  fi
+  _want="$(git -C "$CLONE_DIR" rev-parse --verify --quiet "$_tgt^{commit}" 2>/dev/null)" || return 0
+  _have="$(git -C "$CLONE_DIR" rev-parse HEAD 2>/dev/null)" || return 0
+  [ "$_want" = "$_have" ] && return 0
+  _behind="$(git -C "$CLONE_DIR" rev-list --count "HEAD..$_want" 2>/dev/null || echo '?')"
+  warn "platform clone is NOT at $_tgt ($_behind commit(s) behind); it is at $(git -C "$CLONE_DIR" rev-parse --short HEAD)"
+  warn "  every pipeline run below uses that code, not the pinned code."
+  warn "  usually the clone is dirty because qa-sweep rewrites its script-sidecars; to fix:"
+  warn "    git -C \"$CLONE_DIR\" checkout -- content/pipeline/script-sidecars/ && $0"
+}
 
 # --- locate the qou repo root --------------------------------------------
 ROOT="$(git rev-parse --show-toplevel 2>/dev/null)" \
@@ -105,8 +146,23 @@ if git -C "$CLONE_DIR" rev-parse --verify --quiet "$REF^{commit}" >/dev/null 2>&
     if git -C "$CLONE_DIR" show-ref --verify --quiet "refs/remotes/origin/$REF"; then
       git -C "$CLONE_DIR" merge --ff-only --quiet "origin/$REF" 2>/dev/null || true
     fi
+    report_off_ref
   else
+    # A dirty clone is NOT the rare case. `qa-sweep` rewrites
+    # content/pipeline/script-sidecars/*.script.json (last_run_at, deps_hash) on
+    # every run, so ANY pipeline use leaves the clone dirty and this branch is
+    # taken from then on. Left as a bare info line, the clone silently freezes on
+    # whatever commit it happened to be on while every later run keeps serving
+    # that stale pipeline — the more the pipeline is used, the more permanently
+    # stale it becomes.
+    #
+    # Measured 2026-08-23: the clone sat 236 commits behind origin/main, which
+    # silently invalidated a session's QA measurements (an enumeration gap that
+    # had already been fixed upstream in b48cff7 still reproduced locally, and a
+    # "sweep degrades detangler verdicts" finding turned out to be an artifact of
+    # the stale code). Report the distance instead of hiding it.
     info "clone has local changes — leaving its checkout untouched"
+    report_off_ref
   fi
 else
   info "ref '$REF' not found locally or on origin — leaving clone on its current branch"
@@ -178,6 +234,26 @@ if [ ! -e "$CLONE_ABS/content/schema/references.ts" ]; then
     "$CLONE_ABS/content/schema/references.ts" \
     && info "bridged content/schema/references.ts into platform clone" \
     || info "could not bridge references.ts — bib-cite-resolves will false-fail"
+fi
+
+# The platform imports the bibliography by TWO different paths, and
+# bridging only the one above leaves the other broken:
+#
+#   qa-checkers-extended.ts  → <clone>/content/schema/references  (above)
+#   export-bibtex.ts         → <clone>/schemas/references         (here)
+#
+# Without this second link, regenerating references.bib dies with
+# "Cannot find module '../../schemas/references'", the .bib silently
+# stays stale, and every \cite{} added since the last successful export
+# renders as an undefined citation in the PDF. Measured 2026-08-16: 16
+# keys present in references.ts were missing from references.bib, for
+# 23 "Citation ... undefined" warnings in the full build.
+if [ ! -e "$CLONE_ABS/schemas/references.ts" ]; then
+  mkdir -p "$CLONE_ABS/schemas"
+  ln -s "$ROOT/content/schema/references.ts" \
+    "$CLONE_ABS/schemas/references.ts" \
+    && info "bridged schemas/references.ts into platform clone" \
+    || info "could not bridge schemas/references.ts — export-bibtex will fail"
 fi
 
 # --- best-effort: install the platform's own deps ------------------------

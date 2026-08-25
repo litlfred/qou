@@ -18,12 +18,12 @@ At $q = 1$: $J_q^2 \to j(j+1)$, the standard Casimir.
 The generators $J_+, J_-, J_z$ of $\mathrm{SU}_q(2)$ satisfy:
 
 $$
-  [J_z, J_{±}] = ± J_{±}, \qquad
+  [J_z, J_{\pm}] = \pm J_{\pm}, \qquad
   [J_+, J_-] = [2 J_z]_q
   =  \frac{q^{2J_z} - q^{-2J_z}}{q - q^{-1}}
 $$
 
-This diverges from the classical $[J_+, J_-] = 2J_z$ by substituting $2J_z$ with its $q$-number $[2J_z]_q$. The asymmetry at $q \neq 1$ connects directly to parity violation ([parity violation](#prop:parity-violation-skein)). The raising and lowering operators do not relate by a simple conjugation.
+This differs from the classical $[J_+, J_-] = 2J_z$: $2J_z$ is replaced by its $q$-number $[2J_z]_q$. The asymmetry at $q \neq 1$ connects directly to parity violation ([parity violation](#prop:parity-violation-skein)). The raising and lowering operators do not relate by a simple conjugation.
 
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It invokes real- or complex-analytic constructs—real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. The generic categorical/$q$-deformation identities it relies upon remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

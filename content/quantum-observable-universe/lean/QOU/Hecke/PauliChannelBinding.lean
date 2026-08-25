@@ -29,9 +29,27 @@ claim:
 - a closure of the Δ_λ / binding gate (open).
 
 The surviving p-n bonds bind via the **std-channel Markov factor**
-`f_bond = c·z + d`, `z = √q/(q+1) ∈ (0,1)` — proved separately in
-`QOU/Hecke/MarkovBondFactor.lean`; the raw eigenvalue `q` is not itself the bond
-factor.
+`f_bond = c·z + d` — proved separately in `QOU/Hecke/MarkovBondFactor.lean`; the
+raw eigenvalue `q` is not itself the bond factor.
+
+**Convention D (migrated 2026-08-24), and the bound is now conditional.**  This
+line read `z = √q/(q+1) ∈ (0,1)`, which is convention C, excised by the
+2026-08-15 ruling in favour of `z_D = q³/(q²+1)`.  The membership is **not**
+convention-neutral and the difference is not cosmetic:
+
+* `z_C = √q/(q+1) ≤ 1/2` for **every** `q > 0` (supremum `1/2`, attained at
+  `q = 1`), so `z_C ∈ (0,1)` unconditionally;
+* `z_D = q³/(q²+1)` is **unbounded** (`z_D → ∞` as `q → ∞`), and `z_D < 1`
+  holds exactly when `q³ < q² + 1`, i.e. `q < 1.4655712…`.
+
+At the substrate anchor `q₀ ≈ 1.1099786` the condition is satisfied with room:
+`z_D ≈ 0.6126880` (against `z_C ≈ 0.4993203`).  So the binding argument's use
+of `0 < z < 1` survives the migration **at the substrate**, but it is now a
+hypothesis on `q` rather than a free fact, and any downstream use at general `q`
+must carry it.
+
+Nothing in this file's Lean depends on the value: the strict bound test below is
+stated for an abstract channel value `f`.
 
 -- Ref: [manuscript] docs/audits/2026-06-20-chirality-forces-complete-graph-topology.md ;
    docs/audits/2026-06-17-hecke-channel-chirality-binding.md

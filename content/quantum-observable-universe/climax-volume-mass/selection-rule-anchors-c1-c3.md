@@ -41,10 +41,9 @@ We provide two purely algebraic identities at the symbolic level, each closed by
 
 ## q-usage discipline
 
-This holds over real $q > 0$ (the substrate-anchor regime). Both identities are q-rational, fibre-level constructs. The c=1 case holds for ALL $q > 0$ (an infinite set of constraints, not a single point). It is AGENTS.md §7c-compliant.
+This holds over real $q > 0$ (the substrate-anchor regime). Both identities are q-rational, fibre-level constructs. The c=1 case holds for ALL $q > 0$ (an infinite set of constraints, not a single point).
 
 ## Cross-references
 
-- $\operatorname{def:coulomb-charge}$ — introduces the $h = q - q^{-1}$ structure at the per-crossing level.
-- $\operatorname{prop:coulomb-strong-ratio-q-rational}$ — companion identity proving $\tanh(\ln q) = (q^2-1)/(q^2+1)$ over real $q > 0$.
-- Derivation audit doc: [`docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md`](../../../docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md).
+- [`def:coulomb-charge`](#def:coulomb-charge) — introduces the $h = q - q^{-1}$ structure at the per-crossing level.
+- [`prop:coulomb-strong-ratio-q-rational`](#prop:coulomb-strong-ratio-q-rational) — companion identity proving $\tanh(\ln q) = (q^2-1)/(q^2+1)$ over real $q > 0$.

@@ -66,6 +66,7 @@ def _schur_principal_at_q(args):
 
 
 _Y_LAMBDA_AT_Q0_WITNESS_CACHE: dict[int, dict[tuple, sp.Expr]] | None = None
+_Y_LAMBDA_AT_Q0_WITNESS_Q0: float | None = None
 
 
 def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
@@ -79,8 +80,12 @@ def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
     Returns `{n: {partition: mpf-or-sympy y_lambda}}` keyed by n,
     or empty dict if witness file missing (caller falls back to
     the slow recompute path).
+
+    Also records, in `_Y_LAMBDA_AT_Q0_WITNESS_Q0`, the q_0 the witness was
+    actually BUILT at.  Callers must gate on that value, not on the package
+    constant — see `y_lambda_at`.
     """
-    global _Y_LAMBDA_AT_Q0_WITNESS_CACHE
+    global _Y_LAMBDA_AT_Q0_WITNESS_CACHE, _Y_LAMBDA_AT_Q0_WITNESS_Q0
     if _Y_LAMBDA_AT_Q0_WITNESS_CACHE is not None:
         return _Y_LAMBDA_AT_Q0_WITNESS_CACHE
     import json
@@ -98,6 +103,13 @@ def _load_y_lambda_at_q0_witness() -> dict[int, dict[tuple, sp.Expr]]:
             shape = tuple(r["partition"])
             d[shape] = sp.Float(r["y_at_q0_50dps"], 50)
         by_n[n_key] = d
+    # Record the q_0 this witness was built at, so the fast path can refuse to
+    # serve it to a caller asking for a DIFFERENT anchor.
+    _q0 = (w.get("parameters", {}) or {}).get("q_0") or w.get("q0Value")
+    try:
+        _Y_LAMBDA_AT_Q0_WITNESS_Q0 = float(_q0) if _q0 is not None else None
+    except (TypeError, ValueError):
+        _Y_LAMBDA_AT_Q0_WITNESS_Q0 = None
     _Y_LAMBDA_AT_Q0_WITNESS_CACHE = by_n
     return by_n
 
@@ -107,7 +119,108 @@ def y_lambda_at(
     q_val: sp.Expr | float | None = None,
     workers: int | None = None,
 ) -> dict[tuple, sp.Expr]:
-    """Jones-Markov y_λ(q) at H_n.
+    """Jones-Markov y_λ(q) at H_n — registry convention **D** since 2026-08-09.
+
+    OWNER RULING: convention C excised. Every path below returned C
+    (`y_λ(3,q₀) = (0.4153958, 0.2809296, 0.0227449)`, `z = 1/(√q+1/√q)`); this
+    function now returns D (`(0.5054042, 0.2472979, 0)`, `z = q³/(q²+1)`).
+
+    D's weights are the SU(2) quantum dimensions, computed by the hook-content
+    principal specialisation in `y_lambda_su_n` and normalised `Σ y_λ f^λ = 1`.
+    The defining difference is the row cap: `y_λ = 0` for `ℓ(λ) > 2`, which under
+    C was nonzero — and that zero is exactly what
+    `markovWeights_eq_jones_of_threeRow_eq_zero` needs to force D uniquely.
+
+    THE THREE C FAST PATHS BELOW ARE NOW DEAD and are retained only as the
+    historical record of what C was; the D result returns before any of them is
+    reached.
+
+    CORRECTED 2026-08-23. This paragraph used to end: "In particular
+    `y-lambda-at-q0.witness.json` holds C weights and must NOT be served — that
+    cache is why the switch has to happen here rather than only at `markov_z`."
+    That was true when written and is not true now. The same convention-D
+    cascade that excised C also **re-derived** the cache: its n=3 entry is
+    `(3) → 0.50540422650393080…`, `(2,1) → 0.24729788674803459…`, which is D.
+    C is `(0.4153958, 0.2809296, 0.0227449)`. The file was re-pinned to
+    **proton** in the same cascade (`7665e0e4b`, `506ac9135`).
+
+    The reason for switching here rather than at `markov_z` still stands — this
+    function has ~155 consumers — but it is no longer "because the cache holds
+    C". Nothing in this function reads the cache at all; that code lives in
+    `_y_lambda_at_convention_C_HISTORICAL` below and is dead.
+
+    Two producers DO still read the file directly, bypassing this accessor:
+    `probe_theta_carry_binding.py` and `delta_lambda_empirical_tabulation.py`.
+    They get D weights at the proton pin, which is correct under both current
+    rulings. Full evidence:
+    `docs/audits/2026-08-23-y-lambda-cache-agents-md-staleness.md`.
+
+    Scale note, because it governs the migration: this function has ~155
+    consumers, more than twice the other three C implementations combined, and
+    it was *unregistered* as a C implementation until 2026-08-09.
+
+    The mass channel is unaffected — `m_p_substrate_identity_50dps.trM_borromean`
+    uses the Lean closed form `(4+h²−3h⁴−h⁶)/(h²+4)` directly and never calls
+    this. Verified: m_p unchanged.
+    """
+    from y_lambda_su_n import y_lambda_su_n as _y_su_n
+    import mpmath as _mp
+    # A SYMBOLIC q_val must reach the exact solver below, not the numeric branch.
+    # It used to fall through to `_mp.mpf(str(q_val))` and die inside mpmath with
+    # `invalid literal for int() with base 10: 'q'` — a symbolic-q caller had no
+    # way in even though the exact convention-D solver was already wired for
+    # `q_val=None`. Now `y_lambda_at(n, <symbol>)` returns y_λ exact in THAT
+    # symbol. (bean `qou-j320`; needed by the symbolic trace in
+    # `computations/substrate/bar_involution_is_isospin_probe.py`.)
+    _symbolic = bool(getattr(q_val, "free_symbols", None))
+    if q_val is not None and not _symbolic:
+        _y = _y_su_n(n, _mp.mpf(str(q_val)), 2)
+        # 50, not 30. The `30` here was the binding L1 precision constraint on
+        # every tr_M routed through this function (~155 consumers) — and it
+        # survived the convention-C excision unchanged, so it still binds on
+        # the live D path. `y_lambda_su_n` runs at COMPUTE_DPS (70) and its
+        # values are good well past 50 digits; the cap threw digits 31-50 away
+        # for "consumer compatibility", and the only canonical consumer
+        # immediately re-lifts through `mp.mpf(str(v))`
+        # (`tr_m_atom_via_transfer.py`), so nothing needed the truncation.
+        #
+        # MEASURED (bean `qou-840k` item 4), Markov normalisation `Σ y_λ f^λ = 1`
+        # at the proton q₀:
+        #
+        #     n   |Σ y_λ f^λ − 1| raw      capped at 30
+        #     3   0.0                      0.0
+        #     4   1.336e-51                1.0e-30
+        #     5   0.0                      5.0e-31
+        #
+        # i.e. the ~1e-31 residuals recorded across the corpus were the cap,
+        # not the mathematics — 21 orders of headroom, recovered by two tokens.
+        # 50 matches `Q_50_DIGIT_STR` and the 50-dps precedent already in this
+        # file. Corpus claims of "~1e-50 agreement" for tr_M were false while
+        # this read 30; they are true now.
+        return {sh: sp.Float(_mp.nstr(v, 50), 50) for sh, v in _y.items()}
+    # Symbolic q: route to the EXACT convention-D solver (wired 2026-08-09).
+    # This path previously RAISED — the excision left it with no D
+    # implementation, and returning the C solver below would have silently
+    # reintroduced C. `y_lambda_su_n_symbolic` is the same hook-content formula
+    # as the numeric branch, over sympy, so the two agree to round-off
+    # (measured 5.35e-51 at 50 dps) and `z` comes out as `q³/(q²+1)` exactly.
+    #
+    # It is also far cheaper than the C path it replaces: C needed an ~18 min
+    # linear solve at n=4, this is a product formula and returns instantly.
+    from y_lambda_su_n import y_lambda_su_n_symbolic as _y_su_n_sym
+    return _y_su_n_sym(n, Q_SYM if q_val is None else q_val, 2)
+
+
+def _y_lambda_at_convention_C_HISTORICAL(
+    n: int,
+    q_val: sp.Expr | float | None = None,
+    workers: int | None = None,
+) -> dict[tuple, sp.Expr]:
+    """DEAD — convention C, excised 2026-08-09. Kept as the historical record.
+
+    Original docstring follows.
+
+    Jones-Markov y_λ(q) at H_n.
 
     If `q_val` is None (default): returns symbolic y_λ via
     `markov_weights_symbolic.solve_y_lambda(n)` — fast for n ≤ 3,
@@ -135,16 +248,52 @@ def y_lambda_at(
     process-pool parallelism for n ≥ 9 where partition count grows
     rapidly.  Set to `os.cpu_count()` (or a smaller value to leave
     cores free) for maximum throughput on the numerical-q path.
+
+    SIDE EFFECT — the FIRST call raises global `mp.dps` to 50
+    ---------------------------------------------------------
+    Measured: a caller holding `mp.dps = 40` gets 50 back after its first
+    `y_lambda_at(...)`.  Subsequent calls leave it alone, so this is a
+    once-per-process effect, not a per-call one.
+
+    The cause is a LAZY IMPORT, not this function's arithmetic: the first
+    call pulls `y_lambda_su_n`, whose module scope runs `set_compute_dps(50)`
+    (`y_lambda_su_n.py:269`).  That call is DELIBERATE AND CORRECT — it must
+    precede the `mpf()` registry literals below it or `REG_ZC` / `REG_ZD` are
+    parsed at mpmath's default 15 dps, rounded to 53 bits, and are already
+    wrong when built; `module_const_precision_audit --strict` flags exactly
+    those two.  Do not "fix" it by removing it.
+
+    It is documented here because the consequence is invisible at the call
+    site: a producer that sets `mp.dps = 40`, calls this, and then records
+    `"compute_dps": mp.dps` writes a witness saying 50 while the file says 40.
+    The values are not wrong — the later arithmetic really does run at 50 —
+    but the declared precision is not the computed precision.  If you need a
+    guaranteed working precision, set it AFTER your first call, or wrap the
+    region in `mp.workdps(...)`.
     """
     shapes = [tuple(s) for s in m.partitions_of(n)]
     if q_val is None:
         return m.solve_y_lambda(n)
 
-    # Fast path 1: numeric q matches q_0 — load from witness.
+    # Fast path 1: serve the cached witness ONLY if the caller is asking for the
+    # very q_0 the witness was BUILT at.
+    #
+    # This gate used to compare against `q_parameter.Q` (the PROTON / experimental
+    # pin) while the witness itself is built at the MUON / ideal-3-CAL pin — 11.54 ppb
+    # apart.  Passing `q_parameter.Q` therefore satisfied the gate TRIVIALLY and the
+    # ideal-layer cache was served to an experimental-layer caller with no signal that
+    # a calibration-layer boundary had been crossed.  See AGENTS.md §"q₀ anchor
+    # convention" (owner directive 2026-08-07: default to the experimental anchor) and
+    # `computations/deltalambda/mu3_anchor_consistency_probe.py`.
+    #
+    # Gating on the witness's own recorded q_0 means a proton-anchored caller now falls
+    # through to fast path 2 (live closed form at the requested q) and gets values at
+    # the anchor it actually asked for.  A caller that genuinely wants the muon cache
+    # still hits it by passing the muon q_0.
     try:
-        from q_parameter import Q as Q_0_FLOAT
-        if abs(float(q_val) - float(Q_0_FLOAT)) < 1e-12:
-            witness_by_n = _load_y_lambda_at_q0_witness()
+        witness_by_n = _load_y_lambda_at_q0_witness()
+        if _Y_LAMBDA_AT_Q0_WITNESS_Q0 is not None and \
+                abs(float(q_val) - _Y_LAMBDA_AT_Q0_WITNESS_Q0) < 1e-12:
             cached = witness_by_n.get(n)
             if cached is not None and len(cached) == len(shapes):
                 return dict(cached)
@@ -236,6 +385,17 @@ def global_wedderburn_sum_jones_markov(
     total = sp.Integer(0)
     for lam in shapes:
         y = y_vals[lam]
+        # TL_n restriction: under convention D the Ocneanu weight y_λ is
+        # EXACTLY zero for every λ with ≥ 3 rows — proved sorry-free for all
+        # n by QOU.QBeta.WenzlWeight.conventionD_weight_eq_zero_iff (see
+        # docs/audits/2026-08-16-tl-all-n-weight-vanishing.md). Those blocks
+        # span ker(H_n ↠ TL_n), of dimension n! − Catalan(n) (1, 10, 78, 588,
+        # 4611, 38890 at n = 3..8). Their contribution y·χ is identically 0,
+        # so skipping them BEFORE the expensive character build changes no
+        # value — it only avoids computing χ_λ in the radical. This is a
+        # speed change, not a correctness fix.
+        if sp.sympify(y).is_zero:
+            continue  # zero Ocneanu weight ⇒ y·χ = 0 (TL_n radical)
         if char_kind == "mn-atom":
             chi = specht_character_atomic(
                 lam, Z, N, include_inter, m_pp, m_pn, m_nn

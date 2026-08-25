@@ -249,7 +249,7 @@ def candidate_3_markov_tower():
             paths.setdefault(mu5, []).append((STD3, mu4, mu5))
     # cross-check via Candidate 1: level5 multiplicity of (2,1) embedding
     # should equal Res^{S5}_{S3}(lambda5)[(2,1)] -- Frobenius/branching duality
-    z = 1 / (mp.sqrt(Q0_MP) + 1 / mp.sqrt(Q0_MP))
+    z = Q0_MP**3 / (Q0_MP**2 + 1)
     z2 = z * z
     return {str(k): v for k, v in level5.items()}, \
            {str(k): [(str(a), str(b), str(c)) for (a, b, c) in v] for k, v in paths.items()}, \

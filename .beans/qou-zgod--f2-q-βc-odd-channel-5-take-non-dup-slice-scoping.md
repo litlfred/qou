@@ -1,7 +1,7 @@
 ---
 # qou-zgod
 title: 'F2: Q_β/c₃ odd-channel 5₂ — take non-dup slice (scoping agent running). Swarm-owned: beans kehn/8we6, PRs #4037/#3934/#3773. My D(n)/Habiro adjacency.'
-status: todo
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-19T00:42:33Z

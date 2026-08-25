@@ -95,7 +95,22 @@ def main() -> int:
     print("=" * 78)
 
     # Numerical sanity: the EM correction form at q_0
-    em_correction = (3 * q ** 2 - 1) / (2 * q ** 2)
+    # FULL SERIES, owner directive 2026-08-09: "use full series even if
+    # slightly worse. want all derived bits in there even if negligible."
+    #
+    # This was `(3*q**2 - 1)/(2*q**2)`, which is EXACTLY `1 + ℏ_q − ℏ_q²/2`,
+    # i.e. `1 + log(1+ℏ_q)` stopped after two terms. Stopping there scored
+    # better (46.80 ppb vs 102.86 ppb) but only because under-counting the EM
+    # term partially cancels the model's own positive residual — the series
+    # converges to ~102.9 ppb (3 terms 107.00, 4 terms 102.53), so the 2-term
+    # value is not converging on anything, it is landing on the answer from the
+    # other side. A truncation chosen because it matches is a fit.
+    #
+    # Costs nothing on the scorecard: σ_exp(m_K/m_π) = 26364.6 ppb, so the L2
+    # target is 263.6 ppb on the ratio; the full series sits at 51.4 ppb on the
+    # ratio and still MEETS L2 with 5.13× margin (was 11.27×).
+    hbar_q = (q - 1) / q
+    em_correction = 1 + mp.log(1 + hbar_q)
     alpha_em_codata = mp.mpf(1) / mp.mpf("137.0359991")
     em_term = (alpha_em_codata / mp.pi) * em_correction
 
@@ -110,7 +125,7 @@ def main() -> int:
     print(f"  base  = {mp.nstr(base, 18)}")
 
     print(f"\n[EM correction at q_0]")
-    print(f"  (3q² − 1)/(2q²) = {mp.nstr(em_correction, 18)}")
+    print(f"  1 + log(1+ℏ_q)  = {mp.nstr(em_correction, 18)}")
     print(f"  (α_em/π)·corr   = {mp.nstr(em_term, 18)}")
     print(f"  relative to base: {mp.nstr(em_term / base * mp.mpf('1e6'), 6)} ppm")
 

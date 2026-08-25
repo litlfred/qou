@@ -44,6 +44,15 @@ structure Partition where
   sorted : parts.Pairwise (· ≥ ·)
   deriving Repr
 
+-- The helpers below are declared as `Partition.*` so that dot-notation
+-- (`lam.size`, `lam.length`, …) resolves — they were at file scope, so every
+-- `lam.length` looked for a `Partition.length` that did not exist and this
+-- module never compiled. `open Partition` keeps the bare-name call sites in
+-- this file working unchanged. (The file already gets this right for `Cell`.)
+-- Never caught because `lake build` only reached the import closure of
+-- `QOU.lean`, and this module is outside it — bean qou-rc7b.
+open Partition
+
 /-- The size (weight) of a partition: sum of parts. -/
 def Partition.size (lam : Partition) : ℕ := lam.parts.sum
 
@@ -244,13 +253,13 @@ theorem removeCorner_sum (lam : Partition) (row : ℕ)
   omega
 
 /-- Sorting a list (by any relation) preserves its sum. Backed by
-    `QOU.MathlibExt.List.sum_insertionSort_eq` (a candidate Mathlib
+    `QOU.MathlibExt.sum_insertionSort_eq` (a candidate Mathlib
     upstream lemma); this alias preserves the local name used by
     `removeCorner_size`. -/
 theorem sum_insertionSort_eq (xs : List ℕ) (r : ℕ → ℕ → Prop)
     [DecidableRel r] :
     (xs.insertionSort r).sum = xs.sum :=
-  QOU.MathlibExt.List.sum_insertionSort_eq r xs
+  QOU.MathlibExt.sum_insertionSort_eq r xs
 
 /-- Removing a corner decreases the partition size by exactly 1. -/
 theorem removeCorner_size (lam : Partition) (row : ℕ)
@@ -348,7 +357,7 @@ theorem Partition.cells_card_eq_size_proved (lam : Partition) :
           = lam.parts.getD i 0 := fun i _ => cells_row_card_eq i _
     rw [Finset.sum_congr rfl h_each]
     -- ∑ i ∈ range parts.length, parts.getD i 0 = parts.sum
-    exact (QOU.MathlibExt.List.sum_eq_finsetSum_getD lam.parts 0).symm
+    exact (QOU.MathlibExt.sum_eq_finsetSum_getD lam.parts 0).symm
   · -- Pairwise disjointness across rows
     intro i _ j _ hne
     exact cells_rows_disjoint_pair lam i j hne
@@ -620,7 +629,7 @@ instance partitionHelpers_default : PartitionHelpers where
 
 /-- Partition's Young-diagram cells count equals its size. Backed
     by `PartitionHelpers`. -/
-theorem Partition.cells_card_eq_size [h : PartitionHelpers]
+theorem cells_card_eq_size [h : PartitionHelpers]
     (lam : Partition) : lam.cells.card = lam.size :=
   h.cells_card_eq_size lam
 
@@ -719,7 +728,7 @@ theorem branching_nonneg (lam μ : Partition) : 0 ≤ branchingMult lam μ :=
     the identity; otherwise sorting moves the incremented part to
     its proper place. The size (sum + 1) is preserved by the sort. -/
 -- Ref: [sagan2001] §2.3
-def Partition.addCell (lam : Partition) (row : ℕ) : Partition :=
+def addCell (lam : Partition) (row : ℕ) : Partition :=
   if _h : row < lam.parts.length then
     ⟨(lam.parts.set row (lam.parts[row] + 1)).insertionSort (· ≥ ·),
      by exact List.sorted_insertionSort _ _⟩
@@ -902,7 +911,7 @@ theorem branching_1111_check : 0 * 1 + 0 * 2 + 1 * 1 = (1 : ℕ) := by decide
 
 /-! ## §10  Explicit branching: H₅(q) → H₃(q) -/
 
-/-- Branching table H₅ → H₃ (verified by SYT enumeration):
+/-! Branching table H₅ → H₃ (verified by SYT enumeration):
 
     | lam ⊢ 5       | m_{(3)} | m_{(2,1)} | m_{(1,1,1)} |
     |--------------|---------|-----------|-------------|
@@ -938,14 +947,25 @@ theorem branching_1111_check : 0 * 1 + 0 * 2 + 1 * 1 = (1 : ℕ) := by decide
 -- These are the fundamental combinatorial inputs for the
 -- jet convergence theorem.
 
--- (3,1) ⊢ 4 → (3) ⊢ 3: one cell at (1,0). m = 1.
-theorem branch_31_to_3 : (1 : ℕ) = 1 := rfl
+/-- `(3,1) ⊢ 4`, the source of the branching row below. -/
+def p31 : Partition := ⟨[3, 1], by decide⟩
+/-- `(3) ⊢ 3`. -/
+def p3 : Partition := ⟨[3], by decide⟩
+/-- `(2,1) ⊢ 3`. -/
+def p21 : Partition := ⟨[2, 1], by decide⟩
+/-- `(1,1,1) ⊢ 3`. -/
+def p111 : Partition := ⟨[1, 1, 1], by decide⟩
 
--- (3,1) ⊢ 4 → (2,1) ⊢ 3: one cell at (0,2). m = 1.
-theorem branch_31_to_21 : (1 : ℕ) = 1 := rfl
+/-- `(3,1) ⊢ 4 → (3) ⊢ 3`: the skew shape is the single cell `(1,0)`. -/
+theorem skewCells_31_3 : skewCells p31 p3 = {⟨1, 0⟩} := by decide
 
--- (3,1) ⊢ 4 → (1,1,1) ⊢ 3: not contained. m = 0.
-theorem branch_31_to_111 : (0 : ℕ) = 0 := rfl
+/-- `(3,1) ⊢ 4 → (2,1) ⊢ 3`: the skew shape is the single cell `(0,2)`. -/
+theorem skewCells_31_21 : skewCells p31 p21 = {⟨0, 2⟩} := by decide
+
+/-- `(3,1) ⊢ 4 → (1,1,1) ⊢ 3`: not contained, so the multiplicity is `0`. -/
+theorem branch_31_to_111 : branchingMult p31 p111 = 0 := by
+  rw [branchingMult]
+  exact dif_neg (by decide)
 
 /-! ## §11  Convergence theorem with error estimates -/
 
@@ -1098,7 +1118,7 @@ theorem knot_invariant_convergence
     `n`-th harmonic number. The full proof reduces to summing the
     `O(1/(k-3))` per-level bound; the harmonic bound is the
     closed-form result. -/
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 class CumulativeErrorHarmonic (K : ℕ) (_hK : K ≥ 4)
     (C_q : ℝ) (cumError harmK_minus_3 : ℝ) : Prop where
   /-- `|cumError| ≤ H_{K-3} · C_q`. -/
@@ -1150,7 +1170,7 @@ instance branchingAtK3_refl (μ : Partition) (x : ℝ) :
     The rigorous statement is the O(1/(k-3)) `ConvergenceBound`
     typeclass above; this class records the heuristic exponent at
     a chosen `k`. -/
--- Ref: [prop:jet-convergence-classical-limit]
+-- Ref: [conj:jet-convergence-classical-limit]
 class SquaredToLinearTransition (k : ℕ) (_hk : 4 ≤ k)
     (α_k effective_exp : ℝ) : Prop where
   /-- Effective exponent agreement at level `k`. -/

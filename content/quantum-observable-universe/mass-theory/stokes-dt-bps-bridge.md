@@ -14,7 +14,7 @@ structure, and $\mathcal{H}_{\mathrm{BPS}}(T[K])$ the space of BPS states whose
 graded dimension categorifies the $3$d index.
 
 The first equality is
-[`garoufalidis-gu-marino2023peacock`] peacock Conjecture 3(d) — *"the Stokes
+[`garoufalidis-gu-marino2023peacock`] Conjecture 3(d) — *"the Stokes
 constants are integers corresponding to the Donaldson--Thomas invariants and the
 BPS degeneracies"* — proved by Garoufalidis--Gu--Mariño for the figure-eight
 $4_1$. The second is the [`gukov-pei-putrov-vafa2017`] (GPPV) realisation of the
@@ -42,7 +42,7 @@ $A_\omega = 3$. Only the **closed**-sector bridge stated above reproduces
 $\{3, 4\}$ (reduced symmetry constant $3$); its $q \to 0$ anchor $S^+(0)_{01} = 3$
 is machine-checked unconditionally (`QOU.QBeta.StokesQZeroDTCount`).
 
-This block therefore adopts the **closed**-sector bridge, and A_ω=3 is made
+We therefore adopt the **closed**-sector bridge, and A_ω=3 is made
 conditional on it downstream
 ([`thm:aomega-fourone-dt-count`](#thm:aomega-fourone-dt-count)) — a theorem for
 $4_1$, conjectural in general. It is *not* the open-HOMFLY bridge.

@@ -12,8 +12,11 @@ list** of custom partitions transports its sum to the `Finset.univ` sum over `Pa
 (`sum_map_eq_sum_partitionIndex`) — exactly the reindexing `burnside` needs to consume
 `OVTopAssembly.sum_numSYT_sq_eq_factorial` (`Σ_i (#SYT i.diagram)² = n!`).
 
-The only piece then remaining for `burnside` is bridge (1), the hook-length identity
-`dimIrrep = numSYT` (`numSYT_mul_hookProduct` + custom↔YoungDiagram `hookProduct`).
+Bridge (1), the hook-length identity `dimIrrep = numSYT`, is **now proved** as
+`QOU.BraidKnot.dimIrrep_eq_numSYT` (`PartitionHookProductBridge`, from
+`HookProductHLF.numSYT_mul_hookProduct` + the custom↔YoungDiagram `hookProduct` bridge).
+Both ingredients `burnside` needs are therefore available; what remains is assembling them
+into the `burnside` statement itself.
 
 -- Ref: [sagan2001] Sagan, The Symmetric Group
 -/

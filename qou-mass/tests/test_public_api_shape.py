@@ -2,6 +2,7 @@
 the dataclasses behave."""
 from __future__ import annotations
 
+import re
 from decimal import Decimal
 
 import pytest
@@ -22,7 +23,21 @@ def test_imports():
 def test_version_string():
     import qou_mass as qm
     assert isinstance(qm.__version__, str)
-    assert qm.__version__.startswith("0.")  # alpha series
+    # Was `startswith("0.")  # alpha series`. That pinned the series rather
+    # than the shape, so it had to fail the first time the package left
+    # alpha — which v1.0.0 did, on a witness-JSON change (MAJOR per the
+    # policy in _version.py). Assert the shape instead.
+    assert re.fullmatch(r"\d+\.\d+\.\d+([ab]\d+)?", qm.__version__)
+    # The two version sources are edited by hand (see _version.py); this
+    # catches them drifting apart, which nothing else does.
+    import tomllib
+    from pathlib import Path
+    pyproject = Path(__file__).resolve().parents[1] / "pyproject.toml"
+    declared = tomllib.loads(pyproject.read_text())["project"]["version"]
+    assert declared == qm.__version__, (
+        f"pyproject.toml says {declared}, qou_mass.__version__ says "
+        f"{qm.__version__} — bump both"
+    )
 
 
 def test_prediction_str():

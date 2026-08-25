@@ -1,0 +1,145 @@
+{
+  "probe": "qbeta_5two_route26_ift_hypothesis",
+  "bean": "qou-trns",
+  "dps": 70,
+  "pairs_with_lean": "QOU/MathlibExt/ImplicitScalar.lean + QOU/QBeta/FiveTwoCurveDeriv.lean",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "curveDx and curveDy as declared in FiveTwoCurveDeriv.lean really are the partials of the curve -- central differences at step 1e-20 agree",
+      "worst": "2.0e-40",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "curveDy(x, y_j) is the cubic's derivative at its own root, so it vanishes exactly when that root is multiple -- the product over the three roots is the discriminant up to the leading coefficient, and is nonzero off the locus",
+      "prod_curveDy_at_phi_0.3pi": "(-21.0284071218 + 6.83254365428j)",
+      "nonzero": true,
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE IFT HYPOTHESIS ON THE ARC. min_j |curveDy| >= 1.6158 everywhere on |x| = 1 away from the branch point, and VANISHES at phi_0. phi_0 is SOLVED FOR, not sampled: the lane's proved characterisation gives Q(2 cos phi_0) = 0 with Q(u) = u^4-6u^3+7u^2+6u-31, so phi_0/pi = 0.76622594937757503001 and min |curveDy| there is 1.8e-25 -- the square-root accuracy floor for a DOUBLE root at 50 dps, which is what it is. So exists_hasDerivAt_root applies on [0,pi] minus {phi_0} and fails nowhere else, matching exists_unit_circle_disc_zero exactly. (An earlier draft of this gate quoted a refinement sequence that went 0.0177 -> 0.0249: it was BRACKETING phi_0, not converging to it. Quoting a grid value as a minimum is the defect this lane already found once, in min|disc| = 0.348.)",
+      "min_off_branch_point": "1.615770341",
+      "phi0_over_pi_solved": "0.76622594937757503001",
+      "u0_root_of_Q_in_(-2,-1)": "-1.4844353317658568752",
+      "Q_at_u0": "5.7956346e-70",
+      "min_curveDy_AT_phi0": "9.9489896e-36",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the IFT VALUE is right: dy/dphi from finite differences on a tracked root matches -(curveDx/curveDy) * dx/dphi. The envelope does not need this value -- only that the derivative exists -- but a wrong value would mean a wrong partial, so it is checked",
+      "rows": [
+        {
+          "phi_over_pi": "0.2",
+          "|fd - IFT|": "1.6630353e-31"
+        },
+        {
+          "phi_over_pi": "0.45",
+          "|fd - IFT|": "2.3987476e-31"
+        },
+        {
+          "phi_over_pi": "0.95",
+          "|fd - IFT|": "1.5958993e-31"
+        }
+      ],
+      "worst": "2.3987476e-31",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "at the base point x = 1 all three roots are simple -- |curveDy| bounded away from zero for each -- so the IFT applies where the transport starts",
+      "abs_curveDy_at_the_three_roots": [
+        "1.83447329",
+        "3.540855645",
+        "3.540855645"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "THE ENVELOPE COLLAPSE, checked directly. d/dphi V(x, y(phi)) equals (partial V/partial x)*dx/dphi -- the dy/dphi term drops out because partial V/partial y = 0 on the curve, which deformed_saddle_iff_curve makes free. This is the identity the whole IFT brick exists to license",
+      "rows": [
+        {
+          "phi_over_pi": "0.2",
+          "|dV/dphi - dVdx * dx/dphi|": "1.3062479e-31"
+        },
+        {
+          "phi_over_pi": "0.45",
+          "|dV/dphi - dVdx * dx/dphi|": "3.4696936e-31"
+        }
+      ],
+      "worst": "3.4696936e-31",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "the two Vieta products FiveTwoEnvelopeSum exponentiates to: prod_j (1 - x y_j) = x and prod_j (1 - y_j/x) = 1/x, along the whole arc. These are the hexp inputs the branch-pinning lemma consumes, and they hold from Vieta alone",
+      "n_points": 21,
+      "worst": "4.5278395e-71",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "MEASURED, not assumed. k_A = 0 everywhere on the arc; k_B = 0 on [0,pi) and **1 AT THE ENDPOINT**. So sum_dVdx_of_pinned's hypothesis is FALSE at phi = pi for principal branches. It is FORCED, not an accident: at x = -1 the two expressions 1 - x*y and 1 - y/x are literally the same (1 + y), so Sum_A = Sum_B; but the two identities demand +log x and -log x, which differ by 2 pi i when log(-1) = +i pi. Hence k_B - k_A = 1 there necessarily. Harmless for the envelope because pi is an ENDPOINT -- S(pi) - S(0) needs the derivative only on the open interval plus continuity on the closed one -- but it means the identity holds on [0,pi), not [0,pi], and phi_0 remains the only INTERIOR exceptional point. A fifth independent way this arc's endpoint sits on the cut",
+      "k_A_along_arc": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "k_B_along_arc": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "k_A_all_zero": true,
+      "k_B_zero_on_interior": true,
+      "k_B_at_endpoint": 1,
+      "difference_forced_at_x_eq_-1": 1,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "hypothesis_holds_where_it_must": "min_j |curveDy| along the arc is bounded away from zero except at phi_0/pi ~ 0.7662, where refinement drives it to zero -- exactly the branch point exists_unit_circle_disc_zero proves. So the IFT covers [0,pi] minus one point.",
+    "envelope_collapse_verified": "G6: d/dphi V(x, y(phi)) = (partial V/partial x) * dx/dphi to better than 1e-10 by finite differences. The dy/dphi term drops because partial V/partial y = 0 on the curve.",
+    "what_remains": "assembling the collapse over the three roots in Lean (G6 is numerical), and gluing across phi_0 with ConstantOffOnePoint. The Vieta sum is now Lean-proved in FiveTwoEnvelopeSum, conditional on the branch pinning, which G8 shows holds on [0,pi) and FAILS at the endpoint -- forced, and harmless because pi is an endpoint.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

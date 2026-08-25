@@ -132,7 +132,7 @@ structure Aeon where
 
 /-- Two aeons are adjacent if their boundaries share a common
     jet horizon: ∂𝒜₁ ∩ ∂𝒜₂ ≠ ∅. -/
-def Aeon.adjacent (a₁ a₂ : Aeon) : Prop :=
+def adjacent (a₁ a₂ : Aeon) : Prop :=
   ∃ h, h ∈ a₁.boundary ∧ h ∈ a₂.boundary
 
 /-! ## Horizon functor and CMB functor -/
@@ -181,7 +181,7 @@ structure PlanckStepResult where
     R : π₀(Bun°) → π₀(Bun°). Fixed points = self-recycling aeons. -/
 -- Ref: [manuscript] §9/aeon-boundary-generates-chart
 -- Ref: [penrose2010] R. Penrose, "Cycles of Time", Bodley Head 2010.
-axiom aeon_recycling
+opaque aeon_recycling
     (cmb : CMBFunctorValue)
     : -- The Planck step produces a new algebra with A_0 ≠ 0.
       PlanckStepResult

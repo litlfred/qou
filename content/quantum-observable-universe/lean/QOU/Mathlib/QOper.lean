@@ -70,7 +70,7 @@ def QConnection2.det (A : QConnection2 K) (x : K) : K :=
   A.a₁₁ x * A.a₂₂ x - A.a₁₂ x * A.a₂₁ x
 
 /-- A rank-2 q-connection is **non-degenerate** at x if its determinant is nonzero. -/
-def QConnection2.NonDegenerate (A : QConnection2 K) (x : K) : Prop :=
+def NonDegenerate (A : QConnection2 K) (x : K) : Prop :=
   A.det K x ≠ 0
 
 /-! ### §3  The oper condition -/
@@ -95,7 +95,7 @@ def QOper2.trace (A : QOper2 K) : K → K := A.a₁₁
 def QOper2.quantumWronskian (A : QOper2 K) : K → K := fun x => -(A.a₁₂ x)
 
 /-- **The determinant of a q-oper is minus the quantum Wronskian.** -/
-theorem QOper2.det_eq_wronskian (A : QOper2 K) (x : K) :
+theorem det_eq_wronskian (A : QOper2 K) (x : K) :
     A.toQConnection2.det K x = A.quantumWronskian K x := by
   simp [QConnection2.det, QOper2.quantumWronskian]
   have h1 := congr_fun A.oper_gauge x
@@ -109,7 +109,7 @@ theorem QOper2.det_eq_wronskian (A : QOper2 K) (x : K) :
     `y(q²x) − t(x) · y(qx) + Δ(x) · y(x) = 0`.
     This is the q-analogue of the differential equation on P¹ that the
     oper connection encodes. -/
-def QOper2.satisfiesEq (A : QOper2 K) (q : K) (y : K → K) : Prop :=
+def satisfiesEq (A : QOper2 K) (q : K) (y : K → K) : Prop :=
   ∀ x, y (q * (q * x)) - A.trace K x * y (q * x)
     + A.quantumWronskian K x * y x = 0
 

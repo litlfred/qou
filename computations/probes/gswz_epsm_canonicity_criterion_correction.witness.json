@@ -1,0 +1,89 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_canonicity_criterion_correction_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_canonicity_criterion_correction_probe.py",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+ "beans": [
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "corrects PR #4983 Addendum 22 and PR #4999 Addendum 23 (this repo); shift law QOU.Machinery.CyclicQuantumDilog (#4964); CGZ arXiv:1712.04887v3; GSWZ arXiv:2412.04241v2 eqn (270)",
+ "checks": {
+  "field_and_symbols_wellformed": true,
+  "symbol_count_is_23": true,
+  "criteria_agree_on_xi_so_merged_verdicts_stand": true,
+  "per_factor_implies_combined": true,
+  "relation_lattice_full_rank": true,
+  "relations_do_not_generate_everything": true,
+  "xi_not_already_a_relation": true,
+  "single_symbol_not_a_relation": true,
+  "membership_tester_rejects_nonmember": true,
+  "membership_tester_accepts_member": true,
+  "per_factor_representative_exists_at_every_m": true,
+  "witness_search_reached_xi_coset": true,
+  "witness_satisfies_per_factor": true,
+  "witness_is_same_bloch_class": true
+ },
+ "result": {
+  "criteria_agreement_on_xi": {
+   "2": true,
+   "3": true,
+   "4": true,
+   "6": true,
+   "8": true,
+   "12": true,
+   "24": true
+  },
+  "Q_xi": 10,
+  "e_z1": 9,
+  "e_z2": 2,
+  "five_term_relation_count": 506,
+  "preBloch_invariant_diagonal": [
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   1,
+   2,
+   1,
+   1,
+   1,
+   1,
+   1560
+  ],
+  "preBloch_index": 3120,
+  "per_factor_existence_per_m": {
+   "2": true,
+   "3": true,
+   "4": true,
+   "6": true,
+   "8": true,
+   "12": true,
+   "24": true
+  },
+  "quotient_cosets_explored": 464,
+  "witness_m24": {
+   "nonzero_coefficients_by_symbol_dlog": {
+    "dlog18": 4,
+    "dlog16": 3,
+    "dlog4": 6
+   },
+   "distinct_symbols": 3,
+   "total_multiplicity": 13
+  }
+ },
+ "scope": "CORRECTION: m | Q is an EXISTENCE criterion (U is some m-th power, m roots, and the choice moves the class) -- the CANONICITY criterion is the per-factor m | n_j r_j, which makes the root an explicit integer-exponent product. Both agree on xi, so every merged lattice verdict stands and the Lean is unaffected; only the label was wrong. Under the corrected criterion a canonical representative still EXISTS at every m | 24 (lattice membership, non-vacuous: the five-term relations have index 3120 in Z^23 and xi is not among them), with an explicit m = 24 witness verified to satisfy per-factor divisibility and to differ from xi by a relation. Does NOT produce eps_m values at m >= 3 -- but it makes that next increment well-posed."
+}

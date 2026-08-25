@@ -59,10 +59,64 @@ import sys
 from decimal import Decimal
 from pathlib import Path
 
+import mpmath as mp  # noqa: E402 — lifting mass-table-ppb's decimal strings
+
+from _precision import set_compute_dps  # noqa: E402
+
+# Raise dps BEFORE the mass-table decimal strings are lifted, not after:
+# mpmath's default is 15 dps, so `mp.mpf("<44 digits>")` would round on
+# construction and the ratios below would be float64 wearing a long decimal.
+set_compute_dps()
+
 sys.path.insert(0, str(Path(__file__).parent))
-from experimental_constants import M_E_MEV
+# `codata_constants`, not `experimental_constants` (bean qou-5sg8). The latter's
+# M_E_MEV is literally `float(_M_E_MEV)` -- an explicit downcast of the same
+# constant. This is the swap the qou-3wqg port already made in
+# `mass_table_ppb.py`; this producer was left on the float variant.
+from codata_constants import (  # noqa: E402
+    M_E_MEV,
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+)
 from q_parameter import Q as Q_0
 from witness_base import WitnessBuilder
+
+#: AME binding energies as `mp.mpf`, taken from the constants module rather than
+#: read back out of `mass-table-ppb.witness.json`.
+#:
+#: That witness carries `B_AME_MeV` as a JSON **float** -- `mass_table_ppb.py`
+#: imports the mpf constants and then wraps each in `float(...)` -- so lifting it
+#: here with `mp.mpf(<float>)` bound the binary64 value and `str()` printed its
+#: full decimal expansion: `2.2245661999999999380861...` where the constant is
+#: `2.2245662`. Three of the four fields bean qou-5sg8 reports are that.
+#:
+#: Fixing it at the true root (dropping those `float()` wrappers upstream) would
+#: change `B_AME_MeV` from float to string in a witness **eight** producers read,
+#: so it is a separate, wider change; the bean carries it. Sourcing the constant
+#: directly is the right fix for this producer regardless -- a decimal constant
+#: should not make a round trip through a JSON float to reach a consumer that
+#: wants it exactly.
+_AME_B_MEV = {
+    "2H": AME_B_DEUTERON_MEV_VALIDATION,
+    "3H": AME_B_TRITIUM_MEV_VALIDATION,
+    "3He": AME_B_HE3_MEV_VALIDATION,
+}
+
+#: Significant digits carried by anything downstream of the SDP eigenvalues.
+#:
+#: `joint-tower-sdp-rust.witness.json` stores `matrix_at_q_0_sym_eigvals` as JSON
+#: **floats**, so χ_λ enters at binary64 and caps everything built from it --
+#: `tr_M`, `B_pred_direct`, and both ratios. Lifting `y_λ` (which the witness
+#: does supply at 50 digits) cannot raise that cap, and neither can the mpf
+#: `M_E_MEV`.
+#:
+#: So these are serialized at their TRUE precision instead of at OUTPUT_DPS.
+#: That is the padding audit's own second remedy -- "carry the value as a
+#: string/mpf, **or serialize at its true precision**" -- and here it is the
+#: honest one: printing 50 digits of a float64-floored product is the fake
+#: precision the ratchet exists to catch, whichever way the value was carried.
+_F64_SIG_DIGITS = 17
 
 SDP_WITNESS = Path(__file__).parent / "joint-tower-sdp-rust.witness.json"
 Y_LAMBDA_WITNESS = Path(__file__).parent / "y-lambda-wenzl-witness.json"
@@ -78,7 +132,13 @@ def load_y_lambda():
         n = int(n_str)
         for w in table["weights"]:
             partition = tuple(w["partition"])
-            out[(n, partition)] = float(w["y_lambda_numeric"])
+            # `mp.mpf`, not `float`: the witness stores this as a 50-digit
+            # DECIMAL STRING, so `float(...)` discarded 34 of them at the door.
+            # The χ_λ cap below floors the products regardless, but flooring an
+            # exact input on the way in is a defect on its own terms -- and it
+            # made the `_F64_SIG_DIGITS` note untrue as written, since y_λ was
+            # a second float64 source it does not mention.
+            out[(n, partition)] = mp.mpf(w["y_lambda_numeric"])
     return out
 
 
@@ -90,11 +150,21 @@ def load_sdp_certificates():
 
 
 def load_volmatch_predictions():
-    """Pull mass-table-ppb predicted B values for comparison."""
+    """Pull mass-table-ppb predicted B values for comparison.
+
+    mass-table-ppb is written through WitnessBuilder, which nests the payload
+    under `data`; this loader read `rows` at top level and so raised KeyError
+    on every run. The two sibling witnesses read above keep their payload at
+    top level, so accept either shape rather than assuming one.
+    """
     with open(MASS_TABLE_WITNESS) as f:
         d = json.load(f)
+    payload = d.get("data") if isinstance(d.get("data"), dict) else d
+    if "rows" not in payload:
+        raise KeyError(
+            f"{MASS_TABLE_WITNESS.name}: no 'rows' at top level or under 'data'")
     out = {}
-    for row in d["rows"]:
+    for row in payload["rows"]:
         out[row["sym"]] = {
             "B_AME_MeV": row["B_AME_MeV"],
             "B_pred_MeV": row["B_pred_MeV"],
@@ -110,7 +180,11 @@ def chi_lambda_from_block(block):
     eigenvalues by linearity. The witness records eigenvalues of the
     symmetric part (M+M^T)/2; their sum equals tr(M) regardless.
     """
-    return sum(block["matrix_at_q_0_sym_eigvals"])
+    # Lifted to mpf before summing.  This adds no precision -- the witness
+    # stores these as JSON floats and that cap is real (see `_F64_SIG_DIGITS`)
+    # -- but it keeps the accumulation out of binary64 and lets everything
+    # downstream be one type.
+    return mp.fsum(mp.mpf(str(v)) for v in block["matrix_at_q_0_sym_eigvals"])
 
 
 def native_strand_n(cert):
@@ -139,13 +213,14 @@ def main():
         wb = cert.get("wedderburn_blocks", [])
         # Compute tr_M(T_w) = Σ_λ y_λ(q_0) · χ_λ(T_w)
         terms = []
-        tr_M = 0.0
+        tr_M = mp.mpf(0)
         for block in wb:
             partition = tuple(block["partition"])
             chi = chi_lambda_from_block(block)
             y = y_lambda.get((n_native, partition))
             if y is None:
-                terms.append({"partition": list(partition), "chi": chi,
+                terms.append({"partition": list(partition),
+                              "chi": mp.nstr(chi, _F64_SIG_DIGITS),
                               "y_lambda": None, "skipped": True})
                 continue
             contribution = y * chi
@@ -153,16 +228,39 @@ def main():
             terms.append({
                 "partition": list(partition),
                 "d_lambda": block["d_lambda"],
-                "chi_lambda": chi,
-                "y_lambda": y,
-                "contribution": contribution,
+                # χ_λ and everything built from it are floored by the
+                # float64 SDP eigenvalues, so they are emitted at that
+                # precision.  y_λ is exact to its full 50 digits and is
+                # emitted as such -- the two are no longer the same width
+                # because they no longer carry the same amount of truth.
+                "chi_lambda": mp.nstr(chi, _F64_SIG_DIGITS),
+                "y_lambda": str(y),
+                "contribution": mp.nstr(contribution, _F64_SIG_DIGITS),
             })
         # B_pred from direct chain
-        B_pred_direct = M_E_MEV * rho * tr_M
+        B_pred_direct = M_E_MEV * mp.mpf(rho) * tr_M
         # B_pred from volume-match (mass-table-ppb)
+        #
+        # `mp.mpf(...)` on the way in: `mass_table_ppb.py` was ported to mpmath
+        # (bean qou-3wqg) and now emits `B_pred_MeV` as a 44-digit DECIMAL
+        # STRING rather than a JSON float, because computing it in Python floats
+        # made it wrong past the 8th significant digit. Read raw, the string
+        # reaches `B_pred_direct / B_volmatch` below and raises
+        # `unsupported operand type(s) for /: 'float' and 'str'`.
+        #
+        # Lifting with mpf rather than float keeps the precision the port
+        # created; this ratio is reported to ppb, which is the scale the
+        # correction moved.
         vm = volmatch.get(sym, {})
-        B_volmatch = vm.get("B_pred_MeV")
-        B_AME = vm.get("B_AME_MeV", ref_val)
+        _bv = vm.get("B_pred_MeV")
+        B_volmatch = mp.mpf(_bv) if _bv is not None else None
+        # B_AME from the constants module first (exact mpf), falling back to the
+        # witness only for symbols it does not carry -- `ref_val` covers the
+        # electron row, whose "B_AME" is the unit 1.0 rather than a binding
+        # energy. See `_AME_B_MEV` above for why the witness value is not used
+        # where a constant exists.
+        _ba = _AME_B_MEV.get(sym, vm.get("B_AME_MeV", ref_val))
+        B_AME = mp.mpf(_ba) if _ba is not None else None
 
         rows.append({
             "sym":          sym,
@@ -170,15 +268,29 @@ def main():
             "knot":         knot,
             "n_native":     n_native,
             "rho":          rho,
-            "tr_M_direct":  tr_M,
-            "B_pred_direct_MeV": B_pred_direct,
-            "B_volmatch_MeV": B_volmatch,
-            "B_AME_MeV":    B_AME,
+            "tr_M_direct":  mp.nstr(tr_M, _F64_SIG_DIGITS),
+            # `str(...)` on the mpf-valued fields: they are mpmath now (see the
+            # lift above) and `json.dump` cannot serialize an mpf — the failure
+            # `alpha_cluster_recursion.py` hit for the same reason. The ratios
+            # are computed in mpmath and stringified only at this sink, so the
+            # precision survives the division and only the JSON encoding is
+            # narrowed.
+            "B_pred_direct_MeV": mp.nstr(B_pred_direct, _F64_SIG_DIGITS),
+            # `B_volmatch` and `B_AME` are exact to their full length -- the
+            # first a 44-digit decimal from the qou-3wqg port, the second an mpf
+            # constant -- so `str()` claims only digits that exist.
+            "B_volmatch_MeV": str(B_volmatch) if B_volmatch is not None else None,
+            "B_AME_MeV":    str(B_AME) if B_AME is not None else None,
+            # The ratios are NOT: their numerator is floored by the float64 SDP
+            # eigenvalues (see `_F64_SIG_DIGITS`), so they are emitted at that
+            # precision rather than padded out to OUTPUT_DPS.
             "ratio_direct_to_volmatch": (
-                B_pred_direct / B_volmatch if B_volmatch else None
+                mp.nstr(B_pred_direct / B_volmatch, _F64_SIG_DIGITS)
+                if B_volmatch else None
             ),
             "ratio_direct_to_AME": (
-                B_pred_direct / B_AME if B_AME else None
+                mp.nstr(B_pred_direct / B_AME, _F64_SIG_DIGITS)
+                if B_AME else None
             ),
             "wedderburn_terms": terms,
             "comparison_label": ref_label,
@@ -192,11 +304,23 @@ def main():
     print("-" * 78)
     for r in rows:
         rd = r["ratio_direct_to_volmatch"]
-        rd_str = f"{rd:>7.4f}" if rd is not None else f"{'—':>7}"
-        bv = f"{r['B_volmatch_MeV']:>10.4f}" if r['B_volmatch_MeV'] is not None else f"{'—':>10}"
-        ba = f"{r['B_AME_MeV']:>10.4f}" if r['B_AME_MeV'] is not None else f"{'—':>10}"
+        # `float(...)` for display, same reason as `bv`/`ba` above: the ratio is
+        # a decimal string in the row now.
+        rd_str = f"{float(rd):>7.4f}" if rd is not None else f"{'—':>7}"
+        # `float(...)` for DISPLAY only — these two are decimal strings in the
+        # row now (mass-table-ppb's mpmath port, bean qou-3wqg), and a format
+        # spec of `.4f` on a str raises `Unknown format code 'f'`. The stored
+        # value keeps its full precision; only this 4-decimal console column is
+        # narrowed.
+        bv = f"{float(r['B_volmatch_MeV']):>10.4f}" if r['B_volmatch_MeV'] is not None else f"{'—':>10}"
+        ba = f"{float(r['B_AME_MeV']):>10.4f}" if r['B_AME_MeV'] is not None else f"{'—':>10}"
+        # `float(...)` on B_pred_direct for the same reason as the two above:
+        # once M_E_MEV comes from `codata_constants` it is an mpf, mpf has no
+        # `__format__`, and `:>10.4f` raises. Console-only; the record keeps the
+        # mpf-derived value.
         print(f"{r['sym']:<6} {r['n_native']:>2} {r['rho']:>2} "
-              f"{r['tr_M_direct']:>9.4f} {r['B_pred_direct_MeV']:>10.4f} "
+              f"{float(r['tr_M_direct']):>9.4f} "
+              f"{float(r['B_pred_direct_MeV']):>10.4f} "
               f"{bv} {ba} {rd_str}")
 
     print("\n" + "=" * 78)
@@ -233,7 +357,7 @@ This is a real gap in the canonical chain (PR #442). Step 1 of the
             "resolution before sub-percent accuracy is possible."
         )
         .set_content_block("prop:atom-knot-mass-derivation")
-        .add_parameter("q_0", Q_0)
+        .add_parameter("q_0", str(Q_0))
         .add_parameter("m_e_MeV", M_E_MEV)
         .add_data("rows", rows)
         .add_data("sources", {

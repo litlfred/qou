@@ -1,0 +1,21 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "PROBE-A part 3: Theta-parity of the HH^1 class action on HH_0",
+  "bean": "qou-jcmw",
+  "description": "Parity of the outer class's cocenter action under Theta = sigma_- . bar (T_i -> a - T_i), the F_p-linear shadow of the semilinear bar involution.",
+  "scope_caveat": "scope-(a). This measures Theta-parity, NOT bar-parity. The bar involution is semilinear (q -> q^{-1}) and does not act on a single finite-field specialization; converting a Theta-parity result into a bar-parity claim requires accounting for the sign twist and is NOT performed here.",
+  "results": {
+    "5021": {
+      "dim_cocenter": 7,
+      "rank_D0": 1,
+      "theta_parity": "Theta-EVEN"
+    },
+    "60041": {
+      "dim_cocenter": 7,
+      "rank_D0": 1,
+      "theta_parity": "Theta-EVEN"
+    }
+  },
+  "wired_to_production": false,
+  "fit_performed": false
+}

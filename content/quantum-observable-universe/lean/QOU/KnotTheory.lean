@@ -152,7 +152,7 @@ noncomputable def vol_trefoil : HyperbolicVolume where
     self-writhe (counted only within a single component of the
     closure) is zero in the standard braid projection — strands do
     not self-cross. -/
-def BraidWord.writhe (β : BraidWord) : ℤ :=
+def writhe (β : BraidWord) : ℤ :=
   β.letters.foldl (fun acc l =>
     match l.sign with
     | .positive => acc + 1

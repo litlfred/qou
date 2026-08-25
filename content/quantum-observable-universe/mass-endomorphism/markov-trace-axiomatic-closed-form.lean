@@ -103,7 +103,8 @@ noncomputable def protonMarkovCoeffC : ℤ[X] := heckePowerB 7 * heckePowerB 4
 
     and is proved by unfolding the recurrence and `ring`.  The
     remaining `z`-assembly into the rational Markov trace
-    (`A z² + B z + C`, denominator `q^{10}(q+1)^3`) is the abstract
+    (`A z² + B z + C`, denominator `q^7(q^2+1)^2` under the canonical
+    convention D) is the abstract
     `MarkovTrace`-typeclass step; the **content** the recurrence
     machinery actually establishes — the three coefficient polynomials
     — is what this theorem fixes, mirroring the symbolic

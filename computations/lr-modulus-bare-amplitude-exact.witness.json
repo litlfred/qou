@@ -1,8 +1,8 @@
 {
   "engine": "sympy-exact+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-18T13:53:42.220389+00:00",
-  "commitSha": "484c86462f9b238c40449a1835fb39acb1f352a2",
+  "computedAt": "2026-08-23T09:14:40.033528+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "bare_amplitude_is_vacuum_smatrix_element_exact",
@@ -17,8 +17,8 @@
   "durationMs": 22,
   "computation": "lr-modulus-bare-amplitude-exact",
   "scriptFile": "lr_modulus_bare_amplitude_exact.py",
-  "scriptHash": "87a1831d84a6",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "477de2b59fb8",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,8 +27,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/lr_modulus_bare_amplitude_exact.py"
+    ],
+    "reproduce": "python3 -u computations/lr_modulus_bare_amplitude_exact.py"
   },
   "description": "The bare flat-connection amplitude of Σ(2,3,5) is the vacuum modular S-matrix element, EXACTLY: A_m(1) = 2/D(ζ^m) = (2/√5)sin(mπ/5), m∈{1,2} (roots ζ^m=e^{imπ/5}, Galois pair). Closes the ~1% machine-evidence bare-amplitude precondition from habiro_interpolation_wlambda (loc_matches / bwS0_eq_hecke gate) using #3822's exact ℚ(√5) values D²(ζ^m)=10±2√5: (A) the exact-radical identity (2/√5·sin(mπ/5))²=4/(10±2√5) is verified symbolically (sympy) and D²=Σ_McKay[mark]²_{ζ^m}=10±2√5 in exact ℚ(√5); (B) the exact link A_m(1)=2/D follows from #3822's root identity at the vacuum (|S_{00}|=2/D), corroborated by the Gauss-sum extraction to ~1% at accessible N (a sanity check, precision-limited for N>150). Consequence: with the verified LR factorization the full colored amplitude closes to A_m(α)=(2/√5)|sin(αmπ/5)| exactly, upgrading KeystoneLRModulusFold.lean's amplitude from ~1% evidence to an exact identity — the precondition for the archimedean Habiro continuation to generic q₀. Scope-(a); no fit; nothing wired; μ–p tension NOT resolved; no c_k wired; L2 2/7.",
   "data": {

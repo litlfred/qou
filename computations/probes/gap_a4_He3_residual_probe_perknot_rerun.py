@@ -62,11 +62,12 @@ from witness_base import WitnessBuilder  # noqa: E402
 from canonical_tr_m_via_chi_cache import canonical_tr_m  # noqa: E402
 from _li_2_q_util import linking_weight_family_a  # noqa: E402
 from codata_constants import M_E_MEV, M_HE3_MEV_VALIDATION as M_HE3_MEV  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 VOL_BORROMEAN_8G = mp.mpf("7.32772475341775212043682811945907288619319499425")
 VOL_PHASE4_Z2 = mp.mpf("12.554")

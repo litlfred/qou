@@ -45,6 +45,14 @@ import subprocess
 import sys
 
 import mpmath as mp
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 _ROOT = os.path.abspath(os.path.join(_HERE, "..", ".."))
@@ -72,7 +80,7 @@ def _aslist(x):
 
 
 def main():
-    mp.mp.dps = 40
+    set_compute_dps()
     wpath = os.path.join(_ROOT, "computations", "rho-k-h3a-co-casimir.witness.json")
     with open(wpath) as _wf:
         w = json.load(_wf)

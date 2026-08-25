@@ -1,0 +1,521 @@
+{
+  "schema": "witness/v1",
+  "description": "C1 infinity-side degree law deg_q(c_n) = n^2: elementary proof (recorded in the module docstring and the companion audit) plus an exact Z[q] check to n=30. Upgrades the 2026-08-01 'verified symbolically for n <= 9' spot-check to an all-n statement, and records lc(c_n) = 2 for n >= 1 (the m=0 collision), which the earlier record did not note.",
+  "computation": {
+    "script": "qbeta/c1_inf_degree_law_proof_probe.py"
+  },
+  "witness": {
+    "scriptCommitSha": "uncommitted"
+  },
+  "recurrence": "c_{m+1} = c_m * (1 + (q-1) q^m + (q-1) q^{2m}), c_0 = 1",
+  "claims": {
+    "degree_law": "deg_q(c_n) = n^2 for all n >= 0",
+    "degree_law_status": "PROVED (elementary induction; degrees add over Z[q])",
+    "leading_coeff_law": "lc(c_n) = 2 for n >= 1, lc(c_0) = 1",
+    "leading_coeff_status": "PROVED (lc multiplies; only f_0 has lc != 1)",
+    "factor_degree": "deg f_m = 2m+1 for all m >= 0"
+  },
+  "verification": {
+    "n_max": 30,
+    "previous_recorded_window": 9,
+    "degree_law_holds": true,
+    "leading_coeff_law_holds": true,
+    "factor_degree_law_holds": true,
+    "arithmetic": "exact integer polynomial arithmetic over Z[q]; no floats"
+  },
+  "rows": [
+    {
+      "n": 0,
+      "deg_q_c_n": 0,
+      "n_squared": 0,
+      "degree_matches": true,
+      "leading_coeff": 1,
+      "leading_coeff_matches": true,
+      "n_terms": 1
+    },
+    {
+      "n": 1,
+      "deg_q_c_n": 1,
+      "n_squared": 1,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 2
+    },
+    {
+      "n": 2,
+      "deg_q_c_n": 4,
+      "n_squared": 4,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 5
+    },
+    {
+      "n": 3,
+      "deg_q_c_n": 9,
+      "n_squared": 9,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 10
+    },
+    {
+      "n": 4,
+      "deg_q_c_n": 16,
+      "n_squared": 16,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 17
+    },
+    {
+      "n": 5,
+      "deg_q_c_n": 25,
+      "n_squared": 25,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 24
+    },
+    {
+      "n": 6,
+      "deg_q_c_n": 36,
+      "n_squared": 36,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 37
+    },
+    {
+      "n": 7,
+      "deg_q_c_n": 49,
+      "n_squared": 49,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 50
+    },
+    {
+      "n": 8,
+      "deg_q_c_n": 64,
+      "n_squared": 64,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 65
+    },
+    {
+      "n": 9,
+      "deg_q_c_n": 81,
+      "n_squared": 81,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 81
+    },
+    {
+      "n": 10,
+      "deg_q_c_n": 100,
+      "n_squared": 100,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 101
+    },
+    {
+      "n": 11,
+      "deg_q_c_n": 121,
+      "n_squared": 121,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 121
+    },
+    {
+      "n": 12,
+      "deg_q_c_n": 144,
+      "n_squared": 144,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 145
+    },
+    {
+      "n": 13,
+      "deg_q_c_n": 169,
+      "n_squared": 169,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 169
+    },
+    {
+      "n": 14,
+      "deg_q_c_n": 196,
+      "n_squared": 196,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 197
+    },
+    {
+      "n": 15,
+      "deg_q_c_n": 225,
+      "n_squared": 225,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 226
+    },
+    {
+      "n": 16,
+      "deg_q_c_n": 256,
+      "n_squared": 256,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 257
+    },
+    {
+      "n": 17,
+      "deg_q_c_n": 289,
+      "n_squared": 289,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 290
+    },
+    {
+      "n": 18,
+      "deg_q_c_n": 324,
+      "n_squared": 324,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 325
+    },
+    {
+      "n": 19,
+      "deg_q_c_n": 361,
+      "n_squared": 361,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 362
+    },
+    {
+      "n": 20,
+      "deg_q_c_n": 400,
+      "n_squared": 400,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 401
+    },
+    {
+      "n": 21,
+      "deg_q_c_n": 441,
+      "n_squared": 441,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 442
+    },
+    {
+      "n": 22,
+      "deg_q_c_n": 484,
+      "n_squared": 484,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 485
+    },
+    {
+      "n": 23,
+      "deg_q_c_n": 529,
+      "n_squared": 529,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 529
+    },
+    {
+      "n": 24,
+      "deg_q_c_n": 576,
+      "n_squared": 576,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 577
+    },
+    {
+      "n": 25,
+      "deg_q_c_n": 625,
+      "n_squared": 625,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 626
+    },
+    {
+      "n": 26,
+      "deg_q_c_n": 676,
+      "n_squared": 676,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 677
+    },
+    {
+      "n": 27,
+      "deg_q_c_n": 729,
+      "n_squared": 729,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 730
+    },
+    {
+      "n": 28,
+      "deg_q_c_n": 784,
+      "n_squared": 784,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 785
+    },
+    {
+      "n": 29,
+      "deg_q_c_n": 841,
+      "n_squared": 841,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 842
+    },
+    {
+      "n": 30,
+      "deg_q_c_n": 900,
+      "n_squared": 900,
+      "degree_matches": true,
+      "leading_coeff": 2,
+      "leading_coeff_matches": true,
+      "n_terms": 901
+    }
+  ],
+  "factor_rows": [
+    {
+      "m": 0,
+      "deg_f_m": 1,
+      "two_m_plus_1": 1,
+      "matches": true,
+      "leading_coeff": 2
+    },
+    {
+      "m": 1,
+      "deg_f_m": 3,
+      "two_m_plus_1": 3,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 2,
+      "deg_f_m": 5,
+      "two_m_plus_1": 5,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 3,
+      "deg_f_m": 7,
+      "two_m_plus_1": 7,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 4,
+      "deg_f_m": 9,
+      "two_m_plus_1": 9,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 5,
+      "deg_f_m": 11,
+      "two_m_plus_1": 11,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 6,
+      "deg_f_m": 13,
+      "two_m_plus_1": 13,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 7,
+      "deg_f_m": 15,
+      "two_m_plus_1": 15,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 8,
+      "deg_f_m": 17,
+      "two_m_plus_1": 17,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 9,
+      "deg_f_m": 19,
+      "two_m_plus_1": 19,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 10,
+      "deg_f_m": 21,
+      "two_m_plus_1": 21,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 11,
+      "deg_f_m": 23,
+      "two_m_plus_1": 23,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 12,
+      "deg_f_m": 25,
+      "two_m_plus_1": 25,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 13,
+      "deg_f_m": 27,
+      "two_m_plus_1": 27,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 14,
+      "deg_f_m": 29,
+      "two_m_plus_1": 29,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 15,
+      "deg_f_m": 31,
+      "two_m_plus_1": 31,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 16,
+      "deg_f_m": 33,
+      "two_m_plus_1": 33,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 17,
+      "deg_f_m": 35,
+      "two_m_plus_1": 35,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 18,
+      "deg_f_m": 37,
+      "two_m_plus_1": 37,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 19,
+      "deg_f_m": 39,
+      "two_m_plus_1": 39,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 20,
+      "deg_f_m": 41,
+      "two_m_plus_1": 41,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 21,
+      "deg_f_m": 43,
+      "two_m_plus_1": 43,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 22,
+      "deg_f_m": 45,
+      "two_m_plus_1": 45,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 23,
+      "deg_f_m": 47,
+      "two_m_plus_1": 47,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 24,
+      "deg_f_m": 49,
+      "two_m_plus_1": 49,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 25,
+      "deg_f_m": 51,
+      "two_m_plus_1": 51,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 26,
+      "deg_f_m": 53,
+      "two_m_plus_1": 53,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 27,
+      "deg_f_m": 55,
+      "two_m_plus_1": 55,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 28,
+      "deg_f_m": 57,
+      "two_m_plus_1": 57,
+      "matches": true,
+      "leading_coeff": 1
+    },
+    {
+      "m": 29,
+      "deg_f_m": 59,
+      "two_m_plus_1": 59,
+      "matches": true,
+      "leading_coeff": 1
+    }
+  ],
+  "wired_to_production": false,
+  "is_fit": false
+}

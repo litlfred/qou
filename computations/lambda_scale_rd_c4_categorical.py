@@ -109,7 +109,7 @@ def main() -> int:
 
     q = sp.Symbol("q", positive=True)
     h = q - 1/q
-    z_markov = 1/(sp.sqrt(q) + 1/sp.sqrt(q))
+    z_markov = q**3 / (q**2 + 1)
 
     # ── H_3 Wedderburn-block Markov-trace weights ───────────────
     # H_3(q) has 3 blocks: V_(3), V_(2,1), V_(1,1,1)
@@ -182,7 +182,7 @@ def main() -> int:
     print("Loading cached H_3 character for V_(2,1) at q_0...")
     chi_v21_witness = _pb.witness_path("chi-v21-hoefsmit.witness.json", HERE)
     if chi_v21_witness.exists():
-        chi_v21_data = json.load(chi_v21_witness.open())
+        chi_v21_data = w.add_upstream(chi_v21_witness)
         print(f"  Found {chi_v21_witness.name}")
         # Likely has chi_{(2,1)}(σ_1 σ_2^{-1}) at q_0 or symbolic
         w.add_data("chi_v21_witness_exists", True)

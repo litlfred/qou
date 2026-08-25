@@ -141,7 +141,7 @@ export default chapter({
       ],
     }),
     section({
-      title: "Reconnected orphan blocks (Phase 7)",
+      title: "$L$-values, mirror symmetry, and the quantum Langlands dual",
       label: "sec:q-geometric-langlands-orphan-reconnect",
       blocks: [
         "intro-orphan-reconnect",

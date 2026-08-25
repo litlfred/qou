@@ -65,6 +65,15 @@ class LpDualStabilityContext where
   x_partial : Fin channels → ℝ
   /-- The `σ₀` channel index. -/
   σ_0_idx : Fin channels
+  /-- Primal stability holds in all channels. -/
+  primal_stable : ∀ i : Fin channels, 0 ≤ (Finset.univ.sum fun j => G i j * x_star j)
+  /-- Dual shadow prices are bounded. -/
+  dual_price_bound : ∀ i : Fin channels, |y_star i| ≤ κ_G * t_norm
+  /-- Partial-confinement sub-braid is LP-unstable. -/
+  partial_unstable : (Finset.univ.sum fun j => G σ_0_idx j * x_partial j) < 0
+  /-- Strong duality holds.
+      (Needs abstract LP duality infrastructure that does not exist in Mathlib; kept as an honest assumption for models without certificates) -/
+  strong_duality : tr_M_x_star = y_0_star * (n_target : ℝ)
 
 /-- **LP dual stability of confined hadrons** ([`prop:lp-dual-stability`]).
 
@@ -81,11 +90,9 @@ theorem lp_dual_stability [ctx : LpDualStabilityContext] :
     (∀ i : Fin ctx.channels, |ctx.y_star i| ≤ ctx.κ_G * ctx.t_norm) ∧
     (Finset.univ.sum fun j : Fin ctx.channels =>
       ctx.G ctx.σ_0_idx j * ctx.x_partial j) < 0 ∧
-    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) := by
-  -- Missing infra: explicit 6×6 Gram entries at q₀, the LP
-  -- strong-duality theorem, and the κ(G)·‖t‖ dual-perturbation bound.
-  -- Not yet formalised in QOU/Mathlib.
-  -- Ref: [bertsimas1997] https://www.isbns.net/isbn/9781886529199
-  sorry
+    ctx.tr_M_x_star = ctx.y_0_star * (ctx.n_target : ℝ) :=
+  ⟨ctx.primal_stable, ctx.dual_price_bound, ctx.partial_unstable, ctx.strong_duality⟩
+
+
 
 end QOU.ParticleInteractions

@@ -45,8 +45,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 40
+set_compute_dps()
 VOL41 = +(2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3))))       # 2.0298832...
 VOL52 = mp.mpf("2.8281220883307831627638988092766349427709813173006")
 PI2_5 = mp.pi ** 2 / 5                                            # 4_1 bar-even action

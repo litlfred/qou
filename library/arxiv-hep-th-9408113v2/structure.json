@@ -1,0 +1,1419 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-hep-th-9408113v2",
+ "source": {
+  "file": "9408113v2.pdf",
+  "sha256": "dadd96e1155e820f574cdfb25213f86bfdd416ad01ceca69eb5f7d9110f214fb",
+  "bytes": 648530,
+  "pages": 96
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "hep-th/9408113",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "25 Aug 1994"
+  },
+  "doi": null,
+  "title": "Dilogarithm identities",
+  "authors_raw": "Department of Mathematical Sciences, University of Tokyo",
+  "abstract": "We study the dilogarithm identities from algebraic, analytic, asymptotic, K-theoretic, combinatorial and representation-theoretic points of view. We prove that a lot of dilogarithm identities (hypothetically all!) can be obtained by using the ﬁve-term relation only. Amon g those the Coxeter, Lewin, Loxton and Browkin ones are contained. Accessibility of Lewin’s one v ariable and Ray’s multivariable (here for n≤ 2 only) functional equations is given. For odd levels the ˆsl2 case of Kuniba-Nakanishi’s dilogarithm conjecture is proven and additional results about remainder term are obtained. The connections between dilogarithm identities and Rogers-Ramanujan-Andrews-Gordon type partition identities via their asymp- totic behavior are discussed. Some new results about the string functions for levelk vacuum representation of the aﬃne Lie algebra ˆsln are obtained. Connection between dilogarithm identities and algebraic K- theory (torsion in K3(R)) is discussed. Relations between crystal basis, branching fu nctionsbkΛ 0 λ (q) and Kostka-Foulkes polynomials (Lusztig’s q-analog of weight multiplicity) are considered. The Melzer an d Milne conjectures are proven. In some special cases we are proving that the branching functions bkΛ 0 λ (q) are equal to an appropriate limit of Kostka polynomials (the so- called Thermodynamic Bethe Ansatz limit). Connection between ”ﬁnite-dimensional part of cryst al base” and Robinson-Schensted-Knuth cor- respondence is considered. 0. Introduction. In this paper we consider mainly the properties of dilogarit hm related to the so-called accessibility problem, representation theory of Virasoro and Kac-Moody algebras, and Conformal Field Theory (CFT). The remarkable and mysteriou s dilogarithm [Za2], [Za3] will be the main hero of our paper, but we start with deﬁnition and list some applications of more general and may be even more amazing functions: polylogarithm and hyperlogarithm. Deﬁnition 1 (G. Leibnitz, 1696; L. Euler, 1768). The polylogar",
+  "docinfo": {
+   "Producer": "GPL Ghostscript 10.01.2",
+   "CreationDate": "D:20241126154526-05'00'",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Title": "arXiv:hep-th/9408113v2  25 Aug 1994"
+  },
+  "title_lines": [
+   "DILOGARITHM IDENTITIES",
+   "ANATOL N. KIRILLOV"
+  ],
+  "title_prev": "DILOGARITHM IDENTITIES ANATOL N. KIRILLOV"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Abstract",
+   "page": 1,
+   "source": "inferred",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 2,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Kac, D. Peterson, M. Wakimoto, B. Feigin, D. Fuchs, E. Fren kel,... )",
+   "page": 2,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 4,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 6,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "L(x) +L(1−x) = π2",
+   "page": 6,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "L(x) +L(y) = L(xy) +L",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 8,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 10,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "(3−",
+   "page": 10,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 12,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 14,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 16,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "L(1), 2L(γ) +L(γ2) = 8",
+   "page": 16,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "L(1), j = 0, 1. (1.17)",
+   "page": 16,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "L(1). (1.18)",
+   "page": 17,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 18,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "Lewin [Le2] who observed the parallel with Watson’s three identities and conjectured",
+   "page": 18,
+   "source": "inferred",
+   "number": "L"
+  },
+  {
+   "level": 1,
+   "title": "L(y) + 6L(1) = 6L(1)− 16",
+   "page": 19,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "L(1) = 2",
+   "page": 19,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 20,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "(L(y) +L(z)) = 2",
+   "page": 20,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 3,
+   "title": "Lewin’s dilogarithm identity related with x = 1",
+   "page": 20,
+   "source": "inferred",
+   "number": "1.2.3"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 22,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 24,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "(Level - rank duality)",
+   "page": 24,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 26,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 28,
+   "source": "inferred",
+   "number": "28"
+  },
+  {
+   "level": 1,
+   "title": "Anatol N. Kirillov",
+   "page": 30,
+   "source": "inferred",
+   "number": "30"
+  },
+  {
+   "level": 1,
+   "title": "Using the integral representation (1.1) for the Euler dilog arithm Li 2(x), prove the",
+   "page": 31,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Li2(z2),",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Prove the following ﬁve-term, two-variable functional equ ations",
+   "page": 31,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Prove the following nine-term, three-variable functional equations",
+   "page": 31,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Prove (L(r,θ ) := ReL(reiθ), r,θ∈ R)",
+   "page": 31,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Prove the accessibility of the following dilogarithm ident ities",
+   "page": 32,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Prove the Coxeter and Lewin relations (1.11) and (1.12) usin g the Ray multivariable",
+   "page": 32,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Prove the accessibility of the following dilogarithm ident ities (the Lewin Conjec-",
+   "page": 33,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "(We use the notation of Section 1.5). Let us deﬁne for a given p ositive rational",
+   "page": 33,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "Let us deﬁne Rogers’ trilogarithm as",
+   "page": 33,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "(5−",
+   "page": 34,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Rogers-Ramanujan and Gordon-Andrews identities",
+   "page": 34,
+   "source": "inferred",
+   "number": "2.1.1"
+  },
+  {
+   "level": 1,
+   "title": "Reduction to ﬁnite dimensional (polynomial) case. Note th at it is suﬃcient to",
+   "page": 35,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "((2k+3)m2+m)",
+   "page": 35,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Generalization. It is clear that one can deduce (2 .3)N from the more general",
+   "page": 35,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "Using the Jacobi triple product identity, prove",
+   "page": 41,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Prove a q-analog of the binomial series",
+   "page": 41,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Using the result of Exercise 2, prove the Ramanujan 1ψ1 summation formula",
+   "page": 42,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Deduce from Ramanujan’s 1ψ1-summation formula the following identities",
+   "page": 42,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Let [x] denote the largest integer ≤x. Prove",
+   "page": 42,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "(N− 5k) +a",
+   "page": 42,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Deduce from Exercise 5 the Rogers-Ramanujan identities ( a = 0 or 1)",
+   "page": 43,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "(2l+3)m(m+1)−(l+2+j)m",
+   "page": 44,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "B(N−1)",
+   "page": 47,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Prove the following generalizations of the Gordon-Andrews identity (2.1):",
+   "page": 50,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Prove the following identity",
+   "page": 50,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Prove the following identity",
+   "page": 51,
+   "source": "inferred",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Prove the following polynomial identities ( a = 0, 1)",
+   "page": 51,
+   "source": "inferred",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "(1−aq2i)(aq)i+j−1(q)−1",
+   "page": 51,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(1−aq2n)(a)n",
+   "page": 52,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Dilogarithm identities and algebraic K-theory (A. Suslin, S. Bloch,",
+   "page": 55,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "(ck− 24h(j)",
+   "page": 58,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(c(n)",
+   "page": 60,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "(F ) (the indecomposable part of",
+   "page": 60,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "KλN ,(1|λ N |)(q) = qn(λ′)",
+   "page": 63,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "(m2",
+   "page": 63,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Kac ([Kac], (14.12.10)): for the inﬁnite rank aﬃne algebr a of type A∞",
+   "page": 63,
+   "source": "inferred",
+   "number": "V"
+  },
+  {
+   "level": 1,
+   "title": "L+S+1",
+   "page": 68,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 3,
+   "title": "Levelk vacuum representation kΛ 0 of the aﬃne Lie algebra ˆsl2",
+   "page": 70,
+   "source": "inferred",
+   "number": "2.4.3"
+  },
+  {
+   "level": 1,
+   "title": "(n(µ′)−N). (2.44)µ",
+   "page": 70,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Nq",
+   "page": 71,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Let µ be a composition, l(µ) = n. Consider the set",
+   "page": 76,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Given two partitions λ and µ,|λ| =|µ|, and a natural number k. Let us consider",
+   "page": 77,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Prove the following relations",
+   "page": 78,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "(f (N ) +f (M )) +",
+   "page": 80,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Let us consider a function ϕ(a)",
+   "page": 82,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Let us consider the theta-function θ(a) := [ϕ(a)ϕ(a−1)]−1. Show that",
+   "page": 83,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Let us consider a function f (a) := f (z,a ) = ϕ(za)/ϕ(a). Show that",
+   "page": 83,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Let us consider a function π(a) := π(z,a ) = ϕ(za)ϕ(za−1). Show that",
+   "page": 83,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Let us consider a function (cf. [FV]) r(z,a ) = θ(a)π(z,a ). Show that",
+   "page": 85,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Let Wq be the algebra over the ﬁeld of rational functions C(q) generated by a and",
+   "page": 85,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Consider an element f (a,b ) =",
+   "page": 86,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "(Quantum polylogarithm). Let us deﬁne the quantum polyloga rithm as the following",
+   "page": 86,
+   "source": "inferred",
+   "number": "9"
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-2-anatol-n-kirillov",
+   "number": "2",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 172,
+   "n_words": 21
+  },
+  {
+   "id": "sec-001-abstract",
+   "number": null,
+   "title": "Abstract",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 2,
+   "n_chars": 3684,
+   "n_words": 576
+  },
+  {
+   "id": "sec-002-v-kac-d-peterson-m-wakimoto-b-feigin-d-fuchs-e-f",
+   "number": "V",
+   "title": "Kac, D. Peterson, M. Wakimoto, B. Feigin, D. Fuchs, E. Fren kel,... )",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 3044,
+   "n_words": 504
+  },
+  {
+   "id": "sec-003-4-anatol-n-kirillov",
+   "number": "4",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 6,
+   "n_chars": 6334,
+   "n_words": 1017
+  },
+  {
+   "id": "sec-004-6-anatol-n-kirillov",
+   "number": "6",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 1458,
+   "n_words": 259
+  },
+  {
+   "id": "sec-005-1-lx-l1x-π2",
+   "number": "1",
+   "title": "L(x) +L(1−x) = π2",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 17,
+   "n_words": 5
+  },
+  {
+   "id": "sec-006-2-lx-ly-lxy-l",
+   "number": "2",
+   "title": "L(x) +L(y) = L(xy) +L",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 8,
+   "n_chars": 1736,
+   "n_words": 371
+  },
+  {
+   "id": "sec-007-8-anatol-n-kirillov",
+   "number": "8",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 10,
+   "n_chars": 3049,
+   "n_words": 575
+  },
+  {
+   "id": "sec-008-10-anatol-n-kirillov",
+   "number": "10",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 10,
+   "n_chars": 738,
+   "n_words": 141
+  },
+  {
+   "id": "sec-009-2-3",
+   "number": "2",
+   "title": "(3−",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 12,
+   "n_chars": 2581,
+   "n_words": 510
+  },
+  {
+   "id": "sec-010-12-anatol-n-kirillov",
+   "number": "12",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 14,
+   "n_chars": 2898,
+   "n_words": 752
+  },
+  {
+   "id": "sec-011-14-anatol-n-kirillov",
+   "number": "14",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 14,
+   "page_end": 16,
+   "n_chars": 2724,
+   "n_words": 701
+  },
+  {
+   "id": "sec-012-16-anatol-n-kirillov",
+   "number": "16",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 296,
+   "n_words": 70
+  },
+  {
+   "id": "sec-013-7-l1-2lγ-lγ2-8",
+   "number": "7",
+   "title": "L(1), 2L(γ) +L(γ2) = 8",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 16,
+   "n_chars": 789,
+   "n_words": 208
+  },
+  {
+   "id": "sec-014-5-l1-j-0-1-117",
+   "number": "5",
+   "title": "L(1), j = 0, 1. (1.17)",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 282,
+   "n_words": 85
+  },
+  {
+   "id": "sec-015-7-l1-118",
+   "number": "7",
+   "title": "L(1). (1.18)",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 997,
+   "n_words": 229
+  },
+  {
+   "id": "sec-016-18-anatol-n-kirillov",
+   "number": "18",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 18,
+   "n_chars": 346,
+   "n_words": 63
+  },
+  {
+   "id": "sec-017-l-lewin-le2-who-observed-the-parallel-with-watso",
+   "number": "L",
+   "title": "Lewin [Le2] who observed the parallel with Watson’s three identities and conjectured",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 2009,
+   "n_words": 407
+  },
+  {
+   "id": "sec-018-3-l1-2",
+   "number": "3",
+   "title": "L(1) = 2",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 393,
+   "n_words": 92
+  },
+  {
+   "id": "sec-019-3-ly-6l1-6l1-16",
+   "number": "3",
+   "title": "L(y) + 6L(1) = 6L(1)− 16",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 20,
+   "n_chars": 179,
+   "n_words": 37
+  },
+  {
+   "id": "sec-020-20-anatol-n-kirillov",
+   "number": "20",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 205,
+   "n_words": 41
+  },
+  {
+   "id": "sec-021-3-ly-lz-2",
+   "number": "3",
+   "title": "(L(y) +L(z)) = 2",
+   "level": 1,
+   "page_start": 20,
+   "page_end": 20,
+   "n_chars": 124,
+   "n_words": 27
+  },
+  {
+   "id": "sec-022-123-lewins-dilogarithm-identity-related-with-x-1",
+   "number": "1.2.3",
+   "title": "Lewin’s dilogarithm identity related with x = 1",
+   "level": 3,
+   "page_start": 20,
+   "page_end": 22,
+   "n_chars": 2171,
+   "n_words": 482
+  },
+  {
+   "id": "sec-023-22-anatol-n-kirillov",
+   "number": "22",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 24,
+   "n_chars": 2579,
+   "n_words": 680
+  },
+  {
+   "id": "sec-024-24-anatol-n-kirillov",
+   "number": "24",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 24,
+   "n_chars": 239,
+   "n_words": 57
+  },
+  {
+   "id": "sec-025-2-level---rank-duality",
+   "number": "2",
+   "title": "(Level - rank duality)",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 26,
+   "n_chars": 2535,
+   "n_words": 554
+  },
+  {
+   "id": "sec-026-26-anatol-n-kirillov",
+   "number": "26",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 26,
+   "page_end": 28,
+   "n_chars": 2652,
+   "n_words": 556
+  },
+  {
+   "id": "sec-027-28-anatol-n-kirillov",
+   "number": "28",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 28,
+   "page_end": 30,
+   "n_chars": 2915,
+   "n_words": 677
+  },
+  {
+   "id": "sec-028-30-anatol-n-kirillov",
+   "number": "30",
+   "title": "Anatol N. Kirillov",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 31,
+   "n_chars": 1318,
+   "n_words": 306
+  },
+  {
+   "id": "sec-029-1-using-the-integral-representation-11-for-the-e",
+   "number": "1",
+   "title": "Using the integral representation (1.1) for the Euler dilog arithm Li 2(x), prove the",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 68,
+   "n_words": 11
+  },
+  {
+   "id": "sec-030-2-li2z2",
+   "number": "2",
+   "title": "Li2(z2),",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 122,
+   "n_words": 29
+  },
+  {
+   "id": "sec-031-2-prove-the-following-ﬁve-term-two-variable-func",
+   "number": "2",
+   "title": "Prove the following ﬁve-term, two-variable functional equ ations",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 523,
+   "n_words": 137
+  },
+  {
+   "id": "sec-032-3-prove-the-following-nine-term-three-variable-f",
+   "number": "3",
+   "title": "Prove the following nine-term, three-variable functional equations",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 443,
+   "n_words": 101
+  },
+  {
+   "id": "sec-033-4-prove-lrθ-relreiθ-rθ-r",
+   "number": "4",
+   "title": "Prove (L(r,θ ) := ReL(reiθ), r,θ∈ R)",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 32,
+   "n_chars": 185,
+   "n_words": 37
+  },
+  {
+   "id": "sec-034-6-prove-the-accessibility-of-the-following-dilog",
+   "number": "6",
+   "title": "Prove the accessibility of the following dilogarithm ident ities",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 32,
+   "n_chars": 611,
+   "n_words": 147
+  },
+  {
+   "id": "sec-035-8-prove-the-coxeter-and-lewin-relations-111-and",
+   "number": "8",
+   "title": "Prove the Coxeter and Lewin relations (1.11) and (1.12) usin g the Ray multivariable",
+   "level": 1,
+   "page_start": 32,
+   "page_end": 33,
+   "n_chars": 1253,
+   "n_words": 249
+  },
+  {
+   "id": "sec-036-11-we-use-the-notation-of-section-15-let-us-deﬁn",
+   "number": "11",
+   "title": "(We use the notation of Section 1.5). Let us deﬁne for a given p ositive rational",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 33,
+   "n_chars": 247,
+   "n_words": 69
+  },
+  {
+   "id": "sec-037-12-let-us-deﬁne-rogers-trilogarithm-as",
+   "number": "12",
+   "title": "Let us deﬁne Rogers’ trilogarithm as",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 34,
+   "n_chars": 520,
+   "n_words": 102
+  },
+  {
+   "id": "sec-038-2-5",
+   "number": "2",
+   "title": "(5−",
+   "level": 1,
+   "page_start": 34,
+   "page_end": 34,
+   "n_chars": 88,
+   "n_words": 16
+  },
+  {
+   "id": "sec-039-211-rogers-ramanujan-and-gordon-andrews-identiti",
+   "number": "2.1.1",
+   "title": "Rogers-Ramanujan and Gordon-Andrews identities",
+   "level": 3,
+   "page_start": 34,
+   "page_end": 35,
+   "n_chars": 1860,
+   "n_words": 321
+  },
+  {
+   "id": "sec-040-10-reduction-to-ﬁnite-dimensional-polynomial-cas",
+   "number": "10",
+   "title": "Reduction to ﬁnite dimensional (polynomial) case. Note th at it is suﬃcient to",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 161,
+   "n_words": 30
+  },
+  {
+   "id": "sec-041-2-2k3m2m",
+   "number": "2",
+   "title": "((2k+3)m2+m)",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 35,
+   "n_chars": 187,
+   "n_words": 38
+  },
+  {
+   "id": "sec-042-20-generalization-it-is-clear-that-one-can-deduc",
+   "number": "20",
+   "title": "Generalization. It is clear that one can deduce (2 .3)N from the more general",
+   "level": 1,
+   "page_start": 35,
+   "page_end": 41,
+   "n_chars": 7128,
+   "n_words": 1435
+  },
+  {
+   "id": "sec-043-1-using-the-jacobi-triple-product-identity-prove",
+   "number": "1",
+   "title": "Using the Jacobi triple product identity, prove",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 41,
+   "n_chars": 673,
+   "n_words": 140
+  },
+  {
+   "id": "sec-044-2-prove-a-q-analog-of-the-binomial-series",
+   "number": "2",
+   "title": "Prove a q-analog of the binomial series",
+   "level": 1,
+   "page_start": 41,
+   "page_end": 42,
+   "n_chars": 172,
+   "n_words": 31
+  },
+  {
+   "id": "sec-045-3-using-the-result-of-exercise-2-prove-the-raman",
+   "number": "3",
+   "title": "Using the result of Exercise 2, prove the Ramanujan 1ψ1 summation formula",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 107,
+   "n_words": 11
+  },
+  {
+   "id": "sec-046-4-deduce-from-ramanujans-1ψ1-summation-formula-t",
+   "number": "4",
+   "title": "Deduce from Ramanujan’s 1ψ1-summation formula the following identities",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 827,
+   "n_words": 160
+  },
+  {
+   "id": "sec-047-5-let-x-denote-the-largest-integer-x-prove",
+   "number": "5",
+   "title": "Let [x] denote the largest integer ≤x. Prove",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 42,
+   "n_chars": 280,
+   "n_words": 66
+  },
+  {
+   "id": "sec-048-2-n-5k-a",
+   "number": "2",
+   "title": "(N− 5k) +a",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 43,
+   "n_chars": 148,
+   "n_words": 25
+  },
+  {
+   "id": "sec-049-6-deduce-from-exercise-5-the-rogers-ramanujan-id",
+   "number": "6",
+   "title": "Deduce from Exercise 5 the Rogers-Ramanujan identities ( a = 0 or 1)",
+   "level": 1,
+   "page_start": 43,
+   "page_end": 44,
+   "n_chars": 1672,
+   "n_words": 323
+  },
+  {
+   "id": "sec-050-2-2l3mm1l2jm",
+   "number": "2",
+   "title": "(2l+3)m(m+1)−(l+2+j)m",
+   "level": 1,
+   "page_start": 44,
+   "page_end": 47,
+   "n_chars": 4759,
+   "n_words": 921
+  },
+  {
+   "id": "sec-051-2-bn1",
+   "number": "2",
+   "title": "B(N−1)",
+   "level": 1,
+   "page_start": 47,
+   "page_end": 50,
+   "n_chars": 5316,
+   "n_words": 1055
+  },
+  {
+   "id": "sec-052-8-prove-the-following-generalizations-of-the-gor",
+   "number": "8",
+   "title": "Prove the following generalizations of the Gordon-Andrews identity (2.1):",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 50,
+   "n_chars": 448,
+   "n_words": 77
+  },
+  {
+   "id": "sec-053-9-prove-the-following-identity",
+   "number": "9",
+   "title": "Prove the following identity",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 51,
+   "n_chars": 659,
+   "n_words": 131
+  },
+  {
+   "id": "sec-054-11-prove-the-following-polynomial-identities-a-0",
+   "number": "11",
+   "title": "Prove the following polynomial identities ( a = 0, 1)",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 51,
+   "n_chars": 567,
+   "n_words": 104
+  },
+  {
+   "id": "sec-055-2-1aq2iaqij1q1",
+   "number": "2",
+   "title": "(1−aq2i)(aq)i+j−1(q)−1",
+   "level": 1,
+   "page_start": 51,
+   "page_end": 52,
+   "n_chars": 1405,
+   "n_words": 281
+  },
+  {
+   "id": "sec-056-2-1aq2nan",
+   "number": "2",
+   "title": "(1−aq2n)(a)n",
+   "level": 1,
+   "page_start": 52,
+   "page_end": 55,
+   "n_chars": 2827,
+   "n_words": 569
+  },
+  {
+   "id": "sec-057-23-dilogarithm-identities-and-algebraic-k-theory",
+   "number": "2.3",
+   "title": "Dilogarithm identities and algebraic K-theory (A. Suslin, S. Bloch,",
+   "level": 2,
+   "page_start": 55,
+   "page_end": 58,
+   "n_chars": 6398,
+   "n_words": 1311
+  },
+  {
+   "id": "sec-058-3-ck-24hj",
+   "number": "3",
+   "title": "(ck− 24h(j)",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 60,
+   "n_chars": 1845,
+   "n_words": 388
+  },
+  {
+   "id": "sec-059-3-cn",
+   "number": "3",
+   "title": "(c(n)",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 60,
+   "n_chars": 823,
+   "n_words": 163
+  },
+  {
+   "id": "sec-060-3-f-the-indecomposable-part-of",
+   "number": "3",
+   "title": "(F ) (the indecomposable part of",
+   "level": 1,
+   "page_start": 60,
+   "page_end": 63,
+   "n_chars": 4322,
+   "n_words": 843
+  },
+  {
+   "id": "sec-061-2-kλn-1λ-n-q-qnλ",
+   "number": "2",
+   "title": "KλN ,(1|λ N |)(q) = qn(λ′)",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 186,
+   "n_words": 41
+  },
+  {
+   "id": "sec-062-2-m2",
+   "number": "2",
+   "title": "(m2",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 268,
+   "n_words": 46
+  },
+  {
+   "id": "sec-063-v-kac-kac-141210-for-the-inﬁnite-rank-aﬃne-algeb",
+   "number": "V",
+   "title": "Kac ([Kac], (14.12.10)): for the inﬁnite rank aﬃne algebr a of type A∞",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 68,
+   "n_chars": 8816,
+   "n_words": 1681
+  },
+  {
+   "id": "sec-064-2-ls1",
+   "number": "2",
+   "title": "L+S+1",
+   "level": 1,
+   "page_start": 68,
+   "page_end": 70,
+   "n_chars": 3492,
+   "n_words": 743
+  },
+  {
+   "id": "sec-065-243-levelk-vacuum-representation-kλ-0-of-the-aﬃn",
+   "number": "2.4.3",
+   "title": "Levelk vacuum representation kΛ 0 of the aﬃne Lie algebra ˆsl2",
+   "level": 3,
+   "page_start": 70,
+   "page_end": 70,
+   "n_chars": 153,
+   "n_words": 42
+  },
+  {
+   "id": "sec-066-2-nµn-244µ",
+   "number": "2",
+   "title": "(n(µ′)−N). (2.44)µ",
+   "level": 1,
+   "page_start": 70,
+   "page_end": 71,
+   "n_chars": 1259,
+   "n_words": 261
+  },
+  {
+   "id": "sec-067-2-nq",
+   "number": "2",
+   "title": "Nq",
+   "level": 1,
+   "page_start": 71,
+   "page_end": 76,
+   "n_chars": 8724,
+   "n_words": 1737
+  },
+  {
+   "id": "sec-068-1-let-µ-be-a-composition-lµ-n-consider-the-set",
+   "number": "1",
+   "title": "Let µ be a composition, l(µ) = n. Consider the set",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 77,
+   "n_chars": 2052,
+   "n_words": 414
+  },
+  {
+   "id": "sec-069-3-given-two-partitions-λ-and-µλ-µ-and-a-natural",
+   "number": "3",
+   "title": "Given two partitions λ and µ,|λ| =|µ|, and a natural number k. Let us consider",
+   "level": 1,
+   "page_start": 77,
+   "page_end": 78,
+   "n_chars": 528,
+   "n_words": 88
+  },
+  {
+   "id": "sec-070-4-prove-the-following-relations",
+   "number": "4",
+   "title": "Prove the following relations",
+   "level": 1,
+   "page_start": 78,
+   "page_end": 80,
+   "n_chars": 2140,
+   "n_words": 418
+  },
+  {
+   "id": "sec-071-2-f-n-f-m",
+   "number": "2",
+   "title": "(f (N ) +f (M )) +",
+   "level": 1,
+   "page_start": 80,
+   "page_end": 82,
+   "n_chars": 4558,
+   "n_words": 767
+  },
+  {
+   "id": "sec-072-1-let-us-consider-a-function-ϕa",
+   "number": "1",
+   "title": "Let us consider a function ϕ(a)",
+   "level": 1,
+   "page_start": 82,
+   "page_end": 83,
+   "n_chars": 317,
+   "n_words": 58
+  },
+  {
+   "id": "sec-073-2-let-us-consider-the-theta-function-θa-ϕaϕa11-s",
+   "number": "2",
+   "title": "Let us consider the theta-function θ(a) := [ϕ(a)ϕ(a−1)]−1. Show that",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 83,
+   "n_chars": 168,
+   "n_words": 28
+  },
+  {
+   "id": "sec-074-3-let-us-consider-a-function-f-a-f-za-ϕzaϕa-show",
+   "number": "3",
+   "title": "Let us consider a function f (a) := f (z,a ) = ϕ(za)/ϕ(a). Show that",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 83,
+   "n_chars": 262,
+   "n_words": 60
+  },
+  {
+   "id": "sec-075-4-let-us-consider-a-function-πa-πza-ϕzaϕza1-show",
+   "number": "4",
+   "title": "Let us consider a function π(a) := π(z,a ) = ϕ(za)ϕ(za−1). Show that",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 85,
+   "n_chars": 1895,
+   "n_words": 337
+  },
+  {
+   "id": "sec-076-6-let-us-consider-a-function-cf-fv-rza-θaπza-sho",
+   "number": "6",
+   "title": "Let us consider a function (cf. [FV]) r(z,a ) = θ(a)π(z,a ). Show that",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 85,
+   "n_chars": 722,
+   "n_words": 126
+  },
+  {
+   "id": "sec-077-7-let-wq-be-the-algebra-over-the-ﬁeld-of-rationa",
+   "number": "7",
+   "title": "Let Wq be the algebra over the ﬁeld of rational functions C(q) generated by a and",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 198,
+   "n_words": 43
+  },
+  {
+   "id": "sec-078-8-consider-an-element-f-ab",
+   "number": "8",
+   "title": "Consider an element f (a,b ) =",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 86,
+   "n_chars": 501,
+   "n_words": 116
+  },
+  {
+   "id": "sec-079-9-quantum-polylogarithm-let-us-deﬁne-the-quantum",
+   "number": "9",
+   "title": "(Quantum polylogarithm). Let us deﬁne the quantum polyloga rithm as the following",
+   "level": 1,
+   "page_start": 86,
+   "page_end": 96,
+   "n_chars": 24082,
+   "n_words": 3796
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 82,
+  "sections": 80,
+  "chars_total": 155429
+ }
+}

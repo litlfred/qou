@@ -31,7 +31,7 @@ $$
   =  \mathrm{id}_A.
 $$
 
-*(c) $\Delta_q$-eigendecomposition.* Each coefficient $D^j_{mn}$ functions as a strict eigenfunction of $\Delta_q$, taking eigenvalue $[j]_q[j+1]_q$ (the $q$-Casimir):
+*(c) $\Delta_q$-eigendecomposition.* Each coefficient $D^j_{mn}$ is an eigenfunction of $\Delta_q$ with eigenvalue $[j]_q[j+1]_q$ (the $q$-Casimir):
 
 $$
   \Delta_qD^j_{mn} = [j]_q[j+1]_qD^j_{mn}.

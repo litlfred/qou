@@ -8,8 +8,8 @@
     "lean": "content/fred2005-formal-groups/formal-groups-chapter/skewed-poisson-structure.lean"
   },
   "source_hashes": {
-    "md": "4a17108094b1",
     "ts": "1d8935fda80e",
+    "md": "4a17108094b1",
     "lean": "bda78d39eba9"
   },
   "criteria": {
@@ -310,134 +310,121 @@
     "q-usage-regime-detected": [
       {
         "field_hash": {
-          "md": "4a17108094b1",
           "ts": "1d8935fda80e",
+          "md": "4a17108094b1",
           "lean": "bda78d39eba9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93",
+        "notes": "{\"regimes\":[\"na\"],\"chapter\":\"formal-groups-chapter\",\"expected\":null}"
       }
     ],
     "q-usage-fixed-q0-leak": [
       {
         "field_hash": {
-          "md": "4a17108094b1",
           "ts": "1d8935fda80e",
+          "md": "4a17108094b1",
           "lean": "bda78d39eba9"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-archimedean-in-categorical-chapter": [
       {
         "field_hash": {
-          "md": "4a17108094b1",
           "ts": "1d8935fda80e",
+          "md": "4a17108094b1",
           "lean": "bda78d39eba9"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-positivity-implicit": [
       {
         "field_hash": {
-          "md": "4a17108094b1",
           "ts": "1d8935fda80e",
+          "md": "4a17108094b1",
           "lean": "bda78d39eba9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-modulus-vs-real-mismatch": [
       {
         "field_hash": {
-          "md": "4a17108094b1",
           "ts": "1d8935fda80e",
+          "md": "4a17108094b1",
           "lean": "bda78d39eba9"
         },
         "result": "n/a",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-root-of-unity-undeclared": [
       {
         "field_hash": {
-          "md": "4a17108094b1",
           "ts": "1d8935fda80e",
+          "md": "4a17108094b1",
           "lean": "bda78d39eba9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "q-usage-narrative-chapter-mismatch": [
       {
         "field_hash": {
-          "md": "4a17108094b1",
           "ts": "1d8935fda80e",
+          "md": "4a17108094b1",
           "lean": "bda78d39eba9"
         },
         "result": "pass",
         "reviewer": {
           "kind": "script",
-          "id": "content/pipeline/qa-checkers-q-usage.ts",
-          "version": "v1",
-          "script_hash": "66a4bccc2dc0",
-          "script_commit_sha": "1dae4552712bbdd896e265648528b242b4ef627c"
+          "id": "q-usage-audit",
+          "script_hash": "7d97addec5f5"
         },
-        "reviewed_at": "2026-07-13T00:59:15.685Z",
-        "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
+        "reviewed_at": "2026-08-09T16:53:02.544Z",
+        "reviewed_sha": "83d90e018373bca7f19849f7c3e29104ca4d7b93"
       }
     ],
     "proof-no-bare-sorries": [
@@ -1064,7 +1051,376 @@
         "reviewed_at": "2026-07-13T00:59:15.685Z",
         "reviewed_sha": "8cf9825cc277fc1d21a85adeb8a9ee1b543c8554"
       }
+    ],
+    "clarity-defterm-bold": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/definition-clarity-audit.ts",
+          "version": "v1",
+          "script_hash": "589d4ee4b60e",
+          "script_commit_sha": "329c14b2aff45a046ab25b3bf565e64778d4f70b"
+        },
+        "reviewed_at": "2026-08-03T19:38:33.721Z",
+        "reviewed_sha": "1939c717a5b1ecaccc37b6789b6b7536201a063e",
+        "evidence": "term marked via \"skewed-Poisson structure\""
+      }
+    ],
+    "trap-negation-contrast": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no negation-contrast constructions"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.874Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-rhetorical-pivot": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no rhetorical pivots"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.915Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-em-dash": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "dash density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.956Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-triples": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "triple density acceptable (0 in 48 words)"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:54.996Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-closing-aphorism": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "closer is content, not aphorism"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.036Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-meta-commentary": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no meta-commentary on the block's own rhetoric"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.077Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-thesis-restatement": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "no thesis restatement"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.117Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-performed-warmth": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "register is institutional"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.158Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-superlative": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "superlative density acceptable (0)"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.196Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
+    ],
+    "trap-nonspeakable": [
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "script",
+          "id": "content/pipeline/language-trap-audit.ts",
+          "version": "v1",
+          "script_hash": "86b27c0abb9a",
+          "script_commit_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d"
+        },
+        "reviewed_at": "2026-08-15T10:31:01.654Z",
+        "reviewed_sha": "d9f7c56205748eec9bda9f65ab3c4a21fac3e27d",
+        "evidence": "sentence lengths speakable"
+      },
+      {
+        "field_hash": {
+          "md": "4a17108094b1",
+          "ts": "1d8935fda80e"
+        },
+        "result": "pass",
+        "reviewer": {
+          "kind": "agent",
+          "id": "agent:l01",
+          "version": "v1"
+        },
+        "reviewed_at": "2026-08-22T04:06:55.236Z",
+        "reviewed_sha": "5c28c86622bed6f4a44b0773b63c00c6654055b4",
+        "evidence": "Full read of def:skewed-poisson-structure (two numbered conditions plus an orienting closer). All ten categories judged; no rhetorical construction.",
+        "notes": "Cat.7: closing 'This is the infinitesimal datum ...' names the role of the object in the integration theorem, adding information - pass. NOT A TRAP, reported separately: the .md's condition 2 (p-truncated Jacobi, sum = 0 modulo p-th powers) is NOT what the resolved Lean encodes - Fred2005.SkewedPoissonStructure.jacobi_truncated states F(F(A,B),C) = F(C,F(A,B)), which is an instance of H.commutative and therefore holds for every H and every bracket; it mentions neither zero nor p-th powers, so the condition is vacuous as formalised."
+      }
     ]
   },
-  "updated_at": "2026-07-13T00:59:15.685Z"
+  "updated_at": "2026-08-22T04:06:55.236Z"
 }

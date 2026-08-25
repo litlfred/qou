@@ -13,6 +13,24 @@ spectral coordinate of `p_i` in the Briggs–Klein chart.*
 The Lean encoding records the equation as a class field of an
 abstract `QuantumDilogarithmContext`.
 
+## Base ring (AGENTS.md §7c) — `ℝ` here is required, not a gratuitous specialisation
+
+The statement above is explicitly the **archimedean realisation** ("*In the
+archimedean realisation, …*"), and the object it names forces that: `Φ_q` is the
+**Faddeev quantum dilogarithm**, a transcendental analytic function (an infinite
+product / integral representation), not a rational or polynomial construct. It
+has no meaning over a generic `{R : Type*} [CommRing R]`, and neither does the
+`spectralCoord` chart coordinate it is evaluated at. This block therefore sits on
+the observation side of the substrate→archimedean wall by construction.
+
+Consistent with `docs/audits/2026-06-25-lean-library-tree-7c-coverage-gap.md`,
+which already records the dilogarithm files as **legitimately archimedean** —
+they are named there among the files a directory-based heuristic wrongly flagged.
+
+Recorded here so §7c sweeps stop re-flagging the module: a bare grep sees a
+`Torsion` module whose every field is `ℝ`-typed and scores a base-ring
+candidate, which it is not.
+
 -- Ref: [manuscript] quantum-observable-universe/lifting-and-descent/quantum-dilogarithm.md
 -/
 

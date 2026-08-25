@@ -2,6 +2,7 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Defs
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.MathlibExt.QPartitionCombinatorics
@@ -50,6 +51,19 @@ variable {R : Type*} [Field R]
 noncomputable def qBracket (q : R) (n : ℕ) : R :=
   if n = 0 then 0
   else (q ^ n - q ^ (-(n : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical balanced bracket.**  The `n = 0` guard is
+redundant — `qIntBal q 0 = (1 − 1)/(q − q⁻¹) = 0` already — so the agreement is
+unconditional, on the degenerate locus too.  The `def` is kept because
+`qFactorial` and the `1 < q` positivity lemmas below unfold it. -/
+theorem qBracket_eq_canonical (q : R) (n : ℕ) :
+    qBracket q n = QOU.QInteger.qIntBal q n := by
+  unfold qBracket
+  split_ifs with h
+  · subst h
+    simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal]
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
 
 @[simp]
 theorem qBracket_zero (q : R) : qBracket q 0 = 0 := by
@@ -236,7 +250,7 @@ def conjugate (lam : Partition) : Partition :=
       `arm(i, j) = lam_i - j - 1`  (cells to the right in row i)
       `leg(i, j) = |{ i' > i : lam_{i'} > j }|`  (cells below in col j) -/
 def hookLength (lam : Partition) (i j : ℕ) : ℕ :=
-  match lam.get? i with
+  match lam[i]? with
   | none => 0
   | some row_i =>
     if j < row_i then
@@ -271,7 +285,7 @@ noncomputable def qDim (q : R) (lam : Partition) : R :=
   qFactorial q lam.size /
     (List.range lam.length).foldl
       (fun acc i =>
-        acc * (List.range ((lam.get? i).getD 0)).foldl
+        acc * (List.range ((lam[i]?).getD 0)).foldl
           (fun a j => a * qBracket q (Partition.hookLength lam i j))
           1)
       1

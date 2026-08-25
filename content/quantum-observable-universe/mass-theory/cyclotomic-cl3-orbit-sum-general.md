@@ -1,4 +1,4 @@
-*For all $N \geq 2$, the real-part orbit sum reduces strictly to:*
+*For all $N \geq 2$, the real-part orbit sum reduces to:*
 
 $$
   \sum_{k=1}^{N - 1} \mathrm{Cl}_3\!\left(\tfrac{2\pi k}{N}\right)

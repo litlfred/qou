@@ -191,7 +191,11 @@ at `n = 4, 6` via its own local `numerComputed`.  The two theorems below replace
 by the **genuine Plancherel-weighted squared-hook sum** for any `n` with a `PlancherelSnData`
 instance — i.e. at every `n = 2..12` registered here — so the defect coefficient (and its closed
 form, sign flip included) rests on real `S_n` representation theory, not a `def`.  This is the
-Lean complement to #2744's numerical cross-check of `C(n)` against the directly-computed `1−Z(n)`. -/
+Lean complement to #2744's numerical cross-check of `C(n)` against the directly-computed `1−Z(n)`.
+
+**Range lifted 2026-08-23.** "At every `n = 2..12` registered here" was the reach when this was
+written; `PlancherelSnDataGeneral` supplies the datum at every `n`, and
+`KeystoneDefectGeneral` restates both theorems below with no hypothesis and no bound. -/
 
 /-- **`n144C` in terms of the genuine Plancherel sum.** For any `n` with `PlancherelSnData`,
 `n144C n · n! = 12·(Σ_λ dim(λ)²·Σ_c h_c²) − (sixS n + 12n)·n!` — the carried `twoM` `def` is
@@ -208,7 +212,10 @@ theorem n144C_eq_twelve_plancherel (n : ℕ) [h : PlancherelSnData n] :
 `n144C_eq_twelve_plancherel` with `n144C_closed_form`: for any `n` with `PlancherelSnData`, the
 genuine Plancherel squared-hook expression equals the keystone defect cubic `−n(n−1)(2n−13)`
 (cleared by `n!`).  At the registered `n = 2..12` this is therefore **unconditional** — including
-the `n = 7` sign flip the keystone's falsifiable target hinges on. -/
+the `n = 7` sign flip the keystone's falsifiable target hinges on.
+
+**Uncapped 2026-08-23** as `KeystoneDefectGeneral.defect_closedform_plancherel`, which needs no
+instance and no bound. -/
 theorem defect_closedform_plancherel (n : ℕ) [h : PlancherelSnData n] :
     12 * (∑ l ∈ h.parts, (h.dim l : ℤ) ^ 2 * sumSqHooks l)
         - (QOU.BraidKnot.WLambdaDefect.sixS (n : ℤ) + 12 * (n : ℤ)) * (Nat.factorial n : ℤ)

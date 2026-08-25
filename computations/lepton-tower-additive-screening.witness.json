@@ -1,0 +1,178 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T00:56:55.574575+00:00",
+  "commitSha": "c867ef1230ce09678fc7961d289bc2c16e0c5270",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "lepton-tower-additive-screening",
+  "scriptFile": "lepton_tower_additive_screening.py",
+  "scriptHash": "a08ad2c1570a",
+  "scriptCommitSha": "0cda7fdc1a2f980f3f099730fe4cbf1bb7593f15",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Bean qou-htk4. Closes the additive-interface direction the multiplicative bend screen left open: every positive sum of two geometric modes is log-convex (bend <= 1) by the Lagrange form of Cauchy-Schwarz, while the lepton tower is log-concave at 12.295.",
+  "contentBlock": "prop:lepton-continuant-recurrence",
+  "parameters": {
+    "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
+    "q0": "1.109978582751380807591669095610768879874499121873577636056718792510176"
+  },
+  "data": {
+    "observed_lepton_bend": {
+      "definition": "m_mu^2 / (m_e * m_tau)",
+      "value": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "log_concave": true
+    },
+    "lagrange_identity": {
+      "formula": "x(w)x(w+4) - x(w+2)^2 = c d g^w h^w (g^2-h^2)^2",
+      "max_abs_err": "8.635441113598717391846552242572656762894917502932663777556454915848384e-49",
+      "verified": true,
+      "lean_twin": "QOU.Archimedean.twoMode_log_convex"
+    },
+    "cases": {
+      "q and 1/q modes": {
+        "c": "1.0",
+        "d": "1.0",
+        "g": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "h": "0.900918283955741492160822882481093936014741626610555073523311918587557",
+        "bend": "0.967075325278561064790531099750782249273742391363595281627324237813601",
+        "bend_le_one": true,
+        "deficit": "0.1767350667943762555584139173165131414642343415096411589171339744778381"
+      },
+      "q^2 and 1 modes": {
+        "c": "1.0",
+        "d": "2.0",
+        "g": "1.232052454166763931269804513535636184849681422916997359494673668738914",
+        "h": "1.0",
+        "bend": "0.9589052872285782134884239453970274894261594543963657712745417148510055",
+        "bend_le_one": true,
+        "deficit": "1.003456879527810488399552620354648362391993039491089247334441867399714"
+      },
+      "equal rates g=h": {
+        "c": "3.0",
+        "d": "0.5",
+        "g": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "h": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "bend": "1.0",
+        "bend_le_one": true,
+        "deficit": "0.0"
+      },
+      "one mode only (d=0)": {
+        "c": "1.0",
+        "d": "0.0",
+        "g": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "h": "2.0",
+        "bend": "1.0",
+        "bend_le_one": true,
+        "deficit": "0.0"
+      },
+      "wide split": {
+        "c": "0.01",
+        "d": "100.0",
+        "g": "1.9",
+        "h": "0.3",
+        "bend": "0.09493819263819928807471655975974092601041317871873733518025563552781851",
+        "bend_le_one": true,
+        "deficit": "2.2946153472"
+      },
+      "Vol(4_1)-like base": {
+        "c": "1.0",
+        "d": "0.25",
+        "g": "206.77",
+        "h": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "bend": "0.9999999613280407847143428590160695315184987055816412073637915241777231",
+        "bend_le_one": true,
+        "deficit": "5524226404264709.01228029923124954683094905429850696197145813592220109"
+      }
+    },
+    "positive_sweep": {
+      "n_towers_checked": 40000,
+      "max_bend_found": "1.0",
+      "argmax_c_d_g_h": [
+        "7.0",
+        "7.0",
+        "0.1",
+        "0.1"
+      ],
+      "bound_respected": true,
+      "excess_over_one": "3.622271631530684947003647716355116712273012479255655275833045955974201e-71",
+      "tolerance": "9.9999999999999992929287939988014500233064511906197367398133222223193e-41",
+      "reading": "every positive two-mode tower has bend <= 1; the observed 12.295 is out of reach by a factor of 12, not by a margin"
+    },
+    "equality_cases_and_shape": {
+      "series": [
+        {
+          "d": "0.0",
+          "bend": "1.0"
+        },
+        {
+          "d": "0.01",
+          "bend": "0.9993821911941889317787886908519194613458670154892149224520421273837179"
+        },
+        {
+          "d": "0.1",
+          "bend": "0.994224474839079395241664182564533542605404690611374968776822527976981"
+        },
+        {
+          "d": "1.0",
+          "bend": "0.967075325278561064790531099750782249273742391363595281627324237813601"
+        },
+        {
+          "d": "10.0",
+          "bend": "0.9704611848300527259693381636437787998502200347832311849818996028711053"
+        },
+        {
+          "d": "1000.0",
+          "bend": "0.9995013569311711912076794294118905756034894902261906363286338650060826"
+        }
+      ],
+      "never_above_one": true,
+      "has_interior_minimum": true,
+      "reading": "the bend equals 1 ONLY in the degenerate single-mode limits (d -> 0 and d -> infinity) and is strictly below in between, with an interior minimum. So a second positive mode never helps -- but the effect is NOT monotone in d, which an earlier draft of this script wrongly asserted and this assertion caught."
+    },
+    "sign_indefinite_escape": {
+      "node_location_in_d": "-1.870198026749108017999330883898209914098494807643946974658823740571264",
+      "series": [
+        {
+          "d": "-1.5",
+          "x_at_winding_3": "0.2707012756272346769046948582667013605651128067785372136580181892136544",
+          "bend": "1.723654642268486504123416420363123507559077963016087733927131679778249"
+        },
+        {
+          "d": "-1.8",
+          "x_at_winding_3": "0.05133116336240457469228902393816943253591586397969189423495834378265507",
+          "bend": "6.127052396752378558571447494058282742352685576912369477148941182996718"
+        },
+        {
+          "d": "-1.86",
+          "x_at_winding_3": "0.007457140909438554249807857072463046930076475419922830350346374696455219",
+          "bend": "38.36178828902674496921135552619548091276021524178655834832625178390403"
+        },
+        {
+          "d": "-1.87",
+          "x_at_winding_3": "0.0001448038339442175093943292615119826624365773266279863695777131820885828",
+          "bend": "1943.340607873952212336016657576206287729893051881394885585792123747782"
+        }
+      ],
+      "can_exceed_observed_bend": true,
+      "reading": "a DIFFERENCE of exponentials has a node and its bend is unbounded -- the same escape that survives the linear-readout and multiplicative exclusions. This is now the ONLY shape left standing in this direction; check any future candidate for it first."
+    },
+    "verdict": "The additive interface class is EXCLUDED for positive modes (scope-(b), on the Lagrange identity -- a strict inequality, not a plausibility judgement): every positive sum of two geometric modes is log-CONVEX with bend <= 1, while the lepton tower is log-CONCAVE at 12.295. Not claimed: more than two modes (same identity, symmetrised over pairs, not formalised), and sign-indefinite combinations, which escape via a node.",
+    "all_checks_passed": true
+  },
+  "caveats": [
+    "Scope-(b) covers POSITIVE two-mode sums only. More than two modes is not formalised (the Lagrange identity generalises by symmetrising over pairs, but that is not done here). Sign-indefinite combinations are NOT excluded and are demonstrated above to escape -- they remain the one open shape in this direction."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.cases.Vol(4_1)-like base.h, data.cases.equal rates g=h.g, data.cases.equal rates g=h.h). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

@@ -26,8 +26,12 @@ has lean || {
   exit 127
 }
 
-# Ensure oleans are present (restore on demand).
-existing=$(find "$LEAN_DIR/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
+# Ensure oleans are present (restore on demand).  Count under REPO_ROOT —
+# that is where lean-cache-restore.sh extracts the payload (and what
+# lean-verify-siblings.sh checks).  $LEAN_DIR/.lake holds only a vestigial
+# handful of oleans, so counting there reported "missing" on a fully
+# restored tree and re-ran the restore on every invocation.
+existing=$(find "$REPO_ROOT/.lake/packages/mathlib" -name '*.olean' 2>/dev/null | wc -l | tr -d ' ')
 if [ "${existing:-0}" -lt 2000 ]; then
   echo "lean-verify: mathlib oleans missing ($existing) — restoring cache first."
   "$(dirname "$0")/lean-cache-restore.sh" || exit $?

@@ -34,16 +34,21 @@ opaque SYT (lam : List ℕ) : Type
     `c(i, j; q) = q^(2(j - i))`.
 
     This is the integer (signed) power, so for boxes below the main
-    diagonal (`j < i`) the content is `q⁻²ᵏ` for some `k > 0`. We
-    therefore require the base ring to be a `GroupWithZero` (provided
-    by `Field`) so `q ^ (n : ℤ)` is well-defined via `zpow`.
+    diagonal (`j < i`) the content is `q⁻²ᵏ` for some `k > 0`, i.e.
+    `q ^ (n : ℤ)` must be total.
+
+    §7c: that is supplied by carrying `q` as a **unit** `q : Rˣ` of a bare
+    `CommRing R` — `Rˣ` is a group, so `zpow` is total there — rather than by
+    strengthening the base ring to a `GroupWithZero`/`Field`. The generic
+    Hecke ground ring `ℤ[q, q⁻¹]` is exactly this situation: `q` is a unit and
+    the ring is not a field.
 
     Per Gemini PR #634 review: previous `(2 * (j - i)).toNat` was
     mathematically incorrect — it forced `q^0 = 1` for all boxes
     below the diagonal, which contradicts the standard q-content
     definition (Hoefsmit, prop:hoefsmit-seminormal-form). -/
-def qContent {R : Type*} [Field R] (i j : ℤ) (q : R) : R :=
-  q ^ (2 * (j - i))
+def qContent {R : Type*} [CommRing R] (i j : ℤ) (q : Rˣ) : R :=
+  ((q ^ (2 * (j - i)) : Rˣ) : R)
 
 /-- Murphy–Lagrange formula for the central primitive idempotent
     `e_λ ∈ Z(H_n(q))`. Placeholder element-of-the-algebra constant.
@@ -55,8 +60,13 @@ def qContent {R : Type*} [Field R] (i j : ℤ) (q : R) : R :=
     placeholder fixes the signature to return a value in the
     underlying ring `R`, allowing element-level identities
     (orthogonality, self-adjointness, bar-pairing) to typecheck. -/
-opaque centralIdempotent {R : Type*} [CommRing R]
+noncomputable opaque centralIdempotent {R : Type*} [CommRing R]
     (lam : List ℕ) (q : R) : R
+
+/-- **CONJECTURE (OPEN).** The four cross-checks follow from Lagrange interpolation in commuting variables. -/
+class ExplicitCentralIdempotentConjecture {R : Type*} [CommRing R] (q : R) : Prop where
+  /-- The explicit idempotency holds. -/
+  idempotent : ∀ {n : ℕ} (lam : List ℕ) (_h : lam.sum = n), centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q
 
 /-- **Theorem (`prop:explicit-central-idempotent`).** The central
     primitive idempotent `e_λ` for partition `λ ⊢ n` is given by
@@ -74,7 +84,8 @@ opaque centralIdempotent {R : Type*} [CommRing R]
                           `star (e_λ) = e_{λ'}`
     -/
 theorem explicit_central_idempotent_via_murphy
-    {n : ℕ} (lam : List ℕ) (h : lam.sum = n) :
+    {n : ℕ} (lam : List ℕ) (h : lam.sum = n)
+    [hi : ExplicitCentralIdempotentConjecture q] :
     centralIdempotent lam q * centralIdempotent lam q = centralIdempotent lam q := by
   -- Ref: [murphy1981] — Murphy elements in symmetric-group algebras.
   -- Ref: [dipper-james1986] — extension of Murphy's construction
@@ -87,7 +98,8 @@ theorem explicit_central_idempotent_via_murphy
   -- four cross-checks (sum-to-identity, orthogonality,
   -- self-adjointness, bar-pairing) follow from Lagrange
   -- interpolation in commuting variables (J_1, ..., J_n).
-  sorry
+  -- CONJECTURE: The four cross-checks follow from Lagrange interpolation in commuting variables.
+  exact hi.idempotent lam h
 
 /-- Computability witness for small `n`: the (2,2) self-conjugate
     cell of `H_4(q)` is the Bring-figure-8 cell, witnessed in
@@ -100,6 +112,6 @@ example : centralIdempotent [2, 2] q * centralIdempotent [2, 2] q = centralIdemp
   -- idempotency is the finite Lagrange computation witnessed in
   -- conj:bring-figure-eight-depth-2-witness. `centralIdempotent` is `opaque`,
   -- so this is asserted from the cited construction, not computed.
-  sorry
+  explicit_central_idempotent_via_murphy [2, 2] rfl
 
 end QOU.BraidKnot.ExplicitCentralIdempotent

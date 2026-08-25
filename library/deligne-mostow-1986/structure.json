@@ -1,0 +1,508 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "deligne-mostow-1986",
+ "source": {
+  "file": "deligne-mostow-1986.pdf",
+  "sha256": "d9850f70ab2fecbd5f7294497ccaeb89c8f1dfe641be8ed762a2c2118ceadd3b",
+  "bytes": 9316377,
+  "pages": 86
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Monodromy of hypergeometric functions and non-lattice integral monodromy",
+  "authors_raw": "Monodromy of hypergeometric functions and non-",
+  "abstract": null,
+  "docinfo": {
+   "Author": "Pierre Deligne G. D. Mostow",
+   "CreationDate": "D:20260116164831+01'00'",
+   "Creator": "NUMDAM",
+   "Producer": "pdfTeX-1.40.16",
+   "Title": "Monodromy of hypergeometric functions and non-lattice integral monodromy"
+  },
+  "title_lines": [
+   "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S",
+   "PIERRE DELIGNE",
+   "G. D. MOSTOW"
+  ],
+  "title_prev": "PUBLICATIONS MATHÉMATIQUES DE L ’I.H.É.S. PIERRE DELIGNE G. D. MOSTOW"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "page": 3,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "page": 5,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Cohomology of a rank one local system on a punctured complex line",
+   "page": 6,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Cohomology of a rank one local system on a punctured projective line",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "page": 9,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "page": 11,
+   "source": "inferred",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "page": 13,
+   "source": "inferred",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "page": 15,
+   "source": "inferred",
+   "number": "18"
+  },
+  {
+   "level": 1,
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "page": 17,
+   "source": "inferred",
+   "number": "20"
+  },
+  {
+   "level": 1,
+   "title": "Reformulation of PicarcTs theorem",
+   "page": 18,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "page": 19,
+   "source": "inferred",
+   "number": "22"
+  },
+  {
+   "level": 1,
+   "title": "P.DELIGNE AND G. D. MOSTOW",
+   "page": 21,
+   "source": "inferred",
+   "number": "24"
+  },
+  {
+   "level": 1,
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "page": 23,
+   "source": "inferred",
+   "number": "26"
+  },
+  {
+   "level": 1,
+   "title": "(AJ / \\tc z-z{m{s)) •",
+   "page": 24,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "The compactified quotient space Qgst",
+   "page": 25,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "The complex ball",
+   "page": 31,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Stable points",
+   "page": 33,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Semi-stable points",
+   "page": 36,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Extending S^ by continuity",
+   "page": 38,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Codimension i etaleness",
+   "page": 42,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "For any Her, if we put k :== K(H), any y eH admits a neighborhood V",
+   "page": 46,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Oo(S). Nearj/o, we then have the following system of local coordinates, depending",
+   "page": 50,
+   "source": "inferred",
+   "number": "00"
+  },
+  {
+   "level": 1,
+   "title": "AHthmeticity and Integral Monodromy",
+   "page": 64,
+   "source": "inferred",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Elliptic and Euclidean Cases",
+   "page": 76,
+   "source": "inferred",
+   "number": "13"
+  },
+  {
+   "level": 1,
+   "title": "Rfu U",
+   "page": 78,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "I I I I 00",
+   "page": 83,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "I I I I I 00",
+   "page": 83,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 85,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-6-p-deligne-and-g-d-mostow",
+   "number": "6",
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 5,
+   "n_chars": 6876,
+   "n_words": 1297
+  },
+  {
+   "id": "sec-001-8-p-deligne-and-g-d-mostow",
+   "number": "8",
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "level": 1,
+   "page_start": 5,
+   "page_end": 6,
+   "n_chars": 2722,
+   "n_words": 490
+  },
+  {
+   "id": "sec-002-2-cohomology-of-a-rank-one-local-system-on-a-pun",
+   "number": "2",
+   "title": "Cohomology of a rank one local system on a punctured complex line",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 9,
+   "n_chars": 6244,
+   "n_words": 1142
+  },
+  {
+   "id": "sec-003-12-p-deligne-and-g-d-mostow",
+   "number": "12",
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 4362,
+   "n_words": 947
+  },
+  {
+   "id": "sec-004-14-pdeligneandgdmostow",
+   "number": "14",
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 13,
+   "n_chars": 4844,
+   "n_words": 962
+  },
+  {
+   "id": "sec-005-16-p-deligne-and-g-d-mostow",
+   "number": "16",
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4440,
+   "n_words": 938
+  },
+  {
+   "id": "sec-006-18-pdeligneandgdmostow",
+   "number": "18",
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 17,
+   "n_chars": 4230,
+   "n_words": 881
+  },
+  {
+   "id": "sec-007-20-pdeligneandgdmostow",
+   "number": "20",
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 3408,
+   "n_words": 721
+  },
+  {
+   "id": "sec-008-3-reformulation-of-picarcts-theorem",
+   "number": "3",
+   "title": "Reformulation of PicarcTs theorem",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 854,
+   "n_words": 179
+  },
+  {
+   "id": "sec-009-22-p-deligne-and-g-d-mostow",
+   "number": "22",
+   "title": "P. DELIGNE AND G. D. MOSTOW",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 21,
+   "n_chars": 5114,
+   "n_words": 998
+  },
+  {
+   "id": "sec-010-24-pdeligne-and-g-d-mostow",
+   "number": "24",
+   "title": "P.DELIGNE AND G. D. MOSTOW",
+   "level": 1,
+   "page_start": 21,
+   "page_end": 23,
+   "n_chars": 4523,
+   "n_words": 929
+  },
+  {
+   "id": "sec-011-26-pdeligneandgdmostow",
+   "number": "26",
+   "title": "P.DELIGNEANDG.D.MOSTOW",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3607,
+   "n_words": 755
+  },
+  {
+   "id": "sec-012-7-aj-tc-z-zms",
+   "number": "7",
+   "title": "(AJ / \\tc z-z{m{s)) •",
+   "level": 1,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 2102,
+   "n_words": 425
+  },
+  {
+   "id": "sec-013-4-the-compactified-quotient-space-qgst",
+   "number": "4",
+   "title": "The compactified quotient space Qgst",
+   "level": 1,
+   "page_start": 25,
+   "page_end": 31,
+   "n_chars": 12502,
+   "n_words": 2660
+  },
+  {
+   "id": "sec-014-5-the-complex-ball",
+   "number": "5",
+   "title": "The complex ball",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 3948,
+   "n_words": 813
+  },
+  {
+   "id": "sec-015-6-stable-points",
+   "number": "6",
+   "title": "Stable points",
+   "level": 1,
+   "page_start": 33,
+   "page_end": 36,
+   "n_chars": 8418,
+   "n_words": 1773
+  },
+  {
+   "id": "sec-016-7-semi-stable-points",
+   "number": "7",
+   "title": "Semi-stable points",
+   "level": 1,
+   "page_start": 36,
+   "page_end": 38,
+   "n_chars": 3024,
+   "n_words": 591
+  },
+  {
+   "id": "sec-017-8-extending-s-by-continuity",
+   "number": "8",
+   "title": "Extending S^ by continuity",
+   "level": 1,
+   "page_start": 38,
+   "page_end": 42,
+   "n_chars": 9469,
+   "n_words": 1865
+  },
+  {
+   "id": "sec-018-9-codimension-i-etaleness",
+   "number": "9",
+   "title": "Codimension i etaleness",
+   "level": 1,
+   "page_start": 42,
+   "page_end": 46,
+   "n_chars": 8979,
+   "n_words": 1852
+  },
+  {
+   "id": "sec-019-2-for-any-her-if-we-put-k-kh-any-y-eh-admits-a-n",
+   "number": "2",
+   "title": "For any Her, if we put k :== K(H), any y eH admits a neighborhood V",
+   "level": 1,
+   "page_start": 46,
+   "page_end": 50,
+   "n_chars": 9186,
+   "n_words": 1866
+  },
+  {
+   "id": "sec-020-00-oos-nearjo-we-then-have-the-following-system",
+   "number": "00",
+   "title": "Oo(S). Nearj/o, we then have the following system of local coordinates, depending",
+   "level": 1,
+   "page_start": 50,
+   "page_end": 64,
+   "n_chars": 32675,
+   "n_words": 6693
+  },
+  {
+   "id": "sec-021-12-ahthmeticity-and-integral-monodromy",
+   "number": "12",
+   "title": "AHthmeticity and Integral Monodromy",
+   "level": 1,
+   "page_start": 64,
+   "page_end": 76,
+   "n_chars": 26134,
+   "n_words": 5381
+  },
+  {
+   "id": "sec-022-13-elliptic-and-euclidean-cases",
+   "number": "13",
+   "title": "Elliptic and Euclidean Cases",
+   "level": 1,
+   "page_start": 76,
+   "page_end": 78,
+   "n_chars": 4284,
+   "n_words": 890
+  },
+  {
+   "id": "sec-023-2-rfu-u",
+   "number": "2",
+   "title": "Rfu U",
+   "level": 1,
+   "page_start": 78,
+   "page_end": 83,
+   "n_chars": 8155,
+   "n_words": 1753
+  },
+  {
+   "id": "sec-024-2-i-i-i-i-00",
+   "number": "2",
+   "title": "I I I I 00",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 83,
+   "n_chars": 238,
+   "n_words": 72
+  },
+  {
+   "id": "sec-025-1-i-i-i-i-i-00",
+   "number": "1",
+   "title": "I I I I I 00",
+   "level": 1,
+   "page_start": 83,
+   "page_end": 85,
+   "n_chars": 3513,
+   "n_words": 685
+  },
+  {
+   "id": "sec-026-bibliography",
+   "number": null,
+   "title": "Bibliography",
+   "level": 1,
+   "page_start": 85,
+   "page_end": 86,
+   "n_chars": 3739,
+   "n_words": 547
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 28,
+  "sections": 27,
+  "chars_total": 187590
+ }
+}

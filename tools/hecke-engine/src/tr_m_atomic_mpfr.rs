@@ -51,7 +51,11 @@ fn dps_to_prec(dps: u32) -> u32 {
 ///    b. Compute `tr_M(word)` ZHLaurent via
 ///       [`tr_m_word_lq::tr_m_word_lq`] (already Rust-native).
 ///    c. Evaluate the ZHLaurent at `(q, z, h)` via MPFR, where
-///       `z = 1/(q^{1/2}+q^{-1/2})`, `h = q − q^{-1}`.
+///       `z = q^3/(q^2+1)` (**trace convention D**, SU(2)/Temperley–Lieb;
+///       convention C's `z = 1/(q^{1/2}+q^{-1/2})` was excised by owner
+///       ruling 2026-08-09, see
+///       `docs/coordination/trace-convention-registry.md`),
+///       `h = q − q^{-1}`.
 ///    d. Accumulate into the running total.
 /// 3. Return `total.to_string_radix(10, Some(dps + 5))` so the
 ///    Python caller can parse a single decimal string via
@@ -163,11 +167,18 @@ fn eval_reduced_to_mpfr(
         Float::parse(q_str)
             .map_err(|e| format!("tr_m_atomic_mpfr: q_str parse error: {}", e))?,
     );
-    let q_half = Float::with_val(prec, q.clone().sqrt());
     let q_inv = Float::with_val(prec, q.clone().recip());
-    let q_half_inv = Float::with_val(prec, q_half.clone().recip());
-    // z = 1 / (q^{1/2} + q^{-1/2})
-    let z = Float::with_val(prec, Float::with_val(prec, &q_half + &q_half_inv).recip());
+    // z = q³/(q² + 1) — trace convention D (SU(2)/Temperley–Lieb).
+    // Convention C (z = 1/(q^{1/2} + q^{-1/2})) was excised by owner ruling
+    // 2026-08-09; see docs/coordination/trace-convention-registry.md.
+    // D is rational in q, so the q^{1/2} round trip is gone: this is now
+    // exact-to-`prec` from three MPFR ops instead of a sqrt plus two recips.
+    let q_sq_z = Float::with_val(prec, &q * &q);
+    let z = Float::with_val(
+        prec,
+        Float::with_val(prec, &q_sq_z * &q)
+            / Float::with_val(prec, &q_sq_z + 1u32),
+    );
     // h = q − q^{-1}
     let h = Float::with_val(prec, &q - &q_inv);
 
@@ -217,15 +228,34 @@ mod tests {
 
     #[test]
     fn proton_word_smoke() {
-        // The proton atom is a non-trivial atomic braid; here we
-        // exercise the smallest non-empty signed word — a single
-        // Sigma+ crossing at gen 0 — and verify the result is
-        // finite and parseable as a Float.
+        // The smallest non-empty signed word — a single Sigma+ crossing at
+        // gen 0 — so tr_M(sigma_0) = z exactly. This USED to assert only
+        // that the result parsed as a Float, which meant the MPFR path's
+        // trace convention had no numeric guard at all: the C -> D switch
+        // of 2026-08-09 (bean qou-wgta item 10) passed it untouched.
+        //
+        // Now it pins the value. At Q0_STR:
+        //   convention D (production)  z = 0.61268805054558909983576288738850
+        //   convention C (excised)     z = 0.49932033403359825002066908467672
+        // 1e-40 tolerance, so a convention flip cannot slip through and a
+        // stale docstring cannot cover for one.
         let signed_word = vec![(1i8, 0i32)];
         let result_str = tr_m_atomic_mpfr(&signed_word, 3, Q0_STR, 50).unwrap();
         let parsed = Float::parse(&result_str)
             .expect("result string must parse as Float");
-        let _: Float = Float::with_val(180, parsed);
+        let v = Float::with_val(180, parsed);
+        let expected = Float::with_val(
+            180,
+            Float::parse("0.61268805054558909983576288738850176397091162650391")
+                .unwrap(),
+        );
+        let diff = Float::with_val(180, &v - &expected);
+        assert!(
+            diff.abs().to_f64() < 1e-40,
+            "tr_M(sigma_0) = {} (convention D expects z = {})",
+            v,
+            expected
+        );
     }
 
     #[test]

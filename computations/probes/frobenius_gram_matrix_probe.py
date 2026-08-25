@@ -54,6 +54,7 @@ from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from markov_trace_recursive import (  # noqa: E402
     markov_trace_of_word, q as Q_SYM,
 )
+from _precision import set_compute_dps  # noqa: E402
 
 
 # NF basis as 1-indexed signed words.  The proposition uses
@@ -80,10 +81,10 @@ def main() -> int:
         "frobenius-gram-matrix-probe",
         engine="sympy+mpmath",
     )
-    mp.dps = 50
+    set_compute_dps()
 
     q_sympy = sp.Float(Q_50_DIGIT_STR, 50)
-    z_sym = 1 / (sp.sqrt(Q_SYM) + 1 / sp.sqrt(Q_SYM))
+    z_sym = Q_SYM**3 / (Q_SYM**2 + 1)
     h_sym = Q_SYM - 1 / Q_SYM
     z = _eval_at_q0(z_sym)
     h = _eval_at_q0(h_sym)

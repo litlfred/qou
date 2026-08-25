@@ -126,6 +126,48 @@ def set_compute_dps(dps: int | None = None) -> int:
     return mp.dps
 
 
+def str_at_true_precision(value: Any) -> str:
+    """``str(value)``, except that a 53-bit value is not printed as if measured.
+
+    **A drop-in for ``str(<mpf>)``, deliberately not for ``fmt(<mpf>)``.** The
+    two disagree: ``fmt`` serializes at ``OUTPUT_DPS`` while ``str`` uses the
+    live ``mp.dps``, and producers routinely set them to different values
+    (``compute_dps: 70, output_dps: 60`` is typical). Routing the untouched
+    path through ``fmt`` would quietly change the digit count of every value
+    this helper is *not* meant to affect, so the fallback is ``str``.
+
+    ``fmt`` writes every ``mpf`` at ``OUTPUT_DPS``. That is right for a value
+    computed at full working precision and wrong for one that reached ``mpf``
+    from a 53-bit source — an f64 kernel, a numpy trace, a float-valued dict
+    entry. Printing *that* at 50 dps emits the binary64 expansion: 30+ digits
+    of dyadic tail carrying no information and reading as measured.
+
+        1.559758658103424178165141711360774934291839599609375
+        vs the 1.5597586581034242 the kernel actually produced
+
+    **The test is exact and per value: an mpf equal to its own float64 holds
+    53 bits and nothing more.** No tolerance, and no flag that has to be kept
+    in sync with the code. Per value matters because several producers can
+    take either path at runtime — ``chi_numeric`` vs the numpy kernel, mpfr vs
+    the f64 fallback — so a whole-producer decision is wrong for half the runs,
+    and shortening a value that *did* carry more than 53 bits destroys real
+    digits.
+
+    A genuinely high-precision result that happens to be representable is not
+    harmed: the short form is then exact, so the check cannot misfire in the
+    direction of losing information.
+
+    See ``docs/audits/2026-08-07-producer-repadding-empirical-sweep.md``.
+    """
+    # float64-intentional: this IS the representability test -- the whole
+    # point is to detect a value that carries no more than 53 bits and
+    # render it short. Measuring the nearest double is the function.
+    if isinstance(value, mpf) and value == mpf(float(value)):
+        # float64-intentional: measuring the nearest double IS this function.
+        return fmt(float(value))   # float branch of fmt == natural repr
+    return str(value)
+
+
 def fmt(value: Any, dps: int | None = None, strip_zeros: bool = False) -> str:
     """Serialize an mpmath value to its output-precision string form.
 
@@ -150,6 +192,60 @@ def fmt(value: Any, dps: int | None = None, strip_zeros: bool = False) -> str:
     if isinstance(value, (mpf, mpc)):
         return mp.nstr(value, dps, strip_zeros=strip_zeros)
     return str(value)
+
+# ── JSON-safe non-finite serialization ───────────────────────────
+#
+# WHY THIS EXISTS. `json.dump` writes bare `NaN`, `Infinity` and `-Infinity`
+# by default. **JSON has no such tokens** — RFC 8259 numbers are finite
+# decimals — so a witness containing one is not valid JSON and a strict
+# parser rejects the whole file. Python's own `json.load` accepts them, which
+# is why it goes unnoticed: the producer round-trips its own output happily.
+#
+# A 2026-08-09 sweep found 24 witnesses under `computations/` carrying one.
+# The causes split cleanly in two, and they want DIFFERENT fixes:
+#
+#   1. A swallowed failure. `_habiro_coefficient_extract` wrote `float('nan')`
+#      from a bare `except Exception`, hiding a real bug (a sympify `locals`
+#      mapping the wrong name, so `.subs` silently no-opped). Fix the bug; do
+#      NOT serialize the NaN.
+#   2. A DELIBERATE sentinel for a genuine mathematical pole —
+#      `casimir_macdonald_probe.macdonald_norm` returns `mpf("inf")` when the
+#      arm-leg denominator vanishes (every arm-0 cell at t = 1,
+#      Hall-Littlewood). The value is correct and meaningful; only the
+#      serialization is invalid.
+#
+# Case 2 is what this helper is for, and its absence is the structural reason
+# these literals kept appearing: a producer with a legitimate infinity had no
+# sanctioned way to write it, so it wrote the bare literal.
+
+NONFINITE_MARKERS = {"nan": "nan", "inf": "inf", "-inf": "-inf"}
+
+
+def json_safe_float(value: Any) -> Any:
+    """Return `value` unchanged if finite, else an explicit marker STRING.
+
+    ``float('inf') -> "inf"``, ``float('-inf') -> "-inf"``, ``NaN -> "nan"``.
+
+    Deliberately a marker rather than ``None``: a pole and a missing value are
+    different facts, and ``null`` conflates them. Deliberately not ``1e999``
+    either — that is how a non-finite becomes a silently wrong finite number.
+
+    Use this ONLY where the non-finite is a real result (a pole, a divergent
+    norm). If it came from a swallowed exception, fix the exception: a NaN
+    standing in for "this computation failed" should be recorded as null
+    ALONGSIDE the reason, not laundered into a marker that reads like a value.
+    """
+    import math as _math
+    if isinstance(value, bool) or not isinstance(value, (int, float)):
+        return value
+    if isinstance(value, int):
+        return value
+    if _math.isnan(value):
+        return NONFINITE_MARKERS["nan"]
+    if _math.isinf(value):
+        return NONFINITE_MARKERS["inf" if value > 0 else "-inf"]
+    return value
+
 
 # ── Audit / Precision Guard (qou-opm1) ───────────────────────────
 # Expose mpmath aliases to prevent silent downcasting to float64 via `math`

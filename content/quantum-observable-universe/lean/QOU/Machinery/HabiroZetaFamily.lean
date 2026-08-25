@@ -2,7 +2,7 @@
 # ζ-indexed families, archimedean layer — the structure the bracket inhabits
 
 Completes the Lean half of bean qou-zt3h (T4 of the Habiro attack
-plan). The GSWZ picture (arXiv:2412.04241, `uploads/2412.04241v2.pdf`)
+plan). The GSWZ picture (arXiv:2412.04241, `library/arxiv-2412.04241v2/2412.04241v2.pdf`)
 organizes a Habiro-module element as a family of fibres over the roots
 of unity with arithmetic transition edges. The ARCHIMEDEAN layer of
 that picture — the only layer visible to `ℂ`-analysis — carries exactly
@@ -69,7 +69,7 @@ theorem ZetaFamily.bar_edge (F : ZetaFamily) {z : ℂ}
 at a unit-circle point equals its value at the inverse point, the value
 is fixed by conjugation. Concrete form of the fibre-reality check used
 on the binding-tail data. -/
-theorem ZetaFamily.conj_fixed_of_bar_fixed (F : ZetaFamily) {z : ℂ}
+theorem conj_fixed_of_bar_fixed (F : ZetaFamily) {z : ℂ}
     (hz : Complex.normSq z = 1) (hfix : F.toFun z⁻¹ = F.toFun z) :
     (starRingEnd ℂ) (F.toFun z) = F.toFun z := by
   rw [← F.bar_edge hz, hfix]

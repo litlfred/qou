@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:19:41.471861+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:51:32.781405+00:00",
+  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
   "assertions": [
     {
       "name": "borromean_char_derived_from_hoefsmit",
@@ -14,7 +14,7 @@
     },
     {
       "name": "spectral_correction_closes_gap_to_sub_200ppm",
-      "computed": 130.35350295265496,
+      "computed": 130.16178771824832,
       "expected": 0.0,
       "passed": true,
       "tolerance": 200.0,
@@ -23,11 +23,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 11,
+  "durationMs": 4,
   "computation": "m-p-spectral-corrected-50dps",
   "scriptFile": "m_p_spectral_corrected_50dps.py",
   "scriptHash": "2e9d21dcce61",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,36 +37,38 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "data": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802",
+    "q_0": "1.1099785827513808075916690956107688798744991218736",
     "borromean_character": {
-      "chi_from_hoefsmit_matrices": "1.994185810380573039153427587097276509945",
-      "chi_laurent_2_minus_3h4_minus_h6": "1.994185810380573039153427587097276509945",
+      "chi_from_hoefsmit_matrices": "1.994185812979964086728199368018716700089",
+      "chi_laurent_2_minus_3h4_minus_h6": "1.994185812979964086728199368018716700089",
       "residual": "3.62227e-71",
       "derivation": "chi^(2,1)(B_3) = tr_{(2,1)}[(sigma_1^-1 sigma_2)^3] from Hoefsmit matrices = 2-3h^4-h^6 (sympy-exact)"
     },
     "pieces": {
       "vol_b3_8catalan": "7.327724753417752120436828119459072886193",
-      "geom_scale_vol_over_hbar2": "746.4178509945453023789024284339709677685",
-      "lw_A_5_2_plus_3h2_4": "2.53277966367467598266368381415770227375",
-      "chi_21_borromean_derived": "1.994185810380573039153427587097276509945",
-      "spectral_corr_arccos": "0.971119658098222606856582574622145910561"
+      "geom_scale_vol_over_hbar2": "746.4180075979671389879351092645748142151",
+      "lw_A_5_2_plus_3h2_4": "2.532779656399391492051514501758041232326",
+      "chi_21_borromean_derived": "1.994185812979964086728199368018716700089",
+      "spectral_corr_arccos": "0.9711196446575323034362430785806166158691"
     },
     "m_p_over_m_e": {
-      "leading_spectral_omitted": "1890.51195360273886289492956582830284923",
-      "full_spectral_restored": "1835.913322013294644774224586323263545236"
+      "leading_spectral_omitted": "1890.512344814297598333837257765454096312",
+      "full_spectral_restored": "1835.913676516738866564409163471390395044"
     },
     "m_p_MeV": {
-      "leading": "966.04962455790152405",
-      "full": "938.14978110658564171",
-      "validation_comparison_only": "938.27208816"
+      "leading": "966.04982446659753566",
+      "full": "938.14996225747365504",
+      "validation_comparison_only": "938.27208943"
     },
     "error": {
-      "leading_pct": 2.9604990650819323,
-      "full_ppm": -130.35350295265496,
+      "leading_pct": 2.960520231766939,
+      "full_ppm": -130.16178771824832,
       "note": "leading reproduces the +2.89% sweep gap; the derived spectral_corr closes it to ~130 ppm; residual is the arccos Taylor truncation at h^4 order"
     },
     "lean_uniqueness_ref": {
@@ -75,6 +77,6 @@
       "note": "These theorems certify T_w uniqueness at the abstract empty-constraint SDP level (PR #1537/#1542 parameterised module). Workplan: docs/workplans/2026-05-31-witness-lean-uniqueness-ref-wiring.md."
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

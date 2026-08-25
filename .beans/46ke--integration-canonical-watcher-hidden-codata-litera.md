@@ -3,8 +3,9 @@
 title: 'Integration: canonical watcher - hidden codata literals rollup (53 scripts)'
 status: todo
 type: task
+priority: normal
 created_at: 2026-06-21T21:44:26Z
-updated_at: 2026-06-21T21:44:26Z
+updated_at: 2026-08-10T19:43:56Z
 ---
 
 
@@ -60,3 +61,51 @@ CODATA 2022 (value-changing for AME binding witnesses → owner-gated, me3r/ce18
 Do NOT route those scripts down to the stale registry value.
 
 > **Investigated 2026-07-05 (swarm 2, PR #3344) — deferred, kept OPEN.** 307 files/521 occ; ~495 docstrings/anchors (out of scope), 17 in _deprecated/, 0 bit-safe inline literals remain. ~5 active float live-inputs unpinnable: root blocker is truncated registry witness codata-2022-validation-masses (m_e=0.51099895, 8 figs) — pinning fuller values loses precision. Gated behind bean me3r (owner, value-changing).
+
+
+
+## 2026-08-10 — re-scoped with a measurement (PR #4960)
+
+The 2026-06-23 note files the remaining tail as *"low value — diminishing
+returns"*. That is measurably wrong, and the reason is a distinction this bean
+never drew. A hand-typed CODATA value is one of two things:
+
+- **duplication** — the literal equals the canonical value. Bad practice, goes
+  stale on the next revision, but computes the right number today.
+- **truncation** — the literal is a short *prefix* of the canonical value. It
+  computes a **different number**, silently, forever.
+
+Only the second changes results, and no precision gate in the tree can see it:
+the NO-FLOAT64 family checks how a value is *carried and serialized*, never
+whether it was *right when typed*. Wrapping a truncated literal in `mpmath.mpf`
+— the standard drain — removes the float64 and preserves the error, and reads
+as a fix.
+
+Three landed on main in a single day (2026-08-10), all via float64 drains:
+
+| literal | canonical | cost |
+|---|---|---|
+| `m_e = 0.51099895000` | 0.51099895069 | 1.35e-9 in kappa |
+| `q0 = 1.10998` | 1.1099785827… | 1.9e-7 in contRatio |
+| `proton = 938.272` | 938.27208943 | ~1e-9 in vol ratios |
+
+all orders of magnitude above the L1 1-ppQ (1e-15) target. The m_e figure is
+measured, not assumed: f64 arithmetic on the *same* inputs contributes
+5.06e-16, so the literal was the entire discrepancy.
+
+**Current size, measured rather than estimated** —
+`computations/codata_truncation_audit.py` (new, PR #4960):
+
+    TRUNCATED   86 occurrences in 70 files
+      q0  35   m_e 25   m_p 15   m_n 9   u_MeV 2
+    exact duplicates (not blocking)  158
+
+So the bean's "53 scripts" undercounts the files and, more importantly, mixes
+the two classes. The **86 truncations are the urgent subset**; the 158 exact
+duplicates are the original scope and stay low-priority.
+
+The audit reads its canonical table from `codata_constants` / `q_parameter` at
+run time rather than typing the values — a checker for hardcoded constants that
+hardcodes them would go stale in exactly the way it exists to detect.
+`--strict` blocks on truncations only. **The drain itself is NOT done**: 70
+files is its own sweep.

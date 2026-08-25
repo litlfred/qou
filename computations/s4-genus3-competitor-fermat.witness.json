@@ -1,0 +1,36 @@
+{
+  "schema": "witness/v1",
+  "description": "The S_4 bridge does not single out the Klein quartic: the Fermat quartic is a second genus-3 curve admitting S_4. Bean qou-8pl1.",
+  "computation": {
+    "script": "computations/s4_genus3_competitor_fermat.py",
+    "arithmetic": "exact Z[i]; no floating point"
+  },
+  "data": {
+    "fermat_quartic": {
+      "equation": "x^4 + y^4 + z^4 = 0",
+      "genus": 3,
+      "aut_order": 96,
+      "aut_structure": "(mu_4)^3/mu_4 : S_3  =  (Z/4)^2 : S_3",
+      "contains_S4": true,
+      "s4_order": 24,
+      "s4_element_order_profile": {
+        "1": 1,
+        "2": 9,
+        "3": 8,
+        "4": 6
+      },
+      "v4_normal": true,
+      "s3_induces_full_symmetric_action_on_V4": true
+    },
+    "klein_quartic": {
+      "equation": "x^3 y + y^3 z + z^3 x = 0",
+      "genus": 3,
+      "aut_order": 168,
+      "aut_structure": "PSL(2,7)",
+      "contains_S4": true,
+      "note": "S_4 is the point stabilizer of the action on the 7 Fano points"
+    },
+    "verdict": "S_4 embeds in the automorphism group of BOTH genus-3 curves, so the S_4 bridge cannot select the Klein quartic.",
+    "scope": "scope-(a). Refutes the S_4 bridge AS AN ARGUMENT for the Bring->Klein degeneration. Does NOT refute the degeneration itself, which remains open and requires a separating invariant."
+  }
+}

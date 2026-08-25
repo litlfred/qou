@@ -2,7 +2,7 @@
 
 **Bean:** `qou-yuff` (T2) of milestone `qou-a46k`. Upstream: T1 merged
 ([#4039](https://github.com/litlfred/qou/pull/4039) — cover structure, (3,1)
-derived). Literature now in `uploads/` (owner-delivered):
+derived). Literature now in `library/` (owner-delivered):
 `mcmullen-braids-hodge-2013.pdf`, `deligne-mostow-1986.pdf`,
 `squier-burau-unitary-1984.pdf`, `gambaudo-ghys-braids-signatures-2005.pdf`.
 

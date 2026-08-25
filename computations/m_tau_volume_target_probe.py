@@ -34,6 +34,11 @@ from witness_base import WitnessBuilder  # noqa: E402
 from mpmath import mp, mpf  # noqa: E402
 
 # CODATA m_tau/m_e as cited by rem:m-tau-knot-prediction (3477.23).
+
+# Constants below are built at module scope. set_compute_dps() must run
+# FIRST: at import time mp.dps is still mpmath's default 15 (~binary64),
+# and a literal rounded there cannot be recovered by raising dps later.
+set_compute_dps()
 M_TAU_OVER_M_E = mpf("3477.23")
 
 # Census-reach reference points (Rolfsen/SnapPea standard values, quoted

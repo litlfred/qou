@@ -1,0 +1,92 @@
+{
+  "schema": "convention-slip-registry/v1",
+  "date": "2026-08-08",
+  "q0_pin": "experimental/proton",
+  "q0": "1.1099785827513808",
+  "q0_source": "tools/qou-substrate/python/qou_substrate/constants.py::Q (AGENTS.md owner directive 2026-08-07)",
+  "audit": "docs/audits/2026-08-08-convention-slip-class-sweep-force-channels.md",
+  "note": "Entries with expect=fail are REGRESSION FIXTURES recording a confirmed defect. They document the defect so a later fix flips them to expect=pass. --strict fails only on expect=pass entries that regress, plus any expect=fail entry that unexpectedly starts passing (which means the doc was fixed and the registry is stale).",
+
+  "R1_reconstruction": [
+    {
+      "id": "R1-em-coulomb-decomposition",
+      "channel": "EM",
+      "doc": "content/quantum-observable-universe/climax-volume-mass/coulomb-charge.md:9-15",
+      "names": "crossing-energy split into 'baseline (strong)' + 'Coulomb correction'",
+      "whole": "p*q - m/q",
+      "parts": ["(p+m)*(q + 1/q)/2", "((p-m)/2)*(q - 1/q)"],
+      "symbols": ["q", "p", "m"],
+      "expect": "fail",
+      "correct_parts": ["(p-m)*(q + 1/q)/2", "(p+m)*(q - 1/q)/2"],
+      "correct_doc": "content/quantum-observable-universe/observations/crossing-energy-decomposition.md:20-24",
+      "lean_witness": "QOU.Braiding.crossingEnergy_split (crossing-energy-decomposition.lean, sorry-free)",
+      "comment": "Multiplicities (p+m) and (p-m) are swapped between the cosh and sinh channels. The stated split reconstructs p*q + m/q, flipping the sign on every negative crossing. Agrees with truth iff m=0, which is why the quoted tanh(ln q) ~ 0.104 spot-check passed."
+    },
+    {
+      "id": "R1-em-coulomb-decomposition-corrected",
+      "channel": "EM",
+      "doc": "content/quantum-observable-universe/observations/crossing-energy-decomposition.md:20-24",
+      "names": "crossing-energy split into symmetric (cosh) + antisymmetric (sinh) channels",
+      "whole": "p*q - m/q",
+      "parts": ["(p-m)*(q + 1/q)/2", "(p+m)*(q - 1/q)/2"],
+      "symbols": ["q", "p", "m"],
+      "expect": "pass",
+      "comment": "The canonical side. Machine-checked in Lean by crossingEnergy_split."
+    }
+  ],
+
+  "R2_algebra_residual": [
+    {
+      "id": "R2-skein-form-A-hecke",
+      "channel": "strong/EM",
+      "doc": "content/quantum-observable-universe/climax-volume-mass/skein-bar-antisymmetry.md:4",
+      "names": "Skein relation L+ - L- = (q - q^-1) L0 (AGENTS.md 7a, STRICT)",
+      "lhs": "s - si",
+      "rhs": "(q - 1/q)*I",
+      "expect": "pass",
+      "comment": "Forced by the Hecke quadratic relation: right-multiply sigma^2 = (q-q^-1)sigma + 1 by sigma^-1."
+    },
+    {
+      "id": "R2-skein-form-B-as-characteristic-equation",
+      "channel": "strong/EM",
+      "doc": "content/quantum-observable-universe/braids-and-knots/feynman-eigenbasis.md:29",
+      "names": "claims q*L+ - q^-1*L- = (q^{1/2} - q^{-1/2}) L0 IS 'simply the characteristic equation of the braiding c_{V,V}'",
+      "lhs": "q*s - si/q",
+      "rhs": "(sqrt(q) - 1/sqrt(q))*I",
+      "expect": "fail",
+      "comment": "q*sigma - q^-1*sigma^-1 = h*(sigma + q^-1) carries a genuine sigma component, so it can never equal a scalar multiple of 1. Form B is the correct Jones specialisation of the HOMFLY skein relation (a=t, z=t^{1/2}-t^{-1/2}) -- a relation among invariants of three LINKS -- not an identity in H_n(q). The defect is the role transplant asserted as an identification."
+    }
+  ],
+
+  "R3_fibre_dimension_integrality": [
+    {
+      "id": "R3-trace-convention-D-jones-tl",
+      "channel": "mass (original defect's channel; included as the seed fixture)",
+      "doc": "docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md",
+      "names": "convention D, Jones/Temperley-Lieb Markov trace",
+      "z": "q**3/(q**2+1)",
+      "expect": "pass",
+      "expected_N": 2,
+      "comment": "z*[2]_q = q^2. N_eff = 2 exactly."
+    },
+    {
+      "id": "R3-trace-convention-C-wenzl-z",
+      "channel": "mass (original defect)",
+      "doc": "content/quantum-observable-universe/braids-and-knots/markov-axioms-primitive.md:5",
+      "names": "stipulated as 'the Markov-trace loop value' in a block naming the JONES-Markov trace",
+      "z": "1/(sqrt(q) + 1/sqrt(q))",
+      "expect": "fail",
+      "comment": "N_eff = 2.5995155364 -- not an integer, so this z is the categorical trace on NO fibre. This is the seed defect the sweep generalises. Value = delta^-1 (Temperley-Lieb loop reciprocal) where the TL trace parameter is delta^-2: the same expression at the wrong exponent, with the corpus's balanced q standing in for Jones's t."
+    },
+    {
+      "id": "R3-trace-N3",
+      "channel": "colour (N=3 fibre, eightfold chapter)",
+      "doc": "docs/audits/2026-08-08-mass-fibre-dimension-forces-convention-d.md",
+      "names": "the N=3 fibre's Ocneanu parameter",
+      "z": "q**5/(q**4+q**2+1)",
+      "expect": "pass",
+      "expected_N": 3,
+      "comment": "z(N) = q^N/[N]_q at N=3. Present as a positive control that R3 is not a two-point test."
+    }
+  ]
+}

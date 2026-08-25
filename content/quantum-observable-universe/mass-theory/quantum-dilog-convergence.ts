@@ -20,6 +20,11 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-08",
+      body: `**Base ring (§7c) — \`ℝ\` is load-bearing.** The statements are \`Summable\` and \`Multipliable\` for the quantum-dilogarithm factors under \`1 < q\` and \`|z| < q\`. Convergence of an infinite product is a topological notion requiring a norm, and both hypotheses are order relations; a generic commutative ring supports none of it.`,
+    },
+    {
       kind: "status",
       date: "2026-06-18",
       body:

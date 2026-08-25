@@ -9,7 +9,7 @@ export default conjecture({
     validation: "not_checked",
   },
   computation: {
-    engine: "python-int",
+    engine: "python",
     script: "computations/probes/aomega_bps_sector_nondegeneracy.py",
     witness: "computations/probes/aomega-bps-sector-nondegeneracy.witness.json",
     status: "verified",
@@ -32,7 +32,6 @@ export default conjecture({
     "conditional-adoption",
     "axiom-class",
     "open-problem",
-    "non-scholarly-voice-exception",
   ],
   authorNotes: [
     {

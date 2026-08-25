@@ -1,8 +1,8 @@
 *Proof.*
-Work over $R = \mathbb{Z}[q^{± 1/2}]$ at generic $q$, passing to
+Work over $R = \mathbb{Z}[q^{\pm 1/2}]$ at generic $q$, passing to
 the fraction field where inverses are required; write
 $h_{\mathrm{A}} = q - q^{-1}$ for the Hecke parameter and
-$z = 1/(q^{1/2} + q^{-1/2})$ for the Markov weight, so that the
+$z = q^{3}/(q^{2}+1)$ (**convention D**) for the Markov weight, so that the
 Markov trace $\mathrm{tr}_M$ is the linear functional normalised by
 $\mathrm{tr}_M(1) = 1$ and $\mathrm{tr}_M(\sigma_i) = z$ (positive
 stabilisation).

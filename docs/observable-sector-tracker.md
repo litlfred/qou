@@ -46,9 +46,11 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 > to the proton-pinned q₀ (a live +242 ppb regression). The tower was
 > **dropped** (PR #3280); the honest documented-pin round-trip is
 > **+1.35 ppb**, a **~437× miss** of the 100× target. Authoritative L2
-> count: **2/7** (m_e, m_K/m_π) per
+> count: **1/5 scoreable** (`m_K/m_π` alone) per
 > `computations/per-observable-100x-status.witness.json`
-> (`beats_100x_count=2`). Full analysis:
+> (`beats_100x_scoreable=1`, `scoreable_total=5`). `beats_100x_count=2`
+> counts the calibration **inputs** `m_p` and `m_e` and must not be quoted
+> as an accuracy result (corrected 2026-08-18). Full analysis:
 > [`docs/audits/2026-07-04-c4-mu-p-tension-pin-dependence.md`](audits/2026-07-04-c4-mu-p-tension-pin-dependence.md).
 > Table + m_p rows below corrected 2026-07-06; Q_β/m_n/Δ_pn residuals
 > refreshed from the live witness at the same time.
@@ -65,7 +67,9 @@ honest discipline call (DERIVED / PARTIAL / OPEN / NUMEROLOGY).
 | m_n | validation | 2.389 ppb | 0.5747 ppb | ✗ (~416×) | ✗ |
 | Δ_pn | validation | 755.6 ppb | 473.9 ppb | ✗ | ✗ |
 
-**Net: 2/7 beat 100×, 2/7 beat 1× experimental** (m_e, m_K/m_π).
+**Net: 1/5 scoreable predictions beat 100×** — `m_K/m_π` alone. (`m_p` and
+`m_e` are calibration inputs, not predictions; the raw `2/7` counts them.
+Corrected 2026-08-18.)
 m_p was dropped 2026-07-04: its "0.0004 ppb" was the fitted Habiro
 tower (see banner above); de-fitted it is +1.35 ppb, a ~437× miss.
 m_μ is a **9.5σ proton-anchored prediction** (209.8 ppb — the μ–p
@@ -122,8 +126,23 @@ states (next section).
 | observable | canonical formula | Lean proof | production | residual | status |
 |---|---|---|---|---|---|
 | **m_π** | CAL-3 numerical anchor | — | `cal-3-q-beta.witness.json` (cited) | (anchor) | DERIVED (anchor) |
-| **m_K² / m_π²** | `[3]_q · [4]_q + (α_em/π) · (3q² − 1) / (2q²)` | Lean `meson_qCG_3x4`, `meson_EM_closed_form` | (#1451 wires this into dashboard) | **23.44 ppb** (under 264-ppb target) | **DERIVED** (on #1451) |
-| **m_K / m_π** | `√(m_K²/m_π²)` | — | per #1451 wiring | beats 100× via #1451 | DERIVED on #1451 merge |
+| **m_K² / m_π²** | `[3]_q · [4]_q + (α_em/π) · (1 + log(1+ℏ_q))` | Lean `meson_qCG_3x4` (strong core only) | dashboard `per_observable_100x_status.py` | **51.48 ppb** (under 264-ppb target, 5.1× margin) | **CONDITIONAL** — see note below |
+| **m_K / m_π** | `√(m_K²/m_π²)` | — | dashboard (scored) | **51.48 ppb**, beats the 263.6-ppb target | **CONDITIONAL** — see note below |
+
+> **🛑 De-fitted 2026-08-22 — and NOT unconditionally derived (PR #5467).**
+> The EM factor was `(3q²−1)/(2q²)`, which is exactly the two-term
+> truncation `1 + ℏ_q − ℏ_q²/2` of `1 + log(1+ℏ_q)`. Measured stopping-order
+> error is 479.11 / **23.45** / 53.55 / 51.31 / 51.49 / 51.474 / 51.4755 ppb
+> for ℏ¹…ℏ⁷, converging to **51.4754 ppb**: order 2 is the *only* order below
+> the limit, a non-monotonic dip, so the stopping point was chosen against
+> the data. The owner ruled the full series canonical on **2026-08-09**
+> (`docs/precision-goals.md` §L2) but no producer was updated until #5467,
+> so this row read **23.44 ppb / DERIVED** for 13 days.
+>
+> Two knobs remain, so the status is **CONDITIONAL**, not DERIVED:
+> the `(3,4)` pair is **scan-selected**, and `α_em` is **conditional on the
+> open Witten-κ `sorry`**. The strong core alone misses the target by 385×.
+> Red-team: [`2026-08-22-mK-mpi-l2-red-team.md`](audits/2026-08-22-mK-mpi-l2-red-team.md).
 | **m_η, m_φ** | GMOR-class squared ratios | (some structure in #1442/#1396) | `meson_eta_phi_gmor.py` | — | PARTIAL — probes exist, not in dashboard |
 | **m_D, m_B (heavy mesons)** | — | — | — | — | OPEN — no canonical chain |
 

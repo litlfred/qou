@@ -1,0 +1,70 @@
+The aim of this article is to be optimistic to calculate (fake) limits of the loga-
+rithms of the WRT invariants of closed three-manifolds obtained from the figure-
+eight knot by Dehn surgeries with integral coefficients. I will follow Kashaev’s
+calculation in [2] formally and optimistically, and deduce an analytic function with
+integer parameter corresponding to the surgery coefficient. The function turns out
+to describe not only the (simplicial) volume but also the Chern-Simons invariant of
+the manifold. (J. Murakami told me to look at the Chern-Simons invariants after
+my earlier calculations. See [10] for a similar relation between the Chern—Simons
+invariants and the colored Jones polynomials for knots and links.)
+
+I do not know what these optimistic calculations mean. But this is not a coin-
+cidence and there should be something behind it!
+
+Acknowledgments. This article is for the proceedings of the workshop ‘Recent
+Progress toward the Volume Conjecture’ held at the International Institute for Ad-
+vanced Study from 14th to 17th March, 2000 (http://www.iias.or.jp/research/suuken/
+20000314eng.html), supported by the Research Institute of Mathematical Sciences,
+Kyoto University. I thank the IJAS for its hospitality and the RIMS for its financial
+support.
+
+I am grateful to K. Saito, who encouraged me to organize the workshop.
+
+Thanks are also due to the participants of the workshop, and to K. Ichihara,
+K. Motegi, J. Murakami, J. Roberts, M. Teragaito, D. Thurston and Y. Yokota for
+their helpful comments.
+
+2. THE WITTEN—RESHETIKHIN—TURAEV INVARIANT
+
+Let Jn(K;t) be the colored Jones polynomial of a knot K associated with the n-
+
+dimensional representation of the Lie algebra sl2(C). We normalize J, (K;t) so that
+nf{[2_ 4—-n/2
+
+Jo(K;t) is the Jones polynomial and J,(O;t) = Se oie with O the unknot.
+
+Due to T. Le the colored Jones polynomial of the figure-eight knot 4; is
+
+Jn (413) -¥ I (eet? — eH) (ena ona),
+
+(K. Habiro obtained the same formula by a different technique.) Let M, be the
+closed three-manifold obtained from S$? by Dehn surgery along the figure-eight
+knot with coefficient p € Z. We denote by tw(M,) the Witten—Reshetikhin—Turaev
+invariant of M, associated with the Lie group sl2(C) and with level N — 2. Then
+from [5, (1.9)],
+
+1
+
+a ue —3rv-1 | 214
+(2.1) Tw (Mp) = \/ = sim 5p exP (HR) a Ue 12g?” /4 Jn (413.9)
+
+eal
+
+nf 2 =n/2
+
+Qn./— =
+if p > 0. Here q = exp ( ~*~ *) and [n] = : Note that our J,(K;q)
+
+gi? — ql?
+is [n]Jxo,n with the notation in [5]. Since
+
+mi TT (a (nt)/2 _ g- (nt!) /?) (a (n=1)/2 _ go m-D/2)
+
+t=1
+(gir t9/2 — —(n+l)/2
+Tem q q )
+= qu? — q-i2
+. (1 _ q’™)(1 _ qromtty _ (1 _ qrt™) x (—1)q7Pemt)/2
+~ gil? =q-il2
+
+71

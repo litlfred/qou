@@ -1,0 +1,108 @@
+{
+  "probe": "qbeta_5two_route73_law_of_sines_radial",
+  "beans": [
+    "qou-kmmr"
+  ],
+  "dps": 60,
+  "lean": "QOU/Knot/KummerDilogHalf.lean; QOU/Knot/IdealTetLawOfSines.lean",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the dilogarithm half, now PROVED in Lean for the corpus's cLiTwoExt (im_cLiTwoExt_exp): Im Li_2(e^{i theta}) = Cl_2(theta) on (0, 2pi). Proved by same-derivative -- both sides differentiate to -log(2 sin(theta/2)) -- plus the basepoint theta = pi, where cLiTwoExt(-1) = -pi^2/12 is REAL and Cl_2(pi) = 0",
+      "max_residual": "1.5557538e-61",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "THE LAW OF SINES for an ideal tetrahedron: |z| = sin(th2)/sin(th3), with the three angles summing to pi. The ideal-tetrahedron analogue of the Euclidean law of sines -- the MODULUS of the shape is a ratio of sines of opposite angles, just as a side length is in a triangle. It ties the ANGLE picture to the SHAPE-PARAMETER picture, and it holds at the 5_2 shape y_1 like everywhere else",
+      "samples": [
+        {
+          "z": "(0.3 + 0.7j)",
+          "abs_z": "0.76157731058639082857",
+          "sin_th2_over_sin_th3": "0.76157731058639082857",
+          "angles_sum_minus_pi": "0.0"
+        },
+        {
+          "z": "(1.5 + 0.8j)",
+          "abs_z": "1.7",
+          "sin_th2_over_sin_th3": "1.7",
+          "angles_sum_minus_pi": "0.0"
+        },
+        {
+          "z": "(-0.4 + 1.2j)",
+          "abs_z": "1.2649110640673517328",
+          "sin_th2_over_sin_th3": "1.2649110640673517328",
+          "angles_sum_minus_pi": "3.11151e-61"
+        },
+        {
+          "z": "(0.2 + 2.5j)",
+          "abs_z": "2.5079872407968904976",
+          "sin_th2_over_sin_th3": "2.5079872407968904976",
+          "angles_sum_minus_pi": "0.0"
+        },
+        {
+          "z": "(3.0 + 0.1j)",
+          "abs_z": "3.0016662039607268763",
+          "sin_th2_over_sin_th3": "3.0016662039607268763",
+          "angles_sum_minus_pi": "0.0"
+        },
+        {
+          "z": "(0.7849201454990266 + 1.307141278682045j)",
+          "abs_z": "1.5247025799298517702",
+          "sin_th2_over_sin_th3": "1.5247025799298517702",
+          "angles_sum_minus_pi": "3.11151e-61"
+        }
+      ],
+      "max_residual": "8.0899199e-60",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "THE REDUCTION WORKS. Along every ray of constant arg z, the difference (Lambda-side minus dilogarithm-side) is CONSTANT in r -- and equal to 0. That constancy is exactly what the law of sines buys, and it is why Kummer for general z needs only a ONE-variable argument with r = 1 as basepoint, not the two-variable differential argument it appears to need",
+      "rays": [
+        {
+          "arg_z": "1.1659045405098",
+          "max_spread_along_ray": "7.77877e-62"
+        },
+        {
+          "arg_z": "0.48995732625373",
+          "max_spread_along_ray": "7.38983e-61"
+        },
+        {
+          "arg_z": "1.8925468811915",
+          "max_spread_along_ray": "3.11151e-61"
+        },
+        {
+          "arg_z": "1.4909663410827",
+          "max_spread_along_ray": "7.77877e-62"
+        },
+        {
+          "arg_z": "0.033320995878247",
+          "max_spread_along_ray": "3.57337e-61"
+        },
+        {
+          "arg_z": "1.0300194896854",
+          "max_spread_along_ray": "2.33363e-61"
+        }
+      ],
+      "max_spread_and_value": "7.3898306e-61",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "SCOPE, UPDATED. When written this gate said the radial argument was not yet assembled and general-z Kummer was unproved. It is now PROVED -- QOU/Knot/KummerRadial.lean, `kummer`, sorry-free -- by exactly the reduction G3 anticipated. What remains untouched is Vol(5_2): Kummer is the ANALYTIC factor of Vol = D, and the GEOMETRIC factor (a triangulation's Lambda-sum IS the volume) is qou-m015/qou-krvm territory. The 5_2 volume conjecture is Ohtsuki's published theorem, not formalised anywhere here",
+      "kummer_unit_circle_proved": true,
+      "law_of_sines_proved": true,
+      "kummer_general_z_proved": true,
+      "proved_by": "QOU/Knot/KummerRadial.lean -- kummer",
+      "vol_5_2_proved": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "proved": "Kummer on |z| = 1 (both halves); the ideal-tetrahedron law of sines |z| = sin(th2)/sin(th3) for all Im z > 0.",
+    "also_proved": "Kummer for general z -- QOU/Knot/KummerRadial.lean, `kummer`. The radial argument G3 anticipated is now assembled.",
+    "not_proved": "Vol(5_2) -- the GEOMETRIC factor of Vol = D is untouched.",
+    "sum_rule_status": "PROVED"
+  }
+}

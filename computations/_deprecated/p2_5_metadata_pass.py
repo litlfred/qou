@@ -56,7 +56,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
-COMPUTE = REPO / "folio-assistant" / "computations"
+COMPUTE = REPO / "computations"
 AUDIT_WITNESS = COMPUTE / "p2-5-symbolic-q-audit.witness.json"
 
 ANNOTATION_VERSION = "2026-05-02"

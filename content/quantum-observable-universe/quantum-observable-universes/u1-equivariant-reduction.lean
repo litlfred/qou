@@ -1,3 +1,4 @@
+import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Data.Real.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 

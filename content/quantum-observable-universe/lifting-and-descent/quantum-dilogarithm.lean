@@ -1,6 +1,7 @@
 import Mathlib.Algebra.Polynomial.Laurent
 import Mathlib.Data.Int.Basic
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
+import QOU.MathlibExt.QIntegerCanonical
 
 
 /-!
@@ -47,15 +48,14 @@ variable {K : Type*} [Field K]
 -- Ref: [lusztig1993] Lusztig, "Introduction to Quantum Groups," Birkhäuser 1993 (DOI: 10.1007/978-0-8176-4717-9)
 open Classical in
 /-- The q-integer `[n]_q = (qⁿ - 1)/(q - 1)` for `q ≠ 1`. -/
-noncomputable def qInteger (q : K) (n : ℕ) : K :=
-  if q = 1 then (n : K)
-  else (q ^ n - 1) / (q - 1)
+noncomputable abbrev qInteger (q : K) (n : ℕ) : K :=
+  QOU.QInteger.qIntGeoCl q n
 
 /- For q > 1 and n ≥ 1, the q-integer is positive. -/
 -- Ref: [lusztig1993]
 -- theorem qInteger_pos {q : K} {n : ℕ} (hq : 1 < q) (hn : 0 < n) :  -- (archimedean; needs an ordered field)
 --     0 < qInteger q n := by
---   unfold qInteger
+--   simp only [qInteger, QOU.QInteger.qIntGeoCl]
 --   rw [if_neg (ne_of_gt hq)]
 --   apply div_pos
 --   · have : 1 < q ^ n := one_lt_pow₀ hq hn.ne'
@@ -95,7 +95,7 @@ theorem qDilog_first_term {q : K} (_hq : q ≠ 1) (_z : K) :
 -- Ref: [lusztig1993]
 theorem qInteger_one {q : K} (hq : q ≠ 1) :
     qInteger q 1 = 1 := by
-  unfold qInteger
+  simp only [qInteger, QOU.QInteger.qIntGeoCl]
   rw [if_neg hq]
   simp [pow_one, div_self (sub_ne_zero.mpr hq)]
 

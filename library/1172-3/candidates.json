@@ -1,0 +1,92 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "1172-3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "e9c32f59e9db7970fb39510d17d1fbeb1d26ba29609d88a308a26ba1e36ae636",
+  "file": "1172-3.pdf"
+ },
+ "provenance": {
+  "title": "ON THE COLORED JONES POLYNOMIALS OF SOME SIMPLE LINKS KAZUO HABIRO MUGrOBIW El5~Bg3X?tM}2J3X8&5f2J 1. INTRODUCTION This note is a report on my talk given at the workshop \u201cRecent Progress Towards the Volume Conjecture\u201d which was held at Inter-",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 5,
+  "by_kind": {
+   "proposition": 4,
+   "remark": 1
+  },
+  "formalization_candidates": 4
+ },
+ "candidates": [
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.1",
+   "name": null,
+   "statement": "$Forn\\geq 0$ and $a\\in B^{\\mathrm{e}\\mathrm{v}\\mathrm{e}\\mathrm{n}}$we have $\\langle R_{n}\u2019, a\\rangle\\in \\mathrm{Z}[A, A^{-}1]$.",
+   "section_file": "sections/sec-005-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.2",
+   "name": null,
+   "statement": "The element $\\omega$is invertible in $\\hat{B}\u2019$with the inverse",
+   "section_file": "sections/sec-005-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "6.2",
+   "name": null,
+   "statement": "may be rephrased that the element $\\omega$gives a positive",
+   "section_file": "sections/sec-005-6-the-twisting-element.md",
+   "section_title": "THE TWISTING ELEMENT",
+   "pages": "7-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "8.2",
+   "name": null,
+   "statement": "Let $L$be an $m$-component algebraically split link",
+   "section_file": "sections/sec-007-8-surgery-descriptions.md",
+   "section_title": "SURGERY DESCRIPTIONS",
+   "pages": "8-10",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": "8.3",
+   "name": null,
+   "statement": "Proposition 8.2 can be stated in a stronger form. Details",
+   "section_file": "sections/sec-007-8-surgery-descriptions.md",
+   "section_title": "SURGERY DESCRIPTIONS",
+   "pages": "8-10",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

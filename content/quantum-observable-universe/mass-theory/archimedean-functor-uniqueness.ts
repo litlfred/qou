@@ -24,6 +24,7 @@ export default proposition({
     "pre-archimedean",
     "conditional-class",
   ],
+  foreshadows: ["conj:dilogarithm-archimedean-limit"],
   uses: [
     "prop:quantum-dilogarithm-volume",
     "conj:dilogarithm-archimedean-limit",

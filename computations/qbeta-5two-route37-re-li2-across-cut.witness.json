@@ -1,0 +1,128 @@
+{
+  "probe": "qbeta_5two_route37_re_li2_across_cut",
+  "bean": "qou-glbl",
+  "dps": 70,
+  "pairs_with_lean": [
+    "QOU/MathlibExt/ComplexDilogarithmInversion.lean (invCombo, continuousAt_re_cLiTwoExt)",
+    "QOU/MathlibExt/ComplexDilogarithmOnCut.lean (re_inversion_identity)"
+  ],
+  "gates": [
+    {
+      "gate": "G0",
+      "claim": "REGRESSION GATE on the quadrature split. Re-runs the integral WITHOUT splitting at the interior log singularity `t = Re(1/w)` and requires the answer to be DIFFERENT. This lane has already shipped a partial fix that split only when `1/w` was exactly real -- which repaired the on-cut reference value and left every off-cut comparison wrong, i.e. looked converged and was not. If someone deletes the split, this gate fails instead of the numbers quietly drifting",
+      "worst_gap_between_split_and_unsplit": "0.0154947070878",
+      "pass": true
+    },
+    {
+      "gate": "G1",
+      "claim": "the integral used here reproduces mpmath's `polylog(2, .)` at 8 points off the cut, including both sides of the cut at the target's real part. So every later gate is testing an IDENTITY, not testing a quadrature against itself",
+      "points": 8,
+      "worst_abs_difference": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "THE IDENTITY THE LEAN PROOF RESTS ON: Li2(w) + Li2(1/w) + log(-w)^2/2 = -pi^2/6 on all of C \\ [0,inf), as a FULL COMPLEX equation (not just its real part). Checked at 16 points spread over both half planes, the negative reals, both sides of the cut, near the branch point w = 1, and far out -- all OFF the 5_2 arc configuration, so nothing peculiar to that locus can be carrying it",
+      "points": 16,
+      "worst_abs_residual": "1.54743511932e-70",
+      "worst_point": "(100.0 + 0.5j)",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "BRANCH PINNING, and the gate that stops this probe from being self-consistently wrong. Lean's `Complex.log` takes arg = +pi on the negative reals, so for real x > 1 the integrand's `1 - x*t` past t = 1/x is evaluated on the UPPER lip of log's cut -- which makes `cLiTwoExt x` the boundary value from BELOW in w, Li2(x - i0), with Im = -pi*log x. Checked against the independently known jump Li2(x+i0) - Li2(x-i0) = 2*pi*i*log x. Get this backwards and the sign of the log(-w)^2 correction flips while every other gate still passes",
+      "jump_residual": "1.85226585281e-25",
+      "on_cut_equals_limit_from_below": "2.58799629087e-25",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the statement being proved, measured directly: Re cLiTwoExt is continuous at cut points from BOTH sides, while cLiTwoExt itself is NOT -- the imaginary part jumps by 2*pi*log x. Gated on the RATIO gap/eps rather than on the gap, because the gap at eps = 1e-3 is 2.4e-3 and any fixed small threshold would just be reporting how small eps was. The ratio is bounded by pi/x < 2.42 over SIX decades, which is a Lipschitz statement a single residual cannot make. So `.re` is load-bearing and a theorem about `cLiTwoExt` unqualified would be FALSE",
+      "worst_ratio_re_gap_over_eps": "2.41660973353",
+      "ratio_by_decade": {
+        "1e-3": "2.414971",
+        "1e-6": "2.4166081",
+        "1e-10": "2.4166097",
+        "1e-15": "2.4166097",
+        "1e-20": "2.4166097",
+        "1e-25": "2.4166097"
+      },
+      "predicted_bound_pi_over_smallest_x": "2.41660973353",
+      "im_gap_from_above": "9.45039700029",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the ONE non-formal step in the derivative computation -- log(1 - 1/w) + log(-w) = log(1 - w) needs arg(1-1/w) + arg(-w) in (-pi, pi], which is NOT automatic. It holds throughout C \\ [0,inf) because the two args have strictly opposite signs there, and it FAILS on (0,1) where both are +pi and the sum is 2*pi. So the domain restriction is load-bearing rather than defensive, and dropping it gives a false lemma rather than a harder one",
+      "in_domain_points_holding": 16,
+      "in_domain_points_total": 16,
+      "worst_distance_to_the_endpoints_of_(-pi,pi]": "0.00505046210907",
+      "fails_at_these_points_of_(0,1)": [
+        "0.2",
+        "0.5",
+        "0.9"
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "the elementary rewrite that carries the whole continuity claim: Re(log(-w)^2) = (log|w|)^2 - (|arg w| - pi)^2 for every w != 0. `arg(-w)` jumps by 2*pi across the positive reals; `|arg w|` does not jump there at all, so the right-hand side is manifestly continuous at every w with Re w > 0. Checked including on the positive reals, on the negative reals, and in both half planes -- i.e. ON the jump locus, not merely near it",
+      "points": 19,
+      "worst_abs_residual": "2.89781730522e-70",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "CROSS-CHECK against what the tree already proves: `re_inversion_identity` says Re Li2(x) + Re Li2(1/x) + (log x)^2/2 = pi^2/3 for x >= 1. The new step is that identity rearranged into Re(invCombo x) = -pi^2/6, so the two must agree numerically or the Lean assembly cannot close. Checked at the branch point x = 1 as well, where the derivative argument behind the tree's theorem does not exist and its exceptional-point glue is what covers it",
+      "worst_abs_residual": "1.08668148946e-70",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "the configuration this is FOR: as phi -> pi the branch Ypair.2 sends `x*y` to the cut point w0 from BELOW and `y/x` to the SAME point from ABOVE. A one-sided continuity theorem would therefore have to be proved twice, in mirror image; the 2-D statement covers both at once. Convergence is gated on the RATIO gap/(pi - phi) staying bounded over six decades, not on a small gap at the finest sample -- the same reason as G4, and here the root itself is also moving",
+      "x_times_y_approach_sides": [
+        "below"
+      ],
+      "y_over_x_approach_sides": [
+        "above"
+      ],
+      "re_gap_to_on_cut_value_by_decade": {
+        "pi-1e-1": "0.30375977",
+        "pi-1e-2": "0.031311937",
+        "pi-1e-3": "0.0031405528",
+        "pi-1e-4": "0.00031414887",
+        "pi-1e-5": "3.1415823e-5",
+        "pi-1e-6": "3.1415916e-6"
+      },
+      "worst_ratio_gap_over_delta": "3.1415916137",
+      "pass": true
+    },
+    {
+      "gate": "G9",
+      "claim": "the constant is pinned at w = -1, where BOTH dilogarithm terms are cLiTwoExt(-1) = -pi^2/12 (already in the tree, `cLiTwoExt_neg_one`) and log(-w) = log 1 = 0 kills the third. -1 is an INTERIOR point of C \\ [0,inf), so no boundary limit is needed -- which is why the domain is taken to be the whole slit plane C \\ [0,inf) rather than a half plane. On a half plane the only computable base point sits on the boundary and the constant would have to be recovered by a limit",
+      "invCombo_at_minus_one": "(-1.6449340668482264365 + 0.0j)",
+      "target_minus_pi_sq_over_6": "-1.6449340668482264365",
+      "minus_one_is_interior": true,
+      "pass": true
+    },
+    {
+      "gate": "G10",
+      "claim": "the cut point is the number the rest of the lane uses. Route 36 G6 identified the REAL branch at phi = pi as 2*cos(pi/7) - 1 = 0.8019377; the branch that reaches the CUT is a different root of the same cubic, Ypair.2 = -2.2469796, giving x*y = 1 + 2*cos(2*pi/7). Both are checked, from the cubic rather than from transcribed decimals -- an earlier draft of this gate compared w0 against 2*cos(pi/7) - 1 and was off by exactly 1, i.e. was comparing two different roots",
+      "w0_from_cubic": "2.2469796037174670611",
+      "one_plus_two_cos_2pi_over_7": "2.2469796037174670611",
+      "w0_difference": "0.0",
+      "y_real_at_pi_from_cubic": "0.80193773580483825247",
+      "two_cos_pi_over_7_minus_1": "0.80193773580483825247",
+      "y_real_difference": "0.0",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "Re cLiTwoExt is continuous at every point of the cut (1, inf), from both sides, while cLiTwoExt itself is not. The carrier is the inversion identity Li2(w) + Li2(1/w) + log(-w)^2/2 = -pi^2/6 on C \\ [0,inf).",
+    "obligation_retired": "G11's 'dominated convergence alone' is NOT achievable: the log singularity of log(1-wt)/t sits at t = 1/w and MOVES with w, so sup over any approach neighbourhood is +infinity at every t near 1/w0 and no w-independent dominating function exists. The recorded next step named a technique that cannot work.",
+    "why_re": "cLiTwoExt jumps by 2*pi*i*log x across the cut -- purely imaginary. `envelopeS` takes `.re` of every term, so the jump is invisible to it. A theorem about cLiTwoExt unqualified would be FALSE (G4).",
+    "branch": "Lean's cLiTwoExt at real x > 1 is the boundary value from BELOW, Li2(x - i0), Im = -pi*log x -- because Lean's Complex.log takes arg = +pi on the negative reals where 1 - x*t sits for t > 1/x (G3).",
+    "still_open": "obligation (1), he_j at the pair (k = 0), unaffected by this.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

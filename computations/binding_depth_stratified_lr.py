@@ -44,17 +44,23 @@ import mpmath as mp
 
 from _precision import set_compute_dps, fmt
 from witness_base import WitnessBuilder
-from codata_constants import AME_B_TRITIUM_MEV_VALIDATION, M_E_MEV
+from codata_constants import (
+    AME_B_DEUTERON_MEV_VALIDATION,
+    AME_B_HE3_MEV_VALIDATION,
+    AME_B_HE4_MEV_VALIDATION,
+    AME_B_TRITIUM_MEV_VALIDATION,
+    M_E_MEV)
 from mass_at_3A_proper import dim_q, qfac, E_0_CALIBRATION_MEV
 from q_parameter import Q as Q0
 from lr_coefficients import get_lr_table
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
-    "D":   mp.mpf("2.22456607"),
+    "D":   AME_B_DEUTERON_MEV_VALIDATION,
     "T":   AME_B_TRITIUM_MEV_VALIDATION,
-    "3He": mp.mpf("7.7180428"),
-    "4He": mp.mpf("28.295674"),
+    "3He": AME_B_HE3_MEV_VALIDATION,
+    "4He": AME_B_HE4_MEV_VALIDATION,
 }
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
@@ -130,7 +136,7 @@ def free_chi_for_atom(atom: str) -> dict:
 
 def alpha_k(k: int) -> mp.mpf:
     """α_0 = α_1 = α_3 = 1; α_2 = z²; α_{k≥4} = m_e · 8G."""
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3):
         return mp.mpf(1)
@@ -146,11 +152,11 @@ def phi_k_from_dict(chi_dict: dict, n_strands: int, k: int) -> mp.mpf:
     witness — only 24 / 77 partitions cached, the high-weight ones).
     """
     total = mp.mpf(0)
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     for lam, chi in chi_dict.items():
         if len(lam) - 1 != k:
             continue
-        dq = dim_q(lam)
+        dq = dim_q(lam, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < mp.mpf("1e-30"):
             continue

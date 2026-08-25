@@ -47,7 +47,9 @@ from codata_constants import M_P_MEV_VALIDATION, M_PI_PM_MEV_VALIDATION
 from pathlib import Path
 from mpmath import mp, mpf, fabs
 
-mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 
 q0 = mpf(Q_50_DIGIT_STR)

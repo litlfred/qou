@@ -42,11 +42,11 @@ structure BetaDecayOp where
   /-- Daughter nuclear configuration. -/
   daughter : NuclearConfig
   /-- The daughter differs by exactly one nucleon: n → p. -/
-  is_beta_minus : ∃ k,
+  is_beta_minus : ∃ k : ℕ,
     parent.length = daughter.length ∧
-    parent.get! k = NucleonType.neutron ∧
-    daughter.get! k = NucleonType.proton ∧
-    ∀ j, j ≠ k → parent.get! j = daughter.get! j
+    parent[k]! = NucleonType.neutron ∧
+    daughter[k]! = NucleonType.proton ∧
+    ∀ j, j ≠ k → parent[j]! = daughter[j]!
 
 /-! ## §2  The Q-value ratio (over ℤ[t, t⁻¹]) -/
 

@@ -1,12 +1,12 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-04T19:13:26.695015+00:00",
-  "commitSha": "778a1672938e41636cd740e7557907843b187bb0",
+  "computedAt": "2026-08-24T12:08:11.935156+00:00",
+  "commitSha": "df0d837b80c050e2240268b2a7db952843eb9d6b",
   "assertions": [
     {
       "name": "wedderburn_closure",
-      "computed": 4.7957214796783364e-52,
+      "computed": 8.71723001306747e-51,
       "expected": 0.0,
       "passed": true,
       "tolerance": 1e-09,
@@ -25,7 +25,7 @@
   "computation": "probe-d-delta-lambda-terms",
   "scriptFile": "probe_d_delta_lambda_terms.py",
   "scriptHash": "0b0b95349b2a",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "2c68d7f34a6aafce97a57e9a345c86f4e1a88ca9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,9 +35,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/probe_d_delta_lambda_terms.py"
+    ],
+    "reproduce": "python3 -u computations/probes/probe_d_delta_lambda_terms.py"
   },
   "description": "Deuteron Δ_λ per-partition term analysis: y_λ, χ^λ(β_D) bound/free/q⁻¹, Δχ, and per-block binding y_λ·Δχ for all 11 λ⊢6, from committed 50-dps witnesses. Symbolic relations: Wedderburn closure Σy_λχ^λ=tr_M; bar-conjugate law χ(1/q)=(−1)^Lχ_{λ'}(q); χ_bound zeros; (3,2,1) self-conjugate; magnitude/sign dominance. Δ_λ under-determined at A=2 (1 eq, 11 unknowns); uniform-δ magnitude reported. Structural characterisation, NOT a closure ansatz (Δ_λ gate).",
   "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
@@ -54,13 +63,13 @@
         "conj": "[1, 1, 1, 1, 1, 1]",
         "self_conj": false,
         "dim": 1,
-        "y_lambda": "0.0591877210916",
-        "chi_bound": "1.55987028095",
+        "y_lambda": "0.115324224902",
+        "chi_bound": "1.55987019956",
         "chi_free": "1.5513064682",
         "chi_qinv": "0.6769250917",
-        "delta_chi": "-0.00856381275233",
-        "trM_term": "0.0923251671282",
-        "binding_term_y_dchi": "-0.000506872560666"
+        "delta_chi": "-0.00856373136367",
+        "trM_term": "0.179890821713",
+        "binding_term_y_dchi": "-0.000987605681785"
       },
       {
         "lambda": [
@@ -70,13 +79,13 @@
         "conj": "[2, 1, 1, 1, 1]",
         "self_conj": false,
         "dim": 5,
-        "y_lambda": "0.0589606835459",
-        "chi_bound": "3.21631789808",
+        "y_lambda": "0.0789529624759",
+        "chi_bound": "3.21631734224",
         "chi_free": "5.93121148832",
         "chi_qinv": "-2.15541571171",
-        "delta_chi": "2.71489359023",
-        "trM_term": "0.189636301772",
-        "binding_term_y_dchi": "0.160071981835"
+        "delta_chi": "2.71489414608",
+        "trM_term": "0.253937782432",
+        "binding_term_y_dchi": "0.214348935642"
       },
       {
         "lambda": [
@@ -86,13 +95,13 @@
         "conj": "[2, 2, 1, 1]",
         "self_conj": false,
         "dim": 9,
-        "y_lambda": "0.0402843879013",
-        "chi_bound": "1.67439566505",
+        "y_lambda": "0.046032434692",
+        "chi_bound": "1.67439526203",
         "chi_free": "9.00591303276",
         "chi_qinv": "0.819715650293",
-        "delta_chi": "7.33151736771",
-        "trM_term": "0.067452004471",
-        "binding_term_y_dchi": "0.295345689546"
+        "delta_chi": "7.33151777072",
+        "trM_term": "0.0770764905482",
+        "binding_term_y_dchi": "0.337487612974"
       },
       {
         "lambda": [
@@ -103,13 +112,13 @@
         "conj": "[3, 1, 1, 1]",
         "self_conj": false,
         "dim": 10,
-        "y_lambda": "0.010133462519",
-        "chi_bound": "-0.469805655887",
+        "y_lambda": "0.0",
+        "chi_bound": "-0.469805886378",
         "chi_free": "5.36599503401",
         "chi_qinv": "0.489987771275",
-        "delta_chi": "5.8358006899",
-        "trM_term": "-0.00476075800513",
-        "binding_term_y_dchi": "0.0591368675593"
+        "delta_chi": "5.83580092039",
+        "trM_term": "0.0",
+        "binding_term_y_dchi": "0.0"
       },
       {
         "lambda": [
@@ -119,13 +128,13 @@
         "conj": "[2, 2, 2]",
         "self_conj": false,
         "dim": 5,
-        "y_lambda": "0.0141208742645",
-        "chi_bound": "4.24940291056",
+        "y_lambda": "0.015123810098",
+        "chi_bound": "4.24940202292",
         "chi_free": "4.62600801264",
         "chi_qinv": "3.49756389083",
-        "delta_chi": "0.37660510208",
-        "trM_term": "0.0600052841991",
-        "binding_term_y_dchi": "0.00531799329382"
+        "delta_chi": "0.376605989725",
+        "trM_term": "0.0642671492248",
+        "binding_term_y_dchi": "0.00569571747038"
       },
       {
         "lambda": [
@@ -136,13 +145,13 @@
         "conj": "[3, 2, 1]",
         "self_conj": true,
         "dim": 16,
-        "y_lambda": "0.00731845355633",
-        "chi_bound": "-1.97227276292",
+        "y_lambda": "0.0",
+        "chi_bound": "-1.97227244615",
         "chi_free": "7.62558351446",
         "chi_qinv": "1.97282073802",
-        "delta_chi": "9.59785627738",
-        "trM_term": "-0.0144339866158",
-        "binding_term_y_dchi": "0.0702414654064"
+        "delta_chi": "9.59785596062",
+        "trM_term": "0.0",
+        "binding_term_y_dchi": "0.0"
       },
       {
         "lambda": [
@@ -154,13 +163,13 @@
         "conj": "[4, 1, 1]",
         "self_conj": false,
         "dim": 10,
-        "y_lambda": "-0.000685309006621",
-        "chi_bound": "-0.490126019454",
+        "y_lambda": "0.0",
+        "chi_bound": "-0.490125652323",
         "chi_free": "-1.91763458064",
         "chi_qinv": "0.470191710157",
-        "delta_chi": "-1.42750856118",
-        "trM_term": "0.000335887775512",
-        "binding_term_y_dchi": "0.000978284474008"
+        "delta_chi": "-1.42750892832",
+        "trM_term": "0.0",
+        "binding_term_y_dchi": "0.0"
       },
       {
         "lambda": [
@@ -171,13 +180,13 @@
         "conj": "[3, 3]",
         "self_conj": false,
         "dim": 5,
-        "y_lambda": "0.000773186627968",
-        "chi_bound": "-3.49729518099",
+        "y_lambda": "0.0",
+        "chi_bound": "-3.49729440651",
         "chi_free": "3.74795844081",
         "chi_qinv": "-4.24906940541",
-        "delta_chi": "7.2452536218",
-        "trM_term": "-0.002704061868",
-        "binding_term_y_dchi": "0.00560193321661"
+        "delta_chi": "7.24525284733",
+        "trM_term": "0.0",
+        "binding_term_y_dchi": "0.0"
       },
       {
         "lambda": [
@@ -189,13 +198,13 @@
         "conj": "[4, 2]",
         "self_conj": false,
         "dim": 9,
-        "y_lambda": "-0.000342051827473",
-        "chi_bound": "-0.819655254117",
+        "y_lambda": "0.0",
+        "chi_bound": "-0.819654948504",
         "chi_free": "0.844233846277",
         "chi_qinv": "-1.67374772222",
-        "delta_chi": "1.66388910039",
-        "trM_term": "0.000280364577568",
-        "binding_term_y_dchi": "-0.000569136307502"
+        "delta_chi": "1.66388879478",
+        "trM_term": "0.0",
+        "binding_term_y_dchi": "0.0"
       },
       {
         "lambda": [
@@ -208,13 +217,13 @@
         "conj": "[5, 1]",
         "self_conj": false,
         "dim": 5,
-        "y_lambda": "9.86356038354e-5",
-        "chi_bound": "2.15525561324",
+        "y_lambda": "0.0",
+        "chi_bound": "2.15525533745",
         "chi_free": "-2.23046769817",
         "chi_qinv": "-3.21589087847",
-        "delta_chi": "-4.3857233114",
-        "trM_term": "0.000212584938831",
-        "binding_term_y_dchi": "-0.000432588467075"
+        "delta_chi": "-4.38572303561",
+        "trM_term": "0.0",
+        "binding_term_y_dchi": "0.0"
       },
       {
         "lambda": [
@@ -228,13 +237,13 @@
         "conj": "[6]",
         "self_conj": false,
         "dim": 1,
-        "y_lambda": "-1.24379914837e-5",
-        "chi_bound": "-0.676876656235",
+        "y_lambda": "0.0",
+        "chi_bound": "-0.676876683433",
         "chi_free": "0.67325689637",
         "chi_qinv": "-1.5597586581",
-        "delta_chi": "1.3501335526",
-        "trM_term": "8.41898608579e-6",
-        "binding_term_y_dchi": "-1.67929496292e-5"
+        "delta_chi": "1.3501335798",
+        "trM_term": "0.0",
+        "binding_term_y_dchi": "0.0"
       }
     ],
     "bar_conjugate_check": [
@@ -251,8 +260,8 @@
           1
         ],
         "chi_qinv": "0.6769250917",
-        "signed_chi_conj_q": "0.6768766562",
-        "rel_resid": 2.888433394785087e-05
+        "signed_chi_conj_q": "0.6768766834",
+        "rel_resid": 2.8868113828742803e-05
       },
       {
         "lambda": [
@@ -267,8 +276,8 @@
           1
         ],
         "chi_qinv": "-2.155415712",
-        "signed_chi_conj_q": "-2.155255613",
-        "rel_resid": 5.0740253397009334e-05
+        "signed_chi_conj_q": "-2.155255337",
+        "rel_resid": 5.082766424774953e-05
       },
       {
         "lambda": [
@@ -282,8 +291,8 @@
           1
         ],
         "chi_qinv": "0.8197156503",
-        "signed_chi_conj_q": "0.8196552541",
-        "rel_resid": 3.319099905065231e-05
+        "signed_chi_conj_q": "0.8196549485",
+        "rel_resid": 3.3358955272647126e-05
       },
       {
         "lambda": [
@@ -298,8 +307,8 @@
           1
         ],
         "chi_qinv": "0.4899877713",
-        "signed_chi_conj_q": "0.4901260195",
-        "rel_resid": 9.277616656858951e-05
+        "signed_chi_conj_q": "0.4901256523",
+        "rel_resid": 9.25298133221663e-05
       },
       {
         "lambda": [
@@ -312,8 +321,8 @@
           2
         ],
         "chi_qinv": "3.497563891",
-        "signed_chi_conj_q": "3.497295181",
-        "rel_resid": 5.9749211136050924e-05
+        "signed_chi_conj_q": "3.497294407",
+        "rel_resid": 5.99214304339108e-05
       },
       {
         "lambda": [
@@ -327,8 +336,8 @@
           1
         ],
         "chi_qinv": "1.972820738",
-        "signed_chi_conj_q": "1.972272763",
-        "rel_resid": 0.00018436232059155974
+        "signed_chi_conj_q": "1.972272446",
+        "rel_resid": 0.00018446891386482731
       },
       {
         "lambda": [
@@ -343,8 +352,8 @@
           1
         ],
         "chi_qinv": "0.4701917102",
-        "signed_chi_conj_q": "0.4698056559",
-        "rel_resid": 0.0002626566775102883
+        "signed_chi_conj_q": "0.4698058864",
+        "rel_resid": 0.0002624998191001618
       },
       {
         "lambda": [
@@ -357,8 +366,8 @@
           3
         ],
         "chi_qinv": "-4.249069405",
-        "signed_chi_conj_q": "-4.249402911",
-        "rel_resid": 6.353201657005609e-05
+        "signed_chi_conj_q": "-4.249402023",
+        "rel_resid": 6.336293281212476e-05
       },
       {
         "lambda": [
@@ -372,8 +381,8 @@
           2
         ],
         "chi_qinv": "-1.673747722",
-        "signed_chi_conj_q": "-1.674395665",
-        "rel_resid": 0.00024227635179888973
+        "signed_chi_conj_q": "-1.674395262",
+        "rel_resid": 0.0002421256942513677
       },
       {
         "lambda": [
@@ -388,8 +397,8 @@
           1
         ],
         "chi_qinv": "-3.215890878",
-        "signed_chi_conj_q": "-3.216317898",
-        "rel_resid": 0.00010127784922281323
+        "signed_chi_conj_q": "-3.216317342",
+        "rel_resid": 0.00010114603051910857
       },
       {
         "lambda": [
@@ -404,14 +413,14 @@
           6
         ],
         "chi_qinv": "-1.559758658",
-        "signed_chi_conj_q": "-1.559870281",
-        "rel_resid": 4.360488506729814e-05
+        "signed_chi_conj_q": "-1.5598702",
+        "rel_resid": 4.3573092399129964e-05
       }
     ],
-    "bar_conjugate_max_rel_resid": 0.0002626566775102883,
-    "sum_y_chi_bound": "0.38835720735922143664",
-    "tr_M": "0.38835720735922143664",
-    "scalar_binding_trace_diff": "0.59516882504552689904",
+    "bar_conjugate_max_rel_resid": 0.0002624998191001618,
+    "sum_y_chi_bound": "0.57517224391777187083",
+    "tr_M": "0.57517224391777187083",
+    "scalar_binding_trace_diff": "0.5565446604044382119",
     "chi_bound_zeros": [],
     "top3_binding_lambda": [
       [
@@ -424,10 +433,9 @@
       ],
       [
         3,
-        2,
-        1
+        3
       ]
     ],
-    "uniform_delta_magnitude": "11.209699136832691541"
+    "uniform_delta_magnitude": "7.5688065586485218938"
   }
 }

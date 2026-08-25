@@ -110,6 +110,7 @@ from chi_monotone_transfer import (  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 
@@ -330,7 +331,7 @@ def main() -> int:
                  "z-score to 0 and pass the 3-sigma gate trivially (a false "
                  "validation). Use --no-hutchinson to skip the cross-check.")
 
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q_50_DIGIT_STR)
     qi0 = 1 / q0
     isotopes = list(ISOTOPES) + ([ISO_5HE] if args.with_5he else [])
@@ -373,7 +374,7 @@ def main() -> int:
             drow = {"n": n, "n_lambda": len(dref),
                     "max_rel_transfer_vs_dense": mp.nstr(iso_rel, 4),
                     "worst_lambda": list(worst[0]) if worst else None,
-                    "dense_wall_sec": round(time.time() - td, 2)}
+                    "dense_wall_sec": f"{time.time() - td:.2f}"}
             print(f"      dense n={n}: max_rel(transfer,dense)="
                   f"{mp.nstr(iso_rel, 4)}  ({time.time()-td:.1f}s)", flush=True)
 
@@ -403,7 +404,7 @@ def main() -> int:
                 "exact_dim": edim,
                 "mode": ("fully-stochastic" if edim == 0
                          else f"stochastic(d>{edim})"),
-                "hutch_wall_sec": round(hwall, 2),
+                "hutch_wall_sec": f"{hwall:.2f}",
             }
             hutch_checks.append(hrow)
             print(f"      hutch n={n}: transfer={mp.nstr(Ga, 10)} "

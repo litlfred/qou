@@ -46,7 +46,7 @@ from hecke_core import E_HARTREE_EV
 from witness_base import WitnessBuilder
 from experimental_constants import D0_CO_EV  # canonical experimental ref (not inline)
 
-z = 1.0 / (q0 ** 0.5 + qi ** 0.5)
+z = q0**3 / (q0**2 + 1)
 TWO_Q = q0 + qi
 E_MOL = E_HARTREE_EV / TWO_Q ** 2          # derived molecular scale (no hardcode)
 DRESS = 5                                   # B3-confinement dressing of pe crossing

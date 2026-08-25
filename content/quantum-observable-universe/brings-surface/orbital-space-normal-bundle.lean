@@ -118,10 +118,13 @@ theorem orbital_dim_eq_square (n : ℕ) :
     geometry specific to the QOU framework. -/
 -- Ref: [manuscript] Ch. 6, §3 — "The critical step"
 -- Ref: [kock2004] Kock, "Frobenius Algebras and 2D Topological Quantum Field Theories," CUP LMS Student Texts 59, 2004
-axiom mode_is_so3_irrep :
+theorem mode_is_so3_irrep :
   ∀ (ℓ : ℕ), ∃ (V : Type) (acg : AddCommGroup V) (mod : @Module R_q V _ acg.toAddCommMonoid),
     @Module.Finite R_q V _ acg.toAddCommMonoid mod ∧
-    @Module.finrank R_q V _ acg.toAddCommMonoid mod = 2 * ℓ + 1
+    @Module.finrank R_q V _ acg.toAddCommMonoid mod = 2 * ℓ + 1 := by
+  intro ℓ
+  use (Fin (2 * ℓ + 1) → R_q), inferInstance, inferInstance, inferInstance
+  simp
 
 -- ═══════════════════════════════════════════════════════════════════
 -- §4. Mode cutoff

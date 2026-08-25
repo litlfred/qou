@@ -160,7 +160,7 @@ structure VolThroughTau (C : Type*) [Category C] (Arch : ArchimedeanCategory) wh
 
 /-- The factorization is by definition: extracting the `factors`
     field of a `VolThroughTau` immediately yields the equation. -/
-theorem VolThroughTau.factors_def {C : Type*} [Category C] {Arch : ArchimedeanCategory}
+theorem factors_def {C : Type*} [Category C] {Arch : ArchimedeanCategory}
     (v : VolThroughTau C Arch) :
     v.knotVol = v.τ.archRestriction v.algVol :=
   v.factors

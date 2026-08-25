@@ -14,7 +14,6 @@ export default conjecture({
     "prop:quantum-dilogarithm-stratified",
     "def:quantum-dilogarithm-disambiguation",
     "def:borromean-baryon",
-    "prop:exterior-square-borromean",
     "prop:atom-knot-exists",
     "prop:reeb-bundle-complement-equals-volume",
   ],
@@ -37,7 +36,6 @@ export default conjecture({
     "axiom-class",
     "open-problem",
     "conditional-on-class",
-    "non-scholarly-voice-exception",
     "quantum-dilogarithm",
   ],
 });

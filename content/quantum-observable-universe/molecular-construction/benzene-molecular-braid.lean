@@ -1,6 +1,8 @@
 -- Ref: [manuscript] Ch. 10, §benzene-molecular-braid
 -- Benzene C₆H₆ as a molecular braid
 
+namespace QOU.Molecular
+
 /-- **Benzene C₆H₆** as a molecular braid with 120 strands.
 
     6 carbons (6 × 18 = 108 strands) + 6 hydrogens (6 × 2 = 12 strands).
@@ -22,3 +24,5 @@ structure BenzeneBraid where
 
 /-- Benzene strand count: 6 × carbon(18) + 6 × hydrogen(2). -/
 theorem benzene_strands : 6 * 18 + 6 * 2 = 120 := by decide
+
+end QOU.Molecular

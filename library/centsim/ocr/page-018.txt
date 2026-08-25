@@ -1,0 +1,47 @@
+268 M. Geck and R. Rouquier
+
+Note that the class polynomials have the following properties. Let C,C’
+be conjugacy classes in W, and w € C’. Then
+
+fue = bcc" ifwe Chin:
+
+Moreover, if we specialize all parameters u, to 1 then the function fc
+specializes to the indicator function of the conjugacy class C and, hence,
+the element zc specializes to the class sum of C' in AW. Thus, the
+elements {zc} indeed are “generic” analogues of the class sums.
+
+Lemma 5.1 Let B be a commutative A-algebra and z = Dwew duTw €
+Z(BH). Let C be a conjugacy class in W. Then the following hold:
+
+(1) If w,w' € Crin then ay = ay.
+
+(2) Ifw € C does not have minimal length, then there exists an element
+w’' € C and an element s € S such that l(w) = I(w’), U(sw's) =
+U(w') — 2 and ay = ay = (1/Us)@sw's + (1 — 1/ts)Osu-
+
+Proof. The coefficient a, of T,, in z is given by r(zT¥). Now assume
+that TY and Ty (for v,w € W) are conjugate by a unit, say h € BH.
+Using that 7 is a central function and that z is a central element, we
+deduce that
+
+ay = 7(2TY) = T(zhTY ho!) = r(h zhTY) = 7(2TX) = ay.
+
+Now let w,w’ € C and x € W such that (w) = U(w'),w! = rw},
+and I(rw) = I(x) + Uw). As in [Ge-Pf], we can compute in BH that
+T,T, = Ty Tr, hence T,, and T,y are conjugate in BH. A similar relation
+will also hold with w, w’, x replaced by their inverses. Thus, Ty and T,y,
+are conjugate in BH. Using [Ge-Pf, Theorem 1.1], we conclude that TY
+andTy, are conjugate in BH, for all w,w’ € Cirin. Hence, (1) is proved
+using the above argument.
+
+Now let w,w” € W and s € S such that w” = sws and I(w”) < I(w).
+As in [Ge-Pf] we see that, if /(w) = /(w”), the element T,, is conjugate
+to Tous. If I(w”) = l(w) —2 then T, is conjugate to usTsws + (Us — 1)Tws-
+Again, similar relations hold with w replaced by w7!. Thus, Ty will
+be conjugate either to TY,, or to (1/us)Ty,, + (1 — 1/us)TX,. Now, by
+[Ge-Pf, Theorem 1.1], there exist w’ € W such that I(w') = U(w), Tw
+is conjugate to T,, and I(sw’s) = I(w’) — 2. Hence, the argument above
+implies (2). a
+
+Theorem 5.2 Let B be a commutative A-algebra. Then, the set {1p @
+zc} (where C runs over the conjugacy classes of W) forms a B-basis for

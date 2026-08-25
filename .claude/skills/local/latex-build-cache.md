@@ -9,8 +9,9 @@ description: >
   Both standard caching mechanisms were tested on a real engine and FAILED
   on this toolchain (see §Negative results), so there is currently NO
   preamble/diagram cache. What DOES work: getting a TeX engine into the
-  sandbox (`scripts/install-tex.sh`) and quick changed-chapter feature
-  builds (`scripts/feature-build.sh`). Read this BEFORE re-attempting a
+  sandbox (`../folio-assistant/scripts/install-tex.sh`) and quick
+  changed-chapter feature builds
+  (`../folio-assistant/scripts/feature-build.sh`). Read this BEFORE re-attempting a
   LaTeX cache so you don't re-walk the rakes.
 allowed-tools: Read Bash Grep Glob Edit Write Skill
 ---
@@ -79,8 +80,8 @@ only ran on `workflow_dispatch`, so the image was never actually built.
 
 | Tool | Role |
 |------|------|
-| [`scripts/install-tex.sh`](../../../scripts/install-tex.sh) | Get a TeX engine into the sandbox (the base Ubuntu repos are reachable; only launchpad PPAs are firewalled). Idempotent. **This is how you compile/verify at all.** |
-| [`scripts/feature-build.sh`](../../../scripts/feature-build.sh) | Quick draft: compiles ONLY the changed chapters (not the full 1712-pp paper) with the **inline** preamble, + per-chapter latexdiff (colored + plain). Speedup is from fewer chapters, not a format. **Sets `QOU_FAST_PREVIEW=1` by default** (margins off, ~2× on top). |
+| [`../folio-assistant/scripts/install-tex.sh`](../../../../folio-assistant/scripts/install-tex.sh) | Get a TeX engine into the sandbox (the base Ubuntu repos are reachable; only launchpad PPAs are firewalled). Idempotent. **This is how you compile/verify at all.** |
+| [`../folio-assistant/scripts/feature-build.sh`](../../../../folio-assistant/scripts/feature-build.sh) | Quick draft: compiles ONLY the changed chapters (not the full 1712-pp paper) with the **inline** preamble, + per-chapter latexdiff (colored + plain). Speedup is from fewer chapters, not a format. **Sets `QOU_FAST_PREVIEW=1` by default** (margins off, ~2× on top). |
 | **`QOU_FAST_PREVIEW=1`** env flag | Read by `generate-main-tex.ts`: no-ops `\marginnote`, skipping the 2944 per-block source/issue/Lean icons that cost **~50%** of compile (19.5 s → 9.2 s). Body byte-identical; **published builds leave it unset**. The biggest single *preview* speedup. |
 
 ## Getting a TeX engine in the sandbox
@@ -90,7 +91,7 @@ are reachable (only the launchpad PPAs — `ondrej/php`, `deadsnakes` —
 are firewalled and break `apt-get update`). Run:
 
 ```bash
-scripts/install-tex.sh     # run with run_in_background: true (~5 GB, ~10-20 min)
+bash ../folio-assistant/scripts/install-tex.sh   # run_in_background: true (~5 GB, ~10-20 min)
 ```
 
 It disables the firewalled PPAs, installs `texlive-full` + `latexmk`,
@@ -101,7 +102,7 @@ returning a path is the ready signal).
 ## Quick feature build
 
 ```bash
-scripts/feature-build.sh [--base origin/main] [--chapters slug1,slug2]
+bash ../folio-assistant/scripts/feature-build.sh [--base origin/main] [--chapters slug1,slug2]
 # → build-feature/changed.pdf + per-chapter <c>.diff-color.pdf / .diff-plain.pdf
 ```
 

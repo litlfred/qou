@@ -102,7 +102,7 @@ Candidate 3 is most general.
 
 Identifying *any one* of the three candidates explicitly would:
 
-1. **Close the depth-3 row of B1.** The keystone ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
+1. **Close the depth-3 row of the depth correspondence.** The correspondence ([`conj:gb-depth-period-correspondence`](#conj:gb-depth-period-correspondence))
    currently has the figure-8 row at depth 2 verified and the trilog
    canonical witness at depth 3, but no geometric image for the
    trilog value. Identification would make the depth-3 prediction

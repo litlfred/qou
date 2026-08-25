@@ -1,4 +1,4 @@
-*Let $R = \mathbb{Z}[q^{± 1/2}, (q-q^{-1})^{-1}]$ be the base ring. Let $h = q - q^{-1}$ denote the skein parameter. Let $T_{2,9}$ and $T_{3,5}$ be the two genus-$4$-saturating torus knots ([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness)). Let $\delta_q$ denote the $q$-dimension decoration ([`def:delta-q-decoration`](#def:delta-q-decoration)). The bare electromagnetic fine-structure constant $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ ([`prop:em-coupling-projection`](#prop:em-coupling-projection)) admits the categorical-trace-ratio decomposition:*
+*Let $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$ be the base ring. Let $h = q - q^{-1}$ denote the skein parameter. Let $T_{2,9}$ and $T_{3,5}$ be the two genus-$4$-saturating torus knots ([`prop:force-carrier-bring-uniqueness`](#prop:force-carrier-bring-uniqueness)). Let $\delta_q$ denote the $q$-dimension decoration ([`def:delta-q-decoration`](#def:delta-q-decoration)). The bare electromagnetic fine-structure constant $1/\alpha_{EM} = q\,[9]_q\,[10]_q$ ([`prop:em-coupling-projection`](#prop:em-coupling-projection)) admits the categorical-trace-ratio decomposition:*
 
 $$
   \boxed{\;\;
@@ -44,4 +44,4 @@ Evaluation at $q_0 \approx 1.1099786$ yields an exact match to within $10^{-12}$
 
 The witness assertion validates this match: [`delta-q-decoration.witness.json`](computations/delta-q-decoration.witness.json).
 
-Expressing the relationship as a trace ratio on the $q$-dimension layer reformulates existing projection identities. This closes the categorical framework. The empirical electromagnetic coupling reduces to a structural trace-algebraic constraint.
+Expressing the relationship as a trace ratio on the $q$-dimension layer reformulates existing projection identities.

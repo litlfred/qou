@@ -69,7 +69,12 @@ HERE = Path(__file__).resolve().parent
 if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # Paper-canonical "low-isotope" set per content block
 #   `rem:recomputed-low-isotope-mass-table`
@@ -85,11 +90,30 @@ CANONICAL_WITNESS = _pb.witness_path("canonical-mass-table-extended.witness.json
 
 
 def run_canonical(method: str, target_dps: int) -> None:
-    """Invoke canonical_mass_table_extended.py end-to-end."""
+    """Invoke canonical_mass_table_extended.py end-to-end, at FULL coverage.
+
+    Deliberately does **not** pass `--atoms` (bean `qou-xwet`).
+
+    This used to restrict the canonical run to `LOW_ISOTOPE_ATOMS` as a speed
+    optimisation. That was destructive and redundant at the same time:
+
+    * **Destructive** — the canonical script's output filename is fixed, so the
+      restricted run overwrote `canonical-mass-table-extended.witness.json`
+      with a five-row table. On `main` that dropped 4He and every A >= 5 row,
+      and silently repointed `registry.ts`'s positional `B_2H_AME_MeV` pin
+      (`data.rows.2.B_AME_MeV`) at a different nuclide.
+    * **Redundant** — `project_to_low_isotope()` below already filters to
+      `A <= LOW_ISOTOPE_A_MAX`, so restricting the *upstream* run bought
+      nothing this wrapper needs.
+
+    Full coverage is slower. That is the correct trade for a shared committed
+    artifact, and `--no-rerun-canonical` remains available when the canonical
+    witness is already fresh. The canonical script now also refuses a partial
+    write outright, so this call could not silently regress again.
+    """
     cmd = [
         sys.executable, "-u",
         str(HERE / "canonical_mass_table_extended.py"),
-        "--atoms", ",".join(LOW_ISOTOPE_ATOMS),
         "--method", method,
         "--target-dps", str(target_dps),
     ]
@@ -109,7 +133,7 @@ def project_to_low_isotope() -> dict:
             f"canonical witness missing: {CANONICAL_WITNESS}. "
             f"Did canonical_mass_table_extended.py write it?"
         )
-    src = json.loads(CANONICAL_WITNESS.read_text())
+    src = record_upstream(CANONICAL_WITNESS, _UPSTREAM_RECORDS)
     rows = src["data"]["rows"]
     low_rows = [r for r in rows if r.get("A", 99) <= LOW_ISOTOPE_A_MAX]
     return {
@@ -175,6 +199,7 @@ def main() -> int:
         engine="python+mpmath",
         start_time=t0,
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     (
         builder
         .set_description(
@@ -197,7 +222,30 @@ def main() -> int:
             "commitSha": src.get("commitSha"),
         })
     )
-    out = builder.save()
+    # Declare the q0 pin, INHERITED from the witness this projects.
+    #
+    # `builder.save()` was called bare, so the emitted witness carried
+    # `q0Anchor: null` and `q0Value: null` — it could not say which anchor
+    # layer its numbers belonged to. AGENTS.md: "Say which pin you used."
+    #
+    # That is not a cosmetic gap. A witness that does not declare its layer is
+    # the enabling condition for comparing across layers and reading the
+    # difference as a defect — which is exactly the mistake retracted in bean
+    # `qou-4e5k` on this arc (a ~7.8e-08 "second discrepancy" between this
+    # table and a MUON-anchored one, where the gap was the layer separation
+    # itself, not an error).
+    #
+    # Inherited rather than re-derived: this producer computes nothing. It is a
+    # thin projection of `canonical-mass-table-extended.witness.json` restricted
+    # to A <= LOW_ISOTOPE_A_MAX, so its rows are that witness's rows and its
+    # layer is that witness's layer by construction. Reading `q_parameter`
+    # directly here would be worse — it would declare the pin this process
+    # happens to import rather than the pin the numbers were computed at, and
+    # the two can differ precisely when the source witness is stale.
+    out = builder.save({
+        "q0Anchor": src.get("q0Anchor"),
+        "q0Value": src.get("q0Value"),
+    })
     print()
     print(f"  Wrote {out.name} ({projected['n_atoms']} atoms)")
     return 0

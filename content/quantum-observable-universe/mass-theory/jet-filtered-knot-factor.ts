@@ -9,7 +9,6 @@ export default conjecture({
   },
   uses: [
     "prop:confined-knot-binding",
-    "prop:hook-weight-derivation",
   ],
   tags: [
     "tier:S",

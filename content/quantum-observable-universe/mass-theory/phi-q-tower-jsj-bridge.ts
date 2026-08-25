@@ -14,7 +14,6 @@ export default remark({
     "conj:kashaev-volume-conjecture",
     "cor:quantum-dilogarithm",
     "prop:gb-spectral-sequence",
-    "prop:graded-trace-residue-split",
   ],
   cites: ["kashaev1997", "murakami-murakami2001", "thurston1978", "neumann-zagier1985", "zagier1986"],
   tags: [

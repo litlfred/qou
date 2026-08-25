@@ -82,7 +82,7 @@ structure BBStratification (n : ℕ) where
   refines_trans : ∀ i j k, refines i j → refines j k → refines i k
 
 /-- The set of complete-intersection strata in a BB-stratification. -/
-def BBStratification.completeIntersectionStrata
+def completeIntersectionStrata
     {n : ℕ} (S : BBStratification n) : Set S.Index :=
   { i | S.is_complete_intersection i }
 

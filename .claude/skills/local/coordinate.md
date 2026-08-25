@@ -85,8 +85,9 @@ commit.
 - **When `main` lands new commits** during your session — if any
   touch the same content blocks, conjectures, or compute scripts you
   are editing, treat as a sibling PR for §3 classification purposes.
-- **When a code-review comment lands on your own PR** (gemini-code-
-  assist, copilot-pull-request-reviewer, codex, or human reviewers)
+- **When a code-review comment lands on your own PR**
+  (copilot-pull-request-reviewer, codex, or human reviewers;
+  gemini-code-assist is sunset)
   — see §5 *Responding to review comments*.
 - When you encounter a **finding that contradicts another PR's
   framing** — write the disagreement up explicitly, post it to both
@@ -163,26 +164,26 @@ Use `mcp__github__add_issue_comment` (or `gh pr comment`) on each
 sibling PR with non-trivial relationship.  Format:
 
 ```markdown
-## Coordination from #<your PR>
+## Coordination from #NNN
 
-**Picking up:** <one sentence — which workplan phase / task>
+**Picking up:** {one sentence — which workplan phase / task}
 
 **Scope confirmation:**
 - I will touch: `path/to/file:line-range`, `path/to/other`, …
-- I will not touch: `<the sibling's territory>`
+- I will not touch: `{the sibling's territory}`
 
 **Cherry-pick from you:**
-- <what you need from them; e.g. "Lean class template you used for
-  `conj:crystal-graph-realization`">
+- {what you need from them; e.g. "Lean class template you used for
+  `conj:crystal-graph-realization`"}
 
 **Cherry-pick for you:**
-- <what you'll produce that they may want; e.g. "the witness reader
+- {what you'll produce that they may want; e.g. "the witness reader
   for `term6-residues-at-roots.witness.json` is the same shape they
-  need for the canonical T6 path">
+  need for the canonical T6 path"}
 
-**Asks (small):** <questions they can answer in one line>
+**Asks (small):** {questions they can answer in one line}
 
-**Escalation to author:** <if any; see §6>
+**Escalation to author:** {if any; see §6}
 ```
 
 Keep it short.  One ask per ask.  No prose.
@@ -192,14 +193,14 @@ Keep it short.  One ask per ask.  No prose.
 When you commit something cherry-pickable, post a follow-up:
 
 ```markdown
-## Progress from #<your PR> · `<short-task-name>`
+## Progress from #NNN · `{short-task-name}`
 
-- Landed in `<commit-sha>`: <one sentence>
+- Landed in `{commit-sha}`: {one sentence}
 - Cherry-pick file pointers: `path/file.py:fn`, `path/file.lean:Decl`
-- Updated [`<your-audit-or-plan-doc>.md`](…) §<section>: <what
-  changed> — and/or appended a row to
-  [`docs/coordination/<goal-slug>.md`](…)
-- Next: <next task on your queue>
+- Updated [`{your-audit-or-plan-doc}.md`](…) §{section}: {what
+  changed} — and/or appended a row to
+  [`docs/coordination/{goal-slug}.md`](…)
+- Next: {next task on your queue}
 ```
 
 Cherry-pick file pointers are the load-bearing part — the sibling
@@ -207,8 +208,8 @@ agent should be able to copy/cite without reading your whole diff.
 
 ### 5.  Responding to review comments on your own PR
 
-Code-review tools (`gemini-code-assist[bot]`,
-`copilot-pull-request-reviewer[bot]`, `codex[bot]`) and human
+Code-review tools (`copilot-pull-request-reviewer[bot]`,
+`codex[bot]`; `gemini-code-assist[bot]` is sunset) and human
 reviewers leave comments on your PR.  **Do not silently accept or
 silently dismiss.**  The same rules that govern cross-PR
 inconsistencies (§6) govern review feedback.
@@ -252,16 +253,16 @@ After triaging all threads from one review pass, post a **single**
 PR-level summary using `mcp__github__add_issue_comment`:
 
 ```markdown
-Thanks @<reviewer> — addressed all <N> threads in [`<sha>`](<commit-url>).
+Thanks @REVIEWER — addressed all {N} threads in [`{sha}`]({commit-url}).
 
 | # | Issue | Verdict | Resolution |
 |---|---|---|---|
 | 1 | Off-by-one in $I = …$ | accept | Fixed: `σ_{n_1+p-2}` |
 | 2 | … | accept-with-modification | Fixed differently — see note below |
 | 3 | … | reject-with-reason | See reply on thread |
-| 4 | … | escalate | ⚠️ tagged @<author> |
+| 4 | … | escalate | ⚠️ tagged @AUTHOR |
 
-**Re #2 (note):** <short paragraph explaining the modification>
+**Re #2 (note):** {short paragraph explaining the modification}
 ```
 
 This avoids per-thread reply storms while still giving a paper
@@ -289,13 +290,13 @@ framing.  Post on every affected PR:
 ```markdown
 ## ⚠️ Inconsistent finding — author input requested
 
-- This PR's claim: <yours, file_path:line cited>
-- Sibling #<N>'s claim: <theirs, file_path:line cited>  (or:
-  Reviewer's claim in <comment-url>)
-- Likely cause: <best guess, ≤ 2 sentences>
-- Resolution requested: <which framing to adopt going forward>
+- This PR's claim: {yours, file_path:line cited}
+- Sibling #{N}'s claim: {theirs, file_path:line cited}  (or:
+  Reviewer's claim in {comment-url})
+- Likely cause: {best guess, ≤ 2 sentences}
+- Resolution requested: {which framing to adopt going forward}
 
-Tagging @<author>.  Will hold downstream work blocked on this.
+Tagging @AUTHOR.  Will hold downstream work blocked on this.
 ```
 
 The author owns the resolution.  Do not "split the difference" or
@@ -480,9 +481,9 @@ audit subjects, your changed files, your conjectures), **prompt
 the author**:
 
 ```markdown
-**Q from #<your PR>:** I see #<N> (`<branch>`) opened at
-<timestamp>; should I add it to my coordination scope (§3) and
-post intent?  Or is it independent of the <goal> goal-thread?
+**Q from #NNN:** I see #{N} (`{branch}`) opened at
+{timestamp}; should I add it to my coordination scope (§3) and
+post intent?  Or is it independent of the {goal} goal-thread?
 ```
 
 Do not silently add the new PR to scope — the author may have
@@ -502,9 +503,9 @@ Each PR appends a row (no rewrites of others' rows):
 ```markdown
 | Date | PR | Phase | Status | Cherry-pick |
 |------|----|-------|--------|-------------|
-| 2026-05-08 | #564 | P4′ T6 wire-up | landed `<sha>` | `t6_canonical_MeV` reader |
+| 2026-05-08 | #564 | P4′ T6 wire-up | landed `{sha}` | `t6_canonical_MeV` reader |
 | 2026-05-08 | #565 | F8 pickle migration | in-progress | — |
-| 2026-05-08 | #567 | crystal R-matrix Sub-lemma 2.1 | landed `<sha>` | `conj:crystal-graph-realization` Lean class |
+| 2026-05-08 | #567 | crystal R-matrix Sub-lemma 2.1 | landed `{sha}` | `conj:crystal-graph-realization` Lean class |
 ```
 
 The ledger lives on the branch where the coordinator is currently
@@ -563,7 +564,7 @@ from a main-merged commit needs no `Cherry-pick of` line.
 Asks are a first-class artefact.  Format every cross-PR ask as:
 
 ```markdown
-**Q from #<your PR>:** <question>
+**Q from #NNN:** {question}
 
 (answers as inline replies on the destination PR)
 ```

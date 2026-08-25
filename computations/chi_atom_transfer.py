@@ -42,6 +42,7 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 
 from active_set_lr_profile import multi_lr  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 ZN = {
     "D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2),
@@ -111,7 +112,7 @@ def bratteli_state_sizes(A: int) -> list[tuple[int, int, int]]:
 def _self_test() -> int:
     """Foundation sanity: caches load, enumerator matches the oracle's
     partition set, Bratteli sizes match the audit."""
-    mp.mp.dps = 50
+    set_compute_dps()
     nuc = load_nucleon_chi()
     assert set(nuc) == {"p", "n"}, "nucleon cache species"
     assert len(nuc["p"]) == 3 and len(nuc["n"]) == 3, "3 partitions ⊢3 each"

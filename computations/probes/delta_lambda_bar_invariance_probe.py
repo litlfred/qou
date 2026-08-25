@@ -104,22 +104,24 @@ import mpmath
 from mpmath import mp
 
 sys.path.insert(0, str(Path(__file__).parent))
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.dps = 50
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+
+set_compute_dps()
 
 HERE = Path(__file__).parent
 
 # ── Load inputs ───────────────────────────────────────────────────
 
 # χ_λ × y_λ contributions per partition (already in m_e units)
-CHI_DEUT = json.loads(
-    (_pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE)).read_text()
-)
+CHI_DEUT = record_upstream(_pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE), _UPSTREAM_RECORDS)
 # Empirical target (signed, in m_e units): -B_D / m_e
-EMP = json.loads(
-    (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
-)
+EMP = record_upstream(_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE), _UPSTREAM_RECORDS)
 
 TARGET_SIGNED = mp.mpf(EMP["data"]["per_atom"]["D"]["target_signed"])
 
@@ -247,6 +249,7 @@ def main() -> int:
 
     # ── Witness ───────────────────────────────────────────────────
     w = WitnessBuilder("delta-lambda-bar-invariance-probe", engine="python+mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Probe-1 from docs/audits/2026-05-24-delta-lambda-closure-"
         "synthesis-next-step.md. Imposes structural constraint "

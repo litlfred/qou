@@ -51,6 +51,8 @@ from pathlib import Path
 from typing import Optional
 
 sys.path.insert(0, str(Path(__file__).parent))
+from mpmath import mp  # noqa: E402
+from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 
@@ -59,7 +61,9 @@ REALIZER_WITNESS = _pb.witness_path("markov-substrate-realization.witness.json",
 TERM6_FULL_WITNESS = _pb.witness_path("term6-full-pole-sum.witness.json", HERE)
 OUTPUT_WITNESS = _pb.witness_path("markov-pipeline-cross-validation.witness.json", HERE)
 
-AGREEMENT_RTOL = 1e-9
+# A STRING, not a float literal: the comparison below is mpf end to end, and a
+# Python float here is the one place a float64 could re-enter the numeric path.
+AGREEMENT_RTOL = "1e-9"
 
 
 def load_realizer() -> Optional[dict]:
@@ -76,7 +80,7 @@ def load_term6_full() -> Optional[dict]:
         return json.load(f)
 
 
-def realizer_archimedean_by_atom(realizer_data: dict) -> dict[str, float]:
+def realizer_archimedean_by_atom(realizer_data: dict) -> dict[str, mp.mpf]:
     """Extract per-atom archimedean tr_M(q_0) values.
 
     The realizer emits results under the WitnessBuilder `data.results`
@@ -91,7 +95,7 @@ def realizer_archimedean_by_atom(realizer_data: dict) -> dict[str, float]:
         atom = atom_record["atom"]
         for rz in atom_record.get("realizations", []):
             if rz.get("place") == "infty" and "tr_M_at_q0" in rz:
-                by_atom[atom] = float(rz["tr_M_at_q0"])
+                by_atom[atom] = mp.mpf(str(rz["tr_M_at_q0"]))
                 break
     return by_atom
 
@@ -101,11 +105,11 @@ def term6_archimedean_by_atom(term6_data: dict) -> dict[str, float]:
     for atom_record in term6_data.get("data", {}).get("atoms", []):
         atom = atom_record.get("atom")
         if atom and "tr_M_at_q0_polynomial" in atom_record:
-            by_atom[atom] = float(atom_record["tr_M_at_q0_polynomial"])
+            by_atom[atom] = mp.mpf(str(atom_record["tr_M_at_q0_polynomial"]))
     return by_atom
 
 
-def compare_value(label: str, x: float, y: float, rtol: float) -> dict:
+def compare_value(label: str, x: mp.mpf, y: mp.mpf, rtol: str) -> dict:
     """Relative-tolerance comparison; returns a per-atom check.
 
     The denominator `max(abs(x), abs(y))` is non-zero whenever
@@ -113,24 +117,34 @@ def compare_value(label: str, x: float, y: float, rtol: float) -> dict:
     one-sided-zero cases correctly (rel_diff = 1.0, i.e. 100% off).
     Only the both-zero case needs special-casing to avoid
     division-by-zero.
+
+    PRECISION (2026-08-23, bean `qou-bm4i`). `x` and `y` used to be `float`,
+    cast at load. That put an `rtol = 1e-9` comparison on values truncated to
+    ~1e-16 while both source witnesses advertise `output_dps: 60` — the
+    comparison could not resolve better than seven orders inside its own
+    tolerance. `mpf` end to end now, and the serialized fields carry the full
+    width rather than a float64 shadow of it.
     """
     if x == 0 and y == 0:
         agree = True
-        rel = 0.0
+        rel = mp.mpf(0)
     else:
         rel = abs(x - y) / max(abs(x), abs(y))
-        agree = rel <= rtol
+        agree = rel <= mp.mpf(rtol)
     return {
         "atom": label,
-        "realizer_value": x,
-        "term6_value": y,
-        "abs_diff": abs(x - y),
-        "rel_diff": rel,
-        "agree": agree,
+        "realizer_value": fmt(x),
+        "term6_value": fmt(y),
+        "abs_diff": fmt(abs(x - y)),
+        "rel_diff": fmt(rel),
+        "agree": bool(agree),
     }
 
 
 def main() -> int:
+    # `_precision` does not set mp.dps on import; without this the mpf
+    # path below runs at mpmath's default 15 and the fix is cosmetic.
+    set_compute_dps()
     realizer_data = load_realizer()
     if realizer_data is None:
         print(
@@ -183,7 +197,7 @@ def main() -> int:
         "Mittag-Leffler full-pole-sum computation (term6_full_pole_sum.py)."
     )
     w.set_content_block("prop:full-pole-structure-mass-trace")
-    w.add_parameter("agreement_rtol", AGREEMENT_RTOL)
+    w.add_parameter("agreement_rtol", fmt(mp.mpf(AGREEMENT_RTOL)))
     w.add_data("reference_blocks", [
         "prop:full-pole-structure-mass-trace",
         "prop:gb-residue-spectral-sum",
@@ -202,7 +216,9 @@ def main() -> int:
             f"tr_M_at_q0_archimedean[{c['atom']}]",
             computed=c["realizer_value"],
             expected=c["term6_value"],
-            tolerance=AGREEMENT_RTOL * max(abs(c["realizer_value"]), abs(c["term6_value"])),
+            tolerance=fmt(mp.mpf(AGREEMENT_RTOL)
+                          * max(abs(mp.mpf(c["realizer_value"])),
+                                abs(mp.mpf(c["term6_value"])))),
         )
 
     # Asymmetric coverage is a failure: a PASS witness must require
@@ -234,8 +250,9 @@ def main() -> int:
     for c in checks:
         marker = "✓" if c["agree"] else "✗"
         print(
-            f"  {marker} {c['atom']:>24}  realizer={c['realizer_value']:.10f}  "
-            f"term6={c['term6_value']:.10f}  rel_diff={c['rel_diff']:.2e}"
+            # These are 60-digit `fmt` strings now, not floats; re-parse for display.
+            f"  {marker} {c['atom']:>24}  realizer={mp.mpf(c['realizer_value']):.10f}  "
+            f"term6={mp.mpf(c['term6_value']):.10f}  rel_diff={mp.mpf(c['rel_diff']):.2e}"
         )
     if only_in_realizer or only_in_term6:
         print(f"  asymmetric atom coverage: realizer-only={only_in_realizer}, term6-only={only_in_term6}")

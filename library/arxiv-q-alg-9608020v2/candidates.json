@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-q-alg-9608020v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "727268098db7f23d90cf3ec2ef0b566f2cfc4d722338046429e9cc2934b684e5",
+  "file": "9608020v2.pdf"
+ },
+ "provenance": {
+  "title": "\u2202x i + (n \u2212j)\u03b8 +u 1\u2264i,j \u2264n D(u;\u03b8)P\u03bb (x;\u03b8) = ( \u220f (\u03bb i + (n \u2212i)\u03b8 +u) P\u03bb (x;\u03b8),(1.1) where V (x) =\u220f i<j(xi \u2212xj) is the Vandermonde determinant and u is a parame- ter. The operators {D(u;\u03b8),u \u2208 C} generate a commutative algebra; denote it by",
+  "authors": null,
+  "arxiv": {
+   "id": "q-alg/9608020",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "8 Sep 1997"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "(3.2) P\u03bb (1 +x1,..., 1 +xn;\u03b8)",
+   "section_file": "sections/sec-003-3-binomial-formula-given-a-partition-\u00b5-and-a-num.md",
+   "section_title": "Binomial formula. Given a partition \u00b5 and a number t set",
+   "pages": "3-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

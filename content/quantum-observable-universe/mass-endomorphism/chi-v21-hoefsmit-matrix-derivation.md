@@ -35,19 +35,18 @@ Unlike V_(3) where the inverse-Laurent has only one term ($q^{-1}/4$,
 giving bounded oscillation), V_(2,1) has two inverse terms ($q^{-1}/4$
 and $q^{-3}/4$), and the $q^{-3}/4$ term has $\binom{k+2}{2}$ growth
 $\sim k^2/2$. This matches the observed asymptotic $\sim k(k+3)/2$
-for the V_(2,1) coefficients (proved earlier in the conversation).
+for the V_(2,1) coefficients.
 
-## Deferred to follow-up PR
+## Not yet formalised
 
 The **full Lean matrix-product trace derivation** (computing
 $\mathrm{tr}\bigl(\prod_{c \in \beta} M_c\bigr)$ from the 2$\times$2
 matrices) requires:
 
 1. Importing the Hoefsmit $\sigma_0, \sigma_1$ definitions from
-   `hoefsmit-V21-cos-symmetrization.lean` (currently chapter-block
-   isolated — Lake module doesn't yet expose them).
-2. Resolving the YB cubic anomaly (`d_1 \leftrightarrow d_2` swap
-   per `rem:post-pr665-open-rd-inventory`) for matrix-level
+   `hoefsmit-V21-cos-symmetrization.lean`, which the Lean module does not
+   yet export.
+2. Resolving the YB cubic anomaly (the `d_1 \leftrightarrow d_2` swap) for matrix-level
    correctness. (Note: the closed-form rational result is invariant
    under the swap.)
 3. The exact 11-crossing word order from `atomic_braid_to_crossings`
@@ -71,10 +70,10 @@ def beta_p_word_v21, beta_n_word_v21 : TypedB3Word
 
 noncomputable def chi_v21_on_word (q : ℝ) (w : TypedB3Word) : ℝ :=
   Matrix.trace (w.foldl ... fun acc c => acc * crossing_to_matrix q c)
+```
 
 The theorem statement is now **explicit at the matrix-product
-level**. The proof is the only remaining `sorry` in this
-chapter-block content — discharged by the substantive sympy
+level**. The proof is the only remaining `sorry` here — discharged by the substantive sympy
 verification recorded in `per-wedderburn-block-ck.witness.json`.
 
 A full Lean proof would unfold the 11-matrix product on

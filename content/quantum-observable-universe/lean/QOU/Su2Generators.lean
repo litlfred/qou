@@ -43,12 +43,12 @@ structure Su2Generators (G : Type*) [Group G] where
 
 /-- The commutator relation `[β,α] = βαβ⁻¹α⁻¹ = α⁻²` follows from the
     dihedral relation (manuscript). -/
-theorem Su2Generators.commutator {G : Type*} [Group G] (S : Su2Generators G) :
+theorem commutator {G : Type*} [Group G] (S : Su2Generators G) :
     S.β * S.α * S.β⁻¹ * S.α⁻¹ = S.α⁻¹ * S.α⁻¹ := by
   rw [S.dihedral]
 
 /-- `α` has order dividing 6: `α⁶ = 1` (since `α³ = z` and `z² = 1`). -/
-theorem Su2Generators.alpha_pow_six {G : Type*} [Group G] (S : Su2Generators G) :
+theorem alpha_pow_six {G : Type*} [Group G] (S : Su2Generators G) :
     S.α ^ 6 = 1 := by
   have h : S.α ^ 6 = (S.α ^ 3) ^ 2 := by
     rw [show (6 : ℕ) = 3 * 2 from rfl, pow_mul]

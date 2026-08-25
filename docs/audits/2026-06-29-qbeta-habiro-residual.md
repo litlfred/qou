@@ -109,6 +109,9 @@ falsification PRs #1593/#1842):
   observable level"), which is the **open keystone**, not a derived
   value.
 
+> **Correction 2026-08-16.** The `2.98 %` cross-anchor swing cited here is against a **superseded** muon `c_3 = −2.0097` (pre-#1422). The current pair gives **2.3748 %** (proton-normalised). The conclusion is unaffected — 2.3748 % is still vast beside the 10⁻⁵⁰ compute precision — but quote the current figure. Measured: [`qbeta_c3_crossanchor_swing_provenance_probe.py`](../../computations/qbeta/qbeta_c3_crossanchor_swing_provenance_probe.py).
+
+
 A term that moves this much on re-pinning is a **near-match, not a
 derivation** — exactly the trap that drove the documented 6-entry
 flip-flop. We do not propose it.

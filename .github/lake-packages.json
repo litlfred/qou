@@ -1,0 +1,21 @@
+{
+  "$comment": "Lake package roster for the lake-cache-refresh workflow. Each entry is one orphan-branch cache family (lake-cache/<package>-<toolchain-slug>). 'mathlib' (lake-root '.') warms the workspace-root Mathlib oleans and is the conventional first entry. The workflow reads this file to build its matrix \u2014 it hardcodes no package names. folio-assistant ships a SAMPLE copy; this is the authoritative one, because the lake-root paths below only resolve here.",
+  "packages": [
+    {
+      "package": "mathlib",
+      "lake-root": "."
+    },
+    {
+      "package": "qou",
+      "lake-root": "content/quantum-observable-universe/lean"
+    },
+    {
+      "package": "ugb",
+      "lake-root": "content/unital-groebner-bases/lean"
+    },
+    {
+      "package": "fred2005",
+      "lake-root": "content/fred2005-formal-groups/lean"
+    }
+  ]
+}

@@ -1,12 +1,11 @@
 **Typed-B_3 sub-braid extraction** — n-strand generalisation of the
-Track-C chain, narrowing the open axiomatic content to a SINGLE focused
+$c_3 = -2$ chain, narrowing the open axiomatic content to a SINGLE focused
 combinatorial fact.
 
 ## Scope of this closure
 
-Per the Track-C plan, the n-strand (= 3-strand for typed-B_3) case
-requires extracting sub-braids from the canonical 11-crossing braids
-β_p (uud) and β_n (udd). This file:
+The n-strand (= 3-strand for typed-B_3) case requires extracting sub-braids from the canonical 11-crossing braids
+β_p (uud) and β_n (udd). The companion Lean development:
 
 1. Defines `TypedBraidWord3` matching the Python framework's
    `atomic_braid_to_crossings` format.
@@ -18,8 +17,7 @@ requires extracting sub-braids from the canonical 11-crossing braids
 
 ## The chain composition
 
-Under the single axiomatic input, the full Track-C chain is fully
-Lean-proved:
+Under the single axiomatic input, the full chain is Lean-proved:
 
 $$
 \text{dominant sub-braid at } \varepsilon^6 \;\to\; \sigma^2 \in B_2
@@ -56,7 +54,7 @@ The Lean discharge of this axiom requires:
 Steps 1, 2, 4 are mechanical Lean infrastructure. Step 3 is the
 substantive combinatorial content.
 
-## Cumulative Track-C atoms
+## Cumulative atoms
 
 After this file:
 

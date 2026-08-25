@@ -469,21 +469,38 @@ If the universal Habiro structure holds at `q`, then both the m_μ
 R9+V9 closure and the Q_β c_3 3-rung closure represent genuine
 categorical derivations of their respective L2 observables at `q`.
 
-This is the §3b-cond conditional-class theorem: its conclusion is
-the L2 closure of both observables, conditional on the class instance
-which itself is the open work (Theorems 4 + 5).
+**Corrected 2026-08-21** (vacuity ledger,
+`proof-no-unused-hypothesis-rfl`, verdict genuine).  This was billed as
+"the §3b-cond conditional-class theorem: its conclusion is the L2
+closure of both observables, conditional on the class instance."  It is
+not, and never was:
 
-At present (2026-06-03), we have empirical witnesses showing the
-closures hold to within their L2 100× gates at proton-pinned q₀,
-but the class instance has NOT been constructed.
-NEAR-MATCH tier; production wiring unchanged. -/
+- both conjuncts are closed by `rfl`, so the statement is two
+  *definitional unfoldings* joined by `∧` — it says that
+  `m_mu_R9_V9` and `qbetaC3Closure` unfold to their own definitions;
+- neither `hq : 0 < q` nor the `[UniversalHabiroStructure q]` instance
+  was used, and the instance in particular was advertised as the
+  structure supplying the closure while contributing nothing.  Both
+  unused binders have been dropped, which is what makes the remaining
+  content honest: unfolding lemmas that do not pretend to be
+  conditional on an open structure.
+
+The instance could not have contributed: `UniversalHabiroStructure`'s
+two fields are `markov_trace_origin : True` and
+`cinquefoil_framing_t25_origin : True`, both self-described opaque
+markers, so the class constrains nothing.
+
+**A universal Habiro closure is therefore NOT established here.**  It
+remains one of the framework's open targets (Theorems 4 + 5); the
+empirical position is unchanged — witnesses show the closures hold to
+within their L2 100× gates at proton-pinned q₀, the class instance has
+NOT been constructed, NEAR-MATCH tier, production wiring untouched. -/
 theorem universal_habiro_closure
-    (q m_e vol_4_1 : ℝ) (hq : 0 < q)
-    [UniversalHabiroStructure q] :
+    (q m_e vol_4_1 : ℝ) :
     m_mu_R9_V9 q m_e vol_4_1 =
       m_e * vol_4_1 / hbarQ q ^ 2 * (1 - delta_total_mmu q) ∧
     qbetaC3Closure q =
-      qbetaC3Base q * (1 + qbetaC3Rung1 q + qbetaC3Rung2 q) := by
-  exact ⟨rfl, rfl⟩
+      qbetaC3Base q * (1 + qbetaC3Rung1 q + qbetaC3Rung2 q) :=
+  ⟨rfl, rfl⟩
 
 end QOU.BraidKnot

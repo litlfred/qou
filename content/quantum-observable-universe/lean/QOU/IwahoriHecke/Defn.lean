@@ -75,7 +75,7 @@ resolve to `QOU.IwahoriHecke.IwahoriHecke`.
 Refs:
 - [bourbaki1968] Bourbaki, "Groupes et Algèbres de Lie" Ch IV-VI
 - [humphreys1990] Humphreys, "Reflection Groups and Coxeter Groups"
-- [geck-pfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
+- [geckpfeiffer2000] Geck–Pfeiffer, "Characters of finite Coxeter
   groups and Iwahori–Hecke algebras"
 - [manuscript] docs/workplans/2026-05-30-iwahori-hecke-mathlib-infra-plan.md
 -/
@@ -278,7 +278,7 @@ def IsHeckeBraidedAlgebraMap
     a Hecke-braided map is in particular a Hecke-quadratic map.
     All arguments implicit so dot notation `h.toIsHeckeAlgebraMap`
     works at call sites. -/
-theorem IsHeckeBraidedAlgebraMap.toIsHeckeAlgebraMap
+theorem toIsHeckeAlgebraMap
     {W : Type u} [Group W] {R : Type v} [CommRing R]
     {A : Type w} [Ring A] [Algebra R A] {q : R} {m : W → W → ℕ}
     {f : W → A} (h : IsHeckeBraidedAlgebraMap q m f) :

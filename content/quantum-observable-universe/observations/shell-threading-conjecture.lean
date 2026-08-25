@@ -39,9 +39,16 @@ opaque ShellEnergyEqualsSmoothingEnergyHolds : Prop
 class ShellThreadingEnergy : Prop where
   smoothing_identification : ShellEnergyEqualsSmoothingEnergyHolds
 
--- Ref: [manuscript] conj:shell-threading-energy
-instance shell_threading_energy_conjecture : ShellThreadingEnergy where
-  -- Witness: computations/none
-  smoothing_identification := sorry
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance shell_threading_energy_conjecture : ShellThreadingEnergy where
+--     axiom shell_threading_energy_smoothing_identification : ShellEnergyEqualsSmoothingEnergyHolds
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[ShellThreadingEnergy]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[ShellThreadingEnergy]` as an explicit hypothesis.
 
 end QOU.ShellThreadingEnergy

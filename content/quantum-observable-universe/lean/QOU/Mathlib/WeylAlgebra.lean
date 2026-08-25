@@ -18,9 +18,9 @@ instance : Algebra K (WeylAlgebra K) := RingQuot.instAlgebra (weylRel K)
 
 namespace WeylAlgebra
 
-/-- The position generator `x`, via `mkAlgHom` for `liftAlgHom` compatibility. -/
+/-- The position generator `x`, defined via `mkAlgHom` so `liftAlgHom_mkAlgHom_apply` fires. -/
 def X : WeylAlgebra K := (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.X)
-/-- The momentum generator `∂`, via `mkAlgHom` for `liftAlgHom` compatibility. -/
+/-- The momentum generator `∂`, defined via `mkAlgHom` so `liftAlgHom_mkAlgHom_apply` fires. -/
 def D : WeylAlgebra K := (RingQuot.mkAlgHom K (weylRel K)) (FreeAlgebra.ι K WeylGen.D)
 
 /-- The commutation relation `[∂, x] = 1`. -/

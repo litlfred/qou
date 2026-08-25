@@ -36,47 +36,50 @@ if str(HERE) not in sys.path:
 mp.mp.dps = 60   # eval headroom; we serialise the leading 50 dps
 
 from q_parameter import Q_MP  # noqa: E402
+from y_lambda_wenzl_bridge import y_lambda_wenzl_bridge_numeric  # noqa: E402
 
 Q_MP_STR = str(Q_MP)
 
 
 def _eval_one(args: tuple) -> dict:
-    """Worker: evaluate one symbolic y_λ(q) at q = q_0 to 50 dps.
+    """Worker: evaluate y_λ at q = q_0 to 50 dps, from the LIVE formula.
 
-    Uses sympy.lambdify(modules='mpmath') for fast, correct
-    numeric evaluation.  The plain `subs(q, ...).evalf()` path
-    was broken because sympify creates a fresh `q` symbol whose
-    assumptions differ from the explicit `positive=True` symbol;
-    substitution silently fails to match across the assumption
-    boundary, leaving the expression unevaluated.  lambdify
-    bypasses that pitfall by binding the symbol via signature
-    matching.
+    CONVENTION (2026-08-10, bean `qou-eea0` pass 2).  This used to
+    `sp.sympify` the `y_lambda_symbolic` strings out of
+    `y-lambda-wenzl-bridge-symbolic-witness.json` and evaluate those.  That
+    witness was written under convention C — its entries carry `sqrt(q)` /
+    `q**(3/2)`, the half-argument variable of `z = 1/(q^{1/2}+q^{-1/2})`,
+    which convention D never produces because D stays inside ℚ(q).
+
+    `y_lambda_wenzl_bridge` already guards against exactly this: its
+    `_cached_symbolic_agrees` gate (bean `qou-wgta` item 3) re-checks the
+    cached string against the module's live numeric y_λ and falls back to
+    recompute when they disagree.  But that gate lives on the module's
+    symbolic entry point, and this script never called it — it opened the
+    JSON and parsed the strings itself, so the gate never ran and convention
+    C was served intact.
+
+    That mattered out of proportion to one file.  `y-lambda-at-q0` is the
+    root of the nuclear layer: `rho_k_h3a_*`, the per-irrep pole atoms and
+    the H₆/H₉/H₁₂ chi witnesses all read it, directly or transitively.  Every
+    one of those producers had been migrated to D and re-run, and every one
+    faithfully reproduced C, because their input did.  That is why pass 2's
+    first sweep cleared 2 of 54 witnesses while reporting 90 producers "ok" —
+    the re-runs were correct and the number they were given was not.
+
+    So take the number from the formula, not from a cache: call the module's
+    numeric entry point, which IS convention D (verified at n=3 — λ=[1,1,1]
+    evaluates to exactly 0, the structural collapse of the 3+-row blocks that
+    D exists to produce, against C's 0.0227449425773...).
     """
-    n, partition, y_sym_str = args
+    n, partition = args
     mp.mp.dps = 60
-    y_sym = sp.sympify(y_sym_str)
-    free = list(y_sym.free_symbols)
-    if not free:
-        # Constant (e.g. y_λ ≡ 0 or scalar).
-        val = complex(y_sym)
-        return {"n": n, "partition": list(partition),
-                "y_at_q0_50dps": str(mp.mpf(val.real))}
-    # Use the free symbol from the sympified expression directly.
-    q_sym = free[0]
-    y_func = sp.lambdify(q_sym, y_sym, modules=["mpmath"])
     q0 = mp.mpf(Q_MP_STR)
-    val = y_func(q0)
-    # mpmath returns mpf for real, mpc for complex
-    if hasattr(val, "imag") and abs(val.imag) > mp.mpf("1e-30"):
-        # genuine complex residual; take real part
-        re_val = val.real
-    elif hasattr(val, "real"):
-        re_val = val.real
-    else:
-        re_val = val
+    with mp.workdps(60):
+        val = y_lambda_wenzl_bridge_numeric(list(partition), q0, dps=50)
     # Per Copilot PR #619 review: trim to exactly 50 dps so the field
     # name ("y_at_q0_50dps") matches the stored precision (was ~60 dps).
-    s = mp.nstr(re_val, 50, strip_zeros=False)
+    s = mp.nstr(val, 50, strip_zeros=False)
     return {"n": n, "partition": list(partition), "y_at_q0_50dps": s}
 
 
@@ -114,7 +117,13 @@ def main() -> int:
         # Don't shadow the WitnessBuilder `w` defined above with the
         # loop variable (Copilot PR #619 review pre-emptively dodged).
         for wt in entry["weights"]:
-            tasks.append((n, tuple(wt["partition"]), wt["y_lambda_symbolic"]))
+            # STRUCTURE ONLY from the source witness — which λ, at which n,
+            # in which order. The `y_lambda_symbolic` value beside it is
+            # convention C and is deliberately NOT read; see `_eval_one`.
+            # A partition of n is combinatorics, not a convention, so taking
+            # the index from a C-era file preserves coverage and ordering
+            # without importing one of its numbers.
+            tasks.append((n, tuple(wt["partition"])))
     print(f"  Tasks: {len(tasks)} y_λ evaluations across n ∈ "
           f"{[int(k) for k in tab.keys()]}")
     nproc = max(1, cpu_count() - 1)
@@ -141,7 +150,7 @@ def main() -> int:
         "deuteron": ("chi-deuteron-h6.witness.json", 6),
         "tritium": ("chi-tritium-h9.witness.json", 9),
         "helium-3": ("chi-helium-3-h9.witness.json", 9),
-        "helium-4": ("chi-helium-4-h12-numeric.witness.json", 12),
+        "helium-4": ("chi-helium-4-h12-at-q0-50dps.witness.json", 12),
     }
     for atom, (fname, n) in spot_files.items():
         path = HERE / fname
@@ -149,15 +158,24 @@ def main() -> int:
             continue
         try:
             ad = json.loads(path.read_text())
-            # 4He has per_partition with y_at_q0; others don't (chi only)
+            # 4He carries a per-λ y table; the others are chi-only. Two
+            # spellings exist: the legacy `per_partition`/`y_at_q0`, and the
+            # `-at-q0-50dps` family's `by_partition`/`y_lambda`, which 4He now
+            # uses since chi-helium-4-h12-numeric had no producer and sat at
+            # the superseded muon-anchored q_0.
             ref = None
-            if "per_partition" in ad:
+            for key, yfield in (("per_partition", "y_at_q0"),
+                                ("by_partition", "y_lambda")):
+                if key not in ad:
+                    continue
                 # take the first non-zero contribution
-                for entry in ad["per_partition"]:
-                    if abs(float(entry.get("y_at_q0", "0"))) > 1e-30:
+                for entry in ad[key]:
+                    if abs(float(entry.get(yfield, "0"))) > 1e-30:
                         ref = (tuple(entry["partition"]),
-                               mp.mpf(entry["y_at_q0"]))
+                               mp.mpf(entry[yfield]))
                         break
+                if ref is not None:
+                    break
             if ref is None:
                 continue
             ref_lam, ref_val = ref

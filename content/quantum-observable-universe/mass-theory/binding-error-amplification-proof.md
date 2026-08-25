@@ -24,15 +24,13 @@ therefore yields a binding energy wrong by tens of percent
 ($0.1\% \times 843 \approx 84\%$ for the deuteron). The amplification is
 worst for the lightest, most weakly bound nuclei.
 
-**Corollary.** The per-knot mass-prediction accuracy (the step-9a frontier)
-and the binding-energy accuracy (the step-9b frontier) are not independent
-problems. Binding is the amplified shadow of the bound-state mass error: any
+**Corollary.** The per-knot mass-prediction accuracy and the binding-energy
+accuracy are not independent problems. Binding is the amplified shadow of the bound-state mass error: any
 residual in the predicted nuclear mass is magnified by $\mathcal{A}$ in the
 binding. A categorical derivation of binding to experimental precision
 therefore requires the bound-state mass to be derived to a precision finer
 than $B/M_{\mathrm{atom}} \approx 0.1\%$–$0.8\%$ of the experimental binding
-target — i.e. the binding problem is gated by the mass problem, not
-separable from it.
+target.
 
 This also explains why computing binding as a difference of two large
 Markov traces $\mathrm{tr}_M(W_{\mathrm{free}}) - \mathrm{tr}_M(W_{\mathrm{atom}})$

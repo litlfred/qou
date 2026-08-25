@@ -22,10 +22,10 @@ $$
   \hat{V}_i(q) =  z(q) \cdot a_i(q) + b_i(q)
 $$
 
-*is a rational function in $q^{1/2}$, where $a_i(q), b_i(q) \in \mathbb{Z}[q^{± 1}]$ are the transfer matrix coefficients at
+*is a rational function in $q^{1/2}$, where $a_i(q), b_i(q) \in \mathbb{Z}[q^{\pm 1}]$ are the transfer matrix coefficients at
 generator $\sigma_i$ and $z(q) = 1/(q^{1/2} + q^{-1/2})$ is the
 Markov parameter.  The product $P_{\mathcal{N}}(q)$ is the **Skein polynomial of the nuclear link** in factored form.
 It is computed by exactly $\binom{A}{2}$ transfer matrix
 multiplications — one per nucleon pair.*
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

@@ -150,11 +150,34 @@ theorem exists_pairing_ne_zero {K : Type*} [Field K] (z h : K)
   exact hj
 
 /-- **Nondegeneracy at the Hecke specialization** `h = q - q⁻¹`: the Gram
-determinant is nonzero away from the four degeneracy points — the character
-weights `z = q`, `z = -q⁻¹` (quintic factor, via
-`z² - hz - 1 = (z - q)(z + q⁻¹)`) and the two `(2,1)`-block Markov-weight
-zeros `z = q³/(q²+1)`, `z = -1/(q(q²+1))` (quadratic factor, via
-`q³·((h²+4)z² - (h³+4h)z - 1) = ((q²+1)z - q³)((q³+q)z + 1)`). -/
+determinant is nonzero away from the four degeneracy points.
+
+* **Quintic factor**, via `z² - hz - 1 = (z - q)(z + q⁻¹)`: the eigenvalue
+  channels `z = q` and `z = -q⁻¹`.  Each is a **corank-5** collapse — the Gram
+  drops to rank 1 there, not to rank 5.
+* **Quadratic factor**, via
+  `q³·((h²+4)z² - (h³+4h)z - 1) = ((q²+1)z - q³)((q³+q)z + 1)`: the Markov-weight
+  zeros `z = q³/(q²+1)` and `z = -1/(q(q²+1))`.  Each is a **corank-1** collapse,
+  and the block that drops out is **one-dimensional** in both cases:
+  the sign representation `(1³)` at `z = q³/(q²+1)`, whose radical is the
+  q-antisymmetriser `(-q³, q², q², -q, -q, 1)`, and the trivial representation
+  `(3)` at `z = -1/(q(q²+1))`, whose radical is the q-symmetriser.
+
+  This corrects an earlier reading of these two as `(2,1)`-block zeros.  `(2,1)`
+  has dimension 2, and a block of dimension `d` leaving the trace costs the Gram
+  `d²` dimensions — so `(2,1)` would give corank 4, where the measured corank is
+  1.  The statement below is unaffected: all four hypotheses are exactly the
+  vanishing locus and the proof never used the attribution.
+
+  The `z = q³/(q²+1)` case is convention D, canonical since the owner ruling of
+  2026-08-15, so this is the identity behind
+  `QOU.Interactions.GramMatrixH3Symbolic.gramMatrixD_det_eq_zero`; its
+  `gramRadicalD` is the same vector, reached independently.  Reading it as `(1³)`
+  rather than `(2,1)` is what connects it to `y_λ = 0` for partitions with `≥ 3`
+  rows (bean `qou-8iru`) — the same degeneracy seen from the weights.
+
+  Corank and block identification measured exactly over `ℚ(q)` in
+  `computations/probes/h3_gram_degeneracy_block_identification_probe.py`. -/
 theorem gramMatrix_det_ne_zero {K : Type*} [Field K] (q z : K) (hq : q ≠ 0)
     (h1 : z ≠ q) (h2 : z ≠ -q⁻¹) (h3 : (q ^ 2 + 1) * z ≠ q ^ 3)
     (h4 : (q ^ 3 + q) * z ≠ -1) :

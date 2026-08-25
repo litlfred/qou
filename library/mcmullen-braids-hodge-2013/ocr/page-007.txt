@@ -1,0 +1,59 @@
+Braiding of the attractor 265
+§3. Partitions of the sphere
+
+This section and the next are devoted to the proof of Theorem 2.1.
+
+Here we present a topological criterion for certain partitions of the sphere
+to contain a component K which completely separates the elements of a finite
+set A from one another.
+
+The next section begins with the definition of the modular group of a rational
+map and its relation to the monodromy group G in an attractive family. Then
+assuming G is irreducible and fixed-point free, the criterion of this section gives
+a component K of the Julia set which separates the points of the attractor
+A. Finally appeal to the main result of [Mc2] (that Mod(K, f) is a finite group)
+shows G is finite, completing the proof.
+
+Definitions. Let A and K be subsets of €, with A finite. Assume K is connected
+and either open or closed. (In applications the set A will be the attractor of
+a rational map, and K will be a component of the Julia set or its complement.)
+Let <D;, i=1, ...,n) denote the components of €— K which meet A.
+
+We define an invariant ['(K) which records the separation properties of K
+relative to A. Begin by constructing a system <j,,...,),> of disjoint simple
+closed curves such that y; separates AMD, from the remaining points of A.
+If K is open, we require that these curves lie in K, while if K is closed we
+require they lie in C— K.
+
+Define I'(K) as the set of free homotopy classes on €—A represented by
+<V1, +++» Ya» By convention, we also include in ['(K) a peripheral loop around
+each element of AK. These free homotopy classes depend only on A and
+K (see Figure 3.1 for an example with K closed).
+
+Remarks. (1) If @ is a homeomorphism of (€, A), then ['((K))=¢(I(K)) (the
+construction is natural).
+
+(2) If K and L are disjoint, the union of [(K) and I(L) can be represented
+by simple closed curves. The same is true for any finite collection of components.
+
+Now let J be a closed subset of € (in applications J will be the Julia set
+of a rational map) Let part(J) denote the set of components of J union the
+set of components of €—J. Then part(J) is a partition of the Riemann sphere
+into sets K each of which is connected and either open or closed.
+
+Definition. A separator K is an element of part(J) such that ['(K) consists of
+a peripheral curve around each point of A. (Equivalently, the points of A not
+lying in K lie in distinct components of €—K.)
+
+Theorem 3.1. Let J and A be subsets of © with J closed and A finite. Suppose
+I'(K) is consists only of peripheral curves for all K in part(J). Then part (J)
+contains a separator.
+
+Proof. Assume |A|=3 (otherwise any element of part(J) containing a point of
+A is a separator). Then any peripheral curve encircles a unique point in A;
+let A(K) denote the points encircled by I'(K).
+
+There are three possibilities for A(K): A(K)=A, A(K)=0, or A(K)= {a}
+for some point of A. (This trichotomy holds for any K with I'(K) totally peripher-
+al.) If A(K)=A, K is the sought-after separator.
+

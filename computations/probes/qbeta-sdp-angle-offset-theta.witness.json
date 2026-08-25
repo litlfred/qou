@@ -1,0 +1,142 @@
+{
+  "engine": "snappy+mpmath",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T08:38:27.377802+00:00",
+  "commitSha": "f61a551c8d128d088d3731b89d84e9162ffc5ead",
+  "assertions": [
+    {
+      "name": "offset_vanishes_at_symmetric_point",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "||x_geom - x_LP|| < 1e-12 for both anchors — the structural finding, not a null result"
+    },
+    {
+      "name": "both_anchors_are_two_regular_ideal_cells",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "Vol(m004) = 2 x regular ideal tetrahedron and Vol(L6a4) = 2 x regular ideal octahedron, each to <1e-9 relative"
+    },
+    {
+      "name": "G0_geometric_point_satisfies_GA_system",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "the complete structure's angles must satisfy the same edge/tet linear system as the LP — coordinate convention gate"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 39,
+  "computation": "qbeta-sdp-angle-offset-theta",
+  "scriptFile": "qbeta_sdp_angle_offset_theta_probe.py",
+  "scriptHash": "e0c013a282da",
+  "scriptCommitSha": "653f8d644e1ad96bcb4260c33ebb9578787fd546",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Owner proposal 2026-08-07: the interaction IS an SDP/LP solution, so theta_K may be recoverable from the solution's geometry — magnitude, angle of incidence, offset from the lattice saddle. Measures, for both anchors (4_1 = m004 = muon, Borromean = L6a4 = proton), the complete structure's angle vector (Rivin's critical point of the volume functional = the saddle) and the Casson-Rivin max-strictness LP optimum, then their offset norm and direction. Gate G0 confirms the geometric point satisfies the same generalised-angle-structure linear system as the LP. Tests the readings against the A_omega-free constraint curve of PR #4513. This is the first route in the arc supplying BOTH anchors absolutely rather than a ratio, hence the first capable of failing. Metric fixed in advance (Euclidean, pi-units). Nothing fitted; nothing wired.",
+  "contentBlock": "conj:im-q-physical-role",
+  "data": {
+    "anchors": {
+      "muon": {
+        "manifold": "m004",
+        "N": 2,
+        "cusps": 1,
+        "gate_resid": "2.6394756e-16",
+        "gate_ok": true,
+        "s_star": "1/3",
+        "offset_norm": "2.400275907324572e-16",
+        "angle_rad": "1.570796326794897",
+        "lattice_coord": "2.65629743973e-15",
+        "offset_degenerate": true,
+        "distinct_geometric_angles": [
+          "0.3333333333"
+        ],
+        "degen": true
+      },
+      "proton": {
+        "manifold": "L6a4",
+        "N": 8,
+        "cusps": 3,
+        "gate_resid": "4.5941345e-16",
+        "gate_ok": true,
+        "s_star": "1/4",
+        "offset_norm": "5.047489693497469e-16",
+        "angle_rad": "1.570796326794897",
+        "lattice_coord": "5.58587198622e-15",
+        "offset_degenerate": true,
+        "distinct_geometric_angles": [
+          "0.25",
+          "0.5"
+        ],
+        "degen": true
+      }
+    },
+    "readings_tested": {
+      "mag": {
+        "theta_mu": "2.4002759073246e-16",
+        "theta_p": "5.0474896934975e-16",
+        "straddles_lnq0": false,
+        "ratio": null,
+        "matches_r": false
+      },
+      "ang": {
+        "theta_mu": "1.5707963267949",
+        "theta_p": "1.5707963267949",
+        "straddles_lnq0": false,
+        "ratio": null,
+        "matches_r": false
+      }
+    },
+    "a_free_target_r": "-0.2453912075613999",
+    "metric_fixed_in_advance": "Euclidean in pi-units (the convention frozen by borromean_angle_structure_lp_probe.py); the volume-functional Hessian metric is the principled alternative and is NOT used here — named as follow-up so the choice stays visible",
+    "why_this_shape_can_fail": "AfreeThetaConstraint.ratio_attained proves a ratio-shaped candidate is unfalsifiable; this route supplies both anchors absolutely (3 numbers per knot vs 3 unknowns total), so it is over-determined and can fail",
+    "untried_follow_ups": [
+      "volume-functional Hessian metric at x_geom",
+      "per-cusp offset rather than the global vector",
+      "LP dual normal y* as the angle-of-incidence reference",
+      "a confinement objective rather than max-strictness"
+    ],
+    "verdict": "THE OFFSET VANISHES IDENTICALLY FOR BOTH ANCHORS — and that is a structural fact about these two knots, not a null measurement. For 4_1 (m004) and the Borromean rings (L6a4) the complete hyperbolic structure IS the Casson-Rivin max-strictness LP optimum: ||x_geom - x_LP|| = 2.4e-16 and 5.0e-16 respectively, i.e. zero. The reason is visible in the angles themselves — 4_1 is two REGULAR ideal tetrahedra (every angle 1/3 in pi-units) and L6a4 is the regular ideal OCTAHEDRON decomposition (angles 1/4, 1/2). Both anchors sit exactly at the symmetric point, where the volume functional's critical point and the combinatorial centre coincide. So there is no offset to measure, the offset DIRECTION is undefined (the reported angle would be arccos of round-off), and both readings fail the straddling necessary condition trivially rather than informatively. WHAT THIS ACTUALLY SHOWS, AND IT SHARPENS THE PROPOSAL RATHER THAN REFUTING IT: the max-strictness LP is PURELY COMBINATORIAL — its objective is 'maximise the minimum angle', which contains no physics. Measuring the interaction against it was the wrong second point. The proposal says the interaction IS an SDP solution, so the offset that could carry an interaction energy must be measured against the CONFINEMENT SDP optimum, whose objective t comes from the Markov-trace / Frobenius data of the specific braid. That solution generically does NOT sit at the symmetric point, precisely because its objective breaks the symmetry that makes this offset vanish. SCOPE (a), and knot-specific: this excludes the geometric-saddle-minus-combinatorial-centre reading FOR THESE TWO ANCHORS ONLY. It says nothing about knots whose geometric structure is not the symmetric one, and nothing about the physically-objectived SDP offset, which is the named next step. The G0 gate passed at 1e-16 for both, so the coordinate convention and the extraction machinery are sound and reusable. Nothing fitted; nothing wired; the S values were used only to form the test.",
+    "regular_cell_certification": {
+      "muon": {
+        "manifold": "m004",
+        "cell": "regular ideal TETRAHEDRON",
+        "cell_volume": "1.014941606409654",
+        "manifold_volume": "2.0298832128",
+        "equals_2_cells": true,
+        "rel_diff": "9.51151e-12"
+      },
+      "proton": {
+        "manifold": "L6a4",
+        "cell": "regular ideal OCTAHEDRON",
+        "cell_volume": "3.663862376708876",
+        "manifold_volume": "7.32772475342",
+        "equals_2_cells": true,
+        "rel_diff": "3.06764e-13"
+      }
+    },
+    "regular_cell_consequences": [
+      "Vol(4_1) and Vol(B_3) are NOT measured inputs — each is exactly 2x a closed-form regular ideal cell volume (tetrahedron / octahedron), so anywhere the corpus carries them as numeric literals they are 'structural' for the no-free-parameter certificate (bean qou-skum)",
+      "the muon anchor is 2 regular SIMPLICES and the proton anchor is 2 regular OCTAHEDRA — same cell COUNT, different cell TYPE; the volume ratio is therefore V_oct/V_tet = 4*Catalan / Im Li_2(e^{i*pi/3}), a pure ratio of regular-cell volumes with no knot theory in it",
+      "both anchors are the maximally symmetric member of their cell type, which is why the offset vanishes AND is a structural reason a third comparably-canonical anchor may not exist — making the arc's 2-equations-in-3-unknowns underdetermination FORCED rather than a gap to be filled"
+    ],
+    "tempting_but_untestable": "the angle denominators (3 for the tetrahedron; 4 and 2 for the octahedron) invite reading A_omega = 3 off the 4_1 angle 1/3. That is a SINGLE number and AfreeThetaConstraint.ratio_attained proves any such reading merely names an A rather than testing one. Flagged so a later agent does not mistake it for evidence.",
+    "offset_vanishes_both_anchors": true,
+    "why_offset_vanishes": "4_1 = two REGULAR ideal tetrahedra (all angles 1/3 in pi-units); L6a4 = regular ideal OCTAHEDRON decomposition (angles 1/4, 1/2). Both anchors sit at the symmetric point where the volume functional's critical point coincides with the combinatorial centre, so x_geom = x_LP exactly.",
+    "corrected_next_step": "measure the offset against the CONFINEMENT SDP optimum (objective t from Markov-trace / Frobenius data of the braid), not against the max-strictness LP whose objective is purely combinatorial and therefore symmetric"
+  }
+}

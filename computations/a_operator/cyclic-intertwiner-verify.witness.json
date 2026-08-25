@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-30T11:58:19.191261+00:00",
-  "commitSha": "d59d4e9f27a8188ced863502969d662b31dd0995",
+  "computedAt": "2026-08-24T17:01:30.761516+00:00",
+  "commitSha": "785333b50d803d0708d936e5bee95b6379259206",
   "assertions": [
     {
       "name": "cyclic_combiner_identity_exact",
@@ -16,8 +16,8 @@
   "durationMs": 20,
   "computation": "cyclic-intertwiner-verify",
   "scriptFile": "cyclic_intertwiner_verify.py",
-  "scriptHash": "2a28f5c22e3c",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "8fe41d0b1d2a",
+  "scriptCommitSha": "bd9394769cb465dcc2580147ff1e933a3dc8a80d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,24 +27,33 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "fe19077ea17b978d"
+  },
+  "invocation": {
+    "argv": [
+      "computations/a_operator/cyclic_intertwiner_verify.py"
+    ],
+    "reproduce": "python3 -u computations/a_operator/cyclic_intertwiner_verify.py"
   },
   "description": "Task-B cyclic-vector intertwiner (handover §5) — Python reference correctness gate. Replaces the O(r⁴) vectorised null-space U in the gauge-aligned A-combiner with the O(r³) matrix-unit / cyclic-vector construction (no r²×r² matrix → clears the 4 r=64 λ⊢9 that OOM). Verified against the gauge-invariant combiner identity χ^λ(W·I·β) = Σ_μν Tr[A·(ρ_μ(W)⊗ρ_ν(β))] at 1e-25: H_6 all 11 λ⊢6, and H_9 λ=(8,1) (n_inner=6 path). Pins the reference for the Rust port.",
   "data": {
-    "q0": "1.1099785955573347198997632204832250266562084087802",
+    "q0": "1.1099785827513808075916690956107688798744991218736",
     "h6_all_lambda6": {
       "checks": 891,
-      "max_abs_residual": "6.7123064e-49",
+      "max_abs_residual": "3.07971e-49",
       "passed": true
     },
     "h9_feasible_8_1": {
       "checks": 16,
-      "max_abs_residual": "3.3561532e-49",
+      "max_abs_residual": "1.539855e-49",
       "passed": true
     }
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

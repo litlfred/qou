@@ -1,6 +1,8 @@
 -- Ref: [manuscript] Ch. 10, §covalent-bond-shared-trefoil
 -- Covalent bond as shared electron trefoil
 
+namespace QOU.Molecular
+
 /-- A **covalent bond** of order k consists of k electron trefoils
     Hopf-linked across two nuclei via 2k attractive σ⁻¹ crossings
     (one pair per nucleus per electron).
@@ -24,3 +26,5 @@ theorem double_bond_crossings : 2 * 2 = 4 := by decide
 
 /-- Triple bond has 6 attractive crossings. -/
 theorem triple_bond_crossings : 2 * 3 = 6 := by decide
+
+end QOU.Molecular

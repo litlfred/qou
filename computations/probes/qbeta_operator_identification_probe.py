@@ -46,7 +46,12 @@ COMPUTE_DIR = THIS.parent.parent  # was: THIS.parent (pre-cluster-move)
 sys.path.insert(0, str(COMPUTE_DIR))
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from char_fast import _compiled_sigmas  # noqa: E402
 
 set_compute_dps()
@@ -54,7 +59,7 @@ from mpmath import mp, mpf, matrix  # noqa: E402
 import json  # noqa: E402
 
 Q_PIN = COMPUTE_DIR / "q-pinning-50-digit.witness.json"
-Q_0 = mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q_0 = mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 
 
 def _mp(M) -> "mp.matrix":
@@ -114,7 +119,7 @@ def main() -> None:
     print()
 
     # Test 3: cos(α - b·ℏ_q²/2) — the N=1 factor itself
-    z = 1 / (mp.sqrt(Q_0) + 1 / mp.sqrt(Q_0))
+    z = Q_0**3 / (Q_0**2 + 1)
     alpha = (z - 1) * h / 2
     cos_alpha = mp.cos(alpha)
     cos_n1 = mp.cos(alpha - b * hbar_q_sq / 2)
@@ -146,6 +151,7 @@ def main() -> None:
 
     # Witness
     w = WitnessBuilder("qbeta-operator-identification-probe", engine="python")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Path 1 (operator-identification on V_(2,1) at H_3) for the Q_β "
         "precision-ladder. NEGATIVE RESULT: no candidate operator on "

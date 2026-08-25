@@ -32,7 +32,7 @@
   "scriptFile": "q_beta_predicted.py",
   "scriptHash": "751d0b3b8134",
   "scriptCommitSha": "bd3f2bddb7c582ebfb964f2fcba18fcc2461739f",
-  "description": "FULL-chain Q_β prediction per prop:beta-decay-energy-scale. E_0 derived from CAL-1 m_e + CAL-2 q_0 only (no CAL-3 input); Q_β predicted via |Δ(net)| · E_0; observable/virtual split by Coxeter length ℓ ≥ 2 (Hopf links + trefoil) vs ℓ < 2 (γ + σ_0 + σ_1). Owner directive 2026-05-10: do not use LO; use FULL.",
+  "description": "FULL-chain Q_\u03b2 prediction per prop:beta-decay-energy-scale. E_0 derived from CAL-1 m_e + CAL-2 q_0 only (no CAL-3 input); Q_\u03b2 predicted via |\u0394(net)| \u00b7 E_0; observable/virtual split by Coxeter length \u2113 \u2265 2 (Hopf links + trefoil) vs \u2113 < 2 (\u03b3 + \u03c3_0 + \u03c3_1). Owner directive 2026-05-10: do not use LO; use FULL.",
   "contentBlock": "prop:q-beta-categorical-precision-ladder",
   "auditOnly": "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md",
   "calibration_inputs_used": [
@@ -40,8 +40,8 @@
     "CAL-2 (q_0 from q-pinning-50-digit.witness.json)"
   ],
   "calibration_inputs_NOT_used": [
-    "CAL-3 (Q_β) — predicted, not consumed",
-    "CODATA m_p, m_n, m_4He, etc. — predictions, not inputs (per Workplan 0a discipline)"
+    "CAL-3 (Q_\u03b2) \u2014 predicted, not consumed",
+    "CODATA m_p, m_n, m_4He, etc. \u2014 predictions, not inputs (per Workplan 0a discipline)"
   ],
   "parameters": {
     "m_e_MeV": "0.51099895",
@@ -50,15 +50,15 @@
   "data": {
     "energy_scale_E_0": {
       "E_0_full_MeV": "4.1859808220625237732985519083214879046242353091078",
-      "E_0_full_formula": "m_e / (q_0 (q_0 - 1)) = m_e c_q² ℏ_q",
+      "E_0_full_formula": "m_e / (q_0 (q_0 - 1)) = m_e c_q\u00b2 \u210f_q",
       "E_0_calibrated_MeV": "4.1549250300084931033542380034303330229973926723013",
-      "E_0_calibrated_formula": "Q_β_CODATA / |Δ(net)|",
+      "E_0_calibrated_formula": "Q_\u03b2_CODATA / |\u0394(net)|",
       "agreement_pct": "0.74744530478248337111541888225340470918972349864686",
-      "residual_attribution": "0.75% residual is the brane-tower correction: the derived expression uses single-level c_q² ℏ_q, while the calibrated value implicitly includes the full tower of n and p (per beta-decay-energy-scale.md §Calibration cross-check)."
+      "residual_attribution": "0.75% residual is the brane-tower correction: the derived expression uses single-level c_q\u00b2 \u210f_q, while the calibrated value implicitly includes the full tower of n and p (per beta-decay-energy-scale.md \u00a7Calibration cross-check)."
     },
     "q_beta_prediction": {
       "Q_beta_pred_MeV": "0.78364580284495003723288837004662358622224904295601",
-      "Q_beta_pred_formula": "Q_β = m_e · |q² - 2q - 1| · (q+1) / (2q³)  (single-wrap symbolic form per prop:neutron-qvalue-symbolic). The L_± and e^- contributions cancel exactly at single wrap; Q-value comes entirely from γ + σ_0 + σ_1 channels.",
+      "Q_beta_pred_formula": "Q_\u03b2 = m_e \u00b7 |q\u00b2 - 2q - 1| \u00b7 (q+1) / (2q\u00b3)  (single-wrap symbolic form per prop:neutron-qvalue-symbolic). The L_\u00b1 and e^- contributions cancel exactly at single wrap; Q-value comes entirely from \u03b3 + \u03c3_0 + \u03c3_1 channels.",
       "Q_beta_codata_MeV": "0.78233341",
       "err_pct": "0.16775364929768718849529512572185639141361008166673",
       "err_keV": 1.3123928449500373,
@@ -67,24 +67,24 @@
     },
     "q_beta_typed_crossings_legacy": {
       "Q_beta_pred_MeV": "0.78818092434081206117278787328862533352549640747238",
-      "Q_beta_pred_formula": "|Δ(net)| · E_0_full  (typed-crossings 6-term, Δ(net) = -0.18829 from beta-decay-energy-scale.witness.json)",
+      "Q_beta_pred_formula": "|\u0394(net)| \u00b7 E_0_full  (typed-crossings 6-term, \u0394(net) = -0.18829 from beta-decay-energy-scale.witness.json)",
       "err_pct": "0.74744530478534224593423324316742826124432132744814",
-      "comment": "Legacy 6-term decomposition that gave +0.747% error (the L_± and e^- channels picked up small asymmetric contributions that exactly cancel at single wrap). Replaced by the single-wrap symbolic form above (4.5x improvement). Kept here only for cross-check."
+      "comment": "Legacy 6-term decomposition that gave +0.747% error (the L_\u00b1 and e^- channels picked up small asymmetric contributions that exactly cancel at single wrap). Replaced by the single-wrap symbolic form above (4.5x improvement). Kept here only for cross-check."
     },
     "observable_virtual_split": {
       "Q_observable_MeV": "0.46075260225555234423689737715371181193794036263658",
-      "Q_observable_formula": "|Δ(obs)| · E_0  (ℓ ≥ 2 terms: Hopf links L_±, trefoil e^-)",
+      "Q_observable_formula": "|\u0394(obs)| \u00b7 E_0  (\u2113 \u2265 2 terms: Hopf links L_\u00b1, trefoil e^-)",
       "Q_observable_fraction": 0.5879602756536624,
       "Q_virtual_MeV": "0.3274283220852599262349315992611021865151514609102",
-      "Q_virtual_formula": "|Δ(virt)| · E_0  (ℓ < 2 terms: γ, σ_0, σ_1)",
+      "Q_virtual_formula": "|\u0394(virt)| \u00b7 E_0  (\u2113 < 2 terms: \u03b3, \u03c3_0, \u03c3_1)",
       "Q_virtual_fraction": 0.41782693264809584,
       "sum_obs_plus_virt_MeV": "0.78818092434081227047182897641481399845309182354678",
       "sum_residual_MeV": 2.092990411031262e-16,
-      "physical_interpretation": "Observable component (58.46%) is the topologically non-trivial part — physical kinetic energy released in the β-decay event. Virtual component (41.54%) is the gauge / vacuum-debt contribution that cancels in asymptotic states. See beta-decay-energy-scale.md §'Observable vs virtual: Q_{≥2}'."
+      "physical_interpretation": "Observable component (58.46%) is the topologically non-trivial part \u2014 physical kinetic energy released in the \u03b2-decay event. Virtual component (41.54%) is the gauge / vacuum-debt contribution that cancels in asymptotic states. See beta-decay-energy-scale.md \u00a7'Observable vs virtual: Q_{\u22652}'."
     }
   },
   "summary_for_humans": {
-    "phase": "0b.4 (FULL Q_β chain wired; nucleon + light-nucleus masses stubbed)",
+    "phase": "0b.4 (FULL Q_\u03b2 chain wired; nucleon + light-nucleus masses stubbed)",
     "calibration_inputs_loaded": {
       "CAL-1_m_e_MeV": "0.51099895",
       "CAL-2_q_0": "1.1099785955541805752815940796095093779932822799587",
@@ -109,7 +109,7 @@
       "helium3_mass_mev",
       "helium4_mass_mev"
     ],
-    "owner_directive_2026_05_10": "do not use LO -- use full. look at discussion on observable vs nonobservable energy in case of beta decay. Per this directive: do NOT pull mass predictions from LO ρ_K (which is tautological by |tr_M| cancellation) or Strategy-3 (which has the multiplicative T1 bug). Q_β has a clean FULL chain — wired above. Nucleon + light-nucleus masses don't yet have a FULL chain implementation; stubs raise NotImplementedError pointing at the blockers.",
+    "owner_directive_2026_05_10": "do not use LO -- use full. look at discussion on observable vs nonobservable energy in case of beta decay. Per this directive: do NOT pull mass predictions from LO \u03c1_K (which is tautological by |tr_M| cancellation) or Strategy-3 (which has the multiplicative T1 bug). Q_\u03b2 has a clean FULL chain \u2014 wired above. Nucleon + light-nucleus masses don't yet have a FULL chain implementation; stubs raise NotImplementedError pointing at the blockers.",
     "handoff_doc": "docs/audits/2026-05-10-workplan-0b-script-rewire-handoff.md"
   }
 }

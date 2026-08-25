@@ -1,0 +1,131 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T14:51:24.775331+00:00",
+  "commitSha": "4d32aec60d92f77e4173909a108af1e49ef3522d",
+  "assertions": [
+    {
+      "name": "RETRACTED_the_C_phase_does_reproduce_CODATA_via_the_negative_branch",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the C phase's residual against the NEAREST arccos branch is 2.2563251e-5 rad, not the 0.113212 I reported (5017.5x overstatement) — I compared only to the principal branch although cos is even. Amplified by 1/u^3 this reproduces c_3 = -2.069, the consistency check the earlier framing would have failed."
+    },
+    {
+      "name": "barodd_projection_closes_most_of_the_D_phase_gap",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the derived projection alpha - h^2/4 takes the D phase gap from 0.011872906 to 0.00094635405 rad, closing 92.029%. Invisible through c_3, which only shows -974 -> -86 because 1/u^3 inflates every phase difference."
+    },
+    {
+      "name": "a_real_residual_remains_after_the_projection",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "the post-projection gap is 41.942x the C-frame residual, so bar-oddness is necessary and not sufficient — the source witness's verdict, now quantified in the coordinate where it is not inflated by the amplifier."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 4,
+  "computation": "qbeta-eigenphase-branch-and-barodd-projection",
+  "scriptFile": "qbeta_eigenphase_branch_and_barodd_projection_probe.py",
+  "scriptHash": "3b1e8b3f8a82",
+  "scriptCommitSha": "ed7d0f12365a729e764922cc305f9cd15ef5c8bb",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Bean qou-cds1. (1) RETRACTS my own qbeta_alpha_required_c_vs_d claim that both conventions leave ~0.1 rad for c_3 and that neither phase reproduces CODATA at N=2: cos is EVEN and mp.acos returns only the principal branch, so that figure was the distance to the WRONG branch, overstated ~5000x. The C phase sits on the negative branch with a residual of 2.26e-5 rad, which under the proved 1/u^3 amplification (QOU.QBeta.c3Of_sub_mul_u_cubed) is exactly the observed c_3 = -2.069. (2) Re-expresses the already-derived bar-odd projection alpha - h^2/4 (from qbeta-d-frame-eigenphase-bar-parity, where the D-frame defect bar(alpha)+alpha = h^2/2 is symbolic-exact and z-independent) in that amplifier-free coordinate: it closes ~92% of the D phase gap, leaving a residual ~42x the C-frame one. Through c_3 alone that correction reads as a failure (-974 -> -86); in phase space it is most of the way there. PROPOSES NO CORRECTION and SEARCHES NO SPACE — the source witness fences further correction-hunting as fitting; this adds a coordinate, not a candidate. alpha remains asserted in both frames and derived in neither.",
+  "data": {
+    "ladder_frame": "u",
+    "anchors": [
+      {
+        "anchor": "proton",
+        "alpha_eff_required_principal": "0.0566173007940610323629668069383734567951046903736151758566961",
+        "h_sq_over_4": "0.0109265521331304973505048339193470774420534901783765272589877",
+        "phases": [
+          {
+            "name": "C",
+            "alpha_eff": "-0.0565947375433069098934923136915887720976454278122049211493515",
+            "gap_to_plus_branch": "0.113212038337367942256459120629962228892750118185820097006048",
+            "gap_to_minus_branch": "-0.0000225632507541224694744932467846846974592625614102547073445811",
+            "nearest_branch": "-",
+            "nearest_gap": "-0.0000225632507541224694744932467846846974592625614102547073445811",
+            "c3": "-2.06934257711516783787971951724962858902203099810343886691284"
+          },
+          {
+            "name": "D",
+            "alpha_eff": "-0.0447443946157208360134750658668690487727344490597214765592576",
+            "gap_to_plus_branch": "0.101361695409781868376441872805242505567839139433336652415954",
+            "gap_to_minus_branch": "-0.0118729061783401963494917410715044080223702413138936992974384",
+            "nearest_branch": "-",
+            "nearest_gap": "-0.0118729061783401963494917410715044080223702413138936992974384",
+            "c3": "-974.431887746748422982615210779173710979388500286240961343459"
+          },
+          {
+            "name": "D - h^2/4",
+            "alpha_eff": "-0.0556709467488513333639798997862161262147879392380980038182453",
+            "gap_to_plus_branch": "0.112288247542912365726946706724589583009892629611713179674941",
+            "gap_to_minus_branch": "-0.000946354045209698998986907152157330580316751135517172038450744",
+            "nearest_branch": "-",
+            "nearest_gap": "-0.000946354045209698998986907152157330580316751135517172038450744",
+            "c3": "-86.0809935205746182829014777803793290316452923846035479531874"
+          }
+        ]
+      },
+      {
+        "anchor": "muon",
+        "alpha_eff_required_principal": "0.0566167681397284550163686882171513974284478262308794845519005",
+        "h_sq_over_4": "0.0109265545743985547319625399730548379325414585856006369294932",
+        "phases": [
+          {
+            "name": "C",
+            "alpha_eff": "-0.0565947443068454029923948073894057595599381583035191118490124",
+            "gap_to_plus_branch": "0.113211512446573858008763495606557156988385984534398596400913",
+            "gap_to_minus_branch": "-0.0000220238328830520239738808277456378685096679273603727028881475",
+            "nearest_branch": "-",
+            "nearest_gap": "-0.0000220238328830520239738808277456378685096679273603727028881475",
+            "c3": "-2.01986031187400546349321995587646029747377592135260349078716"
+          },
+          {
+            "name": "D",
+            "alpha_eff": "-0.0447443986293273793084248136251043696020637259210836308107502",
+            "gap_to_plus_branch": "0.101361166769055834324793501842255767030511552151963115362651",
+            "gap_to_minus_branch": "-0.0118723695104010757079438745920470278263841003097958537411503",
+            "nearest_branch": "-",
+            "nearest_gap": "-0.0118723695104010757079438745920470278263841003097958537411503",
+            "c3": "-974.382147079536184945277477315145234783021511164620054144175"
+          },
+          {
+            "name": "D - h^2/4",
+            "alpha_eff": "-0.0556709532037259340403873535981592075346051845066842677402434",
+            "gap_to_plus_branch": "0.112287721343454389056756041815310604963053010737563752292144",
+            "gap_to_minus_branch": "-0.000945814936002520975981334618992189893842641724195216811657089",
+            "nearest_branch": "-",
+            "nearest_gap": "-0.000945814936002520975981334618992189893842641724195216811657089",
+            "c3": "-86.0314984747091427039641125765167499187729269095651912967210"
+          }
+        ]
+      }
+    ],
+    "barodd_projection_closes_pct_of_D_gap": "92.0292973683550406675738757502156591113534075617350089355980",
+    "residual_multiple_of_C_gap": "41.9422739889017656188937011579037725148304721133174764795123",
+    "previous_claim_overstatement_factor": "5017.54111457912518100220353629081986006364086514244480419512"
+  },
+  "q0Anchor": "ambiguous"
+}

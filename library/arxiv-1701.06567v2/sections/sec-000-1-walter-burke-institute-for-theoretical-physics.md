@@ -1,0 +1,12 @@
+---
+doc_id: arxiv-1701.06567v2
+doc_title: "BPS spectra and 3-manifold invariants"
+section_id: sec-000-1-walter-burke-institute-for-theoretical-physics
+section_title: "Walter Burke Institute for Theoretical Physics, California Institute of Technology,"
+section_number: 1
+pages: 1-1
+source_pdf: 1701.06567v2.pdf
+source_sha256: c1610b50f5a7e22c
+doc_brief: "BPS spectra and 3-manifold invariants — We provide a physical deﬁnition of new homological invariants Ha(M3) of 3- manifolds (possibly, with knots) labeled by abelian ﬂat connections."
+---
+Pasadena, CA 91125, USA

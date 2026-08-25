@@ -1,0 +1,26 @@
+{
+  "$schema": "script-qa/v1",
+  "script_path": "computations/qbeta/qbeta_h4_route_a_gate_probe.py",
+  "language": "python",
+  "source_hash": "a1ff75ce7d3d",
+  "updated_at": "2026-08-16T02:29:17.116439+00:00",
+  "criteria": {
+    "self-check-not-gated": [
+      {
+        "field_hash": {
+          "py": "a1ff75ce7d3d"
+        },
+        "result": "fail",
+        "reviewer": {
+          "kind": "script",
+          "id": "computations/audits/silent_self_check_audit.py",
+          "version": "v1",
+          "script_hash": "f42329b8dcaa"
+        },
+        "reviewed_at": "2026-08-16T02:29:17.116439+00:00",
+        "severity": "critical",
+        "evidence": "line 321: records verdict field `allPassed`"
+      }
+    ]
+  }
+}

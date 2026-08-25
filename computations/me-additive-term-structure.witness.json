@@ -1,0 +1,108 @@
+{
+  "schema": "witness/v1",
+  "description": "Structure of the -|S_3|*m_e additive term in the canonical nucleon mass: load-bearing test, integer sweep, and best-fit real coefficient. Bean qou-mrel.",
+  "computation": {
+    "script": "computations/me_additive_term_structure.py",
+    "inputs": "computations/m-p-substrate-identity-50dps.witness.json",
+    "precision_dps": 65
+  },
+  "data": {
+    "formula": "m_p = dim V_{(2,1)} * (m_mu*F_Bor - |S_3|*m_e), dim V_{(2,1)}=2, |S_3|=6",
+    "m_e_MeV": "0.51099895069",
+    "F_Bor": "4.469138735767522529389075",
+    "E_constit_MeV": "472.2020384178021318636783",
+    "q1_load_bearing": {
+      "m_p_canonical_MeV": "938.2720894273242637273567",
+      "m_p_term_deleted_MeV": "944.4040768356042637273567",
+      "shift_MeV": "6.13198740828",
+      "shift_percent": "0.653540425787",
+      "shift_in_codata_sigma": "21144784.1665",
+      "verdict": "load-bearing, not a convention"
+    },
+    "q2_integer_sweep": [
+      {
+        "c": 0,
+        "m_p_MeV": "944.4040768356042637274",
+        "residual_vs_codata_ppm": "6535.40561739",
+        "abs_residual_ppm": "6535.40561739"
+      },
+      {
+        "c": 1,
+        "m_p_MeV": "943.3820789342242637274",
+        "residual_vs_codata_ppm": "5446.17157294",
+        "abs_residual_ppm": "5446.17157294"
+      },
+      {
+        "c": 2,
+        "m_p_MeV": "942.3600810328442637274",
+        "residual_vs_codata_ppm": "4356.9375285",
+        "abs_residual_ppm": "4356.9375285"
+      },
+      {
+        "c": 3,
+        "m_p_MeV": "941.3380831314642637274",
+        "residual_vs_codata_ppm": "3267.70348405",
+        "abs_residual_ppm": "3267.70348405"
+      },
+      {
+        "c": 4,
+        "m_p_MeV": "940.3160852300842637274",
+        "residual_vs_codata_ppm": "2178.4694396",
+        "abs_residual_ppm": "2178.4694396"
+      },
+      {
+        "c": 5,
+        "m_p_MeV": "939.2940873287042637274",
+        "residual_vs_codata_ppm": "1089.23539515",
+        "abs_residual_ppm": "1089.23539515"
+      },
+      {
+        "c": 6,
+        "m_p_MeV": "938.2720894273242637274",
+        "residual_vs_codata_ppm": "0.0013507001644",
+        "abs_residual_ppm": "0.0013507001644"
+      },
+      {
+        "c": 7,
+        "m_p_MeV": "937.2500915259442637274",
+        "residual_vs_codata_ppm": "-1089.23269375",
+        "abs_residual_ppm": "1089.23269375"
+      },
+      {
+        "c": 8,
+        "m_p_MeV": "936.2280936245642637274",
+        "residual_vs_codata_ppm": "-2178.4667382",
+        "abs_residual_ppm": "2178.4667382"
+      },
+      {
+        "c": 9,
+        "m_p_MeV": "935.2060957231842637274",
+        "residual_vs_codata_ppm": "-3267.70078265",
+        "abs_residual_ppm": "3267.70078265"
+      },
+      {
+        "c": 10,
+        "m_p_MeV": "934.1840978218042637274",
+        "residual_vs_codata_ppm": "-4356.9348271",
+        "abs_residual_ppm": "4356.9348271"
+      },
+      {
+        "c": 11,
+        "m_p_MeV": "933.1620999204242637274",
+        "residual_vs_codata_ppm": "-5446.16887154",
+        "abs_residual_ppm": "5446.16887154"
+      },
+      {
+        "c": 12,
+        "m_p_MeV": "932.1401020190442637274",
+        "residual_vs_codata_ppm": "-6535.40291599",
+        "abs_residual_ppm": "6535.40291599"
+      }
+    ],
+    "q2_best_integer": 6,
+    "q2_separation_ratio": "806420.79009",
+    "q3_best_fit_real_coefficient": "6.0000012400458572528",
+    "q3_deviation_from_6": "1.24004585725e-6",
+    "scope": "scope-(a) structural observation. Establishes that the additive term is a load-bearing integer count of m_e quanta, NOT a unit convention. Does NOT establish the interaction/test-particle reading, which requires deriving why |S_3| enters denominated in m_e."
+  }
+}

@@ -30,6 +30,17 @@ one jet-prolongation step, advancing the phase by `ℏ_q` of a full circuit.
   = 1`) are structural *definitions* of the discrete dynamics (one `∇_q`
   application, one `R`-matrix evaluation per `f_q`-iteration), carried as
   honest data fields — not self-assumed conclusions.
+- **Base ring (§7c) — `ℝ` here is correct.** The class extends
+  `QOU.Shared.MarkovTraceContext` and so inherits a generic coefficient ring
+  `R`, but the substrate parameter is deliberately specialised: the whole
+  proposition rests on the ordering hypothesis `1 < q_real`, and the proof runs
+  through `lt_trans`, `div_pos`, `div_lt_one` and `linarith`.  Ordering and
+  `linarith` are archimedean, so this block sits after the
+  substrate→archimedean wall.  Reviewed under bean `qou-mtcx`; do not "port" it
+  to `R` to reduce an `ℝ` count.  What is *not* established is any link between
+  `q_real` and the inherited `q : R` — that would need the archimedean
+  evaluation functor, which the parent does not carry; recorded as bean
+  `qou-mt7r`.
 
 -- Ref: [manuscript] quantum-observable-universe/information-theory/reeb-operations-per-planck.md
 -/

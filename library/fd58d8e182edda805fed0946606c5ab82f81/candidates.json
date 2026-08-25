@@ -1,0 +1,186 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "fd58d8e182edda805fed0946606c5ab82f81",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "292cb048e70979359ab588ed7644044860fbfdf46d2047624b0ba44559a03881",
+  "file": "fd58d8e182edda805fed0946606c5ab82f81.pdf"
+ },
+ "provenance": {
+  "title": "Palestine Journal of Mathematics",
+  "authors": "V ol. 7(Special Issue: I, 2018) , 11\u201317 \u00a9 Palestine Polytechnic University-PPU 2018",
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 12,
+  "by_kind": {
+   "lemma": 3,
+   "proposition": 3,
+   "theorem": 2,
+   "example": 2,
+   "remark": 2
+  },
+  "formalization_candidates": 8
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.2",
+   "name": "[1, 2]",
+   "statement": "Every p 2 F\u27e8X\u27e9 can be expressed as",
+   "section_file": "sections/sec-002-12-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.3",
+   "name": null,
+   "statement": "The set of S-standard monomials spans the algebra A = F\u27e8X\u27e9=I de\ufb01ned by",
+   "section_file": "sections/sec-002-12-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "2.6",
+   "name": "[1, 2]",
+   "statement": "Let S be a subset of monic elements in F\u27e8X\u27e9. Then the following condi-",
+   "section_file": "sections/sec-002-12-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "2.9",
+   "name": "[5, 17]",
+   "statement": "Let Cn be the nth Catalan number, i.e. Cn = 1",
+   "section_file": "sections/sec-002-12-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "2-3",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.1",
+   "name": null,
+   "statement": "([9, Proposition 6.2]) The Temperley-Lieb algebra T (An\u00001) has a Gr\u00f6bner-",
+   "section_file": "sections/sec-007-14-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "4-4",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "3.2",
+   "name": null,
+   "statement": "Note that jMT (A3)j = C4 = 14. Explicitly, the bRT (A3)-standard monomials are as",
+   "section_file": "sections/sec-007-14-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "(1) One interesting point of considering standard monomials is that the product of two",
+   "section_file": "sections/sec-007-14-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "4-4",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "The following relation holds in T (Bn):",
+   "section_file": "sections/sec-008-4-gr\u00f6bner-shirshov-bases-for-the-temperley-lieb.md",
+   "section_title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.1",
+   "name": null,
+   "statement": "From this, we de\ufb01ne MT (Bn) by the set of bRT (Bn)-standard monomials. Among",
+   "section_file": "sections/sec-008-4-gr\u00f6bner-shirshov-bases-for-the-temperley-lieb.md",
+   "section_title": "Gr\u00f6bner-Shirshov bases for the Temperley-Lieb algebras of type Bn",
+   "pages": "4-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.2",
+   "name": null,
+   "statement": "The algebra T (Bn) has a Gr\u00f6bner-Shirshov basis bRT (Bn) with respect to our",
+   "section_file": "sections/sec-009-16-kim-and-lee.md",
+   "section_title": "Kim and Lee",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": "4.3",
+   "name": null,
+   "statement": "(1) We enumerate the bRT (B3)-standard monomials containing E0:",
+   "section_file": "sections/sec-014-2-cn.md",
+   "section_title": "Cn:",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "(1) Our monomials in MT (Bn) are fully commutative, in the sense of [ 17, \u00a75]. Note",
+   "section_file": "sections/sec-014-2-cn.md",
+   "section_title": "Cn:",
+   "pages": "6-7",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

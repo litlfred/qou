@@ -243,11 +243,22 @@ theorem chi_v21_matrix_trace_identity (q : ℝ) (hq : q ≠ 0) :
     chi_v21_on_word q beta_n_word_v21
       - chi_v21_on_word q beta_p_word_v21
       = chi_V21_difference_factored q := by
-  -- Symbolic matrix-product trace evaluation; backed empirically by
-  -- PROOF STRATEGY: unfold chi_v21_on_word, foldl 11 matrices,
-  -- take trace, use sigma1_v21_param (sqrt-free), field_simp + ring.
-  -- Ref: [manuscript] computations/probe_per_wedderburn_block_ck.py
-  sorry
+  have h_b_sq : 0 ≤ hoefsmit_v21_b_sq q := by
+    rw [hoefsmit_v21_b_sq_rational _ hq]
+    positivity
+  have h_sqrt : (Real.sqrt (hoefsmit_v21_b_sq q))^2 = hoefsmit_v21_b_sq q := Real.sq_sqrt h_b_sq
+  unfold chi_v21_on_word beta_n_word_v21 beta_p_word_v21
+  unfold crossing_to_matrix sigma1_v21 sigma1_v21_legacy sigma0_v21
+  simp only [List.foldl, Matrix.sub_apply, Matrix.add_apply, Matrix.smul_apply,
+    Matrix.one_apply, Matrix.mul_apply, Matrix.trace, Fin.sum_univ_succ, Fin.sum_univ_zero,
+    Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.empty_val',
+    ite_true, ite_false, eq_mpr_eq_cast, cast_eq]
+  ring_nf
+  rw [h_sqrt]
+  unfold hoefsmit_v21_b_sq hoefsmit_v21_d1 hoefsmit_v21_d2 chi_V21_difference_factored
+  have h_denom : (q^2 + 1) ≠ 0 := by positivity
+  field_simp
+  ring
 
 /-! ## u = q² coordinate: sqrt-free trace identity
 
@@ -288,7 +299,11 @@ theorem sigma1_v21_param_sq_trace (q : ℝ) (b_arg : ℝ) (hq : q ≠ 0) :
     For any abstract b_arg with `b_arg² = b_sq q`, the matrix-product
     trace identity reduces to a rational equation in q alone — no
     `Real.sqrt` required. -/
-theorem chi_v21_closed_form_u_coord (q : ℝ) (hq : q ≠ 0) :
+-- Dropped the unused hypothesis `hq : q ≠ 0` (2026-08-22; vacuity ledger,
+-- `proof-no-unused-hypothesis-rfl`).  The right-hand side is the definitional
+-- unfolding of `chi_V21_difference_factored`, so the identity is a `rfl` that
+-- holds for every `q`; `hq` was never consumed.
+theorem chi_v21_closed_form_u_coord (q : ℝ) :
     chi_V21_difference_factored q
       = -(q^4 + 1) * (q^2 - 1) / (4 * q^3) := by
   unfold chi_V21_difference_factored

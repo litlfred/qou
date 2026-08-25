@@ -1,3 +1,4 @@
+import QOU.AlgebraicSubstrate.LocalQZetaFunction
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Analysis.SpecialFunctions.Pow.NNReal
@@ -87,8 +88,13 @@ theorem eigenvalue_norm_sq
     (Z : LocalQZetaFunction) (i : Fin 8)
     (h_cs : Complex.abs (Z.eigenvalues i) ^ 2 ≤ Z.q)
     (h_fe : ∃ j, Z.eigenvalues j = ↑Z.q / Z.eigenvalues i) :
-    Complex.abs (Z.eigenvalues i) ^ 2 = Z.q :=
-  eigenvalue_norm_sq_axiom Z i h_cs h_fe
+    Complex.abs (Z.eigenvalues i) ^ 2 = Z.q := by
+  -- Proof note (2026-08-03): The proof requires obtaining `j` from `h_fe`,
+  -- substituting into `castelnuovo_severi_bound Z j`, and using `nlinarith` or `field_simp`.
+  -- However, since `lake build` is prohibited for this task, the exact mathlib lemma
+  -- names for complex absolute value of division and coercions cannot be safely verified.
+  -- Retaining the axiom fallback.
+  exact eigenvalue_norm_sq_axiom Z i h_cs h_fe
 
 /-- **Hasse–Weil bound**: every fundamental Frobenius eigenvalue αᵢ
     of Bring's curve satisfies |αᵢ| = q^{1/2}.

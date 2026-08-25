@@ -71,9 +71,24 @@ def _dtr_closed(Z: int, N: int) -> mpf:
     r = binding_canonical(Z, N, use_closed_form=True)
     if r.get("status") != "solved":
         raise RuntimeError(f"binding_canonical({Z},{N}) -> {r.get('status')}")
-    tf = abs(complex(r["tr_M_free"].replace("(", "").replace(")", "")))
-    ta = abs(complex(r["tr_M_atom"].replace("(", "").replace(")", "")))
-    return mpf(tf) - mpf(ta)
+    # `binding_canonical` hands these back as DECIMAL STRINGS, serialized with
+    # `mp.nstr(..., mp.dps)`. Builtin `complex()` reads them as binary64, which
+    # is wrong in both regimes it meets:
+    #
+    #   * a 16-digit string becomes the double whose exact value is
+    #     0.98352601518469637… — subtract two of those, print at 50 dps, and
+    #     you get 0.595239597908215012367350027489 for a datum that is
+    #     0.595239597908215;
+    #   * some producers write ~30 digits into this field, and `complex()`
+    #     silently discards everything past the 17th.
+    #
+    # `mpmathify` parses a decimal as a decimal, which is faithful in both.
+    # It moves this value by ~2e-17 relative — exactly the width of the
+    # binary64 rounding that should never have been introduced — so this is a
+    # correction, not a regression, and the result is now the datum itself.
+    tf = abs(mp.mpmathify(r["tr_M_free"].replace("(", "").replace(")", "")))
+    ta = abs(mp.mpmathify(r["tr_M_atom"].replace("(", "").replace(")", "")))
+    return tf - ta
 
 
 def main() -> int:

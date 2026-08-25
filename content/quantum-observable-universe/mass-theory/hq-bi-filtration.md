@@ -4,7 +4,7 @@
 ([Frobenius–Hopf substrate](#def:frobenius-hopf-substrate)),
 filtered by iterated-integral depth
 $G^{(0)} \subseteq G^{(1)} \subseteq \cdots$
-([keystone correspondence](#conj:gb-depth-period-correspondence)).
+([depth correspondence](#conj:gb-depth-period-correspondence)).
 For each Bring-embeddable knot/link $K$ ([Bring-embeddable
 knots](#rem:bring-embeddable-knots)) with dominant cell
 $\lambda_K \vdash n_K$ and central primitive idempotent
@@ -58,14 +58,14 @@ The bi-filtration interacts with the existing structures on $\mathcal{H}_q$:
 | $K$ | $\lambda_K$ | Bar-class | $\mathcal{H}_q^{(0, K)}$ | $\mathcal{H}_q^{(2, K)}$ | $\mathcal{H}_q^{(3, K)}$ |
 |---|---|---|---|---|---|
 | trivial (unknot $0_1$) | $(1)$ | self-conj | scalars | $\mathrm{Li}_2^q(0) = 0$ | $\mathrm{Li}_3^q(0) = 0$ |
-| trefoil $3_1$ | $(3)$ vs $(1,1,1)$ | chiral pair | $e_{(3)} ± e_{(1,1,1)}$ | $\mathrm{Vol}(3_1) = 0$ (torus) | $\mathrm{CS}(3_1) = ± \pi^2/6$ |
+| trefoil $3_1$ | $(3)$ vs $(1,1,1)$ | chiral pair | $e_{(3)} \pm e_{(1,1,1)}$ | $\mathrm{Vol}(3_1) = 0$ (torus) | $\mathrm{CS}(3_1) = \pm \pi^2/6$ |
 | figure-8 $4_1$ | $(2,2)$ | **self-conj** | $e_{(2,2)}$ | $2\,\mathrm{Cl}_2(\pi/3)$ (confirmed) | depth-3 partner (open) |
 | Bring trilog input | abstract / virtual | (lifted from $\zeta_5$) | scalars | weight-2 extension | $\mathrm{Li}_3(\zeta_5)$ (confirmed) |
 
 ### The bi-filtration as a tooling unification
 
-This block is the **definition layer** for the framework the
-keystone implies but does not name. Three downstream conjectures
+This is the **definition layer** for the framework the
+depth correspondence implies but does not name. Three downstream conjectures
 populate it:
 
 - [`conj:joint-galois-braid-action`](#conj:joint-galois-braid-action)

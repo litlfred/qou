@@ -9,8 +9,8 @@ export default theorem({
     validation: "not_checked",
   },
   computation: {
-    engine: "lean",
-    script: "content/quantum-observable-universe/lean/QOU/QBeta/StokesDTBPSBridge.lean",
+    engine: "python",
+    script: "computations/probes/aomega_bps_sector_nondegeneracy.py",
     witness: "computations/probes/aomega-bps-sector-nondegeneracy.witness.json",
     status: "verified",
   },

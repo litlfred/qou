@@ -25,12 +25,41 @@ $$
 This yields the eigenvalues:
 
 $$
-  \lambda_{±}(q)
+  \lambda_{\pm}(q)
   = 
-  \frac{(q - q^{-1}) ± \sqrt{(q - q^{-1})^2 + 4}}{2}
+  \frac{(q - q^{-1}) \pm \sqrt{(q - q^{-1})^2 + 4}}{2}
 $$
 
-**At the substrate parameter $q$:**
+> **The square root is spurious and the decimals below were wrong.** Corrected
+> 2026-08-09. The discriminant is a perfect square:
+> $(q-q^{-1})^2 + 4 = q^2 + 2 + q^{-2} = (q+q^{-1})^2$, so
+> $\sqrt{h^2+4} = [2]_q$ exactly — the Temperley–Lieb loop parameter — and the
+> eigenvalues are *exact*, with no radical and no decimal expansion:
+>
+> $$
+>   \lambda_\pm = \frac{h \pm [2]_q}{2}
+>   = \frac{(q-q^{-1}) \pm (q+q^{-1})}{2}
+>   \;\Longrightarrow\;
+>   \lambda_+ = q, \qquad \lambda_- = -q^{-1}.
+> $$
+>
+> These are of course the Hecke generator's eigenvalues — $\lambda$ satisfies
+> $\lambda^2 = h\lambda + 1$, i.e. $(\lambda-q)(\lambda+q^{-1}) = 0$ — which is
+> what identifies this operator as $\sigma_i$ rather than merely resembling it.
+> See `JonesNormalisation.tl_generator_sq`.
+>
+> The published numerics were also arithmetically wrong, independently of any
+> convention: $\sqrt{0.2091^2+4} = 2.01090$, not $2.0054$, and the eigenvalues
+> follow the error.
+>
+> | | published | correct |
+> |---|---|---|
+> | $\sqrt{h^2+4}$ | $2.0054$ | $2.010897$ ($= [2]_q$) |
+> | $\lambda_+$ | $1.1073$ | $1.109979$ ($= q$) |
+> | $\lambda_-$ | $-0.9027$ | $-0.900918$ ($= -q^{-1}$) |
+
+**At the substrate parameter $q$** (retained as published; see the correction
+above):
 
 $$
   q - q^{-1} = 0.2091, \quad
@@ -100,7 +129,7 @@ $$
        {\lambda_+ - \lambda_-}
 $$
 
-where $z = 1/(q^{1/2} + q^{-1/2})$ is the Markov parameter.
+where $z = q^{3}/(q^{2}+1)$ is the Markov parameter (**convention D**).
 
 We define:
 

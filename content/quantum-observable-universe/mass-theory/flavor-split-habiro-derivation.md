@@ -49,7 +49,7 @@ In the $\alpha_{\mathrm{EM}}$ case, the $\mathcal{O}(\alpha^{2})$ residual $(1 -
 
 1. The $W$-boson interaction involves four fermion strands (matter strand and neutrino strand), placing the evaluation at $H_4(q)$.
 2. The weak interaction is strictly left-handed, so it projects onto the fully alternating channel of $H_4$, the sign-block partition $(1^{4}) = (1,1,1,1)$.
-3. The Wenzl projector weight for this block is $W_{(1^{4})} = 1/[4]_q!$.
+3. The Wenzl projector weight for this Wedderburn block is $W_{(1^{4})} = 1/[4]_q!$.
 
 In the alternating channel the generator acts by its sign eigenvalue $-q^{-1}$, so the crossing-reversed two-vertex insertion $\sigma_i^{-2}$ evaluates to $(-q^{-1})^{-2} = q^{2}$, and the exact expansion $q^{2} = 1 + h\,q$ plays the role that $q^{-2} = 1 - h\,q^{-1}$ plays in the photon singlet channel. Weighted by the alternating quantum dimension $1/[4]_q!$ and combined with the crossing energy, this is conjectured to produce the multiplicative refinement displayed above, identifying the $\approx 1.76 \times 10^{-6}$ residual as the weak-force analog of the Schwinger $(1 - h^{2}\alpha)$ term.
 

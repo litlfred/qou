@@ -66,7 +66,7 @@ if str(HERE) not in sys.path:
     sys.path.insert(0, str(HERE))
 
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps, fmt, str_at_true_precision  # noqa: E402
 # Reuse the established Occam pipeline pieces verbatim — they're
 # the *correct* y_λ / χ^λ loaders. We just plug a different
 # Δ_λ selector in front of them.
@@ -404,7 +404,9 @@ def main() -> int:
         cmp_rows.append({
             "partition": list(lam),
             "Delta_occam_solo": str(d_occ),
-            "Delta_lp_dual": str(d_lp),
+            # x_star comes from the scipy LP solve — f64 by construction —
+            # so str(<mpf>) printed 50 dps of a 53-bit value.
+            "Delta_lp_dual": str_at_true_precision(d_lp),
             "abs_diff": str(abs(d_occ - d_lp)),
         })
         print(f"    {str(list(lam)):<24}{mp.nstr(d_occ, 8):>22}"
@@ -505,7 +507,7 @@ def main() -> int:
             },
             "per_lambda": [
                 {**rows[i],
-                 "Delta_lambda_lp_primary": str(lp_vec[i]),
+                 "Delta_lambda_lp_primary": str_at_true_precision(lp_vec[i]),
                  "cost_plancherel": str(cost_planch[i]),
                  "cost_frobenius": str(cost_frob[i])}
                 for i in range(len(parts))

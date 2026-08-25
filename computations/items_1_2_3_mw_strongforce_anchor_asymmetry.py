@@ -25,7 +25,8 @@ sys.path.insert(0, str(HERE))
 
 from markov_trace_for_knot import trM_torus_2_k_mpf  # noqa: E402
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
 Q_0 = mpf(Q_50_DIGIT_STR)  # canonical 50-digit substrate pin
 H_0 = Q_0 - mpf(1) / Q_0
@@ -33,7 +34,9 @@ HBAR_Q = (Q_0 - 1) / Q_0
 G_CATALAN = mp.catalan
 VOL_B3 = 8 * G_CATALAN
 
-M_E_MEV = mpf("0.510998950")
+# CAL-1 from the registry, not re-typed: the literal here was
+# "0.510998950", CODATA truncated to 9 s.f. (canonical 0.51099895069).
+from codata_constants import M_E_MEV  # noqa: E402
 M_W_GEV = mpf("80.379")
 M_W_MEV = M_W_GEV * 1000
 M_Z_GEV = mpf("91.1876")

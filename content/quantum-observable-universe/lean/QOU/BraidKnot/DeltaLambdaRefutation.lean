@@ -4,11 +4,17 @@ import Mathlib.Tactic
 # QOU.BraidKnot.DeltaLambdaRefutation — formalize-the-refutation of Δ_λ closure ansätze
 
 The per-isotope binding formula `B(K) = m_e · Σ_λ y_λ χ^λ Δ_λ` requires per-partition
-`Δ_λ` values. Six closure ansätze have been **refuted** on the deuteron anchor
-(AGENTS.md §"Precision goals" / §"Δ_λ gate"): Frobenius co-Casimir, Demazure-fibre,
-LP-Plancherel, LP-Frobenius, crystal-graph, augmented Markov. The gate rule —
-**"do not propose a seventh fit-based ansatz"** — is currently enforced only by
-reviewer vigilance (prose warnings in audit docs).
+`Δ_λ` values. The per-partition **VALUE is now PROVED** (2026-08-02, sorry-free,
+general-n): `Δ_λ = (-1)^{n(λ)}·dim V_λ`
+(`QOU.BraidsAndKnots.dtEuler_eq_deltaLambda_unconditional`). The six ansätze refuted
+below (Frobenius co-Casimir, Demazure-fibre, LP-Plancherel, LP-Frobenius,
+crystal-graph, augmented Markov) did **not** fail on the value — they failed to derive
+the many-body **MAGNITUDE** `r* ≈ 1.585` (which no per-block `Δ_λ` can supply; the
+missing term is super-pairwise, pairwise cap `ρ_A ≤ C(A,2)` proved in
+`QOU.MassTheory.exchangeDet_pow_two_le_four`). So the gate rule —
+**"do not propose a seventh fit-based ansatz for the magnitude"** — still stands, and
+this file operationalises the *magnitude*-refutations (the value is now Lean-proved,
+not merely enforced by reviewer vigilance).
 
 This file **operationalises** that rule per the *formalize-the-refutation* discipline
 (`.claude/skills/local/compute-author.md §3.4`): a refuted ansatz becomes a

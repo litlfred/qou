@@ -1,0 +1,119 @@
+{
+  "probe": "qbeta_5two_route9_bloch_torsion_rationality",
+  "bean": "qou-b7cy",
+  "parent_bean": "qou-0yqu",
+  "builds_on": "qou-8v3k (Route 8 transport to x = -1)",
+  "dps": 70,
+  "gates": [
+    {
+      "gate": "G3",
+      "claim": "w^3 - 2w^2 - w + 1 = 0 for w = 1+2cos(2 pi k/7)",
+      "worst": "1.8111358e-71",
+      "pass": true
+    },
+    {
+      "gate": "G1",
+      "claim": "w, 1-w, 1+w are UNITS of Q(zeta_7)+ (norms -1, -1, +1)",
+      "norms": {
+        "w": "-1.0",
+        "1-w": "-1.0",
+        "1+w": "1.0"
+      },
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "(1-w)^2 (1+w) = w^2  [ring identity via w^3 = 2w^2 + w - 1]",
+      "worst": "1.8111358e-71",
+      "consequence": "delta(2[w]+[-w]) = w ^ w^2 = 0, so xi lies in the Bloch group B(F)",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "sum_k Re[2Li2(w)+Li2(-w)+log^2 w] = -pi^2/2 (Route 8 target)",
+      "value": "-4.9348022005446793094172455",
+      "abs_err": "1.44891e-70",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "sum_k Re[2L(w)+L(-w)] = pi^2/2 exactly  (L = Rogers dilogarithm)",
+      "value": "4.9348022005446793094172455",
+      "over_pi_sq": "0.5",
+      "abs_err": "0.0",
+      "note": "rationality is PROVED by Bloch torsion (G2 + F totally real); that the rational is 1/2 is VERIFIED here, not proved",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "sum_k Re V = sum_k Re L(xi) - pi^2 exactly",
+      "difference": "-9.869604401089358618834491",
+      "over_pi_sq": "-1.0",
+      "abs_err": "1.44891e-70",
+      "caveat": "the per-embedding formula V - L(xi) = i pi log[(1-w)/w] is FALSE (fails at two embeddings on branch grounds); only the SUM is exact",
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "PER-EMBEDDING: Re[2L(w_k)+L(-w_k)] = m_k pi^2/42 with m = (17,5,-1), i.e. (m_k/7) L(1) -- a level-7 dilogarithm ladder",
+      "per_embedding": [
+        {
+          "k": 1,
+          "w": "2.24697960371746706",
+          "value": "3.9948398766314070600044368",
+          "claim": "17*pi^2/42",
+          "over_L1": "17/7",
+          "abs_err": "3.62227e-71"
+        },
+        {
+          "k": 2,
+          "w": "0.554958132087371191",
+          "value": "1.1749529048915903117660108",
+          "claim": "5*pi^2/42",
+          "over_L1": "5/7",
+          "abs_err": "1.81114e-71"
+        },
+        {
+          "k": 3,
+          "w": "-0.801937735804838252",
+          "value": "-0.23499058097831806235320217",
+          "claim": "-1*pi^2/42",
+          "over_L1": "-1/7",
+          "abs_err": "1.13196e-71"
+        }
+      ],
+      "m": [
+        17,
+        5,
+        -1
+      ],
+      "sum_m": 21,
+      "sum_m_over_42": "21/42 = 1/2",
+      "minimal_denominators": [
+        42,
+        42,
+        42
+      ],
+      "worst": "3.6222716e-71",
+      "note": "verified separately to 100 dps with residuals ~1e-101; denominators of 7 in units of L(1) are the signature of level-7 ladders. Bloch torsion (G2 + F totally real) PROVES each value is in pi^2 Q; the specific numerators 17, 5, -1 are verified, not derived.",
+      "pass": true
+    },
+    {
+      "gate": "G8",
+      "claim": "END-TO-END: (sum m_k) pi^2/42 - pi^2 [Rogers->V] - pi^2 [transport back] = -3 pi^2/2, the original sum rule at x = 1",
+      "reconstructed": "-14.804406601634037928251736",
+      "original_target": "-14.804406601634037928251736",
+      "abs_err": "0.0",
+      "note": "the other gates each check one link; this checks that the two reductions COMPOSE. 21/42 = 1/2, then 1/2 - 1 - 1 = -3/2.",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "route9": "RATIONALITY PROVED; the specific rational still to be pinned",
+    "proved_elementarily": "(1-w)^2(1+w) = w^2 is a ring identity given w^3 = 2w^2 + w - 1, hence delta(2[w]+[-w]) = w ^ w^2 = 0, hence xi is in the Bloch group B(F) for F = Q(zeta_7)+. w, 1-w, 1+w are all units.",
+    "classical_input": "F totally real => r_2 = 0 => B(F) tensor Q = 0 (Borel), so xi is torsion, and Rogers L maps Bloch torsion into pi^2 Q.",
+    "still_open": "that the rational is exactly 1/2 (G5), and the -pi^2 branch constant (G6). A per-embedding branch formula was tried and is FALSE; only the sum is exact.",
+    "significance": "Route 6 hoped the problem would stop being a transcendental evaluation and become a rationality statement, and failed. That is achieved here by a different mechanism. The sum rule is now one rational number away.",
+    "sum_rule_status": "verified to 80 dps, unproved -- UNCHANGED"
+  }
+}

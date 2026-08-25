@@ -4,10 +4,10 @@
 import math
 import sys
 from pathlib import Path
-sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "folio-assistant"))
+sys.path.insert(0, str(Path(__file__).resolve().parent))
 import _path_bridge  # noqa: F401, E402
 from experimental_constants import M_E_MEV  # noqa: E402
-from computations.q_parameter import Q
+from q_parameter import Q
 
 q = Q
 q_half = math.sqrt(q)

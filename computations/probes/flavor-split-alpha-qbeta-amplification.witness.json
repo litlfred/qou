@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-29T16:39:21.733298+00:00",
-  "commitSha": "1fba3592c9b6e598ad69fbab41fd5c87bae25997",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-23T09:23:33.568305+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "flavor_split_route_to_qbeta_worse_than_habiro",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 13,
+  "durationMs": 5,
   "computation": "flavor-split-alpha-qbeta-amplification",
   "scriptFile": "flavor_split_alpha_qbeta_amplification_probe.py",
-  "scriptHash": "03a3d1fa78e1",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "513b511b92fa",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,9 +27,18 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/probes/flavor_split_alpha_qbeta_amplification_probe.py"
+    ],
+    "reproduce": "python3 -u computations/probes/flavor_split_alpha_qbeta_amplification_probe.py"
   },
   "description": "Negative result: the flavor-split coefficient α cannot improve Q_β. Q_β = M_N·split − m_e amplifies Δm relative error by ~1.65× (difference of large numbers). The best derivable flavor split (geometric self-energy α=1, 0.0098% on Δm) gives Q_β at ~1.6e5 ppb, ~128× worse than the production Habiro Q_β (~1248 ppb). α is a clean structural result but NOT on the critical path for Q_β/Δm_pn.",
   "data": {
@@ -40,22 +49,22 @@
     },
     "forms": {
       "flavor_split_leading": {
-        "split": "0.0013757112499766120135287432436351703219021757083132",
-        "Q_beta": "0.78068100585455332676801150440535014250837965894764",
-        "err_ppb": "-2112148.2533216537843992826468319402230569969552486",
-        "amplification": "1.6510607114996575779219393230379233612282769042775"
+        "split": "0.001375710807027096008551109274106550622225476011937774931321338387473873",
+        "Q_beta": "0.7806805896750401625622990225008220139519955350568404334536150897554698",
+        "err_ppb": "-2112680.225378381114646474703385077275434862155713849094575815501130353",
+        "amplification": "1.651060179527600850591692130981370224175899039077009932956353084493055"
       },
       "flavor_split_geometric_alpha1": {
-        "split": "0.0013776038314199242257965370791903422910062522123812",
-        "Q_beta": "0.78245920933210282832580071122570023819598160500526",
-        "err_ppb": "160800.15309946730486776887836125801655537759184086",
-        "amplification": "1.6533336599060786990112063745631165594678892788246"
+        "split": "0.001377603387251667152343690659180682637933356187427489749390219045316242",
+        "Q_beta": "0.7824587920067138066110646957026233409506215267852935135309677136726997",
+        "err_ppb": "160266.7163528227831465048931290572783048173607893257824278700723004298",
+        "amplification": "1.653333126469332054489485110577884358729638718593513107833356770066486"
       },
       "flavor_split_posited_1plus_hbar3": {
-        "split": "0.0013770494097940612483979963266208764111825025514274",
-        "Q_beta": "0.78193829377166274938864468892106483670853679132462",
-        "err_ppb": "-505048.38894359709290098077101828399666992193952102",
-        "amplification": "1.6526678113640356346134376249137370174546639792932"
+        "split": "0.001377048965992554505397569588173216836723974815154796535592272745263871",
+        "Q_beta": "0.7819378767910912080311939847878700306159996096987728203118196437204861",
+        "err_ppb": "-505581.3849350904863004830793688964197507432300854691712327053493904679",
+        "amplification": "1.652667278368044141220038122605386405031583158002638312879696194644795"
       }
     },
     "production_habiro_qbeta_ppb": "1248.0",

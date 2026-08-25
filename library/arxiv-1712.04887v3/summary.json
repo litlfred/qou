@@ -1,0 +1,112 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1712.04887v3",
+ "source_sha256": "024317c20a1d8b66",
+ "brief": "Bloch groups, algebraic K-theory, units, and Nahm's conjecture — Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F",
+ "extended": "**Bloch groups, algebraic K-theory, units, and Nahm's conjecture**\n\n*UNITS, AND NAHM’S CONJECTURE*\n\n43 pp, 18 sections.\n\n**Abstract.** Given an element of the Bloch group of a number ﬁeld F and a natural num- ber n, we construct an explicit unit in the ﬁeld Fn = F (e2πi/n), well-deﬁned up to n-th powers of nonzero elements of Fn. The construction uses the cyclic quantum dilogarithm, and under the identiﬁcation of the Bloch group of F with the K-group K3(F ) gives (up to an unidentiﬁed invertible scalar) a formula for a certain abstract Chern class from K3(F ). The units we deﬁne are conjectured to coincide with numbers appearing in the quantum modularity conjecture for the Kashaev invariant of knots (which was the original motivation for our investigation), and also appear in the radial asymptotics of Nahm sums near roots of unity. This latter connection is used to prove Nahm’s conjecture relating the modularity of certain q-hypergeometric series to the vanishing of the associated elements in the Bloch group of Q.\n\n**Outline.** 1 Introduction; 1.1 Bloch groups and associated units; 1.2 Algebraic K-groups and associated units; 1.4 Motivation from quantum topology; 1.5 Plan of the paper; 2.4 Compatibilities; 2.5 The 5-term relation; 2.6 An eigenspace computation; 3 Chern Classes for algebraic K-theory; 3.4 Upgrading from S-units to units; 3.5 Proof of Theorem 1.5; 4 Reduction to finite fields; 4.1 Local Chern class maps; 4.2 The Bloch group of Fq; 5.1 Proof of Theorem 1.6; 6 The connecting homomorphism to K-theory; Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.2: Suppose that F does not contain any non-trivial nth root of unity. Then\n- Theorem 1.2: is then a companion of the following result expressed in terms of K3(F )\n- Theorem 1.5: LetF be a number ﬁeld. Then there is a canonical map\n- Theorem 1.6: Forn prime to MF , the map Rζ equalscγ\n- Theorem 1.2: also motivates a mod n (or ´ etale) version of the Bloch group of a number\n- Theorem 1.7: The ´ etale Bloch group is related to the original Bloch group by an exact",
+ "tokens": {
+  "brief": 48,
+  "extended": 523
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-bloch-groups-and-associated-units",
+   "title": "Bloch groups and associated units",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-12-algebraic-k-groups-and-associated-units",
+   "title": "Algebraic K-groups and associated units",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-14-motivation-from-quantum-topology",
+   "title": "Motivation from quantum topology",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-15-plan-of-the-paper",
+   "title": "Plan of the paper",
+   "pages": "8-14"
+  },
+  {
+   "id": "sec-005-24-compatibilities",
+   "title": "Compatibilities",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-006-25-the-5-term-relation",
+   "title": "The 5-term relation",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-007-26-an-eigenspace-computation",
+   "title": "An eigenspace computation",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-008-3-chern-classes-for-algebraic-k-theory",
+   "title": "Chern Classes for algebraic K-theory",
+   "pages": "17-20"
+  },
+  {
+   "id": "sec-009-34-upgrading-from-s-units-to-units",
+   "title": "Upgrading from S-units to units",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-010-35-proof-of-theorem-15",
+   "title": "Proof of Theorem 1.5",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-011-4-reduction-to-finite-fields",
+   "title": "Reduction to finite fields",
+   "pages": "21-21"
+  },
+  {
+   "id": "sec-012-41-local-chern-class-maps",
+   "title": "Local Chern class maps",
+   "pages": "21-23"
+  },
+  {
+   "id": "sec-013-42-the-bloch-group-of-fq",
+   "title": "The Bloch group of Fq",
+   "pages": "23-25"
+  },
+  {
+   "id": "sec-014-51-proof-of-theorem-16",
+   "title": "Proof of Theorem 1.6",
+   "pages": "25-31"
+  },
+  {
+   "id": "sec-015-6-the-connecting-homomorphism-to-k-theory",
+   "title": "The connecting homomorphism to K-theory",
+   "pages": "31-41"
+  },
+  {
+   "id": "sec-016-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "41-41"
+  },
+  {
+   "id": "sec-017-references",
+   "title": "References",
+   "pages": "41-43"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

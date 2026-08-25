@@ -1,0 +1,136 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T21:10:27.688958+00:00",
+  "commitSha": "f3ed541b157c16ee8f7f3faa1ff07891089b3e6d",
+  "assertions": [
+    {
+      "name": "checks_failed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "sympy exact"
+    },
+    {
+      "name": "n_channels_odd_under_full_bar",
+      "computed": 2,
+      "expected": 2,
+      "passed": true,
+      "source": "sympy exact"
+    },
+    {
+      "name": "n_distinct_involutions_behind_the_four_gradings",
+      "computed": 1,
+      "expected": 1,
+      "passed": true,
+      "source": "sympy exact; the halves are halves of def:bar-involution"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 863,
+  "computation": "bar-parity-involution-atlas",
+  "scriptFile": "bar_parity_involution_atlas_probe.py",
+  "scriptHash": "3fdd8d3dc546",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The four corpus gradings labelled bar-even/bar-odd are aspects of one involution (def:bar-involution) applied by halves: A and D are graded by the coefficient half q -> 1/q, C by the diagram half (mirror), and B is swapped, not graded. Under the full involution both crossing-energy channels are odd.",
+  "contentBlock": "obs:crossing-energy-decomposition",
+  "parameters": {
+    "q_0_pin": "experimental/proton",
+    "uses_muon_built_cache": false,
+    "dps": 50
+  },
+  "data": {
+    "checks": {
+      "split_reconstructs_e_cross": true,
+      "A_cosh_is_coefficient_even": true,
+      "A_sinh_is_coefficient_odd": true,
+      "C_E_sym_is_mirror_odd": true,
+      "C_E_asym_is_mirror_even": true,
+      "C_anticorrelates_with_A": true,
+      "full_bar_makes_E_sym_odd": true,
+      "full_bar_makes_E_asym_odd": true,
+      "full_bar_does_not_separate_channels": true,
+      "full_bar_negates_e_cross": true,
+      "D_swap_is_the_coefficient_half": true,
+      "D_A_plus_is_coefficient_even": true,
+      "D_A_minus_is_coefficient_odd": true,
+      "D_A_plus_is_cosh": true,
+      "D_A_minus_is_sinh": true,
+      "A_and_D_are_the_same_grading": true,
+      "B_idempotents_resolve_identity": true,
+      "B_e_minus_is_bar_fixed": true,
+      "B_e_plus_is_bar_fixed": true,
+      "B_full_bar_does_not_exchange_channels": true,
+      "B_coefficient_half_alone_leaves_the_spectrum": true
+    },
+    "parity_atlas": {
+      "cosh_L": {
+        "coefficient_half": "even",
+        "diagram_half_mirror": "even",
+        "full_bar_involution": "even"
+      },
+      "sinh_L": {
+        "coefficient_half": "odd",
+        "diagram_half_mirror": "even",
+        "full_bar_involution": "odd"
+      },
+      "E_sym": {
+        "coefficient_half": "even",
+        "diagram_half_mirror": "odd",
+        "full_bar_involution": "odd"
+      },
+      "E_asym": {
+        "coefficient_half": "odd",
+        "diagram_half_mirror": "even",
+        "full_bar_involution": "odd"
+      },
+      "E_cross": {
+        "coefficient_half": "neither",
+        "diagram_half_mirror": "neither",
+        "full_bar_involution": "odd"
+      }
+    },
+    "numerics_at_q0": {
+      "q_0": "1.10997858275138080759166909561",
+      "cosh_lambda": "1.00544843335356114987624598905",
+      "sinh_lambda": "0.104530149397819657715423106565"
+    },
+    "involutions": {
+      "coefficient_half": "q -> q^{-1}, diagram fixed",
+      "diagram_half_mirror": "sigma_i -> sigma_i^{-1}, i.e. p <-> m",
+      "full_bar_involution": "def:bar-involution = both halves; bar(sigma_i)=sigma_i^{-1} and bar(q)=q^{-1}"
+    },
+    "grading_to_half": {
+      "A_crossing_energy_weights": "coefficient half",
+      "B_hecke_eigen_split": "not a grading -- the full involution FIXES both e_+ and e_-",
+      "C_knot_mirror_channel_totals": "diagram half",
+      "D_spin_involution_sectors": "coefficient half"
+    },
+    "interpretation": {
+      "one_involution_two_halves": "A, C and D are not three involutions. They are def:bar-involution applied by halves: A and D by the coefficient half q -> 1/q, C by the diagram half (mirror). B is the Hecke eigen-split, which the full involution fixes rather than grades.",
+      "the_words_separate_nothing_under_the_full_involution": "Under def:bar-involution itself: both crossing-energy channels are odd, and both Hecke idempotents are fixed. So on every one of the four gradings the parity words fail to distinguish the two summands when read against the full involution. They distinguish them only against a named half.",
+      "why_the_names_are_safe_to_keep": "A and D carry the SAME grading -- coefficient-half parity -- with the same assignment (cosh/A_+ even, sinh/A_- odd), so 'bar-even/bar-odd' is consistent between them. The only cross-wiring is C, which grades the channel TOTALS by the other half and so anti-correlates.",
+      "the_full_involution_separates_nothing": "Under def:bar-involution itself both channels are odd and E_cross is negated. So the parity words separate the channels only when read against the coefficient half; the notation register must say which half is meant.",
+      "the_double_inversion_is_not_an_error": "cosh L is coefficient-EVEN while its channel total E_sym = (p-m) cosh L is diagram-ODD, because the mirror flips the multiplicity as well as the weight. Both statements hold of the same summand; only the involution differs."
+    }
+  },
+  "caveats": [
+    "This is a statement about which involution each label is computed against, not a claim that any block is wrong. Every parity assertion checked here is true against the half its own block uses.",
+    "DISCREPANCY FLAGGED, NOT EDITED. eigenbasis-structural-lemmas.md:2 states 'the bar involution q -> q^{-1} swaps the seminormal eigenvalues q <-> -q^{-1}'. Computed here, neither half nor the full involution produces that swap: the coefficient half sends {q, -1/q} to the spectrum of sigma^{-1}, and the full involution FIXES both idempotents pointwise. The standard operation that does exchange the symmetric and alternating channels is the Iwahori-Matsumoto involution, not the bar involution. Scope (a): this tests the eigenvalue-swap sentence only. It does not test the conjugate-character identity chi_lambda(1/q) = eps * chi_{lambda'}(q) that the block draws from it, which may hold on other grounds. Author's call.",
+    "Grading D is verified on the sym/alt Hecke block only, where electroweak-triplet-charge-spin-from-involution-proof.md:3 states the spin involution acts as the eigenvalue swap. The spin involution of def:spin-involution is defined on a general Frobenius *-algebra; that it coincides with the bar involution elsewhere is not checked here."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.10997858275138080759166909561",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.numerics_at_q0.q_0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

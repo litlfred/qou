@@ -10,7 +10,10 @@ the unique linear functional satisfying
     tr_M(σ_i x) = z · tr_M(x)        for x ∈ H_{i}(q),  i < n,
     tr_M(xy)   = tr_M(yx),
 
-with z = 1/(√q + 1/√q).  In the Wedderburn decomposition
+with z = q³/(q² + 1) — **convention D** (SU(2)/Temperley–Lieb, Jones);
+convention C's z = 1/(√q + 1/√q) was excised by owner ruling 2026-08-09,
+see docs/coordination/trace-convention-registry.md.  In the Wedderburn
+decomposition
 
     tr_M(β) = Σ_{λ ⊢ n} y_λ(q) · χ^λ(β),
 
@@ -48,6 +51,17 @@ Run:
 """
 from __future__ import annotations
 
+
+# Path bridge (subdirectory refactor — Phase 4, 2026-06-02).
+# Keeps flat-namespace imports (`from witness_base import …`)
+# working from the cluster subdirectory. The bridge module
+# also puts every other cluster subdir on sys.path so cross-
+# cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+del _sys, _Path
+
 import json
 import sys
 import time
@@ -71,9 +85,17 @@ from hecke_characters import partitions_of  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from q_parameter import HA as HA_VAL  # noqa: E402
 
-# Markov parameter z = 1/(√q + 1/√q).
-SQ = sp.sqrt(Q)
-Z_MARK = sp.cancel(1 / (SQ + 1 / SQ))
+# Markov parameter — TRACE CONVENTION **D** (SU(2)/Temperley–Lieb, Jones):
+#     z = q³/(q² + 1).
+# Owner ruling 2026-08-09 excised convention C (z = 1/(√q + 1/√q) = √q/(q+1)),
+# which this line carried until then.  Registry:
+# docs/coordination/trace-convention-registry.md.
+#
+# Structural check this z passes and C does not: feeding it through the Wenzl
+# level relation below gives Q^r = q⁴ = Q², i.e. **r = 2 exactly** — the SU(2)
+# level, equivalently the row cap ℓ(λ) ≤ 2 that forces y_(1³) = 0.  Under C the
+# same relation gives a non-integral level (Q^r ≈ 1.72025 at q₀) and y_(1³) ≠ 0.
+Z_MARK = sp.cancel(Q**3 / (Q**2 + 1))
 
 
 def atom_braid_word_3A_to_crossings(Z: int, N: int, *, include_inter: bool = False):
@@ -89,16 +111,13 @@ def atom_braid_word_3A_to_crossings(Z: int, N: int, *, include_inter: bool = Fal
     """
     word = atom_braid_word_3A(Z, N, include_inter=include_inter)
     out = []
+    # Delegate to the canonical classifier. The private three-way test this
+    # replaces had no branch for the colour-weighted p-n interface
+    # -h(1/2 - δ/4) and fell to its `else: raise`, so this broke on every
+    # Z>=1,N>=1 word reached with include_inter=True (qou-8zjd).
+    from canonical_braid_crossings import classify_crossing
     for c, d, gen_idx in word:
-        if d == 0.0:
-            ctype = "sigma"
-        elif abs(d - (-HA_VAL)) < 1e-9:
-            ctype = "sigma_inv"
-        elif abs(d - (-HA_VAL / 2)) < 1e-9:
-            ctype = "averaged"
-        else:
-            raise ValueError(f"Unknown crossing (c={c}, d={d})")
-        out.append((gen_idx, ctype))
+        out.append((gen_idx, classify_crossing(float(c), float(d), HA_VAL)))
     return out
 
 
@@ -151,7 +170,10 @@ QR_W = sp.cancel(Z_W_RAW / (1 - Q_W + Z_W_RAW))  # Q^r symbolic — rational in 
 
 def schur_principal_symbolic(lam) -> sp.Expr:
     """s_λ(1, Q, Q², …, Q^{r-1}) symbolically, where Q = q² and Q^r is
-    the Wenzl level fixed by the Markov parameter z = 1/(√q + 1/√q).
+    the Wenzl level fixed by the Markov parameter z = q³/(q² + 1)
+    (convention D).  For that z the relation collapses to Q^r = Q², i.e.
+    r = 2, so this is the two-variable specialization s_λ(1, Q) and
+    vanishes identically on any λ with three or more rows.
 
     Closed form:
         s_λ = Q^{n(λ)} · ∏_{x∈λ} (1 - Q^{r + c(x)}) / (1 - Q^{h(x)})
@@ -251,8 +273,8 @@ def main() -> int:
         print(f"  y_{shape} = {y}")
         # Cross-check: at q_0 the value should match the alpha_k_jones_markov_h3
         # numerical solution.
-        val_q0 = float(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
-        print(f"           ≈ {val_q0:+.10f}  at q_0")
+        val_q0 = sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
+        print(f"           ≈ {float(val_q0):+.10f}  at q_0")  # display only
 
     # Sanity: Σ y_λ · dim_C(λ) = 1  (since tr_M(1) = 1 and χ^λ(1) = f^λ = dim)
     print()
@@ -274,9 +296,9 @@ def main() -> int:
     print(f"  [{time.time() - t0:.2f}s]")
     print()
     print(f"  closed form: {trM_p}")
-    val_q0 = float(sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+    val_q0 = sp.N(trM_p.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_q0}")
-    print(f"  markov_peel ref : 1.0653062285923893")
+    print(f"  markov_peel ref : 1.0653062286131670")
 
     # Same for neutron (canonical markov_peel word).
     neutron = atom_braid_word_3A_to_crossings(0, 1, include_inter=False)
@@ -285,9 +307,9 @@ def main() -> int:
     print("Neutron internal braid:")
     trM_n, _ = tr_M_canonical(neutron, n)
     print(f"  closed form: {trM_n}")
-    val_n = float(sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+    val_n = sp.N(trM_n.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30)
     print(f"  at q_0 ≈ 1.1097 : {val_n}")
-    print(f"  markov_peel ref : 0.9232332971695837")
+    print(f"  markov_peel ref : 0.9232332971861535")
 
     # Witness JSON.
     out = HERE / "markov_weights_symbolic.witness.json"
@@ -303,18 +325,35 @@ def main() -> int:
         ),
         "n": n,
         "y_lambda": {str(sh): str(y) for sh, y in y_lam.items()},
+        # str(), not float(). This evaluates a CLOSED FORM at a 50-digit q0
+        # to 30 digits and then used to cast the result to a double, throwing
+        # away 14 of them on the way out — the same defect as the isotope
+        # producer, in a script whose whole point is that the value comes from
+        # the Markov axioms rather than a fit.
         "y_lambda_at_q0": {
-            str(sh): float(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
+            str(sh): str(sp.N(y.subs(Q, sp.Float(Q_50_DIGIT_STR, 50)), 30))
             for sh, y in y_lam.items()
         },
         "tr_M_proton_closed_form": str(trM_p),
-        "tr_M_proton_at_q0": val_q0,
-        "tr_M_proton_markov_peel_reference": 1.0653062285923893,
+        "tr_M_proton_at_q0": str(val_q0),
+        # The reference stays at the precision it was recorded with: it comes
+        # from markov_peel, which returns a double. Serializing it through a
+        # 50-digit formatter would pad 17 real digits with 33 invented ones —
+        # exactly the fake precision the padding ratchet exists to catch.
+        "tr_M_proton_markov_peel_reference": "1.0653062286131670",
         "tr_M_neutron_closed_form": str(trM_n),
-        "tr_M_neutron_at_q0": val_n,
-        "tr_M_neutron_markov_peel_reference": 0.9232332971695837,
+        "tr_M_neutron_at_q0": str(val_n),
+        "tr_M_neutron_markov_peel_reference": "0.9232332971861535",
         "generated_at": datetime.now(timezone.utc).isoformat(),
     }
+    import os as _os, sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
+    _d = _os.path.dirname(_os.path.abspath(__file__))
+    while _d != _os.path.dirname(_d) and not _os.path.isdir(_os.path.join(_d, "substrate")):
+        _d = _os.path.dirname(_d)
+    _sys.path.insert(0, _os.path.join(_d, "substrate"))
+    from witness_base import WitnessBuilder  # noqa: E402
+    WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="sympy")
+    witness["scriptFile"] = _os.path.basename(__file__)
     out.write_text(json.dumps(witness, indent=2))
     print()
     print(f"witness: {out.relative_to(HERE.parent.parent)}")

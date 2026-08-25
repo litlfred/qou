@@ -205,9 +205,7 @@ def main() -> int:
         )
 
     print("S2 — per-atom-hyperbolic-volume.witness.json vs named census")
-    atlas = json.loads(
-        (COMPUTATIONS / "per-atom-hyperbolic-volume.witness.json").read_text()
-    )["data"]
+    atlas = w.add_upstream(COMPUTATIONS / "per-atom-hyperbolic-volume.witness.json")["data"]
     for key, census_name in S2_ROWS:
         claimed = mp.mpf(atlas[key])
         vol, _sol = hp_volume(census_name)

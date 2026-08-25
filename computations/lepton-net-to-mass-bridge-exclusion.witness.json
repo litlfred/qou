@@ -1,0 +1,114 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-07T17:23:02.574043+00:00",
+  "commitSha": "0bd3daddd5db24b50685a95e0b16bfb5fcc53be0",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "lepton-net-to-mass-bridge-exclusion",
+  "scriptFile": "lepton_net_to_mass_bridge_exclusion.py",
+  "scriptHash": "58e461a2af27",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "Bean qou-lsp9. Derives the Binet closed form of the Morgan-Voyce continuant net(T(2,n)) and uses its log-linearity to exclude the whole multiplicative net -> lepton-mass bridge class m_n = C g^n net(n)^p.",
+  "contentBlock": "prop:lepton-continuant-recurrence",
+  "parameters": {
+    "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
+    "q0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "h": "0.2090602987956393154308462131296749438597574952630225625334068739226195"
+  },
+  "data": {
+    "binet_closed_form": {
+      "formula": "b_n * (q + 1/q) = q^n - (-1)^n q^{-n}",
+      "max_abs_err_vs_recurrence_n_0_to_13": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
+      "verified": true
+    },
+    "net_ratio_vs_q_squared": {
+      "q_squared": "1.232052454166763931269804513535636184849681422916997359494673668738914",
+      "by_winding": {
+        "3": {
+          "ratio": "1.245472863251963092841713630232169007512382826786407649925982998481739",
+          "minus_q_squared": "0.01342040908519916157190911669653282266270140386941029043130932974282466",
+          "rel_excess_over_q2": "0.01089272541912622809383495439360381166069925537738695080529049668066741"
+        },
+        "5": {
+          "ratio": "1.240798309448335485950513883000612174648762854716102623084350600243948",
+          "minus_q_squared": "0.0087458552815715546807093694649759897990814317991052635896769315050336",
+          "rel_excess_over_q2": "0.007098606274427146420707017837808289230970261615478238820749238780567247"
+        },
+        "7": {
+          "ratio": "1.237773453478556368129203876376500549682577142392643266608544847956414",
+          "minus_q_squared": "0.005720999311792436859399362840864364832895719475645907113871179217499548",
+          "rel_excess_over_q2": "0.004643470570140249444596402146258919669973072499089172611908222295426011"
+        },
+        "9": {
+          "ratio": "1.235803924645542214905467800882235870663682247599927115131370545990734",
+          "minus_q_squared": "0.003751470478778283635663287346599685814000824682929755636696877251819605",
+          "rel_excess_over_q2": "0.003044895098492701804021150692123422108233289817971027085059278737241682"
+        },
+        "11": {
+          "ratio": "1.234516352393471739882856415028085943584174602492034063510035021652075",
+          "minus_q_squared": "0.002463898226707808613051901492449758734493179575036704015361352913161032",
+          "rel_excess_over_q2": "0.001999832246082526552733164920750137647334964028693047876846653102774786"
+        }
+      },
+      "asymptotic_law": "net(n+2)/net(n) = q^2 (1 + O(q^{-2n}))"
+    },
+    "observed_tower": {
+      "m_mu_over_m_e": "206.7682829876656601610621844867860768399121389050325782338169501562439",
+      "m_tau_over_m_mu": "16.81702933242618149373589615004148445144550950825220611063195842352064",
+      "ratio_of_ratios": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "log_increments": [
+        "5.331598760405988115341849866862698784853358605897518539278360183731006",
+        "2.822392023751863445496481317829369137572487562479532228264746814600507"
+      ],
+      "log_concave": true
+    },
+    "net_tower": {
+      "net_5_over_net_3": "1.245472863251963092841713630232169007512382826786407649925982998481739",
+      "net_7_over_net_5": "1.240798309448335485950513883000612174648762854716102623084350600243948",
+      "ratio_of_ratios": "1.003767376025605591416067563943223072505713305174049608209499286039031",
+      "log_increments": [
+        "0.219515267648105533903043067663319876149758263640981242376753539992456",
+        "0.2157549704101596342986588518662109780894920469150581544448492333336176"
+      ],
+      "log_linear_to_exponentially_small_remainder": true
+    },
+    "pure_power_law_p_per_step": {
+      "p_from_e_to_mu": "24.28805439151877147779624208757055711760287430503257454577216865650466",
+      "p_from_mu_to_tau": "13.08146930931126535578876038304096985468535463985529880192424006919396",
+      "disagreement_factor": "1.856676327194435682808014236936178176323730491469935481142809185131463",
+      "verdict": "no single p; a pure power law (g=1) is excluded"
+    },
+    "full_class_fit": {
+      "class": "m_n = C * g^n * net(n)^p",
+      "p_fit": "667.2894661978381864175698589029648700948519587997742537417035704280971",
+      "g_squared_fit": "5.011066440684700257247929316714685653639815718312503240389707880812303e-62",
+      "roundtrip_ratio_1": "206.7682829876656601610621844867860768399121389050325782338169501562439",
+      "roundtrip_ratio_2": "16.81702933242618149373589615004148445144550950825220611063195842352072",
+      "verdict": "solvable but degenerate: p ~ 664 fits the 0.38% O(q^{-2n}) remainder of the net ratio, g^2 ~ 1e-61 restores the magnitude. Both parameters are exponentially fine-tuned and p grows like q^{2n} for any further generation -- not a physical map."
+    },
+    "structural_diagnosis": {
+      "torus_knot_volume": 0,
+      "note": "T(2,n) are Seifert-fibred, not hyperbolic, so Vol(T(2,n)) = 0 and the canonical mass route m = m_e Vol(K) rho(K) / hbar_q^2 gives no generation dependence through the lepton's own identity knot. The corpus's working muon mass uses Vol(4_1) -- the hyperbolic Higgs knot -- so mass enters via the Higgs-knot coupling, not via the torus braid's normal-form amplitude."
+    },
+    "verdict": "EXCLUDED (scope-(b) for the multiplicative class m_n = C g^n net(n)^p, on the proved Binet asymptotics). The bean's premise is wrong: the scale factor is not missing, it does not exist. Non-multiplicative bridges (additive interface term; Higgs-coupling route where n enters through linking with 4_1) are NOT excluded.",
+    "all_checks_passed": true
+  },
+  "caveats": [
+    "Scope-(b) applies ONLY to the multiplicative class m_n = C g^n net(n)^p, and rests on the proved Binet asymptotics. Non-multiplicative bridges (an additive interface term; a Higgs-coupling route where n enters through linking with 4_1 rather than through net) are NOT excluded."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

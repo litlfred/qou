@@ -38,7 +38,7 @@ Within $\mathcal{B}_3$, the cyclic symmetry of the color tubes relates the three
 The proton $\mathfrak{p} = [\mathfrak{u}, \mathfrak{u}, \mathfrak{d}]_p$ exhibits the $2 + 1$ partition: two positive-orientation unknots and one negative. The neutron $\mathfrak{n} = [\mathfrak{u}, \mathfrak{d}, \mathfrak{d}]_p$ exhibits the $1 + 2$ partition.
 
 **Crossing orientation is not writhe.**
-The ± labels denote the exponent sign of the braid generator at each crossing of $\mathcal{B}_3$ (explicitly, $\sigma_i$ for positive and $\sigma_i^{-1}$ for negative). The generator index $i \in \{0, 1\}$ identifies which adjacent pair of strands crosses, independently of the sign. These crossings occur between distinct strands, not as self-crossings of any single strand. In the standard braid projection, each strand maintains zero self-writhe. The free neutrino remains the same unknot drawn outside any Borromean context. All three pairwise linking numbers vanish (the Brunnian property), while the triple Milnor invariant $\bar{\mu}_{123} = ± 1$ encodes confinement.
+The $\pm$ labels denote the exponent sign of the braid generator at each crossing of $\mathcal{B}_3$ (explicitly, $\sigma_i$ for positive and $\sigma_i^{-1}$ for negative). The generator index $i \in \{0, 1\}$ identifies which adjacent pair of strands crosses, independently of the sign. These crossings occur between distinct strands, not as self-crossings of any single strand. In the standard braid projection, each strand maintains zero self-writhe. The free neutrino remains the same unknot drawn outside any Borromean context. All three pairwise linking numbers vanish (the Brunnian property), while the triple Milnor invariant $\bar{\mu}_{123} = \pm 1$ encodes confinement.
 
 **The exceptional divisor as quark habitat.**
 
@@ -66,4 +66,4 @@ $$
   +  \sum_k Q_k(q)\mathfrak{m}(\mathcal{L}_H).
 $$
 
-In the Borromean picture, $\mathfrak{m}(\nu) \approx 0$ since unknot mass is vacuum drag only. Thus, the $Q_k(q)\mathfrak{m}(\mathcal{L}_H)$ terms dominate the hadronic mass. These represent the Hopf link mass contributions from the Borromean structure. The assertion that the vast majority of hadronic mass derives from Skein polynomials multiplying the Hopf link mass perfectly aligns with the Borromean volume contributing through the Skein resolution.
+In the Borromean picture, $\mathfrak{m}(\nu) \approx 0$ since unknot mass is vacuum drag only. Thus, the $Q_k(q)\mathfrak{m}(\mathcal{L}_H)$ terms dominate the hadronic mass. These represent the Hopf link mass contributions from the Borromean structure. This is consistent with the Borromean volume entering the hadronic mass through the Skein resolution.

@@ -10,7 +10,7 @@
       "expected": true,
       "passed": true,
       "tolerance": 0,
-      "source": "All 4 redistribution hypotheses must sum to −G (Reading-A's h² total target), within 1e-40 at 50 dps"
+      "source": "All 4 redistribution hypotheses must sum to \u2212G (Reading-A's h\u00b2 total target), within 1e-40 at 50 dps"
     }
   ],
   "allPassed": true,
@@ -33,7 +33,7 @@
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0"
   },
-  "description": "Comparison of 3 redistribution hypotheses for Reading-A's h² coefficient (−G) across (3,1), (2,2), (2,1,1) Wedderburn channels at H_4. All hypotheses preserve total h² = −G; they differ in per-channel split, distinguishable only by per-channel h⁴+ data.",
+  "description": "Comparison of 3 redistribution hypotheses for Reading-A's h\u00b2 coefficient (\u2212G) across (3,1), (2,2), (2,1,1) Wedderburn channels at H_4. All hypotheses preserve total h\u00b2 = \u2212G; they differ in per-channel split, distinguishable only by per-channel h\u2074+ data.",
   "auditOnly": "docs/canonical-derivation-cheat-sheet.md",
   "parameters": {
     "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
@@ -41,7 +41,7 @@
   },
   "data": {
     "hypotheses": {
-      "H1 (uniform −G/3)": {
+      "H1 (uniform \u2212G/3)": {
         "(3, 1)": "-0.3053218647257396716848678",
         "(2, 2)": "-0.3053218647257396716848678",
         "(2, 1, 1)": "-0.3053218647257396716848678"
@@ -65,10 +65,13 @@
     "structural_constraints": {
       "bar_symmetry_required": "c_(3,1) = c_(2,1,1) at every h-order (by Type-B folding)",
       "bar_symmetry_status": "All 4 hypotheses respect it (necessary but not sufficient)",
-      "total_h2_constraint": "Σ c_λ = −G ≈ -0.91596559 (Reading-A target)",
-      "distinguishing_data_needed": "Per-channel h⁴+ coefficients (not currently available; would require Markov-trace computation on H_4 directly with per-block decomposition, or Hoefsmit-matrix per-channel contribution to tr_M(β) at each h-order)"
+      "total_h2_constraint": "\u03a3 c_\u03bb = \u2212G \u2248 -0.91596559 (Reading-A target)",
+      "distinguishing_data_needed": "Per-channel h\u2074+ coefficients (not currently available; would require Markov-trace computation on H_4 directly with per-block decomposition, or Hoefsmit-matrix per-channel contribution to tr_M(\u03b2) at each h-order)"
     },
     "pred_h2_order_at_q0": "2.459966616732275056431413",
     "residual_gap_h4_plus_tower": "0.00006661673227505643141299936"
-  }
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

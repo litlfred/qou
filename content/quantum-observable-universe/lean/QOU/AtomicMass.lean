@@ -61,8 +61,8 @@ noncomputable def codata_m_e : ℝ := 0.51099895069
 Source: Atomic Mass Evaluation 2020 (Wang et al., Chinese Physics C 45,
 030003), https://www-nds.iaea.org/amdc/ -/
 
-/-- Atomic mass unit (CODATA 2022): 931.49410242 MeV/c². -/
-noncomputable def ame_u : ℝ := 931.49410242
+/-- Atomic mass unit (CODATA 2022): 931.49410372 MeV/c². -/
+noncomputable def ame_u : ℝ := 931.49410372
 
 /-- ¹H mass excess (AME2020): 7.2889705 MeV. -/
 noncomputable def ame_delta_H : ℝ := 7.2889705
@@ -139,7 +139,7 @@ theorem codata_ame_offset_per_N_bound : |codata_ame_offset_per_N| < 0.000002 := 
     `|codataMass − ameMass| ≤ Z·|offset_Z| + N·|offset_N|`.  This
     single generic statement subsumes the per-element numerical checks
     (the offsets are bounded by `codata_ame_offset_per_{Z,N}_bound`). -/
-theorem ElementDatum.deviation_uniform (e : ElementDatum) :
+theorem deviation_uniform (e : ElementDatum) :
     |e.codataMass - e.ameMass|
       ≤ (e.Z : ℝ) * |codata_ame_offset_per_Z|
         + (e.N : ℝ) * |codata_ame_offset_per_N| := by

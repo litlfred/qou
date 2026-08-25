@@ -54,18 +54,18 @@ import mpmath as mp
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import Q_50_DIGIT_STR, MASS_RATIO_MU_E_STR  # type: ignore
 
-try:
-    from _precision import set_compute_dps, fmt  # type: ignore
-    set_compute_dps(50)
-except ImportError:
-    mp.mp.dps = 50
-
-    def fmt(x: mp.mpf, dps: int = 15) -> str:  # type: ignore
-        return mp.nstr(x, n=dps, strip_zeros=False)
+from _precision import set_compute_dps, fmt  # type: ignore
+set_compute_dps(50)
 
 
 # ── targets ────────────────────────────────────────────────────────────────
 TARGET_MU_OVER_E = mp.mpf(MASS_RATIO_MU_E_STR)  # CODATA: 206.7682830  # noqa: P31 — trailing comment; value from MASS_RATIO_MU_E_STR
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Idempotent. Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 TARGET_TAU_OVER_E = mp.mpf("3477.23")  # PDG 2024: m_tau / m_e
 
 # ── canonical substrate constants ──────────────────────────────────────────
@@ -79,7 +79,7 @@ HBAR_Q_SQ = HBAR_Q ** 2
 # All values verified to 8+ dps. Higher-precision values are noted.
 KNOT_VOL_TABLE: dict[str, str] = {
     # smallest hyperbolic knots (Rolfsen, up to 7 crossings)
-    "4_1":  "2.0298832128193072500",   # = 2*Λ(π/3); 15+ dps from canonical sources
+    "4_1":  "2.0298832128193072500",   # = 2·Cl₂(π/3) = 6Λ(π/3); 15+ dps from canonical sources
     "5_2":  "2.8281220883177828550",   # 10-cell hyperbolic
     "6_1":  "3.1639632305103625730",
     "6_2":  "4.0597664956578801590",
@@ -329,7 +329,7 @@ def main() -> None:
                 "https://github.com/litlfred/qou/pull/1249 (substrate-q_0 workplan)",
             ],
         },
-        "duration_sec": round(time.time() - started_at, 3),
+        "duration_sec": f"{time.time() - started_at:.3f}",
     }
 
     witness_path = Path(__file__).resolve().parent / "m-tau-knot-prediction.witness.json"

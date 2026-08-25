@@ -1,0 +1,41 @@
+564 I. Fischer / Journal of Combinatorial Theory, Series A 158 (2018) 560-604
+
+1 38 4 5 (1.1)
+
+Zeilberger’s n x k-Magog trapezoids are (0,n, k)-Magog trapezoids as defined by Krat-
+tenthaler. According to [28,21,22], we define minima and maxima of Magog trapezoids
+as follows:
+
+« A minimum is an entry equal to 1 that is located in the leftmost SE-diagonal.
+« A maximum is an entry in the rightmost SE-diagonal that is equal to the upper
+bound for the entries in its NE-diagonal.
+
+In the example, we have 2 minima (indicated in red) and 3 maxima (indicated in blue).
+Krattenthaler [21,22] conjectures the following relation between Gog trapezoids and
+Magog trapezoids.
+
+Conjecture 1. The number of (m,n,k)-Gog trapezoids with p minima and q maxima is
+equal to the number of (m,n, k)-Magog trapezoids with p maxima and q minima.
+
+The case m = 0 is Conjecture 7’ in [28]. Conjecture 1 implies in particular that the
+number of (m,n, k)-Gog trapezoids is equal to the number of (m,n, k)-Magog trapezoids.
+In [32], Zeiberger proved this for m = 0.
+
+2. Preliminaries: monotone triangles and truncated monotone triangles
+2.1. Inversion numbers
+
+The inversion number of an ASM A = (ai,j)1<ij<n, aS defined in [29, Eq. (18)], is
+given by
+
+inv(A) = S Ay ji,"
+
+1<i <i<n1<j/<j<n
+
+It generalizes the inversion number of permutations, that is, for a permutation matrix A,
+inv(A) is the number of inversions of the permutation 7 = (71,...,7m), where 7; is the
+column of the unique 1 in row i. Define the complementary inversion number inv’(A) as
+follows.
+
+inv’(A) = S ayy jAi,5/
+
+1<i! <i<n I< j<j/<n

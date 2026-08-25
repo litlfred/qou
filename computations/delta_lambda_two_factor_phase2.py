@@ -41,6 +41,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import json
 import sys
 from pathlib import Path
@@ -50,16 +51,26 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from codata_constants import M_E_MEV
 from q_parameter import Q as Q0, HBAR_Q
 
 
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
+
 def load_empirical_atoms() -> dict:
     """Per-atom empirical best-single-block Δ data."""
-    w = json.loads(
-        (_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE)).read_text()
-    )
+    w = record_upstream(_pb.witness_path("delta-lambda-empirical-tabulation.witness.json", HERE), _UPSTREAM_RECORDS)
     out = {}
     for atom in ("D", "T", "3He", "4He"):
         a = w["data"]["per_atom"][atom]
@@ -132,6 +143,7 @@ def test_two_factor(atoms: dict, V_form: str) -> dict:
 
 def main() -> int:
     builder = WitnessBuilder("delta-lambda-two-factor-phase2")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Phase 2 of the closed-forms-first-principles workplan: tests "
         "the two-factor closure form Δ_λ(K) = V(K) · c_λ across "

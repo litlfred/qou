@@ -34,9 +34,15 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge  # noqa: E402, F401
 
 import mpmath as mp  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+
+set_compute_dps()
 
 HERE = Path(__file__).resolve().parent
 
@@ -47,7 +53,7 @@ def main() -> int:
     print("=" * 78)
 
     src = HERE.parent / "q-beta-operator-valued-N3.witness.json"
-    data = json.load(src.open())["data"]
+    data = record_upstream(src, _UPSTREAM_RECORDS)["data"]
     b = mp.mpf(str(data["hoefsmit_b"]))
     hbar_q_sq = mp.mpf(str(data["hbar_q_sq"]))
     Q_N2 = mp.mpf(str(data["Q_N2"]))
@@ -105,6 +111,7 @@ def main() -> int:
     print()
 
     w = WitnessBuilder("qbeta-sdp-normalization-zero-probe", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         f"Task-2 (kernel deepening): tests whether the residue-A pole at "
         f"u_substrate is a zero of the SDP normalization Q_A·cos α_eff = "

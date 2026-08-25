@@ -87,8 +87,9 @@ import hecke_core  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from canonical_braid_crossings import _avg_color_delta  # noqa: E402
 from wedderburn_jones_markov import y_lambda_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def load_canonical_q() -> str:

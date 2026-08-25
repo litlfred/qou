@@ -8,7 +8,7 @@ pipeline to run without tying up the main session — e.g. while you keep
 working other beans. The dispatched agent does everything `/prepare-merge`
 does through **Step 6** (rebase, witness-drift resolution, lean-ref
 migration, content integration, reuse-and-simplify, one-voice, 100% Lean,
-final rebase, request Gemini + Copilot reviews), then **stops before the
+final rebase, request the Copilot review), then **stops before the
 merge** and reports the PR's readiness. It does **NOT** merge — merging still
 requires explicit human permission (AGENTS.md §Branch + PR workflow rules 7 &
 10), and a background agent cannot take interactive confirmation. After the
@@ -60,11 +60,10 @@ wanted).
 >   The build/verify must be clean before you continue.
 > - **Step 5** final rebase onto current `origin/main`; push with
 >   `git push --force-with-lease -u origin <branch>`.
-> - **Step 6** request reviews: post `/gemini review`
->   (`mcp__github__add_issue_comment`) and
->   `mcp__github__request_copilot_review`, and `subscribe_pr_activity`. Note:
->   Gemini Code Assist is sunset — if it replies with the sunset notice, record
->   "Gemini: sunset" and proceed. If GitHub's REST API is rate-limited, retry
+> - **Step 6** request the review: `mcp__github__request_copilot_review`,
+>   then `subscribe_pr_activity`. Do **NOT** post `/gemini review` — Gemini
+>   Code Assist is sunset and answers only with a sunset notice; record
+>   "Gemini: sunset" and proceed. Copilot is the only live external reviewer. If GitHub's REST API is rate-limited, retry
 >   with backoff; git push goes through the git proxy and is not REST-limited.
 >
 > **STOP after Step 6 — do NOT merge.** Merging is human-gated. On any Step 1–5

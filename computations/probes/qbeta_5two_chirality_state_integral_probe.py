@@ -60,8 +60,9 @@ import _path_bridge as _bridge  # noqa: E402, F401
 from witness_base import WitnessBuilder  # noqa: E402
 from phi_b_evaluator import log_phi_b  # noqa: E402  (corpus-validated Φ_b)
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (A2 H_num)
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 30
+set_compute_dps()
 Q0 = {"muon": mp.mpf("1.10997859555733471"),
       "proton": mp.mpf("1.1099785827513808075916690956107688798744991218736")}
 

@@ -32,6 +32,6 @@ structure AtomKnot where
   interBlock : List ℕ
 
 /-- Braid index `n(K) = 3(Z + N)`. -/
-def AtomKnot.nStrands (K : AtomKnot) : ℕ := 3 * (K.Z + K.N)
+def nStrands (K : AtomKnot) : ℕ := 3 * (K.Z + K.N)
 
 end QOU.BraidKnot

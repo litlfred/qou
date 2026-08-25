@@ -20,6 +20,27 @@ universe u v
 /-! ## §9  Volume Form, SU(2) Emergence, and q-Hodge Star -/
 
 /-- **Volume form from rigidity and symplectic self-duality.**
+
+    Aligned with condition (iii) of `QuantumObservableUniverse` under the iso
+    reading (bean `qou-n1dj`, 2026-08-22).  The change is dictated by this
+    lemma's **own prose**, which is where the corpus settles what
+    "non-degenerate" means for this `ε`:
+
+    > producing an epimorphism `ε : Λ²V → 𝟙`.  **For `ε` to be non-degenerate,
+    > we must have `rank(Λ²V) = 1`.**
+
+    `rank(Λ²V) = 1` is `C(N,2) = 1` is `N = 2`
+    (`exteriorSquareDim_eq_one_iff`), so the author's own non-degeneracy
+    condition *is* the strong reading.  Previously `projection` and
+    `volumeForm` were bare morphisms, and neither the `↠` of the docstring nor
+    the non-degeneracy of the prose was formalised at all.
+
+    One thing the prose overstates, which this structure deliberately does not
+    repeat: "this alternating condition forces `rank(V) = 2`".  An alternating
+    form exists on every even rank; what forces `2` is the *next* sentence's
+    `rank(Λ²V) = 1`.  So `phi` is recorded as the symplectic isomorphism it is,
+    and the rank comes from `volumeIso`.
+
     LaTeX: `\label{lem:volume-from-rigidity}` -/
 structure VolumeFromRigidity (C : Type u) [CategoryTheory.Category.{v} C]
     [CategoryTheory.MonoidalCategory C] where
@@ -27,14 +48,18 @@ structure VolumeFromRigidity (C : Type u) [CategoryTheory.Category.{v} C]
   V : C
   /-- The dual object `V∨`. -/
   V_dual : C
-  /-- The symplectic isomorphism `φ : V → V∨`. -/
-  phi : V ⟶ V_dual
+  /-- The symplectic isomorphism `φ : V ≅ V∨`.  The prose says `≅`; the field
+      used to say `⟶`. -/
+  phi : V ≅ V_dual
   /-- The exterior square `Λ²V`. -/
   exteriorSquare : C
   /-- The projection `π : V ⊗ V ↠ Λ²V`. -/
   projection : (V ⊗ V) ⟶ exteriorSquare
-  /-- The volume form `ε : Λ²V → 𝟙`. -/
-  volumeForm : exteriorSquare ⟶ (𝟙_ C)
+  /-- The `↠` of the field above, formalised. -/
+  projection_epi : CategoryTheory.Epi projection
+  /-- The volume form `ε : Λ²V ≅ 𝟙` — non-degenerate in the sense this
+      lemma's own prose gives that word, `rank(Λ²V) = 1`. -/
+  volumeIso : exteriorSquare ≅ (𝟙_ C)
 
 /-- **Emergence of the gauge group** (Theorem): `Aut⊗(ω) ≅ SU(2)`.
     LaTeX: `\label{thm:su2-emergence}` -/
@@ -67,7 +92,7 @@ structure QHodgeStar (C : Type u) [CategoryTheory.Category.{v} C]
 /-- **q-Weighted Yang–Mills–Levi functional**.
     LaTeX: `\label{def:q-yang-mills-levi}` -/
 structure QYangMillsLevi (cqou : CQuantumObservableUniverse)
-    (sp : SubstrateParameter cqou.M) where
+    (sp : ArchimedeanSubstrateField cqou.M) where
   /-- The integrand `q(p) · ‖F_A⁺|_H‖²(p)` at each point. -/
   integrand : cqou.M → ℝ
   /-- The total action value `S_q[A, θ]`. -/

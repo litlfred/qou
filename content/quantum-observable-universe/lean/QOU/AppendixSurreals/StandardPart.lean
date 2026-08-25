@@ -288,7 +288,7 @@ def SurrealField.finiteSubring : Subring K where
 
 /-- Membership in `finiteSubring` is exactly `IsFinite`. -/
 @[simp]
-theorem SurrealField.mem_finiteSubring {x : K} :
+theorem mem_finiteSubring {x : K} :
     x ∈ (SurrealField.finiteSubring : Subring K) ↔ SurrealField.IsFinite x :=
   Iff.rfl
 
@@ -341,7 +341,7 @@ theorem IsClose.trans {x y z : K}
   exact hxy.add hyz
 
 /-- `IsClose` as an equivalence relation. -/
-def IsClose.setoid : Setoid K where
+def setoid : Setoid K where
   r := IsClose
   iseqv := ⟨IsClose.refl, IsClose.symm, IsClose.trans⟩
 
@@ -390,7 +390,7 @@ finiteness assumption) multiplication.  These lemmas mirror the
 arithmetic of the *monad* in non-standard analysis. -/
 
 /-- `IsClose` is preserved by negation. -/
-theorem IsClose.neg' {x y : K} (h : IsClose x y) :
+theorem neg' {x y : K} (h : IsClose x y) :
     IsClose (-x) (-y) := by
   unfold IsClose at *
   have heq : -x - -y = -(x - y) := by ring
@@ -399,7 +399,7 @@ theorem IsClose.neg' {x y : K} (h : IsClose x y) :
 
 /-- `IsClose` is additive: if `x ~ x'` and `y ~ y'` then
     `x + y ~ x' + y'`. -/
-theorem IsClose.add' {x x' y y' : K}
+theorem add' {x x' y y' : K}
     (hx : IsClose x x') (hy : IsClose y y') :
     IsClose (x + y) (x' + y') := by
   unfold IsClose at *
@@ -408,7 +408,7 @@ theorem IsClose.add' {x x' y y' : K}
   exact hx.add hy
 
 /-- `IsClose` is preserved by subtraction. -/
-theorem IsClose.sub' {x x' y y' : K}
+theorem sub' {x x' y y' : K}
     (hx : IsClose x x') (hy : IsClose y y') :
     IsClose (x - y) (x' - y') := by
   unfold IsClose at *
@@ -422,7 +422,7 @@ theorem IsClose.sub' {x x' y y' : K}
 
     The finiteness hypotheses are necessary: an infinite × infinitesimal
     can have any standard part, breaking the implication. -/
-theorem IsClose.mul' {x x' y y' : K}
+theorem mul' {x x' y y' : K}
     (hx_fin : SurrealField.IsFinite x)
     (hy'_fin : SurrealField.IsFinite y')
     (hx : IsClose x x') (hy : IsClose y y') :

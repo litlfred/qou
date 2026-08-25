@@ -47,7 +47,7 @@ theorem ColorTubeFibers.shift_to_elliptic {R : Type*} [CommRing R]
 
 /-- `𝐫 ∈ R_z` (i.e. `cubic 𝐫 = 0`) transports to a root of the shifted monic
     cubic at `X = 𝐫 + z`. -/
-theorem ColorTubeFibers.mem_iff_shift_root {R : Type*} [CommRing R]
+theorem mem_iff_shift_root {R : Type*} [CommRing R]
     (C : ColorTubeFibers R) (r : R) (hr : C.cubic r = 0) :
     (r + C.z) ^ 3 + (C.z + 1) * (r + C.z) ^ 2
       + (C.z ^ 2 + C.z + 1) * (r + C.z)

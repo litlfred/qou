@@ -50,7 +50,7 @@ structure ComputationalHorizon where
 
 /-- The saturation time is non-negative (it is `0` only in the degenerate
     `c = 0` case). -/
-theorem ComputationalHorizon.minTime_nonneg (H : ComputationalHorizon) :
+theorem minTime_nonneg (H : ComputationalHorizon) :
     0 ≤ H.minTime := by
   rw [H.minTime_eq]
   have hlog : 0 ≤ Real.log 3 := Real.log_nonneg (by norm_num)
@@ -61,7 +61,7 @@ theorem ComputationalHorizon.minTime_nonneg (H : ComputationalHorizon) :
 
 /-- The leaf count is a power of three, hence positive: the resolution tree is
     never empty. -/
-theorem ComputationalHorizon.numLeaves_pos (H : ComputationalHorizon) :
+theorem numLeaves_pos (H : ComputationalHorizon) :
     0 < H.numLeaves := by
   rw [H.numLeaves_eq]; positivity
 

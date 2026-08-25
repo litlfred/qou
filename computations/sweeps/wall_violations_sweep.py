@@ -249,7 +249,7 @@ def main() -> int:
             ),
         },
     }
-    out = REPO / "folio-assistant" / "computations" / "wall-violations-sweep.witness.json"
+    out = REPO / "computations" / "wall-violations-sweep.witness.json"
     out.write_text(json.dumps(witness, indent=2))
     print(f"  Witness written to {out.relative_to(REPO).as_posix()}")
     print(f"  Files swept:        {len(files)}")

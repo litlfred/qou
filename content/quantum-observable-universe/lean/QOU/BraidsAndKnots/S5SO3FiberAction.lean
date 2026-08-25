@@ -21,7 +21,7 @@
   Geometric fiber map → conditional class (AGENTS.md §3b-cond).
 
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
-  -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring)
+  -- Ref: [klein1888] Klein, Lectures on the Icosahedron (Bring)
 -/
 import Mathlib.Data.Fintype.Basic
 import Mathlib.Algebra.BigOperators.Group.List.Basic
@@ -76,7 +76,7 @@ theorem PartitionOf5.conjugate_involutive (p : PartitionOf5) :
 
 /-- Conjugate partitions have equal dimensions (standard rep theory:
     sign-twist preserves dim, since χ_(λ')(g) = sgn(g) · χ_λ(g)). -/
-theorem PartitionOf5.conjugate_preserves_dim (p : PartitionOf5) :
+theorem conjugate_preserves_dim (p : PartitionOf5) :
     p.conjugate.dim = p.dim := by
   cases p <;> rfl
 
@@ -137,7 +137,7 @@ def A5Irrep.dim : A5Irrep → ℕ
 
 /-- A₅ has exactly five irreps — equal to its number of conjugacy classes
     (the character-table duality the fiber map realizes). -/
-theorem A5Irrep.card_eq_five : A5Irrep.allList.length = 5 := rfl
+theorem card_eq_five : A5Irrep.allList.length = 5 := rfl
 
 /-- The A₅ irrep each S₅ partition restricts to (its chirality
     representative).  Conjugate partitions share an irrep; the self-conjugate
@@ -210,7 +210,7 @@ structure IcosahedralRotation where
     `conj:s5-so3-fiber-action`; no global instance is provided, so downstream
     theorems are genuinely conditional on it.
 
-    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron (Bring) -/
+    -- Ref: [klein1888] Klein, Lectures on the Icosahedron (Bring) -/
 class BringFiberAction where
   /-- The conjectural geometric fiber map on the corrected (A₅-irrep) domain:
       each A₅ irrep ↦ an icosahedral rotation, induced by Bring's quintic. -/
@@ -428,7 +428,7 @@ theorem PartitionOf5.deltaSign_sq_one (p : PartitionOf5) : p.deltaSign ^ 2 = 1 :
   cases p <;> decide
 
 /-- **Magnitude = Wedderburn dim**: |Δ_λ| = dim V_λ, i.e. (Δ_λ)² = (dim V_λ)². -/
-theorem PartitionOf5.binding_magnitude_eq_dim (p : PartitionOf5) :
+theorem binding_magnitude_eq_dim (p : PartitionOf5) :
     p.deltaLambda ^ 2 = (p.dim : ℤ) ^ 2 := by
   cases p <;> decide
 
@@ -436,13 +436,13 @@ theorem PartitionOf5.binding_magnitude_eq_dim (p : PartitionOf5) :
     chirality signs occur, so no nonnegative (Kazhdan–Lusztig) weight can
     supply the sign — the chirality must come from the parity twist, not a
     positive combination of dimensions. -/
-theorem PartitionOf5.deltaSign_mixed :
+theorem deltaSign_mixed :
     (∃ p : PartitionOf5, p.deltaSign = 1) ∧ (∃ p : PartitionOf5, p.deltaSign = -1) :=
   ⟨⟨.five, rfl⟩, ⟨.fourOne, rfl⟩⟩
 
 /-- The electron block (3,1,1) is chirality-odd (deltaSign = -1), magnitude 6
     (self-conjugate partition; the T₁/T₂ split that carries the chirality). -/
-theorem PartitionOf5.electron_block :
+theorem electron_block :
     PartitionOf5.threeOneOne.deltaSign = -1 ∧ PartitionOf5.threeOneOne.dim = 6 := by
   decide
 
@@ -512,7 +512,7 @@ theorem PartitionOf5.nStat_eq_sumChoose2_conj (p : PartitionOf5) :
     `deltaSign_eq_nStat_parity` this closes the loop
     `deltaSign = sgn(w₀^{S_{λ'}}) = (-1)^{n(λ)}` (a-function / b-invariant parity),
     so the chirality sign is a forced cell invariant, not a table. -/
-theorem PartitionOf5.deltaSign_eq_w0_conj_sign (p : PartitionOf5) :
+theorem deltaSign_eq_w0_conj_sign (p : PartitionOf5) :
     p.deltaSign = (-1 : ℤ) ^ (sumChoose2 p.conjParts) := by
   cases p <;> decide
 
@@ -607,7 +607,7 @@ theorem reeb_eq_restriction_scaffold [bfa : BringFiberAction] (p : PartitionOf5)
     `scripts/keystone_habiro_coupling_lead.py` (exit 0), now machine-checked.
 
     -- Ref: [mckay1980graphs] McKay, Graphs, singularities, finite groups
-    -- Ref: [klein1884vorlesungen] Klein, Lectures on the Icosahedron -/
+    -- Ref: [klein1888] Klein, Lectures on the Icosahedron -/
 
 /-- Dimensions of the 9 irreducible reps of the binary icosahedral group 2I,
     equal to the Coxeter marks of the affine E₈ Dynkin diagram (McKay). -/

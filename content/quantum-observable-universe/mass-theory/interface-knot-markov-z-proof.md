@@ -89,7 +89,7 @@ contributes a Markov-trace factor that is either $z$ or $z - h$,
 determined by the crossing sign. No empirical-fit parameter remains
 at the $\mathrm{tr}_M$ level.
 
-### Constit-side companion identity (Phase 5g, conjectural)
+### Constit-side companion identity (conjectural)
 
 The factorisation $(\star)$ isolates the **interface** contribution
 to the $\mathrm{tr}_M$ ratio.  The complementary **constit** factor —
@@ -103,7 +103,7 @@ $$
 $$
 This is the content of
 `conj:constit-factor-2q-minus-1`
-(Phase 5g, $0.033\%$ rel. err.).  Combining $(\star)$ with the
+($0.033\%$ rel. err.).  Combining $(\star)$ with the
 constit-side conjecture yields the **full per-Z $\mathrm{tr}_M$ step**
 $$
   \frac{\mathrm{tr}_M(\mathcal{B}_K^{Z+1, N})}{\mathrm{tr}_M(\mathcal{B}_K^{Z, N})}

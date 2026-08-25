@@ -34,13 +34,13 @@ import mpmath as mp  # noqa: E402
 
 from _li_2_q_util import (  # noqa: E402
     bring_color_weighted_linking_weight,
-    vol_density_borromean,
-    vol_density_borromean_bring_color_weighted,
+    per_knot_density_borromean,
+    per_knot_density_borromean_bring_color_weighted,
     linking_weight_family_a,
-    flavor_split_subleading,
+    flavor_split_leading,
 )
 from _precision import set_compute_dps  # noqa: E402
-from q_parameter import Q as Q_CANONICAL  # noqa: E402
+from q_parameter import Q_MP as Q_CANONICAL  # noqa: E402
 from codata_constants import M_P_MEV_VALIDATION, M_N_MEV_VALIDATION  # noqa: E402
 
 set_compute_dps()
@@ -55,9 +55,9 @@ m_avg_codata = (m_p_codata + m_n_codata) / 2
 
 print(f"=== bring_color_weighted base-scale probe at q_0 = {mp.nstr(q, 12)} ===\n")
 
-delta = flavor_split_subleading(q)
+delta = flavor_split_leading(q)
 base = linking_weight_family_a(q)
-print(f"δ = flavor_split_subleading(q_0) = {mp.nstr(delta, 12)}")
+print(f"δ = flavor_split_leading(q_0) = {mp.nstr(delta, 12)}")
 print(f"linking_weight_family_a (H_4 avg) = {mp.nstr(base, 12)}")
 print()
 
@@ -71,10 +71,10 @@ for (Z, N, label) in [(1, 0, "proton"), (0, 1, "neutron"),
           f"shift = {mp.nstr(shift_ppm, 4)} ppm")
 print()
 
-# Mass predictions (using vol_density_borromean directly for m_p, m_n)
-m_p_family_a = m_e * vol_density_borromean(q)  # H_4 average (production)
-m_p_bring = m_e * vol_density_borromean_bring_color_weighted(1, 0, q)
-m_n_bring = m_e * vol_density_borromean_bring_color_weighted(0, 1, q)
+# Mass predictions (using per_knot_density_borromean directly for m_p, m_n)
+m_p_family_a = m_e * per_knot_density_borromean(q)  # H_4 average (production)
+m_p_bring = m_e * per_knot_density_borromean_bring_color_weighted(1, 0, q)
+m_n_bring = m_e * per_knot_density_borromean_bring_color_weighted(0, 1, q)
 m_avg_family_a = m_p_family_a
 m_avg_bring = (m_p_bring + m_n_bring) / 2
 

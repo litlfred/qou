@@ -57,7 +57,7 @@ The :refterm[descent]{#descent} involution at level $n$ kills elements of degree
 $\leq (n-1) \bmod 3$, so the transient contribution at level
 $n$ lives in degree $(n \bmod 3)$ elements.  The tower cycles
 through degrees $1 \to 2 \to 3 \to 1 \to 2 \to 3 \to \cdots$,
-accumulating contributions to $\sigma_i$, then $L_±$, then
+accumulating contributions to $\sigma_i$, then $L_\pm$, then
 $e^-$, repeating.
 
 ## Explicit NF for the electron
@@ -67,7 +67,7 @@ mass formula), grouping the $\mathrm{Li}_2$ series by
 $n \bmod 3$:
 
 $$
-  S_k = \sum_{\substack{n \geq 1 \\ n \equiv k ±od{3}}}
+  S_k = \sum_{\substack{n \geq 1 \\ n \equiv k \pmod{3}}}
   \frac{q^{-2n}}{n^2},
   \qquad k \in \{1, 2, 0\}
 $$
@@ -87,4 +87,4 @@ including the descended part) is only $12\%$ of the total
 mass element norm.
 
 **Witness**: computed from $\mathrm{Li}_2(q^{-2})$ grouping
-at $q_0 = 1.109978595554181\ldots$ (50 dps).
+at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps).

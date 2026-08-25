@@ -1,0 +1,293 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "04procbryden",
+ "source": {
+  "file": "04procbryden.pdf",
+  "sha256": "8baffbc6542c34a52724236a5986f58cc30248251dd7d4257f88533feea456c0",
+  "bytes": 732089,
+  "pages": 18
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Some computations of Ohtsuki series",
+  "authors_raw": "Nori Jacoby ( nori jacoby@hotmail.com) and Ruth Lawrence",
+  "abstract": "We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand knots’, closures of the simplest rational tangles. This data allows us to make certain conjectures about the growth rate of the coeﬃcients in Ohtsuki series generally, based on which we introduce an invariant which we call the slope σ(M) of a manifold M (not to be confused with slopes in hyperbolic geometry). For Seifert ﬁbred manifolds, M, the conjectures are known to hold while π 2σ(M) ∈ Q; furthermore if M is also an integer homology sphere, π2σ(M) ∈ Z. Assuming the conjectures, the numerical data enables us to give an example of a ZHS for which π2σ(M) ⁄∈Z. This paper is based on the ﬁrst author’s M.Sc. thesis.",
+  "docinfo": {
+   "CreationDate": "D:20041021133527+02'00'",
+   "Title": "cofor.dvi",
+   "Creator": "dvips(k) 5.86 Copyright 1999 Radical Eye Software",
+   "Producer": "Acrobat Distiller 5.0.5 (Windows)"
+  },
+  "title_lines": [
+   "Some computations of Ohtsuki series"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "A two-parameter family of manifolds",
+   "page": 4,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Definition of the manifolds",
+   "page": 4,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "Calculation of ZK",
+   "page": 5,
+   "source": "inferred",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "Properties of Ohtsuki series",
+   "page": 8,
+   "source": "inferred",
+   "number": "2.3"
+  },
+  {
+   "level": 1,
+   "title": "Computer calculations of Ohtsuki series",
+   "page": 9,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Growth of number of states",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Numerical precision and summand size",
+   "page": 9,
+   "source": "inferred",
+   "number": "3.2"
+  },
+  {
+   "level": 1,
+   "title": "Results and conjectures",
+   "page": 11,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Individual Ohtsuki series",
+   "page": 11,
+   "source": "inferred",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "Polynomiality of coefficients",
+   "page": 12,
+   "source": "inferred",
+   "number": "4.2"
+  },
+  {
+   "level": 2,
+   "title": "Slopes",
+   "page": 13,
+   "source": "inferred",
+   "number": "4.3"
+  },
+  {
+   "level": 1,
+   "title": "Conclusions",
+   "page": 16,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Acknowledgements",
+   "page": 17,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 17,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 4,
+   "n_chars": 5571,
+   "n_words": 1051
+  },
+  {
+   "id": "sec-001-2-a-two-parameter-family-of-manifolds",
+   "number": "2",
+   "title": "A two-parameter family of manifolds",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 4,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-002-21-definition-of-the-manifolds",
+   "number": "2.1",
+   "title": "Definition of the manifolds",
+   "level": 2,
+   "page_start": 4,
+   "page_end": 5,
+   "n_chars": 1567,
+   "n_words": 323
+  },
+  {
+   "id": "sec-003-22-calculation-of-zk",
+   "number": "2.2",
+   "title": "Calculation of ZK",
+   "level": 2,
+   "page_start": 5,
+   "page_end": 8,
+   "n_chars": 1967,
+   "n_words": 386
+  },
+  {
+   "id": "sec-004-23-properties-of-ohtsuki-series",
+   "number": "2.3",
+   "title": "Properties of Ohtsuki series",
+   "level": 2,
+   "page_start": 8,
+   "page_end": 9,
+   "n_chars": 2151,
+   "n_words": 438
+  },
+  {
+   "id": "sec-005-3-computer-calculations-of-ohtsuki-series",
+   "number": "3",
+   "title": "Computer calculations of Ohtsuki series",
+   "level": 1,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 651,
+   "n_words": 134
+  },
+  {
+   "id": "sec-006-31-growth-of-number-of-states",
+   "number": "3.1",
+   "title": "Growth of number of states",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 9,
+   "n_chars": 813,
+   "n_words": 146
+  },
+  {
+   "id": "sec-007-32-numerical-precision-and-summand-size",
+   "number": "3.2",
+   "title": "Numerical precision and summand size",
+   "level": 2,
+   "page_start": 9,
+   "page_end": 11,
+   "n_chars": 2954,
+   "n_words": 558
+  },
+  {
+   "id": "sec-008-4-results-and-conjectures",
+   "number": "4",
+   "title": "Results and conjectures",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 11,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-41-individual-ohtsuki-series",
+   "number": "4.1",
+   "title": "Individual Ohtsuki series",
+   "level": 2,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 1011,
+   "n_words": 125
+  },
+  {
+   "id": "sec-010-42-polynomiality-of-coefficients",
+   "number": "4.2",
+   "title": "Polynomiality of coefficients",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1376,
+   "n_words": 314
+  },
+  {
+   "id": "sec-011-43-slopes",
+   "number": "4.3",
+   "title": "Slopes",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 16,
+   "n_chars": 2896,
+   "n_words": 576
+  },
+  {
+   "id": "sec-012-5-conclusions",
+   "number": "5",
+   "title": "Conclusions",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 2199,
+   "n_words": 369
+  },
+  {
+   "id": "sec-013-6-acknowledgements",
+   "number": "6",
+   "title": "Acknowledgements",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 17,
+   "n_chars": 527,
+   "n_words": 83
+  },
+  {
+   "id": "sec-014-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 2390,
+   "n_words": 350
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 15,
+  "sections": 15,
+  "chars_total": 26073
+ }
+}

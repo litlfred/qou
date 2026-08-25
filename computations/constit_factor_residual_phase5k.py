@@ -40,8 +40,13 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
+from q_parameter import Q_MP as Q0  # noqa: E402
 
 
 # ──────────────────────────────────────────────────────────────────
@@ -56,7 +61,7 @@ PHASE5C_WITNESS = (
 def load_existing_tau_M_constit() -> dict:
     """Pull τ_M_constit values for D, T, ³He, ⁴He from PR #819's
     Phase 5c.1 witness (50-dps mpmath internally, f64 in JSON)."""
-    raw = json.loads(PHASE5C_WITNESS.read_text())
+    raw = record_upstream(PHASE5C_WITNESS, _UPSTREAM_RECORDS)
     out = {}
     # Walk the witness for results_constit entries.
     blocks = raw.get("data", {}).get("results_constit", {})
@@ -250,6 +255,7 @@ def main() -> int:
     builder = WitnessBuilder(
         "constit-factor-residual-phase5k", engine="python"
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_content_block("conj:constit-factor-2q-minus-1")
     builder.add_parameter("q_0", str(Q0))
     builder.set_description(

@@ -18,7 +18,7 @@ export default simulator({
     name: "default",
     title: "Default: valley of stability",
     params: {
-      q: 1.1097,
+      q: 1.1099785827513808,
       Z_max: 118,
     },
   },

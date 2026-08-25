@@ -72,12 +72,14 @@ _ZN_BY_NUCLEUS: dict[str, tuple[int, int]] = {
 # ρ_F = 2 for ⁴He per `binding_ladder_catalog.py:63` ('2·m_e·4·Vol(L6a4)').
 # Open math: categorical derivation of ρ_F = 2 from
 # prop:gravity-spectral-prefactor is the remaining input.
-_RHO_F_BY_NUCLEUS: dict[str, float] = {
-    "⁴He": 2.0,
+# An int, not 2.0: ρ_F is a counting prefactor, and a float64 `2.0` is a raw
+# float64 the moment it reaches a witness.
+_RHO_F_BY_NUCLEUS: dict[str, int] = {
+    "⁴He": 2,
 }
 
 
-def _magic_A_prediction(c: "Candidate") -> tuple[float, int, int, float] | None:
+def _magic_A_prediction(c: "Candidate") -> tuple[float, int, int, int] | None:
     """Doubly-magic shell-closure binding, or None for non-magic A.
 
     Dispatches to the canonical `magic_A_formula.magic_A_binding(Z, N)`
@@ -258,7 +260,13 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument(
         "--out",
-        default="computations/binding-alpha-shift-witness.witness.json",
+        # Script-relative, which is what the help text has always claimed. The
+        # old cwd-relative "computations/…" default wrote to
+        # computations/computations/… when run from inside computations/, and
+        # `out_path.parent.mkdir(parents=True)` below created that dir silently
+        # rather than failing.
+        default=str(Path(__file__).resolve().parent
+                    / "binding-alpha-shift-witness.witness.json"),
         help="Witness output path (default: alongside the script).",
     )
     ap.add_argument(

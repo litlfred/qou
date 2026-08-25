@@ -60,7 +60,7 @@ structure FaddeevModularDouble (R : Type*) [CommRing R] where
   inversion : ∀ x, Phi x * Phi (-x) = c
 
 /-- Derived: the Faddeev inversion constant is `Φ_b(0)^2`. -/
-theorem FaddeevModularDouble.c_eq_phi_zero_sq {R : Type*} [CommRing R]
+theorem c_eq_phi_zero_sq {R : Type*} [CommRing R]
     (F : FaddeevModularDouble R) : F.c = F.Phi 0 * F.Phi 0 := by
   have h := F.inversion 0
   simpa using h.symm
@@ -111,7 +111,7 @@ theorem IsSigmaUnitary.sq_eq_one_of_bar_even {R : Type*} [CommRing R]
     cannot be bar-even: it carries a nontrivial bar-odd part. The algebraic
     reason the fibre-saddle pure-phase `Φ_b` lives on the bar-odd (decay)
     face. -/
-theorem IsSigmaUnitary.not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
+theorem not_bar_even_of_sq_ne_one {R : Type*} [CommRing R]
     {σ : R →+* R} {u : R} (hu : IsSigmaUnitary σ u) (h : u * u ≠ 1) :
     σ u ≠ u :=
   fun heven => h (hu.sq_eq_one_of_bar_even heven)
@@ -149,7 +149,7 @@ theorem IsSigmaUnitary.inv {R : Type*} [CommRing R] {σ : R →+* R} {u : R}
     `u₁·w = u₂`. Hence *all* cross-anchor variation between σ-unitaries is
     carried by a σ-unitary (pure-phase) factor — the magnitude channel is
     flat, and the `Δc_3` swing is a phase-channel (bar-odd) quantity. -/
-theorem IsSigmaUnitary.crossFactor {R : Type*} [CommRing R] {σ : R →+* R}
+theorem crossFactor {R : Type*} [CommRing R] {σ : R →+* R}
     {u₁ u₂ : R} (h₁ : IsSigmaUnitary σ u₁) (h₂ : IsSigmaUnitary σ u₂)
     (hσ : Function.Involutive σ) :
     IsSigmaUnitary σ (σ u₁ * u₂) ∧ u₁ * (σ u₁ * u₂) = u₂ := by

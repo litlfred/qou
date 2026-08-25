@@ -63,7 +63,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from qbeta_utils import c3_target_at, substrate_ladder_quantities  # noqa: E402
 from qou_substrate.constants import q_at, q_muon_at  # noqa: E402
 from substrate import codata_constants as C  # noqa: E402
@@ -96,7 +101,7 @@ def main() -> int:
     anchors = {"proton": qp, "muon": qm}
 
     # ---- 0. anchors + saddle witness handles ----
-    saddle = {row["anchor"]: row for row in json.loads(SADDLE_WITNESS.read_text())["data"]["saddle"]}
+    saddle = {row["anchor"]: row for row in record_upstream(SADDLE_WITNESS, _UPSTREAM_RECORDS)["data"]["saddle"]}
     repro = all(
         abs(S(q) - mp.mpf(saddle[name]["S_target"])) < mp.mpf("1e-6")
         for name, q in anchors.items()
@@ -144,6 +149,7 @@ def main() -> int:
     print("      meridian u = 2·log q₀, deformed rungs κ̃₁/κ̃₃.")
 
     wb = WitnessBuilder("qbeta-kc19-phib-departure-bridge", engine="mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Bridge probe KC19 x Phi_b: push the two anchor-blind geometric handles of the "
         "saddle witness (vol_deficit ~0.0094, finite_b t*kappa1 ~0.0578) through the exact "

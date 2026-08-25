@@ -12,7 +12,7 @@
 | $n$ | Principal | $1, 2, 3, \ldots$ | Writhe level $w = 2n + 1$ |
 | $\ell$ | Angular momentum | $0, 1, \ldots, n-1$ | Fourier mode on trefoil torus |
 | $m$ | Magnetic | $-\ell, \ldots, +\ell$ | Projection onto Reeb axis |
-| $s$ | Spin | $± \tfrac{1}{2}$ | Crossing orientation in Hopf link |
+| $s$ | Spin | $\pm \tfrac{1}{2}$ | Crossing orientation in Hopf link |
 
 - **$n$**: The writhe level. This counts the R-I curls added at the exceptional divisor.
 - **$\ell$**: The Fourier mode of the curl distribution on the trefoil's torus. This dictates how the writhe excitation oscillates around the $(2,3)$ winding.
@@ -50,4 +50,4 @@ This recovers the Rydberg formula directly from the R-I crossing energy on the H
 | $n=2 \to 3$ | $+2$ | $1.89$ eV | $656.3$ nm | Balmer-$\alpha$ |
 | $n=3 \to 4$ | $+2$ | $0.66$ eV | $1875$ nm | Paschen-$\alpha$ |
 
-Each transition absorbs or emits a photon ($\mathbf{1}_{B_4}$ 4-strand identity, knot-trivial). The photon energy precisely equals the R-I crossing energy difference.
+Each transition absorbs or emits a photon ($\mathbf{1}_{B_4}$ 4-strand identity, knot-trivial). The photon energy equals the R-I crossing energy difference.

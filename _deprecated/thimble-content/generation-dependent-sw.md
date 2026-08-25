@@ -1,1 +1,0 @@
-The classical Seiberg--Witten integrals over the $A$ and $B$ cycles fail to distinguish lepton generations. In the QOU framework, the vertical degree of the Reeb decomposition lifts the geometry from the base state bundle $\mathcal{S}_1$ to the jet prolongation $J^1\mathcal{S}_1$. Consequently, the meromorphic 1-form governing the color dynamics is strictly generation-dependent.

@@ -5,7 +5,7 @@ invariant asymptotics (volume conjecture) and extract the quantum-correction
 ladder κ_k.  Self-contained, exact-to-precision; NO fit to QOU data, NO wiring,
 NO c_k value, NO tier change.
 
-Why 4_1: it is THE canonical hyperbolic knot, and Vol(4_1) = 2Λ(π/3) already
+Why 4_1: it is THE canonical hyperbolic knot, and Vol(4_1) = 2·Cl₂(π/3) already
 enters the muon anchor (m_μ = m_e·Vol(4_1)/ℏ_q²).  This computes the QUANTUM side
 (𝔙_q via the Kashaev sum), whose N→∞ exponential rate is the CLASSICAL 𝔙(4_1) —
 making the 𝔙_q vs 𝔙 distinction concrete.
@@ -79,7 +79,7 @@ def main():
 
     # Exact Vol(4_1) = 2·Λ(π/3) = 2·Im Li₂(e^{iπ/3}).
     Vol_41 = 2 * mp.im(mp.polylog(2, mp.exp(1j * mp.pi / 3)))
-    print(f"Vol(4_1) = 2Λ(π/3) = {mp.nstr(Vol_41, 20)}")
+    print(f"Vol(4_1) = 2·Cl₂(π/3) = {mp.nstr(Vol_41, 20)}")
 
     # Compute log J_N for a window of large N and fit the ansatz
     #   log J_N = a·N + (3/2) log N + b + c1/N + c2/N² + c3/N³

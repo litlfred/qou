@@ -18,6 +18,7 @@ export default chapter({
       label: "sec:substrate-consistency",
       blocks: [
         "observations-intro",
+        "einstein-ether-substrate",
         "substrate-consistency-window",
         "substrate-consistency-window-interpretation",
         "substrate-consistency-window-table4-data",
@@ -416,6 +417,7 @@ export default chapter({
         "complex-chirality-rotation",
         "trefoil-vortex-chirality-flip",
         "crossing-energy-decomposition",
+        "crossing-energy-pair-cancellation",
         "crossing-energy-interpretation",
         "time-reversal-energy-barrier",
         "virtual-particles-exceptional-divisor",

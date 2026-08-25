@@ -78,7 +78,7 @@ noncomputable def skeinPolynomialSym (config : NuclearConfig) : R_t :=
   else
     let factors := (List.range (A - 1)).map fun j =>
       (config.drop (j + 1)).foldl (fun acc nk =>
-        let nj := config.get! j
+        let nj := config[j]!
         let v := vertexType nj nk
         -- In symmetric rep: c·q + d for each crossing
         acc * (w_plus_t v * q_from_t + w_zero_t v)

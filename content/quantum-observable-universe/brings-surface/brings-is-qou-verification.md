@@ -2,7 +2,7 @@ The four QOU data of [Bring's surface](#prop:brings-is-qou) are verified as foll
 
 1. *Quantum universe.*  Set $\mathbf{C} = \mathrm{Rep}(\mathrm{SU}_{q}(2))$ over $R$, $A = \mathcal{O}_q(\mathrm{SU}(2))$ with Frobenius form given by the Haar state, and $\tau$ the forgetful functor to $R$-$\mathrm{Mod}$. The differential calculus $\Omega^1(A)$ is the Woronowicz $3$-dimensional calculus.
 2. *Observability.* $\mathrm{Hom}(\mathbf{1}, \mathrm{Ad}(A)) = 0$ by the quantum Schur lemma. $\mathrm{SU}_q(2)$ has no non-trivial invariants in the adjoint representation.
-3. *Quantum lifting.*  The brane tower satisfies the quantum lifting condition ([quantum lifting](#prop:yekutieli-lifting)). The obstruction classes $\kappa_n \neq 0$ persist at every level by [motivic perpetual obstruction](#conj:motivic-perpetual-obstruction) applied with $\chi(A) = -6$.
+3. *Quantum lifting.*  The brane tower satisfies the quantum lifting condition ([quantum lifting](#prop:yekutieli-lifting)). The obstruction classes $\kappa_n \neq 0$ persist at every level by [motivic perpetual obstruction](#thm:motivic-perpetual-obstruction) applied with $\chi(A) = -6$.
 4. *Euler characteristic.*  By [QU-to-QOU lifting](#thm:qu-to-qou), $\chi(A) = \mathrm{tr}(\mathrm{id}_A) = 2 - 2g = -6$.
 5. *Geometric :refterm[descent]{#descent}* (for $n = 1$, $\dim M_S = 3$):
 

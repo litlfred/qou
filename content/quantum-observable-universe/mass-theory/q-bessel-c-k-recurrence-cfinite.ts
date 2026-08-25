@@ -5,7 +5,7 @@ export default proof({
   of: "prop:q-beta-c-k-recursion-from-habiro-q-difference",
   lean: {
     ref: "qou:QOU.QBeta.qbessel_coeff_closed_form",
-    validation: "not_checked",
+    validation: "validated",
   },
   computation: {
     engine: "sympy",

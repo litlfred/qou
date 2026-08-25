@@ -1,0 +1,42 @@
+{
+ "schema": "probe-witness/v1",
+ "probe": "gswz_epsm_descent_m2_probe",
+ "engine": "python3-int-exact",
+ "scriptFile": "gswz_epsm_descent_m2_probe.py",
+ "commitSha": "b26da77f06685e153fd744629c5c4246c0d5aa4f",
+ "beans": [
+  "qou-y3xv",
+  "qou-9p9y"
+ ],
+ "source": "CGZ arXiv:1712.04887v3 \u00a72-3 descent (library/arxiv-1712.04887v3/1712.04887v3.pdf); GSWZ arXiv:2412.04241v2 eqn (270); Lean backbone QOU.Machinery.CyclicQuantumDilog (merged #4964)",
+ "field": "F = Q_5(mu_1248), d = 8; base B = Q_25; Gamma = <phi_5^2>, n = 4",
+ "checks": {
+  "frobenius_wellformed_and_sigma_order4": true,
+  "two_sylow_generator_found": true,
+  "sqrt_of_sigmaP_over_P_exists": true,
+  "c_squared_matches": true,
+  "nu_in_mu2": true,
+  "nu_root_choice_invariant": true,
+  "resolvent_unit_found": true,
+  "splice_law_exact": true,
+  "descent_certificate_sigma_fixed": true,
+  "base_teich_in_mu24": true,
+  "abstract_class_flips_with_root": true,
+  "frobenius_root_shift_in_mu2": true,
+  "canonical_root_integral": true,
+  "canonical_cocycle_squares_to_ratio": true,
+  "canonical_splice_and_certificate": true,
+  "canonical_class_defined": true,
+  "canonical_cocycle_b_squares_to_ratio": true,
+  "canonical_value_x1_root_invariant": true,
+  "g24_base_generator": true,
+  "chi_B_nonvacuous_on_base": true
+ },
+ "result": {
+  "nu_obstruction": "+1",
+  "abstract_layer": "chi_B(a) = +1 for c, -1 for -c: root-dependent by structure (NOT the invariant); the abstract layer pins nu only",
+  "eps2_xi_class_canonical": "+1",
+  "eps2_xi_class_canonical_x1_flipped": "+1"
+ },
+ "scope": "scope-(a): the CGZ Galois descent implemented completely at m = 2 for the global 5_2 Bloch class xi = 2[z1] + [z2]; the sigma-fixed certificate gates the extraction; no printed target exists \u2014 falsifiable against any independent computation; m = 3 and general m | 24 queued"
+}

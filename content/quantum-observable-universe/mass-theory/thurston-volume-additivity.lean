@@ -15,31 +15,65 @@
 
   Ref: [thurston1978] http://library.msri.org/books/gt3m/
 
-  This theorem is classical geometric topology; we axiomatize it
-  as an opaque class encoding the Thurston decomposition.
+  Thurston's decomposition theorem itself is classical geometric
+  topology and remains class-axiomatised below.  The *dilogarithm*
+  half is no longer axiomatised — see the note immediately following.
+
+  ═══ TWO AXIOMS DISCHARGED (2026-08-10) ═══
+
+  This file previously declared BOTH `blochWigner` and its vanishing
+  on ℝ as axioms, with this proof note:
+
+    "Proof note (2026-08-03): Attempted to prove this using
+     `Complex.ofReal_im`, but `blochWigner` is declared as an opaque
+     `axiom` with no body, so there is nothing to unfold or apply
+     lemmas to. Retaining axiom."
+
+  That note was right about the mechanism and wrong about the
+  conclusion: the opacity was a *choice made in this file*, not a
+  constraint.  The corpus has a real, non-opaque Bloch–Wigner —
+  `QOU.Archimedean.BlochWigner_lob`, defined as `Λ(θ₁)+Λ(θ₂)+Λ(θ₃)`
+  in `QOU/Archimedean/BlochWignerLobachevsky.lean` — and pointing at
+  it turns both axioms into a definition and a theorem.
+
+  `blochWigner_real` is now `QOU.Knot.FlatTet.BlochWigner_lob_ofReal`,
+  proved sorry-free for EVERY real `x` with no hypotheses.  (The
+  corpus's older `BlochWigner_lob_real_eq_zero` assumed `0 < x < 1`,
+  which would not have covered the trefoil's shapes `−1` and `2`.)
+
+  This matters for the prose above: "torus-knot complements have zero
+  hyperbolic volume" now rests on a theorem, rather than on an axiom
+  asserting the very thing being used.
 -/
 
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.List.Basic
 import Mathlib.Analysis.SpecialFunctions.Complex.Log
 import Mathlib.Topology.UnitInterval
+import QOU.Knot.FlatTetrahedra
 
 namespace QOU.ParticleInteractions
 
-/-- The Bloch-Wigner dilogarithm D : ℂ → ℝ, declared as an axiom.
-    Stands in for the classical function
-    D(z) = Im(Li₂(z)) + arg(1-z) · log|z|.
-    Fully developed definition is outside the scope of this
-    formalization.  Declared via `axiom` (no body) so that
-    downstream lemmas cannot silently depend on a stub value. -/
--- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner dilogarithm D(z))
-axiom blochWigner : ℂ → ℝ
+/-- The Bloch-Wigner dilogarithm `D : ℂ → ℝ`.
 
-/-- Bloch-Wigner vanishes on the real line.
-    Taken as an axiom because `blochWigner` is opaque and this
-    is a real theorem of hyperbolic geometry (not a rfl). -/
+    **No longer an axiom.**  This is the corpus's real Bloch–Wigner,
+    `QOU.Archimedean.BlochWigner_lob = Λ(θ₁)+Λ(θ₂)+Λ(θ₃)`, which
+    `QOU/Knot/KummerRadial.lean` proves equals
+    `Im (Li₂ z) + log‖z‖ · arg(1−z)` on the upper half plane. -/
+-- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner dilogarithm D(z))
+noncomputable def blochWigner : ℂ → ℝ := QOU.Archimedean.BlochWigner_lob
+
+/-- **Bloch-Wigner vanishes on the real line — now a theorem.**
+
+    Discharges the former `axiom blochWigner_real`.  Holds for every
+    real `x` with no hypotheses at all, including the junk-value cases
+    `x = 0` and `x = 1`, where Lean's `1/0 = 0` still lands on `arg = 0`.
+
+    This is the statement the block's prose uses to conclude that torus
+    knots — whose shape parameters are all real — have zero volume. -/
 -- Ref: [zagier1986] https://doi.org/10.1007/BF01388528 (Bloch-Wigner dilogarithm vanishes on ℝ)
-axiom blochWigner_real (x : ℝ) : blochWigner (x : ℂ) = 0
+theorem blochWigner_real (x : ℝ) : blochWigner (x : ℂ) = 0 :=
+  QOU.Knot.FlatTet.BlochWigner_lob_ofReal x
 
 /-- Data of a Thurston ideal triangulation: a finite list of shape
     parameters zᵢ ∈ ℂ ∖ {0, 1}. -/

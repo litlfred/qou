@@ -14,7 +14,7 @@ The dominant $\mu_\lambda$ for the mean inter-nucleon crossing is the $q$-Casimi
 $$
   \mu_{(2)}(q_0) = \hbar_{q_0}^2  [1]_{q_0}[2]_{q_0} \approx 0.021.
 $$
-The approximation $\ln q_0 \approx 0.104$ identically matches $s_* = \hbar_{q_0} \approx 0.099$ to leading order in $\hbar_q$.
+The approximation $\ln q_0 \approx 0.104$ agrees with $s_* = \hbar_{q_0} \approx 0.099$ to leading order in $\hbar_q$.
 
 **Gaussian approximation at very large $N$.** At extremely large $N$, a Gaussian profile dominates the Peter--Weyl sum. The Plancherel central-limit theorem for the random walk on Young diagrams yields:
 $$
@@ -30,4 +30,4 @@ The kernel $G_q$ is the Reeb-invariant $q$-Gaussian. Because $G_q$ is a classica
 
 Each stage truncates the Peter--Weyl sum systematically. Stage 2 isolates the dominant exponential mode. Stage 3 isolates the leading Gaussian envelope.
 
-**Relation to previous methods.** The Perron--Frobenius truncation exactly duplicates the stage-2 approximation. The previously discarded Bożejko--Speicher $q$-Gaussian restricted to $|q| \le 1$. The QOU $q$-heat-kernel Gaussian subsumes it, remaining valid at $q_0 > 1$ while precisely reflecting the Peter--Weyl decomposition of the Reeb flow.
+**Relation to previous methods.** The Perron--Frobenius truncation exactly duplicates the stage-2 approximation. The previously discarded Bożejko--Speicher $q$-Gaussian restricted to $|q| \le 1$. The QOU $q$-heat-kernel Gaussian subsumes it, remaining valid at $q_0 > 1$ while reflecting the Peter--Weyl decomposition of the Reeb flow.

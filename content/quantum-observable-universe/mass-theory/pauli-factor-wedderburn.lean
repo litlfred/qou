@@ -33,6 +33,8 @@ noncomputable def pauliFactor (W : WedderburnTraces) : ℝ :=
     symmetric Wedderburn-block traces. -/
 -- Ref: [manuscript] §3/pauli-factor-wedderburn
 theorem pauli_factor_wedderburn (W : WedderburnTraces) :
-    ∃ F : ℝ, F = W.trAlt / W.trSym := ⟨W.trAlt / W.trSym, rfl⟩
+    pauliFactor W * W.trSym = W.trAlt := by
+  unfold pauliFactor
+  exact div_mul_cancel₀ _ W.sym_nonzero
 
 end QOU.BraidKnot

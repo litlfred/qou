@@ -2,7 +2,7 @@
   "computation": "qbeta_qbessel_crossanchor_smoothness_refutation",
   "description": "Formalize-first refutation of a substrate-fixed real-x q-Bessel sinh(x·sinh η) as a c_3 residue-A cross-anchor closed form. The proton/muon anchors differ by Δq₀≈1.28e-8 but c_3 differs ~2.9% (dc_3/dq₀≈4.66e6, the PR #1821 wall); any physical-scale x under-predicts the swing ≥2e4×, matching it needs x≈2.5e6. Closes the one open gate PR #2279 named; confirms its no-closure caution. docs/audits/2026-06-14-qbessel-c3-crossanchor-smoothness-refutation.md.",
   "discipline": "no fit (x pinned, K cancels); derive-or-refute; TIERED; c_3 cal-anchored; nothing wired",
-  "precision_dps": 50,
+  "precision_dps": 70,
   "results": {
     "anchors": {
       "q0_proton": "1.10997858275138080759166909561",
@@ -63,11 +63,13 @@
   },
   "allPassed": true,
   "verdict": "REFUTED (real x). A substrate-fixed real amplitude x in the bar-odd q-Bessel / Jacobi–Anger object sinh(x·sinh η) CANNOT reproduce the c_3 cross-anchor swing: the two anchors differ by Δq₀≈1.28e-8 while c_3 differs ~2.9%, so dc_3/dq₀≈4.66e6 — the PR #1821 smoothness wall. Pinning x at any physical brane-tower scale (1…117) under-predicts the swing by ≥2e4×; matching it needs x≈2.5e6 (argument ≈2.6e5), physically absurd. This CONFIRMS PR #2279's stated caution (no c_3 closure claimed) and is consistent with PR #1887 (fixed-ℓ swing-lock) and the Im(q) fibre-vs-observable rule: the q-Bessel is the right FIBRE language, not a real closed form c_3(q₀). Productive direction stays the fibre-level Q_β Habiro element (α_EM [2]_q·(1−h²α) template). No fit; nothing wired; c_3 cal-anchored.",
-  "scriptHash": "5b62668324ae",
-  "scriptCommitSha": "c790dd29fe3c151500e51500414ca4efd38d2fa9",
-  "commitSha": "5fd004f3a5f1057cc20b55f89c1febcbeacdf28a",
+  "scriptHash": "70d0d7bb1a59",
+  "scriptCommitSha": "5451a042570305a89559b76b9e3048cdaf56bc4b",
+  "commitSha": "539b429d89ac81504860d89609dc7c3a25d8bd0d",
   "engine": "python",
-  "computedAt": "2026-07-18T17:47:07.096865+00:00",
+  "computedAt": "2026-08-23T22:40:16.710649+00:00",
   "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
   "scriptFile": "qbeta_qbessel_crossanchor_smoothness_refutation.py"
 }

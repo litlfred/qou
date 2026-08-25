@@ -1,0 +1,199 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-10T01:56:30.487243+00:00",
+  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "lepton-tower-bend-screening",
+  "scriptFile": "lepton_tower_bend_screening.py",
+  "scriptHash": "317fc6f45be4",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Bean qou-htk4. Screens every standard parameter-free T(2,n) invariant against the lepton mass tower using the bend x(w+2)^2/(x(w)x(w+4)), which annihilates the overall scale C and the per-generation factor g, leaving one number against one free exponent.",
+  "contentBlock": "prop:lepton-continuant-recurrence",
+  "parameters": {
+    "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
+    "q0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "z_markov": "0.6126880371464652515958298639458992480263083915450636084720501751483235"
+  },
+  "data": {
+    "observed_lepton_bend": {
+      "definition": "m_mu^2 / (m_e * m_tau)",
+      "value": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "log": "2.509206736654124669845368549033329647280871043417986311013613369130499",
+      "note": "invariant under BOTH the overall mass scale C and the per-generation geometric factor g -- so this number screens candidates with two of the three free parameters already eliminated"
+    },
+    "bend_needed_for_exponent_p": {
+      "1": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "2": "3.506447330424046487233722192920876002305849661821474617574673344273514",
+      "3": "2.308048230561877218275785249119153696651522218676200892043974004360228",
+      "4": "1.872551022115030778376432968817387973855785309728092616676504097932465"
+    },
+    "candidates": {
+      "net = a_n + b_n": {
+        "values": [
+          "1.2527665073281613048328655488070632536279714559765278383184400898548",
+          "1.560286688868166464650919617323704461783370596976392733295145149555025",
+          "1.936001085802361964145197008690433953486853875285146741918717631480375"
+        ],
+        "bend": "1.003767376025605591416067563943223072505713305174049608209499286039031",
+        "p_required": "667.2894661978381864175698589029648700948519587997742537417035704281003",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "markov trace tr_M": {
+        "values": [
+          "0.8485266070590095562017497468121070803664289632741731839472925573564762",
+          "1.121451057805068277596620306189446593823879558326841011838228767092382",
+          "1.443389882342572684905684435486180077769020764470333915945472018633914"
+        ],
+        "bend": "1.026860688920107614218658454795051632307593060557977041960425498438175",
+        "p_required": "94.66463730752661926914326255530574872227289753063118228836013353652464",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "b_n alone": {
+        "values": [
+          "1.04370620853252198940201933567738830976821396071350527578503321593218",
+          "1.133028858261854266156394581639124831696020380796135883132100758545658",
+          "1.271871903543744445584589795259532963302901179080456708296833025418101"
+        ],
+        "bend": "0.967075325278561064790531099750782249273742391363595281627324237813601",
+        "p_required": "-74.94892102449801127767159560128264207741378123075590110324754735061485",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "a_n alone": {
+        "values": [
+          "0.2090602987956393154308462131296749438597574952630225625334068739226195",
+          "0.427257830606312198494525035684579630087350216180256850163044391009367",
+          "0.6641291822586175185606072134309009901839526962046900336218846060622742"
+        ],
+        "bend": "1.3147886049588308371386067585888062739176226635105757835662747078187",
+        "p_required": "9.168533923262589931651119450630405005226249658572873361484566842050854",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "determinant  = n": {
+        "values": [
+          "3.0",
+          "5.0",
+          "7.0"
+        ],
+        "bend": "1.19047619047619047619047619047619047619047619047619047619047619047619",
+        "p_required": "14.391499802470460011470562294284303432108541647761724430226551930921",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "crossing number = n": {
+        "values": [
+          "3.0",
+          "5.0",
+          "7.0"
+        ],
+        "bend": "1.19047619047619047619047619047619047619047619047619047619047619047619",
+        "p_required": "14.391499802470460011470562294284303432108541647761724430226551930921",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "genus = (n-1)/2": {
+        "values": [
+          "1.0",
+          "2.0",
+          "3.0"
+        ],
+        "bend": "1.333333333333333333333333333333333333333333333333333333333333333333333",
+        "p_required": "8.722151906336460175157979628197367056623294423551857328152329058543834",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "|signature| = n-1": {
+        "values": [
+          "2.0",
+          "4.0",
+          "6.0"
+        ],
+        "bend": "1.333333333333333333333333333333333333333333333333333333333333333333333",
+        "p_required": "8.722151906336460175157979628197367056623294423551857328152329058543834",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "braid index = 2": {
+        "values": [
+          "2.0",
+          "2.0",
+          "2.0"
+        ],
+        "bend": "1.0",
+        "p_required": null,
+        "reading": "bend = 1 exactly (geometric or constant): forces bend(m) = 1 for EVERY C, g, p -- excluded outright against the observed 12.295, no exponent can help"
+      },
+      "bridge number = 2": {
+        "values": [
+          "2.0",
+          "2.0",
+          "2.0"
+        ],
+        "bend": "1.0",
+        "p_required": null,
+        "reading": "bend = 1 exactly (geometric or constant): forces bend(m) = 1 for EVERY C, g, p -- excluded outright against the observed 12.295, no exponent can help"
+      },
+      "Alexander at q_0": {
+        "values": [
+          "1.122073871415383123678135417924867304975182301043419723437954876228738",
+          "1.272475284282343873258521570791779943884865289783805108469125851180773",
+          "1.457777714115231571178943135355453309221921054324358143676255592240541"
+        ],
+        "bend": "0.9898877620898577337035547891558605016217093996680549989619843535709671",
+        "p_required": "-246.8789223727305172724016004097733377858606190145899259992814293045904",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "Alexander at q_0^2": {
+        "values": [
+          "1.285900795651582006277305669240637454771099086596151836309814722581772",
+          "1.719884837536551739358838843854743123055353461680148772207118646363063",
+          "2.37865232428514270759345479907442809209503030715860486341928498823775"
+        ],
+        "bend": "0.967075325278561064790531099750782249273742391363595281627324237813601",
+        "p_required": "-74.94892102449801127767159560128264207741378123075590110324754735061488",
+        "reading": "large exponent -- a fit, not a derivation"
+      },
+      "control: exactly q^n": {
+        "values": [
+          "1.367551836951385187966724029909361000711097520772763810773317416368651",
+          "1.684895596916220320078909319334536548761439043103393939451693999511495",
+          "2.075879755195403891278818515652338724800808411240478429010975696734862"
+        ],
+        "bend": "1.0",
+        "p_required": null,
+        "reading": "bend = 1 exactly (geometric or constant): forces bend(m) = 1 for EVERY C, g, p -- excluded outright against the observed 12.295, no exponent can help"
+      }
+    },
+    "best_candidate_bend": "1.333333333333333333333333333333333333333333333333333333333333333333333",
+    "best_candidate_p_required": "8.722151906336460175157979628197367056623294423551857328152329058543834",
+    "jones_normalisation_insensitivity": {
+      "test": "multiply tr_M by an arbitrary a*r^w -- the shape of every Jones writhe prefactor -- and recompute the bend",
+      "bend_raw": "1.026860688920107614218658454795051632307593060557977041960425498438175",
+      "bend_after_prefactor": "1.026860688920107614218658454795051632307593060557977041960425498438175",
+      "drift": "0.0",
+      "verified": true,
+      "reading": "the choice of Jones normalisation cannot change the screening verdict; the prefactor is exactly the C*g^w the bend annihilates"
+    },
+    "verdict": "No standard parameter-free invariant of T(2,n) comes near the observed bend. The exponential-type invariants (net, tr_M, Jones, Alexander, and the exact q^n control) sit at or beside bend = 1 and are excluded outright by geometric_readout_forces_unit_bend -- for every C, g and p simultaneously. The polynomial-type invariants (determinant, crossing number, genus, signature) top out at bend = 4/3, needing p = 8.7. Since the observed bend is 12.295, a parameter-free bridge would need bend 12.295 at p=1 or 3.51 at p=2. Nothing on the lepton's own knot supplies it, which is consistent with the corpus's working muon mass coming from Vol(4_1) -- an object OUTSIDE the lepton's knot.",
+    "all_checks_passed": true
+  },
+  "caveats": [
+    "Only the exactly-geometric class is HARD-excluded here (scope-(b), on the proved bend identity). For the remaining candidates this is a SCREEN, not a refutation: 'bend near 1 needs a large exponent, hence a fit' is a plausibility judgement, stated as such. Non-multiplicative bridges (an additive interface term) are outside the class m = C g^w f^p entirely and are not screened by this tool at all."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

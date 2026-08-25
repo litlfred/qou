@@ -65,7 +65,7 @@ the formal derivation.  Each table records:*
 
 - *partition $\lambda \vdash n$ and curvature-rank
   $\mathrm{depth}(\lambda)$;*
-- *Jones–Markov weight $y_\lambda$ (numeric at $q_0 = 1.109978595554181\ldots$ (50 dps));*
+- *Jones–Markov weight $y_\lambda$ (numeric at $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps));*
 - *linear-system condition number and residual.*
 
 *Output sums consistent with Plancherel-completeness
@@ -135,15 +135,14 @@ checks against any analytically derived closed form.
 For exact rational forms, replace numeric `numpy.linalg.solve` with
 `sympy` over a symbolic $q$.  Cost grows rapidly with $p(n)$, but the
 output is the exact $q$-rational $y_\lambda$.  Tractable in pure
-Python for $n \leq 5$; the sibling Rust kernel
-(`phase-b-heavy-rust-character-kernel`) handles larger $n$.
+Python for $n \leq 5$; larger $n$ needs a compiled character kernel.
 
 *Witness data layout.*
 At $n \leq 10$ the witness records both the canonical $q_0$ floats
 and $5$ CRT canonical evaluation points $\{(q_i, z_i, \mathbf{y}(q_i))\}$ for
 verification of any closed form.  At $n \in \{11, 12\}$ only $q_0$ is
 recorded (canonical evaluation-rebuild cost prohibitive in pure Python; defer to
-the Rust kernel for higher-$n$ probes).
+a compiled kernel for higher-$n$ probes).
 
 **Closed forms for $\alpha_k$ across $n$.**
 

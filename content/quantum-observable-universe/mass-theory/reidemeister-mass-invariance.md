@@ -13,7 +13,7 @@ Every deformation of a knot diagram decomposes into a sequence
 of three local moves:
 
 - **R-I** (curl): add or remove a single crossing (writhe
-  changes by $± 1$).
+  changes by $\pm 1$).
 - **R-II** (poke): add or remove a pair of crossings with
   opposite signs (writhe unchanged).
 - **R-III** (slide): move a strand past a crossing (crossing
@@ -59,7 +59,7 @@ $$
   \mathfrak{E}_{\mathrm{bind}}
   = 
   \sum_{\text{crossings of link}}
-  \epsilon_i \cdot q^{± 1}
+  \epsilon_i \cdot q^{\pm 1}
 $$
 
 where the sum runs over the crossings of the **embedding** of
@@ -79,8 +79,8 @@ one particle's knot inside the other's Seifert surface.
   binding energy is invariant. $\checkmark$
 
 - **R-I** (curl): adds a single crossing.  This changes the
-  writhe by $± 1$ and adds a crossing energy contribution
-  $± q^{± 1} \cdot \epsilon$ that does **not** cancel.
+  writhe by $\pm 1$ and adds a crossing energy contribution
+  $\pm q^{\pm 1} \cdot \epsilon$ that does **not** cancel.
   The binding energy **changes**. $\times$
 
 $$
@@ -138,4 +138,4 @@ electron is still a trefoil (knot type unchanged by R-I).  But
 it is in a different state: the trefoil's writhe is different
 (embedding changed by R-I), and the binding energy differs.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

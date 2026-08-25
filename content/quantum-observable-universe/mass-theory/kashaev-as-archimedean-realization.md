@@ -1,4 +1,4 @@
-The Kashaev volume conjecture identifies the archimedean realization functor applied to the algebraic quantum volume. It is not an external mathematical coincidence, but the canonical action of $\mathcal{R}_{\mathrm{top}}$ on the brane substrate.
+The Kashaev volume conjecture identifies the archimedean realization functor applied to the algebraic quantum volume. It is the canonical action of $\mathcal{R}_{\mathrm{top}}$ on the brane substrate.
 
 **Algebraic side.**
 The colored Jones polynomial evaluated at roots of unity is a purely $p$-adic/cyclotomic discrete algebraic trace. The algebraic quantum volume $\mathrm{Vol}_q(\mathcal{B}_K)$ packages these local data into a global Habiro element.
@@ -14,4 +14,4 @@ $$
   \mathcal{R}_{\mathrm{top}}\bigl(\mathrm{Vol}_q(\mathcal{B}_K)\bigr).
 $$
 
-The fibre functor $\tau$ is the exclusive archimedean route. The Kashaev limit is the realization functor of the QOU.
+The fibre functor $\tau$ is the exclusive archimedean route.

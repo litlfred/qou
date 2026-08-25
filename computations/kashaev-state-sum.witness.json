@@ -1,10 +1,10 @@
 {
-  "description": "Kashaev quantum-dilog state sum [Kas95] equals the U_q(sl\u2082) R-matrix engine's reduced colored Jones of 4\u2081 to 40 digits \u2014 the [Kas95] cross-check (#2). VC\u2192Vol(4\u2081) reused from the merged figure_eight_kashaev_volume.py.",
+  "description": "Kashaev quantum-dilog state sum [Kas95] equals the U_q(sl₂) R-matrix engine's reduced colored Jones of 4₁ to 40 digits — the [Kas95] cross-check (#2). VC→Vol(4₁) reused from the merged figure_eight_kashaev_volume.py.",
   "computation": "kashaev_state_sum",
   "audit_only": true,
-  "reference": "Kashaev 1995, q-alg/9504020 (uploads/9504020v1.pdf)",
+  "reference": "Kashaev 1995, q-alg/9504020 (library/arxiv-q-alg-9504020v1/9504020v1.pdf)",
   "reuses": "figure_eight_kashaev_volume.kashaev_4_1 (dps=60 VC leg)",
-  "vol_4_1": "2.029883212819307392038581383530981838703",
+  "vol_4_1": "2.0298832128193074",
   "state_sum_vs_engine": {
     "5": {
       "log_kashaev": "3.921421420736610874693648092289827055712",
@@ -33,7 +33,7 @@
     }
   },
   "identical_to_40_digits": true,
-  "markov_trace_route": "impossible (kashaev_rmatrix.py: no diagonal-\u03bc enhancement, \u03c3_min\u22482.45)",
+  "markov_trace_route": "impossible (kashaev_rmatrix.py: no diagonal-μ enhancement, σ_min≈2.45)",
   "note": "Whitehead needs the 2-cusp face-index partition function (next unit).",
   "timestamp": "2026-07-27T00:27:18+00:00"
 }

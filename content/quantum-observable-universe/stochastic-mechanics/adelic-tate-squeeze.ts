@@ -17,7 +17,7 @@ export default remark({
     "squeeze",
     "local-global",
   ],
-  cites: ["conway1976", "tate1950",
+  cites: ["conway1976",
     "tate1967",
   ],
 });

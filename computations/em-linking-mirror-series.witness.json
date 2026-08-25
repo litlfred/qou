@@ -1,0 +1,372 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-24T14:40:43.555797+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
+  "assertions": [
+    {
+      "name": "reproduces_published_light_kappas",
+      "computed": "0.00040974265",
+      "expected": "0",
+      "passed": true,
+      "tolerance": "2e-3",
+      "unit": "relative deviation",
+      "source": "End-to-end check: this independent extraction from the qou-mass isotope witnesses reproduces the published kappa values for the four original mirror pairs. Tolerance is 2e-3, not machine-level: the qou-mass isotope table and the original scoping probe draw on AME tabulations that differ at the 4th decimal (max observed deviation ~4e-4). That floor is recorded rather than tuned away, and is far below the ~7% scatter the hypotheses are judged on."
+    },
+    {
+      "name": "series_extended_beyond_A13",
+      "computed": 63,
+      "expected": 63,
+      "passed": true,
+      "tolerance": 0,
+      "unit": "max A",
+      "source": "The series now reaches the A ~ 41 discrimination regime."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5,
+  "computation": "em-linking-mirror-series",
+  "scriptFile": "em_linking_mirror_series_extension.py",
+  "scriptHash": "fdffff1a5cb7",
+  "scriptCommitSha": "4f8a97edee323aa204716d5fceeee47bedf576d2",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/em_linking_mirror_series_extension.py"
+    ],
+    "reproduce": "python3 -u computations/em_linking_mirror_series_extension.py"
+  },
+  "description": "The discriminating test for the open two-like-charge EM-linking invariant (bean qou-i6rg): extends the kappa(A) mirror series from A <= 13 to the full A = 2Z-1 ladder using the corpus's own AME reference binding energies, and scores the three tied hypotheses (coth-saturation, Freedman-He with Vol ~ A, Freedman-He with Vol ~ Z) over the extended range where they diverge. Nothing fitted: the per-pair Coulomb unit and all exponents are fixed in advance. Includes an end-to-end validation that the recomputed light-pair kappa values reproduce the published ones.",
+  "auditOnly": "docs/audits/2026-08-01-em-linking-reads-round1.md",
+  "data": {
+    "WARRANT_WITHDRAWN_H_FH": {
+      "affects": [
+        "H_FH_A: kappa * A^(1/3) const",
+        "H_FH_Z: kappa * Z^(1/3) const"
+      ],
+      "why": "The Vol^(-1/3) these are named for is Khesin Thm 3.6, the SINGLE-knotted-torus bound. The Freedman-He LINK bound that applies to a multi-component Borromean configuration (Komendarczyk arXiv:0808.1533v1 eq. 43) carries (pi/16)^(1/4), a pure constant, and NO volume factor. Calling these 'the Freedman-He template' was a misattribution.",
+      "consequence": "H_FH_A and H_FH_Z are BARE POWER LAWS with no literature backing -- the bar the anti-fit discipline sets, which they no longer clear. The scores below are unchanged and remain a valid DESCRIPTION of the data; what changes is that a good H_FH score no longer counts as structural support. This does not make H_coth correct -- it removes its rival's warrant.",
+      "see": "em-linking-fh-link-bound-correction.witness.json"
+    },
+    "series": [
+      {
+        "A": 3,
+        "Z": 2,
+        "n_pairs": 1,
+        "ame_split_MeV": "0.76375488",
+        "kappa": "3.2135068"
+      },
+      {
+        "A": 5,
+        "Z": 3,
+        "n_pairs": 2,
+        "ame_split_MeV": "1.23",
+        "kappa": "2.587619"
+      },
+      {
+        "A": 7,
+        "Z": 4,
+        "n_pairs": 3,
+        "ame_split_MeV": "1.6442398",
+        "kappa": "2.3060521"
+      },
+      {
+        "A": 9,
+        "Z": 5,
+        "n_pairs": 4,
+        "ame_split_MeV": "1.850382",
+        "kappa": "1.9463755"
+      },
+      {
+        "A": 11,
+        "Z": 6,
+        "n_pairs": 5,
+        "ame_split_MeV": "2.764036",
+        "kappa": "2.3259422"
+      },
+      {
+        "A": 13,
+        "Z": 7,
+        "n_pairs": 6,
+        "ame_split_MeV": "3.0028193",
+        "kappa": "2.1057324"
+      },
+      {
+        "A": 15,
+        "Z": 8,
+        "n_pairs": 7,
+        "ame_split_MeV": "3.536532",
+        "kappa": "2.1257137"
+      },
+      {
+        "A": 17,
+        "Z": 9,
+        "n_pairs": 8,
+        "ame_split_MeV": "3.5428119",
+        "kappa": "1.8633023"
+      },
+      {
+        "A": 19,
+        "Z": 10,
+        "n_pairs": 9,
+        "ame_split_MeV": "4.0218459",
+        "kappa": "1.8802177"
+      },
+      {
+        "A": 21,
+        "Z": 11,
+        "n_pairs": 10,
+        "ame_split_MeV": "4.3292655",
+        "kappa": "1.8215431"
+      },
+      {
+        "A": 23,
+        "Z": 12,
+        "n_pairs": 11,
+        "ame_split_MeV": "4.8385261",
+        "kappa": "1.8507409"
+      },
+      {
+        "A": 25,
+        "Z": 13,
+        "n_pairs": 12,
+        "ame_split_MeV": "5.059155",
+        "kappa": "1.7738707"
+      },
+      {
+        "A": 27,
+        "Z": 14,
+        "n_pairs": 13,
+        "ame_split_MeV": "5.5947051",
+        "kappa": "1.8107524"
+      },
+      {
+        "A": 29,
+        "Z": 15,
+        "n_pairs": 14,
+        "ame_split_MeV": "5.7245797",
+        "kappa": "1.720445"
+      },
+      {
+        "A": 31,
+        "Z": 16,
+        "n_pairs": 15,
+        "ame_split_MeV": "6.1803584",
+        "kappa": "1.7335949"
+      },
+      {
+        "A": 33,
+        "Z": 17,
+        "n_pairs": 16,
+        "ame_split_MeV": "6.3648651",
+        "kappa": "1.6737648"
+      },
+      {
+        "A": 35,
+        "Z": 18,
+        "n_pairs": 17,
+        "ame_split_MeV": "6.7485915",
+        "kappa": "1.6702806"
+      },
+      {
+        "A": 37,
+        "Z": 19,
+        "n_pairs": 18,
+        "ame_split_MeV": "6.9298262",
+        "kappa": "1.619851"
+      },
+      {
+        "A": 39,
+        "Z": 20,
+        "n_pairs": 19,
+        "ame_split_MeV": "7.3068333",
+        "kappa": "1.6180831"
+      },
+      {
+        "A": 41,
+        "Z": 21,
+        "n_pairs": 20,
+        "ame_split_MeV": "7.2778936",
+        "kappa": "1.5310907"
+      },
+      {
+        "A": 43,
+        "Z": 22,
+        "n_pairs": 21,
+        "ame_split_MeV": "7.6549073",
+        "kappa": "1.5337192"
+      },
+      {
+        "A": 45,
+        "Z": 23,
+        "n_pairs": 22,
+        "ame_split_MeV": "7.9061715",
+        "kappa": "1.5120591"
+      },
+      {
+        "A": 47,
+        "Z": 24,
+        "n_pairs": 23,
+        "ame_split_MeV": "8.2263207",
+        "kappa": "1.504884"
+      },
+      {
+        "A": 49,
+        "Z": 25,
+        "n_pairs": 24,
+        "ame_split_MeV": "8.4947723",
+        "kappa": "1.4892435"
+      },
+      {
+        "A": 51,
+        "Z": 26,
+        "n_pairs": 25,
+        "ame_split_MeV": "8.8363875",
+        "kappa": "1.4871678"
+      },
+      {
+        "A": 53,
+        "Z": 27,
+        "n_pairs": 26,
+        "ame_split_MeV": "9.0704571",
+        "kappa": "1.4678479"
+      },
+      {
+        "A": 55,
+        "Z": 28,
+        "n_pairs": 27,
+        "ame_split_MeV": "9.4763845",
+        "kappa": "1.4767403"
+      },
+      {
+        "A": 57,
+        "Z": 29,
+        "n_pairs": 28,
+        "ame_split_MeV": "9.5572926",
+        "kappa": "1.4361575"
+      },
+      {
+        "A": 59,
+        "Z": 30,
+        "n_pairs": 29,
+        "ame_split_MeV": "9.9251275",
+        "kappa": "1.4400027"
+      },
+      {
+        "A": 61,
+        "Z": 31,
+        "n_pairs": 30,
+        "ame_split_MeV": "9.9965885",
+        "kappa": "1.4020251"
+      },
+      {
+        "A": 63,
+        "Z": 32,
+        "n_pairs": 31,
+        "ame_split_MeV": "10.40823",
+        "kappa": "1.412669"
+      }
+    ],
+    "skipped": [],
+    "validation_vs_published": {
+      "3": {
+        "recomputed": "3.2135068",
+        "published": "3.2135073",
+        "rel_dev": "1.6241062e-7"
+      },
+      "7": {
+        "recomputed": "2.3060521",
+        "published": "2.3058673",
+        "rel_dev": "8.0163705e-5"
+      },
+      "11": {
+        "recomputed": "2.3259422",
+        "published": "2.3268956",
+        "rel_dev": "0.00040974265"
+      },
+      "13": {
+        "recomputed": "2.1057324",
+        "published": "2.1057469",
+        "rel_dev": "6.9071526e-6"
+      }
+    },
+    "hypothesis_scores_all_pairs": {
+      "H_FH_A: kappa * A^(1/3) const": {
+        "constant": "5.2219424",
+        "rel_scatter": "0.073763885"
+      },
+      "H_FH_Z: kappa * Z^(1/3) const": {
+        "constant": "4.2135305",
+        "rel_scatter": "0.061693144"
+      },
+      "H_coth: arccoth(kappa) / A^(1/3) const": {
+        "constant": "0.22178329",
+        "rel_scatter": "0.055940074"
+      }
+    },
+    "hypothesis_scores_bound_only": {
+      "H_FH_A: kappa * A^(1/3) const": {
+        "constant": "5.2898905",
+        "rel_scatter": "0.05498509"
+      },
+      "H_FH_Z: kappa * Z^(1/3) const": {
+        "constant": "4.260662",
+        "rel_scatter": "0.043903234"
+      },
+      "H_coth: arccoth(kappa) / A^(1/3) const": {
+        "constant": "0.21944513",
+        "rel_scatter": "0.035046122"
+      }
+    },
+    "unbound_exclusion": {
+      "excluded_A": [
+        5,
+        9
+      ],
+      "why": "5He/5Li and 9B are particle-unbound; their tabulated binding energies are resonance parameters, not bound-state observables. Declared in advance, not selected from residuals; both fits reported.",
+      "n_bound": 29,
+      "n_all": 31
+    },
+    "ranking_best_first": [
+      "H_coth: arccoth(kappa) / A^(1/3) const",
+      "H_FH_Z: kappa * Z^(1/3) const",
+      "H_FH_A: kappa * A^(1/3) const"
+    ],
+    "ranking_best_first_bound_only": [
+      "H_coth: arccoth(kappa) / A^(1/3) const",
+      "H_FH_Z: kappa * Z^(1/3) const",
+      "H_FH_A: kappa * A^(1/3) const"
+    ],
+    "kappa_range": {
+      "min": "1.4020251",
+      "max": "3.2135068",
+      "n_pairs_in_series": 31
+    },
+    "verdict": "kappa stays above 1 across the series (min 1.40203), so H_coth is not falsified outright; the ranking is ['H_coth: arccoth(kappa) / A^(1/3) const', 'H_FH_Z: kappa * Z^(1/3) const', 'H_FH_A: kappa * A^(1/3) const']. Note the per-pair Coulomb unit is held at its A=3 value throughout, as in the original scoping probe; any A-dependence of the underlying strong bond B_pp is therefore absorbed into kappa and remains a confound.",
+    "upstream_witness_hashes": [
+      {
+        "path": "em-linking-invariant-scoping.witness.json",
+        "sha256": "b28c2c4fc9b61e160032a66892f328ebdb23306f3a7fb9c9a645fae50d9a804f",
+        "size_bytes": 3604,
+        "commitSha": null,
+        "scriptCommitSha": null,
+        "computedAt": "2026-08-23T09:22:42.077242+00:00"
+      }
+    ]
+  }
+}

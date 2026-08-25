@@ -54,8 +54,8 @@ STALE_Q0 = mp.mpf("1.1097090249")        # the v9 hardcoded muon-anchor literal
 AME = {"T": mp.mpf("8.481798"), "3He": mp.mpf("7.71806")}
 DIFF_TARGET = AME["T"] - AME["3He"]      # B_T - B_³He (target)
 
-REPO = Path(__file__).resolve().parent.parent.parent
-COMP = REPO / "folio-assistant" / "computations"
+REPO = Path(__file__).resolve().parent.parent
+COMP = REPO / "computations"
 
 
 # ── partition helpers ───────────────────────────────────────────────────────

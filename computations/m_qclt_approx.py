@@ -19,14 +19,25 @@ energy** B(Z, N) (the mass defect = the Δ_λ correction):
 
 ## Two regimes for the nucleon mass (the source of the residual)
 
-The per-nucleon mass `m_e · vol_density_borromean` carries the **+2.89 %
-nucleon-mass gap** in the *production* (proved-only) pipeline, which uses
-only the proved Family-A linking weight (m_avg ≈ 966 MeV).  A **derived,
-no-fit** spectral-phase correction θ/(8ℏ²) ≈ 0.9711 reduces that gap ~35×
-to −819 ppm (m_avg ≈ 938.15 MeV) — but it is **EXPLORATORY, NOT wired**
-(its "why θ/(8ℏ²)" step is a `True := by trivial` Lean stub), so by the
-production-vs-exploratory discipline production keeps the +2.89 % value.
-See `docs/audits/2026-05-28-spectral-phase-correction-derived.md`.
+The nucleon masses this script reads from `low-isotope-mass-table.witness.json`
+are the canonical ones — m_p ≈ 938.2721, m_n ≈ 939.5654, +1.35 / +2.39 ppb via
+the `canonical_mass` facade — so the production leading term now tracks CODATA
+to ppb and the residual below is the q-CLT approximation itself.
+
+Until 2026-08-08 they were **+2.89 % high** (m_p 965.38, m_n 966.71): that
+table's nucleon rows were read from the deprecated `m_e · per_knot_density_borromean`
+form via `canonical_mass_table_extended`, which the 2026-06-24 ruling had
+removed for absolute mass. Fixed under bean `qou-7loj`.
+
+⚠ **The spectral-phase correction was correcting that artifact.** The
+"derived, no-fit" factor θ/(8ℏ²) ≈ 0.9711 was reported to close the +2.89 %
+gap ~35× to −819 ppm. It did so by removing an excess that came from the
+deprecated baseline, not from physics: applied to the canonical leading term it
+overshoots the other way, to ≈ −2.89 %. The witness now asserts that direction.
+This is a scope-(a) result — the factor does not improve *this channel* as a
+multiplier on the canonical value; it is not an exclusion of the quantity, and
+its derivation is untouched. `docs/audits/2026-05-28-spectral-phase-correction-derived.md`
+should be re-read against a canonical baseline.
 
 This script reports the JSJ-additive channel in **both** regimes so the
 residual is transparently the nucleon-mass-gap status, not a floor of the
@@ -85,6 +96,7 @@ import mpmath as mp  # noqa: E402
 
 from qou_substrate.witness import WitnessBuilder  # noqa: E402
 from _li_2_q_util import spectral_correction_borromean  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 SOURCE_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
@@ -94,7 +106,7 @@ SOURCE_WITNESS = _pb.witness_path("low-isotope-mass-table.witness.json", HERE)
 BOND_WITNESS = _pb.witness_path(
     "binding-single-pipeline-comparison.witness.json", HERE)
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def _q0():
@@ -331,13 +343,35 @@ def main() -> int:
         tolerance=1e-1,
         source="m_qCLT_approx − CODATA mass = the m_p gap (binding cancels)",
     )
-    # The derived spectral correction reduces the residual by ≳ 20× — the
-    # ~35× gap closure of the 2026-05-28 audit, propagated into the channel.
+    # The spectral correction WORSENS the canonical leading term (qou-7loj).
+    #
+    # This assertion used to read "reduces the residual by ≳ 20×", after the
+    # ~35× closure of the 2026-05-28 audit. That closure was measured against a
+    # leading term of m_e·Vol(𝓑₃)/ℏ_q²·λ_A, which was +2.89 % high because the
+    # nucleon rows were read from the deprecated Vol·ρ witness. Multiplying by
+    # θ/(8ℏ_q²) ≈ 0.9711 removed most of that excess — so the correction was
+    # cancelling an artifact of the wrong baseline, not closing a physical gap.
+    #
+    # With the leading term now canonical (+1.35 ppb via the facade) the same
+    # factor moves the result to ≈ −2.89 %: it subtracts an excess that is no
+    # longer there. Asserted in the direction that is now true, so the finding
+    # is recorded rather than silently dropped.
+    #
+    # SCOPE (a), per AGENTS.md §"Before declaring refuted": this says the
+    # spectral factor does not improve *this* channel *as a multiplier on the
+    # canonical leading term*. It is NOT a structural exclusion of θ/(8ℏ_q²) —
+    # no invariant forbids the quantity, and its derivation is untouched. What
+    # is refuted is the +2.89 % → −819 ppm closure claim that rested on the
+    # deprecated baseline. The 2026-05-28 audit needs re-reading in that light.
     builder.add_assertion(
-        "spectral_correction_reduces_residual_gt_20x",
-        computed=bool(reduction > mp.mpf("20")),
+        "spectral_correction_no_longer_improves_canonical_leading_term",
+        computed=bool(reduction < mp.mpf("1")),
         expected=True,
-        source="derived θ/(8ℏ²) ≈ 0.9711 closes +2.89% → ~-819 ppm",
+        source=(
+            "qou-7loj: the ~35× closure was measured against the deprecated "
+            "Vol·ρ leading term (+2.89%); against the canonical facade value "
+            "(+1.35 ppb) the θ/(8ℏ_q²) factor overshoots to ≈ −2.89%"
+        ),
     )
     # Leading term is NOT exact: err_leading = err_full + binding_fraction, and
     # the binding fraction B/m is strictly positive for every bound nucleus

@@ -44,6 +44,8 @@ from pathlib import Path
 import mpmath as mp
 
 from per_generator_V_hat_general import per_generator_V_hat_general  # noqa: E402
+from _precision import str_at_true_precision  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
 
 def li2q_sym(z_arg: mp.mpf, q: mp.mpf, max_terms: int = 600) -> mp.mpf:
@@ -150,18 +152,21 @@ def tower_log_phi_rescaled(V: list[mp.mpf], q: mp.mpf, z: mp.mpf) -> mp.mpf:
 
 
 def main() -> int:
-    mp.mp.dps = 50
+    set_compute_dps()
 
     # Substrate at q_0 — muon-anchored canonical (same pin as the
     # per-generator-V-hat-general witness this probe extends).
-    Vol_4_1 = mp.mpf("2.0298832128193072500115978049904475264466050157561096")
+    # Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 53 digits, correct to 19 (qou-ckbv)
+    Vol_4_1 = 2 * mp.clsin(2, mp.pi / 3)
     cal2 = M_MU_OVER_M_E
     cal_tau = mp.mpf("3477.23")
     hbar_q_sq = Vol_4_1 / cal2
     hbar_q = mp.sqrt(hbar_q_sq)
     q0 = mp.mpf(1) / (mp.mpf(1) - hbar_q)
     h = q0 - 1 / q0
-    z = mp.mpf(1) / (mp.sqrt(q0) + 1 / mp.sqrt(q0))
+    # convention D (owner ruling 2026-08-15, reaffirmed 2026-08-23):
+    #   z_D = q^3/(q^2+1).  Was z_C = 1/(sqrt q + 1/sqrt q), excised.
+    z = q0 ** 3 / (q0 ** 2 + 1)
     h_f = float(h)
 
     print(f"=== Substrate: q_0 = {float(q0):.10f}, ℏ_q = {float(hbar_q):.6f}, "
@@ -234,7 +239,10 @@ def main() -> int:
                       "inv_hbar_q_sq": str(1 / hbar_q_sq), "z": str(z)},
         "leptons": {
             name: {
-                "V_hat": [str(v) for v in b["V"]],
+                # V̂ comes from per_generator_V_hat_general, which computes in
+                # float (the braid words above carry float literals), so each
+                # entry is a 53-bit value promoted by mpf(d["full"]).
+                "V_hat": [str_at_true_precision(v) for v in b["V"]],
                 "max_abs_V": b["maxV"],
                 "m_li2q_sym": str(b["m_li2q"]),
                 "m_phi_direct": str(b["m_phi"]),

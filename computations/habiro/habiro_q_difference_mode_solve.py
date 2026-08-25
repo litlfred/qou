@@ -133,8 +133,7 @@ def main() -> int:
     print("=" * 78)
     print()
 
-    wit = json.loads(
-        (_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)).read_text())
+    wit = builder.add_upstream(_pb.witness_path("habiro-coefficients-atomic.witness.json", HERE))
     trM_p = habiro_trM(wit["results"]["p (proton, A=1)"])
     trM_n = habiro_trM(wit["results"]["n (neutron, A=1)"])
     dtrM = sp.cancel(trM_n - trM_p)

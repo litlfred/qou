@@ -3,12 +3,12 @@
   "description": "\u03ba\u0303\u2083(u) at the substrate meridian via a tall deformed Habiro ladder (extends #3691's 9-point run; rung resolution is ladder-height-limited). Feeds the odd finite-b series t\u00b7\u03ba\u0303\u2081 \u2212 t\u00b3\u00b7\u03ba\u0303\u2083 + \u2026 for the bar-odd S.",
   "audit_only": true,
   "tier": "numerical (deformed higher-rung extraction)",
-  "computedAt": "2026-07-12T17:09:56.560115+00:00",
-  "commitSha": "64bb82cc14d0f82ce5123a78c3d23e68955a71e7",
+  "computedAt": "2026-08-21T15:52:29.418873+00:00",
+  "commitSha": "752da187853d6611d5a2b8139d9a3bd3b059d40f",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_ohtsuki_deformed_kappa3_tall_ladder.py",
-  "scriptHash": "1234b8cb76a1",
+  "scriptHash": "ea82a0b8e6b3",
   "assertions": [
     {
       "name": "kappa1_consistent_with_3691_ladder",
@@ -34,7 +34,7 @@
       131072,
       262144
     ],
-    "max_loss_digits": 472.19156363022694,
+    "max_loss_digits": "472.191563630226922658335",
     "rungs": {
       "1": {
         "re": "0.5873433873112124288453212",

@@ -32,8 +32,9 @@ from mpmath import mpc, mpf
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 
 def hpos(q):

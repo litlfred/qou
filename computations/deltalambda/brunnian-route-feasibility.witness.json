@@ -1,0 +1,76 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-07T09:30:06.088692+00:00",
+  "commitSha": "606e2462a815b762e02bffc9a71dafc1be890af1",
+  "assertions": [
+    {
+      "name": "brunnian_route_structurally_closed",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "admixture_sits_on_interface_bonds",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 12,
+  "computation": "brunnian-route-feasibility",
+  "scriptFile": "brunnian_route_feasibility_probe.py",
+  "scriptHash": "3f784649e1c4",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
+  },
+  "description": "Type check on whether the mu3 A=3 words admit a Brunnian re-expression, which would have collapsed the non-cyclic-perblock vs canonical-signed-trace question (the two coincide to machine precision on Brunnian families). They do not: 17 of 35 factors carry an identity admixture c*sigma + d*1 with d != 0, making the words Hecke algebra elements rather than braids, for which Brunnian-ness is undefined. The admixture is the canonical color-weighted averaged crossing and cannot be removed without abandoning that convention.",
+  "data": {
+    "results": {
+      "T": {
+        "n_factors": 35,
+        "n_pure_generators": 16,
+        "n_identity_admixed": 19,
+        "n_interface_bonds": 2,
+        "n_interface_admixed": 2,
+        "is_braid_group_element": false,
+        "brunnian_well_defined": false,
+        "admixed_d_values": [
+          -0.209060298796,
+          -0.104530149398,
+          -0.10445824777
+        ]
+      },
+      "3He": {
+        "n_factors": 35,
+        "n_pure_generators": 18,
+        "n_identity_admixed": 17,
+        "n_interface_bonds": 2,
+        "n_interface_admixed": 1,
+        "is_braid_group_element": false,
+        "brunnian_well_defined": false,
+        "admixed_d_values": [
+          -0.209060298796,
+          -0.104530149398,
+          -0.10445824777
+        ]
+      }
+    }
+  },
+  "caveats": [
+    "scope-(b) STRUCTURAL exclusion, with the invariant named: Brunnian-ness is a property of braid group elements and delete-strand is a braid group homomorphism, so the property is UNDEFINED (not merely false) for an identity-admixed Hecke algebra element. This closes one proposed ROUTE; it does not resolve the underlying trace-convention question (bean qou-8jq2), which remains open and is an owner call."
+  ]
+}

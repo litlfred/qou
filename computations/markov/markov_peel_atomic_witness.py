@@ -59,7 +59,12 @@ from mass_at_3A_proper import atom_braid_word_3A     # noqa: E402
 from markov_trace_canonical import tr_M_element       # noqa: E402
 from hecke_symbolic import q as q_sym                  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR                 # noqa: E402  (50-digit q₀, NOT float64 Q)
-from witness_base import WitnessBuilder                # noqa: E402
+from witness_base import WitnessBuilder, record_upstream                # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 # Per AGENTS.md / Gemini-flagged precision policy: pin a high-precision
 # floor at the module level so all symbolic→numeric casts respect it.
@@ -97,14 +102,79 @@ ATOMS_LITHIUM = [
 ]
 
 
+def _on_proton() -> bool:
+    """True when this producer resolved to the experimental pin."""
+    return str(Q_50_DIGIT_STR).startswith("1.10997858275")
+
+
+def _witness_name() -> str:
+    """This producer's OWN output name, at its own q₀ layer.
+
+    **Base name = PROTON here, and the muon layer takes the `-muon` suffix.**
+    This is deliberately the OPPOSITE of `_bridge_name()` below (where the
+    base name is the muon layer), so it needs its reason recorded.
+
+    Before 2026-08-09 this producer always wrote the base name while
+    resolving to the proton pin (it is tagged `physical_proton` in
+    `q0_anchor_manifest.json`), so a proton-built witness sat on the base
+    name. `cross_check_trM_1ppb` — a muon-canonical L1 gate — reads the peel
+    witness and hard-failed on that mixed pin, red on `main`.
+
+    The tidy fix would have been to adopt the bridge convention (base =
+    muon). It was tried and rejected: **six** consumers of the base name
+    (`paper_six_term_isotope_sweep`, `rho_f_categorical_probe`,
+    `cross_check_trM_wenzl_lr_1ppb`, `canonical_tr_m_three_path_comparison`,
+    `b_over_a_v5_unified`, `_b0vf_complete_he4_witness`) are not anchor-aware
+    and resolve to the proton default, so renaming would have silently fed
+    them muon values — the same straddle class this is meant to close, just
+    pointed at more files. Keeping the base name on proton is
+    behaviour-preserving for every existing reader; the muon layer, which had
+    no file at all, gets the new one. Cosmetic consistency lost, silent
+    breakage avoided.
+    """
+    return ("markov-peel-atomic-tr-m" if _on_proton()
+            else "markov-peel-atomic-tr-m-muon")
+
+
+def _bridge_name() -> str:
+    """The bridge witness at THIS producer's own q₀ layer.
+
+    Single source for both the load and the `bridge_witness_compared`
+    provenance field. They were separate, and the field was a hardcoded
+    literal — so once the load became anchor-aware the witness would have
+    declared it compared against the muon bridge while actually reading the
+    proton one. A provenance field naming a file the run never opened is worse
+    than no field: it is checkable, and it checks out wrong.
+    """
+    return ("atomic-tr-m-mpfr-50dps-proton.witness.json" if _on_proton()
+            else "atomic-tr-m-mpfr-50dps.witness.json")
+
+
 def _load_bridge_witness() -> dict[str, str]:
     """Return atom -> tr_M(q₀) string from the Hoefsmit + Wenzl bridge
     witness, for cross-check.  Empty dict if the file is missing.
     """
-    f = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    # Load the bridge at THIS producer's own q0 layer, not whichever one the
+    # default name happens to point at. This producer is NOT in
+    # `q0_anchor_manifest.json`, so `Q_50_DIGIT_STR` resolves to the
+    # experimental (proton) pin — while the default bridge witness is the
+    # `ideal_muon` one. Comparing across that boundary is the straddle
+    # AGENTS.md §"q₀ anchor convention" forbids, and it was not subtle:
+    # `abs_diff_vs_bridge` for the deuteron read 6.73e-04, which is also what
+    # kept rejecting this witness in the regeneration wave.
+    #
+    # On an all-muon checkout the pins already agree and the default name is
+    # used, so nothing changes there.
+    f = _pb.witness_path(_bridge_name(), HERE)
+    if _on_proton() and not f.exists():
+        raise SystemExit(
+            "this producer is on the proton pin but the proton bridge witness "
+            "is missing. Generate it with\n    QOU_Q0_ANCHOR=proton python3 "
+            "computations/atomic_tr_m_mpfr_50dps.py --anchor proton\n"
+            "Refusing to cross-check a proton trace against the muon bridge.")
     if not f.exists():
         return {}
-    data = json.loads(f.read_text())
+    data = record_upstream(f, _UPSTREAM_RECORDS)
     return {e["atom"]: e["tr_M_at_q0_50dps"] for e in data["results"]}
 
 
@@ -152,9 +222,14 @@ def compute_atom(Z: int, N: int) -> dict:
         "tr_M_at_q0": mpmath.nstr(
             tr_at_q0_mpf, mpmath.mp.dps, strip_zeros=False
         ),
-        "elapsed_reduce_sec": round(t_reduce, 3),
-        "elapsed_trace_sec": round(t_trace, 3),
-        "elapsed_evalf_sec": round(t_eval, 3),
+        # Wall-clock timings are serialized as strings, not raw floats. They
+        # are diagnostics, never physics — but the raw-float64 ratchet counts
+        # fields, not meanings, and these 18 were the producer's entire
+        # contribution to it. Formatting here keeps the witness f64-free
+        # without pretending a stopwatch reading has 50-digit precision.
+        "elapsed_reduce_sec": f"{t_reduce:.3f}",
+        "elapsed_trace_sec": f"{t_trace:.3f}",
+        "elapsed_evalf_sec": f"{t_eval:.3f}",
     }
 
 
@@ -191,9 +266,9 @@ def main() -> int:
             row["atom"] = label
             print(
                 f"    word_len={row['word_length']:3d} "
-                f"reduce={row['elapsed_reduce_sec']:6.1f}s "
+                f"reduce={float(row['elapsed_reduce_sec']):6.1f}s "
                 f"terms={row['reduced_term_count']:5d} "
-                f"trace={row['elapsed_trace_sec']:6.2f}s "
+                f"trace={float(row['elapsed_trace_sec']):6.2f}s "
                 f"ops={row['trace_sympy_ops']:>6d}",
                 flush=True,
             )
@@ -250,7 +325,8 @@ def main() -> int:
         flush=True,
     )
 
-    w = WitnessBuilder("markov-peel-atomic-tr-m", engine="sympy")
+    w = WitnessBuilder(_witness_name(), engine="sympy")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Production atomic Markov trace tr_M(β_atom) at q = q₀ via the "
         "Markov-axiom recursive-ascent path (markov_peel + "

@@ -1,0 +1,143 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1007.1250v4",
+ "source": {
+  "file": "1007.1250v4.pdf",
+  "sha256": "541ba4fb3068de8b464453d4bca4b572f5b0004c4ff948bf487c38f9b96e8a87",
+  "bytes": 2493937,
+  "pages": 139
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1007.1250",
+   "version": "4",
+   "primary_class": "math.DG",
+   "stamp_date": "6 Mar 2015"
+  },
+  "doi": null,
+  "title": "Nonabelian Multiplicative Integration on Surfaces",
+  "authors_raw": null,
+  "abstract": "We construct a 2 -dimensional twisted nonabelian multiplicative integral . This is done in the context of a Lie crossed module (an object composed of two Lie groups interacting), and a pointed manifold. The integrand is a connection-curvature pair, that consists of a Lie algebra valued 1-form and a Lie algebra valued 2-form, satisfying a certain differential equation. The geometric cycle of the integration is a kite in the pointed manifold. A kite is made up of a 2-dimensional simplex in the manifold, together with a path connecting this simplex to the base point of the manifold. The multiplicative integral is an element of the second Lie group in the crossed module. We prove several properties of the multiplicative integral. Among them is the 2-dimensional nonabelian Stokes Theorem, which is a generalization of Schlesinger’s Theorem. Our main result is the 3 -dimensional nonabelian Stokes Theorem. This is a totally new result. The methods we use are: the CBH Theorem for the nonabelian exponential map; piecewise smooth geometry of polyhedra; and some basic algebraic topol- ogy. The motivation for this work comes from twisted deformation quantization and descent for nonabelian gerbes. Similar questions arise in nonabelian gauge theory.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20181026195549Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_lines": [
+   "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES",
+   "AMNON YEKUTIELI"
+  ],
+  "title_prev": "NONABELIAN MULTIPLICATIVE INTEGRATION ON SURFACES AMNON YEKUTIELI"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 3,
+   "source": "outline",
+   "number": "0"
+  },
+  {
+   "level": 1,
+   "title": "Polyhedra and Piecewise Smooth Geometry",
+   "page": 13,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Estimates for the Nonabelian Exponential Map",
+   "page": 25,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Multiplicative Integration in Dimension One",
+   "page": 35,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Multiplicative Integration in Dimension Two",
+   "page": 51,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "Quasi Crossed Modules and Additive Feedback",
+   "page": 71,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "Stokes Theorem in Dimension Two",
+   "page": 83,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Square Puzzles",
+   "page": 91,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Stokes Theorem in Dimension Three",
+   "page": 105,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Multiplicative Integration on Triangular Kites",
+   "page": 125,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 137,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-0-introduction",
+   "number": "0",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 137,
+   "n_chars": 238409,
+   "n_words": 49702
+  },
+  {
+   "id": "sec-001-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 137,
+   "page_end": 139,
+   "n_chars": 2897,
+   "n_words": 399
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 8,
+  "likely_scanned": false,
+  "toc_entries": 11,
+  "sections": 2,
+  "chars_total": 241306
+ }
+}

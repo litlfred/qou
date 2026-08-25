@@ -23,7 +23,7 @@ $$
 The Volume Conjecture asserts that the asymptotic growth of the
 coloured Jones polynomial $J_K^{(N)}(q)$ at $q = e^{2\pi i / N}$ as
 $N \to \infty$ equals $\mathrm{Vol}(S^3 \setminus K)$. The
-algebraic side ($J_K \in \mathbb{Z}[q^{± 1}]$) is field-polymorphic
+algebraic side ($J_K \in \mathbb{Z}[q^{\pm 1}]$) is field-polymorphic
 and lives in the substrate
 ([`rem:algebraic-core-survives`](#rem:algebraic-core-survives)). The
 geometric side is a real number, transcendental in general.
@@ -48,9 +48,9 @@ Bloch–Wigner regulator lives. Predicted at every depth $n$ is an
 analogous statement: *colored quantum invariants built from
 $\mathrm{Li}_n^q$ asymptote to weight-$n$ Goncharov periods.*
 
-### Implications of accepting the keystone
+### Implications of accepting the depth correspondence
 
-The keystone correspondence does **not** prove the Volume Conjecture.
+The depth correspondence does **not** prove the Volume Conjecture.
 What it does is reduce the conjecture to two structurally smaller
 claims:
 

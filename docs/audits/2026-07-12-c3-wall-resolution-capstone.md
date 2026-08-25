@@ -30,10 +30,22 @@ singularity to break.
    **smooth** numerator zero. The real precision limit is the experimental `Q_β`
    (`dq*/dQ_β≈−0.54`), not the anchor count. [#3636]
 
-4. **`q*` is a third, decay-sector determination of `q₀`.** `q*` (ε=0, pure
+4. ~~**`q*` is a third, decay-sector determination of `q₀`.** `q*` (ε=0, pure
    bar-even) is not the muon or proton mass pin, and not their precision-weighted
    reconciliation (`~0%` muon-ward; `q*` is `80.3%`). The μ-p substrate tension
-   becomes a **μ-p-`Q_β` three-way** picture. [#3636]
+   becomes a **μ-p-`Q_β` three-way** picture.~~ **[WITHDRAWN 2026-08-15 — PR
+   #5074, bean `qou-kh7e`, registry §9f.]** `q*` is root-found on
+   `S(q) = c₃(q) + Vol(4₁)` where `c₃ = (Q_β^exp/Q_N2 − 1)/u³` is **extracted
+   from experimental Q_β**, so locating it **presupposes (H1)** `c₃^even =
+   −Vol(4₁)` — the hypothesis an independent determination would have to avoid.
+   It *is* independent of the two **mass** pins, which is weaker and different.
+   The two statistics above stand and are **not** evidence: every constant `V`
+   in the window `(−c₃(μ), −c₃(p)) = (2.0202, 2.0693)` puts a zero between the
+   anchors (7/7 unrelated constants,
+   [`sleak_offset_genericity_check.py`](../../computations/qbeta/sleak_offset_genericity_check.py)),
+   and `Vol(4₁)` sits **80.2961 %** from the proton end of that window — which
+   *is* the quoted `80.3%`. The substrate rests on **two** pins; μ–p is a
+   **two-way** tension. [#3636]
 
 5. **The Φ_b state integral CONFIRMS no physical singular map.** The saddle
    `𝔙(m)` (validated gluing solver, Vol(4₁) to 4e-18) at the real substrate

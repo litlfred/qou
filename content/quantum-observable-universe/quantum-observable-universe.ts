@@ -89,7 +89,9 @@ export default paper({
     // wigner-su4-from-spin-isospin). Pauli/spin-stats content remains a
     // future authoring goal — will create a new chapter when content exists.
     chapterRef({ dir: "mass-endomorphism" }),                   // The Mass Endomorphism: categorical opener + algebraic core (~80 blocks). Generic Yekutieli path — before particles.
-    chapterRef({ dir: "particle-interactions" }),              // Particles: GB, LP, nuclear structure, SDP-as-thimble + skein/hadron/atom-shell
+    chapterRef({ dir: "knots-particles-confinement" }),         // Knots, Particles, and Confinement: particle definitions, hadron algebra, knot-particle dictionary, confinement/shell hierarchy (definitional core — upstream of eightfold-way + mass-theory)
+    chapterRef({ dir: "eightfold-way" }),                      // The Eightfold Way and Flavor Structure: A₂ from 3-strand braiding, SU(3) flavor multiplets, q-deformation, color algebra
+    chapterRef({ dir: "nuclear-interactions" }),                // Nuclear Interactions and Binding: Gröbner–Shirshov, LP/SDP, beta decay, atomic braid mass, Q-values (computational engine)
     chapterRef({ dir: "climax-volume-mass" }),                 // q-Hyperbolic Geometry: Möbius energy, crossing energy, Lagrange resolvents, braiding relations (42 blocks)
     chapterRef({ dir: "mass-theory" }),                        // Mass Analysis: geometric face, archimedean face, physical predictions, compute (~470 blocks). Consumes particles + q-hyperbolic geometry.
     // mass-application merged into mass-theory (2026-05-27)
@@ -129,6 +131,7 @@ export default paper({
     chapterRef({ dir: "appendix-transfer-matrices" }),
     chapterRef({ dir: "appendix-mass-binding-algorithms" }),    // Bridge: canonical chain steps → propositions → Python API
     chapterRef({ dir: "appendix-standard-model" }),             // Toward the Standard Model: gauge action groupoid → Hecke realization → SM truncation, with honest open-problems ledger
+    chapterRef({ dir: "appendix-nf-witnesses" }),               // Normal Form Witnesses: exact Pauli witnesses for light and medium nuclei via inductive Gröbner reduction
     chapterRef({ dir: "appendix-qvalues" }),
     chapterRef({ dir: "appendix-surreals" }),                  // Surreal-number lift (categorical lobe) + Millennium-problem surreal bounds
     chapterRef({ dir: "appendix-surreals-archimedean" }),      // Surreal-number lift (archimedean lobe) — substrate-q_0-pinned content split out per q-usage audit

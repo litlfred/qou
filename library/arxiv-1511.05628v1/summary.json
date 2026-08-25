@@ -1,0 +1,162 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-1511.05628v1",
+ "source_sha256": "3b9da2994233882b",
+ "brief": "QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY — The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that",
+ "extended": "**QUANTUM MODULARITY AND COMPLEX CHERN-SIMONS THEORY**\n\n*TUDOR DIMOFTE AND STAVROS GAROUFALIDIS*\n\n41 pp, 28 sections.\n\n**Abstract.** The Quantum Modularity Conjecture of Zagier predicts the existence of a for- mal power series with arithmetically interesting coeﬃcients that appears in the asymptotics of the Kashaev invariant at each root of unity. Our goal is to construct a power series from a Neumann-Zagier datum (i.e., an ideal triangulation of the knot complement and a geo- metric solution to the gluing equations) and a complex root of unity ζ. We prove that the coeﬃcients of our series lie in the trace ﬁeld of the knot, adjoined a complex root of unity. We conjecture that our series are those that appear in the Quantum Modularity Conjecture and conﬁrm that they match the numerical asymptotics of the Kashaev invariant (at various roots of unity) computed by Zagier and the ﬁrst author.\n\n**Outline.** 1 Introduction; 1.1 Quantum modular forms; 2.1 Ideal triangulations and Neumann-Zagier da; 2.2 The 1-loop invariant at level k; 2.4 Feynman diagrams for the n-loop invariant; 2.5 The 2-loop invariant in detail; 2.6 The 3-loop invariant; 2.7 Matching with the numerical asymptotics of; 2.8 Topological invariance; 3 Proofs; 3.1 Proof of Theorem 2.6; 3.2 Some identities of the cyclic dilogarithm; 3.3 Proof of Theorem 2.2; 4 Complex Chern-Simons theory; 4.1 Basic structure; 4.2 A singular limit; 4.3 State integrals; 4.4 Derivation of the torsion\n\n**Extracted claims (proposals, not verified).**\n- Theorem 2.6: The coeﬃcients of the power series φ+\n- Lemma 2.8: For a Z-non-degenerate Neumann-Zagier datum γ, we have\n- Lemma 3.1: [GZ] The summation in Equation (12) is k-periodic.",
+ "tokens": {
+  "brief": 48,
+  "extended": 423
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-11-quantum-modular-forms",
+   "title": "Quantum modular forms",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-21-ideal-triangulations-and-neumann-zagier-data",
+   "title": "Ideal triangulations and Neumann-Zagier data",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-003-22-the-1-loop-invariant-at-level-k",
+   "title": "The 1-loop invariant at level k",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-004-24-feynman-diagrams-for-the-n-loop-invariant",
+   "title": "Feynman diagrams for the n-loop invariant",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-005-25-the-2-loop-invariant-in-detail",
+   "title": "The 2-loop invariant in detail",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-006-26-the-3-loop-invariant",
+   "title": "The 3-loop invariant",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-007-27-matching-with-the-numerical-asymptotics-of-th",
+   "title": "Matching with the numerical asymptotics of the Kashaev invariant",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-008-28-topological-invariance",
+   "title": "Topological invariance",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-009-3-proofs",
+   "title": "Proofs",
+   "pages": "12-12"
+  },
+  {
+   "id": "sec-010-31-proof-of-theorem-26",
+   "title": "Proof of Theorem 2.6",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-011-32-some-identities-of-the-cyclic-dilogarithm",
+   "title": "Some identities of the cyclic dilogarithm",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-012-33-proof-of-theorem-22",
+   "title": "Proof of Theorem 2.2",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-013-4-complex-chern-simons-theory",
+   "title": "Complex Chern-Simons theory",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-014-41-basic-structure",
+   "title": "Basic structure",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-015-42-a-singular-limit",
+   "title": "A singular limit",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-016-43-state-integrals",
+   "title": "State integrals",
+   "pages": "17-19"
+  },
+  {
+   "id": "sec-017-44-derivation-of-the-torsion",
+   "title": "Derivation of the torsion",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-018-45-ambiguities",
+   "title": "Ambiguities",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-019-5-computations",
+   "title": "Computations",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-020-51-how-the-data-was-computed",
+   "title": "How the data was computed",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-021-52-a-sample-computation",
+   "title": "A sample computation",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-022-6-data",
+   "title": "Data",
+   "pages": "22-22"
+  },
+  {
+   "id": "sec-023-61-the-41-knot",
+   "title": "The 41 knot",
+   "pages": "22-32"
+  },
+  {
+   "id": "sec-024-63-the-61-knot",
+   "title": "The 61 knot",
+   "pages": "32-38"
+  },
+  {
+   "id": "sec-025-65-the-912-knot",
+   "title": "The 912 knot",
+   "pages": "38-39"
+  },
+  {
+   "id": "sec-026-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "39-39"
+  },
+  {
+   "id": "sec-027-references",
+   "title": "References",
+   "pages": "39-41"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

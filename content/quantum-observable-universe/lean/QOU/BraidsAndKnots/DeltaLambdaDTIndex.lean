@@ -92,7 +92,7 @@ def PartitionOf5.dtEuler (p : PartitionOf5) : ℤ :=
     alternating sum collapses (single-degree concentration) to
     `(-1)^{n(λ)} · dim V_λ` — the Behrend sign `(-1)^{dim moduli}` times the
     count.  Sign and magnitude are the parity and value of ONE graded datum. -/
-theorem PartitionOf5.dtEuler_eq_sign_times_dim (p : PartitionOf5) :
+theorem dtEuler_eq_sign_times_dim (p : PartitionOf5) :
     p.dtEuler = (-1 : ℤ) ^ p.nStat * (p.dim : ℤ) := by
   cases p <;> decide
 
@@ -102,14 +102,14 @@ theorem PartitionOf5.dtEuler_eq_sign_times_dim (p : PartitionOf5) :
     (`deltaSign = (-1)^{n(λ)}`) and the horn-2 magnitude (`|Δ_λ| = dim`) are
     the sign and the size of a SINGLE Donaldson–Thomas invariant — not two
     independent ingredients. -/
-theorem PartitionOf5.dtEuler_eq_deltaLambda (p : PartitionOf5) :
+theorem dtEuler_eq_deltaLambda (p : PartitionOf5) :
     p.dtEuler = p.deltaLambda := by
   cases p <;> decide
 
 /-- **Horn-2 magnitude leg**: `(DT Euler)² = (dim V_λ)²`, i.e. the DT count's
     magnitude is the Wedderburn dimension.  (Equivalent to
     `binding_magnitude_eq_dim` via the unification.) -/
-theorem PartitionOf5.dtEuler_magnitude_eq_dim (p : PartitionOf5) :
+theorem dtEuler_magnitude_eq_dim (p : PartitionOf5) :
     p.dtEuler ^ 2 = (p.dim : ℤ) ^ 2 := by
   cases p <;> decide
 
@@ -118,7 +118,7 @@ theorem PartitionOf5.dtEuler_magnitude_eq_dim (p : PartitionOf5) :
     `(-1)^{dim moduli}` sign is negative exactly on odd-dimensional moduli.
     (Oddness written as `n(λ) % 2 = 1` to keep the import surface within the
     `n = 5` anchor's cached olean set.) -/
-theorem PartitionOf5.dtEuler_neg_iff_odd_grade (p : PartitionOf5) :
+theorem dtEuler_neg_iff_odd_grade (p : PartitionOf5) :
     p.dtEuler < 0 ↔ p.nStat % 2 = 1 := by
   cases p <;> decide
 
@@ -129,7 +129,7 @@ theorem PartitionOf5.dtEuler_neg_iff_odd_grade (p : PartitionOf5) :
         (horn-2's positivity violation).
     Both are caused by the SAME odd grade — witnessed by `(4,1)`
     (`n(λ) = 1`, `Δ = -4`). -/
-theorem PartitionOf5.horns_share_one_odd_grade :
+theorem horns_share_one_odd_grade :
     ∃ p : PartitionOf5,
       p.nStat % 2 = 1 ∧ p.dtEuler < 0 ∧ p.dtEuler = -(p.dim : ℤ) := by
   refine ⟨.fourOne, ?_, ?_, ?_⟩ <;> decide
@@ -139,7 +139,7 @@ theorem PartitionOf5.horns_share_one_odd_grade :
     leaves `ℕ` — it cannot be the `q = 1` value of any KL-positive (non-negative
     Laurent) quantum dimension.  A positivity-violating DT / 3d-index integer,
     exactly as horn 2 concluded. -/
-theorem PartitionOf5.deltaLambda_not_kl_positive :
+theorem deltaLambda_not_kl_positive :
     ∃ p : PartitionOf5, p.deltaLambda < 0 := by
   refine ⟨.fourOne, ?_⟩; decide
 
@@ -147,7 +147,7 @@ theorem PartitionOf5.deltaLambda_not_kl_positive :
     and a negative DT Euler characteristic occur — the positive one from an
     even a-function grade, the negative one from an odd grade.  This is the
     `deltaSign_mixed` fact re-read as the two parities of one graded object. -/
-theorem PartitionOf5.dtEuler_mixed_sign :
+theorem dtEuler_mixed_sign :
     (∃ p : PartitionOf5, 0 < p.dtEuler) ∧ (∃ p : PartitionOf5, p.dtEuler < 0) :=
   ⟨⟨.five, by decide⟩, ⟨.fourOne, by decide⟩⟩
 

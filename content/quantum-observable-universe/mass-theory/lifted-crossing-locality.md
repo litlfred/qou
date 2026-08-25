@@ -14,4 +14,4 @@ $$
 
 Locality requires that parallel transport of the shape parameter around multiple crossings accumulates zero phase. This vanishing holonomy is guaranteed at the generic physical substrate $q_0$ where the Knizhnik-Zamolodchikov connection is flat. The property fails at roots of unity or at the golden-ratio degeneration threshold, identifying $q_0$ as the distinguished regime supporting exact exponential mass scaling.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

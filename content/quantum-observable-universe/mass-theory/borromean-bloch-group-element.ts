@@ -17,7 +17,7 @@ export default conjecture({
   cites: [
     "bloch2000",
     "neumann-zagier1985",
-    "suslin1990",
+    "suslin1991",
     "zagier1986",
     "kashaev1997",
   ],
@@ -33,7 +33,6 @@ export default conjecture({
     "axiom-class",
     "open-problem",
     "conditional-on-class",
-    "non-scholarly-voice-exception",
     "quantum-dilogarithm",
   ],
 });

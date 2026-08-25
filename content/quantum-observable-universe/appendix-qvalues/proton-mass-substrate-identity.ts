@@ -41,12 +41,12 @@ export default proposition({
     // DERIVES this flat identity from it (12 = 2·6), sorry-free modulo the
     // class instance. Class + theorem live in the qou Lake library
     // (QOU/AppendixQValues/ProtonBorromeanAssembly.lean); no sibling .lean.
-    ref: "qou:QOU.AppendixQValues.proton_mass_substrate_identity",
+    ref: "qou:QOU.AppendixQValues.ProtonBorromeanAssembly.proton_mass_substrate_identity",
   },
   cites: [
     "adams1985hyperbolic",
     "wenzl1988c",
-    "chlouveraki2016hdr",
+    "chlouveraki2016-hdr",
   ],
   computation: {
     engine: "python",

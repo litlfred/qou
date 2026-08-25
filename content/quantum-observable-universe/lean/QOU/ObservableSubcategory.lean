@@ -40,4 +40,21 @@ theorem ObservableSubcategory.not_observable_iff
     ¬ C.isObservable S ↔ C.A0section S = 0 := by
   rw [C.observable_iff, not_ne_iff]
 
+/-- **De-axiomatisation (bean `tps9`).** The observability predicate is not a
+    free axiom: every degree-0 section `A₀ : C → ℝ` canonically *induces* the
+    observable subcategory, with membership *defined* as its non-vanishing.
+    The carrier's `observable_iff` is then `Iff.rfl`, so `Bun°` is genuinely
+    "the non-vanishing locus of `Γ(−, A₀)`", not an assumed criterion. -/
+def ObservableSubcategory.ofSection {C : Type} (A0 : C → ℝ) :
+    ObservableSubcategory where
+  Obj := C
+  A0section := A0
+  isObservable := fun c => A0 c ≠ 0
+  observable_iff := fun _ => Iff.rfl
+
+/-- Sanity: in a section-induced subcategory, `S` is observable iff its
+    section is non-zero — by construction. -/
+theorem ObservableSubcategory.ofSection_observable {C : Type} (A0 : C → ℝ) (S : C) :
+    (ObservableSubcategory.ofSection A0).isObservable S ↔ A0 S ≠ 0 := Iff.rfl
+
 end QOU

@@ -13,7 +13,7 @@ subtraction), and the decomposition claim is a genuine **equation in
 (two-rule) case of the manuscript's telescoping decomposition.
 
 Content block
-[`prop:s-polynomial-decomposition`](../../../unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.md):
+[`prop:ugb-s-poly-decomposition`](../../../unital-groebner-bases/buchberger-and-pbw/ugb-s-polynomial-decomposition.md):
 *$S$-polynomial decomposition*.
 
 ## Manuscript statement
@@ -67,7 +67,7 @@ def sPoly (a₁ a₂ : k) (f₁ f₂ : AlgElement G k) : AlgElement G k :=
     coefficient extensionality for `AlgElement` (a raw data structure;
     see `AlgOps.lean` §6); supplying that ext principle is the remaining
     manuscript step. -/
--- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/s-polynomial-decomposition.ts
+-- Ref: [manuscript] unital-groebner-bases/buchberger-and-pbw/ugb-s-polynomial-decomposition.ts
 theorem s_poly_decomposition
     (a₁ a₂ c₁ c₂ : k) (f₁ f₂ : AlgElement G k)
     (ha₁ : a₁ ≠ 0) (ha₂ : a₂ ≠ 0)
@@ -81,6 +81,22 @@ theorem s_poly_decomposition
   -- manuscript ext argument (AlgElement is not a quotient type).
   -- Ref: [manuscript] unital-groebner-bases — s-polynomial-decomposition (base case)
   refine ⟨c₁ * a₁, ?_⟩
-  sorry
+  rcases f₁ with ⟨coeff₁, supp₁, spec₁⟩
+  rcases f₂ with ⟨coeff₂, supp₂, spec₂⟩
+  dsimp [AlgElement.add, AlgElement.smul, sPoly, AlgElement.sub, AlgElement.neg]
+  congr 1
+  funext m
+  have h3 : c₂ * a₂ = - (c₁ * a₁) := by
+    calc c₂ * a₂ = (c₁ * a₁ + c₂ * a₂) - c₁ * a₁ := by ring
+         _       = 0 - c₁ * a₁ := by rw [hcancel]
+         _       = - (c₁ * a₁) := by ring
+  have h2 : c₂ = - (c₁ * a₁) * a₂⁻¹ := by
+    calc c₂ = c₂ * (a₂ * a₂⁻¹) := by rw [mul_inv_cancel₀ ha₂, mul_one]
+         _  = (c₂ * a₂) * a₂⁻¹ := by ring
+         _  = - (c₁ * a₁) * a₂⁻¹ := by rw [h3]
+  rw [h2]
+  calc c₁ * coeff₁ m + - (c₁ * a₁) * a₂⁻¹ * coeff₂ m
+    _ = c₁ * (a₁ * a₁⁻¹) * coeff₁ m - c₁ * a₁ * a₂⁻¹ * coeff₂ m := by rw [mul_inv_cancel₀ ha₁, mul_one]; ring
+    _ = (c₁ * a₁) * (a₁⁻¹ * coeff₁ m + - (a₂⁻¹ * coeff₂ m)) := by ring
 
 end UGB.BuchbergerPBW

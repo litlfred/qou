@@ -83,22 +83,103 @@ Note: existing `codata_constants.M_E_MEV` truncates this to
 redefine M_E_MEV at the full 11 sig figs.  This module is the
 single source of truth.
 """
-M_E_MEV_ERR = _load_mpf("0.00000000015")
-"""1σ uncertainty on M_E_MEV.  σ ≈ 0.29 ppb."""
+M_E_MEV_ERR = _load_mpf("0.00000000016")
+"""1σ uncertainty on M_E_MEV.  σ ≈ 0.31 ppb.
+
+CODATA-2022 quotes 0.510 998 950 69**(16)** MeV (RMP 97, 025002, p. 45).
+This previously held ``(15)``, the CODATA-2018 uncertainty, alongside the
+correct 2022 value — the same vintage straddle as `M_P_MEV`, in the error
+bar rather than the value (2026-08-09, PR #4860).
+"""
 
 
 # ── Proton mass ─────────────────────────────────────────────────────
 
-M_P_MEV = _load_mpf("938.27208816")
+M_P_MEV = _load_mpf("938.27208943")
 """Proton mass · c² (MeV).
 
-CODATA-2022: 938.27208816(29) MeV — σ ≈ 0.31 ppb.
+CODATA-2022: **938.272 089 43(29) MeV** — σ ≈ 0.31 ppb.
+
+Quoted verbatim from the CODATA-2022 report, Table (row ``energy equivalent
+mpc2``): Mohr, Newell, Taylor & Tiesinga, *CODATA recommended values of the
+fundamental physical constants: 2022*, Rev. Mod. Phys. **97**, 025002
+(published 30 April 2025) — vendored at
+``library/revmodphys97025002pdf/RevModPhys.97.025002.pdf.pdf``, p. 47.
+
+**Vintage correction, 2026-08-09 (PR #4860, bean `qou-2an8` → `qou-if87`).**
+This previously held ``938.27208816``, the CODATA-**2018** value, while
+carrying a "CODATA-2022" label. The straddle was first detected without any
+published table, from internal inconsistency alone: this module's `M_E_MEV`
+and the pin anchor `MASS_RATIO_P_E` are both genuine 2022, and the triple is
+over-determined, so
+
+    M_E_MEV * MASS_RATIO_P_E  =  938.272089427324... MeV
+    old M_P_MEV               =  938.27208816       MeV
+    residual                  =  +1.3507 ppb = 127x the last printed digit
+
+That derivation now agrees with the authoritative quote above to **0.0029
+ppb** (0.27 of a printed digit) — the triangulation was right.
+
+Downstream consequence: the stale value was 100% of the `m_p` row's reported
+L2 error (437x), and it contaminated `Q_β`'s comparison target and the
+AME-derived neutron. See
+``docs/audits/2026-08-09-codata-registry-vintage-straddle.md``.
 
 Role: **VALIDATION** anchor (not a calibration input to the
 framework; framework predicts m_p categorically).
 """
 M_P_MEV_ERR = _load_mpf("0.00000029")
-"""1σ uncertainty on M_P_MEV.  σ ≈ 0.31 ppb."""
+"""1σ uncertainty on M_P_MEV.  σ ≈ 0.31 ppb.  CODATA-2022: (29)."""
+
+def _mass_ratio_p_e():
+    """The m_p/m_e pin anchor, SOURCED — never re-typed here.
+
+    Deliberately imported rather than copied: a local literal would make this
+    module a fourth registry for the same quantity, which is the defect class
+    this file now documents. ``qou_substrate.constants`` imports only ``math``,
+    so there is no cycle. The ``MASS_RATIO_P_E_STR`` decimal string is
+    preferred over the f64 ``MASS_RATIO_P_E`` so no precision is lost.
+
+    Returns ``None`` rather than raising if ``qou_substrate`` is unavailable.
+    This module is imported by ~234 consumers that never touch the triple; an
+    ImportError here would break every one of them to serve a diagnostic.
+    """
+    import sys as _s
+    from pathlib import Path as _P
+    try:
+        _pkg = _P(__file__).resolve().parent.parent / "tools" / "qou-substrate" / "python"
+        if _pkg.is_dir() and str(_pkg) not in _s.path:
+            _s.path.insert(0, str(_pkg))
+        from qou_substrate.constants import MASS_RATIO_P_E_STR
+        return _load_mpf(MASS_RATIO_P_E_STR)
+    except Exception:  # noqa: BLE001 — diagnostic only; never break importers
+        return None
+
+
+MASS_RATIO_P_E = _mass_ratio_p_e()
+"""m_p/m_e — re-exported from ``qou_substrate.constants`` (the pin anchor).
+
+Present so the triple this module documents can be checked without the caller
+having to reach into two packages. It is a re-export, **not** a second copy.
+"""
+
+M_P_MEV_RATIO_CONSISTENT = (
+    M_E_MEV * MASS_RATIO_P_E if MASS_RATIO_P_E is not None else None
+)
+"""Proton mass · c² (MeV) — **DERIVED, not vendored.**
+
+`M_E_MEV × (m_p/m_e)`, i.e. the proton implied by this module's 2022
+electron mass and the 2022 pin anchor `MASS_RATIO_P_E`. Use this wherever a
+proton consistent with the rest of the 2022 registry is required.
+
+Not a NIST quote: it is a product of two NIST quotes, so it may differ from
+the published CODATA-2022 m_p by up to one unit in the 11th significant
+figure (~0.01 ppb) from NIST's own rounding — 30x below the σ below, and
+135x below the 1.35 ppb inconsistency it exists to avoid.
+"""
+M_P_MEV_RATIO_CONSISTENT_ERR = _load_mpf("0.00000028")
+"""1σ on M_P_MEV_RATIO_CONSISTENT, from σ(m_e)/m_e = 0.29 ppb and
+σ(ratio)/ratio = 0.06 ppb in quadrature ⇒ ≈ 0.30 ppb."""
 
 
 # ── Neutron mass — two competing authoritative values ──────────────
@@ -113,19 +194,27 @@ adjustment of fundamental constants.
 """
 M_N_MEV_CODATA_DIRECT_ERR = _load_mpf("0.00000048")
 
-M_N_MEV_AME_DERIVED = _load_mpf("939.56542052")
+M_N_MEV_AME_DERIVED = _load_mpf("939.56542179")
 """Neutron mass · c² (MeV) — **AME-2020 derived from m_p + m_e + Q_β**.
 
-939.56542052(60) MeV — σ ≈ 0.64 ppb.
+939.56542179(60) MeV — σ ≈ 0.64 ppb.
 
-This is what `codata_constants.M_N_MEV` currently stores.  It is
-algebraically `M_P_MEV + M_E_MEV + Q_BETA_MEV` (where Q_β is the
-AME-2020 neutron decay Q-value).
+This is what `codata_constants.M_N_MEV` stores.  It is algebraically
+`M_P_MEV + M_E_MEV + Q_BETA_MEV_AME` (Q_β = the AME-2020 neutron decay
+Q-value), and `assert_ame_neutron_consistent()` below enforces that — it is
+not an independent quote and must never be edited on its own.
 
-**The two values disagree by ~1.5 ppb**, within their mutual
-uncertainties.  Choosing one over the other affects:
-- Q_β consistency (AME-derived path is consistent by construction)
-- Direct comparison against absolute m_n measurements
+**Rebuilt on the corrected 2022 proton, 2026-08-09 (PR #4860).** Previously
+``939.56542052``, which inherited the CODATA-2018 proton `M_P_MEV` carried at
+the time. The old value disagreed with `M_N_MEV_CODATA_DIRECT` by ~1.5 ppb
+(2.96σ) and the two were documented as "competing authoritative values". With
+the corrected proton they agree to **0.16 ppb (0.31σ)** — most of the
+competition was the stale literal, not a real tension between determinations.
+
+Consequence for consumers, unchanged by the fix: **this is NOT an independent
+neutron measurement.** Scoring a prediction against it double-counts whatever
+is already in the proton and Q_β. Prefer `M_N_MEV_CODATA_DIRECT` for accuracy
+scoring — that one *is* an independent CODATA determination.
 """
 M_N_MEV_AME_DERIVED_ERR = _load_mpf("0.00000060")
 
@@ -142,9 +231,19 @@ M_MU_MEV = _load_mpf("105.6583755")
 σ ≈ 22 ppb."""
 M_MU_MEV_ERR = _load_mpf("0.0000023")
 
-M_MU_OVER_M_E = _load_mpf("206.7682830")
-"""Muon-to-electron mass ratio.  CODATA-2022: 206.7682830(46).
+M_MU_OVER_M_E = _load_mpf("206.7682827")
+"""Muon-to-electron mass ratio.  CODATA-2022: **206.768 2827(46)**.
 σ ≈ 22 ppb.
+
+Quoted from RMP 97, 025002 (CODATA-2022), p. 46, row
+``Muon-electron mass ratio mμ/me``.
+
+**Vintage correction 2026-08-09 (PR #4860):** previously ``206.7682830``,
+the CODATA-2018 value, under a 2022 label — the third member of the same
+straddle as `M_P_MEV` and `M_E_MEV_ERR`. Note the direction: applying this
+correction moves the m_μ L2 miss from 963.6x to 970.2x, i.e. **worse**. That
+is recorded as measured, not suppressed; the μ–p substrate tension is genuine
+physics and no bookkeeping correction reaches it.
 
 Role: **CAL-2 anchor** — second framework calibration input.
 """
@@ -152,6 +251,20 @@ M_MU_OVER_M_E_ERR = _load_mpf("0.0000046")
 
 
 # ── Atomic mass unit → MeV conversion ──────────────────────────────
+
+M_N_MINUS_P_MEV = _load_mpf("1.29333251")
+"""Neutron-proton mass difference, energy equivalent.  CODATA-2022:
+**1.293 332 51(38) MeV**.
+
+Added 2026-08-21 during the CODATA drain (qou-7ot6-a).
+`substrate/experimental_constants.py` carried this as the literal 1.2933321
+described as the "direct CODATA 2022 value" -- it is 320 ppb from the 2022
+table entry, so the label was wrong. Held here so
+`codata_table_vintage_audit.py` checks it against the NIST table like every
+other constant in this module, rather than it sitting unchecked in a
+consumer."""
+
+M_N_MINUS_P_MEV_ERR = _load_mpf("0.00000038")
 
 U_MEV = _load_mpf("931.49410372")
 """Atomic mass constant energy equivalent m_u·c² (MeV).
@@ -259,11 +372,100 @@ def summary() -> dict:
     }
 
 
+def triple_consistency_ppb():
+    """Residual of the over-determined (m_e, m_p/m_e, m_p) triple, in ppb.
+
+    Any two of the three fix the third, so a same-edition triple returns ~0
+    (bounded by the printed granularity of ``M_P_MEV``, ~0.011 ppb). A large
+    return value means the registries have drifted apart in vintage.
+
+    Returns a positive number when ``M_P_MEV`` is SMALLER than the proton
+    implied by ``M_E_MEV × MASS_RATIO_P_E``. Currently ≈ +1.3507 ppb — the
+    known 2018/2022 straddle documented on ``M_P_MEV``.
+    """
+    if M_P_MEV_RATIO_CONSISTENT is None:
+        raise RuntimeError(
+            "cannot check the registry triple: qou_substrate is not importable, "
+            "so the m_p/m_e pin anchor could not be sourced. Install/point at "
+            "tools/qou-substrate/python."
+        )
+    return (M_P_MEV_RATIO_CONSISTENT - M_P_MEV) / M_P_MEV * _load_mpf("1e9")
+
+
+#: Ceiling for :func:`assert_triple_consistent`. Tightened 1.4 -> 0.05 on
+#: 2026-08-09 once ``M_P_MEV`` was corrected against the verified CODATA-2022
+#: quote (RMP 97, 025002). The live residual is ~0.0029 ppb — about a quarter
+#: of ``M_P_MEV``'s last printed digit (0.0107 ppb), which is the floor any
+#: same-edition triple can reach. 0.05 leaves ~17x headroom for NIST's own
+#: rounding without admitting another edition straddle (the one caught here
+#: was 1.35 ppb, 27x this ceiling).
+KNOWN_TRIPLE_RESIDUAL_PPB = 0.05
+
+
+def assert_triple_consistent(tolerance_ppb=None):
+    """Raise if the registry triple has drifted beyond the accepted residual.
+
+    A regression guard for the defect class found in PR #4860: a registry
+    that is exactly representable, correctly typed and precise to 11 figures,
+    yet from the wrong CODATA edition — invisible to every float64 / precision
+    audit in the repo, because nothing here is imprecise.
+
+    Deliberately asserts against a *known-residual ceiling* rather than zero:
+    asserting zero today would simply fail, and a guard that is expected to
+    fail teaches readers to ignore it.
+    """
+    tol = _load_mpf(str(KNOWN_TRIPLE_RESIDUAL_PPB if tolerance_ppb is None
+                        else tolerance_ppb))
+    resid = triple_consistency_ppb()
+    if abs(resid) > tol:
+        raise AssertionError(
+            f"CODATA registry triple inconsistent by {resid} ppb "
+            f"(ceiling {tol} ppb). Either a registry drifted vintage, or "
+            f"M_P_MEV was corrected and this ceiling should be tightened. "
+            f"See M_P_MEV's docstring and bean qou-if87."
+        )
+    return resid
+
+
+def ame_neutron_residual_MeV():
+    """``M_N_MEV_AME_DERIVED - (M_P_MEV + M_E_MEV + Q_BETA_MEV_AME)``.
+
+    That sum *is* the definition of the AME-derived neutron, so this must
+    vanish to the rounding of the stored 11-significant-figure literal
+    (~1e-8 MeV). A larger value means one of the four drifted independently
+    of the others — exactly how the old ``939.56542052`` outlived the
+    CODATA-2018 proton it was built from.
+    """
+    return M_N_MEV_AME_DERIVED - (M_P_MEV + M_E_MEV + Q_BETA_MEV_AME)
+
+
+def assert_ame_neutron_consistent(tolerance_MeV=1e-8):
+    """Raise if the AME-derived neutron no longer equals its own definition.
+
+    Default tolerance is one unit in the last printed decimal place of the
+    stored literal. This is a *definitional* check, not a measurement one:
+    there is no uncertainty budget to spend here.
+    """
+    resid = ame_neutron_residual_MeV()
+    if abs(resid) > _load_mpf(str(tolerance_MeV)):
+        raise AssertionError(
+            f"M_N_MEV_AME_DERIVED drifted from M_P + M_E + Q_BETA by {resid} "
+            f"MeV. It is a derived quantity — recompute it rather than "
+            f"editing it, and check which input moved."
+        )
+    return resid
+
+
 __all__ = [
+    "ame_neutron_residual_MeV", "assert_ame_neutron_consistent",
     "CODATA_EDITION_YEAR", "CODATA_SOURCE_URL", "ALLASCII_URL",
     "VENDORED_SNAPSHOT_DATE",
     "M_E_MEV", "M_E_MEV_ERR",
     "M_P_MEV", "M_P_MEV_ERR",
+    "M_P_MEV_RATIO_CONSISTENT", "M_P_MEV_RATIO_CONSISTENT_ERR",
+    "MASS_RATIO_P_E",
+    "triple_consistency_ppb", "assert_triple_consistent",
+    "KNOWN_TRIPLE_RESIDUAL_PPB",
     "M_N_MEV", "M_N_MEV_ERR",
     "M_N_MEV_CODATA_DIRECT", "M_N_MEV_CODATA_DIRECT_ERR",
     "M_N_MEV_AME_DERIVED", "M_N_MEV_AME_DERIVED_ERR",

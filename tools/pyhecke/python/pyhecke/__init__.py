@@ -5,11 +5,12 @@ exposes a stable import surface while delegating the heavy lifting to
 the legacy file so downstream scripts continue to work unchanged.
 
 Stable re-exports:
-  Constants:  G, G_INV, TR_M, NF_BASIS, NF_NAMES, z,
+  Constants:  G, G_PINV, RADICAL, TR_M, NF_BASIS, NF_NAMES, z,
               W_SYM, W_STD, W_ALT, alpha_em, ALPHA_BORROMEAN,
               ALPHA_FIGURE8, CATALAN_G, VOL_BORROMEAN, VOL_FIGURE8,
               V_HAT_ELECTRON, FIG8_*, E_HARTREE_EV, TWO_Q, E_MOL,
               KAPPA, M_E_MEV, M_P_MEV, M_N_MEV, q2, E_0_CALIBRATION_MEV,
+              Q_BETA_N_MEV, Q_BETA_N_MEV_ERR,
               NOBLE_GAS_Z, PROTON_NF, NEUTRON_NF
   Functions:  hm, hm_exact, nf_tr, nf_net,
               partitions_of, partition_dimension, partition_conjugate,
@@ -53,7 +54,7 @@ _SUBMODULES = (
 # these is accessed, we load the owning submodule and cache the bind.
 _FLATTENED = {
     # from pyhecke.gram
-    "G": "gram", "G_INV": "gram", "TR_M": "gram",
+    "G": "gram", "G_PINV": "gram", "RADICAL": "gram", "TR_M": "gram",
     "NF_BASIS": "gram", "NF_NAMES": "gram",
     "hm": "gram", "hm_exact": "gram", "nf_tr": "gram", "nf_net": "gram",
     "z": "gram", "W_SYM": "gram", "W_STD": "gram", "W_ALT": "gram",
@@ -99,6 +100,8 @@ _FLATTENED = {
     "E_HARTREE_EV": "constants", "TWO_Q": "constants",
     "E_MOL": "constants", "KAPPA": "constants",
     "M_E_MEV": "constants", "M_P_MEV": "constants", "M_N_MEV": "constants",
+    "Q_BETA_N_MEV": "constants",
+    "Q_BETA_N_MEV_ERR": "constants",
     "E_0_CALIBRATION_MEV": "constants",
     "E_0_CALIBRATION_MEV_ERR": "constants",
 }

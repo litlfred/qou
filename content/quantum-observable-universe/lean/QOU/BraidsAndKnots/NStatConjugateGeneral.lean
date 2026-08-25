@@ -50,7 +50,7 @@
   for all `n` verbatim (see `chiralityParity_eq_w0_sign_general`).
 
   Primary source: the identity `n(λ) = Σ_i C(λ'_i,2)` is standard;
-  -- Ref: [macdonald1995symmetric] https://doi.org/10.1093/oso/9780198534891.001.0001
+  -- Ref: [macdonald1995] https://doi.org/10.1093/oso/9780198534891.001.0001
   (I.1, Ex. 3: `n(λ) = Σ_i (i-1)λ_i = Σ_i C(λ'_i,2)`).
   -- Ref: [james1984representation] https://doi.org/10.1007/978-1-4684-9458-7
 -/
@@ -268,7 +268,7 @@ theorem conjugate_parts (p : PartitionOf5) : conjugate p.parts = p.conjParts := 
     (not `decide`).  Each `λ ⊢ 5` has decreasing parts, so the general identity
     applies; with the two bridges above it reproduces the corpus anchor,
     confirming (†) subsumes the finite enum. -/
-theorem PartitionOf5.nStat_eq_sumChoose2_conj_via_general (p : PartitionOf5) :
+theorem nStat_eq_sumChoose2_conj_via_general (p : PartitionOf5) :
     p.nStat = sumChoose2 p.conjParts := by
   have hsorted : List.Sorted (· ≥ ·) p.parts := by cases p <;> decide
   rw [← aStat_parts, ← conjugate_parts, aStat_eq_sumChoose2_conjugate p.parts hsorted]

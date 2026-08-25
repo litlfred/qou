@@ -83,6 +83,47 @@ Q_β = Q_base · Π_{k≥2} (1 + c_k · u^k)  where u = b · ℏ_q² ≈ 0.00852
 - 1 ppt → N=5
 - **1 ppQ → N=7**
 
+## Resummation arm — CLOSED (the D-ladder is convergent)
+
+> **The bar-odd `D(ũ)` resummation front is closed, and its negative results are
+> not open levers.** `D(ũ)` is **convergent** — radius
+> `ρ = ũ(q*_ρ) = 0.142799996644689…`, the image of a **`Q_b` zero** at
+> `q*_ρ ≈ 1.48989`, the real root > 1 of an irreducible degree-12 factor of the
+> `Δ_net` numerator; `κ = 0`. So there is no instanton action, no Borel-plane
+> singularity to locate, no Stokes constant to extract and no Écalle/`Φ_b`
+> resummation to perform for this object. Correction:
+> [`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md);
+> registry row **KC22**. The large-order law is fixed with no free parameters by
+> the single logarithmic branch point,
+> `d_k = −(1/(2h*_ρ))·ρ^{−k}/k·(1 + O(1/k))`, `h*_ρ = 0.818706471352`.
+>
+> **Tier the 11 probe witnesses of that arm as scope-(b) closed / ill-posed**,
+> not scope-(a) negative. Their recorded failures — *"gate fails at every `s`"*,
+> *"length-blocked at k=41"*, *"UNDECIDABLE at k=21"*, *"estimator gap
+> persists"* — are the estimators detecting that **there is nothing to
+> estimate**, not obstructions to be overcome by more terms:
+>
+> `qbeta-dladder-` **ecalle-acceleration** · **ecalle-phib-resummation** ·
+> **single-instanton-extraction** · **fibre-branch-stokes-ambiguity** ·
+> **fibre-two-action** · **jackson-qborel-acceleration** ·
+> **qborel-leroy-resummation** · **parity-split-resummation** ·
+> **parity-odd-singularity-even-order** · **barodd-borel-pade-laplace** ·
+> **parity-adjudication**
+>
+> **Do not delete them** — they are the evidence the arm was pursued properly
+> and exhausted, and their input (the exact `d_k`, `k ≤ 21`) is live.
+> **Do not widen this to the neighbours.** The 6 arithmetic witnesses
+> (non-holonomicity, the 2-adic parity grading and its Lean anchors) are
+> **unaffected**; `qbeta-dladder-extension-singularity`'s exact k=31 extension
+> **stands and is reusable** (only its "divergence-class `C` drift" reading is
+> the spurious `1/log k` decay); and the deformed-meridian / odd-channel-Stokes
+> witnesses are a **different object**, not assessed either way.
+> **`Φ_b` itself is genuinely resurgent — only `D(ũ)` is not**, so a blanket
+> sweep of the family would be the mirror of the original error.
+>
+> Full classification of all 29 (A unaffected / B ill-posed / C partial /
+> D not assessed): audit §6. Tracked on bean `qou-4wq6`.
+
 ## Open probes (current queue)
 
 > **Refuted-class map (method-level).** Before opening a new derivation probe,
@@ -1052,13 +1093,26 @@ the [2026-07-12 capstone](../audits/2026-07-12-c3-wall-resolution-capstone.md)
 (the `1/u³` artifact, `S = h·D(ũ)`, structural sign-flip, decay-sector `q*`)
 these are now **registry rows KC21 + KC22** in
 [`ck-dk-canonical-registry.md §9`](ck-dk-canonical-registry.md) + JSON twin
-(validator green): the odd-channel element is transcendental/**resurgent**
-(Écalle class) — the low-order (q-)holonomic search class is CLOSED. Do not
-re-run holonomic/P-finite hunts on `D(ũ)`; the live routes are (i) the
-resurgent/acceleration chain, (ii) KC19's crossing-weight `w(q)` derived from
+(validator green): ~~the odd-channel element is transcendental/**resurgent**
+(Écalle class)~~ **[WITHDRAWN 2026-08-09]** — the low-order (q-)holonomic search
+class is CLOSED. Do not
+re-run holonomic/P-finite hunts on `D(ũ)`; the live routes are ~~(i) the
+resurgent/acceleration chain~~ **[(i) WITHDRAWN 2026-08-09]**, (ii) KC19's crossing-weight `w(q)` derived from
 the Φ_b state integral, (iii) canonical `c₄^even` rungs via H₄ Hoefsmit
 (bean `8we6`) since extracted `c_k≥4` are noise (P4 entropy audit). No fit;
 no c_k wired; no tier change.
+
+> **⚠ [SUPERSEDED 2026-08-09] — route (i) is withdrawn, and the *reason* given
+> for the closure is wrong. The closure instruction itself STANDS.** `D(ũ)` is
+> **CONVERGENT** (`ρ = ũ(q*_ρ) = 0.142799996644689…`, `κ = 0`), so the
+> "transcendental/resurgent (Écalle class)" reading — and the
+> "resurgent/acceleration chain" named as live route (i) — rest on a divergence
+> the ladder does not have. **"Do not re-run holonomic/P-finite hunts on
+> `D(ũ)`" remains correct and in force**: a convergent series need not be
+> holonomic, and KC22's closed form `φ(w)log(1−w/ρ) + ψ(w)` is exactly such an
+> element — so the (q-)holonomic exclusion survives losing the divergence that
+> was mistakenly offered as its justification. Routes (ii) and (iii) are
+> untouched. See the 2026-08-14 entry at the end of this ledger; `qou-dri7`.
 
 
 **2026-07-17 (bar-odd-S follow-up) — ξ-FRAME PHASE LAW: κ̃_n/ξⁿ ∈ (−i)ⁿ·ℝ (rung 1
@@ -1080,6 +1134,14 @@ is FIXED on main (`ser_div`, valuation-aware, credits the #3691 diagnosis);
 corpus sweep finds zero remaining shift-divide offenders. Audit:
 `2026-07-17-deformed-tower-xi-frame-phase-law.md`. No fit; no c_k wired; no
 integer Stokes constant claimed; no tier change.
+
+> **⚠ Premise corrected 2026-08-09 — read the entry below with this.** Its
+> results are stated "conditional on the triple-confirmed divergence class",
+> and the ladder is **convergent** (`κ = 0`). The gate failure is therefore not
+> a finite-`k` shadow to be resolved by longer ladders, and the `A ≈ 0.236`
+> observation is **not** a lever awaiting ORD-63 confirmation. What survives:
+> the sorry-free 2-adic transport invariant, and the measurements as data. See
+> §"Resummation arm — CLOSED" at the top of this ledger.
 
 **2026-07-17 (PR #3818, `claude/dladder-qborel-acceleration-2026-07-17`) —
 q-Borel acceleration of the D-ladder: transport invariant proved, fixed-base
@@ -1167,11 +1229,17 @@ of `η²` alone and die at the `ũ¹` obstruction. **Scope-(a):** the 07-04
 positive stands (`η` bar-odd, `η² ∈ ℚ(√3)[[ũ]]` margin 9); what is refuted is
 `E` being *generated by* `η²` — the bar-even fibre needs ≥ 2 independent
 generators (`ũ`, `η²`). Consonant with KC21/KC22: no fibre-level algebraic
-shortcut past the resurgent D-ladder exists. Probe
+shortcut past the ~~resurgent~~ **[WITHDRAWN 2026-08-09]** D-ladder exists.
+Probe
 `qbeta_eta_square_functional_g_probe.py` → witness
 `qbeta-eta-square-functional-g-probe.witness.json`; audit
 [`2026-07-17-eta-square-functional-g-refutation.md`](../audits/2026-07-17-eta-square-functional-g-refutation.md).
 No fit; no c_k wired; no tier change.
+
+> **⚠ [SUPERSEDED 2026-08-09]** — only the word "resurgent" is withdrawn:
+> `D(ũ)` is convergent (`ρ = 0.1428`, `κ = 0`). **The no-shortcut finding
+> itself stands** — there is still no fibre-level algebraic shortcut past the
+> D-ladder. See the 2026-08-14 entry at the end of this ledger.
 
 
 
@@ -1183,7 +1251,7 @@ the run); the 11-point ladder (N≤524288, dps 1050, 947d cancellation) measured
 −0.166002385 — residual 9.2e-9, LAW SURVIVES. κ̃₅ = 210.675324 − 35.29743·i
 [5d/3d]; rungs 1–4 sharpened to 22/17/13/9 digits; #3691 values reproduced.
 The perturbative-null for A_ω hardens: κ̃_n/ξⁿ ∈ (−i)ⁿ·ℝ verified through
-rung 5. G3 route-1 (owner-uploaded sources now in uploads/): exact-integer
+rung 5. G3 route-1 (owner-uploaded sources now in library/): exact-integer
 I_Δ engine + exact triality certificates + substrate convergence
 (I_Δ(0,0)(e^−t)=0.1922789824); DGG anchor (4.20) glyph-verified; assembly of
 the 4₁ TOTAL index NOT yet certified (flat-wing divergence of the bare 4.18;
@@ -1248,7 +1316,7 @@ bug* — its `tet_norm` under-summed the per-factor series, reported a spurious
 negative lead for large-argument I_Δ, and its convergence guard then wrongly
 rejected the convergent bare sum as a "flat divergent wing." There is **no
 missing 'U=2·log m charge dictionary'**: (4.18)'s arguments ARE the resolved
-dictionary (DGG §4.3 scout of uploads/1112.5179). Validated coefficients now in
+dictionary (DGG §4.3 scout of library/1112.5179). Validated coefficients now in
 hand: `I_41(0,0) = 1−2q−3q²+2q³+8q⁴+18q⁵+18q⁶+14q⁷−12q⁸−52q⁹−106q¹⁰−…`. The A_ω
 VALUE remains one tranche away — the coefficient↔Stokes dictionary (GGM
 2012.00062, classical Stokes matrix `S⁰=[[1,0],[−3,1]]` → load-bearing integer
@@ -1310,9 +1378,14 @@ median resummation) + "for 2, look at knot operators." Both scoped + settled:
 (`BarOddLadderShape`), precision-limited by the experimental Q_β
 (`dq*/dQ_β ≈ −0.54`), NOT by any resummation or knot choice. The one genuinely-
 open target is the geometric `Im 𝔙_q → N_odd` normalization (the capstone) —
-where the anchor-dependence enters — and the odd-channel D-ladder q-Borel/Écalle
-acceleration (sibling #3818) operating on `D(u)` where the swing lives. No c_k;
+where the anchor-dependence enters — and ~~the odd-channel D-ladder q-Borel/Écalle
+acceleration (sibling #3818) operating on `D(u)` where the swing lives~~
+**[WITHDRAWN 2026-08-09]**. No c_k;
 no fit; scope-(a).
+
+> **⚠ [SUPERSEDED 2026-08-09]** — the q-Borel/Écalle acceleration named here has
+> no target: `D(ũ)` is convergent (`ρ = 0.1428`, `κ = 0`). The capstone
+> normalization named alongside it is unaffected. `qou-dri7` (scrapped).
 
 **2026-07-18 (#3872) — G3 STEP 2 DONE: GGM 4₁ Stokes data exact — Theorem 9
 certified, (59a) DERIVED OCR-free, integer Stokes 3 at ι = Vol(4₁)/π; new
@@ -1404,9 +1477,15 @@ prune; 5₂ quantum volume anchor-smooth #3902; branch-point locus generic). The
 c₃ bar-odd swing is confirmed representational — the 1/u³ inversion of a smooth
 N_odd (BarOddLadderShape) crossing zero at q*, pinned by experimental Q_β. Per
 the owner conditional (NOT anomalously close ⇒), the lever is now the
-alien-calculus / resurgence thread (D-ladder Écalle acceleration, sibling
-#3818) — where the swing lives in the transseries of D(u), not in any knot's
+~~alien-calculus / resurgence thread (D-ladder Écalle acceleration, sibling
+#3818) — where the swing lives in the transseries of D(u)~~
+**[WITHDRAWN 2026-08-09]**, not in any knot's
 geometry. No c_k; no fit; scope-(a).
+
+> **⚠ [SUPERSEDED 2026-08-09]** — this lever is withdrawn. `D(u)` has no
+> transseries to live in: it is convergent (`ρ = 0.1428`, `κ = 0`), with closed
+> form `φ(w)log(1−w/ρ) + ψ(w)`. The swing itself is real and unaffected — it is
+> the `1/u³` ladder inversion of the smooth `N_odd`, as this same entry states.
 **2026-07-18 (follow-on to merged #3872) — DEFORMED LEG TRANCHE A: GGM §5.2
 4₁ holomorphic blocks implemented; m-structure certified; Theorem-14
 assembly reading OPEN (honest fail); Kashaev-ray frame confirmed as the
@@ -1529,8 +1608,8 @@ dictionary, and the odd-phase null. No fit; no c_k wired.
 **2026-07-18 (#3916) — Φ_b 2-loop b-dictionary: bar-parity IS the √3 trace-field
 grading; F1's odd D-ladder pinned to the geometric κ_odd subladder.** Follow-up
 to the branch-point closure, on the restarted designated Φ_b branch. Per #3844's
-four-front note the single unowned piece feeding F1 (odd D-ladder Écalle
-acceleration) is "the deformed b-dictionary normalization, which #3596's Φ_b
+four-front note the single unowned piece feeding F1 (~~odd D-ladder Écalle
+acceleration~~ **[work item SCRAPPED 2026-08-14]**) is "the deformed b-dictionary normalization, which #3596's Φ_b
 construction supplies once its saddle expansion is pushed to 2-loop at m=q₀." The
 4₁ Φ_b state integral's semiclassical tower log Z ~ 𝔙/ħ + ½logdet + Σ ħⁿSₙ has
 fluctuation invariants Sₙ = the exact Ohtsuki κ-ladder (κ_1..κ_7, up to ħ↔2πi/N).
@@ -1549,6 +1628,13 @@ stays the OPEN keystone bridge — characterized, not asserted; the raw odd-k
 growth is O(1) decreasing (3-adic denominator explosion), #3861's mild q-Gevrey
 order is the arithmetic-normalized extraction. ħ↔2πi/N: perturbative κ_n only.
 No c_k wired; scope-(a); no fit.
+
+> **⚠ [SUPERSEDED 2026-08-09]** — only the *work item* named at the top of this
+> entry is withdrawn: `D(ũ)` is convergent (`ρ = 0.1428`, `κ = 0`), so there is
+> nothing to accelerate (`qou-dri7`, scrapped). **The b-dictionary
+> normalization, the Φ_b 2-loop tranche, and the Ohtsuki κ-ladder findings in
+> this entry are unaffected** — the κ-tower *is* genuinely divergent
+> (Gevrey-1, Borel singularity `A ≈ 0.7`), which is a different ladder.
 
 **2026-07-18 (#3916 cont.) — d↔κ BRIDGE PRUNED (formalize-first): the action is
 Vol(4₁)/π (shared), not new; the keystone narrows to one √3-graded Stokes
@@ -1806,7 +1892,12 @@ mechanism* behind that ladder and pins where the odd channel departs from it:
 - **Bar-odd `Q_β` channel escapes it (KC22).** The D-ladder `D(ũ)` is proven **not** low-order
   `(q-)holonomic` in any tested class (KC22, prime-certified). In this language: the odd
   channel is *not* the trace of powers of a knot operator on any finite-dimensional Gram
-  module — it has no quantum-A-polynomial recurrence, hence the resurgent/Écalle route. The
+  module — it has no quantum-A-polynomial recurrence. **It does NOT follow that the odd
+  channel is resurgent** (corrected 2026-08-14; the clause here formerly read "hence the
+  resurgent/Écalle route"). Non-holonomic does not imply divergent: KC22's own closed form
+  `D(w) = φ(w)log(1−w/ρ) + ψ(w)`, with algebraic `φ`,`ψ` over a degree-12 field, is
+  **convergent** (`ρ = 0.1428`, `κ = 0`) *and* not low-order P-finite — it is the
+  counterexample to the inference, and it is the object under discussion. The
   even(μ–p) vs odd(`Q_β`) split is exactly "has a Gram recurrence" vs "does not."
 
 Audit: [`2026-07-18-knot-operator-gram-recurrence.md`](../audits/2026-07-18-knot-operator-gram-recurrence.md).
@@ -1903,7 +1994,7 @@ scope-(a).
 from Masbaum, "be critical" colored-Jones gate CLEARED).** The owner flagged
 the self-calibrating `(V_{5_2}-1)/(V_{4_1}-1)` extraction of `C_{5_2,1}` as a
 possibly-erroneous probe and pointed at Masbaum's twist-knot paper (uploaded on
-main, `uploads/agt-v3-n1-p17-p.pdf`, `masbaum2003`, DOI 10.2140/agt.2003.3.537).
+main, `library/agt-v3-n1-p17-p/agt-v3-n1-p17-p.pdf`, `masbaum2003`, DOI 10.2140/agt.2003.3.537).
 Critical verification (`qbeta_5two_masbaum_cyclotomic_probe.py`, 4/4):
 (1) V_{4_1}, V_{5_2} match KnotInfo; (2) Masbaum Thm 5.1/Rem 5.2 for K_2
 reproduces the standard Jones V_{5_2} at N=2 EXACTLY (fixing t=q⁻¹);
@@ -2625,7 +2716,7 @@ location result, not a closure.
 
 **2026-07-26 (convention reconciliation, CLOSED) — V_GGMW = V_GGM +
 2π²/3 exactly; the corpus's Im(V₁) and V₃ match NEITHER published
-convention.** With GGM 2012.00062v3 in `uploads/`, eq (234) at x = 1
+convention.** With GGM 2012.00062v3 in `library/`, eq (234) at x = 1
 gives `V = 3Li₂(y) + (log(−y))²` on `y² = (1−y)³` (the same cubic as
 GGMW eq 184), and §6.1 states "for σ₃ we only keep the real part of V".
 Computed at 30 dps: `V_GGM(σ₁) = −3.5556078909 + 2.8281220883i`,
@@ -2824,3 +2915,743 @@ adoption landed (this PR); qou-qnnq → internal derivation of `3` still open
 
 **Flag:** the A_ω bricks cite `[garoufalidis-gu-marino2021]` for GGM
 2012.00062, which is `garoufalidis-gu-marino2023peacock`. Follow-up fix.
+
+**2026-08-02 (5₂ saddle SUM RULE + the two literals IDENTIFIED; PR #4624).**
+The provenance hunt on `Im V₁ = 1.3790860299` and `V₃ = −2.7580990292` closed
+the convention question and turned up an exact identity.
+
+**The identity.** The three 5₂ saddle values satisfy
+
+    Σⱼ Re(Vⱼ) = −3π²/2                                            (SUM)
+
+to 80 dps (residual 3.4e-80). Since `V₂ = conj(V₁)` this is equivalent to
+`V₃ = −2·Re(V₁) − 3π²/2`, so **`V₃` is determined by `V₁`** and need never be
+carried as an independent literal again.
+
+**What the π²/2 shift IS.** In `V^ext = V + π²/2`, (SUM) reads `Σⱼ Vⱼ^ext = 0`.
+The "extraction convention" — treated for months as an unexplained fudge
+"absorbed by the fit" (2026-08-01 rows) — is exactly the unique shift that
+**centers** the saddle values. It was never arbitrary.
+
+**Specific to 5₂, not branch bookkeeping.** Five control cubics of the same
+shape (one real + two conjugate roots), four sharing 5₂'s `Πy = 1` constraint,
+miss the target by 0.16–2.83 while 5₂ hits it to 2e-50. (SUM) is an arithmetic
+property of the 5₂ saddle cubic.
+
+**Provenance verdict — supersedes two earlier findings.** Both prior verdicts
+tested only *one* literal and were wrong:
+
+| | extraction | legacy | rel |
+|---|---|---|---|
+| σ₁ | 1.37919430966108 | 1.3790860299 | 7.85e-5 |
+| σ₃ | −2.75838861932215 | −2.7580990292 | 1.05e-4 |
+
+Both literals **ARE** the extraction convention, evaluated to ~4 digits. The
+2026-07-26 "matches neither published convention" verdict and the 2026-08-01
+"Im V₁ doesn't match" narrowing are both **superseded**: the formula was right,
+the evaluation was sloppy. The pair additionally violates (SUM) by 7.3e-5, so
+the two were computed **independently** — neither derived from the other.
+
+**Refuted as the error source (scope-(a), direct test):** Li₂ series truncation
+(converges σ₃ to the true value, never the legacy; cannot produce σ₁ at all,
+`|y₁| = 1.52 > 1`) and root imprecision (a 3-decimal root already gives 1e-8;
+the root that *would* give legacy σ₃ has cubic residual 9.2e-3, so it is not a
+root of the cubic). The ~1e-4 source stays **OPEN**, now bounded to a 4-digit
+evaluation slip in a correct formula.
+
+**(SUM) is VERIFIED, NOT PROVED.** Partial proof recorded so the next attempt
+starts mid-stream: the branch data is exact
+(`2 log yⱼ − 3 log(1−yⱼ) = 2πi·εⱼ`, `ε = (+1,−1,0)` — the source of the π²),
+and summing the reflection identity over the roots gives
+`A + B = π²/2 − (2/3)Σ(log yⱼ)² − (4π/3)·arg(y₁)` exactly, with
+`A = ΣLi₂(yⱼ)`, `B = ΣLi₂(1−yⱼ)`. That is one equation in two unknowns and does
+not close; the identified route for the second is the Kubert/distribution
+relation applied to `Li₂(y²) = Li₂((1−y)³)`. Bloch-group work, left OPEN.
+
+auditOnly; nothing wired; no fit.
+
+**2026-08-07 (coordination, PR #4658 ↔ #4666) — the same identity, two routes.**
+`/coordinate` sweep. PR **#4666** ("C1 ramified leading blocks + the general
+Bloch–Wigner D, reaching 5₂") independently derived **`D(y₊) = Vol(5₂)/3`** —
+the identical identity #4658 verified hours earlier by a different route.
+
+| | #4666 | #4658 |
+|---|---|---|
+| route | dihedral angles, `D = Λ(α)+Λ(β)+Λ(γ)` | Broadhurst eq (73), `vol(5₂) = 3·Z₂₃,₃` |
+| digits | 20 (capped by their `Vol(5₂)` *literal*) | 31 (computed from the saddle roots) |
+
+Two independent confirmations of an open result — deliberate parallel work per
+the measured-research-overlap relaxation, not duplication.
+
+**Independently converged negative.** #4666 states these `D` values "contribute
+nothing" to the saddle sum rule, being the imaginary part. That is Route 2 of
+`qou-0yqu` reached from the other side; `qou-0yqu` adds that `Σⱼ D(yⱼ) = 0`
+holds **automatically** for any cubic with one real + one conjugate pair
+(control-verified), so the Bloch–Wigner side is information-free here, not
+merely unhelpful.
+
+**Offered to #4666:** `fivetwo_saddle_values.py::volume()` computes `Vol(5₂)`
+from the roots at arbitrary `dps` — removes their stated precision ceiling;
+Broadhurst's published eq (73); and `disc = −23`, now Lean-proved
+(`disc_eq_neg_23`). **Wanted from them:** `summable_clausen` (the filler
+defines `Cl_2` as a `tsum` proving nothing about convergence — everything
+downstream rested on that), `tetAngles_sum_eq_pi`.
+
+**No file conflict** — disjoint Lean files. No review comments on #4658 to
+triage. Comment: https://github.com/litlfred/qou/pull/4666#issuecomment-5215109956
+
+**2026-08-07 (PR #4658, later) — the branch data `b` is PROVED, not fitted; and
+Route 5 gets a Lean spine.**
+
+Two things landed, both sorry-free with axioms `[propext, Classical.choice,
+Quot.sound]`.
+
+*1. `b = (−1, +1, +1)` carries no free parameters.* The sum rule is stated as
+`Vⱼ = 3·Li₂(yⱼ) + (log yⱼ + bⱼπi)²` with three hand-supplied signs — which
+reads like a fit. It is not:
+
+> **`log yⱼ + bⱼπi = Log(−yⱼ)`, principal branch** —
+> `QOU.QBeta.FiveTwo.branch_shift_eq_log_neg`.
+
+`arg(−z) = arg z − π` above the real axis, `arg z + π` below, `= π` on the
+positive reals. A cubic with one positive real root and one conjugate pair
+therefore *forces* `(−1, +1, +1)`. Probe gate G6 confirms at 60 dps with error
+exactly `0.0`; the Lean proof is unconditional. So `Vⱼ = 3·Li₂(yⱼ) + Log(−yⱼ)²`,
+and `Log(−z)²` is precisely the term in the inversion formula
+`Li₂ z + Li₂(1/z) = −π²/6 − ½Log(−z)²` — which makes the inversion route
+structural rather than opportunistic.
+
+*2. Route 5's integral is now known to converge.* `|log P(z)| ≤ 4z` on `[0,1]`
+(`abs_log_recipCubic_le`) removes the apparent singularity at `z = 0`, so
+`intervalIntegrable_log_recipCubic_div` makes `−∫₀¹ log P(z)/z dz` a real
+number rather than a formal expression. `LiTwo_eq_integral_unit` supplies the
+matching shape `Li₂(y) = −∫₀¹ log(1 − yz)/z dz`.
+
+*Also:* the complex Euler reflection identity is proved on `ball(½,½)`
+(`QOU.Archimedean.cLiTwo_reflection`) by the identity theorem, closing the
+continuation step `qou-gkco` was opened for. It does **not** reach `y₁`
+(`|y₁| = 1.52`); `cLiTwo` is junk-valued outside the closed disc, so the
+inversion formula is not even *stateable* for it without redefining `Li₂` by an
+integral on `ℂ ∖ [1,∞)`.
+
+**One self-refutation, recorded.** Earlier the same day I wrote into
+`qou-0yqu` that `b` is the `2πik` correction in `log ∏ = Σ log`. Probe gate G1
+shows that correction is *identically zero* (`3.1e-61` over 40 points). Struck,
+not deleted; the correct identification is G6 above.
+
+**New exact restatement (G7 + G8), verified to 25 digits, still unproved:**
+
+    Σⱼ Re Li₂(yⱼ) − 2·Σⱼ Re Li₂(1/yⱼ) = −π²/2
+
+*derived*, not merely observed: the per-root inversion rewrite fails as a
+complex identity at `y₃ ∈ (0,1)`, but G8 shows the whole defect is imaginary
+(`Re Dⱼ = 0` for each root separately, `Im D₃ = −10.6009742`). Since the sum
+rule uses only real parts, the rewrite is legitimate. **Lean consequence:** a
+proof needs only the *real part* of inversion on `(0,1)` — weaker and more
+tractable than the complex identity that genuinely fails there.
+
+**Caution.** `∏ⱼ(1 − z/yⱼ) = 1 − 3z + 2z² − z³` *changes sign* on `[0,1]`
+(`−1` at `z = 1`, since `1/y₃ = 2.325 > 1`), so the positivity argument that
+makes the root side a clean real integral does **not** transfer to the
+reciprocal side. That sign change is the honest location of the remaining
+difficulty.
+
+Probe + witness: `computations/probes/qbeta_5two_route5_branch_data_probe.py`,
+`computations/qbeta-5two-route5-branch-data.witness.json` (8 gates, 60 dps,
+parameter-free). **Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (night, PR #4658) — Route 5's chain is now a theorem; Route 6
+tried and refuted; the hard part is untouched.**
+
+*The chain.* `Σⱼ Re cLiTwoExt(yⱼ) = −∫₀¹ log(1 − 2z + 3z² − z³)/z dz`
+(`sum_re_cLiTwoExt_eq_integral`), sorry-free, assembled from
+`sum_re_log_one_sub_eq_log_recipCubic` (real parts, so no branch data enters) +
+integral linearity + `Re` commuting with the integral. `cLiTwoExt` is the
+integral-defined dilogarithm, the object that makes sense at `‖y₁‖ = 1.52`;
+`cLiTwo_eq_intervalIntegral` proves it agrees with the series on the disc, and
+`intervalIntegrable_log_one_sub_div` discharges its side conditions (needs
+`Re(1 − yz) > 0` on `[0,1]`, true for all three roots).
+
+*Route 6 — Zagier's enhanced dilogarithm — REFUTED, scope-(a).* Owner supplied
+Zagier (2007) as `library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf`. §II.1 B's `D̃ = Li₂(z) + ½uv` on
+`{eᵘ+eᵛ=1}`, valued in `ℂ/(π²/2)ℤ`, looked like our `Vⱼ` exactly: same
+`Li₂ + (log)(log)`-with-branch-data shape, roots on `2u = 3v + 2πik`, and
+`−3π²/2` an exact multiple of the ambiguity. Had it closed, the problem would
+have become a *rationality* statement. It does not: no integer branch offset
+matches, and the residual is exactly `πi(2b+k)u − b²π²`, leaving
+`Σⱼ Re D̃(yⱼ) = π²/2 − (2/3)πθ` with `πθ ∉ π²ℚ`. **Scope-(a)** — this set-up
+fails; nothing excludes a formulation at a different covering point or Bloch
+element. The obvious thing such a formulation must track is already Lean-proved
+here: `d[yⱼ]` is **3-torsion**, not zero (`three_smul_wedge_eq_zero`).
+
+*One summand identified.* `Re V₃ = 3·L(y₃) − π²` with `L` the **Rogers**
+dilogarithm (`re_V_real_root_eq_rogers`) — the real root's contribution is a
+standard object, not an ad-hoc combination. It evaluates nothing:
+`L(y₃)/(π²/6) = 0.441033…` is irrational, as expected for a cubic-field
+argument.
+
+*What is left, exactly two things.* (i) `cLiTwoExt` analytic on `ℂ ∖ [1,∞)` —
+without it "the analytic continuation" is a name, and `cLiTwoExt(y₁)` is not
+*identified* with the sum rule's `Li₂(y₁)`. (ii) **Evaluating
+`−∫₀¹ log P(z)/z dz` in closed form.** Untouched. This is the actual hard part,
+and none of today's eleven theorems approaches it — they make the restatement
+rigorous and demystify the branch data `b` (= `Log(−y)`, forced, not fitted).
+
+**Six routes tried, six not closing. Status unchanged: verified to 80 dps,
+unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 7 REFUTED scope-(a): the defect in
+Route 6 was branch freedom, not the modulus.**
+
+Route 7 asked whether the corpus's own `ℂ/2π²ℤ` valuedness for these `Vⱼ`
+(2026-07-18 GGM §6.1 port) rescues the enhanced-dilogarithm reading that Route 6
+killed under Zagier's `ℂ/(π²/2)ℤ`. **It does not, and the modulus was never the
+issue** — the branch shift contributes `−2π²aⱼbⱼ`, a multiple of both moduli.
+
+What the probe did find: Route 6's witness gate G3 evaluated `Σⱼ Re D̃` at the
+**principal branch only**. With `u = log y + 2πia`, `v = log(1−y) + 2πib` there
+are two free integers per root and the `θ` obstruction cancels iff
+`3(b₁−b₂) + 2(a₁−a₂) = −2`; Route 6's implicit `a = 0` makes that `3(b₁−b₂) = −2`,
+insoluble over `ℤ` — exactly its reported "no integer branch offset matches".
+With `a` free, exact rationality **is** reachable, so Route 6's conclusion stood
+for the wrong reason.
+
+It is still worthless: reachable set is exactly `Σⱼ Re D̃/π² ∈ 11/6 + 2ℤ`, every
+control `y^p = (1−y)^q` lands in its own `π²ℚ` coset (including `y³−y²+2y−1`,
+which *is* `y³=(1−y)²`), and neither `−1/2` nor `−3/2` is in the coset. Generic
+bookkeeping — the Route-2 failure mode.
+
+Probe + witness:
+`computations/probes/qbeta_5two_route7_enhanced_dilog_branch_freedom_probe.py`,
+`computations/qbeta-5two-route7-enhanced-dilog-branch-freedom.witness.json`
+(8 gates, 60 dps). Beans `qou-r7ml` (completed/refuted), parent `qou-0yqu`.
+**Route count 7 tried, 7 not closing. Sum-rule status unchanged: verified to
+80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — GGM/GGMW READ IN FULL. They do not contain
+the sum rule. The literature lead is closed.**
+
+`qou-0yqu` named GGM (2012.00062) / GGMW (2111.04763) twice as "the realistic
+direct sources" and neither had been opened. Both now swept end to end
+(bean `qou-g2wr`).
+
+**Negative:** `Σⱼ Vⱼ` appears nowhere in either paper; no `−3π²/2`. **"real
+part" occurs exactly once in GGM and zero times in GGMW** — the single hit is
+the §6.1 σ₃ branch prescription already ledgered 2026-07-26, not a statement
+about `Re V`. No `Bloch`, no `regulator` in either. GGMW's `Rogers` hits are
+**Rogers–Ramanujan**, not the Rogers dilogarithm — flagged as a false lead.
+With the disc −23 ladder literature being the volume side, **there is now no
+known published source for this identity.**
+
+**Positives worth carrying:**
+
+1. GGM eq (234) is the source of the `ℂ/2π²ℤ` modulus, confirmed verbatim; at
+   `x = 1` it is the corpus's `V`, reproducing the sum rule to 50 dps.
+2. `b = (−1,+1,+1)` is **exactly** principal `Log(−yⱼ)` (exact zero at all three
+   roots) — independent confirmation of `branch_shift_eq_log_neg`. GGM writes
+   `(log(−y))²` directly.
+3. **`Re Vⱼ` is only defined mod `2π²`** (the modulus is real). In GGM's own
+   quotient the sum rule reads `Σⱼ Re Vⱼ ≡ π²/2 (mod 2π²)`, so the exact
+   `−3π²/2` is a statement about chosen representatives. **Any proof routed
+   through GGM's `V` alone can only deliver the mod-`2π²` statement** — pinning
+   the representative is exactly `branch_shift_eq_log_neg`, which makes that
+   theorem load-bearing rather than bookkeeping. Consistency: GGMW's
+   `+2π²/3` per root shifts the sum by exactly one lattice step `2π²`, giving
+   `Σⱼ Re V_GGMW = π²/2` exactly; the two published conventions are adjacent
+   representatives.
+4. GGMW §4.1 **states disc −23 outright**, and identifies `σ₁,σ₂,σ₃` with the
+   three embeddings of the trace field. So `Σⱼ Re Vⱼ` is a **trace over all
+   embeddings** — the structural reason the power sums `pₙ` are rational
+   integers and Route 5's integrand is a ℤ-coefficient polynomial.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — `cLiTwoExt = Li₂` off the disc is TRUE
+(verified); Lean blocked in-session.**
+
+`elan`/`lake` absent and the environment denies `release.lean-lang.org:443`
+(403 on CONNECT), so no toolchain and no `lake exe cache get`. **No Lean
+written** — deliberately, rather than shipping unverifiable code. Groundwork
+instead (bean `qou-clx8`):
+
+* `cLiTwoExt y = −∫₀¹ Log(1−yz)/z dz` equals `Li₂(y)` to diff **`0.0`** at all
+  three 5₂ roots — including `y₁`, `‖y₁‖ = 1.52` — and on 28/28 grid points off
+  the real axis to `< 1e-25`. **The identification `cLiTwoExt(y₁) = Li₂(y₁)` is
+  true; only its proof is open.**
+* **The current side condition `Re(1−yz) > 0` is sufficient but NOT necessary** —
+  it fails at `1.5+0.3i` and `3+0.001i` where the identity still holds. The right
+  hypothesis: for `Im y ≠ 0`, `Im(1−yz) = −z·Im y` vanishes on `[0,1]` only at
+  `z = 0`, so the path never meets the principal cut and `Log(1−yz)` is
+  continuous along it. Covers `ℂ ∖ ℝ` in one step.
+* The cut is `[1,∞)` and not `|y| ≥ 1` because for real `y > 1` the integrand is
+  singular *inside* the interval, at `z = 1/y ∈ (0,1)`.
+* **Numerical trap:** when `0 < Re(1/y) < 1`, plain `quad([0,1])` is silently
+  wrong (off by `1.15e-2` at `y = 3+0.001i`). Probes must split at `Re(1/y)`.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 8: the sum rule TRANSPORTS to a 7th-root-of-unity
+identity at a totally real field. Reduction, not proof.**
+
+First route to move along GGM's deformation instead of attacking at `x = 1`
+(bean `qou-8v3k`).
+
+> `Σⱼ Re Vⱼ = −3π²/2` **⟺** `Σₖ Re[Li₂(yₖ) + 2Li₂(−yₖ) + (log(−yₖ))²] = −π²/2`,
+> `yₖ = −1 − 2cos(2πk/7)`, the **totally real cyclotomic field ℚ(ζ₇)⁺**, disc 49.
+
+Mechanism: (i) `∂V/∂y = 0` **derives** GGM's deformed curve — already Lean-proved
+here as `FiveTwoSaddleCurve.lean` — so `yⱼ(x)` are critical points; (ii) Vieta
+gives `∏ⱼ(1−xyⱼ) = x`, `∏ⱼ(1−yⱼ/x) = 1/x`; (iii) envelope theorem gives
+`d/dx V(x,yⱼ(x)) = (1/x)log[(1−yⱼ/x)/(1−xyⱼ)]`; (iv) summing collapses to
+`S'(x) = −2log x/x`, so **`S(x) = S(1) − log²x`** (verified `<1e-30` on
+`x ∈ [0.2,5]`; palindromy `S(x)=S(1/x)` confirmed, GGM eq 306). The branch term
+`2πik log x` is purely imaginary for real `x>0` so cannot touch `Re`, and on
+`|x|=1` is real with **`k = 0` measured** at eight points to `φ = π`, giving
+`S(−1) = −π²/2`. At `x = −1` the curve degenerates to `y³+2y²−y−1` (disc 49) with
+roots exactly `−1−2cos(2πk/7)`.
+
+**⚠ Not a proof** — `S(1)` is the constant of integration, so this transports the
+unknown. The cyclotomic identity is verified to `9.2e-41`, not proved.
+
+**Why it matters anyway:** every prior route died on *real part vs volume side* —
+at disc −23 the field is complex, `D ≠ 0`, and the classical ladders compute
+`ζ_F(2)` via `D`. At `x = −1` the field is totally real and abelian, `D ≡ 0`
+identically, and Rogers sums there are expected in `π²ℚ` — the Frenkel–Szenes /
+Y-system / Watson regime where `−π²/2` is the natural answer. **The obstruction
+that killed Routes 2, 6 and 7 is structurally absent at the new point.**
+
+Probe + witness: `computations/probes/qbeta_5two_route8_envelope_deformation_cyclotomic_probe.py`,
+`computations/qbeta-5two-route8-envelope-deformation-cyclotomic.witness.json`
+(7 gates, 40 dps). **Route count 8 tried; 7 refuted, 1 reduction. Sum-rule status
+unchanged: verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — Route 9: RATIONALITY PROVED. The sum rule is
+one rational number away.**
+
+Bean `qou-b7cy`, building on Route 8. Route 6 hoped the problem would "stop being
+a transcendental evaluation and become a rationality statement" and failed; that
+is achieved here by a different mechanism.
+
+With `w = −y = 1 + 2cos(2πk/7)` (root of `w³ − 2w² − w + 1`), all of `w`, `1−w`,
+`1+w` are **units** of `F = ℚ(ζ₇)⁺` (norms −1, −1, +1), and the **ring identity**
+
+    (1 − w)²(1 + w) = 1 − w − w² + w³ = w²     [w³ = 2w² + w − 1]
+
+gives `δ(2[w] + [−w]) = w ∧ w² = 0`, so `ξ := 2[w] + [−w]` lies in the **Bloch
+group** `B(F)`. `F` totally real ⟹ `r₂ = 0` ⟹ `B(F) ⊗ ℚ = 0` (Borel) ⟹ `ξ` is
+torsion ⟹ Rogers `L(ξ) ∈ π²ℚ`. **That step is elementary + one classical theorem,
+and the algebraic half is a Lean one-liner.**
+
+Measured exactly (26 digits): `Σₖ Re[2L(wₖ) + L(−wₖ)] = π²/2`, and
+`Σₖ Re V = Σₖ Re L(ξₖ) − π²`, recovering Route 8's `−π²/2`.
+
+**Open:** the rational `1/2` itself (verified, not derived — note `π²/2 = 3·L(1)`),
+and the `−π²` branch constant. A per-embedding formula
+`V − L(ξ) = iπ log[(1−w)/w]` was tried and **is FALSE** (fails at two of three
+embeddings); only the sum is exact — recorded to prevent re-derivation.
+
+Probe + witness: `computations/probes/qbeta_5two_route9_bloch_torsion_rationality_probe.py`,
+`computations/qbeta-5two-route9-bloch-torsion-rationality.witness.json`.
+**Route count 9 tried; 7 refuted, 2 reductions. Sum-rule status unchanged:
+verified to 80 dps, unproved.**
+
+**2026-08-07 (PR #4658, takeover) — LEAN IS AVAILABLE HERE (workaround), and the
+algebraic core of Routes 8/9 is now sorry-free. Borel is not formalizable.**
+
+**Environment correction, worth propagating:** `release.lean-lang.org:443` is
+denied by network policy, but the toolchain is **mirrored on github.com**, which
+egresses fine — `github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst`,
+decompressed with python `zstandard` (no `zstd` binary present). Mathlib's olean
+cache (Azure) is still 403, so `lake exe cache get` fails, but Mathlib *source*
+is on github and a **targeted** build works: `lake build Mathlib.Tactic.LinearCombination`
+is 708 jobs, minutes not hours. Do not build all of Mathlib.
+
+**New, sorry-free:** `QOU/QBeta/FiveTwoCyclotomicBloch.lean` — six theorems over
+an arbitrary `CommRing`, axioms `[propext, Classical.choice, Quot.sound]` (two
+need only `propext, Quot.sound`): `bloch_poly` (`(1−w)²(1+w) − w² = w³−2w²−w+1`
+**identically**, so the Bloch condition *is* the minimal polynomial),
+`bloch_key`, `minpoly_one_sub`, `minpoly_one_add`, and Route 8's two Vieta
+products `∏(1−x yⱼ) = x`, `∏(x−yⱼ) = x²` (hypotheses denominator-cleared, so no
+field or `x ≠ 0` needed).
+
+**Composition check (new gate G8):** from the three numerators alone,
+`(Σ mₖ)π²/42 − π² − π² = −3π²/2` with **residual 0.0** — the Route 8 and Route 9
+reductions genuinely compose; no seam was fudged.
+
+**⚠ Measured Mathlib survey (`qou-mlbg`), 6996 files at the pinned rev:** `Bloch`
+0, `Borel regulator` 0, `Polylog`/`polylog` 0, `Rogers` 0, `Steinberg` 0, no
+`KTheory` directory. The single `dilog` hit is a docstring aside — **Mathlib has
+no `Li₂` at all**. `Clausen`/`Lobachevsky` hits are the author *Claus Clausen*
+and *Clausen–Scholze* condensed maths — no Clausen function. Only exterior powers
+exist. **So Route 9's rationality argument is proved on paper and is NOT
+formalizable**; "formalize Borel first" is a multi-year project, not a plan.
+Note two false friends: bean `el8w` is Borel *resummation*, and `cj2d5`
+(`BorelZagierQouVolumes`) is the *volume* side.
+
+**The route that avoids all of it is `qou-fivt`:** prove the three numerators
+`17, 5, −1` by five-term/Abel, needing only a real `Li₂` (QOU has one) and the
+Rogers functional equations. **Sum-rule status unchanged: verified to 80 dps,
+unproved.**
+
+**2026-08-07 (post-#4658) — Route 10: the three level-7 numerators are a Bernoulli
+`B₂`. The sum rule is now ONE distribution relation.**
+
+Bean `qou-fivt`. Route 9 left the sum rule equivalent to three explicit rationals
+`Re[2L(wₖ)+L(−wₖ)] = mₖπ²/42`, `m = (17,5,−1)`, verified but underived — three
+integers that looked fitted.
+
+They are not three constants. `mₖ = 3k² − 21k + 35` (symmetric under `k ↦ 7−k`),
+and that quadratic is `mₖ/7 = 21·B₂(k/7) + 3/2` with `B₂(x) = x² − x + 1/6`.
+`B₂` is the Fourier signature of `Li₂` at roots of unity — `Σₙcos(2πnx)/n² =
+π²B₂(x)`, i.e. **`Re Li₂(ζ₇^k) = π²B₂(k/7)`** (verified 1e-61). And
+`wₖ = ζ₇^k + ζ₇^{−k} + 1` exactly. So the whole remaining content is
+
+    Re[2·L(wₖ) + L(−wₖ)] = (7/2)·Re Li₂(ζ₇^k) + π²/4
+
+**Why this is the useful form:** (i) it kills the "fitted" objection — one
+Bernoulli polynomial, not three lucky integers; (ii) `Re Li₂(ζ₇^k) = π²B₂(k/7)`
+is **elementary**, the cosine Fourier series of `B₂`, needing only real analysis
+and `Cl₂` — **not** the complex `Li₂` continuation blocking `qou-clx8`/`qou-ph1k`
+— and the corpus already has `Cl₂` from #4666
+(`QOU/Archimedean/BlochWignerLobachevsky.lean`); (iii) it names the object:
+Kubert / multiplication relations, with standard technique.
+
+Note the symmetry with Route 4, which *died* on the Kubert relation applied at
+`Li₂(y²) = Li₂((1−y)³)` (six new unknowns for one relation). The same machinery
+nets positive here only because Route 8 first moved the problem to a field where
+roots of unity are the natural arguments.
+
+**⚠ Not a proof** — the relation is verified, not derived. Probe + witness:
+`qbeta_5two_route10_kubert_distribution_probe.py`,
+`qbeta-5two-route10-kubert-distribution.witness.json` (6 gates, 60 dps).
+**Route count 10 tried; 7 refuted, 3 reductions. Sum-rule status unchanged:
+verified to 80 dps, unproved.**
+
+**2026-08-07 (post-#4658) — Routes 11–12: the numerators are DERIVED, and the
+transport's branch integer is PINNED. One analytic gap left.**
+
+**Route 11 (`qou-fivt`) — the three numerators `17, 5, −1` are derived**, not
+fitted. Reduce to `(0,1)` by reflection / inversion `L(x)+L(1/x)=2L(1)` / Landen
+`L(x)+L(x/(x−1))=0`; the argument set `{w₂, q, r, s}` plus reflections is **closed
+under the five-term relation** (15 instances, 3 independent); exact certificate
+
+    T₁ = (2R₁ − 4R₂ + R₃)/7    T₂ = (R₁ − 2R₂ + 4R₃)/7    T₃ = (4R₁ − R₂ + 2R₃)/7
+
+with `rank(R) = rank(R ∪ T) = 3`, in exact `Fraction` arithmetic. The coefficient
+triples are cyclic shifts of `(1,2,4)` — **the quadratic residues mod 7** — which
+is where the `/7` in `mₖ/7` comes from. *Dead end recorded:* PSLQ over
+`[L1, a, L(q), L(r), L(s)]` returns `[−4,4,−3,4,3]`, a linear consequence of the
+targets carrying no information; the five-term closure is what supplies
+independent equations.
+
+**Route 12 (`qou-trns`) — `k = 0` pinned by the base point.** Previously argued
+from integrality + local constancy, which gives *constant* but not *which*
+constant. Now: `exp(g) = ∏ⱼ[(1−yⱼ/x)/(1−xyⱼ)] = 1/x²` (exact Vieta, Lean-proved),
+`g` continuous on a collision-free arc, so `g + 2log x` is constant; **at `x = 1`
+every factor is exactly 1, so `g(1) = 0`** and the constant is 0. Verified at 2000
+points, worst `1.6e-30`. Hence `S(−1) = S(1) + π²`.
+
+⚠ Two probe errors recorded in `qou-trns`: a script that hard-coded "no jump"
+while its own output showed `2π`, and a comparison against mpmath's *principal*
+`log x` (which jumps at `φ = π`) rather than the continuous branch `iφ`.
+
+**The one remaining gap is the envelope theorem** — differentiability of `V` along
+the path plus the implicit function theorem for `yⱼ(x)` (discriminant bounded away
+from zero, so the hypothesis holds). Ordinary analysis, not a research problem,
+but not done. **Sum rule: verified to 80 dps, numerators derived, transport
+branch-pinned, still not proved.**
+
+**2026-08-08 — the cyclotomic side is PROVED IN LEAN. Two links remain, both analytic.**
+
+Beans `qou-abel`, `qou-rhyp`, `qou-fivt` — all three **closed**. PR #4701.
+
+`Σₖ (2·L(wₖ) + L(−wₖ)) = π²/2` is now a theorem about the corpus's own
+dilogarithm, sorry-free on `[propext, Classical.choice, Quot.sound]`:
+
+| theorem | file |
+|---|---|
+| `rogersL_fiveTerm` — **Abel's five-term relation** on `(0,1)` | `QOU/QBeta/FiveTwoAbelFiveTerm.lean` |
+| `numerators_of_root` — `(17,5,−1)`, **no hypothesis on `L`** | same |
+| `exists_root_in_Ioo` — non-vacuity, by IVT | same |
+| `extended_targets` / `extended_sum` — the targets in original form | same |
+| `hasDerivAt_rogersL` — `L'(x) = −(log(1−x)/x + log x/(1−x))/2` | `FiveTwoRogersReflection.lean` |
+
+Abel's relation went the way `LiTwo_reflection'` does: fix `y`, kill the
+derivative, evaluate at `x → 0⁺`. All the content is in four log-splitting
+lemmas; after they fire, `−2F'(x)` is a linear form in
+`log x, log(1−x), log y, log(1−y), log(1−xy)` whose five coefficients each vanish
+as rational functions, so the last step is `field_simp; ring`.
+
+**Two of the ladder's twelve hypotheses were FALSE, not hard** — worth knowing if
+you build on the earlier notes. `hinv1` and `hlan1` fail by `−2.4543` and
+`+1.5692` for a Rogers `L` built on `LiTwo`: their arguments `w₁ = 2.2470` and
+`−w₁` leave the disc of convergence, where Lean's `tsum` is the junk value `0`
+and `Real.log` is even. Every earlier probe missed it by evaluating with mpmath's
+`polylog` — testing the mathematics while the Lean file encodes the semantics.
+Repaired definitionally in `FiveTwoRogersExtend` (Zagier §I.3).
+
+**Correction to the 2026-08-07 entry above.** It says the `B₂` route needs "only
+real analysis and `Cl₂` … not the complex `Li₂` continuation". True, and now
+moot: Route 11→14 derived the numerators from the five-term relation directly,
+never evaluating `Li₂` at a root of unity. The `B₂` framing is explanatory and
+**load-bearing for nothing**.
+
+### What is still open — and it is NOT the dilogarithm
+
+The sum rule is `Σⱼ Re Vⱼ = −3π²/2`; what is proved is `Σₖ(2L(wₖ)+L(−wₖ)) = +π²/2`.
+
+1. **`qou-trns`** — transport `x = 1 → x = −1`. Branch integer pinned; the
+   **envelope theorem is numerical only**. Weakest link, and analytic.
+2. **`qou-rstq` item 4** — `extend` is not identified with `Re` of the analytic
+   Rogers `L` *in Lean*. Route 15 closed it on paper. Its two halves are **not
+   equally hard**: the Landen half sits far from the cut where the corpus's
+   `cLiTwoExt` is already the right object; the inversion half sits **on**
+   `[1,∞)` and needs `Re` of the boundary value, well defined only because the
+   discontinuity is `2πi·log x` — purely imaginary. That fact underpins this
+   lane's whole "take real parts" convention and is written down nowhere.
+
+**Sum-rule status unchanged: verified to 80 dps, unproved.**
+
+**2026-08-09 (PR #4865) — THE 5₂ SADDLE SUM RULE IS PROVED. Routes 51–70.**
+
+Every entry above this line records the sum rule as "verified to 80 dps,
+unproved". That is now false, and this entry is the reason. Those entries are
+left as written — they were accurate on their dates, and this is a log.
+
+`QOU/QBeta/FiveTwoComplexPentagon.lean`, sorry-free, axioms
+`[propext, Classical.choice, Quot.sound]`:
+
+* `fiveTwo_saddle_sum_rule` — there exist `t ∈ (0,1)` real and `a` with
+  `Im a > 0`, all three of `t, a, ā` roots of `X³ − 2X² + 3X − 1`, with
+  `Li₂(a) + Li₂(ā) + Li₂(t) = −π²/6 − ½·log²t + ⅔·(arg a − π)²`.
+* `fiveTwo_sum_V` — `Σⱼ Vⱼ = −3π²/2 + 2π·log t·i`. The real part is (SUM). The
+  imaginary part is new: the corpus only ever recorded `Σ Re Vⱼ`.
+* `fiveTwoSaddleSumRule_holds` — the class `QOU.QBeta.FiveTwo.FiveTwoSaddleSumRule`,
+  whose docstring read "No instance is provided: the statement is open",
+  constructed at `Li = cLiTwoExt`, `y = ![a, ā, t]`, `b = ![−1, +1, +1]`.
+
+**The route was not the one this log spent ten entries planning.** The whole
+`A`-vs-`B` programme — Kubert/distribution, the "one remaining distribution
+relation", `FiveTwoDilogLadder` — was never needed. What worked:
+
+1. the complex five-term identity for `cRogersL`, unconditional when one
+   variable is real in `(0,1)` and the other is off both cuts;
+2. the flattened (Neumann `ℬ̂(ℂ)`) pentagon, with **no** branch hypotheses;
+3. complex Rogers reflection + inversion, giving the anharmonic group in four
+   one-log forms where the `log²` terms cancel completely;
+4. branch pinning from `y² = (1−y)³` plus a 4π-wide window, then `SaddleRoots`
+   — proved inhabited by IVT (`f(0) = −1 < 0 < 1 = f(1)`) and an explicit square
+   root (`0 < 3t² − 4t + 8` unconditionally).
+
+Verified per-module with the `.olean` deleted first: `FiveTwoComplexPentagon` +
+`FiveTwoFlattenedPentagon` exit 0 at 3241 jobs, 0 warnings; `FiveTwoSaddleSumRule`
+exit 0 at 1893 jobs. `origin/main` at measurement `f689f12d2d06aee2959002f13b9ac39c1a79e3cf`.
+
+Probe `computations/probes/qbeta_5two_route70_sum_rule_proved_probe.py` (80 dps,
+4 gates) is a **control on the statement, not evidence**: it checks that the
+expression proved is the one this log recorded as the target
+(`A = 0.9717306814686482591277741699`), and that `b = (−1,+1,+1)` is pinned —
+the only one of five assignments reaching `−3π²/2`.
+
+**NOT proved: the 5₂ VOLUME conjecture.** `Vol(5₂) = 3·D(y₁)` and `D` cancels
+identically on the Galois sum — which is exactly why the sum rule could fall
+without reaching the volume. Nothing in this lane speaks to `Vol(5₂)`.
+
+**2026-08-14 (PR #5022 follow-on) — THE D-LADDER IS CONVERGENT; the
+resurgent/Écalle inference is WITHDRAWN. This ledger was never told.**
+
+The 2026-08-09 convergence correction
+([`2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md`](../audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md))
+landed in the KC22 registry row and **never reached this ledger**. That is the
+defect this entry closes: the ledger's last word on `D(ũ)` was the
+divergence-era conclusion, and five downstream entries (2026-07-12 → 07-18)
+name a "resurgent/acceleration chain" as a live route on that basis. Each is
+now marked `[SUPERSEDED 2026-08-09]` in place; none is rewritten.
+
+**What changed.** `D(ũ) = Σ d_k ũ^k` is **convergent**, radius
+`ρ = ũ(q*_ρ) = 0.142799996644689688905720885779` — the image of a `Q_b` zero the
+2026-07-12 singularity search omitted (`k²Δ²log|d_k| → 1`, `kΔ² → 0`, so
+`κ = 0`). Closed form `D(w) = φ(w)log(1−w/ρ) + ψ(w)` with algebraic `φ`,`ψ` over
+a degree-12 field, giving `d_k = −(1/(2h*_ρ))ρ^{−k}/k(1+O(1/k))` with **no free
+parameters**.
+
+**What is withdrawn.** Écalle acceleration, median/Watson resummation and
+Borel–Leroy all exist to sum a *divergent* series. There is none here. The three
+beans carrying that work — `qou-b00b`, `qou-dri7`, `qou-xuc4`, one task under
+three titles, all opened 2026-07-17 with empty bodies — are consolidated into
+`qou-dri7` and **scrapped**.
+
+**What is NOT withdrawn** — three separate things, easy to over-read:
+
+1. **The (q-)holonomic closure stands.** KC22's exclusion is untouched. A
+   convergent series need not be holonomic; `φ(w)log(1−w/ρ) + ψ(w)` is exactly
+   such an element. Do not re-run P-finite hunts on `D(ũ)` — that instruction
+   was right, only its stated *reason* was wrong.
+2. **The κ-tower is genuinely divergent** and its resurgence work is unaffected
+   (Gevrey-1, ratios 1.32→3.63→4.93, Borel singularity `A ≈ 0.7`) — as this
+   ledger already recorded, with the scope-(b) invariant that a divergent and a
+   convergent series cannot be equated term-by-term. Two different ladders; the
+   κ-tower diverges, `D(ũ)` does not.
+3. **Écalle machinery as a normalization technique** (Écalle median /
+   M-dictionary lateral) is a different usage and is untouched.
+
+**A correction of an inference, not just a status.** The framing bullet reading
+*"no quantum-A-polynomial recurrence, hence the resurgent/Écalle route"* is
+corrected in place: non-holonomic does **not** imply divergent, and `D(ũ)` is
+the counterexample. That step was invalid independently of the 2026-08-09
+correction. Wider corpus sweep for the same step: bean `qou-arvu`.
+
+**Scope-(a).** No invariant is named excluding q-Borel methods from this
+function. A study of the `log(1−w/ρ)` branch point would be a *different* task
+with a different motivation and needs a bean that says so — not a resumption of
+the scrapped titles. No fit; no `c_k` wired; no tier change (c₃ stays
+EMPIRICAL/REFUTED-as-real-q).
+
+## 2026-08-15 — owner redirect: c₃ refutation chain audited against the C→D trace-convention flip (survives; value layer C-conditional)
+
+**Trigger.** Owner critical-distance redirect: probes behind "c₃ REFUTED as
+real-q fibre element" may be invalid after the C→D trace flip, the
+color-weighting fixes, the GGM V₃ = −7.693 correction, and the q₀ pin changes.
+
+**Audit:** [`2026-08-15-c3-refutation-chain-convention-validity-audit.md`](../audits/2026-08-15-c3-refutation-chain-convention-validity-audit.md)
+· probe `qbeta_c3_ladder_trace_convention_sensitivity_probe.py` (9/9, exit 0)
+· registry §9g + c₂/c₃/KC13/KC21/KC22 provenance notes (.md + JSON twin,
+validator clean).
+
+**Verdict, tiered:**
+
+- **REFUTED-as-real-q SURVIVES** — measured, not assumed: the anchor-swing
+  mechanism is convention-immune (swing D/C = **1.0052**; `u`, `Q_A` are
+  z-free), and P3 (entropy bound), P4 (q→1 shadow; `z_C(1)=z_D(1)=1/2`
+  exact), P6 (KC20 `Δ_net` numerator z-free) are convention-independent.
+  V₃ was already canonical in the 2026-07-30 B1 re-run; color-weighting does
+  not reach the qbeta chain; anchor q₀ values are unchanged.
+- **The value layer is convention-C-conditional** — the extractor's N=1 rung
+  consumes `z_C` via `α=(z−1)h/2` (`qbeta_utils.py:124-125`); re-extraction
+  under D shifts c₃ from ≈ −2.07 to ≈ **−974** — so (H1) `−Vol(4₁)`,
+  `[3]_q/25`, `J−ℏ²`, `S_leak`, `q*_S`, and the KC21/KC22 D-ladder constants
+  hold in the C frame only. `bar(z_D) = q⁻⁴·z_D` exactly ⇒ KC13's
+  no-scalar-z-source prune is C-scoped.
+- **Bigger than the redirect asked:** the canonical rung **c₂ = −1 is also a
+  C-frame statement** (implied empirical c₂ under D ≈ −9.30; rung convergence
+  58× under C vs 1.12× under D). The C→D excision does NOT transfer to Q_β by
+  a z-swap; it would require re-deriving the ladder from the D-trace.
+- **Root cause:** the Q_β channel was never registered in
+  `trace-convention-registry.json` (channels: mass/binding/borromean only),
+  so the whole channel has been convention-silent — the exact failure mode
+  that registry's rule names. Open item: bean **`qou-b3nk`** (register the
+  channel; examine whether the two-row forcing transfers to the decay
+  channel, whose explicit weight instance has `y_(1³) ≠ 0`).
+
+Scope-(a) throughout; no convention adjudicated; no `c_k` wired; no tier
+flips (c₂ stays CANONICAL for its now-named object; c₃ stays
+EMPIRICAL/REFUTED-as-real-q — in both frames).
+
+## 2026-08-15 — bean `qou-b3nk` worked: qbeta-decay channel registered DISPUTED; the forcing/ladder boundary proved
+
+**Branch:** `claude/qbeta-channel-convention-2026-08-15` (PR #5111) ·
+**Audit:** [`2026-08-15-qbeta-decay-channel-convention-disputed-registration.md`](../audits/2026-08-15-qbeta-decay-channel-convention-disputed-registration.md)
+
+Outcome **(c)** of the bean, leaning (b): **neither C nor D is derived for the
+decay channel** — registered `disputed` in `trace-convention-registry.json`
+(`channels.qbeta-decay`: definitional `null` (contradictory — the decay blocks
+write the excised-C value while naming it "the Markov–Jones parameter", whose
+referent has read D since 2026-08-09), production `C`; R9 evaluator on
+`qbeta_utils.markov_parameter` asserts the C-state, CONFIRMED |d| = 1.9e-51).
+
+New Lean, sorry-free
+([`MarkovZFullBarCondition.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/MarkovZFullBarCondition.lean),
+`lean`-direct exit 0, no `sorryAx`):
+
+- **`decayLadder_zC_threeRow_ne_zero`** — any faithful normalised Markov trace
+  at the ladder's `z_C` has `y_(1³) ≠ 0` for all `s = √q > 1` (locus
+  `s⁷+s⁵−s⁴−1 = (s−1)(s⁶+s⁵+2s⁴+s³+s²+s+1)` empty). **The two-row forcing and
+  the C-frame ladder are mutually exclusive** — no z-swap transfer; D-adoption
+  = ladder re-derivation (measured collapse: c₃ → ≈ −974, N2/N1 0.017 → 0.89).
+- **`zD_full_bar_covariant`** / **`barEven_fullBar_forces_classical`** /
+  **`zC_fails_fullBar`** — the full-bar condition `bar(z) = z − h` (PR #4834
+  discussion, sympy witness 2026-08-08) is now in Lean: D holds exactly; any
+  bar-even `z` (= C, KC13) fails away from `q² = 1`. Premise (trace
+  bar-compatibility) named, not proved.
+
+Witness correction: the `y_(1³) ≠ 0` escape had been cited via the explicit
+instance `y = (z, 1/2−z, z)` — that inhabitant is **not** an Ocneanu
+`z_C`-trace (its `σ₀` value is `h/2` exactly, z-independent, sympy). The
+correct witness is C's own solve (`y_(1³) = 0.02274…`, probe 18/18, proton
+pin) and the Lean brick. Conclusion unchanged.
+
+Scope-(a); no convention adjudicated; no `c_k` wired; no tier flips. Bean
+stays **in-progress** (closing is a human action); settlement routes in the
+audit §4 (derive the decay fibre, or prove/refute
+`conj:binding-qbeta-complex-volume` / bar-compatibility).
+
+## 2026-08-15 — KC21's parity immunity: it was ASSERTED; now VERIFIED, and its stated mechanism was wrong (bean `qou-kc21im`, PR #5123)
+
+**Trigger:** reading the **owner-redirect entry** above (*"c₃ refutation chain
+audited against the C→D trace-convention flip"*, PR #5107 — not the `qou-b3nk`
+entry immediately preceding, which landed separately) back against the sentence
+it added. That audit's own logic splits the c₃ record into a C-conditional value
+layer and a structural layer, and the structural sentence reads *"the structural parity
+statement (`S(−ε)=−S(ε)`) and the `1/u³` result are convention-immune."* The
+`1/u³` half was **measured** (swing ratio D/C = 1.0052). The parity half was
+not — and it is exactly the kind of claim that needs measuring, since `c₃(q)`
+is *defined by* an extractor consuming the convention-C `z`, and under D that
+extractor is a different function (c₃ ≈ −974).
+
+**Probe:** [`qbeta-kc21-parity-convention-immunity`](../../computations/qbeta/qbeta_kc21_parity_convention_immunity_probe.py)
+— 12/12, exit 0, 60 dps, proton pin.
+**Lean:** [`LadderParityReflection.lean`](../../content/quantum-observable-universe/lean/QOU/QBeta/LadderParityReflection.lean)
+— `lean`-direct exit 0, sorry-free, no `sorryAx`.
+**Audit:** [2026-08-15 KC21 parity convention-immunity](../audits/2026-08-15-kc21-parity-convention-immunity-audit.md).
+**Registry:** new **§9h**; KC21 row + JSON twin relabelled.
+
+**Verdict, tiered:**
+
+- **VERIFIED-immune (`ε`-parity).** Re-derived under D: `Im` odd / `Re` even to
+  `1e-45` relative over `ε ∈ [10⁻³⁰, 10⁻²]`, non-vacuously
+  (`Im c₃^D(q₀+10⁻⁸i) = 0.0386`), while the C→D shift moves the value by 972 =
+  **470× \|c₃^C\|**. A parity that survives a 470× reframing of its own object
+  is not riding on the frame.
+- **The reduction is stronger than "z-free".** `z` *does* enter — it just
+  cannot matter. The parity is **Schwarz reflection**, whose only hypothesis on
+  the Markov parameter is that `z` be **real-valued on the real q-axis**; it
+  never reads `z`'s formula. Every ingredient (`h`, `ℏ_q`, `b`, `u`, `Q_A`,
+  `z_C`, `z_D`, `cos`) is reflective, and the class is closed under the field
+  operations and composition. A control convention `z_X = q/(1+q²)`, in **no**
+  channel, has the parity too. Formalized quantified over conventions:
+  `alphaPhase_im_odd_of_reflective_markov`.
+- **Correction 1 — the literal statement is FALSE.** `Re S` is even and nonzero
+  (`−0.0394593` at the proton pin), so `S(−ε) = −S(ε)` read of the full complex
+  value cannot hold. The statement is about **`Im S`** / the decay projection.
+  Registry corrected; `reflective_re_even` makes the failure a theorem.
+- **Correction 2 — the parity is NOT evidence for bar-oddness.** KC21 and the
+  2026-07-12 capstone derive it as *"bar-odd ⇒ odd in ε"*.
+  `ImQDecayLinearResponse`'s actual chain is `fig8TraceC_conj`: **real
+  coefficients** ⇒ conjugation commutes ⇒ `Im` odd in `ε`. Bar-oddness is never
+  used, and the bar-**even** `Q_A` has the identical `ε`-parity (measured). So
+  *"the sign-flip is structural because `S` is bar-odd"* should read *"because
+  `S` is real-analytic in `q`"* — a premise satisfied by essentially every
+  ladder ingredient, which says correspondingly little about which channel `S`
+  lives in. The immunity stands; the evidential weight attached to it does not.
+- **The BAR involution is untouched, and is now the more pressing question.**
+  `σ: q ↦ q⁻¹` is a *different* involution from complex conjugation.
+  `bar(z_D) = q⁻⁴·z_D` and the `z_C` full-bar-condition failure (PR #5111)
+  stand as stated, and **the `h·D(ũ)` bar-split inherits none of the
+  `ε`-parity's immunity.** Correction 2 removes the `ε`-parity as support for
+  the bar-odd reading, so the companion question — whether trace-derived
+  quantities carry clean *bar* parity at all now — is left open and sharper
+  than before.
+
+Scope-(a) throughout; no convention adjudicated for the Q_β channel (`qou-b3nk`
+unchanged); no C-conditional value revived; no `c_k` wired; no tier flipped in
+either direction (KC21 stays `proved-lean`, the value layer stays
+C-conditional). Adjacent: the NO-FLOAT64 ratchet's NEW-dirty count drained
+**2 → 0** — a `round()` float64 in this branch's own probe, fixed at the
+producer here; and one left by the #5107 probe, which this branch also fixed
+but which `main` had **independently fixed first**, in the better form. Both
+carried the duration as a float; this branch serialized it as the string
+`durationSec`, `main` as integer `durationMs`. Only `durationMs` is in
+`_EPHEMERAL_META_FIELDS`, so `durationSec` would have left an unmasked
+wall-clock field drifting on every re-run. On rebase this branch's version of
+that one fix was **dropped in favour of main's** (convergent fix, superseded);
+the leak is drained either way.

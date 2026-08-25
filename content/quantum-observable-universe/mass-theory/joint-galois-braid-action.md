@@ -113,7 +113,7 @@ If discharged, the joint action gives:
 2. **Cross-axis dictionaries.** Galois orbits on $\mathcal{P}_n$
  correspond to braid orbits on cells: each pair $(g, \beta)$
  gives a relation among period values.
-3. **B1 sharpness via representation theory.** The keystone's
+3. **Sharpness of the depth correspondence via representation theory.** The correspondence's
  sharpness condition (image generates $\mathcal{P}_n / \mathcal{P}_{n-1}$
  non-by definition) reduces to non-vanishing of certain
  $G_{\mathrm{mot}} \rtimes B_n$-invariants — a representation-

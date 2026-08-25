@@ -1,0 +1,61 @@
+{
+ "schema": "witness/v1",
+ "engine": "mpmath",
+ "scriptFile": "c3_w2_c1_qborel_singularity.py",
+ "commitSha": "143061cae6ac3176d4427289b9c3e53c4d1edce1",
+ "description": "C1 infinity step 2 (bean qou-odh5). q-Gevrey order of the C1 solutions is 1/2, matching the Newton-polygon slope 1/2 found independently in step 1. The level-1/2 q-Borel transform has finite radius ~ q^8.2526. The ratio estimator below differs between branches at 3.7e-4. RE-SCOPED 2026-08-07 (bean qou-64jx): that spread is an ARTIFACT of sampling at a single parity, NOT two singularities. The estimator 1/(c[901]/c[900]) is a single-point ratio and 1/(c_{m+1}/c_m) is exactly 2-periodic in m; the stability check compares m=400 with m=900, both even. The parity-free estimator gives xi_s = 2.3651035824525764564 for ALL branches, agreeing to 3.1e-25. See computations/qbeta/c3_w2_c1_parity_artifact.py. The q-Gevrey and radius results here are UNAFFECTED. Stokes multipliers NOT extracted.",
+ "computation": {
+  "script": "computations/qbeta/c3_w2_c1_qborel_singularity.py",
+  "scriptCommitSha": "143061cae6ac3176d4427289b9c3e53c4d1edce1",
+  "scriptHash": "ec8403631089"
+ },
+ "results": {
+  "recurrence": "[m+2]_q b_{m+2} = b_{m+1} + b_m",
+  "dps": 500,
+  "n_terms": 1000,
+  "gevrey_fit_A": "0.25",
+  "gevrey_fit_B": "8.00010423951",
+  "gevrey_order": "0.5",
+  "newton_slope_from_step1": "1/2",
+  "gevrey_order_equals_slope": true,
+  "qborel_level": "1/2",
+  "xi_s_by_branch": {
+   "b^(1) (1,0)": "2.36571876588619",
+   "b^(2) (0,1)": "2.36485280484881",
+   "mix   (1,1)": "2.36515076658802"
+  },
+  "branch_spread_relative": "0.00036618",
+  "within_branch_convergence": "~1e-10 by m=400, stable to m=900",
+  "interpretation": "RE-SCOPED 2026-08-07 (bean qou-64jx). The original reading here was 'branch-dependent ratio limit => two nearby singularities, consistent with the two sectors from B = +/- sqrt(q-1)/q'. That is REFUTED. The ratio 1/(c_{m+1}/c_m) is exactly 2-periodic in m, so a single-point estimator at even m samples one phase of a 2-cycle; the parity-free estimator is branch-independent to 3.1e-25. The radius is ONE number. The surviving 2-cycle is the two-step decoupling of the recurrence, which step 3 (PR #4656) classified as NOT Stokes sectors.",
+  "interpretation_superseded_by": "computations/qbeta/c3-w2-c1-parity-artifact.witness.json"
+ },
+ "assertions": [
+  {
+   "name": "gevrey_order_is_one_half",
+   "computed": "0.5",
+   "expected": "0.5",
+   "passed": true
+  },
+  {
+   "name": "gevrey_order_matches_newton_slope",
+   "computed": "1/2",
+   "expected": "1/2",
+   "passed": true
+  },
+  {
+   "name": "qborel_radius_finite_nonzero",
+   "computed": "2.3657188",
+   "expected": ">1",
+   "passed": true
+  },
+  {
+   "name": "single_parity_samples_disagree_across_branches",
+   "computed": "0.0003662",
+   "expected": ">1e-5",
+   "passed": true
+  }
+ ],
+ "verdict": "CONFIRMED, and PARTLY RE-SCOPED 2026-08-07 (bean qou-64jx). STANDS: q-Gevrey order = Newton slope = 1/2 (independent cross-check of step 1), and the level-1/2 q-Borel transform converges with finite radius. Those results are unaffected. RETRACTED: the inference from the 3.7e-4 branch spread to 'TWO nearby singularities, i.e. the two-sector structure'. The ratio estimator is exactly 2-periodic in m and was sampled at a single parity (m=900, and the m=400 stability check is also even). The parity-free estimator gives xi_s = 2.3651035824525764564 for all three branches to 3.1e-25 -- one radius, not two -- and log_q(xi_s) matches the q-Gevrey fit B + 1/4 exactly. What survives is a stable 2-cycle whose amplitude is branch-dependent; that is the recurrence's two-step decoupling, which step 3 (PR #4656) already classified as NOT Stokes sectors. Multipliers remain open; qou-wgnx is the route.",
+ "scope": "Singularity structure only. Does NOT extract the Stokes multipliers. Numerical, no fit, nothing wired.",
+ "durationMs": 796
+}

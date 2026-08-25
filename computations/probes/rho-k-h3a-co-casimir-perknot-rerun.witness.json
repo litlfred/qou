@@ -1,8 +1,8 @@
 {
   "engine": "python+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-17T20:37:28.787636+00:00",
-  "commitSha": "074dfccb4a1090f3dad12759867a0a386851c795",
+  "computedAt": "2026-08-08T13:25:00.297841+00:00",
+  "commitSha": "8b4e06d2e243db387cf4e6fcfdf6b0a31c0a18ff",
   "assertions": [
     {
       "name": "sum_density_independent_matches_parent",
@@ -27,11 +27,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 15,
+  "durationMs": 20,
   "computation": "rho-k-h3a-co-casimir-perknot-rerun",
   "scriptFile": "rho_k_h3a_co_casimir_perknot_rerun.py",
-  "scriptHash": "7fb31034ccbb",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "47d78c2134b1",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -41,9 +41,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "data": {
     "audit": "docs/audits/2026-06-24-lambda-a-refutation-artifact-audit.md",
@@ -93,7 +95,20 @@
         "abs_rescaler": "15081.49166341228006251569119034985030721182130493487686221162952405665"
       }
     },
-    "verdict": "ROBUST — the co-Casimir Δ_λ = 1/dim_q refutation is NOT a λ_A density artifact. The verdict quantity Σ y_λ χ^λ Δ_λ^B = +0.145 is density-independent (pure per-partition Hecke data). Swapping the constituent baseline changes only the target: CODATA target −4.35 (wrong sign, |rescaler| ≈ 30), global-λ_A target ≈ −110.5 (wrong sign, ≈ 763×), per-knot target ≈ +2186 (sign now agrees but ≈ 15081× too small). The closure fails by ≥ 30× under every density; the specific 'wrong sign' phrasing is baseline-dependent, the failure is not. Scope (a): this construction, alone, does not reproduce the numbers under any of the three density bases — no ingredient-level exclusion claimed.",
-    "refutation_scope": "scope-limited negative (a) per AGENTS.md"
-  }
+    "verdict": "ROBUST \u2014 the co-Casimir \u0394_\u03bb = 1/dim_q refutation is NOT a \u03bb_A density artifact. The verdict quantity \u03a3 y_\u03bb \u03c7^\u03bb \u0394_\u03bb^B = +0.145 is density-independent (pure per-partition Hecke data). Swapping the constituent baseline changes only the target: CODATA target \u22124.35 (wrong sign, |rescaler| \u2248 30), global-\u03bb_A target \u2248 \u2212110.5 (wrong sign, \u2248 763\u00d7), per-knot target \u2248 +2186 (sign now agrees but \u2248 15081\u00d7 too small). The closure fails by \u2265 30\u00d7 under every density; the specific 'wrong sign' phrasing is baseline-dependent, the failure is not. Scope (a): this construction, alone, does not reproduce the numbers under any of the three density bases \u2014 no ingredient-level exclusion claimed.",
+    "refutation_scope": "scope-limited negative (a) per AGENTS.md",
+    "upstream_witness_hashes": [
+      {
+        "path": "rho-k-h3a-co-casimir.witness.json",
+        "sha256": "6ae7401df51165e023466847b4ad8d573ba6aee90be7cff7bb186cf44e93be67",
+        "size_bytes": 16013,
+        "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+        "scriptCommitSha": "ca475e2f67a526f36a0e8357313105d93f61d7c5",
+        "computedAt": "2026-07-07T13:41:26.749016+00:00"
+      }
+    ]
+  },
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q_0_50dps). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

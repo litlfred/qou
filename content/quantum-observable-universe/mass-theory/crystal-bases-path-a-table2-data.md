@@ -5,5 +5,5 @@
 | tritium   | $(1, 2)$ | 9  | $61$  | $61$  | ✓ |
 | ${}^3\mathrm{He}$ | $(2, 1)$ | 9  | $58$  | $58$  | ✓ |
 | ${}^4\mathrm{He}$ | $(2, 2)$ | 12 | $79$  | $79$  | ✓ |
-| ${}^5\mathrm{Li}$ | $(3, 2)$ | 15 | $97$  | _(deferred to Phase 3)_ | _pending_ |
-| ${}^6\mathrm{Li}$ | $(3, 3)$ | 18 | $118$ | _(deferred to Phase 3)_ | _pending_ |
+| ${}^5\mathrm{Li}$ | $(3, 2)$ | 15 | $97$  | _(open)_ | _pending_ |
+| ${}^6\mathrm{Li}$ | $(3, 3)$ | 18 | $118$ | _(open)_ | _pending_ |

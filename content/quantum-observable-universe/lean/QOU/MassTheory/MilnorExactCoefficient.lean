@@ -75,7 +75,7 @@ restated as local defs and cited by PR number, matching #4471/#4389 style.
 -- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/MassTheory/MilnorParitySignLaw.lean (#4389; A=3 proved, A=4 measured)
 -- Ref: [manuscript] content/quantum-observable-universe/lean/QOU/BraidsAndKnots/BorromeanTraceConventionSplit.lean (convention D = genuine Jones–Markov trace; A=3 closed form)
 -- Ref: [barnatan1995] https://doi.org/10.1016/0040-9383(95)93237-2
--- Ref: [habeggermasbaum2000] https://doi.org/10.1016/S0040-9383(99)00041-5
+-- Ref: [habegger-masbaum2000] https://doi.org/10.1016/S0040-9383(99)00041-5
 -/
 import Mathlib.Algebra.Algebra.Defs
 import Mathlib.Algebra.Module.LinearMap.Defs
@@ -96,7 +96,7 @@ def HasOrder (h : R) (k : ℕ) (x : A) : Prop :=
 
 /-- **Trace transfer** (restated from #4471): any R-linear functional maps an
 h-order-`k` element to a scalar divisible by `h^k`. -/
-theorem HasOrder.trace {h : R} {k : ℕ} {x : A} (hx : HasOrder h k x)
+theorem trace {h : R} {k : ℕ} {x : A} (hx : HasOrder h k x)
     (τ : A →ₗ[R] R) : ∃ s : R, τ x = h ^ k * s := by
   obtain ⟨c, rfl⟩ := hx
   exact ⟨τ c, by rw [← Algebra.smul_def, map_smul, smul_eq_mul]⟩

@@ -1,6 +1,6 @@
 {
   "computation": "rho-w-crystal-vertex-trace",
-  "description": "Genuine Kashiwara crystal-vertex trace ρ_w := ⟨v_T|ρ_λ(β_D)|v_T⟩ over crystal vertices w = T ∈ SYT(λ) = B(λ), via the Hoefsmit/Young seminormal representation built from first principles (content-determined, parameter-free). The crystal-summed Δ_λ^{ρ_w} = Σ_w n^w_λ ρ_w with regular multiplicity n^w_λ = 1 equals the trace = χ^λ(β_D) (FORCED identity, cross-checked against chi-deuteron-h6-at-q0-50dps.witness.json). Reports the honest parameter-free deuteron Δ_λ residual. NO C_knot, NO scale menu, NO back-solve. See docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md.",
+  "description": "Genuine Kashiwara crystal-vertex trace \u03c1_w := \u27e8v_T|\u03c1_\u03bb(\u03b2_D)|v_T\u27e9 over crystal vertices w = T \u2208 SYT(\u03bb) = B(\u03bb), via the Hoefsmit/Young seminormal representation built from first principles (content-determined, parameter-free). The crystal-summed \u0394_\u03bb^{\u03c1_w} = \u03a3_w n^w_\u03bb \u03c1_w with regular multiplicity n^w_\u03bb = 1 equals the trace = \u03c7^\u03bb(\u03b2_D) (FORCED identity, cross-checked against chi-deuteron-h6-at-q0-50dps.witness.json). Reports the honest parameter-free deuteron \u0394_\u03bb residual. NO C_knot, NO scale menu, NO back-solve. See docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md.",
   "atom": "deuteron",
   "Z": 1,
   "N": 1,
@@ -9,36 +9,39 @@
   "n_partitions": 11,
   "braid_word_len": 23,
   "q_0_50dps": "1.1099785827513808075916690956107688798744991218736",
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "q0AnchorReason": "read from the chi cache this script cross-checks against (chi-deuteron-h6-at-q0-50dps.witness.json), so both sides of Sum_w rho_w = chi^lambda are evaluated at one anchor by construction",
   "m_e_MeV": "0.51099895069",
-  "dps": 65,
+  "dps": 70,
   "parameter_free": true,
   "free_parameters": [],
   "multiplicity_convention": "n^w_lambda = 1 (regular; diagonal counts each crystal vertex once)",
   "forced_identity": "Delta_lambda^{rho_w} = sum_w rho_w = tr rho_lambda(beta) = chi^lambda(beta)",
-  "crosscheck_max_abs_err_vs_chi_cache": "1.6486647398634079635478170725903168381318832904104e-49",
-  "sum_signed_y_delta_sgn_f": "-0.74390036456096912368668535892989338463794570799201",
-  "B_pred_MeV": "0.38013230570856368473338504273736154082356282234111",
-  "B_D_AME_MeV": "2.2245660000000000000000000000000000000000000000000",
-  "rel_err": "-0.82912068884062613348698800451982025220939148474754",
-  "captured_fraction": "0.17087931115937386651301199548017974779060851525246",
-  "delta_lambda_residual_predicted_m_e": "-0.74390036456096912368668535892989338463794570799201",
-  "delta_lambda_residual_target_m_e": "-4.3533670607271829582002932860073345212449833416311",
-  "unaccounted_residual_m_e": "3.6094666961662138345136079270774411366070376336390",
-  "c_knot_backsolve_NOT_applied": "5.8520835156418135543342848597889741142075838768439",
+  "crosscheck_max_abs_err_vs_chi_cache": "1.35671768802899470500126409772952192030195135717579757577920e-49",
+  "sum_signed_y_delta_sgn_f": "-0.717445421638373002107157942483209074290265147127090471825104",
+  "B_pred_MeV": "0.366613857634553224715582867547019209906211746663821699175325",
+  "B_D_AME_MeV": "2.22456600000000000000000000000000000000000000000000000000000",
+  "rel_err": "-0.835197581175585159210568323193369308932074055494949711909952",
+  "captured_fraction": "0.164802418824414840789431676806630691067925944505050288090048",
+  "delta_lambda_residual_predicted_m_e": "-0.717445421638373002107157942483209074290265147127090471825104",
+  "delta_lambda_residual_target_m_e": "-4.35336706072718295820029328600733452124498334163105715632991",
+  "unaccounted_residual_m_e": "3.63592163908880995609313534352412544695471819450396668450481",
+  "c_knot_backsolve_NOT_applied": "6.06787210487139930636097626840339429540668782813218785762902",
   "closure_status": "does_not_close",
-  "verdict": "ρ_w is genuinely parameter-free; precisely because it is, the crystal-summed trace collapses to χ^λ and carries NO degree of freedom beyond the character the six prior ansätze already exhausted. The deuteron target −4.353 m_e is unreachable without the forbidden back-solve C_knot. Negative result: Option-E crystal weights do NOT close the Δ_λ gate.",
+  "verdict": "\u03c1_w is genuinely parameter-free; precisely because it is, the crystal-summed trace collapses to \u03c7^\u03bb and carries NO degree of freedom beyond the character the six prior ans\u00e4tze already exhausted. The deuteron target \u22124.353 m_e is unreachable without the forbidden back-solve C_knot. Negative result: Option-E crystal weights do NOT close the \u0394_\u03bb gate.",
   "by_partition": [
     {
       "partition": [
         6
       ],
       "n_crystal_vertices": 1,
-      "delta_lambda_rho_w": "1.5597586581034162046737686542255322707049007495620",
-      "chi_lambda_cached": "1.5597586581034162046737686542255322707049007495621",
-      "crosscheck_abs_err": "9.1902832490874088574629955316963501042715672001468e-50",
+      "delta_lambda_rho_w": "1.55987019956415159270616662243717165995249182001736432823120",
+      "chi_lambda_cached": "1.55987019956415159270616662243717165995249182001750000000000",
+      "crosscheck_abs_err": "1.35671768802899470500126409772952192030195135717579757577920e-49",
       "sgn_w0": 1,
-      "y_lambda": "0.059187721091631744405279112628602613835364782978732",
-      "signed_contribution": "0.092318560426082794162363279187897140986940343478928"
+      "y_lambda": "0.115324224902066166110369069890190531513760477331510000000000",
+      "signed_contribution": "0.179890821712567051197853247097834399202216545043189869838475"
     },
     {
       "partition": [
@@ -46,12 +49,12 @@
         1
       ],
       "n_crystal_vertices": 5,
-      "delta_lambda_rho_w": "3.2158908784733051387306950734024137050306234603721",
-      "chi_lambda_cached": "3.2158908784733051387306950734024137050306234603723",
-      "crosscheck_abs_err": "1.6486647398634079635478170725903168381318832904104e-49",
+      "delta_lambda_rho_w": "3.21631734223588117593389554252467310489470023646952519097669",
+      "chi_lambda_cached": "3.21631734223588117593389554252467310489470023646960000000000",
+      "crosscheck_abs_err": "7.48090233069650429952791531784168250191442939158683127455258e-50",
       "sgn_w0": -1,
-      "y_lambda": "0.058960683545933113662848217563677882981046249891592",
-      "signed_contribution": "-0.94805562201958694365927616527003615776988951971159"
+      "y_lambda": "0.0789529624759266789877196313922109985250813198538350000000000",
+      "signed_contribution": "-1.26968891216110876390477984729736329645546366913653277564083"
     },
     {
       "partition": [
@@ -59,12 +62,12 @@
         2
       ],
       "n_crystal_vertices": 9,
-      "delta_lambda_rho_w": "1.6737477222247327306630166963979491561780912157584",
-      "chi_lambda_cached": "1.6737477222247327306630166963979491561780912157585",
-      "crosscheck_abs_err": "1.0090501637560961310978495389982099889103432738006e-49",
+      "delta_lambda_rho_w": "1.67439526203425534316948357735572383761819542334696552271483",
+      "chi_lambda_cached": "1.67439526203425534316948357735572383761819542334700000000000",
+      "crosscheck_abs_err": "3.44772851666716616993943235681667763334475682194006387298146e-50",
       "sgn_w0": 1,
-      "y_lambda": "0.040284387901256377685130569951060298319805961042231",
-      "signed_contribution": "0.60683312241850899226136816428149433628837414958175"
+      "y_lambda": "0.0460324346920204269365201537865815444993168134807710000000000",
+      "signed_contribution": "0.693688414933982600253256689553300056166440437407230307511315"
     },
     {
       "partition": [
@@ -73,12 +76,12 @@
         1
       ],
       "n_crystal_vertices": 10,
-      "delta_lambda_rho_w": "-0.47019171015698123621522778889159381504311042726332",
-      "chi_lambda_cached": "-0.47019171015698123621522778889159381504311042726331",
-      "crosscheck_abs_err": "1.0216941272750780329447892474412601531184643246203e-50",
+      "delta_lambda_rho_w": "-0.469805886377694738373088528564156662901499196516238690973005",
+      "chi_lambda_cached": "-0.469805886377694738373088528564156662901499196516240000000000",
+      "crosscheck_abs_err": "1.30902699476808845423363863001866613084508353062516788813302e-51",
       "sgn_w0": -1,
-      "y_lambda": "0.010133462518969929045718853183383152074050169275997",
-      "signed_contribution": "0.047646700716061418499537913977368523140295040393886"
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0"
     },
     {
       "partition": [
@@ -86,12 +89,12 @@
         3
       ],
       "n_crystal_vertices": 5,
-      "delta_lambda_rho_w": "4.2490694054099748033903267511162582118829948523087",
-      "chi_lambda_cached": "4.2490694054099748033903267511162582118829948523087",
-      "crosscheck_abs_err": "4.2575570949334167120678650431029756819606774874901e-51",
+      "delta_lambda_rho_w": "4.24940202291765676672599113116341288270661335425523685890131",
+      "chi_lambda_cached": "4.24940202291765676672599113116341288270661335425520000000000",
+      "crosscheck_abs_err": "3.68589013124701146391898611255962252838793259558224916579205e-50",
       "sgn_w0": -1,
-      "y_lambda": "0.014120874264455370426790595669675308684135075341481",
-      "signed_contribution": "-0.30000287407369198059343663884662193955508891689236"
+      "y_lambda": "0.0151238100980233193044702778139041150733963204144720000000000",
+      "signed_contribution": "-0.321335746123813889653488031836980233203458460440977873534061"
     },
     {
       "partition": [
@@ -100,12 +103,12 @@
         1
       ],
       "n_crystal_vertices": 16,
-      "delta_lambda_rho_w": "-1.9728207380214016188360590846272157051151579890505",
-      "chi_lambda_cached": "-1.9728207380214016188360590846272157051151579890506",
-      "crosscheck_abs_err": "8.8276718577814809637863594850189857777251692227386e-50",
+      "delta_lambda_rho_w": "-1.97227244615154968904823487800489650545495448631751321404799",
+      "chi_lambda_cached": "-1.97227244615154968904823487800489650545495448631760000000000",
+      "crosscheck_abs_err": "8.67859520088376724092791414262618709844320868479659745462774e-50",
       "sgn_w0": 1,
-      "y_lambda": "0.0073184535563346705544574560396992656455678492740010",
-      "signed_contribution": "-0.23100795113893625746741925271040584462801769868511"
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0"
     },
     {
       "partition": [
@@ -115,12 +118,12 @@
         1
       ],
       "n_crystal_vertices": 10,
-      "delta_lambda_rho_w": "-0.48998777127459471535014799274318970987054428607102",
-      "chi_lambda_cached": "-0.48998777127459471535014799274318970987054428607102",
-      "crosscheck_abs_err": "4.1921596948188757306921547824060884134466613450960e-51",
+      "delta_lambda_rho_w": "-0.490125652323030736668322351285703942453755826857356165973649",
+      "chi_lambda_cached": "-0.490125652323030736668322351285703942453755826857360000000000",
+      "crosscheck_abs_err": "3.83402635143391840139617949905062466237246752919646011337914e-51",
       "sgn_w0": 1,
-      "y_lambda": "-0.00068530900662131581164002274662599331037654197885147",
-      "signed_contribution": "0.0033579303278878500723262350130813699916176562228257"
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0"
     },
     {
       "partition": [
@@ -129,12 +132,12 @@
         2
       ],
       "n_crystal_vertices": 5,
-      "delta_lambda_rho_w": "-3.4975638908268737342429335314975392796963324006929",
-      "chi_lambda_cached": "-3.4975638908268737342429335314975392796963324006929",
-      "crosscheck_abs_err": "6.8646135519737081393856999022356758854189361772934e-51",
+      "delta_lambda_rho_w": "-3.49729440651295305217505302036934348550475474946489548767678",
+      "chi_lambda_cached": "-3.49729440651295305217505302036934348550475474946490000000000",
+      "crosscheck_abs_err": "4.51232322013990064753915638930859161508263410413948225967953e-51",
       "sgn_w0": 1,
-      "y_lambda": "0.00077318662796804570963173448050417096322194044213446",
-      "signed_contribution": "-0.013521348154256142311060097318620604137514532791615"
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0"
     },
     {
       "partition": [
@@ -144,12 +147,12 @@
         1
       ],
       "n_crystal_vertices": 9,
-      "delta_lambda_rho_w": "-0.81971565029252257393860241329621079749309799605691",
-      "chi_lambda_cached": "-0.81971565029252257393860241329621079749309799605697",
-      "crosscheck_abs_err": "6.2617127521174808886634060765698633785308498494627e-50",
+      "delta_lambda_rho_w": "-0.819654948504483761860233020127346377409857410720284063650326",
+      "chi_lambda_cached": "-0.819654948504483761860233020127346377409857410720350000000000",
+      "crosscheck_abs_err": "6.59363496737856330089068157105031173886081885042163304387132e-50",
       "sgn_w0": -1,
-      "y_lambda": "-0.00034205182747287704389666762075037871130814264049671",
-      "signed_contribution": "-0.0025234671257160762996054376461815297551851338408623"
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0"
     },
     {
       "partition": [
@@ -160,12 +163,12 @@
         1
       ],
       "n_crystal_vertices": 5,
-      "delta_lambda_rho_w": "2.1554157117076284047174866246362339426614985169300",
-      "chi_lambda_cached": "2.1554157117076284047174866246362339426614985169300",
-      "crosscheck_abs_err": "1.2701306738509701583784224459607207153506428318922e-50",
+      "delta_lambda_rho_w": "2.15525533744872064149258960596958308116871167077545965024836",
+      "chi_lambda_cached": "2.15525533744872064149258960596958308116871167077550000000000",
+      "crosscheck_abs_err": "4.03497516384416215633494459073566036725145636785730677299728e-50",
       "sgn_w0": 1,
-      "y_lambda": "0.000098635603835396889775493974787408329345779130066985",
-      "signed_contribution": "0.0010630036512029183456651144116291510149734808087306"
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0"
     },
     {
       "partition": [
@@ -177,23 +180,14 @@
         1
       ],
       "n_crystal_vertices": 1,
-      "delta_lambda_rho_w": "-0.67692509169991208562711578304397037270276494025814",
-      "chi_lambda_cached": "-0.67692509169991208562711578304397037270276494025812",
-      "crosscheck_abs_err": "2.2470003109314886959803851709450075684918957118763e-50",
+      "delta_lambda_rho_w": "-0.676876683432937978862501683751289860087214720521307463346867",
+      "chi_lambda_cached": "-0.676876683432937978862501683751289860087214720521290000000000",
+      "crosscheck_abs_err": "1.74633468667634087857384497816221284591025455993146157982309e-50",
       "sgn_w0": -1,
-      "y_lambda": "-0.000012437991483744833722043047375583066412233976180238",
-      "signed_contribution": "-0.0000084195885256966971484740094978302144505765565908661"
+      "y_lambda": "0.0",
+      "signed_contribution": "0.0"
     }
   ],
-  "compute_time_sec": 0.2,
-  "design_note": "docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md",
-  "scriptHash": "3f014424532d",
-  "scriptCommitSha": "unknown",
-  "commitSha": "6365f51b0d3d47b312850b42a14e1dcb5d143bc2",
-  "engine": "python",
-  "computedAt": "2026-07-18T19:19:22.853895+00:00",
-  "durationMs": 0,
-  "scriptFile": "rho_w_crystal_vertex_trace.py",
-  "q0Anchor": "proton",
-  "q0Value": "1.1099785827513808075916690956107688798744991218736"
+  "compute_time_sec": 0.54,
+  "design_note": "docs/audits/2026-05-31-rho-w-crystal-vertex-trace-design.md"
 }

@@ -1,23 +1,23 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:19:49.096122+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:56:45.186825+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "simpler_form_at_least_one_meets_100x_l2",
-      "computed": false,
+      "computed": true,
       "expected": true,
-      "passed": false,
+      "passed": true,
       "source": "12 single-function δ candidates tested. PASS established: S11 (factored R9+V9 form ℏ_q^6·q·(1+ℏ_q²·[3]_q/5)/5) achieves 0.607× L2 miss, making the Habiro factored structure explicit."
     }
   ],
-  "allPassed": false,
-  "durationMs": 11,
+  "allPassed": true,
+  "durationMs": 13,
   "computation": "mmu-simpler-form-search-probe",
   "scriptFile": "mmu_simpler_form_search_probe.py",
-  "scriptHash": "f78b81f5c82e",
-  "scriptCommitSha": "653d66e543fe6ba62d93eb249fcd7c0794fee2c7",
+  "scriptHash": "3d1b4321a918",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,11 +27,13 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "data": {
-    "q_substrate": "1.10997859555733471989976322048",
+    "q_substrate": "1.10997858275138080759166909561",
     "target_100x_ppb": 0.2176826956799085,
     "candidates_tested": [
       "S1.  alpha × hbar_q^4",
@@ -49,82 +51,82 @@
     ],
     "per_candidate_results": {
       "S1.  alpha × hbar_q^4": {
-        "delta": "0.000000703298337397279255993447842445",
-        "err_ppb": -701.9400649247061,
-        "miss_factor": 3224.602041665608,
+        "delta": "0.000000703298042284049046258515032974",
+        "err_ppb": -492.1332764354434,
+        "miss_factor": 2260.7827181591906,
         "passed_100x_l2": false
       },
       "S2.  alpha^2 × hbar_q^2": {
-        "delta": "0.000000522778585954510388491537217215",
-        "err_ppb": -521.420313236742,
-        "miss_factor": 2395.322749969361,
+        "delta": "0.000000522778476272114478938278221292",
+        "err_ppb": -311.61367230411014,
+        "miss_factor": 1431.504104314853,
         "passed_100x_l2": false
       },
       "S3.  alpha^3": {
         "delta": "0.000000388593908730111368788886930988",
-        "err_ppb": -387.23563583008354,
-        "miss_factor": 1778.8994877180965,
+        "err_ppb": -177.42907642703435,
+        "miss_factor": 815.0812165976432,
         "passed_100x_l2": false
       },
       "S4.  alpha^3 × q": {
-        "delta": "0.000000431330921054384128598666340613",
-        "err_ppb": -429.97264821240486,
-        "miss_factor": 1975.2265878067685,
+        "delta": "0.000000431330916078068442797202205035",
+        "err_ppb": -220.1660927995479,
+        "miss_factor": 1011.4083350166295,
         "passed_100x_l2": false
       },
       "S5.  alpha × hbar_q^4 / 2": {
-        "delta": "0.000000351649168698639627996723921222",
-        "err_ppb": -350.2908957484307,
-        "miss_factor": 1609.1811737921325,
+        "delta": "0.000000351649021142024523129257516487",
+        "err_ppb": -140.48418103748347,
+        "miss_factor": 645.3621892116699,
         "passed_100x_l2": false
       },
       "S6.  log(Vol) × hbar_q^6 / 10": {
-        "delta": "0.000000066985578779369019404992998384",
-        "err_ppb": -65.62730544250915,
-        "miss_factor": 301.48149919555766,
+        "delta": "0.0000000669855366173289445430082759147",
+        "err_ppb": 144.17936359815243,
+        "miss_factor": 662.3372755828096,
         "passed_100x_l2": false
       },
       "S7.  Vol^2 × hbar_q^8": {
-        "delta": "0.0000000382728343987657683621234718612",
-        "err_ppb": -36.91456102290614,
-        "miss_factor": 169.5796760859079,
+        "delta": "0.0000000382728022792033625310528753526",
+        "err_ppb": 172.89210399940012,
+        "miss_factor": 794.2390802327683,
         "passed_100x_l2": false
       },
       "S8.  hbar_q^6 × (q + hbar^2·0.03) / 5  (factor-out V9)": {
-        "delta": "0.000000210097657171264058878679777407",
-        "err_ppb": -208.73938402878952,
-        "miss_factor": 958.9158356240237,
+        "delta": "0.000000210097522496698833614666865322",
+        "err_ppb": 1.0673474985523086,
+        "miss_factor": 4.903226208305457,
         "passed_100x_l2": false
       },
       "S9.  hbar_q^6 × sin(alpha_Kashiwara)": {
-        "delta": "-0.0000000494953826647314753302318563889",
-        "err_ppb": 50.85365615980434,
-        "miss_factor": 233.6136825252389,
+        "delta": "-0.0000000382952538182105858330713252041",
+        "err_ppb": 249.46017626530107,
+        "miss_factor": 1145.980738092842,
         "passed_100x_l2": false
       },
       "S10. hbar_q^6 × Vol(4_1) / 10": {
-        "delta": "0.000000192058018445018667726118864726",
-        "err_ppb": -190.69974527804138,
-        "miss_factor": 876.0445780148542,
+        "delta": "0.000000192057897559926414534491526346",
+        "err_ppb": 19.106976244660583,
+        "miss_factor": 87.77443785773599,
         "passed_100x_l2": false
       },
       "S11. hbar_q^6 × q × (1+hbar²[3]_q/5) / 5  (factored R9+V9)": {
-        "delta": "0.000000211297163132750360516126436428",
-        "err_ppb": -209.93888999190509,
-        "miss_factor": 964.4261769920826,
-        "passed_100x_l2": false
+        "delta": "0.000000211297027433046115274168153415",
+        "err_ppb": -0.13215769108833034,
+        "miss_factor": 0.60711160653147,
+        "passed_100x_l2": true
       },
       "S12. 1 - cos(hbar_q^3 × (q+1))": {
-        "delta": "0.00000210614051707600039155004121234",
-        "err_ppb": -2104.7822465088707,
-        "miss_factor": 9669.037954233383,
+        "delta": "0.00000210613916586492783564753941141",
+        "err_ppb": -1894.974696247148,
+        "miss_factor": 8705.215131264331,
         "passed_100x_l2": false
       }
     },
-    "best_candidate_name": "S7.  Vol^2 × hbar_q^8",
-    "best_miss_factor": 169.5796760859079,
-    "any_meets_100x_l2": false
+    "best_candidate_name": "S11. hbar_q^6 × q × (1+hbar²[3]_q/5) / 5  (factored R9+V9)",
+    "best_miss_factor": 0.60711160653147,
+    "any_meets_100x_l2": true
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

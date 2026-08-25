@@ -1,14 +1,17 @@
 **Proof of [partition-depth stratification of $\Phi_q$](#prop:quantum-dilogarithm-stratified).**
 
 *Step 1 (Frobenius dual decomposition of $Z(A)$).* By
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
+— **together with the partition-vs-word identification this proof itself
+flags as unestablished at Step 3 below, and which is not supplied by that
+proposition** —
 the centre $Z(A) = \bigoplus_{\lambda \vdash n} R \cdot e_\lambda$
 admits the GB-depth grading
 $Z(A) = \bigoplus_{k \geq 0} Z^{(k)}(A)$. The Frobenius pairing
 $\langle a, b \rangle = \int_A a \cdot b$ restricts to $Z(A)$ as a
 non-degenerate bilinear form, and the depth strata $Z^{(k)}(A)$ are
 mutually orthogonal under this pairing
-([Frobenius duality of strata](#prop:spectral-sequence-collapse)
+([Frobenius duality of strata](#prf:spectral-sequence-collapse)
 "§Frobenius duality of strata"):
 
 $$
@@ -45,8 +48,8 @@ depth-$k$ centre stratum $Z^{(k)}(A)$ via the $q$-content / hook-length
 structure:
 
 (a) The q-deformed Wedderburn-block weight is
-$\tilde w_\lambda = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
-classical Plancherel measure $w_\lambda = (\dim V_\lambda)^2/n!$ —
+$w_\lambda(q) = \dim_q^2 V_\lambda / [n]_q!$ (distinct from the
+classical Plancherel measure $w_\lambda(1) = (\dim V_\lambda)^2/n!$ —
 the two coincide at $q = 1$; see
 [`prop:plancherel-weight-boundedness`](#prop:plancherel-weight-boundedness)),
 where
@@ -56,13 +59,19 @@ integer
 ([Hoefsmit pipeline](#conj:hoefsmit-scattering-pipeline)).
 
 (b) The hook lengths $h(\square)$ for $\square \in \lambda$ encode
-the partition's depth in the GB filtration: by
-[curvature-rank stratification](#prop:curvature-rank-gb-stratification)
-Step 3, the GB-depth of $\lambda$ is
+the partition's depth in the GB filtration. Here
 $\mathrm{depth}_{\mathrm{GB}}(\lambda) = \max_{\square \in \lambda} h(\square)$
-(the partition's **maximum hook length**), which is the minimal
-number of $R_H, R_{YB}$ rewrites required to express any element of
-the $\lambda$-isotypic component in NF.
+(the partition's **maximum hook length**) is a *definition* — it is
+`QOU.BraidKnot.gbDepth`, the supremum of the hook length over the
+cells of $\lambda$ — not a consequence of
+[curvature-rank stratification](#prop:curvature-rank-gb-stratification),
+which stratifies $J^{\,r}/J^{\,r+1}$ by the curvature rank $r(T_w)$ of
+**words** and mentions no partition. The two are different indexings of
+depth, and the reading of $\mathrm{depth}_{\mathrm{GB}}(\lambda)$ as
+the minimal number of $R_H, R_{YB}$ rewrites needed to put any element
+of the $\lambda$-isotypic component in NF is the identification of the
+partition grading with the word filtration, which that proposition does
+not supply.
 
 (c) Therefore $\dim_q V_\lambda$ has a factor of $[k]_q$ in its
 hook-length expansion exactly when $\lambda$ contains a box with
@@ -77,7 +86,7 @@ $F_n(z) = \sum_{\lambda \vdash n} \dim_q^{-1}(V_\lambda) \cdot z^{|\lambda|}$,
 and its expansion as an infinite product in $z$ is
 $F_n(z) = \prod_{k \geq 1} (1 - q^{-k} z)^{-c_k(n)} \cdot u_n(q)$
 where $c_k(n) = \#\{\lambda \vdash n : \max\text{-hook}(\lambda) = k\}$
-and $u_n(q) \in \mathbb{Z}[q^{± 1/2}]$ is a unit. The exponent
+and $u_n(q) \in \mathbb{Z}[q^{\pm 1/2}]$ is a unit. The exponent
 $c_k(n)$ counts depth-exactly-$k$ partitions; the factor
 $(1 - q^{-k} z)^{-c_k(n)}$ contributes the depth-$k$ stratum of $Z(A)$.
 
@@ -99,7 +108,7 @@ $\phi_q^{(k)}(z_i)$ from Step 2 (modulo orthogonal strata) gives
 
 $$
   \Phi_q^{[\leq k]}(z_i) - \Phi_q^{[\leq k-1]}(z_i)
-  \;\equiv\; \phi_q^{(k)}(z_i) ±od{\bigoplus_{\ell \neq k} Z^{(\ell)}(A)}.
+  \;\equiv\; \phi_q^{(k)}(z_i) \pmod{\bigoplus_{\ell \neq k} Z^{(\ell)}(A)}.
 $$
 
 *Step 4 (Frobenius truncation for $T_w$).* For $T_w \in H_n(R, q)$
@@ -151,11 +160,14 @@ identification (a)–(f) reduces the cyclotomic-factor / depth-stratum
 correspondence to the standard $q$-content / hook-length formula plus
 [curvature-rank stratification §Step 3](#prop:curvature-rank-gb-stratification)
 (GB-depth = max hook length), so the structural identification is now
-explicit. The remaining open piece in Step 3 is **(d)'s product
+explicit — **but "explicit" here means *written down*, not *established*.
+The citation does not supply the identification; the passage above, at
+"not a consequence of [curvature-rank stratification] … which … mentions no
+partition", states the position of this proof.** The remaining open piece in Step 3 is **(d)'s product
 expansion** $F_n(z) = \prod_k (1 - q^{-k}z)^{-c_k(n)} \cdot u_n(q)$:
 the existence of such an expansion follows from finiteness of
 $\dim_q^{-1}$ as a Laurent polynomial and unique factorisation in
-$\mathbb{Z}[q^{± 1/2}][z]$, but the explicit identification of the
+$\mathbb{Z}[q^{\pm 1/2}][z]$, but the explicit identification of the
 exponents $c_k(n)$ with $\#\{\lambda : \max\text{-hook} = k\}$
 requires verification on small cases (D's $H_6$ and ${}^3\mathrm{He}$'s
 $H_9$ are tractable computations).

@@ -43,6 +43,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps, str_at_true_precision  # noqa: E402 — dps must rise before module constants
 import ast
 import json
 import sys
@@ -54,10 +55,21 @@ sys.path.insert(0, str(HERE))
 import mpmath as mp
 import numpy as np
 
-from witness_base import WitnessBuilder
+from witness_base import WitnessBuilder, record_upstream
 # Canonical constants — avoid re-typed CODATA / q_0 literals (Copilot PR #787 review).
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from codata_constants import M_E_MEV
 from q_parameter import Q as Q0
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
 
 B_D_AME_MEV = mp.mpf("2.22456607")  # AME 2020 deuteron binding energy
 
@@ -65,7 +77,7 @@ B_D_AME_MEV = mp.mpf("2.22456607")  # AME 2020 deuteron binding energy
 def load_chi_deuteron() -> tuple[mp.mpf, list[dict]]:
     """Load Hecke characters for the deuteron at q_0, 50 dps."""
     path = _pb.witness_path("chi-deuteron-h6-at-q0-50dps.witness.json", HERE)
-    w = json.loads(path.read_text())
+    w = record_upstream(path, _UPSTREAM_RECORDS)
     by_part = w["by_partition"]
     parsed = []
     for p in by_part:
@@ -233,6 +245,7 @@ K_MAPS = {
 
 def main() -> int:
     builder = WitnessBuilder("delta-lambda-categorical-verification")
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Phase 1b numerical test of conj:delta-lambda-categorical-closure "
         "on the deuteron (n=6, 11 partitions). Computes B(D) under each "
@@ -271,10 +284,15 @@ def main() -> int:
             per_lambda.append({
                 "partition": p["partition"],
                 "k_lambda": k_lambda,
-                "y_lambda": str(p["y"]),
-                "chi_lambda": str(p["chi"]),
-                "delta_lambda": str(delta_l),
-                "contribution": str(term),
+                # str_at_true_precision, not str: delta_l is mp.mpf(<float>) —
+                # 53 bits promoted — and str() renders it at the live mp.dps,
+                # emitting 50 digits of binary64 tail that read as measured.
+                # A no-op on the values that DID carry more than 53 bits, since
+                # the short form is then exact.
+                "y_lambda": str_at_true_precision(p["y"]),
+                "chi_lambda": str_at_true_precision(p["chi"]),
+                "delta_lambda": str_at_true_precision(delta_l),
+                "contribution": str_at_true_precision(term),
             })
         B_D_pred *= M_E_MEV
         err_abs = abs(B_D_pred - B_D_AME_MEV)

@@ -1,0 +1,253 @@
+{
+  "computation": "qbeta-kc21-parity-convention-immunity",
+  "description": "Audit of KC21's 'the structural parity statement (S(-eps) = -S(eps)) ... is convention-immune' sentence (registry section 9g, PR #5107), which was asserted rather than measured. Route 1: the c_3 extractor is complexified (with the signed analytic branch of Q_A) and the parity re-derived under convention D -- it HOLDS, to 1e-45 relative over eight decades of eps, even though the D frame moves the value by ~972 (470x |c3^C|). Route 2: the reduction -- every ladder ingredient (h, hbar, b, u, Q_A, z_C, z_D, cos) is Schwarz-reflective, so the composite is, so Im is odd in eps; the parity consumes only real-valuedness of z on the real q-axis, never its formula, and a control convention z_X in no channel has it too. VERDICT: the immunity claim is VERIFIED. Two corrections recorded: (i) the operative hypothesis is real coefficients, not bar-oddness -- the bar-EVEN Q_A has the same property, so the parity is not evidence for the bar-odd channel; (ii) the literal full-value reading S(-eps) = -S(eps) is false (Re S is even and nonzero) -- the statement is about the imaginary part only. Scope-(a): no convention adjudicated for the Q_beta channel (qou-b3nk), no C-conditional value revived, the bar involution q -> 1/q is a different question and is NOT settled here.",
+  "audit_only": true,
+  "tier": "structural-parity provenance audit (60-dps measurement + exact symbolic reflection; no fit; no wiring)",
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669",
+  "computedAt": "2026-08-15T20:49:19.055132+00:00",
+  "commitSha": "a89ca987301a81461cc43dfd3086dec4016dc82d",
+  "engine": "mpmath+sympy",
+  "engineVersion": "1.3.0",
+  "scriptFile": "qbeta_kc21_parity_convention_immunity_probe.py",
+  "scriptHash": "0a8df5c6a323",
+  "assertions": [
+    {
+      "name": "A1-regression-reproduces-corpus-c3",
+      "passed": true,
+      "detail": "c3^C(q0) = -2.06934257712; vs qbeta_utils relerr 1.654e-60; vs committed -2.06934258 absdiff 2.885e-9"
+    },
+    {
+      "name": "A2-QA-analytic-branch-is-signed-form",
+      "passed": true,
+      "detail": "q^2-2q-1 = -1.9879047 < 0 at q0, so |.| continues as (2q+1-q^2); abs vs signed relerr 0.0"
+    },
+    {
+      "name": "A3-eps-parity-holds-under-convention-C",
+      "passed": true,
+      "detail": "worst odd relerr 0.0, worst even relerr 0.0 over eps in [1e-30, 1e-2]"
+    },
+    {
+      "name": "A4-eps-parity-holds-under-convention-D",
+      "passed": true,
+      "detail": "worst odd relerr 0.0, worst even relerr 0.0 -- the immunity claim's missing test"
+    },
+    {
+      "name": "A10-eps-parity-holds-under-a-control-convention-X",
+      "passed": true,
+      "detail": "z_X = q/(1+q^2) (in no channel): worst odd relerr 0.0 -- immunity is a class property, not a C/D coincidence"
+    },
+    {
+      "name": "A5-parity-under-D-is-non-vacuous",
+      "passed": true,
+      "detail": "Im c3^D(q0 + 1e-8i) = 0.038584528576 != 0, so A4 is not 0 = -0"
+    },
+    {
+      "name": "A6-D-frame-is-a-different-function",
+      "passed": true,
+      "detail": "c3^D(q0) = -974.431887747 vs c3^C(q0) = -2.06934257712; gap 972.3625452 (~469.89x |c3^C|) -- parity survives it"
+    },
+    {
+      "name": "A7-Im-vanishes-at-real-substrate-both-frames",
+      "passed": true,
+      "detail": "|Im c3^C(q0)| = 0.0, |Im c3^D(q0)| = 0.0"
+    },
+    {
+      "name": "A8-every-ladder-ingredient-is-Schwarz-reflective",
+      "passed": true,
+      "detail": "f(conj q) = conj f(q) for Q_A_signed, b, cos, h, hbar, u, z_C, z_D, z_X; worst relerr 0.0 (worst at 'h')"
+    },
+    {
+      "name": "A9-z_D-reflection-exact-symbolic",
+      "passed": true,
+      "detail": "sympy: z_D(conj q) - conj(z_D(q)) = 0 (exact zero); z_D is a rational function with rational coefficients"
+    },
+    {
+      "name": "A11-eps-parity-does-not-single-out-the-bar-odd-channel",
+      "passed": true,
+      "detail": "Q_A (bar-even) has the SAME Im-odd-in-eps property, worst relerr 0.0: the operative hypothesis is real coefficients, not bar-oddness"
+    },
+    {
+      "name": "A12-literal-full-value-oddness-is-false",
+      "passed": true,
+      "detail": "|S(-eps) - (-S(eps))| = 0.07891869156 (Re S is EVEN and nonzero, Re S = -0.03945934578); the true statement is about the imaginary part / decay projection only"
+    }
+  ],
+  "allPassed": true,
+  "result": {
+    "verdict": "VERIFIED-immune (eps-parity); mechanism restated",
+    "c3_at_q0": {
+      "C": "-2.069342577115168",
+      "D": "-974.4318877467484"
+    },
+    "frame_gap_D_minus_C": "-972.36254517",
+    "parity_worst_odd_relerr": {
+      "C": "0.0",
+      "D": "0.0",
+      "X": "0.0"
+    },
+    "parity_worst_even_relerr": {
+      "C": "0.0",
+      "D": "0.0",
+      "X": "0.0"
+    },
+    "parity_scan_C": [
+      {
+        "eps": "1e-30",
+        "im_plus": "3.83840826493e-24",
+        "re_plus": "-2.06934257712",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-24",
+        "im_plus": "3.83840826493e-18",
+        "re_plus": "-2.06934257712",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-18",
+        "im_plus": "3.83840826493e-12",
+        "re_plus": "-2.06934257712",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-12",
+        "im_plus": "3.83840826493e-6",
+        "re_plus": "-2.06934257712",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-8",
+        "im_plus": "0.0383840826493",
+        "re_plus": "-2.0693425586",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-5",
+        "im_plus": "38.3840772409",
+        "re_plus": "-2.05082731252",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-3",
+        "im_plus": "3833.00222863",
+        "re_plus": "182.960312996",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-2",
+        "im_plus": "33208.6279835",
+        "re_plus": "17323.6265078",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      }
+    ],
+    "parity_scan_D": [
+      {
+        "eps": "1e-30",
+        "im_plus": "3.8584528576e-24",
+        "re_plus": "-974.431887747",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-24",
+        "im_plus": "3.8584528576e-18",
+        "re_plus": "-974.431887747",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-18",
+        "im_plus": "3.8584528576e-12",
+        "re_plus": "-974.431887747",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-12",
+        "im_plus": "3.8584528576e-6",
+        "re_plus": "-974.431887747",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-8",
+        "im_plus": "0.038584528576",
+        "re_plus": "-974.431887728",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-5",
+        "im_plus": "38.584523163",
+        "re_plus": "-974.413340155",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-3",
+        "im_plus": "3853.0422694",
+        "re_plus": "-789.079022681",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      },
+      {
+        "eps": "1e-2",
+        "im_plus": "33404.5928995",
+        "re_plus": "16383.0083465",
+        "odd_relerr": "0.0",
+        "even_relerr": "0.0"
+      }
+    ],
+    "schwarz_reflection_relerr": {
+      "h": "0.0",
+      "hbar": "0.0",
+      "b": "0.0",
+      "u": "0.0",
+      "Q_A_signed": "0.0",
+      "z_C": "0.0",
+      "z_D": "0.0",
+      "z_X": "0.0",
+      "cos": "0.0"
+    },
+    "z_D_reflection_exact_symbolic": "0",
+    "eps_ladder": [
+      "1e-30",
+      "1e-24",
+      "1e-18",
+      "1e-12",
+      "1e-8",
+      "1e-5",
+      "1e-3",
+      "1e-2"
+    ],
+    "parity_tolerance": "1e-45"
+  },
+  "context": {
+    "axis": "KC21 structural parity -- convention immunity (verified vs asserted)",
+    "bean": "qou-kc21im",
+    "claim_audited": "docs/coordination/ck-dk-canonical-registry.md KC21 row + section 9g: 'the structural parity statement (S(-eps)=-S(eps)) and the 1/u^3 result are convention-immune' (added PR #5107)",
+    "lean_anchors": [
+      "QOU.QBeta.fig8TraceC_conj -- real coefficients => conjugation commutes with evaluation (this is the operative lemma)",
+      "QOU.QBeta.fig8Trace_im_odd -- Im T(q0-i.eps) = -Im T(q0+i.eps)",
+      "QOU.QBeta.fig8Trace_im_real_zero -- Im T(q0) = 0 at real substrate",
+      "QOU.QBeta.ladderParity_im_odd_of_reflective -- the generalisation this audit adds: reflection alone gives the parity"
+    ],
+    "the_reduction": "Schwarz reflection. Each ingredient is holomorphic on a conjugate-symmetric neighbourhood of the real q-interval around q0 and real-valued on it, hence f(conj q) = conj f(q); the property is closed under +, -, *, /, composition, sqrt on the principal branch away from the cut, and cos. The Markov parameter enters as ONE such ingredient, and z_C, z_D (and the control z_X) are all real-valued at real q > 0. The parity therefore never reads z's formula -- which is exactly why it is convention-immune, and why the immunity extends past the two registered conventions.",
+    "hypothesis_that_could_break_it": "A convention whose z is NOT real-valued on the real q-axis near q0 (e.g. one carrying an explicit i), or one introducing a branch point / pole inside the conjugate-symmetric disc used. Neither C nor D nor X does; z_C's sqrt branch point sits at q = 0 and z_D's poles at q = +-i, both far from q0 ~ 1.11.",
+    "corrections_recorded": [
+      "KC21 states 'bar-odd ==> odd in eps'; the Lean chain proves 'real coefficients ==> Im odd in eps' (fig8TraceC_conj). A11 shows the bar-EVEN Q_A has the same property, so the parity does not single out the bar-odd channel and is not evidence for it.",
+      "The literal reading S(-eps) = -S(eps) of the full complex value is false (A12): Re S is even and nonzero. The registry sentence should read Im S, or 'the decay projection'."
+    ],
+    "scope": "Scope-(a). Adjudicates no convention for the Q_beta channel (open, bean qou-b3nk). Revives no C-conditional value: c_3, (H1), [3]_q/25, J-hbar^2, S_leak and q*_S stay C-conditional per registry section 9g. The bar involution sigma: q -> 1/q is a DIFFERENT involution from complex conjugation and is not touched here -- in particular bar(z_D) = q^-4 z_D (PR #5107 A2) and the z_C full-bar-condition failure (PR #5111) remain open as stated. Per 'Defined residual != derived decomposition', S = c_3 + Vol(4_1) remains a residual of a C-frame extraction."
+  },
+  "durationMs": 65
+}

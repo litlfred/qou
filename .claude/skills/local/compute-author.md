@@ -131,7 +131,15 @@ order:
 python3 -m pip install numpy mpmath sympy
 
 # 2. In-repo pure-Python packages (Layer 2a/2b), editable.
-python3 -m pip install -e tools/qou-substrate -e tools/pyhecke -e tools/witness-schema
+#    NOTE the third path: witness-schema lives under `schemas/`, NOT `tools/`
+#    (moved by `e2ded2c607` when qou-specific schemas came back from
+#    folio-assistant). Install the PACKAGE ROOT — `schemas/witness-schema` —
+#    not `schemas/witness-schema/python`, which holds the module but no
+#    pyproject.toml. This line previously read `-e tools/witness-schema`,
+#    a path that does not exist; because pip is atomic over its argument
+#    list, that failure took the two GOOD installs down with it (the same
+#    gotcha the SnapPy note below describes).
+python3 -m pip install -e tools/qou-substrate -e tools/pyhecke -e schemas/witness-schema
 
 # 3. pyhecke_native — NOT on PyPI yet (alpha), and the prebuilt wheel
 #    is usually NOT shipped. BUT the container ships the Rust toolchain
@@ -159,6 +167,104 @@ Key facts (so agents stop mis-reporting the blocker):
   the wheel* — after the `pip install ./tools/pyhecke-native` above, even
   those are unblocked. Corpus-grep / formalize-first discipline: build
   it before reporting a capability as unavailable.
+
+#### SnapPy — `pip install snappy` works; a failed batch install is a lie
+
+`computations/knot-volumes.py` (and any producer taking hyperbolic volumes
+from the census rather than a closed form) needs **SnapPy**. It installs
+straight from PyPI, ~30 s:
+
+```bash
+python3 -m pip install snappy      # -> snappy, snappy_manifolds, spherogram, plink, cypari
+python3 -c "import snappy; print(snappy.__version__)"
+```
+
+The PyPI name `snappy` **is** the 3-manifolds package here, not the
+compression library. A `UserWarning: Plink failed to import tkinter` on
+import is expected and harmless in a headless container.
+
+**The gotcha that will fool you:** `pip install` is atomic over its whole
+argument list. `pip install numpy pyhecke-native snappy` fails *entirely* —
+installing **nothing**, including the two that would have worked — because
+`pyhecke-native` is not on PyPI (build it from `./tools/` per above). The
+error text names only the unresolvable package, so it reads as "snappy is
+unavailable" when snappy was never attempted. **Install one package per
+invocation, or at least separate the in-repo builds from the PyPI ones,
+before concluding any dependency is unobtainable.**
+
+#### STRICT — provision BEFORE re-running a producer, or you strip provenance
+
+`WitnessBuilder` records the versions of the packages **actually importable
+at run time**. Re-running a producer in an under-provisioned container
+therefore *silently deletes* environment fields from the witness — the run
+succeeds, every assertion passes, and the diff quietly drops real
+provenance:
+
+```diff
+-    "numpy": "2.4.6",
+-    "mpmath": "1.3.0",
+-    "pyhecke_native": "0.9.0"
++    "mpmath": "1.3.0"
+```
+
+That is a **regression committed under a green run**, and neither the
+assertions nor `precision-gates.sh` will flag it. Rules:
+
+1. **Bootstrap the full stack first** (numpy + mpmath + sympy + the in-repo
+   packages + `pyhecke_native` + SnapPy if the producer touches volumes),
+   *then* re-run.
+2. **Always diff the regenerated witness for env/version keys** before
+   committing — `git diff -- <witness> | grep -iE "numpy|mpmath|pyhecke|snappy|version"`.
+   Any `-` line there means your container is poorer than the one that wrote
+   the committed copy. Install and re-run; do not commit the stripped one.
+3. If a dependency genuinely cannot be installed, **revert the witness and
+   bean it**. A cosmetic fix (a corrected label in a `description` string)
+   never justifies trading away recorded provenance.
+
+Measured 2026-08-15: a one-word label fix to
+`qbeta_bring_embedding_magnitude_probe.py` dropped `numpy` and
+`pyhecke_native` from its witness on the first re-run; installing both and
+re-running restored them byte-for-byte.
+
+#### A long run that "died to infrastructure" may have OOM'd — check before re-running
+
+The fourth trap of the same family: it passes silently and it reads as
+something else. A worker pool sized by `cpu_count()` is sized by the **wrong
+resource** when each worker holds a large dense array. The run does not slow
+down and does not raise — it **hangs**, and from the outside that is
+indistinguishable from a container restart or a torn-down background job.
+
+Measured 2026-08-15 on `rho_k_co_casimir_extended.py` at helium-4 (n=12):
+
+| symptom | reading |
+|---|---|
+| CPU time **unchanged** across a 6-second sample, on every worker | not computing |
+| all workers in `futex_do_wait` | blocked, not busy |
+| RSS **4.8 GB + 5.1 GB** of a 16 GB box | two workers, ~10 GB |
+| `khugepaged` pinned at 80 % | kernel thrashing on hugepage compaction |
+
+Cause: the largest partition of 12 is **dim 7700**, and Hoefsmit generators
+are stored dense, so eleven of them are `7700² × 8 B × 11 = 5.22 GB` **per
+worker**. Four workers ask for ~20 GB. `cpu_count()` cannot see memory.
+
+**Before concluding a long run was killed by infrastructure:**
+
+1. **Sample CPU time twice, a few seconds apart** (`ps -eo pid,time,cmd`). If
+   it does not advance, the job is blocked, not slow — and a longer timeout
+   will not help.
+2. **Read RSS against total RAM** (`free -m`, `ps -eo rss`). Workers × per-worker
+   RSS is the number that matters, not core count.
+3. **Then** re-run with the pool capped: `rho_k_co_casimir_extended.py`
+   takes `--workers N` / `$RHO_K_WORKERS` for exactly this reason.
+
+Related: `pgrep -c -f rho_k_co_casimir` **matches its own command line**, so it
+reports the job alive indefinitely after it dies. Use
+`pgrep -af "python3 .*<script>"` and check the log's mtime.
+
+Do not read a flop count as a speed prediction either, when memory is the
+binding constraint — measured on the same module, a representation with ~3900×
+fewer flops ran **1.3–2× slower**, because it was bandwidth-bound while dense
+BLAS runs near peak (bean `qou-bk0q`).
 
 ## §1. Precision discipline (STRICT, no f64 in production)
 
@@ -342,7 +448,7 @@ would have saved):**
 
 | structural argument (cheap) | killed (expensive) |
 |---|---|
-| `dc_3/dq ≈ 4.6e6` is impossible for a smooth real `f` ([PR #1821](https://github.com/litlfred/qou/pull/1821)) | the entire **real-q `c_3 = f(q)`** family — incl. the 4-session c_3 flip-flop + sl_6 / residual numerical scans |
+| `dc_3/dq ≈ 3.84e6` is impossible for a smooth real `f` (corrected 2026-08-22 from `4.6e6`, the stale-c₃ figure; the prune is unaffected — see AGENTS.md §formalize-first-probe) ([PR #1821](https://github.com/litlfred/qou/pull/1821)) | the entire **real-q `c_3 = f(q)`** family — incl. the 4-session c_3 flip-flop + sl_6 / residual numerical scans |
 | entropy bound `precision > n_terms·log10(2·height)` ([PR #1805](https://github.com/litlfred/qou/pull/1805)) | the **12-constant PSLQ** search — at A's ~11 digits ANY relation found is spurious |
 | A is asymptotically ~4 sig figs from `c_2..c_10` ([PR #1805](https://github.com/litlfred/qou/pull/1805)) | **high-precision identifications** of A — pointless until canonical c_11+ exists |
 | finite linear-algebra rank check ([commit `eca145ca`](https://github.com/litlfred/qou/commit/eca145ca)) | the **constant-kernel recursion** — refuted through depth 4 before any fit |
@@ -525,14 +631,69 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 `active_set`, `primal_obj`, `dual_obj`, `duality_gap` per AGENTS.md
 §LP/SDP duals.
 
+### §5.1 STRICT — an audit witness must not be written by two different scopes
+
+An audit witness whose filename claims corpus-wide scope must only ever be
+committed from a **corpus-wide** run. The failure looks like an ordinary
+refresh in `git status`, so only the counts give it away.
+
+**The cause is a shared output path, not a scoping flag.** When one audit
+script is invoked twice with different scan roots and derives its output
+path from its own location, the LATER invocation wins:
+
+| Runner | Scans | Wrote to |
+|---|---|---|
+| `witness_raw_float64_audit.py --strict` | `computations/` — 1561 files / 534192 fields | `computations/witness-raw-float64-audit.witness.json` |
+| the SAME script, `--scan-root docs/audits/scripts --strict` | 5 files / 20 fields | ← the same path |
+
+`precision-gates.sh` orders the advisory gate after the ratchet, so the
+five-file scan overwrote the corpus one on **every** run of that script.
+The committed witness was left reading `dirty_witnesses 1561 → 5` and
+`drained_files 14 → 1572`, with every carve-out record dropped.
+
+**`--changed` is NOT the mechanism.** An earlier version of this section
+said it was. It is only a cheap short-circuit deciding whether to run at
+all — the script says so in its own comment ("the ratchets are corpus-wide,
+not per-file, so there is nothing to scope down") — and it scopes no gate.
+That is why the clobber also fired on full runs.
+
+**Fixed on `main`** (`70835094`, `7668b998`; bean `qou-pgdw`) — and the fix
+is worth reading before you write a similar one, because two parts of it
+are easy to miss:
+
+- `_output_name(scan_root)` **derives** the filename rather than adding an
+  `--out` flag someone must remember to pass, so the collision is impossible
+  for any future scan root too.
+- `SELF_OUTPUT_PREFIX` self-excludes the derived witness from the scan.
+  Without it the new file is itself a witness under `computations/` and the
+  next run re-detects the audit's own output.
+- The slug is **infixed**, keeping the `-audit.witness.json` suffix, because
+  `AUDIT_SUFFIXES` in `computations/audits/q0_anchor_consistency_audit.py`
+  classifies audit self-outputs by SUFFIX. A name ending in the slug is
+  filed as `Q0_ANCHOR_MISSING` instead — measured, 1889 → 1890.
+
+The `--chapter` case is a genuinely different mechanism and is still live:
+
+| Runner | Scans | Overwrites |
+|---|---|---|
+| `content/pipeline/q-usage-audit.ts --chapter` | one chapter | `docs/audits/<date>-q-usage-audit.witness.json` — records only the LAST chapter under a corpus-wide name (#4917) |
+
+**Rule.** Before committing any audit witness, read its counts and its
+scope field. The gate's own "STALE COMMITTED AUDIT WITNESSES … if a COUNT
+moved, commit the regenerated one" advice is sound only when the run was
+**unscoped**; under a scoped run a moved count may just mean the scope
+shrank. A count moving in the *draining* direction on a full run is genuine
+progress and should be committed. When in doubt, re-run unscoped.
+
 ## §6. CI / merge etiquette
 
 - **CI is billing.** Don't churn commits. Squash where possible.
 - **Combine related PRs** per AGENTS.md "minimize PR creation".
 - **Branch naming:** `claude/<theme>-<utc-ymd>`. Pattern is load-bearing
   for `coordinate.md` + upload-branch idempotency.
-- **/prepare-merge** at the end. Address Gemini + Copilot review
-  comments mechanically; don't argue cosmetic findings.
+- **/prepare-merge** at the end. Address Copilot review comments
+  mechanically (Gemini is sunset — do not wait on it); don't argue
+  cosmetic findings.
 - **Cross-check tolerance 1e-25 at 50-dps.** Never claim "passes at 1e-15".
 
 ## §7. Quick gotchas table
@@ -550,6 +711,9 @@ For LP/SDP witnesses specifically: also emit `y0_star`, `y_star`,
 | Compute crashes silently with 0-byte BG output | sympy stack overflow or OOM | re-launch with `python -u` + tee + progress lines |
 | Sympy round-trip dominates ⁵Li+ profile | reduce path still in Python | port `incremental_reduce_rust` to Rust (Tier 1.A roadmap) |
 | Orbit-sum identity gives wrong tr_M | claimed symmetry isn't a conjugation | do §3 preflight before shipping orbit shortcuts |
+| `pip install a b c` says one package is unavailable | pip is atomic — one unresolvable name installs NOTHING | install one per invocation; see §0.1 (SnapPy looked missing only because `pyhecke-native` shared the command) |
+| Regenerated witness silently loses `numpy`/`pyhecke_native` keys | container poorer than the one that wrote the committed copy | bootstrap fully, re-run, and grep the diff for `-` version lines before committing (§0.1) |
+| An audit witness's counts collapse (e.g. `1561 -> 5`) after a gate run | two invocations of one audit script shared a fixed output path; the later, narrower scan won — NOT `--changed`, which scopes nothing | fixed on main (`qou-pgdw`) by deriving the name from the scan root + self-excluding it; keep the `-audit.witness.json` suffix if you write a similar fix (§5.1) |
 
 ## §8. Pre-work checklist (use before every compute change)
 

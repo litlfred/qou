@@ -46,7 +46,7 @@ Run: python3 -u computations/alpha_em_b2_scalar_c_probe.py 2>&1 | tee /tmp/b2c.l
 
 -- Ref: [manuscript] prop:em-coupling-bring-zero-mode
 -- Ref: [braden-northover-2012] https://doi.org/10.3842/SIGMA.2012.065
--- Ref: [halverson-1998-markov-weights] https://doi.org/10.1006/jabr.1998.7437
+-- Ref: [orellana1998] https://doi.org/10.1006/jabr.1998.7437
 """
 from __future__ import annotations
 
@@ -59,8 +59,9 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from derived_chi_catalogue_matrix_m_mpfr import seminormal_matrices_mpfr  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 50
+set_compute_dps()
 
 SHAPE = (4, 1)      # std = standard 4-dim S₅ irrep; #SYT = 4
 N = sum(SHAPE)      # 5
@@ -71,8 +72,11 @@ def _q0() -> "mp.mpf":
     muon/proton pin-confusion bug, bean tnjb). The structural conclusions
     (nullity, symmetric type) are q-independent for generic q."""
     try:
-        from qou_substrate.constants import Q  # type: ignore[import-not-found]
-        return mp.mpf(str(Q)), "qou_substrate.constants.Q (package pin)"
+        # Q_50_DIGIT_STR, not Q: `Q` is the f64 solve (NO FLOAT64).
+        from qou_substrate.constants import (  # type: ignore[import-not-found]
+            Q_50_DIGIT_STR)
+        return (mp.mpf(Q_50_DIGIT_STR),
+                "qou_substrate.constants.Q_50_DIGIT_STR (package pin, 50 dps)")
     except Exception:
         # Fallback: canonical muon-q₀ value used by the computations/ layer.
         return mp.mpf("1.10997859555733471"), "muon-q₀ literal (computations/ layer)"

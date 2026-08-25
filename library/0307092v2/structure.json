@@ -1,0 +1,280 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "0307092v2",
+ "source": {
+  "file": "0307092v2.pdf",
+  "sha256": "de2f7ddec49b2ce6ccafd5a9a0be350972ffcf2014a6a3601a6d650df0018650",
+  "bytes": 519702,
+  "pages": 62
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "Extended Bloch group and the Cheeger-Chern-Simons class",
+  "authors_raw": "Extended Bloch group and the",
+  "abstract": "We deﬁne an extended Bloch group and show it is naturally isom orphic to H3(PSL(2, C)δ; Z). Using the Rogers dilogarithm function this leads to an ex- act simplicial formula for the universal Cheeger–Chern–Si mons class on this homology group. It also leads to an independent proof of the a nalytic relation- ship between volume and Chern–Simons invariant of hyperbol ic 3–manifolds conjectured in [16] and proved in [24], as well as eﬀective for mulae for the Chern–Simons invariant of a hyperbolic 3–manifold.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20181026023526-04'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_lines": [
+   "Geometry & Topology GGGGG",
+   "GGGGG GGG",
+   "T T TTT",
+   "TTTTTTTT"
+  ],
+  "title_prev": "Extended Bloch group and the Cheeger–Chern–Simons class Walter D Neumann"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The extended Bloch group",
+   "page": 4,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Parameters for ideal hyperbolic simplices",
+   "page": 8,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "Definition of",
+   "page": 13,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "Representing elements of Hn(G;Z)",
+   "page": 13,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 3,
+   "title": "Algebraic description",
+   "page": 14,
+   "source": "outline",
+   "number": "4.1.1"
+  },
+  {
+   "level": 3,
+   "title": "Topological description",
+   "page": 15,
+   "source": "outline",
+   "number": "4.1.2"
+  },
+  {
+   "level": 2,
+   "title": "Definition of 2mu-:6muplus1muH3(G;Z)P\"0362P(C)",
+   "page": 16,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "Developing map",
+   "page": 19,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "The cycle relation",
+   "page": 23,
+   "source": "outline",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Computation of B\"0362B(C)",
+   "page": 26,
+   "source": "outline",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "The more extended Bloch group",
+   "page": 30,
+   "source": "outline",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorem ??",
+   "page": 32,
+   "source": "outline",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Start of the proof of Theorem ??",
+   "page": 36,
+   "source": "outline",
+   "number": "10"
+  },
+  {
+   "level": 1,
+   "title": "Completion of proof of Theorem ??",
+   "page": 41,
+   "source": "outline",
+   "number": "11"
+  },
+  {
+   "level": 1,
+   "title": "Cheeger--Chern--Simons class",
+   "page": 47,
+   "source": "outline",
+   "number": "12"
+  },
+  {
+   "level": 1,
+   "title": "Unordered simplices",
+   "page": 49,
+   "source": "outline",
+   "number": "13"
+  },
+  {
+   "level": 1,
+   "title": "Invariants of 3--manifolds",
+   "page": 52,
+   "source": "outline",
+   "number": "14"
+  },
+  {
+   "level": 1,
+   "title": "Example",
+   "page": 58,
+   "source": "outline",
+   "number": "15"
+  },
+  {
+   "level": 1,
+   "title": "Other fields",
+   "page": 60,
+   "source": "outline",
+   "number": "16"
+  },
+  {
+   "level": 1,
+   "title": "Bibliography",
+   "page": 61,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 2,
+   "page_end": 4,
+   "n_chars": 6010,
+   "n_words": 1133
+  },
+  {
+   "id": "sec-001-2-the-extended-bloch-group",
+   "number": "2",
+   "title": "The extended Bloch group",
+   "level": 1,
+   "page_start": 4,
+   "page_end": 8,
+   "n_chars": 7079,
+   "n_words": 1642
+  },
+  {
+   "id": "sec-002-3-parameters-for-ideal-hyperbolic-simplices",
+   "number": "3",
+   "title": "Parameters for ideal hyperbolic simplices",
+   "level": 1,
+   "page_start": 8,
+   "page_end": 14,
+   "n_chars": 11526,
+   "n_words": 2420
+  },
+  {
+   "id": "sec-003-411-algebraic-description",
+   "number": "4.1.1",
+   "title": "Algebraic description",
+   "level": 3,
+   "page_start": 14,
+   "page_end": 18,
+   "n_chars": 8757,
+   "n_words": 1789
+  },
+  {
+   "id": "sec-004-5-developing-map",
+   "number": "5",
+   "title": "Developing map",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 23,
+   "n_chars": 11501,
+   "n_words": 2217
+  },
+  {
+   "id": "sec-005-6-the-cycle-relation",
+   "number": "6",
+   "title": "The cycle relation",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 30,
+   "n_chars": 13739,
+   "n_words": 3123
+  },
+  {
+   "id": "sec-006-8-the-more-extended-bloch-group",
+   "number": "8",
+   "title": "The more extended Bloch group",
+   "level": 1,
+   "page_start": 30,
+   "page_end": 49,
+   "n_chars": 42890,
+   "n_words": 8620
+  },
+  {
+   "id": "sec-007-13-unordered-simplices",
+   "number": "13",
+   "title": "Unordered simplices",
+   "level": 1,
+   "page_start": 49,
+   "page_end": 58,
+   "n_chars": 21041,
+   "n_words": 4337
+  },
+  {
+   "id": "sec-008-15-example",
+   "number": "15",
+   "title": "Example",
+   "level": 1,
+   "page_start": 58,
+   "page_end": 62,
+   "n_chars": 7374,
+   "n_words": 1438
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 21,
+  "sections": 9,
+  "chars_total": 129917
+ }
+}

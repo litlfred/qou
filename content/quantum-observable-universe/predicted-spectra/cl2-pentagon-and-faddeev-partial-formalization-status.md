@@ -14,7 +14,7 @@ The general non-boundary cases contain the primary mathematical content:
 
 See [Table 2](#tbl:cl2-pentagon-and-faddeev-partial-table2-data).
 
-Both remain isolated tasks. The §3b-cond scaffolding is structurally complete. The boundary-case identities are closed in Lean. The open content isolates the upstream Mathlib gap.
+Both remain isolated tasks. The conditional-class scaffolding is structurally complete. The boundary-case identities are closed in Lean. The open content isolates the upstream Mathlib gap.
 
 ## Status
 

@@ -60,7 +60,7 @@ def Cell.transpose (x : Cell) : Cell := ⟨x.col, x.row⟩
       c(λ) + c(λ^T) = 0  cell-by-cell.
 
     The proof is direct integer arithmetic. -/
-theorem Cell.content_plus_transpose_content_eq_zero (x : Cell) :
+theorem content_plus_transpose_content_eq_zero (x : Cell) :
     x.content + x.transpose.content = 0 := by
   unfold Cell.content Cell.transpose
   simp
@@ -92,7 +92,7 @@ def PartitionWithCells.transpose (P : PartitionWithCells) :
 theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
     (P : PartitionWithCells) :
     P.content_sum + P.transpose.content_sum = 0 := by
-  unfold content_sum transpose
+  unfold PartitionWithCells.content_sum PartitionWithCells.transpose
   rw [List.map_map]
   rw [show (Cell.content ∘ Cell.transpose) =
         (fun x => -x.content) by
@@ -115,7 +115,7 @@ theorem PartitionWithCells.content_sum_plus_transpose_content_sum_eq_zero
     partition case (e.g. `(2, 2)`, `(3, 1)`, `(4, 1, 1, 1)` etc.):
     folding pairs each cell with its transpose, and the
     fixed-point partition sits at the symmetric centre. -/
-theorem PartitionWithCells.self_transpose_content_sum_zero
+theorem self_transpose_content_sum_zero
     (P : PartitionWithCells)
     (h : P = P.transpose) :
     P.content_sum = 0 := by

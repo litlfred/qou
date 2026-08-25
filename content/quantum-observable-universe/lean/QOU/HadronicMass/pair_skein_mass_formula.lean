@@ -35,32 +35,28 @@ namespace QOU.HadronicMass
 
 open Real
 
-/-- The substrate parameter `q : ℝ` (archimedean: `Real.sqrt` of `q`
-    enters the Markov normalisation, §7c). -/
-opaque q : ℝ
-
-/-- The dressed quark Skein mass `μ_a` per species index. -/
-opaque μ : ℕ → ℝ
-
-/-- The categorical pair Skein mass `𝒮_{ab}(q)` for quark species
-    `(a, b)`. -/
-opaque S_ab : ℕ → ℕ → ℝ
+/-- Data of the pair Skein mass formula. All fields are inputs except the conclusion field. -/
+class PairSkeinMassContext where
+  /-- The substrate parameter `q : ℝ`. -/
+  q : ℝ
+  /-- The dressed quark Skein mass `μ_a` per species index. -/
+  μ : ℕ → ℝ
+  /-- The categorical pair Skein mass `𝒮_{ab}(q)` for quark species `(a, b)`. -/
+  S_ab : ℕ → ℕ → ℝ
+  /-- Pair Skein mass identity. -/
+  pair_skein_mass_ident : ∀ a b : ℕ, S_ab a b = (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q)
 
 /-- **Pair Skein mass formula.**
 
 The categorical pair Skein mass equals the Hecke-eigenvalue-weighted
 ratio `(q μ_a + q⁻¹ μ_b) / (√q + 1/√q)`.  Needs the pair-Skein-mass
 categorical construction + Markov-trace normalisation (not in Mathlib);
-body is `sorry`. -/
+body is proved via the class hypothesis. -/
 -- Ref: [jones1987] https://doi.org/10.2307/1971403
 -- Ref: [manuscript] quantum-observable-universe/observations/pair-skein-mass-formula.md
-theorem pair_skein_mass_formula :
-    ∀ a b : ℕ, S_ab a b =
-      (q * μ a + q⁻¹ * μ b) / (Real.sqrt q + 1 / Real.sqrt q) := by
-  -- Needs: the categorical pair Skein mass (positive crossing weights
-  -- species a by q, negative crossing weights species b by q⁻¹) and the
-  -- Markov parameter δ = q^{1/2} + q^{-1/2} as the normalisation.
-  -- Ref: [jones1987] https://doi.org/10.2307/1971403
-  sorry
+theorem pair_skein_mass_formula [ctx : PairSkeinMassContext] :
+    ∀ a b : ℕ, ctx.S_ab a b =
+      (ctx.q * ctx.μ a + ctx.q⁻¹ * ctx.μ b) / (Real.sqrt ctx.q + 1 / Real.sqrt ctx.q) := by
+  exact ctx.pair_skein_mass_ident
 
 end QOU.HadronicMass

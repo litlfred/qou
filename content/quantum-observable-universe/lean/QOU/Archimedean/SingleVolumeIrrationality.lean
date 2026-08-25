@@ -54,5 +54,12 @@ $$
 -- The conjecture itself.  The `sorry` represents the **open
 -- conjecture** per §3b — not a missing proof.
 -- Ref: [manuscript] quantum-observable-universe/archimedean-universe/single-volume-irrationality.ts
-noncomputable instance : SingleVolumeIrrationality := sorry
+-- **No instance is provided — that is the honest open state** (AGENTS.md §3b-tax).
+-- History: this file previously carried
+--     axiom singleVolumeIrrationality_conjecture : SingleVolumeIrrationality
+--     noncomputable instance : SingleVolumeIrrationality := singleVolumeIrrationality_conjecture
+-- i.e. the conjecture was asserted by `axiom` and installed as a global instance, so
+-- every downstream `[SingleVolumeIrrationality]` resolved for free.  Removed, not completed — downstream
+-- results must take `[SingleVolumeIrrationality]` as an explicit hypothesis.
+
 end QOU.Archimedean

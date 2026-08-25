@@ -62,7 +62,7 @@ knots is the hyperbolic complex volume. Reported transparently (no cherry-pick):
 
 | candidate (w³/w² datum, evaluated at q₀) | value | miss |
 |---|---|---|
-| **Vol(Bor)/Vol(4₁) = 8G / 2Λ(π/3)** *(the forced period, q₀-indep)* | 3.6099 | **11.42 %** |
+| **Vol(Bor)/Vol(4₁) = 8G / (2·Cl₂(π/3))** *(the forced period, q₀-indep)* | 3.6099 | **11.42 %** |
 | \|ζ₅⁻³\|/\|ζ₅⁻²\| (X5 phase) | 1.0000 | 75.5 % |
 | sinh(3 ln q₀)/sinh(2 ln q₀) | 1.5136 | 62.9 % |
 | cosh(3 ln q₀)/cosh(2 ln q₀) | 1.0270 | 74.8 % |

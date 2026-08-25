@@ -40,8 +40,7 @@ $H_3(R, q)$ ([three parameters from Wedderburn](#prop:three-parameters-wedderbur
 
 - $q_0$ is a canonical constant *only* via CAL-2; downstream compute
   must carry $q_0$ symbolically as long as possible and substitute
-  the CAL-2 exact algebraic values at the final reporting step
-  ([symbolic-in-$q$ throughout](https://github.com/litlfred/qou/blob/main/docs/audits/-math-framework-workplan.md#p25)).
+  the CAL-2 exact algebraic values at the final reporting step.
 - $\mathfrak{E}_0$ has two framework-derived forms and one CODATA
   cross-check, all related by the brane-tower correction $1/(1-\hbar_q^2)$:
     - $\mathfrak{E}_0^{(N=0)} = m_e/(q_0(q_0-1)) \approx 4.186$ MeV
@@ -74,12 +73,12 @@ The framework forbids:
   $\delta q_0$ propagated from CODATA $m_\mu/m_e$ is a CAL-2 cross-check;
   it may not be supplemented by independent fits to $m_e$, $m_\mu$,
   $m_\tau$, or any other mass.
-- *A second hadronic scale*. $m_{\pi^{±}}$ is the CAL-3 proxy; the
+- *A second hadronic scale*. $m_{\pi^{\pm}}$ is the CAL-3 proxy; the
   hadronic energy scale $\mathfrak{E}_0$ is derived from CAL-1 + CAL-2,
   and $\mathfrak{Q}_\beta(n)$ is the CAL-2 proxy — neither is an
   independent fourth input. Proton mass, neutron mass,
   and all nuclear binding energies must be derived from
-  $\{m_e, q_0, m_{\pi^{±}}\}$, not introduced as inputs.
+  $\{m_e, q_0, m_{\pi^{\pm}}\}$, not introduced as inputs.
 
 ## (Co)homological alignment
 
@@ -96,7 +95,7 @@ The calibration map is:
 |------------------|-------------|------|
 | $\mathrm{alt}$ ($\lambda = (1^3)$) | CAL-2: $\mathfrak{D}_\beta$ (proxy $m_\mu/m_e$) $\mapsto q_0$ | Sets the deformation scale (alt is the "antisymmetric" / antimatter channel; $q_0 = 1$ collapses it). |
 | $\mathrm{std}$ ($\lambda = (2,1)$) | CAL-1: $m_e$ | Sets the leptonic mass quantum (std is the 2-dimensional "matter" channel where $\mathrm{tr}_M(\sigma_i\sigma_j) = z^2$). |
-| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $\mathfrak{D}_\pi$ (proxy $m_{\pi^{±}}$) | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$); when $q_0$ is pinned by the alternative anchor $m_\mu/m_e$, the relation $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) makes it a cross-check on the same modulus, not a fourth input. |
+| $\mathrm{sym}$ ($\lambda = (3)$) | CAL-3: $\mathfrak{D}_\pi$ (proxy $m_{\pi^{\pm}}$) | Sets the chiral / Goldstone scale (sym is the "all crossings positive" / hadronic channel). The pion mass is the pseudo-Goldstone boson of broken chiral $\mathrm{SU}(2)_A$; its mass encodes the chiral condensate $\langle\bar{q}q\rangle^{1/3} \approx 240\;\mathrm{MeV}$ which is absent from $(m_e, q_0)$. $\mathfrak{Q}_\beta(n)$ is the **measured proxy for CAL-2** ($\mathfrak{D}_\beta$); when $q_0$ is pinned by the alternative anchor $m_\mu/m_e$, the relation $\mathfrak{Q}_\beta = m_e \lvert q_0^2 - 2q_0 - 1\rvert(q_0+1)/(2q_0^3) \approx 0.784\;\mathrm{MeV}$ (0.17% miss) makes it a cross-check on the same modulus, not a fourth input. |
 
 This is the meaning of "aligned to (co)homology": the three
 calibrations correspond bijectively to the three irreducible

@@ -8,6 +8,7 @@ export default conjecture({
     validation: "not_checked",
   },
   uses: [
+    "def:archimedean-realization-functor",
     "rem:kashaev-as-archimedean-realization",
     "def:quantum-bloch-group",
   ],

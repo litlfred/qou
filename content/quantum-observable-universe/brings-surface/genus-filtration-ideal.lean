@@ -1,4 +1,5 @@
 import Mathlib.Algebra.Polynomial.Laurent
+import Mathlib.Algebra.Polynomial.Monic
 import Mathlib.Data.Int.Basic
 import Mathlib.Data.Nat.Basic
 
@@ -112,21 +113,135 @@ noncomputable def heckeCoeff (s : R_q) : ℕ → R_q
 -- Ref: [manuscript] §6/genus-filtration-ideal
 def seifertGenus_T2p (p : ℕ) : ℕ := (p - 1) / 2
 
-/-- The polynomial degree of a_p in u = s² equals (p-1)/2.
-    This is the non-trivial content: the algebraic complexity
-    (Chebyshev degree) equals the topological complexity
-    (Seifert genus).  Stated as an opaque axiom because the
-    full polynomial ring formalization is deferred. -/
+/-- The same recurrence carried in `ℤ[X]` rather than in `R_q`.
+
+    `heckeCoeff` above is stated for an arbitrary ring element `s : R_q`,
+    which is the right shape for the skein narrative but the wrong shape
+    for a *degree* claim: `degree` is a property of a polynomial in a
+    formal indeterminate, not of an element of the coefficient ring. So
+    the degree statements below are made about `heckePoly`, the same
+    recurrence with `s := X`. -/
+-- Ref: [manuscript] §6/genus-filtration-ideal
+noncomputable def heckePoly : ℕ → Polynomial ℤ
+  | 0 => 0
+  | 1 => 1
+  | n + 2 => Polynomial.X * heckePoly (n + 1) + heckePoly n
+
+-- Ref: [manuscript] §6/genus-filtration-ideal
+lemma heckePoly_two : heckePoly 2 = (Polynomial.X : Polynomial ℤ) := by
+  show Polynomial.X * heckePoly 1 + heckePoly 0 = Polynomial.X
+  show Polynomial.X * 1 + 0 = Polynomial.X
+  ring
+
+/-- `a_{n+1}` is monic of degree `n`.
+
+    Proved as a conjunction because the induction needs both halves at
+    once: the degree step needs the *leading coefficient* of the previous
+    term to be nonzero, and the monic step needs the previous *degree* to
+    dominate. -/
+-- Ref: [manuscript] §6/genus-filtration-ideal
+theorem heckePoly_monic_natDegree (n : ℕ) :
+    (heckePoly (n + 1)).Monic ∧ (heckePoly (n + 1)).natDegree = n := by
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    match n with
+    | 0 => exact ⟨by simp [heckePoly, Polynomial.monic_one], by simp [heckePoly]⟩
+    | 1 => rw [heckePoly_two]; exact ⟨Polynomial.monic_X, Polynomial.natDegree_X⟩
+    | (m + 2) =>
+      obtain ⟨hm1, hd1⟩ := ih (m + 1) (by omega)
+      obtain ⟨_, hd0⟩ := ih m (by omega)
+      have hrec : heckePoly (m + 3) =
+          Polynomial.X * heckePoly (m + 2) + heckePoly (m + 1) := rfl
+      have hXm : (Polynomial.X * heckePoly (m + 2)).Monic :=
+        Polynomial.monic_X.mul hm1
+      have hXd : (Polynomial.X * heckePoly (m + 2)).natDegree = m + 2 := by
+        rw [Polynomial.natDegree_mul (Polynomial.monic_X (R := ℤ)).ne_zero hm1.ne_zero,
+          Polynomial.natDegree_X, hd1]
+        omega
+      have hlt : (heckePoly (m + 1)).degree
+          < (Polynomial.X * heckePoly (m + 2)).degree := by
+        apply Polynomial.degree_lt_degree; rw [hd0, hXd]; omega
+      refine ⟨?_, ?_⟩
+      · rw [hrec]; exact hXm.add_of_left hlt
+      · rw [hrec,
+          Polynomial.natDegree_eq_of_degree_eq
+            (Polynomial.degree_add_eq_left_of_degree_lt hlt), hXd]
+
+-- Ref: [manuscript] §6/genus-filtration-ideal
+theorem heckePoly_natDegree (n : ℕ) : (heckePoly (n + 1)).natDegree = n :=
+  (heckePoly_monic_natDegree n).2
+
+/-- Every nonzero coefficient of `a_{n+1}` sits in a degree congruent to
+    `n` mod 2. For odd `p` this says `a_p` is an *even* polynomial in `s`,
+    which is what makes it a polynomial in `u = s²` at all. -/
+-- Ref: [manuscript] §6/genus-filtration-ideal
+theorem heckePoly_coeff_parity (n : ℕ) :
+    ∀ k, (heckePoly (n + 1)).coeff k ≠ 0 → k % 2 = n % 2 := by
+  induction n using Nat.strong_induction_on with
+  | _ n ih =>
+    match n with
+    | 0 =>
+      intro k hk
+      rw [show heckePoly 1 = (1 : Polynomial ℤ) from rfl, Polynomial.coeff_one] at hk
+      by_cases h : k = 0
+      · simp [h]
+      · simp [h] at hk
+    | 1 =>
+      intro k hk
+      rw [heckePoly_two, Polynomial.coeff_X] at hk
+      by_cases h : 1 = k
+      · omega
+      · simp [h] at hk
+    | (m + 2) =>
+      intro k hk
+      have hrec : heckePoly (m + 3) =
+          Polynomial.X * heckePoly (m + 2) + heckePoly (m + 1) := rfl
+      match k with
+      | 0 =>
+        rw [hrec, Polynomial.coeff_add, Polynomial.mul_coeff_zero,
+          Polynomial.coeff_X] at hk
+        simp at hk
+        have := ih m (by omega) 0 hk
+        omega
+      | (j + 1) =>
+        rw [hrec, Polynomial.coeff_add, Polynomial.coeff_X_mul] at hk
+        by_cases h1 : (heckePoly (m + 2)).coeff j = 0
+        · rw [h1, zero_add] at hk
+          have := ih m (by omega) (j + 1) hk
+          omega
+        · have := ih (m + 1) (by omega) j h1
+          omega
+
+/-- **The Chebyshev degree equals the Seifert genus.**
+
+    For odd `p ≥ 3` the three conjuncts jointly say `deg_u a_p =
+    (p-1)/2 = ` the Seifert genus of `T_{2,p}`:
+
+    1. `a_p` has degree `p - 1` in `s`;
+    2. only *even* powers of `s` occur, so `a_p` really is a polynomial
+       in `u = s²`, and its `u`-degree is half its `s`-degree;
+    3. that half is exactly `seifertGenus_T2p p`.
+
+    Previously this was stated as `seifertGenus_T2p p = (p - 1) / 2`,
+    which is `(p-1)/2 = (p-1)/2` by `rfl` — the binders `s` and
+    `heckeCoeff` did not occur in the conclusion, so the claim carried
+    none of the content its docstring described. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
-axiom chebyshev_degree_eq_genus :
-    ∀ (p : ℕ), Odd p → 2 ≤ p →
-    ∀ (s : R_q), s ≠ 0 →
-    -- The recurrence a_{n+1} = s·a_n + a_{n-1} produces a_p
-    -- whose degree in u = s² is exactly (p-1)/2.
-    -- Formalized: heckeCoeff s p viewed as polynomial in s²
-    -- has degree seifertGenus_T2p p.
-    seifertGenus_T2p p = (p - 1) / 2
+theorem chebyshev_degree_eq_genus (p : ℕ) (hp : Odd p) (hp3 : 3 ≤ p) :
+    (heckePoly p).natDegree = p - 1
+    ∧ (∀ k, (heckePoly p).coeff k ≠ 0 → k % 2 = 0)
+    ∧ p - 1 = 2 * seifertGenus_T2p p := by
+  obtain ⟨m, rfl⟩ := hp
+  refine ⟨?_, ?_, ?_⟩
+  · have := heckePoly_natDegree (2 * m)
+    simpa using this
+  · intro k hk
+    have := heckePoly_coeff_parity (2 * m) k (by simpa using hk)
+    omega
+  · show 2 * m + 1 - 1 = 2 * seifertGenus_T2p (2 * m + 1)
+    unfold seifertGenus_T2p
+    omega
 
 -- ═══════════════════════════════════════════════════════════════════
 -- Part II: The genus-filtration ideal I_4 = (u^5)
@@ -152,19 +267,29 @@ theorem genus4_cutoff (p : ℕ) (hp : Odd p) (hp2 : 3 ≤ p) :
 -- Part III: Obstruction for all primes p ≥ 11
 -- ═══════════════════════════════════════════════════════════════════
 
-/-- The leading Chebyshev coefficient c_{(p-1)/2} = 1 for all odd p ≥ 3.
-    This means the Yekutieli obstruction κ(T_{2,p}) ≠ 0 whenever
-    (p-1)/2 > g.  Stated as opaque axiom: proving this requires
-    formalizing polynomial degree in ℤ[u], which is deferred. -/
+/-- **The leading Chebyshev coefficient is 1** for all odd `p ≥ 3` —
+    i.e. `a_p` is monic. This is what makes the Yekutieli obstruction
+    `κ(T_{2,p})` nonzero whenever `(p-1)/2 > g`: the top coefficient
+    cannot cancel.
+
+    Previously this was stated as the defining recurrence with
+    `- s^(p-1)` added to both sides and closed by `ring` — a
+    rearrangement of the definition, saying nothing about any leading
+    coefficient. -/
 -- Ref: [manuscript] §6/genus-filtration-ideal
 -- Ref: [yekutieli2010] Yekutieli, "Central Extensions of Gerbes," Adv. Math. 225 (2010), arXiv:0801.0083
-axiom leading_chebyshev_coeff_is_one :
-    ∀ (p : ℕ), Odd p → 3 ≤ p →
-    ∀ (s : R_q), s ≠ 0 →
-    -- The coefficient of s^{p-1} (equivalently u^{(p-1)/2}) in
-    -- heckeCoeff s p is 1.
-    heckeCoeff s p - s ^ (p - 1) = heckeCoeff s (p - 2) +
-      s * heckeCoeff s (p - 1) - s ^ (p - 1)
+theorem leading_chebyshev_coeff_is_one (p : ℕ) (hp : Odd p) (hp3 : 3 ≤ p) :
+    (heckePoly p).leadingCoeff = 1 ∧ (heckePoly p).coeff (p - 1) = 1 := by
+  obtain ⟨m, rfl⟩ := hp
+  have hmonic : (heckePoly (2 * m + 1)).Monic := by
+    have := (heckePoly_monic_natDegree (2 * m)).1
+    simpa using this
+  refine ⟨hmonic, ?_⟩
+  have hdeg : (heckePoly (2 * m + 1)).natDegree = 2 * m + 1 - 1 := by
+    have := heckePoly_natDegree (2 * m)
+    simpa using this
+  rw [← hdeg]
+  exact hmonic
 
 /-- All primes p ≥ 11 are obstructed at the completeness-determined
     genus g = 4.  Their Hecke coefficients lie in I_4 = (u^5). -/

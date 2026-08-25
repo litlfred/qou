@@ -11,16 +11,26 @@
      Δ_ω(f · g) = Δ_ω(f) · g + f · Δ_ω(g)
   2. The pointed derivation variant (the alien derivative at ω is indexed
      by a singularity location)
-  3. The Stokes automorphism = exp(Δ_ω): the key consequence that the
-     Stokes jump factorizes through exponentials of alien derivatives
-  4. The bridge identity: if Δ_ω ∘ Δ_ω' = Δ_ω' ∘ Δ_ω (commutativity)
-     then the factored Stokes automorphism decomposes as a product of
-     exponentials — the Écalle "bridge equation"
 
-  This file proves the algebraic core sorry-free. The analytic content
+  This file proves that algebraic core sorry-free. The analytic content
   (that alien derivatives are well-defined on resurgent functions, that
   they capture the Stokes phenomenon) is NOT formalized here — it lives
   in the Borel transform convergence engine.
+
+  SCOPE CORRECTION (2026-08-08). This header previously also listed
+  "3. The Stokes automorphism = exp(Δ_ω)" and "4. The bridge identity"
+  among what the file formalizes. Neither was ever in the file — the
+  list was a plan read as an inventory.
+
+  The obstacle was one missing lemma, now supplied: the higher Leibniz
+  rule Dⁿ(fg) = Σ_k C(n,k)·Dᵏf·D^{n−k}g, absent from Mathlib and proved
+  in QOU/MathlibExt/DerivationIterateLeibniz.lean. It is what makes
+  exp(D) multiplicative — the binomial convolution IS the Cauchy product
+  of the two exponential series. That file also carries the honest
+  one-instanton form of §3: at D² = 0, exp(D) = 1 + D is multiplicative
+  precisely when the cross-term Df·Dg vanishes.
+
+  §4 (the bridge equation) remains UNPROVED and is not claimed anywhere.
 
   Pre-archimedean: generic `CommRing` / `Algebra`. No analysis.
 
@@ -47,14 +57,14 @@ structure AlienDerivationSystem (R : Type*) (A : Type*) (Ω : Type*)
 
 /-- The alien derivative at ω satisfies the Leibniz rule — this is the
     defining property, inherited from `Derivation`. Restated for clarity. -/
-theorem AlienDerivationSystem.leibniz {R A Ω : Type*}
+theorem leibniz {R A Ω : Type*}
     [CommSemiring R] [CommSemiring A] [Algebra R A] [Module R A]
     (sys : AlienDerivationSystem R A Ω) (ω : Ω) (f g : A) :
     sys.alien ω (f * g) = f • sys.alien ω g + g • sys.alien ω f :=
   sys.alien ω |>.leibniz f g
 
 /-- Alien derivatives kill constants (inherited from Derivation.map_algebraMap). -/
-theorem AlienDerivationSystem.map_const {R A Ω : Type*}
+theorem map_const {R A Ω : Type*}
     [CommSemiring R] [CommSemiring A] [Algebra R A] [Module R A]
     (sys : AlienDerivationSystem R A Ω) (ω : Ω) (r : R) :
     sys.alien ω (algebraMap R A r) = 0 :=

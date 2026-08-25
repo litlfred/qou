@@ -10,4 +10,18 @@ export default lemma({
   uses: ["lem:topological-mass-eigenspace-decomp"],
   proofs: ["prf:topological-mass-holonomy"],
   cites: ["yekutieli2015"],
+  authorNotes: [
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** " +
+        "The Lean module `lean/QOU/LiftingDescent/tm_descended_is_holonomy.lean` " +
+        "carries `unknotHolonomy : ℝ` — a holonomy, real by construction. " +
+        "The `ℝ` is therefore forced by the statement itself rather than " +
+        "chosen, so the block sits on the archimedean side of the §7c wall " +
+        "by construction.",
+    },
+  ],
+
 });

@@ -1,0 +1,87 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-15T03:52:34.455207+00:00",
+  "commitSha": "8758b6ed3e25e539e87558c4714aca8c836b3d4e",
+  "assertions": [
+    {
+      "name": "the second-neighbor channel conserves energy inviscidly for every gamma (the pairing telescopes; sanity for the model class)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "nu=0 short run, relative energy drift < 1e-4 (RK2 discretization error only)"
+    },
+    {
+      "name": "the two-source per-amplitude equilibrium holds along actual trajectories at every gamma and eps: r_n = sup u_n * nu*k_n / (sup u_{n-1}^2 + gamma*sup u_{n-2}^2) <= 1 on every excited empty-start rung — the per-amplitude route survives second-neighbor nonlocality up to gamma = 1 (equal-strength, harsher than NS triad decay)",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "max r_n per (gamma, eps) over empty-start rungs"
+    },
+    {
+      "name": "the dissipation-scale crossing B* still exists at every (gamma, eps) and its physical wavenumber still decreases with eps — the collapse condition is not degraded by the nonlocal channel",
+      "computed": true,
+      "expected": true,
+      "passed": true,
+      "source": "theta_n profile per rung; k_phys(B*) monotone in eps within each gamma"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 11209,
+  "computation": "qns-nonlocal-transfer-probe",
+  "scriptFile": "qns_nonlocal_transfer_probe.py",
+  "scriptHash": "7d49407cbc90",
+  "scriptCommitSha": "9e9cfbbba3e73ba4110522d533829974aeb30e14",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "mpmath": "1.4.1"
+  },
+  "description": "SF8 (bean qou-zoev): nonlocality stress test for the amplitude repair (PR #5066). Extends the DN q-shell model with an energy-conserving second-neighbor transfer channel of strength gamma (inflow gamma*k_n*u_{n-2}^2 paired with outflow -gamma*k_{n+2}*u_n*u_{n+2}; exact telescoping in the energy sum). Measures whether the per-amplitude structure survives: two-source trajectory equilibrium ratio r_n <= 1, dissipation-scale crossing existence and eps-monotonicity. gamma = 1 makes nonlocal transfer as strong as local — harsher than NS, where triads decay with scale separation. Scope (a); float64 RK2 exploratory tier; this probes ONE nonlocality class (second-neighbor), not full NS triad structure.",
+  "data": {
+    "g0.5_inviscid_energy_drift": "8.094582172131741e-06",
+    "g0.5_eps1e-01_bstar_rung": 6,
+    "g0.5_eps1e-01_kphys_at_bstar": "0.9487171000000012",
+    "g0.5_eps1e-01_kphys_bstar_predicted": "0.9457416090031757",
+    "g0.5_eps1e-01_max_equilibrium_ratio": "0.8955619757792693",
+    "g0.5_eps1e-01_n_excited_ratios": 8,
+    "g0.5_eps1e-02_bstar_rung": 23,
+    "g0.5_eps1e-02_kphys_at_bstar": "0.26973464853191476",
+    "g0.5_eps1e-02_kphys_bstar_predicted": "0.5318295896944989",
+    "g0.5_eps1e-02_max_equilibrium_ratio": "0.7726098909047651",
+    "g0.5_eps1e-02_n_excited_ratios": 30,
+    "g0.5_eps3e-03_bstar_rung": 41,
+    "g0.5_eps3e-03_kphys_at_bstar": "0.13406823692628178",
+    "g0.5_eps3e-03_kphys_bstar_predicted": "0.39359793425308603",
+    "g0.5_eps3e-03_max_equilibrium_ratio": "0.730557864706295",
+    "g0.5_eps3e-03_n_excited_ratios": 48,
+    "g1.0_inviscid_energy_drift": "1.3180899059491556e-05",
+    "g1.0_eps1e-01_bstar_rung": 6,
+    "g1.0_eps1e-01_kphys_at_bstar": "0.9487171000000012",
+    "g1.0_eps1e-01_kphys_bstar_predicted": "0.9457416090031757",
+    "g1.0_eps1e-01_max_equilibrium_ratio": "0.8229865054960546",
+    "g1.0_eps1e-01_n_excited_ratios": 8,
+    "g1.0_eps1e-02_bstar_rung": 27,
+    "g1.0_eps1e-02_kphys_at_bstar": "0.3212909668982511",
+    "g1.0_eps1e-02_kphys_bstar_predicted": "0.5318295896944989",
+    "g1.0_eps1e-02_max_equilibrium_ratio": "0.7626860746162801",
+    "g1.0_eps1e-02_n_excited_ratios": 35,
+    "g1.0_eps3e-03_bstar_rung": 47,
+    "g1.0_eps3e-03_kphys_at_bstar": "0.15463517817933425",
+    "g1.0_eps3e-03_kphys_bstar_predicted": "0.39359793425308603",
+    "g1.0_eps3e-03_max_equilibrium_ratio": "0.7265707667375829",
+    "g1.0_eps3e-03_n_excited_ratios": 57,
+    "tier": "exploratory",
+    "gamma_sweep": [
+      "0.5",
+      "1.0"
+    ],
+    "n_cap": 400,
+    "n_data": 4
+  }
+}

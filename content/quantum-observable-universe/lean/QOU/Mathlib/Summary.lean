@@ -50,6 +50,8 @@ them out by destructuring the conjunction.
 
 namespace QOU.Mathlib.Summary
 
+universe u
+
 open QOU.Mathlib.SpectralSequence
 open QOU.Mathlib.HeckeAlgebra
 open QOU.Mathlib.WenzlBridgeConcrete
@@ -69,11 +71,16 @@ open QOU.Mathlib.UpstreamSubstrateBridge
 theorem master_upstream_complete (R : Type u) [CommRing R]
     (q : R) (q_ℝ z : ℝ) (G : Type u) [Group G] (z_G : G) :
     (∃ S : SpectralSequence R, CollapsesAtE2 S) ∧
-    (∃ W2 : WedderburnIsomorphism R 2 q, True) ∧
-    (∃ W3 : WedderburnIsomorphism R 3 q, True) ∧
-    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z, True) ∧
-    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z, True) ∧
-    (∃ Y : YekutieliFiniteSliceMultTrace G z_G, True) ∧
+    (∃ _W2 : WedderburnIsomorphism R 2 q, True) ∧
+    (∃ _W3 : WedderburnIsomorphism R 3 q, True) ∧
+    (∃ M1 : MarkovTraceRecursionWithMul ℝ 1 q_ℝ z,
+      MarkovAxiomHolds ℝ z M1.trace_n M1.trace_succ M1.mul_succ
+        M1.sigma_n M1.embed) ∧
+    (∃ M2 : MarkovTraceRecursionWithMul ℝ 2 q_ℝ z,
+      MarkovAxiomHolds ℝ z M2.trace_n M2.trace_succ M2.mul_succ
+        M2.sigma_n M2.embed) ∧
+    (∀ (Y : YekutieliFiniteSliceMultTrace G z_G) (n : ℕ),
+      Y.trace n = z_G ^ n) ∧
     (q_zero > 1) :=
   complete_upstream_discharge R q q_ℝ z G z_G
 

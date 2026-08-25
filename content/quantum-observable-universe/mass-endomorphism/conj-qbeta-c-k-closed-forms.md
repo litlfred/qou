@@ -1,6 +1,6 @@
 **Closed-form conjectures for the $\mathfrak{Q}_\beta$ precision-ladder coefficients $c_4, c_5, c_6, c_7$.**
 
-We formalize these coefficients as conjectures. This permits downstream claims to use the §3b conditional-class exception, as implemented in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) via the Lean class `QBetaPrecisionLadderCoefficients`. In terms of the Hopf–Jones seed $c_3 = -2$ and the Kashiwara coupling $b$, the conjectured closed forms are
+We formalize these coefficients as conjectures. This permits downstream claims to use the conditional-class exception, as implemented in [`prop:q-beta-categorical-precision-ladder`](#prop:q-beta-categorical-precision-ladder) via the Lean class `QBetaPrecisionLadderCoefficients`. In terms of the Hopf–Jones seed $c_3 = -2$ and the Kashiwara coupling $b$, the conjectured closed forms are
 
 $$
   c_4 = c_3\, b^4 = -2 b^4, \qquad
@@ -24,7 +24,7 @@ Match quality degrades at higher $k$. For $c_7$, the signed relative error is ap
 
 ## Derivation paths
 
-Three formal derivation paths stand open ([`docs/audits/-qbeta-ladder-closure-path.md`](../../../docs/audits/-qbeta-ladder-closure-path.md)):
+Three formal derivation paths stand open:
 
 1. **Khovanov–Rozansky polynomial at finite $q$**: Compute $\mathrm{Kh}(L)(q, t)$ for the typed-$\mathbf{B}_3$ Markov-closure link $L$ at the substrate $q_0$ (not merely $q = 1$). The Taylor coefficients should return $c_4, c_5, c_6, c_7$.
 2. **KLR canonical-basis trace formula**: Calculate the per-Wedderburn-block canonical-basis Markov trace at orders $\varepsilon^8, \varepsilon^{10}, \varepsilon^{12}$. The Hecke–KLR bridge supplies scaffolding ([`conj:kazhdan-lusztig-classical-limit`](#conj:kazhdan-lusztig-classical-limit)). We require the explicit per-block trace formula.
@@ -32,13 +32,13 @@ Three formal derivation paths stand open ([`docs/audits/-qbeta-ladder-closure-pa
 
 ## Precision
 
-The baseline $\mathfrak{Q}_\beta$ categorical prediction already achieves a $+6.02$ ppb residual at $N=3$, satisfying the 7.8 ppb L2 target. The higher-order corrections ($c_4$ to $c_7$) drive the residual below $1$ ppb. This pushes precision into the research-grade regime, exceeding experimental requirements by two orders of magnitude. 
+The baseline $\mathfrak{Q}_\beta$ categorical prediction already achieves a $+6.02$ ppb residual at $N=3$, satisfying the 7.8 ppb accuracy target. The higher-order corrections ($c_4$ to $c_7$) drive the residual below $1$ ppb. This pushes precision into the research-grade regime, exceeding experimental requirements by two orders of magnitude. 
 
 Under the three-calibration discipline, we flag these empirical fits as conditional inputs. Any prediction relying on them must declare this dependency explicitly.
 
 ## Evidence
 
-Direct SDP-$T_\beta$ extraction at 50 decimal places precisely reproduces the conjectured $c_k$:
+Direct SDP-$T_\beta$ extraction at 50 decimal places reproduces the conjectured $c_k$:
 
 ```text
 c_2 extracted = -1.0171   (vs framework -1)

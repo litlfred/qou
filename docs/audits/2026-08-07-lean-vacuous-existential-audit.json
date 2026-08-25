@@ -1,0 +1,107 @@
+{
+  "schema": "lean-vacuous-existential/v1",
+  "scanned_files": 2601,
+  "count": 10,
+  "findings": [
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration.lean",
+      "line": 39,
+      "kind": "theorem",
+      "name": "magic_crossing_Q_value",
+      "bound_var": "Q_beta",
+      "rhs": "E_0 * (tr_M_parent - tr_M_daughter - tr_M_leptons)",
+      "proof": "⟨_, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/knots-particles-confinement/compound-beta-shell-calibration.lean",
+      "line": 48,
+      "kind": "theorem",
+      "name": "compound_beta_y_target_extraction",
+      "bound_var": "y_target",
+      "rhs": "(chain.chain_Q_MeV.sum - non_magic_Q_sum) / (chain.reference_E_0_MeV * chain.A_magic.toFloat)",
+      "proof": "⟨_, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorAmphicheiral.lean",
+      "line": 44,
+      "kind": "theorem",
+      "name": "knot_factor_amphicheiral",
+      "bound_var": "a",
+      "rhs": "1 - β.weight altPartition * (altRatio β altPartition) ^ 2",
+      "proof": "⟨_, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorAmphicheiral.lean",
+      "line": 57,
+      "kind": "theorem",
+      "name": "knot_factor_amphicheiral_value",
+      "bound_var": "a",
+      "rhs": "1 - h ^ 2",
+      "proof": "⟨1 - h ^ 2, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/lean/QOU/BraidKnot/KnotFactorSpectralDerivation.lean",
+      "line": 44,
+      "kind": "theorem",
+      "name": "knot_factor_spectral_form",
+      "bound_var": "a",
+      "rhs": "knotFactor n β β_mirror",
+      "proof": "⟨knotFactor n β β_mirror, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/mass-formula-regime-switching.lean",
+      "line": 83,
+      "kind": "theorem",
+      "name": "regime_switched_binding_defined",
+      "bound_var": "B",
+      "rhs": "regimeSwitchedBinding Z N",
+      "proof": "⟨regimeSwitchedBinding Z N, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/nuclear-knot-classification.lean",
+      "line": 33,
+      "kind": "theorem",
+      "name": "nuclear_knot_classification",
+      "bound_var": "K",
+      "rhs": ".borromean",
+      "proof": "by exact ⟨.borromean, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/mass-theory/zeta8-witness-level2-su2.lean",
+      "line": 151,
+      "kind": "theorem",
+      "name": "wenzl_annihilator",
+      "bound_var": "chi_lambda_at_zeta",
+      "rhs": "0",
+      "proof": "⟨0, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/nuclear-interactions/q-zero-stokes-region-identification.lean",
+      "line": 165,
+      "kind": "theorem",
+      "name": "q_0_well_defined",
+      "bound_var": "q",
+      "rhs": "inst.q_0",
+      "proof": "by exact ⟨inst.q_0, rfl⟩",
+      "rfl_witness": true
+    },
+    {
+      "file": "content/quantum-observable-universe/predicted-spectra/spectral-decomposition-qvalue.lean",
+      "line": 85,
+      "kind": "theorem",
+      "name": "spectral_decomposition_qvalue",
+      "bound_var": "Q_q",
+      "rhs": "bareQValue q (daughterPoly / parentPoly) m_e * knotOperator",
+      "proof": "⟨bareQValue q (daughterPoly / parentPoly) m_e * knotOperator, rfl⟩",
+      "rfl_witness": true
+    }
+  ]
+}

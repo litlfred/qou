@@ -101,7 +101,7 @@ theorem delta_max_uniform_bound
     vortex `ρ`.  This is the **closure of the archimedean /
     rank-1 SDP regime** of the convergence conjecture
     (`conj:jet-tower-uniform-delta-max`). -/
-def OperatorNormBound.toJetTowerUniformDeltaMax {ρ : Type*}
+def toJetTowerUniformDeltaMax {ρ : Type*}
     (b : OperatorNormBound ρ) :
     QOU.BraidKnot.JetTowerUniformDeltaMax ρ where
   delta := b.delta

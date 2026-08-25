@@ -1,0 +1,14 @@
+{
+  "description": "Calibration of the c_\u03c3=|\u03c4|^{-1/2} template on the figure-eight knot: same c_\u03c3 definition (reduced colored Jones \u00b7 N^{-3/2} \u00b7 e^{-Vol N/2\u03c0}) as the Whitehead run, checked against the known 3^{-1/4} (|\u03c4(4_1)|=\u221a3).",
+  "computation": "whitehead_c_sigma_fig8_calib",
+  "audit_only": true,
+  "dps": 60,
+  "vol_4_1": "2.029883212819307250042405",
+  "p_fit": "1.49999998391397",
+  "c_sigma_fig8_extrapolated": "0.7598356856515925507718093",
+  "target_3_pow_minus_1_4": "0.7598356856515925473311878",
+  "match_digits": 17,
+  "template_validated": true,
+  "note": "Validates that the reduced-colored-Jones c_\u03c3 IS the 1-loop torsion prefactor |\u03c4|^{-1/2} on the known figure-eight case, making the Whitehead c_\u03c3=2^{-3/4} \u21d2 |\u03c4(L5a1)|=2\u221a2 a template-consistent identification.",
+  "timestamp": "2026-08-02T09:47:42+00:00"
+}

@@ -76,6 +76,14 @@ for _p in (str(_COMP), str(_COMP / "substrate")):
     if _p not in sys.path:
         sys.path.insert(0, _p)
 from substrate.witness_base import WitnessBuilder  # noqa: E402
+# Path bridge: keeps flat-namespace imports working from this cluster
+# subdirectory. The bridge module puts every other cluster subdir on
+# sys.path so cross-cluster bare-name imports resolve. Idempotent.
+import sys as _sys  # noqa: E402
+from pathlib import Path as _Path  # noqa: E402
+_sys.path.insert(0, str(_Path(__file__).resolve().parent.parent))
+import _path_bridge as _bridge  # noqa: E402, F401
+from _precision import set_compute_dps  # noqa: E402
 
 COMP = str(_COMP)
 
@@ -112,7 +120,7 @@ def main() -> int:
     unique_singlet_A = [A for A in range(1, 8) if ranks[A] == 1]  # A with a rank-1 shell
 
     # ---- PART 2: exchange spectrum, derived magnitudes, NO fit ---------------
-    mp.mp.dps = 50
+    set_compute_dps()
     q0 = mp.mpf(Q0_STR)
     v = mp.sqrt(q0)
     two_v = v + 1 / v
@@ -176,7 +184,12 @@ def main() -> int:
             "z_naive_excluded_above_ceiling": bool(z_excluded),
             "g_reeb_physical_below_ceiling": bool(g_physical),
             "negative_eigenvalue_always_present": all(r["has_negative_eigenvalue"] for r in rows.values()),
-            "attractive_channel_confirmed": True,
+            # Was the literal `True` — a vacuous check flagged by
+            # circ-vacuous-check. The genuine computation is the line above
+            # (and is asserted at the bottom of this file), so bind to it
+            # rather than assert the conclusion.
+            "attractive_channel_confirmed":
+                all(r["has_negative_eigenvalue"] for r in rows.values()),
             "rows": rows,
             "verdict": "DERIVED (parameter-free, no fit): a negative eigenvalue (-sqrt5*mag) is always "
                        "present so the dictionary's net-attractive branch (s=-1, B=-ln det(I+G)) is "

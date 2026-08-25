@@ -1,6 +1,7 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic.Linarith
+import QOU.MathlibExt.QIntegerCanonical
 
 
 /-!
@@ -53,8 +54,7 @@ structure IsStable (q : ℝ) (p n : ℕ) where
 -- Ref: [manuscript] §6/skein-finiteness-bound
 
 /-- The q-integer [n]_q = (q^n - q^{-n})/(q - q^{-1}). -/
-noncomputable def qInt (q : ℝ) (n : ℕ) : ℝ :=
-  (q ^ n - (1/q) ^ n) / (q - 1/q)
+noncomputable abbrev qInt (q : ℝ) (n : ℕ) : ℝ := QOU.QInteger.qIntBal q n
 
 /-- The q-factorial [n]_q! = ∏_{k=1}^n [k]_q. -/
 noncomputable def qFactorial (q : ℝ) (n : ℕ) : ℝ :=

@@ -1,0 +1,162 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2109.04664v4",
+ "source_sha256": "639cd40a29752e3f",
+ "brief": "ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER — W e study the asymptotic behavior of the N -dimensional colored Jones polynomial",
+ "extended": "**ON THE ASYMPTOTIC BEHAVIOR OF THE COLORED JONES POLYNOMIAL OF THE FIGURE-EIGHT KNOT ASSOCIATED WITH A REAL NUMBER**\n\n*HITOSHI MURAKAMI AND ANH T. TRAN*\n\n27 pp, 28 sections.\n\n**Abstract.** W e study the asymptotic behavior of the N -dimensional colored Jones polynomial evaluated at exp( ξ/N ) for a real number ξ greater than a certain constant. W e prove that, from the asymptotic behavi or, we can extract the SL(2; C) Chern–Simons invariant and the Reidemeister torsion twis ted by the adjoint action both associated with a representation de termined by ξ.\n\n**Outline.** 2 HITOSHI MURAKAMI AND ANH T. TRAN; 1 Introduction; 4 HITOSHI MURAKAMI AND ANH T. TRAN; 2 Preliminaries; 6 HITOSHI MURAKAMI AND ANH T. TRAN; 3 Summation; 8 HITOSHI MURAKAMI AND ANH T. TRAN; 10 HITOSHI MURAKAMI AND ANH T. TRAN; 4 Integration; 2 (1 −ϕ (ξ)/ξ ) sinθ. Deﬁne; 12 HITOSHI MURAKAMI AND ANH T. TRAN; 14 HITOSHI MURAKAMI AND ANH T. TRAN; 5 Topological interpretations; 5.1 Representations. Let X be the complement o; 5.2 Adjoint Reidemeister torsion. For a repres; 5.3 Chern–Simons invariant. LetM be a three-ma; 16 HITOSHI MURAKAMI AND ANH T. TRAN; 6 Proofs of lemmas\n\n**Extracted claims (proposals, not verified).**\n- Theorem 1.5: If ξ is real and |ξ|>κ , then we have\n- Theorem 5.1: The Chern–Simons invariant CSE(ρ;ξ,η ) of the representa-\n- Proposition 2.8: For any positive real number M and a suﬃciently small positive\n- Proposition 4.2: Letb− andb+ be real numbers with b− <\n- Corollary 3.4: For any c− and c+ with 0 < c− < ϕ(ξ)/ξ < c+ < 1, there exists\n- Lemma 2.2: If z ∈ C satisﬁes 0 < Re(zeθ√−1) < cosθ, then the integral∫",
+ "tokens": {
+  "brief": 49,
+  "extended": 404
+ },
+ "sections": [
+  {
+   "id": "sec-000-2-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-002-4-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-003-2-preliminaries",
+   "title": "Preliminaries",
+   "pages": "4-6"
+  },
+  {
+   "id": "sec-004-6-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "6-7"
+  },
+  {
+   "id": "sec-005-3-summation",
+   "title": "Summation",
+   "pages": "7-8"
+  },
+  {
+   "id": "sec-006-8-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "8-10"
+  },
+  {
+   "id": "sec-007-10-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "10-10"
+  },
+  {
+   "id": "sec-008-4-integration",
+   "title": "Integration",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-009-2-1-ϕ-ξξ-sinθ-deﬁne",
+   "title": "(1 −ϕ (ξ)/ξ ) sinθ. Deﬁne",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-12-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "12-14"
+  },
+  {
+   "id": "sec-011-14-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-012-5-topological-interpretations",
+   "title": "Topological interpretations",
+   "pages": "14-14"
+  },
+  {
+   "id": "sec-013-51-representations-let-x-be-the-complement-of-th",
+   "title": "Representations. Let X be the complement of the open tubular neighbor-",
+   "pages": "14-15"
+  },
+  {
+   "id": "sec-014-52-adjoint-reidemeister-torsion-for-a-representa",
+   "title": "Adjoint Reidemeister torsion. For a representation ρ : π1(X) →",
+   "pages": "15-15"
+  },
+  {
+   "id": "sec-015-53-chernsimons-invariant-letm-be-a-three-manifol",
+   "title": "Chern–Simons invariant. LetM be a three-manifold with boundary a torus",
+   "pages": "15-16"
+  },
+  {
+   "id": "sec-016-16-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "16-16"
+  },
+  {
+   "id": "sec-017-6-proofs-of-lemmas",
+   "title": "Proofs of lemmas",
+   "pages": "16-18"
+  },
+  {
+   "id": "sec-018-18-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-019-2-re",
+   "title": "Re",
+   "pages": "19-20"
+  },
+  {
+   "id": "sec-020-20-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-021-2-1-e2-cosθ-re",
+   "title": "(1 −e−2 cosθ) Re",
+   "pages": "20-20"
+  },
+  {
+   "id": "sec-022-2-1-e2-cosθ",
+   "title": "(1 −e−2 cosθ )",
+   "pages": "20-21"
+  },
+  {
+   "id": "sec-023-1-z-r-that-is-when-im-z-0-recall-that-we-assume",
+   "title": "(z ∈ R), that is, when Im z ≥ 0 (Recall that we assume 0 < Re(ze",
+   "pages": "21-22"
+  },
+  {
+   "id": "sec-024-22-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "22-24"
+  },
+  {
+   "id": "sec-025-24-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "24-26"
+  },
+  {
+   "id": "sec-026-26-hitoshi-murakami-and-anh-t-tran",
+   "title": "HITOSHI MURAKAMI AND ANH T. TRAN",
+   "pages": "26-26"
+  },
+  {
+   "id": "sec-027-references",
+   "title": "References",
+   "pages": "26-27"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

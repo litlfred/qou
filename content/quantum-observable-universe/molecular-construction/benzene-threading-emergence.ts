@@ -8,6 +8,7 @@ export default proposition({
   lean: { ref: "qou:QOU.Molecular.benzene_threading_emergence", validation: "not_checked" },
   title: "Threading link $T(2,6)$ emerges as the LP-optimal $\\pi$ configuration",
   uses: [
+    "conj:q-integer-mass-formula",
     "def:benzene-molecular-braid",
     "prop:co2-lp-dual-binding",
   ],

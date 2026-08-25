@@ -27,8 +27,8 @@ For each partition $\lambda$ the witness records:
 - $\mathrm{depth}(\lambda)$, $\mathrm{height}(\lambda)$
 - $\mathrm{signed\_content}(\lambda) = \sum_{(i, j) \in \lambda}
   (j - i)$ (chirality marker; $= 0$ marks chirality cells)
-- Plancherel weight $w_\lambda = (\dim V_\lambda)^2 / n!$
-- $q$-deformed alternative $\widetilde w_\lambda = \dim_q^2 V_\lambda /
+- Plancherel weight $w_\lambda(1) = (\dim V_\lambda)^2 / n!$
+- $q$-deformed alternative $w_\lambda(q) = \dim_q^2 V_\lambda /
   [n]_q!$ (does not sum to $1$ at finite $q \neq 1$ —
   [Plancherel remark](#prop:plancherel-weight-boundedness))
 
@@ -36,13 +36,10 @@ For each partition $\lambda$ the witness records:
 
 See [Table 2](#tbl:mass-tower-coefficient-stratification-table2-data).
 
-**Coordinating note for sibling computations.**
+**Note on the ${}^4\mathrm{He}$ gap.**
 
-The two parallel computational efforts
-(`claude/verify-mass-computation-k0DaZ`,
-`claude/phase-b-heavy-rust-character-kernel`) are independently
-verifying that the spectral-derived coefficients close the
-${}^4\mathrm{He}$ binding-energy gap.  This proposition supplies the
+Whether the spectral-derived coefficients close the ${}^4\mathrm{He}$
+binding-energy gap is still under independent numerical verification.  This proposition supplies the
 forcing structure: each Bethe--Weizsäcker coefficient is a specific
 Plancherel-weighted projection.  Combined with
 ([Plancherel boundedness](#prop:plancherel-weight-boundedness)) the

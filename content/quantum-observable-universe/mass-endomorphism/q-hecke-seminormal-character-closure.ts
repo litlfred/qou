@@ -70,6 +70,18 @@ export default proposition({
   ],
   authorNotes: [
     {
+      kind: "note",
+      date: "2026-08-07",
+      body:
+        "**§7c base-ring note (archimedean specialisation).** The context " +
+        "class types both compute paths — `tr_M_partition_sum` (Wenzl `y_λ` · " +
+        "Hoefsmit `χ^λ_q`) and `tr_M_axiom_reducer` (canonical Markov-axiom " +
+        "reducer) — over `ℝ`. This proposition records their *numerical* " +
+        "agreement at the substrate anchor, so the specialisation is " +
+        "intrinsic: a generic-ring restatement would assert a different, " +
+        "symbolic proposition.",
+    },
+    {
       kind: "status",
       body: "The proposition is a numerical-equality claim between three\nimplemented paths, all of which agree to their precision floors.\nMathematical proof: the partition-sum form is the spectral\nexpansion of $\\mathrm{tr}_M$ in the Wedderburn–Artin basis. The\ncanonical Hecke character $\\chi^\\lambda_q$ is the diagonal of\n$\\rho_\\lambda^q$ in the seminormal basis (Hoefsmit 1974, Mathas\n1999 §3.4); $y_\\lambda(q)$ is the unique Jones-Markov weight given\nthe Markov axioms (Wenzl 1988). Combining: the partition-sum form\nidentically equals the recursive Markov ascent. Numerical\nverification confirms.",
     },

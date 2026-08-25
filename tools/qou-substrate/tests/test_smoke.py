@@ -10,14 +10,70 @@ def test_package_importable():
 
 
 def test_substrate_constants_have_expected_values():
-    """q_0 from CODATA 2022 + SnapPy 3.3.2 — values must be bit-stable."""
+    """q_0 from CODATA 2022 + SnapPy 3.3.2 — values must be bit-stable.
+
+    `MASS_RATIO_MU_E` is asserted against the NIST table rather than a
+    literal. It read ``== 206.7682830`` until 2026-08-15 — the CODATA-**2018**
+    value — so this test was pinning the very edition straddle it looked like
+    it was guarding against. A test that transcribes a constant cannot detect
+    a mis-transcription; it can only freeze one.
+
+    `VOL_FIGURE_EIGHT` was the SAME defect, one line down, and survived that
+    fix: it read ``== 2.029883212819307`` until 2026-08-21, freezing a literal
+    that is not even the correctly-rounded f64 of 2·Cl₂(π/3)
+    (``2.0298832128193074``). Now asserted against the computation, exactly as
+    the mass ratio is asserted against the table.
+    """
+    import mpmath as mp
+
     from qou_substrate import Q, HBAR_Q, HBAR_Q_SQ, VOL_FIGURE_EIGHT, MASS_RATIO_MU_E
-    assert VOL_FIGURE_EIGHT == 2.029883212819307
-    assert MASS_RATIO_MU_E == 206.7682830
-    assert abs(HBAR_Q_SQ - VOL_FIGURE_EIGHT / MASS_RATIO_MU_E) < 1e-15
+    from qou_substrate.codata import codata
+    with mp.workdps(60):
+        assert VOL_FIGURE_EIGHT == float(2 * mp.clsin(2, mp.pi / 3))
+    assert MASS_RATIO_MU_E == float(codata("muon-electron mass ratio").value)
+    # Internal identities — these ARE definitional and must hold to f64.
     assert abs(HBAR_Q - HBAR_Q_SQ**0.5) < 1e-15
     assert abs(Q - 1.0 / (1.0 - HBAR_Q)) < 1e-15
     assert 1.10 < Q < 1.11
+
+
+def test_muon_proton_tension_is_present_and_bounded():
+    """ℏ_q² = Vol(4_1)/(m_μ/m_e) is a PREDICTION now, not a definition.
+
+    This assertion used to read ``abs(HBAR_Q_SQ - VOL/MASS_RATIO_MU_E) <
+    1e-15``, from when ℏ_q was *defined* by the muon ratio. `Q` is now Newton-
+    solved from the **proton** anchor (`MASS_RATIO_P_E`), and `constants.py`
+    labels `MASS_RATIO_MU_E` "now a PREDICTION (cross-check)" while its
+    docstring records the residual as "~11.5 ppb from the muon pin — the μ–p
+    tension, deliberately left visible".
+
+    So exact equality is the wrong claim and the old assertion had been failing
+    on `main`. Deleting it is also wrong: the tension is a headline result, and
+    a test that pins it catches drift in **both** directions — a regression
+    that inflates it, and an accidental re-anchoring that collapses it to zero.
+
+    The 11.5 ppb figure is quoted in `q`; the residual in the mass ratio is
+    ~18.2× larger because dln(m_μ)/dln(q) ≈ -18.2.
+    """
+    from qou_substrate import Q, HBAR_Q_SQ, VOL_FIGURE_EIGHT, MASS_RATIO_MU_E
+
+    predicted = VOL_FIGURE_EIGHT / HBAR_Q_SQ
+    rel_ratio = abs(predicted - MASS_RATIO_MU_E) / MASS_RATIO_MU_E
+
+    # Sensitivity, computed rather than hardcoded, so the conversion below
+    # stays honest if the substrate identity changes.
+    eps = Q * 1e-8
+    mu_of = lambda q: VOL_FIGURE_EIGHT / (1.0 - 1.0 / q) ** 2  # noqa: E731
+    sens = (mu_of(Q + eps) - mu_of(Q - eps)) / (2 * eps) * Q / mu_of(Q)
+    assert -19.0 < sens < -17.0, f"dln(m_mu)/dln(q) = {sens}"
+
+    rel_q = rel_ratio / abs(sens)
+    # Documented as ~11.5 ppb. Bounded on both sides: not zero (the muon pin is
+    # genuinely not the anchor) and not drifting (it is a stable residual).
+    assert 5e-9 < rel_q < 20e-9, (
+        f"mu-p tension in q = {rel_q * 1e9:.2f} ppb; constants.py documents "
+        f"~11.5 ppb. Non-zero is expected — q is proton-anchored."
+    )
 
 
 def test_derived_constants_consistent():

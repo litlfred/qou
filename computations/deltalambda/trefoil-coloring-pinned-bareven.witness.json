@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-26T01:23:29.036861+00:00",
-  "commitSha": "5f9791de885138afc13d08d62e56a497d603ea0b",
+  "computedAt": "2026-08-23T09:05:31.463537+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "exact_identity_c_plus_1",
@@ -27,8 +27,8 @@
   "durationMs": 0,
   "computation": "trefoil-coloring-pinned-bareven",
   "scriptFile": "trefoil_coloring_pinned_bareven_probe.py",
-  "scriptHash": "303085706426",
-  "scriptCommitSha": "41001d9e97f3902bf138b1162c4b09beb72b9321",
+  "scriptHash": "d3577a086e43",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,8 +37,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/deltalambda/trefoil_coloring_pinned_bareven_probe.py"
+    ],
+    "reproduce": "python3 -u computations/deltalambda/trefoil_coloring_pinned_bareven_probe.py"
   },
   "description": "The deuteron trefoil <u,v|uvu=vuv> boundary-parabolic coloring is ONE-parameter (meridian eigenvalue m): the braid relation forces c(m)=-(m⁴-m²+1)/m² (Alexander cross-check ✓; parabolic m=1⟹c=-1). Substrate pins m↔q₀ ⇒ NO residual freedom (resolves the #4315 anti-fishing branch). EXACT identity c(m)+1=-(m-1/m)² is a perfect BAR-EVEN square; at m=q₀ it is -(q₀-q₀⁻¹)²=-h² EXACTLY (the #4158 bar-even gap), at m=√q₀ it is -(v-v⁻¹)². Identifies the bar-even SCALE as h² (exact, not a fit). Does NOT derive g₂ (=e₂ finite part); the pin's power is flagged open (not fished). scope-(a), audit-only, nothing wired.",
   "contentBlock": "rem:ohtsuki-tower-bar-parity",

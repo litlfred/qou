@@ -86,21 +86,19 @@ class QuantumComputationalUniversality : Prop where
   /-- Sub-claim (4): information content. -/
   information_content : ∀ (c : ℕ), InformationContentHolds c
 
-/-- **Canonical instance** — the conjecture proper. Each `sorry`
-    is the unproved content of the corresponding sub-claim per
-    §3b-cond. -/
--- Ref: [freedman2003] Topological quantum computation
--- Ref: [manuscript] conj:quantum-computational-universality
-instance quantum_computational_universality_conjecture :
-    QuantumComputationalUniversality where
-  -- Witness: computations/none
-  -- Ref: [freedman2003]
-  quadratic_level := fun _ => sorry
-  -- Ref: [freedman2003]
-  universality := fun _ _ _ => sorry
-  -- Ref: [freedman2003]
-  descent_decomposition := fun _ => sorry
-  -- Ref: [freedman2003]
-  information_content := fun _ => sorry
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance quantum_computational_universality_conjecture :
+--     axiom quantum_computational_universality_quadratic_level : ∀ (c : ℕ), QuadraticLevelHolds c
+--     axiom quantum_computational_universality_universality : ∀ (n N : ℕ) (eps : ℝ), QuantumUniversali
+--     axiom quantum_computational_universality_descent_decomposition : ∀ (n : ℕ), DescentDecomposition
+--     axiom quantum_computational_universality_information_content : ∀ (c : ℕ), InformationContentHold
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[QuantumComputationalUniversality]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[QuantumComputationalUniversality]` as an explicit hypothesis.
 
 end QOU.QuantumComputationalUniversality

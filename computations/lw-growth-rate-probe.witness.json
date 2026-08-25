@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-26T02:06:08.347871+00:00",
-  "commitSha": "7c1eb5a76f1648ed29425cc7401470d91a92eb32",
+  "computedAt": "2026-08-21T14:51:32.156135+00:00",
+  "commitSha": "6325eb14f94e2f09a1e227571c526557f44dabe9",
   "assertions": [
     {
       "name": "lw_ratio_exceeds_sl2_cap_at_top",
@@ -10,7 +10,7 @@
       "expected": 1,
       "passed": true,
       "tolerance": 0,
-      "source": "ratio(n=13) = 4.6776798 > λ₊ = 2.1846463."
+      "source": "ratio(n=13) = 4.6776796 > λ₊ = 2.1846463."
     },
     {
       "name": "lw_ratio_nonsaturating_slope_positive",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 23,
+  "durationMs": 14,
   "computation": "lw-growth-rate-probe",
   "scriptFile": "lw_growth_rate_probe.py",
   "scriptHash": "c5e4e27fdda7",
-  "scriptCommitSha": "unknown",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -35,102 +35,105 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "auditOnly": "docs/audits/2026-06-25-sw-jet-prolongation-explicit-and-fork.md",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802"
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "aD_eq_lw": "a_D^(n) = lw(n−1) = (1/n) Σ_{λ⊢n} dim_q V_λ (canonical q-hook)",
-    "sl2_lambda_plus": "2.1846463153",
+    "sl2_lambda_plus": "2.18464631043",
     "ratio_table": [
       {
         "n": 3,
-        "aD_lw": "1.33696562304",
+        "aD_lw": "1.33696562224",
         "ratio": "1.3369656",
         "n_minus_half": "2.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 4,
-        "aD_lw": "2.53277966367",
+        "aD_lw": "2.5327796564",
         "ratio": "1.8944239",
         "n_minus_half": "3.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 5,
-        "aD_lw": "5.37613776906",
-        "ratio": "2.1226236",
+        "aD_lw": "5.37613772968",
+        "ratio": "2.1226235",
         "n_minus_half": "4.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 6,
-        "aD_lw": "13.5598273276",
+        "aD_lw": "13.5598271251",
         "ratio": "2.5222247",
         "n_minus_half": "5.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 7,
-        "aD_lw": "37.3678083587",
-        "ratio": "2.7557732",
+        "aD_lw": "37.3678073797",
+        "ratio": "2.7557731",
         "n_minus_half": "6.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 8,
-        "aD_lw": "115.826229059",
-        "ratio": "3.099626",
+        "aD_lw": "115.826224199",
+        "ratio": "3.0996259",
         "n_minus_half": "7.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 9,
-        "aD_lw": "388.899168316",
+        "aD_lw": "388.899143934",
         "ratio": "3.3576088",
         "n_minus_half": "8.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 10,
-        "aD_lw": "1436.06591817",
-        "ratio": "3.6926433",
+        "aD_lw": "1436.0657902",
+        "ratio": "3.6926432",
         "n_minus_half": "9.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 11,
-        "aD_lw": "5723.77250847",
-        "ratio": "3.985731",
+        "aD_lw": "5723.77181213",
+        "ratio": "3.9857309",
         "n_minus_half": "10.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 12,
-        "aD_lw": "24836.6090242",
-        "ratio": "4.3392027",
+        "aD_lw": "24836.6050278",
+        "ratio": "4.3392025",
         "n_minus_half": "11.5",
         "lambda_plus": "2.18465"
       },
       {
         "n": 13,
-        "aD_lw": "116177.704974",
-        "ratio": "4.6776798",
+        "aD_lw": "116177.680897",
+        "ratio": "4.6776796",
         "n_minus_half": "12.5",
         "lambda_plus": "2.18465"
       }
     ],
     "ratio_vs_n_linear_fit": {
-      "slope": "0.31831529",
-      "intercept": "0.52479613",
+      "slope": "0.31831527",
+      "intercept": "0.52479623",
       "interpretation": "ratio(n) ≈ slope·n + intercept. slope > 0 ⇒ ratio does NOT saturate (super-exp, factorial-class). The bare √-branch (n−1/2) has slope exactly 1; the measured slope is the q0 modulation of that mechanism."
     },
     "vs_verdict_n_minus_half": "the q0-evaluated lw ratio is SMALLER than the bare (n−1/2) and climbs with slope ≈ 0.3183 (not 1): the √-branch sets the super-exp CLASS, the dim_q(q0) weights set the RATE — recorded, correspondence open (z2bn)."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

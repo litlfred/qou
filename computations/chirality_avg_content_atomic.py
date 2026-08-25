@@ -43,7 +43,7 @@ HERE = Path(__file__).parent
 sys.path.insert(0, str(HERE))
 
 
-from _precision import set_compute_dps, fmt  # noqa: E402
+from _precision import set_compute_dps, fmt, str_at_true_precision  # noqa: E402
 from mpmath import mp, mpf
 
 from hecke_characters import (  # noqa: E402
@@ -102,6 +102,25 @@ def transpose(shape):
 
 
 def writhe(word):
+    """Net writhe = sum of crossing signs of the braid word.
+
+    LEVEL OF DEFINITION (framing note; no number here changes). The writhe is a
+    property of the BRAID WORD, not of its closure: Markov-I (conjugation)
+    invariant, but Markov-II stabilisation β ∈ B_n ↦ βσ_n^{±1} ∈ B_{n+1} shifts
+    it by ±1 while presenting the same link. The `ATOMS` rows carry their level
+    explicitly in `n_strands`, and they are not all the same:
+
+        D  n = 6  w = +2      T  n = 9  w = +3      ³He n = 9  w = +3
+
+    (⁴He would sit at n = 12; it is deferred here for performance.) n = 3(Z+N) is
+    the braid index of the atom (`atom-knot.md`) — the lowest level of the
+    substrate tower. Under the owner ruling (states are Gröbner–Shirshov normal
+    forms; the observable is the trace at the lowest level) these canonical words
+    ARE the states, so comparing w, ⟨c⟩_β or a_K across the rows compares distinct
+    states rather than two presentations of one state: the table stands as
+    written. The a_K values are properties of these canonical words, not of the
+    closures. Ref: docs/audits/2026-08-10-writhe-level-of-definition.md §5d.
+    """
     return sum(s for s, _ in word)
 
 
@@ -217,7 +236,15 @@ def main():
                 "is_self_conjugate": tuple(shape) == transpose(shape),
                 "content_c_lambda": c_lam,
                 "wedderburn_weight": str(w_lam),
-                "chi_lambda_beta": str(chi_val),
+                # chi came out of the f64 kernel above (see the
+                # kernel_precision parameter) and carries 53 bits. It is
+                # promoted to mpf for the downstream arithmetic, but
+                # str(<mpf>) then prints 50 dps of a 53-bit number — the
+                # binary64 expansion, reading as if it had been measured.
+                # fmt() on a float writes its true precision instead;
+                # mpf(float) is exact, so float() recovers the kernel's own
+                # value and nothing moves.
+                "chi_lambda_beta": str_at_true_precision(chi_val),
             })
 
         # Per-pair-symmetric form (sanity check; should equal direct).

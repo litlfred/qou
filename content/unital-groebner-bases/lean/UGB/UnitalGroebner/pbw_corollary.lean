@@ -36,8 +36,10 @@ one (`ReducesToNF`), and that normal form is unique
 (`normal_form_unique`). Together these say each `U𝔤`-class has a unique
 $S\mathfrak g$-representative — the bijective PBW correspondence. The
 `R`-linearity of the bijection is not formalized (raw `AlgElement` data
-type, `AlgOps.lean` §6). The single `sorry` is the existence/termination
-half; uniqueness is discharged by the proved `normal_form_unique`.
+type, `AlgOps.lean` §6). Both halves are now proved: existence by
+`normal_form_exists` (from termination plus the unit-leading-coefficient
+hypothesis `hlc` — bean qou-lzoo; the axiom it replaced was false), and
+uniqueness by `normal_form_unique`.
 -/
 
 namespace UGB.UnitalGroebner
@@ -62,18 +64,22 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 theorem pbw_corollary
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) :
     ∀ f : AlgElement G k,
       (∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
       (∀ nf₁ nf₂ : AlgElement G k,
         ReducesToNF ord sys f nf₁ → ReducesToNF ord sys f nf₂ → nf₁ = nf₂) := by
   intro f
   refine ⟨?_, ?_⟩
-  · -- Existence of the PBW normal form (termination half). Remaining step.
-    -- Ref: [manuscript] unital-groebner-bases — existence of PBW normal form
-    sorry
+  · -- Existence of the PBW normal form — now a theorem, not the false axiom it
+    -- used to invoke (bean qou-lzoo). `hlc` is what makes it true: without unit
+    -- leading coefficients an element can be stuck, reducible-looking with no
+    -- reduction available (`NormalFormExistsRefutation`).
+    exact normal_form_exists ord sys hlc f
   · -- Uniqueness of the PBW representative: proved via normal_form_unique.
     intro nf₁ nf₂ h₁ h₂
-    exact normal_form_unique ord sys hgs f nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs hnqz f nf₁ nf₂ h₁ h₂
 
 end UGB.UnitalGroebner

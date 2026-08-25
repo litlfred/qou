@@ -30,8 +30,16 @@ inductive Flavor where
     The discrete-category framing makes the assignment compatible
     with the chapter's other categorical constructions (Markov
     trace, Hoefsmit functor, Wedderburn block decomposition):
-    flavor-sums in hadronic mass formulas are then natural
-    transformations, not ad-hoc weighted sums.
+    flavor-sums in hadronic mass formulas are then intended to read
+    as natural transformations rather than ad-hoc weighted sums.
+
+    **Naming note (functor vs. object-map).** A functor out of a
+    *discrete* category is exactly an object-map (every morphism is an
+    identity), so calling `μ` a "functor" is defensible — but note this
+    class encodes **only** the object-map `μ : Flavor → ℝ` (+ positivity);
+    it is not a `CategoryTheory.Functor`, and no natural transformation is
+    formalised here. The "natural transformations" remark above is the
+    intended categorical reading, not encoded structure.
 
     Instances at specific substrate parameter values (e.g. `q = q₀`)
     live in sibling files; this class carries only the structural

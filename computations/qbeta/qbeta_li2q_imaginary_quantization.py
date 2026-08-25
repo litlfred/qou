@@ -73,7 +73,7 @@ os.environ.setdefault("QOU_OUTPUT_DPS", "60")
 
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps(70)
-mp.mp.dps = 45
+set_compute_dps()
 
 from witness_base import WitnessBuilder  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402

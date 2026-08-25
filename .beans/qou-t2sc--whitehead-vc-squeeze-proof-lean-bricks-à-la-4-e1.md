@@ -46,3 +46,24 @@ lean-direct, exit 0):
 Remaining (mirror 4₁ E1-E5d / Borromean B1-B5): reduce log whiteheadInnerSum to
 the landed Clausen/log(2 sin) Riemann-sum machinery + a whiteheadS max-term
 saddle-location lemma. Still in-progress.
+
+## Update 2 (2026-08-01) — squeeze reduction fully machine-verified (#4532)
+
+Ten sorry-free bricks now (lean-direct verified, Mathlib-only). The entire
+squeeze REDUCTION is proved; the only remaining sorry is the unconditional
+VC target:
+- whiteheadS_factor_pos / _pos / whiteheadInnerSum_pos — kernel positivity
+- whiteheadS_log — log(2 sin) Riemann-sum expansion
+- whiteheadS_le_innerSum / whiteheadInnerSum_le_card_nsmul — E1 envelopes
+- whiteheadInnerSum_saddle — E1 packaged at the saddle
+- tendsto_slack_zero — (2π/N)log N → 0
+- innerSum_saddle_scaledLog_diff_tendsto_zero — CAPSTONE: reduces VC to the
+  saddle-TERM value (sorry-free)
+- whitehead_vc_of_saddle_value — sorry-free CONDITIONAL VC (§3b-cond): IF
+  (2π/N)log(saddle term) → 4G THEN the inner-sum VC holds
+
+REMAINING (the single open input): discharge `hsaddle` — identify the
+saddle-term value with 4G (van der Veen's Clausen/Lobachevsky max-value
+evaluation). This needs the QOU.Infra.Clausen import → a QOU-library build
+to verify (no longer Mathlib-only). Deferred to avoid lake-build collision
+while the #4394 prepare-merge agent is active on the shared workspace.

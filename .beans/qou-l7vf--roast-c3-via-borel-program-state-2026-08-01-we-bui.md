@@ -1,7 +1,7 @@
 ---
 # qou-l7vf
 title: 'ROAST (c3-via-Borel program state, 2026-08-01): we built rigorous scaffolding around a target we haven''t shown is in the right q-regime. #1 load-bearing UNEXAMINED premise: c3 (archimedean, real q0≈1.1097) = a resurgent Stokes datum (fibre-level, root-of-unity / |q|→1). If no fibre→observable bridge exists, the whole Borel/Kashaev route is mis-targeted and today''s scaffold is orthogonal to c3. TEST THE BRIDGE BEFORE transcribing more matrices.'
-status: todo
+status: completed
 type: task
 created_at: 2026-08-01T19:38:36Z
 updated_at: 2026-08-01T19:38:36Z

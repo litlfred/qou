@@ -1,1 +1,1 @@
-The symbol $i$ evaluates as the CR complex structure $J \colon H \to H$ on the Levi distribution. The state bundle $\mathcal{S}$ is linearised at a base section via stereographic projection, allowing the covariant derivative $D_A$ to operate securely on $\mathcal{S}_{\mathrm{lin}}$.
+The symbol $i$ evaluates as the CR complex structure $J \colon H \to H$ on the Levi distribution. The state bundle $\mathcal{S}$ is linearised at a base section via stereographic projection, allowing the covariant derivative $D_A$ to operate on $\mathcal{S}_{\mathrm{lin}}$.

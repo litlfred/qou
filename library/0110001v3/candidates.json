@@ -1,0 +1,120 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "0110001v3",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "f30f603ac1c555e0aba08f07e4d55e1a23e8b6d08ce93e89f4963849d6f19050",
+  "file": "0110001v3.pdf"
+ },
+ "provenance": {
+  "title": "Published: 19 June 2003 A geometric interpretation of Milnor\u2019s triple linking numbers Blake Mellor Paul Melvin",
+  "authors": null,
+  "arxiv": null,
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 7,
+  "by_kind": {
+   "remark": 3,
+   "example": 1,
+   "theorem": 1,
+   "lemma": 2
+  },
+  "formalization_candidates": 3
+ },
+ "candidates": [
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "s It is worth noting a few properties of \u03b5i and \u03b5ij . Let u and v be",
+   "section_file": "sections/sec-000-1-introduction.md",
+   "section_title": "Introduction",
+   "pages": "1-3",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "The Borromean rings are shown in Figure 2, bounding three dis ks",
+   "section_file": "sections/sec-001-2-the-formula-for-\u00b5-ijk.md",
+   "section_title": "The formula for \u00af\u00b5 ijk",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "s (1) Choosing a di\ufb00erent basepoint changes eijk , and hence mijk ,",
+   "section_file": "sections/sec-001-2-the-formula-for-\u00b5-ijk.md",
+   "section_title": "The formula for \u00af\u00b5 ijk",
+   "pages": "3-6",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "(1) For any choice of Seifert surfaces F ,",
+   "section_file": "sections/sec-001-2-the-formula-for-\u00b5-ijk.md",
+   "section_title": "The formula for \u00af\u00b5 ijk",
+   "pages": "3-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "1",
+   "name": null,
+   "statement": "If F is of type 1, then mijk (F ) \u2261 \u00af\u00b5ijk .",
+   "section_file": "sections/sec-002-3-proof-of-the-theorem.md",
+   "section_title": "Proof of the theorem",
+   "pages": "6-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "There is a nice alternative proof that \u00af\u00b5ijk \u2261 mijk (F ) for disentangled",
+   "section_file": "sections/sec-002-3-proof-of-the-theorem.md",
+   "section_title": "Proof of the theorem",
+   "pages": "6-12",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2",
+   "name": null,
+   "statement": "The di\ufb00erence mijk \u2212 tijk is invariant under all three \ufb01nger moves.",
+   "section_file": "sections/sec-002-3-proof-of-the-theorem.md",
+   "section_title": "Proof of the theorem",
+   "pages": "6-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

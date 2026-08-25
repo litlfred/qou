@@ -21,6 +21,10 @@ $$
 $$
 Partitions with $\ell(\lambda) > 2$ map to zero. They correspond to higher-rank symmetry components absent from the $\mathrm{SU}(2)$ spin-pairing observable. The $q$-deformed spin observables, including the magic-shell coupling of `conj:magic-shell-stabilization`, live strictly in the two-row sector.
 
+**Scope of the two-row stratum: it is the whole support, in the trace and in the binding sum alike.** Under the production convention D the restriction is not a dominance but an identity. The Wenzl weight satisfies $y_\lambda = 0$ exactly when $\ell(\lambda) \geq 3$, because the Schur–Weyl fibre is the two-dimensional fundamental of $\mathrm{SU}_q(2)$; so every $\ell(\lambda) > 2$ term of $\mathrm{tr}_M = \sum_\lambda y_\lambda \chi^\lambda$ vanishes, and so does every $\ell(\lambda) > 2$ term of the binding sum $\sum_\lambda y_\lambda \chi^\lambda \Delta_\lambda$ — the factor $\Delta_\lambda = (-1)^{n(\lambda)} f^\lambda$ multiplies a weight that is already zero. The binding sum therefore **does** inherit the restriction, at every $A$, exactly.
+
+**Withdrawn (2026-08-09).** The earlier reading of this paragraph — that $\Delta_\lambda$'s preference for balanced many-row diagrams *inverts* the dominance, with the $\ell(\lambda) > 2$ share of the binding sum growing from $\approx 26\%$ at $^2\mathrm{H}$ to $\approx 100\%$ at $^4\mathrm{He}$, and the two-row contribution falling to $\approx 0.02\%$ — is an artefact of the excised convention C, under which the $\ell(\lambda) > 2$ weights were non-zero. It is not a statement about the production trace. The observation that $\Delta_\lambda$ is largest on balanced diagrams remains true of $\Delta_\lambda$ in isolation; it has no weight left to act on.
+
 ## Indexing the stratum
 
 We have $|\Lambda^2(n)| = \lfloor n/2 \rfloor + 1$. For the $^4\mathrm{He}$ strand count ($n = 12$), we obtain **7** partitions:
@@ -37,6 +41,6 @@ The non-self-conjugate partitions $(n-k, k)$ with $k < n/2$ form mirror pairs un
 
 ## Empirical use
 
-We compute the per-partition decomposition $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$ across all 77 partitions of 12. The two-row stratum $\Lambda^2(12)$ carries $86.6\,\%$ of the total trace $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$. We formalize this in [`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance).
+We compute the per-partition decomposition $c_\lambda := y_\lambda(q_0) \cdot \chi^\lambda_q(\beta_{^4\mathrm{He}})$ across all 77 partitions of 12. The two-row stratum $\Lambda^2(12)$ carries the total trace $\mathrm{tr}_M(\beta_{^4\mathrm{He}})$ **exactly** — $100\,\%$, not as a measurement but as an identity, since $y_\lambda = 0$ for the $70$ partitions of $12$ with $\ell(\lambda) > 2$. The figure $86.6\,\%$ previously quoted here is the convention-C value and is withdrawn (2026-08-09); with it goes the reading of the result as a *dominance* rather than a support statement. We formalize this in [`prop:he4-two-row-dominance`](#prop:he4-two-row-dominance).
 
 We establish the identical pattern across the $\{D, T, {}^3\mathrm{He}, {}^4\mathrm{He}\}$ series. The dominant block for each atom always lies in $\Lambda^2(3A)$.

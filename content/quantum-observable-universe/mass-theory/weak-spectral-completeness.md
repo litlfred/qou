@@ -72,7 +72,7 @@ on the EM sector:
 **Step 1 — Per-host two-strand completeness.**
 For each $T(2, 2k)$, the two-strand braiding
 $\sigma_1 \in B_2$ has the standard Hecke decomposition
-$w_+^{(k)} + w_-^{(k)} = \mathbf{1}_{H_2(q)}$ where $w_±^{(k)}$
+$w_+^{(k)} + w_-^{(k)} = \mathbf{1}_{H_2(q)}$ where $w_\pm^{(k)}$
 are the (sym, alt) idempotents acting on $V \otimes V$ for the
 $k$-th host's natural representation $V_k$.
 
@@ -82,14 +82,14 @@ All three carriers live in **the same** $H_2(q)$ over $R$ (one
 host: Bring's surface). They are distinguished by their
 even-twist parameter $k \in \{2, 3, 4\}$, which selects different
 generalized eigenspaces under $\sigma_1^{2k}$ — specifically, the
-six idempotents $e_X^±$ are pairwise orthogonal as elements of
+six idempotents $e_X^\pm$ are pairwise orthogonal as elements of
 $H_2(q)$ because the eigenvalues $(q^{2k}, q^{-2k})$ for $k = 2,
 3, 4$ are pairwise distinct in $R$ (as $q$ is not a root of
 unity). The EW total Hecke action is therefore
 $\bigoplus_{k=2,3,4} H_2(q)|_{T(2, 2k)\text{-spectrum}}$, with
 completeness across the direct sum following from per-link
 completeness in Step 1 + pairwise orthogonality of the six
-$e_X^±$ in $H_2(q)$.
+$e_X^\pm$ in $H_2(q)$.
 
 **Step 3 — Cell-content trace, not Plancherel weight.**
 
@@ -98,10 +98,7 @@ $e_X^±$ in $H_2(q)$.
 > signature." That uniform-weight expression was a degenerate
 > artifact of the dimensionally-collapsed $H_2(q)$-only
 > formulation (six rank-1 projectors cannot fit in a 2-dim
-> algebra; see audit
-> [`docs/audits/-path-alpha-bring-refinement.md`](https://github.com/litlfred/qou/blob/main/docs/audits/-path-alpha-bring-refinement.md)
-> §"Plancherel weight is degenerate special case"). The Hoefsmit
-> $n=6$ formulation supersedes it.
+> algebra). The Hoefsmit $n=6$ formulation supersedes it.
 
 The substrate-level structural quantity is the cell-content
 trace, computed directly from the eight pure-pattern
@@ -133,7 +130,7 @@ is **not** bar-self-dual and differs from $\mathrm{tr}_{\rm pure}$
 by a factor of $\sim 22$ at $q_0$. It is retained only as a
 legacy/degenerate reference; the cell-content trace is operative.
 
-### Downstream consequence — closes NV-1
+### Downstream consequence — the weak-scale crossing count
 
 The weak-scale crossing count $N_v$ is conjecturally derivable
 from the **bar-self-dual cell-content trace** over the EW
@@ -155,15 +152,16 @@ identity must hold at all generic $q$).
 **PSLQ test.** The constrained basis is
 $\{[2]_q, [4]_q, [6]_q, [8]_q, q^k, h^k,
 \mathrm{tr}_{\rm pure}\}$ — strictly smaller than the
-brute-force monomial basis of the impasse audit. The earlier
+brute-force monomial basis used previously. The earlier
 Plancherel-weight basis $\{[2k]_q^2/[2]_q, \mathcal{N}_{\rm sym}\}$
 is **superseded**.
-### Audit-flag impact
+### Consequences
 
 If this conjecture closes:
-- **NV-1**: hard flag closed via constrained PSLQ on the extended basis
+- **the weak-scale crossing count $N_v$**: pinned by constrained PSLQ on the
+  extended basis
 - **β-decay rates**: $G_F = 1/(\sqrt{2}\,N_v^2 E_\times^2 \mu_0^2)$
   becomes derivable from $(q_0, m_e)$ alone, closing every β-decay
   half-life prediction simultaneously.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

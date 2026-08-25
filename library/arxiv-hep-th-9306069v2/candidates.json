@@ -1,0 +1,28 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9306069v2",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "a140d10424f732333b390701057b3dbc73d34eb7871ea46d85ee4f7c50285d3a",
+  "file": "9306069v2.pdf"
+ },
+ "provenance": {
+  "title": "Department of Physics",
+  "authors": "Stanford University, Stanford, CA 94305-4060",
+  "arxiv": {
+   "id": "hep-th/9306069",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "28 Jun 1993"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 0,
+  "by_kind": {},
+  "formalization_candidates": 0
+ },
+ "candidates": []
+}

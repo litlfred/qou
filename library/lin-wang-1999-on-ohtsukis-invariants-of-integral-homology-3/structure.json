@@ -1,0 +1,466 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3",
+ "source": {
+  "file": "lin-wang-1999-on-ohtsukis-invariants-of-integral-homology-3-spheres.pdf",
+  "sha256": "3fb38d4cfd20d4fbff6a7299b83ece8d136a044fcce94dac4cb0a07845123f82",
+  "bytes": 1057784,
+  "pages": 24
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "On Ohtsuki's invariants of integral homology 3-spheres",
+  "authors_raw": "Sinica, English Series",
+  "abstract": "We provide some more explicit formulae to facilitate the computation of Ohtsuki's rational invariants ,k,~ of integral homology 3-spheres extracted from Reshetikhin-Turaev SU(2) quantum invari- ants. Several interesting consequences will follow from our computation of A2. One of them says that A2 is always an integer divisible by 3. It seems interesting to compare this result with the fact shown by Murakami that )u is 6 times the Casson invariant. Other consequences include some general criteria for distinguishing homology 3-spheres obtained from surgery on knots by using the Jones polynomial.",
+  "docinfo": {
+   "CreationDate": "D:20070423164914+07'00'",
+   "Title": "On ohtsuki&#x2019;s invariants of integral homology 3-spheres",
+   "Author": "",
+   "Creator": "0438.TIF",
+   "Producer": "PageGenie PDFGenerator"
+  },
+  "title_lines": [
+   "Acta Mathematica Sinica, English Series",
+   "1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+  ],
+  "title_prev": "Acta Mathematica Sinica, English Series 1999, July, Vol.15, No.3, p. 293-316 Acta Mathematica"
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Using",
+   "page": 2,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Fermat Functions and Their Residues",
+   "page": 3,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) +",
+   "page": 3,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "To see Formula (2.5) for m > 1, we only need to notice that",
+   "page": 6,
+   "source": "inferred",
+   "number": "2.1"
+  },
+  {
+   "level": 1,
+   "title": "(-\u000189 -l)",
+   "page": 6,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "Fermat Limits and Ohtsuki's Invariants",
+   "page": 6,
+   "source": "inferred",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "For R = Z or Z(r), O((q - 1)k;R) stands for a complex number of the form u(q - 1) k",
+   "page": 6,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "(H. Murakami) Tr(M) e Z[q];",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "(T. Ohtsuki) f-limTr(M) = ~--~,~--0 An(t- 1) n, and/~n E ~(2n+2)~\"",
+   "page": 7,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Invariants of Links",
+   "page": 7,
+   "source": "inferred",
+   "number": "4"
+  },
+  {
+   "level": 1,
+   "title": "It will be useful to note that X(L; t), O(L; t) E Z[t, t -1, t--~]-",
+   "page": 7,
+   "source": "inferred",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "The Second Invariant A2",
+   "page": 10,
+   "source": "inferred",
+   "number": "5"
+  },
+  {
+   "level": 1,
+   "title": "A2(M) e 3Z[\u000189",
+   "page": 11,
+   "source": "inferred",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "We certainly have At(M) = 0. Therefore, A2/3 - Ac mod 2. This raises the",
+   "page": 13,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "The Formula for A n",
+   "page": 13,
+   "source": "inferred",
+   "number": "6"
+  },
+  {
+   "level": 1,
+   "title": "Then",
+   "page": 13,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "So the only non-trivial contribution",
+   "page": 15,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "(q- 1) r~a-'+m +O((q-- 1)'-l-t;Z(.))",
+   "page": 16,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "L r----2",
+   "page": 17,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 1,
+   "title": "E gl',m'(t- 1)m'-t'--i-l+l;t- 1)",
+   "page": 18,
+   "source": "inferred",
+   "number": "9"
+  },
+  {
+   "level": 2,
+   "title": "Using the values of v/,0,0, and vf,l,o, we get",
+   "page": 19,
+   "source": "inferred",
+   "number": "6.1"
+  },
+  {
+   "level": 1,
+   "title": "Integrality of ,k,~",
+   "page": 19,
+   "source": "inferred",
+   "number": "7"
+  },
+  {
+   "level": 1,
+   "title": "Epilogue",
+   "page": 22,
+   "source": "inferred",
+   "number": "8"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 23,
+   "source": "inferred",
+   "number": null
+  }
+ ],
+ "toc_source": "inferred",
+ "sections": [
+  {
+   "id": "sec-000-9-using",
+   "number": "9",
+   "title": "Using",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 113,
+   "n_words": 14
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 4132,
+   "n_words": 675
+  },
+  {
+   "id": "sec-002-2-fermat-functions-and-their-residues",
+   "number": "2",
+   "title": "Fermat Functions and Their Residues",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 3,
+   "n_chars": 1855,
+   "n_words": 372
+  },
+  {
+   "id": "sec-003-1-for-rational-numbers-a-and3-af-3g-is-a-fermat",
+   "number": "1",
+   "title": "For rational numbers a and/3, af +/3g is a Fermat function whose residue is o~Res(f) +",
+   "level": 1,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 3564,
+   "n_words": 709
+  },
+  {
+   "id": "sec-004-21-to-see-formula-25-for-m-1-we-only-need-to-not",
+   "number": "2.1",
+   "title": "To see Formula (2.5) for m > 1, we only need to notice that",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 5,
+   "n_words": 1
+  },
+  {
+   "id": "sec-005-9--89--l",
+   "number": "9",
+   "title": "(-\u000189 -l)",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 69,
+   "n_words": 15
+  },
+  {
+   "id": "sec-006-3-fermat-limits-and-ohtsukis-invariants",
+   "number": "3",
+   "title": "Fermat Limits and Ohtsuki's Invariants",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 6,
+   "n_chars": 203,
+   "n_words": 44
+  },
+  {
+   "id": "sec-007-9-for-r-z-or-zr-oq---1kr-stands-for-a-complex-nu",
+   "number": "9",
+   "title": "For R = Z or Z(r), O((q - 1)k;R) stands for a complex number of the form u(q - 1) k",
+   "level": 1,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 1910,
+   "n_words": 365
+  },
+  {
+   "id": "sec-008-1-h-murakami-trm-e-zq",
+   "number": "1",
+   "title": "(H. Murakami) Tr(M) e Z[q];",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-009-2-t-ohtsuki-f-limtrm-----0-ant--1-n-andn-e-2n2",
+   "number": "2",
+   "title": "(T. Ohtsuki) f-limTr(M) = ~--~,~--0 An(t- 1) n, and/~n E ~(2n+2)~\"",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 281,
+   "n_words": 49
+  },
+  {
+   "id": "sec-010-4-invariants-of-links",
+   "number": "4",
+   "title": "Invariants of Links",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 7,
+   "n_chars": 1445,
+   "n_words": 284
+  },
+  {
+   "id": "sec-011-1-it-will-be-useful-to-note-that-xl-t-ol-t-e-zt",
+   "number": "1",
+   "title": "It will be useful to note that X(L; t), O(L; t) E Z[t, t -1, t--~]-",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 5033,
+   "n_words": 1020
+  },
+  {
+   "id": "sec-012-5-the-second-invariant-a2",
+   "number": "5",
+   "title": "The Second Invariant A2",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 1441,
+   "n_words": 292
+  },
+  {
+   "id": "sec-013-2-a2m-e-3z89",
+   "number": "2",
+   "title": "A2(M) e 3Z[\u000189",
+   "level": 1,
+   "page_start": 11,
+   "page_end": 12,
+   "n_chars": 2827,
+   "n_words": 550
+  },
+  {
+   "id": "sec-014-9-then",
+   "number": "9",
+   "title": "Then",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1927,
+   "n_words": 351
+  },
+  {
+   "id": "sec-015-9-we-certainly-have-atm-0-therefore-a23---ac-mod",
+   "number": "9",
+   "title": "We certainly have At(M) = 0. Therefore, A2/3 - Ac mod 2. This raises the",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 13,
+   "n_chars": 495,
+   "n_words": 87
+  },
+  {
+   "id": "sec-016-6-the-formula-for-a-n",
+   "number": "6",
+   "title": "The Formula for A n",
+   "level": 1,
+   "page_start": 13,
+   "page_end": 15,
+   "n_chars": 4356,
+   "n_words": 848
+  },
+  {
+   "id": "sec-017-9-so-the-only-non-trivial-contribution",
+   "number": "9",
+   "title": "So the only non-trivial contribution",
+   "level": 1,
+   "page_start": 15,
+   "page_end": 16,
+   "n_chars": 388,
+   "n_words": 91
+  },
+  {
+   "id": "sec-018-9-q--1-ra-m-oq---1-l-tz",
+   "number": "9",
+   "title": "(q- 1) r~a-'+m +O((q-- 1)'-l-t;Z(.))",
+   "level": 1,
+   "page_start": 16,
+   "page_end": 17,
+   "n_chars": 1580,
+   "n_words": 315
+  },
+  {
+   "id": "sec-019-9-l-r----2",
+   "number": "9",
+   "title": "L r----2",
+   "level": 1,
+   "page_start": 17,
+   "page_end": 18,
+   "n_chars": 1773,
+   "n_words": 351
+  },
+  {
+   "id": "sec-020-9-e-glmt--1m-t--i-llt--1",
+   "number": "9",
+   "title": "E gl',m'(t- 1)m'-t'--i-l+l;t- 1)",
+   "level": 1,
+   "page_start": 18,
+   "page_end": 19,
+   "n_chars": 1428,
+   "n_words": 315
+  },
+  {
+   "id": "sec-021-61-using-the-values-of-v00-and-vflo-we-get",
+   "number": "6.1",
+   "title": "Using the values of v/,0,0, and vf,l,o, we get",
+   "level": 2,
+   "page_start": 19,
+   "page_end": 19,
+   "n_chars": 333,
+   "n_words": 81
+  },
+  {
+   "id": "sec-022-7-integrality-of-k",
+   "number": "7",
+   "title": "Integrality of ,k,~",
+   "level": 1,
+   "page_start": 19,
+   "page_end": 22,
+   "n_chars": 5306,
+   "n_words": 1116
+  },
+  {
+   "id": "sec-023-8-epilogue",
+   "number": "8",
+   "title": "Epilogue",
+   "level": 1,
+   "page_start": 22,
+   "page_end": 23,
+   "n_chars": 2658,
+   "n_words": 449
+  },
+  {
+   "id": "sec-024-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 3620,
+   "n_words": 533
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 25,
+  "sections": 25,
+  "chars_total": 46742
+ }
+}

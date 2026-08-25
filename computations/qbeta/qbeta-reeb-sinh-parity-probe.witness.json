@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-07T13:42:06.982182+00:00",
-  "commitSha": "85da4f43133d9d70ca3582f4fa4f31771b5ec3f1",
+  "computedAt": "2026-08-24T13:26:21.248666+00:00",
+  "commitSha": "095fe21a9554d7dcc0235070203b9450ce983da0",
   "assertions": [
     {
       "name": "at_least_one_sinh_candidate_matches_c3_sign",
@@ -20,7 +20,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 8,
+  "durationMs": 5,
   "computation": "qbeta-reeb-sinh-parity-probe",
   "scriptFile": "qbeta_reeb_sinh_parity_probe.py",
   "scriptHash": "dd283003f0dd",
@@ -32,91 +32,99 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_reeb_sinh_parity_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_reeb_sinh_parity_probe.py"
   },
   "description": "Pruned necessary-condition check on the Reeb-sinh holonomy as a c_3 source. Parity (bar-odd) is the formalize-first invariant proved in QBetaReebSinhParity.lean; here we test sign + cross-anchor swing of sinh-Reeb scalars against the c_3 target and measure the slope ratio (dc_3/dη)/(dS/dη). The ratio is ~1/u³ (≈1.6e6), not ~1, so a direct Reeb sinh matches the c_3 sign but not the observable swing magnitude — it is parity-admissible only at the FIBRE level (pre-f-map), where the ladder supplies the amplification. First non-refuted structural lead since the c_3 bracket closed; consistent with #1880 + #1811. No fits.",
   "contentBlock": "conj:qbeta-precision-ladder",
   "data": {
     "eta_proton": "0.104340720319519512315906279973072397053744280828984303250862",
-    "eta_muon": "0.104340731853795842332313842423389889355843923272577950437907",
+    "eta_muon": "0.104340731933579787492493769163872830029930916836723181184440",
     "c3_target_proton": "-2.06934257711516783787971951724962858902203099810343886691284",
-    "c3_target_muon": "-2.02020023502125517138232674988576251890206061330068660325496",
-    "c3_slope_dc3_deta": "4260548.35933020873656444289752355385282158600925666200152906",
+    "c3_target_muon": "-2.01986031187400546349321995587646029747377592135260349078716",
+    "c3_slope_dc3_deta": "4260548.34130004675323017958533857779391303495304401742636304",
     "ladder_inv_u3": "1618468.22929443317814446757022999386841248777383784810120158",
     "candidates": [
       {
         "candidate": "-sinh(η)",
         "S_proton": "-0.104530149397819657715423106564837471929878747631512277690848",
-        "S_muon": "-0.104530160994939730550804211148960953230878151958229341991524",
+        "S_muon": "-0.104530161075158373315400130750959942990068584612939556851870",
         "sign_matches_c3": true,
-        "dS_deta": "-1.00544843395640098615648563271463221332237904334062042753664",
+        "dS_deta": "-1.00544843396057090031954418578487931159064947010075527663169",
         "swing_direction_matches": false,
-        "slope_ratio_c3_over_S": -4237460.833834227,
+        "slope_ratio_c3_over_S": -4237460.815884195,
         "observable_match": false
       },
       {
         "candidate": "-2·sinh(η) [= -h]",
         "S_proton": "-0.209060298795639315430846213129674943859757495263024555381696",
-        "S_muon": "-0.209060321989879461101608422297921906461756303916458683983049",
+        "S_muon": "-0.209060322150316746630800261501919885980137169225879113703739",
         "sign_matches_c3": true,
-        "dS_deta": "-2.01089686791280197231297126542926442664475808668124085507328",
+        "dS_deta": "-2.01089686792114180063908837156975862318129894020151055326337",
         "swing_direction_matches": false,
-        "slope_ratio_c3_over_S": -2118730.4169171136,
+        "slope_ratio_c3_over_S": -2118730.4079420976,
         "observable_match": false
       },
       {
         "candidate": "-sinh(3η)/(2cosh η)",
         "S_proton": "-0.158217494874297863730468416428746962182475140479351229041767",
-        "S_muon": "-0.158217512742165749923387835101165150096407470576735759768379",
+        "S_muon": "-0.158217512865759892790784458615268932500438859623067157410611",
         "sign_matches_c3": true,
-        "dS_deta": "-1.54911044047854038991779796365790332913954940415776410974220",
+        "dS_deta": "-1.54911044051618395092378786881952992778492602825755177264096",
         "swing_direction_matches": false,
-        "slope_ratio_c3_over_S": -2750319.3110066894,
+        "slope_ratio_c3_over_S": -2750319.299300814,
         "observable_match": false
       },
       {
         "candidate": "-sinh(3η)",
         "S_proton": "-0.318159064700975756962685624407127286973553855721642826270424",
-        "S_muon": "-0.318159101012934589012078404954335065329959819355108661909587",
+        "S_muon": "-0.318159101264108677834412775124803497397329927019287033921784",
         "sign_matches_c3": true,
-        "dS_deta": "-3.14817833326503448248316982104912093714029296154971845192875",
+        "dS_deta": "-3.14817833337926242537098883662892393175342004228196393093234",
         "swing_direction_matches": false,
-        "slope_ratio_c3_over_S": -1353337.6792259142,
+        "slope_ratio_c3_over_S": -1353337.673449637,
         "observable_match": false
       },
       {
         "candidate": "-sinh(3η)/(2cosh³η)",
         "S_proton": "-0.156507408515927430695978358213343037110106832145511610358007",
-        "S_muon": "-0.156507425815320728075765940223250172272250454027633607205679",
+        "S_muon": "-0.156507425934982664951256928641510196070249919453020894546345",
         "sign_matches_c3": true,
-        "dS_deta": "-1.49982476597690278445909300359642555048850153862581450221265",
+        "dS_deta": "-1.49982476597663673488883912569019400996291413902405847285592",
         "swing_direction_matches": false,
-        "slope_ratio_c3_over_S": -2840697.4307796042,
+        "slope_ratio_c3_over_S": -2840697.418758596,
         "observable_match": false
       },
       {
         "candidate": "-sinh(5η)/(2cosh η)",
         "S_proton": "-0.271368221546859946037434807689270106706188198278981701700209",
-        "S_muon": "-0.271368253893120032345705110128607400507276541714668540161971",
+        "S_muon": "-0.271368254116862918220131786908711371336000210238092213831404",
         "sign_matches_c3": true,
-        "dS_deta": "-2.80435973274989655072630704810646239866730903267195001404766",
+        "dS_deta": "-2.80435973298644535708538686370056730818273259602452848674935",
         "swing_direction_matches": false,
-        "slope_ratio_c3_over_S": -1519258.8559786528,
+        "slope_ratio_c3_over_S": -1519258.84942117,
         "observable_match": false
       },
       {
         "candidate": "-tanh(η)·[3]ish=-sinh(3η)/cosh(η)",
         "S_proton": "-0.316434989748595727460936832857493924364950280958702458083534",
-        "S_muon": "-0.316435025484331499846775670202330300192814941153471519536759",
+        "S_muon": "-0.316435025731519785581568917230537865000877719246134314821222",
         "sign_matches_c3": true,
-        "dS_deta": "-3.09822088095708077983559592731580665827909880831552821948439",
+        "dS_deta": "-3.09822088103236790184757573763905985556985205651510354528192",
         "swing_direction_matches": false,
-        "slope_ratio_c3_over_S": -1375159.6555033447,
+        "slope_ratio_c3_over_S": -1375159.649650407,
         "observable_match": false
       }
     ],

@@ -32,9 +32,16 @@ HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 sys.path.insert(0, str(HERE / "substrate"))
 
-mp.mp.dps = 50
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from q_parameter import Q_MP  # noqa: E402
 from codata_constants import (  # noqa: E402
     M_E_MEV, M_N_MEV_VALIDATION, M_P_MEV_VALIDATION,
@@ -53,7 +60,7 @@ AME_4HE = mp.mpf(AME_BA_MEV[(2, 2)])     # ⁴He total binding, AME 2020 (canoni
 
 def main() -> int:
     t0 = time.monotonic()
-    bs = json.loads((HERE / "block-swap-binding.witness.json").read_text(encoding="utf-8"))
+    bs = record_upstream(HERE / "block-swap-binding.witness.json", _UPSTREAM_RECORDS)
     at = {k: mp.mpf(str(v)) for k, v in bs["data"]["atom_traces"].items()}
     fr = {k: mp.mpf(str(v)) for k, v in bs["data"]["free_traces"].items()}
 
@@ -106,6 +113,7 @@ def main() -> int:
     print(f"\n  VERDICT: {verdict}")
 
     w = WitnessBuilder("symmetrized-binding-closure", engine="python", start_time=t0)
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "Task 2 — wires the block-swap symmetrization shift ΔB=scale·log(S_free/"
         "S_atom) (task 1) into the ⁴He log-ratio binding and tests closure. RESULT: "

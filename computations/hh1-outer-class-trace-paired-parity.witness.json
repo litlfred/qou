@@ -1,0 +1,157 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "bar-parity of the tr_M-paired number from the HH^1 outer class",
+  "bean": "qou-qb8d",
+  "algebra": "H_3(q) Iwahori-Hecke, dim 6",
+  "trace_convention": "Ocneanu/Markov, Jones specialization per docs/audits/2026-08-04-ocneanu-trace-parameter-audit.md; z kept SYMBOLIC and bar-EVEN (true of z = 1/(q^{1/2}+q^{-1/2})). Keeping z formal avoids a q^{1/2} branch choice at the root of unity AND makes the conclusion independent of the Ocneanu-parameter question that audit records as genuinely open.",
+  "generator_pin": "He-Nie minimal-length conjugacy-class representatives (e, s1, s1s2 for n=3) -- asserted to form a basis of HH_0, so the generator is pinned structurally, not chosen.",
+  "assertions": [
+    {
+      "name": "trace_kills_commutators[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "tr_M vanishes on all 36 commutators [B_i,B_j] (validates the Ocneanu recursion + the descent to HH_0)"
+    },
+    {
+      "name": "henie_minlength_basis[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "the 3 minimal-length conjugacy-class representatives (e, s1, s1s2) project to a BASIS of HH_0 -- the generator pin is structural (He-Nie), not a choice"
+    },
+    {
+      "name": "bar_decomposition_valid[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "each S_even is bar-even, each S_odd is bar-odd, and the parts re-sum to S"
+    },
+    {
+      "name": "jones_z_is_bar_even[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "z = 1/(2cos(theta/2)) = sqrt(2)/2 is REAL, hence bar-even -- the hypothesis held on z is verified"
+    },
+    {
+      "name": "bar_odd_survives_jones_z[q = i        ([2]_q = 0)]",
+      "passed": true,
+      "detail": "at least one bar-ODD component is still nonzero after specializing z to the Jones value (not a formal-z artifact)"
+    },
+    {
+      "name": "trace_kills_commutators[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "tr_M vanishes on all 36 commutators [B_i,B_j] (validates the Ocneanu recursion + the descent to HH_0)"
+    },
+    {
+      "name": "henie_minlength_basis[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "the 3 minimal-length conjugacy-class representatives (e, s1, s1s2) project to a BASIS of HH_0 -- the generator pin is structural (He-Nie), not a choice"
+    },
+    {
+      "name": "bar_decomposition_valid[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "each S_even is bar-even, each S_odd is bar-odd, and the parts re-sum to S"
+    },
+    {
+      "name": "jones_z_is_bar_even[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "z = 1/(2cos(theta/2)) = sqrt(3)/3 is REAL, hence bar-even -- the hypothesis held on z is verified"
+    },
+    {
+      "name": "bar_odd_survives_jones_z[q = zeta_6   ([3]_q = 0)]",
+      "passed": true,
+      "detail": "at least one bar-ODD component is still nonzero after specializing z to the Jones value (not a formal-z artifact)"
+    },
+    {
+      "name": "trace_kills_commutators[q = 2        (semisimple control)]",
+      "passed": true,
+      "detail": "tr_M vanishes on all 36 commutators [B_i,B_j] (validates the Ocneanu recursion + the descent to HH_0)"
+    },
+    {
+      "name": "henie_minlength_basis[q = 2        (semisimple control)]",
+      "passed": true,
+      "detail": "the 3 minimal-length conjugacy-class representatives (e, s1, s1s2) project to a BASIS of HH_0 -- the generator pin is structural (He-Nie), not a choice"
+    }
+  ],
+  "allPassed": true,
+  "results": [
+    {
+      "label": "q = i        ([2]_q = 0)",
+      "dim_HH0": 3,
+      "dim_HH1": 1,
+      "S_values": [
+        {
+          "x": "e",
+          "class": "identity",
+          "S": "0",
+          "S_even": "0",
+          "S_odd": "0",
+          "parity": "n/a"
+        },
+        {
+          "x": "s1",
+          "class": "transposition",
+          "S": "z/3 - I/3",
+          "S_even": "z/3",
+          "S_odd": "-I/3",
+          "bar_ratio": "(z + I)/(z - I)",
+          "parity": "MIXED (both parts nonzero)"
+        },
+        {
+          "x": "s1s2",
+          "class": "3-cycle",
+          "S": "2*I*z/3 + 2/3",
+          "S_even": "2/3",
+          "S_odd": "2*I*z/3",
+          "bar_ratio": "(-z - I)/(z - I)",
+          "parity": "MIXED (both parts nonzero)"
+        }
+      ],
+      "all_zero": false,
+      "jones_z": "sqrt(2)/2",
+      "parity_flipping_units": [
+        "I",
+        "-I"
+      ],
+      "integrality_pin_determines_parity": false,
+      "verdict": "NOT trace-blind: tr_M(Delta(x)) != 0, so the clean scale-invariant prune does not occur. The paired number is MIXED -- it carries a NONZERO bar-ODD component, which is the parity the c_3 swing needs. The outer class is therefore NOT excluded by bar-parity."
+    },
+    {
+      "label": "q = zeta_6   ([3]_q = 0)",
+      "dim_HH0": 3,
+      "dim_HH1": 1,
+      "S_values": [
+        {
+          "x": "e",
+          "class": "identity",
+          "S": "0",
+          "S_even": "0",
+          "S_odd": "0",
+          "parity": "n/a"
+        },
+        {
+          "x": "s1",
+          "class": "transposition",
+          "S": "0",
+          "S_even": "0",
+          "S_odd": "0",
+          "parity": "n/a"
+        },
+        {
+          "x": "s1s2",
+          "class": "3-cycle",
+          "S": "(-sqrt(3)*z**2 - I*z**2 - sqrt(3)*z + 3*I*z + sqrt(3) + I)/(sqrt(3) - 3*I)",
+          "S_even": "-z",
+          "S_odd": "sqrt(3)*I*(1 - z**2)/3",
+          "bar_ratio": "(-sqrt(3)*z**2 - 3*I*z + sqrt(3))/(sqrt(3)*z**2 - 3*I*z - sqrt(3))",
+          "parity": "MIXED (both parts nonzero)"
+        }
+      ],
+      "all_zero": false,
+      "jones_z": "sqrt(3)/3",
+      "parity_flipping_units": [],
+      "integrality_pin_determines_parity": true,
+      "verdict": "NOT trace-blind: tr_M(Delta(x)) != 0, so the clean scale-invariant prune does not occur. The paired number is MIXED -- it carries a NONZERO bar-ODD component, which is the parity the c_3 swing needs. The outer class is therefore NOT excluded by bar-parity."
+    },
+    {
+      "label": "q = 2        (semisimple control)",
+      "dim_HH1": 0,
+      "S_values": null,
+      "verdict": "n/a (no outer class)"
+    }
+  ]
+}

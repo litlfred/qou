@@ -25,8 +25,8 @@ The longitudinal winding number of $T_{2,9}$ factors as $9 = 3 \times 3$. This f
 | Generator | $n$ | $n/3$ | Role |
 |-----------|-----|-------|------|
 | $T_{2,3}$ | $3$ | $1$ | Matter (electron, up quark) |
-| $T_{2,5}$ | $5$ | — | Matter (muon, bottom) |
-| $T_{2,7}$ | $7$ | — | Matter (tau, charm) |
+| $T_{2,5}$ | $5$ | — | Matter (muon, charm) |
+| $T_{2,7}$ | $7$ | — | Matter (tau, bottom) |
 | $T_{2,9}$ | $9$ | $\mathbf{3}$ | **Three-fold cover of $T_{2,3}$** |
 
 On the torus, $T_{2,9}$ traces the trefoil pattern three times around the longitude. It is the unique three-fold cover of $T_{2,3}$ within $\mathcal{G}$. The knot group relation $x^2 = y^9 = (y^3)^3$ reflects this factorization: the longitudinal generator $y$ completes three $T_{2,3}$ periods before closing.
@@ -37,7 +37,7 @@ This three-fold structure aligns with the three color tubes. Each color fiber ca
 The Standard Model matter/force distinction aligns with winding numbers:
 
 - **Matter generators** ($T_{2,3}$, $T_{2,5}$, $T_{2,7}$) have prime winding numbers. They do not factor through a lower generator.
-- **Force generators** ($T_{3,4}$, $T_{3,5}$, $T_{2,9}$) populate the $H^{0,1}$ antiholomorphic sector. The composite winding $9 = 3 \times 3$ of $T_{2,9}$ factors through $T_{2,3}$. The knot $T_{3,4}$ provides Hopf-squared color binding. The knot $T_{3,5}$ mediates the weak interaction.
+- **Force generators** ($T_{3,4}$, $T_{3,5}$, $T_{2,9}$) populate the $H^{0,1}$ antiholomorphic sector. The composite winding $9 = 3 \times 3$ of $T_{2,9}$ factors through $T_{2,3}$. The knot $T_{3,4}$ provides Hopf-squared color binding. The knot $T_{3,5}$ carries three-strand colour at the second-generation column; the production reading below identifies it with the $gg \to c\bar{c}$ vertex rather than a weak mediator.
 
 A generator whose winding interpolates three matter copies binds rather than acts as a standalone particle. This yields the identification:
 
@@ -49,23 +49,26 @@ The 9 crossings of $T_{2,9}$ provide exactly three crossing triples, one per col
 
 **The structure of $T_{3,5}$.**
 
-The torus knot $T_{3,5}$ has 3-strand meridional winding. This places it in the force carrier family alongside $T_{3,4}$. Its longitudinal winding $n = 5$ matches $T_{2,5}$ (muon, bottom). This creates a cross-link between the two winding families:
+The torus knot $T_{3,5}$ has 3-strand meridional winding. This places it in the force carrier family alongside $T_{3,4}$. Its longitudinal winding $n = 5$ matches $T_{2,5}$ (muon, charm). This creates a cross-link between the two winding families:
 
 | $m \backslash n$ | $3$ | $4$ | $5$ | $7$ | $9$ |
 |------------------|-----|-----|-----|-----|-----|
-| $2$ | $e^-, u$ | — | $\mu, b$ | $\tau, c$ | **force** |
+| $2$ | $e^-, u$ | — | $\mu, c$ | $\tau, b^{\sigma}$ | **force** |
 | $3$ | — | **force** | **force** | — | — |
 
 The knot $T_{3,5}$ sits at the intersection of the $m = 3$ (quark) row and the $n = 5$ (second-generation) column. Its knot group relation $x^3 = y^5$ intertwines the three-strand color structure with five-fold longitudinal winding.
 
-If $T_{2,9}$ carries the strong force, $T_{3,5}$ is the natural candidate for a flavor-changing interaction. It topologically connects the $m = 2$ and $m = 3$ families. The weak force changes quark flavor (e.g., $u \leftrightarrow d$ via $W^{±}$) and requires precisely this cross-family mediation. Alternatively, $T_{3,5}$ encodes the electroweak mixing between leptonic and quark sectors.
+If $T_{2,9}$ carries the strong force, $T_{3,5}$ is the natural candidate for a flavor-changing interaction. It topologically connects the $m = 2$ and $m = 3$ families. The weak force changes quark flavor (e.g., $u \leftrightarrow d$ via $W^{\pm}$) and requires precisely this cross-family mediation. Alternatively, $T_{3,5}$ encodes the electroweak mixing between leptonic and quark sectors.
+
+**Production reading: $T_{3,5}$ as the $gg \to c\bar{c}$ vertex.**
+The pair-production mechanism sharpens the $T_{3,5}$ reading and disfavours the weak-mediator alternative above. Dominant second-generation quark production is gluon fusion $gg \to c\bar{c}$; the two incoming gluons occupy the three-strand colour ($m = 3$) sector — the sector of the strong generator $T_{2,9}$ — and the Frobenius Gram matrix selects the emergent pair by the colour-tube threading operation, which attaches the $m = 3$ colour structure to the second-generation longitudinal winding $n = 5$. On this reading $T_{3,5}$ is the production vertex, and the second-generation quark is its coloured outgoing leg: a colour-threaded $T_{2,5}$. The uncoloured $T_{2,5}$ is the generation label the quark shares with the muon; $T_{3,5}$ is its coloured realisation under threading. This reading is more consistent than the weak-mediator guess, which collides with the electroweak-triplet assignment $W = T_{2,4}$ — the charged weak boson is a genus-zero torus link, not $T_{3,5}$. It also reconciles the [Standard-Model appendix](../appendix-standard-model/sm-params-quark-masses.md), where the quark masses are open precisely because quarks carry no independent knot: the second-generation quark is a threaded constituent leg, not a standalone carrier. The identification fixes a channel, not a mass — $T_{3,5}$ has zero hyperbolic volume, so a second-generation quark mass requires the complex-volume constituent functional (the real part of $\mathrm{Vol} + i\,\mathrm{CS}$ projected onto the $n = 5$ Frobenius block), which is open.
 
 **Summary of candidate assignments.**
 
 | Generator | Structure | Candidate | Rationale |
 |-----------|-----------|-----------|-----------|
 | $T_{2,9}$ | Three-fold cover of $T_{2,3}$ | Strong force / gluonic binding | Interpolates 3 color copies of the trefoil; zero volume = massless |
-| $T_{3,5}$ | Cross-link of $m = 3$, $n = 5$ | Weak / electroweak mediator | Connects quark and lepton winding families; flavor-changing |
+| $T_{3,5}$ | Cross-link of $m = 3$, $n = 5$ | $gg \to c\bar{c}$ vertex / second-generation quark channel | Colour-threaded $T_{2,5}$; weak-mediator reading disfavoured by $W = T_{2,4}$ |
 
 **Open problem.**
-Make the force interpretation precise. Identify $T_{2,9}$ and $T_{3,5}$ with specific gauge bosons (gluon, $W^{±}$, $Z^0$). Compute their Skein interaction terms with matter generators. Compare coupling constants derived from the mass functional with Standard Model values.
+Make the force interpretation precise. Identify $T_{2,9}$ and $T_{3,5}$ with specific gauge bosons (gluon, $W^{\pm}$, $Z^0$). Compute their Skein interaction terms with matter generators. Compare coupling constants derived from the mass functional with Standard Model values.

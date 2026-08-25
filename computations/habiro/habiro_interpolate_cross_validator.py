@@ -45,10 +45,12 @@ import _path_bridge as _bridge  # noqa: E402, F401
 del _sys, _Path, _bridge
 
 import _path_bridge as _pb  # noqa: E402 — cross-cluster witness lookup
+from _precision import set_compute_dps  # noqa: E402 — dps must rise before module constants
 import sys
 from pathlib import Path
 
 import mpmath as mp
+from qou_substrate.precision import fmt  # noqa: E402
 
 sys.path.insert(0, str(Path(__file__).parent))
 from habiro_types import HabiroAtomicWitness  # noqa: E402
@@ -73,6 +75,12 @@ def _agreement_rtol_for(working_dps: int) -> mp.mpf:
     return mp.mpf(10) ** -min(working_dps - 18, 12)
 
 
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+# Gate: mpf_import_time_dps_audit.py (bean qou-j6gb).
+set_compute_dps()
+
 # AGREEMENT_RTOL is set in `main()` from the active `mp.mp.dps` so a
 # higher-precision rerun of this script automatically tightens the
 # tolerance.  Default value (1e-12) used as a module-level fallback
@@ -92,7 +100,25 @@ def parse_polynomial_in_u(s: str, u_value: mp.mpf) -> mp.mpf:
     # Caller-provided string is from a trusted in-repo witness, so
     # eval is acceptable here (same pattern as numpy.evaluate use
     # elsewhere in the pipeline).
-    return mp.mpf(eval(s, {"__builtins__": {}}, {"check_q": u_value, "mp": mp}))
+    # BOTH names, per the precedent in `term6_full_pole_sum.py` (~line 321):
+    # `to_u_polynomial` renders its strings with whatever SYMBOL the caller
+    # passed, so habiro witnesses carry either -- the older ones say
+    # "check_q", newer ones say "u".  Binding only ONE name is why this
+    # producer has been dead: its own docstring and data say `u`, the locals
+    # bound `check_q` alone, and every evaluation raised
+    # `NameError: name 'u' is not defined`.  term6_full_pole_sum was killed by
+    # the same class of mismatch and fixed the same way; two further consumers
+    # (`markov_substrate_realizer`, `probe_direct_cyclotomic_map`) also handle
+    # both spellings.  Live witnesses still use `check_q`
+    # (`probes/qbeta-habiro-recursion`, `probes/qbeta-habiro-p8-identification`),
+    # so this binds both rather than renaming to `u`.
+    #
+    # `u_value` is coerced rather than trusted: the expressions carry exact
+    # integer coefficients, so an mpf `u` keeps the whole evaluation exact,
+    # while a float `u` would silently resolve the result to float64.
+    u_mp = mp.mpf(u_value)
+    return mp.mpf(eval(s, {"__builtins__": {}},
+                       {"u": u_mp, "check_q": u_mp, "mp": mp}))
 
 
 def main() -> int:
@@ -165,13 +191,18 @@ def main() -> int:
             "rel_diff": str(rel),
             "agree": bool(rel <= AGREEMENT_RTOL),
         })
-        # Use floats only for the assertion's tolerance check (the
-        # full-precision values stay in `data.checks` above).
+        # STRINGS, not float(): `add_assertion` documents this as the drained
+        # convention (qou-t0rf) -- it keeps the value out of float64, and
+        # `passed` coerces with float() either way, so the check is unchanged.
+        # The float() casts put 3 raw float64 fields into the witness per
+        # assertion; fixing the u/check_q binding added a third atom and took
+        # that 6 -> 9, tripping the raw-float64 ratchet. Fixed at the producer,
+        # per the gate -- never by baselining.
         w.add_assertion(
             f"tr_M_q0_atomic_vs_interpolate[{atom}]",
-            computed=float(atomic_tr),
-            expected=float(interp_tr),
-            tolerance=float(AGREEMENT_RTOL * max(mp.fabs(atomic_tr), mp.fabs(interp_tr))),
+            computed=fmt(atomic_tr),
+            expected=fmt(interp_tr),
+            tolerance=fmt(AGREEMENT_RTOL * max(mp.fabs(atomic_tr), mp.fabs(interp_tr))),
         )
 
     w.add_data("checks", checks)

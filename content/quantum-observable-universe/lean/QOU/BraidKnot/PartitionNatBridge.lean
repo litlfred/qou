@@ -30,9 +30,18 @@ namespace QOU.BraidKnot.PartitionNatBridge
 open DeltaLambdaSignRule
 
 /-- Two custom partitions with equal `parts` lists are equal (the other three fields are
-`Prop`s, so proof-irrelevant). -/
-theorem Partition.ext' {n : ℕ} {Λ Λ' : Partition n} (h : Λ.parts = Λ'.parts) : Λ = Λ' := by
-  cases Λ; cases Λ'; cases h; rfl
+`Prop`s, so proof-irrelevant).
+
+The `Partition.` prefix here is **not** a namespace component — it is the *type* name, which
+is what lets `QOU.BraidKnot.PartitionReindex` call this as
+`PartitionNatBridge.Partition.ext'`. The LWC-2 namespace sweep (`22728b8801`) stripped it,
+which broke both call sites in `PartitionReindex` and the `apply` below; restored here.
+
+The proof now delegates to `DeltaLambdaSignRule.Partition.ext`, the `@[ext]` lemma that lives
+with the structure itself. This declaration is kept as the name `PartitionReindex` already
+uses. -/
+theorem Partition.ext' {n : ℕ} {Λ Λ' : Partition n} (h : Λ.parts = Λ'.parts) : Λ = Λ' :=
+  DeltaLambdaSignRule.Partition.ext h
 
 /-- **Custom `Partition n` ≃ `Nat.Partition n`.** The forward map coerces the sorted parts list
 to a multiset; the inverse sorts the multiset into a weakly-decreasing list. -/
@@ -49,7 +58,7 @@ noncomputable def partitionEquivNatPartition (n : ℕ) :
         rw [← Multiset.sum_coe, Multiset.sort_eq]; exact p.parts_sum
       sorted := Multiset.sort_sorted (· ≥ ·) p.parts }
   left_inv Λ := by
-    apply Partition.ext'
+    apply Partition.ext
     show ((Λ.parts : Multiset ℕ)).sort (· ≥ ·) = Λ.parts
     rw [Multiset.coe_sort, List.mergeSort_eq_self]
     exact Λ.sorted

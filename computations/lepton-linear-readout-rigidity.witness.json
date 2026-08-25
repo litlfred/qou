@@ -1,0 +1,214 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-10T01:56:30.296110+00:00",
+  "commitSha": "4f351a4e1c8775ee1e173889583ba0ec877aad78",
+  "assertions": [],
+  "allPassed": true,
+  "durationMs": 0,
+  "computation": "lepton-linear-readout-rigidity",
+  "scriptFile": "lepton_linear_readout_rigidity.py",
+  "scriptHash": "35d7b81eea3f",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Bean qou-lsp9 second pass. Every linear functional on the 2-dimensional H_2(q) evaluated along the lepton generation braids obeys one two-step recursion with ratio q^2; the canonical Markov-trace readout is excluded quantitatively, and the surviving node escape is identified as a 3-parameter fit to 2 numbers rather than a derivation.",
+  "contentBlock": "prop:lepton-continuant-recurrence",
+  "parameters": {
+    "q0_anchor": "experimental/proton (q_parameter.Q_MP)",
+    "q0": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+    "h": "0.2090602987956393154308462131296749438597574952630225625334068739226195",
+    "z_markov": "0.6126880371464652515958298639458992480263083915450636084720501751483235"
+  },
+  "data": {
+    "master_identity": {
+      "formula": "phi(w)*(q+1/q) = A q^{w-1} - (-1)^{w-1} B q^{-(w-1)}",
+      "A": "alpha + beta*q",
+      "B": "alpha - beta/q",
+      "max_abs_err_over_6_readouts_w_1_to_14": "4.346725957836821936404377259626140054727614975106786330999655147169041e-70",
+      "verified": true,
+      "lean_twin": "QOU.Archimedean.linFunctionalK_binet"
+    },
+    "two_step_rigidity": {
+      "formula": "phi(w+2) = q^2 phi(w) + (-1)^{w-1} h B q^{-(w-1)}",
+      "max_abs_err": "7.244543263061369894007295432710233424546024958511310551666091911948401e-71",
+      "verified": true,
+      "reading": "every H_2(q)-linear readout advances by the SAME q^2 per generation step; (alpha,beta) survives only inside B, so it rescales the vanishing correction, never the q^2",
+      "lean_twin": "QOU.Archimedean.linFunctionalK_two_step"
+    },
+    "q_squared": "1.232052454166763931269804513535636184849681422916997359494673668738914",
+    "observed_tower": {
+      "m_mu_over_m_e": "206.7682829876656601610621844867860768399121389050325782338169501562439",
+      "m_tau_over_m_mu": "16.81702933242618149373589615004148445144550950825220611063195842352064",
+      "bend_r1_over_r2": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "log_increments": [
+        "5.331598760405988115341849866862698784853358605897518539278360183731006",
+        "2.822392023751863445496481317829369137572487562479532228264746814600507"
+      ],
+      "log_concave": true
+    },
+    "readouts": {
+      "net": {
+        "alpha": "1.0",
+        "beta": "1.0",
+        "A_growing_amplitude": "2.109978582751380807591669095610768879874499121873577636056718792510176",
+        "B_decaying_amplitude": "0.099081716044258507839177117518906063985258373389444926476688081412443",
+        "ratio_w3_to_w5": "1.245472863251963092841713630232169007512382826786407649925982998481739",
+        "ratio_w5_to_w7": "1.240798309448335485950513883000612174648762854716102623084350600243948",
+        "log_increments": [
+          "0.219515267648105533903043067663319876149758263640981242376753539992456",
+          "0.2157549704101596342986588518662109780894920469150581544448492333336176"
+        ],
+        "bend_r1_over_r2": "1.003767376025605591416067563943223072505713305174049608209499286039031",
+        "node_index_n_star": "-14.656253773417063526413634308877087120440588633969506938621840200177",
+        "p_required_step_1": "24.28805439151877147779624208757055711760287430503257454577216865650466",
+        "p_required_step_2": "13.08146930931126535578876038304096985468535463985529880192424006919396"
+      },
+      "markov_trace_canonical": {
+        "alpha": "1.0",
+        "beta": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
+        "A_growing_amplitude": "1.68007059914055885843147808426744111706658212083610233172771442280824",
+        "B_decaying_amplitude": "0.4480181449737949271616735707318049322169006979191049722330407540693258",
+        "ratio_w3_to_w5": "1.321645129894057152441618246454895173423507438558635034157226842543892",
+        "ratio_w5_to_w7": "1.287073450327481103002964116086998323538516703332729724416414932770351",
+        "log_increments": [
+          "0.2788772711238082834319012473836544465143412908361285851697113428418888",
+          "0.2523709979470280239738127828288937877920283035972598986183553723304497"
+        ],
+        "bend_r1_over_r2": "1.026860688920107614218658454795051632307593060557977041960425498438175",
+        "node_index_n_star": "-6.33385200426199853002775776425466071252212476148380868874553589942544",
+        "p_required_step_1": "19.11808280008237423319699311582682138803853317473315428657530070145333",
+        "p_required_step_2": "11.18350383646014564086409374730533758572141215046837092648337178979366"
+      },
+      "sigma_only": {
+        "alpha": "0.0",
+        "beta": "1.0",
+        "A_growing_amplitude": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+        "B_decaying_amplitude": "-0.900918283955741492160822882481093936014741626610555073523311918587557",
+        "ratio_w3_to_w5": "1.085582177244037131827642021737934398191931000758924374501635115409002",
+        "ratio_w5_to_w7": "1.122541490686199421860488748919581909874333802153863182693303141978841",
+        "log_increments": [
+          "0.08211641197932341682866719634893518571345292725334028460023679248184235",
+          "0.1155953027005648664206160994925272108959581708432187372860690614476051"
+        ],
+        "bend_r1_over_r2": "0.967075325278561064790531099750782249273742391363595281627324237813601",
+        "node_index_n_star": null,
+        "p_required_step_1": "64.92732246689569556960871184265156358023740980256390746337230373847112",
+        "p_required_step_2": "24.4161480424763971256636096081788129814067701137252223610709572150248"
+      },
+      "identity_only": {
+        "alpha": "1.0",
+        "beta": "0.0",
+        "A_growing_amplitude": "1.0",
+        "B_decaying_amplitude": "1.0",
+        "ratio_w3_to_w5": "2.04370620853252198940201933567738830976821396071350527578503321593218",
+        "ratio_w5_to_w7": "1.554399088054551019332676890925346631493968775294982068959984218596786",
+        "log_increments": [
+          "0.7147649284161384028248971826131233962215271961836999801142904248482691",
+          "0.4410890323944511703093836088215422852291102749042382890177759653975697"
+        ],
+        "bend_r1_over_r2": "1.3147886049588308371386067585888062739176226635105757835662747078187",
+        "node_index_n_star": "0.0",
+        "p_required_step_1": "7.459233866189240958348303715582959284105960165988835820093102676752043",
+        "p_required_step_2": "6.398690097621590028660202731205486902187699447780153890373319951074458"
+      },
+      "degenerate_B_zero": {
+        "alpha": "0.900918283955741492160822882481093936014741626610555073523311918587557",
+        "beta": "1.0",
+        "A_growing_amplitude": "2.010896866707122299752491978091862815889240748484132709580030711097733",
+        "B_decaying_amplitude": "0.0",
+        "ratio_w3_to_w5": "1.232052454166763931269804513535636184849681422916997359494673668738914",
+        "ratio_w5_to_w7": "1.232052454166763931269804513535636184849681422916997359494673668738914",
+        "log_increments": [
+          "0.2086814406390390246318125599461447941074885616579666244524984490810847",
+          "0.2086814406390390246318125599461447941074885616579666244524984490810847"
+        ],
+        "bend_r1_over_r2": "1.0",
+        "node_index_n_star": null,
+        "p_required_step_1": "25.54898386784752100665328052357694456367817979235880245003530335570146",
+        "p_required_step_2": "13.52488278358121135840901793733055681821366373721546893255625630426988"
+      },
+      "asymmetric": {
+        "alpha": "-0.37",
+        "beta": "2.9",
+        "A_growing_amplitude": "2.848937889979004342015840377271229751636047453433375144564484498279512",
+        "B_decaying_amplitude": "-2.982663023471650327266386359195172414442750717170609713217604563903915",
+        "ratio_w3_to_w5": "1.060453942411442601936386567126852776692548530022480858137590968007963",
+        "ratio_w5_to_w7": "1.100713816306577718701821494742895501986052667150435326625461776808376",
+        "log_increments": [
+          "0.05869706401012626288010150000470502262792035689701702337935457973678847",
+          "0.09595889325931520236503902120464448843505467715934521451346558907298544"
+        ],
+        "bend_r1_over_r2": "0.9634238497793856309041696907701383097938554782723190113136124388438045",
+        "node_index_n_star": null,
+        "p_required_step_1": "90.8324607085321122732946769513438983926062058213224441774060189675529",
+        "p_required_step_2": "29.41251121065717326314860235870022548098875022173039016971536410797623"
+      }
+    },
+    "canonical_markov_readout": {
+      "z": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
+      "alpha_beta": [
+        "1",
+        "0.6126880371464652515958298639458992480263083915450636084720501751483235"
+      ],
+      "u_equals_A_over_B": "3.7500057039851098688169146963119098244704619324301465552991620600596",
+      "ratios": [
+        "1.321645129894057152441618246454895173423507438558635034157226842543892",
+        "1.287073450327481103002964116086998323538516703332729724416414932770351"
+      ],
+      "bend": "1.026860688920107614218658454795051632307593060557977041960425498438175",
+      "observed_bend": "12.29517288103792224609294396199356043783153431909516729669229059917404",
+      "p_required_to_match_bend": "94.66463730752661926914326255530574872227289753063118228836013353652464",
+      "verdict": "EXCLUDED. The derived readout has no node in the generation window, so its bend is 1 + O(q^{-2n}) while the observed bend is 12.3; matching it needs the exponent above, which is the same exponential fine-tuning the net showed. This is the case that matters, because z is derived rather than chosen."
+    },
+    "node_escape": {
+      "mechanism": "phi has a real zero at n* = ln(B/A)/(2 ln q). Placing a node just below the electron winding makes r_1 large, which CAN reproduce 206.8. Reported rather than buried, because the blanket claim 'no linear readout works' would be FALSE without the positivity argument below.",
+      "u_at_exact_electron_node": "0.6587818169760303180113037345402395018434538319964919631126455831571523",
+      "solved_exactly_as_quadratic_in_u": true,
+      "discriminant": "102.8989872859136889373016542590156722142538886595612216615956509623307",
+      "solutions": [
+        {
+          "u": "0.2808603786436566531084655354731774589385291357181694193450744793316319",
+          "bend_roundtrip": "12.29517288103792224609294396199356043783153431909516729669229059917405",
+          "residual": "8.693451915673643872808754519252280109455229950213572661999310294338081e-69",
+          "implied_beta_over_alpha": "-0.5276110826759725258295532213647437510558318857154179335631237624851254",
+          "sign_of_beta_over_alpha": "negative",
+          "ratio_to_canonical_z": "-0.8611414793297901822749484825884863436227027170571811053689303257707412"
+        },
+        {
+          "u": "0.6706191298907358467978648718257626929519030021406286523216515656836181",
+          "bend_roundtrip": "12.29517288103792224609294396199356043783153431909516729669229059917406",
+          "residual": "1.912559421448201652017925994235501624080150589046985985639848264754378e-68",
+          "implied_beta_over_alpha": "-0.1921538716679803365618193699949645725434056615059379874082068013863846",
+          "sign_of_beta_over_alpha": "negative",
+          "ratio_to_canonical_z": "-0.3136243243183239613244870792402100275301821772025435622438900814390978"
+        }
+      ],
+      "canonical_z": "0.6126880371464652515958298639458992480263083915450636084720501751483235",
+      "every_escape_needs_opposite_signs": true,
+      "why_positivity_closes_it": "EVERY solution has beta/alpha < 0, i.e. requires phi(1) and phi(sigma_0) of OPPOSITE SIGN. For q > 1 the Hecke parameter h = q - 1/q is positive, so the continuant is positive from b_1 on; hence any readout with alpha >= 0 and beta > 0 is strictly positive at every index and has NO node at all. The canonical Markov trace is such a readout (tr_M(1) = 1 > 0, tr_M(sigma_0) = z > 0), so the escape is unavailable to it. Sorry-free Lean twin (lepton_continuant_positivity.lean): QOU.Archimedean.linFunctionalK_pos / markovReadout_pos.",
+      "why_it_would_not_be_a_derivation_anyway": "even granting a sign-indefinite readout, the class (A/B, g, p) carries THREE free parameters against TWO observed ratios -- underdetermined, so a solution family exists for trivial counting reasons and predicts nothing at winding 9."
+    },
+    "verdict": "Generalises the first-pass net exclusion from one readout to the whole 2-parameter space of H_2(q)-linear readouts. Scope-(b) for every POSITIVE readout -- including the canonical Markov trace, the only derived candidate -- on the proved invariant that the continuant is positive for q > 1, so a positive readout has no node and its tower is log-linear up to O(q^{-2n}) while the observed tower is log-concave. The only escape is a sign-indefinite readout, which no trace supplies and which would in any case be a 3-parameter fit to 2 numbers.",
+    "all_checks_passed": true
+  },
+  "caveats": [
+    "Scope-(b) covers H_2(q)-linear readouts with no node in the generation window (including the canonical Markov trace). Readouts with a node are NOT excluded; they are unconstrained (3 parameters, 2 observations). Nothing here touches non-linear or non-H_2 bridges -- an additive interface term, or a route where the generation index enters through linking with the hyperbolic Higgs knot 4_1 -- which remain open (bean qou-htk4)."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.109978582751380807591669095610768879874499121873577636056718792510176",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.readouts.sigma_only.A_growing_amplitude, parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

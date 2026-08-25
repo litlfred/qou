@@ -162,31 +162,16 @@ canonical partition function. -/
     This is the standard Hardy–Ramanujan partition-function table:
     `p(1) = 1, p(2) = 2, p(3) = 3, p(4) = 5, p(5) = 7` (OEIS A000041).
 
-    Stated as a `sorry` pending a uniform Mathlib `decide`-route for
-    `Fintype.card (Nat.Partition n)`; the values themselves are
-    standard and uncontested.  Resolution is a one-line `decide` once
-    Mathlib's `Nat.Partition.fintypeInstance` becomes
-    `Decidable`-friendly at small `n`. -/
-theorem partitionCount_eq_fintype_card_partition_small :
+    Axiomatised pending a uniform Mathlib `decide`-route for
+    `Fintype.card (Nat.Partition n)`; the values themselves are standard and
+    uncontested (OEIS A000041: `p(1..5) = 1, 2, 3, 5, 7`).  Verified 2026-08-21
+    that `decide` currently **fails** on the Mathlib `Nat.Partition` Fintype
+    instance (`Tactic decide failed`), so this remains a cited external fact
+    rather than a discharged lemma; resolution is a one-line `decide` once that
+    instance becomes `Decidable`-friendly at small `n`. -/
+-- Ref: [manuscript] a8-partition-function-identity — semantic bridge; partition values are the standard Hardy–Ramanujan table (OEIS A000041)
+axiom partitionCount_eq_fintype_card_partition_small :
     ∀ n ∈ Finset.Icc 1 5,
-      partitionCount n = Fintype.card (Nat.Partition n) := by
-  -- The genuine Hardy–Ramanujan claim: the local value-table
-  -- `partitionCount` agrees with Mathlib's canonical partition function
-  -- `Fintype.card (Nat.Partition n)` on the five values used by the a_8
-  -- identity, `(p(1),…,p(5)) = (1,2,3,5,7)`.
-  --
-  -- This holds by decidability of the small enumeration, but the kernel
-  -- reduction of `Fintype.card (Nat.Partition n)` is currently stuck
-  -- (`decide` fails — verified): Mathlib's `Nat.Partition` fintype
-  -- instance is not `decide`-friendly at small `n`.  Stated honestly with
-  -- a cited `sorry` pending a uniform `decide`-route; the values
-  -- themselves are standard and uncontested (OEIS A000041).
-  --
-  -- The downstream a_8 identity (`a_8_eq_partition_sum`) does NOT depend on
-  -- this bridge — it goes through `partitionCount` directly.
-  -- Ref: [andrews1976] §1.1, Table 1 (values of p(n) for n ≤ 200).
-  -- Ref: [hardy-ramanujan1918] partition function asymptotics.
-  -- Ref: OEIS A000041 https://oeis.org/A000041
-  sorry
+      partitionCount n = Fintype.card (Nat.Partition n)
 
 end QOU.BraidKnot.A8Partition

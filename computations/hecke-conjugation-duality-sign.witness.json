@@ -1,0 +1,206 @@
+{
+  "engine": "python",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T21:38:03.530199+00:00",
+  "commitSha": "9a9aa65a8a76487042a0814c85e2c0dc1f0d8d23",
+  "assertions": [
+    {
+      "name": "checks_failed",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "sympy exact"
+    },
+    {
+      "name": "n_lambda_with_a_constant_sign",
+      "computed": 0,
+      "expected": 0,
+      "passed": true,
+      "source": "sympy exact; a constant eps_lambda would make this nonzero"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 5842,
+  "computation": "hecke-conjugation-duality-sign",
+  "scriptFile": "hecke_conjugation_duality_sign_probe.py",
+  "scriptHash": "e2d4e5e929a0",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "The V_lambda <-> V_{lambda'} intertwiner is the sign-twisted map sigma -> -sigma^{-1}, not the bar involution. The character identity of eigenbasis-structural-lemmas item 2 holds, but its sign is (-1)^L in the word length, not a per-channel eps_lambda.",
+  "contentBlock": "prop:eigenbasis-structural-lemmas",
+  "parameters": {
+    "exact": "sympy over QQ(q); no substrate pin used",
+    "q_0_pin": "not applicable (symbolic in q)",
+    "uses_muon_built_cache": false
+  },
+  "data": {
+    "checks": {
+      "h3_rep_satisfies_hecke": true,
+      "h3_rep_satisfies_braid": true,
+      "signtwist_preserves_hecke": true,
+      "signtwist_preserves_braid": true,
+      "signtwist_swaps_eigenvalues": true,
+      "bar_fixes_eigenvalues_not_swaps": true,
+      "signtwist_carries_triv_to_sign": true,
+      "identity_holds_for_every_word": true,
+      "sign_is_always_minus1_pow_L": true,
+      "eps_is_not_a_function_of_lambda": true,
+      "self_conjugate_channel_also_varies": true,
+      "unsigned_swap_form_holds": true
+    },
+    "n_words_tested": 132,
+    "n_character_evaluations_with_vanishing_character": 6,
+    "eps_values_by_lambda": {
+      "(2)": [
+        -1,
+        1
+      ],
+      "(1,1)": [
+        -1,
+        1
+      ],
+      "(3)": [
+        -1,
+        1
+      ],
+      "(2,1)": [
+        -1,
+        1
+      ],
+      "(1,1,1)": [
+        -1,
+        1
+      ]
+    },
+    "sample_rows": [
+      {
+        "algebra": "H_2",
+        "word": "s1",
+        "L": 1,
+        "lambda": "(2)",
+        "lambda_conj": "(1,1)",
+        "eps": -1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1",
+        "L": 1,
+        "lambda": "(1,1)",
+        "lambda_conj": "(2)",
+        "eps": -1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1",
+        "L": 2,
+        "lambda": "(2)",
+        "lambda_conj": "(1,1)",
+        "eps": 1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1",
+        "L": 2,
+        "lambda": "(1,1)",
+        "lambda_conj": "(2)",
+        "eps": 1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1",
+        "L": 3,
+        "lambda": "(2)",
+        "lambda_conj": "(1,1)",
+        "eps": -1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1",
+        "L": 3,
+        "lambda": "(1,1)",
+        "lambda_conj": "(2)",
+        "eps": -1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1s1",
+        "L": 4,
+        "lambda": "(2)",
+        "lambda_conj": "(1,1)",
+        "eps": 1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1s1",
+        "L": 4,
+        "lambda": "(1,1)",
+        "lambda_conj": "(2)",
+        "eps": 1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1s1s1",
+        "L": 5,
+        "lambda": "(2)",
+        "lambda_conj": "(1,1)",
+        "eps": -1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1s1s1",
+        "L": 5,
+        "lambda": "(1,1)",
+        "lambda_conj": "(2)",
+        "eps": -1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1s1s1s1",
+        "L": 6,
+        "lambda": "(2)",
+        "lambda_conj": "(1,1)",
+        "eps": 1,
+        "eps_matches_minus1_pow_L": true
+      },
+      {
+        "algebra": "H_2",
+        "word": "s1s1s1s1s1s1",
+        "L": 6,
+        "lambda": "(1,1)",
+        "lambda_conj": "(2)",
+        "eps": 1,
+        "eps_matches_minus1_pow_L": true
+      }
+    ],
+    "interpretation": {
+      "the_intertwiner": "sigma_i -> -sigma_i^{-1} (the Iwahori-Matsumoto-type sign twist) is an algebra automorphism that swaps the eigenvalues q <-> -q^{-1} and carries V_lambda to V_{lambda'}. The bar involution does not: it fixes each eigenchannel. The two differ by exactly the sign.",
+      "the_identity_holds": "chi_lambda(q^{-1}) = eps * chi_{lambda'}(q) is true on every braid word tested in H_2 and H_3, so the block's conclusion -- and the matter/antimatter reading built on it -- stands.",
+      "but_the_sign_is_not_per_channel": "eps = (-1)^L in the word length L, not a constant eps_lambda attached to the partition. For every lambda tested, including the self-conjugate (2,1), eps takes both values as L varies. Writing eps_lambda claims a per-channel invariant that does not exist.",
+      "honest_restatement": "chi_lambda(-q^{-1}) = chi_{lambda'}(q), unsigned. Combined with item 1's parity chi(-q) = (-1)^L chi(q) this reproduces the signed form, and it says plainly what the operation is: the eigenvalue swap q -> -q^{-1}."
+    }
+  },
+  "caveats": [
+    "Verified on H_2 and H_3 over braid words of length <= 6 (length <= 4 for the unsigned form). Not a proof for general n; the Hoefsmit 2-dimensional (2,1) rep is the only multi-dimensional channel exercised.",
+    "Positive braid words only (no sigma_i^{-1} letters). The parity bookkeeping (-1)^L is stated for L = word length in that setting; for words with negative letters L should be read as the exponent sum, which is not tested here."
+  ]
+}

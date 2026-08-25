@@ -65,7 +65,12 @@ import sympy as sp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 # Centralized partition utilities (single source of truth) — avoids
 # re-deriving hook lengths / Specht dim / transpose locally per
 # partition_utils' "replaces the 20+ ad-hoc copies" mandate.
@@ -74,11 +79,12 @@ from partition_utils import (  # noqa: E402
     dim_lambda,
     conjugate_partition as transpose,
 )
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
 
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 VOL_HYP_D = mp.mpf("12.776")
 M_E_MEV = mp.mpf("0.51099895069")
 B_D_MEV = mp.mpf("2.2245")
@@ -137,13 +143,13 @@ def C4_sl2_indicator(lam):
 
 def _load_y_lambda_n(n: int) -> dict[tuple, mp.mpf]:
     path = COMPUTE_DIR / "y-lambda-at-q0.witness.json"
-    raw = json.loads(path.read_text())["data"]["by_n"]
+    raw = record_upstream(path, _UPSTREAM_RECORDS)["data"]["by_n"]
     return {tuple(r["partition"]): mp.mpf(r["y_at_q0_50dps"]) for r in raw[str(n)]}
 
 
 def _load_chi_deuteron_h6() -> dict[tuple, mp.mpf]:
     path = COMPUTE_DIR / "chi-deuteron-h6-at-q0-50dps.witness.json"
-    raw = json.loads(path.read_text())
+    raw = record_upstream(path, _UPSTREAM_RECORDS)
     return {tuple(e["partition"]): mp.mpf(e["chi_lambda"]) for e in raw["by_partition"]}
 
 
@@ -161,6 +167,7 @@ def main() -> int:
         "gap-a3-plambda-bar-even-admissibility-probe",
         engine="sympy+mpmath",
     )
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_audit_only(
         "docs/audits/2026-06-20-gap-a3-plambda-bar-even-admissibility.md"
     )

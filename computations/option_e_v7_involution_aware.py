@@ -34,10 +34,24 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from mpmath import mpf, mp, fabs, acos
+import _path_bridge  # noqa: F401, E402 — flat-namespace bridge
+from _precision import set_compute_dps  # noqa: E402
+
+# Precision must be raised BEFORE the module-scope constants below: at
+# import time mp.dps is still mpmath's default 15 (~binary64), and a
+# literal rounded there cannot be recovered by raising dps afterwards.
+mp.dps = 50
 
 
 M_E_MEV = mpf("0.51099895069")
 M_PI_MEV = mpf("139.57039")  # PDG charged pion mass
+# ARCHIVAL: the v9-era substrate literal, 243,000 ppb (0.024 %) from
+# both live pins. NOT migrated on purpose — these files ARE the record
+# of the v1..v9 progression that docs/coordination/option-e.md tracks
+# ("DO NOT REPEAT failed paths"), and option_e_probe1_derive_1plusq_over_2
+# exists specifically to show the published 0.11 %% near-match was obtained
+# at THIS stale q0. Re-pinning would silently alter a recorded historical
+# result and delete that probe's subject. Do not read it as a live pin.
 Q_0 = mpf("1.1097090249")
 
 H_Q = 1 - 1 / Q_0
@@ -76,7 +90,7 @@ def transpose(lam):
 
 def load_chi_free_atom(repo_root, atom_label):
     fn_map = {"D": "d", "T": "t", "3He": "3he"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"atom-chi-rust-{fn_map[atom_label]}.witness.json")
     with fn.open() as f:
         data = json.load(f)["data"]
@@ -94,7 +108,7 @@ def load_chi_free_atom(repo_root, atom_label):
 
 def load_y_lambda(repo_root, atom_label):
     name_map = {"D": "deuteron-h6", "T": "tritium-h9", "3He": "helium-3-h9"}
-    fn = (repo_root / "folio-assistant" / "computations"
+    fn = (repo_root / "computations"
           / f"chi-{name_map[atom_label]}-at-q0-50dps.witness.json")
     with fn.open() as f:
         data = json.load(f)
@@ -189,8 +203,8 @@ def compute_involution_quantities(chi_free, chi_atom, y_lambda):
 
 
 def main() -> int:
-    mp.dps = 50
-    repo_root = Path(__file__).resolve().parent.parent.parent
+    set_compute_dps()
+    repo_root = Path(__file__).resolve().parent.parent
 
     print(f"=== Scales ===")
     print(f"  m_e   = {float(M_E_MEV):.6f}")
@@ -318,7 +332,7 @@ def main() -> int:
     }
 
     out_path = (
-        repo_root / "folio-assistant" / "computations"
+        repo_root / "computations"
         / "option-e-v7-involution-aware.witness.json"
     )
     with out_path.open("w") as f:

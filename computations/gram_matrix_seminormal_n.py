@@ -242,7 +242,13 @@ if __name__ == "__main__":
             t1 = time.time()
             block = gram_matrix_seminormal_block(n, lam, q_0)
             dt = time.time() - t1
-            print(f"  λ = {lam:<24}  dim_λ = {block['dim_lambda']:>3}  "
+            # `str(lam)` because `lam` is a partition TUPLE, and tuple has no
+            # __format__ accepting an alignment spec — `f"{lam:<24}"` raised
+            # `TypeError: unsupported format string passed to tuple.__format__`
+            # and killed the sweep on its first block. The failure is in the
+            # progress PRINT, not the computation, so nothing about the result
+            # was ever wrong; the producer simply could not finish.
+            print(f"  λ = {str(lam):<24}  dim_λ = {block['dim_lambda']:>3}  "
                   f"χ_λ(w_0) = {block['chi_lambda_w0']:+.10e}  "
                   f"({dt:.2f}s)")
         print(f"  H_{n} total: {time.time() - t0:.1f}s")

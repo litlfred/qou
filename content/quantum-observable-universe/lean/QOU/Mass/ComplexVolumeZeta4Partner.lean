@@ -216,7 +216,7 @@ class SingleFrakVAssembly (K : Type*) (frakV : K → ℂ → ℂ) : Prop where
     fibre object satisfies `ζ₄² = −1` — the two-rotation negation, obtained
     from the conjectural faithfulness field alone (via
     `IsZeta4Faithful.zeta4_sq`). Confirms the class asserts genuine content. -/
-theorem SingleFrakVAssembly.zeta4_sq {K : Type*} {frakV : K → ℂ → ℂ}
+theorem zeta4_sq {K : Type*} {frakV : K → ℂ → ℂ}
     [A : SingleFrakVAssembly K frakV] (k : K) (z : ℂ) :
     frakV k (zeta4Rot (zeta4Rot z)) = -frakV k z :=
   (A.faithful k).zeta4_sq z

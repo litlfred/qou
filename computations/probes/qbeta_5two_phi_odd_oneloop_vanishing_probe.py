@@ -48,8 +48,9 @@ import mpmath as mp  # noqa: E402
 
 from witness_base import WitnessBuilder  # noqa: E402
 from qou_substrate.constants import q_at  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
 
-mp.mp.dps = 45
+set_compute_dps()
 
 
 def _load_5two():

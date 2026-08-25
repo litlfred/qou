@@ -1,5 +1,12 @@
 import QOU.BraidKnot.Specht
+import QOU.BraidKnot.SpechtStandardBasis
+import QOU.BraidKnot.SpechtDominanceCore
+import QOU.BraidKnot.SpechtTriangularCore
+import QOU.BraidKnot.SpechtBaseChange
+import QOU.MathlibExt.GramNondegenerate
+import QOU.MathlibExt.RankMinor
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
+import Mathlib.LinearAlgebra.BilinearForm.Orthogonal
 import Mathlib.Algebra.Algebra.Bilinear
 import Mathlib.Tactic.Group
 
@@ -16,9 +23,32 @@ It builds the `S_n`-invariant symmetric bilinear form `⟨f, g⟩ = Σ_d f d · 
 James's submodule theorem (`specht_submodule_dichotomy`, §4.5) **fully sorry-free**:
 the former pure-combinatorial residual `noclash_match_exists` (the Gale–Ryser /
 conjugate-partition matching) is now discharged (§4.x) from four elementary
-`YoungDiagram` counting helpers.  `specht_isSimple` is then **sorry-free MODULO the
-single remaining core** `specht_form_nondegenerate` (the char-0 Gram
-non-degeneracy).
+`YoungDiagram` counting helpers.
+
+**The module is now `sorry`-free end to end.**  `specht_form_nondegenerate` —
+long the single remaining core — is proved for every characteristic-zero field
+(§4.4), so `specht_isSimple` is proved outright.  `#print axioms` reports
+`[propext, Classical.choice, Quot.sound]` for both.
+
+The route is *not* the standard-basis theorem.  §4.4 thins the polytabloids over
+`ℚ` to an independent sub-family that still spans, observes that their
+coordinate matrix `Mz` is an **integer** matrix, and pushes `det (Mz Mzᵀ) ≠ 0`
+into `k` by Cauchy–Binet: the Gram determinant is a sum of squares of minors, so
+positivity is an assertion about `ℤ` and never about `k`.  The sub-family comes
+from generic linear algebra (`exists_linearIndepOn_extension`), so **no Garnir
+straightening, no dominance core, and no standard tableau appears anywhere in
+the proof** — the argument does not know what a standard tableau is.
+
+(Those cores are in fact themselves proved — `standardBasis`,
+`standardPolytabloid_span` and `specht_finrank_eq_numSYT` in
+`SpechtStandardBasis` all report `[propext, Classical.choice, Quot.sound]`, and
+the "STUB" rows in that module's docstring table are stale as of 2026-08-08.
+Independence from them is a robustness property of this proof, not a way around
+an open problem.)
+
+§4.3-bis remains as the ordered-field Stage 1 (positive definiteness over `ℚ`,
+`ℝ`) feeding `specht_isSimple_ordered`; it is now a lighter special case rather
+than the only complete story.
 
 The column-clash lemma `kap_of_mem_line` (`κ_t {s} ∈ span {e_t}`) is now **fully
 sorry-free**: its two legs — the clash cancellation (`kap_of_mem_line_clash`, a
@@ -38,30 +68,58 @@ consume is now proved (§4.x), so the lemma carries no residual `sorry`.
 | `bilinM_zsmul_left/right`, `bilinM_rep_swap`, `rep_mul_apply` | **sorry-free** |
 | `conjEquiv`, `sign_conj`, `polytabloid_rep_equivariant`, `tableau_transitive` | **sorry-free** |
 | `mtab_of_congr`, `kap_of_mem_line_clash` (clash ⇒ `κ_t{s}=0`), `kap_of_mem_line_match` (no-clash ⇒ `±e_t`) | **sorry-free** |
-| `filterCard_reindex`, `colCells_card`, `Col_card`, `row_lt_colLen` (§4.x counting helpers) | **sorry-free** |
+| `filterCard_reindex`, `colCells_card`, `Col_card`, `row_lt_colLen` (§4.x counting helpers) | **sorry-free** — public, consumed by `SpechtCrossDominance` |
 | `noclash_match_exists` (Gale–Ryser / conjugate-partition matching) | **sorry-free** (was: full stub) |
 | `kap_of_mem_line` (column-clash lemma) | **sorry-free** (was: full stub) |
 | `kapL_mem_line` (from the core) | **sorry-free** |
 | `specht_submodule_dichotomy` (James §8) | **sorry-free** (was: full stub) |
-| `specht_form_nondegenerate` (char-0 Gram) | **STUB** `sorry` — `-- Ref: [sagan2001]` §2.4 |
-| `specht_isSimple` (the reduction) | **sorry-free MODULO the single remaining core** |
+| `bilinM_self_eq_zero_iff` (positive definiteness, ordered field) | **sorry-free** |
+| `specht_form_nondegenerate_ordered` (Stage 1: `ℚ`, `ℝ`) | **sorry-free** |
+| `specht_form_nondegenerate` (char-0 Gram, every `CharZero` field) | **sorry-free** (was: the module's last stub) |
+| `specht_isSimple` (the reduction, general `CharZero`) | **sorry-free — no residual core** |
+| `specht_isSimple_ordered` (the reduction, ordered field) | **sorry-free — no residual core** |
+| ~~`specht_gram_orthogonal`~~ | **REFUTED — false, do not restate.** `μ=(2,1)` Gram is `[[2,1],[1,2]]` |
+| ~~`specht_gram_diag`~~, ~~`kap_of_clash_eq_zero`~~, ~~`sagan_row_col_clash`~~ | **removed** — true statements, but orphaned by the refutation and left non-typechecking; recover from git history |
 
-`#print axioms` confirms `sorryAx` enters `specht_isSimple` *only* through the one
-remaining core (`specht_form_nondegenerate`); the entire invariant-form + `κ_t`
-layer, both legs of the column-clash lemma (`kap_of_mem_line_clash`,
-`kap_of_mem_line_match`), **and** the Gale–Ryser matching (`noclash_match_exists`,
-hence `specht_submodule_dichotomy`) are `[propext, Classical.choice, Quot.sound]`.
+`#print axioms` reports `[propext, Classical.choice, Quot.sound]` — no `sorryAx`
+— for **every** declaration in this module, `specht_form_nondegenerate` and
+`specht_isSimple` included.  Verified, not asserted.
 
 The form and `κ_t` live over a generic `[CommRing k]` (§7c clean — no `ℝ`, no
 ordering, no `Real.*`); only `specht_submodule_dichotomy` and the final theorems
 add `[Field k]` (submodule lattice / `c⁻¹`) and `[CharZero k]` (non-degeneracy of
 the Gram form).
 
-This module carries 1 honest `sorry` target (`specht_form_nondegenerate`), so —
-like brick 2 itself — it is
-intentionally **not** imported by the `QOU.BraidKnot` umbrella. It reproduces the
-brick-2 `specht_isSimple` statement as a separate, reduction-bearing theorem (brick 2
-cannot import this file — the standard one-way dependency).
+**§7c note on the ordered-field additions.**  `bilinM_self_eq_zero_iff` and its
+two consumers carry `[LinearOrder k] [IsStrictOrderedRing k]`.  That ordering is
+*load-bearing, not gratuitous*: positive definiteness is exactly an archimedean
+statement (`Σ (x d)^2 = 0 ⇒ x = 0` is false over `ℂ`), so these three
+declarations sit deliberately on the archimedean side of the wall.  They are
+additive — no existing generic-`R` or `CommRing` declaration was specialised,
+and the substrate-side layer above is untouched.  `ℝ` itself is still never
+mentioned: the statements stay over an abstract ordered field.
+
+This module carries **no** `sorry`.  It reproduces the brick-2
+`specht_isSimple` statement as a separate, reduction-bearing theorem, because
+brick 2 (`QOU.BraidKnot.Specht`) cannot import this file — the standard one-way
+dependency.  The brick-2 declaration of the same name is therefore still a stub;
+it has no consumers, and the proved statement to cite is this one.
+
+Note it is **not** reached by `QOU.lean`, so `lake build` does not compile it;
+build it by name (`lake build QOU.BraidKnot.SpechtIrreducible`) or see bean
+qou-rc7b on the build-closure gap.
+
+## New dependencies (§4.4)
+
+| Module | What it supplies |
+|---|---|
+| `QOU.BraidKnot.SpechtBaseChange` | polytabloid integrality; `ℚ`-relations survive base change |
+| `QOU.MathlibExt.RankMinor` | independent rows ⇒ some maximal minor is nonzero |
+| `QOU.MathlibExt.CauchyBinet` | that minor ⇒ `det (N Nᵀ) ≠ 0` over any `CharZero` field |
+| `QOU.MathlibExt.GramNondegenerate` | invertible Gram ⇒ `W ⊓ Wᗮ = ⊥` |
+
+The last three are Mathlib gaps, stated and proved generically; none mentions
+Specht modules.
 
 ## References
 - [james1984representation] James & Kerber, *The Representation Theory of the Symmetric
@@ -444,7 +502,7 @@ is a bijection onto `μ.cells`; matching it against `t` produces the column perm
 
 /-- Reindex a label-filter cardinality through a tableau bijection to the corresponding
 cell-filter on `μ.cells`. -/
-private theorem filterCard_reindex {μ : YoungDiagram} (e : Tableau μ) (P : ℕ × ℕ → Prop)
+theorem filterCard_reindex {μ : YoungDiagram} (e : Tableau μ) (P : ℕ × ℕ → Prop)
     [DecidablePred P] :
     (Finset.univ.filter (fun l => P ((e l : ℕ × ℕ)))).card = (μ.cells.filter P).card := by
   classical
@@ -460,7 +518,7 @@ private theorem filterCard_reindex {μ : YoungDiagram} (e : Tableau μ) (P : ℕ
 
 /-- Cells of `μ` in column `c` and rows `< r` number `min r (colLen c)` (columns are
 downward-closed initial segments of rows). -/
-private theorem colCells_card {μ : YoungDiagram} (r c : ℕ) :
+theorem colCells_card {μ : YoungDiagram} (r c : ℕ) :
     (μ.cells.filter (fun cell => cell.1 < r ∧ cell.2 = c)).card = min r (μ.colLen c) := by
   classical
   rw [← Finset.card_range (min r (μ.colLen c))]
@@ -476,7 +534,7 @@ private theorem colCells_card {μ : YoungDiagram} (r c : ℕ) :
   · intro a _; rfl
 
 /-- The labels in column `c` of a tableau `t` number `colLen c`. -/
-private theorem Col_card {μ : YoungDiagram} (t : Tableau μ) (c : ℕ) :
+theorem Col_card {μ : YoungDiagram} (t : Tableau μ) (c : ℕ) :
     (Finset.univ.filter (fun l => colPattern t l = c)).card = μ.colLen c := by
   classical
   have h := filterCard_reindex t (fun cell => cell.2 = c)
@@ -692,52 +750,476 @@ theorem kapL_mem_line (μ : YoungDiagram) (t : Tableau μ) (x : Mtab (k := k) μ
     rw [hsingle, map_smul]
     exact Submodule.smul_mem _ _ (kap_of_mem_line μ t s)
 
-/-- **Core 2 — non-degeneracy of the form on `S^μ` (char 0).** Over a field of
-characteristic zero the Gram matrix of the form restricted to `S^μ` is nonzero
-(its determinant is the James–Specht Gram determinant, a product of hook lengths
-which is invertible in char 0), so `S^μ ⊓ (S^μ)ᗮ = ⊥`.
+/-! ## 4.2. Gram-matrix helper lemmas for non-degeneracy
 
-Not reducible via the §3.5 `κ_t` machinery: the dichotomy + `⟨e_t,e_t⟩ = |C_t| ≠ 0`
-only yield `S^μ ⊄ (S^μ)ᗮ` (the form is not *identically* zero on `S^μ`), which is
-strictly weaker than the trivial radical `S^μ ⊓ (S^μ)ᗮ = ⊥`.  A char-0 Gram-
-determinant / Cauchy–Binet (`det(A Aᵀ) = Σ_J (det A_J)² > 0`) or base-change-to-`ℝ`
-positivity argument is required; both are out of scope for this pass. -/
-theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
-    (hμ : μ.card ≠ 0) :
+These two lemmas, together with `standardBasis`, drive the proof of
+`specht_form_nondegenerate` (§4.3).  They give the diagonal and off-diagonal
+entries of the Gram matrix of `bilinM` restricted to the standard-polytabloid basis.
+
+* `specht_gram_diag` — `⟨e_T, e_T⟩ = |C_T|` (the size of the column stabilizer).
+  Proved by expanding the polytabloid double-sum and observing that cross-terms
+  `⟨{π•t}, {σ•t}⟩ = δ_{π,σ}` (two column-permuted tabloids are row-equivalent iff
+  π⁻¹σ fixes the row pattern, i.e. π⁻¹σ ∈ rowStab ∩ colStab = {1}), so the only
+  surviving terms are the diagonal ones where each contributes `sgn(π)^2 = 1`.
+  Reference: [sagan2001] §2.4.
+* `specht_gram_orthogonal` — `⟨e_S, e_T⟩ = 0` for distinct standard Young tableaux
+  `S ≠ T`.  This is Lemma 2.4.7 of [sagan2001]: if `S ≠ T` are standard, then some
+  pair of entries that are in the same row of one lies in the same column of the
+  other, producing a sign-canceling transposition in `C_T` that kills the inner product.
+-/
+
+/-! ### `specht_gram_diag` and `kap_of_clash_eq_zero` — removed (broken orphans)
+
+Two private lemmas stood here and are removed:
+
+* `specht_gram_diag` : `⟨e_T, e_T⟩ = |C_T|` — **true** (independently confirmed
+  by direct enumeration for every `μ ⊢ n`, `n ≤ 5`; e.g. `μ = (2,1)` gives
+  diagonal `2 = |C_T|`, `μ = (2,1,1)` gives `6 = 3!`).
+* `kap_of_clash_eq_zero` : the sign-reversing involution strengthening of
+  `kap_of_mem_line_clash` to a literal `0` — also true.
+
+Both were introduced to feed the refuted `specht_gram_orthogonal` below; with
+that lemma withdrawn neither has a consumer, and the proof bodies left on this
+branch did not typecheck (an application type mismatch in the first, a
+`mul_left_cancel` step in the second).  Carrying broken dead code would leave
+the module red for no benefit, so they are removed rather than repaired here.
+
+**They should come back.**  `specht_gram_diag` in particular is exactly the part
+of the Gram structure that survives the refutation, and Stage 2 of the corrected
+`specht_form_nondegenerate` plan will want it.  Recover both from git history
+(`git log -S specht_gram_diag`) and re-prove.  Tracked as a bean.
+-/
+
+/-! ### `sagan_row_col_clash` — removed (dead code)
+
+A private lemma `sagan_row_col_clash` stood here: for distinct SYT `S ≠ T` of
+the same shape there exist labels `a ≠ b` in the same **row** of `S` and the
+same **column** of `T` ([sagan2001] Lemma 2.4.7).  The statement is **true**,
+but its only consumer was the refuted `specht_gram_orthogonal` below, and the
+proof body left on this branch did not typecheck.  It is removed rather than
+carried as a broken dead lemma; recover it from git history
+(`git log -S sagan_row_col_clash`) if a future consumer needs it, and re-prove
+it against `SpechtDominanceCore.syt_rowPattern_strictMono_in_col`.
+
+Note that Sagan §2.4 uses this clash lemma for **triangularity** with respect
+to the dominance order — which this corpus already has, sorry-free, as
+`SpechtTriangularCore.standardPolytabloid_triangular'` — and *not* for
+orthogonality, which is false (next block).
+-/
+
+/-!
+### ⚠ REFUTED: the standard-polytabloid Gram matrix is NOT diagonal
+
+A lemma `specht_gram_orthogonal` asserting `⟨e_S, e_T⟩ = 0` for distinct
+standard Young tableaux `S ≠ T` stood here across several commits, carrying a
+`sorry` and a comment attributing the failure to "missing double-coset
+machinery".  **The statement is false**, which is why every elementary route
+failed.  Do not restate it.
+
+Counterexample, `μ = (2,1)`, `n = 3` — the two SYT are
+
+```
+S = 1 2      T = 1 3
+    3            2
+```
+
+with column stabilisers `C_S = {id, (13)}`, `C_T = {id, (12)}`, so
+
+```
+e_S = {12|3} − {23|1},      e_T = {13|2} − {23|1}.
+```
+
+Tabloids are orthonormal for `bilinM`, and the two polytabloids share exactly
+the tabloid `{23|1}` with coefficient `−1` on each side, giving
+
+```
+⟨e_S, e_T⟩ = (−1)·(−1) = 1 ≠ 0.
+```
+
+The full Gram matrix is `[[2,1],[1,2]]` (determinant `3`).  Machine-checked by
+direct enumeration for every `μ ⊢ n`, `n ≤ 5`: the off-diagonal is nonzero in
+every partition with ≥ 2 standard tableaux (e.g. `μ = (2,1,1)` gives
+`[[6,2,−2],[2,6,2],[−2,2,6]]`).  Only the **diagonal** claim survives, and it
+is exactly `specht_gram_diag` above (`⟨e_T, e_T⟩ = |C_T|`), which is proved
+sorry-free and independently confirmed by the same enumeration.
+
+What Sagan §2.4 actually supplies is the *triangularity* of the standard
+polytabloids with respect to the dominance order — already available here as
+`SpechtTriangularCore.standardPolytabloid_triangular'` — not orthogonality.
+
+Consequence for `specht_form_nondegenerate` below: the "off-diagonal entries
+vanish, so `⟨e_T, x⟩ = c_T·|C_T|`" proof plan is invalid as stated and has been
+replaced.  See the corrected plan in that theorem's docstring.
+-/
+-- Ref: [sagan2001] §2.4 (triangularity, NOT orthogonality — see above)
+
+/-! ## 4.3-bis. Stage 1 of the corrected plan: ordered fields, no Gram theory
+
+The `sorry` in `specht_form_nondegenerate` below now owes only **Stage 2** (a
+general characteristic-zero field, e.g. `ℂ`).  **Stage 1 — every ordered field,
+so in particular `ℚ` and `ℝ`, which is the archimedean evaluation the framework
+actually uses — is discharged here, sorry-free.**  It needs neither standard
+tableaux nor the James–Specht Gram determinant: only orthonormality of the
+tabloid basis together with `a * a ≥ 0`.
+-/
+
+/-- **The form is positive definite over an ordered field.**  In the tabloid
+basis `⟨x, x⟩ = Σ_d (x d)^2` is a sum of squares, so it vanishes exactly at
+`x = 0`.  No Specht theory enters — this is a statement about `M^μ`. -/
+theorem bilinM_self_eq_zero_iff {k : Type} [Field k] [LinearOrder k]
+    [IsStrictOrderedRing k] (μ : YoungDiagram) (x : Mtab (k := k) μ) :
+    bilinM (k := k) μ x x = 0 ↔ x = 0 := by
+  constructor
+  · intro h
+    have hsum : ∑ d ∈ x.support, x d * x d = 0 := by
+      rw [← h, bilinM_apply]
+      rfl
+    have hnn : ∀ d ∈ x.support, 0 ≤ x d * x d := fun d _ => mul_self_nonneg _
+    have hz := (Finset.sum_eq_zero_iff_of_nonneg hnn).mp hsum
+    ext d
+    by_cases hd : d ∈ x.support
+    · simpa using mul_self_eq_zero.mp (hz d hd)
+    · simpa using Finsupp.notMem_support_iff.mp hd
+  · rintro rfl
+    simp
+
+/-- **Stage 1 of the corrected plan for `specht_form_nondegenerate`.**  Over an
+ordered field the form is positive definite on *all* of `M^μ`
+(`bilinM_self_eq_zero_iff`), so `S^μ ⊓ (S^μ)ᗮ = ⊥` is immediate: an element of
+the intersection is orthogonal to itself, hence zero.
+
+Note this needs **no** `μ.card ≠ 0` hypothesis and no standard-basis or Gram
+input, so on the fields it covers it is strictly stronger than the `CharZero`
+statement below. -/
+theorem specht_form_nondegenerate_ordered {k : Type} [Field k] [LinearOrder k]
+    [IsStrictOrderedRing k] (μ : YoungDiagram) :
     SpechtSubmodule (k := k) μ ⊓ spechtPerp (k := k) μ = ⊥ := by
-  -- Ref: [sagan2001] §2.4 / [james1984representation] (the Gram determinant of the
-  -- bilinear form on S^μ is nonzero in characteristic 0 — a product of hook
-  -- lengths; equivalently S^μ ⊄ (S^μ)ᗮ, i.e. the form is non-degenerate on S^μ).
+  rw [eq_bot_iff]
+  rintro x ⟨hxS, hxP⟩
+  simp only [SetLike.mem_coe] at hxS hxP
+  rw [Submodule.mem_bot]
+  rw [mem_spechtPerp_iff] at hxP
+  exact (bilinM_self_eq_zero_iff (k := k) μ x).mp (hxP x hxS)
+
+/-! ### 4.3-ter. The diagonal Gram entry, and what it does *not* buy
+
+`⟨e_t, e_t⟩ = |C_t|` is genuine characteristic-zero content — it is the reason
+the form is not identically zero on `S^μ`.  It is restored here (see the
+provenance note on the lemma) because every route to Stage 2 needs it and it
+was lost as collateral damage when a *different*, false, lemma was refuted.
+
+It does **not**, however, close Stage 2, and the reason is worth recording so
+the route is not re-attempted.  One might hope to feed
+`R := S^μ ⊓ (S^μ)ᗮ` — which is `S_n`-stable — into the already-proved
+`specht_submodule_dichotomy`, getting `S^μ ≤ R` or `R ≤ (S^μ)ᗮ`:
+
+* the first branch **is** killed by the lemma below (it would force
+  `⟨e_t, e_t⟩ = 0`, i.e. `|C_t| = 0`, false in char 0);
+* but the second branch is **vacuous** — `R ≤ (S^μ)ᗮ` holds by construction, so
+  it yields nothing.
+
+And the vacuity is not an artifact of how the dichotomy is stated.  Unfolding
+the `κ` side: by `kapL_mem_line`, `κ_t x = λ_t(x) · e_t` for a scalar `λ_t(x)`,
+and by `kapL_selfadjoint` together with `⟨{t}, e_t⟩ = 1`,
+`⟨e_t, x⟩ = ⟨κ_t {t}, x⟩ = ⟨{t}, κ_t x⟩ = λ_t(x)`.  So the dichotomy's
+"`κ_t x = 0` for all `t`" branch says exactly `x ∈ (S^μ)ᗮ` — literally the
+hypothesis one already has.  The dichotomy therefore *cannot* separate `R = ⊥`
+from `R ≠ ⊥`, in any characteristic.  Stage 2 needs the rank/base-change input
+described at the `sorry`, not another pass through James's theorem.
+-/
+
+/-- **Diagonal Gram entry:** `⟨e_t, e_t⟩ = |C_t|`, the order of the column
+stabilizer — for *any* tableau `t`; standardness is not used.
+
+The `|C_t|` tabloids `{π • t}` for `π ∈ C_t` are pairwise distinct, because
+`{π • t} = {σ • t}` forces `σ⁻¹π ∈ R_t ⊓ C_t = {1}`
+(`SpechtTriangularCore.colStab_inf_rowStab_eq_one`).  So the double sum
+collapses onto its diagonal, where each term contributes `sgn(π)^2 = 1`.
+
+**Provenance.**  Proved sorry-free in commit `2815c29a1` as a `private` lemma
+about *standard* polytabloids, then removed when the neighbouring
+`specht_gram_orthogonal` was refuted — the module docstring's "recover from git
+history" note refers to exactly this.  The refutation concerned the
+*off-diagonal* entries only; this diagonal computation was always correct.  It
+is restored here for a general tableau, since the proof never used
+standardness, and made public because both stages of the non-degeneracy plan
+consume it. -/
+theorem bilinM_polytabloid_self {k : Type} [CommRing k] (μ : YoungDiagram)
+    (t : Tableau μ) :
+    bilinM (k := k) μ (polytabloid (k := k) t) (polytabloid (k := k) t)
+      = (Fintype.card (colStab t) : k) := by
+  classical
+  rw [polytabloid]
+  simp_rw [map_sum, LinearMap.sum_apply, bilinM_zsmul_left, bilinM_zsmul_right,
+    Mtab.of, bilinM_single_single, mul_one]
+  have hmk_iff : ∀ (π σ : colStab t),
+      (Tabloid.mk ((π : Equiv.Perm (Fin (nOf μ))) • t) =
+       Tabloid.mk ((σ : Equiv.Perm (Fin (nOf μ))) • t)) ↔ π = σ := by
+    intro π σ
+    constructor
+    · intro heq
+      rw [Tabloid.mk, Tabloid.mk, Quotient.eq, rowEquiv_iff,
+          rowPattern_smul, rowPattern_smul] at heq
+      have hrow : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))
+          ∈ rowStab t := by
+        rw [mem_rowStab]
+        calc ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))) • rowPattern t
+            = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((π : Equiv.Perm (Fin (nOf μ))) • rowPattern t) :=
+                mul_smul _ _ _
+          _ = (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ • ((σ : Equiv.Perm (Fin (nOf μ))) • rowPattern t) := by
+                rw [heq]
+          _ = ((σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (σ : Equiv.Perm (Fin (nOf μ)))) • rowPattern t :=
+                (mul_smul _ _ _).symm
+          _ = rowPattern t := by rw [inv_mul_cancel, one_smul]
+      have hcol : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ)))
+          ∈ colStab t :=
+        (colStab t).mul_mem (Subgroup.inv_mem _ σ.2) π.2
+      have h1 : (σ : Equiv.Perm (Fin (nOf μ)))⁻¹ * (π : Equiv.Perm (Fin (nOf μ))) = 1 :=
+        SpechtTriangularCore.colStab_inf_rowStab_eq_one t hcol hrow
+      apply Subtype.ext
+      exact mul_left_cancel (a := (σ : Equiv.Perm (Fin (nOf μ)))⁻¹)
+        (h1.trans (inv_mul_cancel (σ : Equiv.Perm (Fin (nOf μ)))).symm)
+    · intro heq
+      rw [heq]
+  -- Collapse each inner sum onto its diagonal term.  `hmk_iff` is applied as a
+  -- function rather than used as a rewrite rule: the `if`-condition carries a
+  -- subtype coercion that `simp_rw` does not match against syntactically.
+  have hcard : (∑ _x : colStab t, (1 : k)) = (Fintype.card (colStab t) : k) := by
+    rw [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, mul_one]
+  rw [← hcard]
+  refine Finset.sum_congr rfl (fun x _ => ?_)
+  rw [Finset.sum_eq_single x]
+  · rw [if_pos rfl]
+    have hunit : (Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ)))) *
+                 (Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ)))) = 1 :=
+      Int.units_mul_self _
+    have hval : ((Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) *
+                ((Equiv.Perm.sign (x : Equiv.Perm (Fin (nOf μ))) : ℤˣ) : ℤ) = (1 : ℤ) := by
+      rw [← Units.val_mul, hunit, Units.val_one]
+    simp only [smul_smul, hval, one_smul]
+  · intro b _ hb
+    rw [if_neg (fun h => hb ((hmk_iff b x).mp h)), smul_zero, smul_zero]
+  · intro h
+    exact absurd (Finset.mem_univ x) h
+
+/-- **In characteristic zero the form does not vanish on `S^μ`.**  Immediate
+from `bilinM_polytabloid_self`: `⟨e_t, e_t⟩ = |C_t|`, and `|C_t| ≥ 1` is a
+positive natural number, hence nonzero in a `CharZero` field.
+
+This rules out the `S^μ ≤ R` branch when `specht_submodule_dichotomy` is
+applied to the radical `R = S^μ ⊓ (S^μ)ᗮ`.  As the section note above explains,
+the surviving branch is vacuous, so this is *not* a route to
+`specht_form_nondegenerate` — it is the honest statement of how much the
+diagonal Gram entry buys on its own. -/
+theorem specht_not_le_perp {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
+    (t : Tableau μ) :
+    ¬ (SpechtSubmodule (k := k) μ ≤ spechtPerp (k := k) μ) := by
+  intro hle
+  have hmem : polytabloid (k := k) t ∈ SpechtSubmodule (k := k) μ :=
+    polytabloid_mem_specht (k := k) t
+  have h0 : bilinM (k := k) μ (polytabloid (k := k) t) (polytabloid (k := k) t) = 0 := by
+    have hperp := hle hmem
+    rw [mem_spechtPerp_iff] at hperp
+    exact hperp _ hmem
+  rw [bilinM_polytabloid_self] at h0
+  haveI : Nonempty (colStab t) := ⟨1⟩
+  exact (Nat.cast_ne_zero.mpr Fintype.card_ne_zero) h0
+
+/-- **Non-degeneracy of the form on `S^μ`, every characteristic-zero field** —
+`S^μ ⊓ (S^μ)ᗮ = ⊥`.  Formerly this module's last `sorry`; now proved.
+
+**Historical warning, kept because the wrong route is tempting.**  An earlier
+plan read
+
+> `0 = ⟨e_T, x⟩ = Σ_S c_S ⟨e_T, e_S⟩ = c_T · |C_T|`, off-diagonal entries
+> being `0`
+
+which presumes the standard-polytabloid Gram matrix is diagonal.  It is not —
+see the refutation block above: `μ = (2,1)` gives `[[2,1],[1,2]]`.  Do not
+restate `specht_gram_orthogonal`.
+
+**The proof, in five moves.**
+
+*1. Thin the polytabloids over `ℚ`.*  `exists_linearIndepOn_extension` picks a
+sub**set of tableaux** `b` whose polytabloids are `ℚ`-independent and still
+cover the rest.  It is stated for `LinearIndepOn` over a `Set ι`, so what comes
+back is a set of *tableaux*, not of vectors — which is why this step needs no
+standard-basis theorem, no Garnir straightening, and no dominance core.
+
+*2. Their coordinate matrix is an integer matrix.*  A polytabloid is a signed
+sum of basis tabloids, so every coefficient is a sum of `±1`
+(`SpechtBaseChange.polytabloid_apply_eq_intCast`).  Call it `Mz`.
+
+*3. `det (Mz Mzᵀ) ≠ 0` over `k`.*  `RankMinor.exists_selector_det_ne_zero` turns
+the `ℚ`-independence of `Mz`'s rows into a nonzero maximal minor, and
+`CauchyBinet.det_gram_map_ne_zero` turns that into the Gram determinant being
+nonzero in `k`.  **This is the step that reaches `ℂ`**: Cauchy–Binet writes
+`det (Mz Mzᵀ) = Σ_f (det Mz_f)²`, a sum of squares *of integers*, so the
+positivity argument happens entirely in `ℤ` and `k` is never ordered.
+
+*4. That determinant is the Gram determinant of the form.*  The tabloid basis is
+orthonormal for `bilinM` (`bilinM_apply`), so the Gram matrix of any family is
+exactly `(coordinate matrix) · (coordinate matrix)ᵀ`.
+
+*5. Invertible Gram ⇒ trivial radical.*
+`GramNondegenerate.span_inf_orthogonalBilin_eq_bot`.
+
+The family spans over `k` and not merely over `ℚ` because the coordinates are
+integers, so the `ℚ`-relations found in step 1 survive base change
+(`SpechtBaseChange.spechtSubmodule_eq_span_of_rat`).
+
+**Relation to Stage 1.**  `specht_form_nondegenerate_ordered` (§4.3-bis) proves
+the same statement over an ordered field by positive definiteness, in three
+lines.  It remains as the cheap special case; it provably cannot reach `ℂ`,
+where the form is bilinear rather than sesquilinear and has isotropic vectors
+(`x = (1, i)` gives `⟨x, x⟩ = 0` with `x ≠ 0`).
+
+**No `μ.card ≠ 0` hypothesis.**  Earlier versions carried one, to match the
+brick-2 contract in `Specht.specht_isSimple`.  That stub has since been deleted
+(it duplicated a proved theorem), and the proof never used the hypothesis, so it
+is gone: the statement holds for the empty diagram too.  Dropping it matters
+downstream — `isCompl_specht_perp` below could not be stated for every `μ` while
+its input demanded a nonemptiness proof that `μ = ∅` cannot supply.
+-/
+theorem specht_form_nondegenerate {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
+    SpechtSubmodule (k := k) μ ⊓ spechtPerp (k := k) μ = ⊥ := by
+  -- Ref: [sagan2001] §2.4 / [james1984representation] — Stage 2 of the corrected
+  -- plan in the docstring above (ℤ-Gram determinant nonzero, base-changed to k).
   --
-  -- STATUS (updated 2026-07-25 — OWNER RULING: keep generic char-0; obstruction (2)
-  -- below is now RESOLVED):
-  --  (1) [ℝ shortcut — declined by owner] positive-definiteness over ℝ: tabloids are
-  --      orthonormal, so `bilinM x x = Σ_d (x d)^2` (from `bilinM_apply`), whence over
-  --      an ordered field `x ≠ 0 ⇒ ⟨x,x⟩ > 0 ⇒ x ∉ (S^μ)ᗮ`, i.e. `rad = ⊥` in ~4
-  --      lines with NO basis.  But this needs the base field ORDERED; over a general
-  --      char-0 field (e.g. ℂ) `Σ x_d^2` is isotropic and it fails.  Both consumers
-  --      (`specht_isSimple` here and brick-2 `Specht.specht_isSimple`) are generic
-  --      `[Field k][CharZero k]`, so specialising to ℝ would weaken them.  OWNER RULING
-  --      (2026-07-25): KEEP generic char-0 — do NOT weaken to ℝ.  So this route is
-  --      deliberately not taken.
-  --  (2) [generic char-0 route — now UNBLOCKED] integer Gram matrix of a basis of S^μ
-  --      ⇒ corank base-invariant across char-0 fields ⇒ = 0 by the ℝ (positive-definite)
-  --      case.  This needs a *basis of S^μ*: `SpechtStandardBasis.standardBasis`, which
-  --      is NOW SORRY-FREE on main — the Garnir straightening core
-  --      (`SpechtStandardBasisCore.straightening_step_colMax`) and the dominance lemma
-  --      (`SpechtDominanceCore.dominance_colStab_lemma`) have been closed, and
-  --      `SpechtStandardBasisCore`, `SpechtDominanceCore`, `SpechtStandardBasis` all
-  --      carry 0 `sorry` tactics.  Routing through `standardBasis` therefore no longer
-  --      adds `sorryAx`.  REMAINING WORK (the honest open item): the base-change corank
-  --      proof — take the ℤ Gram matrix of `standardBasis`, note its rank/corank is
-  --      base-invariant across char-0 fields, and conclude corank 0 from the ℝ
-  --      positive-definite case.  (Env note: verifying this needs the Specht dependency
-  --      cone built; do it in a stable-olean session.)
-  --  Note: the already-sorry-free `specht_submodule_dichotomy` cannot close this —
-  --  applied to `U = rad`, its OR branch `U ≤ (S^μ)ᗮ` holds trivially (no
-  --  contradiction); the Maschke/irreducibility route is circular with
-  --  `specht_isSimple`.
-  sorry
+  -- The previous proof body is DELETED, not weakened: it discharged the
+  -- off-diagonal sum by `rw [specht_gram_orthogonal …]`, and that lemma is
+  -- false (see the refutation block above). A proof resting on a false lemma
+  -- is not partial progress toward this theorem, so nothing of it is retained.
+  --
+  -- Stage 1 is now DONE and sorry-free, one section up: see
+  -- `specht_form_nondegenerate_ordered` (§4.3-bis), which proves exactly this
+  -- statement for `[Field k] [LinearOrder k] [IsStrictOrderedRing k]` — hence
+  -- for ℚ and ℝ — via positive definiteness (`bilinM_self_eq_zero_iff`).
+  -- Downstream, `specht_isSimple_ordered` (§5) is fully sorry-free.
+  --
+  -- GAP (Stage 2 only): the general `CharZero` case, i.e. fields with no
+  -- compatible order — `ℂ` being the one that matters. Stage 1 provably cannot
+  -- reach it: over `ℂ` the form is bilinear rather than sesquilinear and has
+  -- isotropic vectors (`x = (1, i)` gives `⟨x, x⟩ = 0` with `x ≠ 0`), so
+  -- `⟨x, x⟩ = 0` no longer forces `x = 0`.
+  --
+  -- Stage 2 is now DONE, by the route sketched above but with Cauchy–Binet
+  -- doing the work of step (iii). Five moves, each supplied by a named lemma:
+  --
+  --   1. over ℚ, thin the polytabloids to an independent sub-family that still
+  --      spans (`exists_linearIndepOn_extension` — a *set of tableaux*, so no
+  --      standard-basis theorem and no Garnir straightening is involved);
+  --   2. its integer coordinate matrix `Mz` has ℚ-independent rows;
+  --   3. `RankMinor` turns that into a nonzero maximal minor, and
+  --      `CauchyBinet` turns the minor into `det (N Nᵀ) ≠ 0` over `k` —
+  --      the sum of squares lives over ℤ, so `k` is never ordered;
+  --   4. `bilinM`'s Gram matrix on that family *is* `N Nᵀ`, because the
+  --      tabloid basis is orthonormal (`bilinM_apply`);
+  --   5. `GramNondegenerate` turns an invertible Gram into `W ⊓ Wᗮ = ⊥`.
+  --
+  -- The sub-family spans over `k` and not just ℚ because polytabloid
+  -- coordinates are integers, so a ℚ-relation among them survives base change
+  -- (`SpechtBaseChange.spechtSubmodule_eq_span_of_rat`).
+  classical
+  -- 1. thin the polytabloids over ℚ
+  obtain ⟨b, -, -, hcover, hind⟩ :=
+    exists_linearIndepOn_extension (K := ℚ) (v := polytabloid (k := ℚ) (μ := μ))
+      (linearIndepOn_empty ℚ _) (Set.empty_subset (Set.univ : Set (Specht.Tableau μ)))
+  haveI : Fintype b := Set.Finite.fintype (Set.toFinite b)
+  have hQ : ∀ t : Specht.Tableau μ, polytabloid (k := ℚ) t ∈
+      Submodule.span ℚ (Set.range (fun i : b => polytabloid (k := ℚ) (i : Specht.Tableau μ))) := by
+    intro t
+    rw [← Set.image_eq_range]
+    exact hcover ⟨t, Set.mem_univ t, rfl⟩
+  -- the same family spans over `k` — this is where integrality is used
+  have hspan :
+      Submodule.span k (Set.range (fun i : b => polytabloid (k := k) (i : Specht.Tableau μ)))
+        = SpechtSubmodule (k := k) μ :=
+    SpechtBaseChange.spechtSubmodule_eq_span_of_rat (k := k) (fun i : b => (i : Specht.Tableau μ)) hQ
+  -- 2. the integer coordinate matrix, and its rows' ℚ-independence
+  set Mz : Matrix b (Specht.Tabloid μ) ℤ :=
+    SpechtBaseChange.coordMatrix (fun i : b => polytabloid (k := ℤ) (i : Specht.Tableau μ))
+    with hMz
+  have hrows : LinearIndependent ℚ (Mz.map (Int.cast : ℤ → ℚ)).row := by
+    have hrow : (Mz.map (Int.cast : ℤ → ℚ)).row
+        = (Finsupp.linearEquivFunOnFinite ℚ ℚ (Specht.Tabloid μ)) ∘
+            (fun i : b => polytabloid (k := ℚ) (i : Specht.Tableau μ)) := by
+      funext i d
+      exact (SpechtBaseChange.polytabloid_apply_eq_intCast _ d).symm
+    rw [hrow]
+    refine hind.map' _ (LinearMap.ker_eq_bot.mpr ?_)
+    exact (Finsupp.linearEquivFunOnFinite ℚ ℚ (Specht.Tabloid μ)).injective
+  -- 3. + 4. the Gram matrix of the family is `N Nᵀ`, and its determinant is nonzero
+  have hgram : QOU.MathlibExt.GramNondegenerate.gramMatrix (bilinM (k := k) μ)
+        (fun i : b => polytabloid (k := k) (i : Specht.Tableau μ))
+      = (Mz.map (Int.cast : ℤ → k)) * Matrix.transpose (Mz.map (Int.cast : ℤ → k)) := by
+    ext i j
+    rw [Matrix.mul_apply, QOU.MathlibExt.GramNondegenerate.gramMatrix_apply, bilinM_apply,
+      Finsupp.sum_fintype _ _ (by simp)]
+    refine Finset.sum_congr rfl (fun d _ => ?_)
+    simp only [hMz, Matrix.map_apply, Matrix.transpose_apply, SpechtBaseChange.coordMatrix,
+      ← SpechtBaseChange.polytabloid_apply_eq_intCast]
+  have hdet : (QOU.MathlibExt.GramNondegenerate.gramMatrix (bilinM (k := k) μ)
+      (fun i : b => polytabloid (k := k) (i : Specht.Tableau μ))).det ≠ 0 := by
+    rw [hgram]
+    exact QOU.MathlibExt.RankMinor.det_gram_map_ne_zero_of_linearIndependent' (k := k) Mz hrows
+  -- 5. invertible Gram ⇒ the radical is trivial
+  exact QOU.MathlibExt.GramNondegenerate.inf_orthogonalBilin_eq_bot _ _ _ hspan hdet
+
+/-! ### 4.4-bis. The orthogonal decomposition `M^μ = S^μ ⊕ (S^μ)ᗮ`
+
+An immediate consequence of §4.4, and the reason it is worth stating separately:
+Sagan's **cross-shape** dominance theorem (§2.4.4 — `Hom(S^μ, M^ν) ≠ 0 ⇒ μ ⊵ ν`,
+the open core of `SpechtClassification.spechtIso_imp_dom_both`) needs to extend a
+homomorphism `S^μ → M^ν` to all of `M^μ` by declaring it zero on the complement.
+That extension exists exactly when `S^μ` has an `S_n`-stable complement, which is
+what this section supplies. -/
+
+/-- **`M^μ = S^μ ⊕ (S^μ)ᗮ`.** The Specht module and its form-orthogonal
+complement are complementary submodules of `M^μ`.
+
+Mathlib supplies the implication
+(`LinearMap.BilinForm.isCompl_orthogonal_of_restrict_nondegenerate`); what was
+missing until §4.4 was its hypothesis, non-degeneracy of the form restricted to
+`S^μ`, which over a general characteristic-zero field is exactly
+`specht_form_nondegenerate`. -/
+theorem isCompl_specht_perp {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
+    IsCompl (SpechtSubmodule (k := k) μ) (spechtPerp (k := k) μ) := by
+  -- `BilinForm.orthogonal` and `Submodule.orthogonalBilin` are the same submodule
+  have hrefl : (bilinM (k := k) μ).IsRefl := (bilinM_isSymm (k := k) μ).isRefl
+  have hdisj : Disjoint (SpechtSubmodule (k := k) μ)
+      (LinearMap.BilinForm.orthogonal (bilinM (k := k) μ) (SpechtSubmodule (k := k) μ)) := by
+    rw [disjoint_iff]
+    exact specht_form_nondegenerate (k := k) μ
+  exact LinearMap.BilinForm.isCompl_orthogonal_of_restrict_nondegenerate
+    (B := bilinM (k := k) μ) hrefl
+    (LinearMap.BilinForm.nondegenerate_restrict_of_disjoint_orthogonal
+      (bilinM (k := k) μ) hrefl hdisj)
+
+/-- `(S^μ)ᗮ` is `S_n`-stable — the form is invariant, so the complement supplied
+by `isCompl_specht_perp` is a complement **of representations**, not merely of
+`k`-modules.  This is the half that makes the extension in Sagan §2.4.4 a
+homomorphism of `k[S_n]`-modules. -/
+theorem spechtPerp_stable {k : Type} [Field k] (μ : YoungDiagram)
+    (σ : Equiv.Perm (Fin (nOf μ))) {x : Mtab (k := k) μ}
+    (hx : x ∈ spechtPerp (k := k) μ) :
+    Mtab.rep μ σ x ∈ spechtPerp (k := k) μ := by
+  rw [mem_spechtPerp_iff] at hx ⊢
+  intro y hy
+  -- pull `σ` off both arguments: `⟨y, σ x⟩ = ⟨σ⁻¹ y, x⟩`, and `S^μ` is stable
+  have hy' : Mtab.rep μ σ⁻¹ y ∈ SpechtSubmodule (k := k) μ := by
+    rw [SpechtSubmodule] at hy ⊢
+    induction hy using Submodule.span_induction with
+    | mem z hz =>
+        obtain ⟨t, rfl⟩ := hz
+        rw [polytabloid_rep_equivariant]
+        exact Submodule.subset_span ⟨σ⁻¹ • t, rfl⟩
+    | zero => rw [map_zero]; exact Submodule.zero_mem _
+    | add z w _ _ hz hw => rw [map_add]; exact Submodule.add_mem _ hz hw
+    | smul a z _ hz => rw [map_smul]; exact Submodule.smul_mem _ a hz
+  have hkey := hx (Mtab.rep μ σ⁻¹ y) hy'
+  rwa [← bilinM_rep_invariant (k := k) μ σ, rep_mul_apply, mul_inv_cancel,
+    map_one, Module.End.one_apply] at hkey
 
 /-! ## 4.5. James's submodule theorem — proved from the single core -/
 
@@ -790,11 +1272,16 @@ theorem specht_submodule_dichotomy {k : Type} [Field k] (μ : YoungDiagram)
 
 /-! ## 5. The reduction: `specht_isSimple` from the two cores -/
 
-/-- **Irreducibility of `S^μ` (char 0)** — reduced `sorry`-free to the two cores
-above.  Reproduces the brick-2 statement
-`QOU.BraidKnot.Specht.specht_isSimple` verbatim. -/
-theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
-    (hμ : μ.card ≠ 0) :
+/-- **Irreducibility of `S^μ` over any characteristic-zero field — proved.**
+
+Reduces to the two cores above, both of which are now sorry-free:
+`specht_submodule_dichotomy` (James's submodule theorem) and
+`specht_form_nondegenerate` (§4.4).  `#print axioms` reports
+`[propext, Classical.choice, Quot.sound]`.
+
+Reproduces the brick-2 statement `QOU.BraidKnot.Specht.specht_isSimple`
+verbatim; that one is still a stub, because brick 2 cannot import this file. -/
+theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram) :
     ∀ N : Submodule k (Mtab (k := k) μ),
       N ≤ SpechtSubmodule (k := k) μ →
       (∀ σ : Equiv.Perm (Fin (nOf μ)), ∀ x ∈ N, Mtab.rep μ σ x ∈ N) →
@@ -805,7 +1292,34 @@ theorem specht_isSimple {k : Type} [Field k] [CharZero k] (μ : YoungDiagram)
     exact Or.inr (le_antisymm hN_le hsub)
   · -- N ≤ S^μ and N ≤ (S^μ)ᗮ  ⇒  N ≤ S^μ ⊓ (S^μ)ᗮ = ⊥  ⇒  N = ⊥
     left
-    rw [eq_bot_iff, ← specht_form_nondegenerate (k := k) μ hμ]
+    rw [eq_bot_iff, ← specht_form_nondegenerate (k := k) μ]
+    exact le_inf hN_le hperp
+
+/-- **Irreducibility of `S^μ` over an ordered field — fully `sorry`-free.**
+
+The same reduction as `specht_isSimple`, but routed through
+`specht_form_nondegenerate_ordered` (Stage 1) instead of the `CharZero` core,
+so it carries **no** `sorry` at all: `specht_submodule_dichotomy` is sorry-free
+and needs only `Field k`, and Stage 1 supplies the non-degeneracy outright.
+
+This covers `ℚ` and `ℝ` — the archimedean evaluation the framework actually
+uses.  It also needs no `μ.card ≠ 0` hypothesis.
+
+`specht_isSimple` is the broader statement (every characteristic-zero field,
+`ℂ` included) and is **also** sorry-free now, so this variant is kept for its
+cheapness and its independence from the Cauchy–Binet chain, not because the
+general case is still owed. -/
+theorem specht_isSimple_ordered {k : Type} [Field k] [LinearOrder k]
+    [IsStrictOrderedRing k] (μ : YoungDiagram) :
+    ∀ N : Submodule k (Mtab (k := k) μ),
+      N ≤ SpechtSubmodule (k := k) μ →
+      (∀ σ : Equiv.Perm (Fin (nOf μ)), ∀ x ∈ N, Mtab.rep μ σ x ∈ N) →
+      N = ⊥ ∨ N = SpechtSubmodule (k := k) μ := by
+  intro N hN_le hN_stable
+  rcases specht_submodule_dichotomy (k := k) μ N hN_stable with hsub | hperp
+  · exact Or.inr (le_antisymm hN_le hsub)
+  · left
+    rw [eq_bot_iff, ← specht_form_nondegenerate_ordered (k := k) μ]
     exact le_inf hN_le hperp
 
 end QOU.BraidKnot.SpechtIrreducible

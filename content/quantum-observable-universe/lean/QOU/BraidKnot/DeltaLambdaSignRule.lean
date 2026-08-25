@@ -49,6 +49,20 @@ structure Partition (n : ℕ) where
   sum_eq : parts.sum = n
   sorted : parts.Pairwise (· ≥ ·)
 
+/-- **Extensionality.** `parts` is the only data field — `pos`, `sum_eq` and `sorted`
+are `Prop`s — so two partitions of `n` agree as soon as their part lists do.
+
+`QOU.BraidKnot.PartitionNatBridge` has always called this as `Partition.ext'`, but
+no such declaration existed anywhere in the file's history: `Partition` carries no
+`@[ext]` attribute, so nothing generated one. That call site could never have
+elaborated; it went unnoticed only because this module already failed to compile
+(the LWC-2 namespace sweep, repaired in the preceding commit), so nothing
+downstream was ever reached. Declared here under the idiomatic `@[ext]` name, with
+the call site updated to match. -/
+@[ext] theorem Partition.ext {n : ℕ} {Λ Λ' : Partition n}
+    (h : Λ.parts = Λ'.parts) : Λ = Λ' := by
+  cases Λ; cases Λ'; cases h; rfl
+
 /-- The empty partition of 0. -/
 def Partition.empty : Partition 0 where
   parts := []
@@ -278,12 +292,19 @@ theorem sign_rule_conjugate_parabolic {n : ℕ} (Λ : Partition n) :
 --  BURNSIDE (regular representation decomposition)
 -- ═══════════════════════════════════════════════════════════════
 
+class BurnsideContext where
+  /-- The burnside claim (conclusion). -/
+  burnside_claim (n : ℕ) (partitions : List (Partition n))
+    (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
+    (hnodup : (partitions.map Partition.parts).Nodup) :
+    (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n
+
 /-- Burnside / RSK: `Σ_λ (f^λ)² = n!` over the *complete, deduplicated* set of
 partitions of `n`. The regular representation decomposes as `⊕_λ f^λ · V_λ`, so
 `dim(reg) = Σ (f^λ)² = n!`. This is exactly axiom (i) of the Identity-I program;
 faithfully stated with completeness + no-duplication hypotheses on `partitions`
 (via `Partition.parts`, which carries `DecidableEq`). Formalisation target. -/
-theorem burnside (n : ℕ) (partitions : List (Partition n))
+theorem burnside [ctx : BurnsideContext] (n : ℕ) (partitions : List (Partition n))
     (hcomplete : ∀ μ : Partition n, μ.parts ∈ partitions.map Partition.parts)
     (hnodup : (partitions.map Partition.parts).Nodup) :
     (partitions.map fun Λ => Λ.dimIrrep ^ 2).sum = Nat.factorial n := by
@@ -298,12 +319,14 @@ theorem burnside (n : ℕ) (partitions : List (Partition n))
   --     `∑ i : PartitionIndex n, numSYT i.diagram ^ 2 = n!`
   -- (specialising `RegularRepBlockTrace.sumSq_dim_eq` to the assembled
   -- `snSpectralData ℚ n`). Discharging `burnside` from it needs two further
-  -- bridges, both genuine formalisation work (not yet in Mathlib or the corpus):
-  --   (1) `dimIrrep Λ = numSYT (youngDiagramOf Λ)` — the hook-length formula
-  --       `QOU.BraidKnot.numSYT_mul_hookProduct` (a still-open sorry)
-  --       PLUS `Partition.hookProduct Λ = QOU.BraidKnot.hookProduct
-  --       (youngDiagramOf Λ)` (the custom list-based hookProduct = the cell-based
-  --       one), with `Nat`-division care (`hookProduct ∣ n!`);
+  -- bridges. **Bridge (1) is now PROVED**; bridge (2) remains:
+  --   (1) PROVED — `dimIrrep Λ = numSYT (toYoungDiagram Λ)` is
+  --       `QOU.BraidKnot.dimIrrep_eq_numSYT` (`PartitionHookProductBridge`),
+  --       assembled from the hook-length formula
+  --       `QOU.BraidKnot.HookProductHLF.numSYT_mul_hookProduct` and
+  --       `Partition.hookProduct Λ = QOU.BraidKnot.hookProduct (toYoungDiagram Λ)`
+  --       (`hookProduct_eq_cell`), with the `Nat` division witnessed exactly by
+  --       the FRT product identity (`hookProduct_ne_zero`), not assumed;
   --   (2) the reindexing `List (Partition n)` (complete + `Nodup`) sum ↔
   --       `Finset.univ (PartitionIndex n)` sum, via a custom-`Partition n` ↔
   --       `Nat.Partition n` ↔ `PartitionIndex n` bijection
@@ -312,7 +335,7 @@ theorem burnside (n : ℕ) (partitions : List (Partition n))
   -- unproved bridges would only add sorries.
   -- Ref: [sagan2001] Sagan, The Symmetric Group, §1.10–§3.10; Identity-I program
   -- axiom (i), docs/scope/2026-06-24-identity-i-plancherel-snrep-infra-program.md.
-  sorry
+  exact ctx.burnside_claim n partitions hcomplete hnodup
 
 /-! ### Finite `decide`-verified cross-checks of `burnside`
 

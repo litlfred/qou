@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-07-05T11:25:17.941571+00:00",
-  "commitSha": "6949424f7a827fb6d8f76f8fd3f1d4a45e37cfa2",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-10T17:21:10.868455+00:00",
+  "commitSha": "e31e89d1b1180bc329079a8f7adb8eb3d5c1a782",
   "assertions": [
     {
       "name": "deuteron_below_ceiling",
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 34,
+  "durationMs": 21,
   "computation": "binding-error-source",
   "scriptFile": "binding_error_source.py",
   "scriptHash": "88b5200bbe55",
-  "scriptCommitSha": "a13f0066fec64dfc824ffff5690bd3571bcdeb94",
+  "scriptCommitSha": "90140791dd7b29a05f48b107248b74875214d63c",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,56 +37,57 @@
     "python": "3.11.15",
     "numpy": "2.4.6",
     "scipy": "1.17.1",
-    "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Error-source diagnosis for the A≥3 binding undershoot: Δtr is an intensive, saturating observable (≤ |tr_free| ≈ 1), capping B = m_e·Vol·Δtr at ~3.74 MeV for any A, while physical binding is extensive. Deuteron sits below the ceiling (+0.2%); A≥3 is clipped (−59%/−88%). Structural pointer: the extensive analog is -log(tr), which grows with A — but no recalibrated formula is claimed (fitting).",
   "data": {
     "ceiling_MeV": "3.74445966",
     "isotopes": {
       "2H": {
-        "tr_free": "0.983526015185",
-        "tr_atom": "0.388286417276",
-        "delta_tr": "0.595239597908",
-        "B_cat_MeV": "2.228850662",
+        "tr_free": "1.13171690525",
+        "tr_atom": "0.575090872103",
+        "delta_tr": "0.55662603315",
+        "B_cat_MeV": "2.084263727",
         "B_AME_MeV": "2.2245662",
-        "clip_pct": 0.19259765644086488,
-        "neg_log_ratio": "0.929400832963",
-        "B_over_dtr": "3.737261781",
-        "B_over_log": "2.393548748"
+        "clip_pct": -6.306958776805962,
+        "neg_log_ratio": "0.676963077038",
+        "B_over_dtr": "3.99651843",
+        "B_over_log": "3.286096798"
       },
       "3H": {
-        "tr_free": "0.908023891869",
-        "tr_atom": "0.104052104023",
-        "delta_tr": "0.803971787846",
-        "B_cat_MeV": "3.010439927",
+        "tr_free": "1.11784623026",
+        "tr_atom": "0.229277660803",
+        "delta_tr": "0.888568569459",
+        "B_cat_MeV": "3.327209163",
         "B_AME_MeV": "8.4817962",
-        "clip_pct": -64.50704713560515,
-        "neg_log_ratio": "2.16637891698",
-        "B_over_dtr": "10.54986795",
-        "B_over_log": "3.915195137"
+        "clip_pct": -60.772351929055,
+        "neg_log_ratio": "1.58422534257",
+        "B_over_dtr": "9.545460521",
+        "B_over_log": "5.353907662"
       },
       "3He": {
-        "tr_free": "1.0477562977",
-        "tr_atom": "0.20654081157",
-        "delta_tr": "0.841215486134",
-        "B_cat_MeV": "3.149897453",
+        "tr_free": "1.29667561395",
+        "tr_atom": "0.403709914586",
+        "delta_tr": "0.892965699368",
+        "B_cat_MeV": "3.343674039",
         "B_AME_MeV": "7.71804132",
-        "clip_pct": -59.1878648669174,
-        "neg_log_ratio": "1.62390826989",
-        "B_over_dtr": "9.174868327",
-        "B_over_log": "4.752756953"
+        "clip_pct": -56.677168463340045,
+        "neg_log_ratio": "1.16686246129",
+        "B_over_dtr": "8.643155415",
+        "B_over_log": "6.614353941"
       },
       "4He": {
-        "tr_free": "0.967323422545",
-        "tr_atom": "0.0553483332256",
-        "delta_tr": "0.911975089319",
-        "B_cat_MeV": "3.414853933",
+        "tr_free": "1.28078315363",
+        "tr_atom": "0.160951371947",
+        "delta_tr": "1.11983178169",
+        "B_cat_MeV": "4.193164932",
         "B_AME_MeV": "28.2956624",
-        "clip_pct": -87.93152856945194,
-        "neg_log_ratio": "2.86088635391",
-        "B_over_dtr": "31.02679309",
-        "B_over_log": "9.890523041"
+        "clip_pct": -85.1808914272055,
+        "neg_log_ratio": "2.07412472683",
+        "B_over_dtr": "25.26777938",
+        "B_over_log": "13.64221835"
       }
     },
     "conclusion": {

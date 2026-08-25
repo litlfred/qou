@@ -41,9 +41,18 @@ class q_gl_kummer_filtration where
       brane tower iff $n \mid \chi(A)$ (perpetual obstruction otherwise). -/
   lifts_iff_divides : ∀ n : ℕ, 1 ≤ n → (liftsThroughTower n ↔ (n : ℤ) ∣ chiA)
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — not a missing proof.
--- Ref: [manuscript] quantum-observable-universe/q-geometric-langlands/q-gl-kummer-filtration.ts
-noncomputable instance : q_gl_kummer_filtration := sorry
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the class fields above, which
+-- is exactly the open conjecture; supplying one asserts it.
+--
+-- History: this file previously carried
+--     axiom q_gl_kummer_filtration_conjecture : q_gl_kummer_filtration
+--     noncomputable instance : q_gl_kummer_filtration := q_gl_kummer_filtration_conjecture
+-- so every downstream `[q_gl_kummer_filtration]` resolved for free and the assumption was
+-- invisible outside `#print axioms`.  (The removed comment also described it
+-- as a `sorry` representing the open conjecture — it was an `axiom`, which is
+-- strictly stronger: a `sorry` at least shows up as `sorryAx`.)  Removed, not
+-- completed.  Downstream results must take `[q_gl_kummer_filtration]` as an explicit
+-- hypothesis.
 
 end QOU.QGeometricLanglands

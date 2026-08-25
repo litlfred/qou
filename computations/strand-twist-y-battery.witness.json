@@ -1,8 +1,8 @@
 {
   "engine": "python-fractions",
-  "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-01T01:07:54.338583+00:00",
-  "commitSha": "b370b91ecaf25432cc210f734aa2e5e688eec57b",
+  "engineVersion": "python 3.13.12",
+  "computedAt": "2026-08-04T10:15:41.165249+00:00",
+  "commitSha": "d7b06c6ae84d8ac92e2efcb28d5dd9e5f67e1c0b",
   "assertions": [
     {
       "name": "survivors_count",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 4,
+  "durationMs": 12,
   "computation": "strand-twist-y-battery",
   "scriptFile": "strand_twist_y_battery.py",
   "scriptHash": "60c03656b3ae",
-  "scriptCommitSha": "8d203cb7cde0d6f3787f823e0120caa7d276b89d",
+  "scriptCommitSha": "3764ae3c5cd0d1d3176503834871fbc3e83f7535",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -45,8 +45,12 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "python": "3.13.12",
+    "numpy": "2.5.0",
+    "scipy": "1.18.0",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "EXPLORATORY strand-twist hypercharge battery (def:strand-twist-datum steps b/c, beans qou-4tul/qou-q377): helon-style candidate-space enumeration for Y = 2(T/3 - I3) against the SM first-generation spectrum, Baez-Huerta Z6 compatibility, and nucleon-doublet GMN. Candidate-space feasibility only — NOT wired, NOT a derivation; conj:sm-hypercharge-invariant stays open.",
   "data": {

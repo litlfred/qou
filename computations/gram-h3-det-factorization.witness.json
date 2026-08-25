@@ -1,8 +1,8 @@
 {
   "engine": "python+sympy",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-20T11:26:18.479873+00:00",
-  "commitSha": "23d7440b359812f319c5020418e8e01088fa3895",
+  "computedAt": "2026-08-24T14:27:14.885320+00:00",
+  "commitSha": "f8dae9f5eb2a3b3dcc28b8cde7a0acbee1479679",
   "assertions": [
     {
       "name": "row_cleared_det_equals_minus_num_times_u8",
@@ -38,11 +38,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14067,
+  "durationMs": 17699,
   "computation": "gram-h3-det-factorization",
   "scriptFile": "gram_h3_det_factorization.py",
   "scriptHash": "a930706b0e91",
-  "scriptCommitSha": "d0802ffd2914484ad99012b9b0220a8ba6e65761",
+  "scriptCommitSha": "d3eb09468c468fca44398daab80ba5a1edce945d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -51,14 +51,25 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/gram_h3_det_factorization.py"
+    ],
+    "reproduce": "python3 -u computations/gram_h3_det_factorization.py"
   },
   "description": "Symbolic factorization of det(gramMatrix u) for the H_3(q) Hoefsmit-seminormal Gram matrix. Identifies TWO positive real roots — u=1 (classical limit) and u≈0.6823 (root of u³+u-1=0) — forcing a correctness fix to the Lean theorem gramMatrix_det_ne_zero (hypothesis must be u > 1, not 0 < u ∧ u ≠ 1).",
   "auditOnly": "docs/audits/2026-05-25-gram-h3-det-second-root-correctness-finding.md",
   "data": {
     "factorization": {
-      "compute_time_s": 0.31624770164489746,
+      "compute_time_s": 0.3931591510772705,
       "det_full": "(-u**44 - 5*u**43 - 16*u**42 - 39*u**41 - 71*u**40 - 112*u**39 - 146*u**38 - 166*u**37 - 183*u**36 - 162*u**35 - 166*u**34 - 120*u**33 - 55*u**32 - 13*u**31 + 194*u**30 + 199*u**29 + 415*u**28 + 410*u**27 + 302*u**26 + 424*u**25 - 104*u**24 + 180*u**23 - 338*u**22 - 180*u**21 - 104*u**20 - 424*u**19 + 302*u**18 - 410*u**17 + 415*u**16 - 199*u**15 + 194*u**14 + 13*u**13 - 55*u**12 + 120*u**11 - 166*u**10 + 162*u**9 - 183*u**8 + 166*u**7 - 146*u**6 + 112*u**5 - 71*u**4 + 39*u**3 - 16*u**2 + 5*u - 1)/(u**34 + 12*u**32 + 66*u**30 + 220*u**28 + 495*u**26 + 792*u**24 + 924*u**22 + 792*u**20 + 495*u**18 + 220*u**16 + 66*u**14 + 12*u**12 + u**10)",
       "numerator_factored": "-(u - 1)*(u + 1)*(u**3 + u - 1)**5*(u**3 + u**2 + 1)**5*(u**6 - u**5 + u**4 - u**3 + 2*u**2 - u + 1)*(u**6 + u**5 + 2*u**4 + u**3 + u**2 + u + 1)",
       "denominator_factored": "u**10*(u**2 + 1)**12",

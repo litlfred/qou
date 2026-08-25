@@ -40,10 +40,12 @@ unique), which is exactly the statement that each `A/I`-class has a
 unique `Õ(G)`-representative. The `R`-linearity of the resulting
 bijection and the internal-direct-sum statement are not formalized
 here (they require the full module structure on `AlgElement`, which is
-a raw data type — see `AlgOps.lean` §6). The single remaining
-`sorry` witnesses the *existence* half (`normal_form_exists`, the
-termination argument); the uniqueness half is discharged by the
-proved `normal_form_unique`.
+a raw data type — see `AlgOps.lean` §6). Both halves are now proved:
+*existence* is `normal_form_exists`, from `reduction_well_founded` plus
+the hypothesis `hlc` that every rule has a unit leading coefficient
+(bean qou-lzoo — the axiom of that name it used to invoke was **false**,
+refuted in `NormalFormExistsRefutation`); *uniqueness* is
+`normal_form_unique`.
 -/
 
 namespace UGB.Introduction
@@ -72,20 +74,22 @@ variable {G : Type u} {k : Type v} [Ring k] [DecidableEq G]
 theorem main_theorem_statement
     (ord : AdmissibleOrder G)
     (sys : RewritingSystem G k)
-    (hgs : IsGrobnerShirshovBasis G k ord sys) :
+    (hgs : IsGrobnerShirshovBasis G k ord sys)
+    (hnqz : NoQuasiZerosFree G k)
+    (hlc : ∀ r ∈ sys.rules, IsUnit (r.lc ord)) :
     ∀ f : AlgElement G k,
       (∃ nf : AlgElement G k, ReducesToNF ord sys f nf) ∧
       (∀ nf₁ nf₂ : AlgElement G k,
         ReducesToNF ord sys f nf₁ → ReducesToNF ord sys f nf₂ → nf₁ = nf₂) := by
   intro f
   refine ⟨?_, ?_⟩
-  · -- Existence: the termination half (normal_form_exists). This is the
-    -- single remaining manuscript step (well-founded reduction).
-    -- Ref: [manuscript] unital-groebner-bases — existence of normal form (termination)
-    sorry
+  · -- Existence: no longer "the single remaining manuscript step" invoking an
+    -- axiom — it is `normal_form_exists`, proved from termination plus `hlc`
+    -- (bean qou-lzoo). The axiom it replaced was not merely unproved but false.
+    exact normal_form_exists ord sys hlc f
   · -- Uniqueness: fully discharged by the proved composition-lemma
     -- corollary `normal_form_unique` (confluence of a GS basis).
     intro nf₁ nf₂ h₁ h₂
-    exact normal_form_unique ord sys hgs f nf₁ nf₂ h₁ h₂
+    exact normal_form_unique ord sys hgs hnqz f nf₁ nf₂ h₁ h₂
 
 end UGB.Introduction

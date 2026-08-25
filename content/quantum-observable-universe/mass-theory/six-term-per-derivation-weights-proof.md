@@ -22,7 +22,7 @@ the per-derivation reading above:
   where $\alpha = m_e \cdot 8G$ is the
   [Borromean–Catalan binding scale](#prop:binding-scale-catalan)
   and $G \approx 0.9160$ is Catalan's constant.  Per
-  [the divergence-audit branch's reconciliation](#prop:mass-endomorphism-tower),
+  [the mass-endomorphism tower](#prop:mass-endomorphism-tower),
   $\alpha\,\ln\lvert V \rvert$ is the leading-order expansion of
   $-\alpha\,\mathrm{Li}_2^q(-\lvert V \rvert)$, so the same $\alpha$
   scale governs both the leading-order and the corrected

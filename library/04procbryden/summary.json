@@ -1,0 +1,97 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "04procbryden",
+ "source_sha256": "8baffbc6542c34a5",
+ "brief": "Some computations of Ohtsuki series — We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand",
+ "extended": "**Some computations of Ohtsuki series**\n\n*Nori Jacoby ( nori jacoby@hotmail.com) and Ruth Lawrence*\n\n18 pp, 15 sections.\n\n**Abstract.** We present some computational data on Ohtsuki series for a two pa- rameter family of integer homology spheres obtained by surgery around what we call ‘2–strand knots’, closures of the simplest rational tangles. This data allows us to make certain conjectures about the growth rate of the coeﬃcients in Ohtsuki series generally, based on which we introduce an invariant which we call the slope σ(M) of a manifold M (not to be confused with slopes in hyperbolic geometry). For Seifert ﬁbred manifolds, M, the conjectures are known to hold while π 2σ(M) ∈ Q; furthermore if M is also an integer homology sphere, π2σ(M) ∈ Z. Assuming the conjectures, the numerical data enables us to give an example of a ZHS for which π2σ(M) ⁄∈Z. This paper is based on the ﬁrst author’s M.Sc. thesis.\n\n**Outline.** 1 Introduction; 2 A two-parameter family of manifolds; 2.1 Definition of the manifolds; 2.2 Calculation of ZK; 2.3 Properties of Ohtsuki series; 3 Computer calculations of Ohtsuki series; 3.1 Growth of number of states; 3.2 Numerical precision and summand size; 4 Results and conjectures; 4.1 Individual Ohtsuki series; 4.2 Polynomiality of coefficients; 4.3 Slopes; 5 Conclusions; 6 Acknowledgements; References\n\n**Extracted claims (proposals, not verified).**\n- Theorem: For ﬁxed parity and signs forS and T, λm is a polyno-",
+ "tokens": {
+  "brief": 49,
+  "extended": 364
+ },
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "title": "Introduction",
+   "pages": "1-4"
+  },
+  {
+   "id": "sec-001-2-a-two-parameter-family-of-manifolds",
+   "title": "A two-parameter family of manifolds",
+   "pages": "4-4"
+  },
+  {
+   "id": "sec-002-21-definition-of-the-manifolds",
+   "title": "Definition of the manifolds",
+   "pages": "4-5"
+  },
+  {
+   "id": "sec-003-22-calculation-of-zk",
+   "title": "Calculation of ZK",
+   "pages": "5-8"
+  },
+  {
+   "id": "sec-004-23-properties-of-ohtsuki-series",
+   "title": "Properties of Ohtsuki series",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-005-3-computer-calculations-of-ohtsuki-series",
+   "title": "Computer calculations of Ohtsuki series",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-006-31-growth-of-number-of-states",
+   "title": "Growth of number of states",
+   "pages": "9-9"
+  },
+  {
+   "id": "sec-007-32-numerical-precision-and-summand-size",
+   "title": "Numerical precision and summand size",
+   "pages": "9-11"
+  },
+  {
+   "id": "sec-008-4-results-and-conjectures",
+   "title": "Results and conjectures",
+   "pages": "11-11"
+  },
+  {
+   "id": "sec-009-41-individual-ohtsuki-series",
+   "title": "Individual Ohtsuki series",
+   "pages": "11-12"
+  },
+  {
+   "id": "sec-010-42-polynomiality-of-coefficients",
+   "title": "Polynomiality of coefficients",
+   "pages": "12-13"
+  },
+  {
+   "id": "sec-011-43-slopes",
+   "title": "Slopes",
+   "pages": "13-16"
+  },
+  {
+   "id": "sec-012-5-conclusions",
+   "title": "Conclusions",
+   "pages": "16-17"
+  },
+  {
+   "id": "sec-013-6-acknowledgements",
+   "title": "Acknowledgements",
+   "pages": "17-17"
+  },
+  {
+   "id": "sec-014-references",
+   "title": "References",
+   "pages": "17-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles",
+   "candidates"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

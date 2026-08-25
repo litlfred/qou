@@ -18,5 +18,5 @@ export default definition({
   lean: { ref: "qou:QOU.Archimedean.TransferMatrixOperator",
     validation: "not_checked",
   },
-  uses: ["prop:beta-decay-transfer-matrix"],
+  uses: [],
 });

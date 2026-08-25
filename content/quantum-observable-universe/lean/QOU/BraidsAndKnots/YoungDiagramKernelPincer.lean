@@ -179,6 +179,60 @@ theorem tiltOmega_one_eq_kernelValue (k : ℕ)
   rw [one_mul, Real.exp_log hfl]
   ring
 
+/-! ### Discharging `mean_zero` on the certified range
+
+`mean_zero` is the one member of `KernelPincerLegs` that is **not** conjectural — it is the exact
+identity `k!·E_Planch[ω₃] = 0`. Its ℤ-form `secondMomentKernel k = 0` is `decide`-verified for
+`k ≤ 20` (`YoungDiagramKernel.secondMomentKernel_eq_zero_of_le_twenty`). The three lemmas below
+build the missing ℝ-side bridge, so that on the certified range the hypothesis is **discharged**
+rather than assumed: a `[KernelPincerLegs k]` instance for `3 ≤ k ≤ 20` needs only the two
+genuinely open legs `A2` and `A3`.
+
+The general-`k` statement remains open *as Lean* (not as mathematics): the character-orthogonality
+proof needs the Jucys–Murphy-eigenvalue ⇒ Plancherel-mean bridge — the identity coefficient of
+`Σ_i X_i²` is `#{(i,j) : j < i} = C(k,2)` — which is Sₙ representation-theory infrastructure the
+corpus does not yet carry. Recording it as a certified floor keeps a provable premise from sitting
+silently beside two open ones (the `conditional-proved ≠ premise-established` discipline). -/
+
+/-- At `θ = 0` the tilt is the plain squared dimension: `tilt 0 f = f²` (no positivity needed —
+the exponent `0 · log f` vanishes even at `f = 0`). -/
+theorem tilt_zero (f : ℕ) : tilt 0 f = (f : ℝ) ^ 2 := by
+  unfold tilt
+  rw [zero_mul, Real.exp_zero, mul_one]
+
+/-- **At `θ = 0` the tilted `ω₃`-sum IS the dim²-weighted content-spread total**:
+`W(0) = secondMomentKernel k` (cast to `ℝ`). The ℝ-side twin of
+`tiltOmega_one_eq_kernelValue`. -/
+theorem tiltOmega_zero_eq_secondMomentKernel (k : ℕ) :
+    tiltOmega k 0 = (secondMomentKernel k : ℝ) := by
+  have hcast : ((secondMomentKernel k : ℤ) : ℝ)
+      = ((partsOf k).map (fun l => ((sytDim l : ℝ)) ^ 2 * (omega3 k l : ℝ))).sum := by
+    unfold secondMomentKernel
+    rw [Int.cast_list_sum, List.map_map]
+    refine congrArg List.sum (List.map_congr_left fun l _ => ?_)
+    simp only [Function.comp_apply]
+    push_cast
+    ring
+  rw [hcast]
+  unfold tiltOmega
+  refine congrArg List.sum (List.map_congr_left fun l _ => ?_)
+  rw [tilt_zero]
+
+/-- **The mean-zero bridge**: the ℤ-form vanishing `Σ_λ (f^λ)²·ω₃(λ) = 0` gives the scaffold's
+`mean_zero` hypothesis `E₂[ω₃] = 0` outright (the quotient's numerator vanishes, so no
+non-degeneracy of the normalisation is needed). -/
+theorem tiltedMean_zero_of_secondMomentKernel_eq_zero (k : ℕ) (h : secondMomentKernel k = 0) :
+    tiltedMean k 0 = 0 := by
+  unfold tiltedMean
+  rw [tiltOmega_zero_eq_secondMomentKernel, h, Int.cast_zero, zero_div]
+
+/-- **`mean_zero` is discharged for `3 ≤ k ≤ 20`** — not assumed. On this range the pincer's
+premise set reduces to the two genuinely open legs. -/
+theorem tiltedMean_zero_of_le_twenty (k : ℕ) (hk : 3 ≤ k) (hk' : k ≤ 20) :
+    tiltedMean k 0 = 0 :=
+  tiltedMean_zero_of_secondMomentKernel_eq_zero k
+    (YoungDiagramKernel.secondMomentKernel_eq_zero_of_le_twenty k hk hk')
+
 /-- **The conditional kernel bound (capstone, hypothesis-free)**: the two pincer legs close the
 covariance-kernel conjecture at level `k` — `kernelValue k ≤ 0` is *derived* from
 `KernelPincerLegs k` through the positivity of the tilted partition function (dimension
@@ -1058,6 +1112,96 @@ theorem hookProd_hookShape (a c : ℕ) (ha : 1 ≤ a) :
   rw [hrow0]
   ring
 
+/-! ### The hook-shape family inside `partsOf`
+
+Step 3 of the (TAIL) first-instance derivation: the carrier confinement is a statement about
+*individual* diagrams (`hookCount_sum_of_hookShape` / `_of_not_hookShape`); to turn it into a
+statement about the Plancherel sum one needs the hook shapes as an explicit, nodup sub-family of
+the enumerator `partsOf k`, plus the converse structural fact that a sorted positive list whose
+rows past the first are all `≤ 1` **is** one of them. -/
+
+/-- The `k` hook shapes of size `k`, enumerated by arm length `a = i + 1`. -/
+def hookShapes (k : ℕ) : List (List ℕ) :=
+  (List.range k).map (fun i => (i + 1) :: List.replicate (k - 1 - i) 1)
+
+/-- Each enumerated hook shape has size `k`. -/
+theorem hookShape_sum (k i : ℕ) (hi : i < k) :
+    ((i + 1) :: List.replicate (k - 1 - i) 1).sum = k := by
+  rw [List.sum_cons, sum_replicate_one]
+  omega
+
+/-- Every hook shape is a genuine member of the partition enumerator. -/
+theorem hookShape_mem_partsOf (k i : ℕ) (hi : i < k) :
+    ((i + 1) :: List.replicate (k - 1 - i) 1) ∈ partsOf k := by
+  apply mem_partsFuel _ k k k (hookShape_sum k i hi)
+  · intro x hx
+    rcases List.mem_cons.mp hx with rfl | hxr
+    · omega
+    · rw [List.eq_of_mem_replicate hxr]; omega
+  · intro x hx
+    rcases List.mem_cons.mp hx with rfl | hxr
+    · omega
+    · rw [List.eq_of_mem_replicate hxr]; omega
+  · exact sorted_hookShape (i + 1) (k - 1 - i) (Nat.succ_le_succ (Nat.zero_le i))
+  · rw [List.length_cons, List.length_replicate]; omega
+
+/-- The hook-shape enumeration has no duplicates (the arm length is the head). -/
+theorem hookShapes_nodup (k : ℕ) : (hookShapes k).Nodup := by
+  unfold hookShapes
+  refine List.Nodup.map ?_ (List.nodup_range)
+  intro a b hab
+  simp only [List.cons.injEq] at hab
+  omega
+
+/-- **Converse structural fact**: a nonempty list all of whose rows past the first are `≤ 1`, with
+positive entries, *is* the hook shape `(head, 1^{len−1})`. Together with the carrier lemma this
+makes "is a hook shape" (a `getD` condition) and "belongs to `hookShapes`" (an enumeration
+condition) interchangeable. -/
+theorem eq_hookShape_of_rows_le_one (l : List ℕ) (hpos : ∀ x ∈ l, 0 < x) (hne : l ≠ [])
+    (hhook : ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1) :
+    l = l.headD 0 :: List.replicate (l.length - 1) 1 := by
+  obtain ⟨a, t, rfl⟩ : ∃ a t, l = a :: t := by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons a t => exact ⟨a, t, rfl⟩
+  have ht : t = List.replicate t.length 1 := by
+    refine (List.eq_replicate_iff.mpr ⟨rfl, fun b hb => ?_⟩)
+    obtain ⟨j, hj, rfl⟩ := List.mem_iff_getElem.mp hb
+    have h1 : (a :: t).getD (j + 1) 0 ≤ 1 := hhook (j + 1) (Nat.le_add_left 1 j)
+    rw [List.getD_cons_succ, List.getD_eq_getElem _ _ hj] at h1
+    have h2 : 0 < t[j] := hpos _ (List.mem_cons_of_mem a hb)
+    omega
+  simp only [List.headD_cons, List.length_cons, Nat.add_sub_cancel]
+  exact congrArg (fun s => a :: s) ht
+
+/-- A hook-shaped member of `partsOf k` is in the enumeration `hookShapes k`. -/
+theorem mem_hookShapes_of_rows_le_one (k : ℕ) (l : List ℕ) (hl : l ∈ partsOf k) (hk : 1 ≤ k)
+    (hhook : ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1) : l ∈ hookShapes k := by
+  obtain ⟨hsum, hpos, _⟩ := partsOf_facts k l hl
+  have hne : l ≠ [] := by
+    intro h
+    rw [h, List.sum_nil] at hsum
+    omega
+  have heq := eq_hookShape_of_rows_le_one l hpos hne hhook
+  have hlen : 1 ≤ l.length := by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons _ _ => simp
+  have hhd : l.headD 0 + (l.length - 1) = k := by
+    have := congrArg List.sum heq
+    rw [List.sum_cons, sum_replicate_one] at this
+    omega
+  have hpos' : 0 < l.headD 0 := by
+    cases l with
+    | nil => exact absurd rfl hne
+    | cons a t => exact hpos a List.mem_cons_self
+  unfold hookShapes
+  refine List.mem_map.mpr ⟨l.headD 0 - 1, List.mem_range.mpr (by omega), ?_⟩
+  have h1 : l.headD 0 - 1 + 1 = l.headD 0 := by omega
+  have h2 : k - 1 - (l.headD 0 - 1) = l.length - 1 := by omega
+  rw [h1, h2]
+  exact heq.symm
+
 /-- **SYT dimension of a hook shape**: `f^{(a,1^c)} = C(n−1, a−1)` with `n = a + c` — the
 hook-length formula evaluated on the hook-shape data. Step 2 of the (TAIL) first-instance
 derivation, feeding the binomial-square sums. -/
@@ -1077,6 +1221,140 @@ theorem sytDim_hookShape (a c : ℕ) (ha : 1 ≤ a) :
   have h3 : b + 1 + c = (b + c) + 1 := by omega
   rw [h3, Nat.factorial_succ, Nat.mul_assoc]
   exact Nat.mul_div_mul_left _ _ (Nat.succ_pos _)
+
+/-- **Step 3 (the Plancherel restriction)**: a weight vanishing off the hook shapes may be summed
+over the explicit `k`-element family `hookShapes k` instead of the whole enumerator `partsOf k`.
+Both lists are nodup (`partsFuel_nodup`, `hookShapes_nodup`) and the family embeds
+(`hookShape_mem_partsOf`), so this is `Finset.sum_subset` transported along `List.sum_toFinset`. -/
+theorem sum_partsOf_eq_sum_hookShapes (k : ℕ) (g : List ℕ → ℝ)
+    (hg : ∀ l ∈ partsOf k, l ∉ hookShapes k → g l = 0) :
+    ((partsOf k).map g).sum = ((hookShapes k).map g).sum := by
+  have hnd : (partsOf k).Nodup := partsFuel_nodup k k k
+  rw [← List.sum_toFinset g hnd, ← List.sum_toFinset g (hookShapes_nodup k)]
+  refine (Finset.sum_subset ?_ ?_).symm
+  · intro x hx
+    rw [List.mem_toFinset] at hx ⊢
+    obtain ⟨i, hi, rfl⟩ := List.mem_map.mp hx
+    exact hookShape_mem_partsOf k i (List.mem_range.mp hi)
+  · intro x hx hnx
+    rw [List.mem_toFinset] at hx
+    rw [List.mem_toFinset] at hnx
+    exact hg x hx hnx
+
+/-- The top hook statistic vanishes off the hook shapes, *as members of the enumerator*: the
+`getD`-level carrier lemma transported to the enumeration via `mem_hookShapes_of_rows_le_one`. -/
+theorem hookCount_top_eq_zero_of_not_mem (k : ℕ) (hk : 1 ≤ k) (l : List ℕ) (hl : l ∈ partsOf k)
+    (hnm : l ∉ hookShapes k) : hookCount l k = 0 := by
+  obtain ⟨hsum, _, hsort⟩ := partsOf_facts k l hl
+  have hnot : ¬ ∀ i', 1 ≤ i' → l.getD i' 0 ≤ 1 := fun h =>
+    hnm (mem_hookShapes_of_rows_le_one k l hl hk h)
+  have := hookCount_sum_of_not_hookShape l hsort hnot
+  rwa [hsum] at this
+
+/-- The top hook statistic is `1` on every enumerated hook shape. -/
+theorem hookCount_top_eq_one_mem (k i : ℕ) (hi : i < k) :
+    hookCount ((i + 1) :: List.replicate (k - 1 - i) 1) k = 1 := by
+  have hsorted := sorted_hookShape (i + 1) (k - 1 - i) (Nat.succ_le_succ (Nat.zero_le i))
+  have hpos : ∀ x ∈ (i + 1) :: List.replicate (k - 1 - i) 1, 0 < x := by
+    intro x hx
+    rcases List.mem_cons.mp hx with rfl | hxr
+    · omega
+    · rw [List.eq_of_mem_replicate hxr]; omega
+  have hhook : ∀ i', 1 ≤ i' →
+      ((i + 1) :: List.replicate (k - 1 - i) 1).getD i' 0 ≤ 1 := by
+    intro i' hi'
+    obtain ⟨j, rfl⟩ : ∃ j, i' = j + 1 := ⟨i' - 1, by omega⟩
+    rw [List.getD_cons_succ]
+    by_cases hj : j < k - 1 - i
+    · rw [getD_replicate_of_lt 1 0 (k - 1 - i) j hj]
+    · rw [List.getD_eq_default _ _ (by rw [List.length_replicate]; omega)]
+      omega
+  have := hookCount_sum_of_hookShape _ hsorted hpos (by simp) hhook
+  rwa [hookShape_sum k i hi] at this
+
+/-- **The top mixed moment restricts to the hook shapes.** Combining the carrier confinement
+(`N_k = 1` on hook shapes, `0` elsewhere) with the enumeration transfer: the `v = k` numerator of
+the ν-system is a sum over the `k` hook shapes alone. This is the wiring step that turns the
+per-diagram carrier lemma into the classical single-index sum of the (TAIL) first instance. -/
+theorem top_mixedMoment_eq_hookShapes_sum (k : ℕ) (hk : 1 ≤ k) :
+    ((partsOf k).map
+        (fun l => tilt 0 (sytDim l) * (hookCount l k : ℝ) * (omega3 k l : ℝ))).sum
+      = ((hookShapes k).map (fun l => tilt 0 (sytDim l) * (omega3 k l : ℝ))).sum := by
+  rw [sum_partsOf_eq_sum_hookShapes k _ (fun l hl hnm => by
+    rw [hookCount_top_eq_zero_of_not_mem k hk l hl hnm]
+    push_cast
+    ring)]
+  unfold hookShapes
+  rw [List.map_map, List.map_map]
+  refine congrArg List.sum (List.map_congr_left fun i hi => ?_)
+  simp only [Function.comp_apply]
+  rw [hookCount_top_eq_one_mem k i (List.mem_range.mp hi)]
+  push_cast
+  ring
+
+/-- Index shift for the column contents: `Σ_{t<c} (t+1)² = Σ_{j<c+1} j²`. -/
+theorem sum_range_succ_shift (c : ℕ) :
+    ∑ i ∈ Finset.range c, ((i : ℤ) + 1) ^ 2 = ∑ j ∈ Finset.range (c + 1), ((j : ℤ)) ^ 2 := by
+  rw [Finset.sum_range_succ']
+  simp
+
+/-- `2·C(k,2) = k(k−1)` — the `ℕ`-division in `omega3`'s centre term is exact. -/
+theorem two_mul_choose_two (k : ℕ) : 2 * (k * (k - 1) / 2) = k * (k - 1) := by
+  cases k with
+  | zero => rfl
+  | succ r =>
+      simp only [Nat.add_sub_cancel]
+      rw [Nat.mul_comm (r + 1) r]
+      exact Nat.mul_div_cancel' (Even.two_dvd (Nat.even_mul_succ_self r))
+
+/-- **The bracket-arithmetic hinge**: on the hook shape with arm `a = i+1` and leg `c = k−1−i`,
+six times the 3-cycle eigenvalue is the quadratic the collapse consumes,
+
+`6·ω₃ = 2k·(3i² − 3(k−1)i + (k−1)(k−2))`.
+
+The cubic terms of the arm and leg content sums cancel identically — this is the cancellation
+recorded in `BinomialSquareSums`, here proved at the level of the diagram data
+(`contentSq_hookShape` + `six_mul_sum_range_sq`). -/
+theorem six_mul_omega3_hookShape (k i : ℕ) (hi : i < k) :
+    6 * (omega3 k ((i + 1) :: List.replicate (k - 1 - i) 1) : ℤ)
+      = 2 * (k : ℤ) * (3 * (i : ℤ) ^ 2 - 3 * ((k : ℤ) - 1) * (i : ℤ)
+          + ((k : ℤ) - 1) * ((k : ℤ) - 2)) := by
+  have harm : 6 * ∑ j ∈ Finset.range (i + 1), ((j : ℤ)) ^ 2
+      = (i : ℤ) * ((i : ℤ) + 1) * (2 * (i : ℤ) + 1) := by
+    rw [six_mul_sum_range_sq (i + 1)]
+    push_cast
+    ring
+  have hleg : 6 * ∑ t ∈ Finset.range (k - 1 - i), ((t : ℤ) + 1) ^ 2
+      = ((k : ℤ) - 1 - (i : ℤ)) * ((k : ℤ) - (i : ℤ)) * (2 * ((k : ℤ) - 1 - (i : ℤ)) + 1) := by
+    rw [sum_range_succ_shift, six_mul_sum_range_sq (k - 1 - i + 1)]
+    have hc : ((k - 1 - i : ℕ) : ℤ) = (k : ℤ) - 1 - (i : ℤ) := by
+      have : i + 1 ≤ k := hi
+      push_cast [Nat.cast_sub (by omega : i ≤ k - 1), Nat.cast_sub (by omega : 1 ≤ k)]
+      ring
+    push_cast [hc]
+    ring
+  have hcentre : ((k * (k - 1) / 2 : ℕ) : ℤ) * 2 = (k : ℤ) * ((k : ℤ) - 1) := by
+    cases k with
+    | zero => simp
+    | succ r =>
+        have h2 := two_mul_choose_two (r + 1)
+        simp only [Nat.add_sub_cancel] at h2
+        have hZ : (2 : ℤ) * (((r + 1) * r / 2 : ℕ) : ℤ) = ((r : ℤ) + 1) * (r : ℤ) := by
+          exact_mod_cast congrArg (fun n : ℕ => (n : ℤ)) h2
+        simp only [Nat.add_sub_cancel]
+        push_cast
+        linarith
+  unfold omega3
+  rw [contentSq_hookShape (i + 1) (k - 1 - i)]
+  have hexp : (6 : ℤ) * ((∑ j ∈ Finset.range (i + 1), ((j : ℤ)) ^ 2)
+        + ∑ t ∈ Finset.range (k - 1 - i), ((t : ℤ) + 1) ^ 2
+        - ((k * (k - 1) / 2 : ℕ) : ℤ))
+      = (6 * ∑ j ∈ Finset.range (i + 1), ((j : ℤ)) ^ 2)
+        + (6 * ∑ t ∈ Finset.range (k - 1 - i), ((t : ℤ) + 1) ^ 2)
+        - 3 * (((k * (k - 1) / 2 : ℕ) : ℤ) * 2) := by ring
+  rw [hexp, harm, hleg, hcentre]
+  have hik : (i : ℤ) + 1 ≤ (k : ℤ) := by exact_mod_cast hi
+  ring
 
 /-- `IdentityI.sumSqHooks` as a cell-set sum of the kernel-form hook (the two per-cell
 ℕ-subtraction forms agree on genuine cells, as in `hookProd_eq_prodHooks`). -/

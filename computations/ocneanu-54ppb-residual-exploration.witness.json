@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-22T13:19:55.175263+00:00",
-  "commitSha": "d7a30bb9a620771ab11273f12f32fa617a985169",
+  "computedAt": "2026-08-21T14:57:26.369149+00:00",
+  "commitSha": "c6866be7687c39f1bb4071c9625f06d4393220cf",
   "assertions": [
     {
       "name": "exploration_completed",
@@ -14,11 +14,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 10,
+  "durationMs": 3,
   "computation": "ocneanu-54ppb-residual-exploration",
   "scriptFile": "ocneanu_54ppb_residual_exploration.py",
   "scriptHash": "71b6dba06cdb",
-  "scriptCommitSha": "8b865dcadef3965e265e0b60f1a144359008e252",
+  "scriptCommitSha": "c3a7e16856de4a8ad7f97d1e6c959f27c3aedc55",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -28,20 +28,22 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.3.0",
+    "pyhecke_native": "0.9.0"
   },
   "description": "Exploration probe (while user waits) for the 54 ppb residual on the (α_em/π)/dim H_3 Ocneanu near-match. Tests special-function candidates, PSLQ over higher-order α_em + h^k mixed terms, direct α_em-decomposition. Goal: identify f(q_0) ≈ 1.001674.",
   "parameters": {
-    "q_70dps": "1.1099785955573347198997632204832250266562084087802"
+    "q_70dps": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
-    "f_target": "1.149021824168290195141113",
-    "f_minus_1": "0.1490218241682901951411128",
+    "f_target": "1.00809424248227736153444",
+    "f_minus_1": "0.008094242482277361534439933",
     "pslq_hits": 0,
-    "best_special_function_ppb": "-1.2334359e+8",
-    "verdict": "BEST candidate: '1 + α_em (1-loop natural)' at -1.23344e+8 ppb — not below 10 ppb threshold."
+    "best_special_function_ppb": "-790491.48",
+    "verdict": "BEST candidate: '1 + α_em (1-loop natural)' at -790491.0 ppb — not below 10 ppb threshold."
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

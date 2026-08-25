@@ -1,0 +1,78 @@
+{
+  "schema": "witness/v1",
+  "description": "The N=2 and N=3 Ocneanu traces on H_3(q) are not proportional, so the mass pipeline cannot be re-tuned to N=3: T3f's soft constraint is hard, and an N=3 flavour channel must be a SEPARATE trace. Beans qou-w5fw (T3f), qou-8p1x.",
+  "computation": {
+    "script": "computations/ocneanu_N_lockin_probe.py",
+    "arithmetic": "exact Fraction; q-hook-content formula; no floating point"
+  },
+  "data": {
+    "mechanism": "tr_M = sum_lambda y_lambda chi_lambda with chi_lambda N-independent and y_lambda ~ s_lambda(1,q,...,q^{N-1}), the principal specialisation; all N-dependence sits in the weights",
+    "q1_cross_check_against_lean": {
+      "s_(3)": "C(N+2,3) = weylDimSym",
+      "s_(2,1)": "N(N^2-1)/3 = 2*C(N+1,3) = weylDimMixed",
+      "s_(1^3)": "C(N,3) = weylDimAlt",
+      "verified_for_N": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "passes": true
+    },
+    "row_cap_is_weight_vanishing": {
+      "y_singlet_zero_at_N2": true,
+      "y_singlet_nonzero_at_N3": true,
+      "reason": "cell content -2 contributes [N-2]_q = [0]_q = 0 at N=2"
+    },
+    "traces_not_proportional": {
+      "ratio_formula": "y_(2,1)/y_(3) = q * [2]_q * [N-1]_q / [N+2]_q",
+      "samples": [
+        {
+          "q": "2",
+          "ratio_N2": "2/5",
+          "ratio_N3": "18/31",
+          "differ": true
+        },
+        {
+          "q": "3",
+          "ratio_N2": "3/10",
+          "ratio_N3": "48/121",
+          "differ": true
+        },
+        {
+          "q": "5/2",
+          "ratio_N2": "10/29",
+          "ratio_N3": "490/1031",
+          "differ": true
+        },
+        {
+          "q": "11/10",
+          "ratio_N2": "110/221",
+          "ratio_N3": "48510/61051",
+          "differ": true
+        },
+        {
+          "q": "7/5",
+          "ratio_N2": "35/74",
+          "ratio_N3": "5040/6841",
+          "differ": true
+        }
+      ],
+      "passes": true
+    },
+    "verdict": "N = 2 is locked in for the mass pipeline; moving to N = 3 re-weights the surviving channels, not merely adds the singlet. T3f's soft constraint is hard. An N = 3 flavour channel must therefore be a SEPARATE trace, which is permitted -- the Ocneanu trace is a family and HnMarkovTrace.lean types the parameter as a free class field.",
+    "scope": "scope-(b) for the claim 'the N=2 and N=3 Ocneanu traces on H_3(q) differ by an overall normalisation', excluded by exact computation of the weight ratio",
+    "not_claimed": [
+      "that N = 2 is derived from the Descartes condition -- why the mass channel is the N=2 one remains open",
+      "that the N=3 trace reproduces any flavour observable (the Gavrilik test TG, untouched here)",
+      "anything about colour SU(3) -- this is the flavour channel"
+    ],
+    "all_checks_pass": true,
+    "checks": {
+      "C1_q1_matches_lean_weyl_dims": true,
+      "C2_singlet_weight_zero_at_N2": true,
+      "C2_singlet_weight_nonzero_at_N3": true,
+      "C3_traces_not_proportional": true
+    }
+  }
+}

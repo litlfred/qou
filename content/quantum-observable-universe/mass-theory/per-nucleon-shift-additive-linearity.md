@@ -1,4 +1,4 @@
-*The atomic Markov-trace denominator shift exponent strictly obeys an additive-linearity recurrence:*
+*The atomic Markov-trace denominator shift exponent obeys an additive-linearity recurrence:*
 
 $$
   \mathrm{shift}(Z+1, N) \;-\; \mathrm{shift}(Z, N) \;=\; 18,
@@ -12,4 +12,4 @@ $$
   \mathrm{shift}(Z, N) \;=\; 18Z + 21N + 1.
 $$
 
-Each new nucleon injects precisely 12 new generators into the canonical braid word. The linear additive shifts verify perfectly across the full evaluated nucleus table. The leading coefficient at $u=0$ evaluates exactly to $-1/12$ for the proton standalone. This verifies the closed-form shift exponent, eliminating the need to explicitly compute complex Hecke NF reduction tables for heavier isotopes.
+Each new nucleon injects precisely 12 new generators into the canonical braid word. The linear additive shifts hold across the full evaluated nucleus table. The leading coefficient at $u=0$ evaluates exactly to $-1/12$ for the proton standalone. This verifies the closed-form shift exponent, eliminating the need to explicitly compute complex Hecke NF reduction tables for heavier isotopes.

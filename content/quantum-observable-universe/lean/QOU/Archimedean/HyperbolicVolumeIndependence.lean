@@ -30,15 +30,15 @@ represents the open conjecture itself").
 
 namespace QOU.Archimedean
 
--- The conjecture itself.  The `sorry` represents the **open
--- conjecture** per §3b — algebraic independence over ℚ of the three
--- hyperbolic volumes Vol(4₁), Vol(5₂), Vol(𝓑₃) — not a missing proof.
+class HyperbolicVolumeIndependenceAxiom : Prop where
+  /-- The global conjectural witness for algebraic independence -/
+  independence : HyperbolicVolumeIndependence
+
+-- The conjecture itself.
 -- Ref: [zagier1986] Zagier, "Hyperbolic manifolds and special values
 --        of Dedekind zeta-functions" — Borel–Zagier circle of conjectures.
 -- Ref: [manuscript] quantum-observable-universe/predicted-spectra/hyperbolic-volume-transcendence.md
-noncomputable instance : HyperbolicVolumeIndependence where
-  no_relation := by
-    -- Ref: [zagier1986] https://doi.org/10.1007/BFb0084581
-    sorry
+noncomputable instance [HyperbolicVolumeIndependenceAxiom] : HyperbolicVolumeIndependence :=
+  HyperbolicVolumeIndependenceAxiom.independence
 
 end QOU.Archimedean

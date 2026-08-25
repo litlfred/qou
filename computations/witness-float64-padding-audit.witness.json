@@ -1,0 +1,92 @@
+{
+  "schema": "witness/v1",
+  "name": "witness-float64-padding-audit",
+  "description": "Values serialized at high precision that are really float64 expansions \u2014 fake precision. Honest zero-padding of exact short values is not flagged.",
+  "data": {
+    "occurrences": 13,
+    "distinct_values": 10,
+    "files": 6,
+    "live_files": 1,
+    "new_not_baselined": 0,
+    "rows": [
+      {
+        "file": "computations/_deprecated/beta-decay-n1-brane-tower-probe.witness.json",
+        "field": "parameters.m_e_MeV",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/_deprecated/beta-decay-residue-sum-h3-probe.witness.json",
+        "field": "data.m_e_MeV",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/_deprecated/beta-decay-residue-sum-h3-probe.witness.json",
+        "field": "data.Q_beta_codata_MeV",
+        "value": "0.78233341000000000686753764966852031648159027099609",
+        "real_value": "0.78233341"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "tolerance_relative",
+        "value": "0.000000001000000000000000062281591457779856418897068692786",
+        "real_value": "1e-09"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[0].markov_peel",
+        "value": "0.3882864715477129524678900907019851729273796081543",
+        "real_value": "0.38828647154771295"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[1].markov_peel",
+        "value": "0.20654085856226245265787611060659401118755340576172",
+        "real_value": "0.20654085856226245"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[2].markov_peel",
+        "value": "0.92323329716958346669031243436620570719242095947266",
+        "real_value": "0.9232332971695835"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[3].markov_peel",
+        "value": "1.0653062285923891039374211686663329601287841796875",
+        "real_value": "1.065306228592389"
+      },
+      {
+        "file": "computations/_deprecated/cross-check-trM-1ppb.witness.json",
+        "field": "deltas[4].markov_peel",
+        "value": "0.10405211867552603688391599234819295816123485565186",
+        "real_value": "0.10405211867552604"
+      },
+      {
+        "file": "computations/_deprecated/m-n-difference-formula.witness.json",
+        "field": "data.delta_m_codata_MeV",
+        "value": "1.2933323600000221631489694118499755859375",
+        "real_value": "1.2933323600000222"
+      },
+      {
+        "file": "computations/_deprecated/m-n-difference-formula.witness.json",
+        "field": "data.m_n_predicted_MeV",
+        "value": "939.5654205199999751130235381424427032470703125",
+        "real_value": "939.56542052"
+      },
+      {
+        "file": "computations/_deprecated/term6-habiro-residue-mpfr-50dps.witness.json",
+        "field": "m_e_mev_50dps",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      },
+      {
+        "file": "computations/audits/hardcoded-literal-audit.witness.json",
+        "field": "data.rows[26].hits[4].literal",
+        "value": "0.51099894999999995182093925905064679682254791259766",
+        "real_value": "0.51099895"
+      }
+    ]
+  }
+}

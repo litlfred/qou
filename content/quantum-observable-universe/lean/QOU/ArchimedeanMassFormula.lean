@@ -110,7 +110,7 @@ theorem ArchimedeanMassFormula.mass_eq_vol_div_h_q_sq {M : Type*}
   ring
 
 /-- The mass is positive (since the knot volume is positive and ℏ_q² > 0). -/
-theorem ArchimedeanMassFormula.mass_pos {M : Type*}
+theorem mass_pos {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     0 < amf.totalMass := by
   rw [amf.mass_eq_vol_div_h_q_sq]
@@ -120,7 +120,7 @@ theorem ArchimedeanMassFormula.mass_pos {M : Type*}
 /-- The mass formula is consistent with the `MassDerivation` module:
     `h_q_def` guarantees `h_q = 1 - 1/q`, so we recover exactly
     the `TopologicalMassFormula` structure from `MassDerivation.lean`. -/
-theorem ArchimedeanMassFormula.consistent_with_MassDerivation {M : Type*}
+theorem consistent_with_MassDerivation {M : Type*}
     (amf : ArchimedeanMassFormula M) :
     amf.totalMass = amf.knotVolume / (1 - 1 / amf.q) ^ 2 := by
   rw [← amf.h_q_def]

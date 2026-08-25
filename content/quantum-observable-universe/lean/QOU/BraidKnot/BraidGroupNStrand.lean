@@ -210,7 +210,7 @@ noncomputable def markovZN_real (q : ℝ) (_hq : 0 < q) : ℝ :=
       - `markovZN_real (q : ℝ) (hq : 0 < q)` (Tier 5 archimedean shim)
     Do NOT migrate to `markovZN (Real.sqrt q)` — that still triggers
     the `q-usage-positivity-implicit` warning. -/
-@[deprecated "Migrate to (a) the generic `markovZN (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZN_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZN (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+@[deprecated "Migrate to (a) the generic `markovZN (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZN_real q hq` carrying `0 < q` (Tier 5). Avoid `markovZN (Real.sqrt q)` — still positivity-implicit. See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
 noncomputable def markovZN_legacy (q : ℝ) : ℝ :=
   1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 

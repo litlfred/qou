@@ -1,0 +1,380 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T21:36:47.135957+00:00",
+  "commitSha": "fab2cdf5bb4aa37918270b1ce1824932766da780",
+  "assertions": [
+    {
+      "name": "discrete_moments_match_continuum_to_exponential_order",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "m = 0..6 at three (a,c), against e^{-pi^2/a}(1+1/a)^{m+2}"
+    },
+    {
+      "name": "tilted_sum_matches_continuum_mgf_times_theta",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "four (a, c, t) including negative tilts, to working dps"
+    },
+    {
+      "name": "model_with_real_cubic_quartic_decays_faster_than_polynomially",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "doubling N shrinks |sum/int - 1| by >100x, N = 12..96; and the measured rate sits strictly between 0.5 and pi/sqrt3, i.e. still exponential but slower than the pure Gaussian"
+    },
+    {
+      "name": "real_4_1_residual_is_the_endpoint_half_term",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "doubling N shrinks |sum/int - 1| by >10x, N = 24..192, and deviation / e^{-Vol N/2pi} stays in (1, 10) throughout"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 17,
+  "computation": "laplace-higher-remainder",
+  "scriptFile": "laplace_higher_remainder_probe.py",
+  "scriptHash": "916ceb4ea811",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "data": {
+    "the_moment_identity": {
+      "statement": "sum_k (k-c)^m e^{-a(k-c)^2} = int_R x^m e^{-ax^2} dx + O(e^{-pi^2/a}), for every m >= 0",
+      "derivation": "differentiate the (B) identity in the shift c: each d/dc brings down 2a(k-c) on the left and acts on Theta(c) = 1 + 2 sum_{n>=1} e^{-pi^2 n^2/a} cos(2 pi n c) on the right, whose every non-constant term already carries e^{-pi^2 n^2/a}",
+      "consequence": "expanding e^R term by term gives the SUM exactly the series the INTEGRAL gives, with an exponentially small discrepancy at every order — the asymptotic expansions agree to ALL orders in 1/N",
+      "rows": [
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "m": 0,
+          "discrete": "1.77254552786608406",
+          "continuum": "1.77245385090551603",
+          "abs_diff": "9.1676961e-5",
+          "bound": "0.020689274"
+        },
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "m": 1,
+          "discrete": "0.000498850838379902688",
+          "continuum": "0.0",
+          "abs_diff": "0.00049885084",
+          "bound": "0.041378549"
+        },
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "m": 2,
+          "discrete": "0.88536794859954161",
+          "continuum": "0.886226925452758014",
+          "abs_diff": "0.00085897685",
+          "bound": "0.082757098"
+        },
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "m": 3,
+          "discrete": "-0.00417518417239563756",
+          "continuum": "0.0",
+          "abs_diff": "0.0041751842",
+          "bound": "0.1655142"
+        },
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "m": 4,
+          "discrete": "1.33562486929673586",
+          "continuum": "1.32934038817913702",
+          "abs_diff": "0.0062844811",
+          "bound": "0.33102839"
+        },
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "m": 5,
+          "discrete": "0.0258459952224352742",
+          "continuum": "0.0",
+          "abs_diff": "0.025845995",
+          "bound": "0.66205678"
+        },
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "m": 6,
+          "discrete": "3.29218272354041126",
+          "continuum": "3.32335097044784255",
+          "abs_diff": "0.031168247",
+          "bound": "1.3241136"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "m": 0,
+          "discrete": "2.50662826190715989",
+          "continuum": "2.5066282746310005",
+          "abs_diff": "1.2723841e-8",
+          "bound": "2.4077592e-6"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "m": 1,
+          "discrete": "-2.66447635263349263e-8",
+          "continuum": "0.0",
+          "abs_diff": "2.6644764e-8",
+          "bound": "7.2232776e-6"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "m": 2,
+          "discrete": "2.50662876422425303",
+          "continuum": "2.5066282746310005",
+          "abs_diff": "4.8959325e-7",
+          "bound": "2.1669833e-5"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "m": 3,
+          "discrete": "9.71958810882996851e-7",
+          "continuum": "0.0",
+          "abs_diff": "9.7195881e-7",
+          "bound": "6.5009498e-5"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "m": 4,
+          "discrete": "7.51986796894006575",
+          "continuum": "7.51988482389300151",
+          "abs_diff": "1.6854953e-5",
+          "bound": "0.00019502849"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "m": 5,
+          "discrete": "-0.0000314078155729346337",
+          "continuum": "0.0",
+          "abs_diff": "3.1407816e-5",
+          "bound": "0.00058508548"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "m": 6,
+          "discrete": "37.599931956640255",
+          "continuum": "37.5994241194650075",
+          "abs_diff": "0.00050783718",
+          "bound": "0.0017552565"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "m": 0,
+          "discrete": "3.23604318759280345",
+          "continuum": "3.23604318759283209",
+          "abs_diff": "2.863685e-14",
+          "bound": "9.681183e-12"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "m": 1,
+          "discrete": "-1.79357112392762378e-13",
+          "continuum": "0.0",
+          "abs_diff": "1.7935711e-13",
+          "bound": "4.1951793e-11"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "m": 2,
+          "discrete": "5.3934053126578128",
+          "continuum": "5.39340531265472015",
+          "abs_diff": "3.0926539e-12",
+          "bound": "1.817911e-10"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "m": 3,
+          "discrete": "1.87719227251282582e-11",
+          "continuum": "0.0",
+          "abs_diff": "1.8771923e-11",
+          "bound": "7.8776144e-10"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "m": 4,
+          "discrete": "26.9670265629603845",
+          "continuum": "26.9670265632736008",
+          "abs_diff": "3.1321624e-10",
+          "bound": "3.4136329e-9"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "m": 5,
+          "discrete": "-1.83657662905401543e-9",
+          "continuum": "0.0",
+          "abs_diff": "1.8365766e-9",
+          "bound": "1.4792409e-8"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "m": 6,
+          "discrete": "224.725221390160012",
+          "continuum": "224.72522136061334",
+          "abs_diff": "2.9546672e-8",
+          "bound": "6.4100441e-8"
+        }
+      ]
+    },
+    "the_tilted_sum_every_moment_at_once": {
+      "statement": "sum_k e^{-a(k-c)^2 + t(k-c)} = e^{t^2/4a} . sqrt(pi/a) . theta_2(-(c + t/2a), i pi/a), exactly",
+      "lean": "QOU.MathlibExt.hasSum_gaussian_theta_tilt, sorry-free",
+      "why_it_matters": "e^{t^2/4a} sqrt(pi/a) IS the continuum generating function int_R e^{-ax^2+tx} dx, so the entire discrete-vs-continuum discrepancy at EVERY moment is the one theta factor, uniformly in c and t. Completing the square is a shift of c, so this needs no analytic input beyond (B)",
+      "rows": [
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "t": "1.0",
+          "discrete_mgf": "2.27575807892125316",
+          "rel_err": "3.18335e-71",
+          "theta_minus_one": "5.17232e-5"
+        },
+        {
+          "a": "1.0",
+          "c": "0.8333333333",
+          "t": "-2.0",
+          "discrete_mgf": "4.81827829851472251",
+          "rel_err": "1.50355e-71",
+          "theta_minus_one": "5.17232e-5"
+        },
+        {
+          "a": "0.5",
+          "c": "0.4487989505",
+          "t": "1.5",
+          "discrete_mgf": "7.72095868468493004",
+          "rel_err": "9.38296e-72",
+          "theta_minus_one": "5.07608e-9"
+        },
+        {
+          "a": "0.3",
+          "c": "0.4142135624",
+          "t": "-0.3333333333",
+          "discrete_mgf": "3.54998698640879945",
+          "rel_err": "2.04072e-71",
+          "theta_minus_one": "6.50546e-15"
+        }
+      ]
+    },
+    "model_with_the_real_4_1_cubic_and_quartic": {
+      "coefficients": {
+        "phi_2": "2 cot(5pi/6) pi/N = -2 sqrt3 pi/N,  a = sqrt3 pi/N",
+        "phi_3": "-2 (pi/N)^2 csc^2 = -8 (pi/N)^2,  b3 = -(4/3)(pi/N)^2",
+        "phi_4": "4 (pi/N)^3 csc^2 cot = -16 sqrt3 (pi/N)^3, b4 = -(2 sqrt3/3)(pi/N)^3"
+      },
+      "why_this_is_a_real_test": "at the Gaussian width sigma ~ N^{1/2} the remainder is b3 sigma^3 ~ N^{-1/2} and b4 sigma^4 ~ N^{-1} — NOT negligible pointwise, so a sum-vs-integral difference of order 1/N was entirely possible a priori",
+      "rows": [
+        {
+          "N": 12,
+          "b3_sigma3": "0.10581253",
+          "b4_sigma4": "0.025191658",
+          "deviation": "3.6525073e-5",
+          "one_over_N": "0.083333333"
+        },
+        {
+          "N": 24,
+          "b3_sigma3": "0.07482076",
+          "b4_sigma4": "0.012595829",
+          "deviation": "6.6448014e-10",
+          "one_over_N": "0.041666667"
+        },
+        {
+          "N": 48,
+          "b3_sigma3": "0.052906267",
+          "b4_sigma4": "0.0062979145",
+          "deviation": "2.2307406e-18",
+          "one_over_N": "0.020833333"
+        },
+        {
+          "N": 96,
+          "b3_sigma3": "0.03741038",
+          "b4_sigma4": "0.0031489572",
+          "deviation": "2.8757492e-35",
+          "one_over_N": "0.010416667"
+        }
+      ],
+      "measured_exponential_rate": "0.810207644913",
+      "pure_gaussian_rate": "1.81379936423",
+      "the_remainder_does_degrade_the_rate": "measured d(-log dev)/dN is about 0.81, roughly HALF the pure-Gaussian pi/sqrt3 = 1.814. The cubic and quartic terms move the relevant complex saddle and slow the Poisson tail. They do NOT make the decay polynomial, and only that distinction matters for the one-loop constant — but the e^{-pi^2/a} rate of the (B) identity must not be quoted for the FULL potential"
+    },
+    "the_real_4_1_potential": {
+      "potential": "phi(x) = -(2N/pi) Lambda(x pi/N) + log(2 N sin(x pi/N))",
+      "vol_4_1_recomputed": "2.029883212819307250042405",
+      "note": "over the real range the residual is dominated by the ENDPOINT half-terms, not by the saddle: the peak is e^{Vol N/2pi} above the endpoints, so the endpoint contributes at relative scale e^{-Vol N/2pi} ~ e^{-0.323 N}, larger than the saddle's e^{-pi N/sqrt3} ~ e^{-1.814 N}. Both are exponential; neither is polynomial",
+      "rows": [
+        {
+          "N": 24,
+          "deviation": "0.0006870019",
+          "one_over_N": "0.041666667",
+          "endpoint_scale": "0.00042920207",
+          "dev_over_endpoint": "1.6006491"
+        },
+        {
+          "N": 48,
+          "deviation": "3.3707435e-7",
+          "one_over_N": "0.020833333",
+          "endpoint_scale": "1.8421441e-7",
+          "dev_over_endpoint": "1.8297935"
+        },
+        {
+          "N": 96,
+          "deviation": "7.2890962e-14",
+          "one_over_N": "0.010416667",
+          "endpoint_scale": "3.393495e-14",
+          "dev_over_endpoint": "2.1479614"
+        },
+        {
+          "N": 192,
+          "deviation": "2.9689906e-27",
+          "one_over_N": "0.0052083333",
+          "endpoint_scale": "1.1515808e-27",
+          "dev_over_endpoint": "2.5781869"
+        }
+      ]
+    },
+    "scope": {
+      "closes": "the specific worry that DISCRETISATION and the cubic-and-higher REMAINDER could interact to produce a 1/N term the continuum calculation misses. They cannot, at any order",
+      "does_not_close": [
+        "the integral's OWN 1/N corrections (a different question)",
+        "a rigorous bound on the actual sums rather than on their expansions — that still needs window + tail control",
+        "Laplace's method in general",
+        "(A): s_k's Euler-Maclaurin constant, where the integrand is singular at the endpoint and corrections really are polynomial"
+      ]
+    }
+  }
+}

@@ -47,6 +47,8 @@ export default chapter({
         "sm-hypercharge-invariant",
         "strand-twist-datum",
         "sm-colour-stabilizer-action",
+        "cal2-higgs-knot-coupling",
+        "a5-orbital-degeneracy-fracture",
       ],
     }),
     section({

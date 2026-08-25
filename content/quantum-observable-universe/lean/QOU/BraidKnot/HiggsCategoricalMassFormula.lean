@@ -70,7 +70,29 @@ noncomputable def tracePolynomial (m : ℕ) (h : ℝ) : ℝ :=
     convention (Vol(B_3) = 8G; Adams 1985). Real-valued, transcendental.
 
     Implementation note: encoded as a Real here for use in the mass
-    formula; in production, this connects to mpmath G ≈ 0.91596. -/
+    formula; in production, this connects to mpmath G ≈ 0.91596.
+
+    ⚠ **NAME COLLISION + truncated-literal trap (flagged 2026-08-19).**
+
+    1. This is a **decimal literal**, i.e. a rational — so the docstring's
+       "transcendental" describes the intended constant, not this definition.
+       Nothing in this file is false as a result: the only consequence drawn
+       from it, `volBorromean / 4 = 2 * catalanG`, is a `ring` identity that
+       holds for any value. But it is a live trap. The moment anyone asserts
+       `volBorromean = Vol(𝓑₃)`, or links it to
+       `QOU.Knot.BorromeanVolume`'s `8·Cl₂(π/2)`, that statement becomes
+       **false** — by ~1e-52 — in exactly the way `VOL_4_1` was before bean
+       `qou-yf47` replaced its truncated decimal with `2·Cl₂(π/3)`.
+    2. A **second, different `catalanG`** exists in this corpus:
+       `QOU.Knot.WhiteheadVC.catalanG := ∑' n, (-1)^n/(2n+1)^2` — the exact
+       series. Two objects under one name is what the AGENTS.md notation
+       register forbids.
+
+    The exact form is already available: `QOU.Knot.clausen (π/2)`, with
+    certified rational bounds in `QOU/Knot/CatalanValueBounds.lean`. Switching
+    to it is the `qou-yf47` repair applied here; left to this file's owner
+    because it may move numerics downstream.
+    Audit: `docs/audits/2026-08-19-volume-conjecture-work-overlap-sweep.md`. -/
 noncomputable def catalanG : ℝ := 0.9159655941772190150546035149323841107741493742816721
 
 /-- Hyperbolic volume of the Borromean rings complement, Vol(𝓑_3) = 8G.
@@ -134,7 +156,6 @@ theorem tracePolynomial_2_at_zero : tracePolynomial 2 0 = 1 / 2 := by
   -- Sum over j = 0, 1, 2: only j=0 contributes (h^0 = 1)
   -- C(2, 0) / 2 = 1/2
   simp [Finset.sum_range_succ, Nat.choose]
-  ring
 
 /-- The scalar/gauge ratio at h = 0 is exactly 6/5 (no correction). -/
 theorem scalar_gauge_ratio_at_zero :
@@ -172,21 +193,44 @@ placeholders were removed — they had no downstream consumers.) -/
 noncomputable def higgsMassFromZ (m_Z h : ℝ) : ℝ :=
   m_Z * (tracePolynomial 4 h / tracePolynomial 3 h) * scalarOverGaugeRatio h
 
-/-- **HYPOTHESIS (empirically validated)**: m_H predicted from m_W and
-    from m_Z should agree, IF the SM ratio m_W/m_Z = cos θ_W is exact.
+/-- **The W- and Z-anchored predictions do NOT agree — they differ by
+    `(P_3/P_2)^2`.**
 
-    Per PR #1159: m_W-prediction = 124.26, m_Z-prediction = 125.64.
-    Both within 1%; consistent. -/
-theorem higgs_W_Z_predictions_consistent_hypothesis :
-    ∀ m_W m_Z h, m_W / m_Z = tracePolynomial 3 h / tracePolynomial 2 h →
-      higgsMassFormula m_W h = higgsMassFromZ m_Z h := by
-  intro m_W m_Z h hWZ
+    This replaces a theorem that asserted outright equality,
+
+        m_W / m_Z = P_3/P_2  →  higgsMassFormula m_W h = higgsMassFromZ m_Z h,
+
+    which is **false**. Substituting `m_W = m_Z · P_3/P_2` gives
+
+        LHS = m_Z · P_3 · P_4 · S / P_2^2      RHS = m_Z · P_4 · S / P_3,
+
+    equal only when `P_3^2 = P_2^2`. They are not equal: `P_2 h = 1/2 + 3/2 h^2
+    + 1/2 h^4` and `P_3 h = 1/2 + 3 h^2 + 5/2 h^4 + 1/2 h^6` agree only at
+    `h = 0` (both `1/2`); at `h = 1` they are `5/2` and `13/2`, a factor of
+    `(13/5)^2 = 6.76` between the two predictions.
+
+    The old statement never compiled — the module was outside the `lake build`
+    import closure (bean qou-rc7b), and its proof (`field_simp; rw [hWZ]; ring`)
+    does not go through. Patching the tactic would have been the wrong repair:
+    the proposition itself is not true.
+
+    What *is* true is the exact discrepancy below, and it is the more useful
+    statement anyway — it says precisely how far apart the two anchors are, and
+    so accounts for the numbers the old docstring quoted as evidence of
+    agreement (m_W-prediction 124.26 vs m_Z-prediction 125.64, PR #1159: close,
+    but not equal, and the formula for the gap is exactly this). -/
+theorem higgs_W_Z_prediction_ratio
+    (m_W m_Z h : ℝ) (hZ : m_Z ≠ 0)
+    (h2 : tracePolynomial 2 h ≠ 0) (h3 : tracePolynomial 3 h ≠ 0)
+    (hWZ : m_W / m_Z = tracePolynomial 3 h / tracePolynomial 2 h) :
+    higgsMassFormula m_W h
+      = higgsMassFromZ m_Z h * (tracePolynomial 3 h / tracePolynomial 2 h) ^ 2 := by
+  have hmW : m_W = m_Z * (tracePolynomial 3 h / tracePolynomial 2 h) := by
+    field_simp at hWZ
+    field_simp
+    linarith [hWZ]
   unfold higgsMassFormula higgsMassFromZ
-  -- Algebra: m_W · (P_4/P_2) = m_W · P_4/P_2 = (m_W/m_Z) · m_Z · P_4/P_2
-  --   = (P_3/P_2) · m_Z · P_4/P_2 = m_Z · P_4·P_3 / (P_2)^2 = m_Z · (P_4/P_3)·(P_3/P_2)
-  -- Requires the ratio identity hWZ
+  rw [hmW]
   field_simp
-  rw [hWZ]
-  ring
 
 end QOU.BraidKnot

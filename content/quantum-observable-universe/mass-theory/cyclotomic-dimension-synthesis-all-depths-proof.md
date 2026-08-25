@@ -85,8 +85,8 @@ Beilinson-conditional:
 
 | Prime $K$ | $n = 3$ (odd, $(K-3)/2$) | $n = 4$ (even, $(K-1)/2$) | $n = 5$ (odd, $(K-3)/2$) |
 |---|---|---|---|
-| 5 | 1 (confirmed; round 12 + round D) | 2 | 1 |
-| 7 | 2 (confirmed; round D this PR) | 3 | 2 |
+| 5 | 1 (confirmed) | 2 | 1 |
+| 7 | 2 (confirmed) | 3 | 2 |
 | 11 | 4 | 5 | 4 |
 | 13 | 5 | 6 | 5 |
 

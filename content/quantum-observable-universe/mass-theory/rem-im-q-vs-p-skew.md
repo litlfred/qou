@@ -16,8 +16,7 @@ content) is **discarded by construction**.
 
 For **real** $q > 0$, $\eta = \log q$ is real, $\sinh(\eta)$ is a
 real number, and $P_{\mathrm{skew}}$ content is **real-valued**.
-Sibling makes
-this explicit for torus knots:
+For torus knots this is explicit:
 $Q_m(\eta) = \sinh((2m+1)\eta) / (2 \cosh \eta)$ is real at real $q_0$.
 Per
 [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md),
@@ -61,13 +60,10 @@ Quantitative consequences differ between the two mechanisms:
    (a) the missing P_skew content at real q (the P_skew channel
    that bar-projection discards), or (b) Im(q) $\ne$ 0 producing
    complex tr_M whose modulus closes the residual.
-   - Per [Phase A v2 audit](../../../docs/audits/-q-beta-net-ansatz-fitting-finding.md)
-     §Path D + the audit at
-     [`m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md):
-     **(b) is ruled out under the current ansatz** (residual is
+   - **(b) is ruled out under the current ansatz** (residual is
      positive everywhere on the Apollonius circle).
-   - **(a) is open** — accessible via the explicit Q_m P_skew
-     content from .
+   - **(a) is open** — accessible via the explicit $Q_m$ P_skew
+     content given above.
 
 2. **Resolving the canonical lepton-mass formula** $F_\ell(q)$
    ([`conj:lepton-mass-tower-canonical`](lepton-mass-tower-canonical.md)):
@@ -78,9 +74,9 @@ Quantitative consequences differ between the two mechanisms:
    (the discarded sinh-channel could shift the LO ratio).
 
 3. **Physical interpretation**: $P_{\mathrm{skew}} = $ EM/charge-distinguishing
-   channel (sibling  documents this for torus knots).
+   channel (explicit for torus knots, as above).
    $\mathrm{Im}(q) = $ a substrate moduli parameter (not directly
-   physical until tied to an observable Im observable, which the
+   physical until tied to an Im-sensitive observable, which the
    framework does not currently provide).
 
 ## Cross-references
@@ -89,7 +85,4 @@ Quantitative consequences differ between the two mechanisms:
 - [`prop:q-zero-complex-extension`](q-zero-complex-extension.md) — substrate polymorphism (admits complex q)
 - [`prop:categorical-mass-markov`](categorical-mass-markov.md) — modulus projection definition
 - [`bar-involution.md`](bar-involution.md) — bar projection definition
-- Sibling PR [#1153](https://github.com/litlfred/qou/pull/1153) — explicit P_skew = sinh formula for torus knots
-- Audit: [`docs/audits/-complex-q-historical-trajectory.md`](../../../docs/audits/-complex-q-historical-trajectory.md) — historical context of ℂ in physics
-- Audit: [`docs/audits/-m-mu-over-m-e-operator-rederivation.md`](../../../docs/audits/-m-mu-over-m-e-operator-rederivation.md) §Implications — Phase 3 finding distinguishing the two mechanisms
 - [`crossing-energy-interpretation.md`](../observations/crossing-energy-interpretation.md) — `sinh(log q)` = Coulomb channel identification

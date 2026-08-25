@@ -3,12 +3,12 @@
   "description": "u-dependence of the 4\u2081 Ohtsuki rungs at the substrate meridian u=2 ln q\u2080 from the exact deformed Habiro sum (2cosh u \u2212 2cosh(\u03bej/N) term; Murakami-theorem regime): Re/Im \u03ba\u0303\u2081(u), template \u03b2=1/2, geometry cross-check vs the gluing Newton Vol(u), anchor-blindness, and the finite-b bar-odd S lead t\u00b7Re \u03ba\u0303\u2081(u_sub). Route 2 of the bar-odd-S program (#3654 open item).",
   "audit_only": true,
   "tier": "numerical (deformed-rung extraction + structural checks)",
-  "computedAt": "2026-07-12T16:10:51.722994+00:00",
-  "commitSha": "1a8fe552d02e1607e4f6bfa39573bceaec16a21b",
+  "computedAt": "2026-08-21T14:59:08.664721+00:00",
+  "commitSha": "8ba73cc915af09920d0345ede34ec1de63f65bbe",
   "engine": "mpmath",
   "engineVersion": "1.3.0",
   "scriptFile": "qbeta_ohtsuki_deformed_meridian_rungs.py",
-  "scriptHash": "71b1217d72ae",
+  "scriptHash": "1ffadcd51016",
   "assertions": [
     {
       "name": "V1_u0_reproduces_kappa1_exact",
@@ -38,14 +38,14 @@
   "allPassed": true,
   "result": {
     "u_proton": "0.2086814406390390246318126",
-    "u_muon": "0.2086814637075916846646277",
+    "u_muon": "0.2086814638671595749849875",
     "murakami_u_crit": "0.962423650119207",
     "kappa1_u0_extracted": "0.5542164724048998988003308",
     "kappa1_u0_exact": "11*sqrt(3)*pi/108",
     "runs": {
       "0.05": {
         "u": "0.05",
-        "max_loss_digits": 11.182717132095888,
+        "max_loss_digits": "11.18271713209588865140114",
         "alpha_re": "0.3483886094797370231852821",
         "gamma_re": "2.721376829110543005162951",
         "beta_free": "0.5000000000000000350646581",
@@ -58,7 +58,7 @@
       },
       "0.12": {
         "u": "0.12",
-        "max_loss_digits": 76.04495391633542,
+        "max_loss_digits": "76.0449539163354132739499",
         "alpha_re": "0.3849151121801948586628459",
         "gamma_re": "1.847351357400750755325396",
         "beta_free": "0.499999999999999999998241",
@@ -71,7 +71,7 @@
       },
       "0.208681440639": {
         "u": "0.2086814406390390246318126",
-        "max_loss_digits": 234.94972023190962,
+        "max_loss_digits": "234.9497202319096292224156",
         "alpha_re": "0.4329754299397956576630619",
         "gamma_re": "1.29776048392852556868889",
         "beta_free": "0.4999999999999999999953641",
@@ -84,7 +84,7 @@
       },
       "0.3": {
         "u": "0.3",
-        "max_loss_digits": 242.72058318588975,
+        "max_loss_digits": "242.7205831858897549849771",
         "alpha_re": "0.4845567402446099044318502",
         "gamma_re": "0.9413225232047073483353846",
         "beta_free": "0.5000000000000000334110332",
@@ -96,17 +96,17 @@
         "T_const": "6.895383794103562097097128e-18"
       },
       "u_muon": {
-        "u": "0.2086814637075916846646277",
-        "max_loss_digits": 234.9497727030842,
-        "alpha_re": "0.4329754427010387640384015",
-        "gamma_re": "1.29776037466115768356288",
+        "u": "0.2086814638671595749849875",
+        "max_loss_digits": "234.9497730660335033942966",
+        "alpha_re": "0.4329754427893097830842055",
+        "gamma_re": "1.297760373905342499329468",
         "beta_free": "0.4999999999999999999953641",
-        "kappa1_re": "0.587343395198888432466206",
+        "kappa1_re": "0.5873433952534484184869738",
         "kappa1_conf_digits": 12,
-        "kappa2_re": "0.9121367671118643875071611",
-        "kappa1_im": "-0.01950725204125940636713343",
-        "kappa2_im": "-0.06065593344938876771305125",
-        "T_const": "-7.675479938470013136494902e-22"
+        "kappa2_re": "0.9121367674266339671428084",
+        "kappa1_im": "-0.0195072520579876738108401",
+        "kappa2_im": "-0.06065593351680342573864903",
+        "T_const": "-7.67547996007460578192078e-22"
       }
     },
     "geometry_rows": [
@@ -143,11 +143,11 @@
         "resid_over_u2": "1.8366897"
       },
       {
-        "u": "0.208681463708",
-        "Vol_u": "2.0204806910666174136",
-        "alpha_re": "0.43297544270103876404",
-        "alpha_pred_vol_only": "0.32121516256652128509",
-        "resid": "0.111760280135",
+        "u": "0.208681463867",
+        "Vol_u": "2.0204806910522781007",
+        "alpha_re": "0.43297544278930978308",
+        "alpha_pred_vol_only": "0.32121516256370035357",
+        "resid": "0.111760280226",
         "resid_over_u2": "2.5663727"
       }
     ],
@@ -158,7 +158,7 @@
       "b_quadratic": "0.17234381412",
       "b_status": "unidentified (mixes Im-S u^2 with Re-S u terms); no fit"
     },
-    "max_loss_digits": 242.72058318588975,
+    "max_loss_digits": "242.7205831858897549849771",
     "physics": {
       "t_ln_q0": "0.1043407203195195123159063",
       "kappa1_sub_re": "0.587343387311212428911841",

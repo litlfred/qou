@@ -1,27 +1,107 @@
-## Scope — Jones/TL trace vs. the full-Hecke mass-pipeline trace
+## Scope — which trace, in which channel
 
 This proposition concerns the **Jones / Temperley–Lieb** normalisation of the
 $\mathrm{H}_3(q)$ Markov trace — the trace whose value on a braid closure is the
 **Jones polynomial**. Its defining feature is $y_{(1^3)} \equiv 0$: the
-Temperley–Lieb quotient annihilates the three-row partition.
+Temperley–Lieb quotient annihilates the three-row partition. In the
+[trace-convention registry](../../../docs/coordination/trace-convention-registry.md)
+this is **convention D**, with Ocneanu parameter $z = q^3/(q^2+1)$.
 
-The framework's **mass and binding computations** use a *different* trace: the
-**full-Hecke Ocneanu** Markov trace, with parameter $z = 1/(q^{1/2}+q^{-1/2})$
-and Wedderburn weights given by the Wenzl Schur-principal specialisation
-(`y_lambda_wenzl_bridge_numeric` $\to$ `closed_form_tau_M`). That trace is proven
-canonical — Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
-$\mathbb{Z}$-Laurent identity — in the $y_\lambda$–$\mathrm{tr}_M$ equivalence
-proof (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`), and its
-three-row weight is $y_{(1^3)}(q) \neq 0$ for $q \neq 1$.
+The **binding channel uses convention D** as well, since the owner ruling of
+2026-08-09 excised convention C. There is now **one** trace in the framework's
+compute, not two.
+
+> **Convention C excised (owner ruling, 2026-08-09).** Until then a *second*
+> trace ran in the binding channel: the full-Hecke Ocneanu trace, **convention
+> C**, $z = 1/(q^{1/2}+q^{-1/2})$, with Wedderburn weights from the Wenzl
+> Schur-principal specialisation and three-row weight
+> $y_{(1^3)}(q) \neq 0$ for $q \neq 1$. It was pinned by
+> [`rem:markov-axioms-primitive`](../braids-and-knots/markov-axioms-primitive.md),
+> which described its own $z$ as "a stipulation of this definition, not a
+> consequence of it".
+>
+> It is gone because the selection turned out to be **forced**:
+> `lem:feynman-eigenbasis-decomposition` already puts the row cap
+> $\ell(\lambda) \leq 2$ in the mass channel's decomposition, giving
+> $y_{(1^3)} = 0$, and `markovWeights_eq_jones_of_threeRow_eq_zero` (sorry-free)
+> then makes $z = q^3/(q^2+1)$ the unique faithful normalised Markov trace.
+>
+> **Not decided by experimental match, and the numbers say so.** Switching the
+> binding channel to D makes the aggregate *worse* — mean $|{\rm err}|$ over
+> $\{{}^2$H, $^3$H, $^3$He, $^4$He, $^6$Li, $^7$Li$\}$ moves $37.39\% \to
+> 43.85\%$. What it fixes is structural: under C the deuteron was
+> **unreachable**, $B_{\rm AME} = 2.2246$ lying $30.4\%$ below the whole
+> admissible band $[2.9072, 5.1780]$ MeV; under D the band is $[2.0507, 3.7978]$
+> and AME sits inside it. ${}^2$H itself improves $+74.85\% \to +27.36\%$.
+>
+> The mass channel was already on D in production, so the $m_e$-scaled
+> renderings of $m_p$ and $m_n$ are **unchanged** (verified: $938.27208943$,
+> $939.56542276$).
+>
+> Path A (ladder linear system) $=$ Path B (Wenzl Schur) as a
+> $\mathbb{Z}$-Laurent identity remains proven for C in the
+> $y_\lambda$–$\mathrm{tr}_M$ equivalence proof
+> (`docs/audits/2026-05-05-y-lambda-tr-m-equivalence-proof.md`); that identity is
+> about C and is now historical.
+
+By contrast, **the production mass channel uses convention D** — the closed form
+of this proposition, entering as `trM_borromean` $\to$ `F_Bor` $\to$
+`canonical_mass`.
+
+**The mass channel is convention D, and an earlier version of this note was
+wrong to say otherwise.** The two blocks that *define* the mass channel already
+fix its fibre: `lem:feynman-eigenbasis-decomposition` carries the row cap
+$\ell(\lambda) \leq 2$ inside the index set of
+$V^{\otimes n} \cong \bigoplus V_\lambda \otimes S_\lambda$, and
+`feynman-markov-identification` carries it inside $\mathrm{tr}_M$ itself, with
+closed-form weights that evaluate at $N = 2$, $n = 3$ to exactly the
+convention-D vector. So $y_{(1^3)} = 0$ is stated, not assumed, and D follows.
+Independently, the Ocneanu parameter determines the fibre dimension through
+$z \cdot [N]_q = q^N$, which is injective in $N$: convention D gives $N = 2$
+exactly, while convention C gives $N \approx 2.5995$ — **no integer fibre
+dimension at all.** Convention C is a legitimate Markov trace on
+$\mathrm{H}_3(q)$; it is simply not the trace of any fibre, so it cannot be the
+mass trace.
+
+What remains is a **definitional erratum, not a production defect**: the $z$
+stipulated in `rem:markov-axioms-primitive` selects C, while that block and
+[`prop:categorical-mass-markov`](../mass-endomorphism/categorical-mass-markov.md)
+both *name* the Jones–Markov trace, which is D. The stipulated value
+$1/(q^{1/2}+q^{-1/2})$ is the Temperley–Lieb loop reciprocal $1/\delta$ —
+correct for the TL generator $e_i$, but applied there to the Hecke generator
+$\sigma_n$; the value that lands on Jones under $\sigma$-stabilisation is
+$z = q^3/(q^2+1)$. The registry channel `mass` records this resolution.
+Correcting the stipulation is tracked as an open item, and the separate question
+of whether the **binding** channel should also move to D is untouched by this
+proposition and remains open.
 
 The two traces **coincide at the symmetric point** $q = 1$ (both give
-$(\tfrac12,\tfrac14,0)$) and on the observable combination carried by
-writhe-$0$, $\pi=\mathrm{id}$ braids — which is why every *physical* mass
-prediction is insensitive to the distinction. They **diverge for $q \neq 1$**:
-the full-Hecke weights at the substrate are $(0.4154,\,0.2809,\,0.0227)$.
-Consequently the closed forms below should be read as the **Jones-polynomial**
-weights, not as the general $\mathrm{tr}_M$ $y_\lambda$ used by the compute
-pipeline.
+$(\tfrac12,\tfrac14,0)$) and **diverge for $q \neq 1$**: the convention-C
+weights at the substrate are $(0.4154,\,0.2809,\,0.0227)$ against convention
+D's $(0.5054,\,0.2473,\,0)$.
+
+**What writhe $0$ does and does not buy.** For $\beta \in B_3$ with writhe $0$
+and $\pi(\beta) = \mathrm{id}$ both one-dimensional characters equal $1$, so by
+the corollary below the trace depends on the weights **only through**
+$y_{(2,1)}$: the *split* between $y_{(3)}$ and $y_{(1^3)}$ is invisible, because
+normalisation $\sum_\lambda y_\lambda d_\lambda = 1$ already pins their sum.
+This is exactly why the chirality asymmetry discussed below is unobservable on
+such braids. It does **not** make two conventions agree. Two normalised Markov
+traces agree on such a braid precisely when they share $y_{(2,1)}$ or when
+$\chi^{(2,1)}(\beta) = 2$, and $\beta_{\mathrm{Bor}}$ satisfies neither
+($y^{C}_{(2,1)} \neq 1/[2]_q^{2} = y^{D}_{(2,1)}$):
+
+$$
+  \mathrm{tr}^{D}_M(\beta_{\mathrm{Bor}}) - \mathrm{tr}^{C}_M(\beta_{\mathrm{Bor}})
+  \;=\;
+  \bigl(y^{D}_{(2,1)} - y^{C}_{(2,1)}\bigr)\bigl(-3h^4 - h^6\bigr)
+  \;\approx\; 1.9554 \times 10^{-4},
+$$
+
+exact as a rational function in $q$, and $195.8$ ppm at the substrate.
+Consequently the closed forms below should be read as the **convention-D**
+(Jones-polynomial) weights, not as the convention-C $y_\lambda$ used by the
+binding pipeline.
 
 ## Immediate corollary — the Borromean closed form in one line
 
@@ -62,9 +142,9 @@ independent data:
 - $y_\lambda(q)$ — Wenzl/Markov coefficient: appears in
   $\mathrm{tr}_M = \sum_\lambda y_\lambda \cdot \chi^\lambda$, normalised by
   $\sum_\lambda y_\lambda \, d_\lambda = 1$. **This proposition gives the
-  Jones/TL values** ($y_{(1^3)} \equiv 0$); the full-Hecke Ocneanu trace used
-  by the mass pipeline has *different* $y_\lambda$ at $q \neq 1$
-  ($y_{(1^3)} \neq 0$) — see the Scope note above.
+  Jones/TL values** ($y_{(1^3)} \equiv 0$), i.e. convention D; the full-Hecke
+  Ocneanu trace (convention C) used by the binding pipeline has *different*
+  $y_\lambda$ at $q \neq 1$ ($y_{(1^3)} \neq 0$) — see the Scope note above.
 - $\chi^\lambda(g)$ — character: trace of the $V_\lambda$-representation
   on a specific element $g$ (e.g. a braid).
 - $\mu_\lambda(q)$ — $q$-Laplacian eigenvalue on $V_\lambda$
@@ -72,7 +152,7 @@ independent data:
   the heat-kernel decay rate, *not* a Markov-trace ingredient.
 - $w_\lambda(q) = [n]_q! / H_q(\lambda)^2$ — Plancherel measure
   ([`rem:symmetric-point-resolution-loss`](../models-of-qous/symmetric-point-resolution-loss.md)):
-  normalised by $\sum_\lambda w_\lambda = 1$; at $q = 1$ it is
+  normalised by $\sum_\lambda w_\lambda(1) = 1$ at $q = 1$ only — the $q$-deformed sum $\sum_\lambda w_\lambda(q)$ is **not** $1$ (0.987 at $n = 3$, 1.051 at $n = 8$, measured in `docs/audits/scripts/wlambda_normalisation_census.py`); at $q = 1$ it is
   non-uniform in a *different* pattern ($\tfrac16, \tfrac23, \tfrac16$
   for $n = 3$) from the Wenzl weights of this proposition
   ($\tfrac12, \tfrac14, 0$).
@@ -87,6 +167,18 @@ not only at the symmetric point. The Borromean $h^4$ separation into
 character coefficient $\times$ Markov normalisation is therefore an
 exact structural fact, with the $(h^2 + 4)$ denominator of the closed
 form being precisely $[2]_q^2 = 1/y_{(2,1)}(q)$.
+
+> **Correction note (scope).** An earlier draft of the scope note above stated
+> that the framework's *mass and binding* computations use the full-Hecke
+> Ocneanu trace, and that the two traces coincide on writhe-$0$,
+> $\pi=\mathrm{id}$ braids, "which is why every physical mass prediction is
+> insensitive to the distinction". Both parts were wrong. The production mass
+> channel is on convention D, not C; and writhe $0$ makes only the
+> $y_{(3)}$–$y_{(1^3)}$ *split* invisible, not $y_{(2,1)}$, so the two
+> conventions differ on $\beta_{\mathrm{Bor}}$ — which is writhe $0$ with
+> $\pi = \mathrm{id}$ — by $195.8$ ppm exactly. The corrected statements are
+> above; the trace-convention registry is now the machine-checked source of
+> truth for which channel uses which trace.
 
 > **Correction note.** An earlier draft of this proposition claimed the
 > $q = 1$ weights were *uniform* ($y_\lambda(1) = 1/4$ for all

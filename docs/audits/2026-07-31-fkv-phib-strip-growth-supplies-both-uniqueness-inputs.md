@@ -1,7 +1,7 @@
 # FKV 2001 supplies both open inputs of the Faddeev uniqueness leg (2026-07-31)
 
 **Branch:** `claude/fkv-phib-strip-growth-2026-07-31`. **Source:** owner-uploaded
-[`uploads/0006156v1.pdf`](../../uploads/0006156v1.pdf) — Faddeev–Kashaev–Volkov,
+[`library/arxiv-hep-th-0006156v1/0006156v1.pdf`](../../library/arxiv-hep-th-0006156v1/0006156v1.pdf) — Faddeev–Kashaev–Volkov,
 *Strongly coupled quantum discrete Liouville theory II* (2001),
 [hep-th/0006156](https://arxiv.org/abs/hep-th/0006156), §6 (Appendix: the non-compact
 quantum dilogarithm). **Analysis, mapping the literature to the on-main leg — no new

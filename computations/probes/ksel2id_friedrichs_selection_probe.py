@@ -125,11 +125,16 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpf, sqrt as msqrt, log as mlog  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
 
 K_EXACT = 26     # exact-Q qd depth at r = 21/20
@@ -674,6 +679,7 @@ def main() -> int:
     set_compute_dps(60)
     wb = WitnessBuilder("ksel2id-friedrichs-selection",
                         engine="sympy+mpmath+fractions")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "KSel-2-ID (bean qou-0ms0; audit-only, NO FIT, nothing wired): "
         "Friedrichs/Krein identification for the balanced binding "

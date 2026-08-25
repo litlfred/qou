@@ -3,6 +3,8 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
+import Mathlib.Analysis.SpecialFunctions.Integrability.Basic
+import Mathlib.Analysis.SpecialFunctions.Integrability.LogMeromorphic
 import Mathlib.Tactic
 
 /-!
@@ -33,18 +35,26 @@ But (a) the physical identification "$c_3$ limits to $-\mathrm{Vol}(4_1)$" is
 **over-scoped**: $-\mathrm{Vol}(4_1) = -2.02988$ is anchor-blind and misses both
 substrate anchors (muon +0.48%, proton −1.91%) while $c_3$ swings 2.43% — it is
 NOT $c_3$'s limit (see the audit). (b) $c_3 = -2 = J_{\mathrm{Hopf}}(1)$ is the
-**canonical** $q=1$ shadow (registry KC10 / KC20), NOT a "hallucination." (c) The
-integrability facts `log_integrable` / `f_integrable` below are `axiom`s (they
-were changed `lemma → axiom` to make the file compile), so this file is NOT a
-completed proof of the FTC step — they are Mathlib-provable and should be proved.
-(d) MOST IMPORTANT: the capstone `theorem c3_continuum_limit_is_hyperbolic_volume`
-below is **`: True := by trivial`** — it proves NOTHING about $c_3$ or
-$-\mathrm{Vol}(4_1)$; the physical claim lives only in its name/docstring while
-the proposition is `True`. It is a vacuous `placeholder-true` stub, NOT a
-formalization of the $c_3 = -\mathrm{Vol}(4_1)$ identification (which is false per
-(a)). The real content here is only the two geometry lemmas (`potential_derivative`,
-`saddle_point_root`). Ref:
+**canonical** $q=1$ shadow (registry KC10 / KC20), NOT a "hallucination." Ref:
 `docs/audits/2026-07-11-gemini-session-c3-overclaim-continuum-and-lean-audit.md`.
+
+**Items (c) and (d) of the 2026-07-11 note are DISCHARGED (2026-08-23).** They
+read, correctly at the time: (c) `log_integrable` / `f_integrable` are `axiom`s
+changed from `lemma` to make the file compile; (d) the capstone
+`c3_continuum_limit_is_hyperbolic_volume` is `: True := by trivial`, carrying its
+physical claim only in its name. Neither holds now — the file declares **no**
+`axiom`, that capstone no longer exists, and every declaration here is
+sorry-free with `#print axioms` = {propext, Classical.choice, Quot.sound}. They
+are kept above because a correction that silently disappears is worse than one
+that is marked spent.
+
+**The file did not COMPILE until 2026-08-23**, which is how the stale note
+survived: `intervalIntegrable_log'` lives in the `intervalIntegral` namespace,
+and the `convert` in `f_integrable` left a `log (2 * |s|) = log (2 * s)` goal
+that `simp` could not close (`Real.log` already factors through `|·|`, so it
+needs `← Real.log_abs` and `abs_mul`, not `Real.log_abs`). Nothing caught
+either: this `.lean` is a content-block sibling whose block has **no `.ts`
+manifest**, so no gate ever built it. Bean `qou-cauj`.
 -/
 
 namespace QOU.MassTheory.ContinuumGeometry
@@ -77,16 +87,32 @@ lemma f_integrable_bound (t : ℝ) (h : 0 < t ∧ t < 2 * π) :
   have h_sin_le : Real.sin (t / 2) ≤ t / 2 := Real.sin_le (by linarith)
   linarith
 
-/-- Lemma 1.2: The natural logarithm is improperly integrable at 0. 
-    (Mathlib 4 lacks improper Lebesgue integration limits, so we explicitly axiomatize this known topological bound). -/
-axiom log_integrable (θ : ℝ) (h : 0 < θ) :
-  IntervalIntegrable (fun t => Real.log t) MeasureTheory.volume 0 θ
+/-- Lemma 1.2: The natural logarithm is improperly integrable at 0.
+    Proved using Mathlib's `intervalIntegrable_log'` which handles the
+    singularity at 0 via dominated convergence. -/
+theorem log_integrable (θ : ℝ) (_h : 0 < θ) :
+  IntervalIntegrable (fun t => Real.log t) MeasureTheory.volume 0 θ :=
+  intervalIntegral.intervalIntegrable_log'
 
 /-- Lemma 1: The singularity of the Lobachevsky integrand at t=0 is integrable.
-    This asserts the local integrability required by Lebesgue measure theory, 
-    derived from the logarithmic bound (Lemma 1.1 and 1.2). -/
-axiom f_integrable (θ : ℝ) (h : 0 < θ ∧ θ < 2 * π) :
-  IntervalIntegrable (fun t => Real.log |2 * Real.sin (t / 2)|) MeasureTheory.volume 0 θ
+    The integrand `log|2 sin(t/2)|` decomposes as `log 2 + log|sin(t/2)|`.
+    Mathlib's `intervalIntegrable_log_sin` handles `log ∘ sin` for any
+    endpoints; the constant `log 2` is trivially integrable. -/
+theorem f_integrable (θ : ℝ) (_h : 0 < θ ∧ θ < 2 * π) :
+  IntervalIntegrable (fun t => Real.log |2 * Real.sin (t / 2)|) MeasureTheory.volume 0 θ := by
+  -- The function t ↦ 2 * sin(t/2) is analytic, hence meromorphic.
+  -- MeromorphicOn.intervalIntegrable_log gives log ∘ f is integrable for meromorphic f.
+  -- We rewrite our integrand as (log ∘ ‖·‖) ∘ (fun t => 2 * sin(t/2)).
+  have hm : MeromorphicOn (fun t : ℝ => (2 : ℝ) * Real.sin (t / 2)) [[0, θ]] := by
+    intro x _
+    exact ((analyticAt_const.mul (Real.analyticAt_sin.comp
+      (analyticAt_id.div analyticAt_const (by norm_num)))).meromorphicAt)
+  convert hm.intervalIntegrable_log using 1
+  ext t
+  -- `log (2 * |s|) = log (2 * s)`: Mathlib's `Real.log` already factors through
+  -- `|·|` (`Real.log_abs`), so push the abs outward and discharge `|2| = 2`.
+  rw [Function.comp_apply, ← Real.log_abs (2 * Real.sin (t / 2)), abs_mul,
+    abs_two]
 
 lemma f_measurable_global :
   Measurable (fun t : ℝ => Real.log |2 * Real.sin (t / 2)|) := by

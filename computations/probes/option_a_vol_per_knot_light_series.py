@@ -10,9 +10,9 @@ per-block in production is owner-gated (§5 of the scope doc): per-block
 tr_M alone undershoots m_p by ≈ 2.38× (m_p is the CAL-2 anchor).
 
 For each light isotope K the probe records:
-  geom_uniform(q₀)  = vol_density_borromean(q₀)
+  geom_uniform(q₀)  = per_knot_density_borromean(q₀)
                     = Vol(𝓑₃) / ℏ_q² · linking_weight_family_a(q₀)
-  geom_perknot(q₀)  = vol_density_per_block(Vol_K, tr_M_K, q₀)
+  geom_perknot(q₀)  = per_knot_density_per_block(Vol_K, tr_M_K, q₀)
                     = Vol(K) / ℏ_q² · tr_M(β_K, q₀)
   ratio             = geom_perknot / geom_uniform
   m_K_uniform(MeV)  = m_e · geom_uniform        (for the proton this IS m_avg,
@@ -82,11 +82,16 @@ import mpmath as mp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 from _li_2_q_util import (  # noqa: E402
-    vol_density_borromean,
-    vol_density_per_block,
+    per_knot_density_borromean,
+    per_knot_density_per_block,
 )
 from substrate.knot_volumes import (  # noqa: E402
     VOL_BORROMEAN_MPF,
@@ -126,7 +131,7 @@ def _load_chi_cache(atom: str, n_strands: int) -> dict:
     path = CHI_CACHE_DIR / f"chi-{atom}-h{n_strands}-at-q0-50dps.witness.json"
     if not path.exists():
         raise FileNotFoundError(f"chi-cache missing: {path}")
-    return json.loads(path.read_text())
+    return record_upstream(path, _UPSTREAM_RECORDS)
 
 
 def _load_y_lambda_at_q0() -> dict[int, dict[tuple, mp.mpf]]:
@@ -138,7 +143,7 @@ def _load_y_lambda_at_q0() -> dict[int, dict[tuple, mp.mpf]]:
     path = CHI_CACHE_DIR / "y-lambda-at-q0.witness.json"
     if not path.exists():
         raise FileNotFoundError(f"y-lambda table missing: {path}")
-    raw = json.loads(path.read_text())["data"]["by_n"]
+    raw = record_upstream(path, _UPSTREAM_RECORDS)["data"]["by_n"]
     out: dict[int, dict[tuple, mp.mpf]] = {}
     for n_str, rows in raw.items():
         out[int(n_str)] = {
@@ -194,7 +199,7 @@ def _tr_m_from_chi_cache(
 #
 # n_strands = 3·(Z+N) = H_{3A} convention — the canonical strand
 #   count for the atom braid word produced by `atom_braid_word_3A`
-#   and consumed by the production per-block `vol_density_per_block`
+#   and consumed by the production per-block `per_knot_density_per_block`
 #   (`_li_2_q_util.py:386-391`: "H₃ for the 3-strand Borromean
 #   baryons, H₆ for the deuteron at n=6, etc."). NOT the
 #   small-knot braid-index (Model B's n_canon column).
@@ -284,6 +289,7 @@ def _fmt(x: mp.mpf, sig: int = 50) -> str:
 
 def main() -> int:
     w = WitnessBuilder("option-a-vol-per-knot-light-series", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_audit_only("docs/audits/2026-06-04-option-a-vol-per-knot-scoping.md")
     w.set_description(
         "Option A diagnostic (PR #1762 §5 / scoping #1816): measure the "
@@ -319,7 +325,7 @@ def main() -> int:
     q_inv = mp.mpf(1) / q_0
     m_e = mp.mpf(M_E_MEV_50DPS)
 
-    geom_uniform = vol_density_borromean(q_0, q_inv)
+    geom_uniform = per_knot_density_borromean(q_0, q_inv)
     m_avg_uniform_MeV = m_e * geom_uniform
 
     w.add_parameter("q_0_50dps", q_0_str)
@@ -333,7 +339,7 @@ def main() -> int:
     w.add_data("geom_uniform_borromean", _fmt(geom_uniform))
     w.add_data(
         "geom_uniform_description",
-        "vol_density_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · "
+        "per_knot_density_borromean(q_0) = Vol(𝓑₃)/ℏ_q² · "
         "linking_weight_family_a(q_0) = Vol(𝓑₃)/ℏ_q² · (5/2 + (3/4)·h²); "
         "applied uniformly to every atom in production "
         "(mass_table_comprehensive.py:208).",
@@ -387,7 +393,7 @@ def main() -> int:
             )
 
         # Per-knot VolDensity(K, q_0) — full three-arg signature.
-        geom_perknot = vol_density_per_block(vol_K, tr_M, q_0, q_inv)
+        geom_perknot = per_knot_density_per_block(vol_K, tr_M, q_0, q_inv)
         ratio = geom_perknot / geom_uniform
         m_K_perknot_MeV = m_e * geom_perknot
 

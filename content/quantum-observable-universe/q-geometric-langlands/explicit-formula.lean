@@ -33,7 +33,15 @@ structure ReebEigenvalue where
   /-- The eigenvalue ρ ∈ ℂ (represented here as ℝ for the real part). -/
   val : ℝ
 
-/-- The q-integer [ρ]_q = (q^ρ - q^{-ρ}) / (q - q^{-1}). -/
+/-- The q-integer [ρ]_q = (q^ρ - q^{-ρ}) / (q - q^{-1}).
+
+**Deliberately not consolidated onto `QOU.QInteger.qIntBal`** (`qou-qint`
+census).  The index is a Reeb eigenvalue `ρ : ℝ` and the powers are `rpow`, so
+this is the continuous-index bracket; the canonical `qIntBal` (ℕ) and
+`qIntBalZ` (ℤ) are both discrete.  Distinct from the `JonesMarkovWenzl` case,
+which merely *looked* continuous — there the `rpow`s were at half-integer
+multiples of a `ℕ` index and did reduce to `qIntBal` at `q^{1/2}`.  Here `ρ`
+ranges over a genuine spectrum, so no such reduction exists. -/
 noncomputable def qInteger (q : ℝ) (hq : 1 < q) (ρ : ℝ) : ℝ :=
   (q ^ ρ - q ^ (-ρ)) / (q - q⁻¹)
 
@@ -65,14 +73,13 @@ theorem qInteger_pos (q : ℝ) (hq : 1 < q) (ρ : ℝ) (hρ : 0 < ρ) :
     have : q⁻¹ < 1 := by rw [inv_lt_one₀ hq_pos]; exact hq
     linarith
 
-/-- **External axiom (L'Hôpital, renormalised q-log limit):**
+/-- **External theorem (L'Hôpital, renormalised q-log limit):**
     q-logarithm tends to ordinary log as q → 1⁺. -/
 -- Ref: [manuscript] Ch. 8 §explicit-formula
-axiom qLog_tendsto_log_axiom :
-    ∀ (x : ℝ), 0 < x →
-      Filter.Tendsto (fun q => qLog q x)
-        (nhdsWithin 1 (Set.Ioi 1))
-        (nhds (Real.log x))
+axiom qLog_tendsto_log_axiom (x : ℝ) (hx : 0 < x) :
+    Filter.Tendsto (fun q => qLog q x)
+      (nhdsWithin 1 (Set.Ioi 1))
+      (nhds (Real.log x))
 
 /-- The q-logarithm converges to the ordinary logarithm as q → 1. -/
 theorem qLog_tendsto_log (x : ℝ) (hx : 0 < x) :
@@ -126,16 +133,15 @@ noncomputable def QChebyshevFunction
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
 -- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [reshetikhin1991] Reshetikhin & Turaev, "Invariants of 3-manifolds via link polynomials and quantum groups," Invent. Math. 103 (1991)
-/-- **External axiom (Rosen 2002 Ch 5 Thm 5.12; Weil 1948;
+/-- **External theorem (Rosen 2002 Ch 5 Thm 5.12; Weil 1948;
     Reshetikhin-Turaev 1991): explicit formula as spectral-geometric
     trace identity.** -/
 -- Ref: [rosen2002] https://doi.org/10.1007/978-1-4757-6046-0 Ch 5, Thm 5.12
 -- Ref: [weil1948] Weil, "Sur les courbes algébriques et les variétés qui s'en déduisent," Hermann, Paris (1948)
 -- Ref: [reshetikhin1991] Reshetikhin & Turaev, "Invariants of 3-manifolds via link polynomials and quantum groups," Invent. Math. 103 (1991)
-axiom explicit_formula_axiom :
-    ∀ (q : ℝ) (hq : 1 < q) (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
+axiom explicit_formula_axiom (q : ℝ) (hq : 1 < q) (hbar_q : ℝ) (hbar_pos : 0 < hbar_q)
       (ideals : List MaxIdeal) (spectrum : List ReebEigenvalue)
-      (Omega_q : ℝ) (_hOmega : 0 < Omega_q) (X : ℝ) (_hX : 1 < X),
+      (Omega_q : ℝ) (_hOmega : 0 < Omega_q) (X : ℝ) (_hX : 1 < X) :
       QChebyshevFunction hbar_q hbar_pos ideals X =
         spectralSide q hq spectrum Omega_q X
 

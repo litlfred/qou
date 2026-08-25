@@ -1,24 +1,24 @@
 {
   "engine": "python+rust",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-06-11T02:21:28.138004+00:00",
-  "commitSha": "c48f3a75e61b3627d7d1ecd53e33e60410b495c3",
+  "computedAt": "2026-08-24T15:48:03.060571+00:00",
+  "commitSha": "2113267792aa2622cd2bead23a39156c3e36595b",
   "assertions": [
     {
       "name": "id_trace_matches_binding_canonical",
-      "computed": 3.7346495213735503e-16,
-      "expected": 0.0,
+      "computed": "4.76533228264396525299999999999999999999998971805758501768652e-32",
+      "expected": "0.0",
       "passed": true,
-      "tolerance": 1e-09,
+      "tolerance": "1.00000000000000000000000000000000000000000000000000000000000e-30",
       "source": "tr_M(W_atom·id) via chi_q_atomic == binding_canonical's averaged ⁴He tr_M_atom — validates the averaged path + y_λ weighting."
     }
   ],
   "allPassed": true,
-  "durationMs": 78446,
+  "durationMs": 2569,
   "computation": "averaged-block-swap-binding",
   "scriptFile": "averaged_block_swap_binding.py",
-  "scriptHash": "fd0c223d783b",
-  "scriptCommitSha": "c48f3a75e61b3627d7d1ecd53e33e60410b495c3",
+  "scriptHash": "0e70f2fa49b8",
+  "scriptCommitSha": "88e5c03283573c8d2bcc97669c86807d08915e1b",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -30,8 +30,16 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "30fd920c241a54fa"
+  },
+  "invocation": {
+    "argv": [
+      "computations/averaged_block_swap_binding.py"
+    ],
+    "reproduce": "python3 -u computations/averaged_block_swap_binding.py"
   },
   "description": "Averaged-convention (production) block-swapped S_atom for ⁴He via pyhecke_native.chi_q_atomic (Rust q-character on averaged Hecke factors c·σ+d·I; validated against binding_canonical tr_M=0.05536). Refines the sign-only task 1: tr_atom_sym=¼Σ_{σ∈S₂×S₂} tr_M(W_atom·β_σ). Production binding signal log(S_free/S_atom) FLIPS POSITIVE (+0.27) vs sign-only (−0.36) — symmetrization slightly relieves the under-prediction. The exact H₁₂ block-level S_free is 5.5× SMALLER than the scalar Frobenius h₂h₂/τ²τ² (H₃ traces) — quantifies the #2103 scalar caveat. Pool-parallelized over the 8 independent tr_M sweeps.",
   "parameters": {
@@ -39,24 +47,42 @@
   },
   "data": {
     "atom_traces": {
-      "id": 0.055358425349822354,
-      "swap_p": 0.014457514789046923,
-      "swap_n": 0.0043754861536323885,
-      "swap_pn": 0.0011427105336841697
+      "id": "0.160974145442407381825873440980716853923607354133440000000000",
+      "swap_p": "0.0739325925517561802134500696385138935310538267366200000000000",
+      "swap_n": "0.0417982062925259720076535875238227691706728539035380000000000",
+      "swap_pn": "0.0191971806821934015399540012805507689180789897604770000000000"
     },
     "free_traces": {
-      "id": 0.9673234564178328,
-      "swap_p": 0.3166034186571728,
-      "swap_n": 0.335573808326028,
-      "swap_pn": 0.10983277023103186
+      "id": "1.28078315152864641063633786713365184627591156910050000000000",
+      "swap_p": "0.700134446774151800550349590838650013204600087940930000000000",
+      "swap_n": "0.727961479890973569472201132335669804782176373092340000000000",
+      "swap_pn": "0.397936924285781523502110621733632369922403280605460000000000"
     },
-    "S_atom": 0.3402108005697979,
-    "S_free": 0.44693774408099446,
-    "S_free_scalar_frobenius": 2.4679380451344195,
-    "exact_over_scalar_ratio": 0.1810976353163077,
-    "binding_signal_log_Sfree_over_Satom": 0.27285388276286704,
-    "signonly_signal_task1": -0.357903,
-    "open_question": "whether the plain ¼Σβ_σ average is the q-correct q-Young projection, or whether q-weighted symmetrizers shift the number."
+    "S_atom": "0.459549147093856587408036771501143916520486103639183856362490",
+    "S_free": "0.606428964725896702971223083314969290879465206222399823805420",
+    "S_free_scalar_frobenius": "1.98642239409776446946130968118631951508396571950881355656521",
+    "exact_over_scalar_ratio": "0.305287015756453700069576892866849790501369115679777423560375",
+    "binding_signal_log_Sfree_over_Satom": "0.277341704393756491389917608999770387088276318528127166745070",
+    "signonly_signal_task1": "-0.357903000000000000000000000000000000000000000000000000000000",
+    "open_question": "whether the plain ¼Σβ_σ average is the q-correct q-Young projection, or whether q-weighted symmetrizers shift the number.",
+    "upstream_witness_hashes": [
+      {
+        "path": "symmetrized-constituent-general.witness.json",
+        "sha256": "3d2d1effa67a47425e2fdbde3be315fcca50983ccd2c495fc98fc95061ff62fc",
+        "size_bytes": 7164,
+        "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+        "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+        "computedAt": "2026-08-23T09:58:30.534376+00:00"
+      },
+      {
+        "path": "binding-canonical.witness.json",
+        "sha256": "141cd06d2a6b9a36fc8cb0c922025d29785651eb00331e67f0444cb3ff55fe39",
+        "size_bytes": 6536,
+        "commitSha": "ed819c29934a44bf7d752a800291f5a01ea1742d",
+        "scriptCommitSha": "77e4e68b75e65453004511c059a6613daee5ee0d",
+        "computedAt": "2026-08-22T19:30:53.367121+00:00"
+      }
+    ]
   },
   "q0Anchor": "proton",
   "q0Value": "1.1099785827513808075916690956107688798744991218736"

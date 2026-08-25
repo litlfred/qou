@@ -49,7 +49,7 @@ universe u
     Axiomatised here pending a Lean infinite-product implementation;
     the value at z = 0 is fixed by the empty-product convention. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Quantum-dilogarithm form
-axiom phi_q_residual : ℝ → ℝ → ℝ
+opaque phi_q_residual : ℝ → ℝ → ℝ
 
 /-- Quantum dilogarithm encoded as the empty-product baseline `1`
     plus a `z`-multiplied residual factor. The `phi_q_residual`
@@ -84,7 +84,7 @@ theorem phi_q_at_zero : ∀ q : ℝ, phi_q q 0 = 1 := by
     mass-endomorphism tower. The series has empty first term at
     z = 0, giving Li_2^q(q, 0) = 0. -/
 -- Ref: [manuscript] prop:mass-endomorphism-tower §Trace-vs-evaluation note
-axiom li2_q_residual : ℝ → ℝ → ℝ
+opaque li2_q_residual : ℝ → ℝ → ℝ
 
 /-- Symmetric q-dilogarithm encoded as the empty-sum baseline `0`
     plus a `z`-multiplied residual factor. The `li2_q_residual` axiom
@@ -149,7 +149,7 @@ class HasCorrectedMassEndomorphismTower where
   uses_li2q : archimedeanSpec = towerTerm
 
 /-- Any class instance using the corrected form vanishes at zero. -/
-theorem HasCorrectedMassEndomorphismTower.archimedeanSpec_at_zero
+theorem archimedeanSpec_at_zero
     [c : HasCorrectedMassEndomorphismTower] (q : ℝ) :
     c.archimedeanSpec q 0 = 0 := by
   rw [c.uses_li2q]
@@ -157,7 +157,7 @@ theorem HasCorrectedMassEndomorphismTower.archimedeanSpec_at_zero
 
 /-- Any class instance using the corrected form **disagrees** with
     `phi_q` at z = 0 (since Φ_q(q, 0) = 1 ≠ 0 = towerTerm(q, 0)). -/
-theorem HasCorrectedMassEndomorphismTower.ne_phi_q_at_zero
+theorem ne_phi_q_at_zero
     [c : HasCorrectedMassEndomorphismTower] (q : ℝ) :
     c.archimedeanSpec q 0 ≠ phi_q q 0 := by
   rw [c.uses_li2q, phi_q_at_zero, towerTerm_at_zero]
@@ -209,7 +209,7 @@ class ZHabiroRogersSaddle where
     rewriting along the conjecture and then applying the *proven*
     `towerTerm_at_zero`. Composes the hypothesis with an established lemma; does
     not assume the conclusion. -/
-theorem ZHabiroRogersSaddle.realQSaddle_phi_q_at_zero
+theorem realQSaddle_phi_q_at_zero
     [s : ZHabiroRogersSaddle] (q : ℝ) :
     s.realQSaddle phi_q q 0 = 0 := by
   rw [s.saddle_phi_q_eq_towerTerm]
@@ -220,7 +220,7 @@ theorem ZHabiroRogersSaddle.realQSaddle_phi_q_at_zero
     Rogers face is `0` there, the Faddeev face is `1`): the saddle genuinely
     moves `phi_q` off its own value, witnessing that the real-`q` continuation is
     the bounded Rogers form, not the Faddeev product. -/
-theorem ZHabiroRogersSaddle.realQSaddle_phi_q_ne_phi_q_at_zero
+theorem realQSaddle_phi_q_ne_phi_q_at_zero
     [s : ZHabiroRogersSaddle] (q : ℝ) :
     s.realQSaddle phi_q q 0 ≠ phi_q q 0 := by
   rw [s.saddle_phi_q_eq_towerTerm, phi_q_at_zero, towerTerm_at_zero]

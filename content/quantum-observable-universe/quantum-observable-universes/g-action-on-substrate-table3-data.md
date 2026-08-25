@@ -1,6 +1,6 @@
 | flag | current | post-discharge |
 |------|---------|----------------|
-| NV-1 | inconclusive | closed via this trace formula + corrected residual |
+| non-vanishing | inconclusive | closed via this trace formula + corrected residual |
 | HIGGS-SLOT | retraction | Higgs scalar slot identified as residual of $A^{(H)}$ |
 | U2 (force-carrier dichotomy) | premise | derived from G-1 |
 | U4 (EW mass eigenstate count) | premise | derived from G-1 (3 broken + 1 scalar) |

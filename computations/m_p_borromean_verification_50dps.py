@@ -1,5 +1,29 @@
 #!/usr/bin/env python3
-"""
+"""DEPRECATED for absolute mass (owner ruling 2026-06-24) — superseded by the
+muon-anchored Hecke energy; retained as the record of the Family-A route.
+
+═══════════════════════════════════════════════════════════════════
+SUPERSESSION (2026-06-24): this script's m_p / m_n are NOT the
+canonical absolute nucleon masses.
+
+Everything below computes the `m_e · Vol(𝓑₃)/ℏ_q² · λ_A` form, which
+the 2026-06-24 ruling deprecated for absolute mass: it applies
+1/ℏ_q² to the *Borromean* volume, where the c_q² belongs in the
+*muon* anchor Vol(4₁). The canonical route is
+
+    m_p = 2·(m_μ·F_Bor − 6·m_e)  →  938.27 MeV (CODATA, +1.35 ppb)
+
+via the single facade `canonical_mass.py` (`proton_mass_mev()`).
+The ~2.9 % figures below are the deprecated form's, not the
+framework's live accuracy. See docs/canonical-mass-formula-guardrail.md.
+
+⚠ This script's witness `m-p-borromean-verification-50dps.witness.json`
+is still READ by `canonical_mass_table_extended.py`
+(`lookup_nucleon_mass_borromean`), so the +2.89 % values propagate into
+the canonical mass table's nucleon rows and everything projected from
+it. That is tracked separately — it is a compute-wiring defect, not a
+prose one, and is not fixed by this banner.
+
 ═══════════════════════════════════════════════════════════════════
 HONESTY UPDATE (2026-05-22): CAL-4 fit REMOVED FROM PRODUCTION.
 
@@ -146,13 +170,18 @@ sys.path.insert(0, str(HERE))
 
 
 from _precision import set_compute_dps, fmt  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 set_compute_dps()
 
 # Substrate q_0 at 50 dps (witness-derived)
 Q_PIN = _pb.witness_path("q-pinning-50-digit.witness.json", HERE)
-Q = mp.mpf(json.load(Q_PIN.open())["derived_50_digit"]["q"])
+Q = mp.mpf(record_upstream(Q_PIN, _UPSTREAM_RECORDS)["derived_50_digit"]["q"])
 HBAR_Q = (Q - mp.mpf(1)) / Q
 
 # Borromean rings hyperbolic volume.  Exact closed-form via the
@@ -165,7 +194,8 @@ HBAR_Q = (Q - mp.mpf(1)) / Q
 # the m_p residual to ~1 ppb).
 VOL_B3 = 8 * mp.catalan
 # Figure-8 volume (muon baseline, for cross-check)
-VOL_41 = mp.mpf("2.02988321281930725004240510854658")
+# Vol(4_1) EXACT = 2*Cl_2(pi/3); the literal printed 33 digits, correct to 29 (qou-ckbv)
+VOL_41 = 2 * mp.clsin(2, mp.pi / 3)
 
 # CODATA / validation values — imported from the calibration
 # registry, not free literals (P31 audit discipline). m_e is CAL-1;
@@ -211,7 +241,7 @@ M_MU_CODATA_MEV = _M_MU_MEV_VALIDATION  # CODATA muon (validation; codata_consta
 # because this is the documented audit-verification use, not a
 # production consumer.
 import warnings as _warnings
-from _li_2_q_util import vol_density_borromean as _vol_density_borromean
+from _li_2_q_util import per_knot_density_borromean as _vol_density_borromean
 with _warnings.catch_warnings():
     _warnings.simplefilter("ignore", DeprecationWarning)
     GEOM_FULL_BORROMEAN = _vol_density_borromean(Q)
@@ -227,6 +257,7 @@ LINKING_WEIGHT_NEUTRON_FITTED_FROM_CODATA_AUDIT_ONLY = mp.mpf("2.4633436333")
 
 def main() -> int:
     w = WitnessBuilder("m-p-borromean-verification-50dps", engine="mpmath")
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_description(
         "AUDIT-VERIFICATION at MPFR 50 dps of the EXCISED λ_A "
         "Borromean-VolDensity path (`conj:borromean-baryon-mass-formula`) "
@@ -316,9 +347,9 @@ def main() -> int:
     })
     w.add_assertion(
         "muon_borromean_baseline_ppm_lt_2",
-        computed=float(abs(mu_ppm)),
-        expected=0.0,
-        tolerance=2.0,  # 2 ppm
+        computed=fmt(abs(mu_ppm)),
+        expected="0",
+        tolerance="2.0",  # 2 ppm
         unit="ppm",
         source="CAL-2 anchor: m_mu/m_e = Vol(4_1)/ℏ_q²",
     )
@@ -366,8 +397,8 @@ def main() -> int:
     _mp_canon, _mn_canon = _canonical_pn()
     w.add_data("canonical_mass_reference", {
         "route": "canonical_mass.proton_neutron_mass_mev (muon-anchored Hecke energy)",
-        "m_p_MeV": _mp_canon,
-        "m_n_MeV": _mn_canon,
+        "m_p_MeV": fmt(_mp_canon),
+        "m_n_MeV": fmt(_mn_canon),
         "note": (
             "Production absolute-mass route (owner ruling 2026-06-24). "
             "The λ_A-path m_avg_pred above overshoots this by ~2.9 % — "
@@ -390,9 +421,9 @@ def main() -> int:
     # is the actual regression guard for the PR's central wire-up.
     w.add_assertion(
         "substrate_flavor_split_ratio_within_1000ppm_of_codata",
-        computed=float(abs(dm_ratio_ppm)),
-        expected=0.0,
-        tolerance=1000.0,  # 0.1 % ceiling — current value ~305 ppm
+        computed=fmt(abs(dm_ratio_ppm)),
+        expected="0",
+        tolerance="1000.0",  # 0.1 % ceiling — current value ~305 ppm
         unit="ppm",
         source=(
             "prop:flavor-split-substrate / flavor_split_subleading "
@@ -424,9 +455,9 @@ def main() -> int:
     # the residual is a Bring-Bloch / categorical-q-dilog R&D task.
     w.add_assertion(
         "proton_borromean_tower_within_5pct_of_codata",
-        computed=float(abs(proton_ppm)),
-        expected=0.0,
-        tolerance=50000.0,  # 5 % ceiling
+        computed=fmt(abs(proton_ppm)),
+        expected="0",
+        tolerance="50000.0",  # 5 % ceiling
         unit="ppm",
         source="Borromean baryon formula (Family A λ) vs CODATA m_p at MPFR 50 dps",
     )
@@ -451,9 +482,9 @@ def main() -> int:
     # absolute scale gap is the same as for the proton).
     w.add_assertion(
         "neutron_borromean_tower_within_5pct_of_codata",
-        computed=float(abs(neutron_ppm)),
-        expected=0.0,
-        tolerance=50000.0,  # 5 % ceiling
+        computed=fmt(abs(neutron_ppm)),
+        expected="0",
+        tolerance="50000.0",  # 5 % ceiling
         unit="ppm",
         source="Borromean baryon formula (Family A λ + flavor split) vs CODATA m_n at MPFR 50 dps",
     )
@@ -479,14 +510,18 @@ def main() -> int:
 
     # ── 1700× scale-gap explanation ───────────────────────────
     single_level_estimate = mp.mpf("1.065") * M_E_CODATA_MEV  # T1 alone
-    gap_factor = float(M_P_CODATA_MEV / single_level_estimate)
-    tower_multiplier = float(GEOM_FULL_BORROMEAN)
+    # No float(). Both inputs are already mpf; casting here and then handing
+    # the result to fmt() would serialize a float64 as a 50-digit string —
+    # 17 real digits followed by 33 invented ones. The mixed-arithmetic gate
+    # caught exactly that when this was first drained, which is what it is for.
+    gap_factor = M_P_CODATA_MEV / single_level_estimate
+    tower_multiplier = mp.mpf(GEOM_FULL_BORROMEAN)
     w.add_data("scale_gap_resolution", {
         "single_level_m_p_estimate_MeV": mp.nstr(single_level_estimate, 8),
         "codata_m_p_MeV": mp.nstr(M_P_CODATA_MEV, 8),
-        "scale_gap_factor": gap_factor,
-        "borromean_tower_multiplier": tower_multiplier,
-        "match_to_gap_pct": float(abs(tower_multiplier - gap_factor) / gap_factor * 100),
+        "scale_gap_factor": fmt(gap_factor),
+        "borromean_tower_multiplier": fmt(tower_multiplier),
+        "match_to_gap_pct": fmt(abs(tower_multiplier - gap_factor) / gap_factor * mp.mpf(100)),
         "conclusion": (
             "VolDensity(𝓑₃, q₀) ≈ 1836 IS the 1700× scale factor "
             "missing from the single-level Markov-trace m_p chain. "
@@ -553,8 +588,8 @@ def main() -> int:
     print()
     print(f"Scale-gap explanation:")
     print(f"  single-level pred (T1):  {float(single_level_estimate):.4f} MeV")
-    print(f"  Borromean tower factor:  {tower_multiplier:.4f}")
-    print(f"  CODATA / single-level:   {gap_factor:.4f}")
+    print(f"  Borromean tower factor:  {float(tower_multiplier):.4f}")
+    print(f"  CODATA / single-level:   {float(gap_factor):.4f}")
     print(f"  → VolDensity(𝓑₃, q₀) closes to ~2.89 % vs CODATA on m_avg;")
     print(f"    substrate flavor split (PR #690) supplies Δm/M_N to")
     print(f"    ~305 ppm (~0.030 %) giving a categorical (non-fit) p/n split.")

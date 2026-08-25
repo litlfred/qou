@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-07-13T15:25:06.150648+00:00",
-  "commitSha": "d423757c95e61dc971ed3131406cb8627749b57c",
+  "computedAt": "2026-08-23T09:57:13.161085+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "C1_cyclotomic_collapse_exact",
@@ -10,7 +10,7 @@
       "expected": 1.0,
       "passed": true,
       "tolerance": 0.5,
-      "source": "∏_{k=0}^{N-1}(1−xζ^k)=1−x^N exactly, N=2..8 (sympy)"
+      "source": "∏(1−xζ^k)=1−x^N as a polynomial identity (multipoint mpmath check, 1e-40), N=2..8"
     },
     {
       "name": "C2_finite_shift_recursion",
@@ -30,11 +30,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 17,
+  "durationMs": 24,
   "computation": "qbeta-phib-cyclotomic-fibre-reduction",
   "scriptFile": "qbeta_phib_cyclotomic_fibre_reduction_probe.py",
-  "scriptHash": "ceb24b3e2214",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "0888885e1e9e",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -43,8 +43,19 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
+  },
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_phib_cyclotomic_fibre_reduction_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_phib_cyclotomic_fibre_reduction_probe.py"
   },
   "description": "Tetraplectic→combinatorial reduction of Φ_b at the |q|=1 root-of-unity fibre saddle (PR #3768, bean qou-5843). Verifies exactly that the q-Pochhammer product collapses to the finite cyclotomic polynomial ∏_{k=0}^{N-1}(1−xq^k)=1−x^N at q=ζ_N (N=2..8), so the dilog shift equation becomes a finite N-periodic recursion — the contour integral is replaced by finite algebra over ℤ[ζ_N][x], Lean-provable. N=5 is Bring's S₅ tetraplectic modulus (p(5)=7 partitions organize the state-sum). Scope-(a); no c_k, no S value, no fit.",
   "contentBlock": "prop:phi-b-unitary-bar-odd",

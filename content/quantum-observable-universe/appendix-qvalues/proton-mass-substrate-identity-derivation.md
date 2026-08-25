@@ -1,8 +1,10 @@
 This note collects the numerical verification, the per-order $h$-expansion, the combined nucleon-mass derivation, and the sub-ppm precision frontier for [`prop:proton-mass-substrate-identity`](#prop:proton-mass-substrate-identity).
 
+The predictive content throughout is the dimensionless ratio $m_p/m_e$ (equivalently $2(m_\mu/m_e)F_{\mathrm{Bor}} - 12$): since $m_e$ (CAL-1) sets the MeV scale by fiat, the absolute proton mass in MeV is not an independent framework prediction. The MeV figures below are that ratio rendered against the $m_e$ unit — a rendering that lets the ratio be read off against CODATA, not an absolute-mass claim.
+
 ## Numerical verification
 
-At $q_0 = 1.10977859555\ldots$ (50 dps):
+At $q_0 = 1.10997859555\ldots$ (muon pin, 12 dps):
 
 | Quantity | Value |
 |---|---|
@@ -12,7 +14,7 @@ At $q_0 = 1.10977859555\ldots$ (50 dps):
 | $F_{\mathrm{Bor}}(q_0)$ | $4.469138598\ldots$ |
 | $2 \cdot m_\mu \cdot F_{\mathrm{Bor}}(q_0)$ | $944.40385\,\mathrm{MeV}$ |
 | $12 \cdot m_e$ | $6.13199\,\mathrm{MeV}$ |
-| Predicted $m_p$ | $938.27186\,\mathrm{MeV}$ |
+| $m_p$ ($m_e$-scaled rendering) | $938.27186\,\mathrm{MeV}$ |
 | CODATA $m_p$ | $938.27209\,\mathrm{MeV}$ |
 | Residual | $0.24\,\mathrm{ppm}$ |
 
@@ -148,15 +150,18 @@ $f(q)$ factor with $f(q_0) \approx 1.00167$ not yet identified, or
 precision floor. This correction remains a near-match candidate, not
 an established categorical derivation.
 
+The Ocneanu-weight cancellation behind the $-12\,m_e$ term carries a
+universal leading-pole coefficient $-1/12$. That coefficient rests on
+high-precision numerical pole detection, verified to 200 decimal
+places; the symbolic Hoefsmit route to the cancellation count still
+carries unrepaired convention and sign issues, so the coefficient is
+numerically verified rather than symbolically derived.
+
 ## See also
 
 - [`def:f-bor-borromean-observable`](../braids-and-knots/f-bor-borromean-observable.md)
   — categorical observable $F_{\mathrm{Bor}}$ (closed form, $h$-expansion, structural integers)
-- [`docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md`](../../../docs/audits/2026-05-25-proton-mass-identity-12-me-ocneanu.md)
-  — full audit writeup
 - [`prop:flavor-split-substrate`](../observations/flavor-split-substrate.md)
   — canonical Hecke-skein $\Delta m / M_N$ derivation
-- [`docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md`](../../../docs/audits/2026-05-04-ocneanu-cancellation-numerical-verification.md)
-  — the universal $-1/12$ leading-pole coefficient (200-dps verified)
 - [`m_p_substrate_identity_50dps.py`](../../../computations/m_p_substrate_identity_50dps.py)
   — production-grade compute script (50-dps MPFR)

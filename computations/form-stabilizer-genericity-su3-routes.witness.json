@@ -1,0 +1,53 @@
+{
+  "schema": "witness/v1",
+  "description": "Dimension count excluding the 'degenerating 4-form' route to SU(3): Spin(7) is not the stabilizer of a generic 4-form on R^8 (codim 27), and no 4-form on R^8 can be generic at all since dim GL(8) = 64 < dim Lambda^4 = 70. G_2 from a 3-form on R^7 is by contrast an open orbit. Bean qou-8p1f.",
+  "computation": {
+    "script": "computations/form_stabilizer_genericity_su3_routes.py",
+    "arithmetic": "exact integer (binomials + Lie algebra dimensions)"
+  },
+  "data": {
+    "cases": [
+      {
+        "structure": "G_2 from a 3-form on R^7",
+        "ambient_dim": 7,
+        "form_degree": 3,
+        "dim_Lambda_k": 35,
+        "dim_GL_n": 49,
+        "stabilizer": "G_2",
+        "dim_stabilizer": 14,
+        "orbit_dim": 35,
+        "codim_in_forms": 0,
+        "orbit_open": true
+      },
+      {
+        "structure": "Spin(7) from a 4-form on R^8",
+        "ambient_dim": 8,
+        "form_degree": 4,
+        "dim_Lambda_k": 70,
+        "dim_GL_n": 64,
+        "stabilizer": "Spin(7)",
+        "dim_stabilizer": 21,
+        "orbit_dim": 43,
+        "codim_in_forms": 27,
+        "orbit_open": false
+      }
+    ],
+    "no_4form_on_R8_can_be_generic": true,
+    "verdict": "the 'perhaps the 4-form degenerates' route to SU(3) fails by genericity: the Cayley/Spin(7) locus is codimension 27 and no 4-form on R^8 has an open orbit, so a tetraplectic or arbitrary 4-form does not degenerate into a Spin(7) structure -- it would have to be imposed, which is a LARGER octonionic import than the status quo since Spin(7) contains G_2",
+    "constructive_reading": "the generic-form route runs through 3-forms in dimension 7, not 4-forms in dimension 8; the lower link G_2 -> SU(3) via S^6 = G_2/SU(3) is untouched and is already eightfold open-problem item 3, which is where form-stabilizer effort belongs",
+    "scope": "scope-(b) for the specific claim 'a generic/tetraplectic 4-form on an 8-manifold degenerates to Spin(7)', excluded by a dimension count",
+    "not_excluded": [
+      "imposing a Cayley form by hand (consistent; not a derivation)",
+      "the G_2 -> SU(3) link (open-problem item 3)",
+      "tetraplectic geometry generally -- see qou-8p1g for the separate m = 1 vacuity observation",
+      "routes not going through generic-form stabilizers (Bruhat, multi-fibre groupoid)"
+    ],
+    "all_checks_pass": true,
+    "checks": {
+      "G2_orbit_is_open": true,
+      "Spin7_orbit_not_open": true,
+      "Spin7_codim_27": true,
+      "no_4form_on_R8_can_be_generic": true
+    }
+  }
+}

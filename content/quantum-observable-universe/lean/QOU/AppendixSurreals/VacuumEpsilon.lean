@@ -6,11 +6,10 @@ import Mathlib.Data.Real.Basic
 **§3b-cond class axiomatisation** for content block
 [`conj:vacuum-epsilon`](../../../quantum-observable-universe/appendix-surreals/vacuum-epsilon.md): *Infinitesimal vacuum: $\\mathrm{Geom}(\\unicode{9737}) = \\varepsilon$*.
 
-This is a **conjecture**: the class `VacuumEpsilon` carries a placeholder
-field and is trivially inhabited (`residual := 0`), so the instance is
-total (per AGENTS.md §3b the conjectural content lives in the narrative
-block `conj:vacuum-epsilon`, refined into class fields as the
-formalisation matures).  Downstream theorems may take
+This is a **conjecture**: the class `VacuumEpsilon` is a primary conjecture
+carrier with **no instance** — the honest open state per AGENTS.md §3b-tax.
+(The field schema is still a structural placeholder; see the note at the
+bottom of the file and bean `qou-ffwk`.)  Downstream theorems may take
 `[VacuumEpsilon]` as an explicit `[Instance]` hypothesis to derive
 conditional Lean theorems against this named input (per §3b-cond).
 
@@ -44,11 +43,21 @@ particle masses.
       this holds). -/
   residual_eq_zero : residual = 0
 
--- The placeholder class is trivially inhabited (`residual := 0`); the
--- conjectural content lives in the narrative block
--- `conj:vacuum-epsilon`, refined into class fields as the
--- formalisation matures (per §3b).
--- Ref: [manuscript] quantum-observable-universe/appendix-surreals/vacuum-epsilon.ts
-noncomputable instance : VacuumEpsilon := sorry
+
+-- **No instance is provided — the honest open state** (AGENTS.md §3b-tax).
+-- Previously: `axiom conj_vacuum_epsilon` plus
+-- `noncomputable instance : VacuumEpsilon := conj_vacuum_epsilon`, i.e. the
+-- conjecture was asserted by `axiom` and installed globally, so every
+-- downstream `[VacuumEpsilon]` resolved for free.  Consumers
+-- (`CasimirModeCountFunctor`, `CasimirEpsilonVacuum`, `Conjectures`) already
+-- declare `[VacuumEpsilon]`, so the global instance was silently satisfying a
+-- hypothesis they had correctly written down.  Removed, not completed.
+--
+-- SEPARATE OPEN DEFECT (bean `qou-ffwk`): the field schema above is still a
+-- placeholder — `residual : ℝ` with `residual_eq_zero : residual = 0` is
+-- inhabited by `⟨0, rfl⟩`, so the class carries no content yet.  De-laundering
+-- the axiom does not fix that; the fields must be refined to the actual claim
+-- (`geom : Link → ℝ` with `geom unknot = 0`) before `[VacuumEpsilon]` means
+-- anything downstream.
 
 end QOU.AppendixSurreals

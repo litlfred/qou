@@ -158,6 +158,68 @@ def load_proposal_1_witness() -> dict:
     return json.loads(path.read_text())
 
 
+# ── Per-partition (y_λ, χ^λ) at q₀ ─────────────────────────────
+#
+# One cached `chi-*-at-q0-50dps` witness per atom. ⁴He already read its cache
+# ("prefer the cached per_partition (instant) over recomputing"); the other five
+# recomputed the seminormal Wedderburn sum from scratch, and that is where this
+# producer's whole runtime went — it consumed the full 2400 s regeneration
+# timeout on every attempt and never once completed, so every cascade restart
+# paid 40 minutes before reaching producer 2.
+#
+# The cache is not merely faster; it is the MORE PRECISE of the two paths. The
+# live call passes `q_val=float(Q_MP)` — f64 — while the witnesses carry 50 dps.
+# Verified rather than assumed, on the two atoms where the live path is cheap
+# enough to run (n = 3): the paths agree to the f64 floor and no further,
+#
+#     y_λ   agree to 3.2e-18        χ^λ   agree to 3.7e-15
+#
+# which is exactly the size of the truncation the live path introduces, and both
+# give `y_(1,1,1) = 0` — so the live module is already convention D, and the
+# swap changes precision, not convention.
+#
+# Naming these files here also gives the regeneration harness the dependency
+# edge it needs: `dependency_edges()` scans producer source for literal witness
+# filenames, so this producer now sorts after `chi_at_q0_via_hoefsmit_mpfr`
+# instead of racing it.
+CHI_CACHE = {
+    "p":   "chi-proton-h3-at-q0-50dps.witness.json",
+    "n":   "chi-neutron-h3-at-q0-50dps.witness.json",
+    "D":   "chi-deuteron-h6-at-q0-50dps.witness.json",
+    "T":   "chi-tritium-h9-at-q0-50dps.witness.json",
+    "3He": "chi-helium-3-h9-at-q0-50dps.witness.json",
+    "4He": "chi-helium-4-h12-at-q0-50dps.witness.json",
+}
+
+
+def _terms_for(atom: str, Z: int, N: int) -> list[dict]:
+    """Per-partition `(y_λ, χ^λ)` at q₀ — from the cache, else recomputed.
+
+    A `partial` cache is refused rather than used: a partial table gives a
+    partial sector mass, and the fraction this producer reports would then be a
+    ratio of two different denominators. Falling back to the live path is slow
+    but correct; silently reporting a fraction of an incomplete sum is not.
+    """
+    name = CHI_CACHE.get(atom)
+    if name:
+        path = _pb.witness_path(name, HERE)
+        if path.exists():
+            cached = json.loads(path.read_text())
+            rows = cached.get("by_partition")
+            if rows and not cached.get("partial"):
+                return [{"partition": e["partition"],
+                         "y_at_q0": float(e["y_lambda"]),
+                         "chi_q_at_q0": float(e["chi_lambda"])}
+                        for e in rows]
+            print(f"    NOTE: {name} is partial/empty — recomputing {atom}",
+                  flush=True)
+    from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal
+    _, terms = global_wedderburn_sum_q_hecke_seminormal(
+        Z=Z, N=N, q_val=float(Q_MP)
+    )
+    return terms
+
+
 # ── 2-row sector analysis ──────────────────────────────────────
 def analyse_2row_sector(atom: str, atom_data: dict) -> dict:
     """For one atom, split contributions by row count and test sub-ansätze."""
@@ -166,23 +228,8 @@ def analyse_2row_sector(atom: str, atom_data: dict) -> dict:
     tr_M = mp.mpf(atom_data["tr_M"])
     abs_tr_M = abs(tr_M)
 
-    # Pull per-partition c_λ data from a_single_block.candidates_top5
-    # is incomplete; reconstruct from per-partition tables in the witness.
-    # Rebuild via wedderburn_jones_markov to get full data for this atom.
-    from wedderburn_jones_markov import global_wedderburn_sum_q_hecke_seminormal
     Z = atom_data["Z"]; N = atom_data["N"]
-    # ⁴He: prefer the cached per_partition (instant) over recomputing.
-    if atom == "4He":
-        cached = json.loads(
-            (_pb.witness_path("chi-helium-4-h12-numeric.witness.json", HERE)).read_text())
-        terms = cached["per_partition"]
-        for t in terms:
-            t["y_at_q0"] = float(t["y_at_q0"])
-            t["chi_q_at_q0"] = float(t["chi_q_at_q0"])
-    else:
-        _, terms = global_wedderburn_sum_q_hecke_seminormal(
-            Z=Z, N=N, q_val=float(Q_MP)
-        )
+    terms = _terms_for(atom, Z, N)
 
     # Tabulate: split by row count
     rows_by_count: dict[int, list[dict]] = {}

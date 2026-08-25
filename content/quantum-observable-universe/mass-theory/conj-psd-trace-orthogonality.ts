@@ -34,6 +34,21 @@ export default conjecture({
         "the σ_avg crossings structurally — these blocks are the " +
         "carriers of the obstruction, not the carriers of the mass.",
     },
+    {
+      kind: "note",
+      date: "2026-08-08",
+      body:
+        "**§7c base-ring note.** The Lean sibling is otherwise entirely " +
+        "combinatorial — `Partition n` is a subtype of `List ℕ`, and " +
+        "`numRows` / `maxRow` are `ℕ`-valued. Its single `ℝ` is " +
+        "`etaLowerBound : ℝ` on the `PSDTraceOrthogonalDecomp` class, which " +
+        "carries the **empirical magnitude separation** " +
+        "`η(A) := max|y_trace| / |y_PSD|` (η(4) ≈ 1.6×10⁵, η(6) ≈ 9×10⁸, from " +
+        "the Lanczos probes recorded above). That is a measured ratio bounded " +
+        "below — a quantity that is both experimental and order-theoretic, so " +
+        "`ℝ` by two independent §7c rows. The shape-class disjointness the " +
+        "conjecture actually asserts needs no base ring at all.",
+    },
   ],
   tags: [
     "tier:S",

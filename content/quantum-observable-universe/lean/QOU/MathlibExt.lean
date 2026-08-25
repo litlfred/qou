@@ -31,7 +31,7 @@ namespace QOU.MathlibExt
 
     TODO upstream: `Mathlib.Data.List.Sort` or
     `Mathlib.Algebra.BigOperators.Group.List`. -/
-theorem List.sum_insertionSort_eq {α : Type*} [AddCommMonoid α]
+theorem sum_insertionSort_eq {α : Type*} [AddCommMonoid α]
     (r : α → α → Prop) [DecidableRel r] (xs : List α) :
     (xs.insertionSort r).sum = xs.sum :=
   (xs.perm_insertionSort r).sum_eq
@@ -40,7 +40,7 @@ theorem List.sum_insertionSort_eq {α : Type*} [AddCommMonoid α]
     (for commutative monoids).
 
     TODO upstream: `Mathlib.Data.List.Sort`. -/
-theorem List.prod_insertionSort_eq {α : Type*} [CommMonoid α]
+theorem prod_insertionSort_eq {α : Type*} [CommMonoid α]
     (r : α → α → Prop) [DecidableRel r] (xs : List α) :
     (xs.insertionSort r).prod = xs.prod :=
   (xs.perm_insertionSort r).prod_eq
@@ -74,7 +74,7 @@ theorem List.foldr_mul_eq_prod_mul {α : Type*} [Monoid α]
 
 /-- Backward-compatible alias matching the original CommMonoid
     name (the statement and proof generalise to any Monoid). -/
-theorem List.foldl_mul_eq_prod_mul {α : Type*} [Monoid α]
+theorem foldl_mul_eq_prod_mul {α : Type*} [Monoid α]
     (xs : List α) (init : α) :
     xs.foldl (· * ·) init = init * xs.prod :=
   List.foldl_mul_eq_mul_prod xs init
@@ -83,7 +83,7 @@ theorem List.foldl_mul_eq_prod_mul {α : Type*} [Monoid α]
 
 /-- For a *commutative* monoid, foldl and foldr agree: both
     produce `init * xs.prod = xs.prod * init`. -/
-theorem List.foldl_eq_foldr_comm {α : Type*} [CommMonoid α]
+theorem foldl_eq_foldr_comm {α : Type*} [CommMonoid α]
     (xs : List α) (init : α) :
     xs.foldl (· * ·) init = xs.foldr (· * ·) init := by
   rw [List.foldl_mul_eq_mul_prod, List.foldr_mul_eq_prod_mul, mul_comm]
@@ -122,7 +122,7 @@ theorem List.commute_init_prod {α : Type*} [Monoid α]
     This discharges `MatrixChainEqBuildChains` (after some
     rearrangement) since `transferMatrix_comm` gives the
     pairwise-commute property. -/
-theorem List.foldl_eq_foldr_of_commute_init {α : Type*} [Monoid α]
+theorem foldl_eq_foldr_of_commute_init {α : Type*} [Monoid α]
     (xs : List α) (init : α) (h : ∀ x ∈ xs, Commute init x) :
     xs.foldl (· * ·) init = xs.foldr (· * ·) init := by
   rw [List.foldl_mul_eq_mul_prod, List.foldr_mul_eq_prod_mul]
@@ -131,7 +131,7 @@ theorem List.foldl_eq_foldr_of_commute_init {α : Type*} [Monoid α]
 /-- Permutation-invariance of products in a commutative monoid
     (specialisation of `List.Perm.prod_eq` for use as a lookup
     target by automation). -/
-theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]
+theorem prod_eq_of_perm {α : Type*} [CommMonoid α]
     {xs ys : List α} (h : xs.Perm ys) :
     xs.prod = ys.prod :=
   List.Perm.prod_eq h
@@ -143,7 +143,7 @@ theorem List.prod_eq_of_perm {α : Type*} [CommMonoid α]
     package this for use at common call sites. -/
 
 /-- `xs.reverse.prod = xs.prod` in a `CommMonoid`. -/
-theorem List.prod_reverse_eq {α : Type*} [CommMonoid α] (xs : List α) :
+theorem prod_reverse_eq {α : Type*} [CommMonoid α] (xs : List α) :
     xs.reverse.prod = xs.prod :=
   (xs.reverse_perm).prod_eq
 
@@ -152,7 +152,7 @@ theorem List.prod_reverse_eq {α : Type*} [CommMonoid α] (xs : List α) :
 
     TODO upstream: `Mathlib.Algebra.BigOperators.Group.List` —
     standard sum-is-finset-sum identity. -/
-theorem List.sum_eq_finsetSum_getD {α : Type*} [AddCommMonoid α]
+theorem sum_eq_finsetSum_getD {α : Type*} [AddCommMonoid α]
     (xs : List α) (z : α) :
     xs.sum = ∑ i ∈ Finset.range xs.length, xs.getD i z := by
   induction xs with
@@ -193,7 +193,7 @@ theorem Real.rpow_neg_half_eq (x : ℝ) (hx : 0 < x) :
 
 /-- The QOU "denominator" `q^(1/2) + q^(-1/2)` equals
     `sqrt q + 1 / sqrt q`. -/
-theorem Real.q_half_denom (q : ℝ) (hq : 0 < q) :
+theorem q_half_denom (q : ℝ) (hq : 0 < q) :
     q ^ (1/2 : ℝ) + q ^ (-(1/2 : ℝ)) = Real.sqrt q + 1 / Real.sqrt q := by
   rw [Real.rpow_half_eq_sqrt q, Real.rpow_neg_half_eq q hq]
 
@@ -204,7 +204,7 @@ theorem Real.q_half_denom (q : ℝ) (hq : 0 < q) :
        = x + 1`,
     i.e. multiplying the QOU half-denominator by `sqrt x` clears
     the inverse, yielding a closed-form polynomial in `x`. -/
-theorem Real.sqrt_mul_half_denom (x : ℝ) (hx : 0 < x) :
+theorem sqrt_mul_half_denom (x : ℝ) (hx : 0 < x) :
     Real.sqrt x * (Real.sqrt x + 1 / Real.sqrt x) = x + 1 := by
   have hsqrt_pos : 0 < Real.sqrt x := Real.sqrt_pos.mpr hx
   have hsqrt_ne : Real.sqrt x ≠ 0 := ne_of_gt hsqrt_pos
@@ -255,7 +255,7 @@ theorem add_inv_ge_two (t : ℝ) (ht : 0 < t) : t + 1 / t ≥ 2 := by
 /-- **AM-GM for `√x + 1/√x`**: for `x > 0`, `√x + 1/√x ≥ 2`.
 
     Direct corollary of `add_inv_ge_two` applied to `t := √x`. -/
-theorem Real.sqrt_add_inv_ge_two (x : ℝ) (hx : 0 < x) :
+theorem sqrt_add_inv_ge_two (x : ℝ) (hx : 0 < x) :
     Real.sqrt x + 1 / Real.sqrt x ≥ 2 := by
   exact add_inv_ge_two (Real.sqrt x) (Real.sqrt_pos.mpr hx)
 

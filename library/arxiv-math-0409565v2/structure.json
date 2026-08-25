@@ -1,0 +1,70 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-math-0409565v2",
+ "source": {
+  "file": "0409565v2.pdf",
+  "sha256": "236704063f12c05e34426a59d228f8be807d7804dee54123f6de36eaeea93928",
+  "bytes": 148906,
+  "pages": 10
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "math/0409565",
+   "version": "2",
+   "primary_class": null,
+   "stamp_date": "14 Oct 2004"
+  },
+  "doi": null,
+  "title": "Unital Gröbner Bases over Arbitrary Commutative Ground Rings",
+  "authors_raw": "Frederick Leitner, Robert Pawloski ∗",
+  "abstract": "Let R be a commutative ring with unity and a let A be a not necessarily commutative R-algebra which is free as an R-module. If I is an ideal in A, one can ask when A/I is also free as an R-module. We show that if A has an admissible system and I has a unital Gr¨ obner basisthen A/I is free as an R-module. We prove a version of Buchberger’s theorem over R and, as a corollary, we obtain a Gr¨ obner basis proof of the Poincare-Birkhoﬀ-Witt Theorem over a commutative ground ring.",
+  "docinfo": {
+   "Producer": "dvips + GPL Ghostscript GIT PRERELEASE 9.22",
+   "CreationDate": "D:20211109141747-05'00'",
+   "Creator": "LaTeX with hyperref package",
+   "Title": "",
+   "Author": ""
+  },
+  "title_prev": "Unital Gröbner Bases over Aribtrary Commutative Ground Rings",
+  "title_lines": [
+   "Unital Gröbner Bases over Aribtrary",
+   "Commutative Ground Rings"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction.",
+   "page": 1,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "Unital Gröbner Bases.",
+   "page": 2,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "number": null,
+   "title": "Introduction.",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 10,
+   "n_chars": 16046,
+   "n_words": 3702
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 2,
+  "sections": 1,
+  "chars_total": 16046
+ }
+}

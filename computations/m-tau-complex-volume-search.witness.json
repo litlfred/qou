@@ -1,0 +1,290 @@
+{
+  "$schema": "../../folio-assistant/schemas/witness.schema.json",
+  "computation": "m-tau-complex-volume-search",
+  "description": "Complex-volume (Vol + i*CS) extension of the refuted 25-knot m_tau search: derived torus carrier + wide <=12-crossing census with search-entropy scoring.",
+  "substrate_q0": "1.1099785827513808075916690956107688798744991218736",
+  "hbar_q": "0.099081716044258507839177117518906063985258373389463",
+  "target_m_tau_over_m_e_codata": "3477.23000000",
+  "target_source": "PDG 2024; m_tau/m_e = 3477.23 (4 sig figs)",
+  "sigma_exp_rel": "5e-05",
+  "muon_sanity": {
+    "vol_4_1": "2.0298832128193072500424051085490405718833786150606",
+    "cs_4_1": "-5.624455548099859e-17",
+    "muon_pred": "206.768326371",
+    "muon_rel_err": "2.11206e-7",
+    "cs_blind_note": "CS(4_1) ~ 0 because the figure-eight is amphichiral; the muon anchor therefore carries no information about how CS enters the functional F."
+  },
+  "fixed_functionals": {
+    "F_re": "Re(Vol + i*CS) = Vol  (the muon-derived choice)",
+    "F_abs": "|Vol + i*CS| = sqrt(Vol^2 + CS^2)"
+  },
+  "fixed_exponents": [
+    2,
+    3,
+    4,
+    5
+  ],
+  "derived_exponent_guess": 3,
+  "part_a_derived_carriers": [
+    {
+      "carrier": "T(2,7)",
+      "p": 2,
+      "q": 7,
+      "class": "torus",
+      "snappy_volume": "0",
+      "snappy_volume_note": "exact 0: Seifert-fibred, not hyperbolic; SnapPy's degenerate solve returns a nondeterministic residual which is not recorded",
+      "solution_type": "contains degenerate tetrahedra",
+      "hyperbolic": false,
+      "note": "Seifert-fibered / torus knot complement: Gromov norm 0, so hyperbolic volume is identically 0 and the complex volume Vol+iCS is (0, non-geometric). The Vol+iCS reading -- real OR complex -- cannot apply to this carrier."
+    },
+    {
+      "carrier": "T(3,5)",
+      "p": 3,
+      "q": 5,
+      "class": "torus",
+      "snappy_volume": "0",
+      "snappy_volume_note": "exact 0: Seifert-fibred, not hyperbolic; SnapPy's degenerate solve returns a nondeterministic residual which is not recorded",
+      "solution_type": "contains flat tetrahedra",
+      "hyperbolic": false,
+      "note": "Seifert-fibered / torus knot complement: Gromov norm 0, so hyperbolic volume is identically 0 and the complex volume Vol+iCS is (0, non-geometric). The Vol+iCS reading -- real OR complex -- cannot apply to this carrier."
+    },
+    {
+      "carrier": "T(3,4)=8_19",
+      "p": 3,
+      "q": 4,
+      "class": "torus",
+      "snappy_volume": "0",
+      "snappy_volume_note": "exact 0: Seifert-fibred, not hyperbolic; SnapPy's degenerate solve returns a nondeterministic residual which is not recorded",
+      "solution_type": "contains flat tetrahedra",
+      "hyperbolic": false,
+      "note": "Seifert-fibered / torus knot complement: Gromov norm 0, so hyperbolic volume is identically 0 and the complex volume Vol+iCS is (0, non-geometric). The Vol+iCS reading -- real OR complex -- cannot apply to this carrier."
+    }
+  ],
+  "part_b_census": {
+    "max_crossings": 12,
+    "n_hyperbolic_knots": 2970,
+    "n_with_cs": 2970,
+    "scores": {
+      "F_re_k2": {
+        "functional": "F_re",
+        "k": 2,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K12a868",
+          "crossings": 12,
+          "vol": "23.43868770930511",
+          "cs": "2.0473018195083488e-15",
+          "predicted": "2387.5157937026147",
+          "rel_err": "0.31338571400148546"
+        }
+      },
+      "F_re_k3": {
+        "functional": "F_re",
+        "k": 3,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K8a11",
+          "crossings": 8,
+          "vol": "3.4272052462740166",
+          "cs": "0.22213312084204287",
+          "predicted": "3523.3805675573567",
+          "rel_err": "0.01327222172745452"
+        }
+      },
+      "F_re_k4": {
+        "functional": "F_re",
+        "k": 4,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K4a1",
+          "crossings": 4,
+          "vol": "2.029883212819307",
+          "cs": "1.3498693315439662e-16",
+          "predicted": "21061.872190543225",
+          "rel_err": "5.057083422880633"
+        }
+      },
+      "F_re_k5": {
+        "functional": "F_re",
+        "k": 5,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K4a1",
+          "crossings": 4,
+          "vol": "2.029883212819307",
+          "cs": "1.3498693315439662e-16",
+          "predicted": "212570.72476555774",
+          "rel_err": "60.132201426295566"
+        }
+      },
+      "F_abs_k2": {
+        "functional": "F_abs",
+        "k": 2,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K12a868",
+          "crossings": 12,
+          "vol": "23.43868770930511",
+          "cs": "2.0473018195083488e-15",
+          "predicted": "2387.5157937026147",
+          "rel_err": "0.31338571400148546"
+        }
+      },
+      "F_abs_k3": {
+        "functional": "F_abs",
+        "k": 3,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K7a4",
+          "crossings": 7,
+          "vol": "3.331744231641115",
+          "cs": "-0.055153534878553484",
+          "predicted": "3425.7099785535665",
+          "rel_err": "0.014816397375621824"
+        }
+      },
+      "F_abs_k4": {
+        "functional": "F_abs",
+        "k": 4,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K4a1",
+          "crossings": 4,
+          "vol": "2.029883212819307",
+          "cs": "1.3498693315439662e-16",
+          "predicted": "21061.872190543225",
+          "rel_err": "5.057083422880633"
+        }
+      },
+      "F_abs_k5": {
+        "functional": "F_abs",
+        "k": 5,
+        "n_evaluated": 2970,
+        "hits_within": {
+          "loose_1pct": 0,
+          "mid_0p1pct": 0,
+          "tight_100ppm": 0
+        },
+        "closest_knot": {
+          "knot": "K4a1",
+          "crossings": 4,
+          "vol": "2.029883212819307",
+          "cs": "1.3498693315439662e-16",
+          "predicted": "212570.72476555774",
+          "rel_err": "60.132201426295566"
+        }
+      }
+    }
+  },
+  "part_b_composite_pairwise": {
+    "n_base_knots": 31,
+    "max_base_crossings": 8,
+    "k": 3,
+    "F": "F_re",
+    "n_pairs": 496,
+    "hits_within_1pct": 0,
+    "closest_pair": {
+      "pair": "K4a1#K4a1",
+      "vol_sum": "4.059766425638614",
+      "predicted": "4173.692879487738",
+      "rel_err": "0.20029243952448864"
+    }
+  },
+  "entropy_analysis": {
+    "census_size": 2970,
+    "n_functionals": 2,
+    "n_exponents": 4,
+    "search_space_size_N": 23760,
+    "search_entropy_bits": "14.54",
+    "tiers": {
+      "1pct": {
+        "tolerance": "0.01",
+        "match_specificity_bits": "5.64",
+        "identifiable": false,
+        "upper_bound_chance_hits_uniform": "475.2"
+      },
+      "0p1pct": {
+        "tolerance": "0.001",
+        "match_specificity_bits": "8.97",
+        "identifiable": false,
+        "upper_bound_chance_hits_uniform": "47.52"
+      },
+      "100ppm": {
+        "tolerance": "0.0001",
+        "match_specificity_bits": "12.29",
+        "identifiable": false,
+        "upper_bound_chance_hits_uniform": "4.75"
+      },
+      "exp_5e-5": {
+        "tolerance": "5e-05",
+        "match_specificity_bits": "13.29",
+        "identifiable": false,
+        "upper_bound_chance_hits_uniform": "2.38"
+      }
+    },
+    "observed_1pct_hits_per_Fk": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "observed_1pct_hits_total": 0,
+    "interpretation": "A tolerance w is 'identifiable' only if match_specificity_bits > search_entropy_bits, i.e. the match pins the target more tightly than the search itself can resolve by chance. Here NO reachable tolerance (down to the experimental 5e-5) is identifiable: the census cannot pin m_tau even in principle. Independently, the empirical scan finds 0 hits at 1% -- the predictions are sparse near the target, floor stays at 1.33 percent as in the 25-knot search. Both point the same way."
+  },
+  "conclusion": "sharpened_negative: the complex-volume axis does not yield a DERIVED identification of m_tau. (1) The framework-derived carrier is a torus knot (T(3,5)/T(2,7)) with zero hyperbolic volume -- the Vol+iCS reading, real or complex, does not apply. (2) For a hyperbolic-knot carrier the muon anchor is CS-blind (CS(4_1)=0), so the CS-dependence of F is unconstrained; the wide census search has entropy far exceeding the specificity of any attainable match, so the closest knot is expected by chance.",
+  "anti_fit_guard": "F and k are FIXED before scoring, not per-knot tuned. The report is hit-COUNTS + entropy, not a 'closest knot' cherry-pick. Reported closest knots are shown precisely to demonstrate they are chance hits among many. No 4th calibration, no fit, no ansatz proposed.",
+  "cross_references": {
+    "queued_extension": "docs/audits/2026-06-03-m-tau-knot-prediction-falsification.md (extension #1: Vol + CS pair)",
+    "refuted_real_search": "computations/m_tau_knot_prediction.py",
+    "entropy_precedent": "PR #1805 (PSLQ entropy bound)"
+  },
+  "duration_sec": "2.398",
+  "scriptHash": "b33f1ecf4b29",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "engine": "snappy+mpmath",
+  "computedAt": "2026-08-23T09:15:28.677565+00:00",
+  "durationMs": 0,
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736",
+  "scriptFile": "m_tau_complex_volume_search.py"
+}

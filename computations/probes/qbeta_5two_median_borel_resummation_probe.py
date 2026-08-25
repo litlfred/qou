@@ -53,10 +53,17 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _path_bridge as _bridge  # noqa: E402, F401
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 import qbeta_5two_stokes_barodd_index_probe as sb  # noqa: E402  (H_num)
 
-mp.mp.dps = 50
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 
 Q0_MUON = mp.mpf("1.10997859555733471")
 # Canonical GGM saddle values — computed, not hardcoded (bean qou-ty28).
@@ -68,8 +75,8 @@ V_DOM = mp.mpc("2.82812206693", "-1.37919426157")   # extraction convention
 
 
 def load_basis():
-    w = json.loads(Path(
-        "computations/probes/qbeta-5two-phi-series-engine.witness.json").read_text())
+    w = record_upstream(Path(
+        "computations/probes/qbeta-5two-phi-series-engine.witness.json"), _UPSTREAM_RECORDS)
     P = {0: mp.mpc(1)}
     for k, v in w["data"]["P_coefficients"].items():
         m = re.match(r"\(?\s*([-\d.e]+)\s*([+-])\s*([\d.e]+)j\)?", v)
@@ -192,6 +199,7 @@ def main() -> int:
 
     wb = WitnessBuilder("qbeta-5two-median-borel-resummation", engine="mpmath",
                         _script_path=__file__)
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "A4.3 (bean qou-ea86): Borel–Laplace resummation of φ_σ1(5₂) on the "
         "A4.2 24-order basis. Padé pole map locates the predicted Stokes "

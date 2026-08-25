@@ -15,8 +15,7 @@ $n \in \mathbb{N}$ write
 
 * $H_n(q)$ for the Iwahori–Hecke algebra at parameter $q$, generated
  by $\sigma_1, \dots, \sigma_{n-1}$ subject to the braid relations
- and $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$
- ([AGENTS.md §7a](../../../AGENTS.md));
+ and $\sigma_i^2 = (q - q^{-1}) \sigma_i + 1$;
 * $\Delta_n^2 = (\sigma_1 \sigma_2 \cdots \sigma_{n-1})^n
   \in Z(B_n)$ for the **full-twist** generator of the centre of the
  braid group, mapped under the Hecke quotient to the central

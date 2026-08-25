@@ -23,6 +23,7 @@ import Mathlib.Algebra.Ring.Defs
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
+import QOU.MathlibExt.QIntegerCanonical
 
 namespace QOU.BraidKnot
 
@@ -38,6 +39,21 @@ noncomputable def qInteger (q : ℝ) (n : ℕ) : ℝ :=
   if n = 0 then 0
   else if q = 1 then (n : ℝ)
   else (q^n - q^(-(n : ℤ))) / (q - q⁻¹)
+
+/-- **Bridge to the canonical classical-extended bracket.**  This site carries
+*two* guards, `n = 0` and `q = 1`, but only the second is doing work: at `n = 0`
+the canonical `qIntBalCl` already returns `0` on both branches (`(0 : ℝ)` at
+`q = 1`, and `qIntBal q 0 = 0` otherwise).  So the extra `n = 0` case is
+redundant and the agreement is unconditional. -/
+theorem qInteger_eq_canonical (q : ℝ) (n : ℕ) :
+    qInteger q n = QOU.QInteger.qIntBalCl q n := by
+  unfold qInteger QOU.QInteger.qIntBalCl
+  split_ifs with h0 h1 h1
+  · subst h0; simp
+  · subst h0; simp
+  · rfl
+  · simp [QOU.QInteger.qIntBal, QOU.Mass.QHookDimensionBalanced.qIntBal, zpow_neg,
+      zpow_natCast, inv_pow]
 
 /-- The n-th coefficient of the symmetric Li_2^q series:
     [Li_2^q]_n = 1 / (n · [n]_q) for n ≥ 1; 0 at n = 0. -/

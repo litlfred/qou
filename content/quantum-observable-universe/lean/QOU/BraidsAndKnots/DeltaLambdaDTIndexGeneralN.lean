@@ -198,7 +198,7 @@ theorem parity_eq_w0_sign_of_nStat_eq_sumChoose2
     the conjugate Young-subgroup longest-element sign for every `λ ⊢ 5`.  This is
     the general lemma above discharged at the anchor — a witness that the
     conditional reduction is non-vacuous. -/
-theorem PartitionOf5.parity_eq_w0_sign (p : PartitionOf5) :
+theorem parity_eq_w0_sign (p : PartitionOf5) :
     deltaSignParity (nStatList p.parts) = (-1 : ℤ) ^ (sumChoose2 p.conjParts) :=
   parity_eq_w0_sign_of_nStat_eq_sumChoose2 p.parts p.conjParts
     (by rw [← PartitionOf5.nStat_eq_nStatList]; exact p.nStat_eq_sumChoose2_conj)
@@ -222,7 +222,7 @@ theorem PartitionOf5.dtEuler_eq_dtEulerG (p : PartitionOf5) :
     `DeltaLambdaDTIndex.PartitionOf5.dtEuler_eq_deltaLambda`, obtained here as a
     corollary of the all-`n` `dtEulerG_collapse` + the chirality parity — evidence
     that the general identity subsumes the anchor. -/
-theorem PartitionOf5.dtEuler_eq_deltaLambda_via_collapse (p : PartitionOf5) :
+theorem dtEuler_eq_deltaLambda_via_collapse (p : PartitionOf5) :
     p.dtEuler = p.deltaLambda := by
   rw [PartitionOf5.dtEuler_eq_dtEulerG, PartitionOf5.nStat_eq_nStatList]
   exact p.dtEulerG_eq_deltaLambda

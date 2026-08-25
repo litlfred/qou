@@ -58,9 +58,11 @@ Limits / what's still open:
     non-polynomial — it lives in ``ℚ(q, π²)``.  We therefore offer
     a symbolic helper ``alpha_em_inv_sym()`` returning an
     expression in (q, π).
-  * ``z = 1/(q^{1/2} + q^{-1/2})`` introduces ``√q``.  We carry
-    it as ``sympy.Rational(1) / (sqrt(q) + 1/sqrt(q))`` so the full
-    expression lives in ``ℤ[q^{±1/2}]`` after rationalisation.
+  * ``z = q³/(q²+1)`` (**convention D**) is a rational function of q,
+    so nothing here leaves ``ℚ(q)`` on account of z.  Under the excised
+    convention C, ``z = 1/(q^{1/2} + q^{-1/2})`` introduced ``√q`` and the
+    expression lived in ``ℤ[q^{±1/2}]`` after rationalisation; that branch
+    is gone.
   * Fractions in ``hm`` arise from ``-h/2`` for mixed
     quark/inter-nucleon crossings.  Sympy handles ``Rational(1, 2)``
     natively, so coefficients land in ``ℚ[q^{±1}]``.
@@ -100,9 +102,23 @@ q_inv = 1 / q
 # h = q - q⁻¹  (symbolic)
 h = q - q_inv
 
-# z = 1 / (√q + 1/√q) — irrational in q; sympy carries sqrt(q) cleanly
-sqrt_q = sp.sqrt(q)
-z = sp.Rational(1) / (sqrt_q + 1 / sqrt_q)
+# z = q³/(q²+1) — **convention D** (owner ruling 2026-08-15, reaffirmed
+# 2026-08-23).  Was convention C, z = 1/(√q + 1/√q) = √q/(q+1), excised.
+#
+# This module is the symbolic mirror of pyhecke.gram / hecke_core, and
+# `pyhecke/gram.py` has carried convention D since 2026-08-15 — its own banner
+# records that the change moves z by +22.70% and is NOT value-preserving.  The
+# mirror was left on C, so its `TR_M_SYM` Markov-trace weights disagreed with
+# the module they mirror by +22.70% at length 1, +50.6% at length 2 and +84.7%
+# at length 3.  That is a frame straddle, not a convention preference.
+#
+# Under D, z is rational in q, so the ℚ[q^{±1/2}] half-power branch that C
+# forced does not arise here at all.  The module-level `sqrt_q = sp.sqrt(q)`
+# is DELETED rather than kept: z was its only consumer in this file, it is not
+# part of the public surface listed in the module docstring, and no importer
+# reads it.  Leaving it would advertise a half-power branch that no longer
+# exists.
+z = q ** 3 / (q ** 2 + 1)
 
 # [2]_q, [n]_q
 two_q = q + q_inv
@@ -156,7 +172,8 @@ def hm_sym(nf: Sequence[sp.Expr], c: sp.Expr, d: sp.Expr, gen: int) -> list[sp.E
     """Multiply NF element by (c·σ_gen + d·I) symbolically.
 
     Mirrors ``pyhecke.gram.hm`` line-for-line, but every coefficient
-    stays in ``ℚ[q^{±1}]`` (or ``ℚ[q^{±1/2}]`` once z gets involved).
+    stays in ``ℚ[q^{±1}]``.  (The tables below use only ``h``, ``c`` and
+    ``d`` — z does not enter this function in either convention.)
     Returns a 6-element list of sympy expressions.
     """
     r = [sp.Integer(0)] * 6
@@ -287,8 +304,10 @@ def _vertex_channels_sym(chain: Iterable[tuple[sp.Expr, sp.Expr]]):
     """Return (λ_sym, V_std, λ_alt) symbolically for a crossing chain.
 
     Mirrors ``hecke_core._vertex_channels`` — but nothing is f64.
-    The transfer matrix runs in ``ℚ(q)`` (or the field of fractions
-    of ``ℤ[q^{±1/2}]`` when z appears).
+    The transfer matrix runs in ``ℚ(q)`` — including where z appears,
+    since convention D's ``z = q³/(q²+1)`` is rational in q.  Under the
+    excised convention C this dropped to the field of fractions of
+    ``ℤ[q^{±1/2}]``.
     """
     a = sp.Integer(0)
     b = sp.Integer(1)
@@ -558,6 +577,52 @@ def alpha_em_inv_sym(pi_sym: sp.Symbol | None = None) -> sp.Expr:
 
     kappa = det_G_cl / det_G_q
     return bare_inv * (1 + c1 + c1**2 * kappa)
+
+
+def alpha_em_inv_sym_exact(pi_sym: sp.Symbol | None = None) -> sp.Expr:
+    """Symbolic 1/α_EM with the CS tower summed EXACTLY (all orders).
+
+    `alpha_em_inv_sym` above truncates the correction tower at order 2
+    (``1 + c1 + c1²κ``). That tower is geometric —
+
+        1 + Σ_{j≥1} c₁^j κ^{j−1}  =  1 + c₁/(1 − c₁κ)
+
+    — so it admits a closed form with no order parameter at all. Expanding
+    the closed form in ``c₁`` reproduces ``1 + c₁ + c₁²κ + c₁³κ² + …``, so
+    the truncated version is its 3-term Taylor polynomial.
+
+    At the substrate anchor ``c₁·κ ≈ 2.7e-3``, so the truncation costs
+    ≈ 11.06 ppb. Prefer this function wherever the result feeds a ppb- or
+    ppq-level claim. Lives in ℚ(q, π) exactly as the truncated form does.
+    """
+    pi = pi_sym if pi_sym is not None else sp.pi
+    bare_inv = q * q_int_sym(9) * q_int_sym(10)
+    CS_T29 = pi**2 * sp.Rational(10, 9)
+    CS_T35 = pi**2 * sp.Rational(16, 15)
+    hbar_q2 = (1 - q_inv) ** 2
+    n2 = q_int_sym(2)
+    c1 = (CS_T29 + CS_T35) * (n2 / 2) * hbar_q2 / bare_inv
+
+    sl = sp.Integer(8)
+    linking = sp.Integer(17)
+    G_cl_11 = CS_T29 + pi**2 * sl**2 / sp.Integer(18) ** 2
+    G_cl_22 = CS_T35 + pi**2 * sl**2 / sp.Integer(15) ** 2
+    G_cl_12 = pi**2 * linking**2 / (sp.Integer(18) * sp.Integer(15))
+    det_G_cl = G_cl_11 * G_cl_22 - G_cl_12**2
+
+    qi9, qi5, qi3 = q_int_sym(9), q_int_sym(5), q_int_sym(3)
+    linking_q = sp.Abs(n2 * qi5 - qi3 * qi9)
+    CS_q_29 = pi**2 * (n2**2 - 1) * (qi9**2 - 1) / (12 * n2 * qi9)
+    CS_q_35 = pi**2 * (qi3**2 - 1) * (qi5**2 - 1) / (12 * qi3 * qi5)
+    sl_q_29 = (n2 - 1) * (qi9 - 1)
+    sl_q_35 = (qi3 - 1) * (qi5 - 1)
+    G_q_11 = CS_q_29 + pi**2 * sl_q_29**2 / (n2 * qi9) ** 2
+    G_q_22 = CS_q_35 + pi**2 * sl_q_35**2 / (qi3 * qi5) ** 2
+    G_q_12 = pi**2 * linking_q**2 / (n2 * qi9 * qi3 * qi5)
+    det_G_q = G_q_11 * G_q_22 - G_q_12**2
+
+    kappa = det_G_cl / det_G_q
+    return bare_inv * (1 + c1 / (1 - c1 * kappa))
 
 
 # ══════════════════════════════════════════════════════════════

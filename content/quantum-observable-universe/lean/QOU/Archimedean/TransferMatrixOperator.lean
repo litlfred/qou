@@ -38,7 +38,7 @@ structure TransferMatrixOperator (R : Type*) [Field R] where
 -- Ref: [manuscript] quantum-observable-universe/mass-theory/transfer-matrix-operator-properties.ts
 
 /-- The identity operator `T = 0·σ + 1` acts trivially: `(aσ+b) ↦ aσ + b`. -/
-theorem TransferMatrixOperator.reduce_identity {R : Type*} [Field R]
+theorem reduce_identity {R : Type*} [Field R]
     (T : TransferMatrixOperator R) (a b : R) :
     T.reduceA a b 0 1 = a ∧ T.reduceB a b 0 1 = b := by
   refine ⟨?_, ?_⟩

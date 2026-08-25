@@ -95,7 +95,7 @@ def main() -> int:
     h = q - 1 / q
     hbar = (q - 1) / q
     hbar2 = hbar ** 2
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     b = mp.sqrt(q ** 4 + q ** 2 + 1) / (q ** 2 + 1)
     alpha = (z - 1) * h / 2
     u = b * hbar2

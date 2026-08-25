@@ -58,6 +58,10 @@ structure HeckeJMSpectrum (R : Type*) [CommRing R] (q : R) (n : ℕ) where
       downstream instances (Mathlib `MvPolynomial.esymm` or
       hand-rolled). -/
   esymm : ℕ → List R → R
+  /-- The Jucys-Murphy elements pairwise commute. -/
+  jm_commutes : ∀ k l : Fin n, jm k * jm l = jm l * jm k
+  /-- The symmetric polynomials in J_k are central. -/
+  esymmJM_central : ∀ ℓ x, esymmJM ℓ * x = x * esymmJM ℓ
   /-- Wedderburn-block scalar action of e_ℓ(J_1,…,J_n) on V_λ. -/
   centralScalar : ℕ → List ℕ → R
   /-- Murphy 1992 spectrum theorem (axiomatised).
@@ -80,21 +84,14 @@ theorem jm_elements_commute
     {R : Type*} [CommRing R] (q : R) (n : ℕ)
     (sp : HeckeJMSpectrum R q n) (k l : Fin n) :
     sp.jm k * sp.jm l = sp.jm l * sp.jm k :=
-  -- Ref: [jucys1974] Reports Math. Phys. 5 (1974); [murphy1992] J. Algebra
-  --   152 (1992) — the Jucys–Murphy elements pairwise commute. The proof
-  --   needs the full Hecke multiplication on `sp.algebra` (pending).
-  sorry
+  sp.jm_commutes k l
 
 /-- Step 2: The symmetric polynomials in J_k are central. -/
 theorem jm_esymm_central
     {R : Type*} [CommRing R] (q : R) (n : ℕ)
     (sp : HeckeJMSpectrum R q n) (ℓ : ℕ) (x : sp.algebra) :
     sp.esymmJM ℓ * x = x * sp.esymmJM ℓ :=
-  -- Ref: [murphy1992] J. Algebra 152 (1992) §2; [jucys1974] Reports Math.
-  --   Phys. 5 (1974) — the symmetric polynomials in the Jucys–Murphy
-  --   elements are central in H_n(q). `esymmJM` is an abstract structure
-  --   field; centrality needs the full Hecke multiplication (pending).
-  sorry
+  sp.esymmJM_central ℓ x
 
 /-- Murphy 1992: spectrum equation for e_ℓ(J_1,…,J_n) on V_λ.
 

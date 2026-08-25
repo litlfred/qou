@@ -231,7 +231,7 @@ def test_su2_clebsch_gordan() -> dict:
 
 
 def main():
-    mp.mp.dps = 50
+    set_compute_dps()
     w = WitnessBuilder("gap-a4-T8-rt-q-schur-probe", engine="mpmath")
     w.set_audit_only("docs/audits/2026-06-01-s5-so3-su2-u1-fiber-action.md")
     w.set_description(

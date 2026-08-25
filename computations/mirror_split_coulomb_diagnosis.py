@@ -9,7 +9,7 @@ A=3 mirror split B(³H)−B(³He) = ε_nn−ε_pp overshoots AME by ~3×. This d
 The mirror split from the #2089 log-trace kernel is purely STRONG/categorical
 (f_bond are Markov-trace factors, no EM):
     E₀·(ε_nn − ε_pp) = E₀·log(f_pp/f_nn),   E₀ = m_e/(q₀(q₀−1)),
-    f_pp = z = √q/(q+1),   f_nn = (q^{3/2}−q³−q²+q+1)/(q(q+1)).
+    f_pp = z = q³/(q²+1),   f_nn = z − h = 1/(q³+q)   (convention D).
 
 But the OBSERVED mirror split is essentially all COULOMB: ³He (Z=2) has one pp pair
 that ³H (Z=1) lacks, and the pp Coulomb energy e²/(4πε₀·r) at the A=3 proton
@@ -45,7 +45,7 @@ sys.path.insert(0, str(HERE))
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from codata_constants import M_E_MEV, _ame_binding_mev  # noqa: E402
-from coulomb_energy import ALPHA_HBAR_C_MEV_FM  # noqa: E402 — shared e²/(4πε₀)=α·ħc source
+from coulomb_energy import alpha_em_hbar_c_mev_fm  # noqa: E402 — shared e²/(4πε₀)=α·ħc source
 try:
     from witness_base import WitnessBuilder  # noqa: E402
     _HAVE_WB = True
@@ -57,7 +57,13 @@ set_compute_dps()
 q = mp.mpf(Q_50_DIGIT_STR)
 
 # e²/(4πε₀) = α·ħc, the shared repo constant (computations/coulomb_energy.py).
-E2_OVER_4PIEPS0_MEV_FM = mp.mpf(str(ALPHA_HBAR_C_MEV_FM))
+# `ALPHA_HBAR_C_MEV_FM` (the hard-coded CODATA 1.43996) was drained from
+# coulomb_energy in favour of the DERIVED, parameter-free
+# `alpha_em_hbar_c_mev_fm()`, which routes through
+# `meson_em_sinh_closed_form._alpha_em_inv_derived`. This probe still imported
+# the removed name and so could not run at all -- a pre-existing ImportError
+# on main, not a consequence of the convention migration.
+E2_OVER_4PIEPS0_MEV_FM = alpha_em_hbar_c_mev_fm()
 # physical strong-CSB scale: the ³He–³H Nolen–Schiffer anomaly ≈ 0.07 MeV — the
 # model-independent residual after a realistic (not point-charge) Coulomb subtraction.
 NOLEN_SCHIFFER_MEV = mp.mpf("0.07")
@@ -65,9 +71,19 @@ NOLEN_SCHIFFER_MEV = mp.mpf("0.07")
 
 def main() -> int:
     # ── derived #2089 strong mirror split ─────────────────────────────────────
-    z = mp.sqrt(q) / (q + 1)
+    # Convention D: z = q^3/(q^2+1). The kernel is STRUCTURAL --
+    # f_pp = z, f_nn = z - h, f_pn = z - h/2 (#2089) -- and these lines
+    # previously carried the C-substituted EXPANSION of exactly that, which is
+    # where the q^{3/2} came from. Writing the structural form instead both
+    # migrates the convention and removes the expansion: under D every factor
+    # is rational, because D never leaves Q(q).
+    #
+    #     f_pp = q^3/(q^2+1)      f_nn = 1/(q^3+q)      f_pn = (q^4+1)/(2q(q^2+1))
+    z = q ** 3 / (q ** 2 + 1)
+    h = q - 1 / q
     f_pp = z
-    f_nn = (q ** mp.mpf("1.5") - q ** 3 - q ** 2 + q + 1) / (q * (q + 1))
+    f_nn = z - h
+    f_pn = z - h / 2
     E0 = mp.mpf(str(M_E_MEV)) / (q * (q - 1))
     strong_split = E0 * (mp.log(1 / f_nn) - mp.log(1 / f_pp))   # = E₀(ε_nn−ε_pp)
 

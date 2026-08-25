@@ -42,7 +42,8 @@ from _precision import set_compute_dps, fmt  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 from codata_constants import M_E_MEV, AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
 from mass_at_3A_proper import dim_q, qfac  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 
 B_AME = {
@@ -53,6 +54,12 @@ B_AME = {
 }
 
 ZN = {"D": (1, 1), "T": (1, 2), "3He": (2, 1), "4He": (2, 2)}
+
+# Raise precision before the constants below, not only in main(): these are
+# built at import time, and at mpmath's default 15 dps a 17-digit literal is
+# frozen at 53 bits with its last digit gone. Same 30 dps main() sets, and
+# set_compute_dps is idempotent.
+set_compute_dps(30)
 
 # Vol_hyp per atom (from PR #787 Phase 3 delta-lambda-jsj-phase3.witness.json).
 VOL_HYP = {
@@ -76,7 +83,7 @@ def categorical_search_for(target: mp.mpf, max_rel_err: float = 0.01):
     q = mp.mpf(str(Q0))
     qi = 1 / q
     h = q - qi
-    z = 1 / (mp.sqrt(q) + 1 / mp.sqrt(q))
+    z = q**3 / (q**2 + 1)
     sqrt_q = mp.sqrt(q)
     sqrt_qi = 1 / sqrt_q
 
@@ -152,7 +159,7 @@ def report_constit_factor_search() -> dict:
 # ──────────────────────────────────────────────────────────────────
 
 def alpha_k_base(k: int) -> mp.mpf:
-    z_mark = 1 / (mp.sqrt(Q0) + 1 / mp.sqrt(Q0))
+    z_mark = Q0**3 / (Q0**2 + 1)
     G = mp.catalan
     if k in (0, 1, 3):
         return mp.mpf(1)
@@ -171,7 +178,7 @@ def chi_lambda_braid_via_rust(shape, braid_word_signed, q_f64):
 
 
 def fr_pullback_weights_k3(by_partition, n_strands, q_f64):
-    qfact = qfac(n_strands)
+    qfact = qfac(n_strands, Q0_PROTON)
     eps = vanishing_threshold()
     weights = {}
     chi_at_3 = {}
@@ -180,7 +187,7 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64):
     for p in by_partition:
         shape = tuple(p["partition"])
         depth = len(shape) - 1
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         dq_sq = mp.mpf(str(dq * dq))
         if depth != 3:
             weights[shape] = dq_sq / qfact
@@ -195,12 +202,12 @@ def fr_pullback_weights_k3(by_partition, n_strands, q_f64):
         z_norm += dq_sq * mp.fabs(chi_K)
     if z_norm < eps:
         for shape in chi_at_3:
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             weights[shape] = mp.mpf(str(dq * dq)) / qfact
     else:
         scale = s_uniform / z_norm
         for shape, chi_K in chi_at_3.items():
-            dq = dim_q(shape)
+            dq = dim_q(shape, Q0_PROTON)
             weights[shape] = mp.mpf(str(dq * dq)) * mp.fabs(chi_K) * scale
     return weights
 
@@ -213,7 +220,7 @@ def phi_k_with_weights(by_partition, k, weights):
         if len(shape) - 1 != k:
             continue
         chi = mp.mpf(str(p["chi_lambda"]))
-        dq = dim_q(shape)
+        dq = dim_q(shape, Q0_PROTON)
         magnitude = mp.fabs(chi) * dq
         if magnitude < eps:
             continue

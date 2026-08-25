@@ -51,6 +51,8 @@ from witness_base import WitnessBuilder
 from hecke_characters import chi_lambda_braid, partitions_of, dim_q
 from q_parameter import Q as Q0_FLOAT
 from q_mpmath import set_q, qint, qfac
+from _precision import set_compute_dps  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 set_q(Q0_FLOAT)
 
 
@@ -80,7 +82,7 @@ def chi_lambda_K(K_word: list[int], n_strands: int, n_target: int, lam: tuple) -
     """
     if not K_word:
         # unknot — identity character = dim_q(λ)
-        return float(dim_q(lam))
+        return float(dim_q(lam, Q0_PROTON))
     # Lift K's word to n_target strands (identity extension)
     word_marshalled = [(1 if s > 0 else -1, abs(s)) for s in K_word]
     try:
@@ -95,7 +97,7 @@ def depth_k(partition: tuple) -> int:
 
 
 def main() -> int:
-    mp.mp.dps = 30
+    set_compute_dps()
     builder = WitnessBuilder("k-star-search-phase5d-5")
     builder.set_description(
         "Phase 5d.5: empirical search for the depth-stratified "
@@ -135,7 +137,7 @@ def main() -> int:
                 weights = {}
                 Z_norm = mp.mpf(0)
                 for lam in partitions_at_depth_k:
-                    dq2 = mp.mpf(str(dim_q(lam))) ** 2
+                    dq2 = mp.mpf(str(dim_q(lam, Q0_PROTON))) ** 2
                     chi = mp.mpf(str(chis[str(lam)]))
                     w = dq2 * chi
                     weights[str(lam)] = float(w)

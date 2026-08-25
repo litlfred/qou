@@ -2,7 +2,7 @@
 
 *Let $\beta \in B_n$ be any braid word. There is a terminating algorithm that returns a closed-form symbolic expression for $\mathrm{tr}_M(\beta) \in \mathbb{Q}(q)$ using only:*
 - *the Hecke quadratic $\sigma_i^2 = h \sigma_i + 1$ (with $h = q - q^{-1}$);*
-- *the Markov axiom $\mathrm{tr}_M(\alpha \sigma_n) = z \mathrm{tr}_M(\alpha)$ for $\alpha \in H_n \subset H_{n+1}$ (with $z = 1/(q^{1/2}+q^{-1/2})$);*
+- *the Markov axiom $\mathrm{tr}_M(\alpha \sigma_n) = z \mathrm{tr}_M(\alpha)$ for $\alpha \in H_n \subset H_{n+1}$, for the Markov parameter $z$;*
 - *cyclicity $\mathrm{tr}_M(\alpha\beta) = \mathrm{tr}_M(\beta\alpha)$;*
 - *and the braid relations.*
 
@@ -12,9 +12,16 @@ $$
 $$
 *for $\alpha \in H_k(q) \hookrightarrow H_n(q)$ on strands $\{1, \ldots, k\}$ and $\beta \in H_{n-k-1}(q) \hookrightarrow H_n(q)$ on strands $\{k+2, \ldots, n\}$ (separated by the unused generator $\sigma_{k+1}$).*
 
+The algorithm and its correctness are **parametric in $z$**: no step below
+evaluates the Markov parameter, so the statement holds for whatever value the
+Markov axiom is given. Production evaluates it at $z = q^{3}/(q^{2}+1)$. This is
+worth stating explicitly because the statement previously fixed $z$ to
+$1/(q^{1/2}+q^{-1/2})$ inside a claim that never used it, which made a
+convention choice look like a hypothesis of the theorem.
+
 ## Proof — the algorithm
 
-**Input:** braid word $\beta = \sigma_{i_1}^{\varepsilon_1} \cdots \sigma_{i_m}^{\varepsilon_m}$ with $\varepsilon_j \in \{± 1\}$ and $1 \leq i_j \leq n - 1$.
+**Input:** braid word $\beta = \sigma_{i_1}^{\varepsilon_1} \cdots \sigma_{i_m}^{\varepsilon_m}$ with $\varepsilon_j \in \{\pm 1\}$ and $1 \leq i_j \leq n - 1$.
 
 **Step 1 (Hecke expansion).** Expand $\beta$ into the standard Iwahori-Hecke basis $T_w$ for $w \in S_n$:
 $$
@@ -70,9 +77,26 @@ by induction on $\ell(\beta)$. The recursive algorithm realises this property au
 
 | atom | braid word | $H_n$ | $\mathrm{tr}_M(q_0)$ |
 |---|---|---|---|
-| proton | $\sigma_1^7 \sigma_2^4$ | $H_3$ | $1.633154\ldots$ |
-| neutron | $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$ | $H_3$ | $1.248248\ldots$ |
+| proton | $\sigma_1^7 \sigma_2^4$ | $H_3$ | $1.884319\ldots$ |
+| neutron | $\sigma_1^6 \sigma_2^4 \sigma_1^{-1}$ | $H_3$ | $1.464034\ldots$ |
 | deuteron disjoint | $\sigma_1^7\sigma_2^4 \oplus \sigma_4^6\sigma_5^4\sigma_4^{-1}$ | $H_6$ | $\mathrm{tr}_M(p)\cdot\mathrm{tr}_M(n)$ |
+
+The two numeric entries are read from
+`computations/markov/markov-trace-recursive.witness.json`, evaluated at
+$z = q^{3}/(q^{2}+1)$. They are *not* nucleon mass inputs: these braid words are
+not the canonical nucleon words, so the values must not be used for mass
+predictions.
+
+The producer additionally checks the closed forms the Markov axioms force —
+$\mathrm{tr}_M(\sigma_i) = z$, $\mathrm{tr}_M(\sigma_1\sigma_2) = z^2$,
+$\mathrm{tr}_M(\sigma_1^2) = hz + 1$, and $z^3$, $z^4$ on the $H_4$ and $H_5$
+chains — together with the disjoint-product identity above, evaluated as
+$\mathrm{tr}_M(H_6;\sigma_1\sigma_2\sigma_4\sigma_5)$ against
+$\mathrm{tr}_M(H_3;\sigma_1\sigma_2)^2$. All nine agree to the working
+precision. These are the substantive checks: each is a prediction of the axioms
+that the reducer reaches by an independent route (Hecke-basis expansion, then
+recursive descent), whereas the two table entries above have no independent
+reference to be checked against.
 
 ## References
 

@@ -21,8 +21,16 @@ validity audit) into the atom braid-word binding calculation:
 where tr_M is the Markov-axioms-satisfying trace matching
 prop:categorical-mass-markov's explicit values table — NOT the
 Plancherel-weighted form used in hecke_core.atom_markov_trace and
-mass_at_3A_proper.binding_3A (both deviate from the prop's z =
-1/(q^{1/2} + q^{-1/2}) ≈ 0.499).
+mass_at_3A_proper.binding_3A (both deviate from the prop's z).
+
+TRACE CONVENTION: **convention D** (SU(2)/Temperley-Lieb, Jones),
+z = q^3/(q^2+1) ≈ 0.612688, y_(1^3) = 0. This module holds no z of its
+own — it inherits the default of `markov_trace_canonical.tr_M_element`
+(l.318-319 call it without `z`), which is `hecke_symbolic.z_markov`,
+switched C -> D on 2026-08-09 (bean qou-wgta item 4). This prose said
+"the prop's z = 1/(q^{1/2} + q^{-1/2}) ≈ 0.499" — convention C, excised
+by owner ruling the same day. Registry:
+docs/coordination/trace-convention-registry.md.
 
 Result is compared to:
   • binding_3A (Plancherel)         — current best H_{3A} path
@@ -50,7 +58,11 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
-from q_parameter import Q as q0, HA as h_q  # canonical aliases per AGENTS.md §7
+# 50-dps sources. `h_q` is only used in 1e-6 tolerance comparisons and `q0`
+# in a sympy subst cast to complex, so neither NEEDS full precision — but
+# reading the f64 name is what the NO FLOAT64 directive forbids, and the
+# _MP family is a drop-in in both positions.
+from q_parameter import Q_MP as q0, HA_MP as h_q  # canonical aliases per AGENTS.md §7
 from witness_base import WitnessBuilder  # noqa: E402
 # AME 2020 binding-energy comparison targets + proton mass (validation-only,
 # NOT calibration inputs — per AGENTS.md §"Canonical derivation chain" the
@@ -63,6 +75,7 @@ from codata_constants import (
     AME_B_TRITIUM_MEV_VALIDATION,
     AME_B_HE3_MEV_VALIDATION,
     AME_B_HE4_MEV_VALIDATION,
+    ame_binding_mev,
 )
 
 
@@ -145,8 +158,12 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
     B = Q_β(n) · (tr_M(W_free) − tr_M(W_atom)),   [SIGNED categorical
     difference — see the in-body note; the double-modulus form was a
     non-archimedean misuse]
-    Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, CAL-3
-    per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
+    Q_β(n) = 0.78233341 MeV (free-neutron β-decay Q-value, the **CAL-2
+    proxy** — NOT CAL-3; CAL-3 is 𝔇_π, exactly as line 69 of this file
+    already states. `precision-goals.md` scores Q_β as a *prediction*
+    carrying 1248–1279 ppb, not as a calibration input, and
+    `three-calibration-inputs-context` forbids "a second hadronic scale".
+    Per [`prop:three-calibration-inputs`](../../content/quantum-observable-universe/braids-and-knots/three-calibration-inputs.md)).
 
     **Naming note (2026-05-17, this branch).** This binding-scale
     parameter is the **β-decay Q-value $Q_\\beta(n)$**, **NOT** the
@@ -440,28 +457,37 @@ def binding_observe_last(Z: int, N: int, *, dps: int = 50):
 
 
 if __name__ == "__main__":
-    # AME 2020 binding-energy comparison targets imported from the
-    # central codata_constants registry (validation-only; not CAL inputs).
-    # Previously hardcoded inline: (2.22452, 8.481821, 7.71804, 28.295674);
-    # the tritium value was a typo (correct AME 2020 = 8.481798). Now
-    # loaded from `ame-2020-binding-energies.witness.json` via the
-    # AME_B_*_MEV_VALIDATION constants (PR #1105).
+    # AME 2020 binding-energy comparison targets, every one read from the
+    # vendored AME2020 table via `codata_constants.ame_binding_mev(Z, A)`
+    # (validation-only; not CAL inputs).
+    #
+    # PR #1105 routed the first four through the AME_B_*_MEV_VALIDATION
+    # constants after finding the inline tritium value was a typo
+    # (8.481821 for 8.481798). The last three stayed as literals and were
+    # each ~500 eV off — a larger error than the typo that prompted the
+    # first fix:
+    #     6Li  31.994526  vs  31.9939872   (-538.8 eV)
+    #     7Li  39.244531  vs  39.2450807   (+549.7 eV)
+    #     7Be  37.600350  vs  37.6008409   (+490.9 eV)
+    # A hand-typed reference value drifts silently; an accessor call cannot.
+    # (2026-08-19, alongside the ame-2020-binding-energies witness becoming
+    # producer-backed rather than hand-entered.)
     ATOMS = [
         ("D",    1, 1, float(AME_B_DEUTERON_MEV_VALIDATION)),
         ("T",    1, 2, float(AME_B_TRITIUM_MEV_VALIDATION)),
         ("3He",  2, 1, float(AME_B_HE3_MEV_VALIDATION)),
         ("4He",  2, 2, float(AME_B_HE4_MEV_VALIDATION)),
-        ("6Li",  3, 3, 31.994526),
+        ("6Li",  3, 3, float(ame_binding_mev(3, 6))),
         # A=7 mirror pair — the SECOND proton-excess test after T/³He (the
         # Z-correction slope test, per the 9b workplan). ⁷Be (Z>N) is the
         # proton-rich member; ⁷Li (N>Z) its mirror. AME2020 binding (MeV).
-        ("7Li",  3, 4, 39.244531),
-        ("7Be",  4, 3, 37.600350),
+        ("7Li",  3, 4, float(ame_binding_mev(3, 7))),
+        ("7Be",  4, 3, float(ame_binding_mev(4, 7))),
     ]
     print("=" * 100)
     print("BINDING via CANONICAL Jones-Markov trace "
           "(prop:categorical-mass-markov)")
-    print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-3)")
+    print(f"q₀ = {q0}, Q_β(n) = {float(_Q_BETA_N)} MeV (β-decay Q-value, CAL-2 proxy)")
     print("=" * 100)
     results = []
     print(f"  {'Atom':>6} {'A':>3} {'3A':>3} {'B_AME':>8} "
@@ -504,7 +530,8 @@ if __name__ == "__main__":
             f"tr_M_atom) [SIGNED categorical difference; the double-"
             f"modulus |·|−|·| was a non-archimedean misuse] with "
             f"Q_β(n) = {float(_Q_BETA_N):.8f} MeV (free-"
-            "neutron β-decay Q-value, CAL-3 calibration input — "
+            "neutron β-decay Q-value, the CAL-2 proxy — NOT CAL-3, "
+            "which is 𝔇_π; Q_β is a scored prediction, not an input — "
             "NOT the canonical E_0 = m_e/(q_0(q_0-1)) ≈ 4.186 MeV). "
             "DIAGNOSTIC ONLY: predicted B values are 5–40× smaller "
             "than AME because Q_β is the wrong energy scale; the "

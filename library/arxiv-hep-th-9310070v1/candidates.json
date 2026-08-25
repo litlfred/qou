@@ -1,0 +1,44 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-hep-th-9310070v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "b979ebf2f47a465388a723997e70cc863ce0a1ecc5f8a049d195b24014ff08b6",
+  "file": "9310070v1.pdf"
+ },
+ "provenance": {
+  "title": "September, 1993 Quantum Dilogarithm",
+  "authors": "L.D. Faddeev1,2,\u2020, R.M. Kashaev 1,\u2217,\u2020",
+  "arxiv": {
+   "id": "hep-th/9310070",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "13 Oct 1993"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 1,
+  "by_kind": {
+   "theorem": 1
+  },
+  "formalization_candidates": 1
+ },
+ "candidates": [
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": null,
+   "name": null,
+   "statement": "The following \u201cquantum pentagon \u201d identity holds :",
+   "section_file": "sections/sec-003-3-quantum-dilogarithm-at-\u03b8n-1.md",
+   "section_title": "Quantum Dilogarithm at \u03b8N = 1",
+   "pages": "5-8",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  }
+ ]
+}

@@ -151,5 +151,8 @@
     "builds_on": "#4320 (simplex \u03bc\u2083), #4364 (c\u2083=0.63\u03bc\u2083 lift), #4300 (graded dim), damping-wall (sign robustness), the g\u2082/r frame-artifact thread (#4319)",
     "no_fit": true
   },
-  "scriptCommitSha": "b71822016e0c868380498baa597b9edd88a79026"
+  "scriptCommitSha": "b71822016e0c868380498baa597b9edd88a79026",
+  "q0Anchor": "muon",
+  "q0Value": "1.10997859555733471",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): result.substrate.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
 }

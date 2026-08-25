@@ -1,7 +1,7 @@
-## Connection to the wider framework on `main`
+## Connection to the wider framework
 
-The two ingredients each have a categorical home that landed on `main`
-after the initial derivation:
+The two ingredients each acquired a categorical home elsewhere in the
+framework after the initial derivation:
 
 - **Step 1 (the polynomial form `χ^{(2,1)}(β_Bor) = 2 − 3h⁴ − h⁶`)**
   shares its Wedderburn partition-indexed framework with the
@@ -63,8 +63,7 @@ the framework's existing structure.
 > **Scope note.** This closes the *within-$\mathrm{H}_3$* categorical
 > chain (the 3-strand side of the Borromean story). It does **not**
 > resolve the *cross-algebra* obstruction linking 5-strand $A_5$ fiber
-> action to 3-strand $\mathrm{H}_3$ — that was the original GAP-A-4
-> question (`conj:s5-so3-fiber-action`) and remains open per the
-> [T4–T14 retrospective](../../../docs/audits/2026-06-06-gap-a4-T9-T14-followup-retrospective.md)
-> (eight candidate cross-algebra functors refuted).
+> action to 3-strand $\mathrm{H}_3$ — that is the question posed by
+> (`conj:s5-so3-fiber-action`), and it remains open: eight candidate
+> cross-algebra functors have been refuted.
 

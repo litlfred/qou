@@ -1,5 +1,7 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Analytic
 
+set_option autoImplicit false
+
 /-!
 # QOU.QBeta.NewtonRealityInvariance — real seeds cannot reach the cusp
 

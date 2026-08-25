@@ -1,7 +1,7 @@
 ---
 # qou-xik5
 title: 'W1: audit MarkovTrace class fields — is Wenzl positivity actually needed, or surplus like PSD in #4151? (re-scope the gap before building)'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-07-25T13:00:16Z

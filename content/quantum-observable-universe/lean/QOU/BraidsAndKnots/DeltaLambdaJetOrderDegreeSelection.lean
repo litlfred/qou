@@ -167,7 +167,7 @@ theorem PartitionOf5.singleCoeff_at_valuation_eq_dim (p : PartitionOf5) :
 /-- On every non-trivial block the two objects DIFFER at the valuation grade
     (`1 ≠ dim V_λ`): concentrating `dim` at `n(λ)` is not what the natural graded
     object does. -/
-theorem PartitionOf5.coeff_at_valuation_differs (p : PartitionOf5) (h : p.dim ≠ 1) :
+theorem coeff_at_valuation_differs (p : PartitionOf5) (h : p.dim ≠ 1) :
     (p.singleCoeffs).getD p.nStat 0 ≠ (p.fakeCoeffs).getD p.nStat 0 := by
   rw [p.singleCoeff_at_valuation_eq_dim, p.fakeCoeff_at_valuation_eq_one]
   exact h

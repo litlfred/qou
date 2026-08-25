@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.4.1",
-  "computedAt": "2026-06-04T14:59:56.331475+00:00",
-  "commitSha": "e56b1ca5c1f5e2c3d0cd37d8cb1ff2a3bc69918c",
+  "computedAt": "2026-08-23T09:57:24.296249+00:00",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
   "assertions": [
     {
       "name": "sdp_cos_factor_singular_at_u_substrate",
@@ -17,8 +17,8 @@
   "durationMs": 5,
   "computation": "qbeta-sdp-normalization-zero-probe",
   "scriptFile": "qbeta_sdp_normalization_zero_probe.py",
-  "scriptHash": "b4d2a383c125",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "a2026999e552",
+  "scriptCommitSha": "34b2a75d437ededcb9dcb86990a9d0f60658ffe2",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,16 +27,38 @@
   },
   "environment": {
     "python": "3.11.15",
-    "mpmath": "1.4.1"
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b9cd89fd1774a84e"
   },
-  "description": "Task-2 (kernel deepening): tests whether the residue-A pole at u_substrate is a zero of the SDP normalization Q_A·cos α_eff = Q_N2/(1-u²). Result: REFUTED in literal form — Q_A·cos(u_substrate) = 0.782391 ≠ 0, and its only singularity (N2=0 at u=±1) is ~116.4× farther than u_substrate. So the pole is INTRINSIC to the c_k Habiro ladder (radius = u_substrate, PR #1713), not the cos-correction factor. Refines the #1823 SDP-shadow-price synthesis (flagged not-yet-derived): the literal cos-factor reading is out; the keystone is Q_N2's deeper Habiro structure / c_11+. Diagnostic-only.",
+  "invocation": {
+    "argv": [
+      "computations/qbeta/qbeta_sdp_normalization_zero_probe.py"
+    ],
+    "reproduce": "python3 -u computations/qbeta/qbeta_sdp_normalization_zero_probe.py"
+  },
+  "description": "Task-2 (kernel deepening): tests whether the residue-A pole at u_substrate is a zero of the SDP normalization Q_A·cos α_eff = Q_N2/(1-u²). Result: REFUTED in literal form — Q_A·cos(u_substrate) = 0.782862 ≠ 0, and its only singularity (N2=0 at u=±1) is ~116.4× farther than u_substrate. So the pole is INTRINSIC to the c_k Habiro ladder (radius = u_substrate, PR #1713), not the cos-correction factor. Refines the #1823 SDP-shadow-price synthesis (flagged not-yet-derived): the literal cos-factor reading is out; the keystone is Q_N2's deeper Habiro structure / c_11+. Diagnostic-only.",
   "data": {
     "u_substrate": "0.00851723455015614218925557360331",
     "N2": "0.999927456715617626498201895199",
-    "Q_N2": "0.782334410277840137760143636388",
-    "Q_A_cos": "0.782391167502802550786875247288",
+    "Q_N2": "0.782804713582601608047366699594",
+    "Q_A_cos": "0.782861504927385568273085454118",
     "cos_factor_pole_u": "±1 (N2 = 1 - u² = 0)",
     "pole_distance_over_u_substrate": "116.409",
-    "Q_A_cos_zero_at_u_substrate": "False"
+    "Q_A_cos_zero_at_u_substrate": "False",
+    "upstream_witness_hashes": [
+      {
+        "path": "q-beta-operator-valued-N3.witness.json",
+        "sha256": "ccc915ce5b98f6c6f827c319097234d025a79efa521e9fdb18206bc8a847001d",
+        "size_bytes": 5678,
+        "commitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "scriptCommitSha": "f947b235843af807c4ec7dea26af544fda4c2e8f",
+        "computedAt": "2026-08-21T16:24:01.734853+00:00"
+      }
+    ]
   }
 }

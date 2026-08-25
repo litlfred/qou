@@ -1,0 +1,477 @@
+{
+  "probe": "tl_n6_discriminator",
+  "convention": "D",
+  "credit": "machinery from S2, PR #5185",
+  "prime": 2147483647,
+  "runs": [
+    {
+      "part": "validate_fast_gram",
+      "n": 3,
+      "identical_to_reference": true,
+      "identical_to_s2_module": true
+    },
+    {
+      "part": "validate_fast_gram",
+      "n": 4,
+      "identical_to_reference": true,
+      "identical_to_s2_module": true
+    },
+    {
+      "part": "validate_fast_gram",
+      "n": 5,
+      "identical_to_reference": true,
+      "identical_to_s2_module": true
+    },
+    {
+      "part": "A_block_n3",
+      "corank": 1,
+      "null_is_q_antisymmetriser": true,
+      "sign_channel_eigenvalue_ok": true,
+      "sign_block_in_radical": true,
+      "trivial_block_in_radical": false,
+      "radical_is_1cubed_block": true
+    },
+    {
+      "part": "A2_top_bottom",
+      "n": 3,
+      "sign_block_in_radical": true,
+      "trivial_block_in_radical": false
+    },
+    {
+      "part": "A2_top_bottom",
+      "n": 4,
+      "sign_block_in_radical": true,
+      "trivial_block_in_radical": false
+    },
+    {
+      "part": "A2_top_bottom",
+      "n": 5,
+      "sign_block_in_radical": true,
+      "trivial_block_in_radical": false
+    },
+    {
+      "part": "A2_top_bottom",
+      "n": 6,
+      "sign_block_in_radical": true,
+      "trivial_block_in_radical": false
+    },
+    {
+      "part": "B0_block_arithmetic",
+      "n": 3,
+      "sum_dim2_le2rows": 5,
+      "catalan": 5,
+      "sum_dim2_ge3rows": 1,
+      "n_fact_minus_catalan": 1
+    },
+    {
+      "part": "B0_block_arithmetic",
+      "n": 4,
+      "sum_dim2_le2rows": 14,
+      "catalan": 14,
+      "sum_dim2_ge3rows": 10,
+      "n_fact_minus_catalan": 10
+    },
+    {
+      "part": "B0_block_arithmetic",
+      "n": 5,
+      "sum_dim2_le2rows": 42,
+      "catalan": 42,
+      "sum_dim2_ge3rows": 78,
+      "n_fact_minus_catalan": 78
+    },
+    {
+      "part": "B0_block_arithmetic",
+      "n": 6,
+      "sum_dim2_le2rows": 132,
+      "catalan": 132,
+      "sum_dim2_ge3rows": 588,
+      "n_fact_minus_catalan": 588
+    },
+    {
+      "part": "B1_ranks",
+      "n": 3,
+      "dim": 6,
+      "q_samples": [
+        "11/10",
+        "7/5",
+        "13/7",
+        "2",
+        "3",
+        "5",
+        "1/2",
+        "1/3",
+        "22/7",
+        "99/100",
+        "101/100",
+        "17/4"
+      ],
+      "rank_per_sample": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "catalan": 5,
+      "all_samples_equal_catalan": true,
+      "corank_upper_bound": 1
+    },
+    {
+      "part": "B1_ranks",
+      "n": 4,
+      "dim": 24,
+      "q_samples": [
+        "11/10",
+        "7/5",
+        "13/7",
+        "2",
+        "3",
+        "5",
+        "1/2",
+        "1/3",
+        "22/7",
+        "99/100",
+        "101/100",
+        "17/4"
+      ],
+      "rank_per_sample": [
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14,
+        14
+      ],
+      "catalan": 14,
+      "all_samples_equal_catalan": true,
+      "corank_upper_bound": 10
+    },
+    {
+      "part": "B1_ranks",
+      "n": 5,
+      "dim": 120,
+      "q_samples": [
+        "11/10",
+        "7/5",
+        "13/7",
+        "2",
+        "3",
+        "5",
+        "1/2",
+        "1/3",
+        "22/7",
+        "99/100",
+        "101/100",
+        "17/4"
+      ],
+      "rank_per_sample": [
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42,
+        42
+      ],
+      "catalan": 42,
+      "all_samples_equal_catalan": true,
+      "corank_upper_bound": 78
+    },
+    {
+      "part": "B1_ranks",
+      "n": 6,
+      "dim": 720,
+      "q_samples": [
+        "11/10",
+        "7/5",
+        "13/7",
+        "2",
+        "3",
+        "5",
+        "1/2",
+        "1/3",
+        "22/7",
+        "99/100",
+        "101/100",
+        "17/4"
+      ],
+      "rank_per_sample": [
+        132,
+        132,
+        132,
+        132,
+        132,
+        132,
+        132,
+        132,
+        132,
+        132,
+        132,
+        132
+      ],
+      "catalan": 132,
+      "all_samples_equal_catalan": true,
+      "corank_upper_bound": 588
+    },
+    {
+      "part": "B2_pin",
+      "n": 3,
+      "dim": 6,
+      "generators_in_radical_exact": true,
+      "gram_symmetric_exact": true,
+      "right_ideal_dim_p": 1,
+      "two_sided_ideal_dim_p": 1,
+      "rank_p": 5,
+      "corank": 1,
+      "n_fact_minus_catalan": 1,
+      "pinned": true,
+      "match": true
+    },
+    {
+      "part": "B2_pin",
+      "n": 4,
+      "dim": 24,
+      "generators_in_radical_exact": true,
+      "gram_symmetric_exact": true,
+      "right_ideal_dim_p": 7,
+      "two_sided_ideal_dim_p": 10,
+      "rank_p": 14,
+      "corank": 10,
+      "n_fact_minus_catalan": 10,
+      "pinned": true,
+      "match": true
+    },
+    {
+      "part": "B2_pin",
+      "n": 5,
+      "dim": 120,
+      "generators_in_radical_exact": true,
+      "gram_symmetric_exact": true,
+      "right_ideal_dim_p": 50,
+      "two_sided_ideal_dim_p": 78,
+      "rank_p": 42,
+      "corank": 78,
+      "n_fact_minus_catalan": 78,
+      "pinned": true,
+      "match": true
+    },
+    {
+      "part": "B2_pin",
+      "n": 6,
+      "dim": 720,
+      "generators_in_radical_exact": true,
+      "gram_symmetric_exact": true,
+      "right_ideal_dim_p": 371,
+      "two_sided_ideal_dim_p": 588,
+      "rank_p": 132,
+      "corank": 588,
+      "n_fact_minus_catalan": 588,
+      "pinned": true,
+      "match": true
+    },
+    {
+      "part": "B3_every_q",
+      "n": 6,
+      "prime": 2147483647,
+      "per_sample": [
+        {
+          "q": "11/10",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "7/5",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "13/7",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "2",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "3",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "5",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "1/2",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "1/3",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "22/7",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "99/100",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "101/100",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "17/4",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        }
+      ],
+      "all_match": true,
+      "n_fact_minus_catalan": 588
+    },
+    {
+      "part": "B3_every_q",
+      "n": 6,
+      "prime": 2147483549,
+      "per_sample": [
+        {
+          "q": "11/10",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "7/5",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "13/7",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "2",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "3",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "5",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "1/2",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "1/3",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "22/7",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "99/100",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "101/100",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        },
+        {
+          "q": "17/4",
+          "ideal_dim": 588,
+          "rank": 132,
+          "corank": 588,
+          "match": true
+        }
+      ],
+      "all_match": true,
+      "n_fact_minus_catalan": 588
+    }
+  ]
+}

@@ -19,12 +19,12 @@ from pathlib import Path
 
 from mpmath import mp, mpf, fabs, log
 
-mp.dps = 50
+from _precision import set_compute_dps, fmt  # noqa: E402
+set_compute_dps()
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE))
 
 from witness_base import WitnessBuilder  # noqa: E402
-from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 from experimental_constants import M_E_MEV  # noqa: E402
 from codata_constants import AME_B_DEUTERON_MEV_VALIDATION, AME_B_HE3_MEV_VALIDATION, AME_B_HE4_MEV_VALIDATION, AME_B_TRITIUM_MEV_VALIDATION  # noqa: E402
@@ -34,7 +34,7 @@ set_compute_dps()
 q0 = mpf(Q_50_DIGIT_STR)
 m_e = mpf(M_E_MEV)
 h = q0 - 1 / q0
-z_markov = 1 / (q0 ** mpf("0.5") + q0 ** mpf("-0.5"))
+z_markov = q0**3 / (q0**2 + 1)
 
 MAGIC = [0, 2, 8, 20, 28, 50, 82, 126]
 

@@ -1,0 +1,573 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "modularqholonomicmodules",
+ "source": {
+  "file": "modular.qholonomic.modules.pdf",
+  "sha256": "640303a68dd7545347b94932242213e84d9d2dc61108478938372a2de176a84b",
+  "bytes": 693117,
+  "pages": 66
+ },
+ "metadata": {
+  "arxiv": null,
+  "doi": null,
+  "title": "MODULAR q-HOLONOMIC MODULES",
+  "authors_raw": "STAVROS GAROUFALIDIS AND CAMPBELL WHEELER",
+  "abstract": "We introduce the notion of modular q-holonomic modules whose fundamental matrices deﬁne a cocycle with improved analyticity properties and show that the generalised q-hypergeometric equation, as well as three key q-holonomic modules of complex Chern– Simons theory are modular. This notion explains conceptually recent structural properties of quantum invariants of knots and 3-manifolds, and of exact and perturbative Chern– Simons theory [26, 27, 28, 37], and in addition provides an eﬀective method to solve the corresponding linear q-diﬀerence equations. An alternative title of our paper, emphasising the equations rather than the modules, is: Modular linear q-diﬀerence equations",
+  "docinfo": {
+   "Author": "",
+   "Title": "",
+   "Creator": "LaTeX with hyperref",
+   "Producer": "pdfTeX-1.40.19",
+   "CreationDate": "D:20230525102831+08'00'"
+  },
+  "title_lines": [
+   "MODULAR q-HOLONOMIC MODULES"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 2,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 2,
+   "title": "Summary",
+   "page": 2,
+   "source": "outline",
+   "number": "1.1"
+  },
+  {
+   "level": 2,
+   "title": "Motivation",
+   "page": 3,
+   "source": "outline",
+   "number": "1.2"
+  },
+  {
+   "level": 2,
+   "title": "Definition and properties",
+   "page": 3,
+   "source": "outline",
+   "number": "1.3"
+  },
+  {
+   "level": 2,
+   "title": "The generalised q-hypergeometric equation is modular",
+   "page": 6,
+   "source": "outline",
+   "number": "1.4"
+  },
+  {
+   "level": 2,
+   "title": "Modular q-holonomic modules in Chern–Simons theory",
+   "page": 7,
+   "source": "outline",
+   "number": "1.5"
+  },
+  {
+   "level": 1,
+   "title": "A review of linear q-difference equations",
+   "page": 12,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 2,
+   "title": "Preliminaries",
+   "page": 12,
+   "source": "outline",
+   "number": "2.1"
+  },
+  {
+   "level": 2,
+   "title": "An algorithm for a fundamental matrix",
+   "page": 13,
+   "source": "outline",
+   "number": "2.2"
+  },
+  {
+   "level": 2,
+   "title": "The q-Borel and the q-Laplace transforms",
+   "page": 14,
+   "source": "outline",
+   "number": "2.3"
+  },
+  {
+   "level": 2,
+   "title": "The slash operator and proof of Theorem 1.2",
+   "page": 17,
+   "source": "outline",
+   "number": "2.4"
+  },
+  {
+   "level": 2,
+   "title": "Duality",
+   "page": 20,
+   "source": "outline",
+   "number": "2.5"
+  },
+  {
+   "level": 2,
+   "title": "Categorical aspects",
+   "page": 23,
+   "source": "outline",
+   "number": "2.6"
+  },
+  {
+   "level": 1,
+   "title": "Heine's q-hypergeometric functions",
+   "page": 24,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 2,
+   "title": "Solutions",
+   "page": 24,
+   "source": "outline",
+   "number": "3.1"
+  },
+  {
+   "level": 2,
+   "title": "Self duality",
+   "page": 25,
+   "source": "outline",
+   "number": "3.2"
+  },
+  {
+   "level": 2,
+   "title": "State integral",
+   "page": 28,
+   "source": "outline",
+   "number": "3.3"
+  },
+  {
+   "level": 2,
+   "title": "Resonance",
+   "page": 29,
+   "source": "outline",
+   "number": "3.4"
+  },
+  {
+   "level": 1,
+   "title": "Proof of Theorems 1.5 and 1.6",
+   "page": 31,
+   "source": "outline",
+   "number": "4"
+  },
+  {
+   "level": 2,
+   "title": "The q-Pochhammer symbol",
+   "page": 31,
+   "source": "outline",
+   "number": "4.1"
+  },
+  {
+   "level": 2,
+   "title": "The Appell-Lerch sums",
+   "page": 33,
+   "source": "outline",
+   "number": "4.2"
+  },
+  {
+   "level": 1,
+   "title": "A q-difference equation of the 41 knot",
+   "page": 37,
+   "source": "outline",
+   "number": "5"
+  },
+  {
+   "level": 2,
+   "title": "Solutions",
+   "page": 37,
+   "source": "outline",
+   "number": "5.1"
+  },
+  {
+   "level": 2,
+   "title": "Monodromy",
+   "page": 40,
+   "source": "outline",
+   "number": "5.2"
+  },
+  {
+   "level": 2,
+   "title": "Residues",
+   "page": 43,
+   "source": "outline",
+   "number": "5.3"
+  },
+  {
+   "level": 2,
+   "title": "Determinants",
+   "page": 45,
+   "source": "outline",
+   "number": "5.4"
+  },
+  {
+   "level": 2,
+   "title": "State integral",
+   "page": 46,
+   "source": "outline",
+   "number": "5.5"
+  },
+  {
+   "level": 2,
+   "title": "The inhomogeneous equation",
+   "page": 47,
+   "source": "outline",
+   "number": "5.6"
+  },
+  {
+   "level": 2,
+   "title": "The x-deformation",
+   "page": 52,
+   "source": "outline",
+   "number": "5.7"
+  },
+  {
+   "level": 2,
+   "title": "An analytic lift of the colored Jones polynomial",
+   "page": 62,
+   "source": "outline",
+   "number": "5.8"
+  },
+  {
+   "level": 2,
+   "title": "Specialisation t=qm",
+   "page": 62,
+   "source": "outline",
+   "number": "5.9"
+  },
+  {
+   "level": 2,
+   "title": "Acknowledgements",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 63,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 1,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-001-11-summary",
+   "number": "1.1",
+   "title": "Summary",
+   "level": 2,
+   "page_start": 1,
+   "page_end": 3,
+   "n_chars": 3622,
+   "n_words": 516
+  },
+  {
+   "id": "sec-002-12-motivation",
+   "number": "1.2",
+   "title": "Motivation",
+   "level": 2,
+   "page_start": 3,
+   "page_end": 6,
+   "n_chars": 8432,
+   "n_words": 1536
+  },
+  {
+   "id": "sec-003-14-the-generalised-q-hypergeometric-equation-is",
+   "number": "1.4",
+   "title": "The generalised q-hypergeometric equation is modular",
+   "level": 2,
+   "page_start": 6,
+   "page_end": 7,
+   "n_chars": 4288,
+   "n_words": 651
+  },
+  {
+   "id": "sec-004-15-modular-q-holonomic-modules-in-chernsimons-th",
+   "number": "1.5",
+   "title": "Modular q-holonomic modules in Chern–Simons theory",
+   "level": 2,
+   "page_start": 7,
+   "page_end": 12,
+   "n_chars": 13145,
+   "n_words": 2254
+  },
+  {
+   "id": "sec-005-2-a-review-of-linear-q-difference-equations",
+   "number": "2",
+   "title": "A review of linear q-difference equations",
+   "level": 1,
+   "page_start": 12,
+   "page_end": 12,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-006-21-preliminaries",
+   "number": "2.1",
+   "title": "Preliminaries",
+   "level": 2,
+   "page_start": 12,
+   "page_end": 13,
+   "n_chars": 1774,
+   "n_words": 297
+  },
+  {
+   "id": "sec-007-22-an-algorithm-for-a-fundamental-matrix",
+   "number": "2.2",
+   "title": "An algorithm for a fundamental matrix",
+   "level": 2,
+   "page_start": 13,
+   "page_end": 14,
+   "n_chars": 2563,
+   "n_words": 443
+  },
+  {
+   "id": "sec-008-23-the-q-borel-and-the-q-laplace-transforms",
+   "number": "2.3",
+   "title": "The q-Borel and the q-Laplace transforms",
+   "level": 2,
+   "page_start": 14,
+   "page_end": 17,
+   "n_chars": 4549,
+   "n_words": 758
+  },
+  {
+   "id": "sec-009-24-the-slash-operator-and-proof-of-theorem-12",
+   "number": "2.4",
+   "title": "The slash operator and proof of Theorem 1.2",
+   "level": 2,
+   "page_start": 17,
+   "page_end": 20,
+   "n_chars": 7057,
+   "n_words": 1459
+  },
+  {
+   "id": "sec-010-25-duality",
+   "number": "2.5",
+   "title": "Duality",
+   "level": 2,
+   "page_start": 20,
+   "page_end": 23,
+   "n_chars": 6022,
+   "n_words": 1139
+  },
+  {
+   "id": "sec-011-26-categorical-aspects",
+   "number": "2.6",
+   "title": "Categorical aspects",
+   "level": 2,
+   "page_start": 23,
+   "page_end": 24,
+   "n_chars": 2207,
+   "n_words": 408
+  },
+  {
+   "id": "sec-012-31-solutions",
+   "number": "3.1",
+   "title": "Solutions",
+   "level": 2,
+   "page_start": 24,
+   "page_end": 25,
+   "n_chars": 1629,
+   "n_words": 285
+  },
+  {
+   "id": "sec-013-32-self-duality",
+   "number": "3.2",
+   "title": "Self duality",
+   "level": 2,
+   "page_start": 25,
+   "page_end": 28,
+   "n_chars": 5069,
+   "n_words": 883
+  },
+  {
+   "id": "sec-014-33-state-integral",
+   "number": "3.3",
+   "title": "State integral",
+   "level": 2,
+   "page_start": 28,
+   "page_end": 29,
+   "n_chars": 2572,
+   "n_words": 483
+  },
+  {
+   "id": "sec-015-34-resonance",
+   "number": "3.4",
+   "title": "Resonance",
+   "level": 2,
+   "page_start": 29,
+   "page_end": 31,
+   "n_chars": 3055,
+   "n_words": 519
+  },
+  {
+   "id": "sec-016-4-proof-of-theorems-15-and-16",
+   "number": "4",
+   "title": "Proof of Theorems 1.5 and 1.6",
+   "level": 1,
+   "page_start": 31,
+   "page_end": 31,
+   "n_chars": 0,
+   "n_words": 0
+  },
+  {
+   "id": "sec-017-41-the-q-pochhammer-symbol",
+   "number": "4.1",
+   "title": "The q-Pochhammer symbol",
+   "level": 2,
+   "page_start": 31,
+   "page_end": 33,
+   "n_chars": 2179,
+   "n_words": 411
+  },
+  {
+   "id": "sec-018-42-the-appell-lerch-sums",
+   "number": "4.2",
+   "title": "The Appell-Lerch sums",
+   "level": 2,
+   "page_start": 33,
+   "page_end": 37,
+   "n_chars": 6713,
+   "n_words": 1186
+  },
+  {
+   "id": "sec-019-51-solutions",
+   "number": "5.1",
+   "title": "Solutions",
+   "level": 2,
+   "page_start": 37,
+   "page_end": 37,
+   "n_chars": 334,
+   "n_words": 61
+  },
+  {
+   "id": "sec-020-5-a-q-difference-equation-of-the-41-knot",
+   "number": "5",
+   "title": "A q-difference equation of the 41 knot",
+   "level": 1,
+   "page_start": 37,
+   "page_end": 40,
+   "n_chars": 3430,
+   "n_words": 621
+  },
+  {
+   "id": "sec-021-52-monodromy",
+   "number": "5.2",
+   "title": "Monodromy",
+   "level": 2,
+   "page_start": 40,
+   "page_end": 43,
+   "n_chars": 4603,
+   "n_words": 733
+  },
+  {
+   "id": "sec-022-53-residues",
+   "number": "5.3",
+   "title": "Residues",
+   "level": 2,
+   "page_start": 43,
+   "page_end": 45,
+   "n_chars": 2945,
+   "n_words": 440
+  },
+  {
+   "id": "sec-023-54-determinants",
+   "number": "5.4",
+   "title": "Determinants",
+   "level": 2,
+   "page_start": 45,
+   "page_end": 46,
+   "n_chars": 3185,
+   "n_words": 546
+  },
+  {
+   "id": "sec-024-55-state-integral",
+   "number": "5.5",
+   "title": "State integral",
+   "level": 2,
+   "page_start": 46,
+   "page_end": 47,
+   "n_chars": 1554,
+   "n_words": 273
+  },
+  {
+   "id": "sec-025-56-the-inhomogeneous-equation",
+   "number": "5.6",
+   "title": "The inhomogeneous equation",
+   "level": 2,
+   "page_start": 47,
+   "page_end": 52,
+   "n_chars": 8690,
+   "n_words": 1635
+  },
+  {
+   "id": "sec-026-57-the-x-deformation",
+   "number": "5.7",
+   "title": "The x-deformation",
+   "level": 2,
+   "page_start": 52,
+   "page_end": 62,
+   "n_chars": 18568,
+   "n_words": 2769
+  },
+  {
+   "id": "sec-027-58-an-analytic-lift-of-the-colored-jones-polynom",
+   "number": "5.8",
+   "title": "An analytic lift of the colored Jones polynomial",
+   "level": 2,
+   "page_start": 62,
+   "page_end": 63,
+   "n_chars": 1886,
+   "n_words": 298
+  },
+  {
+   "id": "sec-028-acknowledgements",
+   "number": null,
+   "title": "Acknowledgements",
+   "level": 2,
+   "page_start": 63,
+   "page_end": 63,
+   "n_chars": 168,
+   "n_words": 24
+  },
+  {
+   "id": "sec-029-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 63,
+   "page_end": 66,
+   "n_chars": 12063,
+   "n_words": 1690
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 33,
+  "sections": 30,
+  "chars_total": 132302
+ },
+ "duplicate_copies": [
+  "arxiv-2203.17029v1"
+ ]
+}

@@ -15,7 +15,7 @@ e^{−s}·ds as q → 1 (rate + exact h²-coefficient), and (ii) is there a
 manifestly POSITIVE fibre kernel carrying exactly the balanced moments?
 
 Reference read directly: Ramis–Sauloy–Zhang, "Local analytic classification
-of q-difference equations" (Astérisque 355; uploads/0903.0853v3.pdf):
+of q-difference equations" (Astérisque 355; library/arxiv-0903.0853v3/0903.0853v3.pdf):
   - Def 2.3.3 (p. 23): level-1 formal q-Borel B_{q,1}f(ξ) = Σ f_n q^{−n(n−1)/2}ξⁿ
     (|q| > 1 convention).
   - §3.3.1 (p. 39): level-d q-Borel via a family t_n with t_n = q^{n−d}t_{n−d};
@@ -127,7 +127,12 @@ from mpmath import mp, mpf, sqrt as mpsqrt, quad as mpquad, exp as mpexp  # noqa
 from mpmath import log as mplog, pi as mppi  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 TOL_EXACT = 0        # sympy exact / integer comparisons
 TOL_50 = 1e-30       # 60-dps kernel-identity cross-checks (floor 1e-25)
@@ -141,7 +146,7 @@ RATE_LO, RATE_HI = 1.9, 2.1   # rate-exponent bracket (diagnostic)
 # witness; proton from qou_substrate.constants Q_50_DIGIT_STR).
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 # tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR
 # (proton re-pin 2026-05-28; _solve_q_proton_f64 + mpmath refine):
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
@@ -570,6 +575,7 @@ def block_c5_cdf_confluence(wb: WitnessBuilder) -> None:
 def main() -> int:
     set_compute_dps(60)
     wb = WitnessBuilder("qborel-confluence-pos", engine="sympy+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Attack B on the conjecture 'binding Borel variable = loop proper "
         "time' — balanced-kernel q→1 confluence + the (POS) hypothesis "
@@ -629,7 +635,7 @@ def main() -> int:
                   "canonical 3-CAL layer); qou_substrate.constants."
                   "Q_50_DIGIT_STR (proton, precision layer)"})
     wb.add_data("rsz_citations", {
-        "paper": "uploads/0903.0853v3.pdf — Ramis–Sauloy–Zhang, Astérisque "
+        "paper": "library/arxiv-0903.0853v3/0903.0853v3.pdf — Ramis–Sauloy–Zhang, Astérisque "
                  "355",
         "def_2_3_3": "level-1 formal q-Borel, weight q^{−n(n−1)/2} (p. 23)",
         "sec_3_3_1": "level-d q-Borel families t_n = q^{n−d}t_{n−d}; "

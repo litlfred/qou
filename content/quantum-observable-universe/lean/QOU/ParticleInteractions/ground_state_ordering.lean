@@ -15,8 +15,15 @@ namespace QOU.ParticleInteractions
 /-- Abstract context for the `ground_state_ordering` claim —
     manuscript-themed typed fields below; the ground-state ordering
     is selected by the transfer-matrix eigenvalues `λ_±` and the
-    Z, N counts. -/
-class GroundStateOrderingContext where
+    Z, N counts.
+
+    §7c base ring: the claim's only arithmetic is the Vieta product
+    `λ₊ · λ₋ = -1`, which needs a `Ring` and nothing more — no
+    ordering on the eigenvalues, no square root, no archimedean
+    construct. The `Z ≤ N`, `4 ≤ A`, `A ≤ 3` comparisons are over
+    `ℕ`, not over the eigenvalue carrier. The carrier is therefore a
+    type variable `R`; the archimedean realisation is `R := ℝ`. -/
+class GroundStateOrderingContext (R : Type*) [Ring R] where
   /-- Proton number `Z`. -/
   Z : ℕ
   /-- Neutron number `N`. -/
@@ -24,17 +31,31 @@ class GroundStateOrderingContext where
   /-- Mass number `A = Z + N`. -/
   A : ℕ
   A_eq : A = Z + N
-  /-- Substrate parameter `q : ℝ`. -/
-  q : ℝ
+  /-- Substrate parameter `q`, in the generic base ring. -/
+  q : R
   /-- Transfer-matrix dominant eigenvalue (`T_pp`). -/
-  lam_plus : ℝ
+  lam_plus : R
   /-- Transfer-matrix subdominant eigenvalue (`T_pp`). -/
-  lam_minus : ℝ
+  lam_minus : R
   /-- The ground-state ordering at position `k`: `1` = proton,
       `0` = neutron. -/
   ordering : ℕ → ℕ
 
-/-- **Proposition statement** (from manuscript):
+/-- **REFUTED — retained only as the historical statement** (bean `qou-48is`,
+    2026-08-09).  The two ordering conjuncts below are **false**: an
+    exhaustive `Φ_q` sweep over every `C(A,Z)` arrangement for `A ≤ 16` at
+    the experimental (proton) anchor shows the interleaved + tail-packed
+    arrangement is not the minimiser for `A ≥ 4` (it is the strict
+    *maximiser* at `A = 5, Z = 1`), and the `A ≤ 3` conjunct fails as stated
+    at `A = 2`.  The counterexample is proved sorry-free, for an interval of
+    `q` containing the anchor, in
+    `QOU.MassTheory.GroundStateOrderingRefutation.prescribed_not_minimiser_A5`;
+    the third conjunct (`λ₊ · λ₋ = -1`) survives and is proved there as
+    `transferEigen_vieta`.  This `def` names the historical claim and is not
+    asserted; **do not** attempt to discharge it.  See
+    `docs/audits/2026-08-09-ground-state-ordering-truth-value.md`.
+
+    **Original proposition statement** (from manuscript):
 
 The nuclear ground state ordering for a nucleus with $Z$ protons
 and $N$ neutrons ($A = Z + N$) is determined by:*
@@ -48,7 +69,7 @@ and $N$ neutrons ($A = Z + N$) is determined by:*
     self-assuming projection); a discharging instance is the open
     conditional claim. -/
 -- Ref: [manuscript] quantum-observable-universe/particle-interactions/ground-state-ordering.ts
-def ground_state_ordering (ctx : GroundStateOrderingContext) : Prop :=
+def ground_state_ordering {R : Type*} [Ring R] (ctx : GroundStateOrderingContext R) : Prop :=
     (ctx.Z ≤ ctx.N → 4 ≤ ctx.A →
       ∀ k : ℕ, ctx.ordering k =
         if k % 2 = 1 ∧ k < 2 * ctx.Z then 1 else 0) ∧

@@ -99,7 +99,13 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 
 def log(msg: str) -> None:
@@ -122,7 +128,7 @@ def parse_coeffs(habiro_entries: list[dict], u: sp.Symbol) -> dict[int, sp.Poly]
 def load_atomic(u: sp.Symbol) -> dict[str, dict[int, sp.Poly]]:
     path = _pb.witness_path("habiro-coefficients-atomic.witness.json", HERE)
     log(f"Loading atomic witness: {path.name}")
-    data = json.loads(path.read_text())
+    data = record_upstream(path, _UPSTREAM_RECORDS)
     return {
         "p": parse_coeffs(
             data["results"]["p (proton, A=1)"]["habiro_coefficients"], u
@@ -259,7 +265,7 @@ def probe_level_k(
     log(f"  S_{expected_M}   divisible by Φ_{n}? {at_divisible}   (expect True)")
 
     # Numeric verification at u = ζ_n
-    mp.mp.dps = 50
+    set_compute_dps()
     zeta_n = mp.exp(mp.mpc(0, 1) * mp.pi / n)  # e^(iπ/n) for primitive 2n-th root
     # Actually we need primitive n-th root: ζ_n = e^(2πi/n)
     zeta_n = mp.exp(mp.mpc(0, 1) * 2 * mp.pi / n)
@@ -354,6 +360,7 @@ def main() -> int:
         engine="python+sympy+mpmath",
         start_time=t0,
     )
+    builder.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     builder.set_description(
         "Level-k SU(2) Verlinde tower probe: for k = 2, 4, 6, 8, "
         "test whether the universal cancellation S_M(u = ζ_{2(k+2)}) = 0 "

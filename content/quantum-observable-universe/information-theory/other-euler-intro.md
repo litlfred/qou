@@ -1,3 +1,3 @@
-**Outline (future work).** We will investigate Bring's surface and its analogues for Euler characteristics other than $\chi = -6$. The classification programme covers $\chi = -2, -4, -8, \ldots$, with three goals. First, we identify the automorphism groups that arise at each $\chi$. Second, we determine whether the corresponding observational axioms admit any valid model. Third, we connect these groups to the substrate-parameter dependence on $\chi$ developed earlier.
+Bring's surface has analogues at Euler characteristics other than $\chi = -6$. The classification programme covering $\chi = -2, -4, -8, \ldots$ has three goals: to identify the automorphism groups that arise at each $\chi$; to determine whether the corresponding observational axioms admit any valid model; and to connect these groups to the substrate-parameter dependence on $\chi$ developed earlier.
 
-We leave the detailed classification to a follow-up. We include this section in the manifest solely to preserve the chapter's structural scope.
+None of the three is settled here. This section states the programme and fixes its scope; the classification itself is open.

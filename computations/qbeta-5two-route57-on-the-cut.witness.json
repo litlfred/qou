@@ -1,0 +1,128 @@
+{
+  "probe": "qbeta_5two_route57_on_the_cut",
+  "beans": [
+    "qou-xblo",
+    "qou-0yqu"
+  ],
+  "dps": 70,
+  "follows": "Route 56 (the flattened pentagon)",
+  "lean": "QOU/QBeta/FiveTwoFlattenedPentagon.lean -- one_sub_mul_of_prod_eq_one, not_pentagonRegular_of_prod_eq_one",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "THE ANSWER TO ROUTE 56'S OPEN ITEM, and it is a negative. From y1*y2*y3 = 1, y3*(1 - y1*y2) = y3 - 1, so 1 - y1*conj(y1) = (y3-1)/y3 -- and y3 = 0.43016 in (0,1) makes that a NEGATIVE REAL, namely minus the plastic number. A negative real is off slitPlane, so log(1-xy) sits exactly on its branch cut and PentagonRegular fails at the pair Vol(5_2) needs. No region reaches it because the configuration is on the boundary of the domain",
+      "one_minus_y1_y2": "(-1.324717957244746025960909 + 0.0j)",
+      "predicted_(y3-1)/y3": "-1.324717957244746025960909",
+      "residual_vs_prediction": "1.8111358e-71",
+      "minus_plastic_rho": "-1.324717957244746025960909",
+      "residual_vs_minus_rho": "1.8111358e-71",
+      "imaginary_part": "0.0",
+      "is_negative_real": true,
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "on the boundary is not outside. The straight segment from ANY real a in (0,1) to y_1, with conj(y_1) fixed, is regular at EVERY interior point -- 1500 samples each, five values of a, zero interior failures. Only t = 1 fails, and only in the single argument 1 - w*y. (A sampled sweep cannot prove the absence of an interior failure; it is reported as what it is)",
+      "sweeps": [
+        {
+          "a": "0.1",
+          "interior_failures": 0,
+          "endpoint_failing_arguments": [
+            "a4"
+          ]
+        },
+        {
+          "a": "0.3",
+          "interior_failures": 0,
+          "endpoint_failing_arguments": [
+            "a4"
+          ]
+        },
+        {
+          "a": "0.430159709",
+          "interior_failures": 0,
+          "endpoint_failing_arguments": [
+            "a4"
+          ]
+        },
+        {
+          "a": "0.8",
+          "interior_failures": 0,
+          "endpoint_failing_arguments": [
+            "a4"
+          ]
+        },
+        {
+          "a": "0.95",
+          "interior_failures": 0,
+          "endpoint_failing_arguments": [
+            "a4"
+          ]
+        }
+      ],
+      "samples_per_sweep": 1501,
+      "sampling_caveat": "interior regularity is sampled, not certified",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "and the approach is from the CONTINUOUS side. Im(1 - w*conj(y1)) = a*(1-t)*Im(y1) > 0 all along, decreasing to 0 -- the upper half-plane, which is where the principal Complex.log (arg in (-pi, pi]) is continuous at a negative real. So what is owed is a BOUNDARY-CONTINUITY argument at one point, not a search for a region: a different and much smaller problem than Route 56 left open. It is NOT closed here",
+      "approach": [
+        {
+          "t": "0.5",
+          "one_minus_wy": "(-0.280097000447227 + 0.1960711918023068j)",
+          "im": "0.19607119",
+          "im_positive": true
+        },
+        {
+          "t": "0.9",
+          "one_minus_wy": "(-1.115793765885242 + 0.03921423836046136j)",
+          "im": "0.039214238",
+          "im_positive": true
+        },
+        {
+          "t": "0.99",
+          "one_minus_wy": "(-1.303825538108796 + 0.003921423836046136j)",
+          "im": "0.0039214238",
+          "im_positive": true
+        },
+        {
+          "t": "0.9999",
+          "one_minus_wy": "(-1.324509033053387 + 3.921423836046136e-5j)",
+          "im": "3.9214238e-5",
+          "im_positive": true
+        },
+        {
+          "t": "0.999999",
+          "one_minus_wy": "(-1.324715868002832 + 3.921423836046136e-7j)",
+          "im": "3.9214238e-7",
+          "im_positive": true
+        }
+      ],
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "the exceptional structure at the pair, all equivalent to the cubic itself: (1-a)(1-b) = (1-ab)^2 for any two roots, so a5 = 1/a3; here additionally a5 = conj(a3), hence |a3| = 1 -- the two composite arguments sit on the UNIT CIRCLE. Verified symbolically by Groebner reduction against a+b+c=2, ab+ac+bc=3, abc=1 before being measured",
+      "a3": "(-0.1623589786223730129805 + 0.9867317579062203382326j)",
+      "a5": "(-0.1623589786223730129805 - 0.9867317579062203382326j)",
+      "a5_minus_inv_a3": "1.8252305e-71",
+      "a5_minus_conj_a3": "0.0",
+      "abs_a3_minus_one": "9.0556791e-72",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the target is unmoved. G1 is a negative -- the pair is on the cut, so Route 56's region does not exist. G2 and G3 say the residue is boundary continuity at a single point, which is smaller but is not done. A = sum Li2(y_j) still has no proof",
+      "A": "0.971730681468648259127774169939",
+      "boundary_continuity_argument_supplied": false,
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "negative": "1 - y_1*conj(y_1) = (y_3-1)/y_3 is a NEGATIVE REAL (minus the plastic number), so the 5_2 conjugate pair lies ON the branch cut and PentagonRegular fails there. Route 56's region does not exist.",
+    "sharpening": "but only the endpoint fails, only in one argument, and the approach is from the upper half-plane where the principal log is continuous. The residue is boundary continuity at one point.",
+    "not_done": "no boundary-continuity argument is supplied here.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

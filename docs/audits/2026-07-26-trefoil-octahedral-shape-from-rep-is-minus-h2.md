@@ -61,4 +61,4 @@ the geometric quantum-dilogarithm on the pinned shape `z' = −h²` and its octa
 
 Refs: probe [`trefoil_octahedral_shape_from_rep_probe.py`](../../computations/deltalambda/trefoil_octahedral_shape_from_rep_probe.py);
 #4339 (`g₂_leading=1`); #4315 (octahedral `e₂` wall); #4319 (`c+1=−h²`);
-`uploads/2509.02354v2.pdf` §5.2 (pinched geometric quantum dilog).
+`library/arxiv-2509.02354v2/2509.02354v2.pdf` §5.2 (pinched geometric quantum dilog).

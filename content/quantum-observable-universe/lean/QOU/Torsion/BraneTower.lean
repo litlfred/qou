@@ -21,7 +21,7 @@ structure RecursiveBraneTower where
   connection : (n : ℕ) → InstantonConnection (level n).toCRManifoldData
   jet_prolongation : (n : ℕ) → JetProlongationQOU
 
-def RecursiveBraneTower.baseLevel (tower : RecursiveBraneTower) :
+def baseLevel (tower : RecursiveBraneTower) :
     CQuantumObservableUniverse :=
   tower.level 0
 
@@ -40,7 +40,7 @@ structure QuantumCharacteristicClasses where
     LaTeX: `\label{def:direct-limit-algebra}` -/
 structure DirectLimitAlgebra where
   tower : RecursiveBraneTower
-  substrateAt : (n : ℕ) → SubstrateParameter (tower.level n).M
+  substrateAt : (n : ℕ) → ArchimedeanSubstrateField (tower.level n).M
   sectionAlgebra : ℕ → Type*
   transitionMap : (n : ℕ) → sectionAlgebra n → sectionAlgebra (n + 1)
   limitAlgebra : Type*

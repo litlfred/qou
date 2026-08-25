@@ -65,6 +65,12 @@ from typing import Iterable, List, Tuple
 from canonical_braid_crossings import _avg_color_delta  # color-weighted averaged d
 
 
+
+def _pn_delta():
+    """Colour-weighting delta for the p-n interface (qou-gdtb)."""
+    from canonical_braid_crossings import _avg_color_delta
+    return _avg_color_delta()
+
 def marshal_to_chi_lambda_braid(
     word_tuples: Iterable[Tuple[float, float, int]],
     h_val: float,
@@ -76,41 +82,51 @@ def marshal_to_chi_lambda_braid(
     For `hecke_characters.chi_lambda_braid` (f64 fast path + mpfr path).
 
     Conventions per PR #819 + Phase 5c.1:
-      - (c=1, d=0)        → sign=+1 (positive σ)
-      - (c=1, d=-h)       → sign=-1 (negative σ⁻¹, Hecke skein)
-      - (c=1, d=-h/2)     → sign=+1 (averaged → σ convention)
-      - other             → sign=+1 (fallback; shouldn't occur in canonical
-                            braids)
+      - sigma             → sign=+1 (positive σ)
+      - sigma_inv         → sign=-1 (negative σ⁻¹, Hecke skein)
+      - averaged          → sign=+1 (averaged → σ convention)
+      - averaged_weighted → sign=+1 (same channel; see below)
+
+    ⚠ This is **`chi_lambda_braid`'s** sign convention, in which averaged
+    maps to `+1`. It is NOT the `{-1, 0, +1}` wire encoding of
+    `canonical_braid_crossings.sign_for_ctype`, where averaged maps to `0`.
+    Two different targets, deliberately not merged -- unifying them would
+    silently change this path's numbers.
+
+    Both averaged interfaces land in the σ channel: this marshaller emits
+    signs and drops `d` entirely, so it cannot carry the p-n colour
+    weighting `-h(1/2 - δ/4)` either way. Lossy, but equally lossy for both
+    variants, which is why the collapse is correct *here* and was a defect
+    in `marshal_to_symbolic_braid`, whose label feeds `d_for_ctype`.
 
     Args:
         word_tuples: iterable of (c, d, gen_0idx) triples
         h_val: substrate value of h = q - q⁻¹ used to BUILD the word
           (typically `float(Q_F64 - 1/Q_F64)` from `q_parameter`)
-        eps: tolerance for matching d-coefficients
+        eps: unused; retained for signature compatibility. Classification
+          tolerances now live in `classify_crossing`, so the two marshallers
+          cannot drift apart on tolerance the way they did on vocabulary.
 
     Returns:
         list of (sign, gen_1based) pairs suitable for chi_lambda_braid
     """
+    from canonical_braid_crossings import classify_crossing
+    # Explicit and total over CTYPES: a new ctype must be given a sign here
+    # rather than falling through to a default. The private classifier this
+    # replaces is how `averaged_weighted` went missing (qou-8zjd).
+    _CHI_SIGN = {
+        "sigma": 1, "sigma_inv": -1, "averaged": 1, "averaged_weighted": 1,
+    }
     out: List[Tuple[int, int]] = []
     for c, d, gen in word_tuples:
-        cf, df = float(c), float(d)
-        if abs(cf - 1.0) >= eps:
-            raise ValueError(f"unexpected c={cf} in canonical braid (expected c=1)")
-        if abs(df) < eps:
-            out.append((1, gen + 1))            # σ (positive crossing)
-        elif abs(df + h_val) < eps:
-            out.append((-1, gen + 1))           # σ⁻¹ (Hecke skein)
-        elif abs(df + h_val / 2) < eps:
-            out.append((1, gen + 1))            # averaged → σ convention
-        else:
-            # Per Copilot PR #863 review: raise on unknown (c,d) rather
-            # than silently falling back.  The canonical builder
-            # `atom_braid_word_3A` emits only {(1,0), (1,-h), (1,-h/2)};
-            # any other d means upstream drift that audits should catch.
+        ctx = f"marshal_to_chi_lambda_braid gen={gen}"
+        ctype = classify_crossing(float(c), float(d), h_val, context=ctx)
+        if ctype not in _CHI_SIGN:
             raise ValueError(
-                f"unexpected d={df:.6g} in canonical braid at gen={gen} "
-                f"(expected 0, -h={-h_val:.6g}, or -h/2={-h_val/2:.6g})"
+                f"ctype {ctype!r} has no chi_lambda_braid sign convention; "
+                f"add it to _CHI_SIGN in canonical_braid_marshalling"
             )
+        out.append((_CHI_SIGN[ctype], gen + 1))
     return out
 
 
@@ -124,39 +140,29 @@ def marshal_to_symbolic_braid(
 
     For `hecke_character_symbolic.q_character_on_braid_word`.
 
-    cross_type ∈ {"sigma", "sigma_inv", "averaged"}, with same convention
-    as `marshal_to_chi_lambda_braid`.
+    `cross_type ∈ canonical_braid_crossings.CTYPES` -- the *full* vocabulary,
+    including `averaged_weighted`. This used to be a private classifier that
+    collapsed the colour-weighted p-n interface onto `"averaged"`; because
+    the consumer resolves the label through `d_for_ctype`, that substituted
+    `-h/2` for `-h(1/2 - δ/4)` and discarded the proton-neutron colour
+    asymmetry at 6.88e-4 on one crossing in 23 (qou-gdtb, qou-8zjd).
+    Classification is now delegated, so there is one vocabulary.
 
     Args:
         word_tuples: iterable of (c, d, gen_0idx) triples
         h_val: substrate value of h = q - q⁻¹ used to BUILD the word
-        eps: tolerance for matching d-coefficients
+        eps: unused; retained for signature compatibility. Tolerances live
+          in `classify_crossing`.
 
     Returns:
         list of (gen_0idx, cross_type) pairs suitable for
         q_character_on_braid_word
     """
+    from canonical_braid_crossings import classify_crossing
     out: List[Tuple[int, str]] = []
-    # color-weighted averaged |d|, computed once (not per crossing)
-    _d_cw = h_val * (0.5 - float(_avg_color_delta()) / 4)
     for c, d, gen in word_tuples:
-        cf, df = float(c), float(d)
-        if abs(cf - 1.0) >= eps:
-            raise ValueError(f"unexpected c={cf} in canonical braid (expected c=1)")
-        if abs(df) < eps:
-            out.append((gen, "sigma"))
-        elif abs(df + h_val) < eps:
-            out.append((gen, "sigma_inv"))
-        elif abs(df + h_val / 2) < eps:
-            out.append((gen, "averaged"))                  # color-blind −h/2
-        elif abs(df + _d_cw) < eps:
-            out.append((gen, "averaged"))                  # color-weighted −h(1/2−δ/4)
-        else:
-            # Per Copilot PR #863 review: raise on unknown (c,d) rather
-            # than silently falling back.  Audits should catch upstream
-            # drift in `atom_braid_word_3A` rather than mask it here.
-            raise ValueError(
-                f"unexpected d={df:.6g} in canonical braid at gen={gen} "
-                f"(expected 0, -h={-h_val:.6g}, or -h/2={-h_val/2:.6g})"
-            )
+        ctx = f"marshal_to_symbolic_braid gen={gen}"
+        out.append((gen, classify_crossing(
+            float(c), float(d), h_val, context=ctx,
+        )))
     return out

@@ -1,7 +1,6 @@
 *Let $a_8 \in \mathbb{Z}[X]$ denote the top-shared ($m = 8$) integer
 Habiro coefficient of the proton and neutron in the canonical
-Habiro-witness convention (per
-[`docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md)):*
+Habiro-witness convention:*
 
 $$
   a_8(X) \;=\; X^4 + 2\,X^3 + 3\,X^2 + 5\,X + 7.
@@ -40,14 +39,11 @@ partitions fitting within the $m = 8$ shell.
 ## Convention stability
 
 This identification was made in the **Habiro-witness convention**
-(`include_inter=True`). The audit
-[`docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md`](https://github.com/litlfred/qou/blob/main/docs/audits/2026-06-01-qbeta-habiro-a8-partition-function-match.md)
-notes that the partition-function structure is much more
+(`include_inter=True`). The partition-function structure is much more
 convention-robust than the cyclotomic prefactors: it is a property
 of the combinatorial counting at the $m = 8$ shell, not of the
-algebraic-expansion shape, so this finding is expected to survive
-the Phase 5q convention switch (cf. Track 1 of the $\mathfrak{Q}_\beta$ Habiro
-follow-up coordination ledger).
+algebraic-expansion shape, so this finding is expected to survive a
+change of convention.
 
 The Hardy–Ramanujan values
 $(1, 2, 3, 5, 7)$ are standard (OEIS A000041
@@ -58,9 +54,5 @@ Table 1; Andrews, *The Theory of Partitions*, §1.1).
 - Sibling Lean identity (cyclotomic strand-doubling):
   [`cyclotomic-strand-doubling.md`](https://github.com/litlfred/qou/blob/main/content/quantum-observable-universe/mass-theory/cyclotomic-strand-doubling.md)
 - categorical source: the canonical formalism
-- Master $\mathfrak{Q}_\beta$ coordination ledger:
-  [`docs/coordination/1ppq-qbeta.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/1ppq-qbeta.md)
-- This tranche's coordination ledger:
-  [`docs/coordination/2026-06-01-qbeta-habiro-followup.md`](https://github.com/litlfred/qou/blob/main/docs/coordination/2026-06-01-qbeta-habiro-followup.md)
 
-This result records the canonical coincidence that the $a_8$ coefficients $(1,2,3,5,7)$ match the partition numbers $p(1..5)$: a categorical Habiro-shell observation rather than a new deductive argument.
+The coincidence recorded here is a categorical Habiro-shell observation rather than a new deductive argument.

@@ -1,3 +1,4 @@
+import Mathlib.Data.Real.Basic
 import QOU.BraidKnot.KnotFactorAmphicheiral
 
 
@@ -35,8 +36,10 @@ theorem knot_factor_borromean (k : ℕ) (h : ℝ)
     composite = (1 - h ^ 2) ^ k :=
   decouple.decouples
 
-/-- **Existence form**: `a = (1 - h²)^k` is realised. -/
-theorem knot_factor_borromean_value (k : ℕ) (h : ℝ) :
-    ∃ a : ℝ, a = (1 - h ^ 2) ^ k := ⟨(1 - h ^ 2) ^ k, rfl⟩
+-- The former `knot_factor_borromean_value : ∃ a : ℝ, a = (1 - h ^ 2) ^ k`
+-- was removed: `∃ a, a = e` is provable by `⟨e, rfl⟩` for any `e`, so it
+-- asserted nothing about the Borromean composite. `knot_factor_borromean`
+-- above already proves the real statement -- `composite = (1 - h²)^k`, and
+-- it genuinely consumes the `BrunnianDecoupling` hypothesis.
 
 end QOU.BraidKnot

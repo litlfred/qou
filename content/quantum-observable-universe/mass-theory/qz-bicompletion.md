@@ -2,7 +2,7 @@
 *The $(q, z)$-bicompletion is the inverse limit*
 
 $$
-  \widehat{\mathbb{Z}[q^{± 1}, z]}_{q,z} := \varprojlim_{(m, n)} \mathbb{Z}[q^{± 1}, z] \big/ \bigl(I_{m,n}\bigr),
+  \widehat{\mathbb{Z}[q^{\pm 1}, z]}_{q,z} := \varprojlim_{(m, n)} \mathbb{Z}[q^{\pm 1}, z] \big/ \bigl(I_{m,n}\bigr),
 $$
 
 *indexed by pairs $(m, n) \in \mathbb{N}^2$, with the bigraded ideal*
@@ -13,4 +13,4 @@ $$
 
 The bicompletion unifies the $q$-only Habiro ring and the $z$-only Habiro ring at the apex of the cyclotomic completions diagram.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

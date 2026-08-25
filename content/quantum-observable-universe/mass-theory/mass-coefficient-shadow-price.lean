@@ -1,4 +1,6 @@
-import Mathlib.Algebra.Field.Basic
+import Mathlib.Algebra.Ring.Defs
+import Mathlib.Algebra.Group.Units.Basic
+import Mathlib.Algebra.Group.Invertible.Defs
 
 /-!
 # QOU.BraidKnot.MassCoefficientShadowPrice
@@ -28,14 +30,26 @@ Frobenius Gram matrix `G_λ = (w_λ/d_λ) I`) — is recorded in the class field
 consequences** are then DERIVED sorry-free:
 
   • `shadow_price_weight_form` — the canonical-weight form
-    `u_λ* = tilde w_λ · (h/2) · S_λ` (combines `factor` and `C_eq`);
+    `u_λ* = tilde w_λ · (h·⅟2) · S_λ` (combines `factor` and `C_eq`);
   • `normalization` — at `S_λ = 1`, `u_λ* = C_λ`;
   • `coefficient_nuclear_independent` — `C_λ` is independent of the nuclear
-    datum (`u_λ* / S_λ = C_λ` whenever `S_λ ≠ 0`).
+    datum (`u_λ* · S_λ⁻¹ = C_λ` whenever `S_λ` is a unit).
 
-**Pre-Archimedean.**  Polymorphic in the ground field `R` (§7c): `C_λ` is
-`q`-rational (Laurent in `q`), not a real number; the Archimedean
-specialisation `q ↦ q₀ ∈ ℝ` is downstream (`QOU.Calculations`).
+**Pre-Archimedean.  Base ring (§7c): a commutative ring `R`, not a field.**
+`C_λ` is `q`-rational (Laurent in `q`), not a real number; the Archimedean
+specialisation `q ↦ q₀ ∈ ℝ` is downstream (`QOU.Calculations`).  The two
+inverses the statements need are carried explicitly rather than by importing a
+field:
+
+* the halving in `C_λ = tilde w_λ · h/2` is the single ring constant `2`, so it
+  is carried as `[Invertible (2 : R)]` and written `⅟(2 : R)`.  This is exactly
+  the "ground ring contains ½" hypothesis — true of `ℚ(q)` and `ℝ`, false of
+  `ℤ[q, q⁻¹]` — made explicit instead of hidden inside `Field`;
+* the division by the scaling function in `coefficient_nuclear_independent`
+  needs `S_λ` invertible, which over a field is the old `S_λ ≠ 0`; it is now
+  carried as a unit `s : Rˣ` pinned by `S_λ = ↑s`.
+
+Note `h = q − q⁻¹` is itself an abstract class field, so no `q⁻¹` is formed here.
 
 Ref: [wedderburn1908] Wedderburn, "On hypercomplex numbers," Proc. London Math. Soc. s2-6 (1908)
 Ref: [hoefsmit1974] Hoefsmit, representations of Hecke algebras of type A
@@ -52,15 +66,15 @@ structure Partition where
   parts : List ℕ
 
 /-- The shadow-price discipline for the mass-formula coefficients, polymorphic
-    in the ground field `R`.
+    in the ground ring `R` (with `2` invertible).
 
     An instance records, for the nuclear operator-selection LP:
       • the canonical Wedderburn weight `tilde w_λ` and the Hecke scalar `h`;
-      • the partition-only LP coefficient `C_λ = tilde w_λ · h/2`;
+      • the partition-only LP coefficient `C_λ = tilde w_λ · h·⅟2`;
       • the nuclear-datum scaling function `S_λ(Z,N,A)`;
       • the optimal dual variable `u_λ*` with the strong-duality factorisation
         `u_λ* = C_λ · S_λ` (`prop:operator-selection-lp`). -/
-class MassCoefficientShadowPrice (R : Type u) [Field R] where
+class MassCoefficientShadowPrice (R : Type u) [CommRing R] [Invertible (2 : R)] where
   /-- Hecke-generator scalar `h = q - q⁻¹`. -/
   h : R
   /-- Canonical q-deformed Wedderburn weight `tilde w_λ`
@@ -75,36 +89,40 @@ class MassCoefficientShadowPrice (R : Type u) [Field R] where
   S : Partition → R
   /-- Optimal dual variable (shadow price) of the `λ`-Frobenius constraint. -/
   uStar : Partition → R
-  /-- LP shadow-price scaling identity `C_λ = tilde w_λ · h/2` (definitional;
+  /-- LP shadow-price scaling identity `C_λ = tilde w_λ · h·⅟2` (definitional;
       the same `C_λ` as `prop:wedderburn-weight-canonical`). -/
-  C_eq : ∀ lam, C lam = w lam * (h / 2)
+  C_eq : ∀ lam, C lam = w lam * (h * ⅟(2 : R))
   /-- Strong-duality factorisation `u_λ* = C_λ · S_λ`
       (`prop:operator-selection-lp`: strong duality + complementary slackness). -/
   factor : ∀ lam, uStar lam = C lam * S lam
 
 /-- The shadow price in canonical-weight form:
-    `u_λ* = tilde w_λ · (h/2) · S_λ`.  Combines the strong-duality
+    `u_λ* = tilde w_λ · (h·⅟2) · S_λ`.  Combines the strong-duality
     factorisation with the LP scaling identity. -/
 theorem MassCoefficientShadowPrice.shadow_price_weight_form
-    {R : Type u} [Field R] [c : MassCoefficientShadowPrice R] (lam : Partition) :
-    c.uStar lam = c.w lam * (c.h / 2) * c.S lam := by
+    {R : Type u} [CommRing R] [Invertible (2 : R)]
+    [c : MassCoefficientShadowPrice R] (lam : Partition) :
+    c.uStar lam = c.w lam * (c.h * ⅟(2 : R)) * c.S lam := by
   rw [c.factor, c.C_eq]
 
 /-- At the normalisation point `S_λ = 1`, the shadow price equals the
     partition-only coefficient `C_λ`. -/
 theorem MassCoefficientShadowPrice.normalization
-    {R : Type u} [Field R] [c : MassCoefficientShadowPrice R] (lam : Partition)
+    {R : Type u} [CommRing R] [Invertible (2 : R)]
+    [c : MassCoefficientShadowPrice R] (lam : Partition)
     (hS : c.S lam = 1) :
     c.uStar lam = c.C lam := by
   rw [c.factor, hS, mul_one]
 
-/-- The coefficient `C_λ` is independent of the nuclear datum: dividing the
-    shadow price by the scaling recovers the partition-only `C_λ`
-    (whenever `S_λ ≠ 0`). -/
+/-- The coefficient `C_λ` is independent of the nuclear datum: cancelling the
+    scaling off the shadow price recovers the partition-only `C_λ`.  The
+    invertibility of `S_λ` — over a field, the old `S_λ ≠ 0` — is supplied by
+    the unit `s` with `S_λ = ↑s`. -/
 theorem MassCoefficientShadowPrice.coefficient_nuclear_independent
-    {R : Type u} [Field R] [c : MassCoefficientShadowPrice R] (lam : Partition)
-    (hS : c.S lam ≠ 0) :
-    c.uStar lam / c.S lam = c.C lam := by
-  rw [c.factor, mul_div_assoc, div_self hS, mul_one]
+    {R : Type u} [CommRing R] [Invertible (2 : R)]
+    [c : MassCoefficientShadowPrice R] (lam : Partition)
+    (s : Rˣ) (hS : c.S lam = (s : R)) :
+    c.uStar lam * ((s⁻¹ : Rˣ) : R) = c.C lam := by
+  rw [c.factor, hS, mul_assoc, s.mul_inv, mul_one]
 
 end QOU.BraidKnot

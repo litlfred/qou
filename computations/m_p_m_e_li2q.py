@@ -21,6 +21,7 @@ Ref: docs/audits/2026-05-19-faddeev-audit-pr801.md
 from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
+from _precision import set_compute_dps  # noqa: E402 — raise dps before any mpmath value
 import sys
 from pathlib import Path
 
@@ -41,7 +42,7 @@ from mass_endomorphism import (
 def mass_from_tower_F(vols, F_func):
     """𝔪 = |∏ V| + Σ F(|V|) + Σ_{i<j} z² F(|V_i V_j|), with F = q-dilog."""
     n = len(vols)
-    z_mark = 1.0 / (Q0 ** 0.5 + (1.0 / Q0) ** 0.5)
+    z_mark = Q0**3 / (Q0**2 + 1)
     desc = 1.0
     for v in vols:
         desc *= v["full"]
@@ -53,6 +54,13 @@ def mass_from_tower_F(vols, F_func):
             cross += z_mark ** 2 * F_func(abs(vols[i]["full"] * vols[j]["full"]))
     return desc, single, cross, desc + single + cross
 
+
+# This producer never raised working precision, so every mpmath value in
+# it was built at mpmath's default 15 dps and the numbers it emits are
+# HONESTLY float64 — no fake precision to detect, no constant built too
+# early, so the padding / raw-float64 / import-time gates all pass it.
+# Gate: never_raises_dps_audit.py (bean qou-j6gb). Idempotent.
+set_compute_dps()
 
 def Li_2_q_f64(z_val: float) -> float:
     """f64 wrapper around mpmath li_2_q for direct comparison with Phi_q."""

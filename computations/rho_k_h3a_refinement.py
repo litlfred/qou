@@ -141,7 +141,10 @@ def chi_numeric(shape, crossings, q_mp):
 
     q = mp.mpf(q_mp)
     h = q - mp.mpf(1) / q
-    d_lookup = {"sigma": mp.mpf(0), "sigma_inv": -h, "averaged": -h / 2}
+    # Canonical map. Was inline {"sigma": 0, "sigma_inv": -h,
+    # "averaged": -h/2}, which silently sent the colour-weighted p-n
+    # interface to -h/2 -- the whole residual Schur-Weyl failure.
+    from canonical_braid_crossings import d_for_ctype
     eye = mp.eye(dim)
 
     M = mp.eye(dim)
@@ -149,7 +152,7 @@ def chi_numeric(shape, crossings, q_mp):
         if gen_idx < 0 or gen_idx >= len(matrices):
             raise IndexError(f"gen_idx {gen_idx} out of range for shape {shape}")
         sigma = matrices[gen_idx]
-        d_val = d_lookup[ctype]
+        d_val = d_for_ctype(ctype, h)
         cross = sigma + d_val * eye
         M = M * cross
 
@@ -192,6 +195,24 @@ from experimental_constants import m_n_derived_3input  # noqa: E402
 # Per `hecke-branching-trace-decomposition.md`: this is NOT a disjoint
 # product — the interface I = σ_3 - h/2·1 acts as an operator-valued
 # A^λ_{μ,ν}(I), non-scalar for 9 of 11 partitions λ ⊢ 6.
+#
+# READ THAT AS WRITTEN: it is about the branching COMBINER A^λ_{μν}(I), i.e.
+# how I acts across a Wedderburn decomposition. It is NOT a statement that a
+# `(gen_idx, ctype)` pair cannot denote I. Bean qou-gdtb item 1 read it the
+# second way and concluded the pair encoding was inadequate "in principle";
+# that inference is a category error and does not hold.
+#
+# I = σ_g - (h/2)·1 is of the form `c·σ_g + d·1` with d a SCALAR, so the pair
+# names the generator and `d_for_ctype` supplies d exactly — the
+# reconstruction is an algebraic identity, independent of λ. ρ_λ(σ_g) is
+# non-scalar and ρ_λ(I) inherits that for free; nothing is left for the
+# encoding to express. Verified symbolically in q over every λ ⊢ 6:
+# 9 of 11 non-scalar, max|I_pair - I_triple| = 0 for all of them —
+# `computations/probes/ctype_pair_expressiveness_probe.py`.
+#
+# The encoding WOULD be inadequate for an interface not of that form (a sum
+# over several generators, or a λ-dependent coefficient). The corpus has
+# none; that, not non-scalarity, is the trigger to watch for.
 #
 # The legacy disjoint word σ₁⁷σ₂⁴σ₄⁶σ₅⁴σ₄⁻¹ from
 # markov_trace_axiomatic_multi_atom.py does NOT reproduce
@@ -275,7 +296,7 @@ def load_y_lambda_n6():
 
 def load_deuteron_tr_M():
     """Load |tr_M(β_D)| at q_0 from atomic-tr-m-mpfr-50dps.witness.json."""
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     d = json.loads(path.read_text())
     for r in d["results"]:
         if r["atom"] == "deuteron":

@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
   "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-06-22T13:28:16.246522+00:00",
-  "commitSha": "58d7abe89fb9e1ee9064a9bca3cffb503953a750",
+  "computedAt": "2026-08-08T19:40:09.661075+00:00",
+  "commitSha": "757490e9367c738533bf2a8b64d17a3c4dc97438",
   "assertions": [
     {
       "name": "machinery_recovers_chebyshev_depth2",
@@ -17,7 +17,7 @@
   "computation": "sw-prolongation-symbol",
   "scriptFile": "sw_prolongation_symbol.py",
   "scriptHash": "9dc23454c33e",
-  "scriptCommitSha": "4cd856a121b359db0e954a1de30d88408718d93e",
+  "scriptCommitSha": "12e7526c3ae13da8234eddba2da8a774ee251153",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -32,19 +32,19 @@
   },
   "auditOnly": "docs/workplans/2026-06-05-keystone-prolongation-symbol-derivation.md",
   "parameters": {
-    "q_0": "1.1099785955573347198997632204832250266562084087802"
+    "q_0": "1.1099785827513808075916690956107688798744991218736"
   },
   "data": {
     "self_validation_torus_P": {
       "depth": 2,
       "c": [
         "-1.0",
-        "2.04370621823"
+        "2.04370620853"
       ],
-      "expected_c1_2cosh2eta": "2.04370621823"
+      "expected_c1_2cosh2eta": "2.04370620853"
     },
     "binding_aD_status": "only a_D^(4)=Family-A wired; a_D^(2),a_D^(3) gated on #1765 per-knot λ(L) rule — test deferred until consumed"
   },
-  "q0Anchor": "muon",
-  "q0Value": "1.10997859555733471989976322048322502665620840878015368660798114614493"
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808075916690956107688798744991218736"
 }

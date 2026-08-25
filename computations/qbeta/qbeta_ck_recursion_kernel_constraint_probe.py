@@ -51,6 +51,11 @@ from qbeta_utils import c3_target_at  # noqa: E402
 
 # The fitted c_4 (CODATA residual, near the c_k precision floor) — the value the
 # constant depth-2 prediction is tested against.  Ref: qbeta_1ppq_achieved.py.
+
+# Constants below are built at module scope. set_compute_dps() must run
+# FIRST: at import time mp.dps is still mpmath's default 15 (~binary64),
+# and a literal rounded there cannot be recovered by raising dps later.
+set_compute_dps()
 C4_FIT = mpf("-0.97157")
 
 # Magnitude floor used in the relative miss metric, set near the c_k precision

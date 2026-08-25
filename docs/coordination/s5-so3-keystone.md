@@ -97,6 +97,114 @@ is its *geometric origin*.
 > MTC hosts `W_λ`; the arena is the non-compact `SU_q(2) → E_q(2)` Hahn–Exton q-Bessel contraction and the
 > sharpened object is the colored Σ(2,3,5) WRT q-series. See the 2026-06-22 update banner above.
 
+## Literature scoping — the WRT domain question (2026-08-10, PR #4952)
+
+**UPGRADED TO READ TIER 2026-08-10** — the owner supplied three of the six papers
+([`95accb15`](https://github.com/litlfred/qou/commit/95accb153a132df290605fd2ad27930b2a47b8f9)),
+and the domain finding below is now confirmed by direct quotation + measurement.
+The reading list and route table remain a plan; math/0605314, 1411.6062 and
+2412.04241 are still unread.
+
+Counting `references.ts`: the corpus is deep on the q-Bessel/`E_q(2)` side
+(Koelink 12, Woronowicz 12, Hahn 12, Exton 8) and on quantum modularity
+(Garoufalidis 48, Habiro 29, Zagier 24), but thin exactly where the open object
+lives — WRT 4, Brieskorn 4, Seifert 3, and **Beliakova 0**. Beliakova at zero is
+the signal: a principal author of the *unified WRT* programme, and Σ(2,3,5) is a
+Brieskorn sphere.
+
+Two search-tier findings, the second load-bearing:
+
+1. The unified-WRT programme (Habiro; extended by Beliakova, Le, Blanchet,
+   Buehler) covers **Seifert fibered spaces**, with Brieskorn spheres
+   `Σ(p₁,p₂,p₃)` studied in that context — the keystone's manifold family has an
+   existing named construction.
+2. Its **native domain is the roots of unity**: a Habiro-ring element is "a
+   function whose domain is the set of roots of unity", quantum invariants being
+   "analytic functions defined on the set of roots of unity". If that holds as
+   stated, the substrate anchor `q₀ ≈ 1.10998` (real, `>1`) is **off** that domain
+   — so the archimedean continuation this ledger names is not a gap a better
+   construction closes, it is a request to leave the object's native domain, and
+   the analytic route (state integrals / Faddeev `Φ_q`) is a different literature
+   from the Habiro one.
+
+Actionable consequence *if* (2) survives reading: the framework already carries
+`Φ_q` (cheat-sheet §4 sorts it against `Li₂^q`), and `Φ_q` is the state-integral
+kernel — so the question would become *which* state integral, not how to continue
+a Habiro element.
+
+**CONFIRMED (read tier).** Beliakova–Le arXiv:1106.6298 §1 defines
+`Ẑ[q] := lim←_k Z[q]/((q;q)_k)` and states verbatim: *"Every element f(q) ∈ Ẑ[q]
+can be considered as a function whose domain is the set of roots of unity"*, with
+`J_M` evaluating at any root of unity to the WRT value. Dimofte–Garoufalidis
+arXiv:1511.05628 §1 defines a quantum modular form on *"the set of complex roots
+of unity"* with formal `φ_ζ(ℏ) ∈ C[[ℏ]]` — asymptotics near, not values at
+`|q|>1`. Lovejoy–Osburn–Störzer arXiv:2605.15740 (2026) recasts unified WRT as *"an
+identity for a q-hypergeometric series at roots of unity"*, covering Hikami's
+**Brieskorn** cases — the keystone's own family, still at roots of unity.
+
+**And the mechanism is sharper than "native domain."** An element is
+`Σ_k f_k(q)·(q;q)_k`, so `(q;q)_k` decides convergence. Measured at the canonical
+q₀ ([`habiro_domain_substrate_anchor_probe.py`](../../computations/probes/habiro_domain_substrate_anchor_probe.py)):
+at a 5th root of unity it is **exactly 0 for k ≥ 5** (the sum terminates — that is
+*why* the domain is what it is); at `1/q₀ ≈ 0.9009` it converges to `1.109e-6`; at
+the substrate `q₀ ≈ 1.10998` it **diverges super-exponentially**, `|(q₀;q₀)_80| ≈
+7.3e140`. The `(q;q)_k`-adic completion that makes roots of unity evaluable is the
+same one that makes real `q>1` diverge — so continuing a unified-WRT element to q₀
+is not a harder evaluation, it asks for something the object does not have.
+Scope-(a) on this route; nothing excluded elsewhere, and nothing said about state
+integrals.
+
+**LEAD, not a route (do not record it as one).** `1/q₀ < 1` is in the convergent
+regime and the framework already threads `q ↔ q⁻¹` (bar-even/odd, the proved
+`θ_{λ′}=θ_λ⁻¹`, the Q_β cosh/sinh split). But bounded `(q;q)_k` is **necessary, not
+sufficient** — convergence also needs the `f_k`, which nothing here bounds. Needs
+a specific Σ(2,3,5) series before it counts.
+
+**ROUTE SELECTED (2026-08-10, all six papers read).** The two candidate routes
+separate cleanly, in opposite directions:
+
+* **Habiro / unified WRT — cannot reach q₀, structurally.** Confirmed above, and
+  *strengthened* by the newest extension: 2412.04241 (Garoufalidis–Scholze–
+  Wheeler–Zagier) still defines elements as "collections of power series at each
+  complex root of unity", and the convergence it adds is **p-adic** on
+  `{q ∈ C_p : |q|_p = 1}`. On the complex side it says the series are
+  "**factorially divergent series over the complex numbers**". The substrate
+  anchor is archimedean and real, so this is the wrong analytic world entirely.
+* **State integrals — the anchor IS in the domain.** 1411.6062 §1.1 states
+  `I_{A,B}(b) = ∫ Φ_b(x)^B e^{−Aπix²} dx` is "an absolutely convergent integral
+  ... for b with `b² ∉ ℝ≤0`". Mapping `q₀` through `q = e^{2πiτ}`, `τ = b²` gives
+  `b² = −0.0166063414046 i`, purely imaginary ⇒ **converges**
+  ([probe](../../computations/probes/state_integral_domain_substrate_anchor_probe.py)).
+
+⇒ **Attack the keystone's archimedean continuation on the analytic/state-integral
+side, not the Habiro side.** The corpus already holds the kernel (Faddeev `Φ_q`,
+cheat-sheet §4). Caveats that keep this from being more than route selection:
+convergence ≠ identification of `W_λ`; the paper's *evaluation* theorem is at
+rational `b²` (roots of unity again) and does not transfer to our purely-imaginary
+`b²`; and `τ = b²` is the standard convention, inferred rather than quoted.
+
+Carried as a question, NOT a correspondence: the paper's headline 4₁ identity is
+`I_{1,2}(1) = (e^{iπ/6}/√3)·2·sinh(V/2π)` with `V` verified to be the corpus's own
+`Vol(4₁) = 2·Cl₂(π/3)` (the CAL-2 anchor) to 3.9e-31 — the anchor volume appearing
+inside a **sinh**, next to a framework that carries a bar-odd sinh / bar-even cosh
+split. At `b=1`, not the anchor, matched to nothing. Anti-numerology applies.
+
+Ordered reading list (all six now read), the domain claim first because everything turned on it:
+[math/0605314](https://arxiv.org/abs/math/0605314),
+[1106.6298](https://arxiv.org/abs/1106.6298),
+[1511.05628](https://arxiv.org/abs/1511.05628),
+[1411.6062](https://arxiv.org/abs/1411.6062),
+[2412.04241](https://arxiv.org/abs/2412.04241) (Dec 2024 — most likely to have
+relaxed the domain restriction, if anything has),
+[2605.15740](https://arxiv.org/abs/2605.15740).
+
+Full scoping + what must not be concluded:
+[`2026-08-10-keystone-literature-scoping-wrt-domain.md`](../audits/2026-08-10-keystone-literature-scoping-wrt-domain.md).
+
+**Tooling:** `mcp__paper-search-mcp__search_arxiv` returned empty for every query
+including the control "knot theory" — broken/blocked, not a null result. Use
+`WebSearch` with `allowed_domains: ["arxiv.org"]`.
+
 ## Refutations not to re-walk (canonical-no-negative-result discipline)
 
 1. **210 ppb muon via (1,1,1) sign-block / Wedderburn projector** — the correction is O(16 %) (sign-block)
@@ -394,7 +502,7 @@ geometric object). The 2026-06-30 "4↔4" correspondence survives at SUPPORT lev
 Hikami's χ^{(111)}/χ^{(112)} equal the 2026-07-02 sympy-derived colored characters
 exactly (eq. 5.6 = the derived identity) — the two independent validations agree.
 Consequence: the geometric route cannot close on S³/2I itself; redirects = larger-D
-Seifert data / colored Ẑ-blocks (Murakami now in uploads/) / non-geometric
+Seifert data / colored Ẑ-blocks (Murakami now in library/) / non-geometric
 `BWVacuumRowIsHecke`. Audit:
 [`docs/audits/2026-07-02-keystone-valuemap-genuine-smatrix.md`](../audits/2026-07-02-keystone-valuemap-genuine-smatrix.md);
 probe `computations/probes/keystone_valuemap_genuine_smatrix_s013.py`; also the round-2
@@ -469,7 +577,7 @@ Two machine-verified facts consolidate the whole refutation series. **(1)** bwS0
 at n=5 is *exactly* the compact SU_q(2)/Hecke quantum-dimension vector — 3 balanced
 q-integers [1],[4],[5] (Laurent polynomials in q₀) + the product [4][3]/[2] = the
 Verlinde ratio S₀λ/S₀₀. **(2)** The owner-uploaded Murakami GPPV paper
-(`uploads/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
+(`library/arxiv-2205.01282v2/2205.01282v2.pdf`) has **0** colored/decorated/wilson/refined terms — its
 Σ(2,3,5) homological block is the undecorated D=2 golden false theta (already refuted).
 
 **Type argument (why every geometric route failed):** the target is compact-algebraic
@@ -491,7 +599,7 @@ probe `computations/probes/keystone_valuemap_target_is_compact_hecke.py`.
 
 ## q-Bessel Tricomi sub-route refuted WITH a source (2026-07-04, bean s013)
 
-Owner uploaded `uploads/014-026.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
+Owner uploaded `library/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials/raza-fadel-cesarano-2025-two-variable-q-legendre-polynomials.pdf` (Raza–Fadel–Cesarano 2025, 2-variable
 q-Legendre) in response to the redirect-(ii) source ask. It is a q-Bessel paper
 but **not** the Koelink–Swarttouw Plancherel source — it cites Koornwinder–
 Swarttouw [22] but contains no q-Hankel kernel / E_q(2) measure (scan: 0
@@ -511,7 +619,7 @@ contained). Audit:
 ## LAST disciplined q-Bessel form REFUTED — E_q(2) q-Hankel vacuum row, fully sourced (2026-07-04, bean s013)
 
 Owner uploaded the decisive source: Koornwinder–Swarttouw 1992 (arXiv:1208.2521 =
-TAMS 333), `uploads/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
+TAMS 333), `library/arxiv-1208.2521v1/1208.2521v1.pdf` — the third (Hahn–Exton) q-Bessel eq.(1.2)
 + Hansen–Lommel orthogonality (roots μ_j of C_α(q;μ)=0 = the Plancherel nodes).
 This is the one form #3292 named as still-testable. Probe
 `keystone_qhankel_eq2_vacuum_row.py` (α∈{0,½,1,2}, 112-candidate parameter-free
@@ -615,3 +723,38 @@ non-self-conjugate blocks (`c(λ)≠0`, `θ^f≠1` at `q₀>1`) — that fibre c
 Verification: risky proof steps machine-checked vs real Mathlib via faithful replicas
 (exit 0); full lean-direct blocked in-sandbox by the QOU-cone/lake-build-Mathlib-wipe
 catch-22; CI to confirm exit 0.
+
+> **Verification cleared (2026-07-26).** The full lean-direct check is no longer
+> pending: `KeystoneElectronBlockExact.lean` and its entire 10-module QOU cone
+> (`IdentityIContentDecomposition` → `KeystoneC2{Content,Dim,QDim}Transpose` →
+> `QPartitionCombinatorics` → `WLambdaMTCLocalizationObligation` →
+> `KeystoneVerlindeSMatrixBridge` → `KeystoneModularTwist` → `BWVacuumRowConcrete`
+> → keystone) recompiled **lean-direct exit 0, sorry-free** against current `main`
+> on the restored `lake-cache/qou-v4-24-0` Mathlib oleans (the catch-22 is
+> side-stepped by `lean`-direct against the cache branch, not `lake build`). Survey:
+> [`docs/audits/2026-07-26-1ppq-l2-two-front-survey.md`](../audits/2026-07-26-1ppq-l2-two-front-survey.md).
+
+## T(3,5) cross-link (2026-08-01, bean qou-pquk)
+
+The tau-knot discussion review
+([`docs/audits/2026-08-01-tau-knot-discussion-review.md`](../audits/2026-08-01-tau-knot-discussion-review.md))
+surfaced a structural cross-link into this keystone: the torus knot
+**T(3,5)** — the *maximal-genus* (g = 4) member of the embeddable
+torus-knot spectrum, the unique one saturating the Bring genus bound on
+a 3-strand base — has branched double cover the **Poincaré homology
+sphere Σ(2,3,5) = S³/2I**, with fundamental group the binary
+icosahedral group 2I. That is exactly the manifold whose WRT invariant
+this keystone computes. So the keystone's geometric object is reachable
+from *inside* the embeddable spectrum: the W_λ construction and the
+maximal embeddable 3-strand knot meet at Σ(2,3,5).
+
+Sibling fact (secondary): T(3,4)'s double cover is governed by the
+binary *octahedral* group — the S₄ ⊂ S₅ restriction — giving the
+subgroup-chain reading of the two 3-strand embeddable knots.
+
+**Lean feasibility (assessed):** branched covers and Brieskorn spheres
+are absent from Mathlib; a faithful formalization of the cover itself
+is out of reach. What IS formalizable now: the genus saturation
+statement (g(T(3,5)) = 4 = the Bring bound, pure arithmetic) and the
+group-theoretic layer (2I as the binary icosahedral group). Neither is
+started; this entry records the link and the assessment.

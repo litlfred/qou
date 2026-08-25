@@ -26,7 +26,7 @@ namespace QOU.Information
     c_q(p) = 1 / (q(p) - 1).
     Diverges at classicality (q → 1), vanishes in the deep-quantum regime (q → ∞).
     Label: def:information-speed-of-light -/
-noncomputable def speedOfLight {M : Type*} (sp : SubstrateParameter M)
+noncomputable def speedOfLight {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   1 / (sp.field p - 1)
 
@@ -35,7 +35,7 @@ noncomputable def speedOfLight {M : Type*} (sp : SubstrateParameter M)
 /-- **Operational entropy** at a point p ∈ M.
     η_q(p) = (2q(p) - 1) / q(p)^3.
     Label: def:operational-entropy -/
-noncomputable def operationalEntropy {M : Type*} (sp : SubstrateParameter M)
+noncomputable def operationalEntropy {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   (2 * sp.field p - 1) / sp.field p ^ 3
 
@@ -44,7 +44,7 @@ noncomputable def operationalEntropy {M : Type*} (sp : SubstrateParameter M)
 /-- **Hausdorff dimension** of the Julia set at substrate parameter q.
     d_H(q) = (2q - 1)^2 / q^3.
     Label: rem:hausdorff-dimension-recurrence -/
-noncomputable def hausdorffDimension {M : Type*} (sp : SubstrateParameter M)
+noncomputable def hausdorffDimension {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   (2 * sp.field p - 1) ^ 2 / sp.field p ^ 3
 
@@ -54,7 +54,7 @@ noncomputable def hausdorffDimension {M : Type*} (sp : SubstrateParameter M)
     G(q) = c_q^3 · ℏ_q / S_cell(q)
     where S_cell(q) = η_q · ℏ_q^2 / (1 - ℏ_q^2).
     Label: def:gravitational-constant -/
-noncomputable def gravitationalConstant {M : Type*} (sp : SubstrateParameter M)
+noncomputable def gravitationalConstant {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) : ℝ :=
   let q := sp.field p
   let c := 1 / (q - 1)
@@ -67,7 +67,7 @@ noncomputable def gravitationalConstant {M : Type*} (sp : SubstrateParameter M)
 
 /-- At classicality (q = 1), the Hausdorff dimension equals 1
     (the Julia set degenerates to the unit circle). -/
-theorem hausdorffDimension_classical {M : Type*} (sp : SubstrateParameter M)
+theorem hausdorffDimension_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p = 1) :
     hausdorffDimension sp p = 1 := by
   unfold hausdorffDimension
@@ -111,7 +111,7 @@ private lemma planck_identity (q : ℝ) (hq_gt : q > 1) :
 /-- In Planck units, G_Planck = G(q) · (ℏ_q / c_q)^2 = 1 for all q > 1.
     This expresses the fact that the gravitational constant, when measured
     in the natural units set by ℏ_q and c_q, is unity. -/
-theorem gravitationalConstant_planck_units {M : Type*} (sp : SubstrateParameter M)
+theorem gravitationalConstant_planck_units {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     gravitationalConstant sp p *
       (quantumPlanckConstant sp p / speedOfLight sp p) ^ 2 = 1 := by
@@ -119,7 +119,7 @@ theorem gravitationalConstant_planck_units {M : Type*} (sp : SubstrateParameter 
   exact planck_identity (sp.field p) hq
 
 /-- The speed of light is positive when q > 1. -/
-theorem speedOfLight_positive {M : Type*} (sp : SubstrateParameter M)
+theorem speedOfLight_positive {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p > 1) :
     0 < speedOfLight sp p := by
   unfold speedOfLight
@@ -128,7 +128,7 @@ theorem speedOfLight_positive {M : Type*} (sp : SubstrateParameter M)
 
 /-- The operational entropy approaches 1 as q → 1.
     At q = 1 exactly, η_q = (2·1 - 1) / 1^3 = 1. -/
-theorem operationalEntropy_classical {M : Type*} (sp : SubstrateParameter M)
+theorem operationalEntropy_classical {M : Type*} (sp : ArchimedeanSubstrateField M)
     (p : M) (hq : sp.field p = 1) :
     operationalEntropy sp p = 1 := by
   unfold operationalEntropy

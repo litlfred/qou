@@ -5,7 +5,7 @@ export default proposition({
     { kind: "note", body: "Lean sibling: archimedean specialisation over $\\mathbb{R}$ (AGENTS.md §7c). Underlying combinatorial content stays generic to any commutative ring with the same $q$-data." },
   ],
   label: "prop:local-substrate-q",
-  lean: { ref: "qou:QOU.Experimental.local_substrate_q",
+  lean: { ref: "qou:QOU.Experimental.LocalSubstrateQ",
     validation: "not_checked",
   },
   title: "Local Value of the Substrate Parameter",

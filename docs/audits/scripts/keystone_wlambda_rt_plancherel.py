@@ -27,9 +27,15 @@ TQFT-localization framework and checks the weights it must produce; it does NOT
 derive q₀, does NOT close the Reeb=restriction-functor identity in Lean, and the
 210 ppb muon physics stays refuted (icosahedral-reeb scope §"Ingredient 5").
 """
+import sys
+from pathlib import Path
+
 import mpmath as mp
 
-mp.mp.dps = 40
+sys.path.insert(0, str(Path(__file__).resolve().parents[3] / "computations" / "substrate"))
+from _precision import set_compute_dps  # noqa: E402
+
+set_compute_dps()
 Q0 = mp.mpf("1.1099785955541805")
 
 

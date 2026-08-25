@@ -1,0 +1,422 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.3.0",
+  "computedAt": "2026-08-08T21:45:03.799238+00:00",
+  "commitSha": "1af16e74a017e9e76886c81b8aae15c4289c2004",
+  "assertions": [
+    {
+      "name": "exact_reflection_holds_for_every_k",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "three N, six k each, to working dps"
+    },
+    {
+      "name": "symmetric_half_equals_trapezoid_remainder_and_is_O_one_over_N_sq",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "identity to working dps at 16 (N,k); and the k = N/2 value quarters on each doubling of N"
+    },
+    {
+      "name": "antisymmetric_half_is_the_euler_maclaurin_B2_term",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": "0.5",
+      "source": "N.eps_k against -(pi/12)cot(theta) at five theta over three N; residual quarters per doubling; eps vanishes at theta = pi/2"
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 26,
+  "computation": "kashaev-reflection",
+  "scriptFile": "kashaev_reflection_probe.py",
+  "scriptHash": "bca6d26fa2fa",
+  "scriptCommitSha": "unknown",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "data": {
+    "the_exact_reflection": {
+      "statement": "L_k + L_(N-1-k) = log N for every k < N, where L_k = sum_{j=1}^k log(2 sin(j pi/N)) = -s_k",
+      "proof": "sin((N-j) pi/N) = sin(j pi/N); split Ico 1 N at k+1 and reflect the upper block by j -> N-j; the total is the endpoint value log N",
+      "lean": "QOU.Knot.FigureEightVolume.sum_log_two_sin_reflect, sorry-free",
+      "rows": [
+        {
+          "N": 50,
+          "k": 1,
+          "lhs": "3.912023005428146058619",
+          "log_N": "3.912023005428146058619",
+          "abs_diff": "5.07118e-70"
+        },
+        {
+          "N": 50,
+          "k": 3,
+          "lhs": "3.912023005428146058619",
+          "log_N": "3.912023005428146058619",
+          "abs_diff": "3.9845e-70"
+        },
+        {
+          "N": 50,
+          "k": 12,
+          "lhs": "3.912023005428146058619",
+          "log_N": "3.912023005428146058619",
+          "abs_diff": "3.62227e-71"
+        },
+        {
+          "N": 50,
+          "k": 25,
+          "lhs": "3.912023005428146058619",
+          "log_N": "3.912023005428146058619",
+          "abs_diff": "7.24454e-71"
+        },
+        {
+          "N": 50,
+          "k": 41,
+          "lhs": "3.912023005428146058619",
+          "log_N": "3.912023005428146058619",
+          "abs_diff": "1.81114e-70"
+        },
+        {
+          "N": 50,
+          "k": 48,
+          "lhs": "3.912023005428146058619",
+          "log_N": "3.912023005428146058619",
+          "abs_diff": "5.07118e-70"
+        },
+        {
+          "N": 101,
+          "k": 1,
+          "lhs": "4.615120516841259450884",
+          "log_N": "4.615120516841259450884",
+          "abs_diff": "7.969e-70"
+        },
+        {
+          "N": 101,
+          "k": 3,
+          "lhs": "4.615120516841259450884",
+          "log_N": "4.615120516841259450884",
+          "abs_diff": "6.52009e-70"
+        },
+        {
+          "N": 101,
+          "k": 25,
+          "lhs": "4.615120516841259450884",
+          "log_N": "4.615120516841259450884",
+          "abs_diff": "3.62227e-70"
+        },
+        {
+          "N": 101,
+          "k": 50,
+          "lhs": "4.615120516841259450884",
+          "log_N": "4.615120516841259450884",
+          "abs_diff": "2.17336e-70"
+        },
+        {
+          "N": 101,
+          "k": 84,
+          "lhs": "4.615120516841259450884",
+          "log_N": "4.615120516841259450884",
+          "abs_diff": "2.17336e-70"
+        },
+        {
+          "N": 101,
+          "k": 99,
+          "lhs": "4.615120516841259450884",
+          "log_N": "4.615120516841259450884",
+          "abs_diff": "7.969e-70"
+        },
+        {
+          "N": 200,
+          "k": 1,
+          "lhs": "5.298317366548036677453",
+          "log_N": "5.298317366548036677453",
+          "abs_diff": "5.79563e-70"
+        },
+        {
+          "N": 200,
+          "k": 3,
+          "lhs": "5.298317366548036677453",
+          "log_N": "5.298317366548036677453",
+          "abs_diff": "5.79563e-70"
+        },
+        {
+          "N": 200,
+          "k": 50,
+          "lhs": "5.298317366548036677453",
+          "log_N": "5.298317366548036677453",
+          "abs_diff": "1.30402e-69"
+        },
+        {
+          "N": 200,
+          "k": 100,
+          "lhs": "5.298317366548036677453",
+          "log_N": "5.298317366548036677453",
+          "abs_diff": "8.69345e-70"
+        },
+        {
+          "N": 200,
+          "k": 166,
+          "lhs": "5.298317366548036677453",
+          "log_N": "5.298317366548036677453",
+          "abs_diff": "4.34673e-70"
+        },
+        {
+          "N": 200,
+          "k": 198,
+          "lhs": "5.298317366548036677453",
+          "log_N": "5.298317366548036677453",
+          "abs_diff": "5.79563e-70"
+        }
+      ]
+    },
+    "the_symmetric_half_is_a_trapezoid_remainder": {
+      "identity": "eps_k + eps_(N-1-k) = (1/2)[f(th) + f(th+h)] - (1/h) int_th^{th+h} f,  f = log(2 sin), h = pi/N",
+      "derivation": "substitute s_k = (N/pi)Lambda(th) - (1/2)log(2N sin th) + eps_k into the reflection and use Lambda(pi-x) = -Lambda(x); everything else cancels",
+      "consequence": "the symmetric half of (A)'s error is O(h^2 csc^2 th), already sharper than the O(1/N) claimed. All of (A)'s difficulty is in the ANTISYMMETRIC half",
+      "rows": [
+        {
+          "N": 100,
+          "k": 16,
+          "sym_part": "-0.000335214485351703853",
+          "trapezoid": "-0.000335214485351703853",
+          "abs_diff": "1.24077e-69"
+        },
+        {
+          "N": 100,
+          "k": 33,
+          "sym_part": "-0.000109015861127165261",
+          "trapezoid": "-0.000109015861127165261",
+          "abs_diff": "0.0"
+        },
+        {
+          "N": 100,
+          "k": 50,
+          "sym_part": "-0.0000822710632477329005",
+          "trapezoid": "-0.0000822710632477329005",
+          "abs_diff": "3.80339e-70"
+        },
+        {
+          "N": 100,
+          "k": 66,
+          "sym_part": "-0.000109015861127165261",
+          "trapezoid": "-0.000109015861127165261",
+          "abs_diff": "3.16949e-70"
+        },
+        {
+          "N": 200,
+          "k": 33,
+          "sym_part": "-0.0000815163565141820935",
+          "trapezoid": "-0.0000815163565141820935",
+          "abs_diff": "1.30352e-69"
+        },
+        {
+          "N": 200,
+          "k": 66,
+          "sym_part": "-0.0000274995046129831677",
+          "trapezoid": "-0.0000274995046129831677",
+          "abs_diff": "6.15786e-70"
+        },
+        {
+          "N": 200,
+          "k": 100,
+          "sym_part": "-0.0000205631979718798514",
+          "trapezoid": "-0.0000205631979718798514",
+          "abs_diff": "1.24063e-69"
+        },
+        {
+          "N": 200,
+          "k": 133,
+          "sym_part": "-0.0000274995046129831677",
+          "trapezoid": "-0.0000274995046129831677",
+          "abs_diff": "6.15786e-70"
+        },
+        {
+          "N": 400,
+          "k": 66,
+          "sym_part": "-0.0000206559067817850689",
+          "trapezoid": "-0.0000206559067817850689",
+          "abs_diff": "2.1971e-69"
+        },
+        {
+          "N": 400,
+          "k": 133,
+          "sym_part": "-6.84359783119809877e-6",
+          "trapezoid": "-6.84359783119809877e-6",
+          "abs_diff": "7.62488e-69"
+        },
+        {
+          "N": 400,
+          "k": 200,
+          "sym_part": "-5.14051408682901927e-6",
+          "trapezoid": "-5.14051408682901927e-6",
+          "abs_diff": "4.88101e-69"
+        },
+        {
+          "N": 400,
+          "k": 266,
+          "sym_part": "-6.84359783119809877e-6",
+          "trapezoid": "-6.84359783119809877e-6",
+          "abs_diff": "7.62488e-69"
+        },
+        {
+          "N": 800,
+          "k": 133,
+          "sym_part": "-5.1288257706393695e-6",
+          "trapezoid": "-5.1288257706393695e-6",
+          "abs_diff": "9.86928e-70"
+        },
+        {
+          "N": 800,
+          "k": 266,
+          "sym_part": "-1.71477206055872927e-6",
+          "trapezoid": "-1.71477206055872927e-6",
+          "abs_diff": "2.23675e-69"
+        },
+        {
+          "N": 800,
+          "k": 400,
+          "sym_part": "-1.2851106851333749e-6",
+          "trapezoid": "-1.2851106851333749e-6",
+          "abs_diff": "2.09186e-69"
+        },
+        {
+          "N": 800,
+          "k": 533,
+          "sym_part": "-1.71477206055872927e-6",
+          "trapezoid": "-1.71477206055872927e-6",
+          "abs_diff": "2.23675e-69"
+        }
+      ]
+    },
+    "the_antisymmetric_half_in_closed_form": {
+      "measured": "eps_k = -(pi / 12 N) cot(theta) + O(1/N^3)",
+      "identification": "exactly the Euler-Maclaurin B_2/2! term (h/12) f'(theta) with f' = cot",
+      "refined_expansion": "s_k = (N/pi) Lambda(th) - (1/2) log(2 N sin th) - (pi/12N) cot(th) + O(1/N^3)",
+      "no_leftover_constant": "the -(1/2) log(2 N sin th) form, INCLUDING its 2N, is confirmed with no residual additive constant — this is the correction to van der Veen's Lemma 3 recorded in the outreach draft",
+      "rows": [
+        {
+          "theta": "1/6",
+          "N": 400,
+          "N_eps": "-0.4589793428273351",
+          "prediction": "-0.4589831870788841",
+          "residual": "3.8442515e-6"
+        },
+        {
+          "theta": "1/6",
+          "N": 800,
+          "N_eps": "-0.4548227957574076",
+          "prediction": "-0.4548237351926887",
+          "residual": "9.3943528e-7"
+        },
+        {
+          "theta": "1/6",
+          "N": 1600,
+          "N_eps": "-0.4548235003310087",
+          "prediction": "-0.4548237351926887",
+          "residual": "2.3486168e-7"
+        },
+        {
+          "theta": "1/4",
+          "N": 400,
+          "N_eps": "-0.2617983112239419",
+          "prediction": "-0.2617993877991494",
+          "residual": "1.0765752e-6"
+        },
+        {
+          "theta": "1/4",
+          "N": 800,
+          "N_eps": "-0.2617991186494186",
+          "prediction": "-0.2617993877991494",
+          "residual": "2.6914973e-7"
+        },
+        {
+          "theta": "1/4",
+          "N": 1600,
+          "N_eps": "-0.2617993205113461",
+          "prediction": "-0.2617993877991494",
+          "residual": "6.7287803e-8"
+        },
+        {
+          "theta": "1/3",
+          "N": 400,
+          "N_eps": "-0.1520647665972611",
+          "prediction": "-0.152065184751206",
+          "residual": "4.1815394e-7"
+        },
+        {
+          "theta": "1/3",
+          "N": 800,
+          "N_eps": "-0.1520650802113324",
+          "prediction": "-0.152065184751206",
+          "residual": "1.0453987e-7"
+        },
+        {
+          "theta": "1/3",
+          "N": 1600,
+          "N_eps": "-0.1513784705221969",
+          "prediction": "-0.1513784964800898",
+          "residual": "2.5957893e-8"
+        },
+        {
+          "theta": "2/3",
+          "N": 400,
+          "N_eps": "0.1493273274647819",
+          "prediction": "0.1493277343952685",
+          "residual": "4.0693049e-7"
+        },
+        {
+          "theta": "2/3",
+          "N": 800,
+          "N_eps": "0.1506932625628854",
+          "prediction": "0.1506933656902768",
+          "residual": "1.0312739e-7"
+        },
+        {
+          "theta": "2/3",
+          "N": 1600,
+          "N_eps": "0.1506933399083439",
+          "prediction": "0.1506933656902768",
+          "residual": "2.5781933e-8"
+        },
+        {
+          "theta": "5/6",
+          "N": 400,
+          "N_eps": "0.4507169801146211",
+          "prediction": "0.450720653541743",
+          "residual": "3.6734271e-6"
+        },
+        {
+          "theta": "5/6",
+          "N": 800,
+          "N_eps": "0.4507197351408961",
+          "prediction": "0.450720653541743",
+          "residual": "9.1840085e-7"
+        },
+        {
+          "theta": "5/6",
+          "N": 1600,
+          "N_eps": "0.4527649956479677",
+          "prediction": "0.4527652278606433",
+          "residual": "2.3221268e-7"
+        }
+      ]
+    },
+    "what_remains_open_in_A": {
+      "formalised": "the reflection identity only",
+      "measured_not_proved": "the -(pi/12N) cot term. It is standard Euler-Maclaurin, but proving it needs the singular j = 0 endpoint handled — that is where the -(1/2) log N and the additive constant come from, and it needs Stirling, not Euler-Maclaurin",
+      "why_the_reflection_does_not_reach_it": "it pairs k with N-1-k, and both endpoints sit outside that pairing"
+    }
+  }
+}

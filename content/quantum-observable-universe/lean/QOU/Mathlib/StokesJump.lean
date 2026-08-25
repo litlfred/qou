@@ -1,4 +1,5 @@
 import Mathlib.Analysis.Complex.PhragmenLindelof
+import Mathlib.Analysis.SpecialFunctions.Gaussian.GaussianIntegral
 import QOU.Mathlib.BorelWatson
 import QOU.Mathlib.BorelWatsonUniqueness
 
@@ -90,9 +91,46 @@ theorem gevrey_difference_stokesJumpBound {E : Type*} [NormedAddCommGroup E]
     _ = C * Real.exp 2 * Real.exp (-(1 / 2) * x ^ s) := by
         ring_nf
 
-/-- The Stokes jump at a singular Borel ray equals the alien derivative data. -/
-theorem stokesJump_eq_alienDerivative {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-    (_jump : StokesJump E) (_singularRay : Prop) : True := by
-  trivial
+/-- **A Stokes jump is beyond all orders.**  If `‖jump x‖ ≤ C·exp(−b·x^s)` with
+    `b > 0`, `s > 1`, then `x^N·‖jump x‖ → 0` for **every** real `N` — the jump
+    decays faster than any power of `x`.
+
+    This is the reason alien calculus exists.  A formal asymptotic series in
+    `x^{-1}` sees only the powers; a term killed by every power is invisible to
+    it.  So two functions with the *same* asymptotic expansion can differ by a
+    Stokes jump, the expansion cannot distinguish them, and the alien derivative
+    is the invariant that can.  `gevrey_difference_stokesJumpBound` above supplies
+    the hypothesis from a Gevrey-1 remainder bound; this consumes it.
+
+    Note `C ≥ 0` is not assumed — it follows, since `‖jump x‖ ≥ 0` and the
+    exponential is positive wherever the bound holds.
+
+    Replaces a `: True := trivial` placeholder that carried the docstring "the
+    Stokes jump at a singular Borel ray equals the alien derivative data" while
+    concluding nothing (AGENTS.md §1a).  That equality is the bridge equation and
+    is *not* proved here; this is the one-directional fact the file's own
+    machinery does establish.  Nothing in the corpus referenced the placeholder.
+
+    -- Ref: [ecalle1981] Fonctions résurgentes, tome I
+    -- Ref: [sauzin2014] https://arxiv.org/abs/1405.0356 -/
+theorem stokesJump_beyondAllOrders {E : Type*} [NormedAddCommGroup E]
+    {jump : ℝ → E} (h : StokesJumpBound jump) (N : ℝ) :
+    Tendsto (fun x : ℝ => x ^ N * ‖jump x‖) atTop (𝓝 0) := by
+  obtain ⟨C, b, s, hb, hs, hbound⟩ := h
+  -- `x^N·exp(−b·x^s)` is `o(exp(−x/2))`, which tends to `0`.
+  have hexp : Tendsto (fun x : ℝ => Real.exp (-(1 / 2) * x)) atTop (𝓝 0) :=
+    Real.tendsto_exp_atBot.comp
+      (Filter.Tendsto.const_mul_atTop_of_neg (by norm_num : (-(1 / 2) : ℝ) < 0) tendsto_id)
+  have hmaj : Tendsto (fun x : ℝ => C * (x ^ N * Real.exp (-b * x ^ s))) atTop (𝓝 0) := by
+    have := ((_root_.rpow_mul_exp_neg_mul_rpow_isLittleO_exp_neg N hs hb).isBigO).trans_tendsto hexp
+    simpa using this.const_mul C
+  refine squeeze_zero' ?_ ?_ hmaj
+  · filter_upwards [Filter.eventually_ge_atTop (0 : ℝ)] with x hx
+    exact mul_nonneg (Real.rpow_nonneg hx N) (norm_nonneg _)
+  · filter_upwards [hbound, Filter.eventually_ge_atTop (0 : ℝ)] with x hx hx0
+    calc x ^ N * ‖jump x‖
+        ≤ x ^ N * (C * Real.exp (-b * x ^ s)) :=
+          mul_le_mul_of_nonneg_left hx (Real.rpow_nonneg hx0 N)
+      _ = C * (x ^ N * Real.exp (-b * x ^ s)) := by ring
 
 end QOU.Mathlib.Borel

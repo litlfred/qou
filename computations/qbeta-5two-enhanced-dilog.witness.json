@@ -1,0 +1,104 @@
+{
+  "probe": "qbeta_5two_enhanced_dilog_probe",
+  "dps": 70,
+  "source": "library/zagier-the-dilogarithm-function/zagier-the-dilogarithm-function.pdf = Zagier, The Dilogarithm Function (2007), II.1 B",
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "V_j == 3*Dtilde at some integer branch offset (n,m)",
+      "scan_window": [
+        -2,
+        2
+      ],
+      "per_root": [
+        {
+          "root": "y1",
+          "best_abs_error": "6.1273692",
+          "best_n": 0,
+          "best_m": 1,
+          "exact_match": false
+        },
+        {
+          "root": "y2",
+          "best_abs_error": "6.1273692",
+          "best_n": 0,
+          "best_m": -1,
+          "exact_match": false
+        },
+        {
+          "root": "y3",
+          "best_abs_error": "9.8696044",
+          "best_n": 1,
+          "best_m": 0,
+          "exact_match": false
+        }
+      ],
+      "pass": false
+    },
+    {
+      "gate": "G2",
+      "claim": "V - 3*Dtilde is branch noise (pi^2-rational real part), not transcendental",
+      "per_root": [
+        {
+          "root": "y1",
+          "principal_branch_valid": true,
+          "residual_re": "-6.63370273923951",
+          "residual_im": "-1.32512177532839",
+          "residual_re_over_pi_sq": "-0.672134613471166",
+          "residual_re_over_half_pi_sq": "-1.34426922694233"
+        },
+        {
+          "root": "y2",
+          "principal_branch_valid": true,
+          "residual_re": "-6.63370273923951",
+          "residual_im": "1.32512177532839",
+          "residual_re_over_pi_sq": "-0.672134613471166",
+          "residual_re_over_half_pi_sq": "-1.34426922694233"
+        },
+        {
+          "root": "y3",
+          "principal_branch_valid": true,
+          "residual_re": "-9.86960440108936",
+          "residual_im": "-5.30048710131356",
+          "residual_re_over_pi_sq": "-1.0",
+          "residual_re_over_half_pi_sq": "-2.0"
+        }
+      ]
+    },
+    {
+      "gate": "G3",
+      "claim": "sum_j Re Dtilde is an exact rational multiple of pi^2/2",
+      "sum_re_Dtilde": "2.777534425978115064062537",
+      "ratio_to_half_pi_sq": "0.56284615129488764738",
+      "nearest_integer": 1,
+      "distance_to_nearest_integer": "0.43715385",
+      "is_integer_multiple": false,
+      "sum_rule_target_ratio": -3,
+      "note": "The sum rule says sum_j Re V_j = -3 pi^2/2. If V = 3*Dtilde then sum_j Re Dtilde = -pi^2/2, i.e. ratio = -1."
+    },
+    {
+      "gate": "G4",
+      "claim": "the residual V - 3*Dtilde has an exact closed form: pi i (2b+k) u - b^2 pi^2",
+      "predicted_residual_re": [
+        "-6.63370273923951",
+        "-6.63370273923951",
+        "-9.86960440108936"
+      ],
+      "actual_residual_re": [
+        "-6.63370273923951",
+        "-6.63370273923951",
+        "-9.86960440108936"
+      ],
+      "worst_abs_error": "1.4489087e-70",
+      "closed_form_verified": true,
+      "exact_restatement": "sum_j Re Dtilde(y_j) == pi^2/2 - (2/3) pi theta,  theta = arg y_1",
+      "restatement_lhs": "2.777534425978115064062537",
+      "restatement_rhs": "2.777534425978115064062537",
+      "restatement_abs_error": "7.2445433e-71",
+      "restatement_holds": true,
+      "negative_result": "The pi*theta term is NOT in pi^2 Q, so the sum rule does NOT reduce to the vanishing of a class in R/(pi^2/2)Z under this identification. SCOPE-(a): this set-up does not close. It does NOT exclude an enhanced-dilogarithm formulation at a different covering point or on a different Bloch element -- no invariant forbids that, so no scope-(b) claim is made."
+    }
+  ],
+  "verdict": "REFUTED (scope-a): V is NOT 3*Dtilde at any integer branch offset; the residual is exactly pi i (2b+k) u - b^2 pi^2 (G4), leaving a pi*arg(y_1) term outside pi^2 Q. The sum rule does not reduce to a mod-pi^2/2 rationality statement under this identification.",
+  "scope": "Numerical only. A positive result would REFRAME the open problem (transcendental evaluation -> rationality mod pi^2/2), not prove the sum rule. Scope-(a) throughout: nothing here excludes any ingredient."
+}

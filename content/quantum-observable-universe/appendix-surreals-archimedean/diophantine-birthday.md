@@ -68,7 +68,7 @@ Classical diophantine approximation theory measures this rate
 analytically (via $|\alpha - p/q|$). The surreal framework
 measures it algebraically (via birthday trajectory).
 
-The alignment is not coincidental — both are studying the same
+Both are studying the same
 object: **how efficiently rationals approach a real**.
 
 ## Conjectural consequences
@@ -89,14 +89,14 @@ object: **how efficiently rationals approach a real**.
    at birthday approaching $\omega$; elements of $S$ (generic
    transcendentals) at stabilising finite birthdays.
 
-4. **QOU substrate parameter $q_0 = 1.109978595554181\ldots$ (50 dps)**: the
+4. **QOU substrate parameter $q_0 = 1.109978595554181\ldots$ (muon pin, 16 dps)**: the
    conjectured value (not known to be algebraic or
    transcendental) has a specific birthday trajectory. If
    computable, this would *decide* its algebraic status.
 
 ## Specialisation to QOU
 
-The substrate parameter $q_0$ satisfies a recursive equation derived from the categorical structure (via fibre-functor rigidity, Tannaka-Krein, etc.). The conjecture predicts:
+The substrate parameter $q_0$ is the observed substrate value at our location; it is extracted by a canonical categorical procedure (via fibre-functor rigidity, Tannaka-Krein, etc.) but its numerical value is empirical. The conjecture predicts:
 
 - if $q_0$ is algebraic, its birthday *trajectory* $b_{q_0}(n)$
   is logarithmic (bounded continued-fraction partial quotients, per

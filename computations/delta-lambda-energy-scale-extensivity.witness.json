@@ -1,8 +1,8 @@
 {
   "engine": "python",
-  "engineVersion": "python 3.13.12",
-  "computedAt": "2026-07-06T18:15:21.392131+00:00",
-  "commitSha": "e86879306f9a7c09d5f1e6d921384addb4544cef",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T00:06:20.418579+00:00",
+  "commitSha": "a237fd3787984460986c60606c975b39c3057774",
   "assertions": [
     {
       "name": "deuteron_residual_is_order_one_after_energy_scale",
@@ -14,7 +14,7 @@
     },
     {
       "name": "Delta_tr_is_intensive_saturating",
-      "computed": 0.06301080027088728,
+      "computed": 0.06301080027088722,
       "expected": 0.0,
       "passed": true,
       "tolerance": 0.3,
@@ -22,11 +22,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": -1783086856035,
+  "durationMs": -1786231651081,
   "computation": "delta-lambda-energy-scale-extensivity",
   "scriptFile": "delta_lambda_energy_scale_extensivity_probe.py",
-  "scriptHash": "bb835dc9e493",
-  "scriptCommitSha": "d27b00274555af33d374d2929cab883aa273ee9d",
+  "scriptHash": "481c2e93d5d8",
+  "scriptCommitSha": "453b2a86882884eb3f33f863e8a454dbdec2b220",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -34,12 +34,13 @@
     "truncation_bound": "1e-60"
   },
   "environment": {
-    "python": "3.13.12",
-    "numpy": "2.5.0",
-    "scipy": "1.18.0",
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Δ_λ(K) attack: splits the canonical binding residual into Δ_λ = (E_0/Q_β)·r(K). Finding 1 — the DEUTERON gap is the energy scale (E_0/Q_β=5.35 ≈ Δ_λ(D)=4.78 → r(D)≈0.89≈1; use E_0 not Q_β). Finding 2 — the residual r(K) is MISSING EXTENSIVITY: Δtr saturates (intensive, →1) while B_AME is extensive (∝ bonds C(A,2)); r(K) tracks the bond count (rough O(1)·bonds, not a clean law). Active set (few-row, 90% of tr_M) tracked across the nucleon-by-nucleon knot construction from the LOSSLESS matrix-M caches (#2089 cap fix). EXPLORATORY — no production rewire; points at the per-bond operator combiner (#2080) / per-nucleus volume (#2078) as the extensive fix.",
   "parameters": {
@@ -270,6 +271,16 @@
         "verdict": "Δtr saturates (log-growth≈0.06/A, intensive→1) while B_AME is extensive (log-growth≈0.47/A). r(K) tracks bonds C(A,2). The single global trace difference is intensive; binding is extensive → missing per-bond sum."
       },
       "next": "Extensive fix = per-bond/per-interface binding (sum over nucleon pairs), not a global Δtr. Aligns with #2080 operator combiner + #2078 per-nucleus volume. NOT a Δ_λ scalar law (³He≠T at A=3; ⁴He over-bound) — structural, not fitted."
-    }
+    },
+    "upstream_witness_hashes": [
+      {
+        "path": "binding-canonical.witness.json",
+        "sha256": "14d8a94c38114f650d2a5a2f7858edb3fcfc92df167a637f14031697d15e50dd",
+        "size_bytes": 6294,
+        "commitSha": "c0b564d5c256b4a3c6f8a4ed9885adda3350726d",
+        "scriptCommitSha": "2cf587f2b3e5f5e5163c48e490e0ae1489613cd9",
+        "computedAt": "2026-08-08T21:31:15.518056+00:00"
+      }
+    ]
   }
 }

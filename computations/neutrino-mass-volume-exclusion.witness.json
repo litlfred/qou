@@ -1,0 +1,17 @@
+{
+  "schema": "witness/v1-informal",
+  "description": "neutrino_mass_volume_exclusion: min-hyperbolic-volume theorem excludes the volume-density chain at the neutrino mass scale.",
+  "producer": "computations/neutrino_mass_volume_exclusion.py",
+  "consumes": [
+    "def:neutrino-knot"
+  ],
+  "results": {
+    "vol_min_hyperbolic_knot_4_1": 2.029883212819307,
+    "scale_MeV_per_vol": 128.04411076744893,
+    "min_mass_from_hyperbolic_knot_MeV": 259.91459094722046,
+    "heaviest_neutrino_mass_MeV": 5e-08,
+    "gap": 5198291818.944409
+  },
+  "verdict": "scope-(b) EXCLUSION (cite: 4_1 is the minimum-volume hyperbolic knot, Vol=2*Cl_2(pi/3)~2.0299; Cao-Meyerhoff). Any hyperbolic-carrier volume-density mass is >= ~260 MeV with O(1) density, ~10^10 above the ~0.05 eV neutrino scale. The unknot carrier is trivial (Vol=CS=0). Neutrino masses need a mechanism OUTSIDE the volume-density chain; the corpus has none. m_nu OPEN, mechanism class narrowed.",
+  "scope": "(b) structural: proved minimum-volume invariant, density O(1)."
+}

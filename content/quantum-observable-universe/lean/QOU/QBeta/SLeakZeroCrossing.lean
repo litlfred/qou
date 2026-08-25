@@ -8,11 +8,33 @@ an anchor-*invariant* datum; this file adds the stronger constraint forced by th
 
 ## The object (notation-collision guard, AGENTS.md §"attributes do not transfer")
 
-`S_leak(q₀) := c₃(q₀) + Vol(4₁)` — the **bar-odd residual** of the Q_β `c₃`
-coefficient after removing the bar-even amphichiral `−Vol(4₁)` (`4₁`) face. This is
-`O(0.01)` and **sign-flips** across anchors. It is **distinct** from
+`S_leak(q₀) := c₃(q₀) + Vol(4₁)` — a **definition**, not a derived decomposition
+(AGENTS.md §"Defined residual ≠ derived decomposition", 2026-08-08). Reading it as
+"the bar-odd residual after removing the bar-even amphichiral `−Vol(4₁)` face"
+asserts `c₃^even = −Vol(4₁)` exactly, which is **not** established:
+
+* the bar-split is **not empirically accessible** here — `c₃^even(q) =
+  (c₃(q) + c₃(1/q))/2` needs `c₃` at `q ≈ 0.901`, and both anchors sit at
+  `q ≈ 1.10998`;
+* the sign flip is **offset-generic** — it holds for any constant in a window of
+  width `0.0491` (`Vol(4₁)`, `2+1/36`, `63/31`, … all flip), so it is not evidence
+  about `Vol(4₁)` (`computations/qbeta/sleak_offset_genericity_check.py`);
+* what **is** established is *motivation, not identity*: the Φ_b state-integral
+  saddle gives `Im 𝔙 = 0` at the real substrate meridian and a volume deficit
+  `0.0094 ≈ |S_leak(muon)| = 0.00968` — fit-free and anchor-blind, but a **~2.9%
+  scale agreement**, with the exact normalisation open and
+  `conj:im-q-physical-role` still a conjecture (PR #3654; KC21).
+
+The theorems below are unaffected: each is stated for a **generic** function with
+the anchor signs as **hypotheses**, so none depends on the identification.
+
+`S_leak` is `O(0.01)` and **sign-flips** across anchors. It is **distinct** from
 `QOU.QBeta.SRigidity.S = Q_β/E₀`, which is `O(900)` and does **not** sign-flip
-(`S_p/S_μ ≈ 1.024 > 0`). Do not conflate the two symbols.
+(`S_p/S_μ ≈ 1.024 > 0`). Do not conflate the two symbols. Note also that `S`
+itself is *defined* as `a₁/κ_(2,1)` with `a₁ = −c₃`, so it too is a
+reparametrisation of `c₃` and carries no independent information about the split.
+
+-- Ref: [manuscript] docs/audits/2026-08-08-c3-even-vol41-contradicts-canonical-split.md
 
 Documented anchor values (50 dps, `computations/qbeta/qbeta_c3_barodd_sleak_probe.py`;
 `Vol(4₁) = 2.02988321`):
@@ -23,6 +45,47 @@ Documented anchor values (50 dps, `computations/qbeta/qbeta_c3_barodd_sleak_prob
 | proton | −2.06934258 | **−0.03945936** |
 
 `S_leak(muon) > 0 > S_leak(proton)`: a genuine sign change, `S_p/S_μ ≈ −4.08`.
+
+## ⚠ APPLICABILITY (2026-08-08): the anchor signs are NOT resolved by the data
+
+The theorems below are correct and unaffected — they are *conditional* on the two
+anchor signs. But that hypothesis is **not established**, and the table above
+overstates what is known. Two corrections:
+
+1. **"50 dps" above is wrong.** The upstream keystone witness carries the `c₃`
+   values as **12**-significant-digit strings, and `qbeta_c3_barodd_sleak_probe.py`
+   computed in float64 until it was ported. It now emits
+   `computations/qbeta/qbeta-c3-barodd-sleak.witness.json` as the canonical
+   source; read the values there rather than copying this table.
+
+2. **`c₃` is an inversion, and the inversion amplifies.** It is not measured:
+   `c₃ = (Q_codata / Q_N2 − 1) / u³` with `u = b·ℏ_q² ≈ 8.5e−3`
+   (`qbeta_utils.c3_target_at`), so `1/u³ ≈ 1.6e6` multiplies the CAL-3 input
+   error. `Q_β(n) = 0.78233341(61) MeV` (PDG 2024) therefore gives
+
+   ```
+   S_leak(muon)   =  +0.00968298 ± 1.26      (uncertainty 130× the value)
+   S_leak(proton) =  −0.03945936 ± 1.26      (uncertainty  32× the value)
+   ```
+
+   The same `Q_β(n)` enters at both anchors, so the error is **fully correlated**
+   and cancels in the difference but not in the values:
+
+   ```
+   S_leak(muon) − S_leak(proton) = 0.0491423421 ± 7.6e−7   (rel 1.5e−5)
+   ```
+
+   **So the 2.43% SWING is a real, resolved feature — and the SIGN FLIP is not.**
+   At `Q_β + 1σ` both `S_leak` are positive; at `Q_β − 1σ` both are negative. The
+   zero crossing between the anchors is a property of the central value, not of
+   the data.
+
+Consequence for this file: `sleak_zero_between_anchors` and
+`sign_definite_carrier_excluded` stay *proved*, and their scope-(b) exclusion of
+sign-definite carriers stays *valid as an implication*. What is open is whether
+the antecedent holds. Do not cite either theorem as excluding a carrier until the
+anchor signs are established by something other than the central values —
+tightening `Q_β(n)`, or a determination of `c₃` that does not divide by `u³`.
 
 ## The result (formalize-first; the anchor signs are the only empirical input)
 

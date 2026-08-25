@@ -210,8 +210,43 @@ elan / cache hosts are network-restricted.
 >   && git ls-tree --name-only FETCH_HEAD | grep '^lake-oleans\.tgz\.part' | sort \
 >      | while read -r p; do git show "FETCH_HEAD:$p"; done > "$TGZ" \
 >   && tar xzf "$TGZ" -C "$ROOT" \
+>   && touch "$ROOT/.lake/RESTORED-NO-TRACES" \
 >   && echo "restored .lake oleans from $BR — NO rebuild needed"
 > ```
+>
+> **🛑 The `touch` is load-bearing, not decoration — read the next paragraph
+> before running `lake build` anywhere near this tree.** A restored tarball
+> carries oleans but **no `.trace` files**, so Lake considers every one of them
+> stale: a subsequent `lake build` rebuilds them from source and **evicts the
+> restore as it goes**. Measured 2026-08-15 (bean `qou-r13s`), running
+> `lake build QOU UGB Fred2005` from the root against a tree restored exactly
+> as above:
+>
+> | | before | during (10 min) | after kill |
+> |---|---|---|---|
+> | root `mathlib` oleans | **6990** | — | **334** |
+> | oleans written | — | 536 (520 of them mathlib/aesop/batteries) | — |
+> | `QOU`/`UGB`/`Fred2005` oleans written | — | **0** | — |
+>
+> Ten minutes, zero paper-library progress, cache destroyed, and **silently** —
+> the output reads as ordinary build progress, so a generous `timeout` will
+> happily burn the whole window producing nothing. Recovery is another 1.6 GB
+> fetch + extract.
+>
+> So on a restored tree: **verify with `lean`-direct, never `lake build`**
+> (§"VERIFY a single file with lean-direct" below; it is the sanctioned gate
+> per AGENTS.md §"QA is agent-owned", not a fallback — 2.4 s vs 50 minutes of
+> nothing). Check the marker before any build step:
+>
+> ```bash
+> [ -f "$(git rev-parse --show-toplevel)/.lake/RESTORED-NO-TRACES" ] \
+>   && echo "RESTORED cache — lean-direct only, do NOT lake build at the root"
+> ```
+>
+> Delete the marker only when the tree has genuinely been rebuilt by Lake.
+> This is the *consumer* face of the same mechanism bean `02kc` records for the
+> **seeding** direction (`lean-olean-cache-seed.sh` refuses lean-direct output
+> because it is untraced); the two are one hazard seen from both ends.
 >
 > The `SLUG` line derives the branch from the pinned toolchain so it never goes
 > stale (`leanprover/lean4:v4.24.0` → `lake-cache/qou-v4-24-0`); the tarball
@@ -256,6 +291,100 @@ elan / cache hosts are network-restricted.
 > This saves the ~5-min from-source rebuild of those 11 modules. (If a future
 > base reseed folds them into `lake-cache/qou-v4-24-0` itself — bean `bnyo` —
 > this addon becomes redundant and can be ignored.)
+
+> **H4 Wedderburn cone addon (2026-08-11).**
+>
+> > **🛑 CORRECTION, same day, by its author.** This addon is **NOT a Lake cache
+> > seed and must not be treated as one.** It came from a `lean`-direct build,
+> > so it carries `.olean` files with **no `.trace` siblings** — checked after
+> > the fact: `HeckeH4BlockMap31`, `HeckeH4Wedderburn`, `HeckeH4AlgebraLaws` are
+> > all `olean:Y trace:N`. Per the rule above, Lake treats untraced oleans as
+> > stale, rebuilds, and **evicts** them (bean `02kc`).
+> >
+> > I never met the guard that would have stopped me:
+> > [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh)'s
+> > 90 % trace check refuses exactly this set, but I wrote my own `tar` +
+> > orphan-commit script and so never ran it. **Use the script.** Its refusal is
+> > the answer, not an obstacle to route around — which is the more general
+> > lesson, since a hand-rolled equivalent skips every guard the real one has.
+> >
+> > **What it IS good for:** the `lean`-direct verification loop this document
+> > recommends. `LEAN_PATH` + `lean file.lean` never consults `.trace`, and
+> > these oleans did compile `QOU/Machinery/HeckeH4RepDecomp.lean` to exit 0.
+> > So restore it to *verify a file*; never before a `lake build`.
+>
+> The base cache does **not** carry the `H₄(q)` Wedderburn cone —
+> `HeckeH4AlgebraLaws`, `HeckeH4BlockMap22/31/211`,
+> `HeckeH4WedderburnCoord/MulA/MulB/MulC/Inv`, `HeckeH4Wedderburn`,
+> `BilinearTraceRepBasis` — plus the 13 Mathlib oleans under
+> `Mathlib.Algebra.Module.LinearMap.Polynomial`. Preserved on the addon orphan
+> branch `lake-cache/qou-v4-24-0-h4-wedderburn-cone` (135 MB, **chunked**:
+> GitHub rejects blobs over 100 MB). Restore **after** the base, and only for
+> `lean`-direct work:
+>
+> ```bash
+> ROOT=$(git rev-parse --show-toplevel); T=$(mktemp)
+> git fetch --depth=1 origin lake-cache/qou-v4-24-0-h4-wedderburn-cone
+> C=$(git rev-parse FETCH_HEAD)   # pin ONCE -- FETCH_HEAD is mutable
+> git ls-tree --name-only "$C" | grep '^addon-oleans\.tgz\.part' | sort \
+>   | while read -r p; do git show "$C:$p"; done > "$T"
+> tar xzf "$T" -C "$ROOT"
+> ```
+>
+> Saves ~65 min: `BlockMap31` 941 s/5.5 GB, `BlockMap211` 916 s/6.5 GB,
+> `WedderburnMulC` 1011 s/7.5 GB, `WedderburnCoord` 584 s/6.5 GB, `MulB` 457 s,
+> `MulA` 335 s, `AlgebraLaws` 222 s. **Build these sequentially** — at 5–7.5 GB
+> peak RSS, two at once OOMs a 15 GB box.
+>
+> The `qou-x64l` warning of *">25 min each at ~6 GB"* for `BlockMap31`/`211` is
+> right on memory and ~60 % over on time. And note **you usually do not need any
+> of this**: `QOU/Machinery/H4Cyclicity.lean` proves `trM4_cyclic` from the
+> generator actions with a cone under 10 minutes and never touches the block
+> maps. The addon is only for work needing the Wedderburn blocks themselves.
+
+### Middle case: `release.lean-lang.org` blocked but GitHub releases OPEN (2026-08-16)
+
+**Try this before the vendored-branch restore below** — it is one `curl` and
+needs no orphan branch. The section that follows assumes *both* the elan
+downloader and the GitHub release-asset path are blocked. There is a common
+intermediate sandbox where only the **elan downloader** is denied:
+
+```
+curl -sS "$HTTPS_PROXY/__agentproxy/status"   # → recentRelayFailures
+  connect_rejected   host: release.lean-lang.org:443
+```
+
+…while `https://github.com/leanprover/lean4/releases/download/…` returns
+**200**. `elan toolchain install` still fails, because elan only ever asks the
+release server. Fetch the tarball yourself and put it where elan looks:
+
+```sh
+# 1. compiler, from GitHub (~440 MB for v4.24.0)
+curl -sSL -o /tmp/lean.tar.zst \
+  https://github.com/leanprover/lean4/releases/download/v4.24.0/lean-4.24.0-linux.tar.zst
+
+# 2. zstd is NOT installed by default here
+command -v zstd || apt-get install -y zstd
+
+# 3. elan's toolchain dir name is the descriptor with / and : replaced
+TC="$HOME/.elan/toolchains/leanprover--lean4---v4.24.0"
+mkdir -p "$TC" && zstd -dc /tmp/lean.tar.zst | tar -x -C "$TC" --strip-components=1
+"$TC/bin/lean" --version     # → Lean (version 4.24.0, …)
+```
+
+`elan toolchain list` then shows it and `lake --version` works. Continue with
+the olean restore + lean-direct verification above. Verified end to end on
+2026-08-16: `lean` type-checked `QOU/MathlibExt/QPlancherel.lean` at exit 0.
+
+Two traps that cost time that day:
+
+- **`command -v zstd tar`** succeeds when only `tar` exists — it reports on the
+  *last* argument. Probe `zstd` alone, or extraction dies with a bare
+  `tar: Child returned status 2` that looks like a corrupt download.
+- The **discipline at the head of this file was not followed**: Lean was
+  declared unavailable as soon as `elan` 403'd, without first grepping
+  `.claude/skills/` for `release.lean-lang.org`. This file already described
+  the stricter case and would have pointed straight at the fix. Grep first.
 
 ### When even the toolchain *binary* is blocked — vendor it via a git branch (2026-07-11)
 
@@ -529,6 +658,60 @@ both occur with **no** `insteadOf` redirect set (so they are additive to
 > without the `pkill -f` pattern matching its own argv, use a bracket
 > escape: `pkill -f 'lake buil[d]'`.)
 
+### A private write overlay — and the trap it exists to avoid (2026-08-24)
+
+`lean`-direct as described above **checks a file against the shared restored
+oleans**. That is not enough the moment you *edit an existing module*: any file
+importing it keeps loading the stale shared olean and **appears to compile**.
+Rebuilding into the shared tree is not the answer either — it corrupts the
+restore for every other agent and every later run.
+
+Use [`scripts/lean-overlay-env.sh`](../../../scripts/lean-overlay-env.sh):
+
+```bash
+scripts/lean-overlay-env.sh init                                  # once
+scripts/lean-overlay-env.sh build QOU/SchurWeyl/Edited.lean       # your version
+scripts/lean-overlay-env.sh check /tmp/importer.lean              # now sees it
+scripts/lean-overlay-env.sh selftest                              # invariant holds
+```
+
+> **🟥 An overlay is NOT a shadowing layer, and a PARTIAL overlay is worse than
+> none.** Lean resolves a module by taking the **first `LEAN_PATH` root that
+> contains the matching directory** and then looking **only there** — it does
+> **not** fall through to later roots. So an overlay holding one rebuilt file
+> breaks *every* sibling import:
+>
+> ```
+> $ mkdir -p $OVL/QOU/SchurWeyl            # one module rebuilt here
+> $ LEAN_PATH=$OVL:<shared> lean t.lean
+> error: object file '$OVL/QOU/SchurWeyl/WenzlMarkovCorner.olean' of module
+>        QOU.SchurWeyl.WenzlMarkovCorner does not exist
+> ```
+>
+> — although that olean **is** present in the shared root. An *empty* overlay is
+> harmless; a *partial* one fails on modules you never touched, which is why the
+> symptom looks unrelated to what you were doing.
+>
+> The fix is to make the overlay **complete**: a symlink farm mirroring every
+> module in the shared roots, real files only where you rebuilt. `init` does
+> that (~9.4k links, ~37 MB, seconds).
+>
+> **And `lean -o` must not write through a symlink.** Building onto an unbroken
+> link writes into the **shared cache** — the exact corruption the overlay was
+> meant to prevent. `build` unlinks first and then asserts the output is not a
+> symlink.
+>
+> History: two independent agents hit this within an hour on 2026-08-24, from a
+> hand-rolled `LEAN_PATH` whose author (me) had assumed overlays shadow. One
+> lost ~20 minutes; the other reported the symptom without being able to
+> diagnose it. Both independently arrived at the symlink farm. `selftest`
+> asserts *both* directions — that the trap still reproduces with a partial
+> overlay, and that the farm resolves — because a guard that no longer detects
+> its own known positive is a guard nobody can trust.
+
+`LEAN_EXTRA_ROOTS` (colon-separated) prepends further read-only olean roots,
+e.g. a session-local overlay left by an earlier build.
+
 ### ProofWidgets `widgetJsAll` release-fetch block — build the JS from source (2026-07-18)
 
 When the **full** `lake build` path is genuinely needed (e.g. verifying a
@@ -658,6 +841,63 @@ ELAN_NO_OVERRIDE_NOTICE=1 nohup lake build -R QOU.Mass.MassVolDensity \
 > **exits 1** when there are zero matches, which can masquerade as a build
 > failure. Prefer `grep -c … ; true` or read the explicit "Build completed"
 > line.
+
+### 🕳️ The restored cache is PARTIAL — fill a gap, don't diagnose a defect (2026-08-10)
+
+**Measured on `lake-cache/qou-v4-24-0-new`: it carries 2970 of Mathlib's 6996
+modules at the pinned rev. 4026 are absent — 58%.** The seed captures the import
+cone QOU needed *at seed time*, so any file importing outside that cone fails
+with
+
+```
+error: object file '.../Mathlib/Foo/Bar.olean' of module Mathlib.Foo.Bar does not exist
+```
+
+**That is a cache gap, not a defect in the file under test.** Before reporting a
+Lean file as failing to compile, check whether the missing module is a
+**Mathlib** module. If it is, the file is fine and the cache is short.
+
+**Do not reach for `lake build`** — it re-resolves the dep graph, rebuilds from
+source through the ~3000-module `import Mathlib.Tactic` closure, and wipes the
+restored oleans. Use
+[`scripts/build-missing-oleans.py`](../../../scripts/build-missing-oleans.py),
+which walks the import graph from one target and builds bottom-up **only what is
+absent**:
+
+```bash
+# 1. Mathlib SOURCES are not in the cache — it ships oleans only, so restoring
+#    it cannot fill its own holes. Clone at the pinned rev (github egress works):
+REV=$(grep -A3 '"mathlib"' lakefile.toml | grep 'rev' | cut -d'"' -f2)
+mkdir -p ../mathlib-src && (cd ../mathlib-src && git init -q \
+  && git remote add origin https://github.com/leanprover-community/mathlib4 \
+  && git fetch --depth 1 origin $REV && git checkout -q FETCH_HEAD)
+
+# 2. Fill the gap, then verify the blocked file normally.
+export LEAN_PATH=<restored build/lib/lean dirs, colon-separated>
+python3 -u scripts/build-missing-oleans.py Mathlib.Algebra.Module.LinearMap.Polynomial
+lean content/quantum-observable-universe/lean/QOU/MathlibExt/EndBaseChange.lean
+```
+
+**Worked case (bean `qou-py7e`).** `QOU/MathlibExt/EndBaseChange.lean` — merged
+in #4913 — could not be verified for a whole session because
+`Mathlib.Algebra.Module.LinearMap.Polynomial` was absent. Closing it took **13
+modules, 0 failures**, against 46 of its cone already present; the file then
+gave `lean`-direct **exit 0** with both declarations axiom-clean. Minutes, versus
+the 40-minute `lake build` storm the naive route triggers.
+
+Two traps the script already works around, both of which cost time here:
+
+- **Do not symlink the source tree** into `.lake/packages/mathlib/Mathlib` —
+  `lean` rejects an input file resolving outside the root directory.
+- **Running `lean` from outside the repo** hits `no default toolchain
+  configured`, because elan's override is per-directory. Invoke the toolchain
+  binary by absolute path (`~/.elan/toolchains/*/bin/lean`) instead of relying
+  on the override.
+
+And one about these sandboxes generally: they run as **root**, so `~` is `/root`
+while the repo and any sibling clone live under `/home/user`. A script defaulting
+to `~/mathlib-src` reports "sources not found" on a machine that has them — the
+script searches candidate locations for exactly this reason.
 
 ### 🗄️ PRESERVE THE BUILD — seed/restore the `lake-cache/*` orphan branch
 
@@ -850,6 +1090,39 @@ CI billing is up, prefer triggering it over an ad-hoc multi-GB agent push.
 
 **Rule for agents going forward:** RESTORE → (build only if miss) → SEED.
 Never silently rebuild Mathlib and throw the oleans away.
+
+> **⚠ …but WHICH seed route depends on how you built (2026-08-11).** This rule
+> and the `lean`-direct verification guidance below are both right, and together
+> they invite one wrong step — feeding lean-direct output to the monolithic
+> seed script. Pick the route by build method:
+>
+> | you built with | seed route |
+> |---|---|
+> | `lake build` | [`lean-olean-cache-seed.sh`](../../../scripts/lean-olean-cache-seed.sh) → the monolithic `lake-cache/qou-<slug>` branch |
+> | `lean`-direct (`lean f.lean -o …`) | an **addon** orphan branch via plain `tar` — e.g. the H₄ Wedderburn cone addon above |
+>
+> Why they differ: `lean -o` writes `.olean` + `.ilean` and **no `.trace`**,
+> which is Lake bookkeeping only `lake build` produces. So:
+>
+> * The monolithic script's 90 % trace guard **refuses** a lean-direct set, and
+>   that refusal is **correct** — its own header says so. Do not force it.
+>   Forcing it is worse than not seeding: Lake treats untraced oleans as stale,
+>   rebuilds, and **evicts** them (bean `02kc`).
+> * An **addon tarball is not subject to that** — it is restored by `tar xzf`,
+>   not by Lake, and untraced oleans are exactly what a `lean`-direct +
+>   `LEAN_PATH` consumer needs. Bean `02kc`'s finding was that such a cache
+>   *"only ever worked for direct `lean` + LEAN_PATH invocations"* — a
+>   limitation on the consumer, not a prohibition on seeding.
+> * Paper (`QOU`/`UGB`/`Fred2005`) oleans are excluded from the **monolithic**
+>   branch by default, valid there only right after `lake build QOU` at the
+>   pinned rev (`SEED_PAPER=1`). The addon route carries them fine.
+>
+> History: this note first read *"a lean-direct build CANNOT seed, do not try"*
+> — an over-claim, written before the H₄ addon branch above existed and without
+> checking whether a non-Lake route was possible. One session accordingly
+> rebuilt the whole H₄ cone lean-direct and then withdrew its offer to preserve
+> it as unseedable; a sibling seeded the same cone as an addon that same day.
+> The honest scope is the table: a *route* was unavailable, not the goal.
 
 ## Delegate the install to a sub-agent (recommended for the main task)
 

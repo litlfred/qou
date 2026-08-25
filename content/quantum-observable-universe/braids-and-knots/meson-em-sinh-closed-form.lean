@@ -1,5 +1,6 @@
-import Mathlib.Data.Real.Basic
-import Mathlib.Tactic.FieldSimp
+import Mathlib.Algebra.Ring.Basic
+import Mathlib.Algebra.Group.Invertible.Basic
+import Mathlib.Tactic.LinearCombination
 import Mathlib.Tactic.Ring
 
 /-!
@@ -30,33 +31,66 @@ rigorous derivation of the truncation order from first principles.
 
 namespace QOU.BraidKnot
 
-/-- The substrate Planck quantum `ℏ_q = (q − 1)/q = 1 − q⁻¹`.
+/-! §7c: the identities below are **exact in `q`** and need no field at all.
+Two invertibility facts carry the whole content, each in its weakest form:
 
-    Stated over `ℝ`: the closed-form identities below halve the
-    EM self-energy (division by the literal `2`), which requires a
-    base ring of characteristic `≠ 2`.  These are the physical meson
-    EM correction factors evaluated at the substrate `q_0`
-    (archimedean side of the substrate→archimedean wall, §7c). -/
-noncomputable def hbarQ (q : ℝ) : ℝ := (q - 1) / q
+* `q` enters only through `q` and `q⁻¹`, so it is carried as a **unit**
+  `q : Rˣ` of a bare `CommRing R` and the inverse is the coercion `↑q⁻¹` —
+  not a field inverse of a nonzero element.
+* halving the EM self-energy needs only `[Invertible (2 : R)]`, written `⅟(2 : R)`;
+  that is the exact characteristic condition (`2` a unit), strictly weaker than the
+  former `[Field R] [CharZero R]`.
+
+No ordering, radical or `Real.*` construct appears, so nothing here crosses the
+substrate→archimedean wall; the physical meson EM correction factors are obtained
+downstream by instantiating `R := ℝ`, `q := Units.mk0 q_0 _`. -/
+
+variable {R : Type*} [CommRing R] [Invertible (2 : R)]
+
+/-- The substrate Planck quantum `ℏ_q = (q − 1)·q⁻¹ = 1 − q⁻¹`.
+
+    `q` is carried as a unit of `R`, so `q⁻¹` is the unit inverse (§7c) and no
+    field structure is required. -/
+def hbarQ (q : Rˣ) : R := ((q : R) - 1) * ((↑q⁻¹ : R))
+
+omit [Invertible (2 : R)] in
+/-- `ℏ_q = 1 − q⁻¹` — the division-free normal form of the Planck quantum,
+    the identity `(q − 1)·q⁻¹ = 1 − q⁻¹` that the unit relation `q·q⁻¹ = 1`
+    supplies. -/
+theorem hbarQ_eq (q : Rˣ) : hbarQ q = 1 - ((↑q⁻¹ : R)) := by
+  unfold hbarQ
+  rw [sub_mul, q.mul_inv, one_mul]
 
 /-- The sinh-channel EM correction factor in closed form:
-    `1 + ℏ_q − ℏ_q²/2 = (3q² − 1)/(2q²)`. -/
-theorem meson_EM_closed_form (q : ℝ) (hq : q ≠ 0) :
-    1 + hbarQ q - (hbarQ q)^2 / 2 = (3 * q^2 - 1) / (2 * q^2) := by
+    `1 + ℏ_q − ℏ_q²·⅟2 = (3q² − 1)·⅟2·(q⁻¹)²` (i.e. `(3q² − 1)/(2q²)`). -/
+theorem meson_EM_closed_form (q : Rˣ) :
+    1 + hbarQ q - (hbarQ q) ^ 2 * ⅟(2 : R)
+      = (3 * (q : R) ^ 2 - 1) * ⅟(2 : R) * ((↑q⁻¹ : R)) ^ 2 := by
+  have hqi : (q : R) * ((↑q⁻¹ : R)) = 1 := q.mul_inv
+  have h2 : (2 : R) * ⅟(2 : R) = 1 := mul_invOf_self 2
   unfold hbarQ
-  field_simp
-  ring
+  linear_combination
+    (1 - 4 * ⅟(2 : R) * (q : R) * ((↑q⁻¹ : R)) - 4 * ⅟(2 : R)
+      + 2 * ⅟(2 : R) * ((↑q⁻¹ : R))) * hqi
+    + (((↑q⁻¹ : R)) - 2) * h2
 
-/-- Equivalent form: `(3q² − 1)/(2q²) = (3 − q⁻²)/2`. -/
-theorem meson_EM_closed_form_inverse (q : ℝ) (hq : q ≠ 0) :
-    (3 * q^2 - 1) / (2 * q^2) = (3 - q⁻¹^2) / 2 := by
-  field_simp
+/-- Equivalent form: `(3q² − 1)·⅟2·(q⁻¹)² = (3 − (q⁻¹)²)·⅟2`. -/
+theorem meson_EM_closed_form_inverse (q : Rˣ) :
+    (3 * (q : R) ^ 2 - 1) * ⅟(2 : R) * ((↑q⁻¹ : R)) ^ 2
+      = (3 - ((↑q⁻¹ : R)) ^ 2) * ⅟(2 : R) := by
+  have hqi : (q : R) * ((↑q⁻¹ : R)) = 1 := q.mul_inv
+  linear_combination (3 * ⅟(2 : R) * ((q : R) * ((↑q⁻¹ : R)) + 1)) * hqi
 
-/-- Equivalent form: `1 + ℏ_q − ℏ_q²/2 = 1 + (1 − q⁻²)/2`. -/
-theorem meson_EM_closed_form_planck (q : ℝ) (hq : q ≠ 0) :
-    1 + hbarQ q - (hbarQ q)^2 / 2 = 1 + (1 - q⁻¹^2) / 2 := by
+/-- Equivalent form: `1 + ℏ_q − ℏ_q²·⅟2 = 1 + (1 − (q⁻¹)²)·⅟2`. -/
+theorem meson_EM_closed_form_planck (q : Rˣ) :
+    1 + hbarQ q - (hbarQ q) ^ 2 * ⅟(2 : R)
+      = 1 + (1 - ((↑q⁻¹ : R)) ^ 2) * ⅟(2 : R) := by
+  have hqi : (q : R) * ((↑q⁻¹ : R)) = 1 := q.mul_inv
+  have h2 : (2 : R) * ⅟(2 : R) = 1 := mul_invOf_self 2
   unfold hbarQ
-  field_simp
-  ring
+  linear_combination
+    (1 - ⅟(2 : R) * (q : R) * ((↑q⁻¹ : R)) - ⅟(2 : R)
+      + 2 * ⅟(2 : R) * ((↑q⁻¹ : R))) * hqi
+    + (((↑q⁻¹ : R)) - 1) * h2
 
 end QOU.BraidKnot

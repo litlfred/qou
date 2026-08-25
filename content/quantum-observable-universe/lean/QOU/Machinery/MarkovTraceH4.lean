@@ -25,9 +25,21 @@ reproduces the hardcoded `H3` block exactly).  Convention: `T_{s_i}² = 1 + h·T
 * `trM_markov_σ2` — the Markov reduction (M3) `tr(x·σ₂)=z·tr(x)` for `x ∈ H₃`
   (parabolic NF indices `{0,2,3,7,8,13}`), **sorry-free**.  This is the base case
   for the general-`n` Markov stabilization (τ-functor open item A).
-* `trM_cyclic` — cyclicity (M2): machine-validated in the compute infra but held as
-  a cited `sorry` (the `Fin 24` brute force is heartbeat-infeasible; structural proof
-  is follow-up).  Not vacuous, not laundered.
+* `trM_cyclic` — cyclicity (M2): **sorry-free**, now in
+  `QOU.Machinery.H4BasisBridge`. It used to be proved in
+  `QOU.Machinery.MarkovTraceH4Gram` from `gram_symm` over the 576-entry
+  `MarkovTraceH4Gram0..7` closure; that whole chain (6604 generated lines, the
+  tree's build pole) was **deleted** once `QOU.Machinery.H4.trM4_cyclic`
+  (`H4Cyclicity`) proved cyclicity directly on the subscript basis from the
+  three generators. `trM_cyclic` is now a three-rewrite corollary of it across
+  the basis relabelling, under the same fully-qualified name.
+  Verified: `#print axioms QOU.Machinery.H4.trM_cyclic` →
+  `[propext, Classical.choice, Quot.sound]`, no `sorryAx`.
+
+  `trM_cyclic_of_gram_symm` below is **kept**: it is the sorry-free reduction
+  "Gram symmetry ⇒ cyclicity", still true and still the `Fin 24` instance of
+  `BilinearTraceCyclicity.cyclic_of_gram_symm`. What went away is its former
+  *input*, the 576 computed entries — not the reduction itself.
 -/
 
 namespace QOU.Machinery.H4
@@ -157,40 +169,5 @@ theorem trM_cyclic_of_gram_symm (z h : R)
   QOU.Machinery.BilinearTrace.cyclic_of_gram_symm (mulNF h) (trM z h)
     (mulNF_add_left h) (mulNF_add_right h) (mulNF_smul_left h) (mulNF_smul_right h)
     (mulNF_zero_left h) (trM_add z h) (trM_smul z h) hsymm u v
-
-/-- **Gram symmetry** `G_{i,j} = G_{j,i}`, i.e. `tr_M(b_i·b_j) = tr_M(b_j·b_i)`
-for the 24 NF basis elements — the residual finite (24² = 576, 276 nontrivial)
-content of trace cyclicity after the sorry-free reduction `trM_cyclic_of_gram_symm`.
-
-Machine-validated in the compute infra (`hecke_regular_nf_table.py`,
-`self_validate`: cyclicity on all sampled pairs).
-
-**CLOSEABLE (not whnf-blocked — correction 2026-07-19).** Each `G_{i,j}` is
-`tr_M` of a depth-≤6 `mulσ` composition applied to a **basis** vector, and the
-generator action on a basis vector is sparse (`mulσ_k(e_i)` is `e_{π(i)}` or
-`e_a + h·e_b`). Chaining single-generator steps with explicit intermediate
-vectors — never unfolding the whole tower at once — each step is depth-1 and the
-mostly-zero entries resolve fast, so the `whnf` wall is never hit. Demonstrated:
-a full basis row (all 24 words, incl. the deepest) compiles `lean`-direct exit 0.
-The full `24²` closure is auto-generated (`computations/markov/gen_gram_closure.py`
-→ `QOU.Machinery.MarkovTraceH4Gram`), which proves `gram_symm_proved` and hence
-`trM_cyclic_proved` **fully sorry-free**. This local `gram_symm` is the
-placeholder the reduction consumes until that module lands; it is then superseded.
-(The abstract Ocneanu-induction lemma on main's `MarkovStabilization` remains the
-elegant general-`n` route — bean `qou-0vsu`; this basis computation — bean
-`qou-svnb` — closes `n=4` concretely.) Not vacuous, not laundered. -/
--- Ref: [manuscript] §mass-theory (H₄ Markov trace); compute hecke_regular_nf_table.py self_validate
-theorem gram_symm (z h : R) :
-    ∀ i j, trM z h (mulNF h (e i) (e j)) = trM z h (mulNF h (e j) (e i)) := by
-  sorry
-
-/-- **(M2) Trace cyclicity** `tr_M(u·v) = tr_M(v·u)` — the defining trace property.
-Derived (no new `sorry`) from the **sorry-free** bilinear reduction
-`trM_cyclic_of_gram_symm` and the single residual `gram_symm`.  The reduction —
-the Fin-24-free half — is genuinely proved; only the finite Gram-symmetry base
-`gram_symm` remains open (blocked at the depth-6 `whnf` wall; see its docstring). -/
-theorem trM_cyclic (z h : R) (u v : Fin 24 → R) :
-    trM z h (mulNF h u v) = trM z h (mulNF h v u) :=
-  trM_cyclic_of_gram_symm z h (gram_symm z h) u v
 
 end QOU.Machinery.H4

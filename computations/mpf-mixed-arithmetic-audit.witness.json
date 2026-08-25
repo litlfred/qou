@@ -1,0 +1,49 @@
+{
+  "schema": "witness/v1",
+  "name": "mpf-mixed-arithmetic-audit",
+  "description": "Static detection of arithmetic mixing an mpmath value with a float64-sourced one. Sits between the value-level padding ratchet (blind once a float64 is multiplied by anything exact) and the construction-level mpf(<float>) gate (blind because no mpf() call is involved). Advisory: high-recall candidates for agent verdict.",
+  "data": {
+    "candidates": 3,
+    "marked": 9,
+    "files": 1,
+    "baseline": 3,
+    "by_file": {
+      "computations/qbeta/qbeta_habiro_taylor_investigation.py": 3
+    },
+    "rows": [
+      {
+        "file": "computations/qbeta/qbeta_habiro_taylor_investigation.py",
+        "line": 235,
+        "kind": "printed",
+        "detail": "nstr(<float64-tainted>, 18)",
+        "source": "\"tr_M_proton_at_q0\": mp.nstr(tr_p_num, 18),",
+        "taint_name": "tr_p_num",
+        "taint_origin_line": 167,
+        "taint_origin_source": "tr_p_num = float(sp.N(tr_p_sym.subs(q, sp.Float(str(q0_num), 50)), 30))",
+        "class": "CANDIDATE"
+      },
+      {
+        "file": "computations/qbeta/qbeta_habiro_taylor_investigation.py",
+        "line": 236,
+        "kind": "printed",
+        "detail": "nstr(<float64-tainted>, 18)",
+        "source": "\"tr_M_neutron_at_q0\": mp.nstr(tr_n_num, 18),",
+        "taint_name": "tr_n_num",
+        "taint_origin_line": 168,
+        "taint_origin_source": "tr_n_num = float(sp.N(tr_n_sym.subs(q, sp.Float(str(q0_num), 50)), 30))",
+        "class": "CANDIDATE"
+      },
+      {
+        "file": "computations/qbeta/qbeta_habiro_taylor_investigation.py",
+        "line": 237,
+        "kind": "printed",
+        "detail": "nstr(<float64-tainted>, 18)",
+        "source": "\"delta_tr_M_at_q0\": mp.nstr(delta_tr_num, 18),",
+        "taint_name": "delta_tr_num",
+        "taint_origin_line": 169,
+        "taint_origin_source": "delta_tr_num = tr_n_num - tr_p_num",
+        "class": "CANDIDATE"
+      }
+    ]
+  }
+}

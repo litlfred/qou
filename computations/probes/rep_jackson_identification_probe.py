@@ -97,7 +97,12 @@ import sympy as sp  # noqa: E402
 from mpmath import mp, mpf, sqrt as mpsqrt  # noqa: E402
 
 from _precision import set_compute_dps  # noqa: E402
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 TOL_EXACT = 0        # sympy exact / integer comparisons
 TOL_50 = 1e-30       # 60-dps kernel-identity cross-checks
@@ -110,7 +115,7 @@ X_SPOT = "0.37"      # spot evaluation point for the polynomial falsifier
 # witness; proton from qou_substrate.constants Q_50_DIGIT_STR).
 _MUON_WITNESS = _Path(__file__).resolve().parent.parent / \
     "q-pinning-50-digit.witness.json"
-Q0_MUON_STR = json.loads(_MUON_WITNESS.read_text())["q0Value"]
+Q0_MUON_STR = record_upstream(_MUON_WITNESS, _UPSTREAM_RECORDS)["q0Value"]
 # tools/qou-substrate/python/qou_substrate/constants.py::Q_50_DIGIT_STR
 # (proton re-pin 2026-05-28; _solve_q_proton_f64 + mpmath refine):
 Q0_PROTON_STR = "1.1099785827513808075916690956107688798744991218736"
@@ -455,6 +460,7 @@ def block_r4_nonuniqueness(wb: WitnessBuilder) -> None:
 def main() -> int:
     set_compute_dps(60)
     wb = WitnessBuilder("rep-jackson-identification", engine="sympy+mpmath")
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.set_description(
         "Attack 1 on (REP) — the last substantive hypothesis of "
         "conj:schwinger-measure-computational-time (bean qou-u5p0; "
@@ -538,7 +544,7 @@ def main() -> int:
             "(Q_β Habiro bar-side; θ-kernel bilateral Laplace)",
         ]})
     wb.add_data("rsz_citations", {
-        "paper": "uploads/0903.0853v3.pdf — Ramis–Sauloy–Zhang, "
+        "paper": "library/arxiv-0903.0853v3/0903.0853v3.pdf — Ramis–Sauloy–Zhang, "
                  "Astérisque 355",
         "def_2_3_3": "level-1 formal q-Borel, weight q^{−n(n−1)/2} (p. 23)",
         "eq_1_2": "θ(z;q) triple product — manifest positivity (p. 9)",

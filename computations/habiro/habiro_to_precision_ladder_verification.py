@@ -36,7 +36,12 @@ import mpmath as mp
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 from _precision import set_compute_dps, fmt  # noqa: E402
 from q_parameter import Q_50_DIGIT_STR  # noqa: E402
 
@@ -60,7 +65,7 @@ def eval_habiro_poly(coeffs, u):
 def main():
     set_compute_dps()
     t0 = time.perf_counter()
-    mp.mp.dps = 50
+    set_compute_dps()
 
     q0 = mp.mpf(Q_50_DIGIT_STR)
     u0 = mp.sqrt(q0)
@@ -78,7 +83,7 @@ def main():
         print("ERROR: habiro-coefficients-atomic.witness.json not found")
         sys.exit(1)
 
-    hab = json.loads(habiro_path.read_text())
+    hab = record_upstream(habiro_path, _UPSTREAM_RECORDS)
     proton_data = hab["results"]["p (proton, A=1)"]
     a_m_polys = proton_data["habiro_coefficients"]
 
@@ -116,12 +121,13 @@ def main():
     # Load the canonical tr_M for the proton
     sub_path = _pb.witness_path("m-p-substrate-identity-50dps.witness.json", HERE)
     if sub_path.exists():
-        sub = json.loads(sub_path.read_text())
+        sub = record_upstream(sub_path, _UPSTREAM_RECORDS)
         # tr_M is embedded in the predictions
         print(f"  (Compare with substrate-identity witness)")
 
     # ── Build witness ────────────────────────────────────────────
     wb = WitnessBuilder("habiro-to-precision-ladder-verification", start_time=t0)
+    wb.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     wb.data["q_0"] = Q_50_DIGIT_STR
     wb.data["u_0"] = fmt(u0, 40)
     wb.data["habiro_sum_proton"] = fmt(habiro_sum, 40)

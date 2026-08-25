@@ -36,8 +36,18 @@ integer matrix — no floats, no PSLQ, no fitting, no free base to tune). No c_k
 is wired, the registry is untouched, no tier changes. A POSITIVE result would be
 an exact closed-form (q-)holonomic characterization of D(ũ) to be formalized; a
 NEGATIVE result extends the merged "not P-finite (separated)" verdict to the
-**coupled ℚ(√3)** case, tightening the corpus's resurgent / q-Gevrey reading of
-the bar-odd S-leak (docs/audits/2026-07-12-dladder-divergence-correction.md).
+**coupled ℚ(√3)** case.
+
+**It says nothing about the growth class** (re-scoped 2026-08-14). An earlier
+revision of this docstring read a negative here as "tightening the corpus's
+resurgent / q-Gevrey reading of the bar-odd S-leak"; that inference is
+withdrawn. Non-holonomic does not imply divergent, and only a divergent series
+can be resurgent — the counterexample is this very object, whose closed form
+φ(w)log(1−w/ρ)+ψ(w) (algebraic φ,ψ over a degree-12 field) is **convergent**
+(ρ = 0.142799996644689…, κ = 0) *and* not low-order P-finite. This probe's
+verdict is an **algebraic** statement and stands on its own; see
+docs/audits/2026-08-09-dladder-is-convergent-radius-is-the-qb-zero.md and
+docs/audits/2026-08-14-non-holonomic-implies-resurgent-corpus-sweep.md.
 
 Adjacent live sibling (different object, do not collide): PR #3683 does Borel /
 alien-calculus resurgence on the **κ-tower**; this probe tests **holonomicity of
@@ -150,7 +160,12 @@ def main() -> int:
         "Rational null-space of the exact integer constraint matrix; no floats, "
         "no PSLQ, no fit. POSITIVE ⇒ exact holonomic closed form to formalize; "
         "NEGATIVE ⇒ extends the merged 'not P-finite (separated)' verdict to the "
-        "coupled ℚ(√3) case (corroborates the q-Gevrey/resurgent reading). "
+        "coupled ℚ(√3) case. This is an ALGEBRAIC negative and carries no "
+        "growth-class information: non-holonomic does not imply divergent, and "
+        "D(ũ) is in fact convergent (ρ=0.142799996644689…, 2026-08-09 correction) "
+        "with closed form φ(w)log(1−w/ρ)+ψ(w), which is convergent AND not "
+        "low-order P-finite. The earlier gloss 'corroborates the q-Gevrey/resurgent "
+        "reading' is WITHDRAWN 2026-08-14; the verdict itself is unaffected. "
         "Adjacent sibling PR #3683 does Borel resurgence on the κ-tower (distinct "
         "object). Scope-(a); no c_k wired; registry untouched."
     )
@@ -228,7 +243,10 @@ def main() -> int:
     print(f"\n  VERDICT: {verdict}")
     if not found:
         print("  → extends the merged 'not P-finite' result to the coupled ℚ(√3)")
-        print("    case; consistent with the q-Gevrey/resurgent D-ladder reading.")
+        print("    case. ALGEBRAIC only — no growth-class conclusion follows:")
+        print("    non-holonomic does not imply divergent, and D(ũ) is convergent")
+        print("    (ρ=0.142799996644689…); φ(w)log(1−w/ρ)+ψ(w) is convergent AND")
+        print("    not low-order P-finite. (Gloss re-scoped 2026-08-14.)")
     wb.save()
     return 0
 

@@ -1,4 +1,4 @@
-| Knot / link | $g$ | Bring? | Shape field $F$ | Vol | VC discharge | B1 row status |
+| Knot / link | $g$ | Bring? | Shape field $F$ | Vol | VC discharge | row status |
 |---|---|---|---|---|---|---|
 | figure-8 $4_1$ | 1 | ✓ | $\mathbb{Q}(\zeta_6)$ | $2\,\mathrm{Cl}_2(\pi/3)$ | Murakami–Murakami 2001 | **theorem** ([`prop:b1-figure-8-row-theorem`](#prop:b1-figure-8-row-theorem)) |
 | Borromean rings $L_{6a4}$ | 2 | ✓ | $\mathbb{Q}(i)$ | $8 G = 8\,\mathrm{Cl}_2(\pi/2)$ | van der Veen 2008 | **theorem (this prop.)** |

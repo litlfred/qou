@@ -7,4 +7,4 @@ The bundle initial conditions and the torsion-driven knot flow define a category
 - **Identity**: The identity permutation with trivial isotopies.
 - **Composition**: Permutation composition followed by isotopy concatenation.
 
-The torsion flow $\Phi_t^q$ is an endofunctor $\Phi_t^q \colon \mathrm{Bun}(\mathbb{P}(V)) \to \mathrm{Bun}(\mathbb{P}(V))$ acting on objects by moving base points and on morphisms by conjugating isotopies with the flow. The family $\{\Phi_t^q\}_{t \geq 0}$ assembles into a continuous functor from $(\mathbb{R}_{\geq 0}, +)$ into the endofunctor category $\mathrm{End}(\mathrm{Bun}(\mathbb{P}(V)))$. The physics is the trajectory $t \mapsto \mathcal{S}_t$.
+The torsion flow $\Phi_t^q$ is an endofunctor $\Phi_t^q \colon \mathrm{Bun}(\mathbb{P}(V)) \to \mathrm{Bun}(\mathbb{P}(V))$ acting on objects by moving base points and on morphisms by conjugating isotopies with the flow. The family $\{\Phi_t^q\}_{t \geq 0}$ assembles into a continuous functor from $(\mathbb{R}_{\geq 0}, +)$ into the endofunctor category $\mathrm{End}(\mathrm{Bun}(\mathbb{P}(V)))$.

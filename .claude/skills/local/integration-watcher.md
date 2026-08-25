@@ -231,15 +231,37 @@ waiting for the user to prompt. Walk the priority order:
      regenerates with `--thorough` then `git diff --exit-code`s the
      result). Record verdicts with `--verdict --chapter <paper>/<dir>
      --section <label> --result <pass|revise|accept> [--thorough]`.
-   - **Witness staleness** — any `*.witness.json` where either:
-     (a) `witness.scriptCommitSha` differs from the current
-     `HEAD` git commit SHA on the producer script's containing
-     file (`git log -1 --format=%H -- <producer.py>`), OR
-     (b) `witness.scriptHash` (SHA-256 prefix of the producer
+   - **Witness staleness** — any `*.witness.json` whose
+     `witness.scriptHash` (SHA-256 prefix of the producer
      script's file content) differs from a freshly-computed
      hash of the current producer script. Refresh by re-running
      the producer with `2>&1 | tee /tmp/<script>.log` per the
      [`compute-audit` long-compute logging discipline](.claude/skills/local/compute-audit.md).
+   - **`scriptCommitSha` is NOT a staleness signal** — it was
+     criterion (a) here until 2026-08-10. Rebase-merge (AGENTS.md
+     rule 8) replays branch commits onto `main` with new shas, so
+     a witness whose producer was committed on a branch records a
+     commit absent from `main` the instant it lands; refreshing
+     pre-merge cannot help, because the merge is the rewrite. The
+     enforcement paths never used it — `witness_dependency_drift.py`
+     keys self-staleness on `scriptHash` alone and `witness.py`
+     lists `scriptCommitSha` in `_EPHEMERAL_META_FIELDS` — so the
+     criterion existed only in this doc, where it spent the
+     ≤ 3-witness idle budget on producer re-runs that fix nothing
+     and go stale again at the next merge. On the reliably
+     measurable sample it produced two false positives and zero
+     true positives beyond `scriptHash`. Treat it as informational
+     provenance; do not mass-refresh it. Full finding + the
+     graft-aware measurement recipe: bean `qou-wsha`.
+   - **Diff the producer before re-running it.** `scriptHash` is a
+     whole-file hash, so a comment- or docstring-only edit drifts it
+     while the recomputed payload is byte-identical. Run
+     `git diff <witness.commitSha> -- <producer>` first. A weaker
+     false-positive class than `scriptCommitSha` (it needs a real
+     edit, not just a merge), but the same waste on an expensive
+     producer: cheap probes just re-run; a long-compute producer with
+     a comment-only diff gets a bean, not the idle pass. Worked case:
+     `canonical-ordering-dof`, +21 lines all comment (`qou-zv2l`).
    - **Detection budget** — capped at ≤ 10 sidecars / ≤ 3
      witnesses per idle pass to avoid burying the visible
      queue items above; remaining stale entries get logged for
@@ -1056,16 +1078,17 @@ Per prepared PR:
 1. **Subscribe.** Right after `create_pull_request`, call
    `mcp__github__subscribe_pr_activity` with the new PR number.
    Add to the ledger under "watching".
-2. **Request automated reviews from both bots.** Call
+2. **Request the automated review.** Call
    `mcp__github__request_copilot_review` to surface
    `copilot-pull-request-reviewer` feedback as actionable threads.
-   `gemini-code-assist` runs separately (automatic on PR open in
-   this repo); if it doesn't post within a few minutes, check
-   for a quota-limit comment ("you have reached your daily
-   quota") and document in the ledger. The two bots find
-   different classes of issue (copilot — style + small bugs;
-   gemini — semantic correctness, cross-file conventions),
-   so request **both**. Don't wait for human review.
+   **Copilot is the only live external reviewer** — Gemini Code
+   Assist is sunset (2026-08-07) and answers nothing; never wait on
+   it. Verify the review landed against the **current head** (a
+   review whose `commit_id` is an earlier commit is stale). Note the
+   consequence: Copilot finds style + small bugs, so the class Gemini
+   used to cover — semantic correctness and cross-file conventions —
+   now has **no bot backstop** and falls to the agent's own audit.
+   Don't wait for human review.
 3. **Triage every review event** per coordinate §5a:
    - `accept` → fix the small thing, push
    - `accept-with-modification` → fix differently, reply

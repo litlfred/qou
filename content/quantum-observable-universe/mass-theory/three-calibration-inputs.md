@@ -8,7 +8,7 @@ For every canonical observable $\mathcal{O}$ in the paper —
 mass $\mathfrak{m}$, Q-value $\mathfrak{Q}_\beta$, binding $B(Z, N)$,
 crossing energy $E_{\mathfrak{H}}$, coupling $\alpha$, mixing angle,
 shell parameter — there exists a $\mathbb{Q}(q_0)$-element
-$\hat{\mathcal{O}}(q_0) \in \mathbb{Z}[q_0^{± 1/2}]$ and integers
+$\hat{\mathcal{O}}(q_0) \in \mathbb{Z}[q_0^{\pm 1/2}]$ and integers
 $a, b \in \mathbb{Z}$ with
 
 $$

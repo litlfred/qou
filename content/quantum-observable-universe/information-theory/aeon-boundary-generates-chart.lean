@@ -39,11 +39,16 @@ class AeonRecycling (V : Type*) : Prop where
       canonical instance IS the conjecture. -/
   recycling_holds : AeonRecyclingHolds V
 
-/-- **Canonical instance** — the conjecture proper. The single
-    `sorry` is the unproved content per §3b-cond. -/
--- Ref: [manuscript] conj:aeon-boundary-generates-chart
-instance aeon_recycling_conjecture (V : Type*) : AeonRecycling V where
-  -- Witness: computations/none
-  recycling_holds := sorry
+-- **No instance is provided — that is the honest open state** (AGENTS.md
+-- §3b-tax).  An instance would have to supply the field(s) below, which is
+-- exactly the open conjecture; supplying one asserts the conjecture.
+--
+-- History: this file previously carried
+--     instance aeon_recycling_conjecture (V : Type*) : AeonRecycling V where
+--     axiom aeon_recycling_holds : ∀ (V : Type*), AeonRecyclingHolds V
+-- i.e. the conjecture was discharged by `axiom` and installed as a global
+-- instance, so every downstream `[AeonRecycling]` resolved for free and the
+-- assumption was invisible outside `#print axioms`.  Removed, not completed.
+-- Downstream results must take `[AeonRecycling]` as an explicit hypothesis.
 
 end QOU.AeonBoundary

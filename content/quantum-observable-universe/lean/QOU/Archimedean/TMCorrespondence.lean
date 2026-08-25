@@ -291,7 +291,7 @@ theorem volume_eq_markov_trace (seq : CrossingSeq) :
     each pair, which is needed for `matrixChain_eq_buildChains`. -/
 noncomputable def chainCrossings (config : NuclearConfig) (j : ℕ) : CrossingSeq :=
   (config.drop (j + 1)).map fun nk =>
-    let nj := config.get! j
+    let nj := config[j]!
     let v := vertexType nj nk
     match v with
     | .pp => (2 * w_plus_t v, 2 * w_zero_t v)
@@ -348,7 +348,7 @@ theorem matrixChain_eq_buildChains (config : NuclearConfig) (j : ℕ)
   --
   -- Full proof:
   -- 1. Show each (c, d) in chainCrossings gives transferMatrix c d =
-  --    crossingMatrix (config.get! j) (config.get! k)  [by cases on vertexType]
+  --    crossingMatrix (config[j]!) (config[k]!)  [by cases on vertexType]
   -- 2. Show matrixChain seq = List.foldl (fun M cd => transferMatrix cd.1 cd.2 * M) 1 seq
   --    [by transferMatrix_comm + induction]
   -- 3. Show List.foldl over chainCrossings = List.foldl over buildChains' crossings
@@ -402,8 +402,11 @@ theorem optimal_nf_from_transfer_matrix (Z N : ℕ)
 
     This follows from `volume_eq_markov_trace` applied to each chain. -/
 -- Ref: [leitner2026] https://doi.org/10.xxxx/qou
-theorem skein_from_markov_traces (config : NuclearConfig)
-    (h_len : config.length ≥ 2) :
+-- Dropped the unused hypothesis `h_len : config.length ≥ 2` (2026-08-22;
+-- vacuity ledger, `proof-no-unused-hypothesis-rfl`).  The factorisation is the
+-- definitional unfolding of `skeinPolynomialCleared`, which holds for every
+-- config length; `h_len` was never consumed by the `rfl` proof.
+theorem skein_from_markov_traces (config : NuclearConfig) :
     skeinPolynomialCleared config =
     (buildChains config).foldl (fun acc M => acc * tracedVolCleared M) 1 := by
   -- This is definitionally true by unfolding `skeinPolynomialCleared`

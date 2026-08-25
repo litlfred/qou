@@ -1,4 +1,4 @@
-**Conjecture (D7 parity closure).**
+**Conjecture (parity closure).**
 *Within the QOU framework, parity $P$ acts as the **mirror reflection
 of the braid diagram** — each positive crossing $\sigma_i \mapsto
 \sigma_i^{-1}$ and vice versa, with the q-parameter held fixed
@@ -9,11 +9,11 @@ an involution ($P^2 = \mathrm{id}$) and is **distinct from**:*
 - *the bar-involution [`def:bar-involution`](#def:bar-involution),
   which acts as $q \mapsto q^{-1}$ AND $\sigma_i \mapsto \sigma_i^{-1}$
   simultaneously (= composite CPT);*
-- *charge conjugation [`conj:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap)
-  (D6), which acts on color-sheet flavor labels with no Hecke-
+- *charge conjugation [`conj:c-from-color-flavor-swap`](#conj:c-from-color-flavor-swap),
+  which acts on color-sheet flavor labels with no Hecke-
   generator action;*
-- *time-reversal [`conj:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity)
-  (D8), which reverses the braid word at the Markov-trace level.*
+- *time-reversal [`conj:t-from-trace-cyclicity`](#conj:t-from-trace-cyclicity),
+  which reverses the braid word at the Markov-trace level.*
 
 ## The action
 
@@ -32,7 +32,7 @@ On the writhe, this gives $w(P\beta) = -w(\beta)$ — a sign flip on
 the bar-anti-symmetric writhe quantity classified in
 [`bar-involution-table3-data`](bar-involution.md#tbl:bar-involution-table3-data).
 
-## Disentanglement of D7 from CPT
+## Disentangling parity from CPT
 
 The composite bar-involution acts as both:
 
@@ -49,17 +49,16 @@ order, where:
 | Acts on | Symbol map |
 |---------|------------|
 | Hecke generator chirality only | $\sigma_i \mapsto \sigma_i^{-1}$, $q$ fixed (= **P** alone) |
-| Color sheets only | flavor $u \leftrightarrow \bar u$ (= **C** alone, D6) |
-| Markov trace cyclicity only | braid word reversal (= **T** alone, D8) |
+| Color sheets only | flavor $u \leftrightarrow \bar u$ (= **C** alone) |
+| Markov trace cyclicity only | braid word reversal (= **T** alone) |
 
 P alone (this conjecture) corresponds to the **first row only** — it
 fixes $q$, fixes color-sheet flavors, and fixes trace cyclicity; it
 only mirrors the diagram.  Composed with C and T, it recovers the
 bar-involution.
 
-## Diagnostics
+## Structural invariants
 
-Per [`.claude/skills/local/canonical-watcher.md`](../../../.claude/skills/local/canonical-watcher.md) §Slot J:
 
 - **GB filtration level**: ℓ-dependent per-atom (P preserves Coxeter
   length but flips signs of generators).
@@ -94,31 +93,29 @@ class PFromBraidMirror (M : Type*) [BrCategory M] [Hecke M] where
 ## Consumers / downstream
 
 - [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
-  becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once D6,
-  D7, D8 are all closed.
+  becomes a corollary of $\mathrm{CPT} = C \cdot P \cdot T$ once all
+  three factors are established.
 - The writhe-based chirality classification
   [`prop:chirality-writhe-ribbon-derivation`](#prop:chirality-writhe-ribbon-derivation)
   gets a categorical home: chirality measures the P-anti-symmetric
   part of a knot, separately from C and T.
 
-## Open R&D
+## What remains open
 
-1. **Verify canonical** that the Hecke quadratic preserves under P
+1. **Invariance of the Hecke quadratic under $P$.** The quadratic is preserved
    (since both $\sigma_i$ and $\sigma_i^{-1}$ satisfy the same
    relation): the quadratic
    $(\sigma_i - q)(\sigma_i + q^{-1}) = 0$ is invariant under P
    because $(\sigma_i^{-1} - q)(\sigma_i^{-1} + q^{-1}) = 0$ also
-   holds (multiply the original by $\sigma_i^{-2}$). Concrete canonical evaluation
-   in a follow-up.
-2. **D7 to closed** requires the Lean class instance + a `prop:` block
-   stating bar = P $\cdot$ C $\cdot$ T as a derivable identity.
+   holds (multiply the original by $\sigma_i^{-2}$).
+2. Closing the conjecture needs an instance of the class above, and a
+   derivation of bar $= P \cdot C \cdot T$ as an identity rather than an axiom.
 
 ## Cross-references
 
-- [`docs/duality-tracker.md`](../../docs/duality-tracker.md) §1 D7
-  + §2 Cluster A (CPT decomposition D5 $\to$ D6 + D7 + D8)
-- Sibling Z/2 decompositions of CPT:
-  [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md) (D6),
-  [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md) (D8)
+- The sibling $\mathbb{Z}/2$ factors of CPT — charge conjugation and time
+  reversal, this conjecture supplying parity:
+  [`conj:c-from-color-flavor-swap`](c-from-color-flavor-swap.md),
+  [`conj:t-from-trace-cyclicity`](t-from-trace-cyclicity.md)
 - Composite CPT: [`conj:cpt-orbit-closure-density`](#conj:cpt-orbit-closure-density)
 - Bar-involution: [`bar-involution.md`](bar-involution.md) Tables 1-4

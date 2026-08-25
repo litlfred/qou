@@ -19,11 +19,33 @@ The framework requires the conversion factor $m_e(\text{MeV})/m_e(\text{natural}
 
 CAL-2 fixes $q_0$ via $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$.
 
-- $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299$ is pure cohomology (no CODATA input).
+- $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\,\Lambda(\pi/3) \approx 2.0299$ is pure cohomology (no CODATA input).
 - $\hbar_q = (q-1)/q$ is pure algebra (no CODATA input).
 - $q_0 \approx 1.10998$ is pinned by matching $m_\mu/m_e = \mathrm{Vol}(4_1)/\hbar_q^2$ to the CODATA value $206.7682830$.
 
-The relation $m_\mu = m_e \times \mathrm{Vol}(4_1)/\hbar_q^2$ is structurally tautological. We defined $q_0$ to enforce it. The muon is the structurally preferred anchor due to a self-duality: the figure-eight knot $4_1$ is amphichiral, and its Neumann–Zagier complex volume is real ([`prop:self-dual-higgs-real-volume`](../braids-and-knots/self-dual-higgs-real-volume.md)). It pins $q_0$ through a quantity with zero imaginary (decay) content. In contrast, the proton pins $m_p/m_e$ through a modulus of a many-body binding endomorphism. The muon provides the cleanest $q_0$ determination. The residual $\mu$–$p$ tension ($\approx 11.5$ ppb in $q_0$) is the genuine substrate floor. The neutron-decay observable supplies a third, decay-sector determination of the same modulus — the pure bar-even point $q^{*}$ of [`rem:qstar-decay-sector-q0`](../mass-theory/rem-qstar-decay-sector-q0.md), which coincides with neither mass pin nor with their precision-weighted mean — so the $\mu$–$p$ tension is more precisely a $\mu$–$p$–$\mathfrak{Q}_\beta$ three-way consistency test of the single substrate modulus.
+The relation $m_\mu = m_e \times \mathrm{Vol}(4_1)/\hbar_q^2$ is structurally tautological. We defined $q_0$ to enforce it. The muon is the structurally preferred anchor due to a self-duality: the figure-eight knot $4_1$ is amphichiral, and its Neumann–Zagier complex volume is real ([`prop:self-dual-higgs-real-volume`](../braids-and-knots/self-dual-higgs-real-volume.md)). It pins $q_0$ through a quantity with zero imaginary (decay) content. In contrast, the proton pins $m_p/m_e$ through a modulus of a many-body binding endomorphism. The muon provides the cleanest $q_0$ determination. The residual $\mu$–$p$ tension ($\approx 11.5$ ppb in $q_0$) is the genuine substrate floor. The neutron-decay observable does **not** supply an independent third determination of the same modulus, and the $\mu$–$p$ tension is **not** a three-way consistency test. An earlier version of this paragraph asserted both, on the strength of the point $q^{*}$ of [`rem:qstar-decay-sector-q0`](../mass-theory/rem-qstar-decay-sector-q0.md) coinciding with neither mass pin nor their precision-weighted mean. That argument is circular: $q^{*}$ is *defined* as the root of $S(q) = c_3(q) + \mathrm{Vol}(4_1)$, so locating it presupposes $c_3^{\mathrm{even}} = -\mathrm{Vol}(4_1)$ — the hypothesis such a test would have to be independent of. It is independent of the two *mass* pins, which is a different and weaker statement.
+
+Quantitatively, $q^{*}$'s placement carries no information beyond $\mathrm{Vol}(4_1)$'s own value. Every constant $V$ in the window $(-c_3(\mu), -c_3(\mathfrak{p})) = (2.0202, 2.0693)$ puts a zero between the anchors, and as $V$ sweeps that window $q^{*}_V$ sweeps the whole anchor interval; $\mathrm{Vol}(4_1) = 2.0299$ sits $80.30\%$ of the way from the proton end, which is exactly the "$\approx 80.3\%$ muon-ward" figure quoted for $q^{*}$. The placement is a restatement of $c_3(q_0) \approx -\mathrm{Vol}(4_1)$ to $0.48\%$, not a decay-sector preference.
+
+So the substrate rests on **two** pins, and the $\mu$–$p$ tension ($\approx 11.5$ ppb) is a two-way tension. What the decay sector does supply is a genuine falsifiable lever of a different kind: $dq^{*}/d\mathfrak{Q}_\beta \approx -0.539$, so a sharper neutron $Q$-value sharpens $q^{*}$ — but sharpening a quantity defined by an assumed offset tests the offset, not the modulus.
+
+### Which pin the numbers actually use
+
+The paragraph above argues that the muon is the *structurally* preferred anchor. It is not the pin the computed values use.
+
+| Layer | Pins $q_0$ on | $q_0$ | Status of $m_\mu$ |
+|---|---|---|---|
+| Ideal (canonical 3-CAL) | $m_\mu/m_e$ — CAL-2, proxy for $\mathfrak{D}_\beta$ | $1.1099785955573347\ldots$ | anchor input; exact *by construction* |
+| Experimental (Physical-Observations) | $m_p/m_e$ | $1.1099785827513808\ldots$ | a **prediction**, and a $9.5\sigma$ one |
+
+The two differ by $\approx 11.5$ ppb — the $\mu$–$p$ tension itself. Production compute takes the experimental pin, for one reason: $m_p/m_e$ is known to $0.06$ ppb against the muon ratio's $22$ ppb, so pinning there puts the unavoidable theory residual where it costs least. Anchoring on the muon instead would leave the proton wrong by roughly $4000\sigma$; anchoring on the proton leaves the muon wrong by $9.5\sigma$. Neither is a free choice, and the arithmetic — not a preference — selects the second.
+
+This is a *precision substitution within one overdetermined datum*, not a fourth calibration and not a redefinition of CAL-2. The canonical triple is unchanged; only the numerical evaluation moves.
+
+Two consequences follow:
+
+- **An $m_\mu$ reproduced at the muon pin is not an accuracy result.** It is the calibration restated. Quoting it as a prediction double-counts the input.
+- **The two layers must never be mixed inside a single computed quantity.** A number built from an ideal-layer input and an experimental-layer input carries the $11.5$ ppb tension as a silent error term, regardless of how small the final discrepancy looks.
 
 ## CAL-3 ($\mathfrak{D}_\pi$, proxy $m_\pi$) and CAL-2 proxy $\mathfrak{Q}_\beta$
 
@@ -40,7 +62,7 @@ The derived $\mathfrak{Q}_\beta$ fixes the hadronic scale $\mathfrak{E}_0$ via $
 | CAL | Pinned quantity | Cohomological derivation candidate | Status |
 |---|---|---|---|
 | CAL-1 | $m_e$ | $\mathrm{Li}_2(q^{-2}) / \hbar_q^2$ | **unit-choice + derived** |
-| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\Lambda(\pi/3)$ | **open** |
+| CAL-2 | $q_0$ via $m_\mu/m_e$ | $\mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3)$ | **open** |
 | CAL-3 | $m_\pi$ | independent of $(m_e,q_0)$ | **genuine input** |
 | *(derived)* | $\mathfrak{E}_0$ via $\mathfrak{Q}_\beta$ | Khovanov-Rozansky strata | **open** |
 
@@ -56,4 +78,4 @@ It structuralizes the framework's calibrations.
 
 ## Significance
 
-The framework aims to reduce the Standard Model's 19 free parameters to a single unit choice, a cohomologically-derived $q_0$, and a derived hadronic residual.
+The framework aims to reduce the Standard Model's 19 free parameters to a single unit choice, a categorically extracted $q_0$, and a derived hadronic residual.

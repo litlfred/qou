@@ -49,7 +49,7 @@ theorem polyGrowth_id : PolyGrowth (fun n => n) :=
 /-- **`PolyBounded ⊆ PolyGrowth` (sorry-free).**  Every polynomially-bounded
     function has polynomial growth — the squeeze's negation target embeds in the
     closed algebra, so no separation content is lost by working here. -/
-theorem PolyGrowth.of_polyBounded {f : ℕ → ℕ} (h : PolyBounded f) : PolyGrowth f := by
+theorem of_polyBounded {f : ℕ → ℕ} (h : PolyBounded f) : PolyGrowth f := by
   obtain ⟨c, k, hb⟩ := h
   exact ⟨c, k, fun n => (hb n).trans (by gcongr; omega)⟩
 
@@ -62,7 +62,7 @@ theorem PolyGrowth.mono {f g : ℕ → ℕ} (hf : PolyGrowth f)
 
 /-- **Closed under addition (sorry-free).**  Adding two polynomial-growth costs
     stays polynomial-growth — sum the constants, take the larger exponent. -/
-theorem PolyGrowth.add {f g : ℕ → ℕ} (hf : PolyGrowth f) (hg : PolyGrowth g) :
+theorem add {f g : ℕ → ℕ} (hf : PolyGrowth f) (hg : PolyGrowth g) :
     PolyGrowth (fun n => f n + g n) := by
   obtain ⟨c1, k1, h1⟩ := hf
   obtain ⟨c2, k2, h2⟩ := hg
@@ -75,7 +75,7 @@ theorem PolyGrowth.add {f g : ℕ → ℕ} (hf : PolyGrowth f) (hg : PolyGrowth 
 /-- **Closed under multiplication (sorry-free).**  Multiplying two
     polynomial-growth costs stays polynomial-growth — multiply the constants,
     add the exponents. -/
-theorem PolyGrowth.mul {f g : ℕ → ℕ} (hf : PolyGrowth f) (hg : PolyGrowth g) :
+theorem mul {f g : ℕ → ℕ} (hf : PolyGrowth f) (hg : PolyGrowth g) :
     PolyGrowth (fun n => f n * g n) := by
   obtain ⟨c1, k1, h1⟩ := hf
   obtain ⟨c2, k2, h2⟩ := hg

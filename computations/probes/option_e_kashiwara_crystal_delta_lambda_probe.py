@@ -49,7 +49,13 @@ import sympy as sp  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 set_compute_dps()
 
-from witness_base import WitnessBuilder  # noqa: E402
+from witness_base import WitnessBuilder, record_upstream  # noqa: E402
+from q_parameter import Q_50_DIGIT_STR  # noqa: E402
+
+# Upstream hash records captured before the WitnessBuilder exists;
+# attached at construction. Owned by this module — see
+# `record_upstream` in qou_substrate.witness for why it is not global.
+_UPSTREAM_RECORDS: list = []
 
 HERE = Path(__file__).resolve().parent
 COMPUTE_DIR = HERE.parent
@@ -61,7 +67,7 @@ TARGET_SIGNED = mp.mpf("-4.353")
 TARGET_PRECISE = mp.mpf("-2.2245") / mp.mpf("0.51099895069")
 
 # Canonical 50-dps q₀ — matches every chi-cache witness header.
-Q_0_50DPS = "1.1099785955573347198997632204832250266562084087802"
+Q_0_50DPS = Q_50_DIGIT_STR
 
 
 # ── Partitions + hook-length combinatorics ──
@@ -190,7 +196,7 @@ def candidate_E5_dim(lam: tuple[int, ...]) -> int:
 
 def _load_y_lambda_n(n: int) -> dict[tuple, mp.mpf]:
     path = COMPUTE_DIR / "y-lambda-at-q0.witness.json"
-    raw = json.loads(path.read_text())["data"]["by_n"]
+    raw = record_upstream(path, _UPSTREAM_RECORDS)["data"]["by_n"]
     return {
         tuple(row["partition"]): mp.mpf(row["y_at_q0_50dps"])
         for row in raw[str(n)]
@@ -199,7 +205,7 @@ def _load_y_lambda_n(n: int) -> dict[tuple, mp.mpf]:
 
 def _load_chi_deuteron_h6() -> dict[tuple, mp.mpf]:
     path = COMPUTE_DIR / "chi-deuteron-h6-at-q0-50dps.witness.json"
-    raw = json.loads(path.read_text())
+    raw = record_upstream(path, _UPSTREAM_RECORDS)
     return {
         tuple(entry["partition"]): mp.mpf(entry["chi_lambda"])
         for entry in raw["by_partition"]
@@ -219,6 +225,7 @@ def main() -> int:
         "option-e-kashiwara-crystal-delta-lambda-probe",
         engine="sympy+mpmath",
     )
+    w.add_upstream_records(_UPSTREAM_RECORDS)  # declare upstreams read before this builder existed
     w.set_audit_only("docs/audits/2026-06-04-option-e-kashiwara-crystal-scope.md")
     w.set_description(
         "Option E (Kashiwara crystal at q→1) for Δ_λ closure — "

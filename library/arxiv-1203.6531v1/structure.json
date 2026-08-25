@@ -1,0 +1,103 @@
+{
+ "_schema": "pdf-structure/v1",
+ "doc_id": "arxiv-1203.6531v1",
+ "source": {
+  "file": "1203.6531v1.pdf",
+  "sha256": "29541f28c1c62d8f5172503dcc5ff03c3483fc67fb685c174d51074d3daf66d0",
+  "bytes": 476208,
+  "pages": 11
+ },
+ "metadata": {
+  "arxiv": {
+   "id": "1203.6531",
+   "version": "1",
+   "primary_class": "math.GR",
+   "stamp_date": "29 Mar 2012"
+  },
+  "doi": null,
+  "title": "Groebner-Shirshov basis and reduced words for affine Weyl group A_n",
+  "authors_raw": "V olume 00, Number 0, Pages 000–000",
+  "abstract": "Using Buchberger-Shirshov Algorithm and Composition-Diamond lemma we obtain the reduced Gr¨ obner-Shirshov bases of ~An and classify all reduced words of the aﬃne Weyl group ~An.",
+  "docinfo": {
+   "Author": "",
+   "CreationDate": "D:20210726173815Z",
+   "Creator": "LaTeX with hyperref package",
+   "Producer": "pdfTeX-1.40.12",
+   "Title": ""
+  },
+  "title_prev": "AMERICAN MATHEMATICAL SOCIETY",
+  "title_lines": [
+   "AMERICAN MATHEMATICAL SOCIETY"
+  ]
+ },
+ "toc": [
+  {
+   "level": 1,
+   "title": "Introduction",
+   "page": 1,
+   "source": "outline",
+   "number": "1"
+  },
+  {
+   "level": 1,
+   "title": "Gröbner-Shirshov Basis and Reduced Words",
+   "page": 3,
+   "source": "outline",
+   "number": "2"
+  },
+  {
+   "level": 1,
+   "title": "Counting Reduced Words",
+   "page": 7,
+   "source": "outline",
+   "number": "3"
+  },
+  {
+   "level": 1,
+   "title": "References",
+   "page": 10,
+   "source": "outline",
+   "number": null
+  }
+ ],
+ "toc_source": "outline",
+ "sections": [
+  {
+   "id": "sec-000-1-introduction",
+   "number": "1",
+   "title": "Introduction",
+   "level": 1,
+   "page_start": 1,
+   "page_end": 7,
+   "n_chars": 13947,
+   "n_words": 2453
+  },
+  {
+   "id": "sec-001-3-counting-reduced-words",
+   "number": "3",
+   "title": "Counting Reduced Words",
+   "level": 1,
+   "page_start": 7,
+   "page_end": 10,
+   "n_chars": 6253,
+   "n_words": 1175
+  },
+  {
+   "id": "sec-002-references",
+   "number": null,
+   "title": "References",
+   "level": 1,
+   "page_start": 10,
+   "page_end": 11,
+   "n_chars": 2063,
+   "n_words": 312
+  }
+ ],
+ "diagnostics": {
+  "pages_without_text": 0,
+  "likely_scanned": false,
+  "toc_entries": 4,
+  "sections": 3,
+  "chars_total": 22263
+ }
+}

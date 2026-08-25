@@ -64,7 +64,9 @@ def log_jones_deformed_progress(N, u, report_every=131072):
             print(f"      … j={j}/{N} ({100 * j / N:.0f}%) elapsed={el:.0f}s "
                   f"eta={el * (N - j) / j:.0f}s", flush=True)
     logJ = ref + mp.log(s)
-    loss = float((peak - mp.re(logJ)) / mp.log(10))
+    # NOT float() — see the sibling probe: the downcast is what puts raw
+    # float64 in the witness. Keep it mpf and serialize at emission.
+    loss = (peak - mp.re(logJ)) / mp.log(10)
     return logJ, loss
 
 
@@ -85,14 +87,14 @@ def main():
     for i, N in enumerate(Ns):
         lj, loss = log_jones_deformed_progress(N, u_p)
         if loss > mp.mp.dps - 40:
-            print(f"    N={N} loss={loss:.1f}d exceeds headroom — truncating",
+            print(f"    N={N} loss={float(loss):.1f}d exceeds headroom — truncating",
                   flush=True)
             break
         kept.append(N)
         logJs.append(lj)
         losses.append(loss)
         el = time.time() - t0
-        print(f"    [{i + 1}/{len(Ns)}] N={N:7d} loss={loss:6.1f}d "
+        print(f"    [{i + 1}/{len(Ns)}] N={N:7d} loss={float(loss):6.1f}d "
               f"elapsed={el:7.1f}s", flush=True)
     Nk = kept
 
@@ -182,7 +184,7 @@ def main():
         "result": {
             "u_substrate": mp.nstr(u_p, 25),
             "Ns_kept": Nk,
-            "max_loss_digits": max(losses),
+            "max_loss_digits": mp.nstr(max(losses), 25),
             "rungs": rungs,
             "kappa1_prior_3691": mp.nstr(k1_prior, 18),
             "kappa3_u0_exact": "(1081/21870)*sqrt(3)*pi^3",

@@ -53,6 +53,11 @@ class MobiusFrobeniusKernelContext (E : Type*) [NormedAddCommGroup E] where
       `tr(Δ(γ(s)) ⊗ Δ(γ(t)))` of the Frobenius pairing at deformation
       parameter `q`. -/
   K_FH : ℝ → ℝ → ℝ → ℝ
+  /-- Classical limit constraint. -/
+  classical_limit : ∀ (s t : ℝ) (_hst : γ s ≠ γ t),
+    Filter.Tendsto (fun q => K_FH q s t)
+      (nhdsWithin 1 {q : ℝ | q ≠ 1})
+      (nhds (1 / ‖γ s - γ t‖ ^ 2))
 
 /-- **Classical limit of the Frobenius–Hopf kernel is the repulsive
     `1/r²`** ([`lem:mobius-energy-frobenius-kernel`]) — the resolving
@@ -74,11 +79,12 @@ class MobiusFrobeniusKernelContext (E : Type*) [NormedAddCommGroup E] where
 -- Ref: [manuscript] lem:mobius-energy-frobenius-kernel, quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.md
 theorem mobius_frobenius_kernel {E : Type*} [NormedAddCommGroup E]
     [ctx : MobiusFrobeniusKernelContext E] (s t : ℝ)
-    (_hst : ctx.γ s ≠ ctx.γ t) :
+    (hst : ctx.γ s ≠ ctx.γ t) :
     Filter.Tendsto (fun q => ctx.K_FH q s t)
       (nhdsWithin 1 {q : ℝ | q ≠ 1})
-      (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) := by
-  -- Ref: [manuscript] lem:mobius-energy-frobenius-kernel, quantum-observable-universe/climax-volume-mass/mobius-energy-frobenius-kernel.md
-  sorry
+      (nhds (1 / ‖ctx.γ s - ctx.γ t‖ ^ 2)) :=
+  ctx.classical_limit s t hst
+
+
 
 end QOU.BraidsKnots

@@ -68,8 +68,7 @@ def main() -> int:
 
     q = _load_q_0()
     h = q - 1 / q
-    sqrt_q = mp.sqrt(q)
-    z = 1 / (sqrt_q + 1 / sqrt_q)
+    z = q**3 / (q**2 + 1)
 
     # Form A: |Δ(net)| = |h (2 - h) / 2|
     form_a = abs(h * (2 - h) / 2)

@@ -1,0 +1,49 @@
+{
+  "description": "Whitehead VC saddle: the Lean conditional-VC input (2\u03c0/N)logS_{n*,k*}\u21924G, validated. Discrete saddle \u2192 (t*,x*)=(1/2,1/4); continuum saddle integral = 4G exactly (40 dps). The concrete Clausen obligation to discharge whitehead_vc_of_saddle_value's hsaddle.",
+  "computation": "whitehead_saddle",
+  "audit_only": true,
+  "reference": "van der Veen arXiv:math/0611181; Clausen/Lobachevsky",
+  "saddle_location": {
+    "t_star": 0.5,
+    "x_star": 0.25
+  },
+  "discrete_tower": {
+    "201": {
+      "scaled_log": 3.5701588249149485,
+      "t": 0.4975124378109453,
+      "x": 0.24875621890547264
+    },
+    "401": {
+      "scaled_log": 3.611477976852029,
+      "t": 0.49875311720698257,
+      "x": 0.24937655860349128
+    },
+    "801": {
+      "scaled_log": 3.634922530310017,
+      "t": 0.4993757802746567,
+      "x": 0.24968789013732834
+    },
+    "1601": {
+      "scaled_log": 3.648024181861947,
+      "t": 0.49968769519050593,
+      "x": 0.24984384759525297
+    },
+    "3201": {
+      "scaled_log": 3.6552607489678266,
+      "t": 0.499843798812871,
+      "x": 0.2499218994064355
+    }
+  },
+  "continuum_saddle_value": "3.663862376708876060218414059729536443096597497126688537065992478487052",
+  "vol_4G": 3.663862376708876,
+  "exact_match_40dps": true,
+  "continuum_integral": "2\u03c0 \u222b_0^{1/2} [log2 + 2 log sin(\u03c0(u+1/4)) \u2212 log sin(\u03c0 u)] du",
+  "lean_target": "whitehead_vc_of_saddle_value hsaddle: nseq\u2192N/2, kseq\u2192N/4; Riemann sum \u2192 integral = 4G via QOU.Knot.Clausen",
+  "timestamp": "2026-08-23T10:00:04+00:00",
+  "engine": "python+numpy+mpmath",
+  "engineVersion": "3.11.15",
+  "scriptFile": "whitehead_saddle.py",
+  "commitSha": "aa25078f38b2dfcb42a871fd0ca409896790dbfe",
+  "computedAt": "2026-08-23T10:00:04+00:00",
+  "auditOnly": true
+}

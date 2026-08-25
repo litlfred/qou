@@ -14,6 +14,7 @@ The gauge sector decomposes via the Iwahori–Hecke algebra: each crossing $\sig
 
 ```tex
 \begin{center}
+\begin{adjustbox}{max width=\linewidth}
 \renewcommand{\arraystretch}{1.4}
 \begin{tabular}{l|c|c|c|c|c|c}
 \toprule
@@ -73,9 +74,9 @@ Markov I &
   preserved \\
 \midrule
 Markov II &
-  $\beta \mapsto \beta \sigma_n^{± 1}$ &
+  $\beta \mapsto \beta \sigma_n^{\pm 1}$ &
   $0$ &
-  $+q^{± 1}$ &
+  $+q^{\pm 1}$ &
   $0$ &
   preserved &
   $\times z$ \\
@@ -90,5 +91,6 @@ Skein ($\mathfrak{d} \to \mathfrak{u}$) &
   \textbf{changes} \\
 \bottomrule
 \end{tabular}
+\end{adjustbox}
 \end{center}
 ```

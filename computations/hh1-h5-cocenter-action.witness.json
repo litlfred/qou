@@ -1,0 +1,28 @@
+{
+  "schema": "qou-probe/v1",
+  "probe": "PROBE-A part 2: action of HH^1(H_5(zeta_5)) on the cocenter HH_0",
+  "bean": "qou-jcmw",
+  "description": "Tests whether the unique outer derivation of H_5 at the Bring root of unity induces a nonzero map on HH_0 = A/[A,A]. Inner derivations act as zero on HH_0, so the induced action is canonically attached to the HH^1 class. Since every trace factors through HH_0, a zero induced action means the class is trace-blind and cannot carry c_3.",
+  "method": "D(A) computed by Leibniz extension along reduced words from the outer generator of the derivation nullspace; [A,A] spanned by all [T_u, T_v]; test is rank([A,A] + D(A)) == rank([A,A]).",
+  "rigour_note": "Reduction mod a prime above p is a ring hom so rank_p <= rank_0; a NON-trivial action found mod p therefore persists to characteristic 0. The trivial direction is corroborated across two unrelated primes but is not by itself a characteristic-0 proof.",
+  "results": {
+    "5021": {
+      "dim_A": 120,
+      "dim_commutator": 113,
+      "dim_cocenter": 7,
+      "dim_HH1": 1,
+      "induced_rank_on_cocenter": 1,
+      "acts_trivially_on_cocenter": false
+    },
+    "60041": {
+      "dim_A": 120,
+      "dim_commutator": 113,
+      "dim_cocenter": 7,
+      "dim_HH1": 1,
+      "induced_rank_on_cocenter": 1,
+      "acts_trivially_on_cocenter": false
+    }
+  },
+  "wired_to_production": false,
+  "fit_performed": false
+}

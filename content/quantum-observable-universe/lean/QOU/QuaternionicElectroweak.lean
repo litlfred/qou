@@ -47,13 +47,13 @@ abbrev FlavorDoublet (R : Type*) [CommRing R] := Quaternion R
 def IsSU2 (q : Quaternion R) : Prop := Quaternion.normSq q = 1
 
 /-- Group closure: the product of two unit quaternions is a unit quaternion. -/
-theorem IsSU2.mul {g h : Quaternion R} (hg : IsSU2 g) (hh : IsSU2 h) :
+theorem mul {g h : Quaternion R} (hg : IsSU2 g) (hh : IsSU2 h) :
     IsSU2 (g * h) := by
   unfold IsSU2 at hg hh ⊢
   rw [map_mul, hg, hh, mul_one]
 
 /-- The identity quaternion lies in `SU(2)`. -/
-theorem IsSU2.one : IsSU2 (1 : Quaternion R) := by
+theorem one : IsSU2 (1 : Quaternion R) := by
   unfold IsSU2
   rw [map_one]
 

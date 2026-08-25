@@ -1,4 +1,4 @@
-These notes accompany [`prop:three-calibration-discipline`](#prop:three-calibration-discipline): the cohomological alignment of the three inputs, how their proxies are read off, and the audit consequence.
+These notes accompany [`prop:three-calibration-discipline`](#prop:three-calibration-discipline): the cohomological alignment of the three inputs, how their proxies are read off, and what the discipline rules out.
 
 ## Cohomological alignment
 
@@ -17,14 +17,14 @@ This proposition formalizes the calibration discipline.
    $$
      \frac{m_\mu}{m_e} \;=\; \frac{\mathrm{Vol}(4_1)}{\hbar_q^2},
      \qquad \hbar_q = 1 - q_0^{-1},
-     \qquad \mathrm{Vol}(4_1) = 2\Lambda(\pi/3) \approx 2.0299.
+     \qquad \mathrm{Vol}(4_1) = 2\,\mathrm{Cl}_2(\pi/3) = 6\,\Lambda(\pi/3) \approx 2.0299.
    $$
 
    Inverted for $q_0$, CAL-1 and CAL-2 coordinatize the single modulus $q_0$ one-to-one. The modulus is overdetermined. It can be fixed by $\alpha_{\mathrm{EM}}^{-1}$ or by tritium $t_{1/2}$, which agree on $q_0$ to within 0.3% ([substrate-consistency window](#prop:substrate-consistency-window)). In the observations chapter, one may anchor $q_0$ on the proton ratio $m_p/m_e$ for higher precision. This is a substitution within the same overdetermined $H^1$ datum. It does not introduce a new calibration.
-4. **Audit consequence.** Any predicted mass, binding energy, or Q-value not of the form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ violates this discipline. It must either introduce a fourth calibration or report a $\tau$-image quantity from the Archimedean side.
+4. **Consequence.** Any predicted mass, binding energy, or Q-value not of the form $m_e^a m_\pi^c \cdot \text{rational}(q_0)$ violates this discipline. It must either introduce a fourth calibration or report a $\tau$-image quantity from the Archimedean side.
 
-## Audit hook
+## What the discipline rules out
 
-This proposition serves as the calibration-discipline hook for audits. Task P1.5 in the [math-framework workplan](../../../docs/audits/-math-framework-workplan.md) sweeps the paper for discipline violations. Task P0.1 sweeps proof blocks for Archimedean-side derivation inputs. The $\mathbb{Q}(q_0)$-rationality clause forbids such inputs in algebraic-side derivations.
+Every derivation in the paper is checked against this proposition, and every proof block against the $\mathbb{Q}(q_0)$-rationality clause, which forbids Archimedean-side derivation inputs on the algebraic side.
 
-A fourth dimensional input constitutes a hard audit failure. The three calibrations are categorical. They sit in distinct cohomological degrees and cannot be replaced without violating the (co)homological alignment.
+A fourth dimensional input is a hard failure. The three calibrations are categorical. They sit in distinct cohomological degrees and cannot be replaced without violating the (co)homological alignment.

@@ -1,0 +1,242 @@
+{
+  "engine": "sympy+numpy",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-09T19:40:03.608388+00:00",
+  "commitSha": "4fb254b7758de06ece4d57b8133c027960d23892",
+  "assertions": [
+    {
+      "name": "A1_rep_certified",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A1_reproduces_4848_germ_curvature",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A2_connection_law_verified",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A3_defect_formula_consistent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A3_defect_nonzero",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A4_4848_zero_reproduced_in_base_gauge",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A4_4848_zero_is_gauge_dependent",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A5_cup_square_is_coboundary",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "A6_trace_germ_gauge_invariant",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "B1_connection_law_numeric_(11, 1)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "B1_connection_law_numeric_(10, 1, 1)",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "B1_not_covariant",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "B2_same_representation",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "B2_invariants_differ_across_gauges",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "B2_trace_control",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 25,
+  "computation": "nastokes-germ-gauge-covariance",
+  "scriptFile": "nastokes_germ_gauge_covariance_probe.py",
+  "scriptHash": "6207f903ad9d",
+  "scriptCommitSha": "c51e43fa21ce402607e90d774ed39845b19e4b87",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.3.0"
+  },
+  "description": "Bean qou-prjo.  Answers the question PR #4849 sec 2.3 left open: is the transverse NA-Stokes pairing Omega_2 gauge-covariant under the connection transformation law of the germ dq = q (d_q rho) rho^-1?  IT IS NOT.  Formalize-first: QOU/MassTheory/GermConnectionGaugeCovariance.lean (sorry-free, generic Ring, #print axioms clean on all 48 declarations) proves the germ is a 1-cocycle, proves the connection law, proves covariance holds IFF a defect vanishes, exhibits a concrete triple where it does not, proves the pairing is covariant GIVEN covariant inputs (so all failure sits in F_q), and proves the covariant second-order object -- the bracket cup square -- is EXACTLY a coboundary with explicit primitive beta = D.alpha, hence zero in H^2.  This probe verifies all of it against the actual Hecke germ: exactly over Q(q) in the 2-dim rep (connection law, nonzero defect, cup-square identity, gauge-invariance of tr alpha), and numerically on the corpus 4He atom word atom_braid_word_3A(2,2) in H_12(q) in TWO gauges -- diag(1,q,...,q^(d-1)) on Hoefsmit seminormal (covariance defect measured directly) and the reduced-Burau realization of the SAME lambda=(11,1) representation (compared via the conjugation-INVARIANT tr(Omega^k), so the comparison needs no intertwiner and is readout-independent).  Both show non-covariance.  Consequence: Omega_2 has no basis-independent value, so the germ-observer-pair selection question of #4849 is VOID rather than open.  Also retro-checks #4848: its Omega_2 = 0 on sigma_1^3 is itself gauge-dependent -- correct within a q-INDEPENDENT change of basis, not under the full connection freedom.  No AME quantity, no g_2, no binding number appears anywhere; free_parameters = 0; nothing wired; bean OPEN.",
+  "auditOnly": true,
+  "parameters": {
+    "q0_experimental_proton_anchor": "1.1099785827513808",
+    "q0_pin": "experimental/proton (qou_substrate.constants.Q_50_DIGIT_STR)",
+    "free_parameters": 0,
+    "algebra": "H_3(q) 2-dim rep (symbolic, exact Q(q)); H_12(q) lambda=(11,1) and (10,1,1) (numeric)",
+    "gauges_compared": "(a) Hoefsmit seminormal vs diag(1,q,...,q^(d-1)) rescaling; (b) Hoefsmit seminormal lambda=(11,1) vs reduced Burau at t=q^-2 scaled by q (the #4798/#4848 gauge)",
+    "germ_convention": "logarithmic q-derivative q*(d_q rho)*rho^-1, analytic entry derivatives; rho^-1 = rho - h from the Hecke relation",
+    "transport_convention": "Yekutieli ordered partial product along the braid word",
+    "readout": "conjugation-invariant tr(Omega^k) for the cross-gauge comparison; Ad(B)^-1 Omega' - Omega for the explicitly-known gauge",
+    "lean_file": "content/quantum-observable-universe/lean/QOU/MassTheory/GermConnectionGaugeCovariance.lean"
+  },
+  "data": {
+    "A2_gauge_B": "diag(1, q)",
+    "A2_Theta": "[[0, 0], [0, 1]]",
+    "A2_shift_sigma1": "[[0, -1], [0, 0]]",
+    "A2_shift_sigma2": "[[0, 0], [q**2, 0]]",
+    "A3_defect_exact": "[[-3*q**2, -2], [-2*q**2, 3*q**2]]",
+    "A4_omega2_sigma1cubed_gauged": "[[24*q**4 - 20*q**2 - 16 + 12/q**2, 24*q**3 + 32*q - 8/q - 48/q**3], [q**5*(24*q**4 - 16*q**2 - 8), -24*q**4 + 20*q**2 + 16 - 12/q**2]]",
+    "q0_experimental_proton_anchor": "1.1099785827513808",
+    "word_provenance": "computations/mass_at_3A_proper.py::atom_braid_word_3A(2,2)",
+    "word_letters": 47,
+    "B1_rows": [
+      {
+        "shape": "(11, 1)",
+        "germ_pair": "(0,1)",
+        "norm_Omega_base": "4948.437227819676",
+        "norm_Omega_gauged": "1162.8544104705331",
+        "covariance_defect_rel": "0.7812826746443599",
+        "tr_Om2_base": "3555244.168404439",
+        "tr_Om2_gauged": "163183.59164052393"
+      },
+      {
+        "shape": "(11, 1)",
+        "germ_pair": "(3,4)",
+        "norm_Omega_base": "2341.7572972399257",
+        "norm_Omega_gauged": "3020.983603407377",
+        "covariance_defect_rel": "1.2535549276805913",
+        "tr_Om2_base": "-1212383.9248433984",
+        "tr_Om2_gauged": "760775.0103556628"
+      },
+      {
+        "shape": "(10, 1, 1)",
+        "germ_pair": "(0,1)",
+        "norm_Omega_base": "14845.311683459015",
+        "norm_Omega_gauged": "1198833.5186611477",
+        "covariance_defect_rel": "13.377725878833095",
+        "tr_Om2_base": "31997197.51563998",
+        "tr_Om2_gauged": "6890898020.258329"
+      },
+      {
+        "shape": "(10, 1, 1)",
+        "germ_pair": "(3,4)",
+        "norm_Omega_base": "7025.271891719777",
+        "norm_Omega_gauged": "690127.0101556488",
+        "covariance_defect_rel": "14.426607690349813",
+        "tr_Om2_base": "-10911455.323590595",
+        "tr_Om2_gauged": "-5784289.866262695"
+      }
+    ],
+    "B1_worst_covariance_defect_rel": "14.426607690349813",
+    "B2_character_worst_rel_diff": "1.7345864040248633e-15",
+    "B2_rows": [
+      {
+        "germ_pair": "(0,1)",
+        "trace_powers_seminormal": [
+          "3.410605131648481e-13",
+          "3555244.168404439",
+          "-1296127542.9869752",
+          "6566899409522.931"
+        ],
+        "trace_powers_burau": [
+          "1.2017054018542694e-12",
+          "43954089.92389822",
+          "-9319834954.942451",
+          "968709994049103.5"
+        ],
+        "rel_diff": [
+          "2.5234375",
+          "11.363170528347823",
+          "6.190523035614642",
+          "146.5140600820438"
+        ],
+        "norm_Omega_seminormal": "4948.437227819676",
+        "norm_Omega_burau": "25268.891609735307"
+      },
+      {
+        "germ_pair": "(3,4)",
+        "trace_powers_seminormal": [
+          "2.1316282072803006e-13",
+          "-1212383.9248433984",
+          "877892497.0597205",
+          "-367095764183.0068"
+        ],
+        "trace_powers_burau": [
+          "-2.091660178393795e-13",
+          "633281.034200998",
+          "231615998.27328104",
+          "208504153858.4582"
+        ],
+        "rel_diff": [
+          "1.98125",
+          "1.5223436415018434",
+          "0.736168153789877",
+          "1.5679830011727225"
+        ],
+        "norm_Omega_seminormal": "2341.7572972399257",
+        "norm_Omega_burau": "4034.6738583744414"
+      }
+    ],
+    "B2_worst_invariant_rel_diff": "146.5140600820438",
+    "B2_trace_control": "9.102686302259886e-17"
+  },
+  "caveats": [
+    "SCOPE-(b), STRUCTURAL EXCLUSION, for the claim 'Omega_2 (equivalently F_q) has a basis-independent value'.  Cited invariant: the germ is the right logarithmic derivative of a q-family, hence a 1-COCYCLE, defined only up to the coboundary (1 - Ad u)Theta; the induced defect on [dq_i, dq_j] is nonzero (Lean gaugeDefect_ne_zero; exhibited exactly here in A3), and the conjugation-invariant tr(Omega^k) demonstrably differ between two realizations of the SAME representation.  This is a proved algebraic obstruction, not a failed search.",
+    "SCOPE-(a) for the residual question 'does SOME nonzero covariant functional of the germ exist'.  What is PROVED is that the canonical covariant second-order object (the bracket cup square) is identically a coboundary, and that the invariant linear functional tr alpha(w) = q d_q log det rho(w) sees only the abelianisation (writhe/framing, already walled).  A full classification of gauge-invariant functionals of [alpha] in H^1 is NOT attempted and stays open.",
+    "RETRO-NARROWING OF #4848 (not a refutation).  Its algebra is correct and its quantification -- every intersection form J, every handle-exponent assignment -- is honoured.  But it did not range over q-DEPENDENT changes of representation basis, and under those the sigma_1^3 pairing is NONZERO (A4).  So #4848's scope-(b) should be read as conditional on a fixed germ trivialisation.  #4849 sec 2.3's parenthetical 'the answer there was 0 in every gauge' is correspondingly too strong.",
+    "sorry-free != derived.  Nothing here derives a Delta_lambda, a binding energy, or a magnitude.  The bean's >= 3-body magnitude gate is untouched and OPEN.  This closes a route by showing its observable does not exist, which is a narrower and more fundamental statement than 'the value was not selected'.",
+    "The A >= 3 germ is q-DEPENDENT (#4849 sec 2.2), so the q0 pin is material and is recorded.  q0 = experimental proton anchor per the owner directive of 2026-08-07; no muon-serving cache is touched anywhere in this probe.",
+    "Arithmetic: exact sympy over Q(q) in part A; float64 in part B, where the verdict is a 0-vs-O(1) question (covariance defect) and a relative-difference-of-invariants question at the 1e-1..1e0 level, not a 1-ppQ question.  Representation certification residuals are reported."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): data.q0_experimental_proton_anchor, parameters.q0_experimental_proton_anchor). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

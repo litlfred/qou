@@ -7,7 +7,7 @@ Closes the **A5 open sub-item** of
 anti-involution S′ and intersection form C (8×8, SIGMA 8 (2012) 065) restricted
 to the two std blocks vs S's odd ±√5 spectrum — matrices not in corpus"). The
 matrices ARE now in scope: they were transcribed from the paper's rendered PDF
-pages (uploads/sigma12-065.pdf, pp. 8, 13, 14) and every claimed property is
+pages (library/sigma12-065/sigma12-065.pdf, pp. 8, 13, 14) and every claimed property is
 machine-verified exactly BEFORE use (anti-guessing rule):
 
   V1  C  (p.13)  is antisymmetric with det C = 1 (unimodular intersection form
@@ -74,7 +74,7 @@ scope-(b) claim needing a proved invariant about the wall itself); the
 magnitude scalar m ∈ (0, 1/√5) remains OPEN and nothing is wired.
 
 SOURCES:
-  [BN12]     Braden–Northover, SIGMA 8 (2012) 065 (uploads/sigma12-065.pdf):
+  [BN12]     Braden–Northover, SIGMA 8 (2012) 065 (library/sigma12-065/sigma12-065.pdf):
              p.13 intersection matrix C; p.14 S′, S, T; p.8 eq (4.2).
   [b4-slater] computations/deltalambda/b4_slater_antisymmetrizer_exchange_sign.py
              — the [1⁴] exchange matrix S_ex, spectrum {±√5, ±1}.
@@ -291,7 +291,7 @@ def main() -> int:
     )
     wb.set_audit_only("docs/audits/2026-07-24-vector2-residues-sprime-d5.md")
     wb.add_data("bn12_matrices_verified", {
-        "source": "uploads/sigma12-065.pdf pp.8,13,14 (visual transcription)",
+        "source": "library/sigma12-065/sigma12-065.pdf pp.8,13,14 (visual transcription)",
         "intersection_C": [list(map(int, C.row(i))) for i in range(8)],
         "anti_involution_S_prime": [list(map(int, Sp_.row(i))) for i in range(8)],
         "symplectic_T": [list(map(int, T.row(i))) for i in range(8)],

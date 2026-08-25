@@ -71,9 +71,15 @@ struct HeckeEngine {
 }
 
 impl HeckeEngine {
+    /// `z` is **trace convention D** (SU(2)/Temperley–Lieb): z = q³/(q² + 1),
+    /// matching `gram::markov_z`. Convention C (z = 1/(q^{1/2}+q^{-1/2})) was
+    /// excised by owner ruling 2026-08-09;
+    /// see `docs/coordination/trace-convention-registry.md`.
+    /// `s` (the skein variable q^{1/2} − q^{-1/2}) is unrelated to the trace
+    /// convention and is unchanged.
     fn new(q: f64) -> Self {
         let qi = 1.0/q;
-        Self { ha: q-qi, s: q.sqrt()-qi.sqrt(), z: 1.0/(q.sqrt()+qi.sqrt()), q, qi }
+        Self { ha: q-qi, s: q.sqrt()-qi.sqrt(), z: q*q*q/(q*q+1.0), q, qi }
     }
 
     /// Crossing coefficients (c, d) for T(c,d) = c·σ + d·𝟏.
@@ -361,7 +367,9 @@ fn compute(engine: &HeckeEngine, z: usize, n: usize) -> NucleusResult {
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
-    let engine = HeckeEngine::new(1.10998);
+    // Substrate anchor from the crate constant (PROTON pin); the previous
+    // truncated 5-digit muon `1.10998` was 1277 ppb off.
+    let engine = HeckeEngine::new(hecke_engine::gram::Q_0);
 
     if args.len() < 2 {
         eprintln!("Usage: hecke-engine [nucleus|table|pauli|shellfactor|qvalues|qvalues-cat|qvalues-l1] ...");

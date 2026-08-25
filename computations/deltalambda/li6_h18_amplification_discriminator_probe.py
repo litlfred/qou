@@ -222,7 +222,8 @@ def build_large_a_rows(atom: str, nuc_chi: dict) -> tuple[list[dict], dict]:
     atom_rows = w["by_partition"]
     print(f"  [phase] {atom} atom χ+y loaded from cached canonical witness "
           f"({len(atom_rows)} partitions; producer={w.get('producer')}, "
-          f"original wall {w.get('compute_time_sec'):.0f}s — NOT recomputed)")
+          f"original wall {float(w.get('compute_time_sec') or 0):.0f}s "
+          f"— NOT recomputed)")
 
     # internal consistency: Σ y·χ_atom must reproduce the witness's tr_M
     tr_recomputed = sum(mp.mpf(e["y_lambda"]) * mp.mpf(e["chi_lambda"])

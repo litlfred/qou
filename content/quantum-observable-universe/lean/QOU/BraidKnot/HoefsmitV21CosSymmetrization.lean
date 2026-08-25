@@ -62,7 +62,7 @@ def hoefsmit_sigma1_gen {R : Type*} [Field R]
     `0 ≤ hoefsmit_b_sq q` hypothesis. Kept for backward compatibility
     with the existing theorems in this file; new code should use the
     generic `hoefsmit_sigma1_gen` with an explicit square-root witness. -/
-@[deprecated "Migrate to the generic `hoefsmit_sigma1_gen d1 d2 b` with an explicit `b² = hoefsmit_b_sq q` hypothesis (Tier 2), or a future `hoefsmit_sigma1_real q hq` archimedean shim carrying `0 ≤ hoefsmit_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+@[deprecated "Migrate to the generic `hoefsmit_sigma1_gen d1 d2 b` with an explicit `b² = hoefsmit_b_sq q` hypothesis (Tier 2), or a future `hoefsmit_sigma1_real q hq` archimedean shim carrying `0 ≤ hoefsmit_b_sq q` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
 noncomputable def hoefsmit_sigma1_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   !![hoefsmit_d1 q, Real.sqrt (hoefsmit_b_sq q);
      Real.sqrt (hoefsmit_b_sq q), hoefsmit_d2 q]
@@ -70,7 +70,7 @@ noncomputable def hoefsmit_sigma1_legacy (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ 
 /-- Backward-compatibility alias — `hoefsmit_sigma1` is the legacy form.
     Phase 2 migrates the file's theorems to use `hoefsmit_sigma1_gen`
     directly; until then, this alias keeps existing references compiling. -/
-@[deprecated "Use `hoefsmit_sigma1_legacy` explicitly (Phase 1), or migrate to `hoefsmit_sigma1_gen` (Phase 2)."]
+@[deprecated "Use `hoefsmit_sigma1_gen` explicitly (Phase 1), or migrate to `hoefsmit_sigma1_gen` (Phase 2)." (since := "2026-08-03")]
 noncomputable def hoefsmit_sigma1 (q : ℝ) : Matrix (Fin 2) (Fin 2) ℝ :=
   hoefsmit_sigma1_legacy q
 
@@ -192,7 +192,7 @@ noncomputable def markovZ_real (q : ℝ) (_hq : 0 < q) : ℝ :=
 /-- **Legacy unsafe form** of `markovZ` — `Real.sqrt q` without the
     `0 < q` hypothesis. Use `markovZ (u : R)` (Tier 2) or `markovZ_real
     q hq` (Tier 5) in new code. -/
-@[deprecated "Migrate to (a) the generic `markovZ (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZ_real q hq` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md."]
+@[deprecated "Migrate to (a) the generic `markovZ (u : R)` with explicit `u² = q` (Tier 2 — preferred), or (b) `markovZ_real q hq` (Tier 5). See docs/audits/2026-06-01-hoefsmit-tier2-migration-plan.md." (since := "2026-08-03")]
 noncomputable def markovZ_legacy (q : ℝ) : ℝ := 1 / (Real.sqrt q + (Real.sqrt q)⁻¹)
 
 /-- Quantum-integer differential. -/

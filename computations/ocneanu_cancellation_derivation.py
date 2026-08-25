@@ -31,7 +31,10 @@ from hecke_characters import (  # noqa: E402
     partitions_of, build_seminormal_matrices, qfac, dim_q,
     standard_young_tableaux,
 )
-from canonical_braid_crossings import atom_canonical_crossings as atomic_braid_to_crossings  # noqa: E402
+from canonical_braid_crossings import (  # noqa: E402
+    atom_canonical_crossings as atomic_braid_to_crossings, d_for_ctype,
+)
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 
 # ──────────────────────────────────────────────────────────────────────
 # Symbolic-q Hoefsmit seminormal representation
@@ -114,16 +117,19 @@ def chi_symbolic(shape: tuple[int, ...], crossings: list) -> sp.Expr:
     M = sp.eye(dim)
     for k_gen, ctype in crossings:
         sigma_i = sigmas[k_gen]
-        if ctype == 'sigma':
-            step = sigma_i
-        elif ctype == 'sigma_inv':
-            # σ_i^{-1} = σ_i - h
-            step = sigma_i - H_SKEIN * sp.eye(dim)
-        elif ctype == 'averaged':
-            # (σ + σ^{-1})/2 = σ - h/2
-            step = sigma_i - (H_SKEIN / 2) * sp.eye(dim)
-        else:
-            raise ValueError(f"unknown crossing type {ctype}")
+        # `d_for_ctype` rather than a private if/elif; the chain this replaces
+        # raised on `averaged_weighted`. This module is q-SYMBOLIC, so δ is
+        # passed as its closed form in q -- taking the default would inject
+        # the q0-pinned numeric δ into a symbolic expression (layer straddle).
+        # `q_inv` is passed EXPLICITLY. Left to its default, the helper
+        # computes `mpf(1) / q`; against a sympy Symbol that does not raise
+        # (mpmath returns NotImplemented and sympy's reflected op takes over)
+        # but it does seed a `Float(1.0)` into the expression, giving
+        # (q-1)**2*(q**4 - 1.0)/(3*q**4). Handing it `1/q` keeps the whole
+        # δ exact: (q-1)**2*(q**4 - 1)/(3*q**4), no Float atoms.
+        step = sigma_i + d_for_ctype(
+            ctype, H_SKEIN, delta=flavor_split_leading(q, 1 / q),
+        ) * sp.eye(dim)
         M = sigma_i_mul = step * M
     chi = sp.cancel(M.trace())
     return chi
@@ -157,6 +163,7 @@ def lowest_q_power(expr: sp.Expr) -> int:
 # Witness scaffold
 # ──────────────────────────────────────────────────────────────────────
 from witness_base import WitnessBuilder  # noqa: E402
+from qou_substrate.constants import Q as Q0_PROTON  # noqa: E402 — anchor-independent proton pin (qou-6p3b Tranche C)
 
 _witness = (
     WitnessBuilder("ocneanu-cancellation-derivation", engine="sympy")
@@ -196,7 +203,12 @@ proton_crosses = atomic_braid_to_crossings(1, 0, include_inter=False)
 print(f"  Braid: {len(proton_crosses)} generators")
 print(f"  σ count: {sum(1 for _, t in proton_crosses if t == 'sigma')}")
 print(f"  σ⁻¹ count: {sum(1 for _, t in proton_crosses if t == 'sigma_inv')}")
-print(f"  averaged count: {sum(1 for _, t in proton_crosses if t == 'averaged')}")
+# Averaged FAMILY. Latent here — the proton word (include_inter=False) has no
+# p-n bond, so `averaged_weighted` cannot appear — but an equality test is a
+# trap one caller away, and this is the class that produced three silent
+# losses elsewhere in this arc (qou-8zjd).
+print(f"  averaged count: "
+      f"{sum(1 for _, t in proton_crosses if t.startswith('averaged'))}")
 print()
 
 # For each partition λ ⊢ 3:
@@ -228,13 +240,13 @@ print()
 # Compute tr_M = Σ w_λ · χ^λ / f^λ symbolically
 print("Computing tr_M = Σ_λ w_λ · χ^λ / f^λ ...")
 trM = sp.Integer(0)
-qfac_n = qfac(n)
+qfac_n = qfac(n, Q0_PROTON)
 for shape in partitions:
     chi = per_lambda_chi.get(tuple(shape))
     if chi is None:
         continue
     f_lam = len(standard_young_tableaux(list(shape)))
-    d_q = dim_q(list(shape))
+    d_q = dim_q(list(shape), Q0_PROTON)
     w_lam_sym = d_q * d_q / qfac_n  # Wedderburn weight (already symbolic in q)
     contribution = sp.cancel(w_lam_sym * chi / f_lam)
     trM = trM + contribution

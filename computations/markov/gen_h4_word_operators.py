@@ -1,0 +1,240 @@
+#!/usr/bin/env python3
+"""Generate `QOU/Hecke/H4Words*.lean` — the 24 reduced-word operators of H_4(q).
+
+Reads the word list straight out of `QOU/Machinery/MarkovTraceH4.lean`: `mulNF`
+decomposes its right argument over the Groebner normal-form basis and applies the
+composite `mulsigma` word of each basis element, so those words *are* the reduced
+words of the 24 elements of S_4 in the normal form fixed by
+`hecke_regular_nf_table.py`.  Parsing them here rather than recomputing them means
+the Lean and the table cannot drift.
+
+Emits, per word `w` at basis index `j`:
+
+  * `we{j}` — the operator, a product of the three `L{k}` generator endomorphisms
+    of `QOU.Hecke.InstanceH4`;
+  * `we{j}_apply` — `we{j} R q (e0 R) = Pi.single j 1`, i.e. the word sends the
+    identity basis vector to its own normal-form basis vector;
+  * `we{j}_mem` — membership in `H4Alg R q`, as an explicit `mul_mem` chain.
+
+Together with a tail module (independence + the `24 <= finrank` bound) this gives
+the lower half of the H_4 rank; bean qou-awp7.
+
+CHUNKING IS NOT OPTIONAL.  Three measurements, all made on 2026-08-09 against
+Lean 4.24.0 / Mathlib f897ebcf, in the order they were hit:
+
+  1. Indexing the words out of a `![...] : Fin 24 -> Module.End ...` costs about
+     FIVE MINUTES per evaluation lemma — `simp` must reduce `WE R q 23` through
+     twenty-three `cons_val_succ` steps before it can touch the word.  Reaching
+     the word through a plain `def` takes about TEN SECONDS.  Hence one `def` per
+     word, and `--chunks` never splits a word away from its lemmas.
+
+  2. Opening an evaluation lemma with `show <raw mulsigma expression>` forces the
+     elaborator through the `Module.End` multiplications and exhausts the
+     recursion limit at word length >= 3 — the same wall
+     `InstanceH4.L0_L1_braid` hits.  Hence the `simp only [we{j},
+     Module.End.mul_apply, L0_apply, L1_apply, L2_apply]` opening.
+
+  3. All 24 lemmas in ONE module peaked at ~8.7 GB RSS and had not finished after
+     twelve minutes of CPU.  That is the same linear memory growth that forced
+     `MarkovTraceH4` itself into the eight-module `Gram0..Gram7` chain, and it
+     wants the same remedy.  `--chunks N` emits a chained sequence
+     `H4Words0 ... H4Words{N-1}`, each importing the previous, so peak memory is
+     per-chunk rather than cumulative.
+
+Usage:
+    python3 computations/markov/gen_h4_word_operators.py --chunks 4 \\
+        --out content/quantum-observable-universe/lean/QOU/Hecke
+"""
+
+from __future__ import annotations
+
+import argparse
+import re
+from pathlib import Path
+
+SIGMA = "σ"
+MARKOV_H4 = "content/quantum-observable-universe/lean/QOU/Machinery/MarkovTraceH4.lean"
+BINDERS = "(R : Type u) [Field R] (q : R)"
+
+
+def read_words(repo_root: Path) -> list[list[int]]:
+    """The 24 reduced words, outermost generator first, parsed from `mulNF`."""
+    src = (repo_root / MARKOV_H4).read_text()
+    block = re.search(r"def mulNF.*?\n((?:.*?\n)*?)\n/--", src)
+    if block is None:
+        raise SystemExit(f"could not locate `mulNF` in {MARKOV_H4}")
+    lines = [ln for ln in block.group(1).split("\n") if "v " in ln]
+    words = [[int(c) for c in re.findall(r"mul" + SIGMA + r"(\d)", ln)] for ln in lines]
+    if len(words) != 24:
+        raise SystemExit(f"expected 24 words, parsed {len(words)}")
+    return words
+
+
+def op_expr(word: list[int]) -> str:
+    return " * ".join(f"L{k} R q" for k in word) if word else "1"
+
+
+def mem_proof(word: list[int]) -> str:
+    if not word:
+        return "one_mem _"
+
+    def go(prefix: list[int]) -> str:
+        if len(prefix) == 1:
+            return f"(H4Alg.L{prefix[0]}_mem R q)"
+        return f"(mul_mem {go(prefix[:-1])} (H4Alg.L{prefix[-1]}_mem R q))"
+
+    return go(word)
+
+
+def word_label(word: list[int]) -> str:
+    """Human-readable reduced word; the identity is the empty word."""
+    if not word:
+        return "the empty word (the identity)"
+    return "`" + "σ" + "σ".join(str(k) for k in word) + "`"
+
+
+def emit_word(j: int, word: list[int]) -> str:
+    out = [
+        f"/-- Reduced word {word_label(word)} — normal-form basis element {j}. -/",
+        f"noncomputable def we{j} {BINDERS} : Module.End R (Fin 24 → R) := {op_expr(word)}",
+        "",
+        f"/-- `we{j}` sends the identity basis vector to basis vector {j}. -/",
+        f"theorem we{j}_apply {BINDERS} : we{j} R q (e0 R) = Pi.single {j} 1 := by",
+        f"  simp only [we{j}, Module.End.mul_apply, L0_apply, L1_apply, L2_apply,",
+        "    Module.End.one_apply]",
+        "  funext i",
+        f"  fin_cases i <;> simp [mul{SIGMA}0, mul{SIGMA}1, mul{SIGMA}2, e0, Pi.single_apply]",
+        "",
+        f"theorem we{j}_mem {BINDERS} : we{j} R q ∈ H4Alg R q := {mem_proof(word)}",
+        "",
+    ]
+    return "\n".join(out)
+
+
+HEADER = '''import {imports}
+
+/-!
+# `QOU.Hecke.H4Words{idx}` — reduced-word operators {lo}–{hi} of `H₄(q)`
+
+Generated by `computations/markov/gen_h4_word_operators.py` from the word list in
+`QOU.Machinery.MarkovTraceH4`. Do not hand-edit — regenerate.
+
+Each reduced word acts on the right, so it sends the identity basis vector `e0`
+to its own normal-form basis vector. Chunk {idx} of {total}; the chunks are
+chained (each imports the previous) so peak memory stays per-chunk. See the
+generator's docstring for why — all 24 in one module peaked at ~8.7 GB, the same
+growth that forced `MarkovTraceH4` into its `Gram0..Gram7` chain.
+-/
+
+namespace QOU.Hecke.H4Words
+
+open QOU.Hecke.InstanceH4 QOU.Machinery.H4 Module
+
+universe u
+
+'''
+
+
+TAIL = '''
+/-! ## Independence, and the dimension bound -/
+
+variable {binders}
+
+/-- The 24 word operators, indexed. -/
+noncomputable def we : Fin 24 → Module.End R (Fin 24 → R) :=
+  ![{we_list}]
+
+/-- Evaluation at the identity basis vector, as a linear map. -/
+def evalAtOne : Module.End R (Fin 24 → R) →ₗ[R] (Fin 24 → R) where
+  toFun := fun f => f (e0 R)
+  map_add' := fun _ _ => rfl
+  map_smul' := fun _ _ => rfl
+
+/-- **The 24 images are the standard basis** of the normal-form module. -/
+theorem evalAtOne_comp_we : evalAtOne R ∘ we R q = ⇑(Pi.basisFun R (Fin 24)) := by
+  funext j
+  fin_cases j <;>
+    simp only [Function.comp_apply, evalAtOne, LinearMap.coe_mk, AddHom.coe_mk, we,
+      Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons, Matrix.cons_val_succ,
+      Matrix.cons_val_fin_one, Pi.basisFun_apply]
+  {apply_bullets}
+
+/-- **The reduced-word operators are linearly independent.** -/
+theorem we_linearIndependent : LinearIndependent R (we R q) := by
+  refine LinearIndependent.of_comp (evalAtOne R) ?_
+  rw [evalAtOne_comp_we]
+  exact (Pi.basisFun R (Fin 24)).linearIndependent
+
+/-- Every word operator lies in the algebra. -/
+theorem we_mem (j : Fin 24) : we R q j ∈ H4Alg R q := by
+  fin_cases j <;>
+    simp only [we, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons,
+      Matrix.cons_val_succ, Matrix.cons_val_fin_one]
+  {mem_bullets}
+
+/-- The word operators as elements of the algebra. -/
+noncomputable def wa (j : Fin 24) : H4Alg R q := ⟨we R q j, we_mem R q j⟩
+
+/-- `H₄(q)` sits inside the finite-dimensional `Module.End R (Fin 24 → R)`, so it
+is finite-dimensional itself — needed for the `card ≤ finrank` step. -/
+instance : FiniteDimensional R (H4Alg R q) :=
+  FiniteDimensional.of_injective (Subalgebra.val (H4Alg R q)).toLinearMap
+    Subtype.val_injective
+
+/-- **`dim_R H₄(q) ≥ 24 = 4!`.** The 24 reduced-word operators are independent and
+all lie in the algebra, so this is not any model smaller than the genuine
+`H₄(q)` — `InstanceH2.rankOneModel` very much included. Together with
+`InstanceH4.instHeckeAlgebraH4` it says: a Hecke algebra at `n = 4`, with all
+three relation shapes carrying content, of dimension at least `4!`.
+
+The matching upper bound needs the `3 × 24` closure table — bean qou-awp7. -/
+theorem twentyFour_le_finrank : 24 ≤ Module.finrank R (H4Alg R q) := by
+  have hind : LinearIndependent R (wa R q) :=
+    LinearIndependent.of_comp (Subalgebra.val (H4Alg R q)).toLinearMap
+      (we_linearIndependent R q)
+  simpa using LinearIndependent.fintype_card_le_finrank hind
+
+end QOU.Hecke.H4Words
+'''
+
+
+def main() -> None:
+    ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--chunks", type=int, default=4,
+                    help="number of chained modules to split the 24 words across")
+    ap.add_argument("--out", type=Path, required=True,
+                    help="directory to write QOU/Hecke/H4Words*.lean into")
+    ap.add_argument("--repo-root", type=Path, default=Path("."),
+                    help="qou repository root (default: cwd)")
+    args = ap.parse_args()
+
+    if not 1 <= args.chunks <= 24:
+        raise SystemExit("--chunks must be between 1 and 24")
+
+    words = read_words(args.repo_root)
+    args.out.mkdir(parents=True, exist_ok=True)
+
+    per = -(-24 // args.chunks)  # ceil
+    spans = [(lo, min(lo + per, 24)) for lo in range(0, 24, per)]
+    total = len(spans)
+
+    for idx, (lo, hi) in enumerate(spans):
+        imports = "QOU.Hecke.InstanceH4" if idx == 0 else f"QOU.Hecke.H4Words{idx - 1}"
+        body = HEADER.format(imports=imports, idx=idx, total=total, lo=lo, hi=hi - 1)
+        body += "\n".join(emit_word(j, words[j]) for j in range(lo, hi))
+        if idx == total - 1:
+            body += TAIL.format(
+                binders=BINDERS,
+                we_list=", ".join(f"we{j} R q" for j in range(24)),
+                apply_bullets="\n  ".join(f"· exact we{j}_apply R q" for j in range(24)),
+                mem_bullets="\n  ".join(f"· exact we{j}_mem R q" for j in range(24)),
+            )
+        else:
+            body += "\nend QOU.Hecke.H4Words\n"
+        path = args.out / f"H4Words{idx}.lean"
+        path.write_text(body)
+        print(f"wrote {path} (words {lo}–{hi - 1})")
+
+
+if __name__ == "__main__":
+    main()

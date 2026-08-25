@@ -31,21 +31,26 @@ split into `SpechtStandardBasisCore`, and this file — now sitting *above* the
 cores — proves `standardPolytabloid_triangular` by **directly consuming** the
 already-proved `standardPolytabloid_triangular'`.
 
-Net effect: `standardPolytabloid_triangular` carries **no independence `sorry`**;
-its only sorry-path is the dominance core `triangular'` legitimately consumes. The
-remaining honest brick-4 stub is the spanning / straightening core
-`SpechtStandardBasis.standardPolytabloid_straightening` (in
-`SpechtStandardBasisCore`).
+Net effect: `standardPolytabloid_triangular` carries **no independence `sorry`**.
+Both former brick-4 stubs — the dominance core and the spanning / straightening
+core `standardPolytabloid_straightening` — have since been discharged, so the whole
+chain is now sorry-free outright.
 
-## sorry-free ↔ stubbed map
+## sorry-free map (machine-checked)
+
+Every row verified by `#print axioms`, each yielding exactly
+`[propext, Classical.choice, Quot.sound]` — **no `sorryAx`**.
 
 | Declaration | Status |
 |---|---|
-| `standardPolytabloid_triangular` | **PROVED** (`:= SpechtTriangularCore.standardPolytabloid_triangular'`; sorry-path = dominance core only) |
-| `standardPolytabloid_linearIndependent` | **sorry-free MODULO** the dominance core (via the proved triangular) |
-| `standardPolytabloid_span` (in Core) | **STUB** `sorry` — `-- Ref: [sagan2001]` (Garnir straightening) |
-| `standardBasis` | **sorry-free MODULO** the dominance core + the spanning stub |
-| `specht_finrank_eq_numSYT` | **sorry-free MODULO** the same two cores |
+| `standardPolytabloid_triangular` | **PROVED** (`:= SpechtTriangularCore.standardPolytabloid_triangular'`) |
+| `standardPolytabloid_linearIndependent` | **sorry-free** (via the proved triangular) |
+| `standardPolytabloid_span` (in Core) | **sorry-free** (Garnir straightening, via `straightening_step_colMax`) |
+| `standardBasis` | **sorry-free** |
+| `specht_finrank_eq_numSYT` | **sorry-free** |
+
+Note `[CharZero k]` is **required** on `specht_finrank_eq_numSYT` (it consumes
+`standardBasis`); it must not be `omit`ted.
 
 ## References
 - [sagan2001] Sagan, *The Symmetric Group*, §2.5 (the standard basis, Thm 2.5.2;
@@ -112,7 +117,6 @@ noncomputable def standardBasis :
   Module.Basis.mk standardPolytabloid_linearIndependent
     (by rw [standardPolytabloid_span])
 
-omit [CharZero k] in
 /-- **Standard-basis theorem (reduction).**
 `dim_k S^μ = #SYT(μ)`.
 
@@ -120,7 +124,16 @@ Proved sorry-free *from* `standardBasis` via `Module.finrank_eq_nat_card_basis`
 (which gives `finrank = Nat.card ι` directly, with no `Fintype` on the index),
 and `numSYT μ = Nat.card (StandardYoungTableau μ)` definitionally. Hence the only
 unproved inputs are the dominance core (now consumed by the proved triangular) and
-`standardPolytabloid_straightening` (spanning). -/
+`standardPolytabloid_straightening` (spanning).
+
+Carries `[CharZero k]`, inherited from `standardBasis`. This declaration previously
+bore an `omit [CharZero k] in`, which made the file fail to compile: the proof
+applies `standardBasis`, which genuinely takes the instance, so the omitted binder
+left `CharZero k` unsynthesizable at the application. The generality the `omit`
+asserted was never established — dropping it is what the existing proof supports.
+(The standard-polytabloid basis does exist over an arbitrary field, so the
+hypothesis is likely removable, but that needs the `CharZero` uses inside
+`standardBasis`'s own inputs traced and discharged — not an annotation change.) -/
 theorem specht_finrank_eq_numSYT (μ : YoungDiagram) :
     Module.finrank k (Specht.SpechtSubmodule (k := k) μ) = QOU.BraidKnot.numSYT μ := by
   rw [Module.finrank_eq_nat_card_basis (standardBasis (k := k) (μ := μ))]

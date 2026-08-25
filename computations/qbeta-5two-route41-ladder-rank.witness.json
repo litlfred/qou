@@ -1,0 +1,64 @@
+{
+  "probe": "qbeta_5two_route41_ladder_rank",
+  "bean": "qou-0yqu",
+  "dps": 70,
+  "follows": "Route 40 (qbeta_5two_route40_distribution_factors_probe.py)",
+  "retracts": [
+    "the Li2-form five-term RHS used in a first draft of this search (G1) -- the argument set is right, the identity is Rogers-L, not Li2 plus a log product",
+    "'sum_sigma D(sigma x) = 0 is a feature of the disc -23 field' (G2) -- it is general, true in every number field, by conjugate symmetry"
+  ],
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "the five-term identity on this argument set is a ROGERS-L statement -- sum of L over the five pentagon arguments is pi^2/2, exact at generic real points. The second half is the negative control: the Li2-plus-log-product RHS written in a first draft FAILS at the same points, by an amount that varies with the point, so it is not a constant offset but a wrong identity",
+      "worst_residual_rogersL_form": "7.244543263e-71",
+      "smallest_residual_of_the_WRONG_form": "3.101179238",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "the Bloch-Wigner regulator is IDENTICALLY ZERO on a Galois sum -- in the disc -23 cubic and equally in a quartic, because D(conj z) = -D(z), complex embeddings come in conjugate pairs, and real embeddings give D = 0. This was written as a feature of the 5_2 field; it is general, and the quartic was meant to be a negative control and refused to be one. It is why Bloch-group machinery cannot see A: the invariant it computes vanishes here by symmetry",
+      "worst_in_disc_-23_cubic": "0.0",
+      "worst_in_quartic": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "over a set of Galois orbits in Q(c) closed under x -> 1-x and x -> 1/x, with EVERY Euler-reflection, inversion and pentagon relation that closes in it, the functional reading off A is NOT in the row space -- the rank rises by one when it is stacked on. Recomputed here at the smaller size; the larger run (168 orbits, 316 relations) gave rank 153 -> 154, the same gap of exactly one",
+      "orbits": 82,
+      "relations": 123,
+      "rank": 74,
+      "rank_with_target": 75,
+      "A_determined": false,
+      "larger_run": {
+        "orbits": 168,
+        "relations": 316,
+        "rank": 153,
+        "rank_with_target": 154
+      },
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "THE LIMIT ON G3, gated so it cannot be glossed. Turning a pentagon row into a statement about sum Li2 needs the pentagon summed over the three embeddings to be elementary, and it does NOT come out to 3*pi^2/2: at x = y = c the sum is 8.3326 against 14.8044. The pentagon's validity region is the real one and the two complex embeddings carry branch corrections not accounted for. G3 bounds the family only up to that bookkeeping",
+      "sum_over_three_embeddings": "(8.332603277934345192187612 + 0.0j)",
+      "three_halves_pi_squared": "14.80440660163403792825174",
+      "unaccounted_gap": "6.47180332369969",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "the target is unmoved. A = sum Li2(y_j) over the roots of y^3-2y^2+3y-1 is still exactly what the sum rule needs and still has no proof. This gate exists so nothing above can be misread as progress toward it",
+      "A": "0.971730681468648259127774169939",
+      "C_1": "-0.5969804690473861510623797",
+      "C_2 (= B)": "0.3514640300570974404199447",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "measured": "the reflection + inversion + pentagon system over an (x -> 1-x, x -> 1/x)-closed set of Galois orbits does not determine A: rank rises by exactly one when the target functional is stacked, at both sizes tried (82 and 168 orbits).",
+    "why": "the Bloch-Wigner regulator vanishes identically on a Galois sum, so the invariant the ladder machinery computes carries no information about A. That is general, not special to this field.",
+    "limit": "the rows are Bloch-group statements. Converting one into a statement about sum Li2 needs branch bookkeeping over the complex embeddings that is NOT done here, and G4 measures a 6.4718 gap where an elementary right- hand side was assumed. The bound on the family is only as good as that.",
+    "sum_rule_status": "verified to 80 dps, unproved"
+  }
+}

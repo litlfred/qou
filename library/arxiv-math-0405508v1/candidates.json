@@ -1,0 +1,218 @@
+{
+ "_schema": "ingest-candidates/v1",
+ "doc_id": "arxiv-math-0405508v1",
+ "document_class": "math",
+ "validated": true,
+ "source": {
+  "structure_sha256": "ef2e41cf67f3a41140521748797696003e2cfa6c48c8b68efb8edd96b08d050a",
+  "file": "0405508v1.pdf"
+ },
+ "provenance": {
+  "title": "Markov traces and knot invariants related to Iwahori-Hecke algebras of type B",
+  "authors": "Meinolf Geck and So\ufb01a Lambropoulou",
+  "arxiv": {
+   "id": "math/0405508",
+   "version": "1",
+   "primary_class": null,
+   "stamp_date": "26 May 2004"
+  },
+  "doi": null
+ },
+ "disposition": "proposals only \u2014 promote via document-intake Stage 4; nothing here is folio content and nothing here creates Lean",
+ "summary": {
+  "candidates": 14,
+  "by_kind": {
+   "lemma": 4,
+   "remark": 3,
+   "proposition": 3,
+   "corollary": 1,
+   "theorem": 2,
+   "example": 1
+  },
+  "formalization_candidates": 10
+ },
+ "candidates": [
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.3",
+   "name": null,
+   "statement": "The following relations hold in \u02dcWn.",
+   "section_file": "sections/sec-006-6-gecklambropoulou.md",
+   "section_title": "Geck\u2013Lambropoulou",
+   "pages": "6-6",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "2.5",
+   "name": "cf. [3], Proposition 2.4.",
+   "statement": "Let y = ( si+m+1 \u00b7 \u00b7 \u00b7 si+1)(si+m+2 \u00b7 \u00b7 \u00b7 si+2) \u00b7 \u00b7 \u00b7 (si+m+k+1 \u00b7 \u00b7 \u00b7 si+k+1) for i, k, m \u2265",
+   "section_file": "sections/sec-007-24-consider-an-element-of-the-form-d1-dn-wn-with.md",
+   "section_title": "Consider an element of the form d1 \u00b7 \u00b7 \u00b7 dn \u2208 \u02dcWn with di \u2208 D \u2032",
+   "pages": "6-7",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "s 2.6 (a) One can also show that, if the conjugation in (b), (c) of the",
+   "section_file": "sections/sec-009-8-gecklambropoulou.md",
+   "section_title": "Geck\u2013Lambropoulou",
+   "pages": "8-9",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.4",
+   "name": null,
+   "statement": "For each h \u2208 Hn there exists a \ufb01nite (non-empty) subset",
+   "section_file": "sections/sec-014-33-let-c-be-the-set-of-conjugacy-classes-of-wn-a.md",
+   "section_title": "Let {C} be the set of conjugacy classes of Wn and let wC be an element",
+   "pages": "10-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "corollary",
+   "source_kind": "corollary",
+   "number": "3.5",
+   "name": null,
+   "statement": "Let h \u2208 Hn and dn+1 \u2208 D \u2032",
+   "section_file": "sections/sec-015-12-gecklambropoulou.md",
+   "section_title": "Geck\u2013Lambropoulou",
+   "pages": "12-12",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.2",
+   "name": null,
+   "statement": "Let \u03c4 : H \u2192 A be a Markov trace (with parameter z \u2208 A).",
+   "section_file": "sections/sec-016-4-markov-traces-for-iwahori-hecke-algebras-of.md",
+   "section_title": "Markov traces for Iwahori-Hecke algebras of",
+   "pages": "12-14",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "4.3",
+   "name": null,
+   "statement": "Let z, y 1, y 2 . . . \u2208 A. Then there exists a unique Markov trace",
+   "section_file": "sections/sec-017-14-gecklambropoulou.md",
+   "section_title": "Geck\u2013Lambropoulou",
+   "pages": "14-16",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "lemma",
+   "source_kind": "lemma",
+   "number": "4.2",
+   "name": null,
+   "statement": "yields the following rule for computing \u03c4(h).",
+   "section_file": "sections/sec-020-44-in-the-course-of-the-above-proof-we-have-show.md",
+   "section_title": "In the course of the above proof, we have shown the following r emark-",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "3.4",
+   "name": null,
+   "statement": "Markov traces and knot invariants 19",
+   "section_file": "sections/sec-020-44-in-the-course-of-the-above-proof-we-have-show.md",
+   "section_title": "In the course of the above proof, we have shown the following r emark-",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "proposition",
+   "source_kind": "proposition",
+   "number": "4.5",
+   "name": null,
+   "statement": "Let z, y \u2208 A and \u03c4 : H \u2192 A be a Markov trace with param-",
+   "section_file": "sections/sec-020-44-in-the-course-of-the-above-proof-we-have-show.md",
+   "section_title": "In the course of the above proof, we have shown the following r emark-",
+   "pages": "18-19",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "s 4.6 (a) Given elements z, y \u2208 A, the existence of a Markov trace",
+   "section_file": "sections/sec-020-44-in-the-course-of-the-above-proof-we-have-show.md",
+   "section_title": "In the course of the above proof, we have shown the following r emark-",
+   "pages": "18-19",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "theorem",
+   "source_kind": "theorem",
+   "number": "5.2",
+   "name": "cf. [7], Theorem 3.",
+   "statement": "Let L1, L2 be two oriented links in T and \u03b21, \u03b22 be mixed braids in",
+   "section_file": "sections/sec-024-51-knots-and-links-inside-a-solid-torus-t-can-be.md",
+   "section_title": "Knots and links inside a solid torus T can be represented unambiguously",
+   "pages": "20-22",
+   "formalization_candidate": true,
+   "formalization_note": "Imported result \u2014 attribute to the source. If the folio uses it, state it in Lean with `sorry` + `-- Ref:` to this document, or prove it. Ingestion creates no Lean.",
+   "route_to": "formalizer"
+  },
+  {
+   "kind": "remark",
+   "source_kind": "remark",
+   "number": null,
+   "name": null,
+   "statement": "s 5.5 Let \u03b1 \u2208 B1,n . The above discussion shows geometrically that,",
+   "section_file": "sections/sec-026-54-we-shall-now-show-how-to-interprete-the-above.md",
+   "section_title": "We shall now show how to interprete the above in terms of knot",
+   "pages": "22-24",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  },
+  {
+   "kind": "example",
+   "source_kind": "example",
+   "number": null,
+   "name": null,
+   "statement": "s 5.6 We shall now evaluate explicitly X\u02c6\u03b1 for some special choices",
+   "section_file": "sections/sec-027-24-gecklambropoulou.md",
+   "section_title": "Geck\u2013Lambropoulou",
+   "pages": "24-26",
+   "formalization_candidate": false,
+   "formalization_note": null,
+   "route_to": null
+  }
+ ]
+}

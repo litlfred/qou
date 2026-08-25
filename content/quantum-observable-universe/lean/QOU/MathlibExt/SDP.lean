@@ -75,7 +75,7 @@ def SDPPrimal.IsStrictlyFeasible (sdp : SDPPrimal n R ι) : Prop :=
 /-- **Strictly feasible implies feasible** — proved theorem.
     A positive-definite matrix is positive-semidefinite, so any
     Slater-witness is automatically a feasible point. -/
-theorem SDPPrimal.feasible_of_strictlyFeasible
+theorem feasible_of_strictlyFeasible
     (sdp : SDPPrimal n R ι) (h : sdp.IsStrictlyFeasible) :
     ∃ Φ, sdp.IsFeasible Φ := by
   obtain ⟨Φ, hPD, hConstr⟩ := h
@@ -83,7 +83,7 @@ theorem SDPPrimal.feasible_of_strictlyFeasible
 
 /-- **Empty-constraint feasibility** — proved theorem. With no
     equality constraints, every PSD matrix is feasible. -/
-theorem SDPPrimal.isFeasible_of_emptyConstraints
+theorem isFeasible_of_emptyConstraints
     (sdp : SDPPrimal n R Empty)
     (Φ : Matrix (Fin n) (Fin n) R) (h : Φ.PosSemidef) :
     sdp.IsFeasible Φ := by

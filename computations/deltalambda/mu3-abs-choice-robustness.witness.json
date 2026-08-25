@@ -1,0 +1,88 @@
+{
+  "engine": "pyhecke_native",
+  "engineVersion": "python 3.11.15",
+  "computedAt": "2026-08-08T21:52:44.659909+00:00",
+  "commitSha": "0ec585b9a39cc9cfd3d7be897a4d03d6610e6f7b",
+  "assertions": [
+    {
+      "name": "baseline_gate_vs_4404",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "name": "verdict_robust_to_abs",
+      "computed": 1,
+      "expected": 1,
+      "passed": true
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 6,
+  "computation": "mu3-abs-choice-robustness",
+  "scriptFile": "mu3_abs_choice_robustness_probe.py",
+  "scriptHash": "73de67af9464",
+  "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Recomputes the A=3 mu3 door under both the |chi| operator of #4404/#4657 and the bare chi, from identical braid words and identical y_lambda. Raw chi is negative on 15/30 blocks at n=9, so abs() is not a no-op and every Delta^2 conclusion in the arc was a priori at risk of being its artifact. Result: verdict robust (supermodular both ways, ~8% magnitude shift); per-block classification not robust.",
+  "parameters": {
+    "q0": "1.1099785827513808076"
+  },
+  "data": {
+    "results": {
+      "T": {
+        "n_blocks": 30,
+        "n_negative_raw_chi": 8,
+        "abs": {
+          "d2": "0.42254733638246930972",
+          "c3_MeV": "-1.7687752752067383763",
+          "submodular": false
+        },
+        "raw": {
+          "d2": "0.38998770125163129999",
+          "c3_MeV": "-1.6324812493533823732",
+          "submodular": false
+        },
+        "baseline_gate_ok": true,
+        "relative_shift": "0.07705559195"
+      },
+      "3He": {
+        "n_blocks": 30,
+        "n_negative_raw_chi": 8,
+        "abs": {
+          "d2": "0.33574550659882489835",
+          "c3_MeV": "-1.4054244334325435014",
+          "submodular": false
+        },
+        "raw": {
+          "d2": "0.31744947166322579725",
+          "c3_MeV": "-1.3288375721699410176",
+          "submodular": false
+        },
+        "baseline_gate_ok": true,
+        "relative_shift": "0.05449375964"
+      }
+    }
+  },
+  "caveats": [
+    "The door VERDICT is robust to abs(); the PER-BLOCK classification of #4657 is not. abs() flips the sign of a substantial fraction of the 30 blocks at n=9 (count reported per isotope in results[*].n_negative_raw_chi, measured on the baseline word; it differs on the interface-carrying words), so the split of submodular pushes into 'Frechet-violating' vs 'negative-weight' is specific to the |chi| reading.",
+    "This probe does NOT derive which reading is correct. tr_M = sum y_lambda chi_lambda uses the bare character; the |chi| operator of #4404 is a modeling choice that remains underived."
+  ],
+  "q0Anchor": "proton",
+  "q0Value": "1.1099785827513808076",
+  "q0AnchorReason": "recovered by transcription from this witness's own payload (key(s): parameters.q0). No producer was re-run and no number changed; the pin was always recorded, under a non-canonical key."
+}

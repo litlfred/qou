@@ -125,7 +125,7 @@ class StageCSigma3Lift (R : Type*) [CommRing R] (σ : R →+* R) where
 /-- Any valid lift's rung is itself bar-even — derived from the two trace
 fields via the C12 reading (the class composes; the rung inherits the ladder's
 even-channel parity, as the scope's bar-evenness invariant demands). -/
-theorem StageCSigma3Lift.c4even_bar_even {R : Type*} [CommRing R] (σ : R →+* R)
+theorem c4even_bar_even {R : Type*} [CommRing R] (σ : R →+* R)
     [L : StageCSigma3Lift R σ] : σ L.c4even = L.c4even := by
   rw [L.c4even_eq, map_sub, L.bar_even, L.shadow_bar_even]
 

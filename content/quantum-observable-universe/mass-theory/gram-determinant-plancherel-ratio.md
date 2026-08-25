@@ -1,4 +1,4 @@
-*Working over $R = \mathbb{Z}[q^{± 1/2}, (q-q^{-1})^{-1}]$, let
+*Working over $R = \mathbb{Z}[q^{\pm 1/2}, (q-q^{-1})^{-1}]$, let
 $\beta_s = T_{2,9}$, $\beta_w = T_{3,5}$ be the unique pair of
 genus-$4$ torus knots
 ([Bring uniqueness](#prop:force-carrier-bring-uniqueness)).  Each
@@ -36,4 +36,4 @@ $$
   \;}
 $$
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall: it invokes real- or complex-analytic constructs — real-valued physical observables, real-analytic bounds, transcendental constants, or numerical evaluation at the substrate parameter $q_0$. Any generic categorical / $q$-deformation identities it draws on remain valid over an abstract coefficient ring; only their archimedean realisation is specialised here.

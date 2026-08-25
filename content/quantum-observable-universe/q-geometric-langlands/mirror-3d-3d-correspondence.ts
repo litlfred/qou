@@ -25,6 +25,5 @@ export default conjecture({
     "long-horizon",
     "axiom-class",
     "open-problem",
-    "non-scholarly-voice-exception",
   ],
 });

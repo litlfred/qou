@@ -54,14 +54,14 @@ theorem annihilates_bar_of_symmetric
     (hsym : IsBarSymmetric J q)
     (h : Annihilates op q⁻¹ (J q⁻¹)) :
     Annihilates op q⁻¹ (J q) := by
-  rw [hsym.eq_fun]
+  rw [IsBarSymmetric.eq_fun hsym]
   exact h
 
 
 /-- **q-Holonomicity transports for symmetric towers.** If `J(q⁻¹, ·)` is
     q-holonomic at `q⁻¹` and `J` is bar-symmetric at `q`, then `J(q, ·)` is
     also q-holonomic at `q⁻¹`. Generalizes `coloredJones41_qholonomic_bar`. -/
-theorem IsQHolonomic.of_bar_symmetric
+theorem of_bar_symmetric
     {J : K → ℕ → K} {q : K}
     (hsym : IsBarSymmetric J q)
     (hJ : IsQHolonomic q⁻¹ (J q⁻¹)) :

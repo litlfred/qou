@@ -2,8 +2,8 @@
 """A2 (bean qou-ls2y): the 5₂ Stokes matrix S⁺(q) at the substrate point — the
 bar-odd (antisymmetric) Stokes datum, derived from published integer q-series.
 
-Implements the Garoufalidis–Gu–Mariño 5₂ resurgent data (uploads/2007.10190v2.pdf,
-transcribed + machine-verified 2026-07-18; Peacock = uploads/2012.00062v3.pdf):
+Implements the Garoufalidis–Gu–Mariño 5₂ resurgent data (library/arxiv-2007.10190v2/2007.10190v2.pdf,
+transcribed + machine-verified 2026-07-18; Peacock = library/arxiv-2012.00062v3/2012.00062v3.pdf):
 
   t_{n,λ}(q)  = q^{n(n+1)+nλ}/(q;q)_n³                                (GGM 113)
   T_{n,μ}(q)  = (−1)^n q^{n(n+1)/2+nμ}/(q;q)_n³                       (GGM 114)

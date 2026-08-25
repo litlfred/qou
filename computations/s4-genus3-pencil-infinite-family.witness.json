@@ -1,0 +1,87 @@
+{
+  "schema": "witness/v1",
+  "description": "The S_4 bridge is nearly vacuous: the S_4-invariant ternary quartics form a pencil, so infinitely many pairwise non-isomorphic genus-3 curves admit S_4. Bean qou-8p1a (parent qou-8pl1).",
+  "computation": {
+    "script": "computations/s4_genus3_pencil_infinite_family.py",
+    "arithmetic": "exact Fraction / Z / Q(sqrt d); no floating point"
+  },
+  "data": {
+    "group": {
+      "construction": "G = V_4 : S_3 < GL_3(Z), even sign changes and coordinate permutations",
+      "order": 24,
+      "element_order_profile": {
+        "1": 1,
+        "2": 9,
+        "3": 8,
+        "4": 6
+      },
+      "isomorphism_type": "S_4",
+      "pins_S4_because": "profile {1:1,2:9,3:8,4:6} is unique to S_4 among the fifteen groups of order 24; SL(2,3) shares the 3- and 4-counts but has one involution and eight elements of order 6",
+      "faithful_in_PGL3": true,
+      "commutant_dim_in_M3Q": 1,
+      "absolutely_irreducible": true
+    },
+    "pencil": {
+      "invariant_quartic_space_dim": 2,
+      "basis": [
+        "x^4 + y^4 + z^4",
+        "x^2y^2 + y^2z^2 + z^2x^2"
+      ],
+      "family": "C_L : x^4+y^4+z^4 + L*(x^2y^2+y^2z^2+z^2x^2) = 0",
+      "parameter_name_note": "this module calls the pencil parameter L (Python reserves 'lambda'); the eightfold-way chapter calls it t, deliberately not lambda, which denotes a partition there",
+      "singular_parameters": [
+        "2",
+        "-2",
+        "-1"
+      ],
+      "singular_point_witnesses": {
+        "-2": {
+          "point": "(1:1:0)",
+          "F_and_all_partials_vanish": true
+        },
+        "-1": {
+          "point": "(1:1:1)",
+          "F_and_all_partials_vanish": true
+        },
+        "2": {
+          "point": "(1:i:0)",
+          "F_and_all_partials_vanish": true
+        }
+      },
+      "degenerate_member": "L = infinity (the form q1 alone)",
+      "smooth_member_genus": 3,
+      "fermat_quartic_is_member": "L = 0"
+    },
+    "verdict": "Infinitely many pairwise non-isomorphic genus-3 curves admit a faithful S_4 action, so 'S_4 survives the pinch' has essentially no selecting power for the Klein quartic.",
+    "moduli_argument": "Distinct L give non-proportional defining forms. For fixed mu, {L : C_L iso C_mu} is finite because Aut(C_mu) is finite (genus >= 2) and N_{PGL_3}(S_4) is finite (its centralizer is trivial by the scalar commutant in C4, so it embeds in Aut(S_4)). Finite fibres over a P^1 meet infinitely many isomorphism classes. NOTE: only finiteness of Aut is used -- the sharp Hurwitz bound is deliberately avoided, an earlier step of this arc having been withdrawn for misusing it.",
+    "consequence_for_siblings": {
+      "qou-8p1b": "insufficient as written -- separating Klein from Fermat does not single out Klein from an infinite family; re-scope to an invariant the pinch itself determines",
+      "qou-8p1c": "not the bottleneck -- period matrices of two hand-picked curves cannot close an argument whose datum is this weak"
+    },
+    "not_verified_here": [
+      "the value of L at which the Klein quartic sits in this pencil (needs arithmetic over Q(sqrt(-7)))",
+      "hyperelliptic genus-3 curves admitting S_4, which lie outside the pencil and only enlarge the competitor set"
+    ],
+    "scope": "scope-(a). Refutes the S_4 bridge AS AN ARGUMENT for the Bring->Klein degeneration. Does NOT refute the degeneration itself, which remains open.",
+    "all_checks_pass": true,
+    "checks": {
+      "C1_order_24": true,
+      "C1_closed": true,
+      "C1_faithful_in_PGL3": true,
+      "C2_order_profile_is_S4": true,
+      "C3_V4_order_4": true,
+      "C3_V4_normal": true,
+      "C3_S3_full_on_V4": true,
+      "C4_commutant_is_scalars": true,
+      "C5_invariant_space_dim_2": true,
+      "C5_q0_invariant": true,
+      "C5_q1_invariant": true,
+      "C5_q0_q1_independent": true,
+      "C6_detB_identity": true,
+      "C6_detC_identity": true,
+      "C6_explicit_singular_points": true,
+      "C6_samples_smooth": true,
+      "C7_genus_3": true
+    }
+  }
+}

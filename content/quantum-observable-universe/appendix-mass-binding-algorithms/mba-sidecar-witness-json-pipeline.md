@@ -3,8 +3,8 @@
 emitted by canonical compute scripts via the `WitnessBuilder` API.
 Maintained as a sidecar to the canonical chain because every
 chain step's `computation.witness` field points to a file that
-conforms to this contract (or, for **legacy witnesses**, is
-scheduled to be migrated to it — see *Migration status* below).*
+conforms to this contract, apart from a residue of older witnesses
+that do not yet conform.*
 
 ### Required JSON shape (`WitnessBuilder.build()` output)
 
@@ -57,7 +57,7 @@ scheduled to be migrated to it — see *Migration status* below).*
 *Every per-partition computation (Step 5 and downstream Step 9b)
 must record the partition tag $\lambda$ alongside each value via
 `builder.add_data(...)`, so the witness is partition-respecting
-and reviewers can audit the isotypic structure.*
+and reviewers can check the isotypic structure.*
 
 ### Algorithm
 
@@ -100,11 +100,10 @@ w.save()
 ```
 ### Witness contract (meta)
 
-*Every `*.witness.json` is audited by:
-[`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)
-(LP/SDP duals), `q-usage-watcher` (q-regime declarations), and
-the q₀ staleness detector. Stale or schema-violating witnesses
-fail CI in `witness-pipeline.yml`.*
+*Every `*.witness.json` is checked on three counts: the LP/SDP dual fields
+([`lp_dual_witness_validator.py`](../../../computations/lp_dual_witness_validator.py)),
+an explicit $q$-regime declaration, and staleness against the current $q_0$.
+A stale or schema-violating witness is rejected, not consumed.*
 
 ### Notes
 

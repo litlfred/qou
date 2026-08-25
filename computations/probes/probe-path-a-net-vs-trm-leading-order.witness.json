@@ -1,8 +1,8 @@
 {
   "engine": "sympy+mpmath",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-07-04T14:21:22.683057+00:00",
-  "commitSha": "689791e8e9245e99e40631357a4a7291a332f193",
+  "computedAt": "2026-08-10T01:59:05.909456+00:00",
+  "commitSha": "389c49b89251dc5d5206dbd482bd9b0ab6581d5b",
   "assertions": [
     {
       "name": "delta_net_matches_md",
@@ -13,11 +13,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 330,
+  "durationMs": 230,
   "computation": "probe-path-a-net-vs-trm-leading-order",
   "scriptFile": "probe_path_a_net_vs_trm_leading_order.py",
-  "scriptHash": "5c20c0e48502",
-  "scriptCommitSha": "689791e8e9245e99e40631357a4a7291a332f193",
+  "scriptHash": "a1dadcf371f0",
+  "scriptCommitSha": "70d1ade3832f9523c0f49d2a17fe66a4d8e3c3b9",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,9 +27,11 @@
   "environment": {
     "python": "3.11.15",
     "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
-    "pyhecke_native": "0.9.0"
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
   },
   "description": "Path A test for the borromean-quark energy-scale ansatz: compares the counit net difference ε(ΔNF)=h²/2−h against the Markov-trace difference tr_M(ΔNF) of the nucleon single-wrap NF, symbolically exact. Determines whether the per-braid mass tower reproduces the unweighted net at leading order (ansatz derivable) or differs by the Markov weight z (ansatz is a counit structural choice). Derive-or-refute; nothing wired.",
   "auditOnly": "docs/audits/2026-07-04-deuteron-dressing-is-proton-net.md",
@@ -40,15 +42,15 @@
   "data": {
     "trM_basis_numeric_at_q0": {
       "gamma": "1.0",
-      "sigma0": "0.49932033418369445241",
-      "sigma1": "0.49932033418369445241",
-      "Lplus": "0.2493207961293163067"
+      "sigma0": "0.6126880371464652516",
+      "sigma1": "0.6126880371464652516",
+      "Lplus": "0.375386630862388384"
     },
     "delta_net_numeric": "-0.1872071945293783207298365",
-    "delta_trM_numeric": "-0.08253495399292064313210749",
-    "ratio_numeric_at_q0": "0.4408749044095550440430726",
+    "delta_trM_numeric": "-0.106235639848092790892142",
+    "ratio_numeric_at_q0": "0.5674762666849392432025447",
     "leading_order_ratio": "1/2",
-    "z_numeric_at_q0": "0.4993203341836944524134427",
+    "z_numeric_at_q0": "0.6126880371464652515958299",
     "z_at_q_to_1": "1/2",
     "path_a_holds": false,
     "ratio_is_z_at_leading_order": true,

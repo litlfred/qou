@@ -1,0 +1,119 @@
+{
+  "engine": "mpmath",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-19T14:51:25.301608+00:00",
+  "commitSha": "4d32aec60d92f77e4173909a108af1e49ef3522d",
+  "assertions": [
+    {
+      "name": "every_realistic_basis_is_entropy_blocked_at_both_sigma_readings",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "D_eff(alpha) = 5.61427 digits even under the OVER-OPTIMISTIC sigma(Q) = 7.8e-9, against floors of 9.2041 (n=4, H<=100) and 13.806 (n=6, H<=100). Any closed form matched to alpha_required over a basis of 4+ terms is guaranteed-spurious, by the PR #1805 bound that already forbade the c_3 PSLQ route."
+    },
+    {
+      "name": "even_the_minimal_basis_fails_at_the_honest_experimental_sigma",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "at sigma(Q) = 7.8e-7 (the experimental value) D_eff(alpha) = 3.61427 digits against the cheapest floor 3.90309 (n=3, H<=10) — short by 0.2888. The minimal basis clears only under the optimistic sigma, which nobody claims. NOTE: this probe first asserted a BLANKET block (best-case D_eff < cheapest floor) and that FAILED — 5.61 > 3.90. The phase is not as noise-starved as c_3; the licence is narrow, not absent."
+    },
+    {
+      "name": "the_amplifier_on_the_phase_is_cotangent_not_one_over_u_cubed",
+      "computed": "1",
+      "expected": "1",
+      "passed": true,
+      "tolerance": 0,
+      "source": "cot(alpha_eff_req) = 17.643569 at the proton anchor. The phase is NOT amplified by 1/u^3 (that is the c_3 rung's amplifier, proved exactly in QOU.QBeta.c3Of_sub_mul_u_cubed); it is amplified by cot, because the ladder reads it through the flat part of the cosine. Two different amplifiers, and conflating them would misattribute the phase's noise budget."
+    }
+  ],
+  "allPassed": true,
+  "durationMs": 7,
+  "computation": "qbeta-alpha-entropy-bound",
+  "scriptFile": "qbeta_alpha_entropy_bound_probe.py",
+  "scriptHash": "e2c353fd8fcc",
+  "scriptCommitSha": "f59b519865a281ea898cca0b266332c74f2d0440",
+  "precisionMetadata": {
+    "compute_dps": 70,
+    "output_dps": 60,
+    "guard_digits": 10,
+    "truncation_bound": "1e-60"
+  },
+  "environment": {
+    "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.12",
+    "mpmath": "1.4.1",
+    "pyhecke_native": "0.9.0",
+    "clarabel": "0.11.1"
+  },
+  "description": "Bean qou-cds1, formalize-first prune. Asks of the ladder PHASE the question PROBE 4 asked of c_3: how many reliable digits does the inverted target carry, and does that clear the PSLQ entropy floor n*log10(2H)? cos(alpha_eff_req) = Q_codata/(Q_A(1-u^2)) means sigma(alpha_eff) = cot(alpha_eff)*sigma_rel(Q_beta), and cot is large because alpha_eff is small — the ladder reads the phase through the flat part of the cosine. Evaluated at both anchors and at BOTH sigma(Q_beta) readings in the corpus (7.8e-7 experimental and an over-optimistic 7.8e-9) so the prune survives the friendliest input. Also explains the apparent anchor-stability of alpha_required: a quantity with this few digits cannot resolve a cross-anchor difference. Derives nothing and forbids only that one route; deriving alpha categorically is untouched and remains open.",
+  "data": {
+    "ladder_frame": "u",
+    "rows": [
+      {
+        "anchor": "proton",
+        "sigma_reading": "experimental_7.8e-7",
+        "alpha_eff_required": "0.0566173007940610323629668069383734567951046903736151758566961",
+        "cot_amplifier": "17.6435692152282246886115856120725946257305563419080489680082",
+        "sigma_alpha_abs": "0.0000137619839878780152571170367774166238080698339466882781950464",
+        "D_eff_digits": "3.61426811250899294661074437037276029611390805923415234790822"
+      },
+      {
+        "anchor": "proton",
+        "sigma_reading": "optimistic_7.8e-9",
+        "alpha_eff_required": "0.0566173007940610323629668069383734567951046903736151758566961",
+        "cot_amplifier": "17.6435692152282246886115856120725946257305563419080489680082",
+        "sigma_alpha_abs": "0.000000137619839878780152571170367774166238080698339466882781950464",
+        "D_eff_digits": "5.61426811250899294661074437037276029611390805923415234790822"
+      },
+      {
+        "anchor": "muon",
+        "sigma_reading": "experimental_7.8e-7",
+        "alpha_eff_required": "0.0566167681397284550163686882171513974284478262308794845519005",
+        "cot_amplifier": "17.6437355623611195869745462411698221501671733276052438198872",
+        "sigma_alpha_abs": "0.0000137621137386416732778401460681124612771303951955320901795120",
+        "D_eff_digits": "3.61425993205998807378098863922613221465518590678025861798449"
+      },
+      {
+        "anchor": "muon",
+        "sigma_reading": "optimistic_7.8e-9",
+        "alpha_eff_required": "0.0566167681397284550163686882171513974284478262308794845519005",
+        "cot_amplifier": "17.6437355623611195869745462411698221501671733276052438198872",
+        "sigma_alpha_abs": "0.000000137621137386416732778401460681124612771303951955320901795120",
+        "D_eff_digits": "5.61425993205998807378098863922613221465518590678025861798449"
+      }
+    ],
+    "bases": [
+      {
+        "basis": "minimal {1, sqrt3, pi} H<=10",
+        "n_terms": 3,
+        "height": 10,
+        "floor_digits": "3.90308998699194358564121668417347908030456964438632562393128",
+        "supported": true
+      },
+      {
+        "basis": "standard {1, sqrt3, pi^2, Vol(4_1)} H<=100",
+        "n_terms": 4,
+        "height": 100,
+        "floor_digits": "9.20411998265592478085495557889797210707275952584843416524171",
+        "supported": false
+      },
+      {
+        "basis": "wide 6-term H<=100",
+        "n_terms": 6,
+        "height": 100,
+        "floor_digits": "13.8061799739838871712824333683469581606091392887726512478626",
+        "supported": false
+      }
+    ],
+    "D_eff_experimental_sigma": "3.61426811250899294661074437037276029611390805923415234790822",
+    "D_eff_optimistic_sigma": "5.61426811250899294661074437037276029611390805923415234790822",
+    "cheapest_floor_digits": "3.90308998699194358564121668417347908030456964438632562393128",
+    "minimal_basis_deficit_at_experimental_sigma": "0.288821874482950639030472313800718784190661585152173276023060"
+  },
+  "q0Anchor": "ambiguous"
+}

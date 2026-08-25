@@ -8,4 +8,4 @@ $$
 
 Braid-word fluctuations at $q_0$ cannot be modeled by the $q$-Gaussian. The valid substitutes are the inner Perron-Frobenius dominant eigenvalue and the outer Féray-Méliot $q$-Plancherel CLT.
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

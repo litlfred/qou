@@ -97,12 +97,12 @@ def baryon_mass (q : ℝ) (_hq : q > 1) : ℝ :=
 
     Ref: [manuscript] Ch. 6 §3, conj:borromean-quark -/
 class BorromeanQuark where
-  /-- The baryon mass functional (depends on q). -/
-  bare_mass : ℝ → ℝ
+  /-- The baryon topological mass functional (depends on q). -/
+  topological_mass : ℝ → ℝ
   /-- The mass functional evaluates to `borromean_volume / (1 − 1/q)²`
       at every q > 1. -/
   volume_calibrates_mass :
-    ∀ q : ℝ, q > 1 → bare_mass q = borromean_volume / (1 - 1/q)^2
+    ∀ q : ℝ, q > 1 → topological_mass q = borromean_volume / (1 - 1/q)^2
 
 /-- **Downstream conditional theorem (AGENTS.md §3b-cond).**
     Conditional on `[BorromeanQuark]`, baryon mass at every q > 1
@@ -110,10 +110,10 @@ class BorromeanQuark where
     once an instance is fixed. -/
 theorem baryon_mass_from_volume [inst : BorromeanQuark]
     (q : ℝ) (hq : q > 1) :
-    inst.bare_mass q = borromean_volume / (1 - 1/q)^2 :=
+    inst.topological_mass q = borromean_volume / (1 - 1/q)^2 :=
   inst.volume_calibrates_mass q hq
 
-/-- **Faithful instance.**  Defines `bare_mass` literally as the
+/-- **Faithful instance.**  Defines `topological_mass` literally as the
     topological-volume formula `borromean_volume / (1 - 1/q)²`, so
     `volume_calibrates_mass` closes by `rfl`.  This is genuine content
     — the mass-calibration identity holds definitionally — not a
@@ -122,7 +122,7 @@ theorem baryon_mass_from_volume [inst : BorromeanQuark]
     see the class docstring.) -/
 -- Ref: [manuscript] Ch. 6 §3, conj:borromean-quark
 instance canonical : BorromeanQuark where
-  bare_mass := fun q => borromean_volume / (1 - 1/q)^2
+  topological_mass := fun q => borromean_volume / (1 - 1/q)^2
   volume_calibrates_mass := fun _ _ => rfl
 
 end QOU.Archimedean

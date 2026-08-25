@@ -8,7 +8,7 @@ $$
 
 is the operational entropy.
 
-**The two Hecke eigenvalues.** The name "$q$-bit" reflects the Iwahori--Hecke algebra's two eigenvalues $q$ (symmetric channel) and $-q^{-1}$ (antisymmetric channel). At $q = 1$ the eigenvalues merge to $± 1$ and one $q$-bit equals one classical nat.
+**The two Hecke eigenvalues.** The name "$q$-bit" reflects the Iwahori--Hecke algebra's two eigenvalues $q$ (symmetric channel) and $-q^{-1}$ (antisymmetric channel). At $q = 1$ the eigenvalues merge to $\pm 1$ and one $q$-bit equals one classical nat.
 
 **Values.**
 
@@ -19,4 +19,4 @@ is the operational entropy.
 | $\varphi^2$ | $0.327$ | Golden threshold |
 | $\infty$ | $0$ | Big Bang (no information) |
 
-**"It from $q$-bit."** Wheeler's "it from bit" asserts that physics emerges from information. The QOU refines this: observable physics emerges from $q$-deformed information. The observability axiom forces every observable quantity to be a rational function of $q$. Each elementary process produces exactly one $q$-bit. The substrate parameter $q$ controls non-commutativity, and the $q$-bit is the indivisible unit of $q$-deformed information from which observable physics is built.
+**"It from $q$-bit."** Wheeler's "it from bit" asserts that physics emerges from information. The QOU refines this: observable physics emerges from $q$-deformed information. The observability axiom forces every observable quantity to be a rational function of $q$. Each elementary process produces exactly one $q$-bit. The substrate parameter $q$ controls non-commutativity.

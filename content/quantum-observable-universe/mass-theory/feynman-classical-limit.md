@@ -23,4 +23,4 @@ $$
 
 *The finite categorical trace degenerates to the standard discrete trace over the finite-dimensional angular momentum eigenbasis of the symmetric group.*
 
-**Archimedean specialisation (§7c).** This block sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.
+**Archimedean specialisation.** What follows sits on the archimedean side of the substrate wall. It applies $q$-deformation identities over an abstract coefficient ring and specializes them to real-valued observables at $q_0$.

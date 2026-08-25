@@ -42,7 +42,7 @@ What this probe establishes
 
 All arithmetic is exact (fractions.Fraction over Q[[q]] truncated at order N),
 so there is no floating-point tolerance and nothing is fitted.  The muon anchor
-of the QOU framework is the figure-eight knot 4_1 (via Vol(4_1) = 2 Lambda(pi/3)
+of the QOU framework is the figure-eight knot 4_1 (via Vol(4_1) = 2*Cl_2(pi/3) = 6*Lambda(pi/3)
 ~ 2.0299, the *hyperbolic volume* -- a distinct object from these E_1 integer
 q-series), so reproducing a published integer sequence for 4_1 is a
 production-adjacent literature self-check.  Nothing here is wired to any QOU

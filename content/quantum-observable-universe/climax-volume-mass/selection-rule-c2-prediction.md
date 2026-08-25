@@ -11,7 +11,7 @@ $$
 
 The per-component rule states $\mathrm{lw}(c) = (1/(c+1)) \sum_{\lambda \vdash (c+1)} \dim_q V_\lambda$. It is anchored at c=1 (muon, $\mathrm{lw}=1$ exactly $\forall q$) and c=3 (proton, $\mathrm{lw} = 5/2 + (3/4)h^2$ via Family-A). The c=2 case provides the **first testable prediction** of the rule beyond the two known anchors.
 
-This proposition Lean-formalises the closed form for c=2. The prediction shares the same provenance as its anchors (a pure algebraic identity in the q-deformed hook-length formula). Any independent determination of a 2-component link's linking_weight—such as a Hopf-link or gluon EM-linking application—can be tested against this exact formula unequivocally.
+This proposition Lean-formalises the closed form for c=2. The prediction shares the same provenance as its anchors (a pure algebraic identity in the q-deformed hook-length formula). Any independent determination of a 2-component link's linking_weight—such as a Hopf-link or gluon EM-linking application—can be tested against this exact formula.
 
 ## Lean proof structure
 
@@ -34,9 +34,8 @@ This constitutes a pure polynomial-ring identity once we clear $q^{-1}$ denomina
 
 ## q-usage discipline
 
-This holds over real $q > 0$ (substrate-anchor regime). The closed form $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — a fibre-level construction. At $q = q_0$, it evaluates to $\approx 1.337$. There is no $|q|=1$ step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$. It is AGENTS.md §7c-compliant.
+This holds over real $q > 0$ (substrate-anchor regime). The closed form $(q+1)^2/(3q)$ is a Laurent rational in $\mathbb{Z}[q, q^{-1}]$ — a fibre-level construction. At $q = q_0$, it evaluates to $\approx 1.337$. There is no $|q|=1$ step; both $q$ and $q^{-1}$ are real positive at any real $q > 0$.
 
 ## Cross-references
 
 - [`prop:selection-rule-anchors-c1-c3`](#prop:selection-rule-anchors-c1-c3) — the two known anchors that establish the rule's existence.
-- Derivation audit: [`docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md`](../../../docs/audits/2026-06-03-habiro-per-knot-lambda-derivation.md).

@@ -1,0 +1,200 @@
+{
+  "probe": "qbeta_5two_route7_enhanced_dilog_branch_freedom",
+  "bean": "qou-r7ml",
+  "parent_bean": "qou-0yqu",
+  "dps": 60,
+  "reopens": "computations/qbeta-5two-enhanced-dilog.witness.json gate G3",
+  "gates": [
+    {
+      "gate": "G0",
+      "claim": "Re Dtilde(z,a,b) = Re L(z) - pi*b*arg(z) - pi*a*arg(1-z) - 2 pi^2 a b",
+      "worst_abs_error": "3.9827298e-59",
+      "note": "makes the branch sweep pure arithmetic after 3 polylog calls",
+      "pass": true
+    },
+    {
+      "gate": "G1",
+      "claim": "sum_j Re V_j == -3 pi^2/2 (control)",
+      "sum_re_V": "-14.80440660163403792825174",
+      "residual": "0.0",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "reproduce Route-6 witness G3 principal-branch value",
+      "sum_re_Dtilde_principal": "2.777534425978115064062537",
+      "route6_witness_value": "2.777534425978115064062537",
+      "delta": "4.8427751e-25",
+      "ratio_to_half_pi_sq": "0.56284615129488764738",
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "sum Re L = pi^2/2 - (2/3) pi theta  and  arg(1-y1) = (2/3)(theta-pi)",
+      "theta": "1.030019489685363685987361",
+      "residual_sum_re_L": "9.3345229e-61",
+      "residual_arg": "-1.5557538e-61",
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "theta cancels iff 3(b1-b2)+2(a1-a2) = -2; Route 6's a=0 makes it insoluble",
+      "solutions_with_a_free_sample": [
+        [
+          -4,
+          2
+        ],
+        [
+          -1,
+          0
+        ],
+        [
+          2,
+          -2
+        ],
+        [
+          5,
+          -4
+        ]
+      ],
+      "n_solutions_a_free": 4,
+      "solutions_with_a_fixed_zero": [],
+      "route6_scan_was_principal_branch_only_for_the_sum": true,
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "sum_j Re Dtilde / pi^2 in 11/6 + 2Z (exactly)",
+      "n_values": 64,
+      "min": "-64.1666666667",
+      "max": "63.8333333333",
+      "all_congruent_11_over_6_mod_2": true,
+      "derivation": "1/2 + (2/3)k - 2m with k = a1-a2 = 2 mod 3, m = a1b1+a2b2+a3b3",
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "neither sum-rule target lies in the reachable coset",
+      "targets": {
+        "-1/2 (V = 3*Dtilde; the Route-6 witness's own G3 target)": {
+          "in_reachable_set": false,
+          "(t - 11/6)/2": "-1.16666666667",
+          "is_integer": false
+        },
+        "-3/2 (the raw sum-rule constant)": {
+          "in_reachable_set": false,
+          "(t - 11/6)/2": "-1.66666666667",
+          "is_integer": false
+        }
+      },
+      "pass": true
+    },
+    {
+      "gate": "G7",
+      "claim": "KILL: control cubics y^p=(1-y)^q also land in pi^2 Q -- rationality separates nothing",
+      "controls": [
+        {
+          "p": 2,
+          "q": 3,
+          "tag": "5_2 TARGET",
+          "cubic": [
+            1,
+            -2,
+            3,
+            -1
+          ],
+          "n_rational_landings": 37,
+          "sample": [
+            "-38.16666667",
+            "-34.16666667",
+            "-32.16666667",
+            "-30.16666667"
+          ],
+          "distinct_spacings": [
+            "2.0",
+            "4.0"
+          ],
+          "modal_spacing_is_2": true
+        },
+        {
+          "p": 3,
+          "q": 2,
+          "tag": "control A (bean's named control)",
+          "cubic": [
+            1,
+            -1,
+            2,
+            -1
+          ],
+          "n_rational_landings": 37,
+          "sample": [
+            "-37.33333333",
+            "-33.33333333",
+            "-31.33333333",
+            "-29.33333333"
+          ],
+          "distinct_spacings": [
+            "2.0",
+            "4.0"
+          ],
+          "modal_spacing_is_2": true
+        },
+        {
+          "p": 1,
+          "q": 3,
+          "tag": "control B",
+          "cubic": [
+            1,
+            -3,
+            4,
+            -1
+          ],
+          "n_rational_landings": 34,
+          "sample": [
+            "-32.83333333",
+            "-30.83333333",
+            "-28.83333333",
+            "-26.83333333"
+          ],
+          "distinct_spacings": [
+            "2.0",
+            "4.0"
+          ],
+          "modal_spacing_is_2": true
+        },
+        {
+          "p": 3,
+          "q": 1,
+          "tag": "control C",
+          "cubic": [
+            1,
+            0,
+            1,
+            -1
+          ],
+          "n_rational_landings": 33,
+          "sample": [
+            "-32.66666667",
+            "-30.66666667",
+            "-28.66666667",
+            "-26.66666667"
+          ],
+          "distinct_spacings": [
+            "2.0",
+            "4.0"
+          ],
+          "modal_spacing_is_2": true
+        }
+      ],
+      "interpretation": "same failure mode as Route 2: the property is generic to the shape, not arithmetic of the 5_2 trace field",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "route7": "REFUTED, scope-(a)",
+    "route6_conclusion": "STANDS",
+    "route6_stated_reason": "INCOMPLETE -- G3 varied no branch integers for the sum; with a free, 3(b1-b2)+2(a1-a2)=-2 IS soluble and exact rationality IS reachable",
+    "modulus_hypothesis": "WRONG -- C/2pi^2 Z vs C/(pi^2/2) Z is irrelevant: the branch shift contributes -2 pi^2 a_j b_j, a multiple of 2pi^2 and of pi^2/2 alike. The quarter-lattice coincidence -3pi^2/2 = -(3/4)(2pi^2) was not the mechanism.",
+    "sum_rule_status": "verified to 80 dps, unproved -- UNCHANGED"
+  }
+}

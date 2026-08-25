@@ -1,4 +1,4 @@
-> **SUPERSEDED-$\rho_q$ note .** Any use of the scalar substrate density $\rho_q = 1/\hbar_q^2$ in this block is the structurally-wrong leading-order ansatz per [`mass-endomorphism-tower.md` §SUPERSEDED](mass-endomorphism-tower.md).
+> **Superseded.** The scalar substrate density $\rho_q = 1/\hbar_q^2$ used below is the structurally-wrong leading-order ansatz; the operator-valued form supersedes it ([`mass-endomorphism-tower`](mass-endomorphism-tower.md)).
 
 **Conjecture ($\Phi_q$-JSJ archimedean bridge).**
 *Under the archimedean realization, each summand of the dilogarithm tower evaluates precisely to the hyperbolic volume of the corresponding $\Phi_q$-piece, weighted by the substrate density:*
@@ -10,6 +10,6 @@ $$
   \mathrm{Vol}_{\mathrm{hyp}}(S^3 \setminus K_S).
 $$
 
-*Summing over all subsets perfectly reconstructs the continuous JSJ piecewise sum.*
+*Summing over all subsets reconstructs the continuous JSJ piecewise sum.*
 
-This conjecture aligns the algebraic discrete evaluation with the geometric continuous evaluation. The dilogarithm pipeline and the hyperbolic-volume pipeline compute the identical archimedean target through entirely different convergence regimes. It formalizes the quantum Bloch group regulator mapping the algebraic strata directly onto the JSJ decomposition.
+This conjecture aligns the algebraic discrete evaluation with the geometric continuous evaluation. The dilogarithm pipeline and the hyperbolic-volume pipeline compute the identical archimedean target through different convergence regimes. It formalizes the quantum Bloch group regulator mapping the algebraic strata directly onto the JSJ decomposition.

@@ -1,4 +1,5 @@
 import Mathlib.Tactic
+import QOU.MathlibExt.QIntegerCanonical
 
 /-!
 # QOU.Archimedean.QMomentum
@@ -23,16 +24,17 @@ form both disagree with the building-block table for negative crossings.)
 namespace QOU.Archimedean
 
 /-- The `q`-integer `[e]_q = (q^e − q^{−e})/(q − q⁻¹)` for `e : ℤ`. -/
-noncomputable def qBracket (q : ℝ) (e : ℤ) : ℝ := (q ^ e - q ^ (-e)) / (q - q⁻¹)
+noncomputable abbrev qBracket (q : ℝ) (e : ℤ) : ℝ :=
+  QOU.QInteger.qIntBalZ q e
 
 /-- `[+1]_q = 1`. -/
 theorem qBracket_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) : qBracket q 1 = 1 := by
-  unfold qBracket
+  simp only [qBracket, QOU.QInteger.qIntBalZ]
   rw [zpow_one, zpow_neg, zpow_one, div_self hq]
 
 /-- `[−1]_q = −1`. -/
 theorem qBracket_neg_one (q : ℝ) (hq : q - q⁻¹ ≠ 0) : qBracket q (-1) = -1 := by
-  unfold qBracket
+  simp only [qBracket, QOU.QInteger.qIntBalZ]
   rw [zpow_neg, zpow_one, neg_neg, zpow_one]
   rw [div_eq_iff hq]
   ring
@@ -81,7 +83,7 @@ theorem qMomentum_aux (q : ℝ) (hq : q - q⁻¹ ≠ 0) :
     `q − q⁻¹ ≠ 0` (`M.q_reg`) the `q`-momentum equals the writhe — because
     `[±1]_q = ±1` exactly, each crossing contributes its sign with no residual
     `q`-dependence. -/
-theorem QMomentum.p_q_eq_writhe (M : QMomentum) : M.p_q = (M.writhe : ℝ) :=
+theorem p_q_eq_writhe (M : QMomentum) : M.p_q = (M.writhe : ℝ) :=
   qMomentum_aux M.q M.q_reg M.crossings M.signs
 
 end QOU.Archimedean

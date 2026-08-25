@@ -1,0 +1,151 @@
+{
+  "probe": "qbeta_5two_route11_fiveterm_certificate",
+  "bean": "qou-fivt",
+  "parent_bean": "qou-0yqu",
+  "dps": 70,
+  "gates": [
+    {
+      "gate": "G1",
+      "claim": "reflection L(x)+L(1-x)=L(1); inversion L(x)+L(1/x)=2L(1) for x>1; Landen L(x)+L(x/(x-1))=0 for x<0 -- on generic points",
+      "reflection_worst": "1.81114e-71",
+      "inversion_worst": "3.62227e-71",
+      "landen_worst": "1.81114e-71",
+      "caveat": "verified, not derived -- standard facts, but this probe does not prove them",
+      "pass": true
+    },
+    {
+      "gate": "G2",
+      "claim": "R1, R2, R3 are genuine five-term instances, args all in (0,1)",
+      "R1": "1.81114e-71",
+      "R2": "-2.7167e-71",
+      "R3": "3.62227e-71",
+      "all_args_in_unit_interval": true,
+      "pass": true
+    },
+    {
+      "gate": "G3",
+      "claim": "{w2,q,r,s} + reflections is CLOSED under the five-term relation",
+      "closed_instances": 15,
+      "valid_instances": 64,
+      "pass": true
+    },
+    {
+      "gate": "G4",
+      "claim": "exact rational certificate T_i = sum_j c_ij R_j (Fraction arithmetic)",
+      "certificate": [
+        {
+          "target": "T1",
+          "coeffs_over_R": [
+            "2/7",
+            "-4/7",
+            "1/7"
+          ],
+          "combination": [
+            "-3/7",
+            "2",
+            "-1",
+            "0",
+            "0"
+          ],
+          "target_row": [
+            "-3/7",
+            "2",
+            "-1",
+            "0",
+            "0"
+          ],
+          "match": true
+        },
+        {
+          "target": "T2",
+          "coeffs_over_R": [
+            "1/7",
+            "-2/7",
+            "4/7"
+          ],
+          "combination": [
+            "-5/7",
+            "2",
+            "0",
+            "-1",
+            "0"
+          ],
+          "target_row": [
+            "-5/7",
+            "2",
+            "0",
+            "-1",
+            "0"
+          ],
+          "match": true
+        },
+        {
+          "target": "T3",
+          "coeffs_over_R": [
+            "4/7",
+            "-1/7",
+            "2/7"
+          ],
+          "combination": [
+            "-13/7",
+            "2",
+            "0",
+            "0",
+            "1"
+          ],
+          "target_row": [
+            "-13/7",
+            "2",
+            "0",
+            "0",
+            "1"
+          ],
+          "match": true
+        }
+      ],
+      "note": "coefficient triples are cyclic shifts of (1,2,4), the quadratic residues mod 7 -- this is the origin of the /7 in m_k/7",
+      "pass": true
+    },
+    {
+      "gate": "G5",
+      "claim": "rank(R) = rank(R union T) = 3: targets lie in the five-term span",
+      "rank_R": 3,
+      "rank_R_and_T": 3,
+      "pass": true
+    },
+    {
+      "gate": "G6",
+      "claim": "targets recomputed from scratch equal m_k pi^2/42",
+      "per_k": [
+        {
+          "k": 1,
+          "value": "3.99483987663140706000444",
+          "m": 17,
+          "abs_err": "3.62227e-71"
+        },
+        {
+          "k": 2,
+          "value": "1.17495290489159031176601",
+          "m": 5,
+          "abs_err": "1.81114e-71"
+        },
+        {
+          "k": 3,
+          "value": "-0.234990580978318062353202",
+          "m": -1,
+          "abs_err": "1.13196e-71"
+        }
+      ],
+      "worst": "3.6222716e-71",
+      "pass": true
+    }
+  ],
+  "verdict": {
+    "route11": "THE THREE NUMERATORS ARE DERIVED from the five-term relation.",
+    "derivation": "reduce to (0,1) by reflection/inversion/Landen; the argument set {w2, q, r, s} + reflections is closed under the five-term relation; three independent instances R1,R2,R3 span the targets, with exact certificate T1 = (2R1 - 4R2 + R3)/7, T2 = (R1 - 2R2 + 4R3)/7, T3 = (4R1 - R2 + 2R3)/7.",
+    "where_the_sevens_come_from": "the certificate coefficients are cyclic shifts of (1,2,4), the quadratic residues mod 7.",
+    "NOT_proved": "the 5_2 sum rule itself. The chain still passes through Route 8's analytic transport (envelope theorem + the branch integer k=0 on |x|=1), which is argued via integrality and local constancy on a collision-free arc, but not proved. That is now the weakest link -- and it is analytic, not arithmetic.",
+    "also_not_proved": "the three extension formulas are verified on generic points here, not derived; they are standard facts about the real Rogers dilogarithm.",
+    "sum_rule_status": "verified to 80 dps; numerators now derived; transport still argued"
+  }
+}

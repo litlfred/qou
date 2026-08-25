@@ -32,5 +32,3 @@ theorems named in the table.
   (`delta_tau_M_surrogate` definition + order-0/order-1 proofs).
 - Witness JSON:
   [`qbeta-c3-multiblock-recursion-attack.witness.json`](../../../computations/qbeta/qbeta-c3-multiblock-recursion-attack.witness.json).
-- 1ppQ-Q$_\beta$ coordination ledger:
-  [`docs/coordination/1ppq-qbeta.md`](../../../docs/coordination/1ppq-qbeta.md).

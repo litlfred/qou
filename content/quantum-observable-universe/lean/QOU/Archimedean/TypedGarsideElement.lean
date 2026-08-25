@@ -53,12 +53,12 @@ structure TypedGarsideElement where
 
 /-- The typed-crossing coefficient is symmetric on a mixed proton–neutron
     pair (manuscript: `d(p,n) = d(n,p)`). -/
-theorem TypedGarsideElement.d_mixed_symm (G : TypedGarsideElement) :
+theorem d_mixed_symm (G : TypedGarsideElement) :
     G.d Nucleon.p Nucleon.n = G.d Nucleon.n Nucleon.p := by
   rw [G.d_pn, G.d_np]
 
 /-- A single nucleon carries no crossing factors (`binom(1,2) = 0`). -/
-theorem TypedGarsideElement.numFactors_one
+theorem numFactors_one
     (G : TypedGarsideElement) (h : G.A = 1) : G.numFactors = 0 := by
   rw [G.numFactors_eq, h]
   decide

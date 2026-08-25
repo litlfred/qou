@@ -42,6 +42,7 @@ section Reduction
 
 variable (B : (ι → R) → (ι → R) → (ι → R)) (τ : (ι → R) → R)
 
+omit [Fintype ι] in
 /-- `B · v` commutes with finite sums in the left argument. -/
 theorem B_sum_left (hBaddl : ∀ u u' v, B (u + u') v = B u v + B u' v)
     (hBzerol : ∀ v, B 0 v = 0) (s : Finset ι) (f : ι → (ι → R)) (v : ι → R) :
@@ -50,22 +51,24 @@ theorem B_sum_left (hBaddl : ∀ u u' v, B (u + u') v = B u v + B u' v)
   | empty => simp [hBzerol]
   | @insert a s ha ih => rw [Finset.sum_insert ha, Finset.sum_insert ha, hBaddl, ih]
 
+omit [Fintype ι] in
 /-- `B u ·` commutes with finite sums in the right argument. -/
 theorem B_sum_right (hBaddr : ∀ u v v', B u (v + v') = B u v + B u v')
     (u : ι → R) (s : Finset ι) (f : ι → (ι → R)) :
     B u (∑ j ∈ s, f j) = ∑ j ∈ s, B u (f j) := by
   have hBzeror : B u 0 = 0 := by
-    have h := hBaddr u 0 0; rw [add_zero] at h; exact self_eq_add_right.mp h
+    have h := hBaddr u 0 0; rw [add_zero] at h; exact left_eq_add.mp h
   induction s using Finset.induction with
   | empty => simpa using hBzeror
   | @insert a s ha ih => rw [Finset.sum_insert ha, Finset.sum_insert ha, hBaddr, ih]
 
+omit [Fintype ι] in
 /-- `τ` commutes with finite sums (additivity). -/
 theorem tau_sum (hτadd : ∀ u v, τ (u + v) = τ u + τ v)
     (s : Finset ι) (f : ι → (ι → R)) :
     τ (∑ i ∈ s, f i) = ∑ i ∈ s, τ (f i) := by
   have hτzero : τ (0 : ι → R) = 0 := by
-    have h := hτadd 0 0; rw [add_zero] at h; exact self_eq_add_right.mp h
+    have h := hτadd 0 0; rw [add_zero] at h; exact left_eq_add.mp h
   induction s using Finset.induction with
   | empty => simpa using hτzero
   | @insert a s ha ih => rw [Finset.sum_insert ha, Finset.sum_insert ha, hτadd, ih]
@@ -161,16 +164,19 @@ theorem isCyclic_trace_comp {n : Type*} [Fintype n] [DecidableEq n]
   simp only [map_mul]
   rw [Matrix.trace_mul_comm]
 
+omit [Algebra R A] in
 /-- **Brick — cyclic functionals are closed under `+`.** -/
-theorem IsCyclic.add {σ τ : A → R} (hσ : IsCyclic σ) (hτ : IsCyclic τ) :
+theorem add {σ τ : A → R} (hσ : IsCyclic σ) (hτ : IsCyclic τ) :
     IsCyclic (fun x => σ x + τ x) := by
   intro x y; show σ (x * y) + τ (x * y) = σ (y * x) + τ (y * x); rw [hσ x y, hτ x y]
 
+omit [Algebra R A] in
 /-- **Brick — cyclic functionals are closed under a scalar multiple.** -/
-theorem IsCyclic.smul {τ : A → R} (c : R) (hτ : IsCyclic τ) :
+theorem smul {τ : A → R} (c : R) (hτ : IsCyclic τ) :
     IsCyclic (fun x => c * τ x) := by
   intro x y; show c * τ (x * y) = c * τ (y * x); rw [hτ x y]
 
+omit [Algebra R A] in
 /-- **Brick — a finite weighted sum of cyclic functionals is cyclic.** This is
 the shape of `tr_M = ∑_λ w_λ · χ_λ`: given each `χ_λ` cyclic (the previous
 bricks), the Markov trace is cyclic, hence Gram-symmetric. -/
@@ -198,6 +204,7 @@ section Bridge
 
 variable {Λ : Type*} {dim : Λ → Type*} [∀ l, Fintype (dim l)] [∀ l, DecidableEq (dim l)]
 
+omit [Fintype ι] [(l : Λ) → DecidableEq (dim l)] in
 /-- **Bridge brick.** If `τ = ∑_λ w_λ · trace ∘ ρ_λ` with each `ρ_λ` multiplicative
 on the bilinear product `B` (`ρ_λ (B u v) = ρ_λ u * ρ_λ v`), then the Gram matrix
 `G_{i,j} = τ (B (e i) (e j))` is symmetric. Combined with `cyclic_of_gram_symm`,
