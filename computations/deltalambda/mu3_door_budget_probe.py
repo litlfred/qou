@@ -31,6 +31,24 @@ GATES:
   * the ceiling must actually bound the measured `|N|` (a ceiling below its own measurement
     would mean the bound is misderived).
 
+CONVENTION-D UPDATE — the scope-(a) half is MOOT, and the reason matters.
+Under the canonical trace convention **D** (`z = q³/(q²+1)`, owner ruling 2026-08-15) the
+Wenzl level relation collapses to `Q^r = Q²`, i.e. `r = 2` (`QOU` `wenzlLevel_conventionD`),
+and `y_λ = 0 ⟺ ℓ(λ) > r` (`schurPrincipal_eq_zero_iff`, sorry-free, all n and all r).  So
+`schur_principal_mpmath` is the SU(2) two-row specialisation `s_λ(1, Q)` and vanishes
+identically for every `λ` with three or more rows — 25 of the 30 partitions of 9.  Both facts
+are already established on main; see `two_row_support_recount.py`, which measures what the
+truncation removes.  Nothing here re-derives them.  Every `λ` that carried a **negative**
+`y_λ` under the excised convention C sits inside that zeroed set.  So under D:
+
+    N = 0 identically,  and there is no negative-weight budget to measure.
+
+Finite-precision arithmetic leaves the zeroed entries at ~1e-42 with arbitrary sign, and a
+bare `y_λ < 0` test picks that up and reports it as a supply — an earlier run of this probe
+printed "the negative blocks supply ~1/7.6e39 of what the door needs", which is round-off
+dressed as a measurement.  The probe now classifies against an explicit noise floor tied to
+the working precision and reports the structural zero instead.
+
 Anchor: experimental/proton.  Nothing fitted, nothing wired.
 """
 from __future__ import annotations
@@ -47,13 +65,13 @@ import pyhecke_native  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0_MP  # noqa: E402 — the mpf, NOT the float64 `Q`
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps(40)
-q0 = mp.mpf(str(Q0))
-q0f = float(Q0)
+q0 = Q0_MP
+q0f = float(q0)          # float64 only at the pyhecke_native FFI boundary
 _Y9 = y_lambda_at_q0_mpmath(9, q0)
 
 
@@ -83,26 +101,46 @@ def main() -> int:
         B = sorted(set(ce) & set(ca) & set(cb) & set(cab) & set(_Y9))
         d2chi = {l: abs(cab[l]) - abs(ca[l]) - abs(cb[l]) + abs(ce[l]) for l in B}
 
-        P = sum(_Y9[l] * d2chi[l] for l in B if _Y9[l] > 0)
-        Nn = sum(_Y9[l] * d2chi[l] for l in B if _Y9[l] < 0)
+        # Under trace convention D the Wenzl level collapses to r = 2, so the y_λ tower
+        # is the SU(2) two-row specialisation and every λ with ℓ(λ) ≥ 3 is EXACTLY 0
+        # (25 of the 30 partitions of 9).  Finite-precision arithmetic leaves those
+        # entries at ~1e-42 with random sign, so a bare `y < 0` test picks up round-off
+        # and reports it as a negative-weight mass.  Classify against an explicit noise
+        # floor tied to the working precision instead.
+        NOISE = max(abs(v) for v in _Y9.values()) * mp.mpf(10) ** (-(mp.mp.dps - 8))
+        neg_blocks = [l for l in B if _Y9[l] < -NOISE]
+        pos_blocks = [l for l in B if _Y9[l] > NOISE]
+
+        P = sum(_Y9[l] * d2chi[l] for l in pos_blocks)
+        Nn = sum(_Y9[l] * d2chi[l] for l in neg_blocks)
         tot = P + Nn
-        yneg = sum(abs(_Y9[l]) for l in B if _Y9[l] < 0)
-        ypos = sum(_Y9[l] for l in B if _Y9[l] > 0)
+        yneg = sum(abs(_Y9[l]) for l in neg_blocks)
+        ypos = sum(_Y9[l] for l in pos_blocks)
         maxchi = max(max(abs(d[l]) for l in B) for d in (ce, ca, cb, cab))
         ceiling = yneg * 4 * maxchi
 
         shortfall = P / abs(Nn) if Nn else mp.inf          # factor the route is short by
-        ceil_ratio = ceiling / P
+        ceil_ratio = ceiling / P if P else mp.inf
         bound_sane = ceiling >= abs(Nn)
         gates_ok = gates_ok and bound_sane
 
         print(f"── {name} ──")
+        print(f"   blocks with y_λ > 0 / y_λ < 0    = {len(pos_blocks)} / {len(neg_blocks)}"
+              f"   (of {len(B)}; noise floor {float(NOISE):.2e})")
         print(f"   P  (positive-weight blocks)      = {float(P):+.6f}")
-        print(f"   N  (negative-weight blocks)      = {float(Nn):+.6f}")
+        if not neg_blocks:
+            print("   N  (negative-weight blocks)      = 0 EXACTLY — there are none.")
+            print("      Convention D caps the tower at two rows (Wenzl level r = 2), and every")
+            print("      λ that carried a negative y_λ under the excised convention C has")
+            print("      ℓ(λ) ≥ 3, hence y_λ = 0.  The residual ~1e-42 below the noise floor is")
+            print("      arithmetic round-off and must NOT be reported as a supply.")
+        else:
+            print(f"   N  (negative-weight blocks)      = {float(Nn):+.6f}")
         print(f"   Δ²g = P + N                      = {float(tot):+.6f}   (door needs < 0)")
-        print(f"   → route is short by a factor of  : {float(shortfall):.1f}×")
-        print(f"   Σ|y_λ| over negative blocks      = {float(yneg):.4e}"
-              f"   ({float(yneg/ypos)*100:.3f}% of the positive mass)")
+        if neg_blocks:
+            print(f"   → route is short by a factor of  : {float(shortfall):.1f}×")
+            print(f"   Σ|y_λ| over negative blocks      = {float(yneg):.4e}"
+                  f"   ({float(yneg/ypos)*100:.3f}% of the positive mass)")
         print(f"   max|χ| over all four words       = {float(maxchi):.4f}")
         print(f"   CEILING on |N| = Σ|y_neg|·4·max|χ| = {float(ceiling):.6f}")
         print(f"   ceiling / P                      = {float(ceil_ratio):.4f}"
@@ -112,6 +150,10 @@ def main() -> int:
         results[name] = {
             "P_positive_weight": mp.nstr(P, 20), "N_negative_weight": mp.nstr(Nn, 20),
             "d2g_total": mp.nstr(tot, 20),
+            "n_positive_blocks": len(pos_blocks),
+            "n_negative_blocks": len(neg_blocks),
+            "y_noise_floor": mp.nstr(NOISE, 10),
+            "negative_blocks_exist": bool(neg_blocks),
             "shortfall_factor": mp.nstr(shortfall, 10),
             "sum_abs_y_negative": mp.nstr(yneg, 20),
             "sum_y_positive": mp.nstr(ypos, 20),
@@ -129,10 +171,20 @@ def main() -> int:
     print("    the unique non-degenerate Markov trace, so y_λ is determined at fixed q --")
     print("    there is no parameter to re-weight. (This corrects #4657, which said the")
     print("    escape was 'not foreclosed'; it was never available.)")
-    print("  * scope-(a): with the weights fixed, the negative-weight blocks currently supply")
-    print(f"    ~1/{float(max(mp.mpf(r['shortfall_factor']) for r in results.values())):.0f}"
-          f" of what the door needs, and even at the crude ceiling they fall short"
-          f" {'in both isotopes' if both_short else 'in neither'}.")
+    any_neg = any(r["negative_blocks_exist"] for r in results.values())
+    if not any_neg:
+        print("  * scope-(a) is MOOT under the canonical trace convention D: there are no")
+        print("    negative-weight blocks at all.  D collapses the Wenzl level to r = 2, so")
+        print("    y_λ = 0 exactly for every λ with three or more rows — which is every λ that")
+        print("    was negative under the excised convention C.  N = 0 identically, so the")
+        print("    negative blocks supply NOTHING, and the earlier '1/7.6e39' phrasing was")
+        print("    round-off dressed as a measurement.  Under C this read as a huge but finite")
+        print("    shortfall; under D the term is simply absent.")
+    else:
+        print("  * scope-(a): with the weights fixed, the negative-weight blocks currently supply")
+        print(f"    ~1/{float(max(mp.mpf(r['shortfall_factor']) for r in results.values())):.0f}"
+              f" of what the door needs, and even at the crude ceiling they fall short"
+              f" {'in both isotopes' if both_short else 'in neither'}.")
     print("  * The ceiling is measured at THIS operator's character scale and does NOT")
     print("    exclude the route for all operators. Do not quote it as a structural bound.")
     print("=" * 88)
@@ -161,9 +213,13 @@ def main() -> int:
     w.set_description(
         "Decomposes Delta^2 g into positive- and negative-weight contributions to quantify "
         "the mu3 door budget. Establishes scope-(b) that the 're-weight the Wedderburn "
-        "weights' escape does not exist (tr_M unique => y_lambda fixed), and scope-(a) that "
-        "at this operator's character scale the negative-weight blocks fall short of the "
-        "door by a large factor even at a crude 4*max|chi| ceiling."
+        "weights' escape does not exist (tr_M unique => y_lambda fixed). Under the canonical "
+        "trace convention D the scope-(a) half is moot: the Wenzl level collapses to r=2, so "
+        "y_lambda = 0 exactly for every partition with three or more rows -- which is every "
+        "partition that was negative under the excised convention C -- hence N = 0 "
+        "identically and there is no negative-weight budget. Weights are classified against "
+        "an explicit noise floor so the ~1e-42 round-off in the zeroed entries is not "
+        "reported as a supply."
     )
     w.save()
     return 0 if gates_ok else 1

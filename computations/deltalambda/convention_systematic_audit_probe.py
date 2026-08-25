@@ -23,9 +23,36 @@ noise, and would need re-reading.  Unlike a new probe, this one can *invalidate*
 than only add to it.  That is the point.
 
 GATES:
-  * the canonical combination (proton + |χ| + bring_color_weighted) must reproduce the
-    committed #4404 baseline, otherwise the factorial is not anchored to the real result;
-  * all 8 cells must evaluate — a crash in any cell invalidates the spread.
+  * all 8 cells must evaluate — a crash in any cell invalidates the spread;
+  * the sign of Δ²g must be reported as measured, whatever it is.
+
+  The #4404 numeric reproduction is deliberately NOT a gate: see the convention note
+  on `EXPECT_C` below.
+
+MEASURED ANSWER (convention D, canonical since the owner ruling of 2026-08-15).
+The combined spread over all eight cells is **0.01 %**, and all of it is the p–n
+crossing convention:
+
+    q0_anchor     0.0000 %      (proton vs muon: 11.5 ppb in, ~2e-7 out)
+    trace_object  0.0000 %      (|χ| vs signed χ — see below)
+    pn_crossing   0.0146 %      (bring_color_weighted vs strict_averaged)
+
+**The trace-object choice contributes exactly zero, and that is a consequence of
+convention D rather than a coincidence.**  Under D the Wenzl level relation
+collapses to r = 2 (`wenzlLevel_conventionD`) and `y_λ = 0 ⟺ ℓ(λ) > r`
+(`schurPrincipal_eq_zero_iff`, sorry-free, all n and all r), so every partition with
+three or more rows carries y_λ = 0 — 25 of the 30 partitions of 9.  Both are already
+established on main; `two_row_support_recount.py` measures what the truncation removes.
+The ten partitions whose weights were *negative* under convention C are all inside
+that zeroed set, so |χ| and signed χ now agree term by term.
+
+Under the excised convention C the same probe measured a **7.7 %** spread (T; 5.5 %
+for ³He), entirely from that |χ|-vs-signed choice.  That number is a
+convention-C artifact and must not be quoted as a systematic on current main.
+
+So the arc's undeclared systematic floor from these three choices is ~0.01 %, not
+percent-level.  This narrows rather than widens the alarm — but see the caveat: two
+further convention choices are not varied here, so 0.01 % is a LOWER bound.
 
 Reports the spread whatever it is.  Nothing fitted, nothing wired.
 """
@@ -44,19 +71,26 @@ import pyhecke_native  # noqa: E402
 
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from schur_principal_mpmath import y_lambda_at_q0_mpmath  # noqa: E402
-from q_parameter import Q as Q0  # noqa: E402
+from q_parameter import Q_MP as Q0_MP  # noqa: E402 — the mpf, NOT the float64 `Q`
 from codata_constants import M_E_MEV  # noqa: E402
 from _precision import set_compute_dps  # noqa: E402
 from witness_base import WitnessBuilder  # noqa: E402
 
 set_compute_dps(40)
 
-Q_PROTON = mp.mpf(str(Q0))
+Q_PROTON = Q0_MP
 Q_MUON = mp.mpf("1.10997859555733471989976322048322502665620840878015405145269")
 ANCHORS = {"proton": Q_PROTON, "muon": Q_MUON}
 TRACES = {"abs": abs, "signed": (lambda z: z)}
 PNCONV = ["bring_color_weighted", "strict_averaged"]
-EXPECT = {"T": -1.769, "3He": -1.405}          # committed #4404 baseline (|chi|, proton-ish)
+# The #4404 committed baseline.  It was computed under trace convention **C**
+# (z = 1/(√q + 1/√q)), which the owner ruling of 2026-08-15 excised.  Under the
+# canonical convention **D** (z = q³/(q²+1)) the Wenzl level collapses to r = 2,
+# so `schur_principal_mpmath` is the SU(2) two-row specialisation and every y_λ
+# with ℓ(λ) ≥ 3 is exactly 0 — 25 of the 30 partitions of 9.  These values are
+# therefore NOT reproducible on current main, and are kept as history, not as a
+# gate.  See the C-vs-D block in the RESULT section below.
+EXPECT_C = {"T": mp.mpf("-1.769"), "3He": mp.mpf("-1.405")}   # #4404 baseline, CONVENTION C
 CANON = ("proton", "abs", "bring_color_weighted")
 
 
@@ -93,7 +127,7 @@ def main() -> int:
     print("   p–n crossing : bring_color_weighted (canonical) | strict_averaged")
 
     ycache = {k: y_lambda_at_q0_mpmath(9, v) for k, v in ANCHORS.items()}
-    results, gates_ok, canon_vals = {}, True, {}
+    results, gates_ok, canon_vals, spreads = {}, True, {}, {}
 
     for name, (Z, N) in {"T": (1, 2), "3He": (2, 1)}.items():
         cells = {}
@@ -110,22 +144,27 @@ def main() -> int:
             if (anchor, trace, pnconv) == CANON:
                 canon_vals[name] = cl3
 
-        vals = [float(mp.mpf(c["cl3_MeV"])) for c in cells.values()]
+        # NO-FLOAT64: every quantity below is carried as mpmath.mpf end to end;
+        # float() appears only inside f-strings, for display.
+        vals = [mp.mpf(c["cl3_MeV"]) for c in cells.values()]
         lo, hi = min(vals), max(vals)
-        canon_f = float(canon_vals[name])
-        spread = (hi - lo) / abs(canon_f)
+        canon_m = canon_vals[name]
+        spread = (hi - lo) / abs(canon_m)
         signs = {c["submodular"] for c in cells.values()}
-        base_ok = abs(float(canon_vals[name]) - EXPECT[name]) < 0.01
-        gates_ok = gates_ok and base_ok and len(vals) == 8
+        # NOT a gate: the #4404 value is convention C, this run is convention D.
+        delta_C = canon_m - EXPECT_C[name]
+        gates_ok = gates_ok and len(vals) == 8
 
-        print(f"   canonical cl₃ = {canon_f:+.4f}  vs committed #4404"
-              f" {EXPECT[name]:+.3f}  → gate {'OK' if base_ok else 'FAIL'}")
-        print(f"   SPREAD across all 8 conventions: [{lo:+.4f}, {hi:+.4f}]"
-              f"  = {spread*100:.2f}% of canonical")
+        print(f"   canonical cl₃ = {float(canon_m):+.4f}  (convention D)"
+              f"   vs #4404 convention-C {float(EXPECT_C[name]):+.3f}"
+              f"   Δ = {float(delta_C):+.4f}"
+              f" ({float(delta_C / EXPECT_C[name])*100:+.1f}%)")
+        print(f"   SPREAD across all 8 conventions: [{float(lo):+.4f}, {float(hi):+.4f}]"
+              f"  = {float(spread)*100:.2f}% of canonical")
         print(f"   sign (door verdict) constant across conventions: {len(signs) == 1}")
         # marginal effect of each factor, holding the other two at canonical
         def cell(a, t, pn):
-            return float(mp.mpf(cells[f"{a}|{t}|{pn}"]["cl3_MeV"]))
+            return mp.mpf(cells[f"{a}|{t}|{pn}"]["cl3_MeV"])
         base = cell(*CANON)
         marg = {
             "q0_anchor": abs(cell("muon", "abs", "bring_color_weighted") - base) / abs(base),
@@ -134,38 +173,42 @@ def main() -> int:
         }
         print("   marginal effect of each choice (others held canonical):")
         for k, v in sorted(marg.items(), key=lambda kv: -kv[1]):
-            print(f"      {k:<14} {v*100:>10.4f}%")
-        results[name] = {"cells": cells, "marginal_effects": marg,
+            print(f"      {k:<14} {float(v)*100:>10.4f}%")
+        spreads[name] = spread
+        results[name] = {"cells": cells,
+                         "marginal_effects": {k: mp.nstr(v, 20)
+                                              for k, v in marg.items()},
                          "canonical_cl3_MeV": mp.nstr(canon_vals[name], 20),
-                         "spread_abs_MeV": hi - lo,
-                         "spread_rel_to_canonical": spread,
+                         "spread_abs_MeV": mp.nstr(hi - lo, 20),
+                         "spread_rel_to_canonical": mp.nstr(spread, 20),
                          "sign_invariant": bool(len(signs) == 1),
-                         "baseline_gate_ok": bool(base_ok)}
+                         "convention_C_4404_baseline_MeV": mp.nstr(EXPECT_C[name], 20),
+                         "delta_vs_convention_C_MeV": mp.nstr(delta_C, 20)}
 
-    worst = max(r["spread_rel_to_canonical"] for r in results.values())
+    worst = max(spreads.values())
     sign_ok = all(r["sign_invariant"] for r in results.values())
 
     print("\n" + "=" * 94)
     print(" RESULT")
-    print(f"  * Largest convention spread on cl₃: {worst*100:.2f}% of the canonical value.")
+    print(f"  * Largest convention spread on cl₃: {float(worst)*100:.2f}% of the canonical value.")
     print(f"  * The SIGN (hence the μ₃ door verdict) is convention-invariant: {sign_ok}.")
     print("")
     print(f"  => Every MAGNITUDE claim in the A=3 arc carries an undeclared systematic floor")
-    print(f"     of ~{worst*100:.0f}%. Any past near-match or refutation at or below that level")
-    print(f"     is not resolved by the data — it must be re-read against this floor.")
+    print(f"     of ~{float(worst)*100:.4f}% from THESE THREE choices. Under the excised convention C")
+    print(f"     the same probe measured 7.7% — that figure is a C artifact (see module docstring).")
     print(f"  => Every SIGN claim is safe: the exclusions, the sign rule, and the door verdict")
     print(f"     do not move.")
     print("=" * 94)
 
     w = WitnessBuilder("convention-systematic-audit", engine="pyhecke_native",
                        output_dir=Path(__file__).resolve().parent)
-    w.add_assertion("all_8_cells_and_baseline_gate", 1 if gates_ok else 0, 1)
+    w.add_assertion("all_8_cells_evaluate", 1 if gates_ok else 0, 1)
     w.add_assertion("sign_invariant_across_conventions", 1 if sign_ok else 0, 1)
     w.add_parameter("q0_proton", mp.nstr(Q_PROTON, 30))
     w.add_parameter("q0_muon", mp.nstr(Q_MUON, 30))
     w.add_parameter("canonical_combination", "|".join(CANON))
     w.add_data("results", results)
-    w.add_data("worst_relative_spread", worst)
+    w.add_data("worst_relative_spread", mp.nstr(worst, 20))
     w.add_caveat(
         "This measures only THREE of the live convention choices -- the ones exposed as "
         "parameters in the A=3 path. At least two more exist and are NOT varied here: the "
@@ -177,9 +220,14 @@ def main() -> int:
     w.set_description(
         "Full 2x2x2 factorial over three underived convention choices (q0 anchor, trace "
         "object, p-n crossing) measuring their combined effect on Delta^2 g and the A=3 "
-        "cluster coefficient cl_3. Establishes the undeclared systematic floor on every "
-        "magnitude claim in the arc, and confirms that sign claims are convention-invariant. "
-        "Gated on the canonical cell reproducing the committed #4404 baseline."
+        "cluster coefficient cl_3. Under the canonical trace convention D the combined "
+        "floor is 0.0146%, ALL of it the p-n crossing: the q0 anchor and the |chi|-vs-signed "
+        "trace object each contribute 0. The trace-object zero is structural under D -- the "
+        "Wenzl level collapses to r=2, so every partition with three or more rows carries "
+        "y_lambda = 0 and |chi| is a no-op. The 7.7% spread this probe measured under the "
+        "excised convention C was that same choice, and is a C artifact. Sign claims are "
+        "convention-invariant. The #4404 baseline is convention C, is recorded as history "
+        "with its delta, and is deliberately NOT a gate."
     )
     w.save()
     return 0 if gates_ok else 1
