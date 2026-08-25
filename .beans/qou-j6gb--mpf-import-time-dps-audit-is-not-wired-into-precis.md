@@ -813,3 +813,84 @@ directive "PROBES ARE NOT EXEMPT ... Never compute in `float`", and
 "no precision needed" / "structural" is the exact reasoning that directive
 names and bans. The fifth (`sigma1cubed-seifert-surface-term`, 1 field,
 2026-08-02) carries no `scriptFile` and needs separate handling.
+
+
+## DRAINED — the raw-float64 ratchet is GREEN, and both trunk reds are now closed
+
+All five, fixed AT THE PRODUCER (no baseline widening, no hand-edited numbers).
+96 raw float64 fields removed; corpus total 258,420 -> 258,324.
+
+    raw-float64 ratchet   NEW 5 -> 0, REGRESSED 0, exit 1 -> 0
+    precision-gates.sh    "All blocking precision gates green", exit 0
+
+Three of the five were self-contained (`math` only) and ported directly. The
+other two were not, and neither obstruction was visible from the witness:
+
+**The deuteron witness (42 fields, 44% of the total) was blocked at LIBRARY
+level.** `hecke_characters.build_seminormal_matrices` coerces its argument
+(`q_local = float(q)`), so an `mpf` handed to it is silently downcast; it
+computes the axial-distance entries in float; it reaches for `mp.sqrt` and then
+throws the precision away (`b = float(mp.sqrt(...))`); and it returns
+`np.zeros`. **64 live callers**, so converting it in place moves numbers
+corpus-wide. Resolved by adding `build_seminormal_matrices_mp` ALONGSIDE it --
+nothing existing modified, no current caller changed, and the other 63 can adopt
+it as they drain. Verified against the float64 builder at the muon q0 across all
+11 partitions of 6: max deviation 4.441e-16, i.e. 2 ulp.
+
+**The fifth was a false precision finding.** `sigma1cubed`'s single float was
+`elapsed_sec` -- wall-clock timing, already listed in qou_substrate's
+`_EPHEMERAL_META_FIELDS`, whose comment states "the masked names are reserved
+for runtime-metadata semantics". Serialized as a string (the mask strips by
+name, so this is inert). The class fix -- teaching the audit to skip
+`_EPHEMERAL_META_FIELDS` -- is left for the owner: exactly 4 witnesses
+corpus-wide carry `elapsed_sec` and all 4 are raw floats, but widening a gate to
+turn a red green is the move AGENTS.md bans, so it is not mine to take.
+
+### Two things the exact route revealed that float64 had hidden
+
+1. **`q = 1 + 1e-7` was a finite-difference stand-in for the q->1 limit**, worth
+   ~1e-9 in the reported `dF_q`. The limit is elementary (`a -> 1/rho`,
+   `b^2 -> 1 - 1/rho^2`: Young's classical seminormal form), so it is now exact.
+   Confirmation the port is otherwise faithful: every q0-only quantity is
+   unchanged to 1e-16, and ONLY the q=1-referencing ones moved.
+
+2. **`dFq_scales_as_h_squared` was a hardcoded `True`**, annotated
+   "~1.77 h^4 (measured, constant ratio)". Neither half was measured. Now
+   computed, and sharper than the claim it replaced:
+
+       lim_{q->1} ||dF_q||^2 / h^4  =  4k/9  EXACTLY,  k in {0,1,2,3,4}
+
+   verified to 22 digits, conjugation-symmetric ((5,1)<->(2,1^4) both 4/9,
+   (3,2,1) alone 16/9). The ratio is NOT constant -- at q0 it spans
+   0.4355..1.7506 -- and "1.77" is 16/9, the LIMIT for (3,2,1) alone, i.e. the
+   maximum over partitions rather than a q0 value. The h^2 conclusion stands and
+   is now evidence rather than assertion.
+
+### One defect I introduced and caught myself
+
+Serializing `Q0` through `fmt()` rendered the 17-digit literal as
+`1.10997859555733470000...` (59 digits) and `q0_value_drift_audit` classified it
+`canonical`. The muon anchor is `1.10997859555733471989976...`, so those
+appended digits are not merely fabricated -- they are **wrong from digit 18**. I
+had added the very fake-precision class this drain removes. Fixed by recording
+input literals verbatim; every computed value is byte-identical.
+
+NOT fixed by upgrading Q0 to the anchor's full 68 digits, which was my first
+instinct: `witness.py::_q0_value_for_anchor` documents that exact change being
+made and REVERTED the same day, because `q0Value` must record what the producer
+actually computed with. Worth noting the padding ratchet keys on float64 and
+this was a string, so nothing but the drift audit would have caught it.
+
+### For whoever runs the gate next: main's audit witnesses are stale, not yours
+
+A gate run rewrites three of them
+(`q0-anchor-consistency`, `witness-provenance`, `q0-value-drift`) and the gate
+tells you to check whether the movement is yours. On this branch it is **not**:
+`total_scanned` moves 2739 -> 2758, i.e. +19 witnesses, while the branch adds
+**zero** witness files and modifies exactly 5. Nineteen witnesses landed on main
+without the audits being regenerated. They are deliberately NOT committed here
+-- doing so would fold main's staleness into an unrelated drain and, in a
+container without scipy/sympy/clarabel, would also record a degraded environment
+block as corpus provenance (measured: those three are DROPPED and mpmath is
+downgraded 1.3.0 -> 1.4.1). I did not attribute each count individually; only
+established that the bulk cannot be this branch's.
