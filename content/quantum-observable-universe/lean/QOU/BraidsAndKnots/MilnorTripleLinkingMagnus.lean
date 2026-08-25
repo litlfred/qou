@@ -20,8 +20,17 @@ The corpus did **not** have one. It has
 **two**-component carrier `T(2,2k)`, where a triple linking number is `0` by
 definition — and `KnotTheory/Vassiliev/MilnorVassilievBridge.lean`, which is
 honest conjecture classes. Neither computes anything for three components. This
-file supplies the computation, and it is the corpus's first **nonzero** triple
-linking value.
+file supplies the computation **in Lean**.
+
+> **Correction (same day).** This paragraph first said the file supplies "the
+> corpus's first **nonzero** triple linking value". **It does not, and that is
+> withdrawn.** `computations/binding_mn_milnor_linking.py` already computes
+> `μ̄₁₂₃ = +1` on the Borromean link by this same Magnus method, and validates
+> it against a Hopf and a 3-chain control. This file is a **Lean port** of
+> committed Python, not a discovery. It was written without grepping
+> `computations/` — AGENTS.md corpus-grep path 3, whose stated purpose is
+> exactly that. See
+> `docs/audits/2026-08-25-4b-corrections-duplication-and-two-fronts.md`.
 
 ## What is computed
 
@@ -130,8 +139,9 @@ by an entirely different route — and it is exactly the hypothesis under which
 theorem magnus_commutator :
     magnus borromeanLongitude = ⟨1, 0, 0, 0, 1, -1, 0⟩ := by decide
 
-/-- **`μ̄₁₂₃ = 1` on the Borromean braid** — the corpus's first nonzero triple
-linking value, and the invariant the pairwise prune leaves standing. -/
+/-- **`μ̄₁₂₃ = 1` on the Borromean braid** — the invariant the pairwise prune
+leaves standing. (Not a new value: `binding_mn_milnor_linking.py` already
+computes it. This is the Lean port.) -/
 theorem mubar_borromean_eq_one : mubar123 borromeanLongitude = 1 := by decide
 
 /-- `μ̄₁₂₃ = 0` on the unlink, so the invariant separates the two links that

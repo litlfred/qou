@@ -5,8 +5,16 @@
 
 ## What 4-B needs
 
-The two-like-charge EM-linking invariant gates **two** fronts at once: the
-`m_d − m_u` extraction and 69 % of the ³He mirror residual. Stage-1 scoping is
+The two-like-charge EM-linking invariant was recorded as gating **two** fronts
+at once: the `m_d − m_u` extraction and 69 % of the ³He mirror residual.
+
+> **🛑 That framing is wrong — see
+> [`2026-08-25-4b-corrections-duplication-and-two-fronts.md`](2026-08-25-4b-corrections-duplication-and-two-fronts.md).**
+> The two fronts are different objects (two up **quarks** inside a nucleon vs
+> the two **protons** of ³He), and the S₃ probe's (A1) *derives* that the
+> intra-nucleon self-energy cancels identically in binding energy — which is
+> what the mirror split measures. The 69 % is unsourced. This file repeated the
+> claim uncritically; the Lean below is unaffected. Stage-1 scoping is
 committed
 ([`quark-mass-extraction-stage1.witness.json`](../computations/quark-mass-extraction-stage1.witness.json)):
 
@@ -124,7 +132,7 @@ carrier.
    | declaration | statement |
    |---|---|
    | `magnus_commutator` | the degree-2 expansion of `[x₁,x₂]` is `1 + X₁X₂ − X₂X₁` |
-   | `mubar_borromean_eq_one` | **`μ̄₁₂₃ = 1`** on the Borromean braid — the corpus's first nonzero triple linking value |
+   | `mubar_borromean_eq_one` | **`μ̄₁₂₃ = 1`** on the Borromean braid (a Lean port — `binding_mn_milnor_linking.py` already had this value; see the corrections audit) |
    | `mubar_unlink_eq_zero` | `μ̄₁₂₃ = 0` on the unlink |
    | `mubar_separates_borromean_from_unlink` | the invariant separates what pairwise linking could not |
    | `noncommutator_degree_one_nonzero` | control on the well-definedness hypothesis |
