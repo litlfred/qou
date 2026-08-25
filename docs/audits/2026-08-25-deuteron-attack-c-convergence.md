@@ -234,3 +234,106 @@ non-integer structure, it says no *principled small* one works. The topology-vac
 ordering-vacuity results are **combinatorial facts about A = 2**, not claims about A ≥ 3,
 where the chain-vs-complete-graph question is live and contested. The parity fact is
 structural (`μ₊ + μ₋ = 1`), the backwards-assignment is quoted from `qou-kj4v`.
+
+---
+
+# RETRACTION + the real gap — `B = −α·ln|tr_M|` IS derived, conditionally
+
+Owner: *"Derive or retract the functional form."* The answer is **derive** — and that
+means **retracting my own "posited" finding from earlier in this same document.**
+
+## Retraction
+
+Above I wrote that `B = −α·ln|tr_M|` is *"posited"*, on the strength of a five-path grep
+that found no derivation, nothing in Lean, and only a notation-table row. **That grep was
+looking for the wrong string.** The derivation exists; it is spelled in terms of `Vol`,
+not in terms of `B_sym`, so a grep keyed on the binding symbol could not see it. Same
+class of error as the arity conflation AGENTS.md warns about: I searched the topic and
+not the claim.
+
+## The chain, and it is complete
+
+| step | statement | where |
+|---|---|---|
+| 1 | `Vol_alg(W) := tr_M(W)` — the **algebraic quantum volume IS the Markov trace** | [`algebraic-quantum-volume.md:6`](../content/quantum-observable-universe/mass-theory/algebraic-quantum-volume.md) (a **definition**) |
+| 2 | `τ_arch` *"projects categorical data into physical spacetime by **taking the absolute logarithm of the algebraic quantum volume**"* | [`archimedean-functor-uniqueness-context.md:45`](../content/quantum-observable-universe/mass-theory/archimedean-functor-uniqueness-context.md) |
+| 3 | `Vol(K_β) = τ_arch(Vol_q(β))`, *"there is no other archimedean route"* | [`vol-through-tau.md`](../content/quantum-observable-universe/mass-theory/vol-through-tau.md) — **Proposition conditional on `conj:kashaev-volume-conjecture`**, Lean `vol_through_tau_of_volumeConjecture` |
+| 4 | *"Evaluate at `q = q₀` and take `ln|·|`"* | [`mass-table-z1-20.md:15`](../content/quantum-observable-universe/mass-theory/mass-table-z1-20.md) |
+
+Compose 1–4: `Vol(K) = ln|tr_M(K)|`, so `−α·ln|tr_M|` is `−α·Vol`. **The form is
+derived.** My "posited" verdict is withdrawn.
+
+## But three things are wrong with it, and one is new and exact
+
+### (a) It is conditional-proved, not established
+Step 3 is *conditional on* `conj:kashaev-volume-conjecture`, which the corpus's own block
+says is **"open in general (proved only for specific families: the figure-eight knot,
+certain torus and pretzel knots)"**. Per AGENTS.md §"conditional-proved ≠
+premise-established", every binding number is therefore **KVC-conditional** and should be
+stated that way. The dashboard tags `B_sym` `DERIVED` with no conditionality marker.
+
+### (b) The regime the conjecture licenses is not the regime the framework uses
+KVC as the corpus states it ([`kashaev-volume-conjecture.md:8-18`](../content/quantum-observable-universe/mass-theory/kashaev-volume-conjecture.md)):
+
+$$\mathrm{Vol}_{\mathrm{hyp}}(S^3\setminus K) \;=\; 2\pi \lim_{N\to\infty} \frac{\log\lvert J_N(K)\rvert}{N}, \qquad J_N(K)\big\vert_{q=\exp(2\pi i/N)}$$
+
+Three ingredients, none of which the framework supplies:
+
+| KVC needs | framework has |
+|---|---|
+| `N → ∞` | a **fixed finite** braid, `n = 3A` strands |
+| `q = exp(2πi/N)` — a **root of unity**, `\|q\| = 1` | `q₀ ≈ 1.10998` — **real and > 1** |
+| prefactor `2π/N` | `α = E₀` |
+
+And the real-`q₀` choice is not incidental — AGENTS.md's own §"Im(q) at fibre vs
+observable level" records `Im(q₀) = 0` as an **archimedean requirement** for real masses.
+So the framework evaluates precisely where the conjecture's asymptotics do not apply.
+`vol-through-tau.md` bridges this by *asserting* that the realization functor's
+computation rule "evaluates `τ_arch` … as exactly the Kashaev limit" — the regime bridge
+is **inside the identification**, not derived from it.
+
+### (c) NEW, MEASURED, EXACT — the prefactor does not match the mass formula
+
+The framework's mass shape is `m(K) = m_e·Vol(K)·ρ(K)/ℏ_q²` (AGENTS.md, the standing
+purge banner). A binding is a difference of masses, so with a common `ρ` its prefactor
+should be `m_e·ρ/ℏ_q²`. Measured at 50 dps, proton pin:
+
+```
+alpha = E0 = m_e/(q0*(q0-1))       =  4.18598136329 MeV   <- what every B_ form uses
+mass-formula prefactor m_e/hbar_q^2 = 52.0514663819 MeV   <- what m = m_e*Vol*rho/hbar_q^2 implies
+
+ratio                               = 12.4347104931
+closed form q0^3/(q0-1)             = 12.4347104931
+difference                          = -1.28e-49      (exact)
+```
+
+**The two prefactors differ by exactly `q₀³/(q₀−1) = 12.4347104931`.** Reconciling them
+would require `ρ = (q₀−1)/q₀³ ≈ 0.0804` for every nucleus. **I am not claiming that is
+`ρ`** — asserting it because it closes the gap is the CAL-4 antipattern. I am recording
+that the binding forms and the mass formula use prefactors that differ by an exact,
+q₀-only factor, and that nothing in the corpus reconciles them.
+
+This is the quantitative content of the 2026-08-09 audit's gap 4 — *"the binding formula
+reuses `E₀` with a different dimensionless multiplier … and nothing validates `E₀` at
+that scale"* — reached from the opposite direction. That audit found α unvalidated; this
+finds **what it is off by, exactly, and against what**.
+
+## Consequences
+
+1. **Do not call the binding forms "posited"** — that was my error. Call them
+   **KVC-conditional**.
+2. **Do tag them conditional.** `B_sym` / `B_qCLT_fac` are `DERIVED` in the dashboard's
+   provenance table with no marker; they should carry one, as `E_C` now does for its own
+   open `sorry`.
+3. **The prefactor discrepancy is a live, exact, unexplained factor of 12.4347104931**
+   between two forms the framework uses side by side. It is the single most concrete
+   unresolved item this session found on the binding leg — `qou-2pnv`.
+4. **The dead `standard-part-functor.md` citation stands as a defect** independently of
+   all this: the dashboard cites it for the form definitions and it does not contain
+   them. The right citation is `algebraic-quantum-volume.md` + `vol-through-tau.md`.
+
+## Scope
+(a)/(b) are readings of blocks quoted verbatim. (c) is a measurement, exact to 1e-49, and
+is a statement that **two prefactors differ**, not a claim about which is right. Nothing
+here is a refutation of the binding forms: a KVC-conditional derivation is a legitimate
+object, and the framework is entitled to it — provided it says so.

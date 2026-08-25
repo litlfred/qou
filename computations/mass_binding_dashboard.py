@@ -6,7 +6,11 @@ is evaluated from the ONE canonical Jones–Markov transfer trace (`tr_m_atom_zn
 the fine-Bratteli path); B_AME comes from the vendored AME2020 table
 (`data/ame2020.json`). This is the multi-isotope view of the single-pipeline
 probe `binding_single_pipeline_comparison.py` (PR #2320); see the appendix
-`standard-part-functor.md` for the form definitions.
+`algebraic-quantum-volume.md` (Vol_alg := tr_M) + `vol-through-tau.md`
+(Vol = tau_arch(Vol_q), CONDITIONAL on conj:kashaev-volume-conjecture) for the
+form definitions. NOT `standard-part-functor.md` -- corrected 2026-08-25, that
+block defines the standard-part map st: No_fin -> R and the functor St, and
+contains no B_ form, no alpha and no binding.
 
 Feasibility: `B_sym` is the EXACT log-ratio binding, but it no longer needs the
 full per-knot trace `tr_M(W_atom)` (whose partition sum p(3A) explodes — ¹²C
@@ -666,6 +670,9 @@ def _print_provenance() -> None:
           "(AME2020), m_e (CODATA). Not predicted by anything here. |")
     print("| `CAL`       | one of the three calibrations: m_e (CAL-1), q₀ via "
           "CAL-2, m_π (CAL-3). Inputs BY CONSTRUCTION — not successes. |")
+    print("| `DERIVED*`  | as DERIVED, but CONDITIONAL on an open conjecture or "
+          "sorry: the B-forms on conj:kashaev-volume-conjecture (open in "
+          "general), E_C on the Witten-κ Gram-determinant sorry. 2026-08-25. |")
     print("| `DERIVED`   | parameter-free from (q₀, m_e) through the Markov "
           "trace: B_sym, B_qCLT_fac, m_can, F_Bor. No fit, no "
           "AME beyond the comparison. |")
@@ -677,8 +684,11 @@ def _print_provenance() -> None:
     for col, tag, note in (
         ("B_AME / M_meas / σ_exp", "MEASURED", "AME2020 — the target"),
         ("m_e, q₀, m_π", "CAL", "the 3 calibrations; q₀ on the PROTON pin"),
-        ("B_sym", "DERIVED", "exact log-ratio α·ln(tr_free/tr_atom)"),
-        ("B_qCLT_fac", "DERIVED", "colour-weighted q-CLT (A→∞ approximation)"),
+        ("B_sym", "DERIVED*", "exact log-ratio α·ln(tr_free/tr_atom) — "
+         "*KVC-CONDITIONAL: ln abs(tr_M) IS Vol only via vol-through-tau, a "
+         "proposition conditional on the OPEN conj:kashaev-volume-conjecture"),
+        ("B_qCLT_fac", "DERIVED*", "colour-weighted q-CLT (A→∞ approximation) — "
+         "*KVC-conditional, same route as B_sym"),
         ("m_can", "DERIVED", "Borromean brane tower; m_n is a PREDICTION"),
         ("E_C", "DERIVED*", "uniform-sphere Coulomb at the CAL-3 length "
          "R = λ̄_π·A^(1/3), λ̄_π = ℏc/m_π = 1.41382 fm (NOT the empirical "
@@ -1113,7 +1123,8 @@ def main(argv=None) -> int:
     print("\n  Forms: B_sym=α·ln(tr_free/tr_atom)=α[(Z−1)L_pp+L_pn+(N−1)L_nn] "
           "(exact linear chain, all A) · B_qCLT=α·(A−1)·ℓ̄(D) · "
           "B_qCLT_fac=α·(A−1)·⟨bond-type L⟩. "
-          "Defn: standard-part-functor.md.")
+          "Defn: algebraic-quantum-volume.md + vol-through-tau.md "
+          "(KVC-conditional).")
     _out = sys.stdout.getvalue()
     sys.stdout = _old_stdout
     print(format_md_tables(_out), end="")
