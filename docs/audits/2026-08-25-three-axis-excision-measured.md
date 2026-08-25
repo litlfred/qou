@@ -103,3 +103,69 @@ which R3 permits:
 `closed_form_tau_M.py` and `mass_at_3A_proper.py` carry `strict_averaged` only
 inside a `if pn_convention == ...` **dispatch branch** — that is the alternative
 being *implemented*, not selected, and is not a defect.
+
+## Axis A — drained
+
+Four of the five were real and are fixed at the producer. The fifth was not a
+defect.
+
+| witness | fields | what it actually was |
+|---|---|---|
+| `deuteron-interface-handle-curvature` | 42 | float64 **by allocation** — built via `hecke_characters.build_seminormal_matrices`, which resolves `q` through `float(q)`, then cast to numpy `dtype=complex` |
+| `birkhoff-barodd-pythagoras-bridge` | 28 | Python `1j` complex arithmetic — the class the ratchet's own guard misses (`qou-f64j`) |
+| `a3-branching-asymmetry-vs-required` | 21 | `math.log` / `math.sqrt` / `math.atanh` on float literals |
+| `yekutieli-trefoil-surface2form-discretization` | 4 | `math.sqrt` on float matrix literals |
+| `sigma1cubed-seifert-surface-term` | 1 | **false positive** — see below |
+
+All four also hardcoded `Q0 = 1.1099785955573347`, which is the **muon** value
+(proton is `...5827513808`); one of them, `birkhoff`, labelled that literal
+`# proton-pinned substrate modulus`. All four now take the pin from `q_at()`.
+
+Three findings came out of the rewrites that are worth more than the drain:
+
+1. **A symbol collision in `birkhoff`.** `H_LIT = 0.10997859555733469` was
+   commented as "the `h` reading", but it is `q − 1`, not the `h = q − q⁻¹`
+   defined on the line directly above it (0.10998 vs 0.20906, a factor of ~1.9).
+   Two different quantities named `h` in one file. The longitudinal scan now
+   tests **both**, so the negative it reports is stronger: 0 of 6 readings land
+   `r*`, where before it was 0 of 4 with the ambiguity unresolved.
+
+2. **A wrong claim in `deuteron`, pre-existing.** The witness carried
+   `dFq_scales_as_h_squared: True` with the coefficient quoted in a side comment
+   as *"1.77 (measured, constant ratio)"*. The ratio is **not** constant across
+   partitions — that same witness's own rows run 0.435 to 1.751, a factor of 4,
+   and 1.77 is the `(3,2,1)` block alone. The `h²` claim is nonetheless **true**
+   in its correct reading, which is per-λ `h`-dependence rather than constancy
+   across λ, so it is now *derived* that way: the fitted exponent of `‖dF_q‖²`
+   in `h` is 4 to within 8e-5 for all nine non-singlet blocks. The two facts are
+   now separate witness fields instead of one conflated boolean.
+
+3. **A structure the old arithmetic could not see.** The `q → 1` limiting
+   coefficients of `‖dF_q‖²/h⁴` read as exact ninths — 4/9, 8/9, 12/9, 16/9
+   across the eleven H₆ blocks. Recorded as an *observation*, not a derivation.
+   Under binary64 the `q → 1` offset had to be `1e-7` (the seminormal diagonal
+   is 0/0 at `q = 1` and both parts are O(ε), so a smaller offset was destroyed
+   by cancellation), which capped the limit at ~6 figures: 16/9 read as 1.7506.
+
+Supporting change: [`young_seminormal.seminormal_sigma_symmetric`](../../computations/young_seminormal.py)
+— the symmetric-gauge mpmath counterpart of the float64 builder, verified
+entry-for-entry against it on (3,1), (2,2), (3,2,1), (4,2). The symmetric gauge
+is required rather than incidental: the deuteron probe reports **Frobenius
+norms**, which are not gauge-invariant, so the module's existing
+non-symmetric `seminormal_sigma` would have silently shifted every magnitude.
+
+### The fifth is a detector false positive
+
+`sigma1cubed-seifert-surface-term`'s single raw float64 is
+`elapsed_sec: 0.001` — a **wall-clock timing**, written by the producer as
+`round(time.perf_counter() - t0, 3)`. It is not a mathematical quantity and has
+no precision content, so there is nothing to carry as `mpf` and nothing to fix.
+
+It is not baselined either. The audit carries three documented carve-outs
+(LP-dual, float64-integrator, deprecated-f64), each counted and reported, but
+has no notion of a diagnostic/wall-clock field. 31 witnesses in `computations/`
+carry an `elapsed_sec`; this is the one whose value did not happen to round to
+an integer, which is the only reason it surfaced. So the headline "5 NEW dirty
+witnesses" is really **4 defects and 1 false positive**. Tracked as its own bug
+rather than fixed here — converting 31 producers, or adding a fourth carve-out,
+is a wider decision than this drain.
