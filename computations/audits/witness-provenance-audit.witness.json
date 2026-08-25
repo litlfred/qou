@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T16:29:32.715123+00:00",
-  "commitSha": "8ce76190cd41f8a7825ea293f43d1df2734a9003",
+  "computedAt": "2026-08-25T07:08:20.095565+00:00",
+  "commitSha": "d2ed0442844c166f01d646508b2b9e0082a8854f",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -18,7 +18,7 @@
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
-  "scriptCommitSha": "fed69b1c4dc67a1d1651079a705c16bccad28084",
+  "scriptCommitSha": "797db0ebf7ca818e095cd9a9585ebd06063987f0",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -27,10 +27,13 @@
   },
   "environment": {
     "python": "3.11.15",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
     "sympy": "1.14.0",
     "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
-    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
+    "clarabel": "0.11.1",
+    "pyhecke_native_build": "b843d058d29dcec6"
   },
   "invocation": {
     "argv": [
@@ -55,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2758,
-      "prov_ok": 2337,
-      "prov_audit_exempt": 80,
-      "prov_exempt_no_reader": 243,
+      "total_scanned": 2739,
+      "prov_ok": 2324,
+      "prov_audit_exempt": 79,
+      "prov_exempt_no_reader": 238,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 95,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965554749818709209572153734590282813633067440174039158810732"
+      "completeness_ratio": "0.965315808689302665206279664110989412194231471339905074844834"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -716,10 +719,6 @@
         },
         {
           "witness": "audit-lean-uniqueness-ref-wiring.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "codata-2022-downstream-staleness.witness.json",
           "missing_fields": []
         },
         {
@@ -2543,10 +2542,6 @@
           "missing_fields": []
         },
         {
-          "witness": "mu3-door-budget.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "mu3-frechet-perblock.witness.json",
           "missing_fields": []
         },
@@ -2696,10 +2691,6 @@
         },
         {
           "witness": "wlambda-covariance-epic-A2-polynomial-positivity.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "wlambda-covariance-epic-A3-transfer-bound-extension.witness.json",
           "missing_fields": []
         },
         {
@@ -5051,14 +5042,6 @@
           "missing_fields": []
         },
         {
-          "witness": "binding-channel-convention-exposure.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "binding-closed-form-c-vs-d.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "binding-color-vs-charge-tn3he-perknot-rerun.witness.json",
           "missing_fields": []
         },
@@ -5071,31 +5054,7 @@
           "missing_fields": []
         },
         {
-          "witness": "binding-production-route-c-vs-d-deut.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "binding-production-route-c-vs-d-heli-tworow.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "binding-production-route-c-vs-d-trit-heli.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "binding-qgaussian-ell1-ceiling-measurement.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "binding-sum-c-vs-d-deut.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "binding-sum-c-vs-d-heli-tworow.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "binding-sum-c-vs-d-trit-heli.witness.json",
           "missing_fields": []
         },
         {
@@ -6028,10 +5987,6 @@
         },
         {
           "witness": "mn-wrapper-categorical-analysis-probe.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "mu3-door-sign-c-vs-d.witness.json",
           "missing_fields": []
         },
         {
@@ -7696,10 +7651,6 @@
         },
         {
           "witness": "qbeta-d-frame-eigenphase-bar-parity.witness.json",
-          "missing_fields": []
-        },
-        {
-          "witness": "qbeta-d-frame-eigenphase-window.witness.json",
           "missing_fields": []
         },
         {
@@ -10318,10 +10269,6 @@
           "missing_fields": []
         },
         {
-          "witness": "convention-systematic-audit.witness.json",
-          "missing_fields": []
-        },
-        {
           "witness": "mu3-target-robustness-audit.witness.json",
           "missing_fields": []
         },
@@ -10666,12 +10613,6 @@
           ]
         },
         {
-          "witness": "deuteron-interface-handle-curvature.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
           "witness": "deuteron-naive-z-physical-but-does-not-close.witness.json",
           "missing_fields": [
             "engine",
@@ -10764,14 +10705,6 @@
           ]
         },
         {
-          "witness": "sigma1cubed-seifert-surface-term.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "threerow-extensive-cumulant-forward.witness.json",
           "missing_fields": [
             "commitSha"
@@ -10814,12 +10747,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "yekutieli-trefoil-surface2form-discretization.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },
@@ -11487,18 +11414,6 @@
           "missing_fields": [
             "engine",
             "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "a3-branching-asymmetry-vs-required.witness.json",
-          "missing_fields": [
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "birkhoff-barodd-pythagoras-bridge.witness.json",
-          "missing_fields": [
             "commitSha"
           ]
         },
