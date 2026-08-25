@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T06:50:27Z
+updated_at: 2026-08-25T06:56:42Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -423,3 +423,64 @@ direction, not evidence; do not fit a characterisation to it. Widen first.
 Adjacent commutativity at k >= 2 is verified numerically (k=1, k=2, three values of q)
 but every proof route this session proposed has been measured and failed. The problem
 is well-posed and well-isolated — one word identity, one unknown — and genuinely open.
+
+
+## FOUND THE CLASSICAL PROOF — and my objects are NOT Mathas's JM elements
+
+Source: `library/hecke-alg` (Mathas, *Iwahori-Hecke Algebras and Schur Algebras of the
+Symmetric Group*), **Proposition 3.24**, p.30 of the PDF. The ingested `sections/*.md`
+OCR is unusable (one char per line); `pypdf` extraction plus a de-mangling pass makes
+it readable. **`pypdf` had to be pip-installed — it is not in the image.**
+
+### Mathas's definition is ADDITIVE, mine is MULTIPLICATIVE
+
+    Mathas:  L_k = q^-1 T_(k-1,k) + q^-2 T_(k-2,k) + ... + q^(1-k) T_(1,k),   L_1 = 0
+             recursion:  L_k = q^-1 ( T_k + T_k L_{k-1} T_k )        <-- note the EXTRA +T_k
+    Mine:    jmRaw(k+1) = sigma_k . jmRaw(k) . sigma_k,               jmRaw 0 = 1
+
+**These are different elements.** Mine is the multiplicative analogue. They are affinely
+related — at the first index, exactly:
+
+    jmRaw 1 = T_1^2 = (q - q^-1) T_1 + 1,   Mathas L_2 = q^-1 T_1
+    =>  jmRaw 1 = 1 + q(q - q^-1) L_2
+
+(exact algebra from the Hecke relation, not a fit). If that affine form persists, the
+two generate the same commutative subalgebra and commutativity transfers — consistent
+with my numerics, which found my jmRaw DO commute at k=1 and k=2.
+
+### Prop 3.24 in full — and what I had already re-derived
+
+    (i)   T_i and L_k commute if i != k-1, k         <-- = my jmRaw_comm_sigma_far
+    (ii)  T_i L_{i+1} = (q-1) L_{i+1} + 1 + L_i T_i
+          T_i L_i     = T_i L_{i+1} - 1 - (q-1) L_{i+1}
+                                                     <-- = my two exchange relations,
+                                                         independently derived
+    (iii) T_i commutes with  L_i L_{i+1}  AND  L_i + L_{i+1}
+    (iv)  L_i and L_k commute
+
+**(iii) is exactly where I stalled.** I proved the SUM case (`sigma_comm_add`) but for
+the PRODUCT could only get `sigma_i (L_i L_{i+1}) = (L_{i+1} L_i) sigma_i` — with an
+ORDER SWAP. Mathas asserts the product commutes outright, no swap, and (iv) follows
+from (iii).
+
+Mathas's proof note: *"the proofs of all of these statements follow easily using the
+relations"* — he writes out only (i).
+
+### The actionable redirection
+
+The five refuted leads were all attempts to force commutativity of the MULTIPLICATIVE
+objects directly. The classical route instead:
+
+1. define the ADDITIVE L_k (sum of transpositions, L_1 = 0);
+2. prove 3.24(i)-(iii) for those — (ii) is already in hand, transcribed;
+3. get (iv) from (iii);
+4. transfer to `jmRaw` via the affine relation.
+
+That is a concrete plan with a citation, replacing "no candidate I would defend".
+
+### NOT claimed
+
+The affine relation is verified only at the first index. Whether
+`jmRaw k = 1 + c_k L_{k+1}` holds generally is UNTESTED — check before relying on step 4.
+Also: 3.25 states any symmetric polynomial in the L's is CENTRAL, which is a stronger
+and possibly easier handle than (iv) directly.
