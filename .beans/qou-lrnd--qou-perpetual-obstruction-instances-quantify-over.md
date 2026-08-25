@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T21:00:00Z
+updated_at: 2026-08-25T21:45:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -667,3 +667,30 @@ Each was stated before measuring the thing that killed it. The measurements
 were all cheap: a docstring, eight symbolic `cancel` calls, and two cache
 timings. **Measure the cost law before recommending a route**, especially when
 recommending against the one the owner proposed.
+
+
+---
+
+# 2026-08-25 (seventh pass) — the partial cache is worth NOTHING, not "some progress"
+
+Sharpening my own framing from the sixth pass, because it was too generous to a
+route I had already called dead.
+
+I described the chi cache as "resumable — every run banks progress permanently"
+and left it running on that basis. **The banked partitions have zero usable
+value.** `tr_M = sum_lambda y_lambda * chi^lambda` is a sum over ALL 30
+partitions of 9. With 29 of 30 you cannot form the trace, so you cannot run the
+Habiro expansion, so you get no coefficients and no p=7 answer.
+
+The cache route is therefore not "18 days with partial payoff along the way".
+It is **all-or-nothing at 18 days**. Resumability protects the investment; it
+does not produce anything until the last partition lands, and the last
+partitions are the 56-hour ones.
+
+Consequence: there is no reason to leave the cache grinding as a background
+hedge, which is what I was doing. It was killed by a container restart at
+2/30 and is deliberately NOT restarted.
+
+This does not change the verdict from the sixth pass, it removes the last
+reason to hedge against it: the Rust exact-arithmetic route is not merely the
+better option, it is the only one that produces anything at all.
