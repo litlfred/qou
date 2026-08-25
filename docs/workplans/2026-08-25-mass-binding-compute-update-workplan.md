@@ -63,7 +63,24 @@ agent — believes. Ordered by blast radius.
 
 ---
 
-## Tier 1 — R3 colour weighting: 2 producers regenerate 26 of 30 witnesses
+## Tier 1 — R3 colour weighting: LARGELY SUPERSEDED by PR #5767
+
+> **🛑 RE-SCOPED 2026-08-25 after coordinating with [#5767](https://github.com/litlfred/qou/pull/5767)
+> ("Excise float64, convention C, and non-colour-weighted p/n").** That branch has already
+> drained most of this tier and drove off-canon `pn_convention` baseline entries **8 → 6**.
+> Most importantly it **answered item 1.4**, which I had marked *"ADJUDICATE, do not flip"*:
+> `binding_canonical.py`'s convention line was the **symptom**, not the defect — its
+> symbolic path had **no branch at all** for the weighted interface and fell through to
+> `sp.nsimplify`, freezing a q₀ float into a rational. Leaving that line alone, as my
+> caution implied, would have been the wrong call. Confirmed two ways on their side: the
+> deuteron moves onto `qou-4e5k`'s bridge/peel value, and the closed-form and transfer
+> paths now agree to 15 figures where they disagreed by 1.5e-4.
+>
+> **Check #5767 before starting anything below.** What is likely to survive is the
+> witness regeneration (items 1.1–1.2) and the unregistered convention names (1.6).
+
+### Original scoping (retained for the file lists)
+
 
 Measured by **AST** walk (grep over-reports ~3× here — docstrings quote the other
 conventions constantly). Defaults are already canonical (`closed_form_tau_M.py:245,344,392,495`,
@@ -84,7 +101,22 @@ non-comparison; 4 unjustified.**
 
 ---
 
-## Tier 2 — R1 convention C: 11 actionable sites, plus surfaces no detector walks
+## Tier 2 — R1 convention C: 11 is a FLOOR, not a queue
+
+> **🛑 RE-SCOPED 2026-08-25.** I listed the 11 as a drain queue. [#5767](https://github.com/litlfred/qou/pull/5767)
+> independently measured **the same 11** and gives the reason it is a **floor**:
+>
+> - **9 sit in the qbeta/decay cone where a z-swap is invalid** — not merely unreviewed.
+>   `QOU.QBeta.decayLadder_zC_threeRow_ne_zero` (sorry-free) makes the C-frame ladder and
+>   the mass channel's two-row forcing **mutually exclusive**. They need the S1
+>   re-derivation (`qou-cds1`), which is **science, not drain**.
+> - **1** is adjudicated in its own header as a deliberate historical record with a live
+>   both-conventions companion.
+> - **1** needs re-derivation of three C-specialised closed forms rather than substitution.
+>
+> So the migratable set is **2 live producers**, and the rest is blocked on `qou-cds1`.
+> Two independent measurements agreeing on 11 by different routes is worth more than
+> either alone. Their framing supersedes mine.
 
 **Corrected counts** (AGENTS.md says 26; `--list --json` said **14**, and the
 `tools/pyhecke/regime_scanner.py:94` site it calls "the last unexplained one" is
