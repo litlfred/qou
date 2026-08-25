@@ -120,4 +120,50 @@ theorem omitted_sector_breaks_localisation :
   · simp [split]
   · simp [split]
 
+/-! ## Sectors that factor through an invariant of the state
+
+The practical way a sector turns out to be invariant is rarely a computation: it
+is that the sector never sees the data the involution moves. The Frobenius
+co-Casimir term of the unified mass formula
+([`thm:knot-mass-formula-unified`](../../../mass-theory/knot-mass-formula-unified.md))
+is the case in point. By
+[`thm:frobenius-codim-universal`](../../../mass-theory/frobenius-codim-universal.md),
+
+  `τ(C_dim_q) = Σ_{λ ∈ Â} 1 / dim_q(λ)`,
+
+a sum over the Wedderburn blocks of `H_n(R, q)`. It is a function of `(n, q)`
+alone and takes **no braid word as an argument at all**, so a generator sign
+flip cannot move it: it factors through `word ↦ (n, q)`, which the flip fixes.
+-/
+
+/-- **A sector that factors through an `ι`-invariant of the state contributes
+zero to the split.** More useful in practice than checking invariance directly,
+because it is usually obvious *by arity* that a sector cannot see what `ι`
+moves. -/
+theorem split_comp_eq_zero {Y : Type*} (ι : X → X) (π : X → Y) (G : Y → R)
+    (hπ : ∀ x, π (ι x) = π x) (x : X) :
+    split ι (G ∘ π) x = 0 := by
+  simp [split, hπ x]
+
+/-- The sector built from such a factorisation, as an `InvariantSector` — so it
+can be dropped straight into the list `split_sum_eq_split_remainder` consumes. -/
+def factoringSector {Y : Type*} (ι : X → X) (π : X → Y) (G : Y → R)
+    (hπ : ∀ x, π (ι x) = π x) : InvariantSector ι R where
+  F := G ∘ π
+  invariant x := by simp [hπ x]
+
+/-- **The Frobenius co-Casimir sector is invariant, and the reason is arity.**
+Modelled with `Y = ℕ × R` for the pair `(n, q)`: whatever `G` computes from the
+block data, the generator sign flip leaves `(n, q)` alone, so the term drops out
+of the split. Both mirror isobars sit at `A = 3`, hence at the same `n`, so it
+cancels between them exactly rather than approximately.
+
+This supplies **one** of the two premises
+`rem:isospin-mass-split-em-localisation` was missing. The other, the trace
+tower, is false at the substrate — `QOU.MassTheory.TraceSignFlipRegime`. -/
+theorem coCasimir_sector_contributes_zero (ι : X → X) (nq : X → ℕ × R)
+    (G : ℕ × R → R) (hnq : ∀ x, nq (ι x) = nq x) (x : X) :
+    split ι (G ∘ nq) x = 0 :=
+  split_comp_eq_zero ι nq G hnq x
+
 end QOU.MassTheory.InvolutionSelectionRule
