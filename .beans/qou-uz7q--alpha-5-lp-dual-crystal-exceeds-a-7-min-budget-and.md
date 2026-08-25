@@ -317,3 +317,38 @@ before the timeout" that turned out to be the most useful diagnostic in this
 whole exercise. Fixed mid-batch to a per-producer path, which is why only
 `c4even` has its own log. The measurement tool had the same defect it was
 measuring.
+
+## The qbeta probes validate against the MUON pin, via a live fallback
+
+Read while setting up the profile, and complete on its own:
+
+```python
+q0 = mp.mpf(str(params["q"])) if params and "q" in params else None
+...
+if q0 is None:
+    # fall back to the canonical muon q0 string used corpus-wide
+    q0 = mp.mpf("1.1099785955573347198997632204832250266562084087802")
+```
+
+**That fallback is live, not dead code.** `free-neutron-decay.witness.json` has
+**no `parameters` block at all** (`params is None`), so every run takes the muon
+branch. The same witness also carries no `q0Anchor` and no `q0Value` — it is
+`Q0_ANCHOR_MISSING`, which AGENTS.md classes as *not a failure* and which covers
+~71 % of the corpus, so that part is unremarkable.
+
+**It has no consequence for this probe's result, and I am not proposing an edit.**
+Two reasons, both checked rather than assumed:
+
+1. **`q0` is used only for a validation assert at `1e-6`.** The probe's product —
+   the exact `s`-series and the `c_3` extraction — is symbolic in `q` and carries
+   no pin. Observed this run: `Δ(net) mine = -0.188290620016` vs
+   `witness = -0.188290620011`, residual ~5e-12, passing with ~2e5× margin. The
+   μ–p gap is 1.15e-8 relative — three orders below the tolerance — so the anchor
+   choice cannot flip this assert either way.
+2. **Editing it would drift `scriptHash` on a > 1800 s producer** for zero payload
+   change, which is exactly what this bean argues against elsewhere. If the
+   fallback is ever changed to proton per the 2026-08-07 directive, it should ride
+   along with the eventual re-run, paying the drift once.
+
+Recorded because "a hardcoded muon string in a live path" is worth knowing even
+when it is inert, and because the inertness is a measurement, not an assumption.
