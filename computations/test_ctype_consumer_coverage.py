@@ -588,13 +588,6 @@ PN_CONVENTION_BASELINE: dict[str, str] = {
         "named comparison; measures the bring-enhancement delta against strict_averaged",
     "binding_combiner_markov_peel_fallback.py::<module>":
         "named fallback; PN_CONVENTION const, non-canonical by design",
-    # Deliberate, and its reason is in-file: the closed-form fast path is set to
-    # strict_averaged so it agrees with THIS MODULE'S legacy symbolic path
-    # (`_factor_from` in build_atom_symbolic). That is an internal-consistency
-    # choice, not a claim about which convention is right — so moving it to
-    # canonical means moving both halves together, or they diverge by 1.4e-4.
-    "binding_canonical.py::binding_canonical":
-        "matches this module's own symbolic path; move both halves together (qou-cds4)",
     # Phase 5q validates the closed form against the empirical slow path TO
     # 1e-49 *under* chi_lambda_braid. That is a self-consistency check within
     # the legacy frame — it is not evidence FOR the frame, and it will need
@@ -622,8 +615,6 @@ PN_CONVENTION_BASELINE: dict[str, str] = {
     # colour-blind chi family from 45789ddfa0 that also lacks provenance. When
     # those are regenerated weighted, THIS MUST FLIP TOO or the self-test starts
     # comparing across frames and still passes.
-    "chi_monotone_transfer.py::_self_test":
-        "matches its oracle witnesses' frame; flip when the chi oracles are regenerated (qou-cds4)",
 }
 
 CANONICAL_PN = "bring_color_weighted"

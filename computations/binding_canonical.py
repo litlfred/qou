@@ -58,7 +58,7 @@ from hecke_symbolic import (
 )
 from mass_at_3A_proper import atom_braid_word_3A
 from experimental_constants import Q_NEUTRON_MEV as _Q_BETA_N
-# 50-dps sources. `h_q` is only used in 1e-6 tolerance comparisons and `q0`
+# 50-dps sources. `h_q` is only used in _D_HECKE_TOL (1e-9) comparisons and `q0`
 # in a sympy subst cast to complex, so neither NEEDS full precision — but
 # reading the f64 name is what the NO FLOAT64 directive forbids, and the
 # _MP family is a drop-in in both positions.
@@ -77,6 +77,39 @@ from codata_constants import (
     AME_B_HE4_MEV_VALIDATION,
     ame_binding_mev,
 )
+
+
+# Tolerance for float-to-symbolic conversion of the Hecke `d` coefficient.
+# 1e-6 was too coarse to separate the colour-weighted p-n interface (which sits
+# 7.190163e-05 from -h/2) from a genuine miss, and there was no branch for it in
+# any case. 1e-9 mirrors `atom_nf_symbolic_D._D_HECKE_TOL` and leaves ~7 orders
+# of margin on both sides of every target.
+_D_HECKE_TOL = 1e-9
+
+
+def _flavor_split_leading_sym(q):
+    """Symbolic δ, LEADING term only:  δ(q) = (q−1)²(1−q⁻⁴)/3.
+
+    Deliberately the leading term alone, matching
+    `canonical_braid_crossings._avg_color_delta` — which builds the numeric
+    crossing this must reproduce — and NOT
+    `tr_m_algebraic_q.flavor_split_leading_sym`, which multiplies by a posited
+    subleading (1 + ℏ³) and so disagrees by ℏ³ ≈ 9.727e-04 relative at q_0
+    (bean `qou-4e5k`).
+    """
+    return (q - 1) ** 2 * (1 - q ** (-4)) / sp.Integer(3)
+
+
+def _d_weighted_at_q0() -> float:
+    """Numeric `d` of the colour-weighted p-n crossing at q_0.
+
+    Sourced from `canonical_braid_crossings.d_for_ctype`, the module that owns
+    ctype knowledge, so this file never carries a second definition of the
+    weighting — the `qou-4e5k` failure mode of two copies of one dispatch
+    disagreeing about the same crossing.
+    """
+    from canonical_braid_crossings import d_for_ctype
+    return float(d_for_ctype("averaged_weighted", h_q))
 
 
 def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
@@ -111,6 +144,22 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
 
     def _factor_from(c_f: float, d_f: float, g: int
                       ) -> SymbolicHeckeElement:
+        """Hecke factor c·T_g + d·I as a symbolic element.
+
+        The colour-weighted p-n interface carries d = -h(1/2 - δ/4), which sits
+        h·δ/4 = 7.190163e-05 from the colour-BLIND -h/2. This function used to
+        have no branch for it at all: with the ±h and ±h/2 windows at 1e-6, the
+        weighted crossing missed both and fell through to `sp.nsimplify(d_f)`,
+        which freezes a q_0 float into a rational and destroys the q-dependence
+        the symbolic path exists to carry.
+
+        That gap is why the closed-form path below was pinned to
+        `strict_averaged` — not a considered choice between conventions, but
+        the only one this builder could express. It is placed STRUCTURALLY here,
+        as in `atom_nf_symbolic_D._factor_from`, which carries the same fix for
+        the sibling failure mode (bean `qou-4e5k`: a 1e-3 window that swallowed
+        the weighting instead of missing it).
+        """
         if abs(c_f) < 1e-12:
             c = sp.Integer(0)
         else:
@@ -119,9 +168,12 @@ def build_atom_symbolic(Z: int, N: int, *, include_inter: bool = True,
             d = sp.Integer(0)
         elif abs(d_f - 1.0) < 1e-12:
             d = sp.Integer(1)
-        elif abs(d_f + h_q) < 1e-6:
+        elif abs(d_f + h_q) < _D_HECKE_TOL:
             d = -H_SYMB
-        elif abs(d_f + h_q / 2) < 1e-6:
+        elif abs(d_f - _d_weighted_at_q0()) < _D_HECKE_TOL:
+            # Colour-weighted p-n interface: -h(1/2 - δ/4), δ = flavour split.
+            d = -H_SYMB * (sp.Rational(1, 2) - _flavor_split_leading_sym(q_sym) / 4)
+        elif abs(d_f + h_q / 2) < _D_HECKE_TOL:
             d = -H_SYMB / 2
         else:
             d = sp.nsimplify(d_f)
@@ -284,15 +336,22 @@ def binding_canonical(Z: int, N: int, *, m_pp=1, m_pn=1, m_nn=1,
                 _nucleon_word(_NEUTRON_G0, _NEUTRON_G1),
                 3, Q_50_DIGIT_STR, dps=50,
             )
-            # `strict_averaged` matches the symbolic path's literal
-            # σ - h/2 factor for p-n interfaces (the convention in
-            # `_factor_from` inside build_atom_symbolic). The default
-            # `chi_lambda_braid` convention treats averaged as σ (the
-            # production marshalling for chi_lambda_braid) which
-            # gives a different numerical value here.
+            # `bring_color_weighted` is canonical (owner ruling 2026-08-15,
+            # R3). This call was pinned to `strict_averaged`, justified as
+            # matching the symbolic path's literal σ - h/2 factor — a circular
+            # justification, since that path could not express the weighting
+            # (see `_factor_from` above, now fixed).
+            #
+            # Verified against an independent path rather than assumed: at the
+            # deuteron this returned 0.575090871629810316751633 under
+            # `strict_averaged`, which is exactly the colour-BLIND value bean
+            # `qou-4e5k` identifies as wrong, and returns
+            # 0.575172243917771870826535 under the canonical convention, which
+            # is exactly that bean's bridge/peel value. Uniform 1.415e-04
+            # relative shift across (Z,N) = (1,1), (1,2), (2,1), (2,2), (3,4).
             tr_atom_mp = closed_form_tau_M(
                 Z, N, q_val, tau_p, tau_n,
-                pn_convention="strict_averaged",
+                pn_convention="bring_color_weighted",
             )
             # Free config = no interface factors → just the constit part.
             tr_free_mp = (mp.mpf(tau_p) ** Z) * (mp.mpf(tau_n) ** N)

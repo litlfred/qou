@@ -117,13 +117,29 @@ def binet_amplitudes(alpha, beta, q):
 
 
 def markov_z(q):
-    """The canonical Markov parameter `z = 1/(q^(1/2) + q^(-1/2))`.
+    """The canonical Markov parameter, convention **D**: `z = q^3/(q^2 + 1)`.
 
     `tr_M(1) = 1` and `tr_M(sigma_0) = z`, so the canonical Markov-trace
     readout is `lin_readout(1, z, ...)`. Positive for `q > 0`, which is
-    what forecloses the node escape.
+    what forecloses the node escape — and that property is what this module
+    actually uses, so it is unaffected by the convention: `q^3/(q^2+1) > 0`
+    for `q > 0` exactly as `1/(q^{1/2}+q^{-1/2})` was.
+
+    This returned convention C's `1/(q^{1/2} + q^{-1/2}) = 0.4993203` until
+    2026-08-25. C was excised by owner ruling (2026-08-09, reaffirmed
+    2026-08-15 R1); D reads `0.6126880` at the substrate pin, a factor of
+    1.227044.
+
+    DELEGATES rather than reimplements. A second local copy of the Markov
+    parameter is how this one drifted a whole convention behind the ruling
+    while its docstring still said "canonical" — the same two-copies-of-one-
+    dispatch failure mode as bean `qou-4e5k`. The definition, the ruling that
+    selected it, and the sorry-free Lean uniqueness argument
+    (`markovWeights_eq_jones_of_threeRow_eq_zero`) all live at the canonical
+    site.
     """
-    return 1 / (q ** mpf("0.5") + q ** mpf("-0.5"))
+    from closed_form_tau_M import markov_z as _canonical_markov_z
+    return _canonical_markov_z(q)
 
 
 def bend_from_samples(x0, x2, x4):
