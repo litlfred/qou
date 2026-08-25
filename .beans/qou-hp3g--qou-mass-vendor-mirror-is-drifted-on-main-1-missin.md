@@ -5,7 +5,7 @@ status: completed
 type: task
 priority: normal
 created_at: 2026-08-21T15:42:00Z
-updated_at: 2026-08-21T21:44:12Z
+updated_at: 2026-08-25T07:34:42Z
 ---
 
 
@@ -131,3 +131,42 @@ in-repo importers**.
 
 Sync-drift half: **resolved by e4906af5a4c**, not by me.
 Unchecked-data half: **open**, and is the actual work. Split to its own bean.
+
+
+---
+
+## Follow-up measurement 2026-08-25 (PR #5750) — `--apply` IS still mechanical and low-risk
+
+A relayed report claimed this bean's "`--apply` is mechanical and low-risk"
+advice had gone stale, on the grounds that the vendor cone *declares*
+`closed_form_tau_M`, `canonical_braid_marshalling` and `y_lambda_wenzl_bridge`
+but never copies them, so that regenerating `_li_2_q_util` drops drift 23 -> 22
+and then raises `ModuleNotFoundError` on `load_q_50dps`.
+
+**I could not reproduce that, and the advice stands.** Measured on this branch,
+tree restored to the committed state between every run:
+
+| step | result |
+|---|---|
+| `--check` baseline | 23 DRIFTED + 3 MISSING (21 isotope witnesses + `_li_2_q_util` + `mass_at_3A_proper`) |
+| `--apply` | creates all 3 missing modules, 43 -> 46 `.py`; "regenerated 45 module(s)" |
+| facade after `--apply` | `compute_tr_M(1,1)`, `predict('2H')`, `predict('4He')` all **byte-identical** to pre-apply |
+| partial apply (`render()` on `_li_2_q_util` only) | reproduces 23 -> 22, and the facade still works — no `ModuleNotFoundError` |
+
+Two specifics in the report are wrong. `--apply` writes every cone module
+unconditionally (`if args.apply: dest.write_text(want)`), so MISSING modules are
+created rather than skipped — "declares but never copies" describes only the
+pre-apply state, which is what `--check` is *for*. And `load_q_50dps` is a
+function, present at `_li_2_q_util.py:272` in the source and `:256` in the
+mirror; it is not a module and cannot raise `ModuleNotFoundError`.
+
+One methodological note, because I nearly filed it as a finding myself: importing
+`qou_mass._internal.mass_at_3A_proper` first raises `ModuleNotFoundError:
+codata_constants`, but importing it *after* other `_internal` modules raises
+`ModuleNotFoundError: pyhecke` instead. The first error is an **import-order
+artifact of the harness**, not a defect — a sweep over all 42 mirror modules
+gives 30 importable and 12 failing solely on the absent external `pyhecke`,
+which is not on PyPI and so absent by default (AGENTS.md).
+
+The 23 is not a new alarm: it is `qou-cdj8`'s extended witness comparison
+working as designed. See `qou-cdj8` for the live scope.
