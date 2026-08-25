@@ -22,7 +22,16 @@ What ρ_F is (no dedicated function — computed from primitives)
 categorically-DERIVED per-bond factors (interface_factor, Lean-proved exact):
     pp/nn positive bond  f = z            (Markov z = q³/(q²+1), convention D)
     nn negative bond     f = z − h        (h = q − 1/q)
-    pn averaged bond     f = z − h/2      (bar-symmetric / charge)
+    pn averaged bond     f = z − h/2      (strict_averaged -- NOT canonical;
+                                           see the CONVENTION note at `FAC`)
+
+CONVENTION CAVEAT. "categorically-DERIVED ... Lean-proved exact" above covers
+the SHAPE of the per-bond factors, not the choice of p-n convention. The p-n
+line uses `strict_averaged`; the owner ruling of 2026-08-15 (R3) makes
+`bring_color_weighted` (`z − h(1/2 − δ/4)`) canonical. Gap `h·δ/4` =
+7.190163e-05 at the proton pin. So this probe's ρ_F is 0-fit but
+convention-conditional, and its numbers move if the convention is flipped.
+Bean `qou-cblw` finding 1.
 Its connected k-body CLUSTER integral is the Ursell part
     c_k = joint_trace − (lower cluster sum),
 computed at H_9 with ZERO fit from the χ_λ / gauge_aligned_a_combiner machinery
@@ -90,6 +99,17 @@ def hecke_h(q):
 
 Z = markov_z(Q0)
 H = hecke_h(Q0)
+# CONVENTION: the p-n entry is `strict_averaged` (`z - h/2`), NOT the
+# canonical `bring_color_weighted` (`z - h(1/2 - delta/4)`) made canonical by
+# the owner ruling of 2026-08-15 (R3). The two differ by `h*delta/4`, which is
+# 7.190163e-05 at the proton pin -- a real shift, ~1e11 x the f64 floor.
+#
+# This is labelled rather than flipped: flipping it moves every number this
+# probe reports and its committed witness. Do NOT read the "categorically-
+# DERIVED" language in the module docstring as covering the p-n CONVENTION --
+# it does not, and the derivation is only as canonical as this line.
+# Tracked as bean `qou-cblw` finding 1; canonical implementation lives in
+# `tools/hecke-engine/src/color_weight.rs::pn_interface_factor`.
 FAC = {"pp": Z, "nn": Z - H, "pn": Z - H / 2}
 
 # ── the residual simplex moments (#4320 targets, dimensionless) ───────────────
@@ -234,6 +254,21 @@ def main() -> int:
             },
         },
         "scriptCommitSha": "uncommitted",
+        # Emitted BY THE PRODUCER, not backfilled. These three keys were
+        # previously added downstream by transcription from `parameters.q0`,
+        # so every re-run of this probe silently DELETED them -- the
+        # "bare producer" hazard AGENTS.md documents under the witness
+        # staleness triage ("re-running one deletes the field this audit
+        # keys on ... fix the producer to emit provenance first").
+        # Observed here: a comment-only edit, re-run to refresh scriptHash,
+        # dropped all three.
+        "q0Anchor": "proton",
+        "q0Value": str(Q0),
+        "q0AnchorReason": (
+            "experimental/Physical-Observations pin per the AGENTS.md owner "
+            "directive of 2026-08-07 (all production compute defaults to the "
+            "proton anchor). Emitted by the producer so a re-run preserves it."
+        ),
     }
     out = HERE / "mu4-rhoF-cluster-derivation.witness.json"
     out.write_text(json.dumps(witness, indent=2))
