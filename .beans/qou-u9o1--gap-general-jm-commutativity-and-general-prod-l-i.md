@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T06:56:42Z
+updated_at: 2026-08-25T07:05:26Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -484,3 +484,50 @@ The affine relation is verified only at the first index. Whether
 `jmRaw k = 1 + c_k L_{k+1}` holds generally is UNTESTED — check before relying on step 4.
 Also: 3.25 states any symmetric polynomial in the L's is CENTRAL, which is a stronger
 and possibly easier handle than (iv) directly.
+
+
+## The additive family is BUILT — the sum half improves, the product half does NOT
+
+`HeckeAdditiveJucysMurphy.lean`, sorry-free, exit 0, axioms clean on all five.
+
+Built in THIS corpus's convention (sigma^2 = (q - q^-1)sigma + 1), NOT by transcribing
+Mathas's coefficients — he works with T^2 = (q-1)T + q, so his constants are not ours.
+Recursion form, with the normalisation `d` left FREE:
+
+    A_0 = 0,   A_{k+1} = sigma_k A_k sigma_k + d . sigma_k
+
+    addJM_sigma_left    sigma_k A_{k+1} = h.A_{k+1} + A_k sigma_k + d
+    addJM_sigma_right   A_{k+1} sigma_k = h.A_{k+1} + sigma_k A_k + d
+    addJM_sigma_comm_add   sigma_k commutes with A_k + A_{k+1}, FOR EVERY d
+    addJM_sigma_prod_swap  sigma_k (A_k A_{k+1}) = (A_{k+1} A_k) sigma_k
+
+### The gain
+
+The two exchange relations differ ONLY by swapping `A_k sigma_k` and `sigma_k A_k`, so
+those terms cancel in the SUM. Mathas 3.24(iii)'s sum half therefore holds with **no
+constraint on d at all** — strictly cleaner than the multiplicative `sigma_comm_add`,
+which needed the specific recursion.
+
+### The obstruction SURVIVES the convention change — this is the real finding
+
+3.24(iii) also asserts T_i commutes with the PRODUCT L_i L_{i+1}, and (iv) follows from
+it. From the recursion alone one gets only the SWAPPED form, which is commutation
+exactly when A_k, A_{k+1} already commute. **So (iii)-product and (iv) are entangled,
+and the recursion does not separate them — in either convention.**
+
+I had hoped the additive convention would rescue the product half. **It does not.** That
+was the point of building it, and the negative is worth more than the hope was: it means
+the remaining gap is NOT a convention artifact.
+
+### Consequence for the next attempt
+
+Mathas's "follows easily using the relations" must lean on the explicit
+sum-of-transpositions expansion of L_k, which an ABSTRACT presentation does not provide
+— `HeckeGenerators` has generators and relations, no transposition elements T_(i,k).
+So the next step is not another convention or another invariant: it is either
+
+  (a) add transposition elements T_(i,k) and the expansion to the presentation, or
+  (b) work in a concrete model (regular representation) where they exist.
+
+Do not try a sixth "what property of N" lead. That family is exhausted, and this file
+shows why: the obstruction is structural, not conventional.
