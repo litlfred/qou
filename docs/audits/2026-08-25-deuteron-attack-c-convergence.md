@@ -292,7 +292,37 @@ So the framework evaluates precisely where the conjecture's asymptotics do not a
 computation rule "evaluates `τ_arch` … as exactly the Kashaev limit" — the regime bridge
 is **inside the identification**, not derived from it.
 
-### (c) NEW, MEASURED, EXACT — the prefactor does not match the mass formula
+### (c) The prefactor discrepancy — MEASURED AND EXACT, but I OVER-CLAIMED ITS SIGNIFICANCE
+
+> **🛑 SELF-CORRECTION, same session.** I recorded this as *"the single most concrete
+> unresolved item this session found on the binding leg."* **That was wrong, and the
+> arithmetic below is not what deflates it — the provenance of one side does.**
+>
+> `m_e/ℏ_q²` is the prefactor of `m = m_e·Vol·ρ/ℏ_q²`, and **that shape is DEPRECATED for
+> absolute mass.** Its own runtime warning says so verbatim:
+>
+> > *"`per_knot_density_borromean` is the **λ_A fit** (Vol(𝓑₃)·ρ_global/ℏ_q² → 966 MeV) —
+> > **NOT the canonical absolute nucleon mass**. Use the `canonical_mass` facade."*
+>
+> That is the λ_A route AGENTS.md excised under the 2026-06-24 owner ruling (m_p ≈ 966,
+> +2.96 %, a CODATA-implied fit). **The live mass route in the dashboard is the
+> muon-anchored Hecke energy via `canonical_mass`, which does not use `vol_density` at
+> all** — verified by reading the call site.
+>
+> So there are **not two live prefactors in conflict**. There is one live prefactor
+> (`E₀`) and one belonging to an excised formula shape. And for *binding* the point is
+> weaker still: AGENTS.md keeps `vol_density_per_block` valid **"for binding ratios only
+> (scale cancels)"** — in a ratio the prefactor cancels outright.
+>
+> **What survives, unchanged:** the measurement itself (exact to 1e-49, `q₀³/(q₀−1)`),
+> and the 2026-08-09 gap-4 finding it was reached from — *"the binding formula reuses
+> `E₀` with a different dimensionless multiplier … and nothing validates `E₀` at that
+> scale."* That gap is about `E₀`'s own justification and stands on its own; it does not
+> depend on the deprecated shape. **What does not survive is my framing of this as a live
+> two-prefactor contradiction.**
+
+### The measurement, retained
+
 
 The framework's mass shape is `m(K) = m_e·Vol(K)·ρ(K)/ℏ_q²` (AGENTS.md, the standing
 purge banner). A binding is a difference of masses, so with a common `ρ` its prefactor
