@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T14:53:43Z
-updated_at: 2026-08-24T19:13:52Z
+updated_at: 2026-08-25T01:03:24Z
 ---
 
 ## What happens
@@ -268,3 +268,46 @@ may conclude the parameter should not exist at all.
 **State of the producer: unchanged.** It exits 1 and names where the root is on
 stderr. That landed on `main` as `b95cc706d9` (PR #5695) — note the sha, the
 rebase-merge rewrote the branch-side `d7cf6dc02b`.
+
+
+## CORRECTION 2026-08-25 — the +14.741 % is a STRADDLE artifact. Full-D is -7.209 %, the other way.
+
+The diagnosis above is right that the root moved and that convention C→D is
+why. The **magnitude and the sign are wrong**, and the reason is worth
+recording because it is a general trap.
+
+That measurement was taken with `hecke_core`/`pyhecke.gram` on **D**
+(gram.py:199, since 6086572c4e) while `alpha_high_precision.py` was still
+computing its **own z locally in convention C** —
+
+    zv = mp.mpf(1)/(mp.sqrt(Q0)+mp.sqrt(QI))        # alpha_high_precision.py:88
+
+so the state measured was neither frame: a **straddle**, D upstream against C
+local. Migrating that local binding to `zv = Q0**3 / (Q0**2 + 1)` moves the
+root back DOWN, past the committed value:
+
+    committed (C-frame witness)          0.3058074307438076264762
+    straddle  (D upstream + C local)     0.35088642931861095442     +14.741 %
+    full D    (both migrated)            0.2837621640047978551950792  -7.209 %
+
+Measured by bisecting the file's own `err_n_mp` at dps=50 over [0.28, 0.30],
+where it changes sign (+0.097608609 % → -0.41930387 %). Exact mpmath; no
+float64 in the arithmetic.
+
+So the bracket guard's own hint moved too: on main it reads "the root is
+between 0.34 and 0.36"; post-migration it reads "between 0.28 and 0.30".
+
+**What this does not change.** The bracket is still not re-centred, the
+committed alpha* is still a C-frame value, and this is still qou-2zjp's call
+rather than the drain's — re-centring replaces a published number. The script
+still exits 1 exactly as it did before, which is not a regression.
+
+**What it does change.** Anyone re-deriving alpha* under D should target
+≈ 0.28376, not ≈ 0.35089, and the scope paragraph below is worth re-reading in
+this light: the nine hecke_core-importing candidates were screened on whether
+their *upstream* z moved. A file with its own local C binding is a second,
+independent failure mode that screen does not see — the value can be a straddle
+rather than either frame. Local z bindings were the whole subject of the
+convention-C drain, so the two lists overlap.
+
+Local z migrated in PR #5739 (probe/derived-tower drain group).
