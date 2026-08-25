@@ -1,11 +1,11 @@
 ---
 # qou-s4h6
 title: 'GAP: GMO second-order coefficients are under-determined — two deviations, three coefficients, Y·d invisible'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:37:24Z
-updated_at: 2026-08-25T10:37:58Z
+updated_at: 2026-08-25T10:53:58Z
 ---
 
 **Measured 2026-08-25** (PR #5744). Lean:
@@ -51,3 +51,52 @@ operator *as posed*, alone, does not determine the deviation. It is **not** a
 structural exclusion of a second-order account — a proved relation among the
 coefficients would change the verdict, which is exactly what the "what would
 close it" paragraph is asking for.
+
+
+
+---
+
+**CORRECTION, same day (2026-08-25). The bean above asked the wrong question, and
+this is my own error being fixed within the hour.**
+
+I wrote that GMO is "two equations, three unknowns" and named "a proof that
+$g = 0$" as the third constraint that would turn the fit into a prediction.
+**Proving $g = 0$ would buy nothing**, because $g$ is not an independent
+parameter on either multiplet. Proved, sorry-free, in the same file:
+
+- `meson_octet_g_absorbed` — on the octet, $b \mapsto b + g/2$ reproduces every
+  mass with $g = 0$. Exactly, all four states. Reason: hypercharge $\pm 1$
+  forces $I = 1/2$, so $4I(I+1) - Y^2 = 2$ and $Y \cdot d$ collapses to $2Y$.
+- `decuplet_g_absorbed` — on the decuplet, $b \mapsto b + 2g$ and
+  $e \mapsto e + 3g/2$. Reason: $I = 1 + Y/2$ along the ladder, so
+  $4I(I+1) - Y^2 = 8 + 6Y$ identically. The $3g/2$ matches the $6g$ already
+  visible in `decuplet_second_order`, checked against it.
+
+So $g$ can be set to zero by reparametrisation and the leftover one-parameter
+family is a coordinate orbit, not a physical freedom.
+
+**And the real obstruction is stronger than under-determination.**
+`meson_octet_second_order_surjective`: at second order the even-in-$Y$
+structures $1, Y^2, d^2$ already span **all** functions on the three independent
+meson-octet masses ($\pi$, $\eta$, and the C-degenerate kaon). Explicit witness,
+with $b = c = g = 0$ so it does not even need the odd sector. Hence
+`gmo_combination_surjective`: the GMO combination takes **every** value.
+
+**The verdict changes from "a fit" to "not a prediction at all".** There is no
+value of the deviation that would count as evidence for or against a second-order
+term, because at second order the ansatz can produce any octet spectrum
+whatsoever. Scope-**(b)** for *this ansatz*, with the invariant named: the rank
+count, three independent structures on three independent masses. **Not** a claim
+about $SU(3)$ breaking in general.
+
+**What would actually close it.** Not a third constraint on the coefficients, and
+not a third measurement on these two multiplets: a **third multiplet in which
+isospin is not a function of hypercharge**. The baryon octet is one — $\Lambda$
+and $\Sigma$ share $Y = 0$ with different $I$ — which is why baryon GMO stays a
+genuine relation where the meson one has gone vacuous. Formalising the baryon
+case is the next step and is **not** done here.
+
+Note also that refining the *structure list* cannot help on the decuplet: since
+$d$ is affine in $Y$ there, adding cubic structures raises the polynomial degree
+and **destroys** the last surviving relation (`decuplet_second_differences_equal`)
+rather than creating a new one.

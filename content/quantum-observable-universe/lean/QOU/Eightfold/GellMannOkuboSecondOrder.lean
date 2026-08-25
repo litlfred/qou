@@ -33,6 +33,8 @@ uniform and cancels from every statement below.
 | `decuplet_second_differences_equal` | the two decuplet second differences stay **exactly equal** |
 | `decuplet_second_order` | each is `8·(4e + 9f + 6g)` |
 | `gmo_zero_decuplet_nonzero` / `decuplet_zero_gmo_nonzero` | the two constraints are **independent** — witnesses both ways |
+| `meson_octet_g_absorbed` / `decuplet_g_absorbed` | **`g` is not an independent parameter on either multiplet** — absorbed exactly by shifting `b` (and `e`) |
+| `meson_octet_second_order_surjective` | **any three meson-octet masses are attainable**, so second-order GMO is vacuous |
 
 ## What it means, stated carefully
 
@@ -40,12 +42,25 @@ Two consequences, and neither is a derivation of anything:
 
 1. **`Y·d` is invisible to GMO.** Not "small" — *exactly* zero, by parity in `Y`.
    A GMO-deviation fit therefore cannot constrain `g` even in principle.
-2. **Two measurements, three unknowns.** GMO constrains `4e − 3f`; the decuplet
-   constrains `4e + 9f + 6g`. Those are not proportional, so the two deviations
-   are independent — and they under-determine `(e, f, g)` by one. **Reproducing
-   both numbers is therefore not a prediction**: a one-parameter family of
-   second-order terms fits any pair of values. A third independent observable is
-   needed before a second-order account has content.
+2. **The octet has nothing left to predict.** GMO constrains `4e − 3f`; the
+   decuplet constrains `4e + 9f + 6g`; those are not proportional, so the two
+   deviations are independent. My first reading of that was *"two equations,
+   three unknowns — find a third constraint on the coefficients."* **That was
+   wrong**, and the `Absorption` and `Surjectivity` sections below say why.
+   `g` is not a free direction on either multiplet: it is absorbed exactly by
+   shifting `b` (octet) or `b` and `e` (decuplet), because in each multiplet the
+   isospin is a function of the hypercharge. So the residual freedom is a
+   reparametrisation, and no categorical argument forcing `g = 0` would buy
+   anything — it would be a statement about a coordinate.
+
+   The real obstruction is stronger and sits one level up: at second order the
+   even-in-`Y` structures already span **all** functions on the three
+   independent meson-octet masses. Any `(m_π, m_η, m_K)` whatsoever is
+   attainable, so the GMO combination takes every value and there is no relation
+   left to deviate from. Matching the observed deviation is not a weak
+   prediction — it is not a prediction at all. What is needed is a **third
+   multiplet in which isospin is not a function of hypercharge**, not a third
+   structure and not a third measurement on these two.
 
 The equal-spacing result is worth stating precisely, because it is easy to
 over-read. At second order the decuplet is **not** equally spaced — each second
@@ -156,13 +171,131 @@ theorem gmo_zero_decuplet_nonzero :
   · rw [decuplet_second_order]; decide
 
 /-- And one with a **nonzero** GMO deviation and **zero** decuplet one. So the
-two relations constrain genuinely different combinations, and together they
-still leave a one-parameter family: reproducing both observed deviations is a
-fit, not a prediction. -/
+two relations constrain genuinely different combinations.
+
+The leftover freedom is **not** a missing physical constraint — see
+`meson_octet_g_absorbed` and `decuplet_g_absorbed` below, which show `g` is
+absorbed exactly by the lower-order coefficients on both multiplets. -/
 theorem decuplet_zero_gmo_nonzero :
     spacingUpper (0:ℤ) 0 0 3 (-4) 4 = 0 ∧ gmoCombination (0:ℤ) 0 0 3 (-4) 4 ≠ 0 := by
   constructor
   · rw [decuplet_second_order]; decide
   · rw [gmo_second_order]; decide
+
+/-! ## The `Y·d` structure is not an independent parameter — on either multiplet
+
+The independence witnesses above show GMO and the decuplet constrain different
+combinations, and I first read that as *"two equations, three unknowns, so a
+third constraint on the coefficients would close it."* **That reading is wrong,
+and the two theorems in this section are why.**
+
+`g` is not a free direction on the octet or on the decuplet. It is absorbed
+exactly — no residue, not merely to leading order — by shifting the *lower*-order
+coefficients, because in each multiplet the isospin is pinned by the hypercharge:
+
+* **Octet.** Hypercharge `±1` forces `I = 1/2`, hence `fourD = 2`; and the two
+  `Y = 0` states kill the `g` term outright. So `Y·fourD = 2Y` on every octet
+  state, and `g` is a disguised `b`.
+* **Decuplet.** `I = 1 + Y/2` along the whole ladder, hence
+  `fourD = 8 + 6Y` identically; so `Y·fourD = 8Y + 6Y²`, and `g` is a disguised
+  mixture of `b` and `e`.
+
+So looking for a categorical argument that forces `g = 0` would be proving
+something about a *coordinate*, not about the physics: `g` can be set to zero by
+reparametrisation, on both multiplets, losing nothing. -/
+
+section Absorption
+variable {R : Type*} [Field R] [CharZero R]
+variable (a b c e f g : R)
+
+/-- **On the octet, `g` is a disguised `b`.** Shifting `b ↦ b + g/2` reproduces
+every meson-octet mass with `g = 0`. Exact, all four states. -/
+theorem meson_octet_g_absorbed :
+    pion a b c e f g = pion a (b + g / 2) c e f 0
+      ∧ eta a b c e f g = eta a (b + g / 2) c e f 0
+      ∧ kaonPlus a b c e f g = kaonPlus a (b + g / 2) c e f 0
+      ∧ kaonMinus a b c e f g = kaonMinus a (b + g / 2) c e f 0 := by
+  refine ⟨?_, ?_, ?_, ?_⟩ <;>
+    simp only [pion, eta, kaonPlus, kaonMinus, m16] <;> ring
+
+/-- **On the decuplet, `g` is a disguised `b` and `e`.** Shifting
+`b ↦ b + 2g` and `e ↦ e + 3g/2` reproduces every decuplet mass with `g = 0`.
+The shift in `e` is exactly the `6g` visible in `decuplet_second_order`. -/
+theorem decuplet_g_absorbed :
+    delta a b c e f g = delta a (b + 2 * g) c (e + 3 * g / 2) f 0
+      ∧ sigmaStar a b c e f g = sigmaStar a (b + 2 * g) c (e + 3 * g / 2) f 0
+      ∧ xiStar a b c e f g = xiStar a (b + 2 * g) c (e + 3 * g / 2) f 0
+      ∧ omega a b c e f g = omega a (b + 2 * g) c (e + 3 * g / 2) f 0 := by
+  refine ⟨?_, ?_, ?_, ?_⟩ <;>
+    simp only [delta, sigmaStar, xiStar, omega, m16] <;> ring
+
+end Absorption
+
+/-! ## At second order the meson octet is *unconstrained* — GMO has nothing left
+
+The sharper statement, and the one that prunes the search. It is not that the
+second-order ansatz predicts the GMO deviation badly, or predicts it only up to a
+free parameter. It is that **the ansatz can produce any three meson-octet masses
+whatsoever**, so there is no relation among them left to deviate from.
+
+Three physical masses are available — `π`, `η`, and the charge-conjugation-
+degenerate kaon — and the even-in-`Y` structures `1`, `Y²`, `fourD²` already
+span all functions on those three states. The witness below sets `b = c = g = 0`,
+so it does not even need the odd sector.
+
+**Consequence, stated as a scope-(b) exclusion with its invariant named** (the
+invariant is the rank count: three independent structures on three independent
+masses): *no* second-order term in `(I, Y)` on this ansatz can carry predictive
+content about the meson octet. Fitting one to the observed deviation is
+therefore not a weak prediction — it is not a prediction at all. This is a
+statement about **this ansatz**, not about `SU(3)` breaking in general. -/
+
+section Surjectivity
+variable {R : Type*} [Field R] [CharZero R]
+
+/-- **Any three meson-octet masses are attainable at second order.** Given
+targets `p, h, k` for pion, eta and kaon, explicit coefficients reproduce all
+three — and the kaon doublet stays degenerate, since the witness has `b = g = 0`.
+
+Hence the Gell-Mann–Okubo relation, which is an identity at first order
+(`GellMannOkuboIdentity`), is **vacuous** at second order: its combination can
+take any value at all, so matching the observed ≈ 6 % deviation constrains
+nothing. -/
+theorem meson_octet_second_order_surjective (p h k : R) :
+    ∃ a e f : R,
+      pion a 0 0 e f 0 = p
+        ∧ eta a 0 0 e f 0 = h
+        ∧ kaonPlus a 0 0 e f 0 = k
+        ∧ kaonMinus a 0 0 e f 0 = k := by
+  refine ⟨h / 16, (k - h) / 16 - (p - h) / 256, (p - h) / 64, ?_, ?_, ?_, ?_⟩ <;>
+    simp only [pion, eta, kaonPlus, kaonMinus, m16] <;> ring
+
+/-- **The GMO combination takes every value.** Immediate from surjectivity, and
+worth stating on its own: there is no value of the deviation that would count as
+evidence for or against a second-order term. -/
+theorem gmo_combination_surjective (t : R) :
+    ∃ a b c e f g : R, gmoCombination a b c e f g = t := by
+  refine ⟨0, 0, 0, t / 64, 0, 0, ?_⟩
+  rw [gmo_second_order]; ring
+
+end Surjectivity
+
+/-! ## What survives on the decuplet, and what would actually close this
+
+The decuplet is **not** surjective in the same way, and that asymmetry is the
+one piece of testable content left. Because `fourD = 8 + 6Y` along the ladder,
+every structure in the ansatz — `Y`, `d`, `Y²`, `d²`, `Y·d` alike — restricts to
+a polynomial in `Y` alone, of degree at most two. Four states, a three-
+dimensional space of quadratics: exactly one relation survives, and it is
+`decuplet_second_differences_equal` above.
+
+That also bounds what refining the *structure list* can buy: adding cubic
+structures would raise the degree to three and destroy the last relation rather
+than create a new one. **What is needed is a third multiplet in which isospin is
+not a function of hypercharge — not a third structure, and not a third
+measurement on these two.** The baryon octet is such a multiplet (`Λ` and `Σ`
+share `Y = 0` with different `I`), which is why baryon GMO is a genuine relation
+where the meson one has become vacuous; formalising that case is the next step
+and is **not** done here. -/
 
 end QOU.Eightfold.GellMannOkuboSecondOrder
