@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T08:47:16Z
+updated_at: 2026-08-25T09:05:21Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -812,3 +812,50 @@ identification FAILS at d = 1 (so the probe can see d).
 2. **The spectral half of `JucysMurphySpectrum`** — the seminormal representation
    itself. This is the larger remaining item and the one that would actually discharge
    the general-lambda twist. The general-lambda twist REMAINS CONDITIONAL.
+
+
+## 2026-08-25 (later) — `prod L_i = Delta^2` PROVED for every n. Item 1 above is closed.
+
+`QOU.BraidKnot.Hecke.jmProd_eq_delta_pow` : `L_0 L_1 ... L_n = (delta n)^(n+1)`, the full
+twist of `B_{n+1}`. Sorry-free, `#print axioms` clean.
+`HeckeFullTwistProduct.lean`, ~230 lines.
+
+**From the braid relations ALONE.** The Hecke relation is not used anywhere in that file,
+and neither is `jmRaw_comm` — commutativity makes the product order-independent, which is
+a DIFFERENT statement and does not give the identification.
+
+### The engine
+
+    delta k  = sigma_0 ... sigma_{k-1}            ascending run
+    run b k  = sigma_{b+k-1} ... sigma_b          descending run, bottom b
+    L_k      = run 0 k * delta k                  jmRaw_eq_run_mul_delta
+
+    (delta m * sigma_m)^(k+1) = (delta m)^(k+1) * run b (k+1)   for m = b+k
+                                                                 delta_pow_run
+
+At `b = 0` this is `(delta (n+1))^(n+1) = (delta n)^(n+1) * run 0 (n+1)`; multiplying on
+the right by `delta (n+1)` turns the RHS into `(delta n)^(n+1) * L_{n+1}` and the LHS into
+`(delta (n+1))^(n+2)`, which IS the induction step.
+
+**The free bottom index `b` is load-bearing.** The step consumes the inductive hypothesis
+at `b+1`, not at `b`. A version stated only at `b = 0` does not close.
+
+**Exactly one braid move in the whole file** (`core_braid_push`): everything else is
+far-commutation bookkeeping. That is why the n=2/n=3 hand proofs looked like "one braid
+move on a six-letter word" — they were the base and first step of this induction.
+
+### Independent confirmation
+
+`computations/hecke/jm_full_twist_product_probe.py` — faithful regular rep, H_3..H_6,
+exact Fractions, q in {2,3,5/2}. All three identities True; controls fire (the exponent is
+tight, the twist is not the identity). **The probe caught a transcription error of mine on
+its first run**: I wrote the step's left exponent as `m+1` when it is `m`. The delta index
+goes up while the exponent does not, and that asymmetry is the content of the step.
+
+### What remains — this bean stays open for it
+
+**The spectral half of `JucysMurphySpectrum`** — the seminormal representation itself.
+That is now the ONLY remaining item, and it is the one that would discharge the
+general-lambda twist, which REMAINS CONDITIONAL. Both structural halves the user's arc
+named (commutativity, `prod L_i = Delta^2`) are done; the spectral half is not, and is
+larger than either.
