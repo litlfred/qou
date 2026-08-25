@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-25T23:05:00Z
+updated_at: 2026-08-26T00:45:00Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -221,3 +221,41 @@ It **already existed** — `colour_weighting_is_a_real_shift_not_a_no_op`.
 Corpus-grepped before writing, which is the only reason it did not become a
 duplicate. Second time this session that the thing I was about to build was
 already there.
+
+## 2026-08-25 — findings 1 and 2 LABELLED (`42d2537721`)
+
+Same posture as the Rust pair: **named, not flipped.** Both probes now
+state at the point where the factor is set that they use
+`strict_averaged`, that canonical is `bring_color_weighted`, and that the
+gap is `h·δ/4 = 7.190163e-05` at the proton pin.
+
+For finding 1 the docstring was the actual defect, not the code line: it
+called the per-bond factors *"categorically-DERIVED … Lean-proved exact"*,
+which a reader reasonably takes as covering the p-n convention. It does
+not. The caveat now says the DERIVED claim covers the **shape** of the
+factors, and that the ρ_F results are 0-fit but **convention-conditional**.
+
+Findings 3-9 status: 3-4 done (`d85f1d581b`), 5-9 are content blocks and
+remain open.
+
+### A second defect, found only by re-running
+
+Both probes **hand-build** their witness dict (`json.dump`, not
+`WitnessBuilder.save`), so `q0Anchor` / `q0Value` / `q0AnchorReason` —
+added downstream by transcription — were **deleted on every re-run**.
+
+This is the **"bare producer"** hazard AGENTS.md names in the
+witness-staleness triage: *"re-running one deletes the field this audit
+keys on … fix the producer to emit provenance first."* Worth recording
+because of **how** it fired: on exactly the workflow that document
+recommends. A comment-only edit, re-run to refresh `scriptHash` — the
+"cheap probe: just re-run" case — and all three keys vanished. I nearly
+committed that as a clean regeneration; the only thing that caught it was
+diffing the witness for substantive fields before staging.
+
+**So "cheap probes: just re-run" is not safe on its own.** Diff the
+witness for *deletions* too, not just for moved numbers. Both producers
+now emit the three keys themselves.
+
+Verified across both witnesses: the only diffs are timestamps, commit
+shas and the reason text. No computed number moved.
