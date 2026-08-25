@@ -721,6 +721,60 @@ theorem exists_divided_wronskian {τ : Type*} [DecidableEq σ] [DecidableEq τ]
       ≤ (r.factorial : ℤ) * S ^ r * ((∏ i, ax i) * ((∏ j, ay j) * K ^ r)) := hdet
     _ = ((∏ i, ax i) * ∏ j, ay j) * ((r.factorial : ℤ) * S ^ r * K ^ r) := by ring
 
+/-- **§12's budget closes** — and by exactly one factor of `r₀·d_first`.
+
+`exists_divided_wronskian` gives `|coeff W| ≤ r₀!·S^{r₀}·(2^{Σd}·a)^{r₀}`.  §11's clause 4 wants
+`b ≤ 2^c·a^{r₀}` with `c ≤ (2m+1)·(r₀·d_first)` — which is `rothGammaFull_descend`'s
+`(2n+3)·(r₀·d (o.symm 0))` at `m = n + 1`.  The two meet:
+
+    S^{r₀} ≤ 2^{r₀Σd},   (2^{Σd}·a)^{r₀} = 2^{r₀Σd}·a^{r₀},   so   b ≤ r₀!·2^{2r₀Σd}·a^{r₀}
+    Σd ≤ (n+1)·d_first                      gives  2r₀Σd ≤ (2n+2)·r₀·d_first
+    r₀! ≤ r₀^{r₀} ≤ (d_last+1)^{r₀} ≤ 2^{r₀·d_first}
+
+and `(2n+2) + 1 = 2n+3`.  So the factorial is what the last unit of the budget pays for, and
+there is nothing else to spend it on — §12's `2^{2n(r₁+…+r_m)}·n!·a^n` names both terms.
+
+⚠ `d_last + 1 ≤ 2^{d_first}` is the only place the growth ordering is used, and it is used only
+through `d_last ≤ d_first`.  The `+1` survives because `k + 1 ≤ 2^k`, not because of any
+estimate on the degrees' ratio — so a *degenerate* growth constant would not break this step,
+only the row cost. -/
+theorem height_budget {n r₀ sd dfirst dlast : ℕ} {S a : ℤ}
+    (hr₀ : r₀ ≤ dlast + 1) (hsum : sd ≤ (n + 1) * dfirst) (hdf : dlast ≤ dfirst)
+    (hS1 : 1 ≤ S) (hS : S ≤ 2 ^ sd) (ha : 1 ≤ a) :
+    (r₀.factorial : ℤ) * S ^ r₀ * (2 ^ sd * a) ^ r₀
+      ≤ 2 ^ ((2 * n + 3) * (r₀ * dfirst)) * a ^ r₀ := by
+  have ha0 : (0 : ℤ) ≤ a := le_trans zero_le_one ha
+  have hS0 : (0 : ℤ) ≤ S := le_trans zero_le_one hS1
+  -- the factorial, absorbed into a single `2^{r₀·d_first}`
+  have hfacN : r₀.factorial ≤ 2 ^ (r₀ * dfirst) := by
+    calc r₀.factorial ≤ r₀ ^ r₀ := Nat.factorial_le_pow r₀
+      _ ≤ (2 ^ dfirst) ^ r₀ := by
+          refine Nat.pow_le_pow_left ?_ r₀
+          calc r₀ ≤ dlast + 1 := hr₀
+            _ ≤ dfirst + 1 := by omega
+            _ ≤ 2 ^ dfirst := Nat.lt_two_pow_self
+      _ = 2 ^ (r₀ * dfirst) := by rw [← pow_mul, mul_comm]
+  have hfac : ((r₀.factorial : ℕ) : ℤ) ≤ 2 ^ (r₀ * dfirst) := by exact_mod_cast hfacN
+  -- the two `2^{r₀sd}` factors
+  have hSpow : S ^ r₀ ≤ 2 ^ (r₀ * sd) := by
+    calc S ^ r₀ ≤ ((2 : ℤ) ^ sd) ^ r₀ := pow_le_pow_left₀ hS0 hS r₀
+      _ = 2 ^ (r₀ * sd) := by rw [← pow_mul, mul_comm]
+  have hsplit : ((2 : ℤ) ^ sd * a) ^ r₀ = 2 ^ (r₀ * sd) * a ^ r₀ := by
+    rw [mul_pow, ← pow_mul, mul_comm sd r₀]
+  -- the exponent arithmetic
+  have hexp : r₀ * dfirst + (r₀ * sd + r₀ * sd) ≤ (2 * n + 3) * (r₀ * dfirst) := by
+    have h1 : r₀ * sd ≤ r₀ * ((n + 1) * dfirst) := Nat.mul_le_mul_left _ hsum
+    nlinarith [h1]
+  calc (r₀.factorial : ℤ) * S ^ r₀ * (2 ^ sd * a) ^ r₀
+      = ((r₀.factorial : ℕ) : ℤ) * S ^ r₀ * (2 ^ (r₀ * sd) * a ^ r₀) := by rw [hsplit]
+    _ ≤ (2 : ℤ) ^ (r₀ * dfirst) * 2 ^ (r₀ * sd) * (2 ^ (r₀ * sd) * a ^ r₀) := by
+        refine mul_le_mul (mul_le_mul hfac hSpow (pow_nonneg hS0 r₀) (by positivity)) le_rfl
+          (by positivity) (by positivity)
+    _ = (2 : ℤ) ^ (r₀ * dfirst + (r₀ * sd + r₀ * sd)) * a ^ r₀ := by
+        rw [← pow_add, ← mul_assoc, ← pow_add, add_assoc]
+    _ ≤ (2 : ℤ) ^ ((2 * n + 3) * (r₀ * dfirst)) * a ^ r₀ := by
+        refine mul_le_mul_of_nonneg_right (pow_le_pow_right₀ (by norm_num) hexp) (by positivity)
+
 /-- **§7's coefficient bound in one variable, sharp.**
 
     |coeff n (∂ⱼ^k g)| ≤ k! · 2^d · B      whenever  degreeOf j g ≤ d  and  |coeff · g| ≤ B
