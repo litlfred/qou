@@ -40,8 +40,11 @@ LINEAR trace, tr_M(W^♯) = tr_M(W) (character symmetry χ^λ(T_{w⁻¹}) =
 the QUADRATIC tr_M(W·W^♯) ≠ tr_M(W)² in general.
 
 Feasibility: dense/sparse seminormal per λ ⊢ 3A; Σ_λ d_λ² = (3A)! caps the
-default at A ≤ 3 (n ≤ 9, instant). ⁴He (n = 12, d_max = 7700, ~1 GB peak,
-minutes) is opt-in via --with-4he.
+default at A ≤ 3. Measured 2026-08-25: ²H 0.02 s, ³H 0.45 s, ³He 0.42 s;
+⁴He (n = 12, d_max = 7700, ~1.8 GB peak) 418 s, opt-in via --with-4he.
+NB those figures hold only with the float coercion in `_letters` — without it
+an mpf word coefficient promotes every letter to dtype=object and ³H alone runs
+for hours (see that function's docstring, and bean qou-9ohz).
 
 Emits `gram-norm-binding-probe.witness.json` (audit-only).
 
@@ -81,13 +84,26 @@ ISO_4HE = ("4He", 2, 2)
 
 
 def _letters(word, dim, sigmas):
-    """Materialise the word's letters c·σ_g + d·1 as matrices for one λ."""
+    """Materialise the word's letters c·σ_g + d·1 as matrices for one λ.
+
+    The coefficients (c, d) arrive from `atom_braid_word_3A` as a mix of
+    `int` and `mpmath.mpf`; the seminormal σ are float64 (see the module
+    PRECISION note). An mpf scalar times a float64 array yields a
+    **dtype=object** array, and object dtype then propagates through every
+    subsequent `@` in `_word_products`, running the whole matmul chain at
+    Python speed. Measured on λ=(4,3,1,1), d=216: one matmul costs 0.74 ms
+    in float64 and 13270 ms in object dtype — a factor of 1.8e4. Since the
+    σ operand is *already* float64-truncated, the mpf carries no information
+    the product can keep (verified at ²H: object vs coerced agree to 9e-16,
+    the float64 floor), so coercing here loses nothing and is what makes
+    ³H and beyond feasible at all.
+    """
     eye = sps.identity(dim, format="csr") if sigmas and sps.issparse(sigmas[0]) \
         else np.eye(dim)
     out = []
     for c, d, g in word:
         sig = sigmas[g]
-        out.append(c * sig + d * eye)
+        out.append(float(c) * sig + float(d) * eye)
     return out
 
 
