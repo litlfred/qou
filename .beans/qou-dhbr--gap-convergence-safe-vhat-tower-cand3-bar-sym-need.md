@@ -1,31 +1,63 @@
 ---
 # qou-dhbr
-title: 'GAP: convergence_safe_vhat_tower cand3_bar_sym needs re-derivation under convention D'
+title: 'convergence_safe_vhat_tower: z_bar RESOLVED on main; only the cand3_bar_sym NAME is stale'
 status: todo
 type: task
 created_at: 2026-08-25T01:21:42Z
-updated_at: 2026-08-25T01:21:42Z
+updated_at: 2026-08-25T06:40:00Z
 ---
 
 
-## The site
+## RESCOPED 2026-08-25 -- the substantive question is CLOSED, not open
 
-`computations/convergence_safe_vhat_tower.py:198`
+This bean was written on PR #5738 while `computations/convergence_safe_vhat_tower.py:198`
+still read
 
     z_bar = mp.mpf(1) / (mp.sqrt(qi) + mp.sqrt(q))  # = z (bar-symmetric)
 
-Flagged actionable by `convention-c-producer-audit.py`; classed **B4** by
-`convention-c-triage.py` (emits a committed witness). NOT migrated on
-PR #5738, deliberately — it is a conclusion, not a definition.
+and it argued that neither available edit was a mechanical migration,
+so the choice was authorial. That was correct at the time.
 
-## Why substitution is invalid here (rule 4 / qou-cds1)
+**PR #5622 ("Excise convention C") then made the choice**, and it is on
+`main`. The site is now line 207:
 
-The trailing comment is the whole problem. `z_C` **is** bar-symmetric,
-as an identity:
+    z_bar = _markov_z(qi)
+
+with a comment recording the verification: `markov_z(1/q) = z - h =
+1/(q^3 + q) = 0.4036277383508259361649837` to 25 digits with difference
+exactly 0.0, and `z/(z-h) = q^4` exactly -- so bar is not a symmetry of
+`z_D`, it exchanges the channels. That is **option 1** of the two this
+bean laid out (the true bar image), taken deliberately and documented.
+
+**Do not re-open the z_bar question.** The analysis below is retained
+because it is correct and agrees with main's, not because anything is
+undecided.
+
+## What actually remains -- the name, not the value
+
+`cands["cand3_bar_sym"]` (line 284) and `towers["cand3_bar_sym"]`
+(line 347) still carry `_bar_sym` in the name. Under convention D that
+object is **not** bar-symmetric -- which is exactly what main's own
+comment establishes. So the identifier now asserts a property its value
+does not have, in a file whose comment three lines up explains why.
+
+This is a naming defect, cheap and low-risk:
+
+1. Rename to something that describes what it is under D -- the bar
+   IMAGE candidate, not the bar-SYMMETRIC one (e.g. `cand3_bar_image`).
+2. Grep for downstream readers of the key before renaming: it is a dict
+   key, so any consumer indexes it by string.
+3. Check `convergence-safe-vhat-tower.witness.json` -- the key is
+   serialised into the payload, so a rename moves a committed field
+   name and needs the witness regenerated in the same commit.
+
+## Why the original bar-asymmetry argument still stands (retained)
+
+`z_C` is bar-symmetric as an identity:
 
     z_C(1/q) = 1/(sqrt(1/q) + sqrt(q)) = 1/(1/sqrt(q) + sqrt(q)) = z_C(q)
 
-`z_D` is **not**:
+`z_D` is not:
 
     z_D(q)   = q^3/(q^2 + 1)
     z_D(1/q) = q^-3/(q^-2 + 1) = q^-1/(q^2 + 1)
@@ -33,53 +65,12 @@ as an identity:
 
 Measured at the proton pin: `z_C(q) = z_C(1/q) = 0.49932033418369445`,
 while `z_D(q) = 0.61268803714646525` and `z_D(1/q) = 0.40362773835082594`.
+Main's independently-recorded `0.4036277383508259361649837` agrees.
 
-So `z_bar = z` is a **convention-C fact**, and the file has built a named
-candidate on it: `cands["cand3_bar_sym"]` (line 275), with
-`vhat_std_bar_image_q_to_qinv`, `F_on_bar_image`,
-`bar_image_inside_radius` and `towers["cand3_bar_sym"]`
-(`tower_bar_gm`, line 326) all downstream of it.
+## Still worth checking when the rename lands
 
-## Both available edits change recorded mathematics
-
-- Write `z_bar = qi**3/(qi**2 + 1)` — the true bar image of `z_D`. Then
-  `z_bar != z` and `cand3_bar_sym` is no longer the bar-**symmetric**
-  candidate. Its identity changes; the name becomes wrong; whatever the
-  candidate was evidence for is now evidence about a different object.
-- Write `z_bar = q**3/(q**2 + 1)` — preserving `z_bar = z`. This keeps
-  the C-era *structure* while carrying a D *value*, which is exactly the
-  move `qou-cds1` bans and `QOU.QBeta.decayLadder_zC_threeRow_ne_zero`
-  makes untenable in the adjacent case.
-
-Neither is a mechanical convention fix. Someone has to decide what the
-bar candidate **is** in the D frame, and that is authorial.
-
-## What re-derivation has to settle
-
-1. Is there a bar-symmetric object in the D frame at all? If the bar
-   involution `q -> 1/q` no longer fixes the Markov parameter, does
-   `cand3` survive in any form, or is it C-only and to be retired?
-2. If it survives, is the right D object the bar image `z_D(1/q)`, or a
-   symmetrised combination (`sqrt(z_D(q) z_D(1/q))`, which is
-   `q/(q^2+1)` — rational, and worth checking against the Wenzl
-   normalisation `z_W = q z_D`)?
-3. Whatever is chosen, `bar_image_inside_radius` must be re-checked:
-   `z_D(1/q) = 0.4036` and `z_D(q) = 0.6127` sit at different distances
-   from the `Li_2^q` convergence radius `q`, so a candidate that
-   converged under C may not.
-
-## Blast radius
-
-The file emits `convergence-safe-vhat-tower.witness.json`. It is ALSO
-one of the 19 measured live consumers of `_li_2_q_util.load_q_50dps`,
-whose `z` was migrated to D on PR #5738 — so this file already has a
-D-frame `z` on line 178 sitting next to a C-frame `z_bar` on line 198.
-That mixed state is itself a reason to prioritise this: the file
-currently straddles the two conventions in one computation, which is
-the shape AGENTS.md warns about for pins.
-
-## Do not
-
-Do not "fix" this by deleting the `# = z (bar-symmetric)` comment. The
-comment is accurate about the code as written; it is the code that has
-to move, once someone decides where to.
+`bar_image_inside_radius`: `z_D(1/q) = 0.4036` and `z_D(q) = 0.6127` sit
+at different distances from the `Li_2^q` convergence radius `q`, so a
+candidate that converged under C may not under D. Main migrated the
+value but this bean has not verified that the radius check was
+re-examined.
