@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: high
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-25T08:19:16Z
+updated_at: 2026-08-25T19:04:38Z
 ---
 
 Parent: `qou-cdx1`. **The largest science item in the ruling.** Supersedes the
@@ -1707,3 +1707,39 @@ nothing physical is not evidence about which convention its arithmetic carries.
 
 My "two live sites" count is therefore also retracted as incomplete. It should
 not be used as a denominator anywhere.
+
+
+## The F coordinate does NOT rescue it — the crossing pathology survives the change of coordinate (2026-08-25)
+
+Angle taken from this bean's own closing recommendation (*"work in F, not alpha"*).
+Distinct from PR #5337, which is on the two-row cap.
+
+`qbeta_F_coordinate_bridge_audit_probe.py` was committed (#5745) but **its
+witness never was** — the producer declares `WitnessBuilder('qbeta-F-coordinate-
+bridge-audit')` and no such file is in the tree. Ran it; 3 assertions pass.
+
+**The result the bean was hoping against.** The move to F was motivated by the
+alpha coordinate's sqrt branch point being a parameterization artifact — which
+it is. But F does not restore tracking:
+
+    dF_required/dq  =  +2.3355460960     <- POSITIVE
+    bridge_truncated_C   -0.4548          bridge_truncated_D   -0.2414
+    bridge_exact_C       -0.5061          bridge_exact_D       -0.2887
+    cos_model_C          -0.0321          cos_model_D          -0.0163
+
+All six candidates have the WRONG SIGN. Independently verified here from the
+closed form `Q_A = m_e|q^2-2q-1|(q+1)/(2q^3)` by central difference:
++2.3355460958, matching the probe to 1.8e-10 (differentiation error).
+
+So the prune extends: it is not merely that no analytic phase ansatz can equal
+alpha_required as a function. In the SMOOTH coordinate, where no branch point
+exists to blame, every candidate still only CROSSES F_required — and does so
+transversally from the opposite direction. Changing coordinate removed the
+artifact and left the disagreement intact, which localises the failure in the
+candidates rather than in the parameterization.
+
+**Also measured, and it bears on the C-vs-D question directly:** the cos model's
+relative error against F_required is 1.28e-6 under C and 6.02e-4 under D — D is
+471x worse in the coordinate the bean nominated as the honest one.
+
+Scope-(a). Nothing here derives F, and no value is proposed for anything.
