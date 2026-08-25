@@ -1,11 +1,11 @@
 ---
 # qou-1jw9
 title: 'GAP: thm:wedderburn-mass-formula is unfalsifiable as written — no unique M_i, no producer'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T12:37:25Z
+updated_at: 2026-08-25T16:20:59Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -394,3 +394,16 @@ merge past a red gate. When half of it silently goes stale the next reader
 either dismisses a real red as inherited, or re-investigates a fixed one. A
 gate claim carries a timestamp whether or not you write one down — so write
 one down, and re-measure before repeating it.
+
+
+TAKEOVER 2026-08-25T16:20Z. Prior session (session_01Y49zmah825kkwu2aB8CbAY) stalled on
+branch claude/phantom-witness-and-groundstate-2026-08-25 at 1d7bede2f (last commit
+12:37:25Z, >3h idle, PR #5758 draft, no reviews, no in-flight CI). Continuing from that
+tip on claude/agent-stalled-no-fitting-a5ur1w. Not force-pushing the stalled branch.
+
+Picking up its ONE stated open item: the published formula's h_A^2 = 0.043707282 and the
+recovered producer's beta3 = 0.0499 disagree by 14.2 %. Under the owner's no-fitting
+ruling that is an authoring call, but it is premature to ask it until the measurement is
+done: does the published formula, evaluated with h_A^2, reproduce the published table at
+all? The producer with beta3 does (20 rows, mean 0.074 %). If h_A^2 does not, the call is
+settled by measurement rather than by preference.
