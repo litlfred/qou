@@ -1286,26 +1286,27 @@ lesson, and this is its fourth instance in the arc.
 
 ⚠ This covers what `rothConstant_step_source` does not — that one's `u² ≤ 4Ψ` is the `√Ψ`
 branch alone, which is the max only when `Ψ ≤ 1`. -/
-theorem rothConstant_step_lemma4 {m : ℕ} (hm : 1 ≤ m) {s Ψ w θ : ℚ}
+theorem rothConstant_step_lemma4 {K : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
+    {m : ℕ} (hm : 1 ≤ m) {s Ψ w θ : K}
     (hs0 : 0 ≤ s) (hs1 : s ≤ 1)
-    (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
+    (hΨ : Ψ ≤ ((rothConstant m : K) + 1) * s ^ 2)
     (hw : w ≤ Ψ ∨ w ^ 2 ≤ Ψ)
     (hθ : θ ≤ s + 2 * w) :
-    θ ≤ (rothConstant (m + 1) : ℚ) * s := by
-  have hc1 : (1 : ℚ) ≤ (rothConstant m : ℚ) := by exact_mod_cast rothConstant_one_le hm
-  have hc0 : (0 : ℚ) ≤ (rothConstant m : ℚ) + 1 := by linarith
+    θ ≤ (rothConstant (m + 1) : K) * s := by
+  have hc1 : (1 : K) ≤ (rothConstant m : K) := by exact_mod_cast rothConstant_one_le hm
+  have hc0 : (0 : K) ≤ (rothConstant m : K) + 1 := by linarith
   have hsq : s ^ 2 ≤ s := by nlinarith
-  have hws : w ≤ ((rothConstant m : ℚ) + 1) * s := by
+  have hws : w ≤ ((rothConstant m : K) + 1) * s := by
     rcases hw with h | h
     · calc w ≤ Ψ := h
-        _ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2 := hΨ
-        _ ≤ ((rothConstant m : ℚ) + 1) * s := mul_le_mul_of_nonneg_left hsq hc0
+        _ ≤ ((rothConstant m : K) + 1) * s ^ 2 := hΨ
+        _ ≤ ((rothConstant m : K) + 1) * s := mul_le_mul_of_nonneg_left hsq hc0
     · refine le_of_pow_le_pow_left₀ two_ne_zero (mul_nonneg hc0 hs0) ?_
       calc w ^ 2 ≤ Ψ := h
-        _ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2 := hΨ
-        _ ≤ (((rothConstant m : ℚ) + 1) * s) ^ 2 := by
+        _ ≤ ((rothConstant m : K) + 1) * s ^ 2 := hΨ
+        _ ≤ (((rothConstant m : K) + 1) * s) ^ 2 := by
             nlinarith [sq_nonneg s, mul_nonneg hc0 (sq_nonneg s)]
-  have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
+  have hrec : ((rothConstant (m + 1) : ℕ) : K) = 2 * (rothConstant m : K) + 3 := by
     rw [rothConstant_rec m hm]; push_cast; ring
   rw [hrec]
   linarith

@@ -4477,3 +4477,42 @@ mathematics. `rothLemmaTheta_three` is an instance where the restriction is sati
 directions: "neither is proved" (correction 17), "`RothLemma4` is not proved at any arity", and
 each time the build had no opinion. A docstring naming what is open is a claim about the whole
 file and ages the moment anything below it lands.
+
+## Correction 23 is closed — Roth's Lemma at every arity, no hypotheses
+
+`rothLemmaTheta_all : ∀ m, 1 ≤ m → RothLemmaTheta (Fin m) m p q F`, for every `p q F`. And
+`index_le_rothBound`, which says what that means on the index: under `Γ_m` with `t = p/q`, every
+`A ∈ R(a;r)` has index at most `c_m·t^{2^{−(m−1)}}` at every `κ ∈ Q(H)`, with
+`c_m = 2^{m+1} − 3`.
+
+### Why the ladder could not simply be dropped
+
+Correction 23 called the perfect-power restriction "an artifact of the root-free encoding".
+That was right, but it understated the situation: **a root-free reformulation of the argument
+does not exist at this constant.** Running §14's step on powers directly needs
+`(a+b)^K ≤ 2^{K−1}(a^K + b^K)`, which turns `Θ ≤ 2Θ_n + 3t` into
+
+    Θ^K ≤ 2^{K−1}(2^K·c_n^K + 3^K)·t,     K = 2^n
+
+against a target of `(2c_n+3)^K ≈ 2^K c_n^K`. That is short by `≈ 2^{K−1}` once `c_n` is large,
+and `c_n = 2^{n+1}−3` is large. The root is not a convenience; it is what stops the constant
+compounding. I checked this before reaching for `ℝ`, and it is the reason the answer is `ℝ` and
+not a cleverer `ℚ` argument.
+
+### The fix
+
+* `rothConstant_step_lemma4` was **already field-generic** — its proof is `nlinarith` and
+  `le_of_pow_le_pow_left₀`. Generalising it from `ℚ` to
+  `[Field K] [LinearOrder K] [IsStrictOrderedRing K]` cost one edit and broke no caller.
+* `Real.sqrt^[n]` supplies the `2^n`-th root (`sqrtIter_pow`, `_nonneg`, `_le_one`).
+  `Real.rpow` would be one line but is not in this project's built Mathlib closure;
+  `Mathlib.RingTheory.Real.Irrational` is, and carries `Real.sqrt`.
+* `rothBound_succ_of_lemma4'` runs the step in `ℝ` at `u = t^{2^{−n}}` and casts back. Both
+  endpoints are rational, so the excursion is invisible in the statement.
+
+New module `QOU/Mathlib/RothRealLadder.lean`, registered in `QOU.lean`. All five
+`#print axioms` clean.
+
+⚠ The `ℝ`-free route is **kept**, not replaced: `rothLemmaTheta_of_seq` and
+`rothLemmaTheta_three` still stand in `RothVariableSplit`, and a reader who wants Roth's Lemma
+without an analysis import can have it at any `t` that is a `2^{M−1}`-th power.

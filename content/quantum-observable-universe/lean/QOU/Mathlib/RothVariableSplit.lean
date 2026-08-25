@@ -327,9 +327,10 @@ is stated after it), and `RothLemmaTheta` at `m = 1` outright (`rothLemmaTheta_o
 every `m ≤ M` for which the `s`-ladder exists in `ℚ` (`rothLemmaTheta_of_seq`).  The implication
 between them is `rothBound_succ_of_lemma4`, §14's induction step in `Θ` language.
 
-What is **not** closed is correction 23's encoding restriction: `rothLemmaTheta_of_seq` needs
-`t` to be a `2^{M−1}`-th power in `ℚ`, because `RothBound` is root-free and the ladder
-`s_{n+1}² = s_n` has to live in `ℚ`.  `rothLemmaTheta_three` is an instance where it does.
+Correction 23's encoding restriction survives in `rothLemmaTheta_of_seq` — `t` has to be a
+`2^{M−1}`-th power in `ℚ` — and is **removed** in `QOU/Mathlib/RothRealLadder.lean`, whose
+`rothLemmaTheta_all` holds at every arity with no hypothesis.  What is kept here is the `ℝ`-free
+route; `rothLemmaTheta_three` is a self-contained instance of it.
 
 ⚠ This paragraph has now been wrong **three times**, in three different directions: it read
 "neither is proved" after `rothLemmaTheta_one` landed (correction 17), then "`RothLemma4` is not
@@ -974,10 +975,10 @@ theorem rothLemma4_of_one_le {σ : Type*} [DecidableEq σ] {n : ℕ} (hn : 1 ≤
 
 /-- **Roth's Lemma in `Θ` form, unconditional on Lemma 4.**
 
-What remains is the encoding restriction correction 23 named: `t` has to be a `2^{M−1}`-th
-power in `ℚ`, because `RothBound` is root-free and the ladder `s_{n+1}² = s_n` has to live in
-`ℚ`.  That is an artifact of the encoding, not of §14 — the inequalities are field-generic and
-would transfer from `ℝ`. -/
+⚠ The `s`-ladder here is correction 23's encoding restriction: `t` has to be a `2^{M−1}`-th
+power in `ℚ`.  **`QOU/Mathlib/RothRealLadder.lean` removes it** — `rothLemmaTheta_all` holds at
+every arity for every `p, q, F`, by taking the roots in `ℝ` where they exist.  This form is kept
+because it is `ℝ`-free, and because `rothLemmaTheta_three` is a self-contained instance. -/
 theorem rothLemmaTheta_of_seq {p q F M : ℕ} {s : ℕ → ℚ}
     (hs0 : ∀ n, 0 ≤ s n) (hs1 : ∀ n, s n ≤ 1)
     (hsq : ∀ n, n + 1 < M → s (n + 1) ^ 2 = s n) (hs00 : s 0 = (p : ℚ) / (q : ℚ)) :
