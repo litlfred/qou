@@ -119,7 +119,11 @@ def main() -> int:
     w = WitnessBuilder("mu3-abs-choice-robustness", engine="pyhecke_native",
                        output_dir=Path(__file__).resolve().parent)
     w.add_assertion("baseline_gate_vs_4404", 1 if gates_ok else 0, 1)
-    w.add_assertion("verdict_robust_to_abs", 1 if same else 0, 1 if same else 0)
+    # Was an add_assertion(name, X, X) -- computed and expected the SAME expression,
+    # so it read as a check while being `x == x`: tautologically true, unable to fail,
+    # and rendered as "passed": true for the QA pipeline. It is a RECORDED FINDING
+    # with no independent expectation, so it belongs in add_data. Bean qou-ploj.
+    w.add_data("verdict_robust_to_abs", 1 if same else 0)
     w.add_parameter("q0", mp.nstr(q0, 20))
     w.add_data("results", results)
     w.add_caveat(

@@ -1,28 +1,22 @@
 {
   "engine": "pyhecke_native",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T09:46:33.294333+00:00",
-  "commitSha": "29f66902809ffc8db4d34cd8b46f49c2f2739c20",
+  "computedAt": "2026-08-25T21:17:48.164124+00:00",
+  "commitSha": "00d0aa91d77bd9c21f2b1fcac9b98561543caf30",
   "assertions": [
     {
       "name": "ceiling_bounds_measured_N",
       "computed": 1,
       "expected": 1,
       "passed": true
-    },
-    {
-      "name": "ceiling_below_P_both_isotopes",
-      "computed": 1,
-      "expected": 1,
-      "passed": true
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "mu3-door-budget",
   "scriptFile": "mu3_door_budget_probe.py",
-  "scriptHash": "4f2bb34b00af",
-  "scriptCommitSha": "7482d6bc64265d31c6005f55dbd03862f87f7cd4",
+  "scriptHash": "280ccf1b576f",
+  "scriptCommitSha": "affcb889949e9fb3563598da8f1efa3359361f10",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -37,7 +31,7 @@
     "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -51,6 +45,7 @@
     "q0_anchor": "experimental/proton"
   },
   "data": {
+    "ceiling_below_P_both_isotopes": 1,
     "results": {
       "T": {
         "P_positive_weight": "0.32783983234711737691",
