@@ -460,6 +460,67 @@ theorem exists_isRothTheta {σ : Type*} [Finite σ] (a : ℤ) (r H : σ → ℕ)
   exists_isRothTheta_of_finite a r H (finite_rothPolySet a r) (finite_rothFracSet H)
     (exists_inRothPolySet a r ha) (exists_inRothFracSet H hH)
 
+/-! ### Transport along a type equivalence
+
+The variable *type* is incidental — `RothLemmaTheta σ m` and `RothLemmaTheta τ m` say the same
+thing when `σ ≃ τ` — but they are different propositions, and `rothLemmaTheta_iterate` needs the
+base case at `Fin 1` while `rothLemmaTheta_one` proves it at `Unit`.
+
+`index_rename_equiv` (`QOU.Mathlib.RothIndex`) already carries the index across; these carry the
+two membership predicates, and hence `IsRothTheta`.  ⚠ The height side really is free, as that
+module's docstring predicted: `coeff_rename_mapDomain` matches coefficients across a renaming, so
+the sup-norm bound transports with no arithmetic at all. -/
+
+theorem InRothPolySet.rename_equiv {σ τ : Type*} [DecidableEq σ] [DecidableEq τ] (e : σ ≃ τ)
+    {a : ℤ} {r : σ → ℕ} {A : MvPolynomial σ ℤ} (h : InRothPolySet a r A) :
+    InRothPolySet a (r ∘ e.symm) (rename e A) := by
+  obtain ⟨h0, hd, hc⟩ := h
+  refine ⟨fun hz => h0 (rename_injective _ e.injective (by rw [hz, map_zero])), ?_, ?_⟩
+  · intro k
+    have hk := degreeOf_rename_of_injective (p := A) (f := (e : σ → τ)) e.injective (e.symm k)
+    rw [Equiv.apply_symm_apply] at hk
+    rw [hk]
+    exact hd _
+  · intro n
+    have hn : Finsupp.mapDomain (e : σ → τ) (Finsupp.mapDomain (e.symm : τ → σ) n) = n := by
+      rw [← Finsupp.mapDomain_comp]
+      simp
+    rw [← hn, coeff_rename_mapDomain _ e.injective]
+    exact hc _
+
+theorem InRothFracSet.rename_equiv {σ τ : Type*} (e : σ ≃ τ)
+    {H : σ → ℕ} {κ : σ → ℚ} (h : InRothFracSet H κ) :
+    InRothFracSet (H ∘ e.symm) (κ ∘ e.symm) := fun k => h (e.symm k)
+
+/-- **`IsRothTheta` transports along a type equivalence.**  The value `Θ` is unchanged — it is a
+supremum over sets the equivalence matches up. -/
+theorem IsRothTheta.rename_equiv {σ τ : Type*} [DecidableEq σ] [DecidableEq τ] (e : σ ≃ τ)
+    {a : ℤ} {r H : σ → ℕ} {Θ : ℚ} (h : IsRothTheta a r H Θ) :
+    IsRothTheta a (r ∘ e.symm) (H ∘ e.symm) Θ := by
+  classical
+  obtain ⟨hub, A₀, κ₀, hA₀, hκ₀, heq⟩ := h
+  have hcomp : ∀ {α : Type} (f : σ → α), (f ∘ (e.symm : τ → σ)) ∘ (e : σ → τ) = f := by
+    intro α f; funext j; simp
+  constructor
+  · intro A κ hA hκ
+    have hA' : InRothPolySet a r (rename (e.symm : τ → σ) A) := by
+      have hx := hA.rename_equiv e.symm
+      rwa [Equiv.symm_symm, hcomp r] at hx
+    have hκ' : InRothFracSet H (κ ∘ (e : σ → τ)) := by
+      have hx := hκ.rename_equiv e.symm
+      rwa [Equiv.symm_symm, hcomp H] at hx
+    have hb := hub _ _ hA' hκ'
+    have hmr : rename (e.symm : τ → σ) (map (algebraMap ℤ ℚ) A)
+        = map (algebraMap ℤ ℚ) (rename (e.symm : τ → σ) A) := (map_rename _ _ _).symm
+    rw [index_rename_equiv e, hcomp r, hmr]
+    exact hb
+  · refine ⟨rename e A₀, κ₀ ∘ (e.symm : τ → σ), hA₀.rename_equiv e, hκ₀.rename_equiv e, ?_⟩
+    have hmr : rename (e.symm : τ → σ) (map (algebraMap ℤ ℚ) (rename (e : σ → τ) A₀))
+        = map (algebraMap ℤ ℚ) A₀ := by
+      rw [← map_rename, rename_rename, Equiv.symm_comp_self, rename_id_apply]
+    rw [index_rename_equiv e, hcomp r, hcomp κ₀, hmr]
+    exact heq
+
 /-! ### §10 — the base case in `Θ` form
 
 `index_le_of_abs_coeff_le` bounds the index of **one** polynomial at **one** point.  `Θ₁` is a
@@ -807,6 +868,30 @@ structure RothGammaFull {σ : Type*} {m : ℕ} (o : σ ≃ Fin m) (p q F : ℕ)
   clause is a *weaker* hypothesis, hence a *stronger* theorem — the shape this arc has now got
   wrong four times. -/
   degPos : ∀ j, d j ≠ 0
+
+/-- **`RothGammaFull` transports along a type equivalence.**
+
+Every clause is stated through `o.symm j`, so reindexing the variable type composes the
+equivalence into the ordering and leaves the content alone. -/
+theorem RothGammaFull.rename_equiv {σ τ : Type*} {m p q F : ℕ} (e : σ ≃ τ)
+    {o : σ ≃ Fin m} {d : σ → ℕ} {Kh : σ → ℤ} {b : ℤ}
+    (h : RothGammaFull o p q F d Kh b) :
+    RothGammaFull (e.symm.trans o) p q F (d ∘ e.symm) (Kh ∘ e.symm) b where
+  growth := by
+    intro j k hjk
+    simpa using h.growth j k hjk
+  height := by
+    intro j k hj
+    simpa using h.height j k hj
+  floorExp := h.floorExp
+  floor := by
+    intro j hj
+    simpa using h.floor j hj
+  heightBound := by
+    intro j hj
+    simpa using h.heightBound j hj
+  two_le := fun k => h.two_le _
+  degPos := fun k => h.degPos _
 
 /-- **From a `p/q` power bound to an `E : ℕ` one** — the bridge between the arc's two height
 idioms, with the rounding as an explicit hypothesis.

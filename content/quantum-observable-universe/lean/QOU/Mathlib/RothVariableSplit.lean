@@ -371,6 +371,26 @@ theorem rothLemmaTheta_one {p q F : ℕ} : RothLemmaTheta Unit 1 p q F := by
   exact (rothBound_one _ _).mpr
     ⟨hΘ.nonneg, isRothTheta_le_of_gamma_one hΘ (hg.degPos ()) hq hH hclause⟩
 
+/-- **`RothLemmaTheta` transports along a type equivalence.**
+
+Composing the equivalence into the ordering (`e.symm.trans o`) and into the degree, height and
+point data is all it takes, once `RothGammaFull` and `IsRothTheta` transport. -/
+theorem RothLemmaTheta.rename_equiv {σ τ : Type*} [DecidableEq σ] [DecidableEq τ] (e : σ ≃ τ)
+    {m p q F : ℕ} (h : RothLemmaTheta τ m p q F) : RothLemmaTheta σ m p q F := by
+  intro hp hpq o a r H Θ hg hΘ
+  exact h hp hpq (e.symm.trans o) a (r ∘ e.symm) (H ∘ e.symm) Θ (hg.rename_equiv e)
+    (hΘ.rename_equiv e)
+
+/-- **The base case at `Fin 1`.**  `rothLemmaTheta_one` proves it at `Unit`; `finOneEquiv`
+carries it across.
+
+⚠ This closes a gap `rothLemmaTheta_iterate` used to carry as a hypothesis.  It was worth
+carrying rather than hiding: the two propositions really are different, and the transport needed
+`index_rename_equiv` plus new transports for `InRothPolySet`, `InRothFracSet` and
+`RothGammaFull`.  "The variable type is incidental" is true and is still four lemmas. -/
+theorem rothLemmaTheta_one_fin {p q F : ℕ} : RothLemmaTheta (Fin 1) 1 p q F :=
+  RothLemmaTheta.rename_equiv finOneEquiv rothLemmaTheta_one
+
 /-- **§14's induction step in `Θ` language** — Lemma 4's conclusion plus the sub-problem's
 `RothBound` gives the next one.
 
@@ -446,19 +466,12 @@ own defect one commit after fixing it, which is worth recording because it says 
 the failure mode: the unbounded form is what one writes by default, and nothing objects until
 someone asks whether the hypothesis is satisfiable.
 
-⚠ **`hbase` is a hypothesis, and that is a real gap, not a convenience.**  `rothLemmaTheta_one`
-proves `RothLemmaTheta Unit 1 p q F`; this needs it at `Fin 1`.  The two are different
-propositions — `RothLemmaTheta σ m` quantifies over `σ → ℕ` data and `MvPolynomial σ ℤ` — and
-transporting between them needs `index`, `InRothPolySet` and `InRothFracSet` carried along
-`MvPolynomial.rename` for a type equivalence, which this arc does not have.  Stated as a
-hypothesis so the gap is **visible at the use site** rather than hidden inside a proof.
-
-The `m = 1` chain is `Unit`-specific throughout (`pUnitAlgEquiv`), so the fix is either a
-`rename` transport for `index` or a `Fin 1` copy of the base case. -/
+⚠ The base case is `rothLemmaTheta_one_fin` — `rothLemmaTheta_one` (proved at `Unit`, because
+the `m = 1` chain runs through `pUnitAlgEquiv`) carried to `Fin 1` by `RothLemmaTheta.rename_equiv`.
+An earlier version took it as a hypothesis, because the transport did not exist; it does now. -/
 theorem rothLemmaTheta_iterate {p q F M : ℕ} {s : ℕ → ℚ}
     (hs0 : ∀ n, 0 ≤ s n) (hs1 : ∀ n, s n ≤ 1)
     (hsq : ∀ n, n + 1 < M → s (n + 1) ^ 2 = s n) (hs00 : s 0 = (p : ℚ) / (q : ℚ))
-    (hbase : RothLemmaTheta (Fin 1) 1 p q F)
     (h4 : ∀ n, 1 ≤ n → n < M → RothLemma4 (Fin (n + 1)) n p q F) :
     ∀ m, 1 ≤ m → m ≤ M → RothLemmaTheta (Fin m) m p q F := by
   have key : ∀ n, n < M → s n ^ (2 ^ n) = s 0 := by
@@ -471,7 +484,7 @@ theorem rothLemmaTheta_iterate {p q F M : ℕ} {s : ℕ → ℚ}
         rw [h2, pow_mul, hsq k (by omega), ih (by omega)]
   intro m hm
   induction m, hm using Nat.le_induction with
-  | base => intro _; exact hbase
+  | base => intro _; exact rothLemmaTheta_one_fin
   | succ n hn ih =>
       intro hnM
       have hlt : n < M := by omega

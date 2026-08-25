@@ -4182,3 +4182,47 @@ so the fix is a `rename` transport for `index`, or a `Fin 1` copy of the base ca
 step (`rothLemmaTheta_succ`), iteration (`rothLemmaTheta_iterate`) — modulo two things:
 `RothLemma4` itself, which is §13 and the last piece of real mathematics; and the `Fin 1`/`Unit`
 transport, which is bookkeeping.
+
+### ✅ The transport gap is closed — `rothLemmaTheta_iterate` is now unconditional
+
+    InRothPolySet.rename_equiv   degrees via degreeOf_rename_of_injective,
+                                 coefficients via coeff_rename_mapDomain
+    InRothFracSet.rename_equiv   pointwise
+    IsRothTheta.rename_equiv     both clauses, via index_rename_equiv
+    RothGammaFull.rename_equiv   every clause is stated through o.symm j, so the
+                                 equivalence composes into the ordering
+    RothLemmaTheta.rename_equiv  the schema
+    rothLemmaTheta_one_fin       the base case at Fin 1, via finOneEquiv
+
+`rothLemmaTheta_iterate` no longer takes `hbase`; it uses `rothLemmaTheta_one_fin` directly.
+
+⚠ Worth recording that carrying the gap as an explicit hypothesis for one turn was the right
+call, and that "the variable type is incidental" — true — still cost **four** transport lemmas.
+`RothIndex`'s own docstring had predicted the shape correctly: *"The height side is free —
+Mathlib's `coeff_rename_mapDomain` already matches coefficients across a renaming."* It was.
+
+### Where Roth's lemma stands
+
+**§14's induction is complete and unconditional except for `RothLemma4`:**
+
+    rothLemmaTheta_one / _one_fin   Θ₁ ≤ t, at Unit and at Fin 1
+    rothLemmaTheta_succ             Lemma4 at n+1  +  Theta at n  ⟹  Theta at n+1
+    rothLemmaTheta_iterate          Lemma4 at 1..M−1              ⟹  Theta at every m ≤ M
+
+**Everything the induction step consumes is proved:**
+
+    exists_divided_wronskian          §12's b (correction 21's repair, end to end)
+    rothGammaFull_descend             Γ_{m−1} for the descended system
+    index_rescaled_wronskian_le_theta the x half of hres, from the induction hypothesis
+    ..._right_theta                   the y half, from the base case
+    rothBound_succ_of_lemma4          §14's arithmetic
+    exists_sepW_ne_zero_le_degreeOf   the separated representation, now with degree bounds
+
+**What is left is `RothLemma4` — §13 — and nothing else.** It is not a gap in the scaffolding; it
+is the remaining chapter of mathematics: the recursive inequality
+`Θ_m ≤ Ψ_m + 2·max(Ψ_m/n, √(Ψ_m/r_m))` and the construction of the descended system that
+realises it.
+
+⚠ And correction 23's encoding restriction stands: `rothLemmaTheta_iterate` needs `t` to be a
+`2^{M−1}`-th power in `ℚ`. That is an artifact of the root-free encoding, not of §14 — removing
+it means proving `rothBound_succ_of_lemma4` in `ℝ` and transferring back.
