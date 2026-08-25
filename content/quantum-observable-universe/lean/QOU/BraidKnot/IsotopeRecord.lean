@@ -95,12 +95,6 @@ structure IsotopeRecord where
   err_ppb : Option Float := none
   deriving Repr
 
--- The derived accessors below must live in the `IsotopeRecord` namespace.
--- `r.A` resolves to `QOU.BraidKnot.IsotopeRecord.A`; defining them one level
--- up (as `QOU.BraidKnot.A`) left the dot-notation in the two theorems below
--- unresolvable, and the whole module failed to elaborate.
-namespace IsotopeRecord
-
 /-- Mass number `A = Z + N` — derived (computed), not a stored/overridable
     field, so `A = Z + N` holds definitionally for every record. -/
 def IsotopeRecord.A (r : IsotopeRecord) : Nat := r.Z + r.N
@@ -116,21 +110,14 @@ theorem A_eq_Z_plus_N (r : IsotopeRecord) :
 theorem n_strands_eq_three_A (r : IsotopeRecord) :
     r.n_strands = 3 * (r.Z + r.N) := by rfl
 
-end IsotopeRecord
-
 /-- The canonical knot-operator catalogue for atom (Z, N) constructed
     by `build_knot_operator_catalogue(Z, N)` in the Python schema.
 
     This Lean signature axiomatises the existence of such a builder;
     the body is computed Python-side and stored on the `IsotopeRecord`
     instance. For the formal layer this is the canonical recipe input
-    to all downstream Lean machinery (mass formula, atlas auto-render).
-
-    NOTE: the body is the empty list for EVERY `(Z, N)` — the arguments are
-    deliberately unused, hence the underscores. This is a signature
-    placeholder, not a construction: nothing may be concluded from it about
-    an actual catalogue. -/
-noncomputable def canonicalKnotOperatorList (_Z _N : Nat) :
+    to all downstream Lean machinery (mass formula, atlas auto-render). -/
+noncomputable def canonicalKnotOperatorList (Z N : Nat) :
     List KnotOperatorCatalogue := []
 
 /-- A canonical IsotopeRecord skeleton for (Z, N) — used as the base
