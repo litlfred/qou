@@ -1,8 +1,8 @@
 {
   "engine": "mpmath",
-  "engineVersion": "mpmath 1.3.0",
-  "computedAt": "2026-08-24T21:06:54.269303+00:00",
-  "commitSha": "5f106068f006b5c704b4d4f50bffcb8b6a0fb491",
+  "engineVersion": "mpmath 1.4.1",
+  "computedAt": "2026-08-25T06:38:26.674165+00:00",
+  "commitSha": "f18e14642e70a1ce63f4c08b27f016d921b18430",
   "assertions": [
     {
       "name": "pipeline_tau_is_jones_tl_decomposition",
@@ -62,9 +62,9 @@
     },
     {
       "name": "scalar_baseline_matches_committed_witness",
-      "computed": 0.17767322310023914,
+      "computed": 0.0,
       "expected": 0.0,
-      "passed": false,
+      "passed": true,
       "tolerance": 1e-06,
       "source": "scalar Jones tower vs borromean-binding-recompute.witness.json per-isotope B_tower (q-string precision difference only)"
     },
@@ -82,7 +82,7 @@
   "computation": "probe-9b-perlambda-brane-tower",
   "scriptFile": "probe_9b_perlambda_brane_tower.py",
   "scriptHash": "a757d7ad14d9",
-  "scriptCommitSha": "ce660c2835358cefd0a47622bf3e21f7789594c5",
+  "scriptCommitSha": "c64b8af5f16752d63e55f15514e913a5e713578d",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -94,10 +94,10 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.3.0",
+    "mpmath": "1.4.1",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
-    "pyhecke_native_build": "b843d058d29dcec6"
+    "pyhecke_native_build": "c7ea7ebb0d76c4e2"
   },
   "invocation": {
     "argv": [
@@ -441,11 +441,11 @@
     "upstream_witness_hashes": [
       {
         "path": "borromean-binding-recompute.witness.json",
-        "sha256": "1759e55bf97b2654b0f6e25dffca0928893ce8261b1bf84a6d09ae246beae64e",
-        "size_bytes": 2719,
-        "commitSha": "82900c72a9ea9f2d71d502f2c9c2e66127bddee6",
-        "scriptCommitSha": "cd848e8020f857e259b8d626c8fedf6f7d33f4b9",
-        "computedAt": "2026-08-09T00:55:41.371670+00:00"
+        "sha256": "61769e5a2df581c8c933e136db452658813a2ffe6c5633098213b2d06f4f6a67",
+        "size_bytes": 2937,
+        "commitSha": "105774c17e58621f1ddc5181478533454bc1281e",
+        "scriptCommitSha": "d986e024fd2946cba678be3a93622edf77e5b65f",
+        "computedAt": "2026-08-25T01:19:55.168022+00:00"
       }
     ]
   },
