@@ -9,10 +9,17 @@ strong and should not be cited. What is established:
   - no construction reproduces the published Z=1..20 table
     (wedderburn_table_binding_recast.py part 2), AND
   - that table has no producer: its witness `atom-mass-complete-wedderburn`
-    never existed in git history (a "phantom witness", per
-    docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md); the 20
-    values survive only as a hardcoded dict at
-    computations/_deprecated/feynman_qou_comparison.py:218.
+    is absent from computations/. CORRECTED 2026-08-25: I said here, and
+    in three PRs, that it "never existed in git history". THAT IS FALSE. It
+    was added 2026-04-10 in commit 1359fe23ac at
+    folio-assistant/computations/atom-mass-complete-wedderburn.witness.json
+    and left with the platform code in the miga migration. Every search that
+    concluded otherwise, including the one in
+    docs/audits/2026-07-12-exposition-drain-needs-owner-ledger.md, looked
+    under computations/ rather than by basename across all refs. Recovered,
+    it reproduces the table exactly -- and its own parameters do NOT match
+    the published formula (beta3 = 0.0499 against h_A^2 = 0.0437073, a
+    14.2 pct departure). See docs/audits/2026-08-25-atom-mass-complete-wedderburn-witness-recovered.md.
 
 So the defensible claim is that thm:wedderburn-mass-formula is currently
 UNFALSIFIABLE AS WRITTEN -- its M_i prose does not determine a unique
