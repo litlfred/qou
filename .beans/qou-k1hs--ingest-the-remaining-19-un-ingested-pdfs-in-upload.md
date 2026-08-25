@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T18:48:29Z
-updated_at: 2026-08-25T18:49:14Z
+updated_at: 2026-08-25T19:15:48Z
 parent: qou-8lxd
 ---
 
@@ -16,3 +16,10 @@ RECIPE (works, do not re-derive): pip install --upgrade cffi (pypdf's import pan
   git mv uploads/<f>.pdf library/<doc-id>/
   python3 scripts/summarize-library.py --apply   # REQUIRED: without it there is no INDEX.md line, and INDEX.md is the FIRST tier of corpus-grep path 5
 Check for shared doc_id before moving -- two of the 8 collided (same paper, two PDFs).
+
+SCOPE CHANGE 2026-08-25: the owner uploaded a further batch (commit e505ecfa,
+11 PDFs) and told me sibling PR #5770 is ingesting THAT batch. Mechanical work
+has one owner -- #5770 owns e505ecfa, this bean does not. Coordination comment
+posted there with the three traps (cffi, the summarize-library step, shared
+doc_id). uploads/ is now 29 PDFs; this bean covers only the pre-existing
+un-ingested backlog, not #5770's batch.
