@@ -95,6 +95,20 @@ as such.
    than competing with it, since the requirement "not a subobject of any
    `V^{⊗n}`" is now proved for arbitrary subobjects and not merely for
    summands.
+**A sibling result, resolved the OTHER way — the two are not precedent for each
+other.**  `QOU.BraidKnot.HeckeStableScalarCascade` (PR #5766) met the same shape
+of question one chapter over: an exclusion stated over *irreducible*
+representations, being read as though it covered arbitrary ones.  There the
+answer went the opposite direction.  Its load-bearing hypothesis is a
+centralizer/Schur condition, which a reducible representation fails outright —
+so reducible objects **escape** that exclusion, and `existsNonscalar_heckeGenerators`
+exhibits one that does.  Here reducible objects are **also excluded**, because
+the multiplicity count reaches them.
+
+The shared lesson is only that an irrep-level criterion does not transfer to
+objects without a separate argument.  The *direction* of the resolution is not
+shared, so neither file licenses assuming the other's outcome.
+
 2. **Generic `q` only; root-of-unity truncation is NOT covered.**  The count
    uses the classical fusion data, which the Drinfeld–Jimbo quantisation
    preserves at generic `q` (same fusion rules, same orthogonal/symplectic

@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T16:45:18Z
-updated_at: 2026-08-25T16:45:54Z
+updated_at: 2026-08-25T17:58:15Z
 parent: qou-8lxd
 ---
 
@@ -44,3 +44,34 @@ WHAT WOULD SETTLE IT (not yet done, do not cite the following as evidence):
 
 Scope discipline: nothing above is a result. It is a statement of what evidence
 would look like.
+
+## Corpus check 2026-08-25 — the existing three-row results do NOT answer this
+
+Relevant finding surfaced in the PR #5762 thread (the >=3-row stratum audit), and it
+sharpens rather than closes this bean.
+
+I had assumed the corpus's '>=3-row stratum is a structural zero under convention D'
+result might already be the root-of-unity story, in which case this bean would be
+partly answered. IT IS NOT. Quoting the measured finding there:
+
+  wenzlWeight_eq_zero_iff carries hQ : forall k : Z, k != 0 -> Q^k != 1 — i.e. Q is
+  explicitly GENERIC, NOT a root of unity. What vanishes is a Schur polynomial in r
+  variables when l(lambda) > r, since schurPrincipal r Q mu = s_mu(1, Q, ..., Q^{r-1})
+  has only r of them. So at q_0 nothing is truncated away: H_n(q) is semisimple, every
+  lambda |- n is a block of it, each with NONZERO dim_q.
+
+Two consequences for this bean:
+
+1. The corpus's three-row vanishing is a GENERIC-q weight vanishing, in the same
+   regime my Sym^2 parity result is stated for. So it is not evidence about the
+   truncated category either way, and this bean cannot be closed by citing it.
+2. It is a live worked example of the exact trap I flagged as the likely failure mode
+   here: 'y_lambda = 0' (weight) and 'dim_q = 0' (quantum dimension) are DIFFERENT
+   functions, and the sibling measured seven blocks at n = 6 with y_lambda = 0 and
+   min dim_q = 1.0 — none zero. Conflating them changed a downstream sum by more
+   than 2x (Sigma 1/dim_q = 3.202 over all eleven blocks vs 1.479 over the <=2-row
+   ones). Anyone attacking this bean will meet the same vector-space-vs-quantum
+   dimension distinction, and that measurement is the concrete warning.
+
+So: still open, still generic-q-only, and now with a corpus-verified reason that the
+nearby three-row results are not a substitute for doing it.
