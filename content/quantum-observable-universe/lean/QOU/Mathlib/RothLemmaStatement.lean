@@ -1259,27 +1259,52 @@ given property `Γ_m`, and it **produces** a system with `Γ_{m−1}`.  ⚠ No s
 
 Leading `t ≤ s` contributes `1`, the max contributes `2(c+1)`, total `2c+3`.
 
-`w` is `max(Ψ, √Ψ)`, encoded root-free as `w = Ψ ∨ w² = Ψ`.  ⚠ `0 ≤ w` is deliberately **not**
+`w` is `max(Ψ, √Ψ)`, encoded root-free as `w ≤ Ψ ∨ w² ≤ Ψ`.  ⚠ `0 ≤ w` is deliberately **not**
 required, though the max satisfies it: without it the second disjunct also admits `−√Ψ`, and a
 smaller `w` only makes `s + 2w` smaller, so the theorem is stronger without it.  Same reason
 `0 ≤ u` came off `rothConstant_step`.  Callers instantiate at the real max, where it holds.
+
+⚠⚠ **The twenty-fifth correction is the `≤` in that disjunction; it used to be `=`.**  The two
+encodings are not interchangeable, and the `=` one is not the faithful reading of
+`θ ≤ t + 2·max(Ψ, √Ψ)`:
+
+* with `≤`, the admissible `w` are exactly `w ≤ max(Ψ, √Ψ)`, so `∃ w` with `θ ≤ t + 2w` says
+  precisely `θ ≤ t + 2·max(Ψ, √Ψ)`;
+* with `=`, the admissible `w` are `Ψ` and — **only when `Ψ` is a square in `ℚ`** — `±√Ψ`.
+
+So the `=` form silently demands that `Ψ` be a rational square whenever the `√` branch is the
+operative one, which is the regime the recursion actually runs in (`Ψ < 1`).  Nothing supplies
+that: `Ψ = Θ_{m−1} + t` with `Θ_{m−1}` an infimum over a finite set of indices and `t = p/q`.
+The producer of this disjunction is `RothVariableSplit.RothLemma4`, which is why the `def`
+moved with it.
+
+⚠ Note what the `=` form cost and what it did not.  Nothing proved was false — this theorem is
+true either way, and *stronger* now that its hypothesis is weaker.  The damage was entirely on
+the other side of the arrow: `RothLemma4` had to **produce** a `w`, and could not.  A hypothesis
+nobody has had to discharge is indistinguishable from an unsatisfiable one — correction 9's
+lesson, and this is its fourth instance in the arc.
 
 ⚠ This covers what `rothConstant_step_source` does not — that one's `u² ≤ 4Ψ` is the `√Ψ`
 branch alone, which is the max only when `Ψ ≤ 1`. -/
 theorem rothConstant_step_lemma4 {m : ℕ} (hm : 1 ≤ m) {s Ψ w θ : ℚ}
     (hs0 : 0 ≤ s) (hs1 : s ≤ 1)
     (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2)
-    (hw : w = Ψ ∨ w ^ 2 = Ψ)
+    (hw : w ≤ Ψ ∨ w ^ 2 ≤ Ψ)
     (hθ : θ ≤ s + 2 * w) :
     θ ≤ (rothConstant (m + 1) : ℚ) * s := by
   have hc1 : (1 : ℚ) ≤ (rothConstant m : ℚ) := by exact_mod_cast rothConstant_one_le hm
+  have hc0 : (0 : ℚ) ≤ (rothConstant m : ℚ) + 1 := by linarith
   have hsq : s ^ 2 ≤ s := by nlinarith
   have hws : w ≤ ((rothConstant m : ℚ) + 1) * s := by
     rcases hw with h | h
-    · rw [h]; nlinarith
-    · refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
-      rw [h]
-      nlinarith [sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s)]
+    · calc w ≤ Ψ := h
+        _ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2 := hΨ
+        _ ≤ ((rothConstant m : ℚ) + 1) * s := mul_le_mul_of_nonneg_left hsq hc0
+    · refine le_of_pow_le_pow_left₀ two_ne_zero (mul_nonneg hc0 hs0) ?_
+      calc w ^ 2 ≤ Ψ := h
+        _ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2 := hΨ
+        _ ≤ (((rothConstant m : ℚ) + 1) * s) ^ 2 := by
+            nlinarith [sq_nonneg s, mul_nonneg hc0 (sq_nonneg s)]
   have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
     rw [rothConstant_rec m hm]; push_cast; ring
   rw [hrec]
@@ -1306,7 +1331,7 @@ constant in this one. -/
 theorem rothConstant_step_perturbed {m : ℕ} (hm : 1 ≤ m) {s Ψ w v θ : ℚ}
     (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (hv0 : 0 ≤ v) (hv1 : v ≤ 1)
     (hΨ : Ψ ≤ ((rothConstant m : ℚ) + 1) * s ^ 2 + v ^ 2)
-    (hw : w = Ψ ∨ w ^ 2 = Ψ)
+    (hw : w ≤ Ψ ∨ w ^ 2 ≤ Ψ)
     (hθ : θ ≤ s + 2 * w) :
     θ ≤ (rothConstant (m + 1) : ℚ) * s + 2 * v := by
   have hc1 : (1 : ℚ) ≤ (rothConstant m : ℚ) := by exact_mod_cast rothConstant_one_le hm
@@ -1314,10 +1339,9 @@ theorem rothConstant_step_perturbed {m : ℕ} (hm : 1 ≤ m) {s Ψ w v θ : ℚ}
   have hvq : v ^ 2 ≤ v := by nlinarith
   have hws : w ≤ ((rothConstant m : ℚ) + 1) * s + v := by
     rcases hw with h | h
-    · rw [h]; nlinarith
+    · nlinarith
     · refine le_of_pow_le_pow_left₀ two_ne_zero (by nlinarith) ?_
-      rw [h]
-      nlinarith [sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s),
+      nlinarith [h, sq_nonneg s, mul_nonneg (le_trans zero_le_one hc1) (sq_nonneg s),
         mul_nonneg (mul_nonneg (by linarith : (0:ℚ) ≤ (rothConstant m : ℚ) + 1) hs0) hv0]
   have hrec : ((rothConstant (m + 1) : ℕ) : ℚ) = 2 * (rothConstant m : ℚ) + 3 := by
     rw [rothConstant_rec m hm]; push_cast; ring
@@ -1416,7 +1440,7 @@ theorem rothConstant_chain {M : ℕ} {sq Θ w : ℕ → ℚ} {t : ℚ}
     (hsq : ∀ n, n < M → sq (n + 1) ^ 2 = sq n)
     (ht : ∀ n, t ≤ sq n)
     (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
-    (hw : ∀ n, n < M → w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
+    (hw : ∀ n, n < M → w n ≤ Θ n + t ∨ (w n) ^ 2 ≤ Θ n + t)
     (hstep : ∀ n, n < M → Θ (n + 1) ≤ t + 2 * w n) :
     ∀ n, 1 ≤ n → n ≤ M → Θ n ≤ (rothConstant n : ℚ) * sq n := by
   intro n hn
@@ -1438,7 +1462,7 @@ theorem rothBound_chain {M : ℕ} {sq Θ w : ℕ → ℚ} {t : ℚ}
     (hsq : ∀ n, n < M → sq (n + 1) ^ 2 = sq n)
     (ht : ∀ n, t ≤ sq n) (hΘ0 : ∀ n, 0 ≤ Θ n)
     (hbase : Θ 1 ≤ (rothConstant 1 : ℚ) * sq 1)
-    (hw : ∀ n, n < M → w n = Θ n + t ∨ (w n) ^ 2 = Θ n + t)
+    (hw : ∀ n, n < M → w n ≤ Θ n + t ∨ (w n) ^ 2 ≤ Θ n + t)
     (hstep : ∀ n, n < M → Θ (n + 1) ≤ t + 2 * w n) :
     ∀ n, 1 ≤ n → n ≤ M → RothBound n (sq n ^ (2 ^ (n - 1))) (Θ n) := fun n hn hnM =>
   (rothBound_pow_iff (hs0 n)).mpr
@@ -1647,25 +1671,25 @@ radicand `S/n`.  The source's chain is
 `r_m/2 ≥ (r_m/(r_m+1))·(n/2) ≥ (1/2)·(n/2) = n/4`; all it actually needs is **`n ≤ 2·r_m`**,
 which `n ≤ r_m + 1` and `r_m ≥ 1` give at once.
 
-Root-free: `v` stands for the left square root and `w` for `√(S/n)`. -/
+Root-free: `v` stands for the left square root and `w` for `√(S/n)`.
+
+⚠ `hw` is `S/n ≤ w²`, not `S/n = w²` — correction 25.  The `=` form demands that `S/n` be a
+square in `ℚ`, which nothing supplies, and only the `≤` direction is used.  `0 ≤ S` was
+previously *derived* from the equality and so has to be assumed now; it is free at every call
+site (`S` is a bound on an index). -/
 theorem radicand_weaken {S rm n v w : ℚ}
-    (hn : 0 < n) (hrm : 1 ≤ rm) (hnrm : n ≤ rm + 1)
-    (hv : v ^ 2 ≤ 2 / rm * S) (hw : w ^ 2 = S / n) (hw0 : 0 ≤ w) :
+    (hn : 0 < n) (hrm : 1 ≤ rm) (hnrm : n ≤ rm + 1) (hS : 0 ≤ S)
+    (hv : v ^ 2 ≤ 2 / rm * S) (hw : S / n ≤ w ^ 2) (hw0 : 0 ≤ w) :
     v ≤ 2 * w := by
   have hrm0 : (0 : ℚ) < rm := lt_of_lt_of_le zero_lt_one hrm
   have hdiv : 2 / rm ≤ 4 / n := by
     rw [div_le_div_iff₀ hrm0 hn]
     linarith
-  have hS : 0 ≤ S := by
-    have h : 0 ≤ S / n := by rw [← hw]; exact sq_nonneg w
-    by_contra hc
-    push_neg at hc
-    exact absurd h (not_le.mpr (div_neg_of_neg_of_pos hc hn))
   refine le_of_pow_le_pow_left₀ two_ne_zero (by linarith) ?_
   calc v ^ 2 ≤ 2 / rm * S := hv
     _ ≤ 4 / n * S := mul_le_mul_of_nonneg_right hdiv hS
     _ = 4 * (S / n) := by ring
-    _ = 4 * w ^ 2 := by rw [hw]
+    _ ≤ 4 * w ^ 2 := by linarith
     _ = (2 * w) ^ 2 := by ring
 
 /-- **`Φ ≤ Ψ` reduces to `Θ₁ ≤ t`.**  `Φ_m = Θ' + Θ₁` and `Ψ_m = Θ' + t`, so the two differ

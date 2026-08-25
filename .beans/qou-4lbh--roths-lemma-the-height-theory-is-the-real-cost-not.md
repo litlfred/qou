@@ -4345,3 +4345,47 @@ false conclusion, retracted separately), and correction 17's own re-read of the 
 `exists_index_le_of_rothGrowth`'s docstring drew a bad conclusion from the `2/ω` ("so `ω ≥ 2/ε`
 is what `ω(m, ε)` has to be") and rewrote the paragraph — correctly — while leaving the `2`
 itself unexamined. **Correcting an inference from a premise is not checking the premise.**
+
+## Correction 25 — `RothLemma4`'s `w` demanded a rational square root
+
+`RothLemma4` encoded `max(Ψ, √Ψ)` root-free as
+
+    (w = Θ' + t  ∨  w² = Θ' + t) ∧ Θ ≤ t + 2w.
+
+The admissible `w` under that are `Ψ` and — **only when `Ψ` is a square in `ℚ`** — `±√Ψ`. So
+whenever the `√` branch is the operative one, which is exactly the regime §14 runs in (`Ψ < 1`,
+so `√Ψ > Ψ`), the `def` demands a rational square root of `Θ' + t`. Nothing produces one:
+`Θ'` is an infimum over a finite set of indices and `t = p/q`.
+
+With `≤` the admissible `w` are exactly `w ≤ max(Ψ, √Ψ)`, so the existential says **precisely**
+`Θ ≤ t + 2·max(Ψ, √Ψ)` — the `≤` form is the faithful encoding and the `=` form was an
+over-strengthening.
+
+`lemma4_le_encoding_needed` (proved) makes it concrete at `Ψ = 1/2`, `t = 0`, `Θ = 7/5`:
+
+* §13's second branch `(Θ − t)² ≤ 4Ψ` holds — `49/25 ≤ 2` — so this is a situation §13
+  genuinely produces, the literal shape `index_le_or_sq_of_det_bound` returns;
+* no rational `w` satisfies the `=` form (first disjunct gives `1 < 7/5`; second needs
+  `w² = 1/2`, refuted by `not_isSquare_half` — elementary, `(w²).den = w.den²` and
+  `(1/2).den = 2`, no irrationality import);
+* `w = 7/10` satisfies the `≤` form, with `Θ = t + 2w` exactly.
+
+Relaxed: `rothConstant_step_lemma4`, `rothConstant_step_perturbed`, `rothConstant_chain`,
+`rothBound_chain`, `radicand_weaken` (`S/n ≤ w²`, with `0 ≤ S` now assumed rather than derived
+from the equality), `rothBound_succ_of_lemma4`, and the `RothLemma4` def itself. All rebuilt
+with the `.olean` deleted; all `#print axioms` clean.
+
+### The consumers never wanted the equality
+
+`rothConstant_step_lemma4` used `rw [h]` in both branches, and in both the rewrite was in the
+`≤` direction only; `radicand_weaken` used `S/n = w²` only as `S/n ≤ w²`. So every theorem that
+consumed the disjunction got **stronger** here (weaker hypothesis) and the only thing that
+changed on the other side is that `RothLemma4` is now provable in principle.
+
+⚠ Same shape as correction 9 and correction 10: **a hypothesis nobody has had to discharge is
+indistinguishable from an unsatisfiable one.** Four instances now. The pattern is specific
+enough to act on: whenever this arc writes a `def` or hypothesis that some *later* step must
+produce, the production is the test, and until it is written the statement is untested no
+matter how many theorems consume it. `rothBound_succ_of_lemma4_witness` consumed the `=` form
+happily for eleven commits — because its `Ψ = 1/8` … no: because it took the *first* disjunct,
+where the equality costs nothing.

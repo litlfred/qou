@@ -273,7 +273,19 @@ step of §14 in `Θ` language.
 seventeen's failure mode verbatim: prose that a green build has no opinion about.  Stated here
 because the arc has now caught it twice in one session. -/
 
-/-- **Lemma 4**, stated.  `w` encodes `max(Ψ, √Ψ)` root-free as `w = Ψ ∨ w² = Ψ`. 
+/-- **Lemma 4**, stated.  `w` encodes `max(Ψ, √Ψ)` root-free as `w ≤ Ψ ∨ w² ≤ Ψ`.
+
+⚠⚠ **Correction twenty-five: the disjuncts were `=`, and that made this `def` unsatisfiable.**
+The admissible `w` under `=` are `Ψ` and — only when `Ψ` is a square in `ℚ` — `±√Ψ`, so in the
+regime where the `√` branch is the operative one (`Ψ < 1`, which is the regime §14 runs in) the
+statement demands a rational square root of `Θ' + t` that nothing produces.  Under `≤` the
+admissible `w` are exactly `w ≤ max(Ψ, √Ψ)`, so this existential says precisely what §13 says,
+and `w := max(0, (Θ − t)/2)` is the witness §13's second branch hands over.
+
+⚠ The consumers never needed the equality: `rothConstant_step_lemma4` uses `w ≤ Ψ` and
+`w² ≤ Ψ`, and `radicand_weaken` uses `S/n ≤ w²`.  So the `=` was strictly a tax on the
+producer, and it went unpaid for as long as nothing tried to produce one — correction 9's
+lesson again.
 ⚠⚠ **Correction twenty-two: checked against correction twenty, and it was defective.**
 
 Correction twenty's *first* half — `K₁ ≥ 2` — is fixed for free by `RothGammaFull`'s new `two_le`
@@ -302,8 +314,44 @@ def RothLemma4 (σ : Type*) (n p q F : ℕ) : Prop :=
     ∃ (b : ℤ) (ρ H' : Fin n → ℕ) (Θ' w : ℚ),
       RothGammaFull (Equiv.refl (Fin n)) p q F ρ (fun j => (H' j : ℤ)) b ∧
       IsRothTheta b ρ H' Θ' ∧
-      (w = Θ' + (p : ℚ) / (q : ℚ) ∨ w ^ 2 = Θ' + (p : ℚ) / (q : ℚ)) ∧
+      (w ≤ Θ' + (p : ℚ) / (q : ℚ) ∨ w ^ 2 ≤ Θ' + (p : ℚ) / (q : ℚ)) ∧
       Θ ≤ (p : ℚ) / (q : ℚ) + 2 * w
+
+/-- **`1/2` is not a square in `ℚ`** — elementary, via denominators.
+
+`(w²).den = w.den²` and `(1/2).den = 2`, so a solution would need a natural number whose
+square is `2`.  No analysis, no irrationality file: this is the whole obstruction correction 25
+is about, and it is visible entirely inside `ℚ`. -/
+theorem not_isSquare_half : ¬ ∃ w : ℚ, w ^ 2 = 1 / 2 := by
+  rintro ⟨w, hw⟩
+  have hden : (w ^ 2).den = w.den ^ 2 := Rat.den_pow w 2
+  rw [hw] at hden
+  have h2 : ((1 : ℚ) / 2).den = 2 := by norm_num
+  rw [h2] at hden
+  have hle : w.den ≤ 2 := by nlinarith [w.den.zero_le, hden]
+  interval_cases h : w.den <;> omega
+
+/-- **Correction 25, made concrete** — §13's conclusion holds at numbers the `=` encoding of
+`max(Ψ, √Ψ)` cannot express, and the `≤` encoding expresses exactly.
+
+Take `Ψ = 1/2`, `t = 0`, `Θ = 7/5`.  §13's second branch is `(Θ − t)² ≤ 4Ψ`, and here that is
+`49/25 ≤ 2` — true, so this is a situation §13 genuinely produces (it is the literal shape
+`RothInductionStep.index_le_or_sq_of_det_bound` hands back).  Then:
+
+* **no** rational `w` has `w = Ψ ∨ w² = Ψ` together with `Θ ≤ t + 2w` — the first disjunct
+  gives `t + 2w = 1 < 7/5`, and the second asks for a rational square root of `1/2`;
+* `w = 7/10` has `w² = 49/100 ≤ 1/2` and `Θ ≤ t + 2w` with equality.
+
+So the change from `=` to `≤` is not a loosening of Lemma 4 — it is the difference between a
+statement Lemma 4 can prove and one it cannot. -/
+theorem lemma4_le_encoding_needed :
+    ((7 : ℚ) / 5 - 0) ^ 2 ≤ 4 * (1 / 2)
+      ∧ (¬ ∃ w : ℚ, (w = 1 / 2 ∨ w ^ 2 = 1 / 2) ∧ (7 : ℚ) / 5 ≤ 0 + 2 * w)
+      ∧ ∃ w : ℚ, (w ≤ 1 / 2 ∨ w ^ 2 ≤ 1 / 2) ∧ (7 : ℚ) / 5 ≤ 0 + 2 * w := by
+  refine ⟨by norm_num, ?_, ⟨7 / 10, Or.inr (by norm_num), by norm_num⟩⟩
+  rintro ⟨w, hw | hw, hθ⟩
+  · rw [hw] at hθ; norm_num at hθ
+  · exact not_isSquare_half ⟨w, hw⟩
 
 /-- **Roth's Lemma**, stated in `Θ_m` form: `Γ_m` forces `Θ_m ≤ c_m·t^{2^{−(m−1)}}`,
 with the conclusion in `RothBound`'s root-free shape.
@@ -403,7 +451,7 @@ with the row cost — and `t ≤ s` is what lets `rothConstant_step_lemma4` acce
 theorem rothBound_succ_of_lemma4 {n : ℕ} (hn : 1 ≤ n) {s t Θ Θ' w : ℚ}
     (hs0 : 0 ≤ s) (hs1 : s ≤ 1) (ht : t = s ^ (2 ^ n)) (hΘ0 : 0 ≤ Θ)
     (hsub : RothBound n t Θ')
-    (hw : w = Θ' + t ∨ w ^ 2 = Θ' + t)
+    (hw : w ≤ Θ' + t ∨ w ^ 2 ≤ Θ' + t)
     (hΘ : Θ ≤ t + 2 * w) :
     RothBound (n + 1) t Θ := by
   subst ht
