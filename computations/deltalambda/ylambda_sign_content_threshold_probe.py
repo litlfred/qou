@@ -18,7 +18,7 @@ ABOVE the threshold `c* = −log_Q(Q^r)`.  Writing `P(λ)` for the count of cell
 
     sign(s_λ) = (−1)^{P(λ)}.
 
-Under C (`r ≈ 2.5995`, `c* ≈ −2.5995`) this held on all 240 partitions for n = 2..12, and
+Under C (`r ≈ 2.5995`, `c* ≈ −2.5995`) this held on all 270 partitions for n = 2..12, and
 the committed witness of 2026-08-08 recorded it with both assertions green.
 
 WHY IT DOES NOT SURVIVE CONVENTION D — TWO INDEPENDENT REASONS
