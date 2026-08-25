@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T07:12:36Z
+updated_at: 2026-08-25T08:03:26Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -585,3 +585,48 @@ know WHICH argument to run once we have it — Jucys's centrality, not Mathas's 
 
 (a) is now clearly preferable: the centrality route needs only the expansion, and gives
 a general-n Lean proof. (b) would only ever verify fixed n.
+
+
+## The transposition expansion is IN — and it needed no new axioms
+
+`HeckeTranspositionExpansion.lean`, sorry-free, exit 0, axioms clean.
+
+The missing ingredient identified two passes ago is supplied:
+
+    transp H i (k+1) = sigma_k * transp H i k * sigma_k,   transp H k (k+1) = sigma_k
+    addJM_eq_transp_sum :  A_k = d . SUM_{i<k} T_(i,k)
+
+### Why this is a definition, not an axiomatisation
+
+The tempting move was to add transposition elements to `HeckeGenerators` as new FIELDS with
+defining relations — that would be an axiomatisation, exactly what the anti-laundering
+rule targets. **It is unnecessary.** In a braid presentation the transposition element is a
+CONJUGATE of a generator,
+
+    T_(i,k) = sigma_{k-1} ... sigma_{i+1} . sigma_i . sigma_{i+1} ... sigma_{k-1}
+
+which recursively is `T_(i,k+1) = sigma_k T_(i,k) sigma_k`. Built from what is already
+there; nothing assumed. This is the difference between (a) done right and (a) done as a
+laundering step.
+
+### Coefficients are UNIFORM here, geometric in Mathas
+
+With this corpus's recursion `A_{k+1} = sigma_k A_k sigma_k + d.sigma_k` the `d` sits on
+the new term only, so every transposition carries the same `d`. Mathas puts `q^-1` OUTSIDE
+both terms and gets geometric coefficients `q^-1, q^-2, ...`. **Different families** — the
+expansion proved here is for the one this corpus actually uses, not a transcription.
+
+Cross-checked numerically (H_5, exact Fractions): recursion == d.sum(transp) at k = 1..4.
+
+### What it unlocks
+
+Conjugating a transposition by sigma_j PERMUTES its index pair, so sigma_j fixes the sum
+`SUM_{i<k} T_(i,k)` whenever j and j+1 both miss k — that is 3.24(i), which feeds partial-sum
+centrality, which telescopes to commutativity. The route is now unblocked at its one
+blocking step.
+
+### NOT proved here
+
+The conjugation-permutation law itself, hence not 3.24(i), not centrality, not
+commutativity. This file supplies the object and its expansion only. JucysMurphySpectrum is
+untouched; the general-lambda twist stays conditional.
