@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T09:59:39Z
-updated_at: 2026-08-25T01:24:57Z
+updated_at: 2026-08-25T01:38:56Z
 ---
 
 ## What was found
@@ -147,3 +147,23 @@ Next honest step is one of: (a) add the registry row and let the detector read
 it, or (b) teach the detector to honour an explicit in-file marker. Until
 either lands, this file re-surfaces as actionable on every run and each drain
 has to re-read the docstring to find out it is fine.
+
+
+### Addendum 2026-08-25 — the basis for leaving it was the DOCSTRING, not the classifier
+
+Recording this explicitly because `qou-4bq3` has since shown the audit's
+`deliberate` column is unreliable (its `re.I` regex case-folds `C_` to `c_`, so
+ordinary identifiers like `qfac_3`, `c_k` and `c_mp` match), and a reader could
+otherwise assume this file was skipped on that column's say-so.
+
+It was not. The basis is the file's own prose, which meets the standard a
+classifier cannot: it names convention C **and** convention D, gives both
+numeric values (0.4993203342 vs 0.6126880371) and the 23 % gap, states WHY both
+are present, and points at `markov_reduction_h3_to_h4_conventions.py` which
+measures the over-determination test under both at 50 dps. That is a genuine
+comparison record; the classifier's opinion was not consulted and would not
+have changed it.
+
+For completeness, this file's `deliberate` verdict was NOT among the seven
+collisions `qou-4bq3` measured — but six other files in the same drain's set
+were, and all six were migrated anyway because each was read.
