@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T06:17:08Z
+updated_at: 2026-08-25T06:30:59Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -252,3 +252,32 @@ the case the denominators actually hit.
    sigma_i, and the L_i eigenvalue q^{2.content}. Still the largest item.
 
 JucysMurphySpectrum is untouched; the general-lambda twist stays CONDITIONAL.
+
+
+## CORRECTION to the entry above — "arbitrary N" is REFUTED
+
+I wrote that the reduced identity is a question "for an arbitrary N commuting with v".
+**That is false, and I am correcting it within the hour.**
+
+If it held for any such N, JM commutativity would follow from almost nothing — which
+should have been the tell for a theorem this hard.
+
+Measured: take N = v, which certainly commutes with v. In the 2-dim irrep of H_3(q)
+at q = 2, exact `fractions.Fraction` arithmetic, the two normal forms DIFFER — both
+in the uncancelled and the cancelled shape.
+
+    computations/hecke/jm_adjacent_generic_N_counterexample.py
+
+So adjacent commutativity genuinely needs L_k's STRUCTURE, not merely its commutation
+with v. **An attack assuming only the latter cannot work** — which is worth more to a
+future attempt than the wrong generalisation was.
+
+### The control caught my own harness bug, and that is the transferable lesson
+
+The first version of the script reported `N = 1` FALSE — a case Lean PROVES. The
+script was comparing the UNCANCELLED left form against the CANCELLED right form.
+Without the N = 1 control I would have "refuted" the k=0 case that is already a
+theorem, and drawn the opposite conclusion with equal confidence.
+
+**Any probe testing a claimed identity must include a case whose answer is already
+known.** A probe with no control measures itself.
