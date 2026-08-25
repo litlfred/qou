@@ -196,3 +196,18 @@ Two consequences worth having:
 > text** — those are confirmed. I did **not** locate the `[β]_D ≥ 3` hypothesis or confirm
 > the "Theorem 2" numbering by grep; that part is **reported, not verified here**, and item
 > 2 above is a **conjecture about why**, not a result. Treat it as a lead.
+
+> **Follow-up on item 2 (2026-08-25, different session).** The lead was taken up
+> and the premise now measured: corpus floors are 0–1, and the smallest braid
+> reaching floor 3 is `Δ⁶` — 18 crossings. But the **implication runs the other
+> way**. Ito's Proposition 4 (*"`β̂` a non-braided satellite knot ⇒ `[β]_D < 3`"*)
+> and Remark 4 (Menasco–Nakamura: *"closure composite ⇒ `[β]_D < 2`"*) give
+> **composite ⇒ small floor**; item 2 uses the converse, and the converse fails —
+> `4₁` is prime, hyperbolic, and has floor **0** across 118 097 conjugates at
+> minimal braid index. A small floor is a fact about **scale**, not about
+> geometry. The `[β]_D ≥ 3` hypothesis and the Theorem 2 numbering are now
+> **verified** in the ingested text, as is the mapping-torus/closure distinction
+> the scope note was right to be cautious about. **Item 1 and the primary
+> conclusion are untouched** — they rest on monotonicity, and Proposition 4 read
+> forwards supports them. Full working:
+> [`2026-08-25-ito-dehornoy-hyperbolicity-criterion.md` §Addendum 3](2026-08-25-ito-dehornoy-hyperbolicity-criterion.md).

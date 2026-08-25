@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-25T19:53:38Z
+updated_at: 2026-08-25T21:49:37Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -283,3 +283,144 @@ The ORIGINAL finding of this bean is untouched by all of this: the witness on
 `main` before this branch disagreed with the 50-dps transfer engine by 13-55 %
 and failed its own recorded assertion by seven orders of magnitude. That was
 measured from committed data, not from a harness.
+
+
+
+---
+
+## The gate is GONE — the residue is runnable now (2026-08-25)
+
+This bean and PR #5775 both say the 105-producer re-run campaign should wait on
+`qou-9ohz`'s `per_generator_V_hat_3A` scalar collapse, so the producers do not
+each pay the 1.8e4x object-dtype penalty during the very campaign meant to
+re-run them.
+
+**That patch is already on `main`** and has been for some time; I checked the
+wrong way and reported it missing three times. Measured today:
+`per_generator_V_hat_3A(1, 2)` (3H, A=3) returns in **0.21 s**, against the
+2.5 h+ the unpatched path took. Details and the two rules I drew from missing
+it are in `qou-9ohz`.
+
+So there is no gate. The campaign is runnable, and the discipline recorded
+above still applies to it in full: **pin one `main` SHA and record it** (the
+<=106 list stales on any cone-touching merge), self-test any detector against
+`gram-norm-binding-probe.witness.json` before trusting a count, restore the
+whole `computations/` tree between runs because producers write sibling
+witnesses, capture stdout as well as stderr, and check for a traceback rather
+than trusting an exit code — several producers in this corpus refuse by design
+and explain themselves on stdout.
+
+
+---
+
+## Campaign attempt 1: STOPPED, harness not trustworthy (2026-08-25)
+
+Built and launched the re-run campaign now the gate is gone. Stopped it after 5
+of 95 producers because it produced a verdict I could prove wrong, and I am not
+reporting counts from a harness with a known false positive.
+
+**What is solid and reusable:**
+
+  * **Pinned SHA `f6501fba549591122523ebb76ce118e49a7003e1`**, recorded in the
+    output, per the discipline above.
+  * **Target list re-measured: 114 witnesses over 95 distinct producers**, from
+    153 AST-verified importers. The detector **self-tested against
+    `gram-norm-binding-probe.witness.json` and passed** before any count was
+    used.
+  * **114, not 106.** The list GREW by 8 in the hours since the snapshot above.
+    That is direct confirmation of the caution recorded there — the count is a
+    snapshot, not a standing figure — and it is why the SHA pin matters.
+
+**The defect.** The runner classified
+`atom-braid-active-partitions.witness.json` as MOVED. It has not moved:
+
+  * flattened leaf-by-leaf comparison of the git baseline against a fresh run:
+    **0 differing fields**;
+  * the runner's own `strip()`-then-compare, executed standalone on that same
+    pair: **`strip equal? True`**.
+
+So the identical comparison says IDENTICAL outside the loop and MOVED inside
+it. The cause is **not isolated** — candidates I could not separate before
+stopping include the restore/compare ordering relative to sibling-witness
+writes by the *previous* producer, and the runner's two-`cwd` retry. Do not
+assume it is one of those; measure it.
+
+**Verdicts observed before the stop (NOT to be quoted as results):** 4 MOVED,
+1 IDENTICAL over 5 producers. At least one of those 4 is a false positive.
+
+**For the next attempt.** Use the flattened-leaf comparison, which is the one
+verified correct against a known case, and give the runner a **self-test on a
+known-IDENTICAL producer** — the same shape as the detector self-test that did
+work. A runner that cannot demonstrate it reports IDENTICAL for a witness
+known not to move has not been validated, only run.
+
+Scripts left at `/tmp/residue_campaign.py` (targeting, self-tested, sound) and
+`/tmp/residue_run.py` (execution, **defective as described**). The targeting
+half is worth keeping; the comparison half needs replacing, not patching.
+
+This is the third harness-measurement error in this session, after the nested
+`witness.scriptFile` detector and the import-context retraction above. The
+pattern is consistent enough to state as a rule: **in this corpus, validate the
+measuring instrument against a known answer before believing any count it
+produces** — and validate it in the loop it will actually run in, not
+standalone, since that is precisely where this one diverged.
+
+
+---
+
+## Attempt 2: instrument VALIDATED, campaign partial (8/95), and one structural fix outstanding
+
+Attempt 2 fixed what attempt 1 got wrong. The in-loop self-test
+(`atom_braid_active_partitions`, verified by hand not to move) **passes**, so
+these verdicts are trustworthy in a way attempt 1's were not.
+
+Getting there took two more masks, each named by the self-test rather than
+found by another sweep:
+
+  * **`.engineVersion`** — an environment artifact, the class flagged on #5763.
+    This alone accounted for attempt 1's false MOVED.
+  * **`bridge_elapsed_sec`, `python_hoefsmit_elapsed_sec`,
+    `rust_canonical_chi_elapsed_sec`** — wall-clock fields the exact-name mask
+    missed because they are SUFFIXED. Masking is now suffix-aware, for timing
+    keys only.
+
+The mask stays narrow on purpose. `.assertions[].source` embeds a **computed
+number** (`"max|chi_comb-chi_young|=5.9119161e-48 < 1e-25"`), so masking it
+would hide true positives — the worse failure of the two.
+
+### Result so far — and "MOVED" is the wrong granularity
+
+    processed        8 of 95
+    IDENTICAL        3
+    MOVED            4     ->  substantive 3, provenance-only 1
+    TIMEOUT          1     (180 s budget; says nothing about the witness)
+
+**`atomic_tr_m_mpfr_50dps` moves in `.scriptHash` ONLY.** No number changed —
+that is provenance drift, not stale content, and it must not be counted
+alongside a witness whose values moved. Report this axis three ways
+(substantive / provenance-only / identical), never as a bare MOVED count. The
+recorded per-witness `fields` make the split computable from the checkpoint
+without re-running anything.
+
+Three of eight moving substantively is a real signal that the class is not
+rare, but **8 is far too small a sample to extrapolate to 95** and no rate
+should be quoted from it.
+
+### Structural fix still needed: do not sweep in the working tree
+
+The campaign was stopped early because it **dirties the working tree**. It
+restores `computations/` between producers, but at any instant the tree
+carries whatever the running producer wrote — including
+`witness-raw-float64-audit.witness.json`, an audit witness that
+[`b28296c0d`] already had to revert once for being swept in accidentally.
+
+Restoring mid-run is not a fix either: it would hand the currently-running
+producer a restored baseline and could manufacture a false IDENTICAL.
+
+**The next run should execute in a `git worktree` or a throwaway clone**, so
+the sweep cannot touch the session's tree at all. That removes the dirty-tree
+problem and the contamination risk together, and it is the reason this
+attempt stopped at 8 rather than a defect in the instrument.
+
+Harness committed at `computations/audits/witness_dependency_residue_{targets,run}.py`
+with the pinned-SHA and self-test discipline built in.
