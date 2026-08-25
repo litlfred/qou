@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T10:48:07Z
-updated_at: 2026-08-25T19:06:14Z
+updated_at: 2026-08-25T19:20:26Z
 ---
 
 ## The defect
@@ -255,3 +255,28 @@ inductions carry m+1 < n, NOT the m < n a naive reading suggests.
 HeckeGenerators.sigma_inv / mul_sigma_inv / sigma_inv_mul are DERIVABLE from the
 Hecke relation (hecke_mul_sub_eq_one). Removing them touches every downstream
 instance -- wants its own scoped pass, not a rider on this one.
+
+
+## THETA TIE-IN DONE (2026-08-25, PR #5786) -- only jmRaw_comm remains
+
+    fullTwistB_smul_eq_theta_sq   twist acts by theta_lambda^2
+    twistB_scalar_eq_theta_sq     that scalar is PINNED
+    stdTwo_fullTwist_eq_one       (s0 s1)^3 = 1, direct matrix computation
+    stdTwoBelow3_twist_eq_theta_sq   the routes agree
+
+prod_jmEigen NEEDED NO PORT AT ALL -- it mentions no HeckeGenerators, being a
+statement about the eigenvalue function and the combinatorics of `cells`. Only the
+two theorems touching a presentation moved. Check what a lemma quantifies over
+before assuming it needs redoing.
+
+FALSIFIABILITY: c((2,1)) = 0+1-1 = 0, so theta^2 = 1 -- the full twist of B_3 is
+PREDICTED to act trivially. Confirmed by an independent route: (s0 s1)^3 = 1 from
+the matrices alone, no JM input. Same check HeckeSeminormalWeight runs for the
+one-row block, now on a 2-dim block the unbounded class cannot host.
+
+### REMAINING SCOPE OF THIS BEAN IS NOW EXACTLY ONE ITEM
+jmRaw_comm (JM commutativity). Machinery: HeckeTranspositionExpansion (562) +
+HeckeJucysMurphyCommutation (263) + HeckeJucysMurphyAdjacentNormalForm (210) =
+~1035 lines. NOT attempted. Both headline results (the dim>1 IsJMWeight witness
+and the twist) landed WITHOUT it, so whether it is worth porting is a genuine
+open judgement call, not an obvious yes.
