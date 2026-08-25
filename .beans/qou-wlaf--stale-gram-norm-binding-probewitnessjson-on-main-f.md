@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-25T19:11:39Z
+updated_at: 2026-08-25T19:53:38Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -230,3 +230,56 @@ changed.
    exists to measure — is cross-checked by nothing, which is why a 2.8e-7 move
    in it was silent. Worth checking, per witness, WHICH fields the assertions
    actually cover before trusting an `allPassed: true`.
+
+
+---
+
+## RETRACTION: the "reproduced on this branch" section above is WRONG
+
+The section headed *"Reproduced on this branch, within hours"* claimed that
+rebasing onto `main` at `41389ea6bf` shifted this probe's `2H G_atom` from
+`4.922708485093256` to `4.92270711355717`, and presented that as this bean's
+own thesis reproducing itself. **It is not true and it is withdrawn.**
+
+Measured properly: two independent full `--with-4he` runs, hours apart, at
+different CPU loads, one with nothing else on the box. Every field of every
+isotope is **bit-identical** to the committed witness — `G_atom`, `tr_atom`,
+`B_sym`, `r_gram_sym` across ²H, ³H, ³He, ⁴He, all `rel = 0.00e+00`. The
+producer is reproducible post-rebase. The committed witness is correct.
+
+**Where 4.92270711355717 came from: my own test harnesses, not the producer.**
+Every reading of that value came from a script that did
+`sys.path.insert(0, 'probes')` and then `import gram_norm_binding_probe`,
+executing the module under a different import context than
+`python3 probes/gram_norm_binding_probe.py` gives it — a tree with
+`_path_bridge` doing its own `sys.path` surgery. The harness and the producer
+resolve their sibling imports differently, so the harness was measuring a
+slightly different object and reporting it as the producer's value. I have not
+isolated which import differs, and am not claiming to.
+
+Note the trap in the corroboration: my "same process, `main()` and a direct
+call agree exactly" test **also** ran under the harness context, so both sides
+shared the same wrong context and agreed with each other. Two numbers agreeing
+is not evidence when they are wrong together.
+
+**What survives, and is worth more than the retracted claim.** The three
+exonerating measurements were real and stand: symbolic vs numeric `y_λ` agree
+to `0.000e+00` (no convention-C leak); `build_seminormal_matrices` vs
+`build_seminormal_matrices_mp` agree to `3.331e-16` (independently confirming
+the `_mp` author's 4.441e-16); the probe's `_gram_and_trace` matches a
+hand-rolled loop. And the two consequences recorded in that section hold on
+their own merits regardless of the retracted premise: a re-run campaign should
+still pin one `main` SHA, and `allPassed: true` is still no comfort when the
+assertion validates `T` while the quantity of interest is `G`.
+
+**The lesson is the one this repo already writes down: measure the producer as
+producers actually invoke it, or you measure your own harness.** That is the
+second time in this session — the first was a detector reading a nested
+`witness.scriptFile` and reporting 0 on a tree with a known positive in it.
+Both were caught only by checking against something already known to be true.
+For a producer, "run it the way the manifest runs it" is the check.
+
+The ORIGINAL finding of this bean is untouched by all of this: the witness on
+`main` before this branch disagreed with the 50-dps transfer engine by 13-55 %
+and failed its own recorded assertion by seven orders of magnitude. That was
+measured from committed data, not from a harness.
