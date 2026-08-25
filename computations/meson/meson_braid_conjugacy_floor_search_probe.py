@@ -27,9 +27,17 @@ THIS IS A SEARCH, NOT A PROOF
 It samples conjugates gamma^-1 beta gamma over freely-reduced conjugator words
 gamma of bounded length.  A "max floor found" of 0 is evidence, not a theorem:
 the supremum of the floor over a full conjugacy class is not computed here and
-no bound on it is invoked.  In particular no Malyutin quasi-morphism bound is
-cited -- that paper is not in library/, so the argument that would upgrade this
-search to a proof is unavailable and is deliberately not asserted.
+no bound on it is invoked.  In particular this file deliberately asserts no bound on
+that supremum.
+
+SUPERSEDED, 2026-08-25, same day: this section used to add "no Malyutin
+quasi-morphism bound is cited -- that paper is not in library/". THAT WAS WRONG.
+Ito quotes the bound in full as his Proposition 2(2), attributed to [MN] and
+[Ma], in the very section whose conjugate pair validates this file. It gives
+|[beta]_D - [beta']_D| <= 1 for conjugates, which turns this search into a
+proof: floor 0 => no representative above 1 => Theorem 2 unreachable, full stop.
+See meson_braid_floor_conjugacy_bound_probe.py. This probe's numbers stand and
+are now corroboration rather than evidence.
 
 THE CONTROL THAT MAKES THE NEGATIVE READABLE
 ============================================

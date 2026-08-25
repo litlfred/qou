@@ -567,3 +567,83 @@ sums of two monomials. Under a `d == 0` rule the figure-eight `(σ₁σ₂⁻¹)
 muon carrier, a hyperbolic **link** the mass law reads `Vol` from — would read as
 "not a braid word", i.e. conclusion (1) would leak onto exactly the objects
 conclusion (2) is about. Fixed at the docstring, with the census as its witness.
+
+---
+
+## Addendum 5 — the bound was in the corpus; (a) becomes (b) (2026-08-25)
+
+Addendum 3's scope note says: *"no Malyutin bound is invoked — that paper is not
+in `library/`, so corpus-grep path 5 cannot support citing it."* **The bound is
+in `library/`.** Ito quotes it in full, attributed to both `[MN]` and `[Ma]`, in
+[`sec-001-2-braid-ordering-and-dehornoy-floor`](../../library/arxiv-0805.1447v2/sections/sec-001-2-braid-ordering-and-dehornoy-floor.md)
+— the same section whose conjugate pair Addendum 3 uses as its validation gate:
+
+> **Proposition 2 ([MN],[Ma]).** Let `α, β ∈ Bₙ`. Then the following holds.
+> **(1)** If `β` is represented by a braid word which contains `s` occurrences
+> of `σ₁` and `k` occurrences of `σ₁⁻¹`, then `[β]_D < max{s,k}`.
+> **(2)** `|[β]_D − [β′]_D| ≤ 1` if `β` and `β′` are conjugate.
+> **(3)** `[αβ]_D ≤ 1 + [α]_D + [β]_D`.
+> **(4)** If the closure of `β` admits destabilization or an exchange move,
+> `[β]_D ≤ 1`.
+
+**Convention checked, not assumed.** Ito's Remark 1 says his floor definition
+*"is slightly different from one in `[Ma]`… rather after `[MN]`"*. Proposition 2
+is stated in **Ito's** convention — which is what `_dehornoy.py` implements and
+what was validated against Ito's three stated floors — so it applies to these
+numbers directly, with nothing to reconcile.
+
+### The search becomes a proof
+
+[`meson_braid_floor_conjugacy_bound_probe.py`](../../computations/meson/meson_braid_floor_conjugacy_bound_probe.py),
+4 assertions:
+
+| braid | floor | `< max{s,k}` (2·1) | class max (2·2) | Theorem 2 reachable? |
+|---|---:|---:|---:|---|
+| `4₁ = (σ₁σ₂⁻¹)²` — **hyperbolic** | 0 | 2 | **1** | **no — by proof** |
+| Borromean `(σ₁σ₂⁻¹)³` | 0 | 3 | 1 | no |
+| meson `𝔐` | 1 | 3 | **2** | **no — by proof** |
+| trefoil `σ₁³` | 0 | 3 | 1 | no |
+
+`4₁` has floor 0, so by (2) **every** representative of its conjugacy class has
+floor ≤ 1, against Theorem 2's required 3. Not "none found in 118 097 samples" —
+**none exists**. Addendum 3 is therefore re-scoped **(a) → (b) structural
+exclusion, invariant cited**, per AGENTS.md §"Before declaring refuted".
+
+Two independent checks keep that from being circular. The implementation
+respects **(1)** on every row — a theorem the handle-reduction code was not built
+from. And **(2) is tight**: Ito's own conjugate pair differs by exactly 1, so the
+bound is being applied at its sharp value, not vacuously. The 118 097-conjugate
+search survives as corroboration, and corroborates twice: no counterexample, and
+its raising control saturates the bound.
+
+### Why I missed it, which is the more useful part
+
+I grepped `Malyutin` in `library/INDEX.md` and `docs/` — and nowhere else. **`INDEX.md`
+is one line per document.** A result *cited inside* a document the corpus holds is
+invisible to it **by construction**, and Malyutin has no document of his own here.
+AGENTS.md path 5 lists three tiers explicitly; **tier 1 answering "no" is not tier 3
+answering "no"**, and I recorded the tier-1 miss as a corpus-wide absence in a
+durable artifact — the exact over-claim the "Before declaring open" checklist exists
+to prevent, committed while quoting the page that refuted it.
+
+Neither Malyutin paper is ingested and neither could be: this sandbox's proxy denies
+`arxiv.org` at CONNECT (403, policy), along with `export.arxiv.org`,
+`link.springer.com` and `mathnet.ru`. They remain worth ingesting when reachable.
+The citations, quoted verbatim from Ito's reference list in the ingested copy, are:
+
+- **`[MN]`** A. Malyutin, N. Netsvetaev, *Dehornoy's ordering on the braid group
+  and braid moves*, St. Petersburg Math. J. **15**, No. 3 (2004), 437–448.
+- **`[Ma]`** A. Malyutin, *Twist number of (closed) braids*, St. Petersburg
+  Math. J. **16**, No. 5 (2005), 791–813.
+
+**No arXiv identifier is given here.** Ito's reference list supplies none for
+either, and this sandbox cannot reach `arxiv.org` to check one — so any id would
+be recalled, not verified, and this document has already paid once today for
+stating an unchecked number. Nothing above waits on either paper.
+
+### What does not change
+
+The reading. Ito's threshold still sits at 18 crossings, and a genuinely hyperbolic
+knot still cannot reach it — now as a theorem rather than a sample. Addendum 4's
+split stands, and its point (1) is untouched, being about *kind* rather than reach.
+Obstruction A is unchanged.

@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:07:39.148687+00:00",
-  "commitSha": "2e51b143f6b3c9f8816e23d56ba0c494a4911d68",
+  "computedAt": "2026-08-25T21:40:35.353758+00:00",
+  "commitSha": "3f057ab89ea120a45a049c3dc570538e755e3504",
   "assertions": [
     {
       "name": "reproduces_all_three_ito_stated_floors",
@@ -42,11 +42,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 7,
+  "durationMs": 5,
   "computation": "meson-braid-conjugacy-floor-search",
   "scriptFile": "meson_braid_conjugacy_floor_search_probe.py",
-  "scriptHash": "deebd89aa35f",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "d31534b30370",
+  "scriptCommitSha": "98256a125e352546a2defba0defc486476bd8b6a",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
