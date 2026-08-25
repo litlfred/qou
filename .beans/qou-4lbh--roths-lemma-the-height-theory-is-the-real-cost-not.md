@@ -4430,3 +4430,50 @@ interface between two green theorems is exactly as untested as an undischarged h
 it landed.** The defect is that a correction to a lemma is not a correction to its consumers,
 and the arc had no mechanism that would notice. A green build after a correction says the
 corrected file still compiles, not that anything downstream now means what it did before.
+
+## Lemma 4 is proved, and §14 runs
+
+`rothLemma4_of_one_le : 1 ≤ n → RothLemma4 σ n p q F` — no `sorry`, standard axioms, no
+hypothesis beyond `0 < p ≤ q`, `1 ≤ n` and `Γ_{n+1}` itself.
+
+The assembly, in the order it uses things:
+
+* `IsRothTheta`'s **attainment** clause gives the realising pair `(A, κ)` — which is why §9's
+  finiteness had to be *proved*; an inequality-only `Θ` would have had nothing to hand over;
+* `exists_family_index_le_w_of_rothGrowth_split` runs §13 on `map A` and returns the separated
+  representation, fixing the length `rr` — the whole reason the family had to be exposed;
+* `exists_divided_wronskian_budget` bounds the divided Wronskian at that `rr` in §11's currency;
+* `rothGammaFull_descend` turns `Γ_{n+1}` into `Γ_n`;
+* `exists_isRothTheta` names `Θ'` and `Θ₁`; `isRothTheta_right_le_t` gives `Θ₁ ≤ t`;
+* the two `_div` halves (correction 26) bound the Wronskians; `factor_bound_of_rescaled` turns
+  that into §13's `J(W) ≤ n·Φ`;
+* §13 returns `w` with `Φ = Θ' + Θ₁ ≤ Θ' + t = Ψ`.
+
+Then `rothLemmaTheta_of_seq` discharges `rothLemmaTheta_iterate`'s `h4` at every arity, and
+`rothLemmaTheta_three` is **Roth's Lemma with no hypothesis at all** beyond `m ≤ 3`: at
+`t = 1/16 = (1/2)^{2²}` the ladder `1/16, 1/4, 1/2` lives in `ℚ`.
+
+### Three things the assembly needed that no component knew about
+
+1. **`Θ ≤ t` is a separate case.** §13's inequality needs `t ≤ θ` — there is nothing to bound
+   otherwise — and the assembly cannot discharge it. It does not need to: at `Θ ≤ t` the
+   conclusion holds with `w := 0`. ⚠ That branch is **unavailable** under correction 25's old
+   `=` encoding, which admits `w = 0` only when `Ψ = 0`. So correction 25 was not merely
+   tidying: without it this case has no witness either.
+2. **`1 ≤ a`** is nowhere in `RothGammaFull`; it comes from `InRothPolySet`'s non-vanishing.
+   Three lemmas wanted it and none of them could have stated it.
+3. **`Fintype σ`** — `exists_divided_wronskian_budget` sums over the variables, and `σ` is
+   finite only *because* `o : σ ≃ Fin (n+1)` exists. It is derived inside the proof, not
+   assumed.
+
+### What is still open
+
+Correction 23's encoding restriction, unchanged: `rothLemmaTheta_of_seq` needs `t` to be a
+`2^{M−1}`-th power in `ℚ`. Removing it means proving `rothBound_succ_of_lemma4` in `ℝ` and
+transferring back; the inequalities are field-generic, so this is transport work, not
+mathematics. `rothLemmaTheta_three` is an instance where the restriction is satisfied.
+
+⚠ The stale-prose paragraph in `RothVariableSplit` has now been wrong **three times** in three
+directions: "neither is proved" (correction 17), "`RothLemma4` is not proved at any arity", and
+each time the build had no opinion. A docstring naming what is open is a claim about the whole
+file and ages the moment anything below it lands.

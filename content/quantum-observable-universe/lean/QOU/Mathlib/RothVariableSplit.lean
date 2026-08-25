@@ -32,6 +32,7 @@
   `hres` below remains a hypothesis and this module does not discharge it.
 -/
 import QOU.Mathlib.RothOperatorFamily
+import QOU.Mathlib.RothInductionHypothesis
 
 namespace MvPolynomial
 
@@ -320,14 +321,22 @@ and known to exist, the source's own two statements can finally be written.
 
 **Roth's Lemma** (§14): if the system has `Γ_m` then `Θ_m ≤ c_m·t^{2^{−(m−1)}}`.
 
-⚠ Both are `def`s.  **`RothLemmaTheta` is now proved at `m = 1`** (`rothLemmaTheta_one`);
-`RothLemma4` is not proved at any arity, and `RothLemmaTheta` is open for `m ≥ 2`.  What is also
-proved is the implication between them — `rothBound_succ_of_lemma4` — which is the induction
-step of §14 in `Θ` language.
+⚠ Both are `def`s, and **both are now proved**: `RothLemma4` at every arity `n ≥ 1`
+(`rothLemma4_of_one_le`, below — it needs `exists_family_index_le_w_of_rothGrowth_split`, so it
+is stated after it), and `RothLemmaTheta` at `m = 1` outright (`rothLemmaTheta_one`) and at
+every `m ≤ M` for which the `s`-ladder exists in `ℚ` (`rothLemmaTheta_of_seq`).  The implication
+between them is `rothBound_succ_of_lemma4`, §14's induction step in `Θ` language.
 
-⚠ This paragraph read "neither is proved" after `rothLemmaTheta_one` landed, which is correction
-seventeen's failure mode verbatim: prose that a green build has no opinion about.  Stated here
-because the arc has now caught it twice in one session. -/
+What is **not** closed is correction 23's encoding restriction: `rothLemmaTheta_of_seq` needs
+`t` to be a `2^{M−1}`-th power in `ℚ`, because `RothBound` is root-free and the ladder
+`s_{n+1}² = s_n` has to live in `ℚ`.  `rothLemmaTheta_three` is an instance where it does.
+
+⚠ This paragraph has now been wrong **three times**, in three different directions: it read
+"neither is proved" after `rothLemmaTheta_one` landed (correction 17), then "`RothLemma4` is not
+proved at any arity" after `rothLemma4_of_one_le` landed, and each time the build had no
+opinion.  A docstring that names what is open is a *claim about the whole file* and ages the
+moment anything below it changes; nothing mechanical checks it, so it has to be re-read on every
+landing that could falsify it. -/
 
 /-- **Lemma 4**, stated.  `w` encodes `max(Ψ, √Ψ)` root-free as `w ≤ Ψ ∨ w² ≤ Ψ`.
 
@@ -817,6 +826,173 @@ theorem exists_family_index_le_w_of_rothGrowth_split {K : Type*} [Field K] [Char
     exact hdegAll _
   · intro Φ θ hΦ0 hfac hθt hθ
     exact hmain Φ θ hΦ0 hfac hθt (by rwa [← index_splitOrder])
+
+/-! ### Lemma 4, proved
+
+Everything §13 needs is now in place, and the assembly is what puts it together.  The pieces,
+in the order the proof uses them:
+
+* `IsRothTheta`'s **attainment** clause gives the realising pair `(A, κ)` — this is why §9's
+  finiteness had to be proved rather than assumed;
+* `exists_family_index_le_w_of_rothGrowth_split` runs §13 on `map A` and hands back the
+  separated representation, fixing the length `rr`;
+* `exists_divided_wronskian_budget` bounds the divided Wronskian at that `rr`, in §11's
+  currency `b ≤ 2^{(2n+3)(rr·d₁)}·a^{rr}`;
+* `rothGammaFull_descend` turns `Γ_{n+1}` into `Γ_n` for the descended system;
+* `exists_isRothTheta` names its `Θ'`, and `isRothTheta_right_le_t` gives `Θ₁ ≤ t`;
+* the two `_div` halves of `hres` (correction 26) bound the Wronskians against `Θ'` and `Θ₁`,
+  and `factor_bound_of_rescaled` turns that into §13's `J(W) ≤ n·Φ`;
+* and §13's `w` comes back with `Φ = Θ' + Θ₁ ≤ Θ' + t = Ψ`, which is the weakening the
+  conclusion wants.
+
+⚠ **`Θ ≤ t` is a separate case, and it has to be.**  §13's inequality needs `t ≤ θ` — there is
+nothing to bound otherwise — so `index_le_or_sq_of_det_bound` carries that hypothesis, and the
+assembly cannot discharge it.  It does not need to: when `Θ ≤ t` the conclusion holds with
+`w := 0`, and the first disjunct `0 ≤ Θ' + t` is free.  ⚠ That branch would **not** be available
+under correction 25's old `=` encoding, which requires `w = Ψ` or `w² = Ψ` exactly and admits
+`w = 0` only when `Ψ = 0`.
+
+⚠ `1 ≤ n` is Mahler's `m ≥ 2`, and it enters through `isRothTheta_right_le_t` alone. -/
+
+/-- **Lemma 4 (§13), proved.**
+
+`Γ_{n+1}` produces a descended system with `Γ_n` and `Θ_{n+1} ≤ t + 2·max(Ψ, √Ψ)` where
+`Ψ = Θ_n + t`.  No hypothesis beyond `0 < p ≤ q`, `1 ≤ n`, and `Γ_{n+1}` itself. -/
+theorem rothLemma4_of_one_le {σ : Type*} [DecidableEq σ] {n : ℕ} (hn : 1 ≤ n) {p q F : ℕ} :
+    RothLemma4 σ n p q F := by
+  classical
+  intro hp hpq o a rd H Θ hg hΘ
+  haveI : Fintype σ := Fintype.ofEquiv _ o.symm
+  have hq0 : 0 < q := lt_of_lt_of_le hp hpq
+  have hpQ : (0:ℚ) < (p:ℚ) := by exact_mod_cast hp
+  have hqQ : (0:ℚ) < (q:ℚ) := by exact_mod_cast hq0
+  have ht0 : (0:ℚ) ≤ (p:ℚ)/(q:ℚ) := le_of_lt (div_pos hpQ hqQ)
+  have hω : (1:ℚ) ≤ (q:ℚ)/(p:ℚ) := by
+    rw [le_div_iff₀ hpQ, one_mul]; exact_mod_cast hpq
+  have hinv : 1 / ((q:ℚ)/(p:ℚ)) = (p:ℚ)/(q:ℚ) := by rw [one_div, inv_div]
+  obtain ⟨-, A, κ, hA, hκ, heq⟩ := hΘ
+  have ha1 : 1 ≤ a := by
+    obtain ⟨m0, hm0⟩ := support_nonempty.mpr hA.1
+    exact le_trans (Int.one_le_abs (mem_support_iff.mp hm0)) (hA.2.2 m0)
+  have ha0 : (0:ℤ) ≤ a := le_trans zero_le_one ha1
+  have hdegAll : ∀ x, degreeOf x (map (algebraMap ℤ ℚ) A) ≤ rd x := fun x =>
+    le_trans (degreeOf_map_le _ x A) (hA.2.1 x)
+  have hAQ0 : map (algebraMap ℤ ℚ) A ≠ 0 := fun hz =>
+    hA.1 (map_injective (algebraMap ℤ ℚ) (algebraMap ℤ ℚ).injective_int
+      (by rw [map_zero]; exact hz))
+  have hd0 : rd (o.symm (Fin.last n)) ≠ 0 := hg.degPos _
+  obtain ⟨rr, φ, ψ, Dx, Dy, hrr, hcard, hDx, hDy, hdφ, hdψ, hPeq, hWx, hWy, hmain⟩ :=
+    exists_family_index_le_w_of_rothGrowth_split o ((q:ℚ)/(p:ℚ)) hω rd hg.growth hd0
+      κ (map (algebraMap ℤ ℚ) A) hAQ0 hdegAll
+  -- the renamed integral polynomial
+  have hArn : InRothPolySet a (rd ∘ (splitOrder o).symm) (rename (splitOrder o) A) :=
+    InRothPolySet.rename_equiv (splitOrder o) hA
+  have hP'map : map (Int.castRingHom ℚ) (rename (splitOrder o) A)
+      = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (Fin n ⊕ Unit) ℚ) * rename Sum.inr (ψ k) := by
+    rw [map_rename]; exact hPeq
+  have hdegP' : ∀ h, degreeOf h (rename (splitOrder o) A)
+      ≤ Sum.elim (splitLeft o rd) (splitRight o rd) h := by
+    intro h
+    cases h with
+    | inl x => rw [degreeOf_splitOrder_inl]; exact hA.2.1 _
+    | inr y => rw [degreeOf_splitOrder_inr]; exact hA.2.1 _
+  -- the largest degree
+  have hi0 : (0 : ℕ) < n + 1 := Nat.succ_pos n
+  have hle_first : ∀ k : Fin (n + 1), rd (o.symm k) ≤ rd (o.symm ⟨0, hi0⟩) := by
+    intro k
+    have h := rothGrowth_antitone hω hg.growth (k : ℕ) (⟨0, hi0⟩ : Fin (n + 1)) k (by simp)
+    exact_mod_cast h
+  have hsum : ∑ h, Sum.elim (splitLeft o rd) (splitRight o rd) h
+      ≤ (n + 1) * rd (o.symm ⟨0, hi0⟩) := by
+    rw [Fintype.sum_sum_type]
+    have h1 : ∑ k : Fin n, splitLeft o rd k ≤ n * rd (o.symm ⟨0, hi0⟩) := by
+      calc ∑ k : Fin n, splitLeft o rd k ≤ ∑ _k : Fin n, rd (o.symm ⟨0, hi0⟩) :=
+            Finset.sum_le_sum (fun k _ => by rw [splitLeft_apply]; exact hle_first _)
+        _ = n * rd (o.symm ⟨0, hi0⟩) := by simp
+    have h2 : ∑ _u : Unit, splitRight o rd _u ≤ rd (o.symm ⟨0, hi0⟩) := by
+      simpa [splitRight_unit] using hle_first (Fin.last n)
+    have h3 : (n + 1) * rd (o.symm ⟨0, hi0⟩)
+        = n * rd (o.symm ⟨0, hi0⟩) + rd (o.symm ⟨0, hi0⟩) := by ring
+    rw [h3]
+    exact Nat.add_le_add h1 h2
+  -- §12's height estimate, in §11's currency
+  obtain ⟨W, cc, hcc0, hdet, hWB⟩ :=
+    exists_divided_wronskian_budget (n := n) (dlast := rd (o.symm (Fin.last n)))
+      (dfirst := rd (o.symm ⟨0, hi0⟩)) ha1 Dx Dy (rename (splitOrder o) A)
+      hdegP' hArn.2.2 hcard hsum (hle_first _)
+  have hb1 : (1 : ℤ) ≤ 2 ^ ((2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩))) * a ^ rr :=
+    one_le_mul_of_one_le_of_one_le (one_le_pow₀ (by norm_num)) (one_le_pow₀ ha1)
+  have hb0 : (0 : ℤ) ≤ 2 ^ ((2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩))) * a ^ rr :=
+    le_trans zero_le_one hb1
+  -- §11's descent
+  have hdesc := rothGammaFull_descend o p q F rd (fun j => (H j : ℤ)) a
+      (2 ^ ((2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩))) * a ^ rr)
+      (r := rr) (c := (2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩)))
+      hrr.ne' ha0 hb0 hg le_rfl (by
+        intro j hj
+        have : j = (⟨0, hi0⟩ : Fin (n + 1)) := Fin.ext (by simpa using hj)
+        rw [this])
+  -- the two `Θ`s of the descended system
+  have hH1 : ∀ j : σ, 1 ≤ H j := by
+    intro j
+    have h2 := hg.two_le j
+    have : (2 : ℤ) ≤ (H j : ℤ) := h2
+    omega
+  obtain ⟨Θ', hΘ'⟩ := exists_isRothTheta
+    (2 ^ ((2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩))) * a ^ rr)
+    (fun k => rr * splitLeft o rd k) (splitLeft o H) hb1 (fun h => hH1 _)
+  obtain ⟨Θ₁, hΘ₁⟩ := exists_isRothTheta
+    (2 ^ ((2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩))) * a ^ rr)
+    (fun u => rr * splitRight o rd u) (splitRight o H) hb1 (fun h => hH1 _)
+  have hΘ₁t : Θ₁ ≤ (p : ℚ) / (q : ℚ) :=
+    isRothTheta_right_le_t hn o hq0.ne' hrr.ne' hb1 hg hdesc hΘ₁
+  -- the two halves of `hres`, against the divided Wronskian
+  have hxhalf := index_rescaled_wronskian_le_theta_div (splitLeft o rd)
+    (2 ^ ((2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩))) * a ^ rr) (splitLeft o H)
+    (splitLeft o κ) Θ' hΘ' (fun h => hκ _) Dx Dy φ ψ (rename (splitOrder o) A)
+    hP'map hWx hWy (fun j k => hdφ k j) W hcc0.ne' hdet hWB
+  have hyhalf := index_rescaled_wronskian_le_right_theta_div (σ := Fin n) (splitRight o rd)
+    (2 ^ ((2 * n + 3) * (rr * rd (o.symm ⟨0, hi0⟩))) * a ^ rr) (splitRight o H)
+    (splitRight o κ) Θ₁ hΘ₁ (fun h => hκ _) Dx Dy φ ψ (rename (splitOrder o) A)
+    hP'map hWx hWy (fun j k => hdψ k j) W hcc0.ne' hdet hWB
+  have hfac := factor_bound_of_rescaled hrr.ne' (splitLeft o rd) (splitRight o rd)
+    (splitLeft o κ) (splitRight o κ) Dx Dy φ ψ Θ' Θ₁ hxhalf hyhalf
+  have hΦ0 : (0 : ℚ) ≤ Θ' + Θ₁ := add_nonneg hΘ'.nonneg hΘ₁.nonneg
+  by_cases hcase : Θ ≤ (p : ℚ) / (q : ℚ)
+  · exact ⟨_, _, _, Θ', 0, hdesc, hΘ', Or.inl (by linarith [hΘ'.nonneg]), by linarith⟩
+  · push_neg at hcase
+    obtain ⟨w, hw, hle⟩ := hmain (Θ' + Θ₁) Θ hΦ0 hfac
+      (by rw [hinv]; exact le_of_lt hcase) (le_of_eq heq.symm)
+    rw [hinv] at hle
+    exact ⟨_, _, _, Θ', w, hdesc, hΘ',
+      hw.imp (fun h => by linarith) (fun h => by linarith), hle⟩
+
+/-! ### §14, with Lemma 4 discharged
+
+`rothLemmaTheta_iterate` carried `h4` as a hypothesis at every arity below `M`.
+`rothLemma4_of_one_le` supplies it, so the recursion runs on the `s`-sequence alone. -/
+
+/-- **Roth's Lemma in `Θ` form, unconditional on Lemma 4.**
+
+What remains is the encoding restriction correction 23 named: `t` has to be a `2^{M−1}`-th
+power in `ℚ`, because `RothBound` is root-free and the ladder `s_{n+1}² = s_n` has to live in
+`ℚ`.  That is an artifact of the encoding, not of §14 — the inequalities are field-generic and
+would transfer from `ℝ`. -/
+theorem rothLemmaTheta_of_seq {p q F M : ℕ} {s : ℕ → ℚ}
+    (hs0 : ∀ n, 0 ≤ s n) (hs1 : ∀ n, s n ≤ 1)
+    (hsq : ∀ n, n + 1 < M → s (n + 1) ^ 2 = s n) (hs00 : s 0 = (p : ℚ) / (q : ℚ)) :
+    ∀ m, 1 ≤ m → m ≤ M → RothLemmaTheta (Fin m) m p q F :=
+  rothLemmaTheta_iterate hs0 hs1 hsq hs00 (fun _ hn _ => rothLemma4_of_one_le hn)
+
+/-- **An instance with nothing left open**: `t = 1/16 = (1/2)^{2²}`, so the ladder
+`1/16, 1/4, 1/2` lives in `ℚ` and §14 runs to `M = 3`.
+
+⚠ This is the arc's first statement of Roth's Lemma with **no hypothesis at all** beyond the
+arity bound — no `Γ` to supply, no Lemma 4 to assume, no `s`-sequence to produce. -/
+theorem rothLemmaTheta_three {F : ℕ} :
+    ∀ m, 1 ≤ m → m ≤ 3 → RothLemmaTheta (Fin m) m 1 16 F := by
+  obtain ⟨s, hs0, hs1, hsq, hs00⟩ := rothLemmaTheta_iterate_seq_witness
+  exact rothLemmaTheta_of_seq hs0 hs1 hsq (by simpa using hs00)
 
 /-! ### Next
 
