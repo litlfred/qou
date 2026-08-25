@@ -124,14 +124,14 @@ on `allPassed: true` from an assertion that cannot fail.
 Progress is checked off below as each lands. The remaining ~250 sites stay open
 and are *not* urgent by the same argument: no block's status depends on them.
 
-- [ ] `conj:schwinger-measure-computational-time` (4)
+- [x] `conj:schwinger-measure-computational-time` (4)
 - [x] `thm:topological-mass` (3)
 - [x] `prop:confinement-nf-partial-proof` (2)
 - [ ] `conj:staircase-ew-residual`
 - [ ] `prop:t-beta-markov-frobenius-collapse`
 - [x] `rem:knot-operator-basis-table`
 - [ ] `rem:per-observable-100x-status-dashboard`
-- [ ] `conj:flavor-split-habiro-derivation`
+- [x] `conj:flavor-split-habiro-derivation`
 - [x] `rem:hecke-operations`
 - [x] `prop:bar-involution-invariance`
 - [ ] the ~250 with no block dependency — bulk, low priority
@@ -221,3 +221,41 @@ Borromean mass against `borromean_mass_ratio * M_E_MEV`. Assertion count went
    actually the only honest option.
 
 All five files now pass `assertions_are_falsifiable`.
+
+
+## Batch 3 landed 2026-08-25 — 2 blocks, 5 assertions, and a fourth remedy
+
+**`conj:schwinger-measure-computational-time`**
+(`probes/r2core_schwinger_measure_explore_probe.py`, 4) exposed a pattern worth
+naming, because it looks like the *opposite* of a vacuity problem.
+
+The script does the real mathematics and checks it — with bare Python
+`assert`s:
+
+    assert mom == sp.factorial(k - 1)
+    assert diff == 0, f"linear-unit invisibility failed: {diff}"
+    assert rel > PIN_SHIFT_MIN
+
+Those are genuine verifications, and they run. But a bare `assert` **crashes
+the script and leaves nothing in the witness**, so the witness assertion beside
+it recorded `computed=True, expected=True` (or `computed="0", expected="0"`) —
+a constant that would pass with the checking code deleted.
+
+So the file was simultaneously rigorous and unverifiable-from-its-own-record.
+The fix is to carry the computed result into the assertion:
+`moments_are_factorials = all(...)`, `block1_...` now returns its symbolic
+`diff`, and the pin-dependence loop accumulates `pin_dependent[name]`. Same
+mathematics, now recorded.
+
+**Fourth remedy: move the check from `assert` into the witness.** Distinct from
+the other three, and probably common — a script whose author verified properly
+and whose witness cannot show it.
+
+**`conj:flavor-split-habiro-derivation`**
+(`mn_flavor_split_h4_plancherel.py`, 1). `h4_plancherel_scan_completed` read
+`computed=len(candidates), expected=len(candidates)` — passing even when the
+scan produced nothing, the one outcome a name ending `_completed` exists to
+exclude. The scan is exploratory so the count cannot be pinned in advance;
+`len(candidates) > 0` can fail and is what the name claims.
+
+**7 of 10 done.** All seven files pass `assertions_are_falsifiable`.

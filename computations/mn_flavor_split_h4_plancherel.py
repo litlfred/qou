@@ -168,8 +168,14 @@ def main() -> int:
 
     w.add_assertion(
         name="h4_plancherel_scan_completed",
-        computed=len(candidates),
-        expected=len(candidates),
+        # Read `computed=len(candidates), expected=len(candidates)` — a
+        # tautology that passed even when the scan produced nothing, which is
+        # the one outcome a name ending `_completed` is there to exclude
+        # (bean `qou-26f2`). The scan is exploratory, so the number of
+        # candidates is not known in advance and cannot be pinned; what CAN
+        # fail is that it found any at all.
+        computed=len(candidates) > 0,
+        expected=True,
         tolerance=0,
         source=f"Scanned {len(candidates)} H_4 candidates at 80 dps.",
     )
