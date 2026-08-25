@@ -94,7 +94,15 @@ else:
 # ══════════════════════════════════════════════════════════════════
 
 VOL_4_1 = 2 * clsin(2, mppi / 3) if HAS_MP else mpf("2.029883212819307")
-MASS_RATIO_MU_E = mpf("206.7682830")  # noqa: P31 — standalone-replicated CAL-2 substrate ratio (= experimental_constants.MU_OVER_E)
+# CAL-2 m_mu/m_e from the registry, NOT a private copy. This line read
+# `mpf("206.7682830")` behind a comment asserting `(= experimental_constants
+# .MU_OVER_E)`. That equality ended with PR #4860 / #5149: 206.7682830 is the
+# CODATA-2018 figure and the registry now READS the vendored NIST table
+# (206.7682827). A private literal cannot track an edition bump, which is the
+# whole reason the registry exists -- and here it feeds q0 itself, so the
+# staleness propagated into every number this script emits.
+from q_parameter import MASS_RATIO_MU_E_STR as _MU_E_STR  # noqa: E402
+MASS_RATIO_MU_E = mpf(_MU_E_STR)
 
 HBAR_Q_SQ = VOL_4_1 / MASS_RATIO_MU_E
 HBAR_Q = sqrt(HBAR_Q_SQ) if HAS_MP else mpf(str(math.sqrt(float(HBAR_Q_SQ))))
@@ -401,6 +409,38 @@ witness["allPassed"] = all(a["passed"] for a in witness["assertions"])
 import sys as _sys  # noqa: E402 — P30 rollup (bean cmiy)
 _sys.path.insert(0, str(HERE / "substrate"))
 from witness_base import WitnessBuilder  # noqa: E402
+
+# DECLARE the anchor rather than let the resolver infer one. witness.py states
+# the stamped label "always matches the value the producer actually computed"
+# BECAUSE it resolves from the same source the runtime uses to pick q0 -- but
+# that holds only for a producer that CALLS q_at(). This one never does: it
+# DERIVES q0 from Vol(4_1) and the registry m_mu/m_e, which is the whole
+# content of Instance 1. So the manifest describes a q0 that was never used,
+# and the inferred label was `proton` while every number here is muon-route.
+#
+# No pin label is truthful either. The derived value is `C` of bean qou-khac
+# -- 7.7e-11 from the FROZEN muon anchor `A`, which is not reproducible from
+# any published m_mu/m_e (audits/muon-pin-three-values.witness.json). So this
+# is `ambiguous` in the documented sense: the compute depends on q0 and the
+# pin is undetermined, queued for a manual ruling. Choosing `muon` here would
+# assert the frozen anchor and be false by 7.7e-11.
+# NO bare `q0Value`, matching every other `ambiguous` witness in the corpus.
+# `q0Value` names the CANONICAL value of the anchor a payload was computed at;
+# when the anchor is undetermined there is no such value, exactly as under
+# `independent` and `comparison`. Emitting one turned the q0-value drift
+# ratchet RED (`NEW stale ... +0.0769 ppb`) -- correctly, since a value that
+# matches no anchor IS drift. The derived value lives in `parameters.q0` and
+# is named in the reason below.
+witness["q0Anchor"] = "ambiguous"
+witness["q0AnchorReason"] = (
+    "Derives q0 = 1/(1 - sqrt(Vol(4_1)/(m_mu/m_e))) from the registry ratio "
+    "instead of reading an anchor, so no manifest entry describes it and no "
+    "pin label is truthful. The result -- see parameters.q0, "
+    f"{str(q0)[:22]} -- is value C of bean qou-khac (CODATA-2022-derived), "
+    "7.7e-11 from the frozen muon anchor A, which is itself not reproducible "
+    "from any published m_mu/m_e (audits/muon-pin-three-values.witness.json). "
+    "Undetermined pending the A-vs-C ruling."
+)
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
 witness["scriptFile"] = Path(__file__).name
 out_path = HERE / "meson-mass-from-hecke.witness.json"

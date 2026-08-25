@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-15T21:19:10Z
-updated_at: 2026-08-16T12:45:42Z
+updated_at: 2026-08-25T01:54:01Z
 ---
 
 
@@ -184,3 +184,57 @@ Give the muon pin a canonical home and convert the three `Q_MUON` copies to
 imports. That is a substrate change (`q_parameter`), it moves values by 3.15e-12
 in whatever consumes them, and it wants its own scope — not folded into a
 labelling pass.
+
+
+## Population measured 2026-08-25 (independent re-derivation)
+
+This bean names **3** files carrying the B literal. Corpus-wide census of the
+value `1.10997859555418…`, classified by what the FIELD MEANS rather than by
+the value merely being present:
+
+    56  witnesses carry B
+    ├─ 33  COMPUTED-AT, unlabelled   (/parameters/q_0, /q0, /parameters/q …)
+    ├─ 12  UNCLASSIFIED              (mostly deliberate: /data/q_muon,
+    │                                 /data/pins/stale_muon_pin_q0)
+    ├─  9  ABOUT — reports B as data (audits whose SUBJECT is B; not defects)
+    └─  2  COMPUTED-AT, labelled proton
+
+The raw 56 is **not** a defect count; three quarters of it is either an audit
+reporting B or a probe deliberately naming the stale pin. The actionable
+residue is the 33 + 2.
+
+## One live PRODUCER was still on CODATA-2018 — fixed
+
+`meson_mass_from_hecke.py:97` hardcoded `MASS_RATIO_MU_E = mpf("206.7682830")`
+behind a comment asserting `(= experimental_constants.MU_OVER_E)`. PR #4860 /
+#5149 ended that equality. The literal fed `q0` itself, so it propagated into
+every number the script emits. Now reads `q_parameter.MASS_RATIO_MU_E_STR`,
+which moves it B → C. Conclusions unchanged (err_ppm move in the 8th-10th
+digit; candidate ranking identical).
+
+**This does NOT settle A-vs-C.** It removes a private stale copy of a registry
+constant, which is right independently of the ruling this bean is waiting on.
+
+## Why the corpus gates could not see it
+
+The witness was scored **Q0_OK** while being wrong. `q0_anchor_consistency`
+compares the `q0Value` STAMP against the anchor table; the stamp said proton
+and matched proton exactly. Nothing compares the stamp against the q0 the
+PAYLOAD was computed at — which was muon-route. `witness.py` states the
+invariant that the stamp "always matches the value the producer actually
+computed" BECAUSE it resolves from the same source the runtime uses; that
+holds only for a producer that CALLS `q_at()`. This one derives q0 instead,
+so the manifest described a value never used.
+
+Now declared `q0Anchor: "ambiguous"` + `q0AnchorReason` naming C, per the
+documented vocabulary ("the pin is undetermined … a queue for a manual
+ruling"). Choosing `muon` would assert the frozen anchor A and be false by
+7.7e-11.
+
+Scan for the general class: a witness whose `q0Value` stamp disagrees with a
+payload q0 field. 715 witnesses have both; 38 disagree — but most are
+deliberate (q-sweeps, `/data/muon_anchor/q0` cross-anchor blocks) or a path
+artifact (`/result/z/q` is the Markov z, not q0). Genuine residue:
+`meson-mass-from-hecke` (fixed here), `he3-tower-charge-asymmetry`,
+`he3-brane-tower-structural-gap` — none of which are in `qou-bdkx`'s list of
+4, because that list came from the gate and the gate is blind to this shape.
