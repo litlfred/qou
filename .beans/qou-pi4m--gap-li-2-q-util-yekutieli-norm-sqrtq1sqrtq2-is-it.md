@@ -1,10 +1,11 @@
 ---
 # qou-pi4m
 title: 'GAP: _li_2_q_util yekutieli norm (sqrt(q)+1/sqrt(q))^2 - is it 1/z_C^2 or [2]_q+2'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-25T01:22:22Z
-updated_at: 2026-08-25T01:22:22Z
+updated_at: 2026-08-25T07:37:29Z
 ---
 
 

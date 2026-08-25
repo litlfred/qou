@@ -1,10 +1,11 @@
 ---
 # qou-dhbr
 title: 'convergence_safe_vhat_tower: z_bar RESOLVED on main; only the cand3_bar_sym NAME is stale'
-status: todo
+status: completed
 type: task
+priority: normal
 created_at: 2026-08-25T01:21:42Z
-updated_at: 2026-08-25T06:40:00Z
+updated_at: 2026-08-25T07:37:29Z
 ---
 
 
@@ -74,3 +75,55 @@ at different distances from the `Li_2^q` convergence radius `q`, so a
 candidate that converged under C may not under D. Main migrated the
 value but this bean has not verified that the radius check was
 re-examined.
+
+
+---
+
+## CORRECTED 2026-08-25 (PR #5750) — do NOT rename; the name is right and the CODE is wrong
+
+This bean's rescoped remainder — "rename `cand3_bar_sym`, since under
+convention D that object is not bar-symmetric" — is **withdrawn**. The premise
+that the object is not bar-symmetric is correct; the diagnosis is not, and
+acting on it would have enshrined a live bug as the intent.
+
+Measured at q0 (70 dps, mpmath end to end):
+
+    vhat_bar(q) - vhat(1/q)           = -0.18083
+    gm(q)   = sqrt(|vhat|*|vhat_bar|) =  0.5561440948168445630758605
+    gm(1/q)                           =  0.3111671166808308712169974
+    gm(q) - gm(1/q)                   =  0.24498
+
+So `gm` is indeed not bar-symmetric — this bean was right about that, and my
+first hypothesis (that the geometric mean is symmetric by construction, so the
+name is fine) was **refuted by measurement**. But the cause is not `z_D`.
+
+Rebuilding the crossing chain with the **barred** `h` —
+`nucleon_chains(quarks, qi - q)` instead of reusing the chain built from `+h` —
+makes both differences **exactly 0.0**, with `gm = 0.27820062359787614354` at
+`q` and at `1/q`. The chain's `(c, d)` entries carry `d = -h` for
+`sigma^-1 = sigma - h`, built from the unbarred `h`, while the recurrence is
+handed `qi - q = -h`; one evaluation therefore carries `h` at both signs.
+
+**PR #5622 fixed only half the bar image.** `z_bar` was the Markov-parameter
+half and that fix is correct and stands; the chain half was never barred.
+
+Consequences:
+
+- The name `cand3_bar_sym` is **accurate as intent** — the module header
+  defines candidate 3 as "Bar-symmetrization (q to 1/q) of the argument", and
+  the geometric-mean construction *is* exactly bar-symmetric on a correct bar
+  image. Renaming it to `cand3_bar_image` would relabel the defect as the
+  design, and would move a key serialised into the witness at three places.
+- The blast radius, measured anyway: 4 sites in the producer, 3 in its own
+  witness (which the producer regenerates), and one descriptive prose mention
+  in `docs/audits/2026-06-01-vhat-tower-im-cancellation.md`. No registry, no
+  content block, no Lean, no other script indexes the key. Small — but the
+  right action is still not to rename.
+
+The real defect is now tracked as **`qou-b7vr`**, which carries the numbers, the
+one-line fix, and the reason it was not applied (it moves the committed
+`+0.995 %` p/n signal that backs a recorded refutation of candidate 3).
+
+Landed on PR #5750 instead: the convention-C `_std_vhat` docstring
+(`z = 1/(q^{1/2}+q^{-1/2})`, stale since #5622 — docstring only, no number
+affected) and a comment at the `z_bar` site recording all of the above.
