@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-26T00:20:00Z
+updated_at: 2026-08-26T01:40:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -810,3 +810,41 @@ as a caveat in the witness rather than left implicit.
 A=4 (⁴He) is the obvious follow-on — the peel witness already lists it as
 covered numerically, and tritium at 4.4 s suggests headroom. Cost is not
 yet measured, so do not assume it.
+
+## 2026-08-25 (cont.) — it does not stop at A=3. Proton through lithium-6.
+
+Having found the route, I measured how far it goes rather than assuming.
+All four higher atoms complete with **exact reconstruction**:
+
+| atom | A | n | deg_u(p) | a_m | tr_M | cancel |
+|---|---|---|---|---|---|---|
+| helium-3  | 3 |  9 | 144 | a_0..a_16 |    1.8 s |   2.6 s |
+| tritium   | 3 |  9 | 136 | a_0..a_16 |    3.8 s |   5.7 s |
+| helium-4  | 4 | 12 | 180 | a_0..a_18 |   24.6 s |  18.6 s |
+| helium-5  | 5 | 15 | 216 | a_0..a_20 |  325 s   |  84 s   |
+| lithium-6 | 6 | 18 | 260 | a_0..a_22 | 2036 s   | 212 s   |
+
+Denominators keep the peel law: `49152·u¹¹⁰(u⁴+1)¹¹` at A=6.
+
+**The growth FLATTENS.** Step ratios are 13.7×, 13.2×, **6.3×**. I
+extrapolated A=6 at ~70 min from the 13× figure and it came in at **38**.
+That wrong extrapolation is recorded in the module docstring next to the
+measured table, with an explicit "do not extrapolate A=7 from 13× either —
+measure it."
+
+Producer covers A=1..6 behind `--max-a` (default 4, the whole set in about
+a minute; the committed witness is the default run so a plain re-run
+reproduces it byte-for-byte).
+
+For scale: the route this replaces was measured at **18.1 days for A=3**.
+
+### Still open / next
+
+- **A=7+** unmeasured. Do not guess from the ratios above.
+- The A≥3 values still have **no independent second computation** — the
+  partition route *is* the 18-day path. Warrant remains exact reproduction
+  of every committed A≤2 value through the same code path.
+- Whether `habiro_coefficients_atomic.py` itself should switch to the peel
+  route is a **separate** call: the two are symbolically identical, so it
+  is safe, but it changes which code path produces the committed
+  A≤2 witnesses and should be scoped deliberately rather than slipped in.
