@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-25T11:15:23Z
+updated_at: 2026-08-25T13:01:19Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -94,3 +94,55 @@ prove the two missing invariances, not to weaken the remark.
 **The bean's own gap is untouched.** A selection rule says *where* a quantity may
 live, never how big it is. $E_{\mathrm{EM}}$ is still not derived, here or
 anywhere in this corpus.
+
+
+
+---
+
+**2026-08-25, second pass — the Coulomb localisation is wrong twice, and this
+TIGHTENS the bean rather than closing it.**
+
+Chasing the localisation claim in `rem:isospin-mass-split-em-localisation`
+turned up two independent defects. The second is the larger and was **not mine**.
+
+**1. The trace-tower premise is false at the substrate.** New file
+`QOU/MassTheory/TraceSignFlipRegime.lean` (sorry-free, axiom-clean). The Hecke
+relation forces $\sigma^{-1} = \sigma - (q - q^{-1})$, so a generator flip moves
+any linear functional by exactly $(q - q^{-1})\,\mathrm{tr}(1)$, vanishing iff
+$q^2 = 1$ — by `double_braiding_eq_one_iff`, exactly the symmetric-braiding
+locus. **The trace tower is sign-flip blind precisely where the braiding is
+symmetric, and QOU sits off it.** At $q_0$ the flip moves the trace by
+$0.209\,\mathrm{tr}(1)$ (mpmath: 0.20906 against the repo's own $q_0$).
+
+No contradiction with `prop:crystal-isospin-degeneracy`, a $q \to 0$ statement
+that stays true there. The defect is a **regime conflation** — a crystal-limit
+invariance licensing a claim about the functional at $q_0$.
+
+**2. The Coulomb term has the wrong sign — found in the block's own `.qa.json`.**
+A `trap-superlative` finding by whichever agent swept the block already carried
+this, and I would have missed it. Verified independently in exact mpmath rather
+than taken on trust:
+
+    m(3H) - m(3He) = (m_n - m_p) - (B(3H) - B(3He))
+                   =    +1.2933   -    +0.7638      = +0.5296 MeV
+
+The Coulomb-driven binding difference enters with the **opposite sign** at 1.44x
+the split's magnitude; the free-nucleon difference at 2.44x. **Acting alone the
+Coulomb term gives the wrong sign.** That agent's finding and proposed fix were
+both correct. The answer was in the sidecar — a place the corpus-grep checklist
+does not name and I had not thought to look.
+
+**Why this tightens rather than closes this bean.** The surviving constraint is
+that the split lives outside the involution-invariant sector. That complement
+holds **both** the nuclear Coulomb term **and** $m_n - m_p$, and the second
+dominates. The intra-nucleon EM self-energy is carried in the **free-nucleon
+masses**, not in the binding difference (which is what
+`mirror_split_s3_em_functional_probe.py` §(A1) says, and what made C2 a genuine
+correction). So the mirror split is **not a route around $E_{\mathrm{EM}}$ — it
+requires it.** The bean's target is now load-bearing for a second observable
+rather than isolated.
+
+Block re-scoped per AGENTS.md §"Before declaring refuted": the observation
+stands, only the localisation onto Coulomb goes.
+
+**Still open, unchanged:** $E_{\mathrm{EM}}$ itself. No magnitude here.
