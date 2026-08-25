@@ -626,6 +626,22 @@ theorem degreeOf_splitOrder [DecidableEq σ] {n : ℕ}
     degreeOf (splitOrder o x) (rename (splitOrder o) P) = degreeOf x P :=
   degreeOf_rename_of_injective (splitOrder o).injective x
 
+/-- **`degreeOf`, transported, read at a left index.** -/
+theorem degreeOf_splitOrder_inl [DecidableEq σ] {n : ℕ}
+    (o : σ ≃ Fin (n + 1)) (P : MvPolynomial σ R) (x : Fin n) :
+    degreeOf (Sum.inl x) (rename (splitOrder o) P)
+      = degreeOf ((splitOrder o).symm (Sum.inl x)) P := by
+  have h := degreeOf_splitOrder o P ((splitOrder o).symm (Sum.inl x))
+  rwa [Equiv.apply_symm_apply] at h
+
+/-- **`degreeOf`, transported, read at the right index.** -/
+theorem degreeOf_splitOrder_inr [DecidableEq σ] {n : ℕ}
+    (o : σ ≃ Fin (n + 1)) (P : MvPolynomial σ R) (y : Unit) :
+    degreeOf (Sum.inr y) (rename (splitOrder o) P)
+      = degreeOf ((splitOrder o).symm (Sum.inr y)) P := by
+  have h := degreeOf_splitOrder o P ((splitOrder o).symm (Sum.inr y))
+  rwa [Equiv.apply_symm_apply] at h
+
 /-! ### §13 for a polynomial presented with an ordering -/
 
 /-- **§13's conclusion, for a polynomial given as `o : σ ≃ Fin (n+1)` plus one degree vector.**
@@ -683,6 +699,68 @@ theorem index_le_of_rothGrowth_split {K : Type*} [Field K] [CharZero K] [Decidab
     exact hdeg
   · rwa [splitRight_unit]
   · rwa [← index_splitOrder]
+
+/-- **§13 in Lemma 4's shape, transported** — the family exposed, the `w` disjunction, and
+everything stated in terms of `σ`, `o` and `d`.
+
+This is the form `RothLemma4` consumes.  Compared with `index_le_of_rothGrowth_split`:
+
+* the realising family comes **back** rather than being quantified over, because the descended
+  system depends on the representation length `r` (see
+  `RothOperatorFamily.exists_family_index_le_of_rothGrowth`);
+* the conclusion is the `w` disjunction, with no `q` and no junction condition;
+* the degree bounds are stated against `splitLeft o d` / `splitRight o d`, which is what
+  `InRothPolySet` gives the caller, rather than against `P`'s own `degreeOf`.
+
+⚠ `hdegAll` replaces the single `hdeg` of the earlier form.  It is not a strengthening in
+practice — `A ∈ R(a; r)` bounds every degree — and the split-off variable's bound alone would
+not give the `φ` and `ψ` degree clauses that the induction hypothesis needs. -/
+theorem exists_family_index_le_w_of_rothGrowth_split {K : Type*} [Field K] [CharZero K]
+    [DecidableEq σ] {n : ℕ} (o : σ ≃ Fin (n + 1)) (ω : ℚ) (hω : 1 ≤ ω) (d : σ → ℕ)
+    (hg : RothGrowth o ω d) (hd0 : d (o.symm (Fin.last n)) ≠ 0)
+    (α : σ → K) (P : MvPolynomial σ K) (hP : P ≠ 0)
+    (hdegAll : ∀ x, degreeOf x P ≤ d x) :
+    ∃ (r : ℕ) (φ : Fin r → MvPolynomial (Fin n) K) (ψ : Fin r → MvPolynomial Unit K)
+      (Dx : Fin r → List (Fin n)) (Dy : Fin r → List Unit),
+      0 < r ∧ r ≤ d (o.symm (Fin.last n)) + 1 ∧
+      (∀ i, (Dx i).length ≤ (i : ℕ)) ∧ (∀ j, (Dy j).length ≤ (j : ℕ)) ∧
+      (∀ k x, degreeOf x (φ k) ≤ splitLeft o d x) ∧
+      (∀ k y, degreeOf y (ψ k) ≤ splitRight o d y) ∧
+      rename (splitOrder o) P
+          = ∑ k, (rename Sum.inl (φ k) : MvPolynomial (Fin n ⊕ Unit) K)
+              * rename Sum.inr (ψ k) ∧
+      mvGenWronskian Dx φ ≠ 0 ∧ mvGenWronskian Dy ψ ≠ 0 ∧
+      ∀ Φ θ : ℚ, 0 ≤ Φ →
+        index (splitLeft o d) (splitLeft o α) (mvGenWronskian Dx φ)
+            + index (splitRight o d) (splitRight o α) (mvGenWronskian Dy ψ)
+            ≤ ((((r : ℚ) * Φ : ℚ)) : WithTop ℚ) →
+        1 / ω ≤ θ →
+        ((θ : ℚ) : WithTop ℚ) ≤ index d α P →
+        ∃ w : ℚ, (w ≤ Φ ∨ w ^ 2 ≤ Φ) ∧ θ ≤ 1 / ω + 2 * w := by
+  classical
+  have hPne : rename (splitOrder o) P ≠ 0 := fun h =>
+    hP (rename_injective _ (splitOrder o).injective (by rw [h, map_zero]))
+  have hd0' : splitRight o d () ≠ 0 := by rwa [splitRight_unit]
+  have hdeg : degreeOf (Sum.inr ()) (rename (splitOrder o) P) ≤ splitRight o d () := by
+    rw [degreeOf_splitOrder_inr, splitRight, splitOrder_symm_inr]
+    exact hdegAll _
+  obtain ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, hdφ, hdψ, hPeq, hWx, hWy, hmain⟩ :=
+    exists_family_index_le_w_of_rothGrowth (splitLast n).symm ω hω
+      (splitLeft o d) (splitRight o d) (rothGrowth_splitOrder o ω d hg)
+      (splitLast_hlast n) hd0' (splitLeft o α) (splitRight o α)
+      (rename (splitOrder o) P) hPne hdeg
+  rw [splitRight_unit] at hcard
+  refine ⟨r, φ, ψ, Dx, Dy, hr, hcard, hDx, hDy, ?_, ?_, hPeq, hWx, hWy, ?_⟩
+  · intro k x
+    refine le_trans (hdφ k x) ?_
+    rw [degreeOf_splitOrder_inl]
+    exact hdegAll _
+  · intro k y
+    refine le_trans (hdψ k y) ?_
+    rw [degreeOf_splitOrder_inr]
+    exact hdegAll _
+  · intro Φ θ hΦ0 hfac hθt hθ
+    exact hmain Φ θ hΦ0 hfac hθt (by rwa [← index_splitOrder])
 
 /-! ### Next
 
