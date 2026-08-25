@@ -366,3 +366,150 @@ What survives untouched, and is the corpus's finding rather than mine: the
 framework assigns `T(2,n)` **torus** links, and torus links have `Vol = 0`.
 That is genuinely link-level, and it is Obstruction A as the 2026-08-24 audit
 already stated it.
+
+---
+
+## Addendum 3 — the link level, searched (2026-08-25)
+
+The retraction above named the object that would settle it: *"for the target
+link types, does **any** braid representative satisfy `[β]_D ≥ 3`?"* This is
+that search, run — and it lands on the criterion itself, not on the framework.
+
+Producer:
+[`computations/meson/meson_braid_conjugacy_floor_search_probe.py`](../../computations/meson/meson_braid_conjugacy_floor_search_probe.py)
+· witness `meson-braid-conjugacy-floor-search.witness.json` · 4 assertions,
+all passed.
+
+### Why the conjugacy class is the right orbit
+
+A braid's closure — hence `Vol(K)`, which is what `m(K) = m_e·Vol(K)·ρ(K)/ℏ_q²`
+reads — depends only on the Markov class: conjugacy (move I) and stabilisation
+(move II). The Dehornoy floor is **not** a conjugacy invariant, which is exactly
+why a floor read off one written word says nothing about the link. But both
+sides of Ito's equivalence *are* conjugacy invariants (Nielsen–Thurston type;
+hyperbolicity of the closure), so **one** qualifying representative would let
+Theorem 2 speak about the whole class. That is the link-level question.
+
+### The control that makes a null result readable
+
+The **figure-eight knot `4₁`** is genuinely hyperbolic (`Vol = 2.0299` — the
+corpus's own muon carrier) and its closure is a **knot**, so Theorem 2 applies
+to it by hypothesis if the floor condition can be met at all. If even `4₁` has
+no qualifying representative, the reading is about the *criterion's threshold*,
+not about these links.
+
+### Result — B₃, 118 097 freely-reduced conjugators per braid (length ≤ 10)
+
+| braid | closure | geometry | floor as written | best over 118 097 conjugates |
+|---|---|---|---|---|
+| `4₁ = (σ₁σ₂⁻¹)²` | knot | **hyperbolic**, Vol 2.0299 | 0 | **0** |
+| Borromean `(σ₁σ₂⁻¹)³` | 3-component **link** | hyperbolic, Vol 7.3277 | 0 | 0 |
+| meson `𝔐 = (σ₁σ₂)²σ₂σ₁` | knot `T(2,5)` | torus, Vol 0 | 1 | 1 |
+| `Δ⁶σ₁σ₂⁻¹` — *positive control* | — | — | 3 | **3** |
+| `Δ²σ₂σ₁⁻¹` — *raising control* | — | — | 0 | **1** |
+
+The two controls are what make the top row worth reading. The **positive**
+control shows the search does find floor ≥ 3 when it is there; the **raising**
+control — Ito's own conjugate pair, searched from the low side — shows the
+search finds floor-*increasing* conjugates rather than merely re-reporting the
+floor it started from. A run failing either asserts rather than reports.
+
+### Finding
+
+**A genuinely hyperbolic knot has no sampled representative meeting Ito's
+hypothesis.** `4₁` is hyperbolic, is a knot, and carries the volume the muon
+anchor uses — and 118 097 conjugates at minimal braid index never reach
+`[β]_D ≥ 3`. So Theorem 2 cannot certify `4₁` either.
+
+That relocates the earlier negative. What the retracted Addendum 2 read as a
+fact about the *framework's vocabulary* is, on this evidence, a fact about
+*where Ito's threshold sits*: `Δ⁶` — 18 crossings — is the smallest braid the
+previous probe found at floor 3, and small hyperbolic knots simply live below
+it. The criterion is a large-`[β]_D` tool.
+
+### Scope — (a), and four things it is not
+
+Classified **(a) scope-limited negative** under AGENTS.md §"Before declaring
+refuted": this construction, searched this far, does not meet the hypothesis.
+It is **not (b)**: no invariant is proved to forbid it.
+
+1. **It is a search.** 118 097 conjugators of length ≤ 10 in `B₃`. The
+   supremum of the floor over a full conjugacy class is **not computed**.
+2. **No Malyutin bound is invoked.** The quasi-morphism bound on the floor is
+   what would upgrade this search to a proof; that paper is **not in
+   `library/`**, so the corpus-grep path 5 cannot support citing it and it is
+   deliberately not asserted.
+3. **`B₃` rests on one stated example.** Ito states `(σ₁σ₂)⁴` has floor 1 in
+   `B₃` and 0 in `B₄` — `Δ_n²` lengthens with `n`, the bracketing interval
+   widens, the floor can only fall — so the floor is maximised at minimal braid
+   index. That is Ito's example, not a theorem verified here. Stabilisation
+   (Markov II) is therefore argued past, not searched.
+4. **The Borromean row is a link, not a knot.** Theorem 2's hypothesis excludes
+   it regardless of its floor. It is reported for scale only.
+
+### What this does and does not change upstream
+
+Unchanged: Obstruction A. The framework assigns `T(2,n)` **torus** links and
+torus links have `Vol = 0` — that is link-level, is the corpus's own finding
+from the 2026-08-24 audit, and this addendum neither strengthens nor weakens it.
+
+Changed: the row *"The literature is structurally inapplicable"* in the
+retraction table above stays **RETRACTED as stated**, but the correctly-scoped
+version now has evidence — Ito's Theorem 2 is inapplicable **at this scale**,
+to the corpus's carriers *and* to a hyperbolic control alike, because its
+hypothesis is not reachable below ~18 crossings. That is a statement about the
+theorem's domain, which is a legitimate thing to measure; the retracted claim
+was about the framework's capacity, which this still does not measure.
+
+### Interaction with the sibling audit landed on `main` (`b437d3bb7e`)
+
+While this ran, a sibling landed
+[`docs/audits/2026-08-25-atom-word-closures-are-not-hyperbolic.md`](2026-08-25-atom-word-closures-are-not-hyperbolic.md)
+§"Addendum 2026-08-25", reading the same Ito ingest. Two independent routes,
+one paper — the convergence AGENTS.md §"Parallel exploration" describes. Their
+**primary** conclusion is untouched by anything here: the atom words are
+monotone, so their closures are connected sums of `(2,k)` torus links, so
+periodic/reducible, so non-hyperbolic. That argument never touches the floor.
+
+Their **secondary** item — offered explicitly as *"a candidate structural
+reason, not just a fact"*, and correctly scoped by them as conjecture — reads:
+
+> *"Ito's classification theorem carries a Dehornoy floor ≥ 3 hypothesis, and
+> short atom words have small floor — precisely the regime where a word admits
+> many closed-braid representatives and closures tend to be torus or composite.
+> That suggests the non-hyperbolicity is forced by the shortness and
+> monotonicity of the interface construction."*
+
+**Its premise is now measured, and its implication runs the other way.**
+
+*Premise — confirmed.* "Short atom words have small floor" was reported; it is
+now computed. Corpus floors are 0–1 against a required 3, and the smallest
+braid reaching floor 3 is `Δ⁶`, 18 crossings
+(`meson_braid_dehornoy_floor_probe.py`).
+
+*Direction — the paper states the implication, and it points the other way.*
+Ito's **Proposition 4** is *"Let `β ∈ Bₙ` be a braid such that `K = β̂` is a
+non-braided satellite knot. Then `[β]_D < 3`"*, and his **Remark 4** cites
+Menasco–Nakamura for *"if a closure of `β` is a composite knot, then
+`[β]_D < 2`"*. So the theorem is **composite ⇒ small floor**. Reading it as
+*small floor ⇒ tends to be torus or composite* is the converse, and the
+converse fails: `4₁` is **prime and hyperbolic** and has floor **0** across
+118 097 conjugates at minimal braid index. A small floor is a fact about
+**scale**, shared by hyperbolic and non-hyperbolic small links alike; it is not
+evidence of non-hyperbolicity.
+
+The correction is to the suggested *mechanism* only. The atom words'
+non-hyperbolicity stands on monotonicity — the sibling's own primary argument —
+and Ito's Proposition 4 read forwards actually *supports* them: their composite
+closures are exactly the objects the theorem says must have small floor. The
+floor is the consequence, not the cause.
+
+One reading to keep straight, since this document has already made the mistake
+once. The unconditional *"`F_φ` admits a complete hyperbolic structure iff `φ`
+is pseudo-Anosov"* is about the **mapping torus** — Ito calls it *"this
+well-known fact"* and says *"theorem 2 can be seen as some generalization of
+this well-known fact in the knot theory settings."* Theorem 2, the statement
+about the **closure** `β̂`, is the generalisation, and `[β]_D ≥ 3` is load-bearing
+inside its proof (*"Our assumption `[β]_D ≥ 3` and theorem 1 shows `T` is
+circular-foliated"*). The mapping-torus fact costs nothing; the closure
+statement costs the hypothesis this addendum could not reach.
