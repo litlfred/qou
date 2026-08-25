@@ -1,7 +1,7 @@
 ---
 # qou-mnrd
-title: main is RED on its own raw-float64 ratchet — 5 NEW + 0 REGRESSED (was 18+2; 3 when opened)
-status: in-progress
+title: 'raw-float64 ratchet: main was RED, now GREEN (5 -> 0, drained 2026-08-25) — the revolving door is the finding'
+status: completed
 type: task
 priority: high
 tags:
@@ -11,7 +11,7 @@ tags:
     - ratchet
     - coordination
 created_at: 2026-08-08T22:45:00Z
-updated_at: 2026-08-25T16:32:02Z
+updated_at: 2026-08-25T18:09:29Z
 ---
 
 ## The finding
@@ -1840,3 +1840,38 @@ float64 gates and only one of them gates:
 Describing the laundered sites as "the blocking red" is wrong in both
 directions: it assigns the blocker to files that are not blocking, and it
 hides the five witnesses that are.
+
+
+## CLOSED 2026-08-25 — main is GREEN, and the door swung again while this was open
+
+Verified on `main` @ `6137e6244`: `witness_raw_float64_audit.py --strict` **exits 0**,
+`NEW dirty 0`, `REGRESSED 0`. The titular condition is false and this bean is
+completed.
+
+All five witnesses named in the entry above were drained the same day, at the
+producer, by a sibling working `qou-j6gb`:
+
+    56c4efefc  birkhoff-barodd-pythagoras-bridge      28 -> 0
+    e1114b1b2  a3-branching + yekutieli-surface2form  21+4 -> 0
+    01c7d8806  sigma1cubed-seifert-surface-term        1 -> 0
+    147aeb66c  deuteron-interface-handle-curvature    42 -> 0   (ratchet GREEN)
+    0948b5877  beans(qou-j6gb): 96 fields, 5 -> 0
+
+**This does not refute the revolving-door reading — it completes a full turn of
+it inside one day.** The entry above recorded the door opening (three original
+witnesses drained, five different ones took their place); this records it
+closing again, on the producer side, in hours. Both halves happened with no
+gate running on any push. So the finding stands and is now demonstrated rather
+than inferred: *which* files are dirty is transient and not worth tracking, and
+draining them is cheap. What is not cheap, and what nothing here fixed, is that
+nothing runs the ratchet on a push — CI is `workflow_dispatch`-only under the
+2026-06-30 Actions-billing directive. The next five will land the same way.
+
+**Do not read GREEN as the problem being solved.** It means the corpus is clean
+at this instant. The enforcement gap is the durable item and it survives this
+bean; it is not tracked here, because this bean was only ever about a count.
+
+Related: `8b2e57980` records a sibling finding that main's committed audit
+witness *understated* the ratchet — same family as the staleness measured in
+`qou-82ur`, and a reason not to trust a committed audit witness's counts
+without re-running.
