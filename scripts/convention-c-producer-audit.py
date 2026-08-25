@@ -424,6 +424,36 @@ def rederivation_blocked_files(repo: pathlib.Path):
     return {f: sorted(set(v)) for f, v in out.items()}
 
 
+def closed_form_measured_clear(repo: pathlib.Path):
+    """(file, symbol) pairs whose half-power the registry records as MEASURED clear.
+
+    `scan_closed_forms` is static. Its fingerprint is a half-integer power of `q`
+    in the source of a trace/weight binding, and that is a SHAPE -- the question
+    it stands in for is whether the quantity the binding RETURNS carries one.
+    Usually those agree. When they do not, the discriminator is the answer, not
+    the source, and a static scanner cannot reach it.
+
+    So a row here does NOT drop the site from the report. It labels it with the
+    measurement, so the next drain does not re-derive it, and leaves the count
+    alone -- the same accounting-without-excusing rule `blocked_on_rederivation`
+    follows. Suppressing instead would be how the previous four detector blind
+    spots were made (`docs/audits/2026-08-15-detector-blindness-taxonomy.md`):
+    a rule broad enough to skip this site would also skip a genuinely C-derived
+    closed form back-substituted the same way.
+    """
+    reg = repo / "docs/coordination/trace-convention-registry.json"
+    try:
+        rows = json.loads(reg.read_text()).get("closed_form_measured_clear", [])
+    except (OSError, json.JSONDecodeError):
+        return {}
+    out = {}
+    for r in rows:
+        f, sym = r.get("file", ""), r.get("symbol", "")
+        if f and sym:
+            out[(f, sym)] = r.get("verdict", "measured clear")
+    return out
+
+
 def blocked_symbols(repo: pathlib.Path):
     """The (module, symbol) pairs the registry deliberately leaves on C.
 
@@ -1213,6 +1243,16 @@ def selftest() -> int:
                   blocked_files={"computations/probes/m.py"},
                   rederivation_files={"computations/probes/m.py"})
          .endswith("BLOCKED on C by design (registry)")),
+        # closed_form_measured_clear: a LABEL, never a suppression. The site must
+        # still be reported; only an annotation is added. A future edit that
+        # turned this into a filter would be caught by the count assertion in
+        # the second test.
+        ("the live registry records the measured-clear closed form",
+         ("computations/probes/qbeta_5two_categorical_markov_volume_probe.py",
+          "ocneanu_weights") in closed_form_measured_clear(pathlib.Path("."))),
+        ("a measured-clear row does NOT remove the site from scan_closed_forms",
+         any(c[0].endswith("qbeta_5two_categorical_markov_volume_probe.py")
+             for c in scan_closed_forms(roots=("computations/probes",)))),
         # The live registry must actually carry the seven qbeta-cone rows.
         ("the live registry records the qbeta-cone re-derivation blocks",
          len(rederivation_blocked_files(pathlib.Path("."))) == 7),
@@ -1400,8 +1440,14 @@ def main() -> int:
               f"convention-D files still carry a half-integer power of q.")
         print("  Migrating z is not migrating the file: h*z+1 and (q*z+1)/(q^2+1) are")
         print("  rational under D, so a square root in one is z_C showing through.")
+        cleared = closed_form_measured_clear(pathlib.Path("."))
         for path, line, what, _ in closed:
+            sym = what.split(" <- ")[0].strip()
+            mark = cleared.get((path, sym))
             print(f"    {path}:{line}   {what}")
+            if mark:
+                print(f"        [{mark}] — registry `closed_form_measured_clear`. "
+                      f"Still listed on purpose; re-verify by RUNNING it, not by reading it.")
     if pending:
         print(f"\n  SECOND TIER — {len(pending)} closed form(s) in files whose z is STILL C "
               f"(listed above).")
