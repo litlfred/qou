@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:08:52Z
-updated_at: 2026-08-25T10:43:14Z
+updated_at: 2026-08-25T10:09:32Z
 ---
 
 ## Map (measured 2026-08-25 by git merge-tree against origin/main)
@@ -50,58 +50,3 @@ several reason explicitly about three-row or negative-weight structure
 `ylambda_sign_content_threshold_probe`, `mirror_split_milnor_one_third_probe`).
 Any of them written pre-2026-08-09 may be measuring an object D sets to zero, or
 dividing by round-off. Not swept here — separate bean when someone picks it up.
-
-
-## Progress 2026-08-25
-
-MERGED: #4673, #4766, #4619, #5249, #4868, #4718. Remaining: #4925 (8 conflicts).
-SKIPPED, deliberately: #5500 (its own body says DO NOT MERGE, knowingly red),
-#5352 and #5402 (author said do not merge).
-
-All six used a merge-of-main rather than a rebase, because the resolution has to
-live in a commit and GitHub then refuses `rebase`. Merge method `merge`, never
-squash. Each merge commit records which side each hunk went to and why.
-
-Resolutions worth remembering, because three of them went AGAINST the branch:
-
-* #4868, both hunks -> MAIN. The branch's `K_atom_chis.get(..., mp.mpf(0))`
-  raised TypeError on the first atom (the witnesses store chi_lambda as
-  strings), and its `M_E_MEV = 0.51099895` was a hand-typed truncated m_e whose
-  binary64 expansion was being serialized as 50 digits.
-* #5249 -> BRANCH, but only for the named constant; main had already converged
-  on the fix independently. What the branch still contributes is the root-cause
-  record and the retraction of bean qou-8x1l.
-* #4718 -> BRANCH on both, but carrying main's precision fix INTO the branch's
-  shared module rather than dropping it. See below.
-
-## Two defects found by re-running, both fixed at the producer
-
-1. `wlambda_covariance_epic_A3_transfer_bound_extension` (#4868) emitted three
-   raw float64 fields into a witness the branch ADDS — so not in the baseline,
-   so a genuine NEW dirty witness. `mp.nstr`, baseline untouched.
-2. `lepton_tower_core` (#4718) binds M_E / M_MU / M_TAU as module-scope
-   `mpf("...")` while its docstring says precision is the caller's business.
-   True of the functions, false of the constants: they bind at IMPORT time at
-   mpmath's default dps 15. Measured, `mpf("0.51099895000")` ->
-   `0.5109989499999999518209393`. I expected this to be a non-issue on the
-   grounds that an 11-digit literal fits in binary64, and that was wrong --
-   measure, do not reason about it.
-
-## Two findings handed on rather than fixed
-
-* `qbeta-habiro-integrality-kill-test.witness.json`: recomputing it gives
-  `4.703e-4` against a committed `-8.657e-52`. Forty-eight orders of magnitude,
-  in a producer whose name is a kill test. Found incidentally, because #4718
-  makes 59 previously-uncollected test files collectible and one of them runs
-  that producer at IMPORT time -- so `pytest --collect-only` now writes a
-  witness. Both halves want an owner: the staleness, and the side-effecting
-  import.
-* #4925 is the last conflicted PR and the only hard one. Its four content
-  blocks landed on main separately (commit a1fcca562d) and main has since
-  edited both -- the \operatorname drain and the nq_01 trap-drain -- so the
-  add/add conflicts must resolve toward main. Its `references.ts` predates
-  main's `LibraryRef` interface, so a naive resolution DELETES that interface
-  and re-breaks 712 TS2353 errors. It still carries four genuinely new blocks
-  (birthday-axioms-underdetermine, ideal-tetrahedron-law-of-sines,
-  ideal-tetrahedron-volume-well-defined, kummer-identity-radial-reduction) plus
-  a new probe, so it is worth landing rather than closing.
