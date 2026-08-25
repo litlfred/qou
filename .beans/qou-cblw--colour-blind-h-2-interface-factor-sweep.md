@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T21:35:00Z
-updated_at: 2026-08-25T22:00:00Z
+updated_at: 2026-08-25T22:15:00Z
 ---
 
 Found 2026-08-25 while validating an exact-rational evaluation pipeline for the
@@ -92,3 +92,81 @@ genuine finding is a number that contradicts a committed witness.
 
 The blind arm is kept in the probe permanently as the control; without it the
 weighted result would be an assertion rather than a discrimination.
+
+
+---
+
+# 2026-08-25 — SWEEP RESULTS: 9 genuine, 24 benign, 3 borderline
+
+Sweep complete. **9 genuine findings / 8 distinct defects**: 2 Python probes,
+2 Rust sites (one module), 5 content blocks. 24 `h/2` sites were examined and
+**excluded with reasons** — that separation is the substance; a raw grep would
+have reported ~36.
+
+I independently re-verified the four highest-stakes claims rather than taking
+them on trust. All four hold.
+
+## The finding that matters most
+
+**`tools/hecke-engine/src/color_weight.rs` implements `PnConvention::
+BringColorWeighted` and has ZERO callers.** Verified: its only mention anywhere
+in `tools/` is `lib.rs:53: pub mod color_weight;`.
+
+Meanwhile the blind form is what is actually wired, twice:
+
+    gram.rs:726   nf = hm(&nf, 1.0, -half_h, 0, h);   // pn/np: mixed
+    gram.rs:888   (1.0, -0.5 * h, m_pn.unwrap_or(crossings_per_pair))
+
+inside `build_atom_nf` and `atom_per_generator_volumes`, both exported to Python
+(`pyhecke-native/src/lib.rs:119-121, 139-151`) and dispatched from
+`pyhecke/gram.py:994-1000`. Neither takes a `PnConvention` parameter.
+
+**So the engine ships the canonical convention dead and the superseded one
+live.** That is a sharper defect than a stale formula: someone wrote the
+canonical module and never connected it.
+
+Provenance worth recording: findings 3-4 are the byte-for-byte Rust port of
+`hecke_core_legacy.py:598, 911, 1195` — which carries a `DEPRECATION-CANDIDATE`
+banner saying "Symbols here are NOT on the canonical derivation chain". **The
+port kept the numbers and dropped the banner.**
+
+## Genuine findings
+
+| # | site | note |
+|---|---|---|
+| 1 | `deltalambda/mu4_rhoF_cluster_derivation_probe.py:93` | `FAC = {"pp": Z, "nn": Z-H, "pn": Z-H/2}`; docstring calls these the "categorically-DERIVED" factors. Verified. |
+| 2 | `deltalambda/wlambda_nuclear_braid_connected_probe.py:106` | p-n branch `(1, -H/2)` declared as *the* nuclear-quotient template |
+| 3 | `hecke-engine/src/gram.rs:726` | `build_atom_nf` inter-nucleon crossing. Verified. |
+| 4 | `hecke-engine/src/gram.rs:888` | `atom_per_generator_volumes`. Verified. |
+| 5 | `mass-theory/canonical-braid-interface-composition-table1-data.md:4` | a **definition** block presenting blind as canonical |
+| 6 | `appendix-knot-periodic-table/recursive-atom-knot-atlas-registry.md:225` | documents wire label `averaged` while citing a module that emits `averaged_weighted` |
+| 7 | `mass-theory/eigenvalue-product-expansion-proof.md:12` | a **proof** block; its `[2]/2` eigenvalues follow only from `d = -h/2` |
+| 8 | `mass-theory/knot-operator-transition.md:5-9` | every transition operator crosses p-n, all written blind |
+| 9 | `mass-theory/crystal-bases-path-a-table1-data.md:5` | interface symbol, blind, unlabelled |
+
+## Witnesses carrying a blind number
+
+Discriminator at the proton pin: `z - h/2 = 0.50815788774…` vs
+`z - h(1/2 - delta/4) = 0.50822978937…`, gap `h*delta/4 = 7.190163e-05`.
+
+22 witness files contain the blind constant. Two are directly downstream of
+genuine findings — `deltalambda/mu4-rhoF-cluster-derivation.witness.json`
+(whose `description` calls the results "the DERIVED (0-fit, q0-only) rho_F
+cluster integrals" — **verified**) and
+`deltalambda/wlambda-nuclear-braid-connected.witness.json`. Three are
+deliberate two-value comparisons and must NOT be drained. The remaining 17 are
+unadjudicated.
+
+## Not defects, recorded so they are not "fixed"
+
+Three probes (`probe_9b_gate_interface_algebra`, `probe_9b_laurent_degree_10a5`,
+`probe_9b_manybody_expansion`) key the label `"averaged"` to the WEIGHTED value.
+They look exactly like the documented trap and are correct. `closed_form_tau_M.
+py:238` is the *definition* of the blind kind and is right as written.
+
+## Next
+
+Not a sweep-and-replace. Each genuine site changes a number, so: confirm intent,
+check the downstream witness, fix at the producer. The Rust pair (3-4) is the
+highest-value single fix — wiring `color_weight.rs` in would close both, and it
+is the one place where the canonical implementation already exists.
