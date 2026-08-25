@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:36:54Z
-updated_at: 2026-08-25T13:12:05Z
+updated_at: 2026-08-25T13:16:41Z
 ---
 
 **Where this stands (2026-08-25, PR #5744, branch `claude/standard-panel-qou-derivation-ixuolx`).**
@@ -194,3 +194,51 @@ be *missing from a list that has to be exhaustive*.
 **Still open, unchanged:** $E_{\mathrm{EM}}$ itself. Three passes on this bean
 have sharpened *where* it must live and *why* it is needed; none has produced a
 magnitude.
+
+
+
+---
+
+**RETRACTION, same session — the brane tower DOES have an invariance result.**
+
+The pass above said the brane tower is *"a term of the formula, absent from the
+list, with no invariance result"*. The second half is **wrong**. `main` carries
+`QOU/Mass/BraneTowerIsospinBlind.lean`:
+
+- `braneTowerR_eq_binom_sum` — the trace-invariant tower collapses to
+  $\sum_k \binom{n-1}{k} z^k f_k$; its own docstring says *"There is **no**
+  braid-word input"*. That is the **same arity argument** I had just made for
+  the co-Casimir, one file over, and I did not run the same grep.
+- `braneTowerW_isospin_blind` — the general form, invariant once the per-subset
+  weight is Markov-invariant.
+
+**Fourth duplication-class error today** (Milnor port, `qb`, `sub_inv_ne_zero`,
+now this), and the cause was identical every time: declaring a corpus item absent
+without grepping the object. I ran the object-grep on `co.casimir` in the very
+same pass and did not run it on `brane tower`.
+
+**What survives:** the brane tower is a term of the unified formula and is absent
+from the remark's four-sector list. But the omission is **benign** — the omitted
+term is invariant — so the enumeration gap does **not** break the localisation.
+Materially different from what I published.
+
+**Corrected sector audit:**
+
+| sector | sign-flip status |
+|---|---|
+| Frobenius co-Casimir | **invariant** (arity) |
+| brane tower | **invariant** (arity; general form conditional on Markov-invariance) |
+| descended trace | **not invariant** at the substrate |
+| shell correction | invariant at $q \to 0$ **only** |
+| chirality | **no result** |
+
+**Two independent routes now agree.** The cited synthesis
+(`docs/audits/2026-06-26-t2t3-trace-invariance-status-synthesis.md`) concludes
+the split is carried by T₁ and T₅ (chirality), *"not by the brane tower"*. My
+`TraceSignFlipRegime` result proves T₁ is not sign-flip invariant at the
+substrate — the same two-sector answer, reached from the Hecke relation rather
+than from the tower's combinatorics.
+
+The localisation onto Coulomb still fails, for the two reasons already recorded
+(descended trace non-invariant at $q_0$; Coulomb term has the wrong sign), not
+for a third about enumeration.
