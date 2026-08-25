@@ -133,7 +133,7 @@ sys.path.insert(0, str(HERE))
 
 import mpmath as mp  # noqa: E402
 
-InterfaceKind = Literal["positive", "negative", "averaged"]
+InterfaceKind = Literal["positive", "negative", "averaged", "averaged_weighted"]
 PnConvention = Literal["chi_lambda_braid", "strict_averaged", "bring_color_weighted"]
 
 
@@ -243,6 +243,8 @@ def interface_factor(kind: InterfaceKind, q: mp.mpf) -> mp.mpf:
 def canonical_interface_kinds(
     Z: int, N: int,
     pn_convention: PnConvention = "bring_color_weighted",
+    *,
+    weighted_labels: bool = False,
 ) -> list[InterfaceKind]:
     """Interface kinds for the canonical atomic braid 𝓑_K.
 
@@ -306,6 +308,21 @@ def canonical_interface_kinds(
         # consumers (witness metadata, symbolic Habiro extraction
         # using chi_lambda_braid marshalling) do not crash on the
         # new default.
+        #
+        # THAT DEFAULT IS A TRAP FOR ANY CONSUMER THAT APPLIES ITS OWN
+        # FACTOR. Asking for the canonical convention and then mapping the
+        # returned labels through a three-kind {positive, negative,
+        # averaged} dispatch yields z - h/2 — the colour-BLIND factor —
+        # while the caller believes it is canonical. It cannot be caught by
+        # an equality test against "averaged_weighted", because that label
+        # is never emitted; it fails by returning a slightly smaller number
+        # rather than by raising. Measured live in
+        # `probes/binding_closed_form_C_vs_D_probe.py::interface_factor`.
+        #
+        # `weighted_labels=True` opts into the full vocabulary, emitting
+        # "averaged_weighted" for the p-n interface so such a consumer either
+        # handles the weighting or raises on an unknown kind. It is opt-in
+        # precisely so the label-only consumers above keep working.
         A = Z + N
         if A < 2:
             return []
@@ -318,7 +335,8 @@ def canonical_interface_kinds(
             elif nuc == "n" and next_nuc == "n":
                 kinds_weighted.append("negative")
             else:  # p-n: asymmetric averaging (δ-aware factor applied in closed_form_ratio)
-                kinds_weighted.append("averaged")
+                kinds_weighted.append(
+                    "averaged_weighted" if weighted_labels else "averaged")
         return kinds_weighted
     A = Z + N
     if A < 2:

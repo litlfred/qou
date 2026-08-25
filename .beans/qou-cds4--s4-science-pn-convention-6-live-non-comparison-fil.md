@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-15T00:00:00Z
-updated_at: 2026-08-23T04:10:28Z
+updated_at: 2026-08-25T17:21:49Z
 ---
 
 Parent: `qou-cdx1`. Ruling R3: `pn_convention="bring_color_weighted"` is
@@ -208,3 +208,30 @@ committed A witnesses *and* builds `I_pn` at `-h/2`, which is exactly the
 failing shape. Running it refuted that: someone had already put the guard in.
 Recording the prediction and its refutation because the grep signature alone
 is not sufficient evidence for this class, in either direction.
+
+
+## Preserved note (2026-08-25): chi_monotone_transfer oracle frame
+
+The Part-F baseline entry for `chi_monotone_transfer.py::_self_test` was removed
+as stale — the live `pn_convention=` assignment is gone, only a comment remains,
+so the test reported it as no longer needed. Its warning is still live and is
+recorded here so it is not lost with the entry:
+
+> The self-test's oracles are `chi-{deuteron-h6,tritium-h9,helium-3-h9,
+> helium-4-h12}-at-q0-50dps` — the colour-BLIND chi family from 45789ddfa0,
+> which also lacks provenance. The same file already runs a colour-WEIGHTED
+> check at n=6, so it is explicitly two-framed rather than blind. **When those
+> oracles are regenerated weighted, the self-test must flip too**, or it starts
+> comparing across frames and still passes.
+
+## binding_canonical.py: DONE (2026-08-25, PR #5767)
+
+Moved to `bring_color_weighted`. The baseline entry's own condition — *"moving
+it to canonical means moving both halves together, or they diverge by 1.4e-4"* —
+was satisfied: the local `_factor_from` could not express the weighted interface
+at all (no branch for `-h(1/2 - δ/4)`; it fell through to `sp.nsimplify`), so it
+was given the structural branch from `atom_nf_symbolic_D` and `_D_HECKE_TOL`
+tightened to 1e-9. Verified two ways: the deuteron closed form moves off the
+colour-blind value `qou-4e5k` names as wrong onto that bean's bridge/peel value,
+and this file's closed-form and transfer paths now agree to 15 figures where
+they disagreed by 1.5e-4.

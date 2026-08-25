@@ -71,6 +71,7 @@ from y_lambda_wenzl_bridge import (  # noqa: E402
     classical_dim, partitions_of, schur_principal,
 )
 from closed_form_tau_M import canonical_interface_kinds  # noqa: E402
+from _li_2_q_util import flavor_split_leading  # noqa: E402
 from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from tr_m_wenzl_bridge_mpfr import (  # noqa: E402
     _build_seminormal_matrices_mpf, _chi_lambda_of_word_mpf,
@@ -111,7 +112,22 @@ def y_vector_at_z(n, q, z):
 
 
 def interface_factor(kind, q, z):
-    """closed_form_tau_M.interface_factor, with z as a parameter."""
+    """closed_form_tau_M.interface_factor, with z as a parameter.
+
+    Handles BOTH members of the averaged family. "averaged" is the
+    colour-BLIND z - h/2; "averaged_weighted" is the canonical colour-tube
+    factor z - h(1/2 - δ/4) that `closed_form_ratio` applies under
+    `bring_color_weighted`.
+
+    Keeping only "averaged" was a live defect here, not a hypothetical one:
+    the caller below requests `canonical_interface_kinds(Z, N)`, which
+    defaults to the canonical convention but deliberately labels the p-n
+    interface "averaged" — the label vocabulary cannot carry δ. So every
+    p-n interface was priced colour-blind while the run was labelled
+    canonical, and no equality test against "averaged_weighted" could see it,
+    because that label was never emitted. The caller now opts into
+    `weighted_labels=True` so the weighting is either applied or raised on.
+    """
     h = hecke_h(q)
     if kind == "positive":
         return z
@@ -119,6 +135,8 @@ def interface_factor(kind, q, z):
         return z - h
     if kind == "averaged":
         return z - h / 2
+    if kind == "averaged_weighted":
+        return z - h * (mp.mpf(1) / 2 - flavor_split_leading(q) / 4)
     raise ValueError(kind)
 
 
@@ -156,13 +174,14 @@ def main() -> int:
         log(f"  {tag}: tau_p = {mp.nstr(tau[tag]['p'], 20)}   "
             f"tau_n = {mp.nstr(tau[tag]['n'], 20)}")
         for lab, kind in (("positive", "positive"), ("negative", "negative"),
-                          ("averaged", "averaged")):
+                          ("averaged", "averaged"),
+                          ("avg_wtd", "averaged_weighted")):
             log(f"     f_{lab:9s} = "
                 f"{mp.nstr(interface_factor(kind, q, z), 20)}")
 
     rows = []
     for (Z, N), (name, ame_s) in AME.items():
-        kinds = canonical_interface_kinds(Z, N)
+        kinds = canonical_interface_kinds(Z, N, weighted_labels=True)
         ame = mp.mpf(ame_s)
         row = {"atom": name, "Z": Z, "N": N, "A": Z + N,
                "n_strands": 3 * (Z + N),
