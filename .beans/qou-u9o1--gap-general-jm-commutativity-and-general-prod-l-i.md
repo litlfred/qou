@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T09:05:21Z
+updated_at: 2026-08-25T09:25:03Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -859,3 +859,39 @@ That is now the ONLY remaining item, and it is the one that would discharge the
 general-lambda twist, which REMAINS CONDITIONAL. Both structural halves the user's arc
 named (commutativity, `prod L_i = Delta^2`) are done; the spectral half is not, and is
 larger than either.
+
+
+## 2026-08-25 (third) — the spectral half, narrowed. NOT closed.
+
+`HeckeSeminormalWeight.lean` moves `JucysMurphySpectrum`'s assumption from the COMPOSITE
+to the CONSTITUENTS.
+
+That class asserts `fullTwistScalar = prod_i q^(2*content(e i))` — a statement about the
+twist. The literature does not prove that; it proves each `L_k` acts by `q^(2*content)`,
+and the product statement follows only via `prod L_i = Delta^2`. That step is now proved
+for every n, so:
+
+    IsJMWeight                     ASSUMED   L_k . v = c_k . v, PER ELEMENT
+    jmProd_smul_of_weight          derived
+    fullTwist_smul_of_weight       derived   Delta^2 . v = (prod c_k) . v
+    fullTwist_smul_eq_theta_sq     derived   c_k = q^(2c)  =>  Delta^2 . v = theta^2 . v
+    twist_scalar_eq_theta_sq       derived   and the scalar is UNIQUE, given v != 0
+
+The last is the bridge: `JucysMurphySpectrum`'s field asserts exactly that equation and it
+is now a consequence.
+
+**Non-vacuity, with a falsifiability check.** `scalarGenerators` (the 1-dim rep
+`sigma_i -> q`) + `rowTableau` gives `scalar_isJMWeight`: `v = 1` IS a JM weight vector with
+the content eigenvalues. Feeding it to the general theorem returns `q^(n(n-1))` — which
+`theta_single_row_sq` gets from the two Hecke roots with NO JM input. Two routes, same
+answer.
+
+### THIS DOES NOT CLOSE THE BEAN
+
+It does **not** prove the seminormal form. The eigenvalue hypothesis is still assumed for
+`dim V_lambda > 1`; the exhibited instance is ONE-DIMENSIONAL and shows only that the
+hypothesis is satisfiable. **The general-lambda twist REMAINS CONDITIONAL.**
+
+What is left is the genuine remaining item: construct the seminormal representation — the
+standard-tableau basis with `L_k` diagonal — and prove the eigenvalues are the contents.
+That is a Wenzl/Hoefsmit-scale construction, larger than everything in this bean so far.
