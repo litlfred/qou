@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T01:43:41.337524+00:00",
-  "commitSha": "a606f1a43e8071c20dec0d602993b33467560930",
+  "computedAt": "2026-08-25T07:06:55.635683+00:00",
+  "commitSha": "d2ed0442844c166f01d646508b2b9e0082a8854f",
   "assertions": [
     {
       "name": "no_q0_flip",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 5,
+  "durationMs": 6,
   "computation": "q0-anchor-consistency-audit",
   "scriptFile": "q0_anchor_consistency_audit.py",
   "scriptHash": "6511daab4e6c",
@@ -45,7 +45,7 @@
   "description": "Flip-flop detector: enforces that each witness's q0Value matches the canonical pin for its q0Anchor (muon vs proton). Q0_FLIP is a CI-failing anchor/value disagreement. Anchor recording landed in PR #4020. Q0_INDEPENDENT records a producer that never reads q₀ at all — a positive, producer-declared statement, distinct from Q0_AMBIGUOUS (depends on q₀, pin undetermined) and from Q0_ANCHOR_MISSING (nothing recorded).",
   "data": {
     "counts": {
-      "Q0_OK": 952,
+      "Q0_OK": 963,
       "Q0_AMBIGUOUS": 2,
       "Q0_AMBIGUOUS_NO_REASON": 14,
       "Q0_INDEPENDENT": 49,
@@ -53,7 +53,7 @@
       "Q0_COMPARISON": 1,
       "Q0_COMPARISON_NO_REASON": 0,
       "Q0_COMPARISON_NO_VALUES": 0,
-      "Q0_ANCHOR_MISSING": 1639,
+      "Q0_ANCHOR_MISSING": 1627,
       "Q0_VALUE_MISSING": 1,
       "Q0_AUDIT_EXEMPT": 79,
       "Q0_PARSE_ERROR": 0,
@@ -176,10 +176,6 @@
         },
         {
           "witness": "alpha-em-q-difference-fourier.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "alpha-high-precision.witness.json",
           "detail": ""
         },
         {
@@ -1288,18 +1284,6 @@
         },
         {
           "witness": "deltalambda-icosahedral-smatrix-magnitude.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "deltalambda-k4-complete-graph-collective-magnitude.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "deltalambda-perpair-bond-magnitude-derive.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "deltalambda-saturation-det-ceiling.witness.json",
           "detail": ""
         },
         {
@@ -3111,18 +3095,6 @@
           "detail": ""
         },
         {
-          "witness": "b4-1four-complete-graph-writhe-signs.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "b4-1four-pairtype-magnitude-profile.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "b4-1four-reeb-flow-magnitude.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "b4-antisym-hecke-exchange-derivation.witness.json",
           "detail": ""
         },
@@ -4407,10 +4379,6 @@
           "detail": ""
         },
         {
-          "witness": "reeb-g-structural-identity.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "rep-jackson-identification.witness.json",
           "detail": ""
         },
@@ -4515,10 +4483,6 @@
           "detail": ""
         },
         {
-          "witness": "wlambda-cumulant-specification.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "x050-50a-hecke-gate-probe.witness.json",
           "detail": ""
         },
@@ -4536,10 +4500,6 @@
         },
         {
           "witness": "proton-mass-codata-50dps.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "proton-mass-full-tower-50dps.witness.json",
           "detail": ""
         },
         {
@@ -6291,10 +6251,6 @@
           "detail": ""
         },
         {
-          "witness": "paper-six-term-isotope-sweep.witness.json",
-          "detail": ""
-        },
-        {
           "witness": "paper-six-term-shadow-price-sweep.witness.json",
           "detail": ""
         },
@@ -6464,10 +6420,6 @@
         },
         {
           "witness": "v-hat-to-delta-lambda-bridge.witness.json",
-          "detail": ""
-        },
-        {
-          "witness": "vhat-std-vs-full-tower-compare.witness.json",
           "detail": ""
         },
         {
@@ -7905,6 +7857,10 @@
           "detail": ""
         },
         {
+          "witness": "deltalambda-k4-complete-graph-collective-magnitude.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "deltalambda-kappa-interface-residual-simplex.witness.json",
           "detail": ""
         },
@@ -7918,6 +7874,14 @@
         },
         {
           "witness": "deltalambda-parabolic-survivor-enumeration.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deltalambda-perpair-bond-magnitude-derive.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "deltalambda-saturation-det-ceiling.witness.json",
           "detail": ""
         },
         {
@@ -9089,6 +9053,18 @@
           "detail": ""
         },
         {
+          "witness": "b4-1four-complete-graph-writhe-signs.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "b4-1four-pairtype-magnitude-profile.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "b4-1four-reeb-flow-magnitude.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "b4-connected-bar-parity.witness.json",
           "detail": ""
         },
@@ -9541,6 +9517,10 @@
           "detail": ""
         },
         {
+          "witness": "reeb-g-structural-identity.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "rho-k-h3a-co-casimir-perknot-rerun.witness.json",
           "detail": ""
         },
@@ -9601,6 +9581,10 @@
           "detail": ""
         },
         {
+          "witness": "wlambda-cumulant-specification.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "wlambda-q0-continuation.witness.json",
           "detail": ""
         },
@@ -9614,6 +9598,10 @@
         },
         {
           "witness": "yekutieli-per-cell-qlambert-decomposition-probe.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "proton-mass-full-tower-50dps.witness.json",
           "detail": ""
         },
         {
@@ -10269,6 +10257,10 @@
           "detail": ""
         },
         {
+          "witness": "paper-six-term-isotope-sweep.witness.json",
+          "detail": ""
+        },
+        {
           "witness": "symmetrized-constituent-general.witness.json",
           "detail": ""
         },
@@ -10354,6 +10346,10 @@
         },
         {
           "witness": "vhat-per-crossing-chain.witness.json",
+          "detail": ""
+        },
+        {
+          "witness": "vhat-std-vs-full-tower-compare.witness.json",
           "detail": ""
         },
         {
