@@ -3724,6 +3724,19 @@ export const references: Reference[] = [
 
   // ── Kawauchi 1996 ─────────────────────────────────────────────
   ref({
+    id: "okubo1962",
+    type: "article-journal",
+    title: "Note on Unitary Symmetry in Strong Interactions",
+    author: [{ family: "Okubo", given: "Susumu" }],
+    "container-title": "Progress of Theoretical Physics",
+    volume: "27",
+    issue: "5",
+    page: "949-966",
+    DOI: "10.1143/PTP.27.949",
+    issued: { "date-parts": [[1962]] },
+  }),
+
+  ref({
     id: "milnor1957",
     type: "chapter",
     title: "Isotopy of links",
