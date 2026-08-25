@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-25T19:40:40Z
+updated_at: 2026-08-25T21:15:00Z
 ---
 
 
@@ -759,3 +759,81 @@ three audits rather than quoting them; on this corpus the shelf life is hours.
 Sibling interaction: PR #5755 migrates `aoperator_a5_crosscheck` off
 `ideal_muon`. It is still listed on `main`, so 35 is right today and becomes 34
 when that lands. It is **not** one of `qou-bypn`'s 13 — that list is unaffected.
+
+
+## 2026-08-25 (later) — RETRACTED: "stamp before regenerate". They are the same operation.
+
+Earlier today I wrote, in this bean and in PR #5792, that the ~1645 unstamped
+witnesses argue for **stamping before regeneration**, and I recommended that
+ordering to the owner. **That recommendation was wrong.** I went looking for the
+stamping mechanism that would need building, and found it already built and
+already merged.
+
+### What the measurement actually shows
+
+    live witnesses                                 2765
+      already stamped (q0Anchor present)           1058
+      unstamped, record NO q0 anywhere             1458
+      unstamped, record a q0 under a KNOWN key      160
+        of those: single pin (should stamp)         157
+                  both pins (walker returns None
+                  BY DESIGN — these want
+                  q0Anchor: "comparison")             3
+
+`build()` already calls `resolve_q0_anchor_payload_first(payload, spath)`
+(witness.py:1569), **without** `require_declared`, so it always sets
+`q0Anchor` — falling through to the manifest answer when the payload shows
+nothing. Reproduced against the live API: a payload carrying `parameters.q0`
+= the muon 50-digit string resolves `-> muon` correctly, as an `mpf` too.
+
+So for every producer that routes through `WitnessBuilder`, **the stamp arrives
+when the producer is re-run.** Stamping is not a prerequisite to regeneration;
+it IS regeneration. Sequencing them is a distinction without a difference, and
+my Step-2 inversion above should not be acted on.
+
+### Three hypotheses I tested and killed, in order
+
+Recorded because each is the obvious next guess and each is wrong:
+
+1. **"`_Q0_FIELDS` is too narrow."** It is only four names (`q_0_50dps`, `q0`,
+   `q_0`, `q0_50dps`), so a q₀ under `q`, `substrate_q`, `q_proton`, … is
+   invisible. True, but it reaches **89 files, ~5 % of 1645** — not leverage.
+   The blind-key census is in the session log if anyone wants to widen it.
+2. **"The walker's `depth > 4` cap hides them."** No: of the 160, the shallowest
+   known-key hit is at depth 0–3, **zero beyond the cap**.
+3. **"Producers bypass `WitnessBuilder`."** Partly — but 27 of the 38
+   post-2026-08-24 cases *do* call `builder.save()`, so that is not the
+   explanation for them either.
+
+The actual explanation is dating. Payload-first reached `main` at
+**2026-08-25T10:20 UTC** (`9d52483f5`), not on 08-24 as the surrounding text
+implies. Every one of the 157 predates it. They are stale, not blocked.
+
+### The one genuinely live residue
+
+Four witnesses were computed at 16:52 UTC and committed at 16:54 (`58db04f28`)
+— 6.5 h after the fix — and went out unstamped. I checked that commit's own
+tree rather than assuming, and it **did** carry payload-first wired into
+`build()`. So this is not staleness. All four come from **hand-rolled
+`json.dump` producers that never reach `build()`**:
+
+    computations/qbeta/birkhoff_barodd_pythagoras_bridge_probe.py
+    computations/deltalambda/deuteron_interface_handle_curvature_probe.py
+    computations/deltalambda/yekutieli_trefoil_surface2form_discretization_probe.py
+    computations/qbeta/a3_branching_asymmetry_vs_required_probe.py
+
+(The fifth 08-25 case, `canonical_lepton_braid_words.py`, does use
+`WitnessBuilder` — and ran at 06:25 UTC, before the merge. Consistent.)
+
+That is bean `1j39`'s territory (the no-WitnessBuilder batch port), and it is
+the part that regeneration will **never** fix: re-running a hand-rolled
+producer re-emits an unstamped witness forever.
+
+### What this leaves open, unmeasured
+
+**1458 witnesses record no q₀ at all** — the actual bulk, and I have not
+established why. Two very different cases: the producer never reads q₀ (wants
+`q0Anchor: "independent"`, a legitimate declared state), or it reads q₀ and
+discards it (a real gap). Nothing here distinguishes them, and the split
+decides how much of the 1458 is work versus bookkeeping. That is the next
+measurement, and it is not this bean's Step 2.
