@@ -4,6 +4,7 @@ import QOU.HeckeAlgebra.Common
 import QOU.HeckeAlgebra.QSubstrate
 import QOU.HeckeAlgebra.Hoefsmit
 import QOU.HeckeAlgebra.Wedderburn
+import QOU.HeckeAlgebra.JonesMarkovWenzl
 
 /-!
 # QOU.HeckeAlgebra.MarkovTrace — extended Markov-trace structure
@@ -66,8 +67,8 @@ open QOU.HeckeAlgebra QOU.HeckeAlgebra.Hoefsmit QOU.HeckeAlgebra.Wedderburn
     `λ` at parameter `q`.  Axiomatised; concrete Wenzl 1988 §3
     formula is deferred to the next round of Lean port. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (Jones-Markov coefficients y_λ)
-axiom JonesMarkovCoefficient :
-    ∀ {n : ℕ}, Nat.Partition n → ℝ → ℝ
+noncomputable def JonesMarkovCoefficient {n : ℕ} (lam : Nat.Partition n) (q : ℝ) : ℝ :=
+    QOU.HeckeAlgebra.JonesMarkovWenzl.wenzlClosedForm lam q
 
 /-- The Jones-Markov coefficients `y_λ(q)` are real-valued and
     sum to 1 across partitions: `Σ_{λ ⊢ n} y_λ(q) = 1` (the
@@ -150,8 +151,9 @@ axiom MarkovTrace_markov_axiom :
     `wenzlBridge` below relates this trace to the block-trace
     sum form. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 §3 (categorical Markov trace on Wedderburn blocks)
-axiom markovTraceOnWedderburn :
-    ∀ {n : ℕ}, WedderburnDecomposition n → ℝ
+noncomputable def markovTraceOnWedderburn {n : ℕ} (x : WedderburnDecomposition n) : ℝ :=
+    ∑ lam ∈ partitions_as_finset n,
+      JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace
 
 /-- **Wenzl bridge** (categorical identity): the Markov trace
     of an element via its Wedderburn decomposition equals the
@@ -176,11 +178,10 @@ axiom markovTraceOnWedderburn :
     `Wedderburn.lean`), so `q_0` is the only `q` the statement can
     honestly mean.  Bean `qou-ck1f`. -/
 -- Ref: [wenzl1988] https://doi.org/10.1007/BF01404457 Lemma 3.2 (Wenzl bridge: tr_M = Σ_λ y_λ·χ^λ)
-axiom wenzlBridge :
-    ∀ {n : ℕ} (x : WedderburnDecomposition n),
+@[simp] theorem wenzlBridge {n : ℕ} (x : WedderburnDecomposition n) :
     markovTraceOnWedderburn x =
       ∑ lam ∈ partitions_as_finset n,
-        JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace
+        JonesMarkovCoefficient lam QSubstrate.q_0 * (x lam).trace := rfl
 
 /-- **Trace of an additive sum** distributes.
 
