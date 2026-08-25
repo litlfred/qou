@@ -29,8 +29,16 @@ question is
 
     N (uv) N (uv)  =?=  u N (uv) N u
 
-with `N` an arbitrary element commuting with `v`.  That is a self-contained question about one
-unknown, not about the JM recursion.
+for the specific `N = L_k`.
+
+**Do NOT read that as a question about an arbitrary `N` commuting with `v` — that reading is
+FALSE.**  Taking `N = v`, which certainly commutes with `v`, the two sides differ already in the
+2-dimensional irrep of `H₃(q)` at `q = 2`
+([`jm_adjacent_generic_N_counterexample.py`](../../../../../computations/hecke/jm_adjacent_generic_N_counterexample.py),
+exact rational arithmetic).  So adjacent commutativity genuinely needs `L_k`'s structure, not merely
+its commutation with `v`; an attack that only assumes the latter cannot work.  (The `N = 1` line in
+that script is a control — Lean proves that case, and a first version of the script that reported
+`False` there was measuring its own bug, not the mathematics.)
 
 ## Consistency at k = 0
 
