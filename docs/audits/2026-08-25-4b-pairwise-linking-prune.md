@@ -141,8 +141,29 @@ carrier.
    of `μ̄₁₂₃` with the `X₁X₂` coefficient of the longitude, and that the
    Borromean longitude is `[x₁, x₂]`. Both are standard and cited.
 
-2. **The map from a triple linking number to an energy.** Untouched. This is
-   the same gap as everywhere on this surface, and nothing above narrows it.
+2. **The map from a triple linking number to an energy.** Still open — but no
+   longer untouched. A second formalize-first prune constrains its *shape*.
 
-So 4-B is now genuinely **one object away** — but that object is the hard one,
-and no value for `E_EM` is claimed.
+   `μ̄₁₂₃` reverses sign under an odd permutation of the components. The two
+   like-charged strands of the proton are components `1` and `2` (the two up
+   quarks, with the down as `3`), and a Coulomb self-energy between two
+   **identical** charges must be symmetric under exchanging them. Computed, not
+   quoted:
+
+   | declaration | statement |
+   |---|---|
+   | `mubar_swap_eq_neg` | `μ̄₁₂₃` flips sign under exchanging components 1 and 2 |
+   | `odd_symmetric_functional_vanishes` | any **odd** functional of `μ̄₁₂₃` that is exchange-symmetric is `0` |
+   | `linear_coefficient_must_vanish` | in particular an exchange-symmetric `E_EM = c·μ̄₁₂₃` forces `c = 0` |
+
+   So `E_EM` cannot be **linear** in `μ̄₁₂₃` — the obvious first ansatz, now
+   excluded before anyone fits it. The map must be **even**: `|μ̄₁₂₃|`,
+   `μ̄₁₂₃²`, and so on.
+
+   The physics input consumed is only that the self-energy is
+   exchange-symmetric. The antisymmetry itself is computed.
+
+So 4-B is **one object away**, that object is the hard one, and its shape is now
+constrained from both sides: the input must be `μ̄₁₂₃` (pairwise cannot see the
+carrier) and the map must be even in it (odd maps vanish by exchange symmetry).
+**No value for `E_EM` is claimed.**

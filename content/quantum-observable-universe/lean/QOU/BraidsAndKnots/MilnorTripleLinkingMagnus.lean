@@ -155,4 +155,51 @@ theorem noncommutator_degree_one_nonzero :
     (magnus [(1, false), (2, false)]).c1 ≠ 0 ∧
     (magnus [(1, false), (2, false)]).c2 ≠ 0 := by decide
 
+/-! ## The exchange antisymmetry, and what it forbids
+
+`μ̄₁₂₃` reverses sign under an odd permutation of the three components. For 4-B
+that is a constraint on the *map to an energy*, not just a curiosity: the two
+like-charged strands of the proton are components `1` and `2` (the two up
+quarks, with the down as component `3`), and a Coulomb self-energy between two
+identical charges must be **symmetric** under exchanging them.
+
+So an `E_EM` that is odd in `μ̄₁₂₃` is forced to vanish. The map has to be
+**even** — `|μ̄₁₂₃|`, `μ̄₁₂₃²`, and so on. -/
+
+/-- The longitude with components `1` and `2` exchanged: `[x₂, x₁]`. -/
+def swappedLongitude : List Gen := [(2, false), (1, false), (2, true), (1, true)]
+
+/-- `μ̄₁₂₃ = −1` after exchanging the two like-charged components. -/
+theorem mubar_swapped_eq_neg_one : mubar123 swappedLongitude = -1 := by decide
+
+/-- **Exchange antisymmetry**, computed rather than quoted. -/
+theorem mubar_swap_eq_neg :
+    mubar123 swappedLongitude = - mubar123 borromeanLongitude := by decide
+
+/-- **The second prune for 4-B.** Any functional of `μ̄₁₂₃` that is *odd* and
+*symmetric under exchanging the two like-charged components* vanishes.
+
+A two-like-charge Coulomb self-energy is symmetric under that exchange, so this
+forbids every `E_EM` odd in `μ̄₁₂₃` — in particular every `E_EM` **linear** in
+it, which is the obvious first ansatz. The map must be even.
+
+The physics input consumed here is only that the self-energy is exchange-
+symmetric; the antisymmetry of `μ̄₁₂₃` is computed above. -/
+theorem odd_symmetric_functional_vanishes (F : ℤ → ℤ)
+    (hodd : ∀ m, F (-m) = - F m)
+    (hsym : F (mubar123 borromeanLongitude) = F (mubar123 swappedLongitude)) :
+    F (mubar123 borromeanLongitude) = 0 := by
+  rw [mubar_borromean_eq_one, mubar_swapped_eq_neg_one] at hsym
+  rw [mubar_borromean_eq_one]
+  have h := hodd 1
+  omega
+
+/-- The linear case spelled out, since it is the ansatz anyone writes first:
+an exchange-symmetric `E_EM = c · μ̄₁₂₃` forces `c = 0`. -/
+theorem linear_coefficient_must_vanish (c : ℤ)
+    (hsym : c * mubar123 borromeanLongitude = c * mubar123 swappedLongitude) :
+    c = 0 := by
+  rw [mubar_borromean_eq_one, mubar_swapped_eq_neg_one] at hsym
+  omega
+
 end QOU.BraidsAndKnots.MilnorTripleLinkingMagnus
