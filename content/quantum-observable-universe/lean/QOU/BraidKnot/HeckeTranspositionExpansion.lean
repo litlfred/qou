@@ -177,4 +177,99 @@ theorem sigma_comm_transp_pair (H : HeckeGenerators R A q) (j : ℕ) :
                 + H.σ (j + 1) * H.σ j := by rw [← hb]
           _ = _ := by noncomm_ring
 
+/-! ## Disjoint transpositions commute with the generator
+
+The remaining half of 3.24(i): `σ_j` commutes with `T_(l,i)` **individually** whenever `l` and `i`
+both miss `{j, j+1}` — the two transpositions are disjoint.
+
+This is not letter-wise obvious: for `l < j < j+1 < i` the word for `T_(l,i)` *contains* both `σ_j`
+and `σ_{j+1}`.  Measured first (H₆, exact rationals): 24 disjoint pairs, all commuting, none
+failing. -/
+
+/-- `σ_m` commutes with `T_(l,i)` when `m > i` — every letter of `T_(l,i)` has index `≤ i−1`, so all
+are at distance `≥ 2` from `m`. -/
+theorem sigma_comm_transp_far (H : HeckeGenerators R A q) (l : ℕ) :
+    ∀ i m : ℕ, l < i → i < m → H.σ m * transp H l i = transp H l i * H.σ m := by
+  intro i
+  induction i with
+  | zero => intro m h; omega
+  | succ k ih =>
+      intro m hl hm
+      rcases Nat.eq_or_lt_of_le (Nat.lt_succ_iff.mp hl) with heq | hlt
+      · -- l = k : transp is the generator σ_k
+        subst heq
+        rw [transp_self]
+        exact (H.far l m (by omega)).symm ▸ (H.far l m (by omega))
+      · -- l < k : unfold the conjugation
+        have hlk : l ≠ k := by omega
+        have hfar : H.σ m * H.σ k = H.σ k * H.σ m := (H.far k m (by omega)).symm
+        have hih := ih m hlt (by omega)
+        rw [transp_succ H l k hlk]
+        calc H.σ m * (H.σ k * transp H l k * H.σ k)
+            = (H.σ m * H.σ k) * transp H l k * H.σ k := by noncomm_ring
+          _ = (H.σ k * H.σ m) * transp H l k * H.σ k := by rw [hfar]
+          _ = H.σ k * (H.σ m * transp H l k) * H.σ k := by noncomm_ring
+          _ = H.σ k * (transp H l k * H.σ m) * H.σ k := by rw [hih]
+          _ = H.σ k * transp H l k * (H.σ m * H.σ k) := by noncomm_ring
+          _ = H.σ k * transp H l k * (H.σ k * H.σ m) := by rw [hfar]
+          _ = _ := by noncomm_ring
+
+/-- **The hard base case**: `σ_j` commutes with `T_(l,j+2)` for `l < j`.
+
+`T_(l,j+2) = v u X u v` with `u = σ_j`, `v = σ_{j+1}` and `X = T_(l,j)`, and `X` commutes with `v`
+by `sigma_comm_transp_far` (every letter of `X` has index `≤ j−1`).  Then two braid moves close it:
+
+    u · v u X u v = (uvu) X u v = (vuv) X u v = v u X (vuv) = v u X (uvu) = v u X u v · u
+
+Only the braid relation is used — no Hecke relation here, in contrast to the pair-swap law. -/
+theorem sigma_comm_transp_base (H : HeckeGenerators R A q) (j l : ℕ) (hl : l < j) :
+    H.σ j * transp H l (j + 2) = transp H l (j + 2) * H.σ j := by
+  have hb : H.σ j * H.σ (j + 1) * H.σ j = H.σ (j + 1) * H.σ j * H.σ (j + 1) := H.braid j
+  have hXv : H.σ (j + 1) * transp H l j = transp H l j * H.σ (j + 1) :=
+    sigma_comm_transp_far H l j (j + 1) hl (by omega)
+  have h1 : l ≠ j + 1 := by omega
+  have h2 : l ≠ j := by omega
+  rw [show j + 2 = (j + 1) + 1 from rfl, transp_succ H l (j + 1) h1, transp_succ H l j h2]
+  calc H.σ j * (H.σ (j + 1) * (H.σ j * transp H l j * H.σ j) * H.σ (j + 1))
+      = (H.σ j * H.σ (j + 1) * H.σ j) * transp H l j * (H.σ j * H.σ (j + 1)) := by noncomm_ring
+    _ = (H.σ (j + 1) * H.σ j * H.σ (j + 1)) * transp H l j
+          * (H.σ j * H.σ (j + 1)) := by rw [hb]
+    _ = H.σ (j + 1) * H.σ j * (H.σ (j + 1) * transp H l j)
+          * (H.σ j * H.σ (j + 1)) := by noncomm_ring
+    _ = H.σ (j + 1) * H.σ j * (transp H l j * H.σ (j + 1))
+          * (H.σ j * H.σ (j + 1)) := by rw [hXv]
+    _ = H.σ (j + 1) * H.σ j * transp H l j
+          * (H.σ (j + 1) * H.σ j * H.σ (j + 1)) := by noncomm_ring
+    _ = H.σ (j + 1) * H.σ j * transp H l j
+          * (H.σ j * H.σ (j + 1) * H.σ j) := by rw [← hb]
+    _ = _ := by noncomm_ring
+
+/-- **Disjoint transpositions commute**: `σ_j` commutes with `T_(l,i)` for `l < j` and `i > j+1`.
+
+Induction on `i` above the base case `i = j+2`: each step conjugates by `σ_{i−1}` with
+`i−1 > j+1`, which `σ_j` commutes past by far-commutation. -/
+theorem sigma_comm_transp_disjoint (H : HeckeGenerators R A q) (j l : ℕ) (hl : l < j) :
+    ∀ i : ℕ, j + 1 < i → H.σ j * transp H l i = transp H l i * H.σ j := by
+  intro i
+  induction i with
+  | zero => intro h; omega
+  | succ m ih =>
+      intro hm
+      rcases Nat.lt_or_ge (j + 1) m with hlt | hge
+      · have hli : l ≠ m := by omega
+        have hfar : H.σ j * H.σ m = H.σ m * H.σ j := H.far j m (by omega)
+        have hih := ih hlt
+        rw [transp_succ H l m hli]
+        calc H.σ j * (H.σ m * transp H l m * H.σ m)
+            = (H.σ j * H.σ m) * transp H l m * H.σ m := by noncomm_ring
+          _ = (H.σ m * H.σ j) * transp H l m * H.σ m := by rw [hfar]
+          _ = H.σ m * (H.σ j * transp H l m) * H.σ m := by noncomm_ring
+          _ = H.σ m * (transp H l m * H.σ j) * H.σ m := by rw [hih]
+          _ = H.σ m * transp H l m * (H.σ j * H.σ m) := by noncomm_ring
+          _ = H.σ m * transp H l m * (H.σ m * H.σ j) := by rw [hfar]
+          _ = _ := by noncomm_ring
+      · have : m = j + 1 := by omega
+        subst this
+        exact sigma_comm_transp_base H j l hl
+
 end QOU.BraidKnot.Hecke
