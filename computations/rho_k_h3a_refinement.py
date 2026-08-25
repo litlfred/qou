@@ -296,7 +296,7 @@ def load_y_lambda_n6():
 
 def load_deuteron_tr_M():
     """Load |tr_M(β_D)| at q_0 from atomic-tr-m-mpfr-50dps.witness.json."""
-    path = _pb.witness_path("atomic-tr-m-mpfr-50dps.witness.json", HERE)
+    path = _pb.witness_path("atomic-tr-m-mpfr-50dps-proton.witness.json", HERE)
     d = json.loads(path.read_text())
     for r in d["results"]:
         if r["atom"] == "deuteron":

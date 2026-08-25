@@ -88,7 +88,7 @@ def load_witness(name: str) -> dict:
 mp.dps = 50
 
 def main() -> int:
-    bridge = load_witness("atomic-tr-m-mpfr-50dps.witness.json")
+    bridge = load_witness("atomic-tr-m-mpfr-50dps-proton.witness.json")
     peel = load_witness("markov-peel-atomic-tr-m.witness.json")
     pyhecke = load_witness("canonical-isospin-pyhecke.witness.json")
 
