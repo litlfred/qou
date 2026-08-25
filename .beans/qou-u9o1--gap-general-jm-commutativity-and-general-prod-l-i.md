@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T08:11:06Z
+updated_at: 2026-08-25T08:15:58Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -670,3 +670,43 @@ sigma_i since i > j+1), with both transpositions gaining the same outer conjugat
 The next step is now bookkeeping over a Finset: terms with l outside {j, j+1} commute
 individually by far-commutation, and the two exceptional terms are handled by the lemma just
 proved. No new mathematical ingredient is needed for it.
+
+
+## Both halves of 3.24(i)'s mechanism are now PROVED
+
+Added to `HeckeTranspositionExpansion.lean` (8 declarations total, all sorry-free, axioms clean):
+
+    sigma_comm_transp_far       sigma_m commutes with T_(l,i) when m > i
+    sigma_comm_transp_base      sigma_j commutes with T_(l,j+2) for l < j   <- the hard case
+    sigma_comm_transp_disjoint  sigma_j commutes with T_(l,i) for l < j, i > j+1
+
+Measured first (H_6, exact Fractions): 24 disjoint pairs, all commuting, none failing.
+Worth measuring because it is NOT letter-wise obvious — for l < j < j+1 < i the word for
+T_(l,i) CONTAINS both sigma_j and sigma_{j+1}.
+
+### The only hard case is i = j+2, and it has a two-line proof
+
+Everything above i = j+2 is a plain induction: each step conjugates by sigma_{i-1} with
+i-1 > j+1, which sigma_j commutes past by far-commutation. The base case does the work.
+
+With u = sigma_j, v = sigma_{j+1}, X = T_(l,j) — and X commutes with v because every letter
+of X has index <= j-1:
+
+    u . vuXuv = (uvu) X uv = (vuv) X uv = vuX (vuv) = vuX (uvu) = vuXuv . u
+
+**Two braid moves, nothing else.** Note the contrast with the pair-swap law, which genuinely
+needed the HECKE relation: here braid alone suffices. The two halves of 3.24(i) have
+different proof ingredients.
+
+### Chain status
+
+    expansion A_k = d.SUM T_(l,k)             DONE  addJM_eq_transp_sum
+    pair-swap  (l in {j,j+1})                 DONE  sigma_comm_transp_pair       [braid+HECKE]
+    disjoint   (l outside {j,j+1})            DONE  sigma_comm_transp_disjoint   [braid only]
+    3.24(i): sigma_j commutes with A_k        NEXT  -- assemble: split the Finset sum
+    partial-sum centrality                    then
+    telescoping => commutativity              then
+
+Both ingredients for the assembly now exist. The next step splits `SUM_{l<i} T_(l,i)` into
+the two exceptional terms plus the rest, applying one lemma to each part. It is Finset
+bookkeeping over a proved case analysis — no new mathematics.
