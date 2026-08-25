@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-22T15:26:08Z
-updated_at: 2026-08-25T21:45:00Z
+updated_at: 2026-08-25T22:00:00Z
 ---
 
 FOUND 2026-08-22 while resolving qou-oy4r (main red on
@@ -694,3 +694,40 @@ hedge, which is what I was doing. It was killed by a container restart at
 This does not change the verdict from the sixth pass, it removes the last
 reason to hedge against it: the Rust exact-arithmetic route is not merely the
 better option, it is the only one that produces anything at all.
+
+
+---
+
+# 2026-08-25 (eighth pass) — the exact route is PROVED. The Rust port is now mechanical.
+
+The blocker I scoped as "needs a `Q(q)` fraction field with polynomial gcd" is
+gone, and my scoping was wrong in a specific way worth naming.
+
+**The square root was the whole problem, and it is a gauge artifact.** Hoefsmit's
+SYMMETRIC seminormal form carries `b = sqrt(a a' + 1)` off-diagonal
+(`seminormal.rs:275`) — irrational, hence the Rust chi path being f64/mpfr only.
+The trace-invariant ASYMMETRIC gauge `[[a, b^2], [1, a']]` is rational. Verified
+on all 15 shapes for n=3,4,5: Hecke quadratic, braid, far-commutation and equal
+traces.
+
+With the sqrt gone, and with `delta` rational, **every quantity in the atom is
+rational in q**, so the whole computation runs in exact `Fraction` /
+`BigRational` arithmetic — **no fraction field needed**. That was the expensive
+half of my earlier estimate and it does not exist.
+
+Proved end to end in `probes/exact_rational_chi_gauge_probe.py`: all 11 cached
+deuteron characters reproduced exactly at three independent rational `q`.
+
+## What remains for the Rust port
+
+Mechanical translation, not research:
+1. `blocks_at` with `BigRational` instead of `f64` — the asymmetric gauge.
+2. `chi_at` — per-basis-vector trace, already the shape `chi_q_atomic` uses.
+3. Evaluate at `deg + 1` rational points and interpolate. Interpolation is
+   standard and is the one piece not yet written or tested.
+
+The 18-day sympy figure is a cost of SYMBOLIC MANIPULATION, not of the
+mathematics: the same arithmetic in exact integers is `O(dim^2 * k)` per
+evaluation point with no expression swell.
+
+**Not claimed:** any A=3 timing. That needs the port and a measurement.
