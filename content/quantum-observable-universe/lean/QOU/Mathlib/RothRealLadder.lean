@@ -161,4 +161,35 @@ theorem index_le_rothBound {σ : Type*} {m : ℕ} (hm : 1 ≤ m) {p q F : ℕ}
     RothLemmaTheta.rename_equiv o (rothLemmaTheta_all m hm) hp hpq o a r H Θ hg hΘ
   exact ⟨Θ, h0, hb, hΘ.1 A κ hA hκ⟩
 
+/-- **Non-vacuity of Roth's Lemma at `m = 2`** — the arity §13 actually needs (`m ≥ 2`).
+
+`p = q = 1` (so `t = 1`), `F = 10`, `d ≡ 1`, `H ≡ 1024`, `a = 1`, `A = 1`, `κ ≡ 1024`.
+
+⚠ The heights **cannot** be small.  Clause 3 forces `2^F ≤ K₁` with `q·(m−1)m(2m+1) ≤ F·p`, so
+at `m = 2` the floor is `2^{10} = 1024`.  Every other witness in this arc got away with `H = 2`;
+this is the one place where clause 3 bites, and exhibiting it is the point — a satisfiability
+claim about `Γ_m` that quietly used `H = 2` would be about a different hypothesis.
+
+⚠ `t = 1` makes the bound itself weak (`Θ ≤ c₂ = 5`).  That is a limitation of *this witness*,
+not of the theorem: what it establishes is that the hypothesis stack is satisfiable at `m ≥ 2`,
+so the theorem is not vacuous where §13 lives. -/
+theorem index_le_rothBound_witness :
+    ∃ Θ : ℚ, 0 ≤ Θ ∧
+      Θ ^ (2 ^ (2 - 1)) ≤ (rothConstant 2 : ℚ) ^ (2 ^ (2 - 1)) * ((1 : ℚ) / (1 : ℚ)) ∧
+      index (fun _ : Fin 2 => 1) (fun _ : Fin 2 => (1024 : ℚ))
+          (map (algebraMap ℤ ℚ) (1 : MvPolynomial (Fin 2) ℤ)) ≤ ((Θ : ℚ) : WithTop ℚ) :=
+  index_le_rothBound (m := 2) (by norm_num) (p := 1) (q := 1) (F := 10) one_pos le_rfl
+    (Equiv.refl (Fin 2)) (a := 1) (r := fun _ => 1) (H := fun _ => 1024)
+    { growth := by intro j k hjk; norm_num
+      height := by intro j k _; exact le_rfl
+      floorExp := by norm_num
+      floor := by intro j _; norm_num
+      heightBound := by intro j _; norm_num
+      two_le := fun _ => by norm_num
+      degPos := fun _ => one_ne_zero }
+    (A := 1) (κ := fun _ => (1024 : ℚ))
+    ⟨one_ne_zero, fun h => by rw [← C_1, degreeOf_C]; norm_num, fun n => by
+      simp only [coeff_one]; split_ifs <;> norm_num⟩
+    (by intro _; norm_num)
+
 end MvPolynomial
