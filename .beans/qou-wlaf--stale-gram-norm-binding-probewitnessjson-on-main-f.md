@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T16:43:22Z
-updated_at: 2026-08-25T18:11:13Z
+updated_at: 2026-08-25T19:11:39Z
 ---
 
 MEASURED 2026-08-25, branch `claude/gram-norm-threshold-investigation-v8ck94`.
@@ -171,3 +171,62 @@ caught gram-norm cannot see it. It was caught only because a human-directed
 agent happened to run the audit and compare. Any systematic sweep for this
 class needs a producer re-run and a field diff, which is the same conclusion
 the ≤106 measurement above reached from the other direction.
+
+
+---
+
+## Reproduced on this branch, within hours — the class is not rare (2026-08-25)
+
+The strongest evidence for this bean is that its own fix went stale while it
+was being written.
+
+The regenerated `gram-norm-binding-probe.witness.json` committed earlier on
+`claude/gram-norm-threshold-investigation-v8ck94` recorded
+
+    2H  G_atom = 4.922708485093256
+
+Then the branch was rebased onto `main` at `41389ea6bf`, picking up 29 commits
+(the convention-C / B4 migration series, the `fmt()`-padded q0 literal fix, the
+`build_seminormal_matrices_mp` addition). Re-running the **identical producer**
+on the **identical source** now gives
+
+    2H  G_atom = 4.92270711355717        rel shift 2.8e-7
+
+The producer file did not change. Its recorded `scriptHash` did not change.
+Nothing in `scriptHash`-keyed staleness triage can see this. An upstream input
+moved, and a freshly-committed witness became a stale one in the time it took
+to rebase.
+
+**How it was isolated, because the first three hypotheses were all wrong and
+each is worth ruling out cheaply next time:**
+
+  * *Convention-C leak in the symbolic y_λ path?* **No.** `y_lambda_at(n,
+    q_val=None)` (symbolic, substituted at 55 digits) and `y_lambda_at(n,
+    q_val=float(Q0))` (numeric) agree to **0.000e+00** across all 11 partitions
+    of 6. Raised because the excised-C history makes it the obvious suspect;
+    dropped because it measured clean.
+  * *The two seminormal builders disagreeing?* **No.** `build_seminormal_
+    matrices` vs `build_seminormal_matrices_mp` over every σ, every entry, all
+    partitions of 6: max absolute deviation **3.331e-16**. This independently
+    confirms the 4.441e-16 figure the `_mp` author reported.
+  * *A bug in the probe's own `_gram_and_trace`?* **No.** Same process, probe
+    function vs a hand-rolled loop with dense identity and the same coercion:
+    **0.000e+00** on both G and T.
+
+Only after all three came back clean did the rebase become the remaining
+explanation, and it is confirmed by the value moving with nothing local
+changed.
+
+**Two consequences for how this bean should be worked.**
+
+1. **The ≤106 measurement above is a snapshot, not a standing count.** Any of
+   those witnesses can go stale on any merge that touches the import cone. A
+   campaign that re-runs 105 producers over days will have its early results
+   staling behind it. Re-runs must be pinned to a single `main` SHA and the SHA
+   recorded, or the campaign chases its own tail.
+2. **A witness cross-check assertion is not enough on its own.** This probe's
+   `linear_trace_matches_transfer_engine` passed at 6e-15 both before and after
+   the shift, because it validates `T`, not `G`. `G` — the quantity the probe
+   exists to measure — is cross-checked by nothing, which is why a 2.8e-7 move
+   in it was silent. Worth checking, per witness, WHICH fields the assertions
+   actually cover before trusting an `allPassed: true`.

@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T18:57:13Z
-updated_at: 2026-08-25T18:12:13Z
+updated_at: 2026-08-25T19:23:18Z
 ---
 
 MEASURED 2026-08-24, branch claude/excise-convention-c-2026-08-24.
@@ -193,3 +193,36 @@ next agent does not have to re-derive them before deciding.
 Not doing the upgrade on PR #5775 — that probe declares itself float64 and
 audit-only, the change would move every number it reports, and it belongs in a
 scoped PR against `qou-8xb1` rather than riding on a perf fix.
+
+
+### CORRECTION to the note above: the "~4 minutes for 3H" figure is WRONG
+
+That note said the exact route made 3H/3He "viable" at roughly four minutes.
+Measured: a 3H `_gram_and_trace_mp` run has exceeded **30 minutes** without
+finishing. Do not quote 4 minutes.
+
+The error was in the extrapolation, and it is instructive. I took the float64
+whole-isotope time (0.45 s) and multiplied by the per-matmul ratio at the
+largest dimension (561x) to get 252 s. That step assumes the float64 time is
+matmul-dominated at d=216. **It is not.** One float64 matmul at d=216 already
+costs 12.3 ms, and the probe does ~70 of them per lambda, so the largest lambda
+alone would be ~0.86 s — nearly twice the measured whole-isotope total. The
+float64 path is getting a large speedup the timing did not account for (sparse
+dispatch on the big blocks), which the mpmath path cannot use: every entry
+there is a Python object and every product is a Python loop.
+
+So the ratio measured on ONE dense matmul is a **lower bound** on the aggregate
+ratio, not an estimate of it, and multiplying a whole-pipeline time by it
+understates the cost — here by at least an order of magnitude.
+
+Revised status, stated as measurement rather than extrapolation:
+
+  * **2H (d <= 16): confirmed, ~2 s.** Exact and float64 agreed to 2.13e-14.
+  * **3H / 3He (d <= 216): UNMEASURED, exceeds 30 min.** Not "viable"; not
+    established as infeasible either. Someone should let one finish and record
+    the number instead of extrapolating, as I did.
+  * **4He (d up to 7700): out of reach**, unchanged.
+
+The same caution applies to the 4He figure in the note above: ">= tens of
+hours" was reached the same way, so treat it as a lower bound that is probably
+much too low, which is the direction that keeps it honest.
