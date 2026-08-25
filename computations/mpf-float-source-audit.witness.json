@@ -4,7 +4,7 @@
   "description": "Source-level mpf(<float>) detection. DEFECT = the literal is not exactly a binary64, so precision is lost before mpmath sees it. Complements the witness-level float64-padding audit by catching the defect at authoring time.",
   "data": {
     "counts": {
-      "benign": 13,
+      "benign": 12,
       "advisory-cast": 14
     },
     "defects": [],
@@ -171,15 +171,7 @@
       },
       {
         "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
-        "line": 94,
-        "class": "benign",
-        "arg": "1.0",
-        "source": "z = mp.mpf(1.0) / (mp.sqrt(q) + mp.sqrt(qi))",
-        "fix": "mpf(\"1.0\")"
-      },
-      {
-        "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
-        "line": 95,
+        "line": 104,
         "class": "benign",
         "arg": "0.0",
         "source": "ai, bi = mp.mpf(0.0), mp.mpf(1.0)",
@@ -187,7 +179,7 @@
       },
       {
         "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
-        "line": 95,
+        "line": 104,
         "class": "benign",
         "arg": "1.0",
         "source": "ai, bi = mp.mpf(0.0), mp.mpf(1.0)",
@@ -195,7 +187,7 @@
       },
       {
         "file": "tools/pyhecke/python/pyhecke/regime_scanner.py",
-        "line": 102,
+        "line": 111,
         "class": "benign",
         "arg": "1.0",
         "source": "qi = mp.mpf(1.0) / q",

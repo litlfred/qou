@@ -70,6 +70,16 @@ def _repo_root() -> Path:
 #   "ambiguous"   the compute DEPENDS on q₀ but the pin is undetermined —
 #                 `gen_q0_anchor_manifest.py` assigns this when a witness
 #                 carries BOTH signatures. A queue for a manual ruling.
+#                 Carries NO bare `q0Value`, for the same reason `independent`
+#                 and `comparison` do not: `q0Value` names the CANONICAL value
+#                 of the anchor a payload was computed at, and an undetermined
+#                 pin has no such value. Put the value actually used in the
+#                 payload (`parameters.q0`) and name it in `q0AnchorReason`.
+#                 This was true of every `ambiguous` witness in the corpus but
+#                 stated only for the other two, and the omission is not free:
+#                 a producer that emitted one turned the q0-value DRIFT ratchet
+#                 red (`NEW stale … +0.0769 ppb`) — correctly, since a value
+#                 matching no anchor is drift by definition.
 #   "independent" the compute NEVER READS q₀. No `q0Value` exists, and one
 #                 appearing alongside this label is a contradiction the audit
 #                 reports as Q0_FLIP.

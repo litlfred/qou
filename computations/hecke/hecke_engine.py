@@ -51,6 +51,9 @@ from itertools import combinations
 from pathlib import Path
 from typing import Optional
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 
 # ── Exact rational arithmetic ────────────────────────────────────
 
@@ -361,7 +364,7 @@ def main():
             "z": "4993/10000",
             "results": [asdict(r) for r in results],
         }
-        out = Path("computations/hecke-engine.witness.json")
+        out = Path(_HERE_W.parent / "hecke-engine.witness.json")
         with open(out, "w") as f:
             json.dump(witness, f, indent=2)
         print(f"\nWitness: {out}")

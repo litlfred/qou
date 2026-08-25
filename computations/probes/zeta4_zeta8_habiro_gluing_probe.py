@@ -42,6 +42,9 @@ import sys
 
 import sympy as sp
 
+from pathlib import Path as _PathW  # noqa: E402 — witness output root
+_HERE_W = _PathW(__file__).resolve().parent
+
 z8 = sp.exp(sp.I * sp.pi / 4)  # zeta_8, exact
 z4 = z8**2  # zeta_4 = i
 
@@ -112,7 +115,7 @@ witness = {
     "order": N,
     "scope": "scope-(a): classical-Habiro (K=Q, trivial Frobenius) harness; number-field twist test stays on qou-1hlh",
 }
-with open("computations/probes/zeta4_zeta8_habiro_gluing.witness.json", "w") as f:
+with open(_HERE_W / "zeta4_zeta8_habiro_gluing.witness.json", "w") as f:
     json.dump(witness, f, indent=1)
 
 sys.exit(0 if npass == len(checks) else 1)

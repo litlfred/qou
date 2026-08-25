@@ -1,12 +1,12 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-24T22:09:50.391977+00:00",
-  "commitSha": "e4c55a5da9d19a80849957609595a5d48c5774c0",
+  "computedAt": "2026-08-25T01:46:45.461022+00:00",
+  "commitSha": "a606f1a43e8071c20dec0d602993b33467560930",
   "assertions": [
     {
       "name": "no_missing_provenance",
-      "computed": 94,
+      "computed": 95,
       "expected": 0,
       "passed": false,
       "tolerance": 0,
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 5,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -30,7 +30,7 @@
     "numpy": "2.4.6",
     "scipy": "1.17.1",
     "sympy": "1.14.0",
-    "mpmath": "1.4.1",
+    "mpmath": "1.3.0",
     "pyhecke_native": "0.9.0",
     "clarabel": "0.11.1",
     "pyhecke_native_build": "b843d058d29dcec6"
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2747,
+      "total_scanned": 2740,
       "prov_ok": 2326,
       "prov_audit_exempt": 79,
-      "prov_exempt_no_reader": 245,
+      "prov_exempt_no_reader": 237,
       "prov_exempt_acknowledged": 3,
-      "prov_missing": 94,
+      "prov_missing": 95,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965780851838369129959956315981070258463778667637422642883145"
+      "completeness_ratio": "0.965328467153284671532846715328467153284671532846715328467153"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -9590,6 +9590,14 @@
           ]
         },
         {
+          "witness": "c-knot-cancellation-conditioning.witness.json",
+          "missing_fields": [
+            "engine",
+            "scriptFile",
+            "commitSha"
+          ]
+        },
+        {
           "witness": "c-knot-nonuniversal-pinned-weight.witness.json",
           "missing_fields": [
             "engine",
@@ -10441,39 +10449,15 @@
           ]
         },
         {
-          "witness": "chi-deuteron-h6-at-qca0128e8-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "chi-dineutron-h6-at-q0-50dps.witness.json",
           "missing_fields": [
             "scriptFile"
           ]
         },
         {
-          "witness": "chi-dineutron-h6-at-qca0128e8-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "chi-diproton-h6-at-q0-50dps.witness.json",
           "missing_fields": [
             "scriptFile"
-          ]
-        },
-        {
-          "witness": "chi-diproton-h6-at-qca0128e8-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
           ]
         },
         {
@@ -10501,14 +10485,6 @@
           ]
         },
         {
-          "witness": "chi-helium-3-h9-at-qca0128e8-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "chi-helium-3-h9-at-qinv-50dps.witness.json",
           "missing_fields": [
             "engine",
@@ -10518,14 +10494,6 @@
         },
         {
           "witness": "chi-helium-4-free-h12-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-helium-4-h12-at-qca0128e8-50dps.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
@@ -10549,22 +10517,6 @@
           ]
         },
         {
-          "witness": "chi-neutron-h3-at-qca0128e8-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-proton-h3-at-qca0128e8-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
           "witness": "chi-tritium-free-h9-at-q0-50dps.witness.json",
           "missing_fields": [
             "engine",
@@ -10574,14 +10526,6 @@
         },
         {
           "witness": "chi-tritium-free-h9-at-qinv-50dps.witness.json",
-          "missing_fields": [
-            "engine",
-            "scriptFile",
-            "commitSha"
-          ]
-        },
-        {
-          "witness": "chi-tritium-h9-at-qca0128e8-50dps.witness.json",
           "missing_fields": [
             "engine",
             "scriptFile",
