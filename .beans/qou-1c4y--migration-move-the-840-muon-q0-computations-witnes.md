@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-07T08:35:43Z
-updated_at: 2026-08-25T19:40:40Z
+updated_at: 2026-08-25T21:30:17Z
 ---
 
 
@@ -759,3 +759,147 @@ three audits rather than quoting them; on this corpus the shelf life is hours.
 Sibling interaction: PR #5755 migrates `aoperator_a5_crosscheck` off
 `ideal_muon`. It is still listed on `main`, so 35 is right today and becomes 34
 when that lands. It is **not** one of `qou-bypn`'s 13 — that list is unaffected.
+
+
+## 2026-08-25 (later) — RETRACTED: "stamp before regenerate". They are the same operation.
+
+Earlier today I wrote, in this bean and in PR #5792, that the ~1645 unstamped
+witnesses argue for **stamping before regeneration**, and I recommended that
+ordering to the owner. **That recommendation was wrong.** I went looking for the
+stamping mechanism that would need building, and found it already built and
+already merged.
+
+### What the measurement actually shows
+
+    live witnesses                                 2765
+      already stamped (q0Anchor present)           1058
+      unstamped, record NO q0 anywhere             1458
+      unstamped, record a q0 under a KNOWN key      160
+        of those: single pin (should stamp)         157
+                  both pins (walker returns None
+                  BY DESIGN — these want
+                  q0Anchor: "comparison")             3
+
+`build()` already calls `resolve_q0_anchor_payload_first(payload, spath)`
+(witness.py:1569), **without** `require_declared`, so it always sets
+`q0Anchor` — falling through to the manifest answer when the payload shows
+nothing. Reproduced against the live API: a payload carrying `parameters.q0`
+= the muon 50-digit string resolves `-> muon` correctly, as an `mpf` too.
+
+So for every producer that routes through `WitnessBuilder`, **the stamp arrives
+when the producer is re-run.** Stamping is not a prerequisite to regeneration;
+it IS regeneration. Sequencing them is a distinction without a difference, and
+my Step-2 inversion above should not be acted on.
+
+### Three hypotheses I tested and killed, in order
+
+Recorded because each is the obvious next guess and each is wrong:
+
+1. **"`_Q0_FIELDS` is too narrow."** It is only four names (`q_0_50dps`, `q0`,
+   `q_0`, `q0_50dps`), so a q₀ under `q`, `substrate_q`, `q_proton`, … is
+   invisible. True, but it reaches **89 files, ~5 % of 1645** — not leverage.
+   The blind-key census is in the session log if anyone wants to widen it.
+2. **"The walker's `depth > 4` cap hides them."** No: of the 160, the shallowest
+   known-key hit is at depth 0–3, **zero beyond the cap**.
+3. **"Producers bypass `WitnessBuilder`."** Partly — but 27 of the 38
+   post-2026-08-24 cases *do* call `builder.save()`, so that is not the
+   explanation for them either.
+
+The actual explanation is dating. Payload-first reached `main` at
+**2026-08-25T10:20 UTC** (`9d52483f5`), not on 08-24 as the surrounding text
+implies. Every one of the 157 predates it. They are stale, not blocked.
+
+### The one genuinely live residue
+
+Four witnesses were computed at 16:52 UTC and committed at 16:54 (`58db04f28`)
+— 6.5 h after the fix — and went out unstamped. I checked that commit's own
+tree rather than assuming, and it **did** carry payload-first wired into
+`build()`. So this is not staleness. All four come from **hand-rolled
+`json.dump` producers that never reach `build()`**:
+
+    computations/qbeta/birkhoff_barodd_pythagoras_bridge_probe.py
+    computations/deltalambda/deuteron_interface_handle_curvature_probe.py
+    computations/deltalambda/yekutieli_trefoil_surface2form_discretization_probe.py
+    computations/qbeta/a3_branching_asymmetry_vs_required_probe.py
+
+(The fifth 08-25 case, `canonical_lepton_braid_words.py`, does use
+`WitnessBuilder` — and ran at 06:25 UTC, before the merge. Consistent.)
+
+That is bean `1j39`'s territory (the no-WitnessBuilder batch port), and it is
+the part that regeneration will **never** fix: re-running a hand-rolled
+producer re-emits an unstamped witness forever.
+
+### What this leaves open, unmeasured
+
+**1458 witnesses record no q₀ at all** — the actual bulk, and I have not
+established why. Two very different cases: the producer never reads q₀ (wants
+`q0Anchor: "independent"`, a legitimate declared state), or it reads q₀ and
+discards it (a real gap). Nothing here distinguishes them, and the split
+decides how much of the 1458 is work versus bookkeeping. That is the next
+measurement, and it is not this bean's Step 2.
+
+
+## 2026-08-25 (later still) — the 1458 split, MEASURED
+
+The previous entry left this open and said the split "decides how much of the
+1458 is work versus bookkeeping". Measured now, with
+[`computations/audits/no_q0_recorded_producer_split.py`](computations/audits/no_q0_recorded_producer_split.py)
+(pure static inspection; no arithmetic, so NO-FLOAT64 is vacuous):
+
+    population (unstamped AND recording no q0)   1458
+      READS q0, file-local                        478
+      READS q0, via one-hop import cone           105   -> 583 read but do not record
+      NO q0 read anywhere                         742   -> candidates for "independent"
+      producer unresolved                         133
+
+**The actionable number is 583.** Those producers read a q₀ and do not record
+it, so `_q0_anchor_from_payload` has nothing to match and `build()` falls
+through to the manifest answer. Have them record the q₀ they used and
+payload-first stamps them correctly on the next run — no new mechanism, and no
+number moves.
+
+The 742 are *candidates* for `q0Anchor: "independent"`, not confirmed ones.
+Two reasons to treat the figure as an **upper bound**: the cone walk is
+**one hop**, so a producer reading q₀ two modules deep is still counted as not
+reading; and `independent` is a producer-declared claim about intent, which a
+static scan cannot make on the producer's behalf.
+
+### The harness error, recorded because it was large and nearly shipped
+
+The first run reported **536** "reads q0 via import cone" and **302** "no read".
+Almost every cone hit was attributed to `_path_bridge`. It is a path resolver
+(`witness_path`) and reads no q₀ — the regex had matched
+`from q_parameter import Q` inside its **usage docstring** and a `#` comment.
+
+Normalising each module through `ast.unparse` with docstrings stripped moved
+**431 files** from "reads via cone" to "no read". Two lines of prose in one
+helper, inverting the majority verdict of the whole population. Any future
+scan of this kind must measure **code**, not file text — the same lesson
+`witness_staleness_triage.py` already encodes for a different question.
+
+Three hand-verifications of the corrected classifier, one per bucket:
+
+    aj_figure_eight_certificate.py   claimed no-read   -> ZERO q0 tokens present  OK
+    a5_so3_branching_probe.py        claimed no-read   -> no q0 read tokens       OK
+                                     (this was the _path_bridge false positive)
+    binding_canonical.py             claimed reads     -> `from q_parameter import
+                                       Q_MP as q0`, `Q_50_DIGIT_STR` in live code OK
+
+
+### Directional correction (same day) — it churns BOTH ways, not one-way growth
+
+The entry above says the unstamped population "grows with ordinary merges" and
+"is being refilled upstream". Measured across three points in one evening:
+
+    committed 19:04 UTC   Q0_ANCHOR_MISSING 1641   Q0_OK 969
+    my run    ~20:05 UTC                    1645        970
+    regen     21:24 UTC                     1644        971
+
+So it grew by 4, then **drained by 1** as sibling PRs landed correctly-stamped
+witnesses. "Refills on ordinary merges" is right; "not a backlog being worked
+down" is too strong — it is being worked down *and* refilled at the same time,
+and over this window the two were within a few files of each other.
+
+What survives unchanged is the operational point: the number has a shelf life
+of **hours**, so quote it with a timestamp or re-run the audit. What does not
+survive is any claim about the trend from a two-point sample — including mine.
