@@ -143,6 +143,10 @@ QOU.BraidKnot.SnIsotypicSpechtSplitInstance | QOU.BraidKnot.SnIsotypicSpechtSpli
 # refactor silently breaks.
 QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.catalan_G_eq_Cl_2_pi_div_two | clean
 QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.summable_catalan_summand | clean
+# The residual-gap restatement. Pinned for a specific reason: it is an EQUIVALENCE, and
+# an equivalence is exactly the shape that can rot into vacuity unnoticed. If the axiom
+# it reduces were ever discharged, or `catalan_G` redefined, this is where that shows up.
+QOU.Archimedean.LobachevskyClausenGap | QOU.Archimedean.lobachevsky_catalan_iff_clausen | clean
 
 # --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
 # Three content blocks assert these are proved; the assertion is only as good as an
