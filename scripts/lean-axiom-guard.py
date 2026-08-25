@@ -133,6 +133,17 @@ QOU.BraidsAndKnots.PlancherelNormalisation | QOU.BraidsAndKnots.PlancherelNormal
 # makes the four above mean anything: it is the only place a regression can be caught.
 QOU.BraidKnot.SnIsotypicSpechtSplitInstance | QOU.BraidKnot.SnIsotypicSpechtSplitInstance.instSnIsotypicSpechtSplit | clean
 
+# --- the Catalan bridge: two definitions of one constant, now provably equal ---
+# `catalan_G` (alternating series, HyperbolicVolumeTranscendence) and `Cl_2 (π/2)`
+# (Clausen value, ClausenFunctionMathlibFiller) are defined in files that do not import
+# each other, and nothing connected them: the filler's own
+# `catalan_constant_eq_cl_2_pi_over_2` is `rfl` over a DEFINITION and carries no content.
+# Two unbridged definitions of one constant is a live hazard — a result proved about one
+# is not a result about the other. Pinned because that is the kind of theorem a later
+# refactor silently breaks.
+QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.catalan_G_eq_Cl_2_pi_div_two | clean
+QOU.Archimedean.CatalanClausenBridge | QOU.Archimedean.summable_catalan_summand | clean
+
 # --- the gluing/volume arc cited by the mass-theory exposition blocks (PR #4925) ---
 # Three content blocks assert these are proved; the assertion is only as good as an
 # axiom check, so the check is pinned here rather than left as a one-off.  Measured

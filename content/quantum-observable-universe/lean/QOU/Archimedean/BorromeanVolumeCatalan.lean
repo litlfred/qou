@@ -113,6 +113,22 @@ noncomputable def lobachevsky (θ : ℝ) : ℝ :=
     record the literature identity as an axiom; downstream consumers
     rewrite with it unchanged.
 
+    **Gap narrowed 2026-08-25.** The reason above is now only half right. It says a
+    proof "would require Mathlib's full polylogarithm machinery (Clausen function
+    `Cl_2`, dilogarithm `Li_2`, ...) — none of which is currently upstream". `Cl_2`
+    is no longer missing: `QOU.Archimedean.ClausenFunctionMathlibFiller` defines it,
+    and `QOU.Archimedean.CatalanClausenBridge.catalan_G_eq_Cl_2_pi_div_two` now
+    proves `catalan_G = Cl_2 (π/2)` outright — sorry-free, elementary, no integrals
+    (the Clausen series at `π/2` IS the alternating series once its zero terms are
+    dropped).
+
+    So the residual obstruction is **exactly one thing**: the Clausen *integral
+    representation* `Cl_2' θ = -log|2 sin(θ/2)|`, which converts this file's
+    `lobachevsky` (a log-sine integral) into that series. That is genuine analysis
+    over an improper integrand and remains correctly classified **External** by
+    `docs/audits/2026-06-03-lean-axiom-tractability-triage.md`. It is a narrower and
+    better-named gap than "the polylogarithm machinery is absent".
+
     -- Ref: [lewin1981] Lewin, "Polylogarithms and Associated Functions",
             North-Holland (1981), eq. 4.2.21. -/
 axiom lobachevsky_pi_div_four_eq_half_catalan :
