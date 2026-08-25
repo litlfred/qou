@@ -100,8 +100,13 @@ theorem jmRaw_one_comm_all (H : HeckeGenerators R A q) (j : ℕ) (hj : 1 ≤ j) 
     jmRaw H 1 * jmRaw H j = jmRaw H j * jmRaw H 1 :=
   jmRaw_comm_of_adjacent H 1 (jmRaw_comm_adjacent_one H) j hj
 
-/-- **The residual problem, stated as one hypothesis.**  If every adjacent pair commutes, the whole
-JM family is commutative.  This is the exact statement that remains open for `i ≥ 2`. -/
+/-- **The reduction, stated as one hypothesis.**  If every adjacent pair commutes, the whole JM
+family is commutative.
+
+When this was written the hypothesis was the open residue for `i ≥ 2`.  It is **no longer open**:
+[`HeckeTranspositionExpansion.jmRaw_comm_adjacent`](HeckeTranspositionExpansion.lean) discharges it
+outright, via the additive family and Jucys's telescoping, so `jmRaw_comm_all` in that file is this
+conclusion with no hypothesis at all. -/
 theorem jmRaw_comm_all_of_all_adjacent (H : HeckeGenerators R A q)
     (hadj : ∀ i : ℕ, jmRaw H i * jmRaw H (i + 1) = jmRaw H (i + 1) * jmRaw H i) :
     ∀ i j : ℕ, i ≤ j → jmRaw H i * jmRaw H j = jmRaw H j * jmRaw H i :=
