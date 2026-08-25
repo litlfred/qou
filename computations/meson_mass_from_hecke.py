@@ -418,28 +418,34 @@ from witness_base import WitnessBuilder  # noqa: E402
 # content of Instance 1. So the manifest describes a q0 that was never used,
 # and the inferred label was `proton` while every number here is muon-route.
 #
-# No pin label is truthful either. The derived value is `C` of bean qou-khac
-# -- 7.7e-11 from the FROZEN muon anchor `A`, which is not reproducible from
-# any published m_mu/m_e (audits/muon-pin-three-values.witness.json). So this
-# is `ambiguous` in the documented sense: the compute depends on q0 and the
-# pin is undetermined, queued for a manual ruling. Choosing `muon` here would
-# assert the frozen anchor and be false by 7.7e-11.
-# NO bare `q0Value`, matching every other `ambiguous` witness in the corpus.
-# `q0Value` names the CANONICAL value of the anchor a payload was computed at;
-# when the anchor is undetermined there is no such value, exactly as under
-# `independent` and `comparison`. Emitting one turned the q0-value drift
-# ratchet RED (`NEW stale ... +0.0769 ppb`) -- correctly, since a value that
-# matches no anchor IS drift. The derived value lives in `parameters.q0` and
-# is named in the reason below.
+# The label is `ambiguous` TRANSITIONALLY, and the reason is not the one I
+# first wrote. I recorded "undetermined pending the A-vs-C ruling"; THE RULING
+# EXISTS and predates that commit by three days -- owner, 2026-08-22 on PR
+# #5500: "2022 CODATA better than 2018. A --> CODATA 2022." Recorded in
+# .beans/qou-bred, docs/audits/2026-08-23-q0-literal-transcription-
+# classification.md and q0_literal_classification_audit.py:240. Declaring an
+# item open that the corpus has closed is the failure the corpus-grep
+# checklist exists to prevent, and I made it.
+#
+# So the value this producer derives -- C, 1.109978595642739... -- IS the
+# ruled muon anchor. What is not yet true is that MAIN carries it: the
+# anchor-defining witness still holds A (1.109978595557334...) while its own
+# calibration_inputs declare 206.7682827, the contradiction #5500 exists to
+# close, and #5500 is unmerged and red on 53 witnesses awaiting regeneration.
+#
+# Stamping `muon` today would therefore read as a Q0_FLIP against main's stale
+# anchor table. `ambiguous` + this reason is the honest transitional record.
+# WHEN #5500 LANDS, THIS SHOULD BECOME `muon` -- at that point the derived
+# value and the anchor agree and no declaration is needed.
 witness["q0Anchor"] = "ambiguous"
 witness["q0AnchorReason"] = (
     "Derives q0 = 1/(1 - sqrt(Vol(4_1)/(m_mu/m_e))) from the registry ratio "
-    "instead of reading an anchor, so no manifest entry describes it and no "
-    "pin label is truthful. The result -- see parameters.q0, "
-    f"{str(q0)[:22]} -- is value C of bean qou-khac (CODATA-2022-derived), "
-    "7.7e-11 from the frozen muon anchor A, which is itself not reproducible "
-    "from any published m_mu/m_e (audits/muon-pin-three-values.witness.json). "
-    "Undetermined pending the A-vs-C ruling."
+    "rather than reading an anchor, so no manifest entry describes it. The "
+    f"result, {str(q0)[:22]}, is value C of qou-khac -- which the owner RULED "
+    "canonical for the muon anchor on 2026-08-22 (PR #5500, 'A --> CODATA "
+    "2022'). This is ambiguous only transitionally: main's anchor witness "
+    "still holds A, so a 'muon' stamp would read as a Q0_FLIP until #5500 "
+    "lands. Revisit then; the correct label at that point is 'muon'."
 )
 WitnessBuilder.stamp_staleness_metadata(witness, script_path=__file__, engine="python")
 witness["scriptFile"] = Path(__file__).name
