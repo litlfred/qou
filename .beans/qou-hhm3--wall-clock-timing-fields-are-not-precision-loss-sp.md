@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T16:41:59Z
-updated_at: 2026-08-25T18:03:16Z
+updated_at: 2026-08-25T19:40:35Z
 ---
 
 ## Found 2026-08-25 draining the 5 NEW raw-float64 witnesses on main
@@ -129,3 +129,115 @@ gate flag less, so it needs its own PR with a self-test proving a genuine float6
 the same witness still fires. Note this is NOT the `--rebaseline`/baseline-widening move the
 directive bans (no baseline file is touched); it is a reclassification, the same shape
 `qou-xt5l` already landed for integral floats. But it deserves the same scrutiny.
+
+
+## CLOSED 2026-08-25 — carve-out landed, with the self-test this bean asked for
+
+`VOLATILE_TIMING_FIELDS` in `witness_raw_float64_audit.py`, reported on its own
+line, never silent. Declared by NAME (eight of them), never by a `*_sec`
+pattern -- the caution this bean was filed with, and it earned its keep: the
+self-test now proves `half_life_sec`, `lifetime_seconds` and `tau_sec` are
+STILL FLAGGED. A suffix rule would have silenced all three, and precision is
+the entire point in those.
+
+Self-test 30 -> 36 cases. The requirement this bean set -- "a self-test proving
+a genuine float64 finding in the same witness still fires" -- is case
+`{"elapsed_sec": 0.001, "some_measured_value": 7.7777777} -> 1`. Also covered: all four
+JSON types the field actually occurs as (53 str / 34 float / 16 null / 3 int),
+none of which may throw.
+
+MEASURED against main, every headline, so the change is fully accounted:
+
+                              main        with carve-out
+  witnesses carrying f64      1288   ->   1278
+  total raw float64 fields  258,324  ->  258,236   (-88)
+  f64-integrator carve-out     65/3  ->     65/3   unchanged
+  deprecated-f64 carve-out     97/1  ->     97/1   unchanged
+  LP-dual carve-out           429/21 ->   429/21   unchanged
+  integral-valued floats  224,823/836 -> 224,823/836  unchanged
+  volatile-timing              --    ->    88/31   NEW
+  NEW dirty / REGRESSED         0/0  ->      0/0
+
+## Corrections to this bean's own numbers
+
+**"24 files / 14 with floats" was the `elapsed_sec`-only measure.** With all
+eight declared names the carve-out covers **31 witnesses / 88 fields**. Only
+four names occur at all: `elapsed_sec` 33 occurrences in 13 files, `wall_sec`
+36/7, `elapsed_seconds` 16/6, `wall_seconds` 5/5. The other four are
+forward-looking and unexercised by the corpus -- said explicitly in the source
+comment so eight names are not read as eight measured cases.
+
+So BOTH earlier figures were narrow: #5763's "exactly 4 witnesses" and my "24".
+Mine was closer and still not the number that matters, which is per-name.
+
+**An accounting bug I introduced and caught here:** the first version dropped
+the integral count under a timing field, so an integral-valued timer vanished
+from both buckets (visible as a 90-vs-88 gap). Fixed to `integral += i`,
+matching the LP-dual carve-out; the diff above shows integral-valued unchanged
+at 224,823 either way.
+
+## Why this was safe to do now, when it was not before
+
+The ratchet was ALREADY green (NEW 0) before this change, so it cannot be the
+banned "make a red green by widening" move -- and no baseline file is touched,
+so it is not a `--rebaseline` either. It is a reclassification, exactly the
+shape `qou-xt5l` landed. I deferred it on 2026-08-25 while the ratchet was red
+for precisely this reason; #5763 draining the five is what made the moment.
+
+
+## CLOSED BY MAIN, NOT BY ME — and reopened for a measured residue (2026-08-25)
+
+A sibling landed the same carve-out first: `d9df357d69 feat(raw-float64 audit):
+carve out runtime-duration fields — 42 in 19 witnesses`. I had claimed this bean
+`in-progress` and implemented it in parallel anyway, without re-checking whether
+anyone had picked it up in the interim. Second duplication of the day, same root
+cause. **Claiming a bean is not the same as holding it.**
+
+**Their implementation is better than mine, and not marginally.** It sources the
+names from `qou_substrate.witness._EPHEMERAL_META_FIELDS` — the SAME mask the
+witness-comparison path already uses — where I hand-declared a frozenset inside
+the audit. Mine was a second list that would silently drift from the first; that
+is the exact defect class this corpus keeps re-finding. Theirs also covers
+`durationMs`, which mine missed, and carries the same guard case I set as the
+requirement (a real finding in the same witness still fires).
+
+Mine was dropped in the merge. No reconciliation needed.
+
+## RESIDUE — this is why the two counts differ, and it is real
+
+    main's carve-out : 42 fields / 19 witnesses
+    mine             : 88 fields / 31 witnesses
+
+The gap is **`wall_sec` and `wall_seconds`, which are NOT in
+`_EPHEMERAL_META_FIELDS`**. Measured: `wall_sec` 36 occurrences in 7 files,
+`wall_seconds` 5 in 5, 48 occurrences total (incl. the prefixed
+`free_chi_wall_sec`).
+
+Verified they are genuinely wall-clock, at the producer, not by name:
+
+    whitehead_recurrence_hunt_fast.py:65      f"{time.time() - t0:.3f}"
+    binding_canonical.py:296                  "wall_sec": wall
+    threerow_isospin_parity_probe.py:213      round(time.time() - t0, 1)
+    borromean_sublink_channel_sum_probe.py    f"{time.time() - t_start:.2f}"
+
+Every writer is `time.time()`/`perf_counter()` differencing. They pass every
+test main's own comment applies. So today they are BOTH still counted by the
+ratchet AND not stripped when witnesses are compared — the second half being
+the more annoying one, since it produces spurious diffs on every re-run.
+
+**The fix belongs at the single source** (`_EPHEMERAL_META_FIELDS`), never as a
+second list in the audit — that is precisely what makes main's version the
+better one. Note it is NOT a two-line change: `tools/qou-substrate/tests/
+test_ephemeral_mask_sync.py` guards this set, and AGENTS.md records that this
+very test was once green only because the generated `qou-mass/_internal` mirror
+was stale. So: add the names, re-run `sync-qou-mass-vendor.py`, and confirm the
+sync test is green for the right reason.
+
+Also worth a look while there: `free_chi_wall_sec` is a PREFIXED variant, which
+a name-set match cannot catch. Whether the mask should match by suffix is a real
+design question and the answer is probably no — a suffix rule is what this bean
+argued against for `*_sec` in the first place.
+
+NOT started here deliberately: it is a third scope item on a PR that already
+carries two, and I have collided twice today by starting work without
+re-checking. Left as a clean pickup with the measurement done.
