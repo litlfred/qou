@@ -101,8 +101,15 @@ In `B₃`, `Δ² = (σ₁σ₂)³` — 6 crossings, exponent sum 6, and it gener
 centre. Ito supplies his own calibration: **`(σ₁σ₂)⁴ ∈ B₃` has `[β]_D = 1`**
 (and `0` in `B₄` — the floor depends on the ambient `Bₙ`, which he flags).
 
-So **Theorem 2's `[β]_D ≥ 3` requires `β` to lie outside `(Δ^{−8}, Δ^{8})`** —
-to dominate `Δ⁸ = (σ₁σ₂)¹²`, a braid of **24 crossings**.
+So **Theorem 2's `[β]_D ≥ 3` requires `β` to lie outside `(Δ^{−8}, Δ^{8})`.**
+
+> **🛑 The crossing count that followed was mine and was wrong — corrected by
+> computation, below.** This read *"to dominate `Δ⁸ = (σ₁σ₂)¹²`, a braid of
+> **24 crossings**"*. `Δ⁸` is the *bracketing power* in Definition 1, not the
+> smallest braid of floor 3. Computed, **`Δ⁶ = (σ₁σ₂)⁹` already has floor 3**,
+> so the threshold is **18 crossings**. Direction and margin are unchanged —
+> 18 against a corpus maximum of 6 — but the number was an estimate presented
+> as a reading. See the addendum.
 
 Against that:
 
@@ -153,3 +160,60 @@ by braids longer than the corpus's. It does not derive a braid. Obstruction A
 remains open, and the honest next step is unchanged and mechanical: run handle
 reduction to get the actual floors, rather than reasoning from exponent sums as
 this addendum does.
+
+
+---
+
+## Addendum — the floors, computed
+
+Probe: [`meson_braid_dehornoy_floor_probe.py`](../../computations/meson/meson_braid_dehornoy_floor_probe.py)
+(witness `meson-braid-dehornoy-floor.witness.json`, 3 assertions, all passed).
+This closes the step the section above left open: *"a rigorous `[β]_D` needs
+handle reduction, which was not run."* It is run now.
+
+**Validated before use** against all three values Ito states himself —
+including the conjugation pair he uses to show the floor is *not* a conjugacy
+invariant, which pins the implementation on the subtle case rather than only
+the easy one:
+
+| braid | Ito states | computed |
+|---|---:|---:|
+| `(σ₁σ₂)⁴` | 1 | **1** |
+| `Δ²σ₁σ₂⁻¹` | 1 | **1** |
+| `Δ²σ₂σ₁⁻¹` (conjugate to the above) | 0 | **0** |
+
+### The corpus
+
+| braid | crossings | `[β]_D` | Thm 2 applies? |
+|---|---:|---:|---|
+| `𝔐 = (σ₁σ₂)²σ₂σ₁` — corpus meson | 6 | **1** | no |
+| `(σ₁σ₂⁻¹)²` — muon carrier | 4 | **0** | no |
+| `(σ₁σ₂⁻¹)³` — proton carrier | 6 | **0** | no |
+| `σ₁³` — trefoil | 3 | 0 | no |
+| `σ₁⁵` — T(2,5) | 5 | 0 | no |
+
+| scale | crossings | `[β]_D` |
+|---|---:|---:|
+| `Δ² = (σ₁σ₂)³` | 6 | 1 |
+| `Δ⁴ = (σ₁σ₂)⁶` | 12 | 2 |
+| **`Δ⁶ = (σ₁σ₂)⁹`** | **18** | **3** ← threshold |
+| `Δ⁸ = (σ₁σ₂)¹²` | 24 | 4 |
+
+**Two things this settles.**
+
+1. **My "24 crossings" was wrong; it is 18.** I read Definition 1's bracketing
+   power `Δ^{2m+2}` at `m = 3` as the braid that must be cleared, when it is
+   merely what brackets it. Corrected at both sites. The conclusion does not
+   move — the corpus maximum is 6 — but an estimate had been presented as a
+   reading of the definition.
+2. **`[𝔐]_D = 1`, so the contradiction is resolved by computation.** The
+   section above *inferred* that `𝔐` must have `[β]_D < 3`, because it is
+   pseudo-Anosov yet its closure was measured as T(2,5) with `Vol = 0`, which
+   Theorem 2 forbids. The inference was right; it is now a number.
+
+**Scope (a) — a hypothesis check.** Claimed: no braid word the corpus
+currently uses satisfies Ito's hypothesis, maximum floor 1 against a required
+3. Not claimed: that no candidate exists, that longer braids work, or anything
+about the mass law. And since the floor is **not** a conjugacy invariant —
+Ito's own example, reproduced above — these are statements about *these words*,
+not about the link types they close to. Obstruction A is untouched.
