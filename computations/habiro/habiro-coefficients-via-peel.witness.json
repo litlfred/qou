@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-25T22:39:00.202181+00:00",
-  "commitSha": "deeb37452efbbcba6e25a449258b6ee6dbf4d78e",
+  "computedAt": "2026-08-25T22:50:46.941171+00:00",
+  "commitSha": "7f86e7845d55288f070f3155e0b8b5ee7e70d4fb",
   "assertions": [
     {
       "name": "reconstruction_exact_proton",
@@ -98,6 +98,12 @@
       "passed": true
     },
     {
+      "name": "reconstruction_exact_helium-4",
+      "computed": "True",
+      "expected": "True",
+      "passed": true
+    },
+    {
       "name": "routes_agree_symbolically_proton",
       "computed": "0",
       "expected": "0",
@@ -113,10 +119,10 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 66219,
-  "computation": "habiro-coefficients-a3-via-peel",
-  "scriptFile": "habiro_coefficients_a3_via_peel.py",
-  "scriptHash": "535fac70a70b",
+  "durationMs": 104389,
+  "computation": "habiro-coefficients-via-peel",
+  "scriptFile": "habiro_coefficients_via_peel.py",
+  "scriptHash": "4dd5cb4d08bd",
   "scriptCommitSha": "unknown",
   "precisionMetadata": {
     "compute_dps": 70,
@@ -134,11 +140,11 @@
   },
   "invocation": {
     "argv": [
-      "computations/habiro/habiro_coefficients_a3_via_peel.py"
+      "computations/habiro/habiro_coefficients_via_peel.py"
     ],
-    "reproduce": "python3 -u computations/habiro/habiro_coefficients_a3_via_peel.py"
+    "reproduce": "python3 -u computations/habiro/habiro_coefficients_via_peel.py"
   },
-  "description": "A=3 Habiro cyclotomic coefficients (helium-3, tritium) obtained via markov_peel.tr_M_atomic instead of the Wedderburn partition sum. The partition route was measured at ~18.1 days for A=3; this one takes seconds. Gated on exact reproduction of the committed A<=2 values.",
+  "description": "Atomic Habiro cyclotomic coefficients for A=1..4 (through helium-4) obtained via markov_peel.tr_M_atomic instead of the Wedderburn partition sum. The partition route was measured at ~18.1 days for A=3; this one does A=3 in seconds and A=4 in under a minute. Gated on exact reproduction of every committed A<=2 value.",
   "contentBlock": "prop:markov-pair-z2",
   "data": {
     "results": {
@@ -220,8 +226,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 170,
-        "elapsed_cancel_ms": 25
+        "elapsed_trace_ms": 171,
+        "elapsed_cancel_ms": 24
       },
       "neutron": {
         "Z": 0,
@@ -417,8 +423,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 231,
-        "elapsed_cancel_ms": 712
+        "elapsed_trace_ms": 218,
+        "elapsed_cancel_ms": 561
       },
       "helium-3": {
         "Z": 2,
@@ -554,8 +560,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 2086,
-        "elapsed_cancel_ms": 2571
+        "elapsed_trace_ms": 1854,
+        "elapsed_cancel_ms": 2261
       },
       "tritium": {
         "Z": 1,
@@ -691,8 +697,159 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 4424,
-        "elapsed_cancel_ms": 5708
+        "elapsed_trace_ms": 3664,
+        "elapsed_cancel_ms": 4975
+      },
+      "helium-4": {
+        "Z": 2,
+        "N": 2,
+        "A": 4,
+        "n_strands": 12,
+        "tr_M_in_q": "(q**90 - 2*q**89 + 7*q**88 + 4*q**86 - 8*q**85 + 46*q**84 + 12*q**82 - 24*q**81 + 186*q**80 + 20*q**78 - 40*q**77 + 516*q**76 + 4*q**75 + 12*q**74 - 52*q**73 + 1114*q**72 + 20*q**71 - 94*q**70 - 24*q**69 + 1908*q**68 + 60*q**67 - 458*q**66 + 16*q**65 + 2720*q**64 + 100*q**63 - 1313*q**62 + 78*q**61 + 3259*q**60 + 100*q**59 - 2709*q**58 + 62*q**57 + 3465*q**56 + 4*q**55 - 4357*q**54 + 22*q**53 + 3451*q**52 - 132*q**51 - 5572*q**50 - 76*q**49 + 3604*q**48 - 220*q**47 - 5817*q**46 - 50*q**45 + 3997*q**44 - 156*q**43 - 5038*q**42 + 32*q**41 + 4374*q**40 - 8*q**39 - 3833*q**38 + 162*q**37 + 4173*q**36 + 84*q**35 - 2740*q**34 + 116*q**33 + 3282*q**32 + 64*q**31 - 2006*q**30 + 12*q**29 + 2060*q**28 - 4*q**27 - 1429*q**26 - 90*q**25 + 1039*q**24 - 8*q**23 - 906*q**22 - 76*q**21 + 442*q**20 + 20*q**19 - 447*q**18 - 38*q**17 + 179*q**16 + 40*q**15 - 160*q**14 - 8*q**13 + 76*q**12 + 24*q**11 - 33*q**10 - 6*q**9 + 29*q**8 + 8*q**7 - 2*q**6 - 4*q**5 + 8*q**4 + q**2 - 2*q + 1)/(3072*q**53 + 21504*q**51 + 64512*q**49 + 107520*q**47 + 107520*q**45 + 64512*q**43 + 21504*q**41 + 3072*q**39)",
+        "p_in_u": "u**180 - 2*u**178 + 7*u**176 + 4*u**172 - 8*u**170 + 46*u**168 + 12*u**164 - 24*u**162 + 186*u**160 + 20*u**156 - 40*u**154 + 516*u**152 + 4*u**150 + 12*u**148 - 52*u**146 + 1114*u**144 + 20*u**142 - 94*u**140 - 24*u**138 + 1908*u**136 + 60*u**134 - 458*u**132 + 16*u**130 + 2720*u**128 + 100*u**126 - 1313*u**124 + 78*u**122 + 3259*u**120 + 100*u**118 - 2709*u**116 + 62*u**114 + 3465*u**112 + 4*u**110 - 4357*u**108 + 22*u**106 + 3451*u**104 - 132*u**102 - 5572*u**100 - 76*u**98 + 3604*u**96 - 220*u**94 - 5817*u**92 - 50*u**90 + 3997*u**88 - 156*u**86 - 5038*u**84 + 32*u**82 + 4374*u**80 - 8*u**78 - 3833*u**76 + 162*u**74 + 4173*u**72 + 84*u**70 - 2740*u**68 + 116*u**66 + 3282*u**64 + 64*u**62 - 2006*u**60 + 12*u**58 + 2060*u**56 - 4*u**54 - 1429*u**52 - 90*u**50 + 1039*u**48 - 8*u**46 - 906*u**44 - 76*u**42 + 442*u**40 + 20*u**38 - 447*u**36 - 38*u**34 + 179*u**32 + 40*u**30 - 160*u**28 - 8*u**26 + 76*u**24 + 24*u**22 - 33*u**20 - 6*u**18 + 29*u**16 + 8*u**14 - 2*u**12 - 4*u**10 + 8*u**8 + u**4 - 2*u**2 + 1",
+        "shift": 0,
+        "denom_in_u": "3072*u**106 + 21504*u**102 + 64512*u**98 + 107520*u**94 + 107520*u**90 + 64512*u**86 + 21504*u**82 + 3072*u**78",
+        "denom_factored": "3072*u**78*(u**4 + 1)**7",
+        "deg_p_u": 180,
+        "habiro_coefficients": [
+          {
+            "m": 0,
+            "a_m": "3072",
+            "deg_a_m": 0,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 1,
+            "a_m": "-254976*u - 254976",
+            "deg_a_m": 1,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 2,
+            "a_m": "6572888*u**2 + 6657875*u + 6741845",
+            "deg_a_m": 2,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 3,
+            "a_m": "-79397375*u**3 - 81040855*u**2 - 82641834*u - 84326783",
+            "deg_a_m": 3,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 4,
+            "a_m": "535579457*u**4 + 550810226*u**3 + 566386306*u**2 + 582249201*u + 598465235",
+            "deg_a_m": 4,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 5,
+            "a_m": "-2226772819*u**5 - 2309646578*u**4 - 2395309509*u**3 - 2483053184*u**2 - 2573698489*u - 2666517252",
+            "deg_a_m": 5,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 6,
+            "a_m": "6062523367*u**6 + 6346475765*u**5 + 6641109386*u**4 + 6947109369*u**3 + 7264438730*u**2 + 7593806935*u + 7935181578",
+            "deg_a_m": 6,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 7,
+            "a_m": "-11219841650*u**7 - 11860962888*u**6 - 12532069748*u**5 - 13236323808*u**4 - 13972982345*u**3 - 14745386121*u**2 - 15552798885*u - 16398703297",
+            "deg_a_m": 7,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 8,
+            "a_m": "14419056437*u**8 + 15403225020*u**7 + 16446144920*u**6 + 17549868917*u**5 + 18718337894*u**4 + 19953790332*u**3 + 21260459181*u**2 + 22640816269*u + 24099393938",
+            "deg_a_m": 8,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 9,
+            "a_m": "-12981019470*u**9 - 14026162082*u**8 - 15147002428*u**7 - 16345823099*u**6 - 17629887541*u**5 - 19001816409*u**4 - 20469555021*u**3 - 22036080593*u**2 - 23710072343*u - 25494917979",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 10,
+            "a_m": "8166207191*u**10 + 8936516690*u**9 + 9771601239*u**8 + 10677312288*u**7 + 11657879101*u**6 + 12719866332*u**5 + 13868125262*u**4 + 15110030465*u**3 + 16451117662*u**2 + 17899653848*u + 19461944140",
+            "deg_a_m": 10,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 11,
+            "a_m": "-3539174497*u**11 - 3928827742*u**10 - 4356776055*u**9 - 4827832488*u**8 - 5344403513*u**7 - 5912008870*u**6 - 6533524046*u**5 - 7215273344*u**4 - 7960702522*u**3 - 8777025751*u**2 - 9668322334*u - 10642834060",
+            "deg_a_m": 11,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 12,
+            "a_m": "1026982465*u**12 + 1158822176*u**11 + 1306436226*u**10 + 1471030925*u**9 + 1654916732*u**8 + 1859592294*u**7 + 2087775815*u**6 + 2341308947*u**5 + 2623387023*u**4 + 2936261896*u**3 + 3283696264*u**2 + 3668400753*u + 4094794409",
+            "deg_a_m": 12,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 13,
+            "a_m": "-189995869*u**13 - 218634103*u**12 - 251420472*u**11 - 288572310*u**10 - 330976514*u**9 - 378932728*u**8 - 433514938*u**7 - 495121699*u**6 - 565056411*u**5 - 643838148*u**4 - 733033507*u**3 - 833331222*u**2 - 946602914*u - 1073737906",
+            "deg_a_m": 13,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 14,
+            "a_m": "20637717*u**14 + 24380780*u**13 + 28713234*u**12 + 33801516*u**11 + 39678766*u**10 + 46553771*u**9 + 54477497*u**8 + 63712162*u**7 + 74329245*u**6 + 86657019*u**5 + 100804502*u**4 + 117172238*u**3 + 135916543*u**2 + 157532718*u + 182234124",
+            "deg_a_m": 14,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 15,
+            "a_m": "-1139725*u**15 - 1397045*u**14 - 1699143*u**13 - 2071951*u**12 - 2508625*u**11 - 3043595*u**10 - 3670170*u**9 - 4434783*u**8 - 5324817*u**7 - 6402398*u**6 - 7660194*u**5 - 9171701*u**4 - 10932409*u**3 - 13037161*u**2 - 15485174*u - 18399777",
+            "deg_a_m": 15,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 16,
+            "a_m": "24246*u**16 + 30817*u**15 + 40037*u**14 + 50908*u**13 + 65602*u**12 + 82747*u**11 + 105495*u**10 + 132376*u**9 + 168463*u**8 + 209908*u**7 + 263830*u**6 + 327627*u**5 + 409221*u**4 + 505316*u**3 + 626829*u**2 + 770408*u + 951863",
+            "deg_a_m": 16,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 17,
+            "a_m": "-75*u**17 - 105*u**16 - 197*u**15 - 249*u**14 - 371*u**13 - 508*u**12 - 742*u**11 - 986*u**10 - 1366*u**9 - 1813*u**8 - 2654*u**7 - 3423*u**6 - 4680*u**5 - 6132*u**4 - 8277*u**3 - 10706*u**2 - 14168*u - 18226",
+            "deg_a_m": 17,
+            "integral": true,
+            "remainder_nonzero": false
+          },
+          {
+            "m": 18,
+            "a_m": "u**9 + u**8 + u**6 + 8*u**5 + 8*u**4 + 15*u**3 + 22*u**2 + 39*u + 53",
+            "deg_a_m": 9,
+            "integral": true,
+            "remainder_nonzero": false
+          }
+        ],
+        "all_integral": true,
+        "reconstruction_matches": true,
+        "elapsed_trace_ms": 24582,
+        "elapsed_cancel_ms": 18588
       }
     },
     "method": "markov_peel.tr_M_atomic + sp.cancel + to_u_polynomial + cyclotomic_expansion",
@@ -708,7 +865,7 @@
     ]
   },
   "caveats": [
-    "The A=3 coefficients are NOT cross-checked against an independent second computation -- there is none: the partition-sum route is the 18-day path this producer exists to avoid. Their warrant is that the SAME code path reproduces every committed A<=2 value exactly, and that the two routes are symbolically identical where both can run.",
+    "The A>=3 coefficients are NOT cross-checked against an independent second computation -- there is none: the partition-sum route is the 18-day path this producer exists to avoid. Their warrant is that the SAME code path reproduces every committed A<=2 value exactly, and that the two routes are symbolically identical where both can run.",
     "Convention: this inherits whatever p-n interface convention atom_canonical_crossings emits (kind 'averaged_weighted', the colour-weighted form). It does NOT inherit the colour-BLIND Rust gram.rs path -- see bean qou-cblw."
   ]
 }
