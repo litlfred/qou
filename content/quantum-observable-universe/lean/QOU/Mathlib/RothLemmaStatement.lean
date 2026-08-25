@@ -94,10 +94,13 @@ Here is what it is for.
 
 The induction step splits off the **last** variable in the ordering and its row cost is
 
-    t = (d_last + 1) / D₁,     D₁ a lower bound on the *other* variables' degrees.
+    t = d_last / D₁,     D₁ a lower bound on the *other* variables' degrees.
 
 `RothGrowth` makes the degrees decrease along the ordering, so every earlier degree is at
-least `ω` times the last one, and `t ≤ 2/ω`.  Choosing `ω ≥ 2/ε` gives `t ≤ ε`.
+least `ω` times the last one, and `t ≤ 1/ω`.  Choosing `ω ≥ 1/ε` gives `t ≤ ε`.
+
+⚠ The numerator was `d_last + 1` until correction 24, which cost a factor `2` here and
+nowhere in §13.  See `RothOperatorFamily.cost_sepW_le`.
 
 **This was the arc's own reconstruction, and §11 has since confirmed it.**  Property `Γ_m`'s
 first clause reads `max(s₂/s₁, …, s_M/s_{M−1}) ≤ t`, i.e. `s_h ≥ s_{h+1}/t` — which is
@@ -143,18 +146,22 @@ theorem rothGrowth_mul_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {
       (by show (k : ℕ) = ((j : ℕ) + 1) + ((k : ℕ) - ((j : ℕ) + 1)); omega)
   nlinarith [le_trans zero_le_one hω]
 
-/-- **`t ≤ 2/ω`** — the row cost of the induction step, bounded by the growth constant alone.
+/-- **`t ≤ 1/ω`** — the row cost of the induction step, bounded by the growth constant alone.
 
-`(d_last + 1)/d_earlier ≤ 2/ω`: the `+1` costs a factor `2` because `d_last ≥ 1`, and `ω` comes
-straight from `rothGrowth_mul_le`.
+`d_last/d_earlier ≤ 1/ω`, straight from `rothGrowth_mul_le`.  So `ω ≥ 1/ε` forces `t ≤ ε`.
 
-So `ω ≥ 2/ε` forces `t ≤ ε`.  ⚠ The `t` here is the *row cost*, a local quantity; do not
-confuse it with §11's parameter `t`, against which `ω = 1/t` — under that identification this
-bound reads `row cost ≤ 2t`, which is the shape §13 consumes. -/
+⚠ The `t` here is the *row cost*, a local quantity; do not confuse it with §11's parameter
+`t`, against which `ω = 1/t` — under that identification this bound reads `row cost ≤ t`,
+which is the shape §13 consumes, on the nose.
+
+⚠ This used to be stated with numerator `d_last + 1` and conclusion `2/ω`, the `2` being
+`1 + 1/d_last ≤ 2`.  Both are true, and the loose one is what the arc carried for eleven
+commits; §13's row term is `(μ-1)/r_{m-1}` with `μ ≤ n ≤ r_m + 1`, so the numerator the
+source uses is `r_m`, not `r_m + 1`.  Correction 24. -/
 theorem rothGrowth_row_cost_le {σ : Type*} {m : ℕ} {o : σ ≃ Fin m} {ω : ℚ} {d : σ → ℕ}
     (hω : 1 ≤ ω) (hg : RothGrowth o ω d) {j k : Fin m} (hjk : (j : ℕ) + 1 ≤ (k : ℕ))
     (hdk : d (o.symm k) ≠ 0) :
-    ((d (o.symm k) : ℚ) + 1) / (d (o.symm j) : ℚ) ≤ 2 / ω := by
+    (d (o.symm k) : ℚ) / (d (o.symm j) : ℚ) ≤ 1 / ω := by
   have hωpos : (0 : ℚ) < ω := lt_of_lt_of_le zero_lt_one hω
   have hdk1 : (1 : ℚ) ≤ (d (o.symm k) : ℚ) := by
     exact_mod_cast Nat.one_le_iff_ne_zero.mpr hdk

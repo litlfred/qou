@@ -4302,3 +4302,46 @@ conclusion given `hres` — which the two `Θ`-form halves now supply. What is m
    into `RothLemma4`'s existential.
 
 (2) is plumbing of a size this arc has done before; (1) is not plumbing.
+
+## Correction 24 — the `2t` was the arc's, not the source's
+
+The question above is **answered, and the answer is that the arc was wrong**. The `2` was pure
+slack, introduced in two places, neither of them in Mahler:
+
+1. **`cost_sepW_le`** bounded `(Dx i).length ≤ (i : ℕ)` by `r`, via `le_of_lt i.isLt`. But
+   `i : Fin r` gives `i ≤ r - 1`. One unit, thrown away for nothing.
+2. **`exists_degree_floor`** then had to carry the numerator `d + 1` (from `r ≤ d + 1`) and
+   bounded `(d+1)/⌈ωd⌉ ≤ 2/ω` — the factor `2` being `1 + 1/d ≤ 2`, the crude estimate at
+   `d = 1`, in a regime where `d` is large.
+
+§13's row term is `Σ_{h<m} j_{μh}/r_h ≤ (μ-1)/r_{m-1}`, numerator **`μ - 1`**. With `μ ≤ n` and
+`n ≤ r_m + 1` that is `≤ r_m/r_{m-1} ≤ t`. The `+1` in `n ≤ r_m + 1` cancels against the `-1` in
+`μ - 1`; the arc kept the first and dropped the second, and paid a factor of two for it.
+
+Fixed: `cost_sepW_le`'s numerator is `r - 1`; `exists_degree_floor` concludes `dl/D₁ ≤ 1/ω`;
+`exists_index_le_of_separated_le_degreeOf`'s row cost is `d/D₁`; and
+
+    exists_index_le_of_rothGrowth
+    index_le_of_rothGrowth_of_factor_bound
+    index_le_of_rothGrowth_of_rescaled_bounds
+    index_le_of_rothGrowth_split          (RothVariableSplit)
+
+all now read `θ ≤ 1/ω + 2·max(…)`, i.e. **`t` under `ω = 1/t`** — §13's own leading term.
+`rothGrowth_row_cost_le` likewise. All seven `#print axioms` clean; every module rebuilt with
+the `.olean` deleted.
+
+`rothConstant_step_lemma4`'s `θ ≤ s + 2w ⟹ c_{m+1} = 2c_m + 3` is therefore **fed the shape it
+was written for**, and `rothConstant m = 2^{m+1} - 3` stands as correction 11 pinned it.
+
+### What found it, and what did not
+
+Not a build, not `#print axioms`, not a witness — every one of these statements was *true* at
+`2/ω`, just weaker than needed, and a weaker true theorem is invisible to all three. What found
+it was reading §13 line by line and **comparing its row term against the arc's, symbol by
+symbol**. The `2` had survived eleven commits, one docstring that reasoned *from* it (and drew a
+false conclusion, retracted separately), and correction 17's own re-read of the same file.
+
+⚠ The retraction is worth its own note. A previous pass had already caught that
+`exists_index_le_of_rothGrowth`'s docstring drew a bad conclusion from the `2/ω` ("so `ω ≥ 2/ε`
+is what `ω(m, ε)` has to be") and rewrote the paragraph — correctly — while leaving the `2`
+itself unexamined. **Correcting an inference from a premise is not checking the premise.**

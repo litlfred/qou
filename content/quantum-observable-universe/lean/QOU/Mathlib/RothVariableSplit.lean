@@ -611,10 +611,10 @@ theorem index_le_of_rothGrowth_split {K : Type*} [Field K] [CharZero K] [Decidab
           ≤ ((εU : ℚ) : WithTop ℚ) ∧
         index (fun j => r * splitRight o d j) (splitRight o α) (mvGenWronskian Dy ψ)
           ≤ ((εV : ℚ) : WithTop ℚ))
-    (θ q : ℚ) (hθt : 2 / ω ≤ θ) (hq0 : 0 ≤ q)
+    (θ q : ℚ) (hθt : 1 / ω ≤ θ) (hq0 : 0 ≤ q)
     (hq : ((d (o.symm (Fin.last n)) : ℚ) + 1) * (εU + εV) ≤ q ^ 2 * (D₂ : ℚ))
     (hθ : ((θ : ℚ) : WithTop ℚ) ≤ index d α P) :
-    θ ≤ 2 / ω + 2 * max (εU + εV) q := by
+    θ ≤ 1 / ω + 2 * max (εU + εV) q := by
   classical
   have hPne : rename (splitOrder o) P ≠ 0 := fun h =>
     hP (rename_injective _ (splitOrder o).injective (by rw [h, map_zero]))
