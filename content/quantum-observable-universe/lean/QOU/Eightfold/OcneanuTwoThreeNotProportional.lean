@@ -1,5 +1,6 @@
 import Mathlib.Tactic
 import QOU.MathlibExt.QIntegerCanonical
+import QOU.Mass.QHookDimensionBalanced
 
 /-!
 # QOU.Eightfold.OcneanuTwoThreeNotProportional — the `N=2` and `N=3` weight ratios differ
@@ -74,9 +75,8 @@ theorem qb_eq_canonical (q : R) (n : ℕ) : qb q n = QOU.QInteger.qIntBal q n :=
 `QOU.Eightfold.HeckeBraidingNonSymmetric.double_braiding_eq_one_iff`, exactly
 the condition that the braiding is **not** symmetric. The `q`-integers are
 well-defined precisely on the non-symmetric locus. -/
-theorem sub_inv_ne_zero (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) : q - q⁻¹ ≠ 0 := by
-  intro h
-  exact hq2 (by field_simp at h; linear_combination h)
+theorem sub_inv_ne_zero (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) : q - q⁻¹ ≠ 0 :=
+  QOU.Mass.QHookDimensionBalanced.sub_inv_ne_zero hq hq2
 
 /-- `[2]_q = q + q⁻¹` — the convention-fixing case (AGENTS.md §7aa). -/
 theorem qb_two_eq (q : R) (hq : q ≠ 0) (hq2 : q ^ 2 ≠ 1) :
