@@ -7,6 +7,15 @@ user_invocable: true
 
 # Delivery Summary
 
+> **The links are the delivery; the report is not optional (2026-08-25).**
+> Everything below is *packaging* — restart command, viewer links, sibling
+> file list. It sits **alongside** the substantive report of what you found,
+> never in place of it. A summary that lists five links and says "done" has
+> delivered the artifacts and dropped the finding. What the report must carry
+> — claim, evidence, implications, options, and a recommendation marked as
+> judgement — is specified in **AGENTS.md §User accessibility → "Terse ≠
+> compressed"**. Read it before writing this section.
+
 After completing a feature or edit (i.e., after pushing changes), provide:
 
 ## 1. Server restart command
