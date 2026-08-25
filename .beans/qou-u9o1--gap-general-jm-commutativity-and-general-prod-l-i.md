@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-24T23:38:50Z
+updated_at: 2026-08-25T00:57:55Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -146,3 +146,54 @@ exhibits L_k as a palindrome around s_0^2 and makes the letter set explicit.
    argument does not extend; hook-word route now available but untried.
 2. General `prod L_i = Delta^2` — still n=2,3.
 3. The SPECTRAL half, untouched, and still the larger of the two.
+
+
+## 2026-08-25 — the problem is now ONE-PARAMETER, and the spectral base case is forced
+
+### The reduction (HeckeJucysMurphyReduction.lean)
+
+    jmRaw_commutator_step        [L_i, L_{j+1}] = s_j [L_i, L_j] s_j    for j > i
+    jmRaw_comm_of_adjacent       adjacent at i  =>  L_i commutes with every L_j, j >= i
+    jmRaw_one_comm_all           L_2 commutes with EVERY L_j            <-- full row
+    jmRaw_comm_all_of_all_adjacent   all adjacent => fully commutative
+
+`L_{j+1} = s_j L_j s_j` and L_i slides past both copies of s_j when j > i
+(far-commutation, already proved). So a FAR commutator is a CONJUGATE of the one a
+step closer — no cancellation, no Hecke relation needed. Iterating down to j = i+1:
+
+    [L_i, L_j] = 0 for all j > i   <=>   [L_i, L_{i+1}] = 0
+
+**The adjacent case is not merely the hard case, it is the ONLY case.** Everything
+else is conjugation. This collapses a two-parameter problem to one parameter, and it
+upgrades the earlier single instance: with `jmRaw_comm_adjacent_one` fed in, the whole
+i=1 ROW is now proved, not one entry.
+
+Caveat that matters: the reduction relates different j at FIXED i. It gives no
+purchase on varying i, so it does not touch i >= 2.
+
+### The spectral half, started (StandardTableauSpectral.lean)
+
+    mem_cells_pred_row      Young diagrams are closed upward in a column
+    StandardTableau         bijection + row/column increasing conditions
+    .sum_content            sum_content_of_equiv still applies to standard ones
+    .zero_row / .zero_at_corner   entry 0 sits at (0,0)
+    .zero_content           hence its content is 0
+
+**Why a bijection was not enough.** `KeystoneJucysMurphyTwist` models a tableau as a
+bare bijection `Fin n = cells l`. That is exactly right for `sum_content_of_equiv`
+(reindexing works for ANY bijection) but too weak for the spectral statement, which
+holds for STANDARD tableaux only. The seminormal representation is built on those.
+
+**The base case is FORCED, not chosen.** The spectral rule says L_i has eigenvalue
+q^{2.content(cell of i)}. At i=0 the recursion gives L_1 = 1, so the rule is only
+consistent if entry 0 has content 0. `zero_at_corner` proves entry 0 is at (0,0)
+exactly — from standardness plus the partition shape — so content = 0 and q^0 = 1.
+That is a consistency check on the assumed rule, discharged rather than assumed.
+
+### Still open
+
+1. adjacent commutativity for i >= 2 — now the ONLY commutativity question;
+2. general prod L_i = Delta^2 (still n=2,3);
+3. the spectral half at general i — the seminormal representation itself, still absent.
+
+The general-lambda twist remains CONDITIONAL. (3) is still the largest item.
