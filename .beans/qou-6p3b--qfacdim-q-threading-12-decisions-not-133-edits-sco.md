@@ -6,6 +6,7 @@ type: task
 priority: normal
 created_at: 2026-08-24T14:15:32Z
 updated_at: 2026-08-25T09:51:12Z
+updated_at: 2026-08-25T12:42:12Z
 ---
 
 ## Scoped 2026-08-24 — full analysis in docs/audits/2026-08-24-qfac-dimq-threading-scope.md
@@ -225,3 +226,48 @@ NOT MIGRATED, DELIBERATELY
   - block_swap_binding, gram_norm_binding_probe: UNKNOWN, >1500s. Need a real
     budget, not a verdict.
   - Remainder of Tranche A sequenced behind #5500.
+VERDICT 1 of 2 — block_swap_binding: UNKNOWN at 7200.33s (2026-08-25T12:40:30Z)
+
+Recorded in the checkpoint with elapsed seconds, so the next budget is chosen
+from a measurement rather than a guess. That was the point of the exercise; the
+UNKNOWN is a result, not a failure to get one.
+
+WHAT IT ESTABLISHES
+
+  - a measured lower bound: this producer needs > 2 h at 4He, n=12. Before, the
+    only figure was "exceeded 1500 s".
+  - the proton override took effect: the log's own header reads
+    q0 = 1.109978582751380807..., the proton pin, not the muon one.
+  - it is NOT memory-bound and was never at OOM risk. RSS 223 -> 558 MB, linear
+    at ~4.9 MB/min; host available was 14.7 GB. CPU 99.9 % with TIME == ELAPSED
+    throughout, so it was computing, not hung or blocked on I/O.
+  - the crash-safe restore works on a REAL 2-hour kill, not only in --selftest:
+    0 dirty witnesses afterwards, `git status` clean.
+
+WHAT IT DOES NOT ESTABLISH — and this is the part not to over-read
+
+Whether block_swap_binding WORKS at the proton pin. A timeout is silent on that.
+So it stays in ideal_muon: UNMEASURED and undecided, NOT held for cause. Those
+two have looked identical in my reporting before, and conflating them is exactly
+what produced the backwards aoperator_a5_crosscheck HOLD.
+
+THE COST SHAPE — a linear budget increase is probably the WRONG next move
+
+The producer's entire output in two hours was the header plus ONE row:
+
+    sigma block-perm   tr_M(W_atom.beta)   tr_M(W_free.beta)
+              id           2.89958832          12.60718540
+
+and the log was already 455 B — i.e. that row was complete — at 19 s. It was
+still 455 B at 7200 s.
+
+So: row 1 finished in <= 19 s; row 2 did NOT finish in the remaining 7181 s.
+That is a jump of > 378x between the first and second block permutation, which
+says the identity row has a shortcut the others do not, rather than that the
+whole table is uniformly slow. Doubling or quadrupling the budget is therefore a
+bet on an unmeasured constant. The cheaper next step is to instrument the
+producer to report per-row timing, or to establish the cost of ONE non-identity
+row on its own, before spending another multi-hour block.
+
+Not proposing that as work yet — recording it so the next agent does not simply
+re-run at 4 h and lose another half day.
