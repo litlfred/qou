@@ -1,11 +1,11 @@
 ---
 # qou-u9o1
 title: 'GAP: general JM commutativity and general prod L_i = Delta^2 (adjacent case is the blocker)'
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T08:20:52Z
+updated_at: 2026-08-25T08:47:16Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -759,3 +759,56 @@ gives commutation with GENERATORS; lifting that to commutation with A_i needs "c
 every letter => commutes with the word", an induction over `transp`. Every letter of A_i has
 index <= i-1 <= m-2, so it misses both m and m-1 and the hypotheses are available. That is
 the one remaining step, and it is structural bookkeeping, not new mathematics.
+
+
+## 2026-08-25 — COMMUTATIVITY IS PROVED. The blocker named in this bean's title is gone.
+
+`QOU.BraidKnot.Hecke.jmRaw_comm` : `L_i L_k = L_k L_i`, all `i, k`, unconditionally.
+Sorry-free, `#print axioms` clean. The adjacent case `[L_k, L_{k+1}] = 0` — the
+"blocker" in the title, which five direct attacks on `jmRaw` failed to reach — falls
+out with the rest. It was never adjacent-specific; it was a symptom of attacking the
+wrong family.
+
+### The chain, all landed on `claude/jm-adjacent-normal-forms-2026-08-25`
+
+    transposition expansion  A_k = d * sum_{l<k} T_(l,k)       addJM_eq_transp_sum
+    pair-swap law            sigma_j fixes T_(j,i)+T_(j+1,i)   sigma_comm_transp_pair
+    disjoint / below / far   term-by-term commutation          three lemmas
+    Mathas 3.24(i)           sigma_j commutes with A_i         sigma_comm_addJM
+    Jucys centrality         sigma_j commutes with S_m, j!=m   sigma_comm_partialSum_ne
+    word lifting             letters -> whole word             comm_addJM_of_comm_sigma
+    telescoping              A_i A_{m+1} = A_{m+1} A_i         addJM_comm_of_le
+    additive commutativity   all i,k, EVERY d                  addJM_comm
+    identification           L_k = 1 + A_k at d = q - q^-1     jmRaw_eq_one_add_addJM
+    MULTIPLICATIVE           L_i L_k = L_k L_i                 jmRaw_comm
+
+### The two things worth remembering
+
+**The identification was not planned, and it is the payoff for leaving `d` free.**
+`sigma_k (1 + A_k) sigma_k = h*sigma_k + 1 + sigma_k A_k sigma_k` by the Hecke
+relation, which is `1 + A_{k+1}` exactly when `d = h = q - q^-1`. The value is FORCED
+by the recursion. Had `d` been pinned to Mathas's `q^-1` at the outset this would not
+have been visible.
+
+**The middle case of 3.24(i) cannot be done term-by-term.** Neither `T_(j,i)` nor
+`T_(j+1,i)` commutes with `sigma_j` alone — only their SUM does (measured, then
+proved). That retrospectively explains why all five earlier "find the right property
+of N" leads died: there is no such property, because the phenomenon is not a property
+of a single element.
+
+### Independent confirmation
+
+`computations/hecke/jm_commutativity_confirmation_probe.py` — faithful regular rep of
+H_4/H_5, exact Fractions, q in {2,3,5/2}. All three identities True. Both controls
+fire: the L's are NOT central (so the True is not a broken comparison), and the
+identification FAILS at d = 1 (so the probe can see d).
+
+### What is still open — this bean stays open for it
+
+1. **`prod L_i = Delta^2` for general n.** Only n = 2, 3 are proved. The needed
+   braid identity is `delta_{n+1}^{n+1} = delta_n^n * L_{n+1}` with
+   `delta_n = sigma_0 ... sigma_{n-2}`; commutativity does NOT supply it (it makes the
+   product order-independent, which is a different statement).
+2. **The spectral half of `JucysMurphySpectrum`** — the seminormal representation
+   itself. This is the larger remaining item and the one that would actually discharge
+   the general-lambda twist. The general-lambda twist REMAINS CONDITIONAL.
