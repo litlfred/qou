@@ -24,9 +24,15 @@ NO FLOAT (AGENTS.md, probes are not exempt): every entry is an int or a
 Fraction; the rank is computed by exact Gaussian elimination over Q.  Nothing
 here is approximated, so nothing here is reported "to N digits".
 
-Emits no witness: it establishes a combinatorial identity and a direction, not a
-number any consumer reads.
+PART 2 (added 2026-08-25) tests the surviving route.  The within-class reading
+dies on direction; the ACROSS-class reading -- a sum over classes at fixed
+degree rather than a degree within one class -- is untouched by that, so it gets
+its own test against the one invariant it must satisfy.
+
+Emits no witness: it establishes a combinatorial identity, a direction, and a
+growth rate -- not a number any consumer reads.
 """
+from math import comb
 from itertools import permutations
 from fractions import Fraction
 
@@ -116,7 +122,79 @@ def main() -> int:
     print("both indexings, chi_lambda evaluated at the class of rho(beta).  So the")
     print("two index sets meet where the corpus already works; do not read the")
     print("shared word 'partition' as an identification.")
+    print()
+    across_class()
     return 0
+
+
+def partitions_by_partcount(n):
+    """dict: #parts -> number of partitions of n with that many parts."""
+    out = {}
+
+    def rec(rem, mx, k):
+        if rem == 0:
+            out[k] = out.get(k, 0) + 1
+            return
+        for p in range(min(rem, mx), 0, -1):
+            rec(rem - p, p, k + 1)
+
+    rec(n, n, 0)
+    return out
+
+
+def across_class():
+    """PART 2 -- the surviving route: sum ACROSS classes at fixed degree.
+
+    rank HH_j = sum_{lam |- n} C(#parts(lam) - 1, j),  since dim t_w = c(w) - 1
+    and Omega^j of a d-dimensional space is free of rank C(d, j).
+    """
+    print("=" * 68)
+    print("PART 2 -- the ACROSS-class route (the one PART 1 leaves open)")
+    print("=" * 68)
+    print()
+    print("  rank HH_j  =  sum_{lam |- n} C(#parts(lam) - 1, j)")
+    print()
+    print(f"{'n':>3} {'#classes':>9} {'top deg':>8}  {'rank at j = 0..5':<40}")
+    for n in range(2, 16):
+        pc = partitions_by_partcount(n)
+        R = [sum(c * comb(k - 1, j) for k, c in pc.items()) for j in range(6)]
+        print(f"{n:>3} {sum(pc.values()):>9} {max(pc)-1:>8}  {str(R):<40}")
+
+    print()
+    print("OBSERVATION 1 -- the degree-0 piece reduces to the corpus's centre.")
+    print("rank HH_0 = #classes = p(n), and the corpus's Wedderburn centre is")
+    print("indexed by irreps, also p(n).  So the affine object RESTRICTS in degree")
+    print("0 to exactly the per-lambda form the corpus already uses, and adds")
+    print("degrees 1..n-1 on top.  That is the 'graded home' shape wanted.")
+    print("CAUTION: p(n) counts classes and irreps BY DEFINITION, so this is a")
+    print("count agreement, not a structural identification.  It shows the")
+    print("reduction is dimensionally consistent; it proves nothing more.")
+    print()
+    print("OBSERVATION 2 -- the route PASSES the invariant that killed PART 1.")
+    print("prop:jet-filtration-binding-extensive needs the number of available")
+    print("graded pieces to GROW with the body-order cutoff A.  The atom word")
+    print("sits in H_{3A}(q), so n = 3A and the top degree is 3A - 1:")
+    print()
+    print(f"{'A':>3} {'n = 3A':>7} {'top degree':>11} {'body orders needed':>19}")
+    for A in range(1, 9):
+        print(f"{A:>3} {3*A:>7} {3*A-1:>11} {max(0, A-1):>19}")
+    print()
+    print("3A - 1 >= A - 1 for every A, and both grow linearly.  So the across-")
+    print("class grading has room for the body-order series where the within-")
+    print("class degree did not.  ROOM IS NOT A MAP: no assignment of body order")
+    print("to degree is exhibited here, and finding one is the open work.")
+    print()
+    print("OBSERVATION 3 -- the real blocker is structural, not numerical.")
+    print("Solleveld's theorem is about the AFFINE Hecke algebra.  The corpus's")
+    print("atom word lives in the FINITE H_{3A}(q), which is semisimple at")
+    print("generic q -- so for it the whole grading COLLAPSES to degree 0 and")
+    print("none of the above exists.  Using any of this requires the inductive")
+    print("limit, and markov-trace-inductive-limit.lean says of exactly that:")
+    print("  \"The full operator-theoretic construction (von Neumann inductive")
+    print("   limit on the infinite-dim affine Hecke algebra) is the open R&D")
+    print("   content.\"")
+    print("So the route survives every test applied here and then waits on a")
+    print("bridge the corpus has already marked open.  That is where it stands.")
 
 
 if __name__ == "__main__":

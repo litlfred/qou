@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T21:16:54Z
-updated_at: 2026-08-25T22:01:16Z
+updated_at: 2026-08-25T22:12:00Z
 ---
 
 `arxiv-1108.5286v3` (Solleveld, *Hochschild homology of affine Hecke algebras*)
@@ -174,3 +174,50 @@ barrier.
 one: whether `sum_w` over classes with a fixed cycle count reproduces a
 body-order term. That is a different calculation and this probe says nothing
 about it.
+
+
+## The ACROSS-class route: survives every test here, then waits on an open bridge
+
+Probe PART 2, same file, same exactness discipline (ints and `comb` only).
+
+    rank HH_j  =  sum_{lam |- n} C(#parts(lam) - 1, j)
+
+since `dim t_w = c(w) - 1` (PART 1) and `Omega^j` of a d-dimensional space is
+free of rank `C(d, j)`.
+
+     n  #classes  top deg  rank at j = 0..5
+     4         5        3  [5, 7, 4, 1, 0, 0]
+     8        22        7  [22, 64, 94, 92, 63, 29]
+    12        77       11  [77, 322, 711, 1113, 1350, 1292]
+    15       176       14  [176, 892, 2421, 4741, 7398, 9484]
+
+**1. Degree 0 reduces to the corpus's centre.** `rank HH_0 = #classes = p(n)`,
+and the Wedderburn centre is indexed by irreps, also `p(n)`. So the affine object
+RESTRICTS in degree 0 to exactly the per-lambda form the corpus already uses, and
+adds degrees `1..n-1` on top — the "graded home" shape wanted. **Caution kept in
+the probe output:** `p(n)` counts classes and irreps BY DEFINITION, so this is a
+count agreement showing the reduction is dimensionally consistent, not a
+structural identification. Do not cite it as one.
+
+**2. It PASSES the invariant that killed the within-class reading.**
+`prop:jet-filtration-binding-extensive` needs the number of graded pieces to GROW
+with the cutoff A. The atom word sits in `H_{3A}(q)`, so `n = 3A` and the top
+degree is `3A - 1`, against `A - 1` body orders needed. `3A - 1 >= A - 1` for
+every A and both grow linearly. **ROOM IS NOT A MAP** — no assignment of body
+order to degree is exhibited, and finding one is the open work.
+
+**3. The real blocker is structural, and the corpus already named it.**
+Solleveld's theorem is about the AFFINE algebra. The corpus's atom word lives in
+the FINITE `H_{3A}(q)`, semisimple at generic q — so for it the whole grading
+COLLAPSES to degree 0 and none of the above exists. Using any of this requires
+the inductive limit, and `markov-trace-inductive-limit.lean` says of exactly
+that construction, verbatim:
+
+> "The full operator-theoretic construction (von Neumann inductive limit on the
+> infinite-dim affine Hecke algebra) is the open R&D content."
+
+**So the honest status of this bean:** the lead is not refuted and not confirmed.
+It clears the direction test, the growth test and the degree-0 reduction, and
+then stops at a bridge the corpus has independently marked open. Anyone picking
+it up should know the mathematical work is not the obstacle — the missing object
+is.

@@ -1,8 +1,8 @@
 {
   "engine": "python",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T19:06:17.883596+00:00",
-  "commitSha": "ff7e968871813eb34c4f91e332d3f4ec7b38607a",
+  "computedAt": "2026-08-25T22:16:28.196425+00:00",
+  "commitSha": "8b98d6db0c9c887fb7ff33c87194cca2626bdaac",
   "assertions": [
     {
       "name": "no_missing_provenance",
@@ -14,7 +14,7 @@
     }
   ],
   "allPassed": false,
-  "durationMs": 4,
+  "durationMs": 7,
   "computation": "witness-provenance-audit",
   "scriptFile": "witness_provenance_audit.py",
   "scriptHash": "3cb5a9cd9ee0",
@@ -58,14 +58,14 @@
   },
   "data": {
     "counts": {
-      "total_scanned": 2760,
-      "prov_ok": 2337,
+      "total_scanned": 2766,
+      "prov_ok": 2343,
       "prov_audit_exempt": 80,
       "prov_exempt_no_reader": 244,
       "prov_exempt_acknowledged": 3,
       "prov_missing": 96,
       "prov_parse_error": 0,
-      "completeness_ratio": "0.965217391304347826086956521739130434782608695652173913043478"
+      "completeness_ratio": "0.965292841648590021691973969631236442516268980477223427331887"
     },
     "by_verdict": {
       "PROV_OK": [
@@ -2630,6 +2630,10 @@
           "missing_fields": []
         },
         {
+          "witness": "threerow-isospin-parity.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "threerow-qcross-trend.witness.json",
           "missing_fields": []
         },
@@ -2962,6 +2966,10 @@
           "missing_fields": []
         },
         {
+          "witness": "em-linking-alpha-scaling-provenance.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "em-linking-borromean-acn.witness.json",
           "missing_fields": []
         },
@@ -2986,7 +2994,15 @@
           "missing_fields": []
         },
         {
+          "witness": "em-linking-kappa-regime-reachability.witness.json",
+          "missing_fields": []
+        },
+        {
           "witness": "em-linking-mirror-series.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "em-linking-o2-neutralised-kernel.witness.json",
           "missing_fields": []
         },
         {
@@ -4271,6 +4287,10 @@
         },
         {
           "witness": "mdl-bit-count.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "meson-braid-syllable-bound.witness.json",
           "missing_fields": []
         },
         {
@@ -9299,6 +9319,10 @@
         },
         {
           "witness": "wedderburn-lp-ew-wiring.witness.json",
+          "missing_fields": []
+        },
+        {
+          "witness": "wedderburn-mass-table-z1-20.witness.json",
           "missing_fields": []
         },
         {
