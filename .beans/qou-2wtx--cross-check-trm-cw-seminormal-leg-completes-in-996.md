@@ -523,3 +523,40 @@ it.** Under the C peel the gap was 0.7977 — also red, also 12/12 divergent. Th
 regeneration changed a wrong-convention red into a correct-convention red, and
 the residual is now a real question about the mathematics rather than about
 bookkeeping.
+
+## RETRACTION (2026-08-24, later the same day)
+
+The section above concludes: *"every bookkeeping explanation is closed, and the
+widening is REAL: two current, convention-D routes to tr_M disagree by 0.92 on
+12 of 12 pair-tests."* **That conclusion is withdrawn.** The widening is neither
+real nor a disagreement between two routes to the same quantity.
+
+`cross_check_trM_wenzl_lr_1ppb` compares `|tr_M(β_canonical(Z, N))|` against
+`|tr_M(β_p ⊗ β_n ⊗ …)|`. Those are **different objects**: the Wenzl LR identity
+holds for tensor-product (disjoint) braids, and the canonical atomic braid is not
+one — it carries inter-nucleon arc crossings the disjoint product omits.
+`rho_k_full_via_wenzl_lr.py` states this in its docstring, dated **2026-05-17**,
+including the expected magnitude (*"~80 % relative on D, T, ³He"*). A `1e-9`
+tolerance was being applied across a known inequality.
+
+Closed on `main` by `7823271e66` (bean `qou-u6n2`, a different session), which
+marks those pair-types `compares_same_object: false` and excludes them from
+`any_diverge`.
+
+**What my reasoning did wrong.** The two candidate readings I formed — C-era leg,
+stale witness — were both genuinely refuted by measurement, and I treated
+"refuted every explanation I thought of" as "the effect is real." That is an
+argument from exhaustion of *my own* hypothesis list, and the corpus-grep
+checklist exists precisely because that list is not the corpus. I ran the
+checklist on the cross-check's identifiers and never on the producer supplying
+the outlying leg; `sed -n '1,55p'` on that file answers it in one command.
+
+The two false positives recorded above (the degraded re-run with the Rust binary
+absent; the unmasked `duration_ms_total`) stand as recorded — they were errors in
+the staleness test, and they are what made the "everything else is closed" framing
+feel earned.
+
+**Unaffected.** The seminormal-leg root cause (191 % → 6.7e-8), the two-stacked-
+defects chain, and the peel regeneration itself are all independent of this and
+stand. `main` reproduced the identical regenerated values from a different
+diagnosis and a different environment.

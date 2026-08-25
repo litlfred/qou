@@ -31,28 +31,44 @@ producer and `_deprecated`.
 |---|---|---|---|
 | `cross_check_trM_cw_seminormal_leg` | 7 % – **191 %** divergence | **6.7e-8** | **FIXED** — the reason for this change |
 | `cross_check_trM_1ppb` | pass, worst \|Δ\| 4.54e-50 | **byte-identical** | **NEUTRAL** — does not consume the affected values |
-| `cross_check_trM_wenzl_lr_1ppb` | divergent 12/12, max \|Δ_rel\| **0.7977** | divergent 12/12, max \|Δ_rel\| **0.9223** | ⚠ **WORSE** — see below |
+| `cross_check_trM_wenzl_lr_1ppb` | divergent 12/12, max \|Δ_rel\| **0.7977** | divergent 12/12, max \|Δ_rel\| **0.9223** | **SCOPE** — a known inequality of quantities, not a precision result; see below |
 
-### 🛑 `cross_check_trM_wenzl_lr_1ppb` degrades, and it must not be glossed
+### `cross_check_trM_wenzl_lr_1ppb` degrades — CLOSED: it is a scope difference
 
-Its worst relative divergence rises **0.7977 → 0.9223**. Stated plainly rather
-than buried: this change makes one consumer's numbers *worse*.
+Its worst relative divergence rises **0.7977 → 0.9223**. Stated plainly: this
+change makes one consumer's numbers *worse*.
 
-Two things keep it from being a regression in the ordinary sense, and a reviewer
-should weigh both rather than take the first:
+**This is not a precision failure, and the two readings I originally offered
+were both wrong.** The checker applies a `1e-9` tolerance across a **known inequality of
+quantities**. `rho_k_full_via_wenzl_lr.py` says so in its own docstring, dated
+2026-05-17:
 
-1. **It was already red.** 12 of 12 pair-tests diverge *before* the swap. Nothing
-   goes green → red here; a red gets redder. (Main's `9c87a54569` had just
-   corrected this checker's pair-counting — "3 of 3 diverging was really 12 of
-   12" — so its redness is freshly and independently established.)
-2. **It compares the peel against the Wenzl/LR route**, a third leg not audited
-   here. If that leg is *also* C-era, moving the peel to D would widen the gap
-   exactly as observed, and the fix is to migrate that leg too — not to hold the
-   peel back.
+> the Wenzl LR identity … applies to **tensor-product (disjoint) braids** only.
+> The canonical atomic braid `atom_canonical_crossings(Z, N)` is **not** a tensor
+> product — it includes inter-nucleon arc crossings. This script therefore
+> computes `|tr_M(β_p ⊗ β_n ⊗ …)|`, **not** `|tr_M(β_canonical(Z, N))|`. The two
+> diverge by ~80 % relative on D, T, ³He.
 
-**Not established:** which of those it is. Deciding it needs the Wenzl/LR leg's
-convention determined the same way the seminormal leg's was (inject both weight
-sets, see which reproduces). That work is **not** done here.
+So the ~0.9 is the inter-nucleon crossings the disjoint product omits — a
+difference of *object*, not of *convention*, *pin*, or *staleness*. Moving the
+peel to D changes the canonical side of a comparison whose two sides were never
+equal; the gap moving is expected and carries no information about either leg's
+correctness. `atomic_mass_via_rho_k` layer 4 was already disabled over this.
+
+Closed on `main` by `7823271e66` (bean `qou-u6n2`), which marks those pair-types
+`compares_same_object: false`, gives them a `scope_note`, and excludes them from
+`any_diverge` — leaving the genuinely-comparable pair asserted at
+`max |Δ_rel| = 4.4e-50`.
+
+**What I got wrong.** I offered two candidate readings — that the Wenzl/LR leg is
+C-era, or that its witness is stale — and refuted each by measurement, the second
+only after two false positives of my own (a degraded re-run with the Rust binary
+absent, then an unmasked `duration_ms_total`). Having closed both, I concluded the
+disagreement was *real mathematics*. It was neither reading and it was not real:
+the answer was in the producer's docstring the whole time. I ran the corpus-grep
+checklist on the cross-check's identifiers and not on the producer supplying the
+outlying leg. `sed -n '1,55p'` on that file would have ended this before it
+started.
 
 ### Not measured — 9 consumers
 
@@ -84,3 +100,32 @@ one consumer's already-red gap wider, and the second is diagnosable from here.
    finds the first flip, not the dominant cause.
 3. Hidden 16 days because the producer needs 996 s against a 300 s sweep budget,
    so its verdict read `TIMEOUT`, not `FAIL`.
+
+## The regeneration was reproduced independently — on a different environment
+
+`main` regenerated the same witness from the same producer 30 minutes after this
+branch did (`80e6948ecc`, bean `qou-u6n2`, from a different session), reaching it
+by a different diagnosis: that the peel witness had not re-run since its bridge
+was regenerated on 2026-08-22. Both diagnoses point at the same stale reference
+and prescribe the same fix.
+
+Comparing the two committed witnesses leaf-by-leaf: **20 differing leaves, of
+which 17 are `elapsed_*` timings and the remaining 3 are `computedAt` and two
+`environment` fields.** Not one `tr_M` value differs, at 50 digits.
+
+The two environments were *not* the same:
+
+| field | this branch | `main` |
+|---|---|---|
+| `environment/mpmath` | 1.4.1 | 1.3.0 |
+| `environment/pyhecke_native_build` | `c7ea7ebb0d76c4e2` | `b843d058d29dcec6` |
+
+So the six atomic `tr_M` values are reproducible across two mpmath minor versions
+and two native-extension builds. That is a stronger statement than either run
+could make alone, and it is the one part of this branch `main` did not already
+have: `main` carries the numbers, this doc carries the evidence that they do not
+depend on the machine that produced them.
+
+Because `main` landed the identical values first, the witness change on this
+branch is a no-op after rebase. What remains is this audit — the consumer survey,
+the root-cause chain, and the cross-environment check above.
