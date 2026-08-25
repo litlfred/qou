@@ -34,7 +34,15 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent.parent
 CONTENT = REPO / "content"
-CITE = re.compile(r"[A-Za-z0-9_.\-]+\.witness\.json")
+# A cited name may contain an INTERNAL SPACE -- a real corruption class in
+# this corpus (a hyphen replaced by a space inside a filename), which also
+# breaks the markdown link, since an unescaped space terminates a link target.
+# Matching only [A-Za-z0-9_.-]+ silently captures the fragment AFTER the space
+# and reports e.g. `evaluation.witness.json` for a citation that actually reads
+# `he4-sdp-compositional-canonical evaluation.witness.json` -- an under-report
+# that turns a corrupt citation into a plausible-looking missing one. So allow
+# spaces, then flag them.
+CITE = re.compile(r"[A-Za-z0-9_.\-]+(?:[ ][A-Za-z0-9_.\-]+)*\.witness\.json")
 
 
 def git(*args) -> str:
@@ -67,8 +75,10 @@ def main() -> int:
     on_disk = {p.name for p in REPO.rglob("*.witness.json")
                if ".git" not in p.parts}
 
-    resolves, removed, never = [], [], []
+    resolves, removed, never, spaced = [], [], [], []
     for name in sorted(cites):
+        if " " in name:
+            spaced.append(name)
         if name in on_disk:
             resolves.append(name)
         elif ever_existed(name):
@@ -84,6 +94,19 @@ def main() -> int:
     print(f"  RESOLVES (file present)                     : {len(resolves)}")
     print(f"  REMOVED  (absent, but existed in history)   : {len(removed)}")
     print(f"  NEVER EXISTED (absent, never added)         : {len(never)}")
+    print(f"  of which CORRUPT (internal space in the name): {len(spaced)}")
+
+    if spaced:
+        print("\n--- CORRUPT: internal space inside the cited filename ---")
+        print("  A space cannot occur in these filenames, and inside a markdown")
+        print("  link target it also truncates the URL. Each of these was checked")
+        print("  BOTH as written and with the space repaired to a hyphen; none")
+        print("  resolves either way, so the intended target is UNKNOWN and must")
+        print("  not be guessed.")
+        for name in spaced:
+            print(f"  {name!r}")
+            for blk in sorted(cites[name]):
+                print(f"      cited by  {blk}")
 
     for label, group in (("NEVER EXISTED", never), ("REMOVED", removed)):
         if not group:
