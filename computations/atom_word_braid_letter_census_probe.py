@@ -45,6 +45,14 @@ from mass_at_3A_proper import atom_braid_word_3A  # noqa: E402
 from pyhecke.gram import h as h_val  # noqa: E402
 
 import mpmath as mp  # noqa: E402
+from _precision import set_compute_dps  # noqa: E402
+
+# The classify() ratios below are mpmath constructions, so the module must not
+# compute at mpmath's default dps=15 (never-raises-dps ratchet). The margins
+# here are wide -- d/h lands at 0, -1, -1/2 or -(1/2 - delta/4), tested against
+# 1e-9 -- so no verdict in this file moves. Raised anyway: the gate is about
+# never computing at 15, not about whether this particular file got lucky.
+set_compute_dps()
 
 ISOTOPES = [("2H", 1, 1), ("3He", 2, 1), ("4He", 2, 2)]
 

@@ -1,8 +1,8 @@
 {
   "engine": "python-exact",
   "engineVersion": "python 3.11.15",
-  "computedAt": "2026-08-25T21:27:58.412422+00:00",
-  "commitSha": "dde470bb4e9507346f6c958a0fe20d02d14b1227",
+  "computedAt": "2026-08-25T21:50:37.007191+00:00",
+  "commitSha": "43cfeee08cc6d33eb3cd1d36d0d9283393595cd3",
   "assertions": [
     {
       "name": "averaged_letter_count_is_2A_plus_1",
@@ -33,11 +33,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 14,
+  "durationMs": 9,
   "computation": "atom-word-braid-letter-census",
   "scriptFile": "atom_word_braid_letter_census_probe.py",
-  "scriptHash": "27094c68b323",
-  "scriptCommitSha": "unknown",
+  "scriptHash": "b0df0298c92e",
+  "scriptCommitSha": "3f057ab89ea120a45a049c3dc570538e755e3504",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,

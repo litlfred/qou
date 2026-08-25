@@ -5,8 +5,8 @@
   "data": {
     "counts": {
       "STALE": 228,
-      "canonical": 169,
-      "proton-pin": 1676,
+      "canonical": 170,
+      "proton-pin": 1679,
       "unknown": 25
     },
     "stale_total": 228,
@@ -6497,7 +6497,7 @@
       {
         "file": "computations/deltalambda/ylambda-sign-content-threshold.witness.json",
         "field": "q0Value",
-        "value": "1.10997858275138080759166909561",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -10835,6 +10835,13 @@
         "ppb_vs_canonical": -1.792806032488518e-08
       },
       {
+        "file": "computations/probes/gram-norm-binding-probe.witness.json",
+        "field": "q0Value",
+        "value": "1.10997859555733471989976322048322502665620840878015368660798114614493",
+        "class": "canonical",
+        "ppb_vs_canonical": 0.0
+      },
+      {
         "file": "computations/probes/gram-qtrace-hutchinson-probe.witness.json",
         "field": "parameters.q0",
         "value": "1.1099785827513808",
@@ -12364,6 +12371,13 @@
         "file": "computations/qbeta/qbeta-F-coordinate-bridge-audit.witness.json",
         "field": "data.q0",
         "value": "1.10997858275138080759166909561076887987449912187357873607281",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/qbeta/qbeta-F-coordinate-bridge-audit.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
         "ppb_vs_canonical": -11.537117889987831
       },
@@ -14497,6 +14511,20 @@
       },
       {
         "file": "computations/wedderburn-lp-ew-wiring.witness.json",
+        "field": "q0Value",
+        "value": "1.1099785827513808075916690956107688798744991218736",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117889987831
+      },
+      {
+        "file": "computations/wedderburn-mass-table-z1-20.witness.json",
+        "field": "parameters.q0",
+        "value": "1.1099785827513808000",
+        "class": "proton-pin",
+        "ppb_vs_canonical": -11.537117896827304
+      },
+      {
+        "file": "computations/wedderburn-mass-table-z1-20.witness.json",
         "field": "q0Value",
         "value": "1.1099785827513808075916690956107688798744991218736",
         "class": "proton-pin",
