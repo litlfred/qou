@@ -1,11 +1,11 @@
 ---
 # qou-ulxr
 title: ylambda-sign-content-threshold witness asserts PASS on main; the producer now returns FAIL
-status: todo
+status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T12:15:31Z
-updated_at: 2026-08-25T12:16:05Z
+updated_at: 2026-08-25T18:59:52Z
 ---
 
 CONFIRMED 2026-08-25, measured on main. Audit:
@@ -56,3 +56,31 @@ no crossing). Their re-run assertions all PASS, because they check internal
 consistency rather than whether the object is nonzero, so a naive regeneration
 lands a green witness with vacuous content. Whoever drains those should decide
 between re-running and retiring, not default to re-running.
+
+
+## RESOLVED 2026-08-25 — PR #5780 (pending merge)
+
+Both dispositions were evaluated by measurement rather than judgement, and option 2
+(restate for the two-row stratum) **does not exist**. Two independent reasons:
+
+1. **The threshold lands exactly ON the content lattice under D** — the reason this bean
+   did not have, and logically prior to the `y_λ = 0` one. `r = 2` ⇒ `Q^r = Q²` ⇒
+   `c* = −2` EXACTLY, an attainable content (row 3, col 1 of every `ℓ ≥ 3` diagram), where
+   `Q²·Q^{−2} = 1` exactly. Measured margin **0.0, not small**, at every `n = 3..12`. That
+   is `wenzl_sign`'s `hnd` hypothesis failing — its docstring: *"without which the parity
+   is genuinely undefined, not merely hard to prove."* Under C, `c* ≈ −2.5995` is off-lattice
+   and the rule is well-posed.
+2. **Vacuous where still well-posed** — min content on `ℓ ≤ 2` is `−1`, threshold needs
+   `≤ −3`: 0 deep cells at every `n = 2..12`, all survivors positive. The discriminating
+   power required `ℓ ≥ 4` (58 of 70 annihilated blocks at n=12 have `P > 0`; 0 of 7
+   survivors).
+
+Producer rewritten as a retirement record — asserts the four D-frame facts, keeps the
+C measurement in `convention_c_record` rather than deleting it. Witness regenerated;
+main no longer carries a false green.
+
+**Lean untouched, not refuted**: generic in `Q`/`QR`, sorry-free, premise unsatisfiable
+under D. Two docstring scope corrections only, no proof change.
+
+Correction to my own work here: the partition total for `n = 2..12` is **270**, not the
+240 I first wrote in the producer docstring.

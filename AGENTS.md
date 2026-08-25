@@ -939,6 +939,33 @@ this script is not a stopgap until CI returns; it *is* the gate. Treat a skipped
 run the way you would treat a skipped CI check, and do not re-propose enabling
 the trigger without a new reason.
 
+**A warn-only commit hook now surfaces the blocking gate (2026-08-25).** The
+paragraph above was true and nothing acted on it: `core.hooksPath` was unset,
+there was no `.githooks/`, and every reference to `precision-gates.sh` in the
+tree was prose. A gate nobody invokes is documentation, and the cost is on the
+record — beans `qou-mnrd` and `qou-82ur` reached the same finding from opposite
+directions, that dirty witnesses land, get drained, and are replaced by
+different dirty witnesses, each one arriving the way the last did.
+[`scripts/precommit-precision-warn.sh`](scripts/precommit-precision-warn.sh) is
+a `PreToolUse` hook on `Bash` that runs the **raw-float64 ratchet** when a
+commit touches a witness or a `computations/` script, and prints the NEW-dirty
+list. Three properties are deliberate and should not be "improved" away:
+
+- **It warns; it never blocks.** It always exits 0. A `PreToolUse` hook exiting
+  non-zero stops the tool call, and a bare container is the *default* here —
+  `mpmath`/`numpy`/`scipy` are routinely absent on a fresh clone, exactly when a
+  blocking hook would brick every commit in the session. Warn-on-commit was the
+  owner's choice on 2026-08-25; the push-side block was offered and **declined**.
+  Do not upgrade it to blocking without asking again.
+- **It runs the ratchet only, not the family.** Measured on this corpus:
+  the ratchet is **1.8 s**, the full `precision-gates.sh` is **3 m 12 s**. A
+  hook runs *before* the tool call, so wiring the family in would add three
+  minutes to every witness-touching commit — which buys avoidance, not safety.
+  The advisory gates are deliberately not run here; `precision-gates.sh` remains
+  the full preflight and is still yours to run by hand.
+- **It is not a substitute for the preflight.** It covers one gate on the commit
+  path. Everything the QA-is-agent-owned rule asks of you is unchanged.
+
 **Never make a red run green by widening a baseline.** Fix at the producer —
 carry the value as `mpmath.mpf` from its source and serialize with
 `_precision.fmt`. Adding a file to `raw-float64-baseline.json`, `--rebaseline`,

@@ -1,0 +1,81 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2202.06733v1",
+ "source_sha256": "e670632090447f14",
+ "brief": "Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE — Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are",
+ "extended": "**Received <day> <Month>, <year>; Revised <day> <Month>, <year>; Accepted <day> <Month>, <year> ARTICLE TYPE**\n\n*Some recent results forSU(3) and Octonions within the*\n\n20 pp, 12 sections.\n\n**Abstract.** Diﬀerent ways of representing the groupSU(3) within a Geometric Algebra approach are explored. As part of this we consider characteristic multivectors for SU(3), and how these are linked with decomposition of generators into commut- ing bivectors. The setting for this work is within a 6d Euclidean Cliﬀord Algebra. We then go on to consider whether the fundamental forces of particle physics might arisefromsymmetryconsiderationsinjustthe4dgeometricalgebraofspacetime— the STA. As part of this, a representation ofSU(3)is found wholly within the STA, involvingpreservationofabivectornorm.WealsoshowhowOctonionscanbefully representedwithintheSpacetimeAlgebra,whichwebelievewillbeusefulinmaking them understandable and accessible to a new community in Physics and Engineer- ing.\n\n**Outline.** Abstract; 1 Introduction; 2 Characteristic multivectors and SU(3); 2.2 The characteristic polynomial and the Cayl; 2.4 The characteristic polynomial and Cayley-H; 3 GA and the forces of nature; 3.1 Strong forces; 4 Octonions and the STA; 4.1 Explicit assignment of octonion units to S; 5 Octonions, the STA and particle physics; 6 Future prospects; References",
+ "tokens": {
+  "brief": 48,
+  "extended": 338
+ },
+ "sections": [
+  {
+   "id": "sec-000-abstract",
+   "title": "Abstract",
+   "pages": "1-1"
+  },
+  {
+   "id": "sec-001-1-introduction",
+   "title": "Introduction",
+   "pages": "1-2"
+  },
+  {
+   "id": "sec-002-2-characteristic-multivectors-and-su3",
+   "title": "Characteristic multivectors and SU(3)",
+   "pages": "2-3"
+  },
+  {
+   "id": "sec-003-22-the-characteristic-polynomial-and-the-cayley",
+   "title": "The characteristic polynomial and the Cayley-Hamilton theorem",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-004-24-the-characteristic-polynomial-and-cayley-hami",
+   "title": "The characteristic polynomial and Cayley-Hamilton theorem for SU(3)",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-005-3-ga-and-the-forces-of-nature",
+   "title": "GA and the forces of nature",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-006-31-strong-forces",
+   "title": "Strong forces",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-007-4-octonions-and-the-sta",
+   "title": "Octonions and the STA",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-008-41-explicit-assignment-of-octonion-units-to-sta",
+   "title": "Explicit assignment of octonion units to STA elements",
+   "pages": "9-12"
+  },
+  {
+   "id": "sec-009-5-octonions-the-sta-and-particle-physics",
+   "title": "Octonions, the STA and particle physics",
+   "pages": "12-18"
+  },
+  {
+   "id": "sec-010-6-future-prospects",
+   "title": "Future prospects",
+   "pages": "18-19"
+  },
+  {
+   "id": "sec-011-references",
+   "title": "References",
+   "pages": "19-20"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}

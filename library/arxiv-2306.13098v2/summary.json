@@ -1,0 +1,81 @@
+{
+ "_schema": "library-summary/v1",
+ "doc_id": "arxiv-2306.13098v2",
+ "source_sha256": "edeb214d587bfca4",
+ "brief": "Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions — An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the",
+ "extended": "**Three generations of colored fermions with S3 family symmetry from Cayley-Dickson sedenions**\n\n*Niels G. Gresnigt 1⋆, Liam Gourlay 1 and Abhinav Varma1*\n\n18 pp, 12 sections.\n\n**Abstract.** An algebraic representation of three generations of fermions with SU (3)C color symmetry based on the Cayley-Dickson algebra of sedenions S is constructed. Recent constructions based on division algebras convincingly describe a single generation of leptons and quarks with Standard Model gauge symmetries. Nonetheless, an algebraic origin for the existence of exactly three generations has proven difficult to sub- stantiate. We motivate S as a natural algebraic candidate to describe three generations with SU (3)C gauge symmetry. We initially represent one generation of leptons and quarks in terms of two minimal left ideals of Cℓ(6), generated from a subset of all left actions of the complex sedenions on themselves. Subsequently we employ the finite group S3, which are automorphisms of S but not of O to generate two additional generations.\n\n**Outline.** Introduction; Normed division algebras; One generation of electrocolor states from CO; The Cayley-Dickson construction and the algebr; Octonion subalgebras inside the sedenions; Automorphisms of sedenions; Why not sedenions?; One generation of electrocolor states from CS; Generating two additional generations from S3 ; Linear dependence of minimal ideal states; Outlook; Discussion",
+ "tokens": {
+  "brief": 48,
+  "extended": 359
+ },
+ "sections": [
+  {
+   "id": "sec-000-introduction",
+   "title": "Introduction",
+   "pages": "1-3"
+  },
+  {
+   "id": "sec-001-normed-division-algebras",
+   "title": "Normed division algebras",
+   "pages": "3-5"
+  },
+  {
+   "id": "sec-002-one-generation-of-electrocolor-states-from-co",
+   "title": "One generation of electrocolor states from CO",
+   "pages": "5-6"
+  },
+  {
+   "id": "sec-003-the-cayley-dickson-construction-and-the-algebra",
+   "title": "The Cayley-Dickson construction and the algebra of sedenions",
+   "pages": "6-6"
+  },
+  {
+   "id": "sec-004-octonion-subalgebras-inside-the-sedenions",
+   "title": "Octonion subalgebras inside the sedenions",
+   "pages": "6-8"
+  },
+  {
+   "id": "sec-005-automorphisms-of-sedenions",
+   "title": "Automorphisms of sedenions",
+   "pages": "8-9"
+  },
+  {
+   "id": "sec-006-why-not-sedenions",
+   "title": "Why not sedenions?",
+   "pages": "9-10"
+  },
+  {
+   "id": "sec-007-one-generation-of-electrocolor-states-from-cs",
+   "title": "One generation of electrocolor states from CS",
+   "pages": "10-11"
+  },
+  {
+   "id": "sec-008-generating-two-additional-generations-from-s3-au",
+   "title": "Generating two additional generations from S3 automorphisms",
+   "pages": "11-13"
+  },
+  {
+   "id": "sec-009-linear-dependence-of-minimal-ideal-states",
+   "title": "Linear dependence of minimal ideal states",
+   "pages": "13-13"
+  },
+  {
+   "id": "sec-010-outlook",
+   "title": "Outlook",
+   "pages": "13-14"
+  },
+  {
+   "id": "sec-011-discussion",
+   "title": "Discussion",
+   "pages": "14-18"
+  }
+ ],
+ "provenance": {
+  "kind": "extractive",
+  "from": [
+   "abstract",
+   "section-titles"
+  ],
+  "note": "Assembled mechanically from the document's own text. Replace `kind` with 'agent' to protect a hand-written summary from regeneration."
+ }
+}
