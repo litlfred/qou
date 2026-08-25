@@ -125,8 +125,8 @@ Progress is checked off below as each lands. The remaining ~250 sites stay open
 and are *not* urgent by the same argument: no block's status depends on them.
 
 - [ ] `conj:schwinger-measure-computational-time` (4)
-- [ ] `thm:topological-mass` (3)
-- [ ] `prop:confinement-nf-partial-proof` (2)
+- [x] `thm:topological-mass` (3)
+- [x] `prop:confinement-nf-partial-proof` (2)
 - [ ] `conj:staircase-ew-residual`
 - [ ] `prop:t-beta-markov-frobenius-collapse`
 - [x] `rem:knot-operator-basis-table`
@@ -182,3 +182,42 @@ can be identical while the provenance silently degrades."* Each producer was
 run to confirm the new assertions pass, then its witness reverted with
 `git checkout`. **Script fixes only in these commits.** The witnesses want
 regenerating in a properly provisioned environment.
+
+
+## Batch 2 landed 2026-08-25 — 2 blocks, 5 assertions, two different remedies
+
+The two cases needed opposite fixes, which is the general lesson: there is no
+single repair for this defect.
+
+**`prop:confinement-nf-partial-proof`** (`shift_from_nf_basis.py`, 2). The
+assertion NAMES said what to check — `shift_proton_h3_finite`,
+`shift_neutron_h3_finite` — while comparing `shift_p` to itself, so they passed
+for `inf` and `nan` too, exactly what a name ending `_finite` promises to
+exclude. Now `computed=math.isfinite(float(shift_p)), expected=True`. The check
+the author intended was written in the name the whole time.
+
+**`thm:topological-mass`** (`mass-from-q-symbolic.py`, 3). Different: no check
+exists, and the author knew — the code carried the comment *"self-consistent
+(no independent measurement)"*. That comment was correct and `add_assertion`
+was the wrong instrument. `P_proton`, `P_neutron` and their ratio each have one
+derivation route, so no assertion over them can fail, and carrying them as
+assertions made them count toward `allPassed` and hence toward the block's
+`verified`.
+
+**They are now `add_data`** with propagated uncertainties and a note saying why
+they are not asserted. Nothing is lost; nothing is claimed. The block keeps
+real backing from the assertions that do check something — notably the
+Borromean mass against `borromean_mass_ratio * M_E_MEV`. Assertion count went
+10 → 7, and that is the fix working, not damage.
+
+**Three remedies seen so far, and choosing between them is the work:**
+
+1. *Supply the real expected value* — when it exists independently
+   (`KNOWN_P_N`, the e⁻ pair tables).
+2. *Assert the property the name claims* — when the intent is recoverable
+   (`_finite`).
+3. *Demote to data* — when no independent check exists. The one that needs
+   saying out loud, because it is the one that looks like giving up and is
+   actually the only honest option.
+
+All five files now pass `assertions_are_falsifiable`.

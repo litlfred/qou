@@ -35,6 +35,7 @@ from __future__ import annotations
 
 import _path_bridge  # noqa: F401, E402 — Phase 6 bridge: substrate modules moved into substrate/ subdir
 import json
+import math
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -252,16 +253,20 @@ def main() -> int:
         .add_data("empirical_shift_neutron_h3_standalone", 16)
         .add_data("empirical_shift_proton_in_deuteron_h6", 18)
         .add_data("empirical_shift_neutron_in_deuteron_h6", 21)
+        # These read `computed=shift_p, expected=shift_p` — the same
+        # expression, so they passed for any value including `inf` and `nan`,
+        # which is precisely what a name ending `_finite` promises to exclude
+        # (bean `qou-26f2`). The name already said what to check; it now does.
         .add_assertion(
             "shift_proton_h3_finite",
-            computed=shift_p,
-            expected=shift_p,
+            computed=math.isfinite(float(shift_p)),
+            expected=True,
             source="canonical Markov trace via NF basis",
         )
         .add_assertion(
             "shift_neutron_h3_finite",
-            computed=shift_n,
-            expected=shift_n,
+            computed=math.isfinite(float(shift_n)),
+            expected=True,
             source="canonical Markov trace via NF basis",
         )
         # F1 (PR #565): anchor the per-nucleon shifts against the
