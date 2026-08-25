@@ -1,11 +1,11 @@
 ---
 # qou-s4h6
 title: 'GAP: GMO second-order coefficients are under-determined — two deviations, three coefficients, Y·d invisible'
-status: in-progress
+status: completed
 type: task
 priority: normal
 created_at: 2026-08-25T10:37:24Z
-updated_at: 2026-08-25T11:03:35Z
+updated_at: 2026-08-25T11:04:40Z
 ---
 
 **Measured 2026-08-25** (PR #5744). Lean:
@@ -151,3 +151,32 @@ so it is not secretly forcing degeneracy.
 "$g$ is absorbable, but a third multiplet closes it" → "no multiplet closes it,
 only a derivation does." Recording that rate because it is the useful signal: each
 step was a rank/degeneracy count I could have done at the start, and did not.
+
+
+
+---
+
+**Closing this bean (2026-08-25).** The question it was opened on is answered,
+and the answer is a **prune**, not a task hand-off.
+
+Front 4 asked whether the $\approx 6\%$ GMO deviation can be predicted by a
+second-order mass term. The answer is **no, and not for want of a measurement**:
+at second order the structure space spans every function on the independent
+masses of **both** octets, so any spectrum whatsoever is attainable and no value
+of the deviation is evidence either way. The only surviving $SU(3)$ mass
+relation among the three multiplets is the decuplet's equal-second-differences
+rule, and refining the structure list destroys even that (cubic structures raise
+the degree past the last relation).
+
+So there is no "third constraint" to go find — the three successive answers this
+bean recorded ("prove $g = 0$", then "a third multiplet", then "neither") all
+collapse to the same place. **The only route left is deriving $e, f, g$ from the
+categorical side**, which is not a GMO sub-task at all: it is the framework's
+standing anti-fit requirement applied to this observable, and it is gated by the
+same open objects the SM surface is gated by
+(`content/quantum-observable-universe/appendix-standard-model/sm-gating-objects.md`).
+Opening a successor bean for "derive the $SU(3)$-breaking coefficients" would
+duplicate that surface rather than add to it.
+
+Lean: `QOU/Eightfold/GellMannOkuboSecondOrder.lean`, 14 declarations, sorry-free,
+axiom-clean.
