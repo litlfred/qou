@@ -1,8 +1,8 @@
 {
   "engine": "sympy",
   "engineVersion": "sympy 1.14.0",
-  "computedAt": "2026-08-25T22:54:50.601701+00:00",
-  "commitSha": "547b9648ff3adc961f745d71f16cd97fc3410929",
+  "computedAt": "2026-08-25T23:32:05.198645+00:00",
+  "commitSha": "d79217f4407bc7a95f601e9f0f89b9886a5aeb12",
   "assertions": [
     {
       "name": "reconstruction_exact_proton",
@@ -119,11 +119,11 @@
     }
   ],
   "allPassed": true,
-  "durationMs": 104891,
+  "durationMs": 104495,
   "computation": "habiro-coefficients-via-peel",
   "scriptFile": "habiro_coefficients_via_peel.py",
-  "scriptHash": "d691c96cf86e",
-  "scriptCommitSha": "547b9648ff3adc961f745d71f16cd97fc3410929",
+  "scriptHash": "73bb9c6de39e",
+  "scriptCommitSha": "2ce4cfb58c907b9c5ea16a4aa8db885d4e739b36",
   "precisionMetadata": {
     "compute_dps": 70,
     "output_dps": 60,
@@ -229,8 +229,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 156,
-        "elapsed_cancel_ms": 28
+        "elapsed_trace_ms": 198,
+        "elapsed_cancel_ms": 31
       },
       "neutron": {
         "Z": 0,
@@ -311,7 +311,7 @@
         "all_integral": true,
         "reconstruction_matches": true,
         "elapsed_trace_ms": 4,
-        "elapsed_cancel_ms": 17
+        "elapsed_cancel_ms": 20
       },
       "deuteron": {
         "Z": 1,
@@ -426,8 +426,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 216,
-        "elapsed_cancel_ms": 555
+        "elapsed_trace_ms": 260,
+        "elapsed_cancel_ms": 617
       },
       "helium-3": {
         "Z": 2,
@@ -563,8 +563,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 1802,
-        "elapsed_cancel_ms": 2145
+        "elapsed_trace_ms": 1933,
+        "elapsed_cancel_ms": 2209
       },
       "tritium": {
         "Z": 1,
@@ -700,8 +700,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 3803,
-        "elapsed_cancel_ms": 5119
+        "elapsed_trace_ms": 3781,
+        "elapsed_cancel_ms": 5104
       },
       "helium-4": {
         "Z": 2,
@@ -851,8 +851,8 @@
         ],
         "all_integral": true,
         "reconstruction_matches": true,
-        "elapsed_trace_ms": 24576,
-        "elapsed_cancel_ms": 18015
+        "elapsed_trace_ms": 24456,
+        "elapsed_cancel_ms": 18147
       }
     },
     "method": "markov_peel.tr_M_atomic + sp.cancel + to_u_polynomial + cyclotomic_expansion",

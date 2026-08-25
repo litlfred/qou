@@ -88,12 +88,24 @@ ATOMS = [
     # reconstruction exact. Correct but ~7 minutes, so it is behind
     # `--max-a 5` rather than in the default run.
     (2, 3, "helium-5", None),
+    # A=6. Measured: tr_M 2036 s + cancel 212 s, deg_u(p) = 260, a_0..a_22,
+    # denom = 49152*u^110*(u^4+1)^11, reconstruction exact. ~38 min, so
+    # `--max-a 6` and the long-compute logging discipline.
+    (3, 3, "lithium-6", None),
 ]
 
-#: Default ceiling. A<=4 is the whole set in about a minute; A=5 adds
-#: seven. `tr_M` scales ~13x per nucleon (A=3 1.8 s, A=4 24.6 s, A=5
-#: 325 s), so A=6 is an hour-plus and must be run under the AGENTS.md
-#: long-compute logging discipline, not casually.
+#: Default ceiling. A<=4 is the whole set in about a minute.
+#:
+#: MEASURED cost of `tr_M` (the dominant term), this 4-core container:
+#:
+#:     A=3     1.8 s      A=5    325 s
+#:     A=4    24.6 s      A=6   2036 s
+#:
+#: Step ratios 13.7x, 13.2x, 6.3x -- so the growth FLATTENS at the top
+#: rather than compounding, and A=6 came in at ~38 min against a ~70 min
+#: extrapolation. Do not extrapolate A=7 from the 13x figure; measure it.
+#: Anything above the default belongs under the AGENTS.md long-compute
+#: logging discipline (`python3 -u ... 2>&1 | tee`).
 DEFAULT_MAX_A = 4
 
 
