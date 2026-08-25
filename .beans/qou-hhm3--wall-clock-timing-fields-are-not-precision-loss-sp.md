@@ -142,7 +142,7 @@ the entire point in those.
 
 Self-test 30 -> 36 cases. The requirement this bean set -- "a self-test proving
 a genuine float64 finding in the same witness still fires" -- is case
-`{"elapsed_sec": 0.001, "mass_mev": 938.2720881} -> 1`. Also covered: all four
+`{"elapsed_sec": 0.001, "some_measured_value": 7.7777777} -> 1`. Also covered: all four
 JSON types the field actually occurs as (53 str / 34 float / 16 null / 3 int),
 none of which may throw.
 

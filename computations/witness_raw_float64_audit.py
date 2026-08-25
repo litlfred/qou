@@ -676,7 +676,12 @@ def self_test() -> int:
         # THE CASE THIS CARVE-OUT MUST NOT BREAK: a real float64 finding in
         # the SAME witness still fires. A carve-out that silences its
         # neighbours is a hole, not an exemption.
-        ({"elapsed_sec": 0.001, "mass_mev": 938.2720881}, 1),
+        # Synthetic value ON PURPOSE. An earlier draft used 938.2720881 here
+        # because it "looked like a real witness field", and that is a stale
+        # CODATA proton mass -- it tripped the codata_corpus_literal_scan gate,
+        # correctly. A fixture that only needs A FLOAT TO EXIST must never
+        # carry a physical constant.
+        ({"elapsed_sec": 0.001, "some_measured_value": 7.7777777}, 1),
         ({"elapsed_sec": 0.001, "rows": [{"y_lambda": 30.7796994}]}, 1),
         # DECLARED BY NAME, NOT BY A *_sec PATTERN. These are physical
         # quantities measured in seconds, where precision is the whole point,
