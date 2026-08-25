@@ -339,6 +339,23 @@ split. One invariant, two fronts. The framework's only derived EM mechanism
 is the open object. Smallest scope of the three, and the only one that yields a
 new comparable number without touching `SU(3)`.
 
+> **State of the route, corrected 2026-08-25 (`qou-17mq`).** The route is
+> identified — the metric Coulomb pairing `⟨A₁, J₂⟩` on the `H³` scalar Green's
+> function — but the **kernel is not**, and the contest that appeared to have
+> selected one does not support that reading. Its winner `H_coth` is scored on
+> an *unsubtracted* `coth(α)`, which the same audit's own **O2** obstruction
+> (finite-volume neutrality, `∫Δu = 0`) excludes: an admissible kernel has zero
+> mean, hence takes both signs, so no admissible kernel saturates at `κ → +1` —
+> and saturation is exactly what separated `H_coth` from its rivals. Its two
+> rivals had already lost their warrant in round 5. So **no member of that
+> contest carried a live structural warrant when it was scored.** Re-scored
+> under the admissible family, scatter rises monotonically with neutralisation
+> (3.5 % → 11.2 % → 22.3 %) and the best admissible member carries *more*
+> residual structure than the hypothesis rejected for carrying structure.
+> Do **not** cite hyperbolic-saturation as the selected mechanism. Rank 1 is
+> unchanged: 4-B is still the smallest-scope gating object.
+> [`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
+
 ### 4-C. A third flavour grade (strangeness / charm Cartan)
 
 **Gates:** the charmed-hadron observable spectrum, `m_s`/`m_c`, the `D`-meson
