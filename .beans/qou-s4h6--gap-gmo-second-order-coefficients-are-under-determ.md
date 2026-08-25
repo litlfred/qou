@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-25T10:37:24Z
-updated_at: 2026-08-25T10:53:58Z
+updated_at: 2026-08-25T11:03:35Z
 ---
 
 **Measured 2026-08-25** (PR #5744). Lean:
@@ -100,3 +100,54 @@ Note also that refining the *structure list* cannot help on the decuplet: since
 $d$ is affine in $Y$ there, adding cubic structures raises the polynomial degree
 and **destroys** the last surviving relation (`decuplet_second_differences_equal`)
 rather than creating a new one.
+
+
+
+---
+
+**SECOND CORRECTION, same session (2026-08-25). The "third multiplet" answer
+above is wrong, and this retracts it.**
+
+The correction immediately above closed the meson case and said the baryon octet
+was where the relation survives, *"which is why baryon GMO stays a genuine
+relation where the meson one has gone vacuous."* Measured, then proved: **the
+baryon octet is surjective too.** Both octets go vacuous at second order.
+
+My reasoning was that $\Lambda$ and $\Sigma$ share $Y = 0$ with different $I$,
+so $d$ is not a function of $Y$ on the baryon octet. The premise is true; the
+**inference is backwards**. A two-dimensional $(I,Y)$ pattern makes the space of
+available structures *larger*, and a larger structure space makes surjectivity
+**more** likely, not less. Rank counting:
+
+| multiplet | independent masses | rank of second-order structure space | relations |
+|---|---|---|---|
+| meson octet | 3 ($K^+ = K^-$ by C) | 3 | **0** |
+| baryon octet | 4 | 4 | **0** |
+| decuplet | 4 | 3 ($I = 1 + Y/2$ ⇒ quadratic in $Y$) | **1** |
+
+New sorry-free declarations, all axiom-clean: `gmo_baryon_second_order` (the
+baryon combination has the *same* value $16(4e-3f)$ — the two octets carry the
+same $(I,Y)$ pattern), `baryon_octet_g_absorbed`,
+`baryon_octet_second_order_surjective`, `gmo_baryon_surjective`.
+
+Adversarial checks run: first-order baryon GMO **is** an identity (so there is a
+real relation being destroyed, not a vacuous one); $N$ and $\Xi$ genuinely split
+when $b \neq 0$, so the fourth independent mass is real and this is not a
+relabelled meson octet; and the surjectivity witness reaches $N = 5, \Xi = 9$,
+so it is not secretly forcing degeneracy.
+
+**Corrected prescription — and it is not another multiplet.** Two routes:
+
+1. A multiplet with **more independent masses than the six available
+   structures**. Nothing in this corpus supplies one.
+2. **Derive $e, f, g$ categorically.** The rank counting says measurement can
+   *never* make the octet masses predictions at this order, in either octet: a
+   structure space that spans everything absorbs any spectrum. Only theory input
+   can. **This is the honest end state of front 4**, and it is a
+   formalize-first prune of the whole "fit a second-order term to the deviation"
+   programme rather than a task waiting to be done.
+
+**Three corrections on this one topic in one session** — "prove $g=0$" →
+"$g$ is absorbable, but a third multiplet closes it" → "no multiplet closes it,
+only a derivation does." Recording that rate because it is the useful signal: each
+step was a rank/degeneracy count I could have done at the start, and did not.

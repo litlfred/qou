@@ -35,6 +35,7 @@ uniform and cancels from every statement below.
 | `gmo_zero_decuplet_nonzero` / `decuplet_zero_gmo_nonzero` | the two constraints are **independent** — witnesses both ways |
 | `meson_octet_g_absorbed` / `decuplet_g_absorbed` | **`g` is not an independent parameter on either multiplet** — absorbed exactly by shifting `b` (and `e`) |
 | `meson_octet_second_order_surjective` | **any three meson-octet masses are attainable**, so second-order GMO is vacuous |
+| `baryon_octet_second_order_surjective` | **any four baryon-octet masses are attainable** — the baryon case is vacuous too |
 
 ## What it means, stated carefully
 
@@ -58,9 +59,11 @@ Two consequences, and neither is a derivation of anything:
    independent meson-octet masses. Any `(m_π, m_η, m_K)` whatsoever is
    attainable, so the GMO combination takes every value and there is no relation
    left to deviate from. Matching the observed deviation is not a weak
-   prediction — it is not a prediction at all. What is needed is a **third
-   multiplet in which isospin is not a function of hypercharge**, not a third
-   structure and not a third measurement on these two.
+   prediction — it is not a prediction at all. The same holds for the **baryon**
+   octet (`BaryonOctet` section below), which I first got backwards; the decuplet
+   is the only one of the three that keeps a relation. What is needed is not
+   another multiplet from this list but a **derivation** of `e`, `f`, `g` — see
+   the closing section.
 
 The equal-spacing result is worth stating precisely, because it is easy to
 over-read. At second order the decuplet is **not** equally spaced — each second
@@ -291,11 +294,113 @@ dimensional space of quadratics: exactly one relation survives, and it is
 
 That also bounds what refining the *structure list* can buy: adding cubic
 structures would raise the degree to three and destroy the last relation rather
-than create a new one. **What is needed is a third multiplet in which isospin is
-not a function of hypercharge — not a third structure, and not a third
-measurement on these two.** The baryon octet is such a multiplet (`Λ` and `Σ`
-share `Y = 0` with different `I`), which is why baryon GMO is a genuine relation
-where the meson one has become vacuous; formalising that case is the next step
-and is **not** done here. -/
+than create a new one.
+
+I originally continued this paragraph with *"what is needed is a third multiplet
+in which isospin is not a function of hypercharge — the baryon octet is such a
+multiplet."* **That was wrong**; the `BaryonOctet` section below retracts it and
+proves the baryon octet surjective as well. The corrected prescription is there,
+and it is a derivation of the coefficients rather than another multiplet. -/
+
+/-! ## The baryon octet — and the correction it forces
+
+I claimed, in the section above and in the PR that carried it, that the baryon
+octet is the multiplet where the relation survives, *"which is why baryon GMO is
+a genuine relation where the meson one has become vacuous."* **That is wrong,
+and this section is the retraction.**
+
+The reasoning I gave was that `Λ` and `Σ` share `Y = 0` with different `I`, so
+`d` is not a function of `Y` on the baryon octet. The premise is true. The
+inference is backwards: a two-dimensional `(I, Y)` pattern makes the space of
+available structures **larger**, and a larger structure space makes surjectivity
+*more* likely, not less. Rank counting settles it —
+
+| multiplet | independent masses | rank of the second-order structure space | relations |
+|---|---|---|---|
+| meson octet | 3 (`K⁺ = K⁻` by charge conjugation) | 3 | **0** |
+| baryon octet | 4 | 4 | **0** |
+| decuplet | 4 | 3 (`I = 1 + Y/2` ⇒ everything is a quadratic in `Y`) | **1** |
+
+So **both** octets go vacuous at second order and the decuplet's equal-second-
+differences rule is the only `SU(3)` mass relation among the three that survives.
+The general criterion is the last column: a multiplet retains a relation exactly
+when its number of independent masses exceeds the rank of the structure space on
+it, and the octets fail that test because their `(I, Y)` patterns are generic,
+not because they are degenerate.
+
+**What this does to "what would close it."** Not a third multiplet from this
+list — that was the wrong prescription and it followed from the wrong premise.
+Two routes remain, and the second is the framework-native one:
+
+1. A multiplet with **more independent masses than the six available structures**
+   — anything beyond six distinct `(I, Y)` values retains relations at second
+   order regardless of its pattern. Nothing in this corpus supplies one.
+2. **Deriving `e`, `f`, `g`** from the categorical side rather than measuring
+   them. The rank counting says measurement can *never* make the octet masses
+   predictions, at any order: a structure space that spans everything absorbs any
+   spectrum. Only theory input can. That is the honest reading of what front 4
+   established. -/
+
+section BaryonOctet
+variable {R : Type*} [CommRing R]
+variable (a b c e f g : R)
+
+/-- Nucleon: `I = 1/2, Y = 1` ⇒ `fourD = 2`. -/
+def nucleon : R := m16 a b c e f g 2 1
+/-- `Λ`: `I = 0, Y = 0` ⇒ `fourD = 0`. -/
+def lambdaB : R := m16 a b c e f g 0 0
+/-- `Σ`: `I = 1, Y = 0` ⇒ `fourD = 8`. -/
+def sigmaB : R := m16 a b c e f g 8 0
+/-- `Ξ`: `I = 1/2, Y = −1` ⇒ `fourD = 2`. -/
+def xiB : R := m16 a b c e f g 2 (-1)
+
+/-- The baryon GMO combination `2(m_N + m_Ξ) − 3m_Λ − m_Σ`, i.e. the doubled form
+of `(m_N + m_Ξ)/2 = (3m_Λ + m_Σ)/4`. -/
+def gmoBaryon : R :=
+  2 * (nucleon a b c e f g + xiB a b c e f g) - 3 * lambdaB a b c e f g - sigmaB a b c e f g
+
+/-- **The baryon combination has the same second-order value as the meson one**,
+`16(4e − 3f)` — `g` cancels here too. The two octets carry the same `(I, Y)`
+pattern (`π ↔ Σ`, `η ↔ Λ`, `K⁺ ↔ N`, `K⁻ ↔ Ξ`), so this is not a coincidence. -/
+theorem gmo_baryon_second_order : gmoBaryon a b c e f g = 16 * (4 * e - 3 * f) := by
+  unfold gmoBaryon nucleon xiB lambdaB sigmaB m16; ring
+
+/-- **On the baryon octet too, `g` is a disguised `b`** — the same `Y·fourD = 2Y`
+collapse, since hypercharge `±1` forces `I = 1/2` in either octet. -/
+theorem baryon_octet_g_absorbed {R : Type*} [Field R] [CharZero R] (a b c e f g : R) :
+    nucleon a b c e f g = nucleon a (b + g / 2) c e f 0
+      ∧ lambdaB a b c e f g = lambdaB a (b + g / 2) c e f 0
+      ∧ sigmaB a b c e f g = sigmaB a (b + g / 2) c e f 0
+      ∧ xiB a b c e f g = xiB a (b + g / 2) c e f 0 := by
+  refine ⟨?_, ?_, ?_, ?_⟩ <;>
+    simp only [nucleon, lambdaB, sigmaB, xiB, m16] <;> ring
+
+/-- **Any four baryon-octet masses are attainable at second order.** This is the
+retraction made precise: the baryon octet is surjective just as the meson octet
+is, so baryon GMO is *also* vacuous at second order.
+
+Note the witness needs `b ≠ 0` where the meson one did not — the baryon octet
+has four independent masses rather than three, because `N` and `Ξ` are not
+charge-conjugate partners. That extra mass is exactly matched by the extra
+structure, which is why the rank still saturates. -/
+theorem baryon_octet_second_order_surjective {R : Type*} [Field R] [CharZero R]
+    (n l s x : R) :
+    ∃ a b e f : R,
+      nucleon a b 0 e f 0 = n
+        ∧ lambdaB a b 0 e f 0 = l
+        ∧ sigmaB a b 0 e f 0 = s
+        ∧ xiB a b 0 e f 0 = x := by
+  refine ⟨l / 16, (n - x) / 32, (n + x) / 32 - l / 16 - (s - l) / 256,
+    (s - l) / 64, ?_, ?_, ?_, ?_⟩ <;>
+    simp only [nucleon, lambdaB, sigmaB, xiB, m16] <;> ring
+
+/-- **So the baryon GMO combination also takes every value.** Immediate from
+surjectivity; stated because it is the claim the retraction is about. -/
+theorem gmo_baryon_surjective {R : Type*} [Field R] [CharZero R] (t : R) :
+    ∃ a b c e f g : R, gmoBaryon a b c e f g = t := by
+  refine ⟨0, 0, 0, t / 64, 0, 0, ?_⟩
+  rw [gmo_baryon_second_order]; ring
+
+end BaryonOctet
 
 end QOU.Eightfold.GellMannOkuboSecondOrder
