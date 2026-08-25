@@ -38,7 +38,25 @@ import math
 import numpy as np
 import sys
 from pathlib import Path
-from mpmath import mp
+from mpmath import mp, mpf as _mpf_type, mpc as _mpc_type
+
+
+class SeminormalPrecisionLoss(ValueError):
+    """Raised when `build_seminormal_matrices` is handed an mpmath `q`.
+
+    A REFUSAL, NOT A CRASH. The float64 builder would truncate the argument to
+    a double without saying so, which is the defect bean `qou-8xb1` records --
+    the caller asked for precision, got a double, and got no signal. Refusing
+    turns a silently wrong number into a visible error naming the exact twin,
+    `build_seminormal_matrices_mp`.
+
+    Subclasses `ValueError` to match the corpus idiom for a domain guard
+    (cf. `habiro_coefficients_atomic.AmDifferenceInvalid`), which AGENTS.md
+    cites as the reason a traceback is not by itself evidence of a defect: an
+    exception type the corpus defines for exactly this case is the guard
+    working, not the producer failing.
+    """
+
 
 sys.path.insert(0, str(Path(__file__).parent))
 from q_parameter import Q, Q_INV, HA, q_int, Q_50_DIGIT_STR
@@ -163,6 +181,56 @@ def build_seminormal_matrices(shape, sparse=None, q=None):
     if dim == 0:
         return [], dim, syts
 
+    # DISPATCH ON THE OPERAND (bean qou-8xb1): an mpmath `q` gets exact
+    # arithmetic, a float gets the float64 path, and the decision follows the
+    # VALUE rather than a flag. Same shape `qou-d8gq` landed for the sibling
+    # builder in pyhecke (`dtype=_value_dtype(vals)`), for the same reason.
+    #
+    # This function used to coerce here (`float(q)`) and was float64 all the
+    # way down: it computed the axial-distance entries in float, reached for
+    # mp.sqrt and threw the precision away, and returned np.zeros(). An `mpf`
+    # handed in came back as a double with NO signal -- measured at shape
+    # (3,2,1), dim 16, output was BIT-IDENTICAL to passing the f64 value. An
+    # earlier revision of this branch merely raised on that input; refusing is
+    # better than lying, but the caller still could not get what it asked for.
+    # Now it can.
+    #
+    # `str`, `Fraction` and plain numerics keep coercing -- the #1861 rationale
+    # further down records that callers legitimately pass them, and a string is
+    # not a request for precision. Only the mpmath types dispatch, because only
+    # for those is the downcast unambiguously wrong.
+    if isinstance(q, _mpc_type):
+        # Dispatching mpc here would be worse than useless: the exact twin is
+        # real-only (`q_local = q if isinstance(q, mp.mpf) else mp.mpf(str(q))`
+        # stringifies, and mpf("(1.11 + 0.0j)") dies with an opaque
+        # "invalid literal for int()" from inside mpmath). An earlier revision
+        # of this branch routed mpc there and produced exactly that traceback.
+        #
+        # A complex q is a legitimate FIBRE-level object (AGENTS.md separates
+        # the fibre, where Im(q) is unconstrained, from the archimedean
+        # evaluation, where Im(q_0) = 0). So this is a missing capability, not
+        # a forbidden input, and it says so.
+        raise SeminormalPrecisionLoss(
+            "build_seminormal_matrices() was handed a complex q "
+            f"({type(q).__name__}); the exact seminormal builder is real-only, "
+            "so there is no exact path to dispatch to. Complex q is a "
+            "fibre-level object and supporting it is unimplemented, not "
+            "refused. Pass an mpf for the exact real path. Bean qou-8xb1."
+        )
+    if isinstance(q, _mpf_type):
+        if sparse:
+            # scipy.sparse rejects dtype=object, so an exact matrix cannot be
+            # returned in CSR form. Refusing beats silently handing back a
+            # float64 sparse matrix, which is the defect this dispatch exists
+            # to remove. (Same boundary AGENTS.md records for su4_1111.)
+            raise SeminormalPrecisionLoss(
+                "build_seminormal_matrices(sparse=True) cannot carry an "
+                f"mpmath q: scipy.sparse has no dtype for {type(q).__name__}. "
+                "Pass sparse=False for the exact dense path, or float(q) if "
+                "float64 is genuinely what you want. Bean qou-8xb1."
+            )
+        return build_seminormal_matrices_mp(shape, q)
+
     # Resolve q (override or module default).  Derive amplitude h locally.
     q_local = float(q0) if q is None else float(q)
     h_local = q_local - 1.0 / q_local
@@ -238,12 +306,33 @@ def build_seminormal_matrices_mp(shape, q):
 
     WHY THIS EXISTS
     ---------------
-    `build_seminormal_matrices` above is float64 all the way down and cannot be
-    made otherwise without moving numbers for its 64 live callers: it coerces
-    its argument (`q_local = float(q)`), so an `mpf` handed to it is silently
-    downcast; it computes the axial-distance entries in float; it even reaches
-    for `mp.sqrt` and then throws the precision away (`b = float(mp.sqrt(...))`);
-    and it returns `np.zeros((dim, dim))`, i.e. float64 storage.
+    `build_seminormal_matrices` above computes in float64: it coerces its
+    argument, computes the axial-distance entries in float, reaches for
+    `mp.sqrt` and throws the precision away (`b = float(mp.sqrt(...))`), and
+    returns `np.zeros((dim, dim))`, i.e. float64 storage.
+
+    UPDATED 2026-08-25 (bean qou-8xb1): it no longer SILENTLY downcasts an
+    `mpf` -- it dispatches here instead, so a caller asking for exact
+    arithmetic now gets it through the ordinary entry point. This function
+    remains the implementation and the explicit way to ask.
+
+    Its float64 path is still the DEFAULT (`q=None`, and the ~64 callers that
+    pass a float), and deliberately so. Flipping the default would be a false
+    fix, measured: numpy silently re-truncates `mp.matrix` back to float64 in
+    most operations --
+
+        np.trace(sigma)             -> float64
+        np.abs(sigma)**2            -> float64
+        np.eye(d) @ sigma           -> float64
+        np.sum(np.abs(sigma)**2)    -> float64
+        sigma @ sigma (mpmath's @)  -> mpf, preserved
+
+    -- so callers handed exact matrices would go on producing float64 results
+    while LOOKING exact, which is strictly worse than the honest float64 they
+    get now. That last one matters: `np.sum(np.abs(M)**2)` is exactly what the
+    deuteron probe's `fro2` computed. Exactness has to be carried by the
+    consumer, not merely handed to it, which is why opting in per-consumer is
+    the right shape.
 
     That makes it a library-level float64 entry point, which is why draining a
     probe that calls it is not a probe-local fix. Per AGENTS.md ("a float64
