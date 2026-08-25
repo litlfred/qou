@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-24T22:13:51Z
-updated_at: 2026-08-25T00:57:55Z
+updated_at: 2026-08-25T06:17:08Z
 ---
 
 ## Where this stands after PR (HeckeJucysMurphyElements.lean)
@@ -197,3 +197,58 @@ That is a consistency check on the assumed rule, discharged rather than assumed.
 3. the spectral half at general i — the seminormal representation itself, still absent.
 
 The general-lambda twist remains CONDITIONAL. (3) is still the largest item.
+
+
+## 2026-08-25 — the adjacent case is ONE word identity; the seminormal build has a first prerequisite
+
+### i >= 2: normal forms (HeckeJucysMurphyAdjacentNormalForm.lean)
+
+With u := sigma_k, v := sigma_{k+1}, N := L_k:
+
+    jmRaw_adjacent_left    L_{k+1} L_{k+2} = (uv) N (uv) N (uv)
+    jmRaw_adjacent_right   L_{k+2} L_{k+1} = (uvu) N (uv) N u
+
+TWO rewrites each — one braid (uvu = vuv), one commutation of N past v. The Hecke
+relation is not used.
+
+**Why this is progress and not restatement.** Every previous attempt unfolded the
+recursion and regenerated a commutator of the same shape (see the exchange-relation
+dead end above). Here N appears twice and OPAQUELY. Both sides start with uv, so
+after cancelling that unit the question is
+
+    N (uv) N (uv)  =?=  u N (uv) N u
+
+for an arbitrary N commuting with v — one word identity in ONE unknown, no recursion
+left. That is the shape a future attack should work on.
+
+Consistency checked at k=0: N=1 collapses the forms to (s0 s1)^3 and
+(s0 s1 s0)(s0 s1) s0, exactly the words jmRaw_prod_three / jmRaw_two_mul_one identify
+and fullTwist3_symm equates. So jmRaw_comm_adjacent_one is the N=1 specialisation —
+the general forms are consistent with the one known case.
+
+### Seminormal build: axial distance (StandardTableauAxialDistance.lean)
+
+The seminormal action of sigma_i has the axial distance between the cells of i and
+i+1 in a DENOMINATOR, so the representation is not even well-posed until that
+distance is known nonzero.
+
+    mem_cells_of_le_col   diagrams are closed leftward in a row
+    diag_gap              entry(r+1,c+1) >= entry(r,c) + 2
+    not_consecutive_diag  i and i+1 are never at (r,c) and (r+1,c+1)
+    cellContent_diag_step content(r+1,c+1) = content(r,c)
+
+**The "two" is the whole point.** A one-step chain gives only `<`, which would still
+permit consecutive entries on a diagonal. The gain of two comes from the INTERMEDIATE
+cell (r,c+1) — a cell whenever (r+1,c+1) is, since rows are weakly decreasing — whose
+entry is strictly between. Combined with cellContent_diag_step, this is exactly
+"axial distance 0 cannot occur between consecutive entries", i.e. the d=1 case, and
+the case the denominators actually hit.
+
+### Still open
+
+1. the word identity above — adjacent commutativity at k >= 1;
+2. general prod L_i = Delta^2 (n=2,3 only);
+3. the seminormal representation itself: the d >= 2 diagonal case, the action of
+   sigma_i, and the L_i eigenvalue q^{2.content}. Still the largest item.
+
+JucysMurphySpectrum is untouched; the general-lambda twist stays CONDITIONAL.
