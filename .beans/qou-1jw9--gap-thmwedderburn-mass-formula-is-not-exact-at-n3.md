@@ -5,7 +5,7 @@ status: todo
 type: task
 priority: normal
 created_at: 2026-08-25T07:10:47Z
-updated_at: 2026-08-25T18:17:41Z
+updated_at: 2026-08-25T18:46:31Z
 ---
 
 MEASURED, commit 933b895f17, computations/wedderburn_Mi_constructor_test.py.
@@ -532,3 +532,26 @@ the author's call. Replacement values are already in the probe's results block.
 
 Probe: computations/audits/wedderburn_beta3_vs_hA2_discrimination.py
 Audit:  docs/audits/2026-08-25-wedderburn-table-is-not-the-published-formula.md
+
+
+MERGED 2026-08-25T18:43Z as PR #5773 (merge 265ae726df). All 5 files verified on
+main; the false 'not currently reproducible' sentence is gone from
+mass-table-z1-20.md and the corrected text is live.
+
+WHAT LANDED (the takeover's own contribution, after the sibling #5763 took the
+overlap): the reproduction measurement -- beta3 reproduces 20/20 published
+M_pred to 0.00049 MeV, published h_A^2 reproduces 0/20 -- plus the measured cost
+of the repair and the block correction neither takeover had made.
+
+WHAT REMAINS OPEN, and it is an AUTHORING call, not a measurement:
+regenerate the 20 published values under h_A^2. Cost is measured: shifts run
+-0.024 MeV (1H) to +1.205 MeV (40Ar), mean error 0.0740 -> 0.0746 %, worst row
+IMPROVES 0.1917 -> 0.1909 %. Replacement values are in the probe's results
+block; no new derivation needed. Use h_A^2 at the UNROUNDED q0 pin -- the
+published digits 0.043707282 are (q-1/q)^2 at a 5-decimal-rounded q=1.10998,
+a 2.4e-5 defect (effect on the table <= 2.1e-4 MeV, invisible at 3 dp).
+
+DO NOT, on picking this up: treat the alternative ('keep the numbers, document
+beta3') as an equal option. Post-#5763 it is close to untenable -- beta3 is
+unreachable from the construction its own sibling coefficients use, inside a
+block whose headline claim is zero fitted parameters.
