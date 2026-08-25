@@ -5,7 +5,7 @@ status: in-progress
 type: task
 priority: normal
 created_at: 2026-08-01T20:31:20Z
-updated_at: 2026-08-25T17:45:42Z
+updated_at: 2026-08-25T17:58:01Z
 ---
 
 ## WORKED 2026-08-25 — O2 applied; it excludes the contest's winner
@@ -107,3 +107,58 @@ kernel (zero-mean Green's fn of an actual finite-volume quotient, PREDICTING
 kappa(A) instead of scoring parameterisations against it), or find an
 observable probing alpha >= 1.5 — which no nucleus supplies, since
 alpha ~ A^(1/3) here.
+
+## THIRD FINDING 2026-08-25 — the separation law is an unexamined Euclidean import
+
+Probe: computations/em_linking_alpha_scaling_provenance_probe.py
+Witness: em-linking-alpha-scaling-provenance.witness.json (3 assertions, pass)
+
+Upstream of both earlier findings: they scored KERNELS against kappa(A);
+this asks about the SEPARATION LAW every kernel is fed.
+
+em_linking_coth_separation_probe.py caveat (3): 'A^(1/3) was fixed in
+advance as the standard nuclear radius law, not selected post hoc.' That
+guards against POST-HOC SELECTION — real, worth having — but is not
+DERIVATION. And the same file says the kernel has 'NO free parameter --
+coth is forced by the Green's function'. So a Euclidean liquid-drop radius
+law is fed into a hyperbolic-by-construction kernel: two geometries in one
+quantity.
+
+WHAT THE GEOMETRY REQUIRES. In H^3, V(R) = pi(sinh 2R - 2R) ~ (pi/2)e^(2R),
+so R ~ (1/2)ln(2V/pi) — LOGARITHMIC. For extensive V ~ A the hyperbolic
+separation goes like ln A, not A^(1/3).
+
+SCORED (same series, same statistic):
+  3.505%  A^(1/3)   EUCLIDEAN nuclear radius, imported
+  6.358%  A^(1/4)
+  9.253%  ln A      HYPERBOLIC self-consistent (V ~ A)
+  13.95%  A^(1/2)
+=> geometric self-consistency costs 2.64x in fit. H_coth's fit quality
+depends on the geometric MIXTURE, not the hyperbolic kernel alone.
+
+CORPUS CANNOT ADJUDICATE. binding-link-volumes.witness.json holds link
+volumes for A = 2 and 3 ONLY (Hopf 0, 8_11 8.2863, L6a4 7.3277) and its own
+description says 'the A-dependence is not in a single binding-link volume'.
+No per-isotope hyperbolic geometry beyond A=3 exists, so no alpha(A) law can
+currently be DERIVED from framework data.
+
+DEFLATIONARY READING, stated plainly. Free-power diagnostic (one extra DOF,
+labelled as such) lands at p = 0.33 at 3.482% vs 3.505% for exactly 1/3 —
+indistinguishable. The data INDEPENDENTLY PREFERS the Euclidean exponent.
+And pure Coulomb 1/r with a Euclidean radius (= H_FH_A) scores 5.499% vs
+coth's 3.505%: the hyperbolic curvature term is worth a factor 1.57 on one
+shared parameter. Real, but suggestive not decisive, and comparable to the
+qou-gcmn frozen-B_pp confound. With finding 2 (coth within 0.97% of
+1/alpha + alpha/3 over this range), the data resolves the first curvature
+correction and nothing beyond it.
+
+SCOPE: (a) on an INPUT ASSUMPTION shared by every hypothesis on the front.
+NOT claimed: that A^(1/3) is wrong (the data prefers it), that the geometry
+is Euclidean, that there is no hyperbolic content, or that H_coth is
+refuted.
+
+NET OF ALL THREE. 4-B now carries THREE distinct gaps where the front had
+one: the ROUTE is identified, the KERNEL is not, and the SEPARATION LAW is
+imported. None refutes the metric Coulomb pairing. What is removed is the
+impression that (1) a contest selected a kernel, (2) more data would settle
+it, (3) the hyperbolic reading was load-bearing for the fit.

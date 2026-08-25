@@ -182,3 +182,28 @@ boundary condition — a route needing neither compactness nor finite volume.
 
 **Carried confound** (`qou-gcmn`): `B_pp` frozen at its `A = 3` value bounds
 every scatter number above. Neither structural argument depends on it.
+
+3. **The separation law is an unexamined Euclidean import.** Upstream of both
+   findings above: every kernel on this front is fed `α ∝ A^{1/3}`, the
+   Euclidean liquid-drop nuclear radius, imported as *"fixed in advance as the
+   standard nuclear radius law"* — which guards against post-hoc selection but
+   is not derivation. The kernel it feeds is hyperbolic by construction. Using
+   the geometry consistently (`H³`: `R ~ ½ ln V`, so `α ∝ ln A` for extensive
+   `V`) scores **9.253 %** against the import's **3.505 %** — consistency costs
+   **2.64×**. The corpus cannot adjudicate: `binding-link-volumes` holds
+   volumes at `A = 2, 3` only and says so. A free-power diagnostic lands at
+   `p = 0.33`, indistinguishable from `1/3`, so the data independently prefers
+   the Euclidean exponent. **Deflationary reading:** `κ(A)` is close to plain
+   Coulomb in a Euclidean nucleus (`5.499 %` for pure `1/r`), the hyperbolic
+   curvature term buying a factor `1.57` on one shared parameter — real, but
+   suggestive rather than decisive and comparable to the `qou-gcmn` confound.
+   Scope: **(a)** on an input assumption. Not claimed: that `A^{1/3}` is wrong
+   (the data prefers it), that the geometry is Euclidean, or that `H_coth` is
+   refuted.
+
+**Net for the ledger.** 4-B carries **three** distinct gaps where the front had
+been carrying one: the route is identified, the kernel is not, and the
+separation law is imported. None of the three refutes the metric Coulomb
+pairing. What they remove is the impression that a kernel had been selected,
+that more data would settle it, and that the hyperbolic reading was
+load-bearing for the fit.

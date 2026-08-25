@@ -359,9 +359,17 @@ new comparable number without touching `SU(3)`.
 > unreachable in any nucleus, `coth` is within 0.97 % of `1/α + α/3` over the
 > measured range against 3.505 % scatter, and the two hypotheses differ by at
 > most 1.79 × that scatter. So **more AME data cannot settle it** — which was
-> `qou-i6rg`'s stated premise. Rank 1 is unchanged: 4-B is still the
-> smallest-scope gating object, but the next step is to *derive* the kernel,
-> not to extend the series.
+> `qou-i6rg`'s stated premise. **And the separation law is itself imported:**
+> `α ∝ A^{1/3}` is the Euclidean liquid-drop nuclear radius, fed into a kernel
+> that is hyperbolic by construction; using the geometry consistently
+> (`H³` volume growth gives `R ~ ½ ln V`, so `α ∝ ln A`) costs **2.64×** in
+> fit. The corpus cannot adjudicate — it holds hyperbolic link volumes at
+> `A = 2, 3` only. Deflationary but honest: `κ(A)` is close to plain Coulomb
+> in a Euclidean nucleus (5.499 %), with the hyperbolic curvature term worth
+> a factor 1.57 (→ 3.505 %) on one shared parameter — suggestive, not
+> decisive. Rank 1 is unchanged: 4-B is still the smallest-scope gating
+> object, but the front carries **three** distinct gaps, not one — the route
+> is identified, the kernel is not, and the separation law is imported.
 > [`2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md`](audits/2026-08-25-em-linking-o2-neutrality-applied-to-kappa-contest.md)
 
 ### 4-C. A third flavour grade (strangeness / charm Cartan)
