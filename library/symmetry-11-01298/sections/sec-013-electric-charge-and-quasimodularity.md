@@ -1,0 +1,16 @@
+---
+doc_id: symmetry-11-01298
+doc_title: "symmetryS S Article Braids, 3-Manifolds, Elementary Particles:"
+section_id: sec-013-electric-charge-and-quasimodularity
+section_title: "Electric Charge and Quasimodularity"
+section_number: null
+pages: 17-17
+source_pdf: symmetry-11-01298.pdf
+source_sha256: 595648c84501e8a6
+doc_brief: "symmetryS S Article Braids, 3-Manifolds, Elementary Particles: — In this paper, we will describe a topological model for elementary particles based on 3-manifolds."
+---
+We argued above that all knot complements admitting a hyperbolic geometry (geometry of
+negative, constant scalar curvature) have the properties of fermions, i.e., spin 1
+2, are pressureless p = 0
+in cosmology and fulﬁll the Dirac equation (see also the previous section for the action functional).
+However, a particle can carry charges (electrical or others like color, etc.).
