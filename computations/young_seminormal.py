@@ -125,6 +125,54 @@ def seminormal_sigma(shape: tuple[int, ...], i: int, q: "mp.mpf"):
     return M
 
 
+def seminormal_sigma_symmetric(shape: tuple[int, ...], i: int, q: "mp.mpf"):
+    """ρ_shape(σ_i) in the SYMMETRIC seminormal gauge, as an mpmath matrix (1-based i).
+
+    Same representation as `seminormal_sigma` up to a diagonal similarity, but in
+    the symmetric gauge: both off-diagonal entries are b = sqrt(|a·a' + 1|) rather
+    than the non-symmetric pair (1, a·a'+1).
+
+    Why both gauges are kept. Characters and traces are gauge-invariant, so
+    `chi_young` does not care. **Frobenius norms are not** — ‖[A,B]‖_F changes
+    under a diagonal similarity. A probe that reports a commutator norm must
+    therefore say which gauge it is in, and one that wants to be comparable with
+    `hecke_characters.build_seminormal_matrices` needs this one, which mirrors
+    that builder's formula exactly:
+
+        a  = h/(1 − q^(−2ρ)),   a' = h/(1 − q^(+2ρ)),   b = sqrt(|a·a' + 1|)
+
+    with ρ the axial distance and h = q − q⁻¹. The difference from that builder
+    is arithmetic only: it resolves q through `float(q)`, so it is binary64 by
+    construction; this carries mpf end to end at the 50-dps floor.
+    """
+    syts = standard_tableaux(shape)
+    cont = _content_by_index(shape)
+    dim = len(syts)
+    index = {tuple(sorted(t.items())): k for k, t in enumerate(syts)}
+    M = mp.matrix(dim, dim)
+    qi = 1 / q
+    h = q - qi
+    for k, t in enumerate(syts):
+        bi, bj = t[i], t[i + 1]
+        rho = cont[bj] - cont[bi]
+        a = h / (1 - q ** (-2 * rho))
+        u = dict(t)
+        u[i], u[i + 1] = t[i + 1], t[i]
+        ku = index.get(tuple(sorted(u.items())))
+        if ku is None or ku == k:
+            # 1x1 block: a is exactly q (same row, rho=+1) or -q^-1 (same col).
+            M[k, k] = a
+        elif k < ku:
+            a_prime = h / (1 - q ** (2 * rho))
+            b = mp.sqrt(abs(a * a_prime + 1))
+            M[k, k] = a
+            M[ku, ku] = a_prime
+            M[k, ku] = b
+            M[ku, k] = b
+        # k > ku: the 2x2 block was set when its partner was processed.
+    return M
+
+
 def chi_young(shape: tuple[int, ...], word, q: "mp.mpf") -> "mp.mpf":
     """χ^shape(word) via local Young's rule (full matrix; validation use)."""
     syts = standard_tableaux(shape)
