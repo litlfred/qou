@@ -600,8 +600,6 @@ PN_CONVENTION_BASELINE: dict[str, str] = {
         "declared in-file; 27 committed witnesses; S4 tranche owns it (qou-cds4)",
     "_habiro_coefficient_extract.py::analyse_atom":
         "same file, same declared convention (qou-cds4)",
-    "atomic_tr_m_helium4_canonical.py::main":
-        "declared in-file; S4 tranche owns it (qou-cds4)",
     # NOT YET ADJUDICATED. Listed so the ratchet can hold, flagged so nobody
     # mistakes silence for approval. Neither has been read.
     # ADJUDICATED 2026-08-21: deliberate AND COUPLED. Its in-file comment says
